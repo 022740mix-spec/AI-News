@@ -345,4 +345,4 @@ export function renderStars(rating) {
 
 export const SITE_NAME = "AI Tool News";
 export const SITE_DESCRIPTION = "AI開発ツールの最新ニュース・レビュー・比較情報";
-export const LAST_UPDATED = "2026-03-16";
+export const LAST_UPDATED = "2026-03-23";
