@@ -1385,11 +1385,11 @@ export default function App() {
       list = list.filter(
         (c) =>
           c.name.toLowerCase().includes(q) ||
-          c.legalName.toLowerCase().includes(q) ||
+          (c.legalName || "").toLowerCase().includes(q) ||
           c.country.includes(q) ||
-          c.hq.toLowerCase().includes(q) ||
+          (c.hq || "").toLowerCase().includes(q) ||
           c.products.some((p) => p.toLowerCase().includes(q)) ||
-          c.stock.detail.toLowerCase().includes(q)
+          (c.stock?.detail || "").toLowerCase().includes(q)
       );
     }
     return list;
