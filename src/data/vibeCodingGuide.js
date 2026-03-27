@@ -51,6 +51,74 @@ export const VIBE_TOOL_COMBO_TABLE = {
       voice: "ブラウザや公式アプリの音声入力",
       note: "要件・画面の言葉・NG 例を固める段階。いきなりリポジトリを開く前に「成功条件」を一文にすると後工程が楽です。",
     },
+    {
+      pattern: "ターミナル Claude Code",
+      ide: "ターミナル（リポジトリ直下に `cd`）",
+      ai: "`claude` 対話・`claude -p` 一発・`--permission-mode` / `--enable-auto-mode`・エージェントチーム",
+      voice: "音声より **エディタに指示を貼る**・**echo でパイプ** などと併用しやすいです",
+      note: "バイブで「勢い実行」しすぎないよう、**権限モード**と **Team / プラン要件**は公式 CLI ドキュメントで都度確認してください。",
+    },
+  ],
+};
+
+/** Claude Code CLI・公式に沿った起動・モードのメモ（バイブコーディング用） */
+/** @type {GlossaryGenre} */
+export const VIBE_CLAUDE_CODE = {
+  id: "vibe-claude-code",
+  title: "Claude Code（CLI）でバイブコーディング",
+  lead: "ターミナルから `claude` を叩く流れと、**起動時フラグ**・**権限モード**・**エージェントチーム**の入口です。フラグ一覧は https://code.claude.com/docs/en/cli-reference 、モードの意味合いは https://code.claude.com/docs/en/permission-modes を都度確認してください。",
+  terms: [
+    {
+      word: "`claude` … 対話セッション",
+      mean: "いちばん定番の起動です。**作業するリポジトリのルートに `cd` してから**実行すると、ファイル構成の理解が安定しやすいです。",
+    },
+    {
+      word: "初回メッセージ付きで起動",
+      mean: "`claude \"このプロジェクトを短く説明して\"` のように、**最初の指示を引数で渡す**ことができます（対話モードのまま開始）。",
+    },
+    {
+      word: "`claude -c`（`--continue`）",
+      mean: "**同じディレクトリで直近につきあった会話**を再開します。気軽に切ってまた戻るバイブ向きです。",
+    },
+    {
+      word: "`claude --resume`（`-r`）",
+      mean: "**名前や ID で特定セッション**を開き直します。トピックが分岐したらセッションに名前を付けておくと迷子になりにくいです。",
+    },
+    {
+      word: "`claude -p`（`--print`）",
+      mean: "**非対話（print モード）**で質問に答えたら終了します。CI やスクリプト、`cat ファイル | claude -p \"…\"` のようなパイプ連携に向きます。",
+    },
+    {
+      word: "`--permission-mode`（起動時の止め方）",
+      mean: "開始時点の **権限モード**を指定します（例: 提案だけを見せる `plan`、編集を自動承認寄りにする `acceptEdits` など）。**対話中に `Shift+Tab` でモードを循環**させる操作も公式にあります。",
+      mem: "利用できる値の一覧・挙動は Permission modes のドキュメントが正です。",
+    },
+    {
+      word: "`--enable-auto-mode`",
+      mean: "**`Shift+Tab` のモード切替に auto モードを載せる**ための起動フラグです。公式によると **Claude Team プラン**かつ **Sonnet 4.6 または Opus 4.6** などの条件があります。**Enterprise / API は段階的**といった記載もあるため、自分の契約面で要先に確認します。",
+      mem: "auto モードは「無確認で全部実行」ではなく、**リスク分類して安全そうなツール連打を減らす**方向の機能として読むと安全です（公式ブログ・permission ドキュメント参照）。",
+    },
+    {
+      word: "エージェントチームと `--teammate-mode`",
+      mean: "複数のエージェント（チームメイト）と協調する機能があり、`--teammate-mode` で **表示・実行の組み立て方**を選びます（例: `auto` 既定、`in-process`、`tmux`）。**チーム開発でタスクを分割しながらバイブ**するときのスイッチです。",
+      mem: "セットアップは https://code.claude.com/docs/en/agent-teams を参照してください。",
+    },
+    {
+      word: "`--agent` と `claude agents`",
+      mean: "`--agent 名前` でそのセッションのエージェントを指定できます。`claude agents` は **設定済みサブエージェントの一覧**を出すコマンドです。",
+    },
+    {
+      word: "`--ide`",
+      mean: "**起動時に IDE へ自動接続**（条件が揃うとき）。エディタとターミナルを往復するバイブで、接続の手間を減らします。",
+    },
+    {
+      word: "`--remote-control` / Remote Control",
+      mean: "**対話セッションを claude.ai や Claude アプリ側からも操作できる**ようにするオプションです。別席のレビュアーと共有する文脈で使われます。",
+    },
+    {
+      word: "`--dangerously-skip-permissions`",
+      mean: "確認ダイアログを飛ばしてツールを走らせます。**捨てられるサンドボックス・自分専用・バックアップ済み**以外では避け、チーム規程にも逆らわないようにします。",
+    },
   ],
 };
 
@@ -740,6 +808,7 @@ export const GUIDE_ITEM_TOTAL =
   VIBE_TOOL_COMBO_TABLE.rows.length +
   VIBE_BASIC_RULES.length +
   VIBE_GUIDE_PITFALLS.terms.length +
+  VIBE_CLAUDE_CODE.terms.length +
   GLOSSARY_BY_GENRE.reduce((n, g) => n + g.terms.length, 0);
 
 /** @param {VibeToolComboRow} row */
@@ -762,6 +831,7 @@ export function filterVibeCodingGuide(searchQuery) {
       stacks: VIBE_IDEAL_STACKS,
       toolTable: VIBE_TOOL_COMBO_TABLE,
       basicRules: VIBE_BASIC_RULES,
+      claudeCode: VIBE_CLAUDE_CODE,
       pitfalls: VIBE_GUIDE_PITFALLS,
       glossary: GLOSSARY_BY_GENRE,
       matchCount: total,
@@ -810,6 +880,21 @@ export function filterVibeCodingGuide(searchQuery) {
     pitfalls = { ...VIBE_GUIDE_PITFALLS, terms };
   }
 
+  /** @type {GlossaryGenre} */
+  let claudeCode;
+  const ccBlob = [VIBE_CLAUDE_CODE.title, VIBE_CLAUDE_CODE.lead]
+    .join("\n")
+    .toLowerCase();
+  if (ccBlob.includes(q)) {
+    claudeCode = VIBE_CLAUDE_CODE;
+  } else {
+    const terms = VIBE_CLAUDE_CODE.terms.filter((t) => {
+      const blob = [t.word, t.mean, t.mem ?? ""].join("\n").toLowerCase();
+      return blob.includes(q);
+    });
+    claudeCode = { ...VIBE_CLAUDE_CODE, terms };
+  }
+
   /** @type {GlossaryGenre[]} */
   const glossary = [];
   for (const g of GLOSSARY_BY_GENRE) {
@@ -831,6 +916,7 @@ export function filterVibeCodingGuide(searchQuery) {
     stacks.length +
     toolRows.length +
     basicRules.length +
+    claudeCode.terms.length +
     pitfalls.terms.length +
     glossary.reduce((n, g) => n + g.terms.length, 0);
 
@@ -838,6 +924,7 @@ export function filterVibeCodingGuide(searchQuery) {
     stacks,
     toolTable: { ...VIBE_TOOL_COMBO_TABLE, rows: toolRows },
     basicRules,
+    claudeCode,
     pitfalls,
     glossary,
     matchCount,

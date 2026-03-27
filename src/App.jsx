@@ -478,6 +478,9 @@ function GuideSidebar({ guideTab }) {
             <a href="#vibe-tool-table" className="sidebar-anchor">
               ツールの組み合わせ表
             </a>
+            <a href="#vibe-claude-code" className="sidebar-anchor">
+              Claude Code（CLI）
+            </a>
             <a href="#vibe-stacks" className="sidebar-anchor">
               環境の組み合わせ例
             </a>
@@ -527,7 +530,7 @@ function CompaniesSidebar({ companies }) {
   );
 }
 
-function VibeCodingGuidePanel({ stacks, toolTable, basicRules, pitfalls }) {
+function VibeCodingGuidePanel({ stacks, toolTable, basicRules, claudeCode, pitfalls }) {
   let k = 0;
   const mkKey = () => `vc-${k++}`;
   const [colA, colB, colC, colD, colE] = toolTable.columns;
@@ -573,6 +576,24 @@ function VibeCodingGuidePanel({ stacks, toolTable, basicRules, pitfalls }) {
               </tbody>
             </table>
           </div>
+        ) : null}
+      </section>
+
+      <section id="vibe-claude-code" className="guide-section guide-section--vibe">
+        <h2 className="guide-section__title">{claudeCode.title}</h2>
+        <p className="guide-section__lead">{claudeCode.lead}</p>
+        {claudeCode.terms.length > 0 ? (
+          <dl className="glossary-dl">
+            {claudeCode.terms.map((t) => (
+              <Fragment key={t.word}>
+                <dt className="glossary-dl__term">{t.word}</dt>
+                <dd className="glossary-dl__body">
+                  <p className="glossary-dl__mean">{t.mean}</p>
+                  {t.mem ? <p className="glossary-dl__mem">{t.mem}</p> : null}
+                </dd>
+              </Fragment>
+            ))}
+          </dl>
         ) : null}
       </section>
 
@@ -1853,6 +1874,7 @@ export default function App() {
                     guideFiltered.stacks.length === 0 &&
                     guideFiltered.toolTable.rows.length === 0 &&
                     guideFiltered.basicRules.length === 0 &&
+                    guideFiltered.claudeCode.terms.length === 0 &&
                     guideFiltered.pitfalls.terms.length === 0 ? (
                       <div className="empty-state">
                         このタブに該当がありません。用語集タブを開くか、検索語を変えてください。
@@ -1862,6 +1884,7 @@ export default function App() {
                         stacks={guideFiltered.stacks}
                         toolTable={guideFiltered.toolTable}
                         basicRules={guideFiltered.basicRules}
+                        claudeCode={guideFiltered.claudeCode}
                         pitfalls={guideFiltered.pitfalls}
                       />
                     )
