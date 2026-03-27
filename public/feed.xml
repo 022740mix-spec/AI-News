@@ -8,12 +8,12 @@
   <updated>2026-03-28T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
-    <title>【2026年3月28日更新】AI開発ツール最新動向 — Claude 1M GA・ChatGPTショッピング刷新・Gemini Flash-Lite・メモリ移行競争</title>
+    <title>【2026年3月28日更新】AI開発ツール最新動向 — ARC-AGI-3・Anthropic対ペンタゴン差止・OpenAI Astral買収・GPT-5.4 mini/nano</title>
     <link rel="alternate" type="text/html" href="?a=overview-2026-spring"/>
     <id>tag:ai-tool-news.jp,2026:overview-2026-spring</id>
     <published>2026-03-28T15:00:00Z</published>
     <updated>2026-03-28T15:00:00Z</updated>
-    <summary>Claude 1M コンテキスト GA（追加料金なし）、ChatGPT ショッピング Instant Checkout 廃止、Gemini 3.1 Flash-Lite プレビュー、Claude メモリインポート — 3月後半も AI 各社の動きが続く。</summary>
+    <summary>ARC-AGI-3 公開（フロンティアAI 0.26%）、Anthropic のペンタゴン差止命令取得、OpenAI による Astral（uv・Ruff）買収、GPT-5.4 mini/nano リリース — 3月下旬も各社の動きが加速。</summary>
   </entry>
   <entry>
     <title>【編集部資料・全公開】AIモデル進化を追うサイト — 切り口別リンク集（時系列・OSS・中国勢・Ollama・ベンチ）</title>
@@ -64,12 +64,44 @@
     <summary>2026-03-27、PM の Noah Zweben 氏が発表。Web/モバイルセッションが PR をリモートでフォローし green 化を目指す。GitHub Actions では anthropics/claude-code-action の ci-failure ワークフロー例あり。</summary>
   </entry>
   <entry>
+    <title>Anthropic、ペンタゴンのサプライチェーン指定差し止めに成功 — 連邦裁判所が暫定差止命令</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-pentagon-injunction-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-pentagon-injunction-2026</id>
+    <published>2026-03-26T15:00:00Z</published>
+    <updated>2026-03-26T15:00:00Z</updated>
+    <summary>2026年3月26日、サンフランシスコ連邦地裁の Rita Lin 判事が Anthropic の申請を認め、国防総省（DoD）による「サプライチェーンリスク」指定を暫定差し止め。「修正第一条違反の報復」と判断。Anthropic は自律兵器・大規模監視への利用を拒否したことが発端。</summary>
+  </entry>
+  <entry>
+    <title>ARC-AGI-3 公開 — インタラクティブ環境でフロンティアAIが0.26%、人間は100%</title>
+    <link rel="alternate" type="text/html" href="?a=arc-agi-3-launch-2026"/>
+    <id>tag:ai-tool-news.jp,2026:arc-agi-3-launch-2026</id>
+    <published>2026-03-25T15:00:00Z</published>
+    <updated>2026-03-25T15:00:00Z</updated>
+    <summary>2026年3月25日、ARC Prize Foundation が ARC-AGI-3 を公開。静的グリッドを廃し、ビデオゲーム風のインタラクティブ環境1,000超で AI エージェントの適応推論を評価。GPT-5.4・Claude・Gemini などのフロンティアモデルは1%未満にとどまり、知能評価の新たな壁が示された。</summary>
+  </entry>
+  <entry>
     <title>ChatGPT ショッピング刷新 — Instant Checkout を廃止し商品発見（Product Discovery）へ軸足</title>
     <link rel="alternate" type="text/html" href="?a=chatgpt-shopping-revamp-2026"/>
     <id>tag:ai-tool-news.jp,2026:chatgpt-shopping-revamp-2026</id>
     <published>2026-03-24T15:00:00Z</published>
     <updated>2026-03-24T15:00:00Z</updated>
     <summary>2026年3月24日、OpenAI がエージェンティック・コマースを刷新。Instant Checkout は廃止し、ビジュアル商品比較・並列表示に集中。Walmart が「Sparky」アプリを ChatGPT 内に展開し、ロイヤルティプログラム連携も可能に。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI が Astral を買収 — uv・Ruff・ty を Codex に統合、Pythonエコシステムを掌握へ</title>
+    <link rel="alternate" type="text/html" href="?a=openai-acquires-astral-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-acquires-astral-2026</id>
+    <published>2026-03-19T15:00:00Z</published>
+    <updated>2026-03-19T15:00:00Z</updated>
+    <summary>2026年3月19日、OpenAI が Python 開発ツールの Astral（uv・Ruff・ty）を買収すると発表。月間1億2,600万ダウンロードの uv や業界標準ライターの Ruff が Codex チームに合流。Python 開発ワークフロー全体を AI ネイティブにする戦略。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI、GPT-5.4 mini と nano をリリース — 無料層でも mini 利用可、nano は $0.20/1M トークン</title>
+    <link rel="alternate" type="text/html" href="?a=gpt-54-mini-nano-2026"/>
+    <id>tag:ai-tool-news.jp,2026:gpt-54-mini-nano-2026</id>
+    <published>2026-03-17T15:00:00Z</published>
+    <updated>2026-03-17T15:00:00Z</updated>
+    <summary>2026年3月17日、OpenAI が GPT-5.4 mini と GPT-5.4 nano を公開。mini は ChatGPT 無料ユーザーに開放、nano は API 専用で超低コスト（$0.20/1M）のサブエージェント向け。Codex や ChatGPT のコーディング機能も同時に強化。</summary>
   </entry>
   <entry>
     <title>Claude Opus 4.6 / Sonnet 4.6 の 100 万トークンコンテキストが GA — 追加料金なし</title>
