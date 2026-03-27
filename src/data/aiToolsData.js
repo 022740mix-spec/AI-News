@@ -519,6 +519,64 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "google-nano-banana-2-gemini-flash-image-2026",
+    "type": "feature",
+    "category": "vision",
+    "title": "Google「Nano Banana 2」— Gemini 3.1 Flash Image と動画ツール Flow との見分け方",
+    "excerpt": "2026年2月26日、Google DeepMind が画像生成モデル Nano Banana 2（技術名 Gemini 3.1 Flash Image）を発表。Pro 寄りの品質と Flash 級の速度、最大5キャラクターの一貫性などが売り。Flow の既定モデルでもあるため「動画AI」と混同されやすい点を整理する。",
+    "body": [
+      "**Nano Banana 2 は画像生成・編集モデル**です。The Keyword の製品名は *Nano Banana 2 (Gemini 3.1 Flash Image)* と明記されており、テキスト→**動画クリップ**を直接出す Veo 系とは別ラインです。",
+      "ユーザー目線で紛れやすいのは **Google Flow** です。Flow は動画制作向けプラットフォームですが、公式ブログによれば **既定の「画像」生成モデルが Nano Banana 2** に更新され、Flow 利用者向けは **クレジット 0** で利用できる説明があります。タイムライン用のキービジュアルやボード素材を高速に回す文脈で動画ワークフローに載るため、「動画AIの新モデル」と誤読されやすい、という整理が実務的です。実際のテキスト→動画生成は別途 Veo などを参照してください（当サイトの動画まとめ稿）。",
+      "能力面の要点は次のとおりです。**Gemini の世界知識・検索グラウンディング**を活かした被写体表現、**画像内テキストの精密描画と翻訳・ローカライズ**、**最大5キャラクター程度の一貫性**と単一ワークフロー内で最大 **14オブジェクト**までの忠実度維持、**複雑な指示への追従**、**512px から 4K まで**の解像度・アスペクト比の指定、といった Pro 寄りの機能を **Flash 級の速度**で回す、というプロダクト訴求です。",
+      "展開面では **Gemini アプリ**（Fast / Thinking / Pro で Nano Banana Pro に置き換え。有料層は Pro を再生成で継続利用可能）、**Google 検索**（AI Mode / Lens など）、**Gemini API・AI Studio・Vertex AI（プレビュー）**、**Flow**、**Google  Ads** などにロールアウトとされています。API のモデル ID・価格は `gemini-3.1-flash-image-preview` の表記で公式 pricing を正としてください。",
+      "プロvenance として Google は **SynthID** と **C2PA Content Credentials** の併用を継続すると述べています。生成物の開示・検証ポリシーは組織のガイドラインと合わせて確認が必要です。"
+    ],
+    "date": "2026-02-26",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "画像生成",
+      "Nano Banana",
+      "Flow",
+      "マルチモーダル",
+      "SynthID"
+    ],
+    "features": [
+      "公式ブログ一次ソース",
+      "動画モデルとの混同の整理",
+      "API・プロダクト展開の参照先"
+    ],
+    "primarySources": [
+      {
+        "title": "Nano Banana 2: Combining Pro capabilities with lightning-fast speed",
+        "site": "Google The Keyword",
+        "url": "https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/"
+      },
+      {
+        "title": "Nano Banana 2: How developers can use the new AI image model",
+        "site": "Google The Keyword",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-nano-banana-2/"
+      },
+      {
+        "title": "Image generation with Gemini (Gemini API)",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/image-generation"
+      },
+      {
+        "title": "Google launches Nano Banana 2, updating its viral AI image generator",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/02/26/google-launches-nano-banana-2-updating-its-viral-ai-image-generator.html"
+      },
+      {
+        "title": "Google launches Nano Banana 2 model with faster image generation",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/02/26/google-launches-nano-banana-2-model-with-faster-image-generation/"
+      }
+    ]
+  },
+  {
     "id": "ai-video-generators-landscape-2026",
     "type": "feature",
     "category": "video",
@@ -2415,7 +2473,7 @@ export const ARTICLES = [
   }
 ];
 
-export const LAST_UPDATED = "2026-03-30";
+export const LAST_UPDATED = "2026-03-28";
 export const SITE_NAME = "AI開発ツール最新情報";
 export const SITE_DESCRIPTION = "Claude Code・Cursor・Windsurf・Gemini・GPT などの最新ニュースを日本語でお届け";
 
