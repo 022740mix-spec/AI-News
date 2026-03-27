@@ -174,14 +174,52 @@ function upsertMetaName(name, content) {
   el.setAttribute("content", content);
 }
 
-function syncDocumentSeo(selectedArticle) {
-  const descRaw = stripMarkdownBoldMarkers(
-    selectedArticle ? selectedArticle.excerpt : SITE_DESCRIPTION,
-  );
-  const desc = descRaw.length > 160 ? `${descRaw.slice(0, 157)}…` : descRaw;
-  const title = selectedArticle
-    ? `${selectedArticle.title} | ${SITE_NAME}`
-    : DEFAULT_DOC_TITLE;
+const GUIDE_SEO = {
+  vibe: {
+    titleSuffix: "ガイド：バイブコーディング",
+    description:
+      "IDE・Claude Code・音声入力の組み合わせ、CLI 起動オプション、基本ルールとハマりどころ。非エンジニア向けのバイブ開発ガイド。",
+  },
+  glossary: {
+    titleSuffix: "ガイド：用語集",
+    description:
+      "AI・Git・ターミナル・データレイクなど、記事で出る用語を短文で解説。バイブコーディング・開発ニュースの辞書代わり。",
+  },
+};
+
+const COMPANIES_SEO = {
+  titleSuffix: "企業情報",
+  description:
+    "主要 AI・開発ツール企業の所在地・設立・規模・市場の骨子（公開情報ベース）。",
+};
+
+/**
+ * @param {{ selectedArticle: object | null, siteSection: string, guideTab?: string }} ctx
+ */
+function syncDocumentSeo(ctx) {
+  const { selectedArticle, siteSection, guideTab = "vibe" } = ctx;
+
+  let title = DEFAULT_DOC_TITLE;
+  let descRaw = SITE_DESCRIPTION;
+  let ogTitle = `${SITE_NAME} | AI開発ツールニュース`;
+
+  if (selectedArticle) {
+    descRaw = stripMarkdownBoldMarkers(selectedArticle.excerpt);
+    title = `${selectedArticle.title} | ${SITE_NAME}`;
+    ogTitle = selectedArticle.title;
+  } else if (siteSection === "guide") {
+    const g = guideTab === "glossary" ? GUIDE_SEO.glossary : GUIDE_SEO.vibe;
+    title = `${g.titleSuffix} | ${SITE_NAME}`;
+    descRaw = g.description;
+    ogTitle = `${g.titleSuffix} | ${SITE_NAME}`;
+  } else if (siteSection === "companies") {
+    title = `${COMPANIES_SEO.titleSuffix} | ${SITE_NAME}`;
+    descRaw = COMPANIES_SEO.description;
+    ogTitle = `${COMPANIES_SEO.titleSuffix} | ${SITE_NAME}`;
+  }
+
+  const desc =
+    descRaw.length > 160 ? `${descRaw.slice(0, 157)}…` : descRaw;
 
   document.title = title;
 
@@ -196,9 +234,6 @@ function syncDocumentSeo(selectedArticle) {
   }
   canon.href = canonicalFromLocation();
 
-  const ogTitle = selectedArticle
-    ? selectedArticle.title
-    : `${SITE_NAME} | AI開発ツールニュース`;
   const ogImage = selectedArticle?.coverImage?.src
     ? resolveMediaSrc(selectedArticle.coverImage.src)
     : absolutePublicAsset("og.svg");
@@ -213,6 +248,14 @@ function syncDocumentSeo(selectedArticle) {
 
   upsertMetaName("twitter:title", ogTitle);
   upsertMetaName("twitter:description", desc);
+}
+
+/** プレーンテキスト段落内の URL をリンク化（用語集リードや CLI 案内向け） */
+function GuideLinkifiedP({ text, className }) {
+  let k = 0;
+  const mkKey = () => `glp-${k++}`;
+  const nodes = linkifyPlainToNodes(text, mkKey);
+  return <p className={className}>{nodes}</p>;
 }
 
 const FILTERS = [
@@ -550,10 +593,13 @@ function VibeCodingGuidePanel({ stacks, toolTable, basicRules, claudeCode, pitfa
 
       <section id="vibe-tool-table" className="guide-section guide-section--vibe">
         <h2 className="guide-section__title">IDE・AI・音声入力の組み合わせ表</h2>
-        <p className="guide-section__lead">{toolTable.lead}</p>
+        <GuideLinkifiedP text={toolTable.lead} className="guide-section__lead" />
         {toolTable.rows.length > 0 ? (
           <div className="vibe-tool-table-wrap">
             <table className="vibe-tool-table">
+              <caption className="visually-hidden">
+                バイブコーディング向け IDE・AI・音声入力の組み合わせ一覧
+              </caption>
               <thead>
                 <tr>
                   <th scope="col">{colA}</th>
@@ -581,15 +627,17 @@ function VibeCodingGuidePanel({ stacks, toolTable, basicRules, claudeCode, pitfa
 
       <section id="vibe-claude-code" className="guide-section guide-section--vibe">
         <h2 className="guide-section__title">{claudeCode.title}</h2>
-        <p className="guide-section__lead">{claudeCode.lead}</p>
+        <GuideLinkifiedP text={claudeCode.lead} className="guide-section__lead" />
         {claudeCode.terms.length > 0 ? (
           <dl className="glossary-dl">
             {claudeCode.terms.map((t) => (
               <Fragment key={t.word}>
                 <dt className="glossary-dl__term">{t.word}</dt>
                 <dd className="glossary-dl__body">
-                  <p className="glossary-dl__mean">{t.mean}</p>
-                  {t.mem ? <p className="glossary-dl__mem">{t.mem}</p> : null}
+                  <GuideLinkifiedP text={t.mean} className="glossary-dl__mean" />
+                  {t.mem ? (
+                    <GuideLinkifiedP text={t.mem} className="glossary-dl__mem" />
+                  ) : null}
                 </dd>
               </Fragment>
             ))}
@@ -642,8 +690,10 @@ function VibeCodingGuidePanel({ stacks, toolTable, basicRules, claudeCode, pitfa
               <Fragment key={r.title}>
                 <dt className="glossary-dl__term">{r.title}</dt>
                 <dd className="glossary-dl__body">
-                  <p className="glossary-dl__mean">{r.mean}</p>
-                  {r.mem ? <p className="glossary-dl__mem">{r.mem}</p> : null}
+                  <GuideLinkifiedP text={r.mean} className="glossary-dl__mean" />
+                  {r.mem ? (
+                    <GuideLinkifiedP text={r.mem} className="glossary-dl__mem" />
+                  ) : null}
                 </dd>
               </Fragment>
             ))}
@@ -653,15 +703,17 @@ function VibeCodingGuidePanel({ stacks, toolTable, basicRules, claudeCode, pitfa
 
       <section id="vibe-pitfalls" className="guide-section guide-section--vibe">
         <h2 className="guide-section__title">{pitfalls.title}</h2>
-        <p className="guide-section__lead">{pitfalls.lead}</p>
+        <GuideLinkifiedP text={pitfalls.lead} className="guide-section__lead" />
         {pitfalls.terms.length > 0 ? (
           <dl className="glossary-dl">
             {pitfalls.terms.map((t) => (
               <Fragment key={t.word}>
                 <dt className="glossary-dl__term">{t.word}</dt>
                 <dd className="glossary-dl__body">
-                  <p className="glossary-dl__mean">{t.mean}</p>
-                  {t.mem ? <p className="glossary-dl__mem">{t.mem}</p> : null}
+                  <GuideLinkifiedP text={t.mean} className="glossary-dl__mean" />
+                  {t.mem ? (
+                    <GuideLinkifiedP text={t.mem} className="glossary-dl__mem" />
+                  ) : null}
                 </dd>
               </Fragment>
             ))}
@@ -681,7 +733,8 @@ function GlossaryGuidePanel({ glossaryGenres }) {
       <section id="glossary-guide" className="guide-section guide-section--glossary">
         <h2 className="guide-section__title">実用用語集（ジャンル別）</h2>
         <p className="guide-section__lead">
-          専門用語を「業務で使える一言」に圧縮しました。記事を読むときの辞書代わりにどうぞ。
+          専門用語を「業務で使える一言」に圧縮しました。記事を読むときの辞書代わりにどうぞ。公式 URL
+          が載っている項目はそのままクリックできます。
         </p>
         {glossaryGenres.map((g) => (
           <section
@@ -690,15 +743,18 @@ function GlossaryGuidePanel({ glossaryGenres }) {
             className="glossary-genre"
           >
             <h3 className="glossary-genre__title">{g.title}</h3>
-            <p className="glossary-genre__lead">{g.lead}</p>
+            <GuideLinkifiedP
+              text={g.lead}
+              className="glossary-genre__lead"
+            />
             <dl className="glossary-dl">
               {g.terms.map((t) => (
                 <Fragment key={t.word}>
                   <dt className="glossary-dl__term">{t.word}</dt>
                   <dd className="glossary-dl__body">
-                    <p className="glossary-dl__mean">{t.mean}</p>
+                    <GuideLinkifiedP text={t.mean} className="glossary-dl__mean" />
                     {t.mem ? (
-                      <p className="glossary-dl__mem">{t.mem}</p>
+                      <GuideLinkifiedP text={t.mem} className="glossary-dl__mem" />
                     ) : null}
                   </dd>
                 </Fragment>
@@ -1570,8 +1626,12 @@ export default function App() {
   }, [selected, siteSection, query, guideTab]);
 
   useEffect(() => {
-    syncDocumentSeo(selected ?? null);
-  }, [selected, siteSection]);
+    syncDocumentSeo({
+      selectedArticle: selected ?? null,
+      siteSection,
+      guideTab,
+    });
+  }, [selected, siteSection, guideTab]);
 
   useEffect(() => {
     if (document.getElementById("ld-json-website")) return;
@@ -1847,18 +1907,22 @@ export default function App() {
                       aria-label="ガイドの表示切替"
                     >
                       <button
+                        id="guide-subtab-vibe"
                         type="button"
                         role="tab"
                         aria-selected={guideTab === "vibe"}
+                        aria-controls="guide-subtab-panel"
                         className={`guide-subtab${guideTab === "vibe" ? " is-active" : ""}`}
                         onClick={() => selectGuideTab("vibe")}
                       >
                         バイブコーディング
                       </button>
                       <button
+                        id="guide-subtab-glossary"
                         type="button"
                         role="tab"
                         aria-selected={guideTab === "glossary"}
+                        aria-controls="guide-subtab-panel"
                         className={`guide-subtab${guideTab === "glossary" ? " is-active" : ""}`}
                         onClick={() => selectGuideTab("glossary")}
                       >
@@ -1870,33 +1934,47 @@ export default function App() {
                     <div className="empty-state">
                       該当する説明・用語がありません
                     </div>
-                  ) : guideTab === "vibe" ? (
-                    guideFiltered.stacks.length === 0 &&
-                    guideFiltered.toolTable.rows.length === 0 &&
-                    guideFiltered.basicRules.length === 0 &&
-                    guideFiltered.claudeCode.terms.length === 0 &&
-                    guideFiltered.pitfalls.terms.length === 0 ? (
-                      <div className="empty-state">
-                        このタブに該当がありません。用語集タブを開くか、検索語を変えてください。
-                      </div>
-                    ) : (
-                      <VibeCodingGuidePanel
-                        stacks={guideFiltered.stacks}
-                        toolTable={guideFiltered.toolTable}
-                        basicRules={guideFiltered.basicRules}
-                        claudeCode={guideFiltered.claudeCode}
-                        pitfalls={guideFiltered.pitfalls}
-                      />
-                    )
-                  ) : guideFiltered.glossary.length === 0 ||
-                    guideFiltered.glossary.every((g) => g.terms.length === 0) ? (
-                    <div className="empty-state">
-                      このタブに該当がありません。バイブコーディングタブを開くか、検索語を変えてください。
-                    </div>
                   ) : (
-                    <GlossaryGuidePanel
-                      glossaryGenres={guideFiltered.glossary}
-                    />
+                    <div
+                      id="guide-subtab-panel"
+                      role="tabpanel"
+                      aria-labelledby={
+                        guideTab === "vibe"
+                          ? "guide-subtab-vibe"
+                          : "guide-subtab-glossary"
+                      }
+                    >
+                      {guideTab === "vibe" ? (
+                        guideFiltered.stacks.length === 0 &&
+                        guideFiltered.toolTable.rows.length === 0 &&
+                        guideFiltered.basicRules.length === 0 &&
+                        guideFiltered.claudeCode.terms.length === 0 &&
+                        guideFiltered.pitfalls.terms.length === 0 ? (
+                          <div className="empty-state">
+                            このタブに該当がありません。用語集タブを開くか、検索語を変えてください。
+                          </div>
+                        ) : (
+                          <VibeCodingGuidePanel
+                            stacks={guideFiltered.stacks}
+                            toolTable={guideFiltered.toolTable}
+                            basicRules={guideFiltered.basicRules}
+                            claudeCode={guideFiltered.claudeCode}
+                            pitfalls={guideFiltered.pitfalls}
+                          />
+                        )
+                      ) : guideFiltered.glossary.length === 0 ||
+                        guideFiltered.glossary.every(
+                          (g) => g.terms.length === 0,
+                        ) ? (
+                        <div className="empty-state">
+                          このタブに該当がありません。バイブコーディングタブを開くか、検索語を変えてください。
+                        </div>
+                      ) : (
+                        <GlossaryGuidePanel
+                          glossaryGenres={guideFiltered.glossary}
+                        />
+                      )}
+                    </div>
                   )}
                 </>
               )}

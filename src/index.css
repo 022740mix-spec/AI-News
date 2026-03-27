@@ -102,6 +102,19 @@ body {
   outline-offset: 2px;
 }
 
+/* テーブルキャプション等：視覚のみ隠し、スクリーンリーダーには読み上げ */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ローカルストレージ説明（解析Cookieなしの明示） */
 .storage-notice {
   position: sticky;
