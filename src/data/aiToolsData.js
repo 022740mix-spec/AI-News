@@ -447,7 +447,7 @@ export const ARTICLES = [
     "excerpt": "RAG・チャット・エージェントの永続層は多くの場合がリレーショナル＋ベクトル拡張。Supabase（Postgres＋Auth＋Realtime＋Edge Functions）を軸に、RLS・接続プール・ハイブリッド検索の論点を整理する。",
     "body": [
       "生成 AI プロダクトの**永続化**は、従来の CRUD に加え **会話ログ・ツール呼び出しトレース・ベクトルインデックス・メタデータ**が増えます。単一 DB で押さえるなら **PostgreSQL** が依然として現実的な既定選択で、**pgvector** や全文検索（`tsvector`）と組み合わせた **ハイブリッド検索**（キーワード＋近傍ベクトル）が実務でよく登場します。",
-      "**Supabase** はマネージド Postgres を中核に、**Auth（GoTrue 系）**・**Row Level Security** によるテナント分離・**Realtime**・**Edge Functions** を束ねた BaaS です。プロトタイプだけでなく、RAG のメタテーブルと chunk テーブルを同一クラスタに置き、**JWT クレームを RLS ポリシーに流す**パターンがドキュメント化されやすい点が強みです。接続は **プール（PgBouncer / Supavisor）** 経由か直結かで挙動差（ prepared statement・transaction mode）があるため、ORM とセットで確認します。",
+      "**Supabase** はマネージド Postgres を中核に、**Auth（GoTrue 系）**・**Row Level Security** によるテナント分離・**Realtime**・**Edge Functions** を束ねた BaaS です。プロトタイプだけでなく、RAG のメタテーブルと chunk テーブルを同一クラスタに置き、**JWT クレームを RLS ポリシーに流す**パターンがドキュメント化されやすい点が強みです。接続は **プール（PgBouncer / Supavisor）** 経由か直結かで挙動差（ prepared statement・transaction mode）があるため、ORM とセットで確認します。TypeScript 層では **Prisma** と **Drizzle ORM** がよく比較されるため、選定軸は別稿で整理しています。",
       "代替・近傍として **Neon**（ブランチ型 Postgres）や **PlanetScale**（MySQL Vitess 系）なども選ばれますが、**pgvector 前提の記事・サンプル**との親和、GIS 拡張、JSONB による柔軟なメタデータ格納では Postgres 派が厚いです。マルチクラウド要件がある場合は **データ所在地・バックアップ SLA** を契約側で先に固定します。",
       "スキーマ設計では **ドキュメント ID・版・ACL ラベル・取り込み時刻・埋め込みモデル名と次元数**を行メタに持ち、削除・再埋め込みパイプラインと整合させます。エージェントが SQL を直接叩く構成では **読み取り専用ロール**と **許可リスト**でテーブルを縛り、書き込みはアプリ層経由に寄せると事故が減ります。",
       "本稿は製品比較の代替ではありません。**認証・課金・監査**は自社ポリシーと合わせ、Supabase／Postgres の公式セキュリティガイド・SOC 報告の有無を毎回確認してください。"
@@ -489,6 +489,87 @@ export const ARTICLES = [
         "title": "OWASP — LLM Applications",
         "site": "OWASP",
         "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
+      }
+    ]
+  },
+  {
+    "id": "orm-drizzle-prisma-ai-backend-2026",
+    "type": "feature",
+    "category": "data",
+    "title": "TypeScript バックエンドの ORM — Drizzle と Prisma を AI アプリ開発でどう切るか",
+    "excerpt": "スキーマ駆動・マイグレーション・型安全クエリは、エージェントが SQL を組み立てる時代にも土台として残る。Prisma（Client・Schema・Migrate・Accelerate）と Drizzle（SQL に近い API・軽量ランタイム）の役割分け、サーバーレス Postgres・Supabase との相性を整理する。",
+    "body": [
+      "LLM が **生 SQL** や **クエリビルダ文字列**を吐くデモが増えても、本番の永続層では **スキーマ版管理・接続上限・権限**を人間側でコントロールする必要があります。**ORM** は「エージェントの出力をそのまま評価する」より、**アプリの契約（型・マイグレーション・トランザクション境界）**を固定する用途で引き続き主力です。",
+      "**Prisma** は `schema.prisma` 中心のワークフローが明確で、**Prisma Client** の API が学習コストを下げ、**Prisma Migrate** でチーム開発の履歴を揃えやすいのが長所です。**Prisma Accelerate** や Data Proxy 系の接続プール／エッジ経路は、サーバーレス関数のコールドスタートと **接続スパイク**を抑えたいときに検討されます。反面、実行時クエリの細かいチューニングや「SQL にほぼ等価な追従」を求めると、 `$queryRaw` 周りの規律が必要になります。",
+      "**Drizzle ORM** は TypeScript 上で **リレーショナル SQL に近い**記述と軽量クライアントを売りにし、**drizzle-kit** でマイグレーションを管理するパターンが一般的です。バンドルサイズや Edge / Worker 志向の構成と相性がよい、とされることが多く、**postgres.js** や **Neon serverless driver** などドライバ選択を明示しやすい点が実務メリットです。チーム全員が SQL に慣れているほど設計の伸びしろが出やすい一方、ガイドラインが無いとスタイルがバラける弱点もあります。",
+      "AI プロダクト特有の論点は、(1) **会話ログ・ツールトレース**など巨大 JSON を `jsonb` で持つときのインデックス設計、(2) **pgvector** テーブルを ORM のスキーマに含めるか一部だけ生 SQL に逃がすか、(3) **RLS** が効いた接続ユーザーとアプリ用ロールの分離、の三点です。エージェントに「任意のマイグレーション」を任せる運用は避け、**人間レビュー必須のパイプライン**に固定するのが無難です。",
+      "選定の決め手は信仰や炎上ではなく、**チームの SQL 文化・デプロイ形態（長寿命サーバ vs サーバーレス）・観測性**です。新規 PoC なら両方を小さく触り、マイグレーション速度と CI の書き方、ステージングの破壊的変更の扱いを比較するとブレが減ります。最終的なライセンス・クラウド課金・データ所在地は各公式の pricing / DPA を参照してください。"
+    ],
+    "date": "2026-03-30",
+    "author": "AI News 編集部",
+    "readTime": "11分",
+    "tags": [
+      "Prisma",
+      "Drizzle",
+      "ORM",
+      "TypeScript",
+      "PostgreSQL",
+      "マイグレーション",
+      "バックエンド"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 1,
+        "caption": "ざっくりした対比（案件・バージョンで前後します）",
+        "headers": [
+          "観点",
+          "Prisma 寄りの傾向",
+          "Drizzle 寄りの傾向"
+        ],
+        "rows": [
+          [
+            "スキーマの中心",
+            "`schema.prisma` と生成 Client",
+            "TS スキーマ定義 + `drizzle-kit`"
+          ],
+          [
+            "API スタイル",
+            "高級なドメイン操作 API",
+            "SQL に近いチェーン／リレーショナル API"
+          ],
+          [
+            "接続・サーバーレス",
+            "Accelerate / Proxy 文脈が厚い",
+            "軽量ドライバ明示・Edge 例が多い"
+          ],
+          [
+            "チーム前提",
+            "広い資料・定型パターン",
+            "SQL に強いメンバーが効く"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Prisma Documentation",
+        "site": "Prisma",
+        "url": "https://www.prisma.io/docs"
+      },
+      {
+        "title": "Drizzle ORM — Documentation",
+        "site": "Drizzle",
+        "url": "https://orm.drizzle.team/docs/overview"
+      },
+      {
+        "title": "drizzle-team/drizzle-orm",
+        "site": "GitHub",
+        "url": "https://github.com/drizzle-team/drizzle-orm"
+      },
+      {
+        "title": "Supabase + Prisma（接続例の確認用）",
+        "site": "Supabase",
+        "url": "https://supabase.com/docs/guides/database/prisma"
       }
     ]
   },
@@ -2946,7 +3027,7 @@ export const ARTICLES = [
   }
 ];
 
-export const LAST_UPDATED = "2026-03-29";
+export const LAST_UPDATED = "2026-03-30";
 export const SITE_NAME = "AI開発ツール最新情報";
 export const SITE_DESCRIPTION = "Claude Code・Cursor・Windsurf・Gemini・GPT などの最新ニュースを日本語でお届け";
 
