@@ -291,3 +291,60 @@ export const GLOSSARY_BY_GENRE = [
     ],
   },
 ];
+
+/** 検索ヒットカウント用：環境カード1件＋用語1件をそれぞれ1単位とする */
+export const GUIDE_ITEM_TOTAL =
+  VIBE_IDEAL_STACKS.length +
+  GLOSSARY_BY_GENRE.reduce((n, g) => n + g.terms.length, 0);
+
+/**
+ * ガイドタブ内のざっくり検索（タイトル・説明・用語の plane テキストに単純部分一致）。
+ * @param {string} searchQuery
+ * @returns {{ stacks: VibeStack[], glossary: GlossaryGenre[], matchCount: number, total: number }}
+ */
+export function filterVibeCodingGuide(searchQuery) {
+  const total = GUIDE_ITEM_TOTAL;
+  const q = searchQuery.trim().toLowerCase();
+  if (!q) {
+    return {
+      stacks: VIBE_IDEAL_STACKS,
+      glossary: GLOSSARY_BY_GENRE,
+      matchCount: total,
+      total,
+    };
+  }
+
+  const stacks = VIBE_IDEAL_STACKS.filter((s) => {
+    const blob = [
+      s.title,
+      s.forWho,
+      s.summary,
+      ...s.combo.flatMap((c) => [c.role, c.picks, c.tip]),
+    ]
+      .join("\n")
+      .toLowerCase();
+    return blob.includes(q);
+  });
+
+  /** @type {GlossaryGenre[]} */
+  const glossary = [];
+  for (const g of GLOSSARY_BY_GENRE) {
+    const genreBlob = [g.title, g.lead].join("\n").toLowerCase();
+    if (genreBlob.includes(q)) {
+      glossary.push(g);
+      continue;
+    }
+    const terms = g.terms.filter((t) => {
+      const blob = [t.word, t.mean, t.mem ?? ""].join("\n").toLowerCase();
+      return blob.includes(q);
+    });
+    if (terms.length) {
+      glossary.push({ ...g, terms });
+    }
+  }
+
+  const matchCount =
+    stacks.length + glossary.reduce((n, g) => n + g.terms.length, 0);
+
+  return { stacks, glossary, matchCount, total };
+}

@@ -19,8 +19,8 @@ import {
 } from "./data/aiToolsData.js";
 import { AI_COMPANIES, COMPANIES_DISCLAIMER } from "./data/aiCompanies.js";
 import {
+  filterVibeCodingGuide,
   GLOSSARY_BY_GENRE,
-  VIBE_IDEAL_STACKS,
   VIBE_STACK_NOTE,
 } from "./data/vibeCodingGuide.js";
 import { BUNDLED_MEDIA_URL } from "./mediaUrls.js";
@@ -313,6 +313,9 @@ function syncAppUrl({ articleId, siteSection, tagQuery }) {
     if (siteSection === "companies") {
       u.searchParams.set("view", "companies");
       u.searchParams.delete("tag");
+    } else if (siteSection === "guide") {
+      u.searchParams.set("view", "guide");
+      u.searchParams.delete("tag");
     } else {
       u.searchParams.delete("view");
       const t = tagQuery?.trim();
@@ -440,18 +443,25 @@ function SiteSectionNav({ section, onSection }) {
         >
           企業情報
         </button>
+        <button
+          type="button"
+          className={`section-site-tab${section === "guide" ? " is-active" : ""}`}
+          onClick={() => onSection("guide")}
+        >
+          バイブ＆用語
+        </button>
       </div>
     </nav>
   );
 }
 
-function CompaniesSidebar({ companies }) {
+function GuideSidebar() {
   return (
-    <aside className="desktop-sidebar" aria-label="企業ページの目次">
+    <aside className="desktop-sidebar" aria-label="バイブ＆用語の目次">
       <div className="sidebar-panel">
-        <h3>ガイド</h3>
+        <h3>このページ内</h3>
         <p className="sidebar-panel-hint">
-          メイン欄の右（スマホでは上）の解説へジャンプします。
+          見出しへジャンプします。
         </p>
         <a href="#vibe-stacks" className="sidebar-anchor">
           環境の組み合わせ例
@@ -468,7 +478,16 @@ function CompaniesSidebar({ companies }) {
             {g.title}
           </a>
         ))}
-        <h3 className="sidebar-subheading">企業一覧</h3>
+      </div>
+    </aside>
+  );
+}
+
+function CompaniesSidebar({ companies }) {
+  return (
+    <aside className="desktop-sidebar" aria-label="企業ページの目次">
+      <div className="sidebar-panel">
+        <h3>企業一覧</h3>
         <p className="sidebar-panel-hint">
           項目をクリックで該当カードへスクロールします。
         </p>
@@ -482,9 +501,12 @@ function CompaniesSidebar({ companies }) {
   );
 }
 
-function VibeCodingGuideRail() {
+function VibeCodingGuideRail({ stacks, glossaryGenres, standalone = false }) {
+  const wrapClass = standalone
+    ? "companies-guide-rail companies-guide-rail--full-tab"
+    : "companies-guide-rail";
   return (
-    <aside className="companies-guide-rail" aria-label="バイブコーディングと用語集">
+    <aside className={wrapClass} aria-label="バイブコーディングと用語集">
       <p className="companies-guide-note">{VIBE_STACK_NOTE}</p>
 
       <section
@@ -495,10 +517,10 @@ function VibeCodingGuideRail() {
           バイブコーディング：環境の組み合わせ例
         </h2>
         <p className="guide-section__lead">
-          非エンジニアの方は「左から順に足していく」と読み下せます。全部そろえる必要はありません。
+          非エンジニアの方は「上から順に足していく」と読み下せます。全部そろえる必要はありません。
         </p>
         <div className="vibe-stack-list">
-          {VIBE_IDEAL_STACKS.map((s) => (
+          {stacks.map((s) => (
             <article key={s.id} className="vibe-stack-card">
               <header className="vibe-stack-card__head">
                 <span className="vibe-stack-card__emoji" aria-hidden>
@@ -532,7 +554,7 @@ function VibeCodingGuideRail() {
         <p className="guide-section__lead">
           専門用語を「業務で使える一言」に圧縮しました。記事を読むときの辞書代わりにどうぞ。
         </p>
-        {GLOSSARY_BY_GENRE.map((g) => (
+        {glossaryGenres.map((g) => (
           <section
             key={g.id}
             id={`glossary-${g.id}`}
@@ -1361,11 +1383,18 @@ function readInitialRouteState() {
       return { selected: found, siteSection: "articles", query: "" };
     }
   }
+  const view = u.searchParams.get("view");
   const siteSection =
-    u.searchParams.get("view") === "companies" ? "companies" : "articles";
+    view === "companies"
+      ? "companies"
+      : view === "guide"
+        ? "guide"
+        : "articles";
   const tag = u.searchParams.get("tag");
   const query =
-    siteSection === "companies" ? "" : tag && tag.trim() ? tag.trim() : "";
+    siteSection === "articles" && tag && tag.trim()
+      ? tag.trim()
+      : "";
   return { selected: null, siteSection, query };
 }
 
@@ -1497,6 +1526,8 @@ export default function App() {
     return list;
   }, [query]);
 
+  const guideFiltered = useMemo(() => filterVibeCodingGuide(query), [query]);
+
   const filtered = useMemo(() => {
     let list = ARTICLES;
     if (filter !== "all") list = list.filter((a) => a.category === filter);
@@ -1550,17 +1581,33 @@ export default function App() {
               setSort={setSort}
               searchRef={searchRef}
               filteredCount={
-                siteSection === "companies" ? filteredCompanies.length : articleCount
+                siteSection === "companies"
+                  ? filteredCompanies.length
+                  : siteSection === "guide"
+                    ? guideFiltered.matchCount
+                    : articleCount
               }
               totalCount={
-                siteSection === "companies" ? AI_COMPANIES.length : ARTICLES.length
+                siteSection === "companies"
+                  ? AI_COMPANIES.length
+                  : siteSection === "guide"
+                    ? guideFiltered.total
+                    : ARTICLES.length
               }
               searchPlaceholder={
                 siteSection === "companies"
                   ? "企業名・国・本社・製品・証券コードで検索…"
-                  : "記事を検索…（タイトル・概要・タグ）"
+                  : siteSection === "guide"
+                    ? "環境例・用語の説明を検索…"
+                    : "記事を検索…（タイトル・概要・タグ）"
               }
-              searchAriaLabel={siteSection === "companies" ? "企業検索" : "記事検索"}
+              searchAriaLabel={
+                siteSection === "companies"
+                  ? "企業検索"
+                  : siteSection === "guide"
+                    ? "ガイド内検索"
+                    : "記事検索"
+              }
               showSort={siteSection === "articles"}
             />
             <SiteSectionNav section={siteSection} onSection={switchSection} />
@@ -1627,28 +1674,46 @@ export default function App() {
                     <div className="empty-state">該当する記事がありません</div>
                   )}
                 </>
-              ) : (
-                <div className="companies-page-grid">
-                  <div className="companies-primary">
-                    <div className="section-feed companies-page-intro">
-                      <h2 className="section-feed__title">企業情報</h2>
-                      <p className="section-feed__meta">
-                        主要プレイヤーの所在地・設立・規模・市場の骨子（公開情報ベース）。右列（スマホでは上）にバイブコーディングの組み合わせ例と用語集があります。
-                      </p>
-                      <p className="companies-disclaimer">{COMPANIES_DISCLAIMER}</p>
-                    </div>
-                    {filteredCompanies.length > 0 ? (
-                      <div className="companies-stack">
-                        {filteredCompanies.map((c) => (
-                          <CompanyCard key={c.id} company={c} />
-                        ))}
-                      </div>
-                    ) : (
-                      <div className="empty-state">該当する企業がありません</div>
-                    )}
+              ) : siteSection === "companies" ? (
+                <>
+                  <div className="section-feed companies-page-intro">
+                    <h2 className="section-feed__title">企業情報</h2>
+                    <p className="section-feed__meta">
+                      主要プレイヤーの所在地・設立・規模・市場の骨子（公開情報ベース）
+                    </p>
+                    <p className="companies-disclaimer">{COMPANIES_DISCLAIMER}</p>
                   </div>
-                  <VibeCodingGuideRail />
-                </div>
+                  {filteredCompanies.length > 0 ? (
+                    <div className="companies-stack">
+                      {filteredCompanies.map((c) => (
+                        <CompanyCard key={c.id} company={c} />
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="empty-state">該当する企業がありません</div>
+                  )}
+                </>
+              ) : (
+                <>
+                  <div className="section-feed guide-tab-intro">
+                    <h2 className="section-feed__title">バイブコーディング＆用語集</h2>
+                    <p className="section-feed__meta">
+                      非エンジニア向けに、AI
+                      と一緒に試すときの「道具の組み合わせ例」と、記事・会話で出てくる語の短文解説をまとめています。
+                    </p>
+                  </div>
+                  {guideFiltered.matchCount === 0 ? (
+                    <div className="empty-state">
+                      該当する環境例・用語がありません
+                    </div>
+                  ) : (
+                    <VibeCodingGuideRail
+                      stacks={guideFiltered.stacks}
+                      glossaryGenres={guideFiltered.glossary}
+                      standalone
+                    />
+                  )}
+                </>
               )}
 
               <footer className="site-footer">
@@ -1668,8 +1733,10 @@ export default function App() {
                 onSelect={handleSelect}
                 onTagClick={onTagClick}
               />
-            ) : (
+            ) : siteSection === "companies" ? (
               <CompaniesSidebar companies={filteredCompanies} />
+            ) : (
+              <GuideSidebar />
             )}
           </div>
         )}

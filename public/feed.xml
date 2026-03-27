@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-03-30T15:00:00Z</updated>
+  <updated>2026-04-01T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>TypeScript バックエンドの ORM — Drizzle と Prisma を AI アプリ開発でどう切るか</title>

@@ -24,7 +24,7 @@ export const ARTICLES = [
       "**Anthropic のペンタゴン訴訟**では3月26日、サンフランシスコ連邦地裁が暫定差止命令を発しました。自律兵器・大規模監視への Claude 利用を拒否したことで DoD に「サプライチェーンリスク」指定された Anthropic が、修正第一条違反の報復として司法に訴えた件で、Lin 判事が Anthropic の申請を認容しました（別稿）。",
       "AnthropicはClaude Codeに権限の「Auto mode」（研究プレビュー）を追加し、分類器で手元セッションの自律実行を安全側に寄せました。あわせて3月27日頃、Noah Zweben 氏により auto-fix in the cloud が発表され、Web/モバイルセッションが PR の CI 失敗やレビューコメントをクラウド上でフォローする流れが始まっています（別稿）。",
       "CursorはVersion 2.4で並列サブエージェントを正式導入。クラウドVM上で最大20エージェントが同時稼働し、大規模タスクの処理時間をほぼ半減。Windsurf は3月19日にクレジット制から日次/週次クォータ制へ料金体系を全面改定し、Pro価格が$20に上昇しました。",
-      "周辺レイヤーも同時に厚くなっています。MCP でツール配線を共通化し、OpenClaw のように自前ホストのエージェント・ゲートウェイを組む需要、SKILL.md・AGENTS.md・llms.txt など Markdown ベースの「エージェント用ドキュメント」がレビュー対象の第一級市民になりつつあります。言語ランタイム（Python・Node・Bun など）と Astral 買収に代表されるツールチェーン、RAG の永続層としての PostgreSQL / Supabase 周りも別稿で整理しています。速報に加え、用途軸の比較記事（フロンティア三本柱、AI コーディング IDE 群）も随時追加する方針です（別稿【比較】）。"
+      "周辺レイヤーも同時に厚くなっています。MCP でツール配線を共通化し、OpenClaw のように自前ホストのエージェント・ゲートウェイを組む需要、SKILL.md・AGENTS.md・llms.txt など Markdown ベースの「エージェント用ドキュメント」がレビュー対象の第一級市民になりつつあります。言語ランタイム（Python・Node・Bun など）と Astral 買収に代表されるツールチェーン、RAG の永続層としての PostgreSQL / Supabase 周りも別稿で整理しています。非エンジニア向けに、バイブコーディングの環境の組み合わせ例と用語集はサイト上部の「バイブ＆用語」タブにまとめています。速報に加え、用途軸の比較記事（フロンティア三本柱、AI コーディング IDE 群）も随時追加する方針です（別稿【比較】）。"
     ],
     "date": "2026-03-28",
     "author": "AI News 編集部",
@@ -3027,7 +3027,7 @@ export const ARTICLES = [
   }
 ];
 
-export const LAST_UPDATED = "2026-03-31";
+export const LAST_UPDATED = "2026-04-01";
 export const SITE_NAME = "AI開発ツール最新情報";
 export const SITE_DESCRIPTION = "Claude Code・Cursor・Windsurf・Gemini・GPT などの最新ニュースを日本語でお届け";
 

@@ -395,6 +395,7 @@ body {
   max-width: 1120px;
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   gap: 0.25rem;
   padding: 0 1rem;
 }
@@ -669,17 +670,15 @@ body {
   color: var(--text-secondary);
 }
 
-@media (max-width: 960px) {
-  .companies-page-grid {
-    grid-template-columns: 1fr;
-  }
+.companies-guide-rail--full-tab {
+  position: static;
+  max-height: none;
+  overflow: visible;
+  padding: 0;
+}
 
-  .companies-guide-rail {
-    position: static;
-    max-height: none;
-    order: -1;
-    padding-top: 0;
-  }
+.guide-tab-intro {
+  margin-bottom: 0.5rem;
 }
 
 .companies-stack {
