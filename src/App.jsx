@@ -18,6 +18,11 @@ import {
   LAST_UPDATED,
 } from "./data/aiToolsData.js";
 import { AI_COMPANIES, COMPANIES_DISCLAIMER } from "./data/aiCompanies.js";
+import {
+  GLOSSARY_BY_GENRE,
+  VIBE_IDEAL_STACKS,
+  VIBE_STACK_NOTE,
+} from "./data/vibeCodingGuide.js";
 import { BUNDLED_MEDIA_URL } from "./mediaUrls.js";
 
 const STORAGE_THEME = "ai-news-theme";
@@ -442,10 +447,29 @@ function SiteSectionNav({ section, onSection }) {
 
 function CompaniesSidebar({ companies }) {
   return (
-    <aside className="desktop-sidebar" aria-label="企業一覧ナビ">
+    <aside className="desktop-sidebar" aria-label="企業ページの目次">
       <div className="sidebar-panel">
-        <h3>企業一覧</h3>
-        <p style={{ fontSize: 11, color: "var(--muted)", margin: "0 0 8px", lineHeight: 1.5 }}>
+        <h3>ガイド</h3>
+        <p className="sidebar-panel-hint">
+          メイン欄の右（スマホでは上）の解説へジャンプします。
+        </p>
+        <a href="#vibe-stacks" className="sidebar-anchor">
+          環境の組み合わせ例
+        </a>
+        <a href="#glossary-guide" className="sidebar-anchor">
+          用語集（ジャンル別）
+        </a>
+        {GLOSSARY_BY_GENRE.map((g) => (
+          <a
+            key={g.id}
+            href={`#glossary-${g.id}`}
+            className="sidebar-anchor sidebar-anchor--nested"
+          >
+            {g.title}
+          </a>
+        ))}
+        <h3 className="sidebar-subheading">企業一覧</h3>
+        <p className="sidebar-panel-hint">
           項目をクリックで該当カードへスクロールします。
         </p>
         {companies.map((c) => (
@@ -454,6 +478,84 @@ function CompaniesSidebar({ companies }) {
           </a>
         ))}
       </div>
+    </aside>
+  );
+}
+
+function VibeCodingGuideRail() {
+  return (
+    <aside className="companies-guide-rail" aria-label="バイブコーディングと用語集">
+      <p className="companies-guide-note">{VIBE_STACK_NOTE}</p>
+
+      <section
+        id="vibe-stacks"
+        className="guide-section guide-section--vibe"
+      >
+        <h2 className="guide-section__title">
+          バイブコーディング：環境の組み合わせ例
+        </h2>
+        <p className="guide-section__lead">
+          非エンジニアの方は「左から順に足していく」と読み下せます。全部そろえる必要はありません。
+        </p>
+        <div className="vibe-stack-list">
+          {VIBE_IDEAL_STACKS.map((s) => (
+            <article key={s.id} className="vibe-stack-card">
+              <header className="vibe-stack-card__head">
+                <span className="vibe-stack-card__emoji" aria-hidden>
+                  {s.emoji}
+                </span>
+                <div>
+                  <h3 className="vibe-stack-card__title">{s.title}</h3>
+                  <p className="vibe-stack-card__for">{s.forWho}</p>
+                </div>
+              </header>
+              <p className="vibe-stack-card__summary">{s.summary}</p>
+              <ul className="vibe-stack-card__combo">
+                {s.combo.map((row) => (
+                  <li key={row.role}>
+                    <strong className="vibe-stack-card__role">{row.role}</strong>
+                    <span className="vibe-stack-card__picks">{row.picks}</span>
+                    <span className="vibe-stack-card__tip">{row.tip}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section
+        id="glossary-guide"
+        className="guide-section guide-section--glossary"
+      >
+        <h2 className="guide-section__title">実用用語集（ジャンル別）</h2>
+        <p className="guide-section__lead">
+          専門用語を「業務で使える一言」に圧縮しました。記事を読むときの辞書代わりにどうぞ。
+        </p>
+        {GLOSSARY_BY_GENRE.map((g) => (
+          <section
+            key={g.id}
+            id={`glossary-${g.id}`}
+            className="glossary-genre"
+          >
+            <h3 className="glossary-genre__title">{g.title}</h3>
+            <p className="glossary-genre__lead">{g.lead}</p>
+            <dl className="glossary-dl">
+              {g.terms.map((t) => (
+                <Fragment key={t.word}>
+                  <dt className="glossary-dl__term">{t.word}</dt>
+                  <dd className="glossary-dl__body">
+                    <p className="glossary-dl__mean">{t.mean}</p>
+                    {t.mem ? (
+                      <p className="glossary-dl__mem">{t.mem}</p>
+                    ) : null}
+                  </dd>
+                </Fragment>
+              ))}
+            </dl>
+          </section>
+        ))}
+      </section>
     </aside>
   );
 }
@@ -1526,24 +1628,27 @@ export default function App() {
                   )}
                 </>
               ) : (
-                <>
-                  <div className="section-feed companies-page-intro">
-                    <h2 className="section-feed__title">企業情報</h2>
-                    <p className="section-feed__meta">
-                      主要プレイヤーの所在地・設立・規模・市場の骨子（公開情報ベース）
-                    </p>
-                    <p className="companies-disclaimer">{COMPANIES_DISCLAIMER}</p>
-                  </div>
-                  {filteredCompanies.length > 0 ? (
-                    <div className="companies-stack">
-                      {filteredCompanies.map((c) => (
-                        <CompanyCard key={c.id} company={c} />
-                      ))}
+                <div className="companies-page-grid">
+                  <div className="companies-primary">
+                    <div className="section-feed companies-page-intro">
+                      <h2 className="section-feed__title">企業情報</h2>
+                      <p className="section-feed__meta">
+                        主要プレイヤーの所在地・設立・規模・市場の骨子（公開情報ベース）。右列（スマホでは上）にバイブコーディングの組み合わせ例と用語集があります。
+                      </p>
+                      <p className="companies-disclaimer">{COMPANIES_DISCLAIMER}</p>
                     </div>
-                  ) : (
-                    <div className="empty-state">該当する企業がありません</div>
-                  )}
-                </>
+                    {filteredCompanies.length > 0 ? (
+                      <div className="companies-stack">
+                        {filteredCompanies.map((c) => (
+                          <CompanyCard key={c.id} company={c} />
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="empty-state">該当する企業がありません</div>
+                    )}
+                  </div>
+                  <VibeCodingGuideRail />
+                </div>
               )}
 
               <footer className="site-footer">
