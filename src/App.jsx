@@ -21,6 +21,7 @@ import { AI_COMPANIES, COMPANIES_DISCLAIMER } from "./data/aiCompanies.js";
 import {
   filterVibeCodingGuide,
   GLOSSARY_BY_GENRE,
+  VIBE_CODING_PAGE_LEAD,
   VIBE_STACK_NOTE,
 } from "./data/vibeCodingGuide.js";
 import { BUNDLED_MEDIA_URL } from "./mediaUrls.js";
@@ -302,22 +303,27 @@ function persistBookmarks(set) {
   localStorage.setItem(STORAGE_MARKS, JSON.stringify([...set]));
 }
 
-function syncAppUrl({ articleId, siteSection, tagQuery }) {
+function syncAppUrl({ articleId, siteSection, tagQuery, guideTab }) {
   const u = new URL(window.location.href);
   if (articleId) {
     u.searchParams.set("a", articleId);
     u.searchParams.delete("view");
     u.searchParams.delete("tag");
+    u.searchParams.delete("tab");
   } else {
     u.searchParams.delete("a");
     if (siteSection === "companies") {
       u.searchParams.set("view", "companies");
       u.searchParams.delete("tag");
+      u.searchParams.delete("tab");
     } else if (siteSection === "guide") {
       u.searchParams.set("view", "guide");
       u.searchParams.delete("tag");
+      if (guideTab === "glossary") u.searchParams.set("tab", "glossary");
+      else u.searchParams.delete("tab");
     } else {
       u.searchParams.delete("view");
+      u.searchParams.delete("tab");
       const t = tagQuery?.trim();
       if (t) u.searchParams.set("tag", t);
       else u.searchParams.delete("tag");
@@ -448,36 +454,56 @@ function SiteSectionNav({ section, onSection }) {
           className={`section-site-tab${section === "guide" ? " is-active" : ""}`}
           onClick={() => onSection("guide")}
         >
-          バイブ＆用語
+          ガイド
         </button>
       </div>
     </nav>
   );
 }
 
-function GuideSidebar() {
+function GuideSidebar({ guideTab }) {
   return (
-    <aside className="desktop-sidebar" aria-label="バイブ＆用語の目次">
+    <aside
+      className="desktop-sidebar"
+      aria-label={guideTab === "vibe" ? "バイブコーディングの目次" : "用語集の目次"}
+    >
       <div className="sidebar-panel">
         <h3>このページ内</h3>
-        <p className="sidebar-panel-hint">
-          見出しへジャンプします。
-        </p>
-        <a href="#vibe-stacks" className="sidebar-anchor">
-          環境の組み合わせ例
-        </a>
-        <a href="#glossary-guide" className="sidebar-anchor">
-          用語集（ジャンル別）
-        </a>
-        {GLOSSARY_BY_GENRE.map((g) => (
-          <a
-            key={g.id}
-            href={`#glossary-${g.id}`}
-            className="sidebar-anchor sidebar-anchor--nested"
-          >
-            {g.title}
-          </a>
-        ))}
+        <p className="sidebar-panel-hint">見出しへジャンプします。</p>
+        {guideTab === "vibe" ? (
+          <>
+            <a href="#vibe-intro" className="sidebar-anchor">
+              バイブコーディングとは
+            </a>
+            <a href="#vibe-tool-table" className="sidebar-anchor">
+              ツールの組み合わせ表
+            </a>
+            <a href="#vibe-stacks" className="sidebar-anchor">
+              環境の組み合わせ例
+            </a>
+            <a href="#vibe-rules" className="sidebar-anchor">
+              基本ルール
+            </a>
+            <a href="#vibe-pitfalls" className="sidebar-anchor">
+              ハマりやすいこと
+            </a>
+          </>
+        ) : (
+          <>
+            <a href="#glossary-guide" className="sidebar-anchor">
+              実用用語集（ジャンル別）
+            </a>
+            {GLOSSARY_BY_GENRE.map((g) => (
+              <a
+                key={g.id}
+                href={`#glossary-${g.id}`}
+                className="sidebar-anchor sidebar-anchor--nested"
+              >
+                {g.title}
+              </a>
+            ))}
+          </>
+        )}
       </div>
     </aside>
   );
@@ -501,55 +527,137 @@ function CompaniesSidebar({ companies }) {
   );
 }
 
-function VibeCodingGuideRail({ stacks, glossaryGenres, standalone = false }) {
-  const wrapClass = standalone
-    ? "companies-guide-rail companies-guide-rail--full-tab"
-    : "companies-guide-rail";
+function VibeCodingGuidePanel({ stacks, toolTable, basicRules, pitfalls }) {
+  let k = 0;
+  const mkKey = () => `vc-${k++}`;
+  const [colA, colB, colC, colD, colE] = toolTable.columns;
   return (
-    <aside className={wrapClass} aria-label="バイブコーディングと用語集">
+    <div
+      className="companies-guide-rail companies-guide-rail--full-tab"
+      aria-label="バイブコーディング"
+    >
       <p className="companies-guide-note">{VIBE_STACK_NOTE}</p>
 
-      <section
-        id="vibe-stacks"
-        className="guide-section guide-section--vibe"
-      >
-        <h2 className="guide-section__title">
-          バイブコーディング：環境の組み合わせ例
-        </h2>
+      <section id="vibe-intro" className="guide-section guide-section--vibe">
+        <h2 className="guide-section__title">バイブコーディングとは</h2>
+        <p className="guide-section__lead">
+          {richInlineLine(VIBE_CODING_PAGE_LEAD, mkKey)}
+        </p>
+      </section>
+
+      <section id="vibe-tool-table" className="guide-section guide-section--vibe">
+        <h2 className="guide-section__title">IDE・AI・音声入力の組み合わせ表</h2>
+        <p className="guide-section__lead">{toolTable.lead}</p>
+        {toolTable.rows.length > 0 ? (
+          <div className="vibe-tool-table-wrap">
+            <table className="vibe-tool-table">
+              <thead>
+                <tr>
+                  <th scope="col">{colA}</th>
+                  <th scope="col">{colB}</th>
+                  <th scope="col">{colC}</th>
+                  <th scope="col">{colD}</th>
+                  <th scope="col">{colE}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {toolTable.rows.map((r) => (
+                  <tr key={r.pattern}>
+                    <th scope="row">{r.pattern}</th>
+                    <td>{r.ide}</td>
+                    <td>{r.ai}</td>
+                    <td>{r.voice}</td>
+                    <td>{r.note}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : null}
+      </section>
+
+      <section id="vibe-stacks" className="guide-section guide-section--vibe">
+        <h2 className="guide-section__title">環境の組み合わせ例</h2>
         <p className="guide-section__lead">
           非エンジニアの方は「上から順に足していく」と読み下せます。全部そろえる必要はありません。
         </p>
-        <div className="vibe-stack-list">
-          {stacks.map((s) => (
-            <article key={s.id} className="vibe-stack-card">
-              <header className="vibe-stack-card__head">
-                <span className="vibe-stack-card__emoji" aria-hidden>
-                  {s.emoji}
-                </span>
-                <div>
-                  <h3 className="vibe-stack-card__title">{s.title}</h3>
-                  <p className="vibe-stack-card__for">{s.forWho}</p>
-                </div>
-              </header>
-              <p className="vibe-stack-card__summary">{s.summary}</p>
-              <ul className="vibe-stack-card__combo">
-                {s.combo.map((row) => (
-                  <li key={row.role}>
-                    <strong className="vibe-stack-card__role">{row.role}</strong>
-                    <span className="vibe-stack-card__picks">{row.picks}</span>
-                    <span className="vibe-stack-card__tip">{row.tip}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
+        {stacks.length > 0 ? (
+          <div className="vibe-stack-list">
+            {stacks.map((s) => (
+              <article key={s.id} className="vibe-stack-card">
+                <header className="vibe-stack-card__head">
+                  <span className="vibe-stack-card__emoji" aria-hidden>
+                    {s.emoji}
+                  </span>
+                  <div>
+                    <h3 className="vibe-stack-card__title">{s.title}</h3>
+                    <p className="vibe-stack-card__for">{s.forWho}</p>
+                  </div>
+                </header>
+                <p className="vibe-stack-card__summary">{s.summary}</p>
+                <ul className="vibe-stack-card__combo">
+                  {s.combo.map((row) => (
+                    <li key={row.role}>
+                      <strong className="vibe-stack-card__role">{row.role}</strong>
+                      <span className="vibe-stack-card__picks">{row.picks}</span>
+                      <span className="vibe-stack-card__tip">{row.tip}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        ) : null}
       </section>
 
-      <section
-        id="glossary-guide"
-        className="guide-section guide-section--glossary"
-      >
+      <section id="vibe-rules" className="guide-section guide-section--vibe">
+        <h2 className="guide-section__title">基本ルール</h2>
+        <p className="guide-section__lead">
+          勢いで試すときの最低ラインです。チームや案件によっては追加の規約があります。
+        </p>
+        {basicRules.length > 0 ? (
+          <dl className="glossary-dl">
+            {basicRules.map((r) => (
+              <Fragment key={r.title}>
+                <dt className="glossary-dl__term">{r.title}</dt>
+                <dd className="glossary-dl__body">
+                  <p className="glossary-dl__mean">{r.mean}</p>
+                  {r.mem ? <p className="glossary-dl__mem">{r.mem}</p> : null}
+                </dd>
+              </Fragment>
+            ))}
+          </dl>
+        ) : null}
+      </section>
+
+      <section id="vibe-pitfalls" className="guide-section guide-section--vibe">
+        <h2 className="guide-section__title">{pitfalls.title}</h2>
+        <p className="guide-section__lead">{pitfalls.lead}</p>
+        {pitfalls.terms.length > 0 ? (
+          <dl className="glossary-dl">
+            {pitfalls.terms.map((t) => (
+              <Fragment key={t.word}>
+                <dt className="glossary-dl__term">{t.word}</dt>
+                <dd className="glossary-dl__body">
+                  <p className="glossary-dl__mean">{t.mean}</p>
+                  {t.mem ? <p className="glossary-dl__mem">{t.mem}</p> : null}
+                </dd>
+              </Fragment>
+            ))}
+          </dl>
+        ) : null}
+      </section>
+    </div>
+  );
+}
+
+function GlossaryGuidePanel({ glossaryGenres }) {
+  return (
+    <div
+      className="companies-guide-rail companies-guide-rail--full-tab"
+      aria-label="実用用語集"
+    >
+      <section id="glossary-guide" className="guide-section guide-section--glossary">
         <h2 className="guide-section__title">実用用語集（ジャンル別）</h2>
         <p className="guide-section__lead">
           専門用語を「業務で使える一言」に圧縮しました。記事を読むときの辞書代わりにどうぞ。
@@ -578,7 +686,7 @@ function VibeCodingGuideRail({ stacks, glossaryGenres, standalone = false }) {
           </section>
         ))}
       </section>
-    </aside>
+    </div>
   );
 }
 
@@ -1373,14 +1481,14 @@ function StorageLocalNotice() {
 /** 初回マウント時の URL（?a= / ?view= / ?tag=）から一覧・詳細状態を復元 */
 function readInitialRouteState() {
   if (typeof window === "undefined") {
-    return { selected: null, siteSection: "articles", query: "" };
+    return { selected: null, siteSection: "articles", query: "", guideTab: "vibe" };
   }
   const u = new URL(window.location.href);
   const aid = u.searchParams.get("a");
   if (aid) {
     const found = ARTICLES.find((x) => x.id === aid);
     if (found) {
-      return { selected: found, siteSection: "articles", query: "" };
+      return { selected: found, siteSection: "articles", query: "", guideTab: "vibe" };
     }
   }
   const view = u.searchParams.get("view");
@@ -1390,12 +1498,15 @@ function readInitialRouteState() {
       : view === "guide"
         ? "guide"
         : "articles";
+  const tab = u.searchParams.get("tab");
+  const guideTab =
+    siteSection === "guide" && tab === "glossary" ? "glossary" : "vibe";
   const tag = u.searchParams.get("tag");
   const query =
     siteSection === "articles" && tag && tag.trim()
       ? tag.trim()
       : "";
-  return { selected: null, siteSection, query };
+  return { selected: null, siteSection, query, guideTab };
 }
 
 export default function App() {
@@ -1405,6 +1516,7 @@ export default function App() {
   const [sort, setSort] = useState("date-desc");
   const [selected, setSelected] = useState(initialRoute.selected);
   const [siteSection, setSiteSection] = useState(initialRoute.siteSection);
+  const [guideTab, setGuideTab] = useState(initialRoute.guideTab);
   const [theme, setTheme] = useState(() => localStorage.getItem(STORAGE_THEME) || "light");
   const [bookmarkIds, setBookmarkIds] = useState(loadBookmarks);
   const [showFab, setShowFab] = useState(false);
@@ -1432,8 +1544,9 @@ export default function App() {
       articleId: selected?.id ?? null,
       siteSection: selected ? "articles" : siteSection,
       tagQuery: selected ? "" : query,
+      guideTab,
     });
-  }, [selected, siteSection, query]);
+  }, [selected, siteSection, query, guideTab]);
 
   useEffect(() => {
     syncDocumentSeo(selected ?? null);
@@ -1556,6 +1669,12 @@ export default function App() {
   const switchSection = useCallback((next) => {
     setSiteSection(next);
     setSelected(null);
+    if (next === "guide") setGuideTab("vibe");
+    window.scrollTo(0, 0);
+  }, []);
+
+  const selectGuideTab = useCallback((next) => {
+    setGuideTab(next);
     window.scrollTo(0, 0);
   }, []);
 
@@ -1598,7 +1717,7 @@ export default function App() {
                 siteSection === "companies"
                   ? "企業名・国・本社・製品・証券コードで検索…"
                   : siteSection === "guide"
-                    ? "環境例・用語の説明を検索…"
+                    ? "ツール・ルール・用語を検索…"
                     : "記事を検索…（タイトル・概要・タグ）"
               }
               searchAriaLabel={
@@ -1696,21 +1815,64 @@ export default function App() {
               ) : (
                 <>
                   <div className="section-feed guide-tab-intro">
-                    <h2 className="section-feed__title">バイブコーディング＆用語集</h2>
+                    <h2 className="section-feed__title">ガイド</h2>
                     <p className="section-feed__meta">
-                      非エンジニア向けに、AI
-                      と一緒に試すときの「道具の組み合わせ例」と、記事・会話で出てくる語の短文解説をまとめています。
+                      バイブコーディングの進め方・ツールの組み合わせと、記事で出る用語を分けて載せています。
+                      上部の検索は両方のタブを対象にします。
                     </p>
+                    <div
+                      className="guide-subtabs"
+                      role="tablist"
+                      aria-label="ガイドの表示切替"
+                    >
+                      <button
+                        type="button"
+                        role="tab"
+                        aria-selected={guideTab === "vibe"}
+                        className={`guide-subtab${guideTab === "vibe" ? " is-active" : ""}`}
+                        onClick={() => selectGuideTab("vibe")}
+                      >
+                        バイブコーディング
+                      </button>
+                      <button
+                        type="button"
+                        role="tab"
+                        aria-selected={guideTab === "glossary"}
+                        className={`guide-subtab${guideTab === "glossary" ? " is-active" : ""}`}
+                        onClick={() => selectGuideTab("glossary")}
+                      >
+                        用語集
+                      </button>
+                    </div>
                   </div>
                   {guideFiltered.matchCount === 0 ? (
                     <div className="empty-state">
-                      該当する環境例・用語がありません
+                      該当する説明・用語がありません
+                    </div>
+                  ) : guideTab === "vibe" ? (
+                    guideFiltered.stacks.length === 0 &&
+                    guideFiltered.toolTable.rows.length === 0 &&
+                    guideFiltered.basicRules.length === 0 &&
+                    guideFiltered.pitfalls.terms.length === 0 ? (
+                      <div className="empty-state">
+                        このタブに該当がありません。用語集タブを開くか、検索語を変えてください。
+                      </div>
+                    ) : (
+                      <VibeCodingGuidePanel
+                        stacks={guideFiltered.stacks}
+                        toolTable={guideFiltered.toolTable}
+                        basicRules={guideFiltered.basicRules}
+                        pitfalls={guideFiltered.pitfalls}
+                      />
+                    )
+                  ) : guideFiltered.glossary.length === 0 ||
+                    guideFiltered.glossary.every((g) => g.terms.length === 0) ? (
+                    <div className="empty-state">
+                      このタブに該当がありません。バイブコーディングタブを開くか、検索語を変えてください。
                     </div>
                   ) : (
-                    <VibeCodingGuideRail
-                      stacks={guideFiltered.stacks}
+                    <GlossaryGuidePanel
                       glossaryGenres={guideFiltered.glossary}
-                      standalone
                     />
                   )}
                 </>
@@ -1736,7 +1898,7 @@ export default function App() {
             ) : siteSection === "companies" ? (
               <CompaniesSidebar companies={filteredCompanies} />
             ) : (
-              <GuideSidebar />
+              <GuideSidebar guideTab={guideTab} />
             )}
           </div>
         )}

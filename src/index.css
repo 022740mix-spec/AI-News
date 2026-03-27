@@ -681,6 +681,77 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.guide-subtabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.guide-subtab {
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--card-solid);
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.guide-subtab:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.guide-subtab.is-active {
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 14%, var(--card-solid));
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+}
+
+.vibe-tool-table-wrap {
+  overflow-x: auto;
+  margin: 0;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--card-solid);
+}
+
+.vibe-tool-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.vibe-tool-table th,
+.vibe-tool-table td {
+  padding: 0.55rem 0.65rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.vibe-tool-table thead th {
+  font-weight: 800;
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 8%, var(--card-solid));
+}
+
+.vibe-tool-table tbody th[scope="row"] {
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.vibe-tool-table tbody tr:last-child th,
+.vibe-tool-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
 .companies-stack {
   display: flex;
   flex-direction: column;

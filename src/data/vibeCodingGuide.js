@@ -6,6 +6,140 @@
 export const VIBE_STACK_NOTE =
   "「バイブコーディング」は厳密な定義より、対話しながら雰囲気で試す開発スタイルのイメージです。次の表は出発点であり、チームの規約・セキュリティは別途確認してください。";
 
+export const VIBE_CODING_PAGE_LEAD =
+  "このページでは **道具の組み合わせ** と **進め方のルール**・**ハマりどころ**をまとめています。記事や会話で出る用語の意味は「用語集」タブからどうぞ。";
+
+/** @typedef {{ pattern: string, ide: string, ai: string, voice: string, note: string }} VibeToolComboRow */
+
+/** @type {{ lead: string, columns: [string, string, string, string, string], rows: VibeToolComboRow[] }} */
+export const VIBE_TOOL_COMBO_TABLE = {
+  lead: "IDE・AI エージェント・音声入力の組み合わせ例です。料金・モデル名・連携方式は各公式の最新情報を確認してください。",
+  columns: ["パターン", "IDE・エディタ", "AI（対話・エージェント）", "音声・入力補助", "ひとこと"],
+  rows: [
+    {
+      pattern: "Cursor 主力",
+      ide: "Cursor",
+      ai: "内蔵モデル（Claude / GPT 等の切替）・Composer・ターミナル連携",
+      voice: "アクアボイス 等で仕様・コメント・指示を口述",
+      note: "フォルダ単位のスコープとプロジェクトルール（.cursor/rules 等）を揃えると、AI のブレが減りやすいです。",
+    },
+    {
+      pattern: "VS Code ＋ Copilot",
+      ide: "Visual Studio Code",
+      ai: "GitHub Copilot / Copilot Chat（別ウィンドウで Claude・ChatGPT と併用も可）",
+      voice: "アクアボイス で長文プロンプトやコード以外を音声入力",
+      note: "普段使いのエディタを変えずに AI を足す王道。拡張と設定ファイルが増えがちなので README を残すと安心です。",
+    },
+    {
+      pattern: "OpenAI Codex 寄り",
+      ide: "VS Code / Cursor / ターミナル",
+      ai: "Codex CLI・IDE 拡張・ChatGPT / エージェントモード",
+      voice: "（任意）アクアボイス",
+      note: "サンドボックスや承認フローが絡むことが多いです。**ネットワーク権限・ファイル書き込み範囲**を理解してから「任せ切り」にします。",
+    },
+    {
+      pattern: "Google Antigravity",
+      ide: "Google Antigravity（エージェント IDE）",
+      ai: "Gemini を軸にしたマルチステップ実行・ツール連携",
+      voice: "（任意）アクアボイス",
+      note: "エージェントが自律的に動くほど、**だれが・いつ・何を承認するか**を決めておかないと本番データ事故に繋がります。",
+    },
+    {
+      pattern: "チャットのみ（コード前）",
+      ide: "ブラウザ",
+      ai: "Claude（Web）/ ChatGPT / Gemini など",
+      voice: "ブラウザや公式アプリの音声入力",
+      note: "要件・画面の言葉・NG 例を固める段階。いきなりリポジトリを開く前に「成功条件」を一文にすると後工程が楽です。",
+    },
+  ],
+};
+
+/** @typedef {{ title: string, mean: string, mem?: string }} VibeBasicRule */
+
+/** @type {VibeBasicRule[]} */
+export const VIBE_BASIC_RULES = [
+  {
+    title: "作業スコープを毎回決める",
+    mean: "開いているフォルダ・編集してよいファイル・触ってはいけない設定を、会話の冒頭で宣言します。",
+    mem: "「この repo の src だけ」と決めるだけで誤削除や別プロジェクト混入が減ります。",
+  },
+  {
+    title: "秘密と本番をチャットに載せない",
+    mean: "API キー、パスワード、顧客データ、本番 URL のままのログは AI・スクショ・貼り付けに混ぜません。",
+    mem: "環境変数・秘密管理ツールを使い、**仮の例**で質問します。",
+  },
+  {
+    title: "コミット前に diff を一言で要約する",
+    mean: "AI が直した箇所が「何のための変更か」自分の言葉で説明できなければ、まだコミットしない、と決めると安全です。",
+  },
+  {
+    title: "動作確認の最小ルートを決めてから速く回す",
+    mean: "画面を開く手順・押すボタン・期待する表示を、メモしてから試行錯誤すると迷子になりにくいです。",
+  },
+  {
+    title: "依存追加は理由つきで",
+    mean: "パッケージを足すたびに「何のためか」を README かコミットメッセージに残すと、あとからメンテする人が助かります。",
+  },
+  {
+    title: "疑わしい提案は一度「なぜ？」と聞く",
+    mean: "型を無効化する回避・権限の広い設定・`eval` 系などは、採用前に理由とリスクを AI に言語化させます。",
+  },
+];
+
+/** @typedef {{ id: string, title: string, lead: string, terms: { word: string, mean: string, mem?: string }[] }} GlossaryGenre */
+
+/** バイブ向け「落とし穴」— 用語集タブとは別（ガイドのバイブページに表示） */
+/** @type {GlossaryGenre} */
+export const VIBE_GUIDE_PITFALLS = {
+  id: "vibe-pitfalls",
+  title: "バイブコーディングでハマりやすいこと",
+  lead: "AI がすぐ「動くコード」を出すほど、あとから効いてくる負債があります。勢いで黙認しがちな例です。",
+  terms: [
+    {
+      word: "`any` で型をごまかす（TypeScript）",
+      mean: "コンパイルエラーを消すために値を `any` にすると、だれが何を持っているか分からなくなり、静的解析の恩恵がほぼ消えます。積もると原因の分からない不具合の温床です。",
+      mem: "一時しのぎなら `unknown` や具体型、型ガードに寄せる・AI に「any を使わず直して」と依頼し直す、が定石です。",
+    },
+    {
+      word: "`@ts-ignore` / `eslint-disable` の貼りっぱなし",
+      mean: "警告をコメント一行で黙らせる手法です。「なぜ安全と言えるか」を書かず使うと、本当のバグが隠れ続けます。",
+    },
+    {
+      word: "秘密情報のハードコード",
+      mean: "API キー・パスワード・トークンをソースに直書きしたまま共有リポジトリへ上げるパターン。公開・フォークされた時点で漏洩扱いになります。",
+      mem: "既に載せてしまったらキーはローテーション（無効化→再発行）が前提です。",
+    },
+    {
+      word: "空の `catch` でエラーを握りつぶす",
+      mean: "例外を何もせず飲み込むと、本番で静かに壊れているのに誰も気づけません。ログ・再スロー・ユーザー向けメッセージのいずれかは残すのが最低ラインです。",
+    },
+    {
+      word: "説明を読まないコピペ",
+      mean: "AI や記事の断片を、挙動とリスクを確認せず連ねると、古い書き方・不要な依存・ライセンス違反・セキュリティ穴が混ざります。",
+    },
+    {
+      word: "`eval` や安易な `dangerouslySetInnerHTML`",
+      mean: "文字列をコードや HTML として実行・挿入する仕組み。外部やユーザー由来の文字が入ると乗っ取り・ XSS の典型経路です。「とりあえず表示」で選ぶと危険度が跳ねます。",
+    },
+    {
+      word: "SQL を文字列で素連結",
+      mean: "ユーザー入力をクエリ文に直接くっつける書き方は、SQL インジェクションの定番の入り口です。プレースホルダや ORM のバインドを使います。",
+    },
+    {
+      word: "フロントに強い権限のキーを埋め込む",
+      mean: "ブラウザ向けに配布されるコードは原則として読めます。管理者用キーや広すぎるスコープのトークンをクライアントへ置くと、悪用されやすいです。",
+    },
+    {
+      word: "デバッグ出力の放置",
+      mean: "`console.log` だらけのまま運用に載せると、ログが汚れるだけでなく想定外の個人情報が紛れ込むこともあります。必要な箇所だけに整理するか、ロガーでレベル分けします。",
+    },
+    {
+      word: "権限のないまま本番データに直結",
+      mean: "ローカルから本番 DB や管理 API に楽になるよう繋いだまま固定すると、誤操作・漏洩・レート制限でサービス停止まで起こり得ます。環境分離と RBAC を口約束で終わらせないことが重要です。",
+    },
+  ],
+};
+
 /** @typedef {{ id: string, title: string, emoji: string, forWho: string, summary: string, combo: { role: string, picks: string, tip: string }[] }} VibeStack */
 
 /** @type {VibeStack[]} */
@@ -112,8 +246,6 @@ export const VIBE_IDEAL_STACKS = [
   },
 ];
 
-/** @typedef {{ id: string, title: string, lead: string, terms: { word: string, mean: string, mem?: string }[] }} GlossaryGenre */
-
 /** @type {GlossaryGenre[]} */
 export const GLOSSARY_BY_GENRE = [
   {
@@ -159,56 +291,7 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "バイブコーディング",
         mean: "厳密な設計より、対話のリズムで試しながらコードを育てるやり方の俗称。勢いと検証のバランスがポイントです。",
-        mem: "「動いた」で止めると技術的負債が積み上がります。用語集の「ハマりやすいこと」も併せて読むと安心です。",
-      },
-    ],
-  },
-  {
-    id: "vibe-pitfalls",
-    title: "バイブコーディングでハマりやすいこと",
-    lead: "AI がすぐ「動くコード」を出すほど、あとから効いてくる負債があります。勢いで黙認しがちな例です。",
-    terms: [
-      {
-        word: "`any` で型をごまかす（TypeScript）",
-        mean: "コンパイルエラーを消すために値を `any` にすると、だれが何を持っているか分からなくなり、静的解析の恩恵がほぼ消えます。積もると原因の分からない不具合の温床です。",
-        mem: "一時しのぎなら `unknown` や具体型、型ガードに寄せる・AI に「any を使わず直して」と依頼し直す、が定石です。",
-      },
-      {
-        word: "`@ts-ignore` / `eslint-disable` の貼りっぱなし",
-        mean: "警告をコメント一行で黙らせる手法です。「なぜ安全と言えるか」を書かず使うと、本当のバグが隠れ続けます。",
-      },
-      {
-        word: "秘密情報のハードコード",
-        mean: "API キー・パスワード・トークンをソースに直書きしたまま共有リポジトリへ上げるパターン。公開・フォークされた時点で漏洩扱いになります。",
-        mem: "既に載せてしまったらキーはローテーション（無効化→再発行）が前提です。",
-      },
-      {
-        word: "空の `catch` でエラーを握りつぶす",
-        mean: "例外を何もせず飲み込むと、本番で静かに壊れているのに誰も気づけません。ログ・再スロー・ユーザー向けメッセージのいずれかは残すのが最低ラインです。",
-      },
-      {
-        word: "説明を読まないコピペ",
-        mean: "AI や記事の断片を、挙動とリスクを確認せず連ねると、古い書き方・不要な依存・ライセンス違反・セキュリティ穴が混ざります。",
-      },
-      {
-        word: "`eval` や安易な `dangerouslySetInnerHTML`",
-        mean: "文字列をコードや HTML として実行・挿入する仕組み。外部やユーザー由来の文字が入ると乗っ取り・ XSS の典型経路です。「とりあえず表示」で選ぶと危険度が跳ねます。",
-      },
-      {
-        word: "SQL を文字列で素連結",
-        mean: "ユーザー入力をクエリ文に直接くっつける書き方は、SQL インジェクションの定番の入り口です。プレースホルダや ORM のバインドを使います。",
-      },
-      {
-        word: "フロントに強い権限のキーを埋め込む",
-        mean: "ブラウザ向けに配布されるコードは原則として読めます。管理者用キーや広すぎるスコープのトークンをクライアントへ置くと、悪用されやすいです。",
-      },
-      {
-        word: "デバッグ出力の放置",
-        mean: "`console.log` だらけのまま運用に載せると、ログが汚れるだけでなく想定外の個人情報が紛れ込むこともあります。必要な箇所だけに整理するか、ロガーでレベル分けします。",
-      },
-      {
-        word: "権限のないまま本番データに直結",
-        mean: "ローカルから本番 DB や管理 API に楽になるよう繋いだまま固定すると、誤操作・漏洩・レート制限でサービス停止まで起こり得ます。環境分離と RBAC を口約束で終わらせないことが重要です。",
+        mem: "「動いた」で止めると技術的負債が積み上がります。**ガイド → バイブコーディング** の「ハマりやすいこと」も併せて読むと安心です。",
       },
     ],
   },
@@ -651,15 +734,25 @@ export const GLOSSARY_BY_GENRE = [
   },
 ];
 
-/** 検索ヒットカウント用：環境カード1件＋用語1件をそれぞれ1単位とする */
+/** 検索ヒット：スタック1件＋ツール表1行＋基本ルール1件＋落とし穴1件＋用語1件を各1単位 */
 export const GUIDE_ITEM_TOTAL =
   VIBE_IDEAL_STACKS.length +
+  VIBE_TOOL_COMBO_TABLE.rows.length +
+  VIBE_BASIC_RULES.length +
+  VIBE_GUIDE_PITFALLS.terms.length +
   GLOSSARY_BY_GENRE.reduce((n, g) => n + g.terms.length, 0);
+
+/** @param {VibeToolComboRow} row */
+function toolRowMatches(row, q) {
+  return [row.pattern, row.ide, row.ai, row.voice, row.note]
+    .join("\n")
+    .toLowerCase()
+    .includes(q);
+}
 
 /**
  * ガイドタブ内のざっくり検索（タイトル・説明・用語の plane テキストに単純部分一致）。
  * @param {string} searchQuery
- * @returns {{ stacks: VibeStack[], glossary: GlossaryGenre[], matchCount: number, total: number }}
  */
 export function filterVibeCodingGuide(searchQuery) {
   const total = GUIDE_ITEM_TOTAL;
@@ -667,6 +760,9 @@ export function filterVibeCodingGuide(searchQuery) {
   if (!q) {
     return {
       stacks: VIBE_IDEAL_STACKS,
+      toolTable: VIBE_TOOL_COMBO_TABLE,
+      basicRules: VIBE_BASIC_RULES,
+      pitfalls: VIBE_GUIDE_PITFALLS,
       glossary: GLOSSARY_BY_GENRE,
       matchCount: total,
       total,
@@ -684,6 +780,35 @@ export function filterVibeCodingGuide(searchQuery) {
       .toLowerCase();
     return blob.includes(q);
   });
+
+  const toolLeadHit = VIBE_TOOL_COMBO_TABLE.lead.toLowerCase().includes(q);
+  const colHit = VIBE_TOOL_COMBO_TABLE.columns.some((c) =>
+    c.toLowerCase().includes(q),
+  );
+  const toolRows =
+    toolLeadHit || colHit
+      ? [...VIBE_TOOL_COMBO_TABLE.rows]
+      : VIBE_TOOL_COMBO_TABLE.rows.filter((r) => toolRowMatches(r, q));
+
+  const basicRules = VIBE_BASIC_RULES.filter((r) => {
+    const blob = [r.title, r.mean, r.mem ?? ""].join("\n").toLowerCase();
+    return blob.includes(q);
+  });
+
+  /** @type {GlossaryGenre} */
+  let pitfalls;
+  const pitGenreBlob = [VIBE_GUIDE_PITFALLS.title, VIBE_GUIDE_PITFALLS.lead]
+    .join("\n")
+    .toLowerCase();
+  if (pitGenreBlob.includes(q)) {
+    pitfalls = VIBE_GUIDE_PITFALLS;
+  } else {
+    const terms = VIBE_GUIDE_PITFALLS.terms.filter((t) => {
+      const blob = [t.word, t.mean, t.mem ?? ""].join("\n").toLowerCase();
+      return blob.includes(q);
+    });
+    pitfalls = { ...VIBE_GUIDE_PITFALLS, terms };
+  }
 
   /** @type {GlossaryGenre[]} */
   const glossary = [];
@@ -703,7 +828,19 @@ export function filterVibeCodingGuide(searchQuery) {
   }
 
   const matchCount =
-    stacks.length + glossary.reduce((n, g) => n + g.terms.length, 0);
+    stacks.length +
+    toolRows.length +
+    basicRules.length +
+    pitfalls.terms.length +
+    glossary.reduce((n, g) => n + g.terms.length, 0);
 
-  return { stacks, glossary, matchCount, total };
+  return {
+    stacks,
+    toolTable: { ...VIBE_TOOL_COMBO_TABLE, rows: toolRows },
+    basicRules,
+    pitfalls,
+    glossary,
+    matchCount,
+    total,
+  };
 }
