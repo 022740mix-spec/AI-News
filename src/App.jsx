@@ -22,6 +22,7 @@ import {
   filterVibeCodingGuide,
   GLOSSARY_BY_GENRE,
   VIBE_CODING_PAGE_LEAD,
+  VIBE_SITE_READING_GUIDE,
   VIBE_STACK_NOTE,
 } from "./data/vibeCodingGuide.js";
 import { BUNDLED_MEDIA_URL } from "./mediaUrls.js";
@@ -178,12 +179,12 @@ const GUIDE_SEO = {
   vibe: {
     titleSuffix: "ガイド：バイブコーディング",
     description:
-      "IDE・Claude Code・音声入力の組み合わせ、CLI 起動オプション、基本ルールとハマりどころ。非エンジニア向けのバイブ開発ガイド。",
+      "画像・動画・音楽・音声・IDE・CLI の早見表、IDE・Claude Code・音声入力の組み合わせ、記事とガイドの読み分け、基本ルールとハマりどころ。",
   },
   glossary: {
     titleSuffix: "ガイド：用語集",
     description:
-      "AI・Git・ターミナル・データレイクなど、記事で出る用語を短文で解説。バイブコーディング・開発ニュースの辞書代わり。",
+      "AI・RAG のパターン・Git・ターミナル・データレイクなど、記事で出る用語を短文で解説。バイブコーディング・開発ニュースの辞書代わり。",
   },
 };
 
@@ -518,6 +519,12 @@ function GuideSidebar({ guideTab }) {
             <a href="#vibe-intro" className="sidebar-anchor">
               バイブコーディングとは
             </a>
+            <a href="#vibe-reading-map" className="sidebar-anchor">
+              記事・ガイド・特集
+            </a>
+            <a href="#vibe-media-taxonomy" className="sidebar-anchor">
+              メディア別ツール早見
+            </a>
             <a href="#vibe-tool-table" className="sidebar-anchor">
               ツールの組み合わせ表
             </a>
@@ -573,7 +580,15 @@ function CompaniesSidebar({ companies }) {
   );
 }
 
-function VibeCodingGuidePanel({ stacks, toolTable, basicRules, claudeCode, pitfalls }) {
+function VibeCodingGuidePanel({
+  showReadingGuide,
+  mediaTaxonomy,
+  stacks,
+  toolTable,
+  basicRules,
+  claudeCode,
+  pitfalls,
+}) {
   let k = 0;
   const mkKey = () => `vc-${k++}`;
   const [colA, colB, colC, colD, colE] = toolTable.columns;
@@ -590,6 +605,64 @@ function VibeCodingGuidePanel({ stacks, toolTable, basicRules, claudeCode, pitfa
           {richInlineLine(VIBE_CODING_PAGE_LEAD, mkKey)}
         </p>
       </section>
+
+      {showReadingGuide ? (
+        <section id="vibe-reading-map" className="guide-section guide-section--vibe">
+          <h2 className="guide-section__title">{VIBE_SITE_READING_GUIDE.title}</h2>
+          <p className="guide-section__lead">
+            {richInlineLine(VIBE_SITE_READING_GUIDE.lead, mkKey)}
+          </p>
+        </section>
+      ) : null}
+
+      {mediaTaxonomy.length > 0 ? (
+        <section id="vibe-media-taxonomy" className="guide-section guide-section--vibe">
+          <h2 className="guide-section__title">メディア別・主要ツール早見</h2>
+          <p className="guide-section__lead">
+            画像・動画・音楽・音声・IDE・CLI
+            の代表例です。詳細なレビューは記事・特集、用語の定義は用語集タブも参照してください。
+          </p>
+          <div className="vibe-media-taxonomy-stack">
+            {mediaTaxonomy.map((block) => {
+              const [c0, c1, c2, c3] = block.columns;
+              return (
+                <div key={block.id} id={`${block.id}`} className="vibe-media-block">
+                  <h3 className="vibe-media-block__title">{block.title}</h3>
+                  <GuideLinkifiedP
+                    text={block.lead}
+                    className="vibe-media-block__lead"
+                  />
+                  <div className="vibe-tool-table-wrap">
+                    <table className="vibe-tool-table vibe-tool-table--dense">
+                      <caption className="visually-hidden">
+                        {block.title}のツール早見表
+                      </caption>
+                      <thead>
+                        <tr>
+                          <th scope="col">{c0}</th>
+                          <th scope="col">{c1}</th>
+                          <th scope="col">{c2}</th>
+                          <th scope="col">{c3}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {block.rows.map((r) => (
+                          <tr key={`${block.id}-${r.tool}`}>
+                            <th scope="row">{r.tool}</th>
+                            <td>{r.company}</td>
+                            <td>{r.traits}</td>
+                            <td>{r.since}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      ) : null}
 
       <section id="vibe-tool-table" className="guide-section guide-section--vibe">
         <h2 className="guide-section__title">IDE・AI・音声入力の組み合わせ表</h2>
@@ -1945,16 +2018,21 @@ export default function App() {
                       }
                     >
                       {guideTab === "vibe" ? (
-                        guideFiltered.stacks.length === 0 &&
-                        guideFiltered.toolTable.rows.length === 0 &&
-                        guideFiltered.basicRules.length === 0 &&
-                        guideFiltered.claudeCode.terms.length === 0 &&
-                        guideFiltered.pitfalls.terms.length === 0 ? (
+                    !guideFiltered.showReadingGuide &&
+                    (guideFiltered.mediaTaxonomy.length === 0 ||
+                      guideFiltered.mediaTaxonomy.every((s) => s.rows.length === 0)) &&
+                    guideFiltered.stacks.length === 0 &&
+                    guideFiltered.toolTable.rows.length === 0 &&
+                    guideFiltered.basicRules.length === 0 &&
+                    guideFiltered.claudeCode.terms.length === 0 &&
+                    guideFiltered.pitfalls.terms.length === 0 ? (
                           <div className="empty-state">
                             このタブに該当がありません。用語集タブを開くか、検索語を変えてください。
                           </div>
                         ) : (
                           <VibeCodingGuidePanel
+                            showReadingGuide={guideFiltered.showReadingGuide}
+                            mediaTaxonomy={guideFiltered.mediaTaxonomy}
                             stacks={guideFiltered.stacks}
                             toolTable={guideFiltered.toolTable}
                             basicRules={guideFiltered.basicRules}

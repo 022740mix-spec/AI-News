@@ -154,6 +154,257 @@ export const VIBE_BASIC_RULES = [
   },
 ];
 
+/** 記事フィードとガイドの役割の違い（長く使う整理はガイド側） */
+export const VIBE_SITE_READING_GUIDE = {
+  title: "記事・ガイド・特集の読み分け",
+  lead: "**記事**はモデルやプロダクトの最新ニュース・アップデート向けです。**ガイド**（このページと「用語集」タブ）は、数ヶ月後も参照しやすい **早見表・ルール・用語** を置く場所として整備しています。**特集**（サイト内の「特集」カテゴリ等）は比較や深掘りに使う想定で、最新の一行は記事とあわせて確認すると安全です。",
+};
+
+/** @typedef {{ tool: string, company: string, traits: string, since: string }} MediaTaxonomyRow */
+
+/** @typedef {{ id: string, title: string, lead: string, columns: [string, string, string, string], rows: MediaTaxonomyRow[] }} MediaTaxonomySection */
+
+/** メディア／ツール分野の早見（代表例。正式名称・提供条件は各公式を優先） */
+/** @type {MediaTaxonomySection[]} */
+export const VIBE_MEDIA_TAXONOMY = [
+  {
+    id: "media-image",
+    title: "画像（生成・編集）",
+    lead: "広告・サムネ・UI モックなど。**著作権・商用利用・学習データ方針**は各サービスで必ず確認してください。",
+    columns: ["ツール／サービス例", "主な提供元", "特徴（ざっくり）", "話題化の目安"],
+    rows: [
+      {
+        tool: "Midjourney",
+        company: "Midjourney, Inc.",
+        traits: "高品質なスタイル画像。Discord 起点の文化から Web 拡大",
+        since: "2022頃〜",
+      },
+      {
+        tool: "Adobe Firefly",
+        company: "Adobe",
+        traits: "Creative Cloud 連携・企業向け寄りの統合提案",
+        since: "2023頃〜",
+      },
+      {
+        tool: "DALL·E 系",
+        company: "OpenAI",
+        traits: "ChatGPT 経由の画像生成・編集とセットで語られがち",
+        since: "2022頃〜",
+      },
+      {
+        tool: "Stable Diffusion エコシステム",
+        company: "Stability AI ほか OSS／各社ホスティング",
+        traits: "オープンウェイト系。ローカル・自社 GPU・細かいチューニング向き",
+        since: "2022頃〜",
+      },
+      {
+        tool: "Ideogram・Flux など",
+        company: "Ideogram・Black Forest Labs 等",
+        traits: "文字入れ・リアル系など強みの差別化モデル群",
+        since: "2023〜2024頃〜",
+      },
+      {
+        tool: "Gemini・「Nano Banana」画像",
+        company: "Google",
+        traits: "検索・Workspace 連携やアプリ内の画像生成（俗称で話題になることがある）",
+        since: "2024〜2025頃〜",
+      },
+    ],
+  },
+  {
+    id: "media-video",
+    title: "動画（生成・編集）",
+    lead: "短尺 CM 風クリップから編集補助まで。**長さ・権利・顔そっくり規制**は国・サービスで差があります。",
+    columns: ["ツール／サービス例", "主な提供元", "特徴（ざっくり）", "話題化の目安"],
+    rows: [
+      {
+        tool: "Runway",
+        company: "Runway AI, Inc.",
+        traits: "動画生成・編集の老舗ブランド、製作ワークフロー向け",
+        since: "2022頃〜",
+      },
+      {
+        tool: "Pika",
+        company: "Pika Labs",
+        traits: "短尺生成、SNS 向けデモが話題になりやすい",
+        since: "2023頃〜",
+      },
+      {
+        tool: "Kling（可灵）",
+        company: "快手（Kuaishou）系",
+        traits: "長めの秒数・写実寄りの生成として注目例",
+        since: "2024頃〜",
+      },
+      {
+        tool: "Sora",
+        company: "OpenAI",
+        traits: "高品質長尺寄りの期待、提供形は段階的に拡大",
+        since: "2024頃〜",
+      },
+      {
+        tool: "Veo",
+        company: "Google",
+        traits: "YouTube・Google 製品群との連携文脈",
+        since: "2024頃〜",
+      },
+      {
+        tool: "Luma Dream Machine ほか",
+        company: "Luma AI 等",
+        traits: "3D・動画の横断でプロダクトを拡げる例",
+        since: "2024頃〜",
+      },
+    ],
+  },
+  {
+    id: "media-music",
+    title: "音楽（生成）",
+    lead: "フル曲イメージのプロトタイプ。**サンプリング・著作権**は用途によっては要検討です。",
+    columns: ["ツール／サービス例", "主な提供元", "特徴（ざっくり）", "話題化の目安"],
+    rows: [
+      {
+        tool: "Suno",
+        company: "Suno, Inc.",
+        traits: "歌声つき曲の生成で認知拡大、SNS 拡散しやすい",
+        since: "2023頃〜",
+      },
+      {
+        tool: "Udio",
+        company: "Udio Music, Inc.",
+        traits: "Suno と並び語られる生成音楽サービス",
+        since: "2024頃〜",
+      },
+      {
+        tool: "Stable Audio など",
+        company: "Stability AI",
+        traits: "Stability ブランドの音響・生成系",
+        since: "2023頃〜",
+      },
+    ],
+  },
+  {
+    id: "media-tts",
+    title: "音声合成（TTS）",
+    lead: "ナレーション・電話 IVR・キャラボイス。**声の権利・なりすまし規約**に注意します。",
+    columns: ["ツール／サービス例", "主な提供元", "特徴（ざっくり）", "話題化の目安"],
+    rows: [
+      {
+        tool: "ElevenLabs",
+        company: "ElevenLabs",
+        traits: "多言語・感情寄りの高品質 TTS、API 利用も多い",
+        since: "2022頃〜",
+      },
+      {
+        tool: "OpenAI TTS",
+        company: "OpenAI",
+        traits: "API からの読み上げ、他プロダクトとセット利用",
+        since: "2023頃〜",
+      },
+      {
+        tool: "Azure Speech・Google Cloud TTS",
+        company: "Microsoft・Google",
+        traits: "エンタープライズ向けスラッグ、オンプレ／閉域要件と相性",
+        since: "〜（クラウド長期カテゴリ）",
+      },
+    ],
+  },
+  {
+    id: "media-stt",
+    title: "音声認識（文字起こし）",
+    lead: "会議録・コンテンツ字幕。**個人情報・医療・法務**は閉域オプションや規約確認が定番です。",
+    columns: ["ツール／サービス例", "主な提供元", "特徴（ざっくり）", "話題化の目安"],
+    rows: [
+      {
+        tool: "Whisper 系",
+        company: "OpenAI（モデル）＋各社実装",
+        traits: "オープンウェイトからクラウド API まで実装多様",
+        since: "2022頃〜",
+      },
+      {
+        tool: "各クラウド STT",
+        company: "AWS・Azure・Google 等",
+        traits: "ストリーミング・電話 CX・企業規約とセット",
+        since: "〜（長期カテゴリ）",
+      },
+    ],
+  },
+  {
+    id: "media-editor-ide",
+    title: "エディター・IDE（AI 統合）",
+    lead: "バイブコーディングの「画面」。**拡張の多さ vs 統合の速さ**のトレードオフがあります。",
+    columns: ["ツール／サービス例", "主な提供元", "特徴（ざっくり）", "話題化の目安"],
+    rows: [
+      {
+        tool: "Visual Studio Code",
+        company: "Microsoft",
+        traits: "拡張エコシステム最大級、Copilot・各社 AI 拡張の器",
+        since: "〜（2010 年代〜）",
+      },
+      {
+        tool: "Cursor",
+        company: "Anysphere",
+        traits: "AI ネイティブ IDE としての一体 UI",
+        since: "2023頃〜",
+      },
+      {
+        tool: "Windsurf",
+        company: "Codeium / Exafunction",
+        traits: "エージェント寄りフローとセットで語られることが多い",
+        since: "2024頃〜",
+      },
+      {
+        tool: "Google Antigravity",
+        company: "Google",
+        traits: "Gemini 前提のエージェント IDE として注目",
+        since: "2025頃〜",
+      },
+      {
+        tool: "JetBrains AI / Android Studio",
+        company: "JetBrains・Google",
+        traits: "JVM・モバイル現場との親和性",
+        since: "2023頃〜",
+      },
+    ],
+  },
+  {
+    id: "media-cli-code",
+    title: "CLI・コーディングエージェント",
+    lead: "ターミナルで回す「動く下書き」。**権限モードとログ**がバイブの安全弁になります。",
+    columns: ["ツール／サービス例", "主な提供元", "特徴（ざっくり）", "話題化の目安"],
+    rows: [
+      {
+        tool: "Claude Code",
+        company: "Anthropic",
+        traits: "`claude` CLI・IDE 連携・Permission / Agent teams",
+        since: "2024頃〜",
+      },
+      {
+        tool: "GitHub Copilot CLI",
+        company: "GitHub / Microsoft",
+        traits: "gh 拡張・リポジトリ文脈でのシェル補助",
+        since: "2023頃〜",
+      },
+      {
+        tool: "OpenAI Codex CLI",
+        company: "OpenAI",
+        traits: "エージェント的実行・サンドボックス設計が話題中心",
+        since: "2025頃〜",
+      },
+      {
+        tool: "Gemini CLI",
+        company: "Google",
+        traits: "Google クラウド・Workspace 文脈での CLI 利用例",
+        since: "2025頃〜",
+      },
+      {
+        tool: "aider ほか OSS エージェント",
+        company: "コミュニティ各社",
+        traits: "ローカル Git とセットで小刻みに編集委譲",
+        since: "2023頃〜",
+      },
+    ],
+  },
+];
+
 /** @typedef {{ id: string, title: string, lead: string, terms: { word: string, mean: string, mem?: string }[] }} GlossaryGenre */
 
 /** バイブ向け「落とし穴」— 用語集タブとは別（ガイドのバイブページに表示） */
@@ -344,7 +595,7 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "RAG（ラグ）",
         mean: "質問に答える前に、あなたの資料を検索して読み込む仕組み。社内マニュアル型の質問応答でよく聞きます。",
-        mem: "「検索＋要約」とざっくり覚えて OK です。",
+        mem: "「検索＋要約」とざっくり覚えて OK です。パターン分岐は用語集の **RAG・検索拡張のバリエーション** を参照してください。",
       },
       {
         word: "エージェント",
@@ -360,6 +611,41 @@ export const GLOSSARY_BY_GENRE = [
         word: "バイブコーディング",
         mean: "厳密な設計より、対話のリズムで試しながらコードを育てるやり方の俗称。勢いと検証のバランスがポイントです。",
         mem: "「動いた」で止めると技術的負債が積み上がります。**ガイド → バイブコーディング** の「ハマりやすいこと」も併せて読むと安心です。",
+      },
+    ],
+  },
+  {
+    id: "rag-variants",
+    title: "RAG・検索拡張のバリエーション",
+    lead: "RAG（Retrieval-Augmented Generation）は「質問する前に資料を検索し、見つけた断片を根拠に答える」方式の総称です。**「第◯世代」という呼び方に公式な一本化はなく**、ここでは論文・ブログでよく並べられる **仕組みのレイヤ** で整理します。",
+    terms: [
+      {
+        word: "素朴な RAG（retrieve → read）",
+        mean: "クエリをベクトル化し、ドキュメント断片と距離が近いものを取り出してコンテキストに詰め、LLM に答えさせる基本形。実装は単純だが、**表記ゆれ・同義語**で取り逃がすと精度が落ちます。",
+      },
+      {
+        word: "ハイブリッド検索（ベクトル＋キーワード）",
+        mean: "意味的近さ（密ベクトル）と **BM25 等のキーワード一致**を併用し、採用候補をマージや再スコアします。日本語の固有名詞・型番検索で効きやすいです。",
+      },
+      {
+        word: "リランキング（再順位付け）",
+        mean: "一度ざっくり取った上位 k 件を、**より重い cross-encoder や小型モデル**で並べ替えます。「検索の第2段」として定番です。",
+      },
+      {
+        word: "クエリ拡張・書き換え（HyDE など）",
+        mean: "ユーザの一文を、検索しやすい複数クエリや「仮答え」に展開してから検索する系統。**短い質問**や **曖昧な指示**の取りこぼしを減らす狙いがあります（Hypothetical Document Embeddings 等）。",
+      },
+      {
+        word: "Graph RAG",
+        mean: "テキスト断片だけでなく **エンティティ関連をグラフ**にし、関係ホップしながら根拠を集める方式。マニュアル・組織図・法務で「だれが何と関係？」が効く場面で語られます。",
+      },
+      {
+        word: "Agentic RAG（エージェント型）",
+        mean: "LLM が **検索 API を何度も呼び直す・フィルタを変える・サブクエリに分割する**など、自律的にループする構造。単発 RAG より柔軟だが、**停止条件・コスト・ログ**の設計が重要です。",
+      },
+      {
+        word: "「世代」呼びについて",
+        mean: "コミュニティによって「RAG 1.0 / 2.0」「初世代はベクトルだけ」など比喩的な区切りが出ますが、**産業標準のラベルではありません**。比較するときは「どの処理（検索・要約・ループ・グラフ）を足しているか」で読み替えると安全です。",
       },
     ],
   },
@@ -802,8 +1088,14 @@ export const GLOSSARY_BY_GENRE = [
   },
 ];
 
-/** 検索ヒット：スタック1件＋ツール表1行＋基本ルール1件＋落とし穴1件＋用語1件を各1単位 */
+function mediaTaxonomyRowCount() {
+  return VIBE_MEDIA_TAXONOMY.reduce((n, s) => n + s.rows.length, 0);
+}
+
+/** 検索ヒット：読み分け1＋メディア早見各行＋他ブロック＋用語… */
 export const GUIDE_ITEM_TOTAL =
+  1 +
+  mediaTaxonomyRowCount() +
   VIBE_IDEAL_STACKS.length +
   VIBE_TOOL_COMBO_TABLE.rows.length +
   VIBE_BASIC_RULES.length +
@@ -828,6 +1120,8 @@ export function filterVibeCodingGuide(searchQuery) {
   const q = searchQuery.trim().toLowerCase();
   if (!q) {
     return {
+      showReadingGuide: true,
+      mediaTaxonomy: VIBE_MEDIA_TAXONOMY,
       stacks: VIBE_IDEAL_STACKS,
       toolTable: VIBE_TOOL_COMBO_TABLE,
       basicRules: VIBE_BASIC_RULES,
@@ -912,7 +1206,39 @@ export function filterVibeCodingGuide(searchQuery) {
     }
   }
 
+  const readingBlob = [
+    VIBE_SITE_READING_GUIDE.title,
+    VIBE_SITE_READING_GUIDE.lead.replace(/\*\*/g, ""),
+  ]
+    .join("\n")
+    .toLowerCase();
+  const showReadingGuide = readingBlob.includes(q);
+
+  /** @type {MediaTaxonomySection[]} */
+  const mediaTaxonomy = [];
+  for (const section of VIBE_MEDIA_TAXONOMY) {
+    const head = [
+      section.title,
+      section.lead,
+      ...section.columns,
+    ]
+      .join("\n")
+      .toLowerCase();
+    if (head.includes(q)) {
+      mediaTaxonomy.push(section);
+      continue;
+    }
+    const rows = section.rows.filter((r) =>
+      [r.tool, r.company, r.traits, r.since].join("\n").toLowerCase().includes(q),
+    );
+    if (rows.length) {
+      mediaTaxonomy.push({ ...section, rows });
+    }
+  }
+
   const matchCount =
+    (showReadingGuide ? 1 : 0) +
+    mediaTaxonomy.reduce((n, s) => n + s.rows.length, 0) +
     stacks.length +
     toolRows.length +
     basicRules.length +
@@ -921,6 +1247,8 @@ export function filterVibeCodingGuide(searchQuery) {
     glossary.reduce((n, g) => n + g.terms.length, 0);
 
   return {
+    showReadingGuide,
+    mediaTaxonomy,
     stacks,
     toolTable: { ...VIBE_TOOL_COMBO_TABLE, rows: toolRows },
     basicRules,

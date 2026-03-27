@@ -765,6 +765,41 @@ body {
   border-bottom: none;
 }
 
+.vibe-media-taxonomy-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.vibe-media-block {
+  scroll-margin-top: 5.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.vibe-media-block:last-child {
+  border-bottom: none;
+}
+
+.vibe-media-block__title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  margin: 0 0 0.35rem;
+  color: var(--text);
+}
+
+.vibe-media-block__lead {
+  margin: 0 0 0.65rem;
+  font-size: 0.74rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.vibe-tool-table--dense th,
+.vibe-tool-table--dense td {
+  font-size: 0.7rem;
+}
+
 .companies-stack {
   display: flex;
   flex-direction: column;
