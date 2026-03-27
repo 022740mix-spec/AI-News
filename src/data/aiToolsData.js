@@ -115,6 +115,233 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "openai-six-layer-context-data-agent-2026",
+    "type": "feature",
+    "category": "data",
+    "title": "OpenAI 社内データエージェントの「6層コンテキスト」— 表・SQL・RAG・Evals まで",
+    "excerpt": "公式エンジニアリング記事（2026-01-29）に基づき、社内向けデータエージェントがテーブル理解と回答品質を支える Layer #1〜#6、日次パイプラインと埋め込み、クエリ時 RAG、Evals API による評価、セキュリティまで日本語で整理。",
+    "body": [
+      "OpenAI は 2026年1月29日、社内専用の AI データエージェントの設計を公開しました。本稿の主題は、チャット向け File Search などの一般提供機能とは別物である **自社データプラットフォーム向けのカスタムエージェント** です。利用ツールとして Codex・GPT‑5.2・Evals API・Embeddings API が挙げられており、外部開発者向けに提供されている同一スタックで組まれている点が示されています。",
+      "動機の背景には規模があります。社内データ利用者は数千人規模、データは数百 PB・データセット数万、似た名前のテーブルが大量に存在するため、「どのテーブルを使うか」の探索だけで分析が止まる、という課題が具体例として紹介されています。正しいテーブルを選んでも、多対多結合・フィルタ誤り・NULL 処理など SQL 由来の失敗モードが静かに結果を壊す、という指摘もあります。",
+      "エージェントは GPT‑5.2 を核に、複数ツール・データウェアハウス・メタデータ・MCP（Slack や IDE 内 Codex CLI、社内 ChatGPT の MCP コネクタ等）に接続します。途中結果がゼロ行のときなど、**途中で方針を見直すクローズドループ**が特徴として述べられ、ユーザーへの反復負荷を下げる設計だと説明されています。",
+      "高品質な回答には豊かなコンテキストが必要である、という前提のもと、公式記事では **6 つのレイヤー**が定義されています。以下、公式見出しに沿った要約です（詳細は一次情報へ）。",
+      "**Layer #1: Table Usage** — カラム型やスキーマメタデータ、テーブル系譜（上流・下流）、過去のクエリ履歴から「よく一緒に結合される組み合わせ」を学習し、SQL 生成の土台にする層です。**Layer #2: Human Annotations** — ドメイン専門家によるテーブル・列の説明、ビジネス上の意図、メタデータだけでは拾えない注意点を蓄える層です。",
+      "**Layer #3: Codex Enrichment** — 分析イベントやパイプラインのコードからテーブルが **どう導出されたか** を把握し、粒度・更新頻度・欠落フィールドなどコードにしか現れないニュアンスを取り込む層です。**Layer #4: Institutional Knowledge** — Slack・Google Docs・Notion などに散らばるローンチ情報・インシデント・指標定義を取り込み、権限とメタデータ付きで埋め込み、ランタイムに取得サービス経由で引けるようにする層です。",
+      "**Layer #5: Memory** — ユーザー訂正や会話から得たニュアンス（例: 特定の実験ゲート文字列でフィルタする等）を保存し、次回以降の曖昧な文字列マッチより **正しい制約** に寄せる層です。グローバルと個人スコープがあり、手動編集も可能とされています。**Layer #6: Runtime Context** — メタデータが古い・無い場合にウェアハウスへライブクエリしスキーマや実データを直接確認したり、Airflow・Spark などプラットフォーム側システムに触れて文脈を広げる層です。",
+      "日次のオフラインパイプラインで利用履歴・注釈・Codex 由来の拡張を正規化し、Embeddings API でベクトル化して保存。**クエリ時には全体を走査せず、RAG で関連コンテキストだけを引く**ことで、数万テーブル規模でもレイテンシを抑える、とまとめられています。",
+      "品質維持には **Evals API** が使われます。自然語の質問と、期待結果を与える「ゴールデン SQL」ペアを curated セットとして用意し、生成 SQL と結果を **文字列一致だけでなく** grader に渡して採点する、というテスト／カナリア運用が紹介されています。",
+      "セキュリティは既存の権限モデルを **パススルー**で継承し、ユーザーがもともと読めないテーブルはエージェント経由でも読めない、と明示されています。推論過程やクエリ結果へのリンク開示など、検証可能性にも触れています。",
+      "**教訓としての 3 点**: (1) ツールを凝縮し冗長な呼び出しを減らす — **Less is More**、(2) 手順を過度に指示せずゴールを伝える — **Guide the Goal, Not the Path**、(3) 意味はスキーマより **生成コード（パイプライン）** に宿る — **Meaning Lives in Code**。本サイトの RAG 取り込み・評価・企業向けガードレールの各記事とも相互参照しやすい題材です。"
+    ],
+    "date": "2026-01-29",
+    "author": "AI News 編集部",
+    "readTime": "14分",
+    "tags": [
+      "OpenAI",
+      "RAG",
+      "データエージェント",
+      "Embeddings",
+      "Evals",
+      "Codex",
+      "社内ツール"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "6 層コンテキスト対応表（OpenAI 公式 Engineering 記事の Layer #1〜#6）",
+        "headers": [
+          "Layer",
+          "公式名",
+          "役割の要約"
+        ],
+        "rows": [
+          [
+            "#1",
+            "Table Usage",
+            "スキーマ・系譜・過去クエリ推論でテーブル選定と SQL の土台を作る"
+          ],
+          [
+            "#2",
+            "Human Annotations",
+            "専門家注釈で意図・注意点などスキーマに無い意味を固定する"
+          ],
+          [
+            "#3",
+            "Codex Enrichment",
+            "コード由来の定義で粒度・鮮度・導出ロジックを補完する"
+          ],
+          [
+            "#4",
+            "Institutional Knowledge",
+            "Slack/Docs/Notion 等を権限付き取得・埋め込みし組織知を引く"
+          ],
+          [
+            "#5",
+            "Memory",
+            "訂正・学びを保存し再発を防ぐ（グローバル／個人スコープ）"
+          ],
+          [
+            "#6",
+            "Runtime Context",
+            "ライブクエリや DWH 外システムで不足・陳腐化を埋める"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Inside OpenAI’s in-house data agent",
+        "site": "OpenAI Engineering",
+        "url": "https://openai.com/index/inside-our-in-house-data-agent/"
+      },
+      {
+        "title": "Embeddings API — Guides",
+        "site": "OpenAI Platform",
+        "url": "https://platform.openai.com/docs/guides/embeddings"
+      },
+      {
+        "title": "Evals API — Guides",
+        "site": "OpenAI Platform",
+        "url": "https://platform.openai.com/docs/guides/evals"
+      },
+      {
+        "title": "Retrieval-augmented generation",
+        "site": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation"
+      },
+      {
+        "title": "Introducing Codex",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/introducing-codex/"
+      }
+    ]
+  },
+  {
+    "id": "rag-chunking-ingestion-2026",
+    "type": "feature",
+    "category": "data",
+    "title": "RAG の取り込み設計 — チャンキング、親子構造、PDF／表／OCR、パイプライン監視",
+    "excerpt": "ベクトル化の前段で成果が決まる。固定長だけでなく見出し・段落・構造を利用した分割、親チャンクと子チャンク、表・スキャン PDF・OCR のノイズ、メタデータとリネージ・再処理、障害検知までを実務目線で整理する。",
+    "body": [
+      "検索品質の上限はしばしば **チャンク境界**で決まります。トークン単位の固定窓だけでは、見出しの途中で切れたり、1 チャンクに無関係な節が混ざったりして、埋め込みの意味が薄まります。Markdown / HTML / AST から **論理ブロック**（見出し〜次見出し手前）で切る、文境界で揃える、オーバーラップを少し足す、といった設計が一般的です。",
+      "**親子チャンク（階層チャンキング）** は、検索用に細かい子を持ちつつ、生成時に親の広い文脈を返すパターンです。検索ヒットは子、ユーザーへの引用表示や LLM 入力は親を結合、という二段構成にすると、再現性と文脈の両立がしやすくなります。セマンティックチャンキング（埋め込み類似度で段落をまとめる）はコストとトレードオフです。",
+      "PDF はレイヤー構造の有無で難易度が跳ね上がります。テキスト抽出が貧弱なスキャン物は **OCR** 前提となり、ノイズ・改行崩れ・表の列ずれが典型的な失敗要因です。表は HTML／CSV に正規化してからチャンクする、あるいは表単位で別インデックスにする、など **ドキュメント種別ごとのパイプライン**に分けると運用が安定します。",
+      "メタデータ（ソース URL、版、著者、権限ラベル、取り込み時刻、パイプライン版）は、後からの **再処理・差分更新・デバッグ**に効きます。ACL は「格納時にフィルタ」か「検索後にフィルタ」かで設計が変わり、後述の企業向け記事とセットで決めるのが無難です。",
+      "本番では **監視**も必須です。取り込み件数・失敗キュー・埋め込み API のレイテンシとエラー率、空チャンク率、平均チャンク長、nDCG やヒット率の簡易メトリクスをダッシュボード化し、アラートを張ると長期運用で劣化に気づけます。"
+    ],
+    "date": "2026-03-10",
+    "author": "AI News 編集部",
+    "readTime": "10分",
+    "tags": [
+      "RAG",
+      "チャンキング",
+      "取り込み",
+      "PDF",
+      "OCR",
+      "パイプライン"
+    ],
+    "primarySources": [
+      {
+        "title": "Text splitters — LangChain concepts",
+        "site": "LangChain",
+        "url": "https://python.langchain.com/docs/concepts/text_splitters/"
+      },
+      {
+        "title": "File search — OpenAI Platform",
+        "site": "OpenAI",
+        "url": "https://platform.openai.com/docs/guides/tools-file-search"
+      },
+      {
+        "title": "Retrieval-augmented generation",
+        "site": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation"
+      }
+    ]
+  },
+  {
+    "id": "rag-evaluation-citations-2026",
+    "type": "feature",
+    "category": "data",
+    "title": "RAG の評価と引用 — ゴールデンセット、自動指標、引用 UI、閾値ルーティング",
+    "excerpt": "「それっぽい回答」と「根拠付きで正しい回答」は別問題。ゴールデン Q&A・SQL・ドキュメント_span を用意し、自動採点と人手レビュー、引用チップの UI、confidence で再検索や拒否へルーティングする実務パターンを整理。",
+    "body": [
+      "RAG の評価は **検索**と**生成**を分けても、結合しても設計します。検索だけならヒット率・nDCG・MRR、生成込みなら正答一致・LLM-as-judge（慎重に：バイアスとコスト）、引用スパンとの一致度、などを組み合わせます。",
+      "本番品質には **ゴールデンセット**（代表質問＋期待される根拠 passages または期待 SQL／期待数値）が効きます。OpenAI のデータエージェント記事でも、自然語と「正解 SQL」のペアを eval に載せる手法が紹介されており、RAG でも同様に **根拠チャンク ID のセット**を正解ラベルにできる場合があります。",
+      "**引用 UI** はユーザー信頼に直結します。インラインの番号リンク、サイドパネルでの PDF ハイライト、表のセル参照など、プロダクトの体裁に合わせて実装します。引用が空のまま高い確信度で答えるモデル振る舞いは、プロンプトとツール結果の構造（必ず sources を返させる）で抑えます。",
+      "**閾値ルーティング** は、検索スコアや自己申告 confidence が低いときに、別インデックスを叩く・クエリを拡張する・ human escalation する・「分からない」と返す、へ振り分けるパターンです。誤答より **拒否**を選ぶドメイン（医療・法務・財務）では特に重要です。",
+      "失敗タイプをタグ付け（検索漏れ／チャンク分割ミス／要約の捏造／ACL 越え）しておくと、週次レビューで **どこに投資すべきか**が見えます。"
+    ],
+    "date": "2026-03-11",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "RAG",
+      "評価",
+      "引用",
+      "ゴールデンセット",
+      "品質"
+    ],
+    "primarySources": [
+      {
+        "title": "Evals API — Guides",
+        "site": "OpenAI Platform",
+        "url": "https://platform.openai.com/docs/guides/evals"
+      },
+      {
+        "title": "Ragas documentation",
+        "site": "Ragas",
+        "url": "https://docs.ragas.io/"
+      },
+      {
+        "title": "Inside OpenAI’s in-house data agent (evals section)",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/inside-our-in-house-data-agent/"
+      }
+    ]
+  },
+  {
+    "id": "rag-enterprise-acl-privacy-2026",
+    "type": "feature",
+    "category": "data",
+    "title": "エンタープライズ RAG の ACL・PII・監査 — テナント分離とスナップショット",
+    "excerpt": "「社内文書を全部ベクトル化」は最短でコンプライアンス事故を起こす。IdP とのグループ同期、コレクション／行レベル ACL、PII 検出とマスキング、削除権・スナップショット、ログの監査可能性までを整理する。",
+    "body": [
+      "企業 RAG の第一原則は **権限の単一路径**です。検索インデックスに入れる前に ACL をラベルとして付与するか、検索後にソースシステムで再チェックするかを決め、**昇格バグ**（権限の低いユーザーが高機密チャンクを見る）が起きないようにします。グループメンバーシップは IdP との同期遅延に注意します。",
+      "**テナント分離**はインフラレベル（プロジェクト／VPC／キー空間）とアプリレベル（クエリ必須フィルタ）の多層が安全です。マルチテナント SaaS では他テナントのチャンクが混ざると即インシデントになるため、静的テスト（他テナント ID を混ぜた負荷テスト）を推奨します。",
+      "**PII** は取り込み時に検出・マスキング・別ストア（トークン化）など方針を分けます。マスキングしすぎると検索に hit しなくなり、しなさすぎるとログ漏えいリスクが残ります。人事・健康情報などカテゴリ別に保持期間と利用目的を揃えると説明がしやすいです。",
+      "**削除と再インデックス**（オブジェクト削除、版更新、アクセス剥奪）をどの遅延で保証するか SLA 化します。法的削除要求があるドメインでは、ベクトルストアの物理削除とメタデータの tombstone の両方を追います。",
+      "**監査ログ**には「誰が・いつ・どのクエリで・どのドキュメント ID を取得したか」を残し、モデルへの入力ログとは分離して保存期限を設定します。インシデント時のスナップショット（インデックス版・ルール版）が取れると復旧が速くなります。"
+    ],
+    "date": "2026-03-12",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "RAG",
+      "ACL",
+      "PII",
+      "監査",
+      "エンタープライズ",
+      "セキュリティ"
+    ],
+    "primarySources": [
+      {
+        "title": "OWASP Top 10 for Large Language Model Applications",
+        "site": "OWASP",
+        "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
+      },
+      {
+        "title": "AI Risk Management Framework (AI RMF 1.0)",
+        "site": "NIST",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      },
+      {
+        "title": "Inside OpenAI’s in-house data agent (agent security)",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/inside-our-in-house-data-agent/"
+      }
+    ]
+  },
+  {
     "id": "claude-code-auto-mode",
     "type": "review",
     "category": "cli",
