@@ -1,0 +1,18 @@
+{
+  "name": "AI Tool News",
+  "short_name": "AI News",
+  "description": "モデル・CLI・エディタ・動画生成など最新AIツールのニュースと比較",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fafafa",
+  "theme_color": "#18181b",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

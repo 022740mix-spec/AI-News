@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>AI開発ツール最新情報</title>
+  <subtitle>Claude Code・Cursor・Windsurf・Gemini・GPT などの最新ニュースを日本語でお届け</subtitle>
+  <link rel="alternate" type="text/html" href="./"/>
+  <link rel="self" type="application/atom+xml" href="./feed.xml"/>
+  <id>tag:ai-tool-news.jp,2026:feed</id>
+  <updated>2026-03-28T15:00:00Z</updated>
+  <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>【2026年3月28日更新】AI開発ツール最新動向 — Claude 1M GA・ChatGPTショッピング刷新・Gemini Flash-Lite・メモリ移行競争</title>
+    <link rel="alternate" type="text/html" href="?a=overview-2026-spring"/>
+    <id>tag:ai-tool-news.jp,2026:overview-2026-spring</id>
+    <published>2026-03-28T15:00:00Z</published>
+    <updated>2026-03-28T15:00:00Z</updated>
+    <summary>Claude 1M コンテキスト GA（追加料金なし）、ChatGPT ショッピング Instant Checkout 廃止、Gemini 3.1 Flash-Lite プレビュー、Claude メモリインポート — 3月後半も AI 各社の動きが続く。</summary>
+  </entry>
+  <entry>
+    <title>【編集部資料・全公開】AIモデル進化を追うサイト — 切り口別リンク集（時系列・OSS・中国勢・Ollama・ベンチ）</title>
+    <link rel="alternate" type="text/html" href="?a=ai-model-research-resources-by-angle-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ai-model-research-resources-by-angle-2026</id>
+    <published>2026-03-28T15:00:00Z</published>
+    <updated>2026-03-28T15:00:00Z</updated>
+    <summary>記事執筆や選定の前に使う調査ハブ。時系列年表・計算量データベース・実用ベンチ比較・Hugging Face・DeepSeek/Qwen 公式・ローカル（Ollama）まで、目的別に整理。二次ソースの横並べと一次ソースの確認をセットで回すためのリストです。</summary>
+  </entry>
+  <entry>
+    <title>Claude・Gemini・OpenAI の力図 — 2026年時点の棲み分けと競争軸（フロンティア三本柱）</title>
+    <link rel="alternate" type="text/html" href="?a=frontier-triad-power-map-2026"/>
+    <id>tag:ai-tool-news.jp,2026:frontier-triad-power-map-2026</id>
+    <published>2026-03-28T15:00:00Z</published>
+    <updated>2026-03-28T15:00:00Z</updated>
+    <summary>モデル性能の数値勝負だけでなく、「どこに差をつけて配るか」で三社の戦略は分岐している。配給経路・開発者楔・クラウドの結びつき・規制ストーリーという四つの軸で整理する。</summary>
+  </entry>
+  <entry>
+    <title>Siri×外部 AI — Gemini 中核に加え、ChatGPT・Claude など複数アシスタント統合の報道（2026年3月）</title>
+    <link rel="alternate" type="text/html" href="?a=apple-google-siri-gemini-2026"/>
+    <id>tag:ai-tool-news.jp,2026:apple-google-siri-gemini-2026</id>
+    <published>2026-03-28T15:00:00Z</published>
+    <updated>2026-03-28T15:00:00Z</updated>
+    <summary>1月の Apple–Google 多年度提携（Gemini）に続き、3月下旬の報道では「Siri を複数のサードパーティ AI に開く Extensions」構想が取り上げられている。Gemini に加え ChatGPT・Claude など利用者が切り替え／併用できる、との整理。いずれも WWDC 前の非公式情報が混じるため公式発表待ち。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic「Mythos」草稿漏えい報道 — Opus 超えの新ティア「Capybara」が注目集める</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-mythos-leak"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-mythos-leak</id>
+    <published>2026-03-27T15:00:00Z</published>
+    <updated>2026-03-27T15:00:00Z</updated>
+    <summary>Fortune や DNyuz ほかが報じた未公開アクセス問題。草稿に内部コードネーム「Mythos」「Capybara」が登場し、現行 Opus を上回る試作モデルとの見方が共有された。Anthropic は「ステップチェンジ級」の限定試験を認めつつ、段階的展開と安全側の姿勢を強調。</summary>
+  </entry>
+  <entry>
+    <title>Claude Code「Auto mode」— 権限プロンプトを減らす分類器モード（auto）</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-auto-mode"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-auto-mode</id>
+    <published>2026-03-27T15:00:00Z</published>
+    <updated>2026-03-27T15:00:00Z</updated>
+    <summary>2026-03-24 発表の研究プレビュー。ドキュメント・設定では Auto mode / permission-mode auto。宣材によっては Auto fix と併記。別機能の PR 向け「auto-fix in the cloud」（3/27 発表）は別記事で解説。</summary>
+  </entry>
+  <entry>
+    <title>Claude Code「auto-fix in the cloud」— CI 失敗と PR コメントをクラウドで自動対応</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-autofix-cloud"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-autofix-cloud</id>
+    <published>2026-03-27T15:00:00Z</published>
+    <updated>2026-03-27T15:00:00Z</updated>
+    <summary>2026-03-27、PM の Noah Zweben 氏が発表。Web/モバイルセッションが PR をリモートでフォローし green 化を目指す。GitHub Actions では anthropics/claude-code-action の ci-failure ワークフロー例あり。</summary>
+  </entry>
+  <entry>
+    <title>ChatGPT ショッピング刷新 — Instant Checkout を廃止し商品発見（Product Discovery）へ軸足</title>
+    <link rel="alternate" type="text/html" href="?a=chatgpt-shopping-revamp-2026"/>
+    <id>tag:ai-tool-news.jp,2026:chatgpt-shopping-revamp-2026</id>
+    <published>2026-03-24T15:00:00Z</published>
+    <updated>2026-03-24T15:00:00Z</updated>
+    <summary>2026年3月24日、OpenAI がエージェンティック・コマースを刷新。Instant Checkout は廃止し、ビジュアル商品比較・並列表示に集中。Walmart が「Sparky」アプリを ChatGPT 内に展開し、ロイヤルティプログラム連携も可能に。</summary>
+  </entry>
+  <entry>
+    <title>Claude Opus 4.6 / Sonnet 4.6 の 100 万トークンコンテキストが GA — 追加料金なし</title>
+    <link rel="alternate" type="text/html" href="?a=claude-1m-context-ga-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-1m-context-ga-2026</id>
+    <published>2026-03-13T15:00:00Z</published>
+    <updated>2026-03-13T15:00:00Z</updated>
+    <summary>2026年3月13日、Anthropic が 1M トークンコンテキストを正式 GA。標準料金（Opus 4.6: $5/$25、Sonnet 4.6: $3/$15 per 1M tokens）が 100 万トークン超でも同レートで適用。Claude Platform・Bedrock・Vertex AI・Azure Foundry で即日利用可。</summary>
+  </entry>
+  <entry>
+    <title>Google、Gemini 3.1 Flash-Lite をプレビュー公開 — 2.5× 高速・低コストの大量処理向けモデル</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-31-flash-lite-2026"/>
+    <id>tag:ai-tool-news.jp,2026:gemini-31-flash-lite-2026</id>
+    <published>2026-03-04T15:00:00Z</published>
+    <updated>2026-03-04T15:00:00Z</updated>
+    <summary>2026年3月4日、Google DeepMind が Demis Hassabis 氏発表で Gemini 3.1 Flash-Lite をプレビュー公開。入力 $0.25/1M・出力 $1.50/1M トークンという超低価格で 2.5 Flash 比 2.5 倍高速な Time-to-First-Token・45% 高い出力速度を実現。</summary>
+  </entry>
+  <entry>
+    <title>Claude がメモリのインポートに対応 — ChatGPT・Gemini・Grok からの移行を簡素化</title>
+    <link rel="alternate" type="text/html" href="?a=claude-memory-import-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-memory-import-2026</id>
+    <published>2026-03-03T15:00:00Z</published>
+    <updated>2026-03-03T15:00:00Z</updated>
+    <summary>2026年3月初旬、Anthropic が claude.com/import-memory を公開。ChatGPT・Gemini・Copilot・Grok などから保存済みメモリをコピー＆ペーストで Claude に移行できる。メモリ機能自体は全 Claude ユーザーへ順次展開中。</summary>
+  </entry>
+</feed>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" role="img" aria-labelledby="ft tl">
+  <title id="ft">Five comparison axes for frontier models</title>
+  <desc id="tl">Distribution, long-context cost, agents, multimodal, data and contracts</desc>
+  <rect width="800" height="220" fill="#f1f5f9"/>
+  <text x="400" y="36" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#0f172a">5 axes (qualitative map, not benchmarks)</text>
+  <g font-family="system-ui,sans-serif">
+    <rect x="24" y="60" width="136" height="88" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="92" y="92" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">Distribution</text>
+    <text x="92" y="112" text-anchor="middle" font-size="11" fill="#475569">IDE / cloud route</text>
+    <rect x="180" y="60" width="136" height="88" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="248" y="92" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">Long ctx cost</text>
+    <text x="248" y="112" text-anchor="middle" font-size="11" fill="#475569">tokens + billing</text>
+    <rect x="336" y="60" width="136" height="88" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="404" y="92" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">Agents</text>
+    <text x="404" y="112" text-anchor="middle" font-size="11" fill="#475569">tools + retries</text>
+    <rect x="492" y="60" width="136" height="88" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="560" y="92" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">Multimodal</text>
+    <text x="560" y="112" text-anchor="middle" font-size="11" fill="#475569">image / PDF / video</text>
+    <rect x="648" y="60" width="136" height="88" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="716" y="88" text-anchor="middle" font-size="12" font-weight="700" fill="#0f172a">Data · contracts</text>
+    <text x="716" y="106" text-anchor="middle" font-size="10" fill="#475569">policy & spotlight</text>
+    <text x="716" y="122" text-anchor="middle" font-size="10" fill="#475569">region / SLA</text>
+    <path d="M92 152 L92 168 M248 152 L248 168 M404 152 L404 168 M560 152 L560 168 M716 152 L716 168" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+    <rect x="200" y="176" width="400" height="32" rx="6" fill="#e0e7ff" stroke="#6366f1" stroke-width="1"/>
+    <text x="400" y="197" text-anchor="middle" font-size="12" font-weight="600" fill="#312e81">Confirm numbers on each vendor official docs</text>
+  </g>
+</svg>
