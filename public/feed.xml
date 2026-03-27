@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-03-28T15:00:00Z</updated>
+  <updated>2026-03-29T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>動画フロンティアの料金の軸 — Veo 3.1・Runway Gen-4.5・Kling など（公式再確認前提）</title>
@@ -14,6 +14,22 @@
     <published>2026-03-30T15:00:00Z</published>
     <updated>2026-03-30T15:00:00Z</updated>
     <summary>秒単価・クレジット制・バンドル販売が混在するため「安い／高い」一発比較は誤魔化しやすい。公式 pricing の単位（秒・分・解像度・Fast/Standard）を揃えて読む。</summary>
+  </entry>
+  <entry>
+    <title>AI 開発と言語ランタイムの周辺 — Python・JavaScript・Node.js・Bun のいま（2026）</title>
+    <link rel="alternate" type="text/html" href="?a=ai-dev-stacks-python-js-node-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ai-dev-stacks-python-js-node-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>エージェントや RAG のサンプルは Python / TypeScript が中心になりがち。uv・Ruff・ty や OpenAI の Astral 買収、Node の LTS 運用、Bun・Deno、ブラウザ側 JS と SSR の分断など、周辺ニュースを実務の選び方に落とし込む。</summary>
+  </entry>
+  <entry>
+    <title>AI アプリのバックエンドと DB — Postgres・pgvector・Supabase 周辺の設計</title>
+    <link rel="alternate" type="text/html" href="?a=ai-backend-postgres-supabase-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ai-backend-postgres-supabase-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>RAG・チャット・エージェントの永続層は多くの場合がリレーショナル＋ベクトル拡張。Supabase（Postgres＋Auth＋Realtime＋Edge Functions）を軸に、RLS・接続プール・ハイブリッド検索の論点を整理する。</summary>
   </entry>
   <entry>
     <title>【2026年3月28日更新】AI開発ツール最新動向 — ARC-AGI-3・Anthropic対ペンタゴン差止・OpenAI Astral買収・GPT-5.4 mini/nano</title>

@@ -24,7 +24,7 @@ export const ARTICLES = [
       "**Anthropic のペンタゴン訴訟**では3月26日、サンフランシスコ連邦地裁が暫定差止命令を発しました。自律兵器・大規模監視への Claude 利用を拒否したことで DoD に「サプライチェーンリスク」指定された Anthropic が、修正第一条違反の報復として司法に訴えた件で、Lin 判事が Anthropic の申請を認容しました（別稿）。",
       "AnthropicはClaude Codeに権限の「Auto mode」（研究プレビュー）を追加し、分類器で手元セッションの自律実行を安全側に寄せました。あわせて3月27日頃、Noah Zweben 氏により auto-fix in the cloud が発表され、Web/モバイルセッションが PR の CI 失敗やレビューコメントをクラウド上でフォローする流れが始まっています（別稿）。",
       "CursorはVersion 2.4で並列サブエージェントを正式導入。クラウドVM上で最大20エージェントが同時稼働し、大規模タスクの処理時間をほぼ半減。Windsurf は3月19日にクレジット制から日次/週次クォータ制へ料金体系を全面改定し、Pro価格が$20に上昇しました。",
-      "周辺レイヤーも同時に厚くなっています。MCP でツール配線を共通化し、OpenClaw のように自前ホストのエージェント・ゲートウェイを組む需要、SKILL.md・AGENTS.md・llms.txt など Markdown ベースの「エージェント用ドキュメント」がレビュー対象の第一級市民になりつつあります。速報に加え、**用途軸の比較記事**（フロンティア三本柱、AI コーディング IDE 群）も随時追加する方針です（別稿【比較】）。"
+      "周辺レイヤーも同時に厚くなっています。MCP でツール配線を共通化し、OpenClaw のように自前ホストのエージェント・ゲートウェイを組む需要、SKILL.md・AGENTS.md・llms.txt など Markdown ベースの「エージェント用ドキュメント」がレビュー対象の第一級市民になりつつあります。言語ランタイム（Python・Node・Bun など）と Astral 買収に代表されるツールチェーン、RAG の永続層としての PostgreSQL / Supabase 周りも別稿で整理しています。速報に加え、用途軸の比較記事（フロンティア三本柱、AI コーディング IDE 群）も随時追加する方針です（別稿【比較】）。"
     ],
     "date": "2026-03-28",
     "author": "AI News 編集部",
@@ -338,6 +338,157 @@ export const ARTICLES = [
         "title": "Inside OpenAI’s in-house data agent (agent security)",
         "site": "OpenAI",
         "url": "https://openai.com/index/inside-our-in-house-data-agent/"
+      }
+    ]
+  },
+  {
+    "id": "ai-dev-stacks-python-js-node-2026",
+    "type": "feature",
+    "category": "cli",
+    "title": "AI 開発と言語ランタイムの周辺 — Python・JavaScript・Node.js・Bun のいま（2026）",
+    "excerpt": "エージェントや RAG のサンプルは Python / TypeScript が中心になりがち。uv・Ruff・ty や OpenAI の Astral 買収、Node の LTS 運用、Bun・Deno、ブラウザ側 JS と SSR の分断など、周辺ニュースを実務の選び方に落とし込む。",
+    "body": [
+      "生成 AI アプリの**参照実装**は依然として **Python**（LLM SDK、評価notebook、データパイプライン）と **JavaScript / TypeScript**（Web UI、サーバーレス、BFF）に二分されがちです。単一リポジトリで両方を持つチームは、**どちらを「信頼の境界」に置くか**（例: 課金・権限検証は TS のみ）を先に決めると混乱が減ります。",
+      "Python 側では **uv**（高速な依存解決・仮想環境・ロック）と **Ruff**（Lint / format 一体）の普及が続いています。**OpenAI による Astral 買収**は、Codex が Python リポ全体を扱うときの「標準 toolchain」が揃う、というストーリーです。型は **ty** や mypy / Pyright との住み分けをチームで固定し、CI で何をゲートにするかを README に書いておくと AI エージェントにも説明しやすいです。",
+      "**Node.js** は **LTS サイクル**に合わせた本番固定が鉄板です。フレームワーク（Nest / Hono / Fastify 等）は選定理由を「観測性・型安全・デプロイ先」とセットで記録します。**Bun** はランタイム・パッケージマネージャとして速い一方、ネイティブ依存や一部の npm 互換差分はリリースノートを追う運用が必要です。**Deno** はセキュリティデフォルトと URL import 文化が残るため、既存 Node 資産との共存パターンをドキュメント化しておくとよいです。",
+      "フロントの **JavaScript（ブラウザ）** はビルドツール（Vite 等）と型（TypeScript）が前提になり、**エージェント向け MCP クライアント**や **WASM 連携**の例も増えています。モノレポ（pnpm / Turborepo）では **共通パッケージのバージョン**を人間が追わないと、AI が古い import を生成し続ける罠があります。",
+      "周辺の「ニュースとして追うべき」軸は、(1) ランタイムのメジャー更新とセキュリティ advisory、(2) パッケージレジストリの供給網（typosquat・メンテ状況）、(3) **SBOM と CI のキャッシュ鍵**、の三段です。言語そのものより **ツールチェーンの再現性**が AI 時代には直結します。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "11分",
+    "tags": [
+      "Python",
+      "JavaScript",
+      "Node.js",
+      "TypeScript",
+      "uv",
+      "Ruff",
+      "Bun",
+      "エージェント",
+      "ツールチェーン"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 1,
+        "caption": "用途別の目安（詳細は都度公式ドキュメント）",
+        "headers": [
+          "層",
+          "向きがちな選択",
+          "チェック項目"
+        ],
+        "rows": [
+          [
+            "データ・評価・バッチ",
+            "Python + uv / notebook",
+            "再現性、GPU/CPU、依存のロック"
+          ],
+          [
+            "API / BFF / 認可ゲート",
+            "Node または TS 系 FW",
+            "LTS、JWT/OAuth 実装、レート制限"
+          ],
+          [
+            "フロント",
+            "React / 軽量 FW + Vite",
+            "バンドル分割、CSP、テレメトリ"
+          ],
+          [
+            "実験・高速スクリプト",
+            "Bun / Deno",
+            "ネイティブ依存の互換、デプロイ先"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Node.js — Releases",
+        "site": "Node.js",
+        "url": "https://nodejs.org/en/about/previous-releases"
+      },
+      {
+        "title": "Python.org",
+        "site": "Python Software Foundation",
+        "url": "https://www.python.org/"
+      },
+      {
+        "title": "uv — Astral docs",
+        "site": "Astral",
+        "url": "https://docs.astral.sh/uv/"
+      },
+      {
+        "title": "Ruff",
+        "site": "Astral",
+        "url": "https://docs.astral.sh/ruff/"
+      },
+      {
+        "title": "Bun",
+        "site": "Oven",
+        "url": "https://bun.sh/docs"
+      },
+      {
+        "title": "Deno — Manual",
+        "site": "Deno",
+        "url": "https://docs.deno.com/runtime/manual"
+      },
+      {
+        "title": "ECMAScript / TC39",
+        "site": "TC39",
+        "url": "https://tc39.es/"
+      }
+    ]
+  },
+  {
+    "id": "ai-backend-postgres-supabase-2026",
+    "type": "feature",
+    "category": "data",
+    "title": "AI アプリのバックエンドと DB — Postgres・pgvector・Supabase 周辺の設計",
+    "excerpt": "RAG・チャット・エージェントの永続層は多くの場合がリレーショナル＋ベクトル拡張。Supabase（Postgres＋Auth＋Realtime＋Edge Functions）を軸に、RLS・接続プール・ハイブリッド検索の論点を整理する。",
+    "body": [
+      "生成 AI プロダクトの**永続化**は、従来の CRUD に加え **会話ログ・ツール呼び出しトレース・ベクトルインデックス・メタデータ**が増えます。単一 DB で押さえるなら **PostgreSQL** が依然として現実的な既定選択で、**pgvector** や全文検索（`tsvector`）と組み合わせた **ハイブリッド検索**（キーワード＋近傍ベクトル）が実務でよく登場します。",
+      "**Supabase** はマネージド Postgres を中核に、**Auth（GoTrue 系）**・**Row Level Security** によるテナント分離・**Realtime**・**Edge Functions** を束ねた BaaS です。プロトタイプだけでなく、RAG のメタテーブルと chunk テーブルを同一クラスタに置き、**JWT クレームを RLS ポリシーに流す**パターンがドキュメント化されやすい点が強みです。接続は **プール（PgBouncer / Supavisor）** 経由か直結かで挙動差（ prepared statement・transaction mode）があるため、ORM とセットで確認します。",
+      "代替・近傍として **Neon**（ブランチ型 Postgres）や **PlanetScale**（MySQL Vitess 系）なども選ばれますが、**pgvector 前提の記事・サンプル**との親和、GIS 拡張、JSONB による柔軟なメタデータ格納では Postgres 派が厚いです。マルチクラウド要件がある場合は **データ所在地・バックアップ SLA** を契約側で先に固定します。",
+      "スキーマ設計では **ドキュメント ID・版・ACL ラベル・取り込み時刻・埋め込みモデル名と次元数**を行メタに持ち、削除・再埋め込みパイプラインと整合させます。エージェントが SQL を直接叩く構成では **読み取り専用ロール**と **許可リスト**でテーブルを縛り、書き込みはアプリ層経由に寄せると事故が減ります。",
+      "本稿は製品比較の代替ではありません。**認証・課金・監査**は自社ポリシーと合わせ、Supabase／Postgres の公式セキュリティガイド・SOC 報告の有無を毎回確認してください。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "12分",
+    "tags": [
+      "PostgreSQL",
+      "Supabase",
+      "pgvector",
+      "RAG",
+      "バックエンド",
+      "RLS",
+      "データ基盤"
+    ],
+    "primarySources": [
+      {
+        "title": "Supabase — Documentation",
+        "site": "Supabase",
+        "url": "https://supabase.com/docs"
+      },
+      {
+        "title": "pgvector",
+        "site": "GitHub",
+        "url": "https://github.com/pgvector/pgvector"
+      },
+      {
+        "title": "PostgreSQL Documentation",
+        "site": "PostgreSQL",
+        "url": "https://www.postgresql.org/docs/"
+      },
+      {
+        "title": "Neon — Serverless Postgres",
+        "site": "Neon",
+        "url": "https://neon.tech/docs"
+      },
+      {
+        "title": "OWASP — LLM Applications",
+        "site": "OWASP",
+        "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
       }
     ]
   },
@@ -2795,7 +2946,7 @@ export const ARTICLES = [
   }
 ];
 
-export const LAST_UPDATED = "2026-03-28";
+export const LAST_UPDATED = "2026-03-29";
 export const SITE_NAME = "AI開発ツール最新情報";
 export const SITE_DESCRIPTION = "Claude Code・Cursor・Windsurf・Gemini・GPT などの最新ニュースを日本語でお届け";
 
