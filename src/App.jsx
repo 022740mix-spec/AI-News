@@ -218,7 +218,7 @@ const FILTERS = [
   { id: "data", label: "データ・RAG" },
   { id: "product", label: "プロダクト" },
   { id: "voice", label: "音声" },
-  { id: "vision", label: "画像・MM" },
+  { id: "vision", label: "画像" },
   { id: "video", label: "動画" },
   { id: "ops", label: "評価・運用" },
 ];

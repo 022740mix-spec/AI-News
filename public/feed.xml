@@ -400,6 +400,14 @@
     <summary>ローカルLLMとクラウドLLMの両方に対応するオープンソースエディタ。プライバシー重視の開発者に人気。</summary>
   </entry>
   <entry>
+    <title>画像生成AIの地形図（2026年初頭）— GPT Image・MJ・Flux・Imagen から Nano Banana 2 まで</title>
+    <link rel="alternate" type="text/html" href="?a=ai-image-generators-landscape-early-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ai-image-generators-landscape-early-2026</id>
+    <published>2026-03-01T15:00:00Z</published>
+    <updated>2026-03-01T15:00:00Z</updated>
+    <summary>解像度競争に加え、複雑な構図や空間関係へのプロンプト忠実度、用途特化が選択軸の中心になっている。以下は話題モデルの整理用ダイジェスト—版数・価格・利用条件は都度公式を正とすること。</summary>
+  </entry>
+  <entry>
     <title>Amazon Q Developer — AWS特化のAI開発CLI</title>
     <link rel="alternate" type="text/html" href="?a=amazon-q"/>
     <id>tag:ai-tool-news.jp,2026:amazon-q</id>

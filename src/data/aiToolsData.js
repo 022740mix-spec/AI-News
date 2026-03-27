@@ -519,6 +519,135 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "ai-image-generators-landscape-early-2026",
+    "type": "feature",
+    "category": "vision",
+    "title": "画像生成AIの地形図（2026年初頭）— GPT Image・MJ・Flux・Imagen から Nano Banana 2 まで",
+    "excerpt": "解像度競争に加え、複雑な構図や空間関係へのプロンプト忠実度、用途特化が選択軸の中心になっている。以下は話題モデルの整理用ダイジェスト—版数・価格・利用条件は都度公式を正とすること。",
+    "body": [
+      "2026年初頭の画像生成は、単純な「きれいさ」より **指示への追従**（空間関係・構図・オブジェクト数）と **用途別の最適化** が際立っています。ベンダーによって版数表記・API 名・消費者アプリ名が一致しないため、契約や本番組み込みでは **リリースノートと pricing を直接確認**してください。",
+      "話題のラインアップをざっくり押さえると、**アート・ディレクション寄り**では Midjourney 系、**フォトリアル寄り**では Flux（Black Forest Labs）などの評価が多く出やすい一方、**画像内テキスト**では Ideogram や GPT Image、**ロゴ・ベクター**では Recraft、**クリエイティブクラウド統合と利用条項**では Adobe Firefly、**オンプレ・カスタム**では Stable Diffusion 系列、**エンタープライズ文脈の Imagen** と **Gemini エコシステム上の Nano Banana / Imagen** という住み分けが議論でよく引用されます（いずれも「常に勝つ」ではなく案件依存）。",
+      "Google 周りは **Imagen 4**（Cloud / 開発者向けドキュメント側）と、別稿で扱う **Nano Banana 2（Gemini 3.1 Flash Image）** が表裏で混同されやすいです。後者は動画ツール **Flow** の既定「画像」モデルでもあり、**動画生成そのもの**（Veo 等）とは別ラインです。動画の比較は当サイトの動画まとめ稿を参照してください。"
+    ],
+    "date": "2026-03-01",
+    "author": "AI News 編集部",
+    "readTime": "12分",
+    "tags": [
+      "画像生成",
+      "OpenAI",
+      "Midjourney",
+      "Flux",
+      "Imagen",
+      "比較",
+      "2026年"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 0,
+        "caption": "主要モデル／製品ラインの整理（※版数・提供形態・地域は公式で要確認）",
+        "headers": [
+          "ライン",
+          "よく言及される強み",
+          "接入・使い勝手の目安"
+        ],
+        "rows": [
+          [
+            "GPT Image 1.5（OpenAI）",
+            "画像内テキストの精度、プロンプト追従の評価が高いとされる例が多い",
+            "主に ChatGPT 経由（API・製品名は公式で確認）"
+          ],
+          [
+            "Midjourney V8",
+            "アート性・美的コントロール、速度・解像度の改善訴求",
+            "Midjourney の公式フロー（規約・商用条件を要確認）"
+          ],
+          [
+            "Flux 2（Black Forest Labs）",
+            "フォトリアル系の評価、レイテンシと品質のバランス",
+            "API・パートナー経由が中心になりやすい"
+          ],
+          [
+            "Ideogram 3.0",
+            "画像内文字・タイポグラフィ",
+            "Ideogram アプリ／API"
+          ],
+          [
+            "Recraft V4",
+            "ロゴ・ブランド寄り、SVG など設計ツール連携の話題",
+            "Recraft プロダクト（ベンチ数値は原資料確認）"
+          ],
+          [
+            "Google Imagen 4",
+            "エンプラ利用の法務・安全設計の説明と高速版のコスト訴求（公式表記で確認）",
+            "Vertex AI / Google Cloud ドキュメント"
+          ],
+          [
+            "Adobe Firefly Image 3",
+            "Creative Cloud 統合、著作権補償など利用条項の明文化",
+            "Adobe プランに紐づく"
+          ],
+          [
+            "Stable Diffusion 3.5",
+            "オープンウェイト、ローカル／自己ホスト・カスタム",
+            "Stability AI の配布条件とライセンス表"
+          ],
+          [
+            "Seedream（ByteDance）",
+            "5.0 / 4.5 / 4.0 など複数ティアで用途分けするライン",
+            "地域・アプリ経路によりアクセス差（利用規約確認）"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "OpenAI — Images / API documentation",
+        "site": "OpenAI",
+        "url": "https://platform.openai.com/docs/guides/images"
+      },
+      {
+        "title": "Midjourney",
+        "site": "Midjourney",
+        "url": "https://www.midjourney.com/"
+      },
+      {
+        "title": "Black Forest Labs (Flux)",
+        "site": "BFL",
+        "url": "https://bfl.ai/"
+      },
+      {
+        "title": "Ideogram",
+        "site": "Ideogram",
+        "url": "https://ideogram.ai/"
+      },
+      {
+        "title": "Recraft",
+        "site": "Recraft",
+        "url": "https://www.recraft.ai/"
+      },
+      {
+        "title": "Imagen on Vertex AI — Google Cloud",
+        "site": "Google Cloud",
+        "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/imagen"
+      },
+      {
+        "title": "Adobe Firefly",
+        "site": "Adobe",
+        "url": "https://www.adobe.com/products/firefly.html"
+      },
+      {
+        "title": "Stability AI — Stable Diffusion",
+        "site": "Stability AI",
+        "url": "https://stability.ai/"
+      },
+      {
+        "title": "Nano Banana 2（当サイト別稿）",
+        "site": "AI News 編集部",
+        "url": "https://022740mix-spec.github.io/AI-News/?a=google-nano-banana-2-gemini-flash-image-2026"
+      }
+    ]
+  },
+  {
     "id": "google-nano-banana-2-gemini-flash-image-2026",
     "type": "feature",
     "category": "vision",
@@ -2678,7 +2807,7 @@ export const CATEGORIES = {
   editor: { label: "エディタ", color: "#0891b2" },
   data: { label: "データ・RAG", color: "#059669" },
   voice: { label: "音声", color: "#db2777" },
-  vision: { label: "画像・MM", color: "#ea580c" },
+  vision: { label: "画像", color: "#ea580c" },
   video: { label: "動画", color: "#dc2626" },
   ops: { label: "評価・運用", color: "#475569" },
   product: { label: "プロダクト", color: "#0ea5e9" },
