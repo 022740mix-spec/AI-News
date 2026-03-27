@@ -240,6 +240,22 @@
     <summary>OSS の Whisper と OpenAI Speech-to-Text API（whisper-1 / gpt-4o-transcribe 系）は別ライン。コンシューマー製品とクラウド STT API の選び方、レイテンシ・コスト・プライバシーの論点を整理する。</summary>
   </entry>
   <entry>
+    <title>Mico — kubectl 向け OSS の AI アシスト（適用前確認と RBAC を前提に）</title>
+    <link rel="alternate" type="text/html" href="?a=mico-kubectl-ai"/>
+    <id>tag:ai-tool-news.jp,2026:mico-kubectl-ai</id>
+    <published>2026-03-14T15:00:00Z</published>
+    <updated>2026-03-14T15:00:00Z</updated>
+    <summary>自然言語からマニフェストや kubectl サブコマンド候補を出す補助ツール。便利さとのトレードオフはクラスタ破壊系操作の誤実行。dry-run・diff・人間承認を徹底し、本番では監査ログまで含めて設計する。</summary>
+  </entry>
+  <entry>
+    <title>Fish シェルと fish-ai — 端末内 LLM 補助と Warp 型クラウド端末の住み分け</title>
+    <link rel="alternate" type="text/html" href="?a=fish-ai-terminal-shell"/>
+    <id>tag:ai-tool-news.jp,2026:fish-ai-terminal-shell</id>
+    <published>2026-03-14T15:00:00Z</published>
+    <updated>2026-03-14T15:00:00Z</updated>
+    <summary>Realiserad/fish-ai のように、Fish 上でコマンド補正・自然言語からコマンド・LLM 補完を行うプラグインがある。設定はローカル ini。クラウドホスト型ターミナル（Warp 等）とはデータ境界が異なるので用途で選ぶ。</summary>
+  </entry>
+  <entry>
     <title>Claude Opus 4.6 / Sonnet 4.6 の 100 万トークンコンテキストが GA — 追加料金なし</title>
     <link rel="alternate" type="text/html" href="?a=claude-1m-context-ga-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-1m-context-ga-2026</id>
@@ -254,6 +270,22 @@
     <published>2026-03-12T15:00:00Z</published>
     <updated>2026-03-12T15:00:00Z</updated>
     <summary>「社内文書を全部ベクトル化」は最短でコンプライアンス事故を起こす。IdP とのグループ同期、コレクション／行レベル ACL、PII 検出とマスキング、削除権・スナップショット、ログの監査可能性までを整理する。</summary>
+  </entry>
+  <entry>
+    <title>エージェント・スキルと SKILL.md — Claude / Cursor / Codex をまたぐ再利用単位</title>
+    <link rel="alternate" type="text/html" href="?a=agent-skills-skill-md"/>
+    <id>tag:ai-tool-news.jp,2026:agent-skills-skill-md</id>
+    <published>2026-03-12T15:00:00Z</published>
+    <updated>2026-03-12T15:00:00Z</updated>
+    <summary>フォルダ＋SKILL.md に手順・ドメイン知識・メタデータを束ね、モデルが必要時だけ展開する「スキル」パターンが普及している。YAML フロントマター、段階的開示、.claude/skills や各 IDE の skills ディレクトリの考え方を整理する。</summary>
+  </entry>
+  <entry>
+    <title>Markdown で育てるエージェント文脈 — AGENTS.md・CLAUDE.md・llms.txt・.cursor/rules</title>
+    <link rel="alternate" type="text/html" href="?a=markdown-ai-context-agents-llms"/>
+    <id>tag:ai-tool-news.jp,2026:markdown-ai-context-agents-llms</id>
+    <published>2026-03-12T15:00:00Z</published>
+    <updated>2026-03-12T15:00:00Z</updated>
+    <summary>リポジトリ直下の短い Markdown／ルールファイルが、LLM への「常時参照コンテキスト」として定位置になっている。Codex の AGENTS.md、Cursor の rules、サイト全体要約の llms.txt など、役割の違いとレビュー文化を整理する。</summary>
   </entry>
   <entry>
     <title>Zed AI — Rust製の超高速AIエディタ</title>
@@ -278,6 +310,14 @@
     <published>2026-03-10T15:00:00Z</published>
     <updated>2026-03-10T15:00:00Z</updated>
     <summary>ベクトル化の前段で成果が決まる。固定長だけでなく見出し・段落・構造を利用した分割、親チャンクと子チャンク、表・スキャン PDF・OCR のノイズ、メタデータとリネージ・再処理、障害検知までを実務目線で整理する。</summary>
+  </entry>
+  <entry>
+    <title>MCP（Model Context Protocol）実務 — サーバ選定、権限、ネットワーク、サプライチェーン</title>
+    <link rel="alternate" type="text/html" href="?a=mcp-servers-deep-dive"/>
+    <id>tag:ai-tool-news.jp,2026:mcp-servers-deep-dive</id>
+    <published>2026-03-10T15:00:00Z</published>
+    <updated>2026-03-10T15:00:00Z</updated>
+    <summary>ツール呼び出しを JSON-RPC で標準化する MCP は、IDE・CLI・独自ホストのゲートウェイ間で同じコネクタを再利用できる。stdio / HTTP トランスポート、権限の渡し方、サードパーティ拡張の供給網リスクまでを整理する。</summary>
   </entry>
   <entry>
     <title>GitHub Copilot CLI — Enterprise最強のセキュリティと統合力</title>

@@ -832,6 +832,199 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "mcp-servers-deep-dive",
+    "type": "feature",
+    "category": "cli",
+    "title": "MCP（Model Context Protocol）実務 — サーバ選定、権限、ネットワーク、サプライチェーン",
+    "excerpt": "ツール呼び出しを JSON-RPC で標準化する MCP は、IDE・CLI・独自ホストのゲートウェイ間で同じコネクタを再利用できる。stdio / HTTP トランスポート、権限の渡し方、サードパーティ拡張の供給網リスクまでを整理する。",
+    "body": [
+      "MCP は「LLM がクライアントからツールとリソースにアクセスするためのオープン仕様」です。クライアント（Claude Desktop、Cursor、自前ゲートウェイ等）が MCP サーバに接続し、ファイル読み書き、ブラウザ操作、社内 API 呼び出しなどを統一インタフェースで公開します。",
+      "実装ではトランスポートが重要です。**stdio** はローカルプロセス直結でセットアップが簡単だが、クライアントと同じマシンにサーババイナリが必要です。**SSE / Streamable HTTP** はリモート配置に向く一方、認証・TLS・レート制限を自前で設計する必要があります。",
+      "運用では「その MCP が触り得るスコープ」を最小化します。広いファイルシステムアクセス・任意 URL 取得・シェル実行を持つサーバは、**サプライチェーン攻撃（悪意あるサーバ・更新）とインジェクション**の両方の面でリスクが大きくなります。社内利用でもロックファイル・署名・許容リストの運用を検討してください。",
+      "エージェント製品ごとに MCP の UI（有効化・ログ・再接続）が異なるため、「仕様は同じでも接続パスが違う」と心得、**公式の接続例とセキュリティ注意**を各クライアントのドキュメントで確認するのが安全です。"
+    ],
+    "date": "2026-03-10",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "MCP",
+      "CLI",
+      "セキュリティ",
+      "ツール",
+      "エージェント"
+    ],
+    "primarySources": [
+      {
+        "title": "Model Context Protocol — Specification & documentation",
+        "site": "modelcontextprotocol.io",
+        "url": "https://modelcontextprotocol.io/docs/getting-started/intro"
+      },
+      {
+        "title": "MCP — GitHub (organization)",
+        "site": "GitHub",
+        "url": "https://github.com/modelcontextprotocol"
+      }
+    ]
+  },
+  {
+    "id": "agent-skills-skill-md",
+    "type": "feature",
+    "category": "cli",
+    "title": "エージェント・スキルと SKILL.md — Claude / Cursor / Codex をまたぐ再利用単位",
+    "excerpt": "フォルダ＋SKILL.md に手順・ドメイン知識・メタデータを束ね、モデルが必要時だけ展開する「スキル」パターンが普及している。YAML フロントマター、段階的開示、.claude/skills や各 IDE の skills ディレクトリの考え方を整理する。",
+    "body": [
+      "「毎回長いシステムプロンプトを貼る」より、**リポジトリやマシンに同梱したスキル**を読み込ませる方式は、レビュー可能性と再現性の面で有利です。代表例が Anthropic 側で整備されている **Agent Skills** と、そのフォルダ形式における **SKILL.md** です。",
+      "典型的には SKILL.md の **YAML フロントマター**（名前・説明・互換性・利用可能ツール等）が「発見用の薄いメタデータ」となり、本文にワークフロー・チェックリスト・禁止事項・サンプルコマンドが書かれます。モデル・実装は **メタデータだけ常時・本文は起動時**といった段階的開示でトークンを抑える設計が取られがちです。",
+      "Claude Code では `.claude/skills/` などの配置がドキュメント化され、API / Agent SDK でも Skill ツール経由で読み込む例が示されています。Cursor は changelog 上 Skills をプロダクト機能として扱っており、**同じ「スキル」という語でも実装と検索パスが製品依存**である点に注意が必要です。",
+      "チーム運用では、(1) スキル単位のオーナーと改版履歴、(2) 機密・患者安全など高リスク領域の人間ゲート、(3) 外部コピペとの混同防止（名前空間）をルール化すると安全です。**複数エージェント製品を併用する場合**は、フロントマターの互換フィールドやディレクトリ規約を揃えると移行コストが下がります。"
+    ],
+    "date": "2026-03-12",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "スキル",
+      "SKILL.md",
+      "Claude",
+      "Cursor",
+      "エージェント",
+      "ドキュメント"
+    ],
+    "primarySources": [
+      {
+        "title": "Agent skills overview",
+        "site": "Anthropic Docs",
+        "url": "https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills/overview"
+      },
+      {
+        "title": "Extend Claude with skills (Claude Code)",
+        "site": "Anthropic Docs",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
+      },
+      {
+        "title": "SKILL.md: The Agent Skills Format（コミュニティ解説・仕様まとめ）",
+        "site": "mdskills.ai",
+        "url": "https://www.mdskills.ai/specs/skill-md",
+        "note": "非公式の仕様まとめ。最終的な挙動は各製品の公式ドキュメントを優先。"
+      }
+    ]
+  },
+  {
+    "id": "markdown-ai-context-agents-llms",
+    "type": "feature",
+    "category": "cli",
+    "title": "Markdown で育てるエージェント文脈 — AGENTS.md・CLAUDE.md・llms.txt・.cursor/rules",
+    "excerpt": "リポジトリ直下の短い Markdown／ルールファイルが、LLM への「常時参照コンテキスト」として定位置になっている。Codex の AGENTS.md、Cursor の rules、サイト全体要約の llms.txt など、役割の違いとレビュー文化を整理する。",
+    "body": [
+      "コーディングエージェント普及に伴い、**Git 管理下のテキストで「どう振る舞うか」を固定する**パターンが一般化しました。代表例は **AGENTS.md**（リポジトリや組織単位のエージェント向け指示）、**CLAUDE.md**（Claude Code のメモリ / プロジェクト文脈）、**`.cursor/rules` や `.mdc` ルール**（Cursor の文脈注入）、**llms.txt**（サイト・プロダクトの LLM 向け要約入口）です。",
+      "いずれも「長い README を毎回貼る」より、**エディタ・CLI が自動で取り込む場所に置く**ことでドリフトを減らすのが狙いです。差分レビューがしやすい Plain text / Markdown であることは、エンタープライズの承認フローとも相性が良いです。",
+      "落とし穴は、(1) ルール同士の矛盾（古い節が残る）、(2) 機密を誤ってコミット、(3) 「ルールに書いたから安全」という誤認（権限・ネットワーク境界は別問題）です。**定期的なlint・オーナー・有効期限コメント**を入れると運用が安定します。",
+      "サイト公開向けの **llms.txt** は、検索クローラではなく LLM が一次情報を辿るための**入口インデックス**として位置づけられています。自社ドキュメントを載せる場合は、正本の URL と要約の境界をはっきりさせ、著作権・利用条件に沿った引用に留めます。"
+    ],
+    "date": "2026-03-12",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "Markdown",
+      "AGENTS.md",
+      "llms.txt",
+      "Cursor",
+      "Claude",
+      "ドキュメント"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing AGENTS.md",
+        "site": "OpenAI Developers",
+        "url": "https://developers.openai.com/codex/guides/agents-md/"
+      },
+      {
+        "title": "llms.txt — the /llms.txt standard",
+        "site": "llmstxt.org",
+        "url": "https://llmstxt.org/"
+      },
+      {
+        "title": "Rules — Cursor docs",
+        "site": "Cursor",
+        "url": "https://cursor.com/docs/context/rules"
+      },
+      {
+        "title": "Claude Code memory (CLAUDE.md 等)",
+        "site": "Anthropic Docs",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/memory"
+      }
+    ]
+  },
+  {
+    "id": "mico-kubectl-ai",
+    "type": "feature",
+    "category": "cli",
+    "title": "Mico — kubectl 向け OSS の AI アシスト（適用前確認と RBAC を前提に）",
+    "excerpt": "自然言語からマニフェストや kubectl サブコマンド候補を出す補助ツール。便利さとのトレードオフはクラスタ破壊系操作の誤実行。dry-run・diff・人間承認を徹底し、本番では監査ログまで含めて設計する。",
+    "body": [
+      "Kubernetes 運用では `kubectl` の打ち間違い・意図と逆のリソース名・危険な delete がすぐ現場トラブルになります。OSS の **Mico** は、その補助として自然言語からコマンドやマニフェスト案を出すタイプのツールの一例です（名称・機能はリポジトリ README を正としてください）。",
+      "**AI が提案した YAML をそのまま apply しない**こと。`kubectl apply --dry-run=server`、`diff`、変更対象namespaceの再確認、承認ゲートを挟む運用が必須です。本番クラスタでは RBAC を最小化し、エージェント用クレデンシャルにクラスタ管理者を渡さないのが鉄則です。",
+      "同種ツールとして Google の **kubectl-ai** など別実装もあり、モデルサポート・配布形態（Krew プラグイン等）が異なります。採用時はライセンス・通信先（クラウド LLM へプロンプトが出るか）・ログ保管を DD で確認します。",
+      "本稿はツール紹介と注意喚起であり、特定環境での合否判断やセキュリティ監査の代替ではありません。"
+    ],
+    "date": "2026-03-14",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "kubectl",
+      "Kubernetes",
+      "CLI",
+      "Mico",
+      "運用"
+    ],
+    "primarySources": [
+      {
+        "title": "tahtaciburak/mico",
+        "site": "GitHub",
+        "url": "https://github.com/tahtaciburak/mico"
+      },
+      {
+        "title": "GoogleCloudPlatform/kubectl-ai",
+        "site": "GitHub",
+        "url": "https://github.com/GoogleCloudPlatform/kubectl-ai"
+      }
+    ]
+  },
+  {
+    "id": "fish-ai-terminal-shell",
+    "type": "feature",
+    "category": "cli",
+    "title": "Fish シェルと fish-ai — 端末内 LLM 補助と Warp 型クラウド端末の住み分け",
+    "excerpt": "Realiserad/fish-ai のように、Fish 上でコマンド補正・自然言語からコマンド・LLM 補完を行うプラグインがある。設定はローカル ini。クラウドホスト型ターミナル（Warp 等）とはデータ境界が異なるので用途で選ぶ。",
+    "body": [
+      "**fish-ai**（例: Realiserad/fish-ai）は Fish 向けプラグインで、自然言語とシェルコマンドの往復、コマンド修正、fuzzy 補完風の挙動などを LLM で補強する構成です。多くの場合、設定ファイルでプロバイダや API キーを指定し、**端末マシンからベンダ API に直接出る**形になります（詳細は README を確認）。",
+      "クラウド上でセッションを完結させるターミナル製品とは対照的に、**fish-ai はローカル環境に閉じたスタック**を好む人向けです。オフライン要件や社内プロキシ、エアギャップなどでは後者が使えない一方、前者は「自分のシェルに足す」だけで試せる利点があります。",
+      "どちらの構成でも、**(1) プロンプトに環境変数やパスが混入しないか、(2) 履歴・ログの保存先、(3) サブスクリプションとデータ利用条項**を必ず読みます。シェル補助は実行権限に直結するため、**提案コマンドをそのまま実行しない**習慣づけが重要です。",
+      "Fish 以外のシェルでは同種の試み（ラッパー、別プロセスのエージェント）を組み合わせることになり、体験の統一度は下がりがちです。チームで標準シェルを揃えるか、CI では POSIX sh 固定にするかは別途方針が必要です。"
+    ],
+    "date": "2026-03-14",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Fish",
+      "ターミナル",
+      "CLI",
+      "シェル",
+      "LLM"
+    ],
+    "primarySources": [
+      {
+        "title": "realiserad/fish-ai",
+        "site": "GitHub",
+        "url": "https://github.com/realiserad/fish-ai"
+      },
+      {
+        "title": "Fish shell — documentation",
+        "site": "fishshell.com",
+        "url": "https://fishshell.com/docs/current/"
+      }
+    ]
+  },
+  {
     "id": "cursor-2-4-subagents",
     "type": "review",
     "category": "editor",
