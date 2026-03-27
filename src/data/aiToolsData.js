@@ -342,6 +342,390 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "aqua-voice-review",
+    "type": "review",
+    "category": "voice",
+    "title": "Aqua Voice — Mac/Windows 向けAIディクテーション（フローティングUI）",
+    "excerpt": "録音→転写→アクティブなアプリへペーストまでを一体で扱う製品向けディクテーション。公式 FAQ では全アカウント 1,000 語の無料枠、Avalon モデルは Pro で選択可能、iPhone アプリは未対応とされる。",
+    "body": [
+      "Aqua Voice は Mac / Windows 向けの AI ディクテーションで、小さなフローティング UI から録音し、転写結果をカーソル位置へ流し込むワークフローが中心です。開発者向けの「手をキーボードから離さずに進めたい」場面や、短いメモの口述に向くタイプのプロダクトです。",
+      "料金・機能の境界は公式 FAQ が基準です。無料で試せる語数に上限があり、Pro プランでモデル選択や利用上限の扱いが変わる理解でよいでしょう（詳細は一次情報で都度確認）。",
+      "注意点として、モバイル iOS 版は FAQ 上「未対応」とされています。Apple シリエコシステムだけで完結させたい場合は別製品との比較が必要です。",
+      "精度の評価はドメイン依存です。ベンダーが公表する技術用語向けスコアと、会話全般の WER は別物なので、自チームの音声サンプルで試すのが確実です。"
+    ],
+    "date": "2026-03-07",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "rating": 4,
+    "company": "Aqua",
+    "pricing": "無料枠あり / Pro は公式サイト参照",
+    "model": "Avalon（Pro で選択可・公式 FAQ）",
+    "tags": [
+      "音声",
+      "ディクテーション",
+      "Mac",
+      "Windows",
+      "開発者向け"
+    ],
+    "features": [
+      "フローティングUI",
+      "ペースト連携",
+      "Avalon",
+      "1,000語無料枠（FAQ）"
+    ],
+    "primarySources": [
+      {
+        "title": "Aqua Voice — FAQ",
+        "site": "Aqua",
+        "url": "https://aquavoice.com/faq"
+      }
+    ]
+  },
+  {
+    "id": "ai-voice-input-tools-landscape-2026",
+    "type": "feature",
+    "category": "voice",
+    "title": "AI 音声入力ツールの俯瞰 — 製品型と API 型、Whisper と gpt-4o-transcribe",
+    "excerpt": "OSS の Whisper と OpenAI Speech-to-Text API（whisper-1 / gpt-4o-transcribe 系）は別ライン。コンシューマー製品とクラウド STT API の選び方、レイテンシ・コスト・プライバシーの論点を整理する。",
+    "body": [
+      "音声入力のスタックは大きく「OS 標準」「サードパーティ製品」「自分で API を叩く」の三層に分けられます。開発者が比較しやすいのは製品単体より、**どこで音声が止まるか**（端末内／ベンダークラウド／自社 VPC）の境界です。",
+      "OpenAI のドキュメント上、Speech-to-Text には `whisper-1` と `gpt-4o-transcribe` 系など複数ルートがあり、**OSS Whisper モデルそのものとは名前が似ていても別物**です。ベンチや「Whisper ベース」の記述を読むときは、OSS なのかホスト API なのかを必ず確認してください。",
+      "クラウド STT ではレイテンシ表示が「ネットワーク除く」こともあり、実アプリでは端末処理との二段構えや、長尺ファイルの非同期バッチが現実的です。医療・法務などではログ保管と再識別リスクが追加の論点になります。",
+      "製品側（Aqua 等）はフローティング UI・ペースト演出・ショートカット統合まで含めた体験勝負、API 側はカスタムパイプラインとの接続勝負、という住み分けが典型です。",
+      "下の表は「調査の出発点」用です。契約 SLA・データ居留・モデル ID は都度ベンダー表を正としてください。"
+    ],
+    "date": "2026-03-14",
+    "author": "AI News 編集部",
+    "readTime": "11分",
+    "tags": [
+      "音声",
+      "Whisper",
+      "STT",
+      "API",
+      "プライバシー"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "コンシューマー／プロダクト寄りの例（抜粋）",
+        "headers": [
+          "製品",
+          "向き",
+          "メモ"
+        ],
+        "rows": [
+          [
+            "Aqua Voice",
+            "デスクトップ口述＋ペースト",
+            "FAQ で無料枠・Pro・iOS 未対応を確認"
+          ],
+          [
+            "OS 標準ディクテーション",
+            "オフライン志向",
+            "プライバシー優先だがモデルは OS 依存"
+          ],
+          [
+            "会議ボット系SaaS",
+            "共有リンク議事録",
+            "データ保管場所と学習オプトアウトを要確認"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 3,
+        "caption": "API / デベロッパー向け（抜粋）",
+        "headers": [
+          "提供元",
+          "代表エンドポイント",
+          "メモ"
+        ],
+        "rows": [
+          [
+            "OpenAI",
+            "Speech-to-Text（whisper-1 / gpt-4o-transcribe 系）",
+            "公式ガイドでルート差分を確認"
+          ],
+          [
+            "Deepgram",
+            "リアルタイム／プリレコーデッド STT",
+            "レイテンシ表はネットワーク前提を読む"
+          ],
+          [
+            "AssemblyAI",
+            "非同期・チャプター分割等",
+            "公式ベンチ条件で％系を確認"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Speech to text — OpenAI Platform",
+        "site": "OpenAI",
+        "url": "https://platform.openai.com/docs/guides/speech-to-text"
+      },
+      {
+        "title": "openai/whisper（GitHub）",
+        "site": "OpenAI",
+        "url": "https://github.com/openai/whisper"
+      },
+      {
+        "title": "Aqua Voice — FAQ",
+        "site": "Aqua",
+        "url": "https://aquavoice.com/faq"
+      }
+    ]
+  },
+  {
+    "id": "ai-music-generation-frontier-early-2026",
+    "type": "feature",
+    "category": "voice",
+    "title": "生成音楽のフロンティア — Suno・Udio・Lyria・Stable Audio 周辺の整理（2026年初頭）",
+    "excerpt": "創作者ツールとライセンス・レーベル動向が高速な領域。評価額やバージョン番号は報道・公式ヘルプを正とし、数値ヒャールには要注意。企業利用では権利表記と学習オプトアウトの有無を別途確認。",
+    "body": [
+      "生成音楽は、品質よりも**権利と配信パイプライン**の話が速い分野です。スタートアップの評価額報道は桁や通貨の取り違えが起きやすいので、必ず原報を読みます。",
+      "Suno はヘルプ上 v5 系の説明があり、2026年時点ではさらに次版が進行している可能性があります。細部はアプリ内と help を正にしてください。",
+      "Udio と大手レーベル側の和解・ライセンス型への話は 2025 年末前後の報道が多く、**利用規約と曲の帰属**はプロダクト更新で変わり得ます。",
+      "Google 側は Lyria などブランドが複数接続先（消費者アプリ、API、Vertex 等）を持つ構成で、発表時点の The Keyword・開発者ブログを軸に追うのが安全です。",
+      "Stable Audio など別系統は「いつ発表された製品か」を公式 post の年と突き合わせ、古い記事の断定をそのまま写さないことが重要です。企業の広告 BGM 用途は別途ポリシー確認が必要です。"
+    ],
+    "date": "2026-03-19",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "音声",
+      "音楽生成",
+      "著作権",
+      "Suno",
+      "Lyria",
+      "規制"
+    ],
+    "primarySources": [
+      {
+        "title": "Suno — Help / Changelog",
+        "site": "Suno",
+        "url": "https://help.suno.com/"
+      },
+      {
+        "title": "Lyria — Google The Keyword 例（製品発表の確認用）",
+        "site": "Google",
+        "url": "https://blog.google/"
+      },
+      {
+        "title": "Reuters — Suno／生成音楽（報道の例・日付は記事ごと確認）",
+        "site": "Reuters",
+        "url": "https://www.reuters.com/technology/"
+      }
+    ]
+  },
+  {
+    "id": "ai-video-generators-landscape-2026",
+    "type": "feature",
+    "category": "video",
+    "title": "動画生成モデルの地形図 — Veo・Runway・Kling などとマルチモデル・パイプライン",
+    "excerpt": "テキスト→動画、参照映像、ネイティブ音声、4K／長尺、物理シミュレーション寄りの品質競争が続く。単体ベンダー鎖国より、用途別に複数モデルを束ねる構成が増えている。",
+    "body": [
+      "2025〜2026 年のトレンドは「1クリックで完結」より、**企画→キーフレーム→動画→音声→後処理**を API でつなぐパイプライン設計に寄っています。",
+      "Google の Veo 系、Runway、中国勢の Kling、開放系の Hunyuan／ByteDance 系列など、**アクセス経路（消費者アプリ／API／パートナー）**が異なるため、同じモデル名でも到達点が違います。",
+      "選定チェックリストの例: 最大化解像度と尺、商用ライセンス、参照映像の扱い、音声同梱の有無、ウォーターマーク、推論コスト、地域制限、コンテンツポリシー。",
+      "速報的な「サービス終了」や価格改定は二次報道だけで確定せず、**公式チャンジログ or pricing** を毎回見に行く運用が安全です。",
+      "本サイト別稿ではフロンティア間の料金の軸比較と、Sora 終了報道の整理も参照してください。"
+    ],
+    "date": "2026-03-08",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "動画生成",
+      "Veo",
+      "Runway",
+      "Kling",
+      "パイプライン"
+    ],
+    "primarySources": [
+      {
+        "title": "Gemini API — Video / pricing（構成は公式で要確認）",
+        "site": "Google AI Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing"
+      },
+      {
+        "title": "Runway API — Pricing",
+        "site": "Runway",
+        "url": "https://docs.dev.runwayml.com/guides/pricing/"
+      }
+    ]
+  },
+  {
+    "id": "ai-video-deepfake-compliance-2026",
+    "type": "feature",
+    "category": "video",
+    "title": "生成動画とコンプライアンス — ディープフェイク規制・開示・C2PA の実務",
+    "excerpt": "生成・編集が容易になるほど、開示義務・本人同意・選挙広告・著名人の類似が論点になる。制作フローにメタデータ署名と人間確認ゲートを組み込む話に整理する。",
+    "body": [
+      "各国・各州で「疑似実在映像」の定義と禁止対象が異なり、プラットフォームポリシーと二重管理がかかる場面があります。クロスボーダー配信では最悪ケースの規制に寄せた設計が無難です。",
+      "C2PA Content Credentials は改ざん検知に近い**出所のくすみ**を残す仕組みで、撮影・編集・生成の各段でプロビナンスを積むイメージです。導入にはワークフローと保存形式の合意が必要です。",
+      "社内利用でも「社外配布物だけチェック」では足りず、**個人情報・労務・パートナー契約**側の「AI 生成可否」条項が先に絡むことがあります。",
+      "技術だけでは止められないため、**人間の承認ステップ・版管理・監査ログ**をセットで設計します。"
+    ],
+    "date": "2026-03-08",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "動画",
+      "ディープフェイク",
+      "C2PA",
+      "ガバナンス",
+      "法務"
+    ],
+    "primarySources": [
+      {
+        "title": "C2PA — Overview",
+        "site": "C2PA",
+        "url": "https://c2pa.org/"
+      },
+      {
+        "title": "OWASP — LLM Applications",
+        "site": "OWASP",
+        "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
+      }
+    ]
+  },
+  {
+    "id": "openai-sora-discontinued-2026",
+    "type": "news",
+    "category": "video",
+    "title": "報道: OpenAI が Sora の提供終了を表明 — 計算・戦略・ガードレールの文脈",
+    "excerpt": "2026年3月頃、AP・NPR・Business Insider などが Sora のアプリ／関連 API 終了を伝えた。最終的な公式文言・日付は openai.com 側の確認を優先する。",
+    "body": [
+      "本稿は二次報道ベースの整理です。契約・プロダクト判断は OpenAI の公式発表、利用規約、ダッシュボード通知を正としてください。",
+      "報道で繰り返される観点は、(1) 大規模推論のコストと経済性、(2) ロボティクスや世界モデル等への投資シフト、(3) 深偽・キャラクター利用をめぐる炎上とモデレーションコスト、などです。いずれも**仮説の列挙**であり単独原因として断定しない方が安全です。",
+      "利用者向けメッセージが X などで引用された、とも各紙は伝えていますが、スクリーンショット単体の解釈には注意が必要です。",
+      "クリエイター向けには、既存クリップのエクスポートや権利帰属、代替パイプライン（別稿のフロンティア比較）を早めに確認する動きが想定されます。",
+      "本サイトでは規模の大きい話題のため速報枠で掲載するが、数値・内部事情の噂は掲げない方針とする。"
+    ],
+    "date": "2026-03-26",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "Sora",
+      "動画生成",
+      "速報",
+      "規制"
+    ],
+    "primarySources": [
+      {
+        "title": "OpenAI pulls the plug on Sora video app (AP)",
+        "site": "AP News",
+        "url": "https://apnews.com/article/openai-closes-sora-ai-c60de960536923f33edc04b92ddbe1cd"
+      },
+      {
+        "title": "OpenAI pulls the plug on Sora (NPR)",
+        "site": "NPR",
+        "url": "https://www.npr.org/2026/03/25/g-s1-115055/openai-pulls-the-plug-on-sora-the-viral-ai-video-generator-that-sparked-deepfake-concerns"
+      },
+      {
+        "title": "OpenAI discontinues Sora amid robotics shift (Business Insider)",
+        "site": "Business Insider",
+        "url": "https://www.businessinsider.com/openai-discontinues-sora-video-app-amid-robotics-shift-compute-limitations-2026-3"
+      },
+      {
+        "title": "OpenAI — News / Product blog（公式確認用）",
+        "site": "OpenAI",
+        "url": "https://openai.com/news/"
+      }
+    ]
+  },
+  {
+    "id": "ai-video-frontier-models-march-2026-pricing",
+    "type": "feature",
+    "category": "video",
+    "title": "動画フロンティアの料金の軸 — Veo 3.1・Runway Gen-4.5・Kling など（公式再確認前提）",
+    "excerpt": "秒単価・クレジット制・バンドル販売が混在するため「安い／高い」一発比較は誤魔化しやすい。公式 pricing の単位（秒・分・解像度・Fast/Standard）を揃えて読む。",
+    "body": [
+      "Gemini API 系の動画（Veo）では Google の pricing ページに秒あたり単価と解像度ティアが表形式で出ることが多いです。Standard / Fast の差も読み落とさないでください。",
+      "Runway はクレジット／秒の組み合わせで示されるため、**1 クレジットの USD 換算**まで踏み込んで概算します。キャンペーンやパックで実効単価は変動します。",
+      "Kling・Pika・CapCut 経由などはプロダクト境界が複雑なので、表では「確認 URL」を主役にし、断定価格は載せすぎません。",
+      "Sora に関しては終了報道があり（別稿）、現行の新規採用は計画から外す判断が入り得ます。",
+      "**いつでも公式を正にする**前提で、以下の表は2026年3月末時点の調査メモです。"
+    ],
+    "date": "2026-03-30",
+    "author": "AI News 編集部",
+    "readTime": "10分",
+    "tags": [
+      "動画",
+      "料金",
+      "Veo",
+      "Runway",
+      "Kling"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 4,
+        "caption": "各系統の確認入口（価格はページ内で再取得）",
+        "headers": [
+          "系統",
+          "確認先",
+          "メモ"
+        ],
+        "rows": [
+          [
+            "Google Veo / Gemini API",
+            "ai.google.dev pricing",
+            "秒×解像度×Standard/Fast"
+          ],
+          [
+            "Runway API gen4.5",
+            "docs.dev.runwayml.com pricing",
+            "クレジット/秒×クレジット単価"
+          ],
+          [
+            "Kling / 中国勢",
+            "各公式・パートナー",
+            "地域・決済制限に注意"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 4,
+        "caption": "比較時のチェック項目",
+        "headers": [
+          "項目",
+          "理由"
+        ],
+        "rows": [
+          [
+            "商用ライセンス条項",
+            "代理生成品の再配布可否"
+          ],
+          [
+            "音声同梱の課金",
+            "音声+映像の合成単価"
+          ],
+          [
+            "参照映像の IP",
+            "学習・微調整ポリシー"
+          ],
+          [
+            "ウォーターマーク",
+            "強制か任意か"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Gemini API — Pricing",
+        "site": "Google AI Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing"
+      },
+      {
+        "title": "Runway API — Pricing",
+        "site": "Runway",
+        "url": "https://docs.dev.runwayml.com/guides/pricing/"
+      }
+    ]
+  },
+  {
     "id": "claude-code-auto-mode",
     "type": "review",
     "category": "cli",
@@ -2031,7 +2415,7 @@ export const ARTICLES = [
   }
 ];
 
-export const LAST_UPDATED = "2026-03-28";
+export const LAST_UPDATED = "2026-03-30";
 export const SITE_NAME = "AI開発ツール最新情報";
 export const SITE_DESCRIPTION = "Claude Code・Cursor・Windsurf・Gemini・GPT などの最新ニュースを日本語でお届け";
 

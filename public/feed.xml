@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-03-28T15:00:00Z</updated>
+  <updated>2026-03-30T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>動画フロンティアの料金の軸 — Veo 3.1・Runway Gen-4.5・Kling など（公式再確認前提）</title>
+    <link rel="alternate" type="text/html" href="?a=ai-video-frontier-models-march-2026-pricing"/>
+    <id>tag:ai-tool-news.jp,2026:ai-video-frontier-models-march-2026-pricing</id>
+    <published>2026-03-30T15:00:00Z</published>
+    <updated>2026-03-30T15:00:00Z</updated>
+    <summary>秒単価・クレジット制・バンドル販売が混在するため「安い／高い」一発比較は誤魔化しやすい。公式 pricing の単位（秒・分・解像度・Fast/Standard）を揃えて読む。</summary>
+  </entry>
   <entry>
     <title>【2026年3月28日更新】AI開発ツール最新動向 — ARC-AGI-3・Anthropic対ペンタゴン差止・OpenAI Astral買収・GPT-5.4 mini/nano</title>
     <link rel="alternate" type="text/html" href="?a=overview-2026-spring"/>
@@ -120,6 +128,14 @@
     <summary>2026-03-27、PM の Noah Zweben 氏が発表。Web/モバイルセッションが PR をリモートでフォローし green 化を目指す。GitHub Actions では anthropics/claude-code-action の ci-failure ワークフロー例あり。</summary>
   </entry>
   <entry>
+    <title>報道: OpenAI が Sora の提供終了を表明 — 計算・戦略・ガードレールの文脈</title>
+    <link rel="alternate" type="text/html" href="?a=openai-sora-discontinued-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-sora-discontinued-2026</id>
+    <published>2026-03-26T15:00:00Z</published>
+    <updated>2026-03-26T15:00:00Z</updated>
+    <summary>2026年3月頃、AP・NPR・Business Insider などが Sora のアプリ／関連 API 終了を伝えた。最終的な公式文言・日付は openai.com 側の確認を優先する。</summary>
+  </entry>
+  <entry>
     <title>Cursor レビュー — AIエディタの王者、Windsurf統合で盤石に</title>
     <link rel="alternate" type="text/html" href="?a=cursor-editor"/>
     <id>tag:ai-tool-news.jp,2026:cursor-editor</id>
@@ -176,6 +192,14 @@
     <summary>Anysphere社がCodeium社のWindsurfを買収。Cascadeフロー技術をCursorに統合予定。AIエディタ市場の寡占化が進む。</summary>
   </entry>
   <entry>
+    <title>生成音楽のフロンティア — Suno・Udio・Lyria・Stable Audio 周辺の整理（2026年初頭）</title>
+    <link rel="alternate" type="text/html" href="?a=ai-music-generation-frontier-early-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ai-music-generation-frontier-early-2026</id>
+    <published>2026-03-19T15:00:00Z</published>
+    <updated>2026-03-19T15:00:00Z</updated>
+    <summary>創作者ツールとライセンス・レーベル動向が高速な領域。評価額やバージョン番号は報道・公式ヘルプを正とし、数値ヒャールには要注意。企業利用では権利表記と学習オプトアウトの有無を別途確認。</summary>
+  </entry>
+  <entry>
     <title>OpenAI が Astral を買収 — uv・Ruff・ty を Codex に統合、Pythonエコシステムを掌握へ</title>
     <link rel="alternate" type="text/html" href="?a=openai-acquires-astral-2026"/>
     <id>tag:ai-tool-news.jp,2026:openai-acquires-astral-2026</id>
@@ -206,6 +230,14 @@
     <published>2026-03-15T15:00:00Z</published>
     <updated>2026-03-15T15:00:00Z</updated>
     <summary>IDE一体型でありながら、CLIモード（Composer）が極めて強力。自然言語で伝えるだけで、関連ファイルを自動で見つけ出し、変更案を提示する。</summary>
+  </entry>
+  <entry>
+    <title>AI 音声入力ツールの俯瞰 — 製品型と API 型、Whisper と gpt-4o-transcribe</title>
+    <link rel="alternate" type="text/html" href="?a=ai-voice-input-tools-landscape-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ai-voice-input-tools-landscape-2026</id>
+    <published>2026-03-14T15:00:00Z</published>
+    <updated>2026-03-14T15:00:00Z</updated>
+    <summary>OSS の Whisper と OpenAI Speech-to-Text API（whisper-1 / gpt-4o-transcribe 系）は別ライン。コンシューマー製品とクラウド STT API の選び方、レイテンシ・コスト・プライバシーの論点を整理する。</summary>
   </entry>
   <entry>
     <title>Claude Opus 4.6 / Sonnet 4.6 の 100 万トークンコンテキストが GA — 追加料金なし</title>
@@ -256,12 +288,36 @@
     <summary>GitHubエコシステムとシームレスに統合。Copilot Coding Agentによる自律的なIssue対応が新たに追加。</summary>
   </entry>
   <entry>
+    <title>動画生成モデルの地形図 — Veo・Runway・Kling などとマルチモデル・パイプライン</title>
+    <link rel="alternate" type="text/html" href="?a=ai-video-generators-landscape-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ai-video-generators-landscape-2026</id>
+    <published>2026-03-08T15:00:00Z</published>
+    <updated>2026-03-08T15:00:00Z</updated>
+    <summary>テキスト→動画、参照映像、ネイティブ音声、4K／長尺、物理シミュレーション寄りの品質競争が続く。単体ベンダー鎖国より、用途別に複数モデルを束ねる構成が増えている。</summary>
+  </entry>
+  <entry>
+    <title>生成動画とコンプライアンス — ディープフェイク規制・開示・C2PA の実務</title>
+    <link rel="alternate" type="text/html" href="?a=ai-video-deepfake-compliance-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ai-video-deepfake-compliance-2026</id>
+    <published>2026-03-08T15:00:00Z</published>
+    <updated>2026-03-08T15:00:00Z</updated>
+    <summary>生成・編集が容易になるほど、開示義務・本人同意・選挙広告・著名人の類似が論点になる。制作フローにメタデータ署名と人間確認ゲートを組み込む話に整理する。</summary>
+  </entry>
+  <entry>
     <title>VS Code + Copilot — 定番エディタのAI進化</title>
     <link rel="alternate" type="text/html" href="?a=vscode"/>
     <id>tag:ai-tool-news.jp,2026:vscode</id>
     <published>2026-03-08T15:00:00Z</published>
     <updated>2026-03-08T15:00:00Z</updated>
     <summary>世界で最も使われるエディタ。GitHub Copilotとの統合で強力なAI支援。Coding Agentの追加でさらに進化。</summary>
+  </entry>
+  <entry>
+    <title>Aqua Voice — Mac/Windows 向けAIディクテーション（フローティングUI）</title>
+    <link rel="alternate" type="text/html" href="?a=aqua-voice-review"/>
+    <id>tag:ai-tool-news.jp,2026:aqua-voice-review</id>
+    <published>2026-03-07T15:00:00Z</published>
+    <updated>2026-03-07T15:00:00Z</updated>
+    <summary>録音→転写→アクティブなアプリへペーストまでを一体で扱う製品向けディクテーション。公式 FAQ では全アカウント 1,000 語の無料枠、Avalon モデルは Pro で選択可能、iPhone アプリは未対応とされる。</summary>
   </entry>
   <entry>
     <title>Google、Gemini 3.1 Flash-Lite をプレビュー公開 — 2.5× 高速・低コストの大量処理向けモデル</title>
