@@ -1056,59 +1056,79 @@ function GlossaryGuidePanel({ glossaryGenres }) {
 }
 
 /** レビュータブ冒頭のカテゴリ別比較表 */
-function ReviewComparisonTables({ articles, onSelect }) {
-  const REVIEW_CATEGORIES = [
-    { id: "cli", label: "CLI ツール比較", description: "ターミナルから AI にコードを書かせる CLI ツール" },
-    { id: "editor", label: "エディタ比較", description: "AI 統合エディタ・IDE" },
-  ];
+const REVIEW_CATEGORIES = [
+  { id: "cli", label: "CLI ツール", description: "ターミナルから AI にコードを書かせる CLI ツール" },
+  { id: "editor", label: "エディタ", description: "AI 統合エディタ・IDE" },
+  { id: "other", label: "その他ツール", description: "音声入力・ターミナル等" },
+];
 
+function ReviewComparisonTable({ articles, category, onSelect }) {
+  const items = articles
+    .filter((a) => a.reviewCategory === category.id)
+    .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
+  if (items.length === 0) return null;
   return (
-    <div className="review-comparisons">
-      {REVIEW_CATEGORIES.map((cat) => {
-        const items = articles
-          .filter((a) => a.reviewCategory === cat.id)
-          .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
-        if (items.length === 0) return null;
-        return (
-          <section key={cat.id} className="review-comparison-section">
-            <h2 className="section-feed__title">{cat.label}</h2>
-            <p className="section-feed__meta">{cat.description}</p>
-            <div className="review-comparison-table-wrap">
-              <table className="review-comparison-table">
-                <thead>
-                  <tr>
-                    <th scope="col">ツール</th>
-                    <th scope="col">評価</th>
-                    <th scope="col">概要</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {items.map((a) => (
-                    <tr
-                      key={a.id}
-                      className="review-comparison-row"
-                      onClick={() => onSelect(a)}
-                      style={{ cursor: "pointer" }}
-                    >
-                      <td className="review-comparison-name">
-                        {a.title.split(/[—–\s]/)[0].replace(/レビュー$/, "").trim()}
-                      </td>
-                      <td className="review-comparison-rating">
-                        <span className="review-stars">{renderStars(a.rating)}</span>
-                        <span className="review-score">{a.rating}</span>
-                      </td>
-                      <td className="review-comparison-excerpt">
-                        {a.excerpt.length > 80 ? a.excerpt.slice(0, 80) + "…" : a.excerpt}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
-        );
-      })}
-    </div>
+    <section className="review-comparison-section">
+      <h2 className="section-feed__title">{category.label}比較</h2>
+      <p className="section-feed__meta">{category.description}</p>
+      <div className="review-comparison-table-wrap">
+        <table className="review-comparison-table">
+          <thead>
+            <tr>
+              <th scope="col">ツール</th>
+              <th scope="col">評価</th>
+              <th scope="col">概要</th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.map((a) => (
+              <tr
+                key={a.id}
+                className="review-comparison-row"
+                onClick={() => onSelect(a)}
+                style={{ cursor: "pointer" }}
+              >
+                <td className="review-comparison-name">
+                  {a.title.split(/[—–\s]/)[0].replace(/レビュー$/, "").trim()}
+                </td>
+                <td className="review-comparison-rating">
+                  <span className="review-stars">{renderStars(a.rating)}</span>
+                  <span className="review-score">{a.rating}</span>
+                </td>
+                <td className="review-comparison-excerpt">
+                  {a.excerpt.length > 80 ? a.excerpt.slice(0, 80) + "…" : a.excerpt}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
+
+function ReviewTabBar({ reviewTab, onSelect }) {
+  const tabs = [
+    { id: "all", label: "すべて" },
+    ...REVIEW_CATEGORIES.map((c) => ({ id: c.id, label: c.label })),
+  ];
+  return (
+    <nav className="filter-nav" aria-label="レビューカテゴリ">
+      <div className="filter-nav-inner" role="tablist">
+        {tabs.map((t) => (
+          <button
+            key={t.id}
+            type="button"
+            role="tab"
+            aria-selected={reviewTab === t.id}
+            className={`filter-tab${reviewTab === t.id ? " is-active" : ""}`}
+            onClick={() => onSelect(t.id)}
+          >
+            {t.label}
+          </button>
+        ))}
+      </div>
+    </nav>
   );
 }
 
@@ -2047,6 +2067,7 @@ export default function App() {
   const [siteSection, setSiteSection] = useState(initialRoute.siteSection);
   const [guideTab, setGuideTab] = useState(initialRoute.guideTab);
   const [toolTab, setToolTab] = useState(initialRoute.toolTab ?? "claude-code");
+  const [reviewTab, setReviewTab] = useState("all");
   const [theme, setTheme] = useState(() => localStorage.getItem(STORAGE_THEME) || "light");
   const [bookmarkIds, setBookmarkIds] = useState(loadBookmarks);
   const [showFab, setShowFab] = useState(false);
@@ -2205,10 +2226,11 @@ export default function App() {
     let list = ARTICLES;
     if (siteSection === "reviews") {
       list = list.filter((a) => a.type === "review");
+      if (reviewTab !== "all") list = list.filter((a) => a.reviewCategory === reviewTab);
     } else if (siteSection === "articles") {
       list = list.filter((a) => a.type !== "review");
     }
-    if (filter !== "all") list = list.filter((a) => a.category === filter);
+    if (siteSection === "articles" && filter !== "all") list = list.filter((a) => a.category === filter);
     if (query.trim()) {
       const q = query.toLowerCase();
       list = list.filter(
@@ -2236,7 +2258,7 @@ export default function App() {
       : list;
     const sorted = [...restRaw].sort((a, b) => compareArticleOrder(a, b, sort));
     return { featured, rest: sorted, list };
-  }, [filter, query, sort, siteSection]);
+  }, [filter, query, sort, siteSection, reviewTab]);
 
   const { featured, rest } = filtered;
 
@@ -2330,8 +2352,10 @@ export default function App() {
               showSort={siteSection === "articles" || siteSection === "reviews"}
             />
             <SiteSectionNav section={siteSection} onSection={switchSection} />
-            {siteSection === "articles" || siteSection === "reviews" ? (
+            {siteSection === "articles" ? (
               <FilterBar active={filter} setActive={setFilter} />
+            ) : siteSection === "reviews" ? (
+              <ReviewTabBar reviewTab={reviewTab} onSelect={setReviewTab} />
             ) : siteSection === "guide" ? (
               <GuideTabBar guideTab={guideTab} onSelect={selectGuideTab} />
             ) : siteSection === "tools" ? (
@@ -2361,10 +2385,18 @@ export default function App() {
               {siteSection === "articles" || siteSection === "reviews" ? (
                 <>
                   {siteSection === "reviews" && !query ? (
-                    <ReviewComparisonTables
-                      articles={ARTICLES.filter((a) => a.type === "review")}
-                      onSelect={handleSelect}
-                    />
+                    <div className="review-comparisons">
+                      {REVIEW_CATEGORIES
+                        .filter((cat) => reviewTab === "all" || reviewTab === cat.id)
+                        .map((cat) => (
+                          <ReviewComparisonTable
+                            key={cat.id}
+                            articles={ARTICLES.filter((a) => a.type === "review")}
+                            category={cat}
+                            onSelect={handleSelect}
+                          />
+                        ))}
+                    </div>
                   ) : null}
 
                   {featured && siteSection === "articles" ? (
