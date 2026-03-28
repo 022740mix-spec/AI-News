@@ -2691,13 +2691,15 @@ const [showFab, setShowFab] = useState(false);
                 </div>
               </div>
             </div>
-            <HamburgerMenu
-              isOpen={menuOpen}
-              onClose={closeMenu}
-              onSection={(section) => { setSelected(null); switchSection(section); }}
-              currentSection={siteSection}
-            />
           </header>
+        ) : null}
+        {selected ? (
+          <HamburgerMenu
+            isOpen={menuOpen}
+            onClose={closeMenu}
+            onSection={(section) => { setSelected(null); switchSection(section); }}
+            currentSection={siteSection}
+          />
         ) : null}
         {!selected ? (
           <>
