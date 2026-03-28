@@ -601,14 +601,11 @@ function Header({
                 <kbd>/</kbd> で検索
               </span>
             </div>
-            <div className="toolbar-stats">
-              <span className="stat-pill">
-                表示 <strong>{filteredCount}</strong> / {totalCount} 件
-              </span>
-              {query ? (
+            {query ? (
+              <div className="toolbar-stats">
                 <span className="stat-pill">フィルター: 「{query}」</span>
-              ) : null}
-            </div>
+              </div>
+            ) : null}
           </>
         ) : null}
       </div>
