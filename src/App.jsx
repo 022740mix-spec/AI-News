@@ -2168,18 +2168,16 @@ export default function App() {
                     <p className="section-feed__meta">
                       バイブコーディング（開発・CLI・エディタ）・メディア生成（画像・動画・音楽）・用語集を分けました。検索はいま開いているタブだけを対象にします。
                     </p>
-                    <div
-                      className="guide-subtabs"
-                      role="tablist"
-                      aria-label="ガイドの表示切替"
-                    >
+                  </div>
+                  <nav className="filter-nav" aria-label="ガイドの表示切替">
+                    <div className="filter-nav-inner" role="tablist">
                       <button
                         id="guide-subtab-vibe"
                         type="button"
                         role="tab"
                         aria-selected={guideTab === "vibe"}
                         aria-controls="guide-subtab-panel"
-                        className={`guide-subtab${guideTab === "vibe" ? " is-active" : ""}`}
+                        className={`filter-tab${guideTab === "vibe" ? " is-active" : ""}`}
                         onClick={() => selectGuideTab("vibe")}
                       >
                         バイブコーディング
@@ -2190,7 +2188,7 @@ export default function App() {
                         role="tab"
                         aria-selected={guideTab === "media"}
                         aria-controls="guide-subtab-panel"
-                        className={`guide-subtab${guideTab === "media" ? " is-active" : ""}`}
+                        className={`filter-tab${guideTab === "media" ? " is-active" : ""}`}
                         onClick={() => selectGuideTab("media")}
                       >
                         メディア生成
@@ -2201,13 +2199,13 @@ export default function App() {
                         role="tab"
                         aria-selected={guideTab === "glossary"}
                         aria-controls="guide-subtab-panel"
-                        className={`guide-subtab${guideTab === "glossary" ? " is-active" : ""}`}
+                        className={`filter-tab${guideTab === "glossary" ? " is-active" : ""}`}
                         onClick={() => selectGuideTab("glossary")}
                       >
                         用語集
                       </button>
                     </div>
-                  </div>
+                  </nav>
                   {guideMatchCount === 0 ? (
                     <div className="empty-state">
                       このタブに該当がありません。別タブに切り替えるか、検索語を変えてください。

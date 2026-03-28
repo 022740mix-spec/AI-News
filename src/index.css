@@ -744,37 +744,7 @@ body {
 }
 
 .guide-tab-intro {
-  margin-bottom: 0.5rem;
-}
-
-.guide-subtabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.85rem;
-}
-
-.guide-subtab {
-  font: inherit;
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 0.4rem 0.85rem;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-  background: var(--card-solid);
-  color: var(--text-secondary);
-  cursor: pointer;
-}
-
-.guide-subtab:hover {
-  color: var(--text);
-  border-color: var(--accent);
-}
-
-.guide-subtab.is-active {
-  color: var(--text);
-  background: color-mix(in srgb, var(--accent) 14%, var(--card-solid));
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  margin-bottom: 0.25rem;
 }
 
 .vibe-tool-table-wrap {
