@@ -491,12 +491,12 @@ function syncAppUrl({ articleId, siteSection, tagQuery, guideTab, toolTab }) {
 /* ══ ハンバーガーメニュー ══ */
 function HamburgerMenu({ isOpen, onClose, onSection, currentSection }) {
   const menuItems = [
-    { id: "home", label: "ホーム", icon: "🏠" },
-    { id: "articles", label: "ニュース", icon: "📰" },
-    { id: "reviews", label: "レビュー", icon: "⭐" },
-    { id: "guide", label: "ガイド", icon: "📖" },
-    { id: "tools", label: "ツール別", icon: "🔧" },
-    { id: "companies", label: "AI企業", icon: "🏢" },
+    { id: "home", label: "ホーム" },
+    { id: "articles", label: "ニュース" },
+    { id: "reviews", label: "レビュー" },
+    { id: "guide", label: "ガイド" },
+    { id: "tools", label: "ツール別" },
+    { id: "companies", label: "AI企業" },
   ];
 
   if (!isOpen) return null;
@@ -513,7 +513,6 @@ function HamburgerMenu({ isOpen, onClose, onSection, currentSection }) {
                 className={`hamburger-item${currentSection === item.id ? " is-active" : ""}`}
                 onClick={() => { onSection(item.id); onClose(); }}
               >
-                <span className="hamburger-item__icon">{item.icon}</span>
                 <span className="hamburger-item__label">{item.label}</span>
               </button>
             </li>
