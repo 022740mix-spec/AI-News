@@ -247,6 +247,15 @@ export const VIBE_CLAUDE_CODE = {
   title: "Claude Code 日常リファレンス",
   lead: "起動してからの日常操作で大事なところだけ。導入手順は公式 https://docs.anthropic.com/en/docs/claude-code/overview を参照。Claude Code はターミナル（Bash や PowerShell などのコマンド入力画面）で動作する。Bash とは Mac/Linux の標準的なコマンド入力環境のことで、Windows では Git Bash や WSL で使える。",
   terms: [
+    // ── 使い方の種類 ──
+    {
+      word: "デスクトップアプリ版 と CLI 版",
+      mean: "Claude Code には2つの使い方がある。(1) デスクトップアプリ版: 独自の画面でファイルツリーやチャットが見える。マウス操作で使いたい人向け。(2) CLI 版（ターミナル）: Cursor や VS Code の統合ターミナル、または Git Bash から `claude` コマンドで起動する。==どちらも同じコマンド・同じ設定ファイル（CLAUDE.md 等）が使える==。違いは見た目と、エディタとの連携のしやすさ。",
+    },
+    {
+      word: "Cursor 内で使う場合",
+      mean: "Cursor の統合ターミナル（Ctrl+` で開く）から `claude` を起動すると、Cursor の AI（Composer）と Claude Code の CLI を同時に使える。Composer で大きな設計を指示し、Claude Code で細かい実行を任せるのが効率的。エディタの `--ide` 接続も自動で行われる。",
+    },
     // ── 起動・セッション ──
     {
       word: "起動: `claude`",
