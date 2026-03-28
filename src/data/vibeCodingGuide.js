@@ -1801,24 +1801,46 @@ export const TOOL_REFERENCES = [
       title: "Codex（OpenAI）日常リファレンス",
       lead: "OpenAI が提供するクラウド型 AI コーディングエージェント。ローカルではなくクラウド上の隔離環境（サンドボックス）で実行される点が最大の特徴。公式は https://openai.com/index/introducing-codex/ を参照。",
       terms: [
-        { word: "起動: `codex`", section: "基本操作", mean: "ターミナルで対話セッションを開始する。Claude Code と同じようにリポジトリのルートで実行する。ただし、ファイル操作はローカルではなくクラウドのサンドボックス上で行われる。", code: "cd your-project\ncodex", codeLang: "bash" },
-        { word: "自動実行: `--full-auto`", section: "基本操作", mean: "確認なしで自動実行するモード。サンドボックス内で動作するためローカルファイルが直接壊れるリスクは低いが、結果のレビューは必須。", code: "codex --full-auto \"テストを書いて全部パスさせて\"", codeLang: "bash" },
-        { word: "非対話: `codex -q`（quiet モード）", section: "基本操作", mean: "質問への回答だけ返して終了する。CI やスクリプトからの利用に向く。", code: "codex -q \"このエラーの原因を説明して\"", codeLang: "bash" },
-        { word: "設定: `AGENTS.md`", section: "設定", mean: "プロジェクトの文脈を Codex に伝える設定ファイル。CLAUDE.md と同じ役割で、コーディング規約やプロジェクト情報を書く。OpenAI 側の命名。", code: "## プロジェクト概要\nReact + TypeScript のWebアプリ\n\n## ルール\n- テストは Jest で書く\n- コミットメッセージは日本語\n- 型定義は必ず付ける", codeLang: "markdown" },
-        { word: "並列タスク実行", section: "クラウド実行", mean: "複数のタスクをクラウド上で同時に走らせられる。例えば「機能Aの実装」と「機能Bのテスト」を並行で依頼できる。結果は PR（Pull Request）単位で返ってくる。" },
-        { word: "サンドボックスとは", section: "クラウド実行", mean: "Codex が動く隔離されたクラウド環境。自分の PC のファイルには直接触れず、クラウド上のコピーで作業する。安全だが、ローカルのファイルとの同期は PR 経由で行う必要がある。" },
-        { word: "料金: Pro（$20/月）", section: "料金", mean: "ChatGPT Plus と共通。月のタスク数に上限あり。" },
-        { word: "料金: API 従量課金", section: "料金", mean: "API 経由で使う場合は GPT モデルの従量課金。大量のタスクを回す場合はこちら。" },
-        { word: "==Claude Code との違い==", section: "比較", mean: "Claude Code はローカルで直接ファイルを編集する。Codex はクラウドのサンドボックスで動作する。ローカル操作の即時性なら Claude Code、安全な並列実行なら Codex。" },
+        // ── 使い方の種類 ──
+        { word: "A. ChatGPT の画面から Codex を使う", section: "使い方の種類", mean: "ChatGPT（chat.openai.com）の画面左側に「Codex」メニューがある。ここからタスクを投げてクラウド上で実行させる方法。ブラウザだけで完結するので、ターミナルに慣れていない人向け。" },
+        { word: "B. ターミナルから CLI で使う", section: "使い方の種類", mean: "ターミナルで `codex` コマンドを使う方法。Claude Code と同じ感覚で操作できる。ローカルのプロジェクトフォルダで起動するが、実際の処理はクラウド上で行われる。" },
+        { word: "==C. Cursor / VS Code 内で使う==", section: "使い方の種類", mean: "Cursor や VS Code の統合ターミナルから `codex` を起動する。エディタで確認しながらタスクを投げられる。Claude Code との併用も可能。" },
+        // ── 基本操作 ──
+        { word: "起動: `codex`", section: "基本操作", mean: "ターミナルで対話セッションを開始する。Claude Code と同じようにプロジェクトのフォルダに `cd` で移動してから実行する。ファイル操作はクラウドのサンドボックス上で行われる。", code: "cd C:\\Users\\あなた\\Projects\\my-app\ncodex", codeLang: "bash" },
+        { word: "自動実行: `--full-auto`", section: "基本操作", mean: "確認なしで自動実行するモード。サンドボックス（隔離環境）内で動作するためローカルファイルが直接壊れるリスクは低いが、結果のレビューは必須。", code: "codex --full-auto \"テストを書いて全部パスさせて\"", codeLang: "bash" },
+        { word: "非対話: `codex -q`（quiet モード）", section: "基本操作", mean: "質問への回答だけ返して終了する。CI（自動化パイプライン）やスクリプトからの利用に向く。", code: "codex -q \"このエラーの原因を説明して\"", codeLang: "bash" },
+        { word: "セッション再開", section: "基本操作", mean: "Codex も `codex --continue` で直近のセッションを再開できる。Claude Code の `-c` と同じ機能。", code: "codex --continue", codeLang: "bash" },
+        // ── 設定 ──
+        { word: "設定: `AGENTS.md`", section: "設定", mean: "プロジェクトの文脈を Codex に伝える設定ファイル。CLAUDE.md と同じ役割で、コーディング規約やプロジェクト情報を書く。OpenAI 側の命名。==これがないと Codex は何もわからない状態で作業を始める==。", code: "## プロジェクト概要\nReact + TypeScript のWebアプリ\n\n## ルール\n- テストは Jest で書く\n- コミットメッセージは日本語\n- 型定義は必ず付ける", codeLang: "markdown" },
+        { word: "設定: `codex.json`", section: "設定", mean: "Codex の動作設定ファイル。サンドボックスに入れるツール、環境変数、セットアップコマンドなどを指定する。プロジェクトルートに置く。" },
+        { word: "設定: `codex.md`", section: "設定", mean: "AGENTS.md の別名。どちらのファイル名でも Codex は読み込む。チームで名前を統一しておくと混乱が少ない。" },
+        // ── クラウド実行 ──
+        { word: "サンドボックスとは", section: "クラウド実行", mean: "Codex が動く隔離されたクラウド環境のこと。自分の PC のファイルには直接触れず、クラウド上にプロジェクトのコピーを作って作業する。万が一 Codex が暴走しても PC のファイルは無事。" },
+        { word: "並列タスク実行", section: "クラウド実行", mean: "複数のタスクをクラウド上で同時に走らせられる。例えば「機能Aの実装」と「機能Bのテスト」を並行で依頼できる。それぞれが独立した PR として返ってくる。" },
+        { word: "タスクの進捗確認", section: "クラウド実行", mean: "投げたタスクの進捗は ChatGPT の画面（Codex メニュー）で確認できる。「Working」「Completed」「Failed」のステータスが表示される。完了すると PR のリンクが出る。" },
+        { word: "タスクのキャンセル", section: "クラウド実行", mean: "実行中のタスクは ChatGPT の Codex 画面からキャンセルできる。間違ったタスクを投げてしまったときに使う。" },
+        // ── PR ワークフロー ──
+        { word: "PR（Pull Request）のレビュー方法", section: "PR ワークフロー", mean: "Codex がタスクを完了すると GitHub に PR が作られる。GitHub 上で差分（何が変わったか）を確認し、問題なければマージ（取り込み）する。==必ず差分を確認してからマージすること==。" },
+        { word: "PR にコメントでフィードバック", section: "PR ワークフロー", mean: "PR の差分で気になる箇所があれば、GitHub 上でコメントを残すと Codex がそのフィードバックを読んで修正してくれる。「この関数名をもっとわかりやすくして」のように書く。" },
+        { word: "PR をマージする手順", section: "PR ワークフロー", mean: "差分を確認 → テストが通っていることを確認 → 「Merge pull request」ボタンを押す → ローカルで `git pull` して最新のコードを取得する。", code: "git pull origin main", codeLang: "bash" },
+        // ── 料金 ──
+        { word: "料金: Pro（$20/月）", section: "料金", mean: "ChatGPT Plus と共通のプラン。月のタスク数に上限あり。気軽に試す場合はこちら。" },
+        { word: "料金: Pro+（$200/月）", section: "料金", mean: "大量にタスクを投げる人向け。Pro より大幅に多いタスク実行回数が使える。" },
+        { word: "料金: API 従量課金", section: "料金", mean: "API 経由で使う場合は GPT モデルの従量課金。企業での大量利用やCI/CD 連携に向く。" },
+        // ── 比較 ──
+        { word: "==Claude Code との違い==", section: "他ツールとの比較", mean: "Claude Code はローカルで直接ファイルを編集する。Codex はクラウドのサンドボックスで動作する。ローカル操作の即時性と柔軟性なら Claude Code、安全な並列実行と PR ワークフローなら Codex。" },
+        { word: "Cursor との違い", section: "他ツールとの比較", mean: "Cursor はエディタ内で AI が動作する。Codex はクラウドでコードを書いて PR として返す。Cursor は対話的で細かい指示に向き、Codex はまとまったタスクを丸投げするのに向く。" },
+        { word: "Copilot Workspace との違い", section: "他ツールとの比較", mean: "Copilot Workspace は GitHub Issue から直接コードを生成する GitHub の機能。Codex は ChatGPT から使う OpenAI の機能。どちらも PR を作る点は同じだが、入口が違う。" },
         // ── 実践Tips ──
-        { word: "PR（Pull Request）のレビュー方法", section: "実践Tips", mean: "Codex がタスクを完了すると PR が作られる。GitHub 上で差分（何が変わったか）を確認し、問題なければマージ（取り込み）する。==必ず差分を確認してからマージすること==。意図しない変更が含まれていることがある。" },
-        { word: "サンドボックスの制限", section: "実践Tips", mean: "サンドボックスはインターネットアクセスが制限されている場合がある。外部 API を呼ぶコードのテストは、ローカルで別途行う必要がある。また、実行時間に上限がある。" },
-        { word: "ChatGPT との使い分け", section: "実践Tips", mean: "ChatGPT は質問・相談向け（会話型）。Codex はコードの実行・編集向け（タスク型）。「このエラーの意味は？」→ ChatGPT、「このバグを直して PR にして」→ Codex、という使い分けが効率的。" },
-        { word: "複数タスクの優先度", section: "実践Tips", mean: "並列で複数タスクを投げる場合、互いに依存しないタスクを選ぶ。例えば「機能 A の実装」と「機能 B のテスト」は OK だが、「機能 A の実装」と「機能 A のテスト」は順番に投げた方が確実。" },
-        // ── 効果的なプロンプト ──
+        { word: "サンドボックスの制限を理解する", section: "実践Tips", mean: "インターネットアクセスが制限される場合がある。外部 API を呼ぶコードのテストはローカルで別途行う。実行時間にも上限がある。サンドボックスに入っていないツール（特殊なライブラリ等）は使えない。" },
+        { word: "ChatGPT との使い分け", section: "実践Tips", mean: "ChatGPT は質問・相談向け（会話型）。Codex はコードの実行・編集向け（タスク型）。「このエラーの意味は？」→ ChatGPT、「このバグを直して PR にして」→ Codex。" },
+        { word: "複数タスクの依存関係に注意", section: "実践Tips", mean: "並列で投げるタスクは互いに依存しないものを選ぶ。「機能 A の実装」と「機能 B のテスト」は OK。「機能 A の実装」と「機能 A のテスト」は A が完了してから B を投げる。" },
+        { word: "==失敗したタスクへの対処==", section: "実践Tips", mean: "タスクが Failed になった場合、エラーログを確認できる。原因の多くは指示が曖昧、サンドボックスに必要なツールがない、テストが通らない、の3つ。指示を具体的に書き直して再実行する。" },
+        // ── 効果的な使い方 ──
         { word: "タスクの書き方のコツ", section: "効果的な使い方", mean: "「バグを直して」ではなく「src/App.jsx の handleSubmit 関数でフォーム送信時に空文字チェックが抜けているので追加して、テストも書いて」のように具体的に書く。ファイル名・関数名・期待する動作を明示すると精度が上がる。" },
-        { word: "既存プロジェクトで使う場合", section: "効果的な使い方", mean: "AGENTS.md にプロジェクトの概要・技術スタック・フォルダ構成を書いておくと、Codex がプロジェクトを理解した上でコードを書ける。==AGENTS.md がないと Codex は何もわからない状態で作業を始める==。" },
-        { word: "==Codex が得意なこと・苦手なこと==", section: "効果的な使い方", mean: "得意: テスト作成、リファクタリング、ドキュメント生成、定型的な機能追加。苦手: 複雑な設計判断、UI/UX のデザイン、外部 API との連携テスト（サンドボックスの制限）。" },
+        { word: "段階的にタスクを分割する", section: "効果的な使い方", mean: "大きな機能を1つのタスクで投げるのではなく、「Step 1: データモデルを作成」→「Step 2: API エンドポイントを作成」→「Step 3: フロントを接続」のように分割すると成功率が上がる。" },
+        { word: "==Codex が得意なこと==", section: "効果的な使い方", mean: "テスト作成、リファクタリング、ドキュメント生成、定型的な機能追加、コードレビュー、依存関係の更新。明確な仕様があるタスクほど精度が高い。" },
+        { word: "==Codex が苦手なこと==", section: "効果的な使い方", mean: "複雑な設計判断、UI/UX のデザイン、外部 API との連携テスト（サンドボックス制限）、曖昧な要件の解釈。これらは人間が設計を決めてから Codex に実装を任せる方がよい。" },
       ],
     },
   },
