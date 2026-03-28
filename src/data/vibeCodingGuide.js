@@ -76,6 +76,24 @@ export const VIBE_SETUP_GUIDE = {
       ],
     },
     {
+      id: "setup-corporate-ssl",
+      heading: "企業 PC で SSL エラーが出るとき（重要）",
+      body: "会社支給の PC では、セキュリティソフトが通信を検査（TLS インスペクション）していることがある。このとき Node.js や Claude Code が「SSL certificate verification failed」で動かなくなる。自宅 Wi-Fi でも会社 PC なら同じ問題が起きる。原因は PC の中のセキュリティエージェントが常駐しているため。",
+      steps: [
+        { label: "なぜ起きるのか", code: "# ブラウザ → Windows の証明書ストアを使う → 会社の証明書も信頼 → 成功\n# Node.js → 独自の証明書リストを使う → 会社の証明書を知らない → 失敗\n#\n# つまり「ブラウザでは開けるのに CLI だけ失敗する」パターン", codeLang: "text" },
+        { label: "==正しい対処: NODE_USE_SYSTEM_CA=1==", code: "# Node.js に「OS の証明書ストアを使え」と指示する環境変数\n# Windows: ユーザー環境変数に追加\n#   名前: NODE_USE_SYSTEM_CA\n#   値:   1\n#\n# 設定方法:\n# 1. Windows キー → 「環境変数」で検索\n# 2. 「ユーザー環境変数」の「新規」\n# 3. 変数名: NODE_USE_SYSTEM_CA / 値: 1\n# 4. OK → ターミナル・エディタを全て再起動", codeLang: "text" },
+        { label: "設定後の確認方法", code: "node -e \"const https=require('https'); https.get('https://api.anthropic.com/',r=>console.log('status',r.statusCode));\"", codeLang: "bash", mem: "status 404 と表示されれば TLS 接続は成功している（404 はページが無いだけで通信自体は OK）。" },
+        { label: "それでもダメなら: NODE_EXTRA_CA_CERTS", code: "# 会社の IT 部門から証明書ファイル（.pem）をもらい、環境変数に指定:\n#   名前: NODE_EXTRA_CA_CERTS\n#   値:   C:\\path\\to\\company-ca-chain.pem", codeLang: "text" },
+        { label: "!!やってはいけない対処: NODE_TLS_REJECT_UNAUTHORIZED=0!!", code: "# AI に聞くとこれを勧められることがあるが、絶対にやらない\n# NODE_TLS_REJECT_UNAUTHORIZED=0\n#\n# これは SSL 検証そのものをオフにする設定で:\n# - npm install が壊れることがある\n# - 他の Node.js アプリの通信も検証なしになる\n# - セキュリティ上の重大なリスク\n#\n# 正しくは NODE_USE_SYSTEM_CA=1 を使う", codeLang: "text" },
+      ],
+    },
+    {
+      id: "setup-corporate-note",
+      heading: "会社 PC に開発ツールを入れる前に",
+      body: "バイブコーディングのツール（Claude Code、Cursor 等）を会社 PC にインストールする場合、事前に IT 部門や上長に確認すること。ツール利用が許可されているか、データの取り扱いポリシーに抵触しないかを確認するのが前提。個人 PC であれば自由に導入できる。",
+      steps: [],
+    },
+    {
       id: "setup-first-claude-md",
       heading: "最初に書いておく CLAUDE.md",
       body: "プロジェクトを始めたらすぐに CLAUDE.md を作る。これが AI への「仕事の指示書」になる。最初に書いておくとフォルダが散らからない。",
