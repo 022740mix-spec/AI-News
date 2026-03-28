@@ -1195,73 +1195,46 @@ const REVIEW_CATEGORIES = [
 ];
 
 const MODEL_COMPARISON = [
-  {
-    company: "Anthropic",
-    models: [
-      { name: "Claude Opus 4.6", gen: "現行", context: "1M", speed: "標準", cost: "$15 / $75", bestFor: "高度な推論・大規模コード生成" },
-      { name: "Claude Sonnet 4.6", gen: "現行", context: "1M", speed: "高速", cost: "$3 / $15", bestFor: "日常のコーディング・バランス型" },
-      { name: "Claude Haiku 4.5", gen: "現行", context: "200K", speed: "最速", cost: "$0.80 / $4", bestFor: "軽量タスク・大量処理" },
-      { name: "Claude Sonnet 4.5", gen: "前世代", context: "200K", speed: "高速", cost: "$3 / $15", bestFor: "安定した前世代モデル" },
-    ],
-  },
-  {
-    company: "OpenAI",
-    models: [
-      { name: "GPT-5.4", gen: "現行", context: "128K", speed: "標準", cost: "$2.50 / $10", bestFor: "推論・コーディング・エージェント統合" },
-      { name: "GPT-5.4 mini", gen: "現行", context: "128K", speed: "高速", cost: "$0.40 / $1.60", bestFor: "無料層・軽量タスク" },
-      { name: "GPT-5.4 nano", gen: "現行", context: "128K", speed: "最速", cost: "$0.20 / $0.80", bestFor: "API 大量処理・エッジ" },
-      { name: "GPT-4o", gen: "前世代", context: "128K", speed: "高速", cost: "$2.50 / $10", bestFor: "安定した前世代モデル" },
-    ],
-  },
-  {
-    company: "Google",
-    models: [
-      { name: "Gemini 3.1 Pro", gen: "現行", context: "2M", speed: "標準", cost: "$1.25 / $5", bestFor: "長大コンテキスト・推論" },
-      { name: "Gemini 3.1 Flash", gen: "現行", context: "1M", speed: "高速", cost: "$0.075 / $0.30", bestFor: "低コスト・高速処理" },
-      { name: "Gemini 3.1 Flash-Lite", gen: "現行", context: "1M", speed: "最速", cost: "さらに低コスト", bestFor: "大量バッチ処理" },
-      { name: "Gemini 2.5 Pro", gen: "前世代", context: "1M", speed: "標準", cost: "$1.25 / $5", bestFor: "安定した前世代モデル" },
-    ],
-  },
+  { name: "Claude Opus 4.6", rating: 4.5, summary: "Anthropic 最上位。1Mコンテキスト、高度な推論とコード生成に強い。$15/$75 per 1M tokens" },
+  { name: "Claude Sonnet 4.6", rating: 4.0, summary: "Anthropic 中核。1Mコンテキスト、速度と品質のバランス型。日常のコーディングに最適。$3/$15" },
+  { name: "Claude Haiku 4.5", rating: 3.5, summary: "Anthropic 軽量。200Kコンテキスト、最速・低コスト。大量処理やチャット向け。$0.80/$4" },
+  { name: "GPT-5.4", rating: 4.0, summary: "OpenAI 最新。128Kコンテキスト、推論・コーディング・エージェント統合モデル。$2.50/$10" },
+  { name: "GPT-5.4 mini", rating: 3.5, summary: "OpenAI 軽量。128Kコンテキスト、無料層でも利用可能。Codex との連携向け。$0.40/$1.60" },
+  { name: "GPT-4o", rating: 3.5, summary: "OpenAI 前世代。安定性が高く依然として広く利用されている。$2.50/$10" },
+  { name: "Gemini 3.1 Pro", rating: 4.0, summary: "Google 最上位。2Mコンテキストは業界最大。長大なコードベースの一括読み込みに強い。$1.25/$5" },
+  { name: "Gemini 3.1 Flash", rating: 3.5, summary: "Google 高速。1Mコンテキスト、極めて低コスト。速度重視の処理に向く。$0.075/$0.30" },
+  { name: "Gemini 2.5 Pro", rating: 3.5, summary: "Google 前世代。1Mコンテキスト、安定した実績。$1.25/$5" },
 ];
 
 function ModelComparisonSection() {
+  const sorted = [...MODEL_COMPARISON].sort((a, b) => b.rating - a.rating);
   return (
     <section className="review-comparison-section">
       <h2 className="section-feed__title">AI モデル比較</h2>
-      <p className="section-feed__meta">
-        主要3社の現行モデルと前世代を比較。料金は入力/出力（1M トークンあたり）。公式の最新価格を必ず確認のこと。
-      </p>
-      {MODEL_COMPARISON.map((group) => (
-        <div key={group.company} className="model-comparison-group">
-          <h3 className="model-comparison-company">{group.company}</h3>
-          <div className="review-comparison-table-wrap">
-            <table className="review-comparison-table">
-              <thead>
-                <tr>
-                  <th scope="col">モデル</th>
-                  <th scope="col">世代</th>
-                  <th scope="col">コンテキスト</th>
-                  <th scope="col">速度</th>
-                  <th scope="col">料金目安</th>
-                  <th scope="col">向いている用途</th>
-                </tr>
-              </thead>
-              <tbody>
-                {group.models.map((m) => (
-                  <tr key={m.name} className="review-comparison-row" style={{ cursor: "default" }}>
-                    <td className="review-comparison-name">{m.name}</td>
-                    <td><span className={`model-gen-badge ${m.gen === "現行" ? "model-gen-badge--current" : ""}`}>{m.gen}</span></td>
-                    <td>{m.context}</td>
-                    <td>{m.speed}</td>
-                    <td style={{ fontSize: "0.75rem" }}>{m.cost}</td>
-                    <td className="review-comparison-excerpt">{m.bestFor}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      ))}
+      <p className="section-feed__meta">主要モデルの現行世代と前世代。料金は入力/出力（1M トークンあたり）。公式価格を必ず確認のこと。</p>
+      <div className="review-comparison-table-wrap">
+        <table className="review-comparison-table">
+          <thead>
+            <tr>
+              <th scope="col">モデル</th>
+              <th scope="col">評価</th>
+              <th scope="col">概要</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sorted.map((m) => (
+              <tr key={m.name} className="review-comparison-row" style={{ cursor: "default" }}>
+                <td className="review-comparison-name">{m.name}</td>
+                <td className="review-comparison-rating">
+                  <span className="review-stars">{renderStars(m.rating)}</span>
+                  <span className="review-score">{m.rating}</span>
+                </td>
+                <td className="review-comparison-excerpt">{m.summary}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </section>
   );
 }
