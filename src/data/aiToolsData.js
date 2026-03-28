@@ -286,7 +286,7 @@ export const ARTICLES = [
     "body": [
       "フリー株式会社は3月27日、AIエージェントから freee の各種 API を操作できる MCP サーバー「freee-mcp」のリモート版の提供を開始した。3月2日に OSS として公開したローカル版に続く展開で、リモート版ではサーバーを freee 側がホストするため、ローカル環境への設定が不要。",
       "利用方法は Claude Desktop・Claude Code・Claude Cowork・Cursor などの AI ツールに URL（https://mcp.freee.co.jp/mcp）を追加し、freee にログインするだけ。会計・人事労務・請求書・工数管理・販売の5領域にわたる約270の操作が AI から可能になる。",
-      "MCP（Model Context Protocol）のリモートサーバー対応により、ローカルに npm パッケージをインストールする必要がなくなった点が大きい。日本の SaaS 企業が公式に MCP リモート版を提供する先行事例として注目される。freee は今後もハッカソンの開催を予定している。"
+      "MCP（Model Context Protocol）のリモートサーバー対応により、ローカルに npm パッケージをインストールする必要がなくなった点が大きい。日本の SaaS 企業が公式に MCP リモート版を提供する先行事例として注目される。freee は今後もハッカソンの開催を予定している。MCP を使った開発ワークフローの全体像は [MCP 活用実践ガイド](?a=mcp-practical-guide-2026)を参照。"
     ],
     "newsDate": "2026-03-27",
     "date": "2026-03-28",
@@ -374,7 +374,7 @@ export const ARTICLES = [
       "==入門（コード経験がほぼない人）==は **Claude** のチャット（claude.ai またはアプリ）から始めるのがブレにくい。セットアップ不要で、対話だけで小さなコード片を試せる。ChatGPT や Gemini でも同じことはできるが、コードの見せ方と再利用のしやすさで Claude が一歩先に出ている。",
       "==初級〜中級（日常的にコードを書く人）==は **Cursor** を推奨する。VS Code ベースなので既存の拡張が使え、Composer による複数ファイル編集や Tab 補完が効率を上げる。企業で既に GitHub Copilot の契約があるなら、VS Code + Copilot がそのまま足場になる。",
       "==上級（CLI で自律的に任せたい人）==は **Claude Code** が現時点で最も柔軟。ファイル操作、Bash 実行、MCP サーバ連携、スキルファイルによるカスタマイズができる。**Codex**（OpenAI）はクラウドサンドボックスでの並列実行が特徴で、用途によって使い分ける。",
-      "どのレベルでも共通するのは、==最初に全部揃えようとしないこと==。チャットで慣れてからエディタ統合に進み、必要になったら CLI を導入する段階的なアプローチが結局いちばん速い。"
+      "どのレベルでも共通するのは、==最初に全部揃えようとしないこと==。チャットで慣れてからエディタ統合に進み、必要になったら CLI を導入する段階的なアプローチが結局いちばん速い。より詳しい用途別の組み合わせは[用途別おすすめマトリクス](?a=usecase-recommendation-matrix-2026)を参照。"
     ],
     "date": "2026-03-28",
     "author": "AI News 編集部",
@@ -382,7 +382,7 @@ export const ARTICLES = [
     "tags": ["バイブコーディング", "入門", "ツール比較", "Claude", "Cursor", "Claude Code"],
     "heroScope": "none",
     "primarySources": [
-      { "title": "Claude Code Documentation", "site": "Anthropic", "url": "https://docs.anthropic.com/en/docs/claude-code/overview" },
+      { "title": "Claude Code Documentation", "site": "Anthropic", "url": "https://code.claude.com/docs/en/overview" },
       { "title": "Cursor", "site": "Cursor", "url": "https://cursor.com/" },
       { "title": "GitHub Copilot", "site": "GitHub", "url": "https://github.com/features/copilot" }
     ],
@@ -412,7 +412,7 @@ export const ARTICLES = [
       "Claude Code はローカルのファイルシステムに直接アクセスし、Bash 実行・MCP サーバ連携・スキルファイルによるカスタマイズが可能。Auto モードを使えば権限確認を減らせるが、==本番リポジトリでは --dangerously-skip-permissions を避ける==。Codex はクラウドサンドボックス上で動作し、複数タスクの並列実行に強い。ローカルファイルへの直接書き込みはない代わりに、PR 単位のワークフローに向く。",
       "Gemini CLI は 200 万トークンのコンテキストが特徴で、大規模コードベースの一括読み込みに向く。ただし無料枠の縮小が進んでおり、本格利用には API 課金が前提になりつつある。Aider は完全 OSS で、Claude・GPT・Gemini・ローカルモデルを切り替えられる柔軟さが強み。Git との統合が深く、変更を自動コミットする設計。",
       "Copilot CLI は GitHub のエコシステムとの統合が最大の特徴。Enterprise プランなら SSO・監査ログ・IP 補償が付き、組織導入のハードルが低い。Agent Mode の進化で自律的なタスク遂行も可能になりつつある。",
-      "選び方の目安: 個人でフル機能なら Claude Code、クラウド並列なら Codex、大規模コンテキストなら Gemini CLI、OSS・マルチモデルなら Aider、企業統制なら Copilot CLI。"
+      "選び方の目安: 個人でフル機能なら Claude Code、クラウド並列なら Codex、大規模コンテキストなら Gemini CLI、OSS・マルチモデルなら Aider、企業統制なら Copilot CLI。エディタ側の比較は[AI エディタ横断比較](?a=editor-comparison-2026-march)、料金の詳細は[料金プラン横断比較](?a=pricing-comparison-all-tools-2026-march)、用途別の選び方は[おすすめマトリクス](?a=usecase-recommendation-matrix-2026)を参照。"
     ],
     "date": "2026-03-28",
     "author": "AI News 編集部",
@@ -420,7 +420,7 @@ export const ARTICLES = [
     "tags": ["CLI", "比較", "Claude Code", "Codex", "Gemini CLI", "Aider", "Copilot"],
     "heroScope": "none",
     "primarySources": [
-      { "title": "Claude Code Documentation", "site": "Anthropic", "url": "https://docs.anthropic.com/en/docs/claude-code/overview" },
+      { "title": "Claude Code Documentation", "site": "Anthropic", "url": "https://code.claude.com/docs/en/overview" },
       { "title": "OpenAI Codex", "site": "OpenAI", "url": "https://openai.com/index/introducing-codex/" },
       { "title": "Gemini CLI", "site": "Google", "url": "https://github.com/google-gemini/gemini-cli" },
       { "title": "Aider", "site": "GitHub", "url": "https://github.com/Aider-AI/aider" },
@@ -442,6 +442,210 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "editor-comparison-2026-march",
+    "type": "feature",
+    "category": "editor",
+    "title": "AI エディタ横断比較 — Cursor・Windsurf・VS Code+Copilot（2026年3月版）",
+    "excerpt": "AI エディタ三大勢力を、機能・料金・エージェント能力・拡張性の軸で横並びに比較した。Cursor/Windsurf の経営統合後の現状も含め、エディタ選びの判断材料を整理する。",
+    "body": [
+      "AI 支援付きコードエディタは2026年に入って Cursor・Windsurf・VS Code+Copilot の三択が実質的な標準になった。いずれも VS Code ベース（VS Code 本体 or フォーク）で拡張機能の互換性が高いため、差が出るのは AI 統合の深さ・エージェント機能・料金体系の3点になる。",
+      "**Cursor** は Anysphere 社が開発する VS Code フォーク。Composer によるマルチファイル編集、Background Agent によるバックグラウンドタスク実行、Tab 補完の3本柱で構成される。2026年3月の [2.4 リリース](?a=cursor-2-4-subagents)で並列サブエージェント（最大20個同時、クラウド VM 実行）と BugBot（PR 自動レビュー）が追加され、エージェント能力が大幅に強化された。モデルは Sonnet 4.6 / Opus 4.6 を切り替え可能。Pro $20/月、Business $40/月。",
+      "**Windsurf** は旧 Codeium が開発した VS Code フォークで、2026年3月に [Anysphere（Cursor 親会社）に買収された](?a=cursor-windsurf-merge)。中核機能の Cascade はタスクを段階的に分解して差分プレビュー付きで実行するフローで、大規模変更の安全性に定評がある。補完速度は Codeium 時代から高速。料金は[2026年3月の改定](?a=windsurf-pricing-overhaul)で Free / Pro $20/月 / Teams / Max $200/月 の4段階になり、Cursor との価格差は消滅した。買収後も単体提供は継続中だが、長期的な Cursor への統合可能性がある。",
+      "**VS Code + GitHub Copilot** は Microsoft / GitHub のエコシステム。エディタ本体は無料で、Copilot が AI 層を担う。2026年にエージェントモード（Agent Mode）が導入され、ターミナル操作・ファイル編集を含むマルチステップタスクの自律実行に対応。Copilot Coding Agent は GitHub Issue を割り当てるだけで AI が PR を自動作成する。Individual $10/月、Business $19/月、Enterprise $39/月（IP 補償・監査ログ付き）。拡張機能エコシステムの規模は突出している。",
+      "選び方の目安: AI のネイティブ統合を最優先なら Cursor、既存の VS Code 環境を維持しつつ AI を足すなら VS Code + Copilot、Cascade のステップ分解を評価するなら Windsurf。企業で SSO・監査・IP 補償が必要なら Copilot Business/Enterprise が最も導入しやすい（[→ 企業導入チェックリスト](?a=ai-enterprise-legal-checklist-2026)）。Cursor と Windsurf は同一親会社になったため、今後の機能統合の動向にも注意が必要となる。各ツールの[料金詳細はこちら](?a=pricing-comparison-all-tools-2026-march)。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": ["エディタ", "比較", "Cursor", "Windsurf", "VS Code", "Copilot"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Cursor", "site": "Cursor", "url": "https://cursor.com/" },
+      { "title": "Windsurf", "site": "Windsurf", "url": "https://windsurf.com/" },
+      { "title": "Visual Studio Code", "site": "Microsoft", "url": "https://code.visualstudio.com/" },
+      { "title": "GitHub Copilot", "site": "GitHub", "url": "https://github.com/features/copilot" }
+    ],
+    "tables": [
+      {
+        "afterParagraph": 4,
+        "caption": "AI エディタ横断比較（2026年3月時点）",
+        "headers": ["エディタ", "提供元", "ベース", "AI モデル", "月額（個人）", "エージェント機能", "強み"],
+        "rows": [
+          ["Cursor", "Anysphere", "VS Code フォーク", "Sonnet 4.6 / Opus 4.6", "$20（Pro）", "Background Agent・並列サブエージェント", "AI 統合の深さ・BugBot"],
+          ["Windsurf", "Anysphere（旧 Codeium）", "VS Code フォーク", "Sonnet 4.6 / GPT-5.4", "$20（Pro）", "Cascade フロー", "段階的タスク分解・高速補完"],
+          ["VS Code + Copilot", "Microsoft / GitHub", "VS Code 本体", "GPT-5.4 / o4-mini", "$10（Individual）", "Agent Mode・Coding Agent", "拡張機能エコシステム・Enterprise 統制"]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pricing-comparison-all-tools-2026-march",
+    "type": "feature",
+    "category": "special",
+    "title": "AI 開発ツール料金プラン横断比較 — CLI・エディタ・API 全8ツール（2026年3月版）",
+    "excerpt": "Claude Code、Cursor、Windsurf、Codex、Gemini CLI、Copilot、Aider、Zed AI の料金体系を一覧で比較。無料枠・Pro・Enterprise まで、公式発表ベースで整理した。",
+    "body": [
+      "AI 開発ツールの料金体系は2026年に入って改定が相次いでいる。[Windsurf の $15→$20 値上げ](?a=windsurf-pricing-overhaul)（3月19日）、[Gemini CLI の Pro 有料化](?a=gemini-cli-v035)（3月25日）など、無料・低価格路線からの転換が目立つ。ここでは主要8ツールの料金を公式発表ベースで横並びにした。",
+      "**CLI ツール**の料金は大きく3パターンに分かれる。Claude Code は Pro $20/月・Max $100〜200/月・API 従量課金の3本立て。Codex は ChatGPT Pro（$200/月）以上のプランに含まれる形で提供され、単体の低価格プランはない。Gemini CLI は Flash モデルなら無料（1日1,000リクエスト）だが、Pro モデルは有料サブスクリプション限定に移行した。Aider はツール自体が OSS 無料で、接続する LLM の API 費用のみがコストとなる。",
+      "**エディタ**では Cursor と Windsurf が同額の $20/月（Pro）に揃った。VS Code 本体は無料で、Copilot の Individual $10/月が最安の有料 AI エディタ体験となる。Zed AI はエディタ無料・AI 機能 $15/月だが、自前の API キーを持ち込めば課金なしで AI 機能を使える。",
+      "**Enterprise 向け**では GitHub Copilot Enterprise（$39/席）が IP インデムニティ（知的財産補償）・監査ログ・SAML SSO を備え、組織導入のハードルが最も低い。Claude Code は SOC 2 準拠で API 経由のエンタープライズ利用に対応。Cursor Business は $40/席で管理機能付き。企業導入の法的チェックポイントは[こちらの記事](?a=ai-enterprise-legal-checklist-2026)で詳しく整理している。",
+      "コスト最適化の考え方: 個人でコストを抑えるなら Aider（API 費用のみ）+ VS Code が最安構成。月 $20 で1ツールに絞るなら、CLI 重視で Claude Code Pro、エディタ重視で Cursor Pro。企業導入で統制を優先するなら Copilot Business/Enterprise が現実的な選択肢となる。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": ["比較", "料金", "Claude Code", "Cursor", "Windsurf", "Codex", "Gemini CLI", "Copilot", "Aider"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Claude Code Documentation", "site": "Anthropic", "url": "https://code.claude.com/docs/en/overview" },
+      { "title": "Cursor Pricing", "site": "Cursor", "url": "https://cursor.com/pricing" },
+      { "title": "Windsurf Pricing", "site": "Windsurf", "url": "https://windsurf.com/pricing" },
+      { "title": "GitHub Copilot Plans", "site": "GitHub", "url": "https://github.com/features/copilot#pricing" },
+      { "title": "OpenAI Codex", "site": "OpenAI", "url": "https://openai.com/index/introducing-codex/" },
+      { "title": "Gemini CLI", "site": "Google", "url": "https://github.com/google-gemini/gemini-cli" }
+    ],
+    "tables": [
+      {
+        "afterParagraph": 1,
+        "caption": "CLI ツール料金比較（2026年3月時点・公式発表値）",
+        "headers": ["ツール", "無料枠", "個人プラン", "上位プラン", "API 従量課金", "備考"],
+        "rows": [
+          ["Claude Code", "なし", "Pro $20/月", "Max $100〜200/月", "あり（トークン単価）", "Max は Fast Mode 含む"],
+          ["Codex", "なし", "—", "ChatGPT Pro $200/月〜", "あり", "Pro/Team/Enterprise に含まれる"],
+          ["Gemini CLI", "Flash: 1日1,000回", "—", "有料サブスク（Pro モデル）", "あり", "3月25日より Pro 有料化"],
+          ["Copilot CLI", "無料枠あり（回数制限）", "Individual $10/月", "Enterprise $39/月", "—", "gh copilot 経由"],
+          ["Aider", "ツール自体は無料", "—", "—", "接続先 LLM の API 費用", "OSS（Apache 2.0）"]
+        ]
+      },
+      {
+        "afterParagraph": 2,
+        "caption": "エディタ料金比較（2026年3月時点・公式発表値）",
+        "headers": ["エディタ", "無料枠", "個人プラン", "ビジネス", "Enterprise", "備考"],
+        "rows": [
+          ["Cursor", "Hobby（機能制限）", "Pro $20/月", "Business $40/月", "—", "Background Agent は Pro 以上"],
+          ["Windsurf", "Free（制限あり）", "Pro $20/月", "Teams（要問合せ）", "Max $200/月", "3月に $15→$20 に改定"],
+          ["VS Code + Copilot", "エディタ無料 + Copilot 無料枠", "Individual $10/月", "Business $19/月", "Enterprise $39/月", "IP 補償は Enterprise のみ"],
+          ["Zed AI", "エディタ無料", "AI $15/月", "—", "—", "自前 API キー持込可"]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "usecase-recommendation-matrix-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "用途別おすすめツール — 「何を使えばいいか」に答える（2026年3月版）",
+    "excerpt": "Web 開発、データ分析、企業導入、初心者など用途別に最適なツールの組み合わせを整理した。目的と予算に合わせて選べるマトリクス形式。",
+    "body": [
+      "AI 開発ツールは CLI・エディタ・API の各レイヤーに選択肢があり、全部を試すのは現実的でない。ここでは典型的な用途ごとに「まずこれを使う」という組み合わせを整理した。各ツールの機能比較は[CLI 比較](?a=cli-tools-comparison-2026-march)・[エディタ比較](?a=editor-comparison-2026-march)、料金の詳細は[料金横断比較](?a=pricing-comparison-all-tools-2026-march)を参照。",
+      "**Web 開発（フロントエンド + バックエンド）**には Cursor Pro + Claude Code の組み合わせが強い。Cursor の Composer でマルチファイルのリファクタリングを行い、Claude Code で Git 操作・テスト実行・コミットまでを一貫処理する。React / Next.js / Vue 等のフレームワークではコンテキスト理解の深さが効いてくる。予算を抑えるなら VS Code + Copilot Individual（$10/月）でも Agent Mode による自律編集が使える。",
+      "**データ分析・機械学習**では Gemini CLI の 200 万トークンコンテキストが大規模データセットの一括分析に向く。ただし Pro モデルは有料化されたため、Flash で足りない場合は API 課金が前提になる。Jupyter Notebook との連携では VS Code + Copilot のインラインサジェスチョンが実用的。Python 環境の構築や依存管理は Claude Code が得意とする領域。",
+      "**企業・チーム導入**では GitHub Copilot Business/Enterprise が最も導入障壁が低い。SSO・監査ログ・IP インデムニティが標準で含まれ、GitHub の既存契約に組み込める。AI エディタとしては Cursor Business（$40/席、管理機能付き）も選択肢に入る。CLI 層では Claude Code が SOC 2 準拠で API 経由のエンタープライズ利用に対応している。",
+      "**初心者・非エンジニア**はいきなり CLI やエディタに入らず、Claude チャット（claude.ai）や ChatGPT でコード片を試すところから始めるのが現実的。次のステップとして Cursor Hobby（無料）や VS Code + Copilot 無料枠でエディタ内の AI 支援を体験し、慣れてきたら Pro プランへ移行する流れが混乱しにくい（[→ 初心者向け詳細ガイド](?a=vibe-coding-getting-started-2026)）。",
+      "**OSS・マルチモデル志向**には Aider が最適。ツール自体は無料で、Claude・GPT・Gemini・ローカルモデルを切り替えて使える。Git 統合が深く、変更の自動コミットとロールバックが標準装備。API キーの管理とコスト管理は利用者の責任になるが、特定ベンダーにロックインされない自由度は他のツールにない強み。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": ["比較", "おすすめ", "用途別", "初心者", "Enterprise"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Claude Code Documentation", "site": "Anthropic", "url": "https://code.claude.com/docs/en/overview" },
+      { "title": "Cursor", "site": "Cursor", "url": "https://cursor.com/" },
+      { "title": "GitHub Copilot", "site": "GitHub", "url": "https://github.com/features/copilot" },
+      { "title": "Gemini CLI", "site": "Google", "url": "https://github.com/google-gemini/gemini-cli" },
+      { "title": "Aider", "site": "GitHub", "url": "https://github.com/Aider-AI/aider" }
+    ],
+    "tables": [
+      {
+        "afterParagraph": 0,
+        "caption": "用途別おすすめツール組み合わせ（2026年3月時点）",
+        "headers": ["用途", "エディタ", "CLI / エージェント", "月額目安", "ポイント"],
+        "rows": [
+          ["Web 開発（本格）", "Cursor Pro", "Claude Code Pro", "$40（両方）", "Composer + 自律エージェントの組み合わせ"],
+          ["Web 開発（低コスト）", "VS Code + Copilot Individual", "—", "$10", "Agent Mode で自律編集も可能"],
+          ["データ分析・ML", "VS Code + Copilot", "Gemini CLI（大規模コンテキスト）", "$10〜", "200万トークンで大規模データ対応"],
+          ["企業・チーム導入", "VS Code + Copilot Business", "Claude Code（API）", "$19/席〜", "SSO・監査ログ・IP 補償"],
+          ["初心者・非エンジニア", "Cursor Hobby（無料）", "—", "$0", "まず Claude チャットで対話から開始"],
+          ["OSS・マルチモデル", "VS Code / Zed", "Aider", "API 費用のみ", "ベンダーロックインなし"]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "claude-md-design-patterns-2026",
+    "type": "feature",
+    "category": "cli",
+    "title": "CLAUDE.md 設計パターン集 — プロジェクト別の書き方と実例",
+    "excerpt": "Claude Code の動作を制御する CLAUDE.md ファイルの設計パターンを、プロジェクト種別ごとに整理した。グローバル設定・プロジェクト設定・チーム共有の三層構造と、実務で効くルールの書き方を解説する。",
+    "body": [
+      "CLAUDE.md は Claude Code がプロジェクトのルールや慣習を理解するための設定ファイルで、Anthropic の公式ドキュメントに仕様が記載されている。ファイルの配置場所によって適用範囲が変わる三層構造になっている。~/.claude/CLAUDE.md がグローバル設定（全プロジェクト共通）、プロジェクトルートの CLAUDE.md がプロジェクト設定、.claude/CLAUDE.md がプロジェクト固有のユーザー設定となる。",
+      "設計の基本原則は「AI が判断に迷う場面を先回りして書く」こと。コーディング規約のうち linter で検出できるものは CLAUDE.md に書かずツール設定に任せ、linter では検出できないアーキテクチャ方針・命名規則・禁止パターンを記述する。例えば「新しいフォルダを作る前に既存構造を確認する」「.env ファイルをコミットしない」といったルールは自動検出が難しく、CLAUDE.md に書く価値がある。",
+      "プロジェクト種別ごとのパターンとして、Web アプリ（React / Next.js 等）では src/ 配下の構成ルール・コンポーネント命名・CSS 方針を明記する。CLI ツール開発では引数パーサーの選定方針・エラーハンドリングの基準を書く。モノレポではパッケージ間の依存ルールと変更時の影響範囲を指定する。いずれも「禁止事項」を具体的に書くと AI の判断ブレが減る。",
+      "チームでの運用では、プロジェクトルートの CLAUDE.md を Git 管理してチーム全員で共有し、個人設定は .claude/CLAUDE.md（.gitignore に追加）に分離する。レビュー方針やテスト要件など、チーム合意が必要な項目は共有側に置く。個人の作業スタイル（応答言語、デバッグ手法の好み等）は個人側に置く。",
+      "注意点として、CLAUDE.md が肥大化するとコンテキストを圧迫する。公式ドキュメントでは簡潔に保つことが推奨されている。ルールが増えてきた場合は、[スキルファイル（.claude/skills/）](?a=agent-skills-skill-md)に分割して段階的に読み込ませる設計が有効。CLAUDE.md は「常に読まれる指示」、スキルファイルは「必要なときだけ読まれる指示」という使い分けになる。[MCP サーバー](?a=mcp-practical-guide-2026)や [Hooks](?a=claude-code-auto-mode) と組み合わせることで、AI の動作をより精密に制御できる。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": ["Claude Code", "CLAUDE.md", "設定", "チーム開発", "実用スキル"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Claude Code Documentation — Memory", "site": "Anthropic", "url": "https://code.claude.com/docs/en/memory" },
+      { "title": "Claude Code Overview", "site": "Anthropic", "url": "https://code.claude.com/docs/en/overview" }
+    ]
+  },
+  {
+    "id": "mcp-practical-guide-2026",
+    "type": "feature",
+    "category": "cli",
+    "title": "MCP サーバー活用実践ガイド — DB 連携・ブラウザ操作・外部 API の具体例",
+    "excerpt": "Model Context Protocol（MCP）を使った Claude Code の外部連携を、DB 操作・ブラウザ自動化・SaaS API の3パターンで解説。ローカル版とリモート版の違い、設定方法、セキュリティ上の注意点を整理した。",
+    "body": [
+      "MCP（Model Context Protocol）は Anthropic が策定したオープンプロトコルで、AI モデルが外部のツールやデータソースに標準化された方法でアクセスするための仕組み。Claude Code は MCP クライアントとして動作し、MCP サーバーを追加することで機能を拡張できる。設定は .claude/settings.json の mcpServers セクションに記述する。",
+      "**DB 連携**では、PostgreSQL や SQLite の MCP サーバーを接続すると、Claude Code がスキーマを読み取り、クエリの生成・実行・結果の解釈までを一貫して行える。マイグレーションファイルの作成やテストデータの投入にも応用できる。==ただし本番 DB への直接接続は避け、開発環境やリードレプリカに限定すべき==。接続文字列を .env から読み込み、MCP サーバーの起動コマンドで参照する構成が安全。",
+      "**ブラウザ操作**では、Puppeteer や Playwright ベースの MCP サーバーを使うと、Claude Code からブラウザを操作してスクリーンショット取得・フォーム入力・E2E テストの実行が可能になる。Web アプリの動作確認を AI に任せるワークフローが組める。Chrome 拡張ベースの MCP サーバー（例: claude-in-chrome）も存在し、既に開いているタブのコンテキストを AI に渡せる。",
+      "**SaaS API 連携**では、[freee の MCP リモートサーバー](?a=freee-mcp-remote-2026)（会計・人事など約270操作）のように、SaaS 側が公式に MCP サーバーを提供するケースが増えている。リモート版は URL を追加するだけで利用でき、ローカルに npm パッケージをインストールする必要がない。GitHub MCP サーバーを使えば Issue・PR の操作も Claude Code から直接行える。MCP プロトコル自体の技術的な詳細は[MCP サーバー解説記事](?a=mcp-servers-deep-dive)、[v2 ロードマップ](?a=mcp-v2-spec-launch-2026)も参照。",
+      "セキュリティ上の注意: MCP サーバーは Claude Code に外部操作の権限を与えるため、信頼できる提供元のサーバーのみを使う。本番環境のクレデンシャルは MCP 設定に直書きせず、環境変数で渡す。Auto mode と MCP を組み合わせる場合は、Hooks で操作の前後にログを記録するガードレールを設けることが Anthropic の公式ドキュメントで推奨されている。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": ["MCP", "Claude Code", "DB連携", "ブラウザ", "実用スキル", "freee"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Model Context Protocol", "site": "Anthropic", "url": "https://modelcontextprotocol.io/" },
+      { "title": "Claude Code — MCP", "site": "Anthropic", "url": "https://code.claude.com/docs/en/mcp" },
+      { "title": "freee-mcp リモート版", "site": "freee", "url": "https://corp.freee.co.jp/news/20260327freee_mcp.html" }
+    ]
+  },
+  {
+    "id": "git-ai-workflow-2026",
+    "type": "feature",
+    "category": "cli",
+    "title": "AI × Git 連携ワークフロー — ブランチ戦略・PR 自動生成・コードレビュー活用",
+    "excerpt": "Claude Code・Codex・Copilot を Git ワークフローに組み込む実践パターンを整理。ブランチ戦略、AI による PR 作成、コードレビュー支援、コミットメッセージの自動生成まで、公式機能ベースで解説する。",
+    "body": [
+      "AI コーディングツールを Git ワークフローに組み込むパターンは大きく4つある。ブランチ作成・コード変更・PR 作成・コードレビューの各フェーズで、どのツールのどの機能を使うかを整理する。",
+      "**ブランチ戦略と AI の使い分け**: feature ブランチを切ってから AI にタスクを投げるのが基本。Claude Code は CLAUDE.md に「main ブランチに直接 push しない」と書いておけばルールを守る。Codex はクラウドサンドボックスで動作するため、ローカルのブランチとは独立して作業し、結果を PR として提出する設計。Aider は変更ごとに自動コミットするため、ブランチ上での変更履歴が細かく残る。",
+      "**PR 自動生成**: Copilot Coding Agent は GitHub Issue を割り当てるだけで AI がブランチ作成→コード変更→PR 作成まで自律的に実行する。Claude Code では claude -p 'この Issue を修正して PR を作成' のようにヘッドレスモードで CI/CD パイプラインから呼び出せる。Codex も同様に ChatGPT インターフェースからタスクを投げると PR 単位で結果が返る。",
+      "**コードレビュー支援**: [Cursor 2.4](?a=cursor-2-4-subagents) の BugBot は PR レベルの自動レビューを行い、バグの早期発見を支援する。GitHub Copilot は PR の要約・レビューコメントの自動生成に対応している。Claude Code の Hooks 機能を使えば、git commit の前後に lint・テスト・セキュリティスキャンを自動実行する仕組みを設定できる。",
+      "**コミットメッセージの自動生成**: Claude Code は変更内容を解析してコミットメッセージを自動生成する。Aider も同様の機能を備えている。チームでコミットメッセージの形式を統一するには、[CLAUDE.md にフォーマット](?a=claude-md-design-patterns-2026)（Conventional Commits 等）を指定するのが実用的。複数ツールの併用パターンは[マルチエージェント開発](?a=claude-code-codex-multi-agent-2026)も参照。",
+      "実運用の注意点: AI が生成した PR は必ず人間がレビューしてからマージする。AI のコミット履歴は細かくなりがちなので、squash merge を使って PR 単位でまとめるチームが多い。CI で必ずテストを通す・レビュー承認を必須にするといった既存のガードレールは AI 導入後も維持する。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": ["Git", "Claude Code", "Codex", "Copilot", "PR", "コードレビュー", "実用スキル"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Claude Code Documentation", "site": "Anthropic", "url": "https://code.claude.com/docs/en/overview" },
+      { "title": "GitHub Copilot Coding Agent", "site": "GitHub", "url": "https://github.com/features/copilot" },
+      { "title": "OpenAI Codex", "site": "OpenAI", "url": "https://openai.com/index/introducing-codex/" },
+      { "title": "Aider", "site": "GitHub", "url": "https://github.com/Aider-AI/aider" }
+    ]
+  },
+  {
     "id": "ai-regulation-q1-2026",
     "type": "feature",
     "category": "regulation",
@@ -452,7 +656,7 @@ export const ARTICLES = [
       "**OpenAI** の Sora をめぐっては、消費者向け提供の終了と複数の提携解消が相次いで報じられた。動画生成 AI の商用展開が著作権・安全性の壁に直面している構図が浮き彫りになった（[→ 詳細記事](?a=openai-sora-discontinued-2026)）。",
       "EU では AI Act（人工知能法）の段階的施行が始まり、汎用 AI モデルの透明性義務やハイリスク AI システムの適合評価が具体化しつつある。日本国内でも AI 事業者ガイドラインの改訂議論が進んでおり、開発者にとって利用規約の確認がこれまで以上に重要になっている。",
       "3月末には Anthropic の内部コードネーム Mythos（別名 Capybara）の草稿がリークし、サイバーセキュリティ関連株に影響が出たとの報道もあった（[Mythosリーク](?a=anthropic-mythos-leak)、[市場への影響](?a=anthropic-mythos-cyber-impact-2026)）。AI 企業の機密管理と情報開示のあり方が改めて問われている。",
-      "開発者への実務的な影響として、==利用するツールの利用規約・データ取り扱いポリシーを定期的に確認する==ことが今後さらに重要になる。特に企業での利用は、所在国（AI企業タブを参照）やデータの保存先を把握した上でツールを選定すべきだろう。"
+      "開発者への実務的な影響として、==利用するツールの利用規約・データ取り扱いポリシーを定期的に確認する==ことが今後さらに重要になる。特に企業での利用は、所在国（AI企業タブを参照）やデータの保存先を把握した上でツールを選定すべきだろう。関連記事: [AI と著作権の最新動向](?a=ai-copyright-landscape-2026)、[米国・EU・日本の規制比較](?a=ai-regulation-comparison-us-eu-japan-2026)、[企業導入の法的チェックリスト](?a=ai-enterprise-legal-checklist-2026)。"
     ],
     "date": "2026-03-28",
     "author": "AI News 編集部",
@@ -461,6 +665,133 @@ export const ARTICLES = [
     "heroScope": "none",
     "primarySources": [
       { "title": "EU AI Act", "site": "European Commission", "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" }
+    ]
+  },
+  {
+    "id": "ai-copyright-landscape-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "AI と著作権 — 2026年時点の法的状況と開発者が知るべきこと",
+    "excerpt": "AI 生成コードの著作権は誰にあるのか、学習データの利用は合法なのか。米国・EU・日本の現状を公式発表と判例ベースで整理し、開発者が実務で取るべき対応をまとめた。",
+    "body": [
+      "AI 生成物の著作権は2026年時点で各国の法的整理が進行中であり、確定した統一ルールはまだない。ただし、いくつかの重要な判断と方向性が出てきている。開発者がバイブコーディングで AI にコードを書かせる際にも関わる話題であるため、現状を整理する。",
+      "**米国**では、米国著作権局（USCO）が2023年に「AI が自律的に生成した作品には著作権が発生しない」という方針を示し、2025年にもこの立場を維持する報告書を発表した。ただし「人間が十分な創造的関与をした場合」は保護対象になりうるとされている。AI ツールで生成したコードをそのまま使う場合と、人間が大幅に編集・選択した場合で扱いが変わる可能性がある。学習データに関しては、New York Times v. OpenAI 訴訟など複数の訴訟が進行中で、フェアユースの適用範囲が争点となっている。",
+      "**EU**では AI Act（人工知能法）が2024年に成立し、2026年から段階的に施行されている。汎用 AI モデルの提供者にはトレーニングデータの要約の公開や著作権法の遵守が義務付けられている。EU 著作権指令のテキスト・データマイニング（TDM）例外規定との関係も重要で、権利者がオプトアウト（利用拒否）した著作物の学習利用は認められない方向。",
+      "**日本**では、著作権法第30条の4が AI 学習目的の著作物利用を広く認めており、主要国の中では比較的寛容な法制度となっている。ただし文化庁が2024年に公表した「AI と著作権に関する考え方」では、学習段階と生成・利用段階を分けて整理する枠組みが示され、生成物が既存著作物と類似する場合は侵害となりうるとされた。2026年時点で法改正の議論が継続中。",
+      "**開発者への実務的な影響**: (1) AI 生成コードをそのまま納品・公開する場合、著作権の帰属が不明確になるリスクがある。重要なコードは人間によるレビューと編集を経ることが望ましい。(2) GitHub Copilot Enterprise の IP インデムニティ（知的財産補償）のように、AI ツール提供者が著作権リスクを引き受けるサービスが出てきている。企業利用ではこうした補償の有無が選定基準になる（[→ 企業導入チェックリスト](?a=ai-enterprise-legal-checklist-2026)）。(3) プロジェクトに利用するツールの利用規約を確認し、生成物の権利帰属条項を把握しておくことが基本となる。各国の規制アプローチの違いは[米国・EU・日本の規制比較](?a=ai-regulation-comparison-us-eu-japan-2026)を参照。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": ["著作権", "規制", "法律", "EU AI Act", "米国", "日本"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Copyright and Artificial Intelligence", "site": "U.S. Copyright Office", "url": "https://www.copyright.gov/ai/" },
+      { "title": "EU AI Act", "site": "European Commission", "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" },
+      { "title": "AIと著作権に関する考え方について", "site": "文化庁", "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/chosakuken/pdf/94037901_01.pdf" }
+    ]
+  },
+  {
+    "id": "ai-regulation-comparison-us-eu-japan-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "AI 規制比較 — 米国・EU・日本のアプローチの違い（2026年3月時点）",
+    "excerpt": "AI 規制の三大圏域（米国・EU・日本）の規制方針を横並びで比較。リスクベース規制の EU、セクター別の米国、ガイドライン主導の日本。開発者が知るべき実務上の違いを整理した。",
+    "body": [
+      "AI 規制は国・地域によってアプローチが大きく異なる。2026年3月時点の米国・EU・日本の3圏域の状況を、公式発表と施行済みの法規制に基づいて比較する。",
+      "**EU（欧州連合）**は世界で最も体系的な AI 規制を進めている。AI Act（人工知能法）は2024年に成立し、2026年から段階的に施行中。リスクベースの4段階分類（禁止・ハイリスク・限定リスク・最小リスク）を採用し、ハイリスク AI には適合性評価・技術文書の作成・ログ記録が義務付けられる。汎用 AI モデル（GPAI）の提供者には透明性義務があり、「システミックリスク」のある大規模モデルには追加の安全評価が求められる。",
+      "**米国**は連邦レベルの包括的な AI 規制法は2026年3月時点で成立していない。バイデン政権が2023年に出した AI に関する大統領令（Executive Order 14110）はトランプ政権発足後の2025年1月に撤回された。代わりにセクター別の規制（金融・医療・雇用・国防など）と州法の組み合わせで対応している。カリフォルニア州の SB 1047（AI 安全法案）は知事の拒否権により2024年に不成立となったが、2025年にも類似法案が提出されている。",
+      "**日本**は法律による直接規制ではなく、ガイドライン主導のアプローチを取っている。2024年に経済産業省・総務省が「AI 事業者ガイドライン」を策定し、開発者・提供者・利用者それぞれの責務を整理した。法的拘束力はないが、業界の自主規制の基盤として機能している。著作権法第30条の4が AI 学習を広く許容する点は EU と対照的。広島 AI プロセス（G7 枠組み）を通じた国際調和も推進している。",
+      "**開発者への実務的な影響**: EU 向けにサービスを提供する場合、AI Act のコンプライアンス対応（リスク分類、技術文書、透明性表示）が必要になる。米国では州法の動向に注意が必要で、特にカリフォルニア州の動きが業界標準に影響しやすい。日本ではガイドラインに沿った運用が実務上の安全策となる。いずれの国でも、==AI ツールの利用規約とデータ取り扱いポリシーの確認が基本==であることは共通している。著作権の詳細は[AI と著作権の記事](?a=ai-copyright-landscape-2026)、企業導入の具体的なチェック項目は[導入チェックリスト](?a=ai-enterprise-legal-checklist-2026)を参照。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": ["規制", "EU AI Act", "米国", "日本", "比較", "ガイドライン"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "EU AI Act", "site": "European Commission", "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" },
+      { "title": "AI事業者ガイドライン", "site": "経済産業省・総務省", "url": "https://www.meti.go.jp/press/2024/04/20240419004/20240419004.html" },
+      { "title": "Executive Order on AI (revoked)", "site": "White House", "url": "https://www.whitehouse.gov/presidential-actions/2025/01/initial-rescissions-of-harmful-executive-orders-and-actions/" }
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "AI 規制アプローチ比較（2026年3月時点）",
+        "headers": ["項目", "EU", "米国", "日本"],
+        "rows": [
+          ["規制手法", "包括的な法律（AI Act）", "セクター別規制 + 州法", "ガイドライン主導"],
+          ["AI 学習のデータ利用", "オプトアウト権あり（TDM 例外）", "フェアユース判断（訴訟中）", "広く許容（著作権法30条の4）"],
+          ["汎用 AI モデルの義務", "透明性義務 + 安全評価", "連邦レベルの義務なし", "ガイドラインで整理"],
+          ["ハイリスク AI", "適合性評価義務", "セクター別に個別規制", "自主規制"],
+          ["罰則", "最大3,500万ユーロ or 売上7%", "セクター別", "法的拘束力なし（現時点）"],
+          ["施行状況", "2026年段階的施行中", "包括法なし", "ガイドライン公表済み"]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ai-enterprise-legal-checklist-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "企業で AI コーディングツールを導入する際の法的チェックリスト",
+    "excerpt": "企業が Claude Code・Cursor・Copilot 等の AI 開発ツールを導入する際に確認すべき法的・コンプライアンス上のポイントを整理。利用規約、データ取り扱い、知的財産、情報セキュリティの4観点からチェックリスト形式で解説する。",
+    "body": [
+      "AI コーディングツールの企業導入が加速する中、法務・情報セキュリティ部門と開発チームの間で「何を確認すべきか」の認識がずれるケースが多い。ここでは各ツールの公式ドキュメントと利用規約に基づいて、確認すべきポイントを4つの観点から整理する。",
+      "**1. 利用規約とデータ取り扱い**: AI ツールにコードを入力すると、そのデータがどこに送信され、どう扱われるかを確認する。主要なチェック項目は (a) 入力データがモデルの学習に使用されるか否か、(b) データの保存期間と保存先のリージョン、(c) オプトアウト設定の有無。Claude Code は SOC 2 準拠で、Anthropic の利用規約では API 経由の入力はモデル学習に使用しないと明記している。GitHub Copilot は Business プラン以上でコードがトレーニングに使われない設定が可能。Cursor は Privacy Mode を有効にすることでコードの学習利用を防げる。",
+      "**2. 知的財産（IP）**: AI が生成したコードの著作権帰属と、学習データに含まれる他者の著作物への類似リスクの2点を確認する。GitHub Copilot Enterprise は IP インデムニティ（知的財産補償）を提供しており、AI 生成コードに起因する著作権侵害の訴訟リスクを GitHub が引き受ける。他のツールではこの種の補償は2026年3月時点で一般的ではないため、社内規定でカバーする必要がある。",
+      "**3. 情報セキュリティ**: (a) 通信の暗号化（TLS）、(b) 認証方式（SSO / SAML 対応）、(c) 監査ログの取得可否、(d) アクセス制御（誰がどのリポジトリで使えるか）の4点を確認する。GitHub Copilot Enterprise は SSO・監査ログ・組織レベルのポリシー管理を備えている。Cursor Business は管理機能付き。Claude Code は API 経由での利用が前提となるため、既存の API ゲートウェイによるアクセス制御と組み合わせる構成が多い。",
+      "**4. 社内ルールの整備**: ツールの導入だけでなく、(a) AI 生成コードの人間によるレビュー義務、(b) 機密情報（顧客データ、認証情報等）の AI への入力禁止、(c) AI ツールのバージョン管理と利用範囲の文書化、を社内ルールとして定めることが実務上重要。==特に .env ファイルやクレデンシャルを AI に渡さない==ルールは技術的なガードレール（.cursorignore、.claude/settings.json の ignorePaths）と組み合わせて徹底する。",
+      "チェックリストの運用: 上記の項目は導入時に1回確認して終わりではなく、ツールの利用規約やデータポリシーが変更されるたびに再確認が必要。各ツールの公式ドキュメントへのリンクを社内 Wiki 等に集約し、変更通知を追跡する体制を作ることを推奨する。著作権の法的背景は[AI と著作権](?a=ai-copyright-landscape-2026)、各国の規制アプローチの違いは[米国・EU・日本の規制比較](?a=ai-regulation-comparison-us-eu-japan-2026)を参照。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "10分",
+    "tags": ["Enterprise", "法律", "セキュリティ", "コンプライアンス", "導入ガイド"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Anthropic Usage Policy", "site": "Anthropic", "url": "https://www.anthropic.com/legal/aup" },
+      { "title": "GitHub Copilot Trust Center", "site": "GitHub", "url": "https://github.com/trust-center" },
+      { "title": "Cursor Privacy", "site": "Cursor", "url": "https://cursor.com/privacy" }
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "主要ツールのエンタープライズ対応比較（2026年3月時点・公式情報）",
+        "headers": ["項目", "Claude Code", "GitHub Copilot", "Cursor"],
+        "rows": [
+          ["学習データ利用の制御", "API 経由は不使用（利用規約）", "Business 以上でオプトアウト可", "Privacy Mode で制御"],
+          ["IP 補償（インデムニティ）", "なし（2026年3月時点）", "Enterprise プランで提供", "なし（2026年3月時点）"],
+          ["SSO / SAML", "API 経由で既存 IdP 利用", "Business 以上で SAML SSO", "Business プランで対応"],
+          ["監査ログ", "API ログで対応", "Enterprise で提供", "管理機能で対応"],
+          ["セキュリティ認証", "SOC 2 準拠", "SOC 2 準拠", "SOC 2 準拠"]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "monthly-roundup-2026-march",
+    "type": "feature",
+    "category": "special",
+    "title": "【月刊まとめ】2026年3月の AI 開発ツール動向 — エージェント競争激化・M&A加速・規制の転換点",
+    "excerpt": "2026年3月の AI 開発ツール界隈を総括。Cursor 2.4 の並列サブエージェント、Claude Code Auto mode、Gemini CLI 無料枠縮小、Cursor による Windsurf 買収、OpenAI の Astral 買収、Anthropic と国防総省の法廷闘争など、主要トピックを1本にまとめた。",
+    "body": [
+      "2026年3月は AI 開発ツールの競争が一段と激化した月だった。エージェント機能の強化、M&A による業界再編、そして規制・法務面での大きな動きが同時進行した。この月刊まとめでは、当サイトが3月に報じたニュースを中心に月全体の流れを振り返る。",
+      "**エージェント機能の競争**: 月末にかけてエージェント機能の強化が相次いだ。**Cursor 2.4** は並列サブエージェント（最大20個同時、クラウド VM 実行）と BugBot（PR 自動レビュー）を導入し、8,000行の Next.js アプリのルーター移行が17分→9分に短縮されたと発表した（[→ 詳細](?a=cursor-2-4-subagents)）。**Claude Code** は Auto mode の対象拡大とクラウド auto-fix を発表し、ユーザー確認なしの連続タスク実行が進化した（[→ 詳細](?a=claude-code-auto-mode)）。**Gemini CLI** は v0.35.0 で Plan Mode とネイティブサンドボックスを追加した一方、Pro モデルを有料化し、無料枠は Flash のみに縮小された（[→ 詳細](?a=gemini-cli-v035)）。",
+      "**M&A と業界再編**: 3月は2件の大型買収が業界地図を塗り替えた。**Anysphere（Cursor 親会社）が Windsurf（旧 Codeium）を買収**し、AI エディタ市場の選択肢が減少した（[→ 詳細](?a=cursor-windsurf-merge)）。Windsurf は単体提供を継続するも、Pro 価格を $15→$20 に改定して Cursor と同額に（[→ 詳細](?a=windsurf-pricing-overhaul)）。**OpenAI が Python ツール企業 Astral（uv・Ruff・ty）を買収**し、Codex との統合を発表。月間1.26億ダウンロードの uv を取り込み、Python エコシステム全体を Codex のパイプラインに組み込む戦略を示した（[→ 詳細](?a=openai-acquires-astral-2026)）。",
+      "**モデル動向**: 中国勢のフロンティアモデルが存在感を示した月でもあった。**Kimi K2.5**（Moonshot AI）は SWE-Bench 76.8%・HLE 50.2% を記録し、欧米モデルに匹敵する性能を公開した（[→ 詳細](?a=kimi-k25-moonshot-2026)）。**GLM-5**（Zhipu AI）は Huawei チップで学習した点で注目された（[→ 詳細](?a=glm-5-zhipu-2026)）。**M2.7**（MiniMax）は自己進化する学習ループを実装した（[→ 詳細](?a=minimax-m27-2026)）。**Google** は [Gemini 3.1 Flash Live](?a=gemini-31-flash-live-voice-2026)（リアルタイム音声 AI）を発表し、応答遅延 0.5 秒以下を実現した。",
+      "**規制・法務**: **Anthropic と米国防総省の法廷闘争**が最大の話題だった。サンフランシスコ連邦地裁が DoD による「サプライチェーンリスク」指定を暫定差止し、「修正第一条違反の報復」と判断（[→ 詳細](?a=anthropic-pentagon-injunction-2026)）。AI 企業の政府との利用条件交渉がどこまで企業側の倫理ポリシーで保護されるかという先例が形成されつつある。OpenAI の [Sora は消費者向け提供が終了](?a=openai-sora-discontinued-2026)した。規制全体の動きは [Q1 規制まとめ](?a=ai-regulation-q1-2026)を参照。",
+      "**3月のキーワード**: エージェントの並列実行（Cursor・Claude Code）、MCP の普及加速（freee リモート版、MCP v2 ロードマップ）、中国モデルのフロンティア化（Kimi K2.5・GLM-5・M2.7）、AI ツール企業の M&A（Cursor+Windsurf、OpenAI+Astral）、AI と政府の緊張関係（Anthropic vs DoD）。4月以降は EU AI Act の施行本格化と、買収後の Cursor/Windsurf 統合の進捗が注目点となる。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "12分",
+    "tags": ["月刊まとめ", "2026年3月", "エージェント", "M&A", "規制", "Cursor", "Claude Code", "Gemini CLI"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Cursor 2.4 Release", "site": "Cursor", "url": "https://cursor.com/changelog" },
+      { "title": "Claude Code Documentation", "site": "Anthropic", "url": "https://code.claude.com/docs/en/overview" },
+      { "title": "OpenAI to acquire Astral", "site": "OpenAI", "url": "https://openai.com/index/openai-to-acquire-astral/" }
     ]
   },
   {
@@ -518,7 +849,7 @@ export const ARTICLES = [
       {
         "title": "Claude Code — Documentation",
         "site": "Anthropic",
-        "url": "https://docs.anthropic.com/en/docs/claude-code/overview"
+        "url": "https://code.claude.com/docs/en/overview"
       }
     ]
   },
@@ -871,6 +1202,72 @@ export const ARTICLES = [
         "title": "Inside OpenAI’s in-house data agent (agent security)",
         "site": "OpenAI",
         "url": "https://openai.com/index/inside-our-in-house-data-agent/"
+      }
+    ]
+  },
+  {
+    "id": "rag-getting-started-step-by-step-2026",
+    "type": "feature",
+    "category": "data",
+    "title": "RAG をゼロから構築する — ステップバイステップガイド（2026年版）",
+    "excerpt": "Retrieval-Augmented Generation（RAG）を初めて構築する開発者向けに、ドキュメント取り込み→ベクトル化→検索→生成の4ステップを公式ドキュメントベースで解説。技術選定の判断軸とよくある落とし穴も整理した。",
+    "body": [
+      "RAG（Retrieval-Augmented Generation）は、LLM が持たない知識を外部データから検索して補完する仕組み。社内文書検索、ヘルプデスク、ナレッジベースなど、LLM 単体では回答できない領域に適用される。ここでは RAG パイプラインの構築手順を4ステップで整理する。",
+      "**Step 1: ドキュメントの取り込みと前処理**。対象ドキュメント（PDF、Markdown、HTML、データベースレコード等）をテキストとして抽出する。PDF は構造化が難しいため、テーブルや画像内テキストの処理が品質に直結する。前処理ではメタデータ（ファイル名、更新日、作成者、アクセス権限）を付与する。チャンキング（テキスト分割）は固定長、段落区切り、セマンティック分割の3パターンがあり、用途に応じて選ぶ。詳細は[チャンキング設計の記事](?a=rag-chunking-ingestion-2026)を参照。",
+      "**Step 2: ベクトル化（Embedding）と格納**。チャンクをベクトル（数値配列）に変換し、ベクトルデータベースに格納する。Embedding モデルは OpenAI の text-embedding-3-small/large、Google の Gecko、Cohere の embed-v3 など複数の選択肢がある。ベクトル DB は [pgvector（PostgreSQL 拡張）](?a=ai-backend-postgres-supabase-2026)、Pinecone、Weaviate、Chroma などから選ぶ（[→ ベクトル DB 比較](?a=vector-db-comparison-2026)）。開発段階では Chroma（ローカル・OSS）で始めて、本番で Pinecone や pgvector に移行するパターンが多い。",
+      "**Step 3: 検索（Retrieval）**。ユーザーのクエリをベクトル化し、格納済みベクトルとの類似度検索でトップ N 件を取得する。キーワード検索（BM25）とベクトル検索を組み合わせるハイブリッド検索が精度と再現率のバランスで有利とされる。検索結果のリランキング（Cohere Rerank 等）を挟むと上位の関連度がさらに向上する。",
+      "**Step 4: 生成（Generation）**。検索で取得したチャンクをプロンプトに含め、LLM に回答を生成させる。プロンプトには「以下の情報のみに基づいて回答してください」の指示を入れ、ハルシネーション（捏造）を抑制する。==引用元を回答に含める設計==にすると、ユーザーが根拠を確認でき信頼性が上がる。引用と評価の設計は[評価・引用の記事](?a=rag-evaluation-citations-2026)を参照。",
+      "よくある落とし穴: (1) チャンクが大きすぎて検索精度が落ちる（目安は200〜500トークン）、(2) メタデータフィルタを使わず全文検索に頼る、(3) Embedding モデルのバージョン変更時に全ベクトルの再生成が必要になる、(4) 本番でアクセス権限を考慮しないまま全社ドキュメントをインデックス化する（[→ エンタープライズ RAG の注意点](?a=rag-enterprise-acl-privacy-2026)）。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "10分",
+    "tags": ["RAG", "ベクトルDB", "Embedding", "入門", "ステップバイステップ"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "OpenAI Embeddings Guide", "site": "OpenAI", "url": "https://platform.openai.com/docs/guides/embeddings" },
+      { "title": "LangChain RAG Tutorial", "site": "LangChain", "url": "https://python.langchain.com/docs/tutorials/rag/" },
+      { "title": "LlamaIndex Getting Started", "site": "LlamaIndex", "url": "https://docs.llamaindex.ai/en/stable/getting_started/" }
+    ]
+  },
+  {
+    "id": "vector-db-comparison-2026",
+    "type": "feature",
+    "category": "data",
+    "title": "ベクトルデータベース比較 — pgvector・Pinecone・Weaviate・Chroma・Qdrant（2026年版）",
+    "excerpt": "RAG やセマンティック検索の基盤となるベクトル DB を、アーキテクチャ・スケーラビリティ・コスト・運用の軸で比較。既存 PostgreSQL への追加か、専用マネージドか、OSS ローカルか、選定の判断基準を整理した。",
+    "body": [
+      "ベクトルデータベースは RAG パイプラインの中核コンポーネントで、Embedding ベクトルの格納と類似度検索を担う。2026年時点で主要な選択肢は pgvector（PostgreSQL 拡張）、Pinecone（マネージド）、Weaviate（OSS + マネージド）、Chroma（OSS・ローカル特化）、Qdrant（OSS + マネージド）の5つに大別される。",
+      "**pgvector** は PostgreSQL の拡張で、既存の PostgreSQL インフラにベクトル検索を追加できる。SQL でクエリが書けるため学習コストが低く、トランザクション・ACL・バックアップなど PostgreSQL の運用ノウハウがそのまま使える。Supabase は pgvector を標準搭載しており、即座に利用可能（[→ Supabase 周辺の設計](?a=ai-backend-postgres-supabase-2026)）。大規模（数千万ベクトル超）では専用 DB に比べて検索速度が劣る場合がある。",
+      "**Pinecone** はフルマネージドのベクトル DB サービス。インフラ管理が不要で、API キーを取得すれば即利用可能。サーバーレスプランは使用量に応じた従量課金で、小規模なら低コスト。メタデータフィルタリングやネームスペースによるマルチテナント分離が標準機能。スケーラビリティが高く、数十億ベクトルにも対応するが、ベンダーロックインとなる点は考慮が必要。",
+      "**Weaviate** は Go 製の OSS ベクトル DB で、セルフホストとマネージド（Weaviate Cloud）の両方を提供。ベクトル検索とキーワード検索のハイブリッド検索を標準サポート。GraphQL ベースの API が特徴的で、オブジェクトとしてデータを扱える。モジュール方式で Embedding モデルを内蔵できる。**Qdrant** は Rust 製の OSS で、高速な検索とフィルタリングに強み。REST / gRPC API を提供し、Docker で簡単に起動できる。",
+      "**Chroma** は Python ネイティブの OSS ベクトル DB で、ローカル開発に最も手軽。`pip install chromadb` でインストールしてインメモリで動作するため、RAG のプロトタイピングに最適。本番環境向けにはサーバーモード（Docker）も提供されるが、大規模運用の実績は他の選択肢に比べるとまだ浅い。",
+      "選定の判断基準: 既存 PostgreSQL を活かすなら pgvector、インフラ管理を避けるなら Pinecone、OSS でハイブリッド検索なら Weaviate または Qdrant、開発・プロトタイプなら Chroma。企業で ACL やテナント分離が必要な場合は Pinecone のネームスペースか pgvector の行レベルセキュリティを活用する。RAG 構築の全体フローは[RAG ステップバイステップ](?a=rag-getting-started-step-by-step-2026)を参照。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": ["ベクトルDB", "RAG", "pgvector", "Pinecone", "Weaviate", "Chroma", "Qdrant", "比較"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "pgvector", "site": "GitHub", "url": "https://github.com/pgvector/pgvector" },
+      { "title": "Pinecone Documentation", "site": "Pinecone", "url": "https://docs.pinecone.io/" },
+      { "title": "Weaviate Documentation", "site": "Weaviate", "url": "https://weaviate.io/developers/weaviate" },
+      { "title": "Chroma Documentation", "site": "Chroma", "url": "https://docs.trychroma.com/" },
+      { "title": "Qdrant Documentation", "site": "Qdrant", "url": "https://qdrant.tech/documentation/" }
+    ],
+    "tables": [
+      {
+        "afterParagraph": 4,
+        "caption": "ベクトル DB 比較（2026年3月時点）",
+        "headers": ["DB", "種別", "言語", "ハイブリッド検索", "マネージド", "強み"],
+        "rows": [
+          ["pgvector", "PostgreSQL 拡張", "C", "BM25 は別途", "Supabase 等", "既存 PG インフラ活用"],
+          ["Pinecone", "マネージド専用", "—", "対応", "フルマネージド", "スケーラビリティ・手軽さ"],
+          ["Weaviate", "OSS + マネージド", "Go", "標準対応", "Weaviate Cloud", "GraphQL API・モジュール"],
+          ["Chroma", "OSS", "Python", "限定的", "なし（Docker）", "ローカル開発・プロトタイプ"],
+          ["Qdrant", "OSS + マネージド", "Rust", "対応", "Qdrant Cloud", "高速検索・フィルタリング"]
+        ]
       }
     ]
   },
@@ -1731,7 +2128,7 @@ export const ARTICLES = [
       {
         "title": "Claude Code — Documentation（概要・権限）",
         "site": "Anthropic",
-        "url": "https://docs.anthropic.com/en/docs/claude-code/overview"
+        "url": "https://code.claude.com/docs/en/overview"
       },
       {
         "title": "Anthropic — News & announcements",
@@ -1750,7 +2147,7 @@ export const ARTICLES = [
       "MCP は「LLM がクライアントからツールとリソースにアクセスするためのオープン仕様」です。クライアント（Claude Desktop、Cursor、自前ゲートウェイ等）が MCP サーバに接続し、ファイル読み書き、ブラウザ操作、社内 API 呼び出しなどを統一インタフェースで公開します。",
       "実装ではトランスポートが重要です。**stdio** はローカルプロセス直結でセットアップが簡単だが、クライアントと同じマシンにサーババイナリが必要です。**SSE / Streamable HTTP** はリモート配置に向く一方、認証・TLS・レート制限を自前で設計する必要があります。",
       "運用では「その MCP が触り得るスコープ」を最小化します。広いファイルシステムアクセス・任意 URL 取得・シェル実行を持つサーバは、**サプライチェーン攻撃（悪意あるサーバ・更新）とインジェクション**の両方の面でリスクが大きくなります。社内利用でもロックファイル・署名・許容リストの運用を検討してください。",
-      "エージェント製品ごとに MCP の UI（有効化・ログ・再接続）が異なるため、「仕様は同じでも接続パスが違う」と心得、**公式の接続例とセキュリティ注意**を各クライアントのドキュメントで確認するのが安全です。"
+      "エージェント製品ごとに MCP の UI（有効化・ログ・再接続）が異なるため、「仕様は同じでも接続パスが違う」と心得、**公式の接続例とセキュリティ注意**を各クライアントのドキュメントで確認するのが安全です。DB 連携・ブラウザ操作・SaaS API など具体的な活用パターンは [MCP 活用実践ガイド](?a=mcp-practical-guide-2026)を参照。[MCP v2 のロードマップ](?a=mcp-v2-spec-launch-2026)も確認のこと。"
     ],
     "newsDate": "2026-03-10",
     "date": "2026-03-28",
@@ -1862,7 +2259,7 @@ export const ARTICLES = [
       {
         "title": "Claude Code memory (CLAUDE.md 等)",
         "site": "Anthropic Docs",
-        "url": "https://docs.anthropic.com/en/docs/claude-code/memory"
+        "url": "https://code.claude.com/docs/en/memory"
       }
     ]
   },
@@ -2121,7 +2518,7 @@ export const ARTICLES = [
       "Windsurf（旧Codeium）は2026年3月19日、料金体系を全面的に改定しました。従来のクレジットベースのシステムを廃止し、日次・週次で自動更新されるクォータ制に移行します。",
       "新プランはFree、Pro（$20/月）、Teams、Max（$200/月）の4段階。従来のProは$15/月だったため$5の値上げとなり、Cursorの$20/月と同額になりました。これにより、Windsurfの最大の競争優位だった価格差が消滅しています。",
       "クォータ制では、月間プールではなく日次・週次のレートリミットとして使用量が管理されます。既存の有料ユーザーは現行価格が継続適用され、新体系を試すための無料期間も設けられています。",
-      "ユーザーコミュニティからは料金改定に対する批判の声も上がっています。Cursor傘下に入ったことで独自の差別化が難しくなる中、今後の機能面での差別化に注目が集まります。"
+      "ユーザーコミュニティからは料金改定に対する批判の声も上がっています。Cursor傘下に入ったことで独自の差別化が難しくなる中、今後の機能面での差別化に注目が集まります。全ツールの料金を横並びで見るには[料金プラン横断比較](?a=pricing-comparison-all-tools-2026-march)を参照。"
     ],
     "newsDate": "2026-03-27",
     "date": "2026-03-28",
@@ -2237,13 +2634,13 @@ export const ARTICLES = [
       "**Claude Code** は **Anthropic** が提供するCLI型AIエージェントで、ターミナルから claude コマンドを実行するだけでプロジェクト全体のコンテキストを取得し、開発タスクを自律的に遂行する。ファイル編集、bashコマンド実行、Git操作、テスト実行までを一貫して処理でき、CLAUDE.md ファイルにプロジェクト固有のルールを記述することでチーム標準のワークフローを維持できる。",
       "主要な機能として、MCP（**Model Context Protocol**）サーバーへの接続による外部ツール・データソース連携、イベント駆動で前処理・後処理を差し込む Hooks、再利用可能なプロンプトテンプレートである Skills がある。Auto mode（研究プレビュー）を有効にするとユーザー確認なしで連続的にタスクを実行し、大規模なリファクタリングやマイグレーション作業を効率化できる。Opus 4.6 モデルの1Mコンテキストウィンドウにより、数百ファイル規模のリポジトリでもアーキテクチャレベルの判断が可能になっている。",
       "料金体系は3種類ある。Pro プラン（月額 $20）は一般的な開発タスクに十分な利用枠を提供し、Max プラン（月額 $100 または $200）はヘビーユーザー向けに拡張された利用枠と Fast Mode を含む。API 経由での利用も可能で、その場合はトークン単位の従量課金となる。Claude Code SDK を使えばカスタムエージェントの構築もでき、SOC 2 準拠によりエンタープライズ環境にも導入しやすい。",
-      "コンテキスト理解の深さとエージェント的な自律性は現行CLIツールの中でも高い水準にある。一方で、大量のトークンを消費するためコストが膨らみやすい点、Auto mode がまだ研究プレビュー段階である点には注意が必要となる。チームでの利用では CLAUDE.md による規約共有と Hooks によるガードレールの組み合わせが実用上の鍵になる。"
+      "コンテキスト理解の深さとエージェント的な自律性は現行CLIツールの中でも高い水準にある。一方で、大量のトークンを消費するためコストが膨らみやすい点、Auto mode がまだ研究プレビュー段階である点には注意が必要となる。チームでの利用では [CLAUDE.md による規約共有](?a=claude-md-design-patterns-2026)と Hooks によるガードレールの組み合わせが実用上の鍵になる。外部連携は [MCP 活用ガイド](?a=mcp-practical-guide-2026)、Git との連携は [AI × Git ワークフロー](?a=git-ai-workflow-2026)を参照。"
     ],
     "primarySources": [
       {
         "title": "Claude Code Documentation",
         "site": "Anthropic",
-        "url": "https://docs.anthropic.com/en/docs/claude-code/overview"
+        "url": "https://code.claude.com/docs/en/overview"
       }
     ],
     "newsDate": "2026-03-27",
@@ -2573,7 +2970,7 @@ export const ARTICLES = [
       "**Cursor** は **Anysphere** 社が開発する AI ネイティブのコードエディタで、**VS Code** のフォークとして構築されている。VS Code の拡張機能やキーバインドをそのまま引き継げるため、既存ユーザーの移行コストが低い。2023 年の初期リリース以降、AI 支援コーディングの需要拡大とともにユーザー数を伸ばし、2026 年 3 月時点では AI エディタ分野で広く使われている。",
       "主要機能は Composer（マルチファイル編集の対話的生成）、インライン編集（選択範囲を指示で書き換え）、Background Agent（バックグラウンドでの自律タスク実行）、そして Tab 補完の 4 つに大別される。Composer はプロジェクト横断のリファクタリングに、Background Agent はコードレビュー中の並行作業にそれぞれ向く。モデルは Sonnet 4.6 と Opus 4.6 を切り替えて利用でき、タスクの粒度に応じた使い分けが可能になっている。",
       "料金は Hobby（無料・機能制限あり）、Pro（月額 20 ドル）、Business（月額 40 ドル・管理機能付き）の 3 プランで構成される。無料枠でも補完と限定的な Composer 利用が可能だが、Background Agent や高頻度のモデル呼び出しには Pro 以上が必要になる。",
-      "2026 年 3 月に Windsurf（旧 Codeium）の買収が完了し、Cascade フロー技術の統合が進行している。買収により Anysphere は AI エディタ市場で複数ブランドを抱える構図となった。Cursor 自体は引き続き単独製品として開発が続けられており、Cascade 由来の段階的タスク分解が今後どの程度取り込まれるかが注目点となる。"
+      "2026 年 3 月に [Windsurf（旧 Codeium）の買収が完了](?a=cursor-windsurf-merge)し、Cascade フロー技術の統合が進行している。買収により Anysphere は AI エディタ市場で複数ブランドを抱える構図となった。Cursor 自体は引き続き単独製品として開発が続けられており、Cascade 由来の段階的タスク分解が今後どの程度取り込まれるかが注目点となる。他エディタとの横並び比較は[AI エディタ横断比較](?a=editor-comparison-2026-march)を参照。"
     ],
     "primarySources": [
           {
@@ -3015,7 +3412,7 @@ export const ARTICLES = [
       {
         "title": "Claude Code — Documentation",
         "site": "Anthropic",
-        "url": "https://docs.anthropic.com/en/docs/claude-code/overview"
+        "url": "https://code.claude.com/docs/en/overview"
       },
       {
         "title": "Anthropic — News & announcements",
@@ -3349,6 +3746,147 @@ export const ARTICLES = [
         "title": "Walmart brings Sparky to ChatGPT as OpenAI rethinks Instant Checkout",
         "site": "Retail Dive",
         "url": "https://www.retaildive.com/news/walmart-sparky-chatgpt-instant-checkout/815647/"
+      }
+    ]
+  },
+  {
+    "id": "microsoft-365-e7-copilot-pricing-2026",
+    "type": "feature",
+    "category": "product",
+    "title": "Microsoft 365 E7 徹底解説 — E3/E5/E7 料金比較、Copilot 削減の影響、GitHub Copilot × Claude",
+    "excerpt": "2026年5月1日に提供開始される Microsoft 365 E7（$99/月）を、E3・E5 と料金・機能で比較。4月15日から2000人超の組織で基本 Copilot が Office アプリから削除される影響、GitHub Copilot での Claude 対応との関連まで、企業の IT 担当者と開発者が知るべき情報を整理した。",
+    "body": [
+      "Microsoft は2026年5月1日、新しいエンタープライズライセンス **Microsoft 365 E7** の提供を開始する。E5 以来約10年ぶりの新ティアで、E5 の全機能に加えて Microsoft 365 Copilot（$30/月相当）、Entra Suite（$12/月相当）、Agent 365（$15/月相当）をバンドルする。価格は $99/ユーザー/月で、個別に購入した場合の $117 と比べて約15%の割引となる。",
+      "**E3 / E5 / E7 の違い**: E3（$39/月）は Office アプリ・Exchange・SharePoint・Teams の基本セット。E5（$60/月）は E3 に加えて高度なセキュリティ（Defender for Office 365 P2）、コンプライアンス（eDiscovery Premium）、音声機能（Phone System）を含む。E7（$99/月）は E5 の全機能に加えて、AI エージェント管理の Agent 365、ゼロトラスト認証基盤の Entra Suite、そして Copilot をバンドルした「AI ネイティブ」なプランとなる。",
+      "**2000人超の組織への影響（4月15日〜）**: E7 の導入に先立ち、2026年4月15日から2000人超の組織では基本 Copilot（Basic Copilot）が Word・Excel・PowerPoint・OneNote から削除される。M365 Copilot アプリと Outlook では引き続き利用可能だが、Office アプリ内での AI 支援には Copilot の有料ライセンス（E7 またはアドオン）が必要になる。高度な推論機能や Agent Mode、そして Anthropic モデルへのアクセスも削除対象となる。",
+      "**2000人以下の組織**: 基本 Copilot は全 Office アプリで引き続き利用可能。ただし Copilot Chat は「標準アクセス」となり、ピーク時には応答品質やパフォーマンスが低下する可能性がある。E7 の恩恵を受けるには任意で有料プランに移行する形になる。",
+      "**GitHub Copilot と Claude の関係**: Microsoft エコシステム内の別の動きとして、GitHub Copilot では2025年10月に Anthropic の Claude Sonnet 4.5 が正式対応（GA）し、Pro・Pro+・Business・Enterprise の全ティアで利用可能になった。2025年11月には Claude Opus 4.5 も追加された。GitHub Copilot でのモデル選択は GitHub のサービスを経由するため、Anthropic API への直接課金は発生しない。M365 Copilot の Anthropic モデル削除と GitHub Copilot での Claude 対応という一見矛盾する動きは、Microsoft が「Office 内の AI」と「開発者向け AI」で異なる戦略を採っていることを示している。",
+      "**企業の判断ポイント**: E7 への移行は Copilot + Entra Suite + Agent 365 を個別購入するより約$18/月安い。ただし全ユーザーに E7 を展開する必要はなく、AI を積極的に使う部門のみ E7、他は E3/E5 のままという混合運用が現実的。2000人超の組織で4月15日以降も Office 内 Copilot を使い続けるには、E7 移行か Copilot アドオンの購入が必須となる点に注意。開発チームは GitHub Copilot 経由で Claude を含むマルチモデルの AI 支援を引き続き利用できる。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "12分",
+    "tags": ["Microsoft", "M365", "E7", "Copilot", "Claude", "Enterprise", "料金"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "M365 E7 to launch May 1 for $99 per user per month", "site": "Directions on Microsoft", "url": "https://www.directionsonmicrosoft.com/m365-e7-to-launch-may-1-for-99-per-user-per-month/" },
+      { "title": "Major M365 Copilot changes coming April 15", "site": "Directions on Microsoft", "url": "https://www.directionsonmicrosoft.com/major-m365-copilot-changes-coming-april-15/" },
+      { "title": "Claude Sonnet 4.5 is now generally available in GitHub Copilot", "site": "GitHub Blog", "url": "https://github.blog/changelog/2025-10-13-anthropics-claude-sonnet-4-5-is-now-generally-available-in-github-copilot/" },
+      { "title": "Microsoft 365 E7 comparison", "site": "Forestal Security", "url": "https://forestalsecurity.com/microsoft-365-e7/" }
+    ],
+    "tables": [
+      {
+        "afterParagraph": 1,
+        "caption": "Microsoft 365 ライセンス比較（2026年5月時点・公式発表値）",
+        "headers": ["項目", "E3（$39/月）", "E5（$60/月）", "E7（$99/月）"],
+        "rows": [
+          ["Office アプリ", "含む", "含む", "含む"],
+          ["Exchange / SharePoint / Teams", "含む", "含む", "含む"],
+          ["高度なセキュリティ（Defender P2）", "—", "含む", "含む"],
+          ["コンプライアンス（eDiscovery Premium）", "—", "含む", "含む"],
+          ["Phone System（音声）", "—", "含む", "含む"],
+          ["Microsoft 365 Copilot", "—", "—", "含む（$30相当）"],
+          ["Entra Suite（ゼロトラスト認証）", "—", "—", "含む（$12相当）"],
+          ["Agent 365（AI エージェント管理）", "—", "—", "含む（$15相当）"]
+        ]
+      },
+      {
+        "afterParagraph": 3,
+        "caption": "Copilot の利用可否（2026年4月15日以降）",
+        "headers": ["機能", "2000人超（無料枠）", "2000人以下（無料枠）", "E7 / Copilot 有料"],
+        "rows": [
+          ["M365 Copilot アプリ", "利用可", "利用可", "利用可"],
+          ["Outlook 内 Copilot", "利用可", "利用可", "利用可"],
+          ["Word / Excel / PPT 内 Copilot", "削除", "利用可", "利用可"],
+          ["高度な推論・Agent Mode", "削除", "制限あり", "利用可"],
+          ["Anthropic モデル", "削除", "—", "利用可"]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "power-apps-five-approaches-2026",
+    "type": "feature",
+    "category": "product",
+    "title": "Power Apps 開発手法 5パターン完全ガイド — Canvas・Model-driven・Custom Pages・Power Pages・Vibe Coding",
+    "excerpt": "Microsoft Power Apps でアプリを作る方法は1つではない。ドラッグ&ドロップの Canvas、データモデル起点の Model-driven、React ベースの Custom Pages、外部向けの Power Pages、AI に自然言語で作らせる Vibe Coding の5パターンを、必要なライセンスと適用場面を含めて解説する。",
+    "body": [
+      "Power Apps は Microsoft Power Platform の一部で、ノーコード（コードを一切書かない）からプロコード（React ベースのコンポーネント開発）まで複数の開発手法を提供する。どの手法を選ぶかで必要なライセンス・技術スキル・成果物の形が大きく変わるため、最初に全体像を把握することが重要。",
+      "**1. Canvas Apps（キャンバスアプリ）**: 空白のキャンバスに UI コンポーネントをドラッグ&ドロップで配置する。ロジックは Power Fx（Excel に似た数式言語）で記述する。画面のレイアウトを自由に制御でき、モバイル向け UI やタブレット向けの業務アプリに多用される。Dataverse・SharePoint・SQL Server・Excel など300以上のコネクタでデータソースに接続可能。最も利用者が多いパターンで、プログラミング経験がなくても始められる。",
+      "**2. Model-driven Apps（モデル駆動型アプリ）**: Dataverse のデータモデル（テーブル・列・リレーション）を定義すると、UI が自動生成される。Canvas とは逆に「データが先、UI は後」の設計思想。業務データの一貫性・監査証跡・権限管理が標準で組み込まれるため、CRM・ERP のような企業基幹アプリに向く。2026 Wave 1 でヘッダー・ナビゲーションの近代化が進行中。==Dataverse のライセンスが必須==。",
+      "**3. Custom Pages（カスタムページ）**: Model-driven Apps の中に Canvas ベースのページを埋め込む手法。さらに Power Apps Component Framework（PCF）を使えば React / TypeScript でカスタムコンポーネントを開発できる。「Model-driven の構造化」と「Canvas の柔軟な UI」を組み合わせたい場合に使う。Microsoft は従来の「Canvas を Model-driven に埋め込む」方式よりも Custom Pages を推奨しており、パフォーマンスも向上する。",
+      "**4. Power Pages（パワーページ）**: 外部ユーザー（顧客・パートナー）向けの Web ポータルを構築する。Dataverse のデータを外部に公開するユースケース（サポートポータル、申請フォーム等）に特化。PCF コンポーネントも利用可能だが、リアルタイム更新には制約がある。社内アプリではなく「社外向けの窓口」が必要な場合に選ぶ。",
+      "**5. Vibe Coding（AI 自然言語生成）**: vibe.powerapps.com で自然言語の指示からアプリを自動生成する最新の手法。「営業チームの日報管理アプリを作って」のような指示で、データモデル・UI・ロジックを AI が一括生成する。2026年時点では英語のみ対応で、利用可能リージョンも米国・オーストラリア・アジア・インドに限定されている。プロトタイプの高速作成には強いが、本番運用には仕様の明確化と人間によるレビューが必要。",
+      "**ライセンス要件**: Power Apps のライセンスは2026年1月に改定された。従来の Per App プラン（$5/ユーザー/アプリ/月）は廃止され、Power Apps Premium（$20/ユーザー/月、無制限アプリ）に一本化。2000人超の組織は Enterprise Premium（$12/ユーザー/月）が利用可能。==Dataverse を使う Model-driven Apps・Custom Pages は Premium ライセンスが必須==。Canvas Apps でも Dataverse やプレミアムコネクタを使う場合は Premium が必要。標準コネクタ（SharePoint、Excel 等）のみなら M365 ライセンスに含まれる場合がある。",
+      "**バイブコーディング（外部サービス）vs Microsoft 内側の判断**: Cursor + Claude Code + Supabase のようなバイブコーディング構成は、バックエンドを一から自由に設計できるが、認証・権限管理・コンプライアンスを自前で構築する必要がある。一方 Power Apps + Dataverse + Entra ID の構成は、これらが最初からセットになっており、Microsoft 365 を既に導入している企業ではインフラ追加がほぼ不要。ただし全ユーザーが Premium ライセンスを持つ必要があり、カスタマイズの自由度は Power Fx / PCF の範囲に限定される。バックエンドの比較は[Dataverse vs Supabase vs Azure SQL](?a=enterprise-backend-dataverse-supabase-azure-2026)を参照。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "14分",
+    "tags": ["Microsoft", "Power Apps", "ノーコード", "ローコード", "Dataverse", "Enterprise", "バイブコーディング"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Model-driven app overview", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/model-driven-app-overview" },
+      { "title": "Custom pages for model-driven apps", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/model-app-page-overview" },
+      { "title": "Vibe overview (Power Apps)", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/power-apps/vibe/overview" },
+      { "title": "Power Platform licensing FAQs", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/power-platform/admin/powerapps-flow-licensing-faq" },
+      { "title": "Power Apps 2026 Wave 1 release plan", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/power-platform/release-plan/2026wave1/power-apps/" }
+    ],
+    "tables": [
+      {
+        "afterParagraph": 5,
+        "caption": "Power Apps 開発手法比較（2026年時点）",
+        "headers": ["手法", "UI 設計", "データソース", "技術レベル", "Dataverse 必須", "主な用途"],
+        "rows": [
+          ["Canvas Apps", "ドラッグ&ドロップ", "300+ コネクタ", "ノーコード", "不要（標準コネクタ可）", "モバイル・タブレット業務アプリ"],
+          ["Model-driven Apps", "データモデルから自動生成", "Dataverse", "ノーコード〜ローコード", "必須", "CRM・ERP・基幹業務"],
+          ["Custom Pages", "Canvas + React PCF", "Dataverse", "ローコード〜プロコード", "必須", "高度な UI + 業務データ"],
+          ["Power Pages", "テンプレート + カスタム", "Dataverse", "ローコード", "必須", "外部向けポータル"],
+          ["Vibe Coding", "AI 自然言語生成", "AI が自動設定", "ノーコード", "自動（AI 判断）", "プロトタイプ・PoC"]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "enterprise-backend-dataverse-supabase-azure-2026",
+    "type": "feature",
+    "category": "data",
+    "title": "エンタープライズバックエンド比較 — Dataverse vs Supabase vs Azure SQL（2026年版）",
+    "excerpt": "アプリのバックエンドを「一から作る」か「セットになっている企業サービスを使う」か。Microsoft Dataverse、Supabase（OSS PostgreSQL）、Azure SQL Database の3つを、認証・リアルタイム・ライセンス・AI 統合の軸で比較した。",
+    "body": [
+      "業務アプリのバックエンドを選ぶ際、大きく2つのアプローチがある。バイブコーディングで Supabase や自前の PostgreSQL を使って一から構築するパターンと、Microsoft Dataverse のように認証・権限・API が最初からセットになっている企業サービスを使うパターン。ここでは Dataverse・Supabase・Azure SQL Database を公式ドキュメントベースで比較する。",
+      "**Dataverse**（Microsoft）は Power Platform・Dynamics 365 の標準データプラットフォーム。テーブル・列・リレーションを GUI で定義し、REST API（OData）と SDK で操作する。最大の強みは Microsoft エコシステムとの統合で、Entra ID（旧 Azure AD）による認証、行レベルセキュリティ、監査ログ、Power Automate との連携が標準装備されている。ノーコード/ローコード開発者にとっては「バックエンドを意識せずにアプリが作れる」環境となる。2026年4月の改定でデフォルトの DB 容量が 30GB→45GB、ライセンスあたりの付与が 250MB→500MB に増加した。",
+      "**Supabase** はオープンソースの PostgreSQL マネージドサービスで、Auth（GoTrue）、Realtime（WebSocket）、Edge Functions、Storage、pgvector（ベクトル検索）を統合した BaaS（Backend as a Service）。SQL の知識があれば自由度の高いスキーマ設計ができ、Row Level Security（RLS）でテーブルレベルの権限制御が可能。料金は無料枠（2プロジェクト）から Pro（$25/月）まで。バイブコーディングとの相性が良く、Cursor + Claude Code + Supabase で Web アプリのバックエンドを構築するパターンが増えている（[→ Supabase の詳細](?a=ai-backend-postgres-supabase-2026)）。",
+      "**Azure SQL Database** は Microsoft が提供するフルマネージドの SQL Server クラウド版。エンタープライズグレードのスケーラビリティ（ハイパースケール、サーバーレス）と高可用性（99.99% SLA）が特徴。暗号化（TDE）、監査、脅威検出が標準搭載。Entra ID 認証に対応し、Azure の他サービス（Azure Functions、Logic Apps、Power BI）との連携が密。Dataverse のバックエンドストアとしても Azure SQL が使われている。料金は DTU ベースと vCore ベースの2モデルで、最安は Basic（約$5/月）から。",
+      "**認証と権限管理の違い**: Dataverse は Entra ID 統合が標準で、Microsoft 365 のユーザー・グループがそのまま使える。Supabase は GoTrue による独自認証と、Google/GitHub/Azure 等の OAuth プロバイダー連携。Azure SQL は Entra ID と SQL 認証の両方に対応。企業が既に Microsoft 365 を使っている場合、Dataverse / Azure SQL は追加の認証基盤構築が不要な点が大きい。",
+      "**選定の判断基準**: (1) Microsoft 365 を全社導入済みで、ノーコード/ローコード開発者が中心なら **Dataverse**。Power Apps・Power Automate との統合が最もスムーズ。(2) 開発者チームが SQL に精通し、自由度の高い設計とリアルタイム機能が必要なら **Supabase**。OSS で[ベンダーロックインを避けられる](?a=ai-backend-postgres-supabase-2026)点も強み。(3) 高スケーラビリティと Azure エコシステム統合が最優先なら **Azure SQL**。(4) 現実的には、Power Apps（Dataverse）で社内業務アプリ、バイブコーディング（Supabase / Azure SQL）で顧客向け Web アプリ、という使い分けも多い。ライセンスの詳細は [M365 E3/E5/E7 比較](?a=microsoft-365-e7-copilot-pricing-2026)も参照。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "11分",
+    "tags": ["Dataverse", "Supabase", "Azure SQL", "バックエンド", "Enterprise", "比較", "Entra ID"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "What is Microsoft Dataverse?", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/power-apps/maker/data-platform/data-platform-intro" },
+      { "title": "Supabase Documentation", "site": "Supabase", "url": "https://supabase.com/docs" },
+      { "title": "Azure SQL Database documentation", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/azure/azure-sql/database/" },
+      { "title": "How our team chose between Dataverse and SQL Server", "site": "Microsoft Inside Track", "url": "https://www.microsoft.com/insidetrack/blog/how-our-team-chose-between-dataverse-and-sql-server/" }
+    ],
+    "tables": [
+      {
+        "afterParagraph": 4,
+        "caption": "エンタープライズバックエンド比較（2026年時点）",
+        "headers": ["項目", "Dataverse", "Supabase", "Azure SQL"],
+        "rows": [
+          ["提供形態", "Microsoft PaaS", "OSS マネージド（PostgreSQL）", "Microsoft PaaS（SQL Server）"],
+          ["認証", "Entra ID 統合（標準）", "GoTrue + OAuth プロバイダー", "Entra ID + SQL 認証"],
+          ["リアルタイム", "限定的", "WebSocket 標準搭載", "SignalR 等で別途構築"],
+          ["ノーコード/ローコード", "Power Apps 統合（強み）", "非対応（開発者向け）", "非対応（開発者向け）"],
+          ["ベクトル検索（AI）", "非対応", "pgvector 標準搭載", "非対応（別途構築）"],
+          ["料金目安", "M365 含む or Premium $20/月", "無料〜Pro $25/月", "Basic $5/月〜"],
+          ["ベンダーロックイン", "Microsoft エコシステム", "低（OSS PostgreSQL）", "Microsoft エコシステム"],
+          ["主な用途", "社内業務アプリ（Power Apps）", "Web アプリ・SaaS・AI アプリ", "エンタープライズ DB・分析"]
+        ]
       }
     ]
   },

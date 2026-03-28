@@ -7,5 +7,13 @@ export default defineConfig({
   build: {
     // SVG などを data: URL に埋め込まずファイル出力する（img の data: ブロック環境・キャッシュ調査の回避）
     assetsInlineLimit: 0,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "data-articles": ["./src/data/aiToolsData.js"],
+          "data-guide": ["./src/data/vibeCodingGuide.js"],
+        },
+      },
+    },
   },
 })

@@ -245,7 +245,7 @@ export const VIBE_TOOL_COMBO_TABLE = {
 export const VIBE_CLAUDE_CODE = {
   id: "vibe-claude-code",
   title: "Claude Code 日常リファレンス",
-  lead: "起動してからの日常操作で大事なところだけ。導入手順は公式 https://docs.anthropic.com/en/docs/claude-code/overview を参照。Claude Code はターミナル（Bash や PowerShell などのコマンド入力画面）で動作する。Bash とは Mac/Linux の標準的なコマンド入力環境のことで、Windows では Git Bash や WSL で使える。",
+  lead: "起動してからの日常操作で大事なところだけ。導入手順は公式 https://code.claude.com/docs/en/overview を参照。Claude Code はターミナル（Bash や PowerShell などのコマンド入力画面）で動作する。Bash とは Mac/Linux の標準的なコマンド入力環境のことで、Windows では Git Bash や WSL で使える。",
   terms: [
     // ── 使い方の種類 ──
     { word: "A. デスクトップアプリで使う", section: "使い方の種類", mean: "Claude Code の専用アプリ（Windows / Mac）を起動して使う。独自の画面でファイルツリーやチャットが見える。マウス操作で直感的に使いたい人向け。ターミナルに慣れていない人はここから始めると入りやすい。" },
@@ -1437,6 +1437,20 @@ export const GLOSSARY_BY_GENRE = [
         word: "Cloudflare（クラウドフレア）",
         mean: "Web サイトの高速化・セキュリティ保護を提供するサービス。CDN（コンテンツ配信ネットワーク）、DDoS 防御、DNS、Workers（サーバーレス実行環境）など幅広い機能を持つ。",
       },
+      {
+        word: "ノーコード",
+        mean: "コードを一切書かずにアプリを構築する手法。GUI でドラッグ&ドロップ、数式、設定だけで完結する。Power Apps Canvas、Bubble、Glide などが代表例。プログラミング経験がなくても業務アプリを作れるのが最大の利点で、企業の業務改善で急速に普及している。",
+        mem: "「コードを書く自由度」がない分、出来ることに制約がある。複雑な要件はローコードやプロコードに切り替える判断が必要。",
+      },
+      {
+        word: "ローコード",
+        mean: "最小限のコードで開発する手法。GUI による設計が基本だが、必要に応じてスクリプトやカスタムコンポーネントで拡張できる。Power Apps Model-driven、OutSystems、Mendix などが代表例。ノーコードより柔軟で、プロコード（フルコーディング）より速い。",
+        mem: "バイブコーディングとは別の「速く作る」アプローチ。バイブコーディングは AI にコードを書かせるが、ローコードは GUI で設計して人が少しコードを足す。",
+      },
+      {
+        word: "Power Platform",
+        mean: "Microsoft のローコード／ノーコード開発基盤。Power Apps（アプリ）、Power Automate（自動化）、Power BI（分析）、Power Pages（ポータル）、Copilot Studio（AI エージェント）の5つで構成される。Microsoft 365 と連携してバックエンドに Dataverse を使う。",
+      },
     ],
   },
   {
@@ -1515,6 +1529,16 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "ベクトル検索",
         mean: "「似ている意味」を近くに並べて探す検索。写真や文章の類似検索で力を発揮します。",
+      },
+      {
+        word: "Dataverse（データバース）",
+        mean: "Microsoft のビジネスデータプラットフォーム。Power Apps・Power Automate・Dynamics 365 の標準バックエンド。テーブル・列・リレーションを GUI で定義し、REST API（OData）で操作する。認証は Entra ID（旧 Azure AD）と統合済み。",
+        mem: "「Microsoft 版の Supabase」に近いが、SQL を直接書くのではなく GUI とローコードで操作するのが基本。Power Apps Premium ライセンス（$20/月）が必要。",
+      },
+      {
+        word: "BaaS（Backend as a Service）",
+        mean: "データベース・認証・ファイル保存・API などバックエンドに必要な機能をまとめて提供するクラウドサービス。Supabase、Firebase、Dataverse が代表例。「バックエンドを一から作る」手間を大幅に省ける。",
+        mem: "バイブコーディングで AI にフロントを作らせつつ、バックエンドは BaaS に任せるパターンが増えている。",
       },
     ],
   },
@@ -1907,6 +1931,78 @@ export const TOOL_REFERENCES = [
         { word: "段階的にタスクを分割する", section: "効果的な使い方", mean: "大きな機能を1つのタスクで投げるのではなく、「Step 1: データモデルを作成」→「Step 2: API エンドポイントを作成」→「Step 3: フロントを接続」のように分割すると成功率が上がる。" },
         { word: "==Codex が得意なこと==", section: "効果的な使い方", mean: "テスト作成、リファクタリング、ドキュメント生成、定型的な機能追加、コードレビュー、依存関係の更新。明確な仕様があるタスクほど精度が高い。" },
         { word: "==Codex が苦手なこと==", section: "効果的な使い方", mean: "複雑な設計判断、UI/UX のデザイン、外部 API との連携テスト（サンドボックス制限）、曖昧な要件の解釈。これらは人間が設計を決めてから Codex に実装を任せる方がよい。" },
+      ],
+    },
+  },
+  {
+    id: "gemini-cli",
+    label: "Gemini CLI",
+    ref: {
+      id: "ref-gemini-cli",
+      title: "Gemini CLI 日常リファレンス",
+      lead: "Google DeepMind が提供する OSS の CLI コーディングツール。200 万トークンのコンテキストウィンドウが最大の特徴。公式は https://github.com/google-gemini/gemini-cli を参照。",
+      terms: [
+        // ── 使い方の種類 ──
+        { word: "A. ターミナルから対話的に使う", section: "使い方の種類", mean: "ターミナルで `gemini` コマンドを実行して対話セッションを開始する。Claude Code と同じ感覚で使える。Google アカウントでログインするだけで無料枠が使える。" },
+        { word: "B. Cursor / VS Code のターミナルから使う", section: "使い方の種類", mean: "エディタの統合ターミナルから `gemini` を起動する。Claude Code や Codex と同じプロジェクトフォルダで併用も可能。" },
+        // ── 基本操作 ──
+        { word: "起動: `gemini`", section: "基本操作", mean: "対話セッションを開始する。初回は Google アカウントでのログインが求められる。プロジェクトのフォルダに移動してから実行する。", code: "cd C:\\Users\\あなた\\Projects\\my-app\ngemini", codeLang: "bash" },
+        { word: "インストール", section: "基本操作", mean: "npm でグローバルインストールする。Node.js 18 以上が必要。パッケージ名は公式リポジトリで確認。", code: "npm install -g @anthropic-ai/claude-code  # Claude Code\nnpm install -g gemini-cli                  # Gemini CLI\n# パッケージ名は変更の可能性あり。公式を確認:\n# https://github.com/google-gemini/gemini-cli", codeLang: "bash" },
+        { word: "==200 万トークンコンテキスト==", section: "基本操作", mean: "Gemini 2.5 Pro の 200 万トークンのコンテキストウィンドウを活かし、大規模コードベースを一括で読み込める。数百ファイル規模のリポジトリでも全体を把握した上で回答できるのが他の CLI ツールとの最大の違い。" },
+        // ── モデル選択 ──
+        { word: "モデル: Gemini 2.5 Pro", section: "モデル選択", mean: "高精度モデル。200 万トークンのコンテキストを活かした大規模コードベースの解析や複雑な推論に向く。2026年3月25日より有料サブスクリプション限定。" },
+        { word: "モデル: Gemini 2.5 Flash", section: "モデル選択", mean: "高速モデル。無料枠で利用可能。軽い質問やシンプルなタスクに向く。コンテキストは Pro より小さいが、日常的な利用には十分。" },
+        // ── 機能 ──
+        { word: "Plan Mode", section: "機能", mean: "コード変更前にエージェントが計画を提示し、ユーザーの承認を得てから実行する慎重なワークフロー。v0.35.0 で追加された。Claude Code の Plan Mode と同様の機能。" },
+        { word: "サブエージェント", section: "機能", mean: "タスクを分割して複数のサブエージェントに並列実行させる機能。v0.35.0 で大幅に強化された。ローカル実行、ツール分離、動的ツールフィルタリングに対応。" },
+        { word: "ネイティブサンドボックス", section: "機能", mean: "Linux（bubblewrap/seccomp）、macOS（Seatbelt）、Windows の各プラットフォームでネイティブなサンドボックス分離を実現。ツール実行の安全性が高い。" },
+        { word: "MCP 対応", section: "機能", mean: "Model Context Protocol に対応しており、サードパーティの MCP サーバーを接続して機能を拡張できる。Claude Code と同じ MCP サーバーを共有できる場合もある。" },
+        { word: "Vim モード", section: "機能", mean: "ターミナル内で Vim キーバインドが使える。Vim ユーザー向けのカスタマイズ。v0.35.0 で強化された。" },
+        // ── Google Cloud 統合 ──
+        { word: "Google Cloud 統合", section: "Google Cloud 統合", mean: "Firebase、Vertex AI、Google Cloud のサービスとネイティブに統合されている。Google Cloud を使っている開発者にとっては AI ツールと既存インフラの連携がスムーズ。" },
+        { word: "Firebase との連携", section: "Google Cloud 統合", mean: "Firebase プロジェクトの設定やデプロイを Gemini CLI から操作できる。Firebase Hosting、Cloud Functions との統合が想定されている。" },
+        // ── 料金 ──
+        { word: "料金: 無料枠（Flash）", section: "料金", mean: "Gemini Flash モデルは 1 日 1,000 リクエストまで無料。Google アカウントがあれば利用可能。軽い使い方なら課金不要。" },
+        { word: "料金: Pro モデル（有料）", section: "料金", mean: "2026年3月25日より、Gemini Pro モデルは有料サブスクリプション限定になった。大規模コンテキストを活かした本格利用には課金が必要。" },
+        { word: "料金: API 従量課金", section: "料金", mean: "Google AI Studio / Vertex AI 経由の API 利用は従量課金。大量利用する場合はこちらが費用対効果が高い場合もある。" },
+        // ── 比較 ──
+        { word: "==Claude Code との違い==", section: "他ツールとの比較", mean: "Claude Code は 1M トークンコンテキストで MCP・Hooks・Skills など拡張機能が豊富。Gemini CLI は 200 万トークンコンテキストで大規模コードベースの一括読み込みに強い。拡張性の Claude Code、コンテキスト量の Gemini CLI。" },
+        { word: "Codex との違い", section: "他ツールとの比較", mean: "Codex はクラウドサンドボックスで動作し PR ワークフローに特化。Gemini CLI はローカルで動作し対話的な作業に向く。" },
+        // ── 実践Tips ──
+        { word: "大規模リポジトリでの使い方", section: "実践Tips", mean: "200 万トークンのコンテキストを活かして、プロジェクト全体を読み込ませてからアーキテクチャレベルの質問をする。「このプロジェクトの依存関係を分析して」のようなタスクが得意。" },
+        { word: "無料枠の使い分け", section: "実践Tips", mean: "Flash（無料）で日常的な質問、Pro（有料）で複雑な推論やコーディングタスク。無料枠がある間は Gemini CLI で軽い作業、重い作業は Claude Code、のような使い分けもできる。" },
+        { word: "OSS なのでカスタマイズ可能", section: "実践Tips", mean: "Gemini CLI はオープンソース（Apache 2.0）で公開されている。ソースコードを読んで動作を理解したり、カスタマイズしたりできる。" },
+      ],
+    },
+  },
+  {
+    id: "cross-tool",
+    label: "逆引き辞書",
+    ref: {
+      id: "ref-cross-tool",
+      title: "やりたいこと逆引き辞書 — 各ツールでの操作方法",
+      lead: "「ファイルを検索したい」「テストを書きたい」など、やりたいことから各ツールの操作方法を引ける辞書。",
+      terms: [
+        // ── ファイル操作 ──
+        { word: "ファイルを検索する", section: "ファイル操作", mean: "**Claude Code**: Read / Glob ツールで自動検索。指示に含めれば自動で探す。\n**Cursor**: `Cmd+P` でファイル名検索、`@file` で AI に指定。\n**Codex**: タスク指示に含めればサンドボックス内で検索。\n**Copilot**: `@workspace` で全体検索、`#file` で指定。\n**Gemini CLI**: 指示に含めれば自動で探す。200万トークンなら全ファイル読み込みも可能。" },
+        { word: "複数ファイルを同時に編集する", section: "ファイル操作", mean: "**Claude Code**: 自然言語で指示すれば複数ファイルを自律的に編集。\n**Cursor**: Composer（`Cmd+I`）でマルチファイル編集。Agent モードで自律的に複数ファイルを変更。\n**Codex**: タスク指示に含めればサンドボックス内で複数ファイルを変更。\n**Copilot**: Agent Mode で複数ファイル変更。\n**Gemini CLI**: 自然言語で指示すれば複数ファイルを編集。" },
+        { word: "変更を元に戻す", section: "ファイル操作", mean: "**Claude Code**: `git stash` や `git checkout -- ファイル名` で Git 経由で戻す。\n**Cursor**: Composer の Accept / Reject ボタンで個別に取消。Git で `git stash` も可。\n**Codex**: PR をマージしなければ変更は反映されない。PR を Close する。\n**Copilot**: Agent Mode の Accept / Discard で個別に取消。\n**Aider**: `/undo` コマンドで直前の変更をロールバック。" },
+        // ── テスト ──
+        { word: "テストを書く", section: "テスト", mean: "**Claude Code**: 「このファイルのテストを書いて」と指示。テストフレームワークは CLAUDE.md で指定。\n**Cursor**: Composer で「テストを書いて」と指示。.cursor/rules でフレームワーク指定。\n**Codex**: 「テストを追加して全部パスさせて」とタスク投入。サンドボックスで実行まで行う。\n**Copilot**: 関数を選択 → Chat で「テストを書いて」。`/tests` スラッシュコマンドも使える。\n**Gemini CLI**: 「テストを書いて」と指示。" },
+        { word: "テストを実行する", section: "テスト", mean: "**Claude Code**: Bash ツールで `npm test` 等を自動実行。Hooks で commit 前に自動テストも設定可能。\n**Cursor**: 統合ターミナルで手動実行。Agent モードなら自動実行も。\n**Codex**: サンドボックス内でテスト自動実行。結果は PR に反映。\n**Copilot**: Agent Mode でターミナルコマンドとして実行。\n**Gemini CLI**: ターミナルで自動実行。" },
+        // ── Git 操作 ──
+        { word: "コミットする", section: "Git 操作", mean: "**Claude Code**: 変更内容を自動解析してコミットメッセージを生成・コミット。\n**Cursor**: 統合ターミナルから手動で `git commit`。AI はコミットしない。\n**Codex**: クラウドで PR を自動作成。コミットは自動。\n**Copilot**: 統合ターミナルから手動。GitHub 上で Coding Agent が PR 作成。\n**Aider**: 変更ごとに自動コミット（設定で無効化可）。" },
+        { word: "PR（Pull Request）を作成する", section: "Git 操作", mean: "**Claude Code**: `gh pr create` を Bash で実行。指示すれば PR 作成まで自律的に行う。\n**Cursor**: Background Agent で PR 作成可能。\n**Codex**: タスク完了後に自動で PR 作成（標準ワークフロー）。\n**Copilot**: Coding Agent が Issue から PR を自動作成。\n**Gemini CLI**: `gh` コマンド経由で PR 作成可能。" },
+        // ── 設定 ──
+        { word: "プロジェクトルールを設定する", section: "設定", mean: "**Claude Code**: `CLAUDE.md` をプロジェクトルートに置く。\n**Cursor**: `.cursor/rules` にルールファイルを置く。\n**Codex**: `AGENTS.md`（または `codex.md`）をプロジェクトルートに置く。\n**Copilot**: `.github/copilot-instructions.md` を置く。\n**Gemini CLI**: `GEMINI.md` をプロジェクトルートに置く（公式ドキュメントで確認）。" },
+        { word: "AI に読ませたくないファイルを除外する", section: "設定", mean: "**Claude Code**: `.claude/settings.json` の `ignorePaths` で指定。\n**Cursor**: `.cursorignore` に記述（.gitignore と同じ書式）。\n**Codex**: `codex.json` でサンドボックスに含めないファイルを指定。\n**Copilot**: VS Code の `files.exclude` 設定と Copilot の設定で制御。\n**Gemini CLI**: 設定ファイルで指定（公式ドキュメント参照）。" },
+        // ── デバッグ ──
+        { word: "エラーの原因を調べる", section: "デバッグ", mean: "**Claude Code**: エラーメッセージを貼り付けるか、ログファイルを読ませて分析させる。\n**Cursor**: エラーの赤い波線にカーソル → 「Fix with AI」。ターミナルエラーは「Ask AI」ボタン。\n**Codex**: タスクで「このエラーを修正して」と指示。\n**Copilot**: `@terminal このエラーの原因は？` で直近のターミナル出力を解析。\n**Gemini CLI**: エラーメッセージを貼り付けて分析させる。" },
+        // ── コード理解 ──
+        { word: "コードの意味を説明してもらう", section: "コード理解", mean: "**Claude Code**: 「このファイルを説明して」と指示。1M コンテキストで広範囲を把握。\n**Cursor**: コードを選択 → `Cmd+L` → 「これを説明して」。\n**Codex**: `-q` モードで質問のみ可能。\n**Copilot**: コードを選択 → 右クリック → 「Explain」。`@workspace` でプロジェクト全体の説明も。\n**Gemini CLI**: 200 万トークンで大規模コードベースの全体像を説明させるのに強い。" },
+        { word: "プロジェクト全体の構造を把握する", section: "コード理解", mean: "**Claude Code**: 起動時に自動でプロジェクト構造を読み取る。\n**Cursor**: `@codebase このプロジェクトの構造を説明して` で全体把握。\n**Copilot**: `@workspace` で全体を文脈に含める。\n**Gemini CLI**: 200 万トークンのコンテキストで全ファイルを一括読み込み。大規模プロジェクトでの全体把握に最も強い。" },
+        // ── 外部連携 ──
+        { word: "外部ツール・API と連携する", section: "外部連携", mean: "**Claude Code**: MCP サーバーで DB・ブラウザ・SaaS API と連携。Hooks で前後処理。\n**Cursor**: MCP サーバー対応。拡張機能でも連携可能。\n**Codex**: サンドボックス内での実行に限定。外部 API は制限あり。\n**Copilot**: VS Code 拡張機能エコシステムで幅広い連携。\n**Gemini CLI**: MCP 対応。Google Cloud サービスとネイティブ統合。" },
       ],
     },
   },

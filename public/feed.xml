@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-03-28T15:00:00Z</updated>
+  <updated>2026-03-29T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>【週刊まとめ】AI開発ツール — 2026年3月23日〜29日</title>
@@ -32,6 +32,102 @@
     <summary>秒単価・クレジット制・バンドル販売が混在するため「安い／高い」一発比較は誤魔化しやすい。公式 pricing の単位（秒・分・解像度・Fast/Standard）を揃えて読む。</summary>
   </entry>
   <entry>
+    <title>AI エディタ横断比較 — Cursor・Windsurf・VS Code+Copilot（2026年3月版）</title>
+    <link rel="alternate" type="text/html" href="?a=editor-comparison-2026-march"/>
+    <id>tag:ai-tool-news.jp,2026:editor-comparison-2026-march</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>AI エディタ三大勢力を、機能・料金・エージェント能力・拡張性の軸で横並びに比較した。Cursor/Windsurf の経営統合後の現状も含め、エディタ選びの判断材料を整理する。</summary>
+  </entry>
+  <entry>
+    <title>AI 開発ツール料金プラン横断比較 — CLI・エディタ・API 全8ツール（2026年3月版）</title>
+    <link rel="alternate" type="text/html" href="?a=pricing-comparison-all-tools-2026-march"/>
+    <id>tag:ai-tool-news.jp,2026:pricing-comparison-all-tools-2026-march</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>Claude Code、Cursor、Windsurf、Codex、Gemini CLI、Copilot、Aider、Zed AI の料金体系を一覧で比較。無料枠・Pro・Enterprise まで、公式発表ベースで整理した。</summary>
+  </entry>
+  <entry>
+    <title>用途別おすすめツール — 「何を使えばいいか」に答える（2026年3月版）</title>
+    <link rel="alternate" type="text/html" href="?a=usecase-recommendation-matrix-2026"/>
+    <id>tag:ai-tool-news.jp,2026:usecase-recommendation-matrix-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>Web 開発、データ分析、企業導入、初心者など用途別に最適なツールの組み合わせを整理した。目的と予算に合わせて選べるマトリクス形式。</summary>
+  </entry>
+  <entry>
+    <title>CLAUDE.md 設計パターン集 — プロジェクト別の書き方と実例</title>
+    <link rel="alternate" type="text/html" href="?a=claude-md-design-patterns-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-md-design-patterns-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>Claude Code の動作を制御する CLAUDE.md ファイルの設計パターンを、プロジェクト種別ごとに整理した。グローバル設定・プロジェクト設定・チーム共有の三層構造と、実務で効くルールの書き方を解説する。</summary>
+  </entry>
+  <entry>
+    <title>MCP サーバー活用実践ガイド — DB 連携・ブラウザ操作・外部 API の具体例</title>
+    <link rel="alternate" type="text/html" href="?a=mcp-practical-guide-2026"/>
+    <id>tag:ai-tool-news.jp,2026:mcp-practical-guide-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>Model Context Protocol（MCP）を使った Claude Code の外部連携を、DB 操作・ブラウザ自動化・SaaS API の3パターンで解説。ローカル版とリモート版の違い、設定方法、セキュリティ上の注意点を整理した。</summary>
+  </entry>
+  <entry>
+    <title>AI × Git 連携ワークフロー — ブランチ戦略・PR 自動生成・コードレビュー活用</title>
+    <link rel="alternate" type="text/html" href="?a=git-ai-workflow-2026"/>
+    <id>tag:ai-tool-news.jp,2026:git-ai-workflow-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>Claude Code・Codex・Copilot を Git ワークフローに組み込む実践パターンを整理。ブランチ戦略、AI による PR 作成、コードレビュー支援、コミットメッセージの自動生成まで、公式機能ベースで解説する。</summary>
+  </entry>
+  <entry>
+    <title>AI と著作権 — 2026年時点の法的状況と開発者が知るべきこと</title>
+    <link rel="alternate" type="text/html" href="?a=ai-copyright-landscape-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ai-copyright-landscape-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>AI 生成コードの著作権は誰にあるのか、学習データの利用は合法なのか。米国・EU・日本の現状を公式発表と判例ベースで整理し、開発者が実務で取るべき対応をまとめた。</summary>
+  </entry>
+  <entry>
+    <title>AI 規制比較 — 米国・EU・日本のアプローチの違い（2026年3月時点）</title>
+    <link rel="alternate" type="text/html" href="?a=ai-regulation-comparison-us-eu-japan-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ai-regulation-comparison-us-eu-japan-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>AI 規制の三大圏域（米国・EU・日本）の規制方針を横並びで比較。リスクベース規制の EU、セクター別の米国、ガイドライン主導の日本。開発者が知るべき実務上の違いを整理した。</summary>
+  </entry>
+  <entry>
+    <title>企業で AI コーディングツールを導入する際の法的チェックリスト</title>
+    <link rel="alternate" type="text/html" href="?a=ai-enterprise-legal-checklist-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ai-enterprise-legal-checklist-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>企業が Claude Code・Cursor・Copilot 等の AI 開発ツールを導入する際に確認すべき法的・コンプライアンス上のポイントを整理。利用規約、データ取り扱い、知的財産、情報セキュリティの4観点からチェックリスト形式で解説する。</summary>
+  </entry>
+  <entry>
+    <title>【月刊まとめ】2026年3月の AI 開発ツール動向 — エージェント競争激化・M&amp;A加速・規制の転換点</title>
+    <link rel="alternate" type="text/html" href="?a=monthly-roundup-2026-march"/>
+    <id>tag:ai-tool-news.jp,2026:monthly-roundup-2026-march</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>2026年3月の AI 開発ツール界隈を総括。Cursor 2.4 の並列サブエージェント、Claude Code Auto mode、Gemini CLI 無料枠縮小、Cursor による Windsurf 買収、OpenAI の Astral 買収、Anthropic と国防総省の法廷闘争など、主要トピックを1本にまとめた。</summary>
+  </entry>
+  <entry>
+    <title>RAG をゼロから構築する — ステップバイステップガイド（2026年版）</title>
+    <link rel="alternate" type="text/html" href="?a=rag-getting-started-step-by-step-2026"/>
+    <id>tag:ai-tool-news.jp,2026:rag-getting-started-step-by-step-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>Retrieval-Augmented Generation（RAG）を初めて構築する開発者向けに、ドキュメント取り込み→ベクトル化→検索→生成の4ステップを公式ドキュメントベースで解説。技術選定の判断軸とよくある落とし穴も整理した。</summary>
+  </entry>
+  <entry>
+    <title>ベクトルデータベース比較 — pgvector・Pinecone・Weaviate・Chroma・Qdrant（2026年版）</title>
+    <link rel="alternate" type="text/html" href="?a=vector-db-comparison-2026"/>
+    <id>tag:ai-tool-news.jp,2026:vector-db-comparison-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>RAG やセマンティック検索の基盤となるベクトル DB を、アーキテクチャ・スケーラビリティ・コスト・運用の軸で比較。既存 PostgreSQL への追加か、専用マネージドか、OSS ローカルか、選定の判断基準を整理した。</summary>
+  </entry>
+  <entry>
     <title>AI 開発と言語ランタイムの周辺 — Python・JavaScript・Node.js・Bun のいま（2026）</title>
     <link rel="alternate" type="text/html" href="?a=ai-dev-stacks-python-js-node-2026"/>
     <id>tag:ai-tool-news.jp,2026:ai-dev-stacks-python-js-node-2026</id>
@@ -46,6 +142,30 @@
     <published>2026-03-29T15:00:00Z</published>
     <updated>2026-03-29T15:00:00Z</updated>
     <summary>RAG・チャット・エージェントの永続層は多くの場合がリレーショナル＋ベクトル拡張。Supabase（Postgres＋Auth＋Realtime＋Edge Functions）を軸に、RLS・接続プール・ハイブリッド検索の論点を整理する。</summary>
+  </entry>
+  <entry>
+    <title>Microsoft 365 E7 徹底解説 — E3/E5/E7 料金比較、Copilot 削減の影響、GitHub Copilot × Claude</title>
+    <link rel="alternate" type="text/html" href="?a=microsoft-365-e7-copilot-pricing-2026"/>
+    <id>tag:ai-tool-news.jp,2026:microsoft-365-e7-copilot-pricing-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>2026年5月1日に提供開始される Microsoft 365 E7（$99/月）を、E3・E5 と料金・機能で比較。4月15日から2000人超の組織で基本 Copilot が Office アプリから削除される影響、GitHub Copilot での Claude 対応との関連まで、企業の IT 担当者と開発者が知るべき情報を整理した。</summary>
+  </entry>
+  <entry>
+    <title>Power Apps 開発手法 5パターン完全ガイド — Canvas・Model-driven・Custom Pages・Power Pages・Vibe Coding</title>
+    <link rel="alternate" type="text/html" href="?a=power-apps-five-approaches-2026"/>
+    <id>tag:ai-tool-news.jp,2026:power-apps-five-approaches-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>Microsoft Power Apps でアプリを作る方法は1つではない。ドラッグ&amp;ドロップの Canvas、データモデル起点の Model-driven、React ベースの Custom Pages、外部向けの Power Pages、AI に自然言語で作らせる Vibe Coding の5パターンを、必要なライセンスと適用場面を含めて解説する。</summary>
+  </entry>
+  <entry>
+    <title>エンタープライズバックエンド比較 — Dataverse vs Supabase vs Azure SQL（2026年版）</title>
+    <link rel="alternate" type="text/html" href="?a=enterprise-backend-dataverse-supabase-azure-2026"/>
+    <id>tag:ai-tool-news.jp,2026:enterprise-backend-dataverse-supabase-azure-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>アプリのバックエンドを「一から作る」か「セットになっている企業サービスを使う」か。Microsoft Dataverse、Supabase（OSS PostgreSQL）、Azure SQL Database の3つを、認証・リアルタイム・ライセンス・AI 統合の軸で比較した。</summary>
   </entry>
   <entry>
     <title>Google 社内 AI エージェント「Agent Smith」が話題 — PC を閉じても作業を継続、スマホから進捗確認・追加指示</title>
