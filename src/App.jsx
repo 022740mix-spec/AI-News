@@ -334,7 +334,7 @@ function syncDocumentSeo(ctx) {
 function GuideLinkifiedP({ text, className }) {
   let k = 0;
   const mkKey = () => `glp-${k++}`;
-  const nodes = linkifyPlainToNodes(text, mkKey);
+  const nodes = richInlineLine(text, mkKey);
   return <p className={className}>{nodes}</p>;
 }
 
