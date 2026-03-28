@@ -774,6 +774,8 @@ export const ARTICLES = [
   {
     "id": "aqua-voice-review",
     "type": "review",
+    "rating": 3.5,
+    "reviewCategory": "other",
     "category": "media",
     "title": "Aqua Voice — Mac/Windows 向けAIディクテーション（フローティングUI）",
     "excerpt": "録音→転写→アクティブなアプリへペーストまでを一体で扱う製品向けディクテーション。公式 FAQ では全アカウント 1,000 語の無料枠、Avalon モデルは Pro で選択可能、iPhone アプリは未対応とされる。",
@@ -1784,6 +1786,8 @@ export const ARTICLES = [
   {
     "id": "gemini-cli",
     "type": "review",
+    "rating": 3.5,
+    "reviewCategory": "cli",
     "category": "cli",
     "title": "Gemini CLI レビュー — Googleが放つ200万トークンの超大規模コンテキストCLI",
     "excerpt": "Google DeepMindが開発。Gemini 2.5 Proの200万トークンコンテキストで、大規模リポジトリを丸ごと解析。無料枠も充実。",
@@ -1817,6 +1821,8 @@ export const ARTICLES = [
   {
     "id": "openai-codex-agent",
     "type": "review",
+    "rating": 4.0,
+    "reviewCategory": "cli",
     "category": "cli",
     "title": "OpenAI Codex — クラウド並列実行のAIコーディングエージェント",
     "excerpt": "OpenAIが満を持してリリースしたコーディングエージェント。クラウドサンドボックスで複数タスクを並列実行し、PRとして提出する新しいワークフロー。",
@@ -1871,6 +1877,8 @@ export const ARTICLES = [
   {
     "id": "claude-code",
     "type": "review",
+    "rating": 4.5,
+    "reviewCategory": "cli",
     "category": "cli",
     "title": "Claude Code レビュー — Anthropic のCLIエージェント徹底解説",
     "excerpt": "claudeコマンド1つでリポジトリ全体を読み込み、バグ修正からテスト実行、コミットまで自律的に行う。Opus 4.6の1Mコンテキストによる深い推論が、複雑なリファクタリングを可能にしている。",
@@ -1913,6 +1921,8 @@ export const ARTICLES = [
   {
     "id": "cursor-cli",
     "type": "review",
+    "rating": 4.0,
+    "reviewCategory": "cli",
     "category": "cli",
     "title": "Cursor CLI (Composer) レビュー — IDE一体型のAIコーディング環境",
     "excerpt": "IDE一体型でありながら、CLIモード（Composer）が強力。自然言語で伝えるだけで、関連ファイルを自動で見つけ出し、変更案を提示する。",
@@ -1953,6 +1963,8 @@ export const ARTICLES = [
   {
     "id": "github-copilot-cli",
     "type": "review",
+    "rating": 3.5,
+    "reviewCategory": "cli",
     "category": "cli",
     "title": "GitHub Copilot CLI レビュー — エンタープライズ対応のAI開発支援",
     "excerpt": "GitHubエコシステムとシームレスに統合。Copilot Coding Agentによる自律的なIssue対応が新たに追加。",
@@ -1993,6 +2005,8 @@ export const ARTICLES = [
   {
     "id": "aider",
     "type": "review",
+    "rating": 4.0,
+    "reviewCategory": "cli",
     "category": "cli",
     "title": "Aider レビュー — マルチモデル対応のOSS CLIツール",
     "excerpt": "複数ファイルの一括修正に特化したOSSツール。Gitとの親和性が高く、様々なLLMプロバイダーに対応。",
@@ -2033,6 +2047,8 @@ export const ARTICLES = [
   {
     "id": "codebuff",
     "type": "review",
+    "rating": 3.0,
+    "reviewCategory": "cli",
     "category": "cli",
     "title": "CodeBuff レビュー — ターミナル特化の新興CLIエージェント",
     "excerpt": "直感的なUIとDiff確認が特徴の新興CLI。スピードと精度のバランスに優れる。",
@@ -2072,6 +2088,8 @@ export const ARTICLES = [
   {
     "id": "amazon-q",
     "type": "review",
+    "rating": 3.0,
+    "reviewCategory": "cli",
     "category": "cli",
     "title": "Amazon Q Developer レビュー — AWS統合のAI開発支援ツール",
     "excerpt": "AWS環境の操作・構築に特化。インフラ構築からコード生成まで、AWSエコシステム内でのサポートを提供。",
@@ -2112,6 +2130,8 @@ export const ARTICLES = [
   {
     "id": "cline",
     "type": "review",
+    "rating": 3.5,
+    "reviewCategory": "cli",
     "category": "cli",
     "title": "Cline レビュー — 承認フロー付きのOSS AIエージェント",
     "excerpt": "オープンソースのVS Code拡張。ローカルモデル対応でプライバシーを確保しつつ、MCP連携で拡張性も高い。",
@@ -2152,6 +2172,8 @@ export const ARTICLES = [
   {
     "id": "warp-ai",
     "type": "review",
+    "rating": 3.5,
+    "reviewCategory": "other",
     "category": "cli",
     "title": "Warp AI レビュー — AI内蔵のRust製モダンターミナル",
     "excerpt": "ターミナル自体にAIが組み込まれた新しいアプローチ。コマンド補完やエラー解析をターミナル内で直接提供。",
@@ -2191,6 +2213,8 @@ export const ARTICLES = [
   {
     "id": "cursor-editor",
     "type": "review",
+    "rating": 4.5,
+    "reviewCategory": "editor",
     "category": "editor",
     "title": "Cursor レビュー — AIエディタの王者、Windsurf統合で盤石に",
     "excerpt": "VS Code フォークで最も人気のAIエディタ。Windsurf買収によるCascade統合とBackground Agentの追加でさらに進化。",
@@ -2231,6 +2255,8 @@ export const ARTICLES = [
   {
     "id": "windsurf",
     "type": "review",
+    "rating": 3.5,
+    "reviewCategory": "editor",
     "category": "editor",
     "title": "Windsurf — Cursor傘下で継続提供、Cascadeフローが光るAIエディタ",
     "excerpt": "Anysphere社に買収されたが、単体提供は継続中。Cascadeフローによる段階的なコード生成が特徴。無料プランも維持。",
@@ -2271,6 +2297,8 @@ export const ARTICLES = [
   {
     "id": "zed-ai",
     "type": "review",
+    "rating": 3.0,
+    "reviewCategory": "editor",
     "category": "editor",
     "title": "Zed AI — Rust製の超高速AIエディタ",
     "excerpt": "Rust製のネイティブパフォーマンス。リアルタイムコラボレーション機能も内蔵した次世代エディタ。",
@@ -2311,6 +2339,8 @@ export const ARTICLES = [
   {
     "id": "vscode",
     "type": "review",
+    "rating": 4.0,
+    "reviewCategory": "editor",
     "category": "editor",
     "title": "VS Code + Copilot — 定番エディタのAI進化",
     "excerpt": "世界で最も使われるエディタ。GitHub Copilotとの統合で強力なAI支援。Coding Agentの追加でさらに進化。",
@@ -2351,6 +2381,8 @@ export const ARTICLES = [
   {
     "id": "void",
     "type": "review",
+    "rating": 2.5,
+    "reviewCategory": "editor",
     "category": "editor",
     "title": "Void — プライバシー重視のOSSエディタ",
     "excerpt": "ローカルLLMとクラウドLLMの両方に対応するオープンソースエディタ。プライバシー重視の開発者に人気。",
@@ -2391,6 +2423,8 @@ export const ARTICLES = [
   {
     "id": "pearai",
     "type": "review",
+    "rating": 2.5,
+    "reviewCategory": "editor",
     "category": "editor",
     "title": "PearAI — コミュニティドリブンのOSSエディタ",
     "excerpt": "VS Codeベースのオープンソースエディタ。AIチャットとインライン編集に特化。",
@@ -2430,6 +2464,8 @@ export const ARTICLES = [
   {
     "id": "trae",
     "type": "review",
+    "rating": 3.0,
+    "reviewCategory": "editor",
     "category": "editor",
     "title": "Trae — ByteDance発のAIエディタ、Builder Modeが話題",
     "excerpt": "ByteDance社開発。Builder Modeで自然言語からアプリ全体を生成。無料で利用可能。",

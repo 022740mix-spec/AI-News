@@ -1767,6 +1767,67 @@ body {
   color: var(--text);
 }
 
+/* ── レビュー比較テーブル ── */
+.review-comparisons {
+  margin-bottom: 2rem;
+}
+.review-comparison-section {
+  margin-bottom: 2rem;
+}
+.review-comparison-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 0.75rem;
+}
+.review-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.review-comparison-table thead th {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 2px solid var(--border);
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.review-comparison-row {
+  transition: background var(--transition);
+}
+.review-comparison-row:hover {
+  background: var(--accent-dim);
+}
+.review-comparison-row td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.review-comparison-name {
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--text);
+}
+.review-comparison-rating {
+  white-space: nowrap;
+}
+.review-stars {
+  color: #f59e0b;
+  letter-spacing: 0.05em;
+}
+.review-score {
+  margin-left: 0.4rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.review-comparison-excerpt {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
 .tag-chip {
   display: inline-block;
   padding: 0.2rem 0.6rem;

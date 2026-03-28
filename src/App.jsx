@@ -1121,6 +1121,63 @@ function GlossaryGuidePanel({ glossaryGenres }) {
   );
 }
 
+/** レビュータブ冒頭のカテゴリ別比較表 */
+function ReviewComparisonTables({ articles, onSelect }) {
+  const REVIEW_CATEGORIES = [
+    { id: "cli", label: "CLI ツール比較", description: "ターミナルから AI にコードを書かせる CLI ツール" },
+    { id: "editor", label: "エディタ比較", description: "AI 統合エディタ・IDE" },
+  ];
+
+  return (
+    <div className="review-comparisons">
+      {REVIEW_CATEGORIES.map((cat) => {
+        const items = articles
+          .filter((a) => a.reviewCategory === cat.id)
+          .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
+        if (items.length === 0) return null;
+        return (
+          <section key={cat.id} className="review-comparison-section">
+            <h2 className="section-feed__title">{cat.label}</h2>
+            <p className="section-feed__meta">{cat.description}</p>
+            <div className="review-comparison-table-wrap">
+              <table className="review-comparison-table">
+                <thead>
+                  <tr>
+                    <th scope="col">ツール</th>
+                    <th scope="col">評価</th>
+                    <th scope="col">概要</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {items.map((a) => (
+                    <tr
+                      key={a.id}
+                      className="review-comparison-row"
+                      onClick={() => onSelect(a)}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <td className="review-comparison-name">
+                        {a.title.split(/[—–\s]/)[0].replace(/レビュー$/, "").trim()}
+                      </td>
+                      <td className="review-comparison-rating">
+                        <span className="review-stars">{renderStars(a.rating)}</span>
+                        <span className="review-score">{a.rating}</span>
+                      </td>
+                      <td className="review-comparison-excerpt">
+                        {a.excerpt.length > 80 ? a.excerpt.slice(0, 80) + "…" : a.excerpt}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        );
+      })}
+    </div>
+  );
+}
+
 function CompanyCard({ company }) {
   const st = company.stock;
   return (
@@ -2372,6 +2429,13 @@ export default function App() {
             <div className="blog-main">
               {siteSection === "articles" || siteSection === "reviews" ? (
                 <>
+                  {siteSection === "reviews" && !query ? (
+                    <ReviewComparisonTables
+                      articles={ARTICLES.filter((a) => a.type === "review")}
+                      onSelect={handleSelect}
+                    />
+                  ) : null}
+
                   {featured && siteSection === "articles" ? (
                     <HeroToday
                       article={featured}
@@ -2384,9 +2448,11 @@ export default function App() {
                   {rest.length > 0 ? (
                     <>
                       <div className="section-feed">
-                        <h2 className="section-feed__title">記事一覧</h2>
+                        <h2 className="section-feed__title">
+                          {siteSection === "reviews" ? "個別レビュー" : "記事一覧"}
+                        </h2>
                         <p className="section-feed__meta">
-                          掲載記事を
+                          {siteSection === "reviews" ? "各ツールの詳細レビュー" : "掲載記事"}を
                           <span title="報道・公式発表など、事実が表に出た日の目安">
                             ニュース日
                           </span>
