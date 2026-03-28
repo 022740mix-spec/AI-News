@@ -884,10 +884,17 @@ function ToolReferencePanel({ referenceData, practical }) {
             <ul className="tool-ref-toc__list">
               {sections.map((s) => (
                 <li key={s.name}>
-                  <a href={`#${sectionAnchorId(s.name)}`} className="tool-ref-toc__link">
+                  <button
+                    type="button"
+                    className="tool-ref-toc__link"
+                    onClick={() => {
+                      const el = document.getElementById(sectionAnchorId(s.name));
+                      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }}
+                  >
                     {s.name}
                     <span className="tool-ref-toc__count">{s.terms.length}</span>
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -1040,13 +1047,17 @@ function ToolSidebar({ toolTab, toolRef }) {
         <h3>{label} リファレンス</h3>
         <p className="sidebar-panel-hint">セクションへジャンプします。</p>
         {sections.map((sec) => (
-          <a
+          <button
+            type="button"
             key={sec}
-            href={`#${sectionAnchorId(sec)}`}
             className="sidebar-anchor"
+            onClick={() => {
+              const el = document.getElementById(sectionAnchorId(sec));
+              if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
           >
             {sec}
-          </a>
+          </button>
         ))}
       </div>
     </aside>

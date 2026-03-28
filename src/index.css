@@ -909,13 +909,19 @@ body {
 }
 .tool-ref-toc__link {
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
+  font: inherit;
   font-size: var(--text-base);
   color: var(--text-secondary);
   text-decoration: none;
+  text-align: left;
+  background: none;
+  border: none;
   padding: 0.45rem 0.5rem;
   border-radius: 4px;
+  cursor: pointer;
   transition: all var(--transition);
 }
 .tool-ref-toc__link:hover {
@@ -933,6 +939,7 @@ body {
 }
 .tool-ref-group {
   margin-bottom: 1.5rem;
+  scroll-margin-top: 80px;
 }
 .tool-ref-group__title {
   font-size: var(--text-base);
