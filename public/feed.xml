@@ -184,6 +184,38 @@
     <summary>Microsoft 365 E3 に含まれる Entra ID 認証だけを借り、バックエンドに Dataverse ではなく Azure Database for PostgreSQL や Supabase を使う構成が企業で注目されている。フロントエンドからの認証フロー、AI API キーの安全な管理、SharePoint 上の社内文書を AI に食わせる際の課題と対策までを解説する。</summary>
   </entry>
   <entry>
+    <title>.env ファイルと API キーの管理 — 漏洩の原因・対処・予防策（非エンジニア向け）</title>
+    <link rel="alternate" type="text/html" href="?a=env-file-api-key-security-guide-2026"/>
+    <id>tag:ai-tool-news.jp,2026:env-file-api-key-security-guide-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>AI コーディングツールが .env ファイルの API キーを意図せず読み込み、テストファイルやコミットに含めてしまう事故が増えている。GitGuardian の調査では AI 支援コミットのシークレット漏洩率は通常の約2倍。漏洩時の緊急対応から、.env を使わない安全な管理方法まで解説する。</summary>
+  </entry>
+  <entry>
+    <title>AI 自律実行の事故リスク — ファイル全削除・DB 破壊・スキルファイルの罠</title>
+    <link rel="alternate" type="text/html" href="?a=ai-autonomous-execution-risks-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ai-autonomous-execution-risks-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>AI エージェントの自律実行による本番障害が2024年10月〜2026年2月の16ヶ月間で少なくとも10件報告されている。Amazon Kiro による13時間の AWS ダウン、Claude Code によるホームディレクトリ全削除、悪意あるスキルファイルによるデータ窃取。事故パターンと防止策を整理する。</summary>
+  </entry>
+  <entry>
+    <title>AI コーディングツール セキュリティ設定比較 — Claude Code・Cursor・Copilot・Gemini CLI（2026年版）</title>
+    <link rel="alternate" type="text/html" href="?a=ai-tool-security-settings-comparison-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ai-tool-security-settings-comparison-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>「自分のコードが学習に使われないか」「会話データはいつ消えるのか」。Claude Code、Cursor、GitHub Copilot、Gemini CLI の4ツールについて、データ保持期間・学習オプトアウト・プライバシーモード・Enterprise 設定を公式ドキュメントベースで横断比較した。</summary>
+  </entry>
+  <entry>
+    <title>Claude Code の会話履歴を保存・管理する — 30日消去の仕様と永続化テクニック</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-conversation-history-tips-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-conversation-history-tips-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>Claude Code の会話履歴はモデル改善不許可の場合30日で消去される。セッションの再開方法、ローカルの保存場所、/export コマンド、コミュニティ製の自動保存ツールまで、会話記録を失わないためのテクニックを整理した。</summary>
+  </entry>
+  <entry>
     <title>Google 社内 AI エージェント「Agent Smith」が話題 — PC を閉じても作業を継続、スマホから進捗確認・追加指示</title>
     <link rel="alternate" type="text/html" href="?a=google-agent-smith-2026"/>
     <id>tag:ai-tool-news.jp,2026:google-agent-smith-2026</id>

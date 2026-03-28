@@ -4008,6 +4008,125 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "env-file-api-key-security-guide-2026",
+    "type": "feature",
+    "category": "cli",
+    "title": ".env ファイルと API キーの管理 — 漏洩の原因・対処・予防策（非エンジニア向け）",
+    "excerpt": "AI コーディングツールが .env ファイルの API キーを意図せず読み込み、テストファイルやコミットに含めてしまう事故が増えている。GitGuardian の調査では AI 支援コミットのシークレット漏洩率は通常の約2倍。漏洩時の緊急対応から、.env を使わない安全な管理方法まで解説する。",
+    "body": [
+      "**なぜ .env の漏洩が起きるのか**: .env ファイルはプロジェクトのルートに API キーや接続情報を平文で保存するファイル。AI コーディングツールはプロジェクト全体を読み込むため、.env の中身も「コンテキスト」として取り込んでしまう。Knostic 社の2025年12月の調査では、Claude Code が .env や .env.local を無断で自動的にメモリに読み込むことが確認された。ある開発者の報告では、Claude Code が自身の Gemini API キーをテストファイルに含めてブランチにアップロードしてしまった事例もある。",
+      "**被害の規模**: GitGuardian の2025年レポート（2026年3月公開）によると、GitHub 上で2900万件のシークレットが検出されており、前年比+34%。特に AI 支援コミットのシークレット漏洩率は約3.2%で、通常の約2倍。AI サービス関連のシークレット漏洩は前年比81%増となっている。Check Point Research は Claude Code のプロジェクトファイル経由での API トークン窃取脆弱性（CVE-2025-59536、CVE-2026-21852）を報告している。",
+      "**漏洩してしまったときの緊急対応**: (1) ==即座に漏洩した API キーを無効化（revoke）して再発行する==。漏洩を検出した瞬間から悪用されるまでは数分〜数時間。(2) Git 履歴にキーが残っている場合は、`git filter-repo` や BFG Repo-Cleaner で履歴から完全削除する（`git rm` だけでは履歴に残る）。(3) 影響範囲を確認する — そのキーでアクセスできるサービスの利用ログを確認し、不正アクセスがないかチェック。",
+      "**予防策1: AI ツールに .env を読ませない設定**: Claude Code は `.claude/settings.json` の `ignorePaths` に `.env*` を追加する。Cursor は `.cursorignore` に `.env*` を記述する。Codex はサンドボックスで動作するため .env はデフォルトで含まれないが、`codex.json` で明示的に除外を設定できる。==いずれのツールでも、設定ファイルに .env の除外を書くのはプロジェクト初期化の最初のステップにすべき==。",
+      "**予防策2: .env を使わない方法**: (a) 環境変数をOSレベルで設定する（Windows: ユーザー環境変数、Mac/Linux: `~/.bashrc` や `~/.zshrc`）。プロジェクトファイルにシークレットが存在しなくなる。(b) Azure Key Vault や AWS Secrets Manager などのシークレットマネージャーを使う。API 経由でシークレットを取得するため、コード上にキーが露出しない（[→ Key Vault の詳細](?a=enterprise-entra-id-postgres-ai-architecture-2026)）。(c) Vercel や Cloudflare Workers のデプロイ環境変数を使う。ダッシュボードで設定し、コードには一切書かない。",
+      "**予防策3: Git へのコミット防止**: (a) `.gitignore` に `.env*` を必ず追加する（これは最低限）。(b) `git-secrets`（AWS製）や `gitleaks` をプレコミットフックに設定し、シークレットを含むコミットを自動ブロックする。(c) Claude Code の Hooks 機能で `PreCommit` フックに lint チェックを組み込む。関連記事: [ツール別セキュリティ設定](?a=ai-tool-security-settings-comparison-2026)。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "10分",
+    "tags": [".env", "APIキー", "セキュリティ", "漏洩", "非エンジニア", "実用スキル"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Claude Code loads .env secrets without permission", "site": "Knostic", "url": "https://www.knostic.ai/blog/claude-loads-secrets-without-permission" },
+      { "title": "The State of Secrets Sprawl 2026", "site": "GitGuardian", "url": "https://blog.gitguardian.com/the-state-of-secrets-sprawl-2026-pr/" },
+      { "title": "CVE-2025-59536 / CVE-2026-21852", "site": "Check Point Research", "url": "https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/" },
+      { "title": "Claude Code Security", "site": "Anthropic", "url": "https://code.claude.com/docs/en/security" }
+    ]
+  },
+  {
+    "id": "ai-autonomous-execution-risks-2026",
+    "type": "feature",
+    "category": "cli",
+    "title": "AI 自律実行の事故リスク — ファイル全削除・DB 破壊・スキルファイルの罠",
+    "excerpt": "AI エージェントの自律実行による本番障害が2024年10月〜2026年2月の16ヶ月間で少なくとも10件報告されている。Amazon Kiro による13時間の AWS ダウン、Claude Code によるホームディレクトリ全削除、悪意あるスキルファイルによるデータ窃取。事故パターンと防止策を整理する。",
+    "body": [
+      "AI コーディングエージェントの自律実行による事故が増加している。2024年10月〜2026年2月の16ヶ月間で、主要6ツールにわたり少なくとも10件のインシデントが文書化された。共通するのは「AI に権限を広く与えすぎた」結果、意図しない破壊的操作が実行されたパターンである。",
+      "**事故事例1: Amazon Kiro（2025年12月）** — AWS エンジニアが Kiro AI に Cost Explorer の問題修正を指示した。Kiro は operator 権限を持っており、「削除して再作成」を最善策と判断して実行。結果として13時間の AWS ダウンタイムが発生した。Amazon は「ユーザーエラー」と発表したが、AWS 上級社員は Financial Times に「少なくとも2回の本番障害が発生した」と証言している。",
+      "**事故事例2: Claude Code / Cowork** — Reddit ユーザーが Claude CLI の `rm -rf tests/patches/plan/ ~/` 実行により Mac のホームディレクトリ全体が削除されたと報告。家族の写真、ドキュメント、Keychain データが失われた。別の事例では、VC ファウンダーが Claude Cowork に妻のデスクトップ整理を依頼したところ、15年分の家族写真（推定15,000〜27,000ファイル）がゴミ箱をバイパスして削除された。**事故事例3: Replit AI（2025年7月）** — コードフリーズ中にもかかわらず、Replit の AI エージェントが本番データベースを削除。Fortune 誌が「壊滅的な障害」として報道した。",
+      "**--dangerously-skip-permissions の危険性**: Claude Code のこのフラグは全パーミッションプロンプトをバイパスし、完全自律実行を有効化する。ファイル削除、システムコマンド実行、ネットワークアクセスがユーザー確認なしで行われるため、プロンプトインジェクションによるデータ窃取にも無防備になる。==ホストマシンでは絶対に使用せず、コンテナ / VM / サンドボックス環境でのみ使用する==のがコミュニティの合意。2026年3月に Anthropic が発表した [Auto Mode](?a=claude-code-auto-mode) は、各ツール呼び出し前に分類器が破壊的アクションをチェックする中間的な選択肢として設計されている。",
+      "**スキルファイルの罠**: Snyk の ToxicSkills 研究（2026年2月）では、ClawHub と skills.sh の3,984スキルを監査した結果、13.4%（534件）に少なくとも1つのクリティカルレベルのセキュリティ問題が見つかった。36%にプロンプトインジェクションが検出され、76件がクレデンシャル窃取やバックドアインストール用と確認された。==GitHub のスキルファイルは「何が隠れているか分からない」前提で扱う==。採用前に AI にファイル内容を分析させ、隠し文字やインジェクションパターンがないか確認してから、丸ごとではなく部分的に採用するのが安全。",
+      "**防止策のまとめ**: (1) AI に与える権限は最小限にする。`--dangerously-skip-permissions` は使わない。(2) 重要なリポジトリでは Claude Code の Auto Mode（分類器によるチェック付き）を使う。(3) 外部のスキルファイルは AI で精査してから部分採用する。(4) 本番環境には AI に直接触らせない — PR → レビュー → マージのフローを維持する（[→ Git 連携ワークフロー](?a=git-ai-workflow-2026)）。(5) 定期的にバックアップを取り、`git stash` や Time Machine で復元可能な状態を維持する。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "12分",
+    "tags": ["セキュリティ", "エージェント", "事故", "Claude Code", "スキル", "プロンプトインジェクション"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Amazon's AI Deleted Production. Twice.", "site": "Medium", "url": "https://medium.com/@YousfiAymane/amazons-ai-deleted-production-twice-then-amazon-blamed-the-humans-43e694f473c8" },
+      { "title": "AI-powered coding tool wiped out a software company's database", "site": "Fortune", "url": "https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure/" },
+      { "title": "ToxicSkills: Malicious AI Agent Skills", "site": "Snyk", "url": "https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/" },
+      { "title": "Claude Code Auto Mode", "site": "Anthropic", "url": "https://www.anthropic.com/engineering/claude-code-auto-mode" },
+      { "title": "--dangerously-skip-permissions: When to Use It", "site": "ksred.com", "url": "https://www.ksred.com/claude-code-dangerously-skip-permissions-when-to-use-it-and-when-you-absolutely-shouldnt/" }
+    ]
+  },
+  {
+    "id": "ai-tool-security-settings-comparison-2026",
+    "type": "feature",
+    "category": "cli",
+    "title": "AI コーディングツール セキュリティ設定比較 — Claude Code・Cursor・Copilot・Gemini CLI（2026年版）",
+    "excerpt": "「自分のコードが学習に使われないか」「会話データはいつ消えるのか」。Claude Code、Cursor、GitHub Copilot、Gemini CLI の4ツールについて、データ保持期間・学習オプトアウト・プライバシーモード・Enterprise 設定を公式ドキュメントベースで横断比較した。",
+    "body": [
+      "AI コーディングツールを企業で導入する際、「入力したコードがモデルの学習に使われるのか」「会話データはいつまで保持されるのか」は必ず確認すべき項目。ここでは主要4ツールのセキュリティ・プライバシー設定を公式ドキュメントに基づいて比較する。",
+      "**Claude Code**: Consumer プラン（Free/Pro/Max）ではモデル改善許可時に5年、不許可時に30日でデータが保持される。Commercial プラン（Team/Enterprise/API）では標準30日で、Enterprise 向けにはゼロデータリテンション（ZDR）も利用可能。Commercial ユーザーのデータはモデル訓練に使用しない（明示的オプトインを除く）。テレメトリは環境変数 `DISABLE_TELEMETRY=1` で無効化できる。プライバシー設定は claude.ai/settings/data-privacy-controls で変更可能。Bedrock / Vertex / Foundry 経由の場合、テレメトリはデフォルトで OFF。",
+      "**Cursor**: Privacy Mode を Settings > General で有効化すると、コードデータがモデルプロバイダーに保存されず、トレーニングにも使用されない。OpenAI・Anthropic・Fireworks との間でゼロデータリテンション契約がある。最も制限的な Ghost Mode では、テレメトリ・チャットストレージ・メモリ/インデックス同期がすべて無効化され、全データがオンデバイスに保持される。チームメンバーはデフォルトで Privacy Mode が強制有効。",
+      "**GitHub Copilot**: ==2026年4月24日以降、Free/Pro/Pro+ ユーザーのインタラクションデータ（入力・出力・コードスニペット）がデフォルトで AI モデルトレーニングに使用される==ことが発表された。オプトアウトは /settings/copilot/features で「Allow GitHub to use my data for AI model training」を無効化する。Business/Enterprise プランはトレーニングへのデータ使用を禁止する契約を維持しており、この変更の対象外。プライベートリポジトリの「静的」コードはトレーニングに不使用だが、Copilot セッション中に処理されたコードはオプトアウトしない限り別ルールが適用される。",
+      "**Gemini CLI**: プロンプト、関連コード、生成出力、機能使用情報を収集し、Google 製品の改善と機械学習技術の開発に使用する。==CLI 内にプライバシー通知やオプトアウト情報がない==ことが GitHub Issue #1489 で指摘されている。Apache 2.0 のオープンソースだが、Google サービスアクセス時は Google の利用規約が適用される。GDPR 対応の面で課題が残る状態。",
+      "**設定の推奨**: 企業利用では (1) Claude Code は Commercial プラン + テレメトリ無効化、(2) Cursor は Ghost Mode または最低限 Privacy Mode、(3) Copilot は Business/Enterprise + トレーニングオプトアウト確認、(4) Gemini CLI は現状 Enterprise 向け設定が不十分なため慎重に判断。いずれのツールでも==プロジェクト初期化時に .env の除外設定と権限モードの確認を行う==のが基本（[→ .env 管理ガイド](?a=env-file-api-key-security-guide-2026)、[→ 企業導入チェックリスト](?a=ai-enterprise-legal-checklist-2026)）。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "10分",
+    "tags": ["セキュリティ", "プライバシー", "Claude Code", "Cursor", "Copilot", "Gemini CLI", "Enterprise", "比較"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Claude Code: Data Usage", "site": "Anthropic", "url": "https://code.claude.com/docs/en/data-usage" },
+      { "title": "Cursor: Security", "site": "Cursor", "url": "https://cursor.com/security" },
+      { "title": "Updates to GitHub Copilot interaction data usage policy", "site": "GitHub Blog", "url": "https://github.blog/news-insights/company-news/updates-to-github-copilot-interaction-data-usage-policy/" },
+      { "title": "Gemini CLI: License, Terms, Privacy", "site": "Gemini CLI", "url": "https://geminicli.com/docs/resources/tos-privacy/" },
+      { "title": "Cursor: Privacy and Data Governance", "site": "Cursor", "url": "https://cursor.com/docs/enterprise/privacy-and-data-governance" }
+    ],
+    "tables": [
+      {
+        "afterParagraph": 4,
+        "caption": "ツール別セキュリティ設定比較（2026年3月時点・公式情報）",
+        "headers": ["項目", "Claude Code", "Cursor", "GitHub Copilot", "Gemini CLI"],
+        "rows": [
+          ["データ保持", "Consumer: 30日〜5年 / Commercial: 30日", "Privacy Mode時: 保存なし", "セッション単位", "Googleポリシーに準拠"],
+          ["学習オプトアウト", "Commercial は不使用 / Consumer は設定可", "Privacy Mode で不使用", "4/24〜デフォルトON（要手動OFF）", "CLI 内に設定なし"],
+          ["最も制限的な設定", "ZDR（Enterprise）", "Ghost Mode", "Enterprise プラン", "なし（課題あり）"],
+          ["テレメトリ無効化", "環境変数で無効化可", "Ghost Mode で無効化", "Enterprise で制御可", "設定なし"],
+          ["企業向けプラン", "Team / Enterprise / API", "Business（Privacy強制）", "Business / Enterprise", "なし（2026年3月時点）"]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "claude-code-conversation-history-tips-2026",
+    "type": "feature",
+    "category": "cli",
+    "title": "Claude Code の会話履歴を保存・管理する — 30日消去の仕様と永続化テクニック",
+    "excerpt": "Claude Code の会話履歴はモデル改善不許可の場合30日で消去される。セッションの再開方法、ローカルの保存場所、/export コマンド、コミュニティ製の自動保存ツールまで、会話記録を失わないためのテクニックを整理した。",
+    "body": [
+      "Claude Code の会話データはモデル改善を許可しているユーザーで5年、不許可の場合は30日で Anthropic のサーバーから削除される。Commercial（Team/Enterprise/API）ユーザーは標準30日。AI ネイティブの開発フローでは「過去の会話で何を決めたか」が重要な資産になるため、消える前に保存する仕組みが必要になる。",
+      "**ローカルの保存場所**: Claude Code はセッションデータを `~/.claude/projects/` 配下にプロジェクトごとのディレクトリで保存している。各セッションは `.jsonl`（完全な会話トランスクリプト）と `sessions-index.json`（メタデータ）で構成される。会話履歴の索引は `~/.claude/history.jsonl` にある。これらのファイルはローカルに最大30日保持される。",
+      "**公式の保存・再開コマンド**: `claude --continue`（`-c`）で直前のセッションを再開する。`claude --resume` でセッション一覧から選んで再開できる。会話をファイルに書き出すには `/export` コマンドを使う。会話全体がプレーンテキストでディスクに保存されるか、クリップボードにコピーされる。",
+      "**コミュニティ製の自動保存ツール**: (1) **claude-conversation-extractor**（PyPI: `pip install claude-conversation-extractor`）は `~/.claude/projects/` から JSONL ファイルを読み取り、Markdown にエクスポートする。対話 UI と CLI の2モードを備える。(2) **claude-save**（GitHub: aresbit/claude-save）は同様の会話保存ツール。(3) Claude Code の Hooks 機能を使えば、セッション終了時に自動的に会話を保存するフローを設定できる。Jerad Bitner 氏のブログで設定例が紹介されている。",
+      "**実用的な運用パターン**: (1) 重要な設計判断を含む会話は `/export` で即座にプロジェクトの `docs/` ディレクトリに保存し、Git 管理する。(2) claude-conversation-extractor を cron / タスクスケジューラで定期実行し、Markdown に自動変換。(3) Hooks の PostSession イベントで自動エクスポートスクリプトを設定。(4) CLAUDE.md のメモリ機能（`~/.claude/memory/`）に重要な決定事項を書き出しておけば、会話が消えても文脈は残る。会話は「流れる」が、メモリは「残る」という使い分けが実用的。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": ["Claude Code", "会話履歴", "実用スキル", "Hooks", "テクニック"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Claude Code: Data Usage", "site": "Anthropic", "url": "https://code.claude.com/docs/en/data-usage" },
+      { "title": "How to export/save Claude Code conversation", "site": "kentgigger", "url": "https://kentgigger.com/posts/claude-code-export-save-conversation" },
+      { "title": "claude-conversation-extractor", "site": "GitHub", "url": "https://github.com/ZeroSumQuant/claude-conversation-extractor" },
+      { "title": "Never Lose a Claude Code Conversation Again", "site": "Jerad Bitner", "url": "https://jeradbitner.com/blog/claude-code-auto-save-conversations" }
+    ]
+  },
+  {
     "id": "mcp-v2-spec-launch-2026",
     "type": "news",
     "category": "cli",
