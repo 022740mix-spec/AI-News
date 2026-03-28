@@ -1142,6 +1142,8 @@ function MediaToolsGuidePanel({ mediaTaxonomy }) {
 }
 
 function GlossaryGuidePanel({ glossaryGenres }) {
+  let k = 0;
+  const mkKey = () => `gl-${k++}`;
   return (
     <div
       className="companies-guide-rail companies-guide-rail--full-tab"
