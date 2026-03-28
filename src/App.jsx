@@ -2435,6 +2435,11 @@ const [showFab, setShowFab] = useState(false);
     });
   }, [selected, siteSection, query, guideTab, toolTab]);
 
+  // selected が変わったらレンダリング後にページ先頭へスクロール
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [selected]);
+
   useEffect(() => {
     syncDocumentSeo({
       selectedArticle: selected ?? null,
@@ -2454,7 +2459,9 @@ const [showFab, setShowFab] = useState(false);
       } else {
         setSelected(null);
       }
-      window.scrollTo(0, 0);
+      requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
+      });
     };
     window.addEventListener("popstate", onPop);
     return () => window.removeEventListener("popstate", onPop);
@@ -2511,7 +2518,6 @@ const [showFab, setShowFab] = useState(false);
 
   const handleSelect = useCallback((article) => {
     setSelected(article);
-    window.scrollTo(0, 0);
     syncAppUrl({
       articleId: article.id,
       siteSection: "articles",
@@ -2519,6 +2525,9 @@ const [showFab, setShowFab] = useState(false);
       guideTab,
       toolTab,
       usePush: true,
+    });
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
     });
   }, [guideTab, toolTab]);
 
