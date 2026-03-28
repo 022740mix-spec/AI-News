@@ -488,6 +488,42 @@ function syncAppUrl({ articleId, siteSection, tagQuery, guideTab, toolTab }) {
   window.history.replaceState({}, "", `${u.pathname}${u.search}${u.hash}`);
 }
 
+/* ══ ハンバーガーメニュー ══ */
+function HamburgerMenu({ isOpen, onClose, onSection, currentSection }) {
+  const menuItems = [
+    { id: "home", label: "ホーム", icon: "🏠" },
+    { id: "articles", label: "ニュース", icon: "📰" },
+    { id: "reviews", label: "レビュー", icon: "⭐" },
+    { id: "guide", label: "ガイド", icon: "📖" },
+    { id: "tools", label: "ツール別", icon: "🔧" },
+    { id: "companies", label: "企業情報", icon: "🏢" },
+  ];
+
+  if (!isOpen) return null;
+
+  return (
+    <>
+      <div className="hamburger-overlay" onClick={onClose} />
+      <nav className="hamburger-drawer" aria-label="メインメニュー">
+        <button className="hamburger-close" onClick={onClose} aria-label="閉じる">✕</button>
+        <ul className="hamburger-list">
+          {menuItems.map(item => (
+            <li key={item.id}>
+              <button
+                className={`hamburger-item${currentSection === item.id ? " is-active" : ""}`}
+                onClick={() => { onSection(item.id); onClose(); }}
+              >
+                <span className="hamburger-item__icon">{item.icon}</span>
+                <span className="hamburger-item__label">{item.label}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </>
+  );
+}
+
 /* ══ ヘッダー ══ */
 function Header({
   query,
@@ -504,6 +540,7 @@ function Header({
   showSort = true,
   onGoHome,
   hideSearch = false,
+  onToggleMenu,
 }) {
   return (
     <header className="header-wrap">
@@ -514,6 +551,15 @@ function Header({
             <p className="site-tagline">{SITE_DESCRIPTION}</p>
           </div>
           <div className="header-actions">
+            <button
+              type="button"
+              className="icon-btn hamburger-btn"
+              title="メニュー"
+              aria-label="メニューを開く"
+              onClick={onToggleMenu}
+            >
+              ☰
+            </button>
             <button
               type="button"
               className="icon-btn"
@@ -633,11 +679,6 @@ function HomePage({ articles, onSelect, onSection, bookmarkIds, onToggleBookmark
     .filter((a) => a.type !== "review" && a.id !== hero?.id)
     .slice(0, 4);
 
-  const topReviews = articles
-    .filter((a) => a.type === "review")
-    .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0))
-    .slice(0, 3);
-
   return (
     <div className="home-page">
       {hero ? (
@@ -665,26 +706,6 @@ function HomePage({ articles, onSelect, onSection, bookmarkIds, onToggleBookmark
               <article key={a.id} className="home-card" onClick={() => onSelect(a)}>
                 <span className="home-card__category">{CATEGORIES[a.category]?.label}</span>
                 <h3 className="home-card__title">{a.title}</h3>
-                <span className="home-card__date">{a.newsDate ?? a.date}</span>
-              </article>
-            ))}
-          </div>
-        </section>
-      ) : null}
-
-      {topReviews.length > 0 ? (
-        <section className="home-section">
-          <div className="home-section__header">
-            <h2 className="home-section__title">注目のレビュー</h2>
-            <button className="home-section__more" onClick={() => onSection("reviews")}>
-              すべて見る →
-            </button>
-          </div>
-          <div className="home-cards">
-            {topReviews.map((a) => (
-              <article key={a.id} className="home-card" onClick={() => onSelect(a)}>
-                <span className="home-card__rating">{renderStars(a.rating)}</span>
-                <h3 className="home-card__title">{a.title.split(/[—–]/)[0].trim()}</h3>
                 <span className="home-card__date">{a.newsDate ?? a.date}</span>
               </article>
             ))}
@@ -2188,7 +2209,11 @@ export default function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem(STORAGE_THEME) || "light");
   const [bookmarkIds, setBookmarkIds] = useState(loadBookmarks);
   const [showFab, setShowFab] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const searchRef = useRef(null);
+
+  const toggleMenu = useCallback(() => setMenuOpen(prev => !prev), []);
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -2469,6 +2494,13 @@ export default function App() {
               }
               showSort={siteSection === "articles" || siteSection === "reviews"}
               hideSearch={siteSection === "home"}
+              onToggleMenu={toggleMenu}
+            />
+            <HamburgerMenu
+              isOpen={menuOpen}
+              onClose={closeMenu}
+              onSection={(section) => { switchSection(section); }}
+              currentSection={siteSection}
             />
             {siteSection !== "home" ? (
               <>
