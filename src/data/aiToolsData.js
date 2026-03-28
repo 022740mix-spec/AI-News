@@ -26,6 +26,114 @@
 
 export const ARTICLES = [
   {
+    "id": "gemini-31-flash-live-voice-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Google、Gemini 3.1 Flash Live を公開 — 応答 0.5 秒以下のリアルタイム音声 AI",
+    "excerpt": "Google DeepMind が Gemini 3.1 Flash Live を開発者プレビューとして公開した。従来の「音声認識→推論→音声合成」の3段階を1つのモデルに統合し、応答遅延を 0.5 秒以下に短縮。90以上の言語に対応し、Python スクリプト1本で受付や問い合わせ対応を構築できるとされる。コールセンター業界への影響が注目されている。",
+    "body": [
+      "Google DeepMind は3月26日、リアルタイム音声対話モデル Gemini 3.1 Flash Live を開発者プレビューとして公開した。モデル ID は gemini-3.1-flash-live-preview で、Gemini API および Google AI Studio から利用できる。",
+      "最大の特徴は、従来の「音声をテキストに変換 → AI が推論 → テキストを音声に変換」という3段階のパイプラインを、ネイティブなオーディオ間処理に統合した点。これにより応答までの遅延が大幅に短縮され、ピッチや話速などの音響的なニュアンスも認識できるようになった。WebSocket による全二重通信で、ユーザーの割り込みにも対応する。",
+      "対応言語は90以上で、200以上の国と地域で利用可能。開発者は Gemini Live API を通じてリアルタイム音声エージェントをアプリケーションに組み込める。カスタマーサポートや受付業務の自動化への応用が想定されており、コールセンター業界への影響が指摘されている。"
+    ],
+    "newsDate": "2026-03-26",
+    "date": "2026-03-28",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": ["Google", "Gemini", "音声AI", "リアルタイム", "Flash Live"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Build real-time conversational agents with Gemini 3.1 Flash Live", "site": "Google Blog", "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-3-1-flash-live/" },
+      { "title": "Gemini 3.1 Flash Live: Google's latest AI audio model", "site": "Google Blog", "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-live/" }
+    ]
+  },
+  {
+    "id": "freee-mcp-remote-2026",
+    "type": "news",
+    "category": "product",
+    "title": "freee、MCP リモート版をリリース — Claude から会計・人事労務・請求書など約270操作が可能に",
+    "excerpt": "フリー株式会社が、AIエージェントから freee の基幹業務を操作できる MCP サーバー「freee-mcp」のリモート版を提供開始した。Claude Desktop や Claude Code から URL を追加してログインするだけで、会計・人事労務・請求書・工数管理・販売の5領域、約270の操作を AI から実行できる。",
+    "body": [
+      "フリー株式会社は3月27日、AIエージェントから freee の各種 API を操作できる MCP サーバー「freee-mcp」のリモート版の提供を開始した。3月2日に OSS として公開したローカル版に続く展開で、リモート版ではサーバーを freee 側がホストするため、ローカル環境への設定が不要。",
+      "利用方法は Claude Desktop・Claude Code・Claude Cowork・Cursor などの AI ツールに URL（https://mcp.freee.co.jp/mcp）を追加し、freee にログインするだけ。会計・人事労務・請求書・工数管理・販売の5領域にわたる約270の操作が AI から可能になる。",
+      "MCP（Model Context Protocol）のリモートサーバー対応により、ローカルに npm パッケージをインストールする必要がなくなった点が大きい。日本の SaaS 企業が公式に MCP リモート版を提供する先行事例として注目される。freee は今後もハッカソンの開催を予定している。"
+    ],
+    "newsDate": "2026-03-27",
+    "date": "2026-03-28",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": ["freee", "MCP", "リモートMCP", "会計", "Claude"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "freee、OSSとして公開した「freee-mcp」のリモート版の提供を開始", "site": "freee", "url": "https://corp.freee.co.jp/news/20260327freee_mcp.html" },
+      { "title": "freee-mcp GitHub", "site": "GitHub", "url": "https://github.com/freee/freee-mcp" }
+    ]
+  },
+  {
+    "id": "claude-code-auto-memory-disable-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code、自動メモリ（Auto Memory）の無効化オプションを追加",
+    "excerpt": "Claude Code に自動メモリ機能を無効にするオプションが追加された。settings.json に autoMemoryEnabled: false を設定するか、環境変数 CLAUDE_CODE_DISABLE_AUTO_MEMORY=1 で制御できる。プロジェクトごと・グローバルのどちらでも設定可能。",
+    "body": [
+      "Claude Code の自動メモリ（Auto Memory）は、セッションを通じてプロジェクト固有の知識を ~/.claude/projects/ 配下に自動記録する機能。デフォルトで有効だが、不要な情報が蓄積されるケースや、メモリの内容をコントロールしたいユーザーから無効化オプションの要望が出ていた。",
+      "無効化は3つの方法で可能。プロジェクト単位では .claude/settings.json に { \"autoMemoryEnabled\": false } を追加する。全プロジェクト共通では ~/.claude/settings.json に同じ設定を書く。環境変数 CLAUDE_CODE_DISABLE_AUTO_MEMORY=1 は最優先で適用され、他の設定を上書きする。",
+      "セッション内からも /memory コマンドで auto memory のトグルが可能。自動メモリを無効にしても手動でメモリに記録する機能は引き続き使える。v2.1.59 以降で利用可能。"
+    ],
+    "newsDate": "2026-03-28",
+    "date": "2026-03-28",
+    "author": "AI News 編集部",
+    "readTime": "2分",
+    "tags": ["Claude Code", "Auto Memory", "設定", "Anthropic"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "How Claude remembers your project - Claude Code Docs", "site": "Anthropic", "url": "https://code.claude.com/docs/en/memory" }
+    ]
+  },
+  {
+    "id": "anthropic-ipo-october-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "Anthropic、早ければ10月の IPO を検討 — 評価額600億ドル超の大型上場か",
+    "excerpt": "Bloomberg の報道によると、Anthropic が早ければ2026年10月の IPO を検討している。評価額は600億ドル（約9兆円）超を想定し、Goldman Sachs や JPMorgan と初期段階の協議を進めているとされる。2月に完了した300億ドルの資金調達では評価額3,800億ドルを記録しており、OpenAI と並ぶ大型 AI 上場となる可能性がある。",
+    "body": [
+      "Bloomberg は3月27日、Anthropic が早ければ2026年10月の新規株式公開（IPO）を検討していると報じた。調達額は600億ドル（約9兆円）超を見込み、Goldman Sachs、JPMorgan、Morgan Stanley といった大手金融機関と初期段階の協議を進めているとされる。",
+      "Anthropic は2月に300億ドルの大型資金調達を完了し、評価額は約3,800億ドルに達した。推定の年間経常収益（ARR）は2026年初頭時点で約140億ドルとされる。IPO が実現すれば、近年の テック IPO の中でも最大級の規模になる。",
+      "一方で、正式な申請はまだ行われておらず、市場環境や規制動向によってスケジュールは変動する可能性がある。OpenAI も2026年中の上場を準備しているとの報道があり、AI 企業の IPO ラッシュが注目されている。"
+    ],
+    "newsDate": "2026-03-27",
+    "date": "2026-03-28",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": ["Anthropic", "IPO", "株式", "資金調達"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Claude AI Maker Anthropic Considers IPO as Soon as October", "site": "Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-03-27/claude-ai-maker-anthropic-said-to-weigh-ipo-as-soon-as-october" }
+    ]
+  },
+  {
+    "id": "nvidia-openclaw-nemoclaw-2026",
+    "type": "news",
+    "category": "product",
+    "title": "NVIDIA、オープンソース AI エージェント基盤 NemoClaw を発表 — OpenClaw との連携でエンタープライズ向け安全機能を提供",
+    "excerpt": "NVIDIA が、急成長中のオープンソース AI エージェント OpenClaw に対して、セキュリティ・プライバシー・ガバナンス機能を追加するリファレンスモデル NemoClaw を発表した。OpenClaw は GitHub で25万スターを超え、WhatsApp や Telegram と連携する自律型パーソナルアシスタントとして注目されている。",
+    "body": [
+      "NVIDIA は、オープンソースの AI エージェントプラットフォーム OpenClaw に対して、エンタープライズ向けのセキュリティ・プライバシー・ガバナンス機能を追加するリファレンスモデル NemoClaw を発表した。",
+      "OpenClaw は2025年末に登場し、WhatsApp・Telegram・Discord と連携する自律型パーソナルアシスタントとして急成長。会話の要約、ミーティングのスケジュール、コード実行、フライト予約などのタスクを自律的に処理する。GitHub では4か月足らずで25万スターを超え、React を抜いて非アグリゲーター系プロジェクトとして最多スターを記録した。",
+      "NemoClaw は NVIDIA が OpenClaw のセキュリティと効率性を向上させるために開発したもので、オープンソースとして公開される。NVIDIA はパートナー企業と協力し、自律型でセルフエボリューション（自己進化）するエンタープライズ AI エージェントの開発を目指している。"
+    ],
+    "newsDate": "2026-03-17",
+    "date": "2026-03-28",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": ["NVIDIA", "OpenClaw", "NemoClaw", "エージェント", "オープンソース"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "NVIDIA Ignites the Next Industrial Revolution in Knowledge Work With Open Agent Development Platform", "site": "NVIDIA", "url": "https://nvidianews.nvidia.com/news/ai-agents" },
+      { "title": "Nvidia Says OpenClaw Is To Agentic AI What GPT Was To Chattybots", "site": "The Next Platform", "url": "https://www.nextplatform.com/ai/2026/03/17/nvidia-says-openclaw-is-to-agentic-ai-what-gpt-was-to-chattybots/5209428" }
+    ]
+  },
+  {
     "id": "vibe-coding-getting-started-2026",
     "type": "feature",
     "category": "special",

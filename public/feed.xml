@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>AI開発ツール最新情報</title>
-  <subtitle>Claude Code・Cursor・Windsurf・Gemini・GPT などの最新ニュースを日本語でお届け</subtitle>
+  <subtitle>Claude Code・Cursor・Codex・Copilot の最新ニュースとガイドを日本語で</subtitle>
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
@@ -46,6 +46,14 @@
     <published>2026-03-29T15:00:00Z</published>
     <updated>2026-03-29T15:00:00Z</updated>
     <summary>RAG・チャット・エージェントの永続層は多くの場合がリレーショナル＋ベクトル拡張。Supabase（Postgres＋Auth＋Realtime＋Edge Functions）を軸に、RLS・接続プール・ハイブリッド検索の論点を整理する。</summary>
+  </entry>
+  <entry>
+    <title>Claude Code、自動メモリ（Auto Memory）の無効化オプションを追加</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-auto-memory-disable-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-auto-memory-disable-2026</id>
+    <published>2026-03-28T15:00:00Z</published>
+    <updated>2026-03-28T15:00:00Z</updated>
+    <summary>Claude Code に自動メモリ機能を無効にするオプションが追加された。settings.json に autoMemoryEnabled: false を設定するか、環境変数 CLAUDE_CODE_DISABLE_AUTO_MEMORY=1 で制御できる。プロジェクトごと・グローバルのどちらでも設定可能。</summary>
   </entry>
   <entry>
     <title>バイブコーディング、何から始める？ — 2026年版おすすめツール</title>
@@ -102,6 +110,22 @@
     <published>2026-03-28T15:00:00Z</published>
     <updated>2026-03-28T15:00:00Z</updated>
     <summary>3月27日の Claude Mythos リーク報道を受け、CrowdStrike −7%、Palo Alto Networks −6% など主要セキュリティ銘柄が軒並み下落。草稿に記載されたサイバー能力の記述が市場に衝撃を与えた経緯と、冷静な読み方を整理。</summary>
+  </entry>
+  <entry>
+    <title>freee、MCP リモート版をリリース — Claude から会計・人事労務・請求書など約270操作が可能に</title>
+    <link rel="alternate" type="text/html" href="?a=freee-mcp-remote-2026"/>
+    <id>tag:ai-tool-news.jp,2026:freee-mcp-remote-2026</id>
+    <published>2026-03-27T15:00:00Z</published>
+    <updated>2026-03-27T15:00:00Z</updated>
+    <summary>フリー株式会社が、AIエージェントから freee の基幹業務を操作できる MCP サーバー「freee-mcp」のリモート版を提供開始した。Claude Desktop や Claude Code から URL を追加してログインするだけで、会計・人事労務・請求書・工数管理・販売の5領域、約270の操作を AI から実行できる。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic、早ければ10月の IPO を検討 — 評価額600億ドル超の大型上場か</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-ipo-october-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-ipo-october-2026</id>
+    <published>2026-03-27T15:00:00Z</published>
+    <updated>2026-03-27T15:00:00Z</updated>
+    <summary>Bloomberg の報道によると、Anthropic が早ければ2026年10月の IPO を検討している。評価額は600億ドル（約9兆円）超を想定し、Goldman Sachs や JPMorgan と初期段階の協議を進めているとされる。2月に完了した300億ドルの資金調達では評価額3,800億ドルを記録しており、OpenAI と並ぶ大型 AI 上場となる可能性がある。</summary>
   </entry>
   <entry>
     <title>Anthropic「Mythos」草稿漏えい報道 — Opus 超えの新ティア「Capybara」が注目集める</title>
@@ -182,6 +206,14 @@
     <published>2026-03-27T15:00:00Z</published>
     <updated>2026-03-27T15:00:00Z</updated>
     <summary>2026-03-27、PM の Noah Zweben 氏が発表。Web/モバイルセッションが PR をリモートでフォローし green 化を目指す。GitHub Actions では anthropics/claude-code-action の ci-failure ワークフロー例あり。</summary>
+  </entry>
+  <entry>
+    <title>Google、Gemini 3.1 Flash Live を公開 — 応答 0.5 秒以下のリアルタイム音声 AI</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-31-flash-live-voice-2026"/>
+    <id>tag:ai-tool-news.jp,2026:gemini-31-flash-live-voice-2026</id>
+    <published>2026-03-26T15:00:00Z</published>
+    <updated>2026-03-26T15:00:00Z</updated>
+    <summary>Google DeepMind が Gemini 3.1 Flash Live を開発者プレビューとして公開した。従来の「音声認識→推論→音声合成」の3段階を1つのモデルに統合し、応答遅延を 0.5 秒以下に短縮。90以上の言語に対応し、Python スクリプト1本で受付や問い合わせ対応を構築できるとされる。コールセンター業界への影響が注目されている。</summary>
   </entry>
   <entry>
     <title>報道: OpenAI が Sora の提供終了を表明 — 計算・戦略・ガードレールの文脈</title>
@@ -286,6 +318,14 @@
     <published>2026-03-18T15:00:00Z</published>
     <updated>2026-03-18T15:00:00Z</updated>
     <summary>Anysphere社に買収されたが、単体提供は継続中。Cascadeフローによる段階的なコード生成が特徴。無料プランも維持。</summary>
+  </entry>
+  <entry>
+    <title>NVIDIA、オープンソース AI エージェント基盤 NemoClaw を発表 — OpenClaw との連携でエンタープライズ向け安全機能を提供</title>
+    <link rel="alternate" type="text/html" href="?a=nvidia-openclaw-nemoclaw-2026"/>
+    <id>tag:ai-tool-news.jp,2026:nvidia-openclaw-nemoclaw-2026</id>
+    <published>2026-03-17T15:00:00Z</published>
+    <updated>2026-03-17T15:00:00Z</updated>
+    <summary>NVIDIA が、急成長中のオープンソース AI エージェント OpenClaw に対して、セキュリティ・プライバシー・ガバナンス機能を追加するリファレンスモデル NemoClaw を発表した。OpenClaw は GitHub で25万スターを超え、WhatsApp や Telegram と連携する自律型パーソナルアシスタントとして注目されている。</summary>
   </entry>
   <entry>
     <title>OpenAI、GPT-5.4 mini と nano をリリース — 無料層でも mini 利用可、nano は $0.20/1M トークン</title>
