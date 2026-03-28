@@ -83,16 +83,13 @@ export const ARTICLES = [
     ],
     "charts": [{
       "afterParagraph": 1,
-      "title": "SWE-Bench Verified スコア比較",
-      "subtitle": "コーディング能力の指標。Kimi・KAT は公式発表値、他は推定値を含む",
+      "title": "SWE-Bench Verified スコア（公式発表値）",
+      "subtitle": "各社が公式に発表したコーディング能力スコアのみ掲載",
       "unit": "%",
       "maxValue": 85,
       "bars": [
         { "label": "Kimi K2.5", "value": 76.8, "color": "#f59e0b" },
-        { "label": "Claude Opus 4.6", "value": 72, "color": "#6366f1" },
-        { "label": "GPT-5.4", "value": 70, "color": "#10b981" },
-        { "label": "KAT-Coder V2", "value": 73.4, "color": "#14b8a6" },
-        { "label": "Gemini 3.1 Pro", "value": 68, "color": "#3b82f6" }
+        { "label": "KAT-Coder V2", "value": 73.4, "color": "#14b8a6" }
       ]
     }],
     "newsDate": "2026-01-27",
@@ -141,15 +138,14 @@ export const ARTICLES = [
     ],
     "charts": [{
       "afterParagraph": 1,
-      "title": "MiniMax M2.7 ベンチマーク比較",
-      "subtitle": "PinchBench スコア。M2.7・GPT・GLM は公式発表値、Opus は推定",
+      "title": "PinchBench スコア（MiniMax 公式発表値）",
+      "subtitle": "MiniMax が発表した比較データのみ掲載",
       "unit": "%",
       "maxValue": 95,
       "bars": [
         { "label": "GPT-5.4", "value": 86.4, "color": "#10b981" },
         { "label": "GLM-5", "value": 86.4, "color": "#ef4444" },
-        { "label": "M2.7", "value": 86.2, "color": "#ec4899" },
-        { "label": "Opus 4.6", "value": 84, "color": "#6366f1" }
+        { "label": "M2.7", "value": 86.2, "color": "#ec4899" }
       ]
     }],
     "newsDate": "2026-03-18",
