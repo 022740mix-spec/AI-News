@@ -2794,28 +2794,3 @@ body {
   }
 }
 
-/* 記事詳細時のコンパクトヘッダー */
-.header-wrap--compact {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--bg0);
-  border-bottom: 1px solid var(--border);
-  padding: var(--space-2) var(--space-4);
-}
-.header-wrap--compact .header-inner {
-  max-width: var(--max-w);
-  margin: 0 auto;
-}
-.header-wrap--compact .header-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.header-wrap--compact .site-title {
-  font-size: var(--text-base);
-  margin: 0;
-}
-.header-wrap--compact .site-tagline {
-  display: none;
-}
