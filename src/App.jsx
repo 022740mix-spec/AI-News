@@ -687,12 +687,18 @@ function GuideTabBar({ guideTab, onSelect }) {
 }
 
 function HomePage({ articles, onSelect, onSection }) {
-  const hero = articles.find((a) => {
+  const sorted = [...articles].sort((a, b) => {
+    const da = parseDate(getArticleNewsYmd(a));
+    const db = parseDate(getArticleNewsYmd(b));
+    return db - da;
+  });
+
+  const hero = sorted.find((a) => {
     const scope = a.heroScope ?? "day";
     return scope !== "none";
   });
 
-  const recentNews = articles
+  const recentNews = sorted
     .filter((a) => a.type !== "review" && a.id !== hero?.id)
     .slice(0, 4);
 
