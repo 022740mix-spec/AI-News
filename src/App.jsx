@@ -2662,6 +2662,43 @@ const [showFab, setShowFab] = useState(false);
       <StorageLocalNotice />
       <div className="app-inner">
         <main id="main-content" className="main-region" tabIndex={-1}>
+        {selected ? (
+          <header className="header-wrap header-wrap--compact">
+            <div className="header-inner">
+              <div className="header-top">
+                <div>
+                  <h1 className="site-title" onClick={() => { setSelected(null); switchSection("home"); }} style={{ cursor: "pointer" }}>{SITE_NAME}</h1>
+                </div>
+                <div className="header-actions">
+                  <button
+                    type="button"
+                    className="icon-btn hamburger-btn"
+                    title="メニュー"
+                    aria-label="メニューを開く"
+                    onClick={toggleMenu}
+                  >
+                    ☰
+                  </button>
+                  <button
+                    type="button"
+                    className="icon-btn"
+                    title={theme === "dark" ? "ライトテーマ" : "ダークテーマ"}
+                    aria-label="テーマ切替"
+                    onClick={toggleTheme}
+                  >
+                    {theme === "dark" ? "☀️" : "🌙"}
+                  </button>
+                </div>
+              </div>
+            </div>
+            <HamburgerMenu
+              isOpen={menuOpen}
+              onClose={closeMenu}
+              onSection={(section) => { setSelected(null); switchSection(section); }}
+              currentSection={siteSection}
+            />
+          </header>
+        ) : null}
         {!selected ? (
           <>
             <Header
