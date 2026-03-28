@@ -1999,27 +1999,111 @@ body {
 
 /* ── ベンチマークチャート ── */
 .benchmark-chart {
-  margin: 1rem 0 1.5rem;
+  margin: 1.25rem 0 1.5rem;
 }
 .benchmark-chart__title {
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--text-secondary);
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.75rem;
 }
 .benchmark-chart__wrap {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  position: relative;
   background: var(--card-solid);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 0.75rem;
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem 0.75rem;
+  overflow: hidden;
 }
-.benchmark-chart__svg {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  display: block;
+.benchmark-chart__grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+.benchmark-chart__gridline {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+.benchmark-chart__gridlabel {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.55rem;
+  color: var(--muted);
+}
+.benchmark-chart__bars {
+  position: relative;
+  z-index: 1;
+}
+.bench-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+  animation: benchSlideIn 0.5s ease both;
+}
+@keyframes benchSlideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.bench-row__label {
+  flex-shrink: 0;
+  width: 120px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bench-row__track {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  height: 26px;
+}
+.bench-row__bar {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  min-width: 4px;
+}
+.bench-row__bar--top {
+  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.4);
+}
+.bench-row__score {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  min-width: 24px;
+}
+.bench-row__score--top {
+  color: var(--accent);
+}
+@media (max-width: 560px) {
+  .bench-row__label {
+    width: 80px;
+    font-size: 0.6rem;
+  }
+  .bench-row__track {
+    height: 20px;
+  }
+  .bench-row__score {
+    font-size: 0.6rem;
+  }
+  .benchmark-chart__wrap {
+    padding: 0.65rem 0.75rem 0.5rem;
+  }
 }
 
 /* ── ハイライト（==text==） ── */

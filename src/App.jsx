@@ -1237,42 +1237,59 @@ const MODEL_COMPARISON = [
   { name: "KAT-Coder Pro V2", rating: 3.5, summary: "Kwai/快手（中国）。コーディング特化 MoE。SWE-Bench 73.4%。OpenClaw 対応。$0.30/$1.20 と低コスト。", bench: 73 },
 ];
 
-/** ベンチマークスコアの横棒グラフ（SVG 自動生成） */
+/** ベンチマークスコアの横棒グラフ（SVG 自動生成・グラデーション付き） */
 function BenchmarkChart({ data, title, maxScore = 100 }) {
   const sorted = [...data].filter((d) => d.bench != null).sort((a, b) => b.bench - a.bench);
   if (sorted.length === 0) return null;
-  const barH = 24;
-  const gap = 6;
-  const labelW = 130;
-  const chartW = 300;
-  const totalW = labelW + chartW + 40;
-  const totalH = sorted.length * (barH + gap) + 10;
-  const colors = [
-    "#3b82f6", "#8b5cf6", "#06b6d4", "#10b981", "#f59e0b",
-    "#ef4444", "#ec4899", "#6366f1", "#14b8a6", "#f97316",
-    "#84cc16", "#a855f7", "#0ea5e9",
-  ];
+  const topScore = sorted[0].bench;
+  const companyColors = {
+    "Claude": ["#6366f1", "#a78bfa"],
+    "GPT": ["#10b981", "#34d399"],
+    "Gemini": ["#3b82f6", "#60a5fa"],
+    "Kimi": ["#f59e0b", "#fbbf24"],
+    "GLM": ["#ef4444", "#f87171"],
+    "MiniMax": ["#ec4899", "#f472b6"],
+    "KAT": ["#14b8a6", "#2dd4bf"],
+  };
+  const getColors = (name) => {
+    for (const [key, val] of Object.entries(companyColors)) {
+      if (name.includes(key)) return val;
+    }
+    return ["#6b7280", "#9ca3af"];
+  };
   return (
     <div className="benchmark-chart">
       {title ? <h3 className="benchmark-chart__title">{title}</h3> : null}
       <div className="benchmark-chart__wrap">
-        <svg viewBox={`0 0 ${totalW} ${totalH}`} className="benchmark-chart__svg">
+        <div className="benchmark-chart__grid">
+          {[0, 25, 50, 75, 100].map((v) => (
+            <div key={v} className="benchmark-chart__gridline" style={{ left: `${v}%` }}>
+              <span className="benchmark-chart__gridlabel">{v}</span>
+            </div>
+          ))}
+        </div>
+        <div className="benchmark-chart__bars">
           {sorted.map((d, i) => {
-            const y = i * (barH + gap) + 4;
-            const w = (d.bench / maxScore) * chartW;
+            const pct = (d.bench / maxScore) * 100;
+            const [c1, c2] = getColors(d.name);
+            const isTop = d.bench === topScore;
             return (
-              <g key={d.name}>
-                <text x={labelW - 6} y={y + barH / 2 + 4} textAnchor="end" fontSize="9" fill="var(--text-secondary)">
-                  {d.name}
-                </text>
-                <rect x={labelW} y={y} width={w} height={barH} rx="4" fill={colors[i % colors.length]} opacity="0.85" />
-                <text x={labelW + w + 4} y={y + barH / 2 + 4} fontSize="9" fontWeight="600" fill="var(--text)">
-                  {d.bench}
-                </text>
-              </g>
+              <div key={d.name} className="bench-row" style={{ animationDelay: `${i * 60}ms` }}>
+                <span className="bench-row__label">{d.name}</span>
+                <div className="bench-row__track">
+                  <div
+                    className={`bench-row__bar${isTop ? " bench-row__bar--top" : ""}`}
+                    style={{
+                      width: `${pct}%`,
+                      background: `linear-gradient(90deg, ${c1}, ${c2})`,
+                    }}
+                  />
+                  <span className={`bench-row__score${isTop ? " bench-row__score--top" : ""}`}>{d.bench}</span>
+                </div>
+              </div>
             );
           })}
-        </svg>
+        </div>
       </div>
     </div>
   );
