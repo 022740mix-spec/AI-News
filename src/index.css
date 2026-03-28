@@ -184,20 +184,7 @@ body {
 .app-shell {
   min-height: 100dvh;
   position: relative;
-  background: linear-gradient(165deg, var(--bg0) 0%, var(--bg1) 48%, var(--bg0) 100%);
-}
-
-.app-shell::before {
-  content: "";
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  background-image: radial-gradient(ellipse 80% 50% at 20% -10%, rgba(59, 130, 246, 0.15), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 100% 10%, rgba(34, 211, 238, 0.1), transparent 50%),
-    linear-gradient(var(--grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-size: auto auto, auto auto, 48px 48px, 48px 48px;
-  z-index: 0;
+  background: var(--bg0);
 }
 
 .app-inner {
