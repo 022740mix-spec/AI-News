@@ -26,6 +26,93 @@
 
 export const ARTICLES = [
   {
+    "id": "kat-coder-pro-v2-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Kwai（快手）、コーディング特化モデル KAT-Coder Pro V2 を公開 — SWE-Bench 73.4%、OpenClaw 対応",
+    "excerpt": "中国の Kwai（快手）傘下の KwaiKAT が、エージェント型コーディングモデル KAT-Coder Pro V2 を公開した。1兆パラメータ超の MoE アーキテクチャで SWE-Bench Verified 73.4% を達成。OpenClaw ネイティブ対応で10以上のフレームワークに汎化。ランディングページや PPT を1文から生成する Web 美的生成機能も搭載。入力$0.30 / 出力$1.20 と低コスト。",
+    "body": [
+      "KwaiKAT（Kwai AI のコーディング部門）は KAT-Coder Pro V2 を公開した。Qwen ベースの Mixture of Experts アーキテクチャで、総パラメータ1兆超、推論時のアクティブパラメータは約720億。エージェント型のコーディングに特化して設計されている。",
+      "SWE-Bench Verified で73.4%のソルブレートを達成。大規模な本番環境でのソフトウェアエンジニアリングやマルチシステム連携を想定した設計で、OpenClaw にネイティブ対応し10以上のフレームワークで汎化性能を持つ。1文の指示からプロダクション品質のランディングページや PPT を生成する Web 美的生成機能も搭載。",
+      "料金は入力$0.30 / 出力$1.20（1Mトークンあたり）と、フロンティアモデルの中では非常に低コスト。OpenRouter や Kwai の StreamLake API から利用可能。コーディング特化モデルとしては Claude Code が使う Opus/Sonnet や Codex が使う GPT と異なるアプローチで、専門特化による効率性を追求している。"
+    ],
+    "newsDate": "2026-03-28",
+    "date": "2026-03-28",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": ["Kwai", "KAT-Coder", "モデル", "コーディング", "中国"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "KAT-Coder Pro V2", "site": "KwaiKAT", "url": "https://kat-coder.org/" },
+      { "title": "Introducing KAT-Dev-32B, KAT-Coder", "site": "KwaiPilot", "url": "https://kwaipilot.github.io/KAT-Coder/" }
+    ]
+  },
+  {
+    "id": "kimi-k25-moonshot-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Moonshot AI、Kimi K2.5 を公開 — 1兆パラメータの MoE モデルが Opus 4.6 や GPT-5.4 に匹敵",
+    "excerpt": "中国の Moonshot AI が Kimi K2.5 を公開した。1兆パラメータの Mixture of Experts（MoE）アーキテクチャで、推論時のアクティブパラメータは320億。Humanity's Last Exam で Opus 4.5 や GPT-5.2 High を上回るスコアを記録し、コーディング（SWE-bench 76.8%）やマルチモーダル（画像・動画入力対応）でもフロンティア級の性能を示している。オープンウェイトで公開。",
+    "body": [
+      "Moonshot AI は2026年1月27日、大規模言語モデル Kimi K2.5 を公開した。1兆パラメータの Mixture of Experts（MoE）アーキテクチャを採用し、推論時にアクティブになるパラメータは320億。コンテキスト長は256Kトークンに対応する。",
+      "ベンチマークでは Humanity's Last Exam で50.2%を記録し、Claude Opus 4.5（32.0%）やGPT-5.2 High（41.7%）を大幅に上回った。コーディングでも SWE-bench Verified で76.8%、マルチモーダルでは MMMU Pro 78.5% と高水準。テキスト・画像・動画の入力に対応する。",
+      "オープンウェイトで公開されており、Hugging Face からダウンロード可能。エージェント機能ではスウォームモードに対応し、複数エージェントの協調動作でさらに性能が向上する（BrowseComp で78.4%）。中国発のモデルが欧米のフロンティアモデルと肩を並べる状況が鮮明になっている。"
+    ],
+    "newsDate": "2026-01-27",
+    "date": "2026-03-28",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": ["Moonshot AI", "Kimi", "モデル", "オープンウェイト", "MoE"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Kimi K2.5 Tech Blog", "site": "Moonshot AI", "url": "https://www.kimi.com/blog/kimi-k2-5" },
+      { "title": "moonshotai/Kimi-K2.5", "site": "Hugging Face", "url": "https://huggingface.co/moonshotai/Kimi-K2.5" }
+    ]
+  },
+  {
+    "id": "glm-5-zhipu-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Zhipu AI、GLM-5 を公開 — 745億パラメータ MoE、Huawei チップで学習した中国発フロンティアモデル",
+    "excerpt": "中国の Zhipu AI（智譜AI）が GLM-5 を公開した。745億パラメータの MoE モデルで、エージェント型 AI に最適化された設計。Huawei Ascend チップで学習され、MIT ライセンスのオープンソースとして提供。Opus 4.6 の約6分の1のコストで利用可能。香港市場で株価が34%急騰した。",
+    "body": [
+      "Zhipu AI（智譜AI）は2026年2月11日、第5世代大規模言語モデル GLM-5 を公開した。約745億パラメータの MoE アーキテクチャで、推論時のアクティブパラメータは440億。28.5兆トークンで事前学習されている。",
+      "GLM-5 はエージェント型 AI に最適化されており、複数ステップの推論やコーディング、創作などで高い性能を示す。特筆すべきは Huawei Ascend チップで学習が行われた点で、NVIDIA GPU に依存しない中国の AI 自律路線を象徴している。",
+      "MIT ライセンスのオープンソースとして公開され、OpenRouter 経由で利用可能。入力$0.80 / 出力$2.56（1Mトークンあたり）と、Opus 4.6 の約6分の1のコスト。香港証券取引所に上場している Zhipu の株価は発表後に最大34%上昇した。GLM-5-Turbo も OpenClaw 向けに特化したバージョンとして提供されている。"
+    ],
+    "newsDate": "2026-02-11",
+    "date": "2026-03-28",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": ["Zhipu AI", "GLM-5", "モデル", "中国", "オープンソース"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Zhipu AI Unveils GLM-5 Model", "site": "Zhipu AI", "url": "https://www.zhipuai.cn/en" },
+      { "title": "zai-org/GLM-5", "site": "Hugging Face", "url": "https://huggingface.co/zai-org/GLM-5" }
+    ]
+  },
+  {
+    "id": "minimax-m27-2026",
+    "type": "news",
+    "category": "model",
+    "title": "MiniMax、自己進化する AI モデル M2.7 を公開 — 人間の介入なしで強化学習の30〜50%を自動化",
+    "excerpt": "中国の MiniMax が M2.7 を公開した。OpenClaw フレームワーク上で100ラウンド以上の自己最適化を自律的に実行し、人間の介入なしで30%の性能向上を達成。SWE-Pro で56.2%と Opus に迫るスコアを記録。「自己進化するモデル」として注目されている。",
+    "body": [
+      "MiniMax は2026年3月18日、AI モデル M2.7 を公開した。最大の特徴は「自己進化」の仕組みで、OpenClaw のエージェントフレームワーク上で100ラウンド以上の自己最適化を自律的に実行。人間の介入なしで30%の内部評価スコア向上を達成した。",
+      "ベンチマークでは SWE-Pro 56.2% と Opus に迫る水準を記録。PinchBench では86.2%で GLM-5 や GPT-5.4（86.4%）とほぼ同等。オフィス業務（GDPval-AA ELO 1495）ではオープンソースモデル中で最高スコア。強化学習の研究ワークフローの30〜50%を自動化できるとされる。",
+      "MiniMax によると、M2.7 は従来のモデル開発の「人間がチューニング → 評価 → 改善」のループの一部を AI 自身が回せるようになった初期事例。コストも Opus 4.6 と比較して大幅に低い。自己改善型 AI の実用化が進んでいることを示すモデルとして、業界の注目を集めている。"
+    ],
+    "newsDate": "2026-03-18",
+    "date": "2026-03-28",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": ["MiniMax", "M2.7", "モデル", "自己進化", "中国"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "MiniMax M2.7: Early Echoes of Self-Evolution", "site": "MiniMax", "url": "https://www.minimax.io/news/minimax-m27-en" }
+    ]
+  },
+  {
     "id": "google-turboquant-2026",
     "type": "news",
     "category": "model",

@@ -48,6 +48,14 @@
     <summary>RAG・チャット・エージェントの永続層は多くの場合がリレーショナル＋ベクトル拡張。Supabase（Postgres＋Auth＋Realtime＋Edge Functions）を軸に、RLS・接続プール・ハイブリッド検索の論点を整理する。</summary>
   </entry>
   <entry>
+    <title>Kwai（快手）、コーディング特化モデル KAT-Coder Pro V2 を公開 — SWE-Bench 73.4%、OpenClaw 対応</title>
+    <link rel="alternate" type="text/html" href="?a=kat-coder-pro-v2-2026"/>
+    <id>tag:ai-tool-news.jp,2026:kat-coder-pro-v2-2026</id>
+    <published>2026-03-28T15:00:00Z</published>
+    <updated>2026-03-28T15:00:00Z</updated>
+    <summary>中国の Kwai（快手）傘下の KwaiKAT が、エージェント型コーディングモデル KAT-Coder Pro V2 を公開した。1兆パラメータ超の MoE アーキテクチャで SWE-Bench Verified 73.4% を達成。OpenClaw ネイティブ対応で10以上のフレームワークに汎化。ランディングページや PPT を1文から生成する Web 美的生成機能も搭載。入力$0.30 / 出力$1.20 と低コスト。</summary>
+  </entry>
+  <entry>
     <title>【特集】2026年春、シンギュラリティの入口に立っている — Mythos が示す AI 能力の急進</title>
     <link rel="alternate" type="text/html" href="?a=singularity-mythos-2026-spring"/>
     <id>tag:ai-tool-news.jp,2026:singularity-mythos-2026-spring</id>
@@ -344,6 +352,14 @@
     <summary>2026年3月19日、OpenAI が Python 開発ツールの Astral（uv・Ruff・ty）を買収すると発表。月間1億2,600万ダウンロードの uv や業界標準ライターの Ruff が Codex チームに合流。Python 開発ワークフロー全体を AI ネイティブにする戦略。</summary>
   </entry>
   <entry>
+    <title>MiniMax、自己進化する AI モデル M2.7 を公開 — 人間の介入なしで強化学習の30〜50%を自動化</title>
+    <link rel="alternate" type="text/html" href="?a=minimax-m27-2026"/>
+    <id>tag:ai-tool-news.jp,2026:minimax-m27-2026</id>
+    <published>2026-03-18T15:00:00Z</published>
+    <updated>2026-03-18T15:00:00Z</updated>
+    <summary>中国の MiniMax が M2.7 を公開した。OpenClaw フレームワーク上で100ラウンド以上の自己最適化を自律的に実行し、人間の介入なしで30%の性能向上を達成。SWE-Pro で56.2%と Opus に迫るスコアを記録。「自己進化するモデル」として注目されている。</summary>
+  </entry>
+  <entry>
     <title>Windsurf — Cursor傘下で継続提供、Cascadeフローが光るAIエディタ</title>
     <link rel="alternate" type="text/html" href="?a=windsurf"/>
     <id>tag:ai-tool-news.jp,2026:windsurf</id>
@@ -600,11 +616,27 @@
     <summary>2026年2月26日、Google DeepMind が画像生成モデル Nano Banana 2（技術名 Gemini 3.1 Flash Image）を発表。Pro 寄りの品質と Flash 級の速度、最大5キャラクターの一貫性などが売り。Flow の既定モデルでもあるため「動画AI」と混同されやすい点を整理する。</summary>
   </entry>
   <entry>
+    <title>Zhipu AI、GLM-5 を公開 — 745億パラメータ MoE、Huawei チップで学習した中国発フロンティアモデル</title>
+    <link rel="alternate" type="text/html" href="?a=glm-5-zhipu-2026"/>
+    <id>tag:ai-tool-news.jp,2026:glm-5-zhipu-2026</id>
+    <published>2026-02-11T15:00:00Z</published>
+    <updated>2026-02-11T15:00:00Z</updated>
+    <summary>中国の Zhipu AI（智譜AI）が GLM-5 を公開した。745億パラメータの MoE モデルで、エージェント型 AI に最適化された設計。Huawei Ascend チップで学習され、MIT ライセンスのオープンソースとして提供。Opus 4.6 の約6分の1のコストで利用可能。香港市場で株価が34%急騰した。</summary>
+  </entry>
+  <entry>
     <title>OpenAI 社内データエージェントの「6層コンテキスト」— 表・SQL・RAG・Evals まで</title>
     <link rel="alternate" type="text/html" href="?a=openai-six-layer-context-data-agent-2026"/>
     <id>tag:ai-tool-news.jp,2026:openai-six-layer-context-data-agent-2026</id>
     <published>2026-01-29T15:00:00Z</published>
     <updated>2026-01-29T15:00:00Z</updated>
     <summary>公式エンジニアリング記事（2026-01-29）に基づき、社内向けデータエージェントがテーブル理解と回答品質を支える Layer #1〜#6、日次パイプラインと埋め込み、クエリ時 RAG、Evals API による評価、セキュリティまで日本語で整理。</summary>
+  </entry>
+  <entry>
+    <title>Moonshot AI、Kimi K2.5 を公開 — 1兆パラメータの MoE モデルが Opus 4.6 や GPT-5.4 に匹敵</title>
+    <link rel="alternate" type="text/html" href="?a=kimi-k25-moonshot-2026"/>
+    <id>tag:ai-tool-news.jp,2026:kimi-k25-moonshot-2026</id>
+    <published>2026-01-27T15:00:00Z</published>
+    <updated>2026-01-27T15:00:00Z</updated>
+    <summary>中国の Moonshot AI が Kimi K2.5 を公開した。1兆パラメータの Mixture of Experts（MoE）アーキテクチャで、推論時のアクティブパラメータは320億。Humanity&apos;s Last Exam で Opus 4.5 や GPT-5.2 High を上回るスコアを記録し、コーディング（SWE-bench 76.8%）やマルチモーダル（画像・動画入力対応）でもフロンティア級の性能を示している。オープンウェイトで公開。</summary>
   </entry>
 </feed>
