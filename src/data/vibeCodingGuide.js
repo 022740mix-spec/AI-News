@@ -371,9 +371,30 @@ export const VIBE_CLAUDE_CODE = {
       code: "claude --agent my-agent\nclaude agents",
     },
     {
-      word: "共有: `--remote-control`",
-      mean: "対話セッションを claude.ai やアプリ側からも操作可能にする。ペアプロやレビュアーとの画面共有に使える。",
+      word: "リモート操作: `--remote-control`",
+      mean: "PC のターミナルで起動した Claude Code のセッションを、ブラウザ（claude.ai）やスマホの Claude アプリから遠隔操作できるようにするオプション。起動するとリンクが表示され、そのリンクを開くとブラウザ/アプリ側から同じセッションに指示を出せる。外出先からスマホで自宅 PC の Claude Code を操作するような使い方ができる。",
       code: "claude --remote-control",
+    },
+    {
+      word: "リモートコントロールの条件",
+      mean: "==PC 側（Claude Code を動かしている方）はオンライン状態が必須==。PC がスリープやシャットダウンすると接続が切れる。スマホ側は Claude アプリ（iOS / Android）または claude.ai のブラウザから操作可能。同じ Anthropic アカウントでログインしている必要がある。",
+    },
+    {
+      word: "リモートコントロールの使いどころ",
+      mean: "外出中にスマホから自宅 PC の作業を進めたい、別の人にセッションを見せてレビューしてもらいたい、会議中にスマホから軽い修正指示を出したい、など。ターミナルの前にいなくても Claude Code に指示を送り続けられるのがポイント。",
+    },
+    // ── Cowork との違い ──
+    {
+      word: "==Cowork（コワーク）とは==",
+      mean: "Anthropic が提供する claude.ai 上のコード協働機能。ブラウザだけでコードの編集・実行ができる。Claude Code（CLI）とは別の製品で、ターミナルやエディタのインストールが不要。Pro プラン以上で利用可能。",
+    },
+    {
+      word: "Cowork と Claude Code CLI の違い",
+      mean: "==Cowork== はブラウザ上で完結する。PC にツールをインストールしなくてもコードを書ける。手軽だが、ローカルファイルに直接アクセスはできない。==Claude Code CLI== は PC のターミナルで動作し、ローカルのファイルを直接編集できる。MCP サーバーやスキルファイルなど高度な拡張も可能。本格的な開発は CLI、手軽に試すなら Cowork。",
+    },
+    {
+      word: "Cowork の Dispatch と --remote-control の違い",
+      mean: "==Dispatch== は Cowork 側の機能で、claude.ai からタスクをクラウドに投げて非同期で処理させる仕組み。結果はブラウザに返ってくる。==--remote-control== は CLI 側の機能で、PC で動いている Claude Code セッションをブラウザ/アプリから操作する仕組み。Dispatch はクラウドで実行、remote-control はあくまで PC 上で実行される。",
     },
     // ── スキル ──
     {
