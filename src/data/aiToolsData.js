@@ -3801,7 +3801,7 @@ export const ARTICLES = [
       "**2000人超の組織への影響（4月15日〜）**: E7 の導入に先立ち、2026年4月15日から2000人超の組織では基本 Copilot（Basic Copilot）が Word・Excel・PowerPoint・OneNote から削除される。M365 Copilot アプリと Outlook では引き続き利用可能だが、Office アプリ内での AI 支援には Copilot の有料ライセンス（E7 またはアドオン）が必要になる。高度な推論機能や Agent Mode、そして Anthropic モデルへのアクセスも削除対象となる。",
       "**2000人以下の組織**: 基本 Copilot は全 Office アプリで引き続き利用可能。ただし Copilot Chat は「標準アクセス」となり、ピーク時には応答品質やパフォーマンスが低下する可能性がある。E7 の恩恵を受けるには任意で有料プランに移行する形になる。",
       "**GitHub Copilot と Claude の関係**: Microsoft エコシステム内の別の動きとして、GitHub Copilot では2025年10月に Anthropic の Claude Sonnet 4.5 が正式対応（GA）し、Pro・Pro+・Business・Enterprise の全ティアで利用可能になった。2025年11月には Claude Opus 4.5 も追加された。GitHub Copilot でのモデル選択は GitHub のサービスを経由するため、Anthropic API への直接課金は発生しない。M365 Copilot の Anthropic モデル削除と GitHub Copilot での Claude 対応という一見矛盾する動きは、Microsoft が「Office 内の AI」と「開発者向け AI」で異なる戦略を採っていることを示している。",
-      "**企業の判断ポイント**: E7 への移行は Copilot + Entra Suite + Agent 365 を個別購入するより約$18/月安い。ただし全ユーザーに E7 を展開する必要はなく、AI を積極的に使う部門のみ E7、他は E3/E5 のままという混合運用が現実的。2000人超の組織で4月15日以降も Office 内 Copilot を使い続けるには、E7 移行か Copilot アドオンの購入が必須となる点に注意。開発チームは GitHub Copilot 経由で Claude を含むマルチモデルの AI 支援を引き続き利用できる。"
+      "**企業の判断ポイント**: E7 への移行は Copilot + Entra Suite + Agent 365 を個別購入するより約$18/月安い。ただし全ユーザーに E7 を展開する必要はなく、AI を積極的に使う部門のみ E7、他は E3/E5 のままという混合運用が現実的。2000人超の組織で4月15日以降も Office 内 Copilot を使い続けるには、E7 移行か Copilot アドオンの購入が必須となる点に注意。開発チームは GitHub Copilot 経由で Claude を含むマルチモデルの AI 支援を引き続き利用できる。関連記事: [Power Apps 開発手法 5パターン](?a=power-apps-five-approaches-2026) → [React × MS バックエンド構成](?a=react-frontend-ms-backend-architecture-2026) → [E3 Entra ID + PostgreSQL 実用構成](?a=enterprise-entra-id-postgres-ai-architecture-2026) → [Dataverse vs Supabase vs Azure SQL](?a=enterprise-backend-dataverse-supabase-azure-2026)。"
     ],
     "date": "2026-03-29",
     "author": "AI News 編集部",
@@ -3958,6 +3958,9 @@ export const ARTICLES = [
       { "title": "Entra ID Authentication - Azure Database for PostgreSQL", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/azure/postgresql/security/security-entra-configure" },
       { "title": "PCF Limitations", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/power-apps/developer/component-framework/limitations" }
     ],
+    "figures": [
+      { "src": "articles/diagram-enterprise-backend-patterns.svg", "alt": "React フロントエンドと5つのバックエンド構成パターンの相関図。PCF、Code Apps、Web API、Supabase、Azure PostgreSQL の接続先とEntra ID 認証基盤の位置関係を図示", "caption": "5つの構成パターンと Entra ID 認証基盤の全体像", "afterParagraph": 0 }
+    ],
     "tables": [
       {
         "afterParagraph": 5,
@@ -3999,6 +4002,9 @@ export const ARTICLES = [
       { "title": "Microsoft Graph API", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/graph/overview" },
       { "title": "Azure AI Document Intelligence", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/" },
       { "title": "Login with Azure (Microsoft) - Supabase", "site": "Supabase Docs", "url": "https://supabase.com/docs/guides/auth/social-login/auth-azure" }
+    ],
+    "figures": [
+      { "src": "articles/diagram-entra-postgres-flow.svg", "alt": "E3 Entra ID + PostgreSQL 構成の認証・データフロー図。社員がブラウザからReactフロントエンドにアクセスし、Entra IDで認証、中間層を経由してPostgreSQLとAI APIに接続。社内データソース（SharePoint/OneDrive/Teams）はGraph APIで接続", "caption": "E3 Entra ID + PostgreSQL 構成の全体フロー", "afterParagraph": 1 }
     ]
   },
   {

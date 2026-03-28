@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-labelledby="t-ebp d-ebp">
+  <title id="t-ebp">企業バックエンド 5つの構成パターン</title>
+  <desc id="d-ebp">React フロントエンドと Microsoft バックエンドの接続方法を5パターンで図示</desc>
+  <rect width="720" height="420" fill="#f8fafc"/>
+  <text x="360" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#0f172a">React フロントエンド × バックエンド — 5つの構成パターン</text>
+
+  <g font-family="system-ui,sans-serif">
+    <!-- 共通フロントエンド -->
+    <rect x="280" y="48" width="160" height="40" rx="8" fill="#7c3aed" opacity="0.9"/>
+    <text x="360" y="73" text-anchor="middle" font-size="13" font-weight="600" fill="#fff">React フロントエンド</text>
+
+    <!-- 矢印（中央から5本） -->
+    <line x1="310" y1="88" x2="100" y2="120" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="335" y1="88" x2="245" y2="120" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="360" y1="88" x2="360" y2="120" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="385" y1="88" x2="475" y2="120" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="410" y1="88" x2="620" y2="120" stroke="#94a3b8" stroke-width="1.5"/>
+
+    <!-- パターン1: PCF -->
+    <rect x="20" y="120" width="160" height="52" rx="8" fill="#0ea5e9" opacity="0.15" stroke="#0ea5e9" stroke-width="1.5"/>
+    <text x="100" y="141" text-anchor="middle" font-size="11" font-weight="700" fill="#0369a1">1. PCF コンポーネント</text>
+    <text x="100" y="157" text-anchor="middle" font-size="10" fill="#475569">Power Apps 内に埋め込み</text>
+    <line x1="100" y1="172" x2="100" y2="192" stroke="#0ea5e9" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+    <rect x="20" y="192" width="160" height="36" rx="6" fill="#0ea5e9" opacity="0.9"/>
+    <text x="100" y="215" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Dataverse（自動）</text>
+
+    <!-- パターン2: Code Apps -->
+    <rect x="190" y="120" width="140" height="52" rx="8" fill="#10b981" opacity="0.15" stroke="#10b981" stroke-width="1.5"/>
+    <text x="260" y="141" text-anchor="middle" font-size="11" font-weight="700" fill="#047857">2. Code Apps</text>
+    <text x="260" y="157" text-anchor="middle" font-size="10" fill="#475569">SDK で直接接続</text>
+    <line x1="260" y1="172" x2="260" y2="192" stroke="#10b981" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+    <rect x="190" y="192" width="140" height="36" rx="6" fill="#10b981" opacity="0.9"/>
+    <text x="260" y="215" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Dataverse + コネクタ</text>
+
+    <!-- パターン3: Web API -->
+    <rect x="340" y="120" width="120" height="52" rx="8" fill="#f59e0b" opacity="0.15" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="400" y="141" text-anchor="middle" font-size="11" font-weight="700" fill="#b45309">3. Web API</text>
+    <text x="400" y="157" text-anchor="middle" font-size="10" fill="#475569">MSAL + OData</text>
+    <line x1="400" y1="172" x2="400" y2="192" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrowYellow)"/>
+    <rect x="340" y="192" width="120" height="36" rx="6" fill="#f59e0b" opacity="0.9"/>
+    <text x="400" y="215" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Dataverse API</text>
+
+    <!-- パターン4: Supabase -->
+    <rect x="470" y="120" width="120" height="52" rx="8" fill="#6366f1" opacity="0.15" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="530" y="141" text-anchor="middle" font-size="11" font-weight="700" fill="#4338ca">4. Supabase</text>
+    <text x="530" y="157" text-anchor="middle" font-size="10" fill="#475569">Entra ID → OAuth</text>
+    <line x1="530" y1="172" x2="530" y2="192" stroke="#6366f1" stroke-width="1.5" marker-end="url(#arrowIndigo)"/>
+    <rect x="470" y="192" width="120" height="36" rx="6" fill="#6366f1" opacity="0.9"/>
+    <text x="530" y="215" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">PostgreSQL (OSS)</text>
+
+    <!-- パターン5: Azure PostgreSQL -->
+    <rect x="600" y="120" width="105" height="52" rx="8" fill="#ef4444" opacity="0.15" stroke="#ef4444" stroke-width="1.5"/>
+    <text x="652" y="141" text-anchor="middle" font-size="11" font-weight="700" fill="#b91c1c">5. Azure PG</text>
+    <text x="652" y="157" text-anchor="middle" font-size="10" fill="#475569">Entra ID ネイティブ</text>
+    <line x1="652" y1="172" x2="652" y2="192" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+    <rect x="600" y="192" width="105" height="36" rx="6" fill="#ef4444" opacity="0.9"/>
+    <text x="652" y="215" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Azure PostgreSQL</text>
+
+    <!-- 共通認証レイヤー -->
+    <rect x="100" y="260" width="520" height="40" rx="8" fill="#0f172a" opacity="0.05" stroke="#64748b" stroke-width="1" stroke-dasharray="4"/>
+    <text x="360" y="285" text-anchor="middle" font-size="13" font-weight="600" fill="#334155">Entra ID（認証基盤） — M365 E3 以上に含まれる</text>
+
+    <!-- 下段: データソース -->
+    <text x="360" y="330" text-anchor="middle" font-size="12" font-weight="600" fill="#64748b">社内データソース</text>
+    <rect x="60" y="345" width="130" height="36" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1"/>
+    <text x="125" y="368" text-anchor="middle" font-size="11" fill="#475569">SharePoint / OneDrive</text>
+    <rect x="210" y="345" width="100" height="36" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1"/>
+    <text x="260" y="368" text-anchor="middle" font-size="11" fill="#475569">Teams チャネル</text>
+    <rect x="330" y="345" width="100" height="36" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1"/>
+    <text x="380" y="368" text-anchor="middle" font-size="11" fill="#475569">Dynamics 365</text>
+    <rect x="450" y="345" width="110" height="36" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1"/>
+    <text x="505" y="368" text-anchor="middle" font-size="11" fill="#475569">Azure Key Vault</text>
+
+    <!-- Graph API ラベル -->
+    <text x="360" y="405" text-anchor="middle" font-size="11" fill="#64748b">↑ Microsoft Graph API / Power Automate で接続</text>
+  </g>
+
+  <defs>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0ea5e9"/></marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981"/></marker>
+    <marker id="arrowYellow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#f59e0b"/></marker>
+    <marker id="arrowIndigo" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6366f1"/></marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ef4444"/></marker>
+  </defs>
+</svg>

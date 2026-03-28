@@ -2046,6 +2046,42 @@ export const TOOL_REFERENCES = [
       ],
     },
   },
+  {
+    id: "power-apps",
+    label: "Power Apps",
+    ref: {
+      id: "ref-power-apps",
+      title: "Power Apps / Microsoft バックエンド 日常リファレンス",
+      lead: "Microsoft のノーコード/ローコード開発基盤。Canvas・Model-driven・Custom Pages・Power Pages・Vibe Coding の5つの開発手法がある。公式は https://learn.microsoft.com/en-us/power-apps/ を参照。",
+      terms: [
+        // ── 開発手法 ──
+        { word: "Canvas Apps（キャンバスアプリ）", section: "開発手法", mean: "空白のキャンバスに UI をドラッグ&ドロップで配置する。ロジックは Power Fx（Excel に似た数式言語）で記述。300以上のコネクタでデータソースに接続可能。最も利用者が多い手法。" },
+        { word: "Model-driven Apps（モデル駆動型）", section: "開発手法", mean: "Dataverse のデータモデル（テーブル・列・リレーション）を定義すると UI が自動生成される。「データが先、UIは後」の設計思想。CRM・ERP のような基幹アプリに向く。==Dataverse が必須==。" },
+        { word: "Custom Pages（カスタムページ）", section: "開発手法", mean: "Model-driven Apps の中に Canvas ベースのページを埋め込む。PCF（React コンポーネント）も使える。Model-driven の構造化と Canvas の柔軟な UI を組み合わせたい場合に使う。" },
+        { word: "Power Pages（パワーページ）", section: "開発手法", mean: "外部ユーザー（顧客・パートナー）向けの Web ポータル。Dataverse のデータを外部に公開するユースケース（サポートポータル、申請フォーム等）に特化。" },
+        { word: "Vibe Coding（AI 生成）", section: "開発手法", mean: "vibe.powerapps.com で自然言語からアプリを自動生成。「営業の日報管理アプリを作って」のような指示で、データモデル・UI・ロジックを AI が一括生成する。2026年時点では英語のみ、リージョン限定。プロトタイプ向け。" },
+        { word: "==PCF（Power Apps Component Framework）==", section: "開発手法", mean: "React / TypeScript でカスタムコンポーネントを開発し、Model-driven Apps や Canvas Apps に埋め込む仕組み。`pac pcf init --framework React` でプロジェクトを初期化。==フルページの SPA 置き換えには不向き==、コンポーネント単位の設計。Canvas では React 16、Model-driven では React 17 に制限あり。" },
+        { word: "==Power Apps Code Apps（新機能）==", section: "開発手法", mean: "React・Vue・Angular でスタンドアロンの SPA を作り、Power Apps SDK 経由で Dataverse と1,500以上のコネクタに直接アクセスする新しい手法。認証は SDK が自動処理。バイブコーディングで作ったフロントエンドを Microsoft バックエンドに接続する最短経路。", code: "# Power Apps Code Apps のセットアップ\nnpm create power-apps-code-app@latest my-app\ncd my-app\nnpm install\nnpm run dev", codeLang: "bash" },
+        // ── Dataverse ──
+        { word: "Dataverse（データバース）", section: "Dataverse", mean: "Microsoft のビジネスデータプラットフォーム。テーブル・列・リレーションを GUI で定義し、REST API（OData）で操作。Entra ID 認証が標準統合されている。Power Apps / Dynamics 365 の標準バックエンド。" },
+        { word: "Dataverse Web API", section: "Dataverse", mean: "Dataverse のデータを REST API（OData v4）で操作する。CRUD、クエリ（$filter, $select, $expand）、関数・アクションの実行が可能。MSAL でトークンを取得してヘッダーに付与する。" },
+        { word: "Dataverse のライセンス", section: "Dataverse", mean: "Power Apps Premium（$20/ユーザー/月）が必要。2000人超の組織は Enterprise Premium（$12/ユーザー/月）が利用可能。Per App プラン（$5/月）は2026年1月に廃止済み。デフォルト DB 容量は45GB（2026年4月改定）。" },
+        // ── 認証 ──
+        { word: "Entra ID（エントラ ID）", section: "認証", mean: "Microsoft の ID プラットフォーム（旧 Azure AD）。M365 E3 以上に含まれる。Power Apps・Dataverse・Azure のすべてで共通の認証基盤。OAuth 2.0 / OpenID Connect に対応。" },
+        { word: "MSAL.js（Microsoft Authentication Library）", section: "認証", mean: "React / Next.js から Entra ID 認証を行うためのライブラリ。Authorization Code Flow with PKCE でトークンを取得し、Dataverse API や Azure サービスにアクセスする。", code: "npm install @azure/msal-browser @azure/msal-react", codeLang: "bash" },
+        // ── バックエンドの選択肢 ──
+        { word: "==Dataverse vs PostgreSQL の判断==", section: "バックエンド選択", mean: "Dataverse: ノーコード/ローコード向け、Power Apps 統合が最強、ライセンス費用が高い。PostgreSQL（Azure DB / Supabase）: 開発者向け、SQL の自由度が高い、Dataverse より安い。E3 の Entra ID 認証だけ借りて PostgreSQL を使う構成がコスト最適な場合が多い。" },
+        { word: "Azure Database for PostgreSQL", section: "バックエンド選択", mean: "Microsoft のマネージド PostgreSQL。Entra ID 認証をネイティブサポート（パスワード不要）。Burstable B1ms で月額約$13〜。エンタープライズのコンプライアンス要件に対応。" },
+        { word: "Supabase + Entra ID", section: "バックエンド選択", mean: "Supabase Auth に Entra ID を OAuth プロバイダーとして登録し、Microsoft アカウントでログインできるようにする構成。Pro $25/月で PostgreSQL + Auth + Realtime + Edge Functions が使える。Dataverse のライセンスが不要な分コストが下がる。" },
+        // ── 実践Tips ──
+        { word: "Power Fx", section: "実践Tips", mean: "Power Apps の数式言語。Excel の数式に似ており、非エンジニアでも書ける。Canvas Apps のロジック（ボタン操作、条件分岐、データフィルタ）で使う。" },
+        { word: "Power Automate との連携", section: "実践Tips", mean: "Power Automate はワークフロー自動化ツール。SharePoint にファイルがアップロードされたら自動で Dataverse に格納する、Teamsに通知するなど、ノーコードでバックエンド処理を組める。" },
+        { word: "SharePoint のデータを AI で使う", section: "実践Tips", mean: "SharePoint の PDF を AI（RAG等）で活用するには、PDF → Markdown / JSON への変換が必要。Azure AI Document Intelligence や Power Automate でフローを組む。元の PDF は SharePoint に残し、AI 用の変換データを別途管理する二重管理が実運用では避けられない。" },
+        { word: "==Claude Code と Power Apps の接点==", section: "実践Tips", mean: "Claude Code で React フロントエンドをバイブコーディングで高速に作り、バックエンドに Power Apps Code Apps 経由で Dataverse を使う構成が可能。また、PCF コンポーネントの React コードを Claude Code で生成し、Power Apps に組み込むワークフローも有効。認証まわりの MSAL 設定や Dataverse API の呼び出しコードも Claude Code で生成できる。" },
+        { word: "M365 ライセンスと Power Apps の関係", section: "実践Tips", mean: "E3（$39/月）: Entra ID + 標準コネクタのみの Power Apps。E5（$60/月）: E3 + セキュリティ強化。E7（$99/月）: E5 + Copilot + Agent 365。Power Apps Premium（$20/月追加）: Dataverse + プレミアムコネクタ。詳細は M365 E7 記事を参照。" },
+      ],
+    },
+  },
 ];
 
 /**

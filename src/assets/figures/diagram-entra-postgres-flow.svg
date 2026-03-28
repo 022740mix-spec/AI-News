@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-labelledby="t-epf d-epf">
+  <title id="t-epf">E3 Entra ID + PostgreSQL 構成の認証・データフロー</title>
+  <desc id="d-epf">フロントエンドからEntra ID認証を経てバックエンドAPI、データベース、AI API、社内データに接続するフロー</desc>
+  <rect width="720" height="340" fill="#f8fafc"/>
+  <text x="360" y="28" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#0f172a">E3 Entra ID + PostgreSQL — 認証・データフロー</text>
+
+  <g font-family="system-ui,sans-serif">
+    <!-- 社員（左端） -->
+    <rect x="20" y="60" width="100" height="50" rx="8" fill="#7c3aed" opacity="0.9"/>
+    <text x="70" y="82" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">社員</text>
+    <text x="70" y="97" text-anchor="middle" font-size="10" fill="#e9d5ff">ブラウザ</text>
+
+    <!-- → React フロント -->
+    <line x1="120" y1="85" x2="155" y2="85" stroke="#7c3aed" stroke-width="2" marker-end="url(#aPurple)"/>
+    <rect x="155" y="60" width="120" height="50" rx="8" fill="#7c3aed" opacity="0.15" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="215" y="82" text-anchor="middle" font-size="12" font-weight="700" fill="#5b21b6">React / Next.js</text>
+    <text x="215" y="97" text-anchor="middle" font-size="10" fill="#6b21a8">フロントエンド</text>
+
+    <!-- → Entra ID（認証） -->
+    <line x1="215" y1="110" x2="215" y2="145" stroke="#0ea5e9" stroke-width="2" marker-end="url(#aBlue2)"/>
+    <text x="240" y="134" font-size="9" fill="#0ea5e9">MSAL.js</text>
+    <rect x="155" y="145" width="120" height="45" rx="8" fill="#0ea5e9" opacity="0.9"/>
+    <text x="215" y="165" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">Entra ID</text>
+    <text x="215" y="180" text-anchor="middle" font-size="9" fill="#e0f2fe">M365 E3 に含む</text>
+    <!-- トークン戻り -->
+    <line x1="275" y1="167" x2="320" y2="85" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="4" marker-end="url(#aBlue2)"/>
+    <text x="310" y="118" font-size="9" fill="#0ea5e9" transform="rotate(-40 310 118)">トークン</text>
+
+    <!-- → 中間層（API Routes / Azure Functions） -->
+    <line x1="275" y1="85" x2="340" y2="85" stroke="#10b981" stroke-width="2" marker-end="url(#aGreen2)"/>
+    <text x="308" y="75" font-size="9" fill="#10b981">トークン付き</text>
+    <rect x="340" y="55" width="150" height="60" rx="8" fill="#10b981" opacity="0.15" stroke="#10b981" stroke-width="1.5"/>
+    <text x="415" y="77" text-anchor="middle" font-size="12" font-weight="700" fill="#047857">中間層</text>
+    <text x="415" y="93" text-anchor="middle" font-size="10" fill="#065f46">API Routes /</text>
+    <text x="415" y="105" text-anchor="middle" font-size="10" fill="#065f46">Azure Functions</text>
+
+    <!-- 中間層 → PostgreSQL -->
+    <line x1="490" y1="75" x2="560" y2="75" stroke="#6366f1" stroke-width="2" marker-end="url(#aIndigo2)"/>
+    <rect x="560" y="55" width="140" height="60" rx="8" fill="#6366f1" opacity="0.9"/>
+    <text x="630" y="77" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">PostgreSQL</text>
+    <text x="630" y="93" text-anchor="middle" font-size="9" fill="#e0e7ff">Azure DB / Supabase</text>
+    <text x="630" y="105" text-anchor="middle" font-size="9" fill="#e0e7ff">Entra ID 認証対応</text>
+
+    <!-- 中間層 → AI API -->
+    <line x1="415" y1="115" x2="415" y2="145" stroke="#f59e0b" stroke-width="2" marker-end="url(#aYellow2)"/>
+    <rect x="345" y="145" width="140" height="45" rx="8" fill="#f59e0b" opacity="0.15" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="415" y="165" text-anchor="middle" font-size="12" font-weight="700" fill="#b45309">AI API</text>
+    <text x="415" y="180" text-anchor="middle" font-size="10" fill="#92400e">Claude / OpenAI</text>
+
+    <!-- Key Vault -->
+    <line x1="485" y1="167" x2="530" y2="167" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4"/>
+    <rect x="530" y="148" width="110" height="38" rx="6" fill="#fff" stroke="#f59e0b" stroke-width="1"/>
+    <text x="585" y="165" text-anchor="middle" font-size="10" font-weight="600" fill="#b45309">Key Vault</text>
+    <text x="585" y="178" text-anchor="middle" font-size="9" fill="#92400e">API キー保管</text>
+
+    <!-- 下段: 社内データソース -->
+    <rect x="20" y="220" width="680" height="105" rx="10" fill="#0f172a" opacity="0.03" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="360" y="242" text-anchor="middle" font-size="12" font-weight="600" fill="#475569">社内データソース（Graph API / Power Automate で接続）</text>
+
+    <rect x="40" y="258" width="130" height="50" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1"/>
+    <text x="105" y="278" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">SharePoint</text>
+    <text x="105" y="295" text-anchor="middle" font-size="9" fill="#64748b">PDF → MD/JSON 変換</text>
+
+    <rect x="190" y="258" width="110" height="50" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1"/>
+    <text x="245" y="278" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">OneDrive</text>
+    <text x="245" y="295" text-anchor="middle" font-size="9" fill="#64748b">ファイル同期</text>
+
+    <rect x="320" y="258" width="110" height="50" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1"/>
+    <text x="375" y="278" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">Teams</text>
+    <text x="375" y="295" text-anchor="middle" font-size="9" fill="#64748b">チャネルデータ</text>
+
+    <rect x="450" y="258" width="120" height="50" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1"/>
+    <text x="510" y="278" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">Power Automate</text>
+    <text x="510" y="295" text-anchor="middle" font-size="9" fill="#64748b">自動変換フロー</text>
+
+    <rect x="590" y="258" width="90" height="50" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1"/>
+    <text x="635" y="283" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">Dynamics</text>
+  </g>
+
+  <defs>
+    <marker id="aPurple" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7c3aed"/></marker>
+    <marker id="aBlue2" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0ea5e9"/></marker>
+    <marker id="aGreen2" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981"/></marker>
+    <marker id="aIndigo2" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6366f1"/></marker>
+    <marker id="aYellow2" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#f59e0b"/></marker>
+  </defs>
+</svg>
