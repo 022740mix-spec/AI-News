@@ -955,6 +955,51 @@ body {
 }
 
 @media (max-width: 560px) {
+  /* ── ヘッダー圧縮（スマホで画面上半分を空けない） ── */
+  .header-inner {
+    padding: 0.6rem 0.75rem 0.4rem;
+  }
+  .site-title {
+    font-size: 1.1rem;
+  }
+  .site-subtitle {
+    font-size: 0.6rem;
+    margin-top: 0.1rem;
+  }
+  .header-top {
+    gap: 0.4rem;
+  }
+  .search-field input {
+    padding: 0.45rem 0.65rem 0.45rem 2rem;
+    font-size: 0.78rem;
+  }
+  .search-field .search-prefix {
+    left: 0.55rem;
+    font-size: 0.85rem;
+  }
+  .header-meta {
+    font-size: 0.65rem;
+    gap: 0.3rem;
+  }
+  .section-site-nav {
+    border-bottom-width: 1px;
+  }
+  .section-site-nav-inner {
+    gap: 0;
+    padding: 0 0.5rem;
+  }
+  .section-site-tab {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.68rem;
+  }
+  .filter-nav-inner {
+    padding: 0 0.5rem;
+  }
+  .filter-tab {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.66rem;
+  }
+  /* ── コンテンツ ── */
   .company-dl {
     grid-template-columns: 1fr;
   }
@@ -980,16 +1025,8 @@ body {
   .setup-step__label {
     font-size: 0.75rem;
   }
-  .section-site-nav-inner {
-    gap: 0;
-  }
-  .section-site-tab {
-    padding: 0.5rem 0.6rem;
+  .setup-step__detail {
     font-size: 0.72rem;
-  }
-  .filter-tab {
-    padding: 0.5rem 0.65rem;
-    font-size: 0.7rem;
   }
 
   .company-dl dt {
