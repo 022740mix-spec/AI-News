@@ -270,7 +270,7 @@ const GUIDE_SEO = {
 };
 
 const COMPANIES_SEO = {
-  titleSuffix: "企業情報",
+  titleSuffix: "AI企業",
   description:
     "主要 AI・開発ツール企業の所在地・設立・規模・市場の骨子（公開情報ベース）。",
 };
@@ -496,7 +496,7 @@ function HamburgerMenu({ isOpen, onClose, onSection, currentSection }) {
     { id: "reviews", label: "レビュー", icon: "⭐" },
     { id: "guide", label: "ガイド", icon: "📖" },
     { id: "tools", label: "ツール別", icon: "🔧" },
-    { id: "companies", label: "企業情報", icon: "🏢" },
+    { id: "companies", label: "AI企業", icon: "🏢" },
   ];
 
   if (!isOpen) return null;
@@ -738,7 +738,7 @@ function HomePage({ articles, onSelect, onSection, bookmarkIds, onToggleBookmark
           </button>
           <button className="home-nav-card" onClick={() => onSection("companies")}>
             <span className="home-nav-card__icon">🏢</span>
-            <span className="home-nav-card__label">企業情報</span>
+            <span className="home-nav-card__label">AI企業</span>
             <span className="home-nav-card__desc">AI企業のプロファイル</span>
           </button>
         </div>
@@ -784,7 +784,7 @@ function SiteSectionNav({ section, onSection }) {
           className={`section-site-tab${section === "companies" ? " is-active" : ""}`}
           onClick={() => onSection("companies")}
         >
-          企業情報
+          AI企業
         </button>
       </div>
     </nav>
@@ -2642,7 +2642,7 @@ export default function App() {
               ) : siteSection === "companies" ? (
                 <>
                   <div className="section-feed companies-page-intro">
-                    <h2 className="section-feed__title">企業情報</h2>
+                    <h2 className="section-feed__title">AI企業</h2>
                     <p className="section-feed__meta">
                       主要プレイヤーの所在地・設立・規模・市場の骨子（公開情報ベース）
                     </p>
