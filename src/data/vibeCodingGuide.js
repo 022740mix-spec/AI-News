@@ -20,10 +20,10 @@ export const VIBE_SETUP_GUIDE = {
       heading: "Windows のセットアップ",
       body: "必要なソフトは3つ: Git、Node.js、エディタ（Cursor または VS Code）。それぞれ公式サイトからインストーラーをダウンロードして実行するだけ。",
       steps: [
-        { label: "Git をインストール", code: "# https://git-scm.com/ からダウンロード\n# インストーラーの選択肢はすべてデフォルトで OK", codeLang: "bash" },
-        { label: "Node.js をインストール", code: "# https://nodejs.org/ から LTS 版をダウンロード\n# インストール後、ターミナルで確認:\nnode --version\nnpm --version", codeLang: "bash" },
+        { label: "Git をインストール", detail: "https://git-scm.com/ からダウンロード。インストーラーの選択肢はすべてデフォルトで OK。Git をインストールすると Git Bash も一緒に入る。" },
+        { label: "Node.js をインストール", detail: "https://nodejs.org/ から LTS 版をダウンロードして実行。インストール後、ターミナルで確認:", code: "node --version\nnpm --version", codeLang: "bash" },
         { label: "Claude Code をインストール", code: "npm install -g @anthropic-ai/claude-code\nclaude --version", codeLang: "bash" },
-        { label: "PowerShell と CMD の違い", code: "# PowerShell: 新しい方。青い画面。スクリプトが書ける\n# CMD: 古い方。黒い画面。基本的なコマンドだけ\n# → Git Bash を使うのが一番トラブルが少ない\n# Git をインストールすると Git Bash も入る", codeLang: "bash" },
+        { label: "PowerShell と CMD の違い", detail: "PowerShell は新しい方（青い画面）、CMD は古い方（黒い画面）。バイブコーディングでは Git Bash を使うのがトラブルが少ない。Git をインストールすると Git Bash も入る。" },
       ],
     },
     {
@@ -31,7 +31,7 @@ export const VIBE_SETUP_GUIDE = {
       heading: "Mac のセットアップ",
       body: "Homebrew（パッケージ管理ツール）を入れると、あとは brew コマンドで揃う。",
       steps: [
-        { label: "Homebrew をインストール", code: "/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"", codeLang: "bash" },
+        { label: "Homebrew をインストール", detail: "Mac のパッケージ管理ツール。ターミナルで以下を実行:", code: "/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"", codeLang: "bash" },
         { label: "Git と Node.js をインストール", code: "brew install git node", codeLang: "bash" },
         { label: "Claude Code をインストール", code: "npm install -g @anthropic-ai/claude-code\nclaude --version", codeLang: "bash" },
       ],
@@ -41,7 +41,7 @@ export const VIBE_SETUP_GUIDE = {
       heading: "フォルダ構造を理解する",
       body: "バイブコーディングでは「プロジェクト」という単位でフォルダを作る。デスクトップや OneDrive に置かず、専用のフォルダを作る理由がある。",
       steps: [
-        { label: "なぜデスクトップに置かないのか", code: "# デスクトップ → ファイルが散らかる、パスに日本語やスペースが入ると不具合の原因\n# OneDrive → 同期がファイル監視と衝突して不具合が起きやすい\n# → C:\\Users\\あなた\\Projects\\ に置くのが安全", codeLang: "bash" },
+        { label: "なぜデスクトップに置かないのか", detail: "デスクトップはファイルが散らかりやすく、パスに日本語やスペースが入ると不具合の原因になる。OneDrive は同期がファイル監視と衝突して不具合が起きやすい。C:\\Users\\あなた\\Projects\\ に専用フォルダを作るのが安全。" },
         { label: "推奨フォルダ構成", code: "C:\\Users\\あなた\\\n├── Projects/          ← プロジェクトを置く場所\n│   ├── my-app/        ← プロジェクト1\n│   ├── AI-News/       ← プロジェクト2\n│   └── ...\n├── .claude/           ← Claude Code のグローバル設定（隠しフォルダ）\n├── .cursor/           ← Cursor のグローバル設定（隠しフォルダ）\n└── .config/           ← 各種ツールの設定（隠しフォルダ）", codeLang: "text" },
       ],
     },
@@ -50,8 +50,8 @@ export const VIBE_SETUP_GUIDE = {
       heading: "隠しファイルを表示する（重要）",
       body: "バイブコーディングのツールは . (ドット)で始まるファイルやフォルダをたくさん作る。Windows ではデフォルトで見えないので、必ず表示設定を変えること。",
       steps: [
-        { label: "Windows で隠しファイルを表示", code: "# エクスプローラー → 表示 → 表示 → 隠しファイル にチェック\n# または:\n# エクスプローラー → ... → オプション → 表示タブ\n# → 「隠しファイル、隠しフォルダー、および隠しドライブを表示する」を選択", codeLang: "text" },
-        { label: "Mac で隠しファイルを表示", code: "# Finder で Cmd + Shift + . を押す（トグル）", codeLang: "bash" },
+        { label: "Windows で隠しファイルを表示", detail: "エクスプローラー → 上部メニュー「表示」→「表示」→「隠しファイル」にチェック。または「...」→「オプション」→「表示」タブ →「隠しファイル、隠しフォルダー、および隠しドライブを表示する」を選択。" },
+        { label: "Mac で隠しファイルを表示", detail: "Finder を開いた状態で Cmd + Shift + . を押すとトグルで表示/非表示が切り替わる。" },
         { label: "VS Code / Cursor で隠しファイルを表示", code: "// settings.json に追加:\n{\n  \"files.exclude\": {\n    \"**/.claude\": false,\n    \"**/.cursor\": false\n  }\n}", codeLang: "json" },
       ],
     },
@@ -69,10 +69,10 @@ export const VIBE_SETUP_GUIDE = {
       heading: "仮想化と Docker（Windows の注意点）",
       body: "Claude Code の一部機能（Cowork のサンドボックス等）や Docker は仮想化技術が必要。Windows では追加設定が要る場合がある。",
       steps: [
-        { label: "Windows 11 Pro / Enterprise の場合", code: "# Hyper-V を有効にする:\n# 設定 → アプリ → オプション機能 → Windows のその他の機能\n# → Hyper-V にチェック → 再起動\n\n# または PowerShell（管理者）で:\nEnable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All", codeLang: "powershell" },
-        { label: "!!Windows 11 Home の場合!!", code: "# Home エディションでは Hyper-V が使えない\n# → WSL2（Windows Subsystem for Linux）で代替する:\nwsl --install\n# 再起動後、Ubuntu が使えるようになる\n# Docker Desktop も WSL2 バックエンドで動作可能", codeLang: "powershell" },
-        { label: "BIOS で仮想化を有効にする", code: "# 多くの PC はデフォルトで仮想化がオフ\n# 確認方法: タスクマネージャー → パフォーマンス → CPU\n# → 「仮想化: 有効」と表示されていれば OK\n#\n# オフの場合:\n# 1. PC を再起動\n# 2. 起動時に F2 / Del / F10（メーカーによる）を連打して BIOS に入る\n# 3. Advanced → CPU Configuration → Intel VT-x または AMD-V を Enabled に\n# 4. 保存して再起動", codeLang: "text" },
-        { label: "Mac の場合", code: "# Apple Silicon (M1/M2/M3/M4) は仮想化がハードウェアで常時有効\n# 特別な設定は不要。Docker Desktop をインストールするだけ", codeLang: "bash" },
+        { label: "Windows 11 Pro / Enterprise の場合", detail: "設定 → アプリ → オプション機能 → Windows のその他の機能 → Hyper-V にチェック → 再起動。または PowerShell（管理者として実行）で:", code: "Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All", codeLang: "powershell" },
+        { label: "!!Windows 11 Home の場合!!", detail: "Home エディションでは Hyper-V が使えない。WSL2（Windows Subsystem for Linux）で代替する。再起動後 Ubuntu が使えるようになり、Docker Desktop も WSL2 バックエンドで動作可能。", code: "wsl --install", codeLang: "powershell" },
+        { label: "BIOS で仮想化を有効にする", detail: "多くの PC はデフォルトで仮想化がオフ。確認方法: タスクマネージャー → パフォーマンス → CPU →「仮想化: 有効」と表示されていれば OK。オフの場合: PC 再起動 → 起動時に F2 / Del / F10（メーカーによる）を連打して BIOS に入る → Advanced → CPU Configuration → Intel VT-x または AMD-V を Enabled → 保存して再起動。" },
+        { label: "Mac の場合", detail: "Apple Silicon（M1/M2/M3/M4）は仮想化がハードウェアで常時有効。特別な設定は不要で、Docker Desktop をインストールするだけ。" },
       ],
     },
     {
@@ -80,11 +80,11 @@ export const VIBE_SETUP_GUIDE = {
       heading: "企業 PC で SSL エラーが出るとき（重要）",
       body: "会社支給の PC では、セキュリティソフトが通信を検査（TLS インスペクション）していることがある。このとき Node.js や Claude Code が「SSL certificate verification failed」で動かなくなる。自宅 Wi-Fi でも会社 PC なら同じ問題が起きる。原因は PC の中のセキュリティエージェントが常駐しているため。",
       steps: [
-        { label: "なぜ起きるのか", code: "# ブラウザ → Windows の証明書ストアを使う → 会社の証明書も信頼 → 成功\n# Node.js → 独自の証明書リストを使う → 会社の証明書を知らない → 失敗\n#\n# つまり「ブラウザでは開けるのに CLI だけ失敗する」パターン", codeLang: "text" },
-        { label: "==正しい対処: NODE_USE_SYSTEM_CA=1==", code: "# Node.js に「OS の証明書ストアを使え」と指示する環境変数\n# Windows: ユーザー環境変数に追加\n#   名前: NODE_USE_SYSTEM_CA\n#   値:   1\n#\n# 設定方法:\n# 1. Windows キー → 「環境変数」で検索\n# 2. 「ユーザー環境変数」の「新規」\n# 3. 変数名: NODE_USE_SYSTEM_CA / 値: 1\n# 4. OK → ターミナル・エディタを全て再起動", codeLang: "text" },
-        { label: "設定後の確認方法", code: "node -e \"const https=require('https'); https.get('https://api.anthropic.com/',r=>console.log('status',r.statusCode));\"", codeLang: "bash", mem: "status 404 と表示されれば TLS 接続は成功している（404 はページが無いだけで通信自体は OK）。" },
-        { label: "それでもダメなら: NODE_EXTRA_CA_CERTS", code: "# 会社の IT 部門から証明書ファイル（.pem）をもらい、環境変数に指定:\n#   名前: NODE_EXTRA_CA_CERTS\n#   値:   C:\\path\\to\\company-ca-chain.pem", codeLang: "text" },
-        { label: "!!やってはいけない対処: NODE_TLS_REJECT_UNAUTHORIZED=0!!", code: "# AI に聞くとこれを勧められることがあるが、絶対にやらない\n# NODE_TLS_REJECT_UNAUTHORIZED=0\n#\n# これは SSL 検証そのものをオフにする設定で:\n# - npm install が壊れることがある\n# - 他の Node.js アプリの通信も検証なしになる\n# - セキュリティ上の重大なリスク\n#\n# 正しくは NODE_USE_SYSTEM_CA=1 を使う", codeLang: "text" },
+        { label: "なぜ起きるのか", detail: "ブラウザは Windows の証明書ストアを使うので会社の証明書も信頼して成功する。一方 Node.js は独自の証明書リストを使うため、会社の証明書を知らず失敗する。つまり「ブラウザでは開けるのに CLI だけ失敗する」パターン。" },
+        { label: "==正しい対処: NODE_USE_SYSTEM_CA=1==", detail: "Node.js に「OS の証明書ストアを使え」と指示する環境変数。Windows キー →「環境変数」で検索 →「ユーザー環境変数」の「新規」→ 変数名: NODE_USE_SYSTEM_CA、値: 1 → OK → ターミナル・エディタを全て再起動。" },
+        { label: "設定後の確認方法", detail: "status 404 と表示されれば TLS 接続は成功（404 はページが無いだけで通信は OK）。", code: "node -e \"const https=require('https'); https.get('https://api.anthropic.com/',r=>console.log('status',r.statusCode));\"", codeLang: "bash" },
+        { label: "それでもダメなら: NODE_EXTRA_CA_CERTS", detail: "会社の IT 部門から証明書ファイル（.pem）をもらい、ユーザー環境変数に設定する。変数名: NODE_EXTRA_CA_CERTS、値: C:\\path\\to\\company-ca-chain.pem" },
+        { label: "!!やってはいけない対処: NODE_TLS_REJECT_UNAUTHORIZED=0!!", detail: "AI に聞くとこれを勧められることがあるが、絶対にやらない。SSL 検証そのものをオフにする設定で、npm install が壊れたり、他の Node.js アプリの通信も検証なしになる。セキュリティ上の重大なリスク。正しくは NODE_USE_SYSTEM_CA=1 を使う。" },
       ],
     },
     {

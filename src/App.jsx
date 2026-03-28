@@ -855,8 +855,13 @@ function VibeCodingGuidePanel({
             </p>
             {sec.steps?.map((step, si) => (
               <div key={si} className="setup-step">
-                <h4 className="setup-step__label">{step.label}</h4>
-                <CopyableCodeBlock code={step.code} lang={step.codeLang ?? "bash"} />
+                <h4 className="setup-step__label">{richInlineLine(step.label, mkKey)}</h4>
+                {step.detail ? (
+                  <p className="setup-step__detail">{richInlineLine(step.detail, mkKey)}</p>
+                ) : null}
+                {step.code ? (
+                  <CopyableCodeBlock code={step.code} lang={step.codeLang ?? "bash"} />
+                ) : null}
               </div>
             ))}
           </div>
