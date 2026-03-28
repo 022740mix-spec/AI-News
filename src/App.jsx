@@ -506,6 +506,7 @@ function HamburgerMenu({ isOpen, onClose, onSection, currentSection }) {
       <div className="hamburger-overlay" onClick={onClose} />
       <nav className="hamburger-drawer" aria-label="メインメニュー">
         <button className="hamburger-close" onClick={onClose} aria-label="閉じる">✕</button>
+        <div className="hamburger-drawer-title">Menu</div>
         <ul className="hamburger-list">
           {menuItems.map(item => (
             <li key={item.id}>
@@ -518,6 +519,10 @@ function HamburgerMenu({ isOpen, onClose, onSection, currentSection }) {
             </li>
           ))}
         </ul>
+        <div className="hamburger-footer">
+          個人情報は収集しません。<br />
+          データは公開情報に基づきます。
+        </div>
       </nav>
     </>
   );

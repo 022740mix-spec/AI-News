@@ -3126,7 +3126,7 @@ export function getSiteTodayYmd() {
 }
 
 export const SITE_NAME = "AI開発ツール最新情報";
-export const SITE_DESCRIPTION = "Claude Code・Cursor・Windsurf・Gemini・GPT などの最新ニュースを日本語でお届け";
+export const SITE_DESCRIPTION = "Claude Code・Cursor・Codex・Copilot の最新ニュースとガイドを日本語で";
 
 /** 記事の category キー → 一覧・詳細のバッジ用 */
 export const CATEGORIES = {

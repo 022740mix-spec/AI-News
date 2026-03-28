@@ -325,39 +325,67 @@ body {
   align-self: flex-end;
   background: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--muted);
   cursor: pointer;
-  padding: 0.25rem 1.25rem 1rem;
-  transition: color var(--transition);
+  padding: 0.5rem 1.25rem 0.75rem;
+  transition: color var(--transition), transform var(--transition);
 }
 .hamburger-close:hover {
   color: var(--text);
+  transform: rotate(90deg);
+}
+.hamburger-drawer-title {
+  padding: 0 1.5rem 1rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.5rem;
 }
 .hamburger-list {
   list-style: none;
   margin: 0;
-  padding: 0.5rem 0;
+  padding: 0.25rem 0;
 }
 .hamburger-item {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 0.9rem 1.5rem;
+  padding: 0 1.5rem;
   border: none;
   background: none;
   color: var(--text-secondary);
   font-size: 0.95rem;
   font-weight: 500;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
   cursor: pointer;
-  transition: all var(--transition);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: left;
   border-left: 3px solid transparent;
+  position: relative;
+  height: 3rem;
+}
+.hamburger-item::after {
+  content: "→";
+  position: absolute;
+  right: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hamburger-item:hover::after {
+  opacity: 1;
+  transform: translateX(0);
 }
 .hamburger-item:hover {
   background: var(--accent-dim);
   color: var(--text);
+  padding-left: 1.75rem;
 }
 .hamburger-item.is-active {
   color: var(--accent);
@@ -365,8 +393,19 @@ body {
   border-left-color: var(--accent);
   background: var(--accent-dim);
 }
+.hamburger-item.is-active::after {
+  content: "";
+}
 .hamburger-item__label {
   flex: 1;
+}
+.hamburger-footer {
+  margin-top: auto;
+  padding: 1rem 1.5rem 0;
+  border-top: 1px solid var(--border);
+  font-size: 0.6rem;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .search-row {
