@@ -1912,6 +1912,31 @@ body {
   opacity: 0.9;
 }
 
+/* ── モデル比較 ── */
+.model-comparison-group {
+  margin-bottom: 1.25rem;
+}
+.model-comparison-company {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 0.4rem;
+  padding-left: 0.25rem;
+}
+.model-gen-badge {
+  display: inline-block;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  background: var(--border);
+  color: var(--muted);
+}
+.model-gen-badge--current {
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+
 /* ── ハイライト（==text==） ── */
 .prose-highlight {
   background: rgba(255, 220, 50, 0.3);
