@@ -620,7 +620,14 @@ function Header({
             </div>
             {query ? (
               <div className="toolbar-stats">
-                <span className="stat-pill">フィルター: 「{query}」</span>
+                <button
+                  type="button"
+                  className="stat-pill stat-pill--clearable"
+                  onClick={() => { setQuery(""); searchRef.current?.focus(); }}
+                  aria-label={`フィルター「${query}」を解除`}
+                >
+                  フィルター: 「{query}」 ✕
+                </button>
               </div>
             ) : null}
           </>

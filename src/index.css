@@ -516,6 +516,17 @@ body {
   color: var(--text-secondary);
   border: 1px solid var(--border);
 }
+.stat-pill--clearable {
+  cursor: pointer;
+  font: inherit;
+  font-size: var(--text-sm);
+  transition: background var(--transition);
+}
+.stat-pill--clearable:hover {
+  background: var(--danger-dim, #fee2e2);
+  border-color: var(--danger, #ef4444);
+  color: var(--danger, #ef4444);
+}
 
 .filter-nav {
   backdrop-filter: blur(12px);
