@@ -1159,6 +1159,24 @@ body {
   .setup-step__detail {
     font-size: 0.72rem;
   }
+  /* テーブル比較のスマホ調整 */
+  .review-comparison-name {
+    font-size: 0.75rem;
+    min-width: 4.5rem;
+    max-width: 7rem;
+  }
+  .review-comparison-rating {
+    min-width: 3.5rem;
+  }
+  .review-score {
+    display: none;
+  }
+  .review-comparison-excerpt {
+    font-size: 0.7rem;
+  }
+  .review-comparison-row td {
+    padding: 0.5rem;
+  }
 
   .company-dl dt {
     margin-top: 0.35rem;
@@ -2060,14 +2078,18 @@ body {
 }
 .review-comparison-name {
   font-weight: 600;
-  white-space: nowrap;
   color: var(--text);
+  min-width: 6rem;
+  max-width: 10rem;
+  word-break: break-word;
 }
 .review-comparison-rating {
   white-space: nowrap;
+  min-width: 4.5rem;
 }
 .review-stars {
   color: #f59e0b;
+  font-size: 0.75rem;
   letter-spacing: 0.05em;
 }
 .review-score {
@@ -2079,6 +2101,8 @@ body {
   color: var(--text-secondary);
   font-size: 0.8rem;
   line-height: 1.5;
+  flex: 1;
+  min-width: 0;
 }
 
 .tag-chip {
