@@ -413,11 +413,11 @@ export const ARTICLES = [
     "title": "AI 規制・訴訟の動き — 2026年 Q1 の主要トピック",
     "excerpt": "Anthropic と米国防総省の法廷闘争、OpenAI Sora をめぐる提携解消、EU AI Act の施行開始など、2026年第1四半期の規制・訴訟動向を整理した。",
     "body": [
-      "2026年第1四半期は、AI 企業と政府・規制当局の関係が大きく動いた。最も注目を集めたのは **Anthropic** と米国防総省をめぐる一連の法廷闘争で、サンフランシスコの連邦地裁が国防総省による「サプライチェーンリスク」指定の執行を差し止める暫定命令を出したと報じられた（詳細は ?a=anthropic-pentagon-injunction-2026 ）。",
-      "**OpenAI** の Sora をめぐっては、消費者向け提供の終了と複数の提携解消が相次いで報じられた。動画生成 AI の商用展開が著作権・安全性の壁に直面している構図が浮き彫りになった（ ?a=openai-sora-discontinued-2026 ）。",
+      "2026年第1四半期は、AI 企業と政府・規制当局の関係が大きく動いた。最も注目を集めたのは **Anthropic** と米国防総省をめぐる一連の法廷闘争で、サンフランシスコの連邦地裁が国防総省による「サプライチェーンリスク」指定の執行を差し止める暫定命令を出したと報じられた（[詳細はこちら](?a=anthropic-pentagon-injunction-2026)）。",
+      "**OpenAI** の Sora をめぐっては、消費者向け提供の終了と複数の提携解消が相次いで報じられた。動画生成 AI の商用展開が著作権・安全性の壁に直面している構図が浮き彫りになった（[→ 詳細記事](?a=openai-sora-discontinued-2026)）。",
       "EU では AI Act（人工知能法）の段階的施行が始まり、汎用 AI モデルの透明性義務やハイリスク AI システムの適合評価が具体化しつつある。日本国内でも AI 事業者ガイドラインの改訂議論が進んでおり、開発者にとって利用規約の確認がこれまで以上に重要になっている。",
-      "3月末には Anthropic の内部コードネーム Mythos（別名 Capybara）の草稿がリークし、サイバーセキュリティ関連株に影響が出たとの報道もあった（ ?a=anthropic-mythos-leak 、 ?a=anthropic-mythos-cyber-impact-2026 ）。AI 企業の機密管理と情報開示のあり方が改めて問われている。",
-      "開発者への実務的な影響として、==利用するツールの利用規約・データ取り扱いポリシーを定期的に確認する==ことが今後さらに重要になる。特に企業での利用は、所在国（ ?a= で企業情報タブを参照）やデータの保存先を把握した上でツールを選定すべきだろう。"
+      "3月末には Anthropic の内部コードネーム Mythos（別名 Capybara）の草稿がリークし、サイバーセキュリティ関連株に影響が出たとの報道もあった（[Mythosリーク](?a=anthropic-mythos-leak)、[市場への影響](?a=anthropic-mythos-cyber-impact-2026)）。AI 企業の機密管理と情報開示のあり方が改めて問われている。",
+      "開発者への実務的な影響として、==利用するツールの利用規約・データ取り扱いポリシーを定期的に確認する==ことが今後さらに重要になる。特に企業での利用は、所在国（AI企業タブを参照）やデータの保存先を把握した上でツールを選定すべきだろう。"
     ],
     "date": "2026-03-28",
     "author": "AI News 編集部",
@@ -439,11 +439,11 @@ export const ARTICLES = [
       "end": "2026-03-29"
     },
     "body": [
-      "**3月24日（火）** — サンフランシスコの連邦地裁では **Anthropic** と国防総省をめぐる審問が開かれたと報じられ、**Rita Lin** 判事が国防総省側の「サプライチェーンリスク」の基準を問いただすやり取りが伝えられた。ほぼ同じ頃、**OpenAI** の Sora に関する消費者向け提供終了や提携解消が AP や NPR など複数媒体で立て続けに報じられた。審問から暫定差止までの法廷の流れは ?a=anthropic-pentagon-injunction-2026 、Sora 周辺は ?a=openai-sora-discontinued-2026 。",
-      "**翌25日（水）** — **ARC Prize Foundation** が **ARC-AGI-3** を公開し、静的なパズルではなくインタラクティブな環境でエージェントの適応推論を測る設計に振り替わった。プレビュー評価では主要フロンティアが人間基準に対し極めて低いスコアにとどまったと整理され、難易度の議論が一気に現実の数字に置き換わった。詳細は ?a=arc-agi-3-launch-2026 。",
-      "**26日（木）** — 製品とインフラの告知が同日に重なった。**Google DeepMind** が Gemini 3.1 Pro のプレビューを掲げた一方で、**Model Context Protocol** 側は v2 の年次ロードマップ（Streamable HTTP や OAuth 2.1 周りの整理など）を示した。法廷では前日までの審問を経て、Lin 判事が Anthropic の申請を認め、国防総省が同社を「サプライチェーンリスク」に指定してとった措置の執行を止める暫定差止命令を発したと報じられた。深掘りは ?a=gemini-3-1-pro ・ ?a=mcp-v2-spec-launch-2026 ・ ?a=anthropic-pentagon-injunction-2026 。",
-      "**27日（金）** — 開発者向けの更新が続いた。**Cursor** が 2.4 で並列サブエージェントや画像生成などをまとめたのに続き、**Anthropic** は **Claude Code** の Auto mode（研究プレビュー）を広げた。加えて Noah Zweben 氏が、クラウド側で PR／CI をフォローする auto-fix を示したと伝えられた。 ?a=cursor-2-4-subagents ・ ?a=claude-code-auto-mode ・ ?a=claude-code-autofix-cloud 。",
-      "**金曜から週末** — **Fortune** や DNyuz ほかが、Anthropic 周辺の未公開コンテンツへのアクセス問題と、内部コードネーム **Mythos**（別名 Capybara と報じられた語もある）の草稿報道を続けた。米国市場では28日、**CrowdStrike** や Palo Alto Networks などセキュリティ銘柄が大きく売られ、草稿に含まれるサイバー能力の記述が材料になり得るとの見方が報じられた。事実関係は ?a=anthropic-mythos-leak 、相場の整理は ?a=anthropic-mythos-cyber-impact-2026 。"
+      "**3月24日（火）** — サンフランシスコの連邦地裁では Anthropic と国防総省をめぐる審問が開かれたと報じられ、Rita Lin 判事が国防総省側の「サプライチェーンリスク」の基準を問いただすやり取りが伝えられた。ほぼ同じ頃、OpenAI の Sora に関する消費者向け提供終了や提携解消が複数媒体で報じられた（[法廷の詳細](?a=anthropic-pentagon-injunction-2026)、[Sora 提供終了](?a=openai-sora-discontinued-2026)）。",
+      "**翌25日（水）** — ARC Prize Foundation が ARC-AGI-3 を公開し、インタラクティブな環境でエージェントの適応推論を測る設計に刷新された。主要フロンティアモデルが人間基準に対し極めて低いスコアにとどまった（[ARC-AGI-3 の詳細](?a=arc-agi-3-launch-2026)）。",
+      "**26日（木）** — 製品とインフラの告知が同日に重なった。Google DeepMind が Gemini 3.1 Pro のプレビューを掲げ、Model Context Protocol 側は v2 のロードマップを示した。法廷では Lin 判事が Anthropic の暫定差止申請を認めた（[Gemini 3.1 Pro](?a=gemini-3-1-pro)、[MCP v2](?a=mcp-v2-spec-launch-2026)、[暫定差止](?a=anthropic-pentagon-injunction-2026)）。",
+      "**27日（金）** — Cursor が 2.4 で並列サブエージェントを導入し、Anthropic は Claude Code の Auto mode を拡大した。クラウド側での auto-fix も発表された（[Cursor 2.4](?a=cursor-2-4-subagents)、[Auto mode](?a=claude-code-auto-mode)、[auto-fix](?a=claude-code-autofix-cloud)）。",
+      "**金曜から週末** — Anthropic の内部コードネーム Mythos（別名 Capybara）の草稿報道が広がった。CrowdStrike や Palo Alto Networks などセキュリティ銘柄が売られ、草稿のサイバー能力記述が材料視された（[Mythos リーク](?a=anthropic-mythos-leak)、[市場への影響](?a=anthropic-mythos-cyber-impact-2026)）。"
     ],
     "date": "2026-03-30",
     "author": "AI News 編集部",
@@ -498,11 +498,11 @@ export const ARTICLES = [
       "end": "2026-03-22"
     },
     "body": [
-      "**3月17日（火）** — **OpenAI** が **GPT-5.4 mini** と GPT-5.4 nano を同時にリリースした。mini は無料層や Codex との接合、nano は API 専用の低コスト・高速モデルとして位置づけられ、並列エージェントの末端役にも触れられた。続く出来事の土台として開発者向けの論点が一気に増えた日でもある。 ?a=gpt-54-mini-nano-2026",
-      "**翌18日（水）** — **Windsurf**（旧 Codeium）のレビュー枠が更新され、**Cascade** フローを軸にした段階的編集や、Anysphere 傘下での継続提供の文脈がまとめられた。 ?a=windsurf",
-      "**19日（木）** — 流れが交差した日でもある。OpenAI は Python ツールチェーンの **Astral** 買収を公表し、uv・Ruff・ty を Codex 側に束ねる構図を示した。別枠では生成音楽の権利と製品線（Suno・Udio・Lyria など）の整理が特集として出た。 ?a=openai-acquires-astral-2026 ・ ?a=ai-music-generation-frontier-early-2026",
-      "**20日（金）** — **Anysphere（Cursor）** が Codeium / Windsurf の買収を完了したと発表し、Cascade 技術の Cursor への統合を予告する材料が重なった。 ?a=cursor-windsurf-merge",
-      "**22日（日）** — **OpenAI Codex** をクラウド並列実行のエージェントとしてレビューする記事が載り、PR 提出までのワークフローと o4-mini ベースの説明が整理された。 ?a=openai-codex-agent"
+      "**3月17日（火）** — **OpenAI** が **GPT-5.4 mini** と GPT-5.4 nano を同時にリリースした。mini は無料層や Codex との接合、nano は API 専用の低コスト・高速モデルとして位置づけられ、並列エージェントの末端役にも触れられた。続く出来事の土台として開発者向けの論点が一気に増えた日でもある。（[→ 詳細記事](?a=gpt-54-mini-nano-2026)）",
+      "**翌18日（水）** — **Windsurf**（旧 Codeium）のレビュー枠が更新され、**Cascade** フローを軸にした段階的編集や、Anysphere 傘下での継続提供の文脈がまとめられた。（[→ 詳細記事](?a=windsurf)）",
+      "**19日（木）** — 流れが交差した日でもある。OpenAI は Python ツールチェーンの **Astral** 買収を公表し、uv・Ruff・ty を Codex 側に束ねる構図を示した。別枠では生成音楽の権利と製品線（Suno・Udio・Lyria など）の整理が特集として出た。（[Astral買収](?a=openai-acquires-astral-2026)、[生成音楽の整理](?a=ai-music-generation-frontier-early-2026)）",
+      "**20日（金）** — **Anysphere（Cursor）** が Codeium / Windsurf の買収を完了したと発表し、Cascade 技術の Cursor への統合を予告する材料が重なった。（[→ 詳細記事](?a=cursor-windsurf-merge)）",
+      "**22日（日）** — **OpenAI Codex** をクラウド並列実行のエージェントとしてレビューする記事が載り、PR 提出までのワークフローと o4-mini ベースの説明が整理された。（[→ 詳細記事](?a=openai-codex-agent)）"
     ],
     "date": "2026-03-23",
     "author": "AI News 編集部",
@@ -1382,7 +1382,7 @@ export const ARTICLES = [
       {
         "title": "Nano Banana 2（当サイト別稿）",
         "site": "AI News 編集部",
-        "url": "https://022740mix-spec.github.io/AI-News/?a=google-nano-banana-2-gemini-flash-image-2026"
+        "url": "?a=google-nano-banana-2-gemini-flash-image-2026"
       }
     ]
   },

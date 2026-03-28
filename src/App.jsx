@@ -73,13 +73,24 @@ function trimUrlForHref(raw) {
  */
 function linkifyPlainToNodes(segment, mkKey) {
   if (!segment) return [];
-  const re = /https?:\/\/[^\s<>"')」']+|\?a=[a-z0-9-]+/gi;
+  const re = /\[([^\]]+)\]\((\?a=[a-z0-9-]+)\)|https?:\/\/[^\s<>"')」']+|\?a=[a-z0-9-]+/gi;
   const out = [];
   let last = 0;
   let m;
   while ((m = re.exec(segment)) !== null) {
     if (m.index > last) {
       out.push(segment.slice(last, m.index));
+    }
+    // [テキスト](?a=id) 形式のマークダウンリンク
+    if (m[1] && m[2]) {
+      const href = typeof window !== "undefined"
+        ? new URL(m[2], window.location.href).href
+        : m[2];
+      out.push(
+        <a key={mkKey()} href={href} className="prose-link">{m[1]}</a>,
+      );
+      last = m.index + m[0].length;
+      continue;
     }
     const raw = m[0];
     const isInternal = raw.startsWith("?a=");
@@ -88,6 +99,7 @@ function linkifyPlainToNodes(segment, mkKey) {
           ? new URL(raw, window.location.href).href
           : raw)
       : trimUrlForHref(raw);
+    const displayText = isInternal ? "→ 関連記事" : href;
     out.push(
       <a
         key={mkKey()}
@@ -97,7 +109,7 @@ function linkifyPlainToNodes(segment, mkKey) {
           : { target: "_blank", rel: "noopener noreferrer" })}
         className="prose-link"
       >
-        {href}
+        {displayText}
       </a>,
     );
     last = m.index + m[0].length;
