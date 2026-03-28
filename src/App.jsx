@@ -2343,22 +2343,10 @@ const [showFab, setShowFab] = useState(false);
   );
 
   const guideMatchCount =
-    siteSection !== "guide"
-      ? 0
-      : guideTab === "setup" || guideTab === "rules" || guideTab === "practical"
-        ? 1
-        : guideTab === "media"
-          ? mediaGuide.matchCount
-          : glossaryGuide.matchCount;
+    siteSection !== "guide" ? 0 : 1;
 
   const guideTotal =
-    siteSection !== "guide"
-      ? 0
-      : guideTab === "setup" || guideTab === "rules" || guideTab === "practical"
-        ? 1
-        : guideTab === "media"
-          ? mediaGuide.total
-          : glossaryGuide.total;
+    siteSection !== "guide" ? 0 : 1;
 
   const filtered = useMemo(() => {
     let list = ARTICLES;
@@ -2676,16 +2664,9 @@ const [showFab, setShowFab] = useState(false);
                         <MediaToolsGuidePanel
                           mediaTaxonomy={mediaGuide.mediaTaxonomy}
                         />
-                      ) : glossaryGuide.glossary.length === 0 ||
-                        glossaryGuide.glossary.every(
-                          (g) => g.terms.length === 0,
-                        ) ? (
-                        <div className="empty-state">
-                          用語が見つかりません。検索語を変えてください。
-                        </div>
                       ) : (
                         <GlossaryGuidePanel
-                          glossaryGenres={glossaryGuide.glossary}
+                          glossaryGenres={glossaryGuide.glossary.length > 0 ? glossaryGuide.glossary : GLOSSARY_BY_GENRE}
                         />
                       )}
                     </div>
