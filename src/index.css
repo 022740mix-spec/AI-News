@@ -333,7 +333,7 @@ body {
   right: 0;
   bottom: 0;
   width: min(300px, 82vw);
-  background: var(--bg);
+  background: var(--bg0);
   border-left: 1px solid var(--border);
   box-shadow: -8px 0 40px rgba(0, 0, 0, 0.3);
   z-index: 910;
@@ -2802,7 +2802,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--bg);
+  background: var(--bg0);
   border-bottom: 1px solid var(--border);
   padding: var(--space-2) var(--space-4);
 }

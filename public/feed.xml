@@ -16,22 +16,6 @@
     <summary>Anthropic が国防総省の「サプライチェーンリスク」指定を連邦地裁で差し止めた一方、OpenAI は Sora の消費者向け提供を終了。ARC-AGI-3 がフロンティアモデルの限界を浮き彫りにした翌日、Google が Gemini 3.1 Pro と MCP v2 を同時に発表。週末は Cursor 2.4 と Claude Code Auto mode が開発者のワークフローを更新し、Mythos 草稿の報道がセキュリティ銘柄を動かした。</summary>
   </entry>
   <entry>
-    <title>TypeScript バックエンドの ORM — Drizzle と Prisma を AI アプリ開発でどう切るか</title>
-    <link rel="alternate" type="text/html" href="?a=orm-drizzle-prisma-ai-backend-2026"/>
-    <id>tag:ai-tool-news.jp,2026:orm-drizzle-prisma-ai-backend-2026</id>
-    <published>2026-03-30T15:00:00Z</published>
-    <updated>2026-03-30T15:00:00Z</updated>
-    <summary>スキーマ駆動・マイグレーション・型安全クエリは、エージェントが SQL を組み立てる時代にも土台として残る。Prisma（Client・Schema・Migrate・Accelerate）と Drizzle（SQL に近い API・軽量ランタイム）の役割分け、サーバーレス Postgres・Supabase との相性を整理する。</summary>
-  </entry>
-  <entry>
-    <title>動画フロンティアの料金の軸 — Veo 3.1・Runway Gen-4.5・Kling など（公式再確認前提）</title>
-    <link rel="alternate" type="text/html" href="?a=ai-video-frontier-models-march-2026-pricing"/>
-    <id>tag:ai-tool-news.jp,2026:ai-video-frontier-models-march-2026-pricing</id>
-    <published>2026-03-30T15:00:00Z</published>
-    <updated>2026-03-30T15:00:00Z</updated>
-    <summary>秒単価・クレジット制・バンドル販売が混在するため「安い／高い」一発比較は誤魔化しやすい。公式 pricing の単位（秒・分・解像度・Fast/Standard）を揃えて読む。</summary>
-  </entry>
-  <entry>
     <title>AI エディタ横断比較 — Cursor・Windsurf・VS Code+Copilot（2026年3月版）</title>
     <link rel="alternate" type="text/html" href="?a=editor-comparison-2026-march"/>
     <id>tag:ai-tool-news.jp,2026:editor-comparison-2026-march</id>
@@ -142,6 +126,22 @@
     <published>2026-03-29T15:00:00Z</published>
     <updated>2026-03-29T15:00:00Z</updated>
     <summary>RAG・チャット・エージェントの永続層は多くの場合がリレーショナル＋ベクトル拡張。Supabase（Postgres＋Auth＋Realtime＋Edge Functions）を軸に、RLS・接続プール・ハイブリッド検索の論点を整理する。</summary>
+  </entry>
+  <entry>
+    <title>TypeScript バックエンドの ORM — Drizzle と Prisma を AI アプリ開発でどう切るか</title>
+    <link rel="alternate" type="text/html" href="?a=orm-drizzle-prisma-ai-backend-2026"/>
+    <id>tag:ai-tool-news.jp,2026:orm-drizzle-prisma-ai-backend-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>スキーマ駆動・マイグレーション・型安全クエリは、エージェントが SQL を組み立てる時代にも土台として残る。Prisma（Client・Schema・Migrate・Accelerate）と Drizzle（SQL に近い API・軽量ランタイム）の役割分け、サーバーレス Postgres・Supabase との相性を整理する。</summary>
+  </entry>
+  <entry>
+    <title>動画フロンティアの料金の軸 — Veo 3.1・Runway Gen-4.5・Kling など（公式再確認前提）</title>
+    <link rel="alternate" type="text/html" href="?a=ai-video-frontier-models-march-2026-pricing"/>
+    <id>tag:ai-tool-news.jp,2026:ai-video-frontier-models-march-2026-pricing</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>秒単価・クレジット制・バンドル販売が混在するため「安い／高い」一発比較は誤魔化しやすい。公式 pricing の単位（秒・分・解像度・Fast/Standard）を揃えて読む。</summary>
   </entry>
   <entry>
     <title>Microsoft 365 E7 徹底解説 — E3/E5/E7 料金比較、Copilot 削減の影響、GitHub Copilot × Claude</title>

@@ -711,7 +711,7 @@ function HomePage({ articles, onSelect, onSection }) {
   });
 
   const recentNews = sorted
-    .filter((a) => a.type !== "review" && a.id !== hero?.id)
+    .filter((a) => a.type !== "review" && a.id !== hero?.id && (a.heroScope ?? "day") !== "week")
     .slice(0, 4);
 
   return (
