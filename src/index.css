@@ -333,9 +333,7 @@ body {
   right: 0;
   bottom: 0;
   width: min(300px, 82vw);
-  background: var(--surface);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: var(--bg);
   border-left: 1px solid var(--border);
   box-shadow: -8px 0 40px rgba(0, 0, 0, 0.3);
   z-index: 910;
