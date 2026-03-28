@@ -27,13 +27,11 @@ import {
   MEDIA_GUIDE_INTRO,
   VIBE_BASIC_RULES_LEAD,
   VIBE_CODING_DEFINITION,
-  VIBE_CODING_PAGE_LEAD,
   VIBE_CODING_PRACTICAL,
-  VIBE_CODING_WHY_CLAUDE_FIRST,
   VIBE_MEDIA_TAXONOMY,
   VIBE_PROGRESSION_PATH,
-  VIBE_SITE_READING_GUIDE,
-  VIBE_STACK_NOTE,
+  TOOL_REFERENCES,
+  filterToolReference,
 } from "./data/vibeCodingGuide.js";
 import { BUNDLED_MEDIA_URL } from "./mediaUrls.js";
 
@@ -439,7 +437,7 @@ function persistBookmarks(set) {
   localStorage.setItem(STORAGE_MARKS, JSON.stringify([...set]));
 }
 
-function syncAppUrl({ articleId, siteSection, tagQuery, guideTab }) {
+function syncAppUrl({ articleId, siteSection, tagQuery, guideTab, toolTab }) {
   const u = new URL(window.location.href);
   if (articleId) {
     u.searchParams.set("a", articleId);
@@ -456,6 +454,11 @@ function syncAppUrl({ articleId, siteSection, tagQuery, guideTab }) {
       u.searchParams.set("view", "reviews");
       u.searchParams.delete("tag");
       u.searchParams.delete("tab");
+    } else if (siteSection === "tools") {
+      u.searchParams.set("view", "tools");
+      u.searchParams.delete("tag");
+      if (toolTab !== "claude-code") u.searchParams.set("tab", toolTab);
+      else u.searchParams.delete("tab");
     } else if (siteSection === "guide") {
       u.searchParams.set("view", "guide");
       u.searchParams.delete("tag");
@@ -641,6 +644,13 @@ function SiteSectionNav({ section, onSection }) {
         </button>
         <button
           type="button"
+          className={`section-site-tab${section === "tools" ? " is-active" : ""}`}
+          onClick={() => onSection("tools")}
+        >
+          ツール別
+        </button>
+        <button
+          type="button"
           className={`section-site-tab${section === "companies" ? " is-active" : ""}`}
           onClick={() => onSection("companies")}
         >
@@ -648,6 +658,67 @@ function SiteSectionNav({ section, onSection }) {
         </button>
       </div>
     </nav>
+  );
+}
+
+function ToolTabBar({ toolTab, onSelect }) {
+  return (
+    <nav className="filter-nav" aria-label="ツール別リファレンスの切替">
+      <div className="filter-nav-inner" role="tablist">
+        {TOOL_REFERENCES.map((t) => (
+          <button
+            key={t.id}
+            id={`tool-subtab-${t.id}`}
+            type="button"
+            role="tab"
+            aria-selected={toolTab === t.id}
+            aria-controls="tool-subtab-panel"
+            className={`filter-tab${toolTab === t.id ? " is-active" : ""}`}
+            onClick={() => onSelect(t.id)}
+          >
+            {t.label}
+          </button>
+        ))}
+      </div>
+    </nav>
+  );
+}
+
+function ToolReferencePanel({ referenceData, practical }) {
+  let k = 0;
+  const mkKey = () => `tr-${k++}`;
+  if (!referenceData) return <div className="empty-state">ツールが見つかりません</div>;
+  return (
+    <div className="companies-guide-rail companies-guide-rail--full-tab" aria-label={referenceData.title}>
+      <section className="guide-section guide-section--vibe">
+        <h2 className="guide-section__title">{referenceData.title}</h2>
+        <GuideLinkifiedP text={referenceData.lead} className="guide-section__lead" />
+        {referenceData.terms.length > 0 ? (
+          <dl className="glossary-dl">
+            {referenceData.terms.map((t) => (
+              <Fragment key={t.word}>
+                <dt className="glossary-dl__term">{t.word}</dt>
+                <dd className="glossary-dl__body">
+                  <GuideLinkifiedP text={t.mean} className="glossary-dl__mean" />
+                  {t.mem ? <GuideLinkifiedP text={t.mem} className="glossary-dl__mem" /> : null}
+                </dd>
+              </Fragment>
+            ))}
+          </dl>
+        ) : null}
+      </section>
+      {practical.length > 0 ? (
+        <section className="guide-section guide-section--vibe">
+          <h2 className="guide-section__title">実務での扱い</h2>
+          {practical.map((sec) => (
+            <div key={sec.id} id={sec.id} className="vibe-practical-sub">
+              <h3 className="vibe-practical-sub__title">{sec.heading}</h3>
+              <p className="vibe-practical-sub__body">{richInlineLine(sec.body, mkKey)}</p>
+            </div>
+          ))}
+        </section>
+      ) : null}
+    </div>
   );
 }
 
@@ -748,7 +819,6 @@ function CompaniesSidebar({ companies }) {
 }
 
 function VibeCodingGuidePanel({
-  showReadingGuide,
   stacks,
   toolTable,
   basicRules,
@@ -768,13 +838,6 @@ function VibeCodingGuidePanel({
         <p className="guide-section__lead">
           {richInlineLine(VIBE_CODING_DEFINITION, mkKey)}
         </p>
-        <p className="guide-section__lead">
-          {richInlineLine(VIBE_CODING_WHY_CLAUDE_FIRST, mkKey)}
-        </p>
-        <p className="guide-section__lead">
-          {richInlineLine(VIBE_CODING_PAGE_LEAD, mkKey)}
-        </p>
-        <p className="companies-guide-note">{VIBE_STACK_NOTE}</p>
       </section>
 
       <section id="vibe-progression" className="guide-section guide-section--vibe">
@@ -795,14 +858,27 @@ function VibeCodingGuidePanel({
         <p className="companies-guide-note">{VIBE_PROGRESSION_PATH.footnote}</p>
       </section>
 
-      {showReadingGuide ? (
-        <section id="vibe-reading-map" className="guide-section guide-section--vibe">
-          <h2 className="guide-section__title">{VIBE_SITE_READING_GUIDE.title}</h2>
-          <p className="guide-section__lead">
-            {richInlineLine(VIBE_SITE_READING_GUIDE.lead, mkKey)}
-          </p>
-        </section>
-      ) : null}
+      <section id="vibe-rules" className="guide-section guide-section--vibe">
+        <h2 className="guide-section__title">基本ルール</h2>
+        <p className="guide-section__lead">
+          {richInlineLine(VIBE_BASIC_RULES_LEAD, mkKey)}
+        </p>
+        {basicRules.length > 0 ? (
+          <dl className="glossary-dl">
+            {basicRules.map((r) => (
+              <Fragment key={r.title}>
+                <dt className="glossary-dl__term">{r.title}</dt>
+                <dd className="glossary-dl__body">
+                  <GuideLinkifiedP text={r.mean} className="glossary-dl__mean" />
+                  {r.mem ? (
+                    <GuideLinkifiedP text={r.mem} className="glossary-dl__mem" />
+                  ) : null}
+                </dd>
+              </Fragment>
+            ))}
+          </dl>
+        ) : null}
+      </section>
 
       <section id="vibe-tool-table" className="guide-section guide-section--vibe">
         <h2 className="guide-section__title">
@@ -904,28 +980,6 @@ function VibeCodingGuidePanel({
                   <GuideLinkifiedP text={t.mean} className="glossary-dl__mean" />
                   {t.mem ? (
                     <GuideLinkifiedP text={t.mem} className="glossary-dl__mem" />
-                  ) : null}
-                </dd>
-              </Fragment>
-            ))}
-          </dl>
-        ) : null}
-      </section>
-
-      <section id="vibe-rules" className="guide-section guide-section--vibe">
-        <h2 className="guide-section__title">基本ルール</h2>
-        <p className="guide-section__lead">
-          {richInlineLine(VIBE_BASIC_RULES_LEAD, mkKey)}
-        </p>
-        {basicRules.length > 0 ? (
-          <dl className="glossary-dl">
-            {basicRules.map((r) => (
-              <Fragment key={r.title}>
-                <dt className="glossary-dl__term">{r.title}</dt>
-                <dd className="glossary-dl__body">
-                  <GuideLinkifiedP text={r.mean} className="glossary-dl__mean" />
-                  {r.mem ? (
-                    <GuideLinkifiedP text={r.mem} className="glossary-dl__mem" />
                   ) : null}
                 </dd>
               </Fragment>
@@ -1955,14 +2009,14 @@ function SiteFooter() {
 /** 初回マウント時の URL（?a= / ?view= / ?tag=）から一覧・詳細状態を復元 */
 function readInitialRouteState() {
   if (typeof window === "undefined") {
-    return { selected: null, siteSection: "articles", query: "", guideTab: "vibe" };
+    return { selected: null, siteSection: "articles", query: "", guideTab: "vibe", toolTab: "claude-code" };
   }
   const u = new URL(window.location.href);
   const aid = u.searchParams.get("a");
   if (aid) {
     const found = ARTICLES.find((x) => x.id === aid);
     if (found) {
-      return { selected: found, siteSection: "articles", query: "", guideTab: "vibe" };
+      return { selected: found, siteSection: "articles", query: "", guideTab: "vibe", toolTab: "claude-code" };
     }
   }
   const view = u.searchParams.get("view");
@@ -1971,9 +2025,11 @@ function readInitialRouteState() {
       ? "companies"
       : view === "reviews"
         ? "reviews"
-        : view === "guide"
-          ? "guide"
-          : "articles";
+        : view === "tools"
+          ? "tools"
+          : view === "guide"
+            ? "guide"
+            : "articles";
   const tab = u.searchParams.get("tab");
   const guideTab =
     siteSection === "guide"
@@ -1983,12 +2039,15 @@ function readInitialRouteState() {
           ? "media"
           : "vibe"
       : "vibe";
+  const toolTab = siteSection === "tools"
+    ? (tab && TOOL_REFERENCES.some(t => t.id === tab) ? tab : "claude-code")
+    : "claude-code";
   const tag = u.searchParams.get("tag");
   const query =
     siteSection === "articles" && tag && tag.trim()
       ? tag.trim()
       : "";
-  return { selected: null, siteSection, query, guideTab };
+  return { selected: null, siteSection, query, guideTab, toolTab };
 }
 
 export default function App() {
@@ -1999,6 +2058,7 @@ export default function App() {
   const [selected, setSelected] = useState(initialRoute.selected);
   const [siteSection, setSiteSection] = useState(initialRoute.siteSection);
   const [guideTab, setGuideTab] = useState(initialRoute.guideTab);
+  const [toolTab, setToolTab] = useState(initialRoute.toolTab ?? "claude-code");
   const [theme, setTheme] = useState(() => localStorage.getItem(STORAGE_THEME) || "light");
   const [bookmarkIds, setBookmarkIds] = useState(loadBookmarks);
   const [showFab, setShowFab] = useState(false);
@@ -2027,8 +2087,9 @@ export default function App() {
       siteSection: selected ? "articles" : siteSection,
       tagQuery: selected ? "" : query,
       guideTab,
+      toolTab,
     });
-  }, [selected, siteSection, query, guideTab]);
+  }, [selected, siteSection, query, guideTab, toolTab]);
 
   useEffect(() => {
     syncDocumentSeo({
@@ -2129,6 +2190,11 @@ export default function App() {
   const mediaGuide = useMemo(() => filterMediaGuide(query), [query]);
   const glossaryGuide = useMemo(() => filterGlossaryGuide(query), [query]);
 
+  const toolRef = useMemo(
+    () => filterToolReference(query, toolTab),
+    [query, toolTab]
+  );
+
   const guideMatchCount =
     siteSection !== "guide"
       ? 0
@@ -2190,11 +2256,17 @@ export default function App() {
     setSiteSection(next);
     setSelected(null);
     if (next === "guide") setGuideTab("vibe");
+    if (next === "tools") setToolTab("claude-code");
     window.scrollTo(0, 0);
   }, []);
 
   const selectGuideTab = useCallback((next) => {
     setGuideTab(next);
+    window.scrollTo(0, 0);
+  }, []);
+
+  const selectToolTab = useCallback((next) => {
+    setToolTab(next);
     window.scrollTo(0, 0);
   }, []);
 
@@ -2234,14 +2306,18 @@ export default function App() {
                   ? filteredCompanies.length
                   : siteSection === "guide"
                     ? guideMatchCount
-                    : articleCount
+                    : siteSection === "tools"
+                      ? toolRef.matchCount
+                      : articleCount
               }
               totalCount={
                 siteSection === "companies"
                   ? AI_COMPANIES.length
                   : siteSection === "guide"
                     ? guideTotal
-                    : ARTICLES.length
+                    : siteSection === "tools"
+                      ? toolRef.total
+                      : ARTICLES.length
               }
               searchPlaceholder={
                 siteSection === "companies"
@@ -2250,14 +2326,18 @@ export default function App() {
                     ? "ツール・ルール・用語を検索…"
                     : siteSection === "reviews"
                       ? "レビューを検索…（ツール名・タグ）"
-                      : "記事を検索…（タイトル・概要・タグ）"
+                      : siteSection === "tools"
+                        ? "コマンド・機能を検索…"
+                        : "記事を検索…（タイトル・概要・タグ）"
               }
               searchAriaLabel={
                 siteSection === "companies"
                   ? "企業検索"
                   : siteSection === "guide"
                     ? "ガイド内検索"
-                    : "記事検索"
+                    : siteSection === "tools"
+                      ? "ツール別検索"
+                      : "記事検索"
               }
               showSort={siteSection === "articles" || siteSection === "reviews"}
             />
@@ -2266,6 +2346,8 @@ export default function App() {
               <FilterBar active={filter} setActive={setFilter} />
             ) : siteSection === "guide" ? (
               <GuideTabBar guideTab={guideTab} onSelect={selectGuideTab} />
+            ) : siteSection === "tools" ? (
+              <ToolTabBar toolTab={toolTab} onSelect={selectToolTab} />
             ) : null}
           </>
         ) : null}
@@ -2354,6 +2436,13 @@ export default function App() {
                     onTagClick={onTagClick}
                   />
                 </>
+              ) : siteSection === "tools" ? (
+                <>
+                  <ToolReferencePanel
+                    referenceData={toolRef.ref}
+                    practical={toolRef.practical}
+                  />
+                </>
               ) : siteSection === "companies" ? (
                 <>
                   <div className="section-feed companies-page-intro">
@@ -2404,7 +2493,7 @@ export default function App() {
                     >
                       {guideTab === "vibe" ? (
                         <VibeCodingGuidePanel
-                          showReadingGuide={vibeGuide.showReadingGuide}
+
                           stacks={vibeGuide.stacks}
                           toolTable={vibeGuide.toolTable}
                           basicRules={vibeGuide.basicRules}
