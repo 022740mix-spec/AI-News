@@ -110,18 +110,24 @@ function linkifyPlainToNodes(segment, mkKey) {
 }
 
 /**
- * 1行分: **強調** + URL リンク化
+ * 1行分: **強調** + ==ハイライト== + !!警告!! + URL リンク化
  */
 function richInlineLine(line, mkKey) {
-  const reBold = /\*\*(.+?)\*\*/g;
+  const reInline = /\*\*(.+?)\*\*|==(.+?)==|!!(.+?)!!/g;
   const parts = [];
   let last = 0;
   let m;
-  while ((m = reBold.exec(line)) !== null) {
+  while ((m = reInline.exec(line)) !== null) {
     if (m.index > last) {
       parts.push(...linkifyPlainToNodes(line.slice(last, m.index), mkKey));
     }
-    parts.push(<strong key={mkKey()}>{m[1]}</strong>);
+    if (m[1] != null) {
+      parts.push(<strong key={mkKey()}>{m[1]}</strong>);
+    } else if (m[2] != null) {
+      parts.push(<mark key={mkKey()} className="prose-highlight">{m[2]}</mark>);
+    } else if (m[3] != null) {
+      parts.push(<span key={mkKey()} className="prose-warning">{m[3]}</span>);
+    }
     last = m.index + m[0].length;
   }
   if (last < line.length) {
@@ -147,6 +153,47 @@ function richArticleText(text, keyPrefix = "") {
     out.push(...lineParts);
   }
   return out.length ? out : null;
+}
+
+/**
+ * 段落がコードブロック（```で始まる）かどうかを判定し、コード本体を返す。
+ * 戻り値: { isCode: true, code, lang } | { isCode: false }
+ */
+function parseCodeBlock(paragraph) {
+  if (!paragraph.startsWith("```")) return { isCode: false };
+  const firstNewline = paragraph.indexOf("\n");
+  if (firstNewline === -1) return { isCode: false };
+  const lang = paragraph.slice(3, firstNewline).trim();
+  let code = paragraph.slice(firstNewline + 1);
+  if (code.endsWith("```")) code = code.slice(0, -3);
+  if (code.endsWith("\n")) code = code.slice(0, -1);
+  return { isCode: true, code, lang };
+}
+
+/** コピーボタン付きコードブロック */
+function CopyableCodeBlock({ code, lang }) {
+  const [copied, setCopied] = useState(false);
+  const handleCopy = useCallback(() => {
+    navigator.clipboard.writeText(code).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  }, [code]);
+  return (
+    <div className="code-block">
+      <div className="code-block__header">
+        {lang && <span className="code-block__lang">{lang}</span>}
+        <button
+          className="code-block__copy"
+          onClick={handleCopy}
+          aria-label="コードをコピー"
+        >
+          {copied ? "Copied!" : "Copy"}
+        </button>
+      </div>
+      <pre className="code-block__pre"><code>{code}</code></pre>
+    </div>
+  );
 }
 
 /**
@@ -294,10 +341,8 @@ const FILTERS = [
   { id: "editor", label: "エディタ" },
   { id: "data", label: "データ・RAG" },
   { id: "product", label: "プロダクト" },
-  { id: "voice", label: "音声" },
-  { id: "vision", label: "画像" },
-  { id: "video", label: "動画" },
-  { id: "ops", label: "評価・運用" },
+  { id: "media", label: "メディア生成" },
+  { id: "regulation", label: "社会・規制" },
 ];
 
 const SORTS = [
@@ -314,10 +359,8 @@ function getCategoryIcon(cat) {
     editor: "<>",
     data: "≡",
     product: "◆",
-    voice: "~",
-    vision: "@",
-    video: "▶",
-    ops: "*",
+    media: "♪",
+    regulation: "§",
   };
   return icons[cat] ?? "·";
 }
@@ -407,6 +450,10 @@ function syncAppUrl({ articleId, siteSection, tagQuery, guideTab }) {
     u.searchParams.delete("a");
     if (siteSection === "companies") {
       u.searchParams.set("view", "companies");
+      u.searchParams.delete("tag");
+      u.searchParams.delete("tab");
+    } else if (siteSection === "reviews") {
+      u.searchParams.set("view", "reviews");
       u.searchParams.delete("tag");
       u.searchParams.delete("tab");
     } else if (siteSection === "guide") {
@@ -576,14 +623,14 @@ function SiteSectionNav({ section, onSection }) {
           className={`section-site-tab${section === "articles" ? " is-active" : ""}`}
           onClick={() => onSection("articles")}
         >
-          記事
+          ニュース
         </button>
         <button
           type="button"
-          className={`section-site-tab${section === "companies" ? " is-active" : ""}`}
-          onClick={() => onSection("companies")}
+          className={`section-site-tab${section === "reviews" ? " is-active" : ""}`}
+          onClick={() => onSection("reviews")}
         >
-          企業情報
+          レビュー
         </button>
         <button
           type="button"
@@ -591,6 +638,13 @@ function SiteSectionNav({ section, onSection }) {
           onClick={() => onSection("guide")}
         >
           ガイド
+        </button>
+        <button
+          type="button"
+          className={`section-site-tab${section === "companies" ? " is-active" : ""}`}
+          onClick={() => onSection("companies")}
+        >
+          企業情報
         </button>
       </div>
     </nav>
@@ -1018,6 +1072,15 @@ function CompanyCard({ company }) {
   return (
     <article id={`company-${company.id}`} className="company-card">
       <div className="company-card__head">
+        {company.logo ? (
+          <img
+            src={resolveMediaSrc(company.logo)}
+            alt={`${company.name} ロゴ`}
+            className="company-card__logo"
+            loading="lazy"
+            decoding="async"
+          />
+        ) : null}
         <h2 className="company-card__title">{company.name}</h2>
         <a
           href={company.officialUrl}
@@ -1180,9 +1243,13 @@ function ArticleProse({ article }) {
   const tablesAfter = (i) => tables.filter((t) => t.afterParagraph === i);
   return (
     <div className="prose prose--article">
-      {article.body.map((p, i) => (
+      {article.body.map((p, i) => {
+        const cb = parseCodeBlock(p);
+        return (
         <Fragment key={i}>
-          <p>{richArticleText(p, `p${i}-`)}</p>
+          {cb.isCode
+            ? <CopyableCodeBlock code={cb.code} lang={cb.lang} />
+            : <p>{richArticleText(p, `p${i}-`)}</p>}
           {figuresAfter(i).map((f, fi) => (
             <figure key={`fig-${i}-${fi}`} className="article-figure">
               <img
@@ -1202,7 +1269,8 @@ function ArticleProse({ article }) {
             <ArticleTableBlock key={`tbl-${i}-${ti}`} table={t} keyPrefix={`p${i}-${ti}`} />
           ))}
         </Fragment>
-      ))}
+      );
+      })}
     </div>
   );
 }
@@ -1901,9 +1969,11 @@ function readInitialRouteState() {
   const siteSection =
     view === "companies"
       ? "companies"
-      : view === "guide"
-        ? "guide"
-        : "articles";
+      : view === "reviews"
+        ? "reviews"
+        : view === "guide"
+          ? "guide"
+          : "articles";
   const tab = u.searchParams.get("tab");
   const guideTab =
     siteSection === "guide"
@@ -2079,6 +2149,11 @@ export default function App() {
 
   const filtered = useMemo(() => {
     let list = ARTICLES;
+    if (siteSection === "reviews") {
+      list = list.filter((a) => a.type === "review");
+    } else if (siteSection === "articles") {
+      list = list.filter((a) => a.type !== "review");
+    }
     if (filter !== "all") list = list.filter((a) => a.category === filter);
     if (query.trim()) {
       const q = query.toLowerCase();
@@ -2107,7 +2182,7 @@ export default function App() {
       : list;
     const sorted = [...restRaw].sort((a, b) => compareArticleOrder(a, b, sort));
     return { featured, rest: sorted, list };
-  }, [filter, query, sort]);
+  }, [filter, query, sort, siteSection]);
 
   const { featured, rest } = filtered;
 
@@ -2124,7 +2199,9 @@ export default function App() {
   }, []);
 
   const articleCount =
-    siteSection === "articles" ? (featured ? rest.length + 1 : rest.length) : 0;
+    siteSection === "articles" || siteSection === "reviews"
+      ? (featured && siteSection === "articles" ? rest.length + 1 : rest.length)
+      : 0;
 
   const weekRoundups = useMemo(() => {
     const list = ARTICLES.filter((a) => (a.heroScope ?? "day") === "week");
@@ -2171,7 +2248,9 @@ export default function App() {
                   ? "企業名・国・本社・製品・証券コードで検索…"
                   : siteSection === "guide"
                     ? "ツール・ルール・用語を検索…"
-                    : "記事を検索…（タイトル・概要・タグ）"
+                    : siteSection === "reviews"
+                      ? "レビューを検索…（ツール名・タグ）"
+                      : "記事を検索…（タイトル・概要・タグ）"
               }
               searchAriaLabel={
                 siteSection === "companies"
@@ -2180,10 +2259,10 @@ export default function App() {
                     ? "ガイド内検索"
                     : "記事検索"
               }
-              showSort={siteSection === "articles"}
+              showSort={siteSection === "articles" || siteSection === "reviews"}
             />
             <SiteSectionNav section={siteSection} onSection={switchSection} />
-            {siteSection === "articles" ? (
+            {siteSection === "articles" || siteSection === "reviews" ? (
               <FilterBar active={filter} setActive={setFilter} />
             ) : siteSection === "guide" ? (
               <GuideTabBar guideTab={guideTab} onSelect={selectGuideTab} />
@@ -2209,9 +2288,9 @@ export default function App() {
             className={`blog-layout${siteSection === "guide" ? " blog-layout--guide" : ""}`}
           >
             <div className="blog-main">
-              {siteSection === "articles" ? (
+              {siteSection === "articles" || siteSection === "reviews" ? (
                 <>
-                  {featured ? (
+                  {featured && siteSection === "articles" ? (
                     <HeroToday
                       article={featured}
                       onClick={() => handleSelect(featured)}

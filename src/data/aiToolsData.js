@@ -26,21 +26,121 @@
 
 export const ARTICLES = [
   {
+    "id": "vibe-coding-getting-started-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "バイブコーディング、何から始める？ — 2026年版おすすめツール",
+    "excerpt": "AIと対話しながらコードを書く「バイブコーディング」を始めるなら、どのツールを選ぶか。入門から上級まで、レベル別・目的別の推奨パスを整理した。",
+    "body": [
+      "バイブコーディングとは、AIとの対話を軸にコードを組み立てるスタイルを指す。厳密な定義があるわけではなく、IDE・AI・音声入力などを組み合わせて素早く試行錯誤するニュアンスが近い。2026年時点では選択肢が急増しており、「何から始めればいいのか」が最初のハードルになっている。",
+      "==入門（コード経験がほぼない人）==は **Claude** のチャット（claude.ai またはアプリ）から始めるのがブレにくい。セットアップ不要で、対話だけで小さなコード片を試せる。ChatGPT や Gemini でも同じことはできるが、コードの見せ方と再利用のしやすさで Claude が一歩先に出ている。",
+      "==初級〜中級（日常的にコードを書く人）==は **Cursor** を推奨する。VS Code ベースなので既存の拡張が使え、Composer による複数ファイル編集や Tab 補完が効率を上げる。企業で既に GitHub Copilot の契約があるなら、VS Code + Copilot がそのまま足場になる。",
+      "==上級（CLI で自律的に任せたい人）==は **Claude Code** が現時点で最も柔軟。ファイル操作、Bash 実行、MCP サーバ連携、スキルファイルによるカスタマイズができる。**Codex**（OpenAI）はクラウドサンドボックスでの並列実行が特徴で、用途によって使い分ける。",
+      "どのレベルでも共通するのは、==最初に全部揃えようとしないこと==。チャットで慣れてからエディタ統合に進み、必要になったら CLI を導入する段階的なアプローチが結局いちばん速い。"
+    ],
+    "date": "2026-03-28",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["バイブコーディング", "入門", "ツール比較", "Claude", "Cursor", "Claude Code"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Claude Code Documentation", "site": "Anthropic", "url": "https://docs.anthropic.com/en/docs/claude-code/overview" },
+      { "title": "Cursor", "site": "Cursor", "url": "https://cursor.com/" },
+      { "title": "GitHub Copilot", "site": "GitHub", "url": "https://github.com/features/copilot" }
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "レベル別おすすめツール（2026年3月時点）",
+        "headers": ["レベル", "おすすめツール", "月額目安", "向いている人"],
+        "rows": [
+          ["入門", "Claude チャット", "無料〜$20", "コード経験なし、まず AI と対話したい"],
+          ["初級", "Cursor（Hobby）", "無料", "エディタで AI 補完を試したい"],
+          ["中級", "Cursor Pro / VS Code + Copilot", "$20", "日常的にコードを書く開発者"],
+          ["上級", "Claude Code / Codex", "$20〜従量", "CLI で自律エージェントを回したい"],
+          ["企業", "GitHub Copilot Business", "$19/席", "SSO・監査ログ・IP 補償が必要"]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cli-tools-comparison-2026-march",
+    "type": "feature",
+    "category": "cli",
+    "title": "CLI コーディングツール横断比較 — Claude Code・Codex・Gemini CLI・Aider・Copilot（2026年3月版）",
+    "excerpt": "主要5つの CLI コーディングツールを、機能・料金・モデル・権限制御の軸で横並びに比較した。バイブコーディングの「ターミナル層」を選ぶ際の参考に。",
+    "body": [
+      "ターミナルから AI にコードを書かせる CLI ツールは、2026年に入って急速に選択肢が広がった。**Claude Code**（Anthropic）、**Codex**（OpenAI）、**Gemini CLI**（Google）、**Aider**（OSS）、**GitHub Copilot CLI** の5つが主要な候補になる。それぞれ設計思想が異なるため、単純な優劣ではなく用途との相性で選ぶ。",
+      "Claude Code はローカルのファイルシステムに直接アクセスし、Bash 実行・MCP サーバ連携・スキルファイルによるカスタマイズが可能。Auto モードを使えば権限確認を減らせるが、==本番リポジトリでは --dangerously-skip-permissions を避ける==。Codex はクラウドサンドボックス上で動作し、複数タスクの並列実行に強い。ローカルファイルへの直接書き込みはない代わりに、PR 単位のワークフローに向く。",
+      "Gemini CLI は 200 万トークンのコンテキストが特徴で、大規模コードベースの一括読み込みに向く。ただし無料枠の縮小が進んでおり、本格利用には API 課金が前提になりつつある。Aider は完全 OSS で、Claude・GPT・Gemini・ローカルモデルを切り替えられる柔軟さが強み。Git との統合が深く、変更を自動コミットする設計。",
+      "Copilot CLI は GitHub のエコシステムとの統合が最大の特徴。Enterprise プランなら SSO・監査ログ・IP 補償が付き、組織導入のハードルが低い。Agent Mode の進化で自律的なタスク遂行も可能になりつつある。",
+      "選び方の目安: 個人でフル機能なら Claude Code、クラウド並列なら Codex、大規模コンテキストなら Gemini CLI、OSS・マルチモデルなら Aider、企業統制なら Copilot CLI。"
+    ],
+    "date": "2026-03-28",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": ["CLI", "比較", "Claude Code", "Codex", "Gemini CLI", "Aider", "Copilot"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Claude Code Documentation", "site": "Anthropic", "url": "https://docs.anthropic.com/en/docs/claude-code/overview" },
+      { "title": "OpenAI Codex", "site": "OpenAI", "url": "https://openai.com/index/introducing-codex/" },
+      { "title": "Gemini CLI", "site": "Google", "url": "https://github.com/google-gemini/gemini-cli" },
+      { "title": "Aider", "site": "GitHub", "url": "https://github.com/Aider-AI/aider" },
+      { "title": "GitHub Copilot", "site": "GitHub", "url": "https://github.com/features/copilot" }
+    ],
+    "tables": [
+      {
+        "afterParagraph": 4,
+        "caption": "CLI ツール横断比較（2026年3月時点）",
+        "headers": ["ツール", "提供元", "実行環境", "モデル", "月額目安", "特徴"],
+        "rows": [
+          ["Claude Code", "Anthropic", "ローカル", "Claude Opus/Sonnet", "$20〜従量", "MCP・スキル・Auto mode"],
+          ["Codex", "OpenAI", "クラウド", "GPT/Codex系", "$20〜従量", "並列実行・PR連携"],
+          ["Gemini CLI", "Google", "ローカル", "Gemini Pro/Flash", "無料枠あり→従量", "200万トークン"],
+          ["Aider", "OSS", "ローカル", "任意（マルチ）", "無料（API費用別）", "Git統合・architect"],
+          ["Copilot CLI", "GitHub", "ローカル+クラウド", "GPT系", "$10〜$39/席", "Enterprise統制"]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ai-regulation-q1-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "AI 規制・訴訟の動き — 2026年 Q1 の主要トピック",
+    "excerpt": "Anthropic と米国防総省の法廷闘争、OpenAI Sora をめぐる提携解消、EU AI Act の施行開始など、2026年第1四半期の規制・訴訟動向を整理した。",
+    "body": [
+      "2026年第1四半期は、AI 企業と政府・規制当局の関係が大きく動いた。最も注目を集めたのは **Anthropic** と米国防総省をめぐる一連の法廷闘争で、サンフランシスコの連邦地裁が国防総省による「サプライチェーンリスク」指定の執行を差し止める暫定命令を出したと報じられた（詳細は ?a=anthropic-pentagon-injunction-2026 ）。",
+      "**OpenAI** の Sora をめぐっては、消費者向け提供の終了と複数の提携解消が相次いで報じられた。動画生成 AI の商用展開が著作権・安全性の壁に直面している構図が浮き彫りになった（ ?a=openai-sora-discontinued-2026 ）。",
+      "EU では AI Act（人工知能法）の段階的施行が始まり、汎用 AI モデルの透明性義務やハイリスク AI システムの適合評価が具体化しつつある。日本国内でも AI 事業者ガイドラインの改訂議論が進んでおり、開発者にとって利用規約の確認がこれまで以上に重要になっている。",
+      "3月末には Anthropic の内部コードネーム Mythos（別名 Capybara）の草稿がリークし、サイバーセキュリティ関連株に影響が出たとの報道もあった（ ?a=anthropic-mythos-leak 、 ?a=anthropic-mythos-cyber-impact-2026 ）。AI 企業の機密管理と情報開示のあり方が改めて問われている。",
+      "開発者への実務的な影響として、==利用するツールの利用規約・データ取り扱いポリシーを定期的に確認する==ことが今後さらに重要になる。特に企業での利用は、所在国（ ?a= で企業情報タブを参照）やデータの保存先を把握した上でツールを選定すべきだろう。"
+    ],
+    "date": "2026-03-28",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": ["規制", "訴訟", "Anthropic", "OpenAI", "EU AI Act", "2026年Q1"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "EU AI Act", "site": "European Commission", "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" }
+    ]
+  },
+  {
     "id": "overview-2026-spring",
     "type": "feature",
     "category": "special",
     "title": "【週刊まとめ】AI開発ツール — 2026年3月23日〜29日",
-    "excerpt": "**ARC Prize Foundation** は水曜に適応推論ベンチ **ARC-AGI-3** を公開した。**翌日の木曜**には **Google DeepMind** が **Gemini 3.1 Pro** をプレビューし、**同じ日に** **Model Context Protocol** が **v2** の年次ロードマップを示した。**裁判では**サンフランシスコの連邦地裁が **Anthropic** の申請を認め、国防総省の措置に暫定差止を出したと報じられた。**ほぼ同じ頃**、**OpenAI** の **Sora** 消費者向け終了や提携解消が各紙で伝わった。**金曜**は **Cursor 2.4** と **Claude Code**（Auto モード・クラウド auto-fix）の更新が続き、**週末**にかけ **Mythos** 草稿の報道が広がってセキュリティ関連株が売られたと報じられた。",
+    "excerpt": "**ARC Prize Foundation** は水曜に適応推論ベンチ **ARC-AGI-3** を公開した。翌日の木曜には **Google DeepMind** が **Gemini 3.1 Pro** をプレビューし、同じ日に **Model Context Protocol** が v2 の年次ロードマップを示した。裁判ではサンフランシスコの連邦地裁が **Anthropic** の申請を認め、国防総省の措置に暫定差止を出したと報じられた。ほぼ同じ頃、**OpenAI** の Sora 消費者向け終了や提携解消が各紙で伝わった。金曜は **Cursor** 2.4 と **Claude Code**（Auto モード・クラウド auto-fix）の更新が続き、週末にかけ Mythos 草稿の報道が広がってセキュリティ関連株が売られたと報じられた。",
     "weekRoundupPeriod": {
       "start": "2026-03-23",
       "end": "2026-03-29"
     },
     "body": [
-      "**3月24日（火）** — サンフランシスコの連邦地裁では **Anthropic** と国防総省をめぐる審問が開かれたと報じられ、**Rita Lin** 判事が国防総省側の「サプライチェーンリスク」の基準を問いただすやり取りが伝えられた。**ほぼ同じ頃**、**OpenAI** の **Sora** に関する消費者向け提供終了や提携解消が AP や NPR など複数媒体で立て続けに報じられた。審問から暫定差止までの法廷の流れは ?a=anthropic-pentagon-injunction-2026 、Sora 周辺は ?a=openai-sora-discontinued-2026 。",
-      "**翌25日（水）** — **ARC Prize Foundation** が **ARC-AGI-3** を公開し、静的なパズルではなくインタラクティブな環境でエージェントの適応推論を測る設計に振り替わった。**プレビュー評価では**主要フロンティアが人間基準に対し極めて低いスコアにとどまったと整理され、難易度の議論が一気に現実の数字に置き換わった。詳細は ?a=arc-agi-3-launch-2026 。",
-      "**26日（木）** — **製品とインフラの告知が同日に重なった**。**Google DeepMind** が **Gemini 3.1 Pro** のプレビューを掲げた**一方で**、**Model Context Protocol** 側は **v2** の年次ロードマップ（Streamable HTTP や OAuth 2.1 周りの整理など）を示した。**法廷では**前日までの審問を経て、**Lin** 判事が **Anthropic** の申請を認め、国防総省が同社を「サプライチェーンリスク」に指定してとった措置の**執行を止める**暫定差止命令を発したと報じられた。深掘りは ?a=gemini-3-1-pro ・ ?a=mcp-v2-spec-launch-2026 ・ ?a=anthropic-pentagon-injunction-2026 。",
-      "**27日（金）** — **開発者向けの更新が続いた**。**Cursor** が **2.4** で並列サブエージェントや画像生成などをまとめたのに**続き**、**Anthropic** は **Claude Code** の **Auto mode**（研究プレビュー）を広げた。**加えて** **Noah Zweben** 氏が、クラウド側で PR／CI をフォローする **auto-fix** を示したと伝えられた。 ?a=cursor-2-4-subagents ・ ?a=claude-code-auto-mode ・ ?a=claude-code-autofix-cloud 。",
-      "**金曜から週末** — **Fortune** や **DNyuz** ほかが、Anthropic 周辺の未公開コンテンツへのアクセス問題と、内部コードネーム **Mythos**（別名 **Capybara** と報じられた語もある）の草稿報道を続けた。**米国市場では28日**、**CrowdStrike** や **Palo Alto Networks** などセキュリティ銘柄が大きく売られ、草稿に含まれるサイバー能力の記述が材料になり得るとの見方が報じられた。事実関係は ?a=anthropic-mythos-leak 、相場の整理は ?a=anthropic-mythos-cyber-impact-2026 。"
+      "**3月24日（火）** — サンフランシスコの連邦地裁では **Anthropic** と国防総省をめぐる審問が開かれたと報じられ、**Rita Lin** 判事が国防総省側の「サプライチェーンリスク」の基準を問いただすやり取りが伝えられた。ほぼ同じ頃、**OpenAI** の Sora に関する消費者向け提供終了や提携解消が AP や NPR など複数媒体で立て続けに報じられた。審問から暫定差止までの法廷の流れは ?a=anthropic-pentagon-injunction-2026 、Sora 周辺は ?a=openai-sora-discontinued-2026 。",
+      "**翌25日（水）** — **ARC Prize Foundation** が **ARC-AGI-3** を公開し、静的なパズルではなくインタラクティブな環境でエージェントの適応推論を測る設計に振り替わった。プレビュー評価では主要フロンティアが人間基準に対し極めて低いスコアにとどまったと整理され、難易度の議論が一気に現実の数字に置き換わった。詳細は ?a=arc-agi-3-launch-2026 。",
+      "**26日（木）** — 製品とインフラの告知が同日に重なった。**Google DeepMind** が Gemini 3.1 Pro のプレビューを掲げた一方で、**Model Context Protocol** 側は v2 の年次ロードマップ（Streamable HTTP や OAuth 2.1 周りの整理など）を示した。法廷では前日までの審問を経て、Lin 判事が Anthropic の申請を認め、国防総省が同社を「サプライチェーンリスク」に指定してとった措置の執行を止める暫定差止命令を発したと報じられた。深掘りは ?a=gemini-3-1-pro ・ ?a=mcp-v2-spec-launch-2026 ・ ?a=anthropic-pentagon-injunction-2026 。",
+      "**27日（金）** — 開発者向けの更新が続いた。**Cursor** が 2.4 で並列サブエージェントや画像生成などをまとめたのに続き、**Anthropic** は **Claude Code** の Auto mode（研究プレビュー）を広げた。加えて Noah Zweben 氏が、クラウド側で PR／CI をフォローする auto-fix を示したと伝えられた。 ?a=cursor-2-4-subagents ・ ?a=claude-code-auto-mode ・ ?a=claude-code-autofix-cloud 。",
+      "**金曜から週末** — **Fortune** や DNyuz ほかが、Anthropic 周辺の未公開コンテンツへのアクセス問題と、内部コードネーム **Mythos**（別名 Capybara と報じられた語もある）の草稿報道を続けた。米国市場では28日、**CrowdStrike** や Palo Alto Networks などセキュリティ銘柄が大きく売られ、草稿に含まれるサイバー能力の記述が材料になり得るとの見方が報じられた。事実関係は ?a=anthropic-mythos-leak 、相場の整理は ?a=anthropic-mythos-cyber-impact-2026 。"
     ],
     "date": "2026-03-30",
     "author": "AI News 編集部",
@@ -89,17 +189,17 @@ export const ARTICLES = [
     "type": "feature",
     "category": "special",
     "title": "【週刊まとめ】AI開発ツール — 2026年3月16日〜22日",
-    "excerpt": "**OpenAI** は **17日（火）**に **GPT-5.4 mini** と **nano** を出した。**18日（水）**は **Windsurf** のレビュー枠が更新され、**19日（木）**に **Astral（uv・Ruff・ty）** の買収公表と生成音楽ツールの整理特集が重なった。**20日（金）**には **Cursor** による **Windsurf** 買収**完了**が伝わり、週の締めの **22日（日）**には **Codex** エージェントのレビューが掲載された。",
+    "excerpt": "**OpenAI** は火曜に **GPT-5.4 mini** と nano を出した。水曜は **Windsurf** のレビュー枠が更新され、木曜に **Astral**（uv・Ruff・ty）の買収公表と生成音楽ツールの整理特集が重なった。金曜には **Cursor** による Windsurf 買収完了が伝わり、日曜には **Codex** エージェントのレビューが掲載された。",
     "weekRoundupPeriod": {
       "start": "2026-03-16",
       "end": "2026-03-22"
     },
     "body": [
-      "**3月17日（火）** — **OpenAI** が **GPT-5.4 mini** と **GPT-5.4 nano** を同時にリリースした。mini は無料層や Codex との接合、nano は API 専用の低コスト・高速モデルとして位置づけられ、並列エージェントの末端役にも触れられた。**続く出来事の土台**として開発者向けの論点が一気に増えた日でもある。 ?a=gpt-54-mini-nano-2026",
+      "**3月17日（火）** — **OpenAI** が **GPT-5.4 mini** と GPT-5.4 nano を同時にリリースした。mini は無料層や Codex との接合、nano は API 専用の低コスト・高速モデルとして位置づけられ、並列エージェントの末端役にも触れられた。続く出来事の土台として開発者向けの論点が一気に増えた日でもある。 ?a=gpt-54-mini-nano-2026",
       "**翌18日（水）** — **Windsurf**（旧 Codeium）のレビュー枠が更新され、**Cascade** フローを軸にした段階的編集や、Anysphere 傘下での継続提供の文脈がまとめられた。 ?a=windsurf",
-      "**19日（木）** — **流れが交差した**日でもある。**OpenAI** は Python ツールチェーンの **Astral** 買収を公表し、**uv・Ruff・ty** を Codex 側に束ねる構図を示した。**別枠**では生成音楽の権利と製品線（Suno・Udio・Lyria など）の整理が特集として出た。 ?a=openai-acquires-astral-2026 ・ ?a=ai-music-generation-frontier-early-2026",
-      "**20日（金）** — **Anysphere（Cursor）** が **Codeium / Windsurf** の買収を**完了**したと発表し、**Cascade** 技術の **Cursor** への統合を予告する材料が重なった。 ?a=cursor-windsurf-merge",
-      "**22日（日）** — **OpenAI Codex** をクラウド並列実行のエージェントとしてレビューする記事が載り、PR 提出までのワークフローと **o4-mini** ベースの説明が整理された。 ?a=openai-codex-agent"
+      "**19日（木）** — 流れが交差した日でもある。OpenAI は Python ツールチェーンの **Astral** 買収を公表し、uv・Ruff・ty を Codex 側に束ねる構図を示した。別枠では生成音楽の権利と製品線（Suno・Udio・Lyria など）の整理が特集として出た。 ?a=openai-acquires-astral-2026 ・ ?a=ai-music-generation-frontier-early-2026",
+      "**20日（金）** — **Anysphere（Cursor）** が Codeium / Windsurf の買収を完了したと発表し、Cascade 技術の Cursor への統合を予告する材料が重なった。 ?a=cursor-windsurf-merge",
+      "**22日（日）** — **OpenAI Codex** をクラウド並列実行のエージェントとしてレビューする記事が載り、PR 提出までのワークフローと o4-mini ベースの説明が整理された。 ?a=openai-codex-agent"
     ],
     "date": "2026-03-23",
     "author": "AI News 編集部",
@@ -166,7 +266,8 @@ export const ARTICLES = [
       "インシデント対応の観点では、Anthropic がアクセス制限と事実関係の確認を速やかに行ったかどうか、侵害の範囲（どのアセットが何人にどの程度見えたか）が今後の開示で明らかになるかに注目が集まります。大規模 AI 企業はセキュリティ・信頼性・透明性を規制当局と顧客に説明するプレッシャーが高く、類似事案は今後も投資・パートナー DD の質問表に載りやすいでしょう。",
       "本稿は公開報道に基づく要約と文脈整理であり、内部文書の原文検証や Anthropic の正式な製品ロードマップの代替にはなりません。モデル名・性能・提供時期・価格は、必ず Anthropic の公式アナウンス、API ドキュメント、および契約書を優先して確認してください。リーク断片を根拠にした過度な決定（調達・セキュリティ方針の急転換など）は避け、一次情報が揃うまで様子を見るのが無難です。"
     ],
-    "date": "2026-03-27",
+    "newsDate": "2026-03-27",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "11分",
     "tags": [
@@ -223,7 +324,8 @@ export const ARTICLES = [
       "セキュリティは既存の権限モデルを **パススルー**で継承し、ユーザーがもともと読めないテーブルはエージェント経由でも読めない、と明示されています。推論過程やクエリ結果へのリンク開示など、検証可能性にも触れています。",
       "**教訓としての 3 点**: (1) ツールを凝縮し冗長な呼び出しを減らす — **Less is More**、(2) 手順を過度に指示せずゴールを伝える — **Guide the Goal, Not the Path**、(3) 意味はスキーマより **生成コード（パイプライン）** に宿る — **Meaning Lives in Code**。本サイトの RAG 取り込み・評価・企業向けガードレールの各記事とも相互参照しやすい題材です。"
     ],
-    "date": "2026-01-29",
+    "newsDate": "2026-01-29",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "14分",
     "tags": [
@@ -319,7 +421,8 @@ export const ARTICLES = [
       "メタデータ（ソース URL、版、著者、権限ラベル、取り込み時刻、パイプライン版）は、後からの **再処理・差分更新・デバッグ**に効きます。ACL は「格納時にフィルタ」か「検索後にフィルタ」かで設計が変わり、後述の企業向け記事とセットで決めるのが無難です。",
       "本番では **監視**も必須です。取り込み件数・失敗キュー・埋め込み API のレイテンシとエラー率、空チャンク率、平均チャンク長、nDCG やヒット率の簡易メトリクスをダッシュボード化し、アラートを張ると長期運用で劣化に気づけます。"
     ],
-    "date": "2026-03-10",
+    "newsDate": "2026-03-10",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "10分",
     "tags": [
@@ -361,7 +464,8 @@ export const ARTICLES = [
       "**閾値ルーティング** は、検索スコアや自己申告 confidence が低いときに、別インデックスを叩く・クエリを拡張する・ human escalation する・「分からない」と返す、へ振り分けるパターンです。誤答より **拒否**を選ぶドメイン（医療・法務・財務）では特に重要です。",
       "失敗タイプをタグ付け（検索漏れ／チャンク分割ミス／要約の捏造／ACL 越え）しておくと、週次レビューで **どこに投資すべきか**が見えます。"
     ],
-    "date": "2026-03-11",
+    "newsDate": "2026-03-11",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "9分",
     "tags": [
@@ -402,7 +506,8 @@ export const ARTICLES = [
       "**削除と再インデックス**（オブジェクト削除、版更新、アクセス剥奪）をどの遅延で保証するか SLA 化します。法的削除要求があるドメインでは、ベクトルストアの物理削除とメタデータの tombstone の両方を追います。",
       "**監査ログ**には「誰が・いつ・どのクエリで・どのドキュメント ID を取得したか」を残し、モデルへの入力ログとは分離して保存期限を設定します。インシデント時のスナップショット（インデックス版・ルール版）が取れると復旧が速くなります。"
     ],
-    "date": "2026-03-12",
+    "newsDate": "2026-03-12",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "9分",
     "tags": [
@@ -444,7 +549,8 @@ export const ARTICLES = [
       "フロントの **JavaScript（ブラウザ）** はビルドツール（Vite 等）と型（TypeScript）が前提になり、**エージェント向け MCP クライアント**や **WASM 連携**の例も増えています。モノレポ（pnpm / Turborepo）では **共通パッケージのバージョン**を人間が追わないと、AI が古い import を生成し続ける罠があります。",
       "周辺の「ニュースとして追うべき」軸は、(1) ランタイムのメジャー更新とセキュリティ advisory、(2) パッケージレジストリの供給網（typosquat・メンテ状況）、(3) **SBOM と CI のキャッシュ鍵**、の三段です。言語そのものより **ツールチェーンの再現性**が AI 時代には直結します。"
     ],
-    "date": "2026-03-29",
+    "newsDate": "2026-03-29",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "11分",
     "tags": [
@@ -536,13 +642,14 @@ export const ARTICLES = [
     "title": "AI アプリのバックエンドと DB — Postgres・pgvector・Supabase 周辺の設計",
     "excerpt": "RAG・チャット・エージェントの永続層は多くの場合がリレーショナル＋ベクトル拡張。Supabase（Postgres＋Auth＋Realtime＋Edge Functions）を軸に、RLS・接続プール・ハイブリッド検索の論点を整理する。",
     "body": [
-      "生成 AI プロダクトの**永続化**は、従来の CRUD に加え **会話ログ・ツール呼び出しトレース・ベクトルインデックス・メタデータ**が増えます。単一 DB で押さえるなら **PostgreSQL** が依然として現実的な既定選択で、**pgvector** や全文検索（`tsvector`）と組み合わせた **ハイブリッド検索**（キーワード＋近傍ベクトル）が実務でよく登場します。",
-      "**Supabase** はマネージド Postgres を中核に、**Auth（GoTrue 系）**・**Row Level Security** によるテナント分離・**Realtime**・**Edge Functions** を束ねた BaaS です。プロトタイプだけでなく、RAG のメタテーブルと chunk テーブルを同一クラスタに置き、**JWT クレームを RLS ポリシーに流す**パターンがドキュメント化されやすい点が強みです。接続は **プール（PgBouncer / Supavisor）** 経由か直結かで挙動差（ prepared statement・transaction mode）があるため、ORM とセットで確認します。TypeScript 層では **Prisma** と **Drizzle ORM** がよく比較されるため、選定軸は別稿で整理しています。",
-      "代替・近傍として **Neon**（ブランチ型 Postgres）や **PlanetScale**（MySQL Vitess 系）なども選ばれますが、**pgvector 前提の記事・サンプル**との親和、GIS 拡張、JSONB による柔軟なメタデータ格納では Postgres 派が厚いです。マルチクラウド要件がある場合は **データ所在地・バックアップ SLA** を契約側で先に固定します。",
-      "スキーマ設計では **ドキュメント ID・版・ACL ラベル・取り込み時刻・埋め込みモデル名と次元数**を行メタに持ち、削除・再埋め込みパイプラインと整合させます。エージェントが SQL を直接叩く構成では **読み取り専用ロール**と **許可リスト**でテーブルを縛り、書き込みはアプリ層経由に寄せると事故が減ります。",
-      "本稿は製品比較の代替ではありません。**認証・課金・監査**は自社ポリシーと合わせ、Supabase／Postgres の公式セキュリティガイド・SOC 報告の有無を毎回確認してください。"
+      "生成 AI プロダクトの永続化は、従来の CRUD に加え会話ログ・ツール呼び出しトレース・ベクトルインデックス・メタデータが増えます。単一 DB で押さえるなら **PostgreSQL** が依然として現実的な既定選択で、**pgvector** や全文検索（`tsvector`）と組み合わせたハイブリッド検索（キーワード＋近傍ベクトル）が実務でよく登場します。",
+      "**Supabase** はマネージド Postgres を中核に、Auth（GoTrue 系）・**Row Level Security** によるテナント分離・Realtime・Edge Functions を束ねた BaaS です。プロトタイプだけでなく、RAG のメタテーブルと chunk テーブルを同一クラスタに置き、JWT クレームを RLS ポリシーに流すパターンがドキュメント化されやすい点が強みです。接続はプール（PgBouncer / Supavisor）経由か直結かで挙動差（ prepared statement・transaction mode）があるため、ORM とセットで確認します。TypeScript 層では **Prisma** と **Drizzle ORM** がよく比較されるため、選定軸は別稿で整理しています。",
+      "代替・近傍として **Neon**（ブランチ型 Postgres）や **PlanetScale**（MySQL Vitess 系）なども選ばれますが、pgvector 前提の記事・サンプルとの親和、GIS 拡張、JSONB による柔軟なメタデータ格納では Postgres 派が厚いです。マルチクラウド要件がある場合はデータ所在地・バックアップ SLA を契約側で先に固定します。",
+      "スキーマ設計ではドキュメント ID・版・ACL ラベル・取り込み時刻・埋め込みモデル名と次元数を行メタに持ち、削除・再埋め込みパイプラインと整合させます。エージェントが SQL を直接叩く構成では **読み取り専用ロール** と許可リストでテーブルを縛り、書き込みはアプリ層経由に寄せると事故が減ります。",
+      "本稿は製品比較の代替ではありません。認証・課金・監査は自社ポリシーと合わせ、Supabase／Postgres の公式セキュリティガイド・SOC 報告の有無を毎回確認してください。"
     ],
-    "date": "2026-03-29",
+    "newsDate": "2026-03-29",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "12分",
     "tags": [
@@ -589,13 +696,14 @@ export const ARTICLES = [
     "title": "TypeScript バックエンドの ORM — Drizzle と Prisma を AI アプリ開発でどう切るか",
     "excerpt": "スキーマ駆動・マイグレーション・型安全クエリは、エージェントが SQL を組み立てる時代にも土台として残る。Prisma（Client・Schema・Migrate・Accelerate）と Drizzle（SQL に近い API・軽量ランタイム）の役割分け、サーバーレス Postgres・Supabase との相性を整理する。",
     "body": [
-      "LLM が **生 SQL** や **クエリビルダ文字列**を吐くデモが増えても、本番の永続層では **スキーマ版管理・接続上限・権限**を人間側でコントロールする必要があります。**ORM** は「エージェントの出力をそのまま評価する」より、**アプリの契約（型・マイグレーション・トランザクション境界）**を固定する用途で引き続き主力です。",
-      "**Prisma** は `schema.prisma` 中心のワークフローが明確で、**Prisma Client** の API が学習コストを下げ、**Prisma Migrate** でチーム開発の履歴を揃えやすいのが長所です。**Prisma Accelerate** や Data Proxy 系の接続プール／エッジ経路は、サーバーレス関数のコールドスタートと **接続スパイク**を抑えたいときに検討されます。反面、実行時クエリの細かいチューニングや「SQL にほぼ等価な追従」を求めると、 `$queryRaw` 周りの規律が必要になります。",
-      "**Drizzle ORM** は TypeScript 上で **リレーショナル SQL に近い**記述と軽量クライアントを売りにし、**drizzle-kit** でマイグレーションを管理するパターンが一般的です。バンドルサイズや Edge / Worker 志向の構成と相性がよい、とされることが多く、**postgres.js** や **Neon serverless driver** などドライバ選択を明示しやすい点が実務メリットです。チーム全員が SQL に慣れているほど設計の伸びしろが出やすい一方、ガイドラインが無いとスタイルがバラける弱点もあります。",
+      "LLM が生 SQL やクエリビルダ文字列を吐くデモが増えても、本番の永続層ではスキーマ版管理・接続上限・権限を人間側でコントロールする必要があります。**ORM** は「エージェントの出力をそのまま評価する」より、アプリの契約（型・マイグレーション・トランザクション境界）を固定する用途で引き続き主力です。",
+      "**Prisma** は `schema.prisma` 中心のワークフローが明確で、Prisma Client の API が学習コストを下げ、Prisma Migrate でチーム開発の履歴を揃えやすいのが長所です。**Prisma Accelerate** や Data Proxy 系の接続プール／エッジ経路は、サーバーレス関数のコールドスタートと接続スパイクを抑えたいときに検討されます。反面、実行時クエリの細かいチューニングや「SQL にほぼ等価な追従」を求めると、 `$queryRaw` 周りの規律が必要になります。",
+      "**Drizzle ORM** は TypeScript 上でリレーショナル SQL に近い記述と軽量クライアントを売りにし、drizzle-kit でマイグレーションを管理するパターンが一般的です。バンドルサイズや Edge / Worker 志向の構成と相性がよい、とされることが多く、postgres.js や **Neon serverless driver** などドライバ選択を明示しやすい点が実務メリットです。チーム全員が SQL に慣れているほど設計の伸びしろが出やすい一方、ガイドラインが無いとスタイルがバラける弱点もあります。",
       "AI プロダクト特有の論点は、(1) **会話ログ・ツールトレース**など巨大 JSON を `jsonb` で持つときのインデックス設計、(2) **pgvector** テーブルを ORM のスキーマに含めるか一部だけ生 SQL に逃がすか、(3) **RLS** が効いた接続ユーザーとアプリ用ロールの分離、の三点です。エージェントに「任意のマイグレーション」を任せる運用は避け、**人間レビュー必須のパイプライン**に固定するのが無難です。",
       "選定の決め手は信仰や炎上ではなく、**チームの SQL 文化・デプロイ形態（長寿命サーバ vs サーバーレス）・観測性**です。新規 PoC なら両方を小さく触り、マイグレーション速度と CI の書き方、ステージングの破壊的変更の扱いを比較するとブレが減ります。最終的なライセンス・クラウド課金・データ所在地は各公式の pricing / DPA を参照してください。"
     ],
-    "date": "2026-03-30",
+    "newsDate": "2026-03-30",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "11分",
     "tags": [
@@ -666,7 +774,7 @@ export const ARTICLES = [
   {
     "id": "aqua-voice-review",
     "type": "review",
-    "category": "voice",
+    "category": "media",
     "title": "Aqua Voice — Mac/Windows 向けAIディクテーション（フローティングUI）",
     "excerpt": "録音→転写→アクティブなアプリへペーストまでを一体で扱う製品向けディクテーション。公式 FAQ では全アカウント 1,000 語の無料枠、Avalon モデルは Pro で選択可能、iPhone アプリは未対応とされる。",
     "body": [
@@ -675,7 +783,8 @@ export const ARTICLES = [
       "注意点として、モバイル iOS 版は FAQ 上「未対応」とされています。Apple シリエコシステムだけで完結させたい場合は別製品との比較が必要です。",
       "精度の評価はドメイン依存です。ベンダーが公表する技術用語向けスコアと、会話全般の WER は別物なので、自チームの音声サンプルで試すのが確実です。"
     ],
-    "date": "2026-03-07",
+    "newsDate": "2026-03-07",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "4分",
     "rating": 4,
@@ -706,7 +815,7 @@ export const ARTICLES = [
   {
     "id": "ai-voice-input-tools-landscape-2026",
     "type": "feature",
-    "category": "voice",
+    "category": "media",
     "title": "AI 音声入力ツールの俯瞰 — 製品型と API 型、Whisper と gpt-4o-transcribe",
     "excerpt": "OSS の Whisper と OpenAI Speech-to-Text API（whisper-1 / gpt-4o-transcribe 系）は別ライン。コンシューマー製品とクラウド STT API の選び方、レイテンシ・コスト・プライバシーの論点を整理する。",
     "body": [
@@ -716,7 +825,8 @@ export const ARTICLES = [
       "製品側（Aqua 等）はフローティング UI・ペースト演出・ショートカット統合まで含めた体験勝負、API 側はカスタムパイプラインとの接続勝負、という住み分けが典型です。",
       "下の表は「調査の出発点」用です。契約 SLA・データ居留・モデル ID は都度ベンダー表を正としてください。"
     ],
-    "date": "2026-03-14",
+    "newsDate": "2026-03-14",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "11分",
     "tags": [
@@ -801,7 +911,7 @@ export const ARTICLES = [
   {
     "id": "ai-music-generation-frontier-early-2026",
     "type": "feature",
-    "category": "voice",
+    "category": "media",
     "title": "生成音楽のフロンティア — Suno・Udio・Lyria・Stable Audio 周辺の整理（2026年初頭）",
     "excerpt": "創作者ツールとライセンス・レーベル動向が高速な領域。評価額やバージョン番号は報道・公式ヘルプを正とし、数値ヒャールには要注意。企業利用では権利表記と学習オプトアウトの有無を別途確認。",
     "body": [
@@ -811,7 +921,8 @@ export const ARTICLES = [
       "Google 側は Lyria などブランドが複数接続先（消費者アプリ、API、Vertex 等）を持つ構成で、発表時点の The Keyword・開発者ブログを軸に追うのが安全です。",
       "Stable Audio など別系統は「いつ発表された製品か」を公式 post の年と突き合わせ、古い記事の断定をそのまま写さないことが重要です。企業の広告 BGM 用途は別途ポリシー確認が必要です。"
     ],
-    "date": "2026-03-19",
+    "newsDate": "2026-03-19",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "9分",
     "tags": [
@@ -843,15 +954,16 @@ export const ARTICLES = [
   {
     "id": "ai-image-generators-landscape-early-2026",
     "type": "feature",
-    "category": "vision",
+    "category": "media",
     "title": "画像生成AIの地形図（2026年初頭）— GPT Image・MJ・Flux・Imagen から Nano Banana 2 まで",
-    "excerpt": "解像度競争に加え、複雑な構図や空間関係へのプロンプト忠実度、用途特化が選択軸の中心になっている。以下は話題モデルの整理用ダイジェスト—版数・価格・利用条件は都度公式を正とすること。",
+    "excerpt": "解像度競争に加え、複雑な構図や空間関係へのプロンプト忠実度、用途特化が選択軸の中心になっている。GPT Image・Midjourney・Flux・Imagen から Seedream まで、話題モデルの位置づけと強みを整理する。",
     "body": [
-      "2026年初頭の画像生成は、単純な「きれいさ」より **指示への追従**（空間関係・構図・オブジェクト数）と **用途別の最適化** が際立っています。ベンダーによって版数表記・API 名・消費者アプリ名が一致しないため、契約や本番組み込みでは **リリースノートと pricing を直接確認**してください。",
-      "話題のラインアップをざっくり押さえると、**アート・ディレクション寄り**では Midjourney 系、**フォトリアル寄り**では Flux（Black Forest Labs）などの評価が多く出やすい一方、**画像内テキスト**では Ideogram や GPT Image、**ロゴ・ベクター**では Recraft、**クリエイティブクラウド統合と利用条項**では Adobe Firefly、**オンプレ・カスタム**では Stable Diffusion 系列、**エンタープライズ文脈の Imagen** と **Gemini エコシステム上の Nano Banana / Imagen** という住み分けが議論でよく引用されます（いずれも「常に勝つ」ではなく案件依存）。",
-      "Google 周りは **Imagen 4**（Cloud / 開発者向けドキュメント側）と、別稿で扱う **Nano Banana 2（Gemini 3.1 Flash Image）** が表裏で混同されやすいです。後者は動画ツール **Flow** の既定「画像」モデルでもあり、**動画生成そのもの**（Veo 等）とは別ラインです。動画の比較は当サイトの動画まとめ稿を参照してください。"
+      "2026年初頭の画像生成は、単純な「きれいさ」より **指示への追従**（空間関係・構図・オブジェクト数）と用途別の最適化が際立っています。ベンダーによって版数表記・API 名・消費者アプリ名が一致しないため、契約や本番組み込みではリリースノートと pricing を直接確認してください。",
+      "話題のラインアップをざっくり押さえると、アート・ディレクション寄りでは **Midjourney** 系、フォトリアル寄りでは **Flux**（Black Forest Labs）などの評価が多く出やすい一方、画像内テキストでは **Ideogram** や GPT Image、ロゴ・ベクターでは Recraft、クリエイティブクラウド統合と利用条項では Adobe Firefly、オンプレ・カスタムでは Stable Diffusion 系列、エンタープライズ文脈の Imagen と Gemini エコシステム上の Nano Banana / Imagen という住み分けが議論でよく引用されます（いずれも「常に勝つ」ではなく案件依存）。",
+      "Google 周りは **Imagen 4**（Cloud / 開発者向けドキュメント側）と、別稿で扱う **Nano Banana 2**（Gemini 3.1 Flash Image）が表裏で混同されやすいです。後者は動画ツール Flow の既定「画像」モデルでもあり、動画生成そのもの（Veo 等）とは別ラインです。動画の比較は当サイトの動画まとめ稿を参照してください。"
     ],
-    "date": "2026-03-01",
+    "newsDate": "2026-03-01",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "12分",
     "tags": [
@@ -972,17 +1084,18 @@ export const ARTICLES = [
   {
     "id": "google-nano-banana-2-gemini-flash-image-2026",
     "type": "feature",
-    "category": "vision",
+    "category": "media",
     "title": "Google「Nano Banana 2」— Gemini 3.1 Flash Image と動画ツール Flow との見分け方",
     "excerpt": "2026年2月26日、Google DeepMind が画像生成モデル Nano Banana 2（技術名 Gemini 3.1 Flash Image）を発表。Pro 寄りの品質と Flash 級の速度、最大5キャラクターの一貫性などが売り。Flow の既定モデルでもあるため「動画AI」と混同されやすい点を整理する。",
     "body": [
       "**Nano Banana 2 は画像生成・編集モデル**です。The Keyword の製品名は *Nano Banana 2 (Gemini 3.1 Flash Image)* と明記されており、テキスト→**動画クリップ**を直接出す Veo 系とは別ラインです。",
-      "ユーザー目線で紛れやすいのは **Google Flow** です。Flow は動画制作向けプラットフォームですが、公式ブログによれば **既定の「画像」生成モデルが Nano Banana 2** に更新され、Flow 利用者向けは **クレジット 0** で利用できる説明があります。タイムライン用のキービジュアルやボード素材を高速に回す文脈で動画ワークフローに載るため、「動画AIの新モデル」と誤読されやすい、という整理が実務的です。実際のテキスト→動画生成は別途 Veo などを参照してください（当サイトの動画まとめ稿）。",
-      "能力面の要点は次のとおりです。**Gemini の世界知識・検索グラウンディング**を活かした被写体表現、**画像内テキストの精密描画と翻訳・ローカライズ**、**最大5キャラクター程度の一貫性**と単一ワークフロー内で最大 **14オブジェクト**までの忠実度維持、**複雑な指示への追従**、**512px から 4K まで**の解像度・アスペクト比の指定、といった Pro 寄りの機能を **Flash 級の速度**で回す、というプロダクト訴求です。",
-      "展開面では **Gemini アプリ**（Fast / Thinking / Pro で Nano Banana Pro に置き換え。有料層は Pro を再生成で継続利用可能）、**Google 検索**（AI Mode / Lens など）、**Gemini API・AI Studio・Vertex AI（プレビュー）**、**Flow**、**Google  Ads** などにロールアウトとされています。API のモデル ID・価格は `gemini-3.1-flash-image-preview` の表記で公式 pricing を正としてください。",
-      "プロvenance として Google は **SynthID** と **C2PA Content Credentials** の併用を継続すると述べています。生成物の開示・検証ポリシーは組織のガイドラインと合わせて確認が必要です。"
+      "ユーザー目線で紛れやすいのは **Google Flow** です。Flow は動画制作向けプラットフォームですが、公式ブログによれば既定の「画像」生成モデルが Nano Banana 2 に更新され、Flow 利用者向けはクレジット 0 で利用できる説明があります。タイムライン用のキービジュアルやボード素材を高速に回す文脈で動画ワークフローに載るため、「動画AIの新モデル」と誤読されやすい、という整理が実務的です。実際のテキスト→動画生成は別途 Veo などを参照してください（当サイトの動画まとめ稿）。",
+      "能力面の要点は次のとおりです。Gemini の世界知識・検索グラウンディングを活かした被写体表現、画像内テキストの精密描画と翻訳・ローカライズ、**最大5キャラクター程度の一貫性**と単一ワークフロー内で最大14オブジェクトまでの忠実度維持、複雑な指示への追従、512px から 4K までの解像度・アスペクト比の指定、といった Pro 寄りの機能を **Flash 級の速度**で回す、というプロダクト訴求です。",
+      "展開面では **Gemini アプリ**（Fast / Thinking / Pro で Nano Banana Pro に置き換え。有料層は Pro を再生成で継続利用可能）、Google 検索（AI Mode / Lens など）、Gemini API・AI Studio・Vertex AI（プレビュー）、Flow、Google Ads などにロールアウトとされています。API のモデル ID・価格は `gemini-3.1-flash-image-preview` の表記で公式 pricing を正としてください。",
+      "プロvenance として Google は **SynthID** と C2PA Content Credentials の併用を継続すると述べています。生成物の開示・検証ポリシーは組織のガイドラインと合わせて確認が必要です。"
     ],
-    "date": "2026-02-26",
+    "newsDate": "2026-02-26",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "7分",
     "tags": [
@@ -1030,7 +1143,7 @@ export const ARTICLES = [
   {
     "id": "ai-video-generators-landscape-2026",
     "type": "feature",
-    "category": "video",
+    "category": "media",
     "title": "動画生成モデルの地形図 — Veo・Runway・Kling などとマルチモデル・パイプライン",
     "excerpt": "テキスト→動画、参照映像、ネイティブ音声、4K／長尺、物理シミュレーション寄りの品質競争が続く。単体ベンダー鎖国より、用途別に複数モデルを束ねる構成が増えている。",
     "body": [
@@ -1040,7 +1153,8 @@ export const ARTICLES = [
       "速報的な「サービス終了」や価格改定は二次報道だけで確定せず、**公式チャンジログ or pricing** を毎回見に行く運用が安全です。",
       "本サイト別稿ではフロンティア間の料金の軸比較と、Sora 終了報道の整理も参照してください。"
     ],
-    "date": "2026-03-08",
+    "newsDate": "2026-03-08",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "8分",
     "tags": [
@@ -1066,7 +1180,7 @@ export const ARTICLES = [
   {
     "id": "ai-video-deepfake-compliance-2026",
     "type": "feature",
-    "category": "video",
+    "category": "media",
     "title": "生成動画とコンプライアンス — ディープフェイク規制・開示・C2PA の実務",
     "excerpt": "生成・編集が容易になるほど、開示義務・本人同意・選挙広告・著名人の類似が論点になる。制作フローにメタデータ署名と人間確認ゲートを組み込む話に整理する。",
     "body": [
@@ -1075,7 +1189,8 @@ export const ARTICLES = [
       "社内利用でも「社外配布物だけチェック」では足りず、**個人情報・労務・パートナー契約**側の「AI 生成可否」条項が先に絡むことがあります。",
       "技術だけでは止められないため、**人間の承認ステップ・版管理・監査ログ**をセットで設計します。"
     ],
-    "date": "2026-03-08",
+    "newsDate": "2026-03-08",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "7分",
     "tags": [
@@ -1101,7 +1216,7 @@ export const ARTICLES = [
   {
     "id": "openai-sora-discontinued-2026",
     "type": "news",
-    "category": "video",
+    "category": "media",
     "title": "報道: OpenAI が Sora の提供終了を表明 — 計算・戦略・ガードレールの文脈",
     "excerpt": "2026年3月頃、AP・NPR・Business Insider などが Sora のアプリ／関連 API 終了を伝えた。最終的な公式文言・日付は openai.com 側の確認を優先する。",
     "body": [
@@ -1111,7 +1226,8 @@ export const ARTICLES = [
       "クリエイター向けには、既存クリップのエクスポートや権利帰属、代替パイプライン（別稿のフロンティア比較）を早めに確認する動きが想定されます。",
       "本サイトでは規模の大きい話題のため速報枠で掲載するが、数値・内部事情の噂は掲げない方針とする。"
     ],
-    "date": "2026-03-26",
+    "newsDate": "2026-03-26",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "5分",
     "tags": [
@@ -1147,7 +1263,7 @@ export const ARTICLES = [
   {
     "id": "ai-video-frontier-models-march-2026-pricing",
     "type": "feature",
-    "category": "video",
+    "category": "media",
     "title": "動画フロンティアの料金の軸 — Veo 3.1・Runway Gen-4.5・Kling など（公式再確認前提）",
     "excerpt": "秒単価・クレジット制・バンドル販売が混在するため「安い／高い」一発比較は誤魔化しやすい。公式 pricing の単位（秒・分・解像度・Fast/Standard）を揃えて読む。",
     "body": [
@@ -1157,7 +1273,8 @@ export const ARTICLES = [
       "Sora に関しては終了報道があり（別稿）、現行の新規採用は計画から外す判断が入り得ます。",
       "**いつでも公式を正にする**前提で、以下の表は2026年3月末時点の調査メモです。"
     ],
-    "date": "2026-03-30",
+    "newsDate": "2026-03-30",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "10分",
     "tags": [
@@ -1236,7 +1353,7 @@ export const ARTICLES = [
   },
   {
     "id": "claude-code-auto-mode",
-    "type": "review",
+    "type": "news",
     "category": "cli",
     "title": "Claude Code「Auto mode」— 権限プロンプトを減らす分類器モード（auto）",
     "excerpt": "2026-03-24 発表の研究プレビュー。ドキュメント・設定では Auto mode / permission-mode auto。宣材によっては Auto fix と併記。別機能の PR 向け「auto-fix in the cloud」（3/27 発表）は別記事で解説。",
@@ -1248,7 +1365,8 @@ export const ARTICLES = [
       "混同しやすい点: UI の「Auto accept edits」は権限モード `acceptEdits` で、`auto`（Auto mode）とは別物です。",
       "同時期の関連: Claude Code Channels、Bare Mode、Analytics API、および auto-fix in the cloud（PR 自動フォロー）です。"
     ],
-    "date": "2026-03-27",
+    "newsDate": "2026-03-27",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "6分",
     "rating": 5,
@@ -1294,7 +1412,8 @@ export const ARTICLES = [
       "運用では「その MCP が触り得るスコープ」を最小化します。広いファイルシステムアクセス・任意 URL 取得・シェル実行を持つサーバは、**サプライチェーン攻撃（悪意あるサーバ・更新）とインジェクション**の両方の面でリスクが大きくなります。社内利用でもロックファイル・署名・許容リストの運用を検討してください。",
       "エージェント製品ごとに MCP の UI（有効化・ログ・再接続）が異なるため、「仕様は同じでも接続パスが違う」と心得、**公式の接続例とセキュリティ注意**を各クライアントのドキュメントで確認するのが安全です。"
     ],
-    "date": "2026-03-10",
+    "newsDate": "2026-03-10",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "8分",
     "tags": [
@@ -1329,7 +1448,8 @@ export const ARTICLES = [
       "Claude Code では `.claude/skills/` などの配置がドキュメント化され、API / Agent SDK でも Skill ツール経由で読み込む例が示されています。Cursor は changelog 上 Skills をプロダクト機能として扱っており、**同じ「スキル」という語でも実装と検索パスが製品依存**である点に注意が必要です。",
       "チーム運用では、(1) スキル単位のオーナーと改版履歴、(2) 機密・患者安全など高リスク領域の人間ゲート、(3) 外部コピペとの混同防止（名前空間）をルール化すると安全です。**複数エージェント製品を併用する場合**は、フロントマターの互換フィールドやディレクトリ規約を揃えると移行コストが下がります。"
     ],
-    "date": "2026-03-12",
+    "newsDate": "2026-03-12",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "9分",
     "tags": [
@@ -1371,7 +1491,8 @@ export const ARTICLES = [
       "落とし穴は、(1) ルール同士の矛盾（古い節が残る）、(2) 機密を誤ってコミット、(3) 「ルールに書いたから安全」という誤認（権限・ネットワーク境界は別問題）です。**定期的なlint・オーナー・有効期限コメント**を入れると運用が安定します。",
       "サイト公開向けの **llms.txt** は、検索クローラではなく LLM が一次情報を辿るための**入口インデックス**として位置づけられています。自社ドキュメントを載せる場合は、正本の URL と要約の境界をはっきりさせ、著作権・利用条件に沿った引用に留めます。"
     ],
-    "date": "2026-03-12",
+    "newsDate": "2026-03-12",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "9分",
     "tags": [
@@ -1417,7 +1538,8 @@ export const ARTICLES = [
       "同種ツールとして Google の **kubectl-ai** など別実装もあり、モデルサポート・配布形態（Krew プラグイン等）が異なります。採用時はライセンス・通信先（クラウド LLM へプロンプトが出るか）・ログ保管を DD で確認します。",
       "本稿はツール紹介と注意喚起であり、特定環境での合否判断やセキュリティ監査の代替ではありません。"
     ],
-    "date": "2026-03-14",
+    "newsDate": "2026-03-14",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "6分",
     "tags": [
@@ -1452,7 +1574,8 @@ export const ARTICLES = [
       "どちらの構成でも、**(1) プロンプトに環境変数やパスが混入しないか、(2) 履歴・ログの保存先、(3) サブスクリプションとデータ利用条項**を必ず読みます。シェル補助は実行権限に直結するため、**提案コマンドをそのまま実行しない**習慣づけが重要です。",
       "Fish 以外のシェルでは同種の試み（ラッパー、別プロセスのエージェント）を組み合わせることになり、体験の統一度は下がりがちです。チームで標準シェルを揃えるか、CI では POSIX sh 固定にするかは別途方針が必要です。"
     ],
-    "date": "2026-03-14",
+    "newsDate": "2026-03-14",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "7分",
     "tags": [
@@ -1477,7 +1600,7 @@ export const ARTICLES = [
   },
   {
     "id": "cursor-2-4-subagents",
-    "type": "review",
+    "type": "news",
     "category": "editor",
     "title": "Cursor 2.4 リリース — 並列サブエージェントとクラウドVM実行で開発を高速化",
     "excerpt": "最大20個のエージェントを同時並列実行可能に。クラウドVM上での独立実行により、ローカルマシンのリソースを消費せず大規模タスクを処理。BugBotも新登場。",
@@ -1486,7 +1609,8 @@ export const ARTICLES = [
       "サブエージェントはクラウドVM上で実行されるため、ローカルマシンに負荷をかけずに10〜20のエージェントを同時に稼働させることが可能です。テストでは、8,000行のNext.jsアプリのルーター移行がシリアル実行の17分から並列実行で9分に短縮されました。",
       "あわせて「BugBot」も発表されました。PRレベルの自動コードレビューを行い、バグの早期発見を支援します。カスタムプロンプト、ツールアクセス制御、モデル選択などサブエージェントの柔軟なカスタマイズも可能です。"
     ],
-    "date": "2026-03-27",
+    "newsDate": "2026-03-27",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "5分",
     "rating": 5,
@@ -1509,7 +1633,7 @@ export const ARTICLES = [
   },
   {
     "id": "gemini-cli-v035",
-    "type": "review",
+    "type": "news",
     "category": "cli",
     "title": "Gemini CLI v0.35.0 — サブエージェント強化とPlan Mode追加、無料枠は縮小へ",
     "excerpt": "Google Gemini CLIの最新安定版がリリース。サブエージェントアーキテクチャの大幅強化、セキュリティ向上のサンドボックス機能。一方で3月25日よりPro以上が有料に。",
@@ -1519,7 +1643,8 @@ export const ARTICLES = [
       "Plan Modeも新たに追加され、コード変更前にエージェントが計画を提示し、ユーザーの承認を得てから実行する慎重なワークフローが可能になりました。カスタムキーバインドやVimモードの強化など、開発者体験の改善も行われています。",
       "一方、3月25日よりGemini Proモデルは有料サブスクリプション限定となり、無料枠はGemini Flashモデルのみに制限されます。大規模コンテキストを活かした利用には課金が必要になる点に注意が必要です。"
     ],
-    "date": "2026-03-27",
+    "newsDate": "2026-03-27",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "5分",
     "rating": 4,
@@ -1542,8 +1667,8 @@ export const ARTICLES = [
   },
   {
     "id": "copilot-jetbrains-ga",
-    "type": "review",
-    "category": "cli",
+    "type": "news",
+    "category": "editor",
     "title": "GitHub Copilot、JetBrainsで正式GA — Coding Agentの起動速度も50%改善",
     "excerpt": "Agent ModeがVS Code以外にもJetBrains、Eclipse、Xcodeへ展開。セマンティックコード検索の導入で初期化時間が40秒→20秒に短縮。",
     "body": [
@@ -1551,7 +1676,8 @@ export const ARTICLES = [
       "セマンティックコード検索の導入により、ファイルパスを指定しなくても概念的に関連するコードを自動発見できるようになりました。これにより、Coding Agentの初期化時間が従来の約40秒から20秒へと50%短縮されています。",
       "EclipseとXcodeへのAgent Mode展開もパブリックプレビューとして開始され、全Copilotユーザーが利用可能です。さらにセッションログの可視性も向上し、リポジトリクローンやエージェントファイアウォールのステップが確認できるようになりました。"
     ],
-    "date": "2026-03-27",
+    "newsDate": "2026-03-27",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "4分",
     "rating": 4,
@@ -1574,8 +1700,8 @@ export const ARTICLES = [
   },
   {
     "id": "gemini-3-1-pro",
-    "type": "feature",
-    "category": "special",
+    "type": "news",
+    "category": "model",
     "title": "Gemini 3.1 Pro 発表 — ARC-AGI-2スコア77.1%、推論性能が前世代の倍以上に",
     "excerpt": "Google DeepMindが3月26日にプレビュー公開。1Mトークンコンテキスト、推論ベンチマーク大幅向上。価格は据え置きで開発者・企業向けに順次展開。",
     "body": [
@@ -1584,7 +1710,8 @@ export const ARTICLES = [
       "価格は入力$2/出力$18（100万トークンあたり）で、Gemini 3 Proから据え置き。Geminiアプリ（Pro/Ultraプラン）、AI Studio、Vertex AI、Gemini CLI、Android Studio、NotebookLM で利用可能です。JetBrains IDE、Xcode、Eclipseでも GitHub Copilot経由で利用できます。",
       "エージェントワークフローの改善にも注力しており、Gemini Code Assistは個人開発者向けに完全無料化されました。月間18万リクエストまで無料で利用でき、VS CodeとJetBrains IDEに対応しています。"
     ],
-    "date": "2026-03-27",
+    "newsDate": "2026-03-27",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "5分",
     "tags": [
@@ -1603,8 +1730,8 @@ export const ARTICLES = [
   },
   {
     "id": "gpt-5-4-release",
-    "type": "feature",
-    "category": "special",
+    "type": "news",
+    "category": "model",
     "title": "GPT-5.4 リリース — 推論・コーディング・エージェントを統合した「ワンモデル」",
     "excerpt": "OpenAIが3月5日にリリースした最新フラグシップモデル。GPT-5.3-Codexのコーディング性能とGPT-5.2の推論力を統合し、25%高速化。",
     "body": [
@@ -1613,7 +1740,8 @@ export const ARTICLES = [
       "Codexプラットフォームにはファーストクラスのプラグイン対応、マルチエージェントワークフロー、画像処理の改善、TUIのプロンプトリコール・ファイルウォッチ機能なども追加されました。",
       "なお3月11日付でGPT-5.1モデル（Instant/Thinking/Pro）はChatGPTから廃止されています。GPT-5.4はChatGPT Pro/Team/Enterpriseプランで利用可能です。"
     ],
-    "date": "2026-03-27",
+    "newsDate": "2026-03-27",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "4分",
     "tags": [
@@ -1632,8 +1760,8 @@ export const ARTICLES = [
   },
   {
     "id": "windsurf-pricing-overhaul",
-    "type": "feature",
-    "category": "special",
+    "type": "news",
+    "category": "product",
     "title": "Windsurf、クレジット制を廃止しクォータ制へ全面移行 — Pro価格は$20に",
     "excerpt": "3月19日、Windsurfがクレジットベースの料金体系から日次・週次クォータ制に変更。Pro価格が$15→$20に上昇し、Cursorとの価格差が消滅。",
     "body": [
@@ -1642,7 +1770,8 @@ export const ARTICLES = [
       "クォータ制では、月間プールではなく日次・週次のレートリミットとして使用量が管理されます。既存の有料ユーザーは現行価格が継続適用され、新体系を試すための無料期間も設けられています。",
       "ユーザーコミュニティからは料金改定に対する批判の声も上がっています。Cursor傘下に入ったことで独自の差別化が難しくなる中、今後の機能面での差別化に注目が集まります。"
     ],
-    "date": "2026-03-27",
+    "newsDate": "2026-03-27",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "3分",
     "tags": [
@@ -1663,7 +1792,8 @@ export const ARTICLES = [
       "オープンソースで提供され、Googleアカウントがあれば無料枠（1日1,000リクエスト）で利用開始できます。Google Cloud、Firebase、Vertex AIとのネイティブ統合により、Googleエコシステム内での開発体験が大幅に向上します。",
       "MCP（Model Context Protocol）にも対応しており、サードパーティツールとの連携も可能です。ただし、エージェント機能の成熟度ではClaude CodeやCursorにまだ一歩及ばない印象です。コンテキスト量で勝負する場面では強力な選択肢になるでしょう。"
     ],
-    "date": "2026-03-25",
+    "newsDate": "2026-03-25",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "5分",
     "rating": 4,
@@ -1695,7 +1825,8 @@ export const ARTICLES = [
       "最大の特徴は並列実行です。複数のタスクを同時にCodexに投げることができ、それぞれが独立したサンドボックスで実行されます。バグ修正、機能追加、テスト作成などを一度に並行して進められるのは大きな生産性向上につながります。",
       "o4-miniモデルをベースとし、コード理解と生成に最適化されています。ChatGPT Pro/Team/Enterpriseプランで利用可能で、API経由での利用にも対応予定です。ただし、ローカル環境での実行には対応しておらず、オフライン利用はできません。"
     ],
-    "date": "2026-03-22",
+    "newsDate": "2026-03-22",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "5分",
     "rating": 4,
@@ -1718,8 +1849,8 @@ export const ARTICLES = [
   },
   {
     "id": "cursor-windsurf-merge",
-    "type": "feature",
-    "category": "special",
+    "type": "news",
+    "category": "product",
     "title": "Cursor、Windsurf（Codeium）を買収完了 — AIエディタ市場の統合が加速",
     "excerpt": "Anysphere社がCodeium社のWindsurfを買収。Cascadeフロー技術をCursorに統合予定。AIエディタ市場の寡占化が進む。",
     "body": [
@@ -1727,7 +1858,8 @@ export const ARTICLES = [
       "この買収により、CursorはWindsurfの独自技術「Cascade」フローを統合する計画です。Cascadeはタスクを段階的に分解して実行する技術で、複雑な変更を安全に進められる点が評価されていました。",
       "一方で、この統合によりAIエディタ市場の選択肢が減少することへの懸念も出ています。Windsurf単体の提供は当面継続されますが、長期的にはCursorへの一本化が予想されます。OSS陣営のZed AI、Void、PearAIへの注目が高まる可能性もあります。"
     ],
-    "date": "2026-03-20",
+    "newsDate": "2026-03-20",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "4分",
     "tags": [
@@ -1740,15 +1872,23 @@ export const ARTICLES = [
     "id": "claude-code",
     "type": "review",
     "category": "cli",
-    "title": "Claude Code レビュー — 2026年最強のCLIエージェント",
-    "excerpt": "claudeコマンド1つでリポジトリ全体を読み込み、バグ修正からテスト実行、コミットまで自律的に行う。Opus 4.6の1Mコンテキストによる「深い推論」が、複雑なリファクタリングを可能にしている。",
+    "title": "Claude Code レビュー — Anthropic のCLIエージェント徹底解説",
+    "excerpt": "claudeコマンド1つでリポジトリ全体を読み込み、バグ修正からテスト実行、コミットまで自律的に行う。Opus 4.6の1Mコンテキストによる深い推論が、複雑なリファクタリングを可能にしている。",
     "body": [
-      "Anthropic が提供する Claude Code は、2026年現在、最も強力なCLI型AIエージェントです。ターミナルで claude と入力するだけで、プロジェクト全体のコンテキストを理解し、開発タスクを自律的に遂行します。",
-      "最大の強みは、Opus 4.6モデルの1Mコンテキストウィンドウによる「深い推論能力」です。単純なコード生成ではなく、アーキテクチャレベルの判断を伴う複雑なリファクタリングにも対応できます。Fast Modeでは同じOpus 4.6モデルのまま出力速度を向上させることも可能です。",
-      "MCP（Model Context Protocol）への対応により、外部ツールやデータソースとの連携が容易です。Hooks機能でイベント駆動のカスタムワークフローも構築できます。GitHub、Jira、Slackなどの開発ワークフロー全体をカバーできる点も大きな魅力です。",
-      "料金はPro プラン $25/月から。ヘビーユーザーにはMax プラン（$100/月〜）も用意されています。Claude Code SDKによるカスタムエージェント構築にも対応し、SOC2準拠でエンタープライズ利用も万全。Claude Code単体でARR25億ドル規模に成長し、Anthropic全体のARRは190億ドルに達しています。"
+      "**Claude Code** は **Anthropic** が提供するCLI型AIエージェントで、ターミナルから claude コマンドを実行するだけでプロジェクト全体のコンテキストを取得し、開発タスクを自律的に遂行する。ファイル編集、bashコマンド実行、Git操作、テスト実行までを一貫して処理でき、CLAUDE.md ファイルにプロジェクト固有のルールを記述することでチーム標準のワークフローを維持できる。",
+      "主要な機能として、MCP（**Model Context Protocol**）サーバーへの接続による外部ツール・データソース連携、イベント駆動で前処理・後処理を差し込む Hooks、再利用可能なプロンプトテンプレートである Skills がある。Auto mode（研究プレビュー）を有効にするとユーザー確認なしで連続的にタスクを実行し、大規模なリファクタリングやマイグレーション作業を効率化できる。Opus 4.6 モデルの1Mコンテキストウィンドウにより、数百ファイル規模のリポジトリでもアーキテクチャレベルの判断が可能になっている。",
+      "料金体系は3種類ある。Pro プラン（月額 $20）は一般的な開発タスクに十分な利用枠を提供し、Max プラン（月額 $100 または $200）はヘビーユーザー向けに拡張された利用枠と Fast Mode を含む。API 経由での利用も可能で、その場合はトークン単位の従量課金となる。Claude Code SDK を使えばカスタムエージェントの構築もでき、SOC 2 準拠によりエンタープライズ環境にも導入しやすい。",
+      "コンテキスト理解の深さとエージェント的な自律性は現行CLIツールの中でも高い水準にある。一方で、大量のトークンを消費するためコストが膨らみやすい点、Auto mode がまだ研究プレビュー段階である点には注意が必要となる。チームでの利用では CLAUDE.md による規約共有と Hooks によるガードレールの組み合わせが実用上の鍵になる。"
     ],
-    "date": "2026-03-27",
+    "primarySources": [
+      {
+        "title": "Claude Code Documentation",
+        "site": "Anthropic",
+        "url": "https://docs.anthropic.com/en/docs/claude-code/overview"
+      }
+    ],
+    "newsDate": "2026-03-27",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "8分",
     "rating": 5,
@@ -1774,14 +1914,23 @@ export const ARTICLES = [
     "id": "cursor-cli",
     "type": "review",
     "category": "cli",
-    "title": "Cursor CLI (Composer) レビュー — IDE一体型の最強CLI",
-    "excerpt": "IDE一体型でありながら、CLIモード（Composer）が極めて強力。自然言語で伝えるだけで、関連ファイルを自動で見つけ出し、変更案を提示する。",
+    "title": "Cursor CLI (Composer) レビュー — IDE一体型のAIコーディング環境",
+    "excerpt": "IDE一体型でありながら、CLIモード（Composer）が強力。自然言語で伝えるだけで、関連ファイルを自動で見つけ出し、変更案を提示する。",
     "body": [
-      "Anysphere社のCursorは、VS Codeフォークとして最も成功したAIエディタですが、そのCLIモード（Composer）も非常に強力です。Windsurf買収によりCascade技術の統合も進行中です。",
-      "開発者が「何をしたいか」を自然言語で伝えると、プロジェクト内の関連ファイルを自動で特定し、複数ファイルにまたがる変更案を一括で提示します。VS Codeとのシームレスな同期により、CLI操作の結果がエディタにリアルタイムで反映される点が大きな強みです。",
-      "Background Agent機能により、バックグラウンドでの自律的なタスク実行にも対応。Privacy Modeを有効にすることで、コードがモデルの学習に使用されることを防ぐことができ、企業利用にも適しています。月額$20で全機能にアクセスできるコストパフォーマンスも魅力的です。"
+      "**Cursor** は **Anysphere** 社が開発する VS Code フォークベースのAIエディタで、Composer と呼ばれるエージェントモードを中核機能として備えている。Composer はプロジェクト全体をインデックスし、自然言語の指示から関連ファイルを自動的に特定して複数ファイルにまたがる変更を一括生成する。Cmd+K によるインライン編集との使い分けにより、小さな修正から大規模リファクタリングまで柔軟に対応できる。",
+      "2026年に入り **Background Agent** 機能が追加され、バックグラウンドでの自律的タスク実行が可能になった。開発者がコードレビュー中に別のタスクを Agent に任せるといった並列ワークフローが実現する。モデル選択の自由度も高く、Sonnet 4.6、Opus 4.6、GPT-5.4 など複数モデルから切り替えられる。Windsurf（Codeium）買収により Cascade フロー技術の統合も進行中で、段階的なタスク分解による安全な実行が今後加わる見込みとなっている。",
+      "料金プランは3段階構成で、Hobby プランは無料で基本的な補完と限定的な Composer 利用が可能。Pro プラン（月額 $20）では無制限の補完と十分な Agent 利用枠が付与される。Business プラン（月額 $40）は組織管理、SAML SSO、Privacy Mode を含み、コードがモデル学習に使用されないことが保証される。",
+      "IDE との統合度の高さが Cursor の大きな利点で、エディタ上のコンテキスト（開いているファイル、ターミナル出力、Git diff）を自動的に活用できる。純粋な CLI ツールと比較するとターミナル単体での運用には向かないが、エディタ中心のワークフローを好む開発者にとっては生産性の向上幅が大きい。"
     ],
-    "date": "2026-03-15",
+    "primarySources": [
+      {
+        "title": "Cursor",
+        "site": "Cursor",
+        "url": "https://cursor.com/"
+      }
+    ],
+    "newsDate": "2026-03-15",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "6分",
     "rating": 5,
@@ -1805,14 +1954,23 @@ export const ARTICLES = [
     "id": "github-copilot-cli",
     "type": "review",
     "category": "cli",
-    "title": "GitHub Copilot CLI — Enterprise最強のセキュリティと統合力",
+    "title": "GitHub Copilot CLI レビュー — エンタープライズ対応のAI開発支援",
     "excerpt": "GitHubエコシステムとシームレスに統合。Copilot Coding Agentによる自律的なIssue対応が新たに追加。",
     "body": [
-      "GitHub Copilot CLIは、世界最大のコードホスティングプラットフォームであるGitHubとの完全統合が最大の強みです。gh copilot コマンドで、PR作成、Issue管理、コードレビューをAIがサポートします。",
-      "2026年3月のアップデートで「Copilot Coding Agent」が正式リリースされ、GitHubのIssueを割り当てるだけでAIが自律的にコードを書き、PRを作成する機能が追加されました。これにより、定型的なバグ修正や機能追加を大幅に自動化できます。",
-      "Enterprise向けには、組織レベルでのポリシー管理、監査ログ、IP保護機能が充実。月額$10からと手頃な価格設定も魅力で、個人開発者からエンタープライズまで幅広いユースケースに対応しています。"
+      "**GitHub Copilot** は **GitHub**（**Microsoft** 傘下）が提供するAI開発支援サービスで、CLI からは gh copilot コマンドを通じて利用できる。Copilot Chat によるターミナル上での対話型コーディング支援に加え、2026年には Agent mode が正式リリースされ、Issue の割り当てだけでAIが自律的にコードを書いて PR を作成する Copilot Coding Agent が利用可能になった。",
+      "機能面では、コード補完、チャットベースの質問応答、PR の要約・レビュー支援、セキュリティ脆弱性スキャンなど幅広い領域をカバーしている。Agent mode では GitHub Actions と連携してCI/CD パイプライン上でのタスク実行にも対応する。VS Code、JetBrains、Neovim など主要エディタへの拡張も提供されており、CLI 単体にとどまらない統合的な開発体験を構成している。",
+      "料金は Individual プラン（月額 $10）、Business プラン（月額 $19）、Enterprise プラン（月額 $39）の3段階。Business 以上では組織レベルのポリシー管理と SAML SSO に対応し、Enterprise では監査ログ、IP インデムニティ（知的財産補償）、ファインチューニングモデルが追加される。GitHub の既存契約に組み込める点は、大規模組織での導入障壁を下げている。",
+      "GitHub エコシステムとの統合の深さはこのツール固有の強みであり、Issues・PR・Actions・Codespaces との連携は他のCLIツールでは再現しにくい。一方で、GitHub 外のプラットフォーム（GitLab、Bitbucket）での利用は限定的であり、モデル選択の自由度も Copilot が提供する範囲に限られる。GitHub 中心の開発チームにとっては導入効果が高い選択肢となる。"
     ],
-    "date": "2026-03-10",
+    "primarySources": [
+      {
+        "title": "GitHub Copilot",
+        "site": "GitHub",
+        "url": "https://github.com/features/copilot"
+      }
+    ],
+    "newsDate": "2026-03-10",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "5分",
     "rating": 4,
@@ -1836,14 +1994,23 @@ export const ARTICLES = [
     "id": "aider",
     "type": "review",
     "category": "cli",
-    "title": "Aider レビュー — OSSの星、マルチモデル対応CLI",
+    "title": "Aider レビュー — マルチモデル対応のOSS CLIツール",
     "excerpt": "複数ファイルの一括修正に特化したOSSツール。Gitとの親和性が高く、様々なLLMプロバイダーに対応。",
     "body": [
-      "Aiderは、オープンソースのAI開発CLIツールとして最も成熟したプロジェクトの1つです。無料で利用でき、API実費のみで最先端のAI開発体験が得られます。",
-      "最大の特徴は、マルチモデル対応です。OpenAI、Anthropic、Google、ローカルLLMなど、あらゆるプロバイダーのモデルを自由に切り替えて使用できます。Git統合が非常に優れており、変更ごとに自動コミットを生成する機能も便利です。",
-      "ただし、APIキーの管理は自己責任であり、エンタープライズ向けのセキュリティ機能は限定的です。個人開発者やOSSプロジェクトでの利用に最適です。"
+      "**Aider** は Paul Gauthier 氏が開発するオープンソースのAIコーディングCLIツールで、Apache 2.0 ライセンスのもと **GitHub** 上で公開されている。ツール自体は無料で利用でき、接続する LLM の API 利用料のみがコストとなる。pip install aider-chat でインストールし、ターミナルからリポジトリ内で aider コマンドを実行するだけで対話的なコーディングセッションが開始される。",
+      "対応モデルの幅広さが特徴で、**OpenAI**（GPT-5.4）、**Anthropic**（Claude Opus 4.6 / Sonnet 4.6）、Google（Gemini）、Ollama 経由のローカルモデルなど主要プロバイダーをほぼ網羅している。Architect mode ではアーキテクト役のモデルが変更方針を策定し、エディタ役のモデルが実装するという二段階ワークフローを構成できる。repo-map 機能によりリポジトリ全体の構造をトークン効率よくモデルに伝達し、関連ファイルの特定精度を高めている。",
+      "Git との統合が深く、変更ごとに自動コミットを生成し、意味のあるコミットメッセージを付与する。変更が意図と異なる場合は /undo コマンドで即座にロールバックできる。複数ファイルの同時編集にも対応しており、diff 形式と whole-file 形式を編集戦略として選択可能となっている。",
+      "エンタープライズ向けの SSO や監査ログといった管理機能は備えていないため、組織での大規模導入には別途ガバナンスの仕組みが必要になる。API キーの管理も利用者自身の責任となる。一方で、モデルに依存しない柔軟性、OSS ならではの透明性、ゼロコスト導入という点は個人開発者や小規模チームにとって大きな利点であり、SWE-bench でも継続的に高いスコアを記録している。"
     ],
-    "date": "2026-03-03",
+    "primarySources": [
+      {
+        "title": "Aider",
+        "site": "GitHub",
+        "url": "https://github.com/Aider-AI/aider"
+      }
+    ],
+    "newsDate": "2026-03-03",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "5分",
     "rating": 4,
@@ -1867,13 +2034,23 @@ export const ARTICLES = [
     "id": "codebuff",
     "type": "review",
     "category": "cli",
-    "title": "CodeBuff — 急成長中の新星CLI",
-    "excerpt": "直感的なUIとDiff確認が特徴の新興CLI。スピードと精度のバランスがトップクラス。",
+    "title": "CodeBuff レビュー — ターミナル特化の新興CLIエージェント",
+    "excerpt": "直感的なUIとDiff確認が特徴の新興CLI。スピードと精度のバランスに優れる。",
     "body": [
-      "CodeBuffは2024年に登場し、急速にシェアを伸ばしている新興CLIツールです。ターミナル上でありながら直感的なUIを提供し、変更前後のDiff表示が非常に見やすいのが特徴です。",
-      "Sonnet 4.6をデフォルトモデルとして採用し、スピードと精度のバランスに優れています。月額$20で、VS Code連携機能も含まれています。"
+      "**CodeBuff** は2024年に登場したターミナル特化型のAIコーディングエージェントで、CLIから直接コードベースを操作する開発者をターゲットにしている。プロジェクトディレクトリ内で codebuff コマンドを実行すると対話セッションが開始され、自然言語の指示に基づいてファイルの作成・編集・削除を自律的に行う。",
+      "ターミナル上で変更前後の Diff を視覚的に分かりやすく表示する点が特徴で、変更内容の確認と承認のフローがスムーズに設計されている。モデルの選択肢は複数あり、**Anthropic** の Sonnet 4.6 をデフォルトとしつつ、他のモデルへの切り替えにも対応している。マルチファイル編集やプロジェクト全体のコンテキスト理解にも対応し、小規模な修正から中規模のリファクタリングまで一通りのタスクをカバーする。",
+      "料金は月額 $20 のサブスクリプション制で、利用枠内であればモデルの API 費用は含まれている。VS Code との連携機能も提供されており、ターミナルとエディタを行き来する開発スタイルにも対応可能。サービスとしてはアーリーステージにあり、料金体系や機能セットは今後変更される可能性がある。",
+      "後発ツールとしてUXの洗練度に注力しており、初回セットアップの手軽さと操作の直感性では好評を得ている。一方で、MCP 対応やプラグインエコシステムといった拡張性の面では **Claude Code** や **Aider** と比較して発展途上にある。ターミナルベースのシンプルなワークフローを好み、セットアップの複雑さを避けたい開発者には適した選択肢となる。"
     ],
-    "date": "2026-03-02",
+    "primarySources": [
+      {
+        "title": "CodeBuff",
+        "site": "CodeBuff",
+        "url": "https://codebuff.com/"
+      }
+    ],
+    "newsDate": "2026-03-02",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "4分",
     "rating": 4,
@@ -1896,13 +2073,23 @@ export const ARTICLES = [
     "id": "amazon-q",
     "type": "review",
     "category": "cli",
-    "title": "Amazon Q Developer — AWS特化のAI開発CLI",
-    "excerpt": "AWS環境の操作・構築に特化。インフラ構築からコード生成まで、AWSエコシステム内で強力なサポートを提供。",
+    "title": "Amazon Q Developer レビュー — AWS統合のAI開発支援ツール",
+    "excerpt": "AWS環境の操作・構築に特化。インフラ構築からコード生成まで、AWSエコシステム内でのサポートを提供。",
     "body": [
-      "Amazon Q Developerは、AWSが提供するAI開発支援CLIです。AWS環境でのインフラ構築、Lambda関数の生成、CloudFormationテンプレートの作成など、AWSに特化した機能が充実しています。",
-      "Nova Pro 2モデルをバックエンドに採用し、AWSの膨大なドキュメントとベストプラクティスを学習済み。月額$19で利用可能です。"
+      "**Amazon Q Developer** は **AWS** が提供するAI開発支援サービスで、旧 **CodeWhisperer** を発展的に統合して2024年に登場した。CLI（aws q コマンド）、VS Code 拡張、JetBrains プラグインなど複数のインターフェースから利用でき、コード補完、チャットベースの質問応答、コード変換、セキュリティスキャンといった機能を提供する。",
+      "AWS サービスとの統合の深さが他のツールにない特徴で、Lambda 関数の生成、CloudFormation / CDK テンプレートの作成、IAM ポリシーの最適化など AWS インフラ関連のタスクに対して高い精度を発揮する。Java アプリケーションのバージョンアップグレード（Java 8 → 17 など）を自動化するコード変換機能も備えており、レガシーコードの近代化ユースケースに対応している。セキュリティスキャン機能は OWASP Top 10 を含む脆弱性パターンを検出し、修正案を提示する。",
+      "料金は無料枠（Free Tier）と Pro プラン（月額 $19/ユーザー）の2段階。Free Tier ではコード補完とチャットの基本機能が利用でき、個人開発者であれば十分な水準にある。Pro プランではセキュリティスキャンの上限拡大、コード変換機能、組織レベルの管理機能が追加される。AWS の既存アカウントに紐づけて利用できるため、AWS を既に使っている組織では請求・管理の統合が容易になる。",
+      "AWS エコシステム内での開発には大きな強みを持つ一方、AWS 以外のクラウドプラットフォーム（GCP、Azure）やオンプレミス環境での汎用的なコーディング支援としては、専用ツールと比べて優位性が薄れる。AWS を主要インフラとしている開発チームにとっては、インフラ操作とコーディング支援を一体化できる点が実務上の利点となる。"
     ],
-    "date": "2026-03-01",
+    "primarySources": [
+      {
+        "title": "Amazon Q Developer",
+        "site": "AWS",
+        "url": "https://aws.amazon.com/q/developer/"
+      }
+    ],
+    "newsDate": "2026-03-01",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "4分",
     "rating": 4,
@@ -1926,13 +2113,23 @@ export const ARTICLES = [
     "id": "cline",
     "type": "review",
     "category": "cli",
-    "title": "Cline — ローカル実行可能なOSS CLI",
-    "excerpt": "オープンソース。ローカル実行でプライバシーを確保しつつ、様々なLLMと連携可能。",
+    "title": "Cline レビュー — 承認フロー付きのOSS AIエージェント",
+    "excerpt": "オープンソースのVS Code拡張。ローカルモデル対応でプライバシーを確保しつつ、MCP連携で拡張性も高い。",
     "body": [
-      "ClineはオープンソースのAI開発CLIで、ローカルでの実行に対応しています。プライバシーを重視する開発者に人気があり、VS Code拡張としても利用可能です。",
-      "マルチモデル対応で、クラウドLLMとローカルLLMの両方をサポート。カスタマイズ性が高く、独自のワークフローを構築できます。"
+      "**Cline** はオープンソース（Apache 2.0）のAIコーディングエージェントで、主に **VS Code** 拡張として動作する。ファイルの作成・編集、ターミナルコマンドの実行、ブラウザ操作までを一貫して処理でき、各操作の実行前にユーザーの承認を求める「human-in-the-loop」設計が特徴となっている。GitHub 上で活発に開発が進んでおり、コミュニティ主導で機能拡張が続いている。",
+      "モデル選択の自由度が高く、OpenAI、**Anthropic**、Google のクラウドAPIに加え、Ollama や LM Studio 経由のローカルモデルにも対応している。MCP（Model Context Protocol）サーバーへの接続をサポートしており、外部ツールやデータソースとの連携を通じて機能を拡張できる。カスタムインストラクションの設定により、プロジェクト固有のコーディング規約やワークフローをエージェントに伝達することも可能になっている。",
+      "ツール自体は無料で、費用は接続する LLM の API 利用料のみとなる。ローカルモデルを使用する場合は完全に無償で運用でき、コードが外部に送信されないためプライバシーを重視する環境にも適する。セルフホスト構成が前提であり、SaaS 型のマネージドサービスは提供されていない。",
+      "承認フローによる安全性と、MCP 対応による拡張性のバランスが Cline の強みとなっている。一方で、VS Code 拡張として動作するためエディタ外（純粋なターミナル環境）での利用には向かず、エンタープライズ向けの管理機能（SSO、監査ログ等）も備えていない。OSS コミュニティの活発さを活かしてカスタマイズしながら使いたい開発者に適した選択肢である。"
     ],
-    "date": "2026-02-28",
+    "primarySources": [
+      {
+        "title": "Cline",
+        "site": "GitHub",
+        "url": "https://github.com/cline/cline"
+      }
+    ],
+    "newsDate": "2026-02-28",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "4分",
     "rating": 4,
@@ -1956,13 +2153,23 @@ export const ARTICLES = [
     "id": "warp-ai",
     "type": "review",
     "category": "cli",
-    "title": "Warp AI — AIを内蔵したモダンターミナル",
+    "title": "Warp AI レビュー — AI内蔵のRust製モダンターミナル",
     "excerpt": "ターミナル自体にAIが組み込まれた新しいアプローチ。コマンド補完やエラー解析をターミナル内で直接提供。",
     "body": [
-      "Warp AIは、ターミナルアプリケーション自体にAIを組み込むという独自のアプローチを取っています。コマンドの自動補完、エラーメッセージの解析、シェルスクリプトの生成をターミナル内で直接行えます。",
-      "月額$12からと手頃な価格で、チーム共有機能も充実しています。ただし、コード編集機能は他のCLIツールほど強力ではありません。"
+      "**Warp** は Rust で開発されたモダンターミナルアプリケーションで、AI機能をネイティブに組み込んでいる点が従来のターミナルエミュレータと異なる。自然言語でやりたいことを記述すると対応するシェルコマンドを生成し、エラーメッセージの解析やシェルスクリプトの作成もターミナル内で直接行える。macOS と Linux に対応しており、Windows 版は開発中となっている。",
+      "**Warp Drive** と呼ばれるナレッジ共有機能では、頻繁に使うコマンドやワークフローをチーム内で共有・再利用できる。ターミナル出力がブロック単位で構造化されるため、過去のコマンド結果の参照や共有が容易になっている。Rust によるネイティブ実装のため描画性能が高く、大量の出力を伴うビルドログやログ解析時にも遅延が少ない。",
+      "料金は個人利用向けの無料プランに加え、Team プラン（月額 $12/ユーザー）と Enterprise プランが用意されている。無料プランでもAIコマンド生成の基本機能は利用可能で、Team プラン以上で Warp Drive の共有機能や管理機能が追加される。Enterprise プランでは SSO、監査ログ、カスタムデプロイメントに対応する。",
+      "ターミナル体験そのものを刷新するアプローチは独自性が高く、コマンドライン操作の頻度が高いインフラエンジニアや DevOps 担当者に適している。一方で、コードの直接編集やリファクタリングといったAIコーディングエージェントとしての機能は他の CLI ツールほど充実しておらず、あくまでターミナル操作の効率化に焦点を絞ったツールとして位置づけられる。"
     ],
-    "date": "2026-02-27",
+    "primarySources": [
+      {
+        "title": "Warp",
+        "site": "Warp",
+        "url": "https://www.warp.dev/"
+      }
+    ],
+    "newsDate": "2026-02-27",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "3分",
     "rating": 3,
@@ -1988,11 +2195,20 @@ export const ARTICLES = [
     "title": "Cursor レビュー — AIエディタの王者、Windsurf統合で盤石に",
     "excerpt": "VS Code フォークで最も人気のAIエディタ。Windsurf買収によるCascade統合とBackground Agentの追加でさらに進化。",
     "body": [
-      "Cursorは、VS Codeをベースに構築された最も人気のAIエディタです。2023年のリリース以来、急速にユーザー数を増やし、2026年現在ではAIエディタ市場のリーダー的存在です。",
-      "Windsurf（Codeium）の買収完了により、Cascadeフロー技術の統合が進行中。タスクを段階的に分解して安全に実行する機能が加わることで、大規模リファクタリングでの信頼性がさらに向上する見込みです。",
-      "Background Agent機能では、バックグラウンドでの自律的タスク実行に対応。コードレビュー中に別のタスクをAgentに任せるなど、並列ワークフローが可能になりました。Sonnet 4.6とOpus 4.6の両方に対応し、タスクの複雑さに応じてモデルを自動切替する機能も搭載。"
+      "**Cursor** は **Anysphere** 社が開発する AI ネイティブのコードエディタで、**VS Code** のフォークとして構築されている。VS Code の拡張機能やキーバインドをそのまま引き継げるため、既存ユーザーの移行コストが低い。2023 年の初期リリース以降、AI 支援コーディングの需要拡大とともにユーザー数を伸ばし、2026 年 3 月時点では AI エディタ分野で広く使われている。",
+      "主要機能は Composer（マルチファイル編集の対話的生成）、インライン編集（選択範囲を指示で書き換え）、Background Agent（バックグラウンドでの自律タスク実行）、そして Tab 補完の 4 つに大別される。Composer はプロジェクト横断のリファクタリングに、Background Agent はコードレビュー中の並行作業にそれぞれ向く。モデルは Sonnet 4.6 と Opus 4.6 を切り替えて利用でき、タスクの粒度に応じた使い分けが可能になっている。",
+      "料金は Hobby（無料・機能制限あり）、Pro（月額 20 ドル）、Business（月額 40 ドル・管理機能付き）の 3 プランで構成される。無料枠でも補完と限定的な Composer 利用が可能だが、Background Agent や高頻度のモデル呼び出しには Pro 以上が必要になる。",
+      "2026 年 3 月に Windsurf（旧 Codeium）の買収が完了し、Cascade フロー技術の統合が進行している。買収により Anysphere は AI エディタ市場で複数ブランドを抱える構図となった。Cursor 自体は引き続き単独製品として開発が続けられており、Cascade 由来の段階的タスク分解が今後どの程度取り込まれるかが注目点となる。"
     ],
-    "date": "2026-03-26",
+    "primarySources": [
+          {
+                "title": "Cursor",
+                "site": "Cursor",
+                "url": "https://cursor.com/"
+          }
+    ],
+    "newsDate": "2026-03-26",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "7分",
     "rating": 5,
@@ -2019,10 +2235,20 @@ export const ARTICLES = [
     "title": "Windsurf — Cursor傘下で継続提供、Cascadeフローが光るAIエディタ",
     "excerpt": "Anysphere社に買収されたが、単体提供は継続中。Cascadeフローによる段階的なコード生成が特徴。無料プランも維持。",
     "body": [
-      "Windsurf（旧Codeium）は、独自の「Cascade」フローにより、タスクを段階的に分解して実行するAIエディタです。Anysphere社への買収完了後も単体での提供は継続されています。",
-      "無料プランでも強力な補完機能が使える点は、個人開発者にとって大きな魅力です。有料プランは月額$15とCursorより安価。ただし、長期的にはCursorへの機能統合が予想されるため、新規導入は要検討です。"
+      "**Windsurf** はもともと **Codeium** というブランド名で AI コード補完サービスを提供していた企業が、エディタ製品としてリブランドしたものである。VS Code フォークをベースとし、コード補完だけでなく対話的なコード生成や編集支援まで一体化した環境を目指して開発された。2026 年 3 月に **Anysphere**（Cursor の親会社）による買収が完了し、現在は同社傘下で運営されている。",
+      "中核機能は Cascade と呼ばれるマルチステップフローで、ユーザーの指示をタスク単位に分解し、ファイル読み取り・編集・ターミナル操作などを段階的に実行する。各ステップの差分をプレビューしてから適用する設計のため、大規模な変更でも意図しない書き換えを確認しやすい。補完機能は Codeium 時代から継続しており、反応速度に定評がある。",
+      "料金体系は無料枠と Pro プラン（月額 15 ドル前後）の 2 層構成で、無料枠でも補完と限定的な Cascade 利用が可能になっている。バックエンドモデルは Sonnet 4.6 や GPT-5.4 など複数に対応し、プランに応じて利用可能なモデルと回数が変わる。Cursor（Pro 月額 20 ドル）より低価格帯に位置づけられている。",
+      "Anysphere 傘下に入ったことで、長期的には Cursor への技術統合が進む可能性がある。現時点では Windsurf は単体製品として提供が継続されているが、ロードマップ上の独自機能追加がどこまで続くかは不透明である。新規に AI エディタを選ぶ場合、Cursor との機能重複と将来の統合計画を考慮したうえで判断する必要がある。"
     ],
-    "date": "2026-03-18",
+    "primarySources": [
+          {
+                "title": "Windsurf",
+                "site": "Windsurf",
+                "url": "https://windsurf.com/"
+          }
+    ],
+    "newsDate": "2026-03-18",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "5分",
     "rating": 4,
@@ -2049,10 +2275,20 @@ export const ARTICLES = [
     "title": "Zed AI — Rust製の超高速AIエディタ",
     "excerpt": "Rust製のネイティブパフォーマンス。リアルタイムコラボレーション機能も内蔵した次世代エディタ。",
     "body": [
-      "Zedは、Rust言語で開発された超高速エディタで、2024年にAI機能を統合しました。ネイティブアプリケーションならではの圧倒的なパフォーマンスが最大の魅力です。",
-      "リアルタイムコラボレーション機能を内蔵しており、チームでの共同編集にも対応。AI機能は月額$15で利用でき、Sonnet 4.6をバックエンドとして採用しています。Cursor-Windsurf統合の動きを受け、オープンソース代替として注目が急上昇中です。"
+      "**Zed** は **Zed Industries** が開発する Rust 製のネイティブコードエディタで、起動速度とファイル操作のレスポンスに重点を置いて設計されている。Electron ベースのエディタと異なり、GPU レンダリングを活用した独自の UI フレームワーク上で動作するため、大規模プロジェクトでも描画の遅延が生じにくい。オープンソース（GPL ライセンス）で公開されており、リアルタイムコラボレーション機能も内蔵している。",
+      "AI 機能としては、エディタ内蔵のアシスタントパネルとインライン生成の 2 つが用意されている。アシスタントパネルではチャット形式でコードの説明や生成を依頼でき、インライン生成では選択範囲に対して直接書き換え指示を出せる。バックエンドモデルは **Anthropic** の Sonnet 4.6 のほか、OpenAI や Ollama 経由のローカルモデルなど複数に対応しており、設定から切り替えが可能になっている。",
+      "エディタ本体は無料で利用でき、AI 機能は月額 15 ドルのサブスクリプションで提供される。自前の API キーを持ち込めば課金なしで AI 機能を使うこともできる。料金面では Cursor の Pro プラン（月額 20 ドル）より低い水準に位置する。",
+      "AI 機能はまだ成熟途上にあり、Cursor の Composer や Background Agent に相当するマルチファイル横断の自律編集機能は現時点で備わっていない。エディタとしての速度と安定性は高い評価を得ているものの、AI 支援の深さではフォーク系エディタに及ばない面がある。Rust ベースのパフォーマンスを重視しつつ、AI 機能の拡充を待てるユーザーに向いている。"
     ],
-    "date": "2026-03-12",
+    "primarySources": [
+          {
+                "title": "Zed",
+                "site": "Zed",
+                "url": "https://zed.dev/"
+          }
+    ],
+    "newsDate": "2026-03-12",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "4分",
     "rating": 4,
@@ -2079,10 +2315,20 @@ export const ARTICLES = [
     "title": "VS Code + Copilot — 定番エディタのAI進化",
     "excerpt": "世界で最も使われるエディタ。GitHub Copilotとの統合で強力なAI支援。Coding Agentの追加でさらに進化。",
     "body": [
-      "Visual Studio Codeは世界で最も使われるエディタであり、GitHub Copilotとの統合によるAI支援が強力です。2026年にはCopilot Coding Agentが追加され、Issueベースの自律的なタスク実行にも対応しました。",
-      "巨大なエコシステムを持ち、拡張機能の豊富さは他のエディタの追随を許しません。エディタ本体は無料で、Copilotは月額$10から利用できます。"
+      "**Visual Studio Code** は **Microsoft** が開発するオープンソースのコードエディタで、2015 年のリリース以降、開発者向けエディタとして広く普及している。Electron ベースのクロスプラットフォーム設計と、拡張機能マーケットプレイスによる柔軟なカスタマイズ性が基盤となっている。Cursor や Windsurf など複数の AI エディタが VS Code のフォークとして構築されていることからも、エコシステムの規模がうかがえる。",
+      "AI 機能の中核は **GitHub Copilot** との統合にある。コード補完、チャットパネルでの対話的な質問応答、インラインでの編集指示に加え、2026 年にはエージェントモード（Agent Mode）が導入された。エージェントモードではターミナル操作やファイル編集を含む複数ステップのタスクを自律的に実行でき、Copilot Coding Agent として GitHub Issue からの自動作業にも対応している。",
+      "エディタ本体は無料で利用できる。Copilot は無料枠（月あたりの利用回数制限あり）、Individual プラン（月額 10 ドル）、Business プラン（月額 19 ドル）の構成となっている。無料枠でも補完とチャットの基本機能は使えるため、導入の敷居は低い。",
+      "拡張機能エコシステムの厚みは他のエディタと比較して突出しており、言語サポート、デバッガ、リンターなど開発に必要なツールチェーンの大半が拡張機能として揃っている。一方、AI 支援の統合度では Cursor のような専用設計のエディタに比べると、機能の連携がやや分散的になる傾向がある。既存の開発環境を維持しつつ AI 支援を加えたい場合に適した選択肢である。"
     ],
-    "date": "2026-03-08",
+    "primarySources": [
+          {
+                "title": "Visual Studio Code",
+                "site": "Microsoft",
+                "url": "https://code.visualstudio.com/"
+          }
+    ],
+    "newsDate": "2026-03-08",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "4分",
     "rating": 4,
@@ -2109,10 +2355,20 @@ export const ARTICLES = [
     "title": "Void — プライバシー重視のOSSエディタ",
     "excerpt": "ローカルLLMとクラウドLLMの両方に対応するオープンソースエディタ。プライバシー重視の開発者に人気。",
     "body": [
-      "Voidは、プライバシーを重視する開発者のためのオープンソースAIエディタです。ローカルLLMとクラウドLLMの両方に対応し、コードを外部に送信せずにAI支援を受けることができます。",
-      "VS Code互換のインターフェースで、既存のVS Codeユーザーでも違和感なく使い始められます。完全無料で利用可能です。"
+      "**Void** はプライバシーを重視する開発者向けに設計されたオープンソースの AI コードエディタで、**VS Code** のフォークとして構築されている。テレメトリ（利用状況の外部送信）を一切行わない設計方針を掲げており、コードや操作履歴が開発者の環境外に出ないことを前提としている。GitHub 上で開発が進められており、ソースコードは公開されている。",
+      "AI 機能はローカル LLM とクラウド LLM の両方に対応している。Ollama や LM Studio などを経由してローカルモデルを接続すれば、ネットワーク通信なしで補完やチャットを利用できる。クラウド側では Anthropic や OpenAI の API キーを設定することで外部モデルも使える構成になっている。",
+      "料金は完全無料で、OSS ライセンスのもと配布されている。商用利用の制限もなく、企業内での導入も可能である。ただし、有償サポートやマネージドサービスは現時点で提供されていない。",
+      "開発は初期段階にあり、Cursor や Windsurf と比較すると機能の網羅性や安定性には差がある。Composer に相当するマルチファイル編集や自律エージェント機能は未実装で、日常的な開発ツールとして使うにはまだ制約が多い。プライバシー要件が厳しく、ローカル完結の AI 支援を優先するユースケースに限定して検討する段階にある。"
     ],
-    "date": "2026-03-02",
+    "primarySources": [
+          {
+                "title": "Void",
+                "site": "GitHub",
+                "url": "https://github.com/voideditor/void"
+          }
+    ],
+    "newsDate": "2026-03-02",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "3分",
     "rating": 4,
@@ -2139,10 +2395,20 @@ export const ARTICLES = [
     "title": "PearAI — コミュニティドリブンのOSSエディタ",
     "excerpt": "VS Codeベースのオープンソースエディタ。AIチャットとインライン編集に特化。",
     "body": [
-      "PearAIは、コミュニティドリブンで開発されているVS CodeベースのOSSエディタです。AIチャットとインライン編集に特化しており、シンプルで使いやすいインターフェースが特徴です。",
-      "月額$15で利用可能で、Sonnet 4.6をバックエンドに採用しています。急成長中のプロジェクトで、今後の機能拡充にも期待が持てます。"
+      "**PearAI** はコミュニティ主導で開発されているオープンソースの AI コードエディタで、**VS Code** のフォークをベースとしている。既存の VS Code 拡張機能やテーマをそのまま利用でき、AI チャットとインライン編集を中心に据えたシンプルな設計を志向している。GitHub 上でソースコードが公開されており、コントリビューションを受け付けている。",
+      "AI 機能は対話型チャットパネルとインラインコード生成の 2 つが主軸となっている。チャットパネルではコードの説明や修正案の提示を依頼でき、インライン生成では選択範囲に対する直接的な書き換えが可能になっている。バックエンドには Sonnet 4.6 が採用されており、モデルの切り替えにも対応している。",
+      "料金は月額 15 ドルのサブスクリプション制で、無料枠は限定的に用意されている。OSS プロジェクトとしてセルフホスト利用も技術的には可能だが、公式には有料プランの利用が想定されている。",
+      "開発は初期段階にあり、Cursor の Composer や Background Agent のようなマルチファイル横断の自律編集機能は備わっていない。フォーク元の VS Code に対する独自の差別化要素はまだ限られており、今後のロードマップ次第で評価が変わり得る。コミュニティ参加型の OSS エディタに関心があるユーザー向けの選択肢である。"
     ],
-    "date": "2026-03-01",
+    "primarySources": [
+          {
+                "title": "PearAI",
+                "site": "PearAI",
+                "url": "https://trypear.ai/"
+          }
+    ],
+    "newsDate": "2026-03-01",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "3分",
     "rating": 3,
@@ -2168,10 +2434,20 @@ export const ARTICLES = [
     "title": "Trae — ByteDance発のAIエディタ、Builder Modeが話題",
     "excerpt": "ByteDance社開発。Builder Modeで自然言語からアプリ全体を生成。無料で利用可能。",
     "body": [
-      "Traeは、TikTokの親会社であるByteDanceが開発したAIエディタです。最大の特徴は「Builder Mode」で、自然言語でアプリの仕様を説明するだけで、プロジェクト全体を自動生成します。",
-      "完全無料で利用でき、独自モデル（Doubao）とGPT-5.4の両方に対応しています。中国市場で急成長中ですが、日本語対応はまだ限定的です。"
+      "**Trae** は **ByteDance**（TikTok 親会社）が開発する AI コードエディタで、VS Code ベースの構造を持つ。2025 年に海外市場向けとしてリリースされ、無料で利用できる点を前面に打ち出している。国内版（中国向け）は別ブランドで展開されており、Trae は主に英語圏・日本を含むグローバル版という位置づけになっている。",
+      "特徴的な機能は Builder Mode で、自然言語でアプリの仕様を記述するとプロジェクト全体のひな型を自動生成する。通常のチャットやインライン編集にも対応しており、Claude（Sonnet 4.6）や GPT-5.4 など外部モデルを無料枠内で利用できる。独自モデル Doubao もバックエンドの選択肢に含まれている。",
+      "料金は無料プランが中心で、Claude や GPT-5.4 を含むモデルへのアクセスが課金なしで提供されている。有料プランの詳細は流動的だが、無料枠の範囲が広いため個人利用では費用が発生しにくい構成になっている。",
+      "ByteDance が中国に本拠を置く企業であることから、データの取り扱いや送信先に関する懸念が一部で指摘されている。プライバシーポリシーではコード内容の収集範囲について記載があるが、企業のセキュリティ基準によっては導入判断に影響し得る。機能面では Builder Mode の生成品質が他のエディタとの差別化要素になっており、プロトタイピング用途では検討に値する。"
     ],
-    "date": "2026-02-28",
+    "primarySources": [
+          {
+                "title": "Trae",
+                "site": "Trae",
+                "url": "https://trae.ai/"
+          }
+    ],
+    "newsDate": "2026-02-28",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "3分",
     "rating": 3,
@@ -2207,6 +2483,7 @@ export const ARTICLES = [
       "マルチモデル運用は「三社から最強だけ取る」より、タスク別にモデルとツールを分け、評価とガバナンスを一元化する方向に進みます。単一ベンダー依存の緩和、規制領域でのデータ所在地、障害時のフェイルオーバー設計が、スコア表より契約レビューで決まる局面が増えています。",
       "本稿は戦略整理と学習用の地図であり、投資判断・調達の唯一の根拠にはしません。料金・提供モデル ID・データポリシーは各社の公式ドキュメントと契約書を優先し、公開ベンチは再現手順が示されているものだけを重み付けしてください。"
     ],
+    "newsDate": "2026-03-28",
     "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "10分",
@@ -2257,7 +2534,7 @@ export const ARTICLES = [
   {
     "id": "apple-google-siri-gemini-2026",
     "type": "feature",
-    "category": "voice",
+    "category": "media",
     "title": "Siri×外部 AI — Gemini 中核に加え、ChatGPT・Claude など複数アシスタント統合の報道（2026年3月）",
     "excerpt": "1月の Apple–Google 多年度提携（Gemini）に続き、3月下旬の報道では「Siri を複数のサードパーティ AI に開く Extensions」構想が取り上げられている。Gemini に加え ChatGPT・Claude など利用者が切り替え／併用できる、との整理。いずれも WWDC 前の非公式情報が混じるため公式発表待ち。",
     "body": [
@@ -2290,6 +2567,7 @@ export const ARTICLES = [
         "url": "https://www.business-standard.com/technology/tech-news/apple-ios-27-open-siri-gemini-claude-more-extension-how-will-it-work-126032700337_1.html"
       }
     ],
+    "newsDate": "2026-03-28",
     "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "9分",
@@ -2314,7 +2592,7 @@ export const ARTICLES = [
   },
   {
     "id": "claude-code-autofix-cloud",
-    "type": "review",
+    "type": "news",
     "category": "cli",
     "title": "Claude Code「auto-fix in the cloud」— CI 失敗と PR コメントをクラウドで自動対応",
     "excerpt": "2026-03-27、PM の Noah Zweben 氏が発表。Web/モバイルセッションが PR をリモートでフォローし green 化を目指す。GitHub Actions では anthropics/claude-code-action の ci-failure ワークフロー例あり。",
@@ -2324,7 +2602,8 @@ export const ARTICLES = [
       "GitHub Actions 連携では `anthropics/claude-code-action` に ci-failure ワークフロー例が追加される予定とされており、CI 失敗時に自動的に Claude Code がエラーログを読んで修正 commit を push する流れが想定されています。企業ユーザーには「開発者が離席中も PR が自律的に前進する」体験を提供する狙いがあります。",
       "現時点ではプレビュー段階であり、利用条件・料金・対応リポジトリ管理ツールの詳細は公式ドキュメントを確認してください。Auto mode（CLI 権限制御）との混同を避けるため、Anthropic は今後ドキュメントで名称を整理する方針です。"
     ],
-    "date": "2026-03-27",
+    "newsDate": "2026-03-27",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "5分",
     "rating": 5,
@@ -2370,7 +2649,8 @@ export const ARTICLES = [
       "100 万トークンは約 75 万語、長編小説 10 冊分に相当します。長大なコードリポジトリ全体を一括解析したり、大量のドキュメントを横断検索するユースケースが実用的なコストで実現できるようになります。長文コンテキスト検索ベンチマーク MRCR v2 では Opus 4.6 が 1M トークン時点で 78.3% を記録し、同コンテキスト長のフロンティアモデル最高スコアとなっています。",
       "対応プラットフォームは Claude Platform（claude.com）・Amazon Bedrock・Google Cloud Vertex AI・Microsoft Azure Foundry。200K 超のリクエストも特別なヘッダ不要で自動的に対応します。Claude Code 利用者にとっては大規模リポジトリのワンショット解析が現実的な選択肢となりました。"
     ],
-    "date": "2026-03-13",
+    "newsDate": "2026-03-13",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "6分",
     "tags": [
@@ -2406,7 +2686,8 @@ export const ARTICLES = [
       "競合の動きも速く、Google は2026年3月27日に Gemini 側からも ChatGPT・Claude のチャット履歴とメモリをインポートするツールを公開しました。AI プロバイダー間のデータポータビリティ競争が本格化した形です。Claude 側では ChatGPT から 700,000 ユーザーが移行したとの報告も（中国メディア等の報道ベース、未確認）あり、移行ツールが契約変更の心理的ハードルを下げる効果を持ち始めています。",
       "プライバシー面では、インポートするメモリの内容をユーザー自身が目視確認したうえで貼り付ける設計のため、意図しない情報が Claude に渡るリスクは低いと言えます。ただし、インポート先の Claude メモリはサブスクリプション終了時にどう扱われるか、データ保持ポリシーと合わせて確認することを推奨します。"
     ],
-    "date": "2026-03-03",
+    "newsDate": "2026-03-03",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "5分",
     "tags": [
@@ -2447,7 +2728,8 @@ export const ARTICLES = [
       "コンテキストウィンドウは最大 100 万トークンで、テキスト・画像・音声・動画に対応します。高ボリューム・低レイテンシが求められる本番 API 組み込み、大量のドキュメント一括処理、リアルタイムチャット補助といったユースケースに最適化されています。",
       "Gemini 3 シリーズは Pro（高難度タスク）・Flash（バランス）・Flash-Lite（大量処理・低コスト）の三層構造が明確になり、用途に応じたモデル選択が容易になりました。Claude Code や Cursor の外部モデル枠でも Flash-Lite が選択肢に加わる可能性があります。"
     ],
-    "date": "2026-03-04",
+    "newsDate": "2026-03-04",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "5分",
     "tags": [
@@ -2474,7 +2756,7 @@ export const ARTICLES = [
   {
     "id": "arc-agi-3-launch-2026",
     "type": "news",
-    "category": "ops",
+    "category": "model",
     "title": "ARC-AGI-3 公開 — インタラクティブ環境でフロンティアAIが0.26%、人間は100%",
     "excerpt": "2026年3月25日、ARC Prize Foundation が ARC-AGI-3 を公開。静的グリッドを廃し、ビデオゲーム風のインタラクティブ環境1,000超で AI エージェントの適応推論を評価。GPT-5.4・Claude・Gemini などのフロンティアモデルは1%未満にとどまり、知能評価の新たな壁が示された。",
     "body": [
@@ -2484,7 +2766,8 @@ export const ARTICLES = [
       "ARC Prize 2026 は合計賞金200万ドル超の三トラック制で運営されます。ARC-AGI-3 トラックのほか、従来型の ARC-AGI-2 トラックも並行。マイルストーン締切は6月30日・9月30日で、最終締切は2026年11月2日です。",
       "研究者コミュニティでは「GPT系もClaude系も同じく1%以下というのは、現行のLLMアーキテクチャが適応推論ではなく記憶・パターンマッチングに依拠していることを再確認する結果」との見方が多く出ています。ARC-AGI シリーズは AIの知能測定の方向性を定義してきた存在であり、ARC-AGI-3 の登場によりエージェント評価の基準軸が変わる可能性があります。"
     ],
-    "date": "2026-03-25",
+    "newsDate": "2026-03-25",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "6分",
     "tags": [
@@ -2516,7 +2799,7 @@ export const ARTICLES = [
   {
     "id": "anthropic-pentagon-injunction-2026",
     "type": "news",
-    "category": "special",
+    "category": "regulation",
     "title": "Anthropic、ペンタゴンのサプライチェーン指定差し止めに成功 — 連邦裁判所が暫定差止命令",
     "excerpt": "2026年3月26日、サンフランシスコ連邦地裁の Rita Lin 判事が Anthropic の申請を認め、国防総省（DoD）による「サプライチェーンリスク」指定を暫定差し止め。「修正第一条違反の報復」と判断。Anthropic は自律兵器・大規模監視への利用を拒否したことが発端。",
     "body": [
@@ -2526,7 +2809,8 @@ export const ARTICLES = [
       "3月24日の審問では Lin 判事が DoD 側の弁護士に「その基準はかなり低いようだが」と問い詰め、「Anthropic を骨抜きにしようとしているように見える」と発言しました。判事はその2日後に差止命令を発し、Anthropic の修正第一条に基づく主張を認容しました。",
       "業界への影響は広範です。OpenAI・Google DeepMind の従業員30名超が Anthropic を支持する声明を共同提出し、AI 企業の政府との利用条件交渉がどこまで企業側の倫理ポリシーで保護されるかという先例が形成されつつあります。Anthropic は現段階で企業向けシェアを拡大しており、新規 AI 調達での Claude 採用率が約70%との分析もあります。"
     ],
-    "date": "2026-03-26",
+    "newsDate": "2026-03-26",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "8分",
     "tags": [
@@ -2569,7 +2853,8 @@ export const ARTICLES = [
       "オープンソース継続について OpenAI は「既存のコミュニティとともに OSS として開発を続ける」と明言しています。ただし独立した Astral 社としての意思決定ラインがなくなることへの懸念も開発者コミュニティから出ており、Simon Willison 氏など著名エンジニアからは「中立性の維持」を求める声が上がっています。",
       "開発者ツール市場においては、OpenAI が Codex・uv・Ruff・ty を束ねることで、コーディングエージェントから環境構築・品質管理まで一気通貫のパイプラインを提供する体制に近づきます。Anthropic の Claude Code・Google の Gemini CLI など他社のコーディングエージェントとの差別化要素になり得ます。"
     ],
-    "date": "2026-03-19",
+    "newsDate": "2026-03-19",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "7分",
     "tags": [
@@ -2612,7 +2897,8 @@ export const ARTICLES = [
       "**GPT-5.4 nano** は価格と速度が最優先のモデルで、API 専用提供です。入力$0.20・出力$0.80（100万トークン当たり）という価格は GPT-5.4（$2.50/$12.50）の1/10以下。分類・データ抽出・ランキング・シンプルなサブタスク処理に推奨されています。マルチエージェントアーキテクチャでは、Orchestrator が GPT-5.4 を担い、nano が末端タスクの高速並列処理を担う二層構成が想定されます。",
       "Codex への追加統合も同時発表。GPT-5.4 mini が Codex の標準モデルとして組み込まれ、Codex プラグイン機能・マルチエージェントワークフローが正式に提供されます。Codex の週間アクティブユーザー200万超という背景のもと、小型モデルのコスト優位性とコーディング能力の組み合わせが開発者に訴求される設計です。"
     ],
-    "date": "2026-03-17",
+    "newsDate": "2026-03-17",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "6分",
     "tags": [
@@ -2649,7 +2935,8 @@ export const ARTICLES = [
       "Walmart は「Sparky」ブランドの ChatGPT 内アプリを Web ブラウザ向けに公開し、iOS/Android への展開も近日予定。Walmart アカウントとのリンクやロイヤルティポイントの利用、Walmart 決済が ChatGPT 内から可能です。",
       "AI ショッピングエージェントの課題として浮き彫りになったのは「最後の一マイル（実購入）」の難しさです。ChatGPT の強みが情報収集・比較にあり、購入決断は依然ユーザー主導というパターンが多い実態が見えてきました。OpenAI は今後の課題として決済・配送トラッキング・返品のエージェント対応を挙げています。"
     ],
-    "date": "2026-03-24",
+    "newsDate": "2026-03-24",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "6分",
     "tags": [
@@ -2680,7 +2967,7 @@ export const ARTICLES = [
   },
   {
     "id": "mcp-v2-spec-launch-2026",
-    "type": "feature",
+    "type": "news",
     "category": "cli",
     "title": "MCP v2 仕様リリース — Streamable HTTP・OAuth 2.1・JSON-RPC バッチで本番投入へ",
     "excerpt": "3月26日、Model Context Protocol の第2版仕様が公開された。HTTP+SSE を置き換える Streamable HTTP トランスポート、OAuth 2.1 認可フレームワーク、JSON-RPC バッチ、ツールアノテーションなどが盛り込まれ、エンタープライズ本番環境での採用障壁を大幅に下げる。OpenAI・Microsoft も正式サポートを表明。",
@@ -2693,7 +2980,8 @@ export const ARTICLES = [
       "同日、OpenAI の Sam Altman が MCP への全面的なサポートを表明し、Microsoft も Playwright-MCP サーバーをローンチするなどエコシステムの勢いは加速しています。エンタープライズ向けには SurePath AI が MCP ポリシーコントロールを3月12日に発表しており、ガバナンス層も整備が進んでいます。",
       "開発者向けの実務ポイントとしては、既存の stdio ベースのローカルサーバーは引き続き動作しますが、リモートサーバーを公開する場合は Streamable HTTP + OAuth 2.1 への移行が推奨されます。仕様の詳細は公式ドキュメントとロードマップ記事を正としてください。"
     ],
-    "date": "2026-03-26",
+    "newsDate": "2026-03-26",
+    "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "9分",
     "tags": [
@@ -2736,7 +3024,7 @@ export const ARTICLES = [
   },
   {
     "id": "anthropic-mythos-cyber-impact-2026",
-    "type": "feature",
+    "type": "news",
     "category": "model",
     "title": "Anthropic Mythos リーク続報 — サイバーセキュリティ株急落と業界インパクト",
     "excerpt": "3月27日の Claude Mythos リーク報道を受け、CrowdStrike −7%、Palo Alto Networks −6% など主要セキュリティ銘柄が軒並み下落。草稿に記載されたサイバー能力の記述が市場に衝撃を与えた経緯と、冷静な読み方を整理。",
@@ -2747,6 +3035,7 @@ export const ARTICLES = [
       "Anthropic 側は既報のとおり、能力面でステップチェンジ級のモデルを限定環境で試験中であることを認めつつ、一般提供には安全評価とガバナンスを踏まえた段階的アプローチを取ると繰り返しています。正式な製品ロードマップ、API モデル ID、価格、利用規約は公式発表を待つ必要があります。",
       "セキュリティ業界にとっての本質的な問い — AI が攻撃側・防御側の非対称性をどう変えるか — は Mythos に限らず進行中の論点です。むしろ注目すべきは、今回の株価反応が**リーク草稿の断片**だけで発生した点であり、AI モデル能力に関する情報管理と市場コミュニケーションの課題を浮き彫りにしています。"
     ],
+    "newsDate": "2026-03-28",
     "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "7分",
@@ -2810,11 +3099,9 @@ export const CATEGORIES = {
   cli: { label: "CLI・エージェント", color: "#7c3aed" },
   editor: { label: "エディタ", color: "#0891b2" },
   data: { label: "データ・RAG", color: "#059669" },
-  voice: { label: "音声", color: "#db2777" },
-  vision: { label: "画像", color: "#ea580c" },
-  video: { label: "動画", color: "#dc2626" },
-  ops: { label: "評価・運用", color: "#475569" },
   product: { label: "プロダクト", color: "#0ea5e9" },
+  media: { label: "メディア生成", color: "#db2777" },
+  regulation: { label: "社会・規制", color: "#b91c1c" },
 };
 
 /** レビュー記事の星表示（プレーンテキスト） */

@@ -1,16 +1,205 @@
-# React + Vite
+# AI-News — AI開発ツールの最新ニュースと体系的まとめ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+日本語圏の開発者に向けた、AI 開発ツール・モデル・サービスの**日々の最新ニュース**と**トピック別まとめ**を提供するサイト。
 
-Currently, two official plugins are available:
+## サイトのビジョン
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+AI の世界は毎日変化する。Claude、ChatGPT、Gemini、Copilot をはじめとするツールの更新は日単位で起こり、追いかけるだけでも大変になっている。
 
-## React Compiler
+AI-News は**3つの層**でこの問題を解決する:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+┌─────────────────────────────────────────────┐
+│  ① 日々のニュース（速報・短報）              │
+│     毎日の新着を素早く伝える                  │
+│         ↓ 蓄積 ↓                            │
+│  ② トピック別まとめ（体系的整理）            │
+│     ニュースを製品・企業・テーマで束ねて       │
+│     後から学習できる形にする                  │
+│         ↓ 横断 ↓                            │
+│  ③ ツール比較・おすすめ（意思決定の支援）    │
+│     レベル別・目的別に客観的な評価で           │
+│     「何を使えばいいか」に答える              │
+└─────────────────────────────────────────────┘
+```
 
-## Expanding the ESLint configuration
+### ① 日々のニュース
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+毎日の AI 関連ニュースを速報・短報として掲載する。
+
+**取り扱う領域:**
+
+| カテゴリ | 内容の例 |
+|---------|---------|
+| **バイブコーディング** | Claude Code、Cursor、Windsurf、Copilot、Codex の新機能・アップデート |
+| **AI モデル** | GPT、Claude、Gemini、Llama 等の新バージョン・ベンチマーク |
+| **画像生成** | Midjourney、DALL-E、Adobe Firefly、Stable Diffusion |
+| **動画生成** | Runway、Sora、Veo、Kling |
+| **音楽生成** | Suno、Udio、Lyria |
+| **音声入力・TTS** | Aqua Voice、Whisper、ElevenLabs |
+| **フィジカル AI** | ロボティクス、自動運転、エッジ AI |
+| **社会・規制** | AI 規制、訴訟、企業動向、資金調達 |
+
+### ② トピック別まとめ
+
+日々のニュースから蓄積された情報を**製品・企業・テーマ単位で体系化**する。
+
+**まとめの軸:**
+
+- **製品別** — Claude でまとめる、ChatGPT でまとめる、Cursor でまとめる…
+- **企業別** — Anthropic の動向、OpenAI の動向、Google DeepMind の動向…
+- **テーマ別** — バイブコーディングの進化、生成メディアの現在地、AI 規制の流れ…
+- **週刊まとめ** — 1週間の出来事を時系列で俯瞰（毎週月曜公開）
+
+**ニュース → まとめ の流れ:**
+
+```
+[速報] Claude Code Auto mode 発表
+[速報] Claude Code auto-fix 登場       → [まとめ] Claude Code 機能一覧と進化
+[速報] Claude Code Skills 追加
+
+[速報] Suno v4 リリース
+[速報] Udio 著作権訴訟                 → [まとめ] 生成音楽ツールの現在地
+[速報] Google Lyria 2 発表
+```
+
+### ③ ツール比較・おすすめ
+
+「バイブコーディングを始めたいけど、何を使えばいい？」に答える。
+
+**比較の視点:**
+
+- **レベル別おすすめ** — 入門/初級/中級/上級で最適なツールが違う
+- **目的別おすすめ** — 個人学習/企業利用/特定言語で推奨が変わる
+- **ツール横断比較** — Cursor vs VS Code + Copilot、Claude Code vs Codex 等
+- **料金比較** — 無料枠・月額・従量課金を一覧化
+- **客観的な評価軸** — 導入しやすさ、AI の質、学習曲線、企業利用適性
+
+**比較記事の例:**
+```
+「バイブコーディング、何から始める？ — 2026年版」
+「Cursor vs VS Code + Copilot — どちらを選ぶか」
+「AI コーディングツール料金比較 — 2026年春版」
+```
+
+これにより、**速報で今日を知り、まとめで体系的に学び、比較で最適なツールを選ぶ**サイトになる。
+
+## 実用スキル・ガイド
+
+ニュースだけでなく、開発者が実際に手を動かせる情報も提供する。
+
+| ガイド | 内容 |
+|--------|------|
+| **バイブコーディング入門** | Claude Code + IDE の段階的な使い方 |
+| **コマンド辞書** | CLI コマンドをツール別・機能別に整理、コピーボタン付き |
+| **スキルファイルの書き方** | `.cursor/skills/` や CLAUDE.md の活用法 |
+| **RAG の扱い方** | プロジェクト文脈をAIに渡すテクニック |
+| **音声コマンド活用** | Aqua Voice 等で記事執筆・コーディングを高速化 |
+| **メディア生成ツール** | 画像・動画・音楽の生成ツール比較と使い分け |
+| **用語集** | AI・Git・CLI・RAG 等の用語定義 |
+
+### コマンド辞書（コピー＆ペーストで使える早見表）
+
+`claude --dangerously-skip-permissions` のような起動コマンドは、初心者には見つけにくいが最初に必要。これらを**ツール別・機能別**に体系化し、**コピーボタン付きコードブロック**で提供する。
+
+```
+構成: ツール（Claude Code / Cursor / Codex）
+  └ 機能（起動 / 権限 / 設定ファイル / 入出力 / 自動化）
+       └ 個別コマンド（コピー可能なコードブロック）
+```
+
+記事内のコードブロックには自動的にコピーボタンが付く。
+
+## 編集部の構成
+
+記事制作は新聞社型の役割分担で品質を担保する。
+
+```
+記者（Reporter）     ネタ収集・ソース調査・下書き
+  ↓
+校閲（Copy Editor）  ファクトチェック・リンク検証・表記統一
+  ↓
+構成編集（Editor）   見出し・概要・段落構成の推敲
+  ↓
+デスク（M. Editor）  出稿判断・優先度・配信スケジュール
+
+並行: ツール評価（Reviewer） 横断比較・レベル別おすすめ・客観的評価
+並行: UI/フロント担当       画像・図表・CSS
+並行: データ担当            企業データ・タグ体系・メタデータ監査
+```
+
+各ロールは `.cursor/skills/` にスキルファイルとして定義:
+
+| スキル | パス |
+|--------|------|
+| 記者 | `.cursor/skills/reporter/` |
+| 校閲 | `.cursor/skills/copy-editor/` |
+| 構成編集 | `.cursor/skills/editor/` |
+| デスク | `.cursor/skills/managing-editor/` |
+| ツール評価 | `.cursor/skills/tool-reviewer/` |
+| コマンドリファレンス | `.cursor/skills/command-reference/` |
+| UI/フロント | `.cursor/skills/ui-frontend/` |
+| データ担当 | `.cursor/skills/data-manager/` |
+| 週刊まとめ | `.cursor/skills/weekly-news-roundup/` |
+
+## 企業情報の役割
+
+`aiCompanies.js` に50社以上の企業プロファイルを収録。単なる会社一覧ではなく、**読者の実用的な疑問に答えるデータベース**として機能する。
+
+| 読者の疑問 | 対応するデータ |
+|-----------|---------------|
+| 「このツール、どこの会社？」 | ツール名 → 企業名の紐付け（`products`） |
+| 「〇〇社って何を出してる？」 | 企業名 → ツール一覧（`products`） |
+| 「中国の会社？アメリカ？」 | 国・地域（`country` / `hq`）— センシティブな情報を扱う上で重要 |
+| 「株は買えるの？」 | 上場情報・証券コード（`stock.tickers` / `exchange`） |
+| 「いつからある会社？」 | 設立年（`foundedYear`）— 歴史と信頼性の目安 |
+
+今後 IPO やスピンオフが増える領域なので、株式・投資関連情報も事実ベースで整備する（投資判断を促す表現はしない）。
+
+## データ構造
+
+| ファイル | 内容 |
+|---------|------|
+| `src/data/aiToolsData.js` | 全記事データ（ARTICLES 配列） |
+| `src/data/aiCompanies.js` | 企業プロファイル（50社以上） |
+| `src/data/vibeCodingGuide.js` | ガイド・用語集コンテンツ |
+
+### 記事の種類（type）
+
+| type | 用途 |
+|------|------|
+| `news` | 速報・短報（日々のニュース） |
+| `feature` | 特集・まとめ記事 |
+| `review` | 製品レビュー |
+
+### カテゴリ（category）
+
+```
+special  週刊まとめ・特集    model    AIモデル
+cli      CLIツール           editor   エディタ・IDE
+data     データ・分析         product  製品・サービス
+voice    音声関連            vision   画像・視覚
+video    動画関連
+```
+
+## 技術スタック
+
+| 要素 | 技術 |
+|------|------|
+| フレームワーク | React 19 + Vite 7 |
+| スタイル | Vanilla CSS（ライト/ダーク対応） |
+| ホスティング | GitHub Pages（静的サイト） |
+| フィード | Atom 1.0（自動生成） |
+| CI/CD | GitHub Actions（main push でデプロイ） |
+
+## 開発コマンド
+
+```bash
+npm run dev      # 開発サーバー起動
+npm run build    # フィード生成 + ビルド
+npm run preview  # ビルド結果のプレビュー
+```
+
+## ライセンス
+
+記事コンテンツの著作権は AI News 編集部に帰属します。コードは MIT ライセンスです。

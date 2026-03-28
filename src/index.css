@@ -838,10 +838,18 @@ body {
 .company-card__head {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
   margin-bottom: 0.35rem;
+}
+
+.company-card__logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 4px;
+  flex-shrink: 0;
 }
 
 .company-card__title {
@@ -1687,6 +1695,76 @@ body {
 
 .prose-link:hover {
   opacity: 0.9;
+}
+
+/* ── ハイライト（==text==） ── */
+.prose-highlight {
+  background: rgba(255, 220, 50, 0.3);
+  color: inherit;
+  padding: 0.1em 0.25em;
+  border-radius: 2px;
+}
+[data-theme="dark"] .prose-highlight {
+  background: rgba(255, 220, 50, 0.2);
+}
+
+/* ── 警告（!!text!!） ── */
+.prose-warning {
+  color: #c0392b;
+  font-weight: 500;
+}
+[data-theme="dark"] .prose-warning {
+  color: #e74c3c;
+}
+
+/* ── コピーボタン付きコードブロック ── */
+.code-block {
+  margin: 1rem 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--surface-solid);
+}
+.code-block__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.35rem 0.75rem;
+  background: var(--border);
+  font-size: 0.75rem;
+}
+.code-block__lang {
+  color: var(--muted);
+  font-family: var(--font);
+  text-transform: lowercase;
+}
+.code-block__copy {
+  background: none;
+  border: 1px solid var(--muted);
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.code-block__copy:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.code-block__pre {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  -webkit-overflow-scrolling: touch;
+}
+.code-block__pre code {
+  font-family: "SF Mono", "Cascadia Code", "Fira Code", Consolas, monospace;
+  white-space: pre;
+  word-break: normal;
+  color: var(--text);
 }
 
 .tag-chip {

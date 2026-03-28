@@ -48,6 +48,30 @@
     <summary>RAG・チャット・エージェントの永続層は多くの場合がリレーショナル＋ベクトル拡張。Supabase（Postgres＋Auth＋Realtime＋Edge Functions）を軸に、RLS・接続プール・ハイブリッド検索の論点を整理する。</summary>
   </entry>
   <entry>
+    <title>バイブコーディング、何から始める？ — 2026年版おすすめツール</title>
+    <link rel="alternate" type="text/html" href="?a=vibe-coding-getting-started-2026"/>
+    <id>tag:ai-tool-news.jp,2026:vibe-coding-getting-started-2026</id>
+    <published>2026-03-28T15:00:00Z</published>
+    <updated>2026-03-28T15:00:00Z</updated>
+    <summary>AIと対話しながらコードを書く「バイブコーディング」を始めるなら、どのツールを選ぶか。入門から上級まで、レベル別・目的別の推奨パスを整理した。</summary>
+  </entry>
+  <entry>
+    <title>CLI コーディングツール横断比較 — Claude Code・Codex・Gemini CLI・Aider・Copilot（2026年3月版）</title>
+    <link rel="alternate" type="text/html" href="?a=cli-tools-comparison-2026-march"/>
+    <id>tag:ai-tool-news.jp,2026:cli-tools-comparison-2026-march</id>
+    <published>2026-03-28T15:00:00Z</published>
+    <updated>2026-03-28T15:00:00Z</updated>
+    <summary>主要5つの CLI コーディングツールを、機能・料金・モデル・権限制御の軸で横並びに比較した。バイブコーディングの「ターミナル層」を選ぶ際の参考に。</summary>
+  </entry>
+  <entry>
+    <title>AI 規制・訴訟の動き — 2026年 Q1 の主要トピック</title>
+    <link rel="alternate" type="text/html" href="?a=ai-regulation-q1-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ai-regulation-q1-2026</id>
+    <published>2026-03-28T15:00:00Z</published>
+    <updated>2026-03-28T15:00:00Z</updated>
+    <summary>Anthropic と米国防総省の法廷闘争、OpenAI Sora をめぐる提携解消、EU AI Act の施行開始など、2026年第1四半期の規制・訴訟動向を整理した。</summary>
+  </entry>
+  <entry>
     <title>【ガイド】メディア生成ツール早見の見方 — 画像・動画・音楽</title>
     <link rel="alternate" type="text/html" href="?a=guide-media-generative-tools-2026"/>
     <id>tag:ai-tool-news.jp,2026:guide-media-generative-tools-2026</id>
@@ -144,12 +168,12 @@
     <summary>3月19日、Windsurfがクレジットベースの料金体系から日次・週次クォータ制に変更。Pro価格が$15→$20に上昇し、Cursorとの価格差が消滅。</summary>
   </entry>
   <entry>
-    <title>Claude Code レビュー — 2026年最強のCLIエージェント</title>
+    <title>Claude Code レビュー — Anthropic のCLIエージェント徹底解説</title>
     <link rel="alternate" type="text/html" href="?a=claude-code"/>
     <id>tag:ai-tool-news.jp,2026:claude-code</id>
     <published>2026-03-27T15:00:00Z</published>
     <updated>2026-03-27T15:00:00Z</updated>
-    <summary>claudeコマンド1つでリポジトリ全体を読み込み、バグ修正からテスト実行、コミットまで自律的に行う。Opus 4.6の1Mコンテキストによる「深い推論」が、複雑なリファクタリングを可能にしている。</summary>
+    <summary>claudeコマンド1つでリポジトリ全体を読み込み、バグ修正からテスト実行、コミットまで自律的に行う。Opus 4.6の1Mコンテキストによる深い推論が、複雑なリファクタリングを可能にしている。</summary>
   </entry>
   <entry>
     <title>Claude Code「auto-fix in the cloud」— CI 失敗と PR コメントをクラウドで自動対応</title>
@@ -221,7 +245,7 @@
     <id>tag:ai-tool-news.jp,2026:overview-2026-week-mar16</id>
     <published>2026-03-23T15:00:00Z</published>
     <updated>2026-03-23T15:00:00Z</updated>
-    <summary>OpenAI は 17日（火）に GPT-5.4 mini と nano を出した。18日（水）は Windsurf のレビュー枠が更新され、19日（木）に Astral（uv・Ruff・ty） の買収公表と生成音楽ツールの整理特集が重なった。20日（金）には Cursor による Windsurf 買収完了が伝わり、週の締めの 22日（日）には Codex エージェントのレビューが掲載された。</summary>
+    <summary>OpenAI は火曜に GPT-5.4 mini と nano を出した。水曜は Windsurf のレビュー枠が更新され、木曜に Astral（uv・Ruff・ty）の買収公表と生成音楽ツールの整理特集が重なった。金曜には Cursor による Windsurf 買収完了が伝わり、日曜には Codex エージェントのレビューが掲載された。</summary>
   </entry>
   <entry>
     <title>OpenAI Codex — クラウド並列実行のAIコーディングエージェント</title>
@@ -272,12 +296,12 @@
     <summary>2026年3月17日、OpenAI が GPT-5.4 mini と GPT-5.4 nano を公開。mini は ChatGPT 無料ユーザーに開放、nano は API 専用で超低コスト（$0.20/1M）のサブエージェント向け。Codex や ChatGPT のコーディング機能も同時に強化。</summary>
   </entry>
   <entry>
-    <title>Cursor CLI (Composer) レビュー — IDE一体型の最強CLI</title>
+    <title>Cursor CLI (Composer) レビュー — IDE一体型のAIコーディング環境</title>
     <link rel="alternate" type="text/html" href="?a=cursor-cli"/>
     <id>tag:ai-tool-news.jp,2026:cursor-cli</id>
     <published>2026-03-15T15:00:00Z</published>
     <updated>2026-03-15T15:00:00Z</updated>
-    <summary>IDE一体型でありながら、CLIモード（Composer）が極めて強力。自然言語で伝えるだけで、関連ファイルを自動で見つけ出し、変更案を提示する。</summary>
+    <summary>IDE一体型でありながら、CLIモード（Composer）が強力。自然言語で伝えるだけで、関連ファイルを自動で見つけ出し、変更案を提示する。</summary>
   </entry>
   <entry>
     <title>AI 音声入力ツールの俯瞰 — 製品型と API 型、Whisper と gpt-4o-transcribe</title>
@@ -368,7 +392,7 @@
     <summary>ツール呼び出しを JSON-RPC で標準化する MCP は、IDE・CLI・独自ホストのゲートウェイ間で同じコネクタを再利用できる。stdio / HTTP トランスポート、権限の渡し方、サードパーティ拡張の供給網リスクまでを整理する。</summary>
   </entry>
   <entry>
-    <title>GitHub Copilot CLI — Enterprise最強のセキュリティと統合力</title>
+    <title>GitHub Copilot CLI レビュー — エンタープライズ対応のAI開発支援</title>
     <link rel="alternate" type="text/html" href="?a=github-copilot-cli"/>
     <id>tag:ai-tool-news.jp,2026:github-copilot-cli</id>
     <published>2026-03-10T15:00:00Z</published>
@@ -416,7 +440,7 @@
     <summary>2026年3月4日、Google DeepMind が Demis Hassabis 氏発表で Gemini 3.1 Flash-Lite をプレビュー公開。入力 $0.25/1M・出力 $1.50/1M トークンという超低価格で 2.5 Flash 比 2.5 倍高速な Time-to-First-Token・45% 高い出力速度を実現。</summary>
   </entry>
   <entry>
-    <title>Aider レビュー — OSSの星、マルチモデル対応CLI</title>
+    <title>Aider レビュー — マルチモデル対応のOSS CLIツール</title>
     <link rel="alternate" type="text/html" href="?a=aider"/>
     <id>tag:ai-tool-news.jp,2026:aider</id>
     <published>2026-03-03T15:00:00Z</published>
@@ -432,12 +456,12 @@
     <summary>2026年3月初旬、Anthropic が claude.com/import-memory を公開。ChatGPT・Gemini・Copilot・Grok などから保存済みメモリをコピー＆ペーストで Claude に移行できる。メモリ機能自体は全 Claude ユーザーへ順次展開中。</summary>
   </entry>
   <entry>
-    <title>CodeBuff — 急成長中の新星CLI</title>
+    <title>CodeBuff レビュー — ターミナル特化の新興CLIエージェント</title>
     <link rel="alternate" type="text/html" href="?a=codebuff"/>
     <id>tag:ai-tool-news.jp,2026:codebuff</id>
     <published>2026-03-02T15:00:00Z</published>
     <updated>2026-03-02T15:00:00Z</updated>
-    <summary>直感的なUIとDiff確認が特徴の新興CLI。スピードと精度のバランスがトップクラス。</summary>
+    <summary>直感的なUIとDiff確認が特徴の新興CLI。スピードと精度のバランスに優れる。</summary>
   </entry>
   <entry>
     <title>Void — プライバシー重視のOSSエディタ</title>
@@ -453,15 +477,15 @@
     <id>tag:ai-tool-news.jp,2026:ai-image-generators-landscape-early-2026</id>
     <published>2026-03-01T15:00:00Z</published>
     <updated>2026-03-01T15:00:00Z</updated>
-    <summary>解像度競争に加え、複雑な構図や空間関係へのプロンプト忠実度、用途特化が選択軸の中心になっている。以下は話題モデルの整理用ダイジェスト—版数・価格・利用条件は都度公式を正とすること。</summary>
+    <summary>解像度競争に加え、複雑な構図や空間関係へのプロンプト忠実度、用途特化が選択軸の中心になっている。GPT Image・Midjourney・Flux・Imagen から Seedream まで、話題モデルの位置づけと強みを整理する。</summary>
   </entry>
   <entry>
-    <title>Amazon Q Developer — AWS特化のAI開発CLI</title>
+    <title>Amazon Q Developer レビュー — AWS統合のAI開発支援ツール</title>
     <link rel="alternate" type="text/html" href="?a=amazon-q"/>
     <id>tag:ai-tool-news.jp,2026:amazon-q</id>
     <published>2026-03-01T15:00:00Z</published>
     <updated>2026-03-01T15:00:00Z</updated>
-    <summary>AWS環境の操作・構築に特化。インフラ構築からコード生成まで、AWSエコシステム内で強力なサポートを提供。</summary>
+    <summary>AWS環境の操作・構築に特化。インフラ構築からコード生成まで、AWSエコシステム内でのサポートを提供。</summary>
   </entry>
   <entry>
     <title>PearAI — コミュニティドリブンのOSSエディタ</title>
@@ -472,12 +496,12 @@
     <summary>VS Codeベースのオープンソースエディタ。AIチャットとインライン編集に特化。</summary>
   </entry>
   <entry>
-    <title>Cline — ローカル実行可能なOSS CLI</title>
+    <title>Cline レビュー — 承認フロー付きのOSS AIエージェント</title>
     <link rel="alternate" type="text/html" href="?a=cline"/>
     <id>tag:ai-tool-news.jp,2026:cline</id>
     <published>2026-02-28T15:00:00Z</published>
     <updated>2026-02-28T15:00:00Z</updated>
-    <summary>オープンソース。ローカル実行でプライバシーを確保しつつ、様々なLLMと連携可能。</summary>
+    <summary>オープンソースのVS Code拡張。ローカルモデル対応でプライバシーを確保しつつ、MCP連携で拡張性も高い。</summary>
   </entry>
   <entry>
     <title>Trae — ByteDance発のAIエディタ、Builder Modeが話題</title>
@@ -488,7 +512,7 @@
     <summary>ByteDance社開発。Builder Modeで自然言語からアプリ全体を生成。無料で利用可能。</summary>
   </entry>
   <entry>
-    <title>Warp AI — AIを内蔵したモダンターミナル</title>
+    <title>Warp AI レビュー — AI内蔵のRust製モダンターミナル</title>
     <link rel="alternate" type="text/html" href="?a=warp-ai"/>
     <id>tag:ai-tool-news.jp,2026:warp-ai</id>
     <published>2026-02-27T15:00:00Z</published>
