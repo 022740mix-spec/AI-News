@@ -1948,6 +1948,13 @@ function ArticleDetail({
     <div className="app-inner">
       <ReadingProgress />
       <div className="detail-wrap">
+        <button
+          type="button"
+          className="detail-back-btn"
+          onClick={onBack}
+        >
+          ← 戻る
+        </button>
         <div className="detail-toolbar">
           <button type="button" className="btn" onClick={onBack}>
             ← 一覧へ
