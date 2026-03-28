@@ -2001,6 +2001,53 @@ body {
   opacity: 0.9;
 }
 
+/* ── ベンチマーク説明 ── */
+.benchmark-explainer {
+  margin: 0.75rem 0 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--card-solid);
+}
+.benchmark-explainer__summary {
+  padding: 0.6rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  list-style: none;
+}
+.benchmark-explainer__summary::before {
+  content: "▶ ";
+  font-size: 0.6rem;
+}
+.benchmark-explainer[open] .benchmark-explainer__summary::before {
+  content: "▼ ";
+}
+.benchmark-explainer__body {
+  padding: 0 1rem 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+.benchmark-explainer__body p {
+  margin: 0 0 0.5rem;
+}
+.benchmark-explainer__list {
+  margin: 0.5rem 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.2rem 0.75rem;
+  font-size: 0.73rem;
+}
+.benchmark-explainer__list dt {
+  font-weight: 600;
+  color: var(--text);
+}
+.benchmark-explainer__list dd {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
 /* ── ベンチマークチャート ── */
 .benchmark-chart {
   margin: 1.25rem 0 1.5rem;

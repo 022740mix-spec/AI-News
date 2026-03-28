@@ -1347,6 +1347,19 @@ function ModelComparisonSection() {
     <section className="review-comparison-section">
       <h2 className="section-feed__title">AI モデル比較</h2>
       <p className="section-feed__meta">主要モデルの現行世代と前世代。料金は入力/出力（1M トークンあたり）。公式価格を必ず確認のこと。</p>
+      <details className="benchmark-explainer">
+        <summary className="benchmark-explainer__summary">ベンチマークの見方（タップで開く）</summary>
+        <div className="benchmark-explainer__body">
+          <p>ベンチマークは AI モデルの性能を同じ基準で比較するためのテスト。測る対象によって種類が異なる:</p>
+          <dl className="benchmark-explainer__list">
+            <dt>SWE-Bench</dt><dd>実際のバグ修正ができるか（コーディング能力）</dd>
+            <dt>ARC-AGI</dt><dd>初めて見る問題に対応できるか（適応的推論力）</dd>
+            <dt>Humanity{"'"}s Last Exam</dt><dd>専門家レベルの難問に答えられるか（学術的推論）</dd>
+            <dt>MMMU</dt><dd>画像やグラフを理解できるか（視覚的理解力）</dd>
+          </dl>
+          <p>下のグラフは SWE-Bench 系を中心とした推定統合値。コーディング以外の用途（文章作成、分析等）ではスコアの順位が変わることがある。</p>
+        </div>
+      </details>
       <BenchmarkChart data={MODEL_COMPARISON} title="ベンチマークスコア（SWE-Bench 系・推定統合値）" />
       <div className="review-comparison-table-wrap">
         <table className="review-comparison-table">
