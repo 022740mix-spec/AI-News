@@ -2635,40 +2635,27 @@ const [showFab, setShowFab] = useState(false);
                   )}
                 </>
               ) : (
-                <>
-                  {guideMatchCount === 0 ? (
-                    <div
-                      id="guide-subtab-panel"
-                      role="tabpanel"
-                      aria-labelledby={`guide-subtab-${guideTab}`}
-                      className="empty-state"
-                    >
-                      このタブに該当がありません。別タブに切り替えるか、検索語を変えてください。
-                    </div>
+                <div
+                  id="guide-subtab-panel"
+                  role="tabpanel"
+                  aria-labelledby={`guide-subtab-${guideTab}`}
+                >
+                  {guideTab === "setup" ? (
+                    <GuideSetupPanel />
+                  ) : guideTab === "rules" ? (
+                    <GuideRulesPanel />
+                  ) : guideTab === "practical" ? (
+                    <GuidePracticalPanel />
+                  ) : guideTab === "media" ? (
+                    <MediaToolsGuidePanel
+                      mediaTaxonomy={VIBE_MEDIA_TAXONOMY}
+                    />
                   ) : (
-                    <div
-                      id="guide-subtab-panel"
-                      role="tabpanel"
-                      aria-labelledby={`guide-subtab-${guideTab}`}
-                    >
-                      {guideTab === "setup" ? (
-                        <GuideSetupPanel />
-                      ) : guideTab === "rules" ? (
-                        <GuideRulesPanel />
-                      ) : guideTab === "practical" ? (
-                        <GuidePracticalPanel />
-                      ) : guideTab === "media" ? (
-                        <MediaToolsGuidePanel
-                          mediaTaxonomy={mediaGuide.mediaTaxonomy}
-                        />
-                      ) : (
-                        <GlossaryGuidePanel
-                          glossaryGenres={glossaryGuide.glossary.length > 0 ? glossaryGuide.glossary : GLOSSARY_BY_GENRE}
-                        />
-                      )}
-                    </div>
+                    <GlossaryGuidePanel
+                      glossaryGenres={GLOSSARY_BY_GENRE}
+                    />
                   )}
-                </>
+                </div>
               )}
             </div>
 
