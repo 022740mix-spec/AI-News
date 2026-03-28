@@ -1693,27 +1693,24 @@ body {
   font-size: 0.85rem;
 }
 
-.btn-bookmark {
+/* ── 共有ボタン ── */
+.btn-share {
   flex-shrink: 0;
   align-self: flex-start;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 1.75rem;
+  height: 1.75rem;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
-  background: var(--surface-solid);
+  background: none;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.8rem;
   line-height: 1;
+  color: var(--muted);
   transition: all var(--transition);
 }
-
-.btn-bookmark:hover {
-  border-color: #f43f5e;
-}
-
-.btn-bookmark.is-on {
-  background: rgba(244, 63, 94, 0.15);
-  border-color: #f43f5e;
+.btn-share:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .badge {

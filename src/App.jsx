@@ -38,7 +38,6 @@ import {
 import { BUNDLED_MEDIA_URL } from "./mediaUrls.js";
 
 const STORAGE_THEME = "ai-news-theme";
-const STORAGE_MARKS = "ai-news-bookmarks";
 const STORAGE_LOCAL_NOTICE = "ai-news-local-notice-dismissed";
 const DEFAULT_DOC_TITLE = `${SITE_NAME} | AI開発ツールニュース 2026`;
 
@@ -432,19 +431,6 @@ function formatWeekRoundupPeriodJp(startYmd, endYmd) {
   return `${fmt(startYmd)}〜${fmt(endYmd)}`;
 }
 
-function loadBookmarks() {
-  try {
-    const raw = localStorage.getItem(STORAGE_MARKS);
-    const a = raw ? JSON.parse(raw) : [];
-    return new Set(Array.isArray(a) ? a : []);
-  } catch {
-    return new Set();
-  }
-}
-
-function persistBookmarks(set) {
-  localStorage.setItem(STORAGE_MARKS, JSON.stringify([...set]));
-}
 
 function syncAppUrl({ articleId, siteSection, tagQuery, guideTab, toolTab }) {
   const u = new URL(window.location.href);
@@ -673,7 +659,7 @@ function GuideTabBar({ guideTab, onSelect }) {
   );
 }
 
-function HomePage({ articles, onSelect, onSection, bookmarkIds, onToggleBookmark }) {
+function HomePage({ articles, onSelect, onSection }) {
   const hero = articles.find((a) => {
     const scope = a.heroScope ?? "day";
     return scope !== "none";
@@ -1341,20 +1327,27 @@ function CompanyCard({ company }) {
   );
 }
 
-function BookmarkBtn({ active, onToggle, stopOpen }) {
+function ShareBtn({ articleId }) {
+  const [copied, setCopied] = useState(false);
+  const handleShare = useCallback((e) => {
+    e.stopPropagation();
+    const url = new URL(window.location.href);
+    url.search = "";
+    url.searchParams.set("a", articleId);
+    navigator.clipboard.writeText(url.href).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  }, [articleId]);
   return (
     <button
       type="button"
-      className={`btn-bookmark${active ? " is-on" : ""}`}
-      title={active ? "ブックマーク解除" : "ブックマーク"}
-      aria-pressed={active}
-      onClick={(e) => {
-        e.stopPropagation();
-        onToggle();
-        if (stopOpen) e.preventDefault();
-      }}
+      className="btn-share"
+      title="共有リンクをコピー"
+      aria-label="共有"
+      onClick={handleShare}
     >
-      {active ? "♥" : "♡"}
+      {copied ? "✓" : "↗"}
     </button>
   );
 }
@@ -1480,7 +1473,7 @@ function ArticleProse({ article }) {
   );
 }
 
-function HeroToday({ article, onClick, bookmarked, onToggleBookmark }) {
+function HeroToday({ article, onClick }) {
   const hasCover = Boolean(article.coverImage?.src);
   const heroScope = article.heroScope ?? "day";
   const isWeekRoundup = heroScope === "week";
@@ -1528,11 +1521,7 @@ function HeroToday({ article, onClick, bookmarked, onToggleBookmark }) {
           </p>
           <div className="hero-today__row">
             <span className="hero-today__cta">記事を読む</span>
-            <BookmarkBtn
-              active={bookmarked}
-              onToggle={onToggleBookmark}
-              stopOpen
-            />
+            <ShareBtn articleId={article.id} />
           </div>
           <div className="hero-today__tags">
             {article.tags.slice(0, 5).map((t) => (
@@ -1563,8 +1552,6 @@ function HeroToday({ article, onClick, bookmarked, onToggleBookmark }) {
 function ArticleCard({
   article,
   onClick,
-  bookmarked,
-  onToggleBookmark,
   onTagClick,
 }) {
   const cat = CATEGORIES[article.category];
@@ -1612,7 +1599,7 @@ function ArticleCard({
             {cat.label}
           </span>
         </div>
-        <BookmarkBtn active={bookmarked} onToggle={onToggleBookmark} stopOpen />
+        <ShareBtn articleId={article.id} />
       </div>
       <h3 className="card-article__title">{article.title}</h3>
       <p className="card-article__excerpt">
@@ -1676,8 +1663,6 @@ function ReadingProgress() {
 function ArticleDetail({
   article,
   onBack,
-  bookmarked,
-  onToggleBookmark,
   onTagClick,
   relatedArticles,
   onOpenRelated,
@@ -1715,13 +1700,6 @@ function ArticleDetail({
         <div className="detail-toolbar">
           <button type="button" className="btn" onClick={onBack}>
             ← 一覧へ
-          </button>
-          <button
-            type="button"
-            className={`btn${bookmarked ? " btn-primary" : ""}`}
-            onClick={onToggleBookmark}
-          >
-            {bookmarked ? "♥ ブックマーク済" : "♡ ブックマーク"}
           </button>
           <button type="button" className="btn btn-primary" onClick={share}>
             共有 / リンクコピー
@@ -2035,15 +2013,13 @@ function WeekRoundupNav({ articles, onSelect, onTagClick, className }) {
   );
 }
 
-function Sidebar({ articles, bookmarkIds, onSelect, onTagClick, weekRoundups }) {
-  const marked = articles.filter((a) => bookmarkIds.has(a.id));
-
+function Sidebar({ articles, onSelect, onTagClick, weekRoundups }) {
   return (
     <aside className="desktop-sidebar">
       <div className="sidebar-panel">
         <h3>このサイトについて</h3>
         <p style={{ fontSize: 12, color: "var(--muted)", lineHeight: 1.65, margin: 0 }}>
-          AI 開発ツールのニュース・レビューを要約・整理しています（2次情報）。各記事末尾の「元記事・一次情報」から原文・公式を確認してください。ブックマークはこのブラウザに保存されます。
+          AI 開発ツールのニュース・レビューを要約・整理しています（2次情報）。各記事末尾の「元記事・一次情報」から原文・公式を確認してください。
         </p>
         <div style={{ marginTop: 10, fontSize: 11, color: "var(--muted)" }}>
           最終更新: {getSiteTodayYmd()}
@@ -2060,29 +2036,6 @@ function Sidebar({ articles, bookmarkIds, onSelect, onTagClick, weekRoundups }) 
         onSelect={onSelect}
         onTagClick={onTagClick}
       />
-
-      {marked.length > 0 ? (
-        <div className="sidebar-panel">
-          <h3>♥ ブックマーク ({marked.length})</h3>
-          {marked.map((a) => (
-            <div
-              key={a.id}
-              className="sidebar-link"
-              role="button"
-              tabIndex={0}
-              onClick={() => onSelect(a)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  onSelect(a);
-                }
-              }}
-            >
-              {a.title.length > 42 ? `${a.title.slice(0, 42)}…` : a.title}
-            </div>
-          ))}
-        </div>
-      ) : null}
 
       <div className="sidebar-panel">
         <h3>よく使うタグ</h3>
@@ -2211,8 +2164,7 @@ export default function App() {
   const [toolTab, setToolTab] = useState(initialRoute.toolTab ?? "claude-code");
   const [reviewTab, setReviewTab] = useState("all");
   const [theme, setTheme] = useState(() => localStorage.getItem(STORAGE_THEME) || "light");
-  const [bookmarkIds, setBookmarkIds] = useState(loadBookmarks);
-  const [showFab, setShowFab] = useState(false);
+const [showFab, setShowFab] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const searchRef = useRef(null);
 
@@ -2231,10 +2183,6 @@ export default function App() {
     }
     metaTheme.setAttribute("content", tc);
   }, [theme]);
-
-  useEffect(() => {
-    persistBookmarks(bookmarkIds);
-  }, [bookmarkIds]);
 
   useEffect(() => {
     syncAppUrl({
@@ -2302,14 +2250,6 @@ export default function App() {
     setTheme((t) => (t === "dark" ? "light" : "dark"));
   }, []);
 
-  const toggleBookmark = useCallback((id) => {
-    setBookmarkIds((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) next.delete(id);
-      else next.add(id);
-      return next;
-    });
-  }, []);
 
   const handleSelect = useCallback((article) => {
     setSelected(article);
@@ -2530,8 +2470,6 @@ export default function App() {
               setSelected(null);
               window.scrollTo(0, 0);
             }}
-            bookmarked={bookmarkIds.has(selected.id)}
-            onToggleBookmark={() => toggleBookmark(selected.id)}
             onTagClick={onTagClick}
             relatedArticles={pickRelatedArticles(selected, ARTICLES, 3)}
             onOpenRelated={handleSelect}
@@ -2543,8 +2481,6 @@ export default function App() {
                 articles={ARTICLES}
                 onSelect={handleSelect}
                 onSection={switchSection}
-                bookmarkIds={bookmarkIds}
-                onToggleBookmark={toggleBookmark}
               />
             </div>
           </div>
@@ -2574,8 +2510,6 @@ export default function App() {
                     <HeroToday
                       article={featured}
                       onClick={() => handleSelect(featured)}
-                      bookmarked={bookmarkIds.has(featured.id)}
-                      onToggleBookmark={() => toggleBookmark(featured.id)}
                     />
                   ) : null}
 
@@ -2619,8 +2553,6 @@ export default function App() {
                             key={a.id}
                             article={a}
                             onClick={() => handleSelect(a)}
-                            bookmarked={bookmarkIds.has(a.id)}
-                            onToggleBookmark={() => toggleBookmark(a.id)}
                             onTagClick={onTagClick}
                           />
                         ))}
@@ -2710,7 +2642,6 @@ export default function App() {
             {siteSection === "articles" ? (
               <Sidebar
                 articles={ARTICLES}
-                bookmarkIds={bookmarkIds}
                 onSelect={handleSelect}
                 onTagClick={onTagClick}
                 weekRoundups={weekRoundups}
