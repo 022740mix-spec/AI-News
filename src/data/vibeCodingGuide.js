@@ -245,7 +245,7 @@ export const VIBE_TOOL_COMBO_TABLE = {
 export const VIBE_CLAUDE_CODE = {
   id: "vibe-claude-code",
   title: "Claude Code 日常リファレンス",
-  lead: "起動してからの日常操作で大事なところだけ。導入手順は公式 https://docs.anthropic.com/en/docs/claude-code/overview を参照。",
+  lead: "起動してからの日常操作で大事なところだけ。導入手順は公式 https://docs.anthropic.com/en/docs/claude-code/overview を参照。Claude Code はターミナル（Bash や PowerShell などのコマンド入力画面）で動作する。Bash とは Mac/Linux の標準的なコマンド入力環境のことで、Windows では Git Bash や WSL で使える。",
   terms: [
     // ── 起動・セッション ──
     {
@@ -1607,15 +1607,23 @@ export const TOOL_REFERENCES = [
     label: "Cursor",
     ref: {
       id: "ref-cursor",
-      title: "Cursor リファレンス",
-      lead: "AI ネイティブ IDE。Composer・インライン編集・Background Agent が主軸。公式は https://docs.cursor.com/ を参照。",
+      title: "Cursor 日常リファレンス",
+      lead: "VS Code ベースの AI ネイティブエディタ。コードを書きながら AI に指示を出す操作が中心。公式は https://docs.cursor.com/ を参照。",
       terms: [
-        { word: "Cmd+K（インライン編集）", mean: "選択範囲やカーソル位置に対して AI に指示を出す。短い修正・生成に向く。" },
-        { word: "Cmd+I（Composer）", mean: "複数ファイルをまたぐ大きな変更を対話的に進める。Agent モードにすると自律的にファイルを探索・編集する。" },
-        { word: "Tab 補完", mean: "コード入力中にサジェストが出る。Accept で反映、Reject でスキップ。モデルは設定で切替可能。" },
-        { word: ".cursor/rules", mean: "プロジェクトごとのルールファイル。AI の振る舞いを制御する（例: 使用言語、命名規則、禁止パターン）。" },
-        { word: "Background Agent", mean: "バックグラウンドでタスクを実行するエージェント。PR 作成やテスト実行などを非同期で処理する。" },
-        { word: "Cursor Settings → Models", mean: "使用するモデルを選択・追加できる。Claude / GPT / Gemini など複数モデルを切り替えて使える。" },
+        // ── 基本操作 ──
+        { word: "インライン編集: `Cmd+K`（Mac）/ `Ctrl+K`（Win）", mean: "カーソル位置や選択範囲に対して AI に指示を出す。「この関数をリファクタして」「エラーハンドリングを追加して」のような短い修正に向く。", code: "# エディタ上でコードを選択 → Cmd+K → 指示を入力\n# 例: 「この関数にエラーハンドリングを追加して」", codeLang: "text" },
+        { word: "Composer: `Cmd+I`（Mac）/ `Ctrl+I`（Win）", mean: "複数ファイルをまたぐ大きな変更を対話的に進める。Agent モードにすると、AI が自律的にファイルを探索・編集・ターミナル実行まで行う。", code: "# Cmd+I → Composer パネルが開く\n# Agent モードに切り替え: パネル内のドロップダウンで「Agent」を選択\n# 例: 「ユーザー認証機能を追加して」", codeLang: "text" },
+        { word: "Tab 補完", mean: "コード入力中にサジェスト（補完候補）が半透明で表示される。Tab で受け入れ、Esc でスキップ。使用するモデルは設定で切り替えられる。" },
+        { word: "Background Agent", mean: "バックグラウンドでタスクを非同期に実行するエージェント。PR 作成、テスト実行、リファクタリングなどを裏で処理しながら、自分は別の作業ができる。" },
+        // ── 設定 ──
+        { word: "設定: `.cursor/rules`", mean: "プロジェクトごとの AI ルールファイル。使用言語、命名規則、禁止パターンなどを書いておくと AI の出力が安定する。CLAUDE.md と同じ役割。", code: "# .cursor/rules の例:\n\n言語: TypeScript\nフレームワーク: React 19\nスタイル: CSS Modules\n\n禁止:\n- any 型の使用\n- console.log の残置", codeLang: "text" },
+        { word: "設定: モデル選択", mean: "Settings → Models で使用するモデルを選択・追加できる。Claude Opus/Sonnet、GPT-5.4、Gemini など複数モデルを切り替えて使える。タスクに応じて使い分けるのが実用的。" },
+        // ── 料金 ──
+        { word: "料金: Hobby（無料）", mean: "月 2,000 回の補完と 50 回のプレミアムリクエスト。個人で試すには十分。" },
+        { word: "料金: Pro（$20/月）", mean: "無制限の補完、500 回のプレミアムリクエスト。日常的にコードを書く開発者向け。" },
+        { word: "料金: Business（$40/席/月）", mean: "チーム管理、SSO、管理者ダッシュボード付き。企業利用はこのプラン。" },
+        // ── Tips ──
+        { word: "統合ターミナルで Claude Code を併用", mean: "Cursor のターミナルから `claude` を起動すると、エディタの AI と CLI の AI を両方使える。Composer で設計、Claude Code で実行の使い分けが効率的。", code: "# Cursor のターミナル（Ctrl+`）で:\nclaude", codeLang: "bash" },
       ],
     },
   },
@@ -1624,14 +1632,23 @@ export const TOOL_REFERENCES = [
     label: "Codex",
     ref: {
       id: "ref-codex",
-      title: "Codex（OpenAI）リファレンス",
-      lead: "クラウドサンドボックスで動作する AI コーディングエージェント。公式は https://openai.com/index/introducing-codex/ を参照。",
+      title: "Codex（OpenAI）日常リファレンス",
+      lead: "OpenAI が提供するクラウド型 AI コーディングエージェント。ローカルではなくクラウド上の隔離環境（サンドボックス）で実行される点が最大の特徴。公式は https://openai.com/index/introducing-codex/ を参照。",
       terms: [
-        { word: "codex", mean: "対話セッションを開始する。ローカルファイルには直接書き込まず、クラウド上のサンドボックスで実行する。" },
-        { word: "--full-auto", mean: "確認なしで自動実行するモード。サンドボックス内で動作するため安全性は高いが、結果は必ず確認すること。" },
-        { word: "AGENTS.md", mean: "Codex にプロジェクトの文脈を伝える設定ファイル。CLAUDE.md と同じ役割だが OpenAI 側の命名。" },
-        { word: "並列タスク実行", mean: "複数のタスクをクラウド上で同時に走らせられる。PR 単位で結果が返る設計。" },
-        { word: "サンドボックス", mean: "隔離されたクラウド環境で実行される。ローカルファイルシステムへの直接アクセスはない。" },
+        // ── 基本操作 ──
+        { word: "起動: `codex`", mean: "ターミナルで対話セッションを開始する。Claude Code と同じようにリポジトリのルートで実行する。ただし、ファイル操作はローカルではなくクラウドのサンドボックス上で行われる。", code: "cd your-project\ncodex", codeLang: "bash" },
+        { word: "自動実行: `--full-auto`", mean: "確認なしで自動実行するモード。サンドボックス内で動作するためローカルファイルが直接壊れるリスクは低いが、結果のレビューは必須。", code: "codex --full-auto \"テストを書いて全部パスさせて\"", codeLang: "bash" },
+        { word: "非対話: `codex -q`（quiet モード）", mean: "質問への回答だけ返して終了する。CI やスクリプトからの利用に向く。", code: "codex -q \"このエラーの原因を説明して\"", codeLang: "bash" },
+        // ── 設定 ──
+        { word: "設定: `AGENTS.md`", mean: "プロジェクトの文脈を Codex に伝える設定ファイル。CLAUDE.md と同じ役割で、コーディング規約やプロジェクト情報を書く。OpenAI 側の命名。", code: "# AGENTS.md の例:\n\n## プロジェクト概要\nReact + TypeScript のWebアプリ\n\n## ルール\n- テストは Jest で書く\n- コミットメッセージは日本語\n- 型定義は必ず付ける", codeLang: "markdown" },
+        // ── クラウド実行 ──
+        { word: "並列タスク実行", mean: "複数のタスクをクラウド上で同時に走らせられる。例えば「機能Aの実装」と「機能Bのテスト」を並行で依頼できる。結果は PR（Pull Request）単位で返ってくる。" },
+        { word: "サンドボックスとは", mean: "Codex が動く隔離されたクラウド環境。自分の PC のファイルには直接触れず、クラウド上のコピーで作業する。安全だが、ローカルのファイルとの同期は PR 経由で行う必要がある。" },
+        // ── 料金 ──
+        { word: "料金: Pro（$20/月）", mean: "ChatGPT Plus と共通。月のタスク数に上限あり。" },
+        { word: "料金: API 従量課金", mean: "API 経由で使う場合は GPT モデルの従量課金。大量のタスクを回す場合はこちら。" },
+        // ── Claude Code との違い ──
+        { word: "==Claude Code との違い==", mean: "Claude Code はローカルで直接ファイルを編集する。Codex はクラウドのサンドボックスで動作する。ローカル操作の即時性なら Claude Code、安全な並列実行なら Codex。" },
       ],
     },
   },
@@ -1640,15 +1657,26 @@ export const TOOL_REFERENCES = [
     label: "VS Code + Copilot",
     ref: {
       id: "ref-copilot",
-      title: "VS Code + GitHub Copilot リファレンス",
-      lead: "業界標準エディタ＋ GitHub のAI 支援。公式は https://docs.github.com/en/copilot を参照。",
+      title: "VS Code + GitHub Copilot 日常リファレンス",
+      lead: "業界で最も普及しているエディタと AI 支援の組み合わせ。既に VS Code を使っている人、企業で Copilot の契約がある人にとって最も導入しやすい選択肢。公式は https://docs.github.com/en/copilot を参照。",
       terms: [
-        { word: "Copilot Chat", mean: "サイドパネルでコードについて質問・指示ができる。@workspace でプロジェクト全体を文脈に含められる。" },
-        { word: "Agent Mode", mean: "Copilot がファイル編集・ターミナル実行を自律的に行うモード。VS Code 1.99+ で利用可能。" },
-        { word: "インラインサジェスト", mean: "コード入力中にリアルタイムで補完候補が表示される。Tab で受け入れ。" },
-        { word: "gh copilot", mean: "ターミナルから Copilot を使う CLI 拡張。シェルコマンドの生成・説明に使える。" },
-        { word: "@workspace / @terminal", mean: "Chat 内でスコープを指定する接頭辞。@workspace はプロジェクト全体、@terminal はターミナル出力を参照。" },
-        { word: "Enterprise (SSO・監査ログ)", mean: "Business / Enterprise プランで SSO、監査ログ、IP 補償が付く。組織導入の判断材料。" },
+        // ── 基本操作 ──
+        { word: "インラインサジェスト", mean: "コード入力中にリアルタイムで補完候補が半透明で表示される。Tab で受け入れ、Esc でスキップ。Copilot の最も基本的な機能。" },
+        { word: "Copilot Chat: `Ctrl+Shift+I`", mean: "サイドパネルでコードについて質問・指示ができる。選択中のコードやエラーメッセージを文脈として渡せる。", code: "# エディタ上でコードを選択 → Ctrl+Shift+I\n# 例: 「このコードのバグを見つけて」\n# 例: 「このエラーの原因は？」", codeLang: "text" },
+        { word: "Agent Mode", mean: "Copilot がファイル編集・ターミナル実行を自律的に行うモード。VS Code 1.99 以降で利用可能。Cursor の Agent モードと同等の機能。", code: "# Chat パネル → モードを「Agent」に切り替え\n# 例: 「このプロジェクトにログイン機能を追加して」", codeLang: "text" },
+        // ── スコープ指定 ──
+        { word: "`@workspace`", mean: "Chat 内でプロジェクト全体を文脈に含める接頭辞。ファイル構成やプロジェクト設定を AI に理解させたいときに使う。", code: "@workspace このプロジェクトの構造を説明して", codeLang: "text" },
+        { word: "`@terminal`", mean: "直近のターミナル出力を文脈に含める。エラーが出たときに「@terminal このエラーを直して」のように使う。", code: "@terminal このエラーの原因と修正方法を教えて", codeLang: "text" },
+        { word: "`#file`", mean: "特定のファイルを文脈に含める。Chat 内で `#file:ファイル名` と書くとそのファイルの内容を AI に渡せる。", code: "#file:src/App.jsx このコンポーネントにダークモードを追加して", codeLang: "text" },
+        // ── CLI ──
+        { word: "CLI: `gh copilot`", mean: "ターミナルから Copilot を使う GitHub CLI の拡張。シェルコマンドの生成・説明に使える。「このコマンドの意味は？」のような質問に便利。", code: "# インストール\ngh extension install github/gh-copilot\n\n# コマンドの説明を聞く\ngh copilot explain \"git rebase -i HEAD~3\"\n\n# コマンドを提案してもらう\ngh copilot suggest \"ポート3000を使っているプロセスを止める\"", codeLang: "bash" },
+        // ── 設定 ──
+        { word: "設定: `.github/copilot-instructions.md`", mean: "プロジェクトごとの Copilot への指示ファイル。CLAUDE.md や .cursor/rules と同じ役割。", code: "# .github/copilot-instructions.md の例:\n\nこのプロジェクトは React + TypeScript です。\n- コンポーネントは関数コンポーネントで書く\n- CSS は CSS Modules を使う\n- テストは Vitest で書く", codeLang: "markdown" },
+        // ── 料金 ──
+        { word: "料金: 無料枠", mean: "VS Code は無料。Copilot は月 2,000 回の補完と 50 回の Chat が無料で使える（2026年時点）。" },
+        { word: "料金: Individual（$10/月）", mean: "個人向け。無制限の補完と Chat。" },
+        { word: "料金: Business（$19/席/月）", mean: "組織向け。管理者ダッシュボード、ポリシー管理付き。" },
+        { word: "料金: Enterprise（$39/席/月）", mean: "SSO、監査ログ、IP 補償（AI 生成コードの知的財産保護）付き。企業導入の判断材料。" },
       ],
     },
   },
