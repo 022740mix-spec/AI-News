@@ -448,6 +448,14 @@
     <summary>OpenAI は火曜に GPT-5.4 mini と nano を出した。水曜は Windsurf のレビュー枠が更新され、木曜に Astral（uv・Ruff・ty）の買収公表と生成音楽ツールの整理特集が重なった。金曜には Cursor による Windsurf 買収完了が伝わり、日曜には Codex エージェントのレビューが掲載された。</summary>
   </entry>
   <entry>
+    <title>Cursor Composer 2 の正体 — Kimi K2.5 ベースの独自モデル、API 解析で判明</title>
+    <link rel="alternate" type="text/html" href="?a=cursor-composer-2-kimi-2026"/>
+    <id>tag:ai-tool-news.jp,2026:cursor-composer-2-kimi-2026</id>
+    <published>2026-03-22T15:00:00Z</published>
+    <updated>2026-03-22T15:00:00Z</updated>
+    <summary>Cursor の最新コーディングモデル Composer 2 が、中国 Moonshot AI のオープンウェイトモデル Kimi K2.5 をベースに追加学習して構築されたことが判明した。開発者が API トラフィックを解析し、モデル ID が kimi-k2p5 であることを発見。Cursor は「ベースモデルの言及漏れ」を認め、Moonshot AI は公式に支持を表明した。</summary>
+  </entry>
+  <entry>
     <title>OpenAI Codex — クラウド並列実行のAIコーディングエージェント</title>
     <link rel="alternate" type="text/html" href="?a=openai-codex-agent"/>
     <id>tag:ai-tool-news.jp,2026:openai-codex-agent</id>

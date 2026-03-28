@@ -26,6 +26,45 @@
 
 export const ARTICLES = [
   {
+    "id": "cursor-composer-2-kimi-2026",
+    "type": "news",
+    "category": "editor",
+    "title": "Cursor Composer 2 の正体 — Kimi K2.5 ベースの独自モデル、API 解析で判明",
+    "excerpt": "Cursor の最新コーディングモデル Composer 2 が、中国 Moonshot AI のオープンウェイトモデル Kimi K2.5 をベースに追加学習して構築されたことが判明した。開発者が API トラフィックを解析し、モデル ID が kimi-k2p5 であることを発見。Cursor は「ベースモデルの言及漏れ」を認め、Moonshot AI は公式に支持を表明した。",
+    "body": [
+      "2026年3月、Cursor が発表した独自コーディングモデル Composer 2 が、Moonshot AI のオープンウェイトモデル Kimi K2.5 をベースに構築されていたことが判明した。開発者が Cursor の API トラフィックを解析したところ、モデル識別子が「kimi-k2p5-rl-0317-s515-fast」であることが確認され、Kimi K2.5 に強化学習（RL）を追加して作られたモデルであることが明らかになった。",
+      "Cursor の開発者教育担当 VP Lee Robinson は、Kimi K2.5 ベースであることを認め「ブログ投稿の段階で Kimi ベースであることに言及しなかったのはミスだった」と述べた。Robinson によると、最終モデルの計算コストのうち Kimi K2.5 ベースの事前学習から来る部分は約1/4で、残りの3/4は Cursor 独自のトレーニング（継続事前学習と大規模 RL）に由来する。モデルの提供は Fireworks AI との正規の商用パートナーシップを通じて行われている。",
+      "Moonshot AI はこの件に対して公式に支持を表明し「Kimi K2.5 が基盤を提供できたことを誇りに思う」「Cursor の継続事前学習と大規模 RL トレーニングを支持する」とコメントした。オープンウェイトモデルが商用製品の基盤として活用される先行事例として注目される。",
+      "Composer 2 のベンチマークスコアは CursorBench 61.3、Terminal-Bench 2.0 で 61.7、SWE-Bench Multilingual で 73.7%。Claude Opus 4.6（CursorBench 58.2）を上回る一方、GPT-5.4（Terminal-Bench 75.1%）には及ばない。前世代の Composer 1.5（CursorBench 44.2）からは約17ポイントの大幅な改善。料金は入力 $0.50 / 出力 $2.50（1M トークンあたり）で、Opus 4.6 と比べて大幅に低コスト。",
+      "この件は、AI エディタ企業がオープンウェイトモデルをベースに独自モデルを構築するトレンドの象徴でもある。[Kimi K2.5](?a=kimi-k25-moonshot-2026) 自体が SWE-Bench Verified 76.8% というフロンティア級のコーディング性能を持つため、その上に用途特化の RL を重ねることで、汎用モデルに匹敵するコーディング専用モデルを低コストで構築できることが実証された。透明性の観点では、ベースモデルの出自を明示する重要性も浮き彫りになった。"
+    ],
+    "newsDate": "2026-03-22",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": ["Cursor", "Composer 2", "Kimi K2.5", "Moonshot AI", "エディタ", "モデル", "オープンウェイト"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Cursor admits its new coding model was built on top of Moonshot AI's Kimi", "site": "TechCrunch", "url": "https://techcrunch.com/2026/03/22/cursor-admits-its-new-coding-model-was-built-on-top-of-moonshot-ais-kimi/" },
+      { "title": "Introducing Composer 2", "site": "Cursor", "url": "https://cursor.com/blog/composer-2" },
+      { "title": "Composer 2 Technical Report", "site": "Cursor Research", "url": "https://cursor.com/resources/Composer2.pdf" },
+      { "title": "Kimi K2.5 Tech Blog", "site": "Moonshot AI", "url": "https://www.kimi.com/blog/kimi-k2-5" }
+    ],
+    "charts": [{
+      "afterParagraph": 3,
+      "title": "Composer 2 ベンチマーク比較（公式発表値）",
+      "subtitle": "CursorBench は Cursor 独自指標。Terminal-Bench 2.0 は複数社が採用するターミナル操作ベンチマーク",
+      "unit": "スコア",
+      "maxValue": 80,
+      "bars": [
+        { "label": "GPT-5.4", "value": 75.1, "color": "#10b981" },
+        { "label": "Composer 2", "value": 61.7, "color": "#7c3aed" },
+        { "label": "Opus 4.6", "value": 58.0, "color": "#f59e0b" },
+        { "label": "Composer 1.5", "value": 47.9, "color": "#94a3b8" }
+      ]
+    }]
+  },
+  {
     "id": "google-agent-smith-2026",
     "type": "news",
     "category": "product",
@@ -79,16 +118,17 @@ export const ARTICLES = [
     "body": [
       "Moonshot AI は2026年1月27日、大規模言語モデル Kimi K2.5 を公開した。1兆パラメータの Mixture of Experts（MoE）アーキテクチャを採用し、推論時にアクティブになるパラメータは320億。コンテキスト長は256Kトークンに対応する。",
       "ベンチマークでは Humanity's Last Exam で50.2%を記録し、Claude Opus 4.5（32.0%）やGPT-5.2 High（41.7%）を大幅に上回った。コーディングでも SWE-bench Verified で76.8%、マルチモーダルでは MMMU Pro 78.5% と高水準。テキスト・画像・動画の入力に対応する。",
-      "オープンウェイトで公開されており、Hugging Face からダウンロード可能。エージェント機能ではスウォームモードに対応し、複数エージェントの協調動作でさらに性能が向上する（BrowseComp で78.4%）。中国発のモデルが欧米のフロンティアモデルと肩を並べる状況が鮮明になっている。"
+      "オープンウェイトで公開されており、Hugging Face からダウンロード可能。エージェント機能ではスウォームモードに対応し、複数エージェントの協調動作でさらに性能が向上する（BrowseComp で78.4%）。中国発のモデルが欧米のフロンティアモデルと肩を並べる状況が鮮明になっている。2026年3月には [Cursor が Kimi K2.5 をベースに独自モデル Composer 2 を構築](?a=cursor-composer-2-kimi-2026)したことが判明し、オープンウェイトモデルの商用活用事例としても注目されている。"
     ],
     "charts": [{
       "afterParagraph": 1,
-      "title": "SWE-Bench Verified スコア（公式発表値）",
-      "subtitle": "各社が公式に発表したコーディング能力スコアのみ掲載",
+      "title": "SWE-Bench スコア（公式発表値）",
+      "subtitle": "各社が公式に発表したコーディング能力スコアのみ掲載。Kimi K2.5・KAT-Coder は SWE-Bench Verified、Composer 2 は SWE-Bench Multilingual（指標が異なるため直接比較には注意）",
       "unit": "%",
       "maxValue": 85,
       "bars": [
         { "label": "Kimi K2.5", "value": 76.8, "color": "#f59e0b" },
+        { "label": "Composer 2（Kimi K2.5ベース）", "value": 73.7, "color": "#7c3aed" },
         { "label": "KAT-Coder V2", "value": 73.4, "color": "#14b8a6" }
       ]
     }],
@@ -96,7 +136,7 @@ export const ARTICLES = [
     "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "3分",
-    "tags": ["Moonshot AI", "Kimi", "モデル", "オープンウェイト", "MoE"],
+    "tags": ["Moonshot AI", "Kimi", "モデル", "オープンウェイト", "MoE", "Cursor"],
     "heroScope": "none",
     "primarySources": [
       { "title": "Kimi K2.5 Tech Blog", "site": "Moonshot AI", "url": "https://www.kimi.com/blog/kimi-k2-5" },
@@ -2968,7 +3008,7 @@ export const ARTICLES = [
     "excerpt": "VS Code フォークで最も人気のAIエディタ。Windsurf買収によるCascade統合とBackground Agentの追加でさらに進化。",
     "body": [
       "**Cursor** は **Anysphere** 社が開発する AI ネイティブのコードエディタで、**VS Code** のフォークとして構築されている。VS Code の拡張機能やキーバインドをそのまま引き継げるため、既存ユーザーの移行コストが低い。2023 年の初期リリース以降、AI 支援コーディングの需要拡大とともにユーザー数を伸ばし、2026 年 3 月時点では AI エディタ分野で広く使われている。",
-      "主要機能は Composer（マルチファイル編集の対話的生成）、インライン編集（選択範囲を指示で書き換え）、Background Agent（バックグラウンドでの自律タスク実行）、そして Tab 補完の 4 つに大別される。Composer はプロジェクト横断のリファクタリングに、Background Agent はコードレビュー中の並行作業にそれぞれ向く。モデルは Sonnet 4.6 と Opus 4.6 を切り替えて利用でき、タスクの粒度に応じた使い分けが可能になっている。",
+      "主要機能は Composer（マルチファイル編集の対話的生成）、インライン編集（選択範囲を指示で書き換え）、Background Agent（バックグラウンドでの自律タスク実行）、そして Tab 補完の 4 つに大別される。Composer はプロジェクト横断のリファクタリングに、Background Agent はコードレビュー中の並行作業にそれぞれ向く。モデルは Sonnet 4.6 と Opus 4.6 に加え、2026年3月に独自モデル [Composer 2](?a=cursor-composer-2-kimi-2026)（Kimi K2.5 ベース + 独自 RL トレーニング）が追加された。Composer 2 は CursorBench で Opus 4.6 を上回るスコアを記録し、料金も大幅に低い。",
       "料金は Hobby（無料・機能制限あり）、Pro（月額 20 ドル）、Business（月額 40 ドル・管理機能付き）の 3 プランで構成される。無料枠でも補完と限定的な Composer 利用が可能だが、Background Agent や高頻度のモデル呼び出しには Pro 以上が必要になる。",
       "2026 年 3 月に [Windsurf（旧 Codeium）の買収が完了](?a=cursor-windsurf-merge)し、Cascade フロー技術の統合が進行している。買収により Anysphere は AI エディタ市場で複数ブランドを抱える構図となった。Cursor 自体は引き続き単独製品として開発が続けられており、Cascade 由来の段階的タスク分解が今後どの程度取り込まれるかが注目点となる。他エディタとの横並び比較は[AI エディタ横断比較](?a=editor-comparison-2026-march)を参照。"
     ],
