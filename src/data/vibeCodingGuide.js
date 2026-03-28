@@ -521,6 +521,28 @@ export const VIBE_CLAUDE_CODE = {
       section: "料金",
       mean: "API キーを使って従量課金で利用する方法。サブスク上限を気にせず使えるが、モデルごとの単価（Opus: $15/$75、Sonnet: $3/$15 per 1M tokens）がかかる。大規模プロジェクトや CI/CD での自動実行に向く。",
     },
+    // ── 節約テクニック ──
+    {
+      word: "==Opus Plan モードで使用量を節約==",
+      section: "節約テクニック",
+      mean: "Max プラン（$100/月）などで使用量の上限が気になる場合に有効な方法。`/model` コマンドで Opus Plan モードに切り替えると、計画（Plan）フェーズだけ高性能な Opus モデルを使い、実際のコード実装は低コストな Sonnet モデルが担当する。設計の質を保ちながらトークン消費を抑えられる。",
+      code: "/model opus-plan",
+      codeLang: "text",
+    },
+    {
+      word: "モデルの使い分けで節約する",
+      section: "節約テクニック",
+      mean: "`/model` コマンドでセッション中にモデルを切り替えられる。複雑な設計判断やバグ調査は Opus、定型的なコード生成やテスト作成は Sonnet と使い分けることで、品質を維持しながら使用量を抑えられる。",
+      code: "/model sonnet",
+      codeLang: "text",
+    },
+    {
+      word: "使用量の確認: `/cost`",
+      section: "節約テクニック",
+      mean: "セッション中に `/cost` でこれまでのトークン使用量と概算コストを確認できる。上限に近づいているかの目安になる。Max プランでは1日の使用量に注意が必要。",
+      code: "/cost",
+      codeLang: "text",
+    },
   ],
 };
 
