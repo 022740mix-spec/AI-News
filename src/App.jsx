@@ -849,6 +849,11 @@ function ToolTabBar({ toolTab, onSelect }) {
   );
 }
 
+/** セクション名 → 安全なアンカーID（ASCII のみ） */
+function sectionAnchorId(name) {
+  return "ref-sec-" + encodeURIComponent(name).replace(/%[0-9A-F]{2}/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
+}
+
 function ToolReferencePanel({ referenceData, practical }) {
   let k = 0;
   const mkKey = () => `tr-${k++}`;
@@ -879,7 +884,7 @@ function ToolReferencePanel({ referenceData, practical }) {
             <ul className="tool-ref-toc__list">
               {sections.map((s) => (
                 <li key={s.name}>
-                  <a href={`#ref-sec-${s.name.replace(/\s/g, "-")}`} className="tool-ref-toc__link">
+                  <a href={`#${sectionAnchorId(s.name)}`} className="tool-ref-toc__link">
                     {s.name}
                     <span className="tool-ref-toc__count">{s.terms.length}</span>
                   </a>
@@ -890,7 +895,7 @@ function ToolReferencePanel({ referenceData, practical }) {
         ) : null}
 
         {sections.map((s) => (
-          <div key={s.name} id={`ref-sec-${s.name.replace(/\s/g, "-")}`} className="tool-ref-group">
+          <div key={s.name} id={sectionAnchorId(s.name)} className="tool-ref-group">
             {s.name ? <h3 className="tool-ref-group__title">{s.name}</h3> : null}
             <dl className="glossary-dl">
               {s.terms.map((t) => (
@@ -1037,7 +1042,7 @@ function ToolSidebar({ toolTab, toolRef }) {
         {sections.map((sec) => (
           <a
             key={sec}
-            href={`#ref-sec-${sec.replace(/\s/g, "-")}`}
+            href={`#${sectionAnchorId(sec)}`}
             className="sidebar-anchor"
           >
             {sec}
