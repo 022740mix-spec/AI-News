@@ -81,6 +81,20 @@ export const ARTICLES = [
       "ベンチマークでは Humanity's Last Exam で50.2%を記録し、Claude Opus 4.5（32.0%）やGPT-5.2 High（41.7%）を大幅に上回った。コーディングでも SWE-bench Verified で76.8%、マルチモーダルでは MMMU Pro 78.5% と高水準。テキスト・画像・動画の入力に対応する。",
       "オープンウェイトで公開されており、Hugging Face からダウンロード可能。エージェント機能ではスウォームモードに対応し、複数エージェントの協調動作でさらに性能が向上する（BrowseComp で78.4%）。中国発のモデルが欧米のフロンティアモデルと肩を並べる状況が鮮明になっている。"
     ],
+    "charts": [{
+      "afterParagraph": 1,
+      "title": "SWE-Bench Verified スコア比較",
+      "subtitle": "コーディング能力の指標（高いほど良い）",
+      "unit": "%",
+      "maxValue": 85,
+      "bars": [
+        { "label": "Kimi K2.5", "value": 76.8, "color": "#f59e0b" },
+        { "label": "Claude Opus 4.6", "value": 72, "color": "#6366f1" },
+        { "label": "GPT-5.4", "value": 70, "color": "#10b981" },
+        { "label": "KAT-Coder V2", "value": 73.4, "color": "#14b8a6" },
+        { "label": "Gemini 3.1 Pro", "value": 68, "color": "#3b82f6" }
+      ]
+    }],
     "newsDate": "2026-01-27",
     "date": "2026-03-28",
     "author": "AI News 編集部",
@@ -125,6 +139,19 @@ export const ARTICLES = [
       "ベンチマークでは SWE-Pro 56.2% と Opus に迫る水準を記録。PinchBench では86.2%で GLM-5 や GPT-5.4（86.4%）とほぼ同等。オフィス業務（GDPval-AA ELO 1495）ではオープンソースモデル中で最高スコア。強化学習の研究ワークフローの30〜50%を自動化できるとされる。",
       "MiniMax によると、M2.7 は従来のモデル開発の「人間がチューニング → 評価 → 改善」のループの一部を AI 自身が回せるようになった初期事例。コストも Opus 4.6 と比較して大幅に低い。自己改善型 AI の実用化が進んでいることを示すモデルとして、業界の注目を集めている。"
     ],
+    "charts": [{
+      "afterParagraph": 1,
+      "title": "MiniMax M2.7 ベンチマーク比較",
+      "subtitle": "フロンティアモデルとの比較",
+      "unit": "%",
+      "maxValue": 95,
+      "bars": [
+        { "label": "GPT-5.4", "value": 86.4, "color": "#10b981" },
+        { "label": "GLM-5", "value": 86.4, "color": "#ef4444" },
+        { "label": "M2.7", "value": 86.2, "color": "#ec4899" },
+        { "label": "Opus 4.6", "value": 84, "color": "#6366f1" }
+      ]
+    }],
     "newsDate": "2026-03-18",
     "date": "2026-03-28",
     "author": "AI News 編集部",
@@ -146,6 +173,18 @@ export const ARTICLES = [
       "NVIDIA H100 GPU 上のベンチマークでは、32ビットの非圧縮状態と比較して最大8倍の速度向上を記録した。Llama-3.1-8B や Mistral-7B などのオープンソースモデルで検証され、圧縮後も非圧縮モデルと同等のリコールスコアを達成している。追加学習は不要で、既存のモデルにそのまま適用できる点が実用的。",
       "TurboQuant は ICLR 2026 で発表される予定。インターネット上では、ドラマ「シリコンバレー」の圧縮技術になぞらえて「現実の Pied Piper」と話題になっている。AI の運用コストを大幅に下げる可能性があり、メモリチップ需要への影響から Samsung や Micron の株価にも動きが出ている。"
     ],
+    "charts": [{
+      "afterParagraph": 1,
+      "title": "TurboQuant による改善効果",
+      "subtitle": "NVIDIA H100 GPU での測定結果",
+      "unit": "x",
+      "maxValue": 10,
+      "bars": [
+        { "label": "速度向上", "value": 8, "color": "#3b82f6" },
+        { "label": "メモリ削減", "value": 6, "color": "#10b981" },
+        { "label": "精度維持", "value": 10, "color": "#6366f1" }
+      ]
+    }],
     "newsDate": "2026-03-25",
     "date": "2026-03-28",
     "author": "AI News 編集部",
@@ -168,6 +207,20 @@ export const ARTICLES = [
       "AI の能力向上はモデル単体にとどまらない。Google の TurboQuant はメモリを6分の1に圧縮して8倍高速化し、Gemini 3.1 Flash Live は音声応答を0.5秒以下にした。これらを組み合わせると、数か月前には不可能だったことが日常的に可能になる速度で技術が進んでいる。",
       "「シンギュラリティ」という言葉は議論を呼ぶが、2026年春に起きていることを見ると、少なくともソフトウェア開発・カスタマーサポート・金融分析といった知的労働の一部において、AI が人間の能力を超える領域が急速に広がっていることは否定しにくい。開発者にとって重要なのは、この流れの中で何を自動化し、何を人間が判断するかの線引きを意識し続けることだろう。"
     ],
+    "charts": [{
+      "afterParagraph": 0,
+      "title": "2026年3月のAI能力指標（推定）",
+      "subtitle": "各分野での人間の専門家レベルを100とした場合",
+      "unit": "",
+      "maxValue": 110,
+      "bars": [
+        { "label": "コード生成", "value": 95, "color": "#6366f1" },
+        { "label": "学術推論", "value": 80, "color": "#3b82f6" },
+        { "label": "音声対話", "value": 85, "color": "#10b981" },
+        { "label": "適応推論", "value": 30, "color": "#ef4444" },
+        { "label": "汎用判断", "value": 45, "color": "#f59e0b" }
+      ]
+    }],
     "newsDate": "2026-03-28",
     "date": "2026-03-28",
     "author": "AI News 編集部",
@@ -2015,6 +2068,19 @@ export const ARTICLES = [
       "価格は入力$2/出力$18（100万トークンあたり）で、Gemini 3 Proから据え置き。Geminiアプリ（Pro/Ultraプラン）、AI Studio、Vertex AI、Gemini CLI、Android Studio、NotebookLM で利用可能です。JetBrains IDE、Xcode、Eclipseでも GitHub Copilot経由で利用できます。",
       "エージェントワークフローの改善にも注力しており、Gemini Code Assistは個人開発者向けに完全無料化されました。月間18万リクエストまで無料で利用でき、VS CodeとJetBrains IDEに対応しています。"
     ],
+    "charts": [{
+      "afterParagraph": 1,
+      "title": "コンテキスト長の比較（万トークン）",
+      "subtitle": "一度に処理できるテキスト量",
+      "unit": "万",
+      "maxValue": 220,
+      "bars": [
+        { "label": "Gemini 3.1 Pro", "value": 200, "color": "#3b82f6" },
+        { "label": "Claude Opus 4.6", "value": 100, "color": "#6366f1" },
+        { "label": "GPT-5.4", "value": 12.8, "color": "#10b981" },
+        { "label": "Kimi K2.5", "value": 25.6, "color": "#f59e0b" }
+      ]
+    }],
     "newsDate": "2026-03-27",
     "date": "2026-03-28",
     "author": "AI News 編集部",

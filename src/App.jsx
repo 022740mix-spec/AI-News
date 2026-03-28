@@ -1341,6 +1341,51 @@ function BenchmarkChart({ data, title, maxScore = 100 }) {
   );
 }
 
+/** 記事内埋め込み用の縦棒グラフ */
+function VerticalBarChart({ chart }) {
+  const { title, subtitle, bars, maxValue = 100, unit = "%" } = chart;
+  if (!bars || bars.length === 0) return null;
+  const max = maxValue || Math.max(...bars.map((b) => b.value)) * 1.15;
+  return (
+    <div className="vchart">
+      {title ? <h4 className="vchart__title">{title}</h4> : null}
+      {subtitle ? <p className="vchart__subtitle">{subtitle}</p> : null}
+      <div className="vchart__area">
+        <div className="vchart__gridlines">
+          {[0, 25, 50, 75, 100].map((v) => {
+            const pct = (v / 100) * 100;
+            return (
+              <div key={v} className="vchart__gridline" style={{ bottom: `${pct}%` }}>
+                <span className="vchart__gridlabel">{Math.round((v / 100) * max)}</span>
+              </div>
+            );
+          })}
+        </div>
+        <div className="vchart__bars">
+          {bars.map((b, i) => {
+            const pct = (b.value / max) * 100;
+            return (
+              <div key={b.label} className="vchart__col" style={{ animationDelay: `${i * 80}ms` }}>
+                <div className="vchart__val">{b.value}{unit}</div>
+                <div className="vchart__bar-wrap">
+                  <div
+                    className="vchart__bar"
+                    style={{
+                      height: `${pct}%`,
+                      background: b.color || `hsl(${210 + i * 30}, 70%, 55%)`,
+                    }}
+                  />
+                </div>
+                <div className="vchart__label">{b.label}</div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ModelComparisonSection() {
   const sorted = [...MODEL_COMPARISON].sort((a, b) => b.rating - a.rating);
   return (
@@ -1638,8 +1683,10 @@ function ArticleTableBlock({ table, keyPrefix }) {
 function ArticleProse({ article }) {
   const figures = article.figures ?? [];
   const tables = article.tables ?? [];
+  const charts = article.charts ?? [];
   const figuresAfter = (i) => figures.filter((f) => f.afterParagraph === i);
   const tablesAfter = (i) => tables.filter((t) => t.afterParagraph === i);
+  const chartsAfter = (i) => charts.filter((c) => c.afterParagraph === i);
   return (
     <div className="prose prose--article">
       {article.body.map((p, i) => {
@@ -1666,6 +1713,9 @@ function ArticleProse({ article }) {
           ))}
           {tablesAfter(i).map((t, ti) => (
             <ArticleTableBlock key={`tbl-${i}-${ti}`} table={t} keyPrefix={`p${i}-${ti}`} />
+          ))}
+          {chartsAfter(i).map((c, ci) => (
+            <VerticalBarChart key={`chart-${i}-${ci}`} chart={c} />
           ))}
         </Fragment>
       );

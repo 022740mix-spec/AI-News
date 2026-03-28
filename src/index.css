@@ -2001,6 +2001,111 @@ body {
   opacity: 0.9;
 }
 
+/* ── 縦棒グラフ（記事埋め込み） ── */
+.vchart {
+  margin: 1.5rem 0;
+  background: var(--card-solid);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  overflow: hidden;
+}
+.vchart__title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 0.25rem;
+}
+.vchart__subtitle {
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+.vchart__area {
+  position: relative;
+  height: 220px;
+  display: flex;
+}
+.vchart__gridlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.vchart__gridline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border);
+}
+.vchart__gridlabel {
+  position: absolute;
+  left: -4px;
+  transform: translate(-100%, -50%);
+  font-size: 0.55rem;
+  color: var(--muted);
+  padding-right: 6px;
+}
+.vchart__bars {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  flex: 1;
+  padding-left: 28px;
+  height: 100%;
+}
+.vchart__col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  animation: vchartGrow 0.6s ease both;
+}
+@keyframes vchartGrow {
+  from { opacity: 0; transform: scaleY(0); transform-origin: bottom; }
+  to   { opacity: 1; transform: scaleY(1); transform-origin: bottom; }
+}
+.vchart__val {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 3px;
+  white-space: nowrap;
+}
+.vchart__bar-wrap {
+  width: 100%;
+  max-width: 48px;
+  height: 180px;
+  display: flex;
+  align-items: flex-end;
+}
+.vchart__bar {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  min-height: 2px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.12);
+  transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.vchart__label {
+  font-size: 0.55rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: 6px;
+  line-height: 1.2;
+  word-break: break-all;
+  max-width: 60px;
+}
+@media (max-width: 560px) {
+  .vchart__area { height: 180px; }
+  .vchart__bar-wrap { height: 140px; max-width: 32px; }
+  .vchart__label { font-size: 0.48rem; max-width: 40px; }
+  .vchart__val { font-size: 0.5rem; }
+  .vchart { padding: 0.75rem; }
+}
+
 /* ── ベンチマーク説明 ── */
 .benchmark-explainer {
   margin: 0.75rem 0 1rem;
