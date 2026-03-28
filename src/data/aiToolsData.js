@@ -14,8 +14,8 @@ export const ARTICLES = [
     "id": "overview-2026-spring",
     "type": "feature",
     "category": "special",
-    "title": "【2026年3月28日更新】AI開発ツール最新動向 — ARC-AGI-3・Anthropic対ペンタゴン差止・OpenAI Astral買収・GPT-5.4 mini/nano",
-    "excerpt": "ARC-AGI-3 公開（フロンティアAI 0.26%）、Anthropic のペンタゴン差止命令取得、OpenAI による Astral（uv・Ruff）買収、GPT-5.4 mini/nano リリース — 3月下旬も各社の動きが加速。",
+    "title": "【2026年3月28日更新】AI開発ツール最新動向 — MCP v2・Mythos衝撃・ARC-AGI-3・Anthropic対ペンタゴン差止・Sora終了",
+    "excerpt": "MCP v2 仕様リリース（OAuth 2.1・Streamable HTTP）、Anthropic Mythos リークでサイバー株急落、ARC-AGI-3 公開（フロンティアAI 0.26%）、Sora 終了と Disney 撤退 — 3月下旬は市場・プロトコル・ベンチマークが同時に動いた。",
     "body": [
       "2026年3月、AI開発ツール市場に大きな変動が相次ぎました。モデル層では Google が Gemini 3.1 Pro を発表し、OpenAI は GPT-5.4 で推論・コーディング・エージェント機能を統合し、さらに mini/nano の小型モデルを3月17日にリリース。ツール層ではサブエージェント・並列実行・安全性がキーワードです。",
       "3月25日、**ARC-AGI-3** が公開されました。ビデオゲーム風インタラクティブ環境での適応推論を問う新世代ベンチマークで、GPT-5.4・Claude Opus 4.6・Gemini 3.1 Pro を含むフロンティアモデルは0.26%（人間100%）にとどまりました。静的グリッドパズルの ARC-AGI-2 を超える「本当の推論」評価として注目されています（別稿）。",
@@ -24,7 +24,9 @@ export const ARTICLES = [
       "**Anthropic のペンタゴン訴訟**では3月26日、サンフランシスコ連邦地裁が暫定差止命令を発しました。自律兵器・大規模監視への Claude 利用を拒否したことで DoD に「サプライチェーンリスク」指定された Anthropic が、修正第一条違反の報復として司法に訴えた件で、Lin 判事が Anthropic の申請を認容しました（別稿）。",
       "AnthropicはClaude Codeに権限の「Auto mode」（研究プレビュー）を追加し、分類器で手元セッションの自律実行を安全側に寄せました。あわせて3月27日頃、Noah Zweben 氏により auto-fix in the cloud が発表され、Web/モバイルセッションが PR の CI 失敗やレビューコメントをクラウド上でフォローする流れが始まっています（別稿）。",
       "CursorはVersion 2.4で並列サブエージェントを正式導入。クラウドVM上で最大20エージェントが同時稼働し、大規模タスクの処理時間をほぼ半減。Windsurf は3月19日にクレジット制から日次/週次クォータ制へ料金体系を全面改定し、Pro価格が$20に上昇しました。",
-      "周辺レイヤーも同時に厚くなっています。MCP でツール配線を共通化し、OpenClaw のように自前ホストのエージェント・ゲートウェイを組む需要、SKILL.md・AGENTS.md・llms.txt など Markdown ベースの「エージェント用ドキュメント」がレビュー対象の第一級市民になりつつあります。言語ランタイム（Python・Node・Bun など）と Astral 買収に代表されるツールチェーン、RAG の永続層としての PostgreSQL / Supabase 周りも別稿で整理しています。非エンジニア向けに、バイブコーディングの環境の組み合わせ例と用語集はサイト上部の「バイブ＆用語」タブにまとめています。速報に加え、用途軸の比較記事（フロンティア三本柱、AI コーディング IDE 群）も随時追加する方針です（別稿【比較】）。"
+      "3月26日には **MCP（Model Context Protocol）v2 仕様**がリリースされました。Streamable HTTP トランスポートが旧 HTTP+SSE を置き換え、OAuth 2.1 認可フレームワーク・JSON-RPC バッチング・ツールアノテーションが標準化。OpenAI・Microsoft も正式サポートを表明し、エンタープライズ本番環境での採用障壁が大幅に下がりました（別稿）。",
+      "Anthropic の**「Claude Mythos」リーク**は3月27日の報道後、28日の米国市場でサイバーセキュリティ株の急落を引き起こしました。CrowdStrike −7%、Palo Alto Networks −6% など。草稿上のサイバー能力記述が市場を動かしましたが、未検証のリーク断片である点に注意が必要です（別稿）。また **OpenAI は Sora（動画生成アプリ）を3月24日に終了**し、Disney との10億ドル規模の提携も解消。コンピュート配分の優先度シフトが理由とされます（別稿）。",
+      "周辺レイヤーも同時に厚くなっています。MCP v2 でツール配線の本番品質が上がり、OpenClaw のように自前ホストのエージェント・ゲートウェイを組む需要、SKILL.md・AGENTS.md・llms.txt など Markdown ベースの「エージェント用ドキュメント」がレビュー対象の第一級市民になりつつあります。言語ランタイム（Python・Node・Bun など）と Astral 買収に代表されるツールチェーン、RAG の永続層としての PostgreSQL / Supabase 周りも別稿で整理しています。非エンジニア向けに、バイブコーディングの環境の組み合わせ例と用語集はサイト上部の「バイブ＆用語」タブにまとめています。速報に加え、用途軸の比較記事（フロンティア三本柱、AI コーディング IDE 群）も随時追加する方針です（別稿【比較】）。"
     ],
     "date": "2026-03-28",
     "author": "AI News 編集部",
@@ -32,8 +34,11 @@ export const ARTICLES = [
     "tags": [
       "まとめ",
       "2026年3月",
+      "MCP v2",
+      "Mythos",
       "Gemini 3.1 Pro",
       "GPT-5.4",
+      "Sora",
       "サブエージェント"
     ],
     "pinned": true,
@@ -47,6 +52,11 @@ export const ARTICLES = [
         "title": "Introducing GPT-5.4",
         "site": "OpenAI",
         "url": "https://openai.com/index/introducing-gpt-5-4/"
+      },
+      {
+        "title": "MCP v2 — The 2026 MCP Roadmap",
+        "site": "Model Context Protocol Blog",
+        "url": "http://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/"
       },
       {
         "title": "Cursor 2.4 — Subagents, Skills, and Image Generation",
@@ -3022,6 +3032,105 @@ export const ARTICLES = [
         "title": "Walmart brings Sparky to ChatGPT as OpenAI rethinks Instant Checkout",
         "site": "Retail Dive",
         "url": "https://www.retaildive.com/news/walmart-sparky-chatgpt-instant-checkout/815647/"
+      }
+    ]
+  },
+  {
+    "id": "mcp-v2-spec-launch-2026",
+    "type": "feature",
+    "category": "cli",
+    "title": "MCP v2 仕様リリース — Streamable HTTP・OAuth 2.1・JSON-RPC バッチで本番投入へ",
+    "excerpt": "3月26日、Model Context Protocol の第2版仕様が公開された。HTTP+SSE を置き換える Streamable HTTP トランスポート、OAuth 2.1 認可フレームワーク、JSON-RPC バッチ、ツールアノテーションなどが盛り込まれ、エンタープライズ本番環境での採用障壁を大幅に下げる。OpenAI・Microsoft も正式サポートを表明。",
+    "body": [
+      "2026年3月26日、**Model Context Protocol（MCP）** の第2版仕様がリリースされました。2025年11月の初版公開以降、9,700万インストールを超えるエコシステムに成長した MCP が、本番環境向けの重要課題に対処した形です。",
+      "最大の変更点は **Streamable HTTP トランスポート**です。初版の HTTP+SSE 構成を一本化し、双方向のリアルタイム通信を HTTP 上で実現します。プロキシ・ロードバランサとの互換性が向上し、企業ネットワーク内でのデプロイがスムーズになります。",
+      "認可面では **OAuth 2.1 ベースのフレームワーク**が標準化されました。リモート MCP サーバーに対し、認可サーバーへのリダイレクト、PKCE 付きフロー、スコープ付きトークンの発行・検証が仕様レベルで定義され、「各サーバーが独自認証を実装する」時代からの脱却を図ります。",
+      "パフォーマンス面では **JSON-RPC バッチング**が導入されました。複数のツール呼び出しを 1 リクエストにまとめて送信でき、エージェントが多数のツールを高速に叩くユースケースでのレイテンシとオーバーヘッドを削減します。",
+      "**ツールアノテーション**も新設され、ツールの振る舞い（副作用の有無、冪等性、推定コストなど）をリッチメタデータとして記述できるようになりました。エージェントがツール選択をより賢く行うための基盤として機能します。",
+      "同日、OpenAI の Sam Altman が MCP への全面的なサポートを表明し、Microsoft も Playwright-MCP サーバーをローンチするなどエコシステムの勢いは加速しています。エンタープライズ向けには SurePath AI が MCP ポリシーコントロールを3月12日に発表しており、ガバナンス層も整備が進んでいます。",
+      "開発者向けの実務ポイントとしては、既存の stdio ベースのローカルサーバーは引き続き動作しますが、リモートサーバーを公開する場合は Streamable HTTP + OAuth 2.1 への移行が推奨されます。仕様の詳細は公式ドキュメントとロードマップ記事を正としてください。"
+    ],
+    "date": "2026-03-26",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "MCP",
+      "プロトコル",
+      "OAuth",
+      "エージェント",
+      "OpenAI",
+      "Microsoft",
+      "エンタープライズ"
+    ],
+    "features": [
+      "Streamable HTTP トランスポート",
+      "OAuth 2.1 認可フレームワーク",
+      "JSON-RPC バッチング",
+      "ツールアノテーション"
+    ],
+    "primarySources": [
+      {
+        "title": "The 2026 MCP Roadmap",
+        "site": "Model Context Protocol Blog",
+        "url": "http://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/"
+      },
+      {
+        "title": "The open source Model Context Protocol was just updated — here's why it's a big deal",
+        "site": "VentureBeat",
+        "url": "https://venturebeat.com/ai/the-open-source-model-context-protocol-was-just-updated-heres-why-its-a-big-deal"
+      },
+      {
+        "title": "MCP Specification — Roadmap",
+        "site": "Model Context Protocol",
+        "url": "https://modelcontextprotocol.io/development/roadmap"
+      },
+      {
+        "title": "Everything your team needs to know about MCP in 2026",
+        "site": "WorkOS",
+        "url": "https://workos.com/blog/everything-your-team-needs-to-know-about-mcp-in-2026"
+      }
+    ]
+  },
+  {
+    "id": "anthropic-mythos-cyber-impact-2026",
+    "type": "feature",
+    "category": "model",
+    "title": "Anthropic Mythos リーク続報 — サイバーセキュリティ株急落と業界インパクト",
+    "excerpt": "3月27日の Claude Mythos リーク報道を受け、CrowdStrike −7%、Palo Alto Networks −6% など主要セキュリティ銘柄が軒並み下落。草稿に記載されたサイバー能力の記述が市場に衝撃を与えた経緯と、冷静な読み方を整理。",
+    "body": [
+      "Anthropic の「Claude Mythos」に関する内部草稿リークの続報として、3月28日の米国市場でサイバーセキュリティ関連株が大きく下落しました。報道によれば、CrowdStrike が約7%、Palo Alto Networks が約6%、Zscaler が約4.5%、Okta・SentinelOne・Fortinet が各3%前後の下げを記録しています。",
+      "市場の反応は、リーク草稿に含まれるとされるサイバーセキュリティ能力に関する記述がトリガーです。報道によると、草稿には Mythos が「脆弱性を発見・悪用する能力において現行のあらゆる AI モデルをはるかに凌駕する」旨の記載があり、「防御側の努力を上回るペースで脆弱性を突くモデルの波が来る」という警告的な文脈も伝えられています。",
+      "ただし、これはあくまで**未公開の内部草稿**上の文言であり、第三者による再現検証や独立ベンチマークは存在しません。リーク文書のスコアや能力記述を額面どおりに受け取って投資判断やセキュリティ方針を変更するのは時期尚早です。",
+      "Anthropic 側は既報のとおり、能力面でステップチェンジ級のモデルを限定環境で試験中であることを認めつつ、一般提供には安全評価とガバナンスを踏まえた段階的アプローチを取ると繰り返しています。正式な製品ロードマップ、API モデル ID、価格、利用規約は公式発表を待つ必要があります。",
+      "セキュリティ業界にとっての本質的な問い — AI が攻撃側・防御側の非対称性をどう変えるか — は Mythos に限らず進行中の論点です。むしろ注目すべきは、今回の株価反応が**リーク草稿の断片**だけで発生した点であり、AI モデル能力に関する情報管理と市場コミュニケーションの課題を浮き彫りにしています。"
+    ],
+    "date": "2026-03-28",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Mythos",
+      "サイバーセキュリティ",
+      "株式市場",
+      "リーク",
+      "業界動向"
+    ],
+    "primarySources": [
+      {
+        "title": "Cybersecurity stocks plunge as Anthropic's 'Claude Mythos' leak sparks AI fear",
+        "site": "Investing.com",
+        "url": "https://ca.investing.com/news/stock-market-news/cybersecurity-stocks-plunge-as-anthropics-claude-mythos-leak-sparks-ai-fear-4537128"
+      },
+      {
+        "title": "Anthropic's massive 'Claude Mythos' leak sends software stocks tumbling",
+        "site": "CoinDesk",
+        "url": "https://www.coindesk.com/markets/2026/03/27/anthropic-s-massive-claude-mythos-leak-reveals-a-new-ai-model-that-could-be-a-cybersecurity-nightmare"
+      },
+      {
+        "title": "Anthropic leak reveals new model 'Claude Mythos' with dramatically higher scores",
+        "site": "The Decoder",
+        "url": "https://the-decoder.com/anthropic-leak-reveals-new-model-claude-mythos-with-dramatically-higher-scores-on-tests-than-any-previous-model/"
       }
     ]
   }

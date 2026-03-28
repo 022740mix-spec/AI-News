@@ -21,13 +21,23 @@ import { AI_COMPANIES, COMPANIES_DISCLAIMER } from "./data/aiCompanies.js";
 import {
   filterVibeCodingGuide,
   GLOSSARY_BY_GENRE,
+  VIBE_BASIC_RULES_LEAD,
+  VIBE_CODING_DEFINITION,
   VIBE_CODING_PAGE_LEAD,
+  VIBE_CODING_WHY_CLAUDE_FIRST,
+  VIBE_PROGRESSION_PATH,
   VIBE_SITE_READING_GUIDE,
   VIBE_STACK_NOTE,
 } from "./data/vibeCodingGuide.js";
 import { BUNDLED_MEDIA_URL } from "./mediaUrls.js";
+import {
+  getVisitorCounter,
+  hitVisitorCounter,
+  isVisitorCounterEnabled,
+} from "./visitorCounter.js";
 
 const STORAGE_THEME = "ai-news-theme";
+const STORAGE_VISITOR_SESSION_HIT = "ai-news-visitor-session-hit";
 const STORAGE_MARKS = "ai-news-bookmarks";
 const STORAGE_LOCAL_NOTICE = "ai-news-local-notice-dismissed";
 const DEFAULT_DOC_TITLE = `${SITE_NAME} | AI開発ツールニュース 2026`;
@@ -179,7 +189,7 @@ const GUIDE_SEO = {
   vibe: {
     titleSuffix: "ガイド：バイブコーディング",
     description:
-      "画像・動画・音楽・音声・IDE・CLI の早見表、IDE・Claude Code・音声入力の組み合わせ、記事とガイドの読み分け、基本ルールとハマりどころ。",
+      "Claude チャットから始める段階の道筋、Copilot／Cowork／Claude Code アプリ→エディタ＋CLI、メディア早見と Chrome・Gemini 補助。基本ルールと CLI リファレンスは後段。",
   },
   glossary: {
     titleSuffix: "ガイド：用語集",
@@ -519,6 +529,9 @@ function GuideSidebar({ guideTab }) {
             <a href="#vibe-intro" className="sidebar-anchor">
               バイブコーディングとは
             </a>
+            <a href="#vibe-progression" className="sidebar-anchor">
+              おすすめの道筋
+            </a>
             <a href="#vibe-reading-map" className="sidebar-anchor">
               記事・ガイド・特集
             </a>
@@ -528,17 +541,17 @@ function GuideSidebar({ guideTab }) {
             <a href="#vibe-tool-table" className="sidebar-anchor">
               ツールの組み合わせ表
             </a>
-            <a href="#vibe-claude-code" className="sidebar-anchor">
-              Claude Code（CLI）
-            </a>
             <a href="#vibe-stacks" className="sidebar-anchor">
               環境の組み合わせ例
+            </a>
+            <a href="#vibe-pitfalls" className="sidebar-anchor">
+              ハマりやすいこと
             </a>
             <a href="#vibe-rules" className="sidebar-anchor">
               基本ルール
             </a>
-            <a href="#vibe-pitfalls" className="sidebar-anchor">
-              ハマりやすいこと
+            <a href="#vibe-claude-code" className="sidebar-anchor">
+              Claude Code（CLI）
             </a>
           </>
         ) : (
@@ -597,13 +610,36 @@ function VibeCodingGuidePanel({
       className="companies-guide-rail companies-guide-rail--full-tab"
       aria-label="バイブコーディング"
     >
-      <p className="companies-guide-note">{VIBE_STACK_NOTE}</p>
-
       <section id="vibe-intro" className="guide-section guide-section--vibe">
         <h2 className="guide-section__title">バイブコーディングとは</h2>
         <p className="guide-section__lead">
+          {richInlineLine(VIBE_CODING_DEFINITION, mkKey)}
+        </p>
+        <p className="guide-section__lead">
+          {richInlineLine(VIBE_CODING_WHY_CLAUDE_FIRST, mkKey)}
+        </p>
+        <p className="guide-section__lead">
           {richInlineLine(VIBE_CODING_PAGE_LEAD, mkKey)}
         </p>
+        <p className="companies-guide-note">{VIBE_STACK_NOTE}</p>
+      </section>
+
+      <section id="vibe-progression" className="guide-section guide-section--vibe">
+        <h2 className="guide-section__title">{VIBE_PROGRESSION_PATH.title}</h2>
+        <p className="guide-section__lead">
+          {richInlineLine(VIBE_PROGRESSION_PATH.lead, mkKey)}
+        </p>
+        <ol className="vibe-progression-steps">
+          {VIBE_PROGRESSION_PATH.steps.map((step) => (
+            <li key={step.heading} className="vibe-progression-steps__item">
+              <h3 className="vibe-progression-steps__heading">{step.heading}</h3>
+              <p className="vibe-progression-steps__body">
+                {richInlineLine(step.body, mkKey)}
+              </p>
+            </li>
+          ))}
+        </ol>
+        <p className="companies-guide-note">{VIBE_PROGRESSION_PATH.footnote}</p>
       </section>
 
       {showReadingGuide ? (
@@ -665,7 +701,9 @@ function VibeCodingGuidePanel({
       ) : null}
 
       <section id="vibe-tool-table" className="guide-section guide-section--vibe">
-        <h2 className="guide-section__title">IDE・AI・音声入力の組み合わせ表</h2>
+        <h2 className="guide-section__title">
+          IDE・AI・音声入力の組み合わせ表（道筋に対応）
+        </h2>
         <GuideLinkifiedP text={toolTable.lead} className="guide-section__lead" />
         {toolTable.rows.length > 0 ? (
           <div className="vibe-tool-table-wrap">
@@ -698,30 +736,13 @@ function VibeCodingGuidePanel({
         ) : null}
       </section>
 
-      <section id="vibe-claude-code" className="guide-section guide-section--vibe">
-        <h2 className="guide-section__title">{claudeCode.title}</h2>
-        <GuideLinkifiedP text={claudeCode.lead} className="guide-section__lead" />
-        {claudeCode.terms.length > 0 ? (
-          <dl className="glossary-dl">
-            {claudeCode.terms.map((t) => (
-              <Fragment key={t.word}>
-                <dt className="glossary-dl__term">{t.word}</dt>
-                <dd className="glossary-dl__body">
-                  <GuideLinkifiedP text={t.mean} className="glossary-dl__mean" />
-                  {t.mem ? (
-                    <GuideLinkifiedP text={t.mem} className="glossary-dl__mem" />
-                  ) : null}
-                </dd>
-              </Fragment>
-            ))}
-          </dl>
-        ) : null}
-      </section>
-
       <section id="vibe-stacks" className="guide-section guide-section--vibe">
         <h2 className="guide-section__title">環境の組み合わせ例</h2>
         <p className="guide-section__lead">
-          非エンジニアの方は「上から順に足していく」と読み下せます。全部そろえる必要はありません。
+          {richInlineLine(
+            "上の **道筋・表**と同じく、**段階が浅い順**にカードを並べています。いまの自分に近いところから読み、足りない道具だけ拾えば十分です。",
+            mkKey,
+          )}
         </p>
         {stacks.length > 0 ? (
           <div className="vibe-stack-list">
@@ -752,10 +773,30 @@ function VibeCodingGuidePanel({
         ) : null}
       </section>
 
+      <section id="vibe-pitfalls" className="guide-section guide-section--vibe">
+        <h2 className="guide-section__title">{pitfalls.title}</h2>
+        <GuideLinkifiedP text={pitfalls.lead} className="guide-section__lead" />
+        {pitfalls.terms.length > 0 ? (
+          <dl className="glossary-dl">
+            {pitfalls.terms.map((t) => (
+              <Fragment key={t.word}>
+                <dt className="glossary-dl__term">{t.word}</dt>
+                <dd className="glossary-dl__body">
+                  <GuideLinkifiedP text={t.mean} className="glossary-dl__mean" />
+                  {t.mem ? (
+                    <GuideLinkifiedP text={t.mem} className="glossary-dl__mem" />
+                  ) : null}
+                </dd>
+              </Fragment>
+            ))}
+          </dl>
+        ) : null}
+      </section>
+
       <section id="vibe-rules" className="guide-section guide-section--vibe">
         <h2 className="guide-section__title">基本ルール</h2>
         <p className="guide-section__lead">
-          勢いで試すときの最低ラインです。チームや案件によっては追加の規約があります。
+          {richInlineLine(VIBE_BASIC_RULES_LEAD, mkKey)}
         </p>
         {basicRules.length > 0 ? (
           <dl className="glossary-dl">
@@ -774,12 +815,12 @@ function VibeCodingGuidePanel({
         ) : null}
       </section>
 
-      <section id="vibe-pitfalls" className="guide-section guide-section--vibe">
-        <h2 className="guide-section__title">{pitfalls.title}</h2>
-        <GuideLinkifiedP text={pitfalls.lead} className="guide-section__lead" />
-        {pitfalls.terms.length > 0 ? (
+      <section id="vibe-claude-code" className="guide-section guide-section--vibe">
+        <h2 className="guide-section__title">{claudeCode.title}</h2>
+        <GuideLinkifiedP text={claudeCode.lead} className="guide-section__lead" />
+        {claudeCode.terms.length > 0 ? (
           <dl className="glossary-dl">
-            {pitfalls.terms.map((t) => (
+            {claudeCode.terms.map((t) => (
               <Fragment key={t.word}>
                 <dt className="glossary-dl__term">{t.word}</dt>
                 <dd className="glossary-dl__body">
@@ -1612,7 +1653,8 @@ function StorageLocalNotice() {
     <div className="storage-notice" role="status" aria-live="polite">
       <p>
         テーマとブックマークはブラウザの localStorage
-        に保存されます。第三者によるアクセス解析用 Cookie
+        に保存されます。累計訪問回数の集計には CountAPI
+        へ接続します。広告追跡用の第三者 Cookie
         は使用していません。
       </p>
       <button
@@ -1625,6 +1667,34 @@ function StorageLocalNotice() {
         閉じる
       </button>
     </div>
+  );
+}
+
+function SiteFooter({ visitorTotal, visitorStatus }) {
+  const showVisits = visitorStatus !== "off";
+  return (
+    <footer className="site-footer">
+      <div>
+        {SITE_NAME} — {SITE_DESCRIPTION}
+      </div>
+      <div>
+        最終更新: {LAST_UPDATED}{" "}
+        · データは公開情報・報道を基に整理しています
+      </div>
+      {showVisits ? (
+        <div className="site-footer__visitors" aria-live="polite">
+          {visitorStatus === "loading"
+            ? "訪問回数を読み込み中…"
+            : null}
+          {visitorStatus === "ok" && visitorTotal != null ? (
+            <>累計訪問 {visitorTotal.toLocaleString("ja-JP")} 回（参考値）</>
+          ) : null}
+          {visitorStatus === "err"
+            ? "訪問回数を取得できませんでした"
+            : null}
+        </div>
+      ) : null}
+    </footer>
   );
 }
 
@@ -1670,7 +1740,40 @@ export default function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem(STORAGE_THEME) || "light");
   const [bookmarkIds, setBookmarkIds] = useState(loadBookmarks);
   const [showFab, setShowFab] = useState(false);
+  const [visitorTotal, setVisitorTotal] = useState(null);
+  const [visitorStatus, setVisitorStatus] = useState(() =>
+    isVisitorCounterEnabled() ? "loading" : "off",
+  );
   const searchRef = useRef(null);
+
+  useEffect(() => {
+    if (!isVisitorCounterEnabled()) {
+      setVisitorStatus("off");
+      return;
+    }
+    let cancelled = false;
+    (async () => {
+      try {
+        const alreadyHit =
+          sessionStorage.getItem(STORAGE_VISITOR_SESSION_HIT) === "1";
+        const value = alreadyHit
+          ? await getVisitorCounter()
+          : await hitVisitorCounter().then((v) => {
+              sessionStorage.setItem(STORAGE_VISITOR_SESSION_HIT, "1");
+              return v;
+            });
+        if (!cancelled) {
+          setVisitorTotal(value);
+          setVisitorStatus("ok");
+        }
+      } catch {
+        if (!cancelled) setVisitorStatus("err");
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -2018,28 +2121,15 @@ export default function App() {
                       }
                     >
                       {guideTab === "vibe" ? (
-                    !guideFiltered.showReadingGuide &&
-                    (guideFiltered.mediaTaxonomy.length === 0 ||
-                      guideFiltered.mediaTaxonomy.every((s) => s.rows.length === 0)) &&
-                    guideFiltered.stacks.length === 0 &&
-                    guideFiltered.toolTable.rows.length === 0 &&
-                    guideFiltered.basicRules.length === 0 &&
-                    guideFiltered.claudeCode.terms.length === 0 &&
-                    guideFiltered.pitfalls.terms.length === 0 ? (
-                          <div className="empty-state">
-                            このタブに該当がありません。用語集タブを開くか、検索語を変えてください。
-                          </div>
-                        ) : (
-                          <VibeCodingGuidePanel
-                            showReadingGuide={guideFiltered.showReadingGuide}
-                            mediaTaxonomy={guideFiltered.mediaTaxonomy}
-                            stacks={guideFiltered.stacks}
-                            toolTable={guideFiltered.toolTable}
-                            basicRules={guideFiltered.basicRules}
-                            claudeCode={guideFiltered.claudeCode}
-                            pitfalls={guideFiltered.pitfalls}
-                          />
-                        )
+                        <VibeCodingGuidePanel
+                          showReadingGuide={guideFiltered.showReadingGuide}
+                          mediaTaxonomy={guideFiltered.mediaTaxonomy}
+                          stacks={guideFiltered.stacks}
+                          toolTable={guideFiltered.toolTable}
+                          basicRules={guideFiltered.basicRules}
+                          claudeCode={guideFiltered.claudeCode}
+                          pitfalls={guideFiltered.pitfalls}
+                        />
                       ) : guideFiltered.glossary.length === 0 ||
                         guideFiltered.glossary.every(
                           (g) => g.terms.length === 0,
@@ -2056,15 +2146,6 @@ export default function App() {
                   )}
                 </>
               )}
-
-              <footer className="site-footer">
-                <div>
-                  {SITE_NAME} — {SITE_DESCRIPTION}
-                </div>
-                <div>
-                  最終更新: {LAST_UPDATED} · データは公開情報・報道を基に整理しています
-                </div>
-              </footer>
             </div>
 
             {siteSection === "articles" ? (
@@ -2081,6 +2162,10 @@ export default function App() {
             )}
           </div>
         )}
+        <SiteFooter
+          visitorTotal={visitorTotal}
+          visitorStatus={visitorStatus}
+        />
         </main>
       </div>
 

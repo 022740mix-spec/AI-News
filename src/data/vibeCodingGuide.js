@@ -3,60 +3,121 @@
  * UI は App.jsx 側。文面のみここで管理。
  */
 
-export const VIBE_STACK_NOTE =
-  "「バイブコーディング」は厳密な定義より、対話しながら雰囲気で試す開発スタイルのイメージです。次の表は出発点であり、チームの規約・セキュリティは別途確認してください。";
+/** 「バイブコーディングとは」見出し直下用（用語の説明） */
+export const VIBE_CODING_DEFINITION =
+  "「**バイブコーディング**」は業界で一意に決まった用語ではなく、**対話しながら雰囲気・勢いで試す**開発スタイルのイメージで使われることが多いです。厳密な定義より、IDE・AI・音声入力などを組み合わせて**素早く試行錯誤する**ニュアンスを指します。";
 
+/** まず Claude を勧める理由（ChatGPT／Gemini 素のチャットとの違い） */
+export const VIBE_CODING_WHY_CLAUDE_FIRST =
+  "**まずの一歩**としては **Claude（公式アプリ／claude.ai）** から入るのが扱いやすいことが多いです。ChatGPT や Gemini でもコード片は出せますが、**チャット画面だけ**だと「生成したコードを同じ場所で組み立て・試す」流れが製品ごとに割り切れず、**表示・再利用のセット**が弱く感じられがちです。Claude 側は**アーティファクト的に結果をまとめて触る**体験が出やすく、バイブの最初の往復に向きます（最終的な選定は要件と契約次第です）。";
+
+/** このガイドページの役割（道筋の直前） */
 export const VIBE_CODING_PAGE_LEAD =
-  "このページでは **道具の組み合わせ** と **進め方のルール**・**ハマりどころ**をまとめています。記事や会話で出る用語の意味は「用語集」タブからどうぞ。";
+  "下の **おすすめの道筋** と **組み合わせ表**は対応させています。**ハマりどころ**は早めに、**基本ルール**と **Claude Code（CLI）**はエディタや Cowork で一段進んでからでよい**後ろに置いた**構成です。記事や会話で出る用語は「用語集」タブからどうぞ。";
+
+/**
+ * バイブ開始から本格運用までの段階（本文・検索用）。
+ * @type {{ title: string, lead: string, steps: { heading: string, body: string }[], footnote: string }}
+ */
+export const VIBE_PROGRESSION_PATH = {
+  title: "バイブを始める段階（おすすめの道筋）",
+  lead: "難易度ランキングではなく、**画面とファイルの扱いが育つ順**の目安です。会社では Copilot 寄り、個人では Cowork 課金、といった分かれも含みます。",
+  steps: [
+    {
+      heading: "① Claude のチャット（アプリ／Web）",
+      body: "**ここから始める**のがいちばんブレにくいです。要件や見た目の言葉を固め、短い生成物をその場で試す。いきなりリポジトリは開かなくてよい段階です。",
+    },
+    {
+      heading: "② 企業なら Copilot 周り",
+      body: "**GitHub Copilot**、**Microsoft 365 Copilot**、**Power Platform** など、契約とガバナンスに合わせた足場があります。個人では同じものがそのまま使えないことも多いです。",
+    },
+    {
+      heading: "③ 個人：Claude Pro 課金 → Cowork でコード寄りに",
+      body: "月額サブスク（目安 **約 20 ドル**）で、**Cowork** のような**コードに寄り添った協働 UI**に進むイメージです。この段階では **Claude Code（CLI）**に飛ばず、**Cowork で触れる範囲**を広げるのが現実的です。",
+    },
+    {
+      heading: "④ Claude Code デスクトップアプリ",
+      body: "CLI ではなく**アプリ版**で、リポジトリやローカル作業に足を踏み入れる。**まだエディタを主戦場にしなくても**足りなくなったら検討する段階です。",
+    },
+    {
+      heading: "⑤ Cursor ／ VS Code を主戦場に",
+      body: "フォルダ単位で触り、**エディタ内チャット**や **Composer 系**、統合ターミナルから **Claude Code CLI** を併用する**いちばん重い組み合わせ**になりがちです。",
+    },
+    {
+      heading: "⑥ ブラウザ連携（例：Chrome の Gemini）",
+      body: "**①〜⑤と並行して足せる**補助です。**画面操作・タブの文脈**を AI に渡す系で、コーディング本体とは別軸です。**Google Antigravity** は無料枠が厳しくなりやすく、このガイドの**主経路からは外しがち**ですが、条件と料金を公式で追う価値はあります。",
+    },
+  ],
+  footnote:
+    "上表の「パターン」列と**上から順に**意味がつながるように並べています。製品名・提供範囲は変更されやすいので**都度公式**を優先してください。",
+};
+
+/** 早見表・例の前提（イントロ末尾の注記） */
+export const VIBE_STACK_NOTE =
+  "以降の表や例は**出発点**です。料金・モデル・権限は各公式の最新情報と、**チームの規約・セキュリティ**で必ず確認してください。";
 
 /** @typedef {{ pattern: string, ide: string, ai: string, voice: string, note: string }} VibeToolComboRow */
 
 /** @type {{ lead: string, columns: [string, string, string, string, string], rows: VibeToolComboRow[] }} */
 export const VIBE_TOOL_COMBO_TABLE = {
-  lead: "IDE・AI エージェント・音声入力の組み合わせ例です。料金・モデル名・連携方式は各公式の最新情報を確認してください。",
+  lead: "上の **おすすめの道筋**と同じく、**チャット → 企業 Copilot／個人 Cowork → Claude Code アプリ → 本気のエディタ＋CLI**の流れで並べています。**Antigravity**は主経路から外し、**Chrome の Gemini** などブラウザ連携を別行で置いています。料金・モデル名・連携方式は各公式の最新情報を確認してください。",
   columns: ["パターン", "IDE・エディタ", "AI（対話・エージェント）", "音声・入力補助", "ひとこと"],
   rows: [
     {
-      pattern: "Cursor 主力",
-      ide: "Cursor",
-      ai: "内蔵モデル（Claude / GPT 等の切替）・Composer・ターミナル連携",
-      voice: "アクアボイス 等で仕様・コメント・指示を口述",
-      note: "フォルダ単位のスコープとプロジェクトルール（.cursor/rules 等）を揃えると、AI のブレが減りやすいです。",
+      pattern: "Claude チャット（第一歩）",
+      ide: "Claude 公式アプリ／ブラウザ（claude.ai）",
+      ai: "対話。コード片やアーティファクト的なまとまりをその場で試す",
+      voice: "アプリ／ブラウザの音声入力・アクアボイス 等",
+      note: "**バイブ開始のデフォルト候補**。ChatGPT・Gemini も可ですが、**同じ画面での見せ方**の差を感じたら Claude からでよい、という読み方です。",
     },
     {
-      pattern: "VS Code ＋ Copilot",
-      ide: "Visual Studio Code",
-      ai: "GitHub Copilot / Copilot Chat（別ウィンドウで Claude・ChatGPT と併用も可）",
-      voice: "アクアボイス で長文プロンプトやコード以外を音声入力",
-      note: "普段使いのエディタを変えずに AI を足す王道。拡張と設定ファイルが増えがちなので README を残すと安心です。",
+      pattern: "企業向け Copilot・Power 文脈",
+      ide: "VS Code／GitHub／M365／Power Platform など契約に合わせた枠",
+      ai: "GitHub Copilot、Copilot Chat、Microsoft 365 Copilot 等",
+      voice: "各クライアントの音声・聞き取り機能",
+      note: "**会社で決まっている足場**を優先。個人サブスクだけでは揃わないことがあります。",
     },
     {
-      pattern: "OpenAI Codex 寄り",
-      ide: "VS Code / Cursor / ターミナル",
-      ai: "Codex CLI・IDE 拡張・ChatGPT / エージェントモード",
-      voice: "（任意）アクアボイス",
-      note: "サンドボックスや承認フローが絡むことが多いです。**ネットワーク権限・ファイル書き込み範囲**を理解してから「任せ切り」にします。",
+      pattern: "Claude Pro → Cowork（個人の次の段階）",
+      ide: "ブラウザ／アプリ（リポジトリを開かなくてもよい）",
+      ai: "**Cowork** でコード寄りのタスク・編集イメージに近づける",
+      voice: "同上",
+      note: "課金プランと提供範囲は**公式の現行表記**を確認。**この段階では CLI の Claude Code に急がない**ほうが混乱しにくいことが多いです。",
     },
     {
-      pattern: "Google Antigravity",
-      ide: "Google Antigravity（エージェント IDE）",
-      ai: "Gemini を軸にしたマルチステップ実行・ツール連携",
-      voice: "（任意）アクアボイス",
-      note: "エージェントが自律的に動くほど、**だれが・いつ・何を承認するか**を決めておかないと本番データ事故に繋がります。",
+      pattern: "Claude Code デスクトップアプリ",
+      ide: "Claude Code（**アプリ**。リポジトリ／ローカル作業）",
+      ai: "対話でファイル操作・実行寄りのフロー",
+      voice: "（任意）指示はチャットへ貼る運用が中心になりがち",
+      note: "**CLI 以前**に、ローカルとの往復をアプリで慣れる段階のイメージです（製品の呼び分けは公式に追随）。",
     },
     {
-      pattern: "チャットのみ（コード前）",
-      ide: "ブラウザ",
-      ai: "Claude（Web）/ ChatGPT / Gemini など",
-      voice: "ブラウザや公式アプリの音声入力",
-      note: "要件・画面の言葉・NG 例を固める段階。いきなりリポジトリを開く前に「成功条件」を一文にすると後工程が楽です。",
+      pattern: "Cursor／VS Code 本格運用",
+      ide: "Cursor または Visual Studio Code",
+      ai: "内蔵 AI・Composer・Copilot 等をフォルダ単位で使う",
+      voice: "アクアボイス で仕様・コメント・長文指示",
+      note: "`.cursor/rules` やスコープ宣言で **AI のブレ**を抑えやすくなります。",
     },
     {
-      pattern: "ターミナル Claude Code",
+      pattern: "ターミナル Claude Code（CLI）",
       ide: "ターミナル（リポジトリ直下に `cd`）",
-      ai: "`claude` 対話・`claude -p` 一発・`--permission-mode` / `--enable-auto-mode`・エージェントチーム",
-      voice: "音声より **エディタに指示を貼る**・**echo でパイプ** などと併用しやすいです",
-      note: "バイブで「勢い実行」しすぎないよう、**権限モード**と **Team / プラン要件**は公式 CLI ドキュメントで都度確認してください。",
+      ai: "`claude` 対話・`claude -p`・`--permission-mode`・エージェントチーム等",
+      voice: "**エディタに貼る**・パイプ・クリップボード経由が中心になりがち",
+      note: "**本格担当者向け**。権限モードとプラン要件は公式 CLI ドキュメントで都度確認してください。",
+    },
+    {
+      pattern: "OpenAI Codex 系（任意）",
+      ide: "VS Code／Cursor／ターミナル",
+      ai: "Codex CLI・IDE 拡張・エージェントモード",
+      voice: "（任意）音声",
+      note: "サンドボックスと承認フロー前提。**ファイル書き込み範囲**を理解してから任せ切りにします。",
+    },
+    {
+      pattern: "Chrome・Gemini（画面・タブ補助）",
+      ide: "Chrome 等ブラウザ",
+      ai: "Gemini と**開いている画面／タブ**の文脈を組み合わせる系",
+      voice: "ブラウザの音声入力",
+      note: "コーディングの**別軸**の補助。**Google Antigravity** は料金・無料枠の都合で主経路から外しがちですが、要件が合えば公式を追ってください。",
     },
   ],
 };
@@ -65,8 +126,8 @@ export const VIBE_TOOL_COMBO_TABLE = {
 /** @type {GlossaryGenre} */
 export const VIBE_CLAUDE_CODE = {
   id: "vibe-claude-code",
-  title: "Claude Code（CLI）でバイブコーディング",
-  lead: "ターミナルから `claude` を叩く流れと、**起動時フラグ**・**権限モード**・**エージェントチーム**の入口です。フラグ一覧は https://code.claude.com/docs/en/cli-reference 、モードの意味合いは https://code.claude.com/docs/en/permission-modes を都度確認してください。",
+  title: "本格運用向け：Claude Code（CLI）リファレンス",
+  lead: "**Cowork やデスクトップアプリで足りなくなり**、リポジトリ直下のターミナルから `claude` を使う段階向けです。セッションやフラグの話は**初心者というより「ちゃんと運用したい人」**のための早見です。フラグ一覧は https://code.claude.com/docs/en/cli-reference 、モードの意味合いは https://code.claude.com/docs/en/permission-modes を都度確認してください。",
   terms: [
     {
       word: "`claude` … 対話セッション",
@@ -123,6 +184,10 @@ export const VIBE_CLAUDE_CODE = {
 };
 
 /** @typedef {{ title: string, mean: string, mem?: string }} VibeBasicRule */
+
+/** 基本ルール見出し直下（エディタ寄りの話が多い旨） */
+export const VIBE_BASIC_RULES_LEAD =
+  "スコープ・シークレット・diff などは**エディタや Cowork でファイルを触り始めたあと**に効いてくる話が多いです。チャットだけの段階では全部を意識しなくて構いません。";
 
 /** @type {VibeBasicRule[]} */
 export const VIBE_BASIC_RULES = [
@@ -465,11 +530,11 @@ export const VIBE_GUIDE_PITFALLS = {
 export const VIBE_IDEAL_STACKS = [
   {
     id: "starter-chat",
-    title: "まずはチャットだけ",
+    title: "まずは Claude チャット",
     emoji: "💬",
     forWho: "プログラム未経験・業務アイデアを形にしたい方",
     summary:
-      "コードファイルを持たず、AI に文章や表、簡単な手順書を出してもらう段階。試作の言葉遣いが固まってからツールに進むと迷子になりにくいです。",
+      "**Claude（アプリ／Web）**から入り、コードファイルを持たずに文章・表・短い試作を出す段階。ChatGPT／Gemini でも可ですが、**同じ画面で結果を試す**ところまで一気にやりたいなら Claude が扱いやすいことが多いです。",
     combo: [
       {
         role: "会話",
@@ -1095,6 +1160,7 @@ function mediaTaxonomyRowCount() {
 /** 検索ヒット：読み分け1＋メディア早見各行＋他ブロック＋用語… */
 export const GUIDE_ITEM_TOTAL =
   1 +
+  (1 + VIBE_PROGRESSION_PATH.steps.length) +
   mediaTaxonomyRowCount() +
   VIBE_IDEAL_STACKS.length +
   VIBE_TOOL_COMBO_TABLE.rows.length +
@@ -1214,6 +1280,16 @@ export function filterVibeCodingGuide(searchQuery) {
     .toLowerCase();
   const showReadingGuide = readingBlob.includes(q);
 
+  const progressionBlob = [
+    VIBE_PROGRESSION_PATH.title,
+    VIBE_PROGRESSION_PATH.lead,
+    VIBE_PROGRESSION_PATH.footnote,
+    ...VIBE_PROGRESSION_PATH.steps.flatMap((s) => [s.heading, s.body]),
+  ]
+    .join("\n")
+    .toLowerCase();
+  const progressionHit = progressionBlob.includes(q);
+
   /** @type {MediaTaxonomySection[]} */
   const mediaTaxonomy = [];
   for (const section of VIBE_MEDIA_TAXONOMY) {
@@ -1238,6 +1314,7 @@ export function filterVibeCodingGuide(searchQuery) {
 
   const matchCount =
     (showReadingGuide ? 1 : 0) +
+    (progressionHit ? 1 + VIBE_PROGRESSION_PATH.steps.length : 0) +
     mediaTaxonomy.reduce((n, s) => n + s.rows.length, 0) +
     stacks.length +
     toolRows.length +

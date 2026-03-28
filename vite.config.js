@@ -5,10 +5,7 @@ export default defineConfig({
   plugins: [react()],
   base: "./",
   build: {
-    rollupOptions: {
-      output: {
-        manualChunks: undefined,
-      },
-    },
+    // SVG などを data: URL に埋め込まずファイル出力する（img の data: ブロック環境・キャッシュ調査の回避）
+    assetsInlineLimit: 0,
   },
 })

@@ -522,6 +522,33 @@ body {
   line-height: 1.35;
 }
 
+/* バイブ：おすすめの道筋（番号付きリスト） */
+.vibe-progression-steps {
+  margin: 1rem 0 0;
+  padding-left: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.vibe-progression-steps__item {
+  margin: 0;
+}
+
+.vibe-progression-steps__heading {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 650;
+  color: var(--text);
+}
+
+.vibe-progression-steps__body {
+  margin: 0;
+}
+
 .guide-section__lead {
   margin: 0 0 1rem;
   font-size: 0.82rem;
@@ -1700,4 +1727,9 @@ body {
   color: var(--muted);
   text-align: center;
   line-height: 1.7;
+}
+
+.site-footer__visitors {
+  margin-top: 0.4rem;
+  font-variant-numeric: tabular-nums;
 }

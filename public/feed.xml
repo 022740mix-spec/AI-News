@@ -40,12 +40,12 @@
     <summary>RAG・チャット・エージェントの永続層は多くの場合がリレーショナル＋ベクトル拡張。Supabase（Postgres＋Auth＋Realtime＋Edge Functions）を軸に、RLS・接続プール・ハイブリッド検索の論点を整理する。</summary>
   </entry>
   <entry>
-    <title>【2026年3月28日更新】AI開発ツール最新動向 — ARC-AGI-3・Anthropic対ペンタゴン差止・OpenAI Astral買収・GPT-5.4 mini/nano</title>
+    <title>【2026年3月28日更新】AI開発ツール最新動向 — MCP v2・Mythos衝撃・ARC-AGI-3・Anthropic対ペンタゴン差止・Sora終了</title>
     <link rel="alternate" type="text/html" href="?a=overview-2026-spring"/>
     <id>tag:ai-tool-news.jp,2026:overview-2026-spring</id>
     <published>2026-03-28T15:00:00Z</published>
     <updated>2026-03-28T15:00:00Z</updated>
-    <summary>ARC-AGI-3 公開（フロンティアAI 0.26%）、Anthropic のペンタゴン差止命令取得、OpenAI による Astral（uv・Ruff）買収、GPT-5.4 mini/nano リリース — 3月下旬も各社の動きが加速。</summary>
+    <summary>MCP v2 仕様リリース（OAuth 2.1・Streamable HTTP）、Anthropic Mythos リークでサイバー株急落、ARC-AGI-3 公開（フロンティアAI 0.26%）、Sora 終了と Disney 撤退 — 3月下旬は市場・プロトコル・ベンチマークが同時に動いた。</summary>
   </entry>
   <entry>
     <title>【編集部資料・全公開】AIモデル進化を追うサイト — 切り口別リンク集（時系列・OSS・中国勢・Ollama・ベンチ）</title>
@@ -70,6 +70,14 @@
     <published>2026-03-28T15:00:00Z</published>
     <updated>2026-03-28T15:00:00Z</updated>
     <summary>1月の Apple–Google 多年度提携（Gemini）に続き、3月下旬の報道では「Siri を複数のサードパーティ AI に開く Extensions」構想が取り上げられている。Gemini に加え ChatGPT・Claude など利用者が切り替え／併用できる、との整理。いずれも WWDC 前の非公式情報が混じるため公式発表待ち。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic Mythos リーク続報 — サイバーセキュリティ株急落と業界インパクト</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-mythos-cyber-impact-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-mythos-cyber-impact-2026</id>
+    <published>2026-03-28T15:00:00Z</published>
+    <updated>2026-03-28T15:00:00Z</updated>
+    <summary>3月27日の Claude Mythos リーク報道を受け、CrowdStrike −7%、Palo Alto Networks −6% など主要セキュリティ銘柄が軒並み下落。草稿に記載されたサイバー能力の記述が市場に衝撃を与えた経緯と、冷静な読み方を整理。</summary>
   </entry>
   <entry>
     <title>Anthropic「Mythos」草稿漏えい報道 — Opus 超えの新ティア「Capybara」が注目集める</title>
@@ -174,6 +182,14 @@
     <published>2026-03-26T15:00:00Z</published>
     <updated>2026-03-26T15:00:00Z</updated>
     <summary>2026年3月26日、サンフランシスコ連邦地裁の Rita Lin 判事が Anthropic の申請を認め、国防総省（DoD）による「サプライチェーンリスク」指定を暫定差し止め。「修正第一条違反の報復」と判断。Anthropic は自律兵器・大規模監視への利用を拒否したことが発端。</summary>
+  </entry>
+  <entry>
+    <title>MCP v2 仕様リリース — Streamable HTTP・OAuth 2.1・JSON-RPC バッチで本番投入へ</title>
+    <link rel="alternate" type="text/html" href="?a=mcp-v2-spec-launch-2026"/>
+    <id>tag:ai-tool-news.jp,2026:mcp-v2-spec-launch-2026</id>
+    <published>2026-03-26T15:00:00Z</published>
+    <updated>2026-03-26T15:00:00Z</updated>
+    <summary>3月26日、Model Context Protocol の第2版仕様が公開された。HTTP+SSE を置き換える Streamable HTTP トランスポート、OAuth 2.1 認可フレームワーク、JSON-RPC バッチ、ツールアノテーションなどが盛り込まれ、エンタープライズ本番環境での採用障壁を大幅に下げる。OpenAI・Microsoft も正式サポートを表明。</summary>
   </entry>
   <entry>
     <title>Gemini CLI レビュー — Googleが放つ200万トークンの超大規模コンテキストCLI</title>
