@@ -1965,6 +1965,15 @@ body {
   border-radius: 4px;
   background: var(--accent-dim);
   color: var(--text);
+}
+.prose-code.prose-warning {
+  color: #c0392b;
+  font-weight: 600;
+  background: rgba(195, 57, 43, 0.1);
+}
+[data-theme="dark"] .prose-code.prose-warning {
+  color: #e74c3c;
+  background: rgba(231, 76, 60, 0.12);
   word-break: break-all;
 }
 
