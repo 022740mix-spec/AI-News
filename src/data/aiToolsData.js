@@ -839,17 +839,17 @@ export const ARTICLES = [
     "type": "feature",
     "category": "special",
     "title": "【週刊まとめ】AI開発ツール — 2026年3月23日〜29日",
-    "excerpt": "**ARC Prize Foundation** は水曜に適応推論ベンチ **ARC-AGI-3** を公開した。翌日の木曜には **Google DeepMind** が **Gemini 3.1 Pro** をプレビューし、同じ日に **Model Context Protocol** が v2 の年次ロードマップを示した。裁判ではサンフランシスコの連邦地裁が **Anthropic** の申請を認め、国防総省の措置に暫定差止を出したと報じられた。ほぼ同じ頃、**OpenAI** の Sora 消費者向け終了や提携解消が各紙で伝わった。金曜は **Cursor** 2.4 と **Claude Code**（Auto モード・クラウド auto-fix）の更新が続き、週末にかけ Mythos 草稿の報道が広がってセキュリティ関連株が売られたと報じられた。",
+    "excerpt": "Anthropic が国防総省の「サプライチェーンリスク」指定を連邦地裁で差し止めた一方、OpenAI は Sora の消費者向け提供を終了。ARC-AGI-3 がフロンティアモデルの限界を浮き彫りにした翌日、Google が Gemini 3.1 Pro と MCP v2 を同時に発表。週末は Cursor 2.4 と Claude Code Auto mode が開発者のワークフローを更新し、Mythos 草稿の報道がセキュリティ銘柄を動かした。",
     "weekRoundupPeriod": {
       "start": "2026-03-23",
       "end": "2026-03-29"
     },
     "body": [
-      "**3月24日（火）** — サンフランシスコの連邦地裁では Anthropic と国防総省をめぐる審問が開かれたと報じられ、Rita Lin 判事が国防総省側の「サプライチェーンリスク」の基準を問いただすやり取りが伝えられた。ほぼ同じ頃、OpenAI の Sora に関する消費者向け提供終了や提携解消が複数媒体で報じられた（[法廷の詳細](?a=anthropic-pentagon-injunction-2026)、[Sora 提供終了](?a=openai-sora-discontinued-2026)）。",
-      "**翌25日（水）** — ARC Prize Foundation が ARC-AGI-3 を公開し、インタラクティブな環境でエージェントの適応推論を測る設計に刷新された。主要フロンティアモデルが人間基準に対し極めて低いスコアにとどまった（[ARC-AGI-3 の詳細](?a=arc-agi-3-launch-2026)）。",
-      "**26日（木）** — 製品とインフラの告知が同日に重なった。Google DeepMind が Gemini 3.1 Pro のプレビューを掲げ、Model Context Protocol 側は v2 のロードマップを示した。法廷では Lin 判事が Anthropic の暫定差止申請を認めた（[Gemini 3.1 Pro](?a=gemini-3-1-pro)、[MCP v2](?a=mcp-v2-spec-launch-2026)、[暫定差止](?a=anthropic-pentagon-injunction-2026)）。",
-      "**27日（金）** — Cursor が 2.4 で並列サブエージェントを導入し、Anthropic は Claude Code の Auto mode を拡大した。クラウド側での auto-fix も発表された（[Cursor 2.4](?a=cursor-2-4-subagents)、[Auto mode](?a=claude-code-auto-mode)、[auto-fix](?a=claude-code-autofix-cloud)）。",
-      "**金曜から週末** — Anthropic の内部コードネーム Mythos（別名 Capybara）の草稿報道が広がった。CrowdStrike や Palo Alto Networks などセキュリティ銘柄が売られ、草稿のサイバー能力記述が材料視された（[Mythos リーク](?a=anthropic-mythos-leak)、[市場への影響](?a=anthropic-mythos-cyber-impact-2026)）。"
+      "**3月24日（火）** — Anthropic と国防総省の法廷闘争が山場を迎えた。Rita Lin 判事が国防総省側の「サプライチェーンリスク」指定の根拠を問いただし、AI 企業が政府との契約で倫理ポリシーを主張できるかどうかの先例になりうる審問となった。同じ日、OpenAI の動画生成 AI Sora が消費者向け提供を終了した。著作権・安全性の壁が動画生成 AI の商用化を阻む構図が鮮明になっている（[法廷の詳細](?a=anthropic-pentagon-injunction-2026)、[Sora 提供終了](?a=openai-sora-discontinued-2026)）。",
+      "**25日（水）** — ARC Prize Foundation が ARC-AGI-3 を公開した。従来のパターン認識ベンチマークと異なり、エージェントがインタラクティブな環境で適応推論を行う設計。主要フロンティアモデルのスコアは人間基準に対し極めて低く、「LLM はまだ汎用推論に遠い」ことを数字で示した。開発者にとっては、エージェントの能力限界を見極める上で有用な指標となる（[ARC-AGI-3 の詳細](?a=arc-agi-3-launch-2026)）。",
+      "**26日（木）** — Google DeepMind が Gemini 3.1 Pro のプレビューを発表し、200万トークンのコンテキストウィンドウを維持しつつ推論精度を改善した。開発者が大規模コードベースを一括で扱えるモデルの選択肢が広がる。同じ木曜に MCP v2 仕様も公開され、OAuth 2.1・Streamable HTTP・JSON-RPC バッチが追加された。エンタープライズ環境での MCP 導入障壁が大きく下がる改定で、OpenAI・Microsoft も正式サポートを表明している。法廷では Lin 判事が Anthropic の暫定差止申請を認め、国防総省の措置は当面執行できなくなった（[Gemini 3.1 Pro](?a=gemini-3-1-pro)、[MCP v2](?a=mcp-v2-spec-launch-2026)、[暫定差止](?a=anthropic-pentagon-injunction-2026)）。",
+      "**27日（金）** — Cursor 2.4 が並列サブエージェント（最大20個同時・クラウド VM 実行）と BugBot を導入した。「AI に丸投げ」できるタスクの粒度と並列度が上がり、大規模リファクタリングの所要時間が半減する可能性がある。同じ日に Anthropic は Claude Code の Auto mode 対象を拡大し、クラウド auto-fix も発表。エージェント型開発の自律性がまた一段上がった（[Cursor 2.4](?a=cursor-2-4-subagents)、[Auto mode](?a=claude-code-auto-mode)、[auto-fix](?a=claude-code-autofix-cloud)）。",
+      "**週末** — Anthropic の内部コードネーム Mythos（別名 Capybara）の草稿報道が広がり、CrowdStrike や Palo Alto Networks などセキュリティ銘柄が売られた。草稿が示すサイバー能力が材料視された形で、AI 企業の機密管理と情報開示のあり方が改めて問われている（[Mythos リーク](?a=anthropic-mythos-leak)、[市場への影響](?a=anthropic-mythos-cyber-impact-2026)）。"
     ],
     "date": "2026-03-30",
     "author": "AI News 編集部",
@@ -898,17 +898,17 @@ export const ARTICLES = [
     "type": "feature",
     "category": "special",
     "title": "【週刊まとめ】AI開発ツール — 2026年3月16日〜22日",
-    "excerpt": "**OpenAI** は火曜に **GPT-5.4 mini** と nano を出した。水曜は **Windsurf** のレビュー枠が更新され、木曜に **Astral**（uv・Ruff・ty）の買収公表と生成音楽ツールの整理特集が重なった。金曜には **Cursor** による Windsurf 買収完了が伝わり、日曜には **Codex** エージェントのレビューが掲載された。",
+    "excerpt": "OpenAI が GPT-5.4 mini/nano をリリースし、低コストモデルの選択肢を広げた。翌々日には Python ツール企業 Astral（uv・Ruff・ty）の買収を発表し、Codex のエコシステム強化に動いた。同じ週に Cursor が Windsurf の買収を完了し、AI エディタ市場は Cursor vs VS Code+Copilot の二極構造に近づいた。",
     "weekRoundupPeriod": {
       "start": "2026-03-16",
       "end": "2026-03-22"
     },
     "body": [
-      "**3月17日（火）** — **OpenAI** が **GPT-5.4 mini** と GPT-5.4 nano を同時にリリースした。mini は無料層や Codex との接合、nano は API 専用の低コスト・高速モデルとして位置づけられ、並列エージェントの末端役にも触れられた。続く出来事の土台として開発者向けの論点が一気に増えた日でもある。（[→ 詳細記事](?a=gpt-54-mini-nano-2026)）",
-      "**翌18日（水）** — **Windsurf**（旧 Codeium）のレビュー枠が更新され、**Cascade** フローを軸にした段階的編集や、Anysphere 傘下での継続提供の文脈がまとめられた。（[→ 詳細記事](?a=windsurf)）",
-      "**19日（木）** — 流れが交差した日でもある。OpenAI は Python ツールチェーンの **Astral** 買収を公表し、uv・Ruff・ty を Codex 側に束ねる構図を示した。別枠では生成音楽の権利と製品線（Suno・Udio・Lyria など）の整理が特集として出た。（[Astral買収](?a=openai-acquires-astral-2026)、[生成音楽の整理](?a=ai-music-generation-frontier-early-2026)）",
-      "**20日（金）** — **Anysphere（Cursor）** が Codeium / Windsurf の買収を完了したと発表し、Cascade 技術の Cursor への統合を予告する材料が重なった。（[→ 詳細記事](?a=cursor-windsurf-merge)）",
-      "**22日（日）** — **OpenAI Codex** をクラウド並列実行のエージェントとしてレビューする記事が載り、PR 提出までのワークフローと o4-mini ベースの説明が整理された。（[→ 詳細記事](?a=openai-codex-agent)）"
+      "**3月17日（火）** — OpenAI が GPT-5.4 mini と nano を同時にリリースした。mini は無料層と Codex での利用を想定した軽量モデルで、nano は API 専用の超低コスト・高速推論モデル。並列エージェントの末端ノードに低コストモデルを配置する設計が現実的になり、エージェント運用のコスト構造が変わりうる（[→ 詳細記事](?a=gpt-54-mini-nano-2026)）。",
+      "**18日（水）** — Windsurf（旧 Codeium）のレビューが更新された。Cascade フローによる段階的な差分プレビューが強みだが、Anysphere 傘下に入ったことで長期的なロードマップが不透明になっている。新規ユーザーは Cursor との機能重複と将来の統合可能性を考慮する必要がある（[→ 詳細記事](?a=windsurf)）。",
+      "**19日（木）** — OpenAI が Python ツール企業 Astral の買収を発表した。uv（月間1.26億DL のパッケージマネージャ）・Ruff（Rust 製リンター）・ty（型チェッカー）を Codex に統合し、Python 開発の環境構築からコード品質管理までを一気通貫で押さえる戦略。OSS の中立性への懸念も出ている。同日、生成音楽ツール（Suno・Udio・Lyria 等）の権利関係と製品比較を整理した特集も掲載された（[Astral 買収](?a=openai-acquires-astral-2026)、[生成音楽の整理](?a=ai-music-generation-frontier-early-2026)）。",
+      "**20日（金）** — Anysphere（Cursor 親会社）が Windsurf の買収完了を発表した。AI エディタ市場の主要プレイヤーが1社に集約され、選択肢は実質 Cursor vs VS Code+Copilot の二極構造に近づいた。Windsurf は単体提供を継続するが、独自の機能追加がどこまで続くかは不透明（[→ 詳細記事](?a=cursor-windsurf-merge)）。",
+      "**22日（日）** — OpenAI Codex のエージェント機能をレビューした。クラウドサンドボックスでの並列実行と PR 自動作成のワークフローは、Claude Code のローカル実行とは対照的なアプローチ。o4-mini ベースで動作し、複数タスクを同時に投げられる点がチーム開発に向く（[→ 詳細記事](?a=openai-codex-agent)）。"
     ],
     "date": "2026-03-23",
     "author": "AI News 編集部",
