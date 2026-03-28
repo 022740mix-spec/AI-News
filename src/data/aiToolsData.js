@@ -84,7 +84,7 @@ export const ARTICLES = [
     "charts": [{
       "afterParagraph": 1,
       "title": "SWE-Bench Verified スコア比較",
-      "subtitle": "コーディング能力の指標（高いほど良い）",
+      "subtitle": "コーディング能力の指標。Kimi・KAT は公式発表値、他は推定値を含む",
       "unit": "%",
       "maxValue": 85,
       "bars": [
@@ -142,7 +142,7 @@ export const ARTICLES = [
     "charts": [{
       "afterParagraph": 1,
       "title": "MiniMax M2.7 ベンチマーク比較",
-      "subtitle": "フロンティアモデルとの比較",
+      "subtitle": "PinchBench スコア。M2.7・GPT・GLM は公式発表値、Opus は推定",
       "unit": "%",
       "maxValue": 95,
       "bars": [
@@ -207,20 +207,6 @@ export const ARTICLES = [
       "AI の能力向上はモデル単体にとどまらない。Google の TurboQuant はメモリを6分の1に圧縮して8倍高速化し、Gemini 3.1 Flash Live は音声応答を0.5秒以下にした。これらを組み合わせると、数か月前には不可能だったことが日常的に可能になる速度で技術が進んでいる。",
       "「シンギュラリティ」という言葉は議論を呼ぶが、2026年春に起きていることを見ると、少なくともソフトウェア開発・カスタマーサポート・金融分析といった知的労働の一部において、AI が人間の能力を超える領域が急速に広がっていることは否定しにくい。開発者にとって重要なのは、この流れの中で何を自動化し、何を人間が判断するかの線引きを意識し続けることだろう。"
     ],
-    "charts": [{
-      "afterParagraph": 0,
-      "title": "2026年3月のAI能力指標（推定）",
-      "subtitle": "各分野での人間の専門家レベルを100とした場合",
-      "unit": "",
-      "maxValue": 110,
-      "bars": [
-        { "label": "コード生成", "value": 95, "color": "#6366f1" },
-        { "label": "学術推論", "value": 80, "color": "#3b82f6" },
-        { "label": "音声対話", "value": 85, "color": "#10b981" },
-        { "label": "適応推論", "value": 30, "color": "#ef4444" },
-        { "label": "汎用判断", "value": 45, "color": "#f59e0b" }
-      ]
-    }],
     "newsDate": "2026-03-28",
     "date": "2026-03-28",
     "author": "AI News 編集部",
