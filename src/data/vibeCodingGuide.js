@@ -248,14 +248,10 @@ export const VIBE_CLAUDE_CODE = {
   lead: "起動してからの日常操作で大事なところだけ。導入手順は公式 https://docs.anthropic.com/en/docs/claude-code/overview を参照。Claude Code はターミナル（Bash や PowerShell などのコマンド入力画面）で動作する。Bash とは Mac/Linux の標準的なコマンド入力環境のことで、Windows では Git Bash や WSL で使える。",
   terms: [
     // ── 使い方の種類 ──
-    {
-      word: "デスクトップアプリ版 と CLI 版",
-      mean: "Claude Code には2つの使い方がある。(1) デスクトップアプリ版: 独自の画面でファイルツリーやチャットが見える。マウス操作で使いたい人向け。(2) CLI 版（ターミナル）: Cursor や VS Code の統合ターミナル、または Git Bash から `claude` コマンドで起動する。==どちらも同じコマンド・同じ設定ファイル（CLAUDE.md 等）が使える==。違いは見た目と、エディタとの連携のしやすさ。",
-    },
-    {
-      word: "Cursor 内で使う場合",
-      mean: "Cursor の統合ターミナル（Ctrl+` で開く）から `claude` を起動すると、Cursor の AI（Composer）と Claude Code の CLI を同時に使える。Composer で大きな設計を指示し、Claude Code で細かい実行を任せるのが効率的。エディタの `--ide` 接続も自動で行われる。",
-    },
+    { word: "A. デスクトップアプリで使う", mean: "Claude Code の専用アプリ（Windows / Mac）を起動して使う。独自の画面でファイルツリーやチャットが見える。マウス操作で直感的に使いたい人向け。ターミナルに慣れていない人はここから始めると入りやすい。" },
+    { word: "B. Cursor / VS Code のターミナルから使う", mean: "Cursor や VS Code の統合ターミナル（Ctrl+` で開く）から `claude` コマンドで起動する。エディタの AI（Composer 等）と Claude Code CLI を同時に使える。==最も多い使い方==。", code: "claude", codeLang: "bash" },
+    { word: "C. 単体のターミナルから使う", mean: "Git Bash、PowerShell、Windows Terminal などから直接 `claude` を起動する。エディタを使わず CLI だけで完結させたい場合や、CI/CD（自動化）から呼び出す場合に使う。" },
+    { word: "==どの方法でも共通==", mean: "コマンド（`claude`, `claude -c` 等）、設定ファイル（CLAUDE.md, スキル）、Hooks はすべて共通で動作する。違いは見た目とエディタとの連携のしやすさだけ。" },
     // ── 起動・セッション ──
     {
       word: "起動: `claude`",
@@ -402,6 +398,32 @@ export const VIBE_CLAUDE_CODE = {
       mean: "SKILL.md を置くと Claude がタスクに応じて自動で読み込む。プロジェクトの定型作業（デプロイ手順、テスト方針など）を教え込む仕組み。",
       code: "---\nname: deploy\ndescription: 本番デプロイの手順\n---\n\n# デプロイ手順\n\n1. npm run build\n2. npm run deploy",
       codeLang: "markdown",
+    },
+    // ── 便利なスラッシュコマンド ──
+    {
+      word: "操作: `/btw`",
+      mean: "作業の本筋を止めずに、ちょっとした追加の指示や補足を伝えるコマンド。「by the way（ところで）」の略。例えば Claude がファイルを編集中に `/btw コミットメッセージは日本語でお願い` と打つと、今の作業を中断せずにルールを追加できる。",
+      code: "/btw コミットメッセージは日本語で書いて",
+      codeLang: "text",
+    },
+    {
+      word: "操作: `/init`",
+      mean: "プロジェクトのルートに CLAUDE.md を自動生成するコマンド。Claude がプロジェクトの構成を読み取って、適切な設定ファイルを作ってくれる。最初に1回だけ実行すればよい。",
+      code: "/init",
+      codeLang: "text",
+    },
+    // ── 料金 ──
+    {
+      word: "料金: Claude Pro（$20/月）",
+      mean: "個人向けプラン。Claude Code のデスクトップアプリと CLI が利用可能。月のトークン使用量に上限あり（多い日は制限がかかることがある）。",
+    },
+    {
+      word: "料金: Claude Max（$100/月 or $200/月）",
+      mean: "ヘビーユーザー向け。Pro よりも大幅に多いトークンが使える。1日中 Claude Code を回す開発者や、チームで大量に使う場合に。$100 プランと $200 プランで上限が異なる。",
+    },
+    {
+      word: "料金: API 従量課金",
+      mean: "API キーを使って従量課金で利用する方法。サブスク上限を気にせず使えるが、モデルごとの単価（Opus: $15/$75、Sonnet: $3/$15 per 1M tokens）がかかる。大規模プロジェクトや CI/CD での自動実行に向く。",
     },
   ],
 };
