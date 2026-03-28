@@ -972,6 +972,40 @@ function GuideSidebar({ guideTab }) {
   );
 }
 
+function ToolSidebar({ toolTab, toolRef }) {
+  const ref = toolRef?.ref;
+  // section でグループ化して目次を生成
+  const sections = [];
+  const seen = new Set();
+  if (ref?.terms) {
+    for (const t of ref.terms) {
+      const sec = t.section ?? "";
+      if (sec && !seen.has(sec)) {
+        seen.add(sec);
+        sections.push(sec);
+      }
+    }
+  }
+  const label = TOOL_REFERENCES.find((t) => t.id === toolTab)?.label ?? "ツール";
+  return (
+    <aside className="desktop-sidebar" aria-label={`${label} の目次`}>
+      <div className="sidebar-panel">
+        <h3>{label} リファレンス</h3>
+        <p className="sidebar-panel-hint">セクションへジャンプします。</p>
+        {sections.map((sec) => (
+          <a
+            key={sec}
+            href={`#ref-sec-${sec.replace(/\s/g, "-")}`}
+            className="sidebar-anchor"
+          >
+            {sec}
+          </a>
+        ))}
+      </div>
+    </aside>
+  );
+}
+
 function CompaniesSidebar({ companies }) {
   return (
     <aside className="desktop-sidebar" aria-label="企業ページの目次">
@@ -2759,6 +2793,8 @@ const [showFab, setShowFab] = useState(false);
                 onTagClick={onTagClick}
                 weekRoundups={weekRoundups}
               />
+            ) : siteSection === "tools" ? (
+              <ToolSidebar toolTab={toolTab} toolRef={toolRef} />
             ) : siteSection === "companies" ? (
               <CompaniesSidebar companies={filteredCompanies} />
             ) : (
