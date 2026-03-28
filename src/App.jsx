@@ -849,9 +849,9 @@ function ToolTabBar({ toolTab, onSelect }) {
   );
 }
 
-/** セクション名 → 安全なアンカーID（ASCII のみ） */
+/** セクション名 → アンカーID（日本語をそのまま使用、ブラウザは UTF-8 ID に対応） */
 function sectionAnchorId(name) {
-  return "ref-sec-" + encodeURIComponent(name).replace(/%[0-9A-F]{2}/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
+  return "ref-sec-" + name.replace(/\s+/g, "-");
 }
 
 function ToolReferencePanel({ referenceData, practical }) {
