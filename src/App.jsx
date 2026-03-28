@@ -2349,7 +2349,7 @@ export default function App() {
     siteSection !== "guide"
       ? 0
       : guideTab === "setup" || guideTab === "rules" || guideTab === "practical"
-        ? vibeGuide.matchCount
+        ? 1
         : guideTab === "media"
           ? mediaGuide.matchCount
           : glossaryGuide.matchCount;
@@ -2358,7 +2358,7 @@ export default function App() {
     siteSection !== "guide"
       ? 0
       : guideTab === "setup" || guideTab === "rules" || guideTab === "practical"
-        ? vibeGuide.total
+        ? 1
         : guideTab === "media"
           ? mediaGuide.total
           : glossaryGuide.total;
