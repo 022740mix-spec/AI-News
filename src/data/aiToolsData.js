@@ -2,11 +2,26 @@
  * AI開発ツール ブログ記事データ
  * 各ツールを記事として構成
  *
+ * ── 週刊まとめ（heroScope: "week"）の編集ルール（このサイトの固定方針）──
+ * - 公開日: 毎週月曜 09:00（Asia/Tokyo）を原則とする（週明けに「先週」を読む想定）。
+ * - 対象期間: 常に 7 日間。直前の「月曜 0:00 〜 日曜 23:59」（東京日付）= ISO と同じく週の境界は月曜始まり。
+ *   （米国紙で見る日曜始まり Sun–Sat もあるが、開発者向けニュースでは月曜始まりが一般的になりやすい。）
+ * - 記事の date: その週刊記事の公開日（多くは月曜の YYYY-MM-DD）。一覧・フィードの並びとヒーロー表示に使う。
+ * - weekRoundupPeriod: { start, end } に対象週の両端を必ず入れ、タイトル・本文・ヒーローと矛盾させない。
+ * - 対象週をまたぐトピックは、公開日の属する週か、ニュース発生日の属する週のどちらかに寄せて分割する（「10日分を1週刊に詰めない」）。
+ * - 上記の運用・掲載基準は**編集部メモ**であり、読者向けの**概要・本文には書かない**（週の流れと個別記事への導線だけを書く）。
+ * - 週刊の文体・接続・推敲チェックは **本リポジトリ**の `.cursor/skills/weekly-news-roundup/SKILL.md` に従う（新規作成・全面推敲のたびに適用）。
+ *
  * 任意フィールド（画像は権利クリア済みのものだけ public/ に配置）:
  *   coverImage: { src: "articles/…" | "https://…", alt, caption? }
  *   figures: [{ src, alt, caption?, afterParagraph: 0 始まりの段落索引の直後 }]
  *   tables: [{ afterParagraph, caption?, headers: string[], rows: string[][] }] — 先頭列は行見出し（th）
  *   primarySources: [{ title, url, site?, note? }] — 元報道・公式ドキュメント（2次整理サイトとして必須に近い）
+   *   date: YYYY-MM-DD — 通常は**ニュースが世に出た基準日**。週刊まとめ（heroScope:week）では**その週刊の公開日**を入れる（一覧・ヒーロー・フィード用）。
+ *   newsDate?: — 省略可。指定時は `getArticleNewsYmd` がこちらを優先（後から記事だけ足すとき date と切り分け可）
+ *   pinned?: boolean — 同一ニュース日内で複数記事があるときヒーロー候補の優先。ヒーローは「本日＝東京」と news 日付が一致する記事のみ
+ *   heroScope?: "day" | "week" | "none" — ヒーロー帯の意味。省略時は day（単発の「本日のニュース」）。week は期間まとめ用コピー。none は当日一致でもヒーローに出さない
+ *   weekRoundupPeriod?: { start: YYYY-MM-DD, end: YYYY-MM-DD } — 週刊まとめの対象7日間（月曜〜日曜想定）。heroScope:week のとき推奨
  */
 
 export const ARTICLES = [
@@ -14,33 +29,32 @@ export const ARTICLES = [
     "id": "overview-2026-spring",
     "type": "feature",
     "category": "special",
-    "title": "【2026年3月28日更新】AI開発ツール最新動向 — MCP v2・Mythos衝撃・ARC-AGI-3・Anthropic対ペンタゴン差止・Sora終了",
-    "excerpt": "MCP v2 仕様リリース（OAuth 2.1・Streamable HTTP）、Anthropic Mythos リークでサイバー株急落、ARC-AGI-3 公開（フロンティアAI 0.26%）、Sora 終了と Disney 撤退 — 3月下旬は市場・プロトコル・ベンチマークが同時に動いた。",
+    "title": "【週刊まとめ】AI開発ツール — 2026年3月23日〜29日",
+    "excerpt": "**ARC Prize Foundation** は水曜に適応推論ベンチ **ARC-AGI-3** を公開した。**翌日の木曜**には **Google DeepMind** が **Gemini 3.1 Pro** をプレビューし、**同じ日に** **Model Context Protocol** が **v2** の年次ロードマップを示した。**裁判では**サンフランシスコの連邦地裁が **Anthropic** の申請を認め、国防総省の措置に暫定差止を出したと報じられた。**ほぼ同じ頃**、**OpenAI** の **Sora** 消費者向け終了や提携解消が各紙で伝わった。**金曜**は **Cursor 2.4** と **Claude Code**（Auto モード・クラウド auto-fix）の更新が続き、**週末**にかけ **Mythos** 草稿の報道が広がってセキュリティ関連株が売られたと報じられた。",
+    "weekRoundupPeriod": {
+      "start": "2026-03-23",
+      "end": "2026-03-29"
+    },
     "body": [
-      "2026年3月、AI開発ツール市場に大きな変動が相次ぎました。モデル層では Google が Gemini 3.1 Pro を発表し、OpenAI は GPT-5.4 で推論・コーディング・エージェント機能を統合し、さらに mini/nano の小型モデルを3月17日にリリース。ツール層ではサブエージェント・並列実行・安全性がキーワードです。",
-      "3月25日、**ARC-AGI-3** が公開されました。ビデオゲーム風インタラクティブ環境での適応推論を問う新世代ベンチマークで、GPT-5.4・Claude Opus 4.6・Gemini 3.1 Pro を含むフロンティアモデルは0.26%（人間100%）にとどまりました。静的グリッドパズルの ARC-AGI-2 を超える「本当の推論」評価として注目されています（別稿）。",
-      "Google DeepMind は3月26日に Gemini 3.1 Pro をプレビュー公開しました。ARC-AGI-2 スコア77.1%と前世代の倍以上の推論性能を達成し、1Mトークンコンテキストで大規模リポジトリの一括解析に対応します。価格は入力$2/出力$18（100万トークンあたり）で据え置きです。",
-      "OpenAI は3月19日に Python 開発ツール会社 **Astral**（uv・Ruff・ty）の買収を発表しました。月間1億2,600万ダウンロードの uv を Codex チームに統合し、依存関係管理・Lint・型チェックを AI コーディングエージェントのネイティブ機能として提供する戦略です（別稿）。",
-      "**Anthropic のペンタゴン訴訟**では3月26日、サンフランシスコ連邦地裁が暫定差止命令を発しました。自律兵器・大規模監視への Claude 利用を拒否したことで DoD に「サプライチェーンリスク」指定された Anthropic が、修正第一条違反の報復として司法に訴えた件で、Lin 判事が Anthropic の申請を認容しました（別稿）。",
-      "AnthropicはClaude Codeに権限の「Auto mode」（研究プレビュー）を追加し、分類器で手元セッションの自律実行を安全側に寄せました。あわせて3月27日頃、Noah Zweben 氏により auto-fix in the cloud が発表され、Web/モバイルセッションが PR の CI 失敗やレビューコメントをクラウド上でフォローする流れが始まっています（別稿）。",
-      "CursorはVersion 2.4で並列サブエージェントを正式導入。クラウドVM上で最大20エージェントが同時稼働し、大規模タスクの処理時間をほぼ半減。Windsurf は3月19日にクレジット制から日次/週次クォータ制へ料金体系を全面改定し、Pro価格が$20に上昇しました。",
-      "3月26日には **MCP（Model Context Protocol）v2 仕様**がリリースされました。Streamable HTTP トランスポートが旧 HTTP+SSE を置き換え、OAuth 2.1 認可フレームワーク・JSON-RPC バッチング・ツールアノテーションが標準化。OpenAI・Microsoft も正式サポートを表明し、エンタープライズ本番環境での採用障壁が大幅に下がりました（別稿）。",
-      "Anthropic の**「Claude Mythos」リーク**は3月27日の報道後、28日の米国市場でサイバーセキュリティ株の急落を引き起こしました。CrowdStrike −7%、Palo Alto Networks −6% など。草稿上のサイバー能力記述が市場を動かしましたが、未検証のリーク断片である点に注意が必要です（別稿）。また **OpenAI は Sora（動画生成アプリ）を3月24日に終了**し、Disney との10億ドル規模の提携も解消。コンピュート配分の優先度シフトが理由とされます（別稿）。",
-      "周辺レイヤーも同時に厚くなっています。MCP v2 でツール配線の本番品質が上がり、OpenClaw のように自前ホストのエージェント・ゲートウェイを組む需要、SKILL.md・AGENTS.md・llms.txt など Markdown ベースの「エージェント用ドキュメント」がレビュー対象の第一級市民になりつつあります。言語ランタイム（Python・Node・Bun など）と Astral 買収に代表されるツールチェーン、RAG の永続層としての PostgreSQL / Supabase 周りも別稿で整理しています。非エンジニア向けに、バイブコーディング・メディア生成早見・用語集はサイト上部「ガイド」内の各タブに分けてまとめています。速報に加え、用途軸の比較記事（フロンティア三本柱、AI コーディング IDE 群）も随時追加する方針です（別稿【比較】）。"
+      "**3月24日（火）** — サンフランシスコの連邦地裁では **Anthropic** と国防総省をめぐる審問が開かれたと報じられ、**Rita Lin** 判事が国防総省側の「サプライチェーンリスク」の基準を問いただすやり取りが伝えられた。**ほぼ同じ頃**、**OpenAI** の **Sora** に関する消費者向け提供終了や提携解消が AP や NPR など複数媒体で立て続けに報じられた。審問から暫定差止までの法廷の流れは ?a=anthropic-pentagon-injunction-2026 、Sora 周辺は ?a=openai-sora-discontinued-2026 。",
+      "**翌25日（水）** — **ARC Prize Foundation** が **ARC-AGI-3** を公開し、静的なパズルではなくインタラクティブな環境でエージェントの適応推論を測る設計に振り替わった。**プレビュー評価では**主要フロンティアが人間基準に対し極めて低いスコアにとどまったと整理され、難易度の議論が一気に現実の数字に置き換わった。詳細は ?a=arc-agi-3-launch-2026 。",
+      "**26日（木）** — **製品とインフラの告知が同日に重なった**。**Google DeepMind** が **Gemini 3.1 Pro** のプレビューを掲げた**一方で**、**Model Context Protocol** 側は **v2** の年次ロードマップ（Streamable HTTP や OAuth 2.1 周りの整理など）を示した。**法廷では**前日までの審問を経て、**Lin** 判事が **Anthropic** の申請を認め、国防総省が同社を「サプライチェーンリスク」に指定してとった措置の**執行を止める**暫定差止命令を発したと報じられた。深掘りは ?a=gemini-3-1-pro ・ ?a=mcp-v2-spec-launch-2026 ・ ?a=anthropic-pentagon-injunction-2026 。",
+      "**27日（金）** — **開発者向けの更新が続いた**。**Cursor** が **2.4** で並列サブエージェントや画像生成などをまとめたのに**続き**、**Anthropic** は **Claude Code** の **Auto mode**（研究プレビュー）を広げた。**加えて** **Noah Zweben** 氏が、クラウド側で PR／CI をフォローする **auto-fix** を示したと伝えられた。 ?a=cursor-2-4-subagents ・ ?a=claude-code-auto-mode ・ ?a=claude-code-autofix-cloud 。",
+      "**金曜から週末** — **Fortune** や **DNyuz** ほかが、Anthropic 周辺の未公開コンテンツへのアクセス問題と、内部コードネーム **Mythos**（別名 **Capybara** と報じられた語もある）の草稿報道を続けた。**米国市場では28日**、**CrowdStrike** や **Palo Alto Networks** などセキュリティ銘柄が大きく売られ、草稿に含まれるサイバー能力の記述が材料になり得るとの見方が報じられた。事実関係は ?a=anthropic-mythos-leak 、相場の整理は ?a=anthropic-mythos-cyber-impact-2026 。"
     ],
-    "date": "2026-03-28",
+    "date": "2026-03-30",
     "author": "AI News 編集部",
-    "readTime": "15分",
+    "readTime": "9分",
     "tags": [
-      "まとめ",
+      "週刊まとめ",
       "2026年3月",
       "MCP v2",
-      "Mythos",
+      "ARC-AGI-3",
       "Gemini 3.1 Pro",
-      "GPT-5.4",
-      "Sora",
-      "サブエージェント"
+      "エージェント",
+      "Claude"
     ],
+    "heroScope": "week",
     "pinned": true,
     "primarySources": [
       {
@@ -49,9 +63,9 @@ export const ARTICLES = [
         "url": "https://deepmind.google/models/gemini/pro/"
       },
       {
-        "title": "Introducing GPT-5.4",
-        "site": "OpenAI",
-        "url": "https://openai.com/index/introducing-gpt-5-4/"
+        "title": "Announcing ARC-AGI-3",
+        "site": "ARC Prize",
+        "url": "https://arcprize.org/blog/arc-agi-3-launch"
       },
       {
         "title": "MCP v2 — The 2026 MCP Roadmap",
@@ -71,17 +85,65 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "overview-2026-week-mar16",
+    "type": "feature",
+    "category": "special",
+    "title": "【週刊まとめ】AI開発ツール — 2026年3月16日〜22日",
+    "excerpt": "**OpenAI** は **17日（火）**に **GPT-5.4 mini** と **nano** を出した。**18日（水）**は **Windsurf** のレビュー枠が更新され、**19日（木）**に **Astral（uv・Ruff・ty）** の買収公表と生成音楽ツールの整理特集が重なった。**20日（金）**には **Cursor** による **Windsurf** 買収**完了**が伝わり、週の締めの **22日（日）**には **Codex** エージェントのレビューが掲載された。",
+    "weekRoundupPeriod": {
+      "start": "2026-03-16",
+      "end": "2026-03-22"
+    },
+    "body": [
+      "**3月17日（火）** — **OpenAI** が **GPT-5.4 mini** と **GPT-5.4 nano** を同時にリリースした。mini は無料層や Codex との接合、nano は API 専用の低コスト・高速モデルとして位置づけられ、並列エージェントの末端役にも触れられた。**続く出来事の土台**として開発者向けの論点が一気に増えた日でもある。 ?a=gpt-54-mini-nano-2026",
+      "**翌18日（水）** — **Windsurf**（旧 Codeium）のレビュー枠が更新され、**Cascade** フローを軸にした段階的編集や、Anysphere 傘下での継続提供の文脈がまとめられた。 ?a=windsurf",
+      "**19日（木）** — **流れが交差した**日でもある。**OpenAI** は Python ツールチェーンの **Astral** 買収を公表し、**uv・Ruff・ty** を Codex 側に束ねる構図を示した。**別枠**では生成音楽の権利と製品線（Suno・Udio・Lyria など）の整理が特集として出た。 ?a=openai-acquires-astral-2026 ・ ?a=ai-music-generation-frontier-early-2026",
+      "**20日（金）** — **Anysphere（Cursor）** が **Codeium / Windsurf** の買収を**完了**したと発表し、**Cascade** 技術の **Cursor** への統合を予告する材料が重なった。 ?a=cursor-windsurf-merge",
+      "**22日（日）** — **OpenAI Codex** をクラウド並列実行のエージェントとしてレビューする記事が載り、PR 提出までのワークフローと **o4-mini** ベースの説明が整理された。 ?a=openai-codex-agent"
+    ],
+    "date": "2026-03-23",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "週刊まとめ",
+      "2026年3月",
+      "OpenAI",
+      "Cursor",
+      "Windsurf",
+      "Python"
+    ],
+    "heroScope": "week",
+    "pinned": true,
+    "primarySources": [
+      {
+        "title": "Introducing GPT-5.4 mini and nano",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano/"
+      },
+      {
+        "title": "OpenAI to acquire Astral",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/openai-to-acquire-astral/"
+      },
+      {
+        "title": "Astral to join OpenAI",
+        "site": "Astral",
+        "url": "https://astral.sh/blog/openai"
+      }
+    ]
+  },
+  {
     "id": "guide-media-generative-tools-2026",
     "type": "feature",
     "category": "special",
-    "title": "【ガイド別紙】メディア生成ツール早見 — クリエイター向け（バイブコーディングとは分離）",
-    "excerpt": "画像・動画・音楽・音声合成の代表的ツール一覧は、コーディング用途の「バイブコーディング」ガイドと読者層が異なるためサイト上でタブ分離した。想定ユーザー・権利と料金の注意点を整理し、早見表への導線を記事化する。",
+    "title": "【ガイド】メディア生成ツール早見の見方 — 画像・動画・音楽",
+    "excerpt": "ガイドの「メディア生成」タブに載せた代表ツールの位置づけと、権利・料金を確認するときの注意を短くまとめる。開発の道具選びはバイブコーディングタブ。",
     "body": [
-      "AI Tool News のガイドはもともと、バイブコーディング（IDE・CLI・リポジトリを前提にした開発）の道筋と、画像・動画・音楽など**メディア生成**の早見を同じ画面に載せていた。利用シーンのフィードバックを踏まえ、**別タブ・別記事**に分割した。",
-      "**想定読者の違い** — バイブコーディングの読者は、エディタ・ターミナル・Git・音声入力（例: Aqua Voice）で試行錯誤する開発者寄りが中心である。一方、メディア早見は、クリエイティブディレクション、マーケ動画、サムネイル生成、BGM の下ごしょうなど、**コードを主戦場にしない人**が参照する想定である。同一ページにまとめると目的別の情報が混ざり、それぞれの「次の一手」が見えにくくなる。",
-      "**早見表の場所** — サイトでは上部ナビの「ガイド」→ **「メディア生成」** タブに、カテゴリ別の代表ツール表を載せている。オフライン共有用に、同じサイト内で URL クエリ `?view=guide&tab=media` からも開ける。表は公開情報ベースのサンプルであり、**料金・利用条件・学習データ方針・商用利用**は各サービスの現行約款とヘルプが常に正である。",
-      "**レビュー時の留意点** — 生成メディアでは著作権・肖像・利用許諾・社内ガイドラインが絡みやすい。「とりあえず生成」で外部公開し、後から権利処理が詰む案件もある。本早見は**ツール探索の出発点**であり、法務・契約・ブランド規程の代替にはならない。",
-      "バイブコーディングの段階道筋、組み合わせ表、**実務のスラッシュ・スキル**の話、TypeScript の `any` など**コードのハマり**は **「バイブコーディング」** タブ側にまとめている。目的に合わせてタブを選んでほしい。"
+      "このサイトの **ガイド** は、用途ごとにタブを分けている。**バイブコーディング** は IDE・CLI・リポジトリを前提にした組み合わせと運用の話。**メディア生成** は画像・動画・音楽・音声合成など、生成系プロダクトの代表例をジャンル別に並べた早見だ。",
+      "**メディア早見の位置づけ** — 表は公開情報ベースのサンプルであり、各社の最新機能・価格・提供地域を代替しない。**料金・利用条件・学習データ方針・商用利用**は、必ず公式の約款とヘルプで確認する。",
+      "**権利と運用** — 生成物の著作権・肖像・ソフト利用許諾・社内ルールは案件により重い。外部公開の前に権利整理が後追いになりやすいので、本早見は**ツールを知るための出発点**と捉え、法務・契約・ブランド規程の代替にはしない。",
+      "**開き方** — ブラウザではナビの「ガイド」→ **メディア生成** タブ。URL は同一サイト内で `?view=guide&tab=media` でもよい。",
+      "段階の道筋、組み合わせ表、音声・スラッシュ・スキル、コードのハマりどころは **バイブコーディング** タブにまとめてある。やりたい作業に合わせてタブを選ぶとよい。"
     ],
     "date": "2026-03-28",
     "author": "AI News 編集部",
@@ -2130,443 +2192,6 @@ export const ARTICLES = [
     ]
   },
   {
-    "id": "ai-model-research-resources-by-angle-2026",
-    "type": "feature",
-    "category": "special",
-    "title": "【編集部資料・全公開】AIモデル進化を追うサイト — 切り口別リンク集（時系列・OSS・中国勢・Ollama・ベンチ）",
-    "excerpt": "記事執筆や選定の前に使う**調査ハブ**。時系列年表・計算量データベース・実用ベンチ比較・Hugging Face・DeepSeek/Qwen 公式・ローカル（Ollama）まで、目的別に整理。**二次ソースの横並べと一次ソースの確認**をセットで回すためのリストです。",
-    "body": [
-      "フロンティアモデルの話は、製品名・API の model ID・発表日・ベンチ条件が数日単位で動きます。本稿は「どのサイトをどの目的で開くか」を **切り口別**に並べた **当サイト上のリソース記事**です（GitHub の `docs/AI_MODEL_EVOLUTION_RESOURCES_BY_ANGLE.md` と同内容をベースに、読みやすく再構成しています）。**最終的な事実確認は、各社の公式 changelog・モデルカード・契約書**で行ってください。",
-      "使い方の目安です。**いつ何が出たか**は時系列・年表系、**今どれが速い・安い**は Artificial Analysis などの実用比較、**学習計算量や規模**は Epoch、**派生モデルとライセンス**は Hugging Face、**中国勢**は DeepSeek / Qwen / ModelScope など公式系、**手元実行**は Ollama・llama.cpp（※Ollama はモデル本体の製作者ではなく **配布・推論の接着剤**）、**ベンチの意味**は各ベンチ公式と解説記事をセット、という分割が扱いやすいです。",
-      "次の **クイックガイド** と **切り口別の表** に URL を集約しました。表内の https は本文と同様にリンク化されます。リンク切れやサービス終了は利用時に各自ご確認ください。",
-      "比較記事を書くときの最低限の作法もあわせておきます。**「SOTA」**と書くならベンチ名・評価日・データ分割・モデル版のいずれかを添える。**年表サイト**はストーリー整理には便利ですが、日付の確定は **一次発表**へ上乗せする。Epoch など **CC 系データ**を転載する場合は元ページのライセンス表記に従う。企業利用では中国系モデルやクラウド経路の **データ所在地・規約** も別途確認すると安全です。",
-      "最後に **各社公式の確認用入口** を表にまとめました。製品ブログの見出しだけ追うと「ChatGPT の表示名」と「API の model 名」がずれることがあるため、開発ドキュメント側の **model 一覧・廃止予告** も必ず見てください。"
-    ],
-    "date": "2026-03-28",
-    "author": "AI News 編集部",
-    "readTime": "12分",
-    "tags": [
-      "調査",
-      "リソース",
-      "タイムライン",
-      "OSS",
-      "中国モデル",
-      "Ollama",
-      "ベンチマーク"
-    ],
-    "features": [
-      "切り口別リンク集",
-      "一次・二次の切り分け前提",
-      "docs と本記事の双方向"
-    ],
-    "tables": [
-      {
-        "afterParagraph": 1,
-        "caption": "クイックガイド（やりたいこと → まず開く切り口）",
-        "headers": [
-          "やりたいこと",
-          "主に見る切り口（本記事内の表）"
-        ],
-        "rows": [
-          [
-            "時系列・系譜を掴む",
-            "表: 時系列・年表"
-          ],
-          [
-            "遅延・価格・品質の横比較",
-            "表: 実用比較"
-          ],
-          [
-            "学習規模・計算量で語る",
-            "表: 物量・計算量"
-          ],
-          [
-            "オープンウェイト・派生",
-            "表: OSS・コミュニティ"
-          ],
-          [
-            "中国勢（API/OSS/国内プロダクト）",
-            "表: 中国勢"
-          ],
-          [
-            "ローカル実行・Ollama",
-            "表: ローカル・Ollama 周辺"
-          ],
-          [
-            "画像・音声・動画・文書",
-            "表: マルチモーダル"
-          ],
-          [
-            "推論・エージェント・ツール",
-            "表: 推論・エージェント"
-          ],
-          [
-            "産業全体の数字",
-            "表: マクロ統計"
-          ],
-          [
-            "ベンチの定義を読む",
-            "表: ベンチマーク作法"
-          ],
-          [
-            "モデル名・日付の確定",
-            "表: 各社公式 changelog"
-          ]
-        ]
-      },
-      {
-        "afterParagraph": 2,
-        "caption": "切り口1: 時系列・系譜（ストーリー軸）",
-        "headers": [
-          "リソース",
-          "URL",
-          "メモ"
-        ],
-        "rows": [
-          [
-            "LifeArchitect.ai — Timeline",
-            "https://lifearchitect.ai/timeline/",
-            "LLM 中心の長い年表。別ページに大規模モデル表。"
-          ],
-          [
-            "Epoch AI — AI models",
-            "https://epoch.ai/data/ai-models/",
-            "規模・計算量など。データ利用はライセンス確認。"
-          ],
-          [
-            "SPAITIAL — Models timeline",
-            "https://spaitial.space/models/",
-            "ビジュアル寄りのタイムライン。"
-          ],
-          [
-            "AI History Project",
-            "https://aihistoryproject.org/",
-            "イベント年表系。二次整理として。"
-          ]
-        ]
-      },
-      {
-        "afterParagraph": 2,
-        "caption": "切り口2: 実用比較（速さ・価格・品質の並べ方）",
-        "headers": [
-          "リソース",
-          "URL",
-          "メモ"
-        ],
-        "rows": [
-          [
-            "Artificial Analysis",
-            "https://artificialanalysis.ai/",
-            "API/フロンティアの実用比較でよく参照される。"
-          ],
-          [
-            "LMSYS Chatbot Arena",
-            "https://chat.lmsys.org/",
-            "投票ベース。母集団・解釈に注意。"
-          ]
-        ]
-      },
-      {
-        "afterParagraph": 2,
-        "caption": "切り口3: 物量（学習計算量・データ規模）",
-        "headers": [
-          "リソース",
-          "URL",
-          "メモ"
-        ],
-        "rows": [
-          [
-            "Epoch AI",
-            "https://epoch.ai/",
-            "インサイト記事（例: コンテキスト長トレンド）も。"
-          ],
-          [
-            "各モデル技術レポート",
-            "https://arxiv.org/",
-            "パラメータ・トークン・FLOPs は定義ゆれあり。"
-          ]
-        ]
-      },
-      {
-        "afterParagraph": 2,
-        "caption": "切り口4: OSS・コミュニティ・派生モデル",
-        "headers": [
-          "リソース",
-          "URL",
-          "メモ"
-        ],
-        "rows": [
-          [
-            "Hugging Face — Models",
-            "https://huggingface.co/models",
-            "权重み・派生の中心。"
-          ],
-          [
-            "Papers with Code",
-            "https://paperswithcode.com/",
-            "論文・実装・SOTA 対応。"
-          ],
-          [
-            "Meta — Llama ブログ",
-            "https://ai.meta.com/blog/",
-            "Llama 世代の公式。"
-          ],
-          [
-            "Mistral — News",
-            "https://mistral.ai/news/",
-            "欧州 OSS ストーリー。"
-          ],
-          [
-            "Qwen — Blog",
-            "https://qwenlm.github.io/blog/",
-            "Qwen2/2.5/3 系の公式。"
-          ]
-        ]
-      },
-      {
-        "afterParagraph": 2,
-        "caption": "切り口5: 中国勢（API・OSS・国内プロダクト混在）",
-        "headers": [
-          "リソース",
-          "URL",
-          "メモ"
-        ],
-        "rows": [
-          [
-            "DeepSeek API Docs",
-            "https://api-docs.deepseek.com/",
-            "価格・ニュース欄。"
-          ],
-          [
-            "Qwen Blog",
-            "https://qwenlm.github.io/blog/",
-            "多言語・Coder/Math 枝。"
-          ],
-          [
-            "ModelScope",
-            "https://modelscope.cn/",
-            "国内ホスティング。アクセス環境に注意。"
-          ],
-          [
-            "MoonshotAI — GitHub",
-            "https://github.com/MoonshotAI",
-            "Kimi 系はリポジトリで追いやすい。"
-          ],
-          [
-            "Z.AI 開発者 docs",
-            "https://docs.z.ai/",
-            "智谱 GLM 系リリースノート。"
-          ],
-          [
-            "ByteDance Seed Blog",
-            "https://seed.bytedance.com/en/blog",
-            "Seed / 豆包 系。"
-          ]
-        ]
-      },
-      {
-        "afterParagraph": 2,
-        "caption": "切り口6: ローカル実行・Ollama 周辺（配布と本体は別軸）",
-        "headers": [
-          "リソース",
-          "URL",
-          "メモ"
-        ],
-        "rows": [
-          [
-            "Ollama — Library",
-            "https://ollama.com/library",
-            "ランタイム＋パッケージ。API最新版と不一致の場合あり。"
-          ],
-          [
-            "llama.cpp",
-            "https://github.com/ggerganov/llama.cpp",
-            "ローカル推論の実装のひとつ。"
-          ],
-          [
-            "vLLM",
-            "https://github.com/vllm-project/vllm",
-            "スループット・サーバ用途。"
-          ],
-          [
-            "LM Studio",
-            "https://lmstudio.ai/",
-            "GUI でのローカル利用。"
-          ],
-          [
-            "MLX",
-            "https://github.com/ml-explore/mlx",
-            "Apple Silicon 向け最適化。"
-          ]
-        ]
-      },
-      {
-        "afterParagraph": 2,
-        "caption": "切り口7: マルチモーダル（画像・音声・動画・文書）",
-        "headers": [
-          "リソース",
-          "URL",
-          "メモ"
-        ],
-        "rows": [
-          [
-            "Gemini API Docs",
-            "https://ai.google.dev/gemini-api/docs",
-            "入力モダリティはモデルで差。"
-          ],
-          [
-            "OpenAI Platform Docs",
-            "https://platform.openai.com/docs",
-            "Vision/Audio 等はモデル別。"
-          ],
-          [
-            "Papers with Code — SOTA",
-            "https://paperswithcode.com/sota",
-            "タスク別指標。"
-          ]
-        ]
-      },
-      {
-        "afterParagraph": 2,
-        "caption": "切り口8: 推論特化・エージェント・ツール",
-        "headers": [
-          "リソース",
-          "URL",
-          "メモ"
-        ],
-        "rows": [
-          [
-            "OpenAI Cookbook",
-            "https://cookbook.openai.com/",
-            "関数呼び出し等のパターン。"
-          ],
-          [
-            "Anthropic API Docs",
-            "https://docs.anthropic.com/",
-            "ツール・プロンプト設計。"
-          ],
-          [
-            "Qwen-Agent",
-            "https://github.com/QwenLM/Qwen-Agent",
-            "オープン系エージェント例。"
-          ]
-        ]
-      },
-      {
-        "afterParagraph": 2,
-        "caption": "切り口9: 産業・政策（マクロ）",
-        "headers": [
-          "リソース",
-          "URL",
-          "メモ"
-        ],
-        "rows": [
-          [
-            "Stanford AI Index",
-            "https://aiindex.stanford.edu/",
-            "年次レポート。個別モデルより俯瞰。"
-          ]
-        ]
-      },
-      {
-        "afterParagraph": 2,
-        "caption": "切り口10: ベンチマークを読むときの作法",
-        "headers": [
-          "リソース",
-          "URL",
-          "メモ"
-        ],
-        "rows": [
-          [
-            "各ベンチ公式",
-            "（タスク名で検索）",
-            "MMLU / HumanEval / SWE-bench 等は条件が命。"
-          ],
-          [
-            "Epoch / Artificial Analysis",
-            "https://epoch.ai/",
-            "上記の表とあわせメソッド説明を読む。"
-          ]
-        ]
-      },
-      {
-        "afterParagraph": 4,
-        "caption": "切り口11: 各社公式 changelog・確認用入口（一次ソース優先）",
-        "headers": [
-          "組織",
-          "参照先（例）"
-        ],
-        "rows": [
-          [
-            "OpenAI（モデルリリースノート）",
-            "https://help.openai.com/en/articles/9624314-model-release-notes"
-          ],
-          [
-            "OpenAI（ニュース）",
-            "https://openai.com/news/"
-          ],
-          [
-            "Anthropic",
-            "https://www.anthropic.com/news"
-          ],
-          [
-            "Google Gemini",
-            "https://ai.google.dev/gemini-api/docs/changelog"
-          ],
-          [
-            "Meta",
-            "https://ai.meta.com/blog/"
-          ],
-          [
-            "Mistral",
-            "https://mistral.ai/news/"
-          ],
-          [
-            "DeepSeek",
-            "https://api-docs.deepseek.com/"
-          ],
-          [
-            "Alibaba Qwen",
-            "https://qwenlm.github.io/blog/"
-          ]
-        ]
-      }
-    ],
-    "primarySources": [
-      {
-        "title": "Epoch AI — Data on AI models",
-        "site": "Epoch AI",
-        "url": "https://epoch.ai/data/ai-models/"
-      },
-      {
-        "title": "LifeArchitect.ai — Timeline of AI and language models",
-        "site": "LifeArchitect.ai",
-        "url": "https://lifearchitect.ai/timeline/"
-      },
-      {
-        "title": "Artificial Analysis",
-        "site": "Artificial Analysis",
-        "url": "https://artificialanalysis.ai/"
-      },
-      {
-        "title": "LMSYS — Chatbot Arena",
-        "site": "LMSYS",
-        "url": "https://chat.lmsys.org/"
-      },
-      {
-        "title": "Stanford HAI — AI Index",
-        "site": "Stanford University",
-        "url": "https://aiindex.stanford.edu/"
-      },
-      {
-        "title": "OpenAI Help Center — Model release notes",
-        "site": "OpenAI",
-        "url": "https://help.openai.com/en/articles/9624314-model-release-notes",
-        "note": "記事執筆時点の URL。リダイレクトに注意。"
-      }
-    ]
-  },
-  {
     "id": "frontier-triad-power-map-2026",
     "type": "feature",
     "category": "special",
@@ -3153,6 +2778,17 @@ export const ARTICLES = [
     ]
   }
 ];
+
+const NEWS_YMD = /^\d{4}-\d{2}-\d{2}$/;
+
+/**
+ * ニュースの「世に出た日」（東京カレンダーで比較）。newsDate があれば優先、なければ date。
+ */
+export function getArticleNewsYmd(a) {
+  if (a?.newsDate && NEWS_YMD.test(String(a.newsDate))) return String(a.newsDate);
+  if (a?.date && NEWS_YMD.test(String(a.date))) return String(a.date);
+  return "";
+}
 
 /**
  * サイト表示・フィード生成の「本日」YYYY-MM-DD（Asia/Tokyo）。

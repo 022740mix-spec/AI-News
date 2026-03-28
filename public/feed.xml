@@ -8,6 +8,14 @@
   <updated>2026-03-28T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>【週刊まとめ】AI開発ツール — 2026年3月23日〜29日</title>
+    <link rel="alternate" type="text/html" href="?a=overview-2026-spring"/>
+    <id>tag:ai-tool-news.jp,2026:overview-2026-spring</id>
+    <published>2026-03-30T15:00:00Z</published>
+    <updated>2026-03-30T15:00:00Z</updated>
+    <summary>ARC Prize Foundation は水曜に適応推論ベンチ ARC-AGI-3 を公開した。翌日の木曜には Google DeepMind が Gemini 3.1 Pro をプレビューし、同じ日に Model Context Protocol が v2 の年次ロードマップを示した。裁判ではサンフランシスコの連邦地裁が Anthropic の申請を認め、国防総省の措置に暫定差止を出したと報じられた。ほぼ同じ頃、OpenAI の Sora 消費者向け終了や提携解消が各紙で伝わった。金曜は Cursor 2.4 と Claude Code（Auto モード・クラウド auto-fix）の更新が続き、週末にかけ Mythos 草稿の報道が広がってセキュリティ関連株が売られたと報じられた。</summary>
+  </entry>
+  <entry>
     <title>TypeScript バックエンドの ORM — Drizzle と Prisma を AI アプリ開発でどう切るか</title>
     <link rel="alternate" type="text/html" href="?a=orm-drizzle-prisma-ai-backend-2026"/>
     <id>tag:ai-tool-news.jp,2026:orm-drizzle-prisma-ai-backend-2026</id>
@@ -40,28 +48,12 @@
     <summary>RAG・チャット・エージェントの永続層は多くの場合がリレーショナル＋ベクトル拡張。Supabase（Postgres＋Auth＋Realtime＋Edge Functions）を軸に、RLS・接続プール・ハイブリッド検索の論点を整理する。</summary>
   </entry>
   <entry>
-    <title>【2026年3月28日更新】AI開発ツール最新動向 — MCP v2・Mythos衝撃・ARC-AGI-3・Anthropic対ペンタゴン差止・Sora終了</title>
-    <link rel="alternate" type="text/html" href="?a=overview-2026-spring"/>
-    <id>tag:ai-tool-news.jp,2026:overview-2026-spring</id>
-    <published>2026-03-28T15:00:00Z</published>
-    <updated>2026-03-28T15:00:00Z</updated>
-    <summary>MCP v2 仕様リリース（OAuth 2.1・Streamable HTTP）、Anthropic Mythos リークでサイバー株急落、ARC-AGI-3 公開（フロンティアAI 0.26%）、Sora 終了と Disney 撤退 — 3月下旬は市場・プロトコル・ベンチマークが同時に動いた。</summary>
-  </entry>
-  <entry>
-    <title>【ガイド別紙】メディア生成ツール早見 — クリエイター向け（バイブコーディングとは分離）</title>
+    <title>【ガイド】メディア生成ツール早見の見方 — 画像・動画・音楽</title>
     <link rel="alternate" type="text/html" href="?a=guide-media-generative-tools-2026"/>
     <id>tag:ai-tool-news.jp,2026:guide-media-generative-tools-2026</id>
     <published>2026-03-28T15:00:00Z</published>
     <updated>2026-03-28T15:00:00Z</updated>
-    <summary>画像・動画・音楽・音声合成の代表的ツール一覧は、コーディング用途の「バイブコーディング」ガイドと読者層が異なるためサイト上でタブ分離した。想定ユーザー・権利と料金の注意点を整理し、早見表への導線を記事化する。</summary>
-  </entry>
-  <entry>
-    <title>【編集部資料・全公開】AIモデル進化を追うサイト — 切り口別リンク集（時系列・OSS・中国勢・Ollama・ベンチ）</title>
-    <link rel="alternate" type="text/html" href="?a=ai-model-research-resources-by-angle-2026"/>
-    <id>tag:ai-tool-news.jp,2026:ai-model-research-resources-by-angle-2026</id>
-    <published>2026-03-28T15:00:00Z</published>
-    <updated>2026-03-28T15:00:00Z</updated>
-    <summary>記事執筆や選定の前に使う調査ハブ。時系列年表・計算量データベース・実用ベンチ比較・Hugging Face・DeepSeek/Qwen 公式・ローカル（Ollama）まで、目的別に整理。二次ソースの横並べと一次ソースの確認をセットで回すためのリストです。</summary>
+    <summary>ガイドの「メディア生成」タブに載せた代表ツールの位置づけと、権利・料金を確認するときの注意を短くまとめる。開発の道具選びはバイブコーディングタブ。</summary>
   </entry>
   <entry>
     <title>Claude・Gemini・OpenAI の力図 — 2026年時点の棲み分けと競争軸（フロンティア三本柱）</title>
@@ -222,6 +214,14 @@
     <published>2026-03-24T15:00:00Z</published>
     <updated>2026-03-24T15:00:00Z</updated>
     <summary>2026年3月24日、OpenAI がエージェンティック・コマースを刷新。Instant Checkout は廃止し、ビジュアル商品比較・並列表示に集中。Walmart が「Sparky」アプリを ChatGPT 内に展開し、ロイヤルティプログラム連携も可能に。</summary>
+  </entry>
+  <entry>
+    <title>【週刊まとめ】AI開発ツール — 2026年3月16日〜22日</title>
+    <link rel="alternate" type="text/html" href="?a=overview-2026-week-mar16"/>
+    <id>tag:ai-tool-news.jp,2026:overview-2026-week-mar16</id>
+    <published>2026-03-23T15:00:00Z</published>
+    <updated>2026-03-23T15:00:00Z</updated>
+    <summary>OpenAI は 17日（火）に GPT-5.4 mini と nano を出した。18日（水）は Windsurf のレビュー枠が更新され、19日（木）に Astral（uv・Ruff・ty） の買収公表と生成音楽ツールの整理特集が重なった。20日（金）には Cursor による Windsurf 買収完了が伝わり、週の締めの 22日（日）には Codex エージェントのレビューが掲載された。</summary>
   </entry>
   <entry>
     <title>OpenAI Codex — クラウド並列実行のAIコーディングエージェント</title>

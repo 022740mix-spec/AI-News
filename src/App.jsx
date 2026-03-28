@@ -15,6 +15,7 @@ import {
   renderStars,
   SITE_NAME,
   SITE_DESCRIPTION,
+  getArticleNewsYmd,
   getSiteTodayYmd,
 } from "./data/aiToolsData.js";
 import { AI_COMPANIES, COMPANIES_DISCLAIMER } from "./data/aiCompanies.js";
@@ -35,14 +36,8 @@ import {
   VIBE_STACK_NOTE,
 } from "./data/vibeCodingGuide.js";
 import { BUNDLED_MEDIA_URL } from "./mediaUrls.js";
-import {
-  getVisitorCounter,
-  hitVisitorCounter,
-  isVisitorCounterEnabled,
-} from "./visitorCounter.js";
 
 const STORAGE_THEME = "ai-news-theme";
-const STORAGE_VISITOR_SESSION_HIT = "ai-news-visitor-session-hit";
 const STORAGE_MARKS = "ai-news-bookmarks";
 const STORAGE_LOCAL_NOTICE = "ai-news-local-notice-dismissed";
 const DEFAULT_DOC_TITLE = `${SITE_NAME} | AI開発ツールニュース 2026`;
@@ -75,11 +70,11 @@ function trimUrlForHref(raw) {
 }
 
 /**
- * プレーンテリー内の http(s) URL を <a> に展開（mk が一意キーを返す関数）
+ * プレーンテリー内の http(s) URL とサイト内記事クエリ (?a=slug) を <a> に展開（mk が一意キーを返す関数）
  */
 function linkifyPlainToNodes(segment, mkKey) {
   if (!segment) return [];
-  const re = /https?:\/\/[^\s<>"')」']+/gi;
+  const re = /https?:\/\/[^\s<>"')」']+|\?a=[a-z0-9-]+/gi;
   const out = [];
   let last = 0;
   let m;
@@ -87,13 +82,20 @@ function linkifyPlainToNodes(segment, mkKey) {
     if (m.index > last) {
       out.push(segment.slice(last, m.index));
     }
-    const href = trimUrlForHref(m[0]);
+    const raw = m[0];
+    const isInternal = raw.startsWith("?a=");
+    let href = isInternal
+      ? (typeof window !== "undefined"
+          ? new URL(raw, window.location.href).href
+          : raw)
+      : trimUrlForHref(raw);
     out.push(
       <a
         key={mkKey()}
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        {...(isInternal
+          ? {}
+          : { target: "_blank", rel: "noopener noreferrer" })}
         className="prose-link"
       >
         {href}
@@ -199,7 +201,7 @@ const GUIDE_SEO = {
   media: {
     titleSuffix: "ガイド：メディア生成ツール早見",
     description:
-      "画像・動画・音楽・音声合成などコード以外の生成向け早見。著作権・料金は各公式で。バイブコーディング（開発）ガイドとはターゲットを分離。",
+      "画像・動画・音楽・音声合成の代表ツール早見。著作権・料金は各公式で。開発の組み合わせはバイブコーディングタブ。",
   },
   glossary: {
     titleSuffix: "ガイド：用語集",
@@ -329,6 +331,13 @@ function parseDate(s) {
   return new Date(y, m - 1, d).getTime();
 }
 
+function compareArticleOrder(a, b, sort) {
+  if (sort === "title") return a.title.localeCompare(b.title, "ja");
+  const da = parseDate(getArticleNewsYmd(a));
+  const db = parseDate(getArticleNewsYmd(b));
+  return sort === "date-asc" ? da - db : db - da;
+}
+
 /** タグ・カテゴリの重なりで関連記事を最大 limit 件 */
 function pickRelatedArticles(current, articles, limit = 3) {
   const others = articles.filter((a) => a.id !== current.id);
@@ -343,7 +352,9 @@ function pickRelatedArticles(current, articles, limit = 3) {
   });
   scored.sort((x, y) => {
     if (y.score !== x.score) return y.score - x.score;
-    return parseDate(y.a.date) - parseDate(x.a.date);
+    return (
+      parseDate(getArticleNewsYmd(y.a)) - parseDate(getArticleNewsYmd(x.a))
+    );
   });
   const withScore = scored.filter((x) => x.score > 0).map((x) => x.a);
   if (withScore.length >= limit) return withScore.slice(0, limit);
@@ -356,6 +367,19 @@ function pickRelatedArticles(current, articles, limit = 3) {
 function formatPickDate(iso) {
   const [y, m, d] = iso.split("-").map(Number);
   return `${MONTHS_EN[m - 1]} ${d}, ${y}`;
+}
+
+/** 週刊まとめの対象7日間（東京・曜日付き） */
+function formatWeekRoundupPeriodJp(startYmd, endYmd) {
+  const fmt = (ymd) =>
+    new Intl.DateTimeFormat("ja-JP", {
+      timeZone: "Asia/Tokyo",
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+      weekday: "short",
+    }).format(new Date(`${ymd}T12:00:00+09:00`));
+  return `${fmt(startYmd)}〜${fmt(endYmd)}`;
 }
 
 function loadBookmarks() {
@@ -496,6 +520,48 @@ function FilterBar({ active, setActive }) {
             {f.label}
           </button>
         ))}
+      </div>
+    </nav>
+  );
+}
+
+function GuideTabBar({ guideTab, onSelect }) {
+  return (
+    <nav className="filter-nav" aria-label="ガイドの表示切替">
+      <div className="filter-nav-inner" role="tablist">
+        <button
+          id="guide-subtab-vibe"
+          type="button"
+          role="tab"
+          aria-selected={guideTab === "vibe"}
+          aria-controls="guide-subtab-panel"
+          className={`filter-tab${guideTab === "vibe" ? " is-active" : ""}`}
+          onClick={() => onSelect("vibe")}
+        >
+          バイブコーディング
+        </button>
+        <button
+          id="guide-subtab-media"
+          type="button"
+          role="tab"
+          aria-selected={guideTab === "media"}
+          aria-controls="guide-subtab-panel"
+          className={`filter-tab${guideTab === "media" ? " is-active" : ""}`}
+          onClick={() => onSelect("media")}
+        >
+          メディア生成
+        </button>
+        <button
+          id="guide-subtab-glossary"
+          type="button"
+          role="tab"
+          aria-selected={guideTab === "glossary"}
+          aria-controls="guide-subtab-panel"
+          className={`filter-tab${guideTab === "glossary" ? " is-active" : ""}`}
+          onClick={() => onSelect("glossary")}
+        >
+          用語集
+        </button>
       </div>
     </nav>
   );
@@ -852,7 +918,7 @@ function MediaToolsGuidePanel({ mediaTaxonomy }) {
         </p>
         <p className="companies-guide-note">
           {richInlineLine(
-            "同じ内容の解説記事（想定読者・注意点）はフィードの特集からも開けます。開発向けは **バイブコーディング** タブへ。",
+            "補足の特集記事はフィードの「ガイド」関連からも開けます。IDE・CLI の道筋は **バイブコーディング** タブへ。",
             mkKey,
           )}
         </p>
@@ -1143,13 +1209,25 @@ function ArticleProse({ article }) {
 
 function HeroToday({ article, onClick, bookmarked, onToggleBookmark }) {
   const hasCover = Boolean(article.coverImage?.src);
+  const heroScope = article.heroScope ?? "day";
+  const isWeekRoundup = heroScope === "week";
+  const roundupPeriod =
+    article.weekRoundupPeriod?.start && article.weekRoundupPeriod?.end
+      ? formatWeekRoundupPeriodJp(
+          article.weekRoundupPeriod.start,
+          article.weekRoundupPeriod.end,
+        )
+      : null;
+  const ariaLead = isWeekRoundup
+    ? `週刊まとめ記事: ${article.title}`
+    : `本日のニュース: ${article.title}`;
   return (
     <section
-      className="hero-today"
+      className={`hero-today${isWeekRoundup ? " hero-today--week-roundup" : ""}`}
       onClick={onClick}
       role="button"
       tabIndex={0}
-      aria-label={`特集記事: ${article.title}`}
+      aria-label={ariaLead}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
@@ -1159,8 +1237,18 @@ function HeroToday({ article, onClick, bookmarked, onToggleBookmark }) {
     >
       <div className="hero-today__inner">
         <div className="hero-today__text">
-          <p className="hero-today__label">本日の特集 · Today&apos;s pick</p>
-          <p className="hero-today__date">{formatPickDate(article.date)}</p>
+          <p className="hero-today__label">
+            {isWeekRoundup
+              ? "週刊まとめ（毎週月曜公開・先週分）· Weekly Mon"
+              : "本日のニュース（東京日付）· Today in the news"}
+          </p>
+          {isWeekRoundup && roundupPeriod ? (
+            <p className="hero-today__date">対象週 {roundupPeriod}</p>
+          ) : !isWeekRoundup ? (
+            <p className="hero-today__date">
+              {formatPickDate(getArticleNewsYmd(article))}
+            </p>
+          ) : null}
           <h2 className="hero-today__title">{article.title}</h2>
           <p className="hero-today__excerpt">
             {richArticleText(article.excerpt, "hero-ex-")}
@@ -1258,7 +1346,7 @@ function ArticleCard({
         {richArticleText(article.excerpt, `card-${article.id}-`)}
       </p>
       <div className="card-article__foot">
-        <span>{formatPickDate(article.date)}</span>
+        <span>{formatPickDate(getArticleNewsYmd(article))}</span>
         {article.rating ? (
           <span style={{ color: "#fbbf24" }}>{renderStars(article.rating)}</span>
         ) : null}
@@ -1386,7 +1474,20 @@ function ArticleDetail({
             >
               {cat.label}
             </span>
-            <span style={{ fontSize: 12, color: "var(--muted)" }}>{article.date}</span>
+            <span
+              style={{ fontSize: 12, color: "var(--muted)" }}
+              title={
+                article.heroScope === "week"
+                  ? "週刊の公開日。この号の集計対象は weekRoundupPeriod"
+                  : "報道・公式発表など、ニュースの基準日"
+              }
+            >
+              {article.heroScope === "week" &&
+              article.weekRoundupPeriod?.start &&
+              article.weekRoundupPeriod?.end
+                ? `対象週 ${formatWeekRoundupPeriodJp(article.weekRoundupPeriod.start, article.weekRoundupPeriod.end)} · 公開 ${getArticleNewsYmd(article)}`
+                : `ニュース日 ${getArticleNewsYmd(article)}`}
+            </span>
             <span style={{ fontSize: 12, color: "var(--muted)" }}>{article.author}</span>
             <span style={{ fontSize: 12, color: "var(--muted)" }}>{article.readTime}</span>
           </div>
@@ -1535,7 +1636,7 @@ function ArticleDetail({
                           display: "block",
                         }}
                       >
-                        {formatPickDate(r.date)} · {r.readTime ?? ""}
+                        {formatPickDate(getArticleNewsYmd(r))} · {r.readTime ?? ""}
                       </span>
                     </button>
                   </li>
@@ -1604,9 +1705,66 @@ function ArticleDetail({
   );
 }
 
-function Sidebar({ articles, bookmarkIds, onSelect, onTagClick }) {
-  const latest = articles.filter((a) => a.type === "review").slice(0, 5);
+function WeekRoundupNav({ articles, onSelect, onTagClick, className }) {
+  if (articles.length === 0) return null;
+  return (
+    <div className={`sidebar-panel${className ? ` ${className}` : ""}`}>
+      <h3>週刊まとめ（特集）</h3>
+      <p className="sidebar-panel-hint" style={{ marginTop: 0 }}>
+        毎週の振り返り。新しい公開順です。
+      </p>
+      {articles.map((a) => (
+        <div
+          key={a.id}
+          className="sidebar-link"
+          role="button"
+          tabIndex={0}
+          onClick={() => onSelect(a)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              onSelect(a);
+            }
+          }}
+        >
+          <span style={{ display: "block", fontWeight: 600 }}>
+            {formatPickDate(getArticleNewsYmd(a))} 公開
+          </span>
+          {a.weekRoundupPeriod?.start && a.weekRoundupPeriod?.end ? (
+            <span
+              style={{
+                display: "block",
+                fontSize: 11,
+                color: "var(--muted)",
+                marginTop: 2,
+              }}
+            >
+              対象{" "}
+              {formatWeekRoundupPeriodJp(
+                a.weekRoundupPeriod.start,
+                a.weekRoundupPeriod.end,
+              )}
+            </span>
+          ) : null}
+        </div>
+      ))}
+      <p style={{ marginTop: 10, marginBottom: 0, fontSize: 12 }}>
+        <button
+          type="button"
+          className="btn"
+          style={{ fontSize: 12, padding: "6px 10px" }}
+          onClick={() => onTagClick("週刊まとめ")}
+        >
+          タグ「週刊まとめ」で記事を検索
+        </button>
+      </p>
+    </div>
+  );
+}
+
+function Sidebar({ articles, bookmarkIds, onSelect, onTagClick, weekRoundups }) {
   const marked = articles.filter((a) => bookmarkIds.has(a.id));
+
   return (
     <aside className="desktop-sidebar">
       <div className="sidebar-panel">
@@ -1623,6 +1781,12 @@ function Sidebar({ articles, bookmarkIds, onSelect, onTagClick }) {
           </a>
         </p>
       </div>
+
+      <WeekRoundupNav
+        articles={weekRoundups}
+        onSelect={onSelect}
+        onTagClick={onTagClick}
+      />
 
       {marked.length > 0 ? (
         <div className="sidebar-panel">
@@ -1662,35 +1826,6 @@ function Sidebar({ articles, bookmarkIds, onSelect, onTagClick }) {
           ))}
         </div>
       </div>
-
-      <div className="sidebar-panel">
-        <h3>最新レビュー</h3>
-        {latest.map((a) => (
-          <div
-            key={a.id}
-            className="sidebar-link"
-            role="button"
-            tabIndex={0}
-            onClick={() => onSelect(a)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                onSelect(a);
-              }
-            }}
-          >
-            <div style={{ fontWeight: 500 }}>
-              {a.title.split("—")[0].trim()}
-            </div>
-            <div style={{ fontSize: 10, color: "var(--muted)", marginTop: 2 }}>
-              {a.rating ? (
-                <span style={{ color: "#fbbf24" }}>{renderStars(a.rating)} </span>
-              ) : null}
-              {a.date}
-            </div>
-          </div>
-        ))}
-      </div>
     </aside>
   );
 }
@@ -1719,8 +1854,7 @@ function StorageLocalNotice() {
     <div className="storage-notice" role="status" aria-live="polite">
       <p>
         テーマとブックマークはブラウザの localStorage
-        に保存されます。累計訪問回数の集計には CountAPI
-        へ接続します。広告追跡用の第三者 Cookie
+        に保存されます。広告追跡用の第三者 Cookie
         は使用していません。
       </p>
       <button
@@ -1736,8 +1870,7 @@ function StorageLocalNotice() {
   );
 }
 
-function SiteFooter({ visitorTotal, visitorStatus }) {
-  const showVisits = visitorStatus !== "off";
+function SiteFooter() {
   return (
     <footer className="site-footer">
       <div>
@@ -1747,19 +1880,6 @@ function SiteFooter({ visitorTotal, visitorStatus }) {
         最終更新: {getSiteTodayYmd()}{" "}
         · データは公開情報・報道を基に整理しています
       </div>
-      {showVisits ? (
-        <div className="site-footer__visitors" aria-live="polite">
-          {visitorStatus === "loading"
-            ? "訪問回数を読み込み中…"
-            : null}
-          {visitorStatus === "ok" && visitorTotal != null ? (
-            <>累計訪問 {visitorTotal.toLocaleString("ja-JP")} 回（参考値）</>
-          ) : null}
-          {visitorStatus === "err"
-            ? "訪問回数を取得できませんでした"
-            : null}
-        </div>
-      ) : null}
     </footer>
   );
 }
@@ -1812,40 +1932,7 @@ export default function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem(STORAGE_THEME) || "light");
   const [bookmarkIds, setBookmarkIds] = useState(loadBookmarks);
   const [showFab, setShowFab] = useState(false);
-  const [visitorTotal, setVisitorTotal] = useState(null);
-  const [visitorStatus, setVisitorStatus] = useState(() =>
-    isVisitorCounterEnabled() ? "loading" : "off",
-  );
   const searchRef = useRef(null);
-
-  useEffect(() => {
-    if (!isVisitorCounterEnabled()) {
-      setVisitorStatus("off");
-      return;
-    }
-    let cancelled = false;
-    (async () => {
-      try {
-        const alreadyHit =
-          sessionStorage.getItem(STORAGE_VISITOR_SESSION_HIT) === "1";
-        const value = alreadyHit
-          ? await getVisitorCounter()
-          : await hitVisitorCounter().then((v) => {
-              sessionStorage.setItem(STORAGE_VISITOR_SESSION_HIT, "1");
-              return v;
-            });
-        if (!cancelled) {
-          setVisitorTotal(value);
-          setVisitorStatus("ok");
-        }
-      } catch {
-        if (!cancelled) setVisitorStatus("err");
-      }
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -2002,14 +2089,23 @@ export default function App() {
           a.tags.some((t) => t.toLowerCase().includes(q))
       );
     }
-    const featured = list.find((a) => a.pinned);
-    const rest = list.filter((a) => !a.pinned);
-    const sorted = [...rest].sort((a, b) => {
-      if (sort === "title") return a.title.localeCompare(b.title, "ja");
-      const da = parseDate(a.date);
-      const db = parseDate(b.date);
-      return sort === "date-asc" ? da - db : db - da;
+    const todayYmd = getSiteTodayYmd();
+    const todayPool = list.filter((a) => {
+      if (getArticleNewsYmd(a) !== todayYmd) return false;
+      const scope = a.heroScope ?? "day";
+      return scope !== "none";
     });
+    const sortedToday = [...todayPool].sort((a, b) => {
+      const o = compareArticleOrder(a, b, sort);
+      if (o !== 0) return o;
+      if (a.pinned !== b.pinned) return a.pinned ? -1 : 1;
+      return a.id.localeCompare(b.id, "ja");
+    });
+    const featured = sortedToday[0] ?? null;
+    const restRaw = featured
+      ? list.filter((a) => a.id !== featured.id)
+      : list;
+    const sorted = [...restRaw].sort((a, b) => compareArticleOrder(a, b, sort));
     return { featured, rest: sorted, list };
   }, [filter, query, sort]);
 
@@ -2029,6 +2125,14 @@ export default function App() {
 
   const articleCount =
     siteSection === "articles" ? (featured ? rest.length + 1 : rest.length) : 0;
+
+  const weekRoundups = useMemo(() => {
+    const list = ARTICLES.filter((a) => (a.heroScope ?? "day") === "week");
+    list.sort((a, b) =>
+      getArticleNewsYmd(b).localeCompare(getArticleNewsYmd(a), "en"),
+    );
+    return list;
+  }, []);
 
   return (
     <div className="app-shell">
@@ -2081,6 +2185,8 @@ export default function App() {
             <SiteSectionNav section={siteSection} onSection={switchSection} />
             {siteSection === "articles" ? (
               <FilterBar active={filter} setActive={setFilter} />
+            ) : siteSection === "guide" ? (
+              <GuideTabBar guideTab={guideTab} onSelect={selectGuideTab} />
             ) : null}
           </>
         ) : null}
@@ -2099,7 +2205,9 @@ export default function App() {
             onOpenRelated={handleSelect}
           />
         ) : (
-          <div className="blog-layout">
+          <div
+            className={`blog-layout${siteSection === "guide" ? " blog-layout--guide" : ""}`}
+          >
             <div className="blog-main">
               {siteSection === "articles" ? (
                 <>
@@ -2115,14 +2223,33 @@ export default function App() {
                   {rest.length > 0 ? (
                     <>
                       <div className="section-feed">
-                        <h2 className="section-feed__title">すべての記事</h2>
+                        <h2 className="section-feed__title">記事一覧</h2>
                         <p className="section-feed__meta">
-                          最新の更新 · {getSiteTodayYmd()} ·{" "}
+                          掲載記事を
+                          <span title="報道・公式発表など、事実が表に出た日の目安">
+                            ニュース日
+                          </span>
+                          の新しい順に並べています（
                           <strong style={{ color: "var(--text-secondary)" }}>
                             {rest.length}
-                          </strong>{" "}
-                          件
-                          {query ? "（絞り込み中）" : ""}
+                          </strong>
+                          件）
+                          {query ? " · 検索で絞り込み中" : ""}
+                          。
+                        </p>
+                        <p className="section-feed__meta section-feed__meta--hint">
+                          <strong>週刊まとめ</strong>
+                          は右（または下）の
+                          <strong>サイドバー「週刊まとめ（特集）」</strong>
+                          から時系列で開けます。タグ検索は
+                          <button
+                            type="button"
+                            className="inline-linkish"
+                            onClick={() => onTagClick("週刊まとめ")}
+                          >
+                            「週刊まとめ」
+                          </button>
+                          でも絞れます。
                         </p>
                       </div>
                       <div className="articles-grid">
@@ -2141,6 +2268,12 @@ export default function App() {
                   ) : featured ? null : (
                     <div className="empty-state">該当する記事がありません</div>
                   )}
+                  <WeekRoundupNav
+                    className="week-roundups-mobile"
+                    articles={weekRoundups}
+                    onSelect={handleSelect}
+                    onTagClick={onTagClick}
+                  />
                 </>
               ) : siteSection === "companies" ? (
                 <>
@@ -2163,51 +2296,19 @@ export default function App() {
                 </>
               ) : (
                 <>
-                  <div className="section-feed guide-tab-intro">
-                    <h2 className="section-feed__title">ガイド</h2>
-                    <p className="section-feed__meta">
-                      バイブコーディング（開発・CLI・エディタ）・メディア生成（画像・動画・音楽）・用語集を分けました。検索はいま開いているタブだけを対象にします。
-                    </p>
-                  </div>
-                  <nav className="filter-nav" aria-label="ガイドの表示切替">
-                    <div className="filter-nav-inner" role="tablist">
-                      <button
-                        id="guide-subtab-vibe"
-                        type="button"
-                        role="tab"
-                        aria-selected={guideTab === "vibe"}
-                        aria-controls="guide-subtab-panel"
-                        className={`filter-tab${guideTab === "vibe" ? " is-active" : ""}`}
-                        onClick={() => selectGuideTab("vibe")}
-                      >
-                        バイブコーディング
-                      </button>
-                      <button
-                        id="guide-subtab-media"
-                        type="button"
-                        role="tab"
-                        aria-selected={guideTab === "media"}
-                        aria-controls="guide-subtab-panel"
-                        className={`filter-tab${guideTab === "media" ? " is-active" : ""}`}
-                        onClick={() => selectGuideTab("media")}
-                      >
-                        メディア生成
-                      </button>
-                      <button
-                        id="guide-subtab-glossary"
-                        type="button"
-                        role="tab"
-                        aria-selected={guideTab === "glossary"}
-                        aria-controls="guide-subtab-panel"
-                        className={`filter-tab${guideTab === "glossary" ? " is-active" : ""}`}
-                        onClick={() => selectGuideTab("glossary")}
-                      >
-                        用語集
-                      </button>
-                    </div>
-                  </nav>
                   {guideMatchCount === 0 ? (
-                    <div className="empty-state">
+                    <div
+                      id="guide-subtab-panel"
+                      role="tabpanel"
+                      aria-labelledby={
+                        guideTab === "vibe"
+                          ? "guide-subtab-vibe"
+                          : guideTab === "media"
+                            ? "guide-subtab-media"
+                            : "guide-subtab-glossary"
+                      }
+                      className="empty-state"
+                    >
                       このタブに該当がありません。別タブに切り替えるか、検索語を変えてください。
                     </div>
                   ) : (
@@ -2259,6 +2360,7 @@ export default function App() {
                 bookmarkIds={bookmarkIds}
                 onSelect={handleSelect}
                 onTagClick={onTagClick}
+                weekRoundups={weekRoundups}
               />
             ) : siteSection === "companies" ? (
               <CompaniesSidebar companies={filteredCompanies} />
@@ -2267,10 +2369,7 @@ export default function App() {
             )}
           </div>
         )}
-        <SiteFooter
-          visitorTotal={visitorTotal}
-          visitorStatus={visitorStatus}
-        />
+        <SiteFooter />
         </main>
       </div>
 

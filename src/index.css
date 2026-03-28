@@ -409,6 +409,7 @@ body {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   gap: 0.25rem;
   padding: 0 1rem;
 }
@@ -743,10 +744,6 @@ body {
   padding: 0;
 }
 
-.guide-tab-intro {
-  margin-bottom: 0.25rem;
-}
-
 .vibe-tool-table-wrap {
   overflow-x: auto;
   margin: 0;
@@ -951,7 +948,13 @@ body {
   gap: 1.5rem;
   max-width: 1120px;
   margin: 0 auto;
-  padding: 1.5rem 1.25rem 3rem;
+  /* 横は filter-nav-inner / section-site-nav-inner の 1rem に揃える */
+  padding: 1.5rem 1rem 3rem;
+}
+
+/* ガイド：2段目タブはヘッダー直下に置いたので、本文との隙間だけ狭める */
+.blog-layout--guide {
+  padding-top: 0.35rem;
 }
 
 .blog-main {
@@ -1013,6 +1016,11 @@ body {
   text-transform: uppercase;
   color: var(--accent);
   margin: 0 0 0.35rem;
+}
+
+/* 週刊まとめ：ラベルとタイトルの間隔 */
+.hero-today--week-roundup .hero-today__label {
+  margin-bottom: 0.6rem;
 }
 
 .hero-today__date {
@@ -1258,6 +1266,28 @@ body {
   margin: 0;
 }
 
+.section-feed__meta--hint {
+  margin-top: 0.45rem;
+  line-height: 1.55;
+}
+
+.inline-linkish {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  color: var(--accent, #2563eb);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.inline-linkish:hover {
+  opacity: 0.85;
+}
+
 .articles-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
@@ -1308,12 +1338,20 @@ body {
   flex-shrink: 0;
 }
 
+.week-roundups-mobile {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .desktop-sidebar {
     display: none;
   }
   .blog-layout {
     padding: 1rem 1rem 3rem;
+  }
+  .week-roundups-mobile {
+    display: block;
+    margin-top: 1.35rem;
   }
 }
 
@@ -1723,9 +1761,4 @@ body {
   color: var(--muted);
   text-align: center;
   line-height: 1.7;
-}
-
-.site-footer__visitors {
-  margin-top: 0.4rem;
-  font-variant-numeric: tabular-nums;
 }

@@ -9,6 +9,7 @@ import {
   ARTICLES,
   SITE_NAME,
   SITE_DESCRIPTION,
+  getArticleNewsYmd,
   getSiteTodayYmd,
 } from "../src/data/aiToolsData.js";
 
@@ -38,8 +39,8 @@ function main() {
   mkdirSync(dirname(OUT), { recursive: true });
 
   const sorted = [...ARTICLES].sort((a, b) => {
-    const [ya, ma, da] = a.date.split("-").map(Number);
-    const [yb, mb, db] = b.date.split("-").map(Number);
+    const [ya, ma, da] = getArticleNewsYmd(a).split("-").map(Number);
+    const [yb, mb, db] = getArticleNewsYmd(b).split("-").map(Number);
     return new Date(yb, mb - 1, db) - new Date(ya, ma - 1, da);
   });
 
@@ -47,7 +48,7 @@ function main() {
 
   const entries = sorted
     .map((article) => {
-      const updated = atomDateFromYmd(article.date);
+      const updated = atomDateFromYmd(getArticleNewsYmd(article));
       const summary = escapeXml(excerptPlain(article.excerpt));
       return `  <entry>
     <title>${escapeXml(article.title)}</title>
