@@ -128,7 +128,7 @@ export const ARTICLES = [
       "maxValue": 85,
       "bars": [
         { "label": "Kimi K2.5", "value": 76.8, "color": "#f59e0b" },
-        { "label": "Composer 2（Kimi K2.5ベース）", "value": 73.7, "color": "#7c3aed" },
+        { "label": "Composer 2", "value": 73.7, "color": "#7c3aed" },
         { "label": "KAT-Coder V2", "value": 73.4, "color": "#14b8a6" }
       ]
     }],

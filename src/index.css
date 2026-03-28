@@ -2144,8 +2144,13 @@ body {
   text-align: center;
   margin-top: 6px;
   line-height: 1.2;
-  word-break: break-all;
-  max-width: 60px;
+  max-width: 72px;
+  height: 2.4em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 @media (max-width: 560px) {
   .vchart__area { height: 180px; }
