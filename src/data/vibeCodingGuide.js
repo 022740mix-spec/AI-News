@@ -1620,10 +1620,9 @@ export const TOOL_REFERENCES = [
       lead: "VS Code ベースの AI ネイティブエディタ。コードを書きながら AI に指示を出す操作が中心。公式は https://docs.cursor.com/ を参照。",
       terms: [
         // ── Cursor の3つの使い方 ──
-        {
-          word: "Cursor の使い方は3パターンある",
-          mean: "==A. Cursor の AI 機能だけ使う==（非エンジニアに多い）— 自分ではコードを書かず、Cursor に内蔵された AI チャット（Composer / Chat パネル / インライン）で日本語の指示を出して全部やってもらう。Agent モード以外にも Normal モードや Ask モードがある。\n==B. Cursor の AI 機能＋自分でもコードを書く==（エンジニア向け）— Tab 補完で AI のサジェストを受けながら自分もコードを書く。\n==C. Cursor の AI 機能＋ターミナルで Claude Code を使う==（==最も多い組み合わせ==）— Cursor のエディタ画面で AI チャットを使いつつ、統合ターミナル（Ctrl+` で開く画面）で Claude Code CLI を起動して併用する。Cursor の AI と Claude Code は別々のセッションなので、それぞれに違う指示を出せる。",
-        },
+        { word: "A. Cursor の AI 機能だけ使う", mean: "非エンジニアに多い使い方。自分ではコードを書かず、Cursor に内蔵された AI チャット（Composer / Chat パネル / インライン）で日本語の指示を出して全部やってもらう。Agent モード以外にも Normal モードや Ask モードがある。" },
+        { word: "B. AI 機能＋自分でもコードを書く", mean: "エンジニア向け。Tab 補完で AI が次のコードを予測表示し、Cmd+K で選択範囲を AI に修正させながら自分もコードを書く。" },
+        { word: "==C. AI 機能＋ターミナルで Claude Code==", mean: "最も多い組み合わせ。Cursor のエディタ画面で AI チャットを使いつつ、統合ターミナル（Ctrl+` で開く画面）で Claude Code CLI を起動して併用する。Cursor の AI と Claude Code は別々のセッションなので、それぞれに違う指示を出せる。" },
         // ── A. Cursor の AI 機能 ──
         { word: "Composer: `Cmd+I`（Mac）/ `Ctrl+I`（Win）", mean: "Cursor のメインの AI チャット画面。「ログイン機能を追加して」のように日本語で指示すると、AI が複数ファイルをまたいで変更を行う。モードは Agent（自律実行）/ Normal（確認しながら）/ Ask（質問のみ）を切り替えられる。" },
         { word: "Chat パネル: `Cmd+L`（Mac）/ `Ctrl+L`（Win）", mean: "コードについて質問・相談するためのサイドパネル。Composer がファイル編集向けなのに対し、Chat は「これ何？」「なぜエラー？」のような質問に向く。" },
