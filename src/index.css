@@ -1804,6 +1804,17 @@ body {
   color: #e74c3c;
 }
 
+/* ── インラインコード（`code`） ── */
+.prose-code {
+  font-family: "SF Mono", "Cascadia Code", "Fira Code", Consolas, monospace;
+  font-size: 0.85em;
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  background: var(--accent-dim);
+  color: var(--text);
+  word-break: break-all;
+}
+
 /* ── コピーボタン付きコードブロック ── */
 .code-block {
   margin: 1rem 0;

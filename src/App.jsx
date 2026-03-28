@@ -113,7 +113,7 @@ function linkifyPlainToNodes(segment, mkKey) {
  * 1行分: **強調** + ==ハイライト== + !!警告!! + URL リンク化
  */
 function richInlineLine(line, mkKey) {
-  const reInline = /\*\*(.+?)\*\*|==(.+?)==|!!(.+?)!!/g;
+  const reInline = /\*\*(.+?)\*\*|==(.+?)==|!!(.+?)!!|`([^`]+)`/g;
   const parts = [];
   let last = 0;
   let m;
@@ -127,6 +127,8 @@ function richInlineLine(line, mkKey) {
       parts.push(<mark key={mkKey()} className="prose-highlight">{m[2]}</mark>);
     } else if (m[3] != null) {
       parts.push(<span key={mkKey()} className="prose-warning">{m[3]}</span>);
+    } else if (m[4] != null) {
+      parts.push(<code key={mkKey()} className="prose-code">{m[4]}</code>);
     }
     last = m.index + m[0].length;
   }
@@ -804,7 +806,7 @@ function ToolReferencePanel({ referenceData, practical }) {
           <dl className="glossary-dl">
             {referenceData.terms.map((t) => (
               <Fragment key={t.word}>
-                <dt className="glossary-dl__term">{t.word}</dt>
+                <dt className="glossary-dl__term">{richInlineLine(t.word, mkKey)}</dt>
                 <dd className="glossary-dl__body">
                   <GuideLinkifiedP text={t.mean} className="glossary-dl__mean" />
                   {t.code ? <CopyableCodeBlock code={t.code} lang={t.codeLang ?? "bash"} /> : null}
@@ -999,7 +1001,7 @@ function GuideRulesPanel() {
           <dl className="glossary-dl">
             {VIBE_BASIC_RULES.map((r) => (
               <Fragment key={r.title}>
-                <dt className="glossary-dl__term">{r.title}</dt>
+                <dt className="glossary-dl__term">{richInlineLine(r.title, mkKey)}</dt>
                 <dd className="glossary-dl__body">
                   <GuideLinkifiedP text={r.mean} className="glossary-dl__mean" />
                   {r.mem ? (
@@ -1019,7 +1021,7 @@ function GuideRulesPanel() {
           <dl className="glossary-dl">
             {VIBE_GUIDE_PITFALLS.terms.map((t) => (
               <Fragment key={t.word}>
-                <dt className="glossary-dl__term">{t.word}</dt>
+                <dt className="glossary-dl__term">{richInlineLine(t.word, mkKey)}</dt>
                 <dd className="glossary-dl__body">
                   <GuideLinkifiedP text={t.mean} className="glossary-dl__mean" />
                   {t.mem ? (
@@ -1151,7 +1153,7 @@ function GlossaryGuidePanel({ glossaryGenres }) {
             <dl className="glossary-dl">
               {g.terms.map((t) => (
                 <Fragment key={t.word}>
-                  <dt className="glossary-dl__term">{t.word}</dt>
+                  <dt className="glossary-dl__term">{richInlineLine(t.word, mkKey)}</dt>
                   <dd className="glossary-dl__body">
                     <GuideLinkifiedP text={t.mean} className="glossary-dl__mean" />
                     {t.mem ? (
