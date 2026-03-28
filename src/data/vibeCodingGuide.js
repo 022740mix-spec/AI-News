@@ -7,8 +7,84 @@
 export const VIBE_CODING_DEFINITION =
   "AI との対話を軸にコードを組み立てる開発スタイル。IDE・AI チャット・音声入力などを組み合わせて、素早く試行錯誤しながら形にしていく。厳密な定義があるわけではなく、「雰囲気と勢いで回す」くらいのニュアンスで使われている。";
 
-/* VIBE_CODING_WHY_CLAUDE_FIRST — 削除（特定製品の推奨は客観性に欠けるため） */
-/* VIBE_CODING_PAGE_LEAD — 削除（ページ構成のメタ説明は不要） */
+// ────────────────────────────────────────────
+// セットアップガイド（非エンジニア向け）
+// ────────────────────────────────────────────
+
+export const VIBE_SETUP_GUIDE = {
+  title: "始める前のセットアップ",
+  lead: "バイブコーディングを始めるには、PC にいくつかのソフトを入れて、フォルダ構造を理解しておく必要がある。ここでは Windows と Mac それぞれの最短手順と、最初に知っておくべきフォルダの話をまとめた。",
+  sections: [
+    {
+      id: "setup-windows",
+      heading: "Windows のセットアップ",
+      body: "必要なソフトは3つ: Git、Node.js、エディタ（Cursor または VS Code）。それぞれ公式サイトからインストーラーをダウンロードして実行するだけ。",
+      steps: [
+        { label: "Git をインストール", code: "# https://git-scm.com/ からダウンロード\n# インストーラーの選択肢はすべてデフォルトで OK", codeLang: "bash" },
+        { label: "Node.js をインストール", code: "# https://nodejs.org/ から LTS 版をダウンロード\n# インストール後、ターミナルで確認:\nnode --version\nnpm --version", codeLang: "bash" },
+        { label: "Claude Code をインストール", code: "npm install -g @anthropic-ai/claude-code\nclaude --version", codeLang: "bash" },
+        { label: "PowerShell と CMD の違い", code: "# PowerShell: 新しい方。青い画面。スクリプトが書ける\n# CMD: 古い方。黒い画面。基本的なコマンドだけ\n# → Git Bash を使うのが一番トラブルが少ない\n# Git をインストールすると Git Bash も入る", codeLang: "bash" },
+      ],
+    },
+    {
+      id: "setup-mac",
+      heading: "Mac のセットアップ",
+      body: "Homebrew（パッケージ管理ツール）を入れると、あとは brew コマンドで揃う。",
+      steps: [
+        { label: "Homebrew をインストール", code: "/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"", codeLang: "bash" },
+        { label: "Git と Node.js をインストール", code: "brew install git node", codeLang: "bash" },
+        { label: "Claude Code をインストール", code: "npm install -g @anthropic-ai/claude-code\nclaude --version", codeLang: "bash" },
+      ],
+    },
+    {
+      id: "setup-folder",
+      heading: "フォルダ構造を理解する",
+      body: "バイブコーディングでは「プロジェクト」という単位でフォルダを作る。デスクトップや OneDrive に置かず、専用のフォルダを作る理由がある。",
+      steps: [
+        { label: "なぜデスクトップに置かないのか", code: "# デスクトップ → ファイルが散らかる、パスに日本語やスペースが入ると不具合の原因\n# OneDrive → 同期がファイル監視と衝突して不具合が起きやすい\n# → C:\\Users\\あなた\\Projects\\ に置くのが安全", codeLang: "bash" },
+        { label: "推奨フォルダ構成", code: "C:\\Users\\あなた\\\n├── Projects/          ← プロジェクトを置く場所\n│   ├── my-app/        ← プロジェクト1\n│   ├── AI-News/       ← プロジェクト2\n│   └── ...\n├── .claude/           ← Claude Code のグローバル設定（隠しフォルダ）\n├── .cursor/           ← Cursor のグローバル設定（隠しフォルダ）\n└── .config/           ← 各種ツールの設定（隠しフォルダ）", codeLang: "text" },
+      ],
+    },
+    {
+      id: "setup-hidden",
+      heading: "隠しファイルを表示する（重要）",
+      body: "バイブコーディングのツールは . (ドット)で始まるファイルやフォルダをたくさん作る。Windows ではデフォルトで見えないので、必ず表示設定を変えること。",
+      steps: [
+        { label: "Windows で隠しファイルを表示", code: "# エクスプローラー → 表示 → 表示 → 隠しファイル にチェック\n# または:\n# エクスプローラー → ... → オプション → 表示タブ\n# → 「隠しファイル、隠しフォルダー、および隠しドライブを表示する」を選択", codeLang: "text" },
+        { label: "Mac で隠しファイルを表示", code: "# Finder で Cmd + Shift + . を押す（トグル）", codeLang: "bash" },
+        { label: "VS Code / Cursor で隠しファイルを表示", code: "// settings.json に追加:\n{\n  \"files.exclude\": {\n    \"**/.claude\": false,\n    \"**/.cursor\": false\n  }\n}", codeLang: "json" },
+      ],
+    },
+    {
+      id: "setup-dotfiles",
+      heading: "AI が作るフォルダ・ファイルの正体",
+      body: "バイブコーディングを始めると、見慣れないフォルダが大量にできる。どれが何で、消していいのかの早見表。",
+      steps: [
+        { label: "プロジェクト内に生成されるもの", code: "my-app/\n├── node_modules/    ← npm パッケージの実体。巨大だが npm install で復元可能。消して OK\n├── .git/            ← Git の履歴。==消すと変更履歴がすべて消える。消さない==\n├── .claude/         ← Claude Code の設定・メモリ。消すと設定が消える\n├── .cursor/         ← Cursor の設定・ルール。消すとルールが消える\n├── dist/            ← ビルド出力。npm run build で再生成可能。消して OK\n├── package.json     ← プロジェクトの設計図。!!消したら壊れる!!\n└── package-lock.json← 依存の正確なバージョン。消さないのが安全", codeLang: "text" },
+        { label: "ユーザーフォルダに生成されるもの", code: "C:\\Users\\あなた\\\n├── .claude/       ← Claude Code グローバル設定。消すと全プロジェクト共通の設定が消える\n├── .cursor/       ← Cursor グローバル設定\n├── .config/       ← 各種ツールの設定置き場（Git, npm 等）\n├── .npm/          ← npm のキャッシュ。消して OK（自動再生成）\n├── .cache/        ← 各種キャッシュ。消して OK\n├── .dotnet/       ← .NET ランタイム。使ってないなら消して OK\n├── .nuget/        ← NuGet パッケージキャッシュ。消して OK\n├── .local/        ← Linux 系ツールの設定。基本触らない\n└── AppData/       ← Windows アプリの設定。基本触らない", codeLang: "text" },
+      ],
+    },
+    {
+      id: "setup-vm",
+      heading: "仮想化と Docker（Windows の注意点）",
+      body: "Claude Code の一部機能（Cowork のサンドボックス等）や Docker は仮想化技術が必要。Windows では追加設定が要る場合がある。",
+      steps: [
+        { label: "Windows 11 Pro / Enterprise の場合", code: "# Hyper-V を有効にする:\n# 設定 → アプリ → オプション機能 → Windows のその他の機能\n# → Hyper-V にチェック → 再起動\n\n# または PowerShell（管理者）で:\nEnable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All", codeLang: "powershell" },
+        { label: "!!Windows 11 Home の場合!!", code: "# Home エディションでは Hyper-V が使えない\n# → WSL2（Windows Subsystem for Linux）で代替する:\nwsl --install\n# 再起動後、Ubuntu が使えるようになる\n# Docker Desktop も WSL2 バックエンドで動作可能", codeLang: "powershell" },
+        { label: "BIOS で仮想化を有効にする", code: "# 多くの PC はデフォルトで仮想化がオフ\n# 確認方法: タスクマネージャー → パフォーマンス → CPU\n# → 「仮想化: 有効」と表示されていれば OK\n#\n# オフの場合:\n# 1. PC を再起動\n# 2. 起動時に F2 / Del / F10（メーカーによる）を連打して BIOS に入る\n# 3. Advanced → CPU Configuration → Intel VT-x または AMD-V を Enabled に\n# 4. 保存して再起動", codeLang: "text" },
+        { label: "Mac の場合", code: "# Apple Silicon (M1/M2/M3/M4) は仮想化がハードウェアで常時有効\n# 特別な設定は不要。Docker Desktop をインストールするだけ", codeLang: "bash" },
+      ],
+    },
+    {
+      id: "setup-first-claude-md",
+      heading: "最初に書いておく CLAUDE.md",
+      body: "プロジェクトを始めたらすぐに CLAUDE.md を作る。これが AI への「仕事の指示書」になる。最初に書いておくとフォルダが散らからない。",
+      steps: [
+        { label: "最小限の CLAUDE.md テンプレート", code: "# プロジェクト設定\n\n## 基本方針\n- 応答は日本語で行う\n- コード変更後は必ずビルド検証\n- ファイル作成は最小限にする（不要なファイルを増やさない）\n\n## フォルダ構造のルール\n- src/ 配下にソースコードを置く\n- 新しいフォルダを作る前に既存構造を確認する\n- テストは tests/ に、ドキュメントは docs/ に\n\n## 禁止事項\n- .env ファイルをコミットしない\n- node_modules/ をコミットしない\n- 既存ファイルを確認せずに新規作成しない", codeLang: "markdown" },
+      ],
+    },
+  ],
+};
 
 /**
  * バイブ開始から本格運用までの段階（本文・検索用）。

@@ -30,6 +30,7 @@ import {
   VIBE_CODING_PRACTICAL,
   VIBE_MEDIA_TAXONOMY,
   VIBE_PROGRESSION_PATH,
+  VIBE_SETUP_GUIDE,
   TOOL_REFERENCES,
   filterToolReference,
 } from "./data/vibeCodingGuide.js";
@@ -839,6 +840,27 @@ function VibeCodingGuidePanel({
         <p className="guide-section__lead">
           {richInlineLine(VIBE_CODING_DEFINITION, mkKey)}
         </p>
+      </section>
+
+      <section id="vibe-setup" className="guide-section guide-section--vibe">
+        <h2 className="guide-section__title">{VIBE_SETUP_GUIDE.title}</h2>
+        <p className="guide-section__lead">
+          {richInlineLine(VIBE_SETUP_GUIDE.lead, mkKey)}
+        </p>
+        {VIBE_SETUP_GUIDE.sections.map((sec) => (
+          <div key={sec.id} id={sec.id} className="vibe-practical-sub">
+            <h3 className="vibe-practical-sub__title">{sec.heading}</h3>
+            <p className="vibe-practical-sub__body">
+              {richInlineLine(sec.body, mkKey)}
+            </p>
+            {sec.steps?.map((step, si) => (
+              <div key={si} className="setup-step">
+                <h4 className="setup-step__label">{step.label}</h4>
+                <CopyableCodeBlock code={step.code} lang={step.codeLang ?? "bash"} />
+              </div>
+            ))}
+          </div>
+        ))}
       </section>
 
       <section id="vibe-progression" className="guide-section guide-section--vibe">
