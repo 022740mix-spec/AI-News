@@ -941,6 +941,9 @@ body {
   margin-bottom: 1.5rem;
   scroll-margin-top: 80px;
 }
+.tool-ref-group:last-child {
+  padding-bottom: 60vh;
+}
 .tool-ref-group__title {
   font-size: var(--text-base);
   font-weight: 700;
