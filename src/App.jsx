@@ -1573,27 +1573,27 @@ function CompanyCard({ company }) {
   );
 }
 
-function ShareBtn({ articleId }) {
-  const [copied, setCopied] = useState(false);
+function ShareBtn({ articleId, articleTitle }) {
   const handleShare = useCallback((e) => {
     e.stopPropagation();
     const url = new URL(window.location.href);
     url.search = "";
     url.searchParams.set("a", articleId);
-    navigator.clipboard.writeText(url.href).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
-  }, [articleId]);
+    if (navigator.share) {
+      navigator.share({ title: articleTitle ?? "", url: url.href }).catch(() => {});
+    } else {
+      navigator.clipboard.writeText(url.href).catch(() => {});
+    }
+  }, [articleId, articleTitle]);
   return (
     <button
       type="button"
       className="btn-share"
-      title="共有リンクをコピー"
+      title="共有"
       aria-label="共有"
       onClick={handleShare}
     >
-      {copied ? "✓" : "↗"}
+      {"↗"}
     </button>
   );
 }
@@ -1772,7 +1772,7 @@ function HeroToday({ article, onClick }) {
           </p>
           <div className="hero-today__row">
             <span className="hero-today__cta">記事を読む</span>
-            <ShareBtn articleId={article.id} />
+            <ShareBtn articleId={article.id} articleTitle={article.title} />
           </div>
           <div className="hero-today__tags">
             {article.tags.slice(0, 5).map((t) => (
@@ -1850,7 +1850,7 @@ function ArticleCard({
             {cat.label}
           </span>
         </div>
-        <ShareBtn articleId={article.id} />
+        <ShareBtn articleId={article.id} articleTitle={article.title} />
       </div>
       <h3 className="card-article__title">{article.title}</h3>
       <p className="card-article__excerpt">
