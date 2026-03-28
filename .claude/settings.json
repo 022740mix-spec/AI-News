@@ -3,7 +3,7 @@
     "Stop": [
       {
         "matcher": "",
-        "command": "node scripts/review-check.mjs 2>&1 | tail -5"
+        "command": "node scripts/review-check.mjs"
       }
     ]
   }
