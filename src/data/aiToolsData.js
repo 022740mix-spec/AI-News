@@ -3858,7 +3858,7 @@ export const ARTICLES = [
       "**4. Power Pages（パワーページ）**: 外部ユーザー（顧客・パートナー）向けの Web ポータルを構築する。Dataverse のデータを外部に公開するユースケース（サポートポータル、申請フォーム等）に特化。PCF コンポーネントも利用可能だが、リアルタイム更新には制約がある。社内アプリではなく「社外向けの窓口」が必要な場合に選ぶ。",
       "**5. Vibe Coding（AI 自然言語生成）**: vibe.powerapps.com で自然言語の指示からアプリを自動生成する最新の手法。「営業チームの日報管理アプリを作って」のような指示で、データモデル・UI・ロジックを AI が一括生成する。2026年時点では英語のみ対応で、利用可能リージョンも米国・オーストラリア・アジア・インドに限定されている。プロトタイプの高速作成には強いが、本番運用には仕様の明確化と人間によるレビューが必要。",
       "**ライセンス要件**: Power Apps のライセンスは2026年1月に改定された。従来の Per App プラン（$5/ユーザー/アプリ/月）は廃止され、Power Apps Premium（$20/ユーザー/月、無制限アプリ）に一本化。2000人超の組織は Enterprise Premium（$12/ユーザー/月）が利用可能。==Dataverse を使う Model-driven Apps・Custom Pages は Premium ライセンスが必須==。Canvas Apps でも Dataverse やプレミアムコネクタを使う場合は Premium が必要。標準コネクタ（SharePoint、Excel 等）のみなら M365 ライセンスに含まれる場合がある。",
-      "**バイブコーディング（外部サービス）vs Microsoft 内側の判断**: Cursor + Claude Code + Supabase のようなバイブコーディング構成は、バックエンドを一から自由に設計できるが、認証・権限管理・コンプライアンスを自前で構築する必要がある。一方 Power Apps + Dataverse + Entra ID の構成は、これらが最初からセットになっており、Microsoft 365 を既に導入している企業ではインフラ追加がほぼ不要。ただし全ユーザーが Premium ライセンスを持つ必要があり、カスタマイズの自由度は Power Fx / PCF の範囲に限定される。バックエンドの比較は[Dataverse vs Supabase vs Azure SQL](?a=enterprise-backend-dataverse-supabase-azure-2026)を参照。"
+      "**バイブコーディング（外部サービス）vs Microsoft 内側の判断**: Cursor + Claude Code + Supabase のようなバイブコーディング構成は、バックエンドを一から自由に設計できるが、認証・権限管理・コンプライアンスを自前で構築する必要がある。一方 Power Apps + Dataverse + Entra ID の構成は、これらが最初からセットになっており、Microsoft 365 を既に導入している企業ではインフラ追加がほぼ不要。ただし全ユーザーが Premium ライセンスを持つ必要があり、カスタマイズの自由度は Power Fx / PCF の範囲に限定される。「React でフロントは作れたけどバックエンドをどうするか」の詳細な組み合わせパターンは [React × Microsoft バックエンド 5パターン](?a=react-frontend-ms-backend-architecture-2026)を参照。バックエンド DB の比較は[Dataverse vs Supabase vs Azure SQL](?a=enterprise-backend-dataverse-supabase-azure-2026)を参照。"
     ],
     "date": "2026-03-29",
     "author": "AI News 編集部",
@@ -3928,6 +3928,77 @@ export const ARTICLES = [
           ["主な用途", "社内業務アプリ（Power Apps）", "Web アプリ・SaaS・AI アプリ", "エンタープライズ DB・分析"]
         ]
       }
+    ]
+  },
+  {
+    "id": "react-frontend-ms-backend-architecture-2026",
+    "type": "feature",
+    "category": "data",
+    "title": "React フロントエンド × Microsoft バックエンド — PCF・Code Apps・Dataverse API・Entra ID の組み合わせパターン",
+    "excerpt": "「フロントエンドは作れたけどバックエンドが作れない」問題に、Microsoft エコシステムで答える。PCF で React コンポーネントを Power Apps に埋め込むパターンから、Code Apps で React アプリから Dataverse に直接アクセスするパターン、Entra ID 認証だけ借りて Supabase や Azure Database for PostgreSQL と組み合わせるパターンまで、5つのアーキテクチャを比較した。",
+    "body": [
+      "バイブコーディングで React / Next.js のフロントエンドを素早く作れるようになった一方、認証・権限管理・データベース・コンプライアンスを含むバックエンドの構築は依然としてハードルが高い。特に企業環境では Entra ID（旧 Azure AD）との統合やデータガバナンスが求められ、「フロントは Cursor で作ったが、バックエンドをどうするか」で止まるケースが多い。ここでは Microsoft エコシステムを活用する5つのアーキテクチャパターンを、開発の自由度とセットアップの手軽さの軸で整理する。",
+      "**パターン1: PCF で React コンポーネントを Power Apps に埋め込む** — Power Apps Component Framework（PCF）は React / TypeScript でカスタムコンポーネントを開発し、Model-driven Apps や Canvas Apps に埋め込む仕組み。`pac pcf init --framework React` でプロジェクトを初期化でき、Fluent UI との統合も標準サポートされている。バックエンドは Dataverse が自動的に担うため、認証・権限・API は Power Platform が管理する。==ただし PCF は「コンポーネント単位」の設計であり、フルページの SPA を置き換える用途には向かない==。Canvas Apps では React 16、Model-driven Apps では React 17 に制限される点も注意が必要。複雑な業務フォームのカスタム UI を Power Apps 内に組み込む場合に最適。",
+      "**パターン2: Power Apps Code Apps（React で Dataverse に直接アクセス）** — 2025年に登場した新しい選択肢。React・Angular・Vue で構築したスタンドアロンの SPA から、Power Apps SDK 経由で Dataverse と1,500以上の Power Platform コネクタに直接アクセスできる。認証は SDK が自動処理するため、MSAL の設定やトークン管理を自前で書く必要がない。Vite + npm のローカル開発環境がそのまま使え、バイブコーディングで作ったフロントエンドを Power Platform のバックエンドに接続する最も手軽な方法。==「フロントは自由に作りたいが、バックエンドは Microsoft に任せたい」というニーズに直接答える==。Power Apps Premium ライセンスが必要。",
+      "**パターン3: Dataverse Web API + MSAL（カスタム認証）** — Code Apps を使わず、React / Next.js から Dataverse の REST API（OData）を直接呼ぶパターン。MSAL.js（Microsoft Authentication Library）で Entra ID のトークンを取得し、API リクエストのヘッダーに付与する。SPA の場合は Authorization Code Flow with PKCE、サーバーサイド（Next.js API Routes 等）の場合は Client Credentials Flow を使う。Code Apps より設定が多いが、Power Platform SDK に依存しない分、デプロイ先の自由度が高い。Entra ID にアプリ登録が必要。",
+      "**パターン4: Entra ID 認証 + Supabase（Microsoft 認証だけ借りる）** — Entra ID をOAuth プロバイダーとして Supabase Auth に登録し、ユーザーが Microsoft アカウントでログインできるようにするパターン。データは Supabase（PostgreSQL）に保存し、リアルタイム更新・Edge Functions・pgvector も利用できる。Dataverse のビジネスロジックは不要だが、Microsoft の SSO とユーザー管理は使いたい場合に向く。Supabase は Enterprise プランで SAML SSO にも対応している（[→ Supabase の詳細](?a=ai-backend-postgres-supabase-2026)）。",
+      "**パターン5: Entra ID 認証 + Azure Database for PostgreSQL** — フル Microsoft スタックで PostgreSQL を使うパターン。Azure Database for PostgreSQL は Entra ID 認証をネイティブサポートしており、パスワードなしでデータベースに接続できる。Managed Identity を使えばアプリケーションの認証情報も自動管理される。Supabase のような BaaS 機能（Auth、Realtime、Edge Functions）はないため、Azure Functions や Azure Container Apps で補完する。エンタープライズのコンプライアンス要件（データ所在地、暗号化、監査）が厳しい場合に選ばれる。",
+      "**どのパターンを選ぶか**: Power Apps の UI で十分ならパターン1（PCF）、React で自由に作りつつ Dataverse バックエンドを使いたいならパターン2（Code Apps）が最短経路。Dataverse のビジネスロジックが不要で Microsoft 認証だけ借りたいならパターン4（Supabase）か5（Azure PostgreSQL）。パターン3は2と4/5の中間で、Dataverse を使うがSDK に依存したくない場合に選ぶ。いずれの場合も、Entra ID による認証基盤は共通して活用でき、企業の既存 Microsoft 365 環境との統合がスムーズになる。料金とライセンスの全体像は [M365 E3/E5/E7 比較](?a=microsoft-365-e7-copilot-pricing-2026)、バックエンド DB の比較は [Dataverse vs Supabase vs Azure SQL](?a=enterprise-backend-dataverse-supabase-azure-2026) を参照。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "14分",
+    "tags": ["React", "PCF", "Power Apps", "Dataverse", "Entra ID", "Supabase", "Azure", "バックエンド", "アーキテクチャ"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "React controls & platform libraries (PCF)", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/power-apps/developer/component-framework/react-controls-platform-libraries" },
+      { "title": "Power Apps code apps overview", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/power-apps/developer/code-apps/overview" },
+      { "title": "Authenticate to Microsoft Dataverse with the Web API", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/authenticate-web-api" },
+      { "title": "Login with Azure (Microsoft)", "site": "Supabase Docs", "url": "https://supabase.com/docs/guides/auth/social-login/auth-azure" },
+      { "title": "Entra ID Authentication - Azure Database for PostgreSQL", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/azure/postgresql/security/security-entra-configure" },
+      { "title": "PCF Limitations", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/power-apps/developer/component-framework/limitations" }
+    ],
+    "tables": [
+      {
+        "afterParagraph": 5,
+        "caption": "アーキテクチャパターン比較（2026年時点）",
+        "headers": ["パターン", "フロントエンド", "バックエンド", "認証", "自由度", "セットアップ"],
+        "rows": [
+          ["1. PCF + Power Apps", "React（コンポーネント単位）", "Dataverse（自動）", "Power Platform 管理", "低（PA 内に制限）", "中"],
+          ["2. Code Apps", "React / Vue / Angular（SPA）", "Dataverse + 1500コネクタ", "SDK 自動処理", "高", "低（最短）"],
+          ["3. Dataverse Web API + MSAL", "React / Next.js（自由）", "Dataverse（API直接）", "MSAL.js + Entra ID", "高", "中〜高"],
+          ["4. Entra ID + Supabase", "React / Next.js（自由）", "Supabase（PostgreSQL）", "Entra ID → Supabase OAuth", "最高", "低〜中"],
+          ["5. Entra ID + Azure PostgreSQL", "React / Next.js（自由）", "Azure DB for PostgreSQL", "Entra ID ネイティブ", "高", "中〜高"]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "enterprise-entra-id-postgres-ai-architecture-2026",
+    "type": "feature",
+    "category": "data",
+    "title": "E3 の Entra ID 認証 + PostgreSQL で企業 AI アプリを構築する — Dataverse より安い実用構成",
+    "excerpt": "Microsoft 365 E3 に含まれる Entra ID 認証だけを借り、バックエンドに Dataverse ではなく Azure Database for PostgreSQL や Supabase を使う構成が企業で注目されている。フロントエンドからの認証フロー、AI API キーの安全な管理、SharePoint 上の社内文書を AI に食わせる際の課題と対策までを解説する。",
+    "body": [
+      "Power Apps Premium（$20/月）や Dataverse の追加ライセンスを全社員分購入するのは、特に大企業ではコストが膨らむ。一方、Microsoft 365 E3（$39/月）には Entra ID が標準で含まれており、==認証基盤だけなら追加費用なしで使える==。この「Entra ID の認証だけ借りて、データベースは PostgreSQL を使う」構成は、Dataverse のライセンスコストを回避しつつ Microsoft のセキュリティ基盤を活用できる現実的な選択肢として注目されている。",
+      "**認証フローの設計**: React / Next.js のフロントエンドから Entra ID に認証をかけ、社員であることを確認してからアプリにアクセスさせる。具体的には MSAL.js（Microsoft Authentication Library）を使い、Authorization Code Flow with PKCE でトークンを取得する。==API キーやデータベースの接続情報はフロントエンドに一切置かない==。Next.js の場合は API Routes（サーバーサイド）に環境変数として保持し、フロントエンドからはこの中間層を経由してバックエンドにアクセスする。Azure Functions を中間層に使うパターンも多い。",
+      "**AI API キーの管理**: 企業が契約している AI サービス（Claude API、OpenAI API 等）のキーは、Azure Key Vault に格納するのが Microsoft エコシステムでの標準的な方法。サーバーサイドの中間層が Key Vault から取得し、フロントエンドには API キーが一切露出しない構成にする。Managed Identity を使えば、中間層から Key Vault へのアクセスにもパスワードが不要になる。「会社が契約している AI API を社員に安全に使わせる」には、この Key Vault + Managed Identity + 中間層の3点セットが基本形。",
+      "**バックエンド DB の選択**: Azure Database for PostgreSQL Flexible Server は Entra ID 認証をネイティブサポートしており、パスワードなしでデータベース接続が可能。料金は Burstable B1ms（1vCPU・2GB）で月額約$13〜、汎用 D2ds_v5（2vCPU・8GB）で月額約$100〜。Supabase Pro（$25/月）と比べると、小規模では Supabase が安く、大規模では Azure が Enterprise 機能（HA、バックアップ、Geo-redundancy）で優位。Supabase を使う場合は Entra ID を OAuth プロバイダーとして登録し、Microsoft アカウントでログインできるようにする（[→ 構成パターンの詳細](?a=react-frontend-ms-backend-architecture-2026)）。",
+      "**SharePoint・OneDrive の社内文書を AI で活用する課題**: 非エンジニアの社員は SharePoint に PDF をアップロードし、OneDrive でファイルを共有する。これが企業にとっての「データベース」の実態。しかし PDF は AI が直接扱いにくいフォーマットで、テーブルやレイアウトの構造が失われやすい。実用的な対策は3つある。(1) PDF を Markdown に変換してから RAG パイプラインに投入する（Azure AI Document Intelligence や Apache Tika が使える）。(2) 構造化データは JSON に変換して PostgreSQL に格納する。(3) Microsoft Graph API 経由で SharePoint のドキュメントライブラリにアクセスし、インデックス化する。いずれの場合も、==元の PDF は SharePoint に残し、AI 用の変換データを別途管理する二重管理==が実運用では避けられない。",
+      "**非エンジニアにとってのデータ維持管理**: 企業の一般社員は「データベース」ではなく「SharePoint のフォルダ」「OneDrive のファイル」「Teams のチャネル」にデータを置く。技術者がいくら PostgreSQL や Dataverse を整備しても、入力元がこれらのサービスである限り、そこからデータを吸い上げる仕組みが必要。Power Automate で SharePoint のファイル更新をトリガーに自動変換・格納するフローを組むのが Microsoft エコシステム内での定番パターン。バイブコーディングで構築したカスタムアプリと SharePoint の橋渡しには Microsoft Graph API が核となる。==エンジニアが DB を設計して終わりではなく、非エンジニアの日常のファイル操作から DB にデータが流れる仕組みまで設計する==ことが企業 AI アプリの実用化の鍵になる。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "15分",
+    "tags": ["Entra ID", "PostgreSQL", "Azure", "Enterprise", "セキュリティ", "SharePoint", "AI", "バックエンド"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "MSAL.js for React SPAs", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/entra/identity-platform/tutorial-single-page-app-react-sign-in" },
+      { "title": "Azure Key Vault", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/overview" },
+      { "title": "Entra ID Authentication - Azure Database for PostgreSQL", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/azure/postgresql/security/security-entra-configure" },
+      { "title": "Microsoft Graph API", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/graph/overview" },
+      { "title": "Azure AI Document Intelligence", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/" },
+      { "title": "Login with Azure (Microsoft) - Supabase", "site": "Supabase Docs", "url": "https://supabase.com/docs/guides/auth/social-login/auth-azure" }
     ]
   },
   {

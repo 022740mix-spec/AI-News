@@ -13,7 +13,7 @@
     <id>tag:ai-tool-news.jp,2026:overview-2026-spring</id>
     <published>2026-03-30T15:00:00Z</published>
     <updated>2026-03-30T15:00:00Z</updated>
-    <summary>ARC Prize Foundation は水曜に適応推論ベンチ ARC-AGI-3 を公開した。翌日の木曜には Google DeepMind が Gemini 3.1 Pro をプレビューし、同じ日に Model Context Protocol が v2 の年次ロードマップを示した。裁判ではサンフランシスコの連邦地裁が Anthropic の申請を認め、国防総省の措置に暫定差止を出したと報じられた。ほぼ同じ頃、OpenAI の Sora 消費者向け終了や提携解消が各紙で伝わった。金曜は Cursor 2.4 と Claude Code（Auto モード・クラウド auto-fix）の更新が続き、週末にかけ Mythos 草稿の報道が広がってセキュリティ関連株が売られたと報じられた。</summary>
+    <summary>Anthropic が国防総省の「サプライチェーンリスク」指定を連邦地裁で差し止めた一方、OpenAI は Sora の消費者向け提供を終了。ARC-AGI-3 がフロンティアモデルの限界を浮き彫りにした翌日、Google が Gemini 3.1 Pro と MCP v2 を同時に発表。週末は Cursor 2.4 と Claude Code Auto mode が開発者のワークフローを更新し、Mythos 草稿の報道がセキュリティ銘柄を動かした。</summary>
   </entry>
   <entry>
     <title>TypeScript バックエンドの ORM — Drizzle と Prisma を AI アプリ開発でどう切るか</title>
@@ -166,6 +166,22 @@
     <published>2026-03-29T15:00:00Z</published>
     <updated>2026-03-29T15:00:00Z</updated>
     <summary>アプリのバックエンドを「一から作る」か「セットになっている企業サービスを使う」か。Microsoft Dataverse、Supabase（OSS PostgreSQL）、Azure SQL Database の3つを、認証・リアルタイム・ライセンス・AI 統合の軸で比較した。</summary>
+  </entry>
+  <entry>
+    <title>React フロントエンド × Microsoft バックエンド — PCF・Code Apps・Dataverse API・Entra ID の組み合わせパターン</title>
+    <link rel="alternate" type="text/html" href="?a=react-frontend-ms-backend-architecture-2026"/>
+    <id>tag:ai-tool-news.jp,2026:react-frontend-ms-backend-architecture-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>「フロントエンドは作れたけどバックエンドが作れない」問題に、Microsoft エコシステムで答える。PCF で React コンポーネントを Power Apps に埋め込むパターンから、Code Apps で React アプリから Dataverse に直接アクセスするパターン、Entra ID 認証だけ借りて Supabase や Azure Database for PostgreSQL と組み合わせるパターンまで、5つのアーキテクチャを比較した。</summary>
+  </entry>
+  <entry>
+    <title>E3 の Entra ID 認証 + PostgreSQL で企業 AI アプリを構築する — Dataverse より安い実用構成</title>
+    <link rel="alternate" type="text/html" href="?a=enterprise-entra-id-postgres-ai-architecture-2026"/>
+    <id>tag:ai-tool-news.jp,2026:enterprise-entra-id-postgres-ai-architecture-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>Microsoft 365 E3 に含まれる Entra ID 認証だけを借り、バックエンドに Dataverse ではなく Azure Database for PostgreSQL や Supabase を使う構成が企業で注目されている。フロントエンドからの認証フロー、AI API キーの安全な管理、SharePoint 上の社内文書を AI に食わせる際の課題と対策までを解説する。</summary>
   </entry>
   <entry>
     <title>Google 社内 AI エージェント「Agent Smith」が話題 — PC を閉じても作業を継続、スマホから進捗確認・追加指示</title>
@@ -445,7 +461,7 @@
     <id>tag:ai-tool-news.jp,2026:overview-2026-week-mar16</id>
     <published>2026-03-23T15:00:00Z</published>
     <updated>2026-03-23T15:00:00Z</updated>
-    <summary>OpenAI は火曜に GPT-5.4 mini と nano を出した。水曜は Windsurf のレビュー枠が更新され、木曜に Astral（uv・Ruff・ty）の買収公表と生成音楽ツールの整理特集が重なった。金曜には Cursor による Windsurf 買収完了が伝わり、日曜には Codex エージェントのレビューが掲載された。</summary>
+    <summary>OpenAI が GPT-5.4 mini/nano をリリースし、低コストモデルの選択肢を広げた。翌々日には Python ツール企業 Astral（uv・Ruff・ty）の買収を発表し、Codex のエコシステム強化に動いた。同じ週に Cursor が Windsurf の買収を完了し、AI エディタ市場は Cursor vs VS Code+Copilot の二極構造に近づいた。</summary>
   </entry>
   <entry>
     <title>Cursor Composer 2 の正体 — Kimi K2.5 ベースの独自モデル、API 解析で判明</title>
