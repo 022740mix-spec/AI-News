@@ -450,7 +450,7 @@ function formatWeekRoundupPeriodJp(startYmd, endYmd) {
 }
 
 
-function syncAppUrl({ articleId, siteSection, tagQuery, guideTab, toolTab }) {
+function syncAppUrl({ articleId, siteSection, tagQuery, guideTab, toolTab, usePush = false }) {
   const u = new URL(window.location.href);
   if (articleId) {
     u.searchParams.set("a", articleId);
@@ -489,7 +489,12 @@ function syncAppUrl({ articleId, siteSection, tagQuery, guideTab, toolTab }) {
       else u.searchParams.delete("tag");
     }
   }
-  window.history.replaceState({}, "", `${u.pathname}${u.search}${u.hash}`);
+  const url = `${u.pathname}${u.search}${u.hash}`;
+  if (usePush) {
+    window.history.pushState({}, "", url);
+  } else {
+    window.history.replaceState({}, "", url);
+  }
 }
 
 /* ══ ハンバーガーメニュー ══ */
@@ -1950,19 +1955,19 @@ function ArticleDetail({
       <div className="detail-wrap">
         <button
           type="button"
-          className="detail-back-btn"
+          className="detail-back-btn desktop-only"
           onClick={onBack}
         >
           ← 戻る
         </button>
         <div className="detail-toolbar">
-          <button type="button" className="btn" onClick={onBack}>
+          <button type="button" className="btn desktop-only" onClick={onBack}>
             ← 一覧へ
           </button>
           <button type="button" className="btn btn-primary" onClick={share}>
             共有 / リンクコピー
           </button>
-          <span style={{ fontSize: 12, color: "var(--muted)", marginLeft: "auto" }}>
+          <span className="desktop-only" style={{ fontSize: 12, color: "var(--muted)", marginLeft: "auto" }}>
             Esc で一覧
           </span>
         </div>
@@ -2460,6 +2465,23 @@ const [showFab, setShowFab] = useState(false);
     });
   }, [selected, siteSection, guideTab]);
 
+  // ブラウザの戻る/進むボタンで記事を開閉する
+  useEffect(() => {
+    const onPop = () => {
+      const u = new URL(window.location.href);
+      const aid = u.searchParams.get("a");
+      if (aid) {
+        const found = ARTICLES.find((x) => x.id === aid);
+        setSelected(found ?? null);
+      } else {
+        setSelected(null);
+      }
+      window.scrollTo(0, 0);
+    };
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, []);
+
   useEffect(() => {
     if (document.getElementById("ld-json-website")) return;
     const script = document.createElement("script");
@@ -2512,7 +2534,15 @@ const [showFab, setShowFab] = useState(false);
   const handleSelect = useCallback((article) => {
     setSelected(article);
     window.scrollTo(0, 0);
-  }, []);
+    syncAppUrl({
+      articleId: article.id,
+      siteSection: "articles",
+      tagQuery: "",
+      guideTab,
+      toolTab,
+      usePush: true,
+    });
+  }, [guideTab, toolTab]);
 
   const onTagClick = useCallback((tag) => {
     setQuery(tag);

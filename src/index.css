@@ -2775,3 +2775,10 @@ body {
     font-size: 0.62rem;
   }
 }
+
+/* スマホではブラウザの戻るボタンが使えるため、戻るボタン・Escヒントを非表示 */
+@media (max-width: 720px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
