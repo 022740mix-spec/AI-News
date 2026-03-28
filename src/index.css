@@ -1997,6 +1997,31 @@ body {
   opacity: 0.9;
 }
 
+/* ── ベンチマークチャート ── */
+.benchmark-chart {
+  margin: 1rem 0 1.5rem;
+}
+.benchmark-chart__title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin: 0 0 0.5rem;
+}
+.benchmark-chart__wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: var(--card-solid);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+}
+.benchmark-chart__svg {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+}
+
 /* ── ハイライト（==text==） ── */
 .prose-highlight {
   background: rgba(255, 220, 50, 0.3);

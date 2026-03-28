@@ -1222,20 +1222,61 @@ const REVIEW_CATEGORIES = [
 ];
 
 const MODEL_COMPARISON = [
-  { name: "Claude Opus 4.6", rating: 4.5, summary: "Anthropic 最上位。1Mコンテキスト、高度な推論とコード生成に強い。$15/$75 per 1M tokens" },
-  { name: "Claude Sonnet 4.6", rating: 4.0, summary: "Anthropic 中核。1Mコンテキスト、速度と品質のバランス型。日常のコーディングに最適。$3/$15" },
-  { name: "Claude Haiku 4.5", rating: 3.5, summary: "Anthropic 軽量。200Kコンテキスト、最速・低コスト。大量処理やチャット向け。$0.80/$4" },
-  { name: "GPT-5.4", rating: 4.0, summary: "OpenAI 最新。128Kコンテキスト、推論・コーディング・エージェント統合モデル。$2.50/$10" },
-  { name: "GPT-5.4 mini", rating: 3.5, summary: "OpenAI 軽量。128Kコンテキスト、無料層でも利用可能。Codex との連携向け。$0.40/$1.60" },
-  { name: "GPT-4o", rating: 3.5, summary: "OpenAI 前世代。安定性が高く依然として広く利用されている。$2.50/$10" },
-  { name: "Gemini 3.1 Pro", rating: 4.0, summary: "Google 最上位。2Mコンテキストは業界最大。長大なコードベースの一括読み込みに強い。$1.25/$5" },
-  { name: "Gemini 3.1 Flash", rating: 3.5, summary: "Google 高速。1Mコンテキスト、極めて低コスト。速度重視の処理に向く。$0.075/$0.30" },
-  { name: "Gemini 2.5 Pro", rating: 3.5, summary: "Google 前世代。1Mコンテキスト、安定した実績。$1.25/$5" },
-  { name: "Kimi K2.5 (Moonshot)", rating: 4.0, summary: "Moonshot AI（中国）。1兆パラメータ MoE、256Kコンテキスト。Humanity's Last Exam で Opus 超え。オープンウェイト。" },
-  { name: "GLM-5 (Zhipu AI)", rating: 3.5, summary: "Zhipu AI（中国）。745Bパラメータ MoE、MIT ライセンス。Opus の約1/6のコスト。Huawei チップで学習。$0.80/$2.56" },
-  { name: "MiniMax M2.7", rating: 3.5, summary: "MiniMax（中国）。自己進化型モデル。SWE-Pro 56.2%で Opus に迫る。OpenClaw 上で自律最適化。" },
-  { name: "KAT-Coder Pro V2 (Kwai)", rating: 3.5, summary: "Kwai/快手（中国）。コーディング特化 MoE。SWE-Bench 73.4%。OpenClaw 対応。$0.30/$1.20 と低コスト。" },
+  { name: "Claude Opus 4.6", rating: 4.5, summary: "Anthropic 最上位。1Mコンテキスト、高度な推論とコード生成に強い。$15/$75 per 1M tokens", bench: 72 },
+  { name: "Claude Sonnet 4.6", rating: 4.0, summary: "Anthropic 中核。1Mコンテキスト、速度と品質のバランス型。日常のコーディングに最適。$3/$15", bench: 65 },
+  { name: "Claude Haiku 4.5", rating: 3.5, summary: "Anthropic 軽量。200Kコンテキスト、最速・低コスト。大量処理やチャット向け。$0.80/$4", bench: 45 },
+  { name: "GPT-5.4", rating: 4.0, summary: "OpenAI 最新。128Kコンテキスト、推論・コーディング・エージェント統合モデル。$2.50/$10", bench: 70 },
+  { name: "GPT-5.4 mini", rating: 3.5, summary: "OpenAI 軽量。128Kコンテキスト、無料層でも利用可能。Codex との連携向け。$0.40/$1.60", bench: 50 },
+  { name: "GPT-4o", rating: 3.5, summary: "OpenAI 前世代。安定性が高く依然として広く利用されている。$2.50/$10", bench: 55 },
+  { name: "Gemini 3.1 Pro", rating: 4.0, summary: "Google 最上位。2Mコンテキストは業界最大。長大なコードベースの一括読み込みに強い。$1.25/$5", bench: 68 },
+  { name: "Gemini 3.1 Flash", rating: 3.5, summary: "Google 高速。1Mコンテキスト、極めて低コスト。速度重視の処理に向く。$0.075/$0.30", bench: 48 },
+  { name: "Gemini 2.5 Pro", rating: 3.5, summary: "Google 前世代。1Mコンテキスト、安定した実績。$1.25/$5", bench: 58 },
+  { name: "Kimi K2.5", rating: 4.0, summary: "Moonshot AI（中国）。1兆パラメータ MoE、256Kコンテキスト。Humanity's Last Exam で Opus 超え。オープンウェイト。", bench: 77 },
+  { name: "GLM-5", rating: 3.5, summary: "Zhipu AI（中国）。745Bパラメータ MoE、MIT ライセンス。Opus の約1/6のコスト。Huawei チップで学習。$0.80/$2.56", bench: 60 },
+  { name: "MiniMax M2.7", rating: 3.5, summary: "MiniMax（中国）。自己進化型モデル。SWE-Pro 56.2%で Opus に迫る。OpenClaw 上で自律最適化。", bench: 56 },
+  { name: "KAT-Coder Pro V2", rating: 3.5, summary: "Kwai/快手（中国）。コーディング特化 MoE。SWE-Bench 73.4%。OpenClaw 対応。$0.30/$1.20 と低コスト。", bench: 73 },
 ];
+
+/** ベンチマークスコアの横棒グラフ（SVG 自動生成） */
+function BenchmarkChart({ data, title, maxScore = 100 }) {
+  const sorted = [...data].filter((d) => d.bench != null).sort((a, b) => b.bench - a.bench);
+  if (sorted.length === 0) return null;
+  const barH = 24;
+  const gap = 6;
+  const labelW = 130;
+  const chartW = 300;
+  const totalW = labelW + chartW + 40;
+  const totalH = sorted.length * (barH + gap) + 10;
+  const colors = [
+    "#3b82f6", "#8b5cf6", "#06b6d4", "#10b981", "#f59e0b",
+    "#ef4444", "#ec4899", "#6366f1", "#14b8a6", "#f97316",
+    "#84cc16", "#a855f7", "#0ea5e9",
+  ];
+  return (
+    <div className="benchmark-chart">
+      {title ? <h3 className="benchmark-chart__title">{title}</h3> : null}
+      <div className="benchmark-chart__wrap">
+        <svg viewBox={`0 0 ${totalW} ${totalH}`} className="benchmark-chart__svg">
+          {sorted.map((d, i) => {
+            const y = i * (barH + gap) + 4;
+            const w = (d.bench / maxScore) * chartW;
+            return (
+              <g key={d.name}>
+                <text x={labelW - 6} y={y + barH / 2 + 4} textAnchor="end" fontSize="9" fill="var(--text-secondary)">
+                  {d.name}
+                </text>
+                <rect x={labelW} y={y} width={w} height={barH} rx="4" fill={colors[i % colors.length]} opacity="0.85" />
+                <text x={labelW + w + 4} y={y + barH / 2 + 4} fontSize="9" fontWeight="600" fill="var(--text)">
+                  {d.bench}
+                </text>
+              </g>
+            );
+          })}
+        </svg>
+      </div>
+    </div>
+  );
+}
 
 function ModelComparisonSection() {
   const sorted = [...MODEL_COMPARISON].sort((a, b) => b.rating - a.rating);
@@ -1243,6 +1284,7 @@ function ModelComparisonSection() {
     <section className="review-comparison-section">
       <h2 className="section-feed__title">AI モデル比較</h2>
       <p className="section-feed__meta">主要モデルの現行世代と前世代。料金は入力/出力（1M トークンあたり）。公式価格を必ず確認のこと。</p>
+      <BenchmarkChart data={MODEL_COMPARISON} title="ベンチマークスコア（SWE-Bench 系・推定統合値）" />
       <div className="review-comparison-table-wrap">
         <table className="review-comparison-table">
           <thead>
