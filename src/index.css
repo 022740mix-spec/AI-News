@@ -2091,18 +2091,30 @@ body {
   color: var(--accent);
 }
 @media (max-width: 560px) {
+  .bench-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+    margin-bottom: 0.5rem;
+  }
   .bench-row__label {
-    width: 80px;
-    font-size: 0.6rem;
+    width: 100%;
+    text-align: left;
+    font-size: 0.68rem;
+    font-weight: 600;
   }
   .bench-row__track {
-    height: 20px;
+    width: 100%;
+    height: 22px;
   }
   .bench-row__score {
-    font-size: 0.6rem;
+    font-size: 0.65rem;
   }
   .benchmark-chart__wrap {
     padding: 0.65rem 0.75rem 0.5rem;
+  }
+  .benchmark-chart__grid {
+    display: none;
   }
 }
 
