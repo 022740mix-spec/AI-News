@@ -700,6 +700,7 @@ function ToolReferencePanel({ referenceData, practical }) {
                 <dt className="glossary-dl__term">{t.word}</dt>
                 <dd className="glossary-dl__body">
                   <GuideLinkifiedP text={t.mean} className="glossary-dl__mean" />
+                  {t.code ? <CopyableCodeBlock code={t.code} lang={t.codeLang ?? "bash"} /> : null}
                   {t.mem ? <GuideLinkifiedP text={t.mem} className="glossary-dl__mem" /> : null}
                 </dd>
               </Fragment>

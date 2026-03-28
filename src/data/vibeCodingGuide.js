@@ -150,59 +150,134 @@ export const VIBE_TOOL_COMBO_TABLE = {
 /** @type {GlossaryGenre} */
 export const VIBE_CLAUDE_CODE = {
   id: "vibe-claude-code",
-  title: "本格運用向け：Claude Code（CLI）リファレンス",
-  lead: "リポジトリ直下のターミナルから claude を使う段階向けの早見。フラグ一覧は https://code.claude.com/docs/en/cli-reference 、モードは https://code.claude.com/docs/en/permission-modes を参照。",
+  title: "Claude Code 日常リファレンス",
+  lead: "起動してからの日常操作で大事なところだけ。導入手順は公式 https://docs.anthropic.com/en/docs/claude-code/overview を参照。",
   terms: [
+    // ── 起動・セッション ──
     {
-      word: "`claude` … 対話セッション",
-      mean: "いちばん定番の起動です。**作業するリポジトリのルートに `cd` してから**実行すると、ファイル構成の理解が安定しやすいです。",
+      word: "起動: `claude`",
+      mean: "リポジトリのルートで実行して対話セッションを開始する。cd してからが基本。",
+      code: "cd your-project\nclaude",
     },
     {
-      word: "初回メッセージ付きで起動",
-      mean: "`claude \"このプロジェクトを短く説明して\"` のように、最初の指示を引数で渡せる（対話モードのまま開始）。",
+      word: "再開: `claude -c`",
+      mean: "直近のセッションを再開する。一度閉じてもまた戻れる。最も頻繁に使うフラグ。",
+      code: "claude -c",
     },
     {
-      word: "`claude -c`（`--continue`）",
-      mean: "同じディレクトリで直近の会話を再開する。気軽に切ってまた戻るバイブ向き。",
+      word: "非対話: `claude -p \"指示\"`",
+      mean: "質問に答えたら終了する print モード。パイプと組み合わせる。",
+      code: "cat spec.md | claude -p \"この仕様に沿ってテストを書いて\"",
+    },
+    // ── 権限モード ──
+    {
+      word: "権限: `--permission-mode`",
+      mean: "plan（提案のみ）/ acceptEdits（編集は自動、Bash は確認）/ bypassPermissions（全自動）を選ぶ。Shift+Tab で対話中に切替可能。",
+      code: "claude --permission-mode acceptEdits",
     },
     {
-      word: "`claude --resume`（`-r`）",
-      mean: "名前や ID で特定セッションを開き直す。トピックが分岐したらセッションに名前を付けておくと便利。",
+      word: "Auto: `--enable-auto-mode`",
+      mean: "リスク分類で安全な操作の確認を減らすモード。Team プラン + Opus/Sonnet 4.6 が条件。auto は「全部スキップ」ではなく「低リスクだけスキップ」。",
+      code: "claude --enable-auto-mode",
     },
     {
-      word: "`claude -p`（`--print`）",
-      mean: "非対話（print モード）。質問に答えたら終了する。CI やスクリプト、`cat file | claude -p \"…\"` のようなパイプ連携に向く。",
+      word: "!!`--dangerously-skip-permissions`!!",
+      mean: "全確認を飛ばす。==使い捨てサンドボックス以外では使わない==。本番リポジトリで使うとファイル破壊のリスクがある。",
+      code: "claude --dangerously-skip-permissions",
+    },
+    // ── セッション内操作 ──
+    {
+      word: "操作: `/clear`",
+      mean: "会話コンテキストをリセットする。話題を変えたいとき、トークンを節約したいときに使う。",
+      code: "/clear",
     },
     {
-      word: "`--permission-mode`",
-      mean: "起動時の権限モードを指定する（例: `plan` で提案だけ表示、`acceptEdits` で編集を自動承認）。対話中に Shift+Tab でモードを循環させることもできる。",
-      mem: "利用できる値の一覧は Permission modes のドキュメントを参照。",
+      word: "操作: `/compact`",
+      mean: "会話履歴を要約して圧縮する。長い作業で「コンテキストが足りない」と言われたらこれ。",
+      code: "/compact",
     },
     {
-      word: "`--enable-auto-mode`",
-      mean: "Shift+Tab のモード切替に auto モードを追加する起動フラグ。Team プランかつ Sonnet 4.6 / Opus 4.6 などの条件がある。自分のプランで使えるか先に確認すること。",
-      mem: "auto モードは「無確認で全部実行」ではなく、リスク分類して安全なツール呼び出しの確認を減らす機能。",
+      word: "操作: `/cost`",
+      mean: "現在のセッションで使ったトークン数と料金の概算を表示する。",
+      code: "/cost",
     },
     {
-      word: "`--teammate-mode`",
-      mean: "複数エージェント（チームメイト）と協調する際の表示・実行方式を選ぶ（auto / in-process / tmux）。",
-      mem: "セットアップは https://code.claude.com/docs/en/agent-teams を参照。",
+      word: "操作: `Esc`",
+      mean: "実行中の処理をキャンセルする。ファイル編集中でも止められる。暴走したら即 Esc。",
+    },
+    // ── 設定ファイル ──
+    {
+      word: "設定: `CLAUDE.md`",
+      mean: "プロジェクトルートに置く指示書。コーディング規約・禁止事項・プロジェクト情報を書く。Claude が毎回読み込む最重要ファイル。",
+      code: "# プロジェクト設定\n\n## 基本方針\n- 応答は日本語で行う\n- コード変更後は必ずビルド検証\n\n## 技術スタック\n- React 19 + Vite\n- vanilla CSS",
+      codeLang: "markdown",
     },
     {
-      word: "`--agent` と `claude agents`",
-      mean: "`--agent 名前` でセッションのエージェントを指定。`claude agents` で設定済みサブエージェントの一覧を表示。",
+      word: "設定: `~/.claude/CLAUDE.md`",
+      mean: "ユーザー共通の設定。「日本語で回答」「コミットは明確に」など全プロジェクト共通の好みを書く。",
+      code: "# ユーザー共通設定\n\n- 応答は常に日本語\n- 簡潔で実用的な回答を優先\n- 推測ではなくコードに基づいた回答",
+      codeLang: "markdown",
     },
     {
-      word: "`--ide`",
-      mean: "起動時に IDE へ自動接続する（条件が揃うとき）。エディタとターミナルの往復の手間を減らす。",
+      word: "設定: `.claude/settings.local.json`",
+      mean: "ローカル環境固有の設定。.gitignore に入れて個人の API キーやパスを管理する。",
+    },
+    // ── Hooks（自動化） ──
+    {
+      word: "Hooks とは",
+      mean: "ツール実行の前後にシェルコマンドを自動で走らせる仕組み。settings.json の hooks フィールドで定義する。lint 自動実行、通知、ログ記録などに使う。",
     },
     {
-      word: "`--remote-control`",
-      mean: "対話セッションを claude.ai やアプリ側からも操作できるようにするオプション。別席のレビュアーとの共有に使う。",
+      word: "Hook: `PreToolUse`",
+      mean: "ツール実行前に走る。例: 特定ファイルの編集を禁止する、Bash コマンドを検証する。exit 2 を返すとツール実行をブロックできる。",
+      code: "{\n  \"hooks\": {\n    \"PreToolUse\": [\n      {\n        \"matcher\": \"Bash\",\n        \"command\": \"echo \\\"$CLAUDE_TOOL_INPUT\\\" | check-allowed-commands.sh\"\n      }\n    ]\n  }\n}",
+      codeLang: "json",
     },
     {
-      word: "`--dangerously-skip-permissions`",
-      mean: "!!確認ダイアログを飛ばしてツールを走らせる。捨てられるサンドボックス・自分専用・バックアップ済み以外では避けること。!!",
+      word: "Hook: `PostToolUse`",
+      mean: "ツール実行後に走る。最もよく使う Hook。保存 → lint → テストの自動化がバイブの速度を上げる。",
+      code: "{\n  \"hooks\": {\n    \"PostToolUse\": [\n      {\n        \"matcher\": \"Edit\",\n        \"command\": \"npx eslint --fix $CLAUDE_FILE_PATH\"\n      }\n    ]\n  }\n}",
+      codeLang: "json",
+    },
+    {
+      word: "Hook: `Notification`",
+      mean: "タスク完了時に走る通知フック。例: 音声で完了を知らせる、Slack に投稿する。",
+      code: "{\n  \"hooks\": {\n    \"Notification\": [\n      {\n        \"matcher\": \"\",\n        \"command\": \"say 'タスク完了'\"\n      }\n    ]\n  }\n}",
+      codeLang: "json",
+    },
+    // ── MCP（ツール拡張） ──
+    {
+      word: "MCP: `claude mcp add`",
+      mean: "外部ツール（MCP サーバー）を追加するコマンド。",
+      code: "claude mcp add github -- npx @anthropic-ai/mcp-server-github",
+    },
+    {
+      word: "MCP: `claude mcp list`",
+      mean: "設定済み MCP サーバーの一覧を表示。接続状態も確認できる。",
+      code: "claude mcp list",
+    },
+    // ── エージェント・チーム ──
+    {
+      word: "チーム: `--teammate-mode`",
+      mean: "複数エージェントの協調モードを選ぶ。auto（既定）/ in-process / tmux。タスクを分割して並列で回すときに使う。",
+      code: "claude --teammate-mode tmux",
+    },
+    {
+      word: "チーム: `--agent エージェント名`",
+      mean: "セッションで使うサブエージェントを指定する。claude agents で一覧を確認できる。",
+      code: "claude --agent my-agent\nclaude agents",
+    },
+    {
+      word: "共有: `--remote-control`",
+      mean: "対話セッションを claude.ai やアプリ側からも操作可能にする。ペアプロやレビュアーとの画面共有に使える。",
+      code: "claude --remote-control",
+    },
+    // ── スキル ──
+    {
+      word: "Skills: `.claude/skills/`",
+      mean: "SKILL.md を置くと Claude がタスクに応じて自動で読み込む。プロジェクトの定型作業（デプロイ手順、テスト方針など）を教え込む仕組み。",
+      code: "---\nname: deploy\ndescription: 本番デプロイの手順\n---\n\n# デプロイ手順\n\n1. npm run build\n2. npm run deploy",
+      codeLang: "markdown",
     },
   ],
 };
