@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-labelledby="t-rp d-rp">
+  <title id="t-rp">RAG パイプラインの4ステップ</title>
+  <desc id="d-rp">ドキュメント取り込み→ベクトル化→検索→生成の4段階を図示</desc>
+  <rect width="720" height="300" fill="#f8fafc"/>
+  <text x="360" y="28" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#0f172a">RAG パイプライン — 4ステップの全体フロー</text>
+
+  <g font-family="system-ui,sans-serif">
+    <!-- Step 1: 取り込み -->
+    <rect x="20" y="55" width="155" height="110" rx="10" fill="#0ea5e9" opacity="0.12" stroke="#0ea5e9" stroke-width="1.5"/>
+    <text x="97" y="78" text-anchor="middle" font-size="12" font-weight="700" fill="#0369a1">Step 1</text>
+    <text x="97" y="96" text-anchor="middle" font-size="11" font-weight="600" fill="#0369a1">取り込み・前処理</text>
+    <text x="97" y="115" text-anchor="middle" font-size="9" fill="#475569">PDF / HTML / DB</text>
+    <text x="97" y="128" text-anchor="middle" font-size="9" fill="#475569">→ テキスト抽出</text>
+    <text x="97" y="141" text-anchor="middle" font-size="9" fill="#475569">→ チャンキング分割</text>
+    <text x="97" y="154" text-anchor="middle" font-size="9" fill="#475569">→ メタデータ付与</text>
+
+    <!-- 矢印 -->
+    <line x1="175" y1="110" x2="200" y2="110" stroke="#64748b" stroke-width="2" marker-end="url(#aRag)"/>
+
+    <!-- Step 2: ベクトル化 -->
+    <rect x="200" y="55" width="155" height="110" rx="10" fill="#10b981" opacity="0.12" stroke="#10b981" stroke-width="1.5"/>
+    <text x="277" y="78" text-anchor="middle" font-size="12" font-weight="700" fill="#047857">Step 2</text>
+    <text x="277" y="96" text-anchor="middle" font-size="11" font-weight="600" fill="#047857">ベクトル化・格納</text>
+    <text x="277" y="115" text-anchor="middle" font-size="9" fill="#475569">チャンク → Embedding</text>
+    <text x="277" y="128" text-anchor="middle" font-size="9" fill="#475569">モデル（数値配列に変換）</text>
+    <text x="277" y="141" text-anchor="middle" font-size="9" fill="#475569">→ ベクトル DB に格納</text>
+    <text x="277" y="154" text-anchor="middle" font-size="9" fill="#475569">（pgvector/Pinecone等）</text>
+
+    <line x1="355" y1="110" x2="380" y2="110" stroke="#64748b" stroke-width="2" marker-end="url(#aRag)"/>
+
+    <!-- Step 3: 検索 -->
+    <rect x="380" y="55" width="155" height="110" rx="10" fill="#f59e0b" opacity="0.12" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="457" y="78" text-anchor="middle" font-size="12" font-weight="700" fill="#b45309">Step 3</text>
+    <text x="457" y="96" text-anchor="middle" font-size="11" font-weight="600" fill="#b45309">検索（Retrieval）</text>
+    <text x="457" y="115" text-anchor="middle" font-size="9" fill="#475569">ユーザーの質問を</text>
+    <text x="457" y="128" text-anchor="middle" font-size="9" fill="#475569">ベクトル化して類似検索</text>
+    <text x="457" y="141" text-anchor="middle" font-size="9" fill="#475569">+ キーワード検索（BM25）</text>
+    <text x="457" y="154" text-anchor="middle" font-size="9" fill="#475569">→ リランキング</text>
+
+    <line x1="535" y1="110" x2="560" y2="110" stroke="#64748b" stroke-width="2" marker-end="url(#aRag)"/>
+
+    <!-- Step 4: 生成 -->
+    <rect x="560" y="55" width="140" height="110" rx="10" fill="#7c3aed" opacity="0.12" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="630" y="78" text-anchor="middle" font-size="12" font-weight="700" fill="#5b21b6">Step 4</text>
+    <text x="630" y="96" text-anchor="middle" font-size="11" font-weight="600" fill="#5b21b6">生成（Generation）</text>
+    <text x="630" y="115" text-anchor="middle" font-size="9" fill="#475569">検索結果をプロンプトに</text>
+    <text x="630" y="128" text-anchor="middle" font-size="9" fill="#475569">含めて LLM に回答生成</text>
+    <text x="630" y="141" text-anchor="middle" font-size="9" fill="#475569">→ 引用元を付与</text>
+    <text x="630" y="154" text-anchor="middle" font-size="9" fill="#475569">→ ユーザーに回答</text>
+
+    <!-- 下段: データソース -->
+    <rect x="20" y="195" width="680" height="90" rx="10" fill="#0f172a" opacity="0.03" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="360" y="217" text-anchor="middle" font-size="12" font-weight="600" fill="#475569">入力データソース（Step 1 に投入）</text>
+
+    <rect x="40" y="232" width="90" height="40" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1"/>
+    <text x="85" y="257" text-anchor="middle" font-size="10" fill="#334155">PDF</text>
+
+    <rect x="145" y="232" width="90" height="40" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1"/>
+    <text x="190" y="257" text-anchor="middle" font-size="10" fill="#334155">Markdown</text>
+
+    <rect x="250" y="232" width="90" height="40" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1"/>
+    <text x="295" y="257" text-anchor="middle" font-size="10" fill="#334155">HTML / Web</text>
+
+    <rect x="355" y="232" width="90" height="40" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1"/>
+    <text x="400" y="257" text-anchor="middle" font-size="10" fill="#334155">DB レコード</text>
+
+    <rect x="460" y="232" width="110" height="40" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1"/>
+    <text x="515" y="257" text-anchor="middle" font-size="10" fill="#334155">SharePoint</text>
+
+    <rect x="585" y="232" width="100" height="40" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1"/>
+    <text x="635" y="257" text-anchor="middle" font-size="10" fill="#334155">Slack / Docs</text>
+  </g>
+
+  <defs>
+    <marker id="aRag" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/></marker>
+  </defs>
+</svg>

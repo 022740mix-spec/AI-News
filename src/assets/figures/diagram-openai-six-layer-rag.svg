@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-labelledby="t-6l d-6l">
+  <title id="t-6l">OpenAI 6層コンテキストの全体像</title>
+  <desc id="d-6l">Layer 1〜6がデータエージェントにどう接続し、RAGで検索されるかを図示</desc>
+  <rect width="720" height="520" fill="#f8fafc"/>
+  <text x="360" y="28" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#0f172a">OpenAI 社内データエージェント — 6層コンテキスト</text>
+
+  <g font-family="system-ui,sans-serif">
+    <!-- ユーザー -->
+    <rect x="290" y="44" width="140" height="40" rx="8" fill="#7c3aed" opacity="0.9"/>
+    <text x="360" y="69" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">ユーザー（質問）</text>
+
+    <!-- 矢印 down -->
+    <line x1="360" y1="84" x2="360" y2="108" stroke="#7c3aed" stroke-width="2" marker-end="url(#a6lP)"/>
+
+    <!-- エージェント（中央） -->
+    <rect x="240" y="108" width="240" height="50" rx="10" fill="#0f172a" opacity="0.9"/>
+    <text x="360" y="131" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">GPT-5.2 データエージェント</text>
+    <text x="360" y="148" text-anchor="middle" font-size="10" fill="#94a3b8">ツール呼び出し・SQL生成・クローズドループ</text>
+
+    <!-- 6層（左3つ + 右3つ） -->
+    <!-- Layer 1 -->
+    <line x1="240" y1="133" x2="140" y2="195" stroke="#0ea5e9" stroke-width="1.5"/>
+    <rect x="20" y="182" width="180" height="56" rx="8" fill="#0ea5e9" opacity="0.12" stroke="#0ea5e9" stroke-width="1.5"/>
+    <text x="110" y="203" text-anchor="middle" font-size="11" font-weight="700" fill="#0369a1">Layer 1: Table Usage</text>
+    <text x="110" y="219" text-anchor="middle" font-size="9" fill="#475569">スキーマ・系譜・過去クエリ</text>
+    <text x="110" y="232" text-anchor="middle" font-size="9" fill="#475569">テーブル選定と SQL の土台</text>
+
+    <!-- Layer 2 -->
+    <line x1="240" y1="140" x2="140" y2="262" stroke="#10b981" stroke-width="1.5"/>
+    <rect x="20" y="250" width="180" height="56" rx="8" fill="#10b981" opacity="0.12" stroke="#10b981" stroke-width="1.5"/>
+    <text x="110" y="271" text-anchor="middle" font-size="11" font-weight="700" fill="#047857">Layer 2: Human Annotations</text>
+    <text x="110" y="287" text-anchor="middle" font-size="9" fill="#475569">専門家の注釈・意図・注意点</text>
+    <text x="110" y="300" text-anchor="middle" font-size="9" fill="#475569">スキーマにない意味を固定</text>
+
+    <!-- Layer 3 -->
+    <line x1="240" y1="148" x2="140" y2="330" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect x="20" y="318" width="180" height="56" rx="8" fill="#f59e0b" opacity="0.12" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="110" y="339" text-anchor="middle" font-size="11" font-weight="700" fill="#b45309">Layer 3: Codex Enrichment</text>
+    <text x="110" y="355" text-anchor="middle" font-size="9" fill="#475569">パイプラインコードから導出</text>
+    <text x="110" y="368" text-anchor="middle" font-size="9" fill="#475569">粒度・更新頻度・欠落を補完</text>
+
+    <!-- Layer 4 -->
+    <line x1="480" y1="133" x2="580" y2="195" stroke="#6366f1" stroke-width="1.5"/>
+    <rect x="520" y="182" width="180" height="56" rx="8" fill="#6366f1" opacity="0.12" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="610" y="203" text-anchor="middle" font-size="11" font-weight="700" fill="#4338ca">Layer 4: Institutional</text>
+    <text x="610" y="219" text-anchor="middle" font-size="9" fill="#475569">Slack・Docs・Notion の組織知</text>
+    <text x="610" y="232" text-anchor="middle" font-size="9" fill="#475569">権限付き埋め込みで検索</text>
+
+    <!-- Layer 5 -->
+    <line x1="480" y1="140" x2="580" y2="262" stroke="#ec4899" stroke-width="1.5"/>
+    <rect x="520" y="250" width="180" height="56" rx="8" fill="#ec4899" opacity="0.12" stroke="#ec4899" stroke-width="1.5"/>
+    <text x="610" y="271" text-anchor="middle" font-size="11" font-weight="700" fill="#be185d">Layer 5: Memory</text>
+    <text x="610" y="287" text-anchor="middle" font-size="9" fill="#475569">ユーザー訂正・学びを保存</text>
+    <text x="610" y="300" text-anchor="middle" font-size="9" fill="#475569">グローバル／個人スコープ</text>
+
+    <!-- Layer 6 -->
+    <line x1="480" y1="148" x2="580" y2="330" stroke="#ef4444" stroke-width="1.5"/>
+    <rect x="520" y="318" width="180" height="56" rx="8" fill="#ef4444" opacity="0.12" stroke="#ef4444" stroke-width="1.5"/>
+    <text x="610" y="339" text-anchor="middle" font-size="11" font-weight="700" fill="#b91c1c">Layer 6: Runtime Context</text>
+    <text x="610" y="355" text-anchor="middle" font-size="9" fill="#475569">DWH へライブクエリ</text>
+    <text x="610" y="368" text-anchor="middle" font-size="9" fill="#475569">不足・陳腐化をリアルタイム補完</text>
+
+    <!-- 下段: オフラインパイプライン → Embeddings → RAG -->
+    <rect x="100" y="400" width="520" height="40" rx="8" fill="#0f172a" opacity="0.05" stroke="#64748b" stroke-width="1" stroke-dasharray="4"/>
+    <text x="360" y="425" text-anchor="middle" font-size="12" font-weight="600" fill="#334155">日次パイプライン: Layer 1-4 を正規化 → Embeddings API でベクトル化 → RAG で検索</text>
+
+    <!-- 下段: 出力 -->
+    <line x1="360" y1="440" x2="360" y2="470" stroke="#10b981" stroke-width="2" marker-end="url(#a6lG)"/>
+    <rect x="240" y="470" width="240" height="36" rx="8" fill="#10b981" opacity="0.9"/>
+    <text x="360" y="493" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">SQL 生成 → 回答 → Evals で品質検証</text>
+  </g>
+
+  <defs>
+    <marker id="a6lP" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7c3aed"/></marker>
+    <marker id="a6lG" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981"/></marker>
+  </defs>
+</svg>

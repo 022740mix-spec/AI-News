@@ -1089,6 +1089,9 @@ export const ARTICLES = [
         ]
       }
     ],
+    "figures": [
+      { "src": "articles/diagram-openai-six-layer-rag.svg", "alt": "OpenAI 6層コンテキストの全体像。ユーザーの質問がGPT-5.2データエージェントに入り、左側にLayer 1-3（Table Usage、Human Annotations、Codex Enrichment）、右側にLayer 4-6（Institutional Knowledge、Memory、Runtime Context）が接続。下段で日次パイプラインがEmbeddings APIでベクトル化しRAGで検索する流れ", "caption": "6層コンテキストの全体像 — 各層がエージェントにどう接続するか", "afterParagraph": 3 }
+    ],
     "primarySources": [
       {
         "title": "Inside OpenAI’s in-house data agent",
@@ -1264,6 +1267,9 @@ export const ARTICLES = [
     "readTime": "10分",
     "tags": ["RAG", "ベクトルDB", "Embedding", "入門", "ステップバイステップ"],
     "heroScope": "none",
+    "figures": [
+      { "src": "articles/diagram-rag-pipeline-4steps.svg", "alt": "RAGパイプラインの4ステップ図。Step 1: 取り込み・前処理（PDF/HTML/DBからテキスト抽出→チャンキング→メタデータ付与）、Step 2: ベクトル化・格納（Embeddingモデルでベクトル化→ベクトルDBに格納）、Step 3: 検索（類似検索+BM25+リランキング）、Step 4: 生成（検索結果をプロンプトに含めLLMで回答生成→引用付与）", "caption": "RAG パイプラインの4ステップ — ドキュメントが回答になるまでの流れ", "afterParagraph": 0 }
+    ],
     "primarySources": [
       { "title": "OpenAI Embeddings Guide", "site": "OpenAI", "url": "https://platform.openai.com/docs/guides/embeddings" },
       { "title": "LangChain RAG Tutorial", "site": "LangChain", "url": "https://python.langchain.com/docs/tutorials/rag/" },
