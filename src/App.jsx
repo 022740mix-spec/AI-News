@@ -125,7 +125,13 @@ function richInlineLine(line, mkKey) {
     } else if (m[2] != null) {
       parts.push(<mark key={mkKey()} className="prose-highlight">{m[2]}</mark>);
     } else if (m[3] != null) {
-      parts.push(<span key={mkKey()} className="prose-warning">{m[3]}</span>);
+      const inner = m[3];
+      const codeMatch = inner.match(/^`(.+)`$/);
+      if (codeMatch) {
+        parts.push(<code key={mkKey()} className="prose-code prose-warning">{codeMatch[1]}</code>);
+      } else {
+        parts.push(<span key={mkKey()} className="prose-warning">{inner}</span>);
+      }
     } else if (m[4] != null) {
       parts.push(<code key={mkKey()} className="prose-code">{m[4]}</code>);
     }
