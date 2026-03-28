@@ -1619,24 +1619,26 @@ export const TOOL_REFERENCES = [
       title: "Cursor 日常リファレンス",
       lead: "VS Code ベースの AI ネイティブエディタ。コードを書きながら AI に指示を出す操作が中心。公式は https://docs.cursor.com/ を参照。",
       terms: [
-        // ── 使い方の種類 ──
-        { word: "Cursor の使い方は大きく2パターン", mean: "==パターン1: AI チャット + エージェント中心==（非エンジニア向け）— 自分ではコードを書かず、Composer（Cmd+I）で AI に指示して全部やってもらう。Agent モードにすれば、ファイル作成・編集・ターミナル実行まで AI が自律的に進める。==パターン2: エディタ + AI 補完==（エンジニア向け）— 自分でコードを書きながら、Tab 補完や Cmd+K でピンポイントに AI を使う。コーディングの先を予測するサジェスト機能が便利。" },
-        { word: "Claude Code CLI との併用", mean: "Cursor の統合ターミナル（Ctrl+` で開く）から `claude` を起動すると、Cursor の AI（Composer）と Claude Code の CLI を同時に使える。Composer で大きな設計を指示し、Claude Code で細かい実行を任せる使い分けが効率的。", code: "claude", codeLang: "bash" },
-        // ── AI チャット・エージェント（パターン1: 自分でコードを書かない人向け） ──
-        { word: "Composer: `Cmd+I`（Mac）/ `Ctrl+I`（Win）", mean: "Cmd+I で Composer パネルが開く。「ログイン機能を追加して」「デザインを変えて」のように日本語で指示すると、AI が複数ファイルをまたいで変更を行う。パネル内のドロップダウンで「Agent」を選択すると、自律的にファイル探索・編集・ターミナル実行まで行う。非エンジニアが最もよく使う機能。" },
+        // ── Cursor の3つの使い方 ──
+        {
+          word: "Cursor の使い方は3パターンある",
+          mean: "==A. Cursor の AI チャット（Composer）だけ使う== — 自分ではコードを書かず、日本語で指示して AI に全部やってもらう。非エンジニアに多い使い方。\n==B. Cursor の AI チャット＋自分でもコードを書く== — Tab 補完やインライン編集（Cmd+K）で AI のサジェストを受けながら自分もコードを書く。エンジニア向け。\n==C. Cursor の AI チャット＋ターミナルで Claude Code を使う== — Cursor のエディタ画面で Composer を使いつつ、統合ターミナル（Ctrl+` で開く画面）で Claude Code CLI を起動して併用する。==最も多い組み合わせ==。Composer で大きな設計指示、Claude Code で細かいファイル操作やコマンド実行を分担する。",
+        },
+        // ── A. AI チャット（Composer） ──
+        { word: "Composer: `Cmd+I`（Mac）/ `Ctrl+I`（Win）", mean: "Cursor の AI チャット画面。「ログイン機能を追加して」「デザインを変えて」のように日本語で指示すると、AI が複数ファイルをまたいで変更を行う。パネル内のドロップダウンで「Agent」を選択すると、ファイル探索・編集・ターミナル実行まで自律的に進める。" },
         { word: "Background Agent", mean: "バックグラウンドでタスクを非同期に実行するエージェント。PR 作成、テスト実行、リファクタリングなどを裏で処理しながら、自分は別の作業ができる。" },
-        // ── エディタ補完（パターン2: 自分でコードを書く人向け） ──
-        { word: "インライン編集: `Cmd+K`（Mac）/ `Ctrl+K`（Win）", mean: "エディタ上でコードを選択して Cmd+K を押すと、AI への指示入力欄が出る。「この関数をリファクタして」「エラーハンドリングを追加して」のような短い修正に向く。自分でコードを書く人が使う機能。" },
-        { word: "Tab 補完（サジェスト）", mean: "コード入力中に AI が次に書くべきコードを予測して半透明で表示する。Tab で受け入れ、Esc でスキップ。自分でコードを書くエンジニアにとっては速度が大幅に上がる機能。使用するモデルは設定で切り替えられる。" },
+        // ── B. エディタ補完（自分でコードを書く人向け） ──
+        { word: "Tab 補完（サジェスト）", mean: "コード入力中に AI が次に書くべきコードを予測して半透明で表示する。Tab で受け入れ、Esc でスキップ。自分でコードを書くエンジニアにとって速度が大幅に上がる機能。" },
+        { word: "インライン編集: `Cmd+K`（Mac）/ `Ctrl+K`（Win）", mean: "エディタ上でコードを選択して Cmd+K → AI に修正指示を出す。「この関数をリファクタして」のような短い修正に向く。" },
+        // ── C. ターミナルで Claude Code を併用 ──
+        { word: "Cursor + Claude Code の併用方法", mean: "Cursor の統合ターミナル（Ctrl+` で開く）で `claude` と入力して起動する。Cursor の Composer と Claude Code CLI は別々の AI セッションとして動作するため、それぞれに違う指示を出せる。例: Composer に「全体の設計を考えて」→ Claude Code に「このファイルのテストを書いて」。", code: "claude", codeLang: "bash" },
         // ── 設定 ──
-        { word: "設定: `.cursor/rules`", mean: "プロジェクトごとの AI ルールファイル。使用言語、命名規則、禁止パターンなどを書いておくと AI の出力が安定する。CLAUDE.md と同じ役割。", code: "言語: TypeScript\nフレームワーク: React 19\nスタイル: CSS Modules\n\n禁止:\n- any 型の使用\n- console.log の残置", codeLang: "text" },
-        { word: "設定: モデル選択", mean: "Settings → Models で使用するモデルを選択・追加できる。Claude Opus/Sonnet、GPT-5.4、Gemini など複数モデルを切り替えて使える。タスクに応じて使い分けるのが実用的。" },
+        { word: "設定: `.cursor/rules`", mean: "プロジェクトごとの AI ルールファイル。使用言語、命名規則、禁止パターンなどを書いておくと Cursor の AI の出力が安定する。CLAUDE.md と同じ役割だが、Cursor 専用の設定。", code: "言語: TypeScript\nフレームワーク: React 19\nスタイル: CSS Modules\n\n禁止:\n- any 型の使用\n- console.log の残置", codeLang: "text" },
+        { word: "設定: モデル選択", mean: "Settings → Models で AI モデルを選択できる。Claude Opus/Sonnet、GPT-5.4、Gemini など複数モデルを切り替えて使える。Composer と Tab 補完で別のモデルを使うこともできる。" },
         // ── 料金 ──
         { word: "料金: Hobby（無料）", mean: "月 2,000 回の補完と 50 回のプレミアムリクエスト。個人で試すには十分。" },
-        { word: "料金: Pro（$20/月）", mean: "無制限の補完、500 回のプレミアムリクエスト。日常的にコードを書く開発者向け。" },
+        { word: "料金: Pro（$20/月）", mean: "無制限の補完、500 回のプレミアムリクエスト。日常的に使う人向け。" },
         { word: "料金: Business（$40/席/月）", mean: "チーム管理、SSO、管理者ダッシュボード付き。企業利用はこのプラン。" },
-        // ── Tips ──
-        { word: "統合ターミナルで Claude Code を併用", mean: "Cursor のターミナル（Ctrl+` で開く）から `claude` を起動すると、エディタの AI と CLI の AI を両方使える。Composer で設計、Claude Code で実行の使い分けが効率的。", code: "claude", codeLang: "bash" },
       ],
     },
   },
