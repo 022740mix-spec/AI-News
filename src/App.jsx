@@ -2639,15 +2639,11 @@ const [showFab, setShowFab] = useState(false);
             onOpenRelated={handleSelect}
           />
         ) : siteSection === "home" ? (
-          <div className="blog-layout">
-            <div className="blog-main">
-              <HomePage
-                articles={ARTICLES}
-                onSelect={handleSelect}
-                onSection={switchSection}
-              />
-            </div>
-          </div>
+          <HomePage
+            articles={ARTICLES}
+            onSelect={handleSelect}
+            onSection={switchSection}
+          />
         ) : (
           <div
             className={`blog-layout${siteSection === "guide" ? " blog-layout--guide" : ""}`}
@@ -2793,13 +2789,30 @@ const [showFab, setShowFab] = useState(false);
                 onTagClick={onTagClick}
                 weekRoundups={weekRoundups}
               />
+            ) : siteSection === "reviews" ? (
+              <aside className="desktop-sidebar" aria-label="レビューの目次">
+                <div className="sidebar-panel">
+                  <h3>レビューカテゴリ</h3>
+                  <p className="sidebar-panel-hint">カテゴリを切り替えます。</p>
+                  {[{ id: "all", label: "すべて" }, { id: "models", label: "モデル比較" }, ...REVIEW_CATEGORIES.map((c) => ({ id: c.id, label: c.label }))].map((t) => (
+                    <button
+                      key={t.id}
+                      className={`sidebar-anchor${reviewTab === t.id ? " sidebar-anchor--active" : ""}`}
+                      onClick={() => { setReviewTab(t.id); window.scrollTo(0, 0); }}
+                      style={{ display: "block", width: "100%", textAlign: "left", background: "none", border: "none", cursor: "pointer", font: "inherit" }}
+                    >
+                      {t.label}
+                    </button>
+                  ))}
+                </div>
+              </aside>
             ) : siteSection === "tools" ? (
               <ToolSidebar toolTab={toolTab} toolRef={toolRef} />
             ) : siteSection === "companies" ? (
               <CompaniesSidebar companies={filteredCompanies} />
-            ) : (
+            ) : siteSection === "guide" ? (
               <GuideSidebar guideTab={guideTab} />
-            )}
+            ) : null}
           </div>
         )}
         <SiteFooter />

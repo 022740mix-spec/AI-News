@@ -1146,6 +1146,10 @@ body {
 .sidebar-anchor:hover {
   color: var(--accent);
 }
+.sidebar-anchor--active {
+  color: var(--accent);
+  font-weight: 700;
+}
 
 .sidebar-anchor--nested {
   padding-left: 0.65rem;
