@@ -543,6 +543,36 @@ export const VIBE_CLAUDE_CODE = {
       code: "/cost",
       codeLang: "text",
     },
+    // ── セキュリティ ──
+    {
+      word: "==.env を Claude Code に読ませない==",
+      section: "セキュリティ",
+      mean: "Claude Code は .env ファイルを自動的にメモリに読み込むことが報告されている（Knostic 社調査）。API キーがテストファイルに含まれてコミットされる事故も発生。`.claude/settings.json` の `ignorePaths` に `.env*` を追加して読み込みを防止する。",
+      code: "// .claude/settings.json に追加:\n{\n  \"ignorePaths\": [\".env*\", \"*.pem\", \"*credentials*\"]\n}",
+      codeLang: "json",
+    },
+    {
+      word: "学習にコードを使わせない設定",
+      section: "セキュリティ",
+      mean: "Commercial プラン（Team/Enterprise/API）はデフォルトで学習不使用。Consumer（Free/Pro/Max）は claude.ai/settings/data-privacy-controls でオプトアウト可能。テレメトリは環境変数 `DISABLE_TELEMETRY=1` で無効化できる。",
+    },
+    {
+      word: "==--dangerously-skip-permissions を使わない==",
+      section: "セキュリティ",
+      mean: "全パーミッションをバイパスして完全自律実行するフラグ。ファイル削除・システムコマンドが確認なしで実行される。ホームディレクトリ全削除の事故報告あり。==ホストマシンでは絶対に使わず、コンテナ / VM 内のみで使用==。代わりに Auto Mode（分類器による安全チェック付き）を使う。",
+    },
+    {
+      word: "会話を保存する: `/export`",
+      section: "セキュリティ",
+      mean: "モデル改善不許可の場合、会話データは30日で削除される。`/export` で会話をファイルに保存。ローカルには `~/.claude/projects/` にセッションデータが保存されている。Hooks の PostSession で自動保存スクリプトも設定可能。",
+      code: "/export",
+      codeLang: "text",
+    },
+    {
+      word: "外部スキルファイルの精査",
+      section: "セキュリティ",
+      mean: "GitHub のスキルファイルの13.4%にクリティカルな問題が含まれていた（Snyk 調査）。隠し文字やプロンプトインジェクションが含まれている可能性がある。==採用前に AI にファイル内容を分析させ、丸ごとではなく部分的に採用する==。",
+    },
   ],
 };
 
@@ -1869,6 +1899,10 @@ export const TOOL_REFERENCES = [
         { word: "Notepads（メモ帳機能）", section: "実践Tips", mean: "Cursor 内にメモを残せる機能。プロジェクトの設計メモ、AI への定型指示、よく使うプロンプトなどを保存しておける。Chat や Composer から `@notepad名` で参照できる。" },
         { word: "コンテキストが足りなくなったら", section: "実践Tips", mean: "長い会話で AI の回答が的外れになってきたら、Composer の「New Chat」で新しいセッションを始める。Cursor は Chat ごとに独立したコンテキストを持つので、話題を変えるときは新規が安全。" },
         { word: "プライバシーモード", section: "実践Tips", mean: "Settings → Privacy で、コードが Cursor のサーバーに送信される範囲を制御できる。企業で機密コードを扱う場合は確認が必要。Privacy Mode を有効にするとコードがトレーニングに使われなくなる。" },
+        // ── セキュリティ ──
+        { word: ".env を AI に読ませない", section: "セキュリティ", mean: "`.cursorignore` に `.env*` を記述して AI のコンテキストから除外する。.gitignore と同じ書式。", code: "# .cursorignore\n.env\n.env.*\n*.pem\n*credentials*", codeLang: "text" },
+        { word: "==Ghost Mode（最も制限的）==", section: "セキュリティ", mean: "Privacy Mode の上位設定。テレメトリ、チャットストレージ、メモリ/インデックス同期をすべて無効化し、全データをオンデバイスに保持する。企業で最も機密性の高いプロジェクトに使う。" },
+        { word: "学習にコードを使わせない", section: "セキュリティ", mean: "Privacy Mode を有効にすると、コードがモデルプロバイダーに保存されず、トレーニングにも使用されない。Cursor は OpenAI・Anthropic・Fireworks との間でゼロデータリテンション（ZDR）契約がある。チームメンバーはデフォルトで Privacy Mode が強制有効。" },
         // ── コンテキスト指定 ──
         { word: "`@file` でファイルを指定", section: "コンテキスト指定", mean: "Composer や Chat 内で `@ファイル名` と打つと、そのファイルの内容を AI の文脈に含められる。関連ファイルを明示的に指定すると AI の回答精度が上がる。" },
         { word: "`@folder` でフォルダを指定", section: "コンテキスト指定", mean: "`@フォルダ名` でフォルダ内の全ファイルを文脈に含める。「@src このフォルダの構成を説明して」のように使う。" },
@@ -1976,37 +2010,6 @@ export const TOOL_REFERENCES = [
     },
   },
   {
-    id: "cross-tool",
-    label: "逆引き辞書",
-    ref: {
-      id: "ref-cross-tool",
-      title: "やりたいこと逆引き辞書 — 各ツールでの操作方法",
-      lead: "「ファイルを検索したい」「テストを書きたい」など、やりたいことから各ツールの操作方法を引ける辞書。",
-      terms: [
-        // ── ファイル操作 ──
-        { word: "ファイルを検索する", section: "ファイル操作", mean: "**Claude Code**: Read / Glob ツールで自動検索。指示に含めれば自動で探す。\n**Cursor**: `Cmd+P` でファイル名検索、`@file` で AI に指定。\n**Codex**: タスク指示に含めればサンドボックス内で検索。\n**Copilot**: `@workspace` で全体検索、`#file` で指定。\n**Gemini CLI**: 指示に含めれば自動で探す。200万トークンなら全ファイル読み込みも可能。" },
-        { word: "複数ファイルを同時に編集する", section: "ファイル操作", mean: "**Claude Code**: 自然言語で指示すれば複数ファイルを自律的に編集。\n**Cursor**: Composer（`Cmd+I`）でマルチファイル編集。Agent モードで自律的に複数ファイルを変更。\n**Codex**: タスク指示に含めればサンドボックス内で複数ファイルを変更。\n**Copilot**: Agent Mode で複数ファイル変更。\n**Gemini CLI**: 自然言語で指示すれば複数ファイルを編集。" },
-        { word: "変更を元に戻す", section: "ファイル操作", mean: "**Claude Code**: `git stash` や `git checkout -- ファイル名` で Git 経由で戻す。\n**Cursor**: Composer の Accept / Reject ボタンで個別に取消。Git で `git stash` も可。\n**Codex**: PR をマージしなければ変更は反映されない。PR を Close する。\n**Copilot**: Agent Mode の Accept / Discard で個別に取消。\n**Aider**: `/undo` コマンドで直前の変更をロールバック。" },
-        // ── テスト ──
-        { word: "テストを書く", section: "テスト", mean: "**Claude Code**: 「このファイルのテストを書いて」と指示。テストフレームワークは CLAUDE.md で指定。\n**Cursor**: Composer で「テストを書いて」と指示。.cursor/rules でフレームワーク指定。\n**Codex**: 「テストを追加して全部パスさせて」とタスク投入。サンドボックスで実行まで行う。\n**Copilot**: 関数を選択 → Chat で「テストを書いて」。`/tests` スラッシュコマンドも使える。\n**Gemini CLI**: 「テストを書いて」と指示。" },
-        { word: "テストを実行する", section: "テスト", mean: "**Claude Code**: Bash ツールで `npm test` 等を自動実行。Hooks で commit 前に自動テストも設定可能。\n**Cursor**: 統合ターミナルで手動実行。Agent モードなら自動実行も。\n**Codex**: サンドボックス内でテスト自動実行。結果は PR に反映。\n**Copilot**: Agent Mode でターミナルコマンドとして実行。\n**Gemini CLI**: ターミナルで自動実行。" },
-        // ── Git 操作 ──
-        { word: "コミットする", section: "Git 操作", mean: "**Claude Code**: 変更内容を自動解析してコミットメッセージを生成・コミット。\n**Cursor**: 統合ターミナルから手動で `git commit`。AI はコミットしない。\n**Codex**: クラウドで PR を自動作成。コミットは自動。\n**Copilot**: 統合ターミナルから手動。GitHub 上で Coding Agent が PR 作成。\n**Aider**: 変更ごとに自動コミット（設定で無効化可）。" },
-        { word: "PR（Pull Request）を作成する", section: "Git 操作", mean: "**Claude Code**: `gh pr create` を Bash で実行。指示すれば PR 作成まで自律的に行う。\n**Cursor**: Background Agent で PR 作成可能。\n**Codex**: タスク完了後に自動で PR 作成（標準ワークフロー）。\n**Copilot**: Coding Agent が Issue から PR を自動作成。\n**Gemini CLI**: `gh` コマンド経由で PR 作成可能。" },
-        // ── 設定 ──
-        { word: "プロジェクトルールを設定する", section: "設定", mean: "**Claude Code**: `CLAUDE.md` をプロジェクトルートに置く。\n**Cursor**: `.cursor/rules` にルールファイルを置く。\n**Codex**: `AGENTS.md`（または `codex.md`）をプロジェクトルートに置く。\n**Copilot**: `.github/copilot-instructions.md` を置く。\n**Gemini CLI**: `GEMINI.md` をプロジェクトルートに置く（公式ドキュメントで確認）。" },
-        { word: "AI に読ませたくないファイルを除外する", section: "設定", mean: "**Claude Code**: `.claude/settings.json` の `ignorePaths` で指定。\n**Cursor**: `.cursorignore` に記述（.gitignore と同じ書式）。\n**Codex**: `codex.json` でサンドボックスに含めないファイルを指定。\n**Copilot**: VS Code の `files.exclude` 設定と Copilot の設定で制御。\n**Gemini CLI**: 設定ファイルで指定（公式ドキュメント参照）。" },
-        // ── デバッグ ──
-        { word: "エラーの原因を調べる", section: "デバッグ", mean: "**Claude Code**: エラーメッセージを貼り付けるか、ログファイルを読ませて分析させる。\n**Cursor**: エラーの赤い波線にカーソル → 「Fix with AI」。ターミナルエラーは「Ask AI」ボタン。\n**Codex**: タスクで「このエラーを修正して」と指示。\n**Copilot**: `@terminal このエラーの原因は？` で直近のターミナル出力を解析。\n**Gemini CLI**: エラーメッセージを貼り付けて分析させる。" },
-        // ── コード理解 ──
-        { word: "コードの意味を説明してもらう", section: "コード理解", mean: "**Claude Code**: 「このファイルを説明して」と指示。1M コンテキストで広範囲を把握。\n**Cursor**: コードを選択 → `Cmd+L` → 「これを説明して」。\n**Codex**: `-q` モードで質問のみ可能。\n**Copilot**: コードを選択 → 右クリック → 「Explain」。`@workspace` でプロジェクト全体の説明も。\n**Gemini CLI**: 200 万トークンで大規模コードベースの全体像を説明させるのに強い。" },
-        { word: "プロジェクト全体の構造を把握する", section: "コード理解", mean: "**Claude Code**: 起動時に自動でプロジェクト構造を読み取る。\n**Cursor**: `@codebase このプロジェクトの構造を説明して` で全体把握。\n**Copilot**: `@workspace` で全体を文脈に含める。\n**Gemini CLI**: 200 万トークンのコンテキストで全ファイルを一括読み込み。大規模プロジェクトでの全体把握に最も強い。" },
-        // ── 外部連携 ──
-        { word: "外部ツール・API と連携する", section: "外部連携", mean: "**Claude Code**: MCP サーバーで DB・ブラウザ・SaaS API と連携。Hooks で前後処理。\n**Cursor**: MCP サーバー対応。拡張機能でも連携可能。\n**Codex**: サンドボックス内での実行に限定。外部 API は制限あり。\n**Copilot**: VS Code 拡張機能エコシステムで幅広い連携。\n**Gemini CLI**: MCP 対応。Google Cloud サービスとネイティブ統合。" },
-      ],
-    },
-  },
-  {
     id: "copilot",
     label: "VS Code + Copilot",
     ref: {
@@ -2034,6 +2037,9 @@ export const TOOL_REFERENCES = [
         { word: "`@workspace` を活用する", section: "実践Tips", mean: "質問するときに `@workspace` をつけるだけで、AI がプロジェクト全体のファイル構成を把握した上で回答する。つけないと開いているファイルだけが文脈になるので、回答の精度が大きく変わる。" },
         { word: "カスタム指示の書き方", section: "実践Tips", mean: "`.github/copilot-instructions.md` に書く内容は、プロジェクトの技術スタック、命名規則、禁止パターンの3つが最低限。多く書きすぎると AI が混乱するので、==1ファイル20行以内==が目安。" },
         { word: "企業での導入判断ポイント", section: "実践Tips", mean: "Business プラン以上で IP 補償（AI 生成コードの著作権リスクを GitHub が負う）がつく。企業法務が気にするポイント。また、組織のポリシーで「Copilot の学習にコードを使わせない」設定ができる。" },
+        // ── セキュリティ ──
+        { word: "==学習にコードを使わせない（重要変更）==", section: "セキュリティ", mean: "2026年4月24日以降、Free/Pro/Pro+ ユーザーのインタラクションデータ（入力・出力・コードスニペット）がデフォルトで AI モデルトレーニングに使用される。==オプトアウトが必須==: /settings/copilot/features で「Allow GitHub to use my data for AI model training」を OFF にする。Business/Enterprise プランはこの変更の対象外。" },
+        { word: ".env の保護", section: "セキュリティ", mean: "VS Code の `files.exclude` で .env を非表示にしてもCopilotは読める場合がある。`.gitignore` への追加が最低限必須。Enterprise プランでは組織レベルのポリシーで特定ファイルパターンを除外できる。" },
         { word: "Copilot + Claude Code の併用", section: "実践Tips", mean: "VS Code のターミナルから Claude Code CLI を起動すると、Copilot（エディタ内 AI）と Claude Code（ターミナル AI）を同時に使える。Copilot でサジェスト + Claude Code で大きなタスク実行の組み合わせが可能。", code: "claude", codeLang: "bash" },
         // ── テスト・コードレビュー ──
         { word: "テスト生成", section: "テスト・レビュー", mean: "関数を選択して Chat で「このコードのテストを書いて」と指示すると、テストコードを生成してくれる。テストフレームワーク（Jest, Vitest 等）を `copilot-instructions.md` に指定しておくと的確なテストが出る。" },
@@ -2079,6 +2085,41 @@ export const TOOL_REFERENCES = [
         { word: "SharePoint のデータを AI で使う", section: "実践Tips", mean: "SharePoint の PDF を AI（RAG等）で活用するには、PDF → Markdown / JSON への変換が必要。Azure AI Document Intelligence や Power Automate でフローを組む。元の PDF は SharePoint に残し、AI 用の変換データを別途管理する二重管理が実運用では避けられない。" },
         { word: "==Claude Code と Power Apps の接点==", section: "実践Tips", mean: "Claude Code で React フロントエンドをバイブコーディングで高速に作り、バックエンドに Power Apps Code Apps 経由で Dataverse を使う構成が可能。また、PCF コンポーネントの React コードを Claude Code で生成し、Power Apps に組み込むワークフローも有効。認証まわりの MSAL 設定や Dataverse API の呼び出しコードも Claude Code で生成できる。" },
         { word: "M365 ライセンスと Power Apps の関係", section: "実践Tips", mean: "E3（$39/月）: Entra ID + 標準コネクタのみの Power Apps。E5（$60/月）: E3 + セキュリティ強化。E7（$99/月）: E5 + Copilot + Agent 365。Power Apps Premium（$20/月追加）: Dataverse + プレミアムコネクタ。詳細は M365 E7 記事を参照。" },
+      ],
+    },
+  },
+  {
+    id: "cross-tool",
+    label: "逆引き辞書",
+    ref: {
+      id: "ref-cross-tool",
+      title: "やりたいこと逆引き辞書 — 各ツールでの操作方法",
+      lead: "「ファイルを検索したい」「テストを書きたい」など、やりたいことから各ツールの操作方法を引ける辞書。各ツールの方法を改行で区切って表示。",
+      terms: [
+        // ── ファイル操作 ──
+        { word: "ファイルを検索する", section: "ファイル操作", mean: "**Claude Code**: Read / Glob ツールで自動検索。指示に含めれば自動で探す。\n**Cursor**: `Cmd+P` でファイル名検索、`@file` で AI に指定。\n**Codex**: タスク指示に含めればサンドボックス内で検索。\n**Copilot**: `@workspace` で全体検索、`#file` で指定。\n**Gemini CLI**: 指示に含めれば自動で探す。200万トークンなら全ファイル読み込みも可能。" },
+        { word: "複数ファイルを同時に編集する", section: "ファイル操作", mean: "**Claude Code**: 自然言語で指示すれば複数ファイルを自律的に編集。\n**Cursor**: Composer（`Cmd+I`）でマルチファイル編集。Agent モードで自律的に複数ファイルを変更。\n**Codex**: タスク指示に含めればサンドボックス内で複数ファイルを変更。\n**Copilot**: Agent Mode で複数ファイル変更。\n**Gemini CLI**: 自然言語で指示すれば複数ファイルを編集。" },
+        { word: "変更を元に戻す", section: "ファイル操作", mean: "**Claude Code**: `git stash` や `git checkout -- ファイル名` で Git 経由で戻す。\n**Cursor**: Composer の Accept / Reject ボタンで個別に取消。Git で `git stash` も可。\n**Codex**: PR をマージしなければ変更は反映されない。PR を Close する。\n**Copilot**: Agent Mode の Accept / Discard で個別に取消。\n**Aider**: `/undo` コマンドで直前の変更をロールバック。" },
+        // ── テスト ──
+        { word: "テストを書く", section: "テスト", mean: "**Claude Code**: 「このファイルのテストを書いて」と指示。テストフレームワークは CLAUDE.md で指定。\n**Cursor**: Composer で「テストを書いて」と指示。.cursor/rules でフレームワーク指定。\n**Codex**: 「テストを追加して全部パスさせて」とタスク投入。サンドボックスで実行まで行う。\n**Copilot**: 関数を選択 → Chat で「テストを書いて」。`/tests` スラッシュコマンドも使える。\n**Gemini CLI**: 「テストを書いて」と指示。" },
+        { word: "テストを実行する", section: "テスト", mean: "**Claude Code**: Bash ツールで `npm test` 等を自動実行。Hooks で commit 前に自動テストも設定可能。\n**Cursor**: 統合ターミナルで手動実行。Agent モードなら自動実行も。\n**Codex**: サンドボックス内でテスト自動実行。結果は PR に反映。\n**Copilot**: Agent Mode でターミナルコマンドとして実行。\n**Gemini CLI**: ターミナルで自動実行。" },
+        // ── Git 操作 ──
+        { word: "コミットする", section: "Git 操作", mean: "**Claude Code**: 変更内容を自動解析してコミットメッセージを生成・コミット。\n**Cursor**: 統合ターミナルから手動で `git commit`。AI はコミットしない。\n**Codex**: クラウドで PR を自動作成。コミットは自動。\n**Copilot**: 統合ターミナルから手動。GitHub 上で Coding Agent が PR 作成。\n**Aider**: 変更ごとに自動コミット（設定で無効化可）。" },
+        { word: "PR（Pull Request）を作成する", section: "Git 操作", mean: "**Claude Code**: `gh pr create` を Bash で実行。指示すれば PR 作成まで自律的に行う。\n**Cursor**: Background Agent で PR 作成可能。\n**Codex**: タスク完了後に自動で PR 作成（標準ワークフロー）。\n**Copilot**: Coding Agent が Issue から PR を自動作成。\n**Gemini CLI**: `gh` コマンド経由で PR 作成可能。" },
+        // ── 設定 ──
+        { word: "プロジェクトルールを設定する", section: "設定", mean: "**Claude Code**: `CLAUDE.md` をプロジェクトルートに置く。\n**Cursor**: `.cursor/rules` にルールファイルを置く。\n**Codex**: `AGENTS.md`（または `codex.md`）をプロジェクトルートに置く。\n**Copilot**: `.github/copilot-instructions.md` を置く。\n**Gemini CLI**: `GEMINI.md` をプロジェクトルートに置く（公式ドキュメントで確認）。" },
+        { word: "AI に読ませたくないファイルを除外する", section: "設定", mean: "**Claude Code**: `.claude/settings.json` の `ignorePaths` で `.env*` を追加。\n**Cursor**: `.cursorignore` に `.env*` を記述（.gitignore と同じ書式）。\n**Codex**: `codex.json` でサンドボックスに含めないファイルを指定。\n**Copilot**: VS Code の `files.exclude` 設定と Copilot の設定で制御。\n**Gemini CLI**: 設定ファイルで指定（公式ドキュメント参照）。" },
+        // ── セキュリティ ──
+        { word: ".env / API キーの漏洩を防ぐ", section: "セキュリティ", mean: "**Claude Code**: `.claude/settings.json` の `ignorePaths` に `.env*` を追加。Hooks の PreCommit で gitleaks 等を実行。\n**Cursor**: `.cursorignore` に `.env*` を記述。Privacy Mode を有効化。\n**Codex**: サンドボックスで動作するためローカル .env は含まれにくいが、codex.json で明示的に除外。\n**Copilot**: VS Code の files.exclude で .env を非表示に。\n**共通**: `.gitignore` に `.env*` を必ず追加。git-secrets や gitleaks をプレコミットフックに設定。" },
+        { word: "コードの学習利用を防ぐ", section: "セキュリティ", mean: "**Claude Code**: Commercial プラン（Team/Enterprise/API）は学習不使用。Consumer は claude.ai/settings で設定。\n**Cursor**: Privacy Mode（Settings > General）で学習不使用。Ghost Mode で完全無効化。\n**Copilot**: /settings/copilot/features で「AI model training」を OFF。Business/Enterprise は契約で不使用。==4/24〜 Free/Pro はデフォルト ON なので要確認==。\n**Gemini CLI**: CLI 内にオプトアウト設定なし（2026年3月時点で課題あり）。" },
+        { word: "会話履歴を保存する", section: "セキュリティ", mean: "**Claude Code**: `/export` で会話をファイルに保存。`--continue` / `--resume` でセッション再開。ローカルに `~/.claude/projects/` に保存（最大30日）。Hooks で自動保存も可能。\n**Cursor**: チャット履歴はエディタ内に保持。新規チャットで独立。\n**Codex**: ChatGPT の画面に履歴が残る。Codex タスク一覧で進捗・結果を確認可能。\n**Copilot**: VS Code の Chat パネルに履歴。セッション単位で保持。" },
+        // ── デバッグ ──
+        { word: "エラーの原因を調べる", section: "デバッグ", mean: "**Claude Code**: エラーメッセージを貼り付けるか、ログファイルを読ませて分析させる。\n**Cursor**: エラーの赤い波線にカーソル → 「Fix with AI」。ターミナルエラーは「Ask AI」ボタン。\n**Codex**: タスクで「このエラーを修正して」と指示。\n**Copilot**: `@terminal このエラーの原因は？` で直近のターミナル出力を解析。\n**Gemini CLI**: エラーメッセージを貼り付けて分析させる。" },
+        // ── コード理解 ──
+        { word: "コードの意味を説明してもらう", section: "コード理解", mean: "**Claude Code**: 「このファイルを説明して」と指示。1M コンテキストで広範囲を把握。\n**Cursor**: コードを選択 → `Cmd+L` → 「これを説明して」。\n**Codex**: `-q` モードで質問のみ可能。\n**Copilot**: コードを選択 → 右クリック → 「Explain」。`@workspace` でプロジェクト全体の説明も。\n**Gemini CLI**: 200 万トークンで大規模コードベースの全体像を説明させるのに強い。" },
+        { word: "プロジェクト全体の構造を把握する", section: "コード理解", mean: "**Claude Code**: 起動時に自動でプロジェクト構造を読み取る。\n**Cursor**: `@codebase このプロジェクトの構造を説明して` で全体把握。\n**Copilot**: `@workspace` で全体を文脈に含める。\n**Gemini CLI**: 200 万トークンのコンテキストで全ファイルを一括読み込み。大規模プロジェクトでの全体把握に最も強い。" },
+        // ── 外部連携 ──
+        { word: "外部ツール・API と連携する", section: "外部連携", mean: "**Claude Code**: MCP サーバーで DB・ブラウザ・SaaS API と連携。Hooks で前後処理。\n**Cursor**: MCP サーバー対応。拡張機能でも連携可能。\n**Codex**: サンドボックス内での実行に限定。外部 API は制限あり。\n**Copilot**: VS Code 拡張機能エコシステムで幅広い連携。\n**Gemini CLI**: MCP 対応。Google Cloud サービスとネイティブ統合。" },
       ],
     },
   },

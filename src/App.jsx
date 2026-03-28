@@ -353,8 +353,20 @@ function syncDocumentSeo(ctx) {
 function GuideLinkifiedP({ text, className }) {
   let k = 0;
   const mkKey = () => `glp-${k++}`;
-  const nodes = richInlineLine(text, mkKey);
-  return <p className={className}>{nodes}</p>;
+  const lines = String(text).split("\n");
+  if (lines.length <= 1) {
+    return <p className={className}>{richInlineLine(text, mkKey)}</p>;
+  }
+  return (
+    <p className={className}>
+      {lines.map((line, i) => (
+        <Fragment key={mkKey()}>
+          {i > 0 && <br />}
+          {richInlineLine(line, mkKey)}
+        </Fragment>
+      ))}
+    </p>
+  );
 }
 
 const FILTERS = [
