@@ -952,6 +952,39 @@ body {
   .company-dl {
     grid-template-columns: 1fr;
   }
+  .glossary-dl {
+    font-size: 0.7rem;
+  }
+  .glossary-dl__term {
+    font-size: 0.72rem;
+    word-break: break-all;
+  }
+  .guide-section__title {
+    font-size: 1rem;
+  }
+  .guide-section__lead {
+    font-size: 0.78rem;
+  }
+  .vibe-practical-sub__title {
+    font-size: 0.82rem;
+  }
+  .vibe-practical-sub__body {
+    font-size: 0.75rem;
+  }
+  .setup-step__label {
+    font-size: 0.75rem;
+  }
+  .section-site-nav-inner {
+    gap: 0;
+  }
+  .section-site-tab {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.72rem;
+  }
+  .filter-tab {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.7rem;
+  }
 
   .company-dl dt {
     margin-top: 0.35rem;
@@ -1776,6 +1809,20 @@ body {
   white-space: pre;
   word-break: normal;
   color: var(--text);
+}
+@media (max-width: 560px) {
+  .code-block__pre {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.72rem;
+    line-height: 1.5;
+  }
+  .code-block__pre code {
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  .code-block {
+    margin: 0.5rem 0;
+  }
 }
 
 /* ── レビュー比較テーブル ── */
