@@ -248,97 +248,120 @@ export const VIBE_CLAUDE_CODE = {
   lead: "起動してからの日常操作で大事なところだけ。導入手順は公式 https://docs.anthropic.com/en/docs/claude-code/overview を参照。Claude Code はターミナル（Bash や PowerShell などのコマンド入力画面）で動作する。Bash とは Mac/Linux の標準的なコマンド入力環境のことで、Windows では Git Bash や WSL で使える。",
   terms: [
     // ── 使い方の種類 ──
-    { word: "A. デスクトップアプリで使う", mean: "Claude Code の専用アプリ（Windows / Mac）を起動して使う。独自の画面でファイルツリーやチャットが見える。マウス操作で直感的に使いたい人向け。ターミナルに慣れていない人はここから始めると入りやすい。" },
-    { word: "B. Cursor / VS Code のターミナルから使う", mean: "Cursor や VS Code の統合ターミナル（Ctrl+` で開く）から `claude` コマンドで起動する。エディタの AI（Composer 等）と Claude Code CLI を同時に使える。==最も多い使い方==。", code: "claude", codeLang: "bash" },
-    { word: "C. 単体のターミナルから使う", mean: "Git Bash、PowerShell、Windows Terminal などから直接 `claude` を起動する。エディタを使わず CLI だけで完結させたい場合や、CI/CD（自動化）から呼び出す場合に使う。" },
-    { word: "==どの方法でも共通==", mean: "コマンド（`claude`, `claude -c` 等）、設定ファイル（CLAUDE.md, スキル）、Hooks はすべて共通で動作する。違いは見た目とエディタとの連携のしやすさだけ。" },
+    { word: "A. デスクトップアプリで使う", section: "使い方の種類", mean: "Claude Code の専用アプリ（Windows / Mac）を起動して使う。独自の画面でファイルツリーやチャットが見える。マウス操作で直感的に使いたい人向け。ターミナルに慣れていない人はここから始めると入りやすい。" },
+    { word: "B. Cursor / VS Code のターミナルから使う", section: "使い方の種類", mean: "Cursor や VS Code の統合ターミナル（Ctrl+` で開く）から `claude` コマンドで起動する。エディタの AI（Composer 等）と Claude Code CLI を同時に使える。==最も多い使い方==。", code: "claude", codeLang: "bash" },
+    { word: "C. 単体のターミナルから使う", section: "使い方の種類", mean: "Git Bash、PowerShell、Windows Terminal などから直接 `claude` を起動する。エディタを使わず CLI だけで完結させたい場合や、CI/CD（自動化）から呼び出す場合に使う。" },
+    { word: "==どの方法でも共通==", section: "使い方の種類", mean: "コマンド（`claude`, `claude -c` 等）、設定ファイル（CLAUDE.md, スキル）、Hooks はすべて共通で動作する。違いは見た目とエディタとの連携のしやすさだけ。" },
     // ── 起動・セッション ──
     {
       word: "起動: `claude`",
+      section: "起動・セッション",
       mean: "対話セッションを開始する。まず `cd`（change directory = フォルダ移動コマンド）でプロジェクトのフォルダに移動してから実行する。こうすると Claude がそのフォルダ内のファイル構成を正しく把握できる。`cd ..` で1つ上のフォルダに戻れる。",
       code: "cd C:\\Users\\あなた\\Projects\\my-app\nclaude",
     },
     {
       word: "再開: `claude -c`",
+      section: "起動・セッション",
       mean: "直近のセッション（会話の続き）を再開する。ターミナルを一度閉じても、同じフォルダで `claude -c` と打てば前回の会話から続けられる。最もよく使うオプション。",
       code: "claude -c",
     },
     {
       word: "非対話: `claude -p \"指示\"`",
+      section: "起動・セッション",
       mean: "1回だけ質問して終了するモード。`|`（パイプ）はコマンドの出力を次のコマンドに渡す記号。例えば `cat spec.md | claude -p \"...\"` は、spec.md ファイルの中身を Claude に読ませて指示を実行させる、という意味。",
       code: "cat spec.md | claude -p \"この仕様に沿ってテストを書いて\"",
     },
     // ── 権限モード ──
     {
       word: "権限: `--permission-mode`",
+      section: "権限モード",
       mean: "plan（提案のみ）/ acceptEdits（編集は自動、Bash は確認）/ bypassPermissions（全自動）を選ぶ。Shift+Tab で対話中に切替可能。",
       code: "claude --permission-mode acceptEdits",
     },
     {
       word: "Auto: `--enable-auto-mode`",
+      section: "権限モード",
       mean: "リスク分類で安全な操作の確認を減らすモード。Team プラン + Opus/Sonnet 4.6 が条件。auto は「全部スキップ」ではなく「低リスクだけスキップ」。",
       code: "claude --enable-auto-mode",
     },
     {
       word: "!!`--dangerously-skip-permissions`!!",
+      section: "権限モード",
       mean: "Claude がファイルを編集したりコマンドを実行する前の確認ダイアログを全てスキップする。==壊れても問題ない練習用の環境（＝サンドボックス: 本番データが入っていない、やり直しがきく隔離された作業場所）以外では絶対に使わないこと==。大事なファイルがあるフォルダで使うと、意図しない削除や上書きが起きるリスクがある。",
       code: "claude --dangerously-skip-permissions",
     },
     // ── セッション内操作 ──
     {
       word: "操作: `/clear`",
+      section: "セッション内操作",
       mean: "会話コンテキストをリセットする。話題を変えたいとき、トークンを節約したいときに使う。",
       code: "/clear",
     },
     {
       word: "操作: `/compact`",
+      section: "セッション内操作",
       mean: "会話履歴を要約して圧縮する。長い作業で「コンテキストが足りない」と言われたらこれ。",
       code: "/compact",
     },
     {
       word: "操作: `/cost`",
+      section: "セッション内操作",
       mean: "現在のセッションで使ったトークン数と料金の概算を表示する。",
       code: "/cost",
     },
     {
+      word: "ステータスライン表示",
+      section: "セッション内操作",
+      mean: "ターミナル下部に現在使用中のモデル名、残りのトークン使用量、セッション時間などを常時表示する機能。Settings で `statusLine` を有効にするか、`/config` から設定できる。使用量の上限が近づいているかを把握するのに便利。",
+    },
+    {
       word: "操作: `Esc`",
+      section: "セッション内操作",
       mean: "実行中の処理をキャンセルする。ファイル編集中でも止められる。暴走したら即 Esc。",
     },
     // ── 実践で知っておくべきこと ──
     {
       word: "==承認プロンプト（Y/n）の意味==",
+      section: "実践で知っておくべきこと",
       mean: "Claude がファイルを編集したりコマンドを実行しようとすると「Allow?」や「Y/n」の確認が出る。Y（Yes）で許可、n（No）で拒否。何を変更するのか表示されるので、==必ず内容を確認してから Y を押す==。よくわからないまま Y を連打するとファイルが壊れることがある。",
     },
     {
       word: "==コンテキストが足りなくなったら==",
+      section: "実践で知っておくべきこと",
       mean: "長い会話を続けると「コンテキストが上限に近づいています」と警告が出る。Claude の記憶容量（コンテキストウィンドウ）には限りがあり、古い会話内容から忘れていく。対処: `/compact` で会話を要約圧縮するか、`/clear` でリセットして新しい会話を始める。大事な前提は毎回伝え直すのが安全。",
     },
     {
       word: "Claude は全ファイルを最初から読んでいるわけではない",
+      section: "実践で知っておくべきこと",
       mean: "Claude Code はプロジェクトのフォルダにいるが、全ファイルを常に把握しているわけではない。必要に応じてファイルを読みに行く仕組み。「このファイルを読んで」と明示的に指示すると確実。大きなプロジェクトでは、関連するファイルを自分から教えてあげると精度が上がる。",
     },
     {
       word: "==Claude の変更を元に戻す方法==",
+      section: "実践で知っておくべきこと",
       mean: "Claude がファイルを壊してしまった場合、Git を使って元に戻せる。`git diff` で何が変わったかを確認し、`git checkout ファイル名` で特定のファイルを元に戻す。まだコミット（保存確定）していなければ、すべての変更を `git stash` で一時退避できる。==だから Git を使うことが大事==。",
       code: "git diff\ngit checkout src/App.jsx\ngit stash",
       codeLang: "bash",
     },
     {
       word: "新しいセッションを始めるタイミング",
+      section: "実践で知っておくべきこと",
       mean: "話題が大きく変わるとき（例: バグ修正 → 新機能追加）は新しいセッションを始めた方がよい。古い会話の文脈が残っていると、Claude が混乱して的外れな回答をすることがある。同じ話題の続きなら `claude -c` で再開、別の話題なら `claude` で新規開始。",
     },
     {
       word: "==差分（diff）を必ず確認する==",
+      section: "実践で知っておくべきこと",
       mean: "Claude がファイルを編集すると、変更前と変更後の差分（diff）が表示される。緑色が追加された行、赤色が削除された行。コミットする前にこの差分を読んで、意図した変更かどうか確認する習慣をつける。わからない部分があれば Claude に「この変更は何をしているの？」と聞けばよい。",
     },
     {
       word: "Plan モードで先に計画を立てる",
+      section: "実践で知っておくべきこと",
       mean: "大きな変更をする前に `--permission-mode plan` で起動するか、会話の中で「まず計画を立てて、実行はしないで」と指示する。Claude が何をしようとしているかを先に確認でき、想定外の変更を防げる。",
       code: "claude --permission-mode plan",
       codeLang: "bash",
     },
     {
       word: "`/doctor` で環境を診断",
+      section: "実践で知っておくべきこと",
       mean: "Claude Code が正しく動作しているか、設定に問題がないかを診断するコマンド。ツールのバージョン、API 接続、MCP サーバーの状態などを確認できる。何かおかしいときはまずこれを実行する。",
       code: "/doctor",
       codeLang: "text",
@@ -346,94 +369,117 @@ export const VIBE_CLAUDE_CODE = {
     // ── 設定ファイル ──
     {
       word: "設定: `CLAUDE.md`",
+      section: "設定ファイル",
       mean: "プロジェクトルートに置く指示書。コーディング規約・禁止事項・プロジェクト情報を書く。Claude が毎回読み込む最重要ファイル。",
       code: "# プロジェクト設定\n\n## 基本方針\n- 応答は日本語で行う\n- コード変更後は必ずビルド検証\n\n## 技術スタック\n- React 19 + Vite\n- vanilla CSS",
       codeLang: "markdown",
     },
     {
       word: "設定: `~/.claude/CLAUDE.md`",
+      section: "設定ファイル",
       mean: "ユーザー共通の設定。「日本語で回答」「コミットは明確に」など全プロジェクト共通の好みを書く。",
       code: "# ユーザー共通設定\n\n- 応答は常に日本語\n- 簡潔で実用的な回答を優先\n- 推測ではなくコードに基づいた回答",
       codeLang: "markdown",
     },
     {
       word: "設定: `.claude/settings.local.json`",
+      section: "設定ファイル",
       mean: "ローカル環境固有の設定。.gitignore に入れて個人の API キーやパスを管理する。",
     },
     // ── Hooks（自動化） ──
     {
       word: "Hooks とは",
+      section: "Hooks（自動化）",
       mean: "ツール実行の前後にシェルコマンドを自動で走らせる仕組み。settings.json の hooks フィールドで定義する。lint 自動実行、通知、ログ記録などに使う。",
     },
     {
       word: "Hook: `PreToolUse`",
+      section: "Hooks（自動化）",
       mean: "ツール実行前に走る。例: 特定ファイルの編集を禁止する、Bash コマンドを検証する。exit 2 を返すとツール実行をブロックできる。",
       code: "{\n  \"hooks\": {\n    \"PreToolUse\": [\n      {\n        \"matcher\": \"Bash\",\n        \"command\": \"echo \\\"$CLAUDE_TOOL_INPUT\\\" | check-allowed-commands.sh\"\n      }\n    ]\n  }\n}",
       codeLang: "json",
     },
     {
       word: "Hook: `PostToolUse`",
+      section: "Hooks（自動化）",
       mean: "ツール実行後に走る。最もよく使う Hook。保存 → lint → テストの自動化がバイブの速度を上げる。",
       code: "{\n  \"hooks\": {\n    \"PostToolUse\": [\n      {\n        \"matcher\": \"Edit\",\n        \"command\": \"npx eslint --fix $CLAUDE_FILE_PATH\"\n      }\n    ]\n  }\n}",
       codeLang: "json",
     },
     {
       word: "Hook: `Notification`",
+      section: "Hooks（自動化）",
       mean: "タスク完了時に走る通知フック。例: 音声で完了を知らせる、Slack に投稿する。",
       code: "{\n  \"hooks\": {\n    \"Notification\": [\n      {\n        \"matcher\": \"\",\n        \"command\": \"say 'タスク完了'\"\n      }\n    ]\n  }\n}",
       codeLang: "json",
     },
+    {
+      word: "Hook 応用: 自動コンテキスト圧縮",
+      section: "Hooks（自動化）",
+      mean: "Notification Hook を使って、コンテキスト使用量が高くなったら自動で `/compact` を実行する仕組みを作れる。長時間の作業セッションでコンテキスト切れを防ぐ実用的な設定。",
+    },
     // ── MCP（ツール拡張） ──
     {
       word: "MCP: `claude mcp add`",
+      section: "MCP（ツール拡張）",
       mean: "外部ツール（MCP サーバー）を追加するコマンド。",
       code: "claude mcp add github -- npx @anthropic-ai/mcp-server-github",
     },
     {
       word: "MCP: `claude mcp list`",
+      section: "MCP（ツール拡張）",
       mean: "設定済み MCP サーバーの一覧を表示。接続状態も確認できる。",
       code: "claude mcp list",
     },
     // ── エージェント・チーム ──
     {
       word: "チーム: `--teammate-mode`",
+      section: "エージェント・リモート",
       mean: "複数エージェントの協調モードを選ぶ。auto（既定）/ in-process / tmux。タスクを分割して並列で回すときに使う。",
       code: "claude --teammate-mode tmux",
     },
     {
       word: "チーム: `--agent エージェント名`",
+      section: "エージェント・リモート",
       mean: "セッションで使うサブエージェントを指定する。claude agents で一覧を確認できる。",
       code: "claude --agent my-agent\nclaude agents",
     },
     {
       word: "リモート操作: `--remote-control`",
+      section: "エージェント・リモート",
       mean: "PC のターミナルで起動した Claude Code のセッションを、ブラウザ（claude.ai）やスマホの Claude アプリから遠隔操作できるようにするオプション。起動するとリンクが表示され、そのリンクを開くとブラウザ/アプリ側から同じセッションに指示を出せる。外出先からスマホで自宅 PC の Claude Code を操作するような使い方ができる。",
       code: "claude --remote-control",
     },
     {
       word: "リモートコントロールの条件",
+      section: "エージェント・リモート",
       mean: "==PC 側（Claude Code を動かしている方）はオンライン状態が必須==。PC がスリープやシャットダウンすると接続が切れる。スマホ側は Claude アプリ（iOS / Android）または claude.ai のブラウザから操作可能。同じ Anthropic アカウントでログインしている必要がある。",
     },
     {
       word: "リモートコントロールの使いどころ",
+      section: "エージェント・リモート",
       mean: "外出中にスマホから自宅 PC の作業を進めたい、別の人にセッションを見せてレビューしてもらいたい、会議中にスマホから軽い修正指示を出したい、など。ターミナルの前にいなくても Claude Code に指示を送り続けられるのがポイント。",
     },
     // ── Cowork との違い ──
     {
       word: "==Cowork（コワーク）とは==",
+      section: "Cowork との違い",
       mean: "Anthropic が提供する claude.ai 上のコード協働機能。ブラウザだけでコードの編集・実行ができる。Claude Code（CLI）とは別の製品で、ターミナルやエディタのインストールが不要。Pro プラン以上で利用可能。",
     },
     {
       word: "Cowork と Claude Code CLI の違い",
+      section: "Cowork との違い",
       mean: "==Cowork== はブラウザ上で完結する。PC にツールをインストールしなくてもコードを書ける。手軽だが、ローカルファイルに直接アクセスはできない。==Claude Code CLI== は PC のターミナルで動作し、ローカルのファイルを直接編集できる。MCP サーバーやスキルファイルなど高度な拡張も可能。本格的な開発は CLI、手軽に試すなら Cowork。",
     },
     {
       word: "Cowork の Dispatch と --remote-control の違い",
+      section: "Cowork との違い",
       mean: "==Dispatch== は Cowork 側の機能で、claude.ai からタスクをクラウドに投げて非同期で処理させる仕組み。結果はブラウザに返ってくる。==--remote-control== は CLI 側の機能で、PC で動いている Claude Code セッションをブラウザ/アプリから操作する仕組み。Dispatch はクラウドで実行、remote-control はあくまで PC 上で実行される。",
     },
     // ── スキル ──
     {
       word: "Skills: `.claude/skills/`",
+      section: "スキル",
       mean: "SKILL.md を置くと Claude がタスクに応じて自動で読み込む。プロジェクトの定型作業（デプロイ手順、テスト方針など）を教え込む仕組み。",
       code: "---\nname: deploy\ndescription: 本番デプロイの手順\n---\n\n# デプロイ手順\n\n1. npm run build\n2. npm run deploy",
       codeLang: "markdown",
@@ -441,27 +487,38 @@ export const VIBE_CLAUDE_CODE = {
     // ── 便利なスラッシュコマンド ──
     {
       word: "操作: `/btw`",
+      section: "便利なコマンド",
       mean: "作業の本筋を止めずに、ちょっとした追加の指示や補足を伝えるコマンド。「by the way（ところで）」の略。例えば Claude がファイルを編集中に `/btw コミットメッセージは日本語でお願い` と打つと、今の作業を中断せずにルールを追加できる。",
       code: "/btw コミットメッセージは日本語で書いて",
       codeLang: "text",
     },
     {
       word: "操作: `/init`",
+      section: "便利なコマンド",
       mean: "プロジェクトのルートに CLAUDE.md を自動生成するコマンド。Claude がプロジェクトの構成を読み取って、適切な設定ファイルを作ってくれる。最初に1回だけ実行すればよい。",
       code: "/init",
       codeLang: "text",
     },
+    // ── 便利な連携 ──
+    {
+      word: "音声連携（VOICEVOX 等）",
+      section: "便利な連携",
+      mean: "Hooks の Notification を使って、タスク完了時に音声合成ソフト（VOICEVOX、COEIROINK 等）で読み上げさせることができる。長い処理を待っている間に画面を見なくても完了がわかる。設定は settings.json の hooks に音声再生コマンドを追加する。",
+    },
     // ── 料金 ──
     {
       word: "料金: Claude Pro（$20/月）",
+      section: "料金",
       mean: "個人向けプラン。Claude Code のデスクトップアプリと CLI が利用可能。月のトークン使用量に上限あり（多い日は制限がかかることがある）。",
     },
     {
       word: "料金: Claude Max（$100/月 or $200/月）",
+      section: "料金",
       mean: "ヘビーユーザー向け。Pro よりも大幅に多いトークンが使える。1日中 Claude Code を回す開発者や、チームで大量に使う場合に。$100 プランと $200 プランで上限が異なる。",
     },
     {
       word: "料金: API 従量課金",
+      section: "料金",
       mean: "API キーを使って従量課金で利用する方法。サブスク上限を気にせず使えるが、モデルごとの単価（Opus: $15/$75、Sonnet: $3/$15 per 1M tokens）がかかる。大規模プロジェクトや CI/CD での自動実行に向く。",
     },
   ],

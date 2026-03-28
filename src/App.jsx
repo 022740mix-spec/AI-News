@@ -811,25 +811,59 @@ function ToolReferencePanel({ referenceData, practical }) {
   let k = 0;
   const mkKey = () => `tr-${k++}`;
   if (!referenceData) return <div className="empty-state">ツールが見つかりません</div>;
+
+  // section でグループ化（順序を保持）
+  const sections = [];
+  const seen = new Set();
+  for (const t of referenceData.terms) {
+    const sec = t.section ?? "";
+    if (!seen.has(sec)) {
+      seen.add(sec);
+      sections.push({ name: sec, terms: [] });
+    }
+    sections.find((s) => s.name === sec).terms.push(t);
+  }
+  const hasSections = sections.length > 1 || (sections.length === 1 && sections[0].name);
+
   return (
     <div className="companies-guide-rail companies-guide-rail--full-tab" aria-label={referenceData.title}>
       <section className="guide-section guide-section--vibe">
         <h2 className="guide-section__title">{referenceData.title}</h2>
         <GuideLinkifiedP text={referenceData.lead} className="guide-section__lead" />
-        {referenceData.terms.length > 0 ? (
-          <dl className="glossary-dl">
-            {referenceData.terms.map((t) => (
-              <Fragment key={t.word}>
-                <dt className="glossary-dl__term">{richInlineLine(t.word, mkKey)}</dt>
-                <dd className="glossary-dl__body">
-                  <GuideLinkifiedP text={t.mean} className="glossary-dl__mean" />
-                  {t.code ? <CopyableCodeBlock code={t.code} lang={t.codeLang ?? "bash"} /> : null}
-                  {t.mem ? <GuideLinkifiedP text={t.mem} className="glossary-dl__mem" /> : null}
-                </dd>
-              </Fragment>
-            ))}
-          </dl>
+
+        {hasSections ? (
+          <nav className="tool-ref-toc">
+            <h3 className="tool-ref-toc__title">目次</h3>
+            <ul className="tool-ref-toc__list">
+              {sections.map((s) => (
+                <li key={s.name}>
+                  <a href={`#ref-sec-${s.name.replace(/\s/g, "-")}`} className="tool-ref-toc__link">
+                    {s.name}
+                    <span className="tool-ref-toc__count">{s.terms.length}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         ) : null}
+
+        {sections.map((s) => (
+          <div key={s.name} id={`ref-sec-${s.name.replace(/\s/g, "-")}`} className="tool-ref-group">
+            {s.name ? <h3 className="tool-ref-group__title">{s.name}</h3> : null}
+            <dl className="glossary-dl">
+              {s.terms.map((t) => (
+                <Fragment key={t.word}>
+                  <dt className="glossary-dl__term">{richInlineLine(t.word, mkKey)}</dt>
+                  <dd className="glossary-dl__body">
+                    <GuideLinkifiedP text={t.mean} className="glossary-dl__mean" />
+                    {t.code ? <CopyableCodeBlock code={t.code} lang={t.codeLang ?? "bash"} /> : null}
+                    {t.mem ? <GuideLinkifiedP text={t.mem} className="glossary-dl__mem" /> : null}
+                  </dd>
+                </Fragment>
+              ))}
+            </dl>
+          </div>
+        ))}
       </section>
       {practical.length > 0 ? (
         <section className="guide-section guide-section--vibe">
