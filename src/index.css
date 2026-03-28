@@ -549,6 +549,32 @@ body {
   margin: 0;
 }
 
+.vibe-practical-sub {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.vibe-practical-sub:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.vibe-practical-sub__title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0 0 0.4rem;
+  color: var(--text);
+}
+
+.vibe-practical-sub__body {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
 .guide-section__lead {
   margin: 0 0 1rem;
   font-size: 0.82rem;

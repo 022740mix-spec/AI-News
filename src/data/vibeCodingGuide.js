@@ -13,7 +13,7 @@ export const VIBE_CODING_WHY_CLAUDE_FIRST =
 
 /** このガイドページの役割（道筋の直前） */
 export const VIBE_CODING_PAGE_LEAD =
-  "下の **おすすめの道筋** と **組み合わせ表**は対応させています。**ハマりどころ**は早めに、**基本ルール**と **Claude Code（CLI）**はエディタや Cowork で一段進んでからでよい**後ろに置いた**構成です。記事や会話で出る用語は「用語集」タブからどうぞ。";
+  "下の **おすすめの道筋** → **組み合わせ表** → **環境例**で道具を決め、続く **実務の扱い**（音声・スラッシュ・スキル）へ進む構成です。**ハマりどころ**はコードを書き進めたあとに効いてくる話が多いので**中盤以降**に置いています。**画像・動画・音楽**など生成ツールの早見は、読者層が異なるため **「メディア生成」タブ**に分離しました。用語は「用語集」タブへ。";
 
 /**
  * バイブ開始から本格運用までの段階（本文・検索用）。
@@ -50,6 +50,37 @@ export const VIBE_PROGRESSION_PATH = {
   ],
   footnote:
     "上表の「パターン」列と**上から順に**意味がつながるように並べています。製品名・提供範囲は変更されやすいので**都度公式**を優先してください。",
+};
+
+/**
+ * 組み合わせ決定後の実務（音声・CLI 操作・スキル配置）。公式ドキュメントが正。
+ * @type {{ title: string, lead: string, sections: { id: string, heading: string, body: string }[] }}
+ */
+export const VIBE_CODING_PRACTICAL = {
+  title: "実務での道具の扱い（音声・スラッシュ・スキル）",
+  lead: "パターン表で IDE と AI を決めた**あと**に効く細部です。コマンド名・フラグは更新が速いので、**必ず公式の現行版**で確認してください。",
+  sections: [
+    {
+      id: "vibe-voice-aqua",
+      heading: "音声入力と Aqua Voice（長文を外からチャットへ）",
+      body: "バイブでは**仕様・コメント・長い指示**をキーボードで打ち続けず、**口述→整形→チャットへ貼る**が快適です。**Aqua Voice** はその用途でよく名前が上がる例のひとつです（他にも OS 標準音声入力や各 AI アプリのマイクで代用可）。ポイントは「**どのウィンドウに貼るか**」を毎回決めることです。",
+    },
+    {
+      id: "vibe-slash-session",
+      heading: "Claude Code のスラッシュとセッション",
+      body: "CLI や統合ターミナルでは **`/` から始まるスラッシュコマンド**で会話の整理やツール操作にアクセスできる場合があります（例: ヘルプ表示）。**セッションの続き・再開・名前付け**は `continue` / `resume` 系の話とセットで公式に説明されています。細目は https://code.claude.com/docs を優先し、本項は**入口の目印**に留めます。",
+    },
+    {
+      id: "vibe-skills-layout",
+      heading: "スキル（SKILL.md）と IDE／製品ごとの置き場所",
+      body: "**共通イメージ**: フォルダ＋`SKILL.md` に手順・禁止事項・ドメイン知識を束ね、モデルが必要なときだけ読む**段階的開示**。**Claude 系**は `.claude/skills` やプロジェクト配下のスキルディレクトリという整理が一般的です。**OpenAI Codex** 側は `AGENTS.md` や公式の「エージェント用ドキュメント」ガイドに寄せる流れがあります。**Cursor** は changelog 上で **Skills** を製品機能として押し出しています（例: 2.4 以降の文脈）。**Google Antigravity／Gemini** は別エコシステムで、設定ファイルの形・読み込みタイミングが一致しません。",
+    },
+    {
+      id: "vibe-skills-community",
+      heading: "コミュニティのスキル集（例: awesome 系）と注意点",
+      body: "GitHub 上に **awesome-claude-skills** のような**有志の一覧リポジトリ**があります。便利ですが**出所・ライセンス・中身の信頼性は自分で確認**してください。会社利用では「そのままコピー禁止」「セキュリティレビュー必須」などポリシーが上書きします。",
+    },
+  ],
 };
 
 /** 早見表・例の前提（イントロ末尾の注記） */
@@ -228,6 +259,10 @@ export const VIBE_SITE_READING_GUIDE = {
 /** @typedef {{ tool: string, company: string, traits: string, since: string }} MediaTaxonomyRow */
 
 /** @typedef {{ id: string, title: string, lead: string, columns: [string, string, string, string], rows: MediaTaxonomyRow[] }} MediaTaxonomySection */
+
+/** メディア生成ガイド（タブ冒頭）。コーディング向けバイブとは読者を分ける */
+export const MEDIA_GUIDE_INTRO =
+  "ここは**画像・動画・音楽・音声合成**など、**コード以外の生成ワーク**向けの早見です。バイブコーディング（IDE・CLI・リポジトリ）とは**別の職能・目的**の人が多いと想定し、**タブを分離**しました。**著作権・商用利用・顔そっくり規制・料金**は各サービスの現行約款が正です。サイト内の解説記事も併せて参照してください。";
 
 /** メディア／ツール分野の早見（代表例。正式名称・提供条件は各公式を優先） */
 /** @type {MediaTaxonomySection[]} */
@@ -1157,17 +1192,30 @@ function mediaTaxonomyRowCount() {
   return VIBE_MEDIA_TAXONOMY.reduce((n, s) => n + s.rows.length, 0);
 }
 
-/** 検索ヒット：読み分け1＋メディア早見各行＋他ブロック＋用語… */
-export const GUIDE_ITEM_TOTAL =
+function glossaryTermCount() {
+  return GLOSSARY_BY_GENRE.reduce((n, g) => n + g.terms.length, 0);
+}
+
+/** バイブコーディングタブのみ（メディア・用語集は別カウント） */
+export const VIBE_GUIDE_ITEM_TOTAL =
   1 +
   (1 + VIBE_PROGRESSION_PATH.steps.length) +
-  mediaTaxonomyRowCount() +
+  (1 + VIBE_CODING_PRACTICAL.sections.length) +
   VIBE_IDEAL_STACKS.length +
   VIBE_TOOL_COMBO_TABLE.rows.length +
   VIBE_BASIC_RULES.length +
   VIBE_GUIDE_PITFALLS.terms.length +
-  VIBE_CLAUDE_CODE.terms.length +
-  GLOSSARY_BY_GENRE.reduce((n, g) => n + g.terms.length, 0);
+  VIBE_CLAUDE_CODE.terms.length;
+
+/** メディア生成タブ（イントロ1＋表の行） */
+export const MEDIA_GUIDE_ITEM_TOTAL = 1 + mediaTaxonomyRowCount();
+
+/** 用語集タブ */
+export const GLOSSARY_GUIDE_ITEM_TOTAL = 1 + glossaryTermCount();
+
+/** @deprecated 互換用。タブ別定数を優先 */
+export const GUIDE_ITEM_TOTAL =
+  VIBE_GUIDE_ITEM_TOTAL + MEDIA_GUIDE_ITEM_TOTAL + GLOSSARY_GUIDE_ITEM_TOTAL;
 
 /** @param {VibeToolComboRow} row */
 function toolRowMatches(row, q) {
@@ -1182,18 +1230,16 @@ function toolRowMatches(row, q) {
  * @param {string} searchQuery
  */
 export function filterVibeCodingGuide(searchQuery) {
-  const total = GUIDE_ITEM_TOTAL;
+  const total = VIBE_GUIDE_ITEM_TOTAL;
   const q = searchQuery.trim().toLowerCase();
   if (!q) {
     return {
       showReadingGuide: true,
-      mediaTaxonomy: VIBE_MEDIA_TAXONOMY,
       stacks: VIBE_IDEAL_STACKS,
       toolTable: VIBE_TOOL_COMBO_TABLE,
       basicRules: VIBE_BASIC_RULES,
       claudeCode: VIBE_CLAUDE_CODE,
       pitfalls: VIBE_GUIDE_PITFALLS,
-      glossary: GLOSSARY_BY_GENRE,
       matchCount: total,
       total,
     };
@@ -1255,23 +1301,6 @@ export function filterVibeCodingGuide(searchQuery) {
     claudeCode = { ...VIBE_CLAUDE_CODE, terms };
   }
 
-  /** @type {GlossaryGenre[]} */
-  const glossary = [];
-  for (const g of GLOSSARY_BY_GENRE) {
-    const genreBlob = [g.title, g.lead].join("\n").toLowerCase();
-    if (genreBlob.includes(q)) {
-      glossary.push(g);
-      continue;
-    }
-    const terms = g.terms.filter((t) => {
-      const blob = [t.word, t.mean, t.mem ?? ""].join("\n").toLowerCase();
-      return blob.includes(q);
-    });
-    if (terms.length) {
-      glossary.push({ ...g, terms });
-    }
-  }
-
   const readingBlob = [
     VIBE_SITE_READING_GUIDE.title,
     VIBE_SITE_READING_GUIDE.lead.replace(/\*\*/g, ""),
@@ -1290,14 +1319,60 @@ export function filterVibeCodingGuide(searchQuery) {
     .toLowerCase();
   const progressionHit = progressionBlob.includes(q);
 
+  const practicalBlob = [
+    VIBE_CODING_PRACTICAL.title,
+    VIBE_CODING_PRACTICAL.lead,
+    ...VIBE_CODING_PRACTICAL.sections.flatMap((s) => [s.heading, s.body]),
+  ]
+    .join("\n")
+    .toLowerCase();
+  const practicalHit = practicalBlob.includes(q);
+
+  const matchCount =
+    (showReadingGuide ? 1 : 0) +
+    (progressionHit ? 1 + VIBE_PROGRESSION_PATH.steps.length : 0) +
+    (practicalHit ? 1 + VIBE_CODING_PRACTICAL.sections.length : 0) +
+    stacks.length +
+    toolRows.length +
+    basicRules.length +
+    claudeCode.terms.length +
+    pitfalls.terms.length;
+
+  return {
+    showReadingGuide,
+    stacks,
+    toolTable: { ...VIBE_TOOL_COMBO_TABLE, rows: toolRows },
+    basicRules,
+    claudeCode,
+    pitfalls,
+    matchCount,
+    total,
+  };
+}
+
+/**
+ * メディア生成タブ用検索
+ * @param {string} searchQuery
+ */
+export function filterMediaGuide(searchQuery) {
+  const total = MEDIA_GUIDE_ITEM_TOTAL;
+  const q = searchQuery.trim().toLowerCase();
+  const introPlain = MEDIA_GUIDE_INTRO.replace(/\*\*/g, "").toLowerCase();
+
+  if (!q) {
+    return {
+      mediaTaxonomy: VIBE_MEDIA_TAXONOMY,
+      matchCount: total,
+      total,
+    };
+  }
+
+  const introHit = introPlain.includes(q);
+
   /** @type {MediaTaxonomySection[]} */
   const mediaTaxonomy = [];
   for (const section of VIBE_MEDIA_TAXONOMY) {
-    const head = [
-      section.title,
-      section.lead,
-      ...section.columns,
-    ]
+    const head = [section.title, section.lead, ...section.columns]
       .join("\n")
       .toLowerCase();
     if (head.includes(q)) {
@@ -1305,32 +1380,63 @@ export function filterVibeCodingGuide(searchQuery) {
       continue;
     }
     const rows = section.rows.filter((r) =>
-      [r.tool, r.company, r.traits, r.since].join("\n").toLowerCase().includes(q),
+      [r.tool, r.company, r.traits, r.since]
+        .join("\n")
+        .toLowerCase()
+        .includes(q),
     );
     if (rows.length) {
       mediaTaxonomy.push({ ...section, rows });
     }
   }
 
-  const matchCount =
-    (showReadingGuide ? 1 : 0) +
-    (progressionHit ? 1 + VIBE_PROGRESSION_PATH.steps.length : 0) +
-    mediaTaxonomy.reduce((n, s) => n + s.rows.length, 0) +
-    stacks.length +
-    toolRows.length +
-    basicRules.length +
-    claudeCode.terms.length +
-    pitfalls.terms.length +
-    glossary.reduce((n, g) => n + g.terms.length, 0);
+  const rowHits = mediaTaxonomy.reduce((n, s) => n + s.rows.length, 0);
+  const matchCount = rowHits + (introHit ? 1 : 0);
 
   return {
-    showReadingGuide,
     mediaTaxonomy,
-    stacks,
-    toolTable: { ...VIBE_TOOL_COMBO_TABLE, rows: toolRows },
-    basicRules,
-    claudeCode,
-    pitfalls,
+    matchCount,
+    total,
+  };
+}
+
+/**
+ * 用語集タブ用検索
+ * @param {string} searchQuery
+ */
+export function filterGlossaryGuide(searchQuery) {
+  const total = GLOSSARY_GUIDE_ITEM_TOTAL;
+  const q = searchQuery.trim().toLowerCase();
+  if (!q) {
+    return {
+      glossary: GLOSSARY_BY_GENRE,
+      matchCount: total,
+      total,
+    };
+  }
+
+  /** @type {GlossaryGenre[]} */
+  const glossary = [];
+  for (const g of GLOSSARY_BY_GENRE) {
+    const genreBlob = [g.title, g.lead].join("\n").toLowerCase();
+    if (genreBlob.includes(q)) {
+      glossary.push(g);
+      continue;
+    }
+    const terms = g.terms.filter((t) => {
+      const blob = [t.word, t.mean, t.mem ?? ""].join("\n").toLowerCase();
+      return blob.includes(q);
+    });
+    if (terms.length) {
+      glossary.push({ ...g, terms });
+    }
+  }
+
+  const introHit = "実用用語集".includes(q) || "ジャンル別".includes(q);
+  const matchCount =
+    glossary.reduce((n, g) => n + g.terms.length, 0) + (introHit ? 1 : 0);
+
+  return {
     glossary,
     matchCount,
     total,

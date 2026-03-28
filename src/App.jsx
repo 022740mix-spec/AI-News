@@ -15,16 +15,21 @@ import {
   renderStars,
   SITE_NAME,
   SITE_DESCRIPTION,
-  LAST_UPDATED,
+  getSiteTodayYmd,
 } from "./data/aiToolsData.js";
 import { AI_COMPANIES, COMPANIES_DISCLAIMER } from "./data/aiCompanies.js";
 import {
   filterVibeCodingGuide,
+  filterMediaGuide,
+  filterGlossaryGuide,
   GLOSSARY_BY_GENRE,
+  MEDIA_GUIDE_INTRO,
   VIBE_BASIC_RULES_LEAD,
   VIBE_CODING_DEFINITION,
   VIBE_CODING_PAGE_LEAD,
+  VIBE_CODING_PRACTICAL,
   VIBE_CODING_WHY_CLAUDE_FIRST,
+  VIBE_MEDIA_TAXONOMY,
   VIBE_PROGRESSION_PATH,
   VIBE_SITE_READING_GUIDE,
   VIBE_STACK_NOTE,
@@ -189,7 +194,12 @@ const GUIDE_SEO = {
   vibe: {
     titleSuffix: "ガイド：バイブコーディング",
     description:
-      "Claude チャットから始める段階の道筋、Copilot／Cowork／Claude Code アプリ→エディタ＋CLI、メディア早見と Chrome・Gemini 補助。基本ルールと CLI リファレンスは後段。",
+      "Claude チャットからの段階道筋、IDE・音声・Copilot／Cowork・CLI の組み合わせ表。実務のスラッシュ・スキル配置の後、ハマり／ルール／CLI リファレンス。メディア生成は別タブ。",
+  },
+  media: {
+    titleSuffix: "ガイド：メディア生成ツール早見",
+    description:
+      "画像・動画・音楽・音声合成などコード以外の生成向け早見。著作権・料金は各公式で。バイブコーディング（開発）ガイドとはターゲットを分離。",
   },
   glossary: {
     titleSuffix: "ガイド：用語集",
@@ -219,7 +229,12 @@ function syncDocumentSeo(ctx) {
     title = `${selectedArticle.title} | ${SITE_NAME}`;
     ogTitle = selectedArticle.title;
   } else if (siteSection === "guide") {
-    const g = guideTab === "glossary" ? GUIDE_SEO.glossary : GUIDE_SEO.vibe;
+    const g =
+      guideTab === "glossary"
+        ? GUIDE_SEO.glossary
+        : guideTab === "media"
+          ? GUIDE_SEO.media
+          : GUIDE_SEO.vibe;
     title = `${g.titleSuffix} | ${SITE_NAME}`;
     descRaw = g.description;
     ogTitle = `${g.titleSuffix} | ${SITE_NAME}`;
@@ -374,6 +389,7 @@ function syncAppUrl({ articleId, siteSection, tagQuery, guideTab }) {
       u.searchParams.set("view", "guide");
       u.searchParams.delete("tag");
       if (guideTab === "glossary") u.searchParams.set("tab", "glossary");
+      else if (guideTab === "media") u.searchParams.set("tab", "media");
       else u.searchParams.delete("tab");
     } else {
       u.searchParams.delete("view");
@@ -516,11 +532,14 @@ function SiteSectionNav({ section, onSection }) {
 }
 
 function GuideSidebar({ guideTab }) {
+  const sidebarLabel =
+    guideTab === "vibe"
+      ? "バイブコーディングの目次"
+      : guideTab === "media"
+        ? "メディア生成ガイドの目次"
+        : "用語集の目次";
   return (
-    <aside
-      className="desktop-sidebar"
-      aria-label={guideTab === "vibe" ? "バイブコーディングの目次" : "用語集の目次"}
-    >
+    <aside className="desktop-sidebar" aria-label={sidebarLabel}>
       <div className="sidebar-panel">
         <h3>このページ内</h3>
         <p className="sidebar-panel-hint">見出しへジャンプします。</p>
@@ -535,14 +554,14 @@ function GuideSidebar({ guideTab }) {
             <a href="#vibe-reading-map" className="sidebar-anchor">
               記事・ガイド・特集
             </a>
-            <a href="#vibe-media-taxonomy" className="sidebar-anchor">
-              メディア別ツール早見
-            </a>
             <a href="#vibe-tool-table" className="sidebar-anchor">
               ツールの組み合わせ表
             </a>
             <a href="#vibe-stacks" className="sidebar-anchor">
               環境の組み合わせ例
+            </a>
+            <a href="#vibe-practical" className="sidebar-anchor">
+              実務の扱い
             </a>
             <a href="#vibe-pitfalls" className="sidebar-anchor">
               ハマりやすいこと
@@ -553,6 +572,21 @@ function GuideSidebar({ guideTab }) {
             <a href="#vibe-claude-code" className="sidebar-anchor">
               Claude Code（CLI）
             </a>
+          </>
+        ) : guideTab === "media" ? (
+          <>
+            <a href="#media-guide-intro" className="sidebar-anchor">
+              はじめに
+            </a>
+            {VIBE_MEDIA_TAXONOMY.map((s) => (
+              <a
+                key={s.id}
+                href={`#${s.id}`}
+                className="sidebar-anchor sidebar-anchor--nested"
+              >
+                {s.title}
+              </a>
+            ))}
           </>
         ) : (
           <>
@@ -595,7 +629,6 @@ function CompaniesSidebar({ companies }) {
 
 function VibeCodingGuidePanel({
   showReadingGuide,
-  mediaTaxonomy,
   stacks,
   toolTable,
   basicRules,
@@ -648,55 +681,6 @@ function VibeCodingGuidePanel({
           <p className="guide-section__lead">
             {richInlineLine(VIBE_SITE_READING_GUIDE.lead, mkKey)}
           </p>
-        </section>
-      ) : null}
-
-      {mediaTaxonomy.length > 0 ? (
-        <section id="vibe-media-taxonomy" className="guide-section guide-section--vibe">
-          <h2 className="guide-section__title">メディア別・主要ツール早見</h2>
-          <p className="guide-section__lead">
-            画像・動画・音楽・音声・IDE・CLI
-            の代表例です。詳細なレビューは記事・特集、用語の定義は用語集タブも参照してください。
-          </p>
-          <div className="vibe-media-taxonomy-stack">
-            {mediaTaxonomy.map((block) => {
-              const [c0, c1, c2, c3] = block.columns;
-              return (
-                <div key={block.id} id={`${block.id}`} className="vibe-media-block">
-                  <h3 className="vibe-media-block__title">{block.title}</h3>
-                  <GuideLinkifiedP
-                    text={block.lead}
-                    className="vibe-media-block__lead"
-                  />
-                  <div className="vibe-tool-table-wrap">
-                    <table className="vibe-tool-table vibe-tool-table--dense">
-                      <caption className="visually-hidden">
-                        {block.title}のツール早見表
-                      </caption>
-                      <thead>
-                        <tr>
-                          <th scope="col">{c0}</th>
-                          <th scope="col">{c1}</th>
-                          <th scope="col">{c2}</th>
-                          <th scope="col">{c3}</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {block.rows.map((r) => (
-                          <tr key={`${block.id}-${r.tool}`}>
-                            <th scope="row">{r.tool}</th>
-                            <td>{r.company}</td>
-                            <td>{r.traits}</td>
-                            <td>{r.since}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
         </section>
       ) : null}
 
@@ -773,6 +757,21 @@ function VibeCodingGuidePanel({
         ) : null}
       </section>
 
+      <section id="vibe-practical" className="guide-section guide-section--vibe">
+        <h2 className="guide-section__title">{VIBE_CODING_PRACTICAL.title}</h2>
+        <p className="guide-section__lead">
+          {richInlineLine(VIBE_CODING_PRACTICAL.lead, mkKey)}
+        </p>
+        {VIBE_CODING_PRACTICAL.sections.map((sec) => (
+          <div key={sec.id} id={sec.id} className="vibe-practical-sub">
+            <h3 className="vibe-practical-sub__title">{sec.heading}</h3>
+            <p className="vibe-practical-sub__body">
+              {richInlineLine(sec.body, mkKey)}
+            </p>
+          </div>
+        ))}
+      </section>
+
       <section id="vibe-pitfalls" className="guide-section guide-section--vibe">
         <h2 className="guide-section__title">{pitfalls.title}</h2>
         <GuideLinkifiedP text={pitfalls.lead} className="guide-section__lead" />
@@ -834,6 +833,73 @@ function VibeCodingGuidePanel({
           </dl>
         ) : null}
       </section>
+    </div>
+  );
+}
+
+function MediaToolsGuidePanel({ mediaTaxonomy }) {
+  let k = 0;
+  const mkKey = () => `mg-${k++}`;
+  return (
+    <div
+      className="companies-guide-rail companies-guide-rail--full-tab"
+      aria-label="メディア生成ツール早見"
+    >
+      <section id="media-guide-intro" className="guide-section guide-section--vibe">
+        <h2 className="guide-section__title">メディア生成ツール早見</h2>
+        <p className="guide-section__lead">
+          {richInlineLine(MEDIA_GUIDE_INTRO, mkKey)}
+        </p>
+        <p className="companies-guide-note">
+          {richInlineLine(
+            "同じ内容の解説記事（想定読者・注意点）はフィードの特集からも開けます。開発向けは **バイブコーディング** タブへ。",
+            mkKey,
+          )}
+        </p>
+      </section>
+      {mediaTaxonomy.length > 0 ? (
+        <div className="vibe-media-taxonomy-stack">
+          {mediaTaxonomy.map((block) => {
+            const [c0, c1, c2, c3] = block.columns;
+            return (
+              <div key={block.id} id={block.id} className="vibe-media-block">
+                <h3 className="vibe-media-block__title">{block.title}</h3>
+                <GuideLinkifiedP
+                  text={block.lead}
+                  className="vibe-media-block__lead"
+                />
+                <div className="vibe-tool-table-wrap">
+                  <table className="vibe-tool-table vibe-tool-table--dense">
+                    <caption className="visually-hidden">
+                      {block.title}のツール早見表
+                    </caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">{c0}</th>
+                        <th scope="col">{c1}</th>
+                        <th scope="col">{c2}</th>
+                        <th scope="col">{c3}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {block.rows.map((r) => (
+                        <tr key={`${block.id}-${r.tool}`}>
+                          <th scope="row">{r.tool}</th>
+                          <td>{r.company}</td>
+                          <td>{r.traits}</td>
+                          <td>{r.since}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <div className="empty-state">該当するツール行がありません。検索語を変えてください。</div>
+      )}
     </div>
   );
 }
@@ -1549,7 +1615,7 @@ function Sidebar({ articles, bookmarkIds, onSelect, onTagClick }) {
           AI 開発ツールのニュース・レビューを要約・整理しています（2次情報）。各記事末尾の「元記事・一次情報」から原文・公式を確認してください。ブックマークはこのブラウザに保存されます。
         </p>
         <div style={{ marginTop: 10, fontSize: 11, color: "var(--muted)" }}>
-          最終更新: {LAST_UPDATED}
+          最終更新: {getSiteTodayYmd()}
         </div>
         <p style={{ marginTop: 12, marginBottom: 0 }}>
           <a href="./feed.xml" className="prose-link" target="_blank" rel="noopener noreferrer">
@@ -1678,7 +1744,7 @@ function SiteFooter({ visitorTotal, visitorStatus }) {
         {SITE_NAME} — {SITE_DESCRIPTION}
       </div>
       <div>
-        最終更新: {LAST_UPDATED}{" "}
+        最終更新: {getSiteTodayYmd()}{" "}
         · データは公開情報・報道を基に整理しています
       </div>
       {showVisits ? (
@@ -1720,7 +1786,13 @@ function readInitialRouteState() {
         : "articles";
   const tab = u.searchParams.get("tab");
   const guideTab =
-    siteSection === "guide" && tab === "glossary" ? "glossary" : "vibe";
+    siteSection === "guide"
+      ? tab === "glossary"
+        ? "glossary"
+        : tab === "media"
+          ? "media"
+          : "vibe"
+      : "vibe";
   const tag = u.searchParams.get("tag");
   const query =
     siteSection === "articles" && tag && tag.trim()
@@ -1896,7 +1968,27 @@ export default function App() {
     return list;
   }, [query]);
 
-  const guideFiltered = useMemo(() => filterVibeCodingGuide(query), [query]);
+  const vibeGuide = useMemo(() => filterVibeCodingGuide(query), [query]);
+  const mediaGuide = useMemo(() => filterMediaGuide(query), [query]);
+  const glossaryGuide = useMemo(() => filterGlossaryGuide(query), [query]);
+
+  const guideMatchCount =
+    siteSection !== "guide"
+      ? 0
+      : guideTab === "vibe"
+        ? vibeGuide.matchCount
+        : guideTab === "media"
+          ? mediaGuide.matchCount
+          : glossaryGuide.matchCount;
+
+  const guideTotal =
+    siteSection !== "guide"
+      ? 0
+      : guideTab === "vibe"
+        ? vibeGuide.total
+        : guideTab === "media"
+          ? mediaGuide.total
+          : glossaryGuide.total;
 
   const filtered = useMemo(() => {
     let list = ARTICLES;
@@ -1960,14 +2052,14 @@ export default function App() {
                 siteSection === "companies"
                   ? filteredCompanies.length
                   : siteSection === "guide"
-                    ? guideFiltered.matchCount
+                    ? guideMatchCount
                     : articleCount
               }
               totalCount={
                 siteSection === "companies"
                   ? AI_COMPANIES.length
                   : siteSection === "guide"
-                    ? guideFiltered.total
+                    ? guideTotal
                     : ARTICLES.length
               }
               searchPlaceholder={
@@ -2025,7 +2117,7 @@ export default function App() {
                       <div className="section-feed">
                         <h2 className="section-feed__title">すべての記事</h2>
                         <p className="section-feed__meta">
-                          最新の更新 · {LAST_UPDATED} ·{" "}
+                          最新の更新 · {getSiteTodayYmd()} ·{" "}
                           <strong style={{ color: "var(--text-secondary)" }}>
                             {rest.length}
                           </strong>{" "}
@@ -2074,8 +2166,7 @@ export default function App() {
                   <div className="section-feed guide-tab-intro">
                     <h2 className="section-feed__title">ガイド</h2>
                     <p className="section-feed__meta">
-                      バイブコーディングの進め方・ツールの組み合わせと、記事で出る用語を分けて載せています。
-                      上部の検索は両方のタブを対象にします。
+                      バイブコーディング（開発・CLI・エディタ）・メディア生成（画像・動画・音楽）・用語集を分けました。検索はいま開いているタブだけを対象にします。
                     </p>
                     <div
                       className="guide-subtabs"
@@ -2094,6 +2185,17 @@ export default function App() {
                         バイブコーディング
                       </button>
                       <button
+                        id="guide-subtab-media"
+                        type="button"
+                        role="tab"
+                        aria-selected={guideTab === "media"}
+                        aria-controls="guide-subtab-panel"
+                        className={`guide-subtab${guideTab === "media" ? " is-active" : ""}`}
+                        onClick={() => selectGuideTab("media")}
+                      >
+                        メディア生成
+                      </button>
+                      <button
                         id="guide-subtab-glossary"
                         type="button"
                         role="tab"
@@ -2106,9 +2208,9 @@ export default function App() {
                       </button>
                     </div>
                   </div>
-                  {guideFiltered.matchCount === 0 ? (
+                  {guideMatchCount === 0 ? (
                     <div className="empty-state">
-                      該当する説明・用語がありません
+                      このタブに該当がありません。別タブに切り替えるか、検索語を変えてください。
                     </div>
                   ) : (
                     <div
@@ -2117,29 +2219,34 @@ export default function App() {
                       aria-labelledby={
                         guideTab === "vibe"
                           ? "guide-subtab-vibe"
-                          : "guide-subtab-glossary"
+                          : guideTab === "media"
+                            ? "guide-subtab-media"
+                            : "guide-subtab-glossary"
                       }
                     >
                       {guideTab === "vibe" ? (
                         <VibeCodingGuidePanel
-                          showReadingGuide={guideFiltered.showReadingGuide}
-                          mediaTaxonomy={guideFiltered.mediaTaxonomy}
-                          stacks={guideFiltered.stacks}
-                          toolTable={guideFiltered.toolTable}
-                          basicRules={guideFiltered.basicRules}
-                          claudeCode={guideFiltered.claudeCode}
-                          pitfalls={guideFiltered.pitfalls}
+                          showReadingGuide={vibeGuide.showReadingGuide}
+                          stacks={vibeGuide.stacks}
+                          toolTable={vibeGuide.toolTable}
+                          basicRules={vibeGuide.basicRules}
+                          claudeCode={vibeGuide.claudeCode}
+                          pitfalls={vibeGuide.pitfalls}
                         />
-                      ) : guideFiltered.glossary.length === 0 ||
-                        guideFiltered.glossary.every(
+                      ) : guideTab === "media" ? (
+                        <MediaToolsGuidePanel
+                          mediaTaxonomy={mediaGuide.mediaTaxonomy}
+                        />
+                      ) : glossaryGuide.glossary.length === 0 ||
+                        glossaryGuide.glossary.every(
                           (g) => g.terms.length === 0,
                         ) ? (
                         <div className="empty-state">
-                          このタブに該当がありません。バイブコーディングタブを開くか、検索語を変えてください。
+                          用語が見つかりません。検索語を変えてください。
                         </div>
                       ) : (
                         <GlossaryGuidePanel
-                          glossaryGenres={guideFiltered.glossary}
+                          glossaryGenres={glossaryGuide.glossary}
                         />
                       )}
                     </div>

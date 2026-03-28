@@ -9,7 +9,7 @@ import {
   ARTICLES,
   SITE_NAME,
   SITE_DESCRIPTION,
-  LAST_UPDATED,
+  getSiteTodayYmd,
 } from "../src/data/aiToolsData.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -43,7 +43,7 @@ function main() {
     return new Date(yb, mb - 1, db) - new Date(ya, ma - 1, da);
   });
 
-  const feedUpdated = atomDateFromYmd(LAST_UPDATED);
+  const feedUpdated = atomDateFromYmd(getSiteTodayYmd());
 
   const entries = sorted
     .map((article) => {

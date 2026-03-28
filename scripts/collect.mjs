@@ -1,43 +1,23 @@
 /**
  * AI Tool News 自動収集スクリプト
  *
- * GitHub Actions で定期実行され、各ツールの公開情報を収集して
- * src/data/aiToolsData.js の LAST_UPDATED を更新します。
+ * サイトの「最新の更新」日付は getSiteTodayYmd()（Asia/Tokyo）で表示・フィード更新。
  *
  * 将来的には各ツールの公式サイト・GitHub・npmからデータを収集し、
  * 記事データを自動更新する予定です。
  *
  * 現在のフェーズ:
- *   Phase 1: LAST_UPDATED の日付を自動更新（実装済み）
+ *   Phase 1: （廃止）手動 LAST_UPDATED → 実行日ベースに移行済み
  *   Phase 2: GitHubスター数・最新リリースバージョンの自動取得（TODO）
  *   Phase 3: 公式サイトからの料金・モデル情報の取得（TODO）
  */
 
-import { readFileSync, writeFileSync } from "node:fs";
-import { join, dirname } from "node:path";
-import { fileURLToPath } from "node:url";
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const DATA_PATH = join(__dirname, "..", "src", "data", "aiToolsData.js");
-
-// ── Phase 1: 日付更新 ──
+// ── Phase 1: 日付はフロント・generate-feed が getSiteTodayYmd() で算出 ──
 function updateLastUpdated() {
-  const today = new Date().toISOString().split("T")[0];
-  let content = readFileSync(DATA_PATH, "utf-8");
-
-  const oldDate = content.match(/LAST_UPDATED = "(\d{4}-\d{2}-\d{2})"/);
-  if (oldDate && oldDate[1] === today) {
-    console.log(`[collect] LAST_UPDATED is already ${today}. No update needed.`);
-    return false;
-  }
-
-  content = content.replace(
-    /LAST_UPDATED = "\d{4}-\d{2}-\d{2}"/,
-    `LAST_UPDATED = "${today}"`
+  console.log(
+    "[collect] Site date is computed at runtime (Asia/Tokyo). No file patch.",
   );
-  writeFileSync(DATA_PATH, content, "utf-8");
-  console.log(`[collect] Updated LAST_UPDATED to ${today}`);
-  return true;
+  return false;
 }
 
 // ── Phase 2: GitHub情報取得（将来実装） ──

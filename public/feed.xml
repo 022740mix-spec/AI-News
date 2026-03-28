@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-04-01T15:00:00Z</updated>
+  <updated>2026-03-28T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>TypeScript バックエンドの ORM — Drizzle と Prisma を AI アプリ開発でどう切るか</title>
@@ -46,6 +46,14 @@
     <published>2026-03-28T15:00:00Z</published>
     <updated>2026-03-28T15:00:00Z</updated>
     <summary>MCP v2 仕様リリース（OAuth 2.1・Streamable HTTP）、Anthropic Mythos リークでサイバー株急落、ARC-AGI-3 公開（フロンティアAI 0.26%）、Sora 終了と Disney 撤退 — 3月下旬は市場・プロトコル・ベンチマークが同時に動いた。</summary>
+  </entry>
+  <entry>
+    <title>【ガイド別紙】メディア生成ツール早見 — クリエイター向け（バイブコーディングとは分離）</title>
+    <link rel="alternate" type="text/html" href="?a=guide-media-generative-tools-2026"/>
+    <id>tag:ai-tool-news.jp,2026:guide-media-generative-tools-2026</id>
+    <published>2026-03-28T15:00:00Z</published>
+    <updated>2026-03-28T15:00:00Z</updated>
+    <summary>画像・動画・音楽・音声合成の代表的ツール一覧は、コーディング用途の「バイブコーディング」ガイドと読者層が異なるためサイト上でタブ分離した。想定ユーザー・権利と料金の注意点を整理し、早見表への導線を記事化する。</summary>
   </entry>
   <entry>
     <title>【編集部資料・全公開】AIモデル進化を追うサイト — 切り口別リンク集（時系列・OSS・中国勢・Ollama・ベンチ）</title>
