@@ -48,6 +48,30 @@
     <summary>RAG・チャット・エージェントの永続層は多くの場合がリレーショナル＋ベクトル拡張。Supabase（Postgres＋Auth＋Realtime＋Edge Functions）を軸に、RLS・接続プール・ハイブリッド検索の論点を整理する。</summary>
   </entry>
   <entry>
+    <title>【特集】2026年春、シンギュラリティの入口に立っている — Mythos が示す AI 能力の急進</title>
+    <link rel="alternate" type="text/html" href="?a=singularity-mythos-2026-spring"/>
+    <id>tag:ai-tool-news.jp,2026:singularity-mythos-2026-spring</id>
+    <published>2026-03-28T15:00:00Z</published>
+    <updated>2026-03-28T15:00:00Z</updated>
+    <summary>Anthropic の内部モデル Mythos（Capybara ティア）のリーク、Google TurboQuant による8倍高速化、コールセンターを代替する音声 AI — 2026年第1四半期に起きたことを振り返ると、AI の能力曲線が急激に立ち上がっている。この特集では、今何が起きているのかを整理する。</summary>
+  </entry>
+  <entry>
+    <title>Claude Code と Codex CLI をターミナルで連携 — マルチエージェント開発の実践</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-codex-multi-agent-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-codex-multi-agent-2026</id>
+    <published>2026-03-28T15:00:00Z</published>
+    <updated>2026-03-28T15:00:00Z</updated>
+    <summary>Claude Code と OpenAI Codex CLI を同じターミナルで並行起動し、それぞれの得意分野で分担させるマルチエージェント開発が話題になっている。Claude Code はアーキテクチャ設計と複雑な実装、Codex は自律タスクと DevOps に強い。</summary>
+  </entry>
+  <entry>
+    <title>金融版 Claude Code「Dexter」が話題 — 200行のオープンソースで株式分析・投資判断を自動化</title>
+    <link rel="alternate" type="text/html" href="?a=dexter-financial-agent-2026"/>
+    <id>tag:ai-tool-news.jp,2026:dexter-financial-agent-2026</id>
+    <published>2026-03-28T15:00:00Z</published>
+    <updated>2026-03-28T15:00:00Z</updated>
+    <summary>ターミナルで動作する自律型金融リサーチエージェント Dexter が GitHub で1.7万スターを獲得し話題に。約200行のコードで構築され、タスク計画・自己検証・リアルタイム市場データ分析を行う。Claude / Codex / ローカル LLM に対応。</summary>
+  </entry>
+  <entry>
     <title>Claude Code、自動メモリ（Auto Memory）の無効化オプションを追加</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-auto-memory-disable-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-auto-memory-disable-2026</id>
@@ -246,6 +270,14 @@
     <published>2026-03-26T15:00:00Z</published>
     <updated>2026-03-26T15:00:00Z</updated>
     <summary>3月26日、Model Context Protocol の第2版仕様が公開された。HTTP+SSE を置き換える Streamable HTTP トランスポート、OAuth 2.1 認可フレームワーク、JSON-RPC バッチ、ツールアノテーションなどが盛り込まれ、エンタープライズ本番環境での採用障壁を大幅に下げる。OpenAI・Microsoft も正式サポートを表明。</summary>
+  </entry>
+  <entry>
+    <title>Google、AI を最大8倍高速化しメモリを6分の1に削減する圧縮アルゴリズム TurboQuant を発表</title>
+    <link rel="alternate" type="text/html" href="?a=google-turboquant-2026"/>
+    <id>tag:ai-tool-news.jp,2026:google-turboquant-2026</id>
+    <published>2026-03-25T15:00:00Z</published>
+    <updated>2026-03-25T15:00:00Z</updated>
+    <summary>Google Research が LLM の KV キャッシュを3ビットまで圧縮するアルゴリズム TurboQuant を発表した。NVIDIA H100 GPU 上で最大8倍の高速化と6倍以上のメモリ削減を精度損失なしで実現。Samsung や Micron などメモリチップ株に影響が出ている。</summary>
   </entry>
   <entry>
     <title>Gemini CLI レビュー — Googleが放つ200万トークンの超大規模コンテキストCLI</title>

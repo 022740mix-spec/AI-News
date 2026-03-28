@@ -26,6 +26,91 @@
 
 export const ARTICLES = [
   {
+    "id": "google-turboquant-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Google、AI を最大8倍高速化しメモリを6分の1に削減する圧縮アルゴリズム TurboQuant を発表",
+    "excerpt": "Google Research が LLM の KV キャッシュを3ビットまで圧縮するアルゴリズム TurboQuant を発表した。NVIDIA H100 GPU 上で最大8倍の高速化と6倍以上のメモリ削減を精度損失なしで実現。Samsung や Micron などメモリチップ株に影響が出ている。",
+    "body": [
+      "Google Research は3月25日、LLM の推論を大幅に効率化する圧縮アルゴリズム TurboQuant を発表した。KV キャッシュ（モデルが過去の会話を記憶するためのメモリ領域）を3ビットまで圧縮し、精度を一切損なわずにメモリ使用量を6分の1以下に削減する。",
+      "NVIDIA H100 GPU 上のベンチマークでは、32ビットの非圧縮状態と比較して最大8倍の速度向上を記録した。Llama-3.1-8B や Mistral-7B などのオープンソースモデルで検証され、圧縮後も非圧縮モデルと同等のリコールスコアを達成している。追加学習は不要で、既存のモデルにそのまま適用できる点が実用的。",
+      "TurboQuant は ICLR 2026 で発表される予定。インターネット上では、ドラマ「シリコンバレー」の圧縮技術になぞらえて「現実の Pied Piper」と話題になっている。AI の運用コストを大幅に下げる可能性があり、メモリチップ需要への影響から Samsung や Micron の株価にも動きが出ている。"
+    ],
+    "newsDate": "2026-03-25",
+    "date": "2026-03-28",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": ["Google", "TurboQuant", "圧縮", "高速化", "メモリ"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "TurboQuant: Redefining AI efficiency with extreme compression", "site": "Google Research", "url": "https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/" }
+    ]
+  },
+  {
+    "id": "singularity-mythos-2026-spring",
+    "type": "feature",
+    "category": "special",
+    "title": "【特集】2026年春、シンギュラリティの入口に立っている — Mythos が示す AI 能力の急進",
+    "excerpt": "Anthropic の内部モデル Mythos（Capybara ティア）のリーク、Google TurboQuant による8倍高速化、コールセンターを代替する音声 AI — 2026年第1四半期に起きたことを振り返ると、AI の能力曲線が急激に立ち上がっている。この特集では、今何が起きているのかを整理する。",
+    "body": [
+      "2026年3月、Anthropic の内部文書がリークし、Opus を超える新ティア Capybara（コードネーム Mythos）の存在が明らかになった。Fortune の報道によると、Anthropic はこのモデルを「能力のステップチェンジ（段階的ではなく飛躍的な変化）」と位置づけている。コーディング、学術的推論、サイバーセキュリティの各ベンチマークで Opus 4.6 を大幅に上回るスコアが報告されている。",
+      "同時に、このモデルがソフトウェアの脆弱性を高速で発見・悪用する能力を持つことが内部文書で警告されており、サイバーセキュリティ株の急落を引き起こした。Anthropic は慎重なロールアウト戦略を採り、少数のアーリーアクセスユーザーから段階的に公開する方針とされる。",
+      "AI の能力向上はモデル単体にとどまらない。Google の TurboQuant はメモリを6分の1に圧縮して8倍高速化し、Gemini 3.1 Flash Live は音声応答を0.5秒以下にした。これらを組み合わせると、数か月前には不可能だったことが日常的に可能になる速度で技術が進んでいる。",
+      "「シンギュラリティ」という言葉は議論を呼ぶが、2026年春に起きていることを見ると、少なくともソフトウェア開発・カスタマーサポート・金融分析といった知的労働の一部において、AI が人間の能力を超える領域が急速に広がっていることは否定しにくい。開発者にとって重要なのは、この流れの中で何を自動化し、何を人間が判断するかの線引きを意識し続けることだろう。"
+    ],
+    "newsDate": "2026-03-28",
+    "date": "2026-03-28",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["特集", "シンギュラリティ", "Mythos", "2026年", "AI安全性"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Anthropic 'Mythos' AI model representing 'step change in capabilities'", "site": "Fortune", "url": "https://fortune.com/2026/03/26/anthropic-says-testing-mythos-powerful-new-ai-model-after-data-leak-reveals-its-existence-step-change-in-capabilities/" }
+    ]
+  },
+  {
+    "id": "claude-code-codex-multi-agent-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code と Codex CLI をターミナルで連携 — マルチエージェント開発の実践",
+    "excerpt": "Claude Code と OpenAI Codex CLI を同じターミナルで並行起動し、それぞれの得意分野で分担させるマルチエージェント開発が話題になっている。Claude Code はアーキテクチャ設計と複雑な実装、Codex は自律タスクと DevOps に強い。",
+    "body": [
+      "ターミナルベースの AI コーディングエージェントが成熟し、Claude Code と Codex CLI を組み合わせて使う開発者が増えている。2つのエージェントを同時に走らせるマルチエージェント開発のパターンが X やブログで共有されている。",
+      "実践的な使い分けとしては、Claude Code にアーキテクチャ設計・複雑な機能実装・フロントエンド開発を任せ、Codex CLI に自律的なテスト作成・DevOps タスク・コスト重視のバッチ処理を任せる構成が多い。Claude Code は深い推論とコード品質に強く、Codex CLI はトークン効率が約4倍良いとされる。",
+      "具体的には、Cursor や VS Code のターミナルを分割して一方で claude、もう一方で codex を起動し、それぞれに異なる指示を出す。また、Claude Code の出力をパイプで Codex に渡す（またはその逆）といったスクリプト連携も試みられている。Telegram や Discord からブリッジして両方のエージェントに指示を出すツール（Claude-to-IM-skill）も公開されている。"
+    ],
+    "newsDate": "2026-03-28",
+    "date": "2026-03-28",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": ["Claude Code", "Codex", "マルチエージェント", "CLI"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Claude-to-IM-skill (GitHub)", "site": "GitHub", "url": "https://github.com/op7418/Claude-to-IM-skill" }
+    ]
+  },
+  {
+    "id": "dexter-financial-agent-2026",
+    "type": "news",
+    "category": "product",
+    "title": "金融版 Claude Code「Dexter」が話題 — 200行のオープンソースで株式分析・投資判断を自動化",
+    "excerpt": "ターミナルで動作する自律型金融リサーチエージェント Dexter が GitHub で1.7万スターを獲得し話題に。約200行のコードで構築され、タスク計画・自己検証・リアルタイム市場データ分析を行う。Claude / Codex / ローカル LLM に対応。",
+    "body": [
+      "開発者の Virat Singh 氏が公開した Dexter は「Claude Code の金融版」と称される自律型リサーチエージェント。ターミナル上で動作し、割安株の発見、詳細な銘柄分析、投資テーゼの構築を自律的に行う。GitHub で1.7万スターを獲得している。",
+      "約200行のコードで構築されており、LangChain を使って Claude・GPT・ローカル LLM を切り替えて利用できる。リアルタイムの市場データ、SEC ファイリング（米国の企業開示書類）、財務諸表を分析し、タスクの計画 → 実行 → 自己検証 → 改善のループを自律的に回す。",
+      "Dexter は投資判断の「下書き」として位置づけられており、最終的な売買判断は人間が行うことが前提。AI エージェントが特定の専門領域に特化して自律的に動作する事例として、バイブコーディングの応用範囲の広がりを示している。"
+    ],
+    "newsDate": "2026-03-28",
+    "date": "2026-03-28",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": ["Dexter", "金融", "エージェント", "オープンソース"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "dexter - An autonomous agent for deep financial research", "site": "GitHub", "url": "https://github.com/virattt/dexter" }
+    ]
+  },
+  {
     "id": "gemini-31-flash-live-voice-2026",
     "type": "news",
     "category": "model",
