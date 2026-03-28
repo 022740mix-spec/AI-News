@@ -1925,30 +1925,6 @@ function ArticleDetail({
 }) {
   const cat = CATEGORIES[article.category];
 
-  const share = useCallback(async () => {
-    const u = new URL(window.location.href);
-    u.searchParams.set("a", article.id);
-    const url = u.toString();
-    try {
-      if (navigator.share) {
-        await navigator.share({
-          title: article.title,
-          text: stripMarkdownBoldMarkers(article.excerpt),
-          url,
-        });
-        return;
-      }
-    } catch {
-      /* user cancelled */
-    }
-    try {
-      await navigator.clipboard.writeText(url);
-      window.alert("記事へのリンクをコピーしました。");
-    } catch {
-      window.prompt("リンクをコピーしてください", url);
-    }
-  }, [article]);
-
   return (
     <div className="app-inner">
       <ReadingProgress />
@@ -1958,19 +1934,8 @@ function ArticleDetail({
           className="detail-back-btn desktop-only"
           onClick={onBack}
         >
-          ← 戻る
+          ← 一覧へ
         </button>
-        <div className="detail-toolbar">
-          <button type="button" className="btn desktop-only" onClick={onBack}>
-            ← 一覧へ
-          </button>
-          <button type="button" className="btn btn-primary" onClick={share}>
-            共有 / リンクコピー
-          </button>
-          <span className="desktop-only" style={{ fontSize: 12, color: "var(--muted)", marginLeft: "auto" }}>
-            Esc で一覧
-          </span>
-        </div>
 
         <article>
           <div
