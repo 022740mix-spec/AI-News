@@ -26,10 +26,11 @@ import {
   GLOSSARY_BY_GENRE,
   MEDIA_GUIDE_INTRO,
   VIBE_BASIC_RULES_LEAD,
+  VIBE_BASIC_RULES,
   VIBE_CODING_DEFINITION,
   VIBE_CODING_PRACTICAL,
+  VIBE_GUIDE_PITFALLS,
   VIBE_MEDIA_TAXONOMY,
-  VIBE_PROGRESSION_PATH,
   VIBE_SETUP_GUIDE,
   TOOL_REFERENCES,
   filterToolReference,
@@ -239,10 +240,20 @@ function upsertMetaName(name, content) {
 }
 
 const GUIDE_SEO = {
-  vibe: {
-    titleSuffix: "ガイド：バイブコーディング",
+  setup: {
+    titleSuffix: "ガイド：セットアップ",
     description:
-      "Claude チャットからの段階道筋、IDE・音声・Copilot／Cowork・CLI の組み合わせ表。実務のスラッシュ・スキル配置の後、ハマり／ルール／CLI リファレンス。メディア生成は別タブ。",
+      "バイブコーディングの概要と環境セットアップ手順。IDE・AI・CLI の初期設定をステップで解説。",
+  },
+  rules: {
+    titleSuffix: "ガイド：基本ルール",
+    description:
+      "バイブコーディングの基本ルールとハマりやすいポイント。Git・プロンプト・セキュリティの注意点。",
+  },
+  practical: {
+    titleSuffix: "ガイド：実践テクニック",
+    description:
+      "実務で使えるバイブコーディングのテクニック。スラッシュコマンド・スキル配置・ワークフロー。",
   },
   media: {
     titleSuffix: "ガイド：メディア生成ツール早見",
@@ -266,7 +277,7 @@ const COMPANIES_SEO = {
  * @param {{ selectedArticle: object | null, siteSection: string, guideTab?: string }} ctx
  */
 function syncDocumentSeo(ctx) {
-  const { selectedArticle, siteSection, guideTab = "vibe" } = ctx;
+  const { selectedArticle, siteSection, guideTab = "setup" } = ctx;
 
   let title = DEFAULT_DOC_TITLE;
   let descRaw = SITE_DESCRIPTION;
@@ -277,12 +288,7 @@ function syncDocumentSeo(ctx) {
     title = `${selectedArticle.title} | ${SITE_NAME}`;
     ogTitle = selectedArticle.title;
   } else if (siteSection === "guide") {
-    const g =
-      guideTab === "glossary"
-        ? GUIDE_SEO.glossary
-        : guideTab === "media"
-          ? GUIDE_SEO.media
-          : GUIDE_SEO.vibe;
+    const g = GUIDE_SEO[guideTab] || GUIDE_SEO.setup;
     title = `${g.titleSuffix} | ${SITE_NAME}`;
     descRaw = g.description;
     ogTitle = `${g.titleSuffix} | ${SITE_NAME}`;
@@ -463,8 +469,7 @@ function syncAppUrl({ articleId, siteSection, tagQuery, guideTab, toolTab }) {
     } else if (siteSection === "guide") {
       u.searchParams.set("view", "guide");
       u.searchParams.delete("tag");
-      if (guideTab === "glossary") u.searchParams.set("tab", "glossary");
-      else if (guideTab === "media") u.searchParams.set("tab", "media");
+      if (guideTab && guideTab !== "setup") u.searchParams.set("tab", guideTab);
       else u.searchParams.delete("tab");
     } else {
       u.searchParams.delete("view");
@@ -577,42 +582,30 @@ function FilterBar({ active, setActive }) {
 }
 
 function GuideTabBar({ guideTab, onSelect }) {
+  const tabs = [
+    { id: "setup", label: "セットアップ" },
+    { id: "rules", label: "基本ルール" },
+    { id: "practical", label: "実践テクニック" },
+    { id: "media", label: "メディア生成" },
+    { id: "glossary", label: "用語集" },
+  ];
   return (
     <nav className="filter-nav" aria-label="ガイドの表示切替">
       <div className="filter-nav-inner" role="tablist">
-        <button
-          id="guide-subtab-vibe"
-          type="button"
-          role="tab"
-          aria-selected={guideTab === "vibe"}
-          aria-controls="guide-subtab-panel"
-          className={`filter-tab${guideTab === "vibe" ? " is-active" : ""}`}
-          onClick={() => onSelect("vibe")}
-        >
-          バイブコーディング
-        </button>
-        <button
-          id="guide-subtab-media"
-          type="button"
-          role="tab"
-          aria-selected={guideTab === "media"}
-          aria-controls="guide-subtab-panel"
-          className={`filter-tab${guideTab === "media" ? " is-active" : ""}`}
-          onClick={() => onSelect("media")}
-        >
-          メディア生成
-        </button>
-        <button
-          id="guide-subtab-glossary"
-          type="button"
-          role="tab"
-          aria-selected={guideTab === "glossary"}
-          aria-controls="guide-subtab-panel"
-          className={`filter-tab${guideTab === "glossary" ? " is-active" : ""}`}
-          onClick={() => onSelect("glossary")}
-        >
-          用語集
-        </button>
+        {tabs.map((t) => (
+          <button
+            key={t.id}
+            id={`guide-subtab-${t.id}`}
+            type="button"
+            role="tab"
+            aria-selected={guideTab === t.id}
+            aria-controls="guide-subtab-panel"
+            className={`filter-tab${guideTab === t.id ? " is-active" : ""}`}
+            onClick={() => onSelect(t.id)}
+          >
+            {t.label}
+          </button>
+        ))}
       </div>
     </nav>
   );
@@ -725,46 +718,60 @@ function ToolReferencePanel({ referenceData, practical }) {
 }
 
 function GuideSidebar({ guideTab }) {
-  const sidebarLabel =
-    guideTab === "vibe"
-      ? "バイブコーディングの目次"
-      : guideTab === "media"
-        ? "メディア生成ガイドの目次"
-        : "用語集の目次";
+  const labelMap = {
+    setup: "セットアップの目次",
+    rules: "基本ルールの目次",
+    practical: "実践テクニックの目次",
+    media: "メディア生成ガイドの目次",
+    glossary: "用語集の目次",
+  };
+  const sidebarLabel = labelMap[guideTab] || labelMap.setup;
   return (
     <aside className="desktop-sidebar" aria-label={sidebarLabel}>
       <div className="sidebar-panel">
         <h3>このページ内</h3>
         <p className="sidebar-panel-hint">見出しへジャンプします。</p>
-        {guideTab === "vibe" ? (
+        {guideTab === "setup" ? (
           <>
             <a href="#vibe-intro" className="sidebar-anchor">
               バイブコーディングとは
             </a>
-            <a href="#vibe-progression" className="sidebar-anchor">
-              おすすめの道筋
+            <a href="#vibe-setup" className="sidebar-anchor">
+              {VIBE_SETUP_GUIDE.title}
             </a>
-            <a href="#vibe-reading-map" className="sidebar-anchor">
-              記事・ガイド・特集
-            </a>
-            <a href="#vibe-tool-table" className="sidebar-anchor">
-              ツールの組み合わせ表
-            </a>
-            <a href="#vibe-stacks" className="sidebar-anchor">
-              環境の組み合わせ例
-            </a>
-            <a href="#vibe-practical" className="sidebar-anchor">
-              実務の扱い
+            {VIBE_SETUP_GUIDE.sections.map((s) => (
+              <a
+                key={s.id}
+                href={`#${s.id}`}
+                className="sidebar-anchor sidebar-anchor--nested"
+              >
+                {s.heading}
+              </a>
+            ))}
+          </>
+        ) : guideTab === "rules" ? (
+          <>
+            <a href="#vibe-rules" className="sidebar-anchor">
+              基本ルール
             </a>
             <a href="#vibe-pitfalls" className="sidebar-anchor">
               ハマりやすいこと
             </a>
-            <a href="#vibe-rules" className="sidebar-anchor">
-              基本ルール
+          </>
+        ) : guideTab === "practical" ? (
+          <>
+            <a href="#vibe-practical" className="sidebar-anchor">
+              {VIBE_CODING_PRACTICAL.title}
             </a>
-            <a href="#vibe-claude-code" className="sidebar-anchor">
-              Claude Code（CLI）
-            </a>
+            {VIBE_CODING_PRACTICAL.sections.map((s) => (
+              <a
+                key={s.id}
+                href={`#${s.id}`}
+                className="sidebar-anchor sidebar-anchor--nested"
+              >
+                {s.heading}
+              </a>
+            ))}
           </>
         ) : guideTab === "media" ? (
           <>
@@ -820,80 +827,64 @@ function CompaniesSidebar({ companies }) {
   );
 }
 
-function VibeCodingGuidePanel({
-  stacks,
-  toolTable,
-  basicRules,
-  claudeCode,
-  pitfalls,
-}) {
+/** セットアップステップを描画する共通ヘルパー */
+function SetupStepList({ sections, mkKey }) {
+  return sections.map((sec) => (
+    <div key={sec.id} id={sec.id} className="vibe-practical-sub">
+      <h3 className="vibe-practical-sub__title">{sec.heading}</h3>
+      <p className="vibe-practical-sub__body">
+        {richInlineLine(sec.body, mkKey)}
+      </p>
+      {sec.steps?.map((step, si) => (
+        <div key={si} className="setup-step">
+          <h4 className="setup-step__label">{richInlineLine(step.label, mkKey)}</h4>
+          {step.detail ? (
+            <p className="setup-step__detail">{richInlineLine(step.detail, mkKey)}</p>
+          ) : null}
+          {step.code ? (
+            <CopyableCodeBlock code={step.code} lang={step.codeLang ?? "bash"} />
+          ) : null}
+        </div>
+      ))}
+    </div>
+  ));
+}
+
+function GuideSetupPanel() {
   let k = 0;
-  const mkKey = () => `vc-${k++}`;
-  const [colA, colB, colC, colD, colE] = toolTable.columns;
+  const mkKey = () => `gs-${k++}`;
   return (
-    <div
-      className="companies-guide-rail companies-guide-rail--full-tab"
-      aria-label="バイブコーディング"
-    >
+    <div className="companies-guide-rail companies-guide-rail--full-tab" aria-label="セットアップ">
       <section id="vibe-intro" className="guide-section guide-section--vibe">
         <h2 className="guide-section__title">バイブコーディングとは</h2>
         <p className="guide-section__lead">
           {richInlineLine(VIBE_CODING_DEFINITION, mkKey)}
         </p>
       </section>
-
       <section id="vibe-setup" className="guide-section guide-section--vibe">
         <h2 className="guide-section__title">{VIBE_SETUP_GUIDE.title}</h2>
         <p className="guide-section__lead">
           {richInlineLine(VIBE_SETUP_GUIDE.lead, mkKey)}
         </p>
-        {VIBE_SETUP_GUIDE.sections.map((sec) => (
-          <div key={sec.id} id={sec.id} className="vibe-practical-sub">
-            <h3 className="vibe-practical-sub__title">{sec.heading}</h3>
-            <p className="vibe-practical-sub__body">
-              {richInlineLine(sec.body, mkKey)}
-            </p>
-            {sec.steps?.map((step, si) => (
-              <div key={si} className="setup-step">
-                <h4 className="setup-step__label">{richInlineLine(step.label, mkKey)}</h4>
-                {step.detail ? (
-                  <p className="setup-step__detail">{richInlineLine(step.detail, mkKey)}</p>
-                ) : null}
-                {step.code ? (
-                  <CopyableCodeBlock code={step.code} lang={step.codeLang ?? "bash"} />
-                ) : null}
-              </div>
-            ))}
-          </div>
-        ))}
+        <SetupStepList sections={VIBE_SETUP_GUIDE.sections} mkKey={mkKey} />
       </section>
+    </div>
+  );
+}
 
-      <section id="vibe-progression" className="guide-section guide-section--vibe">
-        <h2 className="guide-section__title">{VIBE_PROGRESSION_PATH.title}</h2>
-        <p className="guide-section__lead">
-          {richInlineLine(VIBE_PROGRESSION_PATH.lead, mkKey)}
-        </p>
-        <ol className="vibe-progression-steps">
-          {VIBE_PROGRESSION_PATH.steps.map((step) => (
-            <li key={step.heading} className="vibe-progression-steps__item">
-              <h3 className="vibe-progression-steps__heading">{step.heading}</h3>
-              <p className="vibe-progression-steps__body">
-                {richInlineLine(step.body, mkKey)}
-              </p>
-            </li>
-          ))}
-        </ol>
-        <p className="companies-guide-note">{VIBE_PROGRESSION_PATH.footnote}</p>
-      </section>
-
+function GuideRulesPanel() {
+  let k = 0;
+  const mkKey = () => `gr-${k++}`;
+  return (
+    <div className="companies-guide-rail companies-guide-rail--full-tab" aria-label="基本ルール">
       <section id="vibe-rules" className="guide-section guide-section--vibe">
         <h2 className="guide-section__title">基本ルール</h2>
         <p className="guide-section__lead">
           {richInlineLine(VIBE_BASIC_RULES_LEAD, mkKey)}
         </p>
-        {basicRules.length > 0 ? (
+        {VIBE_BASIC_RULES.length > 0 ? (
           <dl className="glossary-dl">
-            {basicRules.map((r) => (
+            {VIBE_BASIC_RULES.map((r) => (
               <Fragment key={r.title}>
                 <dt className="glossary-dl__term">{r.title}</dt>
                 <dd className="glossary-dl__body">
@@ -908,79 +899,34 @@ function VibeCodingGuidePanel({
         ) : null}
       </section>
 
-      <section id="vibe-tool-table" className="guide-section guide-section--vibe">
-        <h2 className="guide-section__title">
-          IDE・AI・音声入力の組み合わせ表（道筋に対応）
-        </h2>
-        <GuideLinkifiedP text={toolTable.lead} className="guide-section__lead" />
-        {toolTable.rows.length > 0 ? (
-          <div className="vibe-tool-table-wrap">
-            <table className="vibe-tool-table">
-              <caption className="visually-hidden">
-                バイブコーディング向け IDE・AI・音声入力の組み合わせ一覧
-              </caption>
-              <thead>
-                <tr>
-                  <th scope="col">{colA}</th>
-                  <th scope="col">{colB}</th>
-                  <th scope="col">{colC}</th>
-                  <th scope="col">{colD}</th>
-                  <th scope="col">{colE}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {toolTable.rows.map((r) => (
-                  <tr key={r.pattern}>
-                    <th scope="row">{r.pattern}</th>
-                    <td>{r.ide}</td>
-                    <td>{r.ai}</td>
-                    <td>{r.voice}</td>
-                    <td>{r.note}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        ) : null}
-      </section>
-
-      <section id="vibe-stacks" className="guide-section guide-section--vibe">
-        <h2 className="guide-section__title">環境の組み合わせ例</h2>
-        <p className="guide-section__lead">
-          {richInlineLine(
-            "上の **道筋・表**と同じく、**段階が浅い順**にカードを並べています。いまの自分に近いところから読み、足りない道具だけ拾えば十分です。",
-            mkKey,
-          )}
-        </p>
-        {stacks.length > 0 ? (
-          <div className="vibe-stack-list">
-            {stacks.map((s) => (
-              <article key={s.id} className="vibe-stack-card">
-                <header className="vibe-stack-card__head">
-                  <span className="vibe-stack-card__emoji" aria-hidden>
-                    {s.emoji}
-                  </span>
-                  <div>
-                    <h3 className="vibe-stack-card__title">{s.title}</h3>
-                    <p className="vibe-stack-card__for">{s.forWho}</p>
-                  </div>
-                </header>
-                <p className="vibe-stack-card__summary">{s.summary}</p>
-                <ul className="vibe-stack-card__combo">
-                  {s.combo.map((row) => (
-                    <li key={row.role}>
-                      <strong className="vibe-stack-card__role">{row.role}</strong>
-                      <span className="vibe-stack-card__picks">{row.picks}</span>
-                      <span className="vibe-stack-card__tip">{row.tip}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
+      <section id="vibe-pitfalls" className="guide-section guide-section--vibe">
+        <h2 className="guide-section__title">{VIBE_GUIDE_PITFALLS.title}</h2>
+        <GuideLinkifiedP text={VIBE_GUIDE_PITFALLS.lead} className="guide-section__lead" />
+        {VIBE_GUIDE_PITFALLS.terms.length > 0 ? (
+          <dl className="glossary-dl">
+            {VIBE_GUIDE_PITFALLS.terms.map((t) => (
+              <Fragment key={t.word}>
+                <dt className="glossary-dl__term">{t.word}</dt>
+                <dd className="glossary-dl__body">
+                  <GuideLinkifiedP text={t.mean} className="glossary-dl__mean" />
+                  {t.mem ? (
+                    <GuideLinkifiedP text={t.mem} className="glossary-dl__mem" />
+                  ) : null}
+                </dd>
+              </Fragment>
             ))}
-          </div>
+          </dl>
         ) : null}
       </section>
+    </div>
+  );
+}
 
+function GuidePracticalPanel() {
+  let k = 0;
+  const mkKey = () => `gp-${k++}`;
+  return (
+    <div className="companies-guide-rail companies-guide-rail--full-tab" aria-label="実践テクニック">
       <section id="vibe-practical" className="guide-section guide-section--vibe">
         <h2 className="guide-section__title">{VIBE_CODING_PRACTICAL.title}</h2>
         <p className="guide-section__lead">
@@ -994,46 +940,6 @@ function VibeCodingGuidePanel({
             </p>
           </div>
         ))}
-      </section>
-
-      <section id="vibe-pitfalls" className="guide-section guide-section--vibe">
-        <h2 className="guide-section__title">{pitfalls.title}</h2>
-        <GuideLinkifiedP text={pitfalls.lead} className="guide-section__lead" />
-        {pitfalls.terms.length > 0 ? (
-          <dl className="glossary-dl">
-            {pitfalls.terms.map((t) => (
-              <Fragment key={t.word}>
-                <dt className="glossary-dl__term">{t.word}</dt>
-                <dd className="glossary-dl__body">
-                  <GuideLinkifiedP text={t.mean} className="glossary-dl__mean" />
-                  {t.mem ? (
-                    <GuideLinkifiedP text={t.mem} className="glossary-dl__mem" />
-                  ) : null}
-                </dd>
-              </Fragment>
-            ))}
-          </dl>
-        ) : null}
-      </section>
-
-      <section id="vibe-claude-code" className="guide-section guide-section--vibe">
-        <h2 className="guide-section__title">{claudeCode.title}</h2>
-        <GuideLinkifiedP text={claudeCode.lead} className="guide-section__lead" />
-        {claudeCode.terms.length > 0 ? (
-          <dl className="glossary-dl">
-            {claudeCode.terms.map((t) => (
-              <Fragment key={t.word}>
-                <dt className="glossary-dl__term">{t.word}</dt>
-                <dd className="glossary-dl__body">
-                  <GuideLinkifiedP text={t.mean} className="glossary-dl__mean" />
-                  {t.mem ? (
-                    <GuideLinkifiedP text={t.mem} className="glossary-dl__mem" />
-                  ) : null}
-                </dd>
-              </Fragment>
-            ))}
-          </dl>
-        ) : null}
       </section>
     </div>
   );
@@ -2094,14 +2000,14 @@ function SiteFooter() {
 /** 初回マウント時の URL（?a= / ?view= / ?tag=）から一覧・詳細状態を復元 */
 function readInitialRouteState() {
   if (typeof window === "undefined") {
-    return { selected: null, siteSection: "articles", query: "", guideTab: "vibe", toolTab: "claude-code" };
+    return { selected: null, siteSection: "articles", query: "", guideTab: "setup", toolTab: "claude-code" };
   }
   const u = new URL(window.location.href);
   const aid = u.searchParams.get("a");
   if (aid) {
     const found = ARTICLES.find((x) => x.id === aid);
     if (found) {
-      return { selected: found, siteSection: "articles", query: "", guideTab: "vibe", toolTab: "claude-code" };
+      return { selected: found, siteSection: "articles", query: "", guideTab: "setup", toolTab: "claude-code" };
     }
   }
   const view = u.searchParams.get("view");
@@ -2116,14 +2022,11 @@ function readInitialRouteState() {
             ? "guide"
             : "articles";
   const tab = u.searchParams.get("tab");
+  const VALID_GUIDE_TABS = ["setup", "rules", "practical", "media", "glossary"];
   const guideTab =
-    siteSection === "guide"
-      ? tab === "glossary"
-        ? "glossary"
-        : tab === "media"
-          ? "media"
-          : "vibe"
-      : "vibe";
+    siteSection === "guide" && VALID_GUIDE_TABS.includes(tab)
+      ? tab
+      : "setup";
   const toolTab = siteSection === "tools"
     ? (tab && TOOL_REFERENCES.some(t => t.id === tab) ? tab : "claude-code")
     : "claude-code";
@@ -2283,7 +2186,7 @@ export default function App() {
   const guideMatchCount =
     siteSection !== "guide"
       ? 0
-      : guideTab === "vibe"
+      : guideTab === "setup" || guideTab === "rules" || guideTab === "practical"
         ? vibeGuide.matchCount
         : guideTab === "media"
           ? mediaGuide.matchCount
@@ -2292,7 +2195,7 @@ export default function App() {
   const guideTotal =
     siteSection !== "guide"
       ? 0
-      : guideTab === "vibe"
+      : guideTab === "setup" || guideTab === "rules" || guideTab === "practical"
         ? vibeGuide.total
         : guideTab === "media"
           ? mediaGuide.total
@@ -2340,7 +2243,7 @@ export default function App() {
   const switchSection = useCallback((next) => {
     setSiteSection(next);
     setSelected(null);
-    if (next === "guide") setGuideTab("vibe");
+    if (next === "guide") setGuideTab("setup");
     if (next === "tools") setToolTab("claude-code");
     window.scrollTo(0, 0);
   }, []);
@@ -2562,13 +2465,7 @@ export default function App() {
                     <div
                       id="guide-subtab-panel"
                       role="tabpanel"
-                      aria-labelledby={
-                        guideTab === "vibe"
-                          ? "guide-subtab-vibe"
-                          : guideTab === "media"
-                            ? "guide-subtab-media"
-                            : "guide-subtab-glossary"
-                      }
+                      aria-labelledby={`guide-subtab-${guideTab}`}
                       className="empty-state"
                     >
                       このタブに該当がありません。別タブに切り替えるか、検索語を変えてください。
@@ -2577,23 +2474,14 @@ export default function App() {
                     <div
                       id="guide-subtab-panel"
                       role="tabpanel"
-                      aria-labelledby={
-                        guideTab === "vibe"
-                          ? "guide-subtab-vibe"
-                          : guideTab === "media"
-                            ? "guide-subtab-media"
-                            : "guide-subtab-glossary"
-                      }
+                      aria-labelledby={`guide-subtab-${guideTab}`}
                     >
-                      {guideTab === "vibe" ? (
-                        <VibeCodingGuidePanel
-
-                          stacks={vibeGuide.stacks}
-                          toolTable={vibeGuide.toolTable}
-                          basicRules={vibeGuide.basicRules}
-                          claudeCode={vibeGuide.claudeCode}
-                          pitfalls={vibeGuide.pitfalls}
-                        />
+                      {guideTab === "setup" ? (
+                        <GuideSetupPanel />
+                      ) : guideTab === "rules" ? (
+                        <GuideRulesPanel />
+                      ) : guideTab === "practical" ? (
+                        <GuidePracticalPanel />
                       ) : guideTab === "media" ? (
                         <MediaToolsGuidePanel
                           mediaTaxonomy={mediaGuide.mediaTaxonomy}
