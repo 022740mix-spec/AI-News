@@ -471,8 +471,12 @@ function syncAppUrl({ articleId, siteSection, tagQuery, guideTab, toolTab }) {
       u.searchParams.delete("tag");
       if (guideTab && guideTab !== "setup") u.searchParams.set("tab", guideTab);
       else u.searchParams.delete("tab");
-    } else {
+    } else if (siteSection === "home") {
       u.searchParams.delete("view");
+      u.searchParams.delete("tag");
+      u.searchParams.delete("tab");
+    } else {
+      u.searchParams.set("view", "articles");
       u.searchParams.delete("tab");
       const t = tagQuery?.trim();
       if (t) u.searchParams.set("tag", t);
@@ -496,13 +500,15 @@ function Header({
   searchPlaceholder = "記事を検索…（タイトル・概要・タグ）",
   searchAriaLabel = "検索",
   showSort = true,
+  onGoHome,
+  hideSearch = false,
 }) {
   return (
     <header className="header-wrap">
       <div className="header-inner">
         <div className="header-top">
           <div>
-            <h1 className="site-title">{SITE_NAME}</h1>
+            <h1 className="site-title" onClick={onGoHome} style={{ cursor: "pointer" }}>{SITE_NAME}</h1>
             <p className="site-tagline">{SITE_DESCRIPTION}</p>
           </div>
           <div className="header-actions">
@@ -517,46 +523,50 @@ function Header({
             </button>
           </div>
         </div>
-        <div className="search-row">
-          <div className="search-field">
-            <span className="search-prefix">🔎</span>
-            <input
-              ref={searchRef}
-              type="search"
-              placeholder={searchPlaceholder}
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              aria-label={searchAriaLabel}
-            />
-          </div>
-          {showSort ? (
-            <select
-              className="sort-select"
-              value={sort}
-              onChange={(e) => setSort(e.target.value)}
-              aria-label="並び順"
-            >
-              {SORTS.map((s) => (
-                <option key={s.id} value={s.id}>
-                  {s.label}
-                </option>
-              ))}
-            </select>
-          ) : (
-            <span className="sort-select-placeholder" aria-hidden />
-          )}
-          <span className="hint-kbd" title="フォーカス">
-            <kbd>/</kbd> で検索
-          </span>
-        </div>
-        <div className="toolbar-stats">
-          <span className="stat-pill">
-            表示 <strong>{filteredCount}</strong> / {totalCount} 件
-          </span>
-          {query ? (
-            <span className="stat-pill">フィルター: 「{query}」</span>
-          ) : null}
-        </div>
+        {!hideSearch ? (
+          <>
+            <div className="search-row">
+              <div className="search-field">
+                <span className="search-prefix">🔎</span>
+                <input
+                  ref={searchRef}
+                  type="search"
+                  placeholder={searchPlaceholder}
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  aria-label={searchAriaLabel}
+                />
+              </div>
+              {showSort ? (
+                <select
+                  className="sort-select"
+                  value={sort}
+                  onChange={(e) => setSort(e.target.value)}
+                  aria-label="並び順"
+                >
+                  {SORTS.map((s) => (
+                    <option key={s.id} value={s.id}>
+                      {s.label}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <span className="sort-select-placeholder" aria-hidden />
+              )}
+              <span className="hint-kbd" title="フォーカス">
+                <kbd>/</kbd> で検索
+              </span>
+            </div>
+            <div className="toolbar-stats">
+              <span className="stat-pill">
+                表示 <strong>{filteredCount}</strong> / {totalCount} 件
+              </span>
+              {query ? (
+                <span className="stat-pill">フィルター: 「{query}」</span>
+              ) : null}
+            </div>
+          </>
+        ) : null}
       </div>
     </header>
   );
@@ -608,6 +618,109 @@ function GuideTabBar({ guideTab, onSelect }) {
         ))}
       </div>
     </nav>
+  );
+}
+
+function HomePage({ articles, onSelect, onSection, bookmarkIds, onToggleBookmark }) {
+  const hero = articles.find((a) => {
+    const scope = a.heroScope ?? "day";
+    return scope !== "none";
+  });
+
+  const recentNews = articles
+    .filter((a) => a.type !== "review" && a.id !== hero?.id)
+    .slice(0, 4);
+
+  const topReviews = articles
+    .filter((a) => a.type === "review")
+    .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0))
+    .slice(0, 3);
+
+  return (
+    <div className="home-page">
+      {hero ? (
+        <section className="home-hero" onClick={() => onSelect(hero)}>
+          <span className="home-hero__label">最新ニュース</span>
+          <h2 className="home-hero__title">{hero.title}</h2>
+          <p className="home-hero__excerpt">
+            {hero.excerpt.length > 120
+              ? hero.excerpt.replace(/\*\*/g, "").slice(0, 120) + "…"
+              : hero.excerpt.replace(/\*\*/g, "")}
+          </p>
+        </section>
+      ) : null}
+
+      {recentNews.length > 0 ? (
+        <section className="home-section">
+          <div className="home-section__header">
+            <h2 className="home-section__title">最近のニュース</h2>
+            <button className="home-section__more" onClick={() => onSection("articles")}>
+              すべて見る →
+            </button>
+          </div>
+          <div className="home-cards">
+            {recentNews.map((a) => (
+              <article key={a.id} className="home-card" onClick={() => onSelect(a)}>
+                <span className="home-card__category">{CATEGORIES[a.category]?.label}</span>
+                <h3 className="home-card__title">{a.title}</h3>
+                <span className="home-card__date">{a.newsDate ?? a.date}</span>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {topReviews.length > 0 ? (
+        <section className="home-section">
+          <div className="home-section__header">
+            <h2 className="home-section__title">注目のレビュー</h2>
+            <button className="home-section__more" onClick={() => onSection("reviews")}>
+              すべて見る →
+            </button>
+          </div>
+          <div className="home-cards">
+            {topReviews.map((a) => (
+              <article key={a.id} className="home-card" onClick={() => onSelect(a)}>
+                <span className="home-card__rating">{renderStars(a.rating)}</span>
+                <h3 className="home-card__title">{a.title.split(/[—–]/)[0].trim()}</h3>
+                <span className="home-card__date">{a.newsDate ?? a.date}</span>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      <section className="home-section">
+        <h2 className="home-section__title">コンテンツ</h2>
+        <div className="home-nav-cards">
+          <button className="home-nav-card" onClick={() => onSection("articles")}>
+            <span className="home-nav-card__icon">📰</span>
+            <span className="home-nav-card__label">ニュース</span>
+            <span className="home-nav-card__desc">AI開発ツールの最新ニュース</span>
+          </button>
+          <button className="home-nav-card" onClick={() => onSection("reviews")}>
+            <span className="home-nav-card__icon">⭐</span>
+            <span className="home-nav-card__label">レビュー</span>
+            <span className="home-nav-card__desc">ツール比較と評価</span>
+          </button>
+          <button className="home-nav-card" onClick={() => onSection("guide")}>
+            <span className="home-nav-card__icon">📖</span>
+            <span className="home-nav-card__label">ガイド</span>
+            <span className="home-nav-card__desc">セットアップと実践テクニック</span>
+          </button>
+          <button className="home-nav-card" onClick={() => onSection("tools")}>
+            <span className="home-nav-card__icon">🔧</span>
+            <span className="home-nav-card__label">ツール別</span>
+            <span className="home-nav-card__desc">Claude Code / Cursor / Codex / Copilot</span>
+          </button>
+          <button className="home-nav-card" onClick={() => onSection("companies")}>
+            <span className="home-nav-card__icon">🏢</span>
+            <span className="home-nav-card__label">企業情報</span>
+            <span className="home-nav-card__desc">AI企業のプロファイル</span>
+          </button>
+        </div>
+      </section>
+    </div>
   );
 }
 
@@ -2020,7 +2133,7 @@ function SiteFooter() {
 /** 初回マウント時の URL（?a= / ?view= / ?tag=）から一覧・詳細状態を復元 */
 function readInitialRouteState() {
   if (typeof window === "undefined") {
-    return { selected: null, siteSection: "articles", query: "", guideTab: "setup", toolTab: "claude-code" };
+    return { selected: null, siteSection: "home", query: "", guideTab: "setup", toolTab: "claude-code" };
   }
   const u = new URL(window.location.href);
   const aid = u.searchParams.get("a");
@@ -2040,7 +2153,9 @@ function readInitialRouteState() {
           ? "tools"
           : view === "guide"
             ? "guide"
-            : "articles";
+            : view === "articles"
+              ? "articles"
+              : "home";
   const tab = u.searchParams.get("tab");
   const VALID_GUIDE_TABS = ["setup", "rules", "practical", "media", "glossary"];
   const guideTab =
@@ -2311,6 +2426,7 @@ export default function App() {
               sort={sort}
               setSort={setSort}
               searchRef={searchRef}
+              onGoHome={() => switchSection("home")}
               filteredCount={
                 siteSection === "companies"
                   ? filteredCompanies.length
@@ -2350,16 +2466,21 @@ export default function App() {
                       : "記事検索"
               }
               showSort={siteSection === "articles" || siteSection === "reviews"}
+              hideSearch={siteSection === "home"}
             />
-            <SiteSectionNav section={siteSection} onSection={switchSection} />
-            {siteSection === "articles" ? (
-              <FilterBar active={filter} setActive={setFilter} />
-            ) : siteSection === "reviews" ? (
-              <ReviewTabBar reviewTab={reviewTab} onSelect={setReviewTab} />
-            ) : siteSection === "guide" ? (
-              <GuideTabBar guideTab={guideTab} onSelect={selectGuideTab} />
-            ) : siteSection === "tools" ? (
-              <ToolTabBar toolTab={toolTab} onSelect={selectToolTab} />
+            {siteSection !== "home" ? (
+              <>
+                <SiteSectionNav section={siteSection} onSection={switchSection} />
+                {siteSection === "articles" ? (
+                  <FilterBar active={filter} setActive={setFilter} />
+                ) : siteSection === "reviews" ? (
+                  <ReviewTabBar reviewTab={reviewTab} onSelect={setReviewTab} />
+                ) : siteSection === "guide" ? (
+                  <GuideTabBar guideTab={guideTab} onSelect={selectGuideTab} />
+                ) : siteSection === "tools" ? (
+                  <ToolTabBar toolTab={toolTab} onSelect={selectToolTab} />
+                ) : null}
+              </>
             ) : null}
           </>
         ) : null}
@@ -2377,6 +2498,18 @@ export default function App() {
             relatedArticles={pickRelatedArticles(selected, ARTICLES, 3)}
             onOpenRelated={handleSelect}
           />
+        ) : siteSection === "home" ? (
+          <div className="blog-layout">
+            <div className="blog-main">
+              <HomePage
+                articles={ARTICLES}
+                onSelect={handleSelect}
+                onSection={switchSection}
+                bookmarkIds={bookmarkIds}
+                onToggleBookmark={toggleBookmark}
+              />
+            </div>
+          </div>
         ) : (
           <div
             className={`blog-layout${siteSection === "guide" ? " blog-layout--guide" : ""}`}
