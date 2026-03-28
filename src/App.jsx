@@ -265,7 +265,7 @@ const GUIDE_SEO = {
   media: {
     titleSuffix: "ガイド：メディア生成ツール早見",
     description:
-      "画像・動画・音楽・音声合成の代表ツール早見。著作権・料金は各公式で。開発の組み合わせはバイブコーディングタブ。",
+      "画像・動画・音楽・音声合成の代表ツール早見。著作権・料金は各公式で確認。",
   },
   glossary: {
     titleSuffix: "ガイド：用語集",
@@ -1086,12 +1086,6 @@ function MediaToolsGuidePanel({ mediaTaxonomy }) {
         <h2 className="guide-section__title">メディア生成ツール早見</h2>
         <p className="guide-section__lead">
           {richInlineLine(MEDIA_GUIDE_INTRO, mkKey)}
-        </p>
-        <p className="companies-guide-note">
-          {richInlineLine(
-            "補足の特集記事はフィードの「ガイド」関連からも開けます。IDE・CLI の道筋は **バイブコーディング** タブへ。",
-            mkKey,
-          )}
         </p>
       </section>
       {mediaTaxonomy.length > 0 ? (
