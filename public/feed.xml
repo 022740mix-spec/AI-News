@@ -48,6 +48,14 @@
     <summary>RAG・チャット・エージェントの永続層は多くの場合がリレーショナル＋ベクトル拡張。Supabase（Postgres＋Auth＋Realtime＋Edge Functions）を軸に、RLS・接続プール・ハイブリッド検索の論点を整理する。</summary>
   </entry>
   <entry>
+    <title>Google 社内 AI エージェント「Agent Smith」が話題 — PC を閉じても作業を継続、スマホから進捗確認・追加指示</title>
+    <link rel="alternate" type="text/html" href="?a=google-agent-smith-2026"/>
+    <id>tag:ai-tool-news.jp,2026:google-agent-smith-2026</id>
+    <published>2026-03-28T15:00:00Z</published>
+    <updated>2026-03-28T15:00:00Z</updated>
+    <summary>Google が社内で開発・利用している AI エージェント Agent Smith が注目を集めている。Antigravity プラットフォーム上に構築され、コーディングだけでなく社内システム横断の業務を自律的に処理する。PC を閉じてもバックグラウンドで作業を継続し、スマホから進捗確認と追加指示が可能。社内チャットから直接 AI に指示できる統合も実現しており、利用者が急増してアクセス制限がかかるほどの人気。</summary>
+  </entry>
+  <entry>
     <title>Kwai（快手）、コーディング特化モデル KAT-Coder Pro V2 を公開 — SWE-Bench 73.4%、OpenClaw 対応</title>
     <link rel="alternate" type="text/html" href="?a=kat-coder-pro-v2-2026"/>
     <id>tag:ai-tool-news.jp,2026:kat-coder-pro-v2-2026</id>

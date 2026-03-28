@@ -26,6 +26,29 @@
 
 export const ARTICLES = [
   {
+    "id": "google-agent-smith-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Google 社内 AI エージェント「Agent Smith」が話題 — PC を閉じても作業を継続、スマホから進捗確認・追加指示",
+    "excerpt": "Google が社内で開発・利用している AI エージェント Agent Smith が注目を集めている。Antigravity プラットフォーム上に構築され、コーディングだけでなく社内システム横断の業務を自律的に処理する。PC を閉じてもバックグラウンドで作業を継続し、スマホから進捗確認と追加指示が可能。社内チャットから直接 AI に指示できる統合も実現しており、利用者が急増してアクセス制限がかかるほどの人気。",
+    "body": [
+      "Google が社内で利用している AI エージェント Agent Smith の詳細が報じられた。Google の AI 開発プラットフォーム Antigravity 上に構築されたこのツールは、コーディング支援にとどまらず、社内の複数システムにまたがるタスクを自律的に処理する。",
+      "最大の特徴は非同期動作。従来のコーディング支援ツールは PC の前にいないと使えないが、Agent Smith は指示を出した後に PC を閉じてもバックグラウンドで作業を継続する。スマホから進捗を確認し、追加の指示を出すことも可能。Claude Code の --remote-control や Cowork の Dispatch に近い概念だが、社内システム全体と統合されている点が異なる。",
+      "Google の社内チャットプラットフォームとも統合されており、チャット画面から直接 AI に業務指示を出せる。社内の人事情報や資料検索も AI 経由で行えるとされる。社内での利用者が急増し、Google がアクセス制限をかけるほどの人気となっている。",
+      "現時点では Google 社内ツールであり外部提供の予定は明らかにされていないが、Google Cloud の Agentspace（企業向けエージェントプラットフォーム）や Gemini Agent（一般向けの自律タスク実行）との関連が注目される。「PC を閉じても AI が仕事を続ける」という体験は、バイブコーディングの次の段階を示唆している。"
+    ],
+    "newsDate": "2026-03-28",
+    "date": "2026-03-28",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["Google", "Agent Smith", "Antigravity", "エージェント", "自律実行"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Google's Agent Smith AI is blowing up internally", "site": "Digit", "url": "https://www.digit.in/news/general/googles-agent-smith-ai-is-blowing-up-internally-here-is-what-it-can-do.html" },
+      { "title": "Google Agentspace enables the agent-driven enterprise", "site": "Google Cloud Blog", "url": "https://cloud.google.com/blog/products/ai-machine-learning/google-agentspace-enables-the-agent-driven-enterprise" }
+    ]
+  },
+  {
     "id": "kat-coder-pro-v2-2026",
     "type": "news",
     "category": "model",
