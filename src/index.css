@@ -1157,6 +1157,102 @@ body {
   font-size: var(--text-sm);
 }
 
+/* ── 世界地図マッピング ── */
+.company-map-wrap {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.company-map-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  background: var(--card);
+  border: none;
+  color: var(--text);
+  font: inherit;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.company-map-toggle:hover {
+  background: var(--accent-dim);
+}
+.company-map-arrow {
+  font-size: var(--text-xs);
+  transition: transform 0.3s ease;
+}
+.company-map-arrow.is-open {
+  transform: rotate(180deg);
+}
+.company-map-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.company-map-content.is-open {
+  max-height: 600px;
+}
+.company-map-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  background: var(--bg0);
+}
+.map-continent {
+  fill: var(--border);
+  stroke: var(--muted);
+  stroke-width: 0.5;
+  opacity: 0.4;
+}
+.map-marker {
+  fill: var(--accent);
+  opacity: 0.85;
+  transition: r 0.2s ease, opacity 0.2s ease;
+  animation: markerPulse 3s ease-in-out infinite;
+}
+.map-marker:hover {
+  r: 6;
+  opacity: 1;
+}
+.map-cluster__bg {
+  fill: var(--accent);
+  opacity: 0.7;
+}
+.map-cluster__count {
+  fill: white;
+  font-size: 8px;
+  font-weight: 700;
+  font-family: system-ui, sans-serif;
+}
+.map-label {
+  fill: var(--muted);
+  font-size: 7px;
+  font-family: system-ui, sans-serif;
+  pointer-events: none;
+}
+.map-tooltip {
+  fill: var(--text);
+  font-size: 7px;
+  font-weight: 600;
+  font-family: system-ui, sans-serif;
+  pointer-events: none;
+}
+@keyframes markerPulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+@media (max-width: 560px) {
+  .company-map-svg { padding: 0.5rem; }
+  .map-marker { r: 3; }
+  .map-label, .map-tooltip { font-size: 5px; }
+}
+
 .companies-stack {
   display: flex;
   flex-direction: column;
