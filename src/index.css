@@ -2692,6 +2692,70 @@ body {
   line-height: 1.7;
 }
 
+/* ── カラーピッカー（ハンバーガー内） ── */
+.hamburger-accent {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.hamburger-accent__label {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+.hamburger-accent__dots {
+  display: flex;
+  gap: 0.6rem;
+}
+.hamburger-accent__dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.hamburger-accent__dot:hover {
+  transform: scale(1.2);
+}
+.hamburger-accent__dot.is-active {
+  border-color: var(--text);
+  transform: scale(1.15);
+}
+
+/* ── 桜の花びらアニメーション ── */
+.sakura-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  overflow: hidden;
+}
+.sakura-petal {
+  position: absolute;
+  top: -2rem;
+  width: 1em;
+  height: 1em;
+  background: radial-gradient(ellipse at 30% 30%, #fbb6ce, #f9a8d4 40%, transparent 70%);
+  border-radius: 50% 0 50% 50%;
+  animation: sakuraFall linear infinite;
+}
+@keyframes sakuraFall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg) translateX(0);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% {
+    transform: translateY(105vh) rotate(720deg) translateX(80px);
+    opacity: 0;
+  }
+}
+
 /* ── ページネーション ── */
 .pagination {
   display: flex;

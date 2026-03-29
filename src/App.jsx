@@ -38,6 +38,14 @@ import {
 import { BUNDLED_MEDIA_URL } from "./mediaUrls.js";
 
 const STORAGE_THEME = "ai-news-theme";
+const STORAGE_ACCENT = "ai-news-accent";
+const ACCENT_PRESETS = [
+  { id: "blue",   label: "ブルー",  color: "#3b82f6", cyan: "#22d3ee" },
+  { id: "sakura", label: "桜",      color: "#ec4899", cyan: "#f472b6" },
+  { id: "green",  label: "グリーン", color: "#22c55e", cyan: "#4ade80" },
+  { id: "purple", label: "パープル", color: "#8b5cf6", cyan: "#a78bfa" },
+  { id: "orange", label: "オレンジ", color: "#f97316", cyan: "#fb923c" },
+];
 const STORAGE_LOCAL_NOTICE = "ai-news-local-notice-dismissed";
 const DEFAULT_DOC_TITLE = `${SITE_NAME} | AI開発ツール最新情報`;
 
@@ -556,7 +564,7 @@ function Pagination({ current, total, onChange }) {
 }
 
 /* ══ ハンバーガーメニュー ══ */
-function HamburgerMenu({ isOpen, onClose, onSection, currentSection, searchRef }) {
+function HamburgerMenu({ isOpen, onClose, onSection, currentSection, searchRef, accentId, onAccent }) {
   const menuItems = [
     { id: "home", label: "ホーム" },
     { id: "articles", label: "ニュース" },
@@ -597,6 +605,21 @@ function HamburgerMenu({ isOpen, onClose, onSection, currentSection, searchRef }
             </li>
           ))}
         </ul>
+        <div className="hamburger-accent">
+          <span className="hamburger-accent__label">テーマカラー</span>
+          <div className="hamburger-accent__dots">
+            {ACCENT_PRESETS.map(p => (
+              <button
+                key={p.id}
+                className={`hamburger-accent__dot${accentId === p.id ? " is-active" : ""}`}
+                style={{ background: p.color }}
+                onClick={() => onAccent(p.id)}
+                title={p.label}
+                aria-label={p.label}
+              />
+            ))}
+          </div>
+        </div>
         <div className="hamburger-footer">
           AI News<br />
           <span className="hamburger-footer__sub">広告なし・個人情報収集なし</span>
@@ -2410,6 +2433,27 @@ function Sidebar({ articles, onSelect, onTagClick, weekRoundups }) {
   );
 }
 
+function SakuraPetals({ accent }) {
+  if (accent !== "sakura") return null;
+  return (
+    <div className="sakura-container" aria-hidden="true">
+      {Array.from({ length: 15 }, (_, i) => (
+        <div
+          key={i}
+          className="sakura-petal"
+          style={{
+            left: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 8}s`,
+            animationDuration: `${6 + Math.random() * 6}s`,
+            fontSize: `${0.6 + Math.random() * 0.8}rem`,
+            opacity: 0.3 + Math.random() * 0.4,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
 function ScrollTopFab({ visible, onClick }) {
   if (!visible) return null;
   return (
@@ -2600,11 +2644,23 @@ const [showFab, setShowFab] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [statementOpen, setStatementOpen] = useState(false);
   const [page, setPage] = useState(1);
+  const [accentId, setAccentId] = useState(() => localStorage.getItem(STORAGE_ACCENT) || "blue");
   const searchRef = useRef(null);
   const ITEMS_PER_PAGE = 15;
 
   const toggleMenu = useCallback(() => setMenuOpen(prev => !prev), []);
   const closeMenu = useCallback(() => setMenuOpen(false), []);
+
+  useEffect(() => {
+    const preset = ACCENT_PRESETS.find(p => p.id === accentId) || ACCENT_PRESETS[0];
+    const r = document.documentElement;
+    r.style.setProperty("--accent", preset.color);
+    r.style.setProperty("--cyan", preset.cyan);
+    r.style.setProperty("--accent-dim", `${preset.color}18`);
+    r.style.setProperty("--shadow-glow", `0 0 40px ${preset.color}1f`);
+    r.style.setProperty("--progress-bg", `linear-gradient(90deg, ${preset.color}, ${preset.cyan})`);
+    localStorage.setItem(STORAGE_ACCENT, accentId);
+  }, [accentId]);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -2914,6 +2970,8 @@ const [showFab, setShowFab] = useState(false);
               onSection={(section) => { switchSection(section); }}
               currentSection={siteSection}
               searchRef={searchRef}
+              accentId={accentId}
+              onAccent={setAccentId}
             />
             {siteSection !== "home" ? (
               <>
@@ -2960,6 +3018,8 @@ const [showFab, setShowFab] = useState(false);
               onSection={(section) => { setSelected(null); switchSection(section); }}
               currentSection={siteSection}
               searchRef={searchRef}
+              accentId={accentId}
+              onAccent={setAccentId}
             />
           <ArticleDetail
             article={selected}
@@ -3157,6 +3217,7 @@ const [showFab, setShowFab] = useState(false);
         </main>
       </div>
 
+      <SakuraPetals accent={accentId} />
       <ScrollTopFab
         visible={!selected && showFab}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
