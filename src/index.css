@@ -2692,6 +2692,56 @@ body {
   line-height: 1.7;
 }
 
+/* ── ページネーション ── */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  margin: 2rem 0 1rem;
+}
+.pagination__btn,
+.pagination__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: none;
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.pagination__btn {
+  font-size: var(--text-lg);
+}
+.pagination__btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.pagination__num:hover,
+.pagination__btn:not(:disabled):hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+.pagination__num.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+.pagination__ellipsis {
+  min-width: 2rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: var(--text-sm);
+}
+
 /* ── ホームページ ── */
 .home-page {
   padding: 0 0 3rem;

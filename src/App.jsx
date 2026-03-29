@@ -509,6 +509,52 @@ function syncAppUrl({ articleId, siteSection, tagQuery, guideTab, toolTab, usePu
   }
 }
 
+/* ══ ページネーション ══ */
+function Pagination({ current, total, onChange }) {
+  if (total <= 1) return null;
+  const pages = [];
+  for (let i = 1; i <= total; i++) {
+    if (i === 1 || i === total || (i >= current - 1 && i <= current + 1)) {
+      pages.push(i);
+    } else if (pages[pages.length - 1] !== "…") {
+      pages.push("…");
+    }
+  }
+  return (
+    <nav className="pagination" aria-label="ページ送り">
+      <button
+        className="pagination__btn"
+        disabled={current === 1}
+        onClick={() => onChange(current - 1)}
+        aria-label="前のページ"
+      >
+        ‹
+      </button>
+      {pages.map((p, i) =>
+        p === "…" ? (
+          <span key={`e${i}`} className="pagination__ellipsis">…</span>
+        ) : (
+          <button
+            key={p}
+            className={`pagination__num${p === current ? " is-active" : ""}`}
+            onClick={() => onChange(p)}
+          >
+            {p}
+          </button>
+        )
+      )}
+      <button
+        className="pagination__btn"
+        disabled={current === total}
+        onClick={() => onChange(current + 1)}
+        aria-label="次のページ"
+      >
+        ›
+      </button>
+    </nav>
+  );
+}
+
 /* ══ ハンバーガーメニュー ══ */
 function HamburgerMenu({ isOpen, onClose, onSection, currentSection, searchRef }) {
   const menuItems = [
@@ -2553,7 +2599,9 @@ export default function App() {
 const [showFab, setShowFab] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [statementOpen, setStatementOpen] = useState(false);
+  const [page, setPage] = useState(1);
   const searchRef = useRef(null);
+  const ITEMS_PER_PAGE = 15;
 
   const toggleMenu = useCallback(() => setMenuOpen(prev => !prev), []);
   const closeMenu = useCallback(() => setMenuOpen(false), []);
@@ -2688,6 +2736,7 @@ const [showFab, setShowFab] = useState(false);
   const onTagClick = useCallback((tag) => {
     setQuery(tag);
     setSelected(null);
+    setPage(1);
     setSiteSection("articles");
     window.scrollTo(0, 0);
     setTimeout(() => searchRef.current?.focus(), 0);
@@ -2769,6 +2818,7 @@ const [showFab, setShowFab] = useState(false);
   const switchSection = useCallback((next) => {
     setSiteSection(next);
     setSelected(null);
+    setPage(1);
     if (next === "guide") setGuideTab("setup");
     if (next === "tools") setToolTab("claude-code");
     window.scrollTo(0, 0);
@@ -2995,7 +3045,7 @@ const [showFab, setShowFab] = useState(false);
                         </p>
                       </div>
                       <div className="articles-grid">
-                        {rest.map((a) => (
+                        {rest.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE).map((a) => (
                           <ArticleCard
                             key={a.id}
                             article={a}
@@ -3004,6 +3054,9 @@ const [showFab, setShowFab] = useState(false);
                           />
                         ))}
                       </div>
+                      {rest.length > ITEMS_PER_PAGE && (
+                        <Pagination current={page} total={Math.ceil(rest.length / ITEMS_PER_PAGE)} onChange={(p) => { setPage(p); window.scrollTo(0, 0); }} />
+                      )}
                     </>
                   ) : featured ? null : (
                     <div className="empty-state">該当する記事がありません</div>
