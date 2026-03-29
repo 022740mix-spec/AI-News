@@ -688,6 +688,14 @@
     <summary>テキストプロンプトから歌詞・メロディ・アレンジ・ボーカルまでフル楽曲を生成。V5で音質とジャンル対応力が大幅向上。無料枠あり、$10/月〜。</summary>
   </entry>
   <entry>
+    <title>Udio レビュー — Suno 対抗の音楽生成、音質と楽曲構成力に定評</title>
+    <link rel="alternate" type="text/html" href="?a=udio-review"/>
+    <id>tag:ai-tool-news.jp,2026:udio-review</id>
+    <published>2026-03-15T15:00:00Z</published>
+    <updated>2026-03-15T15:00:00Z</updated>
+    <summary>Suno と並ぶ音楽生成 AI。音質の高さと楽曲構成の自然さで評価される。レーベルとのライセンス交渉を経て商用利用体制を整備中。無料枠あり。</summary>
+  </entry>
+  <entry>
     <title>AI 音声入力ツールの俯瞰 — 製品型と API 型、Whisper と gpt-4o-transcribe</title>
     <link rel="alternate" type="text/html" href="?a=ai-voice-input-tools-landscape-2026"/>
     <id>tag:ai-tool-news.jp,2026:ai-voice-input-tools-landscape-2026</id>
@@ -776,6 +784,14 @@
     <summary>OpenAI の最新フラッグシップ。128Kコンテキスト、推論とコーディングを統合したアーキテクチャ。Codex との連携でエージェント的な運用も可能。$2.50/$10 per 1M tokens。</summary>
   </entry>
   <entry>
+    <title>Google Veo レビュー — 4K 長尺動画生成、Vertex AI とエンタープライズ統合</title>
+    <link rel="alternate" type="text/html" href="?a=veo-review"/>
+    <id>tag:ai-tool-news.jp,2026:veo-review</id>
+    <published>2026-03-10T15:00:00Z</published>
+    <updated>2026-03-10T15:00:00Z</updated>
+    <summary>Google DeepMind の動画生成モデル。4K 解像度、長尺対応、物理シミュレーション改善。Vertex AI 経由でエンタープライズ利用にも対応。</summary>
+  </entry>
+  <entry>
     <title>動画生成モデルの地形図 — Veo・Runway・Kling などとマルチモデル・パイプライン</title>
     <link rel="alternate" type="text/html" href="?a=ai-video-generators-landscape-2026"/>
     <id>tag:ai-tool-news.jp,2026:ai-video-generators-landscape-2026</id>
@@ -814,6 +830,14 @@
     <published>2026-03-07T15:00:00Z</published>
     <updated>2026-03-07T15:00:00Z</updated>
     <summary>録音→転写→アクティブなアプリへペーストまでを一体で扱う製品向けディクテーション。公式 FAQ では全アカウント 1,000 語の無料枠、Avalon モデルは Pro で選択可能、iPhone アプリは未対応とされる。</summary>
+  </entry>
+  <entry>
+    <title>Pika レビュー — 手軽さ重視の動画生成、SNS コンテンツ制作に最適</title>
+    <link rel="alternate" type="text/html" href="?a=pika-review"/>
+    <id>tag:ai-tool-news.jp,2026:pika-review</id>
+    <published>2026-03-05T15:00:00Z</published>
+    <updated>2026-03-05T15:00:00Z</updated>
+    <summary>シンプルな UI で動画を素早く生成。エフェクト機能が豊富で、SNS やショート動画向けのカジュアルな制作に向く。無料枠あり、$8/月〜。</summary>
   </entry>
   <entry>
     <title>Google、Gemini 3.1 Flash-Lite をプレビュー公開 — 2.5× 高速・低コストの大量処理向けモデル</title>
@@ -880,6 +904,22 @@
     <summary>VS Codeベースのオープンソースエディタ。AIチャットとインライン編集に特化。</summary>
   </entry>
   <entry>
+    <title>GPT Image 1.5 レビュー — ChatGPT 統合で最も手軽、テキスト描画精度が秀逸</title>
+    <link rel="alternate" type="text/html" href="?a=gpt-image-review"/>
+    <id>tag:ai-tool-news.jp,2026:gpt-image-review</id>
+    <published>2026-03-01T15:00:00Z</published>
+    <updated>2026-03-01T15:00:00Z</updated>
+    <summary>OpenAI の画像生成モデル。ChatGPT 経由で自然言語から即座に生成可能。画像内テキストの精度とプロンプト追従で高評価。API からも利用可能。</summary>
+  </entry>
+  <entry>
+    <title>Flux 2 レビュー — Black Forest Labs 発、フォトリアルと速度のバランス型</title>
+    <link rel="alternate" type="text/html" href="?a=flux-2-review"/>
+    <id>tag:ai-tool-news.jp,2026:flux-2-review</id>
+    <published>2026-03-01T15:00:00Z</published>
+    <updated>2026-03-01T15:00:00Z</updated>
+    <summary>Black Forest Labs の画像生成モデル。フォトリアル系で品質と速度のバランスが良く、API・パートナー経由で利用可能。LoRA によるカスタマイズにも対応。</summary>
+  </entry>
+  <entry>
     <title>Cline レビュー — 承認フロー付きのOSS AIエージェント</title>
     <link rel="alternate" type="text/html" href="?a=cline"/>
     <id>tag:ai-tool-news.jp,2026:cline</id>
@@ -910,6 +950,22 @@
     <published>2026-02-26T15:00:00Z</published>
     <updated>2026-02-26T15:00:00Z</updated>
     <summary>2026年2月26日、Google DeepMind が画像生成モデル Nano Banana 2（技術名 Gemini 3.1 Flash Image）を発表。Pro 寄りの品質と Flash 級の速度、最大5キャラクターの一貫性などが売り。Flow の既定モデルでもあるため「動画AI」と混同されやすい点を整理する。</summary>
+  </entry>
+  <entry>
+    <title>Nano Banana 2 レビュー — Google 発、Flash 級の速度で Pro 品質の画像生成</title>
+    <link rel="alternate" type="text/html" href="?a=nano-banana-2-review"/>
+    <id>tag:ai-tool-news.jp,2026:nano-banana-2-review</id>
+    <published>2026-02-26T15:00:00Z</published>
+    <updated>2026-02-26T15:00:00Z</updated>
+    <summary>Google DeepMind の画像生成モデル（技術名 Gemini 3.1 Flash Image）。高速生成と高品質を両立し、Gemini アプリ・API・Flow から利用可能。SynthID・C2PA 対応。</summary>
+  </entry>
+  <entry>
+    <title>Stable Audio レビュー — Stability AI のオープン音楽生成、ローカル実行も可能</title>
+    <link rel="alternate" type="text/html" href="?a=stable-audio-review"/>
+    <id>tag:ai-tool-news.jp,2026:stable-audio-review</id>
+    <published>2026-02-15T15:00:00Z</published>
+    <updated>2026-02-15T15:00:00Z</updated>
+    <summary>Stability AI の音楽・効果音生成モデル。オープンウェイトでローカル実行可能。BGM や効果音の生成に向くが、ボーカル楽曲では Suno・Udio に劣る。</summary>
   </entry>
   <entry>
     <title>Zhipu AI、GLM-5 を公開 — 745億パラメータ MoE、Huawei チップで学習した中国発フロンティアモデル</title>

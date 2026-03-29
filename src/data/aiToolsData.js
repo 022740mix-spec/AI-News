@@ -4754,6 +4754,202 @@ export const ARTICLES = [
     "model": "Kling 2.0",
     "tags": ["動画生成", "中国", "無料枠"],
     "features": ["2分動画", "1080p", "リップシンク", "無料枠充実", "グローバル対応"]
+  },
+  {
+    "id": "nano-banana-2-review",
+    "type": "review",
+    "rating": 4,
+    "ratings": {"AI品質":4,"使いやすさ":5,"コスパ":5,"拡張性":4,"企業向け":3},
+    "reviewCategory": "image",
+    "category": "media",
+    "title": "Nano Banana 2 レビュー — Google 発、Flash 級の速度で Pro 品質の画像生成",
+    "excerpt": "Google DeepMind の画像生成モデル（技術名 Gemini 3.1 Flash Image）。高速生成と高品質を両立し、Gemini アプリ・API・Flow から利用可能。SynthID・C2PA 対応。",
+    "body": [
+      "**Nano Banana 2**（技術名 Gemini 3.1 Flash Image）は Google DeepMind が2026年2月に発表した画像生成モデル。Pro 寄りの品質を Flash 級の速度で提供するのがコンセプトで、Gemini アプリ、Google 検索、Gemini API / AI Studio / Vertex AI、動画制作プラットフォーム Flow など幅広いチャネルからアクセスできる。",
+      "**性能面の特徴**: Gemini の世界知識と検索グラウンディングを活かした被写体表現、画像内テキストの精密描画と翻訳・ローカライズ、最大5キャラクターの一貫性維持、単一ワークフロー内で14オブジェクトまでの忠実度維持に対応。512px から 4K までの解像度・アスペクト比を柔軟に指定できる。",
+      "**コストと無料枠**: Gemini アプリ経由では無料ユーザーでも利用可能。API は `gemini-3.1-flash-image-preview` のモデル ID で提供され、Flash ベースのため料金は低い。Flow ユーザーはクレジット 0 で利用できるとされており、Google エコシステム内での利用コストの低さは際立っている。",
+      "**注意点**: Flow の既定画像モデルであるため「動画 AI の新モデル」と誤解されやすいが、あくまで画像生成・編集モデル。テキスト→動画は Veo 系が別ライン。また、プレビュー段階の API もあるため、本番利用前に GA ステータスと SLA を確認する必要がある。生成物には SynthID と C2PA Content Credentials が付与される。"
+    ],
+    "primarySources": [
+      { "title": "Nano Banana 2: Combining Pro capabilities with lightning-fast speed", "site": "Google The Keyword", "url": "https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/" }
+    ],
+    "newsDate": "2026-02-26",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "company": "Google DeepMind",
+    "pricing": "無料枠あり（Gemini アプリ）/ API 従量課金",
+    "model": "Gemini 3.1 Flash Image",
+    "tags": ["画像生成", "Google", "Gemini"],
+    "features": ["4K対応", "テキスト描画", "5キャラクター一貫性", "SynthID", "無料枠"]
+  },
+  {
+    "id": "gpt-image-review",
+    "type": "review",
+    "rating": 4,
+    "ratings": {"AI品質":5,"使いやすさ":5,"コスパ":3,"拡張性":3,"企業向け":3},
+    "reviewCategory": "image",
+    "category": "media",
+    "title": "GPT Image 1.5 レビュー — ChatGPT 統合で最も手軽、テキスト描画精度が秀逸",
+    "excerpt": "OpenAI の画像生成モデル。ChatGPT 経由で自然言語から即座に生成可能。画像内テキストの精度とプロンプト追従で高評価。API からも利用可能。",
+    "body": [
+      "**GPT Image 1.5** は OpenAI の画像生成モデルで、ChatGPT との統合が最大の強み。テキストプロンプトを入力するだけで即座に画像を生成でき、会話の文脈を踏まえた修正・バリエーション生成も自然にできる。画像生成の専門知識がなくても使える手軽さは、全モデル中トップクラス。",
+      "**テキスト描画の精度**: GPT Image の最大の差別化ポイントは画像内テキストの正確さ。ポスター、看板、ロゴに含まれる文字をプロンプト通りに描画する精度が高く、マーケティング素材や SNS 投稿の作成に強い。複雑な構図やオブジェクトの空間配置への追従度も評価されている。",
+      "**料金と利用方法**: ChatGPT Plus（$20/月）以上で利用可能。API 経由での呼び出しにも対応しており、アプリへの組み込みも可能。ただし、Midjourney や Flux と比較すると 1 枚あたりの API コストはやや高め。大量生成にはコスト面での検討が必要。",
+      "**注意点**: アート性やスタイルの細かな制御では Midjourney に及ばない場面がある。また、フォトリアル系では Flux 2 のほうが品質が安定しているケースも。ChatGPT に統合されているため手軽だが、プロの制作ワークフロー（レイヤー操作、細部の修正）には別ツールとの併用が前提になる。"
+    ],
+    "primarySources": [
+      { "title": "OpenAI — Images / API documentation", "site": "OpenAI", "url": "https://platform.openai.com/docs/guides/images" }
+    ],
+    "newsDate": "2026-03-01",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "company": "OpenAI",
+    "pricing": "ChatGPT Plus $20/月〜 / API 従量課金",
+    "model": "GPT Image 1.5",
+    "tags": ["画像生成", "OpenAI", "ChatGPT"],
+    "features": ["ChatGPT統合", "テキスト描画", "プロンプト追従", "API対応", "会話的修正"]
+  },
+  {
+    "id": "flux-2-review",
+    "type": "review",
+    "rating": 3.5,
+    "ratings": {"AI品質":4,"使いやすさ":3,"コスパ":4,"拡張性":4,"企業向け":2},
+    "reviewCategory": "image",
+    "category": "media",
+    "title": "Flux 2 レビュー — Black Forest Labs 発、フォトリアルと速度のバランス型",
+    "excerpt": "Black Forest Labs の画像生成モデル。フォトリアル系で品質と速度のバランスが良く、API・パートナー経由で利用可能。LoRA によるカスタマイズにも対応。",
+    "body": [
+      "**Flux 2** は Black Forest Labs（BFL）が開発する画像生成モデル。Stable Diffusion の元開発者が設立した企業で、フォトリアル系の画像生成においてレイテンシと品質のバランスが高く評価されている。Pro / Dev / Schnell の3ティアで提供され、用途と予算に応じた選択が可能。",
+      "**フォトリアルの品質**: 人物、風景、プロダクトフォトなどのフォトリアル系で安定した品質を発揮する。特に肌の質感、照明の自然さ、被写界深度の表現が優れており、ストックフォト的な用途に向く。LoRA（Low-Rank Adaptation）によるファインチューニングにも対応しており、特定のスタイルやブランドに合わせたカスタマイズが可能。",
+      "**利用方法とコスト**: BFL の API から直接利用するほか、Replicate や fal.ai などのサードパーティプラットフォーム経由でも利用可能。Schnell（高速版）は比較的低コストで大量生成に向き、Pro は最高品質だが生成時間とコストが増える。オープンウェイト版（Dev/Schnell）はローカル実行も可能。",
+      "**注意点**: Midjourney や GPT Image と比較すると、ユーザー向けの統合 UI が弱く、API 利用が前提となる場面が多い。アート性やクリエイティブな表現では Midjourney に劣る。また、BFL はスタートアップであり、大手と比較してサポート体制や長期的な安定性には不確実性がある。"
+    ],
+    "primarySources": [
+      { "title": "Black Forest Labs", "site": "BFL", "url": "https://bfl.ai/" }
+    ],
+    "newsDate": "2026-03-01",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "company": "Black Forest Labs",
+    "pricing": "API 従量課金（ティア別）",
+    "model": "Flux 2 Pro / Dev / Schnell",
+    "tags": ["画像生成", "フォトリアル", "OSS"],
+    "features": ["フォトリアル", "LoRA対応", "3ティア", "ローカル実行可", "API"]
+  },
+  {
+    "id": "veo-review",
+    "type": "review",
+    "rating": 3.5,
+    "ratings": {"AI品質":4,"使いやすさ":3,"コスパ":3,"拡張性":3,"企業向け":4},
+    "reviewCategory": "video",
+    "category": "media",
+    "title": "Google Veo レビュー — 4K 長尺動画生成、Vertex AI とエンタープライズ統合",
+    "excerpt": "Google DeepMind の動画生成モデル。4K 解像度、長尺対応、物理シミュレーション改善。Vertex AI 経由でエンタープライズ利用にも対応。",
+    "body": [
+      "**Veo** は Google DeepMind が開発する動画生成モデルで、テキスト・画像・動画からの動画生成に対応する。4K 解像度での出力が可能で、長尺のクリップ生成にも対応。物理シミュレーションの精度が世代ごとに改善されており、水流や布の動き、光の反射といった自然現象の表現力が向上している。",
+      "**Google エコシステムとの統合**: Vertex AI を通じたエンタープライズ利用が可能で、SynthID による電子透かし、C2PA Content Credentials、安全フィルタが標準搭載されている。Google Cloud の監査ログやアクセス制御と組み合わせることで、企業のコンプライアンス要件を満たしやすい。Flow プラットフォーム上でも利用可能。",
+      "**Runway との比較**: Runway Gen-5 がプロの映像制作者向けに Motion Brush や Act-One といった細かな制御機能を揃えているのに対し、Veo は Google Cloud インフラとの統合やエンタープライズ向け機能で差別化している。映像のクリエイティブ制御では Runway が一歩先だが、大規模な API バッチ処理やセキュリティ要件ではVeo が有利。",
+      "**注意点**: 一般向けの UI は Flow 経由に限られ、Runway や Kling のような独立したWeb アプリは提供されていない。クリエイター個人が気軽に試す場合のハードルは高め。また、バージョン番号やモデル ID が複数あるため、API 利用時は公式ドキュメントで正確な仕様を確認する必要がある。"
+    ],
+    "primarySources": [
+      { "title": "Veo — Google DeepMind", "site": "Google DeepMind", "url": "https://deepmind.google/models/veo/" }
+    ],
+    "newsDate": "2026-03-10",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "company": "Google DeepMind",
+    "pricing": "Vertex AI 従量課金",
+    "model": "Veo",
+    "tags": ["動画生成", "Google", "エンタープライズ"],
+    "features": ["4K対応", "長尺生成", "Vertex AI統合", "SynthID", "C2PA"]
+  },
+  {
+    "id": "pika-review",
+    "type": "review",
+    "rating": 3.5,
+    "ratings": {"AI品質":3,"使いやすさ":5,"コスパ":4,"拡張性":2,"企業向け":2},
+    "reviewCategory": "video",
+    "category": "media",
+    "title": "Pika レビュー — 手軽さ重視の動画生成、SNS コンテンツ制作に最適",
+    "excerpt": "シンプルな UI で動画を素早く生成。エフェクト機能が豊富で、SNS やショート動画向けのカジュアルな制作に向く。無料枠あり、$8/月〜。",
+    "body": [
+      "**Pika** はテキストや画像から短い動画クリップを生成するサービスで、手軽さと楽しさを重視した設計が特徴。Web UI がシンプルで直感的なため、動画制作の経験がなくても数クリックで動画を作れる。Runway が映像制作のプロ向けに特化しているのに対し、Pika は SNS コンテンツやカジュアルな制作に焦点を当てている。",
+      "**エフェクト機能**: Pika の独自性はユニークなエフェクト機能にある。画像を食べる・溶かす・爆発させるといった物理的な変形エフェクトや、スタイル変換を適用して既存の画像・動画を変化させることができる。TikTok や Instagram のリール用コンテンツ制作で人気がある。",
+      "**料金**: 無料枠で基本的な動画生成が試せる。Standard（$8/月）で商用利用が可能になり、Pro（$28/月）で高速生成と拡張機能を利用できる。Runway と比較すると大幅に安く、カジュアルな利用には十分なコスパ。",
+      "**注意点**: 長尺動画の生成や高解像度の映像品質では Runway や Veo に及ばない。映像制作のプロが本番素材として使うには品質面で物足りない場合がある。API は限定的で、大規模なワークフロー統合には向かない。あくまで「手軽に動画を作る」ツールとしての位置づけ。"
+    ],
+    "primarySources": [
+      { "title": "Pika", "site": "Pika", "url": "https://pika.art/" }
+    ],
+    "newsDate": "2026-03-05",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "company": "Pika",
+    "pricing": "無料枠あり / $8/月〜",
+    "model": "Pika 2.2",
+    "tags": ["動画生成", "SNS", "カジュアル"],
+    "features": ["エフェクト機能", "シンプルUI", "無料枠", "商用可（Standard〜）", "低価格"]
+  },
+  {
+    "id": "udio-review",
+    "type": "review",
+    "rating": 3.5,
+    "ratings": {"AI品質":4,"使いやすさ":4,"コスパ":4,"拡張性":2,"企業向け":2},
+    "reviewCategory": "music",
+    "category": "media",
+    "title": "Udio レビュー — Suno 対抗の音楽生成、音質と楽曲構成力に定評",
+    "excerpt": "Suno と並ぶ音楽生成 AI。音質の高さと楽曲構成の自然さで評価される。レーベルとのライセンス交渉を経て商用利用体制を整備中。無料枠あり。",
+    "body": [
+      "**Udio** は Suno と並ぶ音楽生成 AI サービスで、元 Google DeepMind の研究者が設立。テキストプロンプトからフル楽曲を生成する基本コンセプトは Suno と同じだが、音質のクリアさと楽曲構成の自然さで差別化を図っている。特にインストゥルメンタルの生成品質が高く、映画音楽やゲーム BGM 的なジャンルで評価されている。",
+      "**Suno との違い**: Suno が「誰でも楽曲を作れる手軽さ」を前面に出しているのに対し、Udio はより音楽的に洗練された出力を目指す傾向がある。楽曲内の展開（イントロ→バース→サビ→ブリッジ）の構成力や、複数楽器のミックスバランスで Udio のほうが自然に聞こえるケースが多い。一方、UI のシンプルさや日本語ボーカルの品質では Suno に軍配が上がる。",
+      "**著作権とライセンス**: 2025年末にかけて大手レーベルとの訴訟・和解・ライセンス交渉が報じられており、2026年時点では商用利用のルールが整備途上にある。利用規約と楽曲の帰属は最新のヘルプページで確認する必要がある。企業の広告BGM等で使う場合はライセンス条件の精査が特に重要。",
+      "**注意点**: API は一般公開されておらず、外部ツールとの統合は限定的。生成楽曲のパート別編集やDAW連携もまだ未対応。Suno と同様、生成結果をそのまま使う前提の設計で、細かなミキシング調整はできない。"
+    ],
+    "primarySources": [
+      { "title": "Udio", "site": "Udio", "url": "https://www.udio.com/" }
+    ],
+    "newsDate": "2026-03-15",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "company": "Udio",
+    "pricing": "無料枠あり / 有料プランあり",
+    "model": "Udio",
+    "tags": ["音楽生成", "クリエイティブ"],
+    "features": ["高音質", "楽曲構成力", "インストゥルメンタル", "無料枠", "レーベル交渉中"]
+  },
+  {
+    "id": "stable-audio-review",
+    "type": "review",
+    "rating": 3,
+    "ratings": {"AI品質":3,"使いやすさ":3,"コスパ":4,"拡張性":3,"企業向け":2},
+    "reviewCategory": "music",
+    "category": "media",
+    "title": "Stable Audio レビュー — Stability AI のオープン音楽生成、ローカル実行も可能",
+    "excerpt": "Stability AI の音楽・効果音生成モデル。オープンウェイトでローカル実行可能。BGM や効果音の生成に向くが、ボーカル楽曲では Suno・Udio に劣る。",
+    "body": [
+      "**Stable Audio** は Stability AI が開発する音楽・効果音生成モデル。オープンウェイトで公開されており、自社サーバーでのローカル実行が可能な点が Suno・Udio との最大の違い。テキストプロンプトから BGM、効果音、アンビエント音楽を生成でき、ゲーム開発やポッドキャストの音素材制作に向く。",
+      "**オープンウェイトの利点**: モデルをダウンロードしてローカルで動かせるため、データをクラウドに送る必要がない。音声データのプライバシーが重要な案件や、インターネット接続のない環境での利用に適している。ComfyUI などのワークフローツールとの統合も可能で、カスタムパイプラインに組み込みやすい。",
+      "**料金**: Web アプリ経由の無料枠に加え、有料プランで生成回数と品質を拡張可能。ローカル実行の場合は GPU リソースのコストのみ。クラウドサービスへの依存を避けたいユーザーにとってはコスト構造が予測しやすい。",
+      "**注意点**: ボーカル付きの楽曲生成では Suno・Udio に大きく劣る。フル楽曲生成よりも、BGM・効果音・アンビエントといった素材生成に適している。また、Stability AI の経営状況には不確実性があるため、長期的なサポートの継続性は注視が必要。モデルの更新頻度も Suno・Udio と比較すると遅い。"
+    ],
+    "primarySources": [
+      { "title": "Stable Audio", "site": "Stability AI", "url": "https://stability.ai/" }
+    ],
+    "newsDate": "2026-02-15",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "company": "Stability AI",
+    "pricing": "無料枠あり / ローカル実行可",
+    "model": "Stable Audio",
+    "tags": ["音楽生成", "OSS", "効果音"],
+    "features": ["オープンウェイト", "ローカル実行", "BGM・効果音", "ComfyUI連携", "プライバシー"]
   }
 ];
 
