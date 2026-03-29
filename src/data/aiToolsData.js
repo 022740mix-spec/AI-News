@@ -2555,6 +2555,9 @@ export const ARTICLES = [
       "BugBot",
       "カスタムプロンプト",
       "高速化"
+    ],
+    "primarySources": [
+      { "title": "Cursor 2.4 — Subagents, Skills, and Image Generation", "site": "Cursor", "url": "https://cursor.com/changelog/2-4" }
     ]
   },
   {
@@ -2589,6 +2592,10 @@ export const ARTICLES = [
       "ネイティブサンドボックス",
       "Vimモード",
       "カスタムキーバインド"
+    ],
+    "primarySources": [
+      { "title": "Gemini CLI", "site": "GitHub", "url": "https://github.com/google-gemini/gemini-cli" },
+      { "title": "Gemini CLI v0.35.0 Release", "site": "GitHub", "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.35.0" }
     ]
   },
   {
@@ -2622,6 +2629,10 @@ export const ARTICLES = [
       "50%高速化",
       "Eclipse/Xcode対応",
       "セッション可視化"
+    ],
+    "primarySources": [
+      { "title": "GitHub Copilot", "site": "GitHub", "url": "https://github.com/features/copilot" },
+      { "title": "Copilot coding agent is now generally available", "site": "GitHub Blog", "url": "https://github.blog/changelog/2026-03-27-copilot-coding-agent-ga/" }
     ]
   },
   {
@@ -2665,6 +2676,10 @@ export const ARTICLES = [
       "価格据え置き",
       "マルチモーダル",
       "Code Assist無料化"
+    ],
+    "primarySources": [
+      { "title": "Gemini 3.1 Pro", "site": "Google DeepMind", "url": "https://deepmind.google/models/gemini/pro/" },
+      { "title": "Gemini 3.1 Pro in AI Studio", "site": "Google AI Studio", "url": "https://aistudio.google.com/" }
     ]
   },
   {
@@ -2695,6 +2710,9 @@ export const ARTICLES = [
       "SWE-Bench Pro",
       "プラグイン対応",
       "マルチエージェント"
+    ],
+    "primarySources": [
+      { "title": "Introducing GPT-5.4", "site": "OpenAI", "url": "https://openai.com/index/introducing-gpt-5-4/" }
     ]
   },
   {
@@ -2718,6 +2736,9 @@ export const ARTICLES = [
       "Windsurf",
       "料金改定",
       "速報"
+    ],
+    "primarySources": [
+      { "title": "Windsurf Pricing", "site": "Windsurf", "url": "https://windsurf.com/pricing" }
     ]
   },
   {
