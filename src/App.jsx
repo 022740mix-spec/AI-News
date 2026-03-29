@@ -2441,14 +2441,39 @@ function getSeason() {
   return "winter";
 }
 
-function SeasonalEffect({ visible }) {
-  const season = useMemo(() => getSeason(), []);
+function SeasonalEffect({ visible, override }) {
+  const season = override || getSeason();
   if (!visible) return null;
 
   if (season === "spring") return <SpringEffect />;
   if (season === "summer") return <SummerEffect />;
   if (season === "autumn") return <AutumnEffect />;
-  return <WinterEffect />;
+  if (season === "winter") return <WinterEffect />;
+  return (
+    <>
+      <SpringEffect />
+      <SummerEffect />
+      <AutumnEffect />
+      <WinterEffect />
+    </>
+  );
+}
+
+function SakuraPetalSvg({ size, style, className }) {
+  const w = size * 16;
+  return (
+    <svg className={className} style={style} width={w} height={w * 1.3} viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 0 C6 4, 0 8, 0 14 C0 20, 4 26, 10 26 C16 26, 20 20, 20 14 C20 8, 14 4, 10 0Z" fill="url(#spg)" />
+      <path d="M10 4 C10 10, 9 18, 10 24" stroke="#f9a8d4" strokeWidth="0.4" opacity="0.5" />
+      <defs>
+        <radialGradient id="spg" cx="40%" cy="30%">
+          <stop offset="0%" stopColor="#fce7f3" />
+          <stop offset="50%" stopColor="#f9a8d4" />
+          <stop offset="100%" stopColor="#ec4899" stopOpacity="0.6" />
+        </radialGradient>
+      </defs>
+    </svg>
+  );
 }
 
 function SpringEffect() {
@@ -2458,8 +2483,8 @@ function SpringEffect() {
     delay: Math.random() * 12,
     fallDur: 10 + Math.random() * 8,
     swayDur: 3 + Math.random() * 4,
-    size: 0.45 + Math.random() * 0.6,
-    opacity: 0.2 + Math.random() * 0.4,
+    size: 0.5 + Math.random() * 0.7,
+    opacity: 0.25 + Math.random() * 0.45,
     drift: -60 + Math.random() * 120,
     rotEnd: 360 + Math.random() * 720,
     settle: i < 6,
@@ -2467,9 +2492,10 @@ function SpringEffect() {
   return (
     <div className="seasonal-container" aria-hidden="true">
       {petals.map(p => (
-        <div
+        <SakuraPetalSvg
           key={p.key}
-          className={`sakura-petal${p.settle ? " sakura-petal--settle" : ""}`}
+          size={p.size}
+          className={`seasonal-particle sakura-anim${p.settle ? " sakura-anim--settle" : ""}`}
           style={{
             left: `${p.left}%`,
             "--fall-dur": `${p.fallDur}s`,
@@ -2477,7 +2503,6 @@ function SpringEffect() {
             "--drift": `${p.drift}px`,
             "--rot-end": `${p.rotEnd}deg`,
             animationDelay: `${p.delay}s`,
-            fontSize: `${p.size}rem`,
             opacity: p.opacity,
           }}
         />
@@ -2520,37 +2545,60 @@ function SummerEffect() {
   );
 }
 
+function MomijiSvg({ size, color1, color2, style, className }) {
+  const w = size * 18;
+  return (
+    <svg className={className} style={style} width={w} height={w} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 2 L14 8 L8 6 L11 12 L4 12 L10 16 L6 22 L12 19 L12 26 L16 20 L20 26 L20 19 L26 22 L22 16 L28 12 L21 12 L24 6 L18 8 Z" fill={`url(#alg-${color1.replace("#","")})`} />
+      <path d="M16 8 L16 22" stroke={color2} strokeWidth="0.5" opacity="0.4" />
+      <path d="M12 12 L16 16 L20 12" stroke={color2} strokeWidth="0.3" opacity="0.3" fill="none" />
+      <defs>
+        <linearGradient id={`alg-${color1.replace("#","")}`} x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor={color1} />
+          <stop offset="100%" stopColor={color2} />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+}
+
 function AutumnEffect() {
-  const leaves = useMemo(() => Array.from({ length: 14 }, (_, i) => {
-    const colors = ["#dc2626", "#ea580c", "#d97706", "#ca8a04", "#b45309"];
-    return {
-      key: i,
-      left: Math.random() * 100,
-      delay: Math.random() * 10,
-      fallDur: 8 + Math.random() * 7,
-      swayDur: 2.5 + Math.random() * 3,
-      size: 0.5 + Math.random() * 0.6,
-      opacity: 0.3 + Math.random() * 0.4,
-      drift: -50 + Math.random() * 100,
-      rotEnd: 200 + Math.random() * 500,
-      color: colors[Math.floor(Math.random() * colors.length)],
-    };
-  }), []);
+  const leaves = useMemo(() => {
+    const palettes = [
+      ["#dc2626", "#991b1b"], ["#ea580c", "#c2410c"], ["#d97706", "#a16207"],
+      ["#ca8a04", "#854d0e"], ["#ef4444", "#b91c1c"], ["#f97316", "#ea580c"],
+    ];
+    return Array.from({ length: 14 }, (_, i) => {
+      const [c1, c2] = palettes[i % palettes.length];
+      return {
+        key: i, c1, c2,
+        left: Math.random() * 100,
+        delay: Math.random() * 10,
+        fallDur: 8 + Math.random() * 7,
+        swayDur: 2.5 + Math.random() * 3,
+        size: 0.55 + Math.random() * 0.55,
+        opacity: 0.35 + Math.random() * 0.4,
+        drift: -50 + Math.random() * 100,
+        rotEnd: 200 + Math.random() * 500,
+      };
+    });
+  }, []);
   return (
     <div className="seasonal-container" aria-hidden="true">
       {leaves.map(l => (
-        <div
+        <MomijiSvg
           key={l.key}
-          className="autumn-leaf"
+          size={l.size}
+          color1={l.c1}
+          color2={l.c2}
+          className="seasonal-particle autumn-anim"
           style={{
             left: `${l.left}%`,
             "--fall-dur": `${l.fallDur}s`,
             "--sway-dur": `${l.swayDur}s`,
             "--drift": `${l.drift}px`,
             "--rot-end": `${l.rotEnd}deg`,
-            "--leaf-color": l.color,
             animationDelay: `${l.delay}s`,
-            fontSize: `${l.size}rem`,
             opacity: l.opacity,
           }}
         />
@@ -2559,27 +2607,54 @@ function AutumnEffect() {
   );
 }
 
+function SnowflakeSvg({ size, style, className }) {
+  const w = size;
+  return (
+    <svg className={className} style={style} width={w} height={w} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* 6本の枝 */}
+      <g stroke="white" strokeWidth="0.8" strokeLinecap="round">
+        <line x1="16" y1="2" x2="16" y2="30" />
+        <line x1="3.9" y1="9" x2="28.1" y2="23" />
+        <line x1="3.9" y1="23" x2="28.1" y2="9" />
+        {/* 小枝 */}
+        <line x1="16" y1="6" x2="13" y2="3" />
+        <line x1="16" y1="6" x2="19" y2="3" />
+        <line x1="16" y1="26" x2="13" y2="29" />
+        <line x1="16" y1="26" x2="19" y2="29" />
+        <line x1="7.5" y1="11" x2="5.5" y2="8" />
+        <line x1="7.5" y1="11" x2="5" y2="13" />
+        <line x1="24.5" y1="21" x2="27" y2="19" />
+        <line x1="24.5" y1="21" x2="26.5" y2="24" />
+        <line x1="7.5" y1="21" x2="5" y2="19" />
+        <line x1="7.5" y1="21" x2="5.5" y2="24" />
+        <line x1="24.5" y1="11" x2="26.5" y2="8" />
+        <line x1="24.5" y1="11" x2="27" y2="13" />
+      </g>
+      <circle cx="16" cy="16" r="2" fill="white" opacity="0.5" />
+    </svg>
+  );
+}
+
 function WinterEffect() {
-  const flakes = useMemo(() => Array.from({ length: 20 }, (_, i) => ({
+  const flakes = useMemo(() => Array.from({ length: 18 }, (_, i) => ({
     key: i,
     left: Math.random() * 100,
     delay: Math.random() * 10,
-    fallDur: 8 + Math.random() * 10,
+    fallDur: 10 + Math.random() * 10,
     swayDur: 3 + Math.random() * 4,
-    size: 2 + Math.random() * 4,
-    opacity: 0.2 + Math.random() * 0.5,
-    drift: -20 + Math.random() * 40,
+    size: 10 + Math.random() * 14,
+    opacity: 0.15 + Math.random() * 0.4,
+    drift: -25 + Math.random() * 50,
   })), []);
   return (
     <div className="seasonal-container" aria-hidden="true">
       {flakes.map(f => (
-        <div
+        <SnowflakeSvg
           key={f.key}
-          className="snowflake"
+          size={f.size}
+          className="seasonal-particle snow-anim"
           style={{
             left: `${f.left}%`,
-            width: `${f.size}px`,
-            height: `${f.size}px`,
             "--fall-dur": `${f.fallDur}s`,
             "--sway-dur": `${f.swayDur}s`,
             "--drift": `${f.drift}px`,
@@ -3356,7 +3431,7 @@ const [showFab, setShowFab] = useState(false);
         </main>
       </div>
 
-      <SeasonalEffect visible={!selected && siteSection === "home"} />
+      <SeasonalEffect visible={!selected && siteSection === "home"} override="all" />
       <ScrollTopFab
         visible={!selected && showFab}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
