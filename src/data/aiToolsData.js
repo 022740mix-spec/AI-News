@@ -5205,6 +5205,30 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "microsoft-copilot-cowork-launch-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Microsoft Copilot Cowork が Frontier ユーザーに展開開始 — Anthropic と共同開発、M365 上でマルチステップ業務を自律実行",
+    "excerpt": "Microsoft 365 Copilot の新モード「Cowork」が Frontier プログラムのユーザーに展開開始。Anthropic の Claude 技術を統合し、単なるチャット応答ではなく複数ステップの業務を自律的に実行。進捗を可視化しながらユーザーが随時介入できる設計。",
+    "body": [
+      "Microsoft は2026年3月9日に発表した **Copilot Cowork** の Frontier プログラム向け展開が3月下旬から始まっている。Cowork は Microsoft 365 Copilot の新モードで、これまでの「プロンプト→1回の応答」から「複雑な業務を委任し、時間をかけて段階的に実行する」へと進化させるもの。X では実際に利用開始したユーザーからの検証投稿が相次いでいる。",
+      "**できること**: Cowork では、複雑なリクエストをステップに分解し、複数のツール・ファイルを横断して推論しながら作業を進行する。たとえば「四半期レポートを作成して」と指示すると、必要なデータを Excel・SharePoint から収集→分析→PowerPoint にまとめる、といった一連の作業を自律的に実行する。進捗は可視化され、途中でユーザーが方向修正できる。",
+      "**Anthropic との連携**: Microsoft は Anthropic と緊密に連携し、Claude の技術を Copilot Cowork に統合している。Wave 3 アップデートにより、Claude と最新の OpenAI モデルの両方が Copilot 内で利用可能になり、タスクに応じて自動的に最適なモデルが選択される。これは Microsoft が単一モデルに依存しない「マルチモデル戦略」を本格化させたことを意味する。",
+      "**セキュリティとガバナンス**: Cowork は Microsoft 365 のセキュリティ・ガバナンス境界内で動作する。ID 管理、アクセス権限、コンプライアンスポリシーがデフォルトで適用され、すべてのアクション・出力は監査可能。エンタープライズが AI エージェントを導入する際の最大の懸念（データの外部流出・権限逸脱）に対応した設計。",
+      "**料金と展開**: Copilot Cowork の利用には Microsoft 365 Copilot ライセンス（$30/ユーザー/月、既存エンタープライズ契約に追加）が必要。2026年5月1日には **Microsoft 365 E7: The Frontier Suite** が一般提供開始予定で、M365 E5・Copilot・Agent 365 を統合した包括パッケージとなる。現在は Frontier プログラム参加企業と Research Preview ユーザーに限定提供中。"
+    ],
+    "newsDate": "2026-03-27",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Microsoft", "Copilot", "エージェント", "Anthropic", "エンタープライズ"],
+    "primarySources": [
+      { "title": "Copilot Cowork: A new way of getting work done", "site": "Microsoft 365 Blog", "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/copilot-cowork-a-new-way-of-getting-work-done/" },
+      { "title": "Powering Frontier Transformation with Copilot and agents", "site": "Microsoft 365 Blog", "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/powering-frontier-transformation-with-copilot-and-agents/" },
+      { "title": "Introducing the First Frontier Suite", "site": "Microsoft Blog", "url": "https://blogs.microsoft.com/blog/2026/03/09/introducing-the-first-frontier-suite-built-on-intelligence-trust/" }
+    ]
+  },
+  {
     "id": "pretext-chenglou-text-layout",
     "type": "news",
     "category": "product",

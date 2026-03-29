@@ -464,6 +464,14 @@
     <summary>2026-03-27、PM の Noah Zweben 氏が発表。Web/モバイルセッションが PR をリモートでフォローし green 化を目指す。GitHub Actions では anthropics/claude-code-action の ci-failure ワークフロー例あり。</summary>
   </entry>
   <entry>
+    <title>Microsoft Copilot Cowork が Frontier ユーザーに展開開始 — Anthropic と共同開発、M365 上でマルチステップ業務を自律実行</title>
+    <link rel="alternate" type="text/html" href="?a=microsoft-copilot-cowork-launch-2026"/>
+    <id>tag:ai-tool-news.jp,2026:microsoft-copilot-cowork-launch-2026</id>
+    <published>2026-03-27T15:00:00Z</published>
+    <updated>2026-03-27T15:00:00Z</updated>
+    <summary>Microsoft 365 Copilot の新モード「Cowork」が Frontier プログラムのユーザーに展開開始。Anthropic の Claude 技術を統合し、単なるチャット応答ではなく複数ステップの業務を自律的に実行。進捗を可視化しながらユーザーが随時介入できる設計。</summary>
+  </entry>
+  <entry>
     <title>Gemini Drop（2026年3月）— Lyria 3 Pro・メモリ移行・Personal Intelligence 無料化など5つの新機能</title>
     <link rel="alternate" type="text/html" href="?a=gemini-drop-march-2026"/>
     <id>tag:ai-tool-news.jp,2026:gemini-drop-march-2026</id>
