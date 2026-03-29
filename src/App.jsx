@@ -1415,6 +1415,49 @@ const REVIEW_CATEGORIES = [
   { id: "other", label: "その他ツール", description: "音声入力・ターミナル等" },
 ];
 
+const RATING_EXPLAINER = {
+  models: {
+    title: "モデル評価の基準",
+    axes: [
+      ["AI品質（30%）", "ベンチマークスコア、推論力、コード生成精度"],
+      ["使いやすさ（25%）", "API の設計、ドキュメント、SDK の充実度"],
+      ["コスパ（20%）", "トークン単価、無料枠、サブスクプランの妥当性"],
+      ["拡張性（15%）", "ファインチューニング、関数呼び出し、マルチモーダル対応"],
+      ["企業向け（10%）", "SLA、データ保護、コンプライアンス認証"],
+    ],
+  },
+  cli: {
+    title: "CLI ツール評価の基準",
+    axes: [
+      ["AI品質（30%）", "コード生成の正確さ、大規模コードベースの理解力"],
+      ["使いやすさ（25%）", "インストールの手軽さ、コマンド体系、エラーメッセージ"],
+      ["コスパ（20%）", "月額料金、API 従量課金、無料枠の範囲"],
+      ["拡張性（15%）", "MCP 対応、Hooks、スキル、外部ツール連携"],
+      ["企業向け（10%）", "権限モード、監査ログ、Privacy Mode、SSO"],
+    ],
+  },
+  editor: {
+    title: "エディタ評価の基準",
+    axes: [
+      ["AI品質（30%）", "コード補完の精度、Agent モードの自律性、バグ検出力"],
+      ["使いやすさ（25%）", "UI/UX、既存ワークフローとの統合、学習コスト"],
+      ["コスパ（20%）", "無料版の機能制限、Pro プランの価格対性能"],
+      ["拡張性（15%）", "プラグイン・拡張機能、カスタムルール、MCP 対応"],
+      ["企業向け（10%）", "チーム管理、集中設定、Ghost/Privacy Mode"],
+    ],
+  },
+  other: {
+    title: "ツール評価の基準",
+    axes: [
+      ["AI品質（30%）", "音声認識精度、レスポンス速度、出力の自然さ"],
+      ["使いやすさ（25%）", "セットアップの容易さ、日常的な操作感"],
+      ["コスパ（20%）", "料金プランの妥当性、無料枠"],
+      ["拡張性（15%）", "API 連携、他ツールとの組み合わせ"],
+      ["企業向け（10%）", "セキュリティ、データ保護"],
+    ],
+  },
+};
+
 const MODEL_COMPARISON = [
   { name: "Claude Opus 4.6", rating: 4.5, summary: "Anthropic 最上位。1Mコンテキスト、高度な推論とコード生成に強い。$15/$75 per 1M tokens", bench: 72 },
   { name: "Claude Sonnet 4.6", rating: 4.0, summary: "Anthropic 中核。1Mコンテキスト、速度と品質のバランス型。日常のコーディングに最適。$3/$15", bench: 65 },
@@ -1553,21 +1596,8 @@ function ModelComparisonSection() {
           <p>下のグラフは SWE-Bench 系を中心とした推定統合値。コーディング以外の用途（文章作成、分析等）ではスコアの順位が変わることがある。</p>
         </div>
       </details>
-      <details className="benchmark-explainer">
-        <summary className="benchmark-explainer__summary">星評価の見方（タップで開く）</summary>
-        <div className="benchmark-explainer__body">
-          <p>各ツール・モデルを5つの軸で評価し、加重平均で総合スコアを算出しています:</p>
-          <dl className="benchmark-explainer__list">
-            <dt>AI品質（30%）</dt><dd>生成コードの正確さ、推論力、コンテキスト理解</dd>
-            <dt>使いやすさ（25%）</dt><dd>セットアップの手軽さ、UI/UX、ドキュメント</dd>
-            <dt>コスパ（20%）</dt><dd>料金プランの妥当性、無料枠の充実度</dd>
-            <dt>拡張性（15%）</dt><dd>MCP・プラグイン・API 連携・カスタマイズ性</dd>
-            <dt>企業向け（10%）</dt><dd>SSO/SAML・監査ログ・IP補償・Privacy Mode</dd>
-          </dl>
-          <p>評価は公式ドキュメント・ベンチマーク・ユーザーレビューに基づき、編集部が判断しています。</p>
-        </div>
-      </details>
       <BenchmarkChart data={MODEL_COMPARISON} title="ベンチマークスコア（SWE-Bench 系・推定統合値）" />
+      <RatingExplainer categoryId="models" />
       <div className="review-comparison-table-wrap">
         <table className="review-comparison-table">
           <thead>
@@ -1595,6 +1625,25 @@ function ModelComparisonSection() {
   );
 }
 
+function RatingExplainer({ categoryId }) {
+  const data = RATING_EXPLAINER[categoryId];
+  if (!data) return null;
+  return (
+    <details className="benchmark-explainer">
+      <summary className="benchmark-explainer__summary">{data.title}（タップで開く）</summary>
+      <div className="benchmark-explainer__body">
+        <p>5つの軸で評価し、加重平均で総合スコアを算出しています:</p>
+        <dl className="benchmark-explainer__list">
+          {data.axes.map(([dt, dd]) => (
+            <Fragment key={dt}><dt>{dt}</dt><dd>{dd}</dd></Fragment>
+          ))}
+        </dl>
+        <p>評価は公式ドキュメント・ベンチマーク・ユーザーレビューに基づき、編集部が判断しています。</p>
+      </div>
+    </details>
+  );
+}
+
 function ReviewComparisonTable({ articles, category, onSelect }) {
   const items = articles
     .filter((a) => a.reviewCategory === category.id)
@@ -1604,6 +1653,7 @@ function ReviewComparisonTable({ articles, category, onSelect }) {
     <section className="review-comparison-section">
       <h2 className="section-feed__title">{category.label}比較</h2>
       <p className="section-feed__meta">{category.description}</p>
+      <RatingExplainer categoryId={category.id} />
       <div className="review-comparison-table-wrap">
         <table className="review-comparison-table">
           <thead>
