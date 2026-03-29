@@ -352,6 +352,14 @@
     <summary>3月27日の Claude Mythos リーク報道を受け、CrowdStrike −7%、Palo Alto Networks −6% など主要セキュリティ銘柄が軒並み下落。草稿に記載されたサイバー能力の記述が市場に衝撃を与えた経緯と、冷静な読み方を整理。</summary>
   </entry>
   <entry>
+    <title>CLI エージェント周辺のコミュニティ OSS まとめ — マルチエージェント・並列実行・拡張ツール群</title>
+    <link rel="alternate" type="text/html" href="?a=cli-agent-community-oss-2026"/>
+    <id>tag:ai-tool-news.jp,2026:cli-agent-community-oss-2026</id>
+    <published>2026-03-28T15:00:00Z</published>
+    <updated>2026-03-28T15:00:00Z</updated>
+    <summary>Claude Code・Codex を中心に、ターミナル上で AI エージェントを並列実行・連携させるコミュニティ製 OSS ツールが急増している。主要プロジェクトの位置づけと GitHub リンクを整理する。</summary>
+  </entry>
+  <entry>
     <title>Supabase が pgvector 0.8 を標準搭載 — HNSW インデックス性能が3倍に、RAG 構築がさらに手軽に</title>
     <link rel="alternate" type="text/html" href="?a=supabase-pgvector-0-8-2026"/>
     <id>tag:ai-tool-news.jp,2026:supabase-pgvector-0-8-2026</id>

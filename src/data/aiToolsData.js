@@ -5205,6 +5205,47 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "cli-agent-community-oss-2026",
+    "type": "feature",
+    "category": "cli",
+    "title": "CLI エージェント周辺のコミュニティ OSS まとめ — マルチエージェント・並列実行・拡張ツール群",
+    "excerpt": "Claude Code・Codex を中心に、ターミナル上で AI エージェントを並列実行・連携させるコミュニティ製 OSS ツールが急増している。主要プロジェクトの位置づけと GitHub リンクを整理する。",
+    "body": [
+      "2026年に入り、Claude Code や Codex などの CLI エージェントを拡張・連携させるコミュニティ製の OSS ツールが急速に増えている。公式機能ではカバーしきれないマルチエージェント連携や並列実行のニーズに応える形で、個人開発者やスタートアップが多数のプロジェクトを公開している。以下は主要なカテゴリ別の整理で、==いずれも個人・コミュニティ開発のため、利用は自己責任で==。",
+      "**マルチエージェント管理**: **claude-squad**（github.com/smtg-ai/claude-squad）は Claude Code・Codex・OpenCode・Amp など複数の CLI エージェントをバックグラウンドで並行管理するツール。**oh-my-claudecode**（ohmyclaudecode.com）は32の専用エージェントと40以上のスキルを提供するオーケストレーションレイヤーで、タスクの自動並列化とトークン使用量の最適化を行う。出力速度の向上も謳っている。",
+      "**エージェント間通信**: **smux**（github.com/ShawnPana/smux）は tmux ベースで AI エージェント同士をペイン越しに通信させるツール。Claude Code が設計→Codex がレビュー→Claude Code が修正、というサイクルを自律的に回せる。API もプロトコルも不要で、Bash が動くエージェントなら何でも参加可能。**cmux**（github.com/craigsc/cmux）は tmux for Claude Code を標榜する類似ツール。",
+      "**プラグイン・拡張エコシステム**: **awesome-claude-code**（github.com/hesreallyhim/awesome-claude-code）はスキル・Hooks・スラッシュコマンド・MCP サーバー・プラグインのキュレーションリスト。**awesome-claude-code-toolkit**（github.com/rohitg00/awesome-claude-code-toolkit）は135エージェント・35スキル・42コマンド・150以上のプラグインを収録した包括的なツールキット。公式の MCP Tool Search と組み合わせてコンテキスト消費を95%削減する手法も紹介されている。",
+      "**注意点**: これらはいずれも個人またはコミュニティが開発・運営しているプロジェクトで、メンテナンスの継続性やセキュリティの保証はない。特にエージェント間通信系のツールは、プロンプトインジェクションによるコマンド注入や、意図しない破壊的操作（ファイル削除・Git push --force 等）のリスクがある。人間が監視できる状態で使うことを前提とし、本番環境での無人運用は避けるべき。ライセンスは各リポジトリで確認のこと。"
+    ],
+    "newsDate": "2026-03-28",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": ["CLI", "OSS", "マルチエージェント", "コミュニティ", "Claude Code"],
+    "tables": [
+      {
+        "afterParagraph": 1,
+        "caption": "主要コミュニティ OSS ツール一覧（2026年3月時点）",
+        "headers": ["ツール", "カテゴリ", "概要", "GitHub"],
+        "rows": [
+          ["claude-squad", "並列管理", "複数 CLI エージェントのバックグラウンド管理", "smtg-ai/claude-squad"],
+          ["oh-my-claudecode", "オーケストレーション", "32専用エージェント・40+スキル・自動並列化", "Yeachan-Heo/oh-my-claudecode"],
+          ["smux", "エージェント間通信", "tmux ペイン越しの AI 間通信、API 不要", "ShawnPana/smux"],
+          ["cmux", "ターミナル", "Claude Code 向け tmux 拡張", "craigsc/cmux"],
+          ["awesome-claude-code", "キュレーション", "スキル・Hooks・MCP・プラグインのリスト", "hesreallyhim/awesome-claude-code"],
+          ["awesome-claude-code-toolkit", "ツールキット", "135エージェント・150+プラグイン収録", "rohitg00/awesome-claude-code-toolkit"],
+          ["ruflo", "スウォーム", "マルチエージェントスウォーム・RAG 統合", "ruvnet/ruflo"]
+        ]
+      }
+    ],
+    "primarySources": [
+      { "title": "awesome-claude-code", "site": "GitHub", "url": "https://github.com/hesreallyhim/awesome-claude-code" },
+      { "title": "claude-squad", "site": "GitHub", "url": "https://github.com/smtg-ai/claude-squad" },
+      { "title": "oh-my-claudecode", "site": "GitHub", "url": "https://github.com/Yeachan-Heo/oh-my-claudecode" },
+      { "title": "smux", "site": "GitHub", "url": "https://github.com/ShawnPana/smux/" }
+    ]
+  },
+  {
     "id": "microsoft-copilot-cowork-launch-2026",
     "type": "news",
     "category": "product",
