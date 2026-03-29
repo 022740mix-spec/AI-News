@@ -708,9 +708,12 @@ body {
 .guide-section__title {
   font-size: var(--text-md);
   font-weight: 800;
-  margin: 0 0 0.4rem;
+  margin: 1rem 0 0.4rem;
   letter-spacing: -0.02em;
   color: var(--text);
+}
+.guide-section:first-child .guide-section__title {
+  margin-top: 0.5rem;
   line-height: 1.35;
 }
 
