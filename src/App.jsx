@@ -3164,7 +3164,10 @@ const [showFab, setShowFab] = useState(false);
       if (a.pinned !== b.pinned) return a.pinned ? -1 : 1;
       return a.id.localeCompare(b.id, "ja");
     });
-    const featured = sortedToday[0] ?? null;
+    // 今日の記事がなければカテゴリの最新記事をフォールバック
+    const featured = sortedToday[0]
+      ?? [...list].sort((a, b) => parseDate(getArticleNewsYmd(b)) - parseDate(getArticleNewsYmd(a)))[0]
+      ?? null;
     const restRaw = featured
       ? list.filter((a) => a.id !== featured.id)
       : list;
