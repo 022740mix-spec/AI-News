@@ -5230,6 +5230,28 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "tbpn-benchmark-sora-spacex-2026-march",
+    "type": "feature",
+    "category": "special",
+    "title": "OpenAI が Sora を終了、SpaceX 2兆ドル IPO 間近、Benchmark の「テセウスの船」— Diet TBPN 要約（3月25日）",
+    "excerpt": "シリコンバレーの空気感を伝える TBPN のダイジェスト版。OpenAI が Sora を終了（1日1,500万ドルの計算コスト）、SpaceX の IPO 申請が数日以内、Benchmark は「テセウスの船」か。31分で3つの大ニュースを凝縮。",
+    "body": [
+      "2026年3月25日の **Diet TBPN**（The Big Picture News のダイジェスト版、31分）で、シリコンバレーの最新動向3つが取り上げられた。TBPN は John Coogan と Jordi Hays がホストを務めるライブテック番組で、X と YouTube で平日配信。シリコンバレーの「空気感」をつかめる番組として知られる。",
+      "**OpenAI が Sora を終了**: OpenAI は動画生成 AI「Sora」の提供終了を発表した。==1日あたり1,500万ドル==の計算コストを消費しながら収益がほとんどなく、公開市場（IPO）を見据えたプロダクトポートフォリオの整理が目的とみられる。計算リソースを GPT-5.4 や Codex など収益性の高い製品に集中させる判断。動画生成 AI 市場では Runway・Kling・Veo などの競合が残る形に。",
+      "**SpaceX 2兆ドル IPO が間近**: SpaceX の IPO 申請が数日〜数週間以内に行われる見通し。最大750億ドルの資金調達が見込まれ、時価総額は2兆ドル規模と報じられている。AI インフラとの関連では、Elon Musk が Dwarkesh Podcast で語った「36ヶ月後に AI を宇宙に置くのが最安」構想の実行基盤にもなる。",
+      "**Benchmark の「テセウスの船」**: VC ファーム Benchmark Capital が2017年に Uber の Travis Kalanick を追い出した件について、「許されるのはいつか」を哲学的パラドックス「テセウスの船」に例えて議論。パートナーが入れ替わった Benchmark はもはや同じ組織なのか、という問い。シリコンバレーの権力構造と VC 文化を映す話題。"
+    ],
+    "newsDate": "2026-03-25",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["OpenAI", "Sora", "SpaceX", "IPO", "ポッドキャスト", "TBPN"],
+    "primarySources": [
+      { "title": "Benchmark's Ship of Theseus, OpenAI Kills Sora, SpaceX $2T IPO Buzz", "site": "TBPN", "url": "https://tbpn.substack.com/p/the-benchmark-ship-of-theseus" },
+      { "title": "Spotify で聴く", "site": "Spotify", "url": "https://open.spotify.com/episode/5j1na8mPkQ1dl2V3eVkfc4" }
+    ]
+  },
+  {
     "id": "dylan-patel-dwarkesh-ai-compute-bottlenecks",
     "type": "feature",
     "category": "special",
