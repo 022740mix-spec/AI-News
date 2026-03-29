@@ -2079,7 +2079,22 @@ function ArticleDetail({
                 gap: "1rem",
               }}
             >
-              {article.rating ? (
+              {article.ratings ? (
+                <div style={{ flex: "1 1 100%", marginBottom: 4 }}>
+                  <div style={{ fontSize: 10, color: "var(--muted)", marginBottom: 6 }}>
+                    評価（5段階）
+                  </div>
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "4px 16px" }}>
+                    {Object.entries(article.ratings).map(([k, v]) => (
+                      <div key={k} style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12 }}>
+                        <span style={{ color: "var(--muted)", minWidth: 56 }}>{k}</span>
+                        <span style={{ color: "#fbbf24", letterSpacing: 1 }}>{renderStars(v)}</span>
+                        <span style={{ color: "var(--text-secondary)", fontSize: 11 }}>{v}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : article.rating ? (
                 <div>
                   <div style={{ fontSize: 10, color: "var(--muted)", marginBottom: 2 }}>
                     評価

@@ -22,6 +22,16 @@
  *   pinned?: boolean — 同一ニュース日内で複数記事があるときヒーロー候補の優先。ヒーローは「本日＝東京」と news 日付が一致する記事のみ
  *   heroScope?: "day" | "week" | "none" — ヒーロー帯の意味。省略時は day（単発の「本日のニュース」）。week は期間まとめ用コピー。none は当日一致でもヒーローに出さない
  *   weekRoundupPeriod?: { start: YYYY-MM-DD, end: YYYY-MM-DD } — 週刊まとめの対象7日間（月曜〜日曜想定）。heroScope:week のとき推奨
+ *
+ * ── レビュー評価基準（5段階・5軸） ──
+ * ratings: { "AI品質": n, "使いやすさ": n, "コスパ": n, "拡張性": n, "企業向け": n }
+ * - AI品質:   AI支援の精度・推論の深さ・コード生成品質。ベンチマーク・実利用レビューに基づく
+ * - 使いやすさ: 導入の簡単さ・学習コスト・日常操作のスムーズさ
+ * - コスパ:   価格に対して得られる価値。無料枠の実用性も考慮
+ * - 拡張性:   MCP・プラグイン・API・カスタマイズの幅
+ * - 企業向け: セキュリティ設定・SSO/SAML・監査ログ・IP補償・Privacy Mode
+ * rating（総合）: 5軸の加重平均（AI品質30%、使いやすさ25%、コスパ20%、拡張性15%、企業向け10%）を四捨五入
+ * 評価は公式ドキュメント・ベンチマーク・ユーザーレビューに基づき、編集部が2026年3月時点で判断
  */
 
 export const ARTICLES = [
@@ -1688,6 +1698,7 @@ export const ARTICLES = [
     "id": "aqua-voice-review",
     "type": "review",
     "rating": 3.5,
+    "ratings": {"AI品質":4,"使いやすさ":5,"コスパ":3,"拡張性":2,"企業向け":1},
     "reviewCategory": "other",
     "category": "media",
     "title": "Aqua Voice — Mac/Windows 向けAIディクテーション（フローティングUI）",
@@ -2713,6 +2724,7 @@ export const ARTICLES = [
     "id": "gemini-cli",
     "type": "review",
     "rating": 3.5,
+    "ratings": {"AI品質":4,"使いやすさ":3,"コスパ":5,"拡張性":3,"企業向け":2},
     "reviewCategory": "cli",
     "category": "cli",
     "title": "Gemini CLI レビュー — Googleが放つ200万トークンの超大規模コンテキストCLI",
@@ -2747,7 +2759,8 @@ export const ARTICLES = [
   {
     "id": "openai-codex-agent",
     "type": "review",
-    "rating": 4.0,
+    "rating": 3,
+    "ratings": {"AI品質":4,"使いやすさ":3,"コスパ":2,"拡張性":3,"企業向け":4},
     "reviewCategory": "cli",
     "category": "cli",
     "title": "OpenAI Codex — クラウド並列実行のAIコーディングエージェント",
@@ -2803,7 +2816,8 @@ export const ARTICLES = [
   {
     "id": "claude-code",
     "type": "review",
-    "rating": 4.5,
+    "rating": 4,
+    "ratings": {"AI品質":5,"使いやすさ":3,"コスパ":4,"拡張性":5,"企業向け":4},
     "reviewCategory": "cli",
     "category": "cli",
     "title": "Claude Code レビュー — Anthropic のCLIエージェント徹底解説",
@@ -2847,7 +2861,8 @@ export const ARTICLES = [
   {
     "id": "cursor-cli",
     "type": "review",
-    "rating": 4.0,
+    "rating": 4,
+    "ratings": {"AI品質":4,"使いやすさ":4,"コスパ":4,"拡張性":3,"企業向け":3},
     "reviewCategory": "cli",
     "category": "cli",
     "title": "Cursor CLI (Composer) レビュー — IDE一体型のAIコーディング環境",
@@ -2889,7 +2904,8 @@ export const ARTICLES = [
   {
     "id": "github-copilot-cli",
     "type": "review",
-    "rating": 3.5,
+    "rating": 4,
+    "ratings": {"AI品質":4,"使いやすさ":4,"コスパ":4,"拡張性":3,"企業向け":5},
     "reviewCategory": "cli",
     "category": "cli",
     "title": "GitHub Copilot CLI レビュー — エンタープライズ対応のAI開発支援",
@@ -2931,7 +2947,8 @@ export const ARTICLES = [
   {
     "id": "aider",
     "type": "review",
-    "rating": 4.0,
+    "rating": 3.5,
+    "ratings": {"AI品質":4,"使いやすさ":3,"コスパ":5,"拡張性":4,"企業向け":1},
     "reviewCategory": "cli",
     "category": "cli",
     "title": "Aider レビュー — マルチモデル対応のOSS CLIツール",
@@ -2973,7 +2990,8 @@ export const ARTICLES = [
   {
     "id": "codebuff",
     "type": "review",
-    "rating": 3.0,
+    "rating": 3,
+    "ratings": {"AI品質":3,"使いやすさ":4,"コスパ":3,"拡張性":2,"企業向け":1},
     "reviewCategory": "cli",
     "category": "cli",
     "title": "CodeBuff レビュー — ターミナル特化の新興CLIエージェント",
@@ -3014,7 +3032,8 @@ export const ARTICLES = [
   {
     "id": "amazon-q",
     "type": "review",
-    "rating": 3.0,
+    "rating": 3.5,
+    "ratings": {"AI品質":3,"使いやすさ":3,"コスパ":4,"拡張性":3,"企業向け":5},
     "reviewCategory": "cli",
     "category": "cli",
     "title": "Amazon Q Developer レビュー — AWS統合のAI開発支援ツール",
@@ -3057,6 +3076,7 @@ export const ARTICLES = [
     "id": "cline",
     "type": "review",
     "rating": 3.5,
+    "ratings": {"AI品質":3,"使いやすさ":3,"コスパ":5,"拡張性":4,"企業向け":1},
     "reviewCategory": "cli",
     "category": "cli",
     "title": "Cline レビュー — 承認フロー付きのOSS AIエージェント",
@@ -3098,7 +3118,8 @@ export const ARTICLES = [
   {
     "id": "warp-ai",
     "type": "review",
-    "rating": 3.5,
+    "rating": 3,
+    "ratings": {"AI品質":2,"使いやすさ":4,"コスパ":4,"拡張性":2,"企業向け":2},
     "reviewCategory": "other",
     "category": "cli",
     "title": "Warp AI レビュー — AI内蔵のRust製モダンターミナル",
@@ -3140,6 +3161,7 @@ export const ARTICLES = [
     "id": "cursor-editor",
     "type": "review",
     "rating": 4.5,
+    "ratings": {"AI品質":5,"使いやすさ":5,"コスパ":4,"拡張性":4,"企業向け":3},
     "reviewCategory": "editor",
     "category": "editor",
     "title": "Cursor レビュー — AIエディタの王者、Windsurf統合で盤石に",
@@ -3182,6 +3204,7 @@ export const ARTICLES = [
     "id": "windsurf",
     "type": "review",
     "rating": 3.5,
+    "ratings": {"AI品質":4,"使いやすさ":4,"コスパ":4,"拡張性":3,"企業向け":2},
     "reviewCategory": "editor",
     "category": "editor",
     "title": "Windsurf — Cursor傘下で継続提供、Cascadeフローが光るAIエディタ",
@@ -3223,7 +3246,8 @@ export const ARTICLES = [
   {
     "id": "zed-ai",
     "type": "review",
-    "rating": 3.0,
+    "rating": 3,
+    "ratings": {"AI品質":3,"使いやすさ":4,"コスパ":4,"拡張性":2,"企業向け":1},
     "reviewCategory": "editor",
     "category": "editor",
     "title": "Zed AI — Rust製の超高速AIエディタ",
@@ -3265,7 +3289,8 @@ export const ARTICLES = [
   {
     "id": "vscode",
     "type": "review",
-    "rating": 4.0,
+    "rating": 4.5,
+    "ratings": {"AI品質":4,"使いやすさ":5,"コスパ":5,"拡張性":5,"企業向け":5},
     "reviewCategory": "editor",
     "category": "editor",
     "title": "VS Code + Copilot — 定番エディタのAI進化",
@@ -3307,7 +3332,8 @@ export const ARTICLES = [
   {
     "id": "void",
     "type": "review",
-    "rating": 2.5,
+    "rating": 3,
+    "ratings": {"AI品質":2,"使いやすさ":3,"コスパ":5,"拡張性":3,"企業向け":1},
     "reviewCategory": "editor",
     "category": "editor",
     "title": "Void — プライバシー重視のOSSエディタ",
@@ -3350,6 +3376,7 @@ export const ARTICLES = [
     "id": "pearai",
     "type": "review",
     "rating": 2.5,
+    "ratings": {"AI品質":2,"使いやすさ":3,"コスパ":4,"拡張性":2,"企業向け":1},
     "reviewCategory": "editor",
     "category": "editor",
     "title": "PearAI — コミュニティドリブンのOSSエディタ",
@@ -3390,7 +3417,8 @@ export const ARTICLES = [
   {
     "id": "trae",
     "type": "review",
-    "rating": 3.0,
+    "rating": 3,
+    "ratings": {"AI品質":3,"使いやすさ":4,"コスパ":4,"拡張性":2,"企業向け":2},
     "reviewCategory": "editor",
     "category": "editor",
     "title": "Trae — ByteDance発のAIエディタ、Builder Modeが話題",
