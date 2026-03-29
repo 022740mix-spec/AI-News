@@ -5205,30 +5205,6 @@ export const ARTICLES = [
     ]
   },
   {
-    "id": "smux-agent-to-agent-terminal",
-    "type": "news",
-    "category": "cli",
-    "title": "smux — Claude Code と Codex をターミナル上で会話させる AI エージェント間通信ツール",
-    "excerpt": "API もプロトコルも不要。tmux ベースの smux が AI エージェント同士をターミナル上で直接つなぐ。Claude Code が設計→Codex がレビュー→Claude Code が修正、という自律連携がペイン間通信で実現。MIT ライセンス。",
-    "body": [
-      "**smux** は ShawnPana が開発した tmux ベースのターミナル設定＋自動化ツールで、AI エージェント同士がターミナルのペインを介して直接通信する仕組みを提供する。API もプロトコルも不要で、Bash を実行できる AI エージェントなら何でも参加可能。Claude Code、Codex CLI、Gemini CLI など、CLI 型エージェントの組み合わせを自由に構築できる。",
-      "**仕組み**: `tmux-bridge` という CLI を通じて、あるペインの出力を別のペインのエージェントが読み取り（`read`）、テキストを入力し（`type`）、キーを送信する（`keys`）。たとえば Claude Code が設計したコードを隣のペインの Codex が読み取ってレビューし、修正提案を Claude Code のペインに書き戻す、という連携が自動で回る。ターミナル自体が共有インターフェースになる発想。",
-      "**実用シナリオ**: Claude Code が得意なアーキテクチャ設計・大規模リファクタリングと、Codex が得意なエラー解決・テスト生成を組み合わせる使い方が海外で注目されている。「Claude Code に設計させ、Codex にレビュー・デバッグさせ、Claude Code に再修正させる」サイクルを人間の介入なしで回すデモが X で話題になった。",
-      "**セキュリティ上の注意**: smux のドキュメントにはセキュリティに関する明示的な警告がない。しかし、==AI エージェントが別のエージェントのターミナルに自由にテキストを送信できる==設計は、以下のリスクを伴う。(1) あるエージェントが悪意あるコマンドを別のペインに注入する可能性（プロンプトインジェクション経由）。(2) エージェントが想定外の権限でファイル削除・Git push 等の破壊的操作を実行するリスク。(3) ループに陥った場合の無限実行とコスト増。人間が監視できる状態で使うのが前提であり、無人での長時間運用には慎重な判断が必要。",
-      "**導入方法と制限**: `curl -fsSL https://shawnpana.com/smux/install.sh | bash` でインストール。macOS / Linux 対応、Windows は非対応。tmux 3.2 以上が必要（自動インストール）。MIT ライセンス。類似ツールとして claude-squad（複数エージェント管理）、cmux（macOS ネイティブ AI ターミナル）なども登場しており、マルチエージェント開発のエコシステムが急速に形成されている。"
-    ],
-    "newsDate": "2026-03-28",
-    "date": "2026-03-29",
-    "author": "AI News 編集部",
-    "readTime": "5分",
-    "tags": ["CLI", "エージェント", "マルチエージェント", "tmux", "OSS"],
-    "primarySources": [
-      { "title": "ShawnPana/smux — GitHub", "site": "GitHub", "url": "https://github.com/ShawnPana/smux/" },
-      { "title": "smux — tmux for the age of AI agents", "site": "smux", "url": "https://smux-terminal.vercel.app/" },
-      { "title": "Shawn Pana on X — Claude Code と Codex の会話デモ", "site": "X", "url": "https://x.com/shawn_pana/status/2037760543029686452" }
-    ]
-  },
-  {
     "id": "microsoft-copilot-cowork-launch-2026",
     "type": "news",
     "category": "product",
@@ -5250,29 +5226,6 @@ export const ARTICLES = [
       { "title": "Copilot Cowork: A new way of getting work done", "site": "Microsoft 365 Blog", "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/copilot-cowork-a-new-way-of-getting-work-done/" },
       { "title": "Powering Frontier Transformation with Copilot and agents", "site": "Microsoft 365 Blog", "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/powering-frontier-transformation-with-copilot-and-agents/" },
       { "title": "Introducing the First Frontier Suite", "site": "Microsoft Blog", "url": "https://blogs.microsoft.com/blog/2026/03/09/introducing-the-first-frontier-suite-built-on-intelligence-trust/" }
-    ]
-  },
-  {
-    "id": "pretext-chenglou-text-layout",
-    "type": "news",
-    "category": "product",
-    "title": "React 開発者 Cheng Lou が作った Pretext — DOM リフロー不要の超高速テキスト計測ライブラリ",
-    "excerpt": "React・ReasonML・Midjourney に関わった Cheng Lou が、Web のテキストレイアウトを根本から変えるライブラリ Pretext を公開。DOM や CSS を一切使わず、純粋な計算だけでテキストの高さ・幅を正確に計測。500テキストの layout() が約0.09ms。MIT ライセンス。",
-    "body": [
-      "**Pretext** は Cheng Lou（React、ReasonML、ReScript、Midjourney に関わった開発者）が公開した純粋な JavaScript / TypeScript テキスト計測・レイアウトライブラリ。Web 開発で最もコストが高い操作のひとつである DOM リフロー（getBoundingClientRect や offsetHeight）を完全に回避し、Canvas のフォントエンジンを使った純粋な計算でテキストの高さ・幅・行数を正確に出す。",
-      "**パフォーマンス**: 初回の `prepare()` で500テキストを約19ms で解析し、以降の `layout()` は同じ500テキストに対して約0.09ms。一度テキストを解析すれば、レイアウト計算がほぼゼロコストで繰り返せる設計。ウィンドウリサイズやアニメーション中の再計算で DOM に触る必要がないため、スクロールやリサイズが激しい UI でもカクつかない。",
-      "**これまで CSS が苦労していた問題が解決**: Pinterest 風の高さバラバラの Masonry レイアウト、チャットの吹き出しが内容にぴったりフィットする shrinkwrap、画面サイズに合わせてカラムが変わる雑誌風レイアウト、アコーディオン、自動伸縮テキストボックスなど、従来は DOM 計測に依存していたレイアウトが純粋な計算で実現できる。公式デモが chenglou.me/pretext/ で公開されている。",
-      "**対応範囲**: 絵文字、双方向テキスト（アラビア語等）、複雑なスクリプトを含む全言語に対応。描画先は DOM、Canvas、SVG で、サーバーサイドレンダリングも対応予定。MIT ライセンスで GitHub 上に公開されている。",
-      "**開発者への影響**: テキストの高さを事前に知る必要がある仮想スクロール、動的なカードレイアウト、リアルタイムのテキスト折り返し計算など、フロントエンド開発の長年の「つらみ」を解消するポテンシャルがある。数キロバイト級の小さなライブラリで、既存のフレームワーク（React、Vue、Svelte 等）と組み合わせて使える。"
-    ],
-    "newsDate": "2026-03-20",
-    "date": "2026-03-29",
-    "author": "AI News 編集部",
-    "readTime": "5分",
-    "tags": ["フロントエンド", "ライブラリ", "OSS", "テキストレイアウト", "パフォーマンス"],
-    "primarySources": [
-      { "title": "chenglou/pretext — GitHub", "site": "GitHub", "url": "https://github.com/chenglou/pretext" },
-      { "title": "Pretext Demos", "site": "Cheng Lou", "url": "https://chenglou.me/pretext/" }
     ]
   },
   {
