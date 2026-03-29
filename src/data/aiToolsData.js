@@ -5179,6 +5179,30 @@ export const ARTICLES = [
     "model": "ERNIE 4.5",
     "tags": ["モデル", "中国", "Baidu", "マルチモーダル"],
     "features": ["中国語最適化", "Baidu Cloud統合", "1億ユーザー", "マルチモーダル", "OSS版あり"]
+  },
+  {
+    "id": "gemini-drop-march-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Gemini Drop（2026年3月）— Lyria 3 Pro・メモリ移行・Personal Intelligence 無料化など5つの新機能",
+    "excerpt": "Google が月例の Gemini Drop で5つの新機能を発表。音楽生成 Lyria 3 Pro（最大3分）、他社AIからのチャット履歴移行、Personal Intelligence の無料化、Google TV 向け Gemini 機能、Gemini 3.1 Flash Live の会話強化。",
+    "body": [
+      "Google は2026年3月27日、月例アップデート「Gemini Drop」で Gemini アプリの5つの新機能を発表した。Gemini Drop は毎月の定例アップデートとして2025年末から継続しており、今回は音楽生成の大幅強化とユーザー囲い込み施策が目立つ内容。",
+      "**Lyria 3 Pro（音楽生成の強化）**: Google の最先端音楽モデル Lyria 3 の上位版。従来の30秒制限から最大3分のトラック生成に対応し、写真やテキストから歌詞付きの高品質楽曲を作成可能。Google AI Ultra / Google One AI Premium サブスクライバー向け。Suno V5 や Udio と直接競合する機能で、Google エコシステム内で音楽生成が完結する。",
+      "**チャット履歴の移行（Import Memory to Gemini）**: 他社の AI チャットボット（ChatGPT 等）からの会話履歴を数クリックで Gemini に移行できる機能。移行した履歴を基に Gemini がユーザーの好みや文脈を学習し、パーソナライズされた応答を提供する。他社サービスからの乗り換えハードルを下げる戦略的な施策。",
+      "**Personal Intelligence の無料化**: これまで有料サブスクライバー限定だった Personal Intelligence を、米国の全 Gemini ユーザーに無料開放。Gmail、Google フォト、YouTube と連携し、旅行計画やプロジェクト管理などのパーソナライズされた支援を提供する。Google サービス横断のデータ活用が無料で使えるようになった点が大きい。",
+      "**Gemini 3.1 Flash Live**: 音声会話に特化した次世代モデル。ピッチやペーシングなどの音響的ニュアンスを認識し、騒がしい環境でも複雑なタスクを処理可能。コンテキスト保持が従来の2倍に拡張され、繰り返し説明しなくても自然な対話が続く。2026年3月26日発表。",
+      "**Google TV 向け Gemini**: Google TV に Gemini の視覚的回答とナレーション付き深掘り機能を統合。テレビ画面上で AI と対話しながらコンテンツを探索できる。"
+    ],
+    "newsDate": "2026-03-27",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Google", "Gemini", "Lyria", "音楽生成", "パーソナライズ"],
+    "primarySources": [
+      { "title": "Gemini Drops: New updates to the Gemini app, March 2026", "site": "Google The Keyword", "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-drop-updates-march-2026/" },
+      { "title": "Lyria 3 Pro", "site": "Google The Keyword", "url": "https://blog.google/innovation-and-ai/technology/ai/lyria-3-pro/" }
+    ]
   }
 ];
 

@@ -464,6 +464,14 @@
     <summary>2026-03-27、PM の Noah Zweben 氏が発表。Web/モバイルセッションが PR をリモートでフォローし green 化を目指す。GitHub Actions では anthropics/claude-code-action の ci-failure ワークフロー例あり。</summary>
   </entry>
   <entry>
+    <title>Gemini Drop（2026年3月）— Lyria 3 Pro・メモリ移行・Personal Intelligence 無料化など5つの新機能</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-drop-march-2026"/>
+    <id>tag:ai-tool-news.jp,2026:gemini-drop-march-2026</id>
+    <published>2026-03-27T15:00:00Z</published>
+    <updated>2026-03-27T15:00:00Z</updated>
+    <summary>Google が月例の Gemini Drop で5つの新機能を発表。音楽生成 Lyria 3 Pro（最大3分）、他社AIからのチャット履歴移行、Personal Intelligence の無料化、Google TV 向け Gemini 機能、Gemini 3.1 Flash Live の会話強化。</summary>
+  </entry>
+  <entry>
     <title>LangChain v0.4 リリース — RAG パイプラインの構築が大幅に簡素化、LangGraph との統合強化</title>
     <link rel="alternate" type="text/html" href="?a=langchain-v04-rag-pipeline-2026"/>
     <id>tag:ai-tool-news.jp,2026:langchain-v04-rag-pipeline-2026</id>
