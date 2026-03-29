@@ -743,13 +743,17 @@ function HomePage({ articles, onSelect, onSection }) {
     <div className="home-page">
       {hero ? (
         <section className="home-hero" onClick={() => onSelect(hero)}>
-          <span className="home-hero__label">最新ニュース</span>
-          <h2 className="home-hero__title">{hero.title}</h2>
-          <p className="home-hero__excerpt">
-            {hero.excerpt.length > 120
-              ? hero.excerpt.replace(/\*\*/g, "").slice(0, 120) + "…"
-              : hero.excerpt.replace(/\*\*/g, "")}
-          </p>
+          <div className="home-hero__aurora" aria-hidden="true" />
+          <div className="home-hero__content">
+            <span className="home-hero__label">最新ニュース</span>
+            <h2 className="home-hero__title">{hero.title}</h2>
+            <p className="home-hero__excerpt">
+              {hero.excerpt.length > 120
+                ? hero.excerpt.replace(/\*\*/g, "").slice(0, 120) + "…"
+                : hero.excerpt.replace(/\*\*/g, "")}
+            </p>
+            <span className="home-hero__cta">記事を読む →</span>
+          </div>
         </section>
       ) : null}
 
