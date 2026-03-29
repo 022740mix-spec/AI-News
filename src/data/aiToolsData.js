@@ -44,6 +44,7 @@ export const ARTICLES = [
   {
     "id": "how-ai-models-are-built-2026",
     "type": "feature",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1737505599159-5ffc1dcbc08f?w=800&h=450&fit=crop&q=80", "alt": "ニューラルネットワーク" },
     "category": "model",
 
     "title": "AI モデルはどう作られるのか — ゼロから学習・追加学習・RLHF を非エンジニア向けに解説",
@@ -97,6 +98,7 @@ export const ARTICLES = [
   {
     "id": "local-llm-vs-api-reality-2026",
     "type": "feature",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=450&fit=crop&q=80", "alt": "サーバールーム" },
     "category": "model",
 
     "title": "ローカル LLM の現実 — API 契約 vs 自前運用のコスト・性能・限界を比較",
@@ -601,6 +603,7 @@ export const ARTICLES = [
   {
     "id": "cli-tools-comparison-2026-march",
     "type": "feature",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&h=450&fit=crop&q=80", "alt": "ターミナル画面" },
     "category": "cli",
 
     "title": "CLI コーディングツール横断比較 — Claude Code・Codex・Gemini CLI・Aider・Copilot（2026年3月版）",
@@ -643,6 +646,7 @@ export const ARTICLES = [
   {
     "id": "editor-comparison-2026-march",
     "type": "feature",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1753998943413-8cba1b923c0e?w=800&h=450&fit=crop&q=80", "alt": "コードエディタ" },
     "category": "editor",
 
     "title": "AI エディタ横断比較 — Cursor・Windsurf・VS Code+Copilot（2026年3月版）",
@@ -682,6 +686,7 @@ export const ARTICLES = [
   {
     "id": "pricing-comparison-all-tools-2026-march",
     "type": "feature",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=800&h=450&fit=crop&q=80", "alt": "データ分析" },
     "category": "special",
 
     "title": "AI 開発ツール料金プラン横断比較 — CLI・エディタ・API 全8ツール（2026年3月版）",
