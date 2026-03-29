@@ -898,7 +898,7 @@ function ToolReferencePanel({ referenceData, practical }) {
   const hasSections = sections.length > 1 || (sections.length === 1 && sections[0].name);
 
   return (
-    <div className="companies-guide-rail companies-guide-rail--full-tab" aria-label={referenceData.title}>
+    <div className={`companies-guide-rail companies-guide-rail--full-tab${practical.length > 0 ? " has-practical" : ""}`} aria-label={referenceData.title}>
       <section className="guide-section guide-section--vibe">
         <h2 className="guide-section__title">{referenceData.title}</h2>
         <GuideLinkifiedP text={referenceData.lead} className="guide-section__lead" />

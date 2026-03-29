@@ -967,6 +967,9 @@ body {
 .tool-ref-group:last-child {
   padding-bottom: 60vh;
 }
+.has-practical .tool-ref-group:last-child {
+  padding-bottom: 0;
+}
 .tool-ref-group__title {
   font-size: var(--text-lg);
   font-weight: 700;
