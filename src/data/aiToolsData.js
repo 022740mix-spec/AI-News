@@ -23,6 +23,12 @@
  *   heroScope?: "day" | "week" | "none" — ヒーロー帯の意味。省略時は day（単発の「本日のニュース」）。week は期間まとめ用コピー。none は当日一致でもヒーローに出さない
  *   weekRoundupPeriod?: { start: YYYY-MM-DD, end: YYYY-MM-DD } — 週刊まとめの対象7日間（月曜〜日曜想定）。heroScope:week のとき推奨
  *
+ * ── 比較記事の更新ルール ──
+ * lastReviewed: YYYY-MM-DD — 最後に内容を確認・更新した日付。UIで「最終確認」として表示
+ * - 比較記事・料金記事は **毎月1回** 以上の見直しを推奨（AI業界の変化速度に対応）
+ * - 見直し時: 価格変更・新製品追加・機能変更を反映し、lastReviewed を更新
+ * - 見直して「変更なし」の場合も lastReviewed だけ更新（読者に鮮度を示す）
+ *
  * ── レビュー評価基準（5段階・5軸） ──
  * ratings: { "AI品質": n, "使いやすさ": n, "コスパ": n, "拡張性": n, "企業向け": n }
  * - AI品質:   AI支援の精度・推論の深さ・コード生成品質。ベンチマーク・実利用レビューに基づく
@@ -600,6 +606,7 @@ export const ARTICLES = [
     "author": "AI News 編集部",
     "readTime": "7分",
     "tags": ["CLI", "比較", "Claude Code", "Codex", "Gemini CLI", "Aider", "Copilot"],
+    "lastReviewed": "2026-03-29",
     "heroScope": "none",
     "primarySources": [
       { "title": "Claude Code Documentation", "site": "Anthropic", "url": "https://code.claude.com/docs/en/overview" },
@@ -640,6 +647,7 @@ export const ARTICLES = [
     "author": "AI News 編集部",
     "readTime": "7分",
     "tags": ["エディタ", "比較", "Cursor", "Windsurf", "VS Code", "Copilot"],
+    "lastReviewed": "2026-03-29",
     "heroScope": "none",
     "primarySources": [
       { "title": "Cursor", "site": "Cursor", "url": "https://cursor.com/" },
@@ -677,6 +685,7 @@ export const ARTICLES = [
     "author": "AI News 編集部",
     "readTime": "8分",
     "tags": ["比較", "料金", "Claude Code", "Cursor", "Windsurf", "Codex", "Gemini CLI", "Copilot", "Aider"],
+    "lastReviewed": "2026-03-29",
     "heroScope": "none",
     "primarySources": [
       { "title": "Claude Code Documentation", "site": "Anthropic", "url": "https://code.claude.com/docs/en/overview" },
@@ -730,6 +739,7 @@ export const ARTICLES = [
     "author": "AI News 編集部",
     "readTime": "8分",
     "tags": ["比較", "おすすめ", "用途別", "初心者", "Enterprise"],
+    "lastReviewed": "2026-03-29",
     "heroScope": "none",
     "primarySources": [
       { "title": "Claude Code Documentation", "site": "Anthropic", "url": "https://code.claude.com/docs/en/overview" },
@@ -890,6 +900,7 @@ export const ARTICLES = [
     "author": "AI News 編集部",
     "readTime": "8分",
     "tags": ["規制", "EU AI Act", "米国", "日本", "比較", "ガイドライン"],
+    "lastReviewed": "2026-03-29",
     "heroScope": "none",
     "primarySources": [
       { "title": "EU AI Act", "site": "European Commission", "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" },
@@ -1436,6 +1447,7 @@ export const ARTICLES = [
     "author": "AI News 編集部",
     "readTime": "9分",
     "tags": ["ベクトルDB", "RAG", "pgvector", "Pinecone", "Weaviate", "Chroma", "Qdrant", "比較"],
+    "lastReviewed": "2026-03-29",
     "heroScope": "none",
     "primarySources": [
       { "title": "pgvector", "site": "GitHub", "url": "https://github.com/pgvector/pgvector" },
@@ -4000,6 +4012,7 @@ export const ARTICLES = [
     "author": "AI News 編集部",
     "readTime": "12分",
     "tags": ["Microsoft", "M365", "E7", "Copilot", "Claude", "Enterprise", "料金"],
+    "lastReviewed": "2026-03-29",
     "heroScope": "none",
     "primarySources": [
       { "title": "M365 E7 to launch May 1 for $99 per user per month", "site": "Directions on Microsoft", "url": "https://www.directionsonmicrosoft.com/m365-e7-to-launch-may-1-for-99-per-user-per-month/" },
@@ -4098,6 +4111,7 @@ export const ARTICLES = [
     "author": "AI News 編集部",
     "readTime": "11分",
     "tags": ["Dataverse", "Supabase", "Azure SQL", "バックエンド", "Enterprise", "比較", "Entra ID"],
+    "lastReviewed": "2026-03-29",
     "heroScope": "none",
     "primarySources": [
       { "title": "What is Microsoft Dataverse?", "site": "Microsoft Learn", "url": "https://learn.microsoft.com/en-us/power-apps/maker/data-platform/data-platform-intro" },
@@ -4271,6 +4285,7 @@ export const ARTICLES = [
     "author": "AI News 編集部",
     "readTime": "10分",
     "tags": ["セキュリティ", "プライバシー", "Claude Code", "Cursor", "Copilot", "Gemini CLI", "Enterprise", "比較"],
+    "lastReviewed": "2026-03-29",
     "heroScope": "none",
     "primarySources": [
       { "title": "Claude Code: Data Usage", "site": "Anthropic", "url": "https://code.claude.com/docs/en/data-usage" },

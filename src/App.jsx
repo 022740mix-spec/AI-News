@@ -2035,6 +2035,9 @@ function ArticleDetail({
             </span>
             <span style={{ fontSize: 12, color: "var(--muted)" }}>{article.author}</span>
             <span style={{ fontSize: 12, color: "var(--muted)" }}>{article.readTime}</span>
+            {article.lastReviewed ? (
+              <span style={{ fontSize: 11, color: "var(--accent)", fontWeight: 600 }}>最終確認 {article.lastReviewed}</span>
+            ) : null}
           </div>
 
           <h1
