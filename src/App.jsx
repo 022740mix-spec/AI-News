@@ -36,7 +36,6 @@ import {
   filterToolReference,
 } from "./data/vibeCodingGuide.js";
 import { BUNDLED_MEDIA_URL } from "./mediaUrls.js";
-import { CONTINENT_PATHS, getCompanyCoord } from "./data/worldMapPaths.js";
 
 const STORAGE_THEME = "ai-news-theme";
 const STORAGE_ACCENT = "ai-news-accent";
@@ -1173,107 +1172,6 @@ function ToolSidebar({ toolTab, toolRef }) {
         ))}
       </div>
     </aside>
-  );
-}
-
-function CompanyWorldMap({ companies }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [hovered, setHovered] = useState(null);
-
-  const markers = useMemo(() => {
-    const byCity = {};
-    companies.forEach(c => {
-      const coord = getCompanyCoord(c.hq, c.country);
-      if (!coord) return;
-      const key = `${coord.x},${coord.y}`;
-      if (!byCity[key]) byCity[key] = { ...coord, companies: [] };
-      byCity[key].companies.push(c);
-    });
-    return Object.values(byCity);
-  }, [companies]);
-
-  return (
-    <div className="company-map-wrap">
-      <button
-        className="company-map-toggle"
-        onClick={() => setIsOpen(p => !p)}
-        aria-expanded={isOpen}
-      >
-        <span>世界地図で見る</span>
-        <span className={`company-map-arrow${isOpen ? " is-open" : ""}`}>&#9662;</span>
-      </button>
-      <div className={`company-map-content${isOpen ? " is-open" : ""}`}>
-        <svg viewBox="0 0 1000 500" className="company-map-svg" role="img" aria-label="企業所在地の世界地図">
-          <defs>
-            <filter id="markerGlow">
-              <feGaussianBlur stdDeviation="3" result="blur" />
-              <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-            </filter>
-          </defs>
-          <g className="map-continents">
-            {CONTINENT_PATHS.map((d, i) => (
-              <path key={i} d={d} className="map-continent" />
-            ))}
-          </g>
-          <g className="map-markers">
-            {markers.map((m, mi) => {
-              const isCluster = m.companies.length >= 3;
-              const isExpanded = hovered === mi && isCluster;
-              return (
-                <g key={mi}>
-                  {isCluster && !isExpanded ? (
-                    <g
-                      className="map-cluster"
-                      onMouseEnter={() => setHovered(mi)}
-                      onMouseLeave={() => setHovered(null)}
-                      style={{ cursor: "pointer" }}
-                    >
-                      <circle cx={m.x} cy={m.y} r={10} className="map-cluster__bg" filter="url(#markerGlow)" />
-                      <text x={m.x} y={m.y + 4} textAnchor="middle" className="map-cluster__count">{m.companies.length}</text>
-                      <text x={m.x} y={m.y - 16} textAnchor="middle" className="map-label">{m.city}</text>
-                    </g>
-                  ) : isExpanded ? (
-                    <g onMouseLeave={() => setHovered(null)}>
-                      <text x={m.x} y={m.y - 22} textAnchor="middle" className="map-label">{m.city}</text>
-                      {m.companies.map((c, ci) => {
-                        const angle = (2 * Math.PI * ci) / m.companies.length - Math.PI / 2;
-                        const r = 18 + m.companies.length;
-                        const cx = m.x + r * Math.cos(angle);
-                        const cy = m.y + r * Math.sin(angle);
-                        return (
-                          <g key={c.id} onClick={() => { setIsOpen(false); setTimeout(() => scrollToId(`company-${c.id}`), 300); }} style={{ cursor: "pointer" }}>
-                            <circle cx={cx} cy={cy} r={4} className="map-marker" filter="url(#markerGlow)" />
-                            <text x={cx} y={cy - 7} textAnchor="middle" className="map-tooltip">{c.name}</text>
-                          </g>
-                        );
-                      })}
-                    </g>
-                  ) : (
-                    m.companies.map((c, ci) => {
-                      const offsetX = m.companies.length === 2 ? (ci === 0 ? -6 : 6) : 0;
-                      return (
-                        <g
-                          key={c.id}
-                          onMouseEnter={() => setHovered(`${mi}-${ci}`)}
-                          onMouseLeave={() => setHovered(null)}
-                          onClick={() => { setIsOpen(false); setTimeout(() => scrollToId(`company-${c.id}`), 300); }}
-                          style={{ cursor: "pointer" }}
-                        >
-                          <circle cx={m.x + offsetX} cy={m.y} r={4} className="map-marker" filter="url(#markerGlow)" />
-                          {hovered === `${mi}-${ci}` && (
-                            <text x={m.x + offsetX} y={m.y - 8} textAnchor="middle" className="map-tooltip">{c.name}</text>
-                          )}
-                        </g>
-                      );
-                    })
-                  )}
-                </g>
-              );
-            })}
-          </g>
-        </svg>
-      </div>
-    </div>
   );
 }
 
@@ -3550,7 +3448,6 @@ const [showFab, setShowFab] = useState(false);
                     </p>
                     <p className="companies-disclaimer">{COMPANIES_DISCLAIMER}</p>
                   </div>
-                  <CompanyWorldMap companies={filteredCompanies} />
                   {filteredCompanies.length > 0 ? (
                     <div className="companies-stack">
                       {filteredCompanies.map((c) => (
