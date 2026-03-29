@@ -5215,6 +5215,7 @@ export const ARTICLES = [
       "**マルチエージェント管理**: **claude-squad**（github.com/smtg-ai/claude-squad）は Claude Code・Codex・OpenCode・Amp など複数の CLI エージェントをバックグラウンドで並行管理するツール。**oh-my-claudecode**（ohmyclaudecode.com）は32の専用エージェントと40以上のスキルを提供するオーケストレーションレイヤーで、タスクの自動並列化とトークン使用量の最適化を行う。出力速度の向上も謳っている。",
       "**エージェント間通信**: **smux**（github.com/ShawnPana/smux）は tmux ベースで AI エージェント同士をペイン越しに通信させるツール。Claude Code が設計→Codex がレビュー→Claude Code が修正、というサイクルを自律的に回せる。API もプロトコルも不要で、Bash が動くエージェントなら何でも参加可能。**cmux**（github.com/craigsc/cmux）は tmux for Claude Code を標榜する類似ツール。",
       "**プラグイン・拡張エコシステム**: **awesome-claude-code**（github.com/hesreallyhim/awesome-claude-code）はスキル・Hooks・スラッシュコマンド・MCP サーバー・プラグインのキュレーションリスト。**awesome-claude-code-toolkit**（github.com/rohitg00/awesome-claude-code-toolkit）は135エージェント・35スキル・42コマンド・150以上のプラグインを収録した包括的なツールキット。公式の MCP Tool Search と組み合わせてコンテキスト消費を95%削減する手法も紹介されている。",
+      "**特化型エージェント**: **Dexter**（github.com/virattt/dexter）は金融リサーチに特化した自律エージェント。Planning Agent（計画）→ Action Agent（データ取得）→ Validation Agent（検証）→ Answer Agent（回答）の4段階で動作し、リアルタイム市場データを使って自己検証しながら調査を進める。OpenAI・Anthropic・Google・Ollama 等のモデルに対応。コーディング支援ではないが、CLI エージェントのアーキテクチャとして参考になる。",
       "**注意点**: これらはいずれも個人またはコミュニティが開発・運営しているプロジェクトで、メンテナンスの継続性やセキュリティの保証はない。特にエージェント間通信系のツールは、プロンプトインジェクションによるコマンド注入や、意図しない破壊的操作（ファイル削除・Git push --force 等）のリスクがある。人間が監視できる状態で使うことを前提とし、本番環境での無人運用は避けるべき。ライセンスは各リポジトリで確認のこと。"
     ],
     "newsDate": "2026-03-28",
@@ -5234,7 +5235,8 @@ export const ARTICLES = [
           ["cmux", "ターミナル", "Claude Code 向け tmux 拡張", "craigsc/cmux"],
           ["awesome-claude-code", "キュレーション", "スキル・Hooks・MCP・プラグインのリスト", "hesreallyhim/awesome-claude-code"],
           ["awesome-claude-code-toolkit", "ツールキット", "135エージェント・150+プラグイン収録", "rohitg00/awesome-claude-code-toolkit"],
-          ["ruflo", "スウォーム", "マルチエージェントスウォーム・RAG 統合", "ruvnet/ruflo"]
+          ["ruflo", "スウォーム", "マルチエージェントスウォーム・RAG 統合", "ruvnet/ruflo"],
+          ["Dexter", "金融リサーチ", "4エージェント構成の自律金融調査（計画→実行→検証→回答）", "virattt/dexter"]
         ]
       }
     ],
