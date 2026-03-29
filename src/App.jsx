@@ -905,7 +905,7 @@ function HomePage({ articles, onSelect, onSection }) {
           <div className="home-podcast-embed">
             <iframe
               style={{ borderRadius: 12 }}
-              src="https://open.spotify.com/embed/show/2L6WMqY3GUPCGBD0dX6p00/video?utm_source=generator"
+              src="https://open.spotify.com/embed/show/2L6WMqY3GUPCGBD0dX6p00?utm_source=generator&theme=0"
               width="100%"
               height="352"
               frameBorder="0"
