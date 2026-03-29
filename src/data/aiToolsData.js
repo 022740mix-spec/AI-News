@@ -894,6 +894,7 @@ export const ARTICLES = [
   {
     "id": "ai-copyright-landscape-2026",
     "type": "feature",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=450&fit=crop&q=80", "alt": "法規制" },
     "category": "regulation",
     "title": "AI と著作権 — 2026年時点の法的状況と開発者が知るべきこと",
     "excerpt": "AI 生成コードの著作権は誰にあるのか、学習データの利用は合法なのか。米国・EU・日本の現状を公式発表と判例ベースで整理し、開発者が実務で取るべき対応をまとめた。",
