@@ -2726,18 +2726,27 @@ body {
   transform: scale(1.15);
 }
 
-/* ── 季節シーン（ホーム下部イラスト） ── */
-.seasonal-scene {
-  display: block;
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  margin: 2rem auto 0;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
+/* ── 季節シーン（サイド装飾） ── */
+.seasonal-scene-wrap {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
 }
-.seasonal-scene:hover {
-  opacity: 0.85;
+.seasonal-scene {
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+}
+.seasonal-scene--left {
+  left: 0;
+}
+.seasonal-scene--right {
+  right: 0;
+}
+@media (max-width: 1200px) {
+  .seasonal-scene-wrap { display: none; }
 }
 
 /* ── 季節エフェクト共通 ── */
