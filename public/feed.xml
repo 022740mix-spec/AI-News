@@ -16,6 +16,22 @@
     <summary>Anthropic が国防総省の「サプライチェーンリスク」指定を連邦地裁で差し止めた一方、OpenAI は Sora の消費者向け提供を終了。ARC-AGI-3 がフロンティアモデルの限界を浮き彫りにした翌日、Google が Gemini 3.1 Pro と MCP v2 を同時に発表。週末は Cursor 2.4 と Claude Code Auto mode が開発者のワークフローを更新し、Mythos 草稿の報道がセキュリティ銘柄を動かした。</summary>
   </entry>
   <entry>
+    <title>AI モデルはどう作られるのか — ゼロから学習・追加学習・RLHF を非エンジニア向けに解説</title>
+    <link rel="alternate" type="text/html" href="?a=how-ai-models-are-built-2026"/>
+    <id>tag:ai-tool-news.jp,2026:how-ai-models-are-built-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>Opus 4.6 のようなフロンティアモデルは数百億〜数千億円かけてゼロから作る。Cursor Composer 2 は Kimi K2.5 に追加学習して作った。RLHF で「やっていいこと・悪いこと」を教える。企業が自社の知識を入れるには RAG とファインチューニングのどちらが現実的か。国産 AI の動向も含めて、AI の「作り方」を解説する。</summary>
+  </entry>
+  <entry>
+    <title>ローカル LLM の現実 — API 契約 vs 自前運用のコスト・性能・限界を比較</title>
+    <link rel="alternate" type="text/html" href="?a=local-llm-vs-api-reality-2026"/>
+    <id>tag:ai-tool-news.jp,2026:local-llm-vs-api-reality-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>API に月額数万円を払うのがもったいないからローカルで動かしたい。その判断は正しいのか。7B〜70B モデルの必要スペック、Ollama / llama.cpp / vLLM の使い分け、API との損益分岐点、そして Opus 4.6 クラスがローカルで動かない物理的な理由を解説する。</summary>
+  </entry>
+  <entry>
     <title>AI エディタ横断比較 — Cursor・Windsurf・VS Code+Copilot（2026年3月版）</title>
     <link rel="alternate" type="text/html" href="?a=editor-comparison-2026-march"/>
     <id>tag:ai-tool-news.jp,2026:editor-comparison-2026-march</id>

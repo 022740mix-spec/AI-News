@@ -26,6 +26,109 @@
 
 export const ARTICLES = [
   {
+    "id": "how-ai-models-are-built-2026",
+    "type": "feature",
+    "category": "model",
+    "title": "AI モデルはどう作られるのか — ゼロから学習・追加学習・RLHF を非エンジニア向けに解説",
+    "excerpt": "Opus 4.6 のようなフロンティアモデルは数百億〜数千億円かけてゼロから作る。Cursor Composer 2 は Kimi K2.5 に追加学習して作った。RLHF で「やっていいこと・悪いこと」を教える。企業が自社の知識を入れるには RAG とファインチューニングのどちらが現実的か。国産 AI の動向も含めて、AI の「作り方」を解説する。",
+    "body": [
+      "AI モデルの作り方は大きく3段階に分かれる。ゼロからの事前学習（Pre-training）、既存モデルへの追加学習（Fine-tuning）、そして人間のフィードバックによる行動調整（RLHF）。この3つを理解すると、なぜ Opus 4.6 と Composer 2 では作り方もコストもまったく違うのかが見えてくる。",
+      "**ゼロから作る（事前学習）**: Opus 4.6 や GPT-5.4 のようなフロンティアモデルは、インターネット上の膨大なテキスト（数兆トークン）を読み込み、「次の単語を予測する」タスクを繰り返して学習する。Common Crawl（2008年からウェブを定期アーカイブしているデータ源）、Wikipedia、書籍、論文、コードなどが使われる。GPT-4 の学習コストは推定7,800万〜1億ドル、GPT-5 は1回の学習で5億〜25億ドルとされる。NVIDIA H100 を数万台、数ヶ月間フル稼働させる規模で、個人や中小企業が手を出せる領域ではない。",
+      "**追加学習（ファインチューニング）**: [Cursor の Composer 2](?a=cursor-composer-2-kimi-2026) は、Moonshot AI が公開した [Kimi K2.5](?a=kimi-k25-moonshot-2026)（オープンウェイト）をベースに、Cursor が独自のコーディングデータで追加学習して作った。事前学習済みの「土台」を使うため、コストはゼロからの学習の5〜10%で済む。OpenAI は Fine-tuning API で GPT-4o のファインチューニングを提供しており、企業が自社データでモデルを調整することも可能。2026年3月には OpenAI が gpt-oss-120b をオープンソースで公開し、誰でもファインチューニングのベースにできるようになった。",
+      "**行動の調整（RLHF）**: 事前学習だけでは「次の単語を予測する」能力しかなく、質問に「有用で安全に」答える能力は持っていない。RLHF（Reinforcement Learning from Human Feedback）では、人間のアノテーターがモデルの回答を「良い/悪い」でランク付けし、そのデータから「報酬モデル」を作り、メインモデルが高スコアの回答を生成するよう強化学習で最適化する。各社はこの段階で独自の倫理方針を反映しており、Anthropic の Constitutional AI、OpenAI の safety tuning、Google の responsible AI guidelines など、同じ技術でも「やっていいこと」の線引きが異なる。",
+      "**企業が自社の知識を入れるには**: 「社内マニュアルを AI に理解させたい」場合、現実的な選択肢は3つ。(1) **RAG**（検索拡張生成）: 社内文書をベクトル化して検索し、質問時に関連情報を LLM に渡す。最も手軽で、データの更新もリアルタイムに反映できる（[→ RAG ステップバイステップ](?a=rag-getting-started-step-by-step-2026)）。(2) **ファインチューニング**: ドメイン固有の用語や文体を学習させる。月間1,000万トークン超の高頻度利用ではコスト面で有利になる。(3) **ハイブリッド**: ファインチューニングで文体を統一し、RAG で動的な事実情報を取得する組み合わせが2026年の主流。精度は RAG 単体の89%、ファインチューニング単体の91%に対し、ハイブリッドで96%とされる。==フルトレーニングは数億ドル規模のため、99.9%の企業にとって選択肢にならない==。",
+      "**国産 AI の動向**: 日本でも政府の GENIAC プログラム（経済産業省 + NEDO、公募総額339億円）で国産 LLM 開発が加速している。**Preferred Networks** の PLaMo 2.0（31B）、**NTT** の tsuzumi 2（30B、H100 1台で動作）、**Sakana AI** の Namazu（海外 OSS モデルを日本仕様に適応）、**楽天** の Rakuten AI 3.0（約700B の MoE、GPT-4o を日本語ベンチマークで上回る）などが代表格。デジタル庁は行政向け AI 基盤「ゲンナイ」用の国産 LLM を公募し、tsuzumi 2 や PLaMo 2.0 Prime など7社を選定した。課題は**日本語データの深刻な不足**で、英語圏と比べて学習に使えるデータ量が限られている。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "15分",
+    "tags": ["AI学習", "事前学習", "ファインチューニング", "RLHF", "国産AI", "RAG", "非エンジニア"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Cost of Training LLM From Scratch in 2026", "site": "AI Superior", "url": "https://aisuperior.com/cost-of-training-llm-from-scratch/" },
+      { "title": "RLHF 101: A Technical Tutorial", "site": "Carnegie Mellon University", "url": "https://blog.ml.cmu.edu/2025/06/01/rlhf-101-a-technical-tutorial-on-reinforcement-learning-from-human-feedback/" },
+      { "title": "GENIAC（経済産業省）", "site": "経済産業省", "url": "https://www.meti.go.jp/policy/mono_info_service/geniac/index.html" },
+      { "title": "RAG vs Fine-Tuning: Cost Game", "site": "DEV Community", "url": "https://dev.to/remojansen/rag-vs-fine-tuning-which-one-wins-the-cost-game-long-term-12dg" }
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "AI モデルの作り方 — 3段階の比較",
+        "headers": ["段階", "具体例", "コスト目安", "期間", "誰がやるか"],
+        "rows": [
+          ["ゼロから事前学習", "Opus 4.6, GPT-5.4", "1億〜25億ドル", "数ヶ月〜1年", "Anthropic, OpenAI 等の大企業"],
+          ["追加学習（FT）", "Composer 2（Kimi K2.5ベース）", "事前学習の5〜10%", "数時間〜数日", "中規模企業・スタートアップ"],
+          ["RLHF（行動調整）", "全フロンティアモデル", "追加のGPU + アノテーター費用", "数週間", "モデル開発企業"]
+        ]
+      },
+      {
+        "afterParagraph": 4,
+        "caption": "企業の知識を AI に入れる方法の比較",
+        "headers": ["方法", "コスト", "精度", "データ更新", "向いている場面"],
+        "rows": [
+          ["RAG", "初年度最安（API費用のみ）", "89%", "リアルタイム可", "FAQ、社内マニュアル検索"],
+          ["ファインチューニング", "1回の高額投資", "91%", "再学習が必要", "ドメイン用語・文体の統一"],
+          ["ハイブリッド（FT+RAG）", "中程度", "96%", "RAG部分はリアルタイム", "高精度が必要な業務"],
+          ["ゼロからの学習", "1億ドル〜", "最高", "再学習が必要", "新言語・新領域（非現実的）"]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "local-llm-vs-api-reality-2026",
+    "type": "feature",
+    "category": "model",
+    "title": "ローカル LLM の現実 — API 契約 vs 自前運用のコスト・性能・限界を比較",
+    "excerpt": "API に月額数万円を払うのがもったいないからローカルで動かしたい。その判断は正しいのか。7B〜70B モデルの必要スペック、Ollama / llama.cpp / vLLM の使い分け、API との損益分岐点、そして Opus 4.6 クラスがローカルで動かない物理的な理由を解説する。",
+    "body": [
+      "「API に毎月お金を払うなら、自分の PC でモデルを動かした方が安いのでは？」という疑問は自然だ。結論から言うと、2026年時点では==大多数のユーザーにとって API の方が安く、高性能==。ただしプライバシー要件や超大量利用の場合にはローカル運用が有利になるケースもある。",
+      "**モデルサイズと必要スペック**: LLM はパラメータ数が大きいほど賢いが、その分メモリ（VRAM）を食う。7B（70億パラメータ）モデルは量子化すれば 4〜6GB の VRAM で動き、RTX 4060 Ti 程度で実用的。13B は 8〜10GB、70B は 35〜40GB で RTX 4090 を2枚または A100 80GB が必要になる。Opus 4.6 クラス（推定アクティブパラメータ930億〜1,050億、総パラメータ1.5兆〜2兆）は Q4 量子化しても約750GB の VRAM が必要で、H100 80GB が10台以上。==個人の PC で動かすのは物理的に不可能==。",
+      "**ローカル推論ツール**: (1) **Ollama** は `ollama run llama3.1` の1コマンドで起動でき、個人利用やプロトタイプに最適。Go 製で REST API も提供する。(2) **llama.cpp** は C/C++ 実装で外部依存がなく、CPU でも動作する。モバイルアプリや組込み機器への搭載に向く。(3) **vLLM** は Python 製で PagedAttention による GPU メモリ最適化と連続バッチ処理が特徴。10並列リクエスト時に Ollama の約8倍のスループットを出す。プロダクション API や SaaS のバックエンドに使われる。",
+      "**API vs ローカルのコスト比較**: RTX 4090 1台（クラウドレンタルで $0.44/時間）で 8B モデルを動かすと月約$320。同等の処理を API で行うと約$845 で、ローカルが62%安い。しかしこれは月130億トークンという大量利用の計算。==1日5,000万トークン未満ならほぼ確実に API の方が安い==。さらにローカル運用にはエンジニアの保守（月10〜20時間、$750〜$3,000相当）、障害対応、モデル更新の手間がかかる。",
+      "**Opus 4.6 クラスがローカルで動かない理由**: Anthropic はパラメータ数を公開していないが、研究者の推定では Opus 4.6 のアクティブパラメータは約930億〜1,050億。MoE 構造の総パラメータは推定1.5兆〜2兆。FP16 で約3TB、Q4 量子化でも約750GB の VRAM が必要。H100 80GB が10台（=約25万ドル）でも足りない可能性がある。そしてそもそも Opus 4.6 はオープンウェイトではなく、重みファイルが公開されていないため、ハードウェアがあっても動かせない。==フロンティアモデルは API で使うしかない==。",
+      "**現実的な使い分け**: (1) **日常の開発**: Claude Code Pro（$20/月）や Cursor Pro（$20/月）で十分。API の品質と利便性がローカルを圧倒する。(2) **機密データの処理**: 社内データを外部に出せない場合、7B〜13B のローカルモデル（Llama 3.1、Mistral 等）で RAG を構築する。品質は Opus に及ばないが、プライバシーは完全に守れる。(3) **大量のバッチ処理**: 日次で数億トークンを処理する場合、vLLM + 70B モデルのローカル運用がコスト最適になりうる。(4) **学習・実験目的**: Ollama で小型モデルを動かし、プロンプトエンジニアリングやファインチューニングの感覚をつかむのは有益。ただし本番に使うモデルとは性能が大きく異なる点を理解しておく。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "12分",
+    "tags": ["ローカルLLM", "Ollama", "vLLM", "API", "コスト", "VRAM", "非エンジニア"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "Ollama VRAM Requirements for Local LLMs", "site": "LocalLLM.in", "url": "https://localllm.in/blog/ollama-vram-requirements-for-local-llms" },
+      { "title": "Ollama vs vLLM Performance Benchmark 2026", "site": "SitePoint", "url": "https://www.sitepoint.com/ollama-vs-vllm-performance-benchmark-2026/" },
+      { "title": "Local LLM vs OpenAI API Cost", "site": "Runyard", "url": "https://www.runyard.dev/blog/local-llm-vs-openai-api-cost" },
+      { "title": "Estimating the Size of Claude Opus 4.5/4.6", "site": "Substack", "url": "https://unexcitedneurons.substack.com/p/estimating-the-size-of-claude-opus" },
+      { "title": "LLM Hosting Cost 2026", "site": "AI Superior", "url": "https://aisuperior.com/llm-hosting-cost/" }
+    ],
+    "tables": [
+      {
+        "afterParagraph": 1,
+        "caption": "モデルサイズ別の必要スペック（2026年時点）",
+        "headers": ["モデルサイズ", "VRAM（量子化）", "VRAM（FP16）", "推奨GPU", "用途"],
+        "rows": [
+          ["7B", "4〜6 GB", "14 GB", "RTX 4060 Ti〜", "個人実験・軽量タスク"],
+          ["13B", "8〜10 GB", "26 GB", "RTX 4070〜", "社内チャットbot"],
+          ["70B", "35〜40 GB", "140 GB", "A100 80GB / 2x 4090", "高品質なローカル推論"],
+          ["400B+", "200 GB+", "800 GB+", "8x H100 80GB以上", "研究機関のみ"],
+          ["Opus 4.6 推定", "約750 GB", "約3 TB", "10x H100以上", "API でのみ利用可能"]
+        ]
+      },
+      {
+        "afterParagraph": 3,
+        "caption": "API vs ローカル運用のコスト比較",
+        "headers": ["項目", "API（Claude/OpenAI）", "ローカル（8B）", "ローカル（70B）"],
+        "rows": [
+          ["初期費用", "$0", "GPU $1,600〜", "GPU $25,000〜"],
+          ["月額（中程度利用）", "$20〜$200", "$320", "$2,000〜"],
+          ["モデル品質", "最高", "中", "高"],
+          ["保守の手間", "なし", "月10〜20時間", "月20〜40時間"],
+          ["プライバシー", "規約に依存", "完全ローカル", "完全ローカル"],
+          ["損益分岐点", "—", "月130億トークン超", "日7,000万トークン超"]
+        ]
+      }
+    ]
+  },
+  {
     "id": "cursor-composer-2-kimi-2026",
     "type": "news",
     "category": "editor",
