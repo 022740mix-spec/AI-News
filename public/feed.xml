@@ -1032,6 +1032,14 @@
     <summary>Stability AI の音楽・効果音生成モデル。オープンウェイトでローカル実行可能。BGM や効果音の生成に向くが、ボーカル楽曲では Suno・Udio に劣る。</summary>
   </entry>
   <entry>
+    <title>Anthropic CEO Dario Amodei「指数関数の終わりは近い」— Dwarkesh Podcast 要約（2026年2月）</title>
+    <link rel="alternate" type="text/html" href="?a=dario-amodei-dwarkesh-podcast-2026-feb"/>
+    <id>tag:ai-tool-news.jp,2026:dario-amodei-dwarkesh-podcast-2026-feb</id>
+    <published>2026-02-13T15:00:00Z</published>
+    <updated>2026-02-13T15:00:00Z</updated>
+    <summary>Anthropic の CEO Dario Amodei が Dwarkesh Podcast に出演。AGI の到達時期、Anthropic の年10倍成長、コンピュート規模の予測、「継続学習は不要」という主張など、AI 業界の今後を左右する発言を要約。</summary>
+  </entry>
+  <entry>
     <title>Zhipu AI、GLM-5 を公開 — 745億パラメータ MoE、Huawei チップで学習した中国発フロンティアモデル</title>
     <link rel="alternate" type="text/html" href="?a=glm-5-zhipu-2026"/>
     <id>tag:ai-tool-news.jp,2026:glm-5-zhipu-2026</id>

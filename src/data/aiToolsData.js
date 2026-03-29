@@ -5205,6 +5205,30 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "dario-amodei-dwarkesh-podcast-2026-feb",
+    "type": "feature",
+    "category": "special",
+    "title": "Anthropic CEO Dario Amodei「指数関数の終わりは近い」— Dwarkesh Podcast 要約（2026年2月）",
+    "excerpt": "Anthropic の CEO Dario Amodei が Dwarkesh Podcast に出演。AGI の到達時期、Anthropic の年10倍成長、コンピュート規模の予測、「継続学習は不要」という主張など、AI 業界の今後を左右する発言を要約。",
+    "body": [
+      "2026年2月13日、AI リサーチ系ポッドキャストの中でも情報密度の高さで知られる **Dwarkesh Podcast** に Anthropic CEO の **Dario Amodei** が出演した。約2時間にわたる対談で、AGI のタイムライン、Anthropic の成長曲線、収益構造、スケーリング仮説の現在地について踏み込んだ発言が相次いだ。以下は主要なポイントの要約（詳細は原文トランスクリプトを参照）。",
+      "**「指数関数の終わりに近い」**: Dario は AI の能力進化が予測通りに進行しているとしつつ、「一般の認識は指数関数の終わりがいかに近いかを過小評価している」と述べた。「国家規模の天才データセンター」が10年以内に実現する確率を90%と見積もり、コードの自動化は1〜2年で達成されるとの見通しを示した。最長でも2035年までには確実に到達するとの予測。",
+      "**Anthropic の成長曲線**: 売上は2023年に0〜1億ドル、2024年に1〜10億ドル、2025年に10〜100億ドルと、年10倍の成長を達成したことを明かした。業界全体のコンピュート規模は年3倍で成長しており、2028年に100ギガワット、2029年に300ギガワットに達すると予測。各ギガワットは年間約100〜150億ドルのコストに相当する。",
+      "**「継続学習は不要」**: Dwarkesh の「継続学習（Continual Learning）は必要では？」という問いに対し、Dario は「不要」と明言。100万トークンのコンテキスト学習と事前学習の組み合わせで十分対応可能との立場を示した。これは、モデルが使用中に学び続ける必要はなく、十分に大きなコンテキストウィンドウがあればよいという主張。",
+      "**収益化の矛盾と寡占**: モデル単体では利益が出るが、次世代モデルへの投資で企業全体は赤字になる構造を認めた。2028年の黒字化を予定しているが、需要予測の不確実性が最大のリスク。AI 業界は3〜4社の少数寡占（Cournot 均衡）に向かうとの見方で、参入障壁の高さはクラウド産業に類似するとした。計算能力の50%を推論、50%を研究に配分し、推論の粗利益率は50%超。",
+      "**対談の最大の緊張点**: Dario が「1〜3年で国家規模の天才」と予測しながら、Anthropic のコンピュート投資がそれほど積極的でないことの矛盾を Dwarkesh が鋭く突いた。Dario は需要予測の不確実性と資金流動性の制約を理由に挙げ、検証不可能なタスク（火星計画、科学的発見）への不確実性や、シリコンバレー中心の地理的不均等発展への懸念も語った。"
+    ],
+    "newsDate": "2026-02-13",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": ["Anthropic", "Dario Amodei", "ポッドキャスト", "AGI", "業界動向"],
+    "primarySources": [
+      { "title": "Dario Amodei — \"We are near the end of the exponential\"", "site": "Dwarkesh Podcast", "url": "https://www.dwarkesh.com/p/dario-amodei-2" },
+      { "title": "On Dwarkesh Patel's 2026 Podcast With Dario Amodei", "site": "The Zvi (分析記事)", "url": "https://thezvi.substack.com/p/on-dwarkesh-patels-2026-podcast-with" }
+    ]
+  },
+  {
     "id": "cli-agent-community-oss-2026",
     "type": "feature",
     "category": "cli",
