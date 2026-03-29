@@ -5205,6 +5205,30 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "google-colab-vscode-extension",
+    "type": "news",
+    "category": "product",
+    "title": "Google Colab が VS Code に統合 — 無料 T4 GPU をローカル環境からそのまま使える時代に",
+    "excerpt": "Google が VS Code 向けの公式 Colab 拡張機能をリリース。ローカルの .ipynb をそのまま Colab の T4 GPU / TPU で実行可能に。Git 統合も自然になり、「GPU がない」は個人開発者の言い訳にならなくなった。",
+    "body": [
+      "2025年11月13日、Google は Visual Studio Code 向けの公式 Google Colab 拡張機能をリリースした。これにより、VS Code のエディタ環境から直接 Colab のクラウドランタイム（GPU / TPU を含む）に接続し、ローカルのノートブックファイル（.ipynb）をそのまま実行できるようになった。",
+      "**無料 T4 GPU がローカル IDE に**: 無料プランで NVIDIA T4 GPU と TPU v5e にアクセス可能。ローカル環境のデバッグツール、IntelliSense、拡張機能がすべてクラウド GPU 上で動作する感覚で使える。CPU で1エポック約50分かかっていたファインチューニングが、T4 GPU で約3分に短縮されるケースも報告されている。有料プラン（Colab Pro / Pro+）では V100 や A100 も利用可能。",
+      "**ローカルファイルと Git 統合**: 従来の Colab はブラウザ完結型で Git との連携が弱く、実験コードが分散しがちだった。VS Code 統合により「VS Code = Git 管理、Colab = GPU 実行」が一体化し、プロジェクト全体で統一的なワークフローを構築できるようになった。ローカルのファイルシステムに保存したノートブックをそのまま Colab ランタイムで実行する、という自然な開発体験が実現。",
+      "**個人開発者への影響**: 高価な GPU を持っていない個人開発者でも、ローカルの使い慣れた VS Code 環境で機械学習モデルのファインチューニングやプロンプト実験を高速に回せるようになった。LLM のファインチューニング、LoRA の実験、画像生成モデルの試行など、これまで GPU の壁で諦めていた作業のハードルが大幅に下がっている。",
+      "**注意点**: Web 版 Colab にあった一部機能（userdata.get() によるシークレット管理等）は未対応。無料プランの GPU は利用制限があり、長時間の学習には Pro 以上が必要。また、ランタイムの接続が不安定になるケースも報告されている。"
+    ],
+    "newsDate": "2025-11-13",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Google", "Colab", "VS Code", "GPU", "開発環境"],
+    "primarySources": [
+      { "title": "Google Brings Colab Integration to Visual Studio Code", "site": "InfoQ", "url": "https://www.infoq.com/news/2025/11/visual-studio-code-colab-bridge/" },
+      { "title": "Local code meets cloud compute: Using Google Colab in VS Code", "site": "Google Cloud Community", "url": "https://medium.com/google-cloud/local-code-meets-cloud-compute-using-google-colab-in-vs-code-206ff69483f4" },
+      { "title": "Google Colab VS Code Extension: A Deep Dive", "site": "kambale.dev", "url": "https://kambale.dev/google-colab-in-vs-code-a-deep-dive-into-the-new-extension" }
+    ]
+  },
+  {
     "id": "gemini-drop-march-2026",
     "type": "news",
     "category": "model",

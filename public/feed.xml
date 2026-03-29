@@ -1048,6 +1048,14 @@
     <summary>Meta が中国発・シンガポール拠点の AI エージェント企業 Manus を買収すると発表。買収額は20億ドル超と報じられている。Manus はサービス開始わずか8ヶ月で ARR 1億ドル超を達成。Facebook・Instagram・WhatsApp への AI エージェント統合が目的とみられる。</summary>
   </entry>
   <entry>
+    <title>Google Colab が VS Code に統合 — 無料 T4 GPU をローカル環境からそのまま使える時代に</title>
+    <link rel="alternate" type="text/html" href="?a=google-colab-vscode-extension"/>
+    <id>tag:ai-tool-news.jp,2026:google-colab-vscode-extension</id>
+    <published>2025-11-13T15:00:00Z</published>
+    <updated>2025-11-13T15:00:00Z</updated>
+    <summary>Google が VS Code 向けの公式 Colab 拡張機能をリリース。ローカルの .ipynb をそのまま Colab の T4 GPU / TPU で実行可能に。Git 統合も自然になり、「GPU がない」は個人開発者の言い訳にならなくなった。</summary>
+  </entry>
+  <entry>
     <title>ERNIE 4.5 レビュー — Baidu の基盤モデル、中国最大の検索エンジンが支える実用力</title>
     <link rel="alternate" type="text/html" href="?a=ernie-4-5-review"/>
     <id>tag:ai-tool-news.jp,2026:ernie-4-5-review</id>
