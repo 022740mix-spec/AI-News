@@ -5535,6 +5535,75 @@ export const ARTICLES = [
       { "title": "Gemini Drops: New updates to the Gemini app, March 2026", "site": "Google The Keyword", "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-drop-updates-march-2026/" },
       { "title": "Lyria 3 Pro", "site": "Google The Keyword", "url": "https://blog.google/innovation-and-ai/technology/ai/lyria-3-pro/" }
     ]
+  },
+  {
+    "id": "cursor-automations-self-hosted-agents-2026",
+    "type": "news",
+    "category": "editor",
+    "title": "Cursor Automations 登場 — Slack・GitHub・PagerDuty 連動の常駐エージェント＋セルフホスト型クラウドエージェント",
+    "excerpt": "Cursor が3月に2つの大型機能をリリース。Automations はスケジュールや外部イベント（Slack、GitHub PR、PagerDuty）をトリガーにエージェントを自動起動する仕組み。さらに Self-hosted Cloud Agents でコードと実行環境を自社ネットワーク内に保持したままエージェントを利用可能に。",
+    "body": [
+      "Cursor は2026年3月5日、新機能 **Automations** を発表した。これは「プロンプトを打ってエージェントを起動する」という従来のワークフローから脱却し、Slack メッセージ・GitHub PR マージ・PagerDuty インシデント・cron スケジュールなどをトリガーにエージェントを自動起動する仕組み。クラウドサンドボックス上でユーザー定義の MCP とモデル設定に従い動作し、過去の実行から学習する Memory 機能も備える。",
+      "ユースケースは幅広い。セキュリティレビュー Automation は main へのプッシュごとに差分を監査し、高リスクの脆弱性を検出して Slack に投稿する。インシデント対応では PagerDuty をトリガーに Datadog MCP でログを調査し、修正案を Slack に返す。週次ダイジェストでは主要 PR・バグ修正・技術的負債を要約して投稿する。Cursor によると毎時数百件の Automation が実行されているという。",
+      "3月25日にはさらに **Self-hosted Cloud Agents** を発表。コードベース・ビルド出力・シークレットをすべて自社ネットワーク内に保持したまま、Cursor のクラウドエージェント機能（隔離 VM・マルチモデルハーネス・プラグイン等）をそのまま利用できる。エンタープライズのセキュリティ要件に対応した設計で、Cursor ホスト型と同等の機能を提供する。",
+      "Bloomberg によると Cursor の年間売上は20億ドルを突破し、直近3ヶ月で倍増。Ramp データでは生成 AI クライアントの約25%が Cursor を契約している。Automations と Self-hosted Agents は、開発者ツールからエンタープライズ向けプラットフォームへの転換を象徴する機能と言える。"
+    ],
+    "newsDate": "2026-03-05",
+    "date": "2026-03-30",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Cursor", "Automations", "エージェント", "セルフホスト", "エンタープライズ"],
+    "primarySources": [
+      { "title": "Build agents that run automatically", "site": "Cursor Blog", "url": "https://cursor.com/blog/automations" },
+      { "title": "Cursor is rolling out a new kind of agentic coding tool", "site": "TechCrunch", "url": "https://techcrunch.com/2026/03/05/cursor-is-rolling-out-a-new-system-for-agentic-coding/" },
+      { "title": "Cursor Changelog (03-05-26)", "site": "Cursor", "url": "https://cursor.com/changelog/03-05-26" }
+    ]
+  },
+  {
+    "id": "copilot-agentic-code-review-ga-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "GitHub Copilot コードレビューがエージェント型に進化 — GA 化、累計6,000万件突破、GitHub の PR 5件に1件が AI レビュー",
+    "excerpt": "GitHub Copilot のコードレビュー機能がエージェント型アーキテクチャに移行し GA 化。リポジトリ全体のコンテキストを自律的に収集して分析するため精度が大幅向上。累計6,000万件を突破し、GitHub 上の PR の5件に1件が Copilot によるレビューを受けている。",
+    "body": [
+      "GitHub は2026年3月5日、Copilot コードレビューをエージェント型ツール呼び出しアーキテクチャに移行し、一般提供（GA）を開始した。Copilot Pro・Pro+・Business・Enterprise の全プランで利用可能。従来のルールベースの指摘から、リポジトリ構造・関連コード・参照先を自律的に収集して分析するエージェント型に進化した。",
+      "2025年4月の初回リリースから利用は10倍に成長し、累計6,000万件を突破。GitHub 上の PR の5件に1件以上が Copilot コードレビューを受けている。71%のレビューでアクション可能なフィードバックを提示し、残り29%では不要な指摘をせず沈黙を選ぶ設計。レビュー1件あたり平均5.1コメントだが、レビューチャーンの増加や品質低下は起きていないという。",
+      "UX も大幅に改善。単一行ピン留めから複数行コメントに移行し、論理的なコード範囲にフィードバックを紐付ける。同一パターンの指摘はクラスタリングして認知負荷を軽減。バッチオートフィックスで同種のバグやスタイル問題を一括修正可能。さらにレビューコメントから直接 Copilot Coding Agent を呼び出して修正 PR を自動作成する連携も実現した。",
+      "3月11日には GitHub CLI からの Copilot レビューリクエストにも対応。`gh pr create` や `gh pr edit` でターミナルから直接 AI レビューを依頼できる。エージェント型コードレビューは GitHub Actions 上で動作し、GitHub ホストランナーを使用していれば追加セットアップは不要。"
+    ],
+    "newsDate": "2026-03-05",
+    "date": "2026-03-30",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["GitHub", "Copilot", "コードレビュー", "エージェント", "GA"],
+    "primarySources": [
+      { "title": "Copilot code review now runs on an agentic architecture", "site": "GitHub Changelog", "url": "https://github.blog/changelog/2026-03-05-copilot-code-review-now-runs-on-an-agentic-architecture/" },
+      { "title": "60 million Copilot code reviews and counting", "site": "GitHub Blog", "url": "https://github.blog/ai-and-ml/github-copilot/60-million-copilot-code-reviews-and-counting/" },
+      { "title": "Request Copilot code review from GitHub CLI", "site": "GitHub Changelog", "url": "https://github.blog/changelog/2026-03-11-request-copilot-code-review-from-github-cli/" }
+    ]
+  },
+  {
+    "id": "claude-code-computer-use-review-march-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 3月アップデート — Computer Use 搭載・出力上限128K・Code Review 機能で開発フロー完結",
+    "excerpt": "Anthropic が3月に Claude Code を大幅強化。Computer Use でファイル操作や画面操作が可能に、Opus 4.6 の出力上限が128Kトークンに拡張、新 Code Review 機能で AI 生成コードの品質管理を自動化。run-rate 収益は25億ドルを突破。",
+    "body": [
+      "Anthropic は2026年3月、Claude Code に複数の大型アップデートを投入した。3月23日に追加された **Computer Use** は Pro / Max ユーザー向けで、Claude がファイルを開く・開発ツールを操作する・画面上でクリック操作するなどを追加セットアップなしで実行可能にする。従来の CLI 操作に加え、GUI アプリケーションとの連携が可能になった。",
+      "出力上限も大幅に引き上げられた。**Opus 4.6 のデフォルト出力が64Kトークン、最大128Kトークン**に拡張（Sonnet 4.6 も同様に128K対応）。大規模なコード生成やリファクタリングで途中切断されるケースが大幅に減少する。また `--bare` フラグの追加により、スクリプトからの `-p` 呼び出し時にフック・LSP・プラグイン同期をスキップして高速実行が可能に。",
+      "3月9日にリリースされた **Code Review** 機能はマルチエージェントシステムで、AI が生成したコードのロジックエラーを自動検出する。Claude Code の普及に伴い AI 生成コードの量がレビューのボトルネックになっている問題に対応したもの。Cloud Auto-fix も強化され、Web / モバイルセッションから自動的に PR をフォローし、CI 失敗の修正やレビューコメントへの対応をクラウド上で実行する。",
+      "その他、`--channels` によるスマートフォンへの承認プロンプト転送（Research Preview）、`/plan` コマンドへのオプション引数追加、カスタム自動メモリディレクトリ対応、大規模セッション再開時のメモリ使用量改善など、多数の改善が含まれる。TechCrunch によると Claude Code の run-rate 収益は25億ドルを超えており、Anthropic の主力プロダクトとしての地位を確立している。"
+    ],
+    "newsDate": "2026-03-23",
+    "date": "2026-03-30",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": ["Anthropic", "Claude Code", "Computer Use", "Code Review", "出力上限"],
+    "primarySources": [
+      { "title": "Anthropic hands Claude Code more control, but keeps it on a leash", "site": "TechCrunch", "url": "https://techcrunch.com/2026/03/24/anthropic-hands-claude-code-more-control-but-keeps-it-on-a-leash/" },
+      { "title": "Anthropic launches code review tool to check flood of AI-generated code", "site": "TechCrunch", "url": "https://techcrunch.com/2026/03/09/anthropic-launches-code-review-tool-to-check-flood-of-ai-generated-code/" },
+      { "title": "Claude Code Changelog", "site": "Claude Code Docs", "url": "https://code.claude.com/docs/en/changelog" }
+    ]
   }
 ];
 

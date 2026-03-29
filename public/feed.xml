@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-03-29T15:00:00Z</updated>
+  <updated>2026-03-30T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>【週刊まとめ】AI開発ツール — 2026年3月23日〜29日</title>
@@ -608,6 +608,14 @@
     <summary>NVIDIA CEO Jensen Huang が Lex Fridman と2時間半。GPU 企業から「AI ファクトリー」への転換、AIスケーリングの4段階、1ラック1,300万コンポーネントのサプライチェーン、中国の評価、10兆ドル企業への道筋を語った。</summary>
   </entry>
   <entry>
+    <title>Claude Code 3月アップデート — Computer Use 搭載・出力上限128K・Code Review 機能で開発フロー完結</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-computer-use-review-march-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-computer-use-review-march-2026</id>
+    <published>2026-03-23T15:00:00Z</published>
+    <updated>2026-03-23T15:00:00Z</updated>
+    <summary>Anthropic が3月に Claude Code を大幅強化。Computer Use でファイル操作や画面操作が可能に、Opus 4.6 の出力上限が128Kトークンに拡張、新 Code Review 機能で AI 生成コードの品質管理を自動化。run-rate 収益は25億ドルを突破。</summary>
+  </entry>
+  <entry>
     <title>Cursor Composer 2 の正体 — Kimi K2.5 ベースの独自モデル、API 解析で判明</title>
     <link rel="alternate" type="text/html" href="?a=cursor-composer-2-kimi-2026"/>
     <id>tag:ai-tool-news.jp,2026:cursor-composer-2-kimi-2026</id>
@@ -910,6 +918,22 @@
     <published>2026-03-05T15:00:00Z</published>
     <updated>2026-03-05T15:00:00Z</updated>
     <summary>「AIソフトウェアエンジニア」を標榜する自律型コーディングエージェント。独自のクラウド開発環境でコード生成・テスト・デバッグ・PR作成まで一貫対応。$500/月〜。</summary>
+  </entry>
+  <entry>
+    <title>Cursor Automations 登場 — Slack・GitHub・PagerDuty 連動の常駐エージェント＋セルフホスト型クラウドエージェント</title>
+    <link rel="alternate" type="text/html" href="?a=cursor-automations-self-hosted-agents-2026"/>
+    <id>tag:ai-tool-news.jp,2026:cursor-automations-self-hosted-agents-2026</id>
+    <published>2026-03-05T15:00:00Z</published>
+    <updated>2026-03-05T15:00:00Z</updated>
+    <summary>Cursor が3月に2つの大型機能をリリース。Automations はスケジュールや外部イベント（Slack、GitHub PR、PagerDuty）をトリガーにエージェントを自動起動する仕組み。さらに Self-hosted Cloud Agents でコードと実行環境を自社ネットワーク内に保持したままエージェントを利用可能に。</summary>
+  </entry>
+  <entry>
+    <title>GitHub Copilot コードレビューがエージェント型に進化 — GA 化、累計6,000万件突破、GitHub の PR 5件に1件が AI レビュー</title>
+    <link rel="alternate" type="text/html" href="?a=copilot-agentic-code-review-ga-2026"/>
+    <id>tag:ai-tool-news.jp,2026:copilot-agentic-code-review-ga-2026</id>
+    <published>2026-03-05T15:00:00Z</published>
+    <updated>2026-03-05T15:00:00Z</updated>
+    <summary>GitHub Copilot のコードレビュー機能がエージェント型アーキテクチャに移行し GA 化。リポジトリ全体のコンテキストを自律的に収集して分析するため精度が大幅向上。累計6,000万件を突破し、GitHub 上の PR の5件に1件が Copilot によるレビューを受けている。</summary>
   </entry>
   <entry>
     <title>Google、Gemini 3.1 Flash-Lite をプレビュー公開 — 2.5× 高速・低コストの大量処理向けモデル</title>
