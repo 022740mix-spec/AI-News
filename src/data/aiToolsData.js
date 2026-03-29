@@ -3922,6 +3922,7 @@ export const ARTICLES = [
   {
     "id": "microsoft-365-e7-copilot-pricing-2026",
     "type": "feature",
+    "coverImage": { "src": "logos/microsoft.svg", "alt": "Microsoft" },
     "category": "product",
     "title": "Microsoft 365 E7 徹底解説 — E3/E5/E7 料金比較、Copilot 削減の影響、GitHub Copilot × Claude",
     "excerpt": "2026年5月1日に提供開始される Microsoft 365 E7（$99/月）を、E3・E5 と料金・機能で比較。4月15日から2000人超の組織で基本 Copilot が Office アプリから削除される影響、GitHub Copilot での Claude 対応との関連まで、企業の IT 担当者と開発者が知るべき情報を整理した。",
