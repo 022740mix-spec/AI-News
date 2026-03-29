@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>AI開発ツール最新情報</title>
-  <subtitle>Claude Code・Cursor・Codex・Copilot の最新ニュースとガイドを日本語で</subtitle>
+  <title>AI-News — AI開発ツール最新情報</title>
+  <subtitle>Claude Code・Cursor・Copilot など AI 開発ツールの最新ニュースと比較をまとめたサイト</subtitle>
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
@@ -144,78 +144,6 @@
     <summary>秒単価・クレジット制・バンドル販売が混在するため「安い／高い」一発比較は誤魔化しやすい。公式 pricing の単位（秒・分・解像度・Fast/Standard）を揃えて読む。</summary>
   </entry>
   <entry>
-    <title>Microsoft 365 E7 徹底解説 — E3/E5/E7 料金比較、Copilot 削減の影響、GitHub Copilot × Claude</title>
-    <link rel="alternate" type="text/html" href="?a=microsoft-365-e7-copilot-pricing-2026"/>
-    <id>tag:ai-tool-news.jp,2026:microsoft-365-e7-copilot-pricing-2026</id>
-    <published>2026-03-29T15:00:00Z</published>
-    <updated>2026-03-29T15:00:00Z</updated>
-    <summary>2026年5月1日に提供開始される Microsoft 365 E7（$99/月）を、E3・E5 と料金・機能で比較。4月15日から2000人超の組織で基本 Copilot が Office アプリから削除される影響、GitHub Copilot での Claude 対応との関連まで、企業の IT 担当者と開発者が知るべき情報を整理した。</summary>
-  </entry>
-  <entry>
-    <title>Power Apps 開発手法 5パターン完全ガイド — Canvas・Model-driven・Custom Pages・Power Pages・Vibe Coding</title>
-    <link rel="alternate" type="text/html" href="?a=power-apps-five-approaches-2026"/>
-    <id>tag:ai-tool-news.jp,2026:power-apps-five-approaches-2026</id>
-    <published>2026-03-29T15:00:00Z</published>
-    <updated>2026-03-29T15:00:00Z</updated>
-    <summary>Microsoft Power Apps でアプリを作る方法は1つではない。ドラッグ&amp;ドロップの Canvas、データモデル起点の Model-driven、React ベースの Custom Pages、外部向けの Power Pages、AI に自然言語で作らせる Vibe Coding の5パターンを、必要なライセンスと適用場面を含めて解説する。</summary>
-  </entry>
-  <entry>
-    <title>エンタープライズバックエンド比較 — Dataverse vs Supabase vs Azure SQL（2026年版）</title>
-    <link rel="alternate" type="text/html" href="?a=enterprise-backend-dataverse-supabase-azure-2026"/>
-    <id>tag:ai-tool-news.jp,2026:enterprise-backend-dataverse-supabase-azure-2026</id>
-    <published>2026-03-29T15:00:00Z</published>
-    <updated>2026-03-29T15:00:00Z</updated>
-    <summary>アプリのバックエンドを「一から作る」か「セットになっている企業サービスを使う」か。Microsoft Dataverse、Supabase（OSS PostgreSQL）、Azure SQL Database の3つを、認証・リアルタイム・ライセンス・AI 統合の軸で比較した。</summary>
-  </entry>
-  <entry>
-    <title>React フロントエンド × Microsoft バックエンド — PCF・Code Apps・Dataverse API・Entra ID の組み合わせパターン</title>
-    <link rel="alternate" type="text/html" href="?a=react-frontend-ms-backend-architecture-2026"/>
-    <id>tag:ai-tool-news.jp,2026:react-frontend-ms-backend-architecture-2026</id>
-    <published>2026-03-29T15:00:00Z</published>
-    <updated>2026-03-29T15:00:00Z</updated>
-    <summary>「フロントエンドは作れたけどバックエンドが作れない」問題に、Microsoft エコシステムで答える。PCF で React コンポーネントを Power Apps に埋め込むパターンから、Code Apps で React アプリから Dataverse に直接アクセスするパターン、Entra ID 認証だけ借りて Supabase や Azure Database for PostgreSQL と組み合わせるパターンまで、5つのアーキテクチャを比較した。</summary>
-  </entry>
-  <entry>
-    <title>E3 の Entra ID 認証 + PostgreSQL で企業 AI アプリを構築する — Dataverse より安い実用構成</title>
-    <link rel="alternate" type="text/html" href="?a=enterprise-entra-id-postgres-ai-architecture-2026"/>
-    <id>tag:ai-tool-news.jp,2026:enterprise-entra-id-postgres-ai-architecture-2026</id>
-    <published>2026-03-29T15:00:00Z</published>
-    <updated>2026-03-29T15:00:00Z</updated>
-    <summary>Microsoft 365 E3 に含まれる Entra ID 認証だけを借り、バックエンドに Dataverse ではなく Azure Database for PostgreSQL や Supabase を使う構成が企業で注目されている。フロントエンドからの認証フロー、AI API キーの安全な管理、SharePoint 上の社内文書を AI に食わせる際の課題と対策までを解説する。</summary>
-  </entry>
-  <entry>
-    <title>.env ファイルと API キーの管理 — 漏洩の原因・対処・予防策（非エンジニア向け）</title>
-    <link rel="alternate" type="text/html" href="?a=env-file-api-key-security-guide-2026"/>
-    <id>tag:ai-tool-news.jp,2026:env-file-api-key-security-guide-2026</id>
-    <published>2026-03-29T15:00:00Z</published>
-    <updated>2026-03-29T15:00:00Z</updated>
-    <summary>AI コーディングツールが .env ファイルの API キーを意図せず読み込み、テストファイルやコミットに含めてしまう事故が増えている。GitGuardian の調査では AI 支援コミットのシークレット漏洩率は通常の約2倍。漏洩時の緊急対応から、.env を使わない安全な管理方法まで解説する。</summary>
-  </entry>
-  <entry>
-    <title>AI 自律実行の事故リスク — ファイル全削除・DB 破壊・スキルファイルの罠</title>
-    <link rel="alternate" type="text/html" href="?a=ai-autonomous-execution-risks-2026"/>
-    <id>tag:ai-tool-news.jp,2026:ai-autonomous-execution-risks-2026</id>
-    <published>2026-03-29T15:00:00Z</published>
-    <updated>2026-03-29T15:00:00Z</updated>
-    <summary>AI エージェントの自律実行による本番障害が2024年10月〜2026年2月の16ヶ月間で少なくとも10件報告されている。Amazon Kiro による13時間の AWS ダウン、Claude Code によるホームディレクトリ全削除、悪意あるスキルファイルによるデータ窃取。事故パターンと防止策を整理する。</summary>
-  </entry>
-  <entry>
-    <title>AI コーディングツール セキュリティ設定比較 — Claude Code・Cursor・Copilot・Gemini CLI（2026年版）</title>
-    <link rel="alternate" type="text/html" href="?a=ai-tool-security-settings-comparison-2026"/>
-    <id>tag:ai-tool-news.jp,2026:ai-tool-security-settings-comparison-2026</id>
-    <published>2026-03-29T15:00:00Z</published>
-    <updated>2026-03-29T15:00:00Z</updated>
-    <summary>「自分のコードが学習に使われないか」「会話データはいつ消えるのか」。Claude Code、Cursor、GitHub Copilot、Gemini CLI の4ツールについて、データ保持期間・学習オプトアウト・プライバシーモード・Enterprise 設定を公式ドキュメントベースで横断比較した。</summary>
-  </entry>
-  <entry>
-    <title>Claude Code の会話履歴を保存・管理する — 30日消去の仕様と永続化テクニック</title>
-    <link rel="alternate" type="text/html" href="?a=claude-code-conversation-history-tips-2026"/>
-    <id>tag:ai-tool-news.jp,2026:claude-code-conversation-history-tips-2026</id>
-    <published>2026-03-29T15:00:00Z</published>
-    <updated>2026-03-29T15:00:00Z</updated>
-    <summary>Claude Code の会話履歴はモデル改善不許可の場合30日で消去される。セッションの再開方法、ローカルの保存場所、/export コマンド、コミュニティ製の自動保存ツールまで、会話記録を失わないためのテクニックを整理した。</summary>
-  </entry>
-  <entry>
     <title>Google 社内 AI エージェント「Agent Smith」が話題 — PC を閉じても作業を継続、スマホから進捗確認・追加指示</title>
     <link rel="alternate" type="text/html" href="?a=google-agent-smith-2026"/>
     <id>tag:ai-tool-news.jp,2026:google-agent-smith-2026</id>
@@ -296,30 +224,6 @@
     <summary>ガイドの「メディア生成」タブに載せた代表ツールの位置づけと、権利・料金を確認するときの注意を短くまとめる。開発の道具選びはバイブコーディングタブ。</summary>
   </entry>
   <entry>
-    <title>Claude・Gemini・OpenAI の力図 — 2026年時点の棲み分けと競争軸（フロンティア三本柱）</title>
-    <link rel="alternate" type="text/html" href="?a=frontier-triad-power-map-2026"/>
-    <id>tag:ai-tool-news.jp,2026:frontier-triad-power-map-2026</id>
-    <published>2026-03-28T15:00:00Z</published>
-    <updated>2026-03-28T15:00:00Z</updated>
-    <summary>モデル性能の数値勝負だけでなく、「どこに差をつけて配るか」で三社の戦略は分岐している。配給経路・開発者楔・クラウドの結びつき・規制ストーリーという四つの軸で整理する。</summary>
-  </entry>
-  <entry>
-    <title>Siri×外部 AI — Gemini 中核に加え、ChatGPT・Claude など複数アシスタント統合の報道（2026年3月）</title>
-    <link rel="alternate" type="text/html" href="?a=apple-google-siri-gemini-2026"/>
-    <id>tag:ai-tool-news.jp,2026:apple-google-siri-gemini-2026</id>
-    <published>2026-03-28T15:00:00Z</published>
-    <updated>2026-03-28T15:00:00Z</updated>
-    <summary>1月の Apple–Google 多年度提携（Gemini）に続き、3月下旬の報道では「Siri を複数のサードパーティ AI に開く Extensions」構想が取り上げられている。Gemini に加え ChatGPT・Claude など利用者が切り替え／併用できる、との整理。いずれも WWDC 前の非公式情報が混じるため公式発表待ち。</summary>
-  </entry>
-  <entry>
-    <title>Anthropic Mythos リーク続報 — サイバーセキュリティ株急落と業界インパクト</title>
-    <link rel="alternate" type="text/html" href="?a=anthropic-mythos-cyber-impact-2026"/>
-    <id>tag:ai-tool-news.jp,2026:anthropic-mythos-cyber-impact-2026</id>
-    <published>2026-03-28T15:00:00Z</published>
-    <updated>2026-03-28T15:00:00Z</updated>
-    <summary>3月27日の Claude Mythos リーク報道を受け、CrowdStrike −7%、Palo Alto Networks −6% など主要セキュリティ銘柄が軒並み下落。草稿に記載されたサイバー能力の記述が市場に衝撃を与えた経緯と、冷静な読み方を整理。</summary>
-  </entry>
-  <entry>
     <title>freee、MCP リモート版をリリース — Claude から会計・人事労務・請求書など約270操作が可能に</title>
     <link rel="alternate" type="text/html" href="?a=freee-mcp-remote-2026"/>
     <id>tag:ai-tool-news.jp,2026:freee-mcp-remote-2026</id>
@@ -352,70 +256,6 @@
     <summary>2026-03-24 発表の研究プレビュー。ドキュメント・設定では Auto mode / permission-mode auto。宣材によっては Auto fix と併記。別機能の PR 向け「auto-fix in the cloud」（3/27 発表）は別記事で解説。</summary>
   </entry>
   <entry>
-    <title>Cursor 2.4 リリース — 並列サブエージェントとクラウドVM実行で開発を高速化</title>
-    <link rel="alternate" type="text/html" href="?a=cursor-2-4-subagents"/>
-    <id>tag:ai-tool-news.jp,2026:cursor-2-4-subagents</id>
-    <published>2026-03-27T15:00:00Z</published>
-    <updated>2026-03-27T15:00:00Z</updated>
-    <summary>最大20個のエージェントを同時並列実行可能に。クラウドVM上での独立実行により、ローカルマシンのリソースを消費せず大規模タスクを処理。BugBotも新登場。</summary>
-  </entry>
-  <entry>
-    <title>Gemini CLI v0.35.0 — サブエージェント強化とPlan Mode追加、無料枠は縮小へ</title>
-    <link rel="alternate" type="text/html" href="?a=gemini-cli-v035"/>
-    <id>tag:ai-tool-news.jp,2026:gemini-cli-v035</id>
-    <published>2026-03-27T15:00:00Z</published>
-    <updated>2026-03-27T15:00:00Z</updated>
-    <summary>Google Gemini CLIの最新安定版がリリース。サブエージェントアーキテクチャの大幅強化、セキュリティ向上のサンドボックス機能。一方で3月25日よりPro以上が有料に。</summary>
-  </entry>
-  <entry>
-    <title>GitHub Copilot、JetBrainsで正式GA — Coding Agentの起動速度も50%改善</title>
-    <link rel="alternate" type="text/html" href="?a=copilot-jetbrains-ga"/>
-    <id>tag:ai-tool-news.jp,2026:copilot-jetbrains-ga</id>
-    <published>2026-03-27T15:00:00Z</published>
-    <updated>2026-03-27T15:00:00Z</updated>
-    <summary>Agent ModeがVS Code以外にもJetBrains、Eclipse、Xcodeへ展開。セマンティックコード検索の導入で初期化時間が40秒→20秒に短縮。</summary>
-  </entry>
-  <entry>
-    <title>Gemini 3.1 Pro 発表 — ARC-AGI-2スコア77.1%、推論性能が前世代の倍以上に</title>
-    <link rel="alternate" type="text/html" href="?a=gemini-3-1-pro"/>
-    <id>tag:ai-tool-news.jp,2026:gemini-3-1-pro</id>
-    <published>2026-03-27T15:00:00Z</published>
-    <updated>2026-03-27T15:00:00Z</updated>
-    <summary>Google DeepMindが3月26日にプレビュー公開。1Mトークンコンテキスト、推論ベンチマーク大幅向上。価格は据え置きで開発者・企業向けに順次展開。</summary>
-  </entry>
-  <entry>
-    <title>GPT-5.4 リリース — 推論・コーディング・エージェントを統合した「ワンモデル」</title>
-    <link rel="alternate" type="text/html" href="?a=gpt-5-4-release"/>
-    <id>tag:ai-tool-news.jp,2026:gpt-5-4-release</id>
-    <published>2026-03-27T15:00:00Z</published>
-    <updated>2026-03-27T15:00:00Z</updated>
-    <summary>OpenAIが3月5日にリリースした最新フラグシップモデル。GPT-5.3-Codexのコーディング性能とGPT-5.2の推論力を統合し、25%高速化。</summary>
-  </entry>
-  <entry>
-    <title>Windsurf、クレジット制を廃止しクォータ制へ全面移行 — Pro価格は$20に</title>
-    <link rel="alternate" type="text/html" href="?a=windsurf-pricing-overhaul"/>
-    <id>tag:ai-tool-news.jp,2026:windsurf-pricing-overhaul</id>
-    <published>2026-03-27T15:00:00Z</published>
-    <updated>2026-03-27T15:00:00Z</updated>
-    <summary>3月19日、Windsurfがクレジットベースの料金体系から日次・週次クォータ制に変更。Pro価格が$15→$20に上昇し、Cursorとの価格差が消滅。</summary>
-  </entry>
-  <entry>
-    <title>Claude Code レビュー — Anthropic のCLIエージェント徹底解説</title>
-    <link rel="alternate" type="text/html" href="?a=claude-code"/>
-    <id>tag:ai-tool-news.jp,2026:claude-code</id>
-    <published>2026-03-27T15:00:00Z</published>
-    <updated>2026-03-27T15:00:00Z</updated>
-    <summary>claudeコマンド1つでリポジトリ全体を読み込み、バグ修正からテスト実行、コミットまで自律的に行う。Opus 4.6の1Mコンテキストによる深い推論が、複雑なリファクタリングを可能にしている。</summary>
-  </entry>
-  <entry>
-    <title>Claude Code「auto-fix in the cloud」— CI 失敗と PR コメントをクラウドで自動対応</title>
-    <link rel="alternate" type="text/html" href="?a=claude-code-autofix-cloud"/>
-    <id>tag:ai-tool-news.jp,2026:claude-code-autofix-cloud</id>
-    <published>2026-03-27T15:00:00Z</published>
-    <updated>2026-03-27T15:00:00Z</updated>
-    <summary>2026-03-27、PM の Noah Zweben 氏が発表。Web/モバイルセッションが PR をリモートでフォローし green 化を目指す。GitHub Actions では anthropics/claude-code-action の ci-failure ワークフロー例あり。</summary>
-  </entry>
-  <entry>
     <title>Google、Gemini 3.1 Flash Live を公開 — 応答 0.5 秒以下のリアルタイム音声 AI</title>
     <link rel="alternate" type="text/html" href="?a=gemini-31-flash-live-voice-2026"/>
     <id>tag:ai-tool-news.jp,2026:gemini-31-flash-live-voice-2026</id>
@@ -432,30 +272,6 @@
     <summary>2026年3月頃、AP・NPR・Business Insider などが Sora のアプリ／関連 API 終了を伝えた。最終的な公式文言・日付は openai.com 側の確認を優先する。</summary>
   </entry>
   <entry>
-    <title>Cursor レビュー — AIエディタの王者、Windsurf統合で盤石に</title>
-    <link rel="alternate" type="text/html" href="?a=cursor-editor"/>
-    <id>tag:ai-tool-news.jp,2026:cursor-editor</id>
-    <published>2026-03-26T15:00:00Z</published>
-    <updated>2026-03-26T15:00:00Z</updated>
-    <summary>VS Code フォークで最も人気のAIエディタ。Windsurf買収によるCascade統合とBackground Agentの追加でさらに進化。</summary>
-  </entry>
-  <entry>
-    <title>Anthropic、ペンタゴンのサプライチェーン指定差し止めに成功 — 連邦裁判所が暫定差止命令</title>
-    <link rel="alternate" type="text/html" href="?a=anthropic-pentagon-injunction-2026"/>
-    <id>tag:ai-tool-news.jp,2026:anthropic-pentagon-injunction-2026</id>
-    <published>2026-03-26T15:00:00Z</published>
-    <updated>2026-03-26T15:00:00Z</updated>
-    <summary>2026年3月26日、サンフランシスコ連邦地裁の Rita Lin 判事が Anthropic の申請を認め、国防総省（DoD）による「サプライチェーンリスク」指定を暫定差し止め。「修正第一条違反の報復」と判断。Anthropic は自律兵器・大規模監視への利用を拒否したことが発端。</summary>
-  </entry>
-  <entry>
-    <title>MCP v2 仕様リリース — Streamable HTTP・OAuth 2.1・JSON-RPC バッチで本番投入へ</title>
-    <link rel="alternate" type="text/html" href="?a=mcp-v2-spec-launch-2026"/>
-    <id>tag:ai-tool-news.jp,2026:mcp-v2-spec-launch-2026</id>
-    <published>2026-03-26T15:00:00Z</published>
-    <updated>2026-03-26T15:00:00Z</updated>
-    <summary>3月26日、Model Context Protocol の第2版仕様が公開された。HTTP+SSE を置き換える Streamable HTTP トランスポート、OAuth 2.1 認可フレームワーク、JSON-RPC バッチ、ツールアノテーションなどが盛り込まれ、エンタープライズ本番環境での採用障壁を大幅に下げる。OpenAI・Microsoft も正式サポートを表明。</summary>
-  </entry>
-  <entry>
     <title>Google、AI を最大8倍高速化しメモリを6分の1に削減する圧縮アルゴリズム TurboQuant を発表</title>
     <link rel="alternate" type="text/html" href="?a=google-turboquant-2026"/>
     <id>tag:ai-tool-news.jp,2026:google-turboquant-2026</id>
@@ -464,28 +280,12 @@
     <summary>Google Research が LLM の KV キャッシュを3ビットまで圧縮するアルゴリズム TurboQuant を発表した。NVIDIA H100 GPU 上で最大8倍の高速化と6倍以上のメモリ削減を精度損失なしで実現。Samsung や Micron などメモリチップ株に影響が出ている。</summary>
   </entry>
   <entry>
-    <title>Gemini CLI レビュー — Googleが放つ200万トークンの超大規模コンテキストCLI</title>
-    <link rel="alternate" type="text/html" href="?a=gemini-cli"/>
-    <id>tag:ai-tool-news.jp,2026:gemini-cli</id>
+    <title>GitHub Copilot、4月24日からインタラクション データをデフォルトで AI 学習に使用 — Free/Pro/Pro+ が対象、オプトアウト可能</title>
+    <link rel="alternate" type="text/html" href="?a=github-copilot-training-data-optin-2026"/>
+    <id>tag:ai-tool-news.jp,2026:github-copilot-training-data-optin-2026</id>
     <published>2026-03-25T15:00:00Z</published>
     <updated>2026-03-25T15:00:00Z</updated>
-    <summary>Google DeepMindが開発。Gemini 2.5 Proの200万トークンコンテキストで、大規模リポジトリを丸ごと解析。無料枠も充実。</summary>
-  </entry>
-  <entry>
-    <title>ARC-AGI-3 公開 — インタラクティブ環境でフロンティアAIが0.26%、人間は100%</title>
-    <link rel="alternate" type="text/html" href="?a=arc-agi-3-launch-2026"/>
-    <id>tag:ai-tool-news.jp,2026:arc-agi-3-launch-2026</id>
-    <published>2026-03-25T15:00:00Z</published>
-    <updated>2026-03-25T15:00:00Z</updated>
-    <summary>2026年3月25日、ARC Prize Foundation が ARC-AGI-3 を公開。静的グリッドを廃し、ビデオゲーム風のインタラクティブ環境1,000超で AI エージェントの適応推論を評価。GPT-5.4・Claude・Gemini などのフロンティアモデルは1%未満にとどまり、知能評価の新たな壁が示された。</summary>
-  </entry>
-  <entry>
-    <title>ChatGPT ショッピング刷新 — Instant Checkout を廃止し商品発見（Product Discovery）へ軸足</title>
-    <link rel="alternate" type="text/html" href="?a=chatgpt-shopping-revamp-2026"/>
-    <id>tag:ai-tool-news.jp,2026:chatgpt-shopping-revamp-2026</id>
-    <published>2026-03-24T15:00:00Z</published>
-    <updated>2026-03-24T15:00:00Z</updated>
-    <summary>2026年3月24日、OpenAI がエージェンティック・コマースを刷新。Instant Checkout は廃止し、ビジュアル商品比較・並列表示に集中。Walmart が「Sparky」アプリを ChatGPT 内に展開し、ロイヤルティプログラム連携も可能に。</summary>
+    <summary>GitHub が Copilot の利用規約を改定し、Free・Pro・Pro+ プランのインタラクション データ（入力コード・提案の承諾状況・ナビゲーションパターン等）を2026年4月24日からデフォルトで AI モデルの学習に使用すると発表した。Business・Enterprise プランは対象外。オプトアウトは設定画面から可能だが、デフォルト同意方式に開発者コミュニティから批判が集まっている。</summary>
   </entry>
   <entry>
     <title>【週刊まとめ】AI開発ツール — 2026年3月16日〜22日</title>
@@ -504,36 +304,12 @@
     <summary>Cursor の最新コーディングモデル Composer 2 が、中国 Moonshot AI のオープンウェイトモデル Kimi K2.5 をベースに追加学習して構築されたことが判明した。開発者が API トラフィックを解析し、モデル ID が kimi-k2p5 であることを発見。Cursor は「ベースモデルの言及漏れ」を認め、Moonshot AI は公式に支持を表明した。</summary>
   </entry>
   <entry>
-    <title>OpenAI Codex — クラウド並列実行のAIコーディングエージェント</title>
-    <link rel="alternate" type="text/html" href="?a=openai-codex-agent"/>
-    <id>tag:ai-tool-news.jp,2026:openai-codex-agent</id>
-    <published>2026-03-22T15:00:00Z</published>
-    <updated>2026-03-22T15:00:00Z</updated>
-    <summary>OpenAIが満を持してリリースしたコーディングエージェント。クラウドサンドボックスで複数タスクを並列実行し、PRとして提出する新しいワークフロー。</summary>
-  </entry>
-  <entry>
-    <title>Cursor、Windsurf（Codeium）を買収完了 — AIエディタ市場の統合が加速</title>
-    <link rel="alternate" type="text/html" href="?a=cursor-windsurf-merge"/>
-    <id>tag:ai-tool-news.jp,2026:cursor-windsurf-merge</id>
-    <published>2026-03-20T15:00:00Z</published>
-    <updated>2026-03-20T15:00:00Z</updated>
-    <summary>Anysphere社がCodeium社のWindsurfを買収。Cascadeフロー技術をCursorに統合予定。AIエディタ市場の寡占化が進む。</summary>
-  </entry>
-  <entry>
     <title>生成音楽のフロンティア — Suno・Udio・Lyria・Stable Audio 周辺の整理（2026年初頭）</title>
     <link rel="alternate" type="text/html" href="?a=ai-music-generation-frontier-early-2026"/>
     <id>tag:ai-tool-news.jp,2026:ai-music-generation-frontier-early-2026</id>
     <published>2026-03-19T15:00:00Z</published>
     <updated>2026-03-19T15:00:00Z</updated>
     <summary>創作者ツールとライセンス・レーベル動向が高速な領域。評価額やバージョン番号は報道・公式ヘルプを正とし、数値ヒャールには要注意。企業利用では権利表記と学習オプトアウトの有無を別途確認。</summary>
-  </entry>
-  <entry>
-    <title>OpenAI が Astral を買収 — uv・Ruff・ty を Codex に統合、Pythonエコシステムを掌握へ</title>
-    <link rel="alternate" type="text/html" href="?a=openai-acquires-astral-2026"/>
-    <id>tag:ai-tool-news.jp,2026:openai-acquires-astral-2026</id>
-    <published>2026-03-19T15:00:00Z</published>
-    <updated>2026-03-19T15:00:00Z</updated>
-    <summary>2026年3月19日、OpenAI が Python 開発ツールの Astral（uv・Ruff・ty）を買収すると発表。月間1億2,600万ダウンロードの uv や業界標準ライターの Ruff が Codex チームに合流。Python 開発ワークフロー全体を AI ネイティブにする戦略。</summary>
   </entry>
   <entry>
     <title>MiniMax、自己進化する AI モデル M2.7 を公開 — 人間の介入なしで強化学習の30〜50%を自動化</title>
@@ -544,14 +320,6 @@
     <summary>中国の MiniMax が M2.7 を公開した。OpenClaw フレームワーク上で100ラウンド以上の自己最適化を自律的に実行し、人間の介入なしで30%の性能向上を達成。SWE-Pro で56.2%と Opus に迫るスコアを記録。「自己進化するモデル」として注目されている。</summary>
   </entry>
   <entry>
-    <title>Windsurf — Cursor傘下で継続提供、Cascadeフローが光るAIエディタ</title>
-    <link rel="alternate" type="text/html" href="?a=windsurf"/>
-    <id>tag:ai-tool-news.jp,2026:windsurf</id>
-    <published>2026-03-18T15:00:00Z</published>
-    <updated>2026-03-18T15:00:00Z</updated>
-    <summary>Anysphere社に買収されたが、単体提供は継続中。Cascadeフローによる段階的なコード生成が特徴。無料プランも維持。</summary>
-  </entry>
-  <entry>
     <title>NVIDIA、オープンソース AI エージェント基盤 NemoClaw を発表 — OpenClaw との連携でエンタープライズ向け安全機能を提供</title>
     <link rel="alternate" type="text/html" href="?a=nvidia-openclaw-nemoclaw-2026"/>
     <id>tag:ai-tool-news.jp,2026:nvidia-openclaw-nemoclaw-2026</id>
@@ -560,20 +328,12 @@
     <summary>NVIDIA が、急成長中のオープンソース AI エージェント OpenClaw に対して、セキュリティ・プライバシー・ガバナンス機能を追加するリファレンスモデル NemoClaw を発表した。OpenClaw は GitHub で25万スターを超え、WhatsApp や Telegram と連携する自律型パーソナルアシスタントとして注目されている。</summary>
   </entry>
   <entry>
-    <title>OpenAI、GPT-5.4 mini と nano をリリース — 無料層でも mini 利用可、nano は $0.20/1M トークン</title>
-    <link rel="alternate" type="text/html" href="?a=gpt-54-mini-nano-2026"/>
-    <id>tag:ai-tool-news.jp,2026:gpt-54-mini-nano-2026</id>
+    <title>Google、Colab MCP サーバーを OSS 公開 — AI エージェントが GPU クラウド環境を直接操作可能に</title>
+    <link rel="alternate" type="text/html" href="?a=google-colab-mcp-server-2026"/>
+    <id>tag:ai-tool-news.jp,2026:google-colab-mcp-server-2026</id>
     <published>2026-03-17T15:00:00Z</published>
     <updated>2026-03-17T15:00:00Z</updated>
-    <summary>2026年3月17日、OpenAI が GPT-5.4 mini と GPT-5.4 nano を公開。mini は ChatGPT 無料ユーザーに開放、nano は API 専用で超低コスト（$0.20/1M）のサブエージェント向け。Codex や ChatGPT のコーディング機能も同時に強化。</summary>
-  </entry>
-  <entry>
-    <title>Cursor CLI (Composer) レビュー — IDE一体型のAIコーディング環境</title>
-    <link rel="alternate" type="text/html" href="?a=cursor-cli"/>
-    <id>tag:ai-tool-news.jp,2026:cursor-cli</id>
-    <published>2026-03-15T15:00:00Z</published>
-    <updated>2026-03-15T15:00:00Z</updated>
-    <summary>IDE一体型でありながら、CLIモード（Composer）が強力。自然言語で伝えるだけで、関連ファイルを自動で見つけ出し、変更案を提示する。</summary>
+    <summary>Google が Google Colab に MCP（Model Context Protocol）サーバーを接続するオープンソースプロジェクト「Colab MCP Server」を公開した。Claude Code・Gemini CLI などの MCP 対応エージェントから Colab のノートブックを直接操作し、GPU ランタイムでコードを実行できる。ローカル作業をクラウドに橋渡しするハイブリッドワークフローが実現する。</summary>
   </entry>
   <entry>
     <title>AI 音声入力ツールの俯瞰 — 製品型と API 型、Whisper と gpt-4o-transcribe</title>
@@ -584,28 +344,12 @@
     <summary>OSS の Whisper と OpenAI Speech-to-Text API（whisper-1 / gpt-4o-transcribe 系）は別ライン。コンシューマー製品とクラウド STT API の選び方、レイテンシ・コスト・プライバシーの論点を整理する。</summary>
   </entry>
   <entry>
-    <title>Mico — kubectl 向け OSS の AI アシスト（適用前確認と RBAC を前提に）</title>
-    <link rel="alternate" type="text/html" href="?a=mico-kubectl-ai"/>
-    <id>tag:ai-tool-news.jp,2026:mico-kubectl-ai</id>
-    <published>2026-03-14T15:00:00Z</published>
-    <updated>2026-03-14T15:00:00Z</updated>
-    <summary>自然言語からマニフェストや kubectl サブコマンド候補を出す補助ツール。便利さとのトレードオフはクラスタ破壊系操作の誤実行。dry-run・diff・人間承認を徹底し、本番では監査ログまで含めて設計する。</summary>
-  </entry>
-  <entry>
-    <title>Fish シェルと fish-ai — 端末内 LLM 補助と Warp 型クラウド端末の住み分け</title>
-    <link rel="alternate" type="text/html" href="?a=fish-ai-terminal-shell"/>
-    <id>tag:ai-tool-news.jp,2026:fish-ai-terminal-shell</id>
-    <published>2026-03-14T15:00:00Z</published>
-    <updated>2026-03-14T15:00:00Z</updated>
-    <summary>Realiserad/fish-ai のように、Fish 上でコマンド補正・自然言語からコマンド・LLM 補完を行うプラグインがある。設定はローカル ini。クラウドホスト型ターミナル（Warp 等）とはデータ境界が異なるので用途で選ぶ。</summary>
-  </entry>
-  <entry>
-    <title>Claude Opus 4.6 / Sonnet 4.6 の 100 万トークンコンテキストが GA — 追加料金なし</title>
-    <link rel="alternate" type="text/html" href="?a=claude-1m-context-ga-2026"/>
-    <id>tag:ai-tool-news.jp,2026:claude-1m-context-ga-2026</id>
+    <title>EU 理事会、AI 規制の一部ルールを簡素化する立場を採択 — 高リスク AI への適用を最大16ヵ月延期</title>
+    <link rel="alternate" type="text/html" href="?a=eu-ai-act-council-streamline-2026"/>
+    <id>tag:ai-tool-news.jp,2026:eu-ai-act-council-streamline-2026</id>
     <published>2026-03-13T15:00:00Z</published>
     <updated>2026-03-13T15:00:00Z</updated>
-    <summary>2026年3月13日、Anthropic が 1M トークンコンテキストを正式 GA。標準料金（Opus 4.6: $5/$25、Sonnet 4.6: $3/$15 per 1M tokens）が 100 万トークン超でも同レートで適用。Claude Platform・Bedrock・Vertex AI・Azure Foundry で即日利用可。</summary>
+    <summary>EU 理事会が AI Act の一部ルールを「Omnibus VII」パッケージで簡素化する立場を採択した。高リスク AI システムへのルール適用を最大16ヵ月延期し、SME 向け免除を中規模企業にも拡大。2026年8月2日を目途に透明性・高リスク AI のルールが施行される予定だが、米国の連邦主導によるアプローチとは対照的な状況が続く。</summary>
   </entry>
   <entry>
     <title>エンタープライズ RAG の ACL・PII・監査 — テナント分離とスナップショット</title>
@@ -614,30 +358,6 @@
     <published>2026-03-12T15:00:00Z</published>
     <updated>2026-03-12T15:00:00Z</updated>
     <summary>「社内文書を全部ベクトル化」は最短でコンプライアンス事故を起こす。IdP とのグループ同期、コレクション／行レベル ACL、PII 検出とマスキング、削除権・スナップショット、ログの監査可能性までを整理する。</summary>
-  </entry>
-  <entry>
-    <title>エージェント・スキルと SKILL.md — Claude / Cursor / Codex をまたぐ再利用単位</title>
-    <link rel="alternate" type="text/html" href="?a=agent-skills-skill-md"/>
-    <id>tag:ai-tool-news.jp,2026:agent-skills-skill-md</id>
-    <published>2026-03-12T15:00:00Z</published>
-    <updated>2026-03-12T15:00:00Z</updated>
-    <summary>フォルダ＋SKILL.md に手順・ドメイン知識・メタデータを束ね、モデルが必要時だけ展開する「スキル」パターンが普及している。YAML フロントマター、段階的開示、.claude/skills や各 IDE の skills ディレクトリの考え方を整理する。</summary>
-  </entry>
-  <entry>
-    <title>Markdown で育てるエージェント文脈 — AGENTS.md・CLAUDE.md・llms.txt・.cursor/rules</title>
-    <link rel="alternate" type="text/html" href="?a=markdown-ai-context-agents-llms"/>
-    <id>tag:ai-tool-news.jp,2026:markdown-ai-context-agents-llms</id>
-    <published>2026-03-12T15:00:00Z</published>
-    <updated>2026-03-12T15:00:00Z</updated>
-    <summary>リポジトリ直下の短い Markdown／ルールファイルが、LLM への「常時参照コンテキスト」として定位置になっている。Codex の AGENTS.md、Cursor の rules、サイト全体要約の llms.txt など、役割の違いとレビュー文化を整理する。</summary>
-  </entry>
-  <entry>
-    <title>Zed AI — Rust製の超高速AIエディタ</title>
-    <link rel="alternate" type="text/html" href="?a=zed-ai"/>
-    <id>tag:ai-tool-news.jp,2026:zed-ai</id>
-    <published>2026-03-12T15:00:00Z</published>
-    <updated>2026-03-12T15:00:00Z</updated>
-    <summary>Rust製のネイティブパフォーマンス。リアルタイムコラボレーション機能も内蔵した次世代エディタ。</summary>
   </entry>
   <entry>
     <title>RAG の評価と引用 — ゴールデンセット、自動指標、引用 UI、閾値ルーティング</title>
@@ -656,22 +376,6 @@
     <summary>ベクトル化の前段で成果が決まる。固定長だけでなく見出し・段落・構造を利用した分割、親チャンクと子チャンク、表・スキャン PDF・OCR のノイズ、メタデータとリネージ・再処理、障害検知までを実務目線で整理する。</summary>
   </entry>
   <entry>
-    <title>MCP（Model Context Protocol）実務 — サーバ選定、権限、ネットワーク、サプライチェーン</title>
-    <link rel="alternate" type="text/html" href="?a=mcp-servers-deep-dive"/>
-    <id>tag:ai-tool-news.jp,2026:mcp-servers-deep-dive</id>
-    <published>2026-03-10T15:00:00Z</published>
-    <updated>2026-03-10T15:00:00Z</updated>
-    <summary>ツール呼び出しを JSON-RPC で標準化する MCP は、IDE・CLI・独自ホストのゲートウェイ間で同じコネクタを再利用できる。stdio / HTTP トランスポート、権限の渡し方、サードパーティ拡張の供給網リスクまでを整理する。</summary>
-  </entry>
-  <entry>
-    <title>GitHub Copilot CLI レビュー — エンタープライズ対応のAI開発支援</title>
-    <link rel="alternate" type="text/html" href="?a=github-copilot-cli"/>
-    <id>tag:ai-tool-news.jp,2026:github-copilot-cli</id>
-    <published>2026-03-10T15:00:00Z</published>
-    <updated>2026-03-10T15:00:00Z</updated>
-    <summary>GitHubエコシステムとシームレスに統合。Copilot Coding Agentによる自律的なIssue対応が新たに追加。</summary>
-  </entry>
-  <entry>
     <title>動画生成モデルの地形図 — Veo・Runway・Kling などとマルチモデル・パイプライン</title>
     <link rel="alternate" type="text/html" href="?a=ai-video-generators-landscape-2026"/>
     <id>tag:ai-tool-news.jp,2026:ai-video-generators-landscape-2026</id>
@@ -688,14 +392,6 @@
     <summary>生成・編集が容易になるほど、開示義務・本人同意・選挙広告・著名人の類似が論点になる。制作フローにメタデータ署名と人間確認ゲートを組み込む話に整理する。</summary>
   </entry>
   <entry>
-    <title>VS Code + Copilot — 定番エディタのAI進化</title>
-    <link rel="alternate" type="text/html" href="?a=vscode"/>
-    <id>tag:ai-tool-news.jp,2026:vscode</id>
-    <published>2026-03-08T15:00:00Z</published>
-    <updated>2026-03-08T15:00:00Z</updated>
-    <summary>世界で最も使われるエディタ。GitHub Copilotとの統合で強力なAI支援。Coding Agentの追加でさらに進化。</summary>
-  </entry>
-  <entry>
     <title>Aqua Voice — Mac/Windows 向けAIディクテーション（フローティングUI）</title>
     <link rel="alternate" type="text/html" href="?a=aqua-voice-review"/>
     <id>tag:ai-tool-news.jp,2026:aqua-voice-review</id>
@@ -704,92 +400,12 @@
     <summary>録音→転写→アクティブなアプリへペーストまでを一体で扱う製品向けディクテーション。公式 FAQ では全アカウント 1,000 語の無料枠、Avalon モデルは Pro で選択可能、iPhone アプリは未対応とされる。</summary>
   </entry>
   <entry>
-    <title>Google、Gemini 3.1 Flash-Lite をプレビュー公開 — 2.5× 高速・低コストの大量処理向けモデル</title>
-    <link rel="alternate" type="text/html" href="?a=gemini-31-flash-lite-2026"/>
-    <id>tag:ai-tool-news.jp,2026:gemini-31-flash-lite-2026</id>
-    <published>2026-03-04T15:00:00Z</published>
-    <updated>2026-03-04T15:00:00Z</updated>
-    <summary>2026年3月4日、Google DeepMind が Demis Hassabis 氏発表で Gemini 3.1 Flash-Lite をプレビュー公開。入力 $0.25/1M・出力 $1.50/1M トークンという超低価格で 2.5 Flash 比 2.5 倍高速な Time-to-First-Token・45% 高い出力速度を実現。</summary>
-  </entry>
-  <entry>
-    <title>Aider レビュー — マルチモデル対応のOSS CLIツール</title>
-    <link rel="alternate" type="text/html" href="?a=aider"/>
-    <id>tag:ai-tool-news.jp,2026:aider</id>
-    <published>2026-03-03T15:00:00Z</published>
-    <updated>2026-03-03T15:00:00Z</updated>
-    <summary>複数ファイルの一括修正に特化したOSSツール。Gitとの親和性が高く、様々なLLMプロバイダーに対応。</summary>
-  </entry>
-  <entry>
-    <title>Claude がメモリのインポートに対応 — ChatGPT・Gemini・Grok からの移行を簡素化</title>
-    <link rel="alternate" type="text/html" href="?a=claude-memory-import-2026"/>
-    <id>tag:ai-tool-news.jp,2026:claude-memory-import-2026</id>
-    <published>2026-03-03T15:00:00Z</published>
-    <updated>2026-03-03T15:00:00Z</updated>
-    <summary>2026年3月初旬、Anthropic が claude.com/import-memory を公開。ChatGPT・Gemini・Copilot・Grok などから保存済みメモリをコピー＆ペーストで Claude に移行できる。メモリ機能自体は全 Claude ユーザーへ順次展開中。</summary>
-  </entry>
-  <entry>
-    <title>CodeBuff レビュー — ターミナル特化の新興CLIエージェント</title>
-    <link rel="alternate" type="text/html" href="?a=codebuff"/>
-    <id>tag:ai-tool-news.jp,2026:codebuff</id>
-    <published>2026-03-02T15:00:00Z</published>
-    <updated>2026-03-02T15:00:00Z</updated>
-    <summary>直感的なUIとDiff確認が特徴の新興CLI。スピードと精度のバランスに優れる。</summary>
-  </entry>
-  <entry>
-    <title>Void — プライバシー重視のOSSエディタ</title>
-    <link rel="alternate" type="text/html" href="?a=void"/>
-    <id>tag:ai-tool-news.jp,2026:void</id>
-    <published>2026-03-02T15:00:00Z</published>
-    <updated>2026-03-02T15:00:00Z</updated>
-    <summary>ローカルLLMとクラウドLLMの両方に対応するオープンソースエディタ。プライバシー重視の開発者に人気。</summary>
-  </entry>
-  <entry>
     <title>画像生成AIの地形図（2026年初頭）— GPT Image・MJ・Flux・Imagen から Nano Banana 2 まで</title>
     <link rel="alternate" type="text/html" href="?a=ai-image-generators-landscape-early-2026"/>
     <id>tag:ai-tool-news.jp,2026:ai-image-generators-landscape-early-2026</id>
     <published>2026-03-01T15:00:00Z</published>
     <updated>2026-03-01T15:00:00Z</updated>
     <summary>解像度競争に加え、複雑な構図や空間関係へのプロンプト忠実度、用途特化が選択軸の中心になっている。GPT Image・Midjourney・Flux・Imagen から Seedream まで、話題モデルの位置づけと強みを整理する。</summary>
-  </entry>
-  <entry>
-    <title>Amazon Q Developer レビュー — AWS統合のAI開発支援ツール</title>
-    <link rel="alternate" type="text/html" href="?a=amazon-q"/>
-    <id>tag:ai-tool-news.jp,2026:amazon-q</id>
-    <published>2026-03-01T15:00:00Z</published>
-    <updated>2026-03-01T15:00:00Z</updated>
-    <summary>AWS環境の操作・構築に特化。インフラ構築からコード生成まで、AWSエコシステム内でのサポートを提供。</summary>
-  </entry>
-  <entry>
-    <title>PearAI — コミュニティドリブンのOSSエディタ</title>
-    <link rel="alternate" type="text/html" href="?a=pearai"/>
-    <id>tag:ai-tool-news.jp,2026:pearai</id>
-    <published>2026-03-01T15:00:00Z</published>
-    <updated>2026-03-01T15:00:00Z</updated>
-    <summary>VS Codeベースのオープンソースエディタ。AIチャットとインライン編集に特化。</summary>
-  </entry>
-  <entry>
-    <title>Cline レビュー — 承認フロー付きのOSS AIエージェント</title>
-    <link rel="alternate" type="text/html" href="?a=cline"/>
-    <id>tag:ai-tool-news.jp,2026:cline</id>
-    <published>2026-02-28T15:00:00Z</published>
-    <updated>2026-02-28T15:00:00Z</updated>
-    <summary>オープンソースのVS Code拡張。ローカルモデル対応でプライバシーを確保しつつ、MCP連携で拡張性も高い。</summary>
-  </entry>
-  <entry>
-    <title>Trae — ByteDance発のAIエディタ、Builder Modeが話題</title>
-    <link rel="alternate" type="text/html" href="?a=trae"/>
-    <id>tag:ai-tool-news.jp,2026:trae</id>
-    <published>2026-02-28T15:00:00Z</published>
-    <updated>2026-02-28T15:00:00Z</updated>
-    <summary>ByteDance社開発。Builder Modeで自然言語からアプリ全体を生成。無料で利用可能。</summary>
-  </entry>
-  <entry>
-    <title>Warp AI レビュー — AI内蔵のRust製モダンターミナル</title>
-    <link rel="alternate" type="text/html" href="?a=warp-ai"/>
-    <id>tag:ai-tool-news.jp,2026:warp-ai</id>
-    <published>2026-02-27T15:00:00Z</published>
-    <updated>2026-02-27T15:00:00Z</updated>
-    <summary>ターミナル自体にAIが組み込まれた新しいアプローチ。コマンド補完やエラー解析をターミナル内で直接提供。</summary>
   </entry>
   <entry>
     <title>Google「Nano Banana 2」— Gemini 3.1 Flash Image と動画ツール Flow との見分け方</title>
