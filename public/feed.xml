@@ -760,6 +760,14 @@
     <summary>2026年3月13日、Anthropic が 1M トークンコンテキストを正式 GA。標準料金（Opus 4.6: $5/$25、Sonnet 4.6: $3/$15 per 1M tokens）が 100 万トークン超でも同レートで適用。Claude Platform・Bedrock・Vertex AI・Azure Foundry で即日利用可。</summary>
   </entry>
   <entry>
+    <title>Dylan Patel（SemiAnalysis）「真のボトルネックは ASML」— AI コンピュートの3大制約を徹底分析 — Dwarkesh Podcast 要約</title>
+    <link rel="alternate" type="text/html" href="?a=dylan-patel-dwarkesh-ai-compute-bottlenecks"/>
+    <id>tag:ai-tool-news.jp,2026:dylan-patel-dwarkesh-ai-compute-bottlenecks</id>
+    <published>2026-03-13T15:00:00Z</published>
+    <updated>2026-03-13T15:00:00Z</updated>
+    <summary>半導体アナリスト Dylan Patel が Dwarkesh Podcast で AI コンピュートの3大ボトルネック（ロジック・メモリ・電力）を分析。ASML の EUV 装置が2030年までの真の制約、1ギガワットに必要な EUV ツール3.5台、H100 が3年前より価値が高い理由を語った。</summary>
+  </entry>
+  <entry>
     <title>エンタープライズ RAG の ACL・PII・監査 — テナント分離とスナップショット</title>
     <link rel="alternate" type="text/html" href="?a=rag-enterprise-acl-privacy-2026"/>
     <id>tag:ai-tool-news.jp,2026:rag-enterprise-acl-privacy-2026</id>

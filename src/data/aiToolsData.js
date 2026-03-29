@@ -5230,6 +5230,30 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "dylan-patel-dwarkesh-ai-compute-bottlenecks",
+    "type": "feature",
+    "category": "special",
+    "title": "Dylan Patel（SemiAnalysis）「真のボトルネックは ASML」— AI コンピュートの3大制約を徹底分析 — Dwarkesh Podcast 要約",
+    "excerpt": "半導体アナリスト Dylan Patel が Dwarkesh Podcast で AI コンピュートの3大ボトルネック（ロジック・メモリ・電力）を分析。ASML の EUV 装置が2030年までの真の制約、1ギガワットに必要な EUV ツール3.5台、H100 が3年前より価値が高い理由を語った。",
+    "body": [
+      "2026年3月13日、半導体業界で最も影響力のあるアナリストの一人 **Dylan Patel**（SemiAnalysis 創業者）が **Dwarkesh Podcast** に出演。AI コンピュートをスケールする際の3大ボトルネック — ロジック、メモリ、電力 — を2時間30分にわたって技術的に分析した。Jensen Huang が語った「供給側の現実」を、独立アナリストの視点から裏付ける内容。",
+      "**「真のボトルネックは ASML」**: 電力やデータセンター建設ではなく、ASML 製の EUV（極端紫外線）リソグラフィ装置が2030年までの真の制約だと指摘。現在の生産台数は年70台、2030年でも年100台程度が上限。1台3〜4億ドル。1ギガワット分の Rubin チップ製造に約3.5台の EUV ツール（12億ドル相当）が必要だが、50ギガワットのデータセンター建設は500億ドル — この不均衡が問題の本質。",
+      "**メモリの壁**: 1ギガワットの AI コンピュート製造に必要なウェハは、3nm ロジック55,000枚、5nm 6,000枚、DRAM 170,000枚。200万回の EUV パス処理が必要で、メモリ不足は2026〜2027年に顕在化する見通し。Jensen が言及した HBM 供給問題の具体的な数字がここにある。",
+      "**H100 が3年前より価値が高い理由**: 古いチップの価値が上がるという逆説的な現象。GPT-5.4 などの新モデルがより多くのトークンを高品質に生成できるようになり、チップ自体の「導出価値」が増加した。H100 の展開コストは約1.40ドル/時間（5年償却）だが、現在は2ドル/時間以上で契約されている。",
+      "**各社の規模感**: Anthropic は最終的に5〜6ギガワット、OpenAI も同等レベルまでスケール予定。Anthropic の年率収入は約200億ドルに達したが、粗利益率は50%未満で、130〜140億ドルが計算コスト。NVIDIA は他社より早期に TSMC の製造容量を確保しており、Google は TPU 不足で大量の GPU 購入を余儀なくされている状況。",
+      "**中国と長期見通し**: 中国は2030年までに DUV（深紫外線）ツールの完全国産化は可能だが、EUV はまだ困難。本番規模の生産と信頼性確立には5〜7年必要。短期（3年）は米国優位が継続するが、2035年には中国の垂直統合サプライチェーンが優位に転じる可能性がある。2028〜2029年がクリティカルポイント。"
+    ],
+    "newsDate": "2026-03-13",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": ["半導体", "ASML", "SemiAnalysis", "ポッドキャスト", "GPU", "TSMC"],
+    "primarySources": [
+      { "title": "Dylan Patel — Deep dive on the 3 big bottlenecks to scaling AI compute", "site": "Dwarkesh Podcast", "url": "https://www.dwarkesh.com/p/dylan-patel" },
+      { "title": "Spotify で聴く", "site": "Spotify", "url": "https://open.spotify.com/episode/5qiibwoBWY5rXyflK7WJzH" }
+    ]
+  },
+  {
     "id": "lex-fridman-494-jensen-huang-nvidia",
     "type": "feature",
     "category": "special",
