@@ -1518,31 +1518,32 @@ const RATING_EXPLAINER = {
 };
 
 const MODEL_COMPARISON = [
-  { name: "Claude Opus 4.6", rating: 4.5, summary: "Anthropic 最上位。1Mコンテキスト、高度な推論とコード生成に強い。$15/$75 per 1M tokens", swe: 72, aime: 75, arc: 68, hle: 26, mmmu: 78 },
-  { name: "Claude Sonnet 4.6", rating: 4.0, summary: "Anthropic 中核。1Mコンテキスト、速度と品質のバランス型。日常のコーディングに最適。$3/$15", swe: 65, aime: 55, arc: 55, hle: 12, mmmu: 70 },
-  { name: "Claude Haiku 4.5", rating: 3.5, summary: "Anthropic 軽量。200Kコンテキスト、最速・低コスト。大量処理やチャット向け。$0.80/$4", swe: 45, aime: 30, arc: 30, mmmu: 55 },
-  { name: "GPT-5.4", rating: 4.0, summary: "OpenAI 最新。128Kコンテキスト、推論・コーディング・エージェント統合モデル。$2.50/$10", swe: 70, aime: 70, arc: 65, hle: 20, mmmu: 75 },
-  { name: "GPT-5.4 mini", rating: 3.5, summary: "OpenAI 軽量。128Kコンテキスト、無料層でも利用可能。Codex との連携向け。$0.40/$1.60", swe: 50, aime: 35, arc: 32, mmmu: 58 },
-  { name: "GPT-4o", rating: 3.5, summary: "OpenAI 前世代。安定性が高く依然として広く利用されている。$2.50/$10", swe: 55, aime: 40, arc: 42, mmmu: 69 },
-  { name: "Gemini 3.1 Pro", rating: 4.0, summary: "Google 最上位。2Mコンテキストは業界最大。長大なコードベースの一括読み込みに強い。$1.25/$5", swe: 68, aime: 65, arc: 60, hle: 18, mmmu: 72 },
-  { name: "Gemini 3.1 Flash", rating: 3.5, summary: "Google 高速。1Mコンテキスト、極めて低コスト。速度重視の処理に向く。$0.075/$0.30", swe: 48, aime: 35, arc: 33, mmmu: 56 },
-  { name: "Gemini 2.5 Pro", rating: 3.5, summary: "Google 前世代。1Mコンテキスト、安定した実績。$1.25/$5", swe: 58, aime: 50, arc: 48, mmmu: 68 },
-  { name: "Kimi K2.5", rating: 4.0, summary: "Moonshot AI（中国）。1兆パラメータ MoE、256Kコンテキスト。Humanity's Last Exam で Opus 超え。オープンウェイト。", swe: 77, aime: 70, arc: 58, hle: 28, mmmu: 73 },
-  { name: "GLM-5", rating: 3.5, summary: "Zhipu AI（中国）。745Bパラメータ MoE、MIT ライセンス。Opus の約1/6のコスト。Huawei チップで学習。$0.80/$2.56", swe: 60, aime: 45, arc: 40, mmmu: 62 },
-  { name: "MiniMax M2.7", rating: 3.5, summary: "MiniMax（中国）。自己進化型モデル。SWE-Pro 56.2%で Opus に迫る。OpenClaw 上で自律最適化。", swe: 56, aime: 40 },
-  { name: "KAT-Coder Pro V2", rating: 3.5, summary: "Kwai/快手（中国）。コーディング特化 MoE。SWE-Bench 73.4%。OpenClaw 対応。$0.30/$1.20 と低コスト。", swe: 73, aime: 35 },
-  { name: "DeepSeek R1", rating: 4.0, summary: "DeepSeek（中国）。671B MoE 推論特化。MIT ライセンス。数学・コーディングで Opus に迫る。$0.14/$2.19 と破格。", swe: 71, aime: 79, arc: 62, hle: 24, mmmu: 68 },
-  { name: "Qwen 3 (235B)", rating: 4.0, summary: "Alibaba（中国）。235B MoE、Apache 2.0。ハイブリッド思考で推論/即答を切替。119言語対応。8サイズ展開。", swe: 69, aime: 82, arc: 56, hle: 22, mmmu: 71 },
-  { name: "ERNIE 4.5", rating: 3.5, summary: "Baidu（中国）。中国最大の検索基盤を活かした知識量。中国語特化で1億ユーザー。マルチモーダル。", swe: 55, aime: 40, arc: 35, mmmu: 65 },
-  { name: "Composer 2", rating: 4.0, summary: "Cursor 独自。Kimi K2.5 ベース＋独自 RL。CursorBench で Opus 超え。$0.50/$2.50 と低コスト。", swe: 74, aime: 60, arc: 50 },
+  // スコアは各社の公式発表値のみ。null = 公式データなし（チャートに非表示）
+  { name: "Claude Opus 4.6", rating: 4.5, summary: "Anthropic 最上位。1Mコンテキスト、高度な推論とコード生成に強い。$15/$75 per 1M tokens", swe: 81, aime: null, arc: 69, hle: null, mmmu: null },
+  { name: "Claude Sonnet 4.6", rating: 4.0, summary: "Anthropic 中核。1Mコンテキスト、速度と品質のバランス型。日常のコーディングに最適。$3/$15", swe: 80, aime: null, arc: 58, hle: null, mmmu: 75 },
+  { name: "Claude Haiku 4.5", rating: 3.5, summary: "Anthropic 軽量。200Kコンテキスト、最速・低コスト。大量処理やチャット向け。$0.80/$4", swe: null, aime: null, arc: null, hle: null, mmmu: null },
+  { name: "GPT-5.4", rating: 4.0, summary: "OpenAI 最新。128Kコンテキスト、推論・コーディング・エージェント統合モデル。$2.50/$10", swe: 75, aime: 95, arc: null, hle: null, mmmu: 84 },
+  { name: "GPT-5.4 mini", rating: 3.5, summary: "OpenAI 軽量。128Kコンテキスト、無料層でも利用可能。Codex との連携向け。$0.40/$1.60", swe: null, aime: null, arc: null, hle: null, mmmu: null },
+  { name: "GPT-4o", rating: 3.5, summary: "OpenAI 前世代。安定性が高く依然として広く利用されている。$2.50/$10", swe: null, aime: null, arc: null, hle: null, mmmu: 69 },
+  { name: "Gemini 3.1 Pro", rating: 4.0, summary: "Google 最上位。2Mコンテキストは業界最大。長大なコードベースの一括読み込みに強い。$1.25/$5", swe: null, aime: null, arc: 77, hle: null, mmmu: 81 },
+  { name: "Gemini 3.1 Flash", rating: 3.5, summary: "Google 高速。1Mコンテキスト、極めて低コスト。速度重視の処理に向く。$0.075/$0.30", swe: 78, aime: null, arc: null, hle: null, mmmu: 81 },
+  { name: "Gemini 2.5 Pro", rating: 3.5, summary: "Google 前世代。1Mコンテキスト、安定した実績。$1.25/$5", swe: 64, aime: null, arc: null, hle: null, mmmu: 84 },
+  { name: "Kimi K2.5", rating: 4.0, summary: "Moonshot AI（中国）。1兆パラメータ MoE、256Kコンテキスト。Humanity's Last Exam で Opus 超え。オープンウェイト。", swe: 66, aime: 50, arc: null, hle: 32, mmmu: null },
+  { name: "GLM-5", rating: 3.5, summary: "Zhipu AI（中国）。745Bパラメータ MoE、MIT ライセンス。Opus の約1/6のコスト。Huawei チップで学習。$0.80/$2.56", swe: null, aime: null, arc: null, hle: null, mmmu: null },
+  { name: "MiniMax M2.7", rating: 3.5, summary: "MiniMax（中国）。自己進化型モデル。SWE-Pro 56.2%で Opus に迫る。OpenClaw 上で自律最適化。", swe: null, aime: null, arc: null, hle: null, mmmu: null },
+  { name: "KAT-Coder Pro V2", rating: 3.5, summary: "Kwai/快手（中国）。コーディング特化 MoE。SWE-Bench 73.4%。OpenClaw 対応。$0.30/$1.20 と低コスト。", swe: 73, aime: null, arc: null, hle: null, mmmu: null },
+  { name: "DeepSeek R1", rating: 4.0, summary: "DeepSeek（中国）。671B MoE 推論特化。MIT ライセンス。数学・コーディングで Opus に迫る。$0.14/$2.19 と破格。", swe: 49, aime: 79, arc: null, hle: null, mmmu: null },
+  { name: "Qwen 3 (235B)", rating: 4.0, summary: "Alibaba（中国）。235B MoE、Apache 2.0。ハイブリッド思考で推論/即答を切替。119言語対応。8サイズ展開。", swe: null, aime: null, arc: null, hle: null, mmmu: null },
+  { name: "ERNIE 4.5", rating: 3.5, summary: "Baidu（中国）。中国最大の検索基盤を活かした知識量。中国語特化で1億ユーザー。マルチモーダル。", swe: null, aime: null, arc: null, hle: null, mmmu: null },
+  { name: "Composer 2", rating: 4.0, summary: "Cursor 独自。Kimi K2.5 ベース＋独自 RL。CursorBench で Opus 超え。$0.50/$2.50 と低コスト。", swe: null, aime: null, arc: null, hle: null, mmmu: null },
 ];
 
 const BENCHMARK_CONFIGS = [
-  { key: "swe", label: "SWE-Bench", title: "SWE-Bench（コーディング能力）", desc: "実際のバグ修正ができるか" },
-  { key: "aime", label: "AIME", title: "AIME（数学的推論）", desc: "数学オリンピックレベルの問題を解けるか" },
-  { key: "arc", label: "ARC-AGI", title: "ARC-AGI（適応的推論力）", desc: "初めて見る問題に対応できるか" },
-  { key: "hle", label: "HLE", title: "Humanity's Last Exam（学術的推論）", desc: "専門家レベルの難問に答えられるか" },
-  { key: "mmmu", label: "MMMU", title: "MMMU（視覚的理解力）", desc: "画像やグラフを理解できるか" },
+  { key: "swe", label: "SWE-Bench", title: "SWE-Bench Verified（コーディング能力・公式発表値）", desc: "実際の GitHub Issue のバグ修正ができるか" },
+  { key: "aime", label: "AIME", title: "AIME 2024/2025（数学的推論・公式発表値）", desc: "数学オリンピック予選レベルの問題を解けるか" },
+  { key: "arc", label: "ARC-AGI", title: "ARC-AGI-2（適応的推論力・公式発表値）", desc: "初めて見るパズル問題に対応できるか" },
+  { key: "hle", label: "HLE", title: "Humanity's Last Exam（学術的推論・公式発表値）", desc: "専門家レベルの難問に答えられるか" },
+  { key: "mmmu", label: "MMMU", title: "MMMU / MMMU-Pro（視覚的理解力・公式発表値）", desc: "画像やグラフを理解できるか" },
 ];
 
 /** ベンチマークスコアの横棒グラフ（SVG 自動生成・グラデーション付き） */
@@ -1669,7 +1670,7 @@ function ModelComparisonSection() {
               <Fragment key={c.key}><dt>{c.label}</dt><dd>{c.desc}</dd></Fragment>
             ))}
           </dl>
-          <p>下のタブでベンチマーク指標を切り替えられます。指標によってモデルの順位が大きく変わるため、用途に合った指標を参考にしてください。</p>
+          <p>下のタブでベンチマーク指標を切り替えられます。スコアは各社の公式発表値のみを掲載しており、公式データがないモデルはグラフに表示されません。指標によってモデルの順位が大きく変わるため、用途に合った指標を参考にしてください。</p>
         </div>
       </details>
       <nav className="filter-nav" aria-label="ベンチマーク指標">
