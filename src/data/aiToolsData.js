@@ -45,6 +45,7 @@ export const ARTICLES = [
     "id": "how-ai-models-are-built-2026",
     "type": "feature",
     "category": "model",
+    "coverImage": { "src": "articles/cover-model-api.svg", "alt": "ニューラルネットワークの構造図" },
     "title": "AI モデルはどう作られるのか — ゼロから学習・追加学習・RLHF を非エンジニア向けに解説",
     "excerpt": "Opus 4.6 のようなフロンティアモデルは数百億〜数千億円かけてゼロから作る。Cursor Composer 2 は Kimi K2.5 に追加学習して作った。RLHF で「やっていいこと・悪いこと」を教える。企業が自社の知識を入れるには RAG とファインチューニングのどちらが現実的か。国産 AI の動向も含めて、AI の「作り方」を解説する。",
     "body": [
@@ -97,6 +98,7 @@ export const ARTICLES = [
     "id": "local-llm-vs-api-reality-2026",
     "type": "feature",
     "category": "model",
+    "coverImage": { "src": "articles/cover-model-api.svg", "alt": "API vs ローカルの比較" },
     "title": "ローカル LLM の現実 — API 契約 vs 自前運用のコスト・性能・限界を比較",
     "excerpt": "API に月額数万円を払うのがもったいないからローカルで動かしたい。その判断は正しいのか。7B〜70B モデルの必要スペック、Ollama / llama.cpp / vLLM の使い分け、API との損益分岐点、そして Opus 4.6 クラスがローカルで動かない物理的な理由を解説する。",
     "body": [
@@ -593,6 +595,7 @@ export const ARTICLES = [
     "id": "cli-tools-comparison-2026-march",
     "type": "feature",
     "category": "cli",
+    "coverImage": { "src": "articles/cover-cli-tools.svg", "alt": "CLI ツールのターミナル画面" },
     "title": "CLI コーディングツール横断比較 — Claude Code・Codex・Gemini CLI・Aider・Copilot（2026年3月版）",
     "excerpt": "主要5つの CLI コーディングツールを、機能・料金・モデル・権限制御の軸で横並びに比較した。バイブコーディングの「ターミナル層」を選ぶ際の参考に。",
     "body": [
@@ -634,6 +637,7 @@ export const ARTICLES = [
     "id": "editor-comparison-2026-march",
     "type": "feature",
     "category": "editor",
+    "coverImage": { "src": "articles/cover-editor-ide.svg", "alt": "AI エディタの画面" },
     "title": "AI エディタ横断比較 — Cursor・Windsurf・VS Code+Copilot（2026年3月版）",
     "excerpt": "AI エディタ三大勢力を、機能・料金・エージェント能力・拡張性の軸で横並びに比較した。Cursor/Windsurf の経営統合後の現状も含め、エディタ選びの判断材料を整理する。",
     "body": [
@@ -672,6 +676,7 @@ export const ARTICLES = [
     "id": "pricing-comparison-all-tools-2026-march",
     "type": "feature",
     "category": "special",
+    "coverImage": { "src": "articles/cover-pricing.svg", "alt": "料金比較チャート" },
     "title": "AI 開発ツール料金プラン横断比較 — CLI・エディタ・API 全8ツール（2026年3月版）",
     "excerpt": "Claude Code、Cursor、Windsurf、Codex、Gemini CLI、Copilot、Aider、Zed AI の料金体系を一覧で比較。無料枠・Pro・Enterprise まで、公式発表ベースで整理した。",
     "body": [

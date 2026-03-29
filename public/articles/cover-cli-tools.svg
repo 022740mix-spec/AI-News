@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#171717"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <!-- Terminal window -->
+  <rect x="80" y="60" width="1040" height="560" rx="12" fill="#1c1c1c" stroke="#333" stroke-width="1"/>
+  <rect x="80" y="60" width="1040" height="32" rx="12" fill="#2a2a2a"/>
+  <rect x="80" y="80" width="1040" height="12" fill="#2a2a2a"/>
+  <circle cx="106" cy="76" r="5" fill="#ff5f57"/>
+  <circle cx="126" cy="76" r="5" fill="#febc2e"/>
+  <circle cx="146" cy="76" r="5" fill="#28c840"/>
+  <text x="600" y="80" text-anchor="middle" fill="#888" font-size="11" font-family="monospace">~/Projects/my-app — claude</text>
+  <!-- Terminal content -->
+  <g font-family="monospace" font-size="13">
+    <text x="110" y="120" fill="#22c55e">$</text>
+    <text x="130" y="120" fill="#e2e8f0">claude "テストを書いて全部パスさせて"</text>
+    <text x="110" y="148" fill="#94a3b8">⠋ Analyzing project structure...</text>
+    <text x="110" y="176" fill="#94a3b8">⠋ Reading src/App.jsx, src/utils.js</text>
+    <text x="110" y="210" fill="#3b82f6">┌─────────────────────────────────────────┐</text>
+    <text x="110" y="234" fill="#3b82f6">│</text><text x="130" y="234" fill="#22d3ee"> Plan: 3 test files to create</text>
+    <text x="110" y="258" fill="#3b82f6">│</text><text x="130" y="258" fill="#94a3b8"> 1. src/__tests__/App.test.jsx</text>
+    <text x="110" y="282" fill="#3b82f6">│</text><text x="130" y="282" fill="#94a3b8"> 2. src/__tests__/utils.test.js</text>
+    <text x="110" y="306" fill="#3b82f6">│</text><text x="130" y="306" fill="#94a3b8"> 3. src/__tests__/api.test.js</text>
+    <text x="110" y="330" fill="#3b82f6">└─────────────────────────────────────────┘</text>
+    <text x="110" y="362" fill="#22c55e">✓</text><text x="130" y="362" fill="#e2e8f0"> Created src/__tests__/App.test.jsx</text>
+    <text x="110" y="386" fill="#22c55e">✓</text><text x="130" y="386" fill="#e2e8f0"> Created src/__tests__/utils.test.js</text>
+    <text x="110" y="410" fill="#22c55e">✓</text><text x="130" y="410" fill="#e2e8f0"> Created src/__tests__/api.test.js</text>
+    <text x="110" y="444" fill="#22c55e">$</text>
+    <text x="130" y="444" fill="#e2e8f0">npm test</text>
+    <text x="110" y="478" fill="#22c55e"> PASS </text><text x="180" y="478" fill="#94a3b8">src/__tests__/App.test.jsx</text>
+    <text x="110" y="502" fill="#22c55e"> PASS </text><text x="180" y="502" fill="#94a3b8">src/__tests__/utils.test.js</text>
+    <text x="110" y="526" fill="#22c55e"> PASS </text><text x="180" y="526" fill="#94a3b8">src/__tests__/api.test.js</text>
+    <text x="110" y="558" fill="#22c55e">Tests:</text><text x="180" y="558" fill="#e2e8f0"> 12 passed, 12 total</text>
+    <text x="110" y="582" fill="#22c55e">$</text>
+    <rect x="125" y="572" width="8" height="14" fill="#22d3ee" opacity="0.7"/>
+  </g>
+</svg>

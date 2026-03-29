@@ -742,8 +742,13 @@ function HomePage({ articles, onSelect, onSection }) {
   return (
     <div className="home-page">
       {hero ? (
-        <section className="home-hero" onClick={() => onSelect(hero)}>
+        <section className={`home-hero${hero.coverImage?.src ? " home-hero--has-cover" : ""}`} onClick={() => onSelect(hero)}>
           <div className="home-hero__aurora" aria-hidden="true" />
+          {hero.coverImage?.src ? (
+            <div className="home-hero__visual">
+              <img src={resolveMediaSrc(hero.coverImage.src)} alt={hero.coverImage.alt} loading="eager" />
+            </div>
+          ) : null}
           <div className="home-hero__content">
             <span className="home-hero__label">最新ニュース</span>
             <h2 className="home-hero__title">{hero.title}</h2>
@@ -768,7 +773,12 @@ function HomePage({ articles, onSelect, onSection }) {
             </div>
             <div className="home-cards">
               {recentNews.map((a) => (
-                <article key={a.id} className="home-card" onClick={() => onSelect(a)}>
+                <article key={a.id} className={`home-card${a.coverImage?.src ? " home-card--has-thumb" : ""}`} onClick={() => onSelect(a)}>
+                  {a.coverImage?.src ? (
+                    <div className="home-card__thumb">
+                      <img src={resolveMediaSrc(a.coverImage.src)} alt={a.coverImage.alt} loading="lazy" />
+                    </div>
+                  ) : null}
                   <span className="home-card__category">{CATEGORIES[a.category]?.label}</span>
                   <h3 className="home-card__title">{a.title}</h3>
                   <span className="home-card__date">{a.newsDate ?? a.date}</span>

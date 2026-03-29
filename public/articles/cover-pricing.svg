@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+    <linearGradient id="bar3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="bar4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <!-- Grid lines -->
+  <g stroke="#334155" stroke-width="0.5" opacity="0.3">
+    <line x1="150" y1="150" x2="150" y2="550"/>
+    <line x1="150" y1="550" x2="1050" y2="550"/>
+    <line x1="150" y1="450" x2="1050" y2="450" stroke-dasharray="4"/>
+    <line x1="150" y1="350" x2="1050" y2="350" stroke-dasharray="4"/>
+    <line x1="150" y1="250" x2="1050" y2="250" stroke-dasharray="4"/>
+    <line x1="150" y1="150" x2="1050" y2="150" stroke-dasharray="4"/>
+  </g>
+  <!-- Bars -->
+  <rect x="200" y="200" width="80" height="350" rx="4" fill="url(#bar1)" opacity="0.85"/>
+  <rect x="340" y="280" width="80" height="270" rx="4" fill="url(#bar2)" opacity="0.85"/>
+  <rect x="480" y="180" width="80" height="370" rx="4" fill="url(#bar3)" opacity="0.85"/>
+  <rect x="620" y="320" width="80" height="230" rx="4" fill="url(#bar1)" opacity="0.85"/>
+  <rect x="760" y="250" width="80" height="300" rx="4" fill="url(#bar4)" opacity="0.85"/>
+  <rect x="900" y="350" width="80" height="200" rx="4" fill="url(#bar2)" opacity="0.85"/>
+  <!-- Labels -->
+  <text x="240" y="580" text-anchor="middle" fill="#94a3b8" font-size="12" font-family="system-ui">Claude</text>
+  <text x="380" y="580" text-anchor="middle" fill="#94a3b8" font-size="12" font-family="system-ui">Cursor</text>
+  <text x="520" y="580" text-anchor="middle" fill="#94a3b8" font-size="12" font-family="system-ui">Codex</text>
+  <text x="660" y="580" text-anchor="middle" fill="#94a3b8" font-size="12" font-family="system-ui">Copilot</text>
+  <text x="800" y="580" text-anchor="middle" fill="#94a3b8" font-size="12" font-family="system-ui">Windsurf</text>
+  <text x="940" y="580" text-anchor="middle" fill="#94a3b8" font-size="12" font-family="system-ui">Gemini</text>
+  <!-- Comparison line -->
+  <path d="M200 200 Q340 260 480 180 Q620 300 760 250 Q900 330 980 350" fill="none" stroke="#f59e0b" stroke-width="2" opacity="0.5" stroke-dasharray="6"/>
+  <!-- Glows -->
+  <circle cx="240" cy="200" r="40" fill="#3b82f6" opacity="0.08"/>
+  <circle cx="520" cy="180" r="50" fill="#8b5cf6" opacity="0.08"/>
+</svg>

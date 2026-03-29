@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <!-- Neural network nodes -->
+  <circle cx="200" cy="200" r="8" fill="#3b82f6" opacity="0.8"/>
+  <circle cx="200" cy="340" r="8" fill="#3b82f6" opacity="0.8"/>
+  <circle cx="200" cy="480" r="8" fill="#3b82f6" opacity="0.8"/>
+  <circle cx="450" cy="150" r="10" fill="#22d3ee" opacity="0.7"/>
+  <circle cx="450" cy="270" r="10" fill="#22d3ee" opacity="0.7"/>
+  <circle cx="450" cy="400" r="10" fill="#22d3ee" opacity="0.7"/>
+  <circle cx="450" cy="530" r="10" fill="#22d3ee" opacity="0.7"/>
+  <circle cx="700" cy="220" r="10" fill="#8b5cf6" opacity="0.7"/>
+  <circle cx="700" cy="340" r="10" fill="#8b5cf6" opacity="0.7"/>
+  <circle cx="700" cy="460" r="10" fill="#8b5cf6" opacity="0.7"/>
+  <circle cx="950" cy="280" r="12" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="950" cy="400" r="12" fill="#f59e0b" opacity="0.8"/>
+  <!-- Connections -->
+  <g stroke="url(#accent)" stroke-width="1" opacity="0.25">
+    <line x1="208" y1="200" x2="440" y2="150"/>
+    <line x1="208" y1="200" x2="440" y2="270"/>
+    <line x1="208" y1="340" x2="440" y2="270"/>
+    <line x1="208" y1="340" x2="440" y2="400"/>
+    <line x1="208" y1="480" x2="440" y2="400"/>
+    <line x1="208" y1="480" x2="440" y2="530"/>
+    <line x1="460" y1="150" x2="690" y2="220"/>
+    <line x1="460" y1="270" x2="690" y2="220"/>
+    <line x1="460" y1="270" x2="690" y2="340"/>
+    <line x1="460" y1="400" x2="690" y2="340"/>
+    <line x1="460" y1="400" x2="690" y2="460"/>
+    <line x1="460" y1="530" x2="690" y2="460"/>
+    <line x1="710" y1="220" x2="938" y2="280"/>
+    <line x1="710" y1="340" x2="938" y2="280"/>
+    <line x1="710" y1="340" x2="938" y2="400"/>
+    <line x1="710" y1="460" x2="938" y2="400"/>
+  </g>
+  <!-- Decorative arcs -->
+  <ellipse cx="600" cy="340" rx="500" ry="280" fill="none" stroke="url(#accent)" stroke-width="0.5" opacity="0.08"/>
+  <ellipse cx="600" cy="340" rx="400" ry="220" fill="none" stroke="#8b5cf6" stroke-width="0.5" opacity="0.06"/>
+  <!-- Glow -->
+  <circle cx="450" cy="270" r="60" fill="url(#purple)" opacity="0.5"/>
+  <circle cx="700" cy="340" r="80" fill="url(#purple)" opacity="0.4"/>
+</svg>
