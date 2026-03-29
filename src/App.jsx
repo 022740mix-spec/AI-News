@@ -510,7 +510,7 @@ function syncAppUrl({ articleId, siteSection, tagQuery, guideTab, toolTab, usePu
 }
 
 /* ══ ハンバーガーメニュー ══ */
-function HamburgerMenu({ isOpen, onClose, onSection, currentSection }) {
+function HamburgerMenu({ isOpen, onClose, onSection, currentSection, searchRef }) {
   const menuItems = [
     { id: "home", label: "ホーム" },
     { id: "articles", label: "ニュース" },
@@ -526,8 +526,16 @@ function HamburgerMenu({ isOpen, onClose, onSection, currentSection }) {
     <>
       <div className="hamburger-overlay" onClick={onClose} />
       <nav className="hamburger-drawer" aria-label="メインメニュー">
-        <button className="hamburger-close" onClick={onClose} aria-label="閉じる">✕</button>
-        <div className="hamburger-drawer-title">Menu</div>
+        <div className="hamburger-drawer__header">
+          <button className="hamburger-close" onClick={onClose} aria-label="閉じる">✕</button>
+          <button
+            className="hamburger-search"
+            onClick={() => { onClose(); setTimeout(() => searchRef?.current?.focus(), 100); }}
+            aria-label="検索"
+          >
+            🔍
+          </button>
+        </div>
         <ul className="hamburger-list">
           {menuItems.map(item => (
             <li key={item.id}>
@@ -536,13 +544,14 @@ function HamburgerMenu({ isOpen, onClose, onSection, currentSection }) {
                 onClick={() => { onSection(item.id); onClose(); }}
               >
                 <span className="hamburger-item__label">{item.label}</span>
+                <span className="hamburger-item__arrow">›</span>
               </button>
             </li>
           ))}
         </ul>
         <div className="hamburger-footer">
-          個人情報は収集しません。<br />
-          データは公開情報に基づきます。
+          AI開発ツール最新情報<br />
+          <span className="hamburger-footer__sub">広告なし・個人情報収集なし</span>
         </div>
       </nav>
     </>
@@ -2852,6 +2861,7 @@ const [showFab, setShowFab] = useState(false);
               onClose={closeMenu}
               onSection={(section) => { switchSection(section); }}
               currentSection={siteSection}
+              searchRef={searchRef}
             />
             {siteSection !== "home" ? (
               <>
@@ -2897,6 +2907,7 @@ const [showFab, setShowFab] = useState(false);
               onClose={closeMenu}
               onSection={(section) => { setSelected(null); switchSection(section); }}
               currentSection={siteSection}
+              searchRef={searchRef}
             />
           <ArticleDetail
             article={selected}
