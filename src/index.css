@@ -219,7 +219,12 @@ body {
 .header-inner {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 2.25rem 1.5rem 1rem;
+  padding: 4.5rem 1.5rem 1rem;
+}
+@media (max-width: 560px) {
+  .header-inner {
+    padding-top: 2rem;
+  }
 }
 
 .header-top {
