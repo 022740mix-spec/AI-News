@@ -1553,6 +1553,20 @@ function ModelComparisonSection() {
           <p>下のグラフは SWE-Bench 系を中心とした推定統合値。コーディング以外の用途（文章作成、分析等）ではスコアの順位が変わることがある。</p>
         </div>
       </details>
+      <details className="benchmark-explainer">
+        <summary className="benchmark-explainer__summary">星評価の見方（タップで開く）</summary>
+        <div className="benchmark-explainer__body">
+          <p>各ツール・モデルを5つの軸で評価し、加重平均で総合スコアを算出しています:</p>
+          <dl className="benchmark-explainer__list">
+            <dt>AI品質（30%）</dt><dd>生成コードの正確さ、推論力、コンテキスト理解</dd>
+            <dt>使いやすさ（25%）</dt><dd>セットアップの手軽さ、UI/UX、ドキュメント</dd>
+            <dt>コスパ（20%）</dt><dd>料金プランの妥当性、無料枠の充実度</dd>
+            <dt>拡張性（15%）</dt><dd>MCP・プラグイン・API 連携・カスタマイズ性</dd>
+            <dt>企業向け（10%）</dt><dd>SSO/SAML・監査ログ・IP補償・Privacy Mode</dd>
+          </dl>
+          <p>評価は公式ドキュメント・ベンチマーク・ユーザーレビューに基づき、編集部が判断しています。</p>
+        </div>
+      </details>
       <BenchmarkChart data={MODEL_COMPARISON} title="ベンチマークスコア（SWE-Bench 系・推定統合値）" />
       <div className="review-comparison-table-wrap">
         <table className="review-comparison-table">
@@ -1628,7 +1642,6 @@ function ReviewComparisonTable({ articles, category, onSelect }) {
 
 function ReviewTabBar({ reviewTab, onSelect }) {
   const tabs = [
-    { id: "all", label: "すべて" },
     { id: "models", label: "モデル" },
     ...REVIEW_CATEGORIES.map((c) => ({ id: c.id, label: c.label })),
   ];
@@ -2939,7 +2952,7 @@ export default function App() {
   const [siteSection, setSiteSection] = useState(initialRoute.siteSection);
   const [guideTab, setGuideTab] = useState(initialRoute.guideTab);
   const [toolTab, setToolTab] = useState(initialRoute.toolTab ?? "claude-code");
-  const [reviewTab, setReviewTab] = useState("all");
+  const [reviewTab, setReviewTab] = useState("models");
   const [theme, setTheme] = useState(() => localStorage.getItem(STORAGE_THEME) || "light");
 const [showFab, setShowFab] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -3351,11 +3364,11 @@ const [showFab, setShowFab] = useState(false);
                 <>
                   {siteSection === "reviews" && !query ? (
                     <div className="review-comparisons">
-                      {(reviewTab === "all" || reviewTab === "models") ? (
+                      {reviewTab === "models" ? (
                         <ModelComparisonSection />
                       ) : null}
                       {REVIEW_CATEGORIES
-                        .filter((cat) => reviewTab === "all" || reviewTab === cat.id)
+                        .filter((cat) => reviewTab === cat.id)
                         .map((cat) => (
                           <ReviewComparisonTable
                             key={cat.id}
@@ -3495,7 +3508,7 @@ const [showFab, setShowFab] = useState(false);
                 <div className="sidebar-panel">
                   <h3>レビューカテゴリ</h3>
                   <p className="sidebar-panel-hint">カテゴリを切り替えます。</p>
-                  {[{ id: "all", label: "すべて" }, { id: "models", label: "モデル比較" }, ...REVIEW_CATEGORIES.map((c) => ({ id: c.id, label: c.label }))].map((t) => (
+                  {[{ id: "models", label: "モデル比較" }, ...REVIEW_CATEGORIES.map((c) => ({ id: c.id, label: c.label }))].map((t) => (
                     <button
                       key={t.id}
                       className={`sidebar-anchor${reviewTab === t.id ? " sidebar-anchor--active" : ""}`}
