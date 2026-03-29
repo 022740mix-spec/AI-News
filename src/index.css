@@ -1292,8 +1292,11 @@ body {
   .site-title {
     font-size: 1.1rem;
   }
+  .hero-today__visual--has-cover {
+    min-height: 0;
+  }
   .hero-today__cover-img {
-    opacity: 0.25;
+    display: none;
   }
   .site-subtitle {
     font-size: 0.6rem;
