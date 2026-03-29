@@ -2433,8 +2433,10 @@ function Sidebar({ articles, onSelect, onTagClick, weekRoundups }) {
   );
 }
 
-function SeasonalScene() {
+function SeasonalScene({ accent }) {
   const season = getSeason();
+  // 春は桜色モード限定
+  if (season === "spring" && accent !== "sakura") return null;
   const scenes = { spring: SpringScene, summer: SummerScene, autumn: AutumnScene, winter: WinterScene };
   const Scene = scenes[season];
   return (
@@ -2522,22 +2524,16 @@ function getSeason() {
   return "winter";
 }
 
-function SeasonalEffect({ visible, override }) {
-  const season = override || getSeason();
+function SeasonalEffect({ visible, accent }) {
+  const season = getSeason();
   if (!visible) return null;
 
+  // 桜は桜色モード限定
+  if (season === "spring" && accent !== "sakura") return null;
   if (season === "spring") return <SpringEffect />;
   if (season === "summer") return <SummerEffect />;
   if (season === "autumn") return <AutumnEffect />;
-  if (season === "winter") return <WinterEffect />;
-  return (
-    <>
-      <SpringEffect />
-      <SummerEffect />
-      <AutumnEffect />
-      <WinterEffect />
-    </>
-  );
+  return <WinterEffect />;
 }
 
 const SAKURA_GRADIENTS = [
@@ -3523,8 +3519,8 @@ const [showFab, setShowFab] = useState(false);
         </main>
       </div>
 
-      <SeasonalEffect visible={!selected && siteSection === "home"} />
-      {!selected && siteSection === "home" && <SeasonalScene />}
+      <SeasonalEffect visible={!selected && siteSection === "home"} accent={accentId} />
+      {!selected && siteSection === "home" && <SeasonalScene accent={accentId} />}
       <ScrollTopFab
         visible={!selected && showFab}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
