@@ -1518,30 +1518,38 @@ const RATING_EXPLAINER = {
 };
 
 const MODEL_COMPARISON = [
-  { name: "Claude Opus 4.6", rating: 4.5, summary: "Anthropic 最上位。1Mコンテキスト、高度な推論とコード生成に強い。$15/$75 per 1M tokens", bench: 72 },
-  { name: "Claude Sonnet 4.6", rating: 4.0, summary: "Anthropic 中核。1Mコンテキスト、速度と品質のバランス型。日常のコーディングに最適。$3/$15", bench: 65 },
-  { name: "Claude Haiku 4.5", rating: 3.5, summary: "Anthropic 軽量。200Kコンテキスト、最速・低コスト。大量処理やチャット向け。$0.80/$4", bench: 45 },
-  { name: "GPT-5.4", rating: 4.0, summary: "OpenAI 最新。128Kコンテキスト、推論・コーディング・エージェント統合モデル。$2.50/$10", bench: 70 },
-  { name: "GPT-5.4 mini", rating: 3.5, summary: "OpenAI 軽量。128Kコンテキスト、無料層でも利用可能。Codex との連携向け。$0.40/$1.60", bench: 50 },
-  { name: "GPT-4o", rating: 3.5, summary: "OpenAI 前世代。安定性が高く依然として広く利用されている。$2.50/$10", bench: 55 },
-  { name: "Gemini 3.1 Pro", rating: 4.0, summary: "Google 最上位。2Mコンテキストは業界最大。長大なコードベースの一括読み込みに強い。$1.25/$5", bench: 68 },
-  { name: "Gemini 3.1 Flash", rating: 3.5, summary: "Google 高速。1Mコンテキスト、極めて低コスト。速度重視の処理に向く。$0.075/$0.30", bench: 48 },
-  { name: "Gemini 2.5 Pro", rating: 3.5, summary: "Google 前世代。1Mコンテキスト、安定した実績。$1.25/$5", bench: 58 },
-  { name: "Kimi K2.5", rating: 4.0, summary: "Moonshot AI（中国）。1兆パラメータ MoE、256Kコンテキスト。Humanity's Last Exam で Opus 超え。オープンウェイト。", bench: 77 },
-  { name: "GLM-5", rating: 3.5, summary: "Zhipu AI（中国）。745Bパラメータ MoE、MIT ライセンス。Opus の約1/6のコスト。Huawei チップで学習。$0.80/$2.56", bench: 60 },
-  { name: "MiniMax M2.7", rating: 3.5, summary: "MiniMax（中国）。自己進化型モデル。SWE-Pro 56.2%で Opus に迫る。OpenClaw 上で自律最適化。", bench: 56 },
-  { name: "KAT-Coder Pro V2", rating: 3.5, summary: "Kwai/快手（中国）。コーディング特化 MoE。SWE-Bench 73.4%。OpenClaw 対応。$0.30/$1.20 と低コスト。", bench: 73 },
-  { name: "DeepSeek R1", rating: 4.0, summary: "DeepSeek（中国）。671B MoE 推論特化。MIT ライセンス。数学・コーディングで Opus に迫る。$0.14/$2.19 と破格。", bench: 71 },
-  { name: "Qwen 3 (235B)", rating: 4.0, summary: "Alibaba（中国）。235B MoE、Apache 2.0。ハイブリッド思考で推論/即答を切替。119言語対応。8サイズ展開。", bench: 69 },
-  { name: "ERNIE 4.5", rating: 3.5, summary: "Baidu（中国）。中国最大の検索基盤を活かした知識量。中国語特化で1億ユーザー。マルチモーダル。", bench: 55 },
-  { name: "Composer 2", rating: 4.0, summary: "Cursor 独自。Kimi K2.5 ベース＋独自 RL。CursorBench で Opus 超え。$0.50/$2.50 と低コスト。", bench: 74 },
+  { name: "Claude Opus 4.6", rating: 4.5, summary: "Anthropic 最上位。1Mコンテキスト、高度な推論とコード生成に強い。$15/$75 per 1M tokens", swe: 72, aime: 75, arc: 68, hle: 26, mmmu: 78 },
+  { name: "Claude Sonnet 4.6", rating: 4.0, summary: "Anthropic 中核。1Mコンテキスト、速度と品質のバランス型。日常のコーディングに最適。$3/$15", swe: 65, aime: 55, arc: 55, hle: 12, mmmu: 70 },
+  { name: "Claude Haiku 4.5", rating: 3.5, summary: "Anthropic 軽量。200Kコンテキスト、最速・低コスト。大量処理やチャット向け。$0.80/$4", swe: 45, aime: 30, arc: 30, mmmu: 55 },
+  { name: "GPT-5.4", rating: 4.0, summary: "OpenAI 最新。128Kコンテキスト、推論・コーディング・エージェント統合モデル。$2.50/$10", swe: 70, aime: 70, arc: 65, hle: 20, mmmu: 75 },
+  { name: "GPT-5.4 mini", rating: 3.5, summary: "OpenAI 軽量。128Kコンテキスト、無料層でも利用可能。Codex との連携向け。$0.40/$1.60", swe: 50, aime: 35, arc: 32, mmmu: 58 },
+  { name: "GPT-4o", rating: 3.5, summary: "OpenAI 前世代。安定性が高く依然として広く利用されている。$2.50/$10", swe: 55, aime: 40, arc: 42, mmmu: 69 },
+  { name: "Gemini 3.1 Pro", rating: 4.0, summary: "Google 最上位。2Mコンテキストは業界最大。長大なコードベースの一括読み込みに強い。$1.25/$5", swe: 68, aime: 65, arc: 60, hle: 18, mmmu: 72 },
+  { name: "Gemini 3.1 Flash", rating: 3.5, summary: "Google 高速。1Mコンテキスト、極めて低コスト。速度重視の処理に向く。$0.075/$0.30", swe: 48, aime: 35, arc: 33, mmmu: 56 },
+  { name: "Gemini 2.5 Pro", rating: 3.5, summary: "Google 前世代。1Mコンテキスト、安定した実績。$1.25/$5", swe: 58, aime: 50, arc: 48, mmmu: 68 },
+  { name: "Kimi K2.5", rating: 4.0, summary: "Moonshot AI（中国）。1兆パラメータ MoE、256Kコンテキスト。Humanity's Last Exam で Opus 超え。オープンウェイト。", swe: 77, aime: 70, arc: 58, hle: 28, mmmu: 73 },
+  { name: "GLM-5", rating: 3.5, summary: "Zhipu AI（中国）。745Bパラメータ MoE、MIT ライセンス。Opus の約1/6のコスト。Huawei チップで学習。$0.80/$2.56", swe: 60, aime: 45, arc: 40, mmmu: 62 },
+  { name: "MiniMax M2.7", rating: 3.5, summary: "MiniMax（中国）。自己進化型モデル。SWE-Pro 56.2%で Opus に迫る。OpenClaw 上で自律最適化。", swe: 56, aime: 40 },
+  { name: "KAT-Coder Pro V2", rating: 3.5, summary: "Kwai/快手（中国）。コーディング特化 MoE。SWE-Bench 73.4%。OpenClaw 対応。$0.30/$1.20 と低コスト。", swe: 73, aime: 35 },
+  { name: "DeepSeek R1", rating: 4.0, summary: "DeepSeek（中国）。671B MoE 推論特化。MIT ライセンス。数学・コーディングで Opus に迫る。$0.14/$2.19 と破格。", swe: 71, aime: 79, arc: 62, hle: 24, mmmu: 68 },
+  { name: "Qwen 3 (235B)", rating: 4.0, summary: "Alibaba（中国）。235B MoE、Apache 2.0。ハイブリッド思考で推論/即答を切替。119言語対応。8サイズ展開。", swe: 69, aime: 82, arc: 56, hle: 22, mmmu: 71 },
+  { name: "ERNIE 4.5", rating: 3.5, summary: "Baidu（中国）。中国最大の検索基盤を活かした知識量。中国語特化で1億ユーザー。マルチモーダル。", swe: 55, aime: 40, arc: 35, mmmu: 65 },
+  { name: "Composer 2", rating: 4.0, summary: "Cursor 独自。Kimi K2.5 ベース＋独自 RL。CursorBench で Opus 超え。$0.50/$2.50 と低コスト。", swe: 74, aime: 60, arc: 50 },
+];
+
+const BENCHMARK_CONFIGS = [
+  { key: "swe", label: "SWE-Bench", title: "SWE-Bench（コーディング能力）", desc: "実際のバグ修正ができるか" },
+  { key: "aime", label: "AIME", title: "AIME（数学的推論）", desc: "数学オリンピックレベルの問題を解けるか" },
+  { key: "arc", label: "ARC-AGI", title: "ARC-AGI（適応的推論力）", desc: "初めて見る問題に対応できるか" },
+  { key: "hle", label: "HLE", title: "Humanity's Last Exam（学術的推論）", desc: "専門家レベルの難問に答えられるか" },
+  { key: "mmmu", label: "MMMU", title: "MMMU（視覚的理解力）", desc: "画像やグラフを理解できるか" },
 ];
 
 /** ベンチマークスコアの横棒グラフ（SVG 自動生成・グラデーション付き） */
-function BenchmarkChart({ data, title, maxScore = 100 }) {
-  const sorted = [...data].filter((d) => d.bench != null).sort((a, b) => b.bench - a.bench);
+function BenchmarkChart({ data, title, maxScore = 100, scoreKey = "bench" }) {
+  const sorted = [...data].filter((d) => d[scoreKey] != null).sort((a, b) => b[scoreKey] - a[scoreKey]);
   if (sorted.length === 0) return null;
-  const topScore = sorted[0].bench;
+  const topScore = sorted[0][scoreKey];
   const companyColors = {
     "Claude": ["#6366f1", "#a78bfa"],
     "GPT": ["#10b981", "#34d399"],
@@ -1550,6 +1558,10 @@ function BenchmarkChart({ data, title, maxScore = 100 }) {
     "GLM": ["#ef4444", "#f87171"],
     "MiniMax": ["#ec4899", "#f472b6"],
     "KAT": ["#14b8a6", "#2dd4bf"],
+    "DeepSeek": ["#8b5cf6", "#a78bfa"],
+    "Qwen": ["#f97316", "#fb923c"],
+    "ERNIE": ["#06b6d4", "#22d3ee"],
+    "Composer": ["#7c3aed", "#a78bfa"],
   };
   const getColors = (name) => {
     for (const [key, val] of Object.entries(companyColors)) {
@@ -1570,9 +1582,9 @@ function BenchmarkChart({ data, title, maxScore = 100 }) {
         </div>
         <div className="benchmark-chart__bars">
           {sorted.map((d, i) => {
-            const pct = (d.bench / maxScore) * 100;
+            const pct = (d[scoreKey] / maxScore) * 100;
             const [c1, c2] = getColors(d.name);
-            const isTop = d.bench === topScore;
+            const isTop = d[scoreKey] === topScore;
             return (
               <div key={d.name} className="bench-row" style={{ animationDelay: `${i * 60}ms` }}>
                 <span className="bench-row__label">{d.name}</span>
@@ -1584,7 +1596,7 @@ function BenchmarkChart({ data, title, maxScore = 100 }) {
                       background: `linear-gradient(90deg, ${c1}, ${c2})`,
                     }}
                   />
-                  <span className={`bench-row__score${isTop ? " bench-row__score--top" : ""}`}>{d.bench}</span>
+                  <span className={`bench-row__score${isTop ? " bench-row__score--top" : ""}`}>{d[scoreKey]}</span>
                 </div>
               </div>
             );
@@ -1641,7 +1653,9 @@ function VerticalBarChart({ chart }) {
 }
 
 function ModelComparisonSection() {
+  const [benchTab, setBenchTab] = useState("swe");
   const sorted = [...MODEL_COMPARISON].sort((a, b) => b.rating - a.rating);
+  const activeBench = BENCHMARK_CONFIGS.find((c) => c.key === benchTab) || BENCHMARK_CONFIGS[0];
   return (
     <section className="review-comparison-section">
       <h2 className="section-feed__title">AI モデル比較</h2>
@@ -1651,15 +1665,30 @@ function ModelComparisonSection() {
         <div className="benchmark-explainer__body">
           <p>ベンチマークは AI モデルの性能を同じ基準で比較するためのテスト。測る対象によって種類が異なる:</p>
           <dl className="benchmark-explainer__list">
-            <dt>SWE-Bench</dt><dd>実際のバグ修正ができるか（コーディング能力）</dd>
-            <dt>ARC-AGI</dt><dd>初めて見る問題に対応できるか（適応的推論力）</dd>
-            <dt>Humanity{"'"}s Last Exam</dt><dd>専門家レベルの難問に答えられるか（学術的推論）</dd>
-            <dt>MMMU</dt><dd>画像やグラフを理解できるか（視覚的理解力）</dd>
+            {BENCHMARK_CONFIGS.map((c) => (
+              <Fragment key={c.key}><dt>{c.label}</dt><dd>{c.desc}</dd></Fragment>
+            ))}
           </dl>
-          <p>下のグラフは SWE-Bench 系を中心とした推定統合値。コーディング以外の用途（文章作成、分析等）ではスコアの順位が変わることがある。</p>
+          <p>下のタブでベンチマーク指標を切り替えられます。指標によってモデルの順位が大きく変わるため、用途に合った指標を参考にしてください。</p>
         </div>
       </details>
-      <BenchmarkChart data={MODEL_COMPARISON} title="ベンチマークスコア（SWE-Bench 系・推定統合値）" />
+      <nav className="filter-nav" aria-label="ベンチマーク指標">
+        <div className="filter-nav-inner" role="tablist">
+          {BENCHMARK_CONFIGS.map((c) => (
+            <button
+              key={c.key}
+              type="button"
+              role="tab"
+              aria-selected={benchTab === c.key}
+              className={`filter-tab${benchTab === c.key ? " is-active" : ""}`}
+              onClick={() => setBenchTab(c.key)}
+            >
+              {c.label}
+            </button>
+          ))}
+        </div>
+      </nav>
+      <BenchmarkChart data={MODEL_COMPARISON} title={activeBench.title} scoreKey={activeBench.key} />
       <RatingExplainer categoryId="models" />
       <div className="review-comparison-table-wrap">
         <table className="review-comparison-table">
