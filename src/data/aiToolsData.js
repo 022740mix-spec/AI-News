@@ -241,6 +241,7 @@ export const ARTICLES = [
   },
   {
     "id": "kat-coder-pro-v2-2026",
+    "coverImage": { "src": "logos/kwai.svg", "alt": "KAT-Coder Pro V2" },
     "type": "news",
     "category": "model",
     "title": "Kwai（快手）、コーディング特化モデル KAT-Coder Pro V2 を公開 — SWE-Bench 73.4%、OpenClaw 対応",
