@@ -3520,7 +3520,7 @@ const [showFab, setShowFab] = useState(false);
         </main>
       </div>
 
-      <SeasonalEffect visible={!selected && siteSection === "home"} override="all" />
+      <SeasonalEffect visible={!selected && siteSection === "home"} />
       {!selected && siteSection === "home" && <SeasonalScene />}
       <ScrollTopFab
         visible={!selected && showFab}
