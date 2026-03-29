@@ -44,7 +44,7 @@ export const ARTICLES = [
   {
     "id": "supabase-pgvector-0-8-2026",
     "type": "news",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=450&fit=crop&q=80", "alt": "データベース" },
+    "coverImage": { "src": "logos/supabase.svg", "alt": "Supabase" },
     "category": "data",
     "title": "Supabase が pgvector 0.8 を標準搭載 — HNSW インデックス性能が3倍に、RAG 構築がさらに手軽に",
     "excerpt": "Supabase が pgvector 0.8 へのアップグレードを全プロジェクトに展開。HNSW インデックスのビルド速度が3倍に向上し、100万ベクトル規模の検索が PostgreSQL 上で実用的に。無料枠でも利用可能。",

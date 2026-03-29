@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1c1c"/>
+      <stop offset="100%" stop-color="#171717"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <text x="400" y="205" text-anchor="middle" fill="#3ecf8e" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="600" letter-spacing="0.02em">Supabase</text>
+  <text x="400" y="260" text-anchor="middle" fill="#c9c9c9" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="300" opacity="0.5">pgvector · PostgreSQL</text>
+</svg>
