@@ -968,7 +968,7 @@ body {
   padding-bottom: 60vh;
 }
 .tool-ref-group__title {
-  font-size: var(--text-base);
+  font-size: var(--text-lg);
   font-weight: 700;
   color: var(--text);
   margin: 0 0 0.6rem;
@@ -986,6 +986,7 @@ body {
 
 .glossary-dl__term {
   margin: 0;
+  font-size: var(--text-base);
   font-weight: 700;
   color: var(--text);
   line-height: 1.45;
@@ -1277,7 +1278,7 @@ body {
     font-size: 0.7rem;
   }
   .glossary-dl__term {
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     word-break: break-all;
   }
   .guide-section__title {
