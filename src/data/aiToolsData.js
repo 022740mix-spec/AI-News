@@ -2720,7 +2720,7 @@ export const ARTICLES = [
   },
   {
     "id": "openai-codex-agent",
-    "coverImage": { "src": "logos/openai.svg", "alt": "OpenAI" },
+    "coverImage": { "src": "logos/codex.svg", "alt": "Codex" },
     "type": "review",
     "rating": 3,
     "ratings": {"AI品質":4,"使いやすさ":3,"コスパ":2,"拡張性":3,"企業向け":4},
