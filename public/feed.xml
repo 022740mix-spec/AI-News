@@ -936,20 +936,28 @@
     <summary>Black Forest Labs の画像生成モデル。フォトリアル系で品質と速度のバランスが良く、API・パートナー経由で利用可能。LoRA によるカスタマイズにも対応。</summary>
   </entry>
   <entry>
-    <title>GenSpark レビュー — エージェント型AI検索、Sparkpages で情報を自動構造化</title>
+    <title>GenSpark レビュー — 目的別エージェントの集合体、スライド・議事録・検索を一箇所に</title>
     <link rel="alternate" type="text/html" href="?a=genspark-review"/>
     <id>tag:ai-tool-news.jp,2026:genspark-review</id>
     <published>2026-03-01T15:00:00Z</published>
     <updated>2026-03-01T15:00:00Z</updated>
-    <summary>検索クエリに対してAIエージェントがWebを調査し、Sparkpages と呼ばれる構造化ページを自動生成。無料で利用可能。広告なしのクリーンな体験。</summary>
+    <summary>検索だけでなく、スライド生成・AI議事録・旅行計画など目的ごとに専用エージェントが分かれたユニークな構造。Sparkpages による情報構造化と合わせ、汎用AI検索とは一線を画す。無料。</summary>
   </entry>
   <entry>
-    <title>Perplexity AI レビュー — AI検索の先駆者、ソース引用付きで信頼性の高い回答</title>
+    <title>Perplexity AI レビュー — リファレンス重視のAI検索、全回答にソース引用を徹底</title>
     <link rel="alternate" type="text/html" href="?a=perplexity-review"/>
     <id>tag:ai-tool-news.jp,2026:perplexity-review</id>
     <published>2026-03-01T15:00:00Z</published>
     <updated>2026-03-01T15:00:00Z</updated>
-    <summary>AI検索エンジンの代名詞。ソース引用付きの回答、Pro Search による深い調査、API 提供など、検索のAI化をリードする存在。無料枠あり、$20/月。</summary>
+    <summary>AI検索の代名詞。回答の全段落にソース引用を付与し、NotebookLM 的な「根拠を確認できる」体験を検索に持ち込んだ。Pro Search で深い調査も可能。無料枠あり、$20/月。</summary>
+  </entry>
+  <entry>
+    <title>NotebookLM レビュー — Google発、アップロード資料に基づくAIリサーチ＆ポッドキャスト生成</title>
+    <link rel="alternate" type="text/html" href="?a=notebooklm-review"/>
+    <id>tag:ai-tool-news.jp,2026:notebooklm-review</id>
+    <published>2026-03-01T15:00:00Z</published>
+    <updated>2026-03-01T15:00:00Z</updated>
+    <summary>PDFや論文をアップロードすると、その資料だけを根拠に回答・要約・音声ポッドキャストを生成。ハルシネーションを構造的に抑えるリファレンス特化型AI。無料。</summary>
   </entry>
   <entry>
     <title>Cline レビュー — 承認フロー付きのOSS AIエージェント</title>
