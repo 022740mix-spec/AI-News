@@ -458,6 +458,7 @@ export const ARTICLES = [
   {
     "id": "gemini-31-flash-live-voice-2026",
     "type": "news",
+    "coverImage": { "src": "logos/gemini.svg", "alt": "Gemini" },
     "category": "model",
     "title": "Google、Gemini 3.1 Flash Live を公開 — 応答 0.5 秒以下のリアルタイム音声 AI",
     "excerpt": "Google DeepMind が Gemini 3.1 Flash Live を開発者プレビューとして公開した。従来の「音声認識→推論→音声合成」の3段階を1つのモデルに統合し、応答遅延を 0.5 秒以下に短縮。90以上の言語に対応し、Python スクリプト1本で受付や問い合わせ対応を構築できるとされる。コールセンター業界への影響が注目されている。",
@@ -2499,7 +2500,7 @@ export const ARTICLES = [
   },
   {
     "id": "gemini-cli-v035",
-    "coverImage": { "src": "logos/google.svg", "alt": "Google" },
+    "coverImage": { "src": "logos/gemini.svg", "alt": "Gemini" },
     "type": "news",
     "category": "cli",
     "title": "Gemini CLI v0.35.0 — サブエージェント強化とPlan Mode追加、無料枠は縮小へ",
@@ -2577,6 +2578,7 @@ export const ARTICLES = [
   {
     "id": "gemini-3-1-pro",
     "type": "news",
+    "coverImage": { "src": "logos/gemini.svg", "alt": "Gemini" },
     "category": "model",
     "title": "Gemini 3.1 Pro 発表 — ARC-AGI-2スコア77.1%、推論性能が前世代の倍以上に",
     "excerpt": "Google DeepMindが3月26日にプレビュー公開。1Mトークンコンテキスト、推論ベンチマーク大幅向上。価格は据え置きで開発者・企業向けに順次展開。",

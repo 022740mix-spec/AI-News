@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <radialGradient id="bg" cx="40%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="50%" stop-color="#1a237e"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </radialGradient>
+    <linearGradient id="gem" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4285f4"/>
+      <stop offset="35%" stop-color="#9b72cb"/>
+      <stop offset="70%" stop-color="#d96570"/>
+      <stop offset="100%" stop-color="#d96570"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <text x="400" y="215" text-anchor="middle" fill="url(#gem)" font-family="system-ui, -apple-system, sans-serif" font-size="60" font-weight="300" letter-spacing="0.08em">Gemini</text>
+  <text x="400" y="268" text-anchor="middle" fill="#8b949e" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="400" opacity="0.6">Google</text>
+</svg>

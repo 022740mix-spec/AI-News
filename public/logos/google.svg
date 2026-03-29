@@ -6,9 +6,7 @@
     </linearGradient>
   </defs>
   <rect width="800" height="450" fill="url(#bg)"/>
-  <text x="400" y="200" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="300" letter-spacing="0.1em">
+  <text x="400" y="230" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="300" letter-spacing="0.08em">
     <tspan fill="#4285f4">G</tspan><tspan fill="#ea4335">o</tspan><tspan fill="#fbbc05">o</tspan><tspan fill="#4285f4">g</tspan><tspan fill="#34a853">l</tspan><tspan fill="#ea4335">e</tspan>
   </text>
-  <text x="400" y="260" text-anchor="middle" fill="#8b949e" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="600" opacity="0.7">Gemini</text>
-  <line x1="320" y1="290" x2="480" y2="290" stroke="#4285f4" stroke-width="1" opacity="0.3"/>
 </svg>
