@@ -2022,14 +2022,16 @@ export const TOOL_REFERENCES = [
     ref: {
       id: "ref-codex",
       title: "Codex（OpenAI）日常リファレンス",
-      lead: "OpenAI が提供するクラウド型 AI コーディングエージェント。ローカルではなくクラウド上の隔離環境（サンドボックス）で実行される点が最大の特徴。公式は https://openai.com/index/introducing-codex/ を参照。",
+      lead: "OpenAI が提供する AI コーディングエージェント。デスクトップアプリ・ブラウザ・CLI・IDE 拡張の4形態で提供されている。クラウド上のサンドボックスで安全に実行される点が最大の特徴。バックエンドには GPT-5.x-Codex（コーディング特化モデル）が使われる。公式は https://openai.com/codex/ を参照。",
       terms: [
         // ── 使い方の種類 ──
-        { word: "A. ChatGPT の画面から Codex を使う", section: "使い方の種類", mean: "ChatGPT（chat.openai.com）の画面左側に「Codex」メニューがある。ここからタスクを投げてクラウド上で実行させる方法。ブラウザだけで完結するので、ターミナルに慣れていない人向け。" },
-        { word: "B. ターミナルから CLI で使う", section: "使い方の種類", mean: "ターミナルで `codex` コマンドを使う方法。Claude Code と同じ感覚で操作できる。ローカルのプロジェクトフォルダで起動するが、実際の処理はクラウド上で行われる。" },
-        { word: "==C. Cursor / VS Code 内で使う==", section: "使い方の種類", mean: "Cursor や VS Code の統合ターミナルから `codex` を起動する。エディタで確認しながらタスクを投げられる。Claude Code との併用も可能。" },
+        { word: "A. デスクトップアプリで使う", section: "使い方の種類", mean: "Codex の専用アプリ（macOS / Windows）を起動して使う。独自の画面でファイルツリーやチャットが見える。マウス操作で感覚的に使いたい人向け。ターミナルに慣れていない人はここから始めるとよい。" },
+        { word: "B. ChatGPT の画面から使う（Web）", section: "使い方の種類", mean: "ChatGPT（chatgpt.com）の画面左側に「Codex」メニューがある。ここからタスクを投げてクラウド上で実行させる方法。ブラウザだけで完結する。ChatGPT Plus 以上のプランが必要。" },
+        { word: "C. ターミナルから CLI で使う", section: "使い方の種類", mean: "ターミナルで `codex` コマンドを使う方法。Claude Code と同じ感覚で操作できる。オープンソース（GitHub: openai/codex）で公開されており、`npm install -g @openai/codex` でインストールする。" },
+        { word: "D. IDE 拡張機能で使う", section: "使い方の種類", mean: "VS Code・Cursor・Windsurf・JetBrains IDE 向けの Codex 拡張機能をインストールして、エディタ内から直接タスクを投げられる。開いているファイルのコンテキストを自動で認識する。" },
+        { word: "どの方法でも共通", section: "使い方の種類", mean: "処理はクラウドのサンドボックス上で実行される。ローカルのファイルに直接触れないため安全性が高い。結果は PR（Pull Request）として GitHub に提出される。" },
         // ── 基本操作 ──
-        { word: "起動: `codex`", section: "基本操作", mean: "ターミナルで対話セッションを開始する。Claude Code と同じようにプロジェクトのフォルダに `cd` で移動してから実行する。ファイル操作はクラウドのサンドボックス上で行われる。", code: "cd C:\\Users\\あなた\\Projects\\my-app\ncodex", codeLang: "bash" },
+        { word: "起動: `codex`（CLI の場合）", section: "基本操作", mean: "ターミナルで対話セッションを開始する。Claude Code と同じようにプロジェクトのフォルダに `cd` で移動してから実行する。ファイル操作はクラウドのサンドボックス上で行われる。", code: "cd C:\\Users\\あなた\\Projects\\my-app\ncodex", codeLang: "bash" },
         { word: "自動実行: `--full-auto`", section: "基本操作", mean: "確認なしで自動実行するモード。サンドボックス（隔離環境）内で動作するためローカルファイルが直接壊れるリスクは低いが、結果のレビューは必須。", code: "codex --full-auto \"テストを書いて全部パスさせて\"", codeLang: "bash" },
         { word: "非対話: `codex -q`（quiet モード）", section: "基本操作", mean: "質問への回答だけ返して終了する。CI（自動化パイプライン）やスクリプトからの利用に向く。", code: "codex -q \"このエラーの原因を説明して\"", codeLang: "bash" },
         { word: "セッション再開", section: "基本操作", mean: "Codex も `codex --continue` で直近のセッションを再開できる。Claude Code の `-c` と同じ機能。", code: "codex --continue", codeLang: "bash" },
@@ -2040,8 +2042,8 @@ export const TOOL_REFERENCES = [
         // ── クラウド実行 ──
         { word: "サンドボックスとは", section: "クラウド実行", mean: "Codex が動く隔離されたクラウド環境のこと。自分の PC のファイルには直接触れず、クラウド上にプロジェクトのコピーを作って作業する。万が一 Codex が暴走しても PC のファイルは無事。" },
         { word: "並列タスク実行", section: "クラウド実行", mean: "複数のタスクをクラウド上で同時に走らせられる。例えば「機能Aの実装」と「機能Bのテスト」を並行で依頼できる。それぞれが独立した PR として返ってくる。" },
-        { word: "タスクの進捗確認", section: "クラウド実行", mean: "投げたタスクの進捗は ChatGPT の画面（Codex メニュー）で確認できる。「Working」「Completed」「Failed」のステータスが表示される。完了すると PR のリンクが出る。" },
-        { word: "タスクのキャンセル", section: "クラウド実行", mean: "実行中のタスクは ChatGPT の Codex 画面からキャンセルできる。間違ったタスクを投げてしまったときに使う。" },
+        { word: "タスクの進捗確認", section: "クラウド実行", mean: "投げたタスクの進捗は Codex アプリや ChatGPT の Codex メニューで確認できる。「Working」「Completed」「Failed」のステータスが表示される。完了すると PR のリンクが出る。" },
+        { word: "タスクのキャンセル", section: "クラウド実行", mean: "実行中のタスクは Codex アプリまたは ChatGPT の Codex 画面からキャンセルできる。間違ったタスクを投げてしまったときに使う。" },
         // ── PR ワークフロー ──
         { word: "PR（Pull Request）のレビュー方法", section: "PR ワークフロー", mean: "Codex がタスクを完了すると GitHub に PR が作られる。GitHub 上で差分（何が変わったか）を確認し、問題なければマージ（取り込み）する。==必ず差分を確認してからマージすること==。" },
         { word: "PR にコメントでフィードバック", section: "PR ワークフロー", mean: "PR の差分で気になる箇所があれば、GitHub 上でコメントを残すと Codex がそのフィードバックを読んで修正してくれる。「この関数名をもっとわかりやすくして」のように書く。" },
@@ -2056,7 +2058,7 @@ export const TOOL_REFERENCES = [
         { word: "Copilot Workspace との違い", section: "他ツールとの比較", mean: "Copilot Workspace は GitHub Issue から直接コードを生成する GitHub の機能。Codex は ChatGPT から使う OpenAI の機能。どちらも PR を作る点は同じだが、入口が違う。" },
         // ── 実践Tips ──
         { word: "サンドボックスの制限を理解する", section: "実践Tips", mean: "インターネットアクセスが制限される場合がある。外部 API を呼ぶコードのテストはローカルで別途行う。実行時間にも上限がある。サンドボックスに入っていないツール（特殊なライブラリ等）は使えない。" },
-        { word: "ChatGPT との使い分け", section: "実践Tips", mean: "ChatGPT は質問・相談向け（会話型）。Codex はコードの実行・編集向け（タスク型）。「このエラーの意味は？」→ ChatGPT、「このバグを直して PR にして」→ Codex。" },
+        { word: "ChatGPT との使い分け", section: "実践Tips", mean: "ChatGPT は質問・相談向け（会話型）。Codex はコードの実行・編集向け（タスク型）。「このエラーの意味は？」→ ChatGPT、「このバグを直して PR にして」→ Codex。デスクトップアプリでは両方がシームレスに使える。" },
         { word: "複数タスクの依存関係に注意", section: "実践Tips", mean: "並列で投げるタスクは互いに依存しないものを選ぶ。「機能 A の実装」と「機能 B のテスト」は OK。「機能 A の実装」と「機能 A のテスト」は A が完了してから B を投げる。" },
         { word: "==失敗したタスクへの対処==", section: "実践Tips", mean: "タスクが Failed になった場合、エラーログを確認できる。原因の多くは指示が曖昧、サンドボックスに必要なツールがない、テストが通らない、の3つ。指示を具体的に書き直して再実行する。" },
         // ── 効果的な使い方 ──
