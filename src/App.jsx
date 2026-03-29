@@ -899,6 +899,7 @@ function HomePage({ articles, onSelect, onSection }) {
           </div>
         </section>
       </div>
+      <SeasonalScene />
     </div>
   );
 }
@@ -2430,6 +2431,128 @@ function Sidebar({ articles, onSelect, onTagClick, weekRoundups }) {
         </div>
       </div>
     </aside>
+  );
+}
+
+function SeasonalScene() {
+  // TODO: 確認後に getSeason() に戻す
+  return (<><SpringScene /><SummerScene /><AutumnScene /><WinterScene /></>);
+}
+
+function SpringScene() {
+  return (
+    <svg className="seasonal-scene" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+      {/* 桜の木 */}
+      <rect x="380" y="100" width="12" height="100" rx="3" fill="#8B6F47" />
+      <rect x="365" y="140" width="8" height="40" rx="2" fill="#7D6140" transform="rotate(-30 365 140)" />
+      <rect x="405" y="130" width="7" height="35" rx="2" fill="#7D6140" transform="rotate(25 405 130)" />
+      {/* 花の塊 */}
+      {[[386,55],[360,70],[410,65],[340,85],[420,80],[375,40],[400,45],[350,60],[415,55],[385,80],[365,95],[405,90]].map(([cx,cy],i) => (
+        <circle key={i} cx={cx} cy={cy} r={12+Math.sin(i)*4} fill={i%3===0?"#fce7f3":i%3===1?"#f9a8d4":"#fbcfe8"} opacity={0.7+Math.sin(i)*0.2} />
+      ))}
+      {/* 地面 */}
+      <ellipse cx="386" cy="200" rx="80" ry="8" fill="#4ade80" opacity="0.15" />
+      {/* 散った花びら */}
+      {[[320,185],[440,190],[300,195],[460,188],[350,192]].map(([x,y],i) => (
+        <ellipse key={`g${i}`} cx={x} cy={y} rx="3" ry="2" fill="#f9a8d4" opacity="0.4" transform={`rotate(${i*40} ${x} ${y})`} />
+      ))}
+    </svg>
+  );
+}
+
+function SummerScene() {
+  return (
+    <svg className="seasonal-scene" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+      {/* 入道雲 */}
+      <circle cx="650" cy="30" r="30" fill="white" opacity="0.08" />
+      <circle cx="680" cy="25" r="25" fill="white" opacity="0.06" />
+      <circle cx="665" cy="15" r="20" fill="white" opacity="0.07" />
+      {/* 木1 */}
+      <rect x="200" y="110" width="10" height="90" rx="3" fill="#6B4226" />
+      {[[205,50],[185,65],[225,60],[195,40],[215,45],[175,80],[235,75],[205,30]].map(([cx,cy],i) => (
+        <circle key={`t1${i}`} cx={cx} cy={cy} r={14+Math.sin(i*2)*3} fill={i%2===0?"#16a34a":"#22c55e"} opacity={0.75} />
+      ))}
+      {/* 木2 */}
+      <rect x="580" y="120" width="8" height="80" rx="3" fill="#6B4226" />
+      {[[584,65],[568,78],[600,72],[560,55],[604,58],[584,48]].map(([cx,cy],i) => (
+        <circle key={`t2${i}`} cx={cx} cy={cy} r={12+Math.cos(i)*3} fill={i%2===0?"#15803d":"#16a34a"} opacity={0.7} />
+      ))}
+      {/* 草むら */}
+      <ellipse cx="400" cy="200" rx="400" ry="12" fill="#22c55e" opacity="0.1" />
+      {/* ひまわり */}
+      <circle cx="120" cy="168" r="8" fill="#facc15" opacity="0.6" />
+      <circle cx="120" cy="168" r="4" fill="#a16207" opacity="0.5" />
+      <rect x="119" y="176" width="3" height="24" rx="1" fill="#16a34a" opacity="0.5" />
+    </svg>
+  );
+}
+
+function AutumnScene() {
+  return (
+    <svg className="seasonal-scene" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+      {/* 枯れ木 */}
+      <rect x="550" y="80" width="10" height="120" rx="2" fill="#57534e" />
+      <line x1="555" y1="100" x2="530" y2="65" stroke="#57534e" strokeWidth="4" strokeLinecap="round" />
+      <line x1="555" y1="110" x2="585" y2="75" stroke="#57534e" strokeWidth="3" strokeLinecap="round" />
+      <line x1="530" y1="65" x2="518" y2="50" stroke="#57534e" strokeWidth="2" strokeLinecap="round" />
+      <line x1="585" y1="75" x2="598" y2="60" stroke="#57534e" strokeWidth="2" strokeLinecap="round" />
+      <line x1="555" y1="130" x2="575" y2="110" stroke="#57534e" strokeWidth="2" strokeLinecap="round" />
+      {/* かぼちゃ1 */}
+      <ellipse cx="250" cy="182" rx="18" ry="15" fill="#f97316" opacity="0.8" />
+      <ellipse cx="243" cy="182" rx="8" ry="14" fill="#ea580c" opacity="0.4" />
+      <ellipse cx="257" cy="182" rx="8" ry="14" fill="#ea580c" opacity="0.4" />
+      <rect x="248" y="165" width="4" height="8" rx="2" fill="#16a34a" opacity="0.7" />
+      <path d="M247 178 L250 182 L253 178" stroke="#431407" strokeWidth="1.5" fill="none" opacity="0.6" />
+      <circle cx="245" cy="178" r="1.5" fill="#431407" opacity="0.6" />
+      <circle cx="255" cy="178" r="1.5" fill="#431407" opacity="0.6" />
+      {/* かぼちゃ2（小） */}
+      <ellipse cx="290" cy="188" rx="10" ry="9" fill="#fb923c" opacity="0.6" />
+      <rect x="288" y="178" width="3" height="5" rx="1" fill="#16a34a" opacity="0.5" />
+      {/* コウモリ */}
+      <g opacity="0.3" transform="translate(450, 40)">
+        <path d="M0 0 C-8 -5, -18 2, -22 -3 C-18 0, -12 -2, -8 2 L0 0 Z" fill="#44403c" />
+        <path d="M0 0 C8 -5, 18 2, 22 -3 C18 0, 12 -2, 8 2 L0 0 Z" fill="#44403c" />
+        <circle cx="0" cy="1" r="2" fill="#44403c" />
+      </g>
+      <g opacity="0.2" transform="translate(500, 55) scale(0.7)">
+        <path d="M0 0 C-8 -5, -18 2, -22 -3 C-18 0, -12 -2, -8 2 L0 0 Z" fill="#44403c" />
+        <path d="M0 0 C8 -5, 18 2, 22 -3 C18 0, 12 -2, 8 2 L0 0 Z" fill="#44403c" />
+        <circle cx="0" cy="1" r="2" fill="#44403c" />
+      </g>
+      {/* 月 */}
+      <circle cx="680" cy="35" r="22" fill="#fbbf24" opacity="0.12" />
+      <circle cx="688" cy="30" r="18" fill="var(--bg0)" opacity="0.9" />
+    </svg>
+  );
+}
+
+function WinterScene() {
+  return (
+    <svg className="seasonal-scene" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+      {/* クリスマスツリー */}
+      <polygon points="400,20 355,100 370,100 340,150 365,150 335,200 465,200 435,150 460,150 430,100 445,100" fill="#15803d" opacity="0.7" />
+      <polygon points="400,20 355,100 370,100 340,150 365,150 335,200 465,200 435,150 460,150 430,100 445,100" fill="#166534" opacity="0.3" />
+      <rect x="390" y="195" width="20" height="15" rx="2" fill="#78350f" opacity="0.6" />
+      {/* 星 */}
+      <polygon points="400,10 403,18 412,18 405,23 408,32 400,27 392,32 395,23 388,18 397,18" fill="#fbbf24" opacity="0.7" />
+      {/* オーナメント */}
+      {[[375,90,"#ef4444"],[425,95,"#3b82f6"],[360,135,"#fbbf24"],[440,140,"#ef4444"],[385,155,"#3b82f6"],[415,160,"#22c55e"],[395,110,"#fbbf24"],[350,170,"#ef4444"],[450,175,"#3b82f6"]].map(([cx,cy,c],i) => (
+        <circle key={i} cx={cx} cy={cy} r={3} fill={c} opacity={0.6} />
+      ))}
+      {/* ガーランド */}
+      <path d="M365 105 Q385 115 400 105 Q415 95 435 105" stroke="#fbbf24" strokeWidth="0.8" fill="none" opacity="0.4" />
+      <path d="M350 145 Q375 155 400 145 Q425 135 450 145" stroke="#ef4444" strokeWidth="0.8" fill="none" opacity="0.4" />
+      {/* 雪だるま */}
+      <circle cx="240" cy="175" r="15" fill="white" opacity="0.25" />
+      <circle cx="240" cy="155" r="10" fill="white" opacity="0.25" />
+      <circle cx="237" cy="153" r="1.5" fill="#1e293b" opacity="0.4" />
+      <circle cx="243" cy="153" r="1.5" fill="#1e293b" opacity="0.4" />
+      <line x1="237" y1="158" x2="243" y2="158" stroke="#f97316" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+      {/* プレゼント */}
+      <rect x="480" y="178" width="20" height="16" rx="2" fill="#ef4444" opacity="0.4" />
+      <line x1="490" y1="178" x2="490" y2="194" stroke="#fbbf24" strokeWidth="1.5" opacity="0.5" />
+      <line x1="480" y1="186" x2="500" y2="186" stroke="#fbbf24" strokeWidth="1.5" opacity="0.5" />
+    </svg>
   );
 }
 

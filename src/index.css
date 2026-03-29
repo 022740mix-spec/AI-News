@@ -2726,6 +2726,20 @@ body {
   transform: scale(1.15);
 }
 
+/* ── 季節シーン（ホーム下部イラスト） ── */
+.seasonal-scene {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 2rem auto 0;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+.seasonal-scene:hover {
+  opacity: 0.85;
+}
+
 /* ── 季節エフェクト共通 ── */
 .seasonal-container {
   position: fixed;
