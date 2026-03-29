@@ -553,6 +553,42 @@ body {
   border-bottom-color: var(--accent);
 }
 
+/* 記事タイプフィルター（速報 / 特集） */
+.type-filter-nav {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 1rem 0;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.type-filter-inner {
+  display: flex;
+  gap: 0.4rem;
+}
+.type-filter-tab {
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition);
+}
+.type-filter-tab:hover {
+  border-color: var(--accent);
+  color: var(--text-secondary);
+}
+.type-filter-tab.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
 /* ── 記事 / 企業 切替 ── */
 .section-site-nav {
   background: var(--surface);

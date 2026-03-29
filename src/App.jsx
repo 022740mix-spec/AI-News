@@ -649,6 +649,31 @@ function Header({
   );
 }
 
+const TYPE_FILTERS = [
+  { id: "all", label: "すべて" },
+  { id: "news", label: "速報ニュース" },
+  { id: "feature", label: "特集・コラム" },
+];
+
+function TypeFilterBar({ active, setActive }) {
+  return (
+    <nav className="type-filter-nav" aria-label="記事タイプ">
+      <div className="type-filter-inner">
+        {TYPE_FILTERS.map((f) => (
+          <button
+            key={f.id}
+            type="button"
+            className={`type-filter-tab${active === f.id ? " is-active" : ""}`}
+            onClick={() => setActive(f.id)}
+          >
+            {f.label}
+          </button>
+        ))}
+      </div>
+    </nav>
+  );
+}
+
 function FilterBar({ active, setActive }) {
   return (
     <nav className="filter-nav" aria-label="カテゴリ">
@@ -2425,6 +2450,7 @@ function readInitialRouteState() {
 export default function App() {
   const initialRoute = useMemo(() => readInitialRouteState(), []);
   const [filter, setFilter] = useState("all");
+  const [typeFilter, setTypeFilter] = useState("all");
   const [query, setQuery] = useState(initialRoute.query);
   const [sort, setSort] = useState("date-desc");
   const [selected, setSelected] = useState(initialRoute.selected);
@@ -2608,6 +2634,7 @@ const [showFab, setShowFab] = useState(false);
       list = list.filter((a) => a.type !== "review");
     }
     if (siteSection === "articles" && filter !== "all") list = list.filter((a) => a.category === filter);
+    if (siteSection === "articles" && typeFilter !== "all") list = list.filter((a) => a.type === typeFilter);
     if (query.trim()) {
       const q = query.toLowerCase();
       list = list.filter(
@@ -2635,7 +2662,7 @@ const [showFab, setShowFab] = useState(false);
       : list;
     const sorted = [...restRaw].sort((a, b) => compareArticleOrder(a, b, sort));
     return { featured, rest: sorted, list };
-  }, [filter, query, sort, siteSection, reviewTab]);
+  }, [filter, typeFilter, query, sort, siteSection, reviewTab]);
 
   const { featured, rest } = filtered;
 
@@ -2741,7 +2768,10 @@ const [showFab, setShowFab] = useState(false);
               <>
                 <SiteSectionNav section={siteSection} onSection={switchSection} />
                 {siteSection === "articles" ? (
+                  <>
+                  <TypeFilterBar active={typeFilter} setActive={setTypeFilter} />
                   <FilterBar active={filter} setActive={setFilter} />
+                  </>
                 ) : siteSection === "reviews" ? (
                   <ReviewTabBar reviewTab={reviewTab} onSelect={setReviewTab} />
                 ) : siteSection === "guide" ? (
