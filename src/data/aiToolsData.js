@@ -5230,6 +5230,30 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "elon-musk-dwarkesh-podcast-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "Elon Musk「36ヶ月後、AI を置く最安の場所は宇宙になる」— Dwarkesh Podcast 要約（2026年2月）",
+    "excerpt": "Elon Musk が Dwarkesh Podcast に約3時間出演。地上の電力制約を突破する軌道データセンター構想、xAI/Grok の「真実追求型」アライメント、Optimus の年100万台製造計画、TeraFab チップ工場、そして「無限の金バグ」としての再帰的 AI 経済を語った。",
+    "body": [
+      "2026年2月5日、**Elon Musk** が Dwarkesh Podcast に約2時間49分出演し、AI インフラ、xAI 戦略、ヒューマノイドロボット、宇宙開発を横断する壮大なビジョンを展開した。Dario が AI の能力曲線を、Nadella が経済指標を語ったのに対し、Musk はハードウェアと物理の制約から AI の未来を描く。",
+      "**「36ヶ月後、AI は宇宙に置くのが最安」**: Musk の中核的主張は、地上のデータセンターは電力の壁にぶつかるということ。米国の平均消費電力は0.5テラワット。1テラワットのデータセンターを作ればそれだけで倍になる。一方、宇宙では太陽光パネルの効率が地上の5倍（大気・雲・昼夜サイクルなし）で、バッテリーコストも不要。5年以内に宇宙での年間 AI 展開量が地球の累計総量を超えるとの予測。年間約10,000回の Starship 打ち上げ（約1時間に1回）が必要で、物理的には20〜30機の Starship で回せるとした。",
+      "**xAI と Grok のアライメント**: xAI のミッションは「宇宙を理解すること」で、そのためには知性の拡張と意識の伝播が必要だと主張。Grok のアライメントはポリティカル・コレクトネスではなく「真実の追求」で実現する方針。物理法則に対する検証が究極の正解確認手段であり、『2001年宇宙の旅』の HAL が壊れたのは矛盾した指令を強制されたからだと例えた。xAI はニューロンレベルで AI の推論を追跡するデバッガーツールも開発中。",
+      "**Optimus ヒューマノイド計画**: 3つの難題として「現実世界の AI 知能」「高度なハンド設計」「量産」を挙げ、特にハンドは「他の全てを合わせたより難しい」と語った。1万〜3万台のロボットを「Optimus Academy」に配置し、シミュレーションと実環境の自己対戦でデータを生成。Optimus 3 で年間100万台、Optimus 4 で年間1,000万台を目指す。Grok がロボット群にタスクを割り振り、工場建設まで統括する構想。",
+      "**TeraFab と半導体**: TSMC・Samsung の現在のファブ能力では指数関数的な需要に追いつけないとし、次世代規模の「TeraFab」を提案。DDR RAM がロジックチップ以上のボトルネックになる可能性を指摘。Tesla は独自チップ（AI5, AI6）を設計から5年以内に大量生産する計画。ガスタービンの翼を鋳造できる企業が世界に3社しかないことが電力供給の制約要因であり、SpaceX と Tesla が内製する可能性にも言及。",
+      "**「無限の金バグ」**: ロボットがロボットを製造する再帰的構造を「無限の金バグ（glitch）」と表現。AI × チップ × 電気機械能力が複利的に成長し、「超新星」的な価値の爆発を生むとした。純粋な AI/ロボティクス企業が人間介在型の組織を圧倒的に上回る時代がすぐに来るとの予測。"
+    ],
+    "newsDate": "2026-02-05",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "10分",
+    "tags": ["xAI", "Elon Musk", "ポッドキャスト", "宇宙", "Optimus", "半導体"],
+    "primarySources": [
+      { "title": "Elon Musk — \"In 36 months, the cheapest place to put AI will be space\"", "site": "Dwarkesh Podcast", "url": "https://www.dwarkesh.com/p/elon-musk" },
+      { "title": "Spotify で聴く", "site": "Spotify", "url": "https://open.spotify.com/episode/4nah0x1qQF2hxgJnv8PlmN" }
+    ]
+  },
+  {
     "id": "satya-nadella-dwarkesh-podcast-2026",
     "type": "feature",
     "category": "special",
