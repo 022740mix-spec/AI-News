@@ -3455,14 +3455,7 @@ const [showFab, setShowFab] = useState(false);
                   {siteSection === "reviews" && !query ? (
                     <div className="review-comparisons">
                       {reviewTab === "models" ? (
-                        <>
-                          <ModelComparisonSection />
-                          <ReviewComparisonTable
-                            articles={ARTICLES.filter((a) => a.type === "review")}
-                            category={{ id: "model", label: "モデル", description: "LLM・生成モデルの個別レビュー" }}
-                            onSelect={handleSelect}
-                          />
-                        </>
+                        <ModelComparisonSection />
                       ) : null}
                       {REVIEW_CATEGORIES
                         .filter((cat) => reviewTab === cat.id)
