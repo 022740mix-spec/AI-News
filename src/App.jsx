@@ -902,18 +902,21 @@ function HomePage({ articles, onSelect, onSection }) {
         <section className="home-section">
           <h2 className="home-section__title">おすすめポッドキャスト</h2>
           <p className="home-section__desc">AI 業界のトップリーダーが語る、公式発表では聞けない本音と未来予測。</p>
-          <div className="home-podcast-embed">
-            <iframe
-              style={{ borderRadius: 12 }}
-              src="https://open.spotify.com/embed/show/2L6WMqY3GUPCGBD0dX6p00?utm_source=generator&theme=0"
-              width="100%"
-              height="352"
-              frameBorder="0"
-              allowFullScreen
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-              title="Dwarkesh Podcast on Spotify"
-            />
+          <div className="home-podcast-links">
+            {[
+              { name: "Dwarkesh Podcast", desc: "AI CEO の深掘りインタビュー", url: "https://open.spotify.com/show/2L6WMqY3GUPCGBD0dX6p00", icon: "🎙️" },
+              { name: "Lex Fridman Podcast", desc: "研究者・エンジニア視点の技術対談", url: "https://open.spotify.com/show/2MAi0BvDc6GTFvKFPXnkCL", icon: "🧠" },
+              { name: "TBPN", desc: "シリコンバレーのライブ感速報", url: "https://open.spotify.com/show/4kIChnTKOBnBCtVryVbZXp", icon: "📡" },
+            ].map((p) => (
+              <a key={p.name} className="home-podcast-card" href={p.url} target="_blank" rel="noopener noreferrer">
+                <span className="home-podcast-card__icon">{p.icon}</span>
+                <div className="home-podcast-card__body">
+                  <span className="home-podcast-card__name">{p.name}</span>
+                  <span className="home-podcast-card__desc">{p.desc}</span>
+                </div>
+                <span className="home-podcast-card__badge">Spotify</span>
+              </a>
+            ))}
           </div>
         </section>
       </div>
