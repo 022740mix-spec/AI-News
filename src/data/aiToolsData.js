@@ -4364,7 +4364,7 @@ export function getSiteTodayYmd() {
   }).format(new Date());
 }
 
-export const SITE_NAME = "AI Tool News";
+export const SITE_NAME = "AI News";
 export const SITE_DESCRIPTION = "Claude Code・Cursor・Codex・Copilot の最新ニュースとガイドを日本語で";
 
 /** 記事の category キー → 一覧・詳細のバッジ用 */

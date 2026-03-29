@@ -598,7 +598,7 @@ function HamburgerMenu({ isOpen, onClose, onSection, currentSection, searchRef }
           ))}
         </ul>
         <div className="hamburger-footer">
-          AI Tool News<br />
+          AI News<br />
           <span className="hamburger-footer__sub">広告なし・個人情報収集なし</span>
         </div>
       </nav>
