@@ -1410,7 +1410,6 @@ function GlossaryGuidePanel({ glossaryGenres }) {
 
 /** レビュータブ冒頭のカテゴリ別比較表 */
 const REVIEW_CATEGORIES = [
-  { id: "model", label: "モデル", description: "LLM・生成モデルの個別レビュー" },
   { id: "cli", label: "CLI ツール", description: "ターミナルから AI にコードを書かせる CLI ツール" },
   { id: "editor", label: "エディタ", description: "AI 統合エディタ・IDE" },
   { id: "media", label: "メディア生成", description: "画像・動画・音楽の AI 生成ツール" },
@@ -3437,7 +3436,7 @@ const [showFab, setShowFab] = useState(false);
                         </>
                       ) : null}
                       {REVIEW_CATEGORIES
-                        .filter((cat) => reviewTab === cat.id && cat.id !== "model")
+                        .filter((cat) => reviewTab === cat.id)
                         .map((cat) => (
                           <ReviewComparisonTable
                             key={cat.id}
