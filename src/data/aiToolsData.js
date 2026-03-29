@@ -1442,6 +1442,7 @@ export const ARTICLES = [
   {
     "id": "rag-getting-started-step-by-step-2026",
     "type": "feature",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=450&fit=crop&q=80", "alt": "データベース" },
     "category": "data",
     "title": "RAG をゼロから構築する — ステップバイステップガイド（2026年版）",
     "excerpt": "Retrieval-Augmented Generation（RAG）を初めて構築する開発者向けに、ドキュメント取り込み→ベクトル化→検索→生成の4ステップを公式ドキュメントベースで解説。技術選定の判断軸とよくある落とし穴も整理した。",
