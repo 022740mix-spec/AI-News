@@ -2435,32 +2435,37 @@ function Sidebar({ articles, onSelect, onTagClick, weekRoundups }) {
 
 function SakuraPetals({ accent, visible }) {
   if (accent !== "sakura" || !visible) return null;
-  const petals = useMemo(() => Array.from({ length: 12 }, (_, i) => {
-    const side = i % 3; // 0=top, 1=left, 2=right
-    return {
-      key: i, side,
-      delay: Math.random() * 10,
-      duration: 8 + Math.random() * 7,
-      size: 0.5 + Math.random() * 0.7,
-      opacity: 0.25 + Math.random() * 0.35,
-      pos: 20 + Math.random() * 60,
-    };
-  }), []);
+  const petals = useMemo(() => Array.from({ length: 18 }, (_, i) => ({
+    key: i,
+    left: Math.random() * 100,
+    delay: Math.random() * 12,
+    fallDur: 10 + Math.random() * 8,
+    swayDur: 3 + Math.random() * 4,
+    size: 0.45 + Math.random() * 0.6,
+    opacity: 0.2 + Math.random() * 0.4,
+    drift: -60 + Math.random() * 120,
+    rotEnd: 360 + Math.random() * 720,
+    settle: i < 6,
+  })), []);
   return (
     <div className="sakura-container" aria-hidden="true">
       {petals.map(p => (
         <div
           key={p.key}
-          className={`sakura-petal sakura-petal--${["top", "left", "right"][p.side]}`}
+          className={`sakura-petal${p.settle ? " sakura-petal--settle" : ""}`}
           style={{
-            ...(p.side === 0 ? { left: `${p.pos}%` } : { top: `${p.pos}%` }),
+            left: `${p.left}%`,
+            "--fall-dur": `${p.fallDur}s`,
+            "--sway-dur": `${p.swayDur}s`,
+            "--drift": `${p.drift}px`,
+            "--rot-end": `${p.rotEnd}deg`,
             animationDelay: `${p.delay}s`,
-            animationDuration: `${p.duration}s`,
             fontSize: `${p.size}rem`,
             opacity: p.opacity,
           }}
         />
       ))}
+      <div className="sakura-ground" />
     </div>
   );
 }

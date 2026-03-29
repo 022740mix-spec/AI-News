@@ -2736,43 +2736,94 @@ body {
 }
 .sakura-petal {
   position: absolute;
+  top: -2rem;
   width: 1em;
   height: 1em;
-  background: radial-gradient(ellipse at 30% 30%, #fbb6ce, #f9a8d4 40%, transparent 70%);
+  background: radial-gradient(ellipse at 30% 20%, #fcc, #f9a8d4 50%, transparent 72%);
   border-radius: 50% 0 50% 50%;
+  /* 落下（重力加速）＋ 横揺れ（風） を合成 */
+  animation:
+    sakuraFall var(--fall-dur, 12s) cubic-bezier(0.2, 0, 0.8, 1) infinite,
+    sakuraSway var(--sway-dur, 4s) ease-in-out infinite alternate;
 }
-/* 上から降る */
-.sakura-petal--top {
-  top: -2rem;
-  animation: sakuraTop linear infinite;
+/* 地面に積もる（animation-iteration-count: 1 + forwards） */
+.sakura-petal--settle {
+  animation:
+    sakuraFall var(--fall-dur, 12s) cubic-bezier(0.2, 0, 0.8, 1) forwards,
+    sakuraSway var(--sway-dur, 4s) ease-in-out infinite alternate;
 }
-@keyframes sakuraTop {
-  0%   { transform: translateY(0) rotate(0deg) translateX(0); opacity: 0; }
-  8%   { opacity: 1; }
-  85%  { opacity: 1; }
-  100% { transform: translateY(50vh) rotate(540deg) translateX(60px); opacity: 0; }
+
+/* 縦の落下：加速しながら落ちる + 回転 */
+@keyframes sakuraFall {
+  0%   { transform: translateY(-5vh) rotate(0deg); opacity: 0; }
+  5%   { opacity: 1; }
+  70%  { opacity: 1; }
+  92%  { opacity: 0.8; }
+  100% { transform: translateY(98vh) rotate(var(--rot-end, 600deg)); opacity: 0.6; }
 }
-/* 左から流れる */
-.sakura-petal--left {
-  left: -2rem;
-  animation: sakuraLeft linear infinite;
+/* 横揺れ：風で左右にゆらゆら */
+@keyframes sakuraSway {
+  0%   { margin-left: 0; }
+  100% { margin-left: var(--drift, 40px); }
 }
-@keyframes sakuraLeft {
-  0%   { transform: translateX(0) rotate(0deg) translateY(0); opacity: 0; }
-  8%   { opacity: 1; }
-  85%  { opacity: 1; }
-  100% { transform: translateX(40vw) rotate(480deg) translateY(30px); opacity: 0; }
+
+/* 地面に積もった花びら — なびき＋舞い上がり */
+.sakura-ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(249, 168, 212, 0.15) 10%,
+    rgba(252, 187, 206, 0.3) 25%,
+    rgba(249, 168, 212, 0.1) 40%,
+    rgba(252, 187, 206, 0.35) 55%,
+    rgba(249, 168, 212, 0.15) 70%,
+    rgba(252, 187, 206, 0.25) 85%,
+    transparent 100%
+  );
+  border-radius: 3px 3px 0 0;
+  animation: groundFadeIn 8s ease forwards, groundSway 6s ease-in-out infinite;
+  opacity: 0;
 }
-/* 右から流れる */
-.sakura-petal--right {
-  right: -2rem;
-  animation: sakuraRight linear infinite;
+@keyframes groundFadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
 }
-@keyframes sakuraRight {
-  0%   { transform: translateX(0) rotate(0deg) translateY(0); opacity: 0; }
-  8%   { opacity: 1; }
-  85%  { opacity: 1; }
-  100% { transform: translateX(-40vw) rotate(-480deg) translateY(40px); opacity: 0; }
+@keyframes groundSway {
+  0%, 100% { background-position: 0 0; }
+  50%      { background-position: 30px 0; }
+}
+/* 舞い上がる花びら（地面から） */
+.sakura-container::after,
+.sakura-container::before {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  width: 0.55em;
+  height: 0.55em;
+  background: radial-gradient(ellipse at 30% 20%, #fcc, #f9a8d4 50%, transparent 72%);
+  border-radius: 50% 0 50% 50%;
+  opacity: 0;
+  animation: sakuraRise 12s ease-in-out infinite;
+}
+.sakura-container::before {
+  left: 25%;
+  animation-delay: 4s;
+}
+.sakura-container::after {
+  left: 68%;
+  animation-delay: 9s;
+  font-size: 0.9em;
+}
+@keyframes sakuraRise {
+  0%, 85%, 100% { opacity: 0; transform: translateY(0) rotate(0deg) translateX(0); }
+  88%  { opacity: 0.5; }
+  92%  { opacity: 0.4; transform: translateY(-15vh) rotate(-180deg) translateX(30px); }
+  96%  { opacity: 0.2; transform: translateY(-25vh) rotate(-300deg) translateX(-10px); }
+  98%  { opacity: 0; transform: translateY(-30vh) rotate(-360deg) translateX(20px); }
 }
 
 /* ── ページネーション ── */
