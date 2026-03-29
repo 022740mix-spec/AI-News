@@ -2736,24 +2736,43 @@ body {
 }
 .sakura-petal {
   position: absolute;
-  top: -2rem;
   width: 1em;
   height: 1em;
   background: radial-gradient(ellipse at 30% 30%, #fbb6ce, #f9a8d4 40%, transparent 70%);
   border-radius: 50% 0 50% 50%;
-  animation: sakuraFall linear infinite;
 }
-@keyframes sakuraFall {
-  0% {
-    transform: translateY(-10vh) rotate(0deg) translateX(0);
-    opacity: 0;
-  }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% {
-    transform: translateY(105vh) rotate(720deg) translateX(80px);
-    opacity: 0;
-  }
+/* 上から降る */
+.sakura-petal--top {
+  top: -2rem;
+  animation: sakuraTop linear infinite;
+}
+@keyframes sakuraTop {
+  0%   { transform: translateY(0) rotate(0deg) translateX(0); opacity: 0; }
+  8%   { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { transform: translateY(50vh) rotate(540deg) translateX(60px); opacity: 0; }
+}
+/* 左から流れる */
+.sakura-petal--left {
+  left: -2rem;
+  animation: sakuraLeft linear infinite;
+}
+@keyframes sakuraLeft {
+  0%   { transform: translateX(0) rotate(0deg) translateY(0); opacity: 0; }
+  8%   { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { transform: translateX(40vw) rotate(480deg) translateY(30px); opacity: 0; }
+}
+/* 右から流れる */
+.sakura-petal--right {
+  right: -2rem;
+  animation: sakuraRight linear infinite;
+}
+@keyframes sakuraRight {
+  0%   { transform: translateX(0) rotate(0deg) translateY(0); opacity: 0; }
+  8%   { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { transform: translateX(-40vw) rotate(-480deg) translateY(40px); opacity: 0; }
 }
 
 /* ── ページネーション ── */

@@ -2433,20 +2433,31 @@ function Sidebar({ articles, onSelect, onTagClick, weekRoundups }) {
   );
 }
 
-function SakuraPetals({ accent }) {
-  if (accent !== "sakura") return null;
+function SakuraPetals({ accent, visible }) {
+  if (accent !== "sakura" || !visible) return null;
+  const petals = useMemo(() => Array.from({ length: 12 }, (_, i) => {
+    const side = i % 3; // 0=top, 1=left, 2=right
+    return {
+      key: i, side,
+      delay: Math.random() * 10,
+      duration: 8 + Math.random() * 7,
+      size: 0.5 + Math.random() * 0.7,
+      opacity: 0.25 + Math.random() * 0.35,
+      pos: 20 + Math.random() * 60,
+    };
+  }), []);
   return (
     <div className="sakura-container" aria-hidden="true">
-      {Array.from({ length: 15 }, (_, i) => (
+      {petals.map(p => (
         <div
-          key={i}
-          className="sakura-petal"
+          key={p.key}
+          className={`sakura-petal sakura-petal--${["top", "left", "right"][p.side]}`}
           style={{
-            left: `${Math.random() * 100}%`,
-            animationDelay: `${Math.random() * 8}s`,
-            animationDuration: `${6 + Math.random() * 6}s`,
-            fontSize: `${0.6 + Math.random() * 0.8}rem`,
-            opacity: 0.3 + Math.random() * 0.4,
+            ...(p.side === 0 ? { left: `${p.pos}%` } : { top: `${p.pos}%` }),
+            animationDelay: `${p.delay}s`,
+            animationDuration: `${p.duration}s`,
+            fontSize: `${p.size}rem`,
+            opacity: p.opacity,
           }}
         />
       ))}
@@ -3217,7 +3228,7 @@ const [showFab, setShowFab] = useState(false);
         </main>
       </div>
 
-      <SakuraPetals accent={accentId} />
+      <SakuraPetals accent={accentId} visible={!selected && siteSection === "home"} />
       <ScrollTopFab
         visible={!selected && showFab}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
