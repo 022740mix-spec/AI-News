@@ -571,20 +571,20 @@ function Header({
     <header className="header-wrap">
       <div className="header-inner">
         <div className="header-top">
-          <div>
-            <h1 className="site-title" onClick={onGoHome} style={{ cursor: "pointer" }}>{SITE_NAME}</h1>
+          <button
+            type="button"
+            className="icon-btn hamburger-btn"
+            title="メニュー"
+            aria-label="メニューを開く"
+            onClick={onToggleMenu}
+          >
+            ☰
+          </button>
+          <div className="header-center" onClick={onGoHome} style={{ cursor: "pointer" }}>
+            <h1 className="site-title">{SITE_NAME}</h1>
             <p className="site-tagline">{SITE_DESCRIPTION}</p>
           </div>
           <div className="header-actions">
-            <button
-              type="button"
-              className="icon-btn hamburger-btn"
-              title="メニュー"
-              aria-label="メニューを開く"
-              onClick={onToggleMenu}
-            >
-              ☰
-            </button>
             <button
               type="button"
               className="icon-btn"

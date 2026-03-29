@@ -223,12 +223,14 @@ body {
 }
 
 .header-top {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
+}
+.header-center {
+  text-align: center;
 }
 
 .site-title {
@@ -291,14 +293,11 @@ body {
 }
 
 /* ── ハンバーガーメニュー ── */
-/* ── ハンバーガーメニュー ── */
-/* PC では非表示、スマホのみ表示 */
 .hamburger-btn {
-  display: none;
+  display: inline-flex;
   font-size: var(--text-lg);
 }
 @media (max-width: 900px) {
-  .hamburger-btn { display: inline-flex; }
   .section-site-nav { display: none; }
 }
 .hamburger-overlay {
