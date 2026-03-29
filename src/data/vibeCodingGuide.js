@@ -587,12 +587,10 @@ export const VIBE_BASIC_RULES = [
   {
     title: "作業スコープを毎回決める",
     mean: "開いているフォルダ・編集してよいファイル・触ってはいけない設定を、会話の冒頭で宣言します。",
-    mem: "「この repo の src だけ」と決めるだけで誤削除や別プロジェクト混入が減ります。",
   },
   {
     title: "秘密と本番をチャットに載せない",
     mean: "API キー、パスワード、顧客データ、本番 URL のままのログは AI・スクショ・貼り付けに混ぜません。",
-    mem: "環境変数・秘密管理ツールを使い、**仮の例**で質問します。",
   },
   {
     title: "コミット前に diff を一言で要約する",
@@ -875,7 +873,6 @@ export const VIBE_GUIDE_PITFALLS = {
     {
       word: "`any` で型をごまかす（TypeScript）",
       mean: "コンパイルエラーを消すために値を `any` にすると、だれが何を持っているか分からなくなり、静的解析の恩恵がほぼ消えます。積もると原因の分からない不具合の温床です。",
-      mem: "一時しのぎなら `unknown` や具体型、型ガードに寄せる・AI に「any を使わず直して」と依頼し直す、が定石です。",
     },
     {
       word: "`@ts-ignore` / `eslint-disable` の貼りっぱなし",
@@ -884,7 +881,6 @@ export const VIBE_GUIDE_PITFALLS = {
     {
       word: "秘密情報のハードコード",
       mean: "API キー・パスワード・トークンをソースに直書きしたまま共有リポジトリへ上げるパターン。公開・フォークされた時点で漏洩扱いになります。",
-      mem: "既に載せてしまったらキーはローテーション（無効化→再発行）が前提です。",
     },
     {
       word: "空の `catch` でエラーを握りつぶす",
@@ -1033,42 +1029,34 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "LLM（大規模言語モデル）",
         mean: "膨大な文章で学習した予測エンジン。次に来そうな単語を積み上げて文章やコードを書きます。",
-        mem: "万能ではなく「それっぽい」を起こし得るので確認が大事、とサイトでも触れています。",
       },
       {
         word: "プロンプト",
         mean: "AI に渡す指示文のこと。依頼書のテンプレに近いです。",
-        mem: "目的・条件・ダメな例を書くほど、ブレが減りやすいです。",
       },
       {
         word: "コンテキスト",
         mean: "AI が一度に「思い出せる作業メモリ」。長い会話ほど古い部分が圧縮や捨てに遭います。",
-        mem: "大事な前提は毎回短く貼り直すと安定します。",
       },
       {
         word: "トークン",
         mean: "文章を細かく刻んだ単位。課金や長さ制限の目安に使われます。",
-        mem: "日本語は英語よりトークンが多めになりがちです。",
       },
       {
         word: "RAG（ラグ）",
         mean: "質問に答える前に、あなたの資料を検索して読み込む仕組み。社内マニュアル型の質問応答でよく聞きます。",
-        mem: "「検索＋要約」とざっくり覚えて OK です。パターン分岐は用語集の **RAG・検索拡張のバリエーション** を参照してください。",
       },
       {
         word: "エージェント",
         mean: "AI がツール（検索・ファイル編集・API 呼び出し等）を束ねて複数ステップを進める枠組み。",
-        mem: "自動運転度が上がるほど、権限設計も重要になります。",
       },
       {
         word: "MCP",
         mean: "AI クライアントが外部ツールにつなぐための共通配線の規格イメージ。USB-C のような「同じ形差し込み口」に近い比喩です。",
-        mem: "中身のツール自体は別メーカー製です。",
       },
       {
         word: "バイブコーディング",
         mean: "厳密な設計より、対話のリズムで試しながらコードを育てるやり方の俗称。勢いと検証のバランスがポイントです。",
-        mem: "「動いた」で止めると技術的負債が積み上がります。**ガイド → バイブコーディング** の「ハマりやすいこと」も併せて読むと安心です。",
       },
       {
         word: "AGI（汎用人工知能）",
@@ -1107,31 +1095,31 @@ export const GLOSSARY_BY_GENRE = [
     terms: [
       {
         word: "素朴な RAG（retrieve → read）",
-        mean: "クエリをベクトル化し、ドキュメント断片と距離が近いものを取り出してコンテキストに詰め、LLM に答えさせる基本形。実装は単純だが、**表記ゆれ・同義語**で取り逃がすと精度が落ちます。",
+        mean: "クエリをベクトル化し、ドキュメント断片と距離が近いものを取り出してコンテキストに詰め、LLM に答えさせる基本形。実装は単純だが、表記ゆれ・同義語で取り逃がすと精度が落ちます。",
       },
       {
         word: "ハイブリッド検索（ベクトル＋キーワード）",
-        mean: "意味的近さ（密ベクトル）と **BM25 等のキーワード一致**を併用し、採用候補をマージや再スコアします。日本語の固有名詞・型番検索で効きやすいです。",
+        mean: "意味的近さ（密ベクトル）と BM25 等のキーワード一致を併用し、採用候補をマージや再スコアします。日本語の固有名詞・型番検索で効きやすいです。",
       },
       {
         word: "リランキング（再順位付け）",
-        mean: "一度ざっくり取った上位 k 件を、**より重い cross-encoder や小型モデル**で並べ替えます。「検索の第2段」として定番です。",
+        mean: "一度ざっくり取った上位 k 件を、より重い cross-encoder や小型モデルで並べ替えます。「検索の第2段」として定番です。",
       },
       {
         word: "クエリ拡張・書き換え（HyDE など）",
-        mean: "ユーザの一文を、検索しやすい複数クエリや「仮答え」に展開してから検索する系統。**短い質問**や **曖昧な指示**の取りこぼしを減らす狙いがあります（Hypothetical Document Embeddings 等）。",
+        mean: "ユーザの一文を、検索しやすい複数クエリや「仮答え」に展開してから検索する系統。短い質問や 曖昧な指示の取りこぼしを減らす狙いがあります（Hypothetical Document Embeddings 等）。",
       },
       {
         word: "Graph RAG",
-        mean: "テキスト断片だけでなく **エンティティ関連をグラフ**にし、関係ホップしながら根拠を集める方式。マニュアル・組織図・法務で「だれが何と関係？」が効く場面で語られます。",
+        mean: "テキスト断片だけでなく エンティティ関連をグラフにし、関係ホップしながら根拠を集める方式。マニュアル・組織図・法務で「だれが何と関係？」が効く場面で語られます。",
       },
       {
         word: "Agentic RAG（エージェント型）",
-        mean: "LLM が **検索 API を何度も呼び直す・フィルタを変える・サブクエリに分割する**など、自律的にループする構造。単発 RAG より柔軟だが、**停止条件・コスト・ログ**の設計が重要です。",
+        mean: "LLM が 検索 API を何度も呼び直す・フィルタを変える・サブクエリに分割するなど、自律的にループする構造。単発 RAG より柔軟だが、停止条件・コスト・ログの設計が重要です。",
       },
       {
         word: "「世代」呼びについて",
-        mean: "コミュニティによって「RAG 1.0 / 2.0」「初世代はベクトルだけ」など比喩的な区切りが出ますが、**産業標準のラベルではありません**。比較するときは「どの処理（検索・要約・ループ・グラフ）を足しているか」で読み替えると安全です。",
+        mean: "コミュニティによって「RAG 1.0 / 2.0」「初世代はベクトルだけ」など比喩的な区切りが出ますが、産業標準のラベルではありません。比較するときは「どの処理（検索・要約・ループ・グラフ）を足しているか」で読み替えると安全です。",
       },
     ],
   },
@@ -1143,7 +1131,6 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "HTML（エイチティーエムエル）",
         mean: "Web ページの骨格と意味づけを書くマークアップ言語。見出し・段落・リンクなど「文書の構造」を表します。",
-        mem: "プログラミングというより「仕様書に近い記法」と思うとブレにくいです。",
       },
       {
         word: "CSS（シーエスエス）",
@@ -1152,22 +1139,18 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "JavaScript（JS）",
         mean: "ブラウザ上で画面の動きを担当する言語。ボタン反応・アニメ・通信などフロントの主力。Node.js を使うとサーバー側でも動かせます。",
-        mem: "Web の「インタラクティブ」を一手に引き受けるイメージです。",
       },
       {
         word: "TypeScript（TS）",
         mean: "JavaScript に「型」を足した言語。書き方は近いですが、仕様のブレやミスを早めに検知しやすく、規模が大きいプロジェクトやチーム開発で好まれます。",
-        mem: "最終的には多くの場合 JavaScript に変換（トランスパイル）されて動きます。",
       },
       {
         word: "静的（静的型・静的解析）",
-        mean: "**プログラムを実行する前に**型やルールを決めたり検査したりする手当ての総称です。**静的型付け**は TypeScript のように、変数の型をコードに書いてコンパイルやエディタが先に誤りを指しやすくします。**静的解析**は ESLint のように、**動かさずに**ソースを読んで危ない書き方や規約違反を探すことです。",
-        mem: "記事で「静的に分かる」は「走らせなくても検査できる」くらいの意味で使われることが多いです。",
+        mean: "プログラムを実行する前に型やルールを決めたり検査したりする手当ての総称です。静的型付けは TypeScript のように、変数の型をコードに書いてコンパイルやエディタが先に誤りを指しやすくします。静的解析は ESLint のように、動かさずにソースを読んで危ない書き方や規約違反を探すことです。",
       },
       {
         word: "動的（動的型・実行時）",
-        mean: "**実行してから**意味が定まる・検査される側のイメージです。**動的型付け**は JavaScript のように、実行時まで型の解釈がゆるく、動かして初めて型まわりの問題に気づくこともあります。**実行時（ランタイム）**は、アプリが実際に動いている時間帯。ログ・クラッシュ・デバッガは多くここを対象にします。",
-        mem: "「動的」だけだと文脈で「動的型」なのか「実行時」なのか切り替わるので、前後の文を読むと安全です。",
+        mean: "実行してから意味が定まる・検査される側のイメージです。動的型付けは JavaScript のように、実行時まで型の解釈がゆるく、動かして初めて型まわりの問題に気づくこともあります。実行時（ランタイム）は、アプリが実際に動いている時間帯。ログ・クラッシュ・デバッガは多くここを対象にします。",
       },
       {
         word: "Python",
@@ -1176,7 +1159,6 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "Java（ジャバ）",
         mean: "大規模な業務システムや長期運用向けに採用されてきた言語。Android アプリの主流言語の一つでもあります。JVM という実行環境の上で動くのが特徴です。",
-        mem: "名前は似ていますが JavaScript とは別物です。",
       },
       {
         word: "C（シー）",
@@ -1189,7 +1171,6 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "C#（シーシャープ）",
         mean: "Microsoft が開発した言語。.NET フレームワーク上で動き、Windows デスクトップアプリ・Web（ASP.NET）・ゲーム（Unity）で広く使われる。Power Platform / Dynamics 365 のカスタマイズでも登場する。",
-        mem: "Microsoft エコシステムで開発するなら避けて通れない言語です。",
       },
       {
         word: "Rust（ラスト）",
@@ -1218,7 +1199,6 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "SQL（エスキューエル）",
         mean: "データベースに問い合わせるための言語。SELECT・INSERT・UPDATE・DELETE の4つが基本操作。プログラミング言語というよりは「データの操作言語」。AI がよく生成するコードの一つ。",
-        mem: "ほぼすべてのアプリがバックエンドで SQL を使っています。",
       },
       {
         word: "Markdown（マークダウン）",
@@ -1250,12 +1230,10 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "ブランチ",
         mean: "本線から派生した試行用のライン。「実験用ノート」と思うと分かりやすいです。",
-        mem: "多くのリポジトリでは、その本線に相当する既定ブランチの名前が `main` です。",
       },
       {
         word: "main（メインブランチ）",
         mean: "リポジトリで「いまの公式な土台」とみなされる本線ブランチに付けられる名前の定番。レビュー済みの変更はここへマージ（取り込み）されていくイメージです。古い資料では同じ役割が `master` と書かれていることもあります。",
-        mem: "デフォルトブランチは設定で変えられますが、GitHub 上の緑色の「メインブランチ」が多くの場合 `main` です。",
       },
       {
         word: "Pull Request（PR）",
@@ -1271,7 +1249,7 @@ export const GLOSSARY_BY_GENRE = [
       },
       {
         word: ".md（Markdown）",
-        mean: "見出し・箇条書き・リンクなどを、プレーンテキストで書ける記法。**README.md** がリポジトリの顔になることが多いです。",
+        mean: "見出し・箇条書き・リンクなどを、プレーンテキストで書ける記法。README.md がリポジトリの顔になることが多いです。",
       },
       {
         word: ".json（JSON）",
@@ -1283,8 +1261,7 @@ export const GLOSSARY_BY_GENRE = [
       },
       {
         word: ".mjs（ES モジュール）",
-        mean: "**Node.js などで「このファイルは ES モジュールとして扱う」と明示したいとき**に使われる拡張子です。`import` / `export` の文脈で README やツールが言及します。",
-        mem: "プロジェクトによっては `.js` のまま package.json でモジュール扱いになる場合もあり、ルールはリポジトリごとです。",
+        mean: "Node.js などで「このファイルは ES モジュールとして扱う」と明示したいときに使われる拡張子です。`import` / `export` の文脈で README やツールが言及します。",
       },
       {
         word: ".ts（TypeScript）",
@@ -1292,12 +1269,11 @@ export const GLOSSARY_BY_GENRE = [
       },
       {
         word: ".jsx（JSX）",
-        mean: "JavaScript 内に **HTML に似たタグ** を書ける拡張構文を含むファイルに使われることが多いです。React など UI ライブラリのコードで典型です。",
-        mem: "中身は基本 JavaScript＋糖衣構文だと思うと変換・ビルドの説明が追いやすいです。",
+        mean: "JavaScript 内に HTML に似たタグ を書ける拡張構文を含むファイルに使われることが多いです。React など UI ライブラリのコードで典型です。",
       },
       {
         word: ".svg（SVG）",
-        mean: "XML ベースのベクター画像形式。拡大してもにじみにくく、アイコンやロゴ向き。**中身はテキスト**なのでエディタで開けますが、直編集は座標やパスが専門的です。",
+        mean: "XML ベースのベクター画像形式。拡大してもにじみにくく、アイコンやロゴ向き。中身はテキストなのでエディタで開けますが、直編集は座標やパスが専門的です。",
       },
       {
         word: ".txt（テキスト）",
@@ -1306,52 +1282,46 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "`src` フォルダ",
         mean: "ソースコードの本体を置く置き場の定番の名前。`src/components` のようにさらに下に分けることも多いです。",
-        mem: "「人が編集する版がここ」と覚えると、ビルド後の `dist` と混同しにくいです。",
       },
       {
         word: "`dist` フォルダ（ビルド成果物）",
-        mean: "**ビルド（変換・束ね）のあとに出力される、公開・配布に近いファイル**が入る場所の典型名。`npm run build` の説明に必ず出ます。",
-        mem: "中身は自動生成なので、手編集より設定と `src` 側を直すことが多いです。",
+        mean: "ビルド（変換・束ね）のあとに出力される、公開・配布に近いファイルが入る場所の典型名。`npm run build` の説明に必ず出ます。",
       },
       {
         word: "`scripts` フォルダ",
-        mean: "ビルド補助・データ生成・デプロイ前処理など、**プロジェクト用の小さなコマンド**をまとめる慣習的な名前。`package.json` の `scripts` から `node scripts/...` を呼ぶ形がよくあります。",
+        mean: "ビルド補助・データ生成・デプロイ前処理など、プロジェクト用の小さなコマンドをまとめる慣習的な名前。`package.json` の `scripts` から `node scripts/...` を呼ぶ形がよくあります。",
       },
       {
         word: "`node_modules` フォルダ",
-        mean: "`npm install` で依存パッケージが展開される場所。容量が大きく、**ほとんどのリポジトリでは Git に上げません**（`.gitignore` で除外）。",
-        mem: "おかしいときはいったん消して `npm install` し直す、が定番の切り分けの一つです。",
+        mean: "`npm install` で依存パッケージが展開される場所。容量が大きく、ほとんどのリポジトリでは Git に上げません（`.gitignore` で除外）。",
       },
       {
         word: "README（README.md）",
-        mean: "プロジェクトの入り口説明書。**何をするリポジトリか・始め方・注意点**が書かれていることが多いです。拡張子 `.md` で Markdown になるのが普通です。",
+        mean: "プロジェクトの入り口説明書。何をするリポジトリか・始め方・注意点が書かれていることが多いです。拡張子 `.md` で Markdown になるのが普通です。",
       },
       {
         word: "Vite（ヴィート）",
-        mean: "フロントエンド向けの**高速な開発サーバーとビルド**を担う道具の一つ。`vite.config.*` に設定があり、`npm run dev` / `npm run build` とセットで README に登場します。",
+        mean: "フロントエンド向けの高速な開発サーバーとビルドを担う道具の一つ。`vite.config.*` に設定があり、`npm run dev` / `npm run build` とセットで README に登場します。",
       },
       {
         word: ".npmrc",
-        mean: "**npm の挙動を決める設定ファイル**（レジストリの向き先、インストール時のオプションなど）。プロジェクト直下 or ユーザーホームに置かれます。",
-        mem: "チームや CI で再現性を揃えるためにコミットすることもあれば、個人向けはホームのみ、もあります。",
+        mean: "npm の挙動を決める設定ファイル（レジストリの向き先、インストール時のオプションなど）。プロジェクト直下 or ユーザーホームに置かれます。",
       },
       {
         word: ".gitignore",
-        mean: "Git に **追跡させたくないファイル名・フォルダ**を列挙するファイル。`node_modules` や `.env`、ビルド成果物などが定番で載ります。",
+        mean: "Git に 追跡させたくないファイル名・フォルダを列挙するファイル。`node_modules` や `.env`、ビルド成果物などが定番で載ります。",
       },
       {
         word: "`eslint.config.*`（ESLint 設定）",
-        mean: "JavaScript/TypeScript の**静的チェック（リント）**ルールを書く設定ファイルの modern な置き方の一例です。`eslint.config.js` や `.mjs` など拡張子はプロジェクト次第です。",
-        mem: "`npm run lint` とセットで README に載ることが多いです。",
+        mean: "JavaScript/TypeScript の静的チェック（リント）ルールを書く設定ファイルの modern な置き方の一例です。`eslint.config.js` や `.mjs` など拡張子はプロジェクト次第です。",
       },
       {
         word: "`assets`（静的アセット）",
-        mean: "画像・フォント・音声・動画など、**画面を組み立てるときに参照する静的ファイル**をまとめるフォルダ名の定番です。`src/assets` や `public/` と役割が分かれていることもあります（前者はビルドに巻き込む、後者はそのまま配信、など）。",
+        mean: "画像・フォント・音声・動画など、画面を組み立てるときに参照する静的ファイルをまとめるフォルダ名の定番です。`src/assets` や `public/` と役割が分かれていることもあります（前者はビルドに巻き込む、後者はそのまま配信、など）。",
       },
       {
         word: ".husky",
-        mean: "**Git のフック**（`commit` する直前・`push` する直前などに自動で走るスクリプト）を置くためのフォルダで、Husky というツールの慣習名です。Lint やテストを通さないとコミットできない、といったチームルールをかけやすくなります。",
-        mem: "初回セットアップで `npm` スクリプトが `.husky` 内にフックを生成することが多いです。",
+        mean: "Git のフック（`commit` する直前・`push` する直前などに自動で走るスクリプト）を置くためのフォルダで、Husky というツールの慣習名です。Lint やテストを通さないとコミットできない、といったチームルールをかけやすくなります。",
       },
       {
         word: "git clone",
@@ -1364,7 +1334,6 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "git push",
         mean: "自分がローカルで確定したコミットを、リモートに送る操作。チームに共有するときの定番です。",
-        mem: "ブランチや権限のルールは組織ごとに決まっていることが多いです。",
       },
     ],
   },
@@ -1380,7 +1349,6 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "CLI（シーエルアイ）",
         mean: "Command Line Interface の略。マウスで画面を押すのではなく、コマンド文字列で操作する方式の総称です。`npm` や `git` のように、黒い画面から叩く道具は CLI ツールと呼ばれることが多いです。",
-        mem: "GUI の対義語として覚えると会話や記事で迷いにくいです。",
       },
       {
         word: "シェル",
@@ -1389,17 +1357,14 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "CMD（コマンドプロンプト）",
         mean: "Windows に標準で付いてきたクラシックな文字界面。`dir` や `cd` など、昔からのコマンド文化の本拠です。バッチファイル（.bat）は主に CMD 向けです。",
-        mem: "手順書が `&&` でコマンドを繋いでいると、PowerShell 古い版ではそのままではエラーになることがあります。",
       },
       {
         word: "PowerShell",
         mean: "Microsoft が推す Windows 向けのシェル／スクリプト環境。オブジェクトをパイプで渡せるなど拡張されています。スクリプト拡張子は多くの場合 `.ps1` です。",
-        mem: "クロスプラットフォーム版は `pwsh` コマンドで起動することがあります。",
       },
       {
         word: "Bash（バッシュ）",
         mean: "Unix 系 OS でよく使われるシェルの代表。手順書に `bash script.sh` とあるのは「このシェルでスクリプトを実行」と読めば足ります。",
-        mem: "Windows では WSL や Git Bash で触ることもあります。",
       },
       {
         word: "npm（エヌピーエム）",
@@ -1416,7 +1381,6 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "npm run dev",
         mean: "`package.json` の `scripts.dev` に定義されたコマンドを実行する定型句。多くのフロントエンドでは開発用のローカルサーバー起動がここに書かれています（中身はプロジェクトごと）。",
-        mem: "`npm run build` や `npm run test` も同じく scripts の名前を変えたものです。",
       },
       {
         word: "npx",
@@ -1449,7 +1413,6 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "Docker（ドッカー）",
         mean: "アプリケーションと実行に必要な依存関係を「コンテナ」という単位でパッケージ化し、どのマシンでも同一の動作を再現するツール。Dockerfile に構成を定義し、`docker build` でイメージ作成、`docker run` でコンテナ起動する。",
-        mem: "仮想マシン（VM）がOS全体を仮想化するのに対し、コンテナはプロセスレベルの軽量な隔離環境。起動が速く、リソース消費が少ない。",
       },
       {
         word: "オーケストレーション",
@@ -1475,7 +1438,6 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "git revert（リバート）",
         mean: "過去のコミットを「打ち消す新しいコミット」で取り消す操作。履歴を壊さずに変更を元に戻せる安全な方法。",
-        mem: "`git reset` は履歴自体を書き換えるので危険。revert の方が安全。",
       },
       {
         word: "git branch（ブランチ）",
@@ -1488,7 +1450,6 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "git rebase（リベース）",
         mean: "ブランチの起点を最新のメインに移し替える操作。履歴がきれいになるが、共有済みのブランチで使うとトラブルの原因になる。",
-        mem: "「まだ push してないブランチ」でのみ使うのが安全。",
       },
       {
         word: "コンフリクト（衝突）",
@@ -1512,7 +1473,6 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "DOM（ドム）",
         mean: "Document Object Model の略。ブラウザが HTML を読んだあと、画面上の要素（見出し・ボタンなど）をツリー状に組み立てた「瀬戸際の設計図」。JavaScript は多くの場合このツリーを読んだり書き換えたりして画面を動かします。",
-        mem: "「ページのどの部分をどういじるか」の話になると DOM が出てきます。",
       },
       {
         word: "バックエンド",
@@ -1532,8 +1492,7 @@ export const GLOSSARY_BY_GENRE = [
       },
       {
         word: "SSL / TLS（いわゆる SSL 証明書）",
-        mean: "ブラウザとサーバの通信を暗号化し、なりすましを確認するための仕組み。かつて「SSL」と呼ばれた流れを今では多く **TLS** と言いますが、ホスティングの画面では「SSL 証明書」という文言が残っていることが多いです。",
-        mem: "鍵アイコン付きの **HTTPS** は、この認証と暗号化が有効な接続の目印です。Let's Encrypt 等で無料証明書を取る構成もよく見ます。",
+        mean: "ブラウザとサーバの通信を暗号化し、なりすましを確認するための仕組み。かつて「SSL」と呼ばれた流れを今では多く TLS と言いますが、ホスティングの画面では「SSL 証明書」という文言が残っていることが多いです。",
       },
       {
         word: "環境変数",
@@ -1554,12 +1513,10 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "ノーコード",
         mean: "コードを一切書かずにアプリを構築する手法。GUI でドラッグ&ドロップ、数式、設定だけで完結する。Power Apps Canvas、Bubble、Glide などが代表例。プログラミング経験がなくても業務アプリを作れるのが最大の利点で、企業の業務改善で急速に普及している。",
-        mem: "「コードを書く自由度」がない分、出来ることに制約がある。複雑な要件はローコードやプロコードに切り替える判断が必要。",
       },
       {
         word: "ローコード",
         mean: "最小限のコードで開発する手法。GUI による設計が基本だが、必要に応じてスクリプトやカスタムコンポーネントで拡張できる。Power Apps Model-driven、OutSystems、Mendix などが代表例。ノーコードより柔軟で、プロコード（フルコーディング）より速い。",
-        mem: "バイブコーディングとは別の「速く作る」アプローチ。バイブコーディングは AI にコードを書かせるが、ローコードは GUI で設計して人が少しコードを足す。",
       },
       {
         word: "Power Platform",
@@ -1608,12 +1565,10 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "データレイク（Data lake）",
         mean: "あらゆる形式の生データ（ログ・画像・CSV・JSON など）をスキーマを定めずに大量に蓄積するストレージ。BI や機械学習のための前処理・分析基盤として使われる。S3 や Azure Blob Storage 上に構築することが多い。",
-        mem: "データベースが構造化データを格納するのに対し、データレイクは非構造化データを含む生データをそのまま保存する。",
       },
       {
         word: "データウェアハウス（DWH）",
         mean: "分析・レポーティングに最適化された構造化データの集約基盤。スキーマ（テーブル設計）が厳密に定義されており、SQL で高速にクエリを実行できる。BigQuery、Snowflake、Redshift が代表的。",
-        mem: "データレイクが「まず集めて後で整理」なのに対し、DWH は「整理してから格納」するアプローチ。",
       },
       {
         word: "データレイクハウス（Lakehouse）",
@@ -1634,12 +1589,10 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "メダリオンアーキテクチャ",
         mean: "Bronze（ほぼ生）→ Silver（整形・欠損除去など）→ Gold（分析用に集約・指標化）のように、レイク内を段階で磨いていく定番パターンの名前です。",
-        mem: "色の呼び方はプロダクトによって語彙が少し変わることがあります。",
       },
       {
         word: "スキーマ・オン・リード",
         mean: "取り込み時に表の型を厳密に決めず、読み取る段階で解釈する考え方。レイクの柔軟さの裏で、誰がどう解釈するかのルール設計が後から効いてきます。",
-        mem: "対で「スキーマ・オン・ライト」は、DB のように載せる時点で型を固定するイメージです。",
       },
       {
         word: "キュレーション（データ整備）",
@@ -1676,12 +1629,10 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "Dataverse（データバース）",
         mean: "Microsoft のビジネスデータプラットフォーム。Power Apps・Power Automate・Dynamics 365 の標準バックエンド。テーブル・列・リレーションを GUI で定義し、REST API（OData）で操作する。認証は Entra ID（旧 Azure AD）と統合済み。",
-        mem: "「Microsoft 版の Supabase」に近いが、SQL を直接書くのではなく GUI とローコードで操作するのが基本。Power Apps Premium ライセンス（$20/月）が必要。",
       },
       {
         word: "BaaS（Backend as a Service）",
         mean: "データベース・認証・ファイル保存・API などバックエンドに必要な機能をまとめて提供するクラウドサービス。Supabase、Firebase、Dataverse が代表例。「バックエンドを一から作る」手間を大幅に省ける。",
-        mem: "バイブコーディングで AI にフロントを作らせつつ、バックエンドは BaaS に任せるパターンが増えている。",
       },
     ],
   },
@@ -1696,8 +1647,7 @@ export const GLOSSARY_BY_GENRE = [
       },
       {
         word: "リント（Lint）",
-        mean: "ソースコードを**実行せずに**機械的にチェックし、危ない書き方・バグになりやすいパターン・コーディング規約のズレを指摘すること。ESLint（JavaScript/TypeScript）などが典型で、`npm run lint` と README に並ぶことが多いです。",
-        mem: "静的解析のひと種。整形専門は Prettier など別ツールに分かれることもあります。",
+        mean: "ソースコードを実行せずに機械的にチェックし、危ない書き方・バグになりやすいパターン・コーディング規約のズレを指摘すること。ESLint（JavaScript/TypeScript）などが典型で、`npm run lint` と README に並ぶことが多いです。",
       },
       {
         word: "レビュー",
@@ -1718,7 +1668,6 @@ export const GLOSSARY_BY_GENRE = [
       {
         word: "コンプライアンス",
         mean: "法令・社内規程・業界基準・契約条件を遵守すること。AI ツールの文脈では、入力データがモデル学習に使われないか（データ保護）、生成コードの著作権は誰にあるか（知的財産）、監査ログが取れるか（説明責任）などが該当する。EU AI Act や個人情報保護法への対応も含まれる。",
-        mem: "「コンプライアンス対応」と言われたら、法務・情報セキュリティ部門と一緒に確認が必要なサインです。",
       },
       {
         word: "CI/CD（継続的インテグレーション／継続的デリバリー）",
@@ -2247,29 +2196,29 @@ export const TOOL_REFERENCES = [
       lead: "「ファイルを検索したい」「テストを書きたい」など、やりたいことから各ツールの操作方法を引ける辞書。各ツールの方法を改行で区切って表示。",
       terms: [
         // ── ファイル操作 ──
-        { word: "ファイルを検索する", section: "ファイル操作", mean: "**Claude Code**: Read / Glob ツールで自動検索。指示に含めれば自動で探す。\n**Cursor**: `Cmd+P` でファイル名検索、`@file` で AI に指定。\n**Codex**: タスク指示に含めればサンドボックス内で検索。\n**Copilot**: `@workspace` で全体検索、`#file` で指定。\n**Gemini CLI**: 指示に含めれば自動で探す。200万トークンなら全ファイル読み込みも可能。" },
-        { word: "複数ファイルを同時に編集する", section: "ファイル操作", mean: "**Claude Code**: 自然言語で指示すれば複数ファイルを自律的に編集。\n**Cursor**: Composer（`Cmd+I`）でマルチファイル編集。Agent モードで自律的に複数ファイルを変更。\n**Codex**: タスク指示に含めればサンドボックス内で複数ファイルを変更。\n**Copilot**: Agent Mode で複数ファイル変更。\n**Gemini CLI**: 自然言語で指示すれば複数ファイルを編集。" },
-        { word: "変更を元に戻す", section: "ファイル操作", mean: "**Claude Code**: `git stash` や `git checkout -- ファイル名` で Git 経由で戻す。\n**Cursor**: Composer の Accept / Reject ボタンで個別に取消。Git で `git stash` も可。\n**Codex**: PR をマージしなければ変更は反映されない。PR を Close する。\n**Copilot**: Agent Mode の Accept / Discard で個別に取消。\n**Aider**: `/undo` コマンドで直前の変更をロールバック。" },
+        { word: "ファイルを検索する", section: "ファイル操作", mean: "Claude Code: Read / Glob ツールで自動検索。指示に含めれば自動で探す。\nCursor: `Cmd+P` でファイル名検索、`@file` で AI に指定。\nCodex: タスク指示に含めればサンドボックス内で検索。\nCopilot: `@workspace` で全体検索、`#file` で指定。\nGemini CLI: 指示に含めれば自動で探す。200万トークンなら全ファイル読み込みも可能。" },
+        { word: "複数ファイルを同時に編集する", section: "ファイル操作", mean: "Claude Code: 自然言語で指示すれば複数ファイルを自律的に編集。\nCursor: Composer（`Cmd+I`）でマルチファイル編集。Agent モードで自律的に複数ファイルを変更。\nCodex: タスク指示に含めればサンドボックス内で複数ファイルを変更。\nCopilot: Agent Mode で複数ファイル変更。\nGemini CLI: 自然言語で指示すれば複数ファイルを編集。" },
+        { word: "変更を元に戻す", section: "ファイル操作", mean: "Claude Code: `git stash` や `git checkout -- ファイル名` で Git 経由で戻す。\nCursor: Composer の Accept / Reject ボタンで個別に取消。Git で `git stash` も可。\nCodex: PR をマージしなければ変更は反映されない。PR を Close する。\nCopilot: Agent Mode の Accept / Discard で個別に取消。\nAider: `/undo` コマンドで直前の変更をロールバック。" },
         // ── テスト ──
-        { word: "テストを書く", section: "テスト", mean: "**Claude Code**: 「このファイルのテストを書いて」と指示。テストフレームワークは CLAUDE.md で指定。\n**Cursor**: Composer で「テストを書いて」と指示。.cursor/rules でフレームワーク指定。\n**Codex**: 「テストを追加して全部パスさせて」とタスク投入。サンドボックスで実行まで行う。\n**Copilot**: 関数を選択 → Chat で「テストを書いて」。`/tests` スラッシュコマンドも使える。\n**Gemini CLI**: 「テストを書いて」と指示。" },
-        { word: "テストを実行する", section: "テスト", mean: "**Claude Code**: Bash ツールで `npm test` 等を自動実行。Hooks で commit 前に自動テストも設定可能。\n**Cursor**: 統合ターミナルで手動実行。Agent モードなら自動実行も。\n**Codex**: サンドボックス内でテスト自動実行。結果は PR に反映。\n**Copilot**: Agent Mode でターミナルコマンドとして実行。\n**Gemini CLI**: ターミナルで自動実行。" },
+        { word: "テストを書く", section: "テスト", mean: "Claude Code: 「このファイルのテストを書いて」と指示。テストフレームワークは CLAUDE.md で指定。\nCursor: Composer で「テストを書いて」と指示。.cursor/rules でフレームワーク指定。\nCodex: 「テストを追加して全部パスさせて」とタスク投入。サンドボックスで実行まで行う。\nCopilot: 関数を選択 → Chat で「テストを書いて」。`/tests` スラッシュコマンドも使える。\nGemini CLI: 「テストを書いて」と指示。" },
+        { word: "テストを実行する", section: "テスト", mean: "Claude Code: Bash ツールで `npm test` 等を自動実行。Hooks で commit 前に自動テストも設定可能。\nCursor: 統合ターミナルで手動実行。Agent モードなら自動実行も。\nCodex: サンドボックス内でテスト自動実行。結果は PR に反映。\nCopilot: Agent Mode でターミナルコマンドとして実行。\nGemini CLI: ターミナルで自動実行。" },
         // ── Git 操作 ──
-        { word: "コミットする", section: "Git 操作", mean: "**Claude Code**: 変更内容を自動解析してコミットメッセージを生成・コミット。\n**Cursor**: 統合ターミナルから手動で `git commit`。AI はコミットしない。\n**Codex**: クラウドで PR を自動作成。コミットは自動。\n**Copilot**: 統合ターミナルから手動。GitHub 上で Coding Agent が PR 作成。\n**Aider**: 変更ごとに自動コミット（設定で無効化可）。" },
-        { word: "PR（Pull Request）を作成する", section: "Git 操作", mean: "**Claude Code**: `gh pr create` を Bash で実行。指示すれば PR 作成まで自律的に行う。\n**Cursor**: Background Agent で PR 作成可能。\n**Codex**: タスク完了後に自動で PR 作成（標準ワークフロー）。\n**Copilot**: Coding Agent が Issue から PR を自動作成。\n**Gemini CLI**: `gh` コマンド経由で PR 作成可能。" },
+        { word: "コミットする", section: "Git 操作", mean: "Claude Code: 変更内容を自動解析してコミットメッセージを生成・コミット。\nCursor: 統合ターミナルから手動で `git commit`。AI はコミットしない。\nCodex: クラウドで PR を自動作成。コミットは自動。\nCopilot: 統合ターミナルから手動。GitHub 上で Coding Agent が PR 作成。\nAider: 変更ごとに自動コミット（設定で無効化可）。" },
+        { word: "PR（Pull Request）を作成する", section: "Git 操作", mean: "Claude Code: `gh pr create` を Bash で実行。指示すれば PR 作成まで自律的に行う。\nCursor: Background Agent で PR 作成可能。\nCodex: タスク完了後に自動で PR 作成（標準ワークフロー）。\nCopilot: Coding Agent が Issue から PR を自動作成。\nGemini CLI: `gh` コマンド経由で PR 作成可能。" },
         // ── 設定 ──
-        { word: "プロジェクトルールを設定する", section: "設定", mean: "**Claude Code**: `CLAUDE.md` をプロジェクトルートに置く。\n**Cursor**: `.cursor/rules` にルールファイルを置く。\n**Codex**: `AGENTS.md`（または `codex.md`）をプロジェクトルートに置く。\n**Copilot**: `.github/copilot-instructions.md` を置く。\n**Gemini CLI**: `GEMINI.md` をプロジェクトルートに置く（公式ドキュメントで確認）。" },
-        { word: "AI に読ませたくないファイルを除外する", section: "設定", mean: "**Claude Code**: `.claude/settings.json` の `ignorePaths` で `.env*` を追加。\n**Cursor**: `.cursorignore` に `.env*` を記述（.gitignore と同じ書式）。\n**Codex**: `codex.json` でサンドボックスに含めないファイルを指定。\n**Copilot**: VS Code の `files.exclude` 設定と Copilot の設定で制御。\n**Gemini CLI**: 設定ファイルで指定（公式ドキュメント参照）。" },
+        { word: "プロジェクトルールを設定する", section: "設定", mean: "Claude Code: `CLAUDE.md` をプロジェクトルートに置く。\nCursor: `.cursor/rules` にルールファイルを置く。\nCodex: `AGENTS.md`（または `codex.md`）をプロジェクトルートに置く。\nCopilot: `.github/copilot-instructions.md` を置く。\nGemini CLI: `GEMINI.md` をプロジェクトルートに置く（公式ドキュメントで確認）。" },
+        { word: "AI に読ませたくないファイルを除外する", section: "設定", mean: "Claude Code: `.claude/settings.json` の `ignorePaths` で `.env*` を追加。\nCursor: `.cursorignore` に `.env*` を記述（.gitignore と同じ書式）。\nCodex: `codex.json` でサンドボックスに含めないファイルを指定。\nCopilot: VS Code の `files.exclude` 設定と Copilot の設定で制御。\nGemini CLI: 設定ファイルで指定（公式ドキュメント参照）。" },
         // ── セキュリティ ──
-        { word: ".env / API キーの漏洩を防ぐ", section: "セキュリティ", mean: "**Claude Code**: `.claude/settings.json` の `ignorePaths` に `.env*` を追加。Hooks の PreCommit で gitleaks 等を実行。\n**Cursor**: `.cursorignore` に `.env*` を記述。Privacy Mode を有効化。\n**Codex**: サンドボックスで動作するためローカル .env は含まれにくいが、codex.json で明示的に除外。\n**Copilot**: VS Code の files.exclude で .env を非表示に。\n**共通**: `.gitignore` に `.env*` を必ず追加。git-secrets や gitleaks をプレコミットフックに設定。" },
-        { word: "コードの学習利用を防ぐ", section: "セキュリティ", mean: "**Claude Code**: Commercial プラン（Team/Enterprise/API）は学習不使用。Consumer は claude.ai/settings で設定。\n**Cursor**: Privacy Mode（Settings > General）で学習不使用。Ghost Mode で完全無効化。\n**Copilot**: /settings/copilot/features で「AI model training」を OFF。Business/Enterprise は契約で不使用。==4/24〜 Free/Pro はデフォルト ON なので要確認==。\n**Gemini CLI**: CLI 内にオプトアウト設定なし（2026年3月時点で課題あり）。" },
-        { word: "会話履歴を保存する", section: "セキュリティ", mean: "**Claude Code**: `/export` で会話をファイルに保存。`--continue` / `--resume` でセッション再開。ローカルに `~/.claude/projects/` に保存（最大30日）。Hooks で自動保存も可能。\n**Cursor**: チャット履歴はエディタ内に保持。新規チャットで独立。\n**Codex**: ChatGPT の画面に履歴が残る。Codex タスク一覧で進捗・結果を確認可能。\n**Copilot**: VS Code の Chat パネルに履歴。セッション単位で保持。" },
+        { word: ".env / API キーの漏洩を防ぐ", section: "セキュリティ", mean: "Claude Code: `.claude/settings.json` の `ignorePaths` に `.env*` を追加。Hooks の PreCommit で gitleaks 等を実行。\nCursor: `.cursorignore` に `.env*` を記述。Privacy Mode を有効化。\nCodex: サンドボックスで動作するためローカル .env は含まれにくいが、codex.json で明示的に除外。\nCopilot: VS Code の files.exclude で .env を非表示に。\n共通: `.gitignore` に `.env*` を必ず追加。git-secrets や gitleaks をプレコミットフックに設定。" },
+        { word: "コードの学習利用を防ぐ", section: "セキュリティ", mean: "Claude Code: Commercial プラン（Team/Enterprise/API）は学習不使用。Consumer は claude.ai/settings で設定。\nCursor: Privacy Mode（Settings > General）で学習不使用。Ghost Mode で完全無効化。\nCopilot: /settings/copilot/features で「AI model training」を OFF。Business/Enterprise は契約で不使用。==4/24〜 Free/Pro はデフォルト ON なので要確認==。\nGemini CLI: CLI 内にオプトアウト設定なし（2026年3月時点で課題あり）。" },
+        { word: "会話履歴を保存する", section: "セキュリティ", mean: "Claude Code: `/export` で会話をファイルに保存。`--continue` / `--resume` でセッション再開。ローカルに `~/.claude/projects/` に保存（最大30日）。Hooks で自動保存も可能。\nCursor: チャット履歴はエディタ内に保持。新規チャットで独立。\nCodex: ChatGPT の画面に履歴が残る。Codex タスク一覧で進捗・結果を確認可能。\nCopilot: VS Code の Chat パネルに履歴。セッション単位で保持。" },
         // ── デバッグ ──
-        { word: "エラーの原因を調べる", section: "デバッグ", mean: "**Claude Code**: エラーメッセージを貼り付けるか、ログファイルを読ませて分析させる。\n**Cursor**: エラーの赤い波線にカーソル → 「Fix with AI」。ターミナルエラーは「Ask AI」ボタン。\n**Codex**: タスクで「このエラーを修正して」と指示。\n**Copilot**: `@terminal このエラーの原因は？` で直近のターミナル出力を解析。\n**Gemini CLI**: エラーメッセージを貼り付けて分析させる。" },
+        { word: "エラーの原因を調べる", section: "デバッグ", mean: "Claude Code: エラーメッセージを貼り付けるか、ログファイルを読ませて分析させる。\nCursor: エラーの赤い波線にカーソル → 「Fix with AI」。ターミナルエラーは「Ask AI」ボタン。\nCodex: タスクで「このエラーを修正して」と指示。\nCopilot: `@terminal このエラーの原因は？` で直近のターミナル出力を解析。\nGemini CLI: エラーメッセージを貼り付けて分析させる。" },
         // ── コード理解 ──
-        { word: "コードの意味を説明してもらう", section: "コード理解", mean: "**Claude Code**: 「このファイルを説明して」と指示。1M コンテキストで広範囲を把握。\n**Cursor**: コードを選択 → `Cmd+L` → 「これを説明して」。\n**Codex**: `-q` モードで質問のみ可能。\n**Copilot**: コードを選択 → 右クリック → 「Explain」。`@workspace` でプロジェクト全体の説明も。\n**Gemini CLI**: 200 万トークンで大規模コードベースの全体像を説明させるのに強い。" },
-        { word: "プロジェクト全体の構造を把握する", section: "コード理解", mean: "**Claude Code**: 起動時に自動でプロジェクト構造を読み取る。\n**Cursor**: `@codebase このプロジェクトの構造を説明して` で全体把握。\n**Copilot**: `@workspace` で全体を文脈に含める。\n**Gemini CLI**: 200 万トークンのコンテキストで全ファイルを一括読み込み。大規模プロジェクトでの全体把握に最も強い。" },
+        { word: "コードの意味を説明してもらう", section: "コード理解", mean: "Claude Code: 「このファイルを説明して」と指示。1M コンテキストで広範囲を把握。\nCursor: コードを選択 → `Cmd+L` → 「これを説明して」。\nCodex: `-q` モードで質問のみ可能。\nCopilot: コードを選択 → 右クリック → 「Explain」。`@workspace` でプロジェクト全体の説明も。\nGemini CLI: 200 万トークンで大規模コードベースの全体像を説明させるのに強い。" },
+        { word: "プロジェクト全体の構造を把握する", section: "コード理解", mean: "Claude Code: 起動時に自動でプロジェクト構造を読み取る。\nCursor: `@codebase このプロジェクトの構造を説明して` で全体把握。\nCopilot: `@workspace` で全体を文脈に含める。\nGemini CLI: 200 万トークンのコンテキストで全ファイルを一括読み込み。大規模プロジェクトでの全体把握に最も強い。" },
         // ── 外部連携 ──
-        { word: "外部ツール・API と連携する", section: "外部連携", mean: "**Claude Code**: MCP サーバーで DB・ブラウザ・SaaS API と連携。Hooks で前後処理。\n**Cursor**: MCP サーバー対応。拡張機能でも連携可能。\n**Codex**: サンドボックス内での実行に限定。外部 API は制限あり。\n**Copilot**: VS Code 拡張機能エコシステムで幅広い連携。\n**Gemini CLI**: MCP 対応。Google Cloud サービスとネイティブ統合。" },
+        { word: "外部ツール・API と連携する", section: "外部連携", mean: "Claude Code: MCP サーバーで DB・ブラウザ・SaaS API と連携。Hooks で前後処理。\nCursor: MCP サーバー対応。拡張機能でも連携可能。\nCodex: サンドボックス内での実行に限定。外部 API は制限あり。\nCopilot: VS Code 拡張機能エコシステムで幅広い連携。\nGemini CLI: MCP 対応。Google Cloud サービスとネイティブ統合。" },
       ],
     },
   },

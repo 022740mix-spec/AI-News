@@ -936,8 +936,7 @@ function ToolReferencePanel({ referenceData, practical }) {
                   <dd className="glossary-dl__body">
                     <GuideLinkifiedP text={t.mean} className="glossary-dl__mean" />
                     {t.code ? <CopyableCodeBlock code={t.code} lang={t.codeLang ?? "bash"} /> : null}
-                    {t.mem ? <GuideLinkifiedP text={t.mem} className="glossary-dl__mem" /> : null}
-                  </dd>
+                                      </dd>
                 </Fragment>
               ))}
             </dl>
@@ -1169,9 +1168,6 @@ function GuideRulesPanel() {
                 <dt className="glossary-dl__term">{richInlineLine(r.title, mkKey)}</dt>
                 <dd className="glossary-dl__body">
                   <GuideLinkifiedP text={r.mean} className="glossary-dl__mean" />
-                  {r.mem ? (
-                    <GuideLinkifiedP text={r.mem} className="glossary-dl__mem" />
-                  ) : null}
                 </dd>
               </Fragment>
             ))}
@@ -1189,9 +1185,6 @@ function GuideRulesPanel() {
                 <dt className="glossary-dl__term">{richInlineLine(t.word, mkKey)}</dt>
                 <dd className="glossary-dl__body">
                   <GuideLinkifiedP text={t.mean} className="glossary-dl__mean" />
-                  {t.mem ? (
-                    <GuideLinkifiedP text={t.mem} className="glossary-dl__mem" />
-                  ) : null}
                 </dd>
               </Fragment>
             ))}
@@ -1317,9 +1310,6 @@ function GlossaryGuidePanel({ glossaryGenres }) {
                   <dt className="glossary-dl__term">{richInlineLine(t.word, mkKey)}</dt>
                   <dd className="glossary-dl__body">
                     <GuideLinkifiedP text={t.mean} className="glossary-dl__mean" />
-                    {t.mem ? (
-                      <GuideLinkifiedP text={t.mem} className="glossary-dl__mem" />
-                    ) : null}
                   </dd>
                 </Fragment>
               ))}

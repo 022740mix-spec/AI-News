@@ -1001,13 +1001,6 @@ body {
   line-height: 1.55;
 }
 
-.glossary-dl__mem {
-  margin: 0.35rem 0 0;
-  font-size: var(--text-sm);
-  color: var(--muted);
-  line-height: 1.5;
-}
-
 .sidebar-panel-hint {
   font-size: var(--text-sm);
   color: var(--muted);
