@@ -789,7 +789,6 @@ export const ARTICLES = [
       { "title": "Claude Code — Memory (CLAUDE.md)", "site": "Anthropic", "url": "https://code.claude.com/docs/en/memory" },
       { "title": "Agent skills overview (SKILL.md)", "site": "Anthropic", "url": "https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills/overview" },
       { "title": "Introducing AGENTS.md", "site": "OpenAI Developers", "url": "https://developers.openai.com/codex/guides/agents-md/" },
-      { "title": "AGENTS.md — Open format for agent instructions", "site": "agents.md", "url": "https://agents.md/" },
       { "title": "Rules — Cursor docs", "site": "Cursor", "url": "https://cursor.com/docs/context/rules" },
       { "title": "llms.txt standard", "site": "llmstxt.org", "url": "https://llmstxt.org/" }
     ]
@@ -817,9 +816,6 @@ export const ARTICLES = [
     "lastReviewed": "2026-03-29",
     "primarySources": [
       { "title": "Model Context Protocol — Specification", "site": "modelcontextprotocol.io", "url": "https://modelcontextprotocol.io/" },
-      { "title": "Introducing the Model Context Protocol", "site": "Anthropic", "url": "https://www.anthropic.com/news/model-context-protocol" },
-      { "title": "What is Model Context Protocol (MCP)?", "site": "Google Cloud", "url": "https://cloud.google.com/discover/what-is-model-context-protocol" },
-      { "title": "MCP GitHub Organization", "site": "GitHub", "url": "https://github.com/modelcontextprotocol" },
       { "title": "Claude Code — MCP", "site": "Anthropic", "url": "https://code.claude.com/docs/en/mcp" },
       { "title": "freee-mcp リモート版", "site": "freee", "url": "https://corp.freee.co.jp/news/20260327freee_mcp.html" },
       { "title": "MCP v2 — The 2026 MCP Roadmap", "site": "MCP Blog", "url": "http://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/" }
