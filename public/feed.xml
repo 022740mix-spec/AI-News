@@ -56,20 +56,20 @@
     <summary>Web 開発、データ分析、企業導入、初心者など用途別に最適なツールの組み合わせを整理した。目的と予算に合わせて選べるマトリクス形式。</summary>
   </entry>
   <entry>
-    <title>CLAUDE.md 設計パターン集 — プロジェクト別の書き方と実例</title>
-    <link rel="alternate" type="text/html" href="?a=claude-md-design-patterns-2026"/>
-    <id>tag:ai-tool-news.jp,2026:claude-md-design-patterns-2026</id>
+    <title>AI 設定ファイル総合ガイド — CLAUDE.md・SKILL.md・AGENTS.md・.cursor/rules を一本化して理解する</title>
+    <link rel="alternate" type="text/html" href="?a=ai-config-files-comprehensive-guide-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ai-config-files-comprehensive-guide-2026</id>
     <published>2026-03-29T15:00:00Z</published>
     <updated>2026-03-29T15:00:00Z</updated>
-    <summary>Claude Code の動作を制御する CLAUDE.md ファイルの設計パターンを、プロジェクト種別ごとに整理した。グローバル設定・プロジェクト設定・チーム共有の三層構造と、実務で効くルールの書き方を解説する。</summary>
+    <summary>Claude Code の CLAUDE.md、スキルファイル、Codex の AGENTS.md、Cursor の .cursor/rules、llms.txt。AI コーディングツールの「設定ファイル」が乱立する中、それぞれの役割・配置場所・書き方のベストプラクティスを1本にまとめた。</summary>
   </entry>
   <entry>
-    <title>MCP サーバー活用実践ガイド — DB 連携・ブラウザ操作・外部 API の具体例</title>
-    <link rel="alternate" type="text/html" href="?a=mcp-practical-guide-2026"/>
-    <id>tag:ai-tool-news.jp,2026:mcp-practical-guide-2026</id>
+    <title>MCP（Model Context Protocol）総合ガイド — 仕様・サーバ選定・DB連携・ブラウザ操作・セキュリティ</title>
+    <link rel="alternate" type="text/html" href="?a=mcp-comprehensive-guide-2026"/>
+    <id>tag:ai-tool-news.jp,2026:mcp-comprehensive-guide-2026</id>
     <published>2026-03-29T15:00:00Z</published>
     <updated>2026-03-29T15:00:00Z</updated>
-    <summary>Model Context Protocol（MCP）を使った Claude Code の外部連携を、DB 操作・ブラウザ自動化・SaaS API の3パターンで解説。ローカル版とリモート版の違い、設定方法、セキュリティ上の注意点を整理した。</summary>
+    <summary>MCP の仕様概要からサーバ選定、DB 連携・ブラウザ操作・SaaS API の実践パターン、権限設計・サプライチェーンリスクまで、1本にまとめた総合ガイド。v2 仕様やリモートサーバーにも言及。</summary>
   </entry>
   <entry>
     <title>AI × Git 連携ワークフロー — ブランチ戦略・PR 自動生成・コードレビュー活用</title>
@@ -632,22 +632,6 @@
     <summary>「社内文書を全部ベクトル化」は最短でコンプライアンス事故を起こす。IdP とのグループ同期、コレクション／行レベル ACL、PII 検出とマスキング、削除権・スナップショット、ログの監査可能性までを整理する。</summary>
   </entry>
   <entry>
-    <title>エージェント・スキルと SKILL.md — Claude / Cursor / Codex をまたぐ再利用単位</title>
-    <link rel="alternate" type="text/html" href="?a=agent-skills-skill-md"/>
-    <id>tag:ai-tool-news.jp,2026:agent-skills-skill-md</id>
-    <published>2026-03-12T15:00:00Z</published>
-    <updated>2026-03-12T15:00:00Z</updated>
-    <summary>フォルダ＋SKILL.md に手順・ドメイン知識・メタデータを束ね、モデルが必要時だけ展開する「スキル」パターンが普及している。YAML フロントマター、段階的開示、.claude/skills や各 IDE の skills ディレクトリの考え方を整理する。</summary>
-  </entry>
-  <entry>
-    <title>Markdown で育てるエージェント文脈 — AGENTS.md・CLAUDE.md・llms.txt・.cursor/rules</title>
-    <link rel="alternate" type="text/html" href="?a=markdown-ai-context-agents-llms"/>
-    <id>tag:ai-tool-news.jp,2026:markdown-ai-context-agents-llms</id>
-    <published>2026-03-12T15:00:00Z</published>
-    <updated>2026-03-12T15:00:00Z</updated>
-    <summary>リポジトリ直下の短い Markdown／ルールファイルが、LLM への「常時参照コンテキスト」として定位置になっている。Codex の AGENTS.md、Cursor の rules、サイト全体要約の llms.txt など、役割の違いとレビュー文化を整理する。</summary>
-  </entry>
-  <entry>
     <title>Zed AI — Rust製の超高速AIエディタ</title>
     <link rel="alternate" type="text/html" href="?a=zed-ai"/>
     <id>tag:ai-tool-news.jp,2026:zed-ai</id>
@@ -670,14 +654,6 @@
     <published>2026-03-10T15:00:00Z</published>
     <updated>2026-03-10T15:00:00Z</updated>
     <summary>ベクトル化の前段で成果が決まる。固定長だけでなく見出し・段落・構造を利用した分割、親チャンクと子チャンク、表・スキャン PDF・OCR のノイズ、メタデータとリネージ・再処理、障害検知までを実務目線で整理する。</summary>
-  </entry>
-  <entry>
-    <title>MCP（Model Context Protocol）実務 — サーバ選定、権限、ネットワーク、サプライチェーン</title>
-    <link rel="alternate" type="text/html" href="?a=mcp-servers-deep-dive"/>
-    <id>tag:ai-tool-news.jp,2026:mcp-servers-deep-dive</id>
-    <published>2026-03-10T15:00:00Z</published>
-    <updated>2026-03-10T15:00:00Z</updated>
-    <summary>ツール呼び出しを JSON-RPC で標準化する MCP は、IDE・CLI・独自ホストのゲートウェイ間で同じコネクタを再利用できる。stdio / HTTP トランスポート、権限の渡し方、サードパーティ拡張の供給網リスクまでを整理する。</summary>
   </entry>
   <entry>
     <title>GitHub Copilot CLI レビュー — エンタープライズ対応のAI開発支援</title>

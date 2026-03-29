@@ -2427,8 +2427,17 @@ function readInitialRouteState() {
   if (typeof window === "undefined") {
     return { selected: null, siteSection: "home", query: "", guideTab: "setup", toolTab: "claude-code" };
   }
+  // 統合済み記事の旧ID → 新IDリダイレクト
+  const REDIRECTS = {
+    "mcp-servers-deep-dive": "mcp-comprehensive-guide-2026",
+    "mcp-practical-guide-2026": "mcp-comprehensive-guide-2026",
+    "agent-skills-skill-md": "ai-config-files-comprehensive-guide-2026",
+    "markdown-ai-context-agents-llms": "ai-config-files-comprehensive-guide-2026",
+    "claude-md-design-patterns-2026": "ai-config-files-comprehensive-guide-2026",
+  };
   const u = new URL(window.location.href);
-  const aid = u.searchParams.get("a");
+  let aid = u.searchParams.get("a");
+  if (aid && REDIRECTS[aid]) aid = REDIRECTS[aid];
   if (aid) {
     const found = ARTICLES.find((x) => x.id === aid);
     if (found) {
@@ -2522,9 +2531,17 @@ const [showFab, setShowFab] = useState(false);
 
   // ブラウザの戻る/進むボタンで記事を開閉する
   useEffect(() => {
+    const REDIRECTS = {
+      "mcp-servers-deep-dive": "mcp-comprehensive-guide-2026",
+      "mcp-practical-guide-2026": "mcp-comprehensive-guide-2026",
+      "agent-skills-skill-md": "ai-config-files-comprehensive-guide-2026",
+      "markdown-ai-context-agents-llms": "ai-config-files-comprehensive-guide-2026",
+      "claude-md-design-patterns-2026": "ai-config-files-comprehensive-guide-2026",
+    };
     const onPop = () => {
       const u = new URL(window.location.href);
-      const aid = u.searchParams.get("a");
+      let aid = u.searchParams.get("a");
+      if (aid && REDIRECTS[aid]) aid = REDIRECTS[aid];
       if (aid) {
         const found = ARTICLES.find((x) => x.id === aid);
         setSelected(found ?? null);

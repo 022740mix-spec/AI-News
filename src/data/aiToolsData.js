@@ -474,7 +474,7 @@ export const ARTICLES = [
     "body": [
       "フリー株式会社は3月27日、AIエージェントから freee の各種 API を操作できる MCP サーバー「freee-mcp」のリモート版の提供を開始した。3月2日に OSS として公開したローカル版に続く展開で、リモート版ではサーバーを freee 側がホストするため、ローカル環境への設定が不要。",
       "利用方法は Claude Desktop・Claude Code・Claude Cowork・Cursor などの AI ツールに URL（https://mcp.freee.co.jp/mcp）を追加し、freee にログインするだけ。会計・人事労務・請求書・工数管理・販売の5領域にわたる約270の操作が AI から可能になる。",
-      "MCP（Model Context Protocol）のリモートサーバー対応により、ローカルに npm パッケージをインストールする必要がなくなった点が大きい。日本の SaaS 企業が公式に MCP リモート版を提供する先行事例として注目される。freee は今後もハッカソンの開催を予定している。MCP を使った開発ワークフローの全体像は [MCP 活用実践ガイド](?a=mcp-practical-guide-2026)を参照。"
+      "MCP（Model Context Protocol）のリモートサーバー対応により、ローカルに npm パッケージをインストールする必要がなくなった点が大きい。日本の SaaS 企業が公式に MCP リモート版を提供する先行事例として注目される。freee は今後もハッカソンの開催を予定している。MCP を使った開発ワークフローの全体像は [MCP 活用実践ガイド](?a=mcp-comprehensive-guide-2026)を参照。"
     ],
     "newsDate": "2026-03-27",
     "date": "2026-03-28",
@@ -765,50 +765,61 @@ export const ARTICLES = [
     ]
   },
   {
-    "id": "claude-md-design-patterns-2026",
+    "id": "ai-config-files-comprehensive-guide-2026",
     "type": "feature",
     "category": "cli",
-    "title": "CLAUDE.md 設計パターン集 — プロジェクト別の書き方と実例",
-    "excerpt": "Claude Code の動作を制御する CLAUDE.md ファイルの設計パターンを、プロジェクト種別ごとに整理した。グローバル設定・プロジェクト設定・チーム共有の三層構造と、実務で効くルールの書き方を解説する。",
+    "title": "AI 設定ファイル総合ガイド — CLAUDE.md・SKILL.md・AGENTS.md・.cursor/rules を一本化して理解する",
+    "excerpt": "Claude Code の CLAUDE.md、スキルファイル、Codex の AGENTS.md、Cursor の .cursor/rules、llms.txt。AI コーディングツールの「設定ファイル」が乱立する中、それぞれの役割・配置場所・書き方のベストプラクティスを1本にまとめた。",
     "body": [
-      "CLAUDE.md は Claude Code がプロジェクトのルールや慣習を理解するための設定ファイルで、Anthropic の公式ドキュメントに仕様が記載されている。ファイルの配置場所によって適用範囲が変わる三層構造になっている。~/.claude/CLAUDE.md がグローバル設定（全プロジェクト共通）、プロジェクトルートの CLAUDE.md がプロジェクト設定、.claude/CLAUDE.md がプロジェクト固有のユーザー設定となる。",
-      "設計の基本原則は「AI が判断に迷う場面を先回りして書く」こと。コーディング規約のうち linter で検出できるものは CLAUDE.md に書かずツール設定に任せ、linter では検出できないアーキテクチャ方針・命名規則・禁止パターンを記述する。例えば「新しいフォルダを作る前に既存構造を確認する」「.env ファイルをコミットしない」といったルールは自動検出が難しく、CLAUDE.md に書く価値がある。",
-      "プロジェクト種別ごとのパターンとして、Web アプリ（React / Next.js 等）では src/ 配下の構成ルール・コンポーネント命名・CSS 方針を明記する。CLI ツール開発では引数パーサーの選定方針・エラーハンドリングの基準を書く。モノレポではパッケージ間の依存ルールと変更時の影響範囲を指定する。いずれも「禁止事項」を具体的に書くと AI の判断ブレが減る。",
-      "チームでの運用では、プロジェクトルートの CLAUDE.md を Git 管理してチーム全員で共有し、個人設定は .claude/CLAUDE.md（.gitignore に追加）に分離する。レビュー方針やテスト要件など、チーム合意が必要な項目は共有側に置く。個人の作業スタイル（応答言語、デバッグ手法の好み等）は個人側に置く。",
-      "注意点として、CLAUDE.md が肥大化するとコンテキストを圧迫する。公式ドキュメントでは簡潔に保つことが推奨されている。ルールが増えてきた場合は、[スキルファイル（.claude/skills/）](?a=agent-skills-skill-md)に分割して段階的に読み込ませる設計が有効。CLAUDE.md は「常に読まれる指示」、スキルファイルは「必要なときだけ読まれる指示」という使い分けになる。[MCP サーバー](?a=mcp-practical-guide-2026)や [Hooks](?a=claude-code-auto-mode) と組み合わせることで、AI の動作をより精密に制御できる。"
+      "AI コーディングツールの普及に伴い、リポジトリに置く「AI 向け設定ファイル」が増えている。CLAUDE.md、SKILL.md、AGENTS.md、.cursor/rules、llms.txt — それぞれ目的と配置場所が異なるが、共通するのは「Git 管理下のテキストで AI の振る舞いを固定する」という設計思想。ここでは全ツールの設定ファイルを横断的に整理する。",
+      "**CLAUDE.md（Claude Code）**: AI が「常に読む」プロジェクトルール。三層構造で配置する。~/.claude/CLAUDE.md がグローバル設定（全プロジェクト共通）、プロジェクトルートの CLAUDE.md がプロジェクト設定、.claude/CLAUDE.md が個人設定（.gitignore 推奨）。書くべき内容は「linter で検出できないルール」— アーキテクチャ方針、命名規則、禁止パターン。肥大化するとコンテキストを圧迫するため、簡潔に保つことが公式で推奨されている。",
+      "**SKILL.md（Claude Code / Cursor）**: 「必要なときだけ読まれる」詳細な手順書。.claude/skills/ や .cursor/skills/ にフォルダ単位で配置し、YAML フロントマター（名前・説明・互換性）+ 本文（ワークフロー・チェックリスト・禁止事項）で構成する。CLAUDE.md は常時ロード、SKILL.md は段階的開示でトークンを抑える設計。==外部からスキルをコピーする場合は隠し文字やプロンプトインジェクションがないか必ず確認する==（[→ セキュリティリスクの詳細](?a=ai-autonomous-execution-risks-2026)）。",
+      "**AGENTS.md（Codex）**: OpenAI の Codex 向け設定ファイル。CLAUDE.md と同じ役割で、プロジェクトルートに配置する。コーディング規約、テストフレームワーク、デプロイ手順を記述。codex.md でも読み込まれる。",
+      "**.cursor/rules（Cursor）**: Cursor 専用の AI ルールファイル。使用言語、命名規則、禁止パターンを記述する。.cursorrules（プロジェクトルート）と .cursor/rules/（ディレクトリ単位）の2つの配置方法がある。",
+      "**llms.txt**: サイトやプロダクトの LLM 向け要約入口。検索クローラではなく AI が一次情報を辿るためのインデックスとして位置づけられている。自社ドキュメントの URL と要約の境界を明確にし、著作権・利用条件に沿った引用に留める。",
+      "**チーム運用のベストプラクティス**: (1) プロジェクトルートの設定ファイルは Git 管理してチーム共有。個人設定は .gitignore で分離。(2) ルール同士の矛盾を防ぐため、定期的な lint とオーナー明記。(3) 複数ツールを併用する場合、フロントマターの互換フィールドやディレクトリ規約を揃えると移行コストが下がる。(4) [MCP](?a=mcp-comprehensive-guide-2026) や [Hooks](?a=claude-code-auto-mode) と組み合わせることで AI の動作をより精密に制御できる。"
     ],
     "date": "2026-03-29",
     "author": "AI News 編集部",
-    "readTime": "8分",
-    "tags": ["Claude Code", "CLAUDE.md", "設定", "チーム開発", "実用スキル"],
+    "readTime": "12分",
+    "tags": ["CLAUDE.md", "SKILL.md", "AGENTS.md", "Cursor", "設定", "チーム開発", "実用スキル"],
     "heroScope": "none",
+    "lastReviewed": "2026-03-29",
     "primarySources": [
-      { "title": "Claude Code Documentation — Memory", "site": "Anthropic", "url": "https://code.claude.com/docs/en/memory" },
-      { "title": "Claude Code Overview", "site": "Anthropic", "url": "https://code.claude.com/docs/en/overview" }
+      { "title": "Claude Code — Memory (CLAUDE.md)", "site": "Anthropic", "url": "https://code.claude.com/docs/en/memory" },
+      { "title": "Agent skills overview (SKILL.md)", "site": "Anthropic", "url": "https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills/overview" },
+      { "title": "Introducing AGENTS.md", "site": "OpenAI Developers", "url": "https://developers.openai.com/codex/guides/agents-md/" },
+      { "title": "Rules — Cursor docs", "site": "Cursor", "url": "https://cursor.com/docs/context/rules" },
+      { "title": "llms.txt standard", "site": "llmstxt.org", "url": "https://llmstxt.org/" }
     ]
   },
   {
-    "id": "mcp-practical-guide-2026",
+    "id": "mcp-comprehensive-guide-2026",
     "type": "feature",
     "category": "cli",
-    "title": "MCP サーバー活用実践ガイド — DB 連携・ブラウザ操作・外部 API の具体例",
-    "excerpt": "Model Context Protocol（MCP）を使った Claude Code の外部連携を、DB 操作・ブラウザ自動化・SaaS API の3パターンで解説。ローカル版とリモート版の違い、設定方法、セキュリティ上の注意点を整理した。",
+    "title": "MCP（Model Context Protocol）総合ガイド — 仕様・サーバ選定・DB連携・ブラウザ操作・セキュリティ",
+    "excerpt": "MCP の仕様概要からサーバ選定、DB 連携・ブラウザ操作・SaaS API の実践パターン、権限設計・サプライチェーンリスクまで、1本にまとめた総合ガイド。v2 仕様やリモートサーバーにも言及。",
     "body": [
-      "MCP（Model Context Protocol）は Anthropic が策定したオープンプロトコルで、AI モデルが外部のツールやデータソースに標準化された方法でアクセスするための仕組み。Claude Code は MCP クライアントとして動作し、MCP サーバーを追加することで機能を拡張できる。設定は .claude/settings.json の mcpServers セクションに記述する。",
-      "**DB 連携**では、PostgreSQL や SQLite の MCP サーバーを接続すると、Claude Code がスキーマを読み取り、クエリの生成・実行・結果の解釈までを一貫して行える。マイグレーションファイルの作成やテストデータの投入にも応用できる。==ただし本番 DB への直接接続は避け、開発環境やリードレプリカに限定すべき==。接続文字列を .env から読み込み、MCP サーバーの起動コマンドで参照する構成が安全。",
-      "**ブラウザ操作**では、Puppeteer や Playwright ベースの MCP サーバーを使うと、Claude Code からブラウザを操作してスクリーンショット取得・フォーム入力・E2E テストの実行が可能になる。Web アプリの動作確認を AI に任せるワークフローが組める。Chrome 拡張ベースの MCP サーバー（例: claude-in-chrome）も存在し、既に開いているタブのコンテキストを AI に渡せる。",
-      "**SaaS API 連携**では、[freee の MCP リモートサーバー](?a=freee-mcp-remote-2026)（会計・人事など約270操作）のように、SaaS 側が公式に MCP サーバーを提供するケースが増えている。リモート版は URL を追加するだけで利用でき、ローカルに npm パッケージをインストールする必要がない。GitHub MCP サーバーを使えば Issue・PR の操作も Claude Code から直接行える。MCP プロトコル自体の技術的な詳細は[MCP サーバー解説記事](?a=mcp-servers-deep-dive)、[v2 ロードマップ](?a=mcp-v2-spec-launch-2026)も参照。",
-      "セキュリティ上の注意: MCP サーバーは Claude Code に外部操作の権限を与えるため、信頼できる提供元のサーバーのみを使う。本番環境のクレデンシャルは MCP 設定に直書きせず、環境変数で渡す。Auto mode と MCP を組み合わせる場合は、Hooks で操作の前後にログを記録するガードレールを設けることが Anthropic の公式ドキュメントで推奨されている。"
+      "**MCP（Model Context Protocol）** は Anthropic が策定したオープンプロトコルで、AI モデルが外部のツールやデータソースに標準化された方法でアクセスするための仕組み。2025年11月の初版公開以降、9,700万インストールを超えるエコシステムに成長した。Claude Code・Cursor・Gemini CLI など主要ツールが MCP クライアントとして対応しており、OpenAI・Microsoft も正式サポートを表明している。",
+      "**トランスポートと接続方式**: MCP サーバーとの接続には2つの方式がある。**stdio**（標準入出力）はローカルプロセス直結でセットアップが簡単だが、クライアントと同じマシンにサーバーバイナリが必要。**Streamable HTTP**（v2 で追加）はリモート配置に向くが、認証・TLS・レート制限を自前で設計する必要がある。v2 では OAuth 2.1 認可フレームワークと JSON-RPC バッチも追加された（[→ v2 仕様の詳細](?a=mcp-v2-spec-launch-2026)）。",
+      "**実践パターン1: DB 連携**: PostgreSQL や SQLite の MCP サーバーを接続すると、Claude Code がスキーマ読み取り→クエリ生成→実行→結果解釈を一貫して行える。==本番 DB への直接接続は避け、開発環境やリードレプリカに限定する==。接続文字列は .env から環境変数で渡す。",
+      "**実践パターン2: ブラウザ操作**: Puppeteer や Playwright ベースの MCP サーバーで、スクリーンショット取得・フォーム入力・E2E テストの実行が可能。Chrome 拡張ベースの MCP サーバーなら既に開いているタブのコンテキストを AI に渡せる。",
+      "**実践パターン3: SaaS API 連携**: [freee の MCP リモートサーバー](?a=freee-mcp-remote-2026)（約270操作）のように、SaaS 側が公式に MCP サーバーを提供するケースが増えている。リモート版は URL を追加するだけで利用でき、ローカルへの npm インストールが不要。GitHub MCP サーバーで Issue・PR 操作も可能。",
+      "**セキュリティとサプライチェーンリスク**: MCP サーバーは AI に外部操作の権限を与えるため、信頼できる提供元のみを使う。広いファイルシステムアクセス・任意 URL 取得・シェル実行を持つサーバーは、**サプライチェーン攻撃（悪意あるサーバー・更新）とインジェクション**の両面でリスクが大きい。ロックファイル・署名・許容リスト・監査ログの運用を検討する。Auto mode と MCP を組み合わせる場合は [Hooks](?a=claude-code-auto-mode) でガードレールを設ける。",
+      "**設定方法**: Claude Code では `.claude/settings.json` の mcpServers セクションに記述。Cursor も MCP サーバー対応。製品ごとに接続パスが異なるため、公式の接続例を確認するのが安全。AI 設定ファイル（[CLAUDE.md・SKILL.md 等](?a=ai-config-files-comprehensive-guide-2026)）と組み合わせることで、MCP で「何に接続するか」、設定ファイルで「どう振る舞うか」を分離して管理できる。"
     ],
     "date": "2026-03-29",
     "author": "AI News 編集部",
-    "readTime": "9分",
-    "tags": ["MCP", "Claude Code", "DB連携", "ブラウザ", "実用スキル", "freee"],
+    "readTime": "14分",
+    "tags": ["MCP", "Claude Code", "DB連携", "ブラウザ", "セキュリティ", "実用スキル", "freee"],
     "heroScope": "none",
+    "lastReviewed": "2026-03-29",
     "primarySources": [
-      { "title": "Model Context Protocol", "site": "Anthropic", "url": "https://modelcontextprotocol.io/" },
+      { "title": "Model Context Protocol — Specification", "site": "modelcontextprotocol.io", "url": "https://modelcontextprotocol.io/" },
+      { "title": "MCP GitHub Organization", "site": "GitHub", "url": "https://github.com/modelcontextprotocol" },
       { "title": "Claude Code — MCP", "site": "Anthropic", "url": "https://code.claude.com/docs/en/mcp" },
-      { "title": "freee-mcp リモート版", "site": "freee", "url": "https://corp.freee.co.jp/news/20260327freee_mcp.html" }
+      { "title": "freee-mcp リモート版", "site": "freee", "url": "https://corp.freee.co.jp/news/20260327freee_mcp.html" },
+      { "title": "MCP v2 — The 2026 MCP Roadmap", "site": "MCP Blog", "url": "http://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/" }
     ]
   },
   {
@@ -822,7 +833,7 @@ export const ARTICLES = [
       "**ブランチ戦略と AI の使い分け**: feature ブランチを切ってから AI にタスクを投げるのが基本。Claude Code は CLAUDE.md に「main ブランチに直接 push しない」と書いておけばルールを守る。Codex はクラウドサンドボックスで動作するため、ローカルのブランチとは独立して作業し、結果を PR として提出する設計。Aider は変更ごとに自動コミットするため、ブランチ上での変更履歴が細かく残る。",
       "**PR 自動生成**: Copilot Coding Agent は GitHub Issue を割り当てるだけで AI がブランチ作成→コード変更→PR 作成まで自律的に実行する。Claude Code では claude -p 'この Issue を修正して PR を作成' のようにヘッドレスモードで CI/CD パイプラインから呼び出せる。Codex も同様に ChatGPT インターフェースからタスクを投げると PR 単位で結果が返る。",
       "**コードレビュー支援**: [Cursor 2.4](?a=cursor-2-4-subagents) の BugBot は PR レベルの自動レビューを行い、バグの早期発見を支援する。GitHub Copilot は PR の要約・レビューコメントの自動生成に対応している。Claude Code の Hooks 機能を使えば、git commit の前後に lint・テスト・セキュリティスキャンを自動実行する仕組みを設定できる。",
-      "**コミットメッセージの自動生成**: Claude Code は変更内容を解析してコミットメッセージを自動生成する。Aider も同様の機能を備えている。チームでコミットメッセージの形式を統一するには、[CLAUDE.md にフォーマット](?a=claude-md-design-patterns-2026)（Conventional Commits 等）を指定するのが実用的。複数ツールの併用パターンは[マルチエージェント開発](?a=claude-code-codex-multi-agent-2026)も参照。",
+      "**コミットメッセージの自動生成**: Claude Code は変更内容を解析してコミットメッセージを自動生成する。Aider も同様の機能を備えている。チームでコミットメッセージの形式を統一するには、[CLAUDE.md にフォーマット](?a=ai-config-files-comprehensive-guide-2026)（Conventional Commits 等）を指定するのが実用的。複数ツールの併用パターンは[マルチエージェント開発](?a=claude-code-codex-multi-agent-2026)も参照。",
       "実運用の注意点: AI が生成した PR は必ず人間がレビューしてからマージする。AI のコミット履歴は細かくなりがちなので、squash merge を使って PR 単位でまとめるチームが多い。CI で必ずテストを通す・レビュー承認を必須にするといった既存のガードレールは AI 導入後も維持する。"
     ],
     "date": "2026-03-29",
@@ -2340,132 +2351,9 @@ export const ARTICLES = [
       }
     ]
   },
-  {
-    "id": "mcp-servers-deep-dive",
-    "type": "feature",
-    "category": "cli",
-    "title": "MCP（Model Context Protocol）実務 — サーバ選定、権限、ネットワーク、サプライチェーン",
-    "excerpt": "ツール呼び出しを JSON-RPC で標準化する MCP は、IDE・CLI・独自ホストのゲートウェイ間で同じコネクタを再利用できる。stdio / HTTP トランスポート、権限の渡し方、サードパーティ拡張の供給網リスクまでを整理する。",
-    "body": [
-      "MCP は「LLM がクライアントからツールとリソースにアクセスするためのオープン仕様」です。クライアント（Claude Desktop、Cursor、自前ゲートウェイ等）が MCP サーバに接続し、ファイル読み書き、ブラウザ操作、社内 API 呼び出しなどを統一インタフェースで公開します。",
-      "実装ではトランスポートが重要です。**stdio** はローカルプロセス直結でセットアップが簡単だが、クライアントと同じマシンにサーババイナリが必要です。**SSE / Streamable HTTP** はリモート配置に向く一方、認証・TLS・レート制限を自前で設計する必要があります。",
-      "運用では「その MCP が触り得るスコープ」を最小化します。広いファイルシステムアクセス・任意 URL 取得・シェル実行を持つサーバは、**サプライチェーン攻撃（悪意あるサーバ・更新）とインジェクション**の両方の面でリスクが大きくなります。社内利用でもロックファイル・署名・許容リストの運用を検討してください。",
-      "エージェント製品ごとに MCP の UI（有効化・ログ・再接続）が異なるため、「仕様は同じでも接続パスが違う」と心得、**公式の接続例とセキュリティ注意**を各クライアントのドキュメントで確認するのが安全です。DB 連携・ブラウザ操作・SaaS API など具体的な活用パターンは [MCP 活用実践ガイド](?a=mcp-practical-guide-2026)を参照。[MCP v2 のロードマップ](?a=mcp-v2-spec-launch-2026)も確認のこと。"
-    ],
-    "newsDate": "2026-03-10",
-    "date": "2026-03-28",
-    "author": "AI News 編集部",
-    "readTime": "8分",
-    "tags": [
-      "MCP",
-      "CLI",
-      "セキュリティ",
-      "ツール",
-      "エージェント"
-    ],
-    "primarySources": [
-      {
-        "title": "Model Context Protocol — Specification & documentation",
-        "site": "modelcontextprotocol.io",
-        "url": "https://modelcontextprotocol.io/docs/getting-started/intro"
-      },
-      {
-        "title": "MCP — GitHub (organization)",
-        "site": "GitHub",
-        "url": "https://github.com/modelcontextprotocol"
-      }
-    ]
-  },
-  {
-    "id": "agent-skills-skill-md",
-    "type": "feature",
-    "category": "cli",
-    "title": "エージェント・スキルと SKILL.md — Claude / Cursor / Codex をまたぐ再利用単位",
-    "excerpt": "フォルダ＋SKILL.md に手順・ドメイン知識・メタデータを束ね、モデルが必要時だけ展開する「スキル」パターンが普及している。YAML フロントマター、段階的開示、.claude/skills や各 IDE の skills ディレクトリの考え方を整理する。",
-    "body": [
-      "「毎回長いシステムプロンプトを貼る」より、**リポジトリやマシンに同梱したスキル**を読み込ませる方式は、レビュー可能性と再現性の面で有利です。代表例が Anthropic 側で整備されている **Agent Skills** と、そのフォルダ形式における **SKILL.md** です。",
-      "典型的には SKILL.md の **YAML フロントマター**（名前・説明・互換性・利用可能ツール等）が「発見用の薄いメタデータ」となり、本文にワークフロー・チェックリスト・禁止事項・サンプルコマンドが書かれます。モデル・実装は **メタデータだけ常時・本文は起動時**といった段階的開示でトークンを抑える設計が取られがちです。",
-      "Claude Code では `.claude/skills/` などの配置がドキュメント化され、API / Agent SDK でも Skill ツール経由で読み込む例が示されています。Cursor は changelog 上 Skills をプロダクト機能として扱っており、**同じ「スキル」という語でも実装と検索パスが製品依存**である点に注意が必要です。",
-      "チーム運用では、(1) スキル単位のオーナーと改版履歴、(2) 機密・患者安全など高リスク領域の人間ゲート、(3) 外部コピペとの混同防止（名前空間）をルール化すると安全です。**複数エージェント製品を併用する場合**は、フロントマターの互換フィールドやディレクトリ規約を揃えると移行コストが下がります。"
-    ],
-    "newsDate": "2026-03-12",
-    "date": "2026-03-28",
-    "author": "AI News 編集部",
-    "readTime": "9分",
-    "tags": [
-      "スキル",
-      "SKILL.md",
-      "Claude",
-      "Cursor",
-      "エージェント",
-      "ドキュメント"
-    ],
-    "primarySources": [
-      {
-        "title": "Agent skills overview",
-        "site": "Anthropic Docs",
-        "url": "https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills/overview"
-      },
-      {
-        "title": "Extend Claude with skills (Claude Code)",
-        "site": "Anthropic Docs",
-        "url": "https://docs.anthropic.com/en/docs/claude-code/skills"
-      },
-      {
-        "title": "SKILL.md: The Agent Skills Format（コミュニティ解説・仕様まとめ）",
-        "site": "mdskills.ai",
-        "url": "https://www.mdskills.ai/specs/skill-md",
-        "note": "非公式の仕様まとめ。最終的な挙動は各製品の公式ドキュメントを優先。"
-      }
-    ]
-  },
-  {
-    "id": "markdown-ai-context-agents-llms",
-    "type": "feature",
-    "category": "cli",
-    "title": "Markdown で育てるエージェント文脈 — AGENTS.md・CLAUDE.md・llms.txt・.cursor/rules",
-    "excerpt": "リポジトリ直下の短い Markdown／ルールファイルが、LLM への「常時参照コンテキスト」として定位置になっている。Codex の AGENTS.md、Cursor の rules、サイト全体要約の llms.txt など、役割の違いとレビュー文化を整理する。",
-    "body": [
-      "コーディングエージェント普及に伴い、**Git 管理下のテキストで「どう振る舞うか」を固定する**パターンが一般化しました。代表例は **AGENTS.md**（リポジトリや組織単位のエージェント向け指示）、**CLAUDE.md**（Claude Code のメモリ / プロジェクト文脈）、**`.cursor/rules` や `.mdc` ルール**（Cursor の文脈注入）、**llms.txt**（サイト・プロダクトの LLM 向け要約入口）です。",
-      "いずれも「長い README を毎回貼る」より、**エディタ・CLI が自動で取り込む場所に置く**ことでドリフトを減らすのが狙いです。差分レビューがしやすい Plain text / Markdown であることは、エンタープライズの承認フローとも相性が良いです。",
-      "落とし穴は、(1) ルール同士の矛盾（古い節が残る）、(2) 機密を誤ってコミット、(3) 「ルールに書いたから安全」という誤認（権限・ネットワーク境界は別問題）です。**定期的なlint・オーナー・有効期限コメント**を入れると運用が安定します。",
-      "サイト公開向けの **llms.txt** は、検索クローラではなく LLM が一次情報を辿るための**入口インデックス**として位置づけられています。自社ドキュメントを載せる場合は、正本の URL と要約の境界をはっきりさせ、著作権・利用条件に沿った引用に留めます。"
-    ],
-    "newsDate": "2026-03-12",
-    "date": "2026-03-28",
-    "author": "AI News 編集部",
-    "readTime": "9分",
-    "tags": [
-      "Markdown",
-      "AGENTS.md",
-      "llms.txt",
-      "Cursor",
-      "Claude",
-      "ドキュメント"
-    ],
-    "primarySources": [
-      {
-        "title": "Introducing AGENTS.md",
-        "site": "OpenAI Developers",
-        "url": "https://developers.openai.com/codex/guides/agents-md/"
-      },
-      {
-        "title": "llms.txt — the /llms.txt standard",
-        "site": "llmstxt.org",
-        "url": "https://llmstxt.org/"
-      },
-      {
-        "title": "Rules — Cursor docs",
-        "site": "Cursor",
-        "url": "https://cursor.com/docs/context/rules"
-      },
-      {
-        "title": "Claude Code memory (CLAUDE.md 等)",
-        "site": "Anthropic Docs",
-        "url": "https://code.claude.com/docs/en/memory"
-      }
-    ]
-  },
+
+
+
   {
     "id": "mico-kubectl-ai",
     "type": "feature",
@@ -2865,7 +2753,7 @@ export const ARTICLES = [
       "**Claude Code** は **Anthropic** が提供するCLI型AIエージェントで、ターミナルから claude コマンドを実行するだけでプロジェクト全体のコンテキストを取得し、開発タスクを自律的に遂行する。ファイル編集、bashコマンド実行、Git操作、テスト実行までを一貫して処理でき、CLAUDE.md ファイルにプロジェクト固有のルールを記述することでチーム標準のワークフローを維持できる。",
       "主要な機能として、MCP（**Model Context Protocol**）サーバーへの接続による外部ツール・データソース連携、イベント駆動で前処理・後処理を差し込む Hooks、再利用可能なプロンプトテンプレートである Skills がある。Auto mode（研究プレビュー）を有効にするとユーザー確認なしで連続的にタスクを実行し、大規模なリファクタリングやマイグレーション作業を効率化できる。Opus 4.6 モデルの1Mコンテキストウィンドウにより、数百ファイル規模のリポジトリでもアーキテクチャレベルの判断が可能になっている。",
       "料金体系は3種類ある。Pro プラン（月額 $20）は一般的な開発タスクに十分な利用枠を提供し、Max プラン（月額 $100 または $200）はヘビーユーザー向けに拡張された利用枠と Fast Mode を含む。API 経由での利用も可能で、その場合はトークン単位の従量課金となる。Claude Code SDK を使えばカスタムエージェントの構築もでき、SOC 2 準拠によりエンタープライズ環境にも導入しやすい。",
-      "コンテキスト理解の深さとエージェント的な自律性は現行CLIツールの中でも高い水準にある。一方で、大量のトークンを消費するためコストが膨らみやすい点、Auto mode がまだ研究プレビュー段階である点には注意が必要となる。チームでの利用では [CLAUDE.md による規約共有](?a=claude-md-design-patterns-2026)と Hooks によるガードレールの組み合わせが実用上の鍵になる。外部連携は [MCP 活用ガイド](?a=mcp-practical-guide-2026)、Git との連携は [AI × Git ワークフロー](?a=git-ai-workflow-2026)を参照。"
+      "コンテキスト理解の深さとエージェント的な自律性は現行CLIツールの中でも高い水準にある。一方で、大量のトークンを消費するためコストが膨らみやすい点、Auto mode がまだ研究プレビュー段階である点には注意が必要となる。チームでの利用では [CLAUDE.md による規約共有](?a=ai-config-files-comprehensive-guide-2026)と Hooks によるガードレールの組み合わせが実用上の鍵になる。外部連携は [MCP 活用ガイド](?a=mcp-comprehensive-guide-2026)、Git との連携は [AI × Git ワークフロー](?a=git-ai-workflow-2026)を参照。"
     ],
     "primarySources": [
       {
