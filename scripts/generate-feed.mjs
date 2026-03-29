@@ -75,7 +75,7 @@ ${entries}
 `;
 
   writeFileSync(OUT, xml, "utf8");
-  console.log(`フィード生成完了: ${OUT} (${sorted.length} 記事)`);
+  console.log("Wrote", OUT.replace(/\\/g, "/"), `(${sorted.length} entries)`);
 }
 
 main();
