@@ -1874,7 +1874,6 @@ function ArticleCard({
   onTagClick,
 }) {
   const cat = CATEGORIES[article.category];
-  const hasCover = Boolean(article.coverImage?.src);
   return (
     <article
       className="card-article"
@@ -1888,17 +1887,6 @@ function ArticleCard({
         }
       }}
     >
-      {hasCover ? (
-        <div className="card-article__thumb-wrap">
-          <img
-            className="card-article__thumb"
-            src={resolveMediaSrc(article.coverImage.src)}
-            alt={article.coverImage.alt}
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-      ) : null}
       <div className="card-article__top">
         <div className="card-article__meta">
           <div
