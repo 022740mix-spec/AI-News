@@ -1496,9 +1496,9 @@ body {
   padding: 1.5rem 1rem 3rem;
 }
 
-/* ガイド：2段目タブはヘッダー直下に置いたので、本文との隙間だけ狭める */
+/* ガイド：2段目タブとコンテンツの間に余裕を持たせる */
 .blog-layout--guide {
-  padding-top: 0.35rem;
+  padding-top: 1.25rem;
 }
 
 .blog-main {
