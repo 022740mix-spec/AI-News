@@ -3231,7 +3231,10 @@ const [showFab, setShowFab] = useState(false);
     let list = ARTICLES;
     if (siteSection === "reviews") {
       list = list.filter((a) => a.type === "review");
-      if (reviewTab !== "all") list = list.filter((a) => a.reviewCategory === reviewTab);
+      if (reviewTab !== "all") {
+        const tab = reviewTab === "models" ? "model" : reviewTab;
+        list = list.filter((a) => a.reviewCategory === tab);
+      }
     } else if (siteSection === "articles") {
       list = list.filter((a) => a.type !== "review");
     }
