@@ -40,11 +40,11 @@ import { BUNDLED_MEDIA_URL } from "./mediaUrls.js";
 const STORAGE_THEME = "ai-news-theme";
 const STORAGE_ACCENT = "ai-news-accent";
 const ACCENT_PRESETS = [
-  { id: "blue",   label: "ブルー",  color: "#3b82f6", cyan: "#22d3ee" },
-  { id: "sakura", label: "桜",      color: "#ec4899", cyan: "#f472b6" },
-  { id: "green",  label: "グリーン", color: "#22c55e", cyan: "#4ade80" },
-  { id: "purple", label: "パープル", color: "#8b5cf6", cyan: "#a78bfa" },
-  { id: "orange", label: "オレンジ", color: "#f97316", cyan: "#fb923c" },
+  { id: "blue",   label: "ブルー",  color: "#3b82f6", cyan: "#22d3ee", season: null },
+  { id: "sakura", label: "桜",      color: "#ec4899", cyan: "#f472b6", season: "spring" },
+  { id: "green",  label: "新緑",    color: "#22c55e", cyan: "#4ade80", season: "summer" },
+  { id: "orange", label: "紅葉",    color: "#f97316", cyan: "#fb923c", season: "autumn" },
+  { id: "purple", label: "冬",      color: "#8b5cf6", cyan: "#a78bfa", season: "winter" },
 ];
 const STORAGE_LOCAL_NOTICE = "ai-news-local-notice-dismissed";
 const DEFAULT_DOC_TITLE = `${SITE_NAME} | AI開発ツール最新情報`;
@@ -2434,9 +2434,9 @@ function Sidebar({ articles, onSelect, onTagClick, weekRoundups }) {
 }
 
 function SeasonalScene({ accent }) {
-  const season = getSeason();
-  // 春は桜色モード限定
-  if (season === "spring" && accent !== "sakura") return null;
+  const preset = ACCENT_PRESETS.find(p => p.id === accent);
+  const season = preset?.season;
+  if (!season) return null;
   const scenes = { spring: SpringScene, summer: SummerScene, autumn: AutumnScene, winter: WinterScene };
   const Scene = scenes[season];
   return (
@@ -2525,15 +2525,16 @@ function getSeason() {
 }
 
 function SeasonalEffect({ visible, accent }) {
-  const season = getSeason();
   if (!visible) return null;
+  const preset = ACCENT_PRESETS.find(p => p.id === accent);
+  const season = preset?.season;
+  if (!season) return null;
 
-  // 桜は桜色モード限定
-  if (season === "spring" && accent !== "sakura") return null;
   if (season === "spring") return <SpringEffect />;
   if (season === "summer") return <SummerEffect />;
   if (season === "autumn") return <AutumnEffect />;
-  return <WinterEffect />;
+  if (season === "winter") return <WinterEffect />;
+  return null;
 }
 
 const SAKURA_GRADIENTS = [
