@@ -1534,6 +1534,7 @@ const MODEL_COMPARISON = [
   { name: "DeepSeek R1", rating: 4.0, summary: "DeepSeek（中国）。671B MoE 推論特化。MIT ライセンス。数学・コーディングで Opus に迫る。$0.14/$2.19 と破格。", bench: 71 },
   { name: "Qwen 3 (235B)", rating: 4.0, summary: "Alibaba（中国）。235B MoE、Apache 2.0。ハイブリッド思考で推論/即答を切替。119言語対応。8サイズ展開。", bench: 69 },
   { name: "ERNIE 4.5", rating: 3.5, summary: "Baidu（中国）。中国最大の検索基盤を活かした知識量。中国語特化で1億ユーザー。マルチモーダル。", bench: 55 },
+  { name: "Composer 2", rating: 4.0, summary: "Cursor 独自。Kimi K2.5 ベース＋独自 RL。CursorBench で Opus 超え。$0.50/$2.50 と低コスト。", bench: 74 },
 ];
 
 /** ベンチマークスコアの横棒グラフ（SVG 自動生成・グラデーション付き） */
