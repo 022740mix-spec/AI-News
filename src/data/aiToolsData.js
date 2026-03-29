@@ -2236,6 +2236,7 @@ export const ARTICLES = [
   {
     "id": "ai-video-frontier-models-march-2026-pricing",
     "type": "feature",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&h=450&fit=crop&q=80", "alt": "動画制作" },
     "category": "media",
     "title": "動画フロンティアの料金の軸 — Veo 3.1・Runway Gen-4.5・Kling など（公式再確認前提）",
     "excerpt": "秒単価・クレジット制・バンドル販売が混在するため「安い／高い」一発比較は誤魔化しやすい。公式 pricing の単位（秒・分・解像度・Fast/Standard）を揃えて読む。",
