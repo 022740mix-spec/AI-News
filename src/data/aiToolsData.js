@@ -177,6 +177,7 @@ export const ARTICLES = [
   },
   {
     "id": "cursor-composer-2-kimi-2026",
+    "coverImage": { "src": "logos/cursor.svg", "alt": "Cursor" },
     "type": "news",
     "category": "editor",
     "title": "Cursor Composer 2 の正体 — Kimi K2.5 ベースの独自モデル、API 解析で判明",
@@ -216,6 +217,7 @@ export const ARTICLES = [
   },
   {
     "id": "google-agent-smith-2026",
+    "coverImage": { "src": "logos/google.svg", "alt": "Google" },
     "type": "news",
     "category": "product",
     "title": "Google 社内 AI エージェント「Agent Smith」が話題 — PC を閉じても作業を継続、スマホから進捗確認・追加指示",
@@ -261,6 +263,7 @@ export const ARTICLES = [
   },
   {
     "id": "kimi-k25-moonshot-2026",
+    "coverImage": { "src": "logos/moonshot.svg", "alt": "Moonshot AI" },
     "type": "news",
     "category": "model",
     "title": "Moonshot AI、Kimi K2.5 を公開 — 1兆パラメータの MoE モデルが Opus 4.6 や GPT-5.4 に匹敵",
@@ -405,6 +408,7 @@ export const ARTICLES = [
   },
   {
     "id": "claude-code-codex-multi-agent-2026",
+    "coverImage": { "src": "logos/anthropic.svg", "alt": "Anthropic" },
     "type": "news",
     "category": "cli",
     "title": "Claude Code と Codex CLI をターミナルで連携 — マルチエージェント開発の実践",
@@ -491,6 +495,7 @@ export const ARTICLES = [
   },
   {
     "id": "claude-code-auto-memory-disable-2026",
+    "coverImage": { "src": "logos/anthropic.svg", "alt": "Anthropic" },
     "type": "news",
     "category": "cli",
     "title": "Claude Code、自動メモリ（Auto Memory）の無効化オプションを追加",
@@ -512,6 +517,7 @@ export const ARTICLES = [
   },
   {
     "id": "anthropic-ipo-october-2026",
+    "coverImage": { "src": "logos/anthropic.svg", "alt": "Anthropic" },
     "type": "news",
     "category": "regulation",
     "title": "Anthropic、早ければ10月の IPO を検討 — 評価額600億ドル超の大型上場か",
@@ -1129,6 +1135,7 @@ export const ARTICLES = [
   },
   {
     "id": "anthropic-mythos-leak",
+    "coverImage": { "src": "logos/anthropic.svg", "alt": "Anthropic" },
     "type": "feature",
     "category": "model",
     "title": "Anthropic「Mythos」草稿漏えい報道 — Opus 超えの新ティア「Capybara」が注目集める",
@@ -1184,6 +1191,7 @@ export const ARTICLES = [
   },
   {
     "id": "openai-six-layer-context-data-agent-2026",
+    "coverImage": { "src": "logos/openai.svg", "alt": "OpenAI" },
     "type": "feature",
     "category": "data",
     "title": "OpenAI 社内データエージェントの「6層コンテキスト」— 表・SQL・RAG・Evals まで",
@@ -2308,6 +2316,7 @@ export const ARTICLES = [
   },
   {
     "id": "claude-code-auto-mode",
+    "coverImage": { "src": "logos/anthropic.svg", "alt": "Anthropic" },
     "type": "news",
     "category": "cli",
     "title": "Claude Code「Auto mode」— 権限プロンプトを減らす分類器モード（auto）",
@@ -2468,6 +2477,7 @@ export const ARTICLES = [
   },
   {
     "id": "gemini-cli-v035",
+    "coverImage": { "src": "logos/google.svg", "alt": "Google" },
     "type": "news",
     "category": "cli",
     "title": "Gemini CLI v0.35.0 — サブエージェント強化とPlan Mode追加、無料枠は縮小へ",
@@ -2506,6 +2516,7 @@ export const ARTICLES = [
   },
   {
     "id": "copilot-jetbrains-ga",
+    "coverImage": { "src": "logos/microsoft.svg", "alt": "Microsoft" },
     "type": "news",
     "category": "editor",
     "title": "GitHub Copilot、JetBrainsで正式GA — Coding Agentの起動速度も50%改善",
@@ -2687,6 +2698,7 @@ export const ARTICLES = [
   },
   {
     "id": "openai-codex-agent",
+    "coverImage": { "src": "logos/openai.svg", "alt": "OpenAI" },
     "type": "review",
     "rating": 3,
     "ratings": {"AI品質":4,"使いやすさ":3,"コスパ":2,"拡張性":3,"企業向け":4},
@@ -2725,6 +2737,7 @@ export const ARTICLES = [
   },
   {
     "id": "cursor-windsurf-merge",
+    "coverImage": { "src": "logos/cursor.svg", "alt": "Cursor" },
     "type": "news",
     "category": "product",
     "title": "Cursor、Windsurf（Codeium）を買収完了 — AIエディタ市場の統合が加速",

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a14"/>
+      <stop offset="100%" stop-color="#14142a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <text x="400" y="200" text-anchor="middle" fill="#0668E1" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="300" letter-spacing="0.12em">Meta</text>
+  <text x="400" y="258" text-anchor="middle" fill="#58a6ff" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="600" opacity="0.5">Llama · AI Research</text>
+  <line x1="320" y1="286" x2="480" y2="286" stroke="#0668E1" stroke-width="1" opacity="0.3"/>
+</svg>

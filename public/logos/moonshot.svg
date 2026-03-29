@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1e"/>
+      <stop offset="100%" stop-color="#152040"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <text x="400" y="200" text-anchor="middle" fill="#60a5fa" font-family="system-ui, -apple-system, sans-serif" font-size="44" font-weight="300" letter-spacing="0.08em">Moonshot AI</text>
+  <text x="400" y="255" text-anchor="middle" fill="#93c5fd" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="600" opacity="0.6">Kimi K2.5</text>
+  <line x1="320" y1="282" x2="480" y2="282" stroke="#60a5fa" stroke-width="1" opacity="0.3"/>
+</svg>
