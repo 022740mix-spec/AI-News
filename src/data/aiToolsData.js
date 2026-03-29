@@ -1505,6 +1505,7 @@ export const ARTICLES = [
   {
     "id": "ai-dev-stacks-python-js-node-2026",
     "type": "feature",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=450&fit=crop&q=80", "alt": "プログラミングコード" },
     "category": "cli",
     "title": "AI 開発と言語ランタイムの周辺 — Python・JavaScript・Node.js・Bun のいま（2026）",
     "excerpt": "エージェントや RAG のサンプルは Python / TypeScript が中心になりがち。uv・Ruff・ty や OpenAI の Astral 買収、Node の LTS 運用、Bun・Deno、ブラウザ側 JS と SSR の分断など、周辺ニュースを実務の選び方に落とし込む。",
