@@ -2198,7 +2198,7 @@ export const ARTICLES = [
   {
     "id": "openai-sora-discontinued-2026",
     "type": "news",
-    "coverImage": { "src": "logos/openai.svg", "alt": "OpenAI" },
+    "coverImage": { "src": "logos/sora.svg", "alt": "Sora" },
     "category": "media",
     "title": "報道: OpenAI が Sora の提供終了を表明 — 計算・戦略・ガードレールの文脈",
     "excerpt": "2026年3月頃、AP・NPR・Business Insider などが Sora のアプリ／関連 API 終了を伝えた。最終的な公式文言・日付は openai.com 側の確認を優先する。",
