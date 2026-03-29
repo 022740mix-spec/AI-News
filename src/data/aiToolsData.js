@@ -4973,7 +4973,7 @@ export const ARTICLES = [
     "date": "2026-03-29",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "company": "Manus (Monica.im)",
+    "company": "Manus (Meta 傘下)",
     "pricing": "無料枠あり / Plus $39/月",
     "model": "複数モデル併用",
     "tags": ["エージェント", "汎用AI", "中国"],
@@ -5179,6 +5179,30 @@ export const ARTICLES = [
     "model": "ERNIE 4.5",
     "tags": ["モデル", "中国", "Baidu", "マルチモーダル"],
     "features": ["中国語最適化", "Baidu Cloud統合", "1億ユーザー", "マルチモーダル", "OSS版あり"]
+  },
+  {
+    "id": "meta-acquires-manus-2025",
+    "type": "news",
+    "category": "product",
+    "title": "Meta、汎用AIエージェントの Manus を約20億ドルで買収 — 8ヶ月で ARR 1億ドルの急成長スタートアップ",
+    "excerpt": "Meta が中国発・シンガポール拠点の AI エージェント企業 Manus を買収すると発表。買収額は20億ドル超と報じられている。Manus はサービス開始わずか8ヶ月で ARR 1億ドル超を達成。Facebook・Instagram・WhatsApp への AI エージェント統合が目的とみられる。",
+    "body": [
+      "2025年12月29日、Meta Platforms は汎用 AI エージェントを手がける Manus の買収を発表した。買収額は明示されていないが、Bloomberg・CNBC・TechCrunch 等の複数メディアが20億ドル超と報じている。Meta は声明で「ビジネス向け AI イノベーションの加速と、コンシューマー・エンタープライズ製品への高度な自動化の統合」を目的としている。",
+      "**Manus の急成長**: Manus はもともと中国を本拠地としていたが、2025年夏にシンガポールへ拠点を移した。2025年3月の招待制ローンチで大きな話題を呼び、GAIA ベンチマークでトップスコアを記録。サービス開始からわずか8ヶ月で年間経常収益（ARR）は1億ドルに達したとされ、収益の大半は有料サブスクリプションによるもの。AI スタートアップとしては異例の速度での収益化に成功した。",
+      "**買収後の運営**: Manus の公式ブログによると、買収後も引き続きアプリおよびウェブサイトを通じて AI サービスとサブスクリプションを提供する方針。シンガポールでの運営も継続する。Meta は Manus の AI エージェント技術を Facebook・Instagram・WhatsApp に統合し、Meta AI アシスタントの機能強化を図る計画。",
+      "**中国当局の動き**: 2026年3月には、中国当局が Manus の創業者（CEO の Xiao Hong 氏と CTO の Ji Yichao 氏）に対し、取引審査中の出国を禁止したと報じられた。中国発の AI 技術が海外企業に移転することへの規制強化の一環とみられ、米中間の AI 技術移転を巡る緊張の新たな焦点になっている。",
+      "**開発者への影響**: Manus のサービスは当面継続するが、長期的には Meta のエコシステムに統合されていく可能性がある。汎用 AI エージェント市場では、OpenAI の Operator、Google の Project Mariner、Anthropic の Computer Use などが競合する構図で、Meta が Manus の買収で一気にポジションを得た形。"
+    ],
+    "newsDate": "2025-12-29",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Meta", "買収", "エージェント", "Manus", "業界動向"],
+    "primarySources": [
+      { "title": "Manus Joins Meta for Next Era of Innovation", "site": "Manus", "url": "https://manus.im/blog/manus-joins-meta-for-next-era-of-innovation" },
+      { "title": "Meta acquires intelligent agent firm Manus", "site": "CNBC", "url": "https://www.cnbc.com/2025/12/30/meta-acquires-singapore-ai-agent-firm-manus-china-butterfly-effect-monicai.html" },
+      { "title": "Meta just bought Manus", "site": "TechCrunch", "url": "https://techcrunch.com/2025/12/29/meta-just-bought-manus-an-ai-startup-everyone-has-been-talking-about/" }
+    ]
   },
   {
     "id": "gemini-drop-march-2026",
