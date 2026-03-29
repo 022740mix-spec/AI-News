@@ -757,56 +757,58 @@ function HomePage({ articles, onSelect, onSection }) {
         </section>
       ) : null}
 
-      {recentNews.length > 0 ? (
+      <div className="home-page__body">
+        {recentNews.length > 0 ? (
+          <section className="home-section">
+            <div className="home-section__header">
+              <h2 className="home-section__title">最近のニュース</h2>
+              <button className="home-section__more" onClick={() => onSection("articles")}>
+                すべて見る →
+              </button>
+            </div>
+            <div className="home-cards">
+              {recentNews.map((a) => (
+                <article key={a.id} className="home-card" onClick={() => onSelect(a)}>
+                  <span className="home-card__category">{CATEGORIES[a.category]?.label}</span>
+                  <h3 className="home-card__title">{a.title}</h3>
+                  <span className="home-card__date">{a.newsDate ?? a.date}</span>
+                </article>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
         <section className="home-section">
-          <div className="home-section__header">
-            <h2 className="home-section__title">最近のニュース</h2>
-            <button className="home-section__more" onClick={() => onSection("articles")}>
-              すべて見る →
+          <h2 className="home-section__title">コンテンツ</h2>
+          <div className="home-nav-cards">
+            <button className="home-nav-card" onClick={() => onSection("articles")}>
+              <span className="home-nav-card__icon">📰</span>
+              <span className="home-nav-card__label">ニュース</span>
+              <span className="home-nav-card__desc">AI開発ツールの最新ニュース</span>
+            </button>
+            <button className="home-nav-card" onClick={() => onSection("reviews")}>
+              <span className="home-nav-card__icon">⭐</span>
+              <span className="home-nav-card__label">レビュー</span>
+              <span className="home-nav-card__desc">ツール比較と評価</span>
+            </button>
+            <button className="home-nav-card" onClick={() => onSection("guide")}>
+              <span className="home-nav-card__icon">📖</span>
+              <span className="home-nav-card__label">ガイド</span>
+              <span className="home-nav-card__desc">セットアップと実践テクニック</span>
+            </button>
+            <button className="home-nav-card" onClick={() => onSection("tools")}>
+              <span className="home-nav-card__icon">🔧</span>
+              <span className="home-nav-card__label">ツール別</span>
+              <span className="home-nav-card__desc">Claude Code / Cursor / Codex / Copilot</span>
+            </button>
+            <button className="home-nav-card" onClick={() => onSection("companies")}>
+              <span className="home-nav-card__icon">🏢</span>
+              <span className="home-nav-card__label">AI企業</span>
+              <span className="home-nav-card__desc">AI企業のプロファイル</span>
             </button>
           </div>
-          <div className="home-cards">
-            {recentNews.map((a) => (
-              <article key={a.id} className="home-card" onClick={() => onSelect(a)}>
-                <span className="home-card__category">{CATEGORIES[a.category]?.label}</span>
-                <h3 className="home-card__title">{a.title}</h3>
-                <span className="home-card__date">{a.newsDate ?? a.date}</span>
-              </article>
-            ))}
-          </div>
         </section>
-      ) : null}
-
-      <section className="home-section">
-        <h2 className="home-section__title">コンテンツ</h2>
-        <div className="home-nav-cards">
-          <button className="home-nav-card" onClick={() => onSection("articles")}>
-            <span className="home-nav-card__icon">📰</span>
-            <span className="home-nav-card__label">ニュース</span>
-            <span className="home-nav-card__desc">AI開発ツールの最新ニュース</span>
-          </button>
-          <button className="home-nav-card" onClick={() => onSection("reviews")}>
-            <span className="home-nav-card__icon">⭐</span>
-            <span className="home-nav-card__label">レビュー</span>
-            <span className="home-nav-card__desc">ツール比較と評価</span>
-          </button>
-          <button className="home-nav-card" onClick={() => onSection("guide")}>
-            <span className="home-nav-card__icon">📖</span>
-            <span className="home-nav-card__label">ガイド</span>
-            <span className="home-nav-card__desc">セットアップと実践テクニック</span>
-          </button>
-          <button className="home-nav-card" onClick={() => onSection("tools")}>
-            <span className="home-nav-card__icon">🔧</span>
-            <span className="home-nav-card__label">ツール別</span>
-            <span className="home-nav-card__desc">Claude Code / Cursor / Codex / Copilot</span>
-          </button>
-          <button className="home-nav-card" onClick={() => onSection("companies")}>
-            <span className="home-nav-card__icon">🏢</span>
-            <span className="home-nav-card__label">AI企業</span>
-            <span className="home-nav-card__desc">AI企業のプロファイル</span>
-          </button>
-        </div>
-      </section>
+      </div>
     </div>
   );
 }

@@ -2642,27 +2642,27 @@ body {
 
 /* ── ホームページ ── */
 .home-page {
-  max-width: 1120px;
+  padding: 0 0 3rem;
+}
+.home-page__body {
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 1.5rem 1rem 3rem;
+  padding: 0 2rem;
 }
 
-/* ── ヒーロー：オーロラ背景 ── */
+/* ── ヒーロー：フルワイド・オーロラ背景 ── */
 .home-hero {
   position: relative;
-  border-radius: var(--radius-lg);
-  min-height: 280px;
-  margin-bottom: 2.5rem;
+  min-height: 340px;
+  margin-bottom: 3rem;
   cursor: pointer;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: var(--shadow-md);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.3s ease;
   animation: heroFadeIn 0.7s ease both;
 }
 .home-hero:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md), 0 0 60px rgba(59, 130, 246, 0.15);
+  box-shadow: inset 0 -4px 30px rgba(59, 130, 246, 0.08);
 }
 .home-hero__aurora {
   position: absolute;
@@ -2685,7 +2685,9 @@ body {
 .home-hero__content {
   position: relative;
   z-index: 1;
-  padding: 3rem 3rem 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3.5rem 3rem 3rem;
 }
 .home-hero__label {
   display: inline-block;
@@ -2787,8 +2789,8 @@ body {
 /* ── ニュースカード：グラスモーフィズム ── */
 .home-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
 }
 @keyframes cardSlideUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -2841,8 +2843,8 @@ body {
 /* ── ナビカード：グラデーションボーダー ── */
 .home-nav-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
 }
 .home-nav-card {
   position: relative;
@@ -2902,9 +2904,23 @@ body {
   color: var(--muted);
   line-height: 1.4;
 }
+@media (max-width: 900px) {
+  .home-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .home-nav-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .home-page__body {
+    padding: 0 1.25rem;
+  }
+}
 @media (max-width: 560px) {
   .home-page {
-    padding: 1rem 0.75rem 2rem;
+    padding: 0 0 2rem;
+  }
+  .home-page__body {
+    padding: 0 0.75rem;
   }
   .home-hero {
     min-height: 200px;
@@ -2918,6 +2934,7 @@ body {
   }
   .home-hero__excerpt {
     font-size: 0.78rem;
+    margin-bottom: 1rem;
   }
   .home-cards {
     grid-template-columns: 1fr;
