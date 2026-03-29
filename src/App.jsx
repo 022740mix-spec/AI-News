@@ -958,6 +958,23 @@ function ToolReferencePanel({ referenceData, practical }) {
   );
 }
 
+function scrollToId(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function SidebarJump({ id, children, nested }) {
+  return (
+    <button
+      type="button"
+      className={`sidebar-anchor${nested ? " sidebar-anchor--nested" : ""}`}
+      onClick={() => scrollToId(id)}
+    >
+      {children}
+    </button>
+  );
+}
+
 function GuideSidebar({ guideTab }) {
   const labelMap = {
     setup: "セットアップの目次",
@@ -974,74 +991,48 @@ function GuideSidebar({ guideTab }) {
         <p className="sidebar-panel-hint">見出しへジャンプします。</p>
         {guideTab === "setup" ? (
           <>
-            <a href="#vibe-intro" className="sidebar-anchor">
-              バイブコーディングとは
-            </a>
-            <a href="#vibe-setup" className="sidebar-anchor">
-              {VIBE_SETUP_GUIDE.title}
-            </a>
+            <SidebarJump id="vibe-intro">バイブコーディングとは</SidebarJump>
+            <SidebarJump id="vibe-setup">{VIBE_SETUP_GUIDE.title}</SidebarJump>
             {VIBE_SETUP_GUIDE.sections.map((s) => (
-              <a
-                key={s.id}
-                href={`#${s.id}`}
-                className="sidebar-anchor sidebar-anchor--nested"
-              >
+              <SidebarJump key={s.id} id={s.id} nested>
                 {s.heading}
-              </a>
+              </SidebarJump>
             ))}
           </>
         ) : guideTab === "rules" ? (
           <>
-            <a href="#vibe-rules" className="sidebar-anchor">
-              基本ルール
-            </a>
-            <a href="#vibe-pitfalls" className="sidebar-anchor">
-              ハマりやすいこと
-            </a>
+            <SidebarJump id="vibe-rules">基本ルール</SidebarJump>
+            <SidebarJump id="vibe-pitfalls">ハマりやすいこと</SidebarJump>
           </>
         ) : guideTab === "practical" ? (
           <>
-            <a href="#vibe-practical" className="sidebar-anchor">
+            <SidebarJump id="vibe-practical">
               {VIBE_CODING_PRACTICAL.title}
-            </a>
+            </SidebarJump>
             {VIBE_CODING_PRACTICAL.sections.map((s) => (
-              <a
-                key={s.id}
-                href={`#${s.id}`}
-                className="sidebar-anchor sidebar-anchor--nested"
-              >
+              <SidebarJump key={s.id} id={s.id} nested>
                 {s.heading}
-              </a>
+              </SidebarJump>
             ))}
           </>
         ) : guideTab === "media" ? (
           <>
-            <a href="#media-guide-intro" className="sidebar-anchor">
-              はじめに
-            </a>
+            <SidebarJump id="media-guide-intro">はじめに</SidebarJump>
             {VIBE_MEDIA_TAXONOMY.map((s) => (
-              <a
-                key={s.id}
-                href={`#${s.id}`}
-                className="sidebar-anchor sidebar-anchor--nested"
-              >
+              <SidebarJump key={s.id} id={s.id} nested>
                 {s.title}
-              </a>
+              </SidebarJump>
             ))}
           </>
         ) : (
           <>
-            <a href="#glossary-guide" className="sidebar-anchor">
+            <SidebarJump id="glossary-guide">
               実用用語集（ジャンル別）
-            </a>
+            </SidebarJump>
             {GLOSSARY_BY_GENRE.map((g) => (
-              <a
-                key={g.id}
-                href={`#glossary-${g.id}`}
-                className="sidebar-anchor sidebar-anchor--nested"
-              >
+              <SidebarJump key={g.id} id={`glossary-${g.id}`} nested>
                 {g.title}
-              </a>
+              </SidebarJump>
             ))}
           </>
         )}
@@ -1097,9 +1088,9 @@ function CompaniesSidebar({ companies }) {
           項目をクリックで該当カードへスクロールします。
         </p>
         {companies.map((c) => (
-          <a key={c.id} className="sidebar-anchor" href={`#company-${c.id}`}>
+          <SidebarJump key={c.id} id={`company-${c.id}`}>
             {c.name}
-          </a>
+          </SidebarJump>
         ))}
       </div>
     </aside>
@@ -3075,7 +3066,7 @@ const [showFab, setShowFab] = useState(false);
                       key={t.id}
                       className={`sidebar-anchor${reviewTab === t.id ? " sidebar-anchor--active" : ""}`}
                       onClick={() => { setReviewTab(t.id); window.scrollTo(0, 0); }}
-                      style={{ display: "block", width: "100%", textAlign: "left", background: "none", border: "none", cursor: "pointer", font: "inherit" }}
+                      type="button"
                     >
                       {t.label}
                     </button>

@@ -1192,12 +1192,18 @@ body {
 
 .sidebar-anchor {
   display: block;
+  width: 100%;
   padding: 0.45rem 0;
+  border: none;
   border-bottom: 1px solid var(--border);
+  background: none;
   color: var(--text-secondary);
+  font: inherit;
   font-size: var(--text-sm);
+  text-align: left;
   text-decoration: none;
   line-height: 1.35;
+  cursor: pointer;
   transition: color var(--transition);
 }
 
