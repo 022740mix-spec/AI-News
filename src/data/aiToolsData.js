@@ -5230,6 +5230,30 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "tbpn-chatgpt-ads-anthropic-stories-2026-march",
+    "type": "feature",
+    "category": "special",
+    "title": "ChatGPT に広告導入で2ヶ月で ARR 1億ドル、Anthropic はスーパーボウル CM で皮肉る — TBPN 要約（3月27日）",
+    "excerpt": "OpenAI が ChatGPT 無料版に広告を導入し、わずか2ヶ月で年間収益1億ドルを突破。一方 Anthropic はスーパーボウル CM で「広告が AI 体験を壊す」と皮肉り、Claude のダウンロード数が急増。Novartis の28億ドル買収も。",
+    "body": [
+      "2026年3月27日の **TBPN Live**（2時間39分）で、AI 業界のマーケティング戦争と製薬業界の動きが取り上げられた。ChatGPT の広告導入を巡る OpenAI と Anthropic の対照的な戦略が際立つ回。",
+      "**ChatGPT に広告導入、2ヶ月で ARR 1億ドル**: OpenAI は2026年2月に ChatGPT の無料ティアに広告パイロットを開始。CNBC によると、開始からわずか2ヶ月で年間経常収益（ARR）が1億ドルを突破した。無料ユーザー層のマネタイズとして桁違いの速さだが、ユーザーからは「AI の回答に広告が混ざる」ことへの批判も出ている。",
+      "**Anthropic のスーパーボウル CM「Stories」**: Anthropic は2026年2月のスーパーボウルで TV CM を放映し、ChatGPT の広告導入を真正面から皮肉った。「AI との会話に広告が入ったらこうなる」という演出で、Sam Altman が「かなり苛立った」と報じられた。CM 後、Claude の米国アプリダウンロード数が ChatGPT を一時的に上回る効果も。Anthropic は「広告なし」を明確な差別化ポイントとして打ち出している。",
+      "**Novartis が Excellergy を28億ドルで買収**: 製薬大手 Novartis がアレルギー薬スタートアップ Excellergy を28億ドルで買収。AI 直接の話題ではないが、TBPN はテック以外のビッグディールもカバーするのが特徴。",
+      "**背景と意味**: この一連の動きは、AI チャットボットのビジネスモデルを巡る根本的な問いを浮き彫りにしている。OpenAI は「広告＋サブスク＋API」の三本柱で IPO を見据え、Anthropic は「広告なし・安全性重視」で差別化。どちらが持続可能かは未知数だが、ユーザーの反応は Anthropic に好意的で、「AI に広告は相性が悪い」という市場のシグナルが見えつつある。"
+    ],
+    "newsDate": "2026-03-27",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["OpenAI", "Anthropic", "広告", "ポッドキャスト", "TBPN", "ビジネスモデル"],
+    "primarySources": [
+      { "title": "OpenAI ads pilot tops $100 million in ARR in under 2 months", "site": "CNBC", "url": "https://www.cnbc.com/2026/03/26/openai-ads-pilot-tops-100-million-in-arr-in-under-2-months.html" },
+      { "title": "ChatGPT rolls out ads", "site": "TechCrunch", "url": "https://techcrunch.com/2026/02/09/chatgpt-rolls-out-ads/" },
+      { "title": "Spotify で聴く", "site": "Spotify", "url": "https://open.spotify.com/episode/1nrFIFFcK62v6njU26a1ee" }
+    ]
+  },
+  {
     "id": "tbpn-benchmark-sora-spacex-2026-march",
     "type": "feature",
     "category": "special",
