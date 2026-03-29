@@ -5230,6 +5230,30 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "satya-nadella-dwarkesh-podcast-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "Microsoft CEO Satya Nadella「AGI より世界の経済成長率10%が真のベンチマーク」— Dwarkesh Podcast 要約",
+    "excerpt": "Microsoft の CEO Satya Nadella が Dwarkesh Podcast に出演。AGI の定義を避け「経済成長こそ指標」と主張。量子コンピュータの Majorana ブレイクスルー、AI が独占を生まない理由、ゲーム世界モデル Muse など、Microsoft の全方位戦略を語った。",
+    "body": [
+      "Dwarkesh Podcast に **Microsoft CEO Satya Nadella** が出演し、AI 戦略、量子コンピューティング、AGI の定義まで踏み込んだ議論を展開した。Dario Amodei が「指数関数の終わりに近い」と語ったのに対し、Nadella は技術的マイルストーンより経済的インパクトを重視する立場を明確にしている。",
+      "**「世界の経済成長率10%が真のベンチマーク」**: Nadella は AGI の到達を論じること自体を避け、成功の指標を「世界が10%成長すること」と再定義した。現在の Microsoft の AI 売上は130億ドルで、成長トレンドが続けば1,300億ドルに達する可能性を示唆。技術的な能力の議論より、実際の経済効果で測るべきだとの立場。",
+      "**「AI は独占を生まない」**: エンタープライズ市場では「買い手がWinner-Take-Allを許容しない」と断言。クローズドモデルとオープンソースが共存し、Windows と競合 OS の関係のように複数のサプライヤーが並立する構図になるとの見方。これは Dario の「3〜4社の寡占」予測とは異なるニュアンス。",
+      "**量子コンピューティングの Majorana ブレイクスルー**: Microsoft が達成した Majorana ゼロモードの実現を「量子コンピューティングのトランジスタ・モーメント」と表現。Majorana One チップは最終的に100万物理量子ビットをサポートし、2027〜2029年にユーティリティスケールの量子コンピュータを実現する見通し。AI と量子の両輪で進む Microsoft の戦略が鮮明になった。",
+      "**ゲーム世界モデル Muse**: プレイヤー入力に応答する一貫したゲーム世界を生成するモデル。画像生成における DALL-E のインパクトに匹敵する可能性があるとした。AI がゲーム開発を根本から変える布石。",
+      "**AGI への姿勢**: Nadella は AGI の定義そのものを疑問視し、「自動化された知識労働」と「新たに生み出される認知タスク」を区別。包括的な労働自動化は予測せず、認知労働自体が技術能力とともに進化するとの立場。AI の法的責任の枠組みが整備されないと大規模導入は進まないとも指摘した。"
+    ],
+    "newsDate": "2026-02-20",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": ["Microsoft", "Satya Nadella", "ポッドキャスト", "量子コンピュータ", "AGI"],
+    "primarySources": [
+      { "title": "Satya Nadella — Microsoft's AGI plan & quantum breakthrough", "site": "Dwarkesh Podcast", "url": "https://www.dwarkesh.com/p/satya-nadella" },
+      { "title": "Spotify で聴く", "site": "Spotify", "url": "https://open.spotify.com/episode/2Ru9vFJOuYKSHnxABBgAm3" }
+    ]
+  },
+  {
     "id": "cli-agent-community-oss-2026",
     "type": "feature",
     "category": "cli",
