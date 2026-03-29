@@ -5205,6 +5205,30 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "smux-agent-to-agent-terminal",
+    "type": "news",
+    "category": "cli",
+    "title": "smux — Claude Code と Codex をターミナル上で会話させる AI エージェント間通信ツール",
+    "excerpt": "API もプロトコルも不要。tmux ベースの smux が AI エージェント同士をターミナル上で直接つなぐ。Claude Code が設計→Codex がレビュー→Claude Code が修正、という自律連携がペイン間通信で実現。MIT ライセンス。",
+    "body": [
+      "**smux** は ShawnPana が開発した tmux ベースのターミナル設定＋自動化ツールで、AI エージェント同士がターミナルのペインを介して直接通信する仕組みを提供する。API もプロトコルも不要で、Bash を実行できる AI エージェントなら何でも参加可能。Claude Code、Codex CLI、Gemini CLI など、CLI 型エージェントの組み合わせを自由に構築できる。",
+      "**仕組み**: `tmux-bridge` という CLI を通じて、あるペインの出力を別のペインのエージェントが読み取り（`read`）、テキストを入力し（`type`）、キーを送信する（`keys`）。たとえば Claude Code が設計したコードを隣のペインの Codex が読み取ってレビューし、修正提案を Claude Code のペインに書き戻す、という連携が自動で回る。ターミナル自体が共有インターフェースになる発想。",
+      "**実用シナリオ**: Claude Code が得意なアーキテクチャ設計・大規模リファクタリングと、Codex が得意なエラー解決・テスト生成を組み合わせる使い方が海外で注目されている。「Claude Code に設計させ、Codex にレビュー・デバッグさせ、Claude Code に再修正させる」サイクルを人間の介入なしで回すデモが X で話題になった。",
+      "**セキュリティ上の注意**: smux のドキュメントにはセキュリティに関する明示的な警告がない。しかし、==AI エージェントが別のエージェントのターミナルに自由にテキストを送信できる==設計は、以下のリスクを伴う。(1) あるエージェントが悪意あるコマンドを別のペインに注入する可能性（プロンプトインジェクション経由）。(2) エージェントが想定外の権限でファイル削除・Git push 等の破壊的操作を実行するリスク。(3) ループに陥った場合の無限実行とコスト増。人間が監視できる状態で使うのが前提であり、無人での長時間運用には慎重な判断が必要。",
+      "**導入方法と制限**: `curl -fsSL https://shawnpana.com/smux/install.sh | bash` でインストール。macOS / Linux 対応、Windows は非対応。tmux 3.2 以上が必要（自動インストール）。MIT ライセンス。類似ツールとして claude-squad（複数エージェント管理）、cmux（macOS ネイティブ AI ターミナル）なども登場しており、マルチエージェント開発のエコシステムが急速に形成されている。"
+    ],
+    "newsDate": "2026-03-28",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["CLI", "エージェント", "マルチエージェント", "tmux", "OSS"],
+    "primarySources": [
+      { "title": "ShawnPana/smux — GitHub", "site": "GitHub", "url": "https://github.com/ShawnPana/smux/" },
+      { "title": "smux — tmux for the age of AI agents", "site": "smux", "url": "https://smux-terminal.vercel.app/" },
+      { "title": "Shawn Pana on X — Claude Code と Codex の会話デモ", "site": "X", "url": "https://x.com/shawn_pana/status/2037760543029686452" }
+    ]
+  },
+  {
     "id": "microsoft-copilot-cowork-launch-2026",
     "type": "news",
     "category": "product",
