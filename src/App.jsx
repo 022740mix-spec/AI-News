@@ -39,7 +39,7 @@ import { BUNDLED_MEDIA_URL } from "./mediaUrls.js";
 
 const STORAGE_THEME = "ai-news-theme";
 const STORAGE_LOCAL_NOTICE = "ai-news-local-notice-dismissed";
-const DEFAULT_DOC_TITLE = `${SITE_NAME} | AI開発ツールニュース 2026`;
+const DEFAULT_DOC_TITLE = `${SITE_NAME} | AI開発ツール最新情報`;
 
 function canonicalFromLocation() {
   const u = new URL(window.location.href);
@@ -300,7 +300,7 @@ function syncDocumentSeo(ctx) {
 
   let title = DEFAULT_DOC_TITLE;
   let descRaw = SITE_DESCRIPTION;
-  let ogTitle = `${SITE_NAME} | AI開発ツールニュース`;
+  let ogTitle = `${SITE_NAME} | AI開発ツール最新情報`;
 
   if (selectedArticle) {
     descRaw = stripMarkdownBoldMarkers(selectedArticle.excerpt);
@@ -550,7 +550,7 @@ function HamburgerMenu({ isOpen, onClose, onSection, currentSection, searchRef }
           ))}
         </ul>
         <div className="hamburger-footer">
-          AI開発ツール最新情報<br />
+          AI Tool News<br />
           <span className="hamburger-footer__sub">広告なし・個人情報収集なし</span>
         </div>
       </nav>

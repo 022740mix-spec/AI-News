@@ -219,7 +219,7 @@ body {
 .header-inner {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1.75rem 1.5rem 1rem;
+  padding: 2.25rem 1.5rem 1rem;
 }
 
 .header-top {
@@ -252,10 +252,10 @@ body {
 }
 
 .site-tagline {
-  font-size: var(--text-base);
+  font-size: var(--text-xs);
   color: var(--muted);
-  margin: 0.25rem 0 0;
-  max-width: 36rem;
+  margin: 0.35rem 0 0;
+  letter-spacing: 0.05em;
   line-height: 1.5;
 }
 
