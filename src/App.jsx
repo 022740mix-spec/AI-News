@@ -1412,9 +1412,11 @@ function GlossaryGuidePanel({ glossaryGenres }) {
 const REVIEW_CATEGORIES = [
   { id: "cli", label: "CLI ツール", description: "ターミナルから AI にコードを書かせる CLI ツール" },
   { id: "editor", label: "エディタ", description: "AI 統合エディタ・IDE" },
-  { id: "image", label: "画像生成", description: "AI 画像生成ツール" },
-  { id: "video", label: "動画生成", description: "AI 動画生成ツール" },
-  { id: "music", label: "音楽生成", description: "AI 音楽生成ツール" },
+  { id: "media", label: "メディア生成", description: "画像・動画・音楽の AI 生成ツール", subCategories: [
+    { id: "image", label: "画像生成", description: "AI 画像生成ツール" },
+    { id: "video", label: "動画生成", description: "AI 動画生成ツール" },
+    { id: "music", label: "音楽生成", description: "AI 音楽生成ツール" },
+  ]},
   { id: "other", label: "その他ツール", description: "音声入力・ターミナル等" },
 ];
 
@@ -3233,7 +3235,9 @@ const [showFab, setShowFab] = useState(false);
       list = list.filter((a) => a.type === "review");
       if (reviewTab !== "all") {
         const tab = reviewTab === "models" ? "model" : reviewTab;
-        list = list.filter((a) => a.reviewCategory === tab);
+        const cat = REVIEW_CATEGORIES.find((c) => c.id === tab);
+        const subIds = cat?.subCategories?.map((s) => s.id);
+        list = list.filter((a) => subIds ? subIds.includes(a.reviewCategory) : a.reviewCategory === tab);
       }
     } else if (siteSection === "articles") {
       list = list.filter((a) => a.type !== "review");
@@ -3462,7 +3466,18 @@ const [showFab, setShowFab] = useState(false);
                       ) : null}
                       {REVIEW_CATEGORIES
                         .filter((cat) => reviewTab === cat.id)
-                        .map((cat) => (
+                        .map((cat) => cat.subCategories ? (
+                          <Fragment key={cat.id}>
+                            {cat.subCategories.map((sub) => (
+                              <ReviewComparisonTable
+                                key={sub.id}
+                                articles={ARTICLES.filter((a) => a.type === "review")}
+                                category={sub}
+                                onSelect={handleSelect}
+                              />
+                            ))}
+                          </Fragment>
+                        ) : (
                           <ReviewComparisonTable
                             key={cat.id}
                             articles={ARTICLES.filter((a) => a.type === "review")}
