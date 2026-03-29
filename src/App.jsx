@@ -530,7 +530,7 @@ function HamburgerMenu({ isOpen, onClose, onSection, currentSection, searchRef }
           <button className="hamburger-close" onClick={onClose} aria-label="閉じる">✕</button>
           <button
             className="hamburger-search"
-            onClick={() => { onClose(); setTimeout(() => searchRef?.current?.focus(), 100); }}
+            onClick={() => { onSection("articles"); onClose(); setTimeout(() => searchRef?.current?.focus(), 200); }}
             aria-label="検索"
           >
             🔍
