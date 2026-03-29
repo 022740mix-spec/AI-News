@@ -302,6 +302,7 @@ export const ARTICLES = [
   {
     "id": "glm-5-zhipu-2026",
     "type": "news",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&h=450&fit=crop&q=80", "alt": "AI" },
     "category": "model",
     "title": "Zhipu AI、GLM-5 を公開 — 745億パラメータ MoE、Huawei チップで学習した中国発フロンティアモデル",
     "excerpt": "中国の Zhipu AI（智譜AI）が GLM-5 を公開した。745億パラメータの MoE モデルで、エージェント型 AI に最適化された設計。Huawei Ascend チップで学習され、MIT ライセンスのオープンソースとして提供。Opus 4.6 の約6分の1のコストで利用可能。香港市場で株価が34%急騰した。",
@@ -390,6 +391,7 @@ export const ARTICLES = [
   {
     "id": "singularity-mythos-2026-spring",
     "type": "feature",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=450&fit=crop&q=80", "alt": "AI の未来" },
     "category": "special",
     "title": "【特集】2026年春、シンギュラリティの入口に立っている — Mythos が示す AI 能力の急進",
     "excerpt": "Anthropic の内部モデル Mythos（Capybara ティア）のリーク、Google TurboQuant による8倍高速化、コールセンターを代替する音声 AI — 2026年第1四半期に起きたことを振り返ると、AI の能力曲線が急激に立ち上がっている。この特集では、今何が起きているのかを整理する。",
@@ -434,6 +436,7 @@ export const ARTICLES = [
   {
     "id": "dexter-financial-agent-2026",
     "type": "news",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&q=80", "alt": "金融テクノロジー" },
     "category": "product",
     "title": "金融版 Claude Code「Dexter」が話題 — 200行のオープンソースで株式分析・投資判断を自動化",
     "excerpt": "ターミナルで動作する自律型金融リサーチエージェント Dexter が GitHub で1.7万スターを獲得し話題に。約200行のコードで構築され、タスク計画・自己検証・リアルタイム市場データ分析を行う。Claude / Codex / ローカル LLM に対応。",
@@ -784,6 +787,7 @@ export const ARTICLES = [
   {
     "id": "ai-config-files-comprehensive-guide-2026",
     "type": "feature",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&h=450&fit=crop&q=80", "alt": "ターミナル" },
     "category": "cli",
     "title": "AI 設定ファイル総合ガイド — CLAUDE.md・SKILL.md・AGENTS.md・.cursor/rules を一本化して理解する",
     "excerpt": "Claude Code の CLAUDE.md、スキルファイル、Codex の AGENTS.md、Cursor の .cursor/rules、llms.txt。AI コーディングツールの「設定ファイル」が乱立する中、それぞれの役割・配置場所・書き方のベストプラクティスを1本にまとめた。",
@@ -867,6 +871,7 @@ export const ARTICLES = [
   {
     "id": "ai-regulation-q1-2026",
     "type": "feature",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=450&fit=crop&q=80", "alt": "法規制" },
     "category": "regulation",
     "title": "AI 規制・訴訟の動き — 2026年 Q1 の主要トピック",
     "excerpt": "Anthropic と米国防総省の法廷闘争、OpenAI Sora をめぐる提携解消、EU AI Act の施行開始など、2026年第1四半期の規制・訴訟動向を整理した。",
@@ -1307,6 +1312,7 @@ export const ARTICLES = [
   {
     "id": "rag-chunking-ingestion-2026",
     "type": "feature",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=450&fit=crop&q=80", "alt": "データベース" },
     "category": "data",
     "title": "RAG の取り込み設計 — チャンキング、親子構造、PDF／表／OCR、パイプライン監視",
     "excerpt": "ベクトル化の前段で成果が決まる。固定長だけでなく見出し・段落・構造を利用した分割、親チャンクと子チャンク、表・スキャン PDF・OCR のノイズ、メタデータとリネージ・再処理、障害検知までを実務目線で整理する。",
@@ -1786,6 +1792,7 @@ export const ARTICLES = [
   {
     "id": "ai-voice-input-tools-landscape-2026",
     "type": "feature",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&h=450&fit=crop&q=80", "alt": "マイクとオーディオ" },
     "category": "media",
     "title": "AI 音声入力ツールの俯瞰 — 製品型と API 型、Whisper と gpt-4o-transcribe",
     "excerpt": "OSS の Whisper と OpenAI Speech-to-Text API（whisper-1 / gpt-4o-transcribe 系）は別ライン。コンシューマー製品とクラウド STT API の選び方、レイテンシ・コスト・プライバシーの論点を整理する。",
@@ -2453,6 +2460,7 @@ export const ARTICLES = [
   {
     "id": "cursor-2-4-subagents",
     "type": "news",
+    "coverImage": { "src": "logos/cursor.svg", "alt": "Cursor" },
     "category": "editor",
     "title": "Cursor 2.4 リリース — 並列サブエージェントとクラウドVM実行で開発を高速化",
     "excerpt": "最大20個のエージェントを同時並列実行可能に。クラウドVM上での独立実行により、ローカルマシンのリソースを消費せず大規模タスクを処理。BugBotも新登場。",
