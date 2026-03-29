@@ -2433,8 +2433,25 @@ function Sidebar({ articles, onSelect, onTagClick, weekRoundups }) {
   );
 }
 
-function SakuraPetals({ accent, visible }) {
-  if (accent !== "sakura" || !visible) return null;
+function getSeason() {
+  const m = new Date().getMonth(); // 0-11
+  if (m >= 2 && m <= 4) return "spring";
+  if (m >= 5 && m <= 7) return "summer";
+  if (m >= 8 && m <= 10) return "autumn";
+  return "winter";
+}
+
+function SeasonalEffect({ visible }) {
+  const season = useMemo(() => getSeason(), []);
+  if (!visible) return null;
+
+  if (season === "spring") return <SpringEffect />;
+  if (season === "summer") return <SummerEffect />;
+  if (season === "autumn") return <AutumnEffect />;
+  return <WinterEffect />;
+}
+
+function SpringEffect() {
   const petals = useMemo(() => Array.from({ length: 18 }, (_, i) => ({
     key: i,
     left: Math.random() * 100,
@@ -2448,7 +2465,7 @@ function SakuraPetals({ accent, visible }) {
     settle: i < 6,
   })), []);
   return (
-    <div className="sakura-container" aria-hidden="true">
+    <div className="seasonal-container" aria-hidden="true">
       {petals.map(p => (
         <div
           key={p.key}
@@ -2466,6 +2483,112 @@ function SakuraPetals({ accent, visible }) {
         />
       ))}
       <div className="sakura-ground" />
+    </div>
+  );
+}
+
+function SummerEffect() {
+  const fireflies = useMemo(() => Array.from({ length: 14 }, (_, i) => ({
+    key: i,
+    left: 5 + Math.random() * 90,
+    top: 20 + Math.random() * 70,
+    delay: Math.random() * 8,
+    dur: 4 + Math.random() * 6,
+    driftX: -30 + Math.random() * 60,
+    driftY: -40 + Math.random() * 30,
+    size: 3 + Math.random() * 4,
+  })), []);
+  return (
+    <div className="seasonal-container" aria-hidden="true">
+      {fireflies.map(f => (
+        <div
+          key={f.key}
+          className="firefly"
+          style={{
+            left: `${f.left}%`,
+            top: `${f.top}%`,
+            width: `${f.size}px`,
+            height: `${f.size}px`,
+            animationDelay: `${f.delay}s`,
+            "--fly-dur": `${f.dur}s`,
+            "--fly-x": `${f.driftX}px`,
+            "--fly-y": `${f.driftY}px`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+function AutumnEffect() {
+  const leaves = useMemo(() => Array.from({ length: 14 }, (_, i) => {
+    const colors = ["#dc2626", "#ea580c", "#d97706", "#ca8a04", "#b45309"];
+    return {
+      key: i,
+      left: Math.random() * 100,
+      delay: Math.random() * 10,
+      fallDur: 8 + Math.random() * 7,
+      swayDur: 2.5 + Math.random() * 3,
+      size: 0.5 + Math.random() * 0.6,
+      opacity: 0.3 + Math.random() * 0.4,
+      drift: -50 + Math.random() * 100,
+      rotEnd: 200 + Math.random() * 500,
+      color: colors[Math.floor(Math.random() * colors.length)],
+    };
+  }), []);
+  return (
+    <div className="seasonal-container" aria-hidden="true">
+      {leaves.map(l => (
+        <div
+          key={l.key}
+          className="autumn-leaf"
+          style={{
+            left: `${l.left}%`,
+            "--fall-dur": `${l.fallDur}s`,
+            "--sway-dur": `${l.swayDur}s`,
+            "--drift": `${l.drift}px`,
+            "--rot-end": `${l.rotEnd}deg`,
+            "--leaf-color": l.color,
+            animationDelay: `${l.delay}s`,
+            fontSize: `${l.size}rem`,
+            opacity: l.opacity,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+function WinterEffect() {
+  const flakes = useMemo(() => Array.from({ length: 20 }, (_, i) => ({
+    key: i,
+    left: Math.random() * 100,
+    delay: Math.random() * 10,
+    fallDur: 8 + Math.random() * 10,
+    swayDur: 3 + Math.random() * 4,
+    size: 2 + Math.random() * 4,
+    opacity: 0.2 + Math.random() * 0.5,
+    drift: -20 + Math.random() * 40,
+  })), []);
+  return (
+    <div className="seasonal-container" aria-hidden="true">
+      {flakes.map(f => (
+        <div
+          key={f.key}
+          className="snowflake"
+          style={{
+            left: `${f.left}%`,
+            width: `${f.size}px`,
+            height: `${f.size}px`,
+            "--fall-dur": `${f.fallDur}s`,
+            "--sway-dur": `${f.swayDur}s`,
+            "--drift": `${f.drift}px`,
+            animationDelay: `${f.delay}s`,
+            opacity: f.opacity,
+          }}
+        />
+      ))}
+      <div className="snow-ground" />
     </div>
   );
 }
@@ -3233,7 +3356,7 @@ const [showFab, setShowFab] = useState(false);
         </main>
       </div>
 
-      <SakuraPetals accent={accentId} visible={!selected && siteSection === "home"} />
+      <SeasonalEffect visible={!selected && siteSection === "home"} />
       <ScrollTopFab
         visible={!selected && showFab}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

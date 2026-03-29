@@ -2726,14 +2726,16 @@ body {
   transform: scale(1.15);
 }
 
-/* ── 桜の花びらアニメーション ── */
-.sakura-container {
+/* ── 季節エフェクト共通 ── */
+.seasonal-container {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 9998;
   overflow: hidden;
 }
+
+/* ── 春：桜の花びら ── */
 .sakura-petal {
   position: absolute;
   top: -2rem;
@@ -2797,8 +2799,8 @@ body {
   50%      { background-position: 30px 0; }
 }
 /* 舞い上がる花びら（地面から） */
-.sakura-container::after,
-.sakura-container::before {
+.seasonal-container:has(.sakura-petal)::after,
+.seasonal-container:has(.sakura-petal)::before {
   content: "";
   position: absolute;
   bottom: 10px;
@@ -2824,6 +2826,81 @@ body {
   92%  { opacity: 0.4; transform: translateY(-15vh) rotate(-180deg) translateX(30px); }
   96%  { opacity: 0.2; transform: translateY(-25vh) rotate(-300deg) translateX(-10px); }
   98%  { opacity: 0; transform: translateY(-30vh) rotate(-360deg) translateX(20px); }
+}
+
+/* ── 夏：蛍 ── */
+.firefly {
+  position: absolute;
+  border-radius: 50%;
+  background: #a3e635;
+  box-shadow: 0 0 6px 2px rgba(163, 230, 53, 0.6), 0 0 20px 4px rgba(163, 230, 53, 0.2);
+  animation:
+    fireflyGlow var(--fly-dur, 5s) ease-in-out infinite,
+    fireflyMove var(--fly-dur, 5s) ease-in-out infinite alternate;
+}
+@keyframes fireflyGlow {
+  0%, 100% { opacity: 0; box-shadow: 0 0 4px 1px rgba(163, 230, 53, 0.3); }
+  30%      { opacity: 1; box-shadow: 0 0 8px 3px rgba(163, 230, 53, 0.7), 0 0 25px 6px rgba(163, 230, 53, 0.3); }
+  50%      { opacity: 0.6; }
+  70%      { opacity: 1; box-shadow: 0 0 10px 4px rgba(163, 230, 53, 0.8), 0 0 30px 8px rgba(163, 230, 53, 0.3); }
+}
+@keyframes fireflyMove {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(var(--fly-x, 20px), var(--fly-y, -15px)); }
+  50%  { transform: translate(calc(var(--fly-x, 20px) * -0.5), calc(var(--fly-y, -15px) * 0.7)); }
+  75%  { transform: translate(calc(var(--fly-x, 20px) * 0.8), calc(var(--fly-y, -15px) * -0.3)); }
+  100% { transform: translate(calc(var(--fly-x, 20px) * -0.3), var(--fly-y, -15px)); }
+}
+
+/* ── 秋：紅葉 ── */
+.autumn-leaf {
+  position: absolute;
+  top: -2rem;
+  width: 1em;
+  height: 1em;
+  background: var(--leaf-color, #dc2626);
+  clip-path: polygon(50% 0%, 65% 30%, 100% 35%, 70% 55%, 80% 100%, 50% 72%, 20% 100%, 30% 55%, 0% 35%, 35% 30%);
+  animation:
+    sakuraFall var(--fall-dur, 10s) cubic-bezier(0.15, 0, 0.85, 1) infinite,
+    sakuraSway var(--sway-dur, 3s) ease-in-out infinite alternate;
+}
+
+/* ── 冬：雪 ── */
+.snowflake {
+  position: absolute;
+  top: -1rem;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.3);
+  animation:
+    snowFall var(--fall-dur, 12s) linear infinite,
+    sakuraSway var(--sway-dur, 4s) ease-in-out infinite alternate;
+}
+@keyframes snowFall {
+  0%   { transform: translateY(-5vh); opacity: 0; }
+  5%   { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0.5; }
+}
+.snow-ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.15) 15%,
+    rgba(255, 255, 255, 0.3) 30%,
+    rgba(255, 255, 255, 0.1) 45%,
+    rgba(255, 255, 255, 0.35) 60%,
+    rgba(255, 255, 255, 0.2) 75%,
+    rgba(255, 255, 255, 0.25) 90%,
+    transparent 100%
+  );
+  border-radius: 5px 5px 0 0;
+  animation: groundFadeIn 10s ease forwards;
+  opacity: 0;
 }
 
 /* ── ページネーション ── */
