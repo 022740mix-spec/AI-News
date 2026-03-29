@@ -1531,6 +1531,7 @@ const MODEL_COMPARISON = [
   { name: "GLM-5", rating: 3.5, summary: "Zhipu AI（中国）。745Bパラメータ MoE、MIT ライセンス。Opus の約1/6のコスト。Huawei チップで学習。$0.80/$2.56", bench: 60 },
   { name: "MiniMax M2.7", rating: 3.5, summary: "MiniMax（中国）。自己進化型モデル。SWE-Pro 56.2%で Opus に迫る。OpenClaw 上で自律最適化。", bench: 56 },
   { name: "KAT-Coder Pro V2", rating: 3.5, summary: "Kwai/快手（中国）。コーディング特化 MoE。SWE-Bench 73.4%。OpenClaw 対応。$0.30/$1.20 と低コスト。", bench: 73 },
+  { name: "DeepSeek R1", rating: 4.0, summary: "DeepSeek（中国）。671B MoE 推論特化。MIT ライセンス。数学・コーディングで Opus に迫る。$0.14/$2.19 と破格。", bench: 71 },
 ];
 
 /** ベンチマークスコアの横棒グラフ（SVG 自動生成・グラデーション付き） */
