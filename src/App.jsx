@@ -898,6 +898,24 @@ function HomePage({ articles, onSelect, onSection }) {
             </button>
           </div>
         </section>
+
+        <section className="home-section">
+          <h2 className="home-section__title">おすすめポッドキャスト</h2>
+          <p className="home-section__desc">AI 業界のトップリーダーが語る、公式発表では聞けない本音と未来予測。</p>
+          <div className="home-podcast-embed">
+            <iframe
+              style={{ borderRadius: 12 }}
+              src="https://open.spotify.com/embed/show/2L6WMqY3GUPCGBD0dX6p00/video?utm_source=generator"
+              width="100%"
+              height="352"
+              frameBorder="0"
+              allowFullScreen
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              title="Dwarkesh Podcast on Spotify"
+            />
+          </div>
+        </section>
       </div>
     </div>
   );
