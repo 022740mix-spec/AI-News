@@ -792,6 +792,14 @@
     <summary>Google DeepMind の動画生成モデル。4K 解像度、長尺対応、物理シミュレーション改善。Vertex AI 経由でエンタープライズ利用にも対応。</summary>
   </entry>
   <entry>
+    <title>Manus レビュー — 汎用AIエージェント、Webブラウジングからコードまで自律実行</title>
+    <link rel="alternate" type="text/html" href="?a=manus-review"/>
+    <id>tag:ai-tool-news.jp,2026:manus-review</id>
+    <published>2026-03-10T15:00:00Z</published>
+    <updated>2026-03-10T15:00:00Z</updated>
+    <summary>中国発の汎用AIエージェント。Webブラウジング、データ分析、コード実行、ファイル操作を自律的にこなす。招待制で話題を呼んだが、現在は一般公開済み。</summary>
+  </entry>
+  <entry>
     <title>動画生成モデルの地形図 — Veo・Runway・Kling などとマルチモデル・パイプライン</title>
     <link rel="alternate" type="text/html" href="?a=ai-video-generators-landscape-2026"/>
     <id>tag:ai-tool-news.jp,2026:ai-video-generators-landscape-2026</id>
@@ -838,6 +846,14 @@
     <published>2026-03-05T15:00:00Z</published>
     <updated>2026-03-05T15:00:00Z</updated>
     <summary>シンプルな UI で動画を素早く生成。エフェクト機能が豊富で、SNS やショート動画向けのカジュアルな制作に向く。無料枠あり、$8/月〜。</summary>
+  </entry>
+  <entry>
+    <title>Devin レビュー — Cognition 発、ソフトウェアエンジニアリング特化のAIエージェント</title>
+    <link rel="alternate" type="text/html" href="?a=devin-review"/>
+    <id>tag:ai-tool-news.jp,2026:devin-review</id>
+    <published>2026-03-05T15:00:00Z</published>
+    <updated>2026-03-05T15:00:00Z</updated>
+    <summary>「AIソフトウェアエンジニア」を標榜する自律型コーディングエージェント。独自のクラウド開発環境でコード生成・テスト・デバッグ・PR作成まで一貫対応。$500/月〜。</summary>
   </entry>
   <entry>
     <title>Google、Gemini 3.1 Flash-Lite をプレビュー公開 — 2.5× 高速・低コストの大量処理向けモデル</title>
@@ -918,6 +934,22 @@
     <published>2026-03-01T15:00:00Z</published>
     <updated>2026-03-01T15:00:00Z</updated>
     <summary>Black Forest Labs の画像生成モデル。フォトリアル系で品質と速度のバランスが良く、API・パートナー経由で利用可能。LoRA によるカスタマイズにも対応。</summary>
+  </entry>
+  <entry>
+    <title>GenSpark レビュー — エージェント型AI検索、Sparkpages で情報を自動構造化</title>
+    <link rel="alternate" type="text/html" href="?a=genspark-review"/>
+    <id>tag:ai-tool-news.jp,2026:genspark-review</id>
+    <published>2026-03-01T15:00:00Z</published>
+    <updated>2026-03-01T15:00:00Z</updated>
+    <summary>検索クエリに対してAIエージェントがWebを調査し、Sparkpages と呼ばれる構造化ページを自動生成。無料で利用可能。広告なしのクリーンな体験。</summary>
+  </entry>
+  <entry>
+    <title>Perplexity AI レビュー — AI検索の先駆者、ソース引用付きで信頼性の高い回答</title>
+    <link rel="alternate" type="text/html" href="?a=perplexity-review"/>
+    <id>tag:ai-tool-news.jp,2026:perplexity-review</id>
+    <published>2026-03-01T15:00:00Z</published>
+    <updated>2026-03-01T15:00:00Z</updated>
+    <summary>AI検索エンジンの代名詞。ソース引用付きの回答、Pro Search による深い調査、API 提供など、検索のAI化をリードする存在。無料枠あり、$20/月。</summary>
   </entry>
   <entry>
     <title>Cline レビュー — 承認フロー付きのOSS AIエージェント</title>
