@@ -1032,6 +1032,22 @@
     <summary>中国の Moonshot AI が Kimi K2.5 を公開した。1兆パラメータの Mixture of Experts（MoE）アーキテクチャで、推論時のアクティブパラメータは320億。Humanity&apos;s Last Exam で Opus 4.5 や GPT-5.2 High を上回るスコアを記録し、コーディング（SWE-bench 76.8%）やマルチモーダル（画像・動画入力対応）でもフロンティア級の性能を示している。オープンウェイトで公開。</summary>
   </entry>
   <entry>
+    <title>ERNIE 4.5 レビュー — Baidu の基盤モデル、中国最大の検索エンジンが支える実用力</title>
+    <link rel="alternate" type="text/html" href="?a=ernie-4-5-review"/>
+    <id>tag:ai-tool-news.jp,2026:ernie-4-5-review</id>
+    <published>2025-06-15T15:00:00Z</published>
+    <updated>2025-06-15T15:00:00Z</updated>
+    <summary>Baidu（百度）の最新基盤モデル。中国最大の検索エンジンと Baidu Cloud との統合が強み。文心一言（ERNIE Bot）として消費者向けにも展開。中国国内の企業利用で実績豊富。</summary>
+  </entry>
+  <entry>
+    <title>Qwen 3 レビュー — Alibaba 発、ハイブリッド思考とオープンウェイトの大型ファミリー</title>
+    <link rel="alternate" type="text/html" href="?a=qwen-3-review"/>
+    <id>tag:ai-tool-news.jp,2026:qwen-3-review</id>
+    <published>2025-04-29T15:00:00Z</published>
+    <updated>2025-04-29T15:00:00Z</updated>
+    <summary>Alibaba Cloud の最新モデルファミリー。0.6B〜235B まで8サイズ展開、Apache 2.0 のオープンウェイト。「考えるか考えないか」を切り替えるハイブリッド思考モードが特徴。</summary>
+  </entry>
+  <entry>
     <title>DeepSeek R1 レビュー — 中国発オープンウェイト推論モデル、Opus に迫る性能を破格コストで</title>
     <link rel="alternate" type="text/html" href="?a=deepseek-r1-review"/>
     <id>tag:ai-tool-news.jp,2026:deepseek-r1-review</id>

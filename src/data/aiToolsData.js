@@ -5119,6 +5119,66 @@ export const ARTICLES = [
     "model": "DeepSeek R1 (671B MoE)",
     "tags": ["モデル", "中国", "OSS", "推論", "MoE"],
     "features": ["オープンウェイト", "MIT ライセンス", "推論特化", "低コスト", "蒸留版あり"]
+  },
+  {
+    "id": "qwen-3-review",
+    "type": "review",
+    "rating": 4,
+    "ratings": {"AI品質":4,"使いやすさ":3,"コスパ":5,"拡張性":5,"企業向け":3},
+    "reviewCategory": "model",
+    "category": "model",
+    "title": "Qwen 3 レビュー — Alibaba 発、ハイブリッド思考とオープンウェイトの大型ファミリー",
+    "excerpt": "Alibaba Cloud の最新モデルファミリー。0.6B〜235B まで8サイズ展開、Apache 2.0 のオープンウェイト。「考えるか考えないか」を切り替えるハイブリッド思考モードが特徴。",
+    "body": [
+      "**Qwen 3**（通義千問3）は Alibaba Cloud が2025年4月にリリースした大規模モデルファミリーで、オープンウェイト LLM の中でも最も包括的なラインナップを持つ。Dense モデル（0.6B / 1.7B / 4B / 8B / 14B / 32B）と MoE モデル（30B-A3B / 235B-A22B）の計8サイズを Apache 2.0 ライセンスで公開しており、スマートフォン上の軽量推論からデータセンターでの大規模処理まで、単一ファミリーでカバーする。Hugging Face では公開初日に最もダウンロードされたモデルコレクションとなり、オープンウェイト LLM の代表格として急速に認知が広がった。",
+      "**ハイブリッド思考（Thinking / Non-Thinking）**: Qwen 3 の最もユニークな機能が、1つのモデルで「推論モード」と「即答モード」を動的に切り替えるハイブリッド思考。複雑な数学・コーディング・論理問題では Chain-of-Thought を展開して段階的に推論し、簡単な質問やチャットにはレイテンシを抑えて即座に回答する。DeepSeek R1 が推論特化（常に思考する）のに対し、Qwen 3 は状況に応じた自動切替が可能。`/think` と `/no_think` のトグルでユーザーが明示的に制御することもできる。",
+      "**多言語とエージェント対応**: 119言語に対応し、特にアラビア語・日本語・韓国語・東南アジア言語のベンチマークスコアが高い。MCP（Model Context Protocol）にも対応しており、ツール呼び出しやエージェント的なタスク実行が可能。コード生成ではフラッグシップの 235B-A22B が Opus 4.6 や GPT-5.4 に迫るスコアを出しており、AIME 2025（数学）では 81.5% を記録。Qwen-Agent フレームワークを通じた自律的なタスク実行もサポートされている。",
+      "**ローカル実行の実用性**: Ollama、vLLM、SGLang、llama.cpp 等の主要推論フレームワークに対応しており、ローカル実行の選択肢が非常に広い。4B / 8B モデルは個人の GPU（8GB VRAM 程度）でも実用的な速度で動作し、プライバシー重視の環境やオフライン利用に適している。GGUF 量子化版も公式に提供されており、M1/M2 Mac でも軽量モデルが動く。",
+      "**Alibaba Cloud エコシステム**: Tongyi（通義）プラットフォーム、Alibaba Cloud の Model Studio、DashScope API から利用可能。中国国内の金融・EC・物流での導入実績が多い。グローバルでは Alibaba Cloud の国際リージョン（シンガポール等）経由で利用できるが、AWS / GCP ほどの地域カバレッジはまだない。",
+      "**注意点**: グローバルでの API レイテンシは中国リージョン比で劣る場合がある。ドキュメントは英語版が充実してきているが、日本語対応は限定的。235B MoE のローカル実行には 80GB 以上の VRAM が必要で、個人利用には 8B〜32B が現実的。中国企業モデルとしてのデータ取り扱いポリシーは企業導入時に事前確認が必要。"
+    ],
+    "primarySources": [
+      { "title": "Qwen 3 — Hugging Face", "site": "Hugging Face", "url": "https://huggingface.co/Qwen" },
+      { "title": "Qwen Blog", "site": "Qwen", "url": "https://qwenlm.github.io/" },
+      { "title": "Qwen3 Technical Report", "site": "arXiv (推定)", "url": "https://qwenlm.github.io/blog/qwen3/" }
+    ],
+    "newsDate": "2025-04-29",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "company": "Alibaba Cloud",
+    "pricing": "オープンウェイト（無料）/ API 従量課金",
+    "model": "Qwen 3 (0.6B〜235B)",
+    "tags": ["モデル", "中国", "OSS", "Alibaba"],
+    "features": ["8サイズ展開", "Apache 2.0", "ハイブリッド思考", "119言語", "MCP対応"]
+  },
+  {
+    "id": "ernie-4-5-review",
+    "type": "review",
+    "rating": 3.5,
+    "ratings": {"AI品質":4,"使いやすさ":3,"コスパ":4,"拡張性":3,"企業向け":4},
+    "reviewCategory": "model",
+    "category": "model",
+    "title": "ERNIE 4.5 レビュー — Baidu の基盤モデル、中国最大の検索エンジンが支える実用力",
+    "excerpt": "Baidu（百度）の最新基盤モデル。中国最大の検索エンジンと Baidu Cloud との統合が強み。文心一言（ERNIE Bot）として消費者向けにも展開。中国国内の企業利用で実績豊富。",
+    "body": [
+      "**ERNIE 4.5**（文心大模型4.5）は中国最大の検索エンジン Baidu（百度）が開発する基盤モデル。テキスト・画像・動画のマルチモーダル対応で、Baidu の検索技術で蓄積された中国語の知識ベースが大きな強み。消費者向けチャットボット「文心一言（ERNIE Bot）」として1億ユーザー以上が利用している。",
+      "**Baidu エコシステム**: Baidu Cloud（百度智能雲）との統合により、エンタープライズ向けのデプロイメントが充実。中国国内の金融、医療、製造業での導入実績が多い。API は Baidu Cloud のコンソールから利用でき、中国国内のレイテンシとコンプライアンスに最適化されている。2025年6月にはオープンソース版も公開された。",
+      "**コスト**: API 料金は中国市場向けの価格設定で低コスト。ERNIE Speed / Lite / Tiny などの軽量版も用意されており、用途に応じたコスト最適化が可能。中国国内のサーバーで完結するため、データの国外流出を避けたい中国企業にとっては安心感がある。",
+      "**注意点**: グローバル展開は限定的で、中国国外からの利用はレイテンシや登録の面でハードルがある。英語や日本語の性能は GPT や Claude と比較すると差がある。中国語特化の用途（中国市場向けサービス開発、中国語コンテンツ生成）では強力だが、多言語環境では他モデルのほうが向く。"
+    ],
+    "primarySources": [
+      { "title": "ERNIE — Baidu", "site": "Baidu", "url": "https://yiyan.baidu.com/" }
+    ],
+    "newsDate": "2025-06-15",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "company": "Baidu",
+    "pricing": "API 従量課金（低コスト）",
+    "model": "ERNIE 4.5",
+    "tags": ["モデル", "中国", "Baidu", "マルチモーダル"],
+    "features": ["中国語最適化", "Baidu Cloud統合", "1億ユーザー", "マルチモーダル", "OSS版あり"]
   }
 ];
 
