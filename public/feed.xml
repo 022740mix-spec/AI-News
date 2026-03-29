@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>AI開発ツール最新情報</title>
+  <title>AI News</title>
   <subtitle>Claude Code・Cursor・Codex・Copilot の最新ニュースとガイドを日本語で</subtitle>
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
@@ -14,6 +14,14 @@
     <published>2026-03-30T15:00:00Z</published>
     <updated>2026-03-30T15:00:00Z</updated>
     <summary>Anthropic が国防総省の「サプライチェーンリスク」指定を連邦地裁で差し止めた一方、OpenAI は Sora の消費者向け提供を終了。ARC-AGI-3 がフロンティアモデルの限界を浮き彫りにした翌日、Google が Gemini 3.1 Pro と MCP v2 を同時に発表。週末は Cursor 2.4 と Claude Code Auto mode が開発者のワークフローを更新し、Mythos 草稿の報道がセキュリティ銘柄を動かした。</summary>
+  </entry>
+  <entry>
+    <title>開発者のための画像生成API入門 — GPT Image・Flux・Midjourney・Recraft を比較して選ぶ</title>
+    <link rel="alternate" type="text/html" href="?a=ai-image-api-guide-developers-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ai-image-api-guide-developers-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>画像生成をアプリに組み込みたい開発者向けに、主要4つの API を料金・品質・速度・ライセンスの軸で比較。バイブコーディングで「とりあえず動く画像生成」を実装するための最短ルートを示す。</summary>
   </entry>
   <entry>
     <title>AI モデルはどう作られるのか — ゼロから学習・追加学習・RLHF を非エンジニア向けに解説</title>
@@ -232,6 +240,14 @@
     <summary>Claude Code の会話履歴はモデル改善不許可の場合30日で消去される。セッションの再開方法、ローカルの保存場所、/export コマンド、コミュニティ製の自動保存ツールまで、会話記録を失わないためのテクニックを整理した。</summary>
   </entry>
   <entry>
+    <title>Midjourney V8、ついに Web 版と API を正式公開 — Discord 不要で画像生成が可能に</title>
+    <link rel="alternate" type="text/html" href="?a=midjourney-v8-api-launch-2026"/>
+    <id>tag:ai-tool-news.jp,2026:midjourney-v8-api-launch-2026</id>
+    <published>2026-03-28T15:00:00Z</published>
+    <updated>2026-03-28T15:00:00Z</updated>
+    <summary>Midjourney が V8 モデルとともに Web アプリと REST API を正式公開。Discord 経由でしか使えなかった制約がなくなり、開発者はアプリケーションに画像生成を直接組み込めるようになった。1画像あたり約$0.03、月額$10のBasicプランで200枚生成可能。</summary>
+  </entry>
+  <entry>
     <title>Google 社内 AI エージェント「Agent Smith」が話題 — PC を閉じても作業を継続、スマホから進捗確認・追加指示</title>
     <link rel="alternate" type="text/html" href="?a=google-agent-smith-2026"/>
     <id>tag:ai-tool-news.jp,2026:google-agent-smith-2026</id>
@@ -336,6 +352,22 @@
     <summary>3月27日の Claude Mythos リーク報道を受け、CrowdStrike −7%、Palo Alto Networks −6% など主要セキュリティ銘柄が軒並み下落。草稿に記載されたサイバー能力の記述が市場に衝撃を与えた経緯と、冷静な読み方を整理。</summary>
   </entry>
   <entry>
+    <title>Supabase が pgvector 0.8 を標準搭載 — HNSW インデックス性能が3倍に、RAG 構築がさらに手軽に</title>
+    <link rel="alternate" type="text/html" href="?a=supabase-pgvector-0-8-2026"/>
+    <id>tag:ai-tool-news.jp,2026:supabase-pgvector-0-8-2026</id>
+    <published>2026-03-27T15:00:00Z</published>
+    <updated>2026-03-27T15:00:00Z</updated>
+    <summary>Supabase が pgvector 0.8 へのアップグレードを全プロジェクトに展開。HNSW インデックスのビルド速度が3倍に向上し、100万ベクトル規模の検索が PostgreSQL 上で実用的に。無料枠でも利用可能。</summary>
+  </entry>
+  <entry>
+    <title>Runway Gen-5 発表 — 最大2分の高品質動画生成、物理シミュレーションとカメラ制御が大幅進化</title>
+    <link rel="alternate" type="text/html" href="?a=runway-gen5-video-generation-2026"/>
+    <id>tag:ai-tool-news.jp,2026:runway-gen5-video-generation-2026</id>
+    <published>2026-03-27T15:00:00Z</published>
+    <updated>2026-03-27T15:00:00Z</updated>
+    <summary>Runway が Gen-5 を発表。最大120秒の動画生成に対応し、物理法則に従った物体の動き、精密なカメラワーク制御、音声同期リップシンクを実現。API 経由でのバッチ生成にも対応し、映像制作ワークフローへの組み込みが現実的に。</summary>
+  </entry>
+  <entry>
     <title>freee、MCP リモート版をリリース — Claude から会計・人事労務・請求書など約270操作が可能に</title>
     <link rel="alternate" type="text/html" href="?a=freee-mcp-remote-2026"/>
     <id>tag:ai-tool-news.jp,2026:freee-mcp-remote-2026</id>
@@ -432,6 +464,14 @@
     <summary>2026-03-27、PM の Noah Zweben 氏が発表。Web/モバイルセッションが PR をリモートでフォローし green 化を目指す。GitHub Actions では anthropics/claude-code-action の ci-failure ワークフロー例あり。</summary>
   </entry>
   <entry>
+    <title>LangChain v0.4 リリース — RAG パイプラインの構築が大幅に簡素化、LangGraph との統合強化</title>
+    <link rel="alternate" type="text/html" href="?a=langchain-v04-rag-pipeline-2026"/>
+    <id>tag:ai-tool-news.jp,2026:langchain-v04-rag-pipeline-2026</id>
+    <published>2026-03-26T15:00:00Z</published>
+    <updated>2026-03-26T15:00:00Z</updated>
+    <summary>LangChain v0.4 がリリースされ、RAG パイプラインの構築 API が刷新された。ドキュメントローダー・チャンキング・検索・生成の一連の流れを10行以下で記述可能に。LangGraph によるエージェント型 RAG もサポート。</summary>
+  </entry>
+  <entry>
     <title>Google、Gemini 3.1 Flash Live を公開 — 応答 0.5 秒以下のリアルタイム音声 AI</title>
     <link rel="alternate" type="text/html" href="?a=gemini-31-flash-live-voice-2026"/>
     <id>tag:ai-tool-news.jp,2026:gemini-31-flash-live-voice-2026</id>
@@ -470,6 +510,14 @@
     <published>2026-03-26T15:00:00Z</published>
     <updated>2026-03-26T15:00:00Z</updated>
     <summary>3月26日、Model Context Protocol の第2版仕様が公開された。HTTP+SSE を置き換える Streamable HTTP トランスポート、OAuth 2.1 認可フレームワーク、JSON-RPC バッチ、ツールアノテーションなどが盛り込まれ、エンタープライズ本番環境での採用障壁を大幅に下げる。OpenAI・Microsoft も正式サポートを表明。</summary>
+  </entry>
+  <entry>
+    <title>Pinecone、サーバーレス無料枠を大幅拡充 — 100万ベクトルまで無料、RAG のプロトタイプが無料で完結</title>
+    <link rel="alternate" type="text/html" href="?a=pinecone-serverless-free-tier-2026"/>
+    <id>tag:ai-tool-news.jp,2026:pinecone-serverless-free-tier-2026</id>
+    <published>2026-03-25T15:00:00Z</published>
+    <updated>2026-03-25T15:00:00Z</updated>
+    <summary>Pinecone がサーバーレスプランの無料枠を100万ベクトルに拡大。これまでの10万ベクトルから10倍に。中規模の RAG アプリケーションのプロトタイプが無料で構築できるようになった。</summary>
   </entry>
   <entry>
     <title>Google、AI を最大8倍高速化しメモリを6分の1に削減する圧縮アルゴリズム TurboQuant を発表</title>
