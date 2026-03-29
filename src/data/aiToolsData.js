@@ -42,6 +42,80 @@
 
 export const ARTICLES = [
   {
+    "id": "midjourney-v8-api-launch-2026",
+    "type": "news",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=800&h=450&fit=crop&q=80", "alt": "AI アート" },
+    "category": "media",
+    "title": "Midjourney V8、ついに Web 版と API を正式公開 — Discord 不要で画像生成が可能に",
+    "excerpt": "Midjourney が V8 モデルとともに Web アプリと REST API を正式公開。Discord 経由でしか使えなかった制約がなくなり、開発者はアプリケーションに画像生成を直接組み込めるようになった。1画像あたり約$0.03、月額$10のBasicプランで200枚生成可能。",
+    "body": [
+      "Midjourney は2026年3月、V8 モデルの公開とともに、長らく待望されていた Web アプリケーションと REST API を正式にリリースした。これまで Midjourney は Discord ボット経由でのみ利用可能で、開発者やビジネスユーザーにとって大きなハードルだった。",
+      "**Web アプリ**: midjourney.com で直接画像を生成・編集できるブラウザベースのインターフェース。プロンプト入力、スタイルパラメータの調整、生成画像のバリエーション作成、アップスケールが GUI で完結する。Discord のチャンネルを遡って画像を探す必要がなくなった。",
+      "**REST API**: 開発者向けに REST API が公開された。JSON でプロンプト・パラメータを送り、Webhook で完成画像の URL を受け取る非同期方式。レート制限は Basic プラン（$10/月）で 200 枚/月、Pro プラン（$30/月）で 900 枚/月（Fast 生成）。Enterprise（$60/月〜）は Relax モードで無制限生成に加え、IP 補償と SAM L統合が付く。",
+      "**V8 モデルの進化**: V8 は V6.1 からの大幅なアップグレードで、プロンプトへの忠実度、人物の手指・歯の描写精度、テキスト生成精度が改善された。1024×1024 のデフォルト解像度に加え、最大 4096×4096 のアップスケールに対応。生成速度は Fast モードで約 10 秒。",
+      "**開発者にとっての意味**: API の公開により、Midjourney の画質を自社プロダクトに組み込めるようになった。ECサイトの商品画像生成、マーケティング素材の自動作成、ゲームのコンセプトアート量産などのユースケースが開ける。ただし、API の料金は GPT Image（OpenAI）や Flux（Black Forest Labs）と比較して割高で、大量生成にはコスト計算が必要。"
+    ],
+    "date": "2026-03-28",
+    "newsDate": "2026-03-28",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Midjourney", "画像生成", "API", "V8"],
+    "primarySources": [
+      { "title": "Midjourney Web & API", "site": "Midjourney", "url": "https://www.midjourney.com/" }
+    ]
+  },
+  {
+    "id": "runway-gen5-video-generation-2026",
+    "type": "news",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=450&fit=crop&q=80", "alt": "動画制作" },
+    "category": "media",
+    "title": "Runway Gen-5 発表 — 最大2分の高品質動画生成、物理シミュレーションとカメラ制御が大幅進化",
+    "excerpt": "Runway が Gen-5 を発表。最大120秒の動画生成に対応し、物理法則に従った物体の動き、精密なカメラワーク制御、音声同期リップシンクを実現。API 経由でのバッチ生成にも対応し、映像制作ワークフローへの組み込みが現実的に。",
+    "body": [
+      "Runway は2026年3月、動画生成モデル Gen-5 を発表した。Gen-4.5 から約6ヶ月でのメジャーアップデートで、生成可能な動画の長さ、物理シミュレーションの精度、カメラ制御の自由度が大きく向上した。",
+      "**最大2分の動画生成**: Gen-4.5 の最大10秒から大幅に拡張され、最大120秒（2分）の一貫した動画を1プロンプトで生成できるようになった。キャラクターの一貫性が保たれ、シーン遷移も自然に処理される。ただし、長尺生成はコストが高く、120秒の動画1本で約$12〜$18。",
+      "**物理シミュレーション**: 水の流れ、布の揺れ、髪の動き、物体の落下といった物理現象が自然に描画される。「ガラスのコップにコーヒーを注ぐ」「風に揺れるカーテン」のようなプロンプトで、物理法則に矛盾しない映像が生成される。Gen-4.5 で頻発した「指が6本」「物体が消える」といったアーティファクトも大幅に減少。",
+      "**カメラ制御**: パン、チルト、ズーム、ドリー、クレーンショットなどのカメラワークをテキストで指定できる。「被写体を中心にゆっくり180度回転」「上空から地上へのクレーンダウン」といった映画的なカメラワークが実現する。",
+      "**API と料金**: REST API 経由でバッチ生成に対応。5秒動画が約$0.50、30秒が約$3、120秒が約$12〜$18（解像度・品質による）。Standard プラン（$12/月）では 625 クレジット（5秒動画 約50本分）が付与される。Unlimited プラン（$76/月）は Relax モードで無制限生成。",
+      "**競合との位置づけ**: Google Veo 3.1 はネイティブ音声付き動画で差別化、Kling 2.0（快手）はコストパフォーマンスで優位。Runway Gen-5 はカメラ制御の精度とプロ向けの編集ツール統合（Adobe Premiere との連携プラグイン）が強み。用途に応じた選択が重要。"
+    ],
+    "date": "2026-03-27",
+    "newsDate": "2026-03-27",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": ["Runway", "動画生成", "Gen-5", "API"],
+    "primarySources": [
+      { "title": "Introducing Gen-5", "site": "Runway", "url": "https://runwayml.com/" }
+    ]
+  },
+  {
+    "id": "ai-image-api-guide-developers-2026",
+    "type": "feature",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=800&h=450&fit=crop&q=80", "alt": "AI アート" },
+    "category": "media",
+    "title": "開発者のための画像生成API入門 — GPT Image・Flux・Midjourney・Recraft を比較して選ぶ",
+    "excerpt": "画像生成をアプリに組み込みたい開発者向けに、主要4つの API を料金・品質・速度・ライセンスの軸で比較。バイブコーディングで「とりあえず動く画像生成」を実装するための最短ルートを示す。",
+    "body": [
+      "画像生成 AI をアプリケーションに組み込む場合、選択肢は大きく4つに絞られる。OpenAI の GPT Image API、Black Forest Labs の Flux API、Midjourney の REST API（2026年3月公開）、そして Recraft の API。それぞれ強みが異なるため、用途に応じた選択が必要。",
+      "**GPT Image API（OpenAI）**: ChatGPT で使われている画像生成モデルを API 経由で呼び出す。最大の利点は OpenAI の既存 SDK に統合されている点で、テキスト生成と画像生成を同じ API キーで利用できる。プロンプトへの忠実度が高く、画像内テキストの生成精度も優秀。料金は 1024×1024 で $0.04/枚（HD）。バイブコーディングで最も手軽に始められる選択肢。",
+      "**Flux API（Black Forest Labs）**: フォトリアル系で最高クラスの品質。Replicate や fal.ai 経由で利用でき、Flux 2 Pro は $0.05/枚程度。Stable Diffusion の後継的な位置づけで、細部の描写力が高い。ControlNet 対応でポーズ指定や構図制御も可能。自社サーバーにデプロイする場合はオープンウェイトの Flux 2 Schnell（高速版）も選べる。",
+      "**Midjourney REST API**: 2026年3月に正式公開。アート性・美的品質では依然トップクラスだが、API の料金は Basic $10/月で 200 枚と割高。Webhook ベースの非同期 API で、リアルタイムアプリには不向き。マーケティング素材やクリエイティブ用途に特化。",
+      "**Recraft API**: SVG ベクター出力に対応する唯一の主要 API。ロゴ、アイコン、イラスト生成に強い。料金は $0.04/枚程度で GPT Image と同等。デザインシステムとの統合で威力を発揮する。",
+      "**選び方のフローチャート**: 「とりあえず試したい」→ GPT Image（OpenAI SDK で即実装）。「フォトリアルが必要」→ Flux。「アート性重視」→ Midjourney。「ベクター/ロゴが必要」→ Recraft。「コストを最小化」→ GPT Image または Flux Schnell（セルフホスト）。「著作権補償が必要」→ Adobe Firefly（Enterprise 契約）。",
+      "**実装例（OpenAI SDK）**: バイブコーディングで最短の実装は OpenAI SDK を使う方法。Claude Code や Cursor で「OpenAI の画像生成 API を使って、ユーザーのテキストから画像を生成するエンドポイントを作って」と指示すれば、数分で動作するコードが得られる。API キーの管理には環境変数を使い、.env に `OPENAI_API_KEY` を設定する。"
+    ],
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": ["画像生成", "API", "開発者向け", "GPT Image", "Flux", "Midjourney", "Recraft"],
+    "heroScope": "none",
+    "primarySources": [
+      { "title": "OpenAI Image Generation", "site": "OpenAI", "url": "https://platform.openai.com/docs/guides/images" },
+      { "title": "Flux API", "site": "Black Forest Labs", "url": "https://blackforestlabs.ai/" },
+      { "title": "Recraft API", "site": "Recraft", "url": "https://www.recraft.ai/" }
+    ]
+  },
+  {
     "id": "how-ai-models-are-built-2026",
     "type": "feature",
     "coverImage": { "src": "https://images.unsplash.com/photo-1737505599159-5ffc1dcbc08f?w=800&h=450&fit=crop&q=80", "alt": "ニューラルネットワーク" },
