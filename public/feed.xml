@@ -608,6 +608,14 @@
     <summary>画像生成AIの代名詞。V8でWeb UIとAPIを正式公開し、Discord外でもアクセス可能に。フォトリアルから抽象表現まで業界最高峰の品質。$10/月〜。</summary>
   </entry>
   <entry>
+    <title>React 開発者 Cheng Lou が作った Pretext — DOM リフロー不要の超高速テキスト計測ライブラリ</title>
+    <link rel="alternate" type="text/html" href="?a=pretext-chenglou-text-layout"/>
+    <id>tag:ai-tool-news.jp,2026:pretext-chenglou-text-layout</id>
+    <published>2026-03-20T15:00:00Z</published>
+    <updated>2026-03-20T15:00:00Z</updated>
+    <summary>React・ReasonML・Midjourney に関わった Cheng Lou が、Web のテキストレイアウトを根本から変えるライブラリ Pretext を公開。DOM や CSS を一切使わず、純粋な計算だけでテキストの高さ・幅を正確に計測。500テキストの layout() が約0.09ms。MIT ライセンス。</summary>
+  </entry>
+  <entry>
     <title>生成音楽のフロンティア — Suno・Udio・Lyria・Stable Audio 周辺の整理（2026年初頭）</title>
     <link rel="alternate" type="text/html" href="?a=ai-music-generation-frontier-early-2026"/>
     <id>tag:ai-tool-news.jp,2026:ai-music-generation-frontier-early-2026</id>

@@ -5205,6 +5205,29 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "pretext-chenglou-text-layout",
+    "type": "news",
+    "category": "product",
+    "title": "React 開発者 Cheng Lou が作った Pretext — DOM リフロー不要の超高速テキスト計測ライブラリ",
+    "excerpt": "React・ReasonML・Midjourney に関わった Cheng Lou が、Web のテキストレイアウトを根本から変えるライブラリ Pretext を公開。DOM や CSS を一切使わず、純粋な計算だけでテキストの高さ・幅を正確に計測。500テキストの layout() が約0.09ms。MIT ライセンス。",
+    "body": [
+      "**Pretext** は Cheng Lou（React、ReasonML、ReScript、Midjourney に関わった開発者）が公開した純粋な JavaScript / TypeScript テキスト計測・レイアウトライブラリ。Web 開発で最もコストが高い操作のひとつである DOM リフロー（getBoundingClientRect や offsetHeight）を完全に回避し、Canvas のフォントエンジンを使った純粋な計算でテキストの高さ・幅・行数を正確に出す。",
+      "**パフォーマンス**: 初回の `prepare()` で500テキストを約19ms で解析し、以降の `layout()` は同じ500テキストに対して約0.09ms。一度テキストを解析すれば、レイアウト計算がほぼゼロコストで繰り返せる設計。ウィンドウリサイズやアニメーション中の再計算で DOM に触る必要がないため、スクロールやリサイズが激しい UI でもカクつかない。",
+      "**これまで CSS が苦労していた問題が解決**: Pinterest 風の高さバラバラの Masonry レイアウト、チャットの吹き出しが内容にぴったりフィットする shrinkwrap、画面サイズに合わせてカラムが変わる雑誌風レイアウト、アコーディオン、自動伸縮テキストボックスなど、従来は DOM 計測に依存していたレイアウトが純粋な計算で実現できる。公式デモが chenglou.me/pretext/ で公開されている。",
+      "**対応範囲**: 絵文字、双方向テキスト（アラビア語等）、複雑なスクリプトを含む全言語に対応。描画先は DOM、Canvas、SVG で、サーバーサイドレンダリングも対応予定。MIT ライセンスで GitHub 上に公開されている。",
+      "**開発者への影響**: テキストの高さを事前に知る必要がある仮想スクロール、動的なカードレイアウト、リアルタイムのテキスト折り返し計算など、フロントエンド開発の長年の「つらみ」を解消するポテンシャルがある。数キロバイト級の小さなライブラリで、既存のフレームワーク（React、Vue、Svelte 等）と組み合わせて使える。"
+    ],
+    "newsDate": "2026-03-20",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["フロントエンド", "ライブラリ", "OSS", "テキストレイアウト", "パフォーマンス"],
+    "primarySources": [
+      { "title": "chenglou/pretext — GitHub", "site": "GitHub", "url": "https://github.com/chenglou/pretext" },
+      { "title": "Pretext Demos", "site": "Cheng Lou", "url": "https://chenglou.me/pretext/" }
+    ]
+  },
+  {
     "id": "google-colab-vscode-extension",
     "type": "news",
     "category": "product",
