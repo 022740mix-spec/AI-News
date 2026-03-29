@@ -42,6 +42,70 @@
 
 export const ARTICLES = [
   {
+    "id": "supabase-pgvector-0-8-2026",
+    "type": "news",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=450&fit=crop&q=80", "alt": "データベース" },
+    "category": "data",
+    "title": "Supabase が pgvector 0.8 を標準搭載 — HNSW インデックス性能が3倍に、RAG 構築がさらに手軽に",
+    "excerpt": "Supabase が pgvector 0.8 へのアップグレードを全プロジェクトに展開。HNSW インデックスのビルド速度が3倍に向上し、100万ベクトル規模の検索が PostgreSQL 上で実用的に。無料枠でも利用可能。",
+    "body": [
+      "Supabase は2026年3月27日、全プロジェクトで pgvector 0.8 を標準搭載したことを発表した。HNSW（Hierarchical Navigable Small World）インデックスの構築速度が従来比3倍に向上し、クエリのレイテンシも改善されている。",
+      "pgvector 0.8 の主な改善点は、HNSW インデックスのビルドにおけるメモリ使用量の最適化と並列構築の対応。100万ベクトルのインデックス構築が、0.7 では約45分かかっていたものが約15分に短縮された。検索クエリのレイテンシも p99 で20〜30%改善されている。",
+      "RAG（検索拡張生成）を構築する開発者にとって、Supabase + pgvector の組み合わせは最も手軽な選択肢の一つ。専用のベクトルデータベース（Pinecone、Weaviate 等）を別途契約する必要がなく、PostgreSQL の中でリレーショナルデータとベクトル検索を統合できる。Supabase の無料枠（500MB）でも pgvector は利用可能で、個人プロジェクトや PoC に最適。",
+      "Supabase は同時に、AI 関連の新機能として Edge Functions からの直接ベクトル検索 API と、ドキュメント取り込みパイプライン（PDF → チャンク → エンベディング → 格納）のテンプレートも公開している。"
+    ],
+    "date": "2026-03-29",
+    "newsDate": "2026-03-27",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["Supabase", "pgvector", "RAG", "ベクトル検索", "PostgreSQL"],
+    "primarySources": [
+      { "title": "Supabase Blog", "site": "Supabase", "url": "https://supabase.com/blog" }
+    ]
+  },
+  {
+    "id": "pinecone-serverless-free-tier-2026",
+    "type": "news",
+    "category": "data",
+    "title": "Pinecone、サーバーレス無料枠を大幅拡充 — 100万ベクトルまで無料、RAG のプロトタイプが無料で完結",
+    "excerpt": "Pinecone がサーバーレスプランの無料枠を100万ベクトルに拡大。これまでの10万ベクトルから10倍に。中規模の RAG アプリケーションのプロトタイプが無料で構築できるようになった。",
+    "body": [
+      "ベクトルデータベース大手の Pinecone は2026年3月25日、サーバーレスプランの無料枠を従来の10万ベクトルから100万ベクトルに拡大した。書き込み・読み取りのクォータも引き上げられ、月間200万回のクエリが無料枠に含まれる。",
+      "Pinecone は「ベクトルデータベースをインフラの心配なしに使う」サーバーレスモデルを2025年に導入し、ベクトル検索のコモディティ化を牽引してきた。今回の無料枠拡大は、Supabase の pgvector や Weaviate Cloud の無料枠との競争を意識した動き。",
+      "開発者への影響は大きい。数千〜数万件のドキュメントを扱う RAG アプリケーションであれば、Pinecone の無料枠で本番運用まで賄える。これまでは PoC 段階で有料プラン（$70/月〜）への移行が必要だったが、無料枠の拡大により課金のハードルが下がった。",
+      "有料プランは Starter（$33/月、500万ベクトル）から Enterprise（カスタム、SOC 2 / HIPAA 対応）まで。pgvector との選択は「マネージドの手軽さ vs PostgreSQL 統合の柔軟性」で判断する。"
+    ],
+    "date": "2026-03-29",
+    "newsDate": "2026-03-25",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["Pinecone", "ベクトルDB", "RAG", "無料枠", "サーバーレス"],
+    "primarySources": [
+      { "title": "Pinecone Pricing", "site": "Pinecone", "url": "https://www.pinecone.io/pricing/" }
+    ]
+  },
+  {
+    "id": "langchain-v04-rag-pipeline-2026",
+    "type": "news",
+    "category": "data",
+    "title": "LangChain v0.4 リリース — RAG パイプラインの構築が大幅に簡素化、LangGraph との統合強化",
+    "excerpt": "LangChain v0.4 がリリースされ、RAG パイプラインの構築 API が刷新された。ドキュメントローダー・チャンキング・検索・生成の一連の流れを10行以下で記述可能に。LangGraph によるエージェント型 RAG もサポート。",
+    "body": [
+      "LangChain は2026年3月26日、v0.4 をリリースした。最大の変更は RAG パイプラインの構築 API の大幅な簡素化で、v0.3 で煩雑だったチェーン構築が、宣言的な API で直感的に記述できるようになった。",
+      "v0.4 の新しい `create_rag_chain()` 関数は、ドキュメントローダー（PDF、Markdown、Web ページ）、テキストスプリッター（チャンキング戦略）、エンベディングモデル、ベクトルストア、LLM を引数に取り、検索→コンテキスト注入→生成の一連の RAG パイプラインを1つの関数呼び出しで構築する。v0.3 では同等の処理に30〜50行のコードが必要だった。",
+      "LangGraph との統合も強化された。Agentic RAG（エージェント型 RAG）では、LLM が検索クエリを自動で書き換えたり、複数のデータソースを順次検索したりするループ処理が必要になるが、LangGraph のステートマシンでこのフローを定義できる。v0.4 では `create_agentic_rag()` テンプレートが追加され、数行で Agentic RAG を構築可能。",
+      "破壊的変更として、v0.3 の `RetrievalQA` チェーンが非推奨になり、v0.5 で削除予定。既存プロジェクトの移行ガイドが公式ドキュメントに用意されている。Python 版と TypeScript（LangChain.js）版の両方で同時リリース。"
+    ],
+    "date": "2026-03-29",
+    "newsDate": "2026-03-26",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["LangChain", "RAG", "LangGraph", "エージェント", "Python"],
+    "primarySources": [
+      { "title": "LangChain v0.4 Release", "site": "LangChain", "url": "https://blog.langchain.dev/" }
+    ]
+  },
+  {
     "id": "midjourney-v8-api-launch-2026",
     "type": "news",
     "coverImage": { "src": "https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=800&h=450&fit=crop&q=80", "alt": "AI アート" },
