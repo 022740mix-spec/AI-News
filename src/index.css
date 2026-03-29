@@ -2830,3 +2830,77 @@ body {
   }
 }
 
+/* フッターリンク */
+.footer-link {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+.footer-link:hover {
+  color: var(--text);
+}
+
+/* 編集ステートメント モーダル */
+.statement-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  overflow-y: auto;
+}
+.statement-card {
+  background: var(--bg0);
+  border-radius: 12px;
+  max-width: 680px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+.statement-card h3 {
+  font-size: var(--text-base);
+  font-weight: 700;
+  margin: 1.25rem 0 0.5rem;
+  color: var(--text);
+}
+.statement-card p,
+.statement-card li {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+.statement-card ul {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0;
+}
+.statement-card li {
+  margin-bottom: 0.35rem;
+}
+.statement-card a {
+  color: var(--accent);
+}
+.statement-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: var(--text-lg);
+  color: var(--muted);
+  cursor: pointer;
+}
+.statement-close:hover {
+  color: var(--text);
+}
+

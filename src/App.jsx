@@ -2408,15 +2408,83 @@ function StorageLocalNotice() {
   );
 }
 
-function SiteFooter() {
+function EditorialStatement({ isOpen, onClose }) {
+  if (!isOpen) return null;
+  return (
+    <div className="statement-overlay" onClick={onClose}>
+      <div className="statement-card" onClick={(e) => e.stopPropagation()}>
+        <button className="statement-close" onClick={onClose} aria-label="閉じる">✕</button>
+        <h2 style={{ margin: "0 0 1rem", fontSize: "1.25rem" }}>運営方針・編集ステートメント</h2>
+
+        <h3>このサイトについて</h3>
+        <p>AI 開発ツールの最新情報を日本語で体系的に整理し、無料で公開しているニュース・ガイドサイトです。</p>
+
+        <h3>AI による記事制作</h3>
+        <p>本サイトの記事は主に <strong>AI（Claude Code を中心とした AI コーディングツール）</strong> を活用して制作しています。AI が下書き・構成・コード生成を担い、人間の編集者が事実確認・方針判断・最終承認を行う体制です。AI を活用していることを隠さず、透明に開示します。</p>
+
+        <h3>情報源と検証</h3>
+        <ul>
+          <li><strong>公式発表・公式ドキュメント</strong>を1次情報とし、記事に primarySources として明記します</li>
+          <li><strong>公式情報は1ソースで十分</strong>と判断します（公式自体が1次情報のため）</li>
+          <li><strong>推定値・ユーザー体験談・論争的主張</strong>は複数ソースで裏取りを行います</li>
+          <li>1次情報が確認できない情報は掲載しません。推測や憶測は記事に含めません</li>
+        </ul>
+
+        <h3>画像・図版</h3>
+        <ul>
+          <li>外部サイトの画像を直接利用せず、<strong>自作の SVG 図版</strong>で情報を図示します</li>
+          <li>SVG は1次情報に基づいて正確に作成し、データの出典を図のキャプションまたは本文に記載します</li>
+          <li>チャートに掲載するベンチマークスコアは<strong>公式発表値のみ</strong>使用し、推定値は原則掲載しません</li>
+        </ul>
+
+        <h3>記事の更新と訂正</h3>
+        <ul>
+          <li><strong>比較記事・料金記事</strong>は毎月1回以上の見直しを実施し、「最終確認日」を記事に表示します</li>
+          <li><strong>事実の誤り</strong>を発見した場合は記事上部に「Correction」として訂正を明記します（黙って修正しません）</li>
+          <li><strong>情報の追加・更新</strong>は記事末尾に「Update」として追記します</li>
+          <li>ニュース記事は原則として個別に保持し、削除は行いません</li>
+        </ul>
+
+        <h3>レビュー評価</h3>
+        <ul>
+          <li>5軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）の加重平均で総合スコアを算出します</li>
+          <li>評価基準と重みはデータファイルに明記し、誰でも確認できます</li>
+          <li>特定のツールや企業から金銭的な対価を受け取っていません</li>
+        </ul>
+
+        <h3>プライバシーと広告</h3>
+        <ul>
+          <li><strong>個人情報を一切収集しません</strong>。Cookie、アクセス解析、トラッキングは使用していません</li>
+          <li><strong>広告を一切掲載しません</strong>。完全無料で運営しています</li>
+          <li>アフィリエイトリンクは使用していません</li>
+        </ul>
+
+        <h3>オープンソース</h3>
+        <p>本サイトのソースコードは <a href="https://github.com/022740mix-spec/AI-News" target="_blank" rel="noopener">GitHub で公開</a> しています。記事データ、評価基準、ビルド設定を含めて誰でも確認・検証できます。</p>
+      </div>
+    </div>
+  );
+}
+
+function SiteFooter({ onOpenStatement }) {
   return (
     <footer className="site-footer">
       <div>
         {SITE_NAME} — {SITE_DESCRIPTION}
       </div>
       <div>
-        最終更新: {getSiteTodayYmd()}{" "}
-        · データは公開情報・報道を基に整理しています
+        最終更新: {getSiteTodayYmd()}
+        {" · "}
+        <button
+          type="button"
+          className="footer-link"
+          onClick={onOpenStatement}
+        >
+          運営方針・編集ステートメント
+        </button>
+      </div>
+      <div style={{ fontSize: 11, color: "var(--muted)", marginTop: 4 }}>
+        記事は主に AI で制作 · 広告なし · 個人情報収集なし · 完全無料
       </div>
     </footer>
   );
@@ -2488,6 +2556,7 @@ export default function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem(STORAGE_THEME) || "light");
 const [showFab, setShowFab] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [statementOpen, setStatementOpen] = useState(false);
   const searchRef = useRef(null);
 
   const toggleMenu = useCallback(() => setMenuOpen(prev => !prev), []);
@@ -3032,7 +3101,8 @@ const [showFab, setShowFab] = useState(false);
             ) : null}
           </div>
         )}
-        <SiteFooter />
+        <SiteFooter onOpenStatement={() => setStatementOpen(true)} />
+        <EditorialStatement isOpen={statementOpen} onClose={() => setStatementOpen(false)} />
         </main>
       </div>
 
