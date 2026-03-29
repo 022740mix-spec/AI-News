@@ -1017,6 +1017,7 @@ export const ARTICLES = [
   {
     "id": "overview-2026-spring",
     "type": "feature",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&h=450&fit=crop&q=80", "alt": "AI テクノロジー" },
     "category": "special",
     "title": "【週刊まとめ】AI開発ツール — 2026年3月23日〜29日",
     "excerpt": "Anthropic が国防総省の「サプライチェーンリスク」指定を連邦地裁で差し止めた一方、OpenAI は Sora の消費者向け提供を終了。ARC-AGI-3 がフロンティアモデルの限界を浮き彫りにした翌日、Google が Gemini 3.1 Pro と MCP v2 を同時に発表。週末は Cursor 2.4 と Claude Code Auto mode が開発者のワークフローを更新し、Mythos 草稿の報道がセキュリティ銘柄を動かした。",
@@ -1076,6 +1077,7 @@ export const ARTICLES = [
   {
     "id": "overview-2026-week-mar16",
     "type": "feature",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&h=450&fit=crop&q=80", "alt": "AI テクノロジー" },
     "category": "special",
     "title": "【週刊まとめ】AI開発ツール — 2026年3月16日〜22日",
     "excerpt": "OpenAI が GPT-5.4 mini/nano をリリースし、低コストモデルの選択肢を広げた。翌々日には Python ツール企業 Astral（uv・Ruff・ty）の買収を発表し、Codex のエコシステム強化に動いた。同じ週に Cursor が Windsurf の買収を完了し、AI エディタ市場は Cursor vs VS Code+Copilot の二極構造に近づいた。",
@@ -1602,6 +1604,7 @@ export const ARTICLES = [
   {
     "id": "ai-backend-postgres-supabase-2026",
     "type": "feature",
+    "coverImage": { "src": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=450&fit=crop&q=80", "alt": "データベース" },
     "category": "data",
     "title": "AI アプリのバックエンドと DB — Postgres・pgvector・Supabase 周辺の設計",
     "excerpt": "RAG・チャット・エージェントの永続層は多くの場合がリレーショナル＋ベクトル拡張。Supabase（Postgres＋Auth＋Realtime＋Edge Functions）を軸に、RLS・接続プール・ハイブリッド検索の論点を整理する。",
