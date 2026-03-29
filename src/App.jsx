@@ -902,20 +902,9 @@ function HomePage({ articles, onSelect, onSection }) {
         <section className="home-section">
           <h2 className="home-section__title">おすすめポッドキャスト</h2>
           <p className="home-section__desc">AI 業界のトップリーダーが語る、公式発表では聞けない本音と未来予測。</p>
-          <div className="home-podcast-embed">
-            <iframe
-              style={{ borderRadius: 12 }}
-              src="https://open.spotify.com/embed/show/4JH4tybY1zX6e5hjCwU6gF?utm_source=generator&theme=0"
-              width="100%"
-              height="152"
-              frameBorder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-              title="Dwarkesh Podcast on Spotify"
-            />
-          </div>
           <div className="home-podcast-links">
             {[
+              { name: "Dwarkesh Podcast", desc: "AI CEO の深掘りインタビュー", url: "https://open.spotify.com/show/4JH4tybY1zX6e5hjCwU6gF", icon: "🎙️" },
               { name: "Lex Fridman Podcast", desc: "研究者・エンジニア視点の技術対談", url: "https://open.spotify.com/show/2MAi0BvDc6GTFvKFPXnkCL", icon: "🧠" },
               { name: "TBPN", desc: "シリコンバレーのライブ感速報", url: "https://open.spotify.com/show/2L6WMqY3GUPCGBD0dX6p00", icon: "📡" },
             ].map((p) => (
