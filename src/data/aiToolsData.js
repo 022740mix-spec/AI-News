@@ -5225,7 +5225,7 @@ export const ARTICLES = [
     "tags": ["Anthropic", "Dario Amodei", "ポッドキャスト", "AGI", "業界動向"],
     "primarySources": [
       { "title": "Dario Amodei — \"We are near the end of the exponential\"", "site": "Dwarkesh Podcast", "url": "https://www.dwarkesh.com/p/dario-amodei-2" },
-      { "title": "Spotify で聴く", "site": "Spotify", "url": "https://open.spotify.com/episode/3l6LAC3LeQnr8eFaKXLEui" },
+      { "title": "Spotify で聴く", "site": "Spotify", "url": "https://open.spotify.com/episode/2ZNrpVSrgZMlDwQinl20Ay" },
       { "title": "On Dwarkesh Patel's 2026 Podcast With Dario Amodei", "site": "The Zvi (分析記事)", "url": "https://thezvi.substack.com/p/on-dwarkesh-patels-2026-podcast-with" }
     ]
   },
