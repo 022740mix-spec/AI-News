@@ -5230,6 +5230,31 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "lex-fridman-494-jensen-huang-nvidia",
+    "type": "feature",
+    "category": "special",
+    "title": "Jensen Huang「計算能力だけが知性をスケールさせる」— NVIDIA 4兆ドル企業の全戦略 — Lex Fridman #494 要約",
+    "excerpt": "NVIDIA CEO Jensen Huang が Lex Fridman と2時間半。GPU 企業から「AI ファクトリー」への転換、AIスケーリングの4段階、1ラック1,300万コンポーネントのサプライチェーン、中国の評価、10兆ドル企業への道筋を語った。",
+    "body": [
+      "2026年3月23日、**Lex Fridman Podcast #494** に **NVIDIA CEO Jensen Huang** が出演。世界で最も価値のある企業（時価総額4兆ドル超）を率いるエンジニア CEO が、AI インフラの現在と未来を2時間31分にわたって技術的に深掘りした。",
+      "**GPU 企業から AI ファクトリーへ**: Jensen は NVIDIA が「アクセラレーター企業」から「AI ファクトリー」に進化したと説明。GPU 単体の最適化ではなく、GPU・CPU・メモリ・ネットワーク・冷却・電力・ラック・データセンターまでを統合的に「極端な協調設計」する体制に転換。直属スタッフ60名以上が全員参加で設計判断を行い、1対1ミーティングは一切しないリーダーシップスタイル。",
+      "**AI スケーリングの4段階**: (1) 事前学習スケーリング（データ量）、(2) 事後学習スケーリング（合成データ）、(3) テスト時スケーリング（推論時の計算集約的思考）、(4) エージェントスケーリング（複数 AI エージェントの並列展開）。「計算能力によってのみ知性がスケールする」と断定。過去10年で Moore 則比100倍に対し、NVIDIA の実績は100万倍。",
+      "**ボトルネックの現実**: 電力はグリッドが99%の時間で最大容量の60%しか使っておらず、遊休電力の活用が解決策。メモリ（HBM）の供給拡大が必要で DRAM 業界と戦略的対話中。サプライチェーンでは Vera Rubin 単一ラックに1,300万コンポーネント・200社のサプライヤーが関わり、週200ポッド製造を目標としている。TSMC・ASML の CEO と定期協議し、多年単位の事前投資を促進。",
+      "**中国の評価**: 「世界で最も急速に革新している国」と評価。理由として、世界の AI 研究者の約50%が中国籍、都市間の激しい内部競争、オープンソース志向の文化、リーダーシップ層がエンジニア中心（米国は法曹が多数派）を挙げた。",
+      "**Elon Musk の Colossus への賞賛と今後**: Colossus プロジェクト（4ヶ月で20万 GPU スケール）を「差し迫った緊迫感による全体動員」として高く評価。Nemotron 3（1,200億パラメータ MoE）をオープンソース化した理由は、化学・生物学・物理シミュレーションなど全産業の AI 革命を加速するため。4兆ドル企業から10兆ドルへの道筋は明言を避けたが、「エージェントが全産業に浸透する」確信のもと、計算需要の指数関数的増加を予想した。"
+    ],
+    "newsDate": "2026-03-23",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": ["NVIDIA", "Jensen Huang", "ポッドキャスト", "Lex Fridman", "GPU", "半導体"],
+    "primarySources": [
+      { "title": "#494 – Jensen Huang: NVIDIA - The $4 Trillion Company & the AI Revolution", "site": "Lex Fridman Podcast", "url": "https://lexfridman.com/jensen-huang/" },
+      { "title": "Spotify で聴く", "site": "Spotify", "url": "https://open.spotify.com/episode/0BGcaYvcDPkvBzFmkRI5uY" },
+      { "title": "トランスクリプト全文", "site": "Lex Fridman", "url": "https://lexfridman.com/jensen-huang-transcript/" }
+    ]
+  },
+  {
     "id": "lex-fridman-491-openclaw-peter-steinberger",
     "type": "feature",
     "category": "special",

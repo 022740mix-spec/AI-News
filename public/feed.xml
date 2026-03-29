@@ -584,6 +584,14 @@
     <summary>OpenAI が GPT-5.4 mini/nano をリリースし、低コストモデルの選択肢を広げた。翌々日には Python ツール企業 Astral（uv・Ruff・ty）の買収を発表し、Codex のエコシステム強化に動いた。同じ週に Cursor が Windsurf の買収を完了し、AI エディタ市場は Cursor vs VS Code+Copilot の二極構造に近づいた。</summary>
   </entry>
   <entry>
+    <title>Jensen Huang「計算能力だけが知性をスケールさせる」— NVIDIA 4兆ドル企業の全戦略 — Lex Fridman #494 要約</title>
+    <link rel="alternate" type="text/html" href="?a=lex-fridman-494-jensen-huang-nvidia"/>
+    <id>tag:ai-tool-news.jp,2026:lex-fridman-494-jensen-huang-nvidia</id>
+    <published>2026-03-23T15:00:00Z</published>
+    <updated>2026-03-23T15:00:00Z</updated>
+    <summary>NVIDIA CEO Jensen Huang が Lex Fridman と2時間半。GPU 企業から「AI ファクトリー」への転換、AIスケーリングの4段階、1ラック1,300万コンポーネントのサプライチェーン、中国の評価、10兆ドル企業への道筋を語った。</summary>
+  </entry>
+  <entry>
     <title>Cursor Composer 2 の正体 — Kimi K2.5 ベースの独自モデル、API 解析で判明</title>
     <link rel="alternate" type="text/html" href="?a=cursor-composer-2-kimi-2026"/>
     <id>tag:ai-tool-news.jp,2026:cursor-composer-2-kimi-2026</id>
