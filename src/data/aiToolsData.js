@@ -5230,6 +5230,31 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "lex-fridman-490-state-of-ai-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "「2026年 AI の現在地」全方位レビュー — Lex Fridman Podcast #490 要約（4時間39分）",
+    "excerpt": "AI 研究者 Nathan Lambert（Ai2）と Sebastian Raschka が Lex Fridman と4時間半にわたり議論。LLM 比較、コーディング AI、スケーリング則の三層構造、中国のオープンモデル攻勢、エージェントの emergence、GPU インフラの現実を総ざらい。",
+    "body": [
+      "2026年2月1日、**Lex Fridman Podcast #490** に AI 研究者の **Nathan Lambert**（Allen Institute for AI 事前学習リード、RLHF Book 著者）と **Sebastian Raschka**（Build a Large Language Model (From Scratch) 著者）が出演。4時間39分をかけて2026年初頭の AI のあらゆる側面を総ざらいした。CEO のビジョンではなく、研究者・エンジニア目線の技術的な現状整理として極めて価値が高い。",
+      "**LLM 勢力図**: Claude Opus 4.5 が X で大きなバズを生み、Gemini 3 は同等性能ながら言及が減少。GPT-5 は非思考モデルに誤りが多く思考モデル版が好まれる状況。2026年は Google（TPU のコスト効率）と Anthropic（エンタープライズ）が伸び、OpenAI は組織文化の混乱が指摘された。",
+      "**スケーリング則の三層構造**: 現在のスケーリングは (1) 事前学習スケーリング（従来型、モデル/データサイズ）、(2) 強化学習スケーリング（o1 で実証された試行錯誤的改善）、(3) 推論時スケーリング（生成トークン数増加による性能向上）の三層に分化している。事前学習の付加価値が低下し、推論時スケーリングへの注目がシフト。DeepSeek の事前学習コストは500万ドル、OLMo 3 は200万ドルと低下する一方、サービング（推論）は年間数十億ドル規模。",
+      "**中国オープンモデルの攻勢**: DeepSeek R1 を皮切りに、MiniMax、Zhipu AI、Kimi K2 Thinking など複数社がオープンウェイトモデルを相次いで公開。米国企業が「セキュリティ懸念で中国 API を使わない」ことに対し、オープンウェイトで国際市場の影響力を構築する戦略。中国は MoE 大規模化、米国は小規模効率化の傾向だったが、欧米も大規模 MoE に移行中。",
+      "**コーディング AI と エージェント**: Claude Code は高度な自動化タスク向き、Cursor は VS Code 統合の細かい制御、Codeium は中道的選択肢と整理。エージェント領域では、ツール使用の事前学習により Web 検索や Python 実行が組み込まれ、CLI コマンドや Git ハンドリングなど「1年前には想定外だった能力」が emergence（創発）している。RELVR（報酬検証可能な強化学習）によるハルシネーション削減も注目点。",
+      "**GPU とインフラの現実**: xAI が2026年初で1ギガワット、年末で2ギガワット規模に到達予定。Google は TPU で NVIDIA の利益率を回避。Blackwell GPU の展開では複数 GPU の故障対応など新たな分散問題が出現。FP8/FP4 精度により記憶量削減→通信削減→学習加速が進んでいる。"
+    ],
+    "newsDate": "2026-02-01",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "10分",
+    "tags": ["Lex Fridman", "ポッドキャスト", "LLM", "スケーリング", "中国", "エージェント"],
+    "primarySources": [
+      { "title": "#490 – State of AI in 2026: LLMs, Coding, Scaling Laws, China, Agents, GPUs, AGI", "site": "Lex Fridman Podcast", "url": "https://lexfridman.com/ai-sota-2026/" },
+      { "title": "Spotify で聴く", "site": "Spotify", "url": "https://open.spotify.com/episode/4UBPQG2Z7s70DpRVD5kMbC" },
+      { "title": "トランスクリプト全文", "site": "Lex Fridman", "url": "https://lexfridman.com/ai-sota-2026-transcript/" }
+    ]
+  },
+  {
     "id": "elon-musk-dwarkesh-podcast-2026",
     "type": "feature",
     "category": "special",
