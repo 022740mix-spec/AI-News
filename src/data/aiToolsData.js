@@ -5230,6 +5230,30 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "lex-fridman-491-openclaw-peter-steinberger",
+    "type": "feature",
+    "category": "special",
+    "title": "OpenClaw — GitHub 史上最速成長の AI エージェント、「自己修正するソフトウェア」の衝撃 — Lex Fridman #491 要約",
+    "excerpt": "PSPDFKit で10億台のデバイスに使われるソフトウェアを作った Peter Steinberger が、GitHub 史上最速で成長したオープンソース AI エージェント OpenClaw を語る。自分のソースコードを読んで自分を修正するエージェント、コーディングの民主化、そして「楽しさ」で勝つ開発文化。",
+    "body": [
+      "2026年2月12日、**Lex Fridman Podcast #491** に **Peter Steinberger**（OpenClaw 開発者）が出演。GitHub 史上最速で成長したオープンソース AI エージェントフレームワーク **OpenClaw** の思想と技術を3時間25分にわたって語った。",
+      "**OpenClaw とは**: ユーザーの PC に常駐するオープンソース AI エージェント。WhatsApp、Telegram、Discord、iMessage などのメッセージアプリを通じてユーザーと対話し、自律的にタスクを実行する。「AI が実際に物事を行う」個人アシスタントで、システムレベルのアクセスを持つ。",
+      "**自己修正するソフトウェア**: OpenClaw の最も衝撃的な特徴は、エージェントが自分自身のソースコードを認識し、動作するシステムを理解し、自分を修正できること。Steinberger が実装していなかった音声メッセージ処理を、エージェント自身が「ファイルヘッダーを確認して opus と判定→ffmpeg で変換→OpenAI API で文字起こし」と自律的に解決した事例が紹介された。",
+      "**GitHub 最速成長の理由**: Steinberger は「他の企業より自分たちを真剣に受け取りすぎなかった」ことが勝因だと語る。ロブスター（ザリガニ）というマスコット、「楽しさと奇妙さ」を優先する文化、実際に動いて結果が見えるプロダクトが支持を集めた。コーディングの民主化も大きな要因で、プログラミング経験がない人でもプルリクエストを送れるようになった点を「人類へのステップアップ」と評価。",
+      "**セキュリティと名前変更の苦難**: 「スマーターなモデルは攻撃に強いが、損害は増える」という三次元的トレードオフを指摘。開発中は Anthropic の商標問題で複数回の名前変更を強いられ、MoldBot に変更した際は5秒以内に暗号資産関連の組織にアカウントを盗まれるなどの経験も。Steinberger の経歴は PSPDFKit（10億台のデバイスで使用）の開発者で、3年間のプログラミング離脱後に OpenClaw を立ち上げた。"
+    ],
+    "newsDate": "2026-02-12",
+    "date": "2026-03-29",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": ["OpenClaw", "Lex Fridman", "ポッドキャスト", "エージェント", "OSS"],
+    "primarySources": [
+      { "title": "#491 – OpenClaw: The Viral AI Agent that Broke the Internet – Peter Steinberger", "site": "Lex Fridman Podcast", "url": "https://lexfridman.com/peter-steinberger/" },
+      { "title": "Spotify で聴く", "site": "Spotify", "url": "https://open.spotify.com/episode/0aM69uGff54ewQJzQxZVLf" },
+      { "title": "トランスクリプト全文", "site": "Lex Fridman", "url": "https://lexfridman.com/peter-steinberger-transcript/" }
+    ]
+  },
+  {
     "id": "lex-fridman-490-state-of-ai-2026",
     "type": "feature",
     "category": "special",

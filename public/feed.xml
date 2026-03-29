@@ -1048,6 +1048,14 @@
     <summary>Anthropic の CEO Dario Amodei が Dwarkesh Podcast に出演。AGI の到達時期、Anthropic の年10倍成長、コンピュート規模の予測、「継続学習は不要」という主張など、AI 業界の今後を左右する発言を要約。</summary>
   </entry>
   <entry>
+    <title>OpenClaw — GitHub 史上最速成長の AI エージェント、「自己修正するソフトウェア」の衝撃 — Lex Fridman #491 要約</title>
+    <link rel="alternate" type="text/html" href="?a=lex-fridman-491-openclaw-peter-steinberger"/>
+    <id>tag:ai-tool-news.jp,2026:lex-fridman-491-openclaw-peter-steinberger</id>
+    <published>2026-02-12T15:00:00Z</published>
+    <updated>2026-02-12T15:00:00Z</updated>
+    <summary>PSPDFKit で10億台のデバイスに使われるソフトウェアを作った Peter Steinberger が、GitHub 史上最速で成長したオープンソース AI エージェント OpenClaw を語る。自分のソースコードを読んで自分を修正するエージェント、コーディングの民主化、そして「楽しさ」で勝つ開発文化。</summary>
+  </entry>
+  <entry>
     <title>Zhipu AI、GLM-5 を公開 — 745億パラメータ MoE、Huawei チップで学習した中国発フロンティアモデル</title>
     <link rel="alternate" type="text/html" href="?a=glm-5-zhipu-2026"/>
     <id>tag:ai-tool-news.jp,2026:glm-5-zhipu-2026</id>
