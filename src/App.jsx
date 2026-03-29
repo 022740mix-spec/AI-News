@@ -1410,8 +1410,10 @@ function GlossaryGuidePanel({ glossaryGenres }) {
 
 /** レビュータブ冒頭のカテゴリ別比較表 */
 const REVIEW_CATEGORIES = [
+  { id: "model", label: "モデル", description: "LLM・生成モデルの個別レビュー" },
   { id: "cli", label: "CLI ツール", description: "ターミナルから AI にコードを書かせる CLI ツール" },
   { id: "editor", label: "エディタ", description: "AI 統合エディタ・IDE" },
+  { id: "media", label: "メディア生成", description: "画像・動画・音楽の AI 生成ツール" },
   { id: "other", label: "その他ツール", description: "音声入力・ターミナル等" },
 ];
 
@@ -1444,6 +1446,16 @@ const RATING_EXPLAINER = {
       ["コスパ（20%）", "無料版の機能制限、Pro プランの価格対性能"],
       ["拡張性（15%）", "プラグイン・拡張機能、カスタムルール、MCP 対応"],
       ["企業向け（10%）", "チーム管理、集中設定、Ghost/Privacy Mode"],
+    ],
+  },
+  media: {
+    title: "メディア生成ツール評価の基準",
+    axes: [
+      ["AI品質（30%）", "生成物のクオリティ、プロンプト忠実度、一貫性"],
+      ["使いやすさ（25%）", "UI/UX、学習コスト、日本語対応"],
+      ["コスパ（20%）", "無料枠、サブスク料金、生成単価の妥当性"],
+      ["拡張性（15%）", "API 提供、ワークフロー統合、カスタムモデル"],
+      ["企業向け（10%）", "商用ライセンス、コンテンツポリシー、SLA"],
     ],
   },
   other: {
@@ -3415,10 +3427,17 @@ const [showFab, setShowFab] = useState(false);
                   {siteSection === "reviews" && !query ? (
                     <div className="review-comparisons">
                       {reviewTab === "models" ? (
-                        <ModelComparisonSection />
+                        <>
+                          <ModelComparisonSection />
+                          <ReviewComparisonTable
+                            articles={ARTICLES.filter((a) => a.type === "review")}
+                            category={{ id: "model", label: "モデル", description: "LLM・生成モデルの個別レビュー" }}
+                            onSelect={handleSelect}
+                          />
+                        </>
                       ) : null}
                       {REVIEW_CATEGORIES
-                        .filter((cat) => reviewTab === cat.id)
+                        .filter((cat) => reviewTab === cat.id && cat.id !== "model")
                         .map((cat) => (
                           <ReviewComparisonTable
                             key={cat.id}

@@ -576,12 +576,28 @@
     <summary>OpenAIが満を持してリリースしたコーディングエージェント。クラウドサンドボックスで複数タスクを並列実行し、PRとして提出する新しいワークフロー。</summary>
   </entry>
   <entry>
+    <title>Runway Gen-5 レビュー — 動画生成のフロントランナー、映像制作者の新標準</title>
+    <link rel="alternate" type="text/html" href="?a=runway-gen5-review"/>
+    <id>tag:ai-tool-news.jp,2026:runway-gen5-review</id>
+    <published>2026-03-22T15:00:00Z</published>
+    <updated>2026-03-22T15:00:00Z</updated>
+    <summary>動画生成AIの先駆者。Gen-5で物理シミュレーション精度が大幅向上。最長40秒の高品質動画を生成。ハリウッドのプロダクションでも採用実績。$12/月〜。</summary>
+  </entry>
+  <entry>
     <title>Cursor、Windsurf（Codeium）を買収完了 — AIエディタ市場の統合が加速</title>
     <link rel="alternate" type="text/html" href="?a=cursor-windsurf-merge"/>
     <id>tag:ai-tool-news.jp,2026:cursor-windsurf-merge</id>
     <published>2026-03-20T15:00:00Z</published>
     <updated>2026-03-20T15:00:00Z</updated>
     <summary>Anysphere社がCodeium社のWindsurfを買収。Cascadeフロー技術をCursorに統合予定。AIエディタ市場の寡占化が進む。</summary>
+  </entry>
+  <entry>
+    <title>Midjourney V8 レビュー — 画像生成の王者、ついにWeb版とAPIを正式公開</title>
+    <link rel="alternate" type="text/html" href="?a=midjourney-v8-review"/>
+    <id>tag:ai-tool-news.jp,2026:midjourney-v8-review</id>
+    <published>2026-03-20T15:00:00Z</published>
+    <updated>2026-03-20T15:00:00Z</updated>
+    <summary>画像生成AIの代名詞。V8でWeb UIとAPIを正式公開し、Discord外でもアクセス可能に。フォトリアルから抽象表現まで業界最高峰の品質。$10/月〜。</summary>
   </entry>
   <entry>
     <title>生成音楽のフロンティア — Suno・Udio・Lyria・Stable Audio 周辺の整理（2026年初頭）</title>
@@ -616,6 +632,14 @@
     <summary>Anysphere社に買収されたが、単体提供は継続中。Cascadeフローによる段階的なコード生成が特徴。無料プランも維持。</summary>
   </entry>
   <entry>
+    <title>Kimi K2.5 レビュー — Moonshot AI 発、1兆パラメータ MoE でオープンウェイト</title>
+    <link rel="alternate" type="text/html" href="?a=kimi-k2-5-review"/>
+    <id>tag:ai-tool-news.jp,2026:kimi-k2-5-review</id>
+    <published>2026-03-18T15:00:00Z</published>
+    <updated>2026-03-18T15:00:00Z</updated>
+    <summary>Moonshot AI（中国）の1兆パラメータ MoE モデル。Humanity&apos;s Last Exam で Opus 超えのスコア。オープンウェイトで商用利用可能。256Kコンテキスト。</summary>
+  </entry>
+  <entry>
     <title>NVIDIA、オープンソース AI エージェント基盤 NemoClaw を発表 — OpenClaw との連携でエンタープライズ向け安全機能を提供</title>
     <link rel="alternate" type="text/html" href="?a=nvidia-openclaw-nemoclaw-2026"/>
     <id>tag:ai-tool-news.jp,2026:nvidia-openclaw-nemoclaw-2026</id>
@@ -638,6 +662,30 @@
     <published>2026-03-15T15:00:00Z</published>
     <updated>2026-03-15T15:00:00Z</updated>
     <summary>IDE一体型でありながら、CLIモード（Composer）が強力。自然言語で伝えるだけで、関連ファイルを自動で見つけ出し、変更案を提示する。</summary>
+  </entry>
+  <entry>
+    <title>Claude Opus 4.6 レビュー — Anthropic 最上位、1Mコンテキストの深い推論</title>
+    <link rel="alternate" type="text/html" href="?a=claude-opus-4-6-review"/>
+    <id>tag:ai-tool-news.jp,2026:claude-opus-4-6-review</id>
+    <published>2026-03-15T15:00:00Z</published>
+    <updated>2026-03-15T15:00:00Z</updated>
+    <summary>Anthropic のフラッグシップモデル。1Mトークンのコンテキストウィンドウ、SWE-Bench トップクラスのコーディング性能、拡張思考による高度な推論が特徴。$15/$75 per 1M tokens。</summary>
+  </entry>
+  <entry>
+    <title>Claude Sonnet 4.6 レビュー — Anthropic 中核、速度と品質のバランス型</title>
+    <link rel="alternate" type="text/html" href="?a=claude-sonnet-4-6-review"/>
+    <id>tag:ai-tool-news.jp,2026:claude-sonnet-4-6-review</id>
+    <published>2026-03-15T15:00:00Z</published>
+    <updated>2026-03-15T15:00:00Z</updated>
+    <summary>Anthropic の中核モデル。1Mコンテキスト、Opus の約 1/5 のコストで日常のコーディングに最適。Cursor・Windsurf のデフォルトモデルとしても広く採用。$3/$15 per 1M tokens。</summary>
+  </entry>
+  <entry>
+    <title>Suno V5 レビュー — テキストから楽曲を丸ごと生成、音楽制作の民主化</title>
+    <link rel="alternate" type="text/html" href="?a=suno-v5-review"/>
+    <id>tag:ai-tool-news.jp,2026:suno-v5-review</id>
+    <published>2026-03-15T15:00:00Z</published>
+    <updated>2026-03-15T15:00:00Z</updated>
+    <summary>テキストプロンプトから歌詞・メロディ・アレンジ・ボーカルまでフル楽曲を生成。V5で音質とジャンル対応力が大幅向上。無料枠あり、$10/月〜。</summary>
   </entry>
   <entry>
     <title>AI 音声入力ツールの俯瞰 — 製品型と API 型、Whisper と gpt-4o-transcribe</title>
@@ -688,6 +736,14 @@
     <summary>Rust製のネイティブパフォーマンス。リアルタイムコラボレーション機能も内蔵した次世代エディタ。</summary>
   </entry>
   <entry>
+    <title>Gemini 3.1 Pro レビュー — Google 最上位、2Mコンテキストは業界最大</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-3-1-pro-review"/>
+    <id>tag:ai-tool-news.jp,2026:gemini-3-1-pro-review</id>
+    <published>2026-03-12T15:00:00Z</published>
+    <updated>2026-03-12T15:00:00Z</updated>
+    <summary>Google DeepMind のフラッグシップ。2Mトークンのコンテキストウィンドウは全モデル中最大。長大なコードベースの一括読み込みと Google Cloud との統合が強み。$1.25/$5 per 1M tokens。</summary>
+  </entry>
+  <entry>
     <title>RAG の評価と引用 — ゴールデンセット、自動指標、引用 UI、閾値ルーティング</title>
     <link rel="alternate" type="text/html" href="?a=rag-evaluation-citations-2026"/>
     <id>tag:ai-tool-news.jp,2026:rag-evaluation-citations-2026</id>
@@ -712,6 +768,14 @@
     <summary>GitHubエコシステムとシームレスに統合。Copilot Coding Agentによる自律的なIssue対応が新たに追加。</summary>
   </entry>
   <entry>
+    <title>GPT-5.4 レビュー — OpenAI 最新、推論・コーディング・エージェント統合モデル</title>
+    <link rel="alternate" type="text/html" href="?a=gpt-5-4-review"/>
+    <id>tag:ai-tool-news.jp,2026:gpt-5-4-review</id>
+    <published>2026-03-10T15:00:00Z</published>
+    <updated>2026-03-10T15:00:00Z</updated>
+    <summary>OpenAI の最新フラッグシップ。128Kコンテキスト、推論とコーディングを統合したアーキテクチャ。Codex との連携でエージェント的な運用も可能。$2.50/$10 per 1M tokens。</summary>
+  </entry>
+  <entry>
     <title>動画生成モデルの地形図 — Veo・Runway・Kling などとマルチモデル・パイプライン</title>
     <link rel="alternate" type="text/html" href="?a=ai-video-generators-landscape-2026"/>
     <id>tag:ai-tool-news.jp,2026:ai-video-generators-landscape-2026</id>
@@ -734,6 +798,14 @@
     <published>2026-03-08T15:00:00Z</published>
     <updated>2026-03-08T15:00:00Z</updated>
     <summary>世界で最も使われるエディタ。GitHub Copilotとの統合で強力なAI支援。Coding Agentの追加でさらに進化。</summary>
+  </entry>
+  <entry>
+    <title>Kling AI レビュー — 快手発の動画生成、無料枠の太さとリップシンクが魅力</title>
+    <link rel="alternate" type="text/html" href="?a=kling-ai-review"/>
+    <id>tag:ai-tool-news.jp,2026:kling-ai-review</id>
+    <published>2026-03-08T15:00:00Z</published>
+    <updated>2026-03-08T15:00:00Z</updated>
+    <summary>中国・快手が開発する動画生成AI。無料枠が充実しており、リップシンク機能の精度が高い。1080p対応、最長2分の動画生成。</summary>
   </entry>
   <entry>
     <title>Aqua Voice — Mac/Windows 向けAIディクテーション（フローティングUI）</title>
