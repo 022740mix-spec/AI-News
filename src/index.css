@@ -217,7 +217,7 @@ body {
 }
 
 .header-inner {
-  max-width: 1120px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 1.25rem 1.25rem 1rem;
 }
@@ -522,7 +522,7 @@ body {
 }
 
 .filter-nav-inner {
-  max-width: 1120px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   gap: 0.25rem;
@@ -558,7 +558,7 @@ body {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   padding: 0.5rem 1rem 0;
-  max-width: 1120px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 .type-filter-inner {
@@ -596,7 +596,7 @@ body {
 }
 
 .section-site-nav-inner {
-  max-width: 1120px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -1336,7 +1336,7 @@ body {
 .blog-layout {
   display: flex;
   gap: 1.5rem;
-  max-width: 1120px;
+  max-width: 1400px;
   margin: 0 auto;
   /* 横は filter-nav-inner / section-site-nav-inner の 1rem に揃える */
   padding: 1.5rem 1rem 3rem;
