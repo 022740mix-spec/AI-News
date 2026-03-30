@@ -5604,6 +5604,31 @@ export const ARTICLES = [
       { "title": "Anthropic launches code review tool to check flood of AI-generated code", "site": "TechCrunch", "url": "https://techcrunch.com/2026/03/09/anthropic-launches-code-review-tool-to-check-flood-of-ai-generated-code/" },
       { "title": "Claude Code Changelog", "site": "Claude Code Docs", "url": "https://code.claude.com/docs/en/changelog" }
     ]
+  },
+  {
+    "id": "anthropic-claude-writing-itself-74-launches-2026",
+    "type": "news",
+    "category": "special",
+    "title": "「Claude が次の Claude を設計している」— Anthropic CEO 発言と52日間74リリースの異常な開発速度",
+    "excerpt": "Anthropic CEO の Dario Amodei が Davos で「社内にはもうコードを書かないエンジニアがいる」と発言。Labs 責任者の Mike Krieger は「Claude が Claude を書いている」と明言。実際に52日間で74の主要リリースを出荷し、Claude Code の run-rate 収益は25億ドルを突破した。",
+    "body": [
+      "Anthropic CEO **Dario Amodei** は2026年1月20日、ダボス会議（世界経済フォーラム）で The Economist 編集長 Zanny Minton Beddoes のインタビューに応じ、衝撃的な発言を行った。「Anthropic にはもうコードを書かないエンジニアがいる。モデルにコードを書かせて、自分はそれを編集しレビューするだけだ」。さらに「Anthropic でコードを書くということは、次世代の Claude を設計すること。つまり Claude が次の Claude 自身を設計している。完全にではないが、大部分を」と述べた。",
+      "この発言を2月3日の Cisco AI Summit で Labs 責任者 **Mike Krieger**（Instagram 共同創業者）がさらに踏み込んで裏付けた。「現在、Anthropic のほとんどのプロダクトは事実上100% Claude が書いている。我々がやったのは、それを信頼できる正しい足場（scaffolds）を作ること」。Krieger は「Claude が Claude を書いている」と明言し、2025年3月に Amodei が「6ヶ月以内に AI がコードの90%を書く」と予測した際に「クレイジーだと思われた」が、その通りになったと述べた。",
+      "数字がこの主張を裏付けている。Product Compass の調査によると、Claude チームは2026年2月1日からの**52日間で74の主要リリース**を出荷した。内訳は Claude Code 28件、Cowork 15件、API・インフラ 18件、モデル・プラットフォーム 13件。社内では1日あたり60〜100の内部リリースが行われ、エンジニアは業務の約60%に Claude を使用（1年前の28%から倍増）、生産性は約50%向上したという。Claude Cowork 自体が Claude Code を使って10日間で構築されたことも象徴的だ。",
+      "Claude Code 責任者の **Boris Cherny** は「2ヶ月以上自分でコードを書いていない。100%が Claude Code と Opus 4.5/4.6 で書かれている」と投稿。チームの採用方針もスペシャリストからジェネラリスト重視に転換した。「過去に学んだスキルの多くは LLM を使ったコーディングには直接活かせない。モデルが詳細を埋められるからだ」。Claude Code 単体の年間 run-rate 収益は25億ドルを超え、Claude 4 系モデルのリリース以降、利用量は300%増加した。",
+      "Amodei は Davos での Demis Hassabis（Google DeepMind CEO）との共同セッションで、AI が全領域で人間を超える時期について「1〜2年」と予測（Hassabis は「5〜10年」）。AI が自身の後継モデルを設計する再帰的ループが加速しており、「そのループがどれだけ速く閉じるかが問題だ」と述べた。チップ製造やトレーニング時間という物理的制約がボトルネックだが、Claude が Claude を書く現実はすでにその入り口にある。"
+    ],
+    "newsDate": "2026-01-20",
+    "date": "2026-03-30",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": ["Anthropic", "Dario Amodei", "Claude Code", "再帰的AI開発", "AI生産性"],
+    "primarySources": [
+      { "title": "Anthropic CEO Dario Amodei at World Economic Forum (WSJ Interview)", "site": "TranscriptMate", "url": "https://transcriptmate.com/interviews/dario-amodei/dario-amodei-on-ai-s-impact-opportunity-risk-and-societal-adaptation" },
+      { "title": "Mike Krieger claims Claude is essentially writing itself", "site": "IT Pro", "url": "https://www.itpro.com/software/development/anthropic-labs-chief-mike-krieger-claims-claude-is-essentially-writing-itself-and-it-validates-a-bold-prediction-by-ceo-dario-amodei" },
+      { "title": "Claude Team is Shipping Like Crazy: 74 Releases in 52 Days", "site": "Product Compass", "url": "https://www.productcompass.pm/p/claude-shipping-calendar" },
+      { "title": "Top engineers at Anthropic, OpenAI say AI now writes 100% of their code", "site": "Fortune", "url": "https://fortune.com/2026/01/29/100-percent-of-code-at-anthropic-and-openai-is-now-ai-written-boris-cherny-roon/" }
+    ]
   }
 ];
 

@@ -1152,6 +1152,14 @@
     <summary>中国の Moonshot AI が Kimi K2.5 を公開した。1兆パラメータの Mixture of Experts（MoE）アーキテクチャで、推論時のアクティブパラメータは320億。Humanity&apos;s Last Exam で Opus 4.5 や GPT-5.2 High を上回るスコアを記録し、コーディング（SWE-bench 76.8%）やマルチモーダル（画像・動画入力対応）でもフロンティア級の性能を示している。オープンウェイトで公開。</summary>
   </entry>
   <entry>
+    <title>「Claude が次の Claude を設計している」— Anthropic CEO 発言と52日間74リリースの異常な開発速度</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-writing-itself-74-launches-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-writing-itself-74-launches-2026</id>
+    <published>2026-01-20T15:00:00Z</published>
+    <updated>2026-01-20T15:00:00Z</updated>
+    <summary>Anthropic CEO の Dario Amodei が Davos で「社内にはもうコードを書かないエンジニアがいる」と発言。Labs 責任者の Mike Krieger は「Claude が Claude を書いている」と明言。実際に52日間で74の主要リリースを出荷し、Claude Code の run-rate 収益は25億ドルを突破した。</summary>
+  </entry>
+  <entry>
     <title>Meta、汎用AIエージェントの Manus を約20億ドルで買収 — 8ヶ月で ARR 1億ドルの急成長スタートアップ</title>
     <link rel="alternate" type="text/html" href="?a=meta-acquires-manus-2025"/>
     <id>tag:ai-tool-news.jp,2026:meta-acquires-manus-2025</id>
