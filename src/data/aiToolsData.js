@@ -5677,6 +5677,30 @@ export const ARTICLES = [
       { "title": "GPT drafts, Claude critiques: Microsoft blends rival AI models in new Copilot upgrade", "site": "GeekWire", "url": "https://www.geekwire.com/2026/gpt-drafts-claude-critiques-microsoft-blends-rival-ai-models-in-new-copilot-upgrade/" },
       { "title": "Copilot Cowork: Now available in Frontier", "site": "Microsoft 365 Blog", "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/30/copilot-cowork-now-available-in-frontier/" }
     ]
+  },
+  {
+    "id": "x-grok-auto-translation-2026",
+    "type": "news",
+    "category": "product",
+    "title": "X が Grok 自動翻訳を全面展開 — タイムラインの外国語投稿がタップ不要で母国語表示に、「史上最大の文化交流」か炎上輸出か",
+    "excerpt": "X（旧Twitter）が Grok AI による投稿の自動翻訳機能を本格展開。従来の「翻訳を表示」ボタンが不要になり、For You タブの外国語投稿が自動的に母国語で表示される。X プロダクト責任者は「史上最大の文化交流」と称したが、意図しないグローバル拡散のリスクも指摘されている。",
+    "body": [
+      "X（旧Twitter）は2026年3月29〜30日、xAI の **Grok** を使った投稿の自動翻訳・自動レコメンド機能を本格的に展開開始した。Elon Musk は「Grok が他言語の投稿を自動翻訳し、レコメンドし始めている」と投稿し、「これは長年の目標だった」と述べた。従来は投稿ごとに「翻訳を表示」ボタンをタップする必要があったが、新機能ではタイムライン上の外国語投稿が自動的にユーザーの設定言語で表示される。",
+      "X のプロダクト責任者 **Nikita Bier** は「歴史上最大の文化交流がまさに始まった」と投稿。実際に日米間では活発な反応が起きており、米国ユーザーが日本語の投稿に直接反応するケースが急増している。Grok は日本で既に高い人気を持ち、AI コンパニオン「Ani」の導入時には日本の App Store で1位を獲得し、OpenAI（3位）や Google Gemini（5位）を抜いた実績がある。Bier は当時「日本が起きた瞬間にサーバーが落ちた」と語っていた。",
+      "技術的には、翻訳自体に加えてレコメンドの言語横断が重要なポイントとなる。どの外国語投稿をユーザーに表示する価値があるかを判断するには、ユーザーの関心・ネットワーク・コンテンツの関連性を言語境界を越えてモデリングする必要がある。X は2025年以降、アルゴリズムと AI 機能を全面的に Grok に移管しており、「For You」タブの表示内容はすべて Grok のアルゴリズムが決定している。Google 翻訳から Grok 翻訳への移行は2025年半ばに開始されていた。",
+      "一方で懸念も複数指摘されている。自動翻訳はデフォルトで有効化されており、グローバルな一括オフ設定が存在しない。言語ごとに個別にオフにする必要があり、UX 上の不満が出ている。より深刻なのは「意図しないグローバル拡散」のリスクだ。国内向けのつもりで書いた政治的主張や過激な投稿が、自動翻訳を通じて海外に流通し始めるケースが報告されている。Japan Times は AI 翻訳への過度な依存が「文化的整合性の喪失」につながるリスクを論じ、特に日本語コンテンツの原作の意図が損なわれる懸念を指摘した。",
+      "AI による言語障壁の撤廃は、開発者コミュニティにも影響を及ぼす。英語圏で共有される技術的知見やオープンソースの議論が日本語話者にリアルタイムで届くようになる反面、文脈やニュアンスの損失が誤解を生むリスクもある。翻訳精度の問題は Grok に限らず全 LLM の課題であり、特にスラング・技術用語・文化依存の表現で品質にばらつきがある。「翻訳」ではなく「翻案」になっていないかをユーザー自身が判断する必要がある点は変わらない。"
+    ],
+    "newsDate": "2026-03-29",
+    "date": "2026-03-30",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": ["X", "Grok", "xAI", "自動翻訳", "文化交流", "多言語"],
+    "primarySources": [
+      { "title": "X、英語から日本語に自動翻訳開始「歴史上最大の文化交流」", "site": "Impress Watch", "url": "https://www.watch.impress.co.jp/docs/news/2097609.html" },
+      { "title": "Xの自動翻訳で「言葉の壁」崩れる", "site": "ITmedia NEWS", "url": "https://www.itmedia.co.jp/news/articles/2603/30/news142.html" },
+      { "title": "X Expands Grok Translation on Posts In-Stream", "site": "Social Media Today", "url": "https://www.socialmediatoday.com/news/x-formerly-twitter-expands-grok-translations-posts/757620/" }
+    ]
   }
 ];
 
