@@ -5728,6 +5728,70 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "claude-code-source-leak-npm-sourcemap-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "【速報】Claude Code の全ソースコード（51万行）が npm のソースマップ経由で流出 — 未公開機能・アーキテクチャが丸見えに",
+    "excerpt": "Anthropic の AI コーディングツール **Claude Code** の完全なソースコード（1,900ファイル・512,000行超の TypeScript）が、npm パッケージに同梱されたソースマップ（cli.js.map、57MB）を通じて流出した。ハッキングではなく Anthropic 自身のパッケージングミス。未公開機能フラグ（BUDDY、KAIROS、ULTRAPLAN 等）やシステムプロンプト全文、ツール呼び出しロジック、マルチエージェント協調設計が完全に公開された。GitHub ミラーは即座に1,100+スター・1,900+フォークを獲得し、DMCA テイクダウンが進行中。3月26日の Mythos モデルリークに続く2週連続のセキュリティ事故。",
+    "heroScope": "day",
+    "body": [
+      "2026年3月31日、セキュリティ研究者の **Chaofan Shou**（@Fried_rice）が X に衝撃的な投稿を行った。Anthropic の AI コーディングツール **Claude Code** の**完全なソースコード**が、npm レジストリに公開されたパッケージ内のソースマップファイルを通じて誰でもダウンロードできる状態にあることを発見したのだ。ハッキングやゼロデイ攻撃ではない。**Anthropic 自身が npm publish 時にソースマップを除外し忘れた**、典型的なビルドパイプラインの設定ミスだ。",
+      "**流出の仕組み**はシンプルだ。Claude Code の npm パッケージに含まれる `cli.js.map`（57MB）はソースマップファイルであり、本質的に JSON 形式で2つのキー配列を持つ。`sources`（ファイルパス）と `sourcesContent`（対応する完全なソースコード）だ。両者のインデックスは一対一で対応しており、逆コンパイルも難読化解除も不要。`sourcesContent` の中には**一字一句そのままのオリジナルコード**が保存されている。さらに、ソースマップ内には Anthropic の R2 ストレージバケットに置かれた `src.zip` への参照も含まれており、完全なソースツリーを ZIP でダウンロードすることも可能だった。",
+      "流出の規模は**4,756個のソースファイル**。うち**1,906個が Claude Code 本体の TypeScript/TSX ソースコード**、残り2,850個は node_modules の依存関係だ。合計で**512,000行以上**のコードが公開された状態となった。GitHub に即座にミラーリポジトリが作成され、公開から数時間で**1,100以上のスター、1,900以上のフォーク**を獲得。Anthropic は DMCA テイクダウンを進めているが、早期バージョンの npm パッケージは既にアーカイブされており、ソースコードはコミュニティに広く出回っている。",
+      "**アーキテクチャの全容が明らかに。** Claude Code は **Bun**（Node.js ではなく）で動作し、**React + Ink** でターミナル UI をレンダリングする。核心は REPL ループで、自然言語入力とスラッシュコマンドをサポートし、下層では**約40のツール**がプラグイン型アーキテクチャで構成されている。ファイル読み書き、Bash 実行、Web フェッチ、LSP 統合など、各機能は個別の**パーミッションゲート付きツール**として実装されており、`Tool.ts` だけで**29,000行**に達する。最大のモジュールは **QueryEngine**（46,000行）で、全 LLM API 呼び出し・ストリーミング・キャッシュ・オーケストレーションを担当する。",
+      "**最も注目を集めたのは未公開機能の発見だ。** ソースコード内のフィーチャーフラグとして `PROACTIVE`、`KAIROS`、`BRIDGE_MODE`、`DAEMON`、`VOICE_MODE`、`AGENT_TRIGGERS`、`MONITOR_TOOL` が確認された。",
+      "**BUDDY** — たまごっち風の AI ペット機能。入力ボックスの横にドット絵のキャラクターが表示される。Mulberry32 シード PRNG で userId ハッシュから決定論的に生成され、18種族（duck, goose, blob, cat, dragon, octopus, owl, penguin, turtle, snail, ghost, axolotl, capybara, cactus, robot, rabbit, mushroom, chonk）、レアリティ（common 60% 〜 legendary 1%）、1%のシャイニー確率を持つ。4月1日（エイプリルフール）にティーザー公開、5月に正式リリースの計画が記載されていた。Anthropic 社員には常時表示。",
+      "**KAIROS**（「Always-On Claude」）— セッションをまたいで永続的に動作する自律エージェント。日次ログを `~/.claude/projects/<slug>/memory/logs/` に追記し、夜間に「ドリーミング」と呼ばれる4段階処理（Orient → Gather → Consolidate → Prune）でログを構造化トピックファイルに蒸留する。15秒ブロッキング予算（超過コマンドは自動バックグラウンド化）、プロアクティブモード（Claude が自発的に次のアクションを決定）、`SleepTool` による待機状態を持つ。",
+      "**ULTRAPLAN** — 複雑な計画タスクを**クラウドのリモート Claude Code インスタンス**に委任する30分セッション。3秒ごとにポーリングし、ユーザーがブラウザ（claude.ai）で計画を承認または却下する。承認後は「クラウド実行」か「ローカルにテレポート」の2択。Opus 4.6 を使用。",
+      "**Coordinator Mode** — マルチエージェントオーケストレーター。`CLAUDE_CODE_COORDINATOR_MODE=1` で既に一部アクセス可能。マスター Claude が AgentTool でワーカーを並列起動し、ワーカーは XML `<task-notification>` メッセージで結果を返す。ワーカーには隔離されたスクラッチディレクトリが提供される。",
+      "**コミュニティの反応は二極化している。** 開発者コミュニティでは、Claude Code の設計の洗練度に驚嘆する声と、Anthropic のオペレーショナルセキュリティへの疑問が入り混じっている。DEV Community の分析記事は「AI コーディングツールのバーがいかに高いかを示している。パーミッションシステム、マルチエージェントオーケストレーション、IDE ブリッジ、永続メモリ — これが業界の向かう先だ」と評価している。一方、Hacker News では「AI セーフティを掲げる企業が自社のソースマップすら管理できないのか」という皮肉なコメントが上位に。",
+      "**Anthropic にとって3月は悪夢の月となった。** 3月26日には CMS の設定ミスで約3,000件の未公開資産（ブログ下書き、画像、PDF、内部文書）が公開され、未発表フラグシップモデル **Claude Mythos**（Capybara）の存在が露呈。Fortune の報道で Anthropic はモデルの存在を認め「ステップチェンジ」と表現した。さらに2月には **CVE-2026-21852**（CVSS 5.3）で、悪意あるリポジトリを開くだけで API キーが流出する脆弱性も修正されている。そして今回の npm ソースマップ流出。**2週間で3件のセキュリティ事故**は、急成長するスタートアップのインフラが追いついていない現実を示している。",
+      "**皮肉な一致**: 同じ3月31日に **axios のサプライチェーン攻撃**（npm アカウント乗っ取り + RAT 配布）も発覚しており、npm エコシステムのセキュリティが1日に2度問われる異例の事態となった。axios はメンテナーの npm アカウントが攻撃者に乗っ取られた外部攻撃。Claude Code は Anthropic 自身の設定ミス。原因は正反対だが、npm パッケージの公開プロセスにおけるセキュリティチェックの甘さという共通の構造的問題が浮き彫りになっている。",
+      "**npm パッケージを公開する全ての開発者への教訓**: 公開前に `.map` ファイルが含まれていないかチェックすること。一行の `sourcesContent` で、あなたの全コードが世に公開されてしまう。`.npmignore` に `*.map` を追加するか、`package.json` の `files` フィールドで明示的に含めるファイルを指定すべきだ。",
+      "注意: 本記事は2026年3月31日時点の情報に基づく。Anthropic は DMCA テイクダウンを進行中であり、GitHub 上のミラーリポジトリは順次削除される可能性がある。流出したソースコードの無断複製・商用利用は著作権法に抵触する可能性がある。"
+    ],
+    "newsDate": "2026-03-31",
+    "date": "2026-03-31",
+    "author": "AI News 編集部",
+    "readTime": "10分",
+    "tags": ["セキュリティ", "npm", "Claude Code", "Anthropic", "ソースコード流出", "ソースマップ"],
+    "tables": [
+      {
+        "title": "流出で判明した未公開機能フラグ",
+        "headers": ["機能名", "概要", "ステータス"],
+        "rows": [
+          ["BUDDY", "たまごっち風AIペット。18種族・レアリティ・シャイニー。エイプリルフールティーザー→5月正式", "未リリース（4/1ティーザー予定だった）"],
+          ["KAIROS", "常駐型永続エージェント。夜間ドリーミング・プロアクティブモード・SleepTool", "未リリース"],
+          ["ULTRAPLAN", "30分リモート計画セッション。クラウド実行orローカルテレポート", "未リリース"],
+          ["Coordinator Mode", "マルチエージェントオーケストレーター。ワーカー並列起動", "一部利用可能（環境変数）"],
+          ["VOICE_MODE", "音声入力モード", "未リリース"],
+          ["BRIDGE_MODE", "IDE ブリッジモード", "未リリース"],
+          ["DAEMON", "デーモンプロセス（常駐）", "未リリース"],
+          ["PROACTIVE", "プロアクティブ（自発的動作）", "未リリース"]
+        ]
+      },
+      {
+        "title": "Anthropic 2026年3月のセキュリティ事故一覧",
+        "headers": ["日付", "事故", "原因", "影響"],
+        "rows": [
+          ["2月", "CVE-2026-21852", "プロジェクト読み込み時のデータ流出脆弱性", "APIキー流出の可能性。v2.0.65で修正済"],
+          ["3/26", "CMS リーク（Mythos）", "外部CMSツールの設定ミス", "未発表モデル Mythos の存在露呈。約3,000件の未公開資産が公開"],
+          ["3/31", "npm ソースマップ流出", "パッケージングミス（.map除外忘れ）", "Claude Code 全ソースコード（51万行）が公開。未公開機能判明"],
+          ["3/31", "（同日）axios サプライチェーン攻撃", "メンテナーアカウント乗っ取り（外部攻撃）", "npm エコシステム全体の信頼性問題"]
+        ]
+      }
+    ],
+    "primarySources": [
+      { "title": "Chaofan Shou (@Fried_rice) — 第一報", "site": "X", "url": "https://x.com/fried_rice/status/2038894956459290963" },
+      { "title": "Claude Code's source code has been leaked via a map file in their NPM registry", "site": "Hacker News", "url": "https://news.ycombinator.com/item?id=47584540" },
+      { "title": "Claude Code's Entire Source Code Was Just Leaked via npm Source Maps — Here's What's Inside", "site": "DEV Community", "url": "https://dev.to/gabrielanhaia/claude-codes-entire-source-code-was-just-leaked-via-npm-source-maps-heres-whats-inside-cjo" },
+      { "title": "Claude Code — Leaked Source (2026-03-31)", "site": "GitHub", "url": "https://github.com/instructkr/claude-code" },
+      { "title": "@chenchengpro — 技術分析（中国語）", "site": "X", "url": "https://x.com/chenchengpro" },
+      { "title": "Anthropic's madcap March: 14+ launches, 5 outages, and an accidental Claude Mythos leak", "site": "The New Stack", "url": "https://thenewstack.io/anthropic-march-2026-roundup/" },
+      { "title": "Dark Web Intelligence — リーク速報", "site": "X", "url": "https://x.com/DailyDarkWeb/status/2038917695609917448" }
+    ]
+  },
+  {
     "id": "axios-npm-supply-chain-attack-rat-2026",
     "type": "news",
     "category": "regulation",
