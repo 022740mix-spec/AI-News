@@ -640,6 +640,14 @@
     <summary>Anthropic が3月に Claude Code を大幅強化。Computer Use でファイル操作や画面操作が可能に、Opus 4.6 の出力上限が128Kトークンに拡張、新 Code Review 機能で AI 生成コードの品質管理を自動化。run-rate 収益は25億ドルを突破。</summary>
   </entry>
   <entry>
+    <title>Claude Code に Computer Use が搭載 — CLI からアプリを開き、クリックし、スクショを撮る。コードを書いた AI が自分でテストする時代</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-computer-use-deep-dive-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-computer-use-deep-dive-2026</id>
+    <published>2026-03-23T15:00:00Z</published>
+    <updated>2026-03-23T15:00:00Z</updated>
+    <summary>Anthropic が Claude Code に Computer Use（Research Preview）を追加。CLI セッション内から macOS のアプリを起動・クリック操作・スクリーンショット取得が可能に。Swift アプリをビルドして UI を自動検証する、レイアウトバグを再現して CSS を修正するなど、コードを書いた AI が自らテストまで完結させる。</summary>
+  </entry>
+  <entry>
     <title>Cursor Composer 2 の正体 — Kimi K2.5 ベースの独自モデル、API 解析で判明</title>
     <link rel="alternate" type="text/html" href="?a=cursor-composer-2-kimi-2026"/>
     <id>tag:ai-tool-news.jp,2026:cursor-composer-2-kimi-2026</id>

@@ -5701,6 +5701,31 @@ export const ARTICLES = [
       { "title": "Xの自動翻訳で「言葉の壁」崩れる", "site": "ITmedia NEWS", "url": "https://www.itmedia.co.jp/news/articles/2603/30/news142.html" },
       { "title": "X Expands Grok Translation on Posts In-Stream", "site": "Social Media Today", "url": "https://www.socialmediatoday.com/news/x-formerly-twitter-expands-grok-translations-posts/757620/" }
     ]
+  },
+  {
+    "id": "claude-code-computer-use-deep-dive-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code に Computer Use が搭載 — CLI からアプリを開き、クリックし、スクショを撮る。コードを書いた AI が自分でテストする時代",
+    "excerpt": "Anthropic が Claude Code に Computer Use（Research Preview）を追加。CLI セッション内から macOS のアプリを起動・クリック操作・スクリーンショット取得が可能に。Swift アプリをビルドして UI を自動検証する、レイアウトバグを再現して CSS を修正するなど、コードを書いた AI が自らテストまで完結させる。",
+    "body": [
+      "Anthropic は2026年3月23日、Claude Code に **Computer Use** を Research Preview として追加した。Pro および Max プラン向けで、macOS 上の Claude Code v2.1.85 以降で利用可能。Claude が CLI のターミナルセッション内からアプリを起動し、画面を見て、クリック・タイプ・スクロールを行い、スクリーンショットを撮影できるようになった。Elon Musk、Satya Nadella らが AI エージェントのデスクトップ操作に注目する中、Anthropic は開発者の CLI ワークフローに直接統合するアプローチを選んだ。",
+      "ユースケースは GUI が必要なタスク全般に及ぶ。**ネイティブアプリのビルドと検証**では、Swift アプリをコンパイル→起動→全タブをクリック→エラー状態をスクリーンショットという一連の作業を1会話で完了する。**UI テスト**では Playwright の設定やテストハーネスなしに Electron アプリのオンボーディングフローをクリックスルーで検証。**レイアウトバグの再現**ではウィンドウをリサイズしてバグを再現→スクショ→CSS 修正→再検証まで自動実行。**iOS Simulator の操作**や GUI のみのデザインツール・ハードウェア制御パネルの操作にも対応する。",
+      "ツールの優先順位は明確に定義されている。Claude はまず **MCP サーバー**（最も精密）を試し、次に **Bash**、次に **Claude in Chrome**（ブラウザ操作）、最後に **Computer Use**（最も広範だが最も遅い）をフォールバックとして使う。つまり Computer Use は「他の手段では到達できないもの」専用の位置づけだ。有効化は `/mcp` メニューから `computer-use` サーバーを有効にし、macOS の Accessibility と Screen Recording の権限を付与する。プロジェクト単位で設定が保持される。",
+      "セキュリティモデルは多層構造。**アプリ単位の承認制**で、セッション開始時に Claude が使いたいアプリごとに許可を求める。ブラウザと取引プラットフォームは閲覧のみ、ターミナルと IDE はクリックのみ、その他のアプリはフルコントロールという3段階の権限設計。ターミナルウィンドウはスクリーンショットから除外され、Claude が自身の出力を読むことによるプロンプトインジェクションを防止する。Machine-wide ロックにより同時に1セッションしか画面を操作できず、Esc キーでいつでも即座に中断可能。Claude が操作中は他のアプリが非表示になり、操作対象のアプリのみが表示される。",
+      "この機能の背景には2つの戦略的動きがある。2026年2月25日に発表された **Vercept の買収**（1,600万ドル調達のシアトル AI スタートアップ）で、画面認識・デスクトップ自動化の技術基盤を獲得。Vercept の「Vy」は Apple MacBook 上でタスクを自律実行するクラウドエージェントだった。さらに OSWorld ベンチマークでは Claude Sonnet のスコアが2024年末の15%未満から **72.5%** に到達し、OpenAI GPT-5.2 の38.2%を大きく上回る。現時点の制限として macOS のみ対応（Windows 未対応）、Team/Enterprise プラン未対応、`-p` フラグの非対話モード未対応がある。デスクトップアプリ版では Dispatch 機能と連携し、スマートフォンからタスクを指示して PC で自動実行→完了後に結果を確認、という非同期ワークフローも可能。"
+    ],
+    "newsDate": "2026-03-23",
+    "date": "2026-03-30",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": ["Anthropic", "Claude Code", "Computer Use", "デスクトップ自動化", "Vercept", "macOS"],
+    "primarySources": [
+      { "title": "Let Claude use your computer from the CLI", "site": "Claude Code Docs", "url": "https://code.claude.com/docs/en/computer-use" },
+      { "title": "Anthropic says Claude can now use your computer to finish tasks for you", "site": "CNBC", "url": "https://www.cnbc.com/2026/03/24/anthropic-claude-ai-agent-use-computer-finish-tasks.html" },
+      { "title": "Claude Code and Cowork can now use your computer", "site": "Engadget", "url": "https://www.engadget.com/ai/claude-code-and-cowork-can-now-use-your-computer-210000126.html" },
+      { "title": "Anthropic acquires Vercept to advance Claude's computer use capabilities", "site": "Anthropic", "url": "https://www.anthropic.com/news/acquires-vercept" }
+    ]
   }
 ];
 
