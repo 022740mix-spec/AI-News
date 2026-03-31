@@ -5826,7 +5826,7 @@ export const ARTICLES = [
       "## 流出の規模",
       "流出の規模は**4,756個のソースファイル**。うち**1,906個が Claude Code 本体の TypeScript/TSX ソースコード**、残り2,850個は node_modules の依存関係だ。合計で**512,000行以上**のコードが公開された状態となった。",
       "流出したコードは古いバージョンではなく、**現行最新モデル claude-opus-4-6 をサポートする最新ビルド**であることが確認されている。ほぼ現役のプロダクションコードそのものだ。",
-      "GitHub に即座にミラーリポジトリが作成され、公開から数時間で**1,100以上のスター、1,900以上のフォーク**を獲得。Anthropic は DMCA テイクダウンを進めているが、早期バージョンの npm パッケージは既にアーカイブされており、ソースコードはコミュニティに広く出回っている。",
+      "GitHub に即座に複数のミラーリポジトリが作成され、公開から数時間で1,000以上のスターを獲得。DMCA テイクダウンを恐れた一部のコピー者は、オリジナルの TypeScript から **Python に書き換えて**再公開するなどの動きも見られる。Anthropic は DMCA テイクダウンを進めているが、既に多数のコピーが拡散しており収集がつかない状態だ。",
 
       "## アーキテクチャの全容",
       "Claude Code は **Bun**（Node.js ではなく）で動作し、**React + Ink** でターミナル UI をレンダリングする。核心は REPL ループで、自然言語入力とスラッシュコマンドをサポートする。",
@@ -5859,12 +5859,12 @@ export const ARTICLES = [
 
       "## axios との皮肉な因縁",
       "同じ3月31日に **axios のサプライチェーン攻撃**（npm アカウント乗っ取り + RAT 配布）も発覚しており、npm エコシステムのセキュリティが1日に2度問われる異例の事態となった。",
-      "**さらに衝撃的な事実が判明した。** 流出したソースコードの GitHub ミラー（`src/assistant/sessionHistory.ts`）を開発者コミュニティが分析したところ、**Claude Code 自体が内部で axios を HTTP クライアントとして使用している**ことが確認された。もし Anthropic が汚染バージョン（axios@1.14.1 等）を取り込んでいた場合、**Claude Code ユーザー全員のマシンに RAT が配布される**という最悪のシナリオもあり得た。",
+      "**さらに衝撃的な事実が判明した。** 流出したソースコード（`src/assistant/sessionHistory.ts`）を開発者コミュニティが分析したところ、**Claude Code 自体が内部で axios を HTTP クライアントとして使用している**ことが確認された。もし Anthropic が汚染バージョン（axios@1.14.1 等）を取り込んでいた場合、**Claude Code ユーザー全員のマシンに RAT が配布される**という最悪のシナリオもあり得た。",
       "axios はメンテナーの npm アカウントが乗っ取られた外部攻撃。Claude Code は Anthropic 自身の設定ミス。原因は正反対だが、npm パッケージの公開プロセスにおけるセキュリティチェックの甘さという共通の構造的問題が浮き彫りになっている。",
 
       "## 開発者への教訓",
       "npm パッケージを公開する全ての開発者へ: 公開前に `.map` ファイルが含まれていないかチェックすること。一行の `sourcesContent` で、あなたの全コードが世に公開されてしまう。`.npmignore` に `*.map` を追加するか、`package.json` の `files` フィールドで明示的に含めるファイルを指定すべきだ。",
-      "注意: 本記事は2026年3月31日時点の情報に基づく。Anthropic は DMCA テイクダウンを進行中であり、GitHub 上のミラーリポジトリは順次削除される可能性がある。流出したソースコードの無断複製・商用利用は著作権法に抵触する可能性がある。"
+      "注意: 本記事は2026年3月31日時点の情報に基づく。Anthropic は DMCA テイクダウンを進行中であり、GitHub 上のミラーリポジトリは順次削除されている。流出したソースコードの無断複製・商用利用は著作権法に抵触する可能性がある。本記事では流出コードへの直接リンクは掲載しない。"
     ],
     "newsDate": "2026-03-31",
     "date": "2026-03-31",
@@ -5905,11 +5905,10 @@ export const ARTICLES = [
       { "title": "Chaofan Shou (@Fried_rice) — 拡散の起点となった投稿", "site": "X", "url": "https://x.com/fried_rice/status/2038894956459290963" },
       { "title": "Claude Code's source code has been leaked via a map file in their NPM registry", "site": "Hacker News", "url": "https://news.ycombinator.com/item?id=47584540" },
       { "title": "Claude Code's Entire Source Code Was Just Leaked via npm Source Maps — Here's What's Inside", "site": "DEV Community", "url": "https://dev.to/gabrielanhaia/claude-codes-entire-source-code-was-just-leaked-via-npm-source-maps-heres-whats-inside-cjo" },
-      { "title": "Claude Code — Leaked Source (2026-03-31)", "site": "GitHub", "url": "https://github.com/instructkr/claude-code" },
       { "title": "Digging into the Claude Code source — Dave Schumaker", "site": "Blog", "url": "https://daveschumaker.net/digging-into-the-claude-code-source-saved-by-sublime-text/" },
       { "title": "Anthropic's madcap March: 14+ launches, 5 outages, and an accidental Claude Mythos leak", "site": "The New Stack", "url": "https://thenewstack.io/anthropic-march-2026-roundup/" },
       { "title": "Dark Web Intelligence — リーク速報", "site": "X", "url": "https://x.com/DailyDarkWeb/status/2038917695609917448" },
-      { "title": "Claude Code GitHub ミラー — src/assistant/sessionHistory.ts（axios import 確認）", "site": "GitHub", "url": "https://github.com/instructkr/claude-code" }
+      { "title": "npm Had a Very Bad Day — paddo.dev", "site": "Blog", "url": "https://paddo.dev/blog/npm-very-bad-day/" }
     ]
   },
   {
