@@ -5653,6 +5653,30 @@ export const ARTICLES = [
       { "title": "OpenAI introduces plugins for its Codex programming assistant", "site": "SiliconANGLE", "url": "https://siliconangle.com/2026/03/27/openai-introduces-plugins-codex-programming-assistant/" },
       { "title": "OpenAI's Codex Gets Plugins — And The Real Fight For AI-Powered Development Begins", "site": "Web And IT News", "url": "https://www.webanditnews.com/2026/03/28/openais-codex-gets-plugins-and-the-real-fight-for-ai-powered-development-begins/" }
     ]
+  },
+  {
+    "id": "m365-copilot-researcher-critique-council-2026",
+    "type": "news",
+    "category": "product",
+    "title": "M365 Copilot Researcher に「Critique」「Council」追加 — GPT が起草し Claude が事実確認する生成・評価分離アーキテクチャ",
+    "excerpt": "Microsoft が M365 Copilot の Researcher エージェントにマルチモデル機能を追加。Critique は GPT-5.4 が調査・起草、Claude Opus 4.6 が事実確認・引用精査を行う2モデル連携で、DRACO ベンチで業界最高スコアを達成。Council は複数モデルの並列回答と合意・相違点を可視化する。",
+    "body": [
+      "Microsoft は2026年3月30日、**M365 Copilot** の Researcher エージェントに **Critique** と **Council** の2つのマルチモデル機能を追加し、Frontier プログラム参加者向けに即日提供を開始した。これにより Copilot は単一モデル依存から脱却し、OpenAI と Anthropic のモデルを組み合わせる「生成と評価の分離」アーキテクチャへ移行する。",
+      "**Critique** は複雑な調査タスク向けのマルチモデル Deep Research システム。**GPT-5.4** がタスクの計画・検索の反復・初稿の起草を担い、**Claude Opus 4.6** が専門レビュアーとして事実確認・引用精査・論理的整合性のチェックを行う。この役割は逆転も可能で、Claude が起草し GPT がレビューする構成にもできる。モデルピッカーで「Auto」を選択するとデフォルトで Critique が適用される。",
+      "性能評価には Microsoft が策定した **DRACO（Deep Research Accuracy, Completeness, and Objectivity）** ベンチマークを使用。10分野・100件の複雑な調査タスクで構成される。Critique 搭載の Researcher は集計スコアで **+7.0ポイント（SEM ±1.90）** の改善を達成し、Perplexity Deep Research（Claude Opus 4.6 単体）を **+13.88%** 上回り業界最高スコアを記録した（自社評価）。改善幅は「分析の広さと深さ」（+3.33）、「表現品質」（+3.04）、「事実の正確性」（+2.58）の順に大きく、全次元で統計的に有意な差（p < 0.0001）が確認された。",
+      "**Council** は並列比較モード。Anthropic と OpenAI のモデルが同時に同じ調査を実行し、それぞれ独立したレポートを生成する。完了後、ジャッジモデルが両レポートを評価し、合意点と見解の相違を要約した統合レポートを提示する。単一モデルの盲点を補完し、ユーザーが複数の視点から判断できる設計。モデルピッカーで「Model Council」を選択して利用する。",
+      "同日には **Copilot Cowork** の Frontier プログラム向け提供開始も発表された。Anthropic の Claude 技術を基盤とし、複数ステップの業務を自律的に計画・実行する。Microsoft の戦略は明確で、Google Gemini や Anthropic Claude、OpenAI ChatGPT が単体モデルで Deep Research を競う中、あえて競合同士のモデルを組み合わせるマルチモデル路線で差別化を図っている。M365 Copilot のライセンスは月額30ドル/ユーザーで、Frontier 機能は追加コストなしで利用可能（一部追加利用分は別途課金）。2026年1月時点の有料 Copilot シートは1,500万で、商用 M365 ユーザー4.5億人の約3.3%にとどまる。"
+    ],
+    "newsDate": "2026-03-30",
+    "date": "2026-03-30",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": ["Microsoft", "Copilot", "マルチモデル", "Researcher", "Claude", "GPT", "Deep Research"],
+    "primarySources": [
+      { "title": "Introducing multi-model intelligence in Researcher", "site": "Microsoft Tech Community", "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/introducing-multi-model-intelligence-in-researcher/4506011" },
+      { "title": "GPT drafts, Claude critiques: Microsoft blends rival AI models in new Copilot upgrade", "site": "GeekWire", "url": "https://www.geekwire.com/2026/gpt-drafts-claude-critiques-microsoft-blends-rival-ai-models-in-new-copilot-upgrade/" },
+      { "title": "Copilot Cowork: Now available in Frontier", "site": "Microsoft 365 Blog", "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/30/copilot-cowork-now-available-in-frontier/" }
+    ]
   }
 ];
 

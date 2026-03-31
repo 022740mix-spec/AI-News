@@ -16,6 +16,14 @@
     <summary>Anthropic が国防総省の「サプライチェーンリスク」指定を連邦地裁で差し止めた一方、OpenAI は Sora の消費者向け提供を終了。ARC-AGI-3 がフロンティアモデルの限界を浮き彫りにした翌日、Google が Gemini 3.1 Pro と MCP v2 を同時に発表。週末は Cursor 2.4 と Claude Code Auto mode が開発者のワークフローを更新し、Mythos 草稿の報道がセキュリティ銘柄を動かした。</summary>
   </entry>
   <entry>
+    <title>M365 Copilot Researcher に「Critique」「Council」追加 — GPT が起草し Claude が事実確認する生成・評価分離アーキテクチャ</title>
+    <link rel="alternate" type="text/html" href="?a=m365-copilot-researcher-critique-council-2026"/>
+    <id>tag:ai-tool-news.jp,2026:m365-copilot-researcher-critique-council-2026</id>
+    <published>2026-03-30T15:00:00Z</published>
+    <updated>2026-03-30T15:00:00Z</updated>
+    <summary>Microsoft が M365 Copilot の Researcher エージェントにマルチモデル機能を追加。Critique は GPT-5.4 が調査・起草、Claude Opus 4.6 が事実確認・引用精査を行う2モデル連携で、DRACO ベンチで業界最高スコアを達成。Council は複数モデルの並列回答と合意・相違点を可視化する。</summary>
+  </entry>
+  <entry>
     <title>開発者のための画像生成API入門 — GPT Image・Flux・Midjourney・Recraft を比較して選ぶ</title>
     <link rel="alternate" type="text/html" href="?a=ai-image-api-guide-developers-2026"/>
     <id>tag:ai-tool-news.jp,2026:ai-image-api-guide-developers-2026</id>
