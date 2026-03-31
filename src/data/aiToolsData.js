@@ -5629,6 +5629,30 @@ export const ARTICLES = [
       { "title": "Claude Team is Shipping Like Crazy: 74 Releases in 52 Days", "site": "Product Compass", "url": "https://www.productcompass.pm/p/claude-shipping-calendar" },
       { "title": "Top engineers at Anthropic, OpenAI say AI now writes 100% of their code", "site": "Fortune", "url": "https://fortune.com/2026/01/29/100-percent-of-code-at-anthropic-and-openai-is-now-ai-written-boris-cherny-roon/" }
     ]
+  },
+  {
+    "id": "openai-codex-plugin-cc-claude-code-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "OpenAI が公式に Claude Code 向け Codex プラグインを公開 — 競合ツール内からコードレビュー・タスク委任が可能に",
+    "excerpt": "OpenAI が openai/codex-plugin-cc を公開し、Claude Code 内から Codex のコードレビューやタスク委任を公式にサポート。OSS コミュニティで数週間話題だった Claude↔Codex 連携が、OpenAI 自身の手で公式プラグインとして実現した異例の展開。",
+    "body": [
+      "OpenAI は Claude Code 向けの公式プラグイン **codex-plugin-cc** を GitHub（openai/codex-plugin-cc）で公開した。Claude Code のプラグインマーケットプレイスから `/plugin marketplace add openai/codex-plugin-cc` でインストールでき、Claude Code のセッション内から直接 Codex の機能を呼び出せる。競合の開発環境に自社ツールを公式統合するという異例の動きだ。",
+      "主要コマンドは4つ。`/codex:review` は通常の Codex コードレビューを実行し、Codex 内の `/review` と同等の品質を提供する。`/codex:adversarial-review` はより懐疑的な視点でコードを検証するステアラブルレビュー。`/codex:rescue` は Codex のサブエージェントにタスクを丸ごと委任する。`/codex:setup` は Codex の環境確認と未インストール時の自動セットアップを行う。",
+      "注目機能は **Review Gate**。`/codex:setup --enable-review-gate` で有効化すると、Claude の出力に対して Stop フックで Codex レビューが自動実行され、問題が検出された場合は Claude が修正するまで処理を継続する。Claude（実装）→ Codex（レビュー）の自動ループが回る設計だが、使用量を急速に消費するため監視下での利用が推奨されている。プラグインはローカルの Codex CLI とアプリサーバーを経由して動作し、ChatGPT サブスクリプションまたは OpenAI API キーが必要。",
+      "この公式プラグインに先行して、OSS コミュニティでは Claude↔Codex 連携が活発に開発されていた。tuannvm/codex-mcp-server（Codex CLI を MCP サーバーでラップ）、ching-kuo/claude-codex（Claude が計画・Codex が実装のループ）、abhishekgahlot2/codex-claude-bridge（Claude Code Channels を使った双方向ブリッジ）など多数のプロジェクトが登場。OpenAI が公式プラグインを出したことで、このエコシステムが正式に認められた形となる。",
+      "背景には OpenAI の Codex プラグインシステム全体の拡充がある。3月27日に発表されたプラグイン機能は、スキル・アプリ統合・MCP サーバーをバンドルして共有可能にする仕組みで、Figma・Notion・Sentry・Slack 等20以上のプラグインが利用可能。さらに GitHub イベントをトリガーにする Codex Triggers も同時発表された。Claude Code と Codex のプラグインアーキテクチャは MCP を共通基盤としており、ツール間の相互運用性は今後さらに進むと見られる。"
+    ],
+    "newsDate": "2026-03-29",
+    "date": "2026-03-30",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": ["OpenAI", "Codex", "Claude Code", "プラグイン", "MCP", "相互運用"],
+    "primarySources": [
+      { "title": "openai/codex-plugin-cc: Use Codex from Claude Code to review code or delegate tasks", "site": "GitHub", "url": "https://github.com/openai/codex-plugin-cc" },
+      { "title": "OpenAI introduces plugins for its Codex programming assistant", "site": "SiliconANGLE", "url": "https://siliconangle.com/2026/03/27/openai-introduces-plugins-codex-programming-assistant/" },
+      { "title": "OpenAI's Codex Gets Plugins — And The Real Fight For AI-Powered Development Begins", "site": "Web And IT News", "url": "https://www.webanditnews.com/2026/03/28/openais-codex-gets-plugins-and-the-real-fight-for-ai-powered-development-begins/" }
+    ]
   }
 ];
 

@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-03-30T15:00:00Z</updated>
+  <updated>2026-03-31T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>【週刊まとめ】AI開発ツール — 2026年3月23日〜29日</title>
@@ -238,6 +238,14 @@
     <published>2026-03-29T15:00:00Z</published>
     <updated>2026-03-29T15:00:00Z</updated>
     <summary>Claude Code の会話履歴はモデル改善不許可の場合30日で消去される。セッションの再開方法、ローカルの保存場所、/export コマンド、コミュニティ製の自動保存ツールまで、会話記録を失わないためのテクニックを整理した。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI が公式に Claude Code 向け Codex プラグインを公開 — 競合ツール内からコードレビュー・タスク委任が可能に</title>
+    <link rel="alternate" type="text/html" href="?a=openai-codex-plugin-cc-claude-code-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-codex-plugin-cc-claude-code-2026</id>
+    <published>2026-03-29T15:00:00Z</published>
+    <updated>2026-03-29T15:00:00Z</updated>
+    <summary>OpenAI が openai/codex-plugin-cc を公開し、Claude Code 内から Codex のコードレビューやタスク委任を公式にサポート。OSS コミュニティで数週間話題だった Claude↔Codex 連携が、OpenAI 自身の手で公式プラグインとして実現した異例の展開。</summary>
   </entry>
   <entry>
     <title>Midjourney V8、ついに Web 版と API を正式公開 — Discord 不要で画像生成が可能に</title>
