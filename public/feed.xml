@@ -8,6 +8,14 @@
   <updated>2026-03-31T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>【緊急】axios がサプライチェーン攻撃を受け RAT 入り偽バージョンが npm に公開 — 週間1億DLの HTTP クライアントが標的に</title>
+    <link rel="alternate" type="text/html" href="?a=axios-npm-supply-chain-attack-rat-2026"/>
+    <id>tag:ai-tool-news.jp,2026:axios-npm-supply-chain-attack-rat-2026</id>
+    <published>2026-03-31T15:00:00Z</published>
+    <updated>2026-03-31T15:00:00Z</updated>
+    <summary>npm 週間1億ダウンロードを誇る HTTP クライアント axios のリードメンテナーアカウントが乗っ取られ、axios@1.14.1 と axios@0.30.4 にリモートアクセス型トロイの木馬（RAT）を仕込んだ偽バージョンが公開された。悪意のある依存パッケージ plain-crypto-js 経由で macOS・Windows・Linux 全プラットフォームに C2 サーバーと通信するペイロードがドロップされる。npm セキュリティチームが問題バージョンを削除済みだが、キャレット範囲（^1.14.0 等）で自動取得した環境は即座に確認が必要。</summary>
+  </entry>
+  <entry>
     <title>【週刊まとめ】AI開発ツール — 2026年3月23日〜29日</title>
     <link rel="alternate" type="text/html" href="?a=overview-2026-spring"/>
     <id>tag:ai-tool-news.jp,2026:overview-2026-spring</id>

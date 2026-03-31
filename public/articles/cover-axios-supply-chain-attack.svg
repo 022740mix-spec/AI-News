@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a0000"/>
+      <stop offset="50%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#0a0005"/>
+    </linearGradient>
+    <linearGradient id="danger" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <linearGradient id="safe" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#16a34a"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- Warning stripes -->
+  <g opacity="0.08">
+    <rect x="0" y="0" width="1200" height="8" fill="#dc2626"/>
+    <rect x="0" y="667" width="1200" height="8" fill="#dc2626"/>
+  </g>
+
+  <!-- Central warning icon -->
+  <g transform="translate(600,180)">
+    <polygon points="0,-90 80,50 -80,50" fill="none" stroke="#dc2626" stroke-width="3" opacity="0.6"/>
+    <text text-anchor="middle" y="20" fill="#dc2626" font-size="72" font-weight="bold" font-family="Arial, sans-serif">!</text>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="320" text-anchor="middle" fill="#fca5a5" font-size="18" font-family="monospace" letter-spacing="4">SUPPLY CHAIN ATTACK</text>
+  <text x="600" y="370" text-anchor="middle" fill="#ffffff" font-size="52" font-weight="bold" font-family="Arial, sans-serif">axios</text>
+  <text x="600" y="405" text-anchor="middle" fill="#94a3b8" font-size="16" font-family="monospace">npm weekly downloads: 100,000,000+</text>
+
+  <!-- Compromised versions -->
+  <g transform="translate(300,450)">
+    <rect x="0" y="0" width="260" height="44" rx="8" fill="#dc262620" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="18" y="27" fill="#ef4444" font-size="18" font-family="monospace" font-weight="bold">✕</text>
+    <text x="42" y="27" fill="#fca5a5" font-size="15" font-family="monospace">1.14.1 / 0.30.4</text>
+    <text x="200" y="27" fill="#dc2626" font-size="11" font-family="monospace">RAT</text>
+  </g>
+
+  <!-- Safe versions -->
+  <g transform="translate(640,450)">
+    <rect x="0" y="0" width="260" height="44" rx="8" fill="#16a34a20" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="18" y="27" fill="#22c55e" font-size="18" font-family="monospace" font-weight="bold">✓</text>
+    <text x="42" y="27" fill="#bbf7d0" font-size="15" font-family="monospace">1.14.0 / 0.30.3</text>
+    <text x="210" y="27" fill="#22c55e" font-size="11" font-family="monospace">SAFE</text>
+  </g>
+
+  <!-- Attack chain -->
+  <g transform="translate(200,540)" font-family="monospace" font-size="11" fill="#64748b">
+    <text x="0" y="0">Account Hijack</text>
+    <text x="130" y="0" fill="#475569">→</text>
+    <text x="150" y="0">Malicious Publish</text>
+    <text x="310" y="0" fill="#475569">→</text>
+    <text x="330" y="0">plain-crypto-js</text>
+    <text x="490" y="0" fill="#475569">→</text>
+    <text x="510" y="0">RAT Dropper</text>
+    <text x="640" y="0" fill="#475569">→</text>
+    <text x="660" y="0" fill="#dc2626">C2 Server</text>
+  </g>
+
+  <!-- Date -->
+  <text x="600" y="635" text-anchor="middle" fill="#475569" font-size="13" font-family="monospace">2026.03.31 — npm packages removed</text>
+</svg>

@@ -5777,6 +5777,40 @@ export const ARTICLES = [
       { "title": "7 AI Tools That Changed Developer Workflow (March 2026)", "site": "Build Fast with AI", "url": "https://www.buildfastwithai.com/blogs/ai-tools-developers-march-2026" },
       { "title": "AI dev tool power rankings & comparison [March 2026]", "site": "LogRocket Blog", "url": "https://blog.logrocket.com/ai-dev-tool-power-rankings/" }
     ]
+  },
+  {
+    "id": "axios-npm-supply-chain-attack-rat-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "【緊急】axios がサプライチェーン攻撃を受け RAT 入り偽バージョンが npm に公開 — 週間1億DLの HTTP クライアントが標的に",
+    "excerpt": "npm 週間1億ダウンロードを誇る HTTP クライアント **axios** のリードメンテナーアカウントが乗っ取られ、**axios@1.14.1** と **axios@0.30.4** にリモートアクセス型トロイの木馬（RAT）を仕込んだ偽バージョンが公開された。悪意のある依存パッケージ **plain-crypto-js** 経由で macOS・Windows・Linux 全プラットフォームに C2 サーバーと通信するペイロードがドロップされる。npm セキュリティチームが問題バージョンを削除済みだが、キャレット範囲（^1.14.0 等）で自動取得した環境は即座に確認が必要。",
+    "heroScope": "day",
+    "coverImage": {
+      "src": "articles/cover-axios-supply-chain-attack.svg",
+      "alt": "axios サプライチェーン攻撃の警告図 — 危険バージョンと安全バージョンの対比"
+    },
+    "body": [
+      "2026年3月31日、セキュリティ企業 **Socket** と **StepSecurity** がほぼ同時に、npm で最も広く使われている HTTP クライアントライブラリ **axios** の2つのバージョンにマルウェアが混入していることを検知・公表した。対象は **axios@1.14.1**（v1系最新）と **axios@0.30.4**（レガシー v0.x 系）。axios は npm で**週間1億ダウンロード以上**を記録しており、React・Vue・Node.js のあらゆるプロジェクトで事実上のスタンダードとなっている HTTP クライアントだ。影響範囲の広さから、X では17万表示を超えるポストが拡散され、日本の開発者コミュニティでも「npm install を今すぐ止めてください」という緊急警告が飛び交った。",
+      "**攻撃の手口**はサプライチェーン攻撃の典型例だ。攻撃者はまず axios のリードメンテナー **jasonsaayman** の npm アカウントを乗っ取った。アカウントに紐づくメールアドレスが匿名の ProtonMail に変更されていたことが確認されている。通常の axios リリースは GitHub Actions の CI/CD パイプラインを経由して npm に公開されるが、今回の偽バージョンは CI を完全にバイパスし、npm CLI から直接 publish された。これにより GitHub リポジトリ上のソースコードには一切の変更痕跡が残らず、GitHub のコードレビューや CI チェックをすり抜けた。",
+      "偽バージョンには **plain-crypto-js@4.2.1** という新たな依存パッケージが追加されていた。このパッケージは axios のソースコード内で一度も import されておらず、唯一の目的は npm の **postinstall スクリプト**を実行すること。postinstall で起動するスクリプトはクロスプラットフォーム対応の **RAT（Remote Access Trojan）ドロッパー**として機能し、macOS・Windows・Linux それぞれに対応したペイロードをダウンロード・実行する。ペイロードは外部の **C2（Command and Control）サーバー**と通信し、遠隔操作を可能にする。さらにペイロード実行後は自己消去する設計で、フォレンジック調査を困難にする「プロの仕事」と評された。",
+      "**タイムライン**を整理する。3月30日 05:57 UTC に clean な plain-crypto-js@4.2.0 が公開（先に無害なバージョンを出して信頼性を偽装する手法）。同日 23:59 UTC にマルウェア入りの plain-crypto-js@4.2.1 が公開。3月31日 00:21 UTC に乗っ取った jasonsaayman アカウントから axios@1.14.1 が npm に publish。01:00 UTC にレガシー系の axios@0.30.4 も同様に publish。Socket の自動マルウェア検知は 00:05:41 UTC に plain-crypto-js を検出しており、**公開からわずか6分**で検知に成功している。その後 npm セキュリティチームが迅速に対応し、問題のバージョンを npm レジストリから削除した。",
+      "**影響を受ける環境**は、package.json で `\"axios\": \"^1.14.0\"` や `\"axios\": \"^0.30.0\"` のようにキャレット範囲（^）を指定しているすべてのプロジェクトだ。npm のセマンティックバージョニングにより、`npm install` を実行すると自動的に最新のパッチバージョン（1.14.1 や 0.30.4）が取得される。つまり、**package-lock.json を持たないプロジェクト**や、**CI/CD で毎回 npm install を実行する環境**は、攻撃者のバージョンを自動的にインストールした可能性がある。lockfile があっても、3月31日以降に `npm install` で依存を更新した場合はリスクがある。",
+      "**即座に実施すべき対応**は以下の通り。(1) `npm ls axios` でプロジェクト内の axios バージョンを確認。1.14.1 または 0.30.4 がインストールされている場合は直ちにアンインストール。(2) **安全なバージョン**は **1.14.0**（v1系）と **0.30.3**（v0.x系）。`npm install axios@1.14.0` で固定するか、package-lock.json で安全なバージョンがロックされていることを確認。(3) 感染が疑われる環境では **API キー・トークン・認証情報をすべてローテーション**する。RAT が環境変数やファイルシステムから認証情報を窃取した可能性がある。(4) CI/CD 環境のビルドログを確認し、postinstall スクリプトの実行痕跡がないかチェックする。",
+      "今回の事件は、npm エコシステムにおける**サプライチェーン攻撃のリスク**を改めて浮き彫りにした。2021年の ua-parser-js、2022年の colors.js / faker.js、2024年の xz-utils と、オープンソースの主要パッケージが攻撃対象となる事件は繰り返し発生している。axios は GitHub 上で10万スター以上を持つ超メジャーライブラリであり、「有名だから安全」という思い込みがいかに危険かを示している。防御策としては、**lockfile の厳密管理**、**npm audit の定期実行**、**Socket / Snyk / Aikido などのサプライチェーンセキュリティツールの導入**、そして npm の **provenance attestation**（来歴証明）の活用が推奨される。また、メンテナーアカウントには **2FA（二要素認証）の強制**と **npm publish の Automation Token 限定**を徹底すべきだ。",
+      "注意: 本記事は2026年3月31日時点の速報です。状況は急速に変化する可能性があります。最新情報は axios の GitHub リポジトリ（Issue #10604）および npm のセキュリティアドバイザリを確認してください。感染が疑われる場合は、すべての秘密鍵・API キー・認証トークンのローテーションを最優先で実施してください。"
+    ],
+    "newsDate": "2026-03-31",
+    "date": "2026-03-31",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": ["セキュリティ", "npm", "サプライチェーン攻撃", "axios", "マルウェア", "RAT", "Node.js"],
+    "primarySources": [
+      { "title": "axios@1.14.1 and axios@0.30.4 are compromised (Issue #10604)", "site": "GitHub", "url": "https://github.com/axios/axios/issues/10604" },
+      { "title": "Supply Chain Attack on Axios Pulls Malicious Dependency", "site": "Socket", "url": "https://socket.dev/blog/axios-npm-package-compromised" },
+      { "title": "Axios Supply Chain Attack Pushes Cross-Platform RAT via Compromised npm Account", "site": "The Hacker News", "url": "https://thehackernews.com/2026/03/axios-supply-chain-attack-pushes-cross.html" },
+      { "title": "axios Compromised on npm — Malicious Versions Drop Remote Access Trojan", "site": "StepSecurity", "url": "https://www.stepsecurity.io/blog/axios-compromised-on-npm-malicious-versions-drop-remote-access-trojan" },
+      { "title": "axios compromised on npm: maintainer account hijacked, RAT deployed", "site": "Aikido", "url": "https://www.aikido.dev/blog/axios-npm-compromised-maintainer-hijacked-rat" }
+    ]
   }
 ];
 
