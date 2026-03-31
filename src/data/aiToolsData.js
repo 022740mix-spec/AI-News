@@ -5859,7 +5859,7 @@ export const ARTICLES = [
 
       "## axios との皮肉な因縁",
       "同じ3月31日に **axios のサプライチェーン攻撃**（npm アカウント乗っ取り + RAT 配布）も発覚しており、npm エコシステムのセキュリティが1日に2度問われる異例の事態となった。",
-      "**さらに衝撃的な事実が判明した。** 流出したソースコード（`src/assistant/sessionHistory.ts`）から、**Claude Code 自体が内部で axios を HTTP クライアントとして使用している**ことが確認された（@icanvardar が X で指摘）。もし Anthropic が汚染バージョン（axios@1.14.1 等）を取り込んでいた場合、**Claude Code ユーザー全員のマシンに RAT が配布される**という最悪のシナリオもあり得た。",
+      "**さらに衝撃的な事実が判明した。** 流出したソースコードの GitHub ミラー（`src/assistant/sessionHistory.ts`）を開発者コミュニティが分析したところ、**Claude Code 自体が内部で axios を HTTP クライアントとして使用している**ことが確認された。もし Anthropic が汚染バージョン（axios@1.14.1 等）を取り込んでいた場合、**Claude Code ユーザー全員のマシンに RAT が配布される**という最悪のシナリオもあり得た。",
       "axios はメンテナーの npm アカウントが乗っ取られた外部攻撃。Claude Code は Anthropic 自身の設定ミス。原因は正反対だが、npm パッケージの公開プロセスにおけるセキュリティチェックの甘さという共通の構造的問題が浮き彫りになっている。",
 
       "## 開発者への教訓",
@@ -5909,7 +5909,7 @@ export const ARTICLES = [
       { "title": "Digging into the Claude Code source — Dave Schumaker", "site": "Blog", "url": "https://daveschumaker.net/digging-into-the-claude-code-source-saved-by-sublime-text/" },
       { "title": "Anthropic's madcap March: 14+ launches, 5 outages, and an accidental Claude Mythos leak", "site": "The New Stack", "url": "https://thenewstack.io/anthropic-march-2026-roundup/" },
       { "title": "Dark Web Intelligence — リーク速報", "site": "X", "url": "https://x.com/DailyDarkWeb/status/2038917695609917448" },
-      { "title": "Can Vardar (@icanvardar) — Claude Code が axios を使用している事実を指摘", "site": "X", "url": "https://x.com/icanvardar" }
+      { "title": "Claude Code GitHub ミラー — src/assistant/sessionHistory.ts（axios import 確認）", "site": "GitHub", "url": "https://github.com/instructkr/claude-code" }
     ]
   },
   {
