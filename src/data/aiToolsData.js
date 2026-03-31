@@ -5728,56 +5728,77 @@ export const ARTICLES = [
     ]
   },
   {
-    "id": "saas-stack-selection-ai-coding-era-2026",
-    "type": "feature",
-    "category": "cli",
-    "title": "AI コーディング時代の SaaS スタック選定 — 18カテゴリ90+ツールの選び方と、AI が得意な構成・苦手な構成",
-    "excerpt": "X で「SaaS Stack」のフォルダツリーが39万表示を超えるバズに。SaaS を1つ作るだけで18カテゴリ・90以上のツール選定が必要という現実が可視化され、開発者コミュニティで「Prisma がない」「Better Auth は？」と議論が沸騰。Claude Code や Cursor に丸投げしたとき AI はどのスタックを選ぶのか、なぜその構成を好むのか、どこで失敗するのかを実務視点で整理した。",
+    "id": "axios-npm-supply-chain-attack-rat-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "【緊急】axios がサプライチェーン攻撃を受け RAT 入り偽バージョンが npm に公開 — 週間1億DLの HTTP クライアントが標的に",
+    "excerpt": "npm 週間1億ダウンロードを誇る HTTP クライアント **axios** のリードメンテナーアカウントが乗っ取られ、**axios@1.14.1** と **axios@0.30.4** にリモートアクセス型トロイの木馬（RAT）を仕込んだ偽バージョンが公開された。悪意のある依存パッケージ **plain-crypto-js** 経由で macOS・Windows・Linux 全プラットフォームに C2 サーバー `sfrclak[.]com:8000` と通信するペイロードがドロップされる。npm セキュリティチームが問題バージョンを削除済みだが、キャレット範囲（^1.14.0 等）で自動取得した環境は即座に確認・認証情報のローテーションが必要。",
+    "heroScope": "day",
+    "coverImage": {
+      "src": "articles/cover-axios-supply-chain-attack.svg",
+      "alt": "axios サプライチェーン攻撃の警告図 — 危険バージョンと安全バージョンの対比"
+    },
     "body": [
-      "2026年3月29日、開発者 **@hridoyreh**（Hridoy Rehman）が X に投稿した「SaaS Stack」のフォルダツリーが39万表示・6,300いいね・7,600ブックマークを超えるバズとなった。投稿はシンプルなテキストのツリー図で、Frontend から Customer Support まで18カテゴリ、各カテゴリに5つ前後の選択肢を並べただけ。それが「this is goated bro, I could really use this」「Outstanding! Love it」「Wow the was so lengthy — But, valuable...」と反響を呼んだ。同時に「Prisma がない」（@batubuilds）→ 投稿者「Opps, I need to add it too.」、「NextAuth は？ Better Auth は？」（@McSons1）→「Missed...」、「Cloudinary と Spaceship も」（@hanzaderehh）→「Noted too...」と、ツリーの「穴」を指摘するリプライが次々と付き、開発者同士のスタック議論に発展した。別の開発者 @rohiddev も「My Stack」として Next.js / Vite / Hono / Cloudflare / Better Auth / Clerk / Docker / GitHub Actions を挙げた自分版ツリーを投稿し、こちらも2,000表示を超えている。",
-      "このバズが刺さった理由は **Technology Decision Fatigue（技術選定疲れ）** という、2026年のすべての開発者が感じている痛点を一発で可視化したからだ。SaaS を1つリリースするまでに、Frontend のフレームワーク（React? Vue? Svelte?）、CSS（Tailwind? CSS Modules?）、UI ライブラリ（shadcn/ui? Radix? MUI?）、Backend のランタイム（Node.js? Python?）、フレームワーク（Express? Hono? FastAPI?）、DB（PostgreSQL? MongoDB?）、ORM（Prisma? Drizzle?）、認証（Clerk? Supabase Auth? Better Auth? NextAuth?）、決済（Stripe? Paddle?）、メール（Resend? SendGrid?）、ストレージ（S3? Cloudflare R2? Cloudinary?）、デプロイ（Vercel? Railway? Fly.io?）、DNS（Cloudflare? Namecheap? Spaceship?）、分析、監視、DevOps、検索、セキュリティ…と、少なくとも90以上の個別判断を下す必要がある。しかも各選択は独立ではない。Supabase を選べば Auth・Storage・DB・Realtime が統合されて判断が減るが、Clerk + PlanetScale + Cloudflare R2 を選べば各サービス間の接続をすべて自分で書くことになる。この「組み合わせ爆発」が、特に個人開発者やスタートアップの初期段階で深刻なボトルネックになっている。",
-      "Vibe Coding 時代の開発者はこの選定作業を AI に委ねたいと考える。実際に Claude Code や Cursor に「SaaS のボイラープレートを作って」と指示すると、AI は驚くほど一貫したスタックを選ぶ。筆者の検証では、Claude Code（Opus 4.6）に10回同じ指示を出した結果、8回が **Next.js 14+ App Router / TypeScript / Tailwind CSS / shadcn/ui** のフロントエンドを選択した。バックエンドは Next.js の API Routes または Route Handlers を同一リポジトリ内で使い、DB は **Supabase**（PostgreSQL + Auth + Storage 統合）、ORM は **Prisma** または **Drizzle**、決済は **Stripe**、デプロイは **Vercel** だった。Cursor でも傾向はほぼ同じで、指定がなければ Next.js + Tailwind に収束する。AI がこの構成を好む理由は4つある。(1) 学習データに最も多いスタックの組み合わせ（GitHub 上の Next.js + Tailwind + Prisma のリポジトリ数は圧倒的）、(2) モノレポで全コードが1箇所にあるため AI がコンテキストを把握しやすい、(3) shadcn/ui はコピー&ペースト型の UI コンポーネント設計で、AI がファイルに直接コードを書けて npm install の副作用が小さい、(4) Vercel + Supabase は設定ファイルが最小限で AI が迷う余地が少ない。",
-      "一方で **AI が明らかに苦手とする構成**も存在する。**マイクロサービス + Kubernetes + Terraform** は最たる例で、複数リポジトリにまたがるサービス間の API 契約、Helm チャートの値、Terraform の state 管理を AI が横断的に整合させるのは非常に難しい。**Laravel（PHP）や Django（Python）のサーバーサイドテンプレート**も AI の得意領域ではない。Blade テンプレートや Django テンプレートでは HTML とロジックが混在し、AI は React / Vue の宣言的コンポーネントモデルの方がはるかに高品質なコードを生成する。**自前認証の実装**は最も危険な領域で、セッション管理・CSRF 対策・パスワードハッシュ・OAuth フローの微妙なセキュリティ要件を AI が見落とすリスクが高い。Clerk / Supabase Auth / Better Auth / NextAuth（Auth.js）など実績のある外部サービス・ライブラリに任せるのが鉄則だ。**既存の複雑な DB スキーマに対するマイグレーション**も、AI がカラムの歴史的経緯や暗黙の制約を理解するのは困難で、人間のレビューが不可欠になる。",
-      "元のバズ投稿には含まれていなかったが、リプライで繰り返し指摘されたのが **ORM** カテゴリだ。@batubuilds の「Prisma がない」という指摘に投稿者自身が「追加しなきゃ」と即答したように、2026年の SaaS 開発で ORM の選択は避けて通れない。**Prisma** は型安全なクエリとスキーマ駆動のマイグレーションが強みで、AI が生成するコードとの相性が極めて良い（型情報から AI が正しいクエリを推論できる）。一方 **Drizzle ORM** は SQL に近い記法で軽量・高速、エッジランタイム（Cloudflare Workers 等）との互換性が高い。AI のコード生成品質は Prisma の方がやや上だが（学習データの量の差）、Drizzle はバンドルサイズが小さくエッジ環境で有利。認証カテゴリでも **Better Auth**（@McSons1 指摘）が急浮上しており、NextAuth（Auth.js）のフレームワーク非依存版として Hono / Express / SvelteKit でも使える柔軟性が評価されている。ストレージでは **Cloudinary**（@hanzaderehh 提案）が画像・動画の変換 API を内蔵しており、S3 + 変換パイプラインを自前構築する手間を省ける。",
-      "ではカテゴリ別に、AI コーディングツールとの相性を加味した2026年の実務的な選定指針をまとめる。**Frontend**: Next.js App Router + Tailwind CSS + shadcn/ui が AI との相性で頭一つ抜けている。Vue を使いたいなら Nuxt 3 が次点。React を選ぶ限り AI の恩恵は最大化される。**Backend**: Next.js の API Routes でフロントと同一リポにするのが最もシンプル。API が複雑化するなら **Hono**（@rohiddev のスタックでも採用）が軽量・高速で Cloudflare Workers との相性が良い。Python なら FastAPI 一択。**DB + ORM**: Supabase（PostgreSQL）+ Prisma が安定択。エッジ重視なら Drizzle + Neon（サーバーレス Postgres）。**認証**: 個人開発なら Supabase Auth（無料枠が大きい）、チーム開発なら Clerk（管理 UI・Webhook・組織機能が充実）、フレームワーク非依存なら Better Auth。自前実装は絶対に避ける。**決済**: Stripe が AI のコード生成品質で圧倒的（Webhook ハンドラ、顧客ポータル、サブスク管理のコード例が豊富）。EU の税務を自動処理したいなら Paddle が代替。**メール**: Resend + React Email の組み合わせは JSX でメールテンプレートを構築でき、AI が書きやすい。トランザクションメール量が多いなら Amazon SES がコスト面で有利。**デプロイ**: Next.js なら Vercel（最適化済み）、Docker が必要なら Railway、エッジ最優先なら Cloudflare Pages + Workers。**ストレージ**: Supabase Storage か Cloudflare R2（S3 互換・エグレス無料）。画像変換が必要なら Cloudinary。",
-      "AI 時代のスタック選定で最も重要な原則は「**AI に説明しやすい構成**」を選ぶことだ。具体的には、(1) **モノレポ**で全コードを1箇所に置く（AI がプロジェクト全体のコンテキストを把握できる）、(2) **TypeScript を全面採用**する（型情報が AI の推論精度を直接向上させる）、(3) **統合型サービス**（Supabase、Vercel）でボイラープレートを最小化する、(4) **CLAUDE.md / AGENTS.md / .cursorrules** にスタック構成・コーディング規約・ディレクトリ構造を明記する。最後の点が最も見落とされがちだが効果は大きい。「ORM は Drizzle を使う」「認証は Supabase Auth を使う」「テストは Vitest で書く」と明示するだけで、AI が毎回異なるライブラリを提案してくる問題を防げる。@hridoyreh のツリーが90以上の選択肢を並べたことで可視化された複雑さは現実だが、AI に得意な構成を選んで設定ファイルで制約を伝えれば、1人でもプロダクションレベルの SaaS を構築できる。選定に正解はないが、「AI が生産性を発揮できるか」は2026年において無視できない選定軸になっている。",
-      "注意: 本稿で挙げたツール・サービスは執筆時点（2026年3月）の情報に基づく。料金体系・無料枠・機能は頻繁に変更されるため、導入前に各サービスの公式サイトで最新情報を確認すること。また、AI が生成した認証・決済・セキュリティ関連のコードは必ず人間がレビューすること。特に Stripe の Webhook 署名検証や Supabase の RLS ポリシーは、AI の生成コードにバグがあると本番で金銭的・セキュリティ上の被害に直結する。"
+      "2026年3月31日、セキュリティ企業 **Socket** と **StepSecurity** がほぼ同時に、npm で最も広く使われている HTTP クライアントライブラリ **axios** の2つのバージョンにマルウェアが混入していることを検知・公表した。対象は **axios@1.14.1**（v1系最新）と **axios@0.30.4**（レガシー v0.x 系）。axios は npm で**週間3億ダウンロード以上**（一部統計では1億超）を記録しており、React・Vue・Node.js のあらゆるプロジェクトで事実上のスタンダードとなっている HTTP クライアントだ。影響範囲の広さから、X では17万表示を超えるポストが拡散され、日本の開発者コミュニティでも「npm install を今すぐ止めてください」という緊急警告が飛び交った。Open Source Malware コミュニティからは「**史上最も成功したソフトウェアサプライチェーン攻撃の一つとして歴史に残る**」との評価も出ている。",
+      "**攻撃の手口**はサプライチェーン攻撃の典型例かつ極めて精巧だ。攻撃者はまず axios のリードメンテナー **jasonsaayman** の npm アカウントに紐づく**長期有効なクラシック npm アクセストークン**を窃取した。アカウントのメールアドレスは攻撃者が管理する **ifstap@proton.me**（ProtonMail）に変更されており、パスワードリセットによるアカウント奪取が行われたとみられる。通常の axios リリースは **GitHub Actions + npm OIDC Trusted Publisher** による CI/CD パイプラインを経由し、**SLSA provenance attestation**（来歴証明）付きで npm に公開される。しかし今回の偽バージョンは CI を完全にバイパスし、npm CLI から直接 publish された。そのため GitHub リポジトリ上には対応するタグ・コミット・リリースが一切存在せず、来歴証明も**完全に欠落**している。axios のコラボレーター **DigitalBrainJS** は GitHub Issue #10604 で、jasonsaayman の権限が自身より上位のため git と npm 両方のアクセスを自力で取り消せない状況だったと報告している。さらに攻撃者が GitHub Issue を削除していた形跡も確認された。",
+      "偽バージョンには **plain-crypto-js@4.2.1** という新たな依存パッケージが追加されていた。このパッケージ名は正規の暗号ライブラリ **crypto-js** を模倣しており、説明・著者名・リポジトリ URL まで本家を偽装する念入りな工作が施されていた。plain-crypto-js は axios のソースコード内で一度も import されておらず、唯一の目的は npm の **postinstall スクリプト（setup.js）** を実行すること。setup.js は `fs`・`os`・`execSync` を動的にロードするランタイムデオブフスケーション（実行時難読化解除）技術を使い、静的解析ツールからの検出を困難にしている。このドロッパーが C2 サーバー **sfrclak[.]com:8000**（IP: **142.11.206.73**）に接続し、OS を判別したうえでプラットフォーム固有のペイロードをダウンロード・実行する。",
+      "**プラットフォーム別のペイロード**は以下の通り。**macOS** では `/Library/Caches/com.apple.act.mond` にバイナリが保存される。ファイル名は Apple の正規システムプロセスを模倣しており、ad-hoc コード署名まで施されている。**Windows** では `%PROGRAMDATA%\\wt.exe` として PowerShell をコピーし、隠し VBScript 経由で PowerShell スクリプトを実行する。**Linux** では `/tmp/ld.py` として Python スクリプトがダウンロードされる。いずれのプラットフォームでも、RAT 本体は **16文字のユニークな被害者 ID** を生成し、ホスト名・ユーザー名・OS・タイムゾーン・CPU・インストール日・起動時間・実行中プロセス・ディレクトリ一覧を収集。**60秒ごとに HTTP POST で C2 にビーコンを送信**する（Base64 エンコード、User-Agent は Internet Explorer 8 on Windows XP に偽装）。C2 からは **peinject** コマンド（追加バイナリの受信・署名・実行）や **runscript** コマンド（シェルコマンドまたは AppleScript の実行）を受け取り、遠隔操作される。",
+      "**アンチフォレンジック機能**も高度だ。ペイロード実行後、setup.js は自身を削除し、悪意のある package.json をクリーンなスタブに置換する。`node_modules/plain-crypto-js` フォルダは残るが、中身は無害に見える状態になる。一時ファイル `$TMPDIR/6202033` も使用される。この自己消去設計により、事後調査で「npm install は通ったがマルウェアの痕跡がない」という状況が生まれ、被害の把握を困難にしている。",
+      "**タイムライン**を整理する。3月30日 05:57 UTC — 攻撃者アカウント nrwise（nrwise@proton.me）から clean な plain-crypto-js@4.2.0 が公開（先に無害なバージョンを出して信頼性を偽装する手法）。同日 23:59:12 UTC — マルウェア入りの plain-crypto-js@4.2.1 が公開。3月31日 00:05:41 UTC — **Socket の自動マルウェア検知が公開からわずか6分で検出**。00:21 UTC — 乗っ取った jasonsaayman アカウントから axios@1.14.1 が npm に publish。01:00 UTC — レガシー系の axios@0.30.4 も同様に publish（v1.x と v0.x の両ブランチを**39分以内**に攻撃）。03:00 UTC — StepSecurity の ashishkurmi が GitHub Issue #10604 を投稿。03:20 UTC — DigitalBrainJS が npm トークン全取り消しを要請。その後 npm セキュリティチームが迅速に対応し、問題のバージョンを npm レジストリから削除、セキュリティホルダースタブに置換した。また Socket は同一マルウェアを配布する追加パッケージ **@shadanai/openclaw** と **@qqbrowser/openclaw-qbot@0.0.130** も特定している。",
+      "**影響を受ける環境**は、package.json で `\"axios\": \"^1.14.0\"` や `\"axios\": \"^0.30.0\"` のようにキャレット範囲（^）を指定しているすべてのプロジェクトだ。npm のセマンティックバージョニングにより、`npm install` を実行すると自動的に最新のパッチバージョンが取得される。つまり、**package-lock.json を持たないプロジェクト**や、**CI/CD で毎回 `npm install` を実行する環境**は、攻撃者のバージョンを自動的にインストールした可能性がある。lockfile があっても、3月31日以降に `npm install` で依存を更新した場合はリスクがある。逆に、lockfile ベースのインストール（`npm ci` / `yarn install --frozen-lockfile` / `pnpm install --frozen-lockfile`）を使っている環境は安全だ。正規版には SLSA provenance attestation が付与されているが、悪意あるバージョンにはこの署名が欠落しており、これも検知シグナルの一つになる。",
+      "**即座に実施すべき対応**は以下の通り。(1) `npm ls axios` でプロジェクト内の axios バージョンを確認。**1.14.1** または **0.30.4** がインストールされている場合は直ちにアンインストール。(2) **安全なバージョン**は **1.14.0**（v1系）と **0.30.3**（v0.x系）。`npm install axios@1.14.0` で固定するか、package-lock.json で安全なバージョンがロックされていることを確認。(3) 感染が疑われる環境では **API キー・トークン・認証情報をすべてローテーション**する。RAT が環境変数やファイルシステムから認証情報を窃取した可能性が高い。(4) CI/CD 環境のビルドログを確認し、postinstall スクリプトの実行痕跡がないかチェック。(5) ネットワークログで `sfrclak[.]com` / `142.11.206.73` への通信がないか確認する。",
+      "**【確認用コマンド集】** 以下をターミナルにコピー&ペーストして実行すれば、お使いの環境が影響を受けているか即座に確認できる。",
+      "```bash\n# ① axios のバージョン確認（プロジェクトごとに実行）\nnpm ls axios\n# → 1.14.1 または 0.30.4 が出たら危険\n```",
+      "```bash\n# ② 安全なバージョンに固定（危険バージョンが見つかった場合）\nnpm install axios@1.14.0\n# v0.x 系を使っている場合は:\nnpm install axios@0.30.3\n```",
+      "```bash\n# ③ plain-crypto-js が入っていないか確認\nnpm ls plain-crypto-js\n# 何か出たら感染済み → 即座に node_modules を削除して npm ci で再インストール\n```",
+      "```bash\n# ④ 感染痕跡の確認（macOS）\nls -la /Library/Caches/com.apple.act.mond 2>/dev/null && echo '⚠ 感染の可能性あり' || echo '✓ 痕跡なし'\n```",
+      "```bash\n# ④ 感染痕跡の確認（Windows PowerShell）\nif (Test-Path \"$env:PROGRAMDATA\\wt.exe\") { Write-Host '⚠ 感染の可能性あり' } else { Write-Host '✓ 痕跡なし' }\n```",
+      "```bash\n# ④ 感染痕跡の確認（Linux）\nls -la /tmp/ld.py 2>/dev/null && echo '⚠ 感染の可能性あり' || echo '✓ 痕跡なし'\n```",
+      "```bash\n# ⑤ lockfile ベースの安全なインストール方法（今後の防御策）\nnpm ci                              # npm の場合\nyarn install --frozen-lockfile       # Yarn の場合\npnpm install --frozen-lockfile       # pnpm の場合\n```",
+      "今回の事件は、npm エコシステムにおける**サプライチェーン攻撃のリスク**を改めて浮き彫りにした。近年だけでも、2025年9月の **qix 侵害**（chalk・debug 等18パッケージ、週間26億DL）、2025年9月と11月の **Shai-Hulud ワーム**（500以上のパッケージに自己複製）、2024年の **xz-utils バックドア** と、オープンソースの主要パッケージが攻撃対象となる事件が加速度的に増えている。CISA（米サイバーセキュリティ庁）も2025年9月に npm エコシステムへの警告を発出済みだ。今回の攻撃が浮き彫りにした構造的問題は、(1) npm のパブリッシュ権限が**個人アカウントに紐づき、検証済み CI パイプラインに紐づいていない**こと、(2) メンテナーアカウントが**単一障害点（SPOF）**であること、(3) **メール変更に追加認証がない**こと、(4) **手動 CLI パブリッシュが CI/CD を迂回できる**ことだ。防御策としては、**lockfile の厳密管理と `npm ci` の使用**、**npm audit の定期実行**、**Socket / Snyk / Aikido などのサプライチェーンセキュリティツールの導入**、**provenance attestation の検証**、メンテナーアカウントへの **FIDO 2FA の強制**、そして **npm publish の Automation Token 限定**を徹底すべきだ。npm が計画中の必須 FIDO 2FA・トークンデフォルト無効化・Trusted Publishing 強制などのセキュリティ改善は、まだ開発段階にある。",
+      "注意: 本記事は2026年3月31日時点の情報に基づく。CVE は未割り当て（脆弱性報告は提出済み）。状況は急速に変化する可能性がある。最新情報は axios の GitHub リポジトリ（Issue #10604）、npm のセキュリティアドバイザリ、および Socket・StepSecurity の分析記事を確認すること。感染が疑われる場合は、すべての秘密鍵・API キー・認証トークンのローテーションを最優先で実施すること。"
     ],
-    "date": "2026-03-30",
+    "newsDate": "2026-03-31",
+    "date": "2026-03-31",
     "author": "AI News 編集部",
-    "readTime": "15分",
-    "tags": ["SaaS", "技術選定", "Next.js", "Supabase", "Stripe", "Prisma", "AI開発", "スタック", "Vibe Coding"],
+    "readTime": "12分",
+    "tags": ["セキュリティ", "npm", "サプライチェーン攻撃", "axios", "マルウェア", "RAT", "Node.js"],
     "tables": [
       {
-        "title": "SaaS スタック 18カテゴリ — AI との相性評価",
-        "headers": ["カテゴリ", "AI 推奨構成（2026年）", "AI 相性", "選定のポイント"],
+        "title": "攻撃タイムライン",
+        "headers": ["時刻 (UTC)", "イベント"],
         "rows": [
-          ["Frontend", "Next.js + Tailwind + shadcn/ui", "◎", "AI のコード生成品質が最も高い組み合わせ。Vue なら Nuxt 3"],
-          ["Backend", "Next.js API Routes / Hono", "◎", "フロントと同一リポで AI がコンテキスト把握しやすい。Python なら FastAPI"],
-          ["Database", "Supabase (PostgreSQL + pgvector)", "◎", "Auth・Storage 統合で接続コード最小。エッジなら Neon"],
-          ["ORM", "Prisma / Drizzle", "◎", "Prisma は型安全で AI 推論精度高。Drizzle はエッジ向き軽量"],
-          ["Auth", "Clerk / Supabase Auth / Better Auth", "◎", "自前実装は AI に任せない。フレームワーク非依存なら Better Auth"],
-          ["Payments", "Stripe", "◎", "学習データ量が圧倒的。Webhook 処理も AI が書ける。EU 税務なら Paddle"],
-          ["Emails", "Resend + React Email", "○", "JSX でメール構築。大量送信なら Amazon SES がコスト有利"],
-          ["Storage", "Supabase Storage / Cloudflare R2", "○", "S3 互換 API。画像変換が必要なら Cloudinary"],
-          ["Deployment", "Vercel / Railway", "◎", "Next.js なら Vercel 最適。Docker なら Railway。エッジなら Cloudflare"],
-          ["DNS", "Cloudflare", "○", "無料 CDN + DNS + WAF のオールインワン"],
-          ["Analytics", "PostHog / Plausible", "○", "プライバシー重視。PostHog は機能分析・セッションリプレイも"],
-          ["Monitoring", "Sentry + UptimeRobot", "○", "Sentry SDK は AI が自動設定可能"],
-          ["DevOps", "GitHub Actions + Docker", "△", "CI/CD 設定は AI が書けるが検証が必要"],
-          ["Search", "Meilisearch / Typesense", "○", "セルフホスト可。Algolia は高機能だが高額"],
-          ["AI Integration", "Anthropic API / OpenAI API", "◎", "SDK が充実。MCP でツール連携。Vercel AI SDK で抽象化"],
-          ["Integrations", "n8n / Webhooks", "△", "ノーコード部分は AI の管轄外。Webhook 受信側は AI が書ける"],
-          ["Security", "Cloudflare WAF + Rate Limiting", "△", "設定は AI が書けるがレビュー必須。RLS ポリシーは要注意"],
-          ["Marketing", "Search Console + PostHog", "○", "SEO メタタグ・OG 画像は AI が自動生成可能"],
-          ["Support", "Crisp / Intercom", "△", "ウィジェット埋め込みは AI 可、運用設計は人間"]
+          ["3/30 05:57", "clean な plain-crypto-js@4.2.0 公開（信頼性偽装のデコイ）"],
+          ["3/30 23:59", "マルウェア入り plain-crypto-js@4.2.1 公開"],
+          ["3/31 00:05", "Socket 自動検知がフラグ（公開から6分）"],
+          ["3/31 00:21", "axios@1.14.1 を侵害アカウントから publish"],
+          ["3/31 01:00", "axios@0.30.4 を同アカウントから publish"],
+          ["3/31 03:00", "GitHub Issue #10604 投稿"],
+          ["3/31 03:20", "npm トークン全取り消し要請"],
+          ["その後", "npm セキュリティチームが問題バージョンを削除"]
+        ]
+      },
+      {
+        "title": "プラットフォーム別ペイロードと感染痕跡（IoC）",
+        "headers": ["OS", "ペイロード保存先", "手法"],
+        "rows": [
+          ["macOS", "/Library/Caches/com.apple.act.mond", "Apple 正規プロセスに偽装した RAT バイナリ。ad-hoc コード署名付き"],
+          ["Windows", "%PROGRAMDATA%\\wt.exe", "PowerShell をコピーし、隠し VBScript 経由で実行"],
+          ["Linux", "/tmp/ld.py", "Python スクリプトをダウンロード"],
+          ["全 OS 共通", "$TMPDIR/6202033", "一時ファイル（実行後自己消去）"],
+          ["C2 サーバー", "sfrclak[.]com:8000 / 142.11.206.73", "60秒ごとに HTTP POST でビーコン送信"]
         ]
       }
     ],
     "primarySources": [
-      { "title": "@hridoyreh SaaS Stack ツリー（39万表示）", "site": "X", "url": "https://x.com/hridoyreh" },
-      { "title": "7 AI Tools That Changed Developer Workflow (March 2026)", "site": "Build Fast with AI", "url": "https://www.buildfastwithai.com/blogs/ai-tools-developers-march-2026" },
-      { "title": "AI dev tool power rankings & comparison [March 2026]", "site": "LogRocket Blog", "url": "https://blog.logrocket.com/ai-dev-tool-power-rankings/" }
+      { "title": "axios@1.14.1 and axios@0.30.4 are compromised (Issue #10604)", "site": "GitHub", "url": "https://github.com/axios/axios/issues/10604" },
+      { "title": "Supply Chain Attack on Axios Pulls Malicious Dependency", "site": "Socket", "url": "https://socket.dev/blog/axios-npm-package-compromised" },
+      { "title": "Axios Supply Chain Attack Pushes Cross-Platform RAT via Compromised npm Account", "site": "The Hacker News", "url": "https://thehackernews.com/2026/03/axios-supply-chain-attack-pushes-cross.html" },
+      { "title": "axios Compromised on npm — Malicious Versions Drop Remote Access Trojan", "site": "StepSecurity", "url": "https://www.stepsecurity.io/blog/axios-compromised-on-npm-malicious-versions-drop-remote-access-trojan" },
+      { "title": "axios compromised on npm: maintainer account hijacked, RAT deployed", "site": "Aikido", "url": "https://www.aikido.dev/blog/axios-npm-compromised-maintainer-hijacked-rat" },
+      { "title": "【緊急】axios がサプライチェーン攻撃 2026.03.31", "site": "Zenn", "url": "https://zenn.dev/gunta/articles/0152eadf05d173" },
+      { "title": "Axios Compromised With A Malicious Dependency", "site": "OX Security", "url": "https://www.ox.security/blog/axios-compromised-with-a-malicious-dependency/" },
+      { "title": "axios npm Supply Chain Compromise", "site": "SafeDep", "url": "https://safedep.io/axios-npm-supply-chain-compromise/" }
     ]
   }
 ];
