@@ -297,6 +297,13 @@ body {
   outline-offset: 2px;
 }
 
+.lang-toggle-btn {
+  font-size: 12px !important;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
 /* ── ハンバーガーメニュー ── */
 .hamburger-btn {
   display: inline-flex;
