@@ -8,6 +8,22 @@
   <updated>2026-03-31T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>【速報】Claude Code の全ソースコード（51万行）が npm のソースマップ経由で流出 — 未公開機能・アーキテクチャが丸見えに</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-source-leak-npm-sourcemap-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-source-leak-npm-sourcemap-2026</id>
+    <published>2026-03-31T15:00:00Z</published>
+    <updated>2026-03-31T15:00:00Z</updated>
+    <summary>Anthropic の AI コーディングツール Claude Code の完全なソースコード（1,900ファイル・512,000行超の TypeScript）が、npm パッケージに同梱されたソースマップ（cli.js.map、57MB）を通じて流出した。ハッキングではなく Anthropic 自身のパッケージングミス。未公開機能フラグ（BUDDY、KAIROS、ULTRAPLAN 等）やシステムプロンプト全文、ツール呼び出しロジック、マルチエージェント協調設計が完全に公開された。GitHub ミラーは即座に1,100+スター・1,900+フォークを獲得し、DMCA テイクダウンが進行中。3月26日の Mythos モデルリークに続く2週連続のセキュリティ事故。</summary>
+  </entry>
+  <entry>
+    <title>【緊急】axios がサプライチェーン攻撃を受け RAT 入り偽バージョンが npm に公開 — 週間1億DLの HTTP クライアントが標的に</title>
+    <link rel="alternate" type="text/html" href="?a=axios-npm-supply-chain-attack-rat-2026"/>
+    <id>tag:ai-tool-news.jp,2026:axios-npm-supply-chain-attack-rat-2026</id>
+    <published>2026-03-31T15:00:00Z</published>
+    <updated>2026-03-31T15:00:00Z</updated>
+    <summary>npm 週間1億ダウンロードを誇る HTTP クライアント axios のリードメンテナーアカウントが乗っ取られ、axios@1.14.1 と axios@0.30.4 にリモートアクセス型トロイの木馬（RAT）を仕込んだ偽バージョンが公開された。悪意のある依存パッケージ plain-crypto-js 経由で macOS・Windows・Linux 全プラットフォームに C2 サーバー `sfrclak[.]com:8000` と通信するペイロードがドロップされる。npm セキュリティチームが問題バージョンを削除済みだが、キャレット範囲（^1.14.0 等）で自動取得した環境は即座に確認・認証情報のローテーションが必要。</summary>
+  </entry>
+  <entry>
     <title>【緊急】axios がサプライチェーン攻撃を受け RAT 入り偽バージョンが npm に公開 — 週間1億DLの HTTP クライアントが標的に</title>
     <link rel="alternate" type="text/html" href="?a=axios-npm-supply-chain-attack-rat-2026"/>
     <id>tag:ai-tool-news.jp,2026:axios-npm-supply-chain-attack-rat-2026</id>
@@ -30,14 +46,6 @@
     <published>2026-03-30T15:00:00Z</published>
     <updated>2026-03-30T15:00:00Z</updated>
     <summary>Microsoft が M365 Copilot の Researcher エージェントにマルチモデル機能を追加。Critique は GPT-5.4 が調査・起草、Claude Opus 4.6 が事実確認・引用精査を行う2モデル連携で、DRACO ベンチで業界最高スコアを達成。Council は複数モデルの並列回答と合意・相違点を可視化する。</summary>
-  </entry>
-  <entry>
-    <title>AI コーディング時代の SaaS スタック選定 — 18カテゴリ90+ツールの選び方と、AI が得意な構成・苦手な構成</title>
-    <link rel="alternate" type="text/html" href="?a=saas-stack-selection-ai-coding-era-2026"/>
-    <id>tag:ai-tool-news.jp,2026:saas-stack-selection-ai-coding-era-2026</id>
-    <published>2026-03-30T15:00:00Z</published>
-    <updated>2026-03-30T15:00:00Z</updated>
-    <summary>X で「SaaS Stack」ツリーが39万表示超のバズ。SaaS 1つに Frontend・Backend・DB・認証・決済・メール・デプロイなど18カテゴリの選定が必要という現実を可視化した。Claude Code や Cursor に「SaaS 作って」と言ったとき、AI はどの構成を選ぶのか。AI が得意なスタックと苦手なスタックを整理する。</summary>
   </entry>
   <entry>
     <title>開発者のための画像生成API入門 — GPT Image・Flux・Midjourney・Recraft を比較して選ぶ</title>
