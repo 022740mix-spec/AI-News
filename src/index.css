@@ -346,16 +346,50 @@ body {
   padding: 1rem 1.25rem;
   border-bottom: 1px solid var(--border);
 }
-.hamburger-search {
+.hamburger-search-field {
+  position: relative;
+  margin: 0.5rem 1rem 0.25rem;
+}
+.hamburger-search-prefix {
+  position: absolute;
+  left: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  pointer-events: none;
+}
+.hamburger-search-input {
+  width: 100%;
+  padding: 0.6rem 2.2rem 0.6rem 2.2rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--card-solid);
+  color: var(--text);
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color var(--transition);
+  box-sizing: border-box;
+}
+.hamburger-search-input:focus {
+  border-color: var(--accent);
+}
+.hamburger-search-input::placeholder {
+  color: var(--muted);
+}
+.hamburger-search-clear {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
   background: none;
   border: none;
-  font-size: var(--text-lg);
-  cursor: pointer;
   color: var(--muted);
-  padding: 0.25rem;
-  transition: color var(--transition);
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.3rem;
+  line-height: 1;
 }
-.hamburger-search:hover {
+.hamburger-search-clear:hover {
   color: var(--text);
 }
 .hamburger-close {
