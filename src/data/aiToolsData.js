@@ -5734,6 +5734,10 @@ export const ARTICLES = [
     "title": "【速報】Claude Code の全ソースコード（51万行）が npm のソースマップ経由で流出 — 未公開機能・アーキテクチャが丸見えに",
     "excerpt": "Anthropic の AI コーディングツール **Claude Code** の完全なソースコード（1,900ファイル・512,000行超の TypeScript）が、npm パッケージに同梱されたソースマップ（cli.js.map、57MB）を通じて流出した。ハッキングではなく Anthropic 自身のパッケージングミス。未公開機能フラグ（BUDDY、KAIROS、ULTRAPLAN 等）やシステムプロンプト全文、ツール呼び出しロジック、マルチエージェント協調設計が完全に公開された。GitHub ミラーは即座に1,100+スター・1,900+フォークを獲得し、DMCA テイクダウンが進行中。3月26日の Mythos モデルリークに続く2週連続のセキュリティ事故。",
     "heroScope": "day",
+    "coverImage": {
+      "src": "articles/cover-claude-code-source-leak.svg",
+      "alt": "Claude Code ソースコード流出 — npm ソースマップ経由で51万行の TypeScript が公開"
+    },
     "body": [
       "2026年3月31日、セキュリティ研究者の **Chaofan Shou**（@Fried_rice）が X に衝撃的な投稿を行った。Anthropic の AI コーディングツール **Claude Code** の**完全なソースコード**が、npm レジストリに公開されたパッケージ内のソースマップファイルを通じて誰でもダウンロードできる状態にあることを発見したのだ。ハッキングやゼロデイ攻撃ではない。**Anthropic 自身が npm publish 時にソースマップを除外し忘れた**、典型的なビルドパイプラインの設定ミスだ。",
       "**流出の仕組み**はシンプルだ。Claude Code の npm パッケージに含まれる `cli.js.map`（57MB）はソースマップファイルであり、本質的に JSON 形式で2つのキー配列を持つ。`sources`（ファイルパス）と `sourcesContent`（対応する完全なソースコード）だ。両者のインデックスは一対一で対応しており、逆コンパイルも難読化解除も不要。`sourcesContent` の中には**一字一句そのままのオリジナルコード**が保存されている。さらに、ソースマップ内には Anthropic の R2 ストレージバケットに置かれた `src.zip` への参照も含まれており、完全なソースツリーを ZIP でダウンロードすることも可能だった。",
@@ -5786,7 +5790,7 @@ export const ARTICLES = [
       { "title": "Claude Code's source code has been leaked via a map file in their NPM registry", "site": "Hacker News", "url": "https://news.ycombinator.com/item?id=47584540" },
       { "title": "Claude Code's Entire Source Code Was Just Leaked via npm Source Maps — Here's What's Inside", "site": "DEV Community", "url": "https://dev.to/gabrielanhaia/claude-codes-entire-source-code-was-just-leaked-via-npm-source-maps-heres-whats-inside-cjo" },
       { "title": "Claude Code — Leaked Source (2026-03-31)", "site": "GitHub", "url": "https://github.com/instructkr/claude-code" },
-      { "title": "@chenchengpro — 技術分析（中国語）", "site": "X", "url": "https://x.com/chenchengpro" },
+      { "title": "Digging into the Claude Code source — Dave Schumaker", "site": "Blog", "url": "https://daveschumaker.net/digging-into-the-claude-code-source-saved-by-sublime-text/" },
       { "title": "Anthropic's madcap March: 14+ launches, 5 outages, and an accidental Claude Mythos leak", "site": "The New Stack", "url": "https://thenewstack.io/anthropic-march-2026-roundup/" },
       { "title": "Dark Web Intelligence — リーク速報", "site": "X", "url": "https://x.com/DailyDarkWeb/status/2038917695609917448" }
     ]

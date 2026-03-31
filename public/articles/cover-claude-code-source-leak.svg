@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0014"/>
+      <stop offset="50%" stop-color="#0a0a1a"/>
+      <stop offset="100%" stop-color="#001a0a"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- Grid pattern -->
+  <g opacity="0.06" stroke="#8b5cf6" stroke-width="0.5">
+    <line x1="0" y1="0" x2="0" y2="675"/><line x1="60" y1="0" x2="60" y2="675"/>
+    <line x1="120" y1="0" x2="120" y2="675"/><line x1="180" y1="0" x2="180" y2="675"/>
+    <line x1="240" y1="0" x2="240" y2="675"/><line x1="300" y1="0" x2="300" y2="675"/>
+    <line x1="360" y1="0" x2="360" y2="675"/><line x1="420" y1="0" x2="420" y2="675"/>
+    <line x1="480" y1="0" x2="480" y2="675"/><line x1="540" y1="0" x2="540" y2="675"/>
+    <line x1="600" y1="0" x2="600" y2="675"/><line x1="660" y1="0" x2="660" y2="675"/>
+    <line x1="720" y1="0" x2="720" y2="675"/><line x1="780" y1="0" x2="780" y2="675"/>
+    <line x1="840" y1="0" x2="840" y2="675"/><line x1="900" y1="0" x2="900" y2="675"/>
+    <line x1="960" y1="0" x2="960" y2="675"/><line x1="1020" y1="0" x2="1020" y2="675"/>
+    <line x1="1080" y1="0" x2="1080" y2="675"/><line x1="1140" y1="0" x2="1140" y2="675"/>
+    <line x1="0" y1="60" x2="1200" y2="60"/><line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/><line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/><line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/><line x1="0" y1="480" x2="1200" y2="480"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/><line x1="0" y1="600" x2="1200" y2="600"/>
+  </g>
+
+  <!-- Source map file icon (large) -->
+  <g transform="translate(120, 120)">
+    <!-- File shape -->
+    <path d="M0,0 L140,0 L180,40 L180,220 L0,220 Z" fill="#1a1a2e" stroke="#8b5cf6" stroke-width="2" opacity="0.8"/>
+    <path d="M140,0 L140,40 L180,40" fill="none" stroke="#8b5cf6" stroke-width="2" opacity="0.8"/>
+    <!-- .map label -->
+    <text x="90" y="30" text-anchor="middle" fill="#8b5cf6" font-family="monospace" font-size="18" font-weight="bold">.map</text>
+    <!-- JSON content lines -->
+    <text x="15" y="65" fill="#06b6d4" font-family="monospace" font-size="11" opacity="0.7">{</text>
+    <text x="25" y="82" fill="#a78bfa" font-family="monospace" font-size="10" opacity="0.6">"sources": [...]</text>
+    <text x="25" y="99" fill="#ef4444" font-family="monospace" font-size="10" opacity="0.8">"sourcesContent":</text>
+    <text x="35" y="116" fill="#ef4444" font-family="monospace" font-size="10" opacity="0.8">[FULL SOURCE]</text>
+    <text x="15" y="140" fill="#06b6d4" font-family="monospace" font-size="11" opacity="0.7">}</text>
+    <!-- 57MB badge -->
+    <rect x="110" y="170" width="60" height="24" rx="4" fill="#ef4444" opacity="0.9"/>
+    <text x="140" y="186" text-anchor="middle" fill="white" font-family="monospace" font-size="12" font-weight="bold">57MB</text>
+  </g>
+
+  <!-- Arrow from .map to source tree -->
+  <g>
+    <line x1="320" y1="240" x2="420" y2="240" stroke="url(#red)" stroke-width="3" stroke-dasharray="8,4"/>
+    <polygon points="420,232 440,240 420,248" fill="#ef4444"/>
+  </g>
+
+  <!-- Source tree (exposed) -->
+  <g transform="translate(460, 80)">
+    <rect x="0" y="0" width="300" height="320" rx="8" fill="#0f0f1a" stroke="#ef4444" stroke-width="2" opacity="0.9"/>
+    <!-- Header -->
+    <rect x="0" y="0" width="300" height="36" rx="8" fill="#1a0000" opacity="0.8"/>
+    <text x="15" y="24" fill="#ef4444" font-family="monospace" font-size="13" font-weight="bold">src/ (1,906 files exposed)</text>
+
+    <!-- File tree -->
+    <text x="15" y="60" fill="#a78bfa" font-family="monospace" font-size="11">entrypoints/</text>
+    <text x="15" y="78" fill="#a78bfa" font-family="monospace" font-size="11">cli/</text>
+    <text x="15" y="96" fill="#a78bfa" font-family="monospace" font-size="11">commands/</text>
+    <text x="15" y="114" fill="#06b6d4" font-family="monospace" font-size="11">QueryEngine.ts</text>
+    <text x="200" y="114" fill="#4ade80" font-family="monospace" font-size="9">46K</text>
+    <text x="15" y="132" fill="#a78bfa" font-family="monospace" font-size="11">components/</text>
+    <text x="15" y="150" fill="#a78bfa" font-family="monospace" font-size="11">hooks/</text>
+    <text x="200" y="150" fill="#4ade80" font-family="monospace" font-size="9">87 files</text>
+    <text x="15" y="168" fill="#a78bfa" font-family="monospace" font-size="11">tools/</text>
+    <text x="200" y="168" fill="#4ade80" font-family="monospace" font-size="9">45 files</text>
+    <text x="15" y="186" fill="#06b6d4" font-family="monospace" font-size="11">Tool.ts</text>
+    <text x="200" y="186" fill="#4ade80" font-family="monospace" font-size="9">29K</text>
+    <text x="15" y="204" fill="#f59e0b" font-family="monospace" font-size="11">buddy/</text>
+    <text x="200" y="204" fill="#f59e0b" font-family="monospace" font-size="9">UNRELEASED</text>
+    <text x="15" y="222" fill="#f59e0b" font-family="monospace" font-size="11">voice/</text>
+    <text x="200" y="222" fill="#f59e0b" font-family="monospace" font-size="9">UNRELEASED</text>
+    <text x="15" y="240" fill="#f59e0b" font-family="monospace" font-size="11">coordinator/</text>
+    <text x="200" y="240" fill="#f59e0b" font-family="monospace" font-size="9">UNRELEASED</text>
+    <text x="15" y="258" fill="#a78bfa" font-family="monospace" font-size="11">services/</text>
+    <text x="15" y="276" fill="#a78bfa" font-family="monospace" font-size="11">state/</text>
+    <text x="15" y="294" fill="#6b7280" font-family="monospace" font-size="11">... 1,870 more files</text>
+  </g>
+
+  <!-- Stats panel -->
+  <g transform="translate(820, 100)">
+    <rect x="0" y="0" width="280" height="200" rx="8" fill="#0f0f1a" stroke="#8b5cf6" stroke-width="1.5" opacity="0.9"/>
+    <text x="140" y="30" text-anchor="middle" fill="#8b5cf6" font-family="monospace" font-size="14" font-weight="bold">LEAK STATS</text>
+    <line x1="20" y1="40" x2="260" y2="40" stroke="#8b5cf6" opacity="0.3"/>
+    <text x="20" y="65" fill="#94a3b8" font-family="monospace" font-size="12">Files:</text>
+    <text x="260" y="65" text-anchor="end" fill="#ef4444" font-family="monospace" font-size="14" font-weight="bold">4,756</text>
+    <text x="20" y="90" fill="#94a3b8" font-family="monospace" font-size="12">TS/TSX source:</text>
+    <text x="260" y="90" text-anchor="end" fill="#ef4444" font-family="monospace" font-size="14" font-weight="bold">1,906</text>
+    <text x="20" y="115" fill="#94a3b8" font-family="monospace" font-size="12">Lines of code:</text>
+    <text x="260" y="115" text-anchor="end" fill="#ef4444" font-family="monospace" font-size="14" font-weight="bold">512,000+</text>
+    <text x="20" y="140" fill="#94a3b8" font-family="monospace" font-size="12">GitHub stars:</text>
+    <text x="260" y="140" text-anchor="end" fill="#f59e0b" font-family="monospace" font-size="14" font-weight="bold">1,100+</text>
+    <text x="20" y="165" fill="#94a3b8" font-family="monospace" font-size="12">Cause:</text>
+    <text x="260" y="165" text-anchor="end" fill="#f97316" font-family="monospace" font-size="12" font-weight="bold">PACKAGING ERROR</text>
+    <text x="20" y="190" fill="#94a3b8" font-family="monospace" font-size="12">Status:</text>
+    <text x="260" y="190" text-anchor="end" fill="#ef4444" font-family="monospace" font-size="12" font-weight="bold">DMCA IN PROGRESS</text>
+  </g>
+
+  <!-- npm logo area -->
+  <g transform="translate(820, 340)">
+    <rect x="0" y="0" width="120" height="50" rx="6" fill="#cb3837" opacity="0.9"/>
+    <text x="60" y="32" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="22" font-weight="bold">npm</text>
+  </g>
+
+  <!-- Arrow from npm to .map -->
+  <g>
+    <line x1="880" y1="390" x2="880" y2="430" stroke="#cb3837" stroke-width="2"/>
+    <text x="880" y="450" text-anchor="middle" fill="#cb3837" font-family="monospace" font-size="11">cli.js.map included</text>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="530" text-anchor="middle" fill="url(#glow)" font-family="Arial, sans-serif" font-size="32" font-weight="bold">Claude Code Source Leak</text>
+  <text x="600" y="565" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="16">npm source map exposure — 512K+ lines of TypeScript</text>
+
+  <!-- Warning badge -->
+  <g transform="translate(470, 590)">
+    <rect x="0" y="0" width="260" height="32" rx="16" fill="#ef4444" opacity="0.15" stroke="#ef4444" stroke-width="1"/>
+    <text x="130" y="21" text-anchor="middle" fill="#ef4444" font-family="monospace" font-size="13" font-weight="bold">2026-03-31 | ANTHROPIC</text>
+  </g>
+</svg>
