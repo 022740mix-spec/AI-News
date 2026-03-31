@@ -5728,6 +5728,83 @@ export const ARTICLES = [
     ]
   },
   {
+    "id": "claude-code-token-drain-prompt-cache-bug-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "Claude Code のトークンが異常速度で消失 — Anthropic が prompt cache バグを「最優先で調査中」と認める",
+    "excerpt": "3月23日頃から Claude Code の Max プラン（$100〜$200/月）ユーザーを中心に、5時間セッションが1〜2時間で枯渇する異常なトークン消費が多数報告されている。Reddit ユーザーがバイナリを逆解析し、prompt cache が正しく効かず毎回フルリビルドが走る2つのバグを発見。Anthropic の Lydia Hallie（プロダクトリード）は「チームの最優先事項」と認め調査中。--resume でセッション再開時に入力27Kトークンに対し出力65万トークンが発生した報告もあり、「使いすぎ」ではなく「裏でトークンが燃えていた」実態が明らかになりつつある。",
+    "heroScope": "day",
+    "coverImage": {
+      "src": "articles/cover-claude-code-token-drain.svg",
+      "alt": "Claude Code トークン異常消費 — prompt cache バグで最大20倍のコスト"
+    },
+    "body": [
+      "## 何が起きているのか",
+      "2026年3月23日頃から、Claude Code の有料プラン（Pro / Max / Max 5x / Max 20x）ユーザーの間で、**5時間のセッション枠が異常な速度で消費される**報告が急増している。",
+      "「昨日まで5時間使えていたのに、今日は1.5時間で使用不能になった」「1プロンプトで使用量が 21% → 100% に跳ね上がった」「CLI を閉じているのに使用量が増え続ける」— GitHub Issue #38335 には105件以上のリアクションがつき、48時間で7件の類似 Issue が立った。",
+      "MacRumors、The Register、PiunikaWeb など複数のテック系メディアがこの問題を報じており、Reddit の r/ClaudeCode と r/Anthropic では返金・解約の議論が白熱している。世界中のユーザーが同様の症状を証言しており、地域に依存しないグローバルな問題であることが示されている。",
+
+      "## 原因: prompt cache が壊れている",
+      "Claude Code は会話のたびに、システムプロンプト・CLAUDE.md・会話履歴をまとめて API に送信する。通常は **prompt cache** によって既読部分は安価な cache_read として処理されるが、**キャッシュが効かなくなると全てが cache_creation（新規書き込み）として再計算される**。コストは10〜20倍に膨れ上がる。",
+      "Reddit ユーザー「skibidi-toaleta-2137」が、Claude Code の228MBバイナリを **Ghidra・MITM プロキシ・radare2** で数日かけて逆解析し、**2つの具体的なバグ**を特定した。",
+
+      "## バグ1: Bun フォーク内の文字列置換",
+      "Anthropic のカスタム Bun フォークが、全 API リクエストで**課金用センチネル文字列**を検索・置換している。会話履歴に課金関連のキーワードが含まれると、置換が意図しない箇所にヒットし、**キャッシュプレフィックスが破壊される**。結果として安価な cache_read ではなく、毎回フルリビルドが走る。",
+
+      "## バグ2: --resume が常にキャッシュを破壊",
+      "`--resume` でセッションを再開すると、会話履歴が**一切キャッシュされず**、毎メッセージで全履歴が cache_creation として再送される。GitHub Issue #34629 の検証では、v2.1.69 以降でこのリグレッションが発生し、**1メッセージあたりのコストが約20倍**に増加していることが確認された。",
+      "最も極端な報告は Issue #38029 にある。セッション再開時にユーザー入力なしで使用量が80%に達し、45分のミニマルな操作で100%に。**入力27Kトークンに対し、出力65万2,069トークン**が生成されていた。「使いすぎ」ではなく、**裏でトークンが勝手に燃えていた**のだ。",
+
+      "## Anthropic の対応",
+      "問題が X で拡散されると、プロダクトリード **Lydia Hallie** が「チームの**最優先事項**。多くのユーザーをブロックしていることは認識している。アップデートがあり次第共有する」と投稿。Thariq Shihipar も「prompt cache のバグは微妙（subtle）だが、掘り下げている」とコメントした。",
+      "ただし Anthropic は同時期に、**ピーク時間帯（PT 5am〜11am）のセッション制限を意図的に厳しくした**ことも認めている。「約7%のユーザーが以前はヒットしなかったセッション制限に達する」と説明。需要が GPU キャパシティを超えたことが背景にある。",
+      "つまり現在の問題は**2つの要因が重なっている**: 1) 意図的なピーク時間帯の制限強化、2) prompt cache のバグによる想定外のトークン消費。ユーザーにとっては両者の区別がつかず、「月$200払っているのに30分で使えなくなる」という体験になっている。",
+
+      "## 需要急増の背景: QuitGPT ムーブメント",
+      "2月下旬に OpenAI が米国防総省との契約を発表したことで、ChatGPT のアンインストールが**1日で295%急増**。「QuitGPT」運動は250万人の参加者を集め、Claude は**米国 App Store で初の1位**を獲得した。この大量流入が GPU キャパシティを圧迫し、Anthropic のインフラに想定外の負荷をかけている。",
+
+      "## 今すぐできる対策",
+      "1) Claude Code を**最新版にアップデート**する（CHANGELOG にキャッシュ修正あり）\n2) `--resume` で巨大セッションを再開しない（**新規セッションで始める**）\n3) **CLAUDE.md** にプロジェクト文脈を書いておけば、新規セッションでも立ち上がりが速い\n4) **MCP 接続数を最小限に**する（ツールスキーマがコンテキストを肥大化させる）\n5) `/compact` で会話を圧縮、`/clear` で不要な履歴を削除\n6) 混雑時は `/model` で **Sonnet 4.6** に切り替える（レート制限が緩い）",
+
+      "## 本質的な問題",
+      "Anthropic は使用量制限の具体的な計算方法を公開していない。ユーザーにはトークン消費を事前に予測する手段がなく、「5倍の使用量」が実際にどれだけの作業に相当するのか不透明だ。$200/月の Max 20x プランでも、キャッシュバグの影響下では30分で枯渇しうる。",
+      "「AI との付き合い方を設計する」ことが最強の対策であることに変わりはないが、そもそもバグで裏側のトークンが燃えている状態では、設計努力だけでは限界がある。Anthropic の迅速なバグ修正と、使用量計算の透明化が求められている。",
+      "注意: 本記事は2026年3月31日時点の情報に基づく。Anthropic はバグ修正を進行中であり、最新の Claude Code にアップデートすることで一部の問題が改善される可能性がある。"
+    ],
+    "newsDate": "2026-03-31",
+    "date": "2026-03-31",
+    "author": "AI News 編集部",
+    "readTime": "10分",
+    "tags": ["Claude Code", "Anthropic", "トークン消費", "prompt cache", "バグ", "レート制限"],
+    "tables": [
+      {
+        "title": "Claude Code トークン消費バグの経緯",
+        "headers": ["日付", "出来事", "詳細"],
+        "rows": [
+          ["1月", "v2.1.1 で異常消費報告開始", "同一ワークフローで4倍以上のトークン消費。Issue #16856"],
+          ["2月8日", "cache_read が使用量の99.93%を占有", "CLAUDE.md 再読み込みが原因。Issue #24147"],
+          ["2月26日", "prompt cache 未動作の報告", "Issue #28899（修正済み・クローズ）"],
+          ["3月13〜28日", "Anthropic がオフピーク増量を実施", "増量終了後に「急に制限が厳しくなった」と感じるユーザー続出"],
+          ["3月23日", "Max プランで大量の異常消費報告", "Issue #38335 に105+リアクション。MacRumors 等が報道"],
+          ["3月26日", "Anthropic がピーク時制限強化を発表", "Thariq Shihipar「約7%のユーザーに影響」"],
+          ["3月29日", "Reddit ユーザーがバイナリ逆解析", "Ghidra + MITM で2つの cache バグを特定。Alex Volkov が X で拡散"],
+          ["3月31日", "Lydia Hallie「最優先で調査中」", "Anthropic が公式にバグの存在を認める"]
+        ]
+      }
+    ],
+    "primarySources": [
+      { "title": "[BUG] Abnormal Usage on Session Resume — Issue #38029", "site": "GitHub", "url": "https://github.com/anthropics/claude-code/issues/38029" },
+      { "title": "[BUG] Max plan session limits exhausted abnormally fast — Issue #38335", "site": "GitHub", "url": "https://github.com/anthropics/claude-code/issues/38335" },
+      { "title": "[BUG] Prompt cache regression in --resume — Issue #34629", "site": "GitHub", "url": "https://github.com/anthropics/claude-code/issues/34629" },
+      { "title": "[BUG] Conversation history invalidated — Issue #40524", "site": "GitHub", "url": "https://github.com/anthropics/claude-code/issues/40524" },
+      { "title": "Claude Code Users Report Rapid Rate Limit Drain, Suspect Bug", "site": "MacRumors", "url": "https://www.macrumors.com/2026/03/26/claude-code-users-rapid-rate-limit-drain-bug/" },
+      { "title": "Anthropic looking into cache bugs blamed for Claude usage limit drain", "site": "PiunikaWeb", "url": "https://piunikaweb.com/2026/03/31/claude-cache-bugs-tokens-20x-more-anthropic-investigating/" },
+      { "title": "Anthropic tweaks Claude usage limits to manage capacity", "site": "The Register", "url": "https://www.theregister.com/2026/03/26/anthropic_tweaks_usage_limits/" },
+      { "title": "Alex Volkov (@altryne) — cache バグの拡散ポスト", "site": "X", "url": "https://x.com/altryne/status/2038676458026189225" },
+      { "title": "Lydia Hallie (@lydiahallie) — 「最優先で調査中」", "site": "X", "url": "https://xcancel.com/lydiahallie/status/2038686571676008625" }
+    ]
+  },
+  {
     "id": "claude-code-source-leak-npm-sourcemap-2026",
     "type": "news",
     "category": "regulation",

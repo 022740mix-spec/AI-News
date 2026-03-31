@@ -8,6 +8,14 @@
   <updated>2026-03-31T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Claude Code のトークンが異常速度で消失 — Anthropic が prompt cache バグを「最優先で調査中」と認める</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-token-drain-prompt-cache-bug-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-token-drain-prompt-cache-bug-2026</id>
+    <published>2026-03-31T15:00:00Z</published>
+    <updated>2026-03-31T15:00:00Z</updated>
+    <summary>3月23日頃から Claude Code の Max プラン（$100〜$200/月）ユーザーを中心に、5時間セッションが1〜2時間で枯渇する異常なトークン消費が多数報告されている。Reddit ユーザーがバイナリを逆解析し、prompt cache が正しく効かず毎回フルリビルドが走る2つのバグを発見。Anthropic の Lydia Hallie（プロダクトリード）は「チームの最優先事項」と認め調査中。--resume でセッション再開時に入力27Kトークンに対し出力65万トークンが発生した報告もあり、「使いすぎ」ではなく「裏でトークンが燃えていた」実態が明らかになりつつある。</summary>
+  </entry>
+  <entry>
     <title>【速報】Claude Code の全ソースコード（51万行）が npm のソースマップ経由で流出 — 未公開機能・アーキテクチャが丸見えに</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-source-leak-npm-sourcemap-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-source-leak-npm-sourcemap-2026</id>

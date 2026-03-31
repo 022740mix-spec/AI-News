@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="'SF Mono','Fira Code','Consolas',monospace">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a0a0a"/>
+      <stop offset="100%" stop-color="#2d1010"/>
+    </linearGradient>
+    <linearGradient id="bar-drain" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="60%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+    <linearGradient id="fire" x1="0.5" y1="1" x2="0.5" y2="0">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="50%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Grid pattern -->
+  <g opacity="0.06" stroke="#ef4444" stroke-width="0.5">
+    <line x1="0" y1="0" x2="1200" y2="630"/>
+    <line x1="200" y1="0" x2="1200" y2="500"/>
+    <line x1="400" y1="0" x2="1200" y2="400"/>
+    <line x1="0" y1="200" x2="800" y2="630"/>
+    <line x1="0" y1="400" x2="400" y2="630"/>
+  </g>
+
+  <!-- Token meter (main visual) -->
+  <g transform="translate(100, 140)">
+    <!-- Meter background -->
+    <rect x="0" y="0" width="500" height="60" rx="12" fill="#1f1f1f" stroke="#333" stroke-width="1.5"/>
+    <!-- Meter fill (almost empty) -->
+    <rect x="4" y="4" width="48" height="52" rx="9" fill="#ef4444" opacity="0.8"/>
+    <!-- Meter label -->
+    <text x="250" y="38" text-anchor="middle" fill="#666" font-size="18" font-weight="600">Session Usage</text>
+    <!-- Percentage -->
+    <text x="520" y="42" fill="#ef4444" font-size="32" font-weight="800">97%</text>
+  </g>
+
+  <!-- Time indicator -->
+  <g transform="translate(100, 225)">
+    <text fill="#888" font-size="16">経過時間:</text>
+    <text x="110" y="0" fill="#ef4444" font-size="16" font-weight="700">32分 / 5時間</text>
+  </g>
+
+  <!-- Fire icon (tokens burning) -->
+  <g transform="translate(700, 100)">
+    <!-- Flame shape -->
+    <path d="M60,180 C60,180 10,130 20,80 C25,55 40,50 45,70 C50,50 55,20 80,0 C80,40 100,50 105,70 C110,50 120,55 125,80 C135,130 85,180 85,180 Z" fill="url(#fire)" opacity="0.9"/>
+    <!-- Token symbol in flame -->
+    <text x="62" y="130" text-anchor="middle" fill="#1a0a0a" font-size="42" font-weight="900">T</text>
+  </g>
+
+  <!-- Code snippets showing the bug -->
+  <g transform="translate(100, 280)">
+    <rect width="480" height="180" rx="8" fill="#0d0d0d" stroke="#333" stroke-width="1"/>
+    <text x="12" y="28" fill="#666" font-size="13">// Bug #1: cache prefix破壊</text>
+    <text x="12" y="52" fill="#ef4444" font-size="13">cache_creation: <tspan fill="#f97316">512,000</tspan> tokens</text>
+    <text x="12" y="76" fill="#22c55e" font-size="13">cache_read:     <tspan fill="#f97316">0</tspan> tokens</text>
+    <text x="12" y="108" fill="#666" font-size="13">// Bug #2: --resume でキャッシュ全破壊</text>
+    <text x="12" y="132" fill="#a78bfa" font-size="13">input:  <tspan fill="#f97316">27,000</tspan> tokens</text>
+    <text x="12" y="156" fill="#ef4444" font-size="13">output: <tspan fill="#fbbf24" font-weight="700">652,069</tspan> tokens  ← ???</text>
+  </g>
+
+  <!-- Stats panel -->
+  <g transform="translate(700, 280)">
+    <rect width="400" height="180" rx="8" fill="#0d0d0d" stroke="#333" stroke-width="1"/>
+    <text x="20" y="30" fill="#888" font-size="14" font-weight="600">影響規模</text>
+    <line x1="20" y1="40" x2="380" y2="40" stroke="#333" stroke-width="0.5"/>
+
+    <text x="20" y="68" fill="#ccc" font-size="14">GitHub Issues</text>
+    <text x="370" y="68" text-anchor="end" fill="#ef4444" font-size="14" font-weight="700">7+ (48h内)</text>
+
+    <text x="20" y="96" fill="#ccc" font-size="14">リアクション (Issue #38335)</text>
+    <text x="370" y="96" text-anchor="end" fill="#f97316" font-size="14" font-weight="700">105+</text>
+
+    <text x="20" y="124" fill="#ccc" font-size="14">コスト増加倍率</text>
+    <text x="370" y="124" text-anchor="end" fill="#fbbf24" font-size="14" font-weight="700">10〜20x</text>
+
+    <text x="20" y="152" fill="#ccc" font-size="14">影響プラン</text>
+    <text x="370" y="152" text-anchor="end" fill="#a78bfa" font-size="14" font-weight="700">Pro / Max 全階層</text>
+  </g>
+
+  <!-- Title -->
+  <g transform="translate(100, 520)">
+    <text fill="#ffffff" font-size="28" font-weight="800">Claude Code トークン異常消費</text>
+    <text y="36" fill="#ef4444" font-size="20" font-weight="600">prompt cache バグで最大20倍のコスト — Anthropic「最優先で調査中」</text>
+  </g>
+
+  <!-- Anthropic badge -->
+  <g transform="translate(1020, 30)">
+    <rect width="140" height="32" rx="6" fill="#ef4444" opacity="0.15" stroke="#ef4444" stroke-width="1"/>
+    <text x="70" y="21" text-anchor="middle" fill="#ef4444" font-size="13" font-weight="700">⚠ BUG REPORT</text>
+  </g>
+
+  <!-- Date -->
+  <text x="100" y="600" fill="#555" font-size="13">2026-03-31 | AI News 編集部</text>
+</svg>
