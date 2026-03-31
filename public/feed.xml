@@ -544,6 +544,22 @@
     <summary>Google が月例の Gemini Drop で5つの新機能を発表。音楽生成 Lyria 3 Pro（最大3分）、他社AIからのチャット履歴移行、Personal Intelligence の無料化、Google TV 向け Gemini 機能、Gemini 3.1 Flash Live の会話強化。</summary>
   </entry>
   <entry>
+    <title>OpenAI Codex にプラグインマーケットプレイスが登場 — Slack・Figma・Notion など 20 以上のツールと即連携</title>
+    <link rel="alternate" type="text/html" href="?a=codex-plugins-marketplace-2026"/>
+    <id>tag:ai-tool-news.jp,2026:codex-plugins-marketplace-2026</id>
+    <published>2026-03-26T15:00:00Z</published>
+    <updated>2026-03-26T15:00:00Z</updated>
+    <summary>OpenAI が Codex 向けに 20 以上のプラグインを一斉公開。Slack・Figma・Notion・Gmail・Google Drive などと認証込みで即接続でき、コーディングだけでなく企画・調査・連携までエージェントに任せられる。</summary>
+  </entry>
+  <entry>
+    <title>Mistral、オープンウェイト音声合成モデル Voxtral TTS を公開 — ElevenLabs 超えを主張、5秒で声をクローン</title>
+    <link rel="alternate" type="text/html" href="?a=mistral-voxtral-tts-2026"/>
+    <id>tag:ai-tool-news.jp,2026:mistral-voxtral-tts-2026</id>
+    <published>2026-03-26T15:00:00Z</published>
+    <updated>2026-03-26T15:00:00Z</updated>
+    <summary>Mistral AI がオープンウェイトの音声合成モデル Voxtral TTS を公開。3Bパラメータでスマートウォッチでも動作し、ブラインドテストで ElevenLabs を上回ったと主張。9言語対応、5秒の音声サンプルでボイスクローンが可能。</summary>
+  </entry>
+  <entry>
     <title>LangChain v0.4 リリース — RAG パイプラインの構築が大幅に簡素化、LangGraph との統合強化</title>
     <link rel="alternate" type="text/html" href="?a=langchain-v04-rag-pipeline-2026"/>
     <id>tag:ai-tool-news.jp,2026:langchain-v04-rag-pipeline-2026</id>
@@ -630,6 +646,14 @@
     <published>2026-03-25T15:00:00Z</published>
     <updated>2026-03-25T15:00:00Z</updated>
     <summary>シリコンバレーの空気感を伝える TBPN のダイジェスト版。OpenAI が Sora を終了（1日1,500万ドルの計算コスト）、SpaceX の IPO 申請が数日以内、Benchmark は「テセウスの船」か。31分で3つの大ニュースを凝縮。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI、動画生成アプリ Sora を終了 — 1日100万ドルの運用コスト、計算資源をロボティクスへ転換</title>
+    <link rel="alternate" type="text/html" href="?a=openai-sora-shutdown-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-sora-shutdown-2026</id>
+    <published>2026-03-24T15:00:00Z</published>
+    <updated>2026-03-24T15:00:00Z</updated>
+    <summary>OpenAI が動画生成アプリ Sora のシャットダウンを発表。ピーク時100万ユーザーから50万未満に減少し、1日約100万ドルの運用コストが重荷に。計算資源をロボティクスと ChatGPT コアに集中させる。</summary>
   </entry>
   <entry>
     <title>ChatGPT ショッピング刷新 — Instant Checkout を廃止し商品発見（Product Discovery）へ軸足</title>

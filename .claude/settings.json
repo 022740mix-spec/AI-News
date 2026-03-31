@@ -3,7 +3,12 @@
     "Stop": [
       {
         "matcher": "",
-        "command": "node scripts/review-check.mjs"
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/review-check.mjs"
+          }
+        ]
       }
     ]
   }

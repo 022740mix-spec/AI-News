@@ -42,6 +42,75 @@
 
 export const ARTICLES = [
   {
+    "id": "codex-plugins-marketplace-2026",
+    "type": "news",
+    "coverImage": { "src": "logos/openai.svg", "alt": "OpenAI Codex" },
+    "category": "cli",
+    "title": "OpenAI Codex にプラグインマーケットプレイスが登場 — Slack・Figma・Notion など 20 以上のツールと即連携",
+    "excerpt": "OpenAI が Codex 向けに 20 以上のプラグインを一斉公開。Slack・Figma・Notion・Gmail・Google Drive などと認証込みで即接続でき、コーディングだけでなく企画・調査・連携までエージェントに任せられる。",
+    "body": [
+      "OpenAI は2026年3月26日、コーディングエージェント Codex 向けのプラグインマーケットプレイスを公開した。Slack、Figma、Notion、Gmail、Google Drive、Box、Linear、Sentry、Hugging Face など 20 以上のツールとの統合が、アプリ版・CLI・IDE 拡張のすべてで利用できる。",
+      "各プラグインは「認証設定」と「スキル（定義済みプロンプトワークフロー）」をバンドルしており、インストールするだけで Codex がそのツールを操作できるようになる。技術的には MCP（Model Context Protocol）サーバー構成がベースで、Claude Code の MCP 連携と同じプロトコルを共有している点が興味深い。",
+      "これにより Codex は「コードを書くだけ」のツールから、Figma でデザインを確認しながらコードを生成し、Slack で進捗を報告し、Linear でチケットを更新する——といった**マルチツール横断のエージェント**に進化する。Claude Code が Hooks と MCP で拡張性を高めてきたのに対し、Codex はプラグインという「すぐ使える」アプローチで差別化を図った形だ。",
+      "OpenAI は近日中にサードパーティ向けのセルフパブリッシュツールも公開予定で、チーム単位のプライベートマーケットプレイスも構築可能になる。Codex の週間アクティブユーザーは 160 万人を超えており、プラグインエコシステムの拡大がユーザー定着にどう影響するか注目される。"
+    ],
+    "date": "2026-03-31",
+    "newsDate": "2026-03-26",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["OpenAI", "Codex", "プラグイン", "MCP", "Slack", "Figma", "エージェント"],
+    "primarySources": [
+      { "title": "Plugins – Codex", "site": "OpenAI Developers", "url": "https://developers.openai.com/codex/plugins" },
+      { "title": "OpenAI's Codex gets a plugin marketplace", "site": "The Decoder", "url": "https://the-decoder.com/openais-codex-gets-a-plugin-marketplace-for-slack-notion-figma-and-more/" }
+    ]
+  },
+  {
+    "id": "openai-sora-shutdown-2026",
+    "type": "news",
+    "coverImage": { "src": "logos/openai.svg", "alt": "OpenAI" },
+    "category": "product",
+    "title": "OpenAI、動画生成アプリ Sora を終了 — 1日100万ドルの運用コスト、計算資源をロボティクスへ転換",
+    "excerpt": "OpenAI が動画生成アプリ Sora のシャットダウンを発表。ピーク時100万ユーザーから50万未満に減少し、1日約100万ドルの運用コストが重荷に。計算資源をロボティクスと ChatGPT コアに集中させる。",
+    "body": [
+      "OpenAI は2026年3月24日、昨年華々しくローンチした動画生成アプリ Sora の終了を発表した。Web・アプリ版は4月26日、API は9月24日にサービス終了となる。ローンチからわずか6ヶ月での撤退は、AI 動画生成市場の厳しい現実を象徴している。",
+      "Sora の全世界ユーザー数はピーク時に約100万人に達したが、その後50万人未満にまで減少。一方で運用コストは1日あたり約100万ドル（年間約3.6億ドル）に上り、収益に見合わない状態が続いていた。投資家からの収益重視圧力もあり、ChatGPT とコア API に経営資源を集中させる判断に至った。",
+      "注目すべきは、Sora に割り当てていた GPU 計算資源の転用先だ。OpenAI は Sora チームの研究者を「ワールドシミュレーション」研究に再配置し、ロボティクス分野での実世界タスク支援に注力すると表明している。動画を「生成する」から「物理世界を理解する」へと研究の軸足を移した形だ。",
+      "Disney は Sora との提携に10億ドルを投じていたが、公表の1時間前に初めて終了を知らされたと報じられている。AI 動画生成市場では Runway Gen-5 や Google Veo が競争を続けるが、Sora の撤退は「計算コスト vs 収益化」という業界共通の課題を浮き彫りにした。"
+    ],
+    "date": "2026-03-31",
+    "newsDate": "2026-03-24",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["OpenAI", "Sora", "動画生成", "ロボティクス", "GPU", "サービス終了"],
+    "primarySources": [
+      { "title": "OpenAI is shutting down its Sora video app", "site": "CNN", "url": "https://edition.cnn.com/2026/03/24/tech/openai-sora-video-app-shutting-down" },
+      { "title": "Why OpenAI really shut down Sora", "site": "TechCrunch", "url": "https://techcrunch.com/2026/03/29/why-openai-really-shut-down-sora/" }
+    ]
+  },
+  {
+    "id": "mistral-voxtral-tts-2026",
+    "type": "news",
+    "coverImage": { "src": "logos/mistral.svg", "alt": "Mistral AI" },
+    "category": "model",
+    "title": "Mistral、オープンウェイト音声合成モデル Voxtral TTS を公開 — ElevenLabs 超えを主張、5秒で声をクローン",
+    "excerpt": "Mistral AI がオープンウェイトの音声合成モデル Voxtral TTS を公開。3Bパラメータでスマートウォッチでも動作し、ブラインドテストで ElevenLabs を上回ったと主張。9言語対応、5秒の音声サンプルでボイスクローンが可能。",
+    "body": [
+      "フランスの Mistral AI は2026年3月26日、オープンウェイトの音声合成（TTS）モデル「Voxtral TTS」を公開した。3B パラメータと軽量ながら、ブラインドテストでは標準音声で63%、カスタム音声で約70%の割合で ElevenLabs より好まれたと報告している。",
+      "Voxtral TTS の特徴は、エッジデバイスでの動作を前提に設計された点。スマートウォッチ、スマートフォン、ノート PC など、ローカル環境で動作するため、クラウド API への依存を排除できる。9言語（英語・フランス語・ドイツ語・スペイン語・オランダ語・ポルトガル語・イタリア語・ヒンディー語・アラビア語）に対応し、日本語は現時点では未対応。",
+      "開発者にとって注目すべきは、5秒の音声サンプルだけでアクセント・抑揚・話し方の癖まで再現するボイスクローン機能と、初音声出力までわずか90ミリ秒という低レイテンシだ。リアルタイムファクター（RTF）は6倍で、10秒分の音声を約1.6秒で生成できる。",
+      "API 料金は $0.016/1K文字。Hugging Face でオープンウェイト版（CC BY-NC 4.0 ライセンス）も公開されており、商用利用には API 経由が必要。AI エージェントに「声」を持たせたい開発者にとって、有力な選択肢が加わった。"
+    ],
+    "date": "2026-03-31",
+    "newsDate": "2026-03-26",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["Mistral", "Voxtral", "TTS", "音声合成", "オープンソース", "ボイスクローン"],
+    "primarySources": [
+      { "title": "Speaking of Voxtral", "site": "Mistral AI", "url": "https://mistral.ai/news/voxtral-tts" },
+      { "title": "Voxtral-4B-TTS-2603", "site": "Hugging Face", "url": "https://huggingface.co/mistralai/Voxtral-4B-TTS-2603" }
+    ]
+  },
+  {
     "id": "supabase-pgvector-0-8-2026",
     "type": "news",
     "coverImage": { "src": "logos/supabase.svg", "alt": "Supabase" },
