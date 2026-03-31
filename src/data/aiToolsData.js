@@ -5816,7 +5816,7 @@ export const ARTICLES = [
       "alt": "Claude Code ソースコード流出 — npm ソースマップ経由で51万行の TypeScript が公開"
     },
     "body": [
-      "2026年3月31日、セキュリティ研究者の **Chaofan Shou**（@Fried_rice）が X に衝撃的な投稿を行った。Anthropic の AI コーディングツール **Claude Code** の**完全なソースコード**が、npm レジストリに公開されたパッケージ内のソースマップファイルを通じて誰でもダウンロードできる状態にあることを発見したのだ。",
+      "2026年3月31日、Anthropic の AI コーディングツール **Claude Code** の**完全なソースコード**が、npm レジストリに公開されたパッケージ内のソースマップファイルを通じて誰でもダウンロードできる状態にあることが発覚した。UC Berkeley 博士課程でブロックチェーンセキュリティを研究する **Chaofan Shou**（@Fried_rice、FuzzLand CTO）の X 投稿をきっかけに一気に拡散された。",
       "ハッキングやゼロデイ攻撃ではない。**Anthropic 自身が npm publish 時にソースマップを除外し忘れた**、典型的なビルドパイプラインの設定ミスだ。",
 
       "## 流出の仕組み",
@@ -5902,7 +5902,7 @@ export const ARTICLES = [
       }
     ],
     "primarySources": [
-      { "title": "Chaofan Shou (@Fried_rice) — 第一報", "site": "X", "url": "https://x.com/fried_rice/status/2038894956459290963" },
+      { "title": "Chaofan Shou (@Fried_rice) — 拡散の起点となった投稿", "site": "X", "url": "https://x.com/fried_rice/status/2038894956459290963" },
       { "title": "Claude Code's source code has been leaked via a map file in their NPM registry", "site": "Hacker News", "url": "https://news.ycombinator.com/item?id=47584540" },
       { "title": "Claude Code's Entire Source Code Was Just Leaked via npm Source Maps — Here's What's Inside", "site": "DEV Community", "url": "https://dev.to/gabrielanhaia/claude-codes-entire-source-code-was-just-leaked-via-npm-source-maps-heres-whats-inside-cjo" },
       { "title": "Claude Code — Leaked Source (2026-03-31)", "site": "GitHub", "url": "https://github.com/instructkr/claude-code" },
