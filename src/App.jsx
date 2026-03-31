@@ -8,6 +8,8 @@ import {
   useCallback,
   useEffect,
   useRef,
+  createContext,
+  useContext,
 } from "react";
 import {
   ARTICLES,
@@ -39,12 +41,16 @@ import { BUNDLED_MEDIA_URL } from "./mediaUrls.js";
 
 const STORAGE_THEME = "ai-news-theme";
 const STORAGE_ACCENT = "ai-news-accent";
+const STORAGE_LANG = "ai-news-lang";
+const LangContext = createContext("ja");
+/** lang-aware label picker: returns en label if available, else falls back to label */
+function L(item, lang) { return lang === "en" && item.en ? item.en : item.label; }
 const ACCENT_PRESETS = [
-  { id: "blue",   label: "ブルー",  color: "#3b82f6", cyan: "#22d3ee", season: null },
-  { id: "sakura", label: "桜",      color: "#ec4899", cyan: "#f472b6", season: "spring" },
-  { id: "green",  label: "新緑",    color: "#22c55e", cyan: "#4ade80", season: "summer" },
-  { id: "orange", label: "紅葉",    color: "#f97316", cyan: "#fb923c", season: "autumn" },
-  { id: "purple", label: "冬",      color: "#8b5cf6", cyan: "#a78bfa", season: "winter" },
+  { id: "blue",   label: "ブルー", en: "Blue",   color: "#3b82f6", cyan: "#22d3ee", season: null },
+  { id: "sakura", label: "桜",     en: "Spring", color: "#ec4899", cyan: "#f472b6", season: "spring" },
+  { id: "green",  label: "新緑",   en: "Summer", color: "#22c55e", cyan: "#4ade80", season: "summer" },
+  { id: "orange", label: "紅葉",   en: "Autumn", color: "#f97316", cyan: "#fb923c", season: "autumn" },
+  { id: "purple", label: "冬",     en: "Winter", color: "#8b5cf6", cyan: "#a78bfa", season: "winter" },
 ];
 const STORAGE_LOCAL_NOTICE = "ai-news-local-notice-dismissed";
 const DEFAULT_DOC_TITLE = `${SITE_NAME} | AI開発ツール最新情報`;
@@ -378,21 +384,21 @@ function GuideLinkifiedP({ text, className }) {
 }
 
 const FILTERS = [
-  { id: "all", label: "すべて" },
-  { id: "special", label: "特集" },
-  { id: "model", label: "モデル・API" },
-  { id: "cli", label: "CLI・エージェント" },
-  { id: "editor", label: "エディタ" },
-  { id: "data", label: "データ・RAG" },
-  { id: "product", label: "プロダクト" },
-  { id: "media", label: "メディア生成" },
-  { id: "regulation", label: "社会・規制" },
+  { id: "all", label: "すべて", en: "All" },
+  { id: "special", label: "特集", en: "Feature" },
+  { id: "model", label: "モデル・API", en: "Models / API" },
+  { id: "cli", label: "CLI・エージェント", en: "CLI / Agents" },
+  { id: "editor", label: "エディタ", en: "Editors" },
+  { id: "data", label: "データ・RAG", en: "Data / RAG" },
+  { id: "product", label: "プロダクト", en: "Products" },
+  { id: "media", label: "メディア生成", en: "Media Gen" },
+  { id: "regulation", label: "社会・規制", en: "Society" },
 ];
 
 const SORTS = [
-  { id: "date-desc", label: "新着順" },
-  { id: "date-asc", label: "日付（古い順）" },
-  { id: "title", label: "タイトル A→Z" },
+  { id: "date-desc", label: "新着順", en: "Newest" },
+  { id: "date-asc", label: "日付（古い順）", en: "Oldest" },
+  { id: "title", label: "タイトル A→Z", en: "Title A→Z" },
 ];
 
 function getCategoryIcon(cat) {
@@ -565,13 +571,14 @@ function Pagination({ current, total, onChange }) {
 
 /* ══ ハンバーガーメニュー ══ */
 function HamburgerMenu({ isOpen, onClose, onSection, currentSection, searchRef, accentId, onAccent, query, setQuery }) {
+  const lang = useContext(LangContext);
   const menuItems = [
-    { id: "home", label: "ホーム" },
-    { id: "articles", label: "ニュース" },
-    { id: "reviews", label: "レビュー" },
-    { id: "guide", label: "ガイド" },
-    { id: "tools", label: "ツール別" },
-    { id: "companies", label: "AI企業" },
+    { id: "home", label: "ホーム", en: "Home" },
+    { id: "articles", label: "ニュース", en: "News" },
+    { id: "reviews", label: "レビュー", en: "Reviews" },
+    { id: "guide", label: "ガイド", en: "Guide" },
+    { id: "tools", label: "ツール別", en: "Tools" },
+    { id: "companies", label: "AI企業", en: "Companies" },
   ];
   const mobileSearchRef = useRef(null);
 
@@ -580,9 +587,9 @@ function HamburgerMenu({ isOpen, onClose, onSection, currentSection, searchRef, 
   return (
     <>
       <div className="hamburger-overlay" onClick={onClose} />
-      <nav className="hamburger-drawer" aria-label="メインメニュー">
+      <nav className="hamburger-drawer" aria-label={lang === "en" ? "Main menu" : "メインメニュー"}>
         <div className="hamburger-drawer__header">
-          <button className="hamburger-close" onClick={onClose} aria-label="閉じる">
+          <button className="hamburger-close" onClick={onClose} aria-label={lang === "en" ? "Close" : "閉じる"}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
         </div>
@@ -592,7 +599,7 @@ function HamburgerMenu({ isOpen, onClose, onSection, currentSection, searchRef, 
             ref={mobileSearchRef}
             type="search"
             className="hamburger-search-input"
-            placeholder="記事を検索…"
+            placeholder={lang === "en" ? "Search articles…" : "記事を検索…"}
             value={query}
             onChange={(e) => {
               setQuery(e.target.value);
@@ -606,14 +613,14 @@ function HamburgerMenu({ isOpen, onClose, onSection, currentSection, searchRef, 
                 onClose();
               }
             }}
-            aria-label="記事を検索"
+            aria-label={lang === "en" ? "Search articles" : "記事を検索"}
           />
           {query && (
             <button
               type="button"
               className="hamburger-search-clear"
               onClick={() => { setQuery(""); mobileSearchRef.current?.focus(); }}
-              aria-label="検索をクリア"
+              aria-label={lang === "en" ? "Clear search" : "検索をクリア"}
             >
               ✕
             </button>
@@ -626,14 +633,14 @@ function HamburgerMenu({ isOpen, onClose, onSection, currentSection, searchRef, 
                 className={`hamburger-item${currentSection === item.id ? " is-active" : ""}`}
                 onClick={() => { onSection(item.id); onClose(); }}
               >
-                <span className="hamburger-item__label">{item.label}</span>
+                <span className="hamburger-item__label">{L(item, lang)}</span>
                 <span className="hamburger-item__arrow">›</span>
               </button>
             </li>
           ))}
         </ul>
         <div className="hamburger-accent">
-          <span className="hamburger-accent__label">テーマカラー</span>
+          <span className="hamburger-accent__label">{lang === "en" ? "Theme Color" : "テーマカラー"}</span>
           <div className="hamburger-accent__dots">
             {ACCENT_PRESETS.map(p => (
               <button
@@ -641,15 +648,15 @@ function HamburgerMenu({ isOpen, onClose, onSection, currentSection, searchRef, 
                 className={`hamburger-accent__dot${accentId === p.id ? " is-active" : ""}`}
                 style={{ background: p.color }}
                 onClick={() => onAccent(p.id)}
-                title={p.label}
-                aria-label={p.label}
+                title={L(p, lang)}
+                aria-label={L(p, lang)}
               />
             ))}
           </div>
         </div>
         <div className="hamburger-footer">
           AI News<br />
-          <span className="hamburger-footer__sub">広告なし・個人情報収集なし</span>
+          <span className="hamburger-footer__sub">{lang === "en" ? "No ads · No tracking" : "広告なし・個人情報収集なし"}</span>
         </div>
       </nav>
     </>
@@ -667,13 +674,21 @@ function Header({
   searchRef,
   filteredCount,
   totalCount,
-  searchPlaceholder = "記事を検索…（タイトル・概要・タグ）",
-  searchAriaLabel = "検索",
+  searchPlaceholder,
+  searchAriaLabel,
   showSort = true,
   onGoHome,
   hideSearch = false,
   onToggleMenu,
+  lang: langOverride,
+  onToggleLang,
 }) {
+  const lang = langOverride ?? useContext(LangContext);
+  const defaultPlaceholder = lang === "en" ? "Search articles… (title, summary, tags)" : "記事を検索…（タイトル・概要・タグ）";
+  const defaultAriaLabel = lang === "en" ? "Search" : "検索";
+  const ph = searchPlaceholder ?? defaultPlaceholder;
+  const al = searchAriaLabel ?? defaultAriaLabel;
+  const siteDesc = lang === "en" ? "Latest news & guides on Claude Code, Cursor, Codex & Copilot" : SITE_DESCRIPTION;
   return (
     <header className="header-wrap">
       <div className="header-inner">
@@ -681,22 +696,31 @@ function Header({
           <button
             type="button"
             className="icon-btn hamburger-btn"
-            title="メニュー"
-            aria-label="メニューを開く"
+            title={lang === "en" ? "Menu" : "メニュー"}
+            aria-label={lang === "en" ? "Open menu" : "メニューを開く"}
             onClick={onToggleMenu}
           >
             ☰
           </button>
           <div className="header-center" onClick={onGoHome} style={{ cursor: "pointer" }}>
             <h1 className="site-title">{SITE_NAME}</h1>
-            <p className="site-tagline">{SITE_DESCRIPTION}</p>
+            <p className="site-tagline">{siteDesc}</p>
           </div>
           <div className="header-actions">
             <button
               type="button"
+              className="icon-btn lang-toggle-btn"
+              title={lang === "en" ? "日本語に切替" : "Switch to English"}
+              aria-label={lang === "en" ? "日本語に切替" : "Switch to English"}
+              onClick={onToggleLang}
+            >
+              {lang === "en" ? "JP" : "EN"}
+            </button>
+            <button
+              type="button"
               className="icon-btn"
-              title={theme === "dark" ? "ライトテーマ" : "ダークテーマ"}
-              aria-label="テーマ切替"
+              title={theme === "dark" ? (lang === "en" ? "Light theme" : "ライトテーマ") : (lang === "en" ? "Dark theme" : "ダークテーマ")}
+              aria-label={lang === "en" ? "Toggle theme" : "テーマ切替"}
               onClick={toggleTheme}
             >
               {theme === "dark" ? "☀️" : "🌙"}
@@ -711,10 +735,10 @@ function Header({
                 <input
                   ref={searchRef}
                   type="search"
-                  placeholder={searchPlaceholder}
+                  placeholder={ph}
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  aria-label={searchAriaLabel}
+                  aria-label={al}
                 />
               </div>
               {showSort ? (
@@ -722,19 +746,19 @@ function Header({
                   className="sort-select"
                   value={sort}
                   onChange={(e) => setSort(e.target.value)}
-                  aria-label="並び順"
+                  aria-label={lang === "en" ? "Sort order" : "並び順"}
                 >
                   {SORTS.map((s) => (
                     <option key={s.id} value={s.id}>
-                      {s.label}
+                      {L(s, lang)}
                     </option>
                   ))}
                 </select>
               ) : (
                 <span className="sort-select-placeholder" aria-hidden />
               )}
-              <span className="hint-kbd" title="フォーカス">
-                <kbd>/</kbd> で検索
+              <span className="hint-kbd" title={lang === "en" ? "Focus" : "フォーカス"}>
+                <kbd>/</kbd> {lang === "en" ? "to search" : "で検索"}
               </span>
             </div>
             {query ? (
@@ -743,9 +767,9 @@ function Header({
                   type="button"
                   className="stat-pill stat-pill--clearable"
                   onClick={() => { setQuery(""); searchRef.current?.focus(); }}
-                  aria-label={`フィルター「${query}」を解除`}
+                  aria-label={lang === "en" ? `Clear filter "${query}"` : `フィルター「${query}」を解除`}
                 >
-                  フィルター: 「{query}」 ✕
+                  {lang === "en" ? `Filter: "${query}" ✕` : `フィルター: 「${query}」 ✕`}
                 </button>
               </div>
             ) : null}
@@ -757,14 +781,15 @@ function Header({
 }
 
 const TYPE_FILTERS = [
-  { id: "all", label: "すべて" },
-  { id: "news", label: "速報ニュース" },
-  { id: "feature", label: "特集・コラム" },
+  { id: "all", label: "すべて", en: "All" },
+  { id: "news", label: "速報ニュース", en: "Breaking" },
+  { id: "feature", label: "特集・コラム", en: "Features" },
 ];
 
 function TypeFilterBar({ active, setActive }) {
+  const lang = useContext(LangContext);
   return (
-    <nav className="type-filter-nav" aria-label="記事タイプ">
+    <nav className="type-filter-nav" aria-label={lang === "en" ? "Article type" : "記事タイプ"}>
       <div className="type-filter-inner">
         {TYPE_FILTERS.map((f) => (
           <button
@@ -773,7 +798,7 @@ function TypeFilterBar({ active, setActive }) {
             className={`type-filter-tab${active === f.id ? " is-active" : ""}`}
             onClick={() => setActive(f.id)}
           >
-            {f.label}
+            {L(f, lang)}
           </button>
         ))}
       </div>
@@ -782,8 +807,9 @@ function TypeFilterBar({ active, setActive }) {
 }
 
 function FilterBar({ active, setActive }) {
+  const lang = useContext(LangContext);
   return (
-    <nav className="filter-nav" aria-label="カテゴリ">
+    <nav className="filter-nav" aria-label={lang === "en" ? "Category" : "カテゴリ"}>
       <div className="filter-nav-inner">
         {FILTERS.map((f) => (
           <button
@@ -792,7 +818,7 @@ function FilterBar({ active, setActive }) {
             className={`filter-tab${active === f.id ? " is-active" : ""}`}
             onClick={() => setActive(f.id)}
           >
-            {f.label}
+            {L(f, lang)}
           </button>
         ))}
       </div>
@@ -801,15 +827,16 @@ function FilterBar({ active, setActive }) {
 }
 
 function GuideTabBar({ guideTab, onSelect }) {
+  const lang = useContext(LangContext);
   const tabs = [
-    { id: "setup", label: "セットアップ" },
-    { id: "rules", label: "基本ルール" },
-    { id: "practical", label: "実践テクニック" },
-    { id: "media", label: "メディア生成" },
-    { id: "glossary", label: "用語集" },
+    { id: "setup", label: "セットアップ", en: "Setup" },
+    { id: "rules", label: "基本ルール", en: "Rules" },
+    { id: "practical", label: "実践テクニック", en: "Practical" },
+    { id: "media", label: "メディア生成", en: "Media Gen" },
+    { id: "glossary", label: "用語集", en: "Glossary" },
   ];
   return (
-    <nav className="filter-nav" aria-label="ガイドの表示切替">
+    <nav className="filter-nav" aria-label={lang === "en" ? "Guide sections" : "ガイドの表示切替"}>
       <div className="filter-nav-inner" role="tablist">
         {tabs.map((t) => (
           <button
@@ -822,7 +849,7 @@ function GuideTabBar({ guideTab, onSelect }) {
             className={`filter-tab${guideTab === t.id ? " is-active" : ""}`}
             onClick={() => onSelect(t.id)}
           >
-            {t.label}
+            {L(t, lang)}
           </button>
         ))}
       </div>
@@ -831,6 +858,7 @@ function GuideTabBar({ guideTab, onSelect }) {
 }
 
 function HomePage({ articles, onSelect, onSection }) {
+  const lang = useContext(LangContext);
   const sorted = [...articles].sort((a, b) => {
     const da = parseDate(getArticleNewsYmd(a));
     const db = parseDate(getArticleNewsYmd(b));
@@ -857,14 +885,14 @@ function HomePage({ articles, onSelect, onSection }) {
             </div>
           ) : null}
           <div className="home-hero__content">
-            <span className="home-hero__label">最新ニュース</span>
+            <span className="home-hero__label">{lang === "en" ? "Latest News" : "最新ニュース"}</span>
             <h2 className="home-hero__title">{hero.title}</h2>
             <p className="home-hero__excerpt">
               {hero.excerpt.length > 120
                 ? hero.excerpt.replace(/\*\*/g, "").slice(0, 120) + "…"
                 : hero.excerpt.replace(/\*\*/g, "")}
             </p>
-            <span className="home-hero__cta">記事を読む →</span>
+            <span className="home-hero__cta">{lang === "en" ? "Read article →" : "記事を読む →"}</span>
           </div>
         </section>
       ) : null}
@@ -873,9 +901,9 @@ function HomePage({ articles, onSelect, onSection }) {
         {recentNews.length > 0 ? (
           <section className="home-section">
             <div className="home-section__header">
-              <h2 className="home-section__title">最近のニュース</h2>
+              <h2 className="home-section__title">{lang === "en" ? "Recent News" : "最近のニュース"}</h2>
               <button className="home-section__more" onClick={() => onSection("articles")}>
-                すべて見る →
+                {lang === "en" ? "View all →" : "すべて見る →"}
               </button>
             </div>
             <div className="home-cards">
@@ -896,44 +924,44 @@ function HomePage({ articles, onSelect, onSection }) {
         ) : null}
 
         <section className="home-section">
-          <h2 className="home-section__title">コンテンツ</h2>
+          <h2 className="home-section__title">{lang === "en" ? "Content" : "コンテンツ"}</h2>
           <div className="home-nav-cards">
             <button className="home-nav-card" onClick={() => onSection("articles")}>
               <span className="home-nav-card__icon">📰</span>
-              <span className="home-nav-card__label">ニュース</span>
-              <span className="home-nav-card__desc">AI開発ツールの最新ニュース</span>
+              <span className="home-nav-card__label">{lang === "en" ? "News" : "ニュース"}</span>
+              <span className="home-nav-card__desc">{lang === "en" ? "Latest AI dev tool news" : "AI開発ツールの最新ニュース"}</span>
             </button>
             <button className="home-nav-card" onClick={() => onSection("reviews")}>
               <span className="home-nav-card__icon">⭐</span>
-              <span className="home-nav-card__label">レビュー</span>
-              <span className="home-nav-card__desc">ツール比較と評価</span>
+              <span className="home-nav-card__label">{lang === "en" ? "Reviews" : "レビュー"}</span>
+              <span className="home-nav-card__desc">{lang === "en" ? "Tool comparisons & ratings" : "ツール比較と評価"}</span>
             </button>
             <button className="home-nav-card" onClick={() => onSection("guide")}>
               <span className="home-nav-card__icon">📖</span>
-              <span className="home-nav-card__label">ガイド</span>
-              <span className="home-nav-card__desc">セットアップと実践テクニック</span>
+              <span className="home-nav-card__label">{lang === "en" ? "Guide" : "ガイド"}</span>
+              <span className="home-nav-card__desc">{lang === "en" ? "Setup & practical techniques" : "セットアップと実践テクニック"}</span>
             </button>
             <button className="home-nav-card" onClick={() => onSection("tools")}>
               <span className="home-nav-card__icon">🔧</span>
-              <span className="home-nav-card__label">ツール別</span>
+              <span className="home-nav-card__label">{lang === "en" ? "Tools" : "ツール別"}</span>
               <span className="home-nav-card__desc">Claude Code / Cursor / Codex / Copilot</span>
             </button>
             <button className="home-nav-card" onClick={() => onSection("companies")}>
               <span className="home-nav-card__icon">🏢</span>
-              <span className="home-nav-card__label">AI企業</span>
-              <span className="home-nav-card__desc">AI企業のプロファイル</span>
+              <span className="home-nav-card__label">{lang === "en" ? "Companies" : "AI企業"}</span>
+              <span className="home-nav-card__desc">{lang === "en" ? "AI company profiles" : "AI企業のプロファイル"}</span>
             </button>
           </div>
         </section>
 
         <section className="home-section">
-          <h2 className="home-section__title">おすすめポッドキャスト</h2>
-          <p className="home-section__desc">AI 業界のトップリーダーが語る、公式発表では聞けない本音と未来予測。</p>
+          <h2 className="home-section__title">{lang === "en" ? "Recommended Podcasts" : "おすすめポッドキャスト"}</h2>
+          <p className="home-section__desc">{lang === "en" ? "Top leaders in AI share candid insights and future predictions." : "AI 業界のトップリーダーが語る、公式発表では聞けない本音と未来予測。"}</p>
           <div className="home-podcast-links">
             {[
-              { name: "Dwarkesh Podcast", desc: "AI CEO の深掘りインタビュー", url: "https://open.spotify.com/show/4JH4tybY1zX6e5hjCwU6gF" },
-              { name: "Lex Fridman Podcast", desc: "研究者・エンジニア視点の技術対談", url: "https://open.spotify.com/show/2MAi0BvDc6GTFvKFPXnkCL" },
-              { name: "TBPN", desc: "シリコンバレーのライブ感速報", url: "https://open.spotify.com/show/2L6WMqY3GUPCGBD0dX6p00" },
+              { name: "Dwarkesh Podcast", desc: lang === "en" ? "Deep-dive AI CEO interviews" : "AI CEO の深掘りインタビュー", url: "https://open.spotify.com/show/4JH4tybY1zX6e5hjCwU6gF" },
+              { name: "Lex Fridman Podcast", desc: lang === "en" ? "Technical talks with researchers" : "研究者・エンジニア視点の技術対談", url: "https://open.spotify.com/show/2MAi0BvDc6GTFvKFPXnkCL" },
+              { name: "TBPN", desc: lang === "en" ? "Silicon Valley live updates" : "シリコンバレーのライブ感速報", url: "https://open.spotify.com/show/2L6WMqY3GUPCGBD0dX6p00" },
             ].map((p) => (
               <a key={p.name} className="home-podcast-card" href={p.url} target="_blank" rel="noopener noreferrer">
                 <div className="home-podcast-card__body">
@@ -951,52 +979,36 @@ function HomePage({ articles, onSelect, onSection }) {
 }
 
 function SiteSectionNav({ section, onSection }) {
+  const lang = useContext(LangContext);
+  const tabs = [
+    { id: "articles", label: "ニュース", en: "News" },
+    { id: "reviews", label: "レビュー", en: "Reviews" },
+    { id: "guide", label: "ガイド", en: "Guide" },
+    { id: "tools", label: "ツール別", en: "Tools" },
+    { id: "companies", label: "AI企業", en: "Companies" },
+  ];
   return (
-    <nav className="section-site-nav" aria-label="サイト内切替">
+    <nav className="section-site-nav" aria-label={lang === "en" ? "Site sections" : "サイト内切替"}>
       <div className="section-site-nav-inner">
-        <button
-          type="button"
-          className={`section-site-tab${section === "articles" ? " is-active" : ""}`}
-          onClick={() => onSection("articles")}
-        >
-          ニュース
-        </button>
-        <button
-          type="button"
-          className={`section-site-tab${section === "reviews" ? " is-active" : ""}`}
-          onClick={() => onSection("reviews")}
-        >
-          レビュー
-        </button>
-        <button
-          type="button"
-          className={`section-site-tab${section === "guide" ? " is-active" : ""}`}
-          onClick={() => onSection("guide")}
-        >
-          ガイド
-        </button>
-        <button
-          type="button"
-          className={`section-site-tab${section === "tools" ? " is-active" : ""}`}
-          onClick={() => onSection("tools")}
-        >
-          ツール別
-        </button>
-        <button
-          type="button"
-          className={`section-site-tab${section === "companies" ? " is-active" : ""}`}
-          onClick={() => onSection("companies")}
-        >
-          AI企業
-        </button>
+        {tabs.map((t) => (
+          <button
+            key={t.id}
+            type="button"
+            className={`section-site-tab${section === t.id ? " is-active" : ""}`}
+            onClick={() => onSection(t.id)}
+          >
+            {L(t, lang)}
+          </button>
+        ))}
       </div>
     </nav>
   );
 }
 
 function ToolTabBar({ toolTab, onSelect }) {
+  const lang = useContext(LangContext);
   return (
-    <nav className="filter-nav" aria-label="ツール別リファレンスの切替">
+    <nav className="filter-nav" aria-label={lang === "en" ? "Tool reference" : "ツール別リファレンスの切替"}>
       <div className="filter-nav-inner" role="tablist">
         {TOOL_REFERENCES.map((t) => (
           <button
@@ -1025,7 +1037,8 @@ function sectionAnchorId(name) {
 function ToolReferencePanel({ referenceData, practical }) {
   let k = 0;
   const mkKey = () => `tr-${k++}`;
-  if (!referenceData) return <div className="empty-state">ツールが見つかりません</div>;
+  const lang = useContext(LangContext);
+  if (!referenceData) return <div className="empty-state">{lang === "en" ? "Tool not found" : "ツールが見つかりません"}</div>;
 
   // section でグループ化（順序を保持）
   const sections = [];
@@ -1223,12 +1236,14 @@ function ToolSidebar({ toolTab, toolRef }) {
 }
 
 function CompaniesSidebar({ companies }) {
+  const lang = useContext(LangContext);
+  const en = lang === "en";
   return (
-    <aside className="desktop-sidebar" aria-label="企業ページの目次">
+    <aside className="desktop-sidebar" aria-label={en ? "Company index" : "企業ページの目次"}>
       <div className="sidebar-panel">
-        <h3>企業一覧</h3>
+        <h3>{en ? "Companies" : "企業一覧"}</h3>
         <p className="sidebar-panel-hint">
-          項目をクリックで該当カードへスクロールします。
+          {en ? "Click to scroll to the company card." : "項目をクリックで該当カードへスクロールします。"}
         </p>
         {companies.map((c) => (
           <SidebarJump key={c.id} id={`company-${c.id}`}>
@@ -1856,6 +1871,8 @@ function ReviewTabBar({ reviewTab, onSelect }) {
 }
 
 function CompanyCard({ company }) {
+  const lang = useContext(LangContext);
+  const en = lang === "en";
   const st = company.stock;
   return (
     <article id={`company-${company.id}`} className="company-card">
@@ -1863,7 +1880,7 @@ function CompanyCard({ company }) {
         {company.logo ? (
           <img
             src={resolveMediaSrc(company.logo)}
-            alt={`${company.name} ロゴ`}
+            alt={`${company.name} ${en ? "logo" : "ロゴ"}`}
             className="company-card__logo"
             loading="lazy"
             decoding="async"
@@ -1876,7 +1893,7 @@ function CompanyCard({ company }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          公式サイト
+          {en ? "Official Site" : "公式サイト"}
           <span className="official-tab-ext" aria-hidden>
             ↗
           </span>
@@ -1886,17 +1903,17 @@ function CompanyCard({ company }) {
         <p className="company-card__legal">{company.legalName}</p>
       ) : null}
       <dl className="company-dl">
-        <dt>国・地域</dt>
+        <dt>{en ? "Country" : "国・地域"}</dt>
         <dd>{company.country}</dd>
-        <dt>本社・拠点</dt>
+        <dt>{en ? "Headquarters" : "本社・拠点"}</dt>
         <dd>{company.hq}</dd>
-        <dt>設立</dt>
-        <dd>{company.foundedYear}年</dd>
-        <dt>従業員規模</dt>
+        <dt>{en ? "Founded" : "設立"}</dt>
+        <dd>{company.foundedYear}{en ? "" : "年"}</dd>
+        <dt>{en ? "Employees" : "従業員規模"}</dt>
         <dd>{company.employees}</dd>
-        <dt>売上・事業規模</dt>
+        <dt>{en ? "Revenue / Scale" : "売上・事業規模"}</dt>
         <dd>{company.revenue}</dd>
-        <dt>株式・資本市場</dt>
+        <dt>{en ? "Stock / Capital" : "株式・資本市場"}</dt>
         <dd>
           {st.listed && st.tickers?.length ? (
             <ul className="company-ticker-list">
@@ -1910,7 +1927,7 @@ function CompanyCard({ company }) {
           ) : null}
           <span className="company-stock-note">{st.detail}</span>
         </dd>
-        <dt>主要プロダクト</dt>
+        <dt>{en ? "Key Products" : "主要プロダクト"}</dt>
         <dd>{company.products.join("、")}</dd>
       </dl>
       {company.notes?.length ? (
@@ -1951,6 +1968,8 @@ function ShareBtn({ articleId, articleTitle }) {
 
 /** 元報道・公式ドキュメント（2次サイトとしての出典明示） */
 function ArticlePrimarySources({ sources }) {
+  const lang = useContext(LangContext);
+  const en = lang === "en";
   if (!sources?.length) return null;
   return (
     <section
@@ -1958,10 +1977,12 @@ function ArticlePrimarySources({ sources }) {
       aria-labelledby="primary-sources-heading"
     >
       <h2 id="primary-sources-heading" className="detail-section-title">
-        元記事・一次情報
+        {en ? "Primary Sources" : "元記事・一次情報"}
       </h2>
       <p className="detail-primary-sources__lead">
-        当サイトの記事は要約・整理です。事実関係・契約・価格・提供条件の判断は、次の一次情報・報道原文・公式ドキュメントを優先してご確認ください。
+        {en
+          ? "Our articles are summaries. For definitive information on facts, contracts, pricing, and terms, please refer to the primary sources below."
+          : "当サイトの記事は要約・整理です。事実関係・契約・価格・提供条件の判断は、次の一次情報・報道原文・公式ドキュメントを優先してご確認ください。"}
       </p>
       <ul className="detail-primary-sources__list">
         {sources.map((s, i) => (
@@ -2258,6 +2279,8 @@ function ArticleDetail({
   onOpenRelated,
 }) {
   const cat = CATEGORIES[article.category];
+  const lang = useContext(LangContext);
+  const en = lang === "en";
 
   return (
     <div className="app-inner">
@@ -2268,7 +2291,7 @@ function ArticleDetail({
           className="detail-back-btn desktop-only"
           onClick={onBack}
         >
-          ← 一覧へ
+          {en ? "← Back" : "← 一覧へ"}
         </button>
 
         <article>
@@ -2353,7 +2376,7 @@ function ArticleDetail({
               {article.ratings ? (
                 <div style={{ flex: "1 1 100%", marginBottom: 4 }}>
                   <div style={{ fontSize: 10, color: "var(--muted)", marginBottom: 6 }}>
-                    評価（5段階）
+                    {en ? "Rating (5-point scale)" : "評価（5段階）"}
                   </div>
                   <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "4px 16px" }}>
                     {Object.entries(article.ratings).map(([k, v]) => (
@@ -2368,7 +2391,7 @@ function ArticleDetail({
               ) : article.rating ? (
                 <div>
                   <div style={{ fontSize: 10, color: "var(--muted)", marginBottom: 2 }}>
-                    評価
+                    {en ? "Rating" : "評価"}
                   </div>
                   <div style={{ fontSize: 14, color: "#fbbf24" }}>
                     {renderStars(article.rating)}
@@ -2378,7 +2401,7 @@ function ArticleDetail({
               {article.company ? (
                 <div>
                   <div style={{ fontSize: 10, color: "var(--muted)", marginBottom: 2 }}>
-                    開発元
+                    {en ? "Developer" : "開発元"}
                   </div>
                   <div style={{ fontSize: 13, color: "var(--text)", fontWeight: 500 }}>
                     {article.company}
@@ -2388,7 +2411,7 @@ function ArticleDetail({
               {article.model ? (
                 <div>
                   <div style={{ fontSize: 10, color: "var(--muted)", marginBottom: 2 }}>
-                    モデル
+                    {en ? "Model" : "モデル"}
                   </div>
                   <div style={{ fontSize: 13, color: cat.color, fontWeight: 500 }}>
                     {article.model}
@@ -2398,7 +2421,7 @@ function ArticleDetail({
               {article.pricing ? (
                 <div>
                   <div style={{ fontSize: 10, color: "var(--muted)", marginBottom: 2 }}>
-                    料金
+                    {en ? "Pricing" : "料金"}
                   </div>
                   <div style={{ fontSize: 13, color: "var(--text)" }}>{article.pricing}</div>
                 </div>
@@ -2408,7 +2431,7 @@ function ArticleDetail({
 
           <section className="detail-lead" aria-labelledby="detail-lead-heading">
             <h2 id="detail-lead-heading" className="detail-section-title">
-              概要
+              {en ? "Summary" : "概要"}
             </h2>
             <p className="detail-excerpt">
               {richArticleText(article.excerpt, "detail-ex-")}
@@ -2417,8 +2440,13 @@ function ArticleDetail({
 
           <section className="detail-body" aria-labelledby="detail-body-heading">
             <h2 id="detail-body-heading" className="detail-section-title">
-              記事本文
+              {en ? "Article" : "記事本文"}
             </h2>
+            {en && (
+              <p className="lang-notice" style={{ fontSize: 13, color: "var(--muted)", background: "var(--surface-solid)", border: "1px solid var(--border)", borderRadius: "var(--radius-md)", padding: "0.75rem 1rem", marginBottom: "1rem" }}>
+                Articles are written in Japanese. To read in English, please use your browser's built-in translation feature (e.g. Chrome: right-click → "Translate to English").
+              </p>
+            )}
             <ArticleProse article={article} />
           </section>
 
@@ -2429,7 +2457,7 @@ function ArticleDetail({
               style={{ marginBottom: "1.5rem" }}
             >
               <h2 id="detail-related-heading" className="detail-section-title">
-                関連記事
+                {en ? "Related Articles" : "関連記事"}
               </h2>
               <ul
                 style={{
@@ -2537,12 +2565,14 @@ function ArticleDetail({
 }
 
 function WeekRoundupNav({ articles, onSelect, onTagClick, className }) {
+  const lang = useContext(LangContext);
+  const en = lang === "en";
   if (articles.length === 0) return null;
   return (
     <div className={`sidebar-panel${className ? ` ${className}` : ""}`}>
-      <h3>週刊まとめ（特集）</h3>
+      <h3>{en ? "Weekly Roundups" : "週刊まとめ（特集）"}</h3>
       <p className="sidebar-panel-hint" style={{ marginTop: 0 }}>
-        毎週の振り返り。新しい公開順です。
+        {en ? "Weekly reviews, newest first." : "毎週の振り返り。新しい公開順です。"}
       </p>
       {articles.map((a) => (
         <div
@@ -2586,7 +2616,7 @@ function WeekRoundupNav({ articles, onSelect, onTagClick, className }) {
           style={{ fontSize: 12, padding: "6px 10px" }}
           onClick={() => onTagClick("週刊まとめ")}
         >
-          タグ「週刊まとめ」で記事を検索
+          {en ? 'Search by "Weekly Roundup" tag' : 'タグ「週刊まとめ」で記事を検索'}
         </button>
       </p>
     </div>
@@ -2594,19 +2624,23 @@ function WeekRoundupNav({ articles, onSelect, onTagClick, className }) {
 }
 
 function Sidebar({ articles, onSelect, onTagClick, weekRoundups }) {
+  const lang = useContext(LangContext);
+  const en = lang === "en";
   return (
     <aside className="desktop-sidebar">
       <div className="sidebar-panel">
-        <h3>このサイトについて</h3>
+        <h3>{en ? "About This Site" : "このサイトについて"}</h3>
         <p style={{ fontSize: 12, color: "var(--muted)", lineHeight: 1.65, margin: 0 }}>
-          AI 開発ツールのニュース・レビューを要約・整理しています（2次情報）。各記事末尾の「元記事・一次情報」から原文・公式を確認してください。
+          {en
+            ? 'We summarize AI dev tool news & reviews (secondary source). Please verify with "Primary Sources" at the end of each article.'
+            : 'AI 開発ツールのニュース・レビューを要約・整理しています（2次情報）。各記事末尾の「元記事・一次情報」から原文・公式を確認してください。'}
         </p>
         <div style={{ marginTop: 10, fontSize: 11, color: "var(--muted)" }}>
-          最終更新: {getSiteTodayYmd()}
+          {en ? "Last updated" : "最終更新"}: {getSiteTodayYmd()}
         </div>
         <p style={{ marginTop: 12, marginBottom: 0 }}>
           <a href="./feed.xml" className="prose-link" target="_blank" rel="noopener noreferrer">
-            Atom フィード（購読）
+            {en ? "Atom Feed (Subscribe)" : "Atom フィード（購読）"}
           </a>
         </p>
       </div>
@@ -2618,7 +2652,7 @@ function Sidebar({ articles, onSelect, onTagClick, weekRoundups }) {
       />
 
       <div className="sidebar-panel">
-        <h3>よく使うタグ</h3>
+        <h3>{en ? "Popular Tags" : "よく使うタグ"}</h3>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
           {["MCP", "動画生成", "スキル", "Markdown", "RAG", "音声", "CLI", "Anthropic"].map((t) => (
             <button
@@ -2976,6 +3010,7 @@ function ScrollTopFab({ visible, onClick }) {
 }
 
 function StorageLocalNotice() {
+  const lang = useContext(LangContext);
   const [dismissed, setDismissed] = useState(
     () => localStorage.getItem(STORAGE_LOCAL_NOTICE) === "1",
   );
@@ -2983,9 +3018,9 @@ function StorageLocalNotice() {
   return (
     <div className="storage-notice" role="status" aria-live="polite">
       <p>
-        テーマとブックマークはブラウザの localStorage
-        に保存されます。広告追跡用の第三者 Cookie
-        は使用していません。
+        {lang === "en"
+          ? "Theme and bookmarks are stored in your browser\u2019s localStorage. No third-party tracking cookies are used."
+          : "テーマとブックマークはブラウザの localStorage に保存されます。広告追跡用の第三者 Cookie は使用していません。"}
       </p>
       <button
         type="button"
@@ -2994,90 +3029,137 @@ function StorageLocalNotice() {
           setDismissed(true);
         }}
       >
-        閉じる
+        {lang === "en" ? "Close" : "閉じる"}
       </button>
     </div>
   );
 }
 
 function EditorialStatement({ isOpen, onClose }) {
+  const lang = useContext(LangContext);
   if (!isOpen) return null;
+
+  const en = lang === "en";
   return (
     <div className="statement-overlay" onClick={onClose}>
       <div className="statement-card" onClick={(e) => e.stopPropagation()}>
-        <button className="statement-close" onClick={onClose} aria-label="閉じる">✕</button>
-        <h2 style={{ margin: "0 0 1rem", fontSize: "1.25rem" }}>運営方針・編集ステートメント</h2>
+        <button className="statement-close" onClick={onClose} aria-label={en ? "Close" : "閉じる"}>✕</button>
+        <h2 style={{ margin: "0 0 1rem", fontSize: "1.25rem" }}>
+          {en ? "Editorial Policy & Statement" : "運営方針・編集ステートメント"}
+        </h2>
 
-        <h3>このサイトについて</h3>
-        <p>AI 開発ツールの最新情報を日本語で体系的に整理し、無料で公開しているニュース・ガイドサイトです。</p>
+        <h3>{en ? "About This Site" : "このサイトについて"}</h3>
+        <p>{en
+          ? "A free news and guide site that systematically organizes the latest information on AI developer tools."
+          : "AI 開発ツールの最新情報を日本語で体系的に整理し、無料で公開しているニュース・ガイドサイトです。"}</p>
 
-        <h3>AI による記事制作</h3>
-        <p>本サイトの記事は主に <strong>AI（Claude Code を中心とした AI コーディングツール）</strong> を活用して制作しています。AI が下書き・構成・コード生成を担い、人間の編集者が事実確認・方針判断・最終承認を行う体制です。AI を活用していることを隠さず、透明に開示します。</p>
+        <h3>{en ? "AI-Assisted Content Production" : "AI による記事制作"}</h3>
+        <p>{en
+          ? <>Articles on this site are primarily produced using <strong>AI (mainly Claude Code and other AI coding tools)</strong>. AI handles drafting, structuring, and code generation, while human editors perform fact-checking, policy decisions, and final approval. We openly disclose our use of AI.</>
+          : <>本サイトの記事は主に <strong>AI（Claude Code を中心とした AI コーディングツール）</strong> を活用して制作しています。AI が下書き・構成・コード生成を担い、人間の編集者が事実確認・方針判断・最終承認を行う体制です。AI を活用していることを隠さず、透明に開示します。</>}</p>
 
-        <h3>情報源と検証</h3>
+        <h3>{en ? "Sources & Verification" : "情報源と検証"}</h3>
         <ul>
-          <li><strong>公式発表・公式ドキュメント</strong>を1次情報とし、記事に primarySources として明記します</li>
-          <li><strong>公式情報は1ソースで十分</strong>と判断します（公式自体が1次情報のため）</li>
-          <li><strong>推定値・ユーザー体験談・論争的主張</strong>は複数ソースで裏取りを行います</li>
-          <li>1次情報が確認できない情報は掲載しません。推測や憶測は記事に含めません</li>
+          {en ? (<>
+            <li><strong>Official announcements and documentation</strong> are treated as primary sources and cited as primarySources in each article</li>
+            <li><strong>One official source is sufficient</strong> (the official source itself is the primary information)</li>
+            <li><strong>Estimates, user testimonials, and controversial claims</strong> are cross-referenced with multiple sources</li>
+            <li>Information without a verifiable primary source is not published. No speculation or conjecture is included</li>
+          </>) : (<>
+            <li><strong>公式発表・公式ドキュメント</strong>を1次情報とし、記事に primarySources として明記します</li>
+            <li><strong>公式情報は1ソースで十分</strong>と判断します（公式自体が1次情報のため）</li>
+            <li><strong>推定値・ユーザー体験談・論争的主張</strong>は複数ソースで裏取りを行います</li>
+            <li>1次情報が確認できない情報は掲載しません。推測や憶測は記事に含めません</li>
+          </>)}
         </ul>
 
-        <h3>画像・図版</h3>
+        <h3>{en ? "Images & Diagrams" : "画像・図版"}</h3>
         <ul>
-          <li>記事内の図版は<strong>自作の SVG</strong> で情報を図示し、1次情報に基づいて正確に作成します</li>
-          <li>カバー画像には<strong>フリーライセンスの写真</strong>（Unsplash 等）や企業の公式ブランドカラーを編集目的で使用します</li>
-          <li>チャートに掲載するベンチマークスコアは<strong>公式発表値のみ</strong>使用し、推定値は原則掲載しません</li>
-          <li>データの出典は図のキャプションまたは本文に記載します</li>
+          {en ? (<>
+            <li>Diagrams are <strong>custom SVGs</strong> created based on primary sources</li>
+            <li>Cover images use <strong>free-licensed photos</strong> (Unsplash, etc.) or official brand colors for editorial purposes</li>
+            <li>Benchmark scores in charts use <strong>official figures only</strong>; estimates are not included</li>
+            <li>Data sources are noted in captions or article text</li>
+          </>) : (<>
+            <li>記事内の図版は<strong>自作の SVG</strong> で情報を図示し、1次情報に基づいて正確に作成します</li>
+            <li>カバー画像には<strong>フリーライセンスの写真</strong>（Unsplash 等）や企業の公式ブランドカラーを編集目的で使用します</li>
+            <li>チャートに掲載するベンチマークスコアは<strong>公式発表値のみ</strong>使用し、推定値は原則掲載しません</li>
+            <li>データの出典は図のキャプションまたは本文に記載します</li>
+          </>)}
         </ul>
 
-        <h3>記事の更新と訂正</h3>
+        <h3>{en ? "Updates & Corrections" : "記事の更新と訂正"}</h3>
         <ul>
-          <li><strong>比較記事・料金記事</strong>は毎月1回以上の見直しを実施し、「最終確認日」を記事に表示します</li>
-          <li><strong>事実の誤り</strong>を発見した場合は記事上部に「Correction」として訂正を明記します（黙って修正しません）</li>
-          <li><strong>情報の追加・更新</strong>は記事末尾に「Update」として追記します</li>
-          <li>ニュース記事は原則として個別に保持し、削除は行いません</li>
+          {en ? (<>
+            <li><strong>Comparison and pricing articles</strong> are reviewed at least once a month with a "last verified" date</li>
+            <li><strong>Factual errors</strong> are corrected with a "Correction" notice at the top of the article (never silently fixed)</li>
+            <li><strong>New information</strong> is appended as an "Update" at the end of the article</li>
+            <li>News articles are kept individually and not deleted</li>
+          </>) : (<>
+            <li><strong>比較記事・料金記事</strong>は毎月1回以上の見直しを実施し、「最終確認日」を記事に表示します</li>
+            <li><strong>事実の誤り</strong>を発見した場合は記事上部に「Correction」として訂正を明記します（黙って修正しません）</li>
+            <li><strong>情報の追加・更新</strong>は記事末尾に「Update」として追記します</li>
+            <li>ニュース記事は原則として個別に保持し、削除は行いません</li>
+          </>)}
         </ul>
 
-        <h3>レビュー評価</h3>
+        <h3>{en ? "Review Ratings" : "レビュー評価"}</h3>
         <ul>
-          <li>5軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）の加重平均で総合スコアを算出します</li>
-          <li>評価基準と重みはデータファイルに明記し、誰でも確認できます</li>
-          <li>特定のツールや企業から金銭的な対価を受け取っていません</li>
+          {en ? (<>
+            <li>Overall scores are calculated as a weighted average across 5 axes (AI quality, usability, value, extensibility, enterprise)</li>
+            <li>Rating criteria and weights are documented in data files and publicly verifiable</li>
+            <li>We do not receive compensation from any tool or company</li>
+          </>) : (<>
+            <li>5軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）の加重平均で総合スコアを算出します</li>
+            <li>評価基準と重みはデータファイルに明記し、誰でも確認できます</li>
+            <li>特定のツールや企業から金銭的な対価を受け取っていません</li>
+          </>)}
         </ul>
 
-        <h3>プライバシーと広告</h3>
+        <h3>{en ? "Privacy & Advertising" : "プライバシーと広告"}</h3>
         <ul>
-          <li><strong>個人情報を一切収集しません</strong>。Cookie、アクセス解析、トラッキングは使用していません</li>
-          <li><strong>広告を一切掲載しません</strong>。完全無料で運営しています</li>
-          <li>アフィリエイトリンクは使用していません</li>
+          {en ? (<>
+            <li><strong>We collect no personal data whatsoever</strong>. No cookies, analytics, or tracking</li>
+            <li><strong>We display no advertisements</strong>. The site is completely free</li>
+            <li>No affiliate links are used</li>
+          </>) : (<>
+            <li><strong>個人情報を一切収集しません</strong>。Cookie、アクセス解析、トラッキングは使用していません</li>
+            <li><strong>広告を一切掲載しません</strong>。完全無料で運営しています</li>
+            <li>アフィリエイトリンクは使用していません</li>
+          </>)}
         </ul>
 
-        <h3>オープンソース</h3>
-        <p>本サイトのソースコードは <a href="https://github.com/022740mix-spec/AI-News" target="_blank" rel="noopener">GitHub で公開</a> しています。記事データ、評価基準、ビルド設定を含めて誰でも確認・検証できます。</p>
+        <h3>{en ? "Open Source" : "オープンソース"}</h3>
+        <p>{en
+          ? <>The source code of this site is <a href="https://github.com/022740mix-spec/AI-News" target="_blank" rel="noopener">available on GitHub</a>. Article data, rating criteria, and build configuration are all publicly verifiable.</>
+          : <>本サイトのソースコードは <a href="https://github.com/022740mix-spec/AI-News" target="_blank" rel="noopener">GitHub で公開</a> しています。記事データ、評価基準、ビルド設定を含めて誰でも確認・検証できます。</>}</p>
       </div>
     </div>
   );
 }
 
 function SiteFooter({ onOpenStatement }) {
+  const lang = useContext(LangContext);
+  const en = lang === "en";
+  const desc = en ? "Latest news & guides on Claude Code, Cursor, Codex & Copilot" : SITE_DESCRIPTION;
   return (
     <footer className="site-footer">
       <div>
-        {SITE_NAME} — {SITE_DESCRIPTION}
+        {SITE_NAME} — {desc}
       </div>
       <div>
-        最終更新: {getSiteTodayYmd()}
+        {en ? "Last updated" : "最終更新"}: {getSiteTodayYmd()}
         {" · "}
         <button
           type="button"
           className="footer-link"
           onClick={onOpenStatement}
         >
-          運営方針・編集ステートメント
+          {en ? "Editorial Policy & Statement" : "運営方針・編集ステートメント"}
         </button>
       </div>
       <div style={{ fontSize: 11, color: "var(--muted)", marginTop: 4 }}>
-        記事は主に AI で制作 · 広告なし · 個人情報収集なし · 完全無料
+        {en ? "AI-produced · No ads · No tracking · Completely free" : "記事は主に AI で制作 · 広告なし · 個人情報収集なし · 完全無料"}
       </div>
     </footer>
   );
@@ -3152,11 +3234,19 @@ const [showFab, setShowFab] = useState(false);
   const [statementOpen, setStatementOpen] = useState(false);
   const [page, setPage] = useState(1);
   const [accentId, setAccentId] = useState(() => localStorage.getItem(STORAGE_ACCENT) || "blue");
+  const [lang, setLang] = useState(() => localStorage.getItem(STORAGE_LANG) || "ja");
   const searchRef = useRef(null);
   const ITEMS_PER_PAGE = 15;
 
   const toggleMenu = useCallback(() => setMenuOpen(prev => !prev), []);
   const closeMenu = useCallback(() => setMenuOpen(false), []);
+  const toggleLang = useCallback(() => {
+    setLang(prev => {
+      const next = prev === "ja" ? "en" : "ja";
+      localStorage.setItem(STORAGE_LANG, next);
+      return next;
+    });
+  }, []);
 
   useEffect(() => {
     const preset = ACCENT_PRESETS.find(p => p.id === accentId) || ACCENT_PRESETS[0];
@@ -3419,9 +3509,10 @@ const [showFab, setShowFab] = useState(false);
   }, []);
 
   return (
+    <LangContext.Provider value={lang}>
     <div className="app-shell">
       <a href="#main-content" className="skip-link">
-        本文へスキップ
+        {lang === "en" ? "Skip to content" : "本文へスキップ"}
       </a>
       <StorageLocalNotice />
       <div className="app-inner">
@@ -3457,27 +3548,28 @@ const [showFab, setShowFab] = useState(false);
               }
               searchPlaceholder={
                 siteSection === "companies"
-                  ? "企業名・国・本社・製品・証券コードで検索…"
+                  ? (lang === "en" ? "Search companies…" : "企業名・国・本社・製品・証券コードで検索…")
                   : siteSection === "guide"
-                    ? "ツール・ルール・用語を検索…"
+                    ? (lang === "en" ? "Search guide…" : "ツール・ルール・用語を検索…")
                     : siteSection === "reviews"
-                      ? "レビューを検索…（ツール名・タグ）"
+                      ? (lang === "en" ? "Search reviews…" : "レビューを検索…（ツール名・タグ）")
                       : siteSection === "tools"
-                        ? "コマンド・機能を検索…"
-                        : "記事を検索…（タイトル・概要・タグ）"
+                        ? (lang === "en" ? "Search commands…" : "コマンド・機能を検索…")
+                        : null
               }
               searchAriaLabel={
                 siteSection === "companies"
-                  ? "企業検索"
+                  ? (lang === "en" ? "Search companies" : "企業検索")
                   : siteSection === "guide"
-                    ? "ガイド内検索"
+                    ? (lang === "en" ? "Search guide" : "ガイド内検索")
                     : siteSection === "tools"
-                      ? "ツール別検索"
-                      : "記事検索"
+                      ? (lang === "en" ? "Search tools" : "ツール別検索")
+                      : null
               }
               showSort={siteSection === "articles" || siteSection === "reviews"}
               hideSearch={siteSection === "home"}
               onToggleMenu={toggleMenu}
+              onToggleLang={toggleLang}
             />
             <HamburgerMenu
               isOpen={menuOpen}
@@ -3524,10 +3616,11 @@ const [showFab, setShowFab] = useState(false);
               filteredCount={0}
               totalCount={0}
               searchPlaceholder=""
-              searchAriaLabel="記事検索"
+              searchAriaLabel={lang === "en" ? "Search articles" : "記事検索"}
               showSort={false}
               hideSearch={true}
               onToggleMenu={toggleMenu}
+              onToggleLang={toggleLang}
             />
             <HamburgerMenu
               isOpen={menuOpen}
@@ -3604,34 +3697,44 @@ const [showFab, setShowFab] = useState(false);
                     <>
                       <div className="section-feed">
                         <h2 className="section-feed__title">
-                          {siteSection === "reviews" ? "個別レビュー" : "記事一覧"}
+                          {siteSection === "reviews"
+                            ? (lang === "en" ? "Individual Reviews" : "個別レビュー")
+                            : (lang === "en" ? "Articles" : "記事一覧")}
                         </h2>
                         <p className="section-feed__meta">
-                          {siteSection === "reviews" ? "各ツールの詳細レビュー" : "掲載記事"}を
-                          <span title="報道・公式発表など、事実が表に出た日の目安">
-                            ニュース日
-                          </span>
-                          の新しい順に並べています（
-                          <strong style={{ color: "var(--text-secondary)" }}>
-                            {rest.length}
-                          </strong>
-                          件）
-                          {query ? " · 検索で絞り込み中" : ""}
-                          。
+                          {lang === "en" ? (
+                            <>
+                              {siteSection === "reviews" ? "Detailed tool reviews" : "Articles"} sorted by newest first ({rest.length} items){query ? " · Filtered by search" : ""}
+                            </>
+                          ) : (
+                            <>
+                              {siteSection === "reviews" ? "各ツールの詳細レビュー" : "掲載記事"}を
+                              <span title="報道・公式発表など、事実が表に出た日の目安">ニュース日</span>
+                              の新しい順に並べています（
+                              <strong style={{ color: "var(--text-secondary)" }}>{rest.length}</strong>
+                              件）{query ? " · 検索で絞り込み中" : ""}。
+                            </>
+                          )}
                         </p>
                         <p className="section-feed__meta section-feed__meta--hint">
-                          <strong>週刊まとめ</strong>
-                          は右（または下）の
-                          <strong>サイドバー「週刊まとめ（特集）」</strong>
-                          から時系列で開けます。タグ検索は
-                          <button
-                            type="button"
-                            className="inline-linkish"
-                            onClick={() => onTagClick("週刊まとめ")}
-                          >
-                            「週刊まとめ」
-                          </button>
-                          でも絞れます。
+                          {lang === "en" ? (
+                            <>
+                              <strong>Weekly roundups</strong> are available in the sidebar. You can also filter by{" "}
+                              <button type="button" className="inline-linkish" onClick={() => onTagClick("週刊まとめ")}>
+                                "Weekly Roundup"
+                              </button> tag.
+                            </>
+                          ) : (
+                            <>
+                              <strong>週刊まとめ</strong>は右（または下）の
+                              <strong>サイドバー「週刊まとめ（特集）」</strong>
+                              から時系列で開けます。タグ検索は
+                              <button type="button" className="inline-linkish" onClick={() => onTagClick("週刊まとめ")}>
+                                「週刊まとめ」
+                              </button>
+                              でも絞れます。
+                            </>
+                          )}
                         </p>
                       </div>
                       <div className="articles-grid">
@@ -3649,7 +3752,7 @@ const [showFab, setShowFab] = useState(false);
                       )}
                     </>
                   ) : featured ? null : (
-                    <div className="empty-state">該当する記事がありません</div>
+                    <div className="empty-state">{lang === "en" ? "No matching articles" : "該当する記事がありません"}</div>
                   )}
                   <WeekRoundupNav
                     className="week-roundups-mobile"
@@ -3668,9 +3771,9 @@ const [showFab, setShowFab] = useState(false);
               ) : siteSection === "companies" ? (
                 <>
                   <div className="section-feed companies-page-intro">
-                    <h2 className="section-feed__title">AI企業</h2>
+                    <h2 className="section-feed__title">{lang === "en" ? "AI Companies" : "AI企業"}</h2>
                     <p className="section-feed__meta">
-                      主要プレイヤーの所在地・設立・規模・市場の骨子（公開情報ベース）
+                      {lang === "en" ? "Key players: location, founding, scale & market overview (public data)" : "主要プレイヤーの所在地・設立・規模・市場の骨子（公開情報ベース）"}
                     </p>
                     <p className="companies-disclaimer">{COMPANIES_DISCLAIMER}</p>
                   </div>
@@ -3681,7 +3784,7 @@ const [showFab, setShowFab] = useState(false);
                       ))}
                     </div>
                   ) : (
-                    <div className="empty-state">該当する企業がありません</div>
+                    <div className="empty-state">{lang === "en" ? "No matching companies" : "該当する企業がありません"}</div>
                   )}
                 </>
               ) : (
@@ -3754,5 +3857,6 @@ const [showFab, setShowFab] = useState(false);
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       />
     </div>
+    </LangContext.Provider>
   );
 }
