@@ -170,10 +170,13 @@ function ArticleProse({ article }) {
     <div className="prose prose--article">
       {article.body.map((p, i) => {
         const cb = parseCodeBlock(p);
+        const headingMatch = typeof p === "string" && p.match(/^(#{2,4})\s+(.+)$/);
         return (
         <Fragment key={i}>
           {cb.isCode
             ? <CopyableCodeBlock code={cb.code} lang={cb.lang} />
+            : headingMatch
+            ? (() => { const Tag = `h${headingMatch[1].length + 1}`; return <Tag className="prose-section-heading">{richArticleText(headingMatch[2], `p${i}-`)}</Tag>; })()
             : <p>{richArticleText(p, `p${i}-`)}</p>}
           {figuresAfter(i).map((f, fi) => (
             <figure key={`fig-${i}-${fi}`} className="article-figure">
