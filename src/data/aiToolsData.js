@@ -5726,6 +5726,57 @@ export const ARTICLES = [
       { "title": "Claude Code and Cowork can now use your computer", "site": "Engadget", "url": "https://www.engadget.com/ai/claude-code-and-cowork-can-now-use-your-computer-210000126.html" },
       { "title": "Anthropic acquires Vercept to advance Claude's computer use capabilities", "site": "Anthropic", "url": "https://www.anthropic.com/news/acquires-vercept" }
     ]
+  },
+  {
+    "id": "saas-stack-selection-ai-coding-era-2026",
+    "type": "feature",
+    "category": "cli",
+    "title": "AI コーディング時代の SaaS スタック選定 — 18カテゴリ90+ツールの選び方と、AI が得意な構成・苦手な構成",
+    "excerpt": "X で「SaaS Stack」ツリーが39万表示超のバズ。SaaS 1つに Frontend・Backend・DB・認証・決済・メール・デプロイなど18カテゴリの選定が必要という現実を可視化した。Claude Code や Cursor に「SaaS 作って」と言ったとき、AI はどの構成を選ぶのか。AI が得意なスタックと苦手なスタックを整理する。",
+    "body": [
+      "2026年3月29日、開発者の @hridoyreh が X に投稿した「SaaS Stack」のフォルダツリーが39万表示・6,300いいねを超えるバズとなった。Frontend（React / Next.js / Vue / TailwindCSS / shadcn/ui）、Backend（Node.js / Django / Laravel / FastAPI / Express）、Database（PostgreSQL / MySQL / MongoDB / Redis / Supabase）、Auth（Clerk / Auth0 / Firebase Auth / Supabase Auth / NextAuth）、Payments（Stripe / Paddle / Lemon Squeezy）、Emails（Resend / SendGrid）、Storage、Deployment、Analytics、Monitoring、DevOps、Search、AI Integration、Security、Marketing、Customer Support の18カテゴリ・90以上の選択肢を一覧化したもの。共感の連鎖で「My Stack」の自分版を投稿する流れが生まれている。",
+      "これが刺さった背景は **Technology Decision Fatigue（技術選定疲れ）** だ。SaaS を1つ作るために「最適な」組み合わせを90以上の選択肢から選ぶ必要がある。しかも各カテゴリの選択は独立ではなく相互依存する（例: Supabase を選べば Auth・Storage・DB が統合されるが、Stripe + Clerk + Vercel を選べば各々の接続を自分で書く）。この複雑さこそ、AI コーディングツールに「任せたい」と開発者が感じる領域だ。",
+      "実際に Claude Code や Cursor に「SaaS を作って」と指示すると、AI は特定のスタックを強く好む傾向がある。**AI が得意な構成**の筆頭は **Next.js + TypeScript + Tailwind CSS + shadcn/ui + Prisma（or Drizzle）+ Supabase + Stripe + Vercel** の組み合わせだ。理由は明確で、(1) この構成のチュートリアルやコード例が学習データに最も多い、(2) Supabase は Auth・DB・Storage が統合されており接続コードが少ない、(3) shadcn/ui は コピー&ペースト型のコンポーネントで AI が直接ファイルを書きやすい、(4) Vercel デプロイは設定が最小限。CLAUDE.md や AGENTS.md にスタックを明記しておくと、AI が迷わずこの構成で進められる。",
+      "**AI が苦手な構成**もある。(1) **マイクロサービス + Kubernetes + Terraform** — 複数リポジトリ・設定ファイル間の整合性を AI が見通しにくい。(2) **Laravel / Django + サーバーサイドレンダリング** — AI は React/Vue の SPA + API 構成の方が得意で、Blade テンプレートや Django テンプレートの文脈を維持しにくい。(3) **自前認証** — セキュリティ上の罠が多く、AI が書いた認証コードを信頼するのは危険。Clerk や Supabase Auth など外部サービスに任せる方が安全。(4) **レガシー DB スキーマ + ORM マイグレーション** — 既存スキーマの制約を AI が完全に理解するのは難しい。",
+      "カテゴリ別の実務的な選定指針を整理する。**認証**: 個人開発なら Supabase Auth（無料枠大きい）か NextAuth（セルフホスト）、チーム開発なら Clerk（UI 付き・Webhook 充実）。**決済**: Stripe が AI のコード生成品質で圧倒的に有利（学習データ量の差）。Paddle は SaaS の税務処理を代行する点が強み。**メール**: Resend は React Email との統合が自然で AI が書きやすい。**デプロイ**: Vercel（Next.js 最適化）、Railway（Docker ベースで柔軟）、Cloudflare Workers（エッジ・低コスト）の3択が2026年の主流。**モニタリング**: Sentry（エラー追跡）+ PostHog（プロダクト分析）の組み合わせが個人〜中規模で多い。",
+      "**AI 時代のスタック選定で最も重要なのは「AI に説明しやすい構成」を選ぶことだ。** 具体的には、(1) モノレポで全コードが1箇所にある、(2) TypeScript で型が通っている（AI がコンテキストを推論しやすい）、(3) 統合型サービス（Supabase、Vercel）でボイラープレートが少ない、(4) CLAUDE.md / AGENTS.md / cursor rules にスタック・規約・ディレクトリ構造を明記する。90の選択肢に圧倒される必要はない。AI に得意な構成を選び、設定ファイルで制約を伝えれば、1人でもプロダクションレベルの SaaS を構築できる時代になっている。",
+      "注意: 本稿で挙げたツールは執筆時点の情報に基づく。料金体系・無料枠・機能は頻繁に変更されるため、導入前に各サービスの公式サイトで最新情報を確認すること。また、AI が生成した認証・決済・セキュリティ関連のコードは必ず人間がレビューすること。"
+    ],
+    "date": "2026-03-30",
+    "author": "AI News 編集部",
+    "readTime": "12分",
+    "tags": ["SaaS", "技術選定", "Next.js", "Supabase", "Stripe", "AI開発", "スタック", "Vibe Coding"],
+    "tables": [
+      {
+        "title": "SaaS スタック 18カテゴリ — AI との相性評価",
+        "headers": ["カテゴリ", "AI 推奨構成（2026年）", "AI 相性", "選定のポイント"],
+        "rows": [
+          ["Frontend", "Next.js + Tailwind + shadcn/ui", "◎", "AI のコード生成品質が最も高い組み合わせ"],
+          ["Backend", "Next.js API Routes / Hono", "◎", "フロントと同一リポで AI がコンテキスト把握しやすい"],
+          ["Database", "Supabase (PostgreSQL + pgvector)", "◎", "Auth・Storage 統合で接続コード最小"],
+          ["Auth", "Clerk / Supabase Auth", "◎", "自前実装は AI に任せない。外部サービス一択"],
+          ["Payments", "Stripe", "◎", "学習データ量が圧倒的。Webhook 処理も AI が書ける"],
+          ["Emails", "Resend + React Email", "○", "JSX でメール構築。AI との親和性高い"],
+          ["Storage", "Supabase Storage / Cloudflare R2", "○", "S3 互換 API で AI が書きやすい"],
+          ["Deployment", "Vercel / Railway", "◎", "設定最小。git push でデプロイ完了"],
+          ["DNS", "Cloudflare", "○", "無料 CDN + DNS + WAF のオールインワン"],
+          ["Analytics", "PostHog / Plausible", "○", "プライバシー重視。PostHog は機能分析も"],
+          ["Monitoring", "Sentry + UptimeRobot", "○", "Sentry SDK は AI が自動設定可能"],
+          ["DevOps", "GitHub Actions + Docker", "△", "CI/CD 設定は AI が書けるが検証が必要"],
+          ["Search", "Meilisearch / Typesense", "○", "セルフホスト可。Algolia は高機能だが高額"],
+          ["AI Integration", "Anthropic API / OpenAI API", "◎", "SDK が充実。MCP でツール連携"],
+          ["Integrations", "n8n / Webhooks", "△", "ノーコード部分は AI の管轄外"],
+          ["Security", "Cloudflare WAF + Rate Limiting", "△", "設定は AI が書けるがレビュー必須"],
+          ["Marketing", "Search Console + PostHog", "○", "SEO メタタグは AI が自動生成可能"],
+          ["Support", "Crisp / Intercom", "△", "ウィジェット埋め込みは AI 可、運用設計は人間"]
+        ]
+      }
+    ],
+    "primarySources": [
+      { "title": "@hridoyreh SaaS Stack ツリー（39万表示）", "site": "X", "url": "https://x.com/hridoyreh" },
+      { "title": "7 AI Tools That Changed Developer Workflow (March 2026)", "site": "Build Fast with AI", "url": "https://www.buildfastwithai.com/blogs/ai-tools-developers-march-2026" },
+      { "title": "AI dev tool power rankings & comparison [March 2026]", "site": "LogRocket Blog", "url": "https://blog.logrocket.com/ai-dev-tool-power-rankings/" }
+    ]
   }
 ];
 
