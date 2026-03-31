@@ -5750,7 +5750,7 @@ export const ARTICLES = [
       "**Coordinator Mode** — マルチエージェントオーケストレーター。`CLAUDE_CODE_COORDINATOR_MODE=1` で既に一部アクセス可能。マスター Claude が AgentTool でワーカーを並列起動し、ワーカーは XML `<task-notification>` メッセージで結果を返す。ワーカーには隔離されたスクラッチディレクトリが提供される。",
       "**コミュニティの反応は二極化している。** 開発者コミュニティでは、Claude Code の設計の洗練度に驚嘆する声と、Anthropic のオペレーショナルセキュリティへの疑問が入り混じっている。DEV Community の分析記事は「AI コーディングツールのバーがいかに高いかを示している。パーミッションシステム、マルチエージェントオーケストレーション、IDE ブリッジ、永続メモリ — これが業界の向かう先だ」と評価している。一方、Hacker News では「AI セーフティを掲げる企業が自社のソースマップすら管理できないのか」という皮肉なコメントが上位に。",
       "**Anthropic にとって3月は悪夢の月となった。** 3月26日には CMS の設定ミスで約3,000件の未公開資産（ブログ下書き、画像、PDF、内部文書）が公開され、未発表フラグシップモデル **Claude Mythos**（Capybara）の存在が露呈。Fortune の報道で Anthropic はモデルの存在を認め「ステップチェンジ」と表現した。さらに2月には **CVE-2026-21852**（CVSS 5.3）で、悪意あるリポジトリを開くだけで API キーが流出する脆弱性も修正されている。そして今回の npm ソースマップ流出。**2週間で3件のセキュリティ事故**は、急成長するスタートアップのインフラが追いついていない現実を示している。",
-      "**皮肉な一致**: 同じ3月31日に **axios のサプライチェーン攻撃**（npm アカウント乗っ取り + RAT 配布）も発覚しており、npm エコシステムのセキュリティが1日に2度問われる異例の事態となった。axios はメンテナーの npm アカウントが攻撃者に乗っ取られた外部攻撃。Claude Code は Anthropic 自身の設定ミス。原因は正反対だが、npm パッケージの公開プロセスにおけるセキュリティチェックの甘さという共通の構造的問題が浮き彫りになっている。",
+      "**皮肉な一致**: 同じ3月31日に **axios のサプライチェーン攻撃**（npm アカウント乗っ取り + RAT 配布）も発覚しており、npm エコシステムのセキュリティが1日に2度問われる異例の事態となった。**さらに衝撃的な事実が判明した。** 流出したソースコード（`src/assistant/sessionHistory.ts`）から、**Claude Code 自体が内部で axios を HTTP クライアントとして使用している**ことが確認された（@icanvardar が X で指摘）。つまり Claude Code は、同日にサプライチェーン攻撃を受けた axios に直接依存しており、もし Anthropic が汚染バージョン（axios@1.14.1 等）を取り込んでいた場合、**Claude Code ユーザー全員のマシンに RAT が配布される**という最悪のシナリオもあり得た。axios はメンテナーの npm アカウントが攻撃者に乗っ取られた外部攻撃。Claude Code は Anthropic 自身の設定ミス。原因は正反対だが、npm パッケージの公開プロセスにおけるセキュリティチェックの甘さという共通の構造的問題が浮き彫りになっている。",
       "**npm パッケージを公開する全ての開発者への教訓**: 公開前に `.map` ファイルが含まれていないかチェックすること。一行の `sourcesContent` で、あなたの全コードが世に公開されてしまう。`.npmignore` に `*.map` を追加するか、`package.json` の `files` フィールドで明示的に含めるファイルを指定すべきだ。",
       "注意: 本記事は2026年3月31日時点の情報に基づく。Anthropic は DMCA テイクダウンを進行中であり、GitHub 上のミラーリポジトリは順次削除される可能性がある。流出したソースコードの無断複製・商用利用は著作権法に抵触する可能性がある。"
     ],
@@ -5792,7 +5792,8 @@ export const ARTICLES = [
       { "title": "Claude Code — Leaked Source (2026-03-31)", "site": "GitHub", "url": "https://github.com/instructkr/claude-code" },
       { "title": "Digging into the Claude Code source — Dave Schumaker", "site": "Blog", "url": "https://daveschumaker.net/digging-into-the-claude-code-source-saved-by-sublime-text/" },
       { "title": "Anthropic's madcap March: 14+ launches, 5 outages, and an accidental Claude Mythos leak", "site": "The New Stack", "url": "https://thenewstack.io/anthropic-march-2026-roundup/" },
-      { "title": "Dark Web Intelligence — リーク速報", "site": "X", "url": "https://x.com/DailyDarkWeb/status/2038917695609917448" }
+      { "title": "Dark Web Intelligence — リーク速報", "site": "X", "url": "https://x.com/DailyDarkWeb/status/2038917695609917448" },
+      { "title": "Can Vardar (@icanvardar) — Claude Code が axios を使用している事実を指摘", "site": "X", "url": "https://x.com/icanvardar" }
     ]
   },
   {
