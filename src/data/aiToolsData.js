@@ -5769,13 +5769,31 @@ export const ARTICLES = [
       "## 本質的な問題",
       "Anthropic は使用量制限の具体的な計算方法を公開していない。ユーザーにはトークン消費を事前に予測する手段がなく、「5倍の使用量」が実際にどれだけの作業に相当するのか不透明だ。$200/月の Max 20x プランでも、キャッシュバグの影響下では30分で枯渇しうる。",
       "「AI との付き合い方を設計する」ことが最強の対策であることに変わりはないが、そもそもバグで裏側のトークンが燃えている状態では、設計努力だけでは限界がある。Anthropic の迅速なバグ修正と、使用量計算の透明化が求められている。",
+      "## 新たな異変: AI が「セッション終了」を提案し始める",
+      "トークン消費バグと前後して、Claude Code ユーザーの間で**もう一つの不自然な挙動**が報告されている。セッション中盤で Claude が突然「この辺りで一旦セッションを区切りましょうか」「残りのコンテキストを考慮すると、新しいセッションで続けた方が効率的です」といった**早期終了の提案**をするようになったのだ。",
+      "Anthropic の公式ドキュメントによれば、Claude 4.6 モデルにはコンテキストウィンドウの残量を認識する機能があり、残りが少なくなると「自然に作業を切り上げようとする」設計になっている。対策として CLAUDE.md に「コンテキストが残り少なくなっても勝手にセッションを終了しないこと」と明記するよう推奨されている。",
+      "しかしユーザーにとっては、prompt cache バグでトークンが裏で燃えている状態で「もうすぐコンテキストがなくなります」と言われるのは二重の打撃だ。**本来なら5時間使えるはずのセッションが1時間で枯渇し、その上 AI 自身が「もうやめましょう」と言い出す**。月額$200を支払っているユーザーの怒りは当然だろう。",
+
+      "## ユーザーの離反: OpenAI Codex への移行が加速",
+      "この状況を受け、開発者コミュニティでは **OpenAI Codex** への移行が目に見える形で進んでいる。Reddit の r/ClaudeCode や r/cursor では「Claude Code は品質は高いが使い物にならない。Codex は若干品質が落ちるが実際に使える」という声が500人以上の開発者から上がっている。",
+      "ブラインドテストでは Claude Code が **67% の勝率**を維持しており、コード品質では依然として優位だ。しかし「30分で制限に達するツールと、終日使えるツールのどちらを選ぶか」という問いに対し、多くの開発者が実用性を選び始めている。「キーストロークは Codex、コミットは Claude Code」という使い分けも現れ、**Claude Code を「最後の仕上げ」にしか使わない**開発者が増えている。",
+      "The Register は「Anthropic admits Claude Code quotas running out too fast」と報じ、Anthropic 自身も問題を認めている状況だ。",
+      "さらに皮肉なことに、OpenAI は3月30日に **codex-plugin-cc** をリリースした。これは **Codex を Claude Code の内部に埋め込む**プラグインであり、ユーザーが自分で移行しなくても OpenAI 側から迎えに来る戦略だ。Claude Code の制限にフラストレーションを感じたユーザーが、そのまま Claude Code の中から Codex に切り替えられるようになる。",
+
+      "## 「悪夢の1週間」— 皮肉な同時多発",
+      "2026年3月最終週に起きた出来事を並べると、その皮肉さが際立つ。",
+      "**3月26日**: CMS 設定ミスで未発表モデル Mythos がリーク。\n**3月26日**: Anthropic がピーク時のセッション制限を意図的に厳格化。\n**3月29日**: prompt cache バグがバイナリ解析で発覚。\n**3月31日**: Claude Code の全ソースコード（51万行）が npm ソースマップ経由で流出。\n**3月31日**: axios サプライチェーン攻撃が発覚（Claude Code も axios に依存）。\n**同週**: AI がセッション早期終了を提案する挙動が多数報告。\n**同週**: OpenAI が codex-plugin-cc を投入。",
+      "ソースコードが丸見えになり、レート制限に不満が爆発し、AI 自身が「もうやめましょう」と言い出し、競合が移行プラグインを投入する — これが**わずか1週間で同時に起きた**。Anthropic にとっては技術的信頼・製品信頼・セキュリティ信頼の三重の危機であり、ユーザーの「Claude Code は本当に大丈夫なのか」という不安は、単なるバグ報告を超えた根本的な信頼の問題に発展しつつある。",
+
+      "## 編集履歴",
+      "【初版】2026年3月31日 — prompt cache バグの速報として公開。\n【追記1】同日 — Claude Code がセッション早期終了を提案する新挙動、OpenAI Codex への移行トレンド、codex-plugin-cc のリリース、同週のソースコード流出との皮肉な同時性について追記。",
       "注意: 本記事は2026年3月31日時点の情報に基づく。Anthropic はバグ修正を進行中であり、最新の Claude Code にアップデートすることで一部の問題が改善される可能性がある。"
     ],
     "newsDate": "2026-03-31",
     "date": "2026-03-31",
     "author": "AI News 編集部",
-    "readTime": "10分",
-    "tags": ["Claude Code", "Anthropic", "トークン消費", "prompt cache", "バグ", "レート制限"],
+    "readTime": "15分",
+    "tags": ["Claude Code", "Anthropic", "トークン消費", "prompt cache", "バグ", "レート制限", "OpenAI Codex", "競合"],
     "tables": [
       {
         "title": "Claude Code トークン消費バグの経緯",
@@ -5788,7 +5806,8 @@ export const ARTICLES = [
           ["3月23日", "Max プランで大量の異常消費報告", "Issue #38335 に105+リアクション。MacRumors 等が報道"],
           ["3月26日", "Anthropic がピーク時制限強化を発表", "Thariq Shihipar「約7%のユーザーに影響」"],
           ["3月29日", "Reddit ユーザーがバイナリ逆解析", "Ghidra + MITM で2つの cache バグを特定。Alex Volkov が X で拡散"],
-          ["3月31日", "Lydia Hallie「最優先で調査中」", "Anthropic が公式にバグの存在を認める"]
+          ["3月31日", "Lydia Hallie「最優先で調査中」", "Anthropic が公式にバグの存在を認める"],
+          ["3月31日", "Codex 移行の動きが顕在化", "Reddit で500+開発者が「品質より実用性」を選択。OpenAI が codex-plugin-cc を投入"]
         ]
       }
     ],
@@ -5799,7 +5818,7 @@ export const ARTICLES = [
       { "title": "[BUG] Conversation history invalidated — Issue #40524", "site": "GitHub", "url": "https://github.com/anthropics/claude-code/issues/40524" },
       { "title": "Claude Code Users Report Rapid Rate Limit Drain, Suspect Bug", "site": "MacRumors", "url": "https://www.macrumors.com/2026/03/26/claude-code-users-rapid-rate-limit-drain-bug/" },
       { "title": "Anthropic looking into cache bugs blamed for Claude usage limit drain", "site": "PiunikaWeb", "url": "https://piunikaweb.com/2026/03/31/claude-cache-bugs-tokens-20x-more-anthropic-investigating/" },
-      { "title": "Anthropic tweaks Claude usage limits to manage capacity", "site": "The Register", "url": "https://www.theregister.com/2026/03/26/anthropic_tweaks_usage_limits/" },
+      { "title": "Anthropic admits Claude Code quotas running out too fast", "site": "The Register", "url": "https://www.theregister.com/2026/03/26/anthropic_tweaks_usage_limits/" },
       { "title": "Alex Volkov (@altryne) — cache バグの拡散ポスト", "site": "X", "url": "https://x.com/altryne/status/2038676458026189225" },
       { "title": "Lydia Hallie (@lydiahallie) — 「最優先で調査中」", "site": "X", "url": "https://xcancel.com/lydiahallie/status/2038686571676008625" }
     ]
