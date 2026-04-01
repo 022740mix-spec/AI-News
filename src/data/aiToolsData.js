@@ -3001,7 +3001,7 @@ export const ARTICLES = [
       "**Claude Code** は **Anthropic** が提供するCLI型AIエージェントで、ターミナルから claude コマンドを実行するだけでプロジェクト全体のコンテキストを取得し、開発タスクを自律的に遂行する。ファイル編集、bashコマンド実行、Git操作、テスト実行までを一貫して処理でき、CLAUDE.md ファイルにプロジェクト固有のルールを記述することでチーム標準のワークフローを維持できる。",
       "主要な機能として、MCP（**Model Context Protocol**）サーバーへの接続による外部ツール・データソース連携、イベント駆動で前処理・後処理を差し込む Hooks、再利用可能なプロンプトテンプレートである Skills がある。Auto mode（研究プレビュー）を有効にするとユーザー確認なしで連続的にタスクを実行し、大規模なリファクタリングやマイグレーション作業を効率化できる。Opus 4.6 モデルの1Mコンテキストウィンドウにより、数百ファイル規模のリポジトリでもアーキテクチャレベルの判断が可能になっている。",
       "料金体系は3種類ある。Pro プラン（月額 $20）は一般的な開発タスクに十分な利用枠を提供し、Max プラン（月額 $100 または $200）はヘビーユーザー向けに拡張された利用枠と Fast Mode を含む。API 経由での利用も可能で、その場合はトークン単位の従量課金となる。Claude Code SDK を使えばカスタムエージェントの構築もでき、SOC 2 準拠によりエンタープライズ環境にも導入しやすい。",
-      "コンテキスト理解の深さとエージェント的な自律性は現行CLIツールの中でも高い水準にある。一方で、大量のトークンを消費するためコストが膨らみやすい点、Auto mode がまだ研究プレビュー段階である点には注意が必要となる。チームでの利用では [CLAUDE.md による規約共有](?a=ai-config-files-comprehensive-guide-2026)と Hooks によるガードレールの組み合わせが実用上の鍵になる。外部連携は [MCP 活用ガイド](?a=mcp-comprehensive-guide-2026)、Git との連携は [AI × Git ワークフロー](?a=git-ai-workflow-2026)を参照。コミュニティ製の拡張ツール（マルチエージェント管理・並列実行・プラグイン）は [CLI エージェント OSS 特集](?a=cli-agent-community-oss-2026)にまとめている。"
+      "コンテキスト理解の深さとエージェント的な自律性は現行CLIツールの中でも高い水準にある。一方で、大量のトークンを消費するためコストが膨らみやすい点、Auto mode がまだ研究プレビュー段階である点には注意が必要となる。チームでの利用では [CLAUDE.md による規約共有](?a=ai-config-files-comprehensive-guide-2026)と Hooks によるガードレールの組み合わせが実用上の鍵になる。外部連携は [MCP 活用ガイド](?a=mcp-comprehensive-guide-2026)、Git との連携は [AI × Git ワークフロー](?a=git-ai-workflow-2026)を参照。コミュニティ製の拡張ツール（マルチエージェント管理・並列実行・プラグイン）は [CLI エージェント OSS 特集](?a=cli-agent-community-oss-2026)にまとめている。OpenAI Codex CLI との連携（セットアップ手順・コマンド・料金）はツール別リファレンスの「Codex CLI 連携」セクション、およびニュース記事 [Codex プラグイン公開](?a=openai-codex-plugin-cc-claude-code-2026)を参照。"
     ],
     "primarySources": [
       {
@@ -5708,9 +5708,13 @@ export const ARTICLES = [
     "body": [
       "OpenAI は Claude Code 向けの公式プラグイン **codex-plugin-cc** を GitHub（openai/codex-plugin-cc）で公開した。Claude Code のプラグインマーケットプレイスから `/plugin marketplace add openai/codex-plugin-cc` でインストールでき、Claude Code のセッション内から直接 Codex の機能を呼び出せる。競合の開発環境に自社ツールを公式統合するという異例の動きだ。",
       "主要コマンドは4つ。`/codex:review` は通常の Codex コードレビューを実行し、Codex 内の `/review` と同等の品質を提供する。`/codex:adversarial-review` はより懐疑的な視点でコードを検証するステアラブルレビュー。`/codex:rescue` は Codex のサブエージェントにタスクを丸ごと委任する。`/codex:setup` は Codex の環境確認と未インストール時の自動セットアップを行う。",
-      "注目機能は **Review Gate**。`/codex:setup --enable-review-gate` で有効化すると、Claude の出力に対して Stop フックで Codex レビューが自動実行され、問題が検出された場合は Claude が修正するまで処理を継続する。Claude（実装）→ Codex（レビュー）の自動ループが回る設計だが、使用量を急速に消費するため監視下での利用が推奨されている。プラグインはローカルの Codex CLI とアプリサーバーを経由して動作し、ChatGPT サブスクリプションまたは OpenAI API キーが必要。",
+      "注目機能は **Review Gate**。`/codex:setup --enable-review-gate` で有効化すると、Claude の出力に対して Stop フックで Codex レビューが自動実行され、問題が検出された場合は Claude が修正するまで処理を継続する。Claude（実装）→ Codex（レビュー）の自動ループが回る設計だが、使用量を急速に消費するため監視下での利用が推奨されている。プラグインはローカルの Codex CLI とアプリサーバーを経由して動作し、**ChatGPT サブスクリプション（Plus/Pro/Team）か OpenAI API キーのどちらか一方**が必要（完全無料・認証なしでは利用不可）。サブスクリプション認証の場合、利用はプランの使用枠（レートリミット）内で処理され、追加の従量課金は発生しない。使用するモデルは `~/.codex/config.toml` の `model` キーで指定でき、Team プラン以上であれば **GPT-5.4** を含むプラン対応モデルがそのまま利用可能。`codex login` でブラウザ認証を済ませれば、API キーの発行・管理なしに Claude Code 内から GPT-5.4 によるレビューやタスク委任が行える。",
       "この公式プラグインに先行して、OSS コミュニティでは Claude↔Codex 連携が活発に開発されていた。tuannvm/codex-mcp-server（Codex CLI を MCP サーバーでラップ）、ching-kuo/claude-codex（Claude が計画・Codex が実装のループ）、abhishekgahlot2/codex-claude-bridge（Claude Code Channels を使った双方向ブリッジ）など多数のプロジェクトが登場。OpenAI が公式プラグインを出したことで、このエコシステムが正式に認められた形となる。",
-      "背景には OpenAI の Codex プラグインシステム全体の拡充がある。3月27日に発表されたプラグイン機能は、スキル・アプリ統合・MCP サーバーをバンドルして共有可能にする仕組みで、Figma・Notion・Sentry・Slack 等20以上のプラグインが利用可能。さらに GitHub イベントをトリガーにする Codex Triggers も同時発表された。Claude Code と Codex のプラグインアーキテクチャは MCP を共通基盤としており、ツール間の相互運用性は今後さらに進むと見られる。"
+      "**料金体系**は認証方式で大きく異なる。**ChatGPT サブスクリプション認証**（`codex login`）の場合、Codex CLI の利用はプランの使用枠内で処理され、トークン単位の従量課金は発生しない。Plus（月額20ドル）は GPT-4o 相当のレートリミット、Pro（月額200ドル）は実質無制限、Team（1人あたり月額25〜30ドル）は GPT-5.4 を含む上位モデルにアクセスでき、チーム管理機能も付く。一方 **OpenAI API キー認証**（`OPENAI_API_KEY`）の場合は完全従量制で、使った分だけ請求される。API はサブスクリプションと独立した課金体系のため、ChatGPT のプランに関係なくトークン消費量に応じたコストが発生する。利用状況は platform.openai.com/usage で確認可能。Claude Code 側の Anthropic サブスクリプション（Pro: 月額20ドル / Max: 月額100〜200ドル）と合わせると、**最も安価な組み合わせは Anthropic Pro + ChatGPT Plus の月額40ドル**、GPT-5.4 を使いたい場合は **Anthropic Pro + ChatGPT Team の月額45〜50ドル**が目安となる。Review Gate を有効化すると両方の使用枠を急速に消費するため、コスト管理の観点からも監視下での利用が推奨される。",
+      "背景には OpenAI の Codex プラグインシステム全体の拡充がある。3月27日に発表されたプラグイン機能は、スキル・アプリ統合・MCP サーバーをバンドルして共有可能にする仕組みで、Figma・Notion・Sentry・Slack 等20以上のプラグインが利用可能。さらに GitHub イベントをトリガーにする Codex Triggers も同時発表された。Claude Code と Codex のプラグインアーキテクチャは MCP を共通基盤としており、ツール間の相互運用性は今後さらに進むと見られる。",
+      "**Codex を呼び出せる環境**は Claude Code だけではない。**VS Code** では Codex 公式拡張機能（OpenAI Codex Extension）からエディタ内のサイドパネルで直接 Codex を利用でき、選択コードのレビューやインラインでの修正提案が可能。**Cursor** も同様に MCP サーバー経由で Codex を統合でき、tuannvm/codex-mcp-server を設定すれば Composer セッション内から Codex のレビューやタスク委任を呼べる。それぞれの環境の違いを整理すると、**Claude Code + codex-plugin-cc** は CLI 完結で Review Gate による自動レビューループが最大の特徴、プラグインが公式サポートされているため設定が最も簡単。**VS Code + Codex 拡張** は GUI ベースでエディタのコンテキスト（開いているファイル・選択範囲）を直接渡せる点が強く、非 CLI ユーザーに向いている。**Cursor + MCP 経由** は Composer のマルチモデル切り替え（Sonnet 4.6 / Opus 4.6 / GPT-5.4）と組み合わせられるが、MCP サーバーの設定が必要でセットアップはやや手間がかかる。いずれの環境でも認証は共通で、`codex login` によるサブスクリプション認証か `OPENAI_API_KEY` による API 認証が必要となる。",
+      "---",
+      "**編集履歴** — 2026-04-01: ChatGPT サブスクリプション認証での GPT-5.4 利用、API キーとサブスクリプションの料金体系比較、VS Code・Cursor からの Codex 呼び出しと環境別の違いを追記。"
     ],
     "newsDate": "2026-03-29",
     "date": "2026-03-30",
@@ -6038,7 +6042,10 @@ export const ARTICLES = [
       "```bash\n# ④ 感染痕跡の確認（Linux）\nls -la /tmp/ld.py 2>/dev/null && echo '⚠ 感染の可能性あり' || echo '✓ 痕跡なし'\n```",
       "```bash\n# ⑤ lockfile ベースの安全なインストール方法（今後の防御策）\nnpm ci                              # npm の場合\nyarn install --frozen-lockfile       # Yarn の場合\npnpm install --frozen-lockfile       # pnpm の場合\n```",
       "今回の事件は、npm エコシステムにおける**サプライチェーン攻撃のリスク**を改めて浮き彫りにした。近年だけでも、2025年9月の **qix 侵害**（chalk・debug 等18パッケージ、週間26億DL）、2025年9月と11月の **Shai-Hulud ワーム**（500以上のパッケージに自己複製）、2024年の **xz-utils バックドア** と、オープンソースの主要パッケージが攻撃対象となる事件が加速度的に増えている。CISA（米サイバーセキュリティ庁）も2025年9月に npm エコシステムへの警告を発出済みだ。今回の攻撃が浮き彫りにした構造的問題は、(1) npm のパブリッシュ権限が**個人アカウントに紐づき、検証済み CI パイプラインに紐づいていない**こと、(2) メンテナーアカウントが**単一障害点（SPOF）**であること、(3) **メール変更に追加認証がない**こと、(4) **手動 CLI パブリッシュが CI/CD を迂回できる**ことだ。防御策としては、**lockfile の厳密管理と `npm ci` の使用**、**npm audit の定期実行**、**Socket / Snyk / Aikido などのサプライチェーンセキュリティツールの導入**、**provenance attestation の検証**、メンテナーアカウントへの **FIDO 2FA の強制**、そして **npm publish の Automation Token 限定**を徹底すべきだ。npm が計画中の必須 FIDO 2FA・トークンデフォルト無効化・Trusted Publishing 強制などのセキュリティ改善は、まだ開発段階にある。",
-      "注意: 本記事は2026年3月31日時点の情報に基づく。CVE は未割り当て（脆弱性報告は提出済み）。状況は急速に変化する可能性がある。最新情報は axios の GitHub リポジトリ（Issue #10604）、npm のセキュリティアドバイザリ、および Socket・StepSecurity の分析記事を確認すること。感染が疑われる場合は、すべての秘密鍵・API キー・認証トークンのローテーションを最優先で実施すること。"
+      "**【4/1 追記】間接依存（transitive dependency）の危険性と追加防御策**　GMO Flatt Security の分析記事で重要な警告が示された。**axios への直接依存に限らず、間接依存（transitive dependency）でも postinstall フックは発火する**。つまり、自分のプロジェクトが axios を直接使っていなくても、依存ツリーのどこかに悪意あるバージョンが含まれていれば被害を受ける可能性がある。`npm ls axios` だけでなく、`find node_modules -type d -name \"plain-crypto-js\"` でディレクトリの存在自体を確認すべきだ（中身は自己削除済みだが、フォルダは痕跡として残る）。追加の防御策として以下が推奨される。(1) **npm min-release-age**（`.npmrc` に `min-release-age=7d` を設定し、公開から7日以上経過したバージョンのみインストールを許可。今回のような短時間の悪意あるバージョンを自動でブロックできる）。(2) **pnpm trustPolicy: no-downgrade**（OIDC 署名付きパブリッシュから手動パブリッシュへの切り替えをブロック。今回の攻撃は CI/CD をバイパスした手動 publish だったため、この設定で防御可能だった）。(3) **Takumi Guard**（GMO Flatt Security が提供するセキュアレジストリプロキシ。無料で利用可能で、悪意あるパッケージの検知・ブロックを行う）。",
+      "注意: 本記事は2026年3月31日時点の情報に基づく（4月1日に間接依存の警告と追加防御策を追記）。CVE は未割り当て（脆弱性報告は提出済み）。状況は急速に変化する可能性がある。最新情報は axios の GitHub リポジトリ（Issue #10604）、npm のセキュリティアドバイザリ、および Socket・StepSecurity の分析記事を確認すること。感染が疑われる場合は、すべての秘密鍵・API キー・認証トークンのローテーションを最優先で実施すること。",
+      "---",
+      "**編集履歴** — 2026-04-01: GMO Flatt Security の分析記事に基づき、間接依存（transitive dependency）でも postinstall フックが発火する警告、npm min-release-age・pnpm trustPolicy・Takumi Guard の追加防御策、およびソースを追記。"
     ],
     "newsDate": "2026-03-31",
     "date": "2026-03-31",
@@ -6080,7 +6087,8 @@ export const ARTICLES = [
       { "title": "axios compromised on npm: maintainer account hijacked, RAT deployed", "site": "Aikido", "url": "https://www.aikido.dev/blog/axios-npm-compromised-maintainer-hijacked-rat" },
       { "title": "【緊急】axios がサプライチェーン攻撃 2026.03.31", "site": "Zenn", "url": "https://zenn.dev/gunta/articles/0152eadf05d173" },
       { "title": "Axios Compromised With A Malicious Dependency", "site": "OX Security", "url": "https://www.ox.security/blog/axios-compromised-with-a-malicious-dependency/" },
-      { "title": "axios npm Supply Chain Compromise", "site": "SafeDep", "url": "https://safedep.io/axios-npm-supply-chain-compromise/" }
+      { "title": "axios npm Supply Chain Compromise", "site": "SafeDep", "url": "https://safedep.io/axios-npm-supply-chain-compromise/" },
+      { "title": "axios ソフトウェアサプライチェーン攻撃の詳細分析", "site": "GMO Flatt Security Blog", "url": "https://blog.flatt.tech/entry/axios_compromise" }
     ]
   }
 ];

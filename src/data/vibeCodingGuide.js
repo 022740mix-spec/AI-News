@@ -505,6 +505,38 @@ export const VIBE_CLAUDE_CODE = {
       section: "便利な連携",
       mean: "Hooks の Notification を使って、タスク完了時に音声合成ソフト（VOICEVOX、COEIROINK 等）で読み上げさせることができる。長い処理を待っている間に画面を見なくても完了がわかる。設定は settings.json の hooks に音声再生コマンドを追加する。",
     },
+    // ── Codex CLI 連携 ──
+    {
+      word: "Codex CLI 連携とは",
+      section: "Codex CLI 連携",
+      mean: "OpenAI の公式プラグイン codex-plugin-cc を導入すると、Claude Code セッション内から OpenAI Codex のコードレビューやタスク委任を呼び出せる。Claude（実装）→ Codex（レビュー）の異なる AI モデルによるクロスレビューが実現する。ChatGPT サブスクリプション認証か OpenAI API キーのどちらか一方が必要。",
+    },
+    {
+      word: "Codex CLI セットアップ手順",
+      section: "Codex CLI 連携",
+      mean: "4ステップで導入できる。(1) Codex CLI をグローバルインストール、(2) ChatGPT アカウントでログイン（ブラウザが開く）、(3) Claude Code でマーケットプレイス追加、(4) プラグインインストール。Team プラン以上なら GPT-5.4 が利用可能。モデルは `~/.codex/config.toml` の `model` キーで変更できる。",
+      code: "# ① Codex CLI インストール\nnpm install -g @openai/codex\n\n# ② ChatGPT サブスクリプションでログイン\ncodex login\n\n# ③ マーケットプレイス追加\nclaude plugin marketplace add openai/codex-plugin-cc\n\n# ④ プラグインインストール\nclaude plugin install codex@openai-codex",
+      codeLang: "bash",
+    },
+    {
+      word: "Codex 主要コマンド",
+      section: "Codex CLI 連携",
+      mean: "セッション内で使える主要コマンド。`/codex:setup` で環境確認・認証チェック。`/codex:review` で Codex にコードレビューを依頼。`/codex:adversarial-review` で懐疑的な視点でのレビュー。`/codex:rescue` で Codex にタスクを丸ごと委任。",
+      code: "/codex:setup                      # 環境確認\n/codex:review                     # コードレビュー\n/codex:adversarial-review          # 懐疑的レビュー\n/codex:rescue                      # タスク委任",
+      codeLang: "bash",
+    },
+    {
+      word: "Review Gate（自動レビューループ）",
+      section: "Codex CLI 連携",
+      mean: "`/codex:setup --enable-review-gate` で有効化すると、Claude の出力に対して Codex レビューが自動実行される。問題が検出されると Claude が修正するまで処理を継続する自動ループ。==両方のサブスクの使用枠を急速に消費するため、監視下での利用を推奨==。",
+      code: "/codex:setup --enable-review-gate",
+      codeLang: "bash",
+    },
+    {
+      word: "Codex 連携の料金",
+      section: "Codex CLI 連携",
+      mean: "ChatGPT サブスクリプション認証（`codex login`）なら追加の従量課金なし。プランの使用枠内で処理される。API キー認証（`OPENAI_API_KEY`）は完全従量制。Claude Code 側と合わせた最安の組み合わせは Anthropic Pro + ChatGPT Plus の月額約40ドル。GPT-5.4 を使うなら Anthropic Pro + ChatGPT Team の月額約45〜50ドルが目安。",
+    },
     // ── 料金 ──
     {
       word: "料金: Claude Pro（$20/月）",
