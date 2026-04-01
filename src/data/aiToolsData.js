@@ -2339,46 +2339,71 @@ export const ARTICLES = [
     "type": "news",
     "coverImage": { "src": "logos/sora.svg", "alt": "Sora" },
     "category": "media",
-    "title": "報道: OpenAI が Sora の提供終了を表明 — 計算・戦略・ガードレールの文脈",
-    "excerpt": "2026年3月頃、AP・NPR・Business Insider などが Sora のアプリ／関連 API 終了を伝えた。最終的な公式文言・日付は openai.com 側の確認を優先する。",
+    "title": "OpenAI、Sora を閉鎖 — 1日100万ドルの赤字、Disney 10億ドル契約も破綻。6ヶ月で急成長から急死",
+    "excerpt": "2026年3月24日、OpenAI は AI 動画生成ツール Sora の閉鎖を発表した。ピーク時には推論コストだけで1日1,500万ドルを消費しながら、累計売上はわずか210万ドル。Disney との10億ドル投資契約も発表1時間前に破綻を知らされた。App Store 1位からわずか6ヶ月での急死は、AI 動画生成の商業化がいかに困難かを示している。OpenAI はリソースをロボティクスの世界シミュレーション研究に再配分する。",
+    "heroScope": "day",
     "body": [
-      "本稿は二次報道ベースの整理です。契約・プロダクト判断は OpenAI の公式発表、利用規約、ダッシュボード通知を正としてください。",
-      "報道で繰り返される観点は、(1) 大規模推論のコストと経済性、(2) ロボティクスや世界モデル等への投資シフト、(3) 深偽・キャラクター利用をめぐる炎上とモデレーションコスト、などです。いずれも**仮説の列挙**であり単独原因として断定しない方が安全です。",
-      "利用者向けメッセージが X などで引用された、とも各紙は伝えていますが、スクリーンショット単体の解釈には注意が必要です。",
-      "クリエイター向けには、既存クリップのエクスポートや権利帰属、代替パイプライン（別稿のフロンティア比較）を早めに確認する動きが想定されます。",
-      "本サイトでは規模の大きい話題のため速報枠で掲載するが、数値・内部事情の噂は掲げない方針とする。"
+      "## Sora、6ヶ月で幕を閉じる",
+      "2026年3月24日、OpenAI は X で「We're saying goodbye to Sora」と投稿し、AI 動画生成ツール Sora の閉鎖を正式に発表した。Sora のウェブ・アプリ体験は **4月26日**に終了、Sora API は**9月24日**に終了する。ユーザーにはコンテンツのエクスポートが案内されている。",
+      "OpenAI の広報担当者は「Sora の研究チームは、ロボティクスを前進させるための**世界シミュレーション研究**に引き続き注力する」と述べた。アプリケーション責任者の **Fidji Simo** は全社集会で「サイドクエストを廃止し、ビジネスの生産性に最適化する」と説明した。IPO を見据えた選択と集中だ。",
+
+      "## 財務の現実: 1日1,500万ドルの出血",
+      "閉鎖の最大の理由は**圧倒的な財務不均衡**だ。高品質な動画生成には膨大な計算リソースが必要で、10秒のクリップ1本あたり約**$1.30**のコストがかかっていた。",
+      "ピーク時には推論コストだけで**1日1,500万ドル**（年換算55億ドル）を消費。一方、Sora の累計売上（アプリ内課金）はわずか**210万ドル**。コストと収益の乖離は3桁に達していた。",
+      "ユーザー数もピーク時の約100万人から50万人未満に半減しており、ダウンロード数は11月の333万件から2月には113万件に急落していた。",
+
+      "## Disney 10億ドル契約の破綻",
+      "2025年12月、Disney は OpenAI に**10億ドルを投資**し、ディズニー・ピクサー・マーベル・スターウォーズの200以上のキャラクターを Sora 2 で利用可能にする3年契約を発表していた。",
+      "しかし Disney は Sora 閉鎖の公式発表の**1時間未満前に知らされた**という。Disney は「OpenAI が動画生成事業から撤退する決断を尊重する」とコメントした。",
+
+      "## 競合環境と戦略転換",
+      "背景にはライバル Anthropic の急成長がある。Anthropic は画像・動画生成を避け、テキストとコード生成に計算リソースを集中させる戦略で、企業とエンジニアの間で急速にシェアを拡大した。Sam Altman は最終的に Sora を閉鎖し、計算リソースを解放してロボティクスに再配分する決断を下した。",
+      "OpenAI の CEO of Applications である Fidji Simo は、「サイドクエスト」を廃止し、ChatGPT・Codex・Atlas ブラウザを統合する**デスクトップ「スーパーアプリ」**構想に注力する方針を示している。",
+
+      "## AI 動画生成の「現実」",
+      "Sora は App Store カテゴリ1位から閉鎖まで**わずか6ヶ月**。AI 業界で最も急速な rise and fall の一つとなった。この事例が示すのは、AI 動画生成が技術的に可能であることと、商業的に持続可能であることは全く別の問題だということだ。",
+      "一方、Runway Gen-5、Kling、Pika など競合サービスは存続しており、AI 動画生成市場自体が消滅したわけではない。ただし Sora の撤退は、最も資金力のある企業でさえ動画生成の経済性に苦しんでいるという警告だ。",
+
+      "## 編集履歴",
+      "【初版】2026年3月28日 — 速報として公開。報道ベースの要点整理。\n【改訂】2026年3月31日 — CNN・TechCrunch・NBC・Outlook 等の報道を統合し、財務データ（推論コスト・売上）、Disney 契約破綻の詳細、ユーザー数推移、戦略転換の背景を追記。分析記事へ再構成。"
     ],
-    "newsDate": "2026-03-26",
-    "date": "2026-03-28",
+    "newsDate": "2026-03-24",
+    "date": "2026-03-31",
     "author": "AI News 編集部",
-    "readTime": "5分",
+    "readTime": "8分",
     "tags": [
       "OpenAI",
       "Sora",
       "動画生成",
-      "速報",
-      "規制"
+      "Disney",
+      "ロボティクス",
+      "戦略転換"
     ],
     "primarySources": [
       {
-        "title": "OpenAI pulls the plug on Sora video app (AP)",
+        "title": "OpenAI is shutting down its Sora video app just months after launch",
+        "site": "CNN",
+        "url": "https://edition.cnn.com/2026/03/24/tech/openai-sora-video-app-shutting-down"
+      },
+      {
+        "title": "Why OpenAI really shut down Sora",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/03/29/why-openai-really-shut-down-sora/"
+      },
+      {
+        "title": "OpenAI is shutting down its Sora video-creation app",
+        "site": "NBC News",
+        "url": "https://www.nbcnews.com/tech/tech-news/openai-shuttering-sora-video-generating-service-rcna264989"
+      },
+      {
+        "title": "OpenAI Shuts Down Sora: $1B Disney Deal Fails & Daily Losses",
+        "site": "Outlook",
+        "url": "https://respawn.outlookindia.com/gaming/gaming-news/openai-shuts-down-sora-ai-video-app-was-losing-1-million-a-day"
+      },
+      {
+        "title": "OpenAI pulls the plug on Sora video app",
         "site": "AP News",
         "url": "https://apnews.com/article/openai-closes-sora-ai-c60de960536923f33edc04b92ddbe1cd"
-      },
-      {
-        "title": "OpenAI pulls the plug on Sora (NPR)",
-        "site": "NPR",
-        "url": "https://www.npr.org/2026/03/25/g-s1-115055/openai-pulls-the-plug-on-sora-the-viral-ai-video-generator-that-sparked-deepfake-concerns"
-      },
-      {
-        "title": "OpenAI discontinues Sora amid robotics shift (Business Insider)",
-        "site": "Business Insider",
-        "url": "https://www.businessinsider.com/openai-discontinues-sora-video-app-amid-robotics-shift-compute-limitations-2026-3"
-      },
-      {
-        "title": "OpenAI — News / Product blog（公式確認用）",
-        "site": "OpenAI",
-        "url": "https://openai.com/news/"
       }
     ]
   },
