@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0f0ff"/>
+      <stop offset="100%" stop-color="#e0e0f8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <text x="400" y="195" text-anchor="middle" fill="#5b21b6" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="700" letter-spacing="0.05em">PrismML</text>
+  <text x="400" y="258" text-anchor="middle" fill="#7c3aed" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="600">Bonsai 1-Bit</text>
+  <line x1="300" y1="288" x2="500" y2="288" stroke="#7c3aed" stroke-width="1.5" opacity="0.4"/>
+</svg>

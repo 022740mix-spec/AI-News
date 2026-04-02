@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5f0ff"/>
+      <stop offset="100%" stop-color="#ece5ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <text x="400" y="195" text-anchor="middle" fill="#6d28d9" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="700" letter-spacing="0.05em">Roboflow</text>
+  <text x="400" y="258" text-anchor="middle" fill="#8b5cf6" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="600">RF-DETR</text>
+  <line x1="310" y1="288" x2="490" y2="288" stroke="#8b5cf6" stroke-width="1.5" opacity="0.4"/>
+</svg>
