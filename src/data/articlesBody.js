@@ -5717,6 +5717,59 @@ const ARTICLES_BODY = {
       }
     ]
   },
+  "timesfm-mirofish-business-forecasting-2026": {
+    "body": [
+      "「来月の売上はいくらか」「この政策変更は自社にどう影響するか」——経営判断に不可欠なこれらの問いに、AI が2つのまったく異なるアプローチで答えようとしている。Google Research の時系列基盤モデル **TimesFM 2.5** と、20歳の中国人学生が10日で開発しGitHub スター4.8万超を記録したマルチエージェント予測エンジン **MiroFish** だ。",
+      "**TimesFM 2.5** は2026年3月31日にリリースされた Decoder-only Transformer ベースの時系列基盤モデル。Google 内部の1,000億以上の実データポイントで事前学習されており、売上・需要・在庫・電力消費などの数値時系列を**ゼロショット（再学習なし）で予測**できる。前バージョンからパラメータを500Mから200Mに60%削減しつつ、コンテキスト長を2Kから16Kへ8倍に拡大。ARIMA 比で MAE 15〜25%の改善を実現し、GiFT-Eval リーダーボードでゼロショット基盤モデル1位を獲得している。BigQuery の AI.FORECAST として GA（本番利用可能）になっており、Google Sheets からも直接利用できる。",
+      "一方の **MiroFish** は、数値ではなく**社会のダイナミクスを予測**する。ニュース記事、財務レポート、政策文書などを入力すると、GraphRAG で知識グラフを構築し、独自の性格・長期記憶・行動ロジックを持つ数千〜最大100万のAIエージェントを生成。エージェントたちが Twitter 風・Reddit 風の仮想 SNS 上で自由に議論・拡散・対立・合意形成を行い、その結果から世論の変化や利害関係者の反応を予測する。開発者は北京郵電大学の郭杭江氏（20歳）で、盛大グループの陳天橋氏が3,000万元（約4.1億円）を即日出資したことでも注目を集めた。",
+      "2つのアプローチは競合ではなく**補完関係**にある。たとえば「新関税政策が自社の売上にどう影響するか」を予測する場合、TimesFM は過去の売上データから数値トレンドを外挿する一方、MiroFish は政策に対する消費者・競合・メディアの反応をシミュレーションし、需要がどの方向に動くかのシナリオを提示する。数値予測で「いくら」を、社会シミュレーションで「なぜ・どう変わるか」を把握できるわけだ。",
+      "ただし両者にはそれぞれ限界がある。TimesFM はあくまで過去のパターンの延長であり、前例のない事象（パンデミック、突発的規制など）への対応は苦手だ。MiroFish は逆に、LLM エージェントの群集行動バイアスにより予測が極端に偏るリスクがあり、精密な数値予測には向かない。開発者の郭氏自身も「明日ビットコインが上がるか下がるかを聞くのは設計意図外」と明言している。また MiroFish は API コストがエージェント数×ラウンド数で積み上がるため、大規模シミュレーションのコスト管理も課題だ。",
+      "企業が AI 予測を導入する際の現実的なステップとしては、まず BigQuery + TimesFM で既存の売上・需要データの予測精度を検証し、意思決定に社会情勢の影響が大きい領域（新市場参入、規制対応、PR戦略など）で MiroFish のシナリオ分析を重ねる——というアプローチが考えられる。TimesFM は Apache-2.0 で商用利用可、MiroFish は AGPL-3.0 のためセルフホスト前提。いずれもオープンソースで試せるため、まずは自社データで PoC を回してみる価値がある。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "TimesFM 2.5 と MiroFish の比較",
+        "headers": ["項目", "TimesFM 2.5", "MiroFish"],
+        "rows": [
+          ["開発元", "Google Research", "郭杭江（北京郵電大学）"],
+          ["アプローチ", "時系列データの統計的予測", "マルチエージェント社会シミュレーション"],
+          ["予測対象", "売上・需要・在庫など数値データ", "世論・利害関係者の反応・社会動向"],
+          ["モデルサイズ", "200M パラメータ", "LLM API 依存（エージェント数で変動）"],
+          ["入力", "過去の時系列データ（最大16K点）", "ニュース・政策文書・財務レポート"],
+          ["出力", "数値予測 + 不確実性区間", "シナリオレポート + エージェント行動ログ"],
+          ["ゼロショット", "対応（再学習不要）", "対応（知識グラフから自動構築）"],
+          ["本番環境", "BigQuery GA / Google Sheets", "セルフホスト（Docker）"],
+          ["ライセンス", "Apache-2.0（商用可）", "AGPL-3.0（セルフホスト前提）"],
+          ["GitHub Stars", "13,000+", "48,000+"],
+          ["得意なこと", "安定した数値トレンドの高精度予測", "複雑な社会的反応のシナリオ探索"],
+          ["苦手なこと", "前例のない事象、社会的要因の影響", "精密な数値予測、コスト管理"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "google-research/timesfm",
+        "site": "GitHub",
+        "url": "https://github.com/google-research/timesfm"
+      },
+      {
+        "title": "666ghj/MiroFish",
+        "site": "GitHub",
+        "url": "https://github.com/666ghj/MiroFish"
+      },
+      {
+        "title": "TimesFM 2.5 Release - Time Series Model Update",
+        "site": "Let's Data Science",
+        "url": "https://letsdatascience.com/news/timesfm-releases-25-time-series-model-update-416fba8f"
+      },
+      {
+        "title": "Student's AI Engine MiroFish Secures 30 Million RMB Investment",
+        "site": "Phemex News",
+        "url": "https://phemex.com/news/flash/students-ai-engine-mirofish-secures-30-million-rmb-investment-65330"
+      }
+    ]
+  },
   "claude-code-no-flicker-fullscreen-renderer-2026": {
     "body": [
       "Anthropic の Claude Code チームは2026年4月2日、ターミナル描画のちらつきを根本的に解消する実験的な「NO_FLICKER モード（フルスクリーンレンダリング）」を発表した。環境変数 CLAUDE_CODE_NO_FLICKER=1 を設定して起動するだけで有効になり、v2.1.89 以降で利用できる。Claude Code リードの Boris Cherny 氏（@bcherny）が X 上で技術的背景とともに詳細を公開し、8万以上の閲覧を集めている。",

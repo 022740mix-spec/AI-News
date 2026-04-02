@@ -3553,6 +3553,28 @@ export const ARTICLES_META = [
     }
   },
   {
+    "id": "timesfm-mirofish-business-forecasting-2026",
+    "type": "feature",
+    "category": "model",
+    "title": "企業の未来予測に AI を使う時代 — Google TimesFM 2.5 の数値予測と MiroFish の社会シミュレーション、2つのアプローチを徹底比較",
+    "excerpt": "Google Research の時系列基盤モデル TimesFM 2.5 と、GitHub スター4.8万超のマルチエージェント予測エンジン MiroFish。数値予測と社会シミュレーションという異なるアプローチで企業の意思決定を支援する2つの AI を比較し、経営予測への活用法を探る。",
+    "date": "2026-04-02",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Google",
+      "時系列予測",
+      "MiroFish",
+      "マルチエージェント",
+      "経営戦略",
+      "オープンソース"
+    ],
+    "coverImage": {
+      "src": "logos/google.svg",
+      "alt": "Google Research TimesFM"
+    }
+  },
+  {
     "id": "claude-code-no-flicker-fullscreen-renderer-2026",
     "type": "news",
     "category": "cli",
