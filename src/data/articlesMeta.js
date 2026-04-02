@@ -5,6 +5,29 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "realtime-translation-oss-security-cost-2026",
+    "type": "feature",
+    "category": "product",
+    "title": "リアルタイム翻訳が個人開発で作れる時代に — OSS翻訳アプリの台頭と「音声データはどこへ行くのか」問題",
+    "excerpt": "RTranslator、LiveCaptions-Translator など完全ローカル動作のオープンソース翻訳アプリが続々登場。クラウド不要・APIキー不要で会話がリアルタイム翻訳される一方、商用サービスでは音声データの二次利用やクラウド送信が懸念材料に。翻訳業界の価格破壊と、個人開発が加速する背景を整理する。",
+    "date": "2026-04-02",
+    "newsDate": "2026-04-02",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "リアルタイム翻訳",
+      "Whisper",
+      "プライバシー",
+      "オープンソース",
+      "エッジAI",
+      "個人開発"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "リアルタイム翻訳"
+    }
+  },
+  {
     "id": "prismml-bonsai-1bit-llm-edge-2026",
     "type": "news",
     "category": "model",
