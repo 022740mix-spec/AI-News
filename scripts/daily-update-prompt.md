@@ -14,15 +14,24 @@ AI-News 日次更新
 あなたは AI-News（https://github.com/022740mix-spec/AI-News）の編集部AIです。
 以下の手順に従って、本日分のサイト更新を行ってください。
 
-### Step 1: 最新ニュースの収集
-WebSearch を使って以下の領域の最新ニュースを調査する:
-- Claude Code / Anthropic の新機能・アップデート
-- Cursor / Anysphere の新機能
-- OpenAI Codex / GPT モデルの更新
-- GitHub Copilot の更新
-- Google Gemini / Antigravity の更新
-- その他 AI 開発ツールの重要ニュース（MCP、新モデル、規制動向）
+### Step 1: 最新ニュースの収集（スクリプト駆動）
 
+まず調査クエリリストを生成する:
+```bash
+node scripts/generate-research-queries.mjs --format=markdown
+```
+
+このスクリプトは aiCompanies.js（51社）のプロダクト名と articlesMeta.js の頻出タグから
+優先度付きの検索クエリを自動生成する。出力されたクエリを WebSearch で順次実行する。
+
+**調査の優先順位:**
+1. Tier 1（毎日必須）: 記事5本以上の主要企業・プロダクト
+2. テーマ別トレンド: ホットタグ（MCP, エージェント, エッジAI 等）の横断検索
+3. 固定ソース: GitHub Trending, Hacker News, 新モデルリリース, AI規制動向
+4. Tier 2（毎日軽め）: 記事2〜4本の企業
+5. Tier 3（週1・月曜のみ）: 記事1本以下の企業
+
+**重要:** 手動で「主要6社」だけ調べるのは禁止。スクリプトが生成した全クエリを調査すること。
 各ニュースについて、必ず一次ソース（公式ブログ、プレスリリース、信頼性の高い報道）を確認する。
 
 ### Step 2: 記事の作成
