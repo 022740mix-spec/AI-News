@@ -166,44 +166,124 @@ function generateTagQueries(hotTags) {
   return themeQueries;
 }
 
-// ── 固定の調査ソースクエリ ──
+// ── 3軸別の調査ソースクエリ ──
+// 軸1: 速報（主要プレイヤー） → company/product クエリでカバー
+// 軸2: 発掘（新興・OSS）
+// 軸3: 分析（社会的インパクト）
 function generateFixedQueries() {
   return [
+    // ── 軸2: 発掘（新興企業・OSS・個人開発） ──
     {
       query: "GitHub trending repositories machine-learning",
       tier: 1,
-      type: "source",
-      source: "GitHub Trending",
+      type: "discovery",
+      source: "【発掘】GitHub Trending ML",
+    },
+    {
+      query: "GitHub trending repositories deep-learning",
+      tier: 1,
+      type: "discovery",
+      source: "【発掘】GitHub Trending DL",
     },
     {
       query: "Hacker News AI top stories today",
       tier: 1,
-      type: "source",
-      source: "Hacker News",
+      type: "discovery",
+      source: "【発掘】Hacker News",
     },
     {
-      query: "AI model release benchmark new 2026",
+      query: "new AI startup tool launch 2026",
       tier: 1,
-      type: "source",
-      source: "新モデルリリース",
-    },
-    {
-      query: "AI regulation policy EU Japan US 2026",
-      tier: 2,
-      type: "source",
-      source: "AI規制動向",
-    },
-    {
-      query: "AI security vulnerability exploit 2026",
-      tier: 2,
-      type: "source",
-      source: "AIセキュリティ",
+      type: "discovery",
+      source: "【発掘】新興AIツール",
     },
     {
       query: "open source AI tool developer new release",
       tier: 1,
-      type: "source",
-      source: "OSSリリース",
+      type: "discovery",
+      source: "【発掘】OSSリリース",
+    },
+    {
+      query: "AI MCP server new tool integration",
+      tier: 1,
+      type: "discovery",
+      source: "【発掘】MCP新ツール",
+    },
+    {
+      query: "AI agent framework open source new",
+      tier: 1,
+      type: "discovery",
+      source: "【発掘】エージェントOSS",
+    },
+    {
+      query: "edge AI on-device model new release lightweight",
+      tier: 1,
+      type: "discovery",
+      source: "【発掘】エッジAI・軽量モデル",
+    },
+
+    // ── 軸3: 分析（社会的インパクト・規制・倫理） ──
+    {
+      query: "AI regulation policy law EU Japan US 2026",
+      tier: 1,
+      type: "analysis",
+      source: "【分析】AI規制動向",
+    },
+    {
+      query: "AI military defense use case ethics 2026",
+      tier: 1,
+      type: "analysis",
+      source: "【分析】AI軍事利用・倫理",
+    },
+    {
+      query: "AI job displacement employment impact study 2026",
+      tier: 1,
+      type: "analysis",
+      source: "【分析】AI×雇用・労働",
+    },
+    {
+      query: "AI privacy data security breach incident 2026",
+      tier: 1,
+      type: "analysis",
+      source: "【分析】AIプライバシー・セキュリティ",
+    },
+    {
+      query: "AI copyright lawsuit intellectual property 2026",
+      tier: 1,
+      type: "analysis",
+      source: "【分析】AI著作権・訴訟",
+    },
+    {
+      query: "AI healthcare medical diagnosis regulation 2026",
+      tier: 1,
+      type: "analysis",
+      source: "【分析】AI×医療",
+    },
+    {
+      query: "AI education school policy impact 2026",
+      tier: 1,
+      type: "analysis",
+      source: "【分析】AI×教育",
+    },
+    {
+      query: "AI energy consumption data center environmental 2026",
+      tier: 1,
+      type: "analysis",
+      source: "【分析】AI×環境・エネルギー",
+    },
+
+    // ── 軸1: 速報の補助（モデルリリース全般） ──
+    {
+      query: "AI model release benchmark new 2026",
+      tier: 1,
+      type: "breaking",
+      source: "【速報】新モデルリリース",
+    },
+    {
+      query: "AI coding tool IDE update release 2026",
+      tier: 1,
+      type: "breaking",
+      source: "【速報】コーディングツール更新",
     },
   ];
 }
@@ -252,18 +332,31 @@ if (format === "markdown") {
   console.log(`- Tier 3 企業（週1チェック）: ${tier3.length}社`);
   console.log(`- ホットタグ: ${hotTags.length}件\n`);
 
-  const grouped = {};
-  for (const q of allQueries) {
-    const key = `Tier ${q.tier} — ${q.type}`;
-    if (!grouped[key]) grouped[key] = [];
-    grouped[key].push(q);
-  }
-  for (const [key, queries] of Object.entries(grouped)) {
-    console.log(`### ${key}`);
-    for (const q of queries) {
-      console.log(`- \`${q.query}\` ← ${q.source}`);
+  // 3軸別にグルーピング
+  const axisOrder = [
+    { label: "軸1: 速報（主要プレイヤー）", types: ["company", "product", "breaking"] },
+    { label: "軸2: 発掘（新興・OSS・個人開発）", types: ["discovery", "theme"] },
+    { label: "軸3: 分析（社会的インパクト）", types: ["analysis", "business"] },
+  ];
+
+  for (const axis of axisOrder) {
+    const axisQueries = allQueries.filter((q) => axis.types.includes(q.type));
+    if (axisQueries.length === 0) continue;
+    console.log(`## ${axis.label}（${axisQueries.length}件）\n`);
+    for (const q of axisQueries) {
+      console.log(`- [T${q.tier}] \`${q.query}\` ← ${q.source}`);
     }
     console.log();
+  }
+
+  // 未分類があれば表示
+  const classified = new Set(axisOrder.flatMap((a) => a.types));
+  const unclassified = allQueries.filter((q) => !classified.has(q.type));
+  if (unclassified.length > 0) {
+    console.log(`## 未分類（${unclassified.length}件）\n`);
+    for (const q of unclassified) {
+      console.log(`- [T${q.tier}] \`${q.query}\` ← ${q.source}`);
+    }
   }
 } else if (format === "json") {
   console.log(JSON.stringify({ date: new Date().toISOString().slice(0, 10), queries: allQueries }, null, 2));
