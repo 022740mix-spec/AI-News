@@ -5937,6 +5937,7 @@ const ARTICLES_BODY = {
       "ローカルで使いたい場合は **MCP Tool Server** が適している。`npx @drawio/mcp` で起動でき、draw.io のネイティブ XML 形式に加えて **CSV**（表データから組織図やフローチャートを自動生成）と **Mermaid.js**（テキストベースの図記法）にも対応する。生成された図は draw.io エディタで直接開かれ、手動での微調整も自由にできる。Claude Desktop や他の MCP クライアントとの連携に最適だ。",
       "Claude Code ユーザー向けには **Skill + CLI** 方式もある。MCP のセットアップなしで、スキルファイルをコピーするだけで `.drawio` ファイルを生成し、PNG・SVG・PDF へのエクスポートも可能。エクスポートファイルには XML が埋め込まれるため、draw.io で開けば引き続き編集できる。最もシンプルな **Project Instructions** 方式は、Claude Projects にプロンプトをペーストするだけで動作し、Python のコード実行で draw.io の URL を生成する。",
       "技術的には、MCP App Server は draw.io の公式ビューアを iframe 内で動作させる仕組みだ。MCP Apps SDK（約319KB）と pako 圧縮ライブラリ（約28KB）をインライン化した自己完結型 HTML を生成し、サンドボックス環境内で安全にレンダリングする。Node.js での起動に加え、Cloudflare Workers へのデプロイにも対応しており、チームでの共有も容易だ。",
+      "ただし、**すべての環境でリアルタイム描画ができるわけではない**点に注意が必要だ。会話中に図がストリーミング表示されるインタラクティブ描画は、iframe をレンダリングできる環境——つまり Claude.ai（Web / デスクトップ）や VS Code など MCP Apps 対応のホストに限られる。Claude Code CLI（ターミナル）はテキストベースの環境のため、iframe を表示する手段がなく、リアルタイム描画には対応していない。CLI ユーザーは Skill + CLI 方式で `.drawio` ファイルを生成し、draw.io エディタで開いて確認するワークフローになる。MCP Tool Server を使えばファイル生成と同時にエディタが自動で開くため、ひと手間増えるものの実用上は十分だ。",
       "draw.io は JGraph 社が開発するオープンソースの作図ツールで、GitHub リポジトリは Apache 2.0 ライセンス。Confluence や Jira との統合プラグインでも知られ、すでに多くの開発チームが日常的に使っている。そこに MCP 連携が加わったことで、「AI に図を描かせて、そのまま会話の中で確認・修正し、必要なら draw.io エディタで仕上げる」という一気通貫のワークフローが実現した。ダイアグラム作成は AI が最も得意とする領域のひとつだが、これまではテキストで XML や Mermaid を出力するだけで、実際の図を見るには別ツールへのコピペが必要だった。その最後のギャップを MCP が埋めた形だ。"
     ],
     "tables": [
@@ -5949,6 +5950,17 @@ const ARTICLES_BODY = {
           ["MCP Tool Server", "npx @drawio/mcp", "XML, CSV, Mermaid", "draw.ioエディタで直接編集可能"],
           ["Skill + CLI", "スキルファイルをコピー", "XML", "MCP不要・PNG/SVG/PDFエクスポート対応"],
           ["Project Instructions", "プロンプトをペースト", "XML, CSV, Mermaid", "完全インストール不要・Python実行で動作"]
+        ]
+      },
+      {
+        "afterParagraph": 6,
+        "caption": "環境別の対応状況",
+        "headers": ["環境", "リアルタイム描画", "ファイル生成", "備考"],
+        "rows": [
+          ["Claude.ai（Web / デスクトップ）", "○", "○", "MCP App Server で iframe 内に即時表示"],
+          ["VS Code + MCP 拡張", "○", "○", "エディタ内パネルにインタラクティブ表示"],
+          ["Claude Desktop", "○", "○", "MCP App Server または Tool Server"],
+          ["Claude Code CLI（ターミナル）", "×", "○", "Skill + CLI で .drawio ファイル生成→エディタで確認"]
         ]
       }
     ],
