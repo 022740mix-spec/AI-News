@@ -12,21 +12,23 @@
 
 import { createRequire } from "module";
 import { readFileSync } from "fs";
-import { fileURLToPath } from "url";
+import { fileURLToPath, pathToFileURL } from "url";
 import { dirname, join } from "path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
 
 // ── aiCompanies.js を読み込み ──
-// ESM dynamic import
+// ESM dynamic import（Windows では pathToFileURL が必要）
 const companiesModule = await import(
-  join(rootDir, "src/data/aiCompanies.js")
+  pathToFileURL(join(rootDir, "src/data/aiCompanies.js")).href
 );
 const companies = companiesModule.AI_COMPANIES || companiesModule.default || [];
 
 // ── articlesMeta.js を読み込み ──
-const metaModule = await import(join(rootDir, "src/data/articlesMeta.js"));
+const metaModule = await import(
+  pathToFileURL(join(rootDir, "src/data/articlesMeta.js")).href
+);
 const articles = metaModule.ARTICLES_META || metaModule.default || [];
 
 // ── コマンドライン引数 ──

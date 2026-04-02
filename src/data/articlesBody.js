@@ -4,6 +4,169 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "gemini-api-billing-tier-spend-cap-2026": {
+    "body": [
+      "Google は2026年4月1日から、Gemini API の全有料アカウントに対して**課金ティア単位の月額支出上限**を強制適用した。これまでもプロジェクト単位で任意の支出上限を設定できたが、今回のアカウントレベル上限は**無効化できない**。上限に達した時点で、そのアカウントに紐づく全プロジェクトの API リクエストが次の請求サイクルまで停止される。",
+      "ティアごとの上限は Tier 1 が月額 $250、Tier 2 が $2,000、Tier 3 が $20,000〜$100,000 以上。ティアの昇格は支出実績と支払い履歴に基づいて自動的に行われる。新規ユーザーはプリペイド課金が必須となり、後払い方式は既存の上位ティアユーザーに限定される。",
+      "この変更は Google AI Studio の Billing ダッシュボードで事前に可視化されており、日別コスト推移グラフも新設された。プロジェクト単位の支出上限（任意設定）とアカウント単位の支出上限（強制）は独立して動作する。たとえば Tier 1 アカウントでプロジェクト上限を $300 に設定しても、アカウント上限 $250 で先に停止される。",
+      "開発者コミュニティでは「無料枠縮小に続く締め付け」との声と、「予期せぬ請求を防ぐ安全弁として合理的」との声が混在している。Google AI Developers Forum では、Antigravity プロジェクトへの適用範囲や、複数プロジェクトを跨いだ上限計算の詳細について質問が相次いでいる。Gemini API を本番環境で利用する開発者は、自身のティアと上限を確認し、必要に応じて Tier 昇格を計画すべきだ。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 1,
+        "caption": "Gemini API 課金ティア上限（2026年4月〜）",
+        "headers": ["ティア", "月額支出上限", "レート制限の目安", "支払い方式"],
+        "rows": [
+          ["Tier 1", "$250", "標準", "プリペイド"],
+          ["Tier 2", "$2,000", "拡張", "プリペイド / 後払い"],
+          ["Tier 3", "$20,000〜$100,000+", "最大", "後払い（審査あり）"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Giving you more transparency and control over your Gemini API costs",
+        "site": "Google Blog",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/more-control-over-gemini-api-costs/"
+      },
+      {
+        "title": "Billing — Gemini API",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/billing"
+      }
+    ]
+  },
+  "nvidia-physical-ai-data-factory-blueprint-2026": {
+    "body": [
+      "NVIDIA は2026年4月、物理 AI 向けの学習データ生成を統合するオープンな参照アーキテクチャ **Physical AI Data Factory Blueprint** を発表した。ロボティクス、ビジョン AI エージェント、自動運転車の開発において、学習データの生成・拡張・評価をエンドツーエンドで自動化する。GitHub での公開は4月中を予定している。",
+      "物理 AI（ロボティクスや自動運転など、現実世界で動作する AI）の開発では、実世界のデータ収集が最大のボトルネックになる。路上で自動運転車を何百万キロも走らせたり、工場でロボットに何千回も作業させたりするのはコストも時間も膨大だ。この Blueprint は **NVIDIA Omniverse** と **Cosmos** ワールドファウンデーションモデルを活用し、物理的に正確な合成データを大量生成することで、このボトルネックを解消する。",
+      "アーキテクチャは「データ処理・キュレーション」「合成データ生成」「強化学習」「評価」の4つのパイプラインで構成される。各パイプラインはモジュール化されており、開発者は自社のニーズに合わせてカスタマイズできる。クラウドサービスプロバイダーの **Microsoft Azure** と **Nebius** がインフラパートナーとして参加し、大規模コンピュートを学習データ生産エンジンに変換する基盤を提供する。",
+      "早期採用企業として **FieldAI**、**Hexagon Robotics**、**Milestone Systems**、**Skild AI**、**Uber**、**Teradyne Robotics** が名を連ねる。これらの企業はロボティクス、ビジョン AI エージェント、自動運転の各領域で Blueprint を活用し、開発を加速させている。NVIDIA の物理 AI 戦略は、GPU ハードウェアだけでなくデータ生成のソフトウェア層まで押さえることで、エコシステム全体の支配力を強めている。"
+    ],
+    "primarySources": [
+      {
+        "title": "NVIDIA Announces Open Physical AI Data Factory Blueprint",
+        "site": "NVIDIA Newsroom",
+        "url": "https://nvidianews.nvidia.com/news/nvidia-announces-open-physical-ai-data-factory-blueprint-to-accelerate-robotics-vision-ai-agents-and-autonomous-vehicle-development"
+      }
+    ]
+  },
+  "anthropic-1m-context-beta-retirement-2026": {
+    "body": [
+      "Anthropic は2026年4月30日をもって、**Claude Sonnet 4.5** および **Claude Sonnet 4** で提供していた1Mトークンコンテキストウィンドウのベータ版を終了する。4月30日以降、API リクエストに `context-1m-2025-08-07` ベータヘッダーを付与しても無視され、200Kトークンの標準上限を超える入力はエラーになる。",
+      "移行先は **Claude Opus 4.6** または **Claude Sonnet 4.6** だ。これらの新モデルでは1Mトークンコンテキストウィンドウが**標準料金で GA（一般提供）**されており、ベータヘッダーなしでそのまま利用できる。従来は長文コンテキストに25%の追加料金がかかっていたが、Opus 4.6・Sonnet 4.6 では撤廃された。Anthropic は「長文コンテキストは特別な機能ではなく標準機能にすべき」との方針を示している。",
+      "同時に、**Web 検索ツール**と**プログラマティックツール呼び出し**が GA になった。Web 検索は API から直接最新情報を取得でき、Web Fetch は URL を指定してページ内容を取得する。いずれも動的フィルタリングに対応し、ドメイン単位での検索制限が可能だ。",
+      "実務的な影響として、Sonnet 4.5/4 のベータヘッダーに依存しているアプリケーションは4月30日までにモデルを切り替える必要がある。特に Cursor や Claude Code のようなコーディングツール連携で長文コンテキストを使っている場合は、API 呼び出し側のモデル指定を更新すること。移行自体は単純で、モデル名を `claude-sonnet-4-6` または `claude-opus-4-6` に変更するだけだ。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Platform Release Notes",
+        "site": "Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Anthropic drops long-context surcharge: 1M token window now at standard pricing",
+        "site": "abit.ee",
+        "url": "https://abit.ee/en/artificial-intelligence/anthropic-claude-opus-46-sonnet-46-context-window-1-million-tokens-pricing-en"
+      }
+    ]
+  },
+  "claw-code-oss-agent-harness-100k-stars-2026": {
+    "body": [
+      "2026年3月31日の Claude Code ソースマップ流出事件を受け、エージェントハーネスの**クリーンルーム再実装**を掲げるオープンソースプロジェクト **Claw Code** が登場した。公開からわずか数日で GitHub の **100K Stars** を突破し、GitHub 史上最速のスター獲得を記録した。",
+      "開発者は韓国の **Sigrid Jin**（@sigridjineth）。Wall Street Journal に「世界で最もアクティブな Claude Code パワーユーザーの一人」として取り上げられた人物で、過去1年間で250億以上の Claude Code トークンを消費したという。流出したソースコードを直接コピーするのではなく、oh-my-codex（OmX）を使って**ゼロから Python で再実装**し、並列コードレビューと継続的検証で品質を担保した。現在は **Rust への移植**も進行中で、メモリ安全性と高速性を両立する本番ランタイムを目指している。",
+      "Claw Code が解決しようとしている問題は明確だ。LLM 自体はオープンソースで利用可能だが、LLM をツール（ファイル操作・API 呼び出し・タスクワークフロー）に接続する**制御層（エージェントハーネス）**は、Claude Code も Cursor も Codex もプロプライエタリなままだ。開発者はモデルの中身は見えるのに、モデルを動かす仕組みはブラックボックスという状態にある。Claw Code はこの制御層を完全にオープンにすることで、開発者が自由に調査・改造・拡張できる基盤を提供する。",
+      "リポジトリには Python の `src/` ワークスペース、テストディレクトリ、コマンドラインユーティリティ（サマリ生成・マニフェスト・サブシステム検査・パリティ監査）が含まれる。最初のリリースマイルストーンでは安定した Python API、ツールドキュメントの拡充、Rust ランタイムの初期モジュールが計画されている。",
+      "法的な位置づけとして、Claw Code は Anthropic の関連企業ではなく、プロプライエタリコードのコピーも含まないとしている。ただし Claude Code のソースマップ流出という「事故」がなければ生まれなかったプロジェクトであることは間違いなく、「流出コードを参照せずにどこまで再実装できるか」というクリーンルーム設計の誠実さが問われることになるだろう。2,100件以上のオープンな Issue が示す通り、コミュニティの期待と課題は山積みだ。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claw Code — Open-Source AI Coding Agent Framework",
+        "site": "Claw Code 公式サイト",
+        "url": "https://claw-code.codes/"
+      },
+      {
+        "title": "Leaked Claude Code source spawns fastest growing repository in GitHub's history",
+        "site": "Cybernews",
+        "url": "https://cybernews.com/tech/claude-code-leak-spawns-fastest-github-repo/"
+      },
+      {
+        "title": "instructkr/claw-code",
+        "site": "GitHub",
+        "url": "https://github.com/instructkr/claw-code"
+      }
+    ]
+  },
+  "langchain-langgraph-3-cves-data-leak-2026": {
+    "body": [
+      "AI エージェント開発で広く使われるフレームワーク **LangChain** と **LangGraph** に、3件の重大な脆弱性が公開された。LangChain Core は週間ダウンロード数2,300万、LangChain は5,200万を超えており、影響範囲は極めて広い。いずれもパッチ済みだが、未アップデートのシステムは直ちにリスクにさらされる。",
+      "最も深刻な **CVE-2025-68664**（CVSS 9.3）は、LangChain の `dumps()` と `dumpd()` 関数に存在するデシリアライゼーション脆弱性だ。内部で使用される `lc` キーの処理が不適切で、ユーザーが制御可能なデータに `lc` キー構造を含めると、デシリアライズ時に正規の LangChain オブジェクトとして扱われてしまう。これにより API キーや環境変数に格納された秘密情報が漏洩する。修正版は LangChain Core 0.3.81 以降、LangChain 1.2.5 以降で提供されている。",
+      "**CVE-2026-34070**（CVSS 7.5）は LangChain Core のプロンプトローディング API に存在するパストラバーサル脆弱性。`langchain_core/prompts/loading.py` で入力パスのバリデーションが行われておらず、細工されたプロンプトテンプレートを渡すことでホストシステム上の任意のファイルを読み取れる。設定ファイルや認証情報の漏洩につながる。LangChain Core 1.2.22 以降で修正済み。",
+      "**CVE-2025-67644**（CVSS 7.3）は LangGraph の SQLite チェックポイントストアに存在する SQL インジェクション脆弱性。攻撃者が任意のデータベースクエリを実行でき、チェックポイントに保存された会話履歴やエージェントの内部状態にアクセスできる。langgraph-checkpoint-sqlite 3.0.1 以降で修正済み。",
+      "3件の脆弱性はそれぞれ異なるクラスのエンタープライズデータを露出させる——ファイルシステム、環境変数、データベース。AI エージェントは従来のアプリケーションよりも多くの外部システムと接続するため、フレームワーク層の脆弱性が致命的な影響を持つ。LangChain を使用しているチームは、依存パッケージのバージョンを即座に確認し、アップデートを適用すべきだ。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 0,
+        "caption": "LangChain / LangGraph 脆弱性一覧",
+        "headers": ["CVE", "対象", "種別", "CVSS", "修正バージョン"],
+        "rows": [
+          ["CVE-2025-68664", "LangChain Core", "デシリアライゼーション", "9.3（Critical）", "Core 0.3.81 / LangChain 1.2.5"],
+          ["CVE-2026-34070", "LangChain Core", "パストラバーサル", "7.5（High）", "Core 1.2.22"],
+          ["CVE-2025-67644", "LangGraph", "SQLインジェクション", "7.3（High）", "checkpoint-sqlite 3.0.1"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "LangChain, LangGraph Flaws Expose Files, Secrets, Databases in Widely Used AI Frameworks",
+        "site": "The Hacker News",
+        "url": "https://thehackernews.com/2026/03/langchain-langgraph-flaws-expose-files.html"
+      },
+      {
+        "title": "CVE-2025-68664 Detail",
+        "site": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-68664"
+      },
+      {
+        "title": "LangChain path traversal bug adds to input validation woes in AI pipelines",
+        "site": "CSO Online",
+        "url": "https://www.csoonline.com/article/4151814/langchain-path-traversal-bug-adds-to-input-validation-woes-in-ai-pipelines.html"
+      }
+    ]
+  },
+  "us-ai-regulation-federal-vs-state-preemption-2026": {
+    "body": [
+      "2025年12月11日、トランプ大統領は「人工知能の国家政策枠組みを確保するための大統領令」に署名した。核心は**連邦プリエンプション**——州が独自に定めた AI 規制法を、連邦の権限で無効化できると主張する内容だ。大統領令は司法省に対し30日以内に「AI 訴訟タスクフォース」を設立し、州法を積極的に法廷で争うよう指示。商務省には90日以内に「負担の大きい」州規制を特定するよう求めた。",
+      "名指しされたのが**コロラド州 AI 法**だ。2024年5月に成立した同法は、AI 開発者と導入者にアルゴリズムによる差別を避けるための「合理的な注意」義務を課し、リスク管理フレームワークの策定を求める。大統領令はこの法律を「AI システムに虚偽の結果を出すよう強制するもの」と批判した。コロラド州では2025年8月の臨時議会でテック業界のロビイングを受けて施行が6月30日に延期されており、2026年3月27日にはポリス知事が開示・記録保持・消費者通知に範囲を絞った代替法案を公表した。",
+      "しかし法的な実効性には疑問符がつく。大統領令は議会が制定した法律でも、議会の授権に基づく行政規則でもない。Ropes & Gray の分析は「大統領令それ自体にはプリエンプション（専占）の法的効力がない」と指摘する。連邦法によるプリエンプションは合衆国憲法の優位条項（Supremacy Clause）に基づくが、現時点で議会は包括的な連邦 AI 法を成立させていない。過去にも連邦による州 AI 法のプリエンプション法案は複数提出されたが、いずれも成立に至っていない。",
+      "カリフォルニア、コロラド、ニューヨークの知事は「大統領令は州法の施行を止めない」と声明を出した。テキサス州の「責任ある AI ガバナンス法」は2026年1月に発効済みで、規制サンドボックスの概念を含む独自のアプローチを取っている。カリフォルニア州では SB 53（フロンティア AI 透明性法）と AB 2013（学習データ透明性）が2026年に発効予定だ。",
+      "一方、EU の AI 法（AI Act）は2024年8月に発効し、義務のフェーズインが2027年まで続く。禁止される AI 実践、汎用 AI モデル、透明性要件、罰則が段階的に適用される。米国企業が EU 市場で事業を行う限り、連邦 vs 州の議論とは無関係に EU 規制への準拠が求められる。",
+      "2026年の焦点は3つある。第一に、司法省の AI 訴訟タスクフォースが実際にどの州法を提訴するか。第二に、コロラド州の代替法案が成立するか、それとも6月30日に元の法律が発効するか。第三に、連邦議会が包括的な AI 法案を通せるかどうかだ。大統領令の法的な限界を考えれば、州 vs 連邦の対立は法廷に持ち込まれる可能性が高く、AI 規制の実質的なルールは判例を通じて形成されていくことになるだろう。"
+    ],
+    "primarySources": [
+      {
+        "title": "Executive Order Targets State AI Regulation Through Federal Preemption",
+        "site": "McGuireWoods Consulting",
+        "url": "https://mwcllc.com/2026/01/20/executive-order-targets-state-ai-regulation-through-federal-preemption/"
+      },
+      {
+        "title": "Examining the Landscape and Limitations of the Federal Push to Override State AI Regulation",
+        "site": "Ropes & Gray LLP",
+        "url": "https://www.ropesgray.com/en/insights/alerts/2026/03/examining-the-landscape-and-limitations-of-the-federal-push-to-override-state-ai-regulation"
+      },
+      {
+        "title": "Colorado Officials Push to Repeal and Replace the Colorado AI Act",
+        "site": "Inside Global Tech",
+        "url": "https://www.insideglobaltech.com/2026/03/27/colorado-officials-push-to-repeal-and-replace-the-colorado-ai-act/"
+      },
+      {
+        "title": "What Does Trump's AI Executive Order Mean for Colorado's AI Act?",
+        "site": "Clark Hill PLC",
+        "url": "https://www.clarkhill.com/news-events/news/what-does-trumps-ai-executive-order-mean-for-colorados-ai-act/"
+      }
+    ]
+  },
   "gemma-4-apache2-edge-moe-dense-2026": {
     "body": [
       "Google DeepMind は2026年4月2日、オープンモデルの最新世代 **Gemma 4** を公開した。最大の変更点は**ライセンスが Apache 2.0 に変更**されたこと。従来の Gemma は独自の制限付きライセンスだったが、Gemma 4 は商用利用を含め完全に自由に使えるようになった。Hugging Face 共同創設者の Clément Delangue 氏が「大きなマイルストーン」と評するなど、開発者コミュニティから歓迎の声が上がっている。",

@@ -5,6 +5,139 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "gemini-api-billing-tier-spend-cap-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Gemini API に課金ティア上限が強制適用 — Tier 1は月$250、超過で全リクエスト停止",
+    "excerpt": "Google が Gemini API に課金アカウント単位の月額支出上限を4月1日から強制適用。Tier 1は$250/月、Tier 2は$2,000/月、Tier 3は$20,000〜。上限到達で次の請求サイクルまで全APIリクエストが停止される。プロジェクト単位の任意上限とは別の仕組みで、無効化できない。",
+    "date": "2026-04-03",
+    "newsDate": "2026-04-01",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "API",
+      "料金",
+      "課金"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "Gemini API 課金ティア上限"
+    }
+  },
+  {
+    "id": "nvidia-physical-ai-data-factory-blueprint-2026",
+    "type": "news",
+    "category": "product",
+    "title": "NVIDIA が Physical AI Data Factory Blueprint を公開 — ロボティクス・自動運転の学習データ生成を自動化するオープン参照アーキテクチャ",
+    "excerpt": "NVIDIA が物理 AI 向けの学習データ生成・拡張・評価を統合するオープンな参照アーキテクチャ「Physical AI Data Factory Blueprint」を発表。合成データ生成から強化学習まで一気通貫で自動化し、ロボティクス・ビジョン AI・自動運転の開発コストを削減。GitHub で4月中に公開予定。",
+    "date": "2026-04-03",
+    "newsDate": "2026-04-02",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "NVIDIA",
+      "ロボティクス",
+      "合成データ",
+      "オープンソース",
+      "自動運転"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "NVIDIA Physical AI Data Factory Blueprint"
+    }
+  },
+  {
+    "id": "anthropic-1m-context-beta-retirement-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic、Sonnet 4.5/4 の1Mコンテキストベータを4月30日で廃止 — Opus 4.6・Sonnet 4.6 では標準料金でGA",
+    "excerpt": "Anthropic が Claude Sonnet 4.5 と Sonnet 4 の1Mトークンコンテキストウィンドウベータを4月30日で終了。以降 context-1m ヘッダーは無効化される。Opus 4.6・Sonnet 4.6 では1Mコンテキストが標準料金でGA済みのため、移行を推奨。Web検索・Web Fetch も同時にGA。",
+    "date": "2026-04-03",
+    "newsDate": "2026-04-01",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "コンテキストウィンドウ",
+      "API",
+      "料金"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "Anthropic 1M コンテキストベータ廃止"
+    }
+  },
+  {
+    "id": "claw-code-oss-agent-harness-100k-stars-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claw Code — Claude Code アーキテクチャのクリーンルーム再実装が公開数日で100K Stars超え、GitHub史上最速",
+    "excerpt": "Claude Code のソースマップ流出を受け、エージェントハーネスをゼロからPython＋Rustで再実装した OSS プロジェクト「Claw Code」が GitHub で公開数日で100K Stars を突破。プロプライエタリコードのコピーなし・クリーンルーム設計を掲げ、ツール接続・タスクワークフロー・ファイルシステム操作の制御層を完全にオープン化。",
+    "date": "2026-04-03",
+    "newsDate": "2026-04-02",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "オープンソース",
+      "エージェント",
+      "CLI",
+      "Claude Code",
+      "Rust",
+      "Python"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "Claw Code OSS エージェントハーネス"
+    }
+  },
+  {
+    "id": "langchain-langgraph-3-cves-data-leak-2026",
+    "type": "news",
+    "category": "data",
+    "title": "LangChain・LangGraph に重大脆弱性3件 — パストラバーサル・秘密情報漏洩・SQLインジェクション、CVSS最大9.3",
+    "excerpt": "AIエージェントフレームワークの LangChain と LangGraph に3件の脆弱性が公開された。CVE-2026-34070（パストラバーサル、CVSS 7.5）、CVE-2025-68664（デシリアライゼーションによる秘密情報漏洩、CVSS 9.3）、CVE-2025-67644（SQLインジェクション、CVSS 7.3）。週間ダウンロード数5,200万超の広く使われるフレームワークであり、即時アップデートが推奨される。",
+    "date": "2026-04-03",
+    "newsDate": "2026-03-31",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "セキュリティ",
+      "LangChain",
+      "脆弱性",
+      "エージェント",
+      "CVE"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "LangChain LangGraph 脆弱性"
+    }
+  },
+  {
+    "id": "us-ai-regulation-federal-vs-state-preemption-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "米国AI規制の連邦 vs 州 — トランプ大統領令が州法プリエンプションを主張、コロラド州は法改正で対抗",
+    "excerpt": "トランプ大統領が2025年12月に署名したAI大統領令は、州のAI規制法を連邦権限で無効化する「プリエンプション」を主張。司法省にAI訴訟タスクフォース設立を指示し、コロラド州AI法を名指しで批判した。一方、カリフォルニア・コロラド・ニューヨークの知事は州法の施行を継続すると表明。連邦法なき「大統領令 vs 州法」の法的対立が2026年のAI規制の焦点になっている。",
+    "date": "2026-04-03",
+    "newsDate": "2026-04-01",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "AI規制",
+      "アメリカ",
+      "コロラド州",
+      "プリエンプション",
+      "大統領令"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "米国AI規制 連邦 vs 州"
+    }
+  },
+  {
     "id": "google-vids-veo31-free-video-generation-2026",
     "type": "news",
     "category": "product",
@@ -3612,7 +3745,7 @@ export const ARTICLES_META = [
       "prompt cache",
       "バグ",
       "レート制限",
-      "OpenAI Codex",
+      "Codex",
       "競合"
     ],
     "coverImage": {
