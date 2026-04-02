@@ -5717,6 +5717,32 @@ const ARTICLES_BODY = {
       }
     ]
   },
+  "gitreverse-repo-to-prompt-openclaw-2026": {
+    "body": [
+      "公開されている GitHub リポジトリの URL を貼るだけで、そのプロジェクトを一から作るための「バイブコーディング用プロンプト」を自動生成するツール **GitReverse** が2026年3月31日に公開された。エチオピアの開発者 Fili 氏が開発したこのツールは、リポジトリのファイル構成と README を読み取り、「このプロジェクトを AI に作らせるとしたら、どんな指示を出せばよかったか」を逆算して自然言語のプロンプトに変換する。Next.js、Shadcn、React、Supabase といった有名プロジェクトにも対応している。",
+      "話題に火をつけたのは、GitHub スター **344,000 超**の巨大オープンソースプロジェクト **OpenClaw** を GitReverse で逆変換するデモ動画だ。OpenClaw は、自分の PC 上で動くパーソナル AI アシスタントで、WhatsApp・Telegram・Discord・Slack・iMessage など15以上のメッセージアプリを一つのゲートウェイで統合できる。PSPDFKit（PDF SDK、10億ユーザー規模）を€1億超で売却した Peter Steinberger 氏が開発し、公開60日で React の10年間の記録を超える GitHub スターを獲得した話題のプロジェクトだ。",
+      "デモの流れはこうだ。まず GitReverse に openclaw/openclaw のリポジトリ URL を入力すると、「自分のハードウェアで動くパーソナル AI アシスタントを作りたい。中心となるのは WhatsApp、Telegram、Discord、Slack、iMessage など既存のチャットアプリすべてに接続するゲートウェイ機能で…」という自然言語のプロンプトが生成される。これをコピーして Claude Code（claude.ai の Code タブ）に貼り付け、「make no mistakes」と付け加えて実行する。つまり、**既存の完成品から設計意図を逆算し、AI に再構築させる**というワークフローだ。",
+      "この手法の意義は、オープンソースのコードを「読む」のではなく「意図を抽出する」点にある。数百ファイル・数万行のコードベースを人間が読み解くのは膨大な時間がかかるが、GitReverse は「このプロジェクトは何をしたくて作られたのか」を一つのプロンプトに凝縮する。学習目的で既存プロジェクトの設計思想を理解したり、似た機能を持つプロジェクトの出発点として使ったりするのに有効だ。",
+      "ただし、生成されるプロンプトはリポジトリの README とファイル構成（1階層）から推定したものであり、コードの詳細なロジックまでは反映されない。344k スターの OpenClaw のような大規模プロジェクトを「プロンプト一つで再現」できるわけではなく、あくまで出発点としてのプロンプトだ。また、ライセンスの観点からも、生成されたプロンプトで作ったコードが元のプロジェクトの派生物にあたるかどうかは、今後議論が必要な領域だろう。GitReverse 自体は Next.js + OpenRouter API で構築されており、GitHub 上でソースコードが公開されている。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitReverse",
+        "site": "GitReverse",
+        "url": "https://www.gitreverse.com/"
+      },
+      {
+        "title": "filiksyos/gitreverse",
+        "site": "GitHub",
+        "url": "https://github.com/filiksyos/gitreverse"
+      },
+      {
+        "title": "openclaw/openclaw",
+        "site": "GitHub",
+        "url": "https://github.com/openclaw/openclaw"
+      }
+    ]
+  },
   "supabase-ssh-docs-virtual-filesystem-2026": {
     "body": [
       "データベースサービスの **Supabase** が、AI コーディングエージェント向けの実験的サービス **supabase.sh** を公開した。ターミナルで `ssh supabase.sh` と1行打つだけで、Supabase の公式マニュアル全体が自分の PC 内のファイルのように表示され、検索・閲覧できる。SSH（Secure Shell）とは、別のコンピュータにネットワーク経由で安全に接続するための仕組みで、開発者がサーバーを遠隔操作する際に広く使われている。今回はその SSH を使って、Supabase が用意したサーバーに接続するとマニュアルが読める、という仕掛けだ。アカウント登録も料金も不要。X 上で5.7万回表示を超える反響を呼んでいる。なお今回のサービスは Supabase に保存したデータベースの中身を読む機能ではなく、あくまで **Supabase 自体の使い方マニュアルを AI に読ませる**ためのものだ。",

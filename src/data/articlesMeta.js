@@ -3553,6 +3553,24 @@ export const ARTICLES_META = [
     }
   },
   {
+    "id": "gitreverse-repo-to-prompt-openclaw-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "GitReverse — GitHub リポジトリを「バイブコーディング用プロンプト」に逆変換、344k スターの OpenClaw を Claude Code で再構築するデモが話題に",
+    "excerpt": "公開 GitHub リポジトリの URL を貼るだけで、そのプロジェクトを一から作るためのバイブコーディング用プロンプトを自動生成する GitReverse が登場。344k スターの巨大 OSS「OpenClaw」を逆変換し、Claude Code に貼り付けて再構築するデモ動画が拡散している。",
+    "date": "2026-04-02",
+    "newsDate": "2026-03-31",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "バイブコーディング",
+      "オープンソース",
+      "Claude Code",
+      "プロンプト",
+      "開発体験"
+    ]
+  },
+  {
     "id": "supabase-ssh-docs-virtual-filesystem-2026",
     "type": "news",
     "category": "data",
