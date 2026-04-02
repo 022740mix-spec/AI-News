@@ -4,6 +4,35 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "microsoft-mai-transcribe-voice-image-foundry-2026": {
+    "body": [
+      "Microsoft は2026年4月3日、自社開発の AI モデル3種「**MAI-Transcribe-1**」「**MAI-Voice-1**」「**MAI-Image-2**」を発表した。文字起こし・音声生成・画像生成のそれぞれで業界トップクラスの性能を主張しており、全モデルが **Microsoft Foundry** で即日商用利用可能。Mustafa Suleyman（Microsoft AI CEO）は「世界クラスの品質を、最速のスピードで、最も競争力のある価格で提供する」と述べた。",
+      "**MAI-Transcribe-1** は音声認識（Speech-to-Text）モデルで、主要25言語に対応。FLEURS ベンチマークの11コア言語で**業界1位**を達成し、Azure の従来の高速オプション比で**バッチ処理が2.5倍高速**。料金は **$0.36/時間** で、大量の音声データを処理する企業向けユースケースを想定している。Whisper や Google STT との直接的なベンチマーク比較は公式には示されていないが、FLEURS での WER（単語誤り率）3.9% は従来の商用サービスを上回る数値だ。",
+      "**MAI-Voice-1** は音声生成（Text-to-Speech）モデルで、自然で感情表現豊かな音声を生成する。最大の特徴は**60秒の音声をわずか1秒で生成**できる速度。音声サンプルからカスタムボイスを作成する機能も備え、ブランド固有の音声やナレーション制作に対応する。料金は **$22/100万文字**。リアルタイム会話 AI やコンテンツ制作での活用が見込まれる。",
+      "**MAI-Image-2** は画像生成モデルで、Foundry および Copilot 上で従来比**2倍の生成速度**を実現。**Arena.ai リーダーボードでトップ3** に入る品質で、自然な照明、正確な肌の色調、画像内テキストの精度が最適化されている。WPP（世界最大の広告グループ）の Rob Reilly 氏は「MAI-Image-2 は本物のゲームチェンジャー。クリエイティブ制作の技術を深くリスペクトしている」と評価。料金はテキスト入力 $5/100万トークン、画像出力 $33/100万トークン。",
+      "戦略的に重要なのは、Microsoft がテキスト生成（LLM）ではなく**メディア生成に独自モデルを投入**した点だ。Copilot のテキスト生成は引き続き OpenAI の GPT や Anthropic の Claude に依存しており、今回もテキスト生成モデルの発表はない。一方でメディア生成——音声認識・音声合成・画像生成——では自社モデルで勝負する姿勢を明確にした。これは「テキストは他社、メディアは自社」という棲み分け戦略の表れと見ることができる。",
+      "全モデルは Microsoft Foundry で即日利用可能。MAI Playground（米国限定）でも試用できる。企業の音声データ処理、コンテンツ制作ワークフロー、広告クリエイティブ生成など、メディア生成を大量に必要とするユースケースでの採用が焦点になるだろう。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 0,
+        "caption": "MAI モデル3種の比較",
+        "headers": ["モデル", "分野", "ベンチマーク", "速度", "料金"],
+        "rows": [
+          ["MAI-Transcribe-1", "音声認識（STT）", "FLEURS 11言語で1位（WER 3.9%）", "Azure Fast比 2.5倍", "$0.36/時間"],
+          ["MAI-Voice-1", "音声生成（TTS）", "—", "60秒音声を1秒で生成", "$22/100万文字"],
+          ["MAI-Image-2", "画像生成", "Arena.ai トップ3", "従来比 2倍高速", "$5/100万トークン（入力）"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Today we're announcing 3 new world class MAI models, available in Foundry",
+        "site": "Microsoft AI",
+        "url": "https://microsoft.ai/news/today-were-announcing-3-new-world-class-mai-models-available-in-foundry/"
+      }
+    ]
+  },
   "claude-computer-use-windows-launch-2026": {
     "body": [
       "Anthropic は2026年4月2日、**Claude Computer Use** の **Windows 対応**を発表した。Claude Cowork と Claude Code Desktop の両方で利用可能で、Windows 上でアプリの起動、ブラウザ操作、スプレッドシートの入力、ファイル管理など、マルチステップのデスクトップ操作を AI が自律的に実行できる。3月23日の macOS 対応から約10日で、デスクトップ PC 市場の約70%をカバーした。",

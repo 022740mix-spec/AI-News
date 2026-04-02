@@ -5,6 +5,28 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "microsoft-mai-transcribe-voice-image-foundry-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Microsoft が独自AIモデル3種を公開 — 文字起こし・音声生成・画像生成、Foundry で即日商用利用可能",
+    "excerpt": "Microsoft が自社開発の MAI モデル3種を発表。MAI-Transcribe-1 は音声認識 WER 3.9% で FLEURS ベンチ業界最高、MAI-Voice-1 は60秒音声を1秒で生成、MAI-Image-2 は2倍高速化で Arena.ai トップ3入り。全モデルが Microsoft Foundry で即日商用利用可能。テキスト生成は引き続き他社モデル依存だが、メディア生成では独自路線を明確化。",
+    "date": "2026-04-03",
+    "newsDate": "2026-04-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Microsoft",
+      "音声認識",
+      "音声生成",
+      "画像生成AI",
+      "Azure"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "Microsoft MAI Models"
+    }
+  },
+  {
     "id": "claude-computer-use-windows-launch-2026",
     "type": "news",
     "category": "product",
