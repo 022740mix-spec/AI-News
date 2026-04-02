@@ -168,7 +168,7 @@ export const ARTICLES = [
   {
     "id": "midjourney-v8-api-launch-2026",
     "type": "news",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=800&h=450&fit=crop&q=80", "alt": "AI アート" },
+    "coverImage": { "src": "articles/cover-media-art.svg", "alt": "AI アート" },
     "category": "media",
     "title": "Midjourney V8、ついに Web 版と API を正式公開 — Discord 不要で画像生成が可能に",
     "excerpt": "Midjourney が V8 モデルとともに Web アプリと REST API を正式公開。Discord 経由でしか使えなかった制約がなくなり、開発者はアプリケーションに画像生成を直接組み込めるようになった。1画像あたり約$0.03、月額$10のBasicプランで200枚生成可能。",
@@ -191,7 +191,7 @@ export const ARTICLES = [
   {
     "id": "runway-gen5-video-generation-2026",
     "type": "news",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=450&fit=crop&q=80", "alt": "動画制作" },
+    "coverImage": { "src": "articles/cover-media-video.svg", "alt": "動画制作" },
     "category": "media",
     "title": "Runway Gen-5 発表 — 最大2分の高品質動画生成、物理シミュレーションとカメラ制御が大幅進化",
     "excerpt": "Runway が Gen-5 を発表。最大120秒の動画生成に対応し、物理法則に従った物体の動き、精密なカメラワーク制御、音声同期リップシンクを実現。API 経由でのバッチ生成にも対応し、映像制作ワークフローへの組み込みが現実的に。",
@@ -215,7 +215,7 @@ export const ARTICLES = [
   {
     "id": "ai-image-api-guide-developers-2026",
     "type": "feature",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=800&h=450&fit=crop&q=80", "alt": "AI アート" },
+    "coverImage": { "src": "articles/cover-media-art.svg", "alt": "AI アート" },
     "category": "media",
     "title": "開発者のための画像生成API入門 — GPT Image・Flux・Midjourney・Recraft を比較して選ぶ",
     "excerpt": "画像生成をアプリに組み込みたい開発者向けに、主要4つの API を料金・品質・速度・ライセンスの軸で比較。バイブコーディングで「とりあえず動く画像生成」を実装するための最短ルートを示す。",
@@ -242,7 +242,7 @@ export const ARTICLES = [
   {
     "id": "how-ai-models-are-built-2026",
     "type": "feature",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1737505599159-5ffc1dcbc08f?w=800&h=450&fit=crop&q=80", "alt": "ニューラルネットワーク" },
+    "coverImage": { "src": "articles/cover-model-api.svg", "alt": "ニューラルネットワーク" },
     "category": "model",
 
     "title": "AI モデルはどう作られるのか — ゼロから学習・追加学習・RLHF を非エンジニア向けに解説",
@@ -296,7 +296,7 @@ export const ARTICLES = [
   {
     "id": "local-llm-vs-api-reality-2026",
     "type": "feature",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=450&fit=crop&q=80", "alt": "サーバールーム" },
+    "coverImage": { "src": "articles/cover-server-infra.svg", "alt": "サーバールーム" },
     "category": "model",
 
     "title": "ローカル LLM の現実 — API 契約 vs 自前運用のコスト・性能・限界を比較",
@@ -500,7 +500,7 @@ export const ARTICLES = [
   {
     "id": "glm-5-zhipu-2026",
     "type": "news",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&h=450&fit=crop&q=80", "alt": "AI" },
+    "coverImage": { "src": "articles/cover-model-api.svg", "alt": "AI" },
     "category": "model",
     "title": "Zhipu AI、GLM-5 を公開 — 745億パラメータ MoE、Huawei チップで学習した中国発フロンティアモデル",
     "excerpt": "中国の Zhipu AI（智譜AI）が GLM-5 を公開した。745億パラメータの MoE モデルで、エージェント型 AI に最適化された設計。Huawei Ascend チップで学習され、MIT ライセンスのオープンソースとして提供。Opus 4.6 の約6分の1のコストで利用可能。香港市場で株価が34%急騰した。",
@@ -589,7 +589,7 @@ export const ARTICLES = [
   {
     "id": "singularity-mythos-2026-spring",
     "type": "feature",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=450&fit=crop&q=80", "alt": "AI の未来" },
+    "coverImage": { "src": "articles/cover-model-api.svg", "alt": "AI の未来" },
     "category": "special",
     "title": "【特集】2026年春、シンギュラリティの入口に立っている — Mythos が示す AI 能力の急進",
     "excerpt": "Anthropic の内部モデル Mythos（Capybara ティア）のリーク、Google TurboQuant による8倍高速化、コールセンターを代替する音声 AI — 2026年第1四半期に起きたことを振り返ると、AI の能力曲線が急激に立ち上がっている。この特集では、今何が起きているのかを整理する。",
@@ -634,7 +634,7 @@ export const ARTICLES = [
   {
     "id": "dexter-financial-agent-2026",
     "type": "news",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&q=80", "alt": "金融テクノロジー" },
+    "coverImage": { "src": "articles/cover-fintech.svg", "alt": "金融テクノロジー" },
     "category": "product",
     "title": "金融版 Claude Code「Dexter」が話題 — 200行のオープンソースで株式分析・投資判断を自動化",
     "excerpt": "ターミナルで動作する自律型金融リサーチエージェント Dexter が GitHub で1.7万スターを獲得し話題に。約200行のコードで構築され、タスク計画・自己検証・リアルタイム市場データ分析を行う。Claude / Codex / ローカル LLM に対応。",
@@ -805,7 +805,7 @@ export const ARTICLES = [
   {
     "id": "cli-tools-comparison-2026-march",
     "type": "feature",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&h=450&fit=crop&q=80", "alt": "ターミナル画面" },
+    "coverImage": { "src": "articles/cover-cli-tools.svg", "alt": "ターミナル画面" },
     "category": "cli",
 
     "title": "CLI コーディングツール横断比較 — Claude Code・Codex・Gemini CLI・Aider・Copilot（2026年3月版）",
@@ -848,7 +848,7 @@ export const ARTICLES = [
   {
     "id": "editor-comparison-2026-march",
     "type": "feature",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1753998943413-8cba1b923c0e?w=800&h=450&fit=crop&q=80", "alt": "コードエディタ" },
+    "coverImage": { "src": "articles/cover-editor-ide.svg", "alt": "コードエディタ" },
     "category": "editor",
 
     "title": "AI エディタ横断比較 — Cursor・Windsurf・VS Code+Copilot（2026年3月版）",
@@ -888,7 +888,7 @@ export const ARTICLES = [
   {
     "id": "pricing-comparison-all-tools-2026-march",
     "type": "feature",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=800&h=450&fit=crop&q=80", "alt": "データ分析" },
+    "coverImage": { "src": "articles/cover-pricing.svg", "alt": "データ分析" },
     "category": "special",
 
     "title": "AI 開発ツール料金プラン横断比較 — CLI・エディタ・API 全8ツール（2026年3月版）",
@@ -986,7 +986,7 @@ export const ARTICLES = [
   {
     "id": "ai-config-files-comprehensive-guide-2026",
     "type": "feature",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&h=450&fit=crop&q=80", "alt": "ターミナル" },
+    "coverImage": { "src": "articles/cover-cli-tools.svg", "alt": "ターミナル" },
     "category": "cli",
     "title": "AI 設定ファイル総合ガイド — CLAUDE.md・SKILL.md・AGENTS.md・.cursor/rules を一本化して理解する",
     "excerpt": "Claude Code の CLAUDE.md、スキルファイル、Codex の AGENTS.md、Cursor の .cursor/rules、llms.txt。AI コーディングツールの「設定ファイル」が乱立する中、それぞれの役割・配置場所・書き方のベストプラクティスを1本にまとめた。",
@@ -1070,7 +1070,7 @@ export const ARTICLES = [
   {
     "id": "ai-regulation-q1-2026",
     "type": "feature",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=450&fit=crop&q=80", "alt": "法規制" },
+    "coverImage": { "src": "articles/cover-regulation.svg", "alt": "法規制" },
     "category": "regulation",
     "title": "AI 規制・訴訟の動き — 2026年 Q1 の主要トピック",
     "excerpt": "Anthropic と米国防総省の法廷闘争、OpenAI Sora をめぐる提携解消、EU AI Act の施行開始など、2026年第1四半期の規制・訴訟動向を整理した。",
@@ -1093,7 +1093,7 @@ export const ARTICLES = [
   {
     "id": "ai-copyright-landscape-2026",
     "type": "feature",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=450&fit=crop&q=80", "alt": "法規制" },
+    "coverImage": { "src": "articles/cover-regulation.svg", "alt": "法規制" },
     "category": "regulation",
     "title": "AI と著作権 — 2026年時点の法的状況と開発者が知るべきこと",
     "excerpt": "AI 生成コードの著作権は誰にあるのか、学習データの利用は合法なのか。米国・EU・日本の現状を公式発表と判例ベースで整理し、開発者が実務で取るべき対応をまとめた。",
@@ -1222,7 +1222,7 @@ export const ARTICLES = [
   {
     "id": "overview-2026-spring",
     "type": "feature",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&h=450&fit=crop&q=80", "alt": "AI テクノロジー" },
+    "coverImage": { "src": "articles/cover-model-api.svg", "alt": "AI テクノロジー" },
     "category": "special",
     "title": "【週刊まとめ】AI開発ツール — 2026年3月23日〜29日",
     "excerpt": "Anthropic が国防総省の「サプライチェーンリスク」指定を連邦地裁で差し止めた一方、OpenAI は Sora の消費者向け提供を終了。ARC-AGI-3 がフロンティアモデルの限界を浮き彫りにした翌日、Google が Gemini 3.1 Pro と MCP v2 を同時に発表。週末は Cursor 2.4 と Claude Code Auto mode が開発者のワークフローを更新し、Mythos 草稿の報道がセキュリティ銘柄を動かした。",
@@ -1282,7 +1282,7 @@ export const ARTICLES = [
   {
     "id": "overview-2026-week-mar16",
     "type": "feature",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&h=450&fit=crop&q=80", "alt": "AI テクノロジー" },
+    "coverImage": { "src": "articles/cover-model-api.svg", "alt": "AI テクノロジー" },
     "category": "special",
     "title": "【週刊まとめ】AI開発ツール — 2026年3月16日〜22日",
     "excerpt": "OpenAI が GPT-5.4 mini/nano をリリースし、低コストモデルの選択肢を広げた。翌々日には Python ツール企業 Astral（uv・Ruff・ty）の買収を発表し、Codex のエコシステム強化に動いた。同じ週に Cursor が Windsurf の買収を完了し、AI エディタ市場は Cursor vs VS Code+Copilot の二極構造に近づいた。",
@@ -1512,7 +1512,7 @@ export const ARTICLES = [
   {
     "id": "rag-chunking-ingestion-2026",
     "type": "feature",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=450&fit=crop&q=80", "alt": "データベース" },
+    "coverImage": { "src": "articles/cover-database-rag.svg", "alt": "データベース" },
     "category": "data",
     "title": "RAG の取り込み設計 — チャンキング、親子構造、PDF／表／OCR、パイプライン監視",
     "excerpt": "ベクトル化の前段で成果が決まる。固定長だけでなく見出し・段落・構造を利用した分割、親チャンクと子チャンク、表・スキャン PDF・OCR のノイズ、メタデータとリネージ・再処理、障害検知までを実務目線で整理する。",
@@ -1641,7 +1641,7 @@ export const ARTICLES = [
   {
     "id": "rag-getting-started-step-by-step-2026",
     "type": "feature",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=450&fit=crop&q=80", "alt": "データベース" },
+    "coverImage": { "src": "articles/cover-database-rag.svg", "alt": "データベース" },
     "category": "data",
     "title": "RAG をゼロから構築する — ステップバイステップガイド（2026年版）",
     "excerpt": "Retrieval-Augmented Generation（RAG）を初めて構築する開発者向けに、ドキュメント取り込み→ベクトル化→検索→生成の4ステップを公式ドキュメントベースで解説。技術選定の判断軸とよくある落とし穴も整理した。",
@@ -1712,7 +1712,7 @@ export const ARTICLES = [
   {
     "id": "ai-dev-stacks-python-js-node-2026",
     "type": "feature",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=450&fit=crop&q=80", "alt": "プログラミングコード" },
+    "coverImage": { "src": "articles/cover-programming.svg", "alt": "プログラミングコード" },
     "category": "cli",
     "title": "AI 開発と言語ランタイムの周辺 — Python・JavaScript・Node.js・Bun のいま（2026）",
     "excerpt": "エージェントや RAG のサンプルは Python / TypeScript が中心になりがち。uv・Ruff・ty や OpenAI の Astral 買収、Node の LTS 運用、Bun・Deno、ブラウザ側 JS と SSR の分断など、周辺ニュースを実務の選び方に落とし込む。",
@@ -1812,7 +1812,7 @@ export const ARTICLES = [
   {
     "id": "ai-backend-postgres-supabase-2026",
     "type": "feature",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=450&fit=crop&q=80", "alt": "データベース" },
+    "coverImage": { "src": "articles/cover-database-rag.svg", "alt": "データベース" },
     "category": "data",
     "title": "AI アプリのバックエンドと DB — Postgres・pgvector・Supabase 周辺の設計",
     "excerpt": "RAG・チャット・エージェントの永続層は多くの場合がリレーショナル＋ベクトル拡張。Supabase（Postgres＋Auth＋Realtime＋Edge Functions）を軸に、RLS・接続プール・ハイブリッド検索の論点を整理する。",
@@ -1993,7 +1993,7 @@ export const ARTICLES = [
   {
     "id": "ai-voice-input-tools-landscape-2026",
     "type": "feature",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&h=450&fit=crop&q=80", "alt": "マイクとオーディオ" },
+    "coverImage": { "src": "articles/cover-voice-audio.svg", "alt": "マイクとオーディオ" },
     "category": "media",
     "title": "AI 音声入力ツールの俯瞰 — 製品型と API 型、Whisper と gpt-4o-transcribe",
     "excerpt": "OSS の Whisper と OpenAI Speech-to-Text API（whisper-1 / gpt-4o-transcribe 系）は別ライン。コンシューマー製品とクラウド STT API の選び方、レイテンシ・コスト・プライバシーの論点を整理する。",
@@ -2445,7 +2445,7 @@ export const ARTICLES = [
   {
     "id": "ai-video-frontier-models-march-2026-pricing",
     "type": "feature",
-    "coverImage": { "src": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=450&fit=crop&q=80", "alt": "動画制作" },
+    "coverImage": { "src": "articles/cover-media-video.svg", "alt": "動画制作" },
     "category": "media",
     "title": "動画フロンティアの料金の軸 — Veo 3.1・Runway Gen-4.5・Kling など（公式再確認前提）",
     "excerpt": "秒単価・クレジット制・バンドル販売が混在するため「安い／高い」一発比較は誤魔化しやすい。公式 pricing の単位（秒・分・解像度・Fast/Standard）を揃えて読む。",

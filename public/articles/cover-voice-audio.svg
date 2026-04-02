@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c2d12"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)" rx="12"/>
+  <!-- Microphone -->
+  <g transform="translate(400,175)">
+    <!-- Mic body -->
+    <rect x="-18" y="-65" width="36" height="60" rx="18" fill="#9a3412" stroke="#fed7aa" stroke-width="3"/>
+    <!-- Mic stand arc -->
+    <path d="M-35,0 Q-35,35 0,35 Q35,35 35,0" fill="none" stroke="#fed7aa" stroke-width="3"/>
+    <!-- Mic stand -->
+    <line x1="0" y1="35" x2="0" y2="60" stroke="#fed7aa" stroke-width="3"/>
+    <line x1="-20" y1="60" x2="20" y2="60" stroke="#fed7aa" stroke-width="3"/>
+    <!-- Sound waves -->
+    <path d="M55,-20 Q70,0 55,20" fill="none" stroke="#fdba74" stroke-width="2.5" opacity="0.8"/>
+    <path d="M70,-35 Q95,0 70,35" fill="none" stroke="#fdba74" stroke-width="2.5" opacity="0.5"/>
+    <path d="M85,-50 Q120,0 85,50" fill="none" stroke="#fdba74" stroke-width="2.5" opacity="0.3"/>
+    <path d="M-55,-20 Q-70,0 -55,20" fill="none" stroke="#fdba74" stroke-width="2.5" opacity="0.8"/>
+    <path d="M-70,-35 Q-95,0 -70,35" fill="none" stroke="#fdba74" stroke-width="2.5" opacity="0.5"/>
+    <path d="M-85,-50 Q-120,0 -85,50" fill="none" stroke="#fdba74" stroke-width="2.5" opacity="0.3"/>
+  </g>
+  <text x="400" y="330" text-anchor="middle" fill="#fff7ed" font-size="28" font-family="system-ui, sans-serif" font-weight="600">Voice &amp; Audio AI</text>
+  <text x="400" y="360" text-anchor="middle" fill="#fed7aa" font-size="16" font-family="system-ui, sans-serif">音声 / オーディオ AI</text>
+</svg>

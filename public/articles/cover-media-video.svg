@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)" rx="12"/>
+  <!-- Film strip -->
+  <g transform="translate(400,190)">
+    <rect x="-70" y="-60" width="140" height="120" rx="8" fill="#4338ca" stroke="#c7d2fe" stroke-width="3"/>
+    <!-- Sprocket holes -->
+    <rect x="-65" y="-55" width="12" height="10" rx="2" fill="#312e81"/>
+    <rect x="-65" y="-35" width="12" height="10" rx="2" fill="#312e81"/>
+    <rect x="-65" y="-15" width="12" height="10" rx="2" fill="#312e81"/>
+    <rect x="-65" y="5" width="12" height="10" rx="2" fill="#312e81"/>
+    <rect x="-65" y="25" width="12" height="10" rx="2" fill="#312e81"/>
+    <rect x="-65" y="45" width="12" height="10" rx="2" fill="#312e81"/>
+    <rect x="53" y="-55" width="12" height="10" rx="2" fill="#312e81"/>
+    <rect x="53" y="-35" width="12" height="10" rx="2" fill="#312e81"/>
+    <rect x="53" y="-15" width="12" height="10" rx="2" fill="#312e81"/>
+    <rect x="53" y="5" width="12" height="10" rx="2" fill="#312e81"/>
+    <rect x="53" y="25" width="12" height="10" rx="2" fill="#312e81"/>
+    <rect x="53" y="45" width="12" height="10" rx="2" fill="#312e81"/>
+    <!-- Play button -->
+    <polygon points="-12,-20 -12,20 22,0" fill="#e0e7ff"/>
+  </g>
+  <text x="400" y="330" text-anchor="middle" fill="#eef2ff" font-size="28" font-family="system-ui, sans-serif" font-weight="600">AI Video Production</text>
+  <text x="400" y="360" text-anchor="middle" fill="#a5b4fc" font-size="16" font-family="system-ui, sans-serif">AI 動画制作</text>
+</svg>

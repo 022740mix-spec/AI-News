@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)" rx="12"/>
+  <!-- Chart -->
+  <g transform="translate(400,190)">
+    <!-- Grid lines -->
+    <line x1="-100" y1="60" x2="100" y2="60" stroke="#34d399" stroke-width="0.5" opacity="0.3"/>
+    <line x1="-100" y1="30" x2="100" y2="30" stroke="#34d399" stroke-width="0.5" opacity="0.3"/>
+    <line x1="-100" y1="0" x2="100" y2="0" stroke="#34d399" stroke-width="0.5" opacity="0.3"/>
+    <line x1="-100" y1="-30" x2="100" y2="-30" stroke="#34d399" stroke-width="0.5" opacity="0.3"/>
+    <line x1="-100" y1="-60" x2="100" y2="-60" stroke="#34d399" stroke-width="0.5" opacity="0.3"/>
+    <!-- Chart line -->
+    <polyline points="-90,50 -60,30 -30,40 0,-10 30,-30 60,0 90,-60" fill="none" stroke="#6ee7b7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Dollar sign -->
+    <text x="0" y="-75" text-anchor="middle" fill="#a7f3d0" font-size="48" font-family="system-ui, sans-serif" font-weight="700">$</text>
+    <!-- Axis -->
+    <line x1="-100" y1="60" x2="100" y2="60" stroke="#6ee7b7" stroke-width="1.5"/>
+    <line x1="-100" y1="-90" x2="-100" y2="60" stroke="#6ee7b7" stroke-width="1.5"/>
+  </g>
+  <text x="400" y="340" text-anchor="middle" fill="#ecfdf5" font-size="28" font-family="system-ui, sans-serif" font-weight="600">Financial Technology</text>
+  <text x="400" y="370" text-anchor="middle" fill="#a7f3d0" font-size="16" font-family="system-ui, sans-serif">金融テクノロジー</text>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7f1d1d"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)" rx="12"/>
+  <!-- Balance scale -->
+  <g transform="translate(400,185)" fill="none" stroke="#fecaca" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Pillar -->
+    <line x1="0" y1="-60" x2="0" y2="70"/>
+    <rect x="-25" y="65" width="50" height="8" rx="4" fill="#fecaca"/>
+    <!-- Beam -->
+    <line x1="-80" y1="-50" x2="80" y2="-50"/>
+    <!-- Triangle top -->
+    <polygon points="-8,-68 8,-68 0,-80" fill="#fecaca"/>
+    <!-- Left pan -->
+    <line x1="-80" y1="-50" x2="-100" y2="-10"/>
+    <line x1="-80" y1="-50" x2="-60" y2="-10"/>
+    <path d="M-105,-10 Q-80,15 -55,-10" stroke="#fecaca" stroke-width="3"/>
+    <!-- Right pan -->
+    <line x1="80" y1="-50" x2="60" y2="-10"/>
+    <line x1="80" y1="-50" x2="100" y2="-10"/>
+    <path d="M55,-10 Q80,15 105,-10" stroke="#fecaca" stroke-width="3"/>
+  </g>
+  <text x="400" y="340" text-anchor="middle" fill="#fef2f2" font-size="28" font-family="system-ui, sans-serif" font-weight="600">AI Regulation &amp; Policy</text>
+  <text x="400" y="370" text-anchor="middle" fill="#fca5a5" font-size="16" font-family="system-ui, sans-serif">AI 法規制 / ポリシー</text>
+</svg>

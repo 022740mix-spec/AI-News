@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#134e4a"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)" rx="12"/>
+  <!-- Database cylinder -->
+  <g transform="translate(400,180)">
+    <!-- Body -->
+    <rect x="-60" y="-50" width="120" height="100" fill="#115e59" stroke="#99f6e4" stroke-width="2.5"/>
+    <!-- Top ellipse -->
+    <ellipse cx="0" cy="-50" rx="60" ry="20" fill="#115e59" stroke="#99f6e4" stroke-width="2.5"/>
+    <!-- Middle line -->
+    <ellipse cx="0" cy="-10" rx="60" ry="20" fill="none" stroke="#99f6e4" stroke-width="1.5" opacity="0.5"/>
+    <!-- Bottom ellipse -->
+    <ellipse cx="0" cy="50" rx="60" ry="20" fill="#115e59" stroke="#99f6e4" stroke-width="2.5"/>
+    <!-- Data rows -->
+    <line x1="-35" y1="5" x2="35" y2="5" stroke="#5eead4" stroke-width="2" opacity="0.6"/>
+    <line x1="-35" y1="18" x2="25" y2="18" stroke="#5eead4" stroke-width="2" opacity="0.6"/>
+    <line x1="-35" y1="31" x2="30" y2="31" stroke="#5eead4" stroke-width="2" opacity="0.6"/>
+    <!-- Arrow (RAG retrieval) -->
+    <line x1="80" y1="0" x2="120" y2="0" stroke="#99f6e4" stroke-width="2.5"/>
+    <polygon points="120,-6 132,0 120,6" fill="#99f6e4"/>
+  </g>
+  <text x="400" y="335" text-anchor="middle" fill="#f0fdfa" font-size="28" font-family="system-ui, sans-serif" font-weight="600">Database &amp; RAG</text>
+  <text x="400" y="365" text-anchor="middle" fill="#99f6e4" font-size="16" font-family="system-ui, sans-serif">データベース / RAG</text>
+</svg>

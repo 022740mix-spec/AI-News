@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4c1d95"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)" rx="12"/>
+  <!-- Palette icon -->
+  <g transform="translate(400,200)" fill="none" stroke="#e9d5ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse rx="90" ry="80" fill="#6d28d9" stroke="#e9d5ff"/>
+    <circle cx="-40" cy="-30" r="10" fill="#f472b6"/>
+    <circle cx="0" cy="-45" r="10" fill="#facc15"/>
+    <circle cx="40" cy="-30" r="10" fill="#34d399"/>
+    <circle cx="-45" cy="15" r="10" fill="#60a5fa"/>
+    <!-- Brush -->
+    <line x1="55" y1="30" x2="110" y2="85" stroke="#e9d5ff" stroke-width="5"/>
+    <rect x="105" y="80" width="30" height="12" rx="3" fill="#e9d5ff" transform="rotate(45,120,86)"/>
+  </g>
+  <text x="400" y="340" text-anchor="middle" fill="#f5f3ff" font-size="28" font-family="system-ui, sans-serif" font-weight="600">AI Art &amp; Image Generation</text>
+  <text x="400" y="370" text-anchor="middle" fill="#c4b5fd" font-size="16" font-family="system-ui, sans-serif">AI アート / 画像生成</text>
+</svg>

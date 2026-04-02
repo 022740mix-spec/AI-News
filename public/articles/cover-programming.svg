@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c1445"/>
+      <stop offset="100%" stop-color="#1e3a5f"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)" rx="12"/>
+  <!-- Code brackets -->
+  <g transform="translate(400,185)" fill="none" stroke="#93c5fd" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left bracket < -->
+    <polyline points="-30,-50 -70,0 -30,50"/>
+    <!-- Right bracket > -->
+    <polyline points="30,-50 70,0 30,50"/>
+    <!-- Slash / -->
+    <line x1="15" y1="-45" x2="-15" y2="45" stroke="#60a5fa" stroke-width="4"/>
+  </g>
+  <!-- Code lines decoration -->
+  <g transform="translate(400,185)" opacity="0.3">
+    <rect x="-180" y="-40" width="60" height="4" rx="2" fill="#93c5fd"/>
+    <rect x="-180" y="-25" width="45" height="4" rx="2" fill="#93c5fd"/>
+    <rect x="-180" y="-10" width="55" height="4" rx="2" fill="#93c5fd"/>
+    <rect x="130" y="-40" width="50" height="4" rx="2" fill="#93c5fd"/>
+    <rect x="130" y="-25" width="60" height="4" rx="2" fill="#93c5fd"/>
+    <rect x="130" y="-10" width="40" height="4" rx="2" fill="#93c5fd"/>
+  </g>
+  <text x="400" y="330" text-anchor="middle" fill="#eff6ff" font-size="28" font-family="system-ui, sans-serif" font-weight="600">Programming</text>
+  <text x="400" y="360" text-anchor="middle" fill="#93c5fd" font-size="16" font-family="system-ui, sans-serif">プログラミング</text>
+</svg>
