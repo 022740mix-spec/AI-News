@@ -158,27 +158,58 @@ function ArticleTableBlock({ table, keyPrefix }) {
   );
 }
 
-/** X (Twitter) 埋め込み */
+/** X (Twitter) 埋め込み — widgets.js の createTweet API を使用 */
 function XEmbed({ url, caption }) {
-  const ref = useRef(null);
-  useEffect(() => {
-    if (!ref.current) return;
-    const script = document.createElement("script");
-    script.src = "https://platform.twitter.com/widgets.js";
-    script.async = true;
-    script.charset = "utf-8";
-    ref.current.appendChild(script);
-    return () => { script.remove(); };
-  }, [url]);
-  // X の URL からツイート ID を抽出
+  const containerRef = useRef(null);
   const tweetId = url.match(/status\/(\d+)/)?.[1];
+
+  useEffect(() => {
+    if (!containerRef.current || !tweetId) return;
+    const el = containerRef.current;
+    el.innerHTML = "";
+
+    const render = () => {
+      if (window.twttr?.widgets) {
+        window.twttr.widgets.createTweet(tweetId, el, {
+          dnt: true,
+          theme: "dark",
+        });
+      }
+    };
+
+    if (window.twttr?.widgets) {
+      render();
+    } else {
+      // widgets.js をまだ読み込んでいなければ1回だけ追加
+      if (!document.querySelector('script[src*="platform.twitter.com/widgets.js"]')) {
+        const script = document.createElement("script");
+        script.src = "https://platform.twitter.com/widgets.js";
+        script.async = true;
+        document.head.appendChild(script);
+      }
+      // twttr.ready で確実にレンダリング
+      const check = setInterval(() => {
+        if (window.twttr?.widgets) {
+          clearInterval(check);
+          render();
+        }
+      }, 200);
+      return () => clearInterval(check);
+    }
+  }, [tweetId]);
+
+  if (!tweetId) {
+    return (
+      <figure className="article-embed article-embed--x">
+        <a href={url} target="_blank" rel="noopener noreferrer">{url}</a>
+        {caption ? <figcaption className="article-figure__caption">{caption}</figcaption> : null}
+      </figure>
+    );
+  }
+
   return (
     <figure className="article-embed article-embed--x">
-      <div ref={ref}>
-        <blockquote className="twitter-tweet" data-dnt="true" data-theme="dark">
-          <a href={url}>{url}</a>
-        </blockquote>
-      </div>
+      <div ref={containerRef} />
       {caption ? <figcaption className="article-figure__caption">{caption}</figcaption> : null}
     </figure>
   );
