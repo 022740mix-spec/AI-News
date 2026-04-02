@@ -3575,21 +3575,22 @@ export const ARTICLES_META = [
     }
   },
   {
-    "id": "claude-code-no-flicker-fullscreen-renderer-2026",
+    "id": "claude-code-v2-1-90-powerup-no-flicker-2026",
     "type": "news",
     "category": "cli",
-    "title": "Claude Code に NO_FLICKER モード登場 — ターミナルのちらつきを解消、マウス操作やビューポート仮想化で操作性が大幅向上",
-    "excerpt": "Anthropic が Claude Code のターミナル描画を刷新する実験的フルスクリーンレンダラーを公開。CLAUDE_CODE_NO_FLICKER=1 で有効化でき、ちらつき・ジャンプの解消、一定のメモリ/CPU 使用量、マウスクリック・スクロール対応など多数の改善を実現。一方でネイティブ検索やコピペの制約もある。",
+    "title": "Claude Code v2.1.90 リリース — /powerup で10機能を体感学習、NO_FLICKER でちらつき解消、Auto Mode の指示遵守も改善",
+    "excerpt": "Claude Code v2.1.90 が公開。アニメーション付きインタラクティブレッスン /powerup（10項目）、ビューポート仮想化による NO_FLICKER モード、Auto Mode の明示的指示への遵守改善、レートリミット無限ループ修正、PowerShell セキュリティ強化など多数の改善を含む大型アップデート。",
     "date": "2026-04-02",
     "newsDate": "2026-04-02",
     "author": "AI News 編集部",
-    "readTime": "5分",
+    "readTime": "7分",
     "tags": [
       "Claude Code",
       "Anthropic",
+      "アップデート",
+      "オンボーディング",
       "ターミナル",
-      "UI",
-      "開発体験"
+      "セキュリティ"
     ],
     "coverImage": {
       "src": "logos/anthropic.svg",

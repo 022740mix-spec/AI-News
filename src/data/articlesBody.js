@@ -5770,32 +5770,58 @@ const ARTICLES_BODY = {
       }
     ]
   },
-  "claude-code-no-flicker-fullscreen-renderer-2026": {
+  "claude-code-v2-1-90-powerup-no-flicker-2026": {
     "body": [
-      "Anthropic の Claude Code チームは2026年4月2日、ターミナル描画のちらつきを根本的に解消する実験的な「NO_FLICKER モード（フルスクリーンレンダリング）」を発表した。環境変数 CLAUDE_CODE_NO_FLICKER=1 を設定して起動するだけで有効になり、v2.1.89 以降で利用できる。Claude Code リードの Boris Cherny 氏（@bcherny）が X 上で技術的背景とともに詳細を公開し、8万以上の閲覧を集めている。",
-      "従来のターミナルは ANSI エスケープコードという限られた命令セットで描画を行っており、「カーソルを (x, y) に移動」「文字列を書き込む」といった低レベル操作しかできない。ビューポート外の行を再描画するには「画面全体をクリア」する命令を使うしかなく、これがちらつき（フリッカー）の原因だった。新レンダラーはビューポート全体を仮想化し、キーボード・マウスイベントをフックしてスクロールを実現することで、この制約を回避している。",
-      "メリットは多岐にわたる。**ちらつき・ジャンプの完全解消**に加え、会話が長くなっても**メモリと CPU の使用量が一定**に保たれる。さらに**マウス操作に対応**し、入力ボックス内のカーソル移動、ツール結果の展開/折りたたみ、URL・ファイルパスのクリック、ドラッグによるテキスト選択、マウスホイールでのスクロールが可能になった。コードを選択する際に行番号や UI 要素が含まれなくなる改善も地味に嬉しいポイントだ。",
-      "一方でトレードオフもある。ネイティブの Cmd+F 検索が使えなくなり、代わりに Ctrl+O でトランスクリプトモードに入って / で検索する必要がある。ネイティブのコピー＆ペーストも独自の選択方式に置き換わる（選択時に自動でクリップボードにコピーされる設定がデフォルト）。SSH 経由では OSC 52 シーケンスに依存するためクリップボード連携が制限される場合がある。スクロールの重力感はデバイスごとに異なり、現在チューニング中とのこと。",
-      "マウスキャプチャを無効にしたい場合は CLAUDE_CODE_DISABLE_MOUSE=1 を併用すれば、ちらつき解消と一定メモリの恩恵を受けつつネイティブのテキスト選択を維持できる。スクロール速度は CLAUDE_CODE_SCROLL_SPEED（1〜20、デフォルト3）で調整可能。Cherny 氏は「まだ初期段階でトレードオフはあるが、社内ユーザーの大半が旧レンダラーより好んでいる」と述べ、フィードバックを積極的に募っている。"
+      "Anthropic は2026年4月1日、Claude Code の最新バージョン v2.1.90 をリリースした。目玉は、Claude Code の主要機能をアニメーション付きのインタラクティブレッスンで体感学習できる **/powerup コマンド**と、ターミナル描画を根本から刷新する **NO_FLICKER モード**の2つ。加えて Auto Mode の指示遵守改善、レートリミット無限ループの修正、PowerShell のセキュリティ強化など、安定性・安全性の向上も多数含まれる大型アップデートだ。",
+      "**/powerup** は Claude Code 上で直接実行するインタラクティブチュートリアルで、全10項目が用意されている。@ファイル参照、Shift+Tab によるモード切替（plan / auto）、/rewind（Esc-Esc）による Undo、バックグラウンドタスク、CLAUDE.md と /memory、MCP 連携、Skills と Hooks、Subagents（マルチエージェント）、remote-control / teleport、/model と /effort によるモデル切替——と、Claude Code の機能を網羅的にカバーする。各レッスンにはターミナル上でネイティブに再生されるアニメーションデモが付属しており、「見て覚える」から「体感して覚える」への転換を狙った設計だ。X 上では「機能が多くてここで詰まる人が多かったので、/powerup で一気に解像度が上がりそう」「特に Subagents / MCP / Skills に触れる導線ができたのが大きい」と好意的な反応が目立つ。",
+      "もう一つの目玉が **NO_FLICKER モード（フルスクリーンレンダリング）**。CLAUDE_CODE_NO_FLICKER=1 を設定して起動すると、ターミナルのちらつき・ジャンプが完全に解消され、会話が長くなってもメモリと CPU 使用量が一定に保たれる。さらにマウス操作に対応し、入力ボックス内のカーソル移動、ツール結果の展開/折りたたみ、URL・ファイルパスのクリック、ドラッグによるテキスト選択、マウスホイールでのスクロールが可能になった。Claude Code リードの Boris Cherny 氏（@bcherny）は技術的背景について「従来のターミナルは ANSI エスケープコードの制約でビューポート外の再描画に画面全体クリアが必要だったが、新レンダラーはビューポートを仮想化してこの制約を回避した」と説明している。トレードオフとしてネイティブの Cmd+F 検索やコピー＆ペーストが独自方式に置き換わるが、Ctrl+O のトランスクリプトモードで検索・閲覧が可能。マウスを無効にしたい場合は CLAUDE_CODE_DISABLE_MOUSE=1 を併用できる。",
+      "安定性面の改善も大きい。**Auto Mode** では「push するな」「〜まで待て」といった明示的な指示をより厳格に遵守するようになった。**レートリミット到達時に無限にダイアログが開くバグ**が修正され、セッションクラッシュが防止された。--resume 時のプロンプトキャッシュミス（v2.1.69 以降の退行バグ）や、PostToolUse フォーマットフックが連続 Edit 間でファイルを書き換えた際の「File content has changed」エラーも解消されている。",
+      "セキュリティ面では **PowerShell ツールの脆弱性が4件修正**された。末尾 & によるバックグラウンドジョブバイパス、-ErrorAction Break によるデバッガハング、アーカイブ展開の TOCTOU 脆弱性、パース失敗時の拒否ルール劣化——いずれも実害前に対処された形だ。また DNS キャッシュのプライバシー保護として Get-DnsClientCache と ipconfig /displaydns が自動許可リストから除外された。新たに追加された CLAUDE_CODE_SUBPROCESS_ENV_SCRUB=1 は、Bash ツール・Hooks・MCP サーバーのサブプロセスから Anthropic やクラウドプロバイダの認証情報を自動除去する。",
+      "パフォーマンスも全般的に向上した。SSE ストリーミングの大きなフレーム処理が二次時間から線形時間に改善され、長い会話でのトランスクリプト書き込みの二次的な速度低下も解消。MCP ツールスキーマの JSON.stringify が毎ターン実行されていた問題も修正され、MCP ツールの説明文は 2KB に上限が設けられコンテキスト肥大化を防止する。/resume のプロジェクトセッション読み込みも並列化された。"
     ],
     "tables": [
       {
+        "afterParagraph": 2,
+        "caption": "/powerup で学べる10機能",
+        "headers": ["レッスン", "コマンド/機能", "概要"],
+        "rows": [
+          ["Talk to your codebase", "@ファイル参照, 行番号指定", "特定ファイルや行を会話に引用"],
+          ["Steer with modes", "Shift+Tab (plan, auto)", "計画モード・自動モードの切り替え"],
+          ["Undo anything", "/rewind, Esc-Esc", "任意の時点まで会話を巻き戻し"],
+          ["Run in the background", "tasks, /tasks", "バックグラウンドでタスク実行"],
+          ["Teach Claude your rules", "CLAUDE.md, /memory", "プロジェクト固有のルールを記憶"],
+          ["Extend with tools", "MCP", "外部ツール・DB・API と接続"],
+          ["Automate your workflow", "Skills, Hooks", "カスタムスキルとイベントフック"],
+          ["Multiply yourself", "Subagents, /agents", "マルチエージェントで並列作業"],
+          ["Code from anywhere", "/remote-control, /teleport", "リモートマシンからの操作"],
+          ["Dial the model", "/model, /effort", "モデル・思考深度の切り替え"]
+        ]
+      },
+      {
         "afterParagraph": 3,
-        "caption": "NO_FLICKER モードの主な操作方法",
+        "caption": "NO_FLICKER モードの主な操作",
         "headers": ["操作", "方法", "備考"],
         "rows": [
-          ["有効化", "CLAUDE_CODE_NO_FLICKER=1 claude", "シェルプロファイルに export すれば恒久化"],
+          ["有効化", "CLAUDE_CODE_NO_FLICKER=1 claude", "シェルプロファイルに export で恒久化"],
           ["半画面スクロール", "PgUp / PgDn", "MacBook は Fn+↑/↓"],
-          ["先頭/末尾へジャンプ", "Ctrl+Home / Ctrl+End", "MacBook は Fn+Ctrl+←/→"],
-          ["トランスクリプト検索", "Ctrl+O → /", "n/N で前後の一致に移動"],
+          ["トランスクリプト検索", "Ctrl+O → /", "n/N で前後一致に移動"],
           ["ネイティブ検索に書き出し", "Ctrl+O → [", "ターミナルのスクロールバックに出力"],
-          ["エディタで閲覧", "Ctrl+O → v", "デフォルトエディタで会話を開く"],
-          ["マウス無効化", "CLAUDE_CODE_DISABLE_MOUSE=1", "ネイティブ選択を維持したい場合"],
+          ["マウス無効化", "CLAUDE_CODE_DISABLE_MOUSE=1", "ネイティブ選択を維持"],
           ["スクロール速度変更", "CLAUDE_CODE_SCROLL_SPEED=N", "1〜20（デフォルト3）"]
         ]
       }
     ],
     "primarySources": [
+      {
+        "title": "Claude Code Changelog",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/changelog"
+      },
+      {
+        "title": "claude-code v2.1.90 Release",
+        "site": "GitHub",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.90"
+      },
       {
         "title": "Fullscreen rendering - Claude Code Docs",
         "site": "Claude Code Docs",
