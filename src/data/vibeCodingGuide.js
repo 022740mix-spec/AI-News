@@ -290,6 +290,13 @@ export const VIBE_CLAUDE_CODE = {
       mean: "Claude がファイルを編集したりコマンドを実行する前の確認ダイアログを全てスキップする。==壊れても問題ない練習用の環境（＝サンドボックス: 本番データが入っていない、やり直しがきく隔離された作業場所）以外では絶対に使わないこと==。大事なファイルがあるフォルダで使うと、意図しない削除や上書きが起きるリスクがある。",
       code: "claude --dangerously-skip-permissions",
     },
+    {
+      word: "操作: `/plan`",
+      section: "権限モード",
+      mean: "セッション中に Plan Mode に切り替えるコマンド。Claude が計画だけ提示し、ファイル編集やコマンド実行はしない。大きな変更の前に「まず何をするか確認したい」ときに使う。Shift+Tab でも権限モードを切り替えられるが、`/plan` はワンコマンドで Plan に直行できる。",
+      code: "/plan",
+      codeLang: "text",
+    },
     // ── セッション内操作 ──
     {
       word: "操作: `/clear`",
@@ -308,6 +315,27 @@ export const VIBE_CLAUDE_CODE = {
       section: "セッション内操作",
       mean: "現在のセッションで使ったトークン数と料金の概算を表示する。",
       code: "/cost",
+    },
+    {
+      word: "操作: `/context`",
+      section: "セッション内操作",
+      mean: "現在のコンテキスト使用量を可視化する。全体のコンテキストウィンドウに対して何%使っているかがわかる。`/cost` がお金、`/context` が容量。「あとどれくらい会話できるか」を判断するときに使う。",
+      code: "/context",
+      codeLang: "text",
+    },
+    {
+      word: "操作: `/diff`",
+      section: "セッション内操作",
+      mean: "Claude がこのセッションで行ったファイル変更の差分をまとめて表示する。個々の編集時にも差分は出るが、`/diff` は全体をまとめて確認したいときに便利。コミット前の最終チェックに使う。",
+      code: "/diff",
+      codeLang: "text",
+    },
+    {
+      word: "操作: `/copy`",
+      section: "セッション内操作",
+      mean: "Claude の最新の回答をクリップボードにコピーする。生成されたコードを別のファイルやチャットに貼り付けたいときに、マウスで選択するより確実。",
+      code: "/copy",
+      codeLang: "text",
     },
     {
       word: "ステータスライン表示",
@@ -575,6 +603,20 @@ export const VIBE_CLAUDE_CODE = {
       section: "便利なコマンド",
       mean: "プロジェクトのルートに CLAUDE.md を自動生成するコマンド。Claude がプロジェクトの構成を読み取って、適切な設定ファイルを作ってくれる。最初に1回だけ実行すればよい。",
       code: "/init",
+      codeLang: "text",
+    },
+    {
+      word: "操作: `/permissions`",
+      section: "便利なコマンド",
+      mean: "現在の権限ルール（どのツールが自動許可されているか、どのファイルパスが編集可能か等）を一覧表示・変更するコマンド。`settings.json` を直接編集しなくても、対話的にルールを追加・削除できる。「なぜか毎回確認が出る」ときはこれで許可ルールを確認する。",
+      code: "/permissions",
+      codeLang: "text",
+    },
+    {
+      word: "操作: `/memory`",
+      section: "便利なコマンド",
+      mean: "プロジェクトの CLAUDE.md をエディタで開いて編集するコマンド。Claude の記憶（指示書）を素早く更新したいときに使う。`/init` が新規作成、`/memory` が既存の編集。「このルールを追加して」と Claude に頼むより、自分で直接書き換えたいときに便利。",
+      code: "/memory",
       codeLang: "text",
     },
     // ── 音声入力 ──
