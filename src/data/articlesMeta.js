@@ -5,6 +5,29 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "google-vids-veo31-free-video-generation-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Google Vids に Veo 3.1 統合 — AI動画生成が Workspace ユーザーに開放、カスタムアバターも追加",
+    "excerpt": "Google が動画編集ツール Google Vids に Veo 3.1 を統合。テキストプロンプトから高品質動画を生成でき、4K・ネイティブ音声・最大140秒超のシーン連結に対応。カスタマイズ可能なAIアバター機能も追加。Sora 撤退後の動画生成AI市場で Google が攻勢を強める。",
+    "date": "2026-04-02",
+    "newsDate": "2026-04-02",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "Veo",
+      "動画生成AI",
+      "Google Workspace",
+      "Vids",
+      "アバター"
+    ],
+    "coverImage": {
+      "src": "logos/google-vids.svg",
+      "alt": "Google Vids Veo 3.1"
+    }
+  },
+  {
     "id": "gemma-4-apache2-edge-moe-dense-2026",
     "type": "news",
     "category": "model",

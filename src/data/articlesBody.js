@@ -6302,5 +6302,59 @@ const ARTICLES_BODY = {
       }
     ]
   }
+  ,
+  "google-vids-veo31-free-video-generation-2026": {
+    "body": [
+      "Google は2026年4月1日、動画編集ツール Google Vids に DeepMind の最新動画生成AI「Veo 3.1」を統合したと発表した。これにより、テキストプロンプトを入力するだけでプロフェッショナル品質の動画をブラウザ上で生成できるようになった。URL バーに vids.new と入力するだけで即座に新規プロジェクトを開始できる。",
+      "Veo 3.1 は2025年10月にリリースされた Google DeepMind のフラッグシップ動画生成モデル。最大4K解像度（3840×2160）、24/30/60fps のフレームレート、ネイティブ音声合成（セリフ・効果音・環境音）に対応する。1回の生成で4〜8秒のクリップを作成でき、シーン拡張機能で最大20回の連結が可能。つまり140秒超の動画を一つのプロジェクト内で構成できる。",
+      "今回のアップデートの目玉はもう一つある。カスタマイズ可能なAIアバター機能だ。テキストプロンプトで外見・服装・場所を指定してオリジナルのアバターを生成し、さらにプロンプトでオブジェクトとのインタラクションまで演出できる。企業の研修動画やプレゼン資料の作成が大幅に効率化されるだろう。",
+      "## 料金体系 — 「無料」の実態",
+      "Google Workspace の公式発表では「available to everyone at no cost」と謳われているが、正確には Workspace プランに含まれる形での提供だ。個人向けには以下の料金体系が存在する：",
+      "- **Google AI Plus**（$7.99/月）— Veo 3.1 Fast へのアクセス\n- **Google AI Pro**（$19.99/月）— 月1,000 AIクレジット + Veo 3.1 Fast\n- **Google AI Ultra**（$249.99/月）— 月25,000 AIクレジット\n- **学生向け**（.edu メール）— Google AI Pro が12ヶ月間無料",
+      "API 利用の場合は Veo 3.1 Fast が $0.40/秒。2026年3月末には低コスト版「Veo 3.1 Lite」もリリースされ、Fast の50%未満のコストで利用可能になった。",
+      "## Sora 撤退後の市場構図",
+      "2026年3月に OpenAI が Sora を事実上撤退させたことで、動画生成AI市場の勢力図は大きく変わった。現在の主要プレイヤーは以下の通りだ：",
+      "- **Google Veo 3.1** — 4K・音声合成・Workspace 統合。YouTube Shorts/Google Photos にも展開\n- **Runway Gen-4.5** — 細かいクリエイティブコントロールに強み。広告・映画制作向け\n- **Kling** — 最大120秒のクリップ生成、高速・低コスト。SNS コンテンツ向け",
+      "Google の強みは単なる動画生成にとどまらず、Workspace・YouTube・Photos という既存エコシステムとのシームレスな統合にある。Google Vids で作った動画をそのまま YouTube Shorts にアップロードしたり、Google Drive で共有・共同編集したりできる。これはスタンドアロンの動画生成ツールにはない優位性だ。",
+      "## 開発者にとっての意味",
+      "Gemini API 経由で Veo 3.1 を呼び出せるため、動画生成をプロダクトに組み込むハードルが下がった。Veo 3.1 Lite の登場でコスト面の障壁も緩和されている。9:16 の縦動画にネイティブ対応しているため、モバイルファーストのアプリケーションとの相性も良い。",
+      "動画生成AIの品質が実用レベルに達し、しかもブラウザから数クリックで使える時代に入った。動画コンテンツの制作コストが劇的に下がることで、これまで動画を作る余裕がなかった個人開発者や小規模チームにとって大きなチャンスになるだろう。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 8,
+        "caption": "動画生成AI 主要サービス比較（2026年4月時点）",
+        "headers": ["", "Veo 3.1", "Runway Gen-4.5", "Kling"],
+        "rows": [
+          ["最大解像度", "4K (3840×2160)", "1080p", "1080p"],
+          ["最大尺", "140秒超（連結）", "可変", "120秒"],
+          ["音声合成", "ネイティブ対応", "なし", "なし"],
+          ["縦動画 (9:16)", "対応", "対応", "対応"],
+          ["エコシステム", "Workspace / YouTube / Photos", "スタンドアロン", "スタンドアロン"],
+          ["強み", "品質・統合・音声", "クリエイティブ制御", "速度・コスト"]
+        ]
+      }
+    ],
+    "figures": [],
+    "charts": [],
+    "embeds": [],
+    "primarySources": [
+      {
+        "title": "@GoogleWorkspace - Veo 3.1 integration announcement",
+        "site": "X",
+        "url": "https://x.com/GoogleWorkspace/status/1907525219448082763"
+      },
+      {
+        "title": "Veo - Google DeepMind",
+        "site": "Google DeepMind",
+        "url": "https://deepmind.google/models/veo/"
+      },
+      {
+        "title": "Google Vids just got a massive AI upgrade",
+        "site": "Tom's Guide",
+        "url": "https://www.tomsguide.com/ai/google-vids-just-got-a-massive-ai-upgrade-including-custom-avatars-and-veo-3-1-integration"
+      }
+    ]
+  }
 };
 export default ARTICLES_BODY;
