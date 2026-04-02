@@ -4,6 +4,38 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "alibaba-page-agent-browser-automation-2026": {
+    "body": [
+      "Alibaba が、ブラウザ上のタスクを自然言語で自動操作する OSS ライブラリ **Page Agent** を公開した。「ログインボタンをクリックして」「この表のデータを CSV で保存して」といった指示をテキストで与えるだけで、ページ内の要素を自動操作する。GitHub スターは1.5万を超え、セットアップの手軽さが注目を集めている。",
+      "最大の特徴は**導入のハードルの低さ**だ。デモ版は Alibaba が提供する Qwen 3.5 ベースの無料テスト用 API を内蔵しており、**API キーの取得も環境構築も一切不要**。CDN から配信される script タグ1行を HTML に追加するだけで、そのページに AI エージェントが組み込まれる。npm からのインストールにも対応しており、本番環境では自前の LLM（Qwen 3.5 Plus、GPT-4o など）を設定して使う形になる。",
+      "技術的にも興味深い設計をしている。一般的なブラウザ自動化ツール（Selenium、Playwright など）は Python やサーバーサイドからブラウザを遠隔操作する仕組みだが、Page Agent は**ページ内の JavaScript として動作する**。DOM（ページの構造）をテキストとして解析し、どの要素をクリック・入力すべきかを LLM に判断させる。スクリーンショットを撮って画像認識する方式と異なり、**マルチモーダル LLM が不要**で、テキストベースの LLM だけで動作する。処理が軽く、コストも低い。",
+      "想定されるユースケースは幅広い。たとえば、SaaS 製品にコパイロット機能を追加したい場合、バックエンドを改修せずに Page Agent を組み込むだけで「AI に操作を任せる」体験を提供できる。ERP や CRM での複数ステップにまたがるフォーム入力を1つの指示にまとめたり、音声コマンドやスクリーンリーダーと組み合わせてアクセシビリティを強化する用途も公式が挙げている。",
+      "オプションの Chrome 拡張をインストールすれば、複数タブをまたいだタスクの自動化も可能になる。さらに MCP サーバー（ベータ版）にも対応しており、外部の AI エージェントからブラウザを操作するインターフェースとしても利用できる。DOM 解析のコア部分は browser-use プロジェクトの設計を参考にしている旨が明記されている。",
+      "ライセンスは MIT で、商用利用も自由だ。コントリビューションポリシーとして「AI が全自動で生成した PR は受け付けない。人間が主体的に関与した貢献のみ」と明記している点も、OSS プロジェクトの運営方針として興味深い。バイブコーディング時代に AI ツールを作る側が「人間の関与」を求める——皮肉にも見えるが、コード品質の維持という観点では合理的な判断だ。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "Page Agent と他のブラウザ自動化ツールの比較",
+        "headers": ["項目", "Page Agent", "Selenium / Playwright", "browser-use"],
+        "rows": [
+          ["動作環境", "ブラウザ内 JavaScript", "サーバーサイド（Python等）", "サーバーサイド（Python）"],
+          ["セットアップ", "script タグ1行 or npm install", "Python + WebDriver + ブラウザ", "Python + ブラウザ"],
+          ["LLM 要件", "テキスト LLM のみ", "—（ルールベース）", "マルチモーダル LLM"],
+          ["API キー（デモ）", "不要", "—", "必要"],
+          ["複数タブ操作", "Chrome 拡張で対応", "標準対応", "標準対応"],
+          ["ライセンス", "MIT", "Apache 2.0", "AGPL-3.0"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "alibaba/page-agent",
+        "site": "GitHub",
+        "url": "https://github.com/alibaba/page-agent"
+      }
+    ]
+  },
   "codex-plugins-marketplace-2026": {
     "body": [
       "OpenAI は2026年3月26日、コーディングエージェント Codex 向けのプラグインマーケットプレイスを公開した。Slack、Figma、Notion、Gmail、Google Drive、Box、Linear、Sentry、Hugging Face など 20 以上のツールとの統合が、アプリ版・CLI・IDE 拡張のすべてで利用できる。",

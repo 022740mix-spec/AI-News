@@ -5,6 +5,29 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "alibaba-page-agent-browser-automation-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Alibaba が Page Agent を公開 — APIキー不要・環境構築不要、ブラウザ上のタスクを自然言語で自動化するOSSエージェント",
+    "excerpt": "Alibaba がブラウザ操作を自然言語で自動化する Page Agent を公開。Qwen 3.5 搭載のデモはAPIキーも環境構築も不要で即体験可能。script タグ1行で既存サイトに組み込め、DOM をテキストベースで解析するためスクリーンショットもマルチモーダル LLM も不要。GitHub スター1.5万。",
+    "date": "2026-04-02",
+    "newsDate": "2026-04-02",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Alibaba",
+      "Qwen",
+      "ブラウザ自動化",
+      "エージェント",
+      "MCP",
+      "オープンソース"
+    ],
+    "coverImage": {
+      "src": "logos/alibaba.svg",
+      "alt": "Alibaba Page Agent"
+    }
+  },
+  {
     "id": "codex-plugins-marketplace-2026",
     "type": "news",
     "category": "cli",
