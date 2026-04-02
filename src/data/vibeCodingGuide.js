@@ -577,6 +577,24 @@ export const VIBE_CLAUDE_CODE = {
       code: "/init",
       codeLang: "text",
     },
+    // ── 音声入力 ──
+    {
+      word: "操作: `/voice`",
+      section: "音声入力",
+      mean: "プッシュトゥトーク方式の音声入力を有効にするコマンド。Space キーを押している間マイクで音声を録音し、離すと Anthropic サーバーで文字起こしされてプロンプト入力になる。タイピングが面倒な長い指示や、コードを見ながら口頭で修正方針を伝えたいときに便利。v2.1.69 以降で利用可能。",
+      code: "/voice",
+      codeLang: "text",
+    },
+    {
+      word: "!!`/voice` の制限事項!!",
+      section: "音声入力",
+      mean: "利用には条件がある。(1) **CLI 専用** — デスクトップアプリやブラウザ版では使えない。(2) **ローカル実行のみ** — SSH 接続やリモート環境では動作しない。(3) **WSL2（Windows 11）のみ対応** — Windows 10 や WSL1 では動かない。Windows の場合はネイティブ版 Claude Code を使う。(4) **claude.ai アカウント必須** — API キー・Bedrock・Vertex AI では利用不可。(5) macOS・Windows はネイティブモジュールで動作し追加インストール不要。Linux では SoX（`rec`）または ALSA utils（`arecord`）がフォールバックとして必要になる場合がある。",
+    },
+    {
+      word: "/voice と音声連携（VOICEVOX 等）の違い",
+      section: "音声入力",
+      mean: "==`/voice` は入力==: 自分の声で Claude に指示を送る機能。==音声連携は出力==: Claude のタスク完了を音声で知らせる機能（Hooks 経由）。方向が逆なので、両方を組み合わせると「声で指示 → 音声で完了通知」というハンズフリーに近いワークフローが作れる。",
+    },
     // ── 便利な連携 ──
     {
       word: "音声連携（VOICEVOX 等）",
