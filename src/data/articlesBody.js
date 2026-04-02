@@ -4,6 +4,51 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "gemma-4-apache2-edge-moe-dense-2026": {
+    "body": [
+      "Google DeepMind は2026年4月2日、オープンモデルの最新世代 **Gemma 4** を公開した。最大の変更点は**ライセンスが Apache 2.0 に変更**されたこと。従来の Gemma は独自の制限付きライセンスだったが、Gemma 4 は商用利用を含め完全に自由に使えるようになった。Hugging Face 共同創設者の Clément Delangue 氏が「大きなマイルストーン」と評するなど、開発者コミュニティから歓迎の声が上がっている。",
+      "Gemma 4 は用途に応じた**4つのモデル**で構成される。最上位の **31B Dense** は LMArena テキストリーダーボードで**オープンモデル3位**（スコア1452）にランクイン。自身の20倍のサイズのモデルと競合する性能で、bfloat16 の非量子化ウェイトが NVIDIA H100 80GB 1枚に収まる。ファインチューニングの基盤として最も適したモデルだ。",
+      "**26B MoE**（Mixture of Experts）は推論時に**3.8B パラメータのみアクティブ**にする設計で、レイテンシ重視のユースケースに最適化されている。総パラメータ26Bに対して推論コストは4Bクラス——にもかかわらず LMArena で**オープンモデル6位**（スコア1441）。20倍の規模のモデルを上回るという、パラメータ効率の高さが際立つ。",
+      "エッジ向けには **E4B**（実効4Bパラメータ）と **E2B**（実効2B）が用意された。Google の Pixel チーム、Qualcomm、MediaTek と共同開発され、スマートフォン、Raspberry Pi、NVIDIA Jetson Orin Nano で**完全オフライン動作**する。特筆すべきは**ネイティブ音声入力**に対応している点で、テキスト・画像・動画に加えて音声も直接処理できる。コンテキストウィンドウはエッジモデルが128K、大型モデルが256Kトークン。",
+      "技術面では、ローカルスライディングウィンドウ注意とグローバル注意を交互に組み合わせるハイブリッドアテンション機構を採用。メモリ使用量を抑えつつ長文脈のタスクにも対応する。エッジモデルには Per-Layer Embeddings（PLE）を導入し、パラメータ効率をさらに高めている。推論時にはステップバイステップで思考する推論モードを備え、ファンクションコール・システムプロンプトにもネイティブ対応しており、エージェント型ワークフローを前提に設計されている。",
+      "Ollama では `ollama run gemma4:e4b`、`gemma4:e2b`、`gemma4:26b`、`gemma4:31b` で即座に実行可能（Ollama 0.20+ が必要）。vLLM、llama.cpp、MLX、LM Studio、Unsloth など主要フレームワークが初日からサポートしている。Gemma シリーズは累計4億ダウンロード・10万以上のコミュニティ派生モデルを達成しており、Gemma 4 の Apache 2.0 化はこのエコシステムをさらに加速させるだろう。先日公開された PrismML の1ビットモデルと合わせて、「手元のハードウェアで動く高性能モデル」の選択肢が一気に広がった。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "Gemma 4 モデルラインナップ",
+        "headers": ["モデル", "パラメータ", "アクティブ", "LMArena順位", "コンテキスト", "音声入力", "用途"],
+        "rows": [
+          ["31B Dense", "310億", "310億", "オープン3位（1452）", "256K", "×", "ワークステーション・ファインチューニング基盤"],
+          ["26B MoE", "260億", "38億", "オープン6位（1441）", "256K", "×", "低レイテンシ推論・サーバーサイド"],
+          ["E4B", "実効40億", "40億", "—", "128K", "○", "スマホ・エッジデバイス"],
+          ["E2B", "実効20億", "20億", "—", "128K", "○", "IoT・Raspberry Pi・Jetson"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Gemma 4: Byte for byte, the most capable open models",
+        "site": "Google DeepMind Blog",
+        "url": "https://deepmind.google/blog/gemma-4-byte-for-byte-the-most-capable-open-models/"
+      },
+      {
+        "title": "Bring state-of-the-art agentic skills to the edge with Gemma 4",
+        "site": "Google Developers Blog",
+        "url": "https://developers.googleblog.com/bring-state-of-the-art-agentic-skills-to-the-edge-with-gemma-4/"
+      },
+      {
+        "title": "Google announces open Gemma 4 model with Apache 2.0 license",
+        "site": "9to5Google",
+        "url": "https://9to5google.com/2026/04/02/google-gemma-4/"
+      },
+      {
+        "title": "@ollama - Gemma 4 announcement",
+        "site": "X",
+        "url": "https://x.com/ollama"
+      }
+    ]
+  },
   "realtime-translation-oss-security-cost-2026": {
     "body": [
       "「英語キャンセル界隈」——2026年のヒット予測で多言語リアルタイム翻訳が1位に選ばれ、英語学習よりも AI 翻訳に任せて専門スキルに時間を使うべきだという考え方が広がっている。この流れを支えているのが、商用サービスだけでなく**オープンソースの翻訳アプリ群**だ。クラウドに音声を送らず、スマートフォンやPC上で完結するリアルタイム翻訳が個人開発レベルで作れる時代になった。",

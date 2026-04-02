@@ -5,6 +5,29 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "gemma-4-apache2-edge-moe-dense-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Google Gemma 4 公開 — Apache 2.0 で完全オープン化、エッジからワークステーションまで4モデル展開",
+    "excerpt": "Google DeepMind が Gemma 4 を Apache 2.0 ライセンスで公開。31B Dense（LMArena 3位）、26B MoE（3.8Bアクティブで6位）、E4B・E2B のエッジモデルまで4種。ネイティブ音声入力・140言語・最大256Kコンテキスト。Ollama 0.20+ で即実行可能。",
+    "date": "2026-04-02",
+    "newsDate": "2026-04-02",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "Gemma",
+      "オープンソース",
+      "Apache 2.0",
+      "エッジAI",
+      "MoE"
+    ],
+    "coverImage": {
+      "src": "logos/gemini.svg",
+      "alt": "Google Gemma 4"
+    }
+  },
+  {
     "id": "realtime-translation-oss-security-cost-2026",
     "type": "feature",
     "category": "product",
