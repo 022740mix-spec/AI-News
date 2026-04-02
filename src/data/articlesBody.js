@@ -4,6 +4,55 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "prismml-bonsai-1bit-llm-edge-2026": {
+    "body": [
+      "Caltech（カリフォルニア工科大学）発の AI スタートアップ **PrismML** が2026年3月31日、ステルスから登場し、世界初の商用1ビット LLM **「Bonsai」シリーズ**を公開した。通常の LLM がパラメータを16ビット（半精度浮動小数点）で表現するのに対し、Bonsai は**パラメータ1つあたり1ビット（0か1）** で表現する。これにより8Bモデルが約1GBに収まり、スマートフォンでも実用的な速度で動作する。Apache 2.0 ライセンスで HuggingFace から無料ダウンロード可能。",
+      "ここで「1ビットで本当に賢いのか」と疑問に思うのは当然だ。既存の量子化（16ビット→4ビット→2ビットに圧縮する手法）とは根本的に異なり、Bonsai は**最初から1ビットで学習**されたネイティブ1ビットアーキテクチャだという。後から圧縮するのではなく、設計段階で1ビット前提で作られている。結果として、ベンチマーク平均スコア **70.5** は同サイズの Llama 3 8B（67.1）を上回り、16倍の精度を持つ Ministral3（71.0）にほぼ匹敵する。PrismML はこれを「インテリジェンス密度（1GBあたりの性能）」で表現しており、Bonsai は **1.06/GB** に対し Qwen3 8B は 0.10/GB と、**10倍の効率**を主張している。",
+      "実際の動作速度は印象的だ。フラグシップの **Bonsai 8B** は M4 Pro Mac で **136トークン/秒**（同条件の Llama 3 8B は約17トークン/秒）、iPhone 17 Pro Max で **44トークン/秒**を達成。消費電力も1トークンあたり **0.068mWh**（iPhone）と、16ビットモデルの約5分の1。8B / 4B / 1.7B の3サイズが用意されており、1.7B モデルはわずか **0.24GB** でロボティクスやリアルタイムエージェント向けに設計されている。",
+      "動作環境は3つのフレームワークに対応している。Apple Silicon（Mac / iPhone / iPad）は **MLX**、NVIDIA GPU は **llama.cpp**（PrismML がフォーク版を提供、Q1_0 量子化対応）、CPU のみの環境は **bitnet.cpp** で動く。llama.cpp ユーザーにとっては既存のワークフローにそのまま組み込める点が大きい。ただし2026年4月時点で **Ollama のモデルレジストリには未登録**のため、Ollama から直接呼び出すには AnythingLLM のカスタム GGUF インポーターか、llama.cpp を直接使う必要がある。",
+      "注目すべきは、現在の8倍という速度向上が**メモリ帯域の削減によるもの**であり、1ビット演算自体を活用しきれていない点だ。PrismML は「三項演算（ternary operation）に最適化された専用ハードウェアが登場すれば、さらに1桁の高速化が見込める」と述べている。つまり今の8倍が将来的に80倍になる可能性がある。NVIDIA や Apple が1ビット推論に最適化したチップを出すかどうかが、この技術の真価を左右する。",
+      "PrismML は Khosla Ventures、Cerberus Ventures から1,625万ドルを調達し、Google と Caltech からコンピュート助成金も受けている。「AI を全員のポケットに」というビジョンは、クラウド API に依存しない**エッジ AI** の本格化を予感させる。GPU もクラウドも不要、1GB の RAM さえあれば Llama 3 を超える性能——このインパクトは、特にオフライン環境やプライバシーが重要な用途で大きい。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "Bonsai シリーズのスペック",
+        "headers": ["モデル", "パラメータ", "メモリ", "速度（M4 Pro）", "用途"],
+        "rows": [
+          ["Bonsai 8B", "82億", "1.15 GB", "136 tok/s", "汎用・エージェント"],
+          ["Bonsai 4B", "40億", "0.5 GB", "—", "モバイル・IoT"],
+          ["Bonsai 1.7B", "17億", "0.24 GB", "—", "ロボティクス・リアルタイム"]
+        ]
+      },
+      {
+        "afterParagraph": 2,
+        "caption": "Bonsai 8B vs 同サイズモデル比較",
+        "headers": ["モデル", "ベンチマーク平均", "メモリ", "速度（M4 Pro）"],
+        "rows": [
+          ["Bonsai 8B（1ビット）", "70.5", "1.15 GB", "136 tok/s"],
+          ["Llama 3 8B（16ビット）", "67.1", "16 GB", "~17 tok/s"],
+          ["Ministral3 8B（16ビット）", "71.0", "16 GB", "~17 tok/s"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "PrismML — Concentrating intelligence",
+        "site": "PrismML",
+        "url": "https://prismml.com/"
+      },
+      {
+        "title": "PrismML Launches World's First 1-Bit AI Model to Redefine Intelligence at the Edge",
+        "site": "PR Newswire",
+        "url": "https://www.prnewswire.com/news-releases/prismml-launches-worlds-first-1-bit-ai-model-to-redefine-intelligence-at-the-edge-302730568.html"
+      },
+      {
+        "title": "PrismML-Eng/llama.cpp",
+        "site": "GitHub",
+        "url": "https://github.com/PrismML-Eng/llama.cpp"
+      }
+    ]
+  },
   "rf-detr-aerial-drone-detection-dual-use-2026": {
     "body": [
       "Roboflow のエンジニア Piotr Skalski（@skalskip92）が、同社の物体検出モデル **RF-DETR** をドローン・航空写真にファインチューンした2つのデモを公開し、X で6.4万表示・1,000超のいいねを集めている。1つは森林の樹木を1本ずつ自動検出するもの、もう1つは交差点の車両・歩行者をリアルタイム追跡するもの。どちらも「AI のコーディング支援」ではなく、**実世界の課題を AI で解決する**具体例として興味深い。",

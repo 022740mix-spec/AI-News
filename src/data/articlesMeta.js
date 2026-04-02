@@ -5,6 +5,29 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "prismml-bonsai-1bit-llm-edge-2026",
+    "type": "news",
+    "category": "model",
+    "title": "PrismML が世界初の商用1ビット LLM「Bonsai」を公開 — 8Bモデルがわずか1GBで動作、メモリ14分の1・速度8倍",
+    "excerpt": "Caltech 発の PrismML がステルスから登場し、1ビットネイティブ設計の LLM「Bonsai」シリーズを Apache 2.0 で公開。8B モデルが約1GBに収まり、M4 Pro で136トークン/秒、iPhone で44トークン/秒。Llama 3 8B を上回るベンチマークを14分の1のメモリで達成した。",
+    "date": "2026-04-02",
+    "newsDate": "2026-03-31",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "PrismML",
+      "1ビット",
+      "エッジAI",
+      "軽量モデル",
+      "llama.cpp",
+      "オープンソース"
+    ],
+    "coverImage": {
+      "src": "logos/prismml.svg",
+      "alt": "PrismML Bonsai"
+    }
+  },
+  {
     "id": "rf-detr-aerial-drone-detection-dual-use-2026",
     "type": "feature",
     "category": "data",
