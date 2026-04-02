@@ -22,7 +22,7 @@ export const ARTICLES_META = [
       "Azure"
     ],
     "coverImage": {
-      "src": "articles/cover-model-api.svg",
+      "src": "logos/microsoft.svg",
       "alt": "Microsoft MAI Models"
     }
   },
@@ -44,7 +44,7 @@ export const ARTICLES_META = [
       "エージェント"
     ],
     "coverImage": {
-      "src": "articles/cover-model-api.svg",
+      "src": "logos/anthropic.svg",
       "alt": "Claude Computer Use Windows 対応"
     }
   },
@@ -66,7 +66,7 @@ export const ARTICLES_META = [
       "課金"
     ],
     "coverImage": {
-      "src": "articles/cover-model-api.svg",
+      "src": "logos/gemini.svg",
       "alt": "Gemini API 課金ティア上限"
     }
   },
@@ -88,7 +88,7 @@ export const ARTICLES_META = [
       "自動運転"
     ],
     "coverImage": {
-      "src": "articles/cover-model-api.svg",
+      "src": "logos/nvidia.svg",
       "alt": "NVIDIA Physical AI Data Factory Blueprint"
     }
   },

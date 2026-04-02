@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <text x="400" y="230" text-anchor="middle" fill="#76b900" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="700" letter-spacing="0.08em">NVIDIA</text>
+  <rect x="300" y="260" width="200" height="3" rx="1.5" fill="#76b900" opacity="0.4"/>
+</svg>
