@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { SITE_NAME, SITE_DESCRIPTION, getSiteTodayYmd } from "../data/aiToolsData.js";
+import { SITE_NAME, SITE_DESCRIPTION, getSiteTodayYmd } from "../data/articleHelpers.js";
 import { LangContext, L } from "../context/LangContext.js";
 import { STORAGE_LOCAL_NOTICE } from "../constants.js";
 

@@ -1,4 +1,4 @@
-import { SITE_NAME, SITE_DESCRIPTION } from "../data/aiToolsData.js";
+import { SITE_NAME, SITE_DESCRIPTION } from "../data/articleHelpers.js";
 import { BUNDLED_MEDIA_URL } from "../mediaUrls.js";
 import { stripMarkdownBoldMarkers } from "./richText.jsx";
 

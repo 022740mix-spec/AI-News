@@ -1,4 +1,4 @@
-import { ARTICLES } from "../data/aiToolsData.js";
+import { ARTICLES_META } from "../data/articlesMeta.js";
 import { TOOL_REFERENCES } from "../data/vibeCodingGuide.js";
 
 export function syncAppUrl({ articleId, siteSection, tagQuery, guideTab, toolTab, usePush = false }) {
@@ -64,7 +64,7 @@ export function readInitialRouteState() {
   let aid = u.searchParams.get("a");
   if (aid && REDIRECTS[aid]) aid = REDIRECTS[aid];
   if (aid) {
-    const found = ARTICLES.find((x) => x.id === aid);
+    const found = ARTICLES_META.find((x) => x.id === aid);
     if (found) {
       return { selected: found, siteSection: "articles", query: "", guideTab: "setup", toolTab: "claude-code" };
     }

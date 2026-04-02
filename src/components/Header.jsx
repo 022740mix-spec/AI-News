@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback, useContext } from "react";
-import { SITE_NAME, SITE_DESCRIPTION } from "../data/aiToolsData.js";
+import { SITE_NAME, SITE_DESCRIPTION } from "../data/articleHelpers.js";
 import { LangContext, L } from "../context/LangContext.js";
 import { ACCENT_PRESETS, SORTS } from "../constants.js";
 

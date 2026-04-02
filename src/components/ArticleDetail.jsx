@@ -1,5 +1,5 @@
 import { Fragment, useState, useEffect, useCallback, useContext, useRef } from "react";
-import { CATEGORIES, renderStars, getArticleNewsYmd } from "../data/aiToolsData.js";
+import { CATEGORIES, renderStars, getArticleNewsYmd } from "../data/articleHelpers.js";
 import { LangContext } from "../context/LangContext.js";
 import { getCategoryIcon } from "../constants.js";
 import { richArticleText, richInlineLine, parseCodeBlock, CopyableCodeBlock } from "../utils/richText.jsx";
@@ -207,15 +207,45 @@ function ArticleProse({ article }) {
 }
 
 function ArticleDetail({
-  article,
+  article: articleMeta,
   onBack,
   onTagClick,
   relatedArticles,
   onOpenRelated,
 }) {
-  const cat = CATEGORIES[article.category];
+  const [bodyData, setBodyData] = useState(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    // 既に本文がある場合（互換レイヤー経由）はそのまま使う
+    if (articleMeta.body) {
+      setBodyData(null);
+      return;
+    }
+    import("../data/articlesBody.js").then((mod) => {
+      if (!cancelled) setBodyData(mod.default[articleMeta.id] || {});
+    });
+    return () => { cancelled = true; };
+  }, [articleMeta.id, articleMeta.body]);
+
+  // 本文がメタに含まれていればそのまま、なければ動的ロード分をマージ
+  const article = articleMeta.body
+    ? articleMeta
+    : bodyData
+      ? { ...articleMeta, ...bodyData }
+      : null;
+
+  const cat = CATEGORIES[articleMeta.category];
   const lang = useContext(LangContext);
   const en = lang === "en";
+
+  if (!article) {
+    return (
+      <div className="loading" style={{ padding: "3rem", textAlign: "center" }}>
+        {en ? "Loading article…" : "記事を読み込み中…"}
+      </div>
+    );
+  }
 
   return (
     <div className="app-inner">

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { SITE_DESCRIPTION, getSiteTodayYmd, getArticleNewsYmd } from "../data/aiToolsData.js";
+import { SITE_DESCRIPTION, getSiteTodayYmd, getArticleNewsYmd } from "../data/articleHelpers.js";
 import { VIBE_SETUP_GUIDE, VIBE_CODING_PRACTICAL, VIBE_MEDIA_TAXONOMY, GLOSSARY_BY_GENRE, TOOL_REFERENCES } from "../data/vibeCodingGuide.js";
 import { LangContext } from "../context/LangContext.js";
 import { formatPickDate, formatWeekRoundupPeriodJp } from "../utils/dateUtils.js";

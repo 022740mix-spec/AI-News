@@ -10,7 +10,9 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          "data-articles": ["./src/data/aiToolsData.js"],
+          "data-articles-meta": ["./src/data/articlesMeta.js"],
+          "data-articles-body": ["./src/data/articlesBody.js"],
+          "data-articles-compat": ["./src/data/aiToolsData.js"],
           "data-guide": ["./src/data/vibeCodingGuide.js"],
         },
       },

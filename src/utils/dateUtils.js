@@ -1,4 +1,4 @@
-import { getArticleNewsYmd } from "../data/aiToolsData.js";
+import { getArticleNewsYmd } from "../data/articleHelpers.js";
 
 export const MONTHS_EN = [
   "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC",

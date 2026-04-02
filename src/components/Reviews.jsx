@@ -1,5 +1,5 @@
 import { Fragment, useState, useContext } from "react";
-import { ARTICLES, renderStars } from "../data/aiToolsData.js";
+import { renderStars } from "../data/articleHelpers.js";
 import { LangContext } from "../context/LangContext.js";
 import { REVIEW_CATEGORIES, RATING_EXPLAINER, MODEL_COMPARISON, BENCHMARK_CONFIGS } from "../constants.js";
 import { resolveMediaSrc } from "../utils/seo.js";

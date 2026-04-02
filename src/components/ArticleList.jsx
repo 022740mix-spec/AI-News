@@ -1,5 +1,5 @@
 import { useState, useCallback, useContext } from "react";
-import { CATEGORIES, renderStars, getArticleNewsYmd } from "../data/aiToolsData.js";
+import { CATEGORIES, renderStars, getArticleNewsYmd } from "../data/articleHelpers.js";
 import { LangContext, L } from "../context/LangContext.js";
 import { FILTERS, TYPE_FILTERS, getCategoryIcon } from "../constants.js";
 import { richArticleText } from "../utils/richText.jsx";

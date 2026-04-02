@@ -11,13 +11,13 @@ import {
   useEffect,
   useRef,
 } from "react";
+import { ARTICLES_META } from "./data/articlesMeta.js";
 import {
-  ARTICLES,
   SITE_NAME,
   SITE_DESCRIPTION,
   getArticleNewsYmd,
   getSiteTodayYmd,
-} from "./data/aiToolsData.js";
+} from "./data/articleHelpers.js";
 import { AI_COMPANIES, COMPANIES_DISCLAIMER } from "./data/aiCompanies.js";
 import {
   filterVibeCodingGuide,
@@ -151,7 +151,7 @@ export default function App() {
       let aid = u.searchParams.get("a");
       if (aid && REDIRECTS[aid]) aid = REDIRECTS[aid];
       if (aid) {
-        const found = ARTICLES.find((x) => x.id === aid);
+        const found = ARTICLES_META.find((x) => x.id === aid);
         setSelected(found ?? null);
       } else {
         setSelected(null);
@@ -274,7 +274,7 @@ export default function App() {
       : vibeGuide.total + mediaGuide.total + glossaryGuide.total;
 
   const filtered = useMemo(() => {
-    let list = ARTICLES;
+    let list = ARTICLES_META;
     if (siteSection === "reviews") {
       list = list.filter((a) => a.type === "review");
       if (reviewTab !== "all") {
@@ -347,7 +347,7 @@ export default function App() {
       : 0;
 
   const weekRoundups = useMemo(() => {
-    const list = ARTICLES.filter((a) => (a.heroScope ?? "day") === "week");
+    const list = ARTICLES_META.filter((a) => (a.heroScope ?? "day") === "week");
     list.sort((a, b) =>
       getArticleNewsYmd(b).localeCompare(getArticleNewsYmd(a), "en"),
     );
@@ -390,7 +390,7 @@ export default function App() {
                     ? guideTotal
                     : siteSection === "tools"
                       ? toolRef.total
-                      : ARTICLES.length
+                      : ARTICLES_META.length
               }
               searchPlaceholder={
                 siteSection === "companies"
@@ -493,14 +493,14 @@ export default function App() {
               window.scrollTo(0, 0);
             }}
             onTagClick={onTagClick}
-            relatedArticles={pickRelatedArticles(selected, ARTICLES, 3)}
+            relatedArticles={pickRelatedArticles(selected, ARTICLES_META, 3)}
             onOpenRelated={handleSelect}
           />
           </Suspense>
           </>
         ) : siteSection === "home" ? (
           <HomePage
-            articles={ARTICLES}
+            articles={ARTICLES_META}
             onSelect={handleSelect}
             onSection={switchSection}
           />
@@ -524,7 +524,7 @@ export default function App() {
                             {cat.subCategories.map((sub) => (
                               <ReviewComparisonTable
                                 key={sub.id}
-                                articles={ARTICLES.filter((a) => a.type === "review")}
+                                articles={ARTICLES_META.filter((a) => a.type === "review")}
                                 category={sub}
                                 onSelect={handleSelect}
                               />
@@ -533,7 +533,7 @@ export default function App() {
                         ) : (
                           <ReviewComparisonTable
                             key={cat.id}
-                            articles={ARTICLES.filter((a) => a.type === "review")}
+                            articles={ARTICLES_META.filter((a) => a.type === "review")}
                             category={cat}
                             onSelect={handleSelect}
                           />
@@ -674,7 +674,7 @@ export default function App() {
 
             {siteSection === "articles" ? (
               <Sidebar
-                articles={ARTICLES}
+                articles={ARTICLES_META}
                 onSelect={handleSelect}
                 onTagClick={onTagClick}
                 weekRoundups={weekRoundups}

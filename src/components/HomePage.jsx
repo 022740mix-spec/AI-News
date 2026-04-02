@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CATEGORIES, getArticleNewsYmd } from "../data/aiToolsData.js";
+import { CATEGORIES, getArticleNewsYmd } from "../data/articleHelpers.js";
 import { LangContext } from "../context/LangContext.js";
 import { resolveMediaSrc } from "../utils/seo.js";
 import { parseDate } from "../utils/dateUtils.js";
