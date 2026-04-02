@@ -5716,6 +5716,44 @@ const ARTICLES_BODY = {
         "url": "https://theaiinsider.tech/2026/04/01/openai-raises-122b-in-funding-round-with-853b-valuation-to-build-global-ai-infrasture-superapp/"
       }
     ]
+  },
+  "claude-code-no-flicker-fullscreen-renderer-2026": {
+    "body": [
+      "Anthropic の Claude Code チームは2026年4月2日、ターミナル描画のちらつきを根本的に解消する実験的な「NO_FLICKER モード（フルスクリーンレンダリング）」を発表した。環境変数 CLAUDE_CODE_NO_FLICKER=1 を設定して起動するだけで有効になり、v2.1.89 以降で利用できる。Claude Code リードの Boris Cherny 氏（@bcherny）が X 上で技術的背景とともに詳細を公開し、8万以上の閲覧を集めている。",
+      "従来のターミナルは ANSI エスケープコードという限られた命令セットで描画を行っており、「カーソルを (x, y) に移動」「文字列を書き込む」といった低レベル操作しかできない。ビューポート外の行を再描画するには「画面全体をクリア」する命令を使うしかなく、これがちらつき（フリッカー）の原因だった。新レンダラーはビューポート全体を仮想化し、キーボード・マウスイベントをフックしてスクロールを実現することで、この制約を回避している。",
+      "メリットは多岐にわたる。**ちらつき・ジャンプの完全解消**に加え、会話が長くなっても**メモリと CPU の使用量が一定**に保たれる。さらに**マウス操作に対応**し、入力ボックス内のカーソル移動、ツール結果の展開/折りたたみ、URL・ファイルパスのクリック、ドラッグによるテキスト選択、マウスホイールでのスクロールが可能になった。コードを選択する際に行番号や UI 要素が含まれなくなる改善も地味に嬉しいポイントだ。",
+      "一方でトレードオフもある。ネイティブの Cmd+F 検索が使えなくなり、代わりに Ctrl+O でトランスクリプトモードに入って / で検索する必要がある。ネイティブのコピー＆ペーストも独自の選択方式に置き換わる（選択時に自動でクリップボードにコピーされる設定がデフォルト）。SSH 経由では OSC 52 シーケンスに依存するためクリップボード連携が制限される場合がある。スクロールの重力感はデバイスごとに異なり、現在チューニング中とのこと。",
+      "マウスキャプチャを無効にしたい場合は CLAUDE_CODE_DISABLE_MOUSE=1 を併用すれば、ちらつき解消と一定メモリの恩恵を受けつつネイティブのテキスト選択を維持できる。スクロール速度は CLAUDE_CODE_SCROLL_SPEED（1〜20、デフォルト3）で調整可能。Cherny 氏は「まだ初期段階でトレードオフはあるが、社内ユーザーの大半が旧レンダラーより好んでいる」と述べ、フィードバックを積極的に募っている。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "NO_FLICKER モードの主な操作方法",
+        "headers": ["操作", "方法", "備考"],
+        "rows": [
+          ["有効化", "CLAUDE_CODE_NO_FLICKER=1 claude", "シェルプロファイルに export すれば恒久化"],
+          ["半画面スクロール", "PgUp / PgDn", "MacBook は Fn+↑/↓"],
+          ["先頭/末尾へジャンプ", "Ctrl+Home / Ctrl+End", "MacBook は Fn+Ctrl+←/→"],
+          ["トランスクリプト検索", "Ctrl+O → /", "n/N で前後の一致に移動"],
+          ["ネイティブ検索に書き出し", "Ctrl+O → [", "ターミナルのスクロールバックに出力"],
+          ["エディタで閲覧", "Ctrl+O → v", "デフォルトエディタで会話を開く"],
+          ["マウス無効化", "CLAUDE_CODE_DISABLE_MOUSE=1", "ネイティブ選択を維持したい場合"],
+          ["スクロール速度変更", "CLAUDE_CODE_SCROLL_SPEED=N", "1〜20（デフォルト3）"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Fullscreen rendering - Claude Code Docs",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/fullscreen"
+      },
+      {
+        "title": "Boris Cherny (@bcherny) - NO_FLICKER mode announcement",
+        "site": "X",
+        "url": "https://x.com/bcherny"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;

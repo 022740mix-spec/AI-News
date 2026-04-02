@@ -3553,6 +3553,29 @@ export const ARTICLES_META = [
     }
   },
   {
+    "id": "claude-code-no-flicker-fullscreen-renderer-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code に NO_FLICKER モード登場 — ターミナルのちらつきを解消、マウス操作やビューポート仮想化で操作性が大幅向上",
+    "excerpt": "Anthropic が Claude Code のターミナル描画を刷新する実験的フルスクリーンレンダラーを公開。CLAUDE_CODE_NO_FLICKER=1 で有効化でき、ちらつき・ジャンプの解消、一定のメモリ/CPU 使用量、マウスクリック・スクロール対応など多数の改善を実現。一方でネイティブ検索やコピペの制約もある。",
+    "date": "2026-04-02",
+    "newsDate": "2026-04-02",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "ターミナル",
+      "UI",
+      "開発体験"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic Claude Code"
+    },
+    "pinned": true
+  },
+  {
     "id": "openai-122b-funding-852b-valuation-2026",
     "type": "news",
     "category": "product",
