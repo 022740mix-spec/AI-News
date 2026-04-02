@@ -5,8 +5,24 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-04-01T15:00:00Z</updated>
+  <updated>2026-04-02T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>ハーバード大学がバイブコーディングを正式コース化 — 開発者の92%が採用する一方、セキュリティ負債が急増</title>
+    <link rel="alternate" type="text/html" href="?a=harvard-vibe-coding-course-2026"/>
+    <id>tag:ai-tool-news.jp,2026:harvard-vibe-coding-course-2026</id>
+    <published>2026-04-02T15:00:00Z</published>
+    <updated>2026-04-02T15:00:00Z</updated>
+    <summary>ハーバード教育大学院が6週間のバイブコーディング講座を開講。Replit・Figma Make・Claude Code を使い分ける実践型。一方で AI 生成コードの45%に脆弱性、CVE 登録数が月35件に急増し、光と影が鮮明に。</summary>
+  </entry>
+  <entry>
+    <title>Claude 有料会員が2026年に倍増 — Super Bowl CM・DoD 対立・Claude Code が三つ巴の AI 市場を加速</title>
+    <link rel="alternate" type="text/html" href="?a=claude-paid-subscriptions-double-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-paid-subscriptions-double-2026</id>
+    <published>2026-04-02T15:00:00Z</published>
+    <updated>2026-04-02T15:00:00Z</updated>
+    <summary>Anthropic の Claude 有料サブスクリプションが2026年に入り倍増以上。年間売上$19B に迫り、Super Bowl CM、Claude Code/Cowork の投入、OpenAI の DoD 契約への反発が成長を牽引。AI アシスタント市場は三つ巴に。</summary>
+  </entry>
   <entry>
     <title>Claude Code のトークンが異常速度で消失 — Anthropic が prompt cache バグを「最優先で調査中」と認める</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-token-drain-prompt-cache-bug-2026"/>

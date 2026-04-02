@@ -5929,7 +5929,7 @@ export const ARTICLES = [
       "さらにコード全体に `if (USER_TYPE === 'ant') return true` という条件分岐が散在しており、**Anthropic 社員（ant）は KAIROS・ADVISOR・マルチエージェント・サンドボックスを含む全機能にアクセスできる**。一般ユーザーが使っているのは事実上の「デモ版」であり、社員は完全版を日常的に使用していることになる。",
 
       "## 未公開機能の詳細",
-      "**BUDDY** — たまごっち風の AI ペット機能。入力ボックスの横にドット絵のキャラクターが表示される。Mulberry32 シード PRNG で userId ハッシュから決定論的に生成され、18種族・レアリティ（common 60% 〜 legendary 1%）・1%のシャイニー確率を持つ。種族名はソースコード内で**hex エンコードされて難読化**されており、canary string の grep 検出を回避する設計。帽子やステータス値も存在する。4月1日にティーザー公開、5月に正式リリースの計画。Anthropic 社員には常時表示。",
+      "**BUDDY** — たまごっち風の AI ペット機能。入力ボックスの横に ASCII アートのキャラクターが表示され、コーディング中に吹き出しで反応する。Mulberry32 シード PRNG で userId ハッシュから決定論的に生成され、18種族（duck, goose, cat, rabbit, owl, penguin, turtle, snail, dragon, octopus, axolotl, ghost, robot, blob, cactus, mushroom, chonk, capybara）・5段階レアリティ（Common 60% 〜 Legendary 1%）・1%のシャイニー確率を持つ。ステータスは DEBUGGING・PATIENCE・CHAOS・WISDOM・SNARK の5軸（各0-100）。アーキテクチャは「Bones + Soul」の2層構造で、Bones 層が FNV-1a ハッシュで種族・レアリティ・ステータスを決定論的に計算し（アンチチート機能も兼ねる）、Soul 層が Claude モデルで一度だけ名前と性格を生成して永続化する。種族名はソースコード内で hex エンコードされて難読化されており、canary string の grep 検出を回避する設計。**予告通り4月1日にプレビューが開始**され（v2.1.89以降、`/buddy` コマンド）、開発者コミュニティでは種族図鑑やリロールツール（any-buddy, claude-buddy-reroll 等）が即座に GitHub に登場。「どの種族が最強か」論争が X で盛り上がるなど、エイプリルフール企画としては異例の反響を呼んでいる。プレビュー期間は4/1〜7、正式リリースは5月予定。",
       "**KAIROS**（「Always-On Claude」）— セッションをまたいで永続的に動作する自律エージェント。日次ログを `~/.claude/projects/<slug>/memory/logs/` に追記し、夜間に「ドリーミング」と呼ばれる4段階処理で蒸留する。",
       "ドリーミングの4段階: 1) Orient — 方向付け、2) Gather — 情報収集、3) Consolidate — 統合、4) Prune — 不要情報の剪定。",
       "さらに `SleepTool` による待機、`PushNotificationTool` による通知、`SendUserFileTool` によるファイル送信を持つ。通常メッセージとプロアクティブアラートは明確に区別される。**ユーザーが寝ている間も Claude が作業を続け、完了したら通知で肩を叩く**設計だ。",
@@ -5965,7 +5965,7 @@ export const ARTICLES = [
       "**開発者コミュニティへ**: 流出コードから学べる設計パターンは多い。しかし「公開されたから自由に使える」わけではない。Anthropic が正式にオープンソース化するまでは、概念レベルでの学習にとどめ、コードの直接コピーは避けるべきだ。この原則は、将来自分のコードが同様に流出した場合に守ってほしいルールでもある。",
 
       "## 編集履歴",
-      "【初版】2026年3月31日 — 速報として公開。\n【修正1】同日 — Chaofan Shou（@Fried_rice）の記述を「第一発見者」から「拡散の起点となった投稿」に変更。誰が最初に発見したかは確認できないため。経歴（UC Berkeley 博士課程、FuzzLand CTO）を追記。\n【修正2】同日 — 流出コードの GitHub ミラーへの直接リンクを削除。DMCA テイクダウンの進行と著作権への配慮から、本記事では流出コードへのリンクを掲載しない方針とした。\n【修正3】同日 — ADVISOR・WILLOW MODE・BRANCH・SANDBOX 等の新発見情報を追加。フランス語圏の技術分析を含む複数の独立した分析を統合。\n【修正4】同日 — Claude Code が内部で axios を使用している事実の発見者を、特定個人への帰属から「開発者コミュニティによる分析」に変更。検証可能な一次ソースが確認できなかったため。\n【修正5】同日 — 速報から分析記事へ再構成。「流出コードの利用における原則」セクションを追加。",
+      "【初版】2026年3月31日 — 速報として公開。\n【修正1】同日 — Chaofan Shou（@Fried_rice）の記述を「第一発見者」から「拡散の起点となった投稿」に変更。誰が最初に発見したかは確認できないため。経歴（UC Berkeley 博士課程、FuzzLand CTO）を追記。\n【修正2】同日 — 流出コードの GitHub ミラーへの直接リンクを削除。DMCA テイクダウンの進行と著作権への配慮から、本記事では流出コードへのリンクを掲載しない方針とした。\n【修正3】同日 — ADVISOR・WILLOW MODE・BRANCH・SANDBOX 等の新発見情報を追加。フランス語圏の技術分析を含む複数の独立した分析を統合。\n【修正4】同日 — Claude Code が内部で axios を使用している事実の発見者を、特定個人への帰属から「開発者コミュニティによる分析」に変更。検証可能な一次ソースが確認できなかったため。\n【修正5】同日 — 速報から分析記事へ再構成。「流出コードの利用における原則」セクションを追加。\n【追記6】2026年4月2日 — BUDDY の4/1プレビュー開始を反映。18種族の全リスト、5軸ステータス（DEBUGGING/PATIENCE/CHAOS/WISDOM/SNARK）、Bones+Soul 2層アーキテクチャの詳細、コミュニティの反響（種族図鑑・リロールツールの GitHub 登場、X での種族論争）を追記。テーブルのBUDDYステータスを更新。",
       "注意: 本記事は2026年3月31日に速報として公開され、その後複数回の編集を経て現在の形になっている。Anthropic は DMCA テイクダウンを進行中であり、GitHub 上のミラーリポジトリは順次削除されている。流出したソースコードの無断複製・商用利用は著作権法に抵触する可能性がある。本記事では流出コードへの直接リンクは掲載しない。"
     ],
     "newsDate": "2026-03-31",
@@ -5978,7 +5978,7 @@ export const ARTICLES = [
         "title": "流出で判明した未公開機能フラグ",
         "headers": ["機能名", "概要", "ステータス"],
         "rows": [
-          ["BUDDY", "たまごっち風AIペット。18種族・レアリティ・シャイニー。エイプリルフールティーザー→5月正式", "未リリース（4/1ティーザー予定だった）"],
+          ["BUDDY", "たまごっち風AIペット。18種族・5段階レアリティ・シャイニー。Bones+Soul 2層構造。種族図鑑・リロールツールがGitHubに多数登場", "4/1プレビュー開始済（/buddy）。5月正式リリース予定"],
           ["KAIROS", "常駐型永続エージェント。夜間ドリーミング・プロアクティブモード・SleepTool", "未リリース"],
           ["ULTRAPLAN", "30分リモート計画セッション。クラウド実行orローカルテレポート", "未リリース"],
           ["Coordinator Mode", "マルチエージェントオーケストレーター。ワーカー並列起動", "一部利用可能（環境変数）"],
@@ -6089,6 +6089,57 @@ export const ARTICLES = [
       { "title": "Axios Compromised With A Malicious Dependency", "site": "OX Security", "url": "https://www.ox.security/blog/axios-compromised-with-a-malicious-dependency/" },
       { "title": "axios npm Supply Chain Compromise", "site": "SafeDep", "url": "https://safedep.io/axios-npm-supply-chain-compromise/" },
       { "title": "axios ソフトウェアサプライチェーン攻撃の詳細分析", "site": "GMO Flatt Security Blog", "url": "https://blog.flatt.tech/entry/axios_compromise" }
+    ]
+  },
+  {
+    "id": "harvard-vibe-coding-course-2026",
+    "type": "news",
+    "category": "special",
+    "title": "ハーバード大学がバイブコーディングを正式コース化 — 開発者の92%が採用する一方、セキュリティ負債が急増",
+    "excerpt": "ハーバード教育大学院が6週間のバイブコーディング講座を開講。Replit・Figma Make・Claude Code を使い分ける実践型。一方で AI 生成コードの45%に脆弱性、CVE 登録数が月35件に急増し、光と影が鮮明に。",
+    "body": [
+      "ハーバード大学教育大学院の Karen Brennan 教授（学習テクノロジー担当）が、博士課程の Jacob Wolf と共同設計した6週間のバイブコーディング講座を開講した。プログラミングや AI の経験を一切問わず、毎週異なるテーマ（物語を語るもの、生活を便利にするもの、遊びを誘うもの等）で Replit、Figma Make、Claude Code などのツールを使い分ける実践型カリキュラムだ。",
+      "特筆すべきは「手を動かす × 批判的思考」の二本立て設計だ。毎週、コンピュータサイエンスの古典テキストと現代の批判的論考を1本ずつ読み、AI ハイプに流されない視座を養う。Brennan 教授は「誰でもソフトウェアを作れる時代」の到来を探究しつつ、生成されたコードを理解しないまま使うリスクにも正面から向き合う姿勢を示している。",
+      "バイブコーディングの普及は数字で裏付けられている。米国開発者の92%が AI コーディングツールを日常的に使用し、新規コードの46%が AI 生成だ。Andrej Karpathy が2025年初頭に提唱した用語は Collins 辞書の Word of the Year に選ばれ、2026年の市場規模は85億ドルと予測されている。",
+      "しかし光の裏には深刻な影がある。セキュリティ企業 Tenzai が5つの主要バイブコーディングツールで同一アプリを15本構築したところ、69件の脆弱性（うち6件がクリティカル）が検出された。AI 生成コードの45%に OWASP Top-10 脆弱性が含まれ、人間が書いたコードの1.7倍の重大問題を抱える。AI 生成コードに起因する CVE 登録数は1月6件→2月15件→3月35件と急増しており、セキュリティ負債の蓄積が加速している。",
+      "さらにオープンソースへの波及も懸念される。開発者が AI エージェントに作業を委任するにつれ、ドキュメント閲覧やバグ報告が激減し、メンテナーの負荷が増大。Black Duck の2026年 OSSRA レポートでは、調査対象アプリの93%に2年以上開発活動のない OSS コンポーネントが含まれていた。バイブコーディングは開発の民主化を加速させる一方で、エコシステム全体の持続可能性に新たなリスクをもたらしている。"
+    ],
+    "date": "2026-04-02",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["バイブコーディング", "ハーバード大学", "セキュリティ", "オープンソース", "AI コーディング", "教育"],
+    "primarySources": [
+      { "title": "'Vibe coding' may offer insight into our AI future", "site": "Harvard Gazette", "url": "https://news.harvard.edu/gazette/story/2026/04/vibe-coding-may-offer-insight-into-our-ai-future/" },
+      { "title": "The Vibe Coding Paradox: 92% of Developers Use It, But Trust Has Collapsed", "site": "Medium", "url": "https://medium.com/@arshia.heravi05/the-vibe-coding-paradox-92-of-developers-use-it-but-trust-has-collapsed-heres-why-that-ab241b95ca82" },
+      { "title": "Vibe Coding Security Crisis: 45% of AI Code Has Flaws", "site": "ByteIota", "url": "https://byteiota.com/vibe-coding-security-crisis/" },
+      { "title": "AI 'Vibe Coding' Threatens Open Source as Maintainers Face Crisis", "site": "InfoQ", "url": "https://www.infoq.com/news/2026/02/ai-floods-close-projects/" },
+      { "title": "The state of vibe coding in 2026: Adoption won, now what?", "site": "Hashnode", "url": "https://hashnode.com/blog/state-of-vibe-coding-2026" }
+    ]
+  },
+  {
+    "id": "claude-paid-subscriptions-double-2026",
+    "type": "news",
+    "coverImage": { "src": "logos/anthropic.svg", "alt": "Anthropic" },
+    "category": "product",
+    "title": "Claude 有料会員が2026年に倍増 — Super Bowl CM・DoD 対立・Claude Code が三つ巴の AI 市場を加速",
+    "excerpt": "Anthropic の Claude 有料サブスクリプションが2026年に入り倍増以上。年間売上$19B に迫り、Super Bowl CM、Claude Code/Cowork の投入、OpenAI の DoD 契約への反発が成長を牽引。AI アシスタント市場は三つ巴に。",
+    "body": [
+      "Anthropic は2026年に入り、Claude の有料サブスクリプション数が倍増以上に成長したことを明らかにした。Bloomberg によると、3月時点の年間換算売上は約190億ドルに達し、年初から2倍以上に急伸。2月だけで約60億ドル分の年間売上ベースが上積みされた計算になる。",
+      "成長を牽引した要因は複合的だ。まず注目を集めたのは Super Bowl CM だ。Anthropic は「競合がアプリ内広告を導入した」ことを皮肉り、「Claude は広告を出さない」と宣言するユーモラスな CM を放映。この CM がバイラルとなり、Claude の一般消費者向け認知度を一気に押し上げた。",
+      "プロダクト面では、1月にリリースした Claude Code と Claude Cowork が大きな牽引力となった。開発者向けターミナルエージェント Claude Code と、チーム生産性ツール Claude Cowork がサブスクリプション契約の直接的なドライバーになっている。さらに直近リリースの Computer Use 機能も新規契約の急増に貢献した。",
+      "もう一つの追い風は、AI 業界の倫理をめぐるポジショニングだ。OpenAI が米国防総省（DoD）との契約を発表した直後、OpenAI アプリのアンインストールが急増したと報じられている。Anthropic は「殺傷性を持つ自律作戦や米国市民への大規模監視にモデルを使用させない」という姿勢を明確にしており、この対比が安全志向のユーザー層に響いた形だ。",
+      "ただし、ChatGPT との差は依然大きい。OpenAI は月間売上20億ドル、週間アクティブユーザー9億人超、有料会員5,000万人超を誇る。Claude は急成長中とはいえ、規模ではまだ追いかける立場だ。それでも AI アシスタント市場が OpenAI・Google・Anthropic の「三つ巴」になりつつある兆候は明確で、2026年後半の競争がさらに激化する見通しだ。"
+    ],
+    "date": "2026-04-02",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["Anthropic", "Claude", "サブスクリプション", "Super Bowl", "Claude Code", "OpenAI", "DoD"],
+    "primarySources": [
+      { "title": "Claude Paid Subscriptions Double as Anthropic Gains Ground", "site": "TechBuzz", "url": "https://www.techbuzz.ai/articles/claude-paid-subscriptions-double-as-anthropic-gains-ground" },
+      { "title": "Anthropic's Claude popularity with paying consumers is skyrocketing", "site": "TechCrunch", "url": "https://techcrunch.com/2026/03/28/anthropics-claude-popularity-with-paying-consumers-is-skyrocketing/" },
+      { "title": "Claude Paid Subscriber Growth Hits Record in Early 2026", "site": "IndexBox", "url": "https://www.indexbox.io/blog/claude-paid-subscriptions-more-than-double-in-2026-amid-growth-and-controversy/" },
+      { "title": "Claude Paid Subscriptions More Than Double as Consumer Momentum Builds", "site": "Unite.AI", "url": "https://www.unite.ai/claude-paid-subscriptions-more-than-double-as-consumer-momentum-builds/" },
+      { "title": "Anthropic Says Claude Paid Subscriptions Have More Than Doubled in 2026 Amid DoD Feud and Super Bowl Ads", "site": "Shopifreaks", "url": "https://www.shopifreaks.com/anthropic-says-claude-paid-subscriptions-have-more-than-doubled-in-2026-amid-dod-feud-and-super-bowl-ads/" }
     ]
   }
 ];
