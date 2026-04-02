@@ -3553,6 +3553,29 @@ export const ARTICLES_META = [
     }
   },
   {
+    "id": "supabase-ssh-docs-virtual-filesystem-2026",
+    "type": "news",
+    "category": "data",
+    "title": "Supabase が SSH でドキュメント全体を仮想ファイルシステムとして公開 — AI エージェントが grep・find・cat でドキュメントを直接検索",
+    "excerpt": "Supabase が実験的サービス supabase.sh を公開。ssh supabase.sh でドキュメント全体が仮想ファイルシステムとして見え、AI コーディングエージェントが grep / find / cat でリアルタイムに検索・参照できる。Claude Code や Cursor など18以上のエージェントに対応。",
+    "date": "2026-04-02",
+    "newsDate": "2026-04-02",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Supabase",
+      "SSH",
+      "ドキュメント",
+      "エージェント",
+      "MCP",
+      "開発体験"
+    ],
+    "coverImage": {
+      "src": "logos/supabase.svg",
+      "alt": "Supabase"
+    }
+  },
+  {
     "id": "claude-code-cross-repo-skills-add-dir-2026",
     "type": "news",
     "category": "cli",

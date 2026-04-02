@@ -5717,6 +5717,31 @@ const ARTICLES_BODY = {
       }
     ]
   },
+  "supabase-ssh-docs-virtual-filesystem-2026": {
+    "body": [
+      "Supabase は2026年4月2日、AI コーディングエージェント向けの実験的サービス **supabase.sh** を公開した。`ssh supabase.sh` と打つだけで、Supabase のドキュメント全体が仮想ファイルシステムとしてターミナルに現れ、`grep`・`find`・`cat` などおなじみの bash コマンドでドキュメントを検索・閲覧できる。認証不要・無料で利用可能。",
+      "何が新しいのか。従来、AI エージェントが外部ドキュメントを参照するには Web スクレイピングや RAG パイプラインの構築が必要だった。supabase.sh はそれを **SSH 接続一発**で解決する。ドキュメントのすべてのページがファイルとしてマウントされているため、エージェントは普段のファイル操作と同じ感覚でドキュメントにアクセスできる。`ssh supabase.sh setup | claude` のように出力をパイプで AI エージェントに直接流し込むことも可能だ。",
+      "対応する AI エージェントは Claude Code、Cursor、GitHub Copilot、Cline をはじめ18種類以上。Supabase はこれとは別に公式 MCP サーバーも提供しており、OAuth 認証でプロジェクト管理・テーブル設計・マイグレーション生成・データクエリなどの操作が可能。SSH ドキュメントサーバーは「ドキュメントの参照」に特化した軽量なアプローチであり、MCP サーバーの「プロジェクト操作」と**役割が補完的**になっている。",
+      "この手法は Supabase だけでなく、ドキュメント公開のパラダイムシフトとして注目に値する。Web ブラウザ向けの HTML ではなく、**AI エージェント向けにドキュメントを最適化した配信チャネル**を用意するという発想だ。SSH + 仮想ファイルシステムという枯れた技術の組み合わせで、セットアップのハードルを極限まで下げている点が巧みと言える。AI エージェントが開発の主役になりつつある現在、「ドキュメントは人間が読むもの」という前提自体が変わりつつある。"
+    ],
+    "primarySources": [
+      {
+        "title": "@supabase - supabase.sh announcement",
+        "site": "X",
+        "url": "https://x.com/supabase"
+      },
+      {
+        "title": "Supabase SSH",
+        "site": "Supabase",
+        "url": "https://supabase.sh/"
+      },
+      {
+        "title": "Supabase MCP Server",
+        "site": "Supabase Blog",
+        "url": "https://supabase.com/blog/mcp-server"
+      }
+    ]
+  },
   "claude-code-cross-repo-skills-add-dir-2026": {
     "body": [
       "Claude Code の `--add-dir` フラグと Skills の組み合わせによる**擬似モノレポ**ワークフローが、開発者コミュニティで注目を集めている。`claude --add-dir ../other-repo` で兄弟リポジトリを追加すると、そのリポジトリ内のファイルへの読み書きが可能になるだけでなく、`.claude/skills/` に配置された SKILL.md が自動的に読み込まれる。これにより、モノレポに統合できない事情があっても、まるでモノレポであるかのように複数リポジトリを横断して作業できる。",
