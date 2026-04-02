@@ -4,6 +4,61 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "qwen-3-6-plus-agentic-coding-multimodal-2026": {
+    "body": [
+      "Alibaba は2026年4月2日、大規模言語モデルの最新フラグシップ **Qwen3.6-Plus** を公開した。「受動的に質問に答える AI」から「自律的にタスクを遂行するエージェント」への転換を明確に打ち出しており、エージェント型コーディングとマルチモーダル視覚推論の両面でフロンティアモデルに匹敵するスコアを記録している。プレビュー期間中は無料で利用可能。",
+      "最も注目すべきはエージェント型コーディングのベンチマークだ。ターミナル操作を含む実践的なコーディングタスクを測る **Terminal-Bench 2.0** で **61.6%** を達成し、Claude 4.5 Opus（59.3%）を上回った。複雑なリポジトリレベルのバグ修正を評価する **SWE-bench Pro** でも **56.6%** と全モデル中トップ。ただし、より広く使われている **SWE-bench Verified** では Claude 4.5 Opus が80.9%でリードし、Qwen3.6-Plus は78.8%で2位。多言語対応の SWE-bench Multilingual では Claude 4.5 Opus（80.9%）と Gemini 3-Pro（77.5%）がいずれも Qwen3.6-Plus（73.8%）を上回る。得意・不得意が明確に分かれており、**「ターミナル操作を含む実践的なエージェントタスク」に特化した強さ**と言える。",
+      "マルチモーダル性能も大幅に強化された。画像・文書・動画の理解が前世代の Qwen3.5 から大きく伸びており、ドキュメント認識（OmniDocBench v1.5）で **91.2%**、実世界画像の質問応答（RealWorldQA）で **85.4%** と、いずれも比較対象の中でトップスコア。UIのスクリーンショットや手書きワイヤーフレームからフロントエンドコードを生成する **Visual Coding** にも対応しており、デザイン→コードのワークフローでの活用が期待できる。一方、マルチモーダル推論（MMMU: 86.0%）では Gemini 3-Pro（87.2%）にわずかに及ばず、動画推論（Video-MME: 87.8%）でも Gemini 3-Pro（88.4%）が上回る。",
+      "前世代の Qwen3.5 で最も多かった不満は「簡単な質問にも過剰に思考する」点だったという。Qwen3.6-Plus では常時オンの思考連鎖（Chain-of-Thought）を維持しつつ、**より少ないトークンで結論に到達**するよう改善。エージェントとしての安定性が向上し、本番環境での信頼性が高まった。コンテキストウィンドウは **100万トークン**（API 経由でデフォルト利用可能）、最大出力は **65,536 トークン**。",
+      "API は chat.qwen.ai と Alibaba Cloud の ModelStudio から利用でき、OpenRouter 経由でも無料プレビューが提供されている。コミュニティの速度テストでは、Claude Opus 4.6 の約2〜3倍の出力速度が報告されている。Alibaba はオープンソースコミュニティ向けに、開発者向けサイズの Qwen3.6 モデルを今後公開する予定とも表明している。",
+      "Alibaba 社内では、企業向けマルチエージェントプラットフォーム「Wukong」や自社 AI アプリケーション「Qwen App」への統合が進められている。また OpenClaw、Claude Code、Cline といったサードパーティのコーディングアシスタントとの互換性も確認されている。先に公開された Page Agent と合わせて、Alibaba はモデル基盤からエージェントアプリケーション層まで一貫したエコシステムを構築しつつある。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "主要ベンチマーク比較（スクリーンショットのデータより）",
+        "headers": ["ベンチマーク", "分野", "Qwen3.6-Plus", "Qwen3.5-397B", "Kimi K2.5", "GLM5", "Claude 4.5 Opus", "Gemini3-Pro"],
+        "rows": [
+          ["Terminal-Bench 2.0", "エージェント型ターミナル操作", "61.6", "52.5", "50.8", "56.2", "59.3", "—"],
+          ["SWE-bench Pro", "エージェント型コーディング", "56.6", "50.9", "53.8", "—", "55.1", "57.1"],
+          ["SWE-bench Verified", "エージェント型コーディング", "78.8", "76.2", "76.8", "77.8", "80.9", "—"],
+          ["SWE-bench Multilingual", "多言語コーディング", "73.8", "—", "69.3", "73.0", "80.9", "77.5"],
+          ["Claw-Eval (pass^3)", "実世界エージェント", "58.7", "48.1", "52.9", "57.7", "59.6", "—"],
+          ["MMMU", "マルチモーダル推論", "86.0", "85.0", "84.3", "—", "80.7", "87.2"],
+          ["OmniDocBench v1.5", "文書認識", "91.2", "90.8", "88.8", "—", "87.7", "88.5"],
+          ["Video-MME", "動画推論", "87.8", "87.5", "87.4", "—", "77.6", "88.4"]
+        ]
+      }
+    ],
+    "charts": [
+      {
+        "afterParagraph": 1,
+        "title": "Terminal-Bench 2.0（エージェント型ターミナル操作）",
+        "subtitle": "スコアが高いほど優秀",
+        "bars": [
+          { "label": "Qwen3.6-Plus", "value": 61.6, "color": "#7c3aed" },
+          { "label": "Claude 4.5 Opus", "value": 59.3, "color": "#f97316" },
+          { "label": "GLM5", "value": 56.2, "color": "#6366f1" },
+          { "label": "Qwen3.5-397B", "value": 52.5, "color": "#c4b5fd" },
+          { "label": "Kimi K2.5", "value": 50.8, "color": "#93c5fd" }
+        ],
+        "maxValue": 65,
+        "unit": "%"
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Qwen3.6 Plus Preview — Towards Real-World Agents",
+        "site": "Qwen Blog",
+        "url": "https://qwen.ai/blog?id=qwen3.6"
+      },
+      {
+        "title": "Alibaba Unveils Qwen3.6-Plus to Accelerate Agentic AI Deployment",
+        "site": "Alibaba Group",
+        "url": "https://www.manilatimes.net/2026/04/02/tmt-newswire/media-outreach-newswire/alibaba-unveils-qwen36-plus-to-accelerate-agentic-ai-deployment-for-enterprises-and-alibabas-ai-applications/2313159"
+      }
+    ]
+  },
   "alibaba-page-agent-browser-automation-2026": {
     "body": [
       "Alibaba が、ブラウザ上のタスクを自然言語で自動操作する OSS ライブラリ **Page Agent** を公開した。「ログインボタンをクリックして」「この表のデータを CSV で保存して」といった指示をテキストで与えるだけで、ページ内の要素を自動操作する。GitHub スターは1.5万を超え、セットアップの手軽さが注目を集めている。",

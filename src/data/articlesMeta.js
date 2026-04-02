@@ -5,6 +5,29 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "qwen-3-6-plus-agentic-coding-multimodal-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Alibaba Qwen 3.6-Plus リリース — エージェント型コーディングで Terminal-Bench 首位、1Mコンテキスト・マルチモーダル強化でフロンティアに挑む",
+    "excerpt": "Alibaba が Qwen3.6-Plus を公開。Terminal-Bench 2.0 で61.6%（Claude 4.5 Opus 超え）、SWE-bench Pro で56.6%と、エージェント型コーディングで最高水準を記録。1Mトークンのコンテキストウィンドウ、常時オンの思考連鎖、マルチモーダル視覚推論の大幅強化を搭載し、プレビュー期間中は無料提供。",
+    "date": "2026-04-02",
+    "newsDate": "2026-04-02",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Alibaba",
+      "Qwen",
+      "エージェント",
+      "コーディング",
+      "マルチモーダル",
+      "ベンチマーク"
+    ],
+    "coverImage": {
+      "src": "logos/alibaba.svg",
+      "alt": "Alibaba Qwen 3.6-Plus"
+    }
+  },
+  {
     "id": "alibaba-page-agent-browser-automation-2026",
     "type": "news",
     "category": "product",
