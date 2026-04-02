@@ -319,6 +319,34 @@ export const VIBE_CLAUDE_CODE = {
       section: "セッション内操作",
       mean: "実行中の処理をキャンセルする。ファイル編集中でも止められる。暴走したら即 Esc。",
     },
+    {
+      word: "操作: `/powerup`",
+      section: "セッション内操作",
+      mean: "Claude Code の主要機能をアニメーション付きのインタラクティブレッスンで体感学習できるコマンド（v2.1.90 で追加）。@ファイル参照、Shift+Tab モード切替、/rewind、バックグラウンドタスク、CLAUDE.md、MCP、Skills と Hooks、Subagents、remote-control、モデル切替の全10項目。各レッスンにターミナル上で再生されるデモが付属しており、読んで → 試して → 完了マークを付ける形式。機能が多くてどこから始めればよいかわからない人に最適。",
+      code: "/powerup",
+      codeLang: "text",
+    },
+    {
+      word: "操作: `/rewind`（Esc-Esc）",
+      section: "セッション内操作",
+      mean: "会話を任意の時点まで巻き戻すコマンド。Claude の変更が意図と違った場合に、ファイル変更ごと元に戻せる。`/rewind` でチェックポイント一覧が表示され、戻りたい地点を選択する。素早く Esc を2回押す（Esc-Esc）でも同じ動作。Git の操作なしで「なかったこと」にできるので、気軽に試行錯誤できる。",
+      code: "/rewind",
+      codeLang: "text",
+    },
+    {
+      word: "操作: `/model`",
+      section: "セッション内操作",
+      mean: "セッション中にモデルを切り替えるコマンド。Opus は難しい問題向き、Sonnet は大半の作業に最適、Haiku は簡単な質問に高速で回答。Opus Plan モード（`opus-plan`）を選ぶと設計は Opus、実装は Sonnet に自動分担される。",
+      code: "/model",
+      codeLang: "text",
+    },
+    {
+      word: "操作: `/effort`",
+      section: "セッション内操作",
+      mean: "Claude の思考の深さを調整するコマンド。`high` はバグ調査やアーキテクチャ判断など複雑な問題向き、`low` は簡単な編集やフォーマット修正など素早く済ませたい作業向き。デフォルトは通常の深さ。`/fast` でも同等のトグルが可能（同じモデルのまま出力速度を優先）。",
+      code: "/effort high",
+      codeLang: "text",
+    },
     // ── 実践で知っておくべきこと ──
     {
       word: "==承認プロンプト（Y/n）の意味==",
@@ -483,6 +511,31 @@ export const VIBE_CLAUDE_CODE = {
       mean: "SKILL.md を置くと Claude がタスクに応じて自動で読み込む。プロジェクトの定型作業（デプロイ手順、テスト方針など）を教え込む仕組み。",
       code: "---\nname: deploy\ndescription: 本番デプロイの手順\n---\n\n# デプロイ手順\n\n1. npm run build\n2. npm run deploy",
       codeLang: "markdown",
+    },
+    // ── NO_FLICKER モード ──
+    {
+      word: "NO_FLICKER モードとは",
+      section: "NO_FLICKER モード",
+      mean: "ターミナルのちらつき（フリッカー）を根本的に解消する実験的なフルスクリーンレンダリングモード（v2.1.89+）。vim や htop のようにターミナルの代替スクリーンバッファを使い、ビューポートを仮想化して描画する。ちらつき・ジャンプの解消、長い会話でもメモリ/CPU が一定、マウス操作対応が主なメリット。",
+      code: "CLAUDE_CODE_NO_FLICKER=1 claude",
+      codeLang: "bash",
+    },
+    {
+      word: "NO_FLICKER: マウス操作",
+      section: "NO_FLICKER モード",
+      mean: "入力ボックス内をクリックしてカーソル移動、ツール結果をクリックして展開/折りたたみ、URL やファイルパスをクリックして開く、ドラッグでテキスト選択（自動でクリップボードにコピー）、マウスホイールでスクロール。コードを選択する際に行番号や UI 要素が含まれなくなる。",
+    },
+    {
+      word: "NO_FLICKER: 検索・ナビゲーション",
+      section: "NO_FLICKER モード",
+      mean: "ネイティブの Cmd+F / Ctrl+F は使えない。代わりに Ctrl+O でトランスクリプトモードに入り、/ で検索、n/N で前後の一致に移動。[ でターミナルのスクロールバックに書き出し（Cmd+F が使える）、v でデフォルトエディタで会話を開く。PgUp/PgDn で半画面スクロール（MacBook は Fn+↑/↓）。",
+    },
+    {
+      word: "NO_FLICKER: マウスを無効にする",
+      section: "NO_FLICKER モード",
+      mean: "ちらつき解消と一定メモリの恩恵だけ受けて、ネイティブのテキスト選択を維持したい場合に使う。スクロール速度は CLAUDE_CODE_SCROLL_SPEED（1〜20、デフォルト3）で調整可能。恒久化するにはシェルプロファイル（~/.zshrc 等）に export を追加する。",
+      code: "CLAUDE_CODE_NO_FLICKER=1 CLAUDE_CODE_DISABLE_MOUSE=1 claude",
+      codeLang: "bash",
     },
     // ── 便利なスラッシュコマンド ──
     {
