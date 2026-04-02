@@ -2309,6 +2309,31 @@ export const TOOL_REFERENCES = [
         { word: "ネイティブサンドボックス", section: "機能", mean: "Linux（bubblewrap/seccomp）、macOS（Seatbelt）、Windows の各プラットフォームでネイティブなサンドボックス分離を実現。ツール実行の安全性が高い。" },
         { word: "MCP 対応", section: "機能", mean: "Model Context Protocol に対応しており、サードパーティの MCP サーバーを接続して機能を拡張できる。Claude Code と同じ MCP サーバーを共有できる場合もある。" },
         { word: "Vim モード", section: "機能", mean: "ターミナル内で Vim キーバインドが使える。Vim ユーザー向けのカスタマイズ。v0.35.0 で強化された。" },
+        // ── スラッシュコマンド ──
+        { word: "操作: `/help`", section: "スラッシュコマンド", mean: "利用可能なコマンドの一覧と使い方を表示する。困ったらまずこれ。" },
+        { word: "操作: `/clear`（`Ctrl+L`）", section: "スラッシュコマンド", mean: "ターミナル画面をクリアする。Claude Code の `/clear` と同じ。`Ctrl+L` でも同じ操作ができる。" },
+        { word: "操作: `/compact`", section: "スラッシュコマンド", mean: "ツール出力（ディレクトリ一覧やファイル読み取り結果）を構造化されたコンパクト形式で表示する。長い出力が見やすくなる。" },
+        { word: "操作: `/model`", section: "スラッシュコマンド", mean: "使用するモデルを切り替える。Claude Code の `/model` と同じ役割。Flash（高速・無料枠あり）と Pro（高精度・有料）を切り替えられる。" },
+        { word: "操作: `/stats`", section: "スラッシュコマンド", mean: "セッションの統計情報を表示。使用時間、ツール呼び出し回数、パフォーマンスメトリクスが見える。Claude Code の `/cost` + `/context` に相当する。" },
+        { word: "操作: `/tools`", section: "スラッシュコマンド", mean: "現在利用可能なツールの一覧を表示。MCP サーバー経由で追加したツールも含まれる。" },
+        { word: "操作: `/theme`", section: "スラッシュコマンド", mean: "CLI のビジュアルテーマを変更するダイアログを開く。" },
+        { word: "操作: `/save`", section: "スラッシュコマンド", mean: "現在の会話履歴を保存する。タグを付けて後で参照できる。" },
+        { word: "操作: `/chat share`", section: "スラッシュコマンド", mean: "現在の会話を Markdown または JSON ファイルにエクスポートする。`/chat share file.md` のように使う。", code: "/chat share conversation.md", codeLang: "text" },
+        { word: "操作: `/auth`", section: "スラッシュコマンド", mean: "認証方法を変更するダイアログを開く。Google アカウント認証と API キー認証を切り替えられる。" },
+        { word: "操作: `/bug`", section: "スラッシュコマンド", mean: "Gemini CLI の Issue を報告する。`/bug タイトル` と入力するとバグレポートが作成される。" },
+        { word: "操作: `/init`", section: "スラッシュコマンド", mean: "現在のディレクトリを分析して GEMINI.md を自動生成する。Claude Code の `/init`（CLAUDE.md 生成）と同じ役割。" },
+        { word: "操作: `/memory`", section: "スラッシュコマンド", mean: "GEMINI.md ファイルの管理コマンド。`/memory list` で読み込み中の GEMINI.md 一覧、`/memory reload` で再読み込み。Claude Code の `/memory` と同じ役割。" },
+        { word: "操作: `/yolo`", section: "スラッシュコマンド", mean: "全てのツール呼び出しを自動承認するモード。Claude Code の `--dangerously-skip-permissions`、Cursor の YOLO Mode に相当する。!!安全な環境以外では使わないこと!!。" },
+        // ── 設定ファイル ──
+        { word: "設定: `GEMINI.md`", section: "設定", mean: "プロジェクトルートに置く指示書。Claude Code の `CLAUDE.md`、Cursor の `.cursor/rules` に相当する。`/init` で自動生成、`/memory` で管理できる。階層的に読み込まれ、プロジェクトルートとホームディレクトリの両方が対象。" },
+        { word: "設定: `~/.gemini/settings.json`", section: "設定", mean: "Gemini CLI のグローバル設定。テーマ、デフォルトモデル、キーバインドなどを指定する。" },
+        { word: "設定: `~/.gemini/keybindings.json`", section: "設定", mean: "キーボードショートカットのカスタマイズファイル。デフォルトのキーバインドを変更・追加できる。" },
+        // ── キーボードショートカット ──
+        { word: "ショートカットまとめ", section: "ショートカット", mean: "`Ctrl+L`（画面クリア）/ `Esc` 2回（入力クリア or 巻き戻し）/ `Tab+Tab`（UI詳細度の切替）/ `Alt+Z`（アンドゥ）/ `Shift+Alt+Z`（リドゥ）。Esc 2回は Claude Code の `/rewind`（Esc-Esc）と同じ設計。" },
+        // ── @ コマンドと ! コマンド ──
+        { word: "`@` コマンド = ファイル参照", section: "操作体系", mean: "`@ファイル名` でファイルをコンテキストに追加する。Cursor の `@file` と同じ仕組み。Claude Code でも `@ファイル名` で同様の操作ができる。" },
+        { word: "`!` コマンド = シェル実行", section: "操作体系", mean: "`!コマンド` でシェルコマンドを直接実行する。`!git status` のように使う。AI を介さずにターミナル操作したいときに便利。" },
+        { word: "==`/` `@` `!` の違い==", section: "操作体系", mean: "`/` は CLI の操作コマンド（/clear, /model 等）。`@` はファイル参照（コンテキスト追加）。`!` はシェル直接実行。3つのプレフィックスで役割が分かれている。Claude Code は `/` のみで統一されているが、Gemini CLI は3種類ある。" },
         // ── Google Cloud 統合 ──
         { word: "Google Cloud 統合", section: "Google Cloud 統合", mean: "Firebase、Vertex AI、Google Cloud のサービスとネイティブに統合されている。Google Cloud を使っている開発者にとっては AI ツールと既存インフラの連携がスムーズ。" },
         { word: "Firebase との連携", section: "Google Cloud 統合", mean: "Firebase プロジェクトの設定やデプロイを Gemini CLI から操作できる。Firebase Hosting、Cloud Functions との統合が想定されている。" },
