@@ -161,47 +161,73 @@ function ArticleTableBlock({ table, keyPrefix }) {
 /** X (Twitter) 埋め込み — widgets.js の createTweet API を使用 */
 function XEmbed({ url, caption }) {
   const containerRef = useRef(null);
+  const [status, setStatus] = useState("loading"); // loading | loaded | failed
   const tweetId = url.match(/status\/(\d+)/)?.[1];
 
   useEffect(() => {
     if (!containerRef.current || !tweetId) return;
     const el = containerRef.current;
     el.innerHTML = "";
+    setStatus("loading");
+
+    let cancelled = false;
+    let failTimer;
 
     const render = () => {
-      if (window.twttr?.widgets) {
-        window.twttr.widgets.createTweet(tweetId, el, {
-          dnt: true,
-          theme: "dark",
+      if (cancelled) return;
+      window.twttr.widgets
+        .createTweet(tweetId, el, { dnt: true, theme: "dark" })
+        .then((embedEl) => {
+          if (cancelled) return;
+          setStatus(embedEl ? "loaded" : "failed");
+        })
+        .catch(() => {
+          if (!cancelled) setStatus("failed");
         });
-      }
     };
+
+    // widgets.js をまだ読み込んでいなければ1回だけ追加
+    if (!document.querySelector('script[src*="platform.twitter.com/widgets.js"]') &&
+        !document.querySelector('script[src*="platform.x.com/widgets.js"]')) {
+      const script = document.createElement("script");
+      script.src = "https://platform.twitter.com/widgets.js";
+      script.async = true;
+      document.head.appendChild(script);
+    }
 
     if (window.twttr?.widgets) {
       render();
     } else {
-      // widgets.js をまだ読み込んでいなければ1回だけ追加
-      if (!document.querySelector('script[src*="platform.twitter.com/widgets.js"]')) {
-        const script = document.createElement("script");
-        script.src = "https://platform.twitter.com/widgets.js";
-        script.async = true;
-        document.head.appendChild(script);
-      }
-      // twttr.ready で確実にレンダリング
+      // twttr.ready があれば使い、なければポーリング
       const check = setInterval(() => {
         if (window.twttr?.widgets) {
           clearInterval(check);
           render();
         }
-      }, 200);
-      return () => clearInterval(check);
+      }, 300);
+      // 8秒でタイムアウト → フォールバック表示
+      failTimer = setTimeout(() => {
+        clearInterval(check);
+        if (!cancelled) setStatus("failed");
+      }, 8000);
+      return () => { cancelled = true; clearInterval(check); clearTimeout(failTimer); };
     }
+
+    return () => { cancelled = true; clearTimeout(failTimer); };
   }, [tweetId]);
 
-  if (!tweetId) {
+  // tweetId が取れない or 読み込み失敗 → リンクボタンで表示
+  if (!tweetId || status === "failed") {
     return (
       <figure className="article-embed article-embed--x">
-        <a href={url} target="_blank" rel="noopener noreferrer">{url}</a>
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="article-embed__x-link"
+        >
+          X（Twitter）でポストを見る
+        </a>
         {caption ? <figcaption className="article-figure__caption">{caption}</figcaption> : null}
       </figure>
     );
@@ -210,6 +236,9 @@ function XEmbed({ url, caption }) {
   return (
     <figure className="article-embed article-embed--x">
       <div ref={containerRef} />
+      {status === "loading" && (
+        <p className="article-embed__x-loading">ポストを読み込み中…</p>
+      )}
       {caption ? <figcaption className="article-figure__caption">{caption}</figcaption> : null}
     </figure>
   );
