@@ -23,7 +23,7 @@ export const ARTICLES_META = [
       "MoE"
     ],
     "coverImage": {
-      "src": "logos/gemini.svg",
+      "src": "logos/gemma.svg",
       "alt": "Google Gemma 4"
     }
   },
