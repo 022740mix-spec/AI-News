@@ -6,10 +6,7 @@
     </linearGradient>
   </defs>
   <rect width="800" height="450" fill="url(#bg)"/>
-  <g transform="translate(364, 120) scale(3)">
-    <path fill="#c96442" d="M13.827 3.52h3.603L24 20h-3.603l-6.57-16.48zm-7.258 0h3.767L16.906 20h-3.674l-1.343-3.461H5.017l-1.344 3.46H0L6.57 3.522zm4.132 9.959L8.453 7.687 6.205 13.48H10.7z"/>
-  </g>
-  <text x="400" y="220" text-anchor="middle" fill="#c96442" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="300" letter-spacing="0.15em">ANTHROPIC</text>
-  <text x="400" y="280" text-anchor="middle" fill="#d97757" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="600">Claude</text>
-  <line x1="320" y1="310" x2="480" y2="310" stroke="#d97757" stroke-width="1.5" opacity="0.4"/>
+  <text x="400" y="195" text-anchor="middle" fill="#c96442" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="300" letter-spacing="0.15em">ANTHROPIC</text>
+  <text x="400" y="258" text-anchor="middle" fill="#d97757" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="600">Claude</text>
+  <line x1="320" y1="288" x2="480" y2="288" stroke="#d97757" stroke-width="1.5" opacity="0.4"/>
 </svg>
