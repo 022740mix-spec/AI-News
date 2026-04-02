@@ -4,6 +4,13 @@ import { LangContext } from "../context/LangContext.js";
 import { resolveMediaSrc } from "../utils/seo.js";
 import { parseDate } from "../utils/dateUtils.js";
 
+const handleKeyActivate = (onClick) => (e) => {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    onClick(e);
+  }
+};
+
 function HomePage({ articles, onSelect, onSection }) {
   const lang = useContext(LangContext);
   const sorted = [...articles].sort((a, b) => {
@@ -24,7 +31,7 @@ function HomePage({ articles, onSelect, onSection }) {
   return (
     <div className="home-page">
       {hero ? (
-        <section className={`home-hero${hero.coverImage?.src ? " home-hero--has-cover" : ""}`} onClick={() => onSelect(hero)}>
+        <section className={`home-hero${hero.coverImage?.src ? " home-hero--has-cover" : ""}`} role="button" tabIndex={0} onClick={() => onSelect(hero)} onKeyDown={handleKeyActivate(() => onSelect(hero))}>
           <div className="home-hero__aurora" aria-hidden="true" />
           {hero.coverImage?.src ? (
             <div className="home-hero__visual">
@@ -55,7 +62,7 @@ function HomePage({ articles, onSelect, onSection }) {
             </div>
             <div className="home-cards">
               {recentNews.map((a) => (
-                <article key={a.id} className={`home-card${a.coverImage?.src ? " home-card--has-thumb" : ""}`} onClick={() => onSelect(a)}>
+                <article key={a.id} className={`home-card${a.coverImage?.src ? " home-card--has-thumb" : ""}`} role="button" tabIndex={0} onClick={() => onSelect(a)} onKeyDown={handleKeyActivate(() => onSelect(a))}>
                   {a.coverImage?.src ? (
                     <div className="home-card__thumb">
                       <img src={resolveMediaSrc(a.coverImage.src)} alt={a.coverImage.alt} loading="lazy" />

@@ -4,6 +4,13 @@ import { LangContext } from "../context/LangContext.js";
 import { REVIEW_CATEGORIES, RATING_EXPLAINER, MODEL_COMPARISON, BENCHMARK_CONFIGS } from "../constants.js";
 import { resolveMediaSrc } from "../utils/seo.js";
 
+const handleKeyActivate = (onClick) => (e) => {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    onClick(e);
+  }
+};
+
 /** ベンチマークスコアの横棒グラフ（SVG 自動生成・グラデーション付き） */
 function BenchmarkChart({ data, title, maxScore = 100, scoreKey = "bench" }) {
   const sorted = [...data].filter((d) => d[scoreKey] != null).sort((a, b) => b[scoreKey] - a[scoreKey]);
@@ -174,7 +181,9 @@ function ReviewComparisonTable({ articles, category, onSelect }) {
               <tr
                 key={a.id}
                 className="review-comparison-row"
+                tabIndex={0}
                 onClick={() => onSelect(a)}
+                onKeyDown={handleKeyActivate(() => onSelect(a))}
                 style={{ cursor: "pointer" }}
               >
                 <td className="review-comparison-name">

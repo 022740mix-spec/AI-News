@@ -103,9 +103,11 @@ function GuideSetupPanel() {
   );
 }
 
-function GuideRulesPanel() {
+function GuideRulesPanel({ vibeGuide }) {
   let k = 0;
   const mkKey = () => `gr-${k++}`;
+  const basicRules = vibeGuide?.basicRules ?? VIBE_BASIC_RULES;
+  const pitfalls = vibeGuide?.pitfalls ?? VIBE_GUIDE_PITFALLS;
   return (
     <div className="companies-guide-rail companies-guide-rail--full-tab" aria-label="基本ルール">
       <section id="vibe-rules" className="guide-section guide-section--vibe">
@@ -113,9 +115,9 @@ function GuideRulesPanel() {
         <p className="guide-section__lead">
           {richInlineLine(VIBE_BASIC_RULES_LEAD, mkKey)}
         </p>
-        {VIBE_BASIC_RULES.length > 0 ? (
+        {basicRules.length > 0 ? (
           <dl className="glossary-dl">
-            {VIBE_BASIC_RULES.map((r) => (
+            {basicRules.map((r) => (
               <Fragment key={r.title}>
                 <dt className="glossary-dl__term">{richInlineLine(r.title, mkKey)}</dt>
                 <dd className="glossary-dl__body">
@@ -128,11 +130,11 @@ function GuideRulesPanel() {
       </section>
 
       <section id="vibe-pitfalls" className="guide-section guide-section--vibe">
-        <h2 className="guide-section__title">{VIBE_GUIDE_PITFALLS.title}</h2>
-        <GuideLinkifiedP text={VIBE_GUIDE_PITFALLS.lead} className="guide-section__lead" />
-        {VIBE_GUIDE_PITFALLS.terms.length > 0 ? (
+        <h2 className="guide-section__title">{pitfalls.title}</h2>
+        <GuideLinkifiedP text={pitfalls.lead} className="guide-section__lead" />
+        {pitfalls.terms.length > 0 ? (
           <dl className="glossary-dl">
-            {VIBE_GUIDE_PITFALLS.terms.map((t) => (
+            {pitfalls.terms.map((t) => (
               <Fragment key={t.word}>
                 <dt className="glossary-dl__term">{richInlineLine(t.word, mkKey)}</dt>
                 <dd className="glossary-dl__body">
@@ -147,7 +149,7 @@ function GuideRulesPanel() {
   );
 }
 
-function GuidePracticalPanel() {
+function GuidePracticalPanel({ vibeGuide }) {
   let k = 0;
   const mkKey = () => `gp-${k++}`;
   return (

@@ -3,6 +3,13 @@ import { SITE_NAME, SITE_DESCRIPTION } from "../data/aiToolsData.js";
 import { LangContext, L } from "../context/LangContext.js";
 import { ACCENT_PRESETS, SORTS } from "../constants.js";
 
+const handleKeyActivate = (onClick) => (e) => {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    onClick(e);
+  }
+};
+
 /* ══ ハンバーガーメニュー ══ */
 function HamburgerMenu({ isOpen, onClose, onSection, currentSection, searchRef, accentId, onAccent, query, setQuery }) {
   const lang = useContext(LangContext);
@@ -15,6 +22,15 @@ function HamburgerMenu({ isOpen, onClose, onSection, currentSection, searchRef, 
     { id: "companies", label: "AI企業", en: "Companies" },
   ];
   const mobileSearchRef = useRef(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleEsc = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handleEsc);
+    return () => document.removeEventListener("keydown", handleEsc);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -136,7 +152,7 @@ function Header({
           >
             ☰
           </button>
-          <div className="header-center" onClick={onGoHome} style={{ cursor: "pointer" }}>
+          <div className="header-center" role="button" tabIndex={0} onClick={onGoHome} onKeyDown={handleKeyActivate(onGoHome)} style={{ cursor: "pointer" }}>
             <h1 className="site-title">{SITE_NAME}</h1>
             <p className="site-tagline">{siteDesc}</p>
           </div>

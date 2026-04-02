@@ -112,7 +112,7 @@ AI-News は**3つの層**でこの問題を解決する:
 
 ## 編集体制
 
-記事制作は3つのスキルガイドと自動校閲スクリプトで品質を担保する。
+記事制作は4つのスキルガイドと自動校閲スクリプトで品質を担保する。
 実運用では統括エージェントが全工程を担当しており、ルールの重複排除と見通しの良さを優先して統合した。
 
 ```
@@ -120,7 +120,7 @@ AI-News は**3つの層**でこの問題を解決する:
   ↓
 データ品質（data-quality）     メタデータ整合性・出稿判断・タグ/用語集管理
   ↓
-自動校閲（review-check.mjs）   13項目の品質チェック（Stop Hook で自動実行）
+自動校閲（review-check.mjs）   16項目の品質チェック（Stop Hook で自動実行）
   ↓
 npm run build → デプロイ
 
@@ -132,6 +132,7 @@ npm run build → デプロイ
 | 執筆ガイド | `.cursor/skills/writing-guide/` | 取材→校閲→構成→週刊まとめ |
 | データ品質 | `.cursor/skills/data-quality/` | 企業データ・タグ・用語集・出稿判断 |
 | 専門記事 | `.cursor/skills/specialized-content/` | 比較記事・コマンド辞書・UI/画像 |
+| 月刊まとめ | `.cursor/skills/monthly-roundup/` | 月次振り返り記事の構成・テンプレート |
 
 ## 企業情報の役割
 

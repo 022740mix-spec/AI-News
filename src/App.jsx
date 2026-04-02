@@ -3,6 +3,8 @@
  */
 import {
   Fragment,
+  lazy,
+  Suspense,
   useState,
   useMemo,
   useCallback,
@@ -21,8 +23,6 @@ import {
   filterVibeCodingGuide,
   filterMediaGuide,
   filterGlossaryGuide,
-  GLOSSARY_BY_GENRE,
-  VIBE_MEDIA_TAXONOMY,
   filterToolReference,
 } from "./data/vibeCodingGuide.js";
 
@@ -42,12 +42,21 @@ import { Header, HamburgerMenu } from "./components/Header.jsx";
 import { StorageLocalNotice, EditorialStatement, SiteFooter, ScrollTopFab, SiteSectionNav } from "./components/Footer.jsx";
 import HomePage from "./components/HomePage.jsx";
 import { TypeFilterBar, FilterBar, Pagination, HeroToday, ArticleCard } from "./components/ArticleList.jsx";
-import ArticleDetail from "./components/ArticleDetail.jsx";
+const ArticleDetail = lazy(() => import("./components/ArticleDetail.jsx"));
 import { Sidebar, WeekRoundupNav } from "./components/Sidebars.jsx";
 import { GuideSidebar, ToolSidebar, CompaniesSidebar } from "./components/Sidebars.jsx";
-import { GuideTabBar, GuideSetupPanel, GuideRulesPanel, GuidePracticalPanel, MediaToolsGuidePanel, GlossaryGuidePanel } from "./components/Guide.jsx";
-import { ModelComparisonSection, ReviewComparisonTable, ReviewTabBar, CompanyCard } from "./components/Reviews.jsx";
-import { ToolTabBar, ToolReferencePanel } from "./components/Tools.jsx";
+const GuideTabBar = lazy(() => import("./components/Guide.jsx").then(m => ({ default: m.GuideTabBar })));
+const GuideSetupPanel = lazy(() => import("./components/Guide.jsx").then(m => ({ default: m.GuideSetupPanel })));
+const GuideRulesPanel = lazy(() => import("./components/Guide.jsx").then(m => ({ default: m.GuideRulesPanel })));
+const GuidePracticalPanel = lazy(() => import("./components/Guide.jsx").then(m => ({ default: m.GuidePracticalPanel })));
+const MediaToolsGuidePanel = lazy(() => import("./components/Guide.jsx").then(m => ({ default: m.MediaToolsGuidePanel })));
+const GlossaryGuidePanel = lazy(() => import("./components/Guide.jsx").then(m => ({ default: m.GlossaryGuidePanel })));
+const ReviewTabBar = lazy(() => import("./components/Reviews.jsx").then(m => ({ default: m.ReviewTabBar })));
+const ModelComparisonSection = lazy(() => import("./components/Reviews.jsx").then(m => ({ default: m.ModelComparisonSection })));
+const ReviewComparisonTable = lazy(() => import("./components/Reviews.jsx").then(m => ({ default: m.ReviewComparisonTable })));
+const CompanyCard = lazy(() => import("./components/Reviews.jsx").then(m => ({ default: m.CompanyCard })));
+const ToolTabBar = lazy(() => import("./components/Tools.jsx").then(m => ({ default: m.ToolTabBar })));
+const ToolReferencePanel = lazy(() => import("./components/Tools.jsx").then(m => ({ default: m.ToolReferencePanel })));
 import { SeasonalScene, SeasonalEffect } from "./components/Seasonal.jsx";
 
 export default function App() {
@@ -255,10 +264,14 @@ export default function App() {
   );
 
   const guideMatchCount =
-    siteSection !== "guide" ? 0 : 1;
+    siteSection !== "guide" || !query
+      ? 0
+      : vibeGuide.matchCount + mediaGuide.matchCount + glossaryGuide.matchCount;
 
   const guideTotal =
-    siteSection !== "guide" ? 0 : 1;
+    siteSection !== "guide"
+      ? 0
+      : vibeGuide.total + mediaGuide.total + glossaryGuide.total;
 
   const filtered = useMemo(() => {
     let list = ARTICLES;
@@ -424,11 +437,17 @@ export default function App() {
                   <FilterBar active={filter} setActive={setFilter} />
                   </>
                 ) : siteSection === "reviews" ? (
+                  <Suspense fallback={null}>
                   <ReviewTabBar reviewTab={reviewTab} onSelect={setReviewTab} />
+                  </Suspense>
                 ) : siteSection === "guide" ? (
+                  <Suspense fallback={null}>
                   <GuideTabBar guideTab={guideTab} onSelect={selectGuideTab} />
+                  </Suspense>
                 ) : siteSection === "tools" ? (
+                  <Suspense fallback={null}>
                   <ToolTabBar toolTab={toolTab} onSelect={selectToolTab} />
+                  </Suspense>
                 ) : null}
               </>
             ) : null}
@@ -466,6 +485,7 @@ export default function App() {
               query={query}
               setQuery={setQuery}
             />
+          <Suspense fallback={<div className="loading">読み込み中...</div>}>
           <ArticleDetail
             article={selected}
             onBack={() => {
@@ -476,6 +496,7 @@ export default function App() {
             relatedArticles={pickRelatedArticles(selected, ARTICLES, 3)}
             onOpenRelated={handleSelect}
           />
+          </Suspense>
           </>
         ) : siteSection === "home" ? (
           <HomePage
@@ -491,6 +512,7 @@ export default function App() {
               {siteSection === "articles" || siteSection === "reviews" ? (
                 <>
                   {siteSection === "reviews" && !query ? (
+                    <Suspense fallback={<div className="loading">読み込み中...</div>}>
                     <div className="review-comparisons">
                       {reviewTab === "models" ? (
                         <ModelComparisonSection />
@@ -517,6 +539,7 @@ export default function App() {
                           />
                         ))}
                     </div>
+                    </Suspense>
                   ) : null}
 
                   {featured && siteSection === "articles" ? (
@@ -595,12 +618,12 @@ export default function App() {
                   />
                 </>
               ) : siteSection === "tools" ? (
-                <>
+                <Suspense fallback={<div className="loading">読み込み中...</div>}>
                   <ToolReferencePanel
                     referenceData={toolRef.ref}
                     practical={toolRef.practical}
                   />
-                </>
+                </Suspense>
               ) : siteSection === "companies" ? (
                 <>
                   <div className="section-feed companies-page-intro">
@@ -610,6 +633,7 @@ export default function App() {
                     </p>
                     <p className="companies-disclaimer">{COMPANIES_DISCLAIMER}</p>
                   </div>
+                  <Suspense fallback={<div className="loading">読み込み中...</div>}>
                   {filteredCompanies.length > 0 ? (
                     <div className="companies-stack">
                       {filteredCompanies.map((c) => (
@@ -619,6 +643,7 @@ export default function App() {
                   ) : (
                     <div className="empty-state">{lang === "en" ? "No matching companies" : "該当する企業がありません"}</div>
                   )}
+                  </Suspense>
                 </>
               ) : (
                 <div
@@ -626,21 +651,23 @@ export default function App() {
                   role="tabpanel"
                   aria-labelledby={`guide-subtab-${guideTab}`}
                 >
+                  <Suspense fallback={<div className="loading">読み込み中...</div>}>
                   {guideTab === "setup" ? (
                     <GuideSetupPanel />
                   ) : guideTab === "rules" ? (
-                    <GuideRulesPanel />
+                    <GuideRulesPanel vibeGuide={vibeGuide} />
                   ) : guideTab === "practical" ? (
-                    <GuidePracticalPanel />
+                    <GuidePracticalPanel vibeGuide={vibeGuide} />
                   ) : guideTab === "media" ? (
                     <MediaToolsGuidePanel
-                      mediaTaxonomy={VIBE_MEDIA_TAXONOMY}
+                      mediaTaxonomy={mediaGuide.mediaTaxonomy}
                     />
                   ) : (
                     <GlossaryGuidePanel
-                      glossaryGenres={GLOSSARY_BY_GENRE}
+                      glossaryGenres={glossaryGuide.glossary}
                     />
                   )}
+                  </Suspense>
                 </div>
               )}
             </div>

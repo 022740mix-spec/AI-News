@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "node scripts/generate-feed.mjs && vite build",
     "preview": "vite preview",
-    "deploy": "vite build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@rollup/rollup-linux-x64-gnu": "^4.60.0",

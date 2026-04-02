@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { SITE_NAME, SITE_DESCRIPTION, getSiteTodayYmd } from "../data/aiToolsData.js";
 import { LangContext, L } from "../context/LangContext.js";
 import { STORAGE_LOCAL_NOTICE } from "../constants.js";
@@ -46,6 +46,16 @@ function StorageLocalNotice() {
 
 function EditorialStatement({ isOpen, onClose }) {
   const lang = useContext(LangContext);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleEsc = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handleEsc);
+    return () => document.removeEventListener("keydown", handleEsc);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const en = lang === "en";
