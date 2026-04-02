@@ -2181,6 +2181,18 @@ export const TOOL_REFERENCES = [
         { word: "Composer: `Cmd+I`（Mac）/ `Ctrl+I`（Win）", section: "AI チャット・エージェント", mean: "Cursor のメインの AI チャット画面。「ログイン機能を追加して」のように日本語で指示すると、AI が複数ファイルをまたいで変更を行う。モードは Agent（自律実行）/ Normal（確認しながら）/ Ask（質問のみ）を切り替えられる。" },
         { word: "Chat パネル: `Cmd+L`（Mac）/ `Ctrl+L`（Win）", section: "AI チャット・エージェント", mean: "コードについて質問・相談するためのサイドパネル。Composer がファイル編集向けなのに対し、Chat は「これ何？」「なぜエラー？」のような質問に向く。" },
         { word: "Background Agent", section: "AI チャット・エージェント", mean: "バックグラウンドでタスクを非同期に実行するエージェント。PR 作成、テスト実行、リファクタリングなどを裏で処理しながら、自分は別の作業ができる。" },
+        { word: "Composer モードの違い", section: "AI チャット・エージェント", mean: "Agent（自律実行・最も強力）/ Ask（質問のみ・コード変更なし）/ Plan（計画を見せてから実行）の3モードがある。==大半の作業は Agent モードでよい==。初めてのコードベースで「何をどう変えるか」を確認したいときは Plan を使う。" },
+        { word: "YOLO Mode", section: "AI チャット・エージェント", mean: "Agent Mode の確認ダイアログを全てスキップし、ターミナルコマンドの実行やファイル削除も自動で行う設定。Settings > Features > Chat & Composer で有効化。!!壊れてもよい環境以外では使わないこと!!。Claude Code の `--dangerously-skip-permissions` と同等のリスク。" },
+        // ── コンテキスト指定（追加） ──
+        { word: "`@git` で未コミット変更を参照", section: "コンテキスト指定", mean: "Composer や Chat で `@git` と打つと、現在の未コミット変更（git diff）を AI のコンテキストに含める。「さっきの変更でバグが出た」のようなときに、変更内容を明示的に渡せて便利。" },
+        { word: "`@docs` で外部ドキュメントを参照", section: "コンテキスト指定", mean: "Settings で登録した外部ドキュメント（ライブラリの公式ドキュメント等）を AI の文脈に含める。`@docs React` のように使う。最新の API を正しく使いたいときに有効。" },
+        { word: "`@definitions` でシンボル定義を参照", section: "コンテキスト指定", mean: "プロジェクト内の型定義・関数宣言の一覧を AI に渡す。「この型に合うように実装して」のような指示で正確な型を使ってもらえる。" },
+        // ── Bug Finder ──
+        { word: "Bug Finder", section: "デバッグ", mean: "`Cmd+Shift+P`（コマンドパレット）→「bug finder」で起動。git diff を分析して潜在的なバグやロジックエラーを AI が検出する。PR を出す前のセルフレビューに使える。" },
+        // ── Rules の種類 ──
+        { word: "Rules の3種類", section: "設定", mean: "==Project Rules==（`.cursor/rules`）はプロジェクト固有の AI ルール。==User Rules==（Settings > Rules）は全プロジェクト共通。==.cursorrules==（プロジェクトルート）はレガシー形式で互換性維持用。新規プロジェクトは `.cursor/rules` を使う。Claude Code の `CLAUDE.md`（プロジェクト）と `~/.claude/CLAUDE.md`（共通）に相当する。" },
+        // ── CLI コマンド ──
+        { word: "CLI: `cursor` コマンド", section: "CLI", mean: "ターミナルから Cursor エディタを起動するコマンド。`cursor .` で現在のフォルダを開く。`cursor ファイル名` で特定のファイルを開く。VS Code の `code` コマンドと同じ感覚で使える。", code: "cursor .                    # 現在のフォルダを開く\ncursor src/App.jsx          # 特定のファイルを開く\ncursor --diff file1 file2   # 2ファイルの差分を表示", codeLang: "bash" },
         { word: "Tab 補完（サジェスト）", section: "エディタ補完", mean: "コード入力中に AI が次に書くべきコードを予測して半透明で表示する。Tab で受け入れ、Esc でスキップ。自分でコードを書くエンジニアにとって速度が大幅に上がる機能。" },
         { word: "インライン編集: `Cmd+K`（Mac）/ `Ctrl+K`（Win）", section: "エディタ補完", mean: "エディタ上でコードを選択して Cmd+K → AI に修正指示を出す。「この関数をリファクタして」のような短い修正に向く。" },
         { word: "Cursor + Claude Code の併用方法", section: "Claude Code 併用", mean: "Cursor の統合ターミナル（Ctrl+` で開く）で `claude` と入力して起動する。Cursor の Composer と Claude Code CLI は別々の AI セッションとして動作するため、それぞれに違う指示を出せる。例: Composer に「全体の設計を考えて」→ Claude Code に「このファイルのテストを書いて」。", code: "claude", codeLang: "bash" },
