@@ -1,43 +1,34 @@
 /**
  * AI開発ツール ブログ記事データ
- * 各ツールを記事として構成
  *
- * ── 週刊まとめ（heroScope: "week"）の編集ルール（このサイトの固定方針）──
- * - 公開日: 毎週月曜 09:00（Asia/Tokyo）を原則とする（週明けに「先週」を読む想定）。
- * - 対象期間: 常に 7 日間。直前の「月曜 0:00 〜 日曜 23:59」（東京日付）= ISO と同じく週の境界は月曜始まり。
- *   （米国紙で見る日曜始まり Sun–Sat もあるが、開発者向けニュースでは月曜始まりが一般的になりやすい。）
- * - 記事の date: その週刊記事の公開日（多くは月曜の YYYY-MM-DD）。一覧・フィードの並びとヒーロー表示に使う。
- * - weekRoundupPeriod: { start, end } に対象週の両端を必ず入れ、タイトル・本文・ヒーローと矛盾させない。
- * - 対象週をまたぐトピックは、公開日の属する週か、ニュース発生日の属する週のどちらかに寄せて分割する（「10日分を1週刊に詰めない」）。
- * - 上記の運用・掲載基準は**編集部メモ**であり、読者向けの**概要・本文には書かない**（週の流れと個別記事への導線だけを書く）。
- * - 週刊の文体・接続・推敲チェックは **本リポジトリ**の `.cursor/skills/weekly-news-roundup/SKILL.md` に従う（新規作成・全面推敲のたびに適用）。
+ * 編集方針・校閲ルール → CLAUDE.md, .cursor/skills/ を参照
+ * 自動品質チェック → scripts/review-check.mjs（13項目、Stop Hook で自動実行）
  *
- * 任意フィールド（画像は権利クリア済みのものだけ public/ に配置）:
- *   coverImage: { src: "articles/…" | "https://…", alt, caption? }
- *   figures: [{ src, alt, caption?, afterParagraph: 0 始まりの段落索引の直後 }]
- *   tables: [{ afterParagraph, caption?, headers: string[], rows: string[][] }] — 先頭列は行見出し（th）
- *   primarySources: [{ title, url, site?, note? }] — 元報道・公式ドキュメント（2次整理サイトとして必須に近い）
-   *   date: YYYY-MM-DD — 通常は**ニュースが世に出た基準日**。週刊まとめ（heroScope:week）では**その週刊の公開日**を入れる（一覧・ヒーロー・フィード用）。
- *   newsDate?: — 省略可。指定時は `getArticleNewsYmd` がこちらを優先（後から記事だけ足すとき date と切り分け可）
- *   pinned?: boolean — 同一ニュース日内で複数記事があるときヒーロー候補の優先。ヒーローは「本日＝東京」と news 日付が一致する記事のみ
- *   heroScope?: "day" | "week" | "none" — ヒーロー帯の意味。省略時は day（単発の「本日のニュース」）。week は期間まとめ用コピー。none は当日一致でもヒーローに出さない
- *   weekRoundupPeriod?: { start: YYYY-MM-DD, end: YYYY-MM-DD } — 週刊まとめの対象7日間（月曜〜日曜想定）。heroScope:week のとき推奨
+ * ── 記事フィールド定義 ──
+ * 必須:
+ *   id: string           — kebab-case、一意、内部リンク用
+ *   type: "news" | "feature" | "review"
+ *   category: "special" | "model" | "cli" | "editor" | "data" | "product" | "media" | "regulation"
+ *   title: string         — 見出し
+ *   excerpt: string       — 概要（事実のみ、感想・メタ説明禁止）
+ *   body: string[]        — 段落配列（3段落以上）
+ *   date: "YYYY-MM-DD"    — 公開日。週刊まとめでは公開日を入れる
+ *   author: string
+ *   readTime: string      — "N分"
+ *   tags: string[]        — 既存タグとの統一必須
+ *   primarySources: [{ title, url, site?, note? }] — 1件以上必須
  *
- * ── 比較記事の更新ルール ──
- * lastReviewed: YYYY-MM-DD — 最後に内容を確認・更新した日付。UIで「最終確認」として表示
- * - 比較記事・料金記事は **毎月1回** 以上の見直しを推奨（AI業界の変化速度に対応）
- * - 見直し時: 価格変更・新製品追加・機能変更を反映し、lastReviewed を更新
- * - 見直して「変更なし」の場合も lastReviewed だけ更新（読者に鮮度を示す）
- *
- * ── レビュー評価基準（5段階・5軸） ──
- * ratings: { "AI品質": n, "使いやすさ": n, "コスパ": n, "拡張性": n, "企業向け": n }
- * - AI品質:   AI支援の精度・推論の深さ・コード生成品質。ベンチマーク・実利用レビューに基づく
- * - 使いやすさ: 導入の簡単さ・学習コスト・日常操作のスムーズさ
- * - コスパ:   価格に対して得られる価値。無料枠の実用性も考慮
- * - 拡張性:   MCP・プラグイン・API・カスタマイズの幅
- * - 企業向け: セキュリティ設定・SSO/SAML・監査ログ・IP補償・Privacy Mode
- * rating（総合）: 5軸の加重平均（AI品質30%、使いやすさ25%、コスパ20%、拡張性15%、企業向け10%）を四捨五入
- * 評価は公式ドキュメント・ベンチマーク・ユーザーレビューに基づき、編集部が2026年3月時点で判断
+ * 任意:
+ *   newsDate?: "YYYY-MM-DD"     — ニュース発生日（指定時は getArticleNewsYmd が優先）
+ *   coverImage?: { src, alt, caption? }
+ *   figures?: [{ src, alt, caption?, afterParagraph }]
+ *   tables?: [{ afterParagraph, caption?, headers: string[], rows: string[][] }]
+ *   charts?: [{ title, subtitle?, bars, unit?, maxValue? }]
+ *   heroScope?: "day" | "week" | "none"  — 省略時は "day"
+ *   pinned?: boolean      — 同日に複数記事がある場合のヒーロー優先
+ *   weekRoundupPeriod?: { start, end }   — heroScope:"week" のとき推奨
+ *   lastReviewed?: "YYYY-MM-DD"          — 比較記事の最終確認日
+ *   ratings?: { "AI品質", "使いやすさ", "コスパ", "拡張性", "企業向け" } — 各1-5
  */
 
 export const ARTICLES = [

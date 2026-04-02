@@ -48,6 +48,14 @@
     <summary>npm 週間1億ダウンロードを誇る HTTP クライアント axios のリードメンテナーアカウントが乗っ取られ、axios@1.14.1 と axios@0.30.4 にリモートアクセス型トロイの木馬（RAT）を仕込んだ偽バージョンが公開された。悪意のある依存パッケージ plain-crypto-js 経由で macOS・Windows・Linux 全プラットフォームに C2 サーバー `sfrclak[.]com:8000` と通信するペイロードがドロップされる。npm セキュリティチームが問題バージョンを削除済みだが、キャレット範囲（^1.14.0 等）で自動取得した環境は即座に確認・認証情報のローテーションが必要。</summary>
   </entry>
   <entry>
+    <title>OpenAI が史上最大の$122B（約18兆円）を調達、評価額$852B — Amazon・Nvidia・SoftBank が巨額出資、AI スーパーアプリ構想へ</title>
+    <link rel="alternate" type="text/html" href="?a=openai-122b-funding-852b-valuation-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-122b-funding-852b-valuation-2026</id>
+    <published>2026-03-31T15:00:00Z</published>
+    <updated>2026-03-31T15:00:00Z</updated>
+    <summary>OpenAI が$122Bの資金調達を完了し、評価額$852Bに到達。Amazon $50B、Nvidia・SoftBank 各$30B が参加。月間売上$2B・週間9億ユーザーを背景に、ChatGPT・Codex・エージェントを統合する「AI スーパーアプリ」構想と年内 IPO を視野に入れる。</summary>
+  </entry>
+  <entry>
     <title>【週刊まとめ】AI開発ツール — 2026年3月23日〜29日</title>
     <link rel="alternate" type="text/html" href="?a=overview-2026-spring"/>
     <id>tag:ai-tool-news.jp,2026:overview-2026-spring</id>

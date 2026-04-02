@@ -110,37 +110,28 @@ AI-News は**3つの層**でこの問題を解決する:
 
 記事内のコードブロックには自動的にコピーボタンが付く。
 
-## 編集部の構成
+## 編集体制
 
-記事制作は新聞社型の役割分担で品質を担保する。
+記事制作は3つのスキルガイドと自動校閲スクリプトで品質を担保する。
+実運用では統括エージェントが全工程を担当しており、ルールの重複排除と見通しの良さを優先して統合した。
 
 ```
-記者（Reporter）     ネタ収集・ソース調査・下書き
+執筆ガイド（writing-guide）    取材・校閲・構成・週刊まとめの全執筆ルール
   ↓
-校閲（Copy Editor）  ファクトチェック・リンク検証・表記統一
+データ品質（data-quality）     メタデータ整合性・出稿判断・タグ/用語集管理
   ↓
-構成編集（Editor）   見出し・概要・段落構成の推敲
+自動校閲（review-check.mjs）   13項目の品質チェック（Stop Hook で自動実行）
   ↓
-デスク（M. Editor）  出稿判断・優先度・配信スケジュール
+npm run build → デプロイ
 
-並行: ツール評価（Reviewer） 横断比較・レベル別おすすめ・客観的評価
-並行: UI/フロント担当       画像・図表・CSS
-並行: データ担当            企業データ・タグ体系・メタデータ監査
+並行: 専門記事（specialized-content）  比較記事・リファレンス・ビジュアル
 ```
 
-各ロールは `.cursor/skills/` にスキルファイルとして定義:
-
-| スキル | パス |
-|--------|------|
-| 記者 | `.cursor/skills/reporter/` |
-| 校閲 | `.cursor/skills/copy-editor/` |
-| 構成編集 | `.cursor/skills/editor/` |
-| デスク | `.cursor/skills/managing-editor/` |
-| ツール評価 | `.cursor/skills/tool-reviewer/` |
-| コマンドリファレンス | `.cursor/skills/command-reference/` |
-| UI/フロント | `.cursor/skills/ui-frontend/` |
-| データ担当 | `.cursor/skills/data-manager/` |
-| 週刊まとめ | `.cursor/skills/weekly-news-roundup/` |
+| スキル | パス | 責務 |
+|--------|------|------|
+| 執筆ガイド | `.cursor/skills/writing-guide/` | 取材→校閲→構成→週刊まとめ |
+| データ品質 | `.cursor/skills/data-quality/` | 企業データ・タグ・用語集・出稿判断 |
+| 専門記事 | `.cursor/skills/specialized-content/` | 比較記事・コマンド辞書・UI/画像 |
 
 ## 企業情報の役割
 
