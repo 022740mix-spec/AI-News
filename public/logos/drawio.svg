@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff7ed"/>
+      <stop offset="100%" stop-color="#ffedd5"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Simplified diagram icon -->
+  <g transform="translate(355, 90)">
+    <rect x="0" y="0" width="40" height="28" rx="4" fill="none" stroke="#f97316" stroke-width="3"/>
+    <rect x="50" y="0" width="40" height="28" rx="4" fill="none" stroke="#f97316" stroke-width="3"/>
+    <rect x="25" y="50" width="40" height="28" rx="4" fill="none" stroke="#f97316" stroke-width="3"/>
+    <line x1="20" y1="28" x2="35" y2="50" stroke="#f97316" stroke-width="2.5"/>
+    <line x1="70" y1="28" x2="55" y2="50" stroke="#f97316" stroke-width="2.5"/>
+  </g>
+  <text x="400" y="230" text-anchor="middle" fill="#f97316" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="700" letter-spacing="0.02em">draw.io</text>
+  <text x="400" y="280" text-anchor="middle" fill="#fb923c" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="400">MCP Diagram Streaming</text>
+</svg>

@@ -3707,7 +3707,11 @@ export const ARTICLES_META = [
       "Claude Code",
       "プロンプト",
       "開発体験"
-    ]
+    ],
+    "coverImage": {
+      "src": "logos/gitreverse.svg",
+      "alt": "GitReverse"
+    }
   },
   {
     "id": "supabase-ssh-docs-virtual-filesystem-2026",
@@ -3819,7 +3823,7 @@ export const ARTICLES_META = [
       "オープンソース"
     ],
     "coverImage": {
-      "src": "logos/anthropic.svg",
+      "src": "logos/drawio.svg",
       "alt": "draw.io MCP"
     }
   },

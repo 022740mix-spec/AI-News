@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Reverse arrow symbol -->
+  <g transform="translate(365, 100)">
+    <path d="M35 0 L70 25 L35 50 Z" fill="none" stroke="#58a6ff" stroke-width="3"/>
+    <line x1="70" y1="25" x2="10" y2="25" stroke="#58a6ff" stroke-width="3"/>
+    <line x1="10" y1="10" x2="10" y2="40" stroke="#58a6ff" stroke-width="3"/>
+  </g>
+  <text x="400" y="225" text-anchor="middle" fill="#e6edf3" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="700" letter-spacing="0.03em">GitReverse</text>
+  <text x="400" y="275" text-anchor="middle" fill="#58a6ff" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="400">Repo → Prompt</text>
+</svg>
