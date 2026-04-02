@@ -488,6 +488,31 @@ export const VIBE_CLAUDE_CODE = {
       section: "エージェント・リモート",
       mean: "外出中にスマホから自宅 PC の作業を進めたい、別の人にセッションを見せてレビューしてもらいたい、会議中にスマホから軽い修正指示を出したい、など。ターミナルの前にいなくても Claude Code に指示を送り続けられるのがポイント。",
     },
+    // ── マルチリポジトリ ──
+    {
+      word: "マルチリポ: `--add-dir`",
+      section: "マルチリポジトリ",
+      mean: "兄弟リポジトリのファイルを読み書きできるようにするオプション。追加したディレクトリの `.claude/skills/` も自動で読み込まれる。複数リポジトリをモノレポのように横断操作できる。セッション中は `/add-dir パス` でも追加可能。",
+      code: "claude --add-dir ../backend-api --add-dir ../shared-types",
+      codeLang: "bash",
+    },
+    {
+      word: "マルチリポ: ナレッジ集約パターン",
+      section: "マルチリポジトリ",
+      mean: "最もナレッジが濃いリポジトリ（設計書・規約・エラー対策の蓄積がある方）で Claude Code を起動し、`--add-dir` で作業対象のリポジトリを追加する。こうすると片方で蓄積したノウハウがもう片方の作業に自然に反映される。コードだけでなく戦略文書・デザイン文書なども AI の視界に入る。",
+    },
+    {
+      word: "マルチリポ: 恒久設定",
+      section: "マルチリポジトリ",
+      mean: "`.claude/settings.json` の `additionalDirectories` に書けば、毎回 `--add-dir` を付けなくて済む。追加ディレクトリの CLAUDE.md も読み込みたい場合は環境変数を設定する。",
+      code: "// .claude/settings.json\n{\n  \"additionalDirectories\": [\"../backend-api\", \"../shared-types\"]\n}\n\n// CLAUDE.md も読む場合（~/.zshrc 等に追加）\nexport CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1",
+      codeLang: "json",
+    },
+    {
+      word: "マルチリポ: OSS + プライベートナレッジ",
+      section: "マルチリポジトリ",
+      mean: "公開リポジトリには書けない内部の判断基準や設計思想を、プライベートなナレッジリポジトリに蓄積。`--add-dir` で参照しながら公開リポを編集できる。他者がメンテするリポにも外側から読み書き対応可能。",
+    },
     // ── Cowork との違い ──
     {
       word: "==Cowork（コワーク）とは==",

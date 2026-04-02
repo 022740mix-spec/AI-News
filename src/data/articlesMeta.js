@@ -3553,6 +3553,28 @@ export const ARTICLES_META = [
     }
   },
   {
+    "id": "claude-code-cross-repo-skills-add-dir-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code の --add-dir × Skills で擬似モノレポ — 兄弟リポジトリのナレッジを横断活用するワークフロー",
+    "excerpt": "Claude Code の --add-dir フラグで追加したディレクトリの .claude/skills/ が自動読み込みされる仕組みを活用し、複数リポジトリをモノレポのように横断操作するワークフローが注目を集めている。コードだけでなく戦略文書やデザイン文書も AI の視界に入れることで、ナレッジが指数関数的に効いてくる。",
+    "date": "2026-04-02",
+    "newsDate": "2026-04-02",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "スキル",
+      "マルチリポジトリ",
+      "開発体験"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic Claude Code"
+    }
+  },
+  {
     "id": "timesfm-mirofish-business-forecasting-2026",
     "type": "feature",
     "category": "model",

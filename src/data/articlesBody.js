@@ -5717,6 +5717,48 @@ const ARTICLES_BODY = {
       }
     ]
   },
+  "claude-code-cross-repo-skills-add-dir-2026": {
+    "body": [
+      "Claude Code の `--add-dir` フラグと Skills の組み合わせによる**擬似モノレポ**ワークフローが、開発者コミュニティで注目を集めている。`claude --add-dir ../other-repo` で兄弟リポジトリを追加すると、そのリポジトリ内のファイルへの読み書きが可能になるだけでなく、`.claude/skills/` に配置された SKILL.md が自動的に読み込まれる。これにより、モノレポに統合できない事情があっても、まるでモノレポであるかのように複数リポジトリを横断して作業できる。",
+      "この手法の本質は**ナレッジの集約**にある。最もナレッジが濃いリポジトリ（コーディング規約、アーキテクチャ設計書、エラー対策の蓄積など）を起点に Claude Code を起動し、`--add-dir` で作業対象のリポジトリを追加する。すると Claude は両方のコンテキストを持った状態でタスクを遂行でき、片方のリポジトリで蓄積したエラー対策や機能改善のノウハウが、もう片方のリポジトリの作業にも自然に反映される。コードだけでなく、戦略文書・デザイン文書・マーケティングコピーなど、あらゆるドキュメントが AI の視界に入る点が強力だ。",
+      "特にオープンソースプロジェクトでの活用に価値がある。公開リポジトリには内部の思考ロジックや意思決定の背景を書けないが、プライベートなナレッジリポジトリに判断基準や設計思想を蓄積しておけば、`--add-dir` 経由でその知見を参照しながら公開リポジトリを編集できる。他者がメンテナンスするリポジトリに対しても、外側から読み書き両方に対応できる柔軟性がある。",
+      "技術的な仕組みとしては、`--add-dir` はファイルアクセス権限を付与するが、設定ファイルの探索は限定的だ。追加ディレクトリから自動読み込みされるのは `.claude/skills/` のみで、`.claude/agents/`・`.claude/commands/`・Hooks などは読み込まれない。CLAUDE.md も環境変数 `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1` を設定しない限り読み込まれない。セッション中に `/add-dir パス` で動的に追加することも可能で、`.claude/settings.json` の `additionalDirectories` に記述すれば恒久的に設定できる。",
+      "Claude Code リードの Boris Cherny 氏も「複数リポジトリで作業する場合、片方で Claude を起動し --add-dir でもう片方を見せるのが自分の通常のワークフロー」と述べている。ナレッジが一か所に濃縮されるほどショートカットが指数関数的に効いてくるこの手法は、マルチリポジトリ環境で AI コーディングを活用するすべての開発者にとって知っておくべきテクニックだ。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 4,
+        "caption": "--add-dir で読み込まれるもの・読み込まれないもの",
+        "headers": ["項目", "自動読み込み", "備考"],
+        "rows": [
+          ["ファイルの読み書き", "○", "権限モードに従う"],
+          [".claude/skills/", "○", "セッション中の編集もリアルタイム反映"],
+          ["CLAUDE.md", "×（設定で○）", "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1 で有効化"],
+          [".claude/agents/", "×", "ユーザーレベル（~/.claude/）に配置で対応"],
+          [".claude/commands/", "×", "同上"],
+          ["Hooks", "×", "プロジェクトの settings.json で定義"],
+          [".claude/rules/", "×", "シンボリックリンクで共有可能"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Extend Claude with Skills - Claude Code Docs",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/skills"
+      },
+      {
+        "title": "Boris Cherny - Use --add-dir to give Claude access to more folders",
+        "site": "Threads",
+        "url": "https://www.threads.com/@boris_cherny/post/DWfjvGZFH8b"
+      },
+      {
+        "title": "Claude Code CLI Reference",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/cli-reference"
+      }
+    ]
+  },
   "timesfm-mirofish-business-forecasting-2026": {
     "body": [
       "「来月の売上はいくらか」「この政策変更は自社にどう影響するか」——経営判断に不可欠なこれらの問いに、AI が2つのまったく異なるアプローチで答えようとしている。Google Research の時系列基盤モデル **TimesFM 2.5** と、20歳の中国人学生が10日で開発しGitHub スター4.8万超を記録したマルチエージェント予測エンジン **MiroFish** だ。",
