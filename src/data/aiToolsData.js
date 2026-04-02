@@ -2977,6 +2977,9 @@ export const ARTICLES = [
       "エディタ",
       "買収",
       "業界動向"
+    ],
+    "primarySources": [
+      { "title": "Anysphere acquires Windsurf (Codeium)", "site": "The Verge", "url": "https://www.theverge.com/news/627633/anysphere-cursor-acquires-windsurf-codeium" }
     ]
   },
   {
@@ -6096,6 +6099,7 @@ export const ARTICLES = [
       "さらにオープンソースへの波及も懸念される。開発者が AI エージェントに作業を委任するにつれ、ドキュメント閲覧やバグ報告が激減し、メンテナーの負荷が増大。Black Duck の2026年 OSSRA レポートでは、調査対象アプリの93%に2年以上開発活動のない OSS コンポーネントが含まれていた。バイブコーディングは開発の民主化を加速させる一方で、エコシステム全体の持続可能性に新たなリスクをもたらしている。"
     ],
     "date": "2026-04-02",
+    "newsDate": "2026-04-01",
     "author": "AI News 編集部",
     "readTime": "5分",
     "tags": ["バイブコーディング", "ハーバード大学", "セキュリティ", "オープンソース", "AI コーディング", "教育"],
@@ -6122,6 +6126,7 @@ export const ARTICLES = [
       "ただし、ChatGPT との差は依然大きい。OpenAI は月間売上20億ドル、週間アクティブユーザー9億人超、有料会員5,000万人超を誇る。Claude は急成長中とはいえ、規模ではまだ追いかける立場だ。それでも AI アシスタント市場が OpenAI・Google・Anthropic の「三つ巴」になりつつある兆候は明確で、2026年後半の競争がさらに激化する見通しだ。"
     ],
     "date": "2026-04-02",
+    "newsDate": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "4分",
     "tags": ["Anthropic", "Claude", "サブスクリプション", "Super Bowl", "Claude Code", "OpenAI", "DoD"],
