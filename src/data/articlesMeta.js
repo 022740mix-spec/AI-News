@@ -5,6 +5,30 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "rf-detr-aerial-drone-detection-dual-use-2026",
+    "type": "feature",
+    "category": "data",
+    "title": "RF-DETR × ドローン映像で森林調査もスマートシティも — AI 物体検出の「民生と軍事」2つの顔",
+    "excerpt": "Roboflow の RF-DETR をドローン映像にファインチューンし、樹木の自動カウントや交差点の交通解析を実現するデモが話題に。同じ技術は Palantir の軍事 AI プラットフォームにも通じる。AI 物体検出のデュアルユース問題を、最新の米国防総省 × Anthropic 紛争とともに考える。",
+    "date": "2026-04-02",
+    "newsDate": "2026-04-02",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Roboflow",
+      "物体検出",
+      "ドローン",
+      "Palantir",
+      "Anthropic",
+      "軍事AI",
+      "オープンソース"
+    ],
+    "coverImage": {
+      "src": "logos/roboflow.svg",
+      "alt": "RF-DETR Aerial Detection"
+    }
+  },
+  {
     "id": "qwen-3-6-plus-agentic-coding-multimodal-2026",
     "type": "news",
     "category": "model",

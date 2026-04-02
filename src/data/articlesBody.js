@@ -4,6 +4,65 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "rf-detr-aerial-drone-detection-dual-use-2026": {
+    "body": [
+      "Roboflow のエンジニア Piotr Skalski（@skalskip92）が、同社の物体検出モデル **RF-DETR** をドローン・航空写真にファインチューンした2つのデモを公開し、X で6.4万表示・1,000超のいいねを集めている。1つは森林の樹木を1本ずつ自動検出するもの、もう1つは交差点の車両・歩行者をリアルタイム追跡するもの。どちらも「AI のコーディング支援」ではなく、**実世界の課題を AI で解決する**具体例として興味深い。",
+      "森林調査のデモでは、**NeonTreeEvaluation** という米国立生態観測ネットワーク（NEON）の航空 RGB 画像データセットを使い、RF-DETR をファインチューンしている。上空から撮影した森林画像に対して個々の樹木を検出・カウントし、番号付きのバウンディングボックスを描画する。従来、森林の健全性調査や樹木数の把握には現地でのフィールドサーベイが必要だったが、この手法ならドローン映像を AI に通すだけで、**森林の健全性・樹木数・土地利用の変化**を把握できる。ウィーン市が保有する48万本の樹木登録データとの照合を提案するコメントも寄せられており、都市緑地管理への応用も見据えた反応だ。",
+      "交通解析のデモでは、ドローン撮影の都市データセット **VisDrone** で RF-DETR をファインチューンし、マルチオブジェクトトラッカー **OC-SORT** と組み合わせている。交差点をドローンで撮影した映像内の車両・歩行者を検出し、フレーム間で同一の対象を追跡する。Skalski 氏はこれを「スマートシティのデモ」と位置づけており、交通量の計測、渋滞パターンの分析、歩行者の安全分析などへの応用が考えられる。",
+      "RF-DETR は Roboflow が開発し ICLR 2026 で発表された物体検出モデルで、DINOv2 ビジョントランスフォーマーをバックボーンに採用。COCO ベンチマークでリアルタイムモデルとして初の 60+ mAP を達成し、YOLO を凌駕する精度と速度を両立している。特筆すべきは**ファインチューニングのしやすさ**で、Skalski 氏のデモでは「たった200枚の画像・20エポックの学習で1フレームあたり200〜250検出」を達成している。DINOv2 の高いドメイン適応力により、航空写真・医療画像・工業検品など、COCO で学習したモデルが苦手とする専門領域でも少ないデータで高精度に適応できる。",
+      "ただし、このデモを見て気づく人もいるだろう——**同じ技術は軍事にも直結する**。上空からの映像で物体を検出・追跡し、座標を紐づける。これはまさに偵察・監視・標的特定の基盤技術だ。実際、米軍事テック企業 **Palantir** は Maven プラットフォームに Anthropic の **Claude** を統合し、衛星・ドローン映像の分析と標的優先順位付けに活用してきた。2026年2月のイラン攻撃では、Claude-Maven システムが最初の24時間で約1,000の標的を特定したと報じられている。",
+      "この軍事利用をめぐって、Anthropic と米国防総省の間で大きな対立が起きた。国防総省は AI 企業に「すべての合法的目的」での利用を求めたが、Anthropic は**大規模な国民監視と完全自律型兵器**の2点を拒否。トランプ政権は Anthropic をブラックリストに載せ、サプライチェーンリスクに指定したが、カリフォルニア州の裁判所がこれを一時差し止めた。皮肉なことに、ブラックリスト指定後もイラン作戦で Claude は使い続けられた——一部の機密ネットワークでは Claude が唯一のフロンティア AI だったためだ。",
+      "RF-DETR のような物体検出モデルは Apache 2.0 ライセンスで誰でも利用できる。森林調査に使えば環境保全に貢献し、交通解析に使えばスマートシティの基盤になる。しかし軍事転用もまた「合法的用途」のひとつだ。AI の能力が高まるほど、同じ技術の**民生利用と軍事利用の境界**は曖昧になる。Anthropic が「どこに線を引くか」で国家権力と対峙した事実は、AI 開発企業だけでなく、オープンソースモデルを公開するすべての開発者にとって避けられない問いを突きつけている。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "RF-DETR の主な特徴",
+        "headers": ["項目", "詳細"],
+        "rows": [
+          ["開発元", "Roboflow（ICLR 2026 発表）"],
+          ["バックボーン", "DINOv2 ビジョントランスフォーマー"],
+          ["COCO mAP", "60+ mAP（リアルタイムモデル初）"],
+          ["モデルサイズ", "Nano / Small / Medium / Large / XL / 2XL"],
+          ["NMS不要", "推論時に Non-Maximum Suppression が不要（YOLO より高速）"],
+          ["ドメイン適応", "RF100-VL で 86.7 mAP（医療・工業・航空など）"],
+          ["ライセンス", "Apache 2.0（Plus モデルは PML 1.0）"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "@skalskip92 - geo RF-DETR demo",
+        "site": "X",
+        "url": "https://x.com/skalskip92"
+      },
+      {
+        "title": "roboflow/rf-detr",
+        "site": "GitHub",
+        "url": "https://github.com/roboflow/rf-detr"
+      },
+      {
+        "title": "AI for Aerial Imagery: RF-DETR Delivers Best-in-Class Speed",
+        "site": "Roboflow Blog",
+        "url": "https://blog.roboflow.com/ai-for-aerial-imagery/"
+      },
+      {
+        "title": "roboflow/trackers",
+        "site": "GitHub",
+        "url": "https://github.com/roboflow/trackers"
+      },
+      {
+        "title": "Pentagon Used Anthropic's Claude AI and Palantir Maven to Identify 1,000 Targets in Iran Strikes",
+        "site": "The Defense News",
+        "url": "https://www.thedefensenews.com/news-details/Pentagon-Used-Anthropics-Claude-AI-and-Palantir-Maven-to-Identify-1000-Targets-in-Iran-Strikes/"
+      },
+      {
+        "title": "Defense tech companies are dropping Claude after Pentagon's Anthropic blacklist",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/03/04/pentagon-blacklist-anthropic-defense-tech-claude.html"
+      }
+    ]
+  },
   "qwen-3-6-plus-agentic-coding-multimodal-2026": {
     "body": [
       "Alibaba は2026年4月2日、大規模言語モデルの最新フラグシップ **Qwen3.6-Plus** を公開した。「受動的に質問に答える AI」から「自律的にタスクを遂行するエージェント」への転換を明確に打ち出しており、エージェント型コーディングとマルチモーダル視覚推論の両面でフロンティアモデルに匹敵するスコアを記録している。プレビュー期間中は無料で利用可能。",
