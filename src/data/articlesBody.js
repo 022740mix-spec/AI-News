@@ -4,6 +4,42 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "claude-computer-use-windows-launch-2026": {
+    "body": [
+      "Anthropic は2026年4月2日、**Claude Computer Use** の **Windows 対応**を発表した。Claude Cowork と Claude Code Desktop の両方で利用可能で、Windows 上でアプリの起動、ブラウザ操作、スプレッドシートの入力、ファイル管理など、マルチステップのデスクトップ操作を AI が自律的に実行できる。3月23日の macOS 対応から約10日で、デスクトップ PC 市場の約70%をカバーした。",
+      "Computer Use は Claude がユーザーの画面をスクリーンショットで認識し、マウスクリック・キーボード入力・スクロールを実行する仕組みだ。ユーザーが「この Excel を整理して」「ブラウザでこのフォームを入力して」と指示すると、Claude が画面を見ながら操作を進める。新しいアプリにアクセスする際は必ず許可を求める設計で、勝手にアプリを操作し始めることはない。",
+      "利用条件は **Pro（$20/月）** または **Max（$100〜$200/月）** プランへの加入。Team・Enterprise プランは現時点で対象外となっている。Windows では最新版の Claude Desktop アプリが必要で、PC がスリープ状態でないこと、Claude Desktop が起動していることが前提条件だ。特別なセットアップは不要で、アプリをインストールすればそのまま使える。",
+      "macOS 版は3月23日にリサーチプレビューとして公開され、OSWorld ベンチマーク（AI のデスクトップ操作能力を測定）で 72.5% のスコアを記録している。2024年末の初期リリース時は15%未満だったため、約1年半で大幅に性能が向上した。Anthropic は2月に Computer Use の専門企業 **Vercept** を買収しており、この分野への投資を加速している。",
+      "注目すべきは **Dispatch** との組み合わせだ。スマートフォンの Claude アプリから QR コードで PC とペアリングすると、外出先からスマホでタスクを指示し、自宅や職場の PC 上で Computer Use が作業を実行する。「朝の通勤中にスマホから指示を出し、オフィスの PC で作業が完了している」というワークフローが現実になる。ただし PC がオンライン状態であることが条件で、スリープやシャットダウンすると接続が切れる。",
+      "Anthropic は「Claude はミスをすることがあり、セーフガードは継続的に改善しているが脅威は常に進化している」と注意喚起している。機密性の高い金融データ、医療情報、個人データの近くでは Computer Use を使わないよう推奨されている。また、研究プレビューの段階であり、本番業務での利用は慎重に判断すべきだ。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "Computer Use の利用条件",
+        "headers": ["項目", "内容"],
+        "rows": [
+          ["対応OS", "macOS（3月23日〜）・Windows（4月2日〜）"],
+          ["対応プラン", "Pro（$20/月）/ Max（$100〜$200/月）"],
+          ["非対応プラン", "Team / Enterprise（現時点）"],
+          ["前提条件", "最新版 Claude Desktop、PC起動中、アプリ起動中"],
+          ["セットアップ", "不要（アプリインストールのみ）"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "@claudeai — Computer use announcement",
+        "site": "X (Twitter)",
+        "url": "https://x.com/claudeai/status/2039836891508261106"
+      },
+      {
+        "title": "Let Claude use your computer in Cowork",
+        "site": "Claude Help Center",
+        "url": "https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork"
+      }
+    ]
+  },
   "gemini-api-billing-tier-spend-cap-2026": {
     "body": [
       "Google は2026年4月1日から、Gemini API の全有料アカウントに対して**課金ティア単位の月額支出上限**を強制適用した。これまでもプロジェクト単位で任意の支出上限を設定できたが、今回のアカウントレベル上限は**無効化できない**。上限に達した時点で、そのアカウントに紐づく全プロジェクトの API リクエストが次の請求サイクルまで停止される。",

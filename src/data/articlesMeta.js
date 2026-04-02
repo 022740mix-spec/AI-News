@@ -5,6 +5,28 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "claude-computer-use-windows-launch-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude Computer Use が Windows に対応 — Cowork・Claude Code Desktop でデスクトップ操作が macOS/Windows 両対応に",
+    "excerpt": "Anthropic が Claude の Computer Use 機能を Windows に拡大。Claude Cowork と Claude Code Desktop の両方で、Windows 上のアプリ操作・ブラウザ操作・スプレッドシート入力などをAIが自律実行できるようになった。Pro / Max プラン限定。3月23日の macOS 対応から約10日でデスクトップPC市場の約70%をカバー。",
+    "date": "2026-04-03",
+    "newsDate": "2026-04-02",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Computer Use",
+      "Windows",
+      "エージェント"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "Claude Computer Use Windows 対応"
+    }
+  },
+  {
     "id": "gemini-api-billing-tier-spend-cap-2026",
     "type": "news",
     "category": "product",
