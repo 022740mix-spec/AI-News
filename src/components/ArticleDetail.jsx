@@ -158,14 +158,70 @@ function ArticleTableBlock({ table, keyPrefix }) {
   );
 }
 
+/** X (Twitter) 埋め込み */
+function XEmbed({ url, caption }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    if (!ref.current) return;
+    const script = document.createElement("script");
+    script.src = "https://platform.twitter.com/widgets.js";
+    script.async = true;
+    script.charset = "utf-8";
+    ref.current.appendChild(script);
+    return () => { script.remove(); };
+  }, [url]);
+  // X の URL からツイート ID を抽出
+  const tweetId = url.match(/status\/(\d+)/)?.[1];
+  return (
+    <figure className="article-embed article-embed--x">
+      <div ref={ref}>
+        <blockquote className="twitter-tweet" data-dnt="true" data-theme="dark">
+          <a href={url}>{url}</a>
+        </blockquote>
+      </div>
+      {caption ? <figcaption className="article-figure__caption">{caption}</figcaption> : null}
+    </figure>
+  );
+}
+
+/** YouTube 埋め込み */
+function YouTubeEmbed({ url, caption }) {
+  // youtube.com/watch?v=ID, youtu.be/ID, youtube.com/embed/ID に対応
+  const videoId = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]+)/)?.[1];
+  if (!videoId) return null;
+  return (
+    <figure className="article-embed article-embed--youtube">
+      <div className="article-embed__ratio">
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+          title="YouTube video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          loading="lazy"
+        />
+      </div>
+      {caption ? <figcaption className="article-figure__caption">{caption}</figcaption> : null}
+    </figure>
+  );
+}
+
+/** 埋め込みの振り分け */
+function ArticleEmbed({ embed }) {
+  if (embed.type === "x") return <XEmbed url={embed.url} caption={embed.caption} />;
+  if (embed.type === "youtube") return <YouTubeEmbed url={embed.url} caption={embed.caption} />;
+  return null;
+}
+
 /** トップ：WEBデザインギャラリー風「本日の1本」 */
 function ArticleProse({ article }) {
   const figures = article.figures ?? [];
   const tables = article.tables ?? [];
   const charts = article.charts ?? [];
+  const embeds = article.embeds ?? [];
   const figuresAfter = (i) => figures.filter((f) => f.afterParagraph === i);
   const tablesAfter = (i) => tables.filter((t) => t.afterParagraph === i);
   const chartsAfter = (i) => charts.filter((c) => c.afterParagraph === i);
+  const embedsAfter = (i) => embeds.filter((e) => e.afterParagraph === i);
   return (
     <div className="prose prose--article">
       {article.body.map((p, i) => {
@@ -198,6 +254,9 @@ function ArticleProse({ article }) {
           ))}
           {chartsAfter(i).map((c, ci) => (
             <VerticalBarChart key={`chart-${i}-${ci}`} chart={c} />
+          ))}
+          {embedsAfter(i).map((e, ei) => (
+            <ArticleEmbed key={`embed-${i}-${ei}`} embed={e} />
           ))}
         </Fragment>
       );

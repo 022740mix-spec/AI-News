@@ -5751,6 +5751,14 @@ const ARTICLES_BODY = {
       "Supabase はこれとは別に、データベースの操作（テーブル作成・データ取得・設定変更など）を AI から直接行える **MCP サーバー**も提供している。今回の SSH サービスは「マニュアルを読む」専用、MCP サーバーは「実際にデータベースを操作する」専用と、**調べものと実作業で役割を分けている**。",
       "この取り組みが示唆するのは、**マニュアルの読者が人間から AI に変わりつつある**という現実だ。Supabase に限らず、Stripe や AWS など多くのサービスが Web サイトでマニュアルを公開しているが、AI エージェントにとって Web ページは読みにくい形式だ。もし各社が supabase.sh のように AI が直接アクセスできる形でマニュアルを提供し始めれば、AI エージェントがあらゆるサービスの最新マニュアルを瞬時に参照しながら開発を進められるようになる。Supabase の試みは「AI ファースト」なマニュアル公開の先駆けとして注目される。"
     ],
+    "embeds": [
+      {
+        "type": "x",
+        "url": "https://x.com/supabase/status/1907182090484281620",
+        "afterParagraph": 0,
+        "caption": "Supabase 公式による supabase.sh の発表"
+      }
+    ],
     "primarySources": [
       {
         "title": "@supabase - supabase.sh announcement",
