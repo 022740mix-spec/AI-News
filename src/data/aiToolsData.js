@@ -6141,6 +6141,32 @@ export const ARTICLES = [
       { "title": "Claude Paid Subscriptions More Than Double as Consumer Momentum Builds", "site": "Unite.AI", "url": "https://www.unite.ai/claude-paid-subscriptions-more-than-double-as-consumer-momentum-builds/" },
       { "title": "Anthropic Says Claude Paid Subscriptions Have More Than Doubled in 2026 Amid DoD Feud and Super Bowl Ads", "site": "Shopifreaks", "url": "https://www.shopifreaks.com/anthropic-says-claude-paid-subscriptions-have-more-than-doubled-in-2026-amid-dod-feud-and-super-bowl-ads/" }
     ]
+  },
+  {
+    "id": "openai-122b-funding-852b-valuation-2026",
+    "type": "news",
+    "coverImage": { "src": "logos/openai.svg", "alt": "OpenAI" },
+    "category": "product",
+    "title": "OpenAI が史上最大の$122B（約18兆円）を調達、評価額$852B — Amazon・Nvidia・SoftBank が巨額出資、AI スーパーアプリ構想へ",
+    "excerpt": "OpenAI が$122Bの資金調達を完了し、評価額$852Bに到達。Amazon $50B、Nvidia・SoftBank 各$30B が参加。月間売上$2B・週間9億ユーザーを背景に、ChatGPT・Codex・エージェントを統合する「AI スーパーアプリ」構想と年内 IPO を視野に入れる。",
+    "body": [
+      "OpenAI は2026年3月31日、$122B（約18兆円）の資金調達完了を発表した。ポストマネー評価額は$852B（約128兆円）に達し、未上場企業として史上最大の調達額を更新した。シリコンバレー史上、そしてベンチャーキャピタル史上最大のラウンドだ。",
+      "出資の内訳は、Amazon が$50B（うち$35B は IPO または AGI 達成を条件とする条件付き出資）、Nvidia と SoftBank がそれぞれ$30B。既存投資家の Microsoft も参加し、Andreessen Horowitz、D.E. Shaw Ventures、MGX、TPG、T. Rowe Price が共同リードを務めた。さらに史上初めて、銀行チャネルを通じた個人投資家から$3B 以上を調達しており、「未上場だが事実上パブリック」な資金構造が鮮明になっている。",
+      "調達の背景には急成長する事業基盤がある。月間売上は$2B（年間換算$24B）に到達し、ChatGPT の週間アクティブユーザーは9億人超、有料会員は5,000万人を突破。エンタープライズ事業が売上の40%以上を占め、2026年末までにコンシューマーと同等の比率に達する見通しだ。OpenAI は「インターネットとモバイルの時代を定義した企業の4倍のペースで成長している」と述べている。",
+      "資金の用途として OpenAI が掲げるのは、計算インフラの拡張、マルチクラウド・チップパートナーシップ、そして **AI スーパーアプリ**の開発だ。ChatGPT・Codex・エージェント機能を単一のインターフェースに統合し、アプリケーションやワークフローを横断して動作するプラットフォームを目指す。コーディングだけでなく、調査・分析・タスク実行までを一元化する構想であり、同日に発表された Codex プラグインマーケットプレイスはその布石とみられる。",
+      "年内の IPO も強く意識されている。Bloomberg によれば早ければ2026年後半の上場を検討しており、今回のラウンドはその前段としての位置付けだ。競合の Anthropic も$19B 規模の年間売上に成長し IPO を検討中と報じられており、2026年は AI 企業の大型上場が相次ぐ年になる可能性がある。$852B という評価額は Apple・Microsoft・Nvidia に次ぐ水準であり、上場時にどこまで市場が織り込むかが注目される。"
+    ],
+    "date": "2026-04-01",
+    "newsDate": "2026-03-31",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["OpenAI", "資金調達", "Amazon", "Nvidia", "SoftBank", "IPO", "ChatGPT", "スーパーアプリ"],
+    "primarySources": [
+      { "title": "OpenAI Valued at $852 Billion After Completing $122 Billion Round", "site": "Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-03-31/openai-valued-at-852-billion-after-completing-122-billion-round" },
+      { "title": "OpenAI, not yet public, raises $3B from retail investors in monster $122B fund raise", "site": "TechCrunch", "url": "https://techcrunch.com/2026/03/31/openai-not-yet-public-raises-3b-from-retail-investors-in-monster-122b-fund-raise/" },
+      { "title": "OpenAI raises a record $122 billion as revenue crosses $2 billion per month", "site": "CoinDesk", "url": "https://www.coindesk.com/tech/2026/04/01/openai-raises-a-record-usd122-billion-at-as-revenue-crosses-usd2-billion-per-month" },
+      { "title": "OpenAI Raises $122B to Build Global AI Infrastructure, 'Superapp'", "site": "The AI Insider", "url": "https://theaiinsider.tech/2026/04/01/openai-raises-122b-in-funding-round-with-853b-valuation-to-build-global-ai-infrasture-superapp/" }
+    ]
   }
 ];
 
