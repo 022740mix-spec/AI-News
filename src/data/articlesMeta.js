@@ -3662,6 +3662,29 @@ export const ARTICLES_META = [
     "pinned": true
   },
   {
+    "id": "drawio-mcp-diagram-streaming-claude-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "draw.io が MCP サーバーを公開 — Claude の会話内でダイアグラムがリアルタイム生成される時代に",
+    "excerpt": "作図ツール draw.io が公式 MCP サーバーを公開。Claude にプロンプトを送るだけで、フローチャートやシーケンス図が会話画面内にシェイプ単位でストリーミング生成される。インストール不要のホスト版、ローカル版、CLI 版など4つの導入方法を提供。",
+    "date": "2026-04-02",
+    "newsDate": "2026-04-02",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "draw.io",
+      "MCP",
+      "Claude",
+      "ダイアグラム",
+      "開発ツール",
+      "オープンソース"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "draw.io MCP"
+    }
+  },
+  {
     "id": "openai-122b-funding-852b-valuation-2026",
     "type": "news",
     "category": "product",

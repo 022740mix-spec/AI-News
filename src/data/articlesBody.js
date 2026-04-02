@@ -5928,6 +5928,55 @@ const ARTICLES_BODY = {
         "url": "https://x.com/bcherny"
       }
     ]
+  },
+  "drawio-mcp-diagram-streaming-claude-2026": {
+    "body": [
+      "無料の作図ツールとして広く使われている draw.io が2026年4月2日、公式の MCP（Model Context Protocol）サーバーを公開した。これにより、Claude の会話画面内でフローチャートやシーケンス図などのダイアグラムが**リアルタイムにストリーミング生成**されるようになった。X での公式投稿は68万表示・3,000超のいいねを集め、大きな反響を呼んでいる。",
+      "MCP とは、AI アシスタントが外部ツールと連携するための標準プロトコル。draw.io の MCP サーバーを接続すると、Claude に「ランプ修理のフローチャートを作って」と指示するだけで、`create_diagram` ツールが呼び出され、シェイプ（図形）ひとつひとつ、エッジ（接続線）ひとつひとつが順番に描画されていく。完成した図はインタラクティブに操作でき、ズーム・パン・レイヤー切替・全画面表示が可能だ。別タブで draw.io を開く必要がなく、会話の流れの中で図を確認・修正できる。",
+      "導入方法は用途に応じて**4つ**用意されている。最も手軽なのは **MCP App Server**（ホスト版）で、`https://mcp.draw.io/mcp` をリモート MCP サーバーとして追加するだけ。インストール不要で、Claude.ai・VS Code・MCP Apps 対応のあらゆるホストで即座に使える。会話内にインタラクティブな iframe としてダイアグラムが埋め込まれるのが特徴だ。",
+      "ローカルで使いたい場合は **MCP Tool Server** が適している。`npx @drawio/mcp` で起動でき、draw.io のネイティブ XML 形式に加えて **CSV**（表データから組織図やフローチャートを自動生成）と **Mermaid.js**（テキストベースの図記法）にも対応する。生成された図は draw.io エディタで直接開かれ、手動での微調整も自由にできる。Claude Desktop や他の MCP クライアントとの連携に最適だ。",
+      "Claude Code ユーザー向けには **Skill + CLI** 方式もある。MCP のセットアップなしで、スキルファイルをコピーするだけで `.drawio` ファイルを生成し、PNG・SVG・PDF へのエクスポートも可能。エクスポートファイルには XML が埋め込まれるため、draw.io で開けば引き続き編集できる。最もシンプルな **Project Instructions** 方式は、Claude Projects にプロンプトをペーストするだけで動作し、Python のコード実行で draw.io の URL を生成する。",
+      "技術的には、MCP App Server は draw.io の公式ビューアを iframe 内で動作させる仕組みだ。MCP Apps SDK（約319KB）と pako 圧縮ライブラリ（約28KB）をインライン化した自己完結型 HTML を生成し、サンドボックス環境内で安全にレンダリングする。Node.js での起動に加え、Cloudflare Workers へのデプロイにも対応しており、チームでの共有も容易だ。",
+      "draw.io は JGraph 社が開発するオープンソースの作図ツールで、GitHub リポジトリは Apache 2.0 ライセンス。Confluence や Jira との統合プラグインでも知られ、すでに多くの開発チームが日常的に使っている。そこに MCP 連携が加わったことで、「AI に図を描かせて、そのまま会話の中で確認・修正し、必要なら draw.io エディタで仕上げる」という一気通貫のワークフローが実現した。ダイアグラム作成は AI が最も得意とする領域のひとつだが、これまではテキストで XML や Mermaid を出力するだけで、実際の図を見るには別ツールへのコピペが必要だった。その最後のギャップを MCP が埋めた形だ。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 4,
+        "caption": "draw.io MCP の4つの導入方法",
+        "headers": ["方式", "セットアップ", "対応フォーマット", "特徴"],
+        "rows": [
+          ["MCP App Server（ホスト版）", "リモートMCPサーバーURLを追加するだけ", "XML", "インストール不要・会話内にインタラクティブ表示"],
+          ["MCP Tool Server", "npx @drawio/mcp", "XML, CSV, Mermaid", "draw.ioエディタで直接編集可能"],
+          ["Skill + CLI", "スキルファイルをコピー", "XML", "MCP不要・PNG/SVG/PDFエクスポート対応"],
+          ["Project Instructions", "プロンプトをペースト", "XML, CSV, Mermaid", "完全インストール不要・Python実行で動作"]
+        ]
+      }
+    ],
+    "embeds": [
+      {
+        "type": "x",
+        "afterParagraph": 0,
+        "url": "https://x.com/drawio/status/2039422442339233816",
+        "caption": "draw.io 公式による MCP サーバー公開の告知"
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "@drawio - MCP server announcement",
+        "site": "X",
+        "url": "https://x.com/drawio/status/2039422442339233816"
+      },
+      {
+        "title": "jgraph/drawio-mcp",
+        "site": "GitHub",
+        "url": "https://github.com/jgraph/drawio-mcp"
+      },
+      {
+        "title": "draw.io MCP App Server",
+        "site": "GitHub",
+        "url": "https://github.com/jgraph/drawio-mcp/tree/main/mcp-app-server"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;
