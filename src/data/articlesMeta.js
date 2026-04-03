@@ -5,6 +5,28 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "pika-pikastream-video-chat-skill-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Pika が PikaStream1.0 搭載のビデオチャットスキルを公開 — AIエージェントがビデオ会議に参加し、記憶と個性を維持したまま会話",
+    "excerpt": "Pika Labs がリアルタイム動画生成モデル「PikaStream1.0」を搭載したオープンソースのビデオチャットスキルを公開。AIエージェント（Claude Code 等）に組み込むと、Google Meet にAIアバターが参加し、ワークスペースの文脈を理解した状態でビデオ会話ができる。音声クローン・アバター生成・記憶維持・会議メモ自動生成に対応。料金は $0.50/分。",
+    "date": "2026-04-03",
+    "newsDate": "2026-04-02",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Pika",
+      "動画生成AI",
+      "エージェント",
+      "オープンソース",
+      "ビデオ会議"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "Pika PikaStream1.0 ビデオチャットスキル"
+    }
+  },
+  {
     "id": "microsoft-mai-transcribe-voice-image-foundry-2026",
     "type": "news",
     "category": "model",
