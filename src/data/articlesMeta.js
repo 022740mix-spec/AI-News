@@ -5,6 +5,28 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "claude-microsoft-365-connector-all-plans-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude の Microsoft 365 コネクターが全プラン開放 — Outlook・OneDrive・SharePoint・Teams を会話に直接接続",
+    "excerpt": "Anthropic が Claude の Microsoft 365 コネクターを Free・Pro・Max を含む全プランに開放。これまで Team・Enterprise 限定だった機能が誰でも利用可能に。Outlook のメール、OneDrive のファイル、SharePoint のドキュメント、Teams のチャットを Claude の会話内で直接検索・参照できる。読み取り専用で、Microsoft Graph API 経由の委任権限モデルを採用。",
+    "date": "2026-04-04",
+    "newsDate": "2026-04-04",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Microsoft",
+      "Microsoft 365",
+      "エンタープライズ"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Claude Microsoft 365 コネクター全プラン開放"
+    }
+  },
+  {
     "id": "pika-pikastream-video-chat-skill-2026",
     "type": "news",
     "category": "product",

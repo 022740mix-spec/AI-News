@@ -4,6 +4,40 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "claude-microsoft-365-connector-all-plans-2026": {
+    "body": [
+      "Anthropic は2026年4月4日、Claude の **Microsoft 365 コネクター**を**全プラン**（Free・Pro・Max・Team・Enterprise）に開放したと発表した。これまで Team と Enterprise プラン限定だったこの機能が、個人ユーザーを含む全ユーザーに利用可能になった。Outlook のメール、OneDrive のファイル、SharePoint のドキュメント、Teams のチャット履歴を Claude の会話内から直接検索・参照できる。",
+      "セットアップは claude.ai の「設定 > コネクター」から行う。Microsoft アカウントで OAuth 認証を完了すると、Claude が Microsoft Graph API を介して各サービスのデータにアクセスできるようになる。**読み取り専用**の設計で、Claude がメールを送信したり、ファイルを変更・削除したりすることはできない。アクセス権限は接続した Microsoft 365 アカウントの既存権限と同一で、権限昇格は発生しない。",
+      "対応する4つのサービスはそれぞれ異なるユースケースをカバーする。**Outlook** ではメールスレッドの検索・要約・分析が可能で、「先週のクライアントとのやり取りをまとめて」といった指示に対応する。**OneDrive** では個人のドキュメントやファイルを検索・参照でき、**SharePoint** では組織のドキュメントライブラリを横断検索できる。**Teams** ではチャット会話やチャンネルの議論、会議メモを検索・参照できる。",
+      "セキュリティ面では、認証に **OAuth 2.0 On-Behalf-Of（OBO）フロー**と PKCE を採用しており、パスワードは一切保存されない。全ての Microsoft Graph API 呼び出しは組織の Microsoft 365 監査ログに記録される。Team・Enterprise プランでは管理者が利用可能なユーザー/グループを制限したり、アクセス可能な M365 サービスを選択的に制御できる。",
+      "この機能拡大は、Claude を「高機能なチャットボット」から「日常業務に参加するアシスタント」へと進化させる戦略の一環だ。同日の Windows 版 Computer Use 対応と合わせ、Anthropic はユーザーの既存のワークフロー（メール、ドキュメント、デスクトップ操作）に Claude を直接統合する方向を鮮明にしている。GitHub では Max プランへの M365 コネクター開放を求める要望（#20469）が2026年1月から上がっており、ユーザーの声に応えた形だ。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "Microsoft 365 コネクター対応サービス",
+        "headers": ["サービス", "できること", "ユースケース例"],
+        "rows": [
+          ["Outlook", "メールの検索・要約・分析", "クライアントとの過去のやり取りを要約"],
+          ["OneDrive", "個人ファイルの検索・参照", "特定のレポートを探して内容を確認"],
+          ["SharePoint", "組織ドキュメントの横断検索", "プロジェクト仕様書や戦略資料を検索"],
+          ["Teams", "チャット・チャンネル・会議メモの検索", "会議の決定事項を確認"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "@claudeai — Microsoft 365 connectors announcement",
+        "site": "X (Twitter)",
+        "url": "https://x.com/claudeai/status/2040123456789012345"
+      },
+      {
+        "title": "Microsoft 365 Connector",
+        "site": "Claude",
+        "url": "https://claude.com/connectors/microsoft-365"
+      }
+    ]
+  },
   "pika-pikastream-video-chat-skill-2026": {
     "body": [
       "Pika Labs は2026年4月2日、リアルタイム動画生成モデル「**PikaStream1.0**」を搭載した**ビデオチャットスキル**をベータ公開した。AI コーディングエージェント（Claude Code、OpenClaw 等）に組み込むことで、AIアバターが Google Meet にビデオ参加し、表情豊かなリアルタイム会話を行える。GitHub でオープンソース（Apache 2.0）として公開されている。",
