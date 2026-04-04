@@ -5,6 +5,28 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "zperiod-3d-periodic-table-high-school-student-2026",
+    "type": "news",
+    "category": "product",
+    "title": "16歳の高校生が3Dインタラクティブ周期表アプリ「Zperiod」を開発 — 3D原子モデル・化学式バランサー・溶解度表をブラウザで無料提供",
+    "excerpt": "16歳の高校生 Philip Zhao が開発した3Dインタラクティブ化学学習アプリ「Zperiod」が X で話題に。全118元素の3D原子モデル、化学反応式の自動バランサー、経験式計算機、溶解度表をブラウザ上で無料提供。19万回表示・4,000いいねを超える反響を集めた。",
+    "date": "2026-04-04",
+    "newsDate": "2026-04-03",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "個人開発",
+      "教育",
+      "Webアプリ",
+      "3D",
+      "オープンソース"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "Zperiod 3Dインタラクティブ周期表"
+    }
+  },
+  {
     "id": "claude-microsoft-365-connector-all-plans-2026",
     "type": "news",
     "category": "product",

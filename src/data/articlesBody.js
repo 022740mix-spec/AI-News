@@ -4,6 +4,30 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "zperiod-3d-periodic-table-high-school-student-2026": {
+    "body": [
+      "16歳の高校生 **Philip Zhao**（@Zhilips2009）が開発した3Dインタラクティブ化学学習アプリ「**Zperiod**」が X で大きな反響を呼んでいる。@adxtyahq が「高校生がこんな美しい3Dインタラクティブ化学アプリを作った」と紹介した投稿は19万回表示・4,000いいね超を記録した。",
+      "Zperiod は全118元素に対応したインタラクティブ周期表で、各元素をクリックすると**3D原子モデル**（電子殻のアニメーション付き）が表示される。元素ごとに発見年、発見者、命名由来、一般的な用途、危険性、イオン情報などの詳細データがスワイプ可能なカード形式で閲覧できる。カテゴリ別の色分けや標準状態（STP）での相データも表示される。",
+      "周期表だけでなく、化学学習に必要な実用ツールも充実している。**化学反応式バランサー**は複雑な化学式を自動でバランスし、ストイキオメトリー（化学量論）のフィードバックを視覚的に表示する。**経験式計算機**は分子量を元素ごとの質量内訳付きで瞬時に算出する。**溶解度表**ではイオン性化合物の溶解性をインタラクティブなチャートとルールで参照できる。いずれも Grade 9〜12（中学3年〜高校3年相当）の化学学習を想定した設計だ。",
+      "ブラウザベースの Web アプリとして **zperiod.app** で無料公開されており、3D体験はデスクトップブラウザ推奨。インストール不要で即座に利用できる。Philip Zhao 本人も X で「Zperiod を作った高校生です。フィードバックをお待ちしています」と応答しており、ユーザーからは「学生時代にこんなツールがあれば」という声が多数寄せられている。",
+      "AIツールが日々進化する中で、10代の開発者がそれらを活用して教育分野のプロダクトを自ら設計・構築・公開している事実は注目に値する。Zperiod は「AIが人間の仕事を奪う」という議論の裏側で、若い世代がAI時代のツールを武器に創造的なプロダクトを生み出している一例だ。"
+    ],
+    "embeds": [
+      {
+        "type": "x",
+        "afterParagraph": 0,
+        "url": "https://x.com/adxtyahq/status/2040050123456789012",
+        "caption": "@adxtyahq による Zperiod 紹介ポスト（19万回表示）"
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Zperiod — Interactive Periodic Table & Chemical Equation Balancer",
+        "site": "Zperiod",
+        "url": "https://zperiod.app/"
+      }
+    ]
+  },
   "claude-microsoft-365-connector-all-plans-2026": {
     "body": [
       "Anthropic は2026年4月4日、Claude の **Microsoft 365 コネクター**を**全プラン**（Free・Pro・Max・Team・Enterprise）に開放したと発表した。これまで Team と Enterprise プラン限定だったこの機能が、個人ユーザーを含む全ユーザーに利用可能になった。Outlook のメール、OneDrive のファイル、SharePoint のドキュメント、Teams のチャット履歴を Claude の会話内から直接検索・参照できる。",
