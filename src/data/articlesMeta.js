@@ -5,6 +5,28 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "anthropic-claude-third-party-harness-extra-usage-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が OpenClaw 等サードパーティ製ハーネスのサブスク枠利用を正式停止 — Extra Usage（従量課金）へ移行、月額相当の一回限りクレジット付与",
+    "excerpt": "Anthropic が4月4日12時（PT）から、OpenClaw をはじめとするサードパーティ製ハーネスでの Claude サブスクリプション枠の利用を正式に停止。今後はサブスクとは別請求の Extra Usage（従量課金）が必要になる。Claude Code・Cowork は引き続き定額枠内。移行措置として月額サブスク料金と同額の一回限りクレジットを付与し、事前購入バンドルで最大30%割引も導入。1月の OAuth 遮断、2月の規約明記に続く最終段階。",
+    "date": "2026-04-04",
+    "newsDate": "2026-04-04",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "OpenClaw",
+      "料金",
+      "エージェント"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic サードパーティハーネス Extra Usage 移行"
+    }
+  },
+  {
     "id": "zperiod-3d-periodic-table-high-school-student-2026",
     "type": "news",
     "category": "product",
