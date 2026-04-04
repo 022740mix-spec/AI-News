@@ -67,7 +67,7 @@ const ARTICLES_BODY = {
   "claude-microsoft-365-connector-all-plans-2026": {
     "body": [
       "Anthropic は2026年4月4日、Claude の **Microsoft 365 コネクター**を**全プラン**（Free・Pro・Max・Team・Enterprise）に開放したと発表した。これまで Team と Enterprise プラン限定だったこの機能が、個人ユーザーを含む全ユーザーに利用可能になった。Outlook のメール、OneDrive のファイル、SharePoint のドキュメント、Teams のチャット履歴を Claude の会話内から直接検索・参照できる。",
-      "セットアップは claude.ai の「設定 > コネクター」から行う。Microsoft アカウントで OAuth 認証を完了すると、Claude が Microsoft Graph API を介して各サービスのデータにアクセスできるようになる。**読み取り専用**の設計で、Claude がメールを送信したり、ファイルを変更・削除したりすることはできない。アクセス権限は接続した Microsoft 365 アカウントの既存権限と同一で、権限昇格は発生しない。",
+      "セットアップは claude.ai の「カスタマイズ > コネクター」から行う。Microsoft アカウントで OAuth 認証を完了すると、Claude が Microsoft Graph API を介して各サービスのデータにアクセスできるようになる。**読み取り専用**の設計で、Claude がメールを送信したり、ファイルを変更・削除したりすることはできない。アクセス権限は接続した Microsoft 365 アカウントの既存権限と同一で、権限昇格は発生しない。利用可能なプラットフォームは **claude.ai（Web）、Claude Desktop（macOS / Windows）、Claude Mobile（iOS / Android）、Claude Code（CLI）、API（MCP Connector 経由）**と幅広い。macOS 限定ではなく Windows でも利用でき、ブラウザからも使えるため実質 OS を問わない。ただし、モバイルからは新規コネクターの追加ができないため、初回設定は Web またはデスクトップアプリで行う必要がある。Team・Enterprise プランでは、組織の Owner が先にコネクターを有効化し、Microsoft Entra ID グローバル管理者がテナント全体の同意を完了する必要がある。Free・Pro・Max プランでは個人で直接接続できる。",
       "対応する4つのサービスはそれぞれ異なるユースケースをカバーする。**Outlook** ではメールスレッドの検索・要約・分析が可能で、「先週のクライアントとのやり取りをまとめて」といった指示に対応する。**OneDrive** では個人のドキュメントやファイルを検索・参照でき、**SharePoint** では組織のドキュメントライブラリを横断検索できる。**Teams** ではチャット会話やチャンネルの議論、会議メモを検索・参照できる。",
       "セキュリティ面では、認証に **OAuth 2.0 On-Behalf-Of（OBO）フロー**と PKCE を採用しており、パスワードは一切保存されない。全ての Microsoft Graph API 呼び出しは組織の Microsoft 365 監査ログに記録される。Team・Enterprise プランでは管理者が利用可能なユーザー/グループを制限したり、アクセス可能な M365 サービスを選択的に制御できる。",
       "今回の全プラン開放で注目すべきは **Microsoft Copilot との価格比較**だ。Microsoft は同じ Outlook・OneDrive・SharePoint・Teams 内で AI アシスタント機能を提供する Copilot に **$30/ユーザー/月** を課金している。一方、Claude の M365 コネクターは Free プランでも利用可能——つまり **$0** で同じデータにアクセスできる。しかも M365 コネクターは Microsoft 自身が構築し、Microsoft Marketplace で承認したものだ。テックアナリストの Aakash Gupta（@aakashgupta）は「Anthropic は Microsoft 自身の配管を使って Claude を売り込んでいる」と指摘している。",
@@ -75,6 +75,19 @@ const ARTICLES_BODY = {
       "この機能拡大は、Claude を「高機能なチャットボット」から「日常業務に参加するアシスタント」へと進化させる戦略の一環だ。同日の Windows 版 Computer Use 対応と合わせ、Anthropic はユーザーの既存のワークフロー（メール、ドキュメント、デスクトップ操作）に Claude を直接統合する方向を鮮明にしている。GitHub では Max プランへの M365 コネクター開放を求める要望（#20469）が2026年1月から上がっており、ユーザーの声に応えた形だ。"
     ],
     "tables": [
+      {
+        "afterParagraph": 1,
+        "caption": "M365 コネクター対応プラットフォーム",
+        "headers": ["プラットフォーム", "対応", "備考"],
+        "rows": [
+          ["claude.ai（Web）", "○", "ブラウザから利用、コネクター追加も可能"],
+          ["Claude Desktop（macOS）", "○", "デスクトップアプリから利用"],
+          ["Claude Desktop（Windows）", "○", "デスクトップアプリから利用"],
+          ["Claude Mobile（iOS / Android）", "○", "利用可能だが新規コネクターの追加は不可"],
+          ["Claude Code（CLI）", "○", "MCP Connector 経由で利用"],
+          ["API", "○", "MCP Connector 経由で利用"]
+        ]
+      },
       {
         "afterParagraph": 2,
         "caption": "Microsoft 365 コネクター対応サービス",
@@ -97,6 +110,11 @@ const ARTICLES_BODY = {
         "title": "Microsoft 365 Connector",
         "site": "Claude",
         "url": "https://claude.com/connectors/microsoft-365"
+      },
+      {
+        "title": "Use connectors to extend Claude's capabilities",
+        "site": "Claude Help Center",
+        "url": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities"
       }
     ]
   },
