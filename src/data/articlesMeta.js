@@ -5,6 +5,28 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "glassworm-invisible-unicode-malware-github-supply-chain-2026",
+    "type": "news",
+    "category": "product",
+    "title": "不可視Unicode文字でマルウェア混入「GlassWorm」攻撃が急拡大 — GitHub 151+リポジトリ・npm・VS Code拡張433件以上が汚染",
+    "excerpt": "不可視のUnicode制御文字を使い悪意あるコードを隠蔽するサイバー攻撃手法「GlassWorm」が2026年3月に急拡大。GitHub上の151以上のリポジトリ、npmパッケージ、VS Code拡張機能など433件以上が汚染された。1行のコードに1万8000行の不可視コードが埋め込まれた例も。React関連ライブラリやWasmer、OpenCode関連プロジェクトも被害。LLMでもっともらしいコードを大量生成している可能性が指摘されている。",
+    "date": "2026-04-04",
+    "newsDate": "2026-04-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "セキュリティ",
+      "GitHub",
+      "オープンソース",
+      "サプライチェーン攻撃",
+      "マルウェア"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "GlassWorm 不可視Unicode攻撃"
+    }
+  },
+  {
     "id": "anthropic-claude-third-party-harness-extra-usage-2026",
     "type": "news",
     "category": "product",

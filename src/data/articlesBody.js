@@ -4,6 +4,55 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "glassworm-invisible-unicode-malware-github-supply-chain-2026": {
+    "body": [
+      "不可視の属性を持つ Unicode 制御文字をコードに埋め込み、悪意あるプログラムを実行させる新手のサイバー攻撃手法「**GlassWorm（グラスワーム）**」が急拡大している。攻撃者は GitHub で多数の開発者が参画する OSS プロジェクトやソフトウェアの流通マーケットで善意を装ってコードを提供。ベルギーの Aikido Security 等の調査により、**GitHub 上の151以上のリポジトリ、npm パッケージ、VS Code 拡張機能など計433件以上**が汚染されていたことが判明した。",
+      "GlassWorm の核心は、開発者が使うエディタや差分表示ツールで**表示されない Unicode 制御文字**を悪用する点にある。具体的には「異体字セレクター（U+FE00〜U+FE0F）」や「異体字セレクター補助（U+E0100〜U+E01EF）」の範囲を使い、表示文字幅ゼロの長大な文字列を生成する。ある攻撃例では、**1行のコードの中に1万8000行以上の不可視コード**が埋め込まれていた。エディタでも GitHub のコードレビュー画面でも見えないため、レビュアーのチェックをすり抜ける。",
+      "JavaScript ランタイムがこの文字列に遭遇すると、小さなデコーダーが実バイトを抽出し `eval()` に渡す仕組みだ。ペイロードは **Solana ブロックチェーン上のウォレットから C2（コマンド＆コントロール）URL を取得**し、追加スクリプトをダウンロードする。最終的に暗号通貨ウォレットデータ、認証情報、アクセストークン、SSH キー、開発者環境データなどを窃取する。",
+      "被害は広範囲に及んでいる。GitHub では **React 関連ライブラリ**、WebAssembly ランタイム「**Wasmer**」、開発ツール「**OpenCode**」関連プロジェクトなどでコード汚染が確認された。VS Code / Open VSX のマーケットプレイスでも**72件以上の拡張機能**が汚染され、うち1件は3万5000ダウンロードを記録していた。GlassWorm の最初期の発見はイスラエルの Koi Security によるもので、2025年10月に Open VSX で不審な拡張機能を報告したのが始まりだ。2026年3月に入って攻撃が急増し、3月3日〜9日の1週間だけで GitHub 上の151リポジトリが汚染された。",
+      "多くの専門家が指摘するのは、攻撃者が **LLM（大規模言語モデル）を使ってもっともらしいコードを大量に偽装**している可能性だ。Aikido Security の調査では、不可視ペイロードの周囲に配置されたコードは「ドキュメントの微修正」「バージョンバンプ」「小さなリファクタリング」「バグ修正」など、各プロジェクトのスタイルに一貫した自然な変更が施されていた。AI が生成した「見た目だけ正当なコード」で実際の貢献を装い、レビューの心理的バリアを下げる戦術だ。",
+      "**開発者が今すぐ取るべき対策**は複数ある。まず、リンター・静的解析ツールに**不可視 Unicode 文字の検出ルール**を追加する。ESLint の `no-irregular-whitespace` ルールや、`grep -P '[\\x{FE00}-\\x{FE0F}\\x{E0100}-\\x{E01EF}]'` による手動スキャンが有効だ。次に、**依存パッケージの自動監査**を CI/CD に組み込む。`npm audit`、Socket、Snyk、Aikido Security などのツールでサプライチェーンを継続的に監視する。VS Code 拡張機能についても、インストール数やレビューだけで信頼せず、**拡張のソースコードを確認**する習慣が求められる。",
+      "より根本的な防御として、GitHub の **branch protection ルール**で外部コントリビューターの直接プッシュを禁止し、全 PR に対してレビューを必須にする。`eval()` や `Function()` の使用をコードベースから排除し、**Content Security Policy（CSP）でインライン実行を制限**する。lock ファイル（package-lock.json, yarn.lock）の差分を PR レビュー時に必ず確認し、意図しない依存変更を検出する。OSS やフリーソフトウェアは多数の業務ソフトやクラウドサービスに組み込まれており、開発基盤のコードレビューの視覚的検証だけでは防げない攻撃として、自動化された防御層の構築が急務だ。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "GlassWorm 攻撃の被害範囲（2026年3月時点）",
+        "headers": ["プラットフォーム", "汚染件数", "主な被害対象"],
+        "rows": [
+          ["GitHub リポジトリ", "151件以上", "React関連、Wasmer、OpenCode 関連"],
+          ["npm パッケージ", "複数件", "JavaScript/TypeScript ライブラリ"],
+          ["VS Code / Open VSX 拡張", "72件以上", "3.5万DL超の拡張含む"],
+          ["合計", "433件以上", "—"]
+        ]
+      },
+      {
+        "afterParagraph": 6,
+        "caption": "GlassWorm への防御策まとめ",
+        "headers": ["対策", "具体的な手段"],
+        "rows": [
+          ["不可視文字の検出", "ESLint no-irregular-whitespace、grep による Unicode 範囲スキャン"],
+          ["依存パッケージ監査", "npm audit、Socket、Snyk、Aikido Security を CI/CD に組み込み"],
+          ["VS Code 拡張の検証", "インストール前にソースコードを確認、不要な拡張を削除"],
+          ["ブランチ保護", "外部コントリビューターの直接プッシュ禁止、全 PR にレビュー必須"],
+          ["eval() の排除", "eval() / Function() をコードベースから排除、CSP でインライン実行制限"],
+          ["lock ファイル監視", "package-lock.json / yarn.lock の差分を PR レビューで確認"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Glassworm Returns: Invisible Unicode Malware Found in 150+ GitHub Repositories",
+        "site": "Aikido Security",
+        "url": "https://www.aikido.dev/blog/glassworm-returns-unicode-attack-github-npm-vscode"
+      },
+      {
+        "title": "不可視文字でマルウエア混入 GitHubなどで汚染拡大、開発基盤の信頼揺らぐ",
+        "site": "日経クロステック",
+        "url": "https://xtech.nikkei.com/atcl/nxt/column/18/00989/040100204/"
+      }
+    ]
+  },
   "anthropic-claude-third-party-harness-extra-usage-2026": {
     "body": [
       "Anthropic は2026年4月4日、OpenClaw をはじめとするサードパーティ製ハーネスでの **Claude サブスクリプション枠の利用を正式に停止**した。4月4日12時（PT）/ 20時（BST）以降、サードパーティツールから Claude を利用する場合は**サブスクとは別に請求される Extra Usage（従量課金）**が必要になる。Claude Code と Claude Cowork は引き続きサブスクリプションの定額枠内で利用可能だ。",
