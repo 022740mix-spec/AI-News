@@ -48,14 +48,7 @@ const ARTICLES_BODY = {
       "ブラウザベースの Web アプリとして **zperiod.app** で無料公開されており、3D体験はデスクトップブラウザ推奨。インストール不要で即座に利用できる。Philip Zhao 本人も X で「Zperiod を作った高校生です。フィードバックをお待ちしています」と応答しており、ユーザーからは「学生時代にこんなツールがあれば」という声が多数寄せられている。",
       "AIツールが日々進化する中で、10代の開発者がそれらを活用して教育分野のプロダクトを自ら設計・構築・公開している事実は注目に値する。Zperiod は「AIが人間の仕事を奪う」という議論の裏側で、若い世代がAI時代のツールを武器に創造的なプロダクトを生み出している一例だ。"
     ],
-    "embeds": [
-      {
-        "type": "x",
-        "afterParagraph": 0,
-        "url": "https://x.com/adxtyahq/status/2040050123456789012",
-        "caption": "@adxtyahq による Zperiod 紹介ポスト（19万回表示）"
-      }
-    ],
+    "embeds": [],
     "primarySources": [
       {
         "title": "Zperiod — Interactive Periodic Table & Chemical Equation Balancer",
