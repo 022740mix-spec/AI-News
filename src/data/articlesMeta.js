@@ -5,6 +5,28 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "design-md-ai-agent-design-system-format-2026",
+    "type": "news",
+    "category": "product",
+    "title": "DESIGN.md — AIエージェントにデザインを伝える新フォーマットが急拡大、Google Stitch発・GitHub 9.5Kスター",
+    "excerpt": "Google が Stitch 2.0 で導入したDESIGN.md（AIエージェント向けプレーンテキスト・デザインシステム）が急速に普及。VoltAgent が55以上の有名サイトのデザインを抽出した awesome-design-md リポジトリは GitHub で9.5Kスターを獲得。Figma も不要、.md ファイルをプロジェクトに置いて「これに従って作って」と言うだけで、AIがピクセルパーフェクトなUIを生成する。",
+    "date": "2026-04-05",
+    "newsDate": "2026-03-18",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Google",
+      "デザインシステム",
+      "バイブコーディング",
+      "オープンソース",
+      "エージェント"
+    ],
+    "coverImage": {
+      "src": "logos/google.svg",
+      "alt": "DESIGN.md AIエージェント向けデザインシステム"
+    }
+  },
+  {
     "id": "glassworm-invisible-unicode-malware-github-supply-chain-2026",
     "type": "news",
     "category": "product",

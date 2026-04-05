@@ -4,6 +4,39 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "design-md-ai-agent-design-system-format-2026": {
+    "body": [
+      "AIエージェントに「このサイトみたいなデザインで作って」と伝える方法が変わろうとしている。Google が **Stitch 2.0**（2026年3月18日リリース）で導入した「**DESIGN.md**」は、デザインシステムをプレーンテキストの Markdown で記述し、AIエージェントに読ませるフォーマットだ。Figma のエクスポートも、JSON の Design Tokens も不要。.md ファイルをプロジェクトルートに置いて「これに従って作って」と指示するだけで、AIがカラーパレット・タイポグラフィ・コンポーネント仕様に沿ったUIを生成する。",
+      "DESIGN.md が Markdown を採用した理由はシンプルだ。**LLM は大量の Markdown で訓練されている**ため、JSON や YAML より構造を正確に理解できる。仕様は9つのセクションで構成される。（1）ビジュアルテーマ（2）カラーパレット（3）タイポグラフィ（4）コンポーネント（5）レイアウト（6）奥行き・エレベーション（7）Do's / Don'ts（8）レスポンシブ（9）エージェント向けプロンプトガイド。人間が読んでも理解でき、AI が読んでも正確に従える、両方を満たす設計だ。",
+      "この流れを加速させたのが、VoltAgent が公開した **awesome-design-md** リポジトリだ。Stripe、Vercel、Notion、Figma、Linear、Spotify、Airbnb など**55以上の有名サイトのデザインシステムを DESIGN.md 形式で抽出**し、GitHub で公開。誰でもコピーしてプロジェクトに置くだけで、そのサイト風のUIをAIに生成させられる。リポジトリは **9.5K スター**を獲得しており、バイブコーディングの文脈で急速に普及している。",
+      "従来の Figma-to-Code や Design Tokens（JSON）と比較すると、DESIGN.md の強みは**ポータビリティと手軽さ**にある。Figma はデザイナーとの協業には強いが、MCPサーバーのセットアップが必要で、Figma エコシステムに依存する。Design Tokens は機械的に正確だが、LLM にとっては Markdown ほど自然に理解できない。一方で DESIGN.md は「ガイド」であって「制約」ではない——LLM がスペック通りに生成する保証はなく、「16px 指定なのに 15px になった」ということは起こり得る。**精密さではなく手軽さとスピードを優先するフォーマット**だ。",
+      "バイブコーダーにとっての実用的な使い方は明確だ。awesome-design-md から気に入ったサイトの DESIGN.md をコピーしてプロジェクトに置き、「DESIGN.md に従ってログインページを作って」と AI に指示する。あるいは、自分のプロジェクト用に DESIGN.md を AI に作らせることもできる——「今のサイトの CSS を読んで DESIGN.md を生成して」と言えば、AI が CSS カスタムプロパティを抽出して9セクション形式でまとめてくれる。デザインの一貫性を「人間が毎回指示する」のではなく、「ファイルに書いておいてAIに読ませる」ことで自動化する発想だ。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "DESIGN.md vs 従来のアプローチ",
+        "headers": ["アプローチ", "強み", "弱み"],
+        "rows": [
+          ["DESIGN.md（Markdown）", "LLM が自然に理解、ツール不要、ポータブル", "LLM の解釈に依存、ピクセル精度は保証されない"],
+          ["Figma + MCP", "ピクセル精度が高い、デザイナー協業に強い", "Figma 依存、MCP セットアップが必要"],
+          ["Design Tokens（JSON）", "機械的に正確、フレームワーク非依存", "LLM にとって Markdown より理解しづらい"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Design UI using AI with Stitch",
+        "site": "Google Blog",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/"
+      },
+      {
+        "title": "VoltAgent/awesome-design-md",
+        "site": "GitHub",
+        "url": "https://github.com/VoltAgent/awesome-design-md"
+      }
+    ]
+  },
   "glassworm-invisible-unicode-malware-github-supply-chain-2026": {
     "body": [
       "不可視の属性を持つ Unicode 制御文字をコードに埋め込み、悪意あるプログラムを実行させる新手のサイバー攻撃手法「**GlassWorm（グラスワーム）**」が急拡大している。攻撃者は GitHub で多数の開発者が参画する OSS プロジェクトやソフトウェアの流通マーケットで善意を装ってコードを提供。ベルギーの Aikido Security 等の調査により、**GitHub 上の151以上のリポジトリ、npm パッケージ、VS Code 拡張機能など計433件以上**が汚染されていたことが判明した。",
