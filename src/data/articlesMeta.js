@@ -5,6 +5,138 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "cursor-3-agent-first-workspace-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Cursor 3 ローンチ — AIエージェント専用ワークスペース「Agents Window」搭載、ローカル・クラウド・SSH を統合した次世代コードエディタ",
+    "excerpt": "Anysphere が4月2日に Cursor 3 をリリース。従来の Composer ペインを廃止し、複数AIエージェントを並列実行できる「Agents Window」を搭載。ローカル・クラウド・リモートSSH 間のシームレスなハンドオフ、ブラウザ上でUIを直接アノテーションする「Design Mode」、マルチリポ対応など、エージェントファーストの開発体験を実現。",
+    "date": "2026-04-06",
+    "newsDate": "2026-04-02",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Cursor",
+      "エージェント",
+      "コードエディタ",
+      "バイブコーディング",
+      "開発ツール"
+    ],
+    "coverImage": {
+      "src": "logos/cursor.svg",
+      "alt": "Cursor 3 エージェントファースト・ワークスペース"
+    }
+  },
+  {
+    "id": "openai-122b-funding-round-852b-valuation-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI が史上最大 $1,220億の資金調達を完了 — 評価額 $8,520億、SoftBank・Amazon・NVIDIA が共同主導",
+    "excerpt": "OpenAI が3月31日、AI業界史上最大となる1,220億ドルの資金調達ラウンドを完了。ポストマネー評価額は8,520億ドル。SoftBank が共同主導し、Amazon が500億ドル、NVIDIA が300億ドルを出資。初の個人投資家枠で30億ドルも調達。月間売上20億ドル、週間アクティブユーザー9億人超の規模に成長。",
+    "date": "2026-04-06",
+    "newsDate": "2026-03-31",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "OpenAI",
+      "資金調達",
+      "SoftBank",
+      "Amazon",
+      "NVIDIA"
+    ],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI 1220億ドル資金調達"
+    }
+  },
+  {
+    "id": "github-copilot-training-data-policy-change-2026",
+    "type": "news",
+    "category": "product",
+    "title": "GitHub Copilot が4月24日からユーザーコードをAI学習に使用開始 — Free/Pro/Pro+ が対象、オプトアウト猶予30日",
+    "excerpt": "GitHub が Copilot の利用規約を更新し、4月24日から Free・Pro・Pro+ ユーザーのインタラクションデータ（入力コード・出力・コンテキスト）をAIモデルの学習に使用する。プライベートリポジトリのコードも対象。Business・Enterprise プランは除外。30日間のオプトアウト猶予期間が設けられたが、デフォルトはオプトインのため開発者コミュニティで議論が過熱。",
+    "date": "2026-04-06",
+    "newsDate": "2026-03-26",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "GitHub",
+      "Copilot",
+      "プライバシー",
+      "データ学習",
+      "開発ツール"
+    ],
+    "coverImage": {
+      "src": "logos/github.svg",
+      "alt": "GitHub Copilot データ学習ポリシー変更"
+    }
+  },
+  {
+    "id": "supabase-500m-funding-10b-valuation-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Supabase が $500M 調達・評価額 $100億に到達 — バイブコーディング需要がOSS BaaSの急成長を後押し",
+    "excerpt": "オープンソースの Firebase 代替「Supabase」が、GIC 主導で5億ドルを調達し評価額100億ドルに到達。1年前の20億ドルから5倍の急成長。Cursor や Lovable などのバイブコーディングツールがデータベース需要を押し上げ、年間売上は2,000万ドルから7,000万ドルへ3.5倍に拡大。",
+    "date": "2026-04-06",
+    "newsDate": "2026-04-03",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Supabase",
+      "資金調達",
+      "オープンソース",
+      "バイブコーディング",
+      "データベース"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "Supabase 500M調達 評価額100億ドル"
+    }
+  },
+  {
+    "id": "anthropic-coefficient-bio-acquisition-400m-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic がバイオテックAI新興企業 Coefficient Bio を約$400Mで買収 — 創業8ヶ月・社員10人未満の株式取引",
+    "excerpt": "Anthropic が創業わずか8ヶ月のバイオテックAIスタートアップ Coefficient Bio を約4億ドルの株式交換で買収。共同創業者の Samuel Stanton と Nathan C. Frey は Genentech の Prescient Design 出身で、タンパク質設計・生体分子モデリングの専門家。Anthropic のヘルスケア・ライフサイエンス部門に合流し、製薬企業向けのAI特化ツール開発を加速。",
+    "date": "2026-04-06",
+    "newsDate": "2026-04-03",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Anthropic",
+      "バイオテック",
+      "買収",
+      "ヘルスケア",
+      "AI"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic Coefficient Bio 買収"
+    }
+  },
+  {
+    "id": "anthropic-1m-context-beta-deadline-april30-2026",
+    "type": "news",
+    "category": "product",
+    "title": "【期限迫る】Claude 旧モデルの1Mコンテキストβが4月30日で終了 — Sonnet 4.5/4は200Kに制限、4.6へ移行を",
+    "excerpt": "Anthropic が Claude Sonnet 4.5 と Claude Sonnet 4 の1Mトークンコンテキストウィンドウβを4月30日に終了する。期日以降は context-1m ヘッダーが無効化され、200Kトークンを超えるリクエストはエラーになる。Claude Sonnet 4.6 / Opus 4.6 は追加料金なしで1M対応済みのため、早めの移行が必要。",
+    "date": "2026-04-06",
+    "newsDate": "2026-04-06",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "API",
+      "コンテキストウィンドウ",
+      "マイグレーション"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Claude 1Mコンテキストβ終了 4月30日期限"
+    }
+  },
+  {
     "id": "design-md-ai-agent-design-system-format-2026",
     "type": "news",
     "category": "product",

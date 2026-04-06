@@ -4,6 +4,203 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "anthropic-1m-context-beta-deadline-april30-2026": {
+    "body": [
+      "**4月30日**に迫った期限を改めて周知する。Anthropic は Claude Sonnet 4.5 と Claude Sonnet 4 の**1Mトークンコンテキストウィンドウβ（ベータ）を4月30日に終了**する。期日以降、`context-1m-2025-08-07` ベータヘッダーは無効化され、200Kトークンを超えるリクエストは**エラーを返す**。該当モデルを使用中の開発者は、残り約3週間で移行を完了する必要がある。",
+      "移行先は **Claude Sonnet 4.6** または **Claude Opus 4.6** だ。これらのモデルでは1Mコンテキストが**GA（一般提供）**となっており、ベータヘッダー不要・追加料金なしで利用できる。以前は長文コンテキストに割増料金が課されていた（Sonnet の入力が $3→$6/MTok、Opus が $5→$10/MTok に跳ね上がっていた）が、4.6 系では**サーチャージが完全撤廃**された。Sonnet 4.6 は $3/$15、Opus 4.6 は $5/$25（入力/出力、MTok あたり）で全コンテキスト長に統一料金が適用される。",
+      "移行作業は最小限だ。APIコール中のモデル名を `claude-sonnet-4-6` または `claude-opus-4-6` に変更し、ベータヘッダーを削除するだけで完了する。コードの他の部分を変更する必要はない。ただし、**Google Cloud Vertex AI や Amazon Bedrock 経由で Claude を利用している場合**、廃止日が異なる可能性がある（Vertex AI では Claude 3.7 Sonnet の廃止が5月11日など）。各クラウドプロバイダーのライフサイクルページを確認してほしい。",
+      "今回の1Mベータ廃止は、より大きな**モデル整理の一環**でもある。Claude 3.7 Sonnet はすでに廃止済み（リクエストはエラーを返す）、Claude Haiku 3 は**4月19日に廃止予定**だ。旧モデルに依存しているアプリケーションは、この機会に一括で移行を検討すべきだろう。",
+      "4.6 系への移行で得られるメリットは1Mコンテキストだけではない。**Message Batches API で max_tokens が300Kに拡大**（`output-300k-2026-03-24` ヘッダー使用）、**1リクエストあたり最大600枚の画像/PDFページ**に対応（従来は100枚）、Models API に `capabilities` フィールドが追加されモデルの対応機能をプログラマティックに検出可能になった。**プロンプトキャッシュとバッチ割引も1M全域に標準適用**される。コスト面でも機能面でも、移行しない理由がない。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 1,
+        "caption": "1Mコンテキスト: 旧モデルβ vs 4.6系GA",
+        "headers": ["項目", "Sonnet 4.5/4（β）", "Sonnet 4.6 / Opus 4.6（GA）"],
+        "rows": [
+          ["1Mコンテキスト", "ベータヘッダー必須", "標準対応（ヘッダー不要）"],
+          ["入力料金（MTok）", "$3〜$6（長文割増あり）", "$3 / $5（統一料金）"],
+          ["利用期限", "4月30日で終了", "制限なし"],
+          ["画像/PDF上限", "100枚/リクエスト", "600枚/リクエスト"],
+          ["最大出力トークン", "標準", "300K（Batches API）"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Model Deprecations",
+        "site": "Anthropic Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+      },
+      {
+        "title": "Anthropic drops the surcharge for million-token context windows",
+        "site": "The Decoder",
+        "url": "https://the-decoder.com/anthropic-drops-the-surcharge-for-million-token-context-windows-making-opus-4-6-and-sonnet-4-6-far-cheaper/"
+      }
+    ]
+  },
+  "anthropic-coefficient-bio-acquisition-400m-2026": {
+    "body": [
+      "Anthropic が4月3日、バイオテックAIスタートアップ **Coefficient Bio** を約**4億ドル（約600億円）の株式交換**で買収したことが明らかになった。The Information と Newcomer が報じ、TechCrunch 等が追認した。Coefficient Bio は創業からわずか**8ヶ月**、社員**10人未満**のステルスモード企業で、製品の公開リリースもなかった。",
+      "共同創業者の **Samuel Stanton** と **Nathan C. Frey** は、ロシュ傘下 Genentech の計算創薬部門「**Prescient Design**」出身。タンパク質設計と生体分子モデリングの専門家で、チームのほぼ全員が Genentech の計算生物学研究者だ。AI を使って創薬研究開発の計画立案、臨床・規制戦略の管理、新薬候補の同定を行うプラットフォームを開発していた。",
+      "Coefficient Bio のチームは Anthropic の**ヘルスケア・ライフサイエンス部門**に合流する。同部門は Eric Kauderer-Abrams が率いており、2025年10月に発表された「**Claude for Life Sciences**」（Benchling、PubMed、10x Genomics と連携する研究支援ツール）の開発を担当している。Claude for Life Sciences が汎用的な研究アシスタントだったのに対し、Coefficient Bio のチームはタンパク質設計など**ドメイン特化の専門知識**をもたらす。",
+      "業界の反応は分かれている。批判派は「製品も売上もない10人のチームに4億ドルは過大評価」と指摘し、実質的な**人材獲得（アクイハイア）**だと見る。一方、支持派は製薬業界の市場規模（承認薬1つで数十億ドルの売上）を考えれば、創薬ワークフローに特化したAIツールのポテンシャルは十分に4億ドルを正当化すると主張する。なお、出資者の Dimension（VC）は約50%の持分から**IRR 38,513%**という驚異的なリターンを記録した計算になる。",
+      "Anthropic のライフサイエンス戦略は、Google DeepMind（AlphaFold）や OpenAI とのバイオテックAI競争を意識したものだ。汎用LLMの開発競争が激化する中、**製薬企業向けの高単価・ドメイン特化ツール**で差別化を図る狙いが見える。AI企業がモデル性能だけでなく「どの産業の専門家を抱えるか」で競う時代に入りつつある。"
+    ],
+    "tables": [],
+    "primarySources": [
+      {
+        "title": "Anthropic buys biotech startup Coefficient Bio in $400M deal",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/"
+      },
+      {
+        "title": "Anthropic Acquires Startup Coefficient Bio for About $400 Million",
+        "site": "The Information",
+        "url": "https://www.theinformation.com/articles/anthropic-acquires-startup-coefficient-bio-400-million"
+      }
+    ]
+  },
+  "supabase-500m-funding-10b-valuation-2026": {
+    "body": [
+      "オープンソースの Firebase 代替「**Supabase**」が、シンガポールの政府系ファンド **GIC** の主導で約5億ドルの資金調達を交渉中だ。実現すれば評価額は**約100億ドル（約1.5兆円）**に達し、わずか1年前の20億ドルから**5倍**の急成長となる。The Information が4月2日に報じた。",
+      "Supabase の評価額の推移は目を見張る。2024年9月のシリーズCで約7.6億ドル、2025年4月のシリーズDで20億ドル、同年10月のシリーズEで50億ドル、そして今回の100億ドル。**半年ごとに評価額が倍増**するペースだ。これまでの累計調達額は約5億ドルで、今回のラウンドが成立すれば合計10億ドルに到達する。",
+      "この異例の成長を支えているのが**バイブコーディング需要**だ。Cursor、Bolt.new、Lovable といったAIコーディングツールが、ユーザーが作るアプリのバックエンドとして Supabase を**デフォルトのデータベース**に採用している。AIが「データベースが必要」と判断すると自動的に Supabase をプロビジョニングする仕組みで、AIコーディングツールの普及がそのまま Supabase の成長に直結する構造だ。",
+      "年間経常収益（ARR）は2024年末の3,000万ドルから2025年半ばに**7,000万ドル**へ急伸。前年比**約250%**の成長率を記録した。開発者数は**400万人超**、チーム規模は約230人。投資家には Accel、Peak XV（旧 Sequoia India）に加え、Figma Ventures、OpenAI CPO の Kevin Weil、Vercel CEO の Guillermo Rauch、Laravel 作者の Taylor Otwell も名を連ねる。",
+      "Supabase は PostgreSQL をベースに、データベース、認証、ストレージ、Edge Functions、リアルタイムサブスクリプションを統合プラットフォームとして提供する。**pgvector** によるベクトル検索も標準搭載しており、RAG（検索拡張生成）パイプラインのバックエンドとしても採用が広がっている。バイブコーディング時代の「AIが選ぶインフラ」としてのポジションを確立しつつある。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 1,
+        "caption": "Supabase の資金調達・評価額の推移",
+        "headers": ["ラウンド", "時期", "調達額", "評価額"],
+        "rows": [
+          ["Series C", "2024年9月", "$80M", "〜$765M"],
+          ["Series D", "2025年4月", "$200M", "$2B"],
+          ["Series E", "2025年10月", "$100M", "$5B"],
+          ["新ラウンド（交渉中）", "2026年4月", "〜$500M", "〜$10B"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Database Startup Supabase in Talks to Double Valuation to $10 Billion",
+        "site": "The Information",
+        "url": "https://www.theinformation.com/articles/database-startup-supabase-talks-double-valuation-10-billion"
+      },
+      {
+        "title": "Supabase nabs $5B valuation, four months after hitting $2B",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2025/10/03/supabase-nabs-5b-valuation-four-months-after-hitting-2b/"
+      }
+    ]
+  },
+  "github-copilot-training-data-policy-change-2026": {
+    "body": [
+      "GitHub が3月25日、Copilot の利用規約を更新し、**4月24日から Free・Pro・Pro+ ユーザーのインタラクションデータをAIモデルの学習に使用する**と発表した。対象データは、Copilot に送信されるコードスニペット、プロンプト、出力、コンテキスト情報で、**プライベートリポジトリのコードも含まれる**。デフォルトはオプトイン（同意済み）で、ユーザーが手動でオプトアウトしない限り学習に使われる。",
+      "重要なのは**プランによる扱いの差**だ。**Copilot Business と Enterprise のユーザーは完全に除外**されており、契約上インタラクションデータが学習に使われることはない。また、有料組織のメンバーや外部コラボレーターのデータも対象外となる。つまり個人開発者だけが学習対象で、企業ユーザーは保護される「二重基準」が生まれている。",
+      "GitHub のコミュニティディスカッション（#188488）では、**賛成1件に対し反対259件**という圧倒的な反対が記録されている。主な批判は（1）オプトアウトではなくオプトインにすべき（2）プライベートリポジトリのコードが学習される懸念（3）リポジトリ単位のコントロールがない（4）コードを学習に使うなら対価を払うべき——の4点に集中している。",
+      "**オプトアウトの手順**は以下の通り。GitHub.com にログイン → 右上のプロフィール画像 → **Copilot settings** → Privacy セクションの「**Allow GitHub to use my data for AI model training**」を **Disabled** にする。直接 URL（github.com/settings/copilot/features）からもアクセスできる。4月24日の期限前に設定を変更すれば、それ以降データは収集されない。ただし、**リポジトリ単位の細かい制御はなく、アカウント全体のオン/オフのみ**だ。",
+      "法的な観点では、GitHub は GDPR の「正当な利益（legitimate interest）」を根拠に挙げている。しかし、独自コードの知的財産権が絡む場合に「正当な利益」が成立するかは議論が分かれるところだ。Copilot の学習データをめぐる集団訴訟（*Doe v. GitHub*）も係争中であり、今回のポリシー変更がその訴訟にどう影響するかも注目される。",
+      "**バイブコーダーへの実務的な影響**を整理しておこう。Copilot Free/Pro を使っている個人開発者は、**4月24日までにオプトアウト設定を確認すべき**だ。特にクライアントワークや業務委託で書いたコードがプライベートリポジトリにある場合、意図せず学習データに含まれるリスクがある。Copilot Business/Enterprise ユーザーは影響なし。代替ツール（Claude Code、Cursor、Cody 等）への移行を検討する開発者も増えており、AIコーディングツール市場の勢力図に影響を与える可能性がある。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 1,
+        "caption": "プラン別のデータ学習ポリシー",
+        "headers": ["プラン", "データ学習", "オプトアウト"],
+        "rows": [
+          ["Copilot Free", "対象（デフォルトON）", "手動で無効化が必要"],
+          ["Copilot Pro", "対象（デフォルトON）", "手動で無効化が必要"],
+          ["Copilot Pro+", "対象（デフォルトON）", "手動で無効化が必要"],
+          ["Copilot Business", "対象外（契約で禁止）", "不要"],
+          ["Copilot Enterprise", "対象外（契約で禁止）", "不要"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Updates to GitHub Copilot interaction data usage policy",
+        "site": "GitHub Blog",
+        "url": "https://github.blog/news-insights/company-news/updates-to-github-copilot-interaction-data-usage-policy/"
+      },
+      {
+        "title": "FAQ: Privacy Statement update on Copilot data use",
+        "site": "GitHub Community",
+        "url": "https://github.com/orgs/community/discussions/188488"
+      }
+    ]
+  },
+  "openai-122b-funding-round-852b-valuation-2026": {
+    "body": [
+      "OpenAI が3月31日、AI業界史上最大となる**1,220億ドル（約18兆円）**の資金調達ラウンドを完了した。ポストマネー評価額は**8,520億ドル（約128兆円）**。SoftBank が共同主導し、Amazon が500億ドル、NVIDIA が300億ドルを出資。残りは Andreessen Horowitz、D.E. Shaw Ventures、その他機関投資家が引き受けた。",
+      "当初2月に発表された110億ドル規模から**追加の120億ドル**を上積みした形だ。注目すべきは、OpenAI が今回初めて**個人投資家枠**を設け、銀行チャネル経由で30億ドルを調達した点。上場前の企業がリテール投資家から直接資金を集めるのは異例で、IPO への布石とも見られている。",
+      "OpenAI の事業規模はすでに大手テック企業に匹敵する。**月間売上20億ドル**（年換算240億ドル）、ChatGPT の**週間アクティブユーザーは9億人超**、有料サブスクライバーは5,000万人を突破。売上成長率は Alphabet や Meta の**4倍**のペースで、AI ネイティブ企業としての地位を固めつつある。",
+      "この巨額資金の使途として OpenAI が掲げるのは「**AIの次のフェーズの加速**」だ。具体的には、SoftBank との合弁事業「**Stargate**」（2025年1月発表、4年間で最大5,000億ドルの米国内AI データセンター投資計画）の推進、次世代モデルの研究開発、そして「スーパーアプリ」構想の実現が含まれる。",
+      "開発者にとっての直接的な影響は**API の安定供給と価格競争力の維持**だ。計算リソースへの天文学的な投資は、推論コストの継続的な低下を意味する。一方で、8,520億ドルという評価額は、未上場企業としては Apple や Microsoft の時価総額に迫る水準であり、「AIバブル」を懸念する声も根強い。OpenAI が IPO に踏み切るかどうかが、今後の最大の焦点となる。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "OpenAI $1,220億ラウンドの主要出資者",
+        "headers": ["出資者", "出資額", "備考"],
+        "rows": [
+          ["Amazon", "$500億", "最大の単独出資者"],
+          ["SoftBank", "$300億", "共同主導、Stargate 合弁パートナー"],
+          ["NVIDIA", "$300億", "GPU サプライヤーとしての戦略的出資"],
+          ["個人投資家（銀行チャネル）", "$30億", "OpenAI 初のリテール投資家枠"],
+          ["その他（a16z, D.E. Shaw 等）", "約$90億", "機関投資家"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "OpenAI raises $122 billion to accelerate the next phase of AI",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/accelerating-the-next-phase-ai/"
+      },
+      {
+        "title": "OpenAI closes record-breaking $122 billion funding round",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/03/31/openai-funding-round-ipo.html"
+      }
+    ]
+  },
+  "cursor-3-agent-first-workspace-2026": {
+    "body": [
+      "Anysphere が4月2日、AIコードエディタ Cursor のメジャーアップデート「**Cursor 3**」をリリースした。最大の変更点は、従来の Composer ペインを廃止し、**複数のAIエージェントを並列実行できる「Agents Window」**を搭載したことだ。ローカル、クラウド、リモートSSH、Git ワークツリーといった異なる環境のエージェントを1つの画面で管理できる。",
+      "Agents Window では、複数のタスクを同時にエージェントへ委任できる。たとえば「認証機能のリファクタリング」と「テストの追加」を別々のエージェントに並列で実行させ、それぞれの進捗をリアルタイムで監視する使い方が想定されている。エージェントのセッションを**ローカルからクラウドへシームレスに移行**できる「Cloud-Local Handoff」も搭載。長時間かかるタスクをクラウドに移して、自分は次の作業に移れる。",
+      "もう一つの目玉機能が「**Design Mode**」だ。ブラウザ上でUIコンポーネントを直接アノテーション（注釈付け）し、AIエージェントにピンポイントで修正指示を出せる。「このボタンの色を変えて」「この余白を詰めて」といった視覚的なフィードバックを、スクリーンショットやテキスト説明なしで伝えられる。バイブコーディングとの相性が非常に高い機能だ。",
+      "技術面では、**MCP（Model Context Protocol）のリッチコンテンツ対応**が強化され、ツール出力に構造化データを含められるようになった。マルチリポジトリのサポートも改善され、モノレポや複数プロジェクトを跨いだエージェント操作が容易になっている。",
+      "Cursor 3 は既存の Cursor ユーザーに無料アップデートとして提供される。AI コードエディタ市場では Claude Code、GitHub Copilot（VS Code 統合）、Windsurf との競争が激化しているが、Cursor は「エージェントファースト」という明確な方向性を打ち出した。コードを書くツールから、**エージェントを指揮するワークスペース**への転換を宣言した形だ。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 4,
+        "caption": "Cursor 3 の主要新機能",
+        "headers": ["機能", "概要"],
+        "rows": [
+          ["Agents Window", "Composer を置き換え、複数エージェントの並列実行・管理を一画面で"],
+          ["Cloud-Local Handoff", "ローカルのエージェントセッションをクラウドに移行、オフライン中も継続"],
+          ["Design Mode", "ブラウザ上でUIを直接アノテーション、視覚的にAIへ修正指示"],
+          ["マルチリポ対応", "複数リポジトリを跨いだエージェント操作"],
+          ["MCP リッチコンテンツ", "ツール出力に構造化データを含むレスポンス対応"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Meet the new Cursor",
+        "site": "Cursor Blog",
+        "url": "https://cursor.com/blog/cursor-3"
+      },
+      {
+        "title": "Cursor Changelog",
+        "site": "Cursor",
+        "url": "https://cursor.com/changelog"
+      }
+    ]
+  },
   "design-md-ai-agent-design-system-format-2026": {
     "body": [
       "AIエージェントに「このサイトみたいなデザインで作って」と伝える方法が変わろうとしている。Google が **Stitch 2.0**（2026年3月18日リリース）で導入した「**DESIGN.md**」は、デザインシステムをプレーンテキストの Markdown で記述し、AIエージェントに読ませるフォーマットだ。Figma のエクスポートも、JSON の Design Tokens も不要。.md ファイルをプロジェクトルートに置いて「これに従って作って」と指示するだけで、AIがカラーパレット・タイポグラフィ・コンポーネント仕様に沿ったUIを生成する。",
