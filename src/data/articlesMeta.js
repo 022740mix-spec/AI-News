@@ -5,6 +5,28 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "japan-personal-info-protection-law-ai-amendment-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【特集】日本の個人情報保護法が改正へ — AI学習なら要配慮個人情報も「同意不要」、課徴金制度も新設、欧州とは逆方向の選択",
+    "excerpt": "日本の個人情報保護委員会が2026年1月9日に改正方針を公表。AI開発を含む統計目的での個人データ利用について、病歴・犯罪歴・人種等の「要配慮個人情報」であっても本人同意を不要とする規制緩和が柱。同時に悪質な違反行為に対する課徴金制度を新設し、16歳未満の保護強化、委託先規律の強化も盛り込む。1月23日召集の通常国会への提出を目指す。EUのGDPR・AI Actが「同意とリスクベース規制」を強化する中、日本は「AI産業育成の追い風」を選んだ形だ。",
+    "date": "2026-04-06",
+    "newsDate": "2026-01-09",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "日本",
+      "個人情報保護法",
+      "規制",
+      "プライバシー",
+      "AI政策"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "日本の個人情報保護法改正 AI学習同意不要化"
+    }
+  },
+  {
     "id": "vibe-coding-enterprise-backend-maintenance-2026",
     "type": "feature",
     "category": "regulation",
