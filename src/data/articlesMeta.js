@@ -5,6 +5,50 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "anthropic-overtakes-openai-revenue-30b-run-rate-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が売上で OpenAI を逆転 — 年換算 $300億で $250億の OpenAI を追い越し、エンタープライズ特化戦略が結実",
+    "excerpt": "Anthropic の年換算売上（ARR）が約300億ドルに到達し、OpenAI の約240〜250億ドルを上回ったことが明らかになった。Epoch AI が「2026年半ばに逆転」と予測していたが、それより早い時期での逆転となった。2025年末時点では Anthropic は約90億ドルで、わずか数ヶ月で3倍以上に成長。エンタープライズAPI に特化した戦略が、コンシューマー向け ChatGPT に依存する OpenAI を上回った形だ。",
+    "date": "2026-04-06",
+    "newsDate": "2026-04-06",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "OpenAI",
+      "売上",
+      "エンタープライズ",
+      "Claude"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic 売上で OpenAI を逆転"
+    }
+  },
+  {
+    "id": "openai-industrial-policy-intelligence-age-4day-workweek-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "OpenAI が「Intelligence Age の産業政策」を提言 — 週32時間労働、ロボット税、公的資産ファンド、AGI時代の社会再設計を訴える",
+    "excerpt": "OpenAI が4月6日、13ページの政策提言書「Industrial Policy for the Intelligence Age」を公表。AGI時代に向けて、（1）給与据え置きで32時間/4日制の試験導入、（2）自動化労働への課税・ロボット税、（3）AI企業に出資する国民向け公的資産ファンドの創設、（4）安全網の自動発動メカニズム、（5）AIの信頼性・アラインメント・安全性への高い基準——を米国政府に提案。AI企業自らが「自社の影響を社会がどう吸収するか」を語り始めた歴史的な文書。",
+    "date": "2026-04-06",
+    "newsDate": "2026-04-06",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "AGI",
+      "規制",
+      "労働",
+      "社会"
+    ],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI Intelligence Age 産業政策提言"
+    }
+  },
+  {
     "id": "japan-personal-info-protection-law-ai-amendment-2026",
     "type": "feature",
     "category": "regulation",
