@@ -5,6 +5,28 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "vibe-coding-enterprise-backend-maintenance-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【特集】バイブコーディング時代の基幹システム — フロントエンドは民主化された、では「沈黙の壊れ方」をする裏側を誰が守るのか",
+    "excerpt": "バイブコーディングは、これまでSaaSが入れなかった小規模・細分化業界の業務システム需要を解放しつつある。フロントエンドのカスタマイズコストは劇的に下がった。しかしバックエンド・データ整合性・セキュリティ境界・災害復旧といった「沈黙の壊れ方」をする領域は、AIの70%生成では埋まらない。「午前3時問題」、「3年後にデータが壊れる問題」、規制業種の責任所在——本特集では、バイブコーディング時代における基幹システムの設計責任と、社会が整備すべき制度を提案する。",
+    "date": "2026-04-06",
+    "newsDate": "2026-04-06",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "バイブコーディング",
+      "エンタープライズ",
+      "セキュリティ",
+      "規制",
+      "社会"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "バイブコーディング時代の基幹システム特集"
+    }
+  },
+  {
     "id": "cursor-3-agent-first-workspace-2026",
     "type": "news",
     "category": "product",
