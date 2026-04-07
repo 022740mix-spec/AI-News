@@ -5,6 +5,28 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "anthropic-claude-mythos-preview-glasswing-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Anthropic が Claude Mythos Preview を正式発表 — 「強すぎて公開しない」初のフロンティアモデル、Project Glasswingで27年物OpenBSDバグ含む数千のゼロデイを発見",
+    "excerpt": "Anthropic が4月7日、フロンティアモデル「Claude Mythos Preview」を正式発表した。ただし汎用公開はせず、AWS・Apple・Google・Microsoft・NVIDIA等を含む約50の組織との「Project Glasswing」（$100Mのサイバーセキュリティイニシアティブ）でのみ利用される異例の形態。HLE（人類最後の試験）でツールなし56.8%／ツール使用64.7%（GPT-5.4 Proは42.7%/58.7%）、SWE-bench Verifiedで93.9%という圧倒的スコアを記録。発表前数週間で主要OS・ブラウザすべてにわたる数千のゼロデイ脆弱性を発見し、最古は27年前のOpenBSDのバグだった。「強すぎるAI」を初めて公にコントロールする試み。",
+    "date": "2026-04-07",
+    "newsDate": "2026-04-07",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Mythos",
+      "セキュリティ",
+      "ベンチマーク"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Claude Mythos Preview Project Glasswing"
+    }
+  },
+  {
     "id": "anthropic-overtakes-openai-revenue-30b-run-rate-2026",
     "type": "news",
     "category": "product",

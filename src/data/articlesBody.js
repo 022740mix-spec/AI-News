@@ -4,6 +4,58 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "anthropic-claude-mythos-preview-glasswing-2026": {
+    "body": [
+      "Anthropic が4月7日、新たなフロンティアモデル「**Claude Mythos Preview**」を正式発表した。ただし通常のモデルリリースとは決定的に異なる点がある——**汎用公開しない**。Anthropic CEO の Dario Amodei は発表声明で「これは我々が訓練した中で最も有能なモデルであり、サイバーセキュリティ領域では既存のあらゆる AI を遥かに上回る。だが同時に、無制限に公開すれば社会に深刻な被害を与えうる **dual-use（二重用途）** の代表例である」と述べ、**業界初の「強すぎて公開しないフロンティアモデル」**として位置付けた。Mythos Preview は Anthropic が同日発表した **Project Glasswing**——AWS、Apple、Broadcom、Cisco、CrowdStrike、Google、JPMorgan、Linux Foundation、Microsoft、NVIDIA、Palo Alto Networks ほか約50の組織が参加する**$100M（約150億円）のサイバーセキュリティ・コンソーシアム**——でのみ使用される。",
+      "## 「公開しない」を選んだ理由",
+      "Mythos Preview のシステムカード（p.186〜187）に掲載されたベンチマークスコアは、公開済みモデルとの差を歴然と示している。**HLE（Humanity's Last Exam、人類最後の試験）**でツール使用なし **56.8%**、ツール使用ありで **64.7%**——比較対象の OpenAI GPT-5.4 Pro はそれぞれ 42.7% / 58.7%、Anthropic 自身の最新公開モデル Claude Opus 4.6 は 40.0% / 53.1% である。コーディング系では **SWE-bench Verified で 93.9%**（Opus 4.6 は 80.8%）、新しい難易度の高い **SWE-bench Pro で 77.8%**（Opus 4.6 は 53.4%）と、人間のシニアエンジニアと並ぶ水準に達している。",
+      "決定的だったのは、訓練完了後に Anthropic 社内のレッドチームが Mythos Preview を Project Glasswing 向けの試験運用に投入した瞬間だった。発表声明によれば、**わずか数週間で主要 OS（Linux、Windows、macOS、Android、iOS）と主要 Web ブラウザすべてにわたる数千件のゼロデイ脆弱性を発見**した。発見された中で最も古いものは **27年前に混入された OpenBSD のバグ**で、長年にわたり世界中の研究者が見落としてきたものだった。Anthropic は「これを誰でも使える形で公開した場合、防御側より攻撃側が圧倒的に先行する瞬間が生じる」と判断し、汎用公開を見送る決定を下した。",
+      "## Project Glasswing — 50社で守る",
+      "Project Glasswing は、Mythos Preview の能力を「社会の防御」だけに振り向けるための仕組みだ。$100M のうち大部分は、参加組織がゼロデイ修正・パッチ配信・インシデント対応に充てる人員・インフラ費用に充当される。参加企業のラインナップは、クラウド大手（AWS / Google / Microsoft）、デバイスメーカー（Apple / NVIDIA / Broadcom）、セキュリティ専業（CrowdStrike / Palo Alto Networks / Cisco）、金融（JPMorgan）、OSS 基盤（Linux Foundation）と、現代のデジタルインフラの中核を網羅している。Anthropic は「**特定企業の独占にしない**ため、Linux Foundation を含む中立組織を意図的に組み込んだ」と説明している。",
+      "運用ルールも異例だ。Mythos Preview にアクセスできるのは Project Glasswing 加盟組織のセキュリティチームに限られ、出力は**脆弱性の発見・修正パッチ生成・防御コード作成**にのみ使用できる。攻撃ツールの作成や脆弱性情報の外部漏洩は契約で禁止される。Anthropic 側でも全プロンプト・全出力をログとして保全し、Constitutional AI に基づくセーフガードを通常モデル以上に厳格化した上で運用する。",
+      "## 「強すぎる AI」をどう扱うか",
+      "Mythos Preview の発表は、AI 業界が長年議論してきた「**dual-use（二重用途）**」問題に対する初の現実的な回答でもある。これまで OpenAI の GPT-5 系列も Google の Gemini 3 系列も「リリース前の安全性テスト」を経て公開されてきたが、「**テストの結果、能力が高すぎたので公開しない**」という決断を下した主要モデルは存在しなかった。Anthropic の RSP（Responsible Scaling Policy）は ASL-4 以上に達したモデルに対する追加制限を定めていたが、それが**実際に発動した初のケース**とも言える。",
+      "Anthropic は同日のブログで「Mythos Preview で得られた知見と防御技術は、**今後数ヶ月以内にリリース予定の次期 Claude Opus モデル**に統合される」と明言した。具体的には、Mythos Preview がコンソーシアム運用の中で「攻撃に使われそうな出力」を検出・抑制した事例を学習データとし、次期公開モデルが同種のリクエストに対してより的確に拒否・代替提案を行えるように訓練される。「**最も強力なモデルを使って、公開モデルを守る**」というアプローチである。",
+      "## 業界の反応と論点",
+      "発表直後から賛否は分かれている。賛成側は「ようやく **能力 ≠ 公開** という選択肢を主要ラボが示した」「セーフティ研究の長年の主張が現実化した」と評価する。一方で批判もある——（1）**「強すぎる」の判断基準が Anthropic 単独**である点（独立の第三者監査がない）、（2）Project Glasswing 参加企業に**競合の OpenAI / xAI / Meta が含まれていない**点、（3）**選ばれた50社だけがアクセスできる構造**は新たな情報格差を生む懸念。Anthropic は今後、参加組織の拡大プロセスとガバナンス委員会の設立を進めるとしている。",
+      "もう一つの論点は「**競合がより強いモデルを公開した場合に Anthropic はどうするか**」だ。仮に OpenAI や xAI が今後、Mythos Preview と同等以上の能力を持つモデルを汎用公開した場合、Anthropic の「公開しない」決定は競争上の自殺となりかねない。Dario Amodei はこれに対し「**全社が同じ判断を強いられる規制環境**こそが必要」と述べ、米国・EU・日本の規制当局との連携を改めて呼びかけている。",
+      "Mythos Preview と Project Glasswing は、AI ラボが「自社の最強モデルを公開しない」という選択を初めて公にとった事例として、今後数年の AI ガバナンス論争の参照点になることは間違いない。ベンチマークスコアの数字以上に、**「誰が、どの能力を、どの範囲で使えるべきか」**という問いを業界全体に突きつけている。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "Claude Mythos Preview ベンチマーク比較（システムカード p.186〜187）",
+        "headers": ["ベンチマーク", "Mythos Preview", "Claude Opus 4.6", "GPT-5.4 Pro"],
+        "rows": [
+          ["HLE（ツールなし）", "56.8%", "40.0%", "42.7%"],
+          ["HLE（ツール使用）", "64.7%", "53.1%", "58.7%"],
+          ["SWE-bench Verified", "93.9%", "80.8%", "（未公表）"],
+          ["SWE-bench Pro", "77.8%", "53.4%", "（未公表）"],
+          ["公開状況", "非公開（Glasswing限定）", "一般公開", "一般公開"]
+        ]
+      },
+      {
+        "afterParagraph": 5,
+        "caption": "Project Glasswing 主要参加組織（約50社、抜粋）",
+        "headers": ["分類", "参加組織"],
+        "rows": [
+          ["クラウド大手", "AWS、Google、Microsoft"],
+          ["デバイス・半導体", "Apple、NVIDIA、Broadcom"],
+          ["セキュリティ専業", "CrowdStrike、Palo Alto Networks、Cisco"],
+          ["金融", "JPMorgan"],
+          ["OSS基盤", "Linux Foundation"],
+          ["合計予算", "$100M（約150億円）"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Project Glasswing — Anthropic",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/glasswing"
+      }
+    ]
+  },
   "anthropic-overtakes-openai-revenue-30b-run-rate-2026": {
     "body": [
       "AI 産業の競争構図を象徴する数字が逆転した。**Anthropic の年換算売上（ARR）が約300億ドル**に到達し、OpenAI の約240〜250億ドルを上回ったことが、4月6日までに複数の業界レポートで明らかになった。AI 調査機関 Epoch AI は2月時点で「Anthropic は2026年半ばに OpenAI を抜く」と予測していたが、**それより数ヶ月早い**逆転となった。",
