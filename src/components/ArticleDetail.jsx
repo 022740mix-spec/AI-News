@@ -208,7 +208,7 @@ function XEmbed({ url, caption }) {
       // widgets.js の読み込み自体が失敗した場合のみタイムアウト
       failTimer = setTimeout(() => {
         clearInterval(check);
-        if (!cancelled && status !== "loaded") setStatus("failed");
+        if (!cancelled) setStatus((prev) => prev !== "loaded" ? "failed" : prev);
       }, 15000);
       return () => { cancelled = true; clearInterval(check); clearTimeout(failTimer); };
     }
