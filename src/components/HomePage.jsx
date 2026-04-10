@@ -3,13 +3,7 @@ import { CATEGORIES, getArticleNewsYmd } from "../data/articleHelpers.js";
 import { LangContext } from "../context/LangContext.js";
 import { resolveMediaSrc } from "../utils/seo.js";
 import { parseDate } from "../utils/dateUtils.js";
-
-const handleKeyActivate = (onClick) => (e) => {
-  if (e.key === "Enter" || e.key === " ") {
-    e.preventDefault();
-    onClick(e);
-  }
-};
+import { handleKeyActivate } from "../utils/a11y.js";
 
 function HomePage({ articles, onSelect, onSection }) {
   const lang = useContext(LangContext);

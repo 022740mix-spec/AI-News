@@ -297,8 +297,8 @@ body {
   outline-offset: 2px;
 }
 
-.lang-toggle-btn {
-  font-size: 12px !important;
+.icon-btn.lang-toggle-btn {
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--accent);
@@ -1753,11 +1753,11 @@ body {
 .article-embed--x {
   max-width: 550px;
 }
-.article-embed__x-link {
+a.article-embed__x-link {
   display: inline-block;
   padding: 0.75rem 1.25rem;
   background: #1d9bf0;
-  color: #fff !important;
+  color: #fff;
   border-radius: var(--radius-md);
   font-weight: 600;
   text-decoration: none;

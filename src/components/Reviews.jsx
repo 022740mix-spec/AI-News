@@ -3,13 +3,7 @@ import { renderStars } from "../data/articleHelpers.js";
 import { LangContext } from "../context/LangContext.js";
 import { REVIEW_CATEGORIES, RATING_EXPLAINER, MODEL_COMPARISON, BENCHMARK_CONFIGS } from "../constants.js";
 import { resolveMediaSrc } from "../utils/seo.js";
-
-const handleKeyActivate = (onClick) => (e) => {
-  if (e.key === "Enter" || e.key === " ") {
-    e.preventDefault();
-    onClick(e);
-  }
-};
+import { handleKeyActivate } from "../utils/a11y.js";
 
 /** ベンチマークスコアの横棒グラフ（SVG 自動生成・グラデーション付き） */
 function BenchmarkChart({ data, title, maxScore = 100, scoreKey = "bench" }) {

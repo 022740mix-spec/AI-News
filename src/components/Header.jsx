@@ -2,13 +2,7 @@ import { useState, useEffect, useRef, useCallback, useContext } from "react";
 import { SITE_NAME, SITE_DESCRIPTION } from "../data/articleHelpers.js";
 import { LangContext, L } from "../context/LangContext.js";
 import { ACCENT_PRESETS, SORTS } from "../constants.js";
-
-const handleKeyActivate = (onClick) => (e) => {
-  if (e.key === "Enter" || e.key === " ") {
-    e.preventDefault();
-    onClick(e);
-  }
-};
+import { handleKeyActivate } from "../utils/a11y.js";
 
 /* ══ ハンバーガーメニュー ══ */
 function HamburgerMenu({ isOpen, onClose, onSection, currentSection, searchRef, accentId, onAccent, query, setQuery }) {
