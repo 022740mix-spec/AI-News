@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useState } from "react";
 import { ACCENT_PRESETS } from "../constants.js";
 
 function SeasonalScene({ accent }) {
@@ -86,14 +86,6 @@ function WinterScene({ side }) {
   );
 }
 
-function getSeason() {
-  const m = new Date().getMonth(); // 0-11
-  if (m >= 2 && m <= 4) return "spring";
-  if (m >= 5 && m <= 7) return "summer";
-  if (m >= 8 && m <= 10) return "autumn";
-  return "winter";
-}
-
 function SeasonalEffect({ visible, accent }) {
   if (!visible) return null;
   const preset = ACCENT_PRESETS.find(p => p.id === accent);
@@ -133,7 +125,7 @@ function SakuraPetalSvg({ size, style, className, variant = 0 }) {
 }
 
 function SpringEffect() {
-  const petals = useMemo(() => Array.from({ length: 18 }, (_, i) => ({
+  const [petals] = useState(() => Array.from({ length: 18 }, (_, i) => ({
     key: i,
     left: Math.random() * 100,
     delay: Math.random() * 12,
@@ -144,7 +136,7 @@ function SpringEffect() {
     drift: -60 + Math.random() * 120,
     rotEnd: 360 + Math.random() * 720,
     settle: i < 6,
-  })), []);
+  })));
   return (
     <div className="seasonal-container" aria-hidden="true">
       {petals.map(p => (
@@ -170,7 +162,7 @@ function SpringEffect() {
 }
 
 function SummerEffect() {
-  const fireflies = useMemo(() => Array.from({ length: 14 }, (_, i) => ({
+  const [fireflies] = useState(() => Array.from({ length: 14 }, (_, i) => ({
     key: i,
     left: 5 + Math.random() * 90,
     top: 20 + Math.random() * 70,
@@ -179,7 +171,7 @@ function SummerEffect() {
     driftX: -30 + Math.random() * 60,
     driftY: -40 + Math.random() * 30,
     size: 3 + Math.random() * 4,
-  })), []);
+  })));
   return (
     <div className="seasonal-container" aria-hidden="true">
       {fireflies.map(f => (
@@ -220,7 +212,7 @@ function MomijiSvg({ size, color1, color2, style, className }) {
 }
 
 function AutumnEffect() {
-  const leaves = useMemo(() => {
+  const [leaves] = useState(() => {
     const palettes = [
       ["#dc2626", "#991b1b"], ["#ea580c", "#c2410c"], ["#d97706", "#a16207"],
       ["#ca8a04", "#854d0e"], ["#ef4444", "#b91c1c"], ["#f97316", "#ea580c"],
@@ -239,7 +231,7 @@ function AutumnEffect() {
         rotEnd: 200 + Math.random() * 500,
       };
     });
-  }, []);
+  });
   return (
     <div className="seasonal-container" aria-hidden="true">
       {leaves.map(l => (
@@ -293,7 +285,7 @@ function SnowflakeSvg({ size, style, className }) {
 }
 
 function WinterEffect() {
-  const flakes = useMemo(() => Array.from({ length: 18 }, (_, i) => ({
+  const [flakes] = useState(() => Array.from({ length: 18 }, (_, i) => ({
     key: i,
     left: Math.random() * 100,
     delay: Math.random() * 10,
@@ -302,7 +294,7 @@ function WinterEffect() {
     size: 10 + Math.random() * 14,
     opacity: 0.15 + Math.random() * 0.4,
     drift: -25 + Math.random() * 50,
-  })), []);
+  })));
   return (
     <div className="seasonal-container" aria-hidden="true">
       {flakes.map(f => (

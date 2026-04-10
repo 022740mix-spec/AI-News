@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useContext } from "react";
 import { SITE_DESCRIPTION, getSiteTodayYmd, getArticleNewsYmd } from "../data/articleHelpers.js";
 import { VIBE_SETUP_GUIDE, VIBE_CODING_PRACTICAL, VIBE_MEDIA_TAXONOMY, GLOSSARY_BY_GENRE, TOOL_REFERENCES } from "../data/vibeCodingGuide.js";
@@ -209,7 +210,7 @@ function WeekRoundupNav({ articles, onSelect, onTagClick, className }) {
   );
 }
 
-function Sidebar({ articles, onSelect, onTagClick, weekRoundups }) {
+function Sidebar({ onSelect, onTagClick, weekRoundups }) {
   const lang = useContext(LangContext);
   const en = lang === "en";
   return (

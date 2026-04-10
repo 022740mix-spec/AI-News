@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback, useContext } from "react";
+import { useEffect, useRef, useContext } from "react";
 import { SITE_NAME, SITE_DESCRIPTION } from "../data/articleHelpers.js";
 import { LangContext, L } from "../context/LangContext.js";
 import { ACCENT_PRESETS, SORTS } from "../constants.js";
@@ -6,7 +6,7 @@ import { handleKeyActivate } from "../utils/a11y.js";
 import { IconSearch, IconSun, IconMoon } from "./Icons.jsx";
 
 /* ══ ハンバーガーメニュー ══ */
-function HamburgerMenu({ isOpen, onClose, onSection, currentSection, searchRef, accentId, onAccent, query, setQuery }) {
+function HamburgerMenu({ isOpen, onClose, onSection, currentSection, accentId, onAccent, query, setQuery }) {
   const lang = useContext(LangContext);
   const menuItems = [
     { id: "home", label: "ホーム", en: "Home" },
@@ -117,8 +117,6 @@ function Header({
   sort,
   setSort,
   searchRef,
-  filteredCount,
-  totalCount,
   searchPlaceholder,
   searchAriaLabel,
   showSort = true,
@@ -128,7 +126,8 @@ function Header({
   lang: langOverride,
   onToggleLang,
 }) {
-  const lang = langOverride ?? useContext(LangContext);
+  const ctxLang = useContext(LangContext);
+  const lang = langOverride ?? ctxLang;
   const defaultPlaceholder = lang === "en" ? "Search articles… (title, summary, tags)" : "記事を検索…（タイトル・概要・タグ）";
   const defaultAriaLabel = lang === "en" ? "Search" : "検索";
   const ph = searchPlaceholder ?? defaultPlaceholder;

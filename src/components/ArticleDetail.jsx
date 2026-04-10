@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect, useCallback, useContext, useRef } from "react";
+import { Fragment, useState, useEffect, useContext, useRef } from "react";
 import { CATEGORIES, renderStars, getArticleNewsYmd } from "../data/articleHelpers.js";
 import { LangContext } from "../context/LangContext.js";
 import { richArticleText, richInlineLine, parseCodeBlock, CopyableCodeBlock } from "../utils/richText.jsx";
@@ -167,7 +167,7 @@ function XEmbed({ url, caption }) {
     if (!containerRef.current || !tweetId) return;
     const el = containerRef.current;
     el.innerHTML = "";
-    setStatus("loading");
+    setStatus("loading"); // eslint-disable-line react-hooks/set-state-in-effect -- reset on tweetId change before async subscription
 
     let cancelled = false;
     let failTimer;

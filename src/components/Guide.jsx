@@ -149,7 +149,7 @@ function GuideRulesPanel({ vibeGuide }) {
   );
 }
 
-function GuidePracticalPanel({ vibeGuide }) {
+function GuidePracticalPanel() {
   let k = 0;
   const mkKey = () => `gp-${k++}`;
   return (

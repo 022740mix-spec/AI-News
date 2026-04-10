@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { Fragment, useContext } from "react";
 import { TOOL_REFERENCES } from "../data/vibeCodingGuide.js";
 import { LangContext } from "../context/LangContext.js";

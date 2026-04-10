@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useState, useCallback } from "react";
 
 /** データ内の **強調** を OGP・共有テキスト用のプレーン文に */
