@@ -10,7 +10,6 @@
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.60.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
