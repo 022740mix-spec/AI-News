@@ -4,6 +4,7 @@ import { LangContext } from "../context/LangContext.js";
 import { resolveMediaSrc } from "../utils/seo.js";
 import { parseDate } from "../utils/dateUtils.js";
 import { handleKeyActivate } from "../utils/a11y.js";
+import { IconNewspaper, IconStar, IconBook, IconWrench, IconBuilding } from "./Icons.jsx";
 
 function HomePage({ articles, onSelect, onSection }) {
   const lang = useContext(LangContext);
@@ -75,27 +76,27 @@ function HomePage({ articles, onSelect, onSection }) {
           <h2 className="home-section__title">{lang === "en" ? "Content" : "コンテンツ"}</h2>
           <div className="home-nav-cards">
             <button className="home-nav-card" onClick={() => onSection("articles")}>
-              <span className="home-nav-card__icon">📰</span>
+              <span className="home-nav-card__icon"><IconNewspaper /></span>
               <span className="home-nav-card__label">{lang === "en" ? "News" : "ニュース"}</span>
               <span className="home-nav-card__desc">{lang === "en" ? "Latest AI dev tool news" : "AI開発ツールの最新ニュース"}</span>
             </button>
             <button className="home-nav-card" onClick={() => onSection("reviews")}>
-              <span className="home-nav-card__icon">⭐</span>
+              <span className="home-nav-card__icon"><IconStar /></span>
               <span className="home-nav-card__label">{lang === "en" ? "Reviews" : "レビュー"}</span>
               <span className="home-nav-card__desc">{lang === "en" ? "Tool comparisons & ratings" : "ツール比較と評価"}</span>
             </button>
             <button className="home-nav-card" onClick={() => onSection("guide")}>
-              <span className="home-nav-card__icon">📖</span>
+              <span className="home-nav-card__icon"><IconBook /></span>
               <span className="home-nav-card__label">{lang === "en" ? "Guide" : "ガイド"}</span>
               <span className="home-nav-card__desc">{lang === "en" ? "Setup & practical techniques" : "セットアップと実践テクニック"}</span>
             </button>
             <button className="home-nav-card" onClick={() => onSection("tools")}>
-              <span className="home-nav-card__icon">🔧</span>
+              <span className="home-nav-card__icon"><IconWrench /></span>
               <span className="home-nav-card__label">{lang === "en" ? "Tools" : "ツール別"}</span>
               <span className="home-nav-card__desc">Claude Code / Cursor / Codex / Copilot</span>
             </button>
             <button className="home-nav-card" onClick={() => onSection("companies")}>
-              <span className="home-nav-card__icon">🏢</span>
+              <span className="home-nav-card__icon"><IconBuilding /></span>
               <span className="home-nav-card__label">{lang === "en" ? "Companies" : "AI企業"}</span>
               <span className="home-nav-card__desc">{lang === "en" ? "AI company profiles" : "AI企業のプロファイル"}</span>
             </button>

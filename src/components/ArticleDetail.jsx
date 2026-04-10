@@ -1,7 +1,6 @@
 import { Fragment, useState, useEffect, useCallback, useContext, useRef } from "react";
 import { CATEGORIES, renderStars, getArticleNewsYmd } from "../data/articleHelpers.js";
 import { LangContext } from "../context/LangContext.js";
-import { getCategoryIcon } from "../constants.js";
 import { richArticleText, richInlineLine, parseCodeBlock, CopyableCodeBlock } from "../utils/richText.jsx";
 import { resolveMediaSrc } from "../utils/seo.js";
 import { formatPickDate, formatWeekRoundupPeriodJp } from "../utils/dateUtils.js";

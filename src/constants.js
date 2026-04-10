@@ -31,16 +31,16 @@ export const SORTS = [
 
 export function getCategoryIcon(cat) {
   const icons = {
-    special: "★",
-    model: "◇",
-    cli: ">",
-    editor: "<>",
-    data: "≡",
-    product: "◆",
-    media: "♪",
-    regulation: "§",
+    special: "特集",
+    model: "AI",
+    cli: "CLI",
+    editor: "IDE",
+    data: "Data",
+    product: "SaaS",
+    media: "Media",
+    regulation: "Gov",
   };
-  return icons[cat] ?? "·";
+  return icons[cat] ?? "";
 }
 
 export const TYPE_FILTERS = [

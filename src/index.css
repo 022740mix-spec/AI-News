@@ -2101,16 +2101,17 @@ a.article-embed__x-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--text-md);
-  font-weight: 700;
-  font-family: ui-monospace, monospace;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   flex-shrink: 0;
 }
 
 .cat-icon--sm {
   width: 2rem;
   height: 2rem;
-  font-size: var(--text-base);
+  font-size: 0.6rem;
 }
 
 /* ── 共有ボタン ── */
@@ -3460,12 +3461,13 @@ a.article-embed__x-link {
   box-shadow: 0 8px 30px rgba(59, 130, 246, 0.1);
 }
 .home-nav-card__icon {
-  font-size: var(--text-3xl);
+  font-size: 1.5rem;
   margin-bottom: 0.6rem;
-  transition: transform 0.3s ease;
+  transition: opacity 0.3s ease;
+  opacity: 0.7;
 }
 .home-nav-card:hover .home-nav-card__icon {
-  transform: scale(1.15);
+  opacity: 1;
 }
 .home-nav-card__label {
   font-size: var(--text-base);

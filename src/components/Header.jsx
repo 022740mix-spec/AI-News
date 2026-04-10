@@ -3,6 +3,7 @@ import { SITE_NAME, SITE_DESCRIPTION } from "../data/articleHelpers.js";
 import { LangContext, L } from "../context/LangContext.js";
 import { ACCENT_PRESETS, SORTS } from "../constants.js";
 import { handleKeyActivate } from "../utils/a11y.js";
+import { IconSearch, IconSun, IconMoon } from "./Icons.jsx";
 
 /* ══ ハンバーガーメニュー ══ */
 function HamburgerMenu({ isOpen, onClose, onSection, currentSection, searchRef, accentId, onAccent, query, setQuery }) {
@@ -38,7 +39,7 @@ function HamburgerMenu({ isOpen, onClose, onSection, currentSection, searchRef, 
           </button>
         </div>
         <div className="hamburger-search-field">
-          <span className="hamburger-search-prefix">🔎</span>
+          <span className="hamburger-search-prefix"><IconSearch /></span>
           <input
             ref={mobileSearchRef}
             type="search"
@@ -167,7 +168,7 @@ function Header({
               aria-label={lang === "en" ? "Toggle theme" : "テーマ切替"}
               onClick={toggleTheme}
             >
-              {theme === "dark" ? "☀️" : "🌙"}
+              {theme === "dark" ? <IconSun /> : <IconMoon />}
             </button>
           </div>
         </div>
@@ -175,7 +176,7 @@ function Header({
           <>
             <div className="search-row">
               <div className="search-field">
-                <span className="search-prefix">🔎</span>
+                <span className="search-prefix"><IconSearch /></span>
                 <input
                   ref={searchRef}
                   type="search"
