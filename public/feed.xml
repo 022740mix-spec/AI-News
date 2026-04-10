@@ -5,8 +5,304 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-04-02T15:00:00Z</updated>
+  <updated>2026-04-10T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Anthropic が Claude Managed Agents をパブリックベータ公開 — クラウドホスト型エージェントAPIで「プロトタイプから本番を10倍速く」、Notion・Rakuten・Sentryが導入済み</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-managed-agents-public-beta-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-managed-agents-public-beta-2026</id>
+    <published>2026-04-08T15:00:00Z</published>
+    <updated>2026-04-08T15:00:00Z</updated>
+    <summary>Anthropic が4月8日、Claude Managed Agents をパブリックベータとしてリリースした。サンドボックス実行・チェックポイント・認証管理・スコープ付き権限・エンドツーエンドトレースを備えたクラウドホスト型エージェントAPIで、ランタイム料金は $0.08/セッション時間。同時に Claude Cowork が macOS・Windows で正式版（GA）に昇格し、エンタープライズ機能が追加された。Notion・Rakuten・Sentry が早期導入パートナーとして本番運用中。</summary>
+  </entry>
+  <entry>
+    <title>Meta が Muse Spark を発表 — 初のクローズドモデルでオープンソース路線を転換、ヘルスケアベンチマークで全フロンティアモデルを上回る</title>
+    <link rel="alternate" type="text/html" href="?a=meta-muse-spark-closed-source-msl-2026"/>
+    <id>tag:ai-tool-news.jp,2026:meta-muse-spark-closed-source-msl-2026</id>
+    <published>2026-04-08T15:00:00Z</published>
+    <updated>2026-04-08T15:00:00Z</updated>
+    <summary>Meta が4月8日、Meta Superintelligence Labs（MSL）初のフロンティアモデル「Muse Spark」を発表した。Alexandr Wang（元 Scale AI CEO）率いる MSL が開発し、Meta 初のクローズドソースモデルとしてオープンソース路線からの転換を鮮明にした。Artificial Analysis Intelligence Index v4.0 で4位（スコア52）、HealthBench Hard で 42.8% と全フロンティアモデル中トップ。Meta AI アプリで利用可能、APIは限定プレビュー。</summary>
+  </entry>
+  <entry>
+    <title>【分析】Anthropic vs 米国防総省 — 控訴裁がClaude軍事ブラックリストの一時差止を却下、AI安全ポリシーと国防の衝突が5月口頭弁論へ</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-pentagon-blacklist-appeals-court-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-pentagon-blacklist-appeals-court-2026</id>
+    <published>2026-04-08T15:00:00Z</published>
+    <updated>2026-04-08T15:00:00Z</updated>
+    <summary>D.C. 巡回控訴裁判所が4月8日、Anthropic の緊急差止申立てを却下し、国防総省による Claude のサプライチェーンリスク指定（事実上の軍事利用禁止）を維持した。争点は Anthropic の利用規約にある「完全自律兵器の禁止」と「米国市民の大量監視の禁止」の2条項。$2億の国防契約を結びながらも安全ポリシーを譲らなかった Anthropic と、AI 技術の無制限利用を求めるトランプ政権の対立は、5月19日の口頭弁論で本格的に争われる。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI が Child Safety Blueprint を公表 — AI悪用による児童搾取対策の政策提言と Safety Fellowship 募集を同時発表</title>
+    <link rel="alternate" type="text/html" href="?a=openai-child-safety-blueprint-safety-fellowship-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-child-safety-blueprint-safety-fellowship-2026</id>
+    <published>2026-04-08T15:00:00Z</published>
+    <updated>2026-04-08T15:00:00Z</updated>
+    <summary>OpenAI が4月8日、AI を悪用した児童搾取に対する米国の法的・技術的枠組みを提言する「Child Safety Blueprint」を公表した。AI 生成 CSAM の検出・報告・捜査の高速化を柱とし、立法の更新・報告メカニズムの改善・AI システムへの予防的セーフガード統合の3軸で構成。同時に外部研究者向けの Safety Fellowship（2026年9月〜2027年2月）の募集も開始。IWF によれば AI 生成 CSAM の報告は2025年前半だけで8,000件超、前年比14%増。</summary>
+  </entry>
+  <entry>
+    <title>GitHub Copilot が Autopilot モード（自律エージェント）をプレビュー公開、CLI v1.0.21 で MCP サーバー管理にも対応</title>
+    <link rel="alternate" type="text/html" href="?a=github-copilot-autopilot-mcp-cli-vscode-2026"/>
+    <id>tag:ai-tool-news.jp,2026:github-copilot-autopilot-mcp-cli-vscode-2026</id>
+    <published>2026-04-08T15:00:00Z</published>
+    <updated>2026-04-08T15:00:00Z</updated>
+    <summary>GitHub が4月上旬、Copilot の2つの大きなアップデートを発表した。VS Code 向け Autopilot モードのパブリックプレビューと、Copilot CLI v1.0.21 での MCP サーバー管理コマンド追加だ。Autopilot はエージェントが自らアクションを承認し、エラーを自動リトライしてタスク完了まで自律実行する新モード。CLI の copilot mcp コマンドでは MCP サーバーの追加・一覧・有効化・無効化が可能に。コーディングツールのエージェント化がさらに加速している。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic が Claude Mythos Preview を正式発表 — 「強すぎて公開しない」初のフロンティアモデル、Project Glasswingで27年物OpenBSDバグ含む数千のゼロデイを発見</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-mythos-preview-glasswing-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-mythos-preview-glasswing-2026</id>
+    <published>2026-04-07T15:00:00Z</published>
+    <updated>2026-04-07T15:00:00Z</updated>
+    <summary>Anthropic が4月7日、フロンティアモデル「Claude Mythos Preview」を正式発表した。ただし汎用公開はせず、AWS・Apple・Google・Microsoft・NVIDIA等を含む約50の組織との「Project Glasswing」（$100Mのサイバーセキュリティイニシアティブ）でのみ利用される異例の形態。HLE（人類最後の試験）でツールなし56.8%／ツール使用64.7%（GPT-5.4 Proは42.7%/58.7%）、SWE-bench Verifiedで93.9%という圧倒的スコアを記録。発表前数週間で主要OS・ブラウザすべてにわたる数千のゼロデイ脆弱性を発見し、最古は27年前のOpenBSDのバグだった。「強すぎるAI」を初めて公にコントロールする試み。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic が売上で OpenAI を逆転 — 年換算 $300億で $250億の OpenAI を追い越し、エンタープライズ特化戦略が結実</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-overtakes-openai-revenue-30b-run-rate-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-overtakes-openai-revenue-30b-run-rate-2026</id>
+    <published>2026-04-06T15:00:00Z</published>
+    <updated>2026-04-06T15:00:00Z</updated>
+    <summary>Anthropic の年換算売上（ARR）が約300億ドルに到達し、OpenAI の約240〜250億ドルを上回ったことが明らかになった。Epoch AI が「2026年半ばに逆転」と予測していたが、それより早い時期での逆転となった。2025年末時点では Anthropic は約90億ドルで、わずか数ヶ月で3倍以上に成長。エンタープライズAPI に特化した戦略が、コンシューマー向け ChatGPT に依存する OpenAI を上回った形だ。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI が「Intelligence Age の産業政策」を提言 — 週32時間労働、ロボット税、公的資産ファンド、AGI時代の社会再設計を訴える</title>
+    <link rel="alternate" type="text/html" href="?a=openai-industrial-policy-intelligence-age-4day-workweek-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-industrial-policy-intelligence-age-4day-workweek-2026</id>
+    <published>2026-04-06T15:00:00Z</published>
+    <updated>2026-04-06T15:00:00Z</updated>
+    <summary>OpenAI が4月6日、13ページの政策提言書「Industrial Policy for the Intelligence Age」を公表。AGI時代に向けて、（1）給与据え置きで32時間/4日制の試験導入、（2）自動化労働への課税・ロボット税、（3）AI企業に出資する国民向け公的資産ファンドの創設、（4）安全網の自動発動メカニズム、（5）AIの信頼性・アラインメント・安全性への高い基準——を米国政府に提案。AI企業自らが「自社の影響を社会がどう吸収するか」を語り始めた歴史的な文書。</summary>
+  </entry>
+  <entry>
+    <title>【特集／4月7日閣議決定】日本の個人情報保護法が改正へ — AI学習なら要配慮個人情報も「同意不要」、千人超の不正取得に課徴金、欧州とは逆方向の選択</title>
+    <link rel="alternate" type="text/html" href="?a=japan-personal-info-protection-law-ai-amendment-2026"/>
+    <id>tag:ai-tool-news.jp,2026:japan-personal-info-protection-law-ai-amendment-2026</id>
+    <published>2026-04-06T15:00:00Z</published>
+    <updated>2026-04-06T15:00:00Z</updated>
+    <summary>政府は4月7日、個人情報保護法の改正案を閣議決定する。AI開発を含む統計目的での個人データ利用について、病歴・犯罪歴・人種等の「要配慮個人情報」であっても本人同意を不要とする規制緩和が柱。同時に、千人を超える大規模な不正取得・利用を行った業者に対する課徴金制度を新設。漏えい時の本人通知義務の緩和、オプトアウト時の第三者提供先確認義務化、16歳未満の保護強化も盛り込む。EUのGDPR・AI Actが「同意とリスクベース規制」を強化する中、日本は「AI産業育成の追い風」を選んだ形だ。</summary>
+  </entry>
+  <entry>
+    <title>【特集】バイブコーディング時代の基幹システム — フロントエンドは民主化された、では「沈黙の壊れ方」をする裏側を誰が守るのか</title>
+    <link rel="alternate" type="text/html" href="?a=vibe-coding-enterprise-backend-maintenance-2026"/>
+    <id>tag:ai-tool-news.jp,2026:vibe-coding-enterprise-backend-maintenance-2026</id>
+    <published>2026-04-06T15:00:00Z</published>
+    <updated>2026-04-06T15:00:00Z</updated>
+    <summary>バイブコーディングは、これまでSaaSが入れなかった小規模・細分化業界の業務システム需要を解放しつつある。フロントエンドのカスタマイズコストは劇的に下がった。しかしバックエンド・データ整合性・セキュリティ境界・災害復旧といった「沈黙の壊れ方」をする領域は、AIの70%生成では埋まらない。「午前3時問題」、「3年後にデータが壊れる問題」、規制業種の責任所在——本特集では、バイブコーディング時代における基幹システムの設計責任と、社会が整備すべき制度を提案する。</summary>
+  </entry>
+  <entry>
+    <title>【期限迫る】Claude 旧モデルの1Mコンテキストβが4月30日で終了 — Sonnet 4.5/4は200Kに制限、4.6へ移行を</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-1m-context-beta-deadline-april30-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-1m-context-beta-deadline-april30-2026</id>
+    <published>2026-04-06T15:00:00Z</published>
+    <updated>2026-04-06T15:00:00Z</updated>
+    <summary>Anthropic が Claude Sonnet 4.5 と Claude Sonnet 4 の1Mトークンコンテキストウィンドウβを4月30日に終了する。期日以降は context-1m ヘッダーが無効化され、200Kトークンを超えるリクエストはエラーになる。Claude Sonnet 4.6 / Opus 4.6 は追加料金なしで1M対応済みのため、早めの移行が必要。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic が OpenClaw 等サードパーティ製ハーネスのサブスク枠利用を正式停止 — Extra Usage（従量課金）へ移行、月額相当の一回限りクレジット付与</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-third-party-harness-extra-usage-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-third-party-harness-extra-usage-2026</id>
+    <published>2026-04-04T15:00:00Z</published>
+    <updated>2026-04-04T15:00:00Z</updated>
+    <summary>Anthropic が4月4日12時（PT）から、OpenClaw をはじめとするサードパーティ製ハーネスでの Claude サブスクリプション枠の利用を正式に停止。今後はサブスクとは別請求の Extra Usage（従量課金）が必要になる。Claude Code・Cowork は引き続き定額枠内。移行措置として月額サブスク料金と同額の一回限りクレジットを付与し、事前購入バンドルで最大30%割引も導入。1月の OAuth 遮断、2月の規約明記に続く最終段階。</summary>
+  </entry>
+  <entry>
+    <title>Claude の Microsoft 365 コネクターが全プラン開放 — Outlook・OneDrive・SharePoint・Teams を会話に直接接続</title>
+    <link rel="alternate" type="text/html" href="?a=claude-microsoft-365-connector-all-plans-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-microsoft-365-connector-all-plans-2026</id>
+    <published>2026-04-04T15:00:00Z</published>
+    <updated>2026-04-04T15:00:00Z</updated>
+    <summary>Anthropic が Claude の Microsoft 365 コネクターを Free・Pro・Max を含む全プランに開放。Outlook・OneDrive・SharePoint・Teams を $0 で AI に接続できるようになった。Microsoft が同機能の Copilot に $30/ユーザー/月を課金する中、Anthropic は Microsoft 自身が承認したコネクターを無料開放し、4億の M365 ユーザー基盤に直接アプローチする戦略を明確化。</summary>
+  </entry>
+  <entry>
+    <title>Supabase が $500M 調達・評価額 $100億に到達 — バイブコーディング需要がOSS BaaSの急成長を後押し</title>
+    <link rel="alternate" type="text/html" href="?a=supabase-500m-funding-10b-valuation-2026"/>
+    <id>tag:ai-tool-news.jp,2026:supabase-500m-funding-10b-valuation-2026</id>
+    <published>2026-04-03T15:00:00Z</published>
+    <updated>2026-04-03T15:00:00Z</updated>
+    <summary>オープンソースの Firebase 代替「Supabase」が、GIC 主導で5億ドルを調達し評価額100億ドルに到達。1年前の20億ドルから5倍の急成長。Cursor や Lovable などのバイブコーディングツールがデータベース需要を押し上げ、年間売上は2,000万ドルから7,000万ドルへ3.5倍に拡大。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic がバイオテックAI新興企業 Coefficient Bio を約$400Mで買収 — 創業8ヶ月・社員10人未満の株式取引</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-coefficient-bio-acquisition-400m-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-coefficient-bio-acquisition-400m-2026</id>
+    <published>2026-04-03T15:00:00Z</published>
+    <updated>2026-04-03T15:00:00Z</updated>
+    <summary>Anthropic が創業わずか8ヶ月のバイオテックAIスタートアップ Coefficient Bio を約4億ドルの株式交換で買収。共同創業者の Samuel Stanton と Nathan C. Frey は Genentech の Prescient Design 出身で、タンパク質設計・生体分子モデリングの専門家。Anthropic のヘルスケア・ライフサイエンス部門に合流し、製薬企業向けのAI特化ツール開発を加速。</summary>
+  </entry>
+  <entry>
+    <title>不可視Unicode文字でマルウェア混入「GlassWorm」攻撃が急拡大 — GitHub 151+リポジトリ・npm・VS Code拡張433件以上が汚染</title>
+    <link rel="alternate" type="text/html" href="?a=glassworm-invisible-unicode-malware-github-supply-chain-2026"/>
+    <id>tag:ai-tool-news.jp,2026:glassworm-invisible-unicode-malware-github-supply-chain-2026</id>
+    <published>2026-04-03T15:00:00Z</published>
+    <updated>2026-04-03T15:00:00Z</updated>
+    <summary>不可視のUnicode制御文字を使い悪意あるコードを隠蔽するサイバー攻撃手法「GlassWorm」が2026年3月に急拡大。GitHub上の151以上のリポジトリ、npmパッケージ、VS Code拡張機能など433件以上が汚染された。1行のコードに1万8000行の不可視コードが埋め込まれた例も。React関連ライブラリやWasmer、OpenCode関連プロジェクトも被害。LLMでもっともらしいコードを大量生成している可能性が指摘されている。</summary>
+  </entry>
+  <entry>
+    <title>16歳の高校生が3Dインタラクティブ周期表アプリ「Zperiod」を開発 — 3D原子モデル・化学式バランサー・溶解度表をブラウザで無料提供</title>
+    <link rel="alternate" type="text/html" href="?a=zperiod-3d-periodic-table-high-school-student-2026"/>
+    <id>tag:ai-tool-news.jp,2026:zperiod-3d-periodic-table-high-school-student-2026</id>
+    <published>2026-04-03T15:00:00Z</published>
+    <updated>2026-04-03T15:00:00Z</updated>
+    <summary>16歳の高校生 Philip Zhao が開発した3Dインタラクティブ化学学習アプリ「Zperiod」が X で話題に。全118元素の3D原子モデル、化学反応式の自動バランサー、経験式計算機、溶解度表をブラウザ上で無料提供。19万回表示・4,000いいねを超える反響を集めた。</summary>
+  </entry>
+  <entry>
+    <title>Microsoft が独自AIモデル3種を公開 — 文字起こし・音声生成・画像生成、Foundry で即日商用利用可能</title>
+    <link rel="alternate" type="text/html" href="?a=microsoft-mai-transcribe-voice-image-foundry-2026"/>
+    <id>tag:ai-tool-news.jp,2026:microsoft-mai-transcribe-voice-image-foundry-2026</id>
+    <published>2026-04-03T15:00:00Z</published>
+    <updated>2026-04-03T15:00:00Z</updated>
+    <summary>Microsoft が自社開発の MAI モデル3種を発表。MAI-Transcribe-1 は音声認識 WER 3.9% で FLEURS ベンチ業界最高、MAI-Voice-1 は60秒音声を1秒で生成、MAI-Image-2 は2倍高速化で Arena.ai トップ3入り。全モデルが Microsoft Foundry で即日商用利用可能。テキスト生成は引き続き他社モデル依存だが、メディア生成では独自路線を明確化。</summary>
+  </entry>
+  <entry>
+    <title>Cursor 3 ローンチ — AIエージェント専用ワークスペース「Agents Window」搭載、ローカル・クラウド・SSH を統合した次世代コードエディタ</title>
+    <link rel="alternate" type="text/html" href="?a=cursor-3-agent-first-workspace-2026"/>
+    <id>tag:ai-tool-news.jp,2026:cursor-3-agent-first-workspace-2026</id>
+    <published>2026-04-02T15:00:00Z</published>
+    <updated>2026-04-02T15:00:00Z</updated>
+    <summary>Anysphere が4月2日に Cursor 3 をリリース。従来の Composer ペインを廃止し、複数AIエージェントを並列実行できる「Agents Window」を搭載。ローカル・クラウド・リモートSSH 間のシームレスなハンドオフ、ブラウザ上でUIを直接アノテーションする「Design Mode」、マルチリポ対応など、エージェントファーストの開発体験を実現。</summary>
+  </entry>
+  <entry>
+    <title>Pika が PikaStream1.0 搭載のビデオチャットスキルを公開 — AIエージェントがビデオ会議に参加し、記憶と個性を維持したまま会話</title>
+    <link rel="alternate" type="text/html" href="?a=pika-pikastream-video-chat-skill-2026"/>
+    <id>tag:ai-tool-news.jp,2026:pika-pikastream-video-chat-skill-2026</id>
+    <published>2026-04-02T15:00:00Z</published>
+    <updated>2026-04-02T15:00:00Z</updated>
+    <summary>Pika Labs がリアルタイム動画生成モデル「PikaStream1.0」を搭載したオープンソースのビデオチャットスキルを公開。AIエージェント（Claude Code 等）に組み込むと、Google Meet にAIアバターが参加し、ワークスペースの文脈を理解した状態でビデオ会話ができる。音声クローン・アバター生成・記憶維持・会議メモ自動生成に対応。料金は $0.50/分。</summary>
+  </entry>
+  <entry>
+    <title>Claude Computer Use が Windows に対応 — Cowork・Claude Code Desktop でデスクトップ操作が macOS/Windows 両対応に</title>
+    <link rel="alternate" type="text/html" href="?a=claude-computer-use-windows-launch-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-computer-use-windows-launch-2026</id>
+    <published>2026-04-02T15:00:00Z</published>
+    <updated>2026-04-02T15:00:00Z</updated>
+    <summary>Anthropic が Claude の Computer Use 機能を Windows に拡大。Claude Cowork と Claude Code Desktop の両方で、Windows 上のアプリ操作・ブラウザ操作・スプレッドシート入力などをAIが自律実行できるようになった。Pro / Max プラン限定。3月23日の macOS 対応から約10日でデスクトップPC市場の約70%をカバー。</summary>
+  </entry>
+  <entry>
+    <title>NVIDIA が Physical AI Data Factory Blueprint を公開 — ロボティクス・自動運転の学習データ生成を自動化するオープン参照アーキテクチャ</title>
+    <link rel="alternate" type="text/html" href="?a=nvidia-physical-ai-data-factory-blueprint-2026"/>
+    <id>tag:ai-tool-news.jp,2026:nvidia-physical-ai-data-factory-blueprint-2026</id>
+    <published>2026-04-02T15:00:00Z</published>
+    <updated>2026-04-02T15:00:00Z</updated>
+    <summary>NVIDIA が物理 AI 向けの学習データ生成・拡張・評価を統合するオープンな参照アーキテクチャ「Physical AI Data Factory Blueprint」を発表。合成データ生成から強化学習まで一気通貫で自動化し、ロボティクス・ビジョン AI・自動運転の開発コストを削減。GitHub で4月中に公開予定。</summary>
+  </entry>
+  <entry>
+    <title>Claw Code — Claude Code アーキテクチャのクリーンルーム再実装が公開数日で100K Stars超え、GitHub史上最速</title>
+    <link rel="alternate" type="text/html" href="?a=claw-code-oss-agent-harness-100k-stars-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claw-code-oss-agent-harness-100k-stars-2026</id>
+    <published>2026-04-02T15:00:00Z</published>
+    <updated>2026-04-02T15:00:00Z</updated>
+    <summary>Claude Code のソースマップ流出を受け、エージェントハーネスをゼロからPython＋Rustで再実装した OSS プロジェクト「Claw Code」が GitHub で公開数日で100K Stars を突破。プロプライエタリコードのコピーなし・クリーンルーム設計を掲げ、ツール接続・タスクワークフロー・ファイルシステム操作の制御層を完全にオープン化。</summary>
+  </entry>
+  <entry>
+    <title>Google Vids に Veo 3.1 統合 — AI動画生成が Workspace ユーザーに開放、カスタムアバターも追加</title>
+    <link rel="alternate" type="text/html" href="?a=google-vids-veo31-free-video-generation-2026"/>
+    <id>tag:ai-tool-news.jp,2026:google-vids-veo31-free-video-generation-2026</id>
+    <published>2026-04-02T15:00:00Z</published>
+    <updated>2026-04-02T15:00:00Z</updated>
+    <summary>Google が動画編集ツール Google Vids に Veo 3.1 を統合。テキストプロンプトから高品質動画を生成でき、4K・ネイティブ音声・最大140秒超のシーン連結に対応。カスタマイズ可能なAIアバター機能も追加。Sora 撤退後の動画生成AI市場で Google が攻勢を強める。</summary>
+  </entry>
+  <entry>
+    <title>Google Gemma 4 公開 — Apache 2.0 で完全オープン化、エッジからワークステーションまで4モデル展開</title>
+    <link rel="alternate" type="text/html" href="?a=gemma-4-apache2-edge-moe-dense-2026"/>
+    <id>tag:ai-tool-news.jp,2026:gemma-4-apache2-edge-moe-dense-2026</id>
+    <published>2026-04-02T15:00:00Z</published>
+    <updated>2026-04-02T15:00:00Z</updated>
+    <summary>Google DeepMind が Gemma 4 を Apache 2.0 ライセンスで公開。31B Dense（LMArena 3位）、26B MoE（3.8Bアクティブで6位）、E4B・E2B のエッジモデルまで4種。ネイティブ音声入力・140言語・最大256Kコンテキスト。Ollama 0.20+ で即実行可能。</summary>
+  </entry>
+  <entry>
+    <title>リアルタイム翻訳が個人開発で作れる時代に — OSS翻訳アプリの台頭と「音声データはどこへ行くのか」問題</title>
+    <link rel="alternate" type="text/html" href="?a=realtime-translation-oss-security-cost-2026"/>
+    <id>tag:ai-tool-news.jp,2026:realtime-translation-oss-security-cost-2026</id>
+    <published>2026-04-02T15:00:00Z</published>
+    <updated>2026-04-02T15:00:00Z</updated>
+    <summary>RTranslator、LiveCaptions-Translator など完全ローカル動作のオープンソース翻訳アプリが続々登場。クラウド不要・APIキー不要で会話がリアルタイム翻訳される一方、商用サービスでは音声データの二次利用やクラウド送信が懸念材料に。翻訳業界の価格破壊と、個人開発が加速する背景を整理する。</summary>
+  </entry>
+  <entry>
+    <title>RF-DETR × ドローン映像で森林調査もスマートシティも — AI 物体検出の「民生と軍事」2つの顔</title>
+    <link rel="alternate" type="text/html" href="?a=rf-detr-aerial-drone-detection-dual-use-2026"/>
+    <id>tag:ai-tool-news.jp,2026:rf-detr-aerial-drone-detection-dual-use-2026</id>
+    <published>2026-04-02T15:00:00Z</published>
+    <updated>2026-04-02T15:00:00Z</updated>
+    <summary>Roboflow の RF-DETR をドローン映像にファインチューンし、樹木の自動カウントや交差点の交通解析を実現するデモが話題に。同じ技術は Palantir の軍事 AI プラットフォームにも通じる。AI 物体検出のデュアルユース問題を、最新の米国防総省 × Anthropic 紛争とともに考える。</summary>
+  </entry>
+  <entry>
+    <title>Alibaba Qwen 3.6-Plus リリース — エージェント型コーディングで Terminal-Bench 首位、1Mコンテキスト・マルチモーダル強化でフロンティアに挑む</title>
+    <link rel="alternate" type="text/html" href="?a=qwen-3-6-plus-agentic-coding-multimodal-2026"/>
+    <id>tag:ai-tool-news.jp,2026:qwen-3-6-plus-agentic-coding-multimodal-2026</id>
+    <published>2026-04-02T15:00:00Z</published>
+    <updated>2026-04-02T15:00:00Z</updated>
+    <summary>Alibaba が Qwen3.6-Plus を公開。Terminal-Bench 2.0 で61.6%（Claude 4.5 Opus 超え）、SWE-bench Pro で56.6%と、エージェント型コーディングで最高水準を記録。1Mトークンのコンテキストウィンドウ、常時オンの思考連鎖、マルチモーダル視覚推論の大幅強化を搭載し、プレビュー期間中は無料提供。</summary>
+  </entry>
+  <entry>
+    <title>Alibaba が Page Agent を公開 — APIキー不要・環境構築不要、ブラウザ上のタスクを自然言語で自動化するOSSエージェント</title>
+    <link rel="alternate" type="text/html" href="?a=alibaba-page-agent-browser-automation-2026"/>
+    <id>tag:ai-tool-news.jp,2026:alibaba-page-agent-browser-automation-2026</id>
+    <published>2026-04-02T15:00:00Z</published>
+    <updated>2026-04-02T15:00:00Z</updated>
+    <summary>Alibaba がブラウザ操作を自然言語で自動化する Page Agent を公開。Qwen 3.5 搭載のデモはAPIキーも環境構築も不要で即体験可能。script タグ1行で既存サイトに組み込め、DOM をテキストベースで解析するためスクリーンショットもマルチモーダル LLM も不要。GitHub スター1.5万。</summary>
+  </entry>
+  <entry>
+    <title>Supabase が SSH でドキュメント全体を仮想ファイルシステムとして公開 — AI エージェントが grep・find・cat でドキュメントを直接検索</title>
+    <link rel="alternate" type="text/html" href="?a=supabase-ssh-docs-virtual-filesystem-2026"/>
+    <id>tag:ai-tool-news.jp,2026:supabase-ssh-docs-virtual-filesystem-2026</id>
+    <published>2026-04-02T15:00:00Z</published>
+    <updated>2026-04-02T15:00:00Z</updated>
+    <summary>Supabase が実験的サービス supabase.sh を公開。ssh supabase.sh でドキュメント全体が仮想ファイルシステムとして見え、AI コーディングエージェントが grep / find / cat でリアルタイムに検索・参照できる。Claude Code や Cursor など18以上のエージェントに対応。</summary>
+  </entry>
+  <entry>
+    <title>Claude Code の --add-dir × Skills で擬似モノレポ — 兄弟リポジトリのナレッジを横断活用するワークフロー</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-cross-repo-skills-add-dir-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-cross-repo-skills-add-dir-2026</id>
+    <published>2026-04-02T15:00:00Z</published>
+    <updated>2026-04-02T15:00:00Z</updated>
+    <summary>Claude Code の --add-dir フラグで追加したディレクトリの .claude/skills/ が自動読み込みされる仕組みを活用し、複数リポジトリをモノレポのように横断操作するワークフローが注目を集めている。コードだけでなく戦略文書やデザイン文書も AI の視界に入れることで、ナレッジが指数関数的に効いてくる。</summary>
+  </entry>
+  <entry>
+    <title>企業の未来予測に AI を使う時代 — Google TimesFM 2.5 の数値予測と MiroFish の社会シミュレーション、2つのアプローチを徹底比較</title>
+    <link rel="alternate" type="text/html" href="?a=timesfm-mirofish-business-forecasting-2026"/>
+    <id>tag:ai-tool-news.jp,2026:timesfm-mirofish-business-forecasting-2026</id>
+    <published>2026-04-02T15:00:00Z</published>
+    <updated>2026-04-02T15:00:00Z</updated>
+    <summary>Google Research の時系列基盤モデル TimesFM 2.5 と、GitHub スター4.8万超のマルチエージェント予測エンジン MiroFish。数値予測と社会シミュレーションという異なるアプローチで企業の意思決定を支援する2つの AI を比較し、経営予測への活用法を探る。</summary>
+  </entry>
+  <entry>
+    <title>Claude Code v2.1.90 リリース — /powerup で10機能を体感学習、NO_FLICKER でちらつき解消、Auto Mode の指示遵守も改善</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-v2-1-90-powerup-no-flicker-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-v2-1-90-powerup-no-flicker-2026</id>
+    <published>2026-04-02T15:00:00Z</published>
+    <updated>2026-04-02T15:00:00Z</updated>
+    <summary>Claude Code v2.1.90 が公開。アニメーション付きインタラクティブレッスン /powerup（10項目）、ビューポート仮想化による NO_FLICKER モード、Auto Mode の明示的指示への遵守改善、レートリミット無限ループ修正、PowerShell セキュリティ強化など多数の改善を含む大型アップデート。</summary>
+  </entry>
+  <entry>
+    <title>draw.io が MCP サーバーを公開 — Claude の会話内でダイアグラムがリアルタイム生成される時代に</title>
+    <link rel="alternate" type="text/html" href="?a=drawio-mcp-diagram-streaming-claude-2026"/>
+    <id>tag:ai-tool-news.jp,2026:drawio-mcp-diagram-streaming-claude-2026</id>
+    <published>2026-04-02T15:00:00Z</published>
+    <updated>2026-04-02T15:00:00Z</updated>
+    <summary>作図ツール draw.io が公式 MCP サーバーを公開。Claude にプロンプトを送るだけで、フローチャートやシーケンス図が会話画面内にシェイプ単位でストリーミング生成される。インストール不要のホスト版、ローカル版、CLI 版など4つの導入方法を提供。</summary>
+  </entry>
+  <entry>
+    <title>Gemini API に課金ティア上限が強制適用 — Tier 1は月$250、超過で全リクエスト停止</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-api-billing-tier-spend-cap-2026"/>
+    <id>tag:ai-tool-news.jp,2026:gemini-api-billing-tier-spend-cap-2026</id>
+    <published>2026-04-01T15:00:00Z</published>
+    <updated>2026-04-01T15:00:00Z</updated>
+    <summary>Google が Gemini API に課金アカウント単位の月額支出上限を4月1日から強制適用。Tier 1は$250/月、Tier 2は$2,000/月、Tier 3は$20,000〜。上限到達で次の請求サイクルまで全APIリクエストが停止される。プロジェクト単位の任意上限とは別の仕組みで、無効化できない。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic、Sonnet 4.5/4 の1Mコンテキストベータを4月30日で廃止 — Opus 4.6・Sonnet 4.6 では標準料金でGA</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-1m-context-beta-retirement-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-1m-context-beta-retirement-2026</id>
+    <published>2026-04-01T15:00:00Z</published>
+    <updated>2026-04-01T15:00:00Z</updated>
+    <summary>Anthropic が Claude Sonnet 4.5 と Sonnet 4 の1Mトークンコンテキストウィンドウベータを4月30日で終了。以降 context-1m ヘッダーは無効化される。Opus 4.6・Sonnet 4.6 では1Mコンテキストが標準料金でGA済みのため、移行を推奨。Web検索・Web Fetch も同時にGA。</summary>
+  </entry>
+  <entry>
+    <title>米国AI規制の連邦 vs 州 — トランプ大統領令が州法プリエンプションを主張、コロラド州は法改正で対抗</title>
+    <link rel="alternate" type="text/html" href="?a=us-ai-regulation-federal-vs-state-preemption-2026"/>
+    <id>tag:ai-tool-news.jp,2026:us-ai-regulation-federal-vs-state-preemption-2026</id>
+    <published>2026-04-01T15:00:00Z</published>
+    <updated>2026-04-01T15:00:00Z</updated>
+    <summary>トランプ大統領が2025年12月に署名したAI大統領令は、州のAI規制法を連邦権限で無効化する「プリエンプション」を主張。司法省にAI訴訟タスクフォース設立を指示し、コロラド州AI法を名指しで批判した。一方、カリフォルニア・コロラド・ニューヨークの知事は州法の施行を継続すると表明。連邦法なき「大統領令 vs 州法」の法的対立が2026年のAI規制の焦点になっている。</summary>
+  </entry>
   <entry>
     <title>ハーバード大学がバイブコーディングを正式コース化 — 開発者の92%が採用する一方、セキュリティ負債が急増</title>
     <link rel="alternate" type="text/html" href="?a=harvard-vibe-coding-course-2026"/>
@@ -14,6 +310,30 @@
     <published>2026-04-01T15:00:00Z</published>
     <updated>2026-04-01T15:00:00Z</updated>
     <summary>ハーバード教育大学院が6週間のバイブコーディング講座を開講。Replit・Figma Make・Claude Code を使い分ける実践型。一方で AI 生成コードの45%に脆弱性、CVE 登録数が月35件に急増し、光と影が鮮明に。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI が史上最大 $1,220億の資金調達を完了 — 評価額 $8,520億、SoftBank・Amazon・NVIDIA が共同主導</title>
+    <link rel="alternate" type="text/html" href="?a=openai-122b-funding-round-852b-valuation-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-122b-funding-round-852b-valuation-2026</id>
+    <published>2026-03-31T15:00:00Z</published>
+    <updated>2026-03-31T15:00:00Z</updated>
+    <summary>OpenAI が3月31日、AI業界史上最大となる1,220億ドルの資金調達ラウンドを完了。ポストマネー評価額は8,520億ドル。SoftBank が共同主導し、Amazon が500億ドル、NVIDIA が300億ドルを出資。初の個人投資家枠で30億ドルも調達。月間売上20億ドル、週間アクティブユーザー9億人超の規模に成長。</summary>
+  </entry>
+  <entry>
+    <title>LangChain・LangGraph に重大脆弱性3件 — パストラバーサル・秘密情報漏洩・SQLインジェクション、CVSS最大9.3</title>
+    <link rel="alternate" type="text/html" href="?a=langchain-langgraph-3-cves-data-leak-2026"/>
+    <id>tag:ai-tool-news.jp,2026:langchain-langgraph-3-cves-data-leak-2026</id>
+    <published>2026-03-31T15:00:00Z</published>
+    <updated>2026-03-31T15:00:00Z</updated>
+    <summary>AIエージェントフレームワークの LangChain と LangGraph に3件の脆弱性が公開された。CVE-2026-34070（パストラバーサル、CVSS 7.5）、CVE-2025-68664（デシリアライゼーションによる秘密情報漏洩、CVSS 9.3）、CVE-2025-67644（SQLインジェクション、CVSS 7.3）。週間ダウンロード数5,200万超の広く使われるフレームワークであり、即時アップデートが推奨される。</summary>
+  </entry>
+  <entry>
+    <title>PrismML が世界初の商用1ビット LLM「Bonsai」を公開 — 8Bモデルがわずか1GBで動作、メモリ14分の1・速度8倍</title>
+    <link rel="alternate" type="text/html" href="?a=prismml-bonsai-1bit-llm-edge-2026"/>
+    <id>tag:ai-tool-news.jp,2026:prismml-bonsai-1bit-llm-edge-2026</id>
+    <published>2026-03-31T15:00:00Z</published>
+    <updated>2026-03-31T15:00:00Z</updated>
+    <summary>Caltech 発の PrismML がステルスから登場し、1ビットネイティブ設計の LLM「Bonsai」シリーズを Apache 2.0 で公開。8B モデルが約1GBに収まり、M4 Pro で136トークン/秒、iPhone で44トークン/秒。Llama 3 8B を上回るベンチマークを14分の1のメモリで達成した。</summary>
   </entry>
   <entry>
     <title>Claude Code のトークンが異常速度で消失 — Anthropic が prompt cache バグを「最優先で調査中」と認める</title>
@@ -38,6 +358,14 @@
     <published>2026-03-31T15:00:00Z</published>
     <updated>2026-03-31T15:00:00Z</updated>
     <summary>npm 週間1億ダウンロードを誇る HTTP クライアント axios のリードメンテナーアカウントが乗っ取られ、axios@1.14.1 と axios@0.30.4 にリモートアクセス型トロイの木馬（RAT）を仕込んだ偽バージョンが公開された。悪意のある依存パッケージ plain-crypto-js 経由で macOS・Windows・Linux 全プラットフォームに C2 サーバー `sfrclak[.]com:8000` と通信するペイロードがドロップされる。npm セキュリティチームが問題バージョンを削除済みだが、キャレット範囲（^1.14.0 等）で自動取得した環境は即座に確認・認証情報のローテーションが必要。</summary>
+  </entry>
+  <entry>
+    <title>GitReverse — GitHub リポジトリを「バイブコーディング用プロンプト」に逆変換、344k スターの OpenClaw を Claude Code で再構築するデモが話題に</title>
+    <link rel="alternate" type="text/html" href="?a=gitreverse-repo-to-prompt-openclaw-2026"/>
+    <id>tag:ai-tool-news.jp,2026:gitreverse-repo-to-prompt-openclaw-2026</id>
+    <published>2026-03-31T15:00:00Z</published>
+    <updated>2026-03-31T15:00:00Z</updated>
+    <summary>公開 GitHub リポジトリの URL を貼るだけで、そのプロジェクトを一から作るためのバイブコーディング用プロンプトを自動生成する GitReverse が登場。344k スターの巨大 OSS「OpenClaw」を逆変換し、Claude Code に貼り付けて再構築するデモ動画が拡散している。</summary>
   </entry>
   <entry>
     <title>OpenAI が史上最大の$122B（約18兆円）を調達、評価額$852B — Amazon・Nvidia・SoftBank が巨額出資、AI スーパーアプリ構想へ</title>
@@ -568,6 +896,14 @@
     <summary>Google が月例の Gemini Drop で5つの新機能を発表。音楽生成 Lyria 3 Pro（最大3分）、他社AIからのチャット履歴移行、Personal Intelligence の無料化、Google TV 向け Gemini 機能、Gemini 3.1 Flash Live の会話強化。</summary>
   </entry>
   <entry>
+    <title>GitHub Copilot が4月24日からユーザーコードをAI学習に使用開始 — Free/Pro/Pro+ が対象、オプトアウト猶予30日</title>
+    <link rel="alternate" type="text/html" href="?a=github-copilot-training-data-policy-change-2026"/>
+    <id>tag:ai-tool-news.jp,2026:github-copilot-training-data-policy-change-2026</id>
+    <published>2026-03-26T15:00:00Z</published>
+    <updated>2026-03-26T15:00:00Z</updated>
+    <summary>GitHub が Copilot の利用規約を更新し、4月24日から Free・Pro・Pro+ ユーザーのインタラクションデータ（入力コード・出力・コンテキスト）をAIモデルの学習に使用する。プライベートリポジトリのコードも対象。Business・Enterprise プランは除外。30日間のオプトアウト猶予期間が設けられたが、デフォルトはオプトインのため開発者コミュニティで議論が過熱。</summary>
+  </entry>
+  <entry>
     <title>OpenAI Codex にプラグインマーケットプレイスが登場 — Slack・Figma・Notion など 20 以上のツールと即連携</title>
     <link rel="alternate" type="text/html" href="?a=codex-plugins-marketplace-2026"/>
     <id>tag:ai-tool-news.jp,2026:codex-plugins-marketplace-2026</id>
@@ -774,6 +1110,14 @@
     <published>2026-03-19T15:00:00Z</published>
     <updated>2026-03-19T15:00:00Z</updated>
     <summary>2026年3月19日、OpenAI が Python 開発ツールの Astral（uv・Ruff・ty）を買収すると発表。月間1億2,600万ダウンロードの uv や業界標準ライターの Ruff が Codex チームに合流。Python 開発ワークフロー全体を AI ネイティブにする戦略。</summary>
+  </entry>
+  <entry>
+    <title>DESIGN.md — AIエージェントにデザインを伝える新フォーマットが急拡大、Google Stitch発・GitHub 9.5Kスター</title>
+    <link rel="alternate" type="text/html" href="?a=design-md-ai-agent-design-system-format-2026"/>
+    <id>tag:ai-tool-news.jp,2026:design-md-ai-agent-design-system-format-2026</id>
+    <published>2026-03-18T15:00:00Z</published>
+    <updated>2026-03-18T15:00:00Z</updated>
+    <summary>Google が Stitch 2.0 で導入したDESIGN.md（AIエージェント向けプレーンテキスト・デザインシステム）が急速に普及。VoltAgent が55以上の有名サイトのデザインを抽出した awesome-design-md リポジトリは GitHub で9.5Kスターを獲得。Figma も不要、.md ファイルをプロジェクトに置いて「これに従って作って」と言うだけで、AIがピクセルパーフェクトなUIを生成する。</summary>
   </entry>
   <entry>
     <title>MiniMax、自己進化する AI モデル M2.7 を公開 — 人間の介入なしで強化学習の30〜50%を自動化</title>

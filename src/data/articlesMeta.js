@@ -5,6 +5,86 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "anthropic-claude-managed-agents-public-beta-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が Claude Managed Agents をパブリックベータ公開 — クラウドホスト型エージェントAPIで「プロトタイプから本番を10倍速く」、Notion・Rakuten・Sentryが導入済み",
+    "excerpt": "Anthropic が4月8日、Claude Managed Agents をパブリックベータとしてリリースした。サンドボックス実行・チェックポイント・認証管理・スコープ付き権限・エンドツーエンドトレースを備えたクラウドホスト型エージェントAPIで、ランタイム料金は $0.08/セッション時間。同時に Claude Cowork が macOS・Windows で正式版（GA）に昇格し、エンタープライズ機能が追加された。Notion・Rakuten・Sentry が早期導入パートナーとして本番運用中。",
+    "date": "2026-04-10",
+    "newsDate": "2026-04-08",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Anthropic", "Claude", "エージェント", "API", "エンタープライズ"],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Claude Managed Agents"
+    }
+  },
+  {
+    "id": "meta-muse-spark-closed-source-msl-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Meta が Muse Spark を発表 — 初のクローズドモデルでオープンソース路線を転換、ヘルスケアベンチマークで全フロンティアモデルを上回る",
+    "excerpt": "Meta が4月8日、Meta Superintelligence Labs（MSL）初のフロンティアモデル「Muse Spark」を発表した。Alexandr Wang（元 Scale AI CEO）率いる MSL が開発し、Meta 初のクローズドソースモデルとしてオープンソース路線からの転換を鮮明にした。Artificial Analysis Intelligence Index v4.0 で4位（スコア52）、HealthBench Hard で 42.8% と全フロンティアモデル中トップ。Meta AI アプリで利用可能、APIは限定プレビュー。",
+    "date": "2026-04-10",
+    "newsDate": "2026-04-08",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Meta", "Muse Spark", "モデルリリース", "クローズドソース", "ヘルスケア"],
+    "coverImage": {
+      "src": "logos/meta.svg",
+      "alt": "Meta Muse Spark"
+    }
+  },
+  {
+    "id": "anthropic-pentagon-blacklist-appeals-court-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】Anthropic vs 米国防総省 — 控訴裁がClaude軍事ブラックリストの一時差止を却下、AI安全ポリシーと国防の衝突が5月口頭弁論へ",
+    "excerpt": "D.C. 巡回控訴裁判所が4月8日、Anthropic の緊急差止申立てを却下し、国防総省による Claude のサプライチェーンリスク指定（事実上の軍事利用禁止）を維持した。争点は Anthropic の利用規約にある「完全自律兵器の禁止」と「米国市民の大量監視の禁止」の2条項。$2億の国防契約を結びながらも安全ポリシーを譲らなかった Anthropic と、AI 技術の無制限利用を求めるトランプ政権の対立は、5月19日の口頭弁論で本格的に争われる。",
+    "date": "2026-04-10",
+    "newsDate": "2026-04-08",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": ["Anthropic", "規制", "軍事", "Claude", "訴訟"],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic vs Pentagon"
+    }
+  },
+  {
+    "id": "openai-child-safety-blueprint-safety-fellowship-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "OpenAI が Child Safety Blueprint を公表 — AI悪用による児童搾取対策の政策提言と Safety Fellowship 募集を同時発表",
+    "excerpt": "OpenAI が4月8日、AI を悪用した児童搾取に対する米国の法的・技術的枠組みを提言する「Child Safety Blueprint」を公表した。AI 生成 CSAM の検出・報告・捜査の高速化を柱とし、立法の更新・報告メカニズムの改善・AI システムへの予防的セーフガード統合の3軸で構成。同時に外部研究者向けの Safety Fellowship（2026年9月〜2027年2月）の募集も開始。IWF によれば AI 生成 CSAM の報告は2025年前半だけで8,000件超、前年比14%増。",
+    "date": "2026-04-10",
+    "newsDate": "2026-04-08",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["OpenAI", "安全性", "児童保護", "規制", "研究"],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI Child Safety Blueprint"
+    }
+  },
+  {
+    "id": "github-copilot-autopilot-mcp-cli-vscode-2026",
+    "type": "news",
+    "category": "editor",
+    "title": "GitHub Copilot が Autopilot モード（自律エージェント）をプレビュー公開、CLI v1.0.21 で MCP サーバー管理にも対応",
+    "excerpt": "GitHub が4月上旬、Copilot の2つの大きなアップデートを発表した。VS Code 向け Autopilot モードのパブリックプレビューと、Copilot CLI v1.0.21 での MCP サーバー管理コマンド追加だ。Autopilot はエージェントが自らアクションを承認し、エラーを自動リトライしてタスク完了まで自律実行する新モード。CLI の copilot mcp コマンドでは MCP サーバーの追加・一覧・有効化・無効化が可能に。コーディングツールのエージェント化がさらに加速している。",
+    "date": "2026-04-10",
+    "newsDate": "2026-04-08",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["GitHub Copilot", "エージェント", "MCP", "IDE", "開発ツール"],
+    "coverImage": {
+      "src": "logos/github.svg",
+      "alt": "GitHub Copilot Autopilot MCP"
+    }
+  },
+  {
     "id": "anthropic-claude-mythos-preview-glasswing-2026",
     "type": "news",
     "category": "model",

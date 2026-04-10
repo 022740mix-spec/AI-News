@@ -4,6 +4,229 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "anthropic-claude-managed-agents-public-beta-2026": {
+    "body": [
+      "Anthropic が4月8日、**Claude Managed Agents** をパブリックベータとして Claude Platform 上でリリースした。クラウドホスト型エージェントを構築・デプロイするための一連のコンポーザブル API で、**サンドボックス実行**・**チェックポイント**・**認証管理**・**スコープ付き権限**・**エンドツーエンドトレース**を標準搭載する。Anthropic は「プロトタイプから本番投入までを**10倍速く**する」と謳っている。",
+      "## アーキテクチャと差別化",
+      "Managed Agents の中核は、Claude に最適化されたエージェントハーネスとプロダクションインフラの統合だ。開発者はエージェントの定義（指示・ツール・権限）を API で宣言し、実行環境・エラーリカバリー・状態管理は Anthropic 側が引き受ける。内部テストでは、構造化ファイル生成タスクにおいて標準的なプロンプトループと比較して**タスク成功率が最大10ポイント改善**し、特に難易度の高い問題で差が大きかった。",
+      "既存のエージェントフレームワーク（LangChain、CrewAI 等）との違いは、**インフラ層まで Anthropic が管理する**点にある。開発者はオーケストレーションのコードを書く必要がなく、サンドボックスの構築やクレデンシャルの安全な受け渡しといった本番運用の課題を API に委ねられる。一方で、Claude 以外のモデルは使えないため、マルチモデル構成を必要とするユースケースには向かない。",
+      "## 早期導入パートナーの運用実績",
+      "Notion は Claude Managed Agents を使い、ワークスペース内からコーディング・スライド・スプレッドシートの作成を Claude に委任する機能を実装した。数十のタスクが並列で実行される。Rakuten はプロダクト・営業・マーケティング・財務・HRの各部門にスペシャリストエージェントを配備し、それぞれ1週間以内で本番稼働にこぎつけた。Sentry はコード自動化・生産性ツール・HR・財務プロセスにエージェントを展開している。",
+      "## 料金体系と Claude Cowork の GA",
+      "ランタイム料金は **$0.08/セッション時間** で、これにモデル推論の標準トークン料金が加算される。月額固定費はなく、使った分だけ課金される従量制だ。24時間365日稼働のエージェントで月約 $58（ランタイムのみ）が目安。同日、macOS・Windows 向けの **Claude Cowork** がリサーチプレビューを卒業して正式版（GA）に昇格し、エンタープライズ向けの管理機能が追加された。",
+      "Managed Agents の投入は、Anthropic がモデル提供企業からエージェントプラットフォーム企業へとシフトする戦略的転換を示している。OpenAI の Codex、Google の Vertex AI Agent Builder と並び、「エージェントのインフラをどこまで引き受けるか」が AI プラットフォーム競争の新たな焦点になっている。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 4,
+        "caption": "Claude Managed Agents 早期導入パートナー",
+        "headers": ["企業", "用途", "実績"],
+        "rows": [
+          ["Notion", "コーディング・スライド・スプレッドシート作成の委任", "数十タスクを並列実行"],
+          ["Rakuten", "部門別スペシャリストエージェント", "各エージェント1週間以内で本番稼働"],
+          ["Sentry", "コード自動化・HR・財務プロセス", "複数部門で展開中"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Managed Agents: get to production 10x faster",
+        "site": "Anthropic Blog",
+        "url": "https://claude.com/blog/claude-managed-agents"
+      },
+      {
+        "title": "Claude Managed Agents overview",
+        "site": "Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/managed-agents/overview"
+      }
+    ]
+  },
+  "meta-muse-spark-closed-source-msl-2026": {
+    "body": [
+      "Meta が4月8日、**Muse Spark** を発表した。Meta Superintelligence Labs（MSL）が開発した初のフロンティアモデルであり、Meta にとって**初のクローズドソースモデル**でもある。Llama シリーズでオープンソース AI のリーダーを自任してきた Meta が、最先端モデルを非公開とする路線転換は業界に波紋を広げている。",
+      "## Meta Superintelligence Labs とは",
+      "MSL は2026年初頭に Meta 内部に設立された専門研究部門で、Llama を生んだ FAIR（Fundamental AI Research）チームとは独立している。率いるのは **Alexandr Wang**（元 Scale AI CEO）。AI 学習データインフラの最大手を築いた Wang の参画には約 $140億（約2兆円）が投じられたとされる。MSL の使命は「オープンソースのリリースサイクルに縛られず、世界最高性能の AI モデルを構築する」ことであり、Muse Spark はその最初の成果物だ。",
+      "## ベンチマーク: 汎用4位、ヘルスケアで1位",
+      "Artificial Analysis の **Intelligence Index v4.0** で Muse Spark はスコア **52** を記録し、Gemini 3.1 Pro（57）、GPT-5.4（57）、Claude Opus 4.6（53）に次ぐ**4位**に位置する。ただし効率面では光る結果を出した——評価完了に使用した出力トークンは **5,800万** で、Claude Opus 4.6（1億5,700万）や GPT-5.4（1億2,000万）の半分以下だ。",
+      "最も注目すべきは医療領域だ。**HealthBench Hard**（難易度の高い医療質問応答ベンチマーク）で **42.8%** を達成し、GPT-5.4、Claude Opus 4.6、Gemini 3.1 Pro をすべて上回った。Wang のチームが1,000人以上の医師と協力してキュレーションした学習データが、この結果に寄与しているとされる。",
+      "## 利用形態と戦略的意味",
+      "Muse Spark は現在 **Meta AI アプリ**とウェブ版（meta.ai）で利用可能で、今後数週間で Facebook、Instagram、WhatsApp、Messenger に順次展開される。API は「限定パートナー向けプライベートプレビュー」のみで、広く開発者に開放する時期は未定。将来的にオープンソース版をリリースする「希望がある」とされるが、具体的な計画は示されていない。",
+      "この戦略は「フロンティアモデルでコンシューマー製品のエンゲージメントを牽引し、API の商用収益はビジネス向けに確保する」という二重構造だ。Llama のオープンソース戦略が「エコシステムの拡大」を狙ったのに対し、Muse Spark のクローズド戦略は「直接的な収益化」を狙っている。Meta が両路線を並行できるかどうかが、今後のオープンソース AI の方向性を左右する可能性がある。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 4,
+        "caption": "Muse Spark ベンチマーク比較",
+        "headers": ["指標", "Muse Spark", "Claude Opus 4.6", "GPT-5.4", "Gemini 3.1 Pro"],
+        "rows": [
+          ["Intelligence Index v4.0", "52（4位）", "53（3位）", "57（1位タイ）", "57（1位タイ）"],
+          ["HealthBench Hard", "42.8%（1位）", "—", "—", "—"],
+          ["評価使用トークン", "5,800万", "1億5,700万", "1億2,000万", "5,800万"],
+          ["ソース公開", "クローズド", "クローズド", "クローズド", "クローズド"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
+        "site": "Meta AI Blog",
+        "url": "https://ai.meta.com/blog/introducing-muse-spark-msl"
+      },
+      {
+        "title": "Meta debuts the Muse Spark model in a 'ground-up overhaul' of its AI",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/04/08/meta-debuts-the-muse-spark-model-in-a-ground-up-overhaul-of-its-ai/"
+      },
+      {
+        "title": "Meta unveils Muse Spark, its first new AI model since hiring Alexandr Wang",
+        "site": "Fortune",
+        "url": "https://fortune.com/2026/04/08/meta-unveils-muse-spark-mark-zuckerberg-ai-push/"
+      }
+    ]
+  },
+  "anthropic-pentagon-blacklist-appeals-court-2026": {
+    "body": [
+      "D.C. 巡回控訴裁判所は4月8日、Anthropic が求めていた緊急差止申立てを却下し、国防総省（DOD）による Claude AI の**サプライチェーンリスク指定**——事実上の軍事利用ブラックリスト——を維持する決定を下した。この判決は、AI 企業の安全ポリシーと国家安全保障の要請が正面衝突した初の主要判例となりつつある。",
+      "## 経緯: $2億の契約から決裂へ",
+      "Anthropic は2025年7月、国防総省と **$2億（約300億円）の契約** を締結し、AI ラボとして初めて DOD の機密ネットワークに自社技術を展開した。しかし9月、DOD の AI プラットフォーム **GenAI.mil** への Claude 配備交渉で対立が表面化した。DOD は「すべての合法的目的での無制限アクセス」を要求したが、Anthropic は利用規約の2条項——**完全自律兵器システム（人間の監視なしで動作する武装ドローン群を含む）の禁止**と**米国市民の大量監視の禁止**——を譲らなかった。",
+      "Pete Hegseth 国防長官は、Anthropic を「サプライチェーンリスク」に分類し、事実上すべての DOD 契約から排除する決定を下した。Anthropic はこれを「利用規約に基づく正当な制限に対する報復」と主張し、法廷闘争に踏み切った。",
+      "## 2つの裁判所、2つの結論",
+      "法廷闘争は2つの裁判所で並行して進んでいる。カリフォルニア州の連邦地方裁判所では、3月26日に Rita F. Lin 判事が Anthropic に有利な**予備的差止命令**を出した。「政府の措置は保護的というより懲罰的に見え、十分な法的根拠を欠き、権限を逸脱している」との判断で、指定の執行を一時停止した。",
+      "一方、D.C. 巡回控訴裁判所は4月8日、Anthropic の緊急差止を却下した。この判決でブラックリスト指定は効力を維持するが、事案の本案判断ではない。結果として、Anthropic は **DOD 契約からは排除されるが、他の政府機関との取引は継続可能** という状態にある。",
+      "## 5月19日の口頭弁論が焦点",
+      "控訴裁判所は口頭弁論を **5月19日** に繰り上げた。ここでの判断は、単に Anthropic と DOD の紛争を超え、**米国政府の AI 調達政策全体** を形作る可能性がある。争点は明確だ——AI 企業は自社の安全ポリシー（自律兵器禁止・大量監視禁止）を維持したまま政府と契約できるのか、それとも政府が「合法的目的なら何にでも使える」ことを条件にできるのか。",
+      "Anthropic にとっての賭けは大きい。Palantir の Alex Karp CEO は3月、「当社は訴訟の結果にかかわらず Claude を使い続ける」と述べたが、複数の防衛テック企業はブラックリスト後に Claude の利用を停止している。トランプ政権にとっても、AI 安全性の制限を「国家安全保障上のリスク」と位置付ける先例を作れるかどうかが懸かっている。",
+      "この訴訟は、AI ラボの「安全性ポリシー」が法的にどこまで保護されるのか、そして政府が AI 技術の無制限利用を強制できるのかという、AI ガバナンスの根本的な問いに答えを出す最初のケースになるかもしれない。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 5,
+        "caption": "Anthropic vs 国防総省 — 法廷闘争の経緯",
+        "headers": ["日付", "出来事", "結果"],
+        "rows": [
+          ["2025年7月", "Anthropic が DOD と $2億の契約締結", "DOD 機密ネットワークに Claude 展開"],
+          ["2025年9月", "GenAI.mil への配備交渉が決裂", "自律兵器・大量監視の利用制限が争点"],
+          ["2026年3月", "Hegseth 国防長官がサプライチェーンリスクに指定", "事実上の軍事ブラックリスト"],
+          ["2026年3月26日", "カリフォルニア地裁が予備的差止命令", "Anthropic 勝訴（指定の執行一時停止）"],
+          ["2026年4月8日", "D.C. 控訴裁が緊急差止を却下", "DOD 勝訴（ブラックリスト維持）"],
+          ["2026年5月19日", "口頭弁論（予定）", "AI 調達政策の方向性を左右"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic loses appeals court bid to temporarily block Pentagon blacklisting",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/04/08/anthropic-pentagon-court-ruling-supply-chain-risk.html"
+      },
+      {
+        "title": "Federal Judges Deny Anthropic Relief in Claude Military AI Ban, Set May Oral Arguments",
+        "site": "Bitcoin News",
+        "url": "https://news.bitcoin.com/federal-judges-deny-anthropic-relief-in-claude-military-ai-ban-set-may-oral-arguments/"
+      },
+      {
+        "title": "Judge blocks Pentagon's Anthropic ban, calling it illegal retaliation",
+        "site": "Defense One",
+        "url": "https://www.defenseone.com/policy/2026/03/judge-pentagon-anthropic-ban-retaliation/412463/"
+      }
+    ]
+  },
+  "openai-child-safety-blueprint-safety-fellowship-2026": {
+    "body": [
+      "OpenAI が4月8日、AI を悪用した児童性的搾取（CSAM: Child Sexual Abuse Material）に対する米国の法的・技術的枠組みを提言する政策文書「**Child Safety Blueprint**」を公表した。同時に、外部研究者を招く **Safety Fellowship** プログラム（2026年9月〜2027年2月）の募集も開始した。",
+      "## Child Safety Blueprint の3本柱",
+      "Blueprint は3つの領域で提言を行っている。第一に**立法の更新**。現行法は実在の児童を対象にした搾取に焦点を当てているが、AI 生成の CSAM を明確に違法とする法改正を求めている。第二に**報告メカニズムの改善**。法執行機関への通報から捜査開始までの時間を短縮するため、AI 生成コンテンツに特化した検出技術と報告パイプラインの整備を提案している。第三に**AI システムへの予防的セーフガードの統合**。モデルの訓練段階から CSAM 生成を困難にする技術的措置を組み込むことを推奨している。",
+      "背景には深刻な数字がある。Internet Watch Foundation（IWF）の報告によれば、AI 生成の児童性的搾取コンテンツは **2025年前半だけで8,000件超** が検出され、前年同期比 **14%増** だった。生成 AI の普及に伴い、実在の児童の画像を加工するケースと、完全に AI で生成するケースの両方が急増している。",
+      "## Safety Fellowship の概要",
+      "Safety Fellowship は、外部の研究者・エンジニア・実務家を対象とした有期のプログラムで、**2026年9月14日から2027年2月5日**まで実施される。優先研究領域は、安全性評価、倫理、ロバスト性、スケーラブルな軽減策、プライバシー保護型安全手法、エージェント型 AI の監視、高重大度の悪用ドメインなど。OpenAI が直接的な安全性研究に外部資金を投入するプログラムとしては最大規模となる。",
+      "## AI 安全性への投資は加速している",
+      "OpenAI は最近、**Alzheimer 研究に $1億超のグラント** を6研究機関に配分する計画も明らかにしている。AI 企業が安全性と社会貢献に予算を振り向ける動きは、Anthropic の Responsible Scaling Policy や Google の AI Safety Fund と同様に、規制当局からの圧力と自主的な姿勢の両面から加速している。Child Safety Blueprint は特定の政策提言を伴っている点で、一般的な「安全性への取り組み」声明よりも踏み込んでおり、立法府への直接的な働きかけとして注目に値する。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "Child Safety Blueprint の3本柱",
+        "headers": ["領域", "提言内容", "背景"],
+        "rows": [
+          ["立法の更新", "AI 生成 CSAM を明確に違法化する法改正", "現行法は実在の児童のみが対象"],
+          ["報告メカニズム", "AI 生成コンテンツ検出と通報パイプラインの整備", "通報から捜査開始までの時間短縮"],
+          ["予防的セーフガード", "訓練段階から CSAM 生成を困難にする技術的措置", "IWF: 2025年前半に8,000件超検出（前年比+14%）"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing the Child Safety Blueprint",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/introducing-child-safety-blueprint/"
+      },
+      {
+        "title": "Introducing the OpenAI Safety Fellowship",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/introducing-openai-safety-fellowship/"
+      },
+      {
+        "title": "OpenAI releases a new safety blueprint to address the rise in child sexual exploitation",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/04/08/openai-releases-a-new-safety-blueprint-to-address-the-rise-in-child-sexual-exploitation/"
+      }
+    ]
+  },
+  "github-copilot-autopilot-mcp-cli-vscode-2026": {
+    "body": [
+      "GitHub が4月上旬、Copilot の2つの重要なアップデートを相次いで発表した。VS Code 向けの **Autopilot モード**（パブリックプレビュー）と、**Copilot CLI v1.0.21** での MCP サーバー管理コマンドの追加だ。いずれもコーディングツールの「エージェント化」を推し進める機能であり、Claude Code や Cursor との競争が一段と激しくなっている。",
+      "## Autopilot モード: 承認不要の自律実行",
+      "Autopilot は、VS Code の Copilot エージェントモードに新たに追加された権限レベルだ。従来のエージェントモードではファイル編集やターミナルコマンドの実行前にユーザーの承認が必要だったが、Autopilot では**エージェントが自らアクションを承認し、エラーを自動リトライし、タスク完了まで自律的に実行する**。",
+      "たとえば依存パッケージが不足している場合、Autopilot は自動でインストールを行い、ビルドエラーが出れば修正を試み、テストが通るまで反復する。従来のように「この変更を適用していいですか？」と逐一確認を求めないため、バックグラウンドで長時間タスクを走らせるワークフローが可能になる。",
+      "権限設定は3段階から選択できる: **Default**（従来どおり逐一承認）、**Bypass Approvals**（特定アクションのみ自動承認）、**Autopilot（Preview）**（全アクション自律実行）。VS Code ではモデルピッカーから選択し、CLI では `--autopilot` フラグで有効化する。Thinking effort（推論の深さ）もモデルピッカーから直接調整可能になった。",
+      "## Copilot CLI v1.0.21: MCP サーバー管理",
+      "4月7日にリリースされた Copilot CLI v1.0.21 では、`copilot mcp` コマンドが追加された。MCP（Model Context Protocol）サーバーの追加・一覧表示・有効化・無効化・削除・設定編集がターミナルから直接行える。Claude Code が先行していた MCP 統合に、Copilot CLI が追いついた形だ。",
+      "具体的なサブコマンドは `/mcp show`（一覧・ステータス表示）、`/mcp show SERVER-NAME`（詳細・ツール一覧）、`/mcp edit`（設定編集）、`/mcp delete`（削除）、`/mcp disable` / `/mcp enable`（有効・無効の切り替え）。Azure MCP Server との統合ドキュメントも同時に公開されている。",
+      "## コーディングツールのエージェント競争",
+      "同時期の VS Code リリース（v1.111〜v1.115）では、統合ブラウザデバッグ、チャットでの画像・動画サポート、Thinking effort の設定など、エージェント指向の機能が矢継ぎ早に投入されている。Claude Code の Autopilot モード（`--dangerously-skip-permissions`）、Cursor 3.0 の Agents Window、Windsurf の Cascade Hooks と並び、**「人間がどこまで承認に関与すべきか」**というエージェント実行の権限モデルが、コーディングツール競争の新しい軸になりつつある。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "Copilot エージェント権限モデル",
+        "headers": ["モード", "概要", "有効化方法"],
+        "rows": [
+          ["Default", "ファイル編集・コマンド実行前に逐一承認", "デフォルト"],
+          ["Bypass Approvals", "特定アクションのみ自動承認", "VS Code 設定"],
+          ["Autopilot（Preview）", "全アクション自律実行、エラー自動リトライ", "モデルピッカー / --autopilot フラグ"]
+        ]
+      },
+      {
+        "afterParagraph": 5,
+        "caption": "Copilot CLI v1.0.21 MCP コマンド",
+        "headers": ["コマンド", "機能"],
+        "rows": [
+          ["/mcp show", "MCP サーバー一覧・ステータス表示"],
+          ["/mcp show SERVER-NAME", "サーバー詳細・ツール一覧"],
+          ["/mcp edit SERVER-NAME", "サーバー設定の編集"],
+          ["/mcp delete SERVER-NAME", "サーバーの削除"],
+          ["/mcp disable / enable", "サーバーの有効・無効切り替え"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "GitHub Copilot in Visual Studio Code, March Releases",
+        "site": "GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-04-08-github-copilot-in-visual-studio-code-march-releases/"
+      },
+      {
+        "title": "Copilot CLI v1.0.21",
+        "site": "GitHub Releases",
+        "url": "https://github.com/github/copilot-cli/releases/"
+      },
+      {
+        "title": "Adding MCP servers for GitHub Copilot CLI",
+        "site": "GitHub Docs",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers"
+      }
+    ]
+  },
   "anthropic-claude-mythos-preview-glasswing-2026": {
     "body": [
       "Anthropic が4月7日、新たなフロンティアモデル「**Claude Mythos Preview**」を正式発表した。ただし通常のモデルリリースとは決定的に異なる点がある——**汎用公開しない**。Anthropic CEO の Dario Amodei は発表声明で「これは我々が訓練した中で最も有能なモデルであり、サイバーセキュリティ領域では既存のあらゆる AI を遥かに上回る。だが同時に、無制限に公開すれば社会に深刻な被害を与えうる **dual-use（二重用途）** の代表例である」と述べ、**業界初の「強すぎて公開しないフロンティアモデル」**として位置付けた。Mythos Preview は Anthropic が同日発表した **Project Glasswing**——AWS、Apple、Broadcom、Cisco、CrowdStrike、Google、JPMorgan、Linux Foundation、Microsoft、NVIDIA、Palo Alto Networks ほか約50の組織が参加する**$100M（約150億円）のサイバーセキュリティ・コンソーシアム**——でのみ使用される。",
