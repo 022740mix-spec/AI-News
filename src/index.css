@@ -10,6 +10,7 @@
 :root {
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN",
     "Noto Sans JP", system-ui, sans-serif;
+  --font-heading: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "Times New Roman", serif;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
@@ -96,6 +97,18 @@ html[data-theme="light"] {
 
 html[data-theme="dark"] {
   color-scheme: dark;
+}
+
+/* 見出し用セリフ体 — 記事タイトル・セクション見出しに適用 */
+.site-title,
+.home-hero__title,
+.home-card__title,
+.home-section__title,
+.hero-today__title,
+.card-article__title,
+.section-feed__title,
+.guide-section__title {
+  font-family: var(--font-heading);
 }
 
 * {
