@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-04-10T15:00:00Z</updated>
+  <updated>2026-04-13T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Anthropic が CoreWeave と $68億の複数年クラウド契約を締結 — NVIDIA Vera Rubin GPU で Claude のプロダクションスケールを確保、AI インフラ軍拡競争が加速</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-coreweave-68b-multiyear-cloud-deal-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-coreweave-68b-multiyear-cloud-deal-2026</id>
+    <published>2026-04-10T15:00:00Z</published>
+    <updated>2026-04-10T15:00:00Z</updated>
+    <summary>CoreWeave が4月10日、Anthropic との複数年にわたるクラウドインフラ契約を発表した。契約総額は推定 $68億（約1兆円）で、NVIDIA Vera Rubin GPU を中心としたコンピュート基盤を Anthropic に提供する。これにより主要 AI モデルプロバイダー上位10社中9社が CoreWeave を利用する形となった。発表の前日には Meta が CoreWeave に $210億を投じる契約を結んでおり、AI インフラの争奪戦が一段と激化している。</summary>
+  </entry>
   <entry>
     <title>Anthropic が Claude Managed Agents をパブリックベータ公開 — クラウドホスト型エージェントAPIで「プロトタイプから本番を10倍速く」、Notion・Rakuten・Sentryが導入済み</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-managed-agents-public-beta-2026"/>

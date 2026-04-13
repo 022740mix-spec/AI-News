@@ -4505,5 +4505,21 @@ export const ARTICLES_META = [
       "src": "logos/openai.svg",
       "alt": "OpenAI"
     }
+  },
+  {
+    "id": "anthropic-coreweave-68b-multiyear-cloud-deal-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が CoreWeave と $68億の複数年クラウド契約を締結 — NVIDIA Vera Rubin GPU で Claude のプロダクションスケールを確保、AI インフラ軍拡競争が加速",
+    "excerpt": "CoreWeave が4月10日、Anthropic との複数年にわたるクラウドインフラ契約を発表した。契約総額は推定 $68億（約1兆円）で、NVIDIA Vera Rubin GPU を中心としたコンピュート基盤を Anthropic に提供する。これにより主要 AI モデルプロバイダー上位10社中9社が CoreWeave を利用する形となった。発表の前日には Meta が CoreWeave に $210億を投じる契約を結んでおり、AI インフラの争奪戦が一段と激化している。",
+    "date": "2026-04-13",
+    "newsDate": "2026-04-10",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["Anthropic", "CoreWeave", "クラウドインフラ", "GPU", "NVIDIA"],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic CoreWeave Deal"
+    }
   }
 ];

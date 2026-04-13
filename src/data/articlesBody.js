@@ -7539,6 +7539,33 @@ const ARTICLES_BODY = {
         "url": "https://www.tomsguide.com/ai/google-vids-just-got-a-massive-ai-upgrade-including-custom-avatars-and-veo-3-1-integration"
       }
     ]
+  },
+  "anthropic-coreweave-68b-multiyear-cloud-deal-2026": {
+    "body": [
+      "CoreWeave が4月10日、**Anthropic** との複数年にわたるクラウドインフラ契約を発表した。契約総額は推定 **$68億（約1兆円）** で、AI 専業クラウドプロバイダーとして単一顧客向けでは最大級の契約となる。Anthropic は CoreWeave のプラットフォーム上で Claude モデルのトレーニングおよび推論ワークロードを**プロダクションスケール**で稼働させる。",
+      "## 契約の概要と段階的展開",
+      "契約は段階的なロールアウトが計画されており、コンピュート基盤のオンライン化は2026年後半から開始される。中核となるのは **NVIDIA Vera Rubin GPU** で、NVIDIA の最新世代アーキテクチャにあたる。契約には将来的な拡張オプションも含まれており、Anthropic の需要増に応じてスケールアップが可能だ。CoreWeave の発表によれば、これにより主要 AI モデルプロバイダー**上位10社中9社**が同社のプラットフォームを利用する形となった。",
+      "## AI インフラ軍拡競争の文脈",
+      "この契約が発表されたのは、Meta が CoreWeave に **$210億** を投じる契約を結んだわずか24時間後だ。CoreWeave の株価は発表翌日に約11%上昇した。Anthropic はこれまで主に **AWS（Amazon）** と **Google Cloud** をインフラパートナーとしてきたが、CoreWeave の追加は計算資源の調達先を分散させる戦略と読める。Anthropic の年間売上ランレートは $300億に達しており、急増するエンタープライズ需要に対応するにはマルチクラウド体制が不可欠になっている。",
+      "CoreWeave は2023年の NVIDIA GPU 特化型クラウドとしての急成長以降、Microsoft、Meta、Anthropic など大手 AI 企業の主要インフラパートナーへと変貌した。2026年3月の IPO 後も積極的な設備投資を続けており、AI モデルの大規模化とエージェント機能の普及に伴う計算需要の爆発的増加を取り込む構えだ。GPU クラウドインフラは、AI 競争の「見えない戦場」として存在感を増している。"
+    ],
+    "primarySources": [
+      {
+        "title": "CoreWeave Announces Multi-Year Agreement With Anthropic",
+        "site": "CoreWeave Investor Relations",
+        "url": "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Announces-Multi-Year-Agreement-With-Anthropic/default.aspx"
+      },
+      {
+        "title": "CoreWeave stock pops 11% on deal to power Anthropic's Claude",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/04/10/coreweave-anthropic-claude-ai-deal.html"
+      },
+      {
+        "title": "Anthropic Will Use CoreWeave's AI Capacity to Power Claude",
+        "site": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-04-10/anthropic-agrees-to-rent-coreweave-ai-capacity-to-power-claude"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;
