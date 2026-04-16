@@ -4601,5 +4601,21 @@ export const ARTICLES_META = [
       "src": "logos/anthropic.svg",
       "alt": "Claude Performance Issues"
     }
+  },
+  {
+    "id": "openai-gpt-54-cyber-tac-cybersecurity-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI が GPT-5.4-Cyber を公開 — サイバーセキュリティ特化モデルでバイナリ逆解析が可能に、Anthropic Mythos への対抗を鮮明に",
+    "excerpt": "OpenAI が4月14日、防御的サイバーセキュリティに特化した GPT-5.4-Cyber を限定公開した。通常の GPT-5.4 よりリフューザル閾値を下げ、バイナリ逆解析・マルウェア分析・脆弱性検証などのワークフローを可能にする。Trusted Access for Cyber（TAC）プログラムを拡大し、段階的な本人確認で数千人規模の研究者・セキュリティチームに提供する。Codex Security は稼働以来3,000件以上のクリティカル/高脆弱性の修正に貢献。Anthropic の Mythos Preview が Project Glasswing で防御的セキュリティを先行展開した直後の対抗手だ。",
+    "date": "2026-04-16",
+    "newsDate": "2026-04-14",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["OpenAI", "GPT-5.4", "サイバーセキュリティ", "モデルリリース", "Anthropic"],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "GPT-5.4-Cyber"
+    }
   }
 ];

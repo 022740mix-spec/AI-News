@@ -7699,6 +7699,33 @@ const ARTICLES_BODY = {
         "url": "https://scortier.substack.com/p/claude-code-drama-6852-sessions-prove"
       }
     ]
+  },
+  "openai-gpt-54-cyber-tac-cybersecurity-2026": {
+    "body": [
+      "**OpenAI** が4月14日、防御的サイバーセキュリティに特化した **GPT-5.4-Cyber** を限定公開した。フラッグシップモデル GPT-5.4 をベースに、正当なセキュリティ業務に対する**リフューザル（拒否）閾値を引き下げ**、バイナリ逆解析・マルウェア分析・脆弱性検証といった高度な防御ワークフローを可能にしている。Anthropic が **Mythos Preview** を **Project Glasswing** で限定展開した直後の発表であり、AI サイバーセキュリティ市場での競争が本格化している。",
+      "## Trusted Access for Cyber（TAC）の拡大",
+      "GPT-5.4-Cyber は2月に発足した **Trusted Access for Cyber（TAC）** プログラムを通じて提供される。TAC は段階的な本人確認制度を採用しており、より高いレベルの認証を受けた利用者ほど強力なモデル機能にアクセスできる。個人ユーザーは chatgpt.com/cyber で本人確認が可能で、エンタープライズチームは OpenAI 担当者を通じてアクセスを申請する。対象は審査済みのセキュリティベンダー、組織、研究者で、数千人規模への段階的な展開が計画されている。",
+      "## Codex Security の実績とバイナリ逆解析",
+      "GPT-5.4-Cyber の中核機能の一つである**バイナリ逆解析**は、コンパイル済みソフトウェアをソースコードなしで分析し、マルウェアの可能性・脆弱性・セキュリティ上の堅牢性を評価できる。また OpenAI のコード脆弱性検出ツール **Codex Security** は、稼働以来 **3,000件以上** のクリティカルおよび高深刻度の脆弱性修正に貢献しており、エコシステム全体の防御力底上げに実績を積んでいる。",
+      "Anthropic が「強すぎて一般公開しない」Mythos で防御的セキュリティ市場を先行した一方、OpenAI は審査済み人材への広範なアクセスで対抗する構図だ。両社のアプローチは対照的——Anthropic は約50組織への超限定提供、OpenAI は TAC を通じた数千人規模への段階的開放——だが、AI モデルのサイバーセキュリティ応用が「研究段階」から「実戦配備」へ移行しつつあることを示している。"
+    ],
+    "primarySources": [
+      {
+        "title": "Trusted access for the next era of cyber defense",
+        "site": "OpenAI Blog",
+        "url": "https://openai.com/index/scaling-trusted-access-for-cyber-defense/"
+      },
+      {
+        "title": "OpenAI Launches GPT-5.4-Cyber with Expanded Access for Security Teams",
+        "site": "The Hacker News",
+        "url": "https://thehackernews.com/2026/04/openai-launches-gpt-54-cyber-with.html"
+      },
+      {
+        "title": "OpenAI Releases Cyber Model to Limited Group in Race With Mythos",
+        "site": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-04-14/openai-releases-cyber-model-to-limited-group-in-race-with-mythos"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;
