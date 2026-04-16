@@ -4617,5 +4617,21 @@ export const ARTICLES_META = [
       "src": "logos/openai.svg",
       "alt": "GPT-5.4-Cyber"
     }
+  },
+  {
+    "id": "anthropic-claude-code-desktop-redesign-routines-2026",
+    "type": "news",
+    "category": "editor",
+    "title": "Claude Code デスクトップが全面刷新 — 並列セッション・統合ターミナル・ドラッグ&ドロップレイアウト、新機能「Routines」でクラウド自動実行も",
+    "excerpt": "Anthropic が4月14日、Claude Code デスクトップアプリ（Mac/Windows）の全面リデザインと新機能「Routines」のリサーチプレビューを同時発表した。複数セッションをサイドバーで管理し1ウインドウ内で並列実行、統合ターミナル・アプリ内ファイルエディタ・高速 diff ビューア・HTML/PDF プレビューを搭載。Routines はプロンプト・リポジトリ・コネクターを1つのパッケージにまとめ、スケジュール・API・GitHub イベントで自動実行する。Pro 5回/日、Max 15回/日、Team/Enterprise 25回/日。",
+    "date": "2026-04-16",
+    "newsDate": "2026-04-14",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["Anthropic", "Claude Code", "IDE", "Routines", "開発ツール"],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Claude Code Desktop Redesign"
+    }
   }
 ];

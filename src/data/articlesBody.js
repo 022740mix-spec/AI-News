@@ -7726,6 +7726,33 @@ const ARTICLES_BODY = {
         "url": "https://www.bloomberg.com/news/articles/2026-04-14/openai-releases-cyber-model-to-limited-group-in-race-with-mythos"
       }
     ]
+  },
+  "anthropic-claude-code-desktop-redesign-routines-2026": {
+    "body": [
+      "**Anthropic** が4月14日、**Claude Code** デスクトップアプリ（Mac/Windows）の全面リデザインと、新機能「**Routines**」のリサーチプレビューを同時発表した。「コーディングエージェントを本格的に使うには IDE を超えた環境が必要」という設計思想のもと、並列セッション管理とクラウド自動実行という2つの方向性を打ち出している。",
+      "## デスクトップ: 並列セッションと統合ワークスペース",
+      "最大の変更点は**マルチセッション対応**だ。新しいサイドバーにアクティブ・最近のセッションが一覧表示され、ステータス・プロジェクト・環境でフィルタリングできる。複数のセッションを1つのウインドウ内で並列に実行し、ペインは**ドラッグ&ドロップ**で自由に配置可能だ。さらに**統合ターミナル**（テスト・ビルド実行用）、**アプリ内ファイルエディタ**（スポット編集用）、大規模チェンジセットに対応した**高速 diff ビューア**、HTML・PDF・ローカルサーバーの**拡張プレビューペイン**が追加された。",
+      "## Routines: スケジュール・API・GitHub イベントでの自動実行",
+      "**Routines** はプロンプト、リポジトリ、コネクターを1つのパッケージにまとめ、スケジュール実行・API コール・GitHub イベント（プルリクエスト作成など）をトリガーに自動で起動する仕組みだ。実行は Anthropic のクラウドインフラ上で行われるため、ユーザーの PC を閉じても処理は継続する。1日の実行回数はプラン別に制限があり、**Pro は5回**、**Max は15回**、**Team/Enterprise は25回**だ。",
+      "今回の刷新により、Claude Code は単なる CLI / AI コーディングアシスタントから「セッション管理・ファイル編集・プレビュー・自動実行を備えた統合開発環境」へと進化した。GitHub Copilot の Autopilot モード、Cursor の Background Agents と並び、AI コーディングツールの競争軸が「補完の精度」から「エージェントの自律性と運用インフラ」へ移行していることを示す動きだ。"
+    ],
+    "primarySources": [
+      {
+        "title": "Redesigning Claude Code on desktop for parallel agents",
+        "site": "Claude Blog",
+        "url": "https://claude.com/blog/claude-code-desktop-redesign"
+      },
+      {
+        "title": "Anthropic adds routines to redesigned Claude Code, here's how it works",
+        "site": "9to5Mac",
+        "url": "https://9to5mac.com/2026/04/14/anthropic-adds-repeatable-routines-feature-to-claude-code-heres-how-it-works/"
+      },
+      {
+        "title": "We tested Anthropic's redesigned Claude Code desktop app and 'Routines'",
+        "site": "VentureBeat",
+        "url": "https://venturebeat.com/orchestration/we-tested-anthropics-redesigned-claude-code-desktop-app-and-routines-heres-what-enterprises-should-know"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;
