@@ -4662,7 +4662,7 @@ export const ARTICLES_META = [
     "readTime": "5分",
     "tags": ["Anthropic", "Claude", "Computer Use", "MCP", "開発ツール"],
     "coverImage": {
-      "src": "articles/cover-editor-ide.svg",
+      "src": "articles/cover-cli-tools.svg",
       "alt": "Claude Screen Viewing Methods"
     }
   },
