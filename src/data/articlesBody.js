@@ -7615,6 +7615,33 @@ const ARTICLES_BODY = {
         "url": "https://github.com/Shopify/Shopify-AI-Toolkit"
       }
     ]
+  },
+  "apple-ai-chief-giannandrea-departure-2026": {
+    "body": [
+      "Apple の元 AI・機械学習担当 SVP **John Giannandrea** が4月15日の株式ベスティング日をもって正式に退任した。2018年に **Google** の検索・AI 部門責任者から引き抜かれ、Apple の機械学習戦略と **Siri** を8年間にわたって統括してきた人物の退場は、Apple の AI 戦略の転換点を象徴している。",
+      "## Apple Intelligence の不振が引き金",
+      "Giannandrea の権限縮小は2025年3月に始まった。**Apple Intelligence** の市場投入が競合に大きく遅れ、Siri の大規模刷新（ChatGPT 連携やオンスクリーン認識）も繰り返し延期されたことで、Tim Cook が「プロダクト開発の遂行能力」に信頼を失ったと報じられている。Siri、ロボティクス、その他の AI チームの監督権が剥奪され、2025年12月に Apple は Giannandrea の退任とアドバイザーへの移行を正式に発表した。",
+      "## 後任体制と今後の展望",
+      "AI 担当 VP には **Amar Subramanya** が就任した。Subramanya はソフトウェアエンジニアリング担当 SVP の **Craig Federighi** 直属となり、AI 組織が Federighi の指揮下に統合される形だ。Giannandrea 時代は AI 研究部門が独立した組織として運営されていたが、今後はプロダクト開発との距離を縮める方向に舵を切ることになる。",
+      "Giannandrea 本人は退任後、スタートアップへのアドバイザリーや企業の取締役就任を予定していると報じられている。Apple は **WWDC 2026**（6月）で AI 戦略の次章を示す必要があり、新体制の真価が問われるのはそこからだ。Google、OpenAI、Anthropic が AI アシスタント市場で急速に進化する中、Siri の立て直しに残された時間は長くない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Former AI boss John Giannandrea officially leaving Apple this week after 'resting and vesting'",
+        "site": "9to5Mac",
+        "url": "https://9to5mac.com/2026/04/13/former-ai-boss-john-giannandrea-officially-leaving-apple-this-week-after-resting-and-vesting/"
+      },
+      {
+        "title": "Apple's AI Chief John Giannandrea Departs This Week",
+        "site": "MacRumors",
+        "url": "https://www.macrumors.com/2026/04/13/john-giannandrea-departs-apple-this-week/"
+      },
+      {
+        "title": "John Giannandrea to retire from Apple",
+        "site": "Apple Newsroom",
+        "url": "https://www.apple.com/newsroom/2025/12/john-giannandrea-to-retire-from-apple/"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;

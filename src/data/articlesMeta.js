@@ -4553,5 +4553,21 @@ export const ARTICLES_META = [
       "src": "logos/shopify.svg",
       "alt": "Shopify AI Toolkit"
     }
+  },
+  {
+    "id": "apple-ai-chief-giannandrea-departure-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Apple AI責任者 John Giannandrea が8年で退任 — Apple Intelligence 不振と Siri 遅延の責任、後任に元Google VP の Amar Subramanya",
+    "excerpt": "Apple の元 AI 責任者 John Giannandrea が4月15日付で正式に退任した。2018年に Google から招聘され機械学習と Siri を統括したが、2025年3月に Apple Intelligence の不振と Siri 大規模刷新の遅延を受けて権限を大幅に縮小されていた。Tim Cook が「プロダクト開発の遂行能力」に信頼を失ったと報じられている。後任の AI 担当 VP には Amar Subramanya が就任し、Craig Federighi 直属で再出発する。",
+    "date": "2026-04-16",
+    "newsDate": "2026-04-13",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["Apple", "Apple Intelligence", "Siri", "人事", "リーダーシップ"],
+    "coverImage": {
+      "src": "logos/apple.svg",
+      "alt": "Apple AI Leadership"
+    }
   }
 ];
