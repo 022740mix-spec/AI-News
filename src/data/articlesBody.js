@@ -7671,6 +7671,34 @@ const ARTICLES_BODY = {
         "url": "https://spectrum.ieee.org/state-of-ai-index-2026"
       }
     ]
+  },
+  "anthropic-claude-performance-decline-effort-backlash-2026": {
+    "body": [
+      "Anthropic の **Claude** が「性能低下している」というユーザーの訴えが4月中旬に急拡大し、AI ラボとしての信頼が問われる事態に発展した。発端は AMD シニアディレクターの **Stella Laurenzo** が4月2日に GitHub に投稿した Issue だ。Claude Code の **6,852セッション**、17,871の思考ブロック、**234,760のツールコール** を分析し、「Claude Code は複雑なエンジニアリング作業に信頼できないレベルまで退行した」と主張した。",
+      "## 背景: effort レベルの静かな変更",
+      "問題の根底には、Anthropic が段階的に行った2つの変更がある。まず2月9日に Opus 4.6 の思考モードを**アダプティブ・シンキング**にデフォルト変更。続いて3月3日にデフォルトの effort レベルを「高」から**「中（85）」に引き下げた**。effort レベルはモデルが1回の応答に費やすトークン量を制御するパラメータで、下げればコストと応答速度は改善するが、複雑な推論の精度が犠牲になる。",
+      "Claude Code 責任者の **Boris Cherny** は Laurenzo の分析の深さに謝意を示しつつ、主要な結論には異議を唱えた。「redact-thinking-2026-02-12 ヘッダーは UI 上で思考を非表示にするだけで、思考自体や思考バジェットには影響しない」と説明。しかし effort レベルの変更については「コスト・レイテンシ・知性のバランスとして最適と判断した」と認め、**ユーザーへの事前告知なしに行ったこと**が批判の火種になった。",
+      "## 対応と教訓",
+      "4月7日、Anthropic は API キーユーザー、Bedrock、Vertex、Foundry、Team、Enterprise ユーザーのデフォルト effort を**「高」に戻す**措置を実施した。さらに今後、Teams・Enterprise ユーザーは「追加トークンとレイテンシのコストを負っても拡張思考の恩恵を受けられるよう、高 effort をデフォルトにする」テストを行うと Cherny は述べている。",
+      "この騒動は、AI サービスにおける「デフォルト値の変更」がユーザー体験に直結する問題であることを露呈した。Anthropic は年間売上ランレート $300億、評価額 $3,800億に達し IPO も視野に入っているが、急増するエンタープライズ顧客へのコンピュートコスト圧力と品質維持の板挟みが表面化した格好だ。4月15日には claude.ai、API、Claude Code の全サービスで大規模障害も発生しており、インフラ面の課題も重なっている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic is facing a wave of user backlash over reports of performance issues with its Claude AI chatbot",
+        "site": "Fortune",
+        "url": "https://fortune.com/2026/04/14/anthropic-claude-performance-decline-user-complaints-backlash-lack-of-transparency-accusations-compute-crunch/"
+      },
+      {
+        "title": "Is Anthropic 'nerfing' Claude? Users increasingly report performance degradation as leaders push back",
+        "site": "VentureBeat",
+        "url": "https://venturebeat.com/technology/is-anthropic-nerfing-claude-users-increasingly-report-performance"
+      },
+      {
+        "title": "Claude Code Drama: 6,852 Sessions Prove Performance Collapse",
+        "site": "Substack",
+        "url": "https://scortier.substack.com/p/claude-code-drama-6852-sessions-prove"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;

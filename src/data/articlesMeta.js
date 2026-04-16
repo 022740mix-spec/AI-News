@@ -4585,5 +4585,21 @@ export const ARTICLES_META = [
       "src": "logos/stanford.svg",
       "alt": "Stanford AI Index 2026"
     }
+  },
+  {
+    "id": "anthropic-claude-performance-decline-effort-backlash-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude の性能低下にユーザーが反発 — Anthropic がデフォルト effort を「中」に下げていたことが判明、6,852セッションの分析が火種に",
+    "excerpt": "Anthropic の Claude がパフォーマンス低下しているとの訴えが4月中旬に急拡大した。AMD シニアディレクターの Stella Laurenzo が Claude Code の6,852セッション・234,760ツールコールを分析し「複雑なエンジニアリング作業に信頼できない」と GitHub Issue で告発。背景には3月3日に Anthropic がデフォルト effort レベルを「高」から「中（85）」に引き下げた変更があった。Claude Code 責任者の Boris Cherny はコスト最適化のためと説明し、4月7日に API・Team・Enterprise ユーザーのデフォルトを「高」に戻した。",
+    "date": "2026-04-16",
+    "newsDate": "2026-04-13",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Anthropic", "Claude", "Claude Code", "パフォーマンス", "ユーザー体験"],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Claude Performance Issues"
+    }
   }
 ];
