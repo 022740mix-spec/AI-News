@@ -7566,6 +7566,33 @@ const ARTICLES_BODY = {
         "url": "https://www.bloomberg.com/news/articles/2026-04-10/anthropic-agrees-to-rent-coreweave-ai-capacity-to-power-claude"
       }
     ]
+  },
+  "openai-chatgpt-ads-25b-revenue-projection-2026": {
+    "body": [
+      "Axios が4月9日、**OpenAI** が投資家向けプレゼンテーションで ChatGPT 広告事業の大胆な収益予測を提示したと報じた。2026年に **$25億（約3,750億円）**、2027年に $110億、2028年に $250億、2029年に $530億、そして2030年には **$1,000億（約15兆円）** に達するとの見通しだ。",
+      "## 6週間で ARR $1億突破",
+      "**ChatGPT** への広告表示は2026年2月9日に米国でパイロット開始された。対象は無料ユーザーと Go プラン（$8/月）のログイン済み成人ユーザーで、会話の回答下部に関連するスポンサー製品・サービスが表示される。健康・メンタルヘルス・政治関連のトピックでは広告は表示されず、18歳未満のユーザーにも配信されない。開始からわずか6週間で年間経常収益（ARR）は **$1億** を突破した。",
+      "## セルフサーブ広告マネージャー公開",
+      "4月には**セルフサーブ広告マネージャー**が一部広告主向けに公開され、最低出稿額が従来の **$25万から $5万** に引き下げられた。大手広告エージェンシーの **WPP**、**Omnicom**、**Dentsu** がテストプログラムに参加しており、Omnicom Media は30社以上のクライアントが参加予定であることを明らかにしている。広告パイロットはカナダ、オーストラリア、ニュージーランドへの拡大も予定されている。",
+      "この収益予測は2030年までに週間アクティブユーザーが **27.5億人** に達することを前提としており、Google、Meta、Amazon が支配するデジタル広告市場の一角を切り取る野望を示している。ただし現在の ChatGPT の月間ユーザー数は約1億人超で、この数字への到達には10倍以上の成長が必要だ。OpenAI の年間売上ランレートは $250億を超え、サブスクリプション収益に広告を加えた「二本柱」戦略への転換が鮮明になっている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Scoop: OpenAI projects $100 billion in ad revenue by 2030",
+        "site": "Axios",
+        "url": "https://www.axios.com/2026/04/09/openai-100-billion-in-ad-revenue"
+      },
+      {
+        "title": "Our approach to advertising and expanding access to ChatGPT",
+        "site": "OpenAI Blog",
+        "url": "https://openai.com/index/our-approach-to-advertising-and-expanding-access/"
+      },
+      {
+        "title": "Testing ads in ChatGPT",
+        "site": "OpenAI Blog",
+        "url": "https://openai.com/index/testing-ads-in-chatgpt/"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;

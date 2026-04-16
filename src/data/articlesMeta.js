@@ -4521,5 +4521,21 @@ export const ARTICLES_META = [
       "src": "logos/anthropic.svg",
       "alt": "Anthropic CoreWeave Deal"
     }
+  },
+  {
+    "id": "openai-chatgpt-ads-25b-revenue-projection-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI が ChatGPT 広告で2026年 $25億、2030年 $1000億の収益を予測 — パイロット開始6週間で ARR $1億突破、Google・Meta の広告帝国に挑戦状",
+    "excerpt": "Axios が4月9日、OpenAI が投資家向けプレゼンテーションで ChatGPT 広告事業の収益予測を提示したと報じた。2026年に $25億、2030年には $1000億を見込む。2月9日の米国パイロット開始からわずか6週間で ARR $1億を突破し、WPP・Omnicom・Dentsu の大手3エージェンシーが参加。4月にはセルフサーブ広告マネージャーも公開され、最低出稿額を $25万から $5万に引き下げた。",
+    "date": "2026-04-16",
+    "newsDate": "2026-04-09",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["OpenAI", "ChatGPT", "広告", "収益", "ビジネスモデル"],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI ChatGPT Ads"
+    }
   }
 ];
