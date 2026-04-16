@@ -7734,6 +7734,8 @@ const ARTICLES_BODY = {
       "最大の変更点は**マルチセッション対応**だ。新しいサイドバーにアクティブ・最近のセッションが一覧表示され、ステータス・プロジェクト・環境でフィルタリングできる。複数のセッションを1つのウインドウ内で並列に実行し、ペインは**ドラッグ&ドロップ**で自由に配置可能だ。さらに**統合ターミナル**（テスト・ビルド実行用）、**アプリ内ファイルエディタ**（スポット編集用）、大規模チェンジセットに対応した**高速 diff ビューア**、HTML・PDF・ローカルサーバーの**拡張プレビューペイン**が追加された。",
       "## Routines: スケジュール・API・GitHub イベントでの自動実行",
       "**Routines** はプロンプト、リポジトリ、コネクターを1つのパッケージにまとめ、スケジュール実行・API コール・GitHub イベント（プルリクエスト作成など）をトリガーに自動で起動する仕組みだ。実行は Anthropic のクラウドインフラ上で行われるため、ユーザーの PC を閉じても処理は継続する。1日の実行回数はプラン別に制限があり、**Pro は5回**、**Max は15回**、**Team/Enterprise は25回**だ。",
+      "## Windows 版 Computer Use（ベータ）も同時期に解禁",
+      "デスクトップアプリの強化と並行して、4月初旬には **Computer Use**（コンピューター使用）機能が **Windows** にも対応した（Pro / Max プラン、リサーチプレビュー）。Claude が画面のスクリーンショットを撮りながらアプリ操作・クリック・タイピングを自律的に行える機能で、Outlook などのデスクトップアプリを開いたまま「このメールの返信案を考えて」といった指示が可能になる。ただし **Windows x64 のみ対応で、ARM ベース（Surface Pro X、一部の Copilot+ PC）では利用できない**。初回起動時に約 2GB の Linux VM がダウンロードされる。有効化手順が分かりづらい点にも注意が必要で、Claude Desktop の設定画面で「一般」が2箇所あるうち、**「デスクトップアプリ」配下の「一般」** を開き、「コンピューター使用（ベータ）」をオンにする必要がある。",
       "今回の刷新により、Claude Code は単なる CLI / AI コーディングアシスタントから「セッション管理・ファイル編集・プレビュー・自動実行を備えた統合開発環境」へと進化した。GitHub Copilot の Autopilot モード、Cursor の Background Agents と並び、AI コーディングツールの競争軸が「補完の精度」から「エージェントの自律性と運用インフラ」へ移行していることを示す動きだ。"
     ],
     "primarySources": [
@@ -7751,6 +7753,11 @@ const ARTICLES_BODY = {
         "title": "We tested Anthropic's redesigned Claude Code desktop app and 'Routines'",
         "site": "VentureBeat",
         "url": "https://venturebeat.com/orchestration/we-tested-anthropics-redesigned-claude-code-desktop-app-and-routines-heres-what-enterprises-should-know"
+      },
+      {
+        "title": "Let Claude use your computer in Cowork",
+        "site": "Claude Help Center",
+        "url": "https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork"
       }
     ]
   },

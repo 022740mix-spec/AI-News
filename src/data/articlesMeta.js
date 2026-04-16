@@ -4628,7 +4628,7 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-14",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["Anthropic", "Claude Code", "IDE", "Routines", "開発ツール"],
+    "tags": ["Anthropic", "Claude Code", "IDE", "Routines", "Computer Use"],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Claude Code Desktop Redesign"
