@@ -7788,6 +7788,56 @@ const ARTICLES_BODY = {
         "url": "https://www.digitaltrends.com/computing/google-is-expanding-personal-intelligence-to-gemini-users-globally-and-its-a-huge-shift/"
       }
     ]
+  },
+  "claude-screen-viewing-4-methods-comparison-2026": {
+    "body": [
+      "Claude に「画面を見てもらう」方法は2026年4月時点で大きく4つある。しかし用途・速度・対応範囲がそれぞれ異なり、適切に使い分けないとトークンの浪費や非効率な作業に陥る。本記事では各方法の特性を整理する。",
+      "## 1. Computer Use（Cowork）— デスクトップアプリ全般を操作",
+      "**Claude Desktop アプリ**の **Cowork** 内で利用できるベータ機能。Claude が PC 画面のスクリーンショットを撮り、クリック・タイピング・アプリ切替を自律的に行う。**Outlook や Excel などブラウザ外のデスクトップアプリ**を操作できる唯一の方法だ。Pro / Max プラン限定で、Windows x64 のみ対応（ARM 非対応）。有効化は Claude Desktop の設定 →「デスクトップアプリ」→「一般」→「コンピューター使用（ベータ）」をオン。スクリーンショットベースのため他の方法より速度は劣るが、対応範囲が最も広い。",
+      "## 2. Claude in Chrome — ブラウザ上のUI確認・フォーム操作（最速）",
+      "**Chrome 拡張機能**として動作し、Claude Code（CLI やエディタ）と連携する。ユーザーの実際のブラウザセッション（ログイン状態・Cookie）をそのまま使えるため、認証が必要なサイトのUI確認やフォーム入力補助に最適。**スクリーンショットの取得が圧倒的に速い**のが最大の利点で、開発中の画面確認はこれが第一選択になる。ただしヘッドレス実行には非対応で、CI/CD パイプラインでは使えない。Chrome / Edge に対応。",
+      "## 3. Chrome DevTools MCP — コンソール・ネットワーク・DOMの深掘り",
+      "**Google の Chrome チーム**が公式に開発した MCP サーバーで、Chrome の開発者ツール（DevTools Protocol）に Claude Code から直接アクセスできる。コンソールログ、ネットワークリクエスト、パフォーマンスプロファイラ、DOM インスペクションなど、ブラウザの「中身」を診断するための手段だ。Claude in Chrome が「見た目」を確認するのに対し、DevTools MCP は「裏側」を調べる。Cursor や Claude Code CLI から MCP サーバーとして設定して利用する。",
+      "## 4. Playwright MCP — テスト自動化・CI/CD 連携",
+      "**Microsoft** が開発した Playwright をベースとする MCP サーバーで、ブラウザ操作の自動化とテスト実行に特化している。ヘッドレス実行が可能で CI/CD パイプラインに組み込める。ただしツール定義だけで約 **13,700トークン**を消費し、10ステップのタスクで約 **114,000トークン**かかるというベンチマークもあり、トークン効率は最も低い。",
+      "## 使い分けの早見表",
+      "開発者の実用的な使い分けは以下の通りだ。**開発中の UI を素早く確認したい** → Claude in Chrome。**コンソールエラーやネットワーク問題をデバッグしたい** → DevTools MCP。**テストスイートを自動化し CI に組み込みたい** → Playwright MCP。**Outlook・Excel などデスクトップアプリを操作してほしい** → Computer Use。多くの開発チームでは Claude in Chrome + DevTools MCP の組み合わせが日常的なワークフローに最も適しており、Playwright MCP はリリース前の検証に使う構成が推奨されている。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 7,
+        "caption": "Claude の画面操作4手法の比較",
+        "headers": ["方法", "操作対象", "速度", "トークン効率", "ヘッドレス", "必要なもの"],
+        "rows": [
+          ["Computer Use", "デスクトップ全般", "遅い", "低い", "不可", "Cowork（Pro/Max）"],
+          ["Claude in Chrome", "ブラウザ（認証済み）", "最速", "高い", "不可", "Chrome 拡張"],
+          ["DevTools MCP", "ブラウザ内部（DOM・コンソール等）", "速い", "高い", "可", "MCP サーバー設定"],
+          ["Playwright MCP", "ブラウザ操作の自動化", "速い", "低い", "可", "MCP サーバー設定"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Use Claude Code with Chrome (beta)",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/chrome"
+      },
+      {
+        "title": "Let Claude use your computer in Cowork",
+        "site": "Claude Help Center",
+        "url": "https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork"
+      },
+      {
+        "title": "chrome-devtools-mcp",
+        "site": "GitHub (ChromeDevTools)",
+        "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp"
+      },
+      {
+        "title": "I Tested All 3 Browser Tools for Claude Code",
+        "site": "AyyazTech",
+        "url": "https://ayyaztech.com/blog/chrome-devtools-mcp-vs-claude-in-chrome-vs-playwright"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;

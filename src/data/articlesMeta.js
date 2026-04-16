@@ -4649,5 +4649,21 @@ export const ARTICLES_META = [
       "src": "logos/google.svg",
       "alt": "Gemini Personal Intelligence"
     }
+  },
+  {
+    "id": "claude-screen-viewing-4-methods-comparison-2026",
+    "type": "feature",
+    "category": "editor",
+    "title": "【実用ガイド】Claude に「画面を見てもらう」4つの方法 — Computer Use / Claude in Chrome / DevTools MCP / Playwright MCP の使い分け",
+    "excerpt": "Claude Desktop の Computer Use、ブラウザ拡張の Claude in Chrome、Google 公式の Chrome DevTools MCP、Microsoft の Playwright MCP——Claude に画面やブラウザを見せる方法は4つに増えたが、それぞれ用途・速度・対応範囲が異なる。デスクトップアプリ操作なら Computer Use、開発中のUI確認なら Claude in Chrome、デバッグなら DevTools MCP、テスト自動化なら Playwright MCP。本記事では各方法の特性と使い分けを整理する。",
+    "date": "2026-04-16",
+    "newsDate": "2026-04-14",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Anthropic", "Claude", "Computer Use", "MCP", "開発ツール"],
+    "coverImage": {
+      "src": "articles/cover-editor-ide.svg",
+      "alt": "Claude Screen Viewing Methods"
+    }
   }
 ];
