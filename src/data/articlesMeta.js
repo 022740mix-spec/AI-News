@@ -4550,7 +4550,7 @@ export const ARTICLES_META = [
     "readTime": "4分",
     "tags": ["Shopify", "MCP", "オープンソース", "エージェント", "開発ツール"],
     "coverImage": {
-      "src": "logos/shopify.svg",
+      "src": "articles/cover-programming.svg",
       "alt": "Shopify AI Toolkit"
     }
   },
@@ -4566,7 +4566,7 @@ export const ARTICLES_META = [
     "readTime": "4分",
     "tags": ["Apple", "Apple Intelligence", "Siri", "人事", "リーダーシップ"],
     "coverImage": {
-      "src": "logos/apple.svg",
+      "src": "articles/cover-model-api.svg",
       "alt": "Apple AI Leadership"
     }
   },
@@ -4582,7 +4582,7 @@ export const ARTICLES_META = [
     "readTime": "5分",
     "tags": ["Stanford", "AI Index", "中国", "透明性", "環境"],
     "coverImage": {
-      "src": "logos/stanford.svg",
+      "src": "articles/cover-regulation.svg",
       "alt": "Stanford AI Index 2026"
     }
   },
