@@ -7753,6 +7753,33 @@ const ARTICLES_BODY = {
         "url": "https://venturebeat.com/orchestration/we-tested-anthropics-redesigned-claude-code-desktop-app-and-routines-heres-what-enterprises-should-know"
       }
     ]
+  },
+  "google-gemini-personal-intelligence-global-2026": {
+    "body": [
+      "**Google** が4月14日、**Gemini** アプリの「**Personal Intelligence**」機能を EU・スイス・英国を除く全世界に展開開始した。1月に米国の有料プラン向けにローンチされた同機能が、日本を含むグローバル市場に一気に拡大する形だ。まず **AI Plus**、**Pro**、**Ultra** の有料プランに提供され、無料ユーザーへは数週間以内に拡大される予定。",
+      "## Gmail・Photos・Drive をまたぐパーソナライズ",
+      "Personal Intelligence は **Gmail**、**Calendar**、**Drive**、**Google Photos**、**YouTube**、**Search**、**Maps** など Google の主要アプリに接続し、ユーザーの個人データを参照して回答をパーソナライズする。たとえば「来週の出張に必要なものリストを作って」と聞けば、Calendar の予定、メールの確認番号、Drive のドキュメントを横断して回答を生成する——追加のプロンプトは不要だ。",
+      "## プライバシー: オプトインとデータ分離",
+      "Personal Intelligence は明示的な**オプトイン方式**を採用しており、ユーザーはアプリごとに Gemini のアクセス権を個別に管理できる。有効化後はすべてのプロンプトでデフォルトで機能するが、Tools メニューのトグルでいつでも無効化可能だ。重要な点として、Gemini は Gmail や Photos のデータを**モデルの訓練には使用しない**。質問に答えるために参照するが、個人コンテンツはモデルトレーニングから分離されているとGoogle は説明している。",
+      "EU・スイス・英国での提供が見送られた背景には、GDPR を中心とするデータ保護規制がある。Google は「各地域の規制要件を満たす形での提供を検討中」としているが、具体的なスケジュールは示していない。Personal Intelligence は Google の最大の強み——数十億ユーザーの既存データエコシステム——を AI に直接接続する戦略の中核であり、ChatGPT や Claude との差別化要因として位置付けられている。デスクトップ、Android、iOS の全プラットフォームで Gemini がサポートする全言語で利用可能だ。"
+    ],
+    "primarySources": [
+      {
+        "title": "Gemini app starts rolling out Personal Intelligence globally",
+        "site": "9to5Google",
+        "url": "https://9to5google.com/2026/04/14/gemini-personal-intelligence-global/"
+      },
+      {
+        "title": "Personal Intelligence: Connecting Gemini to Google apps",
+        "site": "Google Blog",
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence/"
+      },
+      {
+        "title": "Google is expanding Personal Intelligence to Gemini users globally and it's a huge shift",
+        "site": "Digital Trends",
+        "url": "https://www.digitaltrends.com/computing/google-is-expanding-personal-intelligence-to-gemini-users-globally-and-its-a-huge-shift/"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;

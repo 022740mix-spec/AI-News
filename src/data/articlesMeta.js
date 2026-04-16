@@ -4633,5 +4633,21 @@ export const ARTICLES_META = [
       "src": "logos/anthropic.svg",
       "alt": "Claude Code Desktop Redesign"
     }
+  },
+  {
+    "id": "google-gemini-personal-intelligence-global-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Google Gemini の Personal Intelligence が EU 以外の全世界に展開 — Gmail・Photos・Drive 等と連携し、プロンプト不要のパーソナライズを実現",
+    "excerpt": "Google が4月14日、Gemini アプリの「Personal Intelligence」機能をEU・スイス・英国を除く全世界に展開開始した。Gmail、Calendar、Drive、Photos、YouTube、Maps などの Google アプリと連携し、ユーザーの個人データを参照して追加のプロンプトなしにパーソナライズされた回答を生成する。オプトイン方式でアプリごとのアクセス制御が可能。まず AI Plus/Pro/Ultra 有料プランに提供され、無料ユーザーへは数週間以内に拡大予定。",
+    "date": "2026-04-16",
+    "newsDate": "2026-04-14",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["Google", "Gemini", "パーソナライズ", "プライバシー", "グローバル展開"],
+    "coverImage": {
+      "src": "logos/google.svg",
+      "alt": "Gemini Personal Intelligence"
+    }
   }
 ];
