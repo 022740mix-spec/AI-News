@@ -7593,6 +7593,28 @@ const ARTICLES_BODY = {
         "url": "https://openai.com/index/testing-ads-in-chatgpt/"
       }
     ]
+  },
+  "shopify-ai-toolkit-oss-mcp-agent-2026": {
+    "body": [
+      "**Shopify** が4月9日、AI コーディングツールから Shopify プラットフォームに直接接続する「**AI Toolkit**」をオープンソース（MIT ライセンス）で GitHub に公開した。**Claude Code**、**Cursor**、VS Code、Gemini CLI、**OpenAI Codex** に対応し、AI エージェントが自然言語の指示だけで EC ストアの構築・管理を行える基盤を提供する。",
+      "## 3つの中核機能",
+      "AI Toolkit は3つの主要機能で構成される。第1に**ドキュメント検索**——Shopify の最新ドキュメントと API スキーマをリアルタイムに検索できる。第2に **GraphQL スキーマ検証**——バンドルされた API スキーマ（admin_2026-04.json.gz 等）に対してクエリを自動検証し、誤った API コールを防ぐ。第3に**ストア操作**——CLI の store execute 機能を通じて、商品更新・在庫変更・設定調整といった実際のストア操作を AI エージェントが実行できる。",
+      "## MCP 基盤とプラグインアーキテクチャ",
+      "技術的な基盤は Anthropic が策定した **MCP（Model Context Protocol）** だ。2025年12月の Winter '26 Edition で先行公開された **Dev MCP Server**（@shopify/dev-mcp）を拡張し、プラグイン・スキル・MCP サーバーの3つのインストール方式を用意している。推奨はプラグイン方式で、自動アップデートにより常に最新の機能が利用可能だ。ツールキット自体は無料で、Shopify 側の API 呼び出し料金もかからない。",
+      "Shopify の AI Toolkit は、EC プラットフォームが AI エージェントの「操作対象」として自らを開放した先行事例だ。開発者がコードを書く代わりに AI に指示してストアを構築・運用する「バイブコマース」のインフラが整い始めている。MCP の普及とともに、同様の動きが他の SaaS プラットフォームにも広がる可能性がある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Shopify AI Toolkit: Connect your AI tools to the Shopify platform",
+        "site": "Shopify Developer Changelog",
+        "url": "https://shopify.dev/changelog/shopify-ai-toolkit-connect-your-ai-tools-to-the-shopify-platform"
+      },
+      {
+        "title": "Shopify/Shopify-AI-Toolkit",
+        "site": "GitHub",
+        "url": "https://github.com/Shopify/Shopify-AI-Toolkit"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;

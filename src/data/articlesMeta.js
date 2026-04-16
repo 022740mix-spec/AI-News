@@ -4537,5 +4537,21 @@ export const ARTICLES_META = [
       "src": "logos/openai.svg",
       "alt": "OpenAI ChatGPT Ads"
     }
+  },
+  {
+    "id": "shopify-ai-toolkit-oss-mcp-agent-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Shopify が AI Toolkit をオープンソース公開 — Claude Code・Cursor・Codex 等から EC ストアを直接操作、MCP ベースのエージェント連携基盤",
+    "excerpt": "Shopify が4月9日、AIコーディングツールから Shopify プラットフォームに直接接続する「AI Toolkit」をオープンソース（MIT ライセンス）で公開した。Claude Code、Cursor、VS Code、Gemini CLI、OpenAI Codex に対応し、ドキュメント検索・GraphQL スキーマ検証・ストア操作の3機能を提供する。Anthropic が策定した MCP（Model Context Protocol）を基盤とし、AIエージェントが自然言語で商品管理や在庫変更を実行できる。",
+    "date": "2026-04-16",
+    "newsDate": "2026-04-09",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["Shopify", "MCP", "オープンソース", "エージェント", "開発ツール"],
+    "coverImage": {
+      "src": "logos/shopify.svg",
+      "alt": "Shopify AI Toolkit"
+    }
   }
 ];
