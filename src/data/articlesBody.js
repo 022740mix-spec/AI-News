@@ -7838,6 +7838,40 @@ const ARTICLES_BODY = {
         "url": "https://ayyaztech.com/blog/chrome-devtools-mcp-vs-claude-in-chrome-vs-playwright"
       }
     ]
+  },
+  "overview-2026-week-mar30": {
+    "body": [
+      "**3月31日（月）** — OpenAI が **$1,220億** の資金調達を完了し、評価額は **$8,520億** に到達した。Amazon が $500億、NVIDIA と SoftBank が各 $300億を出資。同日、npm で**3つのセキュリティ事案**が同時発生——axios のサプライチェーン攻撃で RAT 入り偽パッケージが流出（[axios 攻撃](?a=axios-npm-supply-chain-attack-rat-2026)）、Claude Code の全ソースコード51万行がソースマップ経由で閲覧可能になり（[ソース流出](?a=claude-code-source-leak-npm-sourcemap-2026)）、Claude Code の prompt cache にバグが見つかりトークンが異常消費された（[トークン消失](?a=claude-code-token-drain-prompt-cache-bug-2026)）。LangChain・LangGraph にも重大脆弱性3件が発見された（[CVE 詳細](?a=langchain-langgraph-3-cves-data-leak-2026)）。",
+      "**4月1日（火）** — Gemini API に課金ティア上限が強制適用され、Tier 1 は月 $250 でリクエストが停止される仕様に（[API 変更](?a=gemini-api-billing-tier-spend-cap-2026)）。Anthropic は Sonnet 4.5/4 の1Mコンテキストベータを4月30日で廃止すると発表（[詳細](?a=anthropic-1m-context-beta-retirement-2026)）。ハーバード大学がバイブコーディングを正式コース化した（[ハーバード](?a=harvard-vibe-coding-course-2026)）。米国 AI 規制では連邦 vs 州のプリエンプション問題が焦点に（[規制分析](?a=us-ai-regulation-federal-vs-state-preemption-2026)）。",
+      "**4月2日（水）** — この日だけで **15本** のニュースが集中した。**Cursor 3** がエージェント専用ワークスペース「Agents Window」を搭載し正式ローンチ（[Cursor 3](?a=cursor-3-agent-first-workspace-2026)）。Claude **Computer Use が Windows** に対応（[Windows 版](?a=claude-computer-use-windows-launch-2026)）。Google **Gemma 4** が Apache 2.0 で完全オープン化（[Gemma 4](?a=gemma-4-apache2-edge-moe-dense-2026)）。Alibaba **Qwen 3.6-Plus** がエージェント型コーディングベンチマークで首位級（[Qwen](?a=qwen-3-6-plus-agentic-coding-multimodal-2026)）。Claude Code のアーキテクチャをクリーンルーム再実装した **Claw Code** が公開数日で10万スターを突破（[Claw Code](?a=claw-code-oss-agent-harness-100k-stars-2026)）。",
+      "**4月3日（木）** — **Supabase** が $500M 調達で評価額 $100億に到達。バイブコーディング需要が OSS BaaS の急成長を牽引（[Supabase](?a=supabase-500m-funding-10b-valuation-2026)）。Anthropic がバイオテック AI 新興企業 **Coefficient Bio** を約 $400M で買収（[買収](?a=anthropic-coefficient-bio-acquisition-400m-2026)）。不可視 Unicode 文字でマルウェアを混入する「GlassWorm」攻撃が GitHub で急拡大（[GlassWorm](?a=glassworm-invisible-unicode-malware-github-supply-chain-2026)）。",
+      "**4月4日（金）** — Anthropic がサードパーティ製ハーネス（OpenClaw 等）のサブスク枠利用を正式停止（[停止](?a=anthropic-claude-third-party-harness-extra-usage-2026)）。Claude の **M365 コネクター**が全プランに開放され、Outlook・OneDrive・SharePoint との連携が可能に（[M365](?a=claude-microsoft-365-connector-all-plans-2026)）。",
+      "**週の総括** — セキュリティ事案が集中した1週間だった。axios のサプライチェーン攻撃、Claude Code のソース流出、GlassWorm と、開発者のインフラを狙う攻撃が3件発生。一方で Cursor 3 のローンチ、Gemma 4 のオープン化、Supabase の大型調達と、開発ツールのエコシステムは拡大を続けている。"
+    ],
+    "primarySources": [
+      {
+        "title": "OpenAI raises $122 billion to accelerate the next phase of AI",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/accelerating-the-next-phase-ai/"
+      }
+    ]
+  },
+  "overview-2026-week-apr06": {
+    "body": [
+      "**4月6日（日）** — **Anthropic** が売上で **OpenAI を逆転**し、年間売上ランレートが **$300億** に到達したと報じられた。エンタープライズ顧客の急増が牽引（[売上逆転](?a=anthropic-overtakes-openai-revenue-30b-run-rate-2026)）。OpenAI は「Intelligence Age の産業政策」を発表し、週32時間労働やロボット税を提言（[政策提言](?a=openai-industrial-policy-intelligence-age-4day-workweek-2026)）。日本では個人情報保護法の AI 学習に関する改正案が閣議決定された（[改正法](?a=japan-personal-info-protection-law-ai-amendment-2026)）。",
+      "**4月7日（月）** — Anthropic が **Claude Mythos Preview** を正式発表。「強すぎて一般公開しない」初のフロンティアモデルで、**Project Glasswing**（$100M のサイバーセキュリティイニシアティブ）でのみ利用される。HLE で 56.8%、SWE-bench Verified で 93.9% という圧倒的スコアを記録し、数千のゼロデイ脆弱性（最古は27年前の OpenBSD バグ）を発見した（[Mythos](?a=anthropic-claude-mythos-preview-glasswing-2026)）。",
+      "**4月8日（火）** — 大型発表が集中した日。Anthropic が **Claude Managed Agents** をパブリックベータ公開（[Managed Agents](?a=anthropic-claude-managed-agents-public-beta-2026)）。Meta が初のクローズドモデル **Muse Spark** を発表し、オープンソース路線からの転換を鮮明に（[Muse Spark](?a=meta-muse-spark-closed-source-msl-2026)）。D.C. 控訴裁が Anthropic vs 国防総省訴訟で差止を却下（[訴訟](?a=anthropic-pentagon-blacklist-appeals-court-2026)）。OpenAI が Child Safety Blueprint を公表（[児童安全](?a=openai-child-safety-blueprint-safety-fellowship-2026)）。GitHub Copilot が **Autopilot モード**と CLI での MCP 対応をプレビュー（[Copilot](?a=github-copilot-autopilot-mcp-cli-vscode-2026)）。",
+      "**4月9日（水）** — OpenAI が ChatGPT 広告事業の収益予測を投資家に提示。2026年に **$25億**、2030年に **$1,000億** を見込む。パイロット開始6週間で ARR $1億を突破していた（[広告予測](?a=openai-chatgpt-ads-25b-revenue-projection-2026)）。**Shopify** が AI Toolkit をオープンソース公開し、Claude Code・Cursor・Codex から EC ストアを MCP 経由で操作可能に（[Shopify](?a=shopify-ai-toolkit-oss-mcp-agent-2026)）。",
+      "**4月10日（木）** — **CoreWeave** が Anthropic との複数年クラウド契約（推定 **$68億**）を発表。NVIDIA Vera Rubin GPU による計算基盤を提供し、主要 AI モデルプロバイダー上位10社中9社が CoreWeave を利用する形に。Meta の $210億契約の翌日の発表で、AI インフラの争奪戦が加速（[CoreWeave](?a=anthropic-coreweave-68b-multiyear-cloud-deal-2026)）。",
+      "**週の総括** — AI 業界の勢力図が一気に動いた1週間。Anthropic が売上で OpenAI を逆転し、「強すぎて公開しない」Mythos で技術面でもリードを示した。Meta はオープンソースからクローズドへの方向転換を鮮明にし、OpenAI は広告事業で新たな収益源を本格始動。インフラ面では CoreWeave が Anthropic・Meta の大型契約を連日獲得し、GPU クラウドの覇権を握りつつある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic が売上で OpenAI を逆転",
+        "site": "The Information",
+        "url": "https://www.theinformation.com/articles/anthropic-revenue-surpasses-openai"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;

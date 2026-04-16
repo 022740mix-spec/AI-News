@@ -32,6 +32,14 @@
     <summary>Google が4月14日、Gemini アプリの「Personal Intelligence」機能をEU・スイス・英国を除く全世界に展開開始した。Gmail、Calendar、Drive、Photos、YouTube、Maps などの Google アプリと連携し、ユーザーの個人データを参照して追加のプロンプトなしにパーソナライズされた回答を生成する。オプトイン方式でアプリごとのアクセス制御が可能。まず AI Plus/Pro/Ultra 有料プランに提供され、無料ユーザーへは数週間以内に拡大予定。</summary>
   </entry>
   <entry>
+    <title>【実用ガイド】Claude に「画面を見てもらう」4つの方法 — Computer Use / Claude in Chrome / DevTools MCP / Playwright MCP の使い分け</title>
+    <link rel="alternate" type="text/html" href="?a=claude-screen-viewing-4-methods-comparison-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-screen-viewing-4-methods-comparison-2026</id>
+    <published>2026-04-14T15:00:00Z</published>
+    <updated>2026-04-14T15:00:00Z</updated>
+    <summary>Claude Desktop の Computer Use、ブラウザ拡張の Claude in Chrome、Google 公式の Chrome DevTools MCP、Microsoft の Playwright MCP——Claude に画面やブラウザを見せる方法は4つに増えたが、それぞれ用途・速度・対応範囲が異なる。デスクトップアプリ操作なら Computer Use、開発中のUI確認なら Claude in Chrome、デバッグなら DevTools MCP、テスト自動化なら Playwright MCP。本記事では各方法の特性と使い分けを整理する。</summary>
+  </entry>
+  <entry>
     <title>Apple AI責任者 John Giannandrea が8年で退任 — Apple Intelligence 不振と Siri 遅延の責任、後任に元Google VP の Amar Subramanya</title>
     <link rel="alternate" type="text/html" href="?a=apple-ai-chief-giannandrea-departure-2026"/>
     <id>tag:ai-tool-news.jp,2026:apple-ai-chief-giannandrea-departure-2026</id>
@@ -54,6 +62,14 @@
     <published>2026-04-13T15:00:00Z</published>
     <updated>2026-04-13T15:00:00Z</updated>
     <summary>Anthropic の Claude がパフォーマンス低下しているとの訴えが4月中旬に急拡大した。AMD シニアディレクターの Stella Laurenzo が Claude Code の6,852セッション・234,760ツールコールを分析し「複雑なエンジニアリング作業に信頼できない」と GitHub Issue で告発。背景には3月3日に Anthropic がデフォルト effort レベルを「高」から「中（85）」に引き下げた変更があった。Claude Code 責任者の Boris Cherny はコスト最適化のためと説明し、4月7日に API・Team・Enterprise ユーザーのデフォルトを「高」に戻した。</summary>
+  </entry>
+  <entry>
+    <title>【週刊まとめ】AI開発ツール — 2026年4月6日〜12日</title>
+    <link rel="alternate" type="text/html" href="?a=overview-2026-week-apr06"/>
+    <id>tag:ai-tool-news.jp,2026:overview-2026-week-apr06</id>
+    <published>2026-04-13T15:00:00Z</published>
+    <updated>2026-04-13T15:00:00Z</updated>
+    <summary>Anthropic が売上で OpenAI を逆転し年換算 $300億に。Claude Mythos Preview が「強すぎて公開しない」初の制限公開モデルとして発表、Project Glasswing で数千のゼロデイを発見。Meta が初のクローズドモデル Muse Spark を投入。GitHub Copilot が Autopilot モードをプレビュー。OpenAI が ChatGPT 広告で $1,000億を目指す。Anthropic-CoreWeave $68億クラウド契約。</summary>
   </entry>
   <entry>
     <title>Anthropic が CoreWeave と $68億の複数年クラウド契約を締結 — NVIDIA Vera Rubin GPU で Claude のプロダクションスケールを確保、AI インフラ軍拡競争が加速</title>
@@ -166,6 +182,14 @@
     <published>2026-04-06T15:00:00Z</published>
     <updated>2026-04-06T15:00:00Z</updated>
     <summary>Anthropic が Claude Sonnet 4.5 と Claude Sonnet 4 の1Mトークンコンテキストウィンドウβを4月30日に終了する。期日以降は context-1m ヘッダーが無効化され、200Kトークンを超えるリクエストはエラーになる。Claude Sonnet 4.6 / Opus 4.6 は追加料金なしで1M対応済みのため、早めの移行が必要。</summary>
+  </entry>
+  <entry>
+    <title>【週刊まとめ】AI開発ツール — 2026年3月30日〜4月5日</title>
+    <link rel="alternate" type="text/html" href="?a=overview-2026-week-mar30"/>
+    <id>tag:ai-tool-news.jp,2026:overview-2026-week-mar30</id>
+    <published>2026-04-06T15:00:00Z</published>
+    <updated>2026-04-06T15:00:00Z</updated>
+    <summary>OpenAI が $1,220億を調達し評価額 $8,520億に。axios がサプライチェーン攻撃を受け RAT 入り偽パッケージが npm に流出。Cursor 3 がエージェント専用ワークスペースを搭載。Claude Code のソースコード51万行が npm ソースマップ経由で流出。Supabase が $500M 調達で評価額$100億到達。Claude Computer Use が Windows に対応。Gemma 4 が Apache 2.0 で完全オープン化。</summary>
   </entry>
   <entry>
     <title>Anthropic が OpenClaw 等サードパーティ製ハーネスのサブスク枠利用を正式停止 — Extra Usage（従量課金）へ移行、月額相当の一回限りクレジット付与</title>

@@ -4665,5 +4665,47 @@ export const ARTICLES_META = [
       "src": "articles/cover-editor-ide.svg",
       "alt": "Claude Screen Viewing Methods"
     }
+  },
+  {
+    "id": "overview-2026-week-mar30",
+    "type": "feature",
+    "category": "special",
+    "title": "【週刊まとめ】AI開発ツール — 2026年3月30日〜4月5日",
+    "excerpt": "OpenAI が $1,220億を調達し評価額 $8,520億に。axios がサプライチェーン攻撃を受け RAT 入り偽パッケージが npm に流出。Cursor 3 がエージェント専用ワークスペースを搭載。Claude Code のソースコード51万行が npm ソースマップ経由で流出。Supabase が $500M 調達で評価額$100億到達。Claude Computer Use が Windows に対応。Gemma 4 が Apache 2.0 で完全オープン化。",
+    "date": "2026-04-06",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": ["週刊まとめ", "2026年4月", "OpenAI", "Cursor", "セキュリティ", "Claude"],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "週刊まとめ 3/30〜4/5"
+    },
+    "heroScope": "week",
+    "pinned": true,
+    "weekRoundupPeriod": {
+      "start": "2026-03-30",
+      "end": "2026-04-05"
+    }
+  },
+  {
+    "id": "overview-2026-week-apr06",
+    "type": "feature",
+    "category": "special",
+    "title": "【週刊まとめ】AI開発ツール — 2026年4月6日〜12日",
+    "excerpt": "Anthropic が売上で OpenAI を逆転し年換算 $300億に。Claude Mythos Preview が「強すぎて公開しない」初の制限公開モデルとして発表、Project Glasswing で数千のゼロデイを発見。Meta が初のクローズドモデル Muse Spark を投入。GitHub Copilot が Autopilot モードをプレビュー。OpenAI が ChatGPT 広告で $1,000億を目指す。Anthropic-CoreWeave $68億クラウド契約。",
+    "date": "2026-04-13",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": ["週刊まとめ", "2026年4月", "Anthropic", "Meta", "OpenAI", "GitHub Copilot"],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "週刊まとめ 4/6〜4/12"
+    },
+    "heroScope": "week",
+    "pinned": true,
+    "weekRoundupPeriod": {
+      "start": "2026-04-06",
+      "end": "2026-04-12"
+    }
   }
 ];
