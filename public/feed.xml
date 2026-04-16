@@ -5,8 +5,56 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-04-13T15:00:00Z</updated>
+  <updated>2026-04-16T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>OpenAI が GPT-5.4-Cyber を公開 — サイバーセキュリティ特化モデルでバイナリ逆解析が可能に、Anthropic Mythos への対抗を鮮明に</title>
+    <link rel="alternate" type="text/html" href="?a=openai-gpt-54-cyber-tac-cybersecurity-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-gpt-54-cyber-tac-cybersecurity-2026</id>
+    <published>2026-04-14T15:00:00Z</published>
+    <updated>2026-04-14T15:00:00Z</updated>
+    <summary>OpenAI が4月14日、防御的サイバーセキュリティに特化した GPT-5.4-Cyber を限定公開した。通常の GPT-5.4 よりリフューザル閾値を下げ、バイナリ逆解析・マルウェア分析・脆弱性検証などのワークフローを可能にする。Trusted Access for Cyber（TAC）プログラムを拡大し、段階的な本人確認で数千人規模の研究者・セキュリティチームに提供する。Codex Security は稼働以来3,000件以上のクリティカル/高脆弱性の修正に貢献。Anthropic の Mythos Preview が Project Glasswing で防御的セキュリティを先行展開した直後の対抗手だ。</summary>
+  </entry>
+  <entry>
+    <title>Claude Code デスクトップが全面刷新 — 並列セッション・統合ターミナル・ドラッグ&amp;ドロップレイアウト、新機能「Routines」でクラウド自動実行も</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-code-desktop-redesign-routines-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-code-desktop-redesign-routines-2026</id>
+    <published>2026-04-14T15:00:00Z</published>
+    <updated>2026-04-14T15:00:00Z</updated>
+    <summary>Anthropic が4月14日、Claude Code デスクトップアプリ（Mac/Windows）の全面リデザインと新機能「Routines」のリサーチプレビューを同時発表した。複数セッションをサイドバーで管理し1ウインドウ内で並列実行、統合ターミナル・アプリ内ファイルエディタ・高速 diff ビューア・HTML/PDF プレビューを搭載。Routines はプロンプト・リポジトリ・コネクターを1つのパッケージにまとめ、スケジュール・API・GitHub イベントで自動実行する。Pro 5回/日、Max 15回/日、Team/Enterprise 25回/日。</summary>
+  </entry>
+  <entry>
+    <title>Google Gemini の Personal Intelligence が EU 以外の全世界に展開 — Gmail・Photos・Drive 等と連携し、プロンプト不要のパーソナライズを実現</title>
+    <link rel="alternate" type="text/html" href="?a=google-gemini-personal-intelligence-global-2026"/>
+    <id>tag:ai-tool-news.jp,2026:google-gemini-personal-intelligence-global-2026</id>
+    <published>2026-04-14T15:00:00Z</published>
+    <updated>2026-04-14T15:00:00Z</updated>
+    <summary>Google が4月14日、Gemini アプリの「Personal Intelligence」機能をEU・スイス・英国を除く全世界に展開開始した。Gmail、Calendar、Drive、Photos、YouTube、Maps などの Google アプリと連携し、ユーザーの個人データを参照して追加のプロンプトなしにパーソナライズされた回答を生成する。オプトイン方式でアプリごとのアクセス制御が可能。まず AI Plus/Pro/Ultra 有料プランに提供され、無料ユーザーへは数週間以内に拡大予定。</summary>
+  </entry>
+  <entry>
+    <title>Apple AI責任者 John Giannandrea が8年で退任 — Apple Intelligence 不振と Siri 遅延の責任、後任に元Google VP の Amar Subramanya</title>
+    <link rel="alternate" type="text/html" href="?a=apple-ai-chief-giannandrea-departure-2026"/>
+    <id>tag:ai-tool-news.jp,2026:apple-ai-chief-giannandrea-departure-2026</id>
+    <published>2026-04-13T15:00:00Z</published>
+    <updated>2026-04-13T15:00:00Z</updated>
+    <summary>Apple の元 AI 責任者 John Giannandrea が4月15日付で正式に退任した。2018年に Google から招聘され機械学習と Siri を統括したが、2025年3月に Apple Intelligence の不振と Siri 大規模刷新の遅延を受けて権限を大幅に縮小されていた。Tim Cook が「プロダクト開発の遂行能力」に信頼を失ったと報じられている。後任の AI 担当 VP には Amar Subramanya が就任し、Craig Federighi 直属で再出発する。</summary>
+  </entry>
+  <entry>
+    <title>【分析】Stanford AI Index 2026 — 中国が米国とのAI性能差をほぼ解消、投資額23倍でも差は一桁%、透明性スコアは過去最低に</title>
+    <link rel="alternate" type="text/html" href="?a=stanford-hai-ai-index-2026-china-transparency-2026"/>
+    <id>tag:ai-tool-news.jp,2026:stanford-hai-ai-index-2026-china-transparency-2026</id>
+    <published>2026-04-13T15:00:00Z</published>
+    <updated>2026-04-13T15:00:00Z</updated>
+    <summary>Stanford HAI が4月13日に公開した AI Index 2026 によると、中国と米国の AI モデル性能差は一桁パーセントにまで縮小し、事実上の同等水準に達した。一方、米国の民間 AI 投資は $2,859億で中国の23倍以上。生成 AI の人口普及率は3年で53%に到達し、PC やインターネットより速い。しかし基盤モデルの透明性指数は58→40に急落し、環境負荷も深刻化——xAI の Grok 4 訓練だけで推定 72,000トンの CO2 を排出した。</summary>
+  </entry>
+  <entry>
+    <title>Claude の性能低下にユーザーが反発 — Anthropic がデフォルト effort を「中」に下げていたことが判明、6,852セッションの分析が火種に</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-performance-decline-effort-backlash-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-performance-decline-effort-backlash-2026</id>
+    <published>2026-04-13T15:00:00Z</published>
+    <updated>2026-04-13T15:00:00Z</updated>
+    <summary>Anthropic の Claude がパフォーマンス低下しているとの訴えが4月中旬に急拡大した。AMD シニアディレクターの Stella Laurenzo が Claude Code の6,852セッション・234,760ツールコールを分析し「複雑なエンジニアリング作業に信頼できない」と GitHub Issue で告発。背景には3月3日に Anthropic がデフォルト effort レベルを「高」から「中（85）」に引き下げた変更があった。Claude Code 責任者の Boris Cherny はコスト最適化のためと説明し、4月7日に API・Team・Enterprise ユーザーのデフォルトを「高」に戻した。</summary>
+  </entry>
   <entry>
     <title>Anthropic が CoreWeave と $68億の複数年クラウド契約を締結 — NVIDIA Vera Rubin GPU で Claude のプロダクションスケールを確保、AI インフラ軍拡競争が加速</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-coreweave-68b-multiyear-cloud-deal-2026"/>
@@ -14,6 +62,22 @@
     <published>2026-04-10T15:00:00Z</published>
     <updated>2026-04-10T15:00:00Z</updated>
     <summary>CoreWeave が4月10日、Anthropic との複数年にわたるクラウドインフラ契約を発表した。契約総額は推定 $68億（約1兆円）で、NVIDIA Vera Rubin GPU を中心としたコンピュート基盤を Anthropic に提供する。これにより主要 AI モデルプロバイダー上位10社中9社が CoreWeave を利用する形となった。発表の前日には Meta が CoreWeave に $210億を投じる契約を結んでおり、AI インフラの争奪戦が一段と激化している。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI が ChatGPT 広告で2026年 $25億、2030年 $1000億の収益を予測 — パイロット開始6週間で ARR $1億突破、Google・Meta の広告帝国に挑戦状</title>
+    <link rel="alternate" type="text/html" href="?a=openai-chatgpt-ads-25b-revenue-projection-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-chatgpt-ads-25b-revenue-projection-2026</id>
+    <published>2026-04-09T15:00:00Z</published>
+    <updated>2026-04-09T15:00:00Z</updated>
+    <summary>Axios が4月9日、OpenAI が投資家向けプレゼンテーションで ChatGPT 広告事業の収益予測を提示したと報じた。2026年に $25億、2030年には $1000億を見込む。2月9日の米国パイロット開始からわずか6週間で ARR $1億を突破し、WPP・Omnicom・Dentsu の大手3エージェンシーが参加。4月にはセルフサーブ広告マネージャーも公開され、最低出稿額を $25万から $5万に引き下げた。</summary>
+  </entry>
+  <entry>
+    <title>Shopify が AI Toolkit をオープンソース公開 — Claude Code・Cursor・Codex 等から EC ストアを直接操作、MCP ベースのエージェント連携基盤</title>
+    <link rel="alternate" type="text/html" href="?a=shopify-ai-toolkit-oss-mcp-agent-2026"/>
+    <id>tag:ai-tool-news.jp,2026:shopify-ai-toolkit-oss-mcp-agent-2026</id>
+    <published>2026-04-09T15:00:00Z</published>
+    <updated>2026-04-09T15:00:00Z</updated>
+    <summary>Shopify が4月9日、AIコーディングツールから Shopify プラットフォームに直接接続する「AI Toolkit」をオープンソース（MIT ライセンス）で公開した。Claude Code、Cursor、VS Code、Gemini CLI、OpenAI Codex に対応し、ドキュメント検索・GraphQL スキーマ検証・ストア操作の3機能を提供する。Anthropic が策定した MCP（Model Context Protocol）を基盤とし、AIエージェントが自然言語で商品管理や在庫変更を実行できる。</summary>
   </entry>
   <entry>
     <title>Anthropic が Claude Managed Agents をパブリックベータ公開 — クラウドホスト型エージェントAPIで「プロトタイプから本番を10倍速く」、Notion・Rakuten・Sentryが導入済み</title>
