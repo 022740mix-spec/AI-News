@@ -7642,6 +7642,35 @@ const ARTICLES_BODY = {
         "url": "https://www.apple.com/newsroom/2025/12/john-giannandrea-to-retire-from-apple/"
       }
     ]
+  },
+  "stanford-hai-ai-index-2026-china-transparency-2026": {
+    "body": [
+      "Stanford 大学の人間中心 AI 研究所（HAI）が4月13日、年次レポート「**AI Index 2026**」を公開した。2017年から AI 分野の技術能力・研究動向・社会的影響・世論を追跡する業界最大の年次報告書で、今年は中国の急追、透明性の崩壊、環境負荷の深刻化という3つの構造変化を浮き彫りにした。",
+      "## 中国が米国とほぼ同等に",
+      "コミュニティ主導のランキングプラットフォーム Arena によると、2026年3月時点で米中のモデル性能差は一桁パーセントにまで縮小した。**Anthropic**、xAI、**Google**、**OpenAI** と並んで **Alibaba**（Qwen）や **DeepSeek** がトップ層に名を連ねている。これは米国の民間 AI 投資が **$2,859億** と中国の **$124億** の23倍以上であるにもかかわらず、性能面ではほぼ拮抗していることを意味する。レポートは「これは米国の政策立案者を警戒させるべきだ」と指摘している。",
+      "## 透明性スコアが過去最低に急落",
+      "最も性能の高い基盤モデルほど透明性が低いという逆説的な傾向が強まっている。Foundation Model Transparency Index の平均スコアは前年の **58** から **40** に急落した。大手 AI 企業がトレーニングコード、データセット規模、パラメータ数を非公開にする傾向が加速している。生成 AI が社会インフラに組み込まれつつある中、「中身が分からないモデルに依存する」リスクが顕在化している。",
+      "## 環境負荷と世論の乖離",
+      "環境面では、xAI の **Grok 4** 訓練だけで推定 **72,000トン** の CO2 を排出したと報告された。生成 AI の人口普及率は3年で **53%** に到達し、PC やインターネットよりも速いペースで浸透している。しかし世論は二極化しており、AI に対して「懸念より期待が大きい」と答えた米国人はわずか **10%**、AI 専門家では **56%** と大きな溝がある。医療への AI 活用については専門家の84%が「有益」と答えたのに対し、一般市民では44%にとどまった。",
+      "レポートは「AI の能力は歴史的な速度で向上し続けているが、透明性・環境負荷・社会的信頼のすべてが逆方向に動いている」という構造的な矛盾を指摘しており、技術と社会の間の溝がどこまで広がるかが2026年の最大の論点になりそうだ。"
+    ],
+    "primarySources": [
+      {
+        "title": "The 2026 AI Index Report",
+        "site": "Stanford HAI",
+        "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report"
+      },
+      {
+        "title": "Inside the AI Index: 12 Takeaways from the 2026 Report",
+        "site": "Stanford HAI",
+        "url": "https://hai.stanford.edu/news/inside-the-ai-index-12-takeaways-from-the-2026-report"
+      },
+      {
+        "title": "Stanford's AI Index for 2026 Shows the State of AI",
+        "site": "IEEE Spectrum",
+        "url": "https://spectrum.ieee.org/state-of-ai-index-2026"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;

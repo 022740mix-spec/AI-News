@@ -4569,5 +4569,21 @@ export const ARTICLES_META = [
       "src": "logos/apple.svg",
       "alt": "Apple AI Leadership"
     }
+  },
+  {
+    "id": "stanford-hai-ai-index-2026-china-transparency-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】Stanford AI Index 2026 — 中国が米国とのAI性能差をほぼ解消、投資額23倍でも差は一桁%、透明性スコアは過去最低に",
+    "excerpt": "Stanford HAI が4月13日に公開した AI Index 2026 によると、中国と米国の AI モデル性能差は一桁パーセントにまで縮小し、事実上の同等水準に達した。一方、米国の民間 AI 投資は $2,859億で中国の23倍以上。生成 AI の人口普及率は3年で53%に到達し、PC やインターネットより速い。しかし基盤モデルの透明性指数は58→40に急落し、環境負荷も深刻化——xAI の Grok 4 訓練だけで推定 72,000トンの CO2 を排出した。",
+    "date": "2026-04-16",
+    "newsDate": "2026-04-13",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Stanford", "AI Index", "中国", "透明性", "環境"],
+    "coverImage": {
+      "src": "logos/stanford.svg",
+      "alt": "Stanford AI Index 2026"
+    }
   }
 ];
