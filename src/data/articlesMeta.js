@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "deepseek-v4-preview-1m-context-mixture-experts-2026",
+    "type": "news",
+    "category": "model",
+    "title": "DeepSeek V4 プレビュー公開 — 1.6T MoE と 1M トークンコンテキスト、Pro と Flash 2モデルをオープンソース、Bloombergは国産チップ統合優先で正式版延期と続報",
+    "excerpt": "DeepSeek が4月24日、フラッグシップ MoE モデル **DeepSeek V4** のプレビュー版2モデル（V4-Pro: 1.6T total / 49B active、V4-Flash: 284B total / 13B active）をオープンソース公開した。両者とも **1M トークンのコンテキスト窓**を備え、**Thinking / Non-Thinking のデュアルモード**を切り替えられる。Simon Willison は「フロンティアにほぼ到達、しかも一桁の価格」と評価。API では `deepseek-v4-flash` と `deepseek-v4-pro` が同日に利用可能に。一方 Bloomberg は4/26、**正式版は国産チップ統合優先で延期**と続報を出しており、米中 AI 競争と中国国産半導体の戦略が交差する事案として注目される。",
+    "date": "2026-04-26",
+    "newsDate": "2026-04-24",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["DeepSeek", "オープンソース", "モデルリリース", "MoE", "中国"],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "DeepSeek V4"
+    }
+  },
+  {
     "id": "openai-gpt-5-5-release-agentic-coding-2026",
     "type": "news",
     "category": "model",

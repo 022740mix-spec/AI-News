@@ -8,6 +8,14 @@
   <updated>2026-05-11T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>DeepSeek V4 プレビュー公開 — 1.6T MoE と 1M トークンコンテキスト、Pro と Flash 2モデルをオープンソース、Bloombergは国産チップ統合優先で正式版延期と続報</title>
+    <link rel="alternate" type="text/html" href="?a=deepseek-v4-preview-1m-context-mixture-experts-2026"/>
+    <id>tag:ai-tool-news.jp,2026:deepseek-v4-preview-1m-context-mixture-experts-2026</id>
+    <published>2026-04-24T15:00:00Z</published>
+    <updated>2026-04-24T15:00:00Z</updated>
+    <summary>DeepSeek が4月24日、フラッグシップ MoE モデル DeepSeek V4 のプレビュー版2モデル（V4-Pro: 1.6T total / 49B active、V4-Flash: 284B total / 13B active）をオープンソース公開した。両者とも 1M トークンのコンテキスト窓を備え、Thinking / Non-Thinking のデュアルモードを切り替えられる。Simon Willison は「フロンティアにほぼ到達、しかも一桁の価格」と評価。API では `deepseek-v4-flash` と `deepseek-v4-pro` が同日に利用可能に。一方 Bloomberg は4/26、正式版は国産チップ統合優先で延期と続報を出しており、米中 AI 競争と中国国産半導体の戦略が交差する事案として注目される。</summary>
+  </entry>
+  <entry>
     <title>OpenAI が GPT-5.5 をリリース — GPT-5.4 から6週間、エージェントコーディングで SOTA を「半額」、Plus/Pro/Business/Enterprise と Copilot に即時展開</title>
     <link rel="alternate" type="text/html" href="?a=openai-gpt-5-5-release-agentic-coding-2026"/>
     <id>tag:ai-tool-news.jp,2026:openai-gpt-5-5-release-agentic-coding-2026</id>

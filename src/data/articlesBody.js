@@ -4,6 +4,61 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "deepseek-v4-preview-1m-context-mixture-experts-2026": {
+    "body": [
+      "中国 AI スタートアップの DeepSeek が4月24日、新フラッグシップモデル **DeepSeek V4** のプレビュー版を公開した。V1（2024年）でグローバル AI 業界に衝撃を与えてから約1年、V4 では **2モデルのオープンソース MoE 構成 + 100万トークンのコンテキスト窓 + デュアル思考モード**という重装備で再登場した。",
+      "## 2モデルの構成",
+      "公開されたのは以下の2モデル:",
+      "- **DeepSeek-V4-Pro**: 総パラメータ **1.6 兆**、アクティブパラメータ **49B**（Mixture of Experts）",
+      "- **DeepSeek-V4-Flash**: 総パラメータ **284B**、アクティブパラメータ **13B**（Mixture of Experts）",
+      "両モデルとも **1M トークンのコンテキスト窓**を備え、**Thinking（推論あり）と Non-Thinking（高速応答）の2モード**を切り替えられる。最大出力は 384K トークン。DeepSeek の公式 API ドキュメントには既に `deepseek-v4-pro` と `deepseek-v4-flash` のモデル ID が掲載され、公開料金も明示されている。",
+      "## 性能評価: 「フロンティアにほぼ届く、一桁の価格で」",
+      "公式は「世界トップのクローズドソースモデルに匹敵する性能」を主張する。OSS / 価格対性能で著名な Simon Willison は自身のブログで **「フロンティアにほぼ到達、しかも一桁の価格（almost on the frontier, a fraction of the price）」** と評価した。Claude Opus 4.7（$5/$25 per M）や GPT-5.5（同等以上）が並ぶ中で、オープンウェイト・低コスト・1M コンテキストという組み合わせは依然として強力なポジショニングだ。",
+      "## 「プレビュー」のまま据え置き",
+      "DeepSeek は今回のリリースを**プレビュー段階**と位置付け、正式版（GA）の時期を明示していない。さらに Bloomberg は4/26に「**正式版の発表は、中国製チップへの統合を優先するため延期される**」と CCTV 関連アカウントの情報として続報を出している。前世代では NVIDIA H800 などの輸出制限対応チップを活用していたが、米国の追加規制を受けて Huawei Ascend など**中国国産半導体ベースの最適化**を本格化させていると推測される。",
+      "## 米中 AI 競争の文脈",
+      "V4 の公開は、**Claude Opus 4.7（4/16）→ GPT-5.5（4/23）→ DeepSeek V4（4/24）** という8日間にフロンティア更新が集中した流れの**中国側回答**として位置付けられる。Al Jazeera は「DeepSeek が世界のテック地図を揺さぶってから1年、新たな前線が開かれた」と報じた。価格対性能・オープンウェイト・国産チップ最適化という3軸で、米国フロンティア勢とは異なる土俵を作りに来ている格好だ。",
+      "## 開発者にとっての意味",
+      "1M コンテキスト窓は、リポジトリ全体を一度に読ませる「コーディングエージェント」用途で大きな武器になる。Thinking モードは Claude / GPT の reasoning effort パラメータに相当し、コスト・速度・品質のトレードオフを実行時に調整できる。**オープンウェイトのため自前推論サーバへの載せ替えが可能**で、機微データを社外に出せないユースケースでも採用検討に値する。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 5,
+        "caption": "DeepSeek V4 プレビュー2モデルの諸元",
+        "headers": ["項目", "V4-Pro", "V4-Flash"],
+        "rows": [
+          ["総パラメータ", "1.6 兆", "284B"],
+          ["アクティブパラメータ", "49B", "13B"],
+          ["コンテキスト窓", "1M トークン", "1M トークン"],
+          ["最大出力", "384K トークン", "384K トークン"],
+          ["思考モード", "Thinking / Non-Thinking", "Thinking / Non-Thinking"],
+          ["公開形態", "オープンソース", "オープンソース"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "DeepSeek V4 Preview Release",
+        "site": "DeepSeek API Docs",
+        "url": "https://api-docs.deepseek.com/news/news260424"
+      },
+      {
+        "title": "DeepSeek V4—almost on the frontier, a fraction of the price",
+        "site": "Simon Willison's Weblog",
+        "url": "https://simonwillison.net/2026/Apr/24/deepseek-v4/"
+      },
+      {
+        "title": "China's DeepSeek unveils latest models a year after upending global tech",
+        "site": "Al Jazeera",
+        "url": "https://www.aljazeera.com/economy/2026/4/24/chinas-deepseek-unveils-latest-model-a-year-after-upending-global-tech"
+      },
+      {
+        "title": "DeepSeek's V4 Launch Postponed as Company Prioritizes Domestic Chip Integration",
+        "site": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-04-26/deepseek-v4-delay-shows-shift-to-china-chips-cctv-account-says"
+      }
+    ]
+  },
   "openai-gpt-5-5-release-agentic-coding-2026": {
     "body": [
       "OpenAI が4月23日、フラッグシップモデル **GPT-5.5** をリリースした。GPT-5.4 のリリース（3月中旬）から**わずか6週間**という異例の短サイクルでの投入で、フロンティアモデル競争の激化を象徴する。OpenAI は GPT-5.5 を「**これまでで最も賢く、最も直感的に使えるモデル**」と位置付け、コンピュータを使う仕事の進め方そのものを変える次の一歩だとアピールしている。",
