@@ -4,6 +4,36 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "huggingface-ml-intern-open-source-agent-2026": {
+    "body": [
+      "Hugging Face が4月21日、オープンソースの AI エージェント **ml-intern** を公開した。LLM の**ポストトレーニング・ワークフロー（事後訓練の一連の作業）を自律で回す ML エンジニア役**を担うエージェントで、同社の軽量エージェントフレームワーク **smolagents** 上に構築されている。",
+      "## 何をするエージェントか",
+      "ml-intern は以下のループを自律的に回す:",
+      "1. **論文の閲覧**: arXiv と Hugging Face Papers を巡回し、メソドロジー節を読み、引用グラフをたどって関連手法とデータセットを特定する",
+      "2. **データセットの探索と整形**: Hugging Face Hub で参照データセットを検索し、品質を点検した上で訓練用に再フォーマットする",
+      "3. **訓練スクリプトの実行**: 学習ジョブを走らせる",
+      "4. **評価と診断**: 評価出力を読み、RLHF パイプラインにおける reward collapse などの失敗を診断し、ベンチマークが改善するまで再訓練する",
+      "## ベンチマーク: Claude Code を上回るスコア",
+      "公式ローンチデモでは、ベースモデルとして **Qwen3-1.7B**（GPQA ベースラインで約10%）を採用。ml-intern は**約10時間以内に GPQA を 32% まで引き上げ**、開始から3時間強の時点ですでに 27.5% を超えた。同じタスクで **Claude Code は 22.99% に留まる**ことが Hugging Face の比較データに示されている。",
+      "## 「モデル品質」ではなく「エコシステム接続性」をモートにする戦略",
+      "ml-intern の興味深い点は、**モデル自体の絶対的な賢さで勝負していない**ことだ。バックエンドのモデルは Anthropic クレジット経由で利用される Claude を含めて差し替え可能で、強みは「Hugging Face Hub（モデル・データセット・スペースの巨大エコシステム）に深く接続できる」点にある。フロンティアモデル競争の真っ只中でも、**エコシステム接続性そのものをモートにできる**ことを示す逆張り戦略として、ML 系メディアの注目を集めている。",
+      "## 提供形態",
+      "**CLI と Web アプリ**で利用可能。早期ユーザーには **$1,000 相当の GPU リソースと Anthropic クレジット**が無償提供される。リポジトリは [huggingface/ml-intern](https://github.com/huggingface/ml-intern) で MIT ライセンス公開されており、自前のインフラに乗せて改造することもできる。",
+      "AutoML やニューラルアーキテクチャ探索（NAS）のような「機械学習を自動化するシステム」は長い歴史を持つが、それらが手続き的だったのに対し、ml-intern は**論文読解・データセット選択・失敗からの回復という非定型的な判断**まで LLM エージェントに委ねる点で性質が異なる。研究の自動化が「アシスト」から「代替」へと一歩進んだ事例として位置付けられそうだ。"
+    ],
+    "primarySources": [
+      {
+        "title": "huggingface/ml-intern",
+        "site": "GitHub",
+        "url": "https://github.com/huggingface/ml-intern"
+      },
+      {
+        "title": "Hugging Face Releases ml-intern: An Open-Source AI Agent that Automates the LLM Post-Training Workflow",
+        "site": "MarkTechPost",
+        "url": "https://www.marktechpost.com/2026/04/21/hugging-face-releases-ml-intern-an-open-source-ai-agent-that-automates-the-llm-post-training-workflow/"
+      }
+    ]
+  },
   "amazon-anthropic-25b-trainium-infrastructure-2026": {
     "body": [
       "Amazon と Anthropic が4月20日、最大 **$250億（約3.7兆円）の追加投資**と AWS インフラ拡張で合意したと発表した。Amazon の Anthropic への累計コミットメントは既往の $80億と合わせて **$330億超**に達する。初回 $50億は即時投入され、その評価額は **$3,800億**。残り $200億は「特定の商業マイルストン」達成時に段階解放される条件付きトランシェだ。",

@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "huggingface-ml-intern-open-source-agent-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Hugging Face が ml-intern を公開 — 論文を読み、データセットを探し、モデルを訓練する OSS の ML エンジニア・エージェント、Qwen3-1.7B を10時間で GPQA 32% に",
+    "excerpt": "Hugging Face が4月21日、オープンソースの ML エンジニア・エージェント **ml-intern** を公開した。**smolagents** フレームワーク上に構築され、arXiv と Hugging Face Papers の閲覧、引用グラフをたどってのデータセット探索、訓練スクリプトの実行、評価結果の診断、再訓練までを自律的に回す。デモでは **Qwen3-1.7B** ベースモデル（GPQA ベースライン約10%）を**約10時間で 32% まで引き上げ**、同タスクの **Claude Code（22.99%）を上回るスコア**を出した。フロンティアモデル競争の裏で「OSS エコシステム接続性をモートにする」逆張り戦略として注目される。CLI / Web アプリで提供、早期ユーザーには $1,000 の GPU リソースと Anthropic クレジットが付く。",
+    "date": "2026-04-26",
+    "newsDate": "2026-04-21",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["Hugging Face", "オープンソース", "エージェント", "smolagents", "ML エンジニアリング"],
+    "coverImage": {
+      "src": "articles/cover-programming.svg",
+      "alt": "Hugging Face ml-intern"
+    }
+  },
+  {
     "id": "amazon-anthropic-25b-trainium-infrastructure-2026",
     "type": "news",
     "category": "product",

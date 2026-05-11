@@ -8,6 +8,14 @@
   <updated>2026-05-11T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Hugging Face が ml-intern を公開 — 論文を読み、データセットを探し、モデルを訓練する OSS の ML エンジニア・エージェント、Qwen3-1.7B を10時間で GPQA 32% に</title>
+    <link rel="alternate" type="text/html" href="?a=huggingface-ml-intern-open-source-agent-2026"/>
+    <id>tag:ai-tool-news.jp,2026:huggingface-ml-intern-open-source-agent-2026</id>
+    <published>2026-04-21T15:00:00Z</published>
+    <updated>2026-04-21T15:00:00Z</updated>
+    <summary>Hugging Face が4月21日、オープンソースの ML エンジニア・エージェント ml-intern を公開した。smolagents フレームワーク上に構築され、arXiv と Hugging Face Papers の閲覧、引用グラフをたどってのデータセット探索、訓練スクリプトの実行、評価結果の診断、再訓練までを自律的に回す。デモでは Qwen3-1.7B ベースモデル（GPQA ベースライン約10%）を約10時間で 32% まで引き上げ、同タスクの Claude Code（22.99%）を上回るスコアを出した。フロンティアモデル競争の裏で「OSS エコシステム接続性をモートにする」逆張り戦略として注目される。CLI / Web アプリで提供、早期ユーザーには $1,000 の GPU リソースと Anthropic クレジットが付く。</summary>
+  </entry>
+  <entry>
     <title>Amazon が Anthropic に最大 $25B を追加投資 — 即時 $5B、評価額 $380B、見返りに Anthropic は AWS で年内 1GW の Trainium2/3 容量を立ち上げ</title>
     <link rel="alternate" type="text/html" href="?a=amazon-anthropic-25b-trainium-infrastructure-2026"/>
     <id>tag:ai-tool-news.jp,2026:amazon-anthropic-25b-trainium-infrastructure-2026</id>
