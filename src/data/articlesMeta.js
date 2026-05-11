@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "openai-gpt-5-5-instant-default-chatgpt-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI が GPT-5.5 Instant を ChatGPT のデフォルトに昇格 — ハルシネーション 52.5% 減・出力は30%短く、Plus/Pro 向けに過去チャット連携の長期メモリも展開",
+    "excerpt": "OpenAI が5月5日、ChatGPT のデフォルトモデルを **GPT-5.5 Instant** に切り替えた。高ステークスのプロンプト（医療・法律・金融）で **ハルシネーション率が GPT-5.3 Instant 比 52.5% 減**、ユーザーがフラグした難会話で**事実誤認 37.3% 減**。同時に出力スタイルも刷新され、**単語数は約 30.2%・行数は約 29.2% 短く**なり、絵文字の濫用が抑制された。Plus / Pro 向けには過去チャット・接続済み Gmail を文脈に使う**新しい長期メモリ**も Web から展開開始（Free / Go / Business / Enterprise には数週間以内に拡大）。API では `chat-latest` として配信、有料ユーザー向けに GPT-5.3 Instant は3ヶ月間は設定で残せる。",
+    "date": "2026-05-11",
+    "newsDate": "2026-05-05",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["OpenAI", "ChatGPT", "GPT-5.5", "ハルシネーション", "メモリ"],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "GPT-5.5 Instant"
+    }
+  },
+  {
     "id": "microsoft-agent-365-ga-observe-govern-secure-2026",
     "type": "news",
     "category": "product",
