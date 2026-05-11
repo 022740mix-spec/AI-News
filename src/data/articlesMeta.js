@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "microsoft-agent-365-ga-observe-govern-secure-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Microsoft Agent 365 が一般提供開始 — エージェントを「observe / govern / secure」する管制塔、$15/user/月、Microsoft 365 E7 にも組み込み",
+    "excerpt": "Microsoft が5月1日、エンタープライズ向けの **AI エージェント統合管理サービス Microsoft Agent 365** を一般提供（GA）開始した。**価格は $15/user/月**で、スタンドアロン契約に加えて新エディション **Microsoft 365 E7（M365 E5 + Entra Suite + Microsoft 365 Copilot + Agent 365）** にもバンドルされる。設計思想は **observe / govern / secure** の3軸で、組織内に乱立する Copilot Studio・Workspace Agents・Claude Managed Agents・各社のエージェントを**単一レジストリで一覧化**し、利用状況・パフォーマンス・リスクシグナルをリアルタイムに可視化する。Anthropic と OpenAI が「エージェント・ランタイム」を競う中、Microsoft は「エージェントの管制塔」レイヤーで差別化する戦略を鮮明にした。",
+    "date": "2026-05-11",
+    "newsDate": "2026-05-01",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["Microsoft", "エージェント", "エンタープライズ", "ガバナンス", "セキュリティ"],
+    "coverImage": {
+      "src": "logos/microsoft.svg",
+      "alt": "Microsoft Agent 365"
+    }
+  },
+  {
     "id": "bigtech-q1-2026-earnings-ai-capex-700b-feature",
     "type": "feature",
     "category": "product",

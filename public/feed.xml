@@ -8,6 +8,14 @@
   <updated>2026-05-12T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Microsoft Agent 365 が一般提供開始 — エージェントを「observe / govern / secure」する管制塔、$15/user/月、Microsoft 365 E7 にも組み込み</title>
+    <link rel="alternate" type="text/html" href="?a=microsoft-agent-365-ga-observe-govern-secure-2026"/>
+    <id>tag:ai-tool-news.jp,2026:microsoft-agent-365-ga-observe-govern-secure-2026</id>
+    <published>2026-05-01T15:00:00Z</published>
+    <updated>2026-05-01T15:00:00Z</updated>
+    <summary>Microsoft が5月1日、エンタープライズ向けの AI エージェント統合管理サービス Microsoft Agent 365 を一般提供（GA）開始した。価格は $15/user/月で、スタンドアロン契約に加えて新エディション Microsoft 365 E7（M365 E5 + Entra Suite + Microsoft 365 Copilot + Agent 365） にもバンドルされる。設計思想は observe / govern / secure の3軸で、組織内に乱立する Copilot Studio・Workspace Agents・Claude Managed Agents・各社のエージェントを単一レジストリで一覧化し、利用状況・パフォーマンス・リスクシグナルをリアルタイムに可視化する。Anthropic と OpenAI が「エージェント・ランタイム」を競う中、Microsoft は「エージェントの管制塔」レイヤーで差別化する戦略を鮮明にした。</summary>
+  </entry>
+  <entry>
     <title>【分析】Big Tech 4社が同日決算 — Microsoft AI 事業が ARR $370億（+123%）、Meta は CapEx を最大 $1,450億に上方修正、AI バブル論争が再燃</title>
     <link rel="alternate" type="text/html" href="?a=bigtech-q1-2026-earnings-ai-capex-700b-feature"/>
     <id>tag:ai-tool-news.jp,2026:bigtech-q1-2026-earnings-ai-capex-700b-feature</id>
