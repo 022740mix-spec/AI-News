@@ -4,6 +4,62 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "bigtech-q1-2026-earnings-ai-capex-700b-feature": {
+    "body": [
+      "4月29日夕、**Alphabet（Google）・Microsoft・Meta・Amazon** の4社が同時にカレンダー第1四半期決算（Microsoft は会計 Q3）を発表した。AI 関連の指標がそれぞれ加速する一方、設備投資（CapEx）の上方修正に市場が敏感に反応する場面もあった。翌4月30日には Fortune が「ハイパースケーラー合計で**年間 $7,000億**を AI インフラに投じる」「**出口の見えない投資競争**」と報じ、AI バブル論争が再燃した。",
+      "## 4社の主要指標",
+      "**Microsoft（会計 Q3 2026）**: 売上 **$829億**（+18% YoY）、Azure・クラウド +40%（過去12四半期で最速級）、**AI 事業 ARR $370億**（+123% YoY）。Copilot 系のエンタープライズ採用と Azure の OpenAI モデル提供が押し上げ要因。",
+      "**Alphabet（カレンダー Q1 2026）**: 売上 +22% YoY、**Google Cloud が四半期売上 $200億**を初突破。検索広告も底堅く、AI 検索のマネタイズが寄与しはじめている。",
+      "**Meta（カレンダー Q1 2026）**: 売上 **$470億**（+33% YoY）。だが **2026年 CapEx ガイダンスを $1,250〜1,450億**に上方修正し、時間外取引で株価は **−6%** 下落。Llama 路線から Muse Spark（4月）でクローズドソースに転換した戦略の収益化スピードに懸念。",
+      "**Amazon（カレンダー Q1 2026）**: 総売上 **$1,590億**（+13% YoY）、**AWS は $304億（+22%）** で過去15四半期で最高の伸び率。Anthropic 向けの $25B 追加投資（4/20）と整合的に、Trainium2/3 容量増強が貢献。",
+      "なお Apple（同日、別系列の会計 Q2 2026）は売上 $1,112億（+17%）、サービス収益 $309.8億（過去最高）、iPhone $570億（+22%）。Google Gemini を活用する Siri 改修（2026年後半予定）への期待が下支え。",
+      "## CapEx の集中度と「$7,000億クラブ」",
+      "Fortune の集計によれば、Microsoft・Alphabet・Meta・Amazon・Oracle の主要5社で **2026年の AI インフラ CapEx は合計 $7,000億規模**に達する見通し。これは過去のクラウド時代の年間設備投資をはるかに上回り、米国全体のデータセンター電力需要を変えるレベルだ。**1社あたり年間 $1,000億超**の投資が常態化しつつあるが、回収サイクルが見えにくいことから「**AI バブル論争**」が学界・投資家から再び浮上している。",
+      "## 開発者・利用者にとっての含意",
+      "1. **API・クラウドコストは当面下がる方向**: Trainium / TPU / 自社チップへのシフトとフロンティアモデル競争（GPT-5.5・Claude Opus 4.7・DeepSeek V4）で、推論コストは継続的に低下する余地がある。**$7,000億クラブ**の投資は供給過剰側に効くため、開発者には追い風だ。",
+      "2. **コンピュート供給の地理的偏在**: 電力・水・土地の制約から、**米国南東部・テキサス・北欧**などに供給が集中する。リージョン選択がレイテンシだけでなく価格にも効くようになる。",
+      "3. **ハイパースケーラーへのロックイン**: Anthropic の AWS（$25B+）と Google（$40B）両どり、Microsoft の OpenAI 専用契約、Amazon の OpenAI/Anthropic 両投資など、**「モデル × クラウド」のクロスホールド**が深化。マルチクラウド戦略を採るほど、契約・課金・データ越境管理の複雑性が増す。",
+      "## バブル論争の論点",
+      "AI バブル論を煽る材料: ① 投資額が実需を先行している ② OpenAI・Anthropic とハイパースケーラー間の「循環的取引」（投資した先がそのクラウドを買う）が会計上の指標を膨らませている ③ AGI への期待値が個別プロダクトの ROI を覆い隠している、など。",
+      "反論側の材料: ① Microsoft AI 事業の ARR が **+123% で実数として大きい** ② Azure・AWS の伸びは AI 駆動で説明可能 ③ コンピュート不足が継続しており供給制約側のボトルネックは現実、など。**$7,000億の使い道がどれだけ AI 由来の有意な売上に転換するか**は2027年以降の決算で判定される構図だ。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 1,
+        "caption": "Big Tech 4社（+Apple）2026 Q1 主要 AI 関連指標",
+        "headers": ["企業", "売上", "前年比", "AI 関連ハイライト"],
+        "rows": [
+          ["Microsoft（FY Q3）", "$829億", "+18%", "AI 事業 ARR $370億（+123%）、Azure +40%"],
+          ["Alphabet", "—（+22%）", "+22%", "Google Cloud 四半期売上 $200億 初突破"],
+          ["Meta", "$470億", "+33%", "CapEx 2026 ガイダンスを $1,250〜1,450億へ上方修正（株価 -6%）"],
+          ["Amazon", "$1,590億", "+13%", "AWS $304億（+22%）、15四半期で最高の伸び"],
+          ["Apple（FY Q2）", "$1,112億", "+17%", "サービス収益 $309.8億 過去最高"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Big Tech is about to spend $700 billion on AI this year. No one knows where the buildout ends.",
+        "site": "Fortune",
+        "url": "https://fortune.com/2026/04/30/big-tech-hyperscalers-will-spend-700-billion-on-ai-infrastructure-this-year-with-no-clear-end-in-sight-eye-on-ai/"
+      },
+      {
+        "title": "Microsoft Q3 FY26 earnings — Investor Relations",
+        "site": "Microsoft",
+        "url": "https://www.microsoft.com/en-us/investor"
+      },
+      {
+        "title": "Alphabet Announces First Quarter 2026 Results",
+        "site": "Alphabet IR",
+        "url": "https://abc.xyz/investor/"
+      },
+      {
+        "title": "Meta Reports First Quarter 2026 Results",
+        "site": "Meta IR",
+        "url": "https://investor.atmeta.com/"
+      }
+    ]
+  },
   "openai-workspace-agents-codex-enterprise-2026": {
     "body": [
       "OpenAI が4月22日、ChatGPT に **Workspace Agents** を導入した。チームが共有エージェントを作って複雑なタスクや長時間ワークフローを実行できる仕組みで、**Custom GPTs の後継**にあたる新機能だ。動作は **Codex**（OpenAI のコーディング・エージェントランタイム）が担い、組織のパーミッションと統制下で動く。",
