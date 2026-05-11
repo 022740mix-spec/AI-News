@@ -8,6 +8,14 @@
   <updated>2026-05-11T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Anthropic が Project Deal を公表 — Claude エージェント69体が社内マーケットで186件・$4,000超を自律取引、「Agent Quality Gap」という新たな課題が浮上</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-project-deal-agent-marketplace-experiment-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-project-deal-agent-marketplace-experiment-2026</id>
+    <published>2026-04-25T15:00:00Z</published>
+    <updated>2026-04-25T15:00:00Z</updated>
+    <summary>Anthropic が4月25日、Claude エージェント同士で商取引を行わせる社内実験「Project Deal」の結果を公表した。サンフランシスコオフィスの社員69名にそれぞれ $100 を渡し、Slack 上で自由に売買させた結果、500品目以上で 186 件・$4,000 超の取引が自律的に成立した。注目すべきは、Opus 4.5 を使った売り手エージェントは Haiku 4.5 を使った売り手より平均 $2.68/品 高く売れていたこと——だが当事者の人間はこの差にほぼ気付かなかった。初期プロンプト指示は成立確率にも価格にもほとんど影響しなかったことも判明し、参加者の 46% は「同様の AI 交渉サービスに金を払う」と回答した。エージェント経済の実装課題と「Agent Quality Gap（敗者は自分が損していることに気付かない）」という新たな倫理論点を提示した実験となった。</summary>
+  </entry>
+  <entry>
     <title>DeepSeek V4 プレビュー公開 — 1.6T MoE と 1M トークンコンテキスト、Pro と Flash 2モデルをオープンソース、Bloombergは国産チップ統合優先で正式版延期と続報</title>
     <link rel="alternate" type="text/html" href="?a=deepseek-v4-preview-1m-context-mixture-experts-2026"/>
     <id>tag:ai-tool-news.jp,2026:deepseek-v4-preview-1m-context-mixture-experts-2026</id>
