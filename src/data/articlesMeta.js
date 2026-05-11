@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "amazon-anthropic-25b-trainium-infrastructure-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Amazon が Anthropic に最大 $25B を追加投資 — 即時 $5B、評価額 $380B、見返りに Anthropic は AWS で年内 1GW の Trainium2/3 容量を立ち上げ",
+    "excerpt": "Amazon が4月20日、Anthropic に最大 $250億（追加投資）を行うと発表した。これまで既に投じてきた $80億に積み増す形で、**初期 $50億は Anthropic の評価額 $3,800億で即時投入**、残り $200億は「特定の商業マイルストン」達成時に追加される。見返りに Anthropic は AWS で今後10年で $1,000億超を支出し、**年内に合計約 1 ギガワット（GW）の Trainium2/Trainium3 容量**を立ち上げる。Anthropic は需要急増で「信頼性と性能に避けられない負荷」が生じているとし、追加インフラの確保が急務だった。Amazon の OpenAI 向け最大 $500億投資（2月）からわずか2か月での追加コミットメントとなる。",
+    "date": "2026-04-26",
+    "newsDate": "2026-04-20",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["Anthropic", "Amazon", "AWS", "Trainium", "投資"],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Amazon $25B Anthropic 追加投資"
+    }
+  },
+  {
     "id": "anthropic-claude-design-labs-figma-challenge-2026",
     "type": "news",
     "category": "product",
