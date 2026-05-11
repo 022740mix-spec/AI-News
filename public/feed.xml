@@ -8,6 +8,14 @@
   <updated>2026-05-12T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>OpenAI が GPT-5.5 Instant を ChatGPT のデフォルトに昇格 — ハルシネーション 52.5% 減・出力は30%短く、Plus/Pro 向けに過去チャット連携の長期メモリも展開</title>
+    <link rel="alternate" type="text/html" href="?a=openai-gpt-5-5-instant-default-chatgpt-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-gpt-5-5-instant-default-chatgpt-2026</id>
+    <published>2026-05-05T15:00:00Z</published>
+    <updated>2026-05-05T15:00:00Z</updated>
+    <summary>OpenAI が5月5日、ChatGPT のデフォルトモデルを GPT-5.5 Instant に切り替えた。高ステークスのプロンプト（医療・法律・金融）で ハルシネーション率が GPT-5.3 Instant 比 52.5% 減、ユーザーがフラグした難会話で事実誤認 37.3% 減。同時に出力スタイルも刷新され、単語数は約 30.2%・行数は約 29.2% 短くなり、絵文字の濫用が抑制された。Plus / Pro 向けには過去チャット・接続済み Gmail を文脈に使う新しい長期メモリも Web から展開開始（Free / Go / Business / Enterprise には数週間以内に拡大）。API では `chat-latest` として配信、有料ユーザー向けに GPT-5.3 Instant は3ヶ月間は設定で残せる。</summary>
+  </entry>
+  <entry>
     <title>Microsoft Agent 365 が一般提供開始 — エージェントを「observe / govern / secure」する管制塔、$15/user/月、Microsoft 365 E7 にも組み込み</title>
     <link rel="alternate" type="text/html" href="?a=microsoft-agent-365-ga-observe-govern-secure-2026"/>
     <id>tag:ai-tool-news.jp,2026:microsoft-agent-365-ga-observe-govern-secure-2026</id>

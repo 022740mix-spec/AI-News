@@ -4,6 +4,52 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "openai-gpt-5-5-instant-default-chatgpt-2026": {
+    "body": [
+      "OpenAI が5月5日、ChatGPT のデフォルトモデルを **GPT-5.5 Instant** に切り替えた。これまで既定だった GPT-5.3 Instant に代わって、すべての ChatGPT ユーザーが「特に何も指定しないで使う」ときの裏側がアップグレードされる。API でも `chat-latest` として同時提供。**GPT-5.5（4月23日リリース）の高速軽量版**にあたり、GPT-5.5 本体の知性と GPT-5.3 Instant 並みのレイテンシを両立させた位置付けだ。",
+      "## ハルシネーション 52.5% 減",
+      "OpenAI の社内評価で、**医療・法律・金融**といった高ステークスのプロンプトに対して、**GPT-5.5 Instant の事実誤認の主張は GPT-5.3 Instant 比で 52.5% 減少**した。さらに、ユーザーが「事実誤認だった」とフラグした難しい会話だけを切り出して再評価しても、**事実誤認は 37.3% 減**。「ChatGPT が自信満々に間違える」局面の頻度が一段下がったことを意味する。",
+      "## 出力が短くなった",
+      "もう一つの大きな変化が出力スタイルだ。同じ質問でも、**単語数は約 30.2%・行数は約 29.2% 少ない**応答になる。9to5Mac 等が「**絵文字の濫用が抑えられ、口数が減った**」と報じたとおり、雑談調の冗長な装飾を排して核心を返す方向に明確に振っている。応答の質感が変わるため、既存のプロンプトテンプレートを使っているユーザーは挙動が変わる可能性がある。",
+      "## 長期メモリの拡張",
+      "ChatGPT は同時に、**過去チャット・添付ファイル・接続済み Gmail を文脈に使う新しい長期メモリ**を導入した。Plus / Pro ユーザーから Web で展開開始、モバイルとその他プラン（Free / Go / Business / Enterprise）には数週間以内に拡大予定。同時に「**Memory Sources**」という機能が全モデルで提供され、応答がパーソナライズされた際に**どの記憶や過去会話が文脈として使われたか**を確認・削除・修正できるようになる。",
+      "## API と既存ユーザーへの影響",
+      "API では `chat-latest` として呼べる。**有料ユーザー向けには GPT-5.3 Instant が3ヶ月間は設定画面で残り**、その後リタイアする。既存のアプリケーションで挙動の差異が問題になる場合、3ヶ月の移行期間内に動作確認と必要な調整を行う必要がある。",
+      "## 競争上の位置付け",
+      "**Claude Opus 4.7（4/16 GA）→ GPT-5.5（4/23）→ DeepSeek V4（4/24）→ GPT-5.5 Instant デフォルト切替（5/5）** と、フロンティアモデル各社のアップデート頻度がさらに上がっている。OpenAI は今回「フラッグシップだけでなく、**最も大量に使われるデフォルトモデル**も最新世代に置き換える」ことで、ChatGPT の体験全体を底上げする方向に動いた。Anthropic が SpaceX Colossus 1 で推論キャパを増強する翌日（5/6）にこの切替を完了させたタイミングも示唆的だ。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "GPT-5.5 Instant の主な変化（OpenAI 公式評価）",
+        "headers": ["指標", "GPT-5.3 Instant → GPT-5.5 Instant"],
+        "rows": [
+          ["高ステークスでの事実誤認", "−52.5%"],
+          ["フラグ付き難会話での事実誤認", "−37.3%"],
+          ["応答単語数", "−30.2%"],
+          ["応答行数", "−29.2%"],
+          ["旧モデルの利用可否", "有料ユーザーは3ヶ月間設定で残存"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "GPT-5.5 Instant: smarter, clearer, and more personalized",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/gpt-5-5-instant/"
+      },
+      {
+        "title": "OpenAI releases GPT-5.5 Instant, a new default model for ChatGPT",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/"
+      },
+      {
+        "title": "OpenAI updates ChatGPT Instant with GPT 5.5",
+        "site": "Axios",
+        "url": "https://www.axios.com/2026/05/05/openai-chatgpt-update-default-model"
+      }
+    ]
+  },
   "microsoft-agent-365-ga-observe-govern-secure-2026": {
     "body": [
       "Microsoft が5月1日、エンタープライズ向け AI エージェントの統合管理サービス **Microsoft Agent 365** を一般提供（GA）開始した。プライベートプレビューを経ての本番投入で、**価格は $15/user/月**。スタンドアロン契約に加え、新エディションの **Microsoft 365 E7**（M365 E5 + Microsoft Entra Suite + Microsoft 365 Copilot + Agent 365）にも組み込まれる。",
