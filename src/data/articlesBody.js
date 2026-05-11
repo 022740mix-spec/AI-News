@@ -4,6 +4,37 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "anthropic-claude-design-labs-figma-challenge-2026": {
+    "body": [
+      "Anthropic が4月17日、Anthropic Labs の新製品として **Claude Design** を公開した。会話を通じてデザイン、プロトタイプ、スライド、1ページャ、マーケティング資産といった「見せるためのアウトプット」を作る AI ネイティブのツールで、基盤モデルは前日リリースされた **Claude Opus 4.7**。Pro / Max / Team / Enterprise の購読者向けにリサーチプレビューとして提供される。",
+      "## 動作の流れ",
+      "ユーザーが必要なものを文章で説明すると、Claude が最初のバージョンを生成する。以降は会話、インラインコメント、直接編集、Claude が生成する「カスタムスライダー」（明度や余白といった可変パラメータを Claude が自動で抽出するインターフェース）を使って反復する。固定の UI ではなく、対象オブジェクトに合わせた編集UIをモデルが都度組み立てる構造になっている。",
+      "## デザインシステムの自動学習",
+      "Claude Design の差別化要素は、**プロジェクト初回にコードベースと既存のデザインファイルを読み込み、チーム固有のデザインシステム（色・タイポグラフィ・コンポーネント）を自動構築する**点だ。以降のプロジェクトでは、特に指示しなくてもブランドガイドに沿った成果物が出力される。Anthropic の公式発表では「製品の見た目を AI のデフォルトに揃えるのではなく、組織のスタイルに揃える」点を強調している。",
+      "## エクスポートと Claude Code への引き渡し",
+      "成果物は **PDF、共有 URL、PPTX ファイル、Canva** に書き出せる。スライドはそのまま発表に、プロトタイプは URL で共有できる。デザインが本番実装フェーズに進むと、Claude が「ハンドオフバンドル」を生成し、それを **Claude Code に渡すことで実装コードに変換**できる。探索 → プロトタイプ → 本番コードまでを単一のエコシステム内で完結させる設計だ。",
+      "## Figma への直接挑戦と戦略的意味",
+      "VentureBeat はリリースを「Figma への正面挑戦であり、Anthropic が AI ラボから本格的なプロダクトカンパニーへ移行する明確なシグナル」と評した。デザインツール市場は Figma が圧倒的なシェアを握っているが、Claude Design は「コードベースを起点に成果物を生成し、Claude Code に戻す」という Figma にはない双方向ループを武器にする。",
+      "Claude Managed Agents（4月8日）、Claude Code デスクトップ刷新（4月13日）、Claude Opus 4.7（4月16日）、そして Claude Design（4月17日）と、Anthropic は4月だけで Claude を中核とするプロダクト群を集中投下している。「コードを書くための AI」から「設計から実装まで横断する AI」へと製品ラインが拡張されつつある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Claude Design by Anthropic Labs",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-design-anthropic-labs"
+      },
+      {
+        "title": "Anthropic launches Claude Design, a new product for creating quick visuals",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/04/17/anthropic-launches-claude-design-a-new-product-for-creating-quick-visuals/"
+      },
+      {
+        "title": "Anthropic just launched Claude Design, an AI tool that turns prompts into prototypes and challenges Figma",
+        "site": "VentureBeat",
+        "url": "https://venturebeat.com/technology/anthropic-just-launched-claude-design-an-ai-tool-that-turns-prompts-into-prototypes-and-challenges-figma"
+      }
+    ]
+  },
   "anthropic-claude-opus-4-7-ga-task-budgets-2026": {
     "body": [
       "Anthropic が4月16日、フラッグシップモデル **Claude Opus 4.7** を一般提供（GA）開始した。3月末に発表された Claude Mythos Preview（Project Glasswing 限定提供）と異なり、Opus 4.7 は全プロダクト・全主要クラウドで利用可能な「公開可能版」として位置付けられる。価格は Opus 4.6 から据え置きの **$5/M 入力トークン、$25/M 出力トークン**で、Anthropic API、Amazon Bedrock、Google Cloud Vertex AI、Microsoft Foundry、GitHub Copilot で同日から提供されている。",
