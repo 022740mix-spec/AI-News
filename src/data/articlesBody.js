@@ -4,6 +4,39 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "openai-gpt-5-5-release-agentic-coding-2026": {
+    "body": [
+      "OpenAI が4月23日、フラッグシップモデル **GPT-5.5** をリリースした。GPT-5.4 のリリース（3月中旬）から**わずか6週間**という異例の短サイクルでの投入で、フロンティアモデル競争の激化を象徴する。OpenAI は GPT-5.5 を「**これまでで最も賢く、最も直感的に使えるモデル**」と位置付け、コンピュータを使う仕事の進め方そのものを変える次の一歩だとアピールしている。",
+      "## 何が改善したか",
+      "OpenAI は GPT-5.5 の特徴として、**ユーザーの意図をより速く把握し、自ら多くの作業を抱え込む**点を強調する。コードの記述・デバッグ、オンライン調査、データ分析、ドキュメント・スプレッドシートの作成、ソフトウェア操作、複数ツール間の往復といったタスクで、**最初に渡されたゴールに対し計画立案 → ツール使用 → 自己検証 → 完了までを一気通貫で**実行できる。",
+      "事実精度面では、個別の主張が**事実として正しい確率が 23% 向上**し、応答中の**事実誤認が 3% 減少**したとされる。GPT-5.4 と同等のレイテンシを維持しながら知能水準を引き上げた点も強調されている。",
+      "## ベンチマーク: コーディングで「半額の SOTA」",
+      "Artificial Analysis の **Coding Index** で、GPT-5.5 は競合フロンティアモデルの**約半額のコストで SOTA（state-of-the-art）水準**を達成したと OpenAI は主張する。Anthropic Claude Opus 4.7（4/16 GA）が SWE-bench Verified 87.6% を出したばかりの状況で、価格対性能を前面に出してコーディング市場でのシェア確保を狙う構図だ。",
+      "## 提供範囲と展開タイミング",
+      "ChatGPT の **Plus / Pro / Business / Enterprise** プランと **Codex** へ4/23から段階展開。**GPT-5.5 Pro** は Pro / Business / Enterprise の ChatGPT 利用者向け。**4/24 から API でも利用可能**となった。同日、**GitHub Copilot の Pro+ / Business / Enterprise** プランにも展開を開始。Copilot のリリースノートでは「複雑で多段階のエージェント型コーディングタスクで、これまでの GPT モデルが解けなかった現実の課題を解ける」と評価している。",
+      "## マルチモーダルとエージェント志向の強化",
+      "GPT-5.5 はテキスト・画像・音声・動画を**単一のアーキテクチャ**で処理する。曖昧で多段階な指示を渡しても、計画 → ツール選択 → 進捗チェック → 軌道修正までを自走できる点が、これまでのモデルとの差別化要素だ。OpenAI が同日に発表した **Workspace Agents**（4/22）と組み合わせると、「企業内ワークフロー × エージェント実行」という導線が完成する。",
+      "## 競争の構図",
+      "GPT-5.5 のリリースは、**Anthropic Claude Opus 4.7（4/16 GA）→ OpenAI GPT-5.5（4/23）→ DeepSeek V4 プレビュー（4/24）**という、わずか8日間に主要プレイヤー3社のフロンティアモデル更新が集中する流れの中で行われた。Fortune は「フロンティア AI ラボがいかに激しく競争しているかを浮き彫りにする極めて速いターンアラウンド」と評している。価格対性能、エージェント能力、コーディング、マルチモーダルといった軸で、毎月単位で順位が入れ替わる段階に入った。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing GPT-5.5",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/introducing-gpt-5-5/"
+      },
+      {
+        "title": "OpenAI releases GPT-5.5, bringing company one step closer to an AI 'super app'",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/04/23/openai-chatgpt-gpt-5-5-ai-model-superapp/"
+      },
+      {
+        "title": "GPT-5.5 is generally available for GitHub Copilot",
+        "site": "GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-04-24-gpt-5-5-is-generally-available-for-github-copilot/"
+      }
+    ]
+  },
   "huggingface-ml-intern-open-source-agent-2026": {
     "body": [
       "Hugging Face が4月21日、オープンソースの AI エージェント **ml-intern** を公開した。LLM の**ポストトレーニング・ワークフロー（事後訓練の一連の作業）を自律で回す ML エンジニア役**を担うエージェントで、同社の軽量エージェントフレームワーク **smolagents** 上に構築されている。",

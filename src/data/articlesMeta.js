@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "openai-gpt-5-5-release-agentic-coding-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI が GPT-5.5 をリリース — GPT-5.4 から6週間、エージェントコーディングで SOTA を「半額」、Plus/Pro/Business/Enterprise と Copilot に即時展開",
+    "excerpt": "OpenAI が4月23日、フラッグシップモデル **GPT-5.5** をリリースした。GPT-5.4 からわずか6週間という異例の短サイクルでの登場。エージェント型タスク（計画立案・ツール使用・自己検証）に最適化され、Artificial Analysis の Coding Index で SOTA を「**競合フロンティアモデルの半額**」で達成すると主張する。事実的な記述の正答率が 23% 向上、応答中の事実誤認は 3% 減少。テキスト・画像・音声・動画を単一アーキテクチャで処理。ChatGPT の Plus / Pro / Business / Enterprise、Codex、API（4/24〜）、GitHub Copilot（Pro+/Business/Enterprise）に同日〜翌日展開。Claude Opus 4.7 GA（4/16）に続く形で、**フロンティアモデル競争がさらに加速**している。",
+    "date": "2026-04-26",
+    "newsDate": "2026-04-23",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["OpenAI", "GPT-5.5", "モデルリリース", "エージェント", "GitHub Copilot"],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI GPT-5.5"
+    }
+  },
+  {
     "id": "huggingface-ml-intern-open-source-agent-2026",
     "type": "news",
     "category": "product",
