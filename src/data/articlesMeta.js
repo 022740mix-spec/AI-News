@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "anthropic-claude-design-labs-figma-challenge-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が Claude Design を公開 — Opus 4.7 ベースのビジュアル制作ツール、コードベースからデザインシステム自動生成、Figma に正面挑戦",
+    "excerpt": "Anthropic が4月17日、新製品「Claude Design」を Anthropic Labs のリサーチプレビューとして公開した。Claude Opus 4.7 を基盤に、会話型インターフェースでデザイン・プロトタイプ・スライド・1ページャを生成。コードベースとデザインファイルを読み込んで**チームのデザインシステムを自動構築**し、以降のプロジェクトに色・タイポグラフィ・コンポーネントを自動適用する。書き出しは PDF / URL / PPTX / Canva に対応、最終形は Claude Code へ「ハンドオフバンドル」として渡せるため、探索→プロトタイプ→本番コードの閉じたループが完成する。VentureBeat は「Figma への正面挑戦」と評している。Pro / Max / Team / Enterprise で利用可能。",
+    "date": "2026-04-26",
+    "newsDate": "2026-04-17",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["Anthropic", "Claude", "デザイン", "Figma", "Claude Code"],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Claude Design"
+    }
+  },
+  {
     "id": "anthropic-claude-opus-4-7-ga-task-budgets-2026",
     "type": "news",
     "category": "model",

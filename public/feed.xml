@@ -8,6 +8,14 @@
   <updated>2026-05-11T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Anthropic が Claude Design を公開 — Opus 4.7 ベースのビジュアル制作ツール、コードベースからデザインシステム自動生成、Figma に正面挑戦</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-design-labs-figma-challenge-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-design-labs-figma-challenge-2026</id>
+    <published>2026-04-17T15:00:00Z</published>
+    <updated>2026-04-17T15:00:00Z</updated>
+    <summary>Anthropic が4月17日、新製品「Claude Design」を Anthropic Labs のリサーチプレビューとして公開した。Claude Opus 4.7 を基盤に、会話型インターフェースでデザイン・プロトタイプ・スライド・1ページャを生成。コードベースとデザインファイルを読み込んでチームのデザインシステムを自動構築し、以降のプロジェクトに色・タイポグラフィ・コンポーネントを自動適用する。書き出しは PDF / URL / PPTX / Canva に対応、最終形は Claude Code へ「ハンドオフバンドル」として渡せるため、探索→プロトタイプ→本番コードの閉じたループが完成する。VentureBeat は「Figma への正面挑戦」と評している。Pro / Max / Team / Enterprise で利用可能。</summary>
+  </entry>
+  <entry>
     <title>Anthropic Claude Opus 4.7 が一般提供開始 — SWE-bench Verified 87.6%、新機能「task budgets」と新 effort level「xhigh」を導入、画像解像度も2.5倍に拡大</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-opus-4-7-ga-task-budgets-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-opus-4-7-ga-task-budgets-2026</id>
