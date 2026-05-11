@@ -4,6 +4,39 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "microsoft-agent-365-ga-observe-govern-secure-2026": {
+    "body": [
+      "Microsoft が5月1日、エンタープライズ向け AI エージェントの統合管理サービス **Microsoft Agent 365** を一般提供（GA）開始した。プライベートプレビューを経ての本番投入で、**価格は $15/user/月**。スタンドアロン契約に加え、新エディションの **Microsoft 365 E7**（M365 E5 + Microsoft Entra Suite + Microsoft 365 Copilot + Agent 365）にも組み込まれる。",
+      "## 3つの設計軸: observe / govern / secure",
+      "Agent 365 のコンセプトは「**組織内の AI エージェントを管制塔から運用する**」こと。3軸が公式に整理されている:",
+      "- **Observe（観測）**: 組織で稼働するエージェントを単一レジストリで一覧化。利用状況・パフォーマンス・リスクシグナルをリアルタイム表示し、IT 管理者は問題が業務に影響する前に動ける。",
+      "- **Govern（統制）**: ロールベースの権限・データアクセス制御・コスト上限・利用ポリシーを集中設定。退職者のアカウントから派生したエージェントの残存といった「エージェント版シャドー IT」も検知する。",
+      "- **Secure（保護）**: Microsoft Entra と Purview を背景に、エージェントの認証・データ DLP・脅威検知を統合。Microsoft Security Store も Entra/Purview に組み込まれ、AI ガイド付きの Security Store Advisor が GA となった。",
+      "## エージェント・ランタイムではなく「管制塔」",
+      "Agent 365 の重要な位置付けは、**Copilot Studio / OpenAI Workspace Agents / Anthropic Claude Managed Agents** といった「エージェントを動かす実行レイヤー」とは別の階層を担うことだ。実行は各ベンダーに任せ、その上で**横断的な可視化と統制**を提供する。Microsoft は自社の Copilot Studio を持ちつつも、Agent 365 を**「ベンダー中立の管制塔」**として位置付け、Anthropic の Claude Code がエンタープライズに広まる流れにも対応する設計を見せている。",
+      "## なぜ今 GA か",
+      "背景には、企業内に**「エージェント版シャドー IT」**が急増している事情がある。Workspace Agents（4/22）や Claude Managed Agents（4/8）の一般化で、現場の担当者が IT 部門の許可なしにエージェントを作成・運用できるようになった。**観測できないエージェントが企業データに触れる**リスクは、規制業界では受け入れ難い。Agent 365 はそのギャップを埋める形で投入された。",
+      "## エンタープライズ市場での意味",
+      "$15/user/月という価格設定は、Microsoft 365 Copilot（$30/user/月）と比べても積み増しのハードルが低い水準だ。**「エージェントを使うかどうか」ではなく「乱立するエージェントをどう管理するか」が次のエンタープライズ AI 投資テーマ**になることを、Microsoft は明確に賭けに行った形だ。Big Tech Q1 決算（4/29）で示された Microsoft AI 事業 ARR $370億（+123%）の伸びを、エージェント管理という新カテゴリでさらに押し上げる狙いがある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Microsoft Agent 365, now generally available, expands capabilities and integrations",
+        "site": "Microsoft Security Blog",
+        "url": "https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/"
+      },
+      {
+        "title": "Microsoft Agent 365 overview",
+        "site": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/microsoft-agent-365/overview"
+      },
+      {
+        "title": "What's New in Agent 365: May 2026",
+        "site": "Microsoft Community Hub",
+        "url": "https://techcommunity.microsoft.com/blog/agent-365-blog/what%e2%80%99s-new-in-agent-365-may-2026/4516340"
+      }
+    ]
+  },
   "bigtech-q1-2026-earnings-ai-capex-700b-feature": {
     "body": [
       "4月29日夕、**Alphabet（Google）・Microsoft・Meta・Amazon** の4社が同時にカレンダー第1四半期決算（Microsoft は会計 Q3）を発表した。AI 関連の指標がそれぞれ加速する一方、設備投資（CapEx）の上方修正に市場が敏感に反応する場面もあった。翌4月30日には Fortune が「ハイパースケーラー合計で**年間 $7,000億**を AI インフラに投じる」「**出口の見えない投資競争**」と報じ、AI バブル論争が再燃した。",
