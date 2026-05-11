@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "openai-workspace-agents-codex-enterprise-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI が Workspace Agents を公開 — Custom GPTs の後継、Codex で動作しチーム共有可能、Slack・Salesforce・Notion など主要 SaaS と連携",
+    "excerpt": "OpenAI が4月22日、ChatGPT に **Workspace Agents** を導入した。**Custom GPTs の後継**にあたる新機能で、Codex で動作するエージェントを組織単位で共有しながら、複雑なタスクや長時間ワークフローを組織のパーミッションと統制の下で実行する。**Slack・Google Drive・Microsoft 365・Salesforce・Notion・Atlassian Rovo** などの主要 SaaS と連携し、クラウド側で動き続けるためユーザーがオフラインでも処理が継続する。提供は ChatGPT **Business / Enterprise / Edu / Teachers** プランのリサーチプレビュー。**5月6日までは無料**で、以降クレジット課金に切り替わる。",
+    "date": "2026-04-26",
+    "newsDate": "2026-04-22",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["OpenAI", "ChatGPT", "エージェント", "Codex", "エンタープライズ"],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI Workspace Agents"
+    }
+  },
+  {
     "id": "anthropic-project-deal-agent-marketplace-experiment-2026",
     "type": "news",
     "category": "product",
