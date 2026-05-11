@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "anthropic-claude-opus-4-7-ga-task-budgets-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Anthropic Claude Opus 4.7 が一般提供開始 — SWE-bench Verified 87.6%、新機能「task budgets」と新 effort level「xhigh」を導入、画像解像度も2.5倍に拡大",
+    "excerpt": "Anthropic が4月16日、フラッグシップモデル「Claude Opus 4.7」を一般提供（GA）開始した。SWE-bench Verified で87.6%（Opus 4.6比 +6.8pt）、Terminal-Bench 2.0 で69.4%、GPQA Diamond で94.2% と主要ベンチマーク全般で 4.6 を上回る。新機能としてエージェント実行全体のトークン消費を見積もる「task budgets」と、推論深度を調整する新 effort level「xhigh」を追加。画像入力の最大解像度は 1568px から 2576px に拡大。料金は Opus 4.6 と同じ $5/$25 per M トークン。Anthropic API、Amazon Bedrock、Google Cloud Vertex AI、Microsoft Foundry、GitHub Copilot で提供開始。",
+    "date": "2026-04-26",
+    "newsDate": "2026-04-16",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Anthropic", "Claude", "モデルリリース", "エージェント", "ベンチマーク"],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Claude Opus 4.7 GA"
+    }
+  },
+  {
     "id": "anthropic-claude-managed-agents-public-beta-2026",
     "type": "news",
     "category": "product",
