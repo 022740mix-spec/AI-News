@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "bigtech-q1-2026-earnings-ai-capex-700b-feature",
+    "type": "feature",
+    "category": "product",
+    "title": "【分析】Big Tech 4社が同日決算 — Microsoft AI 事業が ARR $370億（+123%）、Meta は CapEx を最大 $1,450億に上方修正、AI バブル論争が再燃",
+    "excerpt": "4月29日夕、Alphabet・Microsoft・Meta・Amazon の4社が同時にカレンダー第1四半期（Microsoft は会計 Q3）決算を発表した。Microsoft の **AI 事業は ARR $370億（前年比 +123%）** に到達、Azure は +40% で過去12四半期で最速級。Alphabet は **Google Cloud が四半期売上 $200億超**を初突破。Meta は **2026年 CapEx ガイダンスを $1,250〜1,450億へ上方修正**したことで時間外株価が −6% と反応。AWS は +22% で15四半期ぶりの高成長。Fortune は翌4月30日、Big Tech ハイパースケーラー合計の年間 AI インフラ支出が **$7,000億**に達し「出口の見えない投資競争」と報じた。**AI バブル論争**の論点と、開発者にとっての実務的含意を整理する。",
+    "date": "2026-05-11",
+    "newsDate": "2026-04-29",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": ["決算", "Microsoft", "Meta", "Amazon", "Alphabet", "投資"],
+    "coverImage": {
+      "src": "articles/cover-pricing.svg",
+      "alt": "Big Tech 4社決算"
+    }
+  },
+  {
     "id": "openai-workspace-agents-codex-enterprise-2026",
     "type": "news",
     "category": "product",
