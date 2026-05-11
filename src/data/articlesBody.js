@@ -4,6 +4,37 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "openai-workspace-agents-codex-enterprise-2026": {
+    "body": [
+      "OpenAI が4月22日、ChatGPT に **Workspace Agents** を導入した。チームが共有エージェントを作って複雑なタスクや長時間ワークフローを実行できる仕組みで、**Custom GPTs の後継**にあたる新機能だ。動作は **Codex**（OpenAI のコーディング・エージェントランタイム）が担い、組織のパーミッションと統制下で動く。",
+      "## Custom GPTs との違い",
+      "Custom GPTs は基本的に「会話のラッパー」で、社内ナレッジを上に乗せたチャット相手を作る用途が中心だった。Workspace Agents はその一段上で、**レポート作成・コード記述・メッセージ対応など、実際の業務タスクを自走で完了させる**。**クラウド側で動作するため、ユーザーが ChatGPT を閉じてもタスクは継続**する。共有された Workspace Agent は ChatGPT と Slack の両方から呼び出せ、チームで使いながら漸進的に改善していく運用が想定されている。",
+      "## SaaS 統合: Slack / Salesforce / Notion 他",
+      "Workspace Agents は主要なエンタープライズ SaaS と連携できる: **Slack、Google Drive、Microsoft 365 アプリ、Salesforce、Notion、Atlassian Rovo** など。テンプレートも用意されており、ユーザーは「自分のチームでよくあるワークフロー」を自然文で説明するだけで、ChatGPT が段階的にエージェント化を手伝う。サイドバーの「Agents」から作成を開始する流れだ。",
+      "## 提供範囲と料金",
+      "リサーチプレビューとして、**ChatGPT Business / Enterprise / Edu / Teachers** プランで利用できる。**2026年5月6日までは無料**で、それ以降は**クレジットベースの課金**に切り替わる。タスク実行時間や使用ツール数に応じて消費される想定だが、最終的な単価は移行時に開示されると見られる。",
+      "## Anthropic Managed Agents との競争",
+      "Workspace Agents の投入は、Anthropic が4月8日に公開した **Claude Managed Agents** に対する明確な対抗だ。両者ともサンドボックス実行・認証管理・長時間ワークフローを引き受けるが、Workspace Agents は **ChatGPT/Codex/Slack 連携を軸にホワイトカラー業務のエージェント化**に振った一方、Managed Agents は**API 中心で構造化タスクの開発者向けインフラ**に振っている。「**エージェント・ランタイムの覇権争い**」が、コーディング系から一般ホワイトカラー業務にまで波及してきた構図だ。",
+      "GPT-5.5（4/23）の翌日にこの機能が走り始めたことを踏まえると、OpenAI は「最新フロンティアモデル × 共有エージェント × SaaS 接続」という3点セットで企業内の AI 採用を取りに来ている。Slack や Salesforce 上でのエージェント駆動が日常化すれば、SaaS 各社が自前で持つ AI 機能の位置付けも変わっていく可能性が高い。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing workspace agents in ChatGPT",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/introducing-workspace-agents-in-chatgpt/"
+      },
+      {
+        "title": "OpenAI unveils Workspace Agents, a successor to custom GPTs for enterprises",
+        "site": "VentureBeat",
+        "url": "https://venturebeat.com/orchestration/openai-unveils-workspace-agents-a-successor-to-custom-gpts-for-enterprises-that-can-plug-directly-into-slack-salesforce-and-more"
+      },
+      {
+        "title": "OpenAI updates ChatGPT with Codex-powered 'workspace agents' for teams",
+        "site": "9to5Mac",
+        "url": "https://9to5mac.com/2026/04/22/openai-updates-chatgpt-with-codex-powered-workspace-agents-for-teams/"
+      }
+    ]
+  },
   "anthropic-project-deal-agent-marketplace-experiment-2026": {
     "body": [
       "Anthropic が4月25日、社内で実施した **Project Deal** の結果を公表した。Claude エージェント同士で**人間の介入なしに商取引（売買・価格交渉）を行わせる**実験で、サンフランシスコオフィスの社員 69 名にそれぞれ **$100** を渡し、Claude エージェントを Slack 上の代理人として自由に売買させた。実行期間は 2025年12月。",
