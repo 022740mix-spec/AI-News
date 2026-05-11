@@ -4,6 +4,65 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "anthropic-claude-opus-4-7-ga-task-budgets-2026": {
+    "body": [
+      "Anthropic が4月16日、フラッグシップモデル **Claude Opus 4.7** を一般提供（GA）開始した。3月末に発表された Claude Mythos Preview（Project Glasswing 限定提供）と異なり、Opus 4.7 は全プロダクト・全主要クラウドで利用可能な「公開可能版」として位置付けられる。価格は Opus 4.6 から据え置きの **$5/M 入力トークン、$25/M 出力トークン**で、Anthropic API、Amazon Bedrock、Google Cloud Vertex AI、Microsoft Foundry、GitHub Copilot で同日から提供されている。",
+      "## ベンチマーク: 4.6 から全方位で改善",
+      "公式発表のベンチマークでは、**SWE-bench Verified で 87.6%**（Opus 4.6 の 80.8% から +6.8pt）、**Terminal-Bench 2.0 で 69.4%**（同 65.4%）、**GPQA Diamond で 94.2%**（同 91.3%）、**Finance Agent で 64.4%**（同 60.7%）といずれも明確な伸びを示した。Anthropic は「長期的な推論を要するタスクと、複雑なツール連携ワークフローで特に改善が大きい」としており、ソフトウェアエンジニアリングの中でも難易度の高い問題ほど差が出るという。",
+      "## 新機能 1: task budgets",
+      "Opus 4.7 で導入された **task budgets** は、エージェントループ全体（思考・ツール呼び出し・ツール結果・最終出力を含む）のトークン消費目安をモデルに伝える仕組みだ。最小予算は 20,000 トークンで、モデルは残り予算をカウントダウンしながら作業の優先順位を判断する。予算が尽きそうになると、調査結果の要約と進捗報告を返してから停止するため、文の途中で打ち切られる従来の挙動が回避される。",
+      "重要なのは、これが **`max_tokens` とは別物** だという点だ。`max_tokens` はモデルが認識できないハードキャップで、超過すれば即座に切断される。一方 task budgets は「助言的」な目標で、モデル自身がそれを見て計画を立てる。",
+      "## 新機能 2: effort level「xhigh」",
+      "推論深度を制御する effort パラメータに、`high` と `max` の中間にあたる **`xhigh`** が追加された。難易度の高い問題で推論の深さと応答速度のトレードオフをより細かく調整できる。Anthropic によれば Opus 4.7 はデフォルトで「ツール呼び出しを減らし、推論をより活用する」傾向に調整されており、長時間の自律実行中に進捗を報告する頻度も増えたという。",
+      "## 視覚処理の大幅強化",
+      "Claude Opus 4.7 は **Claude シリーズで初めて高解像度画像をネイティブにサポート**したモデルとなる。画像入力の最大解像度が **1568px / 1.15MP から 2576px / 3.75MP** へと約2.5倍に拡大した。スクリーンショット中の細かい UI 要素、図表のテキスト、コード画像などをより正確に読み取れるようになり、コンピュータ操作系エージェントやデザインレビュー用途で実用性が増した。",
+      "## 戦略的位置付け",
+      "Opus 4.7 のリリースは、3月末に発表された **Claude Mythos Preview** との対比で理解する必要がある。Mythos Preview は HLE（人類最後の試験）で 64.7%（ツール使用時）を記録した最強モデルだが、AWS・Apple・Google・Microsoft・NVIDIA 等を含む約50組織との Project Glasswing 限定で、汎用公開はされていない。一方の Opus 4.7 は「リスクが低く、広く配布できる」公開版モデルとして CNBC など複数メディアが報じている。",
+      "GitHub Copilot は同日に Opus 4.7 を Pro+/Business/Enterprise プランへ展開した。OpenAI の GPT-5.5 リリース（4月23日）に先行する形で、フロンティアモデル競争が新たな段階に入っている。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "Claude Opus 4.7 vs 4.6 主要ベンチマーク",
+        "headers": ["ベンチマーク", "Opus 4.7", "Opus 4.6", "差分"],
+        "rows": [
+          ["SWE-bench Verified", "87.6%", "80.8%", "+6.8pt"],
+          ["Terminal-Bench 2.0", "69.4%", "65.4%", "+4.0pt"],
+          ["GPQA Diamond", "94.2%", "91.3%", "+2.9pt"],
+          ["Finance Agent", "64.4%", "60.7%", "+3.7pt"]
+        ]
+      },
+      {
+        "afterParagraph": 7,
+        "caption": "提供プラットフォームと料金",
+        "headers": ["プラットフォーム", "提供開始", "備考"],
+        "rows": [
+          ["Anthropic API", "2026-04-16", "$5/$25 per M トークン（4.6 と同額）"],
+          ["Amazon Bedrock", "2026-04-16", "GA"],
+          ["Google Cloud Vertex AI", "2026-04-16", "GA"],
+          ["Microsoft Foundry", "2026-04-16", "GA"],
+          ["GitHub Copilot", "2026-04-16", "Pro+/Business/Enterprise"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Claude Opus 4.7",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-opus-4-7"
+      },
+      {
+        "title": "What's new in Claude Opus 4.7",
+        "site": "Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-7"
+      },
+      {
+        "title": "Claude Opus 4.7 is generally available",
+        "site": "GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-04-16-claude-opus-4-7-is-generally-available/"
+      }
+    ]
+  },
   "anthropic-claude-managed-agents-public-beta-2026": {
     "body": [
       "Anthropic が4月8日、**Claude Managed Agents** をパブリックベータとして Claude Platform 上でリリースした。クラウドホスト型エージェントを構築・デプロイするための一連のコンポーザブル API で、**サンドボックス実行**・**チェックポイント**・**認証管理**・**スコープ付き権限**・**エンドツーエンドトレース**を標準搭載する。Anthropic は「プロトタイプから本番投入までを**10倍速く**する」と謳っている。",
