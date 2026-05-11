@@ -4,6 +4,46 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "amazon-anthropic-25b-trainium-infrastructure-2026": {
+    "body": [
+      "Amazon と Anthropic が4月20日、最大 **$250億（約3.7兆円）の追加投資**と AWS インフラ拡張で合意したと発表した。Amazon の Anthropic への累計コミットメントは既往の $80億と合わせて **$330億超**に達する。初回 $50億は即時投入され、その評価額は **$3,800億**。残り $200億は「特定の商業マイルストン」達成時に段階解放される条件付きトランシェだ。",
+      "## 取引の構造",
+      "今回の合意は単純な株式投資ではなく、**コンピュート支出のコミットメントと一体化**している。Anthropic は今後10年で AWS に **$1,000億超を支出**することに加え、**年内に約 1 ギガワット（GW）の Trainium2 / Trainium3 容量**を AWS 上に立ち上げる。Trainium は Amazon が自社設計する AI 専用アクセラレータで、NVIDIA H100/H200 への依存を軽減する社内チップ戦略の中核を担う。",
+      "## なぜいま追加投資か",
+      "Anthropic は声明で「エンタープライズ・開発者向け Claude の需要と、コンシューマー利用の**急増**により、信頼性と性能に**避けられない負荷（inevitable strain）**が生じている」と認めた。実際、Claude Code・Managed Agents・Claude Cowork といったエージェント系プロダクトの集中投入で推論トラフィックが急増しており、4月中も性能低下に対するユーザー反発が報じられていた。今回の合意はインフラ逼迫への直接的な応答という側面が強い。",
+      "## クラウド3社の代理戦争",
+      "今回の合意は、AI モデルベンダーとクラウド大手の関係が「単純な顧客関係」を超えて「**コンピュート連動の戦略的同盟**」に進化していることを示す。Amazon の OpenAI 向け最大 $500億投資（2026年2月）からわずか2か月後の追加コミットであり、Microsoft（OpenAI）、Amazon（OpenAI と Anthropic の両方）、Google（次節で扱う）の三つ巴が鮮明になっている。",
+      "Anthropic の評価額 $3,800億は2025年末（$1,800億）の倍以上で、わずか数か月で再評価された格好だ。同社の年換算売上（ARR）は今月時点で約 $300億まで成長したと既報。コーディング・エージェント特化戦略が、コンシューマー型 ChatGPT 依存からの脱却を成功させつつあると評価されている。",
+      "## 残された論点",
+      "$200億の追加トランシェは「商業マイルストン」次第で、具体的な指標は非公開。AWS Trainium への大規模コミットは、Anthropic の Google Cloud（TPU）利用とのバランスをどう取るかという技術的課題も残す。コンピュート供給と引き換えに資金を得るこの構造は、AI ベンダーの「電力会社化」とも指摘されており、今後の AI 市場の集中構造を象徴する案件となりそうだ。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 1,
+        "caption": "Amazon × Anthropic 投資・コミットメントの内訳",
+        "headers": ["項目", "規模", "条件・備考"],
+        "rows": [
+          ["既往投資", "$80億", "2023〜2025年に段階投資"],
+          ["今回の初期投資", "$50億", "即時投入、評価額 $3,800億"],
+          ["今回の条件付きトランシェ", "最大 $200億", "商業マイルストン達成時に段階解放"],
+          ["Anthropic の AWS 支出（10年間）", "$1,000億超", "コンピュート購入コミット"],
+          ["年内 Trainium2/3 容量", "約 1 GW", "AWS リージョンで構築"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Amazon to invest up to another $25 billion in Anthropic as part of AI infrastructure deal",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/04/20/amazon-invest-up-to-25-billion-in-anthropic-part-of-ai-infrastructure.html"
+      },
+      {
+        "title": "Amazon adds $25B to Anthropic AI infrastructure deal",
+        "site": "CIO Dive",
+        "url": "https://www.ciodive.com/news/amazon-25-billion-to-anthropic-ai-infrastructure/818123/"
+      }
+    ]
+  },
   "anthropic-claude-design-labs-figma-challenge-2026": {
     "body": [
       "Anthropic が4月17日、Anthropic Labs の新製品として **Claude Design** を公開した。会話を通じてデザイン、プロトタイプ、スライド、1ページャ、マーケティング資産といった「見せるためのアウトプット」を作る AI ネイティブのツールで、基盤モデルは前日リリースされた **Claude Opus 4.7**。Pro / Max / Team / Enterprise の購読者向けにリサーチプレビューとして提供される。",
