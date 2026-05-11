@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "anthropic-project-deal-agent-marketplace-experiment-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が Project Deal を公表 — Claude エージェント69体が社内マーケットで186件・$4,000超を自律取引、「Agent Quality Gap」という新たな課題が浮上",
+    "excerpt": "Anthropic が4月25日、Claude エージェント同士で商取引を行わせる社内実験「**Project Deal**」の結果を公表した。サンフランシスコオフィスの社員69名にそれぞれ $100 を渡し、Slack 上で自由に売買させた結果、**500品目以上で 186 件・$4,000 超**の取引が自律的に成立した。注目すべきは、**Opus 4.5 を使った売り手エージェントは Haiku 4.5 を使った売り手より平均 $2.68/品 高く売れていた**こと——だが当事者の人間はこの差にほぼ気付かなかった。初期プロンプト指示は成立確率にも価格にもほとんど影響しなかったことも判明し、参加者の 46% は「同様の AI 交渉サービスに金を払う」と回答した。エージェント経済の実装課題と「**Agent Quality Gap**（敗者は自分が損していることに気付かない）」という新たな倫理論点を提示した実験となった。",
+    "date": "2026-04-26",
+    "newsDate": "2026-04-25",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Anthropic", "Claude", "エージェント", "研究", "経済"],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic Project Deal"
+    }
+  },
+  {
     "id": "deepseek-v4-preview-1m-context-mixture-experts-2026",
     "type": "news",
     "category": "model",
