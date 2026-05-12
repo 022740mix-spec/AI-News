@@ -4,6 +4,98 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "feature-realtime-translation-teams-zoom-meet-openai-2026": {
+    "body": [
+      "「Microsoft Teams にリアルタイム翻訳があるのを知らなかった」という声は、開発者・ビジネス利用者の間でも珍しくない。実際、Teams / Zoom / Google Meet の主要3社はこの18か月で、リアルタイム翻訳機能を**「文字起こしの英語訳」程度のものから、話し手の声色を模した多言語音声合成**まで、急速に拡張してきた。さらに5月7日には OpenAI が同領域に **3つの音声 API（GPT-Realtime-2、GPT-Realtime-Translate、GPT-Realtime-Whisper）** を投入し、サードパーティ開発者でも同等の体験を組み立てられるようになった。本特集は、3社の会議ソフトと OpenAI の API を **トランスクリプト・翻訳キャプション・自動音声翻訳** の3軸で並列に整理する。",
+      "## 軸の整理: 3層に分けて考える",
+      "リアルタイム翻訳は、技術的には次の3層で構成される:",
+      "1. **トランスクリプト（音声→テキスト）**: 話し手の発話を即時に文字に起こす。後から検索・要約・議事録自動生成に使える",
+      "2. **翻訳キャプション（テキスト→他言語テキスト）**: トランスクリプトを参加者の好きな言語に翻訳して字幕表示する",
+      "3. **自動音声翻訳（音声→他言語音声）**: 翻訳したテキストをそのまま合成音声で再生する。最新世代では**話し手本人の声色**で再生する技術も実用化",
+      "ベンダーごとに、どの層をどこまで自社で組み立てているかが大きく違う。",
+      "## Microsoft Teams: Premium + Interpreter で「自分の声」を多言語に",
+      "Teams は3層すべてを公式に提供している。**ライブキャプション**は標準機能、**翻訳キャプション**は **Teams Premium（$10/user/月）または Microsoft 365 Copilot** で有効化される。",
+      "注目は2025年初頭に投入された **Interpreter（インタープリター）**機能だ。話し手が自分の言語で話すと、AI がリアルタイムで翻訳し、**話し手本人の声色を模した合成音声**で他言語に出力する。当初の対応は英語・フランス語・ドイツ語・イタリア語・日本語・韓国語・ポルトガル語・中国語・スペイン語の **9言語**で、順次拡大中。これとは別に、**プロの人間通訳が16言語ペアまで**割り当てられる Language Interpretation も併設されている。",
+      "## Zoom: AI Companion 3.0 で46言語キャプションと音声翻訳を一括",
+      "Zoom は **AI Companion** ブランドで翻訳機能を統合している。**翻訳キャプションは46言語**に対応し、Zoom Meetings の参加者は自分の好きな言語で字幕を読みながら会話できる。",
+      "2025年10月の Zoomtopia で発表された **AI Companion 3.0** では、これに **リアルタイム音声翻訳**が加わった（2025年12月から段階展開）。Slator は「Zoom が**自前**の音声翻訳エンジンに切り替えた」と報じており、従来サードパーティに頼っていた音声処理をハウス化している。AI Companion 3.0 は **有料の Zoom Workplace プラン**で利用可能で、リアルタイム音声翻訳のほか、ライフライクな AI アバター、議事録の自動清書なども含まれる。",
+      "## Google Meet: Gemini 駆動の Speech Translation を1月27日に GA",
+      "Google Meet は **2026年1月27日**、リアルタイム音声翻訳を Workspace 顧客向けに **GA（一般提供開始）**した。**Gemini** ベースで、翻訳結果は単に意味だけでなく、**話し手の声色・ピッチ・抑揚**まで保ったまま合成される。**2026年3月時点で対応するのは英語と Spanish / French / German / Portuguese / Italian の双方向5言語ペア**。一方、**翻訳キャプション（テキストのみ）は約70言語**でカバーされており、テキストと音声で利用可能言語に大きな差がある。",
+      "提供条件は **Google AI Pro / Google AI Ultra**（個人）または相当する Workspace プラン。Hindi など非欧米言語の追加は将来の更新で予定されている。",
+      "## OpenAI が5/7に投入した「3つの音声 API」",
+      "ここまでが「製品としての翻訳機能」だ。一方、5月7日に OpenAI が発表した **3つの音声 API**は「**開発者がリアルタイム翻訳プロダクトを自分で組み立てるための部品**」を提供する。",
+      "- **GPT-Realtime-2**: OpenAI 初の **GPT-5 級の推論能力をもつ音声モデル**。複雑な要求や文脈の継続を会話の流れの中で処理できる。価格は **$32 / 1M 入力音声トークン、$64 / 1M 出力音声トークン**",
+      "- **GPT-Realtime-Translate**: **ライブ翻訳専用モデル**。**70+ 言語の入力**を受け、**13言語の出力**にリアルタイム翻訳する。価格は **$0.034 / 分**",
+      "- **GPT-Realtime-Whisper**: **ストリーミング音声→テキスト（STT）**。話している最中に文字起こしを返す。価格は **$0.017 / 分**",
+      "## 3社の機能と OpenAI API の対応表",
+      "## 開発者・利用者にとっての論点",
+      "**1. 価格モデルの違い**: 会議ソフトはユーザー単価（例: Teams Premium $10/user/月、Google AI Pro 等）の固定費。OpenAI API は分単位の従量課金（Translate $0.034/分）。**月8時間の会議で1ユーザーあたり約 $16.3**（OpenAI Translate のみ）と試算でき、利用頻度によって最適解が変わる。",
+      "**2. 対応言語の濃淡**: Zoom の翻訳キャプションは46言語、Google Meet は70言語と幅広い一方、**音声翻訳**で対応する言語は Google Meet 5ペア、Teams 9言語、OpenAI Realtime-Translate は 13出力言語に絞られる。**非欧米言語のサポートは依然として限定的**で、Hindi・アラビア語・スワヒリ語・東南アジア諸言語などは出力ボイスが利用できないケースが多い。",
+      "**3. 声色再現の有無**: Teams Interpreter と Google Meet Speech Translation は「**話し手の声色を保つ**」設計。OpenAI Realtime-Translate も音声トーンを引き継ぐ。会議の心理的距離感が変わる重要な要素で、対面の代替としての品質向上に直結する。",
+      "**4. データ・プライバシーと処理場所**: 各社とも会議音声はクラウド側で処理される。Teams は Microsoft 365 のテナント境界内、Google Meet は Workspace 内、Zoom は Slator が報じたとおり**自前エンジンへ移行中**。社外秘・規制業界では、**翻訳ログがクラウドに残る前提**で運用設計が必要になる。OpenAI API を使う場合は OpenAI のデータ取り扱いポリシーが適用される。",
+      "**5. 議事録との統合**: トランスクリプトは AI 議事録（Teams Copilot、Zoom AI Companion、Google Meet の Note Taker）とそのまま接続できる。OpenAI Realtime-Whisper を使えば、独自のミーティングソフトに同等機能を組み込める。",
+      "## 「翻訳が言葉の壁を消す」とは言い切れない",
+      "**機能としては成熟したが、依然として注意点も多い**。非欧米言語の音声出力は対応待ち、声色再現は声優の権利・本人確認の文脈で議論の余地があり、規制業界では翻訳精度のミスが法的リスクに直結する場面も想定される。Academy が AI 演技・AI 脚本を Oscar 対象外と明確化した（5/1〜2）構図と同様に、「**便利になった**」と「**何を許容するか**」は別の議論になる。",
+      "それでも、Microsoft / Zoom / Google の会議製品が**標準で多言語化**を備え、OpenAI が**部品として API**を出した5月の動きは、**「英語以外の母語で堂々と参加できる会議」**を技術的にはほぼ実現可能にした転換点と言える。後は、利用者がコスト・プライバシー・倫理を含めてどの組合せを採用するかが残された判断軸だ。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 18,
+        "caption": "リアルタイム翻訳: 3社製品 + OpenAI API の比較",
+        "headers": ["項目", "Microsoft Teams", "Zoom", "Google Meet", "OpenAI API（5/7発表）"],
+        "rows": [
+          ["トランスクリプト（音声→テキスト）", "ライブキャプション（標準）", "AI Companion トランスクリプト", "ライブキャプション + Note Taker", "GPT-Realtime-Whisper（$0.017/分）"],
+          ["翻訳キャプション言語数", "Premium で展開", "46言語", "約70言語", "Realtime-Translate: 70+ 入力 → 13 出力"],
+          ["自動音声翻訳", "Interpreter（9言語、本人の声色）", "AI Companion 3.0（2025/12〜）", "Speech Translation（5ペア、Gemini、声色保持）", "GPT-Realtime-Translate（$0.034/分）"],
+          ["音声翻訳 GA 時期", "2025年初頭〜", "2025年12月", "2026/1/27", "2026/5/7（API）"],
+          ["代表的なライセンス", "Teams Premium $10/user/月 または M365 Copilot", "有料 Zoom Workplace 等", "Google AI Pro / Ultra、Workspace 上位", "従量課金"],
+          ["人間通訳併設", "16言語ペアまで", "サードパーティ統合可", "サードパーティ拡張", "—"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Interpreter in Microsoft Teams meetings and calls",
+        "site": "Microsoft Support",
+        "url": "https://support.microsoft.com/en-us/office/interpreter-in-microsoft-teams-meetings-and-calls-c7efe2bb-535d-42ab-a5c4-d2d91619b46d"
+      },
+      {
+        "title": "Use language interpretation in Microsoft Teams meetings",
+        "site": "Microsoft Support",
+        "url": "https://support.microsoft.com/en-us/office/use-language-interpretation-in-microsoft-teams-meetings-b9fdde0f-1896-48ba-8540-efc99f5f4b2e"
+      },
+      {
+        "title": "Zoom Transcription: Translate & Transcribe In Real Time",
+        "site": "Zoom",
+        "url": "https://www.zoom.com/en/products/ai-assistant/features/accessibility/"
+      },
+      {
+        "title": "Zoom Brings AI Live Speech Translation in-House",
+        "site": "Slator",
+        "url": "https://slator.com/zoom-brings-ai-live-speech-translation-in-house/"
+      },
+      {
+        "title": "Speech translation in Google Meet now generally available for businesses",
+        "site": "Google Workspace Updates",
+        "url": "https://workspaceupdates.googleblog.com/2026/02/speech-translation-meet-ga.html"
+      },
+      {
+        "title": "Learn about Speech Translation",
+        "site": "Google Meet Help",
+        "url": "https://support.google.com/meet/answer/16221730?hl=en"
+      },
+      {
+        "title": "Advancing voice intelligence with new models in the API",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/"
+      },
+      {
+        "title": "OpenAI launches new voice intelligence features in its API",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/05/07/openai-launches-new-voice-intelligence-features-in-its-api/"
+      }
+    ]
+  },
   "academy-oscars-ai-acting-screenplay-ineligible-2026": {
     "body": [
       "Academy of Motion Picture Arts and Sciences が5月1日（多くの一般メディアは5月2日に報道）、**AI が「演じた」演技と AI に主導された脚本を、Academy Awards（オスカー）の主要部門の対象外とする**規則変更を公表した。これは、生成 AI による動画・音声合成・脚本生成が実用水準に達したことに業界として初めて公式に応答した動きであり、賞レースの「土俵」を人間の創作活動に絞り直す方向性を打ち出したものだ。",

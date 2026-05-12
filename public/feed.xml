@@ -8,6 +8,14 @@
   <updated>2026-05-12T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>【特集】リアルタイム翻訳が「字幕」から「あなたの声で多言語化」へ — Teams / Zoom / Google Meet 比較と、OpenAI が5/7に投入した3つの音声 API</title>
+    <link rel="alternate" type="text/html" href="?a=feature-realtime-translation-teams-zoom-meet-openai-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-realtime-translation-teams-zoom-meet-openai-2026</id>
+    <published>2026-05-12T15:00:00Z</published>
+    <updated>2026-05-12T15:00:00Z</updated>
+    <summary>ビデオ会議のリアルタイム翻訳は、過去2年で 「字幕」から「自分の声で話す多言語化」 へと一気に進化した。Microsoft Teams は Interpreter で9言語の音声シミュレーション、Zoom は AI Companion 3.0 で46言語キャプションと音声翻訳、Google Meet は Gemini 駆動の Speech Translation で英語と主要5言語の双方向音声翻訳を提供（2026年1月27日 GA）。さらに OpenAI は5月7日、GPT-Realtime-2 / GPT-Realtime-Translate / GPT-Realtime-Whisper の3つの音声 APIを発表し、開発者が会議系プロダクトと同等の体験を自前で構築できるようになった。Realtime-Translate は 70+ 入力言語 → 13 出力言語を $0.034/分でストリーミング処理する。3社の会議ソフトと OpenAI API を、トランスクリプト・翻訳キャプション・自動音声翻訳の3軸で比較し、価格・対応言語・声の再現・プライバシーの観点で整理する。</summary>
+  </entry>
+  <entry>
     <title>OpenAI が5月7日に3つの発表 — GPT-5.5-Cyber「Trusted Access」プログラム、ChatGPT「Trusted Contact」自傷防止、新音声 AI モデル</title>
     <link rel="alternate" type="text/html" href="?a=openai-cyber-trusted-contact-voice-may7-2026"/>
     <id>tag:ai-tool-news.jp,2026:openai-cyber-trusted-contact-voice-may7-2026</id>
