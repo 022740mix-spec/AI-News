@@ -4,6 +4,64 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "anthropic-spacex-colossus-1-compute-deal-2026": {
+    "body": [
+      "Anthropic が5月6日、サンフランシスコで開催した開発者カンファレンス **「Code with Claude」** の基調講演で、**SpaceX が運営する Colossus 1 データセンターのコンピュート全量を借り上げる**契約を発表した。Memphis（テネシー州）に置かれた Colossus 1 は元々 xAI 向けに構築された施設で、**220,000 基超の NVIDIA GPU（H100、H200、次世代の GB200 を含む）と 300 MW 超**を擁する。Anthropic は**今月中に**これを推論基盤に組み込むとしている。",
+      "## なぜ今、しかも Musk 系から借りるのか",
+      "背景は Anthropic 自身が認めるとおり、**Claude の推論需要急増による信頼性低下**だ。3月以降、Claude のレスポンス遅延・「Effort 中」へのこっそりダウングレード（4/13に報道、ユーザーが反発）・上限到達など、品質低下を訴える開発者の声が増えていた。Amazon $25B（4/20）と Google $40B（4/24）の追加投資は中長期の解、Colossus 1 借り上げは**今月から効く即効薬**という位置付けだ。",
+      "Anthropic と xAI／SpaceX は AI 安全性の哲学で対立してきた経緯があるが、Elon Musk は会見後に「**`evil detector` は誰の中でも作動しなかった**」とコメントし、商業判断を優先したことを示唆した。Anthropic 側も「コンピュートが足りていないという現実」を率直に語っている。",
+      "## レート上限への即時反映",
+      "発表と同時に、ユーザー向けの上限緩和が打ち出された:",
+      "- **Claude Code の5時間レート上限が全有料プランで2倍に**",
+      "- **Pro / Max の「ピーク時間帯における上限低減」を撤廃**",
+      "- **Claude Opus 系の API レート上限を大幅引き上げ**",
+      "- **Claude Pro / Max 加入者のキャパシティ全般を底上げ**",
+      "Code with Claude 同会場では、API 利用が**前年比17倍に拡大**したことも明かされた（Anthropic Chief Product Officer Ami Vora の発言）。",
+      "## 軌道データセンター: ギガワット級コンピュートを宇宙に",
+      "今回の契約には、もう一つ前例のない条項が含まれている。**ギガワット級の「orbital data center（軌道データセンター）」を SpaceX と共同検討**することだ。地表での電力・水・土地・住民合意の制約を回避し、太陽光発電と宇宙空間の放熱優位性を利用するアイデアで、SpaceX の打ち上げ能力を前提にすれば段階的に現実味を帯びる。発表時点では研究フェーズで、具体的な打ち上げ・稼働時期は未定。",
+      "## AI インフラの政治学",
+      "Anthropic が借りる先は今や **AWS（Trainium $25B）/ Google Cloud（TPU $40B）/ SpaceX（H100/H200/GB200 220K + 軌道計画）** の3軸構造。これは「**AI モデルベンダーが特定ハイパースケーラーの代理戦争コマになる**」のではなく、「**コンピュート供給を分散して交渉力を維持する**」戦略の表れだ。CNBC は「SpaceX が **6月IPO を予定**する直前のディール」と指摘しており、SpaceX 側も評価額を引き上げる材料として活用する構図。",
+      "Code with Claude 自体は **5月19日にロンドン、6月10日に東京**でも開催予定で、Claude Code のさらなる機能拡張がそれぞれの会場で発表される見込み。利用者にとっては「**遅延と上限が即時に緩む**」という直接的な恩恵が今週から得られる。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 1,
+        "caption": "Colossus 1 借り上げの規模",
+        "headers": ["項目", "数値・内容"],
+        "rows": [
+          ["所在地", "Memphis（テネシー州）"],
+          ["GPU 数", "220,000 基超（H100 / H200 / GB200）"],
+          ["新規電力容量", "300 MW 超"],
+          ["稼働開始", "2026年5月中"],
+          ["Claude Code 5時間レート上限", "全有料プランで 2倍"],
+          ["ピーク時間帯の上限低減", "Pro / Max で撤廃"],
+          ["軌道データセンター", "ギガワット級を共同検討（研究フェーズ）"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Higher usage limits for Claude and a compute deal with SpaceX",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/higher-limits-spacex"
+      },
+      {
+        "title": "Anthropic, SpaceX announce compute deal that includes space development",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/06/anthropic-spacex-data-center-capacity.html"
+      },
+      {
+        "title": "New Compute Partnership with Anthropic",
+        "site": "xAI",
+        "url": "https://x.ai/news/anthropic-compute-partnership"
+      },
+      {
+        "title": "Live blog: Code w/ Claude 2026",
+        "site": "Simon Willison",
+        "url": "https://simonwillison.net/2026/May/6/code-w-claude-2026/"
+      }
+    ]
+  },
   "openai-gpt-5-5-instant-default-chatgpt-2026": {
     "body": [
       "OpenAI が5月5日、ChatGPT のデフォルトモデルを **GPT-5.5 Instant** に切り替えた。これまで既定だった GPT-5.3 Instant に代わって、すべての ChatGPT ユーザーが「特に何も指定しないで使う」ときの裏側がアップグレードされる。API でも `chat-latest` として同時提供。**GPT-5.5（4月23日リリース）の高速軽量版**にあたり、GPT-5.5 本体の知性と GPT-5.3 Instant 並みのレイテンシを両立させた位置付けだ。",

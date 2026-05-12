@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "anthropic-spacex-colossus-1-compute-deal-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が SpaceX の Colossus 1 を全量借り上げ — 220,000 NVIDIA GPU・300+ MW、Claude Code レート上限を2倍に、軌道データセンター構想にも踏み込む",
+    "excerpt": "Anthropic が5月6日、サンフランシスコの開発者カンファレンス「Code with Claude」の基調講演で、**SpaceX が運営する Colossus 1 データセンターのコンピュート全量**を契約したと発表した。**220,000 基超の NVIDIA GPU（H100/H200/GB200 を含む）と 300 MW 超**の新規容量が今月中に Claude の推論基盤に組み込まれる。これに伴い **Claude Code / Claude API のレート上限を倍増**、Pro / Max のピーク時間帯制限も撤廃し、Opus API のレート上限も大幅引き上げ。さらに同社は **軌道データセンターでギガワット級の AI コンピュート**を SpaceX と共同検討すると公表。Anthropic は Amazon $25B（4/20）と Google $40B（4/24）に続き **Elon Musk 系インフラとも組む**形になり、AI インフラの政治学を象徴する案件となった。",
+    "date": "2026-05-11",
+    "newsDate": "2026-05-06",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Anthropic", "SpaceX", "Claude", "インフラ", "GPU"],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic × SpaceX Colossus 1"
+    }
+  },
+  {
     "id": "openai-gpt-5-5-instant-default-chatgpt-2026",
     "type": "news",
     "category": "model",
