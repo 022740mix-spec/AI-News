@@ -4,6 +4,59 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "google-googlebook-gemini-intelligence-android-show-2026": {
+    "body": [
+      "Google が5月12日に開催した **「The Android Show: I/O Edition」** で、新カテゴリのノート PC プラットフォーム **Googlebook** と、その中核となる AI レイヤー **Gemini Intelligence** を発表した。Anthropic が同日2発表（Claude Platform on AWS GA / Claude Code agent view）を行ったのとほぼ同時刻に、Google も「ハードウェア × OS × AI」の再定義に踏み込む格好となった。",
+      "## Googlebook: Chromebook の長期的進化版",
+      "Googlebook は **Android と ChromeOS の良い部分を統合**した、Google 自身が「**AI を前提に最初から作り直した**」と説明する新ノート PC カテゴリ。**Chromebook の長期的進化版**として位置付けられ、Web アプリ中心の従来 Chromebook に対し、**Android アプリの全面互換**と**Gemini を OS レベルで統合**した点が大きな違いとなる。",
+      "**ハードウェアパートナー**: Google は **Acer、ASUS、Dell、HP、Lenovo** の5社と協業。各社から Googlebook が **2026年秋**に発売される予定で、Google は「最初の Googlebook の詳細はそれまでに順次発表する」としている。",
+      "## Magic Pointer: カーソルが Gemini の入り口になる",
+      "Googlebook の代表的な新 UI は **Magic Pointer** だ。**カーソルを軽く動かすと Gemini が起動**し、画面上で**ポインタを置いた対象に応じた文脈別の提案**が即座に表示される。Google の説明では「Select anything to ask Gemini」——画面上の任意の対象を選んで Gemini に質問できる。",
+      "従来の OS では Gemini を使うには専用ボタンや別ウィンドウへの切り替えが必要だったが、Magic Pointer は **AI を OS のデフォルト入力レイヤー**にする設計だ。アイデアから完了まで数クリックで到達することを狙う。",
+      "## Create Your Widget: プロンプトで作る生成型 UI",
+      "**Create Your Widget** は、ユーザーがプロンプトでカスタムウィジェットを作成し、デスクトップに配置できる**生成型 UI**機能。Gemini がインターネット検索や Gmail / Calendar など Google アプリへの接続を組み合わせ、**個人化されたダッシュボード**を一つに集約する。テンプレートを選ぶ既存のウィジェット文化を、自然文プロンプトに置き換える試みだ。",
+      "## Android 連携: Cast my apps / Quick Access",
+      "スマートフォンとの連携機能も大きく強化されている。",
+      "- **Cast my apps**: スマートフォン上のアプリを**ノート PC の大画面で動かす**",
+      "- **Quick Access**: ファイルがどこに保存されていても**横断的に取り出せる**",
+      "- **ファイルブラウザ**: Googlebook 上から**スマートフォンのファイルを直接ブラウズして挿入**できる",
+      "Google エコシステム（Android スマートフォン、Workspace、Photos、Drive）に深く統合された設計で、ユーザーは単一のデジタル空間を Googlebook 経由で操作する形になる。",
+      "## Gemini Intelligence: 「答える」から「行動する」へ",
+      "Googlebook の中核に置かれる **Gemini Intelligence** は、**プレミアム Android デバイスと Chrome に展開される proactive AI 機能の総称**。Q&A 型のアシスタントを超え、**ユーザーの意図を理解してアプリ横断で実際のアクション**を起こす点が特徴だ。",
+      "Google が公式に挙げているユースケース例:",
+      "- 食料品の注文",
+      "- ディナーの予約手配",
+      "- 配車手配",
+      "- フィットネスクラスの予約",
+      "- イベントチケットの確保",
+      "OpenAI の **Workspace Agents**（4/22）や Anthropic の **Claude Managed Agents**（4/8）と並ぶ「**ホワイトカラー業務をエージェントに委ねる**」流れの、コンシューマー版に相当する。",
+      "## 業界文脈: MacBook Neo と Apple-Google 提携の重なり",
+      "Bloomberg は今回の発表を **「MacBook Neo（仮称）への対抗」** と報じている。Apple は2026年後半に Gemini ベースの Siri アップグレードを Google と提携して投入する予定で（4/22の Google Cloud Next 2026 で公式確認）、**Google は同じ Gemini を片方は Apple に提供しつつ、もう片方では自社プラットフォーム（Googlebook）で囲い込む**という二面戦略を取っている。",
+      "Microsoft の **Copilot+ PC**（Windows）、Apple の **Apple Intelligence**（macOS / iOS）、そして今回の Google **Gemini Intelligence**（Android / Googlebook）と、PC・スマートフォンの OS は「**AI を中核とする再設計**」で出揃いつつある。Anthropic の Claude Platform on AWS GA と合わせて、5月12日は **「OS × AI × クラウド配布」の再編成が一気に進んだ日**として記録されそうだ。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Googlebook, designed for Gemini Intelligence",
+        "site": "Google Blog",
+        "url": "https://blog.google/products-and-platforms/platforms/android/meet-googlebook/"
+      },
+      {
+        "title": "Google unveils Googlebook, a new line of AI-native laptops",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/05/12/google-unveils-googlebooks-a-new-line-of-ai-native-laptops/"
+      },
+      {
+        "title": "Google announces Googlebooks with Gemini Intelligence focus, coming this fall",
+        "site": "9to5Google",
+        "url": "https://9to5google.com/2026/05/12/googlebooks-announcement/"
+      },
+      {
+        "title": "Google Debuts Android Googlebook Laptops with Dell, HP to Counter MacBook Neo",
+        "site": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-05-12/google-debuts-android-googlebook-laptops-with-dell-hp-to-counter-macbook-neo"
+      }
+    ]
+  },
   "anthropic-claude-platform-aws-ga-agent-view-2026": {
     "body": [
       "Anthropic が5月12日、性質の異なる二つの発表を同日に行った。**Claude Platform on AWS の一般提供（GA）開始**と、**Claude Code への新機能「agent view」の研究プレビュー追加**だ。クラウド配布チャネルの拡大（B2B 流通）と、開発者ツールのマルチエージェント運用化（個人ワークフロー）の両軸で、Anthropic は **5/6 の SpaceX Colossus 1 契約**で確保した推論キャパを生かす方向に動いている。",
