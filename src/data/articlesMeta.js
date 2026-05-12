@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "feature-realtime-translation-teams-zoom-meet-openai-2026",
+    "type": "feature",
+    "category": "product",
+    "title": "【特集】リアルタイム翻訳が「字幕」から「あなたの声で多言語化」へ — Teams / Zoom / Google Meet 比較と、OpenAI が5/7に投入した3つの音声 API",
+    "excerpt": "ビデオ会議のリアルタイム翻訳は、過去2年で **「字幕」から「自分の声で話す多言語化」** へと一気に進化した。Microsoft Teams は Interpreter で9言語の音声シミュレーション、Zoom は AI Companion 3.0 で46言語キャプションと音声翻訳、Google Meet は **Gemini 駆動の Speech Translation** で英語と主要5言語の双方向音声翻訳を提供（2026年1月27日 GA）。さらに OpenAI は5月7日、**GPT-Realtime-2 / GPT-Realtime-Translate / GPT-Realtime-Whisper の3つの音声 API**を発表し、開発者が会議系プロダクトと同等の体験を自前で構築できるようになった。Realtime-Translate は 70+ 入力言語 → 13 出力言語を **$0.034/分**でストリーミング処理する。3社の会議ソフトと OpenAI API を、**トランスクリプト・翻訳キャプション・自動音声翻訳**の3軸で比較し、価格・対応言語・声の再現・プライバシーの観点で整理する。",
+    "date": "2026-05-12",
+    "newsDate": "2026-05-12",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": ["リアルタイム翻訳", "Microsoft Teams", "Zoom", "Google Meet", "OpenAI"],
+    "coverImage": {
+      "src": "articles/cover-voice-audio.svg",
+      "alt": "リアルタイム翻訳 特集"
+    }
+  },
+  {
     "id": "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "type": "feature",
     "category": "regulation",
