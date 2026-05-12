@@ -6371,6 +6371,73 @@ const ARTICLES_BODY = {
       }
     ]
   },
+  "claude-opus-4-7-review": {
+    "body": [
+      "**Claude Opus 4.7** は Anthropic が2026年4月16日に一般提供（GA）開始したフラッグシップモデル。**SWE-bench Verified 87.6%**（公式値、Opus 4.6 は 80.8%）、**Terminal-Bench 2.0 69.4%**（同 65.4%）、**GPQA Diamond 94.2%**（同 91.3%）、**Finance Agent 64.4%**（同 60.7%）と、Anthropic 公表ベンチマークで Opus 4.6 を全方位で上回る。",
+      "**新機能 task budgets**: エージェント実行全体（思考・ツール呼び出し・ツール結果・最終出力）のトークン消費目安をモデルに伝える助言的な仕組み。最小予算 20,000 トークン。`max_tokens`（ハードキャップ）とは別物で、モデルが残り予算を見ながら計画し、予算が尽きる際は要約と進捗報告で「やり切って」終わる挙動になる。",
+      "**新 effort level「xhigh」**: 既存の `high` と `max` の間に位置する新しい推論深度。難度の高い問題で**推論深度と応答速度のトレードオフをより細かく**調整できる。デフォルトの挙動も「ツール呼び出しを減らし、推論をより活用」する方向に調整されている。",
+      "**画像入力の解像度拡大**: Claude シリーズで初めて高解像度をネイティブにサポート。最大解像度は **2576px / 3.75MP**（従来 1568px / 1.15MP の約2.5倍）。UI 要素・図表テキスト・コード画像の読み取りで実用性が増した。",
+      "**価格**: 入力 **$5 / Mトークン**、出力 **$25 / Mトークン**（Opus 4.6 据え置き、公式値）。",
+      "**提供チャネル**: Anthropic API、Amazon Bedrock、Google Cloud Vertex AI、Microsoft Foundry、GitHub Copilot で同日 GA。",
+      "**注意点**: 公開可能版モデルであり、より能力の高い **Claude Mythos Preview** は Project Glasswing（限定50組織）でのみ利用可能。「常時最高性能」を求める場合は配布形態を確認する必要がある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Claude Opus 4.7",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-opus-4-7"
+      },
+      {
+        "title": "What's new in Claude Opus 4.7",
+        "site": "Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-7"
+      }
+    ]
+  },
+  "gpt-5-5-review": {
+    "body": [
+      "**GPT-5.5** は OpenAI が2026年4月23日にリリースしたフラッグシップモデル。GPT-5.4 から約6週間という極めて短いサイクルでの世代交代で、エージェント型タスク（計画 → ツール使用 → 自己検証 → 完了）に最適化されている。OpenAI 公式は **Artificial Analysis の Coding Index で SOTA を「競合フロンティアモデルの半額」で達成**と公称。",
+      "**事実精度**: 個別の主張が事実として正しい確率は **+23%**、応答中の事実誤認は **−3%**（OpenAI 公式値）。GPT-5.4 と同等のレイテンシを維持しながら知能水準を引き上げた、と説明されている。",
+      "**マルチモーダル統合**: テキスト・画像・音声・動画を **単一のアーキテクチャ**で処理する。曖昧・多段階の指示でも計画 → ツール選択 → 進捗チェック → 軌道修正までを自走できる。",
+      "**GPT-5.5 Instant（5月5日デフォルト切替）**: 同系列の高速軽量版が ChatGPT のデフォルトに昇格。**高ステークスの領域（医療・法律・金融）でのハルシネーションが GPT-5.3 Instant 比 −52.5%**、フラグ付き難会話で **−37.3%**。応答の**単語数は約 −30.2%**、行数は約 −29.2% と簡潔化（OpenAI 公式評価）。",
+      "**提供範囲**: ChatGPT の Plus / Pro / Business / Enterprise、Codex、API（`chat-latest` 等として4/24〜）、GitHub Copilot の Pro+ / Business / Enterprise に展開。",
+      "**移行注意**: 有料ユーザー向けに GPT-5.3 Instant は3か月間設定で残存。応答スタイルが変わるため、既存のプロンプトテンプレートで挙動差が出る可能性がある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing GPT-5.5",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/introducing-gpt-5-5/"
+      },
+      {
+        "title": "GPT-5.5 Instant: smarter, clearer, and more personalized",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/gpt-5-5-instant/"
+      },
+      {
+        "title": "GPT-5.5 is generally available for GitHub Copilot",
+        "site": "GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-04-24-gpt-5-5-is-generally-available-for-github-copilot/"
+      }
+    ]
+  },
+  "deepseek-v4-review": {
+    "body": [
+      "**DeepSeek V4** は DeepSeek が2026年4月24日にプレビュー公開したフラッグシップ MoE モデル。**V4-Pro と V4-Flash の2モデル構成**で、いずれもオープンソースとして公開された。公式 API では `deepseek-v4-pro` と `deepseek-v4-flash` のモデル ID で即日利用可能になった。",
+      "**V4-Pro**: 総パラメータ **1.6 兆**、アクティブパラメータ **49B**（Mixture of Experts）。",
+      "**V4-Flash**: 総パラメータ **284B**、アクティブパラメータ **13B**（Mixture of Experts）。",
+      "**共通仕様**: **コンテキスト窓 1M トークン**、**最大出力 384K トークン**、**Thinking / Non-Thinking のデュアルモード**を備える。Thinking モードは推論ステップを展開してから回答する設定で、Anthropic の extended thinking、OpenAI の reasoning effort に相当する位置付け。",
+      "**ライセンス**: オープンソース（オープンウェイト）。自前推論サーバへの載せ替えが可能で、機微データを外部に出せないユースケースでも導入検討できる。",
+      "**提供形態**: プレビュー。DeepSeek は GA 時期を明示していない。Bloomberg は4月26日に「**正式版の発表は中国製チップへの統合を優先するため延期される**」と CCTV 関連情報を引用して続報を出している。"
+    ],
+    "primarySources": [
+      {
+        "title": "DeepSeek V4 Preview Release",
+        "site": "DeepSeek API Docs",
+        "url": "https://api-docs.deepseek.com/news/news260424"
+      }
+    ]
+  },
   "claude-opus-4-6-review": {
     "body": [
       "**Claude Opus 4.6** は Anthropic が提供する最上位モデルで、1M トークンのコンテキストウィンドウと高度な推論能力を備える。SWE-Bench Verified で 72.5% を記録し、複雑なバグ修正や大規模リファクタリングにおいて高い自律性を発揮する。拡張思考（Extended Thinking）モードでは、段階的に推論プロセスを展開してから回答を生成するため、難度の高い設計判断やアーキテクチャ分析に向く。",

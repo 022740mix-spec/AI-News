@@ -3469,6 +3469,87 @@ export const ARTICLES_META = [
     ]
   },
   {
+    "id": "claude-opus-4-7-review",
+    "type": "review",
+    "category": "model",
+    "title": "Claude Opus 4.7 レビュー — Anthropic 最上位 GA、SWE-bench Verified 87.6% と task budgets で長時間エージェントが安定",
+    "excerpt": "Anthropic が4月16日に GA したフラッグシップ。SWE-bench Verified 87.6%、Terminal-Bench 2.0 69.4%、GPQA Diamond 94.2%（公式値）。画像入力は最大 2576px / 3.75MP に拡大。新機能 task budgets と新 effort level xhigh を導入。価格は Opus 4.6 据え置きで $5/$25 per Mトークン。",
+    "date": "2026-05-12",
+    "newsDate": "2026-04-16",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "モデル",
+      "Anthropic",
+      "LLM",
+      "おすすめ"
+    ],
+    "ratings": {
+      "AI品質": 5,
+      "使いやすさ": 4,
+      "コスパ": 4,
+      "拡張性": 5,
+      "企業向け": 5
+    },
+    "rating": 4.5,
+    "reviewCategory": "model",
+    "lastReviewed": "2026-05-12"
+  },
+  {
+    "id": "gpt-5-5-review",
+    "type": "review",
+    "category": "model",
+    "title": "GPT-5.5 レビュー — OpenAI 最新フラッグシップ、エージェント・コーディングで「半額の SOTA」、Plus/Pro/API/Copilot 全展開",
+    "excerpt": "OpenAI が4月23日にリリースしたフラッグシップ。エージェントコーディング・コンピュータ使用・知識作業に最適化、Artificial Analysis の Coding Index で SOTA を「競合フロンティアモデルの半額」で達成と公称。事実誤認 3% 減、正答率 23% 向上。テキスト・画像・音声・動画を単一アーキテクチャで処理。5月5日には GPT-5.5 Instant が ChatGPT のデフォルトに昇格し、ハルシネーション率は GPT-5.3 Instant 比 52.5% 減（高ステークス領域）。",
+    "date": "2026-05-12",
+    "newsDate": "2026-04-23",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "モデル",
+      "OpenAI",
+      "LLM",
+      "おすすめ"
+    ],
+    "ratings": {
+      "AI品質": 5,
+      "使いやすさ": 5,
+      "コスパ": 5,
+      "拡張性": 5,
+      "企業向け": 4
+    },
+    "rating": 4.5,
+    "reviewCategory": "model",
+    "lastReviewed": "2026-05-12"
+  },
+  {
+    "id": "deepseek-v4-review",
+    "type": "review",
+    "category": "model",
+    "title": "DeepSeek V4 レビュー — 1.6T MoE と 1M コンテキストのオープンウェイト、Pro と Flash の2モデル構成",
+    "excerpt": "DeepSeek が4月24日にプレビュー公開したフラッグシップ MoE 2モデル。V4-Pro は総 1.6T／アクティブ 49B、V4-Flash は総 284B／アクティブ 13B、いずれも 1M コンテキスト・最大 384K 出力・Thinking / Non-Thinking デュアルモード対応。オープンソース公開され、API では `deepseek-v4-pro` と `deepseek-v4-flash` として即日提供。",
+    "date": "2026-05-12",
+    "newsDate": "2026-04-24",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "モデル",
+      "DeepSeek",
+      "オープンソース",
+      "MoE"
+    ],
+    "ratings": {
+      "AI品質": 4,
+      "使いやすさ": 4,
+      "コスパ": 5,
+      "拡張性": 5,
+      "企業向け": 3
+    },
+    "rating": 4,
+    "reviewCategory": "model",
+    "lastReviewed": "2026-05-12"
+  },
+  {
     "id": "claude-opus-4-6-review",
     "type": "review",
     "category": "model",
