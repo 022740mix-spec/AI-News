@@ -8,6 +8,14 @@
   <updated>2026-05-12T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>【特集】AI が「あなたの顔」で会議に参加する時代 — HeyGen が OpenAI Realtime Voice で Zoom に同席、Zoom 3.0 は本人型アバター、Read AI は Digital Twin</title>
+    <link rel="alternate" type="text/html" href="?a=feature-ai-avatar-agents-join-meetings-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-ai-avatar-agents-join-meetings-2026</id>
+    <published>2026-05-12T15:00:00Z</published>
+    <updated>2026-05-12T15:00:00Z</updated>
+    <summary>AI が会議に「参加する」レイヤーが、議事録ボットから アバター（顔と声を持つ存在） へ移った。HeyGen の Interactive Avatar は Zoom App として OpenAI Realtime Voice を統合し、ユーザーの分身を同時に複数会議へ送り込める。Tavus は Phoenix-4 と Raven-0 で サブ1秒応答の会話映像、Beyond Presence は Genesis で 100ms 未満の応答を実現。Zoom AI Companion 3.0 は本人の表情・口元・視線をミラーする フォトリアル・アバター を3月に発表・リリース。Read AI は5月にメール・スケジュール対応の Digital Twin を一般公開、Kaltura CEO は自分の Agentic Avatar を本番運用中だ。「人として現れる AI」がもたらす本人確認・意思決定責任・倫理の課題を、現行プロダクトの仕様と並列で整理する。</summary>
+  </entry>
+  <entry>
     <title>【特集】リアルタイム翻訳が「字幕」から「あなたの声で多言語化」へ — Teams / Zoom / Google Meet 比較と、OpenAI が5/7に投入した3つの音声 API</title>
     <link rel="alternate" type="text/html" href="?a=feature-realtime-translation-teams-zoom-meet-openai-2026"/>
     <id>tag:ai-tool-news.jp,2026:feature-realtime-translation-teams-zoom-meet-openai-2026</id>

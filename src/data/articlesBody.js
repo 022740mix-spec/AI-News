@@ -4,6 +4,89 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "feature-ai-avatar-agents-join-meetings-2026": {
+    "body": [
+      "5月7日の OpenAI 音声 API（GPT-Realtime-2 / -Translate / -Whisper）と組み合わせる形で、**「顔と声を持って会議に参加する AI アバター」**が一気に実用フェーズに入った。前特集で扱った議事録系の「ボット参加」とは違い、本特集は**ユーザー本人や架空キャラクターの姿で、参加者として会話に加わる AI** を扱う。HeyGen・Tavus・Beyond Presence・Zoom AI Companion 3.0・Read AI・Kaltura——いずれも商用稼働、または研究プレビューを越えた段階にある。",
+      "## HeyGen Interactive Avatar — Zoom App として「自分を同時に複数会議へ」",
+      "HeyGen は2026年5月、**Interactive Avatar** の Zoom 統合を公開した。Zoom App としてインストールすると、Google カレンダーと同期して**今後の Zoom 会議をプレビュー**し、指定した会議に自分のアバターを「代理出席」させられる。",
+      "技術スタックの内側で重要なのは、**OpenAI Realtime Voice を統合**している点だ。前特集で取り上げた **GPT-Realtime-2**（GPT-5級の推論）の流れに乗っかる形で、HeyGen Avatar は単に喋るだけでなく、相手の質問に対し**文脈に沿った推論ベースの応答**を返せる。HeyGen は「**24時間365日、同時に複数会議**にあなたの分身を派遣できる」とアピールしている。",
+      "## Tavus と Beyond Presence — 会話型ビデオ AI の基盤レイヤー",
+      "**Tavus** は**Conversational Video Interface（CVI）**プラットフォームを提供する API ベンダー。中核モデルとして次の3つを公開している:",
+      "- **Phoenix-4**: 感情状態と聞き手としての受動反応（active listening）を**一つの統合モデル**で生成し、会話データから表情と頭の動きをミリ秒級レイテンシで合成",
+      "- **Raven-0**: 知覚（perception）モデル。相手の表情・身振りを読み取る",
+      "- **Sparrow-0**: ターンテイキング（誰が次に話すかの判定）",
+      "Tavus の応答レイテンシは**サブ1秒**を公称する。**Beyond Presence** は競合で、Genesis モデルにより**100ms 未満**を実現する。両社とも会議系プロダクトのためのバックエンドとして組み込まれることが多く、HeyGen のような UI ベンダーが上に乗る構図だ。",
+      "## Zoom AI Companion 3.0 — 本人の表情をミラーするフォトリアル・アバター",
+      "**Zoom AI Companion 3.0** は3月10日、**フォトリアル・アバター**機能を発表し、同月リリースした。ユーザーの**容貌・表情・口元の動き・視線**をミラーする設計で、カメラがオフでも自然な視覚的プレゼンスを保てる。撮影しなくても \"顔出し\" 相当の体験を提供する位置付けだ。",
+      "ただし AI Companion 3.0 のアバターは現時点では**「自分の代理として一人で会話する」用途には設計されていない**——本人が話す内容を、本人の代わりに視覚化する位置付けだ。一方で Zoom CEO Eric Yuan は2024年以降、**「12か月以内に自分の Digital Twin を会議に送り込みたい」**と表明しており、CEO 自身が同社のロードマップを示している。",
+      "## Read AI Digital Twin — メールに返信し、ミーティングをスケジュールする",
+      "シアトルの **Read AI** は5月、新製品 **Digital Twin** を発表した。会議でのアバター登壇ではなく、**メールの返信、会議スケジュール調整、簡単な質問対応**を本人になり代わって処理する「テキスト型」分身だ。Read AI は「**史上最大規模の Digital Twin デプロイ**」と謳う。",
+      "Read AI の Digital Twin は、**過去のミーティング・メール・ドキュメントからの文脈**を継承する設計。アバター表示が必要な場面では Tavus 等の基盤を使う運用も想定されるが、まずは「**書く分身**」として展開された。",
+      "## Kaltura — CEO が自分の Agentic Avatar を本番運用",
+      "動画プラットフォームの **Kaltura** は4月、共同創業者で CEO の **Ron Yekutiel** が自身の **Conversational Digital Twin**（同社の Agentic Avatar 技術ベース）を**本番運用**していると発表した。社員・顧客とのコミュニケーションで実際に稼働しており、企業向けの同技術を「**自社 CEO で実証**」する形になっている。",
+      "## 比較: どこまで「人として」会議に立てるか",
+      "## 倫理・運用上の論点",
+      "**1. 本人確認とディープフェイク対策**: 自分が「アバターを送り込む」のはよいが、**第三者が無断であなたのアバターを作る**ことを各社のプラットフォームがどう防いでいるかは別問題だ。HeyGen は同意を要求する仕様だが、エンドポイントでの認証は議論の途上。",
+      "**2. 意思決定の責任**: アバターが「本人を代弁して契約に同意する」「採用面接で評価判断を下す」場合、**法的に誰が責任を負うか**は未確立。Kaltura のようにオープンに公表しているケースは透明だが、無告知運用が広まると相手参加者が「**生身の人間と話していると誤認**」する状況が生まれる。",
+      "**3. アバター告知のエチケット**: 5月の OpenAI **Trusted Contact** や Academy の AI 演技ルール（5/2）と並んで、「**AI が現れていることを明示するか**」が業界規範として整理されつつある。会議冒頭で「これは AI アバターです」とラベル付けする慣習は今のところ任意。",
+      "**4. プライバシー**: HeyGen が OpenAI Realtime Voice 経由で処理する場合、会議音声は OpenAI のインフラを通過する。エンタープライズ規制業界では検討が必要。",
+      "**5. 会議のスケールと信号価値の希釈**: CEO が自分の代理として複数会議に同時参加する世界では、「**人が出席している**」という社会的シグナルが希釈される。逆に、出席依頼のインフレを抑える効果も期待される——スケジュール戦争の終わり方として注目される議論だ。",
+      "## 翻訳特集との接続",
+      "前特集の翻訳機能とこの特集は重なる。HeyGen の Avatar は OpenAI Realtime Voice を使うので、Realtime-Translate の出力先にもなり得る。Zoom AI Companion 3.0 はアバターと音声翻訳の双方を内蔵する。「**自分の顔で、相手の言語で、同時に複数会議に出る**」体験が、2026年後半には実装層で揃いつつあるのが現在地だ。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 16,
+        "caption": "AI 会議参加アバターの比較",
+        "headers": ["プロダクト", "形態", "応答レイテンシ", "代表的な利用形態"],
+        "rows": [
+          ["HeyGen Interactive Avatar", "Zoom App、OpenAI Realtime Voice 統合", "—（OpenAI 依存）", "本人代理で複数会議に同時参加"],
+          ["Tavus（Phoenix-4 / Raven-0 / Sparrow-0）", "API（CVI）", "サブ1秒", "他社プロダクトのバックエンド"],
+          ["Beyond Presence（Genesis）", "API + ノーコード", "100ms 未満", "他社プロダクト・カスタマー応対"],
+          ["Zoom AI Companion 3.0 アバター", "Zoom Workplace 標準", "—（カメラ表示用）", "本人の表情ミラー（代理会話ではない）"],
+          ["Read AI Digital Twin", "メール／カレンダー", "—（テキスト中心）", "メール返信・スケジュール調整"],
+          ["Kaltura Agentic Avatar", "エンタープライズ", "—", "CEO・経営層の代理コミュニケーション"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Send Your Interactive Avatar to Zoom Meetings",
+        "site": "HeyGen",
+        "url": "https://www.heygen.com/blog/send-your-interactive-avatar-to-zoom-meetings"
+      },
+      {
+        "title": "HeyGen Reveals AI Avatars That Can Attend Zoom Meetings For You",
+        "site": "UC Today",
+        "url": "https://www.uctoday.com/?p=74845"
+      },
+      {
+        "title": "Tavus — The human computing company",
+        "site": "Tavus",
+        "url": "https://www.tavus.io/"
+      },
+      {
+        "title": "Real‑Time AI Avatars for Conversational Apps",
+        "site": "Beyond Presence",
+        "url": "https://www.beyondpresence.ai/"
+      },
+      {
+        "title": "Zoom introduces an AI-powered office suite, says AI avatars for meetings arrive this month",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/03/10/zoom-launches-an-ai-powered-office-suite-says-ai-avatars-for-meetings-are-coming-soon/"
+      },
+      {
+        "title": "Read AI rolls out 'Digital Twin' that can respond to work emails and schedule meetings",
+        "site": "GeekWire",
+        "url": "https://www.geekwire.com/2026/read-ai-rolls-out-digital-twin-that-can-respond-to-work-emails-and-schedule-meetings/"
+      },
+      {
+        "title": "Kaltura Puts the AI CEO Into Production With Ron Yekutiel's Digital Twin",
+        "site": "IT Business Net",
+        "url": "https://itbusinessnet.com/2026/04/kaltura-puts-the-ai-ceo-into-production-with-ron-yekutiels-digital-twin-using-the-same-agentic-avatar-tech-it-offers-enterprises/"
+      }
+    ]
+  },
   "feature-realtime-translation-teams-zoom-meet-openai-2026": {
     "body": [
       "「Microsoft Teams にリアルタイム翻訳があるのを知らなかった」という声は、開発者・ビジネス利用者の間でも珍しくない。実際、Teams / Zoom / Google Meet の主要3社はこの18か月で、リアルタイム翻訳機能を**「文字起こしの英語訳」程度のものから、話し手の声色を模した多言語音声合成**まで、急速に拡張してきた。さらに5月7日には OpenAI が同領域に **3つの音声 API（GPT-Realtime-2、GPT-Realtime-Translate、GPT-Realtime-Whisper）** を投入し、サードパーティ開発者でも同等の体験を組み立てられるようになった。本特集は、3社の会議ソフトと OpenAI の API を **トランスクリプト・翻訳キャプション・自動音声翻訳** の3軸で並列に整理する。",
