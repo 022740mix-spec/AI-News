@@ -32,6 +32,14 @@
     <summary>OpenAI が5月5日、ChatGPT のデフォルトモデルを GPT-5.5 Instant に切り替えた。高ステークスのプロンプト（医療・法律・金融）で ハルシネーション率が GPT-5.3 Instant 比 52.5% 減、ユーザーがフラグした難会話で事実誤認 37.3% 減。同時に出力スタイルも刷新され、単語数は約 30.2%・行数は約 29.2% 短くなり、絵文字の濫用が抑制された。Plus / Pro 向けには過去チャット・接続済み Gmail を文脈に使う新しい長期メモリも Web から展開開始（Free / Go / Business / Enterprise には数週間以内に拡大）。API では `chat-latest` として配信、有料ユーザー向けに GPT-5.3 Instant は3ヶ月間は設定で残せる。</summary>
   </entry>
   <entry>
+    <title>【分析】Academy が Oscar の AI ルールを明確化 — AI 出演・AI 脚本は対象外、「人間の同意」と「人間の著作」を必須要件に</title>
+    <link rel="alternate" type="text/html" href="?a=academy-oscars-ai-acting-screenplay-ineligible-2026"/>
+    <id>tag:ai-tool-news.jp,2026:academy-oscars-ai-acting-screenplay-ineligible-2026</id>
+    <published>2026-05-02T15:00:00Z</published>
+    <updated>2026-05-02T15:00:00Z</updated>
+    <summary>Academy of Motion Picture Arts and Sciences が5月1日（多くの一般メディアは5月2日に報道）、AI 生成の演技および AI 主導で書かれた脚本は Academy Awards（オスカー）の主要部門で対象外とする規則変更を公表した。演技部門では「法的クレジットに記載され、本人の同意の下で人間が演じた」ものに限ると明記。脚本部門は「人間が著作したもの」が要件となる。Academy は同時に AI の使用に関する追加情報の提出を求める権限も保持し、ケースバイケースで例外を判断する。Sora 2 や Runway Gen5 級の生成動画が業界に浸透するなか、「賞レースの土俵」は人間の創作活動に絞り直すという業界自治の方向性が鮮明になった。</summary>
+  </entry>
+  <entry>
     <title>Microsoft Agent 365 が一般提供開始 — エージェントを「observe / govern / secure」する管制塔、$15/user/月、Microsoft 365 E7 にも組み込み</title>
     <link rel="alternate" type="text/html" href="?a=microsoft-agent-365-ga-observe-govern-secure-2026"/>
     <id>tag:ai-tool-news.jp,2026:microsoft-agent-365-ga-observe-govern-secure-2026</id>

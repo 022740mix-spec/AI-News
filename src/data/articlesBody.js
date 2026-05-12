@@ -4,6 +4,50 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "academy-oscars-ai-acting-screenplay-ineligible-2026": {
+    "body": [
+      "Academy of Motion Picture Arts and Sciences が5月1日（多くの一般メディアは5月2日に報道）、**AI が「演じた」演技と AI に主導された脚本を、Academy Awards（オスカー）の主要部門の対象外とする**規則変更を公表した。これは、生成 AI による動画・音声合成・脚本生成が実用水準に達したことに業界として初めて公式に応答した動きであり、賞レースの「土俵」を人間の創作活動に絞り直す方向性を打ち出したものだ。",
+      "## 何が対象外になるのか",
+      "### 演技部門",
+      "Academy のルールでは、演技部門への候補資格は **「映画の法的なビリング（クレジット）に記載され、本人の同意の下で人間によって演じられた performance」** に限られる。AI による「**likeness enhancement（容姿の強化・若返り・合成）**」は、それ自体は使ってもよいが、**演技そのものを AI 生成のキャラクター（俳優の同意なき復元を含む）が担った場合は対象外**となる。死後の俳優の AI 復活演技や、完全合成キャラクターによる主演はこの規則下では候補にできない。",
+      "### 脚本部門",
+      "脚本部門は **「human-authored」**（人間の著作）であることが必須要件。生成 AI で大量にドラフトを出して人間が編集する形式は判断が難しいため、**「AI による生成への依存度が高ければ失格」**という基準が示された。実務的には Academy が**追加情報の提出を求める権限**を行使し、ケースバイケースで判定する仕組みになる。",
+      "## なぜ今、このタイミングなのか",
+      "背景には3つの圧力がある:",
+      "- **生成動画の品質向上**: Sora 2、Runway Gen5、Pika 等の生成動画が長尺・高解像度・キャラクター一貫性で実用水準に達しつつあり、コンテンツ流通量が拡大",
+      "- **俳優・脚本家の労働問題**: 2023年の WGA / SAG-AFTRA ストライキ以降、AI による職務代替への懸念が継続",
+      "- **同意問題と権利**: 故人の俳優の AI 復活、声優の声合成許諾など、肖像権・パブリシティ権の解釈が判例化していない領域が広い",
+      "Academy が「**最終的な賞**」を業界の創作価値の指標として位置付け直すことで、産業全体への規範的シグナルを発した形だ。",
+      "## 影響と限界",
+      "**影響範囲**:",
+      "- ハリウッド・スタジオの大作で、AI を「演技そのもの」に使うインセンティブが下がる",
+      "- 国際長編映画賞などの他部門にも波及する可能性（Academy は同時に国際長編規則も改定）",
+      "- 配信プラットフォーム向けの作品基準にもガイドラインとして引用される可能性",
+      "**限界**:",
+      "- 興行・配信収益には直接影響しない。Netflix / Apple TV+ などは独自基準を持つ",
+      "- 「likeness enhancement」と「AI 演技」の境界線が曖昧で、運用は Academy の裁量に依存",
+      "- グローバルには Cannes、Venice、Berlin、BAFTA など他の主要賞が独自方針を取る可能性",
+      "## AI News 観点での意味",
+      "Anthropic の Project Glasswing（4/7）、OpenAI の Trusted Access for Cyber（5/7）と並んで、**「AI 技術の能力 × 利用範囲の制限」**が同時並行で進む構図が鮮明になってきた。**フロンティアモデル各社の技術競争**と、**業界・規制当局・国家による利用境界の線引き**は別物として進行する。クリエイティブ産業は「業界自治」で先んじ、サイバー・規制業界は「ホスト型 API による許可制配布」で対応している——本記事はその対比として読まれるべき。"
+    ],
+    "primarySources": [
+      {
+        "title": "AI-generated actors and scripts are now ineligible for Oscars",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars/"
+      },
+      {
+        "title": "Academy Makes Seismic Oscar Rule Changes For Acting & International Film Categories, Clarifies AI Stance",
+        "site": "Deadline",
+        "url": "https://deadline.com/2026/05/oscar-rules-changes-2026-acting-international-film-1236878201/"
+      },
+      {
+        "title": "Oscars: New rules announced - AI actors and scripts cannot win awards",
+        "site": "Euronews",
+        "url": "https://www.euronews.com/culture/2026/05/04/oscars-new-rules-announced-ai-actors-and-scripts-cannot-win-awards"
+      }
+    ]
+  },
   "openai-cyber-trusted-contact-voice-may7-2026": {
     "body": [
       "OpenAI が5月7日、性質の異なる3つの大型アップデートを同日に並行投入した。**GPT-5.5-Cyber** によるサイバー防衛の業界別パッケージング、**Trusted Contact** によるメンタルヘルス危機への安全策、そして **新しい音声 AI モデル**の API 提供——いずれも「能力単体の競争」ではなく、**安全運用・特定業界・周辺モダリティ**を取りに行く動きだ。",

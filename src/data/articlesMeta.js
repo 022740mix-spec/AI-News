@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "academy-oscars-ai-acting-screenplay-ineligible-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】Academy が Oscar の AI ルールを明確化 — AI 出演・AI 脚本は対象外、「人間の同意」と「人間の著作」を必須要件に",
+    "excerpt": "Academy of Motion Picture Arts and Sciences が5月1日（多くの一般メディアは5月2日に報道）、**AI 生成の演技および AI 主導で書かれた脚本は Academy Awards（オスカー）の主要部門で対象外**とする規則変更を公表した。演技部門では「**法的クレジットに記載され、本人の同意の下で人間が演じた**」ものに限ると明記。脚本部門は「**人間が著作したもの**」が要件となる。Academy は同時に **AI の使用に関する追加情報の提出を求める権限**も保持し、ケースバイケースで例外を判断する。Sora 2 や Runway Gen5 級の生成動画が業界に浸透するなか、**「賞レースの土俵」は人間の創作活動に絞り直す**という業界自治の方向性が鮮明になった。",
+    "date": "2026-05-11",
+    "newsDate": "2026-05-02",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["規制", "映画", "著作権", "クリエイティブ", "倫理"],
+    "coverImage": {
+      "src": "articles/cover-regulation.svg",
+      "alt": "Academy Oscar AI ルール"
+    }
+  },
+  {
     "id": "openai-cyber-trusted-contact-voice-may7-2026",
     "type": "news",
     "category": "product",
