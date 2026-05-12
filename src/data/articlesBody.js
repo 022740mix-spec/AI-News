@@ -4,6 +4,55 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "anthropic-claude-platform-aws-ga-agent-view-2026": {
+    "body": [
+      "Anthropic が5月12日、性質の異なる二つの発表を同日に行った。**Claude Platform on AWS の一般提供（GA）開始**と、**Claude Code への新機能「agent view」の研究プレビュー追加**だ。クラウド配布チャネルの拡大（B2B 流通）と、開発者ツールのマルチエージェント運用化（個人ワークフロー）の両軸で、Anthropic は **5/6 の SpaceX Colossus 1 契約**で確保した推論キャパを生かす方向に動いている。",
+      "## ① Claude Platform on AWS が GA",
+      "AWS は同日、**Claude Platform on AWS の一般提供開始**を発表した。AWS が**初めて Claude のネイティブな Platform 体験**——API、コンソール、早期アクセスのβ機能を含む——を、顧客の **既存の AWS アカウント経由で**提供する形態だ。",
+      "従来、AWS で Claude を使う主な選択肢は **Amazon Bedrock**（AWS が運営する API ゲートウェイ）だった。今回の Claude Platform on AWS は性格が異なり、**サービス自体は Anthropic が運営し、顧客データは AWS のセキュリティ境界の外で処理される**。代わりに、認証・課金・コミットメントの消化が AWS 側で完結する設計だ。AWS Marketplace 経由で請求され、**AWS Cost Explorer で他のクラウドコストと並べて監視できる**。",
+      "**利用可能モデル**: Claude **Opus 4.7 / Sonnet 4.6 / Haiku 4.5**。今後リリースされる新モデルも Claude Platform on AWS にデプロイされる。",
+      "**提供リージョン**: 米東部（バージニア北部・オハイオ）、米西部（オレゴン）、カナダ（中央）、南米（サンパウロ）、欧州（ダブリン・ロンドン・フランクフルト・ミラノ・チューリッヒ・パリ・ストックホルム）、アジア太平洋（**東京**・ソウル・ジャカルタ・シドニー・メルボルン）の合計17リージョン。",
+      "Anthropic は今年に入って **Amazon の最大 $250億追加投資**（4/20）と **Google の最大 $400億投資**（4/24）、**SpaceX Colossus 1 借り上げ**（5/6）と立て続けに供給網を拡張してきた。今回の Claude Platform on AWS GA は、その投資取引の**実装側のアウトプット**にあたる。",
+      "## ② Claude Code に「agent view」研究プレビュー追加",
+      "もう一つの発表は、Claude Code 利用者向けの新機能 **agent view**。**マルチエージェント運用を一画面で管理できるダッシュボード**だ。",
+      "**起動と表示**: `claude agents` コマンドでターミナル全画面に展開し、**全セッションの一覧テーブル**と**新規ディスパッチ用の入力欄**が表示される。各行で Enter または → を押すと、そのセッションの会話に attach できる。",
+      "**マルチエージェント実行**: 複数の Claude Code セッションを同時に動かし、**待機中（要返答）／作業中／完了**を一覧で確認しながら、必要なときだけ介入する運用が可能。",
+      "**バックグラウンドセッション**: `/bg` コマンドや `claude --bg [task]` で**ターミナルを閉じてもエージェントが走り続ける**バックグラウンド実行をサポート。**専用のスーパーバイザープロセス**が動かすため、agent view を閉じても、シェルを閉じても、別の対話セッションを開いても、ディスパッチ済みの作業は継続する。",
+      "**要件**: Claude Code **v2.1.139 以降**。**Pro / Max / Team / Enterprise / Claude API** プランで提供される研究プレビュー。",
+      "## なぜ今、この組み合わせか",
+      "二つの発表は別物に見えるが、Anthropic の現在の戦略では一体だ。",
+      "- **配布**: Claude Platform on AWS により、AWS の規制業界顧客（金融・公共・医療）が **AWS のセキュリティ統制の中で Claude のネイティブ機能をフル活用できる**。これまで Bedrock 経由ではアクセスしづらかった early-access β機能（最新モデル・新機能のプレビュー）にも手が届くようになる",
+      "- **個人開発の効率化**: agent view により、**1人のユーザーが複数のセッションを並列で走らせる**運用が公式サポートされる。Cursor 3 の Agents Window、OpenAI Workspace Agents と並んで、「**人がエージェントをオーケストレーションする UI**」の標準形が固まりつつある",
+      "5月の OpenAI（GPT-5.5 Instant デフォルト切替、3つの音声 API）と Anthropic（SpaceX Colossus 1、Claude Platform on AWS、agent view）の動きは、フロンティア競争が**配布レイヤーとマルチエージェント運用 UI**に移ったことを示している。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing the Claude Platform on AWS",
+        "site": "Anthropic",
+        "url": "https://claude.com/blog/claude-platform-on-aws"
+      },
+      {
+        "title": "Claude Platform on AWS is now generally available",
+        "site": "AWS What's New",
+        "url": "https://aws.amazon.com/about-aws/whats-new/2026/05/claude-platform-aws/"
+      },
+      {
+        "title": "Introducing Claude Platform on AWS: Anthropic's native platform, through your AWS account",
+        "site": "AWS Machine Learning Blog",
+        "url": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-platform-on-aws-anthropics-native-platform-through-your-aws-account/"
+      },
+      {
+        "title": "Agent view in Claude Code",
+        "site": "Anthropic",
+        "url": "https://claude.com/blog/agent-view-in-claude-code"
+      },
+      {
+        "title": "Manage multiple agents with agent view",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/agent-view"
+      }
+    ]
+  },
   "feature-ai-avatar-agents-join-meetings-2026": {
     "body": [
       "5月7日の OpenAI 音声 API（GPT-Realtime-2 / -Translate / -Whisper）と組み合わせる形で、**「顔と声を持って会議に参加する AI アバター」**が一気に実用フェーズに入った。前特集で扱った議事録系の「ボット参加」とは違い、本特集は**ユーザー本人や架空キャラクターの姿で、参加者として会話に加わる AI** を扱う。HeyGen・Tavus・Beyond Presence・Zoom AI Companion 3.0・Read AI・Kaltura——いずれも商用稼働、または研究プレビューを越えた段階にある。",
