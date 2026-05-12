@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "anthropic-claude-platform-aws-ga-agent-view-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が5/12に2発表 — Claude Platform on AWS が GA（AWS が初の native ホスト）、Claude Code に「agent view」マルチセッション管理を研究プレビュー投入",
+    "excerpt": "Anthropic が5月12日、二つの大型アップデートを同日公表した。①**Claude Platform on AWS が GA**。AWS が初めて Claude のネイティブ Platform 体験（API・コンソール・早期アクセスβ機能）を顧客の AWS アカウント経由で提供する形態で、AWS Marketplace 経由で課金。Claude **Opus 4.7 / Sonnet 4.6 / Haiku 4.5** を利用可能、東京・ソウル・シドニー含む **17リージョン** で展開。サービスは Anthropic が運営し、顧客データは AWS セキュリティ境界の外で処理される。②**Claude Code に「agent view」を研究プレビュー追加**（v2.1.139+）。`claude agents` で開く統合ダッシュボードで複数セッションの状態を一覧表示、新規セッションをディスパッチ・バックグラウンド実行（`/bg` または `claude --bg [task]`）して、必要なときだけ介入する運用を可能にする。Pro / Max / Team / Enterprise / API プランで提供。",
+    "date": "2026-05-12",
+    "newsDate": "2026-05-12",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Anthropic", "Claude", "AWS", "Claude Code", "エージェント"],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic 5/12 同日発表"
+    }
+  },
+  {
     "id": "feature-ai-avatar-agents-join-meetings-2026",
     "type": "feature",
     "category": "product",
