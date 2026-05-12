@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "google-googlebook-gemini-intelligence-android-show-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Google が「Googlebook」と「Gemini Intelligence」を発表 — Chromebook 後継の AI ネイティブ・ノート PC、Acer/ASUS/Dell/HP/Lenovo から今秋発売、Magic Pointer で UI を再設計",
+    "excerpt": "Google が5月12日の「The Android Show: I/O Edition」で、新カテゴリのノート PC **Googlebook** と、その中核に置かれる **Gemini Intelligence** を発表した。Googlebook は Android と ChromeOS の良い部分を統合した「AI を前提に作り直した」プラットフォームで、Acer / ASUS / Dell / HP / Lenovo の5社から **2026年秋発売**予定。中核 UI は **Magic Pointer** — カーソルを軽く動かすと Gemini が文脈に沿った提案を表示し、画面上の任意の対象を「選んで Gemini に質問」できる。さらに、プロンプトでカスタムウィジェットを生成する Create Your Widget、スマートフォンのアプリやファイルをノート PC で扱う Cast my apps / Quick Access も搭載。Gemini Intelligence は単なる Q&A を超え、アプリ横断で実際のアクション（食料品注文・予約・チケット手配など）まで自動化することを目指す。Chromebook の長期的進化版として位置付けられ、Bloomberg は **「MacBook Neo への対抗」** と報じている。",
+    "date": "2026-05-12",
+    "newsDate": "2026-05-12",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Google", "Gemini", "Googlebook", "Android", "ハードウェア"],
+    "coverImage": {
+      "src": "logos/google.svg",
+      "alt": "Google Googlebook と Gemini Intelligence"
+    }
+  },
+  {
     "id": "anthropic-claude-platform-aws-ga-agent-view-2026",
     "type": "news",
     "category": "product",
