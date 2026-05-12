@@ -4,6 +4,47 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "openai-cyber-trusted-contact-voice-may7-2026": {
+    "body": [
+      "OpenAI が5月7日、性質の異なる3つの大型アップデートを同日に並行投入した。**GPT-5.5-Cyber** によるサイバー防衛の業界別パッケージング、**Trusted Contact** によるメンタルヘルス危機への安全策、そして **新しい音声 AI モデル**の API 提供——いずれも「能力単体の競争」ではなく、**安全運用・特定業界・周辺モダリティ**を取りに行く動きだ。",
+      "## ① GPT-5.5-Cyber と Trusted Access for Cyber（TAC）",
+      "GPT-5.5-Cyber は、**重要インフラを守るディフェンダー向け**に調整されたサイバーセキュリティ特化モデル。**OpenAI のサイバー系モデル群の中で最も許容範囲が広い**（permissive）と位置付けられ、攻撃者視点のシミュレーション、ペネトレーションテスト、リバースエンジニアリング、エクスプロイト分析などの「**普通の ChatGPT では断られる**」業務的に必要な作業を、認証済みのパートナーに対して限定的に有効化する。",
+      "配布チャネルは新プログラム **Trusted Access for Cyber（TAC）**。承認されたディフェンダー組織のみが利用でき、利用ログ・ガードレール・人間によるレビューを伴う運用前提でアクセス権が付与される。Help Net Security は「**サイバー防衛と AI の濫用防止という相反する要請を、ホスト型 API × 認証付き許可制で両立する試み**」と評している。Anthropic Claude Mythos の Project Glasswing（4月）と並んで、フロンティア AI の「**選別配布**」モデルが主要な配布形態として定着しつつある。",
+      "## ② Trusted Contact: 自傷リスクの第三者通知",
+      "Trusted Contact は ChatGPT に追加される**オプション機能**で、ユーザーが事前に**信頼する成人の連絡先**（SMS / メール）を登録できる。OpenAI の自動システムが会話内に**深刻な自傷リスクの兆候**を検出し、続いて**人間のレビュー**が「深刻」と判定した場合に、登録された連絡先に通知が送られる。",
+      "この設計には2つの重要な原則がある:",
+      "- **必ず人間レビューを経る**: 自動検知だけで通知することはせず、誤検知による「友人・家族の不必要な動揺」を抑える",
+      "- **オプトイン**: 通知の発火を許諾しているユーザーにだけ適用",
+      "発表は、Elon Musk が xAI に絡む安全性問題で訴訟・批判を浴びる時期と重なり、業界全体に「**AI 提供者が利用者の生命にどう責任を持つか**」という論点が突きつけられている文脈での投入となった。",
+      "## ③ 新音声 AI モデルを API に追加",
+      "同日、OpenAI は **リアルタイム音声処理モデルを API に追加**したと発表。具体的なモデル名・性能比較は API ドキュメント側で公開されており、応答遅延と自然さのトレードオフを再調整した世代と位置付けられる。AssemblyAI などスタートアップが切り拓いた音声 AI 市場に、フロンティアラボがフラッグシップで参入する流れが加速する。",
+      "## なぜ「3軸同時投入」なのか",
+      "今回の同時発表は、フロンティアモデル競争が**ベンチマーク勝負から「業界別 × 安全運用 × モダリティ」勝負**へ移行している証拠と読める。GPT-5.5 と Claude Opus 4.7 で基礎能力の差はだいぶ縮まった一方、**サイバー業務に組み込まれるか・命に関わる場面でどう振る舞うか・声と画像でどう動くか**が、企業導入と一般利用の双方で次の差別化軸になる。",
+      "Anthropic の SpaceX Colossus 1 契約（5/6）でコンピュート供給の不安が一段和らいだ翌日に、OpenAI が「能力以外の3軸」を畳みかける構図は、競合分業の役割分担がより鮮明になってきたことを示している。"
+    ],
+    "primarySources": [
+      {
+        "title": "Scaling Trusted Access for Cyber with GPT-5.5 and GPT-5.5-Cyber",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber/"
+      },
+      {
+        "title": "OpenAI tunes GPT-5.5-Cyber for more permissive security workflows",
+        "site": "Help Net Security",
+        "url": "https://www.helpnetsecurity.com/2026/05/08/openai-gpt-5-5-cyber-model/"
+      },
+      {
+        "title": "ChatGPT Can Now Alert a Friend if You're in a Mental Crisis: Meet 'Trusted Contact'",
+        "site": "Android Headlines",
+        "url": "https://www.androidheadlines.com/2026/05/openai-chatgpt-trusted-contact-mental-health-feature.html"
+      },
+      {
+        "title": "OpenAI Launches Safety Alert System and Advanced Voice AI",
+        "site": "The AI Insider",
+        "url": "https://theaiinsider.tech/2026/05/08/openai-launches-safety-alert-system-and-advanced-voice-ai-as-musk-trial-spotlights-safety-failures/"
+      }
+    ]
+  },
   "anthropic-spacex-colossus-1-compute-deal-2026": {
     "body": [
       "Anthropic が5月6日、サンフランシスコで開催した開発者カンファレンス **「Code with Claude」** の基調講演で、**SpaceX が運営する Colossus 1 データセンターのコンピュート全量を借り上げる**契約を発表した。Memphis（テネシー州）に置かれた Colossus 1 は元々 xAI 向けに構築された施設で、**220,000 基超の NVIDIA GPU（H100、H200、次世代の GB200 を含む）と 300 MW 超**を擁する。Anthropic は**今月中に**これを推論基盤に組み込むとしている。",

@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "openai-cyber-trusted-contact-voice-may7-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI が5月7日に3つの発表 — GPT-5.5-Cyber「Trusted Access」プログラム、ChatGPT「Trusted Contact」自傷防止、新音声 AI モデル",
+    "excerpt": "OpenAI が5月7日、AI 開発・サイバー防衛・利用者保護にまたがる3つの大きな更新を一斉に発表した。①**GPT-5.5-Cyber** — 重要インフラを守るディフェンダー向けに、より許容範囲の広いサイバーセキュリティ特化モデルを **Trusted Access for Cyber（TAC）** プログラムで限定提供開始。②**Trusted Contact** — ChatGPT のオプション機能で、自傷リスクが自動検知＋人間レビューで「深刻」と判定された場合、ユーザーが事前に指定した成人連絡先へ SMS / メールで通知する。③**新しい音声 AI モデルを API に追加** — リアルタイム音声インテリジェンスのレイヤーを刷新。Anthropic SpaceX 契約（5/6）の翌日に「サイバー × 安全 × 音声」の3軸で並行投入する形で、フロンティアモデル各社の競争は **能力ベンチマークから安全運用と業界別パッケージング** へと軸足を移しつつある。",
+    "date": "2026-05-11",
+    "newsDate": "2026-05-07",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["OpenAI", "ChatGPT", "セキュリティ", "安全性", "音声"],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI 5/7 アップデート"
+    }
+  },
+  {
     "id": "anthropic-spacex-colossus-1-compute-deal-2026",
     "type": "news",
     "category": "product",
