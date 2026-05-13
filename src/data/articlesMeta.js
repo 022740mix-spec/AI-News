@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "cursor-microsoft-teams-integration-2026",
+    "type": "news",
+    "category": "editor",
+    "title": "Cursor が Microsoft Teams 統合を公開 — `@Cursor` メンションでクラウドエージェントにタスク委任、リポジトリ・モデルを自動選択して PR を作成",
+    "excerpt": "Cursor が5月11日、**Microsoft Teams 統合**を一般公開した。Teams の任意のチャネルで **`@Cursor` メンション**するとクラウドエージェントにタスクを委任でき、Cursor 側の情報（リポジトリ・実行履歴）を Teams に引き出すこともできる。Cursor は**プロンプトと直近のエージェント活動からリポジトリとモデルを自動選択**し、スレッド全体を文脈として読み込んで実装を行い、**チームレビュー用の PR を作成**する流れだ。インストールは Cursor ダッシュボードから。3月の Cursor Automations（Slack / GitHub / PagerDuty トリガー）に続く「チャットアプリ起点で動くエージェント」の Microsoft Teams 版で、OpenAI Workspace Agents（4/22）や Anthropic Claude Managed Agents と並ぶ流れだ。",
+    "date": "2026-05-13",
+    "newsDate": "2026-05-11",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": ["Cursor", "Microsoft Teams", "エージェント", "PR", "開発ツール"],
+    "coverImage": {
+      "src": "logos/microsoft.svg",
+      "alt": "Cursor in Microsoft Teams"
+    }
+  },
+  {
     "id": "google-googlebook-gemini-intelligence-android-show-2026",
     "type": "news",
     "category": "product",

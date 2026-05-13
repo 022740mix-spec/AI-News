@@ -4,6 +4,44 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "cursor-microsoft-teams-integration-2026": {
+    "body": [
+      "Cursor が5月11日、**Microsoft Teams 統合**を公式に公開した。Teams ユーザーは、チャネル内のメッセージで **`@Cursor` をメンション**するだけでクラウドエージェントにタスクを委任でき、逆に Cursor 側のリポジトリ情報・エージェント実行履歴を Teams に引き出すこともできる。3月の **Cursor Automations**（Slack / GitHub / PagerDuty トリガー）に続き、Cursor は「**チャットアプリ起点で動くエージェント**」のラインアップに Microsoft Teams を追加した格好だ。",
+      "## 使い方: `@Cursor` メンションでタスク委任",
+      "ユーザーは Teams のチャネルやスレッドで `@Cursor` を呼び出し、自然言語でタスクを書く。Cursor 側のエージェントは以下を自律的に処理する:",
+      "- **リポジトリの自動選択**: プロンプトの文脈と直近のエージェント活動履歴から、適切なリポジトリを選ぶ",
+      "- **モデルの自動選択**: タスク内容に応じてモデルを切り替える",
+      "- **スレッド全体の文脈取り込み**: 該当スレッドの会話を最初から最後まで読み、関係者の議論を踏まえて判断する",
+      "- **PR 作成**: 実装を完了したらチームレビュー用のプルリクエストを作成",
+      "従来は IDE 内または Cursor ダッシュボード経由でしか動かなかったエージェントが、**チームの普段の会話の場**から呼び出せる設計に変わる。Slack 統合（既存）と組み合わせれば、組織が Slack / Teams のどちらを採用していてもエージェントワークフローを同じ形で運用できる。",
+      "## インストール",
+      "**Cursor ダッシュボード**から統合のインストールを開始する。Cursor アカウントと Microsoft 365 / Teams のワークスペースを接続する流れになる。詳細手順は公式の [Microsoft Teams integration docs](https://cursor.com/docs/integrations/microsoft-teams) に記載されている。",
+      "## 業界文脈: 「チャットアプリ × エージェント」の標準化",
+      "Microsoft Teams 統合の投入は、**コラボツールがエージェント実行の主要 UI に変わりつつある**流れの一例だ。4月以降の主要動きを並べると:",
+      "- **4/8** Anthropic Claude Managed Agents（Slack 等向け代理実行を想定）",
+      "- **4/22** OpenAI Workspace Agents（Slack / Google Drive / Microsoft 365 / Salesforce / Notion 連携）",
+      "- **5/1** Microsoft Agent 365（組織のエージェント観測・統制レイヤー、$15/user/月）",
+      "- **5/11** Cursor in Microsoft Teams（本記事）",
+      "- **5/12** Anthropic Claude Code agent view（マルチセッション統合ダッシュボード）",
+      "「IDE で書く」「ターミナルで動かす」だった開発者ワークフローが、**チャットでメンションすれば PR が返ってくる**形に標準化されつつある。Cursor は IDE × エージェントで先行してきたが、UI の入り口を**チームの普段の会話の場**に移すことで、コードを書かないメンバー（PM、QA、PO）からも「軽い修正・調査タスク」を起票できる構造になる。",
+      "## 注意点",
+      "- **権限境界**: Teams から起動したエージェントが触れるリポジトリ・ブランチの権限は、Cursor 側の組織設定に従う。Teams のメンバーが Cursor 組織のメンバーであることが前提",
+      "- **コンテキストの誤読**: スレッド全体を文脈に取り込む設計のため、別件で交わされた議論が誤って指示として解釈される可能性がある。重要タスクは新しいスレッドで明確に依頼するのが安全",
+      "- **コスト**: 既存の Cursor Background Agent と同じ従量モデルで動くと推測される（プランは Cursor 公式ドキュメント参照）"
+    ],
+    "primarySources": [
+      {
+        "title": "Cursor in Microsoft Teams",
+        "site": "Cursor Changelog",
+        "url": "https://cursor.com/changelog/microsoft-teams"
+      },
+      {
+        "title": "Microsoft Teams Integration",
+        "site": "Cursor Docs",
+        "url": "https://cursor.com/docs/integrations/microsoft-teams"
+      }
+    ]
+  },
   "google-googlebook-gemini-intelligence-android-show-2026": {
     "body": [
       "Google が5月12日に開催した **「The Android Show: I/O Edition」** で、新カテゴリのノート PC プラットフォーム **Googlebook** と、その中核となる AI レイヤー **Gemini Intelligence** を発表した。Anthropic が同日2発表（Claude Platform on AWS GA / Claude Code agent view）を行ったのとほぼ同時刻に、Google も「ハードウェア × OS × AI」の再定義に踏み込む格好となった。",
