@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "anthropic-claude-for-legal-plugins-cocounsel-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が「Claude for Legal」を公開 — 12分野の実務プラグイン＋20超 MCP コネクタ、Thomson Reuters CoCounsel と提携、Apache 2.0 で OSS 配布",
+    "excerpt": "Anthropic が5月12日、法務専用のプラグインスイート **Claude for Legal** を発表した。商取引・コーポレート・雇用・プライバシー・製品・規制・AI ガバナンス・知財・訴訟など **12分野の実務プラグイン**と、20超の MCP コネクタ（DocuSign / Ironclad / iManage / NetDocuments / LexisNexis / Thomson Reuters / Box / Everlaw / CourtListener 等）を一斉にリリース。**Thomson Reuters の CoCounsel Legal は Anthropic の Claude Agent SDK で全面リビルド**され、MCP コネクタとして統合された。Microsoft 365（Word / Excel）連携、契約更新監視・規制監視・法廷提出物監視などの **定時実行 Managed Agent** も同梱。リポジトリは Apache 2.0 で公開。2月の前段リリース後、**法務職は開発者を除いて最も Claude を使う職業**になったと Anthropic は説明している。",
+    "date": "2026-05-13",
+    "newsDate": "2026-05-12",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": ["Anthropic", "Claude", "法務", "MCP", "プラグイン"],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Claude for Legal"
+    }
+  },
+  {
     "id": "cursor-microsoft-teams-integration-2026",
     "type": "news",
     "category": "editor",

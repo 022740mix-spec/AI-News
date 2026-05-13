@@ -4,6 +4,79 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "anthropic-claude-for-legal-plugins-cocounsel-2026": {
+    "body": [
+      "Anthropic が5月12日、法務専用のプラグイン・コネクタ・データ統合スイート **Claude for Legal** を公開した。**12 分野**の実務プラグインに **100以上のスキル・コマンド**、**20を超える MCP コネクタ**、**Microsoft 365（Word / Excel）統合**、定時実行型の **Managed Agent** までを束ねた包括的な業界別パッケージで、Anthropic が**特定産業に特化したコレクション**を公式 OSS として配布する初めての規模の取り組みだ。リポジトリは **Apache 2.0** で [github.com/anthropics/claude-for-legal](https://github.com/anthropics/claude-for-legal) に公開（執筆時点で **338 stars / 62 forks**）。",
+      "## 12 分野の実務プラグイン",
+      "提供されるプラグインは以下の通り（カッコ内は代表的なスキル例）:",
+      "- **commercial-legal**: ベンダー契約・NDA・SaaS MSA レビュー",
+      "- **corporate-legal**: M&A デューデリジェンス・クロージングチェックリスト",
+      "- **employment-legal**: 雇用契約レビュー・州別解雇リスク判定",
+      "- **privacy-legal**: GDPR / DSAR 対応起草",
+      "- **product-legal**: 製品ローンチレビュー",
+      "- **regulatory-legal**: 規制監視",
+      "- **ai-governance-legal**: AI ガバナンス",
+      "- **ip-legal**: 商標クリアランス検索・知財管理",
+      "- **litigation-legal**: クレームチャート作成・訴訟管理",
+      "- **legal-clinic**: ロースクール診療所向け",
+      "- **law-student**: 法学生向け学習支援（ソクラテス式ドリル等）",
+      "- **legal-builder-hub**: スキル検出・QA（**隠しコンテンツ / インジェクション / ライセンス / 鮮度チェック**を実行）",
+      "外部プラグインとして **CoCounsel Legal**（Thomson Reuters）も含まれており、ベンダー側のサポート対象として個別契約に紐付く。",
+      "## Thomson Reuters CoCounsel が Claude Agent SDK で全面リビルド",
+      "同日発表された注目の提携は、**Thomson Reuters が CoCounsel Legal を Anthropic の Claude Agent SDK で全面的に作り直した**こと。CoCounsel は **107の国・地域で100万の専門家が使う**法務 AI で、計画立案・ツール選択・権威ある内容の取得・ワークフロー途中での適応までを行う「**エージェント型システム**」に進化した。Claude 側からは MCP コネクタとして呼び出せるため、法律家は普段の Claude の会話画面から、**引用根拠つきの法務ワークプロダクト**を直接生成できる。",
+      "## 20超の MCP コネクタ",
+      "Claude を既存の法務インフラに接続するため、以下のような MCP コネクタが揃う:",
+      "- **法務調査**: CourtListener、Trellis、Descrybe、Solve Intelligence、LexisNexis、Thomson Reuters",
+      "- **契約管理（CLM）/ ドキュメント管理（DMS）**: Ironclad、DocuSign、iManage、NetDocuments、Box",
+      "- **生産性**: Slack、Google Drive、Linear、Jira、Asana",
+      "- **訴訟・ケース管理**: Everlaw、Aurora、Courtroom5",
+      "## Managed Agent: 定時実行で法務業務を自動化",
+      "Anthropic が4月に公開した **Claude Managed Agents** をベースに、法務向けの定時実行エージェントが含まれている:",
+      "- **renewal-watcher**: 契約更新期限の監視",
+      "- **docket-watcher**: 法廷提出物の監視",
+      "- **reg-monitor**: 規制変更の監視",
+      "- **launch-radar**: 製品ローンチの追跡",
+      "- **diligence-grid**: M&A デューデリジェンスの進捗管理",
+      "`scripts/deploy-managed-agent.sh` で `ANTHROPIC_API_KEY` を渡してデプロイする実装が公開されている。",
+      "## Microsoft 365 / Claude Cowork 統合",
+      "Word のサイドバーから `/` コマンドでプラグイン機能を起動し、追跡変更モードでレビュー結果を返す設計。Excel 出力にも対応する。**Claude Cowork** の Customize → Browse plugins からインストールでき、**Claude Code** からは `/plugin marketplace add` と `/plugin install <name>@claude-for-legal` で導入できる。",
+      "## 安全運用への設計: Cold-start interview と Citation guard rail",
+      "重要な点として、各プラグインは導入時に **cold-start interview** を実行することが推奨されている。これによりユーザーの practice profile（取扱分野・準拠州・既往の契約スタイル等）が生成され、全スキルがそのプロファイルから読み込んで出力する。スキップするとジェネリックな出力になる。",
+      "また、研究系コネクタを接続しないと **Citation guard rail** が引用を検証できず、出力に `[verify]` フラグが付く。Anthropic は明示的に「**すべての出力は attorney review の対象**」「法的アドバイスではなくドラフト」とリポジトリに記載しており、AI が独立して法務判断をする想定にはなっていない。",
+      "## 採用の背景: 法務職が「開発者の次に Claude を使う」職種に",
+      "Anthropic の associate general counsel Mark Pike によれば、**2月の前段リリース以降、法務職は開発者を除いて最も Claude を使う職業**になった。同社の直近の法務向けウェビナーには **20,000人以上の法務専門家**が参加し、Anthropic にとって過去最大の法務系セッションとなった。Big Law と呼ばれる大手ローファームが Claude を採用する事例も Fortune 等が報じている。",
+      "## 業界文脈: AI 法務サービスの本格競争へ",
+      "TechCrunch は「AI 法務サービスが過熱しており、Anthropic がそこに加わった」と報じた。既存プレイヤー（Harvey、Casetext / CoCounsel、Lexis+ AI、Westlaw Precision）が市場を牽引してきたが、今回 Anthropic は **OSS で公開し、自社の Claude Agent SDK を中核に据える**ことで、ベンダーロックインの少ない選択肢を提示する形になった。",
+      "5月12日は Anthropic にとって、Claude Platform on AWS GA（同日）、Claude Code agent view（同日）、そして本記事の Claude for Legal の **同日3本立て**となった。Cursor の Microsoft Teams 統合（5/11）、Google の Googlebook 発表（5/12）と合わせ、**「AI のフロンティアモデル競争」から「業界別パッケージング × 配布チャネル」競争へ**の重心移動がはっきり見える一週間となっている。"
+    ],
+    "primarySources": [
+      {
+        "title": "anthropics/claude-for-legal",
+        "site": "GitHub",
+        "url": "https://github.com/anthropics/claude-for-legal"
+      },
+      {
+        "title": "Anthropic Announces Legal Practice Plug-Ins for Claude, Legal Tech Integrations",
+        "site": "Law.com",
+        "url": "https://www.law.com/legaltechnews/2026/05/12/anthropic-announces-legal-practice-plug-ins-for-claude-legal-tech-integrations/"
+      },
+      {
+        "title": "Thomson Reuters and Anthropic Expand Partnership to Connect Claude with CoCounsel Legal",
+        "site": "PR Newswire",
+        "url": "https://www.prnewswire.com/news-releases/thomson-reuters-and-anthropic-expand-partnership-to-connect-claude-with-cocounsel-legal-302769890.html"
+      },
+      {
+        "title": "Anthropic Goes All-In on Legal, Releasing More Than 20 Connectors and 12 Practice-Area Plugins",
+        "site": "LawSites",
+        "url": "https://www.lawnext.com/2026/05/anthropic-goes-all-in-on-legal-releasing-more-than-20-connectors-and-12-practice-area-plugins-for-claude.html"
+      },
+      {
+        "title": "The AI legal services industry is heating up — Anthropic is getting in on the action",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/05/12/the-ai-legal-services-industry-is-heating-up-anthropic-is-getting-in-on-the-action/"
+      }
+    ]
+  },
   "cursor-microsoft-teams-integration-2026": {
     "body": [
       "Cursor が5月11日、**Microsoft Teams 統合**を公式に公開した。Teams ユーザーは、チャネル内のメッセージで **`@Cursor` をメンション**するだけでクラウドエージェントにタスクを委任でき、逆に Cursor 側のリポジトリ情報・エージェント実行履歴を Teams に引き出すこともできる。3月の **Cursor Automations**（Slack / GitHub / PagerDuty トリガー）に続き、Cursor は「**チャットアプリ起点で動くエージェント**」のラインアップに Microsoft Teams を追加した格好だ。",

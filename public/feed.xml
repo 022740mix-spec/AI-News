@@ -8,6 +8,14 @@
   <updated>2026-05-13T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Anthropic が「Claude for Legal」を公開 — 12分野の実務プラグイン＋20超 MCP コネクタ、Thomson Reuters CoCounsel と提携、Apache 2.0 で OSS 配布</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-for-legal-plugins-cocounsel-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-for-legal-plugins-cocounsel-2026</id>
+    <published>2026-05-12T15:00:00Z</published>
+    <updated>2026-05-12T15:00:00Z</updated>
+    <summary>Anthropic が5月12日、法務専用のプラグインスイート Claude for Legal を発表した。商取引・コーポレート・雇用・プライバシー・製品・規制・AI ガバナンス・知財・訴訟など 12分野の実務プラグインと、20超の MCP コネクタ（DocuSign / Ironclad / iManage / NetDocuments / LexisNexis / Thomson Reuters / Box / Everlaw / CourtListener 等）を一斉にリリース。Thomson Reuters の CoCounsel Legal は Anthropic の Claude Agent SDK で全面リビルドされ、MCP コネクタとして統合された。Microsoft 365（Word / Excel）連携、契約更新監視・規制監視・法廷提出物監視などの 定時実行 Managed Agent も同梱。リポジトリは Apache 2.0 で公開。2月の前段リリース後、法務職は開発者を除いて最も Claude を使う職業になったと Anthropic は説明している。</summary>
+  </entry>
+  <entry>
     <title>Google が「Googlebook」と「Gemini Intelligence」を発表 — Chromebook 後継の AI ネイティブ・ノート PC、Acer/ASUS/Dell/HP/Lenovo から今秋発売、Magic Pointer で UI を再設計</title>
     <link rel="alternate" type="text/html" href="?a=google-googlebook-gemini-intelligence-android-show-2026"/>
     <id>tag:ai-tool-news.jp,2026:google-googlebook-gemini-intelligence-android-show-2026</id>
