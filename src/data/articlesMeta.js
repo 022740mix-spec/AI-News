@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "anthropic-stainless-acquisition-sdk-infrastructure-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が Stainless 買収交渉中（$300M+）— OpenAI と Google も使う AI モデル SDK 自動生成基盤を取り込み、開発者体験レイヤーを支配へ",
+    "excerpt": "The Information が5月13日、**Anthropic が SDK 自動生成スタートアップ Stainless を $300M 以上で買収する交渉が advanced stage に入っている**と報じた。Stainless は4年前に NY で創業、AI を使って **API スキーマから OpenAI、Anthropic、Google などモデルベンダーの公式 SDK を自動生成**するプラットフォームを提供している。2024年12月の評価額 $150M から **倍以上のプレミアム**となる。OpenAI 自身は過去に SDK の社内開発を打ち切り、Stainless にメンテナンスを移した経緯があり、買収が成立すれば **Anthropic が競合の開発者接点（SDK 生成・更新）まで握る**異例の構図に。5/13報道の $900B 評価額・$30-50B 調達と同時並行の動きで、Anthropic は資金調達で得た余力を**開発者エコシステムの基盤レイヤー獲得**に振り向けつつある。",
+    "date": "2026-05-14",
+    "newsDate": "2026-05-14",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Anthropic", "M&A", "SDK", "開発者ツール", "戦略"],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic × Stainless"
+    }
+  },
+  {
     "id": "anthropic-900b-valuation-funding-overtakes-openai-2026",
     "type": "news",
     "category": "product",
