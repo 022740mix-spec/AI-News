@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-05-13T15:00:00Z</updated>
+  <updated>2026-05-14T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Anthropic が $900B 評価額で $30-50B 調達交渉 — OpenAI（$852B）を抜き「世界最高評価額の AI 企業」へ、Ramp 指数では業務利用シェアでも逆転</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-900b-valuation-funding-overtakes-openai-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-900b-valuation-funding-overtakes-openai-2026</id>
+    <published>2026-05-13T15:00:00Z</published>
+    <updated>2026-05-13T15:00:00Z</updated>
+    <summary>Bloomberg と New York Times が5月12日、Anthropic が $30-50 billion の新規調達を 評価額 $900〜950 billion で交渉中と報じた。成立すれば3月の OpenAI の $852 billion を上回り、世界で最も評価額の高い AI スタートアップになる。Anthropic は Code with Claude（5/6）の場で ARR が $30 billion を突破したことを公表しており、Amazon の最大 $25B 追加投資（4/20）と Google の最大 $40B 投資（4/24）に続く資金供給網の強化が進む。同時に Ramp の業務利用 AI 指数では4月に Anthropic が 34.4% に上昇し OpenAI を初めて上回った。クローズは月内とされ、確定すればスタートアップ史上最速で $1T に到達する候補となる。</summary>
+  </entry>
   <entry>
     <title>Anthropic が「Claude for Legal」を公開 — 12分野の実務プラグイン＋20超 MCP コネクタ、Thomson Reuters CoCounsel と提携、Apache 2.0 で OSS 配布</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-for-legal-plugins-cocounsel-2026"/>

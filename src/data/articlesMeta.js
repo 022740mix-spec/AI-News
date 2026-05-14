@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "anthropic-900b-valuation-funding-overtakes-openai-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が $900B 評価額で $30-50B 調達交渉 — OpenAI（$852B）を抜き「世界最高評価額の AI 企業」へ、Ramp 指数では業務利用シェアでも逆転",
+    "excerpt": "Bloomberg と New York Times が5月12日、Anthropic が $30-50 billion の新規調達を **評価額 $900〜950 billion** で交渉中と報じた。成立すれば3月の OpenAI の $852 billion を上回り、**世界で最も評価額の高い AI スタートアップ**になる。Anthropic は Code with Claude（5/6）の場で **ARR が $30 billion を突破**したことを公表しており、Amazon の最大 $25B 追加投資（4/20）と Google の最大 $40B 投資（4/24）に続く資金供給網の強化が進む。同時に Ramp の業務利用 AI 指数では4月に Anthropic が 34.4% に上昇し **OpenAI を初めて上回った**。クローズは月内とされ、確定すれば**スタートアップ史上最速で $1T に到達する候補**となる。",
+    "date": "2026-05-13",
+    "newsDate": "2026-05-13",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Anthropic", "資金調達", "投資", "評価額", "OpenAI"],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic $900B 評価額"
+    }
+  },
+  {
     "id": "anthropic-claude-for-legal-plugins-cocounsel-2026",
     "type": "news",
     "category": "product",
