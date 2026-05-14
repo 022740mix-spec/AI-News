@@ -4,6 +4,67 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "anthropic-stainless-acquisition-sdk-infrastructure-2026": {
+    "body": [
+      "**The Information** が5月13日、Anthropic が SDK 自動生成スタートアップ **Stainless** を **少なくとも $300 million** で買収する交渉が **advanced stage（最終段階）** に入っていると報じた。複数のメディア（Reuters、Investing.com、Bloomberg 系、Open Source For You 等）が翌5/13-14 に同内容を追随報道している。Anthropic 自身は5月14日時点で買収交渉について公式コメントを出していない。",
+      "## Stainless とは何か",
+      "**Stainless** は NY 拠点の4年前創業のスタートアップ。AI を使って **OpenAPI / 関連スキーマから各種プログラミング言語の公式 SDK を自動生成**する基盤を提供しており、API ベンダーは「API 仕様を Stainless に渡すと、TypeScript / Python / Go / Java / Ruby 等の SDK が完成形で出力される」体験を得られる。",
+      "現在のクライアントには**OpenAI、Anthropic、Google、Meta、Cloudflare** といった主要 AI モデル / インフラベンダーが並んでおり、彼らの**公式 SDK の中身は Stainless で生成された**ものだ。OpenAI は過去に自社 SDK 開発を試みたが**メンテナンス負荷が高すぎて打ち切り**、Stainless 経由に切り替えたという経緯を The Information は報じている。",
+      "## 評価額: 2024年末の倍以上",
+      "Stainless の前回評価額は **2024年12月時点で $150M**（Series A）。今回の買収額**$300M 以上**は**2倍以上のプレミアム**で、AI モデルの飛躍的普及と SDK 利用増を直接反映している。",
+      "## なぜ戦略的に重要か",
+      "**1. 競合の開発者接点を握る**: Anthropic が買収後も Stainless を中立に運営する保証がない限り、**OpenAI / Google の公式 SDK 更新が Anthropic の意思決定に依存**することになる。CLI 系・エージェントツールの裏では SDK が動いており、API のバージョンアップ・新エンドポイント対応・型定義の品質が、開発者体験に直結する。",
+      "**2. SDK 自動生成は AI ベンダーにとって不可欠なインフラ**: 各社が短いサイクルで API を進化させる中（直近6週間で Claude Opus 4.7 / GPT-5.5 / DeepSeek V4 がリリース）、**SDK の手作業メンテナンスは現実的ではない**。Stainless はその「自動更新パイプライン」を提供する。",
+      "**3. データのフィードバック**: SDK 生成基盤を持てば、**どのモデルがどの言語からどう呼ばれるかの利用データ**にもアクセスが可能になる。ただし買収後の運営方針次第。",
+      "## 業界の論点: 中立性と分離",
+      "OpenAI と Google が今後も Stainless を使い続けるかは未確定だ。**競合のインフラに依存し続けるリスクをどう評価するか**が、両社にとっての焦点になる。考えられる選択肢:",
+      "- **継続利用**: Anthropic が独立運営を約束し、契約とコードベース分離（China Wall）を整える",
+      "- **代替プロバイダ移行**: 別の SDK 自動生成サービスや内製に戻る",
+      "- **手動 SDK 開発**: 最大手だけは自前に戻す（コスト・速度面で困難）",
+      "OpenAI は過去に内製に挫折しているため、短期的には **継続利用 + 中立運営の契約交渉**が現実的との見方が多い。",
+      "## 連続する動きの中の位置付け",
+      "Anthropic は5月以降、以下を立て続けに進めている:",
+      "- **5/6** SpaceX Colossus 1 借り上げ（220K GPU、300+ MW）",
+      "- **5/12** Claude Platform on AWS GA、Claude Code agent view、Claude for Legal の同日3本立て",
+      "- **5/13** $30-50B 調達交渉（評価額 $900-950B）報道、Ramp で業務利用シェア逆転",
+      "- **5/14** Stainless 買収報道（本記事）",
+      "**コンピュート供給 → モデル配布 → 業界別パッケージング → 開発者接点**と、レイヤーごとに**買い揃え・契約・統合**が並列で進行している構図だ。OpenAI も Deployment Company + Tomoro 買収（5/11）、Daybreak（5/11-12）と対抗するが、SDK 基盤を一気に押さえに行く Anthropic の動きは、配布レイヤーで一段抜け出す可能性を示す。",
+      "## 公式確認の現状",
+      "**5月14日時点で、Anthropic も Stainless も買収交渉について公式に確認していない**。本記事は The Information の独占報道に Reuters、Investing.com、複数の業界メディアが追随した報道時点情報として記述している。クローズの有無、最終的な買収額、運営方針は今後の正式発表を待つ必要がある。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "Stainless の概要",
+        "headers": ["項目", "内容"],
+        "rows": [
+          ["所在", "ニューヨーク"],
+          ["創業", "2022年（約4年前）"],
+          ["前回評価額", "$150M（2024年12月、Series A）"],
+          ["買収交渉額", "$300M 以上（2倍以上のプレミアム）"],
+          ["主要クライアント", "OpenAI、Anthropic、Google、Meta、Cloudflare 等"],
+          ["提供価値", "API スキーマから多言語 SDK を AI で自動生成・更新"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic in Talks to Buy Developer Tools Startup Used by OpenAI, Google",
+        "site": "The Information",
+        "url": "https://www.theinformation.com/articles/anthropic-talks-buy-developer-tools-startup-used-openai-google"
+      },
+      {
+        "title": "Anthropic in talks to buy dev tools startup for $300 mln - The Information",
+        "site": "Investing.com / Reuters",
+        "url": "https://www.investing.com/news/stock-market-news/anthropic-in-talks-to-buy-dev-tools-startup-for-300-mln-the-information-4683007"
+      },
+      {
+        "title": "Anthropic Eyes $300M Stainless Acquisition To Strengthen AI Infrastructure",
+        "site": "Open Source For You",
+        "url": "https://www.opensourceforu.com/2026/05/anthropic-eyes-300m-stainless-acquisition-to-strengthen-ai-infrastructure/"
+      }
+    ]
+  },
   "anthropic-900b-valuation-funding-overtakes-openai-2026": {
     "body": [
       "Anthropic が新規資金調達の最終調整に入っていることが、**Bloomberg（5/12）と New York Times（5/12）の報道**で明らかになった。両社が複数の関係者を引いて伝えるところによれば、調達規模は **$30 billion から $50 billion**、評価額は **$900 billion から $950 billion**。これが確定すれば、**3月に確定した OpenAI の $852 billion 評価額を上回り、世界で最も評価額の高い AI スタートアップ**になる。クローズは月内が目標で、**スタートアップ史上最速で $1 trillion に到達する候補**となる。",
