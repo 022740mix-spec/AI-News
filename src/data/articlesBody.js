@@ -4,6 +4,73 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "anthropic-900b-valuation-funding-overtakes-openai-2026": {
+    "body": [
+      "Anthropic が新規資金調達の最終調整に入っていることが、**Bloomberg（5/12）と New York Times（5/12）の報道**で明らかになった。両社が複数の関係者を引いて伝えるところによれば、調達規模は **$30 billion から $50 billion**、評価額は **$900 billion から $950 billion**。これが確定すれば、**3月に確定した OpenAI の $852 billion 評価額を上回り、世界で最も評価額の高い AI スタートアップ**になる。クローズは月内が目標で、**スタートアップ史上最速で $1 trillion に到達する候補**となる。",
+      "## 何が新しいか",
+      "Anthropic は4月以降、巨大なコンピュート契約を立て続けに獲得してきたが、これらは**コンピュート支出と一体化した投資**だった: ",
+      "- **Amazon の最大 $25B 追加投資**（4/20、評価額 $380B、AWS 10年で $100B+ 支出）",
+      "- **Google の最大 $40B 投資**（4/24、即時 $10B + 業績目標達成で $30B、評価額 $350B）",
+      "- **SpaceX Colossus 1 借り上げ**（5/6、220K GPU、300+ MW）",
+      "今回の $30-50B ラウンドは、**特定クラウドへの紐付けがない一般株式調達**と見られる点が異なる。Bloomberg は「複数のグローバル投資家との早期協議段階」と伝えている。Anthropic 自身は調達の事実を公式に確認していない。",
+      "## 売上の急加速",
+      "Anthropic CEO の Dario Amodei は5月6日の **Code with Claude** カンファレンスで、**ARR（年換算売上）が $30 billion を突破**したと公表した。これは1年前の **$1.5B 規模からの実質20倍成長**で、2025年末時点（約 $9 billion）から半年弱で3倍超に増えた計算になる。",
+      "売上ドライバーは API（Claude API、Claude Code 経由）が中心で、エンタープライズ・開発者層に深く食い込んでいる。コンシューマー ChatGPT に依存する OpenAI とは収益構造が異なり、本質的な利用に直結する売上の比率が高いとされる。",
+      "## 業務利用シェアでも OpenAI を抜く（Ramp 指数）",
+      "資金調達と並行して、**業務利用面でも歴史的な逆転**が起きている。決済プラットフォームの Ramp が公表する **AI Index**（B2B カードの実際の利用データを基にした AI ベンダー採用率）で、**2026年4月に Anthropic の業務利用シェアが 34.4%（前月比 +3.8pt）まで上昇し、初めて OpenAI を上回った**。",
+      "Ramp の指数は「自社決済データを匿名化集計したもの」であり、実際の支出から AI 利用を測る指標として注目されている。Anthropic Project Deal（4/25、エージェント間商取引実験）や Claude for Legal（5/12、業界別パッケージング）といった業務向け施策の積み重ねが、数字として現れた格好だ。",
+      "## OpenAI 側の対応",
+      "OpenAI も独自の打ち手を進めている。5/11 には **Deployment Company**（OpenAI のエンタープライズ展開専門子会社、初期 $4B 投資）を立ち上げ、AI コンサルティングの **Tomoro 買収**で約150名のデプロイメント専門エンジニアを取り込んだ。5/11-5/12 には **Daybreak**（Codex Security をベースにした脆弱性検出・パッチ検証イニシアチブ）も公開し、サイバー領域で Anthropic Mythos Preview への対抗を強めている。",
+      "また、EU からの要求に対しては **OpenAI は GPT-5.5-Cyber を提供することにコミット**した一方、**Anthropic は Mythos Preview の同等アクセス提供をまだ確約していない**（Cryptobriefing、CNBC 報道）。規制対応では OpenAI が一歩先行する構図だ。",
+      "## 何を意味するか",
+      "**1. 評価額の構造**: Anthropic の評価額が OpenAI を上回るのは初。これは「AI 業界でフロンティアラボがどう評価されるか」の基準が、**コンシューマーリーチ（ChatGPT のユーザー数）から、企業利用 × 開発者エコシステム × ARR の伸び**に重心移動した証左でもある。",
+      "**2. 「投資家3つ巴」の継続**: Amazon・Google が直接出資し、SpaceX もコンピュート供給で食い込む。今回のラウンドが純粋な財務投資家中心なら、Anthropic は**特定クラウドへの過度なロックインを避ける**戦略を進めることになる。",
+      "**3. リスク**: $30B ARR は AI 企業として歴史的水準だが、$900B 評価額は **30倍 ARR マルチプル**。Microsoft が GitHub Copilot に Claude を採用する一方で、独自モデル（OpenAI 経由含む）を強化するという構造もあり、配布チャネル依存のリスクは残る。",
+      "**4. $1T 到達のシナリオ**: 月内クローズが実現すれば、スタートアップが**創業から約5年で評価額 $1T**に届くのは過去最速。OpenAI も同水準ラウンドを準備していると報じられており、両社が**前後して $1T を超えるレース**になる可能性がある。",
+      "## 公式確認の現状",
+      "5月13日時点で、**Anthropic 自身は今回のラウンドを公式に確認していない**。Bloomberg は「複数の関係者からの情報」、New York Times は Mike Isaac の記事として伝えている。クローズまでの最終的な条件・引受先・実際の評価額は今後の正式発表を待つ必要がある。本記事は両社の報道に基づく時点情報として位置付ける。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 7,
+        "caption": "Anthropic の主要資金調達・コンピュート契約（2026年4-5月）",
+        "headers": ["日付", "内容", "規模", "評価額・条件"],
+        "rows": [
+          ["4/20", "Amazon が追加投資（即時 $5B + 条件付き $20B）", "最大 $25B", "評価額 $380B（即時分）"],
+          ["4/24", "Google が投資（即時 $10B + 業績達成で $30B）", "最大 $40B", "評価額 $350B（即時分）"],
+          ["5/6", "SpaceX Colossus 1 借り上げ", "220K GPU / 300+ MW", "コンピュート契約（評価額には関与せず）"],
+          ["5/12-5/13", "$30-50B ラウンド交渉中（複数報道）", "$30-50B", "評価額 $900-950B"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic In Talks to Raise $30 Billion at $900 Billion Valuation",
+        "site": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-05-12/anthropic-in-talks-to-raise-30-billion-at-900-billion-valuation"
+      },
+      {
+        "title": "Sources: Anthropic could raise a new $50B round at a valuation of $900B",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/04/29/sources-anthropic-could-raise-a-new-50b-round-at-a-valuation-of-900b/"
+      },
+      {
+        "title": "Anthropic in talks for funding at a valuation as high as $950 billion",
+        "site": "Sherwood News",
+        "url": "https://sherwood.news/tech/anthropic-in-talks-for-funding-at-a-valuation-as-high-as-950-billion-which-would-make-it-bigger-than-openai/"
+      },
+      {
+        "title": "Anthropic beats OpenAI on business adoption",
+        "site": "Ramp AI Index",
+        "url": "https://ramp.com/leading-indicators/ai-index-may-2026"
+      },
+      {
+        "title": "EU confirms OpenAI offers access to cybersecurity model, Anthropic lags behind",
+        "site": "Crypto Briefing",
+        "url": "https://cryptobriefing.com/eu-openai-cybersecurity-model-anthropic-lags/"
+      }
+    ]
+  },
   "anthropic-claude-for-legal-plugins-cocounsel-2026": {
     "body": [
       "Anthropic が5月12日、法務専用のプラグイン・コネクタ・データ統合スイート **Claude for Legal** を公開した。**12 分野**の実務プラグインに **100以上のスキル・コマンド**、**20を超える MCP コネクタ**、**Microsoft 365（Word / Excel）統合**、定時実行型の **Managed Agent** までを束ねた包括的な業界別パッケージで、Anthropic が**特定産業に特化したコレクション**を公式 OSS として配布する初めての規模の取り組みだ。リポジトリは **Apache 2.0** で [github.com/anthropics/claude-for-legal](https://github.com/anthropics/claude-for-legal) に公開（執筆時点で **338 stars / 62 forks**）。",
