@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "feature-china-ai-models-may-2026-qwen-kimi-ernie",
+    "type": "feature",
+    "category": "model",
+    "title": "【特集】中国系 AI モデルの5月集中更新 — Qwen 3.7 Max が Opus 4.6 を一部凌駕、Kimi K2.6 が OSS で GPT-5.4 を抜く、Ernie 5.1・GLM・Seedance 2.0 も同期投下",
+    "excerpt": "米国フロンティアラボ（Anthropic Opus 4.8、Google Gemini 3.5、OpenAI GPT-5.5）の集中アップデートにほぼ同時並行で、中国の主要 AI ラボも5月に大型モデルを連続投入した。**Alibaba Qwen 3.7 Max**（5/20、Alibaba Cloud Summit）は 1M トークンコンテキストで SWE-Pro 60.6 / Terminal-Bench 2.0 69.7 / GPQA 92.4 を記録し、Claude Opus 4.6 Max を一部ベンチで上回り、価格は **$2.50/$7.50 per M トークン**で Opus 4.7 の約半額。**Moonshot Kimi K2.6**（4/20）は 1兆パラメータの OSS で SWE-Bench Pro 58.6 を達成し、**GPT-5.4 や Claude Opus 4.6 を上回る**初のオープンウェイトに。Baidu Ernie 5.1、Zhipu GLM 更新、ByteDance Seedance 2.0（高精細実写動画生成）と続き、**米中 AI 競争の「第三極」**としての存在感が増している。DeepSeek V4 を含めると5月だけで6本の中国製大型モデルが市場に出た計算。",
+    "date": "2026-05-28",
+    "newsDate": "2026-05-20",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": ["中国", "Qwen", "Kimi", "Ernie", "オープンソース"],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "China AI Models May 2026"
+    }
+  },
+  {
     "id": "google-io-2026-gemini-3-5-flash-antigravity-spark-2026",
     "type": "news",
     "category": "model",
