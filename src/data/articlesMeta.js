@@ -5,6 +5,38 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "google-io-2026-gemini-3-5-flash-antigravity-spark-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Google I/O 2026 まとめ — Gemini 3.5 Flash が GA、Antigravity と Gemini Spark を投入、Android XR 眼鏡と AI Ultra $100/月も発表",
+    "excerpt": "Google が5月19日からの **Google I/O 2026** で 100以上の発表を行った。中心は **Gemini 3.5 Flash の即時 GA** — Terminal-Bench 2.1 で 76.2%、GDPval-AA 1656 Elo、MCP Atlas 83.6% を記録し、Flash クラスのコスト・速度で 3.1 Pro を超える性能を達成。新エージェント基盤 Antigravity 2.0 がデスクトップアプリとして全世界提供開始。**Gemini Spark**（パーソナルエージェント）は来週から AI Ultra 加入者向けにベータ展開。新しい **AI Ultra プラン $100/月** にこれが含まれる。マルチモーダルの Gemini Omni、Samsung 製 Android XR 眼鏡、Veo / Lyria / Imagen / Nano Banana 2 の連携など、OS レベルから生成 AI まで広範に投入。Anthropic の Claude Opus 4.8（5/28）と並ぶ「5月後半の AI フロンティア集中発表週」となった。",
+    "date": "2026-05-28",
+    "newsDate": "2026-05-19",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": ["Google", "Gemini", "I/O 2026", "エージェント", "Android"],
+    "coverImage": {
+      "src": "logos/google.svg",
+      "alt": "Google I/O 2026"
+    }
+  },
+  {
+    "id": "anthropic-claude-opus-4-8-dynamic-workflows-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Claude Opus 4.8 リリース — SWE-bench Verified 88.6% / SWE-bench Pro 69.2%、USAMO 2026 で 96.7%、Dynamic Workflows と3倍安い Fast Mode を投入",
+    "excerpt": "Anthropic が5月28日、フラッグシップモデル **Claude Opus 4.8** を公開した。Opus 4.7（4/16 GA）から約6週間という短サイクルで、SWE-bench Verified 88.6%、SWE-bench Pro 69.2%、**USAMO 2026 数学が 69.3% → 96.7%、1M トークン長コンテキストの GraphWalks F1 が 40.3% → 68.1%** と大幅改善。価格は Opus 4.7 据え置きで $5/$25 per M トークン。新しい **Fast Mode は 2.5倍高速・前世代比3倍安い $10/$50**。Claude Code 向けには**最大1,000の並列サブエージェント**をオーケストレーションできる **Dynamic Workflows**（リサーチプレビュー）を導入し、Anthropic は「より鋭い判断力・進捗の honest な自己報告・長時間の自律実行」を新世代の重点に置く。提供は Anthropic API、Amazon Bedrock、Google Cloud Vertex AI、Microsoft Foundry で同日 GA。",
+    "date": "2026-05-28",
+    "newsDate": "2026-05-28",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": ["Anthropic", "Claude", "モデルリリース", "ベンチマーク", "エージェント"],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Claude Opus 4.8"
+    }
+  },
+  {
     "id": "anthropic-stainless-acquisition-sdk-infrastructure-2026",
     "type": "news",
     "category": "product",
