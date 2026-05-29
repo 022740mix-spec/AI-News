@@ -16,6 +16,14 @@
     <summary>Anthropic が5月28日、フラッグシップモデル Claude Opus 4.8 を公開した。Opus 4.7（4/16 GA）から約6週間という短サイクルで、SWE-bench Verified 88.6%、SWE-bench Pro 69.2%、USAMO 2026 数学が 69.3% → 96.7%、1M トークン長コンテキストの GraphWalks F1 が 40.3% → 68.1% と大幅改善。価格は Opus 4.7 据え置きで $5/$25 per M トークン。新しい Fast Mode は 2.5倍高速・前世代比3倍安い $10/$50。Claude Code 向けには最大1,000の並列サブエージェントをオーケストレーションできる Dynamic Workflows（リサーチプレビュー）を導入し、Anthropic は「より鋭い判断力・進捗の honest な自己報告・長時間の自律実行」を新世代の重点に置く。提供は Anthropic API、Amazon Bedrock、Google Cloud Vertex AI、Microsoft Foundry で</summary>
   </entry>
   <entry>
+    <title>【特集】中国系 AI モデルの5月集中更新 — Qwen 3.7 Max が Opus 4.6 を一部凌駕、Kimi K2.6 が OSS で GPT-5.4 を抜く、Ernie 5.1・GLM・Seedance 2.0 も同期投下</title>
+    <link rel="alternate" type="text/html" href="?a=feature-china-ai-models-may-2026-qwen-kimi-ernie"/>
+    <id>tag:ai-tool-news.jp,2026:feature-china-ai-models-may-2026-qwen-kimi-ernie</id>
+    <published>2026-05-20T15:00:00Z</published>
+    <updated>2026-05-20T15:00:00Z</updated>
+    <summary>米国フロンティアラボ（Anthropic Opus 4.8、Google Gemini 3.5、OpenAI GPT-5.5）の集中アップデートにほぼ同時並行で、中国の主要 AI ラボも5月に大型モデルを連続投入した。Alibaba Qwen 3.7 Max（5/20、Alibaba Cloud Summit）は 1M トークンコンテキストで SWE-Pro 60.6 / Terminal-Bench 2.0 69.7 / GPQA 92.4 を記録し、Claude Opus 4.6 Max を一部ベンチで上回り、価格は $2.50/$7.50 per M トークンで Opus 4.7 の約半額。Moonshot Kimi K2.6（4/20）は 1兆パラメータの OSS で SWE-Bench Pro 58.6 を達成し、GPT-5.4 や Claude Opus 4.6 を上回る初のオープンウェイトに。Baidu Ernie 5.1、Zhipu GLM 更新、ByteDance Seedance 2.0（高精細実写動画生成）と続き、米中 AI 競争の「第三極」としての存在感が増して</summary>
+  </entry>
+  <entry>
     <title>Google I/O 2026 まとめ — Gemini 3.5 Flash が GA、Antigravity と Gemini Spark を投入、Android XR 眼鏡と AI Ultra $100/月も発表</title>
     <link rel="alternate" type="text/html" href="?a=google-io-2026-gemini-3-5-flash-antigravity-spark-2026"/>
     <id>tag:ai-tool-news.jp,2026:google-io-2026-gemini-3-5-flash-antigravity-spark-2026</id>

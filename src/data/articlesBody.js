@@ -4,6 +4,98 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "feature-china-ai-models-may-2026-qwen-kimi-ernie": {
+    "body": [
+      "5月の AI 業界は、米国フロンティアラボの集中アップデート（Anthropic Opus 4.8、Google Gemini 3.5 Flash、OpenAI GPT-5.5 Instant）と並行して、**中国の主要 AI ラボも大型モデルを連続投入**した。Qwen / Kimi / Ernie / GLM / Seedance と分野横断で、**ベンチマーク・コスト・オープンウェイト**の3軸で米中の差が一段縮まる月となった。本特集では公式値ベースで主要動向を整理する。",
+      "## ① Alibaba Qwen 3.7 Max — Opus 4.6 を一部ベンチで上回る",
+      "Alibaba は **5月19日に API を公開（Model Studio）し、5月20日の 2026 Alibaba Cloud Summit（杭州）で Qwen 3.7 Max を正式発表**した。",
+      "**主要スペック・ベンチマーク（公式値）:**",
+      "- **コンテキスト窓**: 1M トークン",
+      "- **Artificial Analysis Intelligence Index**: 56.6",
+      "- **SWE-Bench Pro**: 60.6（Claude Opus 4.6 を上回る）",
+      "- **Terminal-Bench 2.0**: 69.7（Opus 4.6 を上回る）",
+      "- **GPQA Diamond**: 92.4",
+      "- **MCP-Atlas**: Opus 4.6 を上回る",
+      "- **Extended thinking モード**: ネイティブ対応",
+      "**価格は $2.50 / 入力 M トークン、$7.50 / 出力 M トークン** で、**Claude Opus 4.7 の約半額**。エージェント型コーディングタスクで DeepSeek V4 Pro と Claude Opus 4.6 を上回るとされる。",
+      "## ② Moonshot Kimi K2.6 — オープンウェイトで GPT-5.4 を抜く",
+      "**4月20日に Moonshot AI が公開**した **Kimi K2.6** は、**Modified MIT License のオープンウェイト**として配布される **1兆パラメータ**級のエージェント特化モデル。Hugging Face にも公開され、自前推論サーバへの載せ替えが可能だ。",
+      "**主要ベンチマーク（公式値）:**",
+      "- **SWE-Bench Verified**: 80.2%",
+      "- **SWE-Bench Pro**: **58.6**（GPT-5.4 57.7、Claude Opus 4.6 53.4、Gemini 3.1 Pro 54.2 を上回る）",
+      "- **マルチモーダル対応**: ネイティブ",
+      "- **エージェント・スウォーム**: **最大300のサブエージェント並列実行**、4,000ステップを協調",
+      "- **連続稼働**: 単一タスクで **12時間連続**実行可",
+      "Kimi K2.6 は「**OSS が初めて GPT-5.4 (xhigh) を SWE-Bench Pro で上回った**」とコミュニティで広く話題になり、Claude Opus 4.8 の Dynamic Workflows（1,000サブエージェント）と並ぶ「**エージェントオーケストレーション**」の流れを示した。",
+      "## ③ Baidu Ernie 5.1 — 推論・数学・マルチモーダルを底上げ",
+      "Baidu は **Ernie 5.1** をリリース、**論理推論・数学計算・マルチモーダル生成**で大幅改善を発表した。エージェント能力の最適化と**推論コスト低減・応答速度向上**を同時に達成したとされる。コンテンツ作成・エンタープライズオフィス自動化・インテリジェント顧客サービスへの組み込みが想定されている。中国国内 B2B 市場での実装が中心。",
+      "## ④ Zhipu GLM — オープンソース更新",
+      "Zhipu AI は **GLM（オープンソース大型モデル）の更新版**を公開。コード生成、論理推論、専門領域 QA で改善。**個人開発者・小規模チーム向けは無償提供を継続**する方針。Apache 2.0 系のライセンスでカジュアル利用が可能な点が、商用 API 中心の米国フロンティアラボとの大きな違いだ。",
+      "## ⑤ ByteDance Seedance 2.0 — 動画生成の質を一段引き上げ",
+      "ByteDance は動画生成モデルを **Seedance 2.0** にアップグレード。**高精細の実写人物動画生成、インテリジェントシーン切替、ワンクリックでのテキスト→動画**生成に対応。ショート動画制作・ライブ配信素材生成で実用フェーズに入った。Sora 2、Runway Gen5、Veo に対する中国側の対抗軸として位置付けられる。",
+      "## ⑥ DeepSeek V4（4月24日プレビュー、既報）",
+      "5月の連続更新に先立ち、**DeepSeek V4-Pro（1.6T MoE / 49B active）と V4-Flash（284B / 13B）**が4月24日にプレビュー公開済み。Bloomberg は4/26に「正式版発表は国産チップ（Huawei Ascend 等）への統合を優先するため延期」と続報を出している。今回扱う5月モデル群が比較対象に DeepSeek V4 を含むのもこのためだ。",
+      "## 3軸比較: 米中フロンティアモデル",
+      "## 米中の役割分担と「第三極」化",
+      "5月のリリース群を並べて分かるのは、**中国系モデルが3つの戦略軸で米国フロンティアと差別化**しようとしている点だ:",
+      "**1. オープンウェイト戦略**: Kimi K2.6（1T、Modified MIT）、GLM、DeepSeek V4（公開済み）が**自社推論への載せ替えを許す**ライセンスで配布。Anthropic / OpenAI の API 専有戦略と対極で、規制業界・社内データ保護の用途では強い武器になる。",
+      "**2. 価格対性能**: Qwen 3.7 Max が $2.50/$7.50 で Opus 4.7 の約半額、Kimi はオープンウェイトで実質ゼロ。**フロンティア性能をコモディティ価格帯に押し下げる**動きが継続している。",
+      "**3. 国産チップ統合**: DeepSeek V4 の延期理由として明らかになった通り、**Huawei Ascend、Cambricon、Biren など国産半導体ベースの最適化**が並行進行。米国の輸出規制を前提に、サプライチェーンを国内完結させる中長期戦略が見える。",
+      "## 課題と限界",
+      "**1. ベンチマーク以外の評価**: 各社の公式値は公平な再現が難しい場合がある。実利用での hallucination 率、長文での coherence、特定言語（英語以外）での品質などは、ベンチマーク値とは別軸の評価が必要。",
+      "**2. データ越境と規制**: 中国の AI 法・データ越境規制により、グローバル運用では設計上の制約が大きい。エンタープライズ採用では権限・地理リージョン分離が必要。",
+      "**3. エコシステム接続性**: Hugging Face、MCP、IDE / Agent ツール群との接続性は、米国モデルが先行している。OSS モデルがクラウド以外で広く採用されるには、SDK・ドキュメント・コミュニティの充実が引き続き課題となる。",
+      "## 5月の AI 業界全体像との接続",
+      "Anthropic Opus 4.8（5/28）、Google I/O 2026（5/19〜、Gemini 3.5 Flash / Antigravity / Spark）、そして本特集の中国系5モデル更新を並べると、**米国フロンティアモデル × エージェント基盤** と **中国フロンティアモデル × オープンウェイト × 価格破壊** が、5月という同じ月にほぼ同期して動いた構図が浮かび上がる。**フロンティア競争はもはや3軸（米クローズド・米オープン寄り・中オープン寄り）になりつつある**——というのが、5月末時点の見立てだ。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 22,
+        "caption": "中国系フロンティアモデルの主要スペック比較（公式値）",
+        "headers": ["モデル", "リリース", "ベンチ要点", "コンテキスト", "価格・ライセンス"],
+        "rows": [
+          ["Qwen 3.7 Max", "5/20", "SWE-Pro 60.6、Terminal-Bench 69.7、GPQA 92.4", "1M トークン", "$2.50/$7.50 per M（クローズド）"],
+          ["Kimi K2.6", "4/20", "SWE-Verified 80.2、SWE-Pro 58.6", "ネイティブ MM", "Modified MIT（オープンウェイト、1T params）"],
+          ["DeepSeek V4 Pro", "4/24 プレビュー", "詳細未開示（公式 GA 延期）", "1M トークン", "オープンソース（1.6T MoE / 49B active）"],
+          ["Ernie 5.1", "5月", "推論・数学・MM 改善（公式詳細値非公開）", "未公開", "クローズド（中国 B2B 中心）"],
+          ["GLM 更新", "5月", "コード・論理・専門 QA 改善", "未公開", "オープンソース（個人無償）"],
+          ["Seedance 2.0", "5月", "高精細実写動画生成", "—（動画生成）", "ByteDance 提供"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Qwen 3.7 Max: Alibaba's New Flagship AI Model 2026",
+        "site": "Digital Applied",
+        "url": "https://www.digitalapplied.com/blog/qwen-3-7-max-alibaba-flagship-ai-model-2026"
+      },
+      {
+        "title": "Alibaba teases new Qwen previews, highest-ranking Chinese AI models on Arena",
+        "site": "South China Morning Post",
+        "url": "https://www.scmp.com/tech/tech-trends/article/3354087/alibaba-teases-new-qwen-previews-highest-ranking-chinese-ai-models-arena"
+      },
+      {
+        "title": "Kimi K2.6 — Moonshot AI",
+        "site": "Kimi Blog",
+        "url": "https://www.kimi.com/blog/kimi-k2-6"
+      },
+      {
+        "title": "moonshotai/Kimi-K2.6",
+        "site": "Hugging Face",
+        "url": "https://huggingface.co/moonshotai/Kimi-K2.6"
+      },
+      {
+        "title": "Latest Domestic AI Updates in May 2026: Large Model Upgrades & New AI Tools",
+        "site": "AI Scope Hub",
+        "url": "https://aiscopehub.com/latest-domestic-ai-updates-in-may-2026-large-model-upgrades-new-ai-tools/"
+      },
+      {
+        "title": "Best Chinese AI Models 2026: Kimi K2.6, DeepSeek V3.2, Step 3.5 Flash, Qwen, GLM Compared",
+        "site": "TokenMix",
+        "url": "https://tokenmix.ai/blog/best-chinese-ai-models-2026-comparison-guide"
+      }
+    ]
+  },
   "google-io-2026-gemini-3-5-flash-antigravity-spark-2026": {
     "body": [
       "Google が5月19日に開幕した **Google I/O 2026** で、Sundar Pichai CEO の基調講演を含む **100以上の発表**を行った。公式ブログ「100 things we announced at Google I/O 2026」が一斉公開され、**フロンティアモデル、エージェント基盤、OS 統合、Android XR ハードウェア、創造系生成 AI、新料金プラン**まで広範に投下された。本記事では中核トピックを整理する。",
