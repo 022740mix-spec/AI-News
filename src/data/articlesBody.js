@@ -4,6 +4,165 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "google-io-2026-gemini-3-5-flash-antigravity-spark-2026": {
+    "body": [
+      "Google が5月19日に開幕した **Google I/O 2026** で、Sundar Pichai CEO の基調講演を含む **100以上の発表**を行った。公式ブログ「100 things we announced at Google I/O 2026」が一斉公開され、**フロンティアモデル、エージェント基盤、OS 統合、Android XR ハードウェア、創造系生成 AI、新料金プラン**まで広範に投下された。本記事では中核トピックを整理する。",
+      "## ① Gemini 3.5 Flash が即時 GA",
+      "発表の中心は **Gemini 3.5 Flash** の一般提供（GA）開始だ。Flash クラスの**高速・低コスト**を維持しながら、**フロンティア級の知能と「アクション」**（ツール呼び出し・エージェント実行）を兼ね備える Google 初のモデルとされる。",
+      "公式ベンチマーク:",
+      "- **Terminal-Bench 2.1**: **76.2%**（Gemini 3.1 Pro を上回る）",
+      "- **GDPval-AA**: **1656 Elo**",
+      "- **MCP Atlas**: **83.6%**",
+      "- 出力トークン/秒で**他のフロンティアモデルの4倍速**を主張",
+      "提供チャネルは **Google Antigravity、Gemini API（Google AI Studio）、Android Studio** で同日 GA。**Gemini 3.5 Pro** は翌月リリース予定として「現在テスト中」と告知された。",
+      "## ② Antigravity 2.0（エージェント基盤）",
+      "**Google Antigravity** は Google のエージェント実行基盤で、I/O では **Antigravity 2.0** デスクトップアプリを**全世界向けに公開**した。Gemini 3.5 Flash を実行モデルとして使い、**Managed Agents** として動作する。Interactions API 経由でアプリに組み込むことも可能で、Google AI Studio からもアクセスできる。",
+      "OpenAI Workspace Agents（4/22）や Anthropic Claude Code agent view（5/12）、Cursor の Microsoft Teams 統合（5/11）と並ぶ、「**エージェントオーケストレーションの標準形**」をモデルベンダー側からも提示した格好だ。",
+      "## ③ Gemini Spark（パーソナルエージェント）",
+      "**Gemini Spark** は Gemini 3.5 を基盤に Antigravity 上で動作する**パーソナルエージェント**。「**重要な行動を取る前にユーザーに確認する**」設計を強調し、自律性と安全性のバランスを取る。**来週から AI Ultra 加入者向けにベータ提供**（米国先行）。プロダクトとしては「very early」と Google 自身が認めている段階だ。",
+      "## ④ Gemini Omni（マルチモーダル統合）",
+      "**Gemini Omni** は **画像・音声・動画・テキストの任意入力を取り、現実世界の知識に基づく動画を出力**する新シリーズ。Gemini の推論能力と Nano Banana 2（画像）/ Veo（動画）/ Lyria 3 Pro（音楽）といった**専用生成モデル**を統合する形態をとる。**Gemini アプリ、Google Flow、YouTube Shorts** で既に稼働中。",
+      "## ⑤ Gemini Intelligence の OS 統合拡大",
+      "5月12日の **The Android Show: I/O Edition** で先行発表されていた **Gemini Intelligence** は、I/O 2026 本会場で**展開範囲が拡大**された。Android、ChromeOS、Wear OS、Android Auto という Google の主要 OS 全てに**OS レベルで統合**され、**画面コンテキストを観測し、ユーザーが Assistant を開かずにマルチステップの動作を完了**する設計だ。",
+      "Microsoft の **Copilot+ PC**、Apple の **Apple Intelligence**、**Anthropic Claude on Apple Siri**（4/22 提携確認）と並んで、**「OS × AI」**競争が完全に出揃った。",
+      "## ⑥ Android XR 眼鏡（Samsung 製）",
+      "ハードウェアでは **Samsung 製の Android XR スマートグラス**が発表された。**iPhone サポート版のオーディオグラス**も今秋発売予定で、Apple Vision Pro と異なるアプローチ（**音声中心 × Gemini × クロスプラットフォーム**）を打ち出している。",
+      "## ⑦ Google Flow / Flow Music モバイル展開",
+      "創造系では **Flow（Android ベータ、iOS は近日）と Flow Music（iOS 提供開始、Android は近日）**がモバイル単体アプリ化。動画・音楽生成のワークフローがデスクトップから持ち出される。",
+      "## ⑧ 新料金プラン: AI Ultra $100/月",
+      "新料金は **AI Ultra プラン $100/月**。**Gemini Spark、Gemini 3.5、Antigravity 2.0、Flow / Flow Music、Veo、Lyria、Imagen、Nano Banana 2** を含む「**開発者・クリエイター・パワーユーザー向け統合パック**」。OpenAI ChatGPT Pro（$200/月）や Anthropic Claude Max（$100-200/月）と直接競合する位置付け。",
+      "## 解釈: 「OS × AI」と「エージェント基盤」の本格出揃い",
+      "Google I/O 2026 の総合的な含意は次の3点だ:",
+      "1. **モデル本体**: Gemini 3.5 Flash の GA で、**Flash 系列が「速くて安いだけ」から「速くて安くて強い」へ**。OpenAI GPT-5.5 / Anthropic Claude Opus 4.7 とフロンティア競争の三つ巴がさらに加速",
+      "2. **エージェント基盤**: Antigravity 2.0 と Gemini Spark で、Google も「**ユーザー代理のオーケストレーター**」を本格投入。Claude Code agent view（5/12）、OpenAI Workspace Agents（4/22）と並ぶ標準形が3社で揃った",
+      "3. **OS 統合**: Gemini Intelligence の OS レベル展開で、**Android / Chrome / Wear / Auto を横断する単一の AI レイヤー**が確立。Apple Intelligence や Microsoft Copilot+ PC との「**OS × AI 戦争**」の本陣が明確化",
+      "## 同時期の Anthropic との対比",
+      "Google I/O 2026 と **Anthropic の Claude Opus 4.8（5/28、別記事）**を並べると、5月後半は**フロンティアモデルとエージェント基盤の集中アップデート週**となった。OpenAI 側の対抗（Deployment Company、Daybreak、Workspace Agents）も含めると、「**モデル × エージェント × OS × 配布**」のレイヤー全体でほぼ同期した動きが取られていることが分かる。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 1,
+        "caption": "Google I/O 2026 主要発表（一部）",
+        "headers": ["カテゴリ", "発表内容", "提供時期"],
+        "rows": [
+          ["フロンティアモデル", "Gemini 3.5 Flash GA", "即日"],
+          ["フロンティアモデル", "Gemini 3.5 Pro", "翌月リリース予定"],
+          ["エージェント基盤", "Antigravity 2.0 デスクトップアプリ", "即日（全世界）"],
+          ["パーソナルエージェント", "Gemini Spark（Beta）", "来週（AI Ultra 加入者・米国先行）"],
+          ["マルチモーダル", "Gemini Omni", "Gemini アプリ・Flow・YouTube Shorts で稼働中"],
+          ["OS 統合", "Gemini Intelligence（Android/ChromeOS/Wear/Auto）", "順次展開"],
+          ["ハードウェア", "Samsung Android XR グラス", "公開"],
+          ["ハードウェア", "Android XR オーディオグラス（iPhone 対応）", "今秋"],
+          ["クリエイティブ", "Flow / Flow Music モバイルアプリ", "Flow=Android Beta、Music=iOS"],
+          ["料金", "AI Ultra プラン", "$100/月"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "100 things we announced at Google I/O 2026",
+        "site": "Google Blog",
+        "url": "https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/"
+      },
+      {
+        "title": "Google I/O 2026: Sundar Pichai's opening keynote",
+        "site": "Google Blog",
+        "url": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/"
+      },
+      {
+        "title": "With Gemini 3.5 Flash, Google bets its next AI wave on agents, not chatbots",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/05/19/with-gemini-3-5-flash-google-bets-its-next-ai-wave-on-agents-not-chatbots/"
+      },
+      {
+        "title": "Innovations from Google I/O 26 on Google Cloud",
+        "site": "Google Cloud Blog",
+        "url": "https://cloud.google.com/blog/products/ai-machine-learning/innovations-from-google-io-26-on-google-cloud"
+      },
+      {
+        "title": "Everything Google announced at I/O 2026",
+        "site": "9to5Google",
+        "url": "https://9to5google.com/2026/05/19/google-io-2026-news/"
+      }
+    ]
+  },
+  "anthropic-claude-opus-4-8-dynamic-workflows-2026": {
+    "body": [
+      "Anthropic が5月28日、フラッグシップ **Claude Opus 4.8** を公開した。Opus 4.7（4/16 GA）から約6週間という極めて短いサイクルでの世代交代で、Anthropic はモデル更新の頻度を一段引き上げている。価格は **$5/$25 per M トークン**（入力/出力）で 4.7 据え置き、**Anthropic API、Amazon Bedrock、Google Cloud Vertex AI、Microsoft Foundry** に同日 GA で展開された。",
+      "## 主要ベンチマーク（Anthropic 公式）",
+      "Opus 4.8 のベンチマーク改善は以下のとおり:",
+      "- **SWE-bench Verified**: **88.6%**（4.7 比 +1.0pt、4.7 は 87.6%）",
+      "- **SWE-bench Pro**: **69.2%**（前世代 64.3% から +4.9pt）",
+      "- **USAMO 2026（数学）**: **96.7%**（前世代 **69.3% → 大幅改善**）",
+      "- **GraphWalks F1（1M トークン長コンテキスト）**: **68.1%**（前世代 40.3% から大きく改善）",
+      "- **エージェント型コンピュータ使用**: 82.8% → 83.4%",
+      "- **知識作業スコア**: 1753 → 1890",
+      "USAMO（米国数学オリンピック）と GraphWalks の伸びが特に大きく、Anthropic は「**より厳しい推論と長文脈の追跡能力**」を中心に底上げしたと説明している。",
+      "## Anthropic の言う3つの改善軸",
+      "Opus 4.8 を「より鋭い判断力（sharper judgement）」「**より honest な進捗報告**」「**より長時間自律実行できる**」とした。早期テスターによれば、Opus 4.8 は**作業中の不確実性をより頻繁にフラグし、根拠のない主張を以前より避ける**傾向があるとされる。Mythos Preview（4/7、Project Glasswing 限定）の安全姿勢を「公開可能版」に持ち込んだ位置付けと読める。",
+      "## Dynamic Workflows（Claude Code リサーチプレビュー）",
+      "Opus 4.8 と同時に投入された目玉機能が **Dynamic Workflows** だ。Claude Code 上で、Claude 自身が**オーケストレーションスクリプトを書き、1セッション内で最大1,000の並列サブエージェント**を起動し、繰り返し検証しながらタスクを進められる。途中で中断・再開できる resumable state も持ち、長時間の解析・大規模リファクタリング・横断的な探索に向く。",
+      "提供は **Max / Team / Enterprise（管理者有効化条件付き）/ Claude API / Bedrock / Vertex / Foundry**。研究プレビュー段階のため、本番ワークロードでの利用は規模・コスト・失敗時挙動の確認を経てからが推奨される。",
+      "## Fast Mode が 2.5倍速・3倍安く",
+      "もう一つの大きな変更が **Fast Mode** だ。Opus 4.8 の Fast Mode は **2.5倍高速**、価格は **$10/M 入力・$50/M 出力**で、**前世代の Fast Mode 比で約3倍安い**。標準モード（$5/$25）と Fast Mode（$10/$50）で**「コスト or レイテンシ」のトレードオフを明示的に選べる**設計で、エージェント運用での待ち時間と料金のバランスを取りやすくなった。",
+      "## 5月の Anthropic 集中投下の流れ",
+      "Opus 4.8 リリースは、5月の Anthropic 集中アップデートの締めくくりにあたる:",
+      "- **5/6** SpaceX Colossus 1 借り上げ（220K GPU、300+ MW）でレート上限緩和",
+      "- **5/12** Claude Platform on AWS GA、Claude Code agent view、Claude for Legal の同日3本立て",
+      "- **5/13** $30-50B 調達・$900B 評価額交渉報道、Ramp で業務利用シェア逆転",
+      "- **5/14** Stainless 買収報道（OpenAI / Google も使う SDK 基盤）",
+      "- **5/28** **Opus 4.8 リリース + Dynamic Workflows + 安い Fast Mode（本記事）**",
+      "コンピュート供給拡張 → 配布チャネル整備 → 開発者接点掌握 → モデル本体の更新 と、レイヤーを横断する動きを一気に揃えた。",
+      "## 公式コメント要約",
+      "Anthropic は公式ブログで「Opus 4.8 は long-running agentic tasks（長時間自律エージェント）に向けた重要な一歩」と位置付け、Dynamic Workflows と組み合わせることで「**1セッションで数十〜数百のサブタスクを並列にこなす本格的なエージェントオーケストレーション**」が可能になるとしている。GitHub Copilot や Cursor、Windsurf 等のサードパーティ IDE / CLI への波及は数日以内に始まる見込み。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "Claude Opus 4.8 vs 4.7 主要ベンチマーク（Anthropic 公式値）",
+        "headers": ["ベンチマーク", "Opus 4.8", "Opus 4.7", "差分"],
+        "rows": [
+          ["SWE-bench Verified", "88.6%", "87.6%", "+1.0pt"],
+          ["SWE-bench Pro", "69.2%", "64.3%", "+4.9pt"],
+          ["USAMO 2026（数学）", "96.7%", "69.3%", "+27.4pt"],
+          ["GraphWalks F1（1M コンテキスト）", "68.1%", "40.3%", "+27.8pt"],
+          ["エージェント・コンピュータ使用", "83.4%", "82.8%", "+0.6pt"],
+          ["知識作業スコア", "1890", "1753", "+137"]
+        ]
+      },
+      {
+        "afterParagraph": 12,
+        "caption": "Opus 4.8 価格体系",
+        "headers": ["モード", "入力 / Mトークン", "出力 / Mトークン", "備考"],
+        "rows": [
+          ["Standard", "$5", "$25", "Opus 4.7 据え置き"],
+          ["Fast Mode", "$10", "$50", "2.5倍高速、前世代 Fast 比3倍安い"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Claude Opus 4.8",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-opus-4-8"
+      },
+      {
+        "title": "Anthropic releases Opus 4.8 with new 'dynamic workflow' tool",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/"
+      },
+      {
+        "title": "Anthropic Ships Claude Opus 4.8 Alongside Dynamic Workflows and Cheaper Fast Mode",
+        "site": "MarkTechPost",
+        "url": "https://www.marktechpost.com/2026/05/28/anthropic-ships-claude-opus-4-8-alongside-dynamic-workflows-and-cheaper-fast-mode-with-workflows-capped-at-1000-subagents/"
+      },
+      {
+        "title": "Anthropic's Claude Opus 4.8 is here with 3X cheaper fast mode",
+        "site": "VentureBeat",
+        "url": "https://venturebeat.com/technology/anthropics-claude-opus-4-8-is-here-with-3x-cheaper-fast-mode-and-near-mythos-level-alignment"
+      }
+    ]
+  },
   "anthropic-stainless-acquisition-sdk-infrastructure-2026": {
     "body": [
       "**The Information** が5月13日、Anthropic が SDK 自動生成スタートアップ **Stainless** を **少なくとも $300 million** で買収する交渉が **advanced stage（最終段階）** に入っていると報じた。複数のメディア（Reuters、Investing.com、Bloomberg 系、Open Source For You 等）が翌5/13-14 に同内容を追随報道している。Anthropic 自身は5月14日時点で買収交渉について公式コメントを出していない。",
