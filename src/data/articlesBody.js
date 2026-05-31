@@ -4,6 +4,73 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "microsoft-build-2026-project-polaris-mai-coding-2026": {
+    "body": [
+      "**Reuters と The Information** が5月28日、Microsoft が6月2-3日にサンフランシスコで開催する **Build 2026** 開発者カンファレンスで、**コード名 Project Polaris と呼ばれる自社製コーディング AI モデル**を披露すると報じた。同モデルは現行 GitHub Copilot の OpenAI 製モデルに代わる中核として、段階的に Copilot に組み込まれていく計画。Microsoft は5月31日時点でこの発表を公式確認していないが、複数の関係者を引いた両誌の報道に多数のメディアが追随している。",
+      "## MAI（Microsoft AI Superintelligence）の系譜",
+      "Project Polaris を開発したのは **Microsoft の内製 AI 研究組織 MAI**。**Mustafa Suleyman**（元 DeepMind 共同創業者、2024年3月に Microsoft AI 事業 CEO 就任）が率い、**MAI Superintelligence チームは2025年11月に正式発足**した。これまでに以下を公開している:",
+      "- **MAI-Voice-1**: 1秒の演算で60秒分の音声を生成する音声生成（2025年8月）",
+      "- **MAI-Transcribe-1**: 25言語対応の高精度文字起こし（2026年4月）",
+      "- **MAI-Image-2**: Arena.ai の画像生成ランキングで Top 3 入り（2026年4月）",
+      "**Project Polaris は同チーム初の本格的なコーディング特化モデル**にあたる。",
+      "## なぜ今、Copilot を自社モデルに切替か",
+      "背景には2つの直接的な要因がある。",
+      "**1. OpenAI 契約の再交渉（2026年4月）**: これまで Microsoft の内部 AI チームは **フロンティアモデルの自前訓練を契約上制限**されていた。OpenAI への約 $130B 投資の見返りとして、両社の利害調整が行われていたためだ。4月に Microsoft / OpenAI 間の契約が再交渉され、**制約が緩和された**ことで、社内モデル開発が本格化できる状態になった。",
+      "**2. Anthropic Claude Code の台頭**: 一方の競争側では、**Anthropic Claude Code が GitHub Copilot をエンタープライズ開発者シェアで抜き始めた**ことが報じられている。Cybernews、Windows News、Semafor 等が共通して「Microsoft が Claude Code への対抗を急ぐ」と論じた。GitHub Copilot は最近、Claude Opus 4.7（4/16）と Opus 4.8（5/28）に対応する形でモデルラインナップを拡張しているが、**「OpenAI と Anthropic の両方をモデル供給者として持つ」依存構造**そのものを変える必要が出ている。",
+      "## Copilot Starter / Pro / Enterprise の3階層",
+      "Build 2026 ではプラン構造の再編成も予定されている:",
+      "- **Copilot Starter**: 無償プラン（Project Polaris の基本機能を含む見込み）",
+      "- **Copilot Pro**: 個人開発者向けの中位プラン",
+      "- **Copilot Enterprise**: 組織向け、フロンティアモデル選択肢（OpenAI / Anthropic も併用可能と推定）",
+      "**「無償プランの拡充」**は、開発者の最初の接点を Microsoft の自社モデルで囲い込む戦略を示唆する。Anthropic（Claude Code 月 $20/$100/$200）や Cursor（月 $20）の Pro プランの価格帯に対する直接的な圧力になる。",
+      "## Build 2026 のその他予想項目",
+      "事前報道では Project Polaris 以外にも以下が予定されているとされる:",
+      "- **Windows Agent Framework**: 自律 AI エージェントのための新 API 群",
+      "- **Copilot Agent Mode**: マルチエージェント・コーディングワークフロー",
+      "- **GitHub Copilot の自律エージェント機能**: agent view（5/12 の Anthropic 発表）に類する統合管理",
+      "- **MAI 系の追加発表**: 推論モデル、画像、音声、エージェントを束ねる単一プラットフォーム化",
+      "## 戦略的意味: OS × AI 戦争の新段階",
+      "Microsoft の動きは、**Google I/O 2026（5/19、Gemini Intelligence の OS 統合）**、**Apple Intelligence 拡張（5/12 Google 提携）**、**Anthropic Claude Platform on AWS（5/12 GA）** と並ぶ「**OS × AI × 配布**」の再編成の一環だ。フロンティアモデルがコモディティ化に向かう中で、**「どの OS / プラットフォームに AI が入るか」**が事業価値を左右する段階に移行している。",
+      "Microsoft の場合、Windows + Visual Studio + GitHub + Office + Azure という巨大配布チャネルを既に持ちながら、**モデル供給だけ OpenAI に依存**するのは長期的に弱点になる。Project Polaris の登場は「**配布も持つし、モデルも持つ**」という完成形に向けた一歩と読める。",
+      "## 公式確認の現状",
+      "**5月31日時点で、Microsoft 自身は Project Polaris や Copilot 階層再編について公式に発表していない**。本記事は Reuters と The Information の独占報道に Cybernews、Windows News、Let's Data Science、Technobezz 等が追随した報道時点情報として記述。Build 2026 の正式発表（6/2-3）を待つ必要がある。続報があれば追記または別記事で扱う。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 14,
+        "caption": "Microsoft MAI のモデルラインナップ（公開時系列）",
+        "headers": ["モデル", "種別", "公開時期", "備考"],
+        "rows": [
+          ["MAI-Voice-1", "音声生成", "2025年8月", "1秒の演算で60秒音声"],
+          ["MAI-Transcribe-1", "STT", "2026年4月", "25言語対応"],
+          ["MAI-Image-2", "画像生成", "2026年4月", "Arena.ai Top 3"],
+          ["Project Polaris（仮名）", "コーディング", "2026年6月（Build 2026）", "GitHub Copilot 中核へ"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Microsoft plans to unveil a new in-house coding model at its Build developer conference",
+        "site": "Reuters / Technobezz",
+        "url": "https://www.technobezz.com/news/microsoft-plans-to-unveil-a-new-in-house-coding-model-at-its-build-developer-conference-next-week"
+      },
+      {
+        "title": "Microsoft Build 2026: Homegrown AI Models to Power GitHub Copilot",
+        "site": "Windows News",
+        "url": "https://windowsnews.ai/article/microsoft-build-2026-homegrown-ai-models-to-power-github-copilot.420887"
+      },
+      {
+        "title": "Microsoft will unveil new homegrown AI models next week",
+        "site": "Cybernews",
+        "url": "https://cybernews.com/ai-news/microsoft-new-homegrown-ai-models-copilot-github/"
+      },
+      {
+        "title": "Microsoft In-House AI Models: MAI Strategy vs OpenAI (2026)",
+        "site": "Tech-Insider",
+        "url": "https://tech-insider.org/microsoft-mai-in-house-ai-models-openai-2026/"
+      }
+    ]
+  },
   "feature-china-ai-models-may-2026-qwen-kimi-ernie": {
     "body": [
       "5月の AI 業界は、米国フロンティアラボの集中アップデート（Anthropic Opus 4.8、Google Gemini 3.5 Flash、OpenAI GPT-5.5 Instant）と並行して、**中国の主要 AI ラボも大型モデルを連続投入**した。Qwen / Kimi / Ernie / GLM / Seedance と分野横断で、**ベンチマーク・コスト・オープンウェイト**の3軸で米中の差が一段縮まる月となった。本特集では公式値ベースで主要動向を整理する。",
