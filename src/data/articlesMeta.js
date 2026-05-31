@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "microsoft-build-2026-project-polaris-mai-coding-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Microsoft が Build 2026（6/2-3）で自社製コーディング AI「Project Polaris」を披露へ — GitHub Copilot の中核モデルを MAI に切替、Anthropic Claude Code への対抗策",
+    "excerpt": "Reuters と The Information が5月28日、Microsoft が6月2-3日にサンフランシスコで開催する **Build 2026** で、コード名 **Project Polaris** と呼ばれる自社製コーディング AI モデルを披露すると報じた。Microsoft の社内 AI 部門 **MAI**（Microsoft AI Superintelligence、Mustafa Suleyman 率い）が開発し、**GitHub Copilot の中核モデルを段階的に OpenAI から自社製に切替**ていく方針。同時に **Copilot Starter（無償）/ Pro / Enterprise の3階層**への再編成も発表される見込み。背景には、4月の OpenAI との契約再交渉でフロンティアモデル訓練の制約が緩和されたこと、そして Anthropic Claude Code が GitHub Copilot をエンタープライズ開発者シェアで抜き始めたという競争圧力がある。Build 2026 では他に Windows Agent Framework、Copilot Agent Mode、自律エージェント機能の拡充も予定。",
+    "date": "2026-05-31",
+    "newsDate": "2026-05-28",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Microsoft", "GitHub Copilot", "MAI", "Build 2026", "OpenAI"],
+    "coverImage": {
+      "src": "logos/microsoft.svg",
+      "alt": "Microsoft Build 2026 Project Polaris"
+    }
+  },
+  {
     "id": "feature-china-ai-models-may-2026-qwen-kimi-ernie",
     "type": "feature",
     "category": "model",
