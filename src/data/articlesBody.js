@@ -4,6 +4,213 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "feature-ai-ipo-season-cerebras-spacex-anthropic-openai-2026": {
+    "body": [
+      "**Cerebras Systems** が5月14日に NASDAQ 上場を成功させたことを皮切りに、AI 企業の IPO シーズンが本格化している。SpaceX、Anthropic、OpenAI の3社が**いずれも $1 trillion 規模の評価額**で2026年内の上場を予定しており、合計で **$3 trillion 超の AI IPO パイプライン**という史上最大規模の流動性イベントが形成された。本記事は各社の評価額・調達規模・タイムライン・リスクを公式値・複数報道で整理する。",
+      "## ① Cerebras Systems — 5/14 上場、初日 +68%",
+      "**Cerebras** は AI チップ専業のスタートアップで、CS-3 ウェハスケールエンジンを核に、Cloud / オンプレ両方の AI 推論ハードウェアを提供してきた。",
+      "**IPO 概要（公式値）**:",
+      "- **上場日**: 2026年5月14日（NASDAQ）",
+      "- **発行価格**: $185",
+      "- **調達額**: $5.5 billion",
+      "- **初日終値上昇率**: **+68%**",
+      "- **2日目**: −10% で利益確定売り",
+      "今年最大の IPO で、Cerebras の成功は他の AI 企業にとっての試金石になった。CNBC は「Cerebras の好調が SpaceX、OpenAI、Anthropic への投資家関心をさらに高めている」と分析している。",
+      "## ② SpaceX — 6/12 上場予定、$1.75T 評価額目標",
+      "**SpaceX** は xAI との統合後、AI 関連事業（Colossus 1、Anthropic への計算資源提供）が評価に寄与する形となっている。Anthropic との5月6日の Colossus 1 借り上げ契約（220K GPU、300+ MW）は、SpaceX の AI コンピュート供給者としての立ち位置を市場にアピールする材料となった。",
+      "**IPO 概要（報道値）**:",
+      "- **上場予定**: 2026年6月12日",
+      "- **目標評価額**: **$1.75 trillion**",
+      "- **目標調達額**: **$75-80 billion**",
+      "- **業績情報**: 公開プロスペクタス（S-1）が「数週間以内に出る」と複数メディアが報道",
+      "Elon Musk の SpaceX が公開市場でどう評価されるかは、xAI との統合効果も含めた「AI × 宇宙」のテーマ株として注目される。",
+      "## ③ Anthropic — 6/1 confidential filing、10月上場視野",
+      "**Anthropic** は6月1日に **SEC への confidential filing**（非公開での IPO 申請書類提出）を完了した。これは正式な S-1 公開の前段階で、SEC とのフィードバック・修正のやり取りを非公開で行う仕組みだ。**10月の上場を目指す**と Al Jazeera 等が複数報道している。",
+      "**Anthropic IPO の主要数値**:",
+      "- **直近の Series H**: **$65 billion 調達、評価額 $965 billion**（5月28日確定）",
+      "- **累計株式調達**: 約 $125 billion",
+      "- **ARR**: **$47 billion**（5月時点）",
+      "- **競合 OpenAI 評価額**: $852 billion（3月）",
+      "Anthropic が IPO で OpenAI を**評価額・上場順序の両方で先行する**可能性が高まった。",
+      "## ④ OpenAI — Q4 上場の見方",
+      "**OpenAI** は2026年第4四半期の上場を目指していると複数の関係者が報じている。Anthropic に上場順序で先を越されるのを避けるため、年内のタイミング調整が続いている。**累計株式調達は約 $180 billion**で、Anthropic より約 $55B 多い。",
+      "Build 2026 で Microsoft が **Project Polaris**（自社製コーディング AI）と **Scout**（OpenClaw 基盤エージェント）を発表したことで、OpenAI の主要顧客である Microsoft との関係が長期的にどう変化するかが、上場時のリスク要因として議論されている。",
+      "## 業界全体のリスク要因",
+      "**1. 「AI IPO トラップ」警告**: MarketWise などは「Figma 上場後の株価低迷（2026年5月時点で IPO 価格を割り込む）が、AI 銘柄でも繰り返される可能性」と警告。$1T 超の評価額での上場は、**機関投資家の長期保有意欲が試される**水準だ。",
+      "**2. 評価額の循環取引**: Anthropic への Amazon $25B + Google $40B 投資のように、**ハイパースケーラーが投資した先がそのクラウドを買い戻す**循環構造を、規制当局が会計面でどう扱うかは未確定。",
+      "**3. コンピュート供給の不確実性**: OpenAI と Anthropic はいずれも独自のチップ・データセンター供給に大規模 CapEx を要する。**Stargate（OpenAI）と Anthropic の SpaceX/AWS/GCP 連合**で需給バランスが崩れるリスクは、IPO 時のディスクロージャー対象。",
+      "**4. 規制の動向**: 米 SEC は AI 関連企業に対し「能力主張」「安全性主張」のディスクロージャー基準を強化しており、Mythos Preview や GPT-5.5-Cyber 等のディスクロージャー文言が論点になる。",
+      "## 投資家にとっての意味",
+      "今回の3社（SpaceX、Anthropic、OpenAI）はいずれも個人投資家がアクセスしにくい未上場プレミアムを長年享受してきた。**IPO 後にそれら3社の株を機関・個人がどの程度受け止めるか**は、AI 市場全体の流動性を決める。Cerebras の +68% を受けて投資家心理は前のめりだが、Figma 後の調整局面と類似する可能性は否定できない。",
+      "本記事執筆時点で正式な S-1（SpaceX）/ プロスペクタス（Anthropic）はまだ公開されていない。価格、株数、ロックアップ条件、引受シンジケートなどは今後の公式発表を待つ必要がある。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 22,
+        "caption": "2026年 AI IPO パイプラインまとめ",
+        "headers": ["企業", "状態", "上場時期", "評価額", "調達額（目標）"],
+        "rows": [
+          ["Cerebras Systems", "上場済み", "2026/5/14", "—（NASDAQ）", "$5.5B（実績）"],
+          ["SpaceX（xAI 統合後）", "S-1 公開直前と報道", "2026/6/12", "$1.75T", "$75-80B"],
+          ["Anthropic", "Confidential filing", "2026/10 目標", "$965B", "未公開（Series H で $65B 直近完了）"],
+          ["OpenAI", "上場準備", "2026/Q4", "—（直近 $852B 評価額）", "未公開"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Cerebras' blockbuster IPO boosts hype for SpaceX, OpenAI, Anthropic",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/16/cerebras-blockbuster-ipo-boosts-hype-for-spacex-openai-anthropic.html"
+      },
+      {
+        "title": "AI giant Anthropic files for US IPO as investors bet big on AI future",
+        "site": "Al Jazeera",
+        "url": "https://www.aljazeera.com/economy/2026/6/1/ai-giant-anthropic-files-for-us-ipo-as-investors-bet-big-on-ai-future"
+      },
+      {
+        "title": "My guide to the IPOs of SpaceX, OpenAI and Anthropic",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/31/my-guide-to-the-ipos-of-spacex-openai-and-anthropic-including-the-one-i-really-want-to-buy.html"
+      },
+      {
+        "title": "Anthropic's IPO is Just Ahead. Here's What You Need to Know.",
+        "site": "The Motley Fool",
+        "url": "https://www.fool.com/investing/2026/06/02/anthropics-ipo-is-just-ahead-heres-what-you-need-t/"
+      },
+      {
+        "title": "SpaceX, OpenAI, Anthropic: upcoming IPOs to watch in 2026",
+        "site": "IG International",
+        "url": "https://www.ig.com/en/news-and-trade-ideas/spacex-openai-anthropic-2026-ipo-deals-260520"
+      }
+    ]
+  },
+  "microsoft-build-2026-windows-agent-framework-2026": {
+    "body": [
+      "Microsoft が Build 2026（6月2-3日）で発表した **Windows Agent Framework** は、前報で扱った **Scout**（OpenClaw 基盤の「autopilot」エージェント、別記事）の下層にあたるプラットフォーム層だ。Satya Nadella CEO は基調講演で「**Windows は AI 時代のキャンバスとコラボレーター双方になる**」と位置付け、**OS 自体をエージェント実行の基盤に作り直す**戦略を打ち出した。",
+      "## OSS 化と Linux 互換",
+      "最大のサプライズは、**Microsoft が Windows Agent Framework のコアを MIT ライセンスで OSS 公開**したことだ。Anthropic Claude Managed Agents、OpenAI Workspace Agents、Google Antigravity がいずれもプロプライエタリ実行ランタイムを採るのに対し、Microsoft は **Linux でも Docker 拡張経由で動く実行コンテナフォーマット**を約束した。",
+      "**モデル中立**: フレームワーク上のエージェントは **OpenAI、Anthropic、Hugging Face のオープンソースモデル**いずれも利用可能。前日報道の **Project Polaris**（Microsoft 自社製コーディング AI）が中核に組み込まれるが、ユーザー側で選択できる設計だ。",
+      "## 4つの柱",
+      "### 1. Sandboxed Execution Container",
+      "**エージェントを隔離環境で実行**するための新しいコンテナ形式。OS リソース（ファイル、レジストリ、ネットワーク）への直接アクセスを制限し、必要なリソースだけを宣言的に付与する。**Docker 互換**のため、Linux やクラウドでも同じコンテナイメージが動く。エンタープライズのセキュリティ要件（権限分離、データ越境制御）に対応する設計だ。",
+      "### 2. Cloud PC 統合",
+      "**Microsoft Cloud PC（Windows 365）**上で**常時稼働するエージェント**をサポート。ユーザーがローカル PC を閉じても、Cloud PC 側でエージェントが作業を続け、結果を Teams や Outlook に返す。Scout の「autopilot」コンセプトは、この常時稼働性が前提となる。",
+      "### 3. オンデバイス AI モデル",
+      "**ローカルでの推論**を強化。Copilot+ PC（NPU 搭載）上で小型・特化モデルを動かし、機微データを外部に出さずに処理する用途を想定。プライバシー規制業界・オフライン業務向け。Project Polaris の「軽量版」がローカル推論用に提供される見込み。",
+      "### 4. Intelligent Terminal",
+      "**新しいターミナルアプリ**。CLI に AI 補完・対話を統合し、エージェントワークフローの「**コマンドハブ**」として機能。`wt agent run` といったコマンドからエージェントを起動・監視・終了できる。Claude Code の `claude agents` コマンドや Cursor の Agents Window と類似の発想だ。",
+      "## リリースタイムライン",
+      "- **Windows 11 バージョン 26H2**（2026年Q4）で全コンポーネントを標準搭載",
+      "- 既存 Windows 11 ユーザーには **Windows Update 経由**で順次配信",
+      "- **Windows Agent Framework SDK** は Build 2026 開催中（6/2-3）に GitHub で公開",
+      "- **Linux 向け Docker 拡張**は数か月以内",
+      "## 戦略的意味: 「OS × AI」の Microsoft 解",
+      "5月以降の業界全体で、**Apple Intelligence（OS × Anthropic Claude on Siri）**、**Google Gemini Intelligence（Android / ChromeOS / Wear / Auto）**、**Anthropic Claude Platform on AWS**、**OpenAI Workspace Agents** と、「OS × AI × 配布」の選択肢が次々に揃ってきた。Microsoft の動きの特徴は3点だ:",
+      "1. **OSS 戦略**: Anthropic / OpenAI / Google がクローズドな実行ランタイムを採るのに対し、**MIT で OSS 化**することでサードパーティ開発者の囲い込みを狙う",
+      "2. **Linux 互換**: Docker 経由で **Linux ホストでも同じコンテナが動く**ことを約束し、Microsoft 以外の OS シェアにもリーチ",
+      "3. **モデル中立**: Microsoft 自社製（Project Polaris、MAI 系）だけでなく、OpenAI、Anthropic、Hugging Face すべてを乗せられる設計で、**モデルベンダー競争に勝者が決まる前**にプラットフォームを確立する戦略",
+      "## Scout との関係",
+      "**Scout は Windows Agent Framework の最初の旗艦アプリケーション**にあたる。エンタープライズ顧客は Scout を直接導入することも、フレームワーク上で自社専用エージェントを開発することもできる。Microsoft Agent 365（5/1 GA、$15/user/月）の観測・統制レイヤーとも連動する。",
+      "## 残された不明点",
+      "- **Linux Docker 拡張**の具体的なリリース時期と機能範囲",
+      "- **オンデバイスモデル**の正確なモデル名・量子化方式・対応 NPU",
+      "- **価格モデル**: Windows 11 標準機能なのか、Enterprise SKU 限定なのか",
+      "- 既存の **Microsoft Agent 365** との SKU 整理",
+      "これらは Build 2026 の続報セッション、または6月中旬以降の公式ドキュメントで明らかになる見込み。"
+    ],
+    "primarySources": [
+      {
+        "title": "Build 2026: How Microsoft Turns Windows Into an Agentic AI Platform",
+        "site": "Windows News",
+        "url": "https://windowsnews.ai/article/build-2026-how-microsoft-turns-windows-into-an-agentic-ai-platform.421841"
+      },
+      {
+        "title": "Microsoft Build Live Blog",
+        "site": "Microsoft",
+        "url": "https://news.microsoft.com/build-2026-live-blog"
+      },
+      {
+        "title": "Microsoft Build 2026 Recap: Windows Is Now an Agent Platform",
+        "site": "ChatForest",
+        "url": "https://chatforest.com/builders-log/microsoft-build-2026-recap-windows-agent-platform-project-polaris-copilot-workspace/"
+      },
+      {
+        "title": "Microsoft Build 2026 Recap — All AI Announcements",
+        "site": "A Guide to Cloud & AI",
+        "url": "https://www.aguidetocloud.com/blog/microsoft-build-2026-recap/"
+      }
+    ]
+  },
+  "anthropic-may-2026-series-h-milan-korea-arr-47b-2026": {
+    "body": [
+      "5月13日に AI News で記事化した **Anthropic の $30-50B 調達交渉（評価額 $900-950B）報道**は、**5月28日に Series H として正式確定**した。同時に **ARR $47 billion 到達、Milan オフィス開設、Seoul オフィス計画**といった海外展開も連続して発表され、5月後半は Anthropic にとってビジネス側の節目が集中した月となった。本記事は5月後半の Anthropic 関連の確定情報をまとめる。",
+      "## ① Series H 確定: $65B / $965B 評価額",
+      "5月28日の Anthropic 公式発表によれば、Series H ラウンドは以下の条件で**正式クローズ**した。",
+      "- **調達額**: **$65 billion**（過去報道の $30-50B 交渉から拡大）",
+      "- **評価額（post-money）**: **$965 billion**",
+      "- **リードインベスター**: **Altimeter Capital、Dragoneer、Greenoaks、Sequoia Capital**",
+      "- **OpenAI（直近 $852B）を超える評価額**で、AI スタートアップとしては世界最大",
+      "Crunchbase の集計では、Anthropic のこの調達が**2026年5月のグローバルスタートアップ資金の 54%**を占め、ベンチャー市場全体を年内最高水準に押し上げた。",
+      "## ② ARR $47B 到達",
+      "Anthropic は Series H 発表と同時に **ARR が $47 billion に到達**したことも公表した。成長軌跡は以下:",
+      "- **2025年通年**: $10 billion",
+      "- **2026年3月**: $30 billion",
+      "- **2026年5月**: **$47 billion**",
+      "**わずか2か月で $17B 増**（+57%）という伸びは、Claude Code、Claude Managed Agents、Claude Platform on AWS、Claude for Legal といった**5月の連続プロダクト投下**が業績に即時反映されていることを示す。",
+      "## ③ Milan オフィス開設（5/27）",
+      "**5月27日、Anthropic はイタリア・ミラノにオフィスを開設**した。**イタリア企業のエンタープライズ導入、研究機関との連携、開発者コミュニティ支援**を目的としており、欧州での Anthropic の物理的プレゼンスとしてはロンドン、ダブリン、パリに続く拡張となる。EU AI Act 対応と現地パートナーシップを進める拠点として位置付けられている。",
+      "## ④ 韓国 Representative Director 任命（5/26）",
+      "**5月26日には韓国市場の Representative Director として KiYoung Choi 氏が就任**した。これは **Seoul オフィス開設に向けた事前準備**にあたり、韓国の財閥企業（Samsung、SK、LG）、開発者コミュニティ、政府機関との関係構築を担う。日韓は Anthropic にとってアジア太平洋地域で最も売上の伸びが速い市場とされる。",
+      "## ⑤ ベンチャー市場全体への波及",
+      "Anthropic の $65B ラウンドは、**5月のグローバル VC 資金の半分以上**を吸収しただけでなく、関連スタートアップ（推論インフラ、AI セーフティ、エージェントツール）へのバリュエーション波及効果も生んだ。Crunchbase は**5月の総スタートアップ資金は record-high に近づいた**と分析している。",
+      "## 5月の Anthropic タイムライン総括",
+      "5月後半の Anthropic を時系列で並べると、戦略の連続性が明確になる:",
+      "- **5/6** SpaceX Colossus 1 借り上げ（220K GPU、300+ MW）でレート上限緩和",
+      "- **5/12** Claude Platform on AWS GA + Claude Code agent view + Claude for Legal（同日3本立て）",
+      "- **5/13** 当時報道された $30-50B 調達・$900B 評価額交渉",
+      "- **5/14** Stainless 買収交渉報道（OpenAI / Google も使う SDK 基盤）",
+      "- **5/26** 韓国 Representative Director 任命",
+      "- **5/27** Milan オフィス開設",
+      "- **5/28** **Series H 確定（$65B / $965B）、ARR $47B 公表、Claude Opus 4.8 リリース**",
+      "- **6/1** IPO confidential filing",
+      "「コンピュート供給 → 配布チャネル → 業界別パッケージング → 開発者接点 → 資金調達 → 海外展開 → モデル更新 → IPO 準備」と、**約4週間でレイヤーを横断する動き**が連続している。米国 AI 企業の典型的なスケールアップ事例として、今後ケーススタディとして参照される可能性が高い。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 13,
+        "caption": "Anthropic ARR 推移",
+        "headers": ["時期", "ARR", "前期比"],
+        "rows": [
+          ["2025年通年", "$10B", "—"],
+          ["2026年3月", "$30B", "+3.0x"],
+          ["2026年5月", "$47B", "+57% (vs 3月)"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic tops OpenAI as most valuable AI startup, nears $1 trillion valuation",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/28/anthropic-open-ai-startup-value.html"
+      },
+      {
+        "title": "Anthropic Funding Pushed Startup Investment To Near-Record Levels In May",
+        "site": "Crunchbase News",
+        "url": "https://news.crunchbase.com/venture/monthly-vc-funding-recap-ai-may-2026/"
+      },
+      {
+        "title": "Anthropic News",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news"
+      },
+      {
+        "title": "AI giant Anthropic files for US IPO as investors bet big on AI future",
+        "site": "Al Jazeera",
+        "url": "https://www.aljazeera.com/economy/2026/6/1/ai-giant-anthropic-files-for-us-ipo-as-investors-bet-big-on-ai-future"
+      }
+    ]
+  },
   "microsoft-scout-openclaw-build-2026-2026": {
     "body": [
       "Microsoft は6月2日、サンフランシスコで開幕した開発者カンファレンス **Build 2026** で **Scout** を正式発表した。**OSS の AI エージェント基盤 OpenClaw** をベースに構築された新型エージェントで、Microsoft はこのカテゴリを **「autopilot（オートパイロット）」** と呼ぶ。**常時稼働でユーザーの代理として動き、固有の Microsoft Entra アイデンティティで管理される**点が、これまでの \"アシスタント\" や \"コパイロット\" との違いだ。前日報道された **Project Polaris**（自社製コーディング AI、別記事）と並んで、本カンファレンスの二大目玉となった。",
