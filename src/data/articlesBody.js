@@ -4,6 +4,90 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "microsoft-scout-openclaw-build-2026-2026": {
+    "body": [
+      "Microsoft は6月2日、サンフランシスコで開幕した開発者カンファレンス **Build 2026** で **Scout** を正式発表した。**OSS の AI エージェント基盤 OpenClaw** をベースに構築された新型エージェントで、Microsoft はこのカテゴリを **「autopilot（オートパイロット）」** と呼ぶ。**常時稼働でユーザーの代理として動き、固有の Microsoft Entra アイデンティティで管理される**点が、これまでの \"アシスタント\" や \"コパイロット\" との違いだ。前日報道された **Project Polaris**（自社製コーディング AI、別記事）と並んで、本カンファレンスの二大目玉となった。",
+      "## Scout の動作: Teams が単一の入り口",
+      "Scout の入り口は **Microsoft Teams** だ。Teams のチャットで指示するだけで、エージェントは以下のリソースを横断的に操作する:",
+      "- **Outlook**（メール）",
+      "- **OneDrive**（ファイル）",
+      "- **SharePoint**（社内ドキュメント・データ）",
+      "- **Excel / Word / PowerPoint**（Office アプリ）",
+      "- **カレンダー・連絡先**",
+      "- **ブラウザ操作**（Microsoft Edge と連携）",
+      "- **外部 SaaS**（MCP プロトコル経由）",
+      "Build 2026 のデモでは、**「Outlook で受信した顧客メールを Scout が読解し、SharePoint で注文番号を照合し、Excel のダッシュボードを更新し、Teams で確認メッセージを返信する」**という一連の業務フローを1セッションで自動完遂してみせた。**人間の介入は最初の Teams 指示のみ**で、各アプリを開いて操作する作業は Scout が代行する。",
+      "## OpenClaw を採用した戦略的意味",
+      "**OpenClaw** は2025年11月に Peter Steinberger 氏が **Clawdbot** として公開し、2026年3月に統合数50を超えて改称された **MIT ライセンスのオープンソース AI エージェント基盤**。Anthropic / OpenAI / Google / Ollama 等を裏側に切替可能なマルチモデル・プロキシで、Telegram / Slack / Discord / WhatsApp 等のメッセージングを UI として AI エージェントを動かす設計が特徴だ。",
+      "Microsoft が独自フレームワークを書き起こさず **OpenClaw を採用した**点は重要だ:",
+      "1. **オープンスタンダードへの賭け**: Anthropic Claude Managed Agents や OpenAI Workspace Agents が**プロプライエタリ**な実行ランタイムなのに対し、Microsoft は **OSS をエンタープライズ向けに包む**戦略を選んだ",
+      "2. **MCP との親和性**: OpenClaw はネイティブで MCP をサポート。Microsoft が4月に正式採用した MCP との接続コストが低い",
+      "3. **モデル中立**: 内部では Anthropic Claude や OpenAI GPT、自社 MAI（前日報道の Project Polaris を含む）、Google Gemini まで切替可能な拡張余地が残る",
+      "ただし VentureBeat は5月、**Anthropic が「OpenClaw killer」と呼ばれる Claude Code Channels（Telegram / Discord 経由で Claude にメッセージ）をリリース**したと報じた。Microsoft の Scout は、この OpenClaw vs Anthropic の駆け引きの中で**「Microsoft 365 という巨大配布チャネルを後ろ盾にした OpenClaw 派の旗艦」**として登場した格好だ。",
+      "## ガバナンスとセキュリティ: Entra ID と Policy Conformance",
+      "Scout の**最も Microsoft らしい**設計が、ガバナンス層だ。",
+      "**1. 専用 Entra アイデンティティ**: 各 Scout インスタンスは**人間ユーザーとは別の Entra ID**を持ち、アクセス権・操作ログ・所有データはすべて IT 管理者の統制下に置かれる。「**従業員が無断でエージェントを作る**」シャドー IT を構造的に防ぐ。",
+      "**2. Policy Conformance System**: ポリシーに対するエージェントの挙動を**継続的にチェック**し、**個別の監査証跡（audit trail）**を残す。GDPR / SOC 2 / HIPAA など規制業界での導入を意識した設計だ。",
+      "**3. Intune ポリシー前提**: 利用には **Microsoft Intune** での端末・ID 管理ポリシーが設定済みであることが必須。",
+      "**4. オプトイン同意**: ユーザーは Scout 使用開始時に **attestation（同意確認）** を求められる。",
+      "**5. GitHub Copilot ライセンス必須**: 現時点では追加のライセンス要件として GitHub Copilot 契約が前提。",
+      "## 提供範囲",
+      "Scout は **プライベートプレビュー**として、選定された顧客と **Microsoft Frontier プログラム** 参加企業に提供開始。価格・GA 時期は未公表だが、Microsoft Agent 365（5/1 GA、$15/user/月）の**観測・統制レイヤー**と組み合わせて販売される可能性が高い。",
+      "## 「コパイロット → オートパイロット」の業界トレンド",
+      "Microsoft Scout の登場は、5月以降の業界全体の方向性と整合する:",
+      "- **Anthropic Claude Code agent view**（5/12、マルチセッション管理）",
+      "- **Anthropic Claude Opus 4.8 Dynamic Workflows**（5/28、最大1,000サブエージェント並列）",
+      "- **Google Antigravity 2.0 + Gemini Spark**（5/19、I/O 2026、パーソナルエージェント）",
+      "- **Cursor in Microsoft Teams**（5/11、Teams からエージェントへタスク委任）",
+      "「**人がエージェントに指示し、エージェントが業務全体をオーケストレーションする**」という形が、Anthropic・Google・Microsoft の3社で並列に確立されつつある。Scout の差別化要素は、**Microsoft 365 の包括的なデータ層（メール・ドキュメント・組織・カレンダー）にネイティブ接続**できる点と、**Entra ID + Intune による企業統制が標準で組み込まれた**点にある。",
+      "## 公式確認・次のステップ",
+      "本記事は **Microsoft 公式 Build 2026 セッション、Bloomberg、TechCrunch、Computerworld、PCWorld、Decrypt** などの一次・二次報道に基づく。価格、GA 時期、対応モデルの詳細は今後の発表を待つ。Build 2026 は6月3日まで開催され、Scout の追加デモや関連発表（Project Polaris、Windows Agent Framework 等）が続く予定だ。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 16,
+        "caption": "Microsoft Scout の主要仕様（公式・報道ベース）",
+        "headers": ["項目", "内容"],
+        "rows": [
+          ["基盤フレームワーク", "OpenClaw（MIT、OSS）"],
+          ["UI 入口", "Microsoft Teams"],
+          ["接続アプリ", "Outlook、OneDrive、SharePoint、Office、Edge ブラウザ"],
+          ["外部接続", "MCP（Model Context Protocol）"],
+          ["アイデンティティ", "Microsoft Entra ID（エージェントごと固有）"],
+          ["ガバナンス", "Policy Conformance System、監査証跡"],
+          ["前提条件", "Intune ポリシー、opt-in attestation、GitHub Copilot ライセンス"],
+          ["提供範囲", "プライベートプレビュー（Frontier プログラム）"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Microsoft Unveils Scout AI Assistant to Automate Workplace Tasks",
+        "site": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-06-02/microsoft-launches-ai-that-works-like-an-executive-assistant"
+      },
+      {
+        "title": "Microsoft launches Scout, an OpenClaw-inspired personal assistant",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/06/02/microsoft-launches-scout-an-openclaw-inspired-personal-assistant/"
+      },
+      {
+        "title": "Microsoft unveils Scout, an autonomous AI agent built on OpenClaw",
+        "site": "Computerworld",
+        "url": "https://www.computerworld.com/article/4180103/microsoft-unveils-scout-an-autonomous-ai-agent-built-on-openclaw.html"
+      },
+      {
+        "title": "Microsoft Scout Leads Build Push Around Agentic AI",
+        "site": "Redmond Magazine",
+        "url": "https://redmondmag.com/articles/2026/06/02/microsoft-scout-leads-build-push-around-agentic-ai.aspx"
+      },
+      {
+        "title": "Build 2026: Microsoft Unveils New 'Scout' Personal Work Agent Powered by OpenClaw",
+        "site": "Thurrott",
+        "url": "https://www.thurrott.com/a-i/336926/build-2026-microsoft-unveils-scout-personal-work-agent-and-new-in-house-ai-models"
+      }
+    ]
+  },
   "microsoft-build-2026-project-polaris-mai-coding-2026": {
     "body": [
       "**Reuters と The Information** が5月28日、Microsoft が6月2-3日にサンフランシスコで開催する **Build 2026** 開発者カンファレンスで、**コード名 Project Polaris と呼ばれる自社製コーディング AI モデル**を披露すると報じた。同モデルは現行 GitHub Copilot の OpenAI 製モデルに代わる中核として、段階的に Copilot に組み込まれていく計画。Microsoft は5月31日時点でこの発表を公式確認していないが、複数の関係者を引いた両誌の報道に多数のメディアが追随している。",

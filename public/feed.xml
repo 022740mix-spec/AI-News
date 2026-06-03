@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-06-01T15:00:00Z</updated>
+  <updated>2026-06-03T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Microsoft が Build 2026 で「Scout」発表 — OpenClaw 基盤の自律 AI「オートパイロット」、Teams 経由で Outlook / SharePoint / Excel を横断操作</title>
+    <link rel="alternate" type="text/html" href="?a=microsoft-scout-openclaw-build-2026-2026"/>
+    <id>tag:ai-tool-news.jp,2026:microsoft-scout-openclaw-build-2026-2026</id>
+    <published>2026-06-02T15:00:00Z</published>
+    <updated>2026-06-02T15:00:00Z</updated>
+    <summary>Microsoft が6月2日、開発者カンファレンス Build 2026 で Scout を発表した。OSS の AI エージェント基盤 OpenClaw をベースとする「autopilot（オートパイロット）」型の常時稼働エージェントで、ユーザーの代理として動き、固有の Entra アイデンティティで管理される。Teams からアクセスし、Outlook（メール）、OneDrive、SharePoint、Excel を横断して読み書きでき、外部アプリは MCP（Model Context Protocol）で接続可能。デモでは「Outlook の顧客メール読解 → SharePoint で注文番号照合 → Excel ダッシュボード更新 → Teams で確認返信」を1セッションで完遂した。ポリシーコンフォーマンス・システムによる継続的監査と監査証跡を内蔵。提供はプライベートプレビューから開始し、Intune ポリシー設定、opt-in 同意、GitHub Copilot ライセンスが前提条件。前日報道の Project Polaris（自社製コーディング AI）と並ぶ、Micro</summary>
+  </entry>
   <entry>
     <title>Microsoft が Build 2026（6/2-3）で自社製コーディング AI「Project Polaris」を披露へ — GitHub Copilot の中核モデルを MAI に切替、Anthropic Claude Code への対抗策</title>
     <link rel="alternate" type="text/html" href="?a=microsoft-build-2026-project-polaris-mai-coding-2026"/>
