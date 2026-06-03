@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "microsoft-scout-openclaw-build-2026-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Microsoft が Build 2026 で「Scout」発表 — OpenClaw 基盤の自律 AI「オートパイロット」、Teams 経由で Outlook / SharePoint / Excel を横断操作",
+    "excerpt": "Microsoft が6月2日、開発者カンファレンス **Build 2026** で **Scout** を発表した。OSS の AI エージェント基盤 **OpenClaw** をベースとする「**autopilot（オートパイロット）**」型の常時稼働エージェントで、ユーザーの代理として動き、固有の Entra アイデンティティで管理される。Teams からアクセスし、Outlook（メール）、OneDrive、SharePoint、Excel を横断して読み書きでき、外部アプリは MCP（Model Context Protocol）で接続可能。デモでは「Outlook の顧客メール読解 → SharePoint で注文番号照合 → Excel ダッシュボード更新 → Teams で確認返信」を1セッションで完遂した。**ポリシーコンフォーマンス・システム**による継続的監査と監査証跡を内蔵。提供はプライベートプレビューから開始し、Intune ポリシー設定、opt-in 同意、GitHub Copilot ライセンスが前提条件。前日報道の Project Polaris（自社製コーディング AI）と並ぶ、Microsoft の Build 2026 の二大目玉となった。",
+    "date": "2026-06-03",
+    "newsDate": "2026-06-02",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": ["Microsoft", "Scout", "OpenClaw", "エージェント", "Build 2026"],
+    "coverImage": {
+      "src": "logos/microsoft.svg",
+      "alt": "Microsoft Scout Build 2026"
+    }
+  },
+  {
     "id": "microsoft-build-2026-project-polaris-mai-coding-2026",
     "type": "news",
     "category": "model",
