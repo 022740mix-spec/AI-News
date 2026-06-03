@@ -5,6 +5,54 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "feature-ai-ipo-season-cerebras-spacex-anthropic-openai-2026",
+    "type": "feature",
+    "category": "product",
+    "title": "【分析】AI IPO シーズン到来 — Cerebras が5/14に $5.5B 調達で初日 +68%、Anthropic は6/1 に confidential filing、SpaceX は6/12 で $1.75T 評価額目標、OpenAI は Q4",
+    "excerpt": "**Cerebras Systems** が5月14日に NASDAQ 上場、$5.5B を調達して初日 **+68%** という今年最大の IPO を成功させた。SpaceX（xAI 統合後）は6月12日上場・**$1.75T 評価額**・$75-80B 調達を目指し、Anthropic は6月1日に confidential filing を完了し10月上場を視野、OpenAI は第4四半期を予定。**3社合計で $3兆超**という史上最大の AI IPO パイプラインが形成された。Cerebras の好調が他社の心理に効く一方、Figma の上場後株価低迷を引いた**「AI IPO トラップ」警告**も並行して出ている。本記事は各社の評価額・調達規模・タイムライン・リスクを公式値で整理する。",
+    "date": "2026-06-03",
+    "newsDate": "2026-06-01",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": ["IPO", "Cerebras", "SpaceX", "Anthropic", "OpenAI"],
+    "coverImage": {
+      "src": "articles/cover-pricing.svg",
+      "alt": "AI IPO 2026"
+    }
+  },
+  {
+    "id": "microsoft-build-2026-windows-agent-framework-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Microsoft Build 2026 続報 — Windows Agent Framework を MIT で OSS 公開、Sandboxed Execution Container と Intelligent Terminal を導入、26H2 で標準搭載",
+    "excerpt": "Microsoft が Build 2026 で発表した Scout（OpenClaw 基盤、別記事）の下層にあたる **Windows Agent Framework** を、**MIT ライセンスで OSS 公開**した。Windows をエージェント実行の基盤プラットフォーム化する取り組みで、4つの柱：①Sandboxed Execution Container（エージェントを隔離実行）、②Cloud PC 統合（常時稼働）、③オンデバイス AI モデル（ローカル推論）、④Intelligent Terminal（コマンドハブ）で構成される。**OpenAI、Anthropic、Hugging Face のモデルすべてが利用可能**で、Execution Container フォーマットは Linux でも Docker 拡張経由で動作を約束。**Windows 11 26H2（2026年Q4）で全コンポーネント標準搭載**、既存 Win11 ユーザーには Windows Update 経由で配信。Satya Nadella は「Windows は AI 時代のキャンバスとコラボレーター双方になる」とキーノートで強調した。",
+    "date": "2026-06-03",
+    "newsDate": "2026-06-02",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Microsoft", "Build 2026", "Windows", "エージェント", "OSS"],
+    "coverImage": {
+      "src": "logos/microsoft.svg",
+      "alt": "Windows Agent Framework"
+    }
+  },
+  {
+    "id": "anthropic-may-2026-series-h-milan-korea-arr-47b-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic 5月集中アップデート（補遺）— Series H が $65B / $965B 評価額で確定、ARR $47B 到達、Milan・Seoul オフィス開設",
+    "excerpt": "5月13日に報道（$30-50B 交渉中）された Anthropic の資金調達は、5月28日に **Series H として正式確定**した。**$65 billion 調達・評価額 $965 billion** で、OpenAI を初めて上回り世界最大の AI スタートアップに。Altimeter Capital、Dragoneer、Greenoaks、Sequoia Capital がリード。**ARR は $47 billion に到達**（2025年末 $10B → 3月 $30B → 5月 $47B）。並行して5月26日に韓国 Representative Director（KiYoung Choi 氏）任命と Seoul オフィス計画、5月27日に Milan オフィスを開設しイタリアのエンタープライズ・研究・開発者支援を発表。Crunchbase 集計では Anthropic の調達が5月のグローバルスタートアップ資金の **54%** を占め、ベンチャー市場全体を引き上げた。",
+    "date": "2026-06-03",
+    "newsDate": "2026-05-28",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["Anthropic", "資金調達", "Series H", "海外展開", "ARR"],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic May 2026 Updates"
+    }
+  },
+  {
     "id": "microsoft-scout-openclaw-build-2026-2026",
     "type": "news",
     "category": "product",
