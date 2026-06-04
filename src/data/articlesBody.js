@@ -4,6 +4,133 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "microsoft-build-2026-mai-7models-solara-majorana-2026": {
+    "body": [
+      "Microsoft が6月2日、サンフランシスコで開幕した **Build 2026** で、**MAI（Microsoft AI Superintelligence）チーム発の7つの新モデル**を一斉に投入した。前報 **Scout**（OpenClaw 基盤の autopilot、PR #27）、**Windows Agent Framework**（MIT で OSS 公開、PR #28）に続く Build 2026 の中核発表で、Microsoft の **OpenAI 依存からの脱却**を象徴する。同日には **Project Solara**（AI ファースト端末プラットフォーム）、**Majorana 2 量子チップ**、**Microsoft Discovery GA**、**Mayo Clinic 提携**などを含む100超の発表が行われた。本記事は基調講演の主要発表を網羅整理する。",
+      "## ① MAI 7モデル一斉投入",
+      "Mustafa Suleyman（Microsoft AI 事業 CEO、元 DeepMind 共同創業者）が率いる MAI Superintelligence チームから、以下7モデルが同日リリースされた。",
+      "### 推論: MAI-Thinking-1",
+      "**Microsoft 初のフロンティア推論モデル**。**35B アクティブ / 約1T 総パラメータの sparse Mixture of Experts**、**256K コンテキスト**を備える。Microsoft 公式の主要ベンチマーク値:",
+      "- **AIME 2025（数学）**: **97.0%**",
+      "- **AIME 2026（数学）**: **94.5%**",
+      "- **SWE-Bench Pro**: Claude Opus 4.6 と同等水準",
+      "重要な点は、**MAI-Thinking-1 が OpenAI のデータを使わずに訓練された**ことだ（TechTimes 報道）。4月の OpenAI 契約再交渉で制約が緩和されたことを受け、Microsoft が**完全に独立した推論モデル**を初めて持った形になる。「**高効率・高性能・低トークンコスト**」を Microsoft 自身がアピールしている。",
+      "### コーディング: MAI-Code-1-Flash",
+      "**5B パラメータの軽量コーディング特化モデル**。GitHub Copilot と Visual Studio Code に**即日展開**された。Microsoft 公式値:",
+      "- **SWE-Bench Pro**: Claude Haiku 4.5 を **+16pt** 上回る",
+      "- 4つの主要コーディングベンチマークすべてで Claude Haiku 4.5 を上回る",
+      "前報（PR #26、5/28 時点）で **Project Polaris** とされていた自社製コーディング AI の正体は、この MAI-Code-1-Flash と上位版 MAI-Code-1 だった可能性が高い。Copilot Starter（無償）/ Pro / Enterprise 3階層への移行と歩調を合わせている。",
+      "### マルチモーダル",
+      "残りの5モデルも同時に公開:",
+      "- **MAI-Image-2.5**: **Microsoft 初の text-to-image + image-to-image 両対応**モデル",
+      "- **MAI-Image-2.5 Flash**: 高速軽量版",
+      "- **MAI-Transcribe-1.5**: **43言語**で SOTA 級の音声認識",
+      "- **MAI-Voice-2**: **15言語以上を追加**し新ボイスオプション搭載",
+      "- **MAI-Voice-2 Flash**: 高速軽量版",
+      "## ② Project Solara — AI ファースト端末プラットフォーム",
+      "**Project Solara** は、**Android ベースの「chip-to-cloud」プラットフォーム**で、AI エージェントを前提に設計されている。デモでは2形態が披露された:",
+      "- **ウェアラブルバッジ**（Qualcomm 製チップ）",
+      "- **デスクトップコンパニオン端末**（MediaTek 製チップ）",
+      "Project Solara は「**エージェント・ファースト体験のために一から設計され、新しい端末フォームファクターを可能にする**」と Microsoft 公式が説明。スマートフォンや PC の延長ではなく、**AI エージェントが主役の新カテゴリ端末**を狙う。OpenAI が探索中とされる「AI ファースト端末」（Jony Ive 設計）への Microsoft 側の回答という位置付けだ。",
+      "## ③ Majorana 2 量子チップ",
+      "Microsoft は **Majorana 2** を発表。前世代（昨年発表）に続く2世代目で、**新型超伝導体**を採用。スペック向上は劇的だ:",
+      "- **qubit 寿命**: **平均 20秒**（インスタンスによっては1分）— 前世代はミリ秒オーダー",
+      "- **信頼性**: 前世代比 **1,000倍**",
+      "- **スケーラビリティ**: **「手のひらサイズで100万 qubit」**への道筋",
+      "量子コンピュータが「研究室の curiosity」から「実用に耐える計算リソース」へ進む可能性を示すマイルストーン発表だ。",
+      "## ④ Microsoft Discovery が GA",
+      "**Microsoft Discovery**（科学研究向け AI プラットフォーム）が **一般提供（GA）**を達成。早期顧客として **GSK（医薬品）、BHP（鉱業）** などが既に利用中であることが明らかにされた。化学・材料・医薬・地球科学などの「実験データ × AI 推論」のループを高速化する。",
+      "## ⑤ Mayo Clinic 提携",
+      "**Mayo Clinic と Microsoft の長期提携**を発表。Microsoft の AI インフラと **Mayo Clinic の医療データ・専門知識**を組み合わせ、医師の診断支援ツールを開発する。**Claude for Legal（5/12 Anthropic）と並ぶ「業界別 AI パッケージング」**の Microsoft 版として注目される。",
+      "## ⑥ インフラ系: Azure HorizonDB と GPU Fabric",
+      "- **Azure HorizonDB**: エージェント向けの**フルマネージド PostgreSQL** サービス（プレビュー）。Anthropic の Stainless 買収交渉（5/14 報道）と並ぶ、エージェント時代の開発者インフラ獲得競争を示す",
+      "- **GPU 高速化 Fabric Data Warehouse**: NVIDIA アクセラレーション対応で、特定クエリの大幅高速化",
+      "- **Surface RTX Spark Dev Box**: 開発者向けの新世代ハードウェア、NVIDIA RTX ベース",
+      "## ⑦ 既報の確認",
+      "前報の Build 2026 関連3記事と整合:",
+      "- **Scout（PR #27）**: autopilot カテゴリ第一号、Windows 11+ / macOS 12+ で Frontier プログラム経由提供",
+      "- **Project Polaris（PR #26）**: MAI-Code-1-Flash として正式発表（推定）",
+      "- **Windows Agent Framework（PR #28）**: MIT で OSS 公開、26H2 で標準搭載",
+      "## 戦略的読み解き",
+      "Build 2026 の3本柱は明確だ:",
+      "1. **モデル独立**: MAI-Thinking-1 が「**OpenAI データを使わず**」訓練されたことで、Microsoft はモデル開発で完全自立。OpenAI への約 $130B 投資の意味が変化する",
+      "2. **エージェント前提の OS / 端末**: Windows Agent Framework × Scout × Project Solara で、「**エージェントが主役の OS と端末**」という方向に賭ける",
+      "3. **業界別 × 量子・科学**: Mayo Clinic × Microsoft Discovery × Majorana 2 で、**汎用 AI からドメイン特化 × 計算アーキテクチャ革新**へ視野を広げる",
+      "Anthropic（Opus 4.8 + Dynamic Workflows、5/28）、Google（I/O 2026、5/19）、OpenAI（GPT-5.5 系、Workspace Agents）の動きと並べると、**5月末～6月初の「AI フロンティアラボの集中発表ピーク」**となった。3社（4社）の方向性がはっきり別軸（OS 統合、業界特化、エージェント基盤、量子）に向かいつつあるのが、本 Build 2026 の最大の示唆と言える。",
+      "## 補足: 公式 PDF と一次情報源",
+      "Microsoft は Build 2026 の発表内容を **Book of News**（公式オンラインガイド）として整理しており、microsoft.ai 上に PDF 形式の資料も公開されている（執筆時点で `microsoft.ai/wp-content/uploads/2026/06/main_20260602_2.pdf` 等が観測されている）。本記事は **Microsoft 公式ブログ・news.microsoft.com・公式 live blog・CNBC・Neowin・TechTimes・Constellation Research・Engadget** などの一次・二次情報を統合して再構成している。仕様の詳細（モデルカード、安全性評価、価格表）は Microsoft Learn ドキュメントや Azure / GitHub の公式ページを参照すべき。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 14,
+        "caption": "MAI 7モデル 一覧（Microsoft 公式）",
+        "headers": ["モデル", "種別", "主要スペック・ベンチ", "提供"],
+        "rows": [
+          ["MAI-Thinking-1", "推論", "35B active / ~1T 総 sparse MoE、256K ctx、AIME 2025 97.0%、AIME 2026 94.5%、SWE-Pro Opus 4.6 同等", "Microsoft Foundry"],
+          ["MAI-Code-1-Flash", "コーディング", "5B、Haiku 4.5 を SWE-Pro で +16pt 上回る", "GitHub Copilot / VS Code"],
+          ["MAI-Image-2.5", "画像（T2I + I2I）", "Microsoft 初の dual workload 対応", "Foundry"],
+          ["MAI-Image-2.5 Flash", "画像（高速版）", "—", "Foundry"],
+          ["MAI-Transcribe-1.5", "STT", "43言語、SOTA 級", "Foundry / Azure"],
+          ["MAI-Voice-2", "音声生成", "15+ 言語追加、新ボイス", "Foundry / Azure"],
+          ["MAI-Voice-2 Flash", "音声（高速版）", "—", "Foundry / Azure"]
+        ]
+      },
+      {
+        "afterParagraph": 32,
+        "caption": "Build 2026 の主要発表まとめ",
+        "headers": ["カテゴリ", "発表内容", "状態"],
+        "rows": [
+          ["モデル", "MAI 7モデル一斉投入", "本日公開"],
+          ["エージェント", "Scout（autopilot 第一号）", "Frontier プログラムプレビュー"],
+          ["プラットフォーム", "Windows Agent Framework", "MIT OSS、26H2 標準搭載"],
+          ["端末", "Project Solara（chip-to-cloud）", "ウェアラブル + デスクトップ実演"],
+          ["量子", "Majorana 2 量子チップ", "発表、qubit 寿命 20秒"],
+          ["科学", "Microsoft Discovery", "GA（GSK、BHP 利用中）"],
+          ["医療", "Mayo Clinic 提携", "発表"],
+          ["インフラ", "Azure HorizonDB", "プレビュー"],
+          ["インフラ", "GPU 高速 Fabric DW", "発表"],
+          ["ハードウェア", "Surface RTX Spark Dev Box", "発表"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Microsoft Build 2026: Be yourself at work",
+        "site": "Microsoft Official Blog",
+        "url": "https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/"
+      },
+      {
+        "title": "Microsoft Build 2026 Live Blog",
+        "site": "Microsoft News",
+        "url": "https://news.microsoft.com/build-2026-live-blog/microsoft-build-2026-live/"
+      },
+      {
+        "title": "Microsoft unveils new AI models to lessen reliance on OpenAI and lower costs for developers",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/06/02/microsoft-unveils-new-ai-models-lessen-reliance-on-openai-lower-costs.html"
+      },
+      {
+        "title": "Microsoft unveils MAI-Thinking-1 reasoning and MAI-Code-1 coding models",
+        "site": "Neowin",
+        "url": "https://www.neowin.net/news/microsoft-unveils-mai-thinking-1-reasoning-and-mai-code-1-coding-models/"
+      },
+      {
+        "title": "Microsoft Build 2026: MAI-Thinking-1 Is First In-House Reasoning Model, Trained Without OpenAI Data",
+        "site": "Tech Times",
+        "url": "https://www.techtimes.com/articles/317631/20260602/microsoft-build-2026-mai-thinking-1-first-house-reasoning-model-trained-without-openai-data.htm"
+      },
+      {
+        "title": "Microsoft Build 2026 Live Updates",
+        "site": "Engadget",
+        "url": "https://www.engadget.com/2185601/microsoft-build-2026-live-blog-copilot-windows-news/"
+      },
+      {
+        "title": "Microsoft Build 2026: Windows, Rayfin, Fabric IQ and more",
+        "site": "Constellation Research",
+        "url": "https://www.constellationr.com/insights/news/microsoft-build-2026-windows-rayfin-fabric-iq-and-more"
+      }
+    ]
+  },
   "feature-ai-ipo-season-cerebras-spacex-anthropic-openai-2026": {
     "body": [
       "**Cerebras Systems** が5月14日に NASDAQ 上場を成功させたことを皮切りに、AI 企業の IPO シーズンが本格化している。SpaceX、Anthropic、OpenAI の3社が**いずれも $1 trillion 規模の評価額**で2026年内の上場を予定しており、合計で **$3 trillion 超の AI IPO パイプライン**という史上最大規模の流動性イベントが形成された。本記事は各社の評価額・調達規模・タイムライン・リスクを公式値・複数報道で整理する。",
