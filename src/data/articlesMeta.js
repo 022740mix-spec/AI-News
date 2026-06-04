@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "microsoft-build-2026-mai-7models-solara-majorana-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Microsoft Build 2026 総まとめ — MAI 7モデル一斉投入（Thinking-1 / Code-1-Flash 等）、Project Solara で AI ファースト端末へ、Majorana 2 量子チップ、Discovery が GA、Mayo Clinic 提携",
+    "excerpt": "Microsoft が6月2日、Build 2026 基調講演で **MAI 7モデル**を一斉投入した。フラッグシップ推論モデル MAI-Thinking-1（35B active / 約1T total の sparse MoE、256K コンテキスト、AIME 2025 で 97.0%、AIME 2026 で 94.5%、SWE-Bench Pro で Claude Opus 4.6 と同等）、コーディング特化 MAI-Code-1-Flash（5B、GitHub Copilot に展開、SWE-Bench Pro で Claude Haiku 4.5 を +16pt 上回る）に加え、Image-2.5 / Image-2.5 Flash / Transcribe-1.5（43言語）/ Voice-2（15+ 追加言語）/ Voice-2 Flash を同時公開。**Project Solara**（Android ベースの AI ファースト端末プラットフォーム）、**Majorana 2 量子チップ**（qubit 寿命 20秒、前世代比 1,000倍信頼性）、**Microsoft Discovery が GA**（GSK・BHP が利用中）、**Mayo Clinic とのヘルスケア AI 提携**、Azure HorizonDB、GPU 高速 Fabric Data Warehouse など100超の発表。MAI-Thinking-1 は OpenAI データを使わず訓練された点で、OpenAI 依存からの脱却を象徴する。",
+    "date": "2026-06-03",
+    "newsDate": "2026-06-02",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": ["Microsoft", "Build 2026", "MAI", "Project Solara", "量子コンピュータ"],
+    "coverImage": {
+      "src": "logos/microsoft.svg",
+      "alt": "Microsoft Build 2026"
+    }
+  },
+  {
     "id": "feature-ai-ipo-season-cerebras-spacex-anthropic-openai-2026",
     "type": "feature",
     "category": "product",
