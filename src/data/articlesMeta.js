@@ -2486,7 +2486,8 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 4,
-    "reviewCategory": "other"
+    "reviewCategory": "other",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "ai-voice-input-tools-landscape-2026",
@@ -3039,7 +3040,8 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 4,
-    "reviewCategory": "cli"
+    "reviewCategory": "cli",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "codebuff",
@@ -3063,7 +3065,8 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 4,
-    "reviewCategory": "cli"
+    "reviewCategory": "cli",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "amazon-q",
@@ -3088,7 +3091,8 @@ export const ARTICLES_META = [
       "企業向け": 5
     },
     "rating": 4,
-    "reviewCategory": "cli"
+    "reviewCategory": "cli",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "cline",
@@ -3113,7 +3117,8 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 4,
-    "reviewCategory": "cli"
+    "reviewCategory": "cli",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "warp-ai",
@@ -3137,7 +3142,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3,
-    "reviewCategory": "other"
+    "reviewCategory": "other",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "cursor-editor",
@@ -3189,7 +3195,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 4,
-    "reviewCategory": "editor"
+    "reviewCategory": "editor",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "zed-ai",
@@ -3214,7 +3221,8 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 4,
-    "reviewCategory": "editor"
+    "reviewCategory": "editor",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "vscode",
@@ -3239,7 +3247,8 @@ export const ARTICLES_META = [
       "企業向け": 5
     },
     "rating": 4,
-    "reviewCategory": "editor"
+    "reviewCategory": "editor",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "void",
@@ -3264,7 +3273,8 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 4,
-    "reviewCategory": "editor"
+    "reviewCategory": "editor",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "pearai",
@@ -3288,7 +3298,8 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 3,
-    "reviewCategory": "editor"
+    "reviewCategory": "editor",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "trae",
@@ -3313,7 +3324,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3,
-    "reviewCategory": "editor"
+    "reviewCategory": "editor",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "frontier-triad-power-map-2026",
@@ -3916,7 +3928,8 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 4,
-    "reviewCategory": "model"
+    "reviewCategory": "model",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "kimi-k2-5-review",
@@ -3942,7 +3955,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 4,
-    "reviewCategory": "model"
+    "reviewCategory": "model",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "claude-sonnet-4-6-review",
@@ -3968,7 +3982,8 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 4,
-    "reviewCategory": "model"
+    "reviewCategory": "model",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "midjourney-v8-review",
@@ -3993,7 +4008,8 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4.5,
-    "reviewCategory": "image"
+    "reviewCategory": "image",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "runway-gen5-review",
@@ -4018,7 +4034,8 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4,
-    "reviewCategory": "video"
+    "reviewCategory": "video",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "suno-v5-review",
@@ -4042,7 +4059,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 4,
-    "reviewCategory": "music"
+    "reviewCategory": "music",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "kling-ai-review",
@@ -4067,7 +4085,8 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 3.5,
-    "reviewCategory": "video"
+    "reviewCategory": "video",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "nano-banana-2-review",
@@ -4092,7 +4111,8 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4,
-    "reviewCategory": "image"
+    "reviewCategory": "image",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "gpt-image-review",
@@ -4117,7 +4137,8 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4,
-    "reviewCategory": "image"
+    "reviewCategory": "image",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "flux-2-review",
@@ -4142,7 +4163,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3.5,
-    "reviewCategory": "image"
+    "reviewCategory": "image",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "veo-review",
@@ -4167,7 +4189,8 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 3.5,
-    "reviewCategory": "video"
+    "reviewCategory": "video",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "pika-review",
@@ -4192,7 +4215,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3.5,
-    "reviewCategory": "video"
+    "reviewCategory": "video",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "udio-review",
@@ -4216,7 +4240,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3.5,
-    "reviewCategory": "music"
+    "reviewCategory": "music",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "stable-audio-review",
@@ -4241,7 +4266,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3,
-    "reviewCategory": "music"
+    "reviewCategory": "music",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "manus-review",
@@ -4266,7 +4292,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3.5,
-    "reviewCategory": "agent"
+    "reviewCategory": "agent",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "devin-review",
@@ -4291,7 +4318,8 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 3.5,
-    "reviewCategory": "agent"
+    "reviewCategory": "agent",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "genspark-review",
@@ -4317,7 +4345,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3.5,
-    "reviewCategory": "search"
+    "reviewCategory": "search",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "perplexity-review",
@@ -4342,7 +4371,8 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4,
-    "reviewCategory": "search"
+    "reviewCategory": "search",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "notebooklm-review",
@@ -4368,7 +4398,8 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4,
-    "reviewCategory": "search"
+    "reviewCategory": "search",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "deepseek-r1-review",
@@ -4395,7 +4426,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 4,
-    "reviewCategory": "model"
+    "reviewCategory": "model",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "qwen-3-review",
@@ -4421,7 +4453,8 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4,
-    "reviewCategory": "model"
+    "reviewCategory": "model",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "ernie-4-5-review",
@@ -4447,7 +4480,8 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 3.5,
-    "reviewCategory": "model"
+    "reviewCategory": "model",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "meta-acquires-manus-2025",
