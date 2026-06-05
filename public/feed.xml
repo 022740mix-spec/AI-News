@@ -72,6 +72,14 @@
     <summary>Anthropic が5月28日、フラッグシップモデル Claude Opus 4.8 を公開した。Opus 4.7（4/16 GA）から約6週間という短サイクルで、SWE-bench Verified 88.6%、SWE-bench Pro 69.2%、USAMO 2026 数学が 69.3% → 96.7%、1M トークン長コンテキストの GraphWalks F1 が 40.3% → 68.1% と大幅改善。価格は Opus 4.7 据え置きで $5/$25 per M トークン。新しい Fast Mode は 2.5倍高速・前世代比3倍安い $10/$50。Claude Code 向けには最大1,000の並列サブエージェントをオーケストレーションできる Dynamic Workflows（リサーチプレビュー）を導入し、Anthropic は「より鋭い判断力・進捗の honest な自己報告・長時間の自律実行」を新世代の重点に置く。提供は Anthropic API、Amazon Bedrock、Google Cloud Vertex AI、Microsoft Foundry で</summary>
   </entry>
   <entry>
+    <title>Claude Code レビュー — Anthropic の CLI エージェント、Opus 4.8 + Dynamic Workflows + agent view 対応版</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code</id>
+    <published>2026-05-28T15:00:00Z</published>
+    <updated>2026-05-28T15:00:00Z</updated>
+    <summary>claude コマンド1つでリポジトリ全体を読み込み、バグ修正からテスト実行、コミットまで自律的に行う。基盤モデルが Opus 4.8 に更新され、SWE-bench Verified 88.6% に。研究プレビューで agent view（マルチセッションダッシュボード）と Dynamic Workflows（最大1,000サブエージェント並列）が追加され、長時間自律実行と大規模並列タスクが本格化。Fast Mode は前世代比3倍安い $10/$50 で、コストとレイテンシのトレードオフを明示的に選べる。</summary>
+  </entry>
+  <entry>
     <title>【特集】中国系 AI モデルの5月集中更新 — Qwen 3.7 Max が Opus 4.6 を一部凌駕、Kimi K2.6 が OSS で GPT-5.4 を抜く、Ernie 5.1・GLM・Seedance 2.0 も同期投下</title>
     <link rel="alternate" type="text/html" href="?a=feature-china-ai-models-may-2026-qwen-kimi-ernie"/>
     <id>tag:ai-tool-news.jp,2026:feature-china-ai-models-may-2026-qwen-kimi-ernie</id>
@@ -270,6 +278,14 @@
     <published>2026-04-17T15:00:00Z</published>
     <updated>2026-04-17T15:00:00Z</updated>
     <summary>Anthropic が4月17日、新製品「Claude Design」を Anthropic Labs のリサーチプレビューとして公開した。Claude Opus 4.7 を基盤に、会話型インターフェースでデザイン・プロトタイプ・スライド・1ページャを生成。コードベースとデザインファイルを読み込んでチームのデザインシステムを自動構築し、以降のプロジェクトに色・タイポグラフィ・コンポーネントを自動適用する。書き出しは PDF / URL / PPTX / Canva に対応、最終形は Claude Code へ「ハンドオフバンドル」として渡せるため、探索→プロトタイプ→本番コードの閉じたループが完成する。VentureBeat は「Figma への正面挑戦」と評している。Pro / Max / Team / Enterprise で利用可能。</summary>
+  </entry>
+  <entry>
+    <title>Claude Design レビュー — Anthropic のビジュアル制作ツール、Opus 4.7/4.8 基盤で UI から動画素材までを会話で生成</title>
+    <link rel="alternate" type="text/html" href="?a=claude-design"/>
+    <id>tag:ai-tool-news.jp,2026:claude-design</id>
+    <published>2026-04-17T15:00:00Z</published>
+    <updated>2026-04-17T15:00:00Z</updated>
+    <summary>Anthropic Labs が4月17日に公開した、Claude Opus 4.7/4.8 基盤のビジュアル制作ツール。会話型インターフェースで UI / プロトタイプ / スライド / 1ページャ / マーケティング素材を生成。コードベースとデザインファイルからチームのデザインシステムを自動学習し、以降のプロジェクトに色・タイポグラフィ・コンポーネントを自動適用する。書き出しは PDF / 共有 URL / PPTX / Canva に対応、最終形は Claude Code に「ハンドオフバンドル」として渡せるため、探索→プロトタイプ→本番コードの閉じたループが完成する。VentureBeat 等は「Figma に正面挑戦」と評する。Pro / Max / Team / Enterprise でリサーチプレビュー提供中。</summary>
   </entry>
   <entry>
     <title>Anthropic Claude Opus 4.7 が一般提供開始 — SWE-bench Verified 87.6%、新機能「task budgets」と新 effort level「xhigh」を導入、画像解像度も2.5倍に拡大</title>
@@ -1230,14 +1246,6 @@
     <published>2026-03-27T15:00:00Z</published>
     <updated>2026-03-27T15:00:00Z</updated>
     <summary>3月19日、Windsurfがクレジットベースの料金体系から日次・週次クォータ制に変更。Pro価格が$15→$20に上昇し、Cursorとの価格差が消滅。</summary>
-  </entry>
-  <entry>
-    <title>Claude Code レビュー — Anthropic のCLIエージェント徹底解説</title>
-    <link rel="alternate" type="text/html" href="?a=claude-code"/>
-    <id>tag:ai-tool-news.jp,2026:claude-code</id>
-    <published>2026-03-27T15:00:00Z</published>
-    <updated>2026-03-27T15:00:00Z</updated>
-    <summary>claudeコマンド1つでリポジトリ全体を読み込み、バグ修正からテスト実行、コミットまで自律的に行う。Opus 4.6の1Mコンテキストによる深い推論が、複雑なリファクタリングを可能にしている。</summary>
   </entry>
   <entry>
     <title>Claude Code「auto-fix in the cloud」— CI 失敗と PR コメントをクラウドで自動対応</title>
