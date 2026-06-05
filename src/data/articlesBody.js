@@ -1169,7 +1169,7 @@ const ARTICLES_BODY = {
   },
   "feature-ai-avatar-agents-join-meetings-2026": {
     "body": [
-      "5月7日の OpenAI 音声 API（GPT-Realtime-2 / -Translate / -Whisper）と組み合わせる形で、**「顔と声を持って会議に参加する AI アバター」**が一気に実用フェーズに入った。前特集で扱った議事録系の「ボット参加」とは違い、本特集は**ユーザー本人や架空キャラクターの姿で、参加者として会話に加わる AI** を扱う。HeyGen・Tavus・Beyond Presence・Zoom AI Companion 3.0・Read AI・Kaltura——いずれも商用稼働、または研究プレビューを越えた段階にある。",
+      "5月7日の OpenAI 音声 API（GPT-Realtime-2 / -Translate / -Whisper）と組み合わせる形で、**「顔と声を持って会議に参加する AI アバター」**が一気に実用フェーズに入った。これまで広く使われてきた議事録ボット型（Otter / Fireflies / tl;dv が会議に「リスナー」として参加し、音声を文字起こしして要約する形式）とは違い、本特集は**ユーザー本人や架空キャラクターの姿で、参加者として会話に加わる AI** を扱う。HeyGen・Tavus・Beyond Presence・Zoom AI Companion 3.0・Read AI・Kaltura——いずれも商用稼働、または研究プレビューを越えた段階にある。",
       "## HeyGen Interactive Avatar — Zoom App として「自分を同時に複数会議へ」",
       "HeyGen は2026年5月、**Interactive Avatar** の Zoom 統合を公開した。Zoom App としてインストールすると、Google カレンダーと同期して**今後の Zoom 会議をプレビュー**し、指定した会議に自分のアバターを「代理出席」させられる。",
       "技術スタックの内側で重要なのは、**OpenAI Realtime Voice を統合**している点だ。前特集で取り上げた **GPT-Realtime-2**（GPT-5級の推論）の流れに乗っかる形で、HeyGen Avatar は単に喋るだけでなく、相手の質問に対し**文脈に沿った推論ベースの応答**を返せる。HeyGen は「**24時間365日、同時に複数会議**にあなたの分身を派遣できる」とアピールしている。",
