@@ -10286,6 +10286,149 @@ const ARTICLES_BODY = {
         "url": "https://www.theinformation.com/articles/anthropic-revenue-surpasses-openai"
       }
     ]
+  },
+  "overview-2026-week-apr13": {
+    "body": [
+      "**4月13日（月）** — Stanford HAI が **AI Index 2026** を公表。中国モデルの主要ベンチマーク差は数ポイント以内まで縮小し、米中性能差はほぼ解消したと報告。投資額は依然として米国が23倍だが、性能差は一桁%にとどまった。透明性スコアは過去最低を更新（[Stanford Index](?a=stanford-hai-ai-index-2026-china-transparency-2026)）。同日 **Apple AI 責任者 John Giannandrea** が8年で退任。Apple Intelligence 不振と Siri 遅延の責任、後任は元 Google の Amar Subramanya（[Apple AI](?a=apple-ai-chief-giannandrea-departure-2026)）。ユーザーが Claude の性能低下を訴え、Anthropic がデフォルト effort を「中」に下げていた事が判明し炎上（[Claude effort](?a=anthropic-claude-performance-decline-effort-backlash-2026)）。",
+      "**4月14日（火）** — 大型発表が続く。OpenAI が **GPT-5.4-Cyber** を公開、バイナリ逆解析が可能で Anthropic Mythos への対抗を鮮明に（[GPT-Cyber](?a=openai-gpt-54-cyber-tac-cybersecurity-2026)）。Anthropic が **Claude Code デスクトップ** を全面刷新、並列セッション・統合ターミナル・ドラッグ＆ドロップレイアウトと「Routines」によるクラウド自動実行を導入（[Claude Code Desktop](?a=anthropic-claude-code-desktop-redesign-routines-2026)）。Google の **Gemini Personal Intelligence** が EU 以外の全世界に展開、Gmail・Photos・Drive と連携（[Gemini PI](?a=google-gemini-personal-intelligence-global-2026)）。実用ガイド「Claude に画面を見てもらう4つの方法」も公開（[Screen Viewing](?a=claude-screen-viewing-4-methods-comparison-2026)）。",
+      "**4月16日（木）** — Anthropic **Claude Opus 4.7** が GA。SWE-bench Verified 87.6%、新機能「task budgets」と新エフォートレベル「xhigh」、画像最大 2576px に対応（[Opus 4.7 GA](?a=anthropic-claude-opus-4-7-ga-task-budgets-2026)、[レビュー](?a=claude-opus-4-7-review)）。",
+      "**4月17日（金）** — Anthropic が **Claude Design** を公開。Opus 4.7 ベースのビジュアル制作ツールで、コードベースからデザインシステム自動生成、Figma 競合機能も搭載（[Claude Design](?a=anthropic-claude-design-labs-figma-challenge-2026)、[レビュー](?a=claude-design)）。",
+      "**週の総括** — Anthropic が圧倒的存在感を発揮した1週間。Opus 4.7 GA・Claude Code デスクトップ刷新・Claude Design 投入と3連発で開発者体験を強化。一方 Apple は AI 責任者交代でリーダーシップに動揺、Stanford AI Index は中国の急追を裏付けた。OpenAI も GPT-5.4-Cyber でセキュリティ領域に踏み込み、フロンティアモデルの専門化が進んでいる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Stanford AI Index Report 2026",
+        "site": "Stanford HAI",
+        "url": "https://hai.stanford.edu/ai-index"
+      },
+      {
+        "title": "Claude Opus 4.7 一般提供開始",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-opus-4-7"
+      }
+    ]
+  },
+  "overview-2026-week-apr20": {
+    "body": [
+      "**4月20日（月）** — **Amazon が Anthropic に最大 $25B を追加投資**。即時 $5B 入金、評価額 $380B、見返りに Anthropic は AWS で年内 1GW の Trainium インフラを利用する。AI クラウド3強（AWS・Azure・GCP）の中で AWS が Anthropic 結束を強化（[Amazon-Anthropic](?a=amazon-anthropic-25b-trainium-infrastructure-2026)）。",
+      "**4月21日（火）** — Hugging Face が **ml-intern** を公開。論文を読み、データセットを探し、モデルを訓練する OSS の ML エンジニア・エージェント。Qwen3-1.7B をベースに動作する軽量設計（[ml-intern](?a=huggingface-ml-intern-open-source-agent-2026)）。",
+      "**4月22日（水）** — OpenAI が **Workspace Agents** を公開。Custom GPTs の後継、Codex で動作しチーム共有可能、Slack・Salesforce・Notion 等を MCP 経由で操作する（[Workspace Agents](?a=openai-workspace-agents-codex-enterprise-2026)）。",
+      "**4月23日（木）** — OpenAI が **GPT-5.5** をリリース。GPT-5.4 から6週間という短サイクル、エージェントコーディングで SOTA を「半額」で達成し Plus/Pro/Business/Enterprise 全プランに即日展開（[GPT-5.5](?a=openai-gpt-5-5-release-agentic-coding-2026)、[レビュー](?a=gpt-5-5-review)）。",
+      "**4月24日（金）** — **DeepSeek V4** プレビュー公開。1.6T MoE と 1M トークンコンテキスト、Pro と Flash の2モデルをオープンソース。Bloomberg は国産チップ統合優先で GA が延期されたと報じる（[DeepSeek V4](?a=deepseek-v4-preview-1m-context-mixture-experts-2026)、[レビュー](?a=deepseek-v4-review)）。",
+      "**4月25日（土）** — Anthropic が **Project Deal** を公表。Claude エージェント69体が社内マーケットで186件・$4,000超を自律取引、「Agent Quality Gap」研究のサンプルを公開（[Project Deal](?a=anthropic-project-deal-agent-marketplace-experiment-2026)）。",
+      "**週の総括** — 米中フラッグシップ更新が同時進行した1週間。OpenAI が GPT-5.5 で「半額の SOTA」、DeepSeek V4 が 1.6T MoE と 1M ctx のオープンウェイトを投入。Amazon-Anthropic の $25B 追加投資はクラウド3強の縄張り争いを加速させ、Hugging Face と OpenAI のエージェント新製品はマルチエージェント時代の到来を示した。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing GPT-5.5",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/gpt-5-5/"
+      },
+      {
+        "title": "Anthropic and Amazon expand strategic partnership",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/expanding-our-partnership-with-amazon"
+      }
+    ]
+  },
+  "overview-2026-week-apr27": {
+    "body": [
+      "**4月29日（水）** — **Big Tech 4社が同日決算**。Microsoft AI 事業は ARR $370億（前年比 +123%）、Meta は CapEx を最大 $1,450億に上方修正、Alphabet・Amazon も AI 設備投資を引き上げ、4社合計の AI CapEx は $700B に迫る。AI バブル論を抑え込む形で「実需が投資を正当化している」流れに（[Big Tech 決算](?a=bigtech-q1-2026-earnings-ai-capex-700b-feature)）。",
+      "**5月1日（金）** — **Microsoft Agent 365** が一般提供開始。エージェントを「observe / govern / secure」する管制塔、$15/user/月、Microsoft Entra 統合で AI エージェント管理を統一する（[Agent 365](?a=microsoft-agent-365-ga-observe-govern-secure-2026)）。",
+      "**5月2日（土）** — Academy が **Oscar の AI ルール** を明確化。AI 出演・AI 脚本は対象外、「人間の同意」と「人間の著作」を必須要件に。映画業界が AI 利用の境界線を初めて明文化した（[Oscar AI](?a=academy-oscars-ai-acting-screenplay-ineligible-2026)）。",
+      "**週の総括** — 静かな週だったが、3つのテーマで「AI の社会実装フェーズ移行」が鮮明になった。Big Tech 4社の CapEx 一斉上方修正は AI 需要の継続性を裏付け、Microsoft Agent 365 はエージェント運用基盤の業界標準化を狙う。Academy の AI ルール明文化は、エンタメ業界が AI を「禁止」ではなく「適切な使い方」で受け入れる転換点となった。"
+    ],
+    "primarySources": [
+      {
+        "title": "Microsoft FY26 Q1 Earnings",
+        "site": "Microsoft",
+        "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q1/press-release-webcast"
+      },
+      {
+        "title": "Agent 365: A new way to manage your AI agents",
+        "site": "Microsoft",
+        "url": "https://www.microsoft.com/en-us/microsoft-cloud/blog/2026/05/01/agent-365-ga/"
+      }
+    ]
+  },
+  "overview-2026-week-may04": {
+    "body": [
+      "**5月5日（火）** — OpenAI が **GPT-5.5 Instant** を ChatGPT のデフォルトに昇格。ハルシネーション 52.5% 減・出力が30%短く、Plus/Pro 向けに過去チャット参照機能も解禁（[GPT-5.5 Instant](?a=openai-gpt-5-5-instant-default-chatgpt-2026)）。",
+      "**5月6日（水）** — Anthropic が **SpaceX の Colossus 1** を全量借り上げ。220,000 NVIDIA GPU・300+ MW のコンピュート基盤を確保し、Claude Code レート上限を即日2倍に。AWS Trainium と並行する「クラウド多重化」戦略（[Anthropic-SpaceX](?a=anthropic-spacex-colossus-1-compute-deal-2026)）。",
+      "**5月7日（木）** — OpenAI が **3つの大型発表**。GPT-5.5-Cyber「Trusted Access」プログラム、ChatGPT「Trusted Contact」自傷防止機能、新音声 API（GPT-Realtime-2 / Translate / Whisper）。会議・翻訳・安全領域を一気に拡張（[5/7 3発表](?a=openai-cyber-trusted-contact-voice-may7-2026)）。OpenAI Codex のレビューも公開、GPT-5.5 + Daybreak + Workspace Agents 統合の最新版を整理（[Codex レビュー](?a=openai-codex-agent)）。",
+      "**週の総括** — OpenAI と Anthropic の「軍拡」が一段と加速。OpenAI は ChatGPT デフォルトを更新し信頼性で攻め、5/7 の3発表でセキュリティ・安全・音声に同時投資。Anthropic は SpaceX Colossus 1 という異色のインフラ調達で計算リソースを確保した。プラットフォーム戦略の差が鮮明になりつつある。"
+    ],
+    "primarySources": [
+      {
+        "title": "GPT-5.5 Instant Now Default in ChatGPT",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/gpt-5-5-instant-default/"
+      },
+      {
+        "title": "Anthropic and SpaceX Compute Deal",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/spacex-colossus-1"
+      }
+    ]
+  },
+  "overview-2026-week-may11": {
+    "body": [
+      "**5月11日（月）** — **Cursor が Microsoft Teams 統合** を公開。`@Cursor` メンションでクラウドエージェントにタスク委任、リポジトリ・モデル自動選択で PR まで作成（[Cursor-Teams](?a=cursor-microsoft-teams-integration-2026)、[Cursor CLI レビュー](?a=cursor-cli)、[Cursor Editor レビュー](?a=cursor-editor)）。",
+      "**5月12日（火）** — 1日で5本の大型発表。Anthropic が **Claude for Legal** を公開、12分野の実務プラグイン＋20超 MCP コネクタ、Thomson Reuters CoCounsel と提携（[Claude for Legal](?a=anthropic-claude-for-legal-plugins-cocounsel-2026)）。Google が **Googlebook** と **Gemini Intelligence** を発表、Chromebook 後継の AI ネイティブ・ノート PC（[Googlebook](?a=google-googlebook-gemini-intelligence-android-show-2026)）。Anthropic は **Claude Platform on AWS** GA と Claude Code の「agent view」も同日発表（[Anthropic 5/12](?a=anthropic-claude-platform-aws-ga-agent-view-2026)）。会議系特集2本も同時公開（[アバター会議特集](?a=feature-ai-avatar-agents-join-meetings-2026)、[リアルタイム翻訳特集](?a=feature-realtime-translation-teams-zoom-meet-openai-2026)）。",
+      "**5月13日（水）** — Anthropic が **$900B 評価額** で $30-50B の調達交渉中と報じられる。OpenAI（$852B）を抜き「世界最高評価額の AI 企業」へ。Ramp 指数では業務利用シェアでも OpenAI を上回ったと判明（[Anthropic $900B](?a=anthropic-900b-valuation-funding-overtakes-openai-2026)）。",
+      "**5月14日（木）** — Anthropic が **Stainless 買収交渉中**（$300M+）と報じられる。OpenAI と Google も使う AI モデル SDK 自動生成基盤を取り込み、開発者体験レイヤーを統合する戦略（[Stainless 買収](?a=anthropic-stainless-acquisition-sdk-infrastructure-2026)）。",
+      "**週の総括** — Anthropic 週間と呼ぶべき1週間。Claude for Legal・AWS GA・agent view・$900B 調達・Stainless 買収と5発進、評価額・売上シェアで OpenAI を逆転。Cursor は Microsoft Teams 統合でエンタープライズ流通を強化し、Google は Googlebook で AI ネイティブ PC の新カテゴリを提示した。会議系AI（アバター・翻訳）の特集2本も AI 業界の生活浸透フェーズを示している。"
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic targets $900 billion valuation",
+        "site": "Reuters",
+        "url": "https://www.reuters.com/technology/anthropic-targets-900-billion-valuation-2026/"
+      },
+      {
+        "title": "Introducing Claude for Legal",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-for-legal"
+      }
+    ]
+  },
+  "overview-2026-week-may18": {
+    "body": [
+      "**5月19日（火）** — **Google I/O 2026** 開幕。Gemini 3.5 Flash GA、エージェントオーケストレーション「Antigravity」と「Gemini Spark」を投入、Android XR 眼鏡と Search Live など多領域で発表（[Google I/O 2026](?a=google-io-2026-gemini-3-5-flash-antigravity-spark-2026)、[Gemini CLI レビュー](?a=gemini-cli)）。",
+      "**5月20日（水）** — **中国系 AI モデル5月集中更新** の特集記事を公開。Qwen 3.7 Max（5/20、杭州 Cloud Summit）が Opus 4.6 を一部凌駕、Kimi K2.6（4/20）がオープンウェイトで GPT-5.4 を抜く、Ernie 5.1 も論理推論を大幅改善（[中国モデル特集](?a=feature-china-ai-models-may-2026-qwen-kimi-ernie)）。",
+      "**週の総括** — 静かな週だが内容は濃い。Google I/O 2026 で Gemini 3.5 Flash・Antigravity・Spark を矢継ぎ早に投入、エージェント分野で Google が攻勢に転じた。並行して中国陣営も Qwen 3.7 Max・Kimi K2.6・Ernie 5.1 を集中投入、Artificial Analysis スコアで米中ギャップを更に縮めた。「米国2強+中国OSS」の3極構造が固まりつつある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Google I/O 2026 Keynote",
+        "site": "Google",
+        "url": "https://io.google/2026"
+      },
+      {
+        "title": "Qwen 3.7 Max",
+        "site": "Alibaba Cloud",
+        "url": "https://qwenlm.github.io/blog/qwen3.7-max"
+      }
+    ]
+  },
+  "overview-2026-week-may25": {
+    "body": [
+      "**5月28日（木）** — Anthropic が **Claude Opus 4.8** をリリース。SWE-bench Verified 88.6% / SWE-bench Pro 69.2%、USAMO 2026 で 96.7%、Dynamic Workflows で最大1,000並列、Fast Mode は前世代比3倍安い $10/$50（[Opus 4.8](?a=anthropic-claude-opus-4-8-dynamic-workflows-2026)、[Claude Code レビュー](?a=claude-code)）。",
+      "**5月28日（木）— 同日続報** — Anthropic の **Series H が $65B / $965B 評価額** で確定、ARR $47B 到達、Milan・Seoul オフィス開設も発表（[Anthropic 5月補遺](?a=anthropic-may-2026-series-h-milan-korea-arr-47b-2026)）。Microsoft は **Project Polaris** を Build 2026（6/2-3）で披露すると予告、GitHub Copilot の中核モデルを MAI 系で内製化する方針（[Polaris 予告](?a=microsoft-build-2026-project-polaris-mai-coding-2026)）。",
+      "**週の総括** — Opus 4.8 とその Series H 確定で Anthropic が「強気の四半期」を締めた。Dynamic Workflows による最大1,000並列はエージェント実行の新フロンティアを開拓し、Fast Mode の3倍値下げで実用コストも引き下げた。Microsoft が翌週の Build 2026 に向けて Project Polaris のティーザーを打ち、独自モデル投入の競争が一段と熱を帯びた。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Claude Opus 4.8",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-opus-4-8"
+      },
+      {
+        "title": "Anthropic Series H Closing",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/series-h"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;

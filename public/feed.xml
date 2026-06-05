@@ -56,6 +56,14 @@
     <summary>Cerebras Systems が5月14日に NASDAQ 上場、$5.5B を調達して初日 +68% という今年最大の IPO を成功させた。SpaceX（xAI 統合後）は6月12日上場・$1.75T 評価額・$75-80B 調達を目指し、Anthropic は6月1日に confidential filing を完了し10月上場を視野、OpenAI は第4四半期を予定。3社合計で $3兆超という史上最大の AI IPO パイプラインが形成された。Cerebras の好調が他社の心理に効く一方、Figma の上場後株価低迷を引いた「AI IPO トラップ」警告も並行して出ている。本記事は各社の評価額・調達規模・タイムライン・リスクを公式値で整理する。</summary>
   </entry>
   <entry>
+    <title>【週刊まとめ】AI開発ツール — 2026年5月25日〜31日</title>
+    <link rel="alternate" type="text/html" href="?a=overview-2026-week-may25"/>
+    <id>tag:ai-tool-news.jp,2026:overview-2026-week-may25</id>
+    <published>2026-06-01T15:00:00Z</published>
+    <updated>2026-06-01T15:00:00Z</updated>
+    <summary>Anthropic が Claude Opus 4.8 をリリース、SWE-bench Verified 88.6% / Pro 69.2%、USAMO 96.7%、Dynamic Workflows で最大1,000並列、Fast Mode は3倍値下げ。Series H $65B / $965B 評価額確定、ARR $47B 到達、Milan・Seoul オフィス開設も。Microsoft は Build 2026 で Project Polaris を披露予告。</summary>
+  </entry>
+  <entry>
     <title>Anthropic 5月集中アップデート（補遺）— Series H が $65B / $965B 評価額で確定、ARR $47B 到達、Milan・Seoul オフィス開設</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-may-2026-series-h-milan-korea-arr-47b-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-may-2026-series-h-milan-korea-arr-47b-2026</id>
@@ -88,6 +96,14 @@
     <summary>claude コマンド1つでリポジトリ全体を読み込み、バグ修正からテスト実行、コミットまで自律的に行う。基盤モデルが Opus 4.8 に更新され、SWE-bench Verified 88.6% に。研究プレビューで agent view（マルチセッションダッシュボード）と Dynamic Workflows（最大1,000サブエージェント並列）が追加され、長時間自律実行と大規模並列タスクが本格化。Fast Mode は前世代比3倍安い $10/$50 で、コストとレイテンシのトレードオフを明示的に選べる。</summary>
   </entry>
   <entry>
+    <title>【週刊まとめ】AI開発ツール — 2026年5月18日〜24日</title>
+    <link rel="alternate" type="text/html" href="?a=overview-2026-week-may18"/>
+    <id>tag:ai-tool-news.jp,2026:overview-2026-week-may18</id>
+    <published>2026-05-25T15:00:00Z</published>
+    <updated>2026-05-25T15:00:00Z</updated>
+    <summary>Google I/O 2026 が開幕、Gemini 3.5 Flash GA とエージェント基盤 Antigravity・Gemini Spark を投入、Android XR 眼鏡や Search Live も。中国陣営は Qwen 3.7 Max（Opus 4.6 一部凌駕）・Kimi K2.6（OSS で GPT-5.4 超え）・Ernie 5.1 を集中投入、米中ギャップを更に縮めた。</summary>
+  </entry>
+  <entry>
     <title>【特集】中国系 AI モデルの5月集中更新 — Qwen 3.7 Max が Opus 4.6 を一部凌駕、Kimi K2.6 が OSS で GPT-5.4 を抜く、Ernie 5.1・GLM・Seedance 2.0 も同期投下</title>
     <link rel="alternate" type="text/html" href="?a=feature-china-ai-models-may-2026-qwen-kimi-ernie"/>
     <id>tag:ai-tool-news.jp,2026:feature-china-ai-models-may-2026-qwen-kimi-ernie</id>
@@ -110,6 +126,14 @@
     <published>2026-05-19T15:00:00Z</published>
     <updated>2026-05-19T15:00:00Z</updated>
     <summary>Google が Apache 2.0 で公開する OSS AI コーディングエージェント。基盤モデルは Gemini 3.5 Flash（I/O 2026 で GA、Terminal-Bench 2.1 76.2%、他社フロンティアの4倍速）。`npm install -g @google/gemini-cli` でインストール、`gemini` で起動。Plan Mode、サンドボックス（Docker/Podman）、MCP 対応、Google Search grounding が中核。5/19 の I/O 2026 で発表された Antigravity 2.0 エージェント基盤と Gemini Spark への連携も追加。Flash モデルは1日1,000リクエストまで無料、Pro は AI Pro/Ultra サブスクリプション必要。</summary>
+  </entry>
+  <entry>
+    <title>【週刊まとめ】AI開発ツール — 2026年5月11日〜17日</title>
+    <link rel="alternate" type="text/html" href="?a=overview-2026-week-may11"/>
+    <id>tag:ai-tool-news.jp,2026:overview-2026-week-may11</id>
+    <published>2026-05-18T15:00:00Z</published>
+    <updated>2026-05-18T15:00:00Z</updated>
+    <summary>Anthropic 週間。Claude for Legal・AWS GA・agent view・$900B 評価額の調達交渉・Stainless 買収と5発進し、評価額と業務シェアで OpenAI を逆転。Cursor は Microsoft Teams 統合でエンタープライズ流通強化、Google は Googlebook で AI ネイティブ PC を提示。会議系特集2本（アバター・翻訳）も同時公開。</summary>
   </entry>
   <entry>
     <title>Anthropic が Stainless 買収交渉中（$300M+）— OpenAI と Google も使う AI モデル SDK 自動生成基盤を取り込み、開発者体験レイヤーを支配へ</title>
@@ -192,6 +216,14 @@
     <summary>Anysphere の VS Code フォーク AI エディタ。Cursor 3.0 で Agents Window（`Cmd+Shift+P` → Agents Window）が追加され、ローカル・worktree・クラウド・SSH を横断するマルチエージェント運用を実現。独自モデル Composer 2.5（Kimi K2.5 ベース + 独自 RL、CursorBench で Opus 4.6 超え）と Sonic（低レイテンシ）を採用。Cursor Automations（Slack/GitHub/PagerDuty）に加え、5/11 に Microsoft Teams 統合 GA。Bugbot は 5月から usage-based 課金（1 PR 平均 $1.00-$1.50）。料金 Free / Pro $20 / Pro+ $60 / Ultra $200、Teams Standard $40-Premium $120/seat、Self-hosted Cloud Agents もエンタープライズ向けに提供。</summary>
   </entry>
   <entry>
+    <title>【週刊まとめ】AI開発ツール — 2026年5月4日〜10日</title>
+    <link rel="alternate" type="text/html" href="?a=overview-2026-week-may04"/>
+    <id>tag:ai-tool-news.jp,2026:overview-2026-week-may04</id>
+    <published>2026-05-11T15:00:00Z</published>
+    <updated>2026-05-11T15:00:00Z</updated>
+    <summary>OpenAI が GPT-5.5 Instant を ChatGPT デフォルトに昇格、ハルシネーション52.5%減。Anthropic は SpaceX Colossus 1 を全量借り上げ、220,000 GPU・300+MW を確保し Claude Code レート上限を2倍に。OpenAI は5/7に GPT-5.5-Cyber「Trusted Access」・ChatGPT「Trusted Contact」・新音声 API の3つを同日発表。</summary>
+  </entry>
+  <entry>
     <title>OpenAI が5月7日に3つの発表 — GPT-5.5-Cyber「Trusted Access」プログラム、ChatGPT「Trusted Contact」自傷防止、新音声 AI モデル</title>
     <link rel="alternate" type="text/html" href="?a=openai-cyber-trusted-contact-voice-may7-2026"/>
     <id>tag:ai-tool-news.jp,2026:openai-cyber-trusted-contact-voice-may7-2026</id>
@@ -224,6 +256,14 @@
     <summary>OpenAI が5月5日、ChatGPT のデフォルトモデルを GPT-5.5 Instant に切り替えた。高ステークスのプロンプト（医療・法律・金融）で ハルシネーション率が GPT-5.3 Instant 比 52.5% 減、ユーザーがフラグした難会話で事実誤認 37.3% 減。同時に出力スタイルも刷新され、単語数は約 30.2%・行数は約 29.2% 短くなり、絵文字の濫用が抑制された。Plus / Pro 向けには過去チャット・接続済み Gmail を文脈に使う新しい長期メモリも Web から展開開始（Free / Go / Business / Enterprise には数週間以内に拡大）。API では `chat-latest` として配信、有料ユーザー向けに GPT-5.3 Instant は3ヶ月間は設定で残せる。</summary>
   </entry>
   <entry>
+    <title>【週刊まとめ】AI開発ツール — 2026年4月27日〜5月3日</title>
+    <link rel="alternate" type="text/html" href="?a=overview-2026-week-apr27"/>
+    <id>tag:ai-tool-news.jp,2026:overview-2026-week-apr27</id>
+    <published>2026-05-04T15:00:00Z</published>
+    <updated>2026-05-04T15:00:00Z</updated>
+    <summary>Big Tech 4社が同日決算で AI CapEx を一斉上方修正、合計$700Bに迫る。Microsoft Agent 365 が GA でエージェント管制塔市場に参入。Academy が Oscar の AI ルールを明文化し「人間の同意」と「人間の著作」を必須要件に。AI の社会実装フェーズへの移行が鮮明な週。</summary>
+  </entry>
+  <entry>
     <title>【分析】Academy が Oscar の AI ルールを明確化 — AI 出演・AI 脚本は対象外、「人間の同意」と「人間の著作」を必須要件に</title>
     <link rel="alternate" type="text/html" href="?a=academy-oscars-ai-acting-screenplay-ineligible-2026"/>
     <id>tag:ai-tool-news.jp,2026:academy-oscars-ai-acting-screenplay-ineligible-2026</id>
@@ -246,6 +286,14 @@
     <published>2026-04-29T15:00:00Z</published>
     <updated>2026-04-29T15:00:00Z</updated>
     <summary>4月29日夕、Alphabet・Microsoft・Meta・Amazon の4社が同時にカレンダー第1四半期（Microsoft は会計 Q3）決算を発表した。Microsoft の AI 事業は ARR $370億（前年比 +123%） に到達、Azure は +40% で過去12四半期で最速級。Alphabet は Google Cloud が四半期売上 $200億超を初突破。Meta は 2026年 CapEx ガイダンスを $1,250〜1,450億へ上方修正したことで時間外株価が −6% と反応。AWS は +22% で15四半期ぶりの高成長。Fortune は翌4月30日、Big Tech ハイパースケーラー合計の年間 AI インフラ支出が $7,000億に達し「出口の見えない投資競争」と報じた。AI バブル論争の論点と、開発者にとっての実務的含意を整理する。</summary>
+  </entry>
+  <entry>
+    <title>【週刊まとめ】AI開発ツール — 2026年4月20日〜26日</title>
+    <link rel="alternate" type="text/html" href="?a=overview-2026-week-apr20"/>
+    <id>tag:ai-tool-news.jp,2026:overview-2026-week-apr20</id>
+    <published>2026-04-27T15:00:00Z</published>
+    <updated>2026-04-27T15:00:00Z</updated>
+    <summary>Amazon が Anthropic に最大$25Bを追加投資し評価額$380Bに。OpenAI は GPT-5.5 を6週間ぶりに投入し「半額のSOTA」を実現。DeepSeek V4 が1.6T MoEと1Mコンテキストでオープン公開。Hugging Face は ml-intern、OpenAI は Workspace Agents を投入、エージェント新製品ラッシュ。</summary>
   </entry>
   <entry>
     <title>Anthropic が Project Deal を公表 — Claude エージェント69体が社内マーケットで186件・$4,000超を自律取引、「Agent Quality Gap」という新たな課題が浮上</title>
@@ -310,6 +358,14 @@
     <published>2026-04-20T15:00:00Z</published>
     <updated>2026-04-20T15:00:00Z</updated>
     <summary>Amazon が4月20日、Anthropic に最大 $250億（追加投資）を行うと発表した。これまで既に投じてきた $80億に積み増す形で、初期 $50億は Anthropic の評価額 $3,800億で即時投入、残り $200億は「特定の商業マイルストン」達成時に追加される。見返りに Anthropic は AWS で今後10年で $1,000億超を支出し、年内に合計約 1 ギガワット（GW）の Trainium2/Trainium3 容量を立ち上げる。Anthropic は需要急増で「信頼性と性能に避けられない負荷」が生じているとし、追加インフラの確保が急務だった。Amazon の OpenAI 向け最大 $500億投資（2月）からわずか2か月での追加コミットメントとなる。</summary>
+  </entry>
+  <entry>
+    <title>【週刊まとめ】AI開発ツール — 2026年4月13日〜19日</title>
+    <link rel="alternate" type="text/html" href="?a=overview-2026-week-apr13"/>
+    <id>tag:ai-tool-news.jp,2026:overview-2026-week-apr13</id>
+    <published>2026-04-20T15:00:00Z</published>
+    <updated>2026-04-20T15:00:00Z</updated>
+    <summary>Anthropic が Opus 4.7 GA・Claude Code デスクトップ刷新・Claude Design 投入と3連発で開発者体験を強化。Stanford AI Index 2026 は中国の急追を裏付け、Apple は AI 責任者 Giannandrea が退任。OpenAI も GPT-5.4-Cyber でセキュリティ領域に踏み込んだ。</summary>
   </entry>
   <entry>
     <title>Anthropic が Claude Design を公開 — Opus 4.7 ベースのビジュアル制作ツール、コードベースからデザインシステム自動生成、Figma に正面挑戦</title>

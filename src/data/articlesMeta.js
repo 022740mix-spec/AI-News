@@ -2186,7 +2186,6 @@ export const ARTICLES_META = [
       "alt": "AI テクノロジー"
     },
     "heroScope": "week",
-    "pinned": true,
     "weekRoundupPeriod": {
       "start": "2026-03-23",
       "end": "2026-03-29"
@@ -2214,7 +2213,6 @@ export const ARTICLES_META = [
       "alt": "AI テクノロジー"
     },
     "heroScope": "week",
-    "pinned": true,
     "weekRoundupPeriod": {
       "start": "2026-03-16",
       "end": "2026-03-22"
@@ -5119,8 +5117,7 @@ export const ARTICLES_META = [
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Anthropic Claude Code"
-    },
-    "pinned": true
+    }
   },
   {
     "id": "drawio-mcp-diagram-streaming-claude-2026",
@@ -5345,7 +5342,6 @@ export const ARTICLES_META = [
       "alt": "週刊まとめ 3/30〜4/5"
     },
     "heroScope": "week",
-    "pinned": true,
     "weekRoundupPeriod": {
       "start": "2026-03-30",
       "end": "2026-04-05"
@@ -5366,10 +5362,150 @@ export const ARTICLES_META = [
       "alt": "週刊まとめ 4/6〜4/12"
     },
     "heroScope": "week",
-    "pinned": true,
     "weekRoundupPeriod": {
       "start": "2026-04-06",
       "end": "2026-04-12"
+    }
+  },
+  {
+    "id": "overview-2026-week-apr13",
+    "type": "feature",
+    "category": "special",
+    "title": "【週刊まとめ】AI開発ツール — 2026年4月13日〜19日",
+    "excerpt": "Anthropic が Opus 4.7 GA・Claude Code デスクトップ刷新・Claude Design 投入と3連発で開発者体験を強化。Stanford AI Index 2026 は中国の急追を裏付け、Apple は AI 責任者 Giannandrea が退任。OpenAI も GPT-5.4-Cyber でセキュリティ領域に踏み込んだ。",
+    "date": "2026-04-20",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": ["週刊まとめ", "2026年4月", "Anthropic", "Opus 4.7", "Claude Design", "Apple"],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "週刊まとめ 4/13〜4/19"
+    },
+    "heroScope": "week",
+    "weekRoundupPeriod": {
+      "start": "2026-04-13",
+      "end": "2026-04-19"
+    }
+  },
+  {
+    "id": "overview-2026-week-apr20",
+    "type": "feature",
+    "category": "special",
+    "title": "【週刊まとめ】AI開発ツール — 2026年4月20日〜26日",
+    "excerpt": "Amazon が Anthropic に最大$25Bを追加投資し評価額$380Bに。OpenAI は GPT-5.5 を6週間ぶりに投入し「半額のSOTA」を実現。DeepSeek V4 が1.6T MoEと1Mコンテキストでオープン公開。Hugging Face は ml-intern、OpenAI は Workspace Agents を投入、エージェント新製品ラッシュ。",
+    "date": "2026-04-27",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": ["週刊まとめ", "2026年4月", "OpenAI", "Anthropic", "DeepSeek", "GPT-5.5"],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "週刊まとめ 4/20〜4/26"
+    },
+    "heroScope": "week",
+    "weekRoundupPeriod": {
+      "start": "2026-04-20",
+      "end": "2026-04-26"
+    }
+  },
+  {
+    "id": "overview-2026-week-apr27",
+    "type": "feature",
+    "category": "special",
+    "title": "【週刊まとめ】AI開発ツール — 2026年4月27日〜5月3日",
+    "excerpt": "Big Tech 4社が同日決算で AI CapEx を一斉上方修正、合計$700Bに迫る。Microsoft Agent 365 が GA でエージェント管制塔市場に参入。Academy が Oscar の AI ルールを明文化し「人間の同意」と「人間の著作」を必須要件に。AI の社会実装フェーズへの移行が鮮明な週。",
+    "date": "2026-05-04",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["週刊まとめ", "2026年4-5月", "Microsoft", "Meta", "決算", "規制"],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "週刊まとめ 4/27〜5/3"
+    },
+    "heroScope": "week",
+    "weekRoundupPeriod": {
+      "start": "2026-04-27",
+      "end": "2026-05-03"
+    }
+  },
+  {
+    "id": "overview-2026-week-may04",
+    "type": "feature",
+    "category": "special",
+    "title": "【週刊まとめ】AI開発ツール — 2026年5月4日〜10日",
+    "excerpt": "OpenAI が GPT-5.5 Instant を ChatGPT デフォルトに昇格、ハルシネーション52.5%減。Anthropic は SpaceX Colossus 1 を全量借り上げ、220,000 GPU・300+MW を確保し Claude Code レート上限を2倍に。OpenAI は5/7に GPT-5.5-Cyber「Trusted Access」・ChatGPT「Trusted Contact」・新音声 API の3つを同日発表。",
+    "date": "2026-05-11",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": ["週刊まとめ", "2026年5月", "OpenAI", "Anthropic", "GPT-5.5", "音声API"],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "週刊まとめ 5/4〜5/10"
+    },
+    "heroScope": "week",
+    "weekRoundupPeriod": {
+      "start": "2026-05-04",
+      "end": "2026-05-10"
+    }
+  },
+  {
+    "id": "overview-2026-week-may11",
+    "type": "feature",
+    "category": "special",
+    "title": "【週刊まとめ】AI開発ツール — 2026年5月11日〜17日",
+    "excerpt": "Anthropic 週間。Claude for Legal・AWS GA・agent view・$900B 評価額の調達交渉・Stainless 買収と5発進し、評価額と業務シェアで OpenAI を逆転。Cursor は Microsoft Teams 統合でエンタープライズ流通強化、Google は Googlebook で AI ネイティブ PC を提示。会議系特集2本（アバター・翻訳）も同時公開。",
+    "date": "2026-05-18",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": ["週刊まとめ", "2026年5月", "Anthropic", "Cursor", "Google", "会議AI"],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "週刊まとめ 5/11〜5/17"
+    },
+    "heroScope": "week",
+    "weekRoundupPeriod": {
+      "start": "2026-05-11",
+      "end": "2026-05-17"
+    }
+  },
+  {
+    "id": "overview-2026-week-may18",
+    "type": "feature",
+    "category": "special",
+    "title": "【週刊まとめ】AI開発ツール — 2026年5月18日〜24日",
+    "excerpt": "Google I/O 2026 が開幕、Gemini 3.5 Flash GA とエージェント基盤 Antigravity・Gemini Spark を投入、Android XR 眼鏡や Search Live も。中国陣営は Qwen 3.7 Max（Opus 4.6 一部凌駕）・Kimi K2.6（OSS で GPT-5.4 超え）・Ernie 5.1 を集中投入、米中ギャップを更に縮めた。",
+    "date": "2026-05-25",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": ["週刊まとめ", "2026年5月", "Google", "I/O 2026", "中国モデル", "Qwen"],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "週刊まとめ 5/18〜5/24"
+    },
+    "heroScope": "week",
+    "weekRoundupPeriod": {
+      "start": "2026-05-18",
+      "end": "2026-05-24"
+    }
+  },
+  {
+    "id": "overview-2026-week-may25",
+    "type": "feature",
+    "category": "special",
+    "title": "【週刊まとめ】AI開発ツール — 2026年5月25日〜31日",
+    "excerpt": "Anthropic が Claude Opus 4.8 をリリース、SWE-bench Verified 88.6% / Pro 69.2%、USAMO 96.7%、Dynamic Workflows で最大1,000並列、Fast Mode は3倍値下げ。Series H $65B / $965B 評価額確定、ARR $47B 到達、Milan・Seoul オフィス開設も。Microsoft は Build 2026 で Project Polaris を披露予告。",
+    "date": "2026-06-01",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": ["週刊まとめ", "2026年5月", "Anthropic", "Opus 4.8", "Series H", "Microsoft"],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "週刊まとめ 5/25〜5/31"
+    },
+    "heroScope": "week",
+    "pinned": true,
+    "weekRoundupPeriod": {
+      "start": "2026-05-25",
+      "end": "2026-05-31"
     }
   }
 ];
