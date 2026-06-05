@@ -40,6 +40,14 @@
     <summary>Microsoft が6月2日、開発者カンファレンス Build 2026 で Scout を発表した。OSS の AI エージェント基盤 OpenClaw をベースとする「autopilot（オートパイロット）」型の常時稼働エージェントで、ユーザーの代理として動き、固有の Entra アイデンティティで管理される。Teams からアクセスし、Outlook（メール）、OneDrive、SharePoint、Excel を横断して読み書きでき、外部アプリは MCP（Model Context Protocol）で接続可能。デモでは「Outlook の顧客メール読解 → SharePoint で注文番号照合 → Excel ダッシュボード更新 → Teams で確認返信」を1セッションで完遂した。ポリシーコンフォーマンス・システムによる継続的監査と監査証跡を内蔵。提供はプライベートプレビューから開始し、Intune ポリシー設定、opt-in 同意、GitHub Copilot ライセンスが前提条件。前日報道の Project Polaris（自社製コーディング AI）と並ぶ、Micro</summary>
   </entry>
   <entry>
+    <title>GitHub Copilot CLI レビュー — `/fleet` 並列エージェント、Autopilot、`/model` 切替（Sonnet 4.5 / Opus 4.7-4.8 / GPT-5.5 / MAI-Code-1-Flash）対応</title>
+    <link rel="alternate" type="text/html" href="?a=github-copilot-cli"/>
+    <id>tag:ai-tool-news.jp,2026:github-copilot-cli</id>
+    <published>2026-06-02T15:00:00Z</published>
+    <updated>2026-06-02T15:00:00Z</updated>
+    <summary>GitHub（Microsoft 傘下）の Copilot coding agent ターミナル版。`npm install -g @github/copilot`（Node 22+）、`brew install copilot-cli`、`winget install GitHub.Copilot`、`gh copilot` の4経路でインストール、`copilot` で起動。既定モデル Claude Sonnet 4.5、`/model` で Opus 4.7/4.8 / GPT-5.5 / Project Polaris (MAI-Code-1-Flash) に切替可能。`/fleet` でサブエージェント並列実行、VS Code Autopilot mode で完全自律実行、`copilot mcp` で MCP サーバー管理。Build 2026（6/2-3）で Copilot Starter（無償）/ Pro / Enterprise 3階層への再編成も予告された。</summary>
+  </entry>
+  <entry>
     <title>【分析】AI IPO シーズン到来 — Cerebras が5/14に $5.5B 調達で初日 +68%、Anthropic は6/1 に confidential filing、SpaceX は6/12 で $1.75T 評価額目標、OpenAI は Q4</title>
     <link rel="alternate" type="text/html" href="?a=feature-ai-ipo-season-cerebras-spacex-anthropic-openai-2026"/>
     <id>tag:ai-tool-news.jp,2026:feature-ai-ipo-season-cerebras-spacex-anthropic-openai-2026</id>
@@ -94,6 +102,14 @@
     <published>2026-05-19T15:00:00Z</published>
     <updated>2026-05-19T15:00:00Z</updated>
     <summary>Google が5月19日からの Google I/O 2026 で 100以上の発表を行った。中心は Gemini 3.5 Flash の即時 GA — Terminal-Bench 2.1 で 76.2%、GDPval-AA 1656 Elo、MCP Atlas 83.6% を記録し、Flash クラスのコスト・速度で 3.1 Pro を超える性能を達成。新エージェント基盤 Antigravity 2.0 がデスクトップアプリとして全世界提供開始。Gemini Spark（パーソナルエージェント）は来週から AI Ultra 加入者向けにベータ展開。新しい AI Ultra プラン $100/月 にこれが含まれる。マルチモーダルの Gemini Omni、Samsung 製 Android XR 眼鏡、Veo / Lyria / Imagen / Nano Banana 2 の連携など、OS レベルから生成 AI まで広範に投入。Anthropic の Claude Opus 4.8（5/28）と並ぶ「5月後半の AI フロンティア集中発表週」となった。</summary>
+  </entry>
+  <entry>
+    <title>Gemini CLI レビュー — Google の OSS CLI、Gemini 3.5 Flash + Antigravity 2.0 / Spark 連携対応版</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-cli"/>
+    <id>tag:ai-tool-news.jp,2026:gemini-cli</id>
+    <published>2026-05-19T15:00:00Z</published>
+    <updated>2026-05-19T15:00:00Z</updated>
+    <summary>Google が Apache 2.0 で公開する OSS AI コーディングエージェント。基盤モデルは Gemini 3.5 Flash（I/O 2026 で GA、Terminal-Bench 2.1 76.2%、他社フロンティアの4倍速）。`npm install -g @google/gemini-cli` でインストール、`gemini` で起動。Plan Mode、サンドボックス（Docker/Podman）、MCP 対応、Google Search grounding が中核。5/19 の I/O 2026 で発表された Antigravity 2.0 エージェント基盤と Gemini Spark への連携も追加。Flash モデルは1日1,000リクエストまで無料、Pro は AI Pro/Ultra サブスクリプション必要。</summary>
   </entry>
   <entry>
     <title>Anthropic が Stainless 買収交渉中（$300M+）— OpenAI と Google も使う AI モデル SDK 自動生成基盤を取り込み、開発者体験レイヤーを支配へ</title>
@@ -160,12 +176,36 @@
     <summary>Cursor が5月11日、Microsoft Teams 統合を一般公開した。Teams の任意のチャネルで `@Cursor` メンションするとクラウドエージェントにタスクを委任でき、Cursor 側の情報（リポジトリ・実行履歴）を Teams に引き出すこともできる。Cursor はプロンプトと直近のエージェント活動からリポジトリとモデルを自動選択し、スレッド全体を文脈として読み込んで実装を行い、チームレビュー用の PR を作成する流れだ。インストールは Cursor ダッシュボードから。3月の Cursor Automations（Slack / GitHub / PagerDuty トリガー）に続く「チャットアプリ起点で動くエージェント」の Microsoft Teams 版で、OpenAI Workspace Agents（4/22）や Anthropic Claude Managed Agents と並ぶ流れだ。</summary>
   </entry>
   <entry>
+    <title>Cursor CLI レビュー — IDE 不要で Composer / Background Agent を使える独立 CLI（Composer 2.5 / Sonic 対応、Microsoft Teams 統合版）</title>
+    <link rel="alternate" type="text/html" href="?a=cursor-cli"/>
+    <id>tag:ai-tool-news.jp,2026:cursor-cli</id>
+    <published>2026-05-11T15:00:00Z</published>
+    <updated>2026-05-11T15:00:00Z</updated>
+    <summary>Anysphere が提供する Cursor の独立 CLI。`npm install -g @cursor/cli` でインストール、`cursor auth` でサインイン、`cursor` で対話セッション、`cursor --headless` で CI 用。Composer 2.5（Cursor 独自モデル、CursorBench で Opus 4.6 を上回る）と Sonic（低レイテンシ編集特化）に加え、Background Agent（クラウドサンドボックス、GitHub Issue や Slack 起点で PR ドラフト作成）が中核。3月の Cursor Automations（Slack/GitHub/PagerDuty）に加えて、5/11 に Microsoft Teams 統合 GA。料金は Free / Pro $20 / Pro+ $60 / Ultra $200 / Teams Standard $40 seat / Premium $120 seat。</summary>
+  </entry>
+  <entry>
+    <title>Cursor レビュー — Cursor 3.x の Agents Window + Composer 2.5 + Microsoft Teams 統合 + Bugbot usage-based 対応版</title>
+    <link rel="alternate" type="text/html" href="?a=cursor-editor"/>
+    <id>tag:ai-tool-news.jp,2026:cursor-editor</id>
+    <published>2026-05-11T15:00:00Z</published>
+    <updated>2026-05-11T15:00:00Z</updated>
+    <summary>Anysphere の VS Code フォーク AI エディタ。Cursor 3.0 で Agents Window（`Cmd+Shift+P` → Agents Window）が追加され、ローカル・worktree・クラウド・SSH を横断するマルチエージェント運用を実現。独自モデル Composer 2.5（Kimi K2.5 ベース + 独自 RL、CursorBench で Opus 4.6 超え）と Sonic（低レイテンシ）を採用。Cursor Automations（Slack/GitHub/PagerDuty）に加え、5/11 に Microsoft Teams 統合 GA。Bugbot は 5月から usage-based 課金（1 PR 平均 $1.00-$1.50）。料金 Free / Pro $20 / Pro+ $60 / Ultra $200、Teams Standard $40-Premium $120/seat、Self-hosted Cloud Agents もエンタープライズ向けに提供。</summary>
+  </entry>
+  <entry>
     <title>OpenAI が5月7日に3つの発表 — GPT-5.5-Cyber「Trusted Access」プログラム、ChatGPT「Trusted Contact」自傷防止、新音声 AI モデル</title>
     <link rel="alternate" type="text/html" href="?a=openai-cyber-trusted-contact-voice-may7-2026"/>
     <id>tag:ai-tool-news.jp,2026:openai-cyber-trusted-contact-voice-may7-2026</id>
     <published>2026-05-07T15:00:00Z</published>
     <updated>2026-05-07T15:00:00Z</updated>
     <summary>OpenAI が5月7日、AI 開発・サイバー防衛・利用者保護にまたがる3つの大きな更新を一斉に発表した。①GPT-5.5-Cyber — 重要インフラを守るディフェンダー向けに、より許容範囲の広いサイバーセキュリティ特化モデルを Trusted Access for Cyber（TAC） プログラムで限定提供開始。②Trusted Contact — ChatGPT のオプション機能で、自傷リスクが自動検知＋人間レビューで「深刻」と判定された場合、ユーザーが事前に指定した成人連絡先へ SMS / メールで通知する。③新しい音声 AI モデルを API に追加 — リアルタイム音声インテリジェンスのレイヤーを刷新。Anthropic SpaceX 契約（5/6）の翌日に「サイバー × 安全 × 音声」の3軸で並行投入する形で、フロンティアモデル各社の競争は 能力ベンチマークから安全運用と業界別パッケージング へと軸足を移しつつある。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI Codex レビュー — クラウド版 + Codex CLI、GPT-5.5 + Daybreak + Workspace Agents 統合の最新版</title>
+    <link rel="alternate" type="text/html" href="?a=openai-codex-agent"/>
+    <id>tag:ai-tool-news.jp,2026:openai-codex-agent</id>
+    <published>2026-05-07T15:00:00Z</published>
+    <updated>2026-05-07T15:00:00Z</updated>
+    <summary>ChatGPT 上のクラウド版と独立 Codex CLI の2形態で提供される OpenAI コーディングエージェント。4M+ アクティブユーザー、基盤モデルは GPT-5.5（4/23 リリース、Coding Index 半額 SOTA）。CLI は `curl -fsSL https://chatgpt.com/codex/install.sh | sh` または `npm install -g @openai/codex` でインストール、`codex` で起動。クラウド並列実行で PR を量産するワークフローが最大の武器。5/7 の Daybreak（Codex Security 拡張、GPT-5.5-Cyber 含む3層）、4/22 の Workspace Agents（Codex で動作、Slack/Salesforce/Notion 連動）も統合。料金は ChatGPT Plus $20 から、フル並列利用は Pro $200。</summary>
   </entry>
   <entry>
     <title>Anthropic が SpaceX の Colossus 1 を全量借り上げ — 220,000 NVIDIA GPU・300+ MW、Claude Code レート上限を2倍に、軌道データセンター構想にも踏み込む</title>
@@ -1328,14 +1368,6 @@
     <summary>2026年3月頃、AP・NPR・Business Insider などが Sora のアプリ／関連 API 終了を伝えた。最終的な公式文言・日付は openai.com 側の確認を優先する。</summary>
   </entry>
   <entry>
-    <title>Cursor レビュー — AIエディタの王者、Windsurf統合で盤石に</title>
-    <link rel="alternate" type="text/html" href="?a=cursor-editor"/>
-    <id>tag:ai-tool-news.jp,2026:cursor-editor</id>
-    <published>2026-03-26T15:00:00Z</published>
-    <updated>2026-03-26T15:00:00Z</updated>
-    <summary>VS Code フォークで最も人気のAIエディタ。Windsurf買収によるCascade統合とBackground Agentの追加でさらに進化。</summary>
-  </entry>
-  <entry>
     <title>Anthropic、ペンタゴンのサプライチェーン指定差し止めに成功 — 連邦裁判所が暫定差止命令</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-pentagon-injunction-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-pentagon-injunction-2026</id>
@@ -1366,14 +1398,6 @@
     <published>2026-03-25T15:00:00Z</published>
     <updated>2026-03-25T15:00:00Z</updated>
     <summary>Google Research が LLM の KV キャッシュを3ビットまで圧縮するアルゴリズム TurboQuant を発表した。NVIDIA H100 GPU 上で最大8倍の高速化と6倍以上のメモリ削減を精度損失なしで実現。Samsung や Micron などメモリチップ株に影響が出ている。</summary>
-  </entry>
-  <entry>
-    <title>Gemini CLI レビュー — Googleが放つ200万トークンの超大規模コンテキストCLI</title>
-    <link rel="alternate" type="text/html" href="?a=gemini-cli"/>
-    <id>tag:ai-tool-news.jp,2026:gemini-cli</id>
-    <published>2026-03-25T15:00:00Z</published>
-    <updated>2026-03-25T15:00:00Z</updated>
-    <summary>Google DeepMindが開発。Gemini 2.5 Proの200万トークンコンテキストで、大規模リポジトリを丸ごと解析。無料枠も充実。</summary>
   </entry>
   <entry>
     <title>ARC-AGI-3 公開 — インタラクティブ環境でフロンティアAIが0.26%、人間は100%</title>
@@ -1446,14 +1470,6 @@
     <published>2026-03-22T15:00:00Z</published>
     <updated>2026-03-22T15:00:00Z</updated>
     <summary>Cursor の最新コーディングモデル Composer 2 が、中国 Moonshot AI のオープンウェイトモデル Kimi K2.5 をベースに追加学習して構築されたことが判明した。開発者が API トラフィックを解析し、モデル ID が kimi-k2p5 であることを発見。Cursor は「ベースモデルの言及漏れ」を認め、Moonshot AI は公式に支持を表明した。</summary>
-  </entry>
-  <entry>
-    <title>OpenAI Codex — クラウド並列実行のAIコーディングエージェント</title>
-    <link rel="alternate" type="text/html" href="?a=openai-codex-agent"/>
-    <id>tag:ai-tool-news.jp,2026:openai-codex-agent</id>
-    <published>2026-03-22T15:00:00Z</published>
-    <updated>2026-03-22T15:00:00Z</updated>
-    <summary>OpenAIが満を持してリリースしたコーディングエージェント。クラウドサンドボックスで複数タスクを並列実行し、PRとして提出する新しいワークフロー。</summary>
   </entry>
   <entry>
     <title>Runway Gen-5 レビュー — 動画生成のフロントランナー、映像制作者の新標準</title>
@@ -1542,14 +1558,6 @@
     <published>2026-03-17T15:00:00Z</published>
     <updated>2026-03-17T15:00:00Z</updated>
     <summary>2026年3月17日、OpenAI が GPT-5.4 mini と GPT-5.4 nano を公開。mini は ChatGPT 無料ユーザーに開放、nano は API 専用で超低コスト（$0.20/1M）のサブエージェント向け。Codex や ChatGPT のコーディング機能も同時に強化。</summary>
-  </entry>
-  <entry>
-    <title>Cursor CLI (Composer) レビュー — IDE一体型のAIコーディング環境</title>
-    <link rel="alternate" type="text/html" href="?a=cursor-cli"/>
-    <id>tag:ai-tool-news.jp,2026:cursor-cli</id>
-    <published>2026-03-15T15:00:00Z</published>
-    <updated>2026-03-15T15:00:00Z</updated>
-    <summary>IDE一体型でありながら、CLIモード（Composer）が強力。自然言語で伝えるだけで、関連ファイルを自動で見つけ出し、変更案を提示する。</summary>
   </entry>
   <entry>
     <title>Claude Opus 4.6 レビュー — Anthropic 最上位、1Mコンテキストの深い推論</title>
@@ -1662,14 +1670,6 @@
     <published>2026-03-10T15:00:00Z</published>
     <updated>2026-03-10T15:00:00Z</updated>
     <summary>ベクトル化の前段で成果が決まる。固定長だけでなく見出し・段落・構造を利用した分割、親チャンクと子チャンク、表・スキャン PDF・OCR のノイズ、メタデータとリネージ・再処理、障害検知までを実務目線で整理する。</summary>
-  </entry>
-  <entry>
-    <title>GitHub Copilot CLI レビュー — エンタープライズ対応のAI開発支援</title>
-    <link rel="alternate" type="text/html" href="?a=github-copilot-cli"/>
-    <id>tag:ai-tool-news.jp,2026:github-copilot-cli</id>
-    <published>2026-03-10T15:00:00Z</published>
-    <updated>2026-03-10T15:00:00Z</updated>
-    <summary>GitHubエコシステムとシームレスに統合。Copilot Coding Agentによる自律的なIssue対応が新たに追加。</summary>
   </entry>
   <entry>
     <title>GPT-5.4 レビュー — OpenAI 最新、推論・コーディング・エージェント統合モデル</title>
