@@ -1,4 +1,43 @@
 {
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git fetch:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(mkdir:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(wc:*)",
+      "Bash(date:*)",
+      "Bash(test:*)",
+      "Bash(echo:*)",
+      "Write(reports/*.md)",
+      "Write(reports/**/*.md)",
+      "Edit(reports/*.md)",
+      "Edit(reports/**/*.md)"
+    ],
+    "deny": [
+      "Write(src/data/articlesMeta.js)",
+      "Write(src/data/articlesBody.js)",
+      "Write(src/data/aiCompanies.js)",
+      "Write(src/data/vibeCodingGuide.js)",
+      "Edit(src/data/articlesMeta.js)",
+      "Edit(src/data/articlesBody.js)",
+      "Edit(src/data/aiCompanies.js)",
+      "Edit(src/data/vibeCodingGuide.js)"
+    ]
+  },
   "hooks": {
     "Stop": [
       {
