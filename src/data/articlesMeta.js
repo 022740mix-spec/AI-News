@@ -2834,57 +2834,59 @@ export const ARTICLES_META = [
     "id": "gemini-cli",
     "type": "review",
     "category": "cli",
-    "title": "Gemini CLI レビュー — Googleが放つ200万トークンの超大規模コンテキストCLI",
-    "excerpt": "Google DeepMindが開発。Gemini 2.5 Proの200万トークンコンテキストで、大規模リポジトリを丸ごと解析。無料枠も充実。",
-    "date": "2026-03-28",
-    "newsDate": "2026-03-25",
+    "title": "Gemini CLI レビュー — Google の OSS CLI、Gemini 3.5 Flash + Antigravity 2.0 / Spark 連携対応版",
+    "excerpt": "Google が Apache 2.0 で公開する OSS AI コーディングエージェント。基盤モデルは Gemini 3.5 Flash（I/O 2026 で GA、Terminal-Bench 2.1 76.2%、他社フロンティアの4倍速）。`npm install -g @google/gemini-cli` でインストール、`gemini` で起動。Plan Mode、サンドボックス（Docker/Podman）、MCP 対応、Google Search grounding が中核。5/19 の I/O 2026 で発表された Antigravity 2.0 エージェント基盤と Gemini Spark への連携も追加。Flash モデルは1日1,000リクエストまで無料、Pro は AI Pro/Ultra サブスクリプション必要。",
+    "date": "2026-06-05",
+    "newsDate": "2026-05-19",
     "author": "AI News 編集部",
-    "readTime": "5分",
+    "readTime": "6分",
     "tags": [
       "CLI",
       "Google",
       "OSS",
-      "新着"
+      "Gemini"
     ],
     "ratings": {
       "AI品質": 4,
-      "使いやすさ": 3,
+      "使いやすさ": 4,
       "コスパ": 5,
-      "拡張性": 3,
-      "企業向け": 2
+      "拡張性": 4,
+      "企業向け": 3
     },
     "rating": 4,
-    "reviewCategory": "cli"
+    "reviewCategory": "cli",
+    "lastReviewed": "2026-06-05"
   },
   {
     "id": "openai-codex-agent",
     "type": "review",
     "category": "cli",
-    "title": "OpenAI Codex — クラウド並列実行のAIコーディングエージェント",
-    "excerpt": "OpenAIが満を持してリリースしたコーディングエージェント。クラウドサンドボックスで複数タスクを並列実行し、PRとして提出する新しいワークフロー。",
-    "date": "2026-03-28",
-    "newsDate": "2026-03-22",
+    "title": "OpenAI Codex レビュー — クラウド版 + Codex CLI、GPT-5.5 + Daybreak + Workspace Agents 統合の最新版",
+    "excerpt": "ChatGPT 上のクラウド版と独立 Codex CLI の2形態で提供される OpenAI コーディングエージェント。**4M+ アクティブユーザー、基盤モデルは GPT-5.5**（4/23 リリース、Coding Index 半額 SOTA）。CLI は `curl -fsSL https://chatgpt.com/codex/install.sh | sh` または `npm install -g @openai/codex` でインストール、`codex` で起動。クラウド並列実行で PR を量産するワークフローが最大の武器。5/7 の Daybreak（Codex Security 拡張、GPT-5.5-Cyber 含む3層）、4/22 の Workspace Agents（Codex で動作、Slack/Salesforce/Notion 連動）も統合。料金は ChatGPT Plus $20 から、フル並列利用は Pro $200。",
+    "date": "2026-06-05",
+    "newsDate": "2026-05-07",
     "author": "AI News 編集部",
-    "readTime": "5分",
+    "readTime": "6分",
     "tags": [
       "CLI",
+      "OpenAI",
       "エージェント",
-      "クラウド",
-      "新着"
+      "GPT-5.5"
     ],
     "coverImage": {
       "src": "logos/codex.svg",
       "alt": "Codex"
     },
     "ratings": {
-      "AI品質": 4,
-      "使いやすさ": 3,
-      "コスパ": 2,
-      "拡張性": 3,
+      "AI品質": 5,
+      "使いやすさ": 4,
+      "コスパ": 3,
+      "拡張性": 4,
       "企業向け": 4
     },
     "rating": 4,
-    "reviewCategory": "cli"
+    "reviewCategory": "cli",
+    "lastReviewed": "2026-06-05"
   },
   {
     "id": "cursor-windsurf-merge",
@@ -2965,51 +2967,55 @@ export const ARTICLES_META = [
     "id": "cursor-cli",
     "type": "review",
     "category": "cli",
-    "title": "Cursor CLI (Composer) レビュー — IDE一体型のAIコーディング環境",
-    "excerpt": "IDE一体型でありながら、CLIモード（Composer）が強力。自然言語で伝えるだけで、関連ファイルを自動で見つけ出し、変更案を提示する。",
-    "date": "2026-03-28",
-    "newsDate": "2026-03-15",
+    "title": "Cursor CLI レビュー — IDE 不要で Composer / Background Agent を使える独立 CLI（Composer 2.5 / Sonic 対応、Microsoft Teams 統合版）",
+    "excerpt": "Anysphere が提供する Cursor の独立 CLI。`npm install -g @cursor/cli` でインストール、`cursor auth` でサインイン、`cursor` で対話セッション、`cursor --headless` で CI 用。**Composer 2.5**（Cursor 独自モデル、CursorBench で Opus 4.6 を上回る）と **Sonic**（低レイテンシ編集特化）に加え、**Background Agent**（クラウドサンドボックス、GitHub Issue や Slack 起点で PR ドラフト作成）が中核。3月の Cursor Automations（Slack/GitHub/PagerDuty）に加えて、**5/11 に Microsoft Teams 統合 GA**。料金は Free / Pro $20 / Pro+ $60 / Ultra $200 / Teams Standard $40 seat / Premium $120 seat。",
+    "date": "2026-06-05",
+    "newsDate": "2026-05-11",
     "author": "AI News 編集部",
-    "readTime": "6分",
+    "readTime": "7分",
     "tags": [
       "CLI",
-      "IDE統合",
+      "Cursor",
+      "Anysphere",
       "おすすめ"
     ],
     "ratings": {
       "AI品質": 4,
-      "使いやすさ": 4,
+      "使いやすさ": 5,
       "コスパ": 4,
-      "拡張性": 3,
-      "企業向け": 3
+      "拡張性": 4,
+      "企業向け": 4
     },
     "rating": 5,
-    "reviewCategory": "cli"
+    "reviewCategory": "cli",
+    "lastReviewed": "2026-06-05"
   },
   {
     "id": "github-copilot-cli",
     "type": "review",
     "category": "cli",
-    "title": "GitHub Copilot CLI レビュー — エンタープライズ対応のAI開発支援",
-    "excerpt": "GitHubエコシステムとシームレスに統合。Copilot Coding Agentによる自律的なIssue対応が新たに追加。",
-    "date": "2026-03-28",
-    "newsDate": "2026-03-10",
+    "title": "GitHub Copilot CLI レビュー — `/fleet` 並列エージェント、Autopilot、`/model` 切替（Sonnet 4.5 / Opus 4.7-4.8 / GPT-5.5 / MAI-Code-1-Flash）対応",
+    "excerpt": "GitHub（Microsoft 傘下）の Copilot coding agent ターミナル版。`npm install -g @github/copilot`（Node 22+）、`brew install copilot-cli`、`winget install GitHub.Copilot`、`gh copilot` の4経路でインストール、`copilot` で起動。既定モデル **Claude Sonnet 4.5**、`/model` で **Opus 4.7/4.8 / GPT-5.5 / Project Polaris (MAI-Code-1-Flash)** に切替可能。`/fleet` でサブエージェント並列実行、VS Code Autopilot mode で完全自律実行、`copilot mcp` で MCP サーバー管理。Build 2026（6/2-3）で Copilot Starter（無償）/ Pro / Enterprise 3階層への再編成も予告された。",
+    "date": "2026-06-05",
+    "newsDate": "2026-06-02",
     "author": "AI News 編集部",
-    "readTime": "5分",
+    "readTime": "7分",
     "tags": [
       "CLI",
       "GitHub",
+      "Copilot",
       "Enterprise"
     ],
     "ratings": {
-      "AI品質": 4,
+      "AI品質": 5,
       "使いやすさ": 4,
       "コスパ": 4,
-      "拡張性": 3,
+      "拡張性": 5,
       "企業向け": 5
     },
-    "rating": 4,
-    "reviewCategory": "cli"
+    "rating": 4.5,
+    "reviewCategory": "cli",
+    "lastReviewed": "2026-06-05"
   },
   {
     "id": "aider",
@@ -3138,26 +3144,28 @@ export const ARTICLES_META = [
     "id": "cursor-editor",
     "type": "review",
     "category": "editor",
-    "title": "Cursor レビュー — AIエディタの王者、Windsurf統合で盤石に",
-    "excerpt": "VS Code フォークで最も人気のAIエディタ。Windsurf買収によるCascade統合とBackground Agentの追加でさらに進化。",
-    "date": "2026-03-28",
-    "newsDate": "2026-03-26",
+    "title": "Cursor レビュー — Cursor 3.x の Agents Window + Composer 2.5 + Microsoft Teams 統合 + Bugbot usage-based 対応版",
+    "excerpt": "Anysphere の VS Code フォーク AI エディタ。**Cursor 3.0 で Agents Window**（`Cmd+Shift+P` → Agents Window）が追加され、ローカル・worktree・クラウド・SSH を横断するマルチエージェント運用を実現。独自モデル **Composer 2.5**（Kimi K2.5 ベース + 独自 RL、CursorBench で Opus 4.6 超え）と **Sonic**（低レイテンシ）を採用。Cursor Automations（Slack/GitHub/PagerDuty）に加え、**5/11 に Microsoft Teams 統合 GA**。Bugbot は **5月から usage-based 課金**（1 PR 平均 $1.00-$1.50）。料金 Free / Pro $20 / Pro+ $60 / Ultra $200、Teams Standard $40-Premium $120/seat、Self-hosted Cloud Agents もエンタープライズ向けに提供。",
+    "date": "2026-06-05",
+    "newsDate": "2026-05-11",
     "author": "AI News 編集部",
-    "readTime": "7分",
+    "readTime": "8分",
     "tags": [
       "エディタ",
-      "おすすめ",
-      "VS Code"
+      "Cursor",
+      "Anysphere",
+      "おすすめ"
     ],
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 5,
       "コスパ": 4,
-      "拡張性": 4,
-      "企業向け": 3
+      "拡張性": 5,
+      "企業向け": 4
     },
     "rating": 5,
-    "reviewCategory": "editor"
+    "reviewCategory": "editor",
+    "lastReviewed": "2026-06-05"
   },
   {
     "id": "windsurf",
