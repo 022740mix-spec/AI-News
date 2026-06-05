@@ -4,6 +4,92 @@
  * id → { body, tables, figures, charts, primarySources }
  */
 const ARTICLES_BODY = {
+  "anthropic-glasswing-expansion-partner-network-services-track-2026": {
+    "body": [
+      "Anthropic は6月2日と3日に、性質の異なる2つの大型発表を連続して行った。**Project Glasswing の150組織・15ヶ国以上への拡大**（6/2）と、**Claude Partner Network への Services Track 3階層・Partner Hub の追加**（6/3）だ。前者は「**Claude Mythos Preview によるサイバー防衛能力をどの組織に開放するか**」の更新、後者は「**Claude を顧客に届ける外部コンサルティング企業をどう階層化するか**」の更新で、Anthropic のエコシステムを上下両端から拡張する動きとなった。",
+      "## ① Project Glasswing が150組織・15ヶ国以上に拡大（6/2）",
+      "**Project Glasswing** は、Anthropic が4月7日に立ち上げた **$100M 規模のサイバーセキュリティイニシアチブ**で、**未公開の Mythos Preview**（最強モデル）を**選別された組織だけが使える**形態を取る。当初の参加組織は AWS、Apple、Google、Microsoft、NVIDIA、Cisco、JPMorgan Chase、Palo Alto Networks、Cloudflare、Mozilla など約50社。",
+      "今回の拡大では**追加150組織**が参加し、**合計200組織・15ヶ国以上**になった。新規対象セクターは:",
+      "- **電力（power）**",
+      "- **水（water）**",
+      "- **医療（healthcare）**",
+      "- **通信（communications）**",
+      "- **ハードウェア（hardware）**",
+      "「当初の50組織でカバーが薄かった重要インフラ業界」を補強する形だ。地理的にも **インドが初の対象国**として加わったことを Business Standard が報じている。EU、APAC、中東を含む15ヶ国以上の組織が新規参加した。",
+      "**初期パートナーの成果**: これまでに **10,000件超の高/重大セキュリティ脆弱性**が発見されたと Anthropic は公表。4月の Project Glasswing 発表時には「**数千のゼロデイ、最古は27年前の OpenBSD バグ**」が報じられていたが、それからわずか2ヶ月で発見件数が**1万件**を超えた。",
+      "**追加リソース**: Anthropic は Glasswing 用に開発された**脆弱性発見ツールを、信頼できるセキュリティチームのリクエストに応じて公開**する方針も発表。同時に **Claude Security**（Opus 4.8 を使ったコードベーススキャン・パッチ提案製品）の存在もアピールされている。",
+      "**OpenAI Trusted Access for Cyber（5/7）との対比**: Anthropic 側は EU の規制当局へは Mythos Preview の同等アクセス提供を未確約。OpenAI は5/7に GPT-5.5-Cyber の Trusted Access for Cyber 経由配布を始め、EU からの要求にもコミット済み。**サイバー業界での「選別配布」モデル**は両社で似た形態だが、規制対応のスピードでは OpenAI が一歩先行する構図がある。",
+      "## ② Claude Partner Network に Services Track と Partner Hub（6/3）",
+      "**Claude Partner Network** は Anthropic が3月に立ち上げた **$100M 規模のチャネル・パートナー育成プログラム**。発足から3か月で**40,000社超が応募、10,000人超が Claude 認定を取得**するという急成長を見せている。今回はその上に **Services Track**（3階層構造）と **Partner Hub**（ポータル）を追加する形で、コンサルティング・実装パートナーを正式に格付けする仕組みを導入した。",
+      "**Services Track 3階層**:",
+      "- **Select**（エントリー）: **10名以上の Claude 認定取得者、本番運用中の2案件、公開顧客事例1件**",
+      "- **Preferred**: **100名認定、15顧客本番、3公開事例**",
+      "- **Global Premier**（最上位）: **1,000名認定、100顧客本番、3地域以上、15公開事例、エグゼクティブ後援付きのジョイントビジネスプラン**",
+      "**Partner Hub**: パートナー側は要件達成度を **日次更新**で把握、顧客側は案件範囲に応じて最適な認定パートナーを検索できるポータル。階層昇格の審査は **1月1日と7月1日の年2回**、2026年の初年度は **10月1日の追加レビュー**も実施。",
+      "## 戦略的読み解き",
+      "両発表を並べると、Anthropic のエコシステム戦略の構造が見える。",
+      "**1. 「能力の選別配布」と「サービスの階層配布」を同時に運営**",
+      "Project Glasswing は **能力（モデル）を組織のタイプで選別**、Partner Network Services Track は **サービス品質を階層で選別**する。両方とも**「誰にどこまで開放するか」を制度化**することで、フロンティア AI の社会実装の責任分担を可視化する設計だ。",
+      "**2. Mayo Clinic 提携（Microsoft 6/2 発表、別記事）への対抗軸**",
+      "Microsoft が Mayo Clinic とヘルスケア AI 提携を結んだ翌日に、Anthropic が Glasswing で**医療セクターを対象拡大**したのは偶然ではない可能性がある。**業界別の AI 浸透**では、Microsoft（B2B SaaS 統合の強み）vs Anthropic（フロンティアモデルとセキュリティ専門性）の対抗が鮮明になりつつある。",
+      "**3. IPO 前のエコシステム可視化**",
+      "Anthropic は6月1日に **confidential filing**（IPO 申請書類の非公開提出）を完了した。Services Track と Partner Hub の発表は、上場時のディスクロージャーで**「**安定した B2B 売上を支える広範なエコシステム**」**を示す材料にもなる。40,000社超の応募、10,000人超の認定取得者、100顧客本番運用といった具体数値は、ARR $47B（5月時点）の質的裏付けとして機能する。",
+      "## 残された論点",
+      "**Glasswing**:",
+      "- 200組織への拡大スピードに対し、**Mythos Preview の能力の取り扱い責任**をどう分散させるか",
+      "- 脆弱性発見ツールの「**信頼できるセキュリティチームへの公開**」基準",
+      "- EU 規制対応の遅れ",
+      "**Services Track**:",
+      "- Global Premier の要件「**1,000名認定**」は大手 SI に有利、中小ブティック型コンサルへの参入障壁",
+      "- 階層昇格の評価基準の透明性（要件達成 ≠ 自動昇格）",
+      "- パートナー側の囲い込み戦略（Microsoft / Google / OpenAI も同類プログラムを持つ中での差別化）",
+      "本記事は **Anthropic 公式ブログ・Help Net Security・SiliconANGLE・CNBC・Channel Insider・Business Standard・StartupHub.ai** などの一次・二次情報を統合した。価格・契約条件などの詳細は Anthropic 公式ドキュメントを参照されたい。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 17,
+        "caption": "Claude Partner Network Services Track 3階層の要件（公式値）",
+        "headers": ["階層", "認定取得者", "本番運用顧客", "公開事例", "その他"],
+        "rows": [
+          ["Select", "10名以上", "2案件", "1件", "—"],
+          ["Preferred", "100名", "15顧客", "3件", "—"],
+          ["Global Premier", "1,000名", "100顧客", "15件", "3地域以上、エグゼクティブ後援付き JBP"]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Expanding Project Glasswing",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/expanding-project-glasswing"
+      },
+      {
+        "title": "Introducing the Services Track and Partner Hub of the Claude Partner Network",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/services-track-partner-hub"
+      },
+      {
+        "title": "Anthropic expands Project Glasswing to 150 organizations in more than 15 countries",
+        "site": "Help Net Security",
+        "url": "https://www.helpnetsecurity.com/2026/06/03/anthropic-project-glasswing-expansion/"
+      },
+      {
+        "title": "Anthropic expands Mythos to 150 additional organizations",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/06/02/anthropic-mythos-ai-project-glasswing.html"
+      },
+      {
+        "title": "Anthropic Updates Partner Program As Enterprise AI Adoption Grows",
+        "site": "PYMNTS",
+        "url": "https://www.pymnts.com/artificial-intelligence-2/2026/anthropic-updates-partner-program-as-enterprise-ai-adoption-grows/"
+      },
+      {
+        "title": "Anthropic expands Project Glasswing to 15 more countries, India gets access",
+        "site": "Business Standard",
+        "url": "https://www.business-standard.com/companies/news/anthropic-expands-project-glasswing-to-15-more-countries-india-gets-access-126060301120_1.html"
+      }
+    ]
+  },
   "microsoft-build-2026-mai-7models-solara-majorana-2026": {
     "body": [
       "Microsoft が6月2日、サンフランシスコで開幕した **Build 2026** で、**MAI（Microsoft AI Superintelligence）チーム発の7つの新モデル**を一斉に投入した。前報 **Scout**（OpenClaw 基盤の autopilot、PR #27）、**Windows Agent Framework**（MIT で OSS 公開、PR #28）に続く Build 2026 の中核発表で、Microsoft の **OpenAI 依存からの脱却**を象徴する。同日には **Project Solara**（AI ファースト端末プラットフォーム）、**Majorana 2 量子チップ**、**Microsoft Discovery GA**、**Mayo Clinic 提携**などを含む100超の発表が行われた。本記事は基調講演の主要発表を網羅整理する。",
