@@ -6302,18 +6302,76 @@ const ARTICLES_BODY = {
       }
     ]
   },
+  "claude-design": {
+    "body": [
+      "**Claude Design** は **Anthropic Labs** が2026年4月17日に公開したビジュアル制作ツール。会話を通じてデザイン・プロトタイプ・スライド・1ページャ・マーケティング資産といった「見せるためのアウトプット」を作る AI ネイティブなプロダクトで、基盤モデルは **Claude Opus 4.7 / 4.8**。Pro / Max / Team / Enterprise の購読者向けにリサーチプレビューとして提供される。",
+      "## 動作の流れ",
+      "ユーザーが必要なものを文章で説明すると、Claude が最初のバージョンを生成する。以降は会話、インラインコメント、直接編集、Claude が生成する**カスタムスライダー**（明度や余白といった可変パラメータをモデルが自動で抽出するインターフェース）で反復する。固定の UI ではなく、対象オブジェクトに合わせた編集 UI をモデルが都度組み立てる構造になっている。",
+      "## 差別化: コードベースからデザインシステムを自動学習",
+      "最大の差別化要素は、**プロジェクト初回にコードベースと既存のデザインファイルを読み込み、チーム固有のデザインシステム（色・タイポグラフィ・コンポーネント）を自動構築**する点だ。以降のプロジェクトでは、特に指示しなくてもブランドガイドに沿った成果物が出力される。Anthropic は「製品の見た目を AI のデフォルトに揃えるのではなく、**組織のスタイルに揃える**」点を強調する。",
+      "## エクスポートと Claude Code へのハンドオフ",
+      "成果物は **PDF / 共有 URL / PPTX / Canva** に書き出せる。デザインが本番実装フェーズに進むと、Claude が**ハンドオフバンドル**を生成し、それを **Claude Code に渡すことで実装コードに変換**できる。**探索 → プロトタイプ → 本番コード**を単一のエコシステム内で完結させる設計だ。Claude Opus 4.8（5/28）と Dynamic Workflows の登場で、ハンドオフ後の実装プロセスがさらに自律化された。",
+      "## 料金とプラン",
+      "Pro（月額 $20）/ Max（月額 $100 または $200）/ Team / Enterprise の購読者は追加料金なしでリサーチプレビューを利用できる。ChatGPT Pro（$200/月）や Figma（Professional $15/seat、Organization $45/seat）と直接競合する位置付け。",
+      "## 評価",
+      "AI ネイティブのビジュアル制作という新カテゴリで、**「コードベースを起点に成果物を生成し、Claude Code に戻す」双方向ループ**は Figma にはない強み。会話型 UI は学習コストが低く、デザイナー以外（PM・営業・経営層）もスライドや1ページャを実用品質で量産できる。",
+      "**注意点**: リサーチプレビュー段階のため、Figma の成熟した協同編集や Component Library の互換性は限定的。大規模デザインチームの主力ツールとしての置換にはまだ時間がかかる。一方、**個人〜中小チーム規模**や、Claude Code との接続を重視する開発組織には強く推奨できる。",
+      "**関連情報**: ニュース記事の [Claude Design 公開](?a=anthropic-claude-design-labs-figma-challenge-2026) も参照。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Claude Design by Anthropic Labs",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-design-anthropic-labs"
+      }
+    ]
+  },
   "claude-code": {
     "body": [
-      "**Claude Code** は **Anthropic** が提供するCLI型AIエージェントで、ターミナルから claude コマンドを実行するだけでプロジェクト全体のコンテキストを取得し、開発タスクを自律的に遂行する。ファイル編集、bashコマンド実行、Git操作、テスト実行までを一貫して処理でき、CLAUDE.md ファイルにプロジェクト固有のルールを記述することでチーム標準のワークフローを維持できる。",
-      "主要な機能として、MCP（**Model Context Protocol**）サーバーへの接続による外部ツール・データソース連携、イベント駆動で前処理・後処理を差し込む Hooks、再利用可能なプロンプトテンプレートである Skills がある。Auto mode（研究プレビュー）を有効にするとユーザー確認なしで連続的にタスクを実行し、大規模なリファクタリングやマイグレーション作業を効率化できる。Opus 4.6 モデルの1Mコンテキストウィンドウにより、数百ファイル規模のリポジトリでもアーキテクチャレベルの判断が可能になっている。",
-      "料金体系は3種類ある。Pro プラン（月額 $20）は一般的な開発タスクに十分な利用枠を提供し、Max プラン（月額 $100 または $200）はヘビーユーザー向けに拡張された利用枠と Fast Mode を含む。API 経由での利用も可能で、その場合はトークン単位の従量課金となる。Claude Code SDK を使えばカスタムエージェントの構築もでき、SOC 2 準拠によりエンタープライズ環境にも導入しやすい。",
-      "コンテキスト理解の深さとエージェント的な自律性は現行CLIツールの中でも高い水準にある。一方で、大量のトークンを消費するためコストが膨らみやすい点、Auto mode がまだ研究プレビュー段階である点には注意が必要となる。チームでの利用では [CLAUDE.md による規約共有](?a=ai-config-files-comprehensive-guide-2026)と Hooks によるガードレールの組み合わせが実用上の鍵になる。外部連携は [MCP 活用ガイド](?a=mcp-comprehensive-guide-2026)、Git との連携は [AI × Git ワークフロー](?a=git-ai-workflow-2026)を参照。コミュニティ製の拡張ツール（マルチエージェント管理・並列実行・プラグイン）は [CLI エージェント OSS 特集](?a=cli-agent-community-oss-2026)にまとめている。OpenAI Codex CLI との連携（セットアップ手順・コマンド・料金）はツール別リファレンスの「Codex CLI 連携」セクション、およびニュース記事 [Codex プラグイン公開](?a=openai-codex-plugin-cc-claude-code-2026)を参照。"
+      "**Claude Code** は **Anthropic** が提供する CLI 型 AI エージェントで、ターミナルから `claude` コマンドを実行するだけでプロジェクト全体のコンテキストを取得し、開発タスクを自律的に遂行する。ファイル編集・bash 実行・Git 操作・テスト実行までを一貫処理し、CLAUDE.md ファイルにプロジェクト固有のルールを記述することでチーム標準のワークフローを維持できる。本レビューは **2026年6月時点（Claude Code v2.1.139+、Opus 4.8 対応版）** での最新評価。",
+      "## 基盤モデルの更新: Opus 4.8（5/28 GA）",
+      "標準モデルが **Claude Opus 4.8** に更新された。**SWE-bench Verified 88.6%、SWE-bench Pro 69.2%、USAMO 2026 数学 96.7%、GraphWalks F1（1M ctx）68.1%** と Opus 4.6 から大きく改善。長時間自律実行と honest な進捗報告に重点が置かれ、複雑なバグ修正・大規模リファクタリング・横断的な解析で実用度が一段上がった。Sonnet 4.6 や Haiku 4.5 への切替も対応する。",
+      "## 新機能: agent view（5/12、研究プレビュー）",
+      "`claude agents` コマンドで開く**全画面のマルチセッション統合ダッシュボード**。複数の Claude Code セッションを並列実行しながら、状態（待機中／作業中／完了）を一覧で確認できる。`/bg` または `claude --bg [task]` で**バックグラウンド実行**にも対応し、専用スーパーバイザープロセスがターミナルを閉じても作業を継続する。1人の開発者が**数十のセッションを並走させる**運用が公式サポートされた。",
+      "## 新機能: Dynamic Workflows（5/28、研究プレビュー）",
+      "Opus 4.8 と同時投入された**最大の機能拡張**。Claude が**オーケストレーションスクリプトを書き、1セッション内で最大1,000の並列サブエージェント**を起動して仕事を進める。途中で中断・再開できる **resumable state** も持ち、長時間の解析・大規模リファクタリング・横断的な探索に向く。Max / Team / Enterprise（管理者有効化条件付き）/ Claude API / Bedrock / Vertex / Foundry で提供。",
+      "## 既存の中核機能",
+      "- **MCP（Model Context Protocol）**: 外部ツール・データソース連携の標準",
+      "- **Hooks**: イベント駆動で前後処理を差し込み（PostToolUse 等）",
+      "- **Skills**: 再利用可能なプロンプトテンプレート",
+      "- **Routines**: クラウドで自動実行されるスケジュール実行（Claude Code Desktop 4/13 刷新で導入）",
+      "- **CLAUDE.md**: プロジェクト固有のルール（チーム規約、禁止事項、編集ポリシー等）を AI に確実に伝える仕組み",
+      "## 料金体系（Fast Mode が3倍安く）",
+      "| プラン | 月額 | Standard 料金 | Fast Mode |",
+      "| --- | --- | --- | --- |",
+      "| Pro | $20 | 標準枠 | — |",
+      "| Max | $100 / $200 | 拡張枠 | **対応（2.5倍速）** |",
+      "| API（従量） | — | $5 / $25 per M トークン | $10 / $50（**前世代比3倍安い**）|",
+      "Opus 4.8 で Fast Mode が大幅値下げされたため、エージェント連続実行のコスト構造が変わった。SOC 2 準拠でエンタープライズ環境にも導入しやすい。",
+      "## 5月以降の追加情報",
+      "- **5/6 SpaceX Colossus 1 借り上げ**で Claude Code レート上限が**全有料プランで2倍**に、Pro/Max のピーク時間帯制限も撤廃",
+      "- **5/12 Claude Platform on AWS GA** により、AWS Marketplace 経由の課金・Cost Explorer 監視が可能に",
+      "- **6/3 Claude Partner Network の Services Track 3階層**で、Claude Code 導入支援を行う認定パートナーの可視化が進む",
+      "## 評価",
+      "コンテキスト理解と長時間自律実行は**現行 CLI ツールの中でも最高水準**。agent view と Dynamic Workflows で、これまで「ターミナル1セッション = 1 タスク」だった運用が「**1人の開発者が並列にセッションを束ねる**」形に進化した。Fast Mode の値下げにより、コスト面の弱みも緩和されている。",
+      "**注意点**: agent view と Dynamic Workflows はいずれも**研究プレビュー**段階で、本番ワークロードでの利用は規模・コスト・失敗時挙動の確認を経てからが推奨される。チーム利用では [CLAUDE.md による規約共有](?a=ai-config-files-comprehensive-guide-2026) と Hooks によるガードレールの組み合わせが鍵。",
+      "**関連情報**: 外部連携は [MCP 活用ガイド](?a=mcp-comprehensive-guide-2026)、Git 連携は [AI × Git ワークフロー](?a=git-ai-workflow-2026)、コミュニティ製拡張ツールは [CLI エージェント OSS 特集](?a=cli-agent-community-oss-2026) を参照。"
     ],
     "primarySources": [
       {
         "title": "Claude Code Documentation",
         "site": "Anthropic",
         "url": "https://code.claude.com/docs/en/overview"
+      },
+      {
+        "title": "Manage multiple agents with agent view",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/agent-view"
+      },
+      {
+        "title": "Introducing Claude Opus 4.8",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-opus-4-8"
       }
     ]
   },

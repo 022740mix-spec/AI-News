@@ -2907,13 +2907,41 @@ export const ARTICLES_META = [
     }
   },
   {
+    "id": "claude-design",
+    "type": "review",
+    "category": "media",
+    "title": "Claude Design レビュー — Anthropic のビジュアル制作ツール、Opus 4.7/4.8 基盤で UI から動画素材までを会話で生成",
+    "excerpt": "Anthropic Labs が4月17日に公開した、Claude Opus 4.7/4.8 基盤のビジュアル制作ツール。会話型インターフェースで UI / プロトタイプ / スライド / 1ページャ / マーケティング素材を生成。コードベースとデザインファイルから**チームのデザインシステムを自動学習**し、以降のプロジェクトに色・タイポグラフィ・コンポーネントを自動適用する。書き出しは PDF / 共有 URL / PPTX / Canva に対応、最終形は Claude Code に「ハンドオフバンドル」として渡せるため、**探索→プロトタイプ→本番コードの閉じたループ**が完成する。VentureBeat 等は「Figma に正面挑戦」と評する。Pro / Max / Team / Enterprise でリサーチプレビュー提供中。",
+    "date": "2026-06-05",
+    "newsDate": "2026-04-17",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "デザイン",
+      "Figma",
+      "Claude",
+      "おすすめ"
+    ],
+    "ratings": {
+      "AI品質": 5,
+      "使いやすさ": 4,
+      "コスパ": 4,
+      "拡張性": 4,
+      "企業向け": 4
+    },
+    "rating": 4.5,
+    "reviewCategory": "media",
+    "lastReviewed": "2026-06-05"
+  },
+  {
     "id": "claude-code",
     "type": "review",
     "category": "cli",
-    "title": "Claude Code レビュー — Anthropic のCLIエージェント徹底解説",
-    "excerpt": "claudeコマンド1つでリポジトリ全体を読み込み、バグ修正からテスト実行、コミットまで自律的に行う。Opus 4.6の1Mコンテキストによる深い推論が、複雑なリファクタリングを可能にしている。",
-    "date": "2026-03-28",
-    "newsDate": "2026-03-27",
+    "title": "Claude Code レビュー — Anthropic の CLI エージェント、Opus 4.8 + Dynamic Workflows + agent view 対応版",
+    "excerpt": "claude コマンド1つでリポジトリ全体を読み込み、バグ修正からテスト実行、コミットまで自律的に行う。基盤モデルが Opus 4.8 に更新され、SWE-bench Verified 88.6% に。研究プレビューで agent view（マルチセッションダッシュボード）と Dynamic Workflows（最大1,000サブエージェント並列）が追加され、長時間自律実行と大規模並列タスクが本格化。Fast Mode は前世代比3倍安い $10/$50 で、コストとレイテンシのトレードオフを明示的に選べる。",
+    "date": "2026-06-05",
+    "newsDate": "2026-05-28",
     "author": "AI News 編集部",
     "readTime": "8分",
     "tags": [
@@ -2924,13 +2952,14 @@ export const ARTICLES_META = [
     ],
     "ratings": {
       "AI品質": 5,
-      "使いやすさ": 3,
+      "使いやすさ": 4,
       "コスパ": 4,
       "拡張性": 5,
-      "企業向け": 4
+      "企業向け": 5
     },
     "rating": 5,
-    "reviewCategory": "cli"
+    "reviewCategory": "cli",
+    "lastReviewed": "2026-06-05"
   },
   {
     "id": "cursor-cli",
