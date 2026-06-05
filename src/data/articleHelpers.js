@@ -27,6 +27,7 @@ export function getSiteTodayYmd() {
 
 export const SITE_NAME = "AI News";
 export const SITE_DESCRIPTION = "Claude Code・Cursor・Codex・Copilot の最新ニュースとガイドを日本語で";
+export const SITE_URL = "https://022740mix-spec.github.io/AI-News";
 
 /** 記事の category キー → 一覧・詳細のバッジ用 */
 export const CATEGORIES = {

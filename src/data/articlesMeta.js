@@ -732,22 +732,21 @@ export const ARTICLES_META = [
     "id": "openai-122b-funding-round-852b-valuation-2026",
     "type": "news",
     "category": "product",
-    "title": "OpenAI が史上最大 $1,220億の資金調達を完了 — 評価額 $8,520億、SoftBank・Amazon・NVIDIA が共同主導",
-    "excerpt": "OpenAI が3月31日、AI業界史上最大となる1,220億ドルの資金調達ラウンドを完了。ポストマネー評価額は8,520億ドル。SoftBank が共同主導し、Amazon が500億ドル、NVIDIA が300億ドルを出資。初の個人投資家枠で30億ドルも調達。月間売上20億ドル、週間アクティブユーザー9億人超の規模に成長。",
+    "status": "retracted",
+    "heroScope": "none",
+    "title": "【取り下げ】OpenAI が史上最大 $1,220億の資金調達を完了",
+    "excerpt": "本記事は同じ事象を扱う先行記事と内容が重複していたため、2026-06-05 に取り下げました。最新版は canonical 記事「OpenAI が史上最大の$122B（約18兆円）を調達、評価額$852B」をご参照ください。",
     "date": "2026-04-06",
     "newsDate": "2026-03-31",
     "author": "AI News 編集部",
-    "readTime": "4分",
+    "readTime": "1分",
     "tags": [
       "OpenAI",
-      "資金調達",
-      "SoftBank",
-      "Amazon",
-      "NVIDIA"
+      "資金調達"
     ],
     "coverImage": {
       "src": "logos/openai.svg",
-      "alt": "OpenAI 1220億ドル資金調達"
+      "alt": "取り下げ済み記事"
     }
   },
   {
@@ -2487,7 +2486,8 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 4,
-    "reviewCategory": "other"
+    "reviewCategory": "other",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "ai-voice-input-tools-landscape-2026",
@@ -3040,7 +3040,8 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 4,
-    "reviewCategory": "cli"
+    "reviewCategory": "cli",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "codebuff",
@@ -3064,7 +3065,8 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 4,
-    "reviewCategory": "cli"
+    "reviewCategory": "cli",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "amazon-q",
@@ -3089,7 +3091,8 @@ export const ARTICLES_META = [
       "企業向け": 5
     },
     "rating": 4,
-    "reviewCategory": "cli"
+    "reviewCategory": "cli",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "cline",
@@ -3114,7 +3117,8 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 4,
-    "reviewCategory": "cli"
+    "reviewCategory": "cli",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "warp-ai",
@@ -3138,7 +3142,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3,
-    "reviewCategory": "other"
+    "reviewCategory": "other",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "cursor-editor",
@@ -3190,7 +3195,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 4,
-    "reviewCategory": "editor"
+    "reviewCategory": "editor",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "zed-ai",
@@ -3215,7 +3221,8 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 4,
-    "reviewCategory": "editor"
+    "reviewCategory": "editor",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "vscode",
@@ -3240,7 +3247,8 @@ export const ARTICLES_META = [
       "企業向け": 5
     },
     "rating": 4,
-    "reviewCategory": "editor"
+    "reviewCategory": "editor",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "void",
@@ -3265,7 +3273,8 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 4,
-    "reviewCategory": "editor"
+    "reviewCategory": "editor",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "pearai",
@@ -3289,7 +3298,8 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 3,
-    "reviewCategory": "editor"
+    "reviewCategory": "editor",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "trae",
@@ -3314,7 +3324,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3,
-    "reviewCategory": "editor"
+    "reviewCategory": "editor",
+    "lastReviewed": "2026-03-28"
   },
   {
     "id": "frontier-triad-power-map-2026",
@@ -3846,8 +3857,8 @@ export const ARTICLES_META = [
     "id": "claude-opus-4-6-review",
     "type": "review",
     "category": "model",
-    "title": "Claude Opus 4.6 レビュー — Anthropic 最上位、1Mコンテキストの深い推論",
-    "excerpt": "Anthropic のフラッグシップモデル。1Mトークンのコンテキストウィンドウ、SWE-Bench トップクラスのコーディング性能、拡張思考による高度な推論が特徴。$15/$75 per 1M tokens。",
+    "title": "Claude Opus 4.6 レビュー — Anthropic 前世代フラッグシップ、1Mコンテキストの深い推論",
+    "excerpt": "Anthropic の2026年Q1フラッグシップモデル（後継 Opus 4.7/4.8 リリース済み）。1Mトークンのコンテキストウィンドウ、SWE-Bench トップクラスのコーディング性能、拡張思考による高度な推論が特徴。$15/$75 per 1M tokens。",
     "date": "2026-03-29",
     "newsDate": "2026-03-15",
     "author": "AI News 編集部",
@@ -3855,8 +3866,7 @@ export const ARTICLES_META = [
     "tags": [
       "モデル",
       "Anthropic",
-      "LLM",
-      "おすすめ"
+      "LLM"
     ],
     "ratings": {
       "AI品質": 5,
@@ -3865,15 +3875,16 @@ export const ARTICLES_META = [
       "拡張性": 5,
       "企業向け": 5
     },
-    "rating": 4.5,
-    "reviewCategory": "model"
+    "rating": 4.0,
+    "reviewCategory": "model",
+    "lastReviewed": "2026-06-05"
   },
   {
     "id": "gpt-5-4-review",
     "type": "review",
     "category": "model",
-    "title": "GPT-5.4 レビュー — OpenAI 最新、推論・コーディング・エージェント統合モデル",
-    "excerpt": "OpenAI の最新フラッグシップ。128Kコンテキスト、推論とコーディングを統合したアーキテクチャ。Codex との連携でエージェント的な運用も可能。$2.50/$10 per 1M tokens。",
+    "title": "GPT-5.4 レビュー — OpenAI 2026年Q1の主力モデル、推論・コーディング・エージェント統合",
+    "excerpt": "OpenAI が2026年前半に投入した主力モデル（後継 GPT-5.5 が4/23 リリース済み）。128Kコンテキスト、推論とコーディングを統合したアーキテクチャ。Codex との連携でエージェント的な運用も可能。$2.50/$10 per 1M tokens。",
     "date": "2026-03-29",
     "newsDate": "2026-03-10",
     "author": "AI News 編集部",
@@ -3891,7 +3902,8 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 4,
-    "reviewCategory": "model"
+    "reviewCategory": "model",
+    "lastReviewed": "2026-06-05"
   },
   {
     "id": "gemini-3-1-pro-review",
@@ -3916,7 +3928,8 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 4,
-    "reviewCategory": "model"
+    "reviewCategory": "model",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "kimi-k2-5-review",
@@ -3942,7 +3955,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 4,
-    "reviewCategory": "model"
+    "reviewCategory": "model",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "claude-sonnet-4-6-review",
@@ -3968,7 +3982,8 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 4,
-    "reviewCategory": "model"
+    "reviewCategory": "model",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "midjourney-v8-review",
@@ -3993,7 +4008,8 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4.5,
-    "reviewCategory": "image"
+    "reviewCategory": "image",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "runway-gen5-review",
@@ -4018,7 +4034,8 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4,
-    "reviewCategory": "video"
+    "reviewCategory": "video",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "suno-v5-review",
@@ -4042,7 +4059,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 4,
-    "reviewCategory": "music"
+    "reviewCategory": "music",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "kling-ai-review",
@@ -4067,7 +4085,8 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 3.5,
-    "reviewCategory": "video"
+    "reviewCategory": "video",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "nano-banana-2-review",
@@ -4092,7 +4111,8 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4,
-    "reviewCategory": "image"
+    "reviewCategory": "image",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "gpt-image-review",
@@ -4117,7 +4137,8 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4,
-    "reviewCategory": "image"
+    "reviewCategory": "image",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "flux-2-review",
@@ -4142,7 +4163,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3.5,
-    "reviewCategory": "image"
+    "reviewCategory": "image",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "veo-review",
@@ -4167,7 +4189,8 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 3.5,
-    "reviewCategory": "video"
+    "reviewCategory": "video",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "pika-review",
@@ -4192,7 +4215,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3.5,
-    "reviewCategory": "video"
+    "reviewCategory": "video",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "udio-review",
@@ -4216,7 +4240,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3.5,
-    "reviewCategory": "music"
+    "reviewCategory": "music",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "stable-audio-review",
@@ -4241,7 +4266,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3,
-    "reviewCategory": "music"
+    "reviewCategory": "music",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "manus-review",
@@ -4266,7 +4292,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3.5,
-    "reviewCategory": "agent"
+    "reviewCategory": "agent",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "devin-review",
@@ -4291,7 +4318,8 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 3.5,
-    "reviewCategory": "agent"
+    "reviewCategory": "agent",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "genspark-review",
@@ -4317,7 +4345,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3.5,
-    "reviewCategory": "search"
+    "reviewCategory": "search",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "perplexity-review",
@@ -4342,7 +4371,8 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4,
-    "reviewCategory": "search"
+    "reviewCategory": "search",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "notebooklm-review",
@@ -4368,7 +4398,8 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4,
-    "reviewCategory": "search"
+    "reviewCategory": "search",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "deepseek-r1-review",
@@ -4395,7 +4426,8 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 4,
-    "reviewCategory": "model"
+    "reviewCategory": "model",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "qwen-3-review",
@@ -4421,7 +4453,8 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4,
-    "reviewCategory": "model"
+    "reviewCategory": "model",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "ernie-4-5-review",
@@ -4447,7 +4480,8 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 3.5,
-    "reviewCategory": "model"
+    "reviewCategory": "model",
+    "lastReviewed": "2026-03-29"
   },
   {
     "id": "meta-acquires-manus-2025",

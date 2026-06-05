@@ -744,14 +744,6 @@
     <summary>ハーバード教育大学院が6週間のバイブコーディング講座を開講。Replit・Figma Make・Claude Code を使い分ける実践型。一方で AI 生成コードの45%に脆弱性、CVE 登録数が月35件に急増し、光と影が鮮明に。</summary>
   </entry>
   <entry>
-    <title>OpenAI が史上最大 $1,220億の資金調達を完了 — 評価額 $8,520億、SoftBank・Amazon・NVIDIA が共同主導</title>
-    <link rel="alternate" type="text/html" href="?a=openai-122b-funding-round-852b-valuation-2026"/>
-    <id>tag:ai-tool-news.jp,2026:openai-122b-funding-round-852b-valuation-2026</id>
-    <published>2026-03-31T15:00:00Z</published>
-    <updated>2026-03-31T15:00:00Z</updated>
-    <summary>OpenAI が3月31日、AI業界史上最大となる1,220億ドルの資金調達ラウンドを完了。ポストマネー評価額は8,520億ドル。SoftBank が共同主導し、Amazon が500億ドル、NVIDIA が300億ドルを出資。初の個人投資家枠で30億ドルも調達。月間売上20億ドル、週間アクティブユーザー9億人超の規模に成長。</summary>
-  </entry>
-  <entry>
     <title>LangChain・LangGraph に重大脆弱性3件 — パストラバーサル・秘密情報漏洩・SQLインジェクション、CVSS最大9.3</title>
     <link rel="alternate" type="text/html" href="?a=langchain-langgraph-3-cves-data-leak-2026"/>
     <id>tag:ai-tool-news.jp,2026:langchain-langgraph-3-cves-data-leak-2026</id>
@@ -1560,12 +1552,12 @@
     <summary>2026年3月17日、OpenAI が GPT-5.4 mini と GPT-5.4 nano を公開。mini は ChatGPT 無料ユーザーに開放、nano は API 専用で超低コスト（$0.20/1M）のサブエージェント向け。Codex や ChatGPT のコーディング機能も同時に強化。</summary>
   </entry>
   <entry>
-    <title>Claude Opus 4.6 レビュー — Anthropic 最上位、1Mコンテキストの深い推論</title>
+    <title>Claude Opus 4.6 レビュー — Anthropic 前世代フラッグシップ、1Mコンテキストの深い推論</title>
     <link rel="alternate" type="text/html" href="?a=claude-opus-4-6-review"/>
     <id>tag:ai-tool-news.jp,2026:claude-opus-4-6-review</id>
     <published>2026-03-15T15:00:00Z</published>
     <updated>2026-03-15T15:00:00Z</updated>
-    <summary>Anthropic のフラッグシップモデル。1Mトークンのコンテキストウィンドウ、SWE-Bench トップクラスのコーディング性能、拡張思考による高度な推論が特徴。$15/$75 per 1M tokens。</summary>
+    <summary>Anthropic の2026年Q1フラッグシップモデル（後継 Opus 4.7/4.8 リリース済み）。1Mトークンのコンテキストウィンドウ、SWE-Bench トップクラスのコーディング性能、拡張思考による高度な推論が特徴。$15/$75 per 1M tokens。</summary>
   </entry>
   <entry>
     <title>Claude Sonnet 4.6 レビュー — Anthropic 中核、速度と品質のバランス型</title>
@@ -1672,12 +1664,12 @@
     <summary>ベクトル化の前段で成果が決まる。固定長だけでなく見出し・段落・構造を利用した分割、親チャンクと子チャンク、表・スキャン PDF・OCR のノイズ、メタデータとリネージ・再処理、障害検知までを実務目線で整理する。</summary>
   </entry>
   <entry>
-    <title>GPT-5.4 レビュー — OpenAI 最新、推論・コーディング・エージェント統合モデル</title>
+    <title>GPT-5.4 レビュー — OpenAI 2026年Q1の主力モデル、推論・コーディング・エージェント統合</title>
     <link rel="alternate" type="text/html" href="?a=gpt-5-4-review"/>
     <id>tag:ai-tool-news.jp,2026:gpt-5-4-review</id>
     <published>2026-03-10T15:00:00Z</published>
     <updated>2026-03-10T15:00:00Z</updated>
-    <summary>OpenAI の最新フラッグシップ。128Kコンテキスト、推論とコーディングを統合したアーキテクチャ。Codex との連携でエージェント的な運用も可能。$2.50/$10 per 1M tokens。</summary>
+    <summary>OpenAI が2026年前半に投入した主力モデル（後継 GPT-5.5 が4/23 リリース済み）。128Kコンテキスト、推論とコーディングを統合したアーキテクチャ。Codex との連携でエージェント的な運用も可能。$2.50/$10 per 1M tokens。</summary>
   </entry>
   <entry>
     <title>Google Veo レビュー — 4K 長尺動画生成、Vertex AI とエンタープライズ統合</title>

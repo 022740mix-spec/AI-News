@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://022740mix-spec.github.io/AI-News/sitemap.xml
