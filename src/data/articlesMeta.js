@@ -5,6 +5,22 @@
  */
 export const ARTICLES_META = [
   {
+    "id": "anthropic-glasswing-expansion-partner-network-services-track-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が6/2-3に2発表 — Project Glasswing が150組織・15+ヶ国に拡大（インド初参加）、Claude Partner Network に Services Track 3階層と Partner Hub を導入",
+    "excerpt": "Anthropic が6月2日に **Project Glasswing**（Claude Mythos Preview を使う AI セキュリティイニシアチブ）を**追加150組織・15ヶ国以上**に拡大、6月3日に **Claude Partner Network** に **Services Track（Select / Preferred / Global Premier の3階層）と Partner Hub** を導入した。Glasswing 拡大は電力・水・医療・通信・ハードウェアなど、当初カバーが薄かった重要インフラを新規対象に追加し、**インドが初の対象国**として含まれる。初期パートナーはこれまでに 10,000件超の高/重大セキュリティ脆弱性を発見済み。Services Track は3月発足の Partner Network（$100M 投資・現在 40,000社超が応募・10,000人超が Claude 認定取得済み）の階層化で、Select（10名認定・2導入・1事例）→ Preferred（100名・15導入・3事例）→ Global Premier（1,000名・100顧客・3地域・15事例）と要件が段階的に上がる。Partner Hub は要件達成度を日次更新し、顧客側からも認定済パートナーの検索が可能になる。",
+    "date": "2026-06-05",
+    "newsDate": "2026-06-03",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": ["Anthropic", "Project Glasswing", "Partner Network", "セキュリティ", "エコシステム"],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic 6/2-3 announcements"
+    }
+  },
+  {
     "id": "microsoft-build-2026-mai-7models-solara-majorana-2026",
     "type": "news",
     "category": "model",
