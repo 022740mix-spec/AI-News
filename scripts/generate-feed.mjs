@@ -38,7 +38,7 @@ function excerptPlain(excerpt) {
 function main() {
   mkdirSync(dirname(OUT), { recursive: true });
 
-  const sorted = [...ARTICLES].sort((a, b) => {
+  const sorted = ARTICLES.filter((a) => a.status !== "retracted").sort((a, b) => {
     const [ya, ma, da] = getArticleNewsYmd(a).split("-").map(Number);
     const [yb, mb, db] = getArticleNewsYmd(b).split("-").map(Number);
     return new Date(yb, mb - 1, db) - new Date(ya, ma - 1, da);

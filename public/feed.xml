@@ -744,14 +744,6 @@
     <summary>ハーバード教育大学院が6週間のバイブコーディング講座を開講。Replit・Figma Make・Claude Code を使い分ける実践型。一方で AI 生成コードの45%に脆弱性、CVE 登録数が月35件に急増し、光と影が鮮明に。</summary>
   </entry>
   <entry>
-    <title>【取り下げ】OpenAI が史上最大 $1,220億の資金調達を完了</title>
-    <link rel="alternate" type="text/html" href="?a=openai-122b-funding-round-852b-valuation-2026"/>
-    <id>tag:ai-tool-news.jp,2026:openai-122b-funding-round-852b-valuation-2026</id>
-    <published>2026-03-31T15:00:00Z</published>
-    <updated>2026-03-31T15:00:00Z</updated>
-    <summary>本記事は同じ事象を扱う先行記事と内容が重複していたため、2026-06-05 に取り下げました。最新版は canonical 記事「OpenAI が史上最大の$122B（約18兆円）を調達、評価額$852B」をご参照ください。</summary>
-  </entry>
-  <entry>
     <title>LangChain・LangGraph に重大脆弱性3件 — パストラバーサル・秘密情報漏洩・SQLインジェクション、CVSS最大9.3</title>
     <link rel="alternate" type="text/html" href="?a=langchain-langgraph-3-cves-data-leak-2026"/>
     <id>tag:ai-tool-news.jp,2026:langchain-langgraph-3-cves-data-leak-2026</id>
