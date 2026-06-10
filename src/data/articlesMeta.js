@@ -5507,5 +5507,70 @@ export const ARTICLES_META = [
       "start": "2026-05-25",
       "end": "2026-05-31"
     }
+  },
+  {
+    "id": "xai-grok-june-2026-voice-imagine-connectors-2026",
+    "type": "news",
+    "category": "model",
+    "title": "xAI が Grok を6月初旬に集中更新 — Grok Voice 公開・Imagine 1.5 Preview・Connectors（SharePoint/GitHub 等）+ V9-Medium 1.5T 学習完了",
+    "excerpt": "xAI が6月4日に**Grok Voice**（音声会話）と**Grok Imagine 1.5 Preview**を API で公開。6月5日には**Connectors** で SharePoint・OneDrive・Outlook・Google Workspace・Notion・GitHub・Linear と独自 MCP を統合できるようにし、Elon Musk は**V9-Medium**（1.5兆パラメータ・現行 v8-small の3倍）が学習完了したことと worktrees 対応を投稿で報告した。",
+    "date": "2026-06-06",
+    "newsDate": "2026-06-05",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "xAI",
+      "Grok",
+      "モデル",
+      "音声AI",
+      "MCP"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "xAI Grok 6月集中アップデート"
+    }
+  },
+  {
+    "id": "openai-chatgpt-dreaming-v3-memory-architecture-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI が ChatGPT メモリを「Dreaming V3」アーキテクチャに刷新 — Plus/Pro 米国先行ロールアウト、Free/Go へも数週間以内に拡大",
+    "excerpt": "OpenAI が6月4日、新しいメモリアーキテクチャ「**Dreaming V3**」のロールアウトを ChatGPT で開始。Plus / Pro プランの米国ユーザーから先行展開し、Free / Go プランへも**数週間以内**に拡大予定。長期記憶の整合性と参照精度を改善し、過去会話からの自然な引用と要約を可能にする。",
+    "date": "2026-06-06",
+    "newsDate": "2026-06-04",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "OpenAI",
+      "ChatGPT",
+      "メモリ",
+      "アーキテクチャ"
+    ],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI ChatGPT Dreaming V3 メモリ"
+    }
+  },
+  {
+    "id": "openai-gpt-rosalind-life-sciences-update-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI が GPT-Rosalind を更新 — 創薬・ゲノミクス向けに agentic coding 強化、Evidence Retrieval / Bioinformatics プラグイン追加、Trusted Access 拡大",
+    "excerpt": "OpenAI が6月4日、生命科学研究向け専用モデル **GPT-Rosalind** を更新。**agentic coding**（自律的なコード生成・実行）が強化され、**創薬と遺伝学分野**での性能が向上。Evidence Retrieval（証拠検索）と Bioinformatics（バイオインフォマティクス・ワークフロー自動化）のプラグインを追加し、対象組織向けの Trusted Access リサーチプレビューを世界規模で拡大した。",
+    "date": "2026-06-06",
+    "newsDate": "2026-06-04",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "OpenAI",
+      "GPT-Rosalind",
+      "創薬",
+      "ゲノミクス",
+      "生命科学"
+    ],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI GPT-Rosalind 更新"
+    }
   }
 ];
