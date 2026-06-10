@@ -5572,5 +5572,94 @@ export const ARTICLES_META = [
       "src": "logos/openai.svg",
       "alt": "OpenAI GPT-Rosalind 更新"
     }
+  },
+  {
+    "id": "anthropic-claude-fable-5-mythos-5-ga-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Anthropic が Claude Fable 5 と Mythos 5 をリリース — Mythos クラスの一般公開モデル、SWE-bench 95%、$10/$50 で前 Mythos Preview の半額以下",
+    "excerpt": "Anthropic が6月9日、**Claude Fable 5** を一般公開、同時に **Claude Mythos 5** を Project Glasswing 経由で限定公開した。Fable 5 は Mythos クラスのモデルを一般利用向けに安全化した位置付けで、SWE-bench Verified **95%** を達成、Anthropic 史上最強の一般公開モデルとなる。料金は **$10/$50 per 1M tokens** で、前世代の Mythos Preview の半額以下。Pro/Max/Team/Enterprise プランは6月22日まで追加料金なしで利用可能。",
+    "date": "2026-06-10",
+    "newsDate": "2026-06-09",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Fable 5",
+      "Mythos 5",
+      "モデル"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Claude Fable 5 / Mythos 5 リリース"
+    },
+    "pinned": true
+  },
+  {
+    "id": "apple-wwdc-2026-siri-ai-keynote-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Apple WWDC 2026 で「Siri AI」発表 — 会話的応答・パーソナライズ音声・新 Siri アプリ、iOS 27 / macOS Golden Gate 同時発表",
+    "excerpt": "Apple が6月8日の WWDC 2026 基調講演で、Siri を「**Siri AI**」へ全面リブランドした。会話的なやり取りで深い計画立案・ブレインスト・文書フィードバックが可能になり、**音声はパーソナライズ可能**でテンポと表現を調整できる。iPad/Mac 向けの**新 Siri アプリ**を投入、過去会話・結果の振り返りに対応。iOS 27 / macOS Golden Gate も同日発表、開発者ベータが即日公開された。",
+    "date": "2026-06-10",
+    "newsDate": "2026-06-08",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Apple",
+      "WWDC",
+      "Siri",
+      "iOS 27",
+      "macOS"
+    ],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "Apple WWDC 2026 Siri AI"
+    }
+  },
+  {
+    "id": "openai-confidential-s1-ipo-filing-852b-valuation-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI が機密 S-1 を SEC に提出 — $852B 評価額・9月上場目標、Anthropic と並ぶ AI IPO パイプラインへ",
+    "excerpt": "OpenAI が6月8日、米国 SEC に**機密版 S-1**（IPO 登録書）を提出したと自社発表で先回り公表した。評価額は3月の調達ラウンドと同水準の **$852B**、上場目標は早ければ**2026年9月**。Anthropic も6月1日に**$965B 評価額**で機密 S-1 を提出済で、SpaceX・Anthropic・OpenAI を合わせた AI IPO パイプラインは合計 **約$3.6兆** に達した。",
+    "date": "2026-06-10",
+    "newsDate": "2026-06-08",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "IPO",
+      "S-1",
+      "上場",
+      "資金調達"
+    ],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI 機密 S-1 提出"
+    }
+  },
+  {
+    "id": "anthropic-code-with-claude-tokyo-june10-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Anthropic が「Code with Claude Tokyo」を開催 — 6月10日に Angela Jiang らがキーノート、英日同時通訳・ライブ配信つき、11日は独立開発者向け Extended デー",
+    "excerpt": "Anthropic 公式の開発者カンファレンス「**Code with Claude**」が6月10日、東京で開催された。SF（5/6）・ロンドン（5/19）に続く3都市目で、日本市場での Claude エコシステム拡大の起点に位置付けられる。キーノートには **Angela Jiang・Cat Wu・Dianne Penn・Katelyn Lesse** が登壇、英語中心セッションに**日本語同時通訳**つき。**ライブ配信**で日本国外からも参加可能。6月11日は独立開発者・スタートアップ向け Extended デー。",
+    "date": "2026-06-10",
+    "newsDate": "2026-06-10",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "Code with Claude",
+      "Tokyo",
+      "カンファレンス",
+      "日本"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Code with Claude Tokyo 2026"
+    }
   }
 ];
