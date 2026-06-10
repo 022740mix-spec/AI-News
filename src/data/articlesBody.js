@@ -10478,7 +10478,7 @@ const ARTICLES_BODY = {
   },
   "openai-gpt-rosalind-life-sciences-update-2026": {
     "body": [
-      "OpenAI が2026年6月4日、生命科学研究向けに調整された専門モデル **GPT-Rosalind** の大規模アップデートを公開した。今回の更新では **agentic coding**（自律的なコード生成・実行）が強化され、創薬と遺伝学分野でのベンチマーク性能が向上した。あわせて Evidence Retrieval（科学的根拠の検索・整理）と Bioinformatics（バイオインフォマティクス・ワークフロー自動化）のプラグインも追加されている。",
+      "OpenAI が2026年6月4日、生命科学研究向けに調整された専門モデル **GPT-Rosalind** の大規模アップデートを公開した。今回の更新では **agentic coding**（自律的なコード生成・実行）が強化され、創薬と遺伝学分野でのベンチマーク性能が向上した。あわせて Evidence Retrieval（科学的根拠の検索・整理）と Bioinformatics（バイオインフォマティクス・ワークフロー自動化)のプラグインも追加されている。",
       "**GPT-Rosalind** は OpenAI のフロンティアモデル系列とは別に、研究機関や製薬企業向けに最適化された専用モデルだ。今回のアップデートでは、研究者が論文・遺伝子データベース・実験ノートに分散している情報を横断検索しながら、自律的なエージェントとしてシミュレーションコードを生成・実行できる範囲が広がった。Anthropic の **Project Glasswing**（サイバーセキュリティ特化）や **Claude for Legal**（法務特化）と同じく、専門領域ごとに最適化されたモデルを投入する潮流に沿った動き。",
       "**Evidence Retrieval プラグイン**は科学的根拠の収集と引用の自動化を担う。研究論文・特許・臨床試験データから関連エビデンスを抽出し、構造化された形で提示する。**Bioinformatics プラグイン**は配列解析・タンパク質構造予測・代謝経路マッピングといったワークフローを GPT-Rosalind 経由で実行できるようにし、Galaxy・Bioconductor などの既存ツールとの接続も視野に入れる。",
       "**Trusted Access 拡大**: 今回のリリースに合わせて、対象組織向けの研究プレビュープログラム（Trusted Access）が世界規模で拡大された。これまで米国の主要研究機関に限定されていたアクセスが、欧州・アジア・オセアニアの大学・国立研究所・製薬企業にも開放される。日本の研究機関への影響は今後の発表を待つ必要があるが、生命科学分野の AI 活用が国際的に標準化されつつあることを示すマイルストーン。"
@@ -10493,6 +10493,100 @@ const ARTICLES_BODY = {
         "title": "OpenAI Release Notes - June 2026",
         "site": "Releasebot",
         "url": "https://releasebot.io/updates/openai"
+      }
+    ]
+  },
+  "anthropic-claude-fable-5-mythos-5-ga-2026": {
+    "body": [
+      "Anthropic が2026年6月9日、新しい主力モデル **Claude Fable 5** を一般公開した。同時に、より強力な **Claude Mythos 5** を Project Glasswing 経由で限定公開している。Fable 5 は Mythos クラスのモデルを「一般利用向けに安全化」した位置付けで、Anthropic が「これまで一般公開した中で最も強力なモデル」と公表する内容だ。SWE-bench Verified で **95%** を達成し、5/28 にリリースされた **Claude Opus 4.8**（88.6%）を上回る。",
+      "**主要ベンチマークと性能**: 公開ベンチマークの大半で SOTA を記録、ソフトウェアエンジニアリング・ナレッジワーク・ビジョン・科学研究などの幅広い領域で「Anthropic 史上最強の一般公開モデル」を公称している。Stripe による初期テストでは、本来チーム全体で2ヶ月以上かかるコードベース全体のマイグレーションを **1日で完了** したと報告された（[Anthropic 公式ブログ](https://www.anthropic.com/news/claude-fable-5-mythos-5)）。",
+      "**料金体系**: Fable 5 と Mythos 5 はどちらも **$10/$50 per 1M tokens**（入力/出力）で提供される。これは前世代の **Claude Mythos Preview の半額以下**で、Opus 4.8 の Fast Mode（$10/$50）と同水準。Pro・Max・Team・Enterprise（seat-based）プランでは、**6月9日から6月22日まで追加料金なし**で利用できる。",
+      "**安全設計とルーティング**: Fable 5 は Mythos クラスのモデルを一般利用向けにラップした構造を持つ。一部のセンシティブな話題に対するクエリは、**Claude Opus 4.8** にリルートされる仕組みで、Mythos の強力さと Opus 4.8 の確立済みセーフティの両立を狙う。なお Anthropic は Fable 5 のリリース直前に「AI が危険になりつつある」という警告レポートを公表しており、安全性とパワーのトレードオフを意識した戦略であることを示唆している。",
+      "**市場への影響**: 一般公開モデルの最強位は Opus 4.8 から Fable 5 に移行する。Anthropic は Claude 製品全体（Claude Code・Claude for Legal・Claude Design・Claude Platform）の中核モデルを Fable 5 へ順次切り替えていく方針で、Claude Code は Code with Claude Tokyo（[特集](?a=anthropic-code-with-claude-tokyo-june10-2026)）と並行して既に Fable 5 を統合済。OpenAI（GPT-5.5）・Google（Gemini 3.5 Flash）と並ぶ「3強フロンティア」の構図が一段と鮮明になった。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Fable 5 and Claude Mythos 5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
+      },
+      {
+        "title": "Claude Fable",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/claude/fable"
+      },
+      {
+        "title": "Anthropic brings Mythos to the masses with Claude Fable 5",
+        "site": "VentureBeat",
+        "url": "https://venturebeat.com/technology/anthropic-brings-mythos-to-the-masses-with-claude-fable-5-its-most-powerful-generally-available-model-ever"
+      }
+    ]
+  },
+  "apple-wwdc-2026-siri-ai-keynote-2026": {
+    "body": [
+      "Apple が2026年6月8日の **WWDC 2026** 基調講演で、デジタルアシスタント Siri を「**Siri AI**」へ全面リブランドし、対話の深さ・システム全体への統合・プラットフォーム横断の新インターフェイスを発表した。Apple Intelligence 不振と Siri 遅延の責任で4月に AI 責任者 John Giannandrea が退任した（[Apple AI 責任者退任](?a=apple-ai-chief-giannandrea-departure-2026)）後、後任の Amar Subramanya 体制での最初の大型発表となる。",
+      "**会話的応答とブレインストーミング**: Siri AI ではユーザーが Siri と**往復のやり取り**ができるようになる。「詳細な計画を立てて」「クリエイティブブレインストを一緒に」「文書にフィードバックして」といった、これまで ChatGPT・Claude・Gemini といったチャット型 AI に流れていた用途を Siri 単独で完結できる方向に舵を切った。",
+      "**音声のパーソナライズ**: 従来の Siri 合成音声よりも自然なパーソナライズされた音声体験を提供。ユーザーは Siri AI の**会話のテンポと表現の豊かさを調整**できる。これは ChatGPT の Voice モードや Google Gemini Live と直接競合する位置付けだ。",
+      "**新 Siri アプリとシステム統合**: iPad・Mac 向けに**専用 Siri アプリ**が登場、過去の会話・結果を振り返って続きから再開できる。さらに Siri AI は**個人コンテキストと画面認識**を深いレベルで備え、メール・カレンダー・写真・連絡先などのアプリ間を横断する文脈理解が可能になった。",
+      "**iOS 27 / macOS Golden Gate と同時発表**: Siri AI の発表とあわせて、iOS 27、macOS Golden Gate（macOS 16）も披露された。開発者ベータは即日公開、パブリックベータは翌月予定。Apple Intelligence は引き続き iPhone 15 Pro 以降と Apple Silicon Mac で利用可能で、オンデバイス処理と Private Cloud Compute の組み合わせが Apple の差別化軸となる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Apple Announces 'Siri AI' at WWDC 2026",
+        "site": "MacRumors",
+        "url": "https://www.macrumors.com/2026/06/08/apple-announces-siri-ai/"
+      },
+      {
+        "title": "Apple WWDC 2026: Siri AI revealed",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/06/08/apple-wwdc-2026-live-updates.html"
+      },
+      {
+        "title": "Apple Unveils Siri AI, Smarter Assistant",
+        "site": "Variety",
+        "url": "https://variety.com/2026/digital/news/apple-siri-ai-wwdc26-announcements-1236769265/"
+      }
+    ]
+  },
+  "openai-confidential-s1-ipo-filing-852b-valuation-2026": {
+    "body": [
+      "OpenAI が2026年6月8日、米国 SEC に**機密版 S-1 登録書**を提出したと、リーク前の自社プロアクティブ開示で公表した。Bloomberg・The Information が後追い報道し、上場目標は早ければ**2026年9月**、評価額は3月の調達ラウンド（[$122B 資金調達](?a=openai-122b-funding-852b-valuation-2026)）と同水準の **$852B** とされる。",
+      "**先行する Anthropic**: 1週間前の **6月1日に Anthropic** が独自に機密 S-1 を提出していた（[AI IPO シーズン特集](?a=feature-ai-ipo-season-cerebras-spacex-anthropic-openai-2026)）。評価額は **$965B** で、5月28日の Series H 確定（[Series H 補遺](?a=anthropic-may-2026-series-h-milan-korea-arr-47b-2026)）を踏まえた水準。OpenAI の今回の提出は、Anthropic に追随する形でフロンティア AI 2社が同時上場準備に入る構図を明確にした。",
+      "**AI IPO パイプラインの全体像**: Cerebras（[5/14 IPO 後初日 +68%](?a=feature-ai-ipo-season-cerebras-spacex-anthropic-openai-2026)）・SpaceX・Anthropic・OpenAI を合計すると、AI 業界の IPO パイプラインは **約$3.6兆** に達する。NASDAQ・NYSE 双方の取り合いが報じられており、上場後の流動性確保には複数社の上場日程が重要になる。",
+      "**機密 S-1 とは**: 機密版 S-1 は、JOBS 法に基づき発行体が SEC と非公開でやり取りできる仕組み。投資家向けロードショー前まで内容を非公開にでき、ガイダンス調整や規制対応の柔軟性を確保する。実際の上場申請は機密 S-1 提出後、**最短15日**で公開版に切り替え可能で、9月上場目標はこのスケジュールと整合する。",
+      "**開発者・ユーザーへの影響**: 上場が実現すれば、OpenAI は ChatGPT・Codex・GPT API の事業を四半期ごとに開示するようになり、料金体系・新機能投入・買収戦略の予測可能性が高まる一方、四半期業績圧力下での値上げや無料枠縮小のリスクも生まれる。Anthropic との同時期上場は、両社のシェア争い・人材獲得競争・モデルロードマップを「公開市場の物差し」で測れるようにする転機となる。"
+    ],
+    "primarySources": [
+      {
+        "title": "OpenAI makes IPO decision amid Anthropic, SpaceX fervor",
+        "site": "TheStreet",
+        "url": "https://www.thestreet.com/investing/stocks/openai-makes-ipo-decision-amid-anthropic-spacex-fervor"
+      },
+      {
+        "title": "AI giant Anthropic files for US IPO",
+        "site": "Al Jazeera",
+        "url": "https://www.aljazeera.com/economy/2026/6/1/ai-giant-anthropic-files-for-us-ipo-as-investors-bet-big-on-ai-future"
+      }
+    ]
+  },
+  "anthropic-code-with-claude-tokyo-june10-2026": {
+    "body": [
+      "Anthropic 公式の開発者カンファレンス「**Code with Claude**」が2026年6月10日、東京で開催された。サンフランシスコ（5/6）・ロンドン（5/19）に続く3都市目で、日本市場での Claude エコシステム拡大の起点に位置付けられる。",
+      "**キーノートと登壇者**: 朝9時から1時間の基調講演で、**Angela Jiang・Cat Wu・Dianne Penn・Katelyn Lesse** が登壇。Claude Code・Claude API・Claude Platform の最新アップデートを発表する。前日6月9日に一般公開されたばかりの **Claude Fable 5**（[Fable 5 リリース](?a=anthropic-claude-fable-5-mythos-5-ga-2026)）の実機デモも予定される。",
+      "**言語サポートとアクセス**: セッションは英語中心だが一部日本語で、**英日双方向の同時通訳**が会場全体で提供される。日本国外からも参加できる**ライブ配信**つきで、地理的制約を最小化した設計だ。アジェンダはチェックイン・朝食 → プロダクトキーノート → ブレイクアウト → ワークショップ → 午後のキーノート → 18-20時のオフィスアワーまで広く構成される。",
+      "**6月11日 Extended デー**: 翌11日には**独立開発者・スタートアップ向けの Extended デー**が開催される。Anthropic Applied AI チームによる Builder Deep-Dives、ファウンダー・ストーリー、ハンズオンワークショップが中心。基調講演には Angela Jiang・Cat Wu・Katelyn Lesse が Founder ステージで登壇する。",
+      "**日本市場の重要性**: 5/12 の Claude for Legal リリース（[Claude for Legal](?a=anthropic-claude-for-legal-plugins-cocounsel-2026)）に加え、5/28 の Anthropic Series H 確定で **Seoul と並んで Tokyo オフィス開設**が発表された（[Anthropic 5月補遺](?a=anthropic-may-2026-series-h-milan-korea-arr-47b-2026)）。Code with Claude Tokyo は、その日本拠点立ち上げと並行する開発者コミュニティ構築の中核イベントとなる。Claude Code を中心とした生成 AI 開発文化の日本での定着を狙った戦略的な布石だ。"
+    ],
+    "primarySources": [
+      {
+        "title": "Tokyo — Code w/ Claude 2026",
+        "site": "Anthropic",
+        "url": "https://claude.com/code-with-claude/tokyo"
+      },
+      {
+        "title": "Code with Claude: Extended Tokyo — June 11, 2026",
+        "site": "Anthropic",
+        "url": "https://claude.com/code-with-claude/tokyo-extended"
       }
     ]
   }
