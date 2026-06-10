@@ -5,8 +5,32 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-06-05T15:00:00Z</updated>
+  <updated>2026-06-11T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>xAI が Grok を6月初旬に集中更新 — Grok Voice 公開・Imagine 1.5 Preview・Connectors（SharePoint/GitHub 等）+ V9-Medium 1.5T 学習完了</title>
+    <link rel="alternate" type="text/html" href="?a=xai-grok-june-2026-voice-imagine-connectors-2026"/>
+    <id>tag:ai-tool-news.jp,2026:xai-grok-june-2026-voice-imagine-connectors-2026</id>
+    <published>2026-06-05T15:00:00Z</published>
+    <updated>2026-06-05T15:00:00Z</updated>
+    <summary>xAI が6月4日にGrok Voice（音声会話）とGrok Imagine 1.5 Previewを API で公開。6月5日にはConnectors で SharePoint・OneDrive・Outlook・Google Workspace・Notion・GitHub・Linear と独自 MCP を統合できるようにし、Elon Musk はV9-Medium（1.5兆パラメータ・現行 v8-small の3倍）が学習完了したことと worktrees 対応を投稿で報告した。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI が ChatGPT メモリを「Dreaming V3」アーキテクチャに刷新 — Plus/Pro 米国先行ロールアウト、Free/Go へも数週間以内に拡大</title>
+    <link rel="alternate" type="text/html" href="?a=openai-chatgpt-dreaming-v3-memory-architecture-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-chatgpt-dreaming-v3-memory-architecture-2026</id>
+    <published>2026-06-04T15:00:00Z</published>
+    <updated>2026-06-04T15:00:00Z</updated>
+    <summary>OpenAI が6月4日、新しいメモリアーキテクチャ「Dreaming V3」のロールアウトを ChatGPT で開始。Plus / Pro プランの米国ユーザーから先行展開し、Free / Go プランへも数週間以内に拡大予定。長期記憶の整合性と参照精度を改善し、過去会話からの自然な引用と要約を可能にする。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI が GPT-Rosalind を更新 — 創薬・ゲノミクス向けに agentic coding 強化、Evidence Retrieval / Bioinformatics プラグイン追加、Trusted Access 拡大</title>
+    <link rel="alternate" type="text/html" href="?a=openai-gpt-rosalind-life-sciences-update-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-gpt-rosalind-life-sciences-update-2026</id>
+    <published>2026-06-04T15:00:00Z</published>
+    <updated>2026-06-04T15:00:00Z</updated>
+    <summary>OpenAI が6月4日、生命科学研究向け専用モデル GPT-Rosalind を更新。agentic coding（自律的なコード生成・実行）が強化され、創薬と遺伝学分野での性能が向上。Evidence Retrieval（証拠検索）と Bioinformatics（バイオインフォマティクス・ワークフロー自動化）のプラグインを追加し、対象組織向けの Trusted Access リサーチプレビューを世界規模で拡大した。</summary>
+  </entry>
   <entry>
     <title>Anthropic が6/2-3に2発表 — Project Glasswing が150組織・15+ヶ国に拡大（インド初参加）、Claude Partner Network に Services Track 3階層と Partner Hub を導入</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-glasswing-expansion-partner-network-services-track-2026"/>

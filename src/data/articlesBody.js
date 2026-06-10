@@ -10429,6 +10429,72 @@ const ARTICLES_BODY = {
         "url": "https://www.anthropic.com/news/series-h"
       }
     ]
+  },
+  "xai-grok-june-2026-voice-imagine-connectors-2026": {
+    "body": [
+      "xAI が6月初旬に Grok の機能を集中的に更新した。6月4日には **Grok Voice**（音声会話機能）を公開、同日 **Grok Imagine 1.5 Preview**（画像生成 API、リアリズム・テキストレンダリング・編集制御が向上）も API でロールアウト開始。6月5日には Elon Musk が X で2つの短い投稿を行い、コアモデルの改善と worktrees 対応の追加を予告した。",
+      "**Grok Voice** は Grok との音声インタラクションを可能にする機能で、ChatGPT の音声モードや Gemini Live と直接競合する位置付け。同日にリリースされた **Grok Imagine 1.5 Preview** は API 経由でエンタープライズ開発者・チーム向けに公開され、特に「Quality Mode」では高リアリズム・強化されたテキスト描画・編集制御の3点が改善された。",
+      "6月5日に xAI は **Grok Web の Connectors** を一般公開した。SharePoint・Outlook・OneDrive・Google Workspace・Notion・GitHub・Linear といった日常業務アプリと深く統合できるほか、独自の **MCP サーバー**を持ち込んでカスタムワークフローを構築することも可能。MCP の標準対応により、Anthropic / OpenAI / Google が推進する Agentic な接続性に xAI も歩調を合わせた形となる。",
+      "並行して報じられたのが、Grok の次世代モデル **V9-Medium** の学習完了だ。techtimes の報道によれば、V9-Medium は **1.5兆パラメータ** で、現行の本番モデル v8-small（500億パラメータ）の3倍の規模。コーディング領域のリードを狙う設計で、6月中旬のリリースが期待されている。Musk は同じ投稿で **Grok Build** 向けの worktrees サポート追加にも触れた。",
+      "今回の集中アップデートは、xAI が音声・画像・統合・モデル規模という4方向で同時に攻めていることを示す。5月29日に発表された **Grok Build 0.1**（公開ベータ、256K コンテキスト・常時推論・テキスト/画像対応のコーディング特化モデル）の続報でもあり、Anthropic / OpenAI / Google の連続発表に対する xAI の応答ペースが明確に上がっている。"
+    ],
+    "primarySources": [
+      {
+        "title": "xAI News",
+        "site": "xAI",
+        "url": "https://x.ai/news"
+      },
+      {
+        "title": "xAI Release Notes - June 2026",
+        "site": "Releasebot",
+        "url": "https://releasebot.io/updates/xai"
+      },
+      {
+        "title": "Grok AI New Model Triples Parameter Count, Targets Coding Lead",
+        "site": "TechTimes",
+        "url": "https://www.techtimes.com/articles/317328/20260528/grok-ai-new-model-triples-parameter-count-targets-coding-lead-release-expected-mid-june.htm"
+      }
+    ]
+  },
+  "openai-chatgpt-dreaming-v3-memory-architecture-2026": {
+    "body": [
+      "OpenAI が2026年6月4日、ChatGPT のメモリ機能に新アーキテクチャ「**Dreaming V3**」のロールアウトを開始した。まずは ChatGPT **Plus / Pro** プランの米国ユーザーに向けて先行展開し、その後数週間以内に **Free / Go** プランにも順次拡大する予定。",
+      "**Dreaming V3** はメモリの整合性と参照精度の改善を主眼に設計されたアーキテクチャで、過去会話からの自然な引用・要約・パーソナライズ応答を実現する。従来のメモリは「明示的に保存した情報」を中心に動作していたが、Dreaming V3 ではユーザーが ChatGPT と交わした文脈をより滑らかに長期記憶へ統合できる。",
+      "メモリ機能の段階的な強化は OpenAI の長期戦略の一部だ。GPT-5.5 Instant（5月5日）が ChatGPT のデフォルトとなった際、Plus / Pro 向けに「過去チャット参照機能」も解禁された経緯がある。今回の Dreaming V3 はそのインフラ部分を刷新するものと位置付けられ、メモリの安定性とユーザー体験の一貫性に直結する。",
+      "**開発者・エンドユーザーへの影響**: メモリ機能を頻繁に使うユーザーは、過去のプロジェクト・嗜好・文脈に基づいた応答が改善されることを期待できる。一方で、メモリのプライバシー管理（保存内容の確認・削除・無効化）は引き続き設定画面から可能だ。エンタープライズ向け Business / Enterprise プランへの展開時期は今回の発表では明示されていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "OpenAI News",
+        "site": "OpenAI",
+        "url": "https://openai.com/news/"
+      },
+      {
+        "title": "ChatGPT Updates by OpenAI - June 2026",
+        "site": "Releasebot",
+        "url": "https://releasebot.io/updates/openai/chatgpt"
+      }
+    ]
+  },
+  "openai-gpt-rosalind-life-sciences-update-2026": {
+    "body": [
+      "OpenAI が2026年6月4日、生命科学研究向けに調整された専門モデル **GPT-Rosalind** の大規模アップデートを公開した。今回の更新では **agentic coding**（自律的なコード生成・実行）が強化され、創薬と遺伝学分野でのベンチマーク性能が向上した。あわせて Evidence Retrieval（科学的根拠の検索・整理）と Bioinformatics（バイオインフォマティクス・ワークフロー自動化）のプラグインも追加されている。",
+      "**GPT-Rosalind** は OpenAI のフロンティアモデル系列とは別に、研究機関や製薬企業向けに最適化された専用モデルだ。今回のアップデートでは、研究者が論文・遺伝子データベース・実験ノートに分散している情報を横断検索しながら、自律的なエージェントとしてシミュレーションコードを生成・実行できる範囲が広がった。Anthropic の **Project Glasswing**（サイバーセキュリティ特化）や **Claude for Legal**（法務特化）と同じく、専門領域ごとに最適化されたモデルを投入する潮流に沿った動き。",
+      "**Evidence Retrieval プラグイン**は科学的根拠の収集と引用の自動化を担う。研究論文・特許・臨床試験データから関連エビデンスを抽出し、構造化された形で提示する。**Bioinformatics プラグイン**は配列解析・タンパク質構造予測・代謝経路マッピングといったワークフローを GPT-Rosalind 経由で実行できるようにし、Galaxy・Bioconductor などの既存ツールとの接続も視野に入れる。",
+      "**Trusted Access 拡大**: 今回のリリースに合わせて、対象組織向けの研究プレビュープログラム（Trusted Access）が世界規模で拡大された。これまで米国の主要研究機関に限定されていたアクセスが、欧州・アジア・オセアニアの大学・国立研究所・製薬企業にも開放される。日本の研究機関への影響は今後の発表を待つ必要があるが、生命科学分野の AI 活用が国際的に標準化されつつあることを示すマイルストーン。"
+    ],
+    "primarySources": [
+      {
+        "title": "OpenAI News",
+        "site": "OpenAI",
+        "url": "https://openai.com/news/"
+      },
+      {
+        "title": "OpenAI Release Notes - June 2026",
+        "site": "Releasebot",
+        "url": "https://releasebot.io/updates/openai"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;
