@@ -15,8 +15,21 @@ CLAUDE.md の指示に従い、本日のニュース候補を調査して report
 ### 絶対に守ること（安全ルール）
 - src/data/ 配下のファイルは **絶対に編集しない**（Read のみ許可）
 - Write / Edit ツールで触れるのは reports/ ディレクトリ内のファイルのみ
-- npm install 等のパッケージ操作は行わない
+- npm install / pip install / make install 等のパッケージ操作は行わない
 - git push は reports/ の変更のみ
+
+### 外部ツール・スキルを「紹介する記事候補」として扱うときの追加ルール
+調査で見つけた外部 OSS・スキル・スクリプトを **記事候補としてレポートに載せる場合**、以下を必ず満たすこと。
+インストールや実行は対話セッションでユーザーが判断する。Routine では「候補として記録」までに留める。
+
+1. **公式性の確認**: GitHub の owner が著名企業・公式組織か（NVIDIA / Anthropic / OpenAI / Google 等）
+2. **ライセンス**: README または LICENSE ファイルから OSI 認定ライセンス（Apache 2.0 / MIT / BSD 等）を確認
+3. **postinstall フックの有無**: package.json / pyproject.toml / setup.py の postinstall / prepare / preinstall 等を必ず確認
+4. **インストール方法**: `npx` ワンライナーで実行を促すものは「危険」とフラグ。`git clone` → `make install` のような明示的ステップのものを推奨
+5. **SkillSpector スキャン推奨**: AI エージェント用スキル・MCP サーバー・外部ツールを候補に含める場合、レポートに「**SkillSpector スキャン推奨**」フラグを必ず付ける。ユーザーが対話セッションで判断する際の必須前処理として明記する
+
+参考: AI News の SkillSpector 特集記事
+（`feature-nvidia-skillspector-agent-skill-security-2026`）に基準と運用フローを記載。
 
 ### 手順
 

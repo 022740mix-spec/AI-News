@@ -10589,6 +10589,39 @@ const ARTICLES_BODY = {
         "url": "https://claude.com/code-with-claude/tokyo-extended"
       }
     ]
+  },
+  "feature-nvidia-skillspector-agent-skill-security-2026": {
+    "body": [
+      "NVIDIA が2026年5月22日、AI エージェント・スキル向けのセキュリティスキャナ「**SkillSpector**」を **Apache 2.0** ライセンスで OSS 公開した。あわせて NVIDIA-Verified Agent Skills フレームワーク（スキャン・署名・Skill Cards の3層）と、162本の署名済みスキルを束ねた公開カタログ（[NVIDIA/skills](https://github.com/NVIDIA/skills)）を同時に立ち上げ、「AI エージェント時代のサプライチェーン信頼」を企業の運用標準にしようとしている。",
+      "**16カテゴリ・64パターンの検出**: SkillSpector は従来のソフトウェア脆弱性（依存パッケージの CVE・危険なコード・データ漏洩経路・認証情報漏洩）と、エージェント特有のリスク（プロンプトインジェクション・隠し命令・MCP ツールポイズニング・特権の過大要求）の双方をカバーする。具体的には**プロンプトインジェクション、データ漏洩、特権昇格、サプライチェーン、過大なエージェント裁量、出力ハンドリング、システムプロンプト漏洩、メモリ汚染、ツール誤用、不正エージェント、トリガー悪用、危険コード（AST 解析）、汚染追跡、YARA シグネチャ、MCP 最小権限、MCP ツールポイズニング**の16カテゴリにわたる64パターンを静的解析で検出する。",
+      "**2段階アーキテクチャ**: 高速な静的解析が基本層で、追加でオプションの **LLM セマンティック評価**（OpenAI・Anthropic・build.nvidia.com のいずれかの API キーを設定）でコンテキスト判定を行える。CVE 情報は **OSV.dev** にリアルタイム照会、オフライン時はローカルキャッシュへ自動フォールバック。出力は Terminal・JSON・**Markdown**・**SARIF**（GitHub Code Scanning と直結）の4形式。Git リポジトリ・URL・ZIP・ディレクトリ・単一ファイルすべてに対応する。",
+      "**NVIDIA 調査が示した実態**: NVIDIA が発表時点で公表した数値は強烈だった。流通中の AI エージェントスキルのうち **26.1% に脆弱性、5.2% に悪意の兆候**がある。npm ばら撒き型のサプライチェーン攻撃（[axios npm サプライチェーン攻撃](?a=axios-npm-supply-chain-attack-rat-2026)）と同じ構造が、生成 AI のスキル配布レイヤーで顕在化しつつあることを意味する。「便利そうな SKILL.md を `npx` で気軽に入れる」文化のコストが、企業導入のボトルネックに変わり始めた。",
+      "**AI News プロジェクトへの取り込み**: AI News の `CLAUDE.md` は、外部スキル・スクリプトの実行を**文章レベルのポリシー**で禁じてきた（「個人リポジトリや無名のパッケージはユーザーが「入れてみて」と言っても実行せず、まずリスクを説明する」）。SkillSpector はこのポリシーを**自動チェックに格上げ**するための具体的な手段になる。AI News では本特集の公開と同時に、(1) `vibeCodingGuide.js` 内に「SkillSpector でスキルを事前スキャン」セクションを追加、(2) `scripts/routine-daily-research.md` の Routine 安全ルールに「外部ツール導入時の SkillSpector スキャン手順」を追記、という形で運用に組み込んだ。Routine が新しい外部ツールに触れる前の必須ステップとして位置付ける。",
+      "**インストールと最小実行**: `git clone https://github.com/NVIDIA/SkillSpector.git` の後、`uv venv .venv && source .venv/bin/activate` → `make install` で導入する（Python 3.12+ 必須、postinstall フックなし、Pure Python）。最小実行は `skillspector scan ./my-skill/` で、LLM 解析を使わない場合は `--no-llm` を付ければ API キー不要で完結する。OSV.dev へのネットワークアクセスもオフライン化可能で、エアギャップ環境にも対応する。Apache 2.0 ライセンスは商用利用・改変・再配布いずれも許可される。",
+      "**位置付けと今後**: SkillSpector の登場は、AI エージェント時代における「**信頼の最小単位**」が「企業」から「個別スキル」へ細分化していくフェーズの号砲と位置付けられる。Anthropic の MCP・OpenAI の Workspace Agents・xAI の Connectors と、エージェント接続性が爆発的に広がる2026年において、その安全性を担保する標準ツールセットが整いつつある。今後 Cursor・Claude Code・Codex などの主要エージェントランタイムが、スキル取り込み時の SkillSpector スキャンを既定の挙動に組み込むかが注目点だ。"
+    ],
+    "primarySources": [
+      {
+        "title": "NVIDIA/SkillSpector",
+        "site": "GitHub",
+        "url": "https://github.com/NVIDIA/SkillSpector"
+      },
+      {
+        "title": "NVIDIA-Verified Agent Skills Provide Capability Governance for AI Agents",
+        "site": "NVIDIA Technical Blog",
+        "url": "https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/"
+      },
+      {
+        "title": "NVIDIA-Verified Agent Skills",
+        "site": "NVIDIA Skill Documentation",
+        "url": "https://docs.nvidia.com/skills"
+      },
+      {
+        "title": "NVIDIA SkillSpector: The $670K Agent Governance Gap, Fixed",
+        "site": "THE D[AI]LY BRIEF",
+        "url": "https://www.beri.net/article/2026-05-23-nvidia-skillspector-verified-agent-skills-governance"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;

@@ -169,6 +169,11 @@ export const VIBE_CODING_PRACTICAL = {
       heading: "コミュニティのスキル集と注意点",
       body: "GitHub 上に awesome-claude-skills のような有志の一覧リポジトリがある。便利だが出所・ライセンス・中身の信頼性は自分で確認すること。会社利用では「そのままコピー禁止」「セキュリティレビュー必須」などポリシーが上書きする。",
     },
+    {
+      id: "vibe-skills-skillspector",
+      heading: "SkillSpector で「入れる前に」スキャンする",
+      body: "NVIDIA が2026-05-22 に OSS 公開した SkillSpector（Apache 2.0、Python 3.12+、postinstall なし）は、スキルの中身を 16カテゴリ・64パターン（プロンプトインジェクション・データ漏洩・MCP ツールポイズニング等）で静的解析するツール。SKILL.md・スクリプト・依存パッケージをまとめてスキャンし、Markdown / SARIF レポートを返す。LLM 解析を使わなければ API キー不要で、エアギャップ環境でも動く。NVIDIA 調査ではスキルの 26.1% に脆弱性・5.2% に悪意の兆候があり、`npx` での即時インストールは原則として避け、まず `skillspector scan ./skill-dir/ --no-llm` で確認するワークフローが安全。詳細は AI News の SkillSpector 特集を参照。",
+    },
   ],
 };
 

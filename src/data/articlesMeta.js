@@ -5661,5 +5661,28 @@ export const ARTICLES_META = [
       "src": "logos/anthropic.svg",
       "alt": "Code with Claude Tokyo 2026"
     }
+  },
+  {
+    "id": "feature-nvidia-skillspector-agent-skill-security-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【特集】NVIDIA SkillSpector — AIエージェントスキル用セキュリティスキャナ、16カテゴリ・64パターン検出、CLAUDE.md ポリシーを「文章」から「自動チェック」へ",
+    "excerpt": "NVIDIA が5月22日、AIエージェント・スキル向けセキュリティスキャナ「**SkillSpector**」を Apache 2.0 で OSS 公開した。**16カテゴリ・64パターン**を検出（プロンプトインジェクション・データ漏洩・特権昇格・MCP ツールポイズニング等）。NVIDIA 自身の調査では**スキルの 26.1% に脆弱性・5.2% に悪意の兆候**があり、AI News の CLAUDE.md「外部スキル実行禁止」ポリシーを**運用レベルで自動化**できる初のツールとして整理する。",
+    "date": "2026-06-10",
+    "newsDate": "2026-05-22",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "NVIDIA",
+      "SkillSpector",
+      "AIエージェント",
+      "セキュリティ",
+      "MCP",
+      "OSS"
+    ],
+    "coverImage": {
+      "src": "logos/nvidia.svg",
+      "alt": "NVIDIA SkillSpector 特集"
+    }
   }
 ];
