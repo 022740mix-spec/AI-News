@@ -160,6 +160,14 @@
     <summary>Google I/O 2026 が開幕、Gemini 3.5 Flash GA とエージェント基盤 Antigravity・Gemini Spark を投入、Android XR 眼鏡や Search Live も。中国陣営は Qwen 3.7 Max（Opus 4.6 一部凌駕）・Kimi K2.6（OSS で GPT-5.4 超え）・Ernie 5.1 を集中投入、米中ギャップを更に縮めた。</summary>
   </entry>
   <entry>
+    <title>【特集】NVIDIA SkillSpector — AIエージェントスキル用セキュリティスキャナ、16カテゴリ・64パターン検出、CLAUDE.md ポリシーを「文章」から「自動チェック」へ</title>
+    <link rel="alternate" type="text/html" href="?a=feature-nvidia-skillspector-agent-skill-security-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-nvidia-skillspector-agent-skill-security-2026</id>
+    <published>2026-05-22T15:00:00Z</published>
+    <updated>2026-05-22T15:00:00Z</updated>
+    <summary>NVIDIA が5月22日、AIエージェント・スキル向けセキュリティスキャナ「SkillSpector」を Apache 2.0 で OSS 公開した。16カテゴリ・64パターンを検出（プロンプトインジェクション・データ漏洩・特権昇格・MCP ツールポイズニング等）。NVIDIA 自身の調査ではスキルの 26.1% に脆弱性・5.2% に悪意の兆候があり、AI News の CLAUDE.md「外部スキル実行禁止」ポリシーを運用レベルで自動化できる初のツールとして整理する。</summary>
+  </entry>
+  <entry>
     <title>【特集】中国系 AI モデルの5月集中更新 — Qwen 3.7 Max が Opus 4.6 を一部凌駕、Kimi K2.6 が OSS で GPT-5.4 を抜く、Ernie 5.1・GLM・Seedance 2.0 も同期投下</title>
     <link rel="alternate" type="text/html" href="?a=feature-china-ai-models-may-2026-qwen-kimi-ernie"/>
     <id>tag:ai-tool-news.jp,2026:feature-china-ai-models-may-2026-qwen-kimi-ernie</id>
