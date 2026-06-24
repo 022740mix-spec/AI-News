@@ -10286,6 +10286,597 @@ const ARTICLES_BODY = {
         "url": "https://www.theinformation.com/articles/anthropic-revenue-surpasses-openai"
       }
     ]
+  },
+  "overview-2026-week-apr13": {
+    "body": [
+      "**4月13日（月）** — Stanford HAI が **AI Index 2026** を公表。中国モデルの主要ベンチマーク差は数ポイント以内まで縮小し、米中性能差はほぼ解消したと報告。投資額は依然として米国が23倍だが、性能差は一桁%にとどまった。透明性スコアは過去最低を更新（[Stanford Index](?a=stanford-hai-ai-index-2026-china-transparency-2026)）。同日 **Apple AI 責任者 John Giannandrea** が8年で退任。Apple Intelligence 不振と Siri 遅延の責任、後任は元 Google の Amar Subramanya（[Apple AI](?a=apple-ai-chief-giannandrea-departure-2026)）。ユーザーが Claude の性能低下を訴え、Anthropic がデフォルト effort を「中」に下げていた事が判明し炎上（[Claude effort](?a=anthropic-claude-performance-decline-effort-backlash-2026)）。",
+      "**4月14日（火）** — 大型発表が続く。OpenAI が **GPT-5.4-Cyber** を公開、バイナリ逆解析が可能で Anthropic Mythos への対抗を鮮明に（[GPT-Cyber](?a=openai-gpt-54-cyber-tac-cybersecurity-2026)）。Anthropic が **Claude Code デスクトップ** を全面刷新、並列セッション・統合ターミナル・ドラッグ＆ドロップレイアウトと「Routines」によるクラウド自動実行を導入（[Claude Code Desktop](?a=anthropic-claude-code-desktop-redesign-routines-2026)）。Google の **Gemini Personal Intelligence** が EU 以外の全世界に展開、Gmail・Photos・Drive と連携（[Gemini PI](?a=google-gemini-personal-intelligence-global-2026)）。実用ガイド「Claude に画面を見てもらう4つの方法」も公開（[Screen Viewing](?a=claude-screen-viewing-4-methods-comparison-2026)）。",
+      "**4月16日（木）** — Anthropic **Claude Opus 4.7** が GA。SWE-bench Verified 87.6%、新機能「task budgets」と新エフォートレベル「xhigh」、画像最大 2576px に対応（[Opus 4.7 GA](?a=anthropic-claude-opus-4-7-ga-task-budgets-2026)、[レビュー](?a=claude-opus-4-7-review)）。",
+      "**4月17日（金）** — Anthropic が **Claude Design** を公開。Opus 4.7 ベースのビジュアル制作ツールで、コードベースからデザインシステム自動生成、Figma 競合機能も搭載（[Claude Design](?a=anthropic-claude-design-labs-figma-challenge-2026)、[レビュー](?a=claude-design)）。",
+      "**週の総括** — Anthropic が圧倒的存在感を発揮した1週間。Opus 4.7 GA・Claude Code デスクトップ刷新・Claude Design 投入と3連発で開発者体験を強化。一方 Apple は AI 責任者交代でリーダーシップに動揺、Stanford AI Index は中国の急追を裏付けた。OpenAI も GPT-5.4-Cyber でセキュリティ領域に踏み込み、フロンティアモデルの専門化が進んでいる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Stanford AI Index Report 2026",
+        "site": "Stanford HAI",
+        "url": "https://hai.stanford.edu/ai-index"
+      },
+      {
+        "title": "Claude Opus 4.7 一般提供開始",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-opus-4-7"
+      }
+    ]
+  },
+  "overview-2026-week-apr20": {
+    "body": [
+      "**4月20日（月）** — **Amazon が Anthropic に最大 $25B を追加投資**。即時 $5B 入金、評価額 $380B、見返りに Anthropic は AWS で年内 1GW の Trainium インフラを利用する。AI クラウド3強（AWS・Azure・GCP）の中で AWS が Anthropic 結束を強化（[Amazon-Anthropic](?a=amazon-anthropic-25b-trainium-infrastructure-2026)）。",
+      "**4月21日（火）** — Hugging Face が **ml-intern** を公開。論文を読み、データセットを探し、モデルを訓練する OSS の ML エンジニア・エージェント。Qwen3-1.7B をベースに動作する軽量設計（[ml-intern](?a=huggingface-ml-intern-open-source-agent-2026)）。",
+      "**4月22日（水）** — OpenAI が **Workspace Agents** を公開。Custom GPTs の後継、Codex で動作しチーム共有可能、Slack・Salesforce・Notion 等を MCP 経由で操作する（[Workspace Agents](?a=openai-workspace-agents-codex-enterprise-2026)）。",
+      "**4月23日（木）** — OpenAI が **GPT-5.5** をリリース。GPT-5.4 から6週間という短サイクル、エージェントコーディングで SOTA を「半額」で達成し Plus/Pro/Business/Enterprise 全プランに即日展開（[GPT-5.5](?a=openai-gpt-5-5-release-agentic-coding-2026)、[レビュー](?a=gpt-5-5-review)）。",
+      "**4月24日（金）** — **DeepSeek V4** プレビュー公開。1.6T MoE と 1M トークンコンテキスト、Pro と Flash の2モデルをオープンソース。Bloomberg は国産チップ統合優先で GA が延期されたと報じる（[DeepSeek V4](?a=deepseek-v4-preview-1m-context-mixture-experts-2026)、[レビュー](?a=deepseek-v4-review)）。",
+      "**4月25日（土）** — Anthropic が **Project Deal** を公表。Claude エージェント69体が社内マーケットで186件・$4,000超を自律取引、「Agent Quality Gap」研究のサンプルを公開（[Project Deal](?a=anthropic-project-deal-agent-marketplace-experiment-2026)）。",
+      "**週の総括** — 米中フラッグシップ更新が同時進行した1週間。OpenAI が GPT-5.5 で「半額の SOTA」、DeepSeek V4 が 1.6T MoE と 1M ctx のオープンウェイトを投入。Amazon-Anthropic の $25B 追加投資はクラウド3強の縄張り争いを加速させ、Hugging Face と OpenAI のエージェント新製品はマルチエージェント時代の到来を示した。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing GPT-5.5",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/gpt-5-5/"
+      },
+      {
+        "title": "Anthropic and Amazon expand strategic partnership",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/expanding-our-partnership-with-amazon"
+      }
+    ]
+  },
+  "overview-2026-week-apr27": {
+    "body": [
+      "**4月29日（水）** — **Big Tech 4社が同日決算**。Microsoft AI 事業は ARR $370億（前年比 +123%）、Meta は CapEx を最大 $1,450億に上方修正、Alphabet・Amazon も AI 設備投資を引き上げ、4社合計の AI CapEx は $700B に迫る。AI バブル論を抑え込む形で「実需が投資を正当化している」流れに（[Big Tech 決算](?a=bigtech-q1-2026-earnings-ai-capex-700b-feature)）。",
+      "**5月1日（金）** — **Microsoft Agent 365** が一般提供開始。エージェントを「observe / govern / secure」する管制塔、$15/user/月、Microsoft Entra 統合で AI エージェント管理を統一する（[Agent 365](?a=microsoft-agent-365-ga-observe-govern-secure-2026)）。",
+      "**5月2日（土）** — Academy が **Oscar の AI ルール** を明確化。AI 出演・AI 脚本は対象外、「人間の同意」と「人間の著作」を必須要件に。映画業界が AI 利用の境界線を初めて明文化した（[Oscar AI](?a=academy-oscars-ai-acting-screenplay-ineligible-2026)）。",
+      "**週の総括** — 静かな週だったが、3つのテーマで「AI の社会実装フェーズ移行」が鮮明になった。Big Tech 4社の CapEx 一斉上方修正は AI 需要の継続性を裏付け、Microsoft Agent 365 はエージェント運用基盤の業界標準化を狙う。Academy の AI ルール明文化は、エンタメ業界が AI を「禁止」ではなく「適切な使い方」で受け入れる転換点となった。"
+    ],
+    "primarySources": [
+      {
+        "title": "Microsoft FY26 Q1 Earnings",
+        "site": "Microsoft",
+        "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q1/press-release-webcast"
+      },
+      {
+        "title": "Agent 365: A new way to manage your AI agents",
+        "site": "Microsoft",
+        "url": "https://www.microsoft.com/en-us/microsoft-cloud/blog/2026/05/01/agent-365-ga/"
+      }
+    ]
+  },
+  "overview-2026-week-may04": {
+    "body": [
+      "**5月5日（火）** — OpenAI が **GPT-5.5 Instant** を ChatGPT のデフォルトに昇格。ハルシネーション 52.5% 減・出力が30%短く、Plus/Pro 向けに過去チャット参照機能も解禁（[GPT-5.5 Instant](?a=openai-gpt-5-5-instant-default-chatgpt-2026)）。",
+      "**5月6日（水）** — Anthropic が **SpaceX の Colossus 1** を全量借り上げ。220,000 NVIDIA GPU・300+ MW のコンピュート基盤を確保し、Claude Code レート上限を即日2倍に。AWS Trainium と並行する「クラウド多重化」戦略（[Anthropic-SpaceX](?a=anthropic-spacex-colossus-1-compute-deal-2026)）。",
+      "**5月7日（木）** — OpenAI が **3つの大型発表**。GPT-5.5-Cyber「Trusted Access」プログラム、ChatGPT「Trusted Contact」自傷防止機能、新音声 API（GPT-Realtime-2 / Translate / Whisper）。会議・翻訳・安全領域を一気に拡張（[5/7 3発表](?a=openai-cyber-trusted-contact-voice-may7-2026)）。OpenAI Codex のレビューも公開、GPT-5.5 + Daybreak + Workspace Agents 統合の最新版を整理（[Codex レビュー](?a=openai-codex-agent)）。",
+      "**週の総括** — OpenAI と Anthropic の「軍拡」が一段と加速。OpenAI は ChatGPT デフォルトを更新し信頼性で攻め、5/7 の3発表でセキュリティ・安全・音声に同時投資。Anthropic は SpaceX Colossus 1 という異色のインフラ調達で計算リソースを確保した。プラットフォーム戦略の差が鮮明になりつつある。"
+    ],
+    "primarySources": [
+      {
+        "title": "GPT-5.5 Instant Now Default in ChatGPT",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/gpt-5-5-instant-default/"
+      },
+      {
+        "title": "Anthropic and SpaceX Compute Deal",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/spacex-colossus-1"
+      }
+    ]
+  },
+  "overview-2026-week-may11": {
+    "body": [
+      "**5月11日（月）** — **Cursor が Microsoft Teams 統合** を公開。`@Cursor` メンションでクラウドエージェントにタスク委任、リポジトリ・モデル自動選択で PR まで作成（[Cursor-Teams](?a=cursor-microsoft-teams-integration-2026)、[Cursor CLI レビュー](?a=cursor-cli)、[Cursor Editor レビュー](?a=cursor-editor)）。",
+      "**5月12日（火）** — 1日で5本の大型発表。Anthropic が **Claude for Legal** を公開、12分野の実務プラグイン＋20超 MCP コネクタ、Thomson Reuters CoCounsel と提携（[Claude for Legal](?a=anthropic-claude-for-legal-plugins-cocounsel-2026)）。Google が **Googlebook** と **Gemini Intelligence** を発表、Chromebook 後継の AI ネイティブ・ノート PC（[Googlebook](?a=google-googlebook-gemini-intelligence-android-show-2026)）。Anthropic は **Claude Platform on AWS** GA と Claude Code の「agent view」も同日発表（[Anthropic 5/12](?a=anthropic-claude-platform-aws-ga-agent-view-2026)）。会議系特集2本も同時公開（[アバター会議特集](?a=feature-ai-avatar-agents-join-meetings-2026)、[リアルタイム翻訳特集](?a=feature-realtime-translation-teams-zoom-meet-openai-2026)）。",
+      "**5月13日（水）** — Anthropic が **$900B 評価額** で $30-50B の調達交渉中と報じられる。OpenAI（$852B）を抜き「世界最高評価額の AI 企業」へ。Ramp 指数では業務利用シェアでも OpenAI を上回ったと判明（[Anthropic $900B](?a=anthropic-900b-valuation-funding-overtakes-openai-2026)）。",
+      "**5月14日（木）** — Anthropic が **Stainless 買収交渉中**（$300M+）と報じられる。OpenAI と Google も使う AI モデル SDK 自動生成基盤を取り込み、開発者体験レイヤーを統合する戦略（[Stainless 買収](?a=anthropic-stainless-acquisition-sdk-infrastructure-2026)）。",
+      "**週の総括** — Anthropic 週間と呼ぶべき1週間。Claude for Legal・AWS GA・agent view・$900B 調達・Stainless 買収と5発進、評価額・売上シェアで OpenAI を逆転。Cursor は Microsoft Teams 統合でエンタープライズ流通を強化し、Google は Googlebook で AI ネイティブ PC の新カテゴリを提示した。会議系AI（アバター・翻訳）の特集2本も AI 業界の生活浸透フェーズを示している。"
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic targets $900 billion valuation",
+        "site": "Reuters",
+        "url": "https://www.reuters.com/technology/anthropic-targets-900-billion-valuation-2026/"
+      },
+      {
+        "title": "Introducing Claude for Legal",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-for-legal"
+      }
+    ]
+  },
+  "overview-2026-week-may18": {
+    "body": [
+      "**5月19日（火）** — **Google I/O 2026** 開幕。Gemini 3.5 Flash GA、エージェントオーケストレーション「Antigravity」と「Gemini Spark」を投入、Android XR 眼鏡と Search Live など多領域で発表（[Google I/O 2026](?a=google-io-2026-gemini-3-5-flash-antigravity-spark-2026)、[Gemini CLI レビュー](?a=gemini-cli)）。",
+      "**5月20日（水）** — **中国系 AI モデル5月集中更新** の特集記事を公開。Qwen 3.7 Max（5/20、杭州 Cloud Summit）が Opus 4.6 を一部凌駕、Kimi K2.6（4/20）がオープンウェイトで GPT-5.4 を抜く、Ernie 5.1 も論理推論を大幅改善（[中国モデル特集](?a=feature-china-ai-models-may-2026-qwen-kimi-ernie)）。",
+      "**週の総括** — 静かな週だが内容は濃い。Google I/O 2026 で Gemini 3.5 Flash・Antigravity・Spark を矢継ぎ早に投入、エージェント分野で Google が攻勢に転じた。並行して中国陣営も Qwen 3.7 Max・Kimi K2.6・Ernie 5.1 を集中投入、Artificial Analysis スコアで米中ギャップを更に縮めた。「米国2強+中国OSS」の3極構造が固まりつつある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Google I/O 2026 Keynote",
+        "site": "Google",
+        "url": "https://io.google/2026"
+      },
+      {
+        "title": "Qwen 3.7 Max",
+        "site": "Alibaba Cloud",
+        "url": "https://qwenlm.github.io/blog/qwen3.7-max"
+      }
+    ]
+  },
+  "overview-2026-week-may25": {
+    "body": [
+      "**5月28日（木）** — Anthropic が **Claude Opus 4.8** をリリース。SWE-bench Verified 88.6% / SWE-bench Pro 69.2%、USAMO 2026 で 96.7%、Dynamic Workflows で最大1,000並列、Fast Mode は前世代比3倍安い $10/$50（[Opus 4.8](?a=anthropic-claude-opus-4-8-dynamic-workflows-2026)、[Claude Code レビュー](?a=claude-code)）。",
+      "**5月28日（木）— 同日続報** — Anthropic の **Series H が $65B / $965B 評価額** で確定、ARR $47B 到達、Milan・Seoul オフィス開設も発表（[Anthropic 5月補遺](?a=anthropic-may-2026-series-h-milan-korea-arr-47b-2026)）。Microsoft は **Project Polaris** を Build 2026（6/2-3）で披露すると予告、GitHub Copilot の中核モデルを MAI 系で内製化する方針（[Polaris 予告](?a=microsoft-build-2026-project-polaris-mai-coding-2026)）。",
+      "**週の総括** — Opus 4.8 とその Series H 確定で Anthropic が「強気の四半期」を締めた。Dynamic Workflows による最大1,000並列はエージェント実行の新フロンティアを開拓し、Fast Mode の3倍値下げで実用コストも引き下げた。Microsoft が翌週の Build 2026 に向けて Project Polaris のティーザーを打ち、独自モデル投入の競争が一段と熱を帯びた。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Claude Opus 4.8",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-opus-4-8"
+      },
+      {
+        "title": "Anthropic Series H Closing",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/series-h"
+      }
+    ]
+  },
+  "xai-grok-june-2026-voice-imagine-connectors-2026": {
+    "body": [
+      "xAI が6月初旬に Grok の機能を集中的に更新した。6月4日には **Grok Voice**（音声会話機能）を公開、同日 **Grok Imagine 1.5 Preview**（画像生成 API、リアリズム・テキストレンダリング・編集制御が向上）も API でロールアウト開始。6月5日には Elon Musk が X で2つの短い投稿を行い、コアモデルの改善と worktrees 対応の追加を予告した。",
+      "**Grok Voice** は Grok との音声インタラクションを可能にする機能で、ChatGPT の音声モードや Gemini Live と直接競合する位置付け。同日にリリースされた **Grok Imagine 1.5 Preview** は API 経由でエンタープライズ開発者・チーム向けに公開され、特に「Quality Mode」では高リアリズム・強化されたテキスト描画・編集制御の3点が改善された。",
+      "6月5日に xAI は **Grok Web の Connectors** を一般公開した。SharePoint・Outlook・OneDrive・Google Workspace・Notion・GitHub・Linear といった日常業務アプリと深く統合できるほか、独自の **MCP サーバー**を持ち込んでカスタムワークフローを構築することも可能。MCP の標準対応により、Anthropic / OpenAI / Google が推進する Agentic な接続性に xAI も歩調を合わせた形となる。",
+      "並行して報じられたのが、Grok の次世代モデル **V9-Medium** の学習完了だ。techtimes の報道によれば、V9-Medium は **1.5兆パラメータ** で、現行の本番モデル v8-small（500億パラメータ）の3倍の規模。コーディング領域のリードを狙う設計で、6月中旬のリリースが期待されている。Musk は同じ投稿で **Grok Build** 向けの worktrees サポート追加にも触れた。",
+      "今回の集中アップデートは、xAI が音声・画像・統合・モデル規模という4方向で同時に攻めていることを示す。5月29日に発表された **Grok Build 0.1**（公開ベータ、256K コンテキスト・常時推論・テキスト/画像対応のコーディング特化モデル）の続報でもあり、Anthropic / OpenAI / Google の連続発表に対する xAI の応答ペースが明確に上がっている。"
+    ],
+    "primarySources": [
+      {
+        "title": "xAI News",
+        "site": "xAI",
+        "url": "https://x.ai/news"
+      },
+      {
+        "title": "xAI Release Notes - June 2026",
+        "site": "Releasebot",
+        "url": "https://releasebot.io/updates/xai"
+      },
+      {
+        "title": "Grok AI New Model Triples Parameter Count, Targets Coding Lead",
+        "site": "TechTimes",
+        "url": "https://www.techtimes.com/articles/317328/20260528/grok-ai-new-model-triples-parameter-count-targets-coding-lead-release-expected-mid-june.htm"
+      }
+    ]
+  },
+  "openai-chatgpt-dreaming-v3-memory-architecture-2026": {
+    "body": [
+      "OpenAI が2026年6月4日、ChatGPT のメモリ機能に新アーキテクチャ「**Dreaming V3**」のロールアウトを開始した。まずは ChatGPT **Plus / Pro** プランの米国ユーザーに向けて先行展開し、その後数週間以内に **Free / Go** プランにも順次拡大する予定。",
+      "**Dreaming V3** はメモリの整合性と参照精度の改善を主眼に設計されたアーキテクチャで、過去会話からの自然な引用・要約・パーソナライズ応答を実現する。従来のメモリは「明示的に保存した情報」を中心に動作していたが、Dreaming V3 ではユーザーが ChatGPT と交わした文脈をより滑らかに長期記憶へ統合できる。",
+      "メモリ機能の段階的な強化は OpenAI の長期戦略の一部だ。GPT-5.5 Instant（5月5日）が ChatGPT のデフォルトとなった際、Plus / Pro 向けに「過去チャット参照機能」も解禁された経緯がある。今回の Dreaming V3 はそのインフラ部分を刷新するものと位置付けられ、メモリの安定性とユーザー体験の一貫性に直結する。",
+      "**開発者・エンドユーザーへの影響**: メモリ機能を頻繁に使うユーザーは、過去のプロジェクト・嗜好・文脈に基づいた応答が改善されることを期待できる。一方で、メモリのプライバシー管理（保存内容の確認・削除・無効化）は引き続き設定画面から可能だ。エンタープライズ向け Business / Enterprise プランへの展開時期は今回の発表では明示されていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "OpenAI News",
+        "site": "OpenAI",
+        "url": "https://openai.com/news/"
+      },
+      {
+        "title": "ChatGPT Updates by OpenAI - June 2026",
+        "site": "Releasebot",
+        "url": "https://releasebot.io/updates/openai/chatgpt"
+      }
+    ]
+  },
+  "openai-gpt-rosalind-life-sciences-update-2026": {
+    "body": [
+      "OpenAI が2026年6月4日、生命科学研究向けに調整された専門モデル **GPT-Rosalind** の大規模アップデートを公開した。今回の更新では **agentic coding**（自律的なコード生成・実行）が強化され、創薬と遺伝学分野でのベンチマーク性能が向上した。あわせて Evidence Retrieval（科学的根拠の検索・整理）と Bioinformatics（バイオインフォマティクス・ワークフロー自動化)のプラグインも追加されている。",
+      "**GPT-Rosalind** は OpenAI のフロンティアモデル系列とは別に、研究機関や製薬企業向けに最適化された専用モデルだ。今回のアップデートでは、研究者が論文・遺伝子データベース・実験ノートに分散している情報を横断検索しながら、自律的なエージェントとしてシミュレーションコードを生成・実行できる範囲が広がった。Anthropic の **Project Glasswing**（サイバーセキュリティ特化）や **Claude for Legal**（法務特化）と同じく、専門領域ごとに最適化されたモデルを投入する潮流に沿った動き。",
+      "**Evidence Retrieval プラグイン**は科学的根拠の収集と引用の自動化を担う。研究論文・特許・臨床試験データから関連エビデンスを抽出し、構造化された形で提示する。**Bioinformatics プラグイン**は配列解析・タンパク質構造予測・代謝経路マッピングといったワークフローを GPT-Rosalind 経由で実行できるようにし、Galaxy・Bioconductor などの既存ツールとの接続も視野に入れる。",
+      "**Trusted Access 拡大**: 今回のリリースに合わせて、対象組織向けの研究プレビュープログラム（Trusted Access）が世界規模で拡大された。これまで米国の主要研究機関に限定されていたアクセスが、欧州・アジア・オセアニアの大学・国立研究所・製薬企業にも開放される。日本の研究機関への影響は今後の発表を待つ必要があるが、生命科学分野の AI 活用が国際的に標準化されつつあることを示すマイルストーン。"
+    ],
+    "primarySources": [
+      {
+        "title": "OpenAI News",
+        "site": "OpenAI",
+        "url": "https://openai.com/news/"
+      },
+      {
+        "title": "OpenAI Release Notes - June 2026",
+        "site": "Releasebot",
+        "url": "https://releasebot.io/updates/openai"
+      }
+    ]
+  },
+  "anthropic-claude-fable-5-mythos-5-ga-2026": {
+    "body": [
+      "Anthropic が2026年6月9日、新しい主力モデル **Claude Fable 5** を一般公開した。同時に、より強力な **Claude Mythos 5** を Project Glasswing 経由で限定公開している。Fable 5 は Mythos クラスのモデルを「一般利用向けに安全化」した位置付けで、Anthropic が「これまで一般公開した中で最も強力なモデル」と公表する内容だ。SWE-bench Verified で **95%** を達成し、5/28 にリリースされた **Claude Opus 4.8**（88.6%）を上回る。",
+      "**主要ベンチマークと性能**: 公開ベンチマークの大半で SOTA を記録、ソフトウェアエンジニアリング・ナレッジワーク・ビジョン・科学研究などの幅広い領域で「Anthropic 史上最強の一般公開モデル」を公称している。Stripe による初期テストでは、本来チーム全体で2ヶ月以上かかるコードベース全体のマイグレーションを **1日で完了** したと報告された（[Anthropic 公式ブログ](https://www.anthropic.com/news/claude-fable-5-mythos-5)）。",
+      "**料金体系**: Fable 5 と Mythos 5 はどちらも **$10/$50 per 1M tokens**（入力/出力）で提供される。これは前世代の **Claude Mythos Preview の半額以下**で、Opus 4.8 の Fast Mode（$10/$50）と同水準。Pro・Max・Team・Enterprise（seat-based）プランでは、**6月9日から6月22日まで追加料金なし**で利用できる。",
+      "**安全設計とルーティング**: Fable 5 は Mythos クラスのモデルを一般利用向けにラップした構造を持つ。一部のセンシティブな話題に対するクエリは、**Claude Opus 4.8** にリルートされる仕組みで、Mythos の強力さと Opus 4.8 の確立済みセーフティの両立を狙う。なお Anthropic は Fable 5 のリリース直前に「AI が危険になりつつある」という警告レポートを公表しており、安全性とパワーのトレードオフを意識した戦略であることを示唆している。",
+      "**市場への影響**: 一般公開モデルの最強位は Opus 4.8 から Fable 5 に移行する。Anthropic は Claude 製品全体（Claude Code・Claude for Legal・Claude Design・Claude Platform）の中核モデルを Fable 5 へ順次切り替えていく方針で、Claude Code は Code with Claude Tokyo（[特集](?a=anthropic-code-with-claude-tokyo-june10-2026)）と並行して既に Fable 5 を統合済。OpenAI（GPT-5.5）・Google（Gemini 3.5 Flash）と並ぶ「3強フロンティア」の構図が一段と鮮明になった。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Fable 5 and Claude Mythos 5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
+      },
+      {
+        "title": "Claude Fable",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/claude/fable"
+      },
+      {
+        "title": "Anthropic brings Mythos to the masses with Claude Fable 5",
+        "site": "VentureBeat",
+        "url": "https://venturebeat.com/technology/anthropic-brings-mythos-to-the-masses-with-claude-fable-5-its-most-powerful-generally-available-model-ever"
+      }
+    ]
+  },
+  "apple-wwdc-2026-siri-ai-keynote-2026": {
+    "body": [
+      "Apple が2026年6月8日の **WWDC 2026** 基調講演で、デジタルアシスタント Siri を「**Siri AI**」へ全面リブランドし、対話の深さ・システム全体への統合・プラットフォーム横断の新インターフェイスを発表した。Apple Intelligence 不振と Siri 遅延の責任で4月に AI 責任者 John Giannandrea が退任した（[Apple AI 責任者退任](?a=apple-ai-chief-giannandrea-departure-2026)）後、後任の Amar Subramanya 体制での最初の大型発表となる。",
+      "**会話的応答とブレインストーミング**: Siri AI ではユーザーが Siri と**往復のやり取り**ができるようになる。「詳細な計画を立てて」「クリエイティブブレインストを一緒に」「文書にフィードバックして」といった、これまで ChatGPT・Claude・Gemini といったチャット型 AI に流れていた用途を Siri 単独で完結できる方向に舵を切った。",
+      "**音声のパーソナライズ**: 従来の Siri 合成音声よりも自然なパーソナライズされた音声体験を提供。ユーザーは Siri AI の**会話のテンポと表現の豊かさを調整**できる。これは ChatGPT の Voice モードや Google Gemini Live と直接競合する位置付けだ。",
+      "**新 Siri アプリとシステム統合**: iPad・Mac 向けに**専用 Siri アプリ**が登場、過去の会話・結果を振り返って続きから再開できる。さらに Siri AI は**個人コンテキストと画面認識**を深いレベルで備え、メール・カレンダー・写真・連絡先などのアプリ間を横断する文脈理解が可能になった。",
+      "**iOS 27 / macOS Golden Gate と同時発表**: Siri AI の発表とあわせて、iOS 27、macOS Golden Gate（macOS 16）も披露された。開発者ベータは即日公開、パブリックベータは翌月予定。Apple Intelligence は引き続き iPhone 15 Pro 以降と Apple Silicon Mac で利用可能で、オンデバイス処理と Private Cloud Compute の組み合わせが Apple の差別化軸となる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Apple Announces 'Siri AI' at WWDC 2026",
+        "site": "MacRumors",
+        "url": "https://www.macrumors.com/2026/06/08/apple-announces-siri-ai/"
+      },
+      {
+        "title": "Apple WWDC 2026: Siri AI revealed",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/06/08/apple-wwdc-2026-live-updates.html"
+      },
+      {
+        "title": "Apple Unveils Siri AI, Smarter Assistant",
+        "site": "Variety",
+        "url": "https://variety.com/2026/digital/news/apple-siri-ai-wwdc26-announcements-1236769265/"
+      }
+    ]
+  },
+  "openai-confidential-s1-ipo-filing-852b-valuation-2026": {
+    "body": [
+      "OpenAI が2026年6月8日、米国 SEC に**機密版 S-1 登録書**を提出したと、リーク前の自社プロアクティブ開示で公表した。Bloomberg・The Information が後追い報道し、上場目標は早ければ**2026年9月**、評価額は3月の調達ラウンド（[$122B 資金調達](?a=openai-122b-funding-852b-valuation-2026)）と同水準の **$852B** とされる。",
+      "**先行する Anthropic**: 1週間前の **6月1日に Anthropic** が独自に機密 S-1 を提出していた（[AI IPO シーズン特集](?a=feature-ai-ipo-season-cerebras-spacex-anthropic-openai-2026)）。評価額は **$965B** で、5月28日の Series H 確定（[Series H 補遺](?a=anthropic-may-2026-series-h-milan-korea-arr-47b-2026)）を踏まえた水準。OpenAI の今回の提出は、Anthropic に追随する形でフロンティア AI 2社が同時上場準備に入る構図を明確にした。",
+      "**AI IPO パイプラインの全体像**: Cerebras（[5/14 IPO 後初日 +68%](?a=feature-ai-ipo-season-cerebras-spacex-anthropic-openai-2026)）・SpaceX・Anthropic・OpenAI を合計すると、AI 業界の IPO パイプラインは **約$3.6兆** に達する。NASDAQ・NYSE 双方の取り合いが報じられており、上場後の流動性確保には複数社の上場日程が重要になる。",
+      "**機密 S-1 とは**: 機密版 S-1 は、JOBS 法に基づき発行体が SEC と非公開でやり取りできる仕組み。投資家向けロードショー前まで内容を非公開にでき、ガイダンス調整や規制対応の柔軟性を確保する。実際の上場申請は機密 S-1 提出後、**最短15日**で公開版に切り替え可能で、9月上場目標はこのスケジュールと整合する。",
+      "**開発者・ユーザーへの影響**: 上場が実現すれば、OpenAI は ChatGPT・Codex・GPT API の事業を四半期ごとに開示するようになり、料金体系・新機能投入・買収戦略の予測可能性が高まる一方、四半期業績圧力下での値上げや無料枠縮小のリスクも生まれる。Anthropic との同時期上場は、両社のシェア争い・人材獲得競争・モデルロードマップを「公開市場の物差し」で測れるようにする転機となる。"
+    ],
+    "primarySources": [
+      {
+        "title": "OpenAI makes IPO decision amid Anthropic, SpaceX fervor",
+        "site": "TheStreet",
+        "url": "https://www.thestreet.com/investing/stocks/openai-makes-ipo-decision-amid-anthropic-spacex-fervor"
+      },
+      {
+        "title": "AI giant Anthropic files for US IPO",
+        "site": "Al Jazeera",
+        "url": "https://www.aljazeera.com/economy/2026/6/1/ai-giant-anthropic-files-for-us-ipo-as-investors-bet-big-on-ai-future"
+      }
+    ]
+  },
+  "anthropic-code-with-claude-tokyo-june10-2026": {
+    "body": [
+      "Anthropic 公式の開発者カンファレンス「**Code with Claude**」が2026年6月10日、東京で開催された。サンフランシスコ（5/6）・ロンドン（5/19）に続く3都市目で、日本市場での Claude エコシステム拡大の起点に位置付けられる。",
+      "**キーノートと登壇者**: 朝9時から1時間の基調講演で、**Angela Jiang・Cat Wu・Dianne Penn・Katelyn Lesse** が登壇。Claude Code・Claude API・Claude Platform の最新アップデートを発表する。前日6月9日に一般公開されたばかりの **Claude Fable 5**（[Fable 5 リリース](?a=anthropic-claude-fable-5-mythos-5-ga-2026)）の実機デモも予定される。",
+      "**言語サポートとアクセス**: セッションは英語中心だが一部日本語で、**英日双方向の同時通訳**が会場全体で提供される。日本国外からも参加できる**ライブ配信**つきで、地理的制約を最小化した設計だ。アジェンダはチェックイン・朝食 → プロダクトキーノート → ブレイクアウト → ワークショップ → 午後のキーノート → 18-20時のオフィスアワーまで広く構成される。",
+      "**6月11日 Extended デー**: 翌11日には**独立開発者・スタートアップ向けの Extended デー**が開催される。Anthropic Applied AI チームによる Builder Deep-Dives、ファウンダー・ストーリー、ハンズオンワークショップが中心。基調講演には Angela Jiang・Cat Wu・Katelyn Lesse が Founder ステージで登壇する。",
+      "**日本市場の重要性**: 5/12 の Claude for Legal リリース（[Claude for Legal](?a=anthropic-claude-for-legal-plugins-cocounsel-2026)）に加え、5/28 の Anthropic Series H 確定で **Seoul と並んで Tokyo オフィス開設**が発表された（[Anthropic 5月補遺](?a=anthropic-may-2026-series-h-milan-korea-arr-47b-2026)）。Code with Claude Tokyo は、その日本拠点立ち上げと並行する開発者コミュニティ構築の中核イベントとなる。Claude Code を中心とした生成 AI 開発文化の日本での定着を狙った戦略的な布石だ。"
+    ],
+    "primarySources": [
+      {
+        "title": "Tokyo — Code w/ Claude 2026",
+        "site": "Anthropic",
+        "url": "https://claude.com/code-with-claude/tokyo"
+      },
+      {
+        "title": "Code with Claude: Extended Tokyo — June 11, 2026",
+        "site": "Anthropic",
+        "url": "https://claude.com/code-with-claude/tokyo-extended"
+      }
+    ]
+  },
+  "feature-nvidia-skillspector-agent-skill-security-2026": {
+    "body": [
+      "NVIDIA が2026年5月22日、AI エージェント・スキル向けのセキュリティスキャナ「**SkillSpector**」を **Apache 2.0** ライセンスで OSS 公開した。あわせて NVIDIA-Verified Agent Skills フレームワーク（スキャン・署名・Skill Cards の3層）と、162本の署名済みスキルを束ねた公開カタログ（[NVIDIA/skills](https://github.com/NVIDIA/skills)）を同時に立ち上げ、「AI エージェント時代のサプライチェーン信頼」を企業の運用標準にしようとしている。",
+      "**16カテゴリ・64パターンの検出**: SkillSpector は従来のソフトウェア脆弱性（依存パッケージの CVE・危険なコード・データ漏洩経路・認証情報漏洩）と、エージェント特有のリスク（プロンプトインジェクション・隠し命令・MCP ツールポイズニング・特権の過大要求）の双方をカバーする。具体的には**プロンプトインジェクション、データ漏洩、特権昇格、サプライチェーン、過大なエージェント裁量、出力ハンドリング、システムプロンプト漏洩、メモリ汚染、ツール誤用、不正エージェント、トリガー悪用、危険コード（AST 解析）、汚染追跡、YARA シグネチャ、MCP 最小権限、MCP ツールポイズニング**の16カテゴリにわたる64パターンを静的解析で検出する。",
+      "**2段階アーキテクチャ**: 高速な静的解析が基本層で、追加でオプションの **LLM セマンティック評価**（OpenAI・Anthropic・build.nvidia.com のいずれかの API キーを設定）でコンテキスト判定を行える。CVE 情報は **OSV.dev** にリアルタイム照会、オフライン時はローカルキャッシュへ自動フォールバック。出力は Terminal・JSON・**Markdown**・**SARIF**（GitHub Code Scanning と直結）の4形式。Git リポジトリ・URL・ZIP・ディレクトリ・単一ファイルすべてに対応する。",
+      "**NVIDIA 調査が示した実態**: NVIDIA が発表時点で公表した数値は強烈だった。流通中の AI エージェントスキルのうち **26.1% に脆弱性、5.2% に悪意の兆候**がある。npm ばら撒き型のサプライチェーン攻撃（[axios npm サプライチェーン攻撃](?a=axios-npm-supply-chain-attack-rat-2026)）と同じ構造が、生成 AI のスキル配布レイヤーで顕在化しつつあることを意味する。「便利そうな SKILL.md を `npx` で気軽に入れる」文化のコストが、企業導入のボトルネックに変わり始めた。",
+      "**AI News プロジェクトへの取り込み**: AI News の `CLAUDE.md` は、外部スキル・スクリプトの実行を**文章レベルのポリシー**で禁じてきた（「個人リポジトリや無名のパッケージはユーザーが「入れてみて」と言っても実行せず、まずリスクを説明する」）。SkillSpector はこのポリシーを**自動チェックに格上げ**するための具体的な手段になる。AI News では本特集の公開と同時に、(1) `vibeCodingGuide.js` 内に「SkillSpector でスキルを事前スキャン」セクションを追加、(2) `scripts/routine-daily-research.md` の Routine 安全ルールに「外部ツール導入時の SkillSpector スキャン手順」を追記、という形で運用に組み込んだ。Routine が新しい外部ツールに触れる前の必須ステップとして位置付ける。",
+      "**インストールと最小実行**: `git clone https://github.com/NVIDIA/SkillSpector.git` の後、`uv venv .venv && source .venv/bin/activate` → `make install` で導入する（Python 3.12+ 必須、postinstall フックなし、Pure Python）。最小実行は `skillspector scan ./my-skill/` で、LLM 解析を使わない場合は `--no-llm` を付ければ API キー不要で完結する。OSV.dev へのネットワークアクセスもオフライン化可能で、エアギャップ環境にも対応する。Apache 2.0 ライセンスは商用利用・改変・再配布いずれも許可される。",
+      "**位置付けと今後**: SkillSpector の登場は、AI エージェント時代における「**信頼の最小単位**」が「企業」から「個別スキル」へ細分化していくフェーズの号砲と位置付けられる。Anthropic の MCP・OpenAI の Workspace Agents・xAI の Connectors と、エージェント接続性が爆発的に広がる2026年において、その安全性を担保する標準ツールセットが整いつつある。今後 Cursor・Claude Code・Codex などの主要エージェントランタイムが、スキル取り込み時の SkillSpector スキャンを既定の挙動に組み込むかが注目点だ。"
+    ],
+    "primarySources": [
+      {
+        "title": "NVIDIA/SkillSpector",
+        "site": "GitHub",
+        "url": "https://github.com/NVIDIA/SkillSpector"
+      },
+      {
+        "title": "NVIDIA-Verified Agent Skills Provide Capability Governance for AI Agents",
+        "site": "NVIDIA Technical Blog",
+        "url": "https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/"
+      },
+      {
+        "title": "NVIDIA-Verified Agent Skills",
+        "site": "NVIDIA Skill Documentation",
+        "url": "https://docs.nvidia.com/skills"
+      },
+      {
+        "title": "NVIDIA SkillSpector: The $670K Agent Governance Gap, Fixed",
+        "site": "THE D[AI]LY BRIEF",
+        "url": "https://www.beri.net/article/2026-05-23-nvidia-skillspector-verified-agent-skills-governance"
+      }
+    ]
+  },
+  "spacex-cursor-60b-acquisition-anysphere-2026": {
+    "body": [
+      "SpaceX が2026年6月16日、Cursor 開発元の **Anysphere, Inc.** を **$60B のオールストック取引**で買収するオプション行使を発表した。**史上最大の VC バック・スタートアップ買収**として直ちに記録を更新。SpaceX が6月12日に NYSE で **$135/株**でIPO したばかりで、買収発表日には **$192.46/株**まで急騰した直後のディールとなる。",
+      "**ディール構造**: 取引は Anysphere と SpaceX の100%子会社との株式合併として組まれ、SpaceX が IPO で調達した現金は使われない構造。Anysphere 株主は **7日間 VWAP** ベースの SpaceX クラス A 株を受け取る。クロージングは規制当局承認次第で **2026年 Q3** を予定。SpaceX-xAI 合併（5月6日確定、xAI 評価額 ~$250B）に続く2回目のフロンティア AI 領域統合で、SpaceX が AI 領域の事業ホールディング体制を本格的に固めた格好。",
+      "**Cursor の事業規模**: Cursor は創業から4年弱で **ARR 約$4B**（うち約 **$2.6B** がエンタープライズ B2B 由来）に到達。**5万社超**のエンタープライズ顧客を抱え、**Fortune 500 の約2/3** に開発者ベースの利用がある。1日あたり **約1.5億行**のエンタープライズコードが Cursor 経由で書かれている計算で、AI コーディング市場の支配的プレイヤーとしての地位を確立していた（[Cursor 3 Agent-first Workspace](?a=cursor-3-agent-first-workspace-2026)）。",
+      "**戦略的合理性**: SpaceX が買うのは「**データ・計算・人材**」の3点だ。第一にデータ — Cursor の実開発者ワークフロー（コード・PR・レビュー・修正履歴）が Grok 訓練パイプラインに流れ込む。実際、買収同日に消費者公開された Grok V9-Medium は Cursor データで訓練済（[Grok V9-Medium 公開](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)）。第二に計算 — Cursor は xAI の **Colossus** スーパークラスター（220,000 GPU）にアクセス可能になり、独自モデル Composer 系の継続訓練が大幅加速。第三に人材 — xAI は2026年3月までに **共同創業者11名全員**が離脱しており、Cursor の技術陣がエンジニアリングギャップを埋める。",
+      "**市場への影響**: Cursor は買収後もブランド・製品ライン継続が確認されているが、モデル選択肢に変化が出る可能性は高い。これまで Claude Sonnet 4.6・Opus 4.7/4.8 を中心に使ってきた Cursor が、今後 Grok 系を優先する可能性は否定できず、エンタープライズ顧客は「**モデル選択がそのままインフラ選択になる**」現実に向き合うことになる。詳細な市場再編は[AI コーディング市場再編 分析記事](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)を参照。",
+      "**規制リスク**: AI 領域・宇宙領域を同一体制下に置く SpaceX-xAI-Cursor の3層構造は、米国 FTC・DOJ のアンチトラスト審査の対象になる可能性が高い。Q3 close 予定は楽観的シナリオで、規制対応次第では 2027 にずれ込む可能性も指摘されている。"
+    ],
+    "primarySources": [
+      {
+        "title": "SpaceX to acquire Cursor for $60B in stock, days after blockbuster IPO",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/"
+      },
+      {
+        "title": "SpaceX to acquire the AI coding startup Cursor for $60 billion",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/06/16/spacex-spcx-cursor-acquisition-ipo.html"
+      },
+      {
+        "title": "SpaceX Buys Cursor for $60B: What the Deal Means in 2026",
+        "site": "Digital Applied",
+        "url": "https://www.digitalapplied.com/blog/spacex-acquires-cursor-anysphere-60b-ai-coding-2026"
+      }
+    ]
+  },
+  "feature-ai-coding-market-realignment-spacex-cursor-2026": {
+    "body": [
+      "SpaceX による Cursor $60B 買収（[速報](?a=spacex-cursor-60b-acquisition-anysphere-2026)）は、AI コーディングツール市場の**勢力図を3極構造**に塗り替える。これまで「Cursor vs GitHub Copilot vs Claude Code」と単発の競争として論じられてきた構図が、**SpaceX-xAI 系、Microsoft 系、独立系**という親会社単位の3勢力に圧縮された。本特集では新しい勢力図と、開発者が直面する選択を整理する。",
+      "**第1極: SpaceX-xAI-Cursor 系（垂直統合）** — Cursor 製品（IDE / CLI / Background Agent / Bugbot）は継続するが、内部モデルは段階的に Grok 系へ移行が見込まれる。Cursor 独自モデル Composer 2.5（[Cursor CLI レビュー](?a=cursor-cli)）は Kimi K2.5 ベースだったが、今後は Grok V9-Medium（[消費者公開](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)）など Grok 系列モデルとの統合が進む。データ流通も双方向で、Cursor の開発者ワークフローが Grok の訓練データに、Grok の最新モデルが Cursor の Composer/Sonic 後継に。**xAI Colossus** スーパークラスター（220,000 GPU）の計算リソースを享受できる利点が大きい。",
+      "**第2極: Microsoft-GitHub Copilot 系（モデル多重化）** — GitHub Copilot は **MAI-Code-1-Flash**（Microsoft 内製、6/2 GA）を中核に据えつつ、Claude Sonnet 4.5 / Opus 4.7-4.8、Grok、Gemini など複数のフロンティアモデルを `/model` で切替可能なマルチベンダー戦略を維持する（[Copilot CLI レビュー](?a=github-copilot-cli)）。OpenAI との関係も継続し、Codex / GPT-5.5 も統合済。Azure インフラ・Microsoft 365 統合・エンタープライズ販路という地の利を持つ。",
+      "**第3極: 独立系（Anthropic Claude Code / Cognition Devin Desktop）** — Anthropic は **Claude Code**（[Opus 4.8 + Dynamic Workflows](?a=claude-code)）と **Claude Fable 5**（[Fable 5 リリース](?a=anthropic-claude-fable-5-mythos-5-ga-2026)）を武器に、特定インフラに縛られない中立路線を堅持。Workload Identity Federation（[WIF GA](?a=anthropic-workload-identity-federation-ga-service-accounts-2026)）でエンタープライズセキュリティを強化し、AWS・GCP・Azure いずれの顧客にも統合しやすい。Cognition は **Devin / Devin Desktop**（旧 Windsurf を統合）で別系統の独立勢力を形成、Devin Local の高効率エージェントが差別化軸。",
+      "**開発者への影響: モデル選択 = インフラ選択**: 従来「どの AI モデルを使うか」は API キーを差し替えるだけの軽い判断だった。SpaceX-Cursor 統合後は、**コーディングエージェントを選ぶことが、その背後の計算インフラ・データ流通・親会社の地政学を選ぶこと**になる。例えば Grok を Cursor 経由で使うと開発データが xAI 訓練に流れ、Claude を使うとデータは Anthropic で訓練に使われない（Privacy Mode 等）。エンタープライズはこの「データガバナンス」の観点で AI コーディング基盤の選択を見直す必要が出てくる。",
+      "**規制と地政学**: AI 領域・宇宙領域・SNS（X）を SpaceX-xAI が一体運営する構図は、米国 FTC のアンチトラスト懸念と EU AI Act の双方で精査される。中国側では DeepSeek・Qwen・Kimi 等のオープンウェイトモデルが「独立系インフラ」を強化、米中分裂が AI コーディング層でも顕在化する。日本企業・公的機関は3極のいずれに依存するかを意識的に決める必要がある。",
+      "**今後12ヶ月の見通し**: (1) Cursor から Claude Code・Devin Desktop・GitHub Copilot への移行検討が一定数発生、(2) GitHub Copilot のマルチモデル戦略がさらに強化されデファクト中立基盤化、(3) Anthropic は Claude Code + WIF + Fable 5 でエンタープライズ深耕、(4) 中国系オープンウェイトモデルが「サードオプション」として浮上、という4本柱で市場が動く見込み。"
+    ],
+    "primarySources": [
+      {
+        "title": "SpaceX Buys Cursor for $60B: What Developers Should Know Right Now",
+        "site": "Cosmic JS",
+        "url": "https://www.cosmicjs.com/blog/spacex-acquires-cursor-what-developers-should-know"
+      },
+      {
+        "title": "SpaceX Buys Cursor $60B: What It Means for Every Developer",
+        "site": "Digital Strategy AI",
+        "url": "https://digitalstrategy-ai.com/spacex-cursor-acquisition-analysis"
+      }
+    ]
+  },
+  "noam-shazeer-google-to-openai-architecture-research-2026": {
+    "body": [
+      "Google DeepMind で Gemini の共リードを務めていた **Noam Shazeer** が2026年6月18日、**OpenAI に Architecture Research Lead として移籍**することを X で公表した。同日 OpenAI Mark Chen が「Transformer・MoE・効率的デコーディングで現代 AI を形作った Noam を歓迎する」とコメント、両社の発表が一斉に出る形でディールが固まった。Alphabet 株は当日 **7% 下落**、Google からの大型人材流出が市場にも影響を与えた。",
+      "**Shazeer の功績**: Shazeer は2017年の **Transformer 論文**（Attention Is All You Need）の共著者8名のうちの1人で、計算機科学史上もっとも引用される論文の1本に名を連ねる。その後 **Mixture of Experts**（MoE）の効率化、推論時計算の最適化（Sparse / Routed Attention）など、現代 LLM の核となるアーキテクチャを設計してきた人物。OpenAI での新役職は「**次世代 AI モデル・アーキテクチャの探究と Transformer の更なる進化**」を担う。",
+      "**Google における経緯**: Shazeer は2021年に Google を退社し、Daniel De Freitas と **Character.AI** を共同創業。2024年8月、Google は **約 $2.7B** を投じて Character.AI と提携、Shazeer と De Freitas を Google DeepMind に呼び戻した。今回の OpenAI 移籍は、Google にとって**約2年弱で $2.7B の人材取り戻し投資が再び流出**する結果となる。",
+      "**Google からの連続流出**: 同時期に **Nobel 受賞者の Demis Hassabis チームから別の AI リード**が Anthropic へ移籍したとの報道もあり（Alphabet 株 7% 下落の一因）、Google の AI トップ人材維持力に市場が疑念を持ち始めている。Gemini 3.5 Pro の GA 延期続報（[Pichai「もう1ヶ月待って」](?a=google-gemini-3-5-pro-ga-delay-deep-think-2026)）と相まって、Google AI の組織モメンタムが問われる局面に入った。",
+      "**OpenAI への意義**: Shazeer の参加は、OpenAI が **GPT-5.5（4/23）** 以降の次世代アーキテクチャ研究を加速する人材確保として位置付けられる。すでに OpenAI は **Codex / Workspace Agents / Dreaming V3 メモリ**（[Dreaming V3](?a=openai-chatgpt-dreaming-v3-memory-architecture-2026)）と複数の方向で投資しており、Shazeer 体制下で次の GPT-6 系の基礎設計が進む可能性が高い。"
+    ],
+    "primarySources": [
+      {
+        "title": "Google Gemini co-lead Noam Shazeer leaves for OpenAI",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/06/18/google-gemini-co-lead-noam-shazeer-leaves-for-openai.html"
+      },
+      {
+        "title": "Alphabet stock slides as Google loses two top AI researchers",
+        "site": "Quartz",
+        "url": "https://qz.com/alphabet-stock-google-ai-researchers-openai-anthropic-062226"
+      },
+      {
+        "title": "OpenAI Hires Transformer Co-Inventor Noam Shazeer Away From Google DeepMind",
+        "site": "MLQ News",
+        "url": "https://mlq.ai/news/openai-hires-transformer-co-inventor-noam-shazeer-away-from-google-deepmind/"
+      }
+    ]
+  },
+  "anthropic-workload-identity-federation-ga-service-accounts-2026": {
+    "body": [
+      "Anthropic が2026年6月17日、**Workload Identity Federation（WIF）** を Claude Platform で一般提供（GA）開始した。あわせて **Service Accounts** を組織レベルで導入、エンタープライズの API 認証アーキテクチャを大幅に刷新する。**静的 API キーが不要**になり、漏洩・ローテーション・ハードコードといった従来の運用負荷が消える設計だ。",
+      "**WIF の仕組み**: ワークロードが**既に持っている ID** で Claude API を呼べる。サポート対象は **AWS IAM ロール**、**GCP / Kubernetes サービスアカウント**、**Azure マネージド ID**、**GitHub Actions トークン**、**Okta**、その他 OIDC 準拠の任意のプロバイダー。Anthropic は ID プロバイダーが発行した **署名済み JWT** を Claude Console で設定した**信頼ルール**に照らして検証し、組織内の Service Account にバインドされた**短命の Anthropic アクセストークン**を返す。",
+      "**Service Accounts**: `svac_...` 形式の名前付きプリンシパルが組織レベルで作成され、フェデレートされたトークンが「**として動作する**」対象になる。Service Account は組織レベルに存在し、ワークスペースのメンバーとして追加すると有効化される。**ワークロードごとに ID・ロール・監査証跡**を持てるため、共有 API キーで起きがちな「誰がどの API を叩いたか分からない」問題が解消される。",
+      "**フェデレーション管理 API**: 大規模組織向けに **完全プログラマブルな Admin API** が新設され、Issuer・Service Accounts・フェデレーションルールの作成・更新が自動化可能。Terraform・Pulumi 等の IaC との統合も容易。",
+      "**移行パス**: API キーと WIF は**併存可能**で、ワークロードごとに段階的に移行できる。既存の運用を止めずに、新規ワークロードから WIF を導入し、安定確認後に既存ワークロードを順次切り替えるパターンが推奨される。",
+      "**AI News プロジェクトへの示唆**: AI News の Claude Code Routine も将来的に WIF + Service Accounts への移行が現実的だ。GitHub Actions トークンで Claude API を直接呼べるようになれば、`.env` の API キー管理が不要になり、`CLAUDE.md`「認証情報の保護」セクションが運用レベルでさらに強化される。SkillSpector（[SkillSpector 特集](?a=feature-nvidia-skillspector-agent-skill-security-2026)）と並ぶ「文章レベルから自動化への昇格」の重要な選択肢。"
+    ],
+    "primarySources": [
+      {
+        "title": "Workload Identity Federation (WIF) is now generally available on the Claude Platform",
+        "site": "Anthropic",
+        "url": "https://claude.com/blog/workload-identity-federation"
+      },
+      {
+        "title": "Workload Identity Federation",
+        "site": "Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/manage-claude/workload-identity-federation"
+      }
+    ]
+  },
+  "xai-grok-v9-medium-consumer-release-cursor-data-2026": {
+    "body": [
+      "xAI の次世代モデル **Grok V9-Medium** が2026年6月16日、**X と SuperGrok** で消費者向けに利用可能になった。SpaceX が同日に Cursor を $60B で買収（[Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）した経緯と深く結びついており、本モデルは **Cursor の実開発者ワークフローデータ**で訓練されている。コーディング領域での Claude / GPT-5.5 への対抗が明確な狙い。",
+      "**モデル仕様**: Grok V9-Medium は **1.5兆パラメータ**で、現行本番モデル **v8-small（500億パラメータ）の3倍**の規模。Elon Musk が5月25日に「訓練完了、評価結果は良好」と発表（[xAI 6月集中更新](?a=xai-grok-june-2026-voice-imagine-connectors-2026)）、その後 supervised fine-tuning と reinforcement learning を経て、約3週間後に消費者向け公開となった。",
+      "**Cursor データでの訓練**: 本モデルは **Cursor の実開発者ワークフロー**（コード入力 → AI 提案 → 採用/却下 → 修正 のシーケンス）を訓練データに採用した点が特徴。これは Cursor が **Fortune 500 の約2/3** に使われ、日に約 **1.5億行**のコードを処理している規模を考えると、訓練データとして極めて貴重。SpaceX-Cursor 統合の最初の実利となる。",
+      "**API 未開放**: 一方で **API は未開放**で、6月19日時点でも xAI ドキュメントの release notes には grok-v9-medium が掲載されていない。SuperGrok 加入者の利用とエンタープライズ API 利用は別ゲートで運用される xAI の設計上、エンタープライズ展開には今後数週間〜数ヶ月の追加待機が必要。",
+      "**コーディング・ベンチマーク戦略**: xAI は Grok V9-Medium で Claude（Opus 4.8 / Fable 5）・GPT-5.5 の SWE-bench リードを切り崩すことを目標としているが、公式ベンチマーク値はまだ未公表。Cursor 開発者データを訓練に組み込んだことで、**実プロダクト挙動への適合度**で差別化を狙う構図だ。"
+    ],
+    "primarySources": [
+      {
+        "title": "Grok V9-Medium Arrives as SpaceX Seals Cursor: Developers Face Model-Choice Risk",
+        "site": "TechTimes",
+        "url": "https://www.techtimes.com/articles/318495/20260616/grok-v9-medium-arrives-spacex-seals-cursor-developers-face-model-choice-risk.htm"
+      },
+      {
+        "title": "Grok V9-Medium Is Not Grok 5: A Builder's Guide",
+        "site": "ChatForest",
+        "url": "https://chatforest.com/builders-log/xai-grok-v9-medium-1-5t-coding-model-mid-june-2026-builder-guide/"
+      }
+    ]
+  },
+  "xai-grok-imagine-video-1-5-86percent-below-sora-2026": {
+    "body": [
+      "xAI が2026年6月18日、動画生成モデル **Grok Imagine Video 1.5** を一般公開した。発表に伴って **AI 動画ベンチマーク leaderboard で1位**、価格は **OpenAI Sora 比 86% 安** と公称、動画生成市場での xAI の正面攻勢が鮮明になった。",
+      "**Grok Imagine 1.5 系列の経緯**: 6月4日に **Grok Imagine 1.5 Preview**（画像生成 API、Quality Mode 搭載）がエンタープライズ向けに公開されていた（[xAI 6月集中更新](?a=xai-grok-june-2026-voice-imagine-connectors-2026)）。今回の **Video 1.5** はその動画版で、テキスト・画像から短尺動画を生成する。SpaceX が同日（6/16）に Cursor を買収（[Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）した直後の発表で、「**6月中旬 xAI ラッシュ**」の最終弾と位置付けられる。",
+      "**価格と性能**: leaderboard 1位は Artificial Analysis 系の動画生成評価とみられる（公式詳細は未開示）。Sora 比 86% 安は xAI が「**最安級の動画生成**」というポジションを明確に取りに行った戦略宣言。Google **Veo 3.1** との競合では、Veo は Workspace（Google Vids）統合の強み、Grok Video は価格と Grok エコシステム連携で対抗する構図になる。",
+      "**3社競合の構図**: OpenAI Sora（高品質、価格高）、Google Veo（Workspace 統合）、xAI Grok Video（低価格、leaderboard 1位）の3軸でユースケース棲み分けが進む見込み。SNS・広告クリエイティブ生成は Grok Video、エンタープライズの動画素材は Sora / Veo、社内 Workspace 動画は Veo（Vids）と、用途特化の選択が標準化される。"
+    ],
+    "primarySources": [
+      {
+        "title": "Grok Imagine Video 1.5 Goes Live: xAI Tops AI Video Leaderboard at 86 Percent Below Sora",
+        "site": "TechTimes",
+        "url": "https://www.techtimes.com/articles/318635/20260618/grok-imagine-video-15-goes-live-xai-tops-ai-video-leaderboard-86-percent-below-sora.htm"
+      },
+      {
+        "title": "xAI News",
+        "site": "xAI",
+        "url": "https://x.ai/news"
+      }
+    ]
+  },
+  "google-gemini-3-5-pro-ga-delay-deep-think-2026": {
+    "body": [
+      "Google **Gemini 3.5 Pro** は5月19日の **Google I/O 2026** で発表されたが、6月 GA 予定が**6月23日時点でも限定プレビューのまま**であることが判明した（[Google I/O 2026 まとめ](?a=google-io-2026-gemini-3-5-flash-antigravity-spark-2026)）。Google CEO **Sundar Pichai** はカンファレンスで「**もう1ヶ月待って**」と発言、リリースが7月にずれ込む可能性を示唆した。",
+      "**現在のアクセス状況**: Gemini 3.5 Pro は **Vertex AI のエンタープライズ顧客限定プレビュー**として一部組織が利用中。一般の **Gemini アプリ**、**Google AI Studio**、**消費者向け Gemini サブスクリプション**にはまだ降りていない。Gemini 3.5 Flash は5月19日に GA 済（[Gemini 3.5 Flash](?a=google-io-2026-gemini-3-5-flash-antigravity-spark-2026)）で広く使われているが、Pro は依然として限られた顧客のみ。",
+      "**仕様**: 公式予告では **2M トークンコンテキスト**（業界最大級）、**Deep Think reasoning モード**（OpenAI o1 / Claude Extended Thinking 系の代替）、フロンティア・マルチモーダル理解（テキスト・画像・音声・動画）。仕様面では Anthropic Fable 5（[Fable 5 リリース](?a=anthropic-claude-fable-5-mythos-5-ga-2026)、SWE-bench 95%）・GPT-5.5・Grok V9-Medium と並ぶフロンティア水準を狙う。",
+      "**市場の見方**: 予測市場（Polymarket・Manifold 等）の **6月末リリース確率は 50-55%**、不確実性が残る。Google の AI 競合動向（Noam Shazeer の OpenAI 移籍、[Shazeer 移籍](?a=noam-shazeer-google-to-openai-architecture-research-2026)、Alphabet 株 7% 下落、Anthropic への別人材流出）と相まって、Gemini 3.5 Pro の遅延は Google AI の組織モメンタムに対する市場の疑念を強める要素となっている。",
+      "**開発者への影響**: Vertex AI 既存顧客は限定プレビューで先行利用が可能だが、それ以外は7月以降の GA を待つしかない。Fable 5 や Grok V9-Medium が消費者向けで先行ロールアウトしている中、Gemini Pro の GA 遅延は **Google エコシステム外への流出リスク**を高めている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Google Gemini 3.5 Pro Nears June Launch With 2 Million Token Context And Deep Think Reasoning",
+        "site": "TechTimes",
+        "url": "https://www.techtimes.com/articles/317919/20260606/google-gemini-35-pro-nears-june-launch-2-million-token-context-deep-think-reasoning.htm"
+      },
+      {
+        "title": "Gemini 3.5 Pro Eyes June GA With 2M Context and Deep Think",
+        "site": "AI Weekly",
+        "url": "https://aiweekly.co/alerts/gemini-35-pro-eyes-june-ga-with-2m-context-and-deep-think"
+      }
+    ]
+  },
+  "overview-2026-week-jun01": {
+    "body": [
+      "**6月1日（月）** — **AI IPO シーズン特集**を公開。Cerebras が5/14 に $5.5B 調達で初日 +68%、Anthropic は6/1 に confidential filing 提出、SpaceX・OpenAI も追随、AI 業界全体で IPO パイプラインが本格化（[AI IPO 特集](?a=feature-ai-ipo-season-cerebras-spacex-anthropic-openai-2026)）。",
+      "**6月2日（火）** — **Microsoft Build 2026** が開幕、大型発表が連続。MAI 7モデル一斉投入（Thinking-1 / Code-1-Flash 等）と Project Solara / Majorana 2 / Discovery GA（[Build 2026 総まとめ](?a=microsoft-build-2026-mai-7models-solara-majorana-2026)）。続報で Windows Agent Framework を MIT で OSS 公開（[Windows Agent Framework](?a=microsoft-build-2026-windows-agent-framework-2026)）、さらに OpenClaw 基盤の自律 AI「Scout」発表（[Microsoft Scout](?a=microsoft-scout-openclaw-build-2026-2026)）。同日 GitHub Copilot CLI のレビューも公開（[Copilot CLI レビュー](?a=github-copilot-cli)）。",
+      "**6月3日（水）** — Anthropic が **Project Glasswing を150組織・15+ヶ国に拡大**（インド初参加）、Claude Partner Network に Services Track を追加（[Glasswing 拡大](?a=anthropic-glasswing-expansion-partner-network-services-track-2026)）。",
+      "**6月4日（木）** — OpenAI が ChatGPT メモリを「**Dreaming V3**」アーキテクチャに刷新、Plus/Pro 米国先行ロールアウト（[Dreaming V3](?a=openai-chatgpt-dreaming-v3-memory-architecture-2026)）。同日 **GPT-Rosalind** を更新し創薬・ゲノミクス向けに agentic coding 強化、Trusted Access を世界規模に拡大（[GPT-Rosalind](?a=openai-gpt-rosalind-life-sciences-update-2026)）。",
+      "**6月5日（金）** — **xAI が Grok を集中更新**。Grok Voice + Imagine 1.5 Preview + Connectors（SharePoint・GitHub 等）公開、V9-Medium（1.5T、v8の3倍）学習完了予告（[xAI 6月集中更新](?a=xai-grok-june-2026-voice-imagine-connectors-2026)）。",
+      "**週の総括** — Microsoft の Build 2026 ラッシュで「内製モデル（MAI）+ OSS 戦略（Windows Agent Framework）+ Agentic AI（Scout）」の3層を同時投入、OpenAI 依存度を下げる方向性が鮮明に。Anthropic は Glasswing でセキュリティ領域を伸ばし、OpenAI は ChatGPT / 専門モデル（Rosalind）両軸でユーザー体験を磨いた。xAI は週末に集中アップデートで応答ペースを示し、6/16 の Grok V9-Medium 公開と SpaceX-Cursor 買収へと続く伏線を張った。"
+    ],
+    "primarySources": [
+      {
+        "title": "Microsoft Build 2026 Live",
+        "site": "Microsoft",
+        "url": "https://news.microsoft.com/build-2026/"
+      },
+      {
+        "title": "OpenAI News",
+        "site": "OpenAI",
+        "url": "https://openai.com/news/"
+      }
+    ]
+  },
+  "overview-2026-week-jun08": {
+    "body": [
+      "**6月8日（月）** — 大型発表が集中した日。**Apple WWDC 2026** で「Siri AI」発表、会話的応答・パーソナライズ音声・新 Siri アプリ、iOS 27 / macOS Golden Gate 同時発表（[Siri AI](?a=apple-wwdc-2026-siri-ai-keynote-2026)）。同日 **OpenAI が機密 S-1 を SEC 提出**、$852B 評価額・9月上場目標で Anthropic（6/1・$965B）に続く2社目、AI IPO パイプライン総額 $3.6T 規模に（[OpenAI S-1](?a=openai-confidential-s1-ipo-filing-852b-valuation-2026)）。",
+      "**6月9日（火）** — Anthropic が **Claude Fable 5 と Mythos 5** をリリース。Fable 5 は Mythos クラスを一般利用向けに安全化、**SWE-bench Verified 95%** で Anthropic 史上最強の一般公開モデル。$10/$50 で前 Mythos Preview の半額以下、Pro/Max/Team/Enterprise は6/22まで無料（[Fable 5 / Mythos 5](?a=anthropic-claude-fable-5-mythos-5-ga-2026)）。",
+      "**6月10日（水）** — Anthropic が **Code with Claude Tokyo** を開催。Angela Jiang・Cat Wu・Dianne Penn・Katelyn Lesse が登壇、英日同時通訳・ライブ配信つき。Tokyo オフィス開設（5/28 発表）と並行する日本市場本格立ち上げ（[Code w/ Claude Tokyo](?a=anthropic-code-with-claude-tokyo-june10-2026)）。",
+      "**週の総括** — Apple Intelligence の再起動（Siri AI）と Anthropic フラッグシップ更新（Fable 5）が同週に重なり、消費者向け AI 体験の「ユーザーが触る層」が一斉に進化した1週間。Apple AI 責任者交代後の最初の大型発表で Siri の本格的な再構築を示し、Anthropic は Opus 4.8 をたった12日で超える Fable 5 を投入。並行する OpenAI IPO 動向と Code w/ Claude Tokyo は、AI 業界が**消費者プロダクト × 資金調達 × 地域展開**の3軸で同時進行していることを示している。"
+    ],
+    "primarySources": [
+      {
+        "title": "Apple WWDC 2026 Keynote",
+        "site": "Apple",
+        "url": "https://www.apple.com/apple-events/"
+      },
+      {
+        "title": "Claude Fable 5 and Mythos 5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
+      }
+    ]
+  },
+  "overview-2026-week-jun15": {
+    "body": [
+      "**6月16日（火）** — AI 業界史上最大級の M&A 発表。**SpaceX が Cursor（Anysphere）を $60B で買収**、史上最大の VC バック・スタートアップ買収を更新（[SpaceX-Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）。同日 **Grok V9-Medium が X と SuperGrok で消費者公開**、1.5T パラメータ・Cursor 開発者ワークフローデータで訓練（[Grok V9-Medium](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)）。両発表が同日になったのは偶然ではなく、SpaceX-xAI-Cursor の垂直統合戦略の起点（[市場再編 分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。",
+      "**6月17日（水）** — Anthropic が **Workload Identity Federation（WIF）を GA**、静的 API キーが不要に。AWS IAM・GCP・Azure・GitHub Actions・OIDC で直接認証、Service Accounts も導入。エンタープライズセキュリティの大改革（[WIF GA](?a=anthropic-workload-identity-federation-ga-service-accounts-2026)）。",
+      "**6月18日（木）** — **Noam Shazeer が Google → OpenAI 移籍**、Transformer 共著者が OpenAI Architecture Research Lead 就任、Alphabet 株 7% 下落（[Shazeer 移籍](?a=noam-shazeer-google-to-openai-architecture-research-2026)）。同日 **Grok Imagine Video 1.5** が公開、AI 動画 leaderboard 1位・Sora 比 86% 安（[Grok Video 1.5](?a=xai-grok-imagine-video-1-5-86percent-below-sora-2026)）。",
+      "**週の総括** — AI 業界の勢力図が劇的に動いた1週間。SpaceX-Cursor 買収は「**モデル選択 = インフラ選択**」時代の到来を告げ、Grok V9-Medium の同日公開で xAI の垂直統合戦略が形になった。Anthropic は WIF GA で静的 API キーを過去のものにし、エンタープライズ認証の標準を更新。Noam Shazeer の移籍は Google AI の人材維持力に対する市場の疑念を強め、Alphabet 株 7% 下落と Gemini 3.5 Pro GA 延期続報（[Gemini Pro 延期](?a=google-gemini-3-5-pro-ga-delay-deep-think-2026)）と相まって、米国3強の力学が変化していることを示した。"
+    ],
+    "primarySources": [
+      {
+        "title": "SpaceX to acquire Cursor for $60B in stock",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/"
+      },
+      {
+        "title": "Workload Identity Federation GA",
+        "site": "Anthropic",
+        "url": "https://claude.com/blog/workload-identity-federation"
+      }
+    ]
+  },
+  "sakana-ai-fugu-multi-agent-orchestration-2026": {
+    "body": [
+      "Tokyo の AI スタートアップ **Sakana AI** が2026年6月22日、マルチエージェント・オーケストレーションシステム **Sakana Fugu** を公開した。**OpenAI 互換の単一 API エンドポイント**として提供され、内部で GPT-5.5・Claude Opus・Gemini 3.1 Pro 等のフロンティアモデルプールを動的にルーティングする。Google Brain 出身の David Ha・Llion Jones（Transformer 共著者）共同創業の同社が、フロンティアモデル「使い分け」を1モデルとして抽象化した実装。",
+      "**Conductor アーキテクチャ**: 中核は **7B パラメータの Conductor モデル**で、ICLR 2026 で発表された2本の論文（**TRINITY** と **The Conductor**）を基礎にしている。Conductor は「どのモデルを起動するか」「エージェント間でどう通信するか」「結果をどう合成するか」を学習し、タスクごとに最適なモデル組合せを動的に決める。LLM をミドルウェアとして扱う発想で、**ベンダーロックインを構造的に回避**できる設計。",
+      "**ベンチマーク勝敗**: Fugu Ultra は複数の指標で Claude Fable 5（[Fable 5 リリース](?a=anthropic-claude-fable-5-mythos-5-ga-2026)）を上回った。**LiveCodeBench で 93.2（Fable 5: 89.8）**、CharXiv Reasoning、Humanity's Last Exam、4つのコーディングベンチマークで首位、トレーディングベンチマークで **+19.43% mean portfolio return** を記録。一方で **SWE-Bench Pro は 73.7（Fable 5: 80.0）で敗北**、MRCRv2 長文脈想起は 93.6 で GPT-5.5（94.8）に届かず、CTI-REALM サイバーセキュリティは Opus 4.8（69.6）に劣る。タスク領域別の使い分けが必要。",
+      "**料金体系**: Fugu Ultra は **$5/$30 per 1M tokens**（入力/出力）、キャッシュ入力は **$0.50/1M**。272K を超えるロングコンテキストは **$10/$45/$1.00** に上昇。サブスクリプションは $20/$100/$200 の3階層。重要な設計は「**複数エージェント起動時もモデル料金を多重課金しない**」点で、最上位モデルベースの単一レートで請求される。",
+      "**ただしトークン消費が 4-6倍**: 単純な料金表を見ると Fable 5（$10/$50）より安く見えるが、**実態はそう単純ではない**。マルチエージェント・オーケストレーションの構造上、**1リクエストで単一モデル直接呼び出しの 4-6 倍のトークン**を消費する。Sakana の API レスポンスでは `token_details` フィールドで「ユーザー可視のモデル出力」と「オーケストレーション・トークン」が分離して返るが、**両者とも同じレートで請求**される。結果として実コストはケースによって Fable 5・Opus 4.8 単体使用と同等以上になる可能性が高い。",
+      "**経済構造の透明化**: Sakana 自身も内部で Anthropic・OpenAI・Google の API に**フルレートで料金を支払い**、その上にオーケストレーション・マージンを乗せている。つまり Fugu のコストは「**裏側の単一モデル API コスト + Sakana マージン + 多重呼び出しオーバーヘッド**」の3層構造。ベンダーロックイン回避の対価として「メタ・ベンダーへのロックイン」が発生する点は留意が必要だ。",
+      "**位置付け**: 「Fable 5 が使えない時の代替」「ベンダー縛りを避けたい組織」「タスクごとに最適モデルを自動選択したい開発者」には有力な選択肢。一方、**コスト最小化が主目的**ならば Fable 5・Opus 4.8 を直接使う方が読みやすい。日本発のオーケストレーション層として、米国2強の中央集権モデルに対する「**選択肢の多様化**」を提供する意義は大きく、ARR・採用事例の伸びが今後の AI 業界構造に影響しうる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Sakana Fugu — Multi-agent System as A Model",
+        "site": "Sakana AI",
+        "url": "https://sakana.ai/fugu/"
+      },
+      {
+        "title": "Sakana AI Launches Sakana Fugu: An Orchestration Model That Routes Tasks Across a Swappable Pool of Frontier LLMs",
+        "site": "MarkTechPost",
+        "url": "https://www.marktechpost.com/2026/06/22/sakana-ai-launches-sakana-fugu-an-orchestration-model-that-routes-tasks-across-a-swappable-pool-of-frontier-llms/"
+      },
+      {
+        "title": "Japan's 'Sakana Fugu' multiagent AI scores well against Fable 5, GPT 5.5",
+        "site": "Nikkei Asia",
+        "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/japan-s-sakana-fugu-multiagent-ai-scores-well-against-fable-5-gpt-5.5"
+      },
+      {
+        "title": "No Claude Fable 5? No problem: Sakana achieves frontier performance with new Fugu",
+        "site": "VentureBeat",
+        "url": "https://venturebeat.com/orchestration/no-claude-fable-5-no-problem-sakana-achieves-frontier-performance-with-new-fugu-multi-model-auto-synthesis-system"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;
