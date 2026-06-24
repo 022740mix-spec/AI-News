@@ -981,11 +981,12 @@ const _AI_COMPANIES_UNSORTED = [
       listed: false,
       detail: "未上場。NEA・Lux Capital・Khosla 等が出資、2024年シリーズ A で評価額 $1.5B 超のユニコーン入り",
     },
-    products: ["AI Scientist", "Evolutionary Model Merge", "Tarsier（マルチモーダル）"],
+    products: ["Sakana Fugu（マルチエージェント・オーケストレーション）", "AI Scientist", "Evolutionary Model Merge", "Tarsier（マルチモーダル）"],
     officialUrl: "https://sakana.ai/",
     notes: [
       "Google Brain 出身の David Ha 氏、Llion Jones 氏（Transformer 論文共著者）が共同創業",
       "進化計算による LLM マージ・自律研究エージェントで国際的な注目を集める",
+      "2026年6月、マルチエージェント・オーケストレーション Sakana Fugu を OpenAI 互換 API で公開",
     ],
   },
   {

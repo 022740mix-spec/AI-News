@@ -10844,6 +10844,39 @@ const ARTICLES_BODY = {
         "url": "https://claude.com/blog/workload-identity-federation"
       }
     ]
+  },
+  "sakana-ai-fugu-multi-agent-orchestration-2026": {
+    "body": [
+      "Tokyo の AI スタートアップ **Sakana AI** が2026年6月22日、マルチエージェント・オーケストレーションシステム **Sakana Fugu** を公開した。**OpenAI 互換の単一 API エンドポイント**として提供され、内部で GPT-5.5・Claude Opus・Gemini 3.1 Pro 等のフロンティアモデルプールを動的にルーティングする。Google Brain 出身の David Ha・Llion Jones（Transformer 共著者）共同創業の同社が、フロンティアモデル「使い分け」を1モデルとして抽象化した実装。",
+      "**Conductor アーキテクチャ**: 中核は **7B パラメータの Conductor モデル**で、ICLR 2026 で発表された2本の論文（**TRINITY** と **The Conductor**）を基礎にしている。Conductor は「どのモデルを起動するか」「エージェント間でどう通信するか」「結果をどう合成するか」を学習し、タスクごとに最適なモデル組合せを動的に決める。LLM をミドルウェアとして扱う発想で、**ベンダーロックインを構造的に回避**できる設計。",
+      "**ベンチマーク勝敗**: Fugu Ultra は複数の指標で Claude Fable 5（[Fable 5 リリース](?a=anthropic-claude-fable-5-mythos-5-ga-2026)）を上回った。**LiveCodeBench で 93.2（Fable 5: 89.8）**、CharXiv Reasoning、Humanity's Last Exam、4つのコーディングベンチマークで首位、トレーディングベンチマークで **+19.43% mean portfolio return** を記録。一方で **SWE-Bench Pro は 73.7（Fable 5: 80.0）で敗北**、MRCRv2 長文脈想起は 93.6 で GPT-5.5（94.8）に届かず、CTI-REALM サイバーセキュリティは Opus 4.8（69.6）に劣る。タスク領域別の使い分けが必要。",
+      "**料金体系**: Fugu Ultra は **$5/$30 per 1M tokens**（入力/出力）、キャッシュ入力は **$0.50/1M**。272K を超えるロングコンテキストは **$10/$45/$1.00** に上昇。サブスクリプションは $20/$100/$200 の3階層。重要な設計は「**複数エージェント起動時もモデル料金を多重課金しない**」点で、最上位モデルベースの単一レートで請求される。",
+      "**ただしトークン消費が 4-6倍**: 単純な料金表を見ると Fable 5（$10/$50）より安く見えるが、**実態はそう単純ではない**。マルチエージェント・オーケストレーションの構造上、**1リクエストで単一モデル直接呼び出しの 4-6 倍のトークン**を消費する。Sakana の API レスポンスでは `token_details` フィールドで「ユーザー可視のモデル出力」と「オーケストレーション・トークン」が分離して返るが、**両者とも同じレートで請求**される。結果として実コストはケースによって Fable 5・Opus 4.8 単体使用と同等以上になる可能性が高い。",
+      "**経済構造の透明化**: Sakana 自身も内部で Anthropic・OpenAI・Google の API に**フルレートで料金を支払い**、その上にオーケストレーション・マージンを乗せている。つまり Fugu のコストは「**裏側の単一モデル API コスト + Sakana マージン + 多重呼び出しオーバーヘッド**」の3層構造。ベンダーロックイン回避の対価として「メタ・ベンダーへのロックイン」が発生する点は留意が必要だ。",
+      "**位置付け**: 「Fable 5 が使えない時の代替」「ベンダー縛りを避けたい組織」「タスクごとに最適モデルを自動選択したい開発者」には有力な選択肢。一方、**コスト最小化が主目的**ならば Fable 5・Opus 4.8 を直接使う方が読みやすい。日本発のオーケストレーション層として、米国2強の中央集権モデルに対する「**選択肢の多様化**」を提供する意義は大きく、ARR・採用事例の伸びが今後の AI 業界構造に影響しうる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Sakana Fugu — Multi-agent System as A Model",
+        "site": "Sakana AI",
+        "url": "https://sakana.ai/fugu/"
+      },
+      {
+        "title": "Sakana AI Launches Sakana Fugu: An Orchestration Model That Routes Tasks Across a Swappable Pool of Frontier LLMs",
+        "site": "MarkTechPost",
+        "url": "https://www.marktechpost.com/2026/06/22/sakana-ai-launches-sakana-fugu-an-orchestration-model-that-routes-tasks-across-a-swappable-pool-of-frontier-llms/"
+      },
+      {
+        "title": "Japan's 'Sakana Fugu' multiagent AI scores well against Fable 5, GPT 5.5",
+        "site": "Nikkei Asia",
+        "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/japan-s-sakana-fugu-multiagent-ai-scores-well-against-fable-5-gpt-5.5"
+      },
+      {
+        "title": "No Claude Fable 5? No problem: Sakana achieves frontier performance with new Fugu",
+        "site": "VentureBeat",
+        "url": "https://venturebeat.com/orchestration/no-claude-fable-5-no-problem-sakana-achieves-frontier-performance-with-new-fugu-multi-model-auto-synthesis-system"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;

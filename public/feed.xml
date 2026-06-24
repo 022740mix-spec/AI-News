@@ -24,6 +24,14 @@
     <summary>SpaceX が Cursor を $60B で買収（史上最大の VC バック・スタートアップ買収）、同日 Grok V9-Medium が消費者公開。Anthropic は Workload Identity Federation を GA、静的 API キーが不要に。Noam Shazeer が Google → OpenAI 移籍で Alphabet 株 7% 下落。Grok Imagine Video 1.5 が AI 動画 leaderboard 1位（Sora 比 86% 安）。</summary>
   </entry>
   <entry>
+    <title>Sakana AI が「Sakana Fugu」を公開 — マルチエージェント・オーケストレーションで Fable 5 越えのコーディング性能、ただし1リクエストでトークン消費 4-6倍</title>
+    <link rel="alternate" type="text/html" href="?a=sakana-ai-fugu-multi-agent-orchestration-2026"/>
+    <id>tag:ai-tool-news.jp,2026:sakana-ai-fugu-multi-agent-orchestration-2026</id>
+    <published>2026-06-22T15:00:00Z</published>
+    <updated>2026-06-22T15:00:00Z</updated>
+    <summary>Sakana AI（東京）が6月22日、マルチエージェント・オーケストレーションを OpenAI 互換 API で提供する Sakana Fugu を公開。7B の Conductor モデルが GPT-5.5・Claude Opus・Gemini 3.1 Pro を動的に振り分け、LiveCodeBench で 93.2（Fable 5 の 89.8 を超え）を達成。ただし1リクエストあたりトークン消費が単一モデルの 4-6 倍になる構造で、表示価格（$5/$30 per 1M）は安く見えるが実コストは同等以上になる可能性あり。</summary>
+  </entry>
+  <entry>
     <title>Noam Shazeer が Google → OpenAI 移籍 — Transformer 共著者が Architecture Research Lead 就任、Alphabet 株は 7% 下落</title>
     <link rel="alternate" type="text/html" href="?a=noam-shazeer-google-to-openai-architecture-research-2026"/>
     <id>tag:ai-tool-news.jp,2026:noam-shazeer-google-to-openai-architecture-research-2026</id>

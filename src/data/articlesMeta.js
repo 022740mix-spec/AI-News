@@ -5900,5 +5900,28 @@ export const ARTICLES_META = [
       "start": "2026-06-15",
       "end": "2026-06-21"
     }
+  },
+  {
+    "id": "sakana-ai-fugu-multi-agent-orchestration-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Sakana AI が「Sakana Fugu」を公開 — マルチエージェント・オーケストレーションで Fable 5 越えのコーディング性能、ただし1リクエストでトークン消費 4-6倍",
+    "excerpt": "Sakana AI（東京）が6月22日、**マルチエージェント・オーケストレーション**を OpenAI 互換 API で提供する **Sakana Fugu** を公開。7B の Conductor モデルが GPT-5.5・Claude Opus・Gemini 3.1 Pro を動的に振り分け、**LiveCodeBench で 93.2（Fable 5 の 89.8 を超え）**を達成。ただし1リクエストあたり**トークン消費が単一モデルの 4-6 倍**になる構造で、表示価格（$5/$30 per 1M）は安く見えるが実コストは同等以上になる可能性あり。",
+    "date": "2026-06-24",
+    "newsDate": "2026-06-22",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Sakana AI",
+      "Sakana Fugu",
+      "オーケストレーション",
+      "マルチエージェント",
+      "日本",
+      "モデル"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "Sakana Fugu リリース"
+    }
   }
 ];
