@@ -10622,6 +10622,228 @@ const ARTICLES_BODY = {
         "url": "https://www.beri.net/article/2026-05-23-nvidia-skillspector-verified-agent-skills-governance"
       }
     ]
+  },
+  "spacex-cursor-60b-acquisition-anysphere-2026": {
+    "body": [
+      "SpaceX が2026年6月16日、Cursor 開発元の **Anysphere, Inc.** を **$60B のオールストック取引**で買収するオプション行使を発表した。**史上最大の VC バック・スタートアップ買収**として直ちに記録を更新。SpaceX が6月12日に NYSE で **$135/株**でIPO したばかりで、買収発表日には **$192.46/株**まで急騰した直後のディールとなる。",
+      "**ディール構造**: 取引は Anysphere と SpaceX の100%子会社との株式合併として組まれ、SpaceX が IPO で調達した現金は使われない構造。Anysphere 株主は **7日間 VWAP** ベースの SpaceX クラス A 株を受け取る。クロージングは規制当局承認次第で **2026年 Q3** を予定。SpaceX-xAI 合併（5月6日確定、xAI 評価額 ~$250B）に続く2回目のフロンティア AI 領域統合で、SpaceX が AI 領域の事業ホールディング体制を本格的に固めた格好。",
+      "**Cursor の事業規模**: Cursor は創業から4年弱で **ARR 約$4B**（うち約 **$2.6B** がエンタープライズ B2B 由来）に到達。**5万社超**のエンタープライズ顧客を抱え、**Fortune 500 の約2/3** に開発者ベースの利用がある。1日あたり **約1.5億行**のエンタープライズコードが Cursor 経由で書かれている計算で、AI コーディング市場の支配的プレイヤーとしての地位を確立していた（[Cursor 3 Agent-first Workspace](?a=cursor-3-agent-first-workspace-2026)）。",
+      "**戦略的合理性**: SpaceX が買うのは「**データ・計算・人材**」の3点だ。第一にデータ — Cursor の実開発者ワークフロー（コード・PR・レビュー・修正履歴）が Grok 訓練パイプラインに流れ込む。実際、買収同日に消費者公開された Grok V9-Medium は Cursor データで訓練済（[Grok V9-Medium 公開](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)）。第二に計算 — Cursor は xAI の **Colossus** スーパークラスター（220,000 GPU）にアクセス可能になり、独自モデル Composer 系の継続訓練が大幅加速。第三に人材 — xAI は2026年3月までに **共同創業者11名全員**が離脱しており、Cursor の技術陣がエンジニアリングギャップを埋める。",
+      "**市場への影響**: Cursor は買収後もブランド・製品ライン継続が確認されているが、モデル選択肢に変化が出る可能性は高い。これまで Claude Sonnet 4.6・Opus 4.7/4.8 を中心に使ってきた Cursor が、今後 Grok 系を優先する可能性は否定できず、エンタープライズ顧客は「**モデル選択がそのままインフラ選択になる**」現実に向き合うことになる。詳細な市場再編は[AI コーディング市場再編 分析記事](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)を参照。",
+      "**規制リスク**: AI 領域・宇宙領域を同一体制下に置く SpaceX-xAI-Cursor の3層構造は、米国 FTC・DOJ のアンチトラスト審査の対象になる可能性が高い。Q3 close 予定は楽観的シナリオで、規制対応次第では 2027 にずれ込む可能性も指摘されている。"
+    ],
+    "primarySources": [
+      {
+        "title": "SpaceX to acquire Cursor for $60B in stock, days after blockbuster IPO",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/"
+      },
+      {
+        "title": "SpaceX to acquire the AI coding startup Cursor for $60 billion",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/06/16/spacex-spcx-cursor-acquisition-ipo.html"
+      },
+      {
+        "title": "SpaceX Buys Cursor for $60B: What the Deal Means in 2026",
+        "site": "Digital Applied",
+        "url": "https://www.digitalapplied.com/blog/spacex-acquires-cursor-anysphere-60b-ai-coding-2026"
+      }
+    ]
+  },
+  "feature-ai-coding-market-realignment-spacex-cursor-2026": {
+    "body": [
+      "SpaceX による Cursor $60B 買収（[速報](?a=spacex-cursor-60b-acquisition-anysphere-2026)）は、AI コーディングツール市場の**勢力図を3極構造**に塗り替える。これまで「Cursor vs GitHub Copilot vs Claude Code」と単発の競争として論じられてきた構図が、**SpaceX-xAI 系、Microsoft 系、独立系**という親会社単位の3勢力に圧縮された。本特集では新しい勢力図と、開発者が直面する選択を整理する。",
+      "**第1極: SpaceX-xAI-Cursor 系（垂直統合）** — Cursor 製品（IDE / CLI / Background Agent / Bugbot）は継続するが、内部モデルは段階的に Grok 系へ移行が見込まれる。Cursor 独自モデル Composer 2.5（[Cursor CLI レビュー](?a=cursor-cli)）は Kimi K2.5 ベースだったが、今後は Grok V9-Medium（[消費者公開](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)）など Grok 系列モデルとの統合が進む。データ流通も双方向で、Cursor の開発者ワークフローが Grok の訓練データに、Grok の最新モデルが Cursor の Composer/Sonic 後継に。**xAI Colossus** スーパークラスター（220,000 GPU）の計算リソースを享受できる利点が大きい。",
+      "**第2極: Microsoft-GitHub Copilot 系（モデル多重化）** — GitHub Copilot は **MAI-Code-1-Flash**（Microsoft 内製、6/2 GA）を中核に据えつつ、Claude Sonnet 4.5 / Opus 4.7-4.8、Grok、Gemini など複数のフロンティアモデルを `/model` で切替可能なマルチベンダー戦略を維持する（[Copilot CLI レビュー](?a=github-copilot-cli)）。OpenAI との関係も継続し、Codex / GPT-5.5 も統合済。Azure インフラ・Microsoft 365 統合・エンタープライズ販路という地の利を持つ。",
+      "**第3極: 独立系（Anthropic Claude Code / Cognition Devin Desktop）** — Anthropic は **Claude Code**（[Opus 4.8 + Dynamic Workflows](?a=claude-code)）と **Claude Fable 5**（[Fable 5 リリース](?a=anthropic-claude-fable-5-mythos-5-ga-2026)）を武器に、特定インフラに縛られない中立路線を堅持。Workload Identity Federation（[WIF GA](?a=anthropic-workload-identity-federation-ga-service-accounts-2026)）でエンタープライズセキュリティを強化し、AWS・GCP・Azure いずれの顧客にも統合しやすい。Cognition は **Devin / Devin Desktop**（旧 Windsurf を統合）で別系統の独立勢力を形成、Devin Local の高効率エージェントが差別化軸。",
+      "**開発者への影響: モデル選択 = インフラ選択**: 従来「どの AI モデルを使うか」は API キーを差し替えるだけの軽い判断だった。SpaceX-Cursor 統合後は、**コーディングエージェントを選ぶことが、その背後の計算インフラ・データ流通・親会社の地政学を選ぶこと**になる。例えば Grok を Cursor 経由で使うと開発データが xAI 訓練に流れ、Claude を使うとデータは Anthropic で訓練に使われない（Privacy Mode 等）。エンタープライズはこの「データガバナンス」の観点で AI コーディング基盤の選択を見直す必要が出てくる。",
+      "**規制と地政学**: AI 領域・宇宙領域・SNS（X）を SpaceX-xAI が一体運営する構図は、米国 FTC のアンチトラスト懸念と EU AI Act の双方で精査される。中国側では DeepSeek・Qwen・Kimi 等のオープンウェイトモデルが「独立系インフラ」を強化、米中分裂が AI コーディング層でも顕在化する。日本企業・公的機関は3極のいずれに依存するかを意識的に決める必要がある。",
+      "**今後12ヶ月の見通し**: (1) Cursor から Claude Code・Devin Desktop・GitHub Copilot への移行検討が一定数発生、(2) GitHub Copilot のマルチモデル戦略がさらに強化されデファクト中立基盤化、(3) Anthropic は Claude Code + WIF + Fable 5 でエンタープライズ深耕、(4) 中国系オープンウェイトモデルが「サードオプション」として浮上、という4本柱で市場が動く見込み。"
+    ],
+    "primarySources": [
+      {
+        "title": "SpaceX Buys Cursor for $60B: What Developers Should Know Right Now",
+        "site": "Cosmic JS",
+        "url": "https://www.cosmicjs.com/blog/spacex-acquires-cursor-what-developers-should-know"
+      },
+      {
+        "title": "SpaceX Buys Cursor $60B: What It Means for Every Developer",
+        "site": "Digital Strategy AI",
+        "url": "https://digitalstrategy-ai.com/spacex-cursor-acquisition-analysis"
+      }
+    ]
+  },
+  "noam-shazeer-google-to-openai-architecture-research-2026": {
+    "body": [
+      "Google DeepMind で Gemini の共リードを務めていた **Noam Shazeer** が2026年6月18日、**OpenAI に Architecture Research Lead として移籍**することを X で公表した。同日 OpenAI Mark Chen が「Transformer・MoE・効率的デコーディングで現代 AI を形作った Noam を歓迎する」とコメント、両社の発表が一斉に出る形でディールが固まった。Alphabet 株は当日 **7% 下落**、Google からの大型人材流出が市場にも影響を与えた。",
+      "**Shazeer の功績**: Shazeer は2017年の **Transformer 論文**（Attention Is All You Need）の共著者8名のうちの1人で、計算機科学史上もっとも引用される論文の1本に名を連ねる。その後 **Mixture of Experts**（MoE）の効率化、推論時計算の最適化（Sparse / Routed Attention）など、現代 LLM の核となるアーキテクチャを設計してきた人物。OpenAI での新役職は「**次世代 AI モデル・アーキテクチャの探究と Transformer の更なる進化**」を担う。",
+      "**Google における経緯**: Shazeer は2021年に Google を退社し、Daniel De Freitas と **Character.AI** を共同創業。2024年8月、Google は **約 $2.7B** を投じて Character.AI と提携、Shazeer と De Freitas を Google DeepMind に呼び戻した。今回の OpenAI 移籍は、Google にとって**約2年弱で $2.7B の人材取り戻し投資が再び流出**する結果となる。",
+      "**Google からの連続流出**: 同時期に **Nobel 受賞者の Demis Hassabis チームから別の AI リード**が Anthropic へ移籍したとの報道もあり（Alphabet 株 7% 下落の一因）、Google の AI トップ人材維持力に市場が疑念を持ち始めている。Gemini 3.5 Pro の GA 延期続報（[Pichai「もう1ヶ月待って」](?a=google-gemini-3-5-pro-ga-delay-deep-think-2026)）と相まって、Google AI の組織モメンタムが問われる局面に入った。",
+      "**OpenAI への意義**: Shazeer の参加は、OpenAI が **GPT-5.5（4/23）** 以降の次世代アーキテクチャ研究を加速する人材確保として位置付けられる。すでに OpenAI は **Codex / Workspace Agents / Dreaming V3 メモリ**（[Dreaming V3](?a=openai-chatgpt-dreaming-v3-memory-architecture-2026)）と複数の方向で投資しており、Shazeer 体制下で次の GPT-6 系の基礎設計が進む可能性が高い。"
+    ],
+    "primarySources": [
+      {
+        "title": "Google Gemini co-lead Noam Shazeer leaves for OpenAI",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/06/18/google-gemini-co-lead-noam-shazeer-leaves-for-openai.html"
+      },
+      {
+        "title": "Alphabet stock slides as Google loses two top AI researchers",
+        "site": "Quartz",
+        "url": "https://qz.com/alphabet-stock-google-ai-researchers-openai-anthropic-062226"
+      },
+      {
+        "title": "OpenAI Hires Transformer Co-Inventor Noam Shazeer Away From Google DeepMind",
+        "site": "MLQ News",
+        "url": "https://mlq.ai/news/openai-hires-transformer-co-inventor-noam-shazeer-away-from-google-deepmind/"
+      }
+    ]
+  },
+  "anthropic-workload-identity-federation-ga-service-accounts-2026": {
+    "body": [
+      "Anthropic が2026年6月17日、**Workload Identity Federation（WIF）** を Claude Platform で一般提供（GA）開始した。あわせて **Service Accounts** を組織レベルで導入、エンタープライズの API 認証アーキテクチャを大幅に刷新する。**静的 API キーが不要**になり、漏洩・ローテーション・ハードコードといった従来の運用負荷が消える設計だ。",
+      "**WIF の仕組み**: ワークロードが**既に持っている ID** で Claude API を呼べる。サポート対象は **AWS IAM ロール**、**GCP / Kubernetes サービスアカウント**、**Azure マネージド ID**、**GitHub Actions トークン**、**Okta**、その他 OIDC 準拠の任意のプロバイダー。Anthropic は ID プロバイダーが発行した **署名済み JWT** を Claude Console で設定した**信頼ルール**に照らして検証し、組織内の Service Account にバインドされた**短命の Anthropic アクセストークン**を返す。",
+      "**Service Accounts**: `svac_...` 形式の名前付きプリンシパルが組織レベルで作成され、フェデレートされたトークンが「**として動作する**」対象になる。Service Account は組織レベルに存在し、ワークスペースのメンバーとして追加すると有効化される。**ワークロードごとに ID・ロール・監査証跡**を持てるため、共有 API キーで起きがちな「誰がどの API を叩いたか分からない」問題が解消される。",
+      "**フェデレーション管理 API**: 大規模組織向けに **完全プログラマブルな Admin API** が新設され、Issuer・Service Accounts・フェデレーションルールの作成・更新が自動化可能。Terraform・Pulumi 等の IaC との統合も容易。",
+      "**移行パス**: API キーと WIF は**併存可能**で、ワークロードごとに段階的に移行できる。既存の運用を止めずに、新規ワークロードから WIF を導入し、安定確認後に既存ワークロードを順次切り替えるパターンが推奨される。",
+      "**AI News プロジェクトへの示唆**: AI News の Claude Code Routine も将来的に WIF + Service Accounts への移行が現実的だ。GitHub Actions トークンで Claude API を直接呼べるようになれば、`.env` の API キー管理が不要になり、`CLAUDE.md`「認証情報の保護」セクションが運用レベルでさらに強化される。SkillSpector（[SkillSpector 特集](?a=feature-nvidia-skillspector-agent-skill-security-2026)）と並ぶ「文章レベルから自動化への昇格」の重要な選択肢。"
+    ],
+    "primarySources": [
+      {
+        "title": "Workload Identity Federation (WIF) is now generally available on the Claude Platform",
+        "site": "Anthropic",
+        "url": "https://claude.com/blog/workload-identity-federation"
+      },
+      {
+        "title": "Workload Identity Federation",
+        "site": "Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/manage-claude/workload-identity-federation"
+      }
+    ]
+  },
+  "xai-grok-v9-medium-consumer-release-cursor-data-2026": {
+    "body": [
+      "xAI の次世代モデル **Grok V9-Medium** が2026年6月16日、**X と SuperGrok** で消費者向けに利用可能になった。SpaceX が同日に Cursor を $60B で買収（[Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）した経緯と深く結びついており、本モデルは **Cursor の実開発者ワークフローデータ**で訓練されている。コーディング領域での Claude / GPT-5.5 への対抗が明確な狙い。",
+      "**モデル仕様**: Grok V9-Medium は **1.5兆パラメータ**で、現行本番モデル **v8-small（500億パラメータ）の3倍**の規模。Elon Musk が5月25日に「訓練完了、評価結果は良好」と発表（[xAI 6月集中更新](?a=xai-grok-june-2026-voice-imagine-connectors-2026)）、その後 supervised fine-tuning と reinforcement learning を経て、約3週間後に消費者向け公開となった。",
+      "**Cursor データでの訓練**: 本モデルは **Cursor の実開発者ワークフロー**（コード入力 → AI 提案 → 採用/却下 → 修正 のシーケンス）を訓練データに採用した点が特徴。これは Cursor が **Fortune 500 の約2/3** に使われ、日に約 **1.5億行**のコードを処理している規模を考えると、訓練データとして極めて貴重。SpaceX-Cursor 統合の最初の実利となる。",
+      "**API 未開放**: 一方で **API は未開放**で、6月19日時点でも xAI ドキュメントの release notes には grok-v9-medium が掲載されていない。SuperGrok 加入者の利用とエンタープライズ API 利用は別ゲートで運用される xAI の設計上、エンタープライズ展開には今後数週間〜数ヶ月の追加待機が必要。",
+      "**コーディング・ベンチマーク戦略**: xAI は Grok V9-Medium で Claude（Opus 4.8 / Fable 5）・GPT-5.5 の SWE-bench リードを切り崩すことを目標としているが、公式ベンチマーク値はまだ未公表。Cursor 開発者データを訓練に組み込んだことで、**実プロダクト挙動への適合度**で差別化を狙う構図だ。"
+    ],
+    "primarySources": [
+      {
+        "title": "Grok V9-Medium Arrives as SpaceX Seals Cursor: Developers Face Model-Choice Risk",
+        "site": "TechTimes",
+        "url": "https://www.techtimes.com/articles/318495/20260616/grok-v9-medium-arrives-spacex-seals-cursor-developers-face-model-choice-risk.htm"
+      },
+      {
+        "title": "Grok V9-Medium Is Not Grok 5: A Builder's Guide",
+        "site": "ChatForest",
+        "url": "https://chatforest.com/builders-log/xai-grok-v9-medium-1-5t-coding-model-mid-june-2026-builder-guide/"
+      }
+    ]
+  },
+  "xai-grok-imagine-video-1-5-86percent-below-sora-2026": {
+    "body": [
+      "xAI が2026年6月18日、動画生成モデル **Grok Imagine Video 1.5** を一般公開した。発表に伴って **AI 動画ベンチマーク leaderboard で1位**、価格は **OpenAI Sora 比 86% 安** と公称、動画生成市場での xAI の正面攻勢が鮮明になった。",
+      "**Grok Imagine 1.5 系列の経緯**: 6月4日に **Grok Imagine 1.5 Preview**（画像生成 API、Quality Mode 搭載）がエンタープライズ向けに公開されていた（[xAI 6月集中更新](?a=xai-grok-june-2026-voice-imagine-connectors-2026)）。今回の **Video 1.5** はその動画版で、テキスト・画像から短尺動画を生成する。SpaceX が同日（6/16）に Cursor を買収（[Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）した直後の発表で、「**6月中旬 xAI ラッシュ**」の最終弾と位置付けられる。",
+      "**価格と性能**: leaderboard 1位は Artificial Analysis 系の動画生成評価とみられる（公式詳細は未開示）。Sora 比 86% 安は xAI が「**最安級の動画生成**」というポジションを明確に取りに行った戦略宣言。Google **Veo 3.1** との競合では、Veo は Workspace（Google Vids）統合の強み、Grok Video は価格と Grok エコシステム連携で対抗する構図になる。",
+      "**3社競合の構図**: OpenAI Sora（高品質、価格高）、Google Veo（Workspace 統合）、xAI Grok Video（低価格、leaderboard 1位）の3軸でユースケース棲み分けが進む見込み。SNS・広告クリエイティブ生成は Grok Video、エンタープライズの動画素材は Sora / Veo、社内 Workspace 動画は Veo（Vids）と、用途特化の選択が標準化される。"
+    ],
+    "primarySources": [
+      {
+        "title": "Grok Imagine Video 1.5 Goes Live: xAI Tops AI Video Leaderboard at 86 Percent Below Sora",
+        "site": "TechTimes",
+        "url": "https://www.techtimes.com/articles/318635/20260618/grok-imagine-video-15-goes-live-xai-tops-ai-video-leaderboard-86-percent-below-sora.htm"
+      },
+      {
+        "title": "xAI News",
+        "site": "xAI",
+        "url": "https://x.ai/news"
+      }
+    ]
+  },
+  "google-gemini-3-5-pro-ga-delay-deep-think-2026": {
+    "body": [
+      "Google **Gemini 3.5 Pro** は5月19日の **Google I/O 2026** で発表されたが、6月 GA 予定が**6月23日時点でも限定プレビューのまま**であることが判明した（[Google I/O 2026 まとめ](?a=google-io-2026-gemini-3-5-flash-antigravity-spark-2026)）。Google CEO **Sundar Pichai** はカンファレンスで「**もう1ヶ月待って**」と発言、リリースが7月にずれ込む可能性を示唆した。",
+      "**現在のアクセス状況**: Gemini 3.5 Pro は **Vertex AI のエンタープライズ顧客限定プレビュー**として一部組織が利用中。一般の **Gemini アプリ**、**Google AI Studio**、**消費者向け Gemini サブスクリプション**にはまだ降りていない。Gemini 3.5 Flash は5月19日に GA 済（[Gemini 3.5 Flash](?a=google-io-2026-gemini-3-5-flash-antigravity-spark-2026)）で広く使われているが、Pro は依然として限られた顧客のみ。",
+      "**仕様**: 公式予告では **2M トークンコンテキスト**（業界最大級）、**Deep Think reasoning モード**（OpenAI o1 / Claude Extended Thinking 系の代替）、フロンティア・マルチモーダル理解（テキスト・画像・音声・動画）。仕様面では Anthropic Fable 5（[Fable 5 リリース](?a=anthropic-claude-fable-5-mythos-5-ga-2026)、SWE-bench 95%）・GPT-5.5・Grok V9-Medium と並ぶフロンティア水準を狙う。",
+      "**市場の見方**: 予測市場（Polymarket・Manifold 等）の **6月末リリース確率は 50-55%**、不確実性が残る。Google の AI 競合動向（Noam Shazeer の OpenAI 移籍、[Shazeer 移籍](?a=noam-shazeer-google-to-openai-architecture-research-2026)、Alphabet 株 7% 下落、Anthropic への別人材流出）と相まって、Gemini 3.5 Pro の遅延は Google AI の組織モメンタムに対する市場の疑念を強める要素となっている。",
+      "**開発者への影響**: Vertex AI 既存顧客は限定プレビューで先行利用が可能だが、それ以外は7月以降の GA を待つしかない。Fable 5 や Grok V9-Medium が消費者向けで先行ロールアウトしている中、Gemini Pro の GA 遅延は **Google エコシステム外への流出リスク**を高めている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Google Gemini 3.5 Pro Nears June Launch With 2 Million Token Context And Deep Think Reasoning",
+        "site": "TechTimes",
+        "url": "https://www.techtimes.com/articles/317919/20260606/google-gemini-35-pro-nears-june-launch-2-million-token-context-deep-think-reasoning.htm"
+      },
+      {
+        "title": "Gemini 3.5 Pro Eyes June GA With 2M Context and Deep Think",
+        "site": "AI Weekly",
+        "url": "https://aiweekly.co/alerts/gemini-35-pro-eyes-june-ga-with-2m-context-and-deep-think"
+      }
+    ]
+  },
+  "overview-2026-week-jun01": {
+    "body": [
+      "**6月1日（月）** — **AI IPO シーズン特集**を公開。Cerebras が5/14 に $5.5B 調達で初日 +68%、Anthropic は6/1 に confidential filing 提出、SpaceX・OpenAI も追随、AI 業界全体で IPO パイプラインが本格化（[AI IPO 特集](?a=feature-ai-ipo-season-cerebras-spacex-anthropic-openai-2026)）。",
+      "**6月2日（火）** — **Microsoft Build 2026** が開幕、大型発表が連続。MAI 7モデル一斉投入（Thinking-1 / Code-1-Flash 等）と Project Solara / Majorana 2 / Discovery GA（[Build 2026 総まとめ](?a=microsoft-build-2026-mai-7models-solara-majorana-2026)）。続報で Windows Agent Framework を MIT で OSS 公開（[Windows Agent Framework](?a=microsoft-build-2026-windows-agent-framework-2026)）、さらに OpenClaw 基盤の自律 AI「Scout」発表（[Microsoft Scout](?a=microsoft-scout-openclaw-build-2026-2026)）。同日 GitHub Copilot CLI のレビューも公開（[Copilot CLI レビュー](?a=github-copilot-cli)）。",
+      "**6月3日（水）** — Anthropic が **Project Glasswing を150組織・15+ヶ国に拡大**（インド初参加）、Claude Partner Network に Services Track を追加（[Glasswing 拡大](?a=anthropic-glasswing-expansion-partner-network-services-track-2026)）。",
+      "**6月4日（木）** — OpenAI が ChatGPT メモリを「**Dreaming V3**」アーキテクチャに刷新、Plus/Pro 米国先行ロールアウト（[Dreaming V3](?a=openai-chatgpt-dreaming-v3-memory-architecture-2026)）。同日 **GPT-Rosalind** を更新し創薬・ゲノミクス向けに agentic coding 強化、Trusted Access を世界規模に拡大（[GPT-Rosalind](?a=openai-gpt-rosalind-life-sciences-update-2026)）。",
+      "**6月5日（金）** — **xAI が Grok を集中更新**。Grok Voice + Imagine 1.5 Preview + Connectors（SharePoint・GitHub 等）公開、V9-Medium（1.5T、v8の3倍）学習完了予告（[xAI 6月集中更新](?a=xai-grok-june-2026-voice-imagine-connectors-2026)）。",
+      "**週の総括** — Microsoft の Build 2026 ラッシュで「内製モデル（MAI）+ OSS 戦略（Windows Agent Framework）+ Agentic AI（Scout）」の3層を同時投入、OpenAI 依存度を下げる方向性が鮮明に。Anthropic は Glasswing でセキュリティ領域を伸ばし、OpenAI は ChatGPT / 専門モデル（Rosalind）両軸でユーザー体験を磨いた。xAI は週末に集中アップデートで応答ペースを示し、6/16 の Grok V9-Medium 公開と SpaceX-Cursor 買収へと続く伏線を張った。"
+    ],
+    "primarySources": [
+      {
+        "title": "Microsoft Build 2026 Live",
+        "site": "Microsoft",
+        "url": "https://news.microsoft.com/build-2026/"
+      },
+      {
+        "title": "OpenAI News",
+        "site": "OpenAI",
+        "url": "https://openai.com/news/"
+      }
+    ]
+  },
+  "overview-2026-week-jun08": {
+    "body": [
+      "**6月8日（月）** — 大型発表が集中した日。**Apple WWDC 2026** で「Siri AI」発表、会話的応答・パーソナライズ音声・新 Siri アプリ、iOS 27 / macOS Golden Gate 同時発表（[Siri AI](?a=apple-wwdc-2026-siri-ai-keynote-2026)）。同日 **OpenAI が機密 S-1 を SEC 提出**、$852B 評価額・9月上場目標で Anthropic（6/1・$965B）に続く2社目、AI IPO パイプライン総額 $3.6T 規模に（[OpenAI S-1](?a=openai-confidential-s1-ipo-filing-852b-valuation-2026)）。",
+      "**6月9日（火）** — Anthropic が **Claude Fable 5 と Mythos 5** をリリース。Fable 5 は Mythos クラスを一般利用向けに安全化、**SWE-bench Verified 95%** で Anthropic 史上最強の一般公開モデル。$10/$50 で前 Mythos Preview の半額以下、Pro/Max/Team/Enterprise は6/22まで無料（[Fable 5 / Mythos 5](?a=anthropic-claude-fable-5-mythos-5-ga-2026)）。",
+      "**6月10日（水）** — Anthropic が **Code with Claude Tokyo** を開催。Angela Jiang・Cat Wu・Dianne Penn・Katelyn Lesse が登壇、英日同時通訳・ライブ配信つき。Tokyo オフィス開設（5/28 発表）と並行する日本市場本格立ち上げ（[Code w/ Claude Tokyo](?a=anthropic-code-with-claude-tokyo-june10-2026)）。",
+      "**週の総括** — Apple Intelligence の再起動（Siri AI）と Anthropic フラッグシップ更新（Fable 5）が同週に重なり、消費者向け AI 体験の「ユーザーが触る層」が一斉に進化した1週間。Apple AI 責任者交代後の最初の大型発表で Siri の本格的な再構築を示し、Anthropic は Opus 4.8 をたった12日で超える Fable 5 を投入。並行する OpenAI IPO 動向と Code w/ Claude Tokyo は、AI 業界が**消費者プロダクト × 資金調達 × 地域展開**の3軸で同時進行していることを示している。"
+    ],
+    "primarySources": [
+      {
+        "title": "Apple WWDC 2026 Keynote",
+        "site": "Apple",
+        "url": "https://www.apple.com/apple-events/"
+      },
+      {
+        "title": "Claude Fable 5 and Mythos 5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
+      }
+    ]
+  },
+  "overview-2026-week-jun15": {
+    "body": [
+      "**6月16日（火）** — AI 業界史上最大級の M&A 発表。**SpaceX が Cursor（Anysphere）を $60B で買収**、史上最大の VC バック・スタートアップ買収を更新（[SpaceX-Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）。同日 **Grok V9-Medium が X と SuperGrok で消費者公開**、1.5T パラメータ・Cursor 開発者ワークフローデータで訓練（[Grok V9-Medium](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)）。両発表が同日になったのは偶然ではなく、SpaceX-xAI-Cursor の垂直統合戦略の起点（[市場再編 分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。",
+      "**6月17日（水）** — Anthropic が **Workload Identity Federation（WIF）を GA**、静的 API キーが不要に。AWS IAM・GCP・Azure・GitHub Actions・OIDC で直接認証、Service Accounts も導入。エンタープライズセキュリティの大改革（[WIF GA](?a=anthropic-workload-identity-federation-ga-service-accounts-2026)）。",
+      "**6月18日（木）** — **Noam Shazeer が Google → OpenAI 移籍**、Transformer 共著者が OpenAI Architecture Research Lead 就任、Alphabet 株 7% 下落（[Shazeer 移籍](?a=noam-shazeer-google-to-openai-architecture-research-2026)）。同日 **Grok Imagine Video 1.5** が公開、AI 動画 leaderboard 1位・Sora 比 86% 安（[Grok Video 1.5](?a=xai-grok-imagine-video-1-5-86percent-below-sora-2026)）。",
+      "**週の総括** — AI 業界の勢力図が劇的に動いた1週間。SpaceX-Cursor 買収は「**モデル選択 = インフラ選択**」時代の到来を告げ、Grok V9-Medium の同日公開で xAI の垂直統合戦略が形になった。Anthropic は WIF GA で静的 API キーを過去のものにし、エンタープライズ認証の標準を更新。Noam Shazeer の移籍は Google AI の人材維持力に対する市場の疑念を強め、Alphabet 株 7% 下落と Gemini 3.5 Pro GA 延期続報（[Gemini Pro 延期](?a=google-gemini-3-5-pro-ga-delay-deep-think-2026)）と相まって、米国3強の力学が変化していることを示した。"
+    ],
+    "primarySources": [
+      {
+        "title": "SpaceX to acquire Cursor for $60B in stock",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/"
+      },
+      {
+        "title": "Workload Identity Federation GA",
+        "site": "Anthropic",
+        "url": "https://claude.com/blog/workload-identity-federation"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;
