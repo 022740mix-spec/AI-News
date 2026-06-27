@@ -5923,5 +5923,72 @@ export const ARTICLES_META = [
       "src": "articles/cover-model-api.svg",
       "alt": "Sakana Fugu リリース"
     }
+  },
+  {
+    "id": "openai-gpt-5-6-sol-terra-luna-preview-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI が GPT-5.6 を限定プレビュー公開 — Sol/Terra/Luna の3バリアント、TerminalBench 2.1 で Sol Ultra 91.91% が Mythos 5・Fable 5 超え",
+    "excerpt": "OpenAI が6月25日、次世代フラッグシップ **GPT-5.6** を3バリアント（**Sol/Terra/Luna**）で限定プレビュー公開。**TerminalBench 2.1** で **Sol Ultra 91.91%** を達成し、Claude Mythos 5（88.0%）と Fable 5（84.3%）を上回った。料金は Sol $5/$30、Terra $2.50/$15、Luna **$1/$6**（フロンティアモデル最安）。米国政府との事前共有を経て約20組織限定で配布、一般公開は数週間後の予定。",
+    "date": "2026-06-27",
+    "newsDate": "2026-06-25",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "GPT-5.6",
+      "モデル",
+      "TerminalBench",
+      "Sol"
+    ],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI GPT-5.6 Sol/Terra/Luna 限定プレビュー"
+    },
+    "pinned": true
+  },
+  {
+    "id": "john-jumper-google-deepmind-to-anthropic-nobel-2026",
+    "type": "news",
+    "category": "product",
+    "title": "John Jumper（2024年ノーベル化学賞）が Google DeepMind → Anthropic 移籍 — Shazeer に続く Google AI 人材流出の第2波",
+    "excerpt": "**John Jumper** が約9年勤めた **Google DeepMind** を離れ **Anthropic** に移籍したと発表。Jumper は **AlphaFold2 開発者**として2024年に Demis Hassabis と共にノーベル化学賞を共同受賞した人物。1週間前の Noam Shazeer の OpenAI 移籍に続く Google AI トップ人材の流出**第2波**で、Alphabet 株は週後半に追加で下落、Gemini 3.5 Pro GA 延期続報と相まって Google AI の組織モメンタムへの市場の疑念が一段と強まる結果に。",
+    "date": "2026-06-27",
+    "newsDate": "2026-06-26",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "Google",
+      "DeepMind",
+      "人材",
+      "AlphaFold"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "John Jumper Anthropic 移籍"
+    }
+  },
+  {
+    "id": "openai-broadcom-jalapeno-llm-inference-chip-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI が Broadcom と「Jalapeño」を発表 — OpenAI 自社設計の LLM 最適化推論アクセラレータ、2026年末初期展開で NVIDIA 依存を低減",
+    "excerpt": "OpenAI と Broadcom が6月25日、**LLM 最適化推論チップ「Jalapeño」**を共同発表。**OpenAI が設計**したアクセラレータを Broadcom が**シリコン実装**する分業体制で、**2026年末**に初期コンピュート基盤として導入予定。OpenAI の **NVIDIA 依存度低減**戦略の中核で、Anthropic-AWS Trainium、Google TPU、Microsoft MAIA に続く「フロンティアモデル各社の自社チップ路線」が出揃った形となる。",
+    "date": "2026-06-27",
+    "newsDate": "2026-06-25",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "Broadcom",
+      "Jalapeño",
+      "推論チップ",
+      "AI インフラ"
+    ],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI Broadcom Jalapeño 推論チップ"
+    }
   }
 ];

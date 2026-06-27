@@ -10877,6 +10877,77 @@ const ARTICLES_BODY = {
         "url": "https://venturebeat.com/orchestration/no-claude-fable-5-no-problem-sakana-achieves-frontier-performance-with-new-fugu-multi-model-auto-synthesis-system"
       }
     ]
+  },
+  "openai-gpt-5-6-sol-terra-luna-preview-2026": {
+    "body": [
+      "OpenAI が2026年6月25日、次世代フラッグシップ **GPT-5.6** を **Sol / Terra / Luna** の3バリアントで限定プレビュー公開した。米国政府との事前共有を経て**約20組織**のみに配布される段階で、一般公開は数週間後の予定。GPT-5.5（4/23）から2ヶ月という短サイクルでの投入で、Anthropic Fable 5（[Fable 5 リリース](?a=anthropic-claude-fable-5-mythos-5-ga-2026)）と Mythos 5 の SWE-bench リードに対する正面回答となる。",
+      "**3バリアントの使い分け**: **Sol** は最難関タスク（複雑なコーディング・セキュリティ研究）向けのフラッグシップ、**Terra** は大量業務向けの daily driver（カスタマーサポート・社内ツール・文書解析）、**Luna** は軽量タスク（要約・ドラフト・定型自動化）向け。料金は段階的に設定され、**Sol $5/$30、Terra $2.50/$15、Luna $1/$6 per 1M tokens**（入力/出力）。Luna は**フロンティアモデル最安級**で、GPT-5.4 mini（$0.40/$1.60）と通常モデルの中間を埋める。",
+      "**TerminalBench 2.1 で SOTA 更新**: コーディングワークフロー指標 TerminalBench 2.1 で、**Sol Ultra（ultra thinking モード）が 91.91%** の record-high を記録、**Sol max が 88.76%** で続く。これは GPT-5.5（83.4%）、Anthropic **Claude Mythos 5（88.0%）と Fable 5（84.3%）を上回り**、コーディング領域でフロンティアの最上位に立った。Sol 系列は **GPT-5.6 Sol Ultra > Sol > Terra > Luna** の階層構造で公表されている（[OpenAI 公式](https://openai.com/index/previewing-gpt-5-6-sol/)）。",
+      "**Ultra モードの仕組み**: 高得点の決定打となった **ultra thinking モード**は、**サブエージェントを動的に活用**して複雑な計画・反復・ツール協調を高速化する設計。Anthropic の Dynamic Workflows（[Opus 4.8](?a=anthropic-claude-opus-4-8-dynamic-workflows-2026)）や Sakana Fugu（[Fugu リリース](?a=sakana-ai-fugu-multi-agent-orchestration-2026)）と並ぶ「**マルチエージェント・オーケストレーション層**」が、フロンティアモデルの次の差別化軸として鮮明になりつつある。Sakana Fugu のような外付けオーケストレーションと違い、Sol はモデル内蔵で実現する点が特徴。",
+      "**1.5M トークン・コンテキスト**: GPT-5.6 シリーズは **1.5M トークンのコンテキストウィンドウ**を備える見込み（GPT-5.5 の 1M、Codex の 400K を超える）、訓練データのカットオフは **2026年5月まで延長**。4月の「Where the Goblins Came From」事後分析で記録されたアラインメント失敗に対応する**再設計された報酬監査パイプライン**も搭載される。",
+      "**配布制限と一般公開の見通し**: 限定プレビューが**約20組織のみ**となっているのは、米国政府との事前共有を経た展開のため。METR（Model Evaluation and Threat Research）による事前デプロイ評価レポートも併せて公表されている。一般公開は「**coming weeks**」、つまり7月中の GA が見込まれる。Polymarket 予測市場では「6月末リリース」の確率が 83% まで上昇していたが、最終的に限定プレビューに留まった。",
+      "**競合構図の更新**: コーディング・エージェント領域での首位は **Sol Ultra（OpenAI）> Mythos 5（Anthropic 限定）> Sol（OpenAI）> Mythos 5（Anthropic 一般） / Fable 5** の順となり、OpenAI が3-4月の劣勢から完全に巻き返した形。Anthropic は次世代の Claude Mythos 6 / Fable 6 で対抗するか、SkillSpector（[SkillSpector 特集](?a=feature-nvidia-skillspector-agent-skill-security-2026)）や WIF（[WIF GA](?a=anthropic-workload-identity-federation-ga-service-accounts-2026)）のエンタープライズ機能で勝負を続けるかの戦略選択を迫られる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Previewing GPT-5.6 Sol: a next-generation model",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/previewing-gpt-5-6-sol/"
+      },
+      {
+        "title": "OpenAI unveils GPT-5.6 Sol, Terra and Luna models — limited preview per US Gov",
+        "site": "VentureBeat",
+        "url": "https://venturebeat.com/technology/openai-unveils-gpt-5-6-sol-terra-and-luna-models-but-only-accessible-to-limited-preview-partners-for-now-per-us-gov"
+      },
+      {
+        "title": "Summary of METR's predeployment evaluation of GPT-5.6 Sol",
+        "site": "METR",
+        "url": "https://metr.org/blog/2026-06-26-gpt-5-6-sol/"
+      }
+    ]
+  },
+  "john-jumper-google-deepmind-to-anthropic-nobel-2026": {
+    "body": [
+      "**John Jumper** が約9年勤めた **Google DeepMind** を離れ、**Anthropic** に移籍することが2026年6月26日に明らかになった。Jumper は **AlphaFold2** の主要開発者で、2024年に DeepMind CEO **Demis Hassabis** と共にノーベル化学賞を共同受賞した人物。1週間前の **Noam Shazeer の OpenAI 移籍**（[Shazeer 移籍](?a=noam-shazeer-google-to-openai-architecture-research-2026)）に続く Google AI トップ人材の**流出第2波**となる。",
+      "**Jumper の功績**: AlphaFold2 は2020年にタンパク質構造予測のブレークスルーをもたらし、生命科学・創薬研究の地形を変えた。論文は被引用数で記録を打ち立て、CASP14 で他手法を圧倒する精度を示した。Jumper はこの研究の中核を担い、ノーベル賞の共同受賞者として Hassabis・David Baker と並んで名を刻んだ。Anthropic では Claude のサイエンス領域（[Claude for Legal](?a=anthropic-claude-for-legal-plugins-cocounsel-2026) と並ぶ専門分野展開）に関わるとみられるが、具体的な役職は未公表。",
+      "**Google からの連続流出**: 6月18日に Transformer 共著者 Noam Shazeer が OpenAI へ、続けてノーベル化学賞共同受賞者の Jumper が Anthropic へという**8日間で2人のトップ研究者離脱**は、Google AI の組織モメンタムへの懸念を市場が再評価する材料となった。Alphabet 株は Shazeer 移籍時の **7% 下落**に続き、週後半に追加の下落を記録。Gemini 3.5 Pro GA 延期続報（[Gemini Pro 延期](?a=google-gemini-3-5-pro-ga-delay-deep-think-2026)）と相まって、Google AI への市場の信頼回復には時間が必要な状況。",
+      "**Anthropic への意義**: Anthropic は5月28日に **Series H $65B / $965B 評価額**確定（[Anthropic 5月補遺](?a=anthropic-may-2026-series-h-milan-korea-arr-47b-2026)）、6月1日に**機密 S-1 提出**、6月9日に **Claude Fable 5 + Mythos 5 リリース**（[Fable 5 / Mythos 5](?a=anthropic-claude-fable-5-mythos-5-ga-2026)）と立て続けに大型ニュースを発信してきた。今回の Jumper 加入で、生命科学・タンパク質設計領域での Claude 専門化が進む可能性が高い。OpenAI が **GPT-Rosalind**（[GPT-Rosalind](?a=openai-gpt-rosalind-life-sciences-update-2026)）で生命科学領域に踏み込んでいる中、Anthropic も同領域で人材厚みを強化する形だ。",
+      "**Google が直面する構造課題**: Google はもともと Transformer 論文を生んだ場所であり、AlphaFold で生命科学 AI の標準を作った組織でもある。それらの主要研究者が**わずか8日間で OpenAI と Anthropic の双方に流出**する事態は、Google が「研究の発祥地」から「研究の供給源」へと立場を変化させつつあることを示唆する。報酬・組織自由度・モデル投入スピードのどの要素が決定打になったかは公式には語られていないが、Demis Hassabis 体制下の DeepMind 統合後の文化的調整が試される局面となった。"
+    ],
+    "primarySources": [
+      {
+        "title": "Alphabet shares plunge as Nobel winner exits Google for Anthropic",
+        "site": "Crypto Briefing",
+        "url": "https://cryptobriefing.com/alphabet-shares-tumble-ai-leader-departs/"
+      },
+      {
+        "title": "Google Loses Two Top AI Researchers To OpenAI & Anthropic",
+        "site": "Search Engine Journal",
+        "url": "https://www.searchenginejournal.com/google-loses-two-top-ai-researchers-to-openai-anthropic/580201/"
+      }
+    ]
+  },
+  "openai-broadcom-jalapeno-llm-inference-chip-2026": {
+    "body": [
+      "OpenAI と **Broadcom** が2026年6月25日、LLM 最適化推論アクセラレータ **「Jalapeño」**を共同発表した。**OpenAI が設計**したカスタムアクセラレータを Broadcom が**シリコン実装**する分業体制で、**2026年末**に初期コンピュート基盤として配備予定。OpenAI の **NVIDIA 依存度低減**戦略の中核となるプロジェクトで、Microsoft Azure・Anthropic-AWS・SpaceX-xAI Colossus に対する独自インフラ路線の最初の具体物となる。",
+      "**OpenAI 設計 + Broadcom 製造の分業**: Jalapeño は **OpenAI が AI ワークロード固有のメモリ階層・アテンション処理・KV キャッシュ最適化を設計**し、Broadcom が **TSMC 等のファウンドリ向けに実装**する形。Broadcom は Google TPU（v2 以降）の半導体共同設計でも実績があり、AI 推論アクセラレータの製造パートナーとして地位を確立している。OpenAI にとっては「Apple Silicon × Apple」と類似の垂直統合モデルで、推論コストと性能を自社最適化できる利点が大きい。",
+      "**フロンティアモデル各社の自社チップ路線が出揃う**: Jalapeño の発表で、フロンティア AI ラボの自社チップ戦略が以下の構図に整理された。**OpenAI**: Jalapeño（Broadcom 製造）、**Anthropic**: AWS Trainium 共同開発（Amazon $25B 追加投資）（[Amazon-Anthropic $25B](?a=amazon-anthropic-25b-trainium-infrastructure-2026)）、**Google**: TPU v7、**Microsoft**: MAIA + Cobalt、**xAI/Cursor**: Colossus（NVIDIA GPU 220,000 基）。NVIDIA の H100/Vera Rubin 依存からの脱却と、各社が「**モデル設計とハードウェア設計の同時最適化**」を目指す方向性が鮮明になった。",
+      "**コスト圧力への対応**: OpenAI が機密 S-1 を提出（[OpenAI S-1 提出](?a=openai-confidential-s1-ipo-filing-852b-valuation-2026)）し2026年9月上場を目指す中、**推論コストの可視化と低減**は上場後の収益性に直結する課題。NVIDIA H100 経由の推論は ChatGPT・API ともに高コスト構造の主因で、自社設計チップへの段階的移行は四半期業績の重要な変数になる。GPT-5.6 Luna が $1/$6 という「フロンティアモデル最安」価格を実現できた背景にも、Jalapeño を含む推論最適化の蓄積がある可能性が高い。",
+      "**展開スケジュール**: 2026年末の初期配備は OpenAI 内部の ChatGPT/API 推論ワークロード向けで、外部顧客への提供は計画されていない。Microsoft Azure（OpenAI の主要クラウドパートナー）との連携形態は今後の発表待ち。Stargate プロジェクト（SoftBank との合弁、最大 $500B 投資）の物理インフラ層にも Jalapeño が組み込まれる可能性がある。",
+      "**競合への影響**: NVIDIA の AI 推論 GPU 市場における圧倒的シェアに対する主要対抗軸が固まり、AMD MI400 系列、Cerebras WSE-3、Groq LPU と並ぶ「**ポスト NVIDIA 推論アクセラレータ**」のオプションが拡大する。エンタープライズ顧客は今後、モデルベンダー選択時に「**どの推論シリコン上で動くか**」を考慮する必要が出てくる。SpaceX-Cursor 買収（[Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）で示された「**モデル選択 = インフラ選択**」時代を、推論層でも追認する形だ。"
+    ],
+    "primarySources": [
+      {
+        "title": "OpenAI announces Jalapeño compute platform with Broadcom",
+        "site": "OpenAI",
+        "url": "https://openai.com/news/"
+      },
+      {
+        "title": "OpenAI Release Notes - June 2026",
+        "site": "Releasebot",
+        "url": "https://releasebot.io/updates/openai"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;
