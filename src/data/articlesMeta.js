@@ -5990,5 +5990,97 @@ export const ARTICLES_META = [
       "src": "logos/openai.svg",
       "alt": "OpenAI Broadcom Jalapeño 推論チップ"
     }
+  },
+  {
+    "id": "anthropic-accuses-alibaba-claude-distillation-fraud-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "Anthropic が Alibaba を不正利用で告発 — 25,000の偽アカウントで Claude に 2,880万件のリクエスト、SWE・エージェント能力を蒸留した疑い",
+    "excerpt": "Anthropic が6月24日、**Alibaba 関係オペレーター**が**約25,000の偽アカウント**を使って Claude に **2,880万件**のリクエストを行い、ソフトウェアエンジニアリングとエージェント推論能力を**不正に蒸留**した疑いがあると公表。期間は4月22日〜6月5日、地理的アクセス制限を回避するためにプロキシネットワークと難読化を使用。6月10日に米国上院銀行委員会へ書簡を提出済み、中国企業による米国 AI ラボへの「ピギーバック」攻撃として過去最大規模。",
+    "date": "2026-06-29",
+    "newsDate": "2026-06-24",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Alibaba",
+      "Claude",
+      "蒸留",
+      "米中AI"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic Alibaba 不正告発"
+    },
+    "pinned": true
+  },
+  {
+    "id": "feature-tokenmaxxing-to-efficiency-market-shift-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】「tokenmaxxing」から効率性へ — Lindy が Claude → DeepSeek 100% 移行、Fable 5 値上げで価格感度が市場を動かし始めた",
+    "excerpt": "2026年6月、AI モデルの利用パターンが**「tokenmaxxing」（とにかく強力なモデルを大量に使う）から「効率性最優先」**へ転換している。Anthropic Claude Fable 5 が **$10/$50**（Opus 4.8 の2倍）でローンチされた一方、OpenAI GPT-5.6 Luna は **$1/$6** という最安級で投入。AI スタートアップ Lindy の CEO は同社トラフィックを **100% Claude → DeepSeek へ切替**、コストを劇的削減したと公表。トークン単価競争の本格化と、フロンティアモデル独占体制への揺らぎを整理する。",
+    "date": "2026-06-29",
+    "newsDate": "2026-06-26",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "市場分析",
+      "効率性",
+      "DeepSeek",
+      "Anthropic",
+      "OpenAI",
+      "価格戦略"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "tokenmaxxing から効率性へ 特集"
+    }
+  },
+  {
+    "id": "zhipu-zai-glm-5-2-open-source-coding-1m-context-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Z.ai が GLM-5.2 を公開 — 753B MoE / 1M トークン・コンテキスト / MIT ライセンス、SWE-bench Pro で GPT-5.5 超え",
+    "excerpt": "中国 **Z.ai**（清華大学発 Zhipu AI の国際ブランド）が6月13日、コーディング特化フラッグシップ **GLM-5.2** を発表。**753B 総パラメータ・40B アクティブ MoE**、**1Mトークン**のコンテキストウィンドウ、新しい High/Max デュアル思考エフォートシステム、長文脈最適化 IndexShare アーキテクチャを搭載。MIT ライセンスで6/20週に Hugging Face で重み公開。SWE-bench Pro で **62.1（GPT-5.5: 58.6）**、FrontierSWE で 74.4 を記録、Opus 4.8（69.2 / 75.1）に肉薄する OSS フラッグシップに躍り出た。",
+    "date": "2026-06-29",
+    "newsDate": "2026-06-13",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Z.ai",
+      "Zhipu",
+      "GLM-5.2",
+      "中国モデル",
+      "OSS",
+      "コーディング"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "Z.ai GLM-5.2 リリース"
+    }
+  },
+  {
+    "id": "nvidia-nemotron-3-5-asr-open-multilingual-stt-2026",
+    "type": "news",
+    "category": "model",
+    "title": "NVIDIA が Nemotron 3.5 ASR を公開 — 600M パラメータの多言語ストリーミング音声認識、40言語対応・既存比17倍スループット",
+    "excerpt": "NVIDIA が6月、オープン音声認識モデル **Nemotron 3.5 ASR** を公開。**600M パラメータ**のストリーミング型 STT で、**40言語**に対応、既存ベースライン比 **17倍のスループット**を達成。Voice エージェント向けに設計され、リアルタイム会話の文字起こしを低レイテンシで処理可能。AssemblyAI・Deepgram・OpenAI Whisper・ElevenLabs と並ぶ「音声 AI ベース層」の選択肢に NVIDIA が本格参入、OSS でハードウェアと一体最適化された推論性能を提供する。",
+    "date": "2026-06-29",
+    "newsDate": "2026-06-25",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "NVIDIA",
+      "Nemotron",
+      "音声認識",
+      "ASR",
+      "OSS",
+      "多言語"
+    ],
+    "coverImage": {
+      "src": "logos/nvidia.svg",
+      "alt": "NVIDIA Nemotron 3.5 ASR"
+    }
   }
 ];

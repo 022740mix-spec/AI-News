@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-06-27T15:00:00Z</updated>
+  <updated>2026-06-29T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>John Jumper（2024年ノーベル化学賞）が Google DeepMind → Anthropic 移籍 — Shazeer に続く Google AI 人材流出の第2波</title>
@@ -14,6 +14,14 @@
     <published>2026-06-26T15:00:00Z</published>
     <updated>2026-06-26T15:00:00Z</updated>
     <summary>John Jumper が約9年勤めた Google DeepMind を離れ Anthropic に移籍したと発表。Jumper は AlphaFold2 開発者として2024年に Demis Hassabis と共にノーベル化学賞を共同受賞した人物。1週間前の Noam Shazeer の OpenAI 移籍に続く Google AI トップ人材の流出第2波で、Alphabet 株は週後半に追加で下落、Gemini 3.5 Pro GA 延期続報と相まって Google AI の組織モメンタムへの市場の疑念が一段と強まる結果に。</summary>
+  </entry>
+  <entry>
+    <title>【分析】「tokenmaxxing」から効率性へ — Lindy が Claude → DeepSeek 100% 移行、Fable 5 値上げで価格感度が市場を動かし始めた</title>
+    <link rel="alternate" type="text/html" href="?a=feature-tokenmaxxing-to-efficiency-market-shift-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-tokenmaxxing-to-efficiency-market-shift-2026</id>
+    <published>2026-06-26T15:00:00Z</published>
+    <updated>2026-06-26T15:00:00Z</updated>
+    <summary>2026年6月、AI モデルの利用パターンが「tokenmaxxing」（とにかく強力なモデルを大量に使う）から「効率性最優先」へ転換している。Anthropic Claude Fable 5 が $10/$50（Opus 4.8 の2倍）でローンチされた一方、OpenAI GPT-5.6 Luna は $1/$6 という最安級で投入。AI スタートアップ Lindy の CEO は同社トラフィックを 100% Claude → DeepSeek へ切替、コストを劇的削減したと公表。トークン単価競争の本格化と、フロンティアモデル独占体制への揺らぎを整理する。</summary>
   </entry>
   <entry>
     <title>OpenAI が GPT-5.6 を限定プレビュー公開 — Sol/Terra/Luna の3バリアント、TerminalBench 2.1 で Sol Ultra 91.91% が Mythos 5・Fable 5 超え</title>
@@ -30,6 +38,22 @@
     <published>2026-06-25T15:00:00Z</published>
     <updated>2026-06-25T15:00:00Z</updated>
     <summary>OpenAI と Broadcom が6月25日、LLM 最適化推論チップ「Jalapeño」を共同発表。OpenAI が設計したアクセラレータを Broadcom がシリコン実装する分業体制で、2026年末に初期コンピュート基盤として導入予定。OpenAI の NVIDIA 依存度低減戦略の中核で、Anthropic-AWS Trainium、Google TPU、Microsoft MAIA に続く「フロンティアモデル各社の自社チップ路線」が出揃った形となる。</summary>
+  </entry>
+  <entry>
+    <title>NVIDIA が Nemotron 3.5 ASR を公開 — 600M パラメータの多言語ストリーミング音声認識、40言語対応・既存比17倍スループット</title>
+    <link rel="alternate" type="text/html" href="?a=nvidia-nemotron-3-5-asr-open-multilingual-stt-2026"/>
+    <id>tag:ai-tool-news.jp,2026:nvidia-nemotron-3-5-asr-open-multilingual-stt-2026</id>
+    <published>2026-06-25T15:00:00Z</published>
+    <updated>2026-06-25T15:00:00Z</updated>
+    <summary>NVIDIA が6月、オープン音声認識モデル Nemotron 3.5 ASR を公開。600M パラメータのストリーミング型 STT で、40言語に対応、既存ベースライン比 17倍のスループットを達成。Voice エージェント向けに設計され、リアルタイム会話の文字起こしを低レイテンシで処理可能。AssemblyAI・Deepgram・OpenAI Whisper・ElevenLabs と並ぶ「音声 AI ベース層」の選択肢に NVIDIA が本格参入、OSS でハードウェアと一体最適化された推論性能を提供する。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic が Alibaba を不正利用で告発 — 25,000の偽アカウントで Claude に 2,880万件のリクエスト、SWE・エージェント能力を蒸留した疑い</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-accuses-alibaba-claude-distillation-fraud-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-accuses-alibaba-claude-distillation-fraud-2026</id>
+    <published>2026-06-24T15:00:00Z</published>
+    <updated>2026-06-24T15:00:00Z</updated>
+    <summary>Anthropic が6月24日、Alibaba 関係オペレーターが約25,000の偽アカウントを使って Claude に 2,880万件のリクエストを行い、ソフトウェアエンジニアリングとエージェント推論能力を不正に蒸留した疑いがあると公表。期間は4月22日〜6月5日、地理的アクセス制限を回避するためにプロキシネットワークと難読化を使用。6月10日に米国上院銀行委員会へ書簡を提出済み、中国企業による米国 AI ラボへの「ピギーバック」攻撃として過去最大規模。</summary>
   </entry>
   <entry>
     <title>Google Gemini 3.5 Pro が GA 延期続報 — Pichai が「もう1ヶ月待って」、Vertex AI 限定プレビューのまま、Deep Think + 2M ctx の予定</title>
@@ -110,6 +134,14 @@
     <published>2026-06-15T15:00:00Z</published>
     <updated>2026-06-15T15:00:00Z</updated>
     <summary>Apple WWDC 2026 で Siri AI 発表（会話的応答・パーソナライズ音声・iOS 27）、OpenAI が機密 S-1 提出（$852B 評価額・9月上場目標）、Anthropic は Claude Fable 5 と Mythos 5 を一般公開（SWE-bench 95%、$10/$50）。10日は Code with Claude Tokyo 開催で日本市場の本格立ち上げに突入。</summary>
+  </entry>
+  <entry>
+    <title>Z.ai が GLM-5.2 を公開 — 753B MoE / 1M トークン・コンテキスト / MIT ライセンス、SWE-bench Pro で GPT-5.5 超え</title>
+    <link rel="alternate" type="text/html" href="?a=zhipu-zai-glm-5-2-open-source-coding-1m-context-2026"/>
+    <id>tag:ai-tool-news.jp,2026:zhipu-zai-glm-5-2-open-source-coding-1m-context-2026</id>
+    <published>2026-06-13T15:00:00Z</published>
+    <updated>2026-06-13T15:00:00Z</updated>
+    <summary>中国 Z.ai（清華大学発 Zhipu AI の国際ブランド）が6月13日、コーディング特化フラッグシップ GLM-5.2 を発表。753B 総パラメータ・40B アクティブ MoE、1Mトークンのコンテキストウィンドウ、新しい High/Max デュアル思考エフォートシステム、長文脈最適化 IndexShare アーキテクチャを搭載。MIT ライセンスで6/20週に Hugging Face で重み公開。SWE-bench Pro で 62.1（GPT-5.5: 58.6）、FrontierSWE で 74.4 を記録、Opus 4.8（69.2 / 75.1）に肉薄する OSS フラッグシップに躍り出た。</summary>
   </entry>
   <entry>
     <title>Anthropic が「Code with Claude Tokyo」を開催 — 6月10日に Angela Jiang らがキーノート、英日同時通訳・ライブ配信つき、11日は独立開発者向け Extended デー</title>
