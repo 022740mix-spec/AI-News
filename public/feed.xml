@@ -16,6 +16,22 @@
     <summary>Anthropic が6月30日、Claude Sonnet 5 を公開。「これまでで最もエージェント的な Sonnet」と位置付け、SWE-bench Pro で 63.2%（Sonnet 4.6: 58.1% / Opus 4.8: 69.2%）を記録、GDPval-AA v2 では Opus 4.8 を上回る。料金は 8月31日まで $2/$10、以降 $3/$15 per 1M tokens（Sonnet 4.6 と同じ）。1Mコンテキスト、Adaptive Thinking 常時オン。claude.ai の Free/Pro デフォルト、Claude Code・Cursor・VS Code・GitHub Copilot でも即日利用可能。</summary>
   </entry>
   <entry>
+    <title>Cursor が iOS アプリを公開 — Always-on クラウドエージェント + PC 上のエージェントリモート操作、音声入力対応、Composer 2.5 は7/5まで -75%</title>
+    <link rel="alternate" type="text/html" href="?a=cursor-ios-app-launch-cloud-agents-remote-2026"/>
+    <id>tag:ai-tool-news.jp,2026:cursor-ios-app-launch-cloud-agents-remote-2026</id>
+    <published>2026-06-29T15:00:00Z</published>
+    <updated>2026-06-29T15:00:00Z</updated>
+    <summary>Anysphere が6月29日、Cursor 公式 iOS アプリを App Store で公開。2軸の機能構成で、Always-on クラウドエージェント（バックグラウンド実行、iPhone から監視）と、PC 上のエージェントのリモート操作を提供。音声入力による指示、diff レビュー・PR マージ・スクリーンショット注釈も iPhone 上で完結。有料プラン向け Public Beta、Composer 2.5 が7月5日まで -75% の導入プロモ。SpaceX による Anysphere 買収（6/16）直後のモバイル展開で、「モバイルからエージェントを走らせる」時代の号砲。</summary>
+  </entry>
+  <entry>
+    <title>OpenClaw が iOS / Android ネイティブアプリを公開 — カメラ・画面・位置・写真・連絡先など iPhone のあらゆるデータに接続、Apple のエージェント AI ガードを OSS で突破</title>
+    <link rel="alternate" type="text/html" href="?a=openclaw-ios-android-native-app-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openclaw-ios-android-native-app-2026</id>
+    <published>2026-06-29T15:00:00Z</published>
+    <updated>2026-06-29T15:00:00Z</updated>
+    <summary>OpenClaw Foundation が6月29日、パーソナル AI アシスタント OpenClaw の iOS と Android 向けネイティブアプリを公開した。iOS 18+ が要件、無料アプリ。ユーザーは iPhone のカメラ・画面・位置・写真・連絡先・カレンダー・リマインダーへエージェントにアクセス権を付与できる。Apple がこれまで拒み続けたエージェント型 AI アプリの初例で、自己ホスト設計（データが自社サーバーを経由しない）が審査通過の決め手となった。開発者の Peter Steinberger は今年 OpenAI に参加、コードは Foundation に移管され OpenAI が資金提供・所有権なしという形。</summary>
+  </entry>
+  <entry>
     <title>John Jumper（2024年ノーベル化学賞）が Google DeepMind → Anthropic 移籍 — Shazeer に続く Google AI 人材流出の第2波</title>
     <link rel="alternate" type="text/html" href="?a=john-jumper-google-deepmind-to-anthropic-nobel-2026"/>
     <id>tag:ai-tool-news.jp,2026:john-jumper-google-deepmind-to-anthropic-nobel-2026</id>

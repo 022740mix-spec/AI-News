@@ -11079,6 +11079,60 @@ const ARTICLES_BODY = {
         "url": "https://www.marktechpost.com/2026/06/30/anthropic-claude-sonnet-5-vs-sonnet-4-6-vs-opus-4-8-agentic-coding-benchmarks-api-pricing-and-cost-performance-tradeoffs-compared/"
       }
     ]
+  },
+  "cursor-ios-app-launch-cloud-agents-remote-2026": {
+    "body": [
+      "Anysphere が2026年6月29日、待望の **Cursor 公式 iOS アプリ**を App Store で公開した。SpaceX による Anysphere $60B 買収（[SpaceX-Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）の発表からわずか13日後の投入で、モバイル展開のスピードは買収後のガバナンスに影響がないことを示す形となった。有料プラン向けの Public Beta として提供される。",
+      "**2 軸の機能構成**: アプリは2つの主要モードで設計されている。**(1) Always-on クラウドエージェント**: バックグラウンドで動作するエージェントを起動し、iPhone から進捗を監視できる。移動中や打ち合わせ中も指示だけ出して結果を後で確認するワークフロー。**(2) リモートコントロール**: PC 上で稼働中のエージェントを iPhone から操作する。デスク周りを離れても長時間タスクを制御できる。",
+      "**音声入力とレビュー機能**: **音声ディクテーション**を搭載し、話しかけるだけでバックグラウンドのコード作業をトリガー可能。エージェントが走り続けている間に、iPhone 上で **diff レビュー**、**PR マージ**、**スクリーンショット注釈**まで完結できる設計。「モバイル1台で開発者ワークフローを完結」というビジョンが具体化した。",
+      "**料金体系**: iOS アプリ自体は有料 Cursor プランに含まれるが、**クラウドエージェント実行には有料プランが必須**で、エージェント実行は選択したモデルの API 料金で従量課金される。導入プロモーションとして、Cursor 独自モデル **Composer 2.5 が7月5日まで -75%** で提供される。SpaceX-Cursor 統合下で Composer 系の Grok V9 系（[Grok V9-Medium](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)）への段階移行も予想される中、Composer 2.5 の販促は既存モデルの利用者拡大を狙ったもの。",
+      "**Cursor のスケール**: 買収時点の数字として、Cursor は **100万人超の有料ユーザー**、**Fortune 1,000 の 70%** をクライアントに持つ。今回の iOS アプリ投入は、この巨大な既存顧客ベースに対する新しい接点の追加で、モバイルからの利用が加われば MAU の伸びが一段加速する可能性が高い。",
+      "**モバイル・エージェントの新時代**: 同日6月29日には **OpenClaw の iOS/Android ネイティブアプリ**も公開されており（[OpenClaw モバイル](?a=openclaw-ios-android-native-app-2026)）、「エージェント AI をモバイルで走らせる」時代が偶然にも同時にスタートした。両者の違いは、Cursor はクラウドエージェントの制御端末としてのモバイル、OpenClaw はモバイルデバイス自体をエージェントの実行環境（ローカルデータへのアクセス点）とする設計の違い。開発者向けとパーソナル AI 向けで、モバイル AI の2つの方向性が明確になった。"
+    ],
+    "primarySources": [
+      {
+        "title": "Cursor - App Store",
+        "site": "Apple",
+        "url": "https://apps.apple.com/us/app/cursor/id6767085653"
+      },
+      {
+        "title": "Cursor launches iOS app so developers can spin up coding agents from their phone",
+        "site": "The Next Web",
+        "url": "https://thenextweb.com/news/cursor-mobile-app-coding-agents-phone"
+      },
+      {
+        "title": "Cursor releases its iOS app for vibe coding on the go",
+        "site": "TestingCatalog",
+        "url": "https://www.testingcatalog.com/cursor-releases-its-ios-app-for-vibe-coding-on-the-go/"
+      }
+    ]
+  },
+  "openclaw-ios-android-native-app-2026": {
+    "body": [
+      "**OpenClaw Foundation** が2026年6月29日、パーソナル AI アシスタント **OpenClaw** の **iOS と Android 向けネイティブアプリ**を公開した。**iOS 18 以降**が要件で、無料アプリ。OpenClaw は元々自分の PC 上で動くパーソナル AI アシスタントとして知られ、WhatsApp・Telegram・Discord・Slack・iMessage など15以上のメッセージアプリを統合するゲートウェイ機能で知られてきた（[GitReverse 記事内で言及](?a=gitreverse-repo-to-prompt-openclaw-2026)）。今回のモバイル展開で、スマートフォン単体でも同エコシステムが動く。",
+      "**モバイル特有のデータ接続**: ユーザーはアプリ内でエージェントに対し、**カメラ・画面・位置・写真・連絡先・カレンダー・リマインダー**などのアクセス権を細かく付与できる。iOS の権限モデル（`NSCameraUsageDescription` 等）に完全準拠する設計で、たとえば「先週撮った写真を整理して、家族用アルバムを作って」「今日のカレンダーから移動時間の余裕を判定して、次のミーティングをずらすか判断して」といった、モバイルコンテキストならではのタスクを実行できる。",
+      "**Apple のエージェント AI ガードを OSS で突破**: **Apple は長らくエージェント型 AI アプリを App Store 上で拒否**してきた。ユーザーのデータへ広範囲にアクセスするアプリのセキュリティ懸念と、企業サーバー経由で個人情報が処理されるプライバシー懸念が主因とされる。OpenClaw の**自己ホスト設計**（データが企業サーバーを経由せず、ユーザー自身のゲートウェイ内に留まる）が審査通過の決め手となった。App Store 上での「エージェント AI」の先例を作った点で歴史的な意義がある。",
+      "**Peter Steinberger と OpenAI の関係**: OpenClaw は **Peter Steinberger**（PSPDFKit を €1億超で売却した実績のあるドイツ人開発者）の個人プロジェクトとして始まった。Steinberger は今年 **OpenAI に参加**、コード自体は **OpenClaw Foundation** に移管され、独立性と OSS 性が確保された。**OpenAI は資金提供のみで、所有権は持たない**という取り決め。Anthropic vs Alibaba 蒸留告発（[Anthropic vs Alibaba](?a=anthropic-accuses-alibaba-claude-distillation-fraud-2026)）と対照的な、「OpenAI 起点だが OSS」の運営モデルが確立された。",
+      "**モデル・アグノスティック設計**: OpenClaw は当初から Claude・GPT・Gemini・ローカル LLM のいずれとも接続可能な設計で、モバイルアプリでもこの原則が維持される。SkillSpector（[SkillSpector 特集](?a=feature-nvidia-skillspector-agent-skill-security-2026)）と親和性が高いオープン・エコシステムの一部として位置付けられる。「モバイル OSS 」層と「セキュリティ層」を組み合わせた、真の分散型パーソナル AI アシスタント基盤が形になってきた。",
+      "**初期レビューの温度感**: TechRadar によれば初期ユーザーレビューは厳しい面もあり、ローカル動作の設定の複雑さ、モバイルデバイス上のリソース制約による応答遅延、ゲートウェイ接続の初期設定ステップの多さなどが指摘されている。**OSS 性と自己ホストの利点**を活かすには、初回セットアップの時間投資が必要というトレードオフが浮き彫りになっている。同日リリースの **Cursor iOS アプリ**（[Cursor iOS](?a=cursor-ios-app-launch-cloud-agents-remote-2026)）とは対照的に、「開発者向け（Cursor）」と「パワーユーザー向け OSS（OpenClaw）」の住み分けが明確になった。"
+    ],
+    "primarySources": [
+      {
+        "title": "OpenClaw is finally available on Android and iOS",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/06/30/openclaw-is-finally-available-on-android-and-ios/"
+      },
+      {
+        "title": "Open Source AI Agent OpenClaw Gets Native iOS App",
+        "site": "MacRumors",
+        "url": "https://www.macrumors.com/2026/06/29/openclaw-ios-app/"
+      },
+      {
+        "title": "OpenClaw reveals iOS and Android mobile apps at last — but initial reviews make for tough reading",
+        "site": "TechRadar",
+        "url": "https://www.techradar.com/pro/openclaw-reveals-ios-and-android-mobile-apps-at-last-but-initial-reviews-make-for-tough-reading"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;

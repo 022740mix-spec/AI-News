@@ -6105,5 +6105,51 @@ export const ARTICLES_META = [
       "alt": "Claude Sonnet 5 リリース"
     },
     "pinned": true
+  },
+  {
+    "id": "cursor-ios-app-launch-cloud-agents-remote-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Cursor が iOS アプリを公開 — Always-on クラウドエージェント + PC 上のエージェントリモート操作、音声入力対応、Composer 2.5 は7/5まで -75%",
+    "excerpt": "Anysphere が6月29日、**Cursor 公式 iOS アプリ**を App Store で公開。2軸の機能構成で、**Always-on クラウドエージェント**（バックグラウンド実行、iPhone から監視）と、**PC 上のエージェントのリモート操作**を提供。**音声入力**による指示、diff レビュー・PR マージ・スクリーンショット注釈も iPhone 上で完結。有料プラン向け Public Beta、**Composer 2.5 が7月5日まで -75%** の導入プロモ。SpaceX による Anysphere 買収（6/16）直後のモバイル展開で、「モバイルからエージェントを走らせる」時代の号砲。",
+    "date": "2026-06-30",
+    "newsDate": "2026-06-29",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Cursor",
+      "Anysphere",
+      "iOS",
+      "モバイル",
+      "エージェント"
+    ],
+    "coverImage": {
+      "src": "logos/cursor.svg",
+      "alt": "Cursor iOS アプリ公開"
+    },
+    "pinned": true
+  },
+  {
+    "id": "openclaw-ios-android-native-app-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenClaw が iOS / Android ネイティブアプリを公開 — カメラ・画面・位置・写真・連絡先など iPhone のあらゆるデータに接続、Apple のエージェント AI ガードを OSS で突破",
+    "excerpt": "**OpenClaw Foundation** が6月29日、パーソナル AI アシスタント **OpenClaw** の **iOS と Android 向けネイティブアプリ**を公開した。iOS 18+ が要件、無料アプリ。ユーザーは iPhone の**カメラ・画面・位置・写真・連絡先・カレンダー・リマインダー**へエージェントにアクセス権を付与できる。Apple がこれまで拒み続けたエージェント型 AI アプリの初例で、**自己ホスト設計**（データが自社サーバーを経由しない）が審査通過の決め手となった。開発者の Peter Steinberger は今年 OpenAI に参加、コードは Foundation に移管され OpenAI が資金提供・所有権なしという形。",
+    "date": "2026-06-30",
+    "newsDate": "2026-06-29",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenClaw",
+      "iOS",
+      "Android",
+      "OSS",
+      "エージェント",
+      "パーソナルAI"
+    ],
+    "coverImage": {
+      "src": "articles/cover-cli-tools.svg",
+      "alt": "OpenClaw iOS / Android アプリ公開"
+    }
   }
 ];
