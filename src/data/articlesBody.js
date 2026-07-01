@@ -11138,11 +11138,45 @@ const ARTICLES_BODY = {
     "body": [
       "Anthropic が2026年6月30日、Claude Sonnet 5（[Sonnet 5 リリース](?a=anthropic-claude-sonnet-5-agentic-cheap-2026)）と同時に **Claude Science** をベータ公開した。「Claude Code がソフトウェアエンジニアリングを支援するのと同じように、科学研究を支援する」と Anthropic は説明する。**MIT Technology Review** は「Anthropic の新しいフラッグシップ製品」と位置付けており、Claude Fable 5・Opus 4.8 に続く**製品層の主力**として長期投資される見込み。",
       "**新モデルではなくワークフロー製品**: TechCrunch が強調するように、Claude Science の勝負どころは**「新モデルではなくワークフロー」**にある。既存の Claude モデル（Opus 4.8・Sonnet 5・Fable 5 等）をそのまま使い、**特別なアクセスやゲーティングはなし**。差別化は「ローカル/リモートの計算資源接続」「科学 DB 統合」「ラボ運用に合った UI」で行う。OpenAI の GPT-Rosalind（[GPT-Rosalind](?a=openai-gpt-rosalind-life-sciences-update-2026)）が**専用モデル**戦略なのに対し、Anthropic は**ワークフロー**戦略で対抗する形となる。",
-      "**60+ 科学データベース統合**: プリコンフィグ済で **60以上の科学データベース**にアクセスできる。**ゲノミクス**（GenBank・Ensembl 等）、**プロテオミクス**（UniProt・PDB 等）、**構造生物学**（AlphaFold DB 含む）、**単細胞研究**（Human Cell Atlas 等）、**化学**（PubChem・ChEMBL 等）の分野別ツールキットが用意されている。研究者は自然言語で「この遺伝子の相互作用ネットワークを取ってきて、既存論文と比較して」といった指示だけで、複数 DB を横断した情報統合を任せられる。",
+      "**60+ 科学データベース統合**: プリコンフィグ済で **60以上の科学データベース**にアクセスできる。分野別ツールキット（ゲノミクス・プロテオミクス・構造生物学・単細胞・化学）が用意され、研究者は自然言語で「この遺伝子の相互作用ネットワークを取ってきて、既存論文と比較して」といった指示だけで、複数 DB を横断した情報統合を任せられる。公開情報から名前が確認できた主要 DB は下表のとおり（Anthropic 公式の完全な60+一覧は Getting Started チュートリアルで開示されている）。",
+      "**さらに Tool Universe 拡張で 1,000+ 科学ツール**: Claude Science の 60+ DB とは別に、**Tool Universe コネクタ**（Harvard MIMS Lab の mims-harvard/ToolUniverse プロジェクト）を有効化すると、**機械学習モデル・データセット・API・科学パッケージを合わせて 1,000 以上**をエージェントが呼び出せるようになる。ドキュメントによれば **68 のプリビルトエージェントスキル**が創薬・精密腫瘍学・希少疾患診断の3領域をカバーする。文献検索は **PubMed・Semantic Scholar・ArXiv・BioRxiv・Europe PMC** を横断する。",
       "**SSH と SLURM への直結**: 特筆すべきは**ラボワークステーションや HPC ログインノードへの SSH 接続**、**SLURM クラスタへの sbatch 経由ジョブ投入**、**出力のセッションへの取り込み**、**大容量ファイルパスの記録**まで対応する点。**Slurm** は世界のスパコン・大学 HPC で標準的に使われるジョブスケジューラで、Claude Science が「ラボの実運用インフラに直接繋がる AI」を目指していることを示す。従来型の「チャットで論文検索」ではなく、**実験・シミュレーションの実行から結果解析まで**を一気通貫でカバーする野心的な設計。",
       "**Reviewer エージェントで監査性を確保**: 科学研究の再現性・監査性を担保するため、**Reviewer エージェント**が組み込まれている。実行されたコード・呼び出された DB・生成された仮説の履歴が追跡可能で、後から他の研究者が結果を検証できる。プレプリント段階から査読までのフローを想定した設計で、Anthropic vs Alibaba 蒸留告発（[蒸留告発](?a=anthropic-accuses-alibaba-claude-distillation-fraud-2026)）で問題になった「AI 出力の出所」の透明性にも通じる。",
       "**料金と提供形態**: **macOS と Linux のベータ**で、Windows は未対応。**Pro / Max / Team / Enterprise** プランで利用可能で、**API 別料金なし**（既存の Claude プラン枠から消費される。**5時間・週次の Claude Code/Cowork と共通の上限**）。**アカデミック機関・非営利研究組織の Team プラン割引席**があり、機関の PI（Principal Investigator）を通じて申請する形。**John Jumper 加入**（[Jumper 移籍](?a=john-jumper-google-deepmind-to-anthropic-nobel-2026)）と組み合わせれば、Anthropic が生命科学領域を戦略的に攻める布陣が完成する。",
-      "**「AI for Science」助成プログラム**: 同時に **最大50プロジェクト・各最大 $30,000 の Claude クレジット・最大 $2,000 の Modal 計算クレジット**を提供する助成プログラムを開始。応募は **7月15日まで**、採択通知は **7月31日**、プロジェクト実施期間は **9月1日〜12月1日**。Anthropic 自身も **希少疾患・軽視された疾患**の創薬研究に Claude Science を活用すると発表した。CEO Dario Amodei が発信する「Machines of Loving Grace」（AI が人類の健康問題を解決する）ビジョンの、最初の具体的な実装フェーズとなる。"
+      "**「AI for Science」助成プログラム**: 同時に **最大50プロジェクト・各最大 $30,000 の Claude クレジット・最大 $2,000 の Modal 計算クレジット**を提供する助成プログラムを開始。応募は **7月15日まで**、採択通知は **7月31日**、プロジェクト実施期間は **9月1日〜12月1日**。Anthropic 自身も **希少疾患・軽視された疾患**の創薬研究に Claude Science を活用すると発表した。CEO Dario Amodei が発信する「Machines of Loving Grace」（AI が人類の健康問題を解決する）ビジョンの、最初の具体的な実装フェーズとなる。",
+      "**※ 掲載データベース一覧について**: 下表は Anthropic 公式発表・報道・GitHub 等の公開情報から名前が確認できたものを網羅した。Anthropic が「60+」と公表している完全なリストは、公式チュートリアル `claude.com/resources/tutorials/getting-started-with-claude-science` 内で開示されている（本稿執筆時点で当該ページは公開だが本稿の自動取得はエラー、直接アクセスで確認可能）。Tool Universe 経由でさらに 1,000+ の追加ツールへ拡張できる点も別に留意。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "Claude Science プリコンフィグ済み 主要データベース（公開情報から名前が確認できたもの）",
+        "headers": ["分野", "データベース", "概要"],
+        "rows": [
+          ["ゲノミクス", "GenBank", "NCBI が運営する核酸塩基配列の公的アーカイブ。ほぼ全ての公開遺伝子配列を格納"],
+          ["ゲノミクス", "Ensembl", "EBI・Sanger が運営する脊椎動物中心のゲノム注釈データベース。遺伝子・転写産物・変異を統合"],
+          ["ゲノミクス", "GEO（Gene Expression Omnibus）", "NCBI の遺伝子発現データリポジトリ。マイクロアレイ・RNA-seq を公開"],
+          ["ゲノミクス", "BioMart", "Ensembl・EBI などの複数バイオ DB を横断クエリするデータマイニング基盤"],
+          ["臨床・変異", "ClinVar", "NCBI のヒト変異と臨床的意義の解釈を集約したデータベース"],
+          ["プロテオミクス", "UniProt", "EBI・SIB・PIR 共同のタンパク質配列・機能・アノテーション統合 DB"],
+          ["構造生物学", "RCSB PDB（Protein Data Bank）", "実験決定されたタンパク質・核酸の3次元構造アーカイブ"],
+          ["構造生物学", "AlphaFold DB", "DeepMind と EBI による AlphaFold2 予測タンパク質構造（2億超構造）"],
+          ["経路・システム", "Reactome", "手作業でキュレートされたヒト生物学経路データベース"],
+          ["単細胞", "Human Cell Atlas", "国際共同プロジェクトによるヒト全身の単細胞レファレンスアトラス"],
+          ["単細胞", "CellGuide", "単細胞データの探索・視覚化ツール（コネクタ）"],
+          ["単細胞・製品連携", "10x Genomics", "単細胞解析プラットフォームの公式コネクタ"],
+          ["化学・創薬", "PubChem", "NCBI の化合物・実質・生物活性データベース。数億の化学構造を収載"],
+          ["化学・創薬", "ChEMBL", "EBI が運営する薬理活性化合物のマニュアルキュレーション DB。創薬初期に必須"],
+          ["ラボ運用", "Benchling", "ライフサイエンスの電子ラボノート・実験データ管理 SaaS（コネクタ）"],
+          ["ラボ運用", "Synapse.org", "Sage Bionetworks が運営する共同研究データ共有プラットフォーム"],
+          ["文献検索", "PubMed", "NCBI が運営する生物医学文献データベース。3,500万論文超"],
+          ["文献検索", "Europe PMC", "EBI 主導の生物医学文献リポジトリ。全文検索対応"],
+          ["文献検索", "Semantic Scholar", "AI2 の研究論文検索エンジン。引用ネットワーク解析"],
+          ["文献検索", "ArXiv", "物理・数学・CS 等のプレプリントサーバー"],
+          ["文献検索", "BioRxiv", "Cold Spring Harbor Lab の生物学プレプリントサーバー"],
+          ["制作補助", "BioRender", "科学イラスト作成 SaaS（コネクタ）"],
+          ["制作補助", "Wiley Scholar Gateway", "Wiley の学術文献ゲートウェイ（コネクタ）"]
+        ]
+      }
     ],
     "primarySources": [
       {
