@@ -6082,5 +6082,28 @@ export const ARTICLES_META = [
       "src": "logos/nvidia.svg",
       "alt": "NVIDIA Nemotron 3.5 ASR"
     }
+  },
+  {
+    "id": "anthropic-claude-sonnet-5-agentic-cheap-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Anthropic が Claude Sonnet 5 を公開 — SWE-bench Pro 63.2% で Opus 4.8 に迫る、8月末まで $2/$10 の攻めた導入価格でエージェント本格投入",
+    "excerpt": "Anthropic が6月30日、**Claude Sonnet 5** を公開。「これまでで最もエージェント的な Sonnet」と位置付け、**SWE-bench Pro で 63.2%**（Sonnet 4.6: 58.1% / Opus 4.8: 69.2%）を記録、**GDPval-AA v2 では Opus 4.8 を上回る**。料金は **8月31日まで $2/$10**、以降 $3/$15 per 1M tokens（Sonnet 4.6 と同じ）。1Mコンテキスト、Adaptive Thinking 常時オン。claude.ai の Free/Pro デフォルト、Claude Code・Cursor・VS Code・GitHub Copilot でも即日利用可能。",
+    "date": "2026-06-30",
+    "newsDate": "2026-06-30",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude Sonnet",
+      "Sonnet 5",
+      "モデル",
+      "エージェント"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Claude Sonnet 5 リリース"
+    },
+    "pinned": true
   }
 ];

@@ -159,7 +159,7 @@ export const RATING_EXPLAINER = {
 
 export const MODEL_COMPARISON = [
   // スコアは各社の公式発表値のみ。null = 公式データなし（チャートに非表示）
-  // 最終更新: 2026-06-27（GPT-5.6 Sol/Terra/Luna 限定プレビュー反映、TerminalBench 2.1 順位更新）
+  // 最終更新: 2026-06-30（Claude Sonnet 5 GA 反映、Sonnet 4.6 を前世代へ格下げ）
 
   // === Anthropic ===
   { name: "Claude Mythos 5", rating: 5.0, summary: "Anthropic 最強モデル（6/9 限定公開）。Project Glasswing 経由のみアクセス可能、サイバーセキュリティ用途中心。$10/$50 per 1M tokens", swe: null, aime: null, arc: null, hle: null, mmmu: null },
@@ -167,7 +167,8 @@ export const MODEL_COMPARISON = [
   { name: "Claude Opus 4.8", rating: 4.5, summary: "Anthropic 前 GA フラッグシップ（5/28 GA、Fable 5 リリース後）。1Mコンテキスト、Dynamic Workflows で最大1,000並列。USAMO 2026 で 96.7%、GraphWalks F1（1M ctx）68.1%。$5/$25、Fast Mode は前世代比3倍安い $10/$50", swe: 88.6, aime: 96, arc: null, hle: null, mmmu: null },
   { name: "Claude Opus 4.7", rating: 4.0, summary: "Anthropic 前フラッグシップ（4/16 GA）。1Mコンテキスト、task budgets と xhigh effort level、画像最大 2576px。$5/$25 per 1M tokens", swe: 87.6, aime: null, arc: null, hle: null, mmmu: null },
   { name: "Claude Opus 4.6", rating: 3.5, summary: "Anthropic 旧世代（2026年Q1）。1Mコンテキスト。後継 Fable 5 / Opus 4.7/4.8 に移行推奨。$15/$75 per 1M tokens", swe: 81, aime: null, arc: 69, hle: null, mmmu: null },
-  { name: "Claude Sonnet 4.6", rating: 4.0, summary: "Anthropic 中核。1Mコンテキスト、速度と品質のバランス型。日常のコーディングに最適。$3/$15", swe: 80, aime: null, arc: 58, hle: null, mmmu: 75 },
+  { name: "Claude Sonnet 5", rating: 4.5, summary: "Anthropic 新ミッドレンジ・フラッグシップ（6/30 GA）。1Mコンテキスト、Adaptive Thinking 常時オン。SWE-bench Pro 63.2%（Sonnet 4.6 の 58.1% を +5.1pt、Opus 4.8 の 69.2% に肉薄）、GDPval-AA v2 で Opus 4.8 超え。導入価格 $2/$10（〜8/31）、以降 $3/$15。claude.ai Free/Pro のデフォルト", swe: 63.2, aime: null, arc: null, hle: 57.4, mmmu: null },
+  { name: "Claude Sonnet 4.6", rating: 3.5, summary: "Anthropic 前世代 Sonnet（2月）。1Mコンテキスト。後継 Sonnet 5 に移行推奨。$3/$15", swe: 58.1, aime: null, arc: 58, hle: null, mmmu: 75 },
   { name: "Claude Haiku 4.5", rating: 3.5, summary: "Anthropic 軽量。200Kコンテキスト、最速・低コスト。大量処理やチャット向け。$0.80/$4", swe: null, aime: null, arc: null, hle: null, mmmu: null },
 
   // === OpenAI ===
