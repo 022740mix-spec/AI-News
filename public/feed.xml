@@ -16,6 +16,14 @@
     <summary>Anthropic が6月30日、Claude Sonnet 5 を公開。「これまでで最もエージェント的な Sonnet」と位置付け、SWE-bench Pro で 63.2%（Sonnet 4.6: 58.1% / Opus 4.8: 69.2%）を記録、GDPval-AA v2 では Opus 4.8 を上回る。料金は 8月31日まで $2/$10、以降 $3/$15 per 1M tokens（Sonnet 4.6 と同じ）。1Mコンテキスト、Adaptive Thinking 常時オン。claude.ai の Free/Pro デフォルト、Claude Code・Cursor・VS Code・GitHub Copilot でも即日利用可能。</summary>
   </entry>
   <entry>
+    <title>Anthropic が Claude Science を公開 — 60+ 科学 DB 連携・SSH/SLURM 対応の研究ワークベンチ、新モデルではなくワークフローで科学者を狙う</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-science-workbench-research-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-science-workbench-research-2026</id>
+    <published>2026-06-30T15:00:00Z</published>
+    <updated>2026-06-30T15:00:00Z</updated>
+    <summary>Anthropic が6月30日、Claude Sonnet 5 と同時にClaude Science をベータ公開。新モデルではなく研究ワークフロー製品として位置付けられ、Claude Code の科学研究版と説明される。60+ 科学データベース（ゲノミクス・プロテオミクス・構造生物学・単細胞・化学）を統合、SSH でラボワークステーションや HPC ログインノードに接続、SLURM クラスタへ sbatch 経由でジョブ投入、Reviewer エージェントで監査性を確保。macOS / Linux ベータ、Pro/Max/Team/Enterprise で利用可能、アカデミック・非営利ラボ向け割引席あり。最大50プロジェクト・各 $30,000 クレジットの助成プログラムも同時開始（応募〜7/15）。</summary>
+  </entry>
+  <entry>
     <title>Cursor が iOS アプリを公開 — Always-on クラウドエージェント + PC 上のエージェントリモート操作、音声入力対応、Composer 2.5 は7/5まで -75%</title>
     <link rel="alternate" type="text/html" href="?a=cursor-ios-app-launch-cloud-agents-remote-2026"/>
     <id>tag:ai-tool-news.jp,2026:cursor-ios-app-launch-cloud-agents-remote-2026</id>

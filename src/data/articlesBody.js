@@ -11133,6 +11133,39 @@ const ARTICLES_BODY = {
         "url": "https://www.techradar.com/pro/openclaw-reveals-ios-and-android-mobile-apps-at-last-but-initial-reviews-make-for-tough-reading"
       }
     ]
+  },
+  "anthropic-claude-science-workbench-research-2026": {
+    "body": [
+      "Anthropic が2026年6月30日、Claude Sonnet 5（[Sonnet 5 リリース](?a=anthropic-claude-sonnet-5-agentic-cheap-2026)）と同時に **Claude Science** をベータ公開した。「Claude Code がソフトウェアエンジニアリングを支援するのと同じように、科学研究を支援する」と Anthropic は説明する。**MIT Technology Review** は「Anthropic の新しいフラッグシップ製品」と位置付けており、Claude Fable 5・Opus 4.8 に続く**製品層の主力**として長期投資される見込み。",
+      "**新モデルではなくワークフロー製品**: TechCrunch が強調するように、Claude Science の勝負どころは**「新モデルではなくワークフロー」**にある。既存の Claude モデル（Opus 4.8・Sonnet 5・Fable 5 等）をそのまま使い、**特別なアクセスやゲーティングはなし**。差別化は「ローカル/リモートの計算資源接続」「科学 DB 統合」「ラボ運用に合った UI」で行う。OpenAI の GPT-Rosalind（[GPT-Rosalind](?a=openai-gpt-rosalind-life-sciences-update-2026)）が**専用モデル**戦略なのに対し、Anthropic は**ワークフロー**戦略で対抗する形となる。",
+      "**60+ 科学データベース統合**: プリコンフィグ済で **60以上の科学データベース**にアクセスできる。**ゲノミクス**（GenBank・Ensembl 等）、**プロテオミクス**（UniProt・PDB 等）、**構造生物学**（AlphaFold DB 含む）、**単細胞研究**（Human Cell Atlas 等）、**化学**（PubChem・ChEMBL 等）の分野別ツールキットが用意されている。研究者は自然言語で「この遺伝子の相互作用ネットワークを取ってきて、既存論文と比較して」といった指示だけで、複数 DB を横断した情報統合を任せられる。",
+      "**SSH と SLURM への直結**: 特筆すべきは**ラボワークステーションや HPC ログインノードへの SSH 接続**、**SLURM クラスタへの sbatch 経由ジョブ投入**、**出力のセッションへの取り込み**、**大容量ファイルパスの記録**まで対応する点。**Slurm** は世界のスパコン・大学 HPC で標準的に使われるジョブスケジューラで、Claude Science が「ラボの実運用インフラに直接繋がる AI」を目指していることを示す。従来型の「チャットで論文検索」ではなく、**実験・シミュレーションの実行から結果解析まで**を一気通貫でカバーする野心的な設計。",
+      "**Reviewer エージェントで監査性を確保**: 科学研究の再現性・監査性を担保するため、**Reviewer エージェント**が組み込まれている。実行されたコード・呼び出された DB・生成された仮説の履歴が追跡可能で、後から他の研究者が結果を検証できる。プレプリント段階から査読までのフローを想定した設計で、Anthropic vs Alibaba 蒸留告発（[蒸留告発](?a=anthropic-accuses-alibaba-claude-distillation-fraud-2026)）で問題になった「AI 出力の出所」の透明性にも通じる。",
+      "**料金と提供形態**: **macOS と Linux のベータ**で、Windows は未対応。**Pro / Max / Team / Enterprise** プランで利用可能で、**API 別料金なし**（既存の Claude プラン枠から消費される。**5時間・週次の Claude Code/Cowork と共通の上限**）。**アカデミック機関・非営利研究組織の Team プラン割引席**があり、機関の PI（Principal Investigator）を通じて申請する形。**John Jumper 加入**（[Jumper 移籍](?a=john-jumper-google-deepmind-to-anthropic-nobel-2026)）と組み合わせれば、Anthropic が生命科学領域を戦略的に攻める布陣が完成する。",
+      "**「AI for Science」助成プログラム**: 同時に **最大50プロジェクト・各最大 $30,000 の Claude クレジット・最大 $2,000 の Modal 計算クレジット**を提供する助成プログラムを開始。応募は **7月15日まで**、採択通知は **7月31日**、プロジェクト実施期間は **9月1日〜12月1日**。Anthropic 自身も **希少疾患・軽視された疾患**の創薬研究に Claude Science を活用すると発表した。CEO Dario Amodei が発信する「Machines of Loving Grace」（AI が人類の健康問題を解決する）ビジョンの、最初の具体的な実装フェーズとなる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Science is Anthropic's newest flagship product",
+        "site": "MIT Technology Review",
+        "url": "https://www.technologyreview.com/2026/06/30/1139987/claude-science-is-anthropics-newest-flagship-product/"
+      },
+      {
+        "title": "Anthropic's Claude Science bets on workflow, not a new model, to win over scientists",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/06/30/anthropics-claude-science-bets-on-workflow-not-a-new-model-to-win-over-scientists/"
+      },
+      {
+        "title": "Anthropic Releases Claude Science for Automating Research",
+        "site": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-06-30/anthropic-releases-claude-science-for-automating-research"
+      },
+      {
+        "title": "Anthropic launches Claude Science, an AI workbench for the lab",
+        "site": "The Next Web",
+        "url": "https://thenextweb.com/news/anthropic-claude-science-ai-workbench-scientists"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;
