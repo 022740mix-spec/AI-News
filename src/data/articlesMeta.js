@@ -6157,7 +6157,7 @@ export const ARTICLES_META = [
     "type": "news",
     "category": "product",
     "title": "Anthropic が Claude Science を公開 — 60+ 科学 DB 連携・SSH/SLURM 対応の研究ワークベンチ、新モデルではなくワークフローで科学者を狙う",
-    "excerpt": "Anthropic が6月30日、Claude Sonnet 5 と同時に**Claude Science** をベータ公開。**新モデルではなく研究ワークフロー製品**として位置付けられ、Claude Code の**科学研究版**と説明される。**60+ 科学データベース**（ゲノミクス・プロテオミクス・構造生物学・単細胞・化学）を統合、**SSH でラボワークステーションや HPC ログインノードに接続**、**SLURM クラスタへ sbatch 経由でジョブ投入**、**Reviewer エージェント**で監査性を確保。macOS / Linux ベータ、Pro/Max/Team/Enterprise で利用可能、アカデミック・非営利ラボ向け割引席あり。**最大50プロジェクト・各 $30,000 クレジット**の助成プログラムも同時開始（応募〜7/15）。",
+    "excerpt": "Anthropic が6月30日、Claude Sonnet 5 と同時に **Claude Science** をベータ公開。新モデルではなく**研究ワークフロー製品**として位置付けられ、Claude Code の科学研究版と説明される。**60+ 科学データベース**（ゲノミクス・プロテオミクス・構造生物学・単細胞・化学）を統合、SSH でラボワークステーションや HPC ログインノードに接続、SLURM クラスタへ sbatch 経由でジョブ投入、Reviewer エージェントで監査性を確保。macOS / Linux ベータ、Pro/Max/Team/Enterprise で利用可能、アカデミック・非営利ラボ向け割引席あり。**最大50プロジェクト・各 $30,000 クレジット**の助成プログラムも同時開始（応募〜7/15）。",
     "date": "2026-06-30",
     "newsDate": "2026-06-30",
     "author": "AI News 編集部",
