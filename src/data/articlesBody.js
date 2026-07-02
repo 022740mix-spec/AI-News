@@ -11200,6 +11200,57 @@ const ARTICLES_BODY = {
         "url": "https://thenextweb.com/news/anthropic-claude-science-ai-workbench-scientists"
       }
     ]
+  },
+  "anthropic-claude-fable-5-return-safeguards-limits-2026": {
+    "body": [
+      "Anthropic が2026年7月1日、**Claude Fable 5** のグローバルアクセスを復活させた。前日6月30日に **米 Commerce 省（Howard Lutnick 長官）が同モデルの輸出規制を解除**したことを受けての再展開で、Anthropic は新しい classifier（分類器）を含む「defense in depth」（多層防御）体制で提供を再開する。ただし利用条件・料金・地理的展開すべてに複数の制限が課される難しい復帰となった。",
+      "**シャットダウンの経緯（6/9→6/12）**: Fable 5 は6月9日に一般公開（[Fable 5 / Mythos 5 リリース](?a=anthropic-claude-fable-5-mythos-5-ga-2026)）されたが、直後に **Amazon の研究者**が Fable 5 のセーフガードを回避する手法を発見。「モデルにソフトウェア脆弱性の指摘をさせ、うち1件では脆弱性の悪用コードを書かせる」ことに成功したと米政府に報告した。これを受け Commerce 省は **6月12日に輸出規制**を発動、Fable 5 と Mythos 5 のグローバル配布が事実上停止した。",
+      "**「秘密のケーパビリティ制限」批判**: 停止直前の6月10日、Fortune が **「Anthropic が Fable 5 の能力を秘密裏に制限している」**と報じた（研究者・開発者からの告発を紹介）。「secret sabotage（隠れた妨害）」という強い表現で、性能ベンチマークで公表された Fable 5 の能力が実運用で発揮されないという苦情が広まっていた。この時点で Anthropic の透明性がすでに問題視されており、その数日後の輸出規制と重なる形で二重の逆風となった。",
+      "**トランプ政権の解除決定（6/30）**: 6月30日、**Trump 政権 Commerce 省**が Fable 5 と Mythos 5 の輸出規制を解除。Lutnick 長官は Anthropic 宛の書簡で「Anthropic はもはや輸出ライセンスを必要としない」と通知した。ただし解除は無条件ではなく、Anthropic は以下を約束したと発表されている：**(a) セキュリティリスクの積極的な検知と対応**、**(b) 将来のリリースにおけるプロトコルで政府と協力**、**(c) 自社モデル間で悪意ある活動を発見した場合の報告**。事実上の**継続的な政府監督体制**の下での復活となる。",
+      "**新 classifier：99% ジェイルブレイクブロック**: Anthropic は今回、**新しい classifier をデプロイし、6月に問題になった特定のジェイルブレイク手法を99%の確率でブロックする**と発表。CAISI（Center for AI Standards and Innovation）の研究者は「新セーフガードは extraordinarily strong（極めて強力）」と評価している。分類器はサイバーセキュリティ関連タスクを検出する仕組みで、教師モデルへの訓練による拒絶、事後の誤用パターン分析、事前ブロックの3層で構成される。",
+      "**過剰ブロック（over-blocking）の懸念**: 一方 Axios と Anthropic 自身は、新しい厳格なフィルタリングが **benign（善良）なコーディング要求やセキュリティ研究要求まで一部ブロックしてしまう可能性**があると認めている。ペンテスターや脆弱性研究者、CTF プレイヤー、セキュリティ教育者などの合法的なユースケースが影響を受ける可能性が高く、PCWorld の報道では**Claude 有料ユーザーがすでに新制限に激怒**していることも伝えられている。**「安全性 vs 実用性」のトレードオフ**が顕在化した形。",
+      "**利用上限と時間制限**: Fable 5 の利用は以下の制限下で提供される。**Pro / Max / Team / 一部 Enterprise プランは週次使用枠の 50% まで**、**7月7日までの期間限定**（それ以降は**使用クレジット制**へ移行し、追加料金が発生する）。導入時（6/9〜6/22）の「Pro/Max/Team/Enterprise 無料」から一段厳しい条件となり、事実上「試用期間の再延長」ではなく「制限付き再開」の色彩が強い。無料 / Go プランは対象外の可能性が高い。",
+      "**クラウド 3強の段階的復活**: **AWS Bedrock**、**Google Cloud Vertex AI**、**Microsoft Foundry** での Fable 5 提供も、可能な限り速やかに再有効化されるが**同時ではなく段階的**（The Hacker News、VentureBeat）。エンタープライズ顧客のワークロード切替タイミングは各クラウドの復活スケジュール次第となり、暫定的に Opus 4.8 や新登場の **Sonnet 5**（[Sonnet 5 リリース](?a=anthropic-claude-sonnet-5-agentic-cheap-2026)）への切替継続で対応する組織が多いと予想される。",
+      "**「tokenmaxxing → 効率性」の再確認**: 皮肉なことに、Fable 5 が停止していた6月末〜7月初旬に Anthropic は **Sonnet 5** を投入し、Opus 4.8 に肉薄する性能を **$2/$10** の破格で提供した。Fable 5 復活後も、Pro/Max ユーザーの多くは「Sonnet 5 で十分」と判断する可能性が高く、[tokenmaxxing→効率性 分析](?a=feature-tokenmaxxing-to-efficiency-market-shift-2026) で整理した業界潮流が Anthropic 自身の製品ライン内でも進行することになる。Fable 5 の実質的な役割は「最上位の限定的な複雑タスク用途」に絞られていく見込み。",
+      "**業界への含意**: 今回のエピソードは、フロンティア AI モデルが「発表と同時に**国家安全保障**の対象になる」時代の到来を示した象徴的事案となった。**Anthropic vs Alibaba 蒸留告発**（[Alibaba 蒸留告発](?a=anthropic-accuses-alibaba-claude-distillation-fraud-2026)）、**OpenAI 機密 S-1 提出**（[OpenAI S-1](?a=openai-confidential-s1-ipo-filing-852b-valuation-2026)）、**GPT-5.6 の米政府事前共有**（[GPT-5.6 プレビュー](?a=openai-gpt-5-6-sol-terra-luna-preview-2026)、約20組織限定）と並ぶ流れで、**フロンティア AI モデル各社と米国政府の統合が急速に進んでいる**ことを示す。研究者・開発者は「単一モデルへの依存」を避け、複数モデル・複数クラウド・複数ライセンスの分散戦略を採ることが、事業継続の観点から必須になりつつある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Redeploying Claude Fable 5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/redeploying-fable-5"
+      },
+      {
+        "title": "Claude Fable 5 cleared to return as US lifts Anthropic's export control restriction",
+        "site": "9to5Mac",
+        "url": "https://9to5mac.com/2026/07/01/claude-fable-5-cleared-to-return-as-us-lifts-anthropics-export-control-restriction/"
+      },
+      {
+        "title": "U.S. Lifts Restrictions On Anthropic's Mythos 5 And Fable 5 AI Models",
+        "site": "Forbes",
+        "url": "https://www.forbes.com/sites/siladityaray/2026/07/01/trump-administration-lifts-export-controls-on-anthropics-mythos-5-and-fable-5-ai-models/"
+      },
+      {
+        "title": "Trump administration lifts restrictions on Anthropic's Fable 5",
+        "site": "Axios",
+        "url": "https://www.axios.com/2026/06/30/trump-anthropic-ai-model-fable-restrictions"
+      },
+      {
+        "title": "Anthropic Restores Claude Fable 5 After U.S. Lifts Jailbreak-Linked Export Controls",
+        "site": "The Hacker News",
+        "url": "https://thehackernews.com/2026/07/anthropic-restores-claude-fable-5-after.html"
+      },
+      {
+        "title": "Anthropic walks back covert capability limits on Claude Fable 5, after it was accused of 'secret sabotage'",
+        "site": "Fortune",
+        "url": "https://fortune.com/2026/06/10/anthropic-accu-claude-fable-5-limits-capabilities-ai-researchers-developers/"
+      },
+      {
+        "title": "Claude subscribers are furious over Fable's new restrictions",
+        "site": "PCWorld",
+        "url": "https://www.pcworld.com/article/3181897/claude-subscribers-are-furious-over-fables-new-restrictions.html"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;

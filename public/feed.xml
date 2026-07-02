@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-07-01T15:00:00Z</updated>
+  <updated>2026-07-02T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Claude Fable 5 復活 — トランプ政権が輸出規制解除、Anthropic は新 classifier で再展開、ただし週次50%上限・7/7期限・過剰ブロック懸念など制限多数</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-fable-5-return-safeguards-limits-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-fable-5-return-safeguards-limits-2026</id>
+    <published>2026-07-01T15:00:00Z</published>
+    <updated>2026-07-01T15:00:00Z</updated>
+    <summary>Anthropic が7月1日、輸出規制で6/12から停止していた Claude Fable 5 のグローバルアクセスを復活した。前日6/30 にトランプ政権 Commerce 省が輸出規制を解除、Anthropic は 99% ジェイルブレイクをブロックする新 classifier を含む「defense in depth」体制で再展開。ただし利用条件は制限的で、Pro/Max/Team/一部 Enterprise は週次使用枠の50%まで、7月7日までのみ（以降はクレジット制）、benign なコーディング/セキュリティ要求まで過剰ブロックの懸念、3大クラウド（AWS/GCP/Azure Foundry）は段階的復活。Fortune が6/10 に報じた「秘密のケーパビリティ制限」批判とも接続する複雑な経緯。</summary>
+  </entry>
   <entry>
     <title>Anthropic が Claude Sonnet 5 を公開 — SWE-bench Pro 63.2% で Opus 4.8 に迫る、8月末まで $2/$10 の攻めた導入価格でエージェント本格投入</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-sonnet-5-agentic-cheap-2026"/>

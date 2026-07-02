@@ -6174,5 +6174,28 @@ export const ARTICLES_META = [
       "src": "logos/anthropic.svg",
       "alt": "Claude Science リリース"
     }
+  },
+  {
+    "id": "anthropic-claude-fable-5-return-safeguards-limits-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "Claude Fable 5 復活 — トランプ政権が輸出規制解除、Anthropic は新 classifier で再展開、ただし週次50%上限・7/7期限・過剰ブロック懸念など制限多数",
+    "excerpt": "Anthropic が7月1日、輸出規制で6/12から停止していた **Claude Fable 5** のグローバルアクセスを復活した。前日6/30 に**トランプ政権 Commerce 省が輸出規制を解除**、Anthropic は 99% ジェイルブレイクをブロックする新 classifier を含む「defense in depth」体制で再展開。ただし利用条件は制限的で、**Pro/Max/Team/一部 Enterprise は週次使用枠の50%まで**、**7月7日までのみ**（以降はクレジット制）、benign なコーディング/セキュリティ要求まで過剰ブロックの懸念、3大クラウド（AWS/GCP/Azure Foundry）は段階的復活。**Fortune が6/10 に報じた「秘密のケーパビリティ制限」批判**とも接続する複雑な経緯。",
+    "date": "2026-07-01",
+    "newsDate": "2026-07-01",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Anthropic",
+      "Claude Fable 5",
+      "輸出規制",
+      "米国政府",
+      "セキュリティ"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Claude Fable 5 復活"
+    },
+    "pinned": true
   }
 ];
