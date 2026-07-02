@@ -5923,5 +5923,301 @@ export const ARTICLES_META = [
       "src": "articles/cover-model-api.svg",
       "alt": "Sakana Fugu リリース"
     }
+  },
+  {
+    "id": "openai-gpt-5-6-sol-terra-luna-preview-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI が GPT-5.6 を限定プレビュー公開 — Sol/Terra/Luna の3バリアント、TerminalBench 2.1 で Sol Ultra 91.91% が Mythos 5・Fable 5 超え",
+    "excerpt": "OpenAI が6月25日、次世代フラッグシップ **GPT-5.6** を3バリアント（**Sol/Terra/Luna**）で限定プレビュー公開。**TerminalBench 2.1** で **Sol Ultra 91.91%** を達成し、Claude Mythos 5（88.0%）と Fable 5（84.3%）を上回った。料金は Sol $5/$30、Terra $2.50/$15、Luna **$1/$6**（フロンティアモデル最安）。米国政府との事前共有を経て約20組織限定で配布、一般公開は数週間後の予定。",
+    "date": "2026-06-27",
+    "newsDate": "2026-06-25",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "GPT-5.6",
+      "モデル",
+      "TerminalBench",
+      "Sol"
+    ],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI GPT-5.6 Sol/Terra/Luna 限定プレビュー"
+    },
+    "pinned": true
+  },
+  {
+    "id": "john-jumper-google-deepmind-to-anthropic-nobel-2026",
+    "type": "news",
+    "category": "product",
+    "title": "John Jumper（2024年ノーベル化学賞）が Google DeepMind → Anthropic 移籍 — Shazeer に続く Google AI 人材流出の第2波",
+    "excerpt": "**John Jumper** が約9年勤めた **Google DeepMind** を離れ **Anthropic** に移籍したと発表。Jumper は **AlphaFold2 開発者**として2024年に Demis Hassabis と共にノーベル化学賞を共同受賞した人物。1週間前の Noam Shazeer の OpenAI 移籍に続く Google AI トップ人材の流出**第2波**で、Alphabet 株は週後半に追加で下落、Gemini 3.5 Pro GA 延期続報と相まって Google AI の組織モメンタムへの市場の疑念が一段と強まる結果に。",
+    "date": "2026-06-27",
+    "newsDate": "2026-06-26",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "Google",
+      "DeepMind",
+      "人材",
+      "AlphaFold"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "John Jumper Anthropic 移籍"
+    }
+  },
+  {
+    "id": "openai-broadcom-jalapeno-llm-inference-chip-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI が Broadcom と「Jalapeño」を発表 — OpenAI 自社設計の LLM 最適化推論アクセラレータ、2026年末初期展開で NVIDIA 依存を低減",
+    "excerpt": "OpenAI と Broadcom が6月25日、**LLM 最適化推論チップ「Jalapeño」**を共同発表。**OpenAI が設計**したアクセラレータを Broadcom が**シリコン実装**する分業体制で、**2026年末**に初期コンピュート基盤として導入予定。OpenAI の **NVIDIA 依存度低減**戦略の中核で、Anthropic-AWS Trainium、Google TPU、Microsoft MAIA に続く「フロンティアモデル各社の自社チップ路線」が出揃った形となる。",
+    "date": "2026-06-27",
+    "newsDate": "2026-06-25",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "Broadcom",
+      "Jalapeño",
+      "推論チップ",
+      "AI インフラ"
+    ],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI Broadcom Jalapeño 推論チップ"
+    }
+  },
+  {
+    "id": "anthropic-accuses-alibaba-claude-distillation-fraud-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "Anthropic が Alibaba を不正利用で告発 — 25,000の偽アカウントで Claude に 2,880万件のリクエスト、SWE・エージェント能力を蒸留した疑い",
+    "excerpt": "Anthropic が6月24日、**Alibaba 関係オペレーター**が**約25,000の偽アカウント**を使って Claude に **2,880万件**のリクエストを行い、ソフトウェアエンジニアリングとエージェント推論能力を**不正に蒸留**した疑いがあると公表。期間は4月22日〜6月5日、地理的アクセス制限を回避するためにプロキシネットワークと難読化を使用。6月10日に米国上院銀行委員会へ書簡を提出済み、中国企業による米国 AI ラボへの「ピギーバック」攻撃として過去最大規模。",
+    "date": "2026-06-29",
+    "newsDate": "2026-06-24",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Alibaba",
+      "Claude",
+      "蒸留",
+      "米中AI"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic Alibaba 不正告発"
+    },
+    "pinned": true
+  },
+  {
+    "id": "feature-tokenmaxxing-to-efficiency-market-shift-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】「tokenmaxxing」から効率性へ — Lindy が Claude → DeepSeek 100% 移行、Fable 5 値上げで価格感度が市場を動かし始めた",
+    "excerpt": "2026年6月、AI モデルの利用パターンが**「tokenmaxxing」（とにかく強力なモデルを大量に使う）から「効率性最優先」**へ転換している。Anthropic Claude Fable 5 が **$10/$50**（Opus 4.8 の2倍）でローンチされた一方、OpenAI GPT-5.6 Luna は **$1/$6** という最安級で投入。AI スタートアップ Lindy の CEO は同社トラフィックを **100% Claude → DeepSeek へ切替**、コストを劇的削減したと公表。トークン単価競争の本格化と、フロンティアモデル独占体制への揺らぎを整理する。",
+    "date": "2026-06-29",
+    "newsDate": "2026-06-26",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "市場分析",
+      "効率性",
+      "DeepSeek",
+      "Anthropic",
+      "OpenAI",
+      "価格戦略"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "tokenmaxxing から効率性へ 特集"
+    }
+  },
+  {
+    "id": "zhipu-zai-glm-5-2-open-source-coding-1m-context-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Z.ai が GLM-5.2 を公開 — 753B MoE / 1M トークン・コンテキスト / MIT ライセンス、SWE-bench Pro で GPT-5.5 超え",
+    "excerpt": "中国 **Z.ai**（清華大学発 Zhipu AI の国際ブランド）が6月13日、コーディング特化フラッグシップ **GLM-5.2** を発表。**753B 総パラメータ・40B アクティブ MoE**、**1Mトークン**のコンテキストウィンドウ、新しい High/Max デュアル思考エフォートシステム、長文脈最適化 IndexShare アーキテクチャを搭載。MIT ライセンスで6/20週に Hugging Face で重み公開。SWE-bench Pro で **62.1（GPT-5.5: 58.6）**、FrontierSWE で 74.4 を記録、Opus 4.8（69.2 / 75.1）に肉薄する OSS フラッグシップに躍り出た。",
+    "date": "2026-06-29",
+    "newsDate": "2026-06-13",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Z.ai",
+      "Zhipu",
+      "GLM-5.2",
+      "中国モデル",
+      "OSS",
+      "コーディング"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "Z.ai GLM-5.2 リリース"
+    }
+  },
+  {
+    "id": "nvidia-nemotron-3-5-asr-open-multilingual-stt-2026",
+    "type": "news",
+    "category": "model",
+    "title": "NVIDIA が Nemotron 3.5 ASR を公開 — 600M パラメータの多言語ストリーミング音声認識、40言語対応・既存比17倍スループット",
+    "excerpt": "NVIDIA が6月、オープン音声認識モデル **Nemotron 3.5 ASR** を公開。**600M パラメータ**のストリーミング型 STT で、**40言語**に対応、既存ベースライン比 **17倍のスループット**を達成。Voice エージェント向けに設計され、リアルタイム会話の文字起こしを低レイテンシで処理可能。AssemblyAI・Deepgram・OpenAI Whisper・ElevenLabs と並ぶ「音声 AI ベース層」の選択肢に NVIDIA が本格参入、OSS でハードウェアと一体最適化された推論性能を提供する。",
+    "date": "2026-06-29",
+    "newsDate": "2026-06-25",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "NVIDIA",
+      "Nemotron",
+      "音声認識",
+      "ASR",
+      "OSS",
+      "多言語"
+    ],
+    "coverImage": {
+      "src": "logos/nvidia.svg",
+      "alt": "NVIDIA Nemotron 3.5 ASR"
+    }
+  },
+  {
+    "id": "anthropic-claude-sonnet-5-agentic-cheap-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Anthropic が Claude Sonnet 5 を公開 — SWE-bench Pro 63.2% で Opus 4.8 に迫る、8月末まで $2/$10 の攻めた導入価格でエージェント本格投入",
+    "excerpt": "Anthropic が6月30日、**Claude Sonnet 5** を公開。「これまでで最もエージェント的な Sonnet」と位置付け、**SWE-bench Pro で 63.2%**（Sonnet 4.6: 58.1% / Opus 4.8: 69.2%）を記録、**GDPval-AA v2 では Opus 4.8 を上回る**。料金は **8月31日まで $2/$10**、以降 $3/$15 per 1M tokens（Sonnet 4.6 と同じ）。1Mコンテキスト、Adaptive Thinking 常時オン。claude.ai の Free/Pro デフォルト、Claude Code・Cursor・VS Code・GitHub Copilot でも即日利用可能。",
+    "date": "2026-06-30",
+    "newsDate": "2026-06-30",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude Sonnet",
+      "Sonnet 5",
+      "モデル",
+      "エージェント"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Claude Sonnet 5 リリース"
+    },
+    "pinned": true
+  },
+  {
+    "id": "cursor-ios-app-launch-cloud-agents-remote-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Cursor が iOS アプリを公開 — Always-on クラウドエージェント + PC 上のエージェントリモート操作、音声入力対応、Composer 2.5 は7/5まで -75%",
+    "excerpt": "Anysphere が6月29日、**Cursor 公式 iOS アプリ**を App Store で公開。2軸の機能構成で、**Always-on クラウドエージェント**（バックグラウンド実行、iPhone から監視）と、**PC 上のエージェントのリモート操作**を提供。**音声入力**による指示、diff レビュー・PR マージ・スクリーンショット注釈も iPhone 上で完結。有料プラン向け Public Beta、**Composer 2.5 が7月5日まで -75%** の導入プロモ。SpaceX による Anysphere 買収（6/16）直後のモバイル展開で、「モバイルからエージェントを走らせる」時代の号砲。",
+    "date": "2026-06-30",
+    "newsDate": "2026-06-29",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Cursor",
+      "Anysphere",
+      "iOS",
+      "モバイル",
+      "エージェント"
+    ],
+    "coverImage": {
+      "src": "logos/cursor.svg",
+      "alt": "Cursor iOS アプリ公開"
+    },
+    "pinned": true
+  },
+  {
+    "id": "openclaw-ios-android-native-app-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenClaw が iOS / Android ネイティブアプリを公開 — カメラ・画面・位置・写真・連絡先など iPhone のあらゆるデータに接続、Apple のエージェント AI ガードを OSS で突破",
+    "excerpt": "**OpenClaw Foundation** が6月29日、パーソナル AI アシスタント **OpenClaw** の **iOS と Android 向けネイティブアプリ**を公開した。iOS 18+ が要件、無料アプリ。ユーザーは iPhone の**カメラ・画面・位置・写真・連絡先・カレンダー・リマインダー**へエージェントにアクセス権を付与できる。Apple がこれまで拒み続けたエージェント型 AI アプリの初例で、**自己ホスト設計**（データが自社サーバーを経由しない）が審査通過の決め手となった。開発者の Peter Steinberger は今年 OpenAI に参加、コードは Foundation に移管され OpenAI が資金提供・所有権なしという形。",
+    "date": "2026-06-30",
+    "newsDate": "2026-06-29",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenClaw",
+      "iOS",
+      "Android",
+      "OSS",
+      "エージェント",
+      "パーソナルAI"
+    ],
+    "coverImage": {
+      "src": "articles/cover-cli-tools.svg",
+      "alt": "OpenClaw iOS / Android アプリ公開"
+    }
+  },
+  {
+    "id": "anthropic-claude-science-workbench-research-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が Claude Science を公開 — 60+ 科学 DB 連携・SSH/SLURM 対応の研究ワークベンチ、新モデルではなくワークフローで科学者を狙う",
+    "excerpt": "Anthropic が6月30日、Claude Sonnet 5 と同時に **Claude Science** をベータ公開。新モデルではなく**研究ワークフロー製品**として位置付けられ、Claude Code の科学研究版と説明される。**60+ 科学データベース**（ゲノミクス・プロテオミクス・構造生物学・単細胞・化学）を統合、SSH でラボワークステーションや HPC ログインノードに接続、SLURM クラスタへ sbatch 経由でジョブ投入、Reviewer エージェントで監査性を確保。macOS / Linux ベータ、Pro/Max/Team/Enterprise で利用可能、アカデミック・非営利ラボ向け割引席あり。**最大50プロジェクト・各 $30,000 クレジット**の助成プログラムも同時開始（応募〜7/15）。",
+    "date": "2026-06-30",
+    "newsDate": "2026-06-30",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude Science",
+      "科学研究",
+      "創薬",
+      "ゲノミクス",
+      "SLURM"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Claude Science リリース"
+    }
+  },
+  {
+    "id": "anthropic-claude-fable-5-return-safeguards-limits-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "Claude Fable 5 復活 — トランプ政権が輸出規制解除、Anthropic は新 classifier で再展開、ただし週次50%上限・7/7期限・過剰ブロック懸念など制限多数",
+    "excerpt": "Anthropic が7月1日、輸出規制で6/12から停止していた **Claude Fable 5** のグローバルアクセスを復活した。前日6/30 に**トランプ政権 Commerce 省が輸出規制を解除**、Anthropic は 99% ジェイルブレイクをブロックする新 classifier を含む「defense in depth」体制で再展開。ただし利用条件は制限的で、**Pro/Max/Team/一部 Enterprise は週次使用枠の50%まで**、**7月7日までのみ**（以降はクレジット制）、benign なコーディング/セキュリティ要求まで過剰ブロックの懸念、3大クラウド（AWS/GCP/Azure Foundry）は段階的復活。**Fortune が6/10 に報じた「秘密のケーパビリティ制限」批判**とも接続する複雑な経緯。",
+    "date": "2026-07-01",
+    "newsDate": "2026-07-01",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Anthropic",
+      "Claude Fable 5",
+      "輸出規制",
+      "米国政府",
+      "セキュリティ"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Claude Fable 5 復活"
+    },
+    "pinned": true
+  },
+  {
+    "id": "feature-prompting-claude-fable-5-practical-guide-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【実用ガイド】Claude Fable 5 のプロンプト設計 — Anthropic 公式ドキュメント準拠、Opus 4.8 との違い・8つの推奨パターン・移行チェックリストを日本語で徹底解説",
+    "excerpt": "Claude Fable 5 が復活したいま、実務で使いこなすには **Anthropic 公式の推奨プロンプト設計**を理解する必要がある。本ガイドは公式ドキュメント「Prompting Claude Fable 5」を全訳・要約し、**Opus 4.8 との7つの違い**（長時間自律実行・初回正確性・視覚理解・企業ワークフロー・コードレビュー・曖昧さ耐性・並列サブエージェント）、**8つのプロンプト推奨パターン**（Effort レベル選択・強化された指示追従・進捗根拠付け・境界明示・サブエージェント委譲・メモリシステム・早期停止対策・コンテキスト予算不安の解消）、**送信専用ツール `send_to_user` の JSON 実装例**、既存スキルの**移行チェックリスト4項目**まで、実務者が即使える形で整理した。",
+    "date": "2026-07-01",
+    "newsDate": "2026-07-01",
+    "author": "AI News 編集部",
+    "readTime": "15分",
+    "tags": [
+      "Anthropic",
+      "Claude Fable 5",
+      "プロンプト設計",
+      "実用ガイド",
+      "エージェント"
+    ],
+    "coverImage": {
+      "src": "articles/cover-cli-tools.svg",
+      "alt": "Claude Fable 5 プロンプト設計 実用ガイド"
+    }
   }
 ];
