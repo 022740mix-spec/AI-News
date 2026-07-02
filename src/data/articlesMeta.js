@@ -6197,5 +6197,27 @@ export const ARTICLES_META = [
       "alt": "Claude Fable 5 復活"
     },
     "pinned": true
+  },
+  {
+    "id": "feature-prompting-claude-fable-5-practical-guide-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【実用ガイド】Claude Fable 5 のプロンプト設計 — Anthropic 公式ドキュメント準拠、Opus 4.8 との違い・8つの推奨パターン・移行チェックリストを日本語で徹底解説",
+    "excerpt": "Claude Fable 5 が復活したいま、実務で使いこなすには **Anthropic 公式の推奨プロンプト設計**を理解する必要がある。本ガイドは公式ドキュメント「Prompting Claude Fable 5」を全訳・要約し、**Opus 4.8 との7つの違い**（長時間自律実行・初回正確性・視覚理解・企業ワークフロー・コードレビュー・曖昧さ耐性・並列サブエージェント）、**8つのプロンプト推奨パターン**（Effort レベル選択・強化された指示追従・進捗根拠付け・境界明示・サブエージェント委譲・メモリシステム・早期停止対策・コンテキスト予算不安の解消）、**送信専用ツール `send_to_user` の JSON 実装例**、既存スキルの**移行チェックリスト4項目**まで、実務者が即使える形で整理した。",
+    "date": "2026-07-01",
+    "newsDate": "2026-07-01",
+    "author": "AI News 編集部",
+    "readTime": "15分",
+    "tags": [
+      "Anthropic",
+      "Claude Fable 5",
+      "プロンプト設計",
+      "実用ガイド",
+      "エージェント"
+    ],
+    "coverImage": {
+      "src": "articles/cover-cli-tools.svg",
+      "alt": "Claude Fable 5 プロンプト設計 実用ガイド"
+    }
   }
 ];

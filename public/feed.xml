@@ -16,6 +16,14 @@
     <summary>Anthropic が7月1日、輸出規制で6/12から停止していた Claude Fable 5 のグローバルアクセスを復活した。前日6/30 にトランプ政権 Commerce 省が輸出規制を解除、Anthropic は 99% ジェイルブレイクをブロックする新 classifier を含む「defense in depth」体制で再展開。ただし利用条件は制限的で、Pro/Max/Team/一部 Enterprise は週次使用枠の50%まで、7月7日までのみ（以降はクレジット制）、benign なコーディング/セキュリティ要求まで過剰ブロックの懸念、3大クラウド（AWS/GCP/Azure Foundry）は段階的復活。Fortune が6/10 に報じた「秘密のケーパビリティ制限」批判とも接続する複雑な経緯。</summary>
   </entry>
   <entry>
+    <title>【実用ガイド】Claude Fable 5 のプロンプト設計 — Anthropic 公式ドキュメント準拠、Opus 4.8 との違い・8つの推奨パターン・移行チェックリストを日本語で徹底解説</title>
+    <link rel="alternate" type="text/html" href="?a=feature-prompting-claude-fable-5-practical-guide-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-prompting-claude-fable-5-practical-guide-2026</id>
+    <published>2026-07-01T15:00:00Z</published>
+    <updated>2026-07-01T15:00:00Z</updated>
+    <summary>Claude Fable 5 が復活したいま、実務で使いこなすには Anthropic 公式の推奨プロンプト設計を理解する必要がある。本ガイドは公式ドキュメント「Prompting Claude Fable 5」を全訳・要約し、Opus 4.8 との7つの違い（長時間自律実行・初回正確性・視覚理解・企業ワークフロー・コードレビュー・曖昧さ耐性・並列サブエージェント）、8つのプロンプト推奨パターン（Effort レベル選択・強化された指示追従・進捗根拠付け・境界明示・サブエージェント委譲・メモリシステム・早期停止対策・コンテキスト予算不安の解消）、送信専用ツール `send_to_user` の JSON 実装例、既存スキルの移行チェックリスト4項目まで、実務者が即使える形で整理した。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が Claude Sonnet 5 を公開 — SWE-bench Pro 63.2% で Opus 4.8 に迫る、8月末まで $2/$10 の攻めた導入価格でエージェント本格投入</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-sonnet-5-agentic-cheap-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-sonnet-5-agentic-cheap-2026</id>
