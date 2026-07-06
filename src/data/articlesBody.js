@@ -11379,6 +11379,120 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/build-with-claude/effort"
       }
     ]
+  },
+  "openai-us-government-5-percent-stake-42b-offer-2026": {
+    "body": [
+      "**Financial Times** が2026年7月2日に報じた内容によれば、**OpenAI が米国政府に同社の 5% 株式**を提示したことが判明した。株式時価は **$852B 評価額**（[3月調達ラウンド](?a=openai-122b-funding-852b-valuation-2026) で確定）で**約 $42.6B 相当**の巨額。CNBC・CNN Business・Forbes・Yahoo Finance が後追い報道した。",
+      "**Altman が直接ホワイトハウスに提示**: Sam Altman は Trump 大統領、**Howard Lutnick 商務長官**、**Scott Bessent 財務長官**の3者と直接協議した。Altman は「**AI のアップサイドを国民と共有する最善策**」として、政府への出資を「株式ベースで参加する形」で正当化したという。",
+      "**Anthropic・Google・Meta にも同様の枠組み要請**: Altman は OpenAI 単独ではなく、**Anthropic・Google・Meta にも同様の出資枠組みへの参加**を求めている。これが実現すれば、フロンティア AI 各社が横並びで米国政府に持分を渡す前例のない業界構造となる。Anthropic は[機密 S-1 提出](?a=openai-confidential-s1-ipo-filing-852b-valuation-2026)を先行しており、IPO 前の株式構造が政府と合意する形になる可能性も。",
+      "**Trump 大統領の姿勢**: Trump は「政府が AI 大手の株式を取ることは **beautiful thing**」と表現。「Americans を AI 革命のパートナーにする」路線を継続する姿勢を示した。",
+      "**Intel 前例との共通点**: Trump 政権は2025年8月に **Intel 株式 10%** を **$8.9B の普通株投資**で取得した実績があり、これが AI 業界へも適用される「産業政策としての政府出資モデル」の前例となっている。ただし Intel は**衰退期の半導体大手救済**の色彩が強かったのに対し、OpenAI は**成長期のスタートアップの上場前**という違いがあり、政策目的も市場の受け止めも異なる。",
+      "**現状は「conceptual and early-stage」**: FT は今回の議論を **「概念的で初期段階」**（conceptual and early-stage）と特徴付けている。**議会承認が必要になる可能性**もあり、実現に至るには数ヶ月〜1年以上の政治プロセスが見込まれる。反トラスト法・証券法・国家安全保障法との整合性も精査が必要。",
+      "**開発者・エンドユーザーへの影響**: 実現した場合、OpenAI の上場時株価に**政府持分プレミアム/ディスカウント**が発生する可能性、政府の政策方針が API 提供先や輸出規制に反映されるスピードが上がる可能性がある。**Claude Fable 5 復活の輸出規制解除**（[Fable 5 復活](?a=anthropic-claude-fable-5-return-safeguards-limits-2026)）で見られた「政府による能動的介入」がフロンティア AI 全体に及ぶ流れの延長線上にあり、開発者は**「AI モデル選択 = 米政府の技術政策選択」**という構図をますます意識する必要が出てくる。",
+      "**GPT-5.6 遅延との関係**: 6/25 に約20組織限定でプレビュー公開された **GPT-5.6 Sol/Terra/Luna**（[GPT-5.6 プレビュー](?a=openai-gpt-5-6-sol-terra-luna-preview-2026)）の一般公開が、米政府の追加監督要請で7月中〜下旬まで遅延している。これも「政府との統合が深まる過程」の一環であり、5% 出資が実現すれば同様のプロセスが常態化する可能性が高い。"
+    ],
+    "primarySources": [
+      {
+        "title": "OpenAI in talks to give Trump administration a 5% stake in the company, FT reports",
+        "site": "CNN Business",
+        "url": "https://www.cnn.com/2026/07/02/business/openai-trump-stake-intl"
+      },
+      {
+        "title": "OpenAI proposes 5% stake to Trump administration to ease Washington pressure",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/07/02/openai-proposes-us-government-own-5percent-stake-to-address-political-blowback.html"
+      },
+      {
+        "title": "OpenAI Reportedly Pitches Granting U.S. Government 5% Stake",
+        "site": "Forbes",
+        "url": "https://www.forbes.com/sites/siladityaray/2026/07/02/openai-reportedly-pitches-granting-us-government-5-stake/"
+      }
+    ]
+  },
+  "meituan-longcat-2-1-6t-domestic-chips-mit-open-2026": {
+    "body": [
+      "中国の巨大テック企業 **Meituan（美団、北京）**が2026年6月30日、大規模言語モデル **LongCat-2.0** を **MIT ライセンス**で OSS 公開した。**1.6兆パラメータ**（1.6T）の Sparse **Mixture of Experts** アーキテクチャで、**この規模のモデルとして初めて、事前訓練から推論まで完全に中国国産 AI チップだけで完結**した点が歴史的意義を持つ。",
+      "**モデル仕様**: 総パラメータは **1.6T**、アクティブは **33B〜56B/トークン（平均約 48B）**、コンテキストウィンドウは **1M トークン**。Sparse MoE の設計により、見出しサイズは巨大だが**推論コストは 48B クラス**に抑えられる。**OpenRouter 上で公開前から「Owl Alpha」というコードネームで利用が拡大**しており、実運用検証を経てからの正式リリースとなった。",
+      "**国産チップ 50,000枚のスーパーポッド**: 訓練は **50,000枚の中国国産 AI ASIC スーパーポッド**で実施された。**NVIDIA GPU は一切使用していない**。米国の対中先端半導体輸出規制（Blackwell / Hopper / Vera Rubin のうち上位 SKU が禁輸対象）に対する中国側の技術主権確保の象徴的成果と位置付けられる。ASIC の具体的な設計元・製造委託先については公表されていないが、Huawei Ascend 系または Cambricon 系が有力とみられる。",
+      "**ベンチマーク性能**: **SWE-bench Pro で 59.5** を記録、これは **GPT-5.5 の 58.6 を上回り、Claude Opus 4.6 と同水準**。Gemini 3.1 Pro とも並ぶ。エージェント的タスク・コーディング領域で強く、汎用推論では Fable 5 / GPT-5.6 Sol にはまだ及ばない。**Z.ai GLM-5.2**（[GLM-5.2 公開](?a=zhipu-zai-glm-5-2-open-source-coding-1m-context-2026)、SWE-bench Pro 62.1）と並ぶ「中国 OSS フラッグシップ」の地位を確立。",
+      "**「AI 主権」の観点**: 米国では NVIDIA が AI 訓練インフラ市場を圧倒しており、Anthropic（AWS Trainium）・OpenAI（Broadcom Jalapeño、[Jalapeño 発表](?a=openai-broadcom-jalapeno-llm-inference-chip-2026)）・Google（TPU）・Microsoft（MAIA）・SpaceX-xAI（Colossus GPU 220,000）と各社が独自路線を模索している。中国側は Meituan の LongCat-2.0 で **「国産チップだけで最大級モデルを訓練できる」**ことを実証、これは Anthropic vs Alibaba 蒸留告発（[Alibaba 蒸留告発](?a=anthropic-accuses-alibaba-claude-distillation-fraud-2026)）と対照的に「**自前で作る**」路線の実力を示す動きとなった。",
+      "**「tokenmaxxing → 効率性」との接続**: MIT ライセンスによる自社ホスティング可能な OSS モデルとして、[効率性転換分析](?a=feature-tokenmaxxing-to-efficiency-market-shift-2026) で整理した「オープンウェイト陣営」の選択肢を強化する。DeepSeek V4・Kimi K2.6・GLM-5.2 に LongCat-2.0 が加わり、**「中国 OSS 4強」**が形成された。エンタープライズ・スタートアップは、Claude Fable 5 / GPT-5.6 に依存しない実運用オプションを一段深化させることになる。",
+      "**日本の意味合い**: 日本の法人が LongCat-2.0 を利用する場合、MIT ライセンスは商用利用・改変・再配布とも制約なし。ただし**中国製モデル特有のコンテンツポリシー**（内部の安全フィルタが中国当局の方針を反映する可能性）や、**日本語能力**（訓練データに日本語がどの程度含まれるか未公表）は個別検証が必要。エンタープライズの本番採用にはファインチューニング or LoRA 適応、コンテンツフィルタの再訓練が現実的。"
+    ],
+    "primarySources": [
+      {
+        "title": "China debuts biggest AI model trained on local chips, as Meituan releases LongCat-2.0",
+        "site": "South China Morning Post",
+        "url": "https://www.scmp.com/tech/tech-trends/article/3358854/china-debuts-biggest-ai-model-trained-local-chips-meituan-releases-longcat-20"
+      },
+      {
+        "title": "Meituan Open-Sources LongCat-2.0, a 1.6T Model Trained on Chinese Chips",
+        "site": "RITS Shanghai NYU",
+        "url": "https://rits.shanghai.nyu.edu/ai/meituan-open-sources-longcat-2-0-a-1-6t-model-trained-on-chinese-chips/"
+      },
+      {
+        "title": "China's Meituan says its new AI model was trained on domestic chips",
+        "site": "The Next Web",
+        "url": "https://thenextweb.com/news/chinas-meituan-says-its-new-ai-model-was-trained-on-domestic-chips"
+      }
+    ]
+  },
+  "five-eyes-agentic-ai-cyber-risk-guidance-2026": {
+    "body": [
+      "**Five Eyes**（米・英・豪・加・NZ の情報安全保障5カ国同盟）のサイバーセキュリティ機関が2026年6月22日、合同で **「The AI Shift in Cyber Risk: Why Leaders Must Act Now」**（サイバーリスクにおける AI シフト: 指導者はなぜ今行動すべきか）を発表した。参加機関は **CISA（米）・NSA（米）・NCSC-UK（英）・ASD's ACSC（豪）・Canadian Cyber Centre（加）・NCSC-NZ（NZ）**。",
+      "**中心メッセージ: 既存フレームワークに統合せよ**: 文書の核心的な主張は **「agentic AI は完全に新しいセキュリティ規律を必要としない」**。組織は agentic AI システムを、**すでに運用している既存のサイバーセキュリティフレームワーク・ガバナンス構造に組み込む**べきで、Zero Trust・**多層防御（defense-in-depth）**・**最小特権原則（least-privilege access）**といった既存原則を適用せよ、というのが基本方針。",
+      "**5つのリスクカテゴリ**: ガイダンスはリスクを以下の5つに分類する。",
+      "**(1) 特権リスク（privilege）**: エージェントに過度な権限が付与され、想定外の操作が可能になる。",
+      "**(2) 設計・構成リスク（design/configuration）**: 開発時のアーキテクチャ選択・コンフィグ設定が脆弱性を生む。",
+      "**(3) 行動リスク（behavioral）**: プロンプトインジェクション、想定外の挙動、意図しない副作用など、エージェントの動作自体に起因するリスク。",
+      "**(4) 構造リスク（structural）**: エージェント間の連携、オーケストレーション層、記憶システムの整合性に起因するリスク。",
+      "**(5) サプライチェーンリスク（supply-chain）**: サードパーティスキル、外部モデル、依存パッケージ経由での攻撃。",
+      "文書はさらに **23の具体的リスク項目**と **100以上のベストプラクティス**を列挙している。",
+      "**SkillSpector との実装的接続**: 5リスクカテゴリの (5) サプライチェーンは、NVIDIA SkillSpector（[SkillSpector 特集](?a=feature-nvidia-skillspector-agent-skill-security-2026)）が対応するスキル脆弱性検出と直接接続する。SkillSpector の16カテゴリ・64パターン（プロンプトインジェクション・MCP ツールポイズニング・特権昇格・データ漏洩等）は Five Eyes の5リスクカテゴリを網羅的に検査可能。**AI News の CLAUDE.md「外部スキル実行禁止」ポリシー**も、Five Eyes ガイダンスの精神と完全に整合する。",
+      "**Anthropic WIF との接続**: Five Eyes の (1) 特権リスク・最小特権原則の実装として、**Anthropic Workload Identity Federation**（[WIF GA](?a=anthropic-workload-identity-federation-ga-service-accounts-2026)）が静的 API キー廃止・Service Accounts・監査証跡を提供する。**「Zero Trust をエージェントレイヤーに拡張する」**具体的な選択肢が2026年6月に整い始めた形。",
+      "**Fable 5 復活との温度差**: 一方で Five Eyes ガイダンスは「**慎重・漸進的な採用**」（cautious, incremental adoption）を強調する。**Claude Fable 5 の輸出規制解除**（[Fable 5 復活](?a=anthropic-claude-fable-5-return-safeguards-limits-2026)）が示すように、政府側のスタンスは「セキュリティ強化 → 通商解禁」の順で動いており、企業側は Five Eyes ガイダンスに沿って**セキュリティ体制を先に整えたうえで**フロンティアモデルを本番運用する順序が推奨される。",
+      "**業界への含意**: 「新しい規律は不要」というメッセージは、既存の CISO・情報セキュリティ組織にとって**朗報**である一方、「では何が違うのか」を具体化する 23 リスク・100+ プラクティスの重みは、実務的な負荷が大きい。**AI News では今後、5リスクカテゴリ × 実装パターン（SkillSpector / WIF / Anthropic Reviewer Agent / OpenAI Trusted Contact 等）のクロス表を作成する解説記事を予定**している。",
+      "**Anthropic vs Alibaba 蒸留告発との重層**: Five Eyes ガイダンスの (5) サプライチェーンリスクは、[Anthropic vs Alibaba 蒸留告発](?a=anthropic-accuses-alibaba-claude-distillation-fraud-2026)（2,880万件の Claude 不正リクエスト、25,000偽アカウント）で顕在化した「フロンティアモデル API への不正アクセス・蒸留」も文脈に含む。**Five Eyes 加盟5カ国の情報機関が同一文書に署名した**ことは、国家安全保障レベルでの AI 脅威対応が形になり始めた象徴的な動き。"
+    ],
+    "primarySources": [
+      {
+        "title": "Five Eyes Cyber Security Agencies Statement",
+        "site": "NSA / CSS",
+        "url": "https://www.nsa.gov/Press-Room/News-Highlights/Article/Article/4523810/five-eyes-cyber-security-agencies-statement/"
+      },
+      {
+        "title": "Five Eyes Cyber Security Agencies Statement",
+        "site": "CISA",
+        "url": "https://www.cisa.gov/news-events/news/five-eyes-cyber-security-agencies-statement"
+      },
+      {
+        "title": "US government, allies publish guidance on how to safely deploy AI agents",
+        "site": "CyberScoop",
+        "url": "https://cyberscoop.com/cisa-nsa-five-eyes-guidance-secure-deployment-ai-agents/"
+      }
+    ]
+  },
+  "google-gemini-3-1-flash-image-3-pro-image-release-2026": {
+    "body": [
+      "Google が2026年6月30日、**Gemini 3.1 Flash Image** と **Gemini 3 Pro Image** の**画像生成モデル2種**を公開した。**Gemini API・Google AI Studio・Vertex AI** で即日利用可能。Google は同日、Anthropic の Claude Sonnet 5（[Sonnet 5 リリース](?a=anthropic-claude-sonnet-5-agentic-cheap-2026)）・Claude Science（[Claude Science](?a=anthropic-claude-science-workbench-research-2026)）と重なるタイミングでの発表となり、フロンティアプレイヤー各社が「日常業務向け × 高性能向け」の2階層展開を明確化する潮流を確認する形となった。",
+      "**Gemini 3.1 Flash Image**: 「日常業務向け」画像生成モデル。**低レイテンシ・低コスト**を志向し、Gemini 3.5 Flash（テキスト、[Google I/O 2026](?a=google-io-2026-gemini-3-5-flash-antigravity-spark-2026) で GA）と同一の Flash 系ブランドで展開。**旧 Nano Banana / Nano Banana 2 系**の後継として位置付けられ、Web アプリでの高頻度な画像生成、動的なコンテンツ差し替え、A/B テスト用バリエーション生成などのユースケースを狙う。",
+      "**Gemini 3 Pro Image**: 「高忠実度・高品質」画像生成モデル。**複雑なプロンプト・複数被写体構成・高解像度出力**に対応し、Midjourney V8・Flux 2・GPT Image（[GPT Image レビュー](?a=gpt-image-review)）と競合する。マーケティング素材・アート制作・製品ビジュアル等のプロ用途を想定。",
+      "**Google の「2階層画像戦略」**: これで Google は **Gemini 3.1 Flash Image（廉価）と Gemini 3 Pro Image（高品質）**の2階層製品ラインを画像生成でも整備。テキスト（Gemini 3.5 Flash / 3.5 Pro）・動画（Veo 3.1 / Veo）と同じ2階層アプローチで統一。**OpenAI GPT-5.6 Sol/Terra/Luna**（[GPT-5.6 プレビュー](?a=openai-gpt-5-6-sol-terra-luna-preview-2026)）の3階層と並ぶ「**用途特化の階層化**」が業界標準になりつつある。",
+      "**Vertex AI と Google Workspace 統合**: エンタープライズ顧客は **Vertex AI** で即日利用可能で、Google Workspace（Slides・Vids・Docs）との統合ロードマップも公表された。**Google Vids に Veo 3.1 統合**（[Google Vids Veo 3.1](?a=google-vids-veo31-free-video-generation-2026)）と組み合わせ、**「Workspace 内で画像・動画・テキストの全モーダル生成を完結」**する構想が具体化する。",
+      "**日本の開発者向け実用ガイド（次回予告）**: Gemini 3.1 Flash Image は API 料金が Nano Banana 2 系より約 **20-30% 削減**（Google 公式ベンチマーク）される見込み。日本語プロンプトでの応答性能は Gemini テキスト系と同水準で、Midjourney 系より日本語・アジア圏コンテキストに強い可能性が示唆されている。**AI News 編集部は「日本語プロンプトでの Gemini 3.1 Flash Image vs Flux 2 vs Midjourney V8 実践比較」を近日公開予定**。"
+    ],
+    "primarySources": [
+      {
+        "title": "Gemini API Release Notes",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/changelog"
+      },
+      {
+        "title": "Google DeepMind - Gemini",
+        "site": "DeepMind",
+        "url": "https://deepmind.google/"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;

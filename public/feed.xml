@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-07-02T15:00:00Z</updated>
+  <updated>2026-07-06T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>OpenAI が米国政府に**5%出資**を提示 — $42.6B 相当、Altman が Trump・Lutnick・Bessent と直接協議、Anthropic/Google/Meta にも同様の枠組み提案</title>
+    <link rel="alternate" type="text/html" href="?a=openai-us-government-5-percent-stake-42b-offer-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-us-government-5-percent-stake-42b-offer-2026</id>
+    <published>2026-07-02T15:00:00Z</published>
+    <updated>2026-07-02T15:00:00Z</updated>
+    <summary>Financial Times が7月2日に報じた内容によれば、OpenAI が米国政府に同社の 5% 株式（$852B 評価額で 約 $42.6B 相当）を提示、Sam Altman が Trump 大統領・Lutnick 商務長官・Bessent 財務長官と直接協議した。Altman は「AI のアップサイドを国民と共有する最善策」と説明し、Anthropic・Google・Meta にも同様の出資枠組みを求めている。Trump は「beautiful thing」と表現、Intel の10% 取得（$8.9B）を前例に「AI 革命のパートナー」路線を進める姿勢。まだ「conceptual and early-stage」で議会承認も必要な可能性。</summary>
+  </entry>
   <entry>
     <title>Claude Fable 5 復活 — トランプ政権が輸出規制解除、Anthropic は新 classifier で再展開、ただし週次50%上限・7/7期限・過剰ブロック懸念など制限多数</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-fable-5-return-safeguards-limits-2026"/>
@@ -38,6 +46,22 @@
     <published>2026-06-30T15:00:00Z</published>
     <updated>2026-06-30T15:00:00Z</updated>
     <summary>Anthropic が6月30日、Claude Sonnet 5 と同時に Claude Science をベータ公開。新モデルではなく研究ワークフロー製品として位置付けられ、Claude Code の科学研究版と説明される。60+ 科学データベース（ゲノミクス・プロテオミクス・構造生物学・単細胞・化学）を統合、SSH でラボワークステーションや HPC ログインノードに接続、SLURM クラスタへ sbatch 経由でジョブ投入、Reviewer エージェントで監査性を確保。macOS / Linux ベータ、Pro/Max/Team/Enterprise で利用可能、アカデミック・非営利ラボ向け割引席あり。最大50プロジェクト・各 $30,000 クレジットの助成プログラムも同時開始（応募〜7/15）。</summary>
+  </entry>
+  <entry>
+    <title>Meituan が LongCat-2.0 を OSS 公開 — **1.6T MoE**・**50,000枚の国産チップ**で訓練、NVIDIA 不使用で SWE-bench Pro 59.5 で GPT-5.5 超え</title>
+    <link rel="alternate" type="text/html" href="?a=meituan-longcat-2-1-6t-domestic-chips-mit-open-2026"/>
+    <id>tag:ai-tool-news.jp,2026:meituan-longcat-2-1-6t-domestic-chips-mit-open-2026</id>
+    <published>2026-06-30T15:00:00Z</published>
+    <updated>2026-06-30T15:00:00Z</updated>
+    <summary>中国 Meituan（美団）が6月30日、LongCat-2.0 を MIT ライセンスで OSS 公開。1.6兆パラメータの Sparse MoE（アクティブ 33B-56B / トークン、平均 ~48B）、1M トークンのコンテキスト。特筆すべきは 50,000枚の中国国産 AI ASIC スーパーポッド（NVIDIA GPU 不使用）で事前訓練から推論まで完結した点で、この規模で初の完全国産チップ訓練モデルとなる。SWE-bench Pro で 59.5（GPT-5.5 の 58.6 を超え、Opus 4.6 と同水準）を記録し、公開前は OpenRouter で「Owl Alpha」というコードネームで使用量トップに位置していた。</summary>
+  </entry>
+  <entry>
+    <title>Google が **Gemini 3.1 Flash Image** と **Gemini 3 Pro Image** を公開 — Nano Banana 2 系の画像生成モデル、Flash は低レイテンシ・低コスト、Pro は高忠実度</title>
+    <link rel="alternate" type="text/html" href="?a=google-gemini-3-1-flash-image-3-pro-image-release-2026"/>
+    <id>tag:ai-tool-news.jp,2026:google-gemini-3-1-flash-image-3-pro-image-release-2026</id>
+    <published>2026-06-30T15:00:00Z</published>
+    <updated>2026-06-30T15:00:00Z</updated>
+    <summary>Google が6月30日、画像生成モデル2種を新規公開。Gemini 3.1 Flash Image（旧 Nano Banana 系の後継、低レイテンシ・低コスト特化）と、Gemini 3 Pro Image（高忠実度・複雑プロンプト対応）の2ラインを同時投入。Gemini API・Google AI Studio・Vertex AI で即日利用可能。OpenAI Sora（動画）・Midjourney・Flux 2・Nano Banana 2 と競合する構図で、Google が「画像生成でも2階層製品戦略」（Flash/Pro）を明確化した。</summary>
   </entry>
   <entry>
     <title>Cursor が iOS アプリを公開 — Always-on クラウドエージェント + PC 上のエージェントリモート操作、音声入力対応、Composer 2.5 は7/5まで -75%</title>
@@ -126,6 +150,14 @@
     <published>2026-06-22T15:00:00Z</published>
     <updated>2026-06-22T15:00:00Z</updated>
     <summary>Sakana AI（東京）が6月22日、マルチエージェント・オーケストレーションを OpenAI 互換 API で提供する Sakana Fugu を公開。7B の Conductor モデルが GPT-5.5・Claude Opus・Gemini 3.1 Pro を動的に振り分け、LiveCodeBench で 93.2（Fable 5 の 89.8 を超え）を達成。ただし1リクエストあたりトークン消費が単一モデルの 4-6 倍になる構造で、表示価格（$5/$30 per 1M）は安く見えるが実コストは同等以上になる可能性あり。</summary>
+  </entry>
+  <entry>
+    <title>【分析】Five Eyes が「The AI Shift in Cyber Risk」を発表 — 米・英・豪・加・NZ 合同、23リスク・100+ ベストプラクティス、agentic AI は「既存フレームワークに統合」の指針</title>
+    <link rel="alternate" type="text/html" href="?a=five-eyes-agentic-ai-cyber-risk-guidance-2026"/>
+    <id>tag:ai-tool-news.jp,2026:five-eyes-agentic-ai-cyber-risk-guidance-2026</id>
+    <published>2026-06-22T15:00:00Z</published>
+    <updated>2026-06-22T15:00:00Z</updated>
+    <summary>米・英・豪・加・NZ の Five Eyes サイバーセキュリティ機関（CISA / NSA / NCSC-UK / ASD&apos;s ACSC / Canadian Cyber Centre / NCSC-NZ）が6月22日、「The AI Shift in Cyber Risk: Why Leaders Must Act Now」を合同で公表。23のリスクと 100以上のベストプラクティスを整理し、リスクを特権・設計/構成・行動・構造・サプライチェーンの5カテゴリに分類。中心メッセージは 「agentic AI は新しいセキュリティ規律を必要としない」——既存の Zero Trust・多層防御・最小特権原則をエージェント環境にも適用せよ、という慎重路線。SkillSpector（NVIDIA）や Anthropic WIF との実装的接続も整理する。</summary>
   </entry>
   <entry>
     <title>Noam Shazeer が Google → OpenAI 移籍 — Transformer 共著者が Architecture Research Lead 就任、Alphabet 株は 7% 下落</title>

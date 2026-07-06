@@ -6219,5 +6219,96 @@ export const ARTICLES_META = [
       "src": "articles/cover-cli-tools.svg",
       "alt": "Claude Fable 5 プロンプト設計 実用ガイド"
     }
+  },
+  {
+    "id": "openai-us-government-5-percent-stake-42b-offer-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "OpenAI が米国政府に**5%出資**を提示 — $42.6B 相当、Altman が Trump・Lutnick・Bessent と直接協議、Anthropic/Google/Meta にも同様の枠組み提案",
+    "excerpt": "Financial Times が7月2日に報じた内容によれば、**OpenAI が米国政府に同社の 5% 株式**（$852B 評価額で **約 $42.6B 相当**）を提示、Sam Altman が Trump 大統領・Lutnick 商務長官・Bessent 財務長官と直接協議した。Altman は「AI のアップサイドを国民と共有する最善策」と説明し、**Anthropic・Google・Meta にも同様の出資枠組み**を求めている。Trump は「beautiful thing」と表現、Intel の10% 取得（$8.9B）を前例に「AI 革命のパートナー」路線を進める姿勢。まだ「conceptual and early-stage」で議会承認も必要な可能性。",
+    "date": "2026-07-02",
+    "newsDate": "2026-07-02",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "米国政府",
+      "Trump",
+      "IPO",
+      "出資"
+    ],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI 米政府 5% 出資提示"
+    },
+    "pinned": true
+  },
+  {
+    "id": "meituan-longcat-2-1-6t-domestic-chips-mit-open-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Meituan が LongCat-2.0 を OSS 公開 — **1.6T MoE**・**50,000枚の国産チップ**で訓練、NVIDIA 不使用で SWE-bench Pro 59.5 で GPT-5.5 超え",
+    "excerpt": "中国 **Meituan（美団）**が6月30日、LongCat-2.0 を **MIT ライセンス**で OSS 公開。**1.6兆パラメータ**の Sparse MoE（アクティブ 33B-56B / トークン、平均 ~48B）、1M トークンのコンテキスト。特筆すべきは **50,000枚の中国国産 AI ASIC スーパーポッド**（NVIDIA GPU 不使用）で事前訓練から推論まで完結した点で、この規模で初の完全国産チップ訓練モデルとなる。**SWE-bench Pro で 59.5**（GPT-5.5 の 58.6 を超え、Opus 4.6 と同水準）を記録し、公開前は OpenRouter で「Owl Alpha」というコードネームで使用量トップに位置していた。",
+    "date": "2026-07-02",
+    "newsDate": "2026-06-30",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Meituan",
+      "LongCat",
+      "中国モデル",
+      "国産チップ",
+      "OSS",
+      "MoE"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "Meituan LongCat-2.0 公開"
+    }
+  },
+  {
+    "id": "five-eyes-agentic-ai-cyber-risk-guidance-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】Five Eyes が「The AI Shift in Cyber Risk」を発表 — 米・英・豪・加・NZ 合同、23リスク・100+ ベストプラクティス、agentic AI は「既存フレームワークに統合」の指針",
+    "excerpt": "米・英・豪・加・NZ の **Five Eyes サイバーセキュリティ機関**（CISA / NSA / NCSC-UK / ASD's ACSC / Canadian Cyber Centre / NCSC-NZ）が6月22日、「The AI Shift in Cyber Risk: Why Leaders Must Act Now」を合同で公表。**23のリスク**と **100以上のベストプラクティス**を整理し、リスクを**特権・設計/構成・行動・構造・サプライチェーン**の5カテゴリに分類。中心メッセージは **「agentic AI は新しいセキュリティ規律を必要としない」**——既存の Zero Trust・多層防御・最小特権原則をエージェント環境にも適用せよ、という慎重路線。SkillSpector（NVIDIA）や Anthropic WIF との実装的接続も整理する。",
+    "date": "2026-07-02",
+    "newsDate": "2026-06-22",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "Five Eyes",
+      "サイバーセキュリティ",
+      "agentic AI",
+      "CISA",
+      "NSA",
+      "規制"
+    ],
+    "coverImage": {
+      "src": "articles/cover-cli-tools.svg",
+      "alt": "Five Eyes Agentic AI ガイダンス"
+    }
+  },
+  {
+    "id": "google-gemini-3-1-flash-image-3-pro-image-release-2026",
+    "type": "news",
+    "category": "media",
+    "title": "Google が **Gemini 3.1 Flash Image** と **Gemini 3 Pro Image** を公開 — Nano Banana 2 系の画像生成モデル、Flash は低レイテンシ・低コスト、Pro は高忠実度",
+    "excerpt": "Google が6月30日、**画像生成モデル2種**を新規公開。**Gemini 3.1 Flash Image**（旧 Nano Banana 系の後継、低レイテンシ・低コスト特化）と、**Gemini 3 Pro Image**（高忠実度・複雑プロンプト対応）の2ラインを同時投入。**Gemini API・Google AI Studio・Vertex AI** で即日利用可能。OpenAI Sora（動画）・Midjourney・Flux 2・Nano Banana 2 と競合する構図で、Google が「**画像生成でも2階層製品戦略**」（Flash/Pro）を明確化した。",
+    "date": "2026-07-02",
+    "newsDate": "2026-06-30",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "画像生成",
+      "Nano Banana",
+      "Vertex AI"
+    ],
+    "coverImage": {
+      "src": "logos/gemini.svg",
+      "alt": "Google Gemini Image モデル"
+    }
   }
 ];
