@@ -6126,8 +6126,7 @@ export const ARTICLES_META = [
     "coverImage": {
       "src": "logos/cursor.svg",
       "alt": "Cursor iOS アプリ公開"
-    },
-    "pinned": true
+    }
   },
   {
     "id": "openclaw-ios-android-native-app-2026",
@@ -6309,6 +6308,75 @@ export const ARTICLES_META = [
     "coverImage": {
       "src": "logos/gemini.svg",
       "alt": "Google Gemini Image モデル"
+    }
+  },
+  {
+    "id": "anthropic-california-newsom-claude-50-off-state-agencies-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "Anthropic × California 州政府が first-of-its-kind 協定 — Newsom 発表、全州機関に Claude を **50% 割引**、市郡等の地方自治体も対象、DMV/Medicaid/サイバー防御で実運用開始",
+    "excerpt": "California 州の Gavin Newsom 知事が6月29日、Anthropic と **first-of-its-kind の州政府協定**を発表。**全州機関に Claude を 50% 割引**で提供し、市・郡等の地方自治体も同一割引の対象。無料の労働力訓練と Anthropic 開発者の技術支援も含む。実運用は既に開始しており、**CDT + CalOES がサイバー防御**（Claude Security + Claude Code）、DMV が顧客対応、**Dept of Healthcare Services（全米最大の Medicaid 機関）が内部ワークフロー**で導入済み。CA Dept of Technology の **SITeS ポータル**経由で提供、生成 AI 導入における州政府スケールでの新しい先例に。",
+    "date": "2026-07-07",
+    "newsDate": "2026-06-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "California",
+      "Newsom",
+      "州政府",
+      "Claude Code",
+      "Medicaid"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic California 州協定"
+    },
+    "pinned": true
+  },
+  {
+    "id": "white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "White House がフロンティア AI 自主基準を OpenAI・Anthropic・Google と最終協議 — Executive Order 14409 が基盤、30日事前公開期間・機密ベンチマーク・自発参加が骨子",
+    "excerpt": "White House が7月3日時点で **OpenAI・Anthropic・Google の主要3社**とフロンティア AI モデルの **自主リリース基準** を最終協議中。翌週の発表が視野に。基盤となる **Executive Order 14409**（6月2日 Trump 大統領署名）は既に機密ベンチマーク・30日の事前公開期間・自発参加を骨子として運用中。Claude Fable 5 の輸出規制解除と GPT-5.6 の一般公開遅延（約20組織限定）は、この枠組みが既に「実運用」されている証左。フレームワークは**ベンチマーク・公開タイムライン・国内外アクセスルール**を規定する見込み。",
+    "date": "2026-07-07",
+    "newsDate": "2026-07-03",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "White House",
+      "米国政府",
+      "フロンティアAI",
+      "規制",
+      "Executive Order"
+    ],
+    "coverImage": {
+      "src": "articles/cover-cli-tools.svg",
+      "alt": "White House フロンティア AI 自主基準"
+    }
+  },
+  {
+    "id": "anthropic-claude-chrome-extension-9m-installs-beta-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic Claude Chrome 拡張が **9M インストール** 到達 — 全有料プラン向けベータ継続、Claude Code 統合・ワークフロー記録・複数タブ横断のブラウザ自動化",
+    "excerpt": "Anthropic の **Claude for Chrome** 拡張が **900万インストール** を突破（Chrome Web Store 数値、2026年6月時点）。Pro/Max/Team/Enterprise の全有料プランでベータ利用可能。ブラウザ上でクリック・フォーム記入・スケジュール実行・複数タブ横断ワークフローを Claude が自律的に実行。最近の主要アップデートは **Claude Code 統合、ワークフロー記録、スケジュールタスク、Planning モード**。7月1日には拡張機能側のアップデートも配信された。**OpenAI Operator や Perplexity Comet と競合**しつつ、日常のブラウザ作業を委任する「エージェント常駐」路線を強化。",
+    "date": "2026-07-07",
+    "newsDate": "2026-07-01",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Chrome",
+      "ブラウザ",
+      "自動化",
+      "エージェント"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Claude Chrome 拡張 9M ダウンロード"
     }
   }
 ];

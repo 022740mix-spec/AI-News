@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-07-06T15:00:00Z</updated>
+  <updated>2026-07-07T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>White House がフロンティア AI 自主基準を OpenAI・Anthropic・Google と最終協議 — Executive Order 14409 が基盤、30日事前公開期間・機密ベンチマーク・自発参加が骨子</title>
+    <link rel="alternate" type="text/html" href="?a=white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026"/>
+    <id>tag:ai-tool-news.jp,2026:white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026</id>
+    <published>2026-07-03T15:00:00Z</published>
+    <updated>2026-07-03T15:00:00Z</updated>
+    <summary>White House が7月3日時点で OpenAI・Anthropic・Google の主要3社とフロンティア AI モデルの 自主リリース基準 を最終協議中。翌週の発表が視野に。基盤となる Executive Order 14409（6月2日 Trump 大統領署名）は既に機密ベンチマーク・30日の事前公開期間・自発参加を骨子として運用中。Claude Fable 5 の輸出規制解除と GPT-5.6 の一般公開遅延（約20組織限定）は、この枠組みが既に「実運用」されている証左。フレームワークはベンチマーク・公開タイムライン・国内外アクセスルールを規定する見込み。</summary>
+  </entry>
   <entry>
     <title>OpenAI が米国政府に**5%出資**を提示 — $42.6B 相当、Altman が Trump・Lutnick・Bessent と直接協議、Anthropic/Google/Meta にも同様の枠組み提案</title>
     <link rel="alternate" type="text/html" href="?a=openai-us-government-5-percent-stake-42b-offer-2026"/>
@@ -30,6 +38,14 @@
     <published>2026-07-01T15:00:00Z</published>
     <updated>2026-07-01T15:00:00Z</updated>
     <summary>Claude Fable 5 が復活したいま、実務で使いこなすには Anthropic 公式の推奨プロンプト設計を理解する必要がある。本ガイドは公式ドキュメント「Prompting Claude Fable 5」を全訳・要約し、Opus 4.8 との7つの違い（長時間自律実行・初回正確性・視覚理解・企業ワークフロー・コードレビュー・曖昧さ耐性・並列サブエージェント）、8つのプロンプト推奨パターン（Effort レベル選択・強化された指示追従・進捗根拠付け・境界明示・サブエージェント委譲・メモリシステム・早期停止対策・コンテキスト予算不安の解消）、送信専用ツール `send_to_user` の JSON 実装例、既存スキルの移行チェックリスト4項目まで、実務者が即使える形で整理した。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic Claude Chrome 拡張が **9M インストール** 到達 — 全有料プラン向けベータ継続、Claude Code 統合・ワークフロー記録・複数タブ横断のブラウザ自動化</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-chrome-extension-9m-installs-beta-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-chrome-extension-9m-installs-beta-2026</id>
+    <published>2026-07-01T15:00:00Z</published>
+    <updated>2026-07-01T15:00:00Z</updated>
+    <summary>Anthropic の Claude for Chrome 拡張が 900万インストール を突破（Chrome Web Store 数値、2026年6月時点）。Pro/Max/Team/Enterprise の全有料プランでベータ利用可能。ブラウザ上でクリック・フォーム記入・スケジュール実行・複数タブ横断ワークフローを Claude が自律的に実行。最近の主要アップデートは Claude Code 統合、ワークフロー記録、スケジュールタスク、Planning モード。7月1日には拡張機能側のアップデートも配信された。OpenAI Operator や Perplexity Comet と競合しつつ、日常のブラウザ作業を委任する「エージェント常駐」路線を強化。</summary>
   </entry>
   <entry>
     <title>Anthropic が Claude Sonnet 5 を公開 — SWE-bench Pro 63.2% で Opus 4.8 に迫る、8月末まで $2/$10 の攻めた導入価格でエージェント本格投入</title>
@@ -78,6 +94,14 @@
     <published>2026-06-29T15:00:00Z</published>
     <updated>2026-06-29T15:00:00Z</updated>
     <summary>OpenClaw Foundation が6月29日、パーソナル AI アシスタント OpenClaw の iOS と Android 向けネイティブアプリを公開した。iOS 18+ が要件、無料アプリ。ユーザーは iPhone のカメラ・画面・位置・写真・連絡先・カレンダー・リマインダーへエージェントにアクセス権を付与できる。Apple がこれまで拒み続けたエージェント型 AI アプリの初例で、自己ホスト設計（データが自社サーバーを経由しない）が審査通過の決め手となった。開発者の Peter Steinberger は今年 OpenAI に参加、コードは Foundation に移管され OpenAI が資金提供・所有権なしという形。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic × California 州政府が first-of-its-kind 協定 — Newsom 発表、全州機関に Claude を **50% 割引**、市郡等の地方自治体も対象、DMV/Medicaid/サイバー防御で実運用開始</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-california-newsom-claude-50-off-state-agencies-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-california-newsom-claude-50-off-state-agencies-2026</id>
+    <published>2026-06-29T15:00:00Z</published>
+    <updated>2026-06-29T15:00:00Z</updated>
+    <summary>California 州の Gavin Newsom 知事が6月29日、Anthropic と first-of-its-kind の州政府協定を発表。全州機関に Claude を 50% 割引で提供し、市・郡等の地方自治体も同一割引の対象。無料の労働力訓練と Anthropic 開発者の技術支援も含む。実運用は既に開始しており、CDT + CalOES がサイバー防御（Claude Security + Claude Code）、DMV が顧客対応、Dept of Healthcare Services（全米最大の Medicaid 機関）が内部ワークフローで導入済み。CA Dept of Technology の SITeS ポータル経由で提供、生成 AI 導入における州政府スケールでの新しい先例に。</summary>
   </entry>
   <entry>
     <title>John Jumper（2024年ノーベル化学賞）が Google DeepMind → Anthropic 移籍 — Shazeer に続く Google AI 人材流出の第2波</title>
