@@ -8071,16 +8071,186 @@ const ARTICLES_BODY = {
   },
   "claude-sonnet-4-6-review": {
     "body": [
-      "**Claude Sonnet 4.6** は Anthropic のミッドレンジモデルで、速度・品質・コストのバランスに優れる。1M トークンのコンテキストウィンドウは Opus と同等ながら、入力 $3 / 出力 $15（1M トークンあたり）と Opus の 1/5 のコストで利用可能。Cursor や Windsurf のデフォルトモデルとして最も広く利用されており、日常のコーディング作業における実用性は折り紙つき。",
-      "**得意領域**: 定型的なバグ修正、テスト生成、ドキュメント作成、中規模のリファクタリングなど「80% のコーディングタスク」をカバーする。レスポンス速度が Opus より速いため、インタラクティブな対話型の開発ワークフローに適している。Claude Code では Sonnet をデフォルトにしつつ、難しい判断が必要な場面だけ Opus に切り替える運用が一般的。",
-      "**Opus との使い分け**: 複雑なアーキテクチャ判断、大規模なマルチファイル変更、高度な推論が必要な場面では Opus が優位。一方、コード補完・小〜中規模の修正・チャットベースの質問応答では Sonnet で十分であり、コスト効率は大幅に良い。バッチ API（50% 割引）と組み合わせれば、大量処理のコストをさらに抑えられる。",
-      "**注意点**: 拡張思考（Extended Thinking）モードは Opus ほど深い推論を行わないため、非常に複雑な設計判断では質の差が出る場合がある。ただし大半の実務タスクではその差を体感しにくく、コスト対効果では最も推奨しやすいモデル。"
+      "**Claude Sonnet 4.6** は Anthropic の**前世代 Sonnet** モデルで、後継の Claude Sonnet 5 が2026年6月30日にリリースされた（[Sonnet 5 リリース](?a=anthropic-claude-sonnet-5-agentic-cheap-2026)、[Sonnet 5 レビュー](?a=claude-sonnet-5-review)）。新規採用では Sonnet 5 を第一候補にすべき状況となっている。ただし互換性維持や特定のユースケースでは Sonnet 4.6 も現役価値がある。",
+      "**性能ベンチマーク（後継との比較）**: SWE-bench Pro で Sonnet 4.6 は **58.1%**、Sonnet 5 は **63.2%**（+5.1pt）。GDPval-AA v2 では Sonnet 5 が Opus 4.8（1615）を上回る 1618 を記録するなど、後継 Sonnet 5 は Opus 4.8 に肉薄する性能で、Sonnet 4.6 との差は明確。",
+      "**得意領域（当時）**: 1M コンテキスト、日常のコーディング（定型的なバグ修正、テスト生成、ドキュメント作成、中規模のリファクタリング）を高速に処理できるバランス型モデル。Cursor や Windsurf のデフォルトモデルとして広く利用され、レスポンス速度が Opus より速く、インタラクティブな対話型開発に適していた。",
+      "**継続利用する場合の判断基準**: (1) 既存パイプラインで Sonnet 4.6 を採用しており、検証コスト無しで継続したいケース、(2) Sonnet 5 の新トークナイザ（同じテキストで 1.0-1.35倍多くカウント）による実コスト予測の不透明さを避けたい場合、(3) Claude Code や Cursor 等の周辺ツールが Sonnet 5 完全対応前の過渡期に安定運用したい場合。",
+      "**料金**: 入力 $3 / 出力 $15（1M トークンあたり）。**Sonnet 5 の 8/31 までの導入価格 $2/$10** と比較すると割高。9/1 以降は Sonnet 5 の通常料金 $3/$15 で並ぶが、それでも性能差から Sonnet 5 の選択が推奨される。",
+      "**エンタープライズでの使い分け**: バッチ API（50% 割引）と組み合わせれば、大量処理では依然として競争力がある。ただし新規プロジェクトでは Sonnet 5 の**エージェント能力**（Anthropic 曰く「これまでで最もエージェント的な Sonnet」）が優位で、複雑なマルチステップワークフロー・ブラウザ自動化・Claude Code 統合の面で差が拡大している。",
+      "【編集履歴】",
+      "・【追記 2026-07-07】後継 Claude Sonnet 5（6/30 GA）リリースに伴い、本記事を「前世代 Sonnet レビュー」として位置付けを明確化。タイトル・excerpt・本文を更新し、Sonnet 5 との比較（SWE-bench Pro、価格）を追加。新規採用では Sonnet 5 を推奨する旨を明記。rating 4.0→3.5、lastReviewed 更新。"
     ],
     "primarySources": [
       {
         "title": "Claude Models Overview",
         "site": "Anthropic",
         "url": "https://docs.anthropic.com/en/docs/about-claude/models"
+      },
+      {
+        "title": "Introducing Claude Sonnet 5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-sonnet-5"
+      }
+    ]
+  },
+  "claude-sonnet-5-review": {
+    "body": [
+      "**Claude Sonnet 5** は Anthropic が2026年6月30日に GA した新ミッドレンジ・フラッグシップモデル。「これまでで最もエージェント的な Sonnet」を Anthropic が公表しており、**プランニング・ブラウザやターミナル使用・自律実行**を Sonnet サイズで実現する。「数ヶ月前まで大型で高価なモデルが必要だった水準の自律性を Sonnet サイズで」というのが位置付け。",
+      "**性能ベンチマーク**: SWE-bench Pro **63.2%**（Sonnet 4.6: 58.1% → +5.1pt、Opus 4.8: 69.2%）。**GDPval-AA v2（知識労働）では 1618 で Opus 4.8（1615）を上回り**、Humanity's Last Exam（ツール利用）は 57.4%（Opus 4.8: 57.9%）でほぼ互角、プロンプトインジェクション安全性でも Opus 4.8 と同水準。「Sonnet で Opus 級」がほぼ現実に。",
+      "**料金**: **8月31日までの導入価格が $2/$10 per 1M tokens**、以降は **$3/$15**（Sonnet 4.6 と同じ）。ただし新トークナイザは同じテキストで **1.0〜1.35 倍**多くトークンを数える傾向があり、単純換算では実コストの読みを誤る可能性がある。それでも実運用では Opus 4.8（$5/$25）や Claude Fable 5（$10/$50）に対して大幅な優位。",
+      "**Adaptive Thinking と 1M コンテキスト**: 1M トークンのコンテキストは Sonnet 4.6・Opus 系と同水準。**Adaptive Thinking が常時オン**で、Claude Code や API では **エフォートのデフォルトが high** に設定されている。最大出力は 128K、batch-API のベータヘッダで最大 300K トークン出力まで拡張可能。訓練データのカットオフは **2026年1月**まで延長。",
+      "**利用可能プラットフォーム**: **claude.ai の Free / Pro のデフォルト**モデルとして即日切替。Max・Team・Enterprise でも利用可能。API に加え、[Claude Code](?a=claude-code)、[Cursor](?a=cursor-editor)、VS Code、[GitHub Copilot CLI](?a=github-copilot-cli) でも即日採用。マルチプラットフォーム展開の速度が特筆される。",
+      "**強み**:",
+      "**(1) エージェント能力**: プランニング・ツール呼び出し・結果読み取り・継続実行を人間の介入なしで長時間維持。",
+      "**(2) コスパ**: 導入価格 $2/$10 は Opus 4.8 の 2/5 コスト。Fable 5 の 1/5 で 70% 以上の性能を出せる。",
+      "**(3) マルチプラットフォーム統合**: Claude Code・Cursor・VS Code・GitHub Copilot が即日対応、実装リスクが低い。",
+      "**(4) Adaptive Thinking 標準**: 難易度に応じた推論深さの自動調整。",
+      "**注意点**:",
+      "**(1) トークナイザ変更**: 同じテキストで 1.0-1.35 倍多くトークンを数える。既存の**予算計画・請求予測が狂う可能性**。",
+      "**(2) Fable 5 との差**: SWE-bench Pro で 63.2% vs Fable 5 の 95%（Verified）。**最難関のコーディング・研究タスク**では依然として Fable 5 or GPT-5.6 Sol が優位。",
+      "**(3) Anthropic 依存**: OpenAI GPT-5.6 Terra（$2.50/$15）と直接競合、モデル選択がインフラ・ベンダー選択と直結する時代（[SpaceX-Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026) 参照）。",
+      "**AI News の推奨**: **新規プロジェクトの第一候補**。既存 Sonnet 4.6 パイプラインは Sonnet 5 への移行を検証すべき。Opus 4.8 の一部ユースケースは Sonnet 5 で置換可能で、コスト削減効果が大きい。ただし Fable 5 級の性能が必要な場合や、Sonnet 5 のセーフガード（[Fable 5 プロンプト設計ガイド](?a=feature-prompting-claude-fable-5-practical-guide-2026) でも触れた reasoning_extraction 拒絶等）が問題になる用途は個別評価が必要。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Claude Sonnet 5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-sonnet-5"
+      },
+      {
+        "title": "System Card: Claude Sonnet 5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/claude-sonnet-5-system-card"
+      },
+      {
+        "title": "Anthropic launches Claude Sonnet 5 as a cheaper way to run agents",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/"
+      }
+    ]
+  },
+  "claude-fable-5-mythos-5-review": {
+    "body": [
+      "**Claude Fable 5 と Mythos 5** は Anthropic が2026年6月9日にリリースした Mythos クラスの一般公開モデル。Fable 5 は「Anthropic 史上最強の一般公開モデル」を公称、**SWE-bench Verified で 95%** を達成し Opus 4.8（88.6%）を上回った。Mythos 5 は Project Glasswing 経由の限定公開のまま。ただし、6/12〜6/30 の**19日間の輸出規制**を経て、7/1 に**制限付きで復活**（[Fable 5 復活](?a=anthropic-claude-fable-5-return-safeguards-limits-2026)）した経緯を持つ。",
+      "**性能ベンチマーク**: Fable 5 は SWE-bench Verified 95%、Stripe の初期テストでは「本来チーム全体で2ヶ月以上かかるコードベースマイグレーションを1日で完了」と報告。公開ベンチマークの大半で SOTA、ソフトウェアエンジニアリング・ナレッジワーク・視覚・科学研究などで最上位。Mythos 5 は公開値なし。",
+      "**復活後の使用制限（重要）**:",
+      "**(1) 週次使用枠 50% まで**（Pro/Max/Team/一部 Enterprise、7/7 まで、以降は使用クレジット制）",
+      "**(2) 新 classifier が 99% ジェイルブレイクをブロック** → benign なコーディング/セキュリティ要求も過剰ブロックの懸念（PCWorld: ユーザー激怒）",
+      "**(3) AWS Bedrock / GCP Vertex AI / Azure Foundry は段階的復活**",
+      "**(4) 米政府の継続監督**（3点約束: セキュリティリスク検知、リリースプロトコル協力、悪意活動報告）",
+      "**セーフティ・クラシファイア注意**（詳細は [Fable 5 プロンプト設計ガイド](?a=feature-prompting-claude-fable-5-practical-guide-2026) 参照）:",
+      "**(a) オフェンシブサイバーセキュリティ**: エクスプロイト・マルウェア・攻撃ツール構築",
+      "**(b) 生物学・生命科学コンテンツ**: ラボ手順・分子機構等（Claude Science で緩和される可能性）",
+      "**(c) モデルのサマリ化された思考の抽出**",
+      "**料金**: $10/$50 per 1M tokens。前世代 Mythos Preview の半額以下だが、Sonnet 5（$2/$10 → $3/$15）や Opus 4.8（$5/$25）と比べると高価。**「最強を必要とする限定タスク用途」**にターゲットが絞られる料金設定。",
+      "**プロンプト設計の推奨**: [Fable 5 プロンプト設計ガイド](?a=feature-prompting-claude-fable-5-practical-guide-2026) で全訳した Anthropic 公式推奨に従うこと。長時間実行（数時間〜数日）が現実的になるため、クライアントタイムアウト・非同期実行・進捗根拠付け・拒否時の Opus 4.8 フォールバックを事前に組み込む必要がある。**旧来の Opus 4.8 向けプロンプトは Fable 5 では過度に規範的で性能を下げる**ため、リファクタが必要。",
+      "**強み**:",
+      "**(1) 世代最高の性能**: SWE-bench 95% は Sonnet 5・Opus 4.8・GPT-5.5 を上回る。",
+      "**(2) 長時間自律実行**: 数日〜週単位の目標指向タスクを維持できる。",
+      "**(3) 視覚理解の強化**: 密な技術図・スクリーンショット処理が高精度。",
+      "**注意点**:",
+      "**(1) 使用制限**: 週次50%・7/7 期限・段階的クラウド復活で計画が立てにくい。",
+      "**(2) 過剰ブロック**: セキュリティ研究・脆弱性検証・生命科学タスクが正当な用途でも拒否される。",
+      "**(3) 米政府監督**: 将来的な制限追加リスク（[White House 自主基準](?a=white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026) 参照）。",
+      "**(4) 料金**: Sonnet 5・Opus 4.8 との性能差に見合うかは用途次第。",
+      "**AI News の推奨**: **最難関コーディング・自律実行が必要な限定用途**では第一候補。ただし多くの日常ワークフローには **Sonnet 5**（[Sonnet 5 レビュー](?a=claude-sonnet-5-review)）が現実的な選択肢。Fable 5 導入時は**拒否時の Opus 4.8 フォールバック**を必ず設定すること。GPT-5.6 Sol（[GPT-5.6 レビュー](?a=gpt-5-6-review)）の一般公開後は再評価が必要。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Fable 5 and Claude Mythos 5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
+      },
+      {
+        "title": "Redeploying Claude Fable 5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/redeploying-fable-5"
+      },
+      {
+        "title": "Prompting Claude Fable 5",
+        "site": "Anthropic Docs",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5"
+      }
+    ]
+  },
+  "gpt-5-6-review": {
+    "body": [
+      "**GPT-5.6** は OpenAI が2026年6月25日に限定プレビュー公開した次世代フラッグシップの3バリアント体制モデル。**Sol / Terra / Luna** の階層構造で、用途別の使い分けを OpenAI 自身が標準化した意欲的な戦略（[GPT-5.6 プレビュー](?a=openai-gpt-5-6-sol-terra-luna-preview-2026)）。米国政府事前共有経由で**約20組織限定**、一般公開は7月中〜下旬の見込み。",
+      "**3バリアントの使い分け**:",
+      "**(1) Sol（$5/$30）**: 最難関タスク向けフラッグシップ。複雑コーディング・セキュリティ研究など。Ultra thinking モードでサブエージェント活用。",
+      "**(2) Terra（$2.50/$15）**: daily driver、大量業務向け。カスタマーサポート・社内ツール・文書解析。GPT-5.5 比で半額。",
+      "**(3) Luna（$1/$6）**: 軽量タスク向け（要約・ドラフト・定型自動化）。**フロンティアモデル最安級**。",
+      "**性能ベンチマーク**: **Sol Ultra が TerminalBench 2.1 で 91.91%** の record-high を記録、Sol max は 88.76%。これは Claude Mythos 5（88.0%）と Fable 5（84.3%）を上回り、コーディング領域でフロンティアの最上位に立った。旧世代 GPT-5.5 の 83.4% から大幅アップ。",
+      "**1.5M コンテキスト**: GPT-5.6 シリーズは **1.5M トークンのコンテキストウィンドウ**を備える見込み（GPT-5.5 の 1M、Codex の 400K を超える業界最大級）。訓練データのカットオフは **2026年5月まで**延長。4月の「Where the Goblins Came From」事後分析で記録されたアラインメント失敗に対応する**再設計された報酬監査パイプライン**も搭載。",
+      "**Ultra モードの仕組み**: 高得点の決定打となった **ultra thinking モード**は、**サブエージェントを動的に活用**して複雑な計画・反復・ツール協調を高速化する。Anthropic Opus 4.8 の Dynamic Workflows（[Opus 4.8](?a=anthropic-claude-opus-4-8-dynamic-workflows-2026)）や [Sakana Fugu レビュー](?a=sakana-fugu-review) と並ぶ「マルチエージェント・オーケストレーション層」を、モデル内蔵で実現する点が特徴。",
+      "**強み**:",
+      "**(1) TerminalBench SOTA**: Sol Ultra が Fable 5・Mythos 5 を上回る初の GPT。",
+      "**(2) 3階層戦略**: 用途別使い分けが明確、コスト最適化しやすい。",
+      "**(3) 1.5M ctx**: 業界最大級のコンテキスト、大規模コードベース・長文書に強い。",
+      "**(4) Luna の破格**: $1/$6 は Google Gemini 3.5 Flash（$0.075/$0.30）以外でフロンティア最安。",
+      "**(5) 内蔵オーケストレーション**: 外付け Sakana Fugu 等のトークン消費 4-6倍問題を回避。",
+      "**注意点**:",
+      "**(1) 限定プレビュー**: 約20組織のみ。一般公開までタイムラグ。",
+      "**(2) 米政府事前共有**: [White House 自主基準](?a=white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026) の枠組みで、初期プレビュー→GA まで数週間のギャップが恒常化。",
+      "**(3) MODEL_COMPARISON 変動**: Sol Ultra > Sol > Mythos 5 > Sol Terra > Fable 5 > GPT-5.5 の順位がコーディング領域で確定、Anthropic 側の対応が注目される。",
+      "**(4) OpenAI 依存**: [OpenAI が政府に5%出資提示](?a=openai-us-government-5-percent-stake-42b-offer-2026) や政府監督との関連で、将来的なアクセス条件変更のリスクがある。",
+      "**AI News の推奨**: **限定プレビューアクセスがある組織**は Sol Ultra を最難関タスクに、Terra を日常運用に、Luna を大量バッチにと3階層で最適化する。**一般公開まで**は Sonnet 5・Fable 5・Opus 4.8 で代替可能で、7月中〜下旬の GA を待つのが現実的。GA 後は **[Sonnet 5](?a=claude-sonnet-5-review) との直接比較レビュー**を予定。"
+    ],
+    "primarySources": [
+      {
+        "title": "Previewing GPT-5.6 Sol: a next-generation model",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/previewing-gpt-5-6-sol/"
+      },
+      {
+        "title": "OpenAI unveils GPT-5.6 Sol, Terra and Luna models",
+        "site": "VentureBeat",
+        "url": "https://venturebeat.com/technology/openai-unveils-gpt-5-6-sol-terra-and-luna-models-but-only-accessible-to-limited-preview-partners-for-now-per-us-gov"
+      },
+      {
+        "title": "Summary of METR's predeployment evaluation of GPT-5.6 Sol",
+        "site": "METR",
+        "url": "https://metr.org/blog/2026-06-26-gpt-5-6-sol/"
+      }
+    ]
+  },
+  "sakana-fugu-review": {
+    "body": [
+      "**Sakana Fugu** は東京の Sakana AI が2026年6月22日にリリースしたマルチエージェント・オーケストレーションシステム。**OpenAI 互換の単一 API エンドポイント**として提供され、内部で 7B の Conductor モデルが GPT-5.5・Claude Opus・Gemini 3.1 Pro を動的にルーティングする。Google Brain 出身の David Ha・Llion Jones（Transformer 共著者）共同創業の同社が、フロンティアモデル「使い分け」を1モデル API として抽象化した実装（[Sakana Fugu 詳細](?a=sakana-ai-fugu-multi-agent-orchestration-2026)）。",
+      "**Conductor アーキテクチャ**: 中核は **7B パラメータの Conductor モデル**で、ICLR 2026 で発表された2本の論文（**TRINITY** と **The Conductor**）を基礎にしている。Conductor は「どのモデルを起動するか」「エージェント間でどう通信するか」「結果をどう合成するか」を学習し、タスクごとに最適なモデル組合せを動的に決める。**ベンダーロックインを構造的に回避**できる設計。",
+      "**ベンチマーク勝敗**: 領域別の強弱が明確。",
+      "**勝利領域**: **LiveCodeBench で 93.2**（Fable 5 の 89.8 を上回る）、CharXiv Reasoning、Humanity's Last Exam、4つのコーディングベンチマークで首位、トレーディングベンチマークで **+19.43% mean portfolio return**。",
+      "**敗北領域**: **SWE-Bench Pro は 73.7**（Fable 5 の 80.0 に敗北）、MRCRv2 長文脈想起は 93.6 で GPT-5.5（94.8）に届かず、CTI-REALM サイバーセキュリティは Opus 4.8（69.6）に劣る。",
+      "**料金**: Fugu Ultra は **$5/$30 per 1M tokens**（入力/出力）、キャッシュ入力は $0.50/1M。272K を超えるロングコンテキストは $10/$45/$1.00 に上昇。サブスクリプションは $20/$100/$200 の3階層。",
+      "**「トークン消費 4-6倍」問題（重要）**: 単純な料金表は安く見えるが、**実態はそう単純ではない**。マルチエージェント・オーケストレーションの構造上、**1リクエストで単一モデル直接呼び出しの 4-6 倍のトークン**を消費する。Sakana の API レスポンスでは `token_details` フィールドで「ユーザー可視のモデル出力」と「オーケストレーション・トークン」が分離して返るが、**両者とも同じレートで請求**される。結果として実コストはケースによって Fable 5・Opus 4.8 単体使用と**同等以上**になる可能性が高い。",
+      "**3層コスト構造**: Sakana は内部で Anthropic・OpenAI・Google の API に**フルレートで料金を支払い**、その上にオーケストレーション・マージンを乗せている。つまり Fugu のコストは「**裏側の単一モデル API コスト + Sakana マージン + 多重呼び出しオーバーヘッド**」の3層構造。ベンダーロックイン回避の対価として「メタ・ベンダーへのロックイン」が発生する点は留意が必要。",
+      "**強み**:",
+      "**(1) ベンダー分散**: 単一の Anthropic・OpenAI 障害から自動回避。",
+      "**(2) 領域別最適化**: タスクごとに最適モデルを自動選択、開発者が選ぶ手間を削減。",
+      "**(3) 日本発**: 日本語対応・国内サポートが期待できる。",
+      "**(4) OSS 互換 API**: OpenAI 互換のため既存ツールの改修が最小限。",
+      "**注意点**:",
+      "**(1) トークン消費 4-6 倍**: 実コストが料金表通りではない。",
+      "**(2) 領域別勝敗**: SWE-Bench Pro・MRCRv2・CTI-REALM ではフロンティア単体に敗北、全用途万能ではない。",
+      "**(3) メタ・ベンダー依存**: 内部モデルの Anthropic・OpenAI・Google がアクセスを制限した場合の影響。",
+      "**(4) [GPT-5.6 レビュー](?a=gpt-5-6-review) との競合**: GPT-5.6 が内蔵 ultra thinking モードでオーケストレーションを提供する時代、外付けサービスの意義が問われる。",
+      "**AI News の推奨**: **明示的にベンダー分散が必要な組織**（例: 米国以外の政府・大手企業）や、**モデル選択の自動化を求めるスタートアップ**には有力な選択肢。ただし**実運用のコスト予測**を事前に検証すべきで、単一モデル（[Sonnet 5](?a=claude-sonnet-5-review) 等）との比較 A/B テストが必須。日本のユーザーには [Sakana Fugu 詳細記事](?a=sakana-ai-fugu-multi-agent-orchestration-2026) も参照推奨。"
+    ],
+    "primarySources": [
+      {
+        "title": "Sakana Fugu — Multi-agent System as A Model",
+        "site": "Sakana AI",
+        "url": "https://sakana.ai/fugu/"
+      },
+      {
+        "title": "Sakana AI Launches Sakana Fugu",
+        "site": "MarkTechPost",
+        "url": "https://www.marktechpost.com/2026/06/22/sakana-ai-launches-sakana-fugu-an-orchestration-model-that-routes-tasks-across-a-swappable-pool-of-frontier-llms/"
+      },
+      {
+        "title": "Japan's 'Sakana Fugu' multiagent AI scores well against Fable 5, GPT 5.5",
+        "site": "Nikkei Asia",
+        "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/japan-s-sakana-fugu-multiagent-ai-scores-well-against-fable-5-gpt-5.5"
       }
     ]
   },

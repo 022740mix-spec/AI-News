@@ -3960,8 +3960,8 @@ export const ARTICLES_META = [
     "id": "claude-sonnet-4-6-review",
     "type": "review",
     "category": "model",
-    "title": "Claude Sonnet 4.6 レビュー — Anthropic 中核、速度と品質のバランス型",
-    "excerpt": "Anthropic の中核モデル。1Mコンテキスト、Opus の約 1/5 のコストで日常のコーディングに最適。Cursor・Windsurf のデフォルトモデルとしても広く採用。$3/$15 per 1M tokens。",
+    "title": "Claude Sonnet 4.6 レビュー — Anthropic 前世代 Sonnet（後継 Sonnet 5 リリース済）、1Mコンテキスト・バランス型",
+    "excerpt": "Anthropic の前世代 Sonnet モデル（後継 **Claude Sonnet 5** が2026年6月30日にリリース済み）。1Mコンテキスト、日常のコーディングに最適だった主力。**新規採用では Sonnet 5 を推奨**、Sonnet 5 は SWE-bench Pro 63.2%（4.6 の 58.1%）で明確に上回り、料金は **8月末まで $2/$10** の導入価格。Sonnet 4.6 は既存パイプラインの互換性維持や、Sonnet 5 のトークナイザ変更（1-1.35倍）で実コストが読みにくい環境向け。$3/$15 per 1M tokens。",
     "date": "2026-03-29",
     "newsDate": "2026-03-15",
     "author": "AI News 編集部",
@@ -3969,19 +3969,133 @@ export const ARTICLES_META = [
     "tags": [
       "モデル",
       "Anthropic",
+      "LLM"
+    ],
+    "ratings": {
+      "AI品質": 3,
+      "使いやすさ": 4,
+      "コスパ": 4,
+      "拡張性": 4,
+      "企業向け": 3
+    },
+    "rating": 3.5,
+    "reviewCategory": "model",
+    "lastReviewed": "2026-07-07"
+  },
+  {
+    "id": "claude-sonnet-5-review",
+    "type": "review",
+    "category": "model",
+    "title": "Claude Sonnet 5 レビュー — Anthropic 新ミッドレンジ・フラッグシップ、Opus 4.8 に迫る性能を $2/$10 で、エージェント運用の主力",
+    "excerpt": "Anthropic が2026年6月30日に GA した新ミッドレンジ・フラッグシップ。**SWE-bench Pro 63.2%**（Sonnet 4.6: 58.1% / Opus 4.8: 69.2%）、**GDPval-AA v2 で Opus 4.8 超え**（1618 vs 1615）、HLE with tools でも 57.4% とほぼ互角。導入価格 **$2/$10（〜8/31）**、以降 **$3/$15**。1Mコンテキスト、Adaptive Thinking 常時オン。claude.ai Free/Pro のデフォルト、Claude Code・Cursor・VS Code・GitHub Copilot で即日利用可能。**「これまでで最もエージェント的な Sonnet」** と Anthropic が公表する通り、エージェント・コーディング・ブラウザ自動化での実力が特筆される。ただし新トークナイザは同じテキストで 1-1.35 倍多くトークンを数える傾向あり、実コスト予測に注意。",
+    "date": "2026-07-07",
+    "newsDate": "2026-06-30",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "モデル",
+      "Anthropic",
+      "Sonnet 5",
       "LLM",
+      "エージェント",
       "おすすめ"
+    ],
+    "ratings": {
+      "AI品質": 5,
+      "使いやすさ": 5,
+      "コスパ": 5,
+      "拡張性": 5,
+      "企業向け": 5
+    },
+    "rating": 5,
+    "reviewCategory": "model",
+    "lastReviewed": "2026-07-07"
+  },
+  {
+    "id": "claude-fable-5-mythos-5-review",
+    "type": "review",
+    "category": "model",
+    "title": "Claude Fable 5 / Mythos 5 レビュー — Anthropic フロンティア、SWE-bench 95% で史上最強、ただし復活後は週次50%上限＆過剰ブロック懸念",
+    "excerpt": "Anthropic が2026年6月9日に一般公開した Mythos クラスの**史上最強一般公開モデル**。**SWE-bench Verified 95%** で Opus 4.8（88.6%）を上回る。ただし6/12 に輸出規制で停止、19日後の 7/1 に復活したが**週次使用枠 50% 上限**（Pro/Max/Team/一部 Enterprise、7/7 まで）、以降は使用クレジット制。新 classifier が 99% ジェイルブレイクをブロックするが benign なコーディング/セキュリティ要求も過剰ブロックの懸念あり。Mythos 5 は Project Glasswing 経由の限定公開のまま。**$10/$50** per 1M tokens。「制限付きの最強」という現状評価が難しいモデル。",
+    "date": "2026-07-07",
+    "newsDate": "2026-06-09",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "モデル",
+      "Anthropic",
+      "Fable 5",
+      "Mythos 5",
+      "LLM"
+    ],
+    "ratings": {
+      "AI品質": 5,
+      "使いやすさ": 3,
+      "コスパ": 3,
+      "拡張性": 4,
+      "企業向け": 3
+    },
+    "rating": 3.5,
+    "reviewCategory": "model",
+    "lastReviewed": "2026-07-07"
+  },
+  {
+    "id": "gpt-5-6-review",
+    "type": "review",
+    "category": "model",
+    "title": "GPT-5.6 Sol / Terra / Luna レビュー — OpenAI 新フラッグシップ3階層、Sol Ultra が TerminalBench 2.1 で 91.91% の SOTA、Luna は $1/$6 の最安",
+    "excerpt": "OpenAI が2026年6月25日に限定プレビュー公開した**次世代フラッグシップ 3 バリアント**。**Sol**（$5/$30、最難関タスク・複雑コーディング・セキュリティ研究）、Terra（$2.50/$15、大量業務向け daily driver、GPT-5.5 比半額）、**Luna**（$1/$6、要約・ドラフト・定型自動化、フロンティアモデル最安級）の3階層。**Sol Ultra は TerminalBench 2.1 で 91.91%** を記録、Mythos 5（88.0%）と Fable 5（84.3%）を上回り SOTA 更新。ultra thinking モードのサブエージェント活用が決定打。米国政府事前共有経由で**約20組織限定**プレビュー、一般公開は7月中〜下旬の見込み。1.5M コンテキスト・訓練カットオフ 2026年5月。",
+    "date": "2026-07-07",
+    "newsDate": "2026-06-25",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "モデル",
+      "OpenAI",
+      "GPT-5.6",
+      "Sol",
+      "TerminalBench",
+      "LLM"
+    ],
+    "ratings": {
+      "AI品質": 5,
+      "使いやすさ": 4,
+      "コスパ": 5,
+      "拡張性": 5,
+      "企業向け": 4
+    },
+    "rating": 4.5,
+    "reviewCategory": "model",
+    "lastReviewed": "2026-07-07"
+  },
+  {
+    "id": "sakana-fugu-review",
+    "type": "review",
+    "category": "model",
+    "title": "Sakana Fugu レビュー — 東京発マルチエージェント・オーケストレーション、LiveCodeBench で Fable 5 越えだがトークン消費 4-6倍で実コストに注意",
+    "excerpt": "東京の Sakana AI が2026年6月22日にリリースした**マルチエージェント・オーケストレーション**モデル。**OpenAI 互換 API** で提供され、内部で 7B の Conductor モデルが GPT-5.5・Claude Opus・Gemini 3.1 Pro を動的ルーティング。**LiveCodeBench で 93.2**（Fable 5 の 89.8 超え）、CharXiv・HLE・4 コーディングベンチマークで首位。ただし **SWE-Bench Pro は 73.7**（Fable 5 の 80.0 に敗北）、MRCRv2 も GPT-5.5 に及ばず、領域別の使い分けが必要。**トークン消費は単一モデル直接呼び出しの 4-6 倍**で、料金は $5/$30 だが実コストは Fable 5・Opus 4.8 単体と同等以上になる可能性。ベンダーロックイン回避には有効。",
+    "date": "2026-07-07",
+    "newsDate": "2026-06-22",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "モデル",
+      "Sakana AI",
+      "オーケストレーション",
+      "日本",
+      "マルチエージェント",
+      "LLM"
     ],
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 4,
-      "コスパ": 5,
-      "拡張性": 4,
+      "コスパ": 3,
+      "拡張性": 5,
       "企業向け": 4
     },
     "rating": 4,
     "reviewCategory": "model",
-    "lastReviewed": "2026-03-29"
+    "lastReviewed": "2026-07-07"
   },
   {
     "id": "midjourney-v8-review",

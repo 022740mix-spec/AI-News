@@ -48,6 +48,14 @@
     <summary>Anthropic の Claude for Chrome 拡張が 900万インストール を突破（Chrome Web Store 数値、2026年6月時点）。Pro/Max/Team/Enterprise の全有料プランでベータ利用可能。ブラウザ上でクリック・フォーム記入・スケジュール実行・複数タブ横断ワークフローを Claude が自律的に実行。最近の主要アップデートは Claude Code 統合、ワークフロー記録、スケジュールタスク、Planning モード。7月1日には拡張機能側のアップデートも配信された。OpenAI Operator や Perplexity Comet と競合しつつ、日常のブラウザ作業を委任する「エージェント常駐」路線を強化。</summary>
   </entry>
   <entry>
+    <title>Claude Sonnet 5 レビュー — Anthropic 新ミッドレンジ・フラッグシップ、Opus 4.8 に迫る性能を $2/$10 で、エージェント運用の主力</title>
+    <link rel="alternate" type="text/html" href="?a=claude-sonnet-5-review"/>
+    <id>tag:ai-tool-news.jp,2026:claude-sonnet-5-review</id>
+    <published>2026-06-30T15:00:00Z</published>
+    <updated>2026-06-30T15:00:00Z</updated>
+    <summary>Anthropic が2026年6月30日に GA した新ミッドレンジ・フラッグシップ。SWE-bench Pro 63.2%（Sonnet 4.6: 58.1% / Opus 4.8: 69.2%）、GDPval-AA v2 で Opus 4.8 超え（1618 vs 1615）、HLE with tools でも 57.4% とほぼ互角。導入価格 $2/$10（〜8/31）、以降 $3/$15。1Mコンテキスト、Adaptive Thinking 常時オン。claude.ai Free/Pro のデフォルト、Claude Code・Cursor・VS Code・GitHub Copilot で即日利用可能。「これまでで最もエージェント的な Sonnet」 と Anthropic が公表する通り、エージェント・コーディング・ブラウザ自動化での実力が特筆される。ただし新トークナイザは同じテキストで 1-1.35 倍多くトークンを数える傾向あり、実コスト予測に注意。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が Claude Sonnet 5 を公開 — SWE-bench Pro 63.2% で Opus 4.8 に迫る、8月末まで $2/$10 の攻めた導入価格でエージェント本格投入</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-sonnet-5-agentic-cheap-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-sonnet-5-agentic-cheap-2026</id>
@@ -120,6 +128,14 @@
     <summary>2026年6月、AI モデルの利用パターンが「tokenmaxxing」（とにかく強力なモデルを大量に使う）から「効率性最優先」へ転換している。Anthropic Claude Fable 5 が $10/$50（Opus 4.8 の2倍）でローンチされた一方、OpenAI GPT-5.6 Luna は $1/$6 という最安級で投入。AI スタートアップ Lindy の CEO は同社トラフィックを 100% Claude → DeepSeek へ切替、コストを劇的削減したと公表。トークン単価競争の本格化と、フロンティアモデル独占体制への揺らぎを整理する。</summary>
   </entry>
   <entry>
+    <title>GPT-5.6 Sol / Terra / Luna レビュー — OpenAI 新フラッグシップ3階層、Sol Ultra が TerminalBench 2.1 で 91.91% の SOTA、Luna は $1/$6 の最安</title>
+    <link rel="alternate" type="text/html" href="?a=gpt-5-6-review"/>
+    <id>tag:ai-tool-news.jp,2026:gpt-5-6-review</id>
+    <published>2026-06-25T15:00:00Z</published>
+    <updated>2026-06-25T15:00:00Z</updated>
+    <summary>OpenAI が2026年6月25日に限定プレビュー公開した次世代フラッグシップ 3 バリアント。Sol（$5/$30、最難関タスク・複雑コーディング・セキュリティ研究）、Terra（$2.50/$15、大量業務向け daily driver、GPT-5.5 比半額）、Luna（$1/$6、要約・ドラフト・定型自動化、フロンティアモデル最安級）の3階層。Sol Ultra は TerminalBench 2.1 で 91.91% を記録、Mythos 5（88.0%）と Fable 5（84.3%）を上回り SOTA 更新。ultra thinking モードのサブエージェント活用が決定打。米国政府事前共有経由で約20組織限定プレビュー、一般公開は7月中〜下旬の見込み。1.5M コンテキスト・訓練カットオフ 2026年5月。</summary>
+  </entry>
+  <entry>
     <title>OpenAI が GPT-5.6 を限定プレビュー公開 — Sol/Terra/Luna の3バリアント、TerminalBench 2.1 で Sol Ultra 91.91% が Mythos 5・Fable 5 超え</title>
     <link rel="alternate" type="text/html" href="?a=openai-gpt-5-6-sol-terra-luna-preview-2026"/>
     <id>tag:ai-tool-news.jp,2026:openai-gpt-5-6-sol-terra-luna-preview-2026</id>
@@ -158,6 +174,14 @@
     <published>2026-06-23T15:00:00Z</published>
     <updated>2026-06-23T15:00:00Z</updated>
     <summary>Google Gemini 3.5 Pro は5月19日の Google I/O で発表されたが、6月 GA 予定が6月23日時点でも限定プレビューのままと判明。CEO Sundar Pichai はカンファレンスで「もう1ヶ月待って」と発言、現在は Vertex AI のエンタープライズ顧客限定。仕様は 2M トークンコンテキスト、Deep Think reasoning モード、フロンティア・マルチモーダル理解。予測市場の6月末リリース確率は 50-55% で、不確実性が残る。</summary>
+  </entry>
+  <entry>
+    <title>Sakana Fugu レビュー — 東京発マルチエージェント・オーケストレーション、LiveCodeBench で Fable 5 越えだがトークン消費 4-6倍で実コストに注意</title>
+    <link rel="alternate" type="text/html" href="?a=sakana-fugu-review"/>
+    <id>tag:ai-tool-news.jp,2026:sakana-fugu-review</id>
+    <published>2026-06-22T15:00:00Z</published>
+    <updated>2026-06-22T15:00:00Z</updated>
+    <summary>東京の Sakana AI が2026年6月22日にリリースしたマルチエージェント・オーケストレーションモデル。OpenAI 互換 API で提供され、内部で 7B の Conductor モデルが GPT-5.5・Claude Opus・Gemini 3.1 Pro を動的ルーティング。LiveCodeBench で 93.2（Fable 5 の 89.8 超え）、CharXiv・HLE・4 コーディングベンチマークで首位。ただし SWE-Bench Pro は 73.7（Fable 5 の 80.0 に敗北）、MRCRv2 も GPT-5.5 に及ばず、領域別の使い分けが必要。トークン消費は単一モデル直接呼び出しの 4-6 倍で、料金は $5/$30 だが実コストは Fable 5・Opus 4.8 単体と同等以上になる可能性。ベンダーロックイン回避には有効。</summary>
   </entry>
   <entry>
     <title>【週刊まとめ】AI開発ツール — 2026年6月15日〜21日</title>
@@ -254,6 +278,14 @@
     <published>2026-06-10T15:00:00Z</published>
     <updated>2026-06-10T15:00:00Z</updated>
     <summary>Anthropic 公式の開発者カンファレンス「Code with Claude」が6月10日、東京で開催された。SF（5/6）・ロンドン（5/19）に続く3都市目で、日本市場での Claude エコシステム拡大の起点に位置付けられる。キーノートには Angela Jiang・Cat Wu・Dianne Penn・Katelyn Lesse が登壇、英語中心セッションに日本語同時通訳つき。ライブ配信で日本国外からも参加可能。6月11日は独立開発者・スタートアップ向け Extended デー。</summary>
+  </entry>
+  <entry>
+    <title>Claude Fable 5 / Mythos 5 レビュー — Anthropic フロンティア、SWE-bench 95% で史上最強、ただし復活後は週次50%上限＆過剰ブロック懸念</title>
+    <link rel="alternate" type="text/html" href="?a=claude-fable-5-mythos-5-review"/>
+    <id>tag:ai-tool-news.jp,2026:claude-fable-5-mythos-5-review</id>
+    <published>2026-06-09T15:00:00Z</published>
+    <updated>2026-06-09T15:00:00Z</updated>
+    <summary>Anthropic が2026年6月9日に一般公開した Mythos クラスの史上最強一般公開モデル。SWE-bench Verified 95% で Opus 4.8（88.6%）を上回る。ただし6/12 に輸出規制で停止、19日後の 7/1 に復活したが週次使用枠 50% 上限（Pro/Max/Team/一部 Enterprise、7/7 まで）、以降は使用クレジット制。新 classifier が 99% ジェイルブレイクをブロックするが benign なコーディング/セキュリティ要求も過剰ブロックの懸念あり。Mythos 5 は Project Glasswing 経由の限定公開のまま。$10/$50 per 1M tokens。「制限付きの最強」という現状評価が難しいモデル。</summary>
   </entry>
   <entry>
     <title>Anthropic が Claude Fable 5 と Mythos 5 をリリース — Mythos クラスの一般公開モデル、SWE-bench 95%、$10/$50 で前 Mythos Preview の半額以下</title>
@@ -1928,12 +1960,12 @@
     <summary>Anthropic の2026年Q1フラッグシップモデル（後継 Opus 4.7/4.8 リリース済み）。1Mトークンのコンテキストウィンドウ、SWE-Bench トップクラスのコーディング性能、拡張思考による高度な推論が特徴。$15/$75 per 1M tokens。</summary>
   </entry>
   <entry>
-    <title>Claude Sonnet 4.6 レビュー — Anthropic 中核、速度と品質のバランス型</title>
+    <title>Claude Sonnet 4.6 レビュー — Anthropic 前世代 Sonnet（後継 Sonnet 5 リリース済）、1Mコンテキスト・バランス型</title>
     <link rel="alternate" type="text/html" href="?a=claude-sonnet-4-6-review"/>
     <id>tag:ai-tool-news.jp,2026:claude-sonnet-4-6-review</id>
     <published>2026-03-15T15:00:00Z</published>
     <updated>2026-03-15T15:00:00Z</updated>
-    <summary>Anthropic の中核モデル。1Mコンテキスト、Opus の約 1/5 のコストで日常のコーディングに最適。Cursor・Windsurf のデフォルトモデルとしても広く採用。$3/$15 per 1M tokens。</summary>
+    <summary>Anthropic の前世代 Sonnet モデル（後継 Claude Sonnet 5 が2026年6月30日にリリース済み）。1Mコンテキスト、日常のコーディングに最適だった主力。新規採用では Sonnet 5 を推奨、Sonnet 5 は SWE-bench Pro 63.2%（4.6 の 58.1%）で明確に上回り、料金は 8月末まで $2/$10 の導入価格。Sonnet 4.6 は既存パイプラインの互換性維持や、Sonnet 5 のトークナイザ変更（1-1.35倍）で実コストが読みにくい環境向け。$3/$15 per 1M tokens。</summary>
   </entry>
   <entry>
     <title>Suno V5 レビュー — テキストから楽曲を丸ごと生成、音楽制作の民主化</title>
