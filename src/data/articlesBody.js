@@ -11384,6 +11384,7 @@ const ARTICLES_BODY = {
       "**新 classifier：99% ジェイルブレイクブロック**: Anthropic は今回、**新しい classifier をデプロイし、6月に問題になった特定のジェイルブレイク手法を99%の確率でブロックする**と発表。CAISI（Center for AI Standards and Innovation）の研究者は「新セーフガードは extraordinarily strong（極めて強力）」と評価している。分類器はサイバーセキュリティ関連タスクを検出する仕組みで、教師モデルへの訓練による拒絶、事後の誤用パターン分析、事前ブロックの3層で構成される。",
       "**過剰ブロック（over-blocking）の懸念**: 一方 Axios と Anthropic 自身は、新しい厳格なフィルタリングが **benign（善良）なコーディング要求やセキュリティ研究要求まで一部ブロックしてしまう可能性**があると認めている。ペンテスターや脆弱性研究者、CTF プレイヤー、セキュリティ教育者などの合法的なユースケースが影響を受ける可能性が高く、PCWorld の報道では**Claude 有料ユーザーがすでに新制限に激怒**していることも伝えられている。**「安全性 vs 実用性」のトレードオフ**が顕在化した形。",
       "**利用上限と時間制限**: Fable 5 の利用は以下の制限下で提供される。**Pro / Max / Team / 一部 Enterprise プランは週次使用枠の 50% まで**、**7月7日までの期間限定**（それ以降は**使用クレジット制**へ移行し、追加料金が発生する）。導入時（6/9〜6/22）の「Pro/Max/Team/Enterprise 無料」から一段厳しい条件となり、事実上「試用期間の再延長」ではなく「制限付き再開」の色彩が強い。無料 / Go プランは対象外の可能性が高い。",
+      "**【追記 2026-07-08】期間延長発表**: 7月6日、Anthropic は当初7月7日で終了予定だったサブスク包括アクセスを **7月12日まで延長**（[延長・「一時的」宣言](?a=anthropic-claude-fable-5-billing-transition-extended-july-12-2026)）。あわせて **「使用クレジット制への移行は一時的措置」** と明言、**「capacity 回復次第 Fable 5 をサブスクリプションの標準機能に戻す」** と公式コミット。ユーザーの反発を受けた実質的な譲歩とみられる。",
       "**クラウド 3強の段階的復活**: **AWS Bedrock**、**Google Cloud Vertex AI**、**Microsoft Foundry** での Fable 5 提供も、可能な限り速やかに再有効化されるが**同時ではなく段階的**（The Hacker News、VentureBeat）。エンタープライズ顧客のワークロード切替タイミングは各クラウドの復活スケジュール次第となり、暫定的に Opus 4.8 や新登場の **Sonnet 5**（[Sonnet 5 リリース](?a=anthropic-claude-sonnet-5-agentic-cheap-2026)）への切替継続で対応する組織が多いと予想される。",
       "**「tokenmaxxing → 効率性」の再確認**: 皮肉なことに、Fable 5 が停止していた6月末〜7月初旬に Anthropic は **Sonnet 5** を投入し、Opus 4.8 に肉薄する性能を **$2/$10** の破格で提供した。Fable 5 復活後も、Pro/Max ユーザーの多くは「Sonnet 5 で十分」と判断する可能性が高く、[tokenmaxxing→効率性 分析](?a=feature-tokenmaxxing-to-efficiency-market-shift-2026) で整理した業界潮流が Anthropic 自身の製品ライン内でも進行することになる。Fable 5 の実質的な役割は「最上位の限定的な複雑タスク用途」に絞られていく見込み。",
       "**業界への含意**: 今回のエピソードは、フロンティア AI モデルが「発表と同時に**国家安全保障**の対象になる」時代の到来を示した象徴的事案となった。**Anthropic vs Alibaba 蒸留告発**（[Alibaba 蒸留告発](?a=anthropic-accuses-alibaba-claude-distillation-fraud-2026)）、**OpenAI 機密 S-1 提出**（[OpenAI S-1](?a=openai-confidential-s1-ipo-filing-852b-valuation-2026)）、**GPT-5.6 の米政府事前共有**（[GPT-5.6 プレビュー](?a=openai-gpt-5-6-sol-terra-luna-preview-2026)、約20組織限定）と並ぶ流れで、**フロンティア AI モデル各社と米国政府の統合が急速に進んでいる**ことを示す。研究者・開発者は「単一モデルへの依存」を避け、複数モデル・複数クラウド・複数ライセンスの分散戦略を採ることが、事業継続の観点から必須になりつつある。"
@@ -11774,6 +11775,154 @@ const ARTICLES_BODY = {
         "title": "Get started with Claude in Chrome",
         "site": "Claude Help Center",
         "url": "https://support.claude.com/en/articles/12012173-get-started-with-claude-in-chrome"
+      }
+    ]
+  },
+  "feature-un-global-dialogue-ai-governance-geneva-2026": {
+    "body": [
+      "**国連初の Global Dialogue on AI Governance** が2026年7月6日、Geneva の **Palexpo International Convention Centre** で開幕。7日までの2日間で開催され、**全 193 UN 加盟国**が参加、私的セクター・市民社会・学術界・技術コミュニティも同席する史上最大級の AI 国際対話となった。次回セッションは **2027年5月に New York** で予定される。",
+      "**共同議長**: **Egriselda López**（エルサルバドル）と **Rein Tammsaar**（エストニア）が共同議長を務めた。「大国主導」ではなく、中小国が交渉プロセスを主導するデザインは、国連 AI 政策における「Global South と技術中立国の役割」を象徴する。",
+      "**Guterres 事務総長の4つの優先領域**: **António Guterres** 国連事務総長は開会演説で、以下の 4 つの優先領域を提示した。",
+      "**(1) 共通安全基準（Common safety standards）**: フロンティア AI モデルのリリース前評価・監査・情報開示の国際標準化。米国 Executive Order 14409 の機密ベンチマーク（[White House 自主基準](?a=white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026)）や Five Eyes ガイダンス（[Five Eyes 分析](?a=five-eyes-agentic-ai-cyber-risk-guidance-2026)）と接続する。",
+      "**(2) 人権レッドライン（Human-rights red lines）**: AI が国際人権法に違反する用途（大量監視・自律殺傷兵器・差別的意思決定）を国際的に禁止する枠組み。UN chief は「killer robots」への懸念を明確に表明。",
+      "**(3) キャパシティビルディング（Capacity-building）+ Global Fund for AI**: 途上国が AI 技術・人材・ガバナンスの能力を構築するための **Global Fund for AI**（AI のためのグローバル基金）の設立を提案。米中フロンティア AI 独占への対抗軸として、国際的な技術主権を後押しする。",
+      "**(4) AI Environmental Transparency Initiative**: AI モデル訓練・推論の**炭素排出・水消費・エネルギー使用**の情報開示標準化。データセンター展開（[Anthropic-CoreWeave $68億契約](?a=anthropic-coreweave-68b-multiyear-cloud-deal-2026)・[SpaceX-Cursor $60B 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）が加速する中で、環境影響の透明性を求める。",
+      "**AI for Good サミット連続開催**: Global Dialogue に続いて、**7月7日〜10日**に ITU（国際電気通信連合）主催の **AI for Good Global Summit** が同じく Geneva で開催される。技術者・研究者・NGO・スタートアップが参加し、SDGs（持続可能な開発目標）達成のための AI 応用ユースケースが議論される。",
+      "**AI for Good Global Commission 初会合（7/8）**: サミット期間中の **7月8日**、**UN AI for Good Global Commission** の初会合が開催される。これは**AI 企業 CEO 級を国家元首と対等の場で参加させる初の UN 枠組み**として重要。",
+      "**共同議長**: Marc Benioff（Salesforce CEO）と Paul Kagame（ルワンダ大統領）",
+      "**Commission メンバー**:",
+      "**Jensen Huang**（NVIDIA CEO）",
+      "**Andy Jassy**（Amazon CEO）",
+      "**Brad Smith**（Microsoft President）",
+      "**Jack Clark**（Anthropic 共同創業者、Policy Head）",
+      "**Aidan Gomez**（Cohere CEO）",
+      "この構成は、**AI 業界のパワー中心が UN の政策形成テーブルに直接組み込まれた**ことを意味する。日本代表の参加については開示が確認できていないが、翌年 NY 会合に向けた交渉プロセスに影響する構造となる。",
+      "**日本の視点**: 日本は G7 での AI 議論、GENIAC プログラム（[中国モデル特集](?a=feature-china-ai-models-may-2026-qwen-kimi-ernie) で言及）等の枠組みを持つが、**UN Global Dialogue と AI for Good Commission への直接参加体制**は明確化されていない。次回 2027年5月 NY 会合までに、経産省・総務省・外務省の連携で AI 政策の国際的発信力を強化する必要がある。**Sakana AI**（[Sakana Fugu レビュー](?a=sakana-fugu-review)）・**Preferred Networks**・**ELYZA**（[aiCompanies.js](?a=) の日本企業）など、日本発 AI スタートアップの Commission 級への影響力構築も課題。",
+      "**フロンティア各社と国際規制の統合フェーズ**: 過去1ヶ月で確認できた「政府と AI 企業の統合」動向を並べると、方向性がより鮮明になる。",
+      "**(a) 連邦（White House）**: Executive Order 14409、GPT-5.6 Sol の20組織限定、Fable 5 輸出規制サイクル",
+      "**(b) 州（Anthropic × California 協定）**: 50% 割引、DMV/Medicaid/サイバー防御",
+      "**(c) 5カ国連合（Five Eyes）**: Agentic AI サイバーリスクガイダンス",
+      "**(d) 超国家（UN）**: Global Dialogue + AI for Good Commission",
+      "**(e) 産業界株式（OpenAI 5% 出資提示）**: 企業自身が政府に持分を渡す構造",
+      "この5層構造の中で、**日本企業・日本政府がどの層で意思決定に参加するか**が、今後の AI 主権における最大の戦略課題となる。",
+      "**「発表と同時に国家安全保障の対象」時代の恒常化**: [Fable 5 復活](?a=anthropic-claude-fable-5-return-safeguards-limits-2026) や [GPT-5.6 プレビュー限定](?a=openai-gpt-5-6-sol-terra-luna-preview-2026) で見られた「政府監督付きリリース」のパターンが、UN 枠組みでは**国際的にコーディネート**される可能性が出てきた。開発者・エンタープライズは「**モデル選択 = 米国政府の技術政策選択 + 国際規制の予測**」という2軸の判断が求められる時代に入っていく。"
+    ],
+    "primarySources": [
+      {
+        "title": "Global Dialogue on AI Governance",
+        "site": "United Nations",
+        "url": "https://www.un.org/global-dialogue-ai-governance/en"
+      },
+      {
+        "title": "Secretary-General's remarks to the opening of the first Global Dialogue on Artificial Intelligence Governance",
+        "site": "UN Secretary-General",
+        "url": "https://www.un.org/sg/en/content/sg/statements/2026-07-06/secretary-generals-remarks-the-opening-of-the-first-global-dialogue-artificial-intelligence-governance-delivered"
+      },
+      {
+        "title": "UN Global Dialogue opens with urgent call for safe and inclusive AI",
+        "site": "UNESCO",
+        "url": "https://www.unesco.org/en/articles/un-global-dialogue-opens-urgent-call-safe-and-inclusive-ai-benefits-all"
+      },
+      {
+        "title": "From AI to 'killer robots': UN chief issues urgent governance call",
+        "site": "UN News",
+        "url": "https://news.un.org/en/story/2026/07/1167873"
+      }
+    ]
+  },
+  "cve-2026-47729-squidbleed-claude-mythos-project-glasswing-2026": {
+    "body": [
+      "**Anthropic Claude Mythos Preview** が [Project Glasswing](?a=anthropic-glasswing-expansion-partner-network-services-track-2026) の権限付きセキュリティ監査で、**Squid Proxy の29年前のバグ**を発見したと **Calif.io Security Research** が公表した。**CVE-2026-47729「Squidbleed」**（Heartbleed 型）、**CVSS 7.5**。The Hacker News、SecurityWeek、Slashdot が広く報道した。",
+      "**「Squidbleed」の由来と概要**: 命名は 2014年の **Heartbleed**（OpenSSL のメモリリーク）に倣ったもので、同じ原理で内部メモリを漏洩させる。Squid Proxy の**デフォルト設定で有効**な機能に潜んでいる。",
+      "**技術詳細**: Squid の **FTP パーサ**が strchr の null terminator チェックなしに動作し、**メモリバッファ境界を超えて読み取る**。読み取り領域には、**以前の別ユーザーの HTTP リクエストデータ**（クリアされていない状態）が含まれる可能性がある。パッチは strchr 呼び出し前に null terminator をチェックするだけの単純な修正。",
+      "**29年前のバグ**: バグは **1997年1月のコミット**まで遡る。**3世代の Squid リリース、コードレビュー、独立監査**をすべて生き延びてきた。人間のセキュリティ研究者が29年間見逃したパターンを、**AI モデルが即座に検出した**ことになる。",
+      "**発見プロセス**: Calif は **Anthropic Claude Mythos Preview**（Project Glasswing の基盤モデル）に、**strchr の異常挙動を「ほぼ即座に」検出した**功績を明示している。Calif Security Research と Claude Mythos の協業で、脆弱性の再現と概念実証（PoC）まで含めて短期間で完成した。",
+      "**攻撃条件**: 誰でも攻撃できるわけではなく、以下 2 つの条件が揃った場合に限定される。",
+      "**(1) 信頼されたクライアント**: 既に proxy 経由の利用が許可されているユーザー（学校・オフィス・公衆 Wi-Fi の共有ネットワーク）。",
+      "**(2) 攻撃者制御の FTP サーバー**: proxy 経由でアクセス可能な FTP サーバーを攻撃者が制御している必要がある。",
+      "**漏洩する情報**: 別ユーザーの **クリアテキスト HTTP リクエスト** の断片。",
+      "**(a) HTTP のクレデンシャル**: Basic 認証・独自認証ヘッダ・URL クエリ内のトークン",
+      "**(b) セッショントークン**: Cookie 内のセッション ID、認証済み API キー",
+      "**(c) HTTP フォーム送信内容**: ログインフォーム、Contact フォーム、決済フォーム（HTTPS 化されていない場合）",
+      "**注意**: **通常の HTTPS は影響を受けない**。HTTPS は `CONNECT` トンネル経由で Squid には内部が見えないため。ただし、**TLS 終端型プロキシ**（Squid で HTTPS を復号して検査する構成）は Squid が復号後の平文を扱うため影響を受ける。",
+      "**パッチ状況**: 修正パッチは 2026年4月に Squid 8 系にマージ、**2026年6月に 7.6 にバックポート**された。**本 CVE の完全な公式パッチは Squid 7.7**（予定）で提供される。",
+      "**暫定的な緩和策**: FTP サポートを使っていない環境では **FTP を明示的に無効化**することで攻撃を回避できる。",
+      "**Project Glasswing の意義を裏付け**: [Project Glasswing 拡大記事](?a=anthropic-glasswing-expansion-partner-network-services-track-2026) では「**10,000件超の高/重大セキュリティ脆弱性**」を発見と報じたが、Squidbleed はその中でも **代表事例**として位置付けられる。29年間の見落としを、AI モデルが即座に検出できたことは、フロンティア AI のセキュリティ研究への応用可能性を実証する形となった。",
+      "**「Fable 5 復活と過剰ブロック」の複雑な文脈**: 一方で、Anthropic Claude Fable 5 の [復活時の新セーフガード](?a=anthropic-claude-fable-5-return-safeguards-limits-2026) は「オフェンシブサイバーセキュリティ」タスクをブロックする方向に動いている（99% ジェイルブレイクブロック）。**Squidbleed 級の防御目的の脆弱性発見と、攻撃者側の悪用行為の間の線引き**が、今後の AI 政策の主要論点となる。SkillSpector（[SkillSpector 特集](?a=feature-nvidia-skillspector-agent-skill-security-2026)）や WIF（[Anthropic WIF GA](?a=anthropic-workload-identity-federation-ga-service-accounts-2026)）のような「守り側」ツール、Five Eyes ガイダンス（[Five Eyes 分析](?a=five-eyes-agentic-ai-cyber-risk-guidance-2026)）と組み合わせた立体的な防御が現実解となる。",
+      "**日本のインフラへの影響**: **Squid は日本国内でも大学・自治体・企業ネットワークで広く運用**されている。特に BYOD ポリシーがない環境や、監視目的の TLS 終端型プロキシを使う組織は、**Squid 7.7 のリリース待ちとせず、7.6 適用と FTP 無効化**を早急に検討すべき。組織の CISO は Five Eyes ガイダンスの (3) 行動リスク・(5) サプライチェーンリスクの観点で、本 CVE への対応を計画すること。"
+    ],
+    "primarySources": [
+      {
+        "title": "Squidbleed (CVE-2026-47729)",
+        "site": "Calif.io",
+        "url": "https://blog.calif.io/p/squidbleed-cve-2026-47729"
+      },
+      {
+        "title": "29-Year-Old Squid Proxy Bug 'Squidbleed' Can Leak Cleartext HTTP Requests",
+        "site": "The Hacker News",
+        "url": "https://thehackernews.com/2026/06/29-year-old-squid-proxy-bug-squidbleed.html"
+      },
+      {
+        "title": "Decades-Old Squid Proxy Flaw 'Squidbleed' Can Expose User Data",
+        "site": "SecurityWeek",
+        "url": "https://www.securityweek.com/decades-old-squid-proxy-flaw-squidbleed-can-expose-user-data/"
+      },
+      {
+        "title": "Squidbleed CVE-2026-47729: 29-Year-Old Squid Flaw",
+        "site": "IT-Connect",
+        "url": "https://www.it-connect.tech/squidbleed-29-year-old-squid-proxy-flaw-leaks-user-credentials/"
+      }
+    ]
+  },
+  "anthropic-claude-fable-5-billing-transition-extended-july-12-2026": {
+    "body": [
+      "Anthropic は2026年**7月6日**、**Claude Fable 5** のサブスクリプション包括アクセス期間を、当初7月7日で終了予定だったところ **7月12日まで5日間延長**すると発表した。BleepingComputer・The New Stack・iwoszapar・TechTimes 系が同日〜7月4日にかけて相次いで報道した。**Anthropic は「使用クレジット制への移行は一時的措置」と明言**しており、capacity（計算資源）が回復し次第、**Fable 5 をサブスクリプションの標準機能に戻す**方針を約束している。",
+      "**変更内容の要点**:",
+      "**(1) サブスク包括期間の延長**: Pro / Max / Team / 一部 Enterprise プランで **週次使用枠の 50% までを Fable 5 が使える**期間が、**7月7日 → 7月12日**に延長された。",
+      "**(2) 7月13日以降は使用クレジット制**: 延長期間が終わる7月13日から、Fable 5 は**サブスクリプション枠外の使用クレジット制**へ移行。継続利用には追加のクレジット購入が必要になる。",
+      "**(3) API 料金は据え置き**: API 経由の Fable 5 利用料金は **$10/$50 per 1M tokens**（入力/出力）で不変。6月9日のローンチ時から変更なし。",
+      "**(4) 一時的措置**: Anthropic は今回の変更を**「temporary（一時的）」**と明言、**「capacity が回復し次第 Fable 5 をサブスクリプションの標準機能に戻す」**と公式にコミット。",
+      "**延長の背景**: 復活後の Fable 5 は [週次50%上限や過剰ブロック懸念](?a=anthropic-claude-fable-5-return-safeguards-limits-2026) など複数の制限を抱え、Pro / Max ユーザー層から強い不満が噴出していた（PCWorld が「Claude subscribers are furious over Fable's new restrictions」と報じたレベル）。今回の5日間延長は、ユーザー側の反発を受けた**サービス側の対応**とみることができる。",
+      "**「一時的」の意味**: 「一時的措置」と Anthropic が明言した点は重要。以下 3 つのシグナルが読み取れる。",
+      "**(a) capacity 問題が本質**: Fable 5 のインフラ制約（[SpaceX Colossus](?a=anthropic-spacex-colossus-1-compute-deal-2026)・[Anthropic-CoreWeave $68億契約](?a=anthropic-coreweave-68b-multiyear-cloud-deal-2026) 等のインフラ増強でも足りない状況）が背景。",
+      "**(b) サブスク復活は約束**: 「戻す」と明言することで、ユーザーの長期契約継続を促す狙い。",
+      "**(c) Sonnet 5 への誘導**: 実質的には多くのユーザーを [Sonnet 5](?a=claude-sonnet-5-review)（$2/$10 導入価格）へ誘導し、Fable 5 を最上位限定用途に絞る戦略とも読める。",
+      "**影響を受けるユーザー像**:",
+      "**(a) Fable 5 を日常利用していた Pro/Max ユーザー**: 7/12 までは今まで通り、7/13 以降は追加費用または他モデルへの切替。",
+      "**(b) Team/Enterprise 導入検討中の組織**: 「Fable 5 を含む見積」の妥当性が変動、Sonnet 5 / Opus 4.8 との組み合わせ再計算が必要。",
+      "**(c) 開発者・研究者**: バッチ処理や自動化ワークフローで Fable 5 を組み込んでいた場合、フォールバック実装（Opus 4.8 への自動切替）を組んでおくと安定運用。",
+      "**代替モデルの選択肢（7/13 以降を見据えて）**:",
+      "**Claude Sonnet 5**（$2/$10 導入価格〜8/31、以降 $3/$15）: SWE-bench Pro 63.2%、GDPval-AA v2 で Opus 4.8 超え。日常のエージェント運用ならこれで十分（[Sonnet 5 レビュー](?a=claude-sonnet-5-review)）。",
+      "**Claude Opus 4.8**（$5/$25、Fast Mode $10/$50）: SWE-bench Verified 88.6%、Dynamic Workflows で最大1,000並列。フロンティア級性能が必要な場合に。",
+      "**Claude Fable 5**（$10/$50、7/13 以降は使用クレジット制）: SWE-bench Verified 95%、Anthropic 史上最強。**「最強を必要とする限定タスク」**にターゲットを絞る前提。",
+      "**AI News の推奨戦略**:",
+      "**(1) 7/12 までは Fable 5 を活用**: 期限までに、Fable 5 でしかできないタスクを完了させる。",
+      "**(2) 7/13 以降のデフォルトを Sonnet 5 に**: 大半のワークフローはこれで十分。$2/$10 の導入価格は 8/31 まで有効。",
+      "**(3) Fallback に Opus 4.8 を設定**: Fable 5 の refusal 時（オフェンシブサイバー・生命科学・思考抽出関連、[Fable 5 プロンプト設計ガイド](?a=feature-prompting-claude-fable-5-practical-guide-2026)）に自動的に Opus 4.8 へ切り替える設定を実装。",
+      "**(4) 「capacity 回復」を待つポジション**: 「一時的措置」の Anthropic 声明を信じるなら、Fable 5 サブスク復活まで数週間〜数ヶ月の見込み。長期プランは Sonnet 5 + Opus 4.8 + Fable 5（クレジット）の3層構成で柔軟に。",
+      "**GPT-5.6 一般公開待ちの選択肢も**: **GPT-5.6 Sol / Terra / Luna**（[GPT-5.6 レビュー](?a=gpt-5-6-review)）は7月中〜下旬に一般公開が見込まれている。特に **Luna（$1/$6）**は「フロンティアモデル最安級」で、Fable 5 課金移行を機に **代替選択肢** として検討する価値がある。ただし米政府事前共有・限定プレビューフェーズが続くため、正式な GA タイミングを見極めた上で移行判断すること。",
+      "**Sonnet 5 のトークナイザ変更に注意**: Sonnet 5 は新トークナイザで同じテキストでも **1.0〜1.35 倍**多くトークンを数える傾向がある（[Sonnet 5 レビュー](?a=claude-sonnet-5-review)）。Fable 5 → Sonnet 5 の切替時、単純な単価計算では実コストの読みを誤る可能性があるため、代表的なワークフローで実測してから本番切替すること。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Fable 5 isn't permanently leaving subscriptions, Anthropic says",
+        "site": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/claude-fable-5-isnt-permanently-leaving-subscriptions-anthropic-says/"
+      },
+      {
+        "title": "Anthropic gives Claude subscribers five more days with Fable 5",
+        "site": "The New Stack",
+        "url": "https://thenewstack.io/anthropic-extends-fable-5/"
+      },
+      {
+        "title": "Fable 5 Included Until July 12: Anthropic Extended It",
+        "site": "iwoszapar",
+        "url": "https://www.iwoszapar.com/p/fable-5-included-access-extended-july-12"
+      },
+      {
+        "title": "Redeploying Claude Fable 5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/redeploying-fable-5"
       }
     ]
   }

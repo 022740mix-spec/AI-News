@@ -6492,5 +6492,74 @@ export const ARTICLES_META = [
       "src": "logos/anthropic.svg",
       "alt": "Claude Chrome 拡張 9M ダウンロード"
     }
+  },
+  {
+    "id": "feature-un-global-dialogue-ai-governance-geneva-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】国連 Global Dialogue on AI Governance が Geneva で開幕 — 193カ国参加、Guterres が4優先領域、AI for Good Global Commission 初会合に AI 各社 CEO 級参加",
+    "excerpt": "国連初の **Global Dialogue on AI Governance** が7月6-7日、Geneva の Palexpo で開幕。**全 193 UN 加盟国**が参加、共同議長は Egriselda López（エルサルバドル）と Rein Tammsaar（エストニア）。Guterres 事務総長は開会で **4つの優先領域**（共通安全基準・人権レッドライン・キャパシティビルディング/Global Fund for AI・AI Environmental Transparency Initiative）を提示。7/7-10 に ITU AI for Good Summit、**7/8 に UN AI for Good Global Commission 初会合**が続き、Benioff・Kagame 共同議長、**Jensen Huang・Andy Jassy・Brad Smith・Jack Clark・Aidan Gomez** ら AI 業界 CEO 級と元首級が同席する初の枠組みが動き出す。次回は 2027年5月 NY。",
+    "date": "2026-07-08",
+    "newsDate": "2026-07-06",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "国連",
+      "AI ガバナンス",
+      "Guterres",
+      "Jensen Huang",
+      "規制",
+      "国際"
+    ],
+    "coverImage": {
+      "src": "articles/cover-cli-tools.svg",
+      "alt": "UN Global Dialogue on AI Governance"
+    },
+    "pinned": true
+  },
+  {
+    "id": "cve-2026-47729-squidbleed-claude-mythos-project-glasswing-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "CVE-2026-47729「Squidbleed」を Claude Mythos が発見 — 29年前の Squid Proxy メモリリーク、Project Glasswing 初の重大実績",
+    "excerpt": "**Anthropic Claude Mythos Preview** が Project Glasswing の監査で **Squid Proxy の29年前のバグ**を発見したと Calif.io Security Research が公表。**CVE-2026-47729「Squidbleed」**（Heartbleed 型・CVSS 7.5）。**1997年1月のコミット**から3世代の Squid リリース・コードレビュー・独立監査を潜り抜けた脆弱性で、FTP パーサが strchr の null terminator チェックなしでメモリ境界を超えて読み取り、**平文 HTTP のクレデンシャル・セッショントークン**を漏洩する。パッチは Squid 7.7 で予定、7.6（2026年6月）に部分修正。Project Glasswing の「10,000件超脆弱性発見」の代表事例に。",
+    "date": "2026-07-08",
+    "newsDate": "2026-06-23",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Anthropic",
+      "Claude Mythos",
+      "Project Glasswing",
+      "セキュリティ",
+      "CVE",
+      "Squid"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Squidbleed CVE-2026-47729"
+    }
+  },
+  {
+    "id": "anthropic-claude-fable-5-billing-transition-extended-july-12-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude Fable 5 サブスク包括アクセスが **7/12 まで延長** — Anthropic「使用クレジット制は一時的、capacity 回復次第サブスク標準に戻す」と明言",
+    "excerpt": "Anthropic の **Claude Fable 5** が7月6日、当初7月7日で終了予定だったサブスク包括アクセス（Pro/Max/Team/一部 Enterprise で週次使用枠の50%まで含む）を **7月12日まで延長**すると発表。BleepingComputer・The New Stack・TechTimes 系の報道によれば、Anthropic は**「使用クレジット制への移行は一時的措置」**と明言、「**capacity が回復し次第 Fable 5 をサブスクリプションの標準機能に戻す**」と約束した。復活後の制限付きアクセス（[Fable 5 復活](?a=anthropic-claude-fable-5-return-safeguards-limits-2026)）の続報。当面は Fable 5 が使えないユーザーも Sonnet 5・Opus 4.8 で代替可能。",
+    "date": "2026-07-08",
+    "newsDate": "2026-07-06",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude Fable 5",
+      "料金",
+      "サブスクリプション",
+      "クレジット"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Claude Fable 5 サブスク延長"
+    }
   }
 ];
