@@ -8071,16 +8071,186 @@ const ARTICLES_BODY = {
   },
   "claude-sonnet-4-6-review": {
     "body": [
-      "**Claude Sonnet 4.6** は Anthropic のミッドレンジモデルで、速度・品質・コストのバランスに優れる。1M トークンのコンテキストウィンドウは Opus と同等ながら、入力 $3 / 出力 $15（1M トークンあたり）と Opus の 1/5 のコストで利用可能。Cursor や Windsurf のデフォルトモデルとして最も広く利用されており、日常のコーディング作業における実用性は折り紙つき。",
-      "**得意領域**: 定型的なバグ修正、テスト生成、ドキュメント作成、中規模のリファクタリングなど「80% のコーディングタスク」をカバーする。レスポンス速度が Opus より速いため、インタラクティブな対話型の開発ワークフローに適している。Claude Code では Sonnet をデフォルトにしつつ、難しい判断が必要な場面だけ Opus に切り替える運用が一般的。",
-      "**Opus との使い分け**: 複雑なアーキテクチャ判断、大規模なマルチファイル変更、高度な推論が必要な場面では Opus が優位。一方、コード補完・小〜中規模の修正・チャットベースの質問応答では Sonnet で十分であり、コスト効率は大幅に良い。バッチ API（50% 割引）と組み合わせれば、大量処理のコストをさらに抑えられる。",
-      "**注意点**: 拡張思考（Extended Thinking）モードは Opus ほど深い推論を行わないため、非常に複雑な設計判断では質の差が出る場合がある。ただし大半の実務タスクではその差を体感しにくく、コスト対効果では最も推奨しやすいモデル。"
+      "**Claude Sonnet 4.6** は Anthropic の**前世代 Sonnet** モデルで、後継の Claude Sonnet 5 が2026年6月30日にリリースされた（[Sonnet 5 リリース](?a=anthropic-claude-sonnet-5-agentic-cheap-2026)、[Sonnet 5 レビュー](?a=claude-sonnet-5-review)）。新規採用では Sonnet 5 を第一候補にすべき状況となっている。ただし互換性維持や特定のユースケースでは Sonnet 4.6 も現役価値がある。",
+      "**性能ベンチマーク（後継との比較）**: SWE-bench Pro で Sonnet 4.6 は **58.1%**、Sonnet 5 は **63.2%**（+5.1pt）。GDPval-AA v2 では Sonnet 5 が Opus 4.8（1615）を上回る 1618 を記録するなど、後継 Sonnet 5 は Opus 4.8 に肉薄する性能で、Sonnet 4.6 との差は明確。",
+      "**得意領域（当時）**: 1M コンテキスト、日常のコーディング（定型的なバグ修正、テスト生成、ドキュメント作成、中規模のリファクタリング）を高速に処理できるバランス型モデル。Cursor や Windsurf のデフォルトモデルとして広く利用され、レスポンス速度が Opus より速く、インタラクティブな対話型開発に適していた。",
+      "**継続利用する場合の判断基準**: (1) 既存パイプラインで Sonnet 4.6 を採用しており、検証コスト無しで継続したいケース、(2) Sonnet 5 の新トークナイザ（同じテキストで 1.0-1.35倍多くカウント）による実コスト予測の不透明さを避けたい場合、(3) Claude Code や Cursor 等の周辺ツールが Sonnet 5 完全対応前の過渡期に安定運用したい場合。",
+      "**料金**: 入力 $3 / 出力 $15（1M トークンあたり）。**Sonnet 5 の 8/31 までの導入価格 $2/$10** と比較すると割高。9/1 以降は Sonnet 5 の通常料金 $3/$15 で並ぶが、それでも性能差から Sonnet 5 の選択が推奨される。",
+      "**エンタープライズでの使い分け**: バッチ API（50% 割引）と組み合わせれば、大量処理では依然として競争力がある。ただし新規プロジェクトでは Sonnet 5 の**エージェント能力**（Anthropic 曰く「これまでで最もエージェント的な Sonnet」）が優位で、複雑なマルチステップワークフロー・ブラウザ自動化・Claude Code 統合の面で差が拡大している。",
+      "【編集履歴】",
+      "・【追記 2026-07-07】後継 Claude Sonnet 5（6/30 GA）リリースに伴い、本記事を「前世代 Sonnet レビュー」として位置付けを明確化。タイトル・excerpt・本文を更新し、Sonnet 5 との比較（SWE-bench Pro、価格）を追加。新規採用では Sonnet 5 を推奨する旨を明記。rating 4.0→3.5、lastReviewed 更新。"
     ],
     "primarySources": [
       {
         "title": "Claude Models Overview",
         "site": "Anthropic",
         "url": "https://docs.anthropic.com/en/docs/about-claude/models"
+      },
+      {
+        "title": "Introducing Claude Sonnet 5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-sonnet-5"
+      }
+    ]
+  },
+  "claude-sonnet-5-review": {
+    "body": [
+      "**Claude Sonnet 5** は Anthropic が2026年6月30日に GA した新ミッドレンジ・フラッグシップモデル。「これまでで最もエージェント的な Sonnet」を Anthropic が公表しており、**プランニング・ブラウザやターミナル使用・自律実行**を Sonnet サイズで実現する。「数ヶ月前まで大型で高価なモデルが必要だった水準の自律性を Sonnet サイズで」というのが位置付け。",
+      "**性能ベンチマーク**: SWE-bench Pro **63.2%**（Sonnet 4.6: 58.1% → +5.1pt、Opus 4.8: 69.2%）。**GDPval-AA v2（知識労働）では 1618 で Opus 4.8（1615）を上回り**、Humanity's Last Exam（ツール利用）は 57.4%（Opus 4.8: 57.9%）でほぼ互角、プロンプトインジェクション安全性でも Opus 4.8 と同水準。「Sonnet で Opus 級」がほぼ現実に。",
+      "**料金**: **8月31日までの導入価格が $2/$10 per 1M tokens**、以降は **$3/$15**（Sonnet 4.6 と同じ）。ただし新トークナイザは同じテキストで **1.0〜1.35 倍**多くトークンを数える傾向があり、単純換算では実コストの読みを誤る可能性がある。それでも実運用では Opus 4.8（$5/$25）や Claude Fable 5（$10/$50）に対して大幅な優位。",
+      "**Adaptive Thinking と 1M コンテキスト**: 1M トークンのコンテキストは Sonnet 4.6・Opus 系と同水準。**Adaptive Thinking が常時オン**で、Claude Code や API では **エフォートのデフォルトが high** に設定されている。最大出力は 128K、batch-API のベータヘッダで最大 300K トークン出力まで拡張可能。訓練データのカットオフは **2026年1月**まで延長。",
+      "**利用可能プラットフォーム**: **claude.ai の Free / Pro のデフォルト**モデルとして即日切替。Max・Team・Enterprise でも利用可能。API に加え、[Claude Code](?a=claude-code)、[Cursor](?a=cursor-editor)、VS Code、[GitHub Copilot CLI](?a=github-copilot-cli) でも即日採用。マルチプラットフォーム展開の速度が特筆される。",
+      "**強み**:",
+      "**(1) エージェント能力**: プランニング・ツール呼び出し・結果読み取り・継続実行を人間の介入なしで長時間維持。",
+      "**(2) コスパ**: 導入価格 $2/$10 は Opus 4.8 の 2/5 コスト。Fable 5 の 1/5 で 70% 以上の性能を出せる。",
+      "**(3) マルチプラットフォーム統合**: Claude Code・Cursor・VS Code・GitHub Copilot が即日対応、実装リスクが低い。",
+      "**(4) Adaptive Thinking 標準**: 難易度に応じた推論深さの自動調整。",
+      "**注意点**:",
+      "**(1) トークナイザ変更**: 同じテキストで 1.0-1.35 倍多くトークンを数える。既存の**予算計画・請求予測が狂う可能性**。",
+      "**(2) Fable 5 との差**: SWE-bench Pro で 63.2% vs Fable 5 の 95%（Verified）。**最難関のコーディング・研究タスク**では依然として Fable 5 or GPT-5.6 Sol が優位。",
+      "**(3) Anthropic 依存**: OpenAI GPT-5.6 Terra（$2.50/$15）と直接競合、モデル選択がインフラ・ベンダー選択と直結する時代（[SpaceX-Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026) 参照）。",
+      "**AI News の推奨**: **新規プロジェクトの第一候補**。既存 Sonnet 4.6 パイプラインは Sonnet 5 への移行を検証すべき。Opus 4.8 の一部ユースケースは Sonnet 5 で置換可能で、コスト削減効果が大きい。ただし Fable 5 級の性能が必要な場合や、Sonnet 5 のセーフガード（[Fable 5 プロンプト設計ガイド](?a=feature-prompting-claude-fable-5-practical-guide-2026) でも触れた reasoning_extraction 拒絶等）が問題になる用途は個別評価が必要。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Claude Sonnet 5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-sonnet-5"
+      },
+      {
+        "title": "System Card: Claude Sonnet 5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/claude-sonnet-5-system-card"
+      },
+      {
+        "title": "Anthropic launches Claude Sonnet 5 as a cheaper way to run agents",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/"
+      }
+    ]
+  },
+  "claude-fable-5-mythos-5-review": {
+    "body": [
+      "**Claude Fable 5 と Mythos 5** は Anthropic が2026年6月9日にリリースした Mythos クラスの一般公開モデル。Fable 5 は「Anthropic 史上最強の一般公開モデル」を公称、**SWE-bench Verified で 95%** を達成し Opus 4.8（88.6%）を上回った。Mythos 5 は Project Glasswing 経由の限定公開のまま。ただし、6/12〜6/30 の**19日間の輸出規制**を経て、7/1 に**制限付きで復活**（[Fable 5 復活](?a=anthropic-claude-fable-5-return-safeguards-limits-2026)）した経緯を持つ。",
+      "**性能ベンチマーク**: Fable 5 は SWE-bench Verified 95%、Stripe の初期テストでは「本来チーム全体で2ヶ月以上かかるコードベースマイグレーションを1日で完了」と報告。公開ベンチマークの大半で SOTA、ソフトウェアエンジニアリング・ナレッジワーク・視覚・科学研究などで最上位。Mythos 5 は公開値なし。",
+      "**復活後の使用制限（重要）**:",
+      "**(1) 週次使用枠 50% まで**（Pro/Max/Team/一部 Enterprise、7/7 まで、以降は使用クレジット制）",
+      "**(2) 新 classifier が 99% ジェイルブレイクをブロック** → benign なコーディング/セキュリティ要求も過剰ブロックの懸念（PCWorld: ユーザー激怒）",
+      "**(3) AWS Bedrock / GCP Vertex AI / Azure Foundry は段階的復活**",
+      "**(4) 米政府の継続監督**（3点約束: セキュリティリスク検知、リリースプロトコル協力、悪意活動報告）",
+      "**セーフティ・クラシファイア注意**（詳細は [Fable 5 プロンプト設計ガイド](?a=feature-prompting-claude-fable-5-practical-guide-2026) 参照）:",
+      "**(a) オフェンシブサイバーセキュリティ**: エクスプロイト・マルウェア・攻撃ツール構築",
+      "**(b) 生物学・生命科学コンテンツ**: ラボ手順・分子機構等（Claude Science で緩和される可能性）",
+      "**(c) モデルのサマリ化された思考の抽出**",
+      "**料金**: $10/$50 per 1M tokens。前世代 Mythos Preview の半額以下だが、Sonnet 5（$2/$10 → $3/$15）や Opus 4.8（$5/$25）と比べると高価。**「最強を必要とする限定タスク用途」**にターゲットが絞られる料金設定。",
+      "**プロンプト設計の推奨**: [Fable 5 プロンプト設計ガイド](?a=feature-prompting-claude-fable-5-practical-guide-2026) で全訳した Anthropic 公式推奨に従うこと。長時間実行（数時間〜数日）が現実的になるため、クライアントタイムアウト・非同期実行・進捗根拠付け・拒否時の Opus 4.8 フォールバックを事前に組み込む必要がある。**旧来の Opus 4.8 向けプロンプトは Fable 5 では過度に規範的で性能を下げる**ため、リファクタが必要。",
+      "**強み**:",
+      "**(1) 世代最高の性能**: SWE-bench 95% は Sonnet 5・Opus 4.8・GPT-5.5 を上回る。",
+      "**(2) 長時間自律実行**: 数日〜週単位の目標指向タスクを維持できる。",
+      "**(3) 視覚理解の強化**: 密な技術図・スクリーンショット処理が高精度。",
+      "**注意点**:",
+      "**(1) 使用制限**: 週次50%・7/7 期限・段階的クラウド復活で計画が立てにくい。",
+      "**(2) 過剰ブロック**: セキュリティ研究・脆弱性検証・生命科学タスクが正当な用途でも拒否される。",
+      "**(3) 米政府監督**: 将来的な制限追加リスク（[White House 自主基準](?a=white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026) 参照）。",
+      "**(4) 料金**: Sonnet 5・Opus 4.8 との性能差に見合うかは用途次第。",
+      "**AI News の推奨**: **最難関コーディング・自律実行が必要な限定用途**では第一候補。ただし多くの日常ワークフローには **Sonnet 5**（[Sonnet 5 レビュー](?a=claude-sonnet-5-review)）が現実的な選択肢。Fable 5 導入時は**拒否時の Opus 4.8 フォールバック**を必ず設定すること。GPT-5.6 Sol（[GPT-5.6 レビュー](?a=gpt-5-6-review)）の一般公開後は再評価が必要。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Fable 5 and Claude Mythos 5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
+      },
+      {
+        "title": "Redeploying Claude Fable 5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/redeploying-fable-5"
+      },
+      {
+        "title": "Prompting Claude Fable 5",
+        "site": "Anthropic Docs",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5"
+      }
+    ]
+  },
+  "gpt-5-6-review": {
+    "body": [
+      "**GPT-5.6** は OpenAI が2026年6月25日に限定プレビュー公開した次世代フラッグシップの3バリアント体制モデル。**Sol / Terra / Luna** の階層構造で、用途別の使い分けを OpenAI 自身が標準化した意欲的な戦略（[GPT-5.6 プレビュー](?a=openai-gpt-5-6-sol-terra-luna-preview-2026)）。米国政府事前共有経由で**約20組織限定**、一般公開は7月中〜下旬の見込み。",
+      "**3バリアントの使い分け**:",
+      "**(1) Sol（$5/$30）**: 最難関タスク向けフラッグシップ。複雑コーディング・セキュリティ研究など。Ultra thinking モードでサブエージェント活用。",
+      "**(2) Terra（$2.50/$15）**: daily driver、大量業務向け。カスタマーサポート・社内ツール・文書解析。GPT-5.5 比で半額。",
+      "**(3) Luna（$1/$6）**: 軽量タスク向け（要約・ドラフト・定型自動化）。**フロンティアモデル最安級**。",
+      "**性能ベンチマーク**: **Sol Ultra が TerminalBench 2.1 で 91.91%** の record-high を記録、Sol max は 88.76%。これは Claude Mythos 5（88.0%）と Fable 5（84.3%）を上回り、コーディング領域でフロンティアの最上位に立った。旧世代 GPT-5.5 の 83.4% から大幅アップ。",
+      "**1.5M コンテキスト**: GPT-5.6 シリーズは **1.5M トークンのコンテキストウィンドウ**を備える見込み（GPT-5.5 の 1M、Codex の 400K を超える業界最大級）。訓練データのカットオフは **2026年5月まで**延長。4月の「Where the Goblins Came From」事後分析で記録されたアラインメント失敗に対応する**再設計された報酬監査パイプライン**も搭載。",
+      "**Ultra モードの仕組み**: 高得点の決定打となった **ultra thinking モード**は、**サブエージェントを動的に活用**して複雑な計画・反復・ツール協調を高速化する。Anthropic Opus 4.8 の Dynamic Workflows（[Opus 4.8](?a=anthropic-claude-opus-4-8-dynamic-workflows-2026)）や [Sakana Fugu レビュー](?a=sakana-fugu-review) と並ぶ「マルチエージェント・オーケストレーション層」を、モデル内蔵で実現する点が特徴。",
+      "**強み**:",
+      "**(1) TerminalBench SOTA**: Sol Ultra が Fable 5・Mythos 5 を上回る初の GPT。",
+      "**(2) 3階層戦略**: 用途別使い分けが明確、コスト最適化しやすい。",
+      "**(3) 1.5M ctx**: 業界最大級のコンテキスト、大規模コードベース・長文書に強い。",
+      "**(4) Luna の破格**: $1/$6 は Google Gemini 3.5 Flash（$0.075/$0.30）以外でフロンティア最安。",
+      "**(5) 内蔵オーケストレーション**: 外付け Sakana Fugu 等のトークン消費 4-6倍問題を回避。",
+      "**注意点**:",
+      "**(1) 限定プレビュー**: 約20組織のみ。一般公開までタイムラグ。",
+      "**(2) 米政府事前共有**: [White House 自主基準](?a=white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026) の枠組みで、初期プレビュー→GA まで数週間のギャップが恒常化。",
+      "**(3) MODEL_COMPARISON 変動**: Sol Ultra > Sol > Mythos 5 > Sol Terra > Fable 5 > GPT-5.5 の順位がコーディング領域で確定、Anthropic 側の対応が注目される。",
+      "**(4) OpenAI 依存**: [OpenAI が政府に5%出資提示](?a=openai-us-government-5-percent-stake-42b-offer-2026) や政府監督との関連で、将来的なアクセス条件変更のリスクがある。",
+      "**AI News の推奨**: **限定プレビューアクセスがある組織**は Sol Ultra を最難関タスクに、Terra を日常運用に、Luna を大量バッチにと3階層で最適化する。**一般公開まで**は Sonnet 5・Fable 5・Opus 4.8 で代替可能で、7月中〜下旬の GA を待つのが現実的。GA 後は **[Sonnet 5](?a=claude-sonnet-5-review) との直接比較レビュー**を予定。"
+    ],
+    "primarySources": [
+      {
+        "title": "Previewing GPT-5.6 Sol: a next-generation model",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/previewing-gpt-5-6-sol/"
+      },
+      {
+        "title": "OpenAI unveils GPT-5.6 Sol, Terra and Luna models",
+        "site": "VentureBeat",
+        "url": "https://venturebeat.com/technology/openai-unveils-gpt-5-6-sol-terra-and-luna-models-but-only-accessible-to-limited-preview-partners-for-now-per-us-gov"
+      },
+      {
+        "title": "Summary of METR's predeployment evaluation of GPT-5.6 Sol",
+        "site": "METR",
+        "url": "https://metr.org/blog/2026-06-26-gpt-5-6-sol/"
+      }
+    ]
+  },
+  "sakana-fugu-review": {
+    "body": [
+      "**Sakana Fugu** は東京の Sakana AI が2026年6月22日にリリースしたマルチエージェント・オーケストレーションシステム。**OpenAI 互換の単一 API エンドポイント**として提供され、内部で 7B の Conductor モデルが GPT-5.5・Claude Opus・Gemini 3.1 Pro を動的にルーティングする。Google Brain 出身の David Ha・Llion Jones（Transformer 共著者）共同創業の同社が、フロンティアモデル「使い分け」を1モデル API として抽象化した実装（[Sakana Fugu 詳細](?a=sakana-ai-fugu-multi-agent-orchestration-2026)）。",
+      "**Conductor アーキテクチャ**: 中核は **7B パラメータの Conductor モデル**で、ICLR 2026 で発表された2本の論文（**TRINITY** と **The Conductor**）を基礎にしている。Conductor は「どのモデルを起動するか」「エージェント間でどう通信するか」「結果をどう合成するか」を学習し、タスクごとに最適なモデル組合せを動的に決める。**ベンダーロックインを構造的に回避**できる設計。",
+      "**ベンチマーク勝敗**: 領域別の強弱が明確。",
+      "**勝利領域**: **LiveCodeBench で 93.2**（Fable 5 の 89.8 を上回る）、CharXiv Reasoning、Humanity's Last Exam、4つのコーディングベンチマークで首位、トレーディングベンチマークで **+19.43% mean portfolio return**。",
+      "**敗北領域**: **SWE-Bench Pro は 73.7**（Fable 5 の 80.0 に敗北）、MRCRv2 長文脈想起は 93.6 で GPT-5.5（94.8）に届かず、CTI-REALM サイバーセキュリティは Opus 4.8（69.6）に劣る。",
+      "**料金**: Fugu Ultra は **$5/$30 per 1M tokens**（入力/出力）、キャッシュ入力は $0.50/1M。272K を超えるロングコンテキストは $10/$45/$1.00 に上昇。サブスクリプションは $20/$100/$200 の3階層。",
+      "**「トークン消費 4-6倍」問題（重要）**: 単純な料金表は安く見えるが、**実態はそう単純ではない**。マルチエージェント・オーケストレーションの構造上、**1リクエストで単一モデル直接呼び出しの 4-6 倍のトークン**を消費する。Sakana の API レスポンスでは `token_details` フィールドで「ユーザー可視のモデル出力」と「オーケストレーション・トークン」が分離して返るが、**両者とも同じレートで請求**される。結果として実コストはケースによって Fable 5・Opus 4.8 単体使用と**同等以上**になる可能性が高い。",
+      "**3層コスト構造**: Sakana は内部で Anthropic・OpenAI・Google の API に**フルレートで料金を支払い**、その上にオーケストレーション・マージンを乗せている。つまり Fugu のコストは「**裏側の単一モデル API コスト + Sakana マージン + 多重呼び出しオーバーヘッド**」の3層構造。ベンダーロックイン回避の対価として「メタ・ベンダーへのロックイン」が発生する点は留意が必要。",
+      "**強み**:",
+      "**(1) ベンダー分散**: 単一の Anthropic・OpenAI 障害から自動回避。",
+      "**(2) 領域別最適化**: タスクごとに最適モデルを自動選択、開発者が選ぶ手間を削減。",
+      "**(3) 日本発**: 日本語対応・国内サポートが期待できる。",
+      "**(4) OSS 互換 API**: OpenAI 互換のため既存ツールの改修が最小限。",
+      "**注意点**:",
+      "**(1) トークン消費 4-6 倍**: 実コストが料金表通りではない。",
+      "**(2) 領域別勝敗**: SWE-Bench Pro・MRCRv2・CTI-REALM ではフロンティア単体に敗北、全用途万能ではない。",
+      "**(3) メタ・ベンダー依存**: 内部モデルの Anthropic・OpenAI・Google がアクセスを制限した場合の影響。",
+      "**(4) [GPT-5.6 レビュー](?a=gpt-5-6-review) との競合**: GPT-5.6 が内蔵 ultra thinking モードでオーケストレーションを提供する時代、外付けサービスの意義が問われる。",
+      "**AI News の推奨**: **明示的にベンダー分散が必要な組織**（例: 米国以外の政府・大手企業）や、**モデル選択の自動化を求めるスタートアップ**には有力な選択肢。ただし**実運用のコスト予測**を事前に検証すべきで、単一モデル（[Sonnet 5](?a=claude-sonnet-5-review) 等）との比較 A/B テストが必須。日本のユーザーには [Sakana Fugu 詳細記事](?a=sakana-ai-fugu-multi-agent-orchestration-2026) も参照推奨。"
+    ],
+    "primarySources": [
+      {
+        "title": "Sakana Fugu — Multi-agent System as A Model",
+        "site": "Sakana AI",
+        "url": "https://sakana.ai/fugu/"
+      },
+      {
+        "title": "Sakana AI Launches Sakana Fugu",
+        "site": "MarkTechPost",
+        "url": "https://www.marktechpost.com/2026/06/22/sakana-ai-launches-sakana-fugu-an-orchestration-model-that-routes-tasks-across-a-swappable-pool-of-frontier-llms/"
+      },
+      {
+        "title": "Japan's 'Sakana Fugu' multiagent AI scores well against Fable 5, GPT 5.5",
+        "site": "Nikkei Asia",
+        "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/japan-s-sakana-fugu-multiagent-ai-scores-well-against-fable-5-gpt-5.5"
       }
     ]
   },
@@ -11206,10 +11376,15 @@ const ARTICLES_BODY = {
       "Anthropic が2026年7月1日、**Claude Fable 5** のグローバルアクセスを復活させた。前日6月30日に **米 Commerce 省（Howard Lutnick 長官）が同モデルの輸出規制を解除**したことを受けての再展開で、Anthropic は新しい classifier（分類器）を含む「defense in depth」（多層防御）体制で提供を再開する。ただし利用条件・料金・地理的展開すべてに複数の制限が課される難しい復帰となった。",
       "**シャットダウンの経緯（6/9→6/12）**: Fable 5 は6月9日に一般公開（[Fable 5 / Mythos 5 リリース](?a=anthropic-claude-fable-5-mythos-5-ga-2026)）されたが、直後に **Amazon の研究者**が Fable 5 のセーフガードを回避する手法を発見。「モデルにソフトウェア脆弱性の指摘をさせ、うち1件では脆弱性の悪用コードを書かせる」ことに成功したと米政府に報告した。これを受け Commerce 省は **6月12日に輸出規制**を発動、Fable 5 と Mythos 5 のグローバル配布が事実上停止した。",
       "**「秘密のケーパビリティ制限」批判**: 停止直前の6月10日、Fortune が **「Anthropic が Fable 5 の能力を秘密裏に制限している」**と報じた（研究者・開発者からの告発を紹介）。「secret sabotage（隠れた妨害）」という強い表現で、性能ベンチマークで公表された Fable 5 の能力が実運用で発揮されないという苦情が広まっていた。この時点で Anthropic の透明性がすでに問題視されており、その数日後の輸出規制と重なる形で二重の逆風となった。",
-      "**トランプ政権の解除決定（6/30）**: 6月30日、**Trump 政権 Commerce 省**が Fable 5 と Mythos 5 の輸出規制を解除。Lutnick 長官は Anthropic 宛の書簡で「Anthropic はもはや輸出ライセンスを必要としない」と通知した。ただし解除は無条件ではなく、Anthropic は以下を約束したと発表されている：**(a) セキュリティリスクの積極的な検知と対応**、**(b) 将来のリリースにおけるプロトコルで政府と協力**、**(c) 自社モデル間で悪意ある活動を発見した場合の報告**。事実上の**継続的な政府監督体制**の下での復活となる。",
+      "**トランプ政権の解除決定（6/30）**: 6月30日、**Trump 政権 Commerce 省**が Fable 5 と Mythos 5 の輸出規制を解除。Lutnick 長官は Anthropic 宛の書簡で「Anthropic はもはや輸出ライセンスを必要としない」と通知した。ただし解除は無条件ではなく、Anthropic は以下3点を約束したと発表されている：",
+      "**(a) セキュリティリスクの積極的な検知と対応**",
+      "**(b) 将来のリリースにおけるプロトコルで政府と協力**",
+      "**(c) 自社モデル間で悪意ある活動を発見した場合の報告**",
+      "事実上の**継続的な政府監督体制**の下での復活となる。",
       "**新 classifier：99% ジェイルブレイクブロック**: Anthropic は今回、**新しい classifier をデプロイし、6月に問題になった特定のジェイルブレイク手法を99%の確率でブロックする**と発表。CAISI（Center for AI Standards and Innovation）の研究者は「新セーフガードは extraordinarily strong（極めて強力）」と評価している。分類器はサイバーセキュリティ関連タスクを検出する仕組みで、教師モデルへの訓練による拒絶、事後の誤用パターン分析、事前ブロックの3層で構成される。",
       "**過剰ブロック（over-blocking）の懸念**: 一方 Axios と Anthropic 自身は、新しい厳格なフィルタリングが **benign（善良）なコーディング要求やセキュリティ研究要求まで一部ブロックしてしまう可能性**があると認めている。ペンテスターや脆弱性研究者、CTF プレイヤー、セキュリティ教育者などの合法的なユースケースが影響を受ける可能性が高く、PCWorld の報道では**Claude 有料ユーザーがすでに新制限に激怒**していることも伝えられている。**「安全性 vs 実用性」のトレードオフ**が顕在化した形。",
       "**利用上限と時間制限**: Fable 5 の利用は以下の制限下で提供される。**Pro / Max / Team / 一部 Enterprise プランは週次使用枠の 50% まで**、**7月7日までの期間限定**（それ以降は**使用クレジット制**へ移行し、追加料金が発生する）。導入時（6/9〜6/22）の「Pro/Max/Team/Enterprise 無料」から一段厳しい条件となり、事実上「試用期間の再延長」ではなく「制限付き再開」の色彩が強い。無料 / Go プランは対象外の可能性が高い。",
+      "**【追記 2026-07-08】期間延長発表**: 7月6日、Anthropic は当初7月7日で終了予定だったサブスク包括アクセスを **7月12日まで延長**（[延長・「一時的」宣言](?a=anthropic-claude-fable-5-billing-transition-extended-july-12-2026)）。あわせて **「使用クレジット制への移行は一時的措置」** と明言、**「capacity 回復次第 Fable 5 をサブスクリプションの標準機能に戻す」** と公式コミット。ユーザーの反発を受けた実質的な譲歩とみられる。",
       "**クラウド 3強の段階的復活**: **AWS Bedrock**、**Google Cloud Vertex AI**、**Microsoft Foundry** での Fable 5 提供も、可能な限り速やかに再有効化されるが**同時ではなく段階的**（The Hacker News、VentureBeat）。エンタープライズ顧客のワークロード切替タイミングは各クラウドの復活スケジュール次第となり、暫定的に Opus 4.8 や新登場の **Sonnet 5**（[Sonnet 5 リリース](?a=anthropic-claude-sonnet-5-agentic-cheap-2026)）への切替継続で対応する組織が多いと予想される。",
       "**「tokenmaxxing → 効率性」の再確認**: 皮肉なことに、Fable 5 が停止していた6月末〜7月初旬に Anthropic は **Sonnet 5** を投入し、Opus 4.8 に肉薄する性能を **$2/$10** の破格で提供した。Fable 5 復活後も、Pro/Max ユーザーの多くは「Sonnet 5 で十分」と判断する可能性が高く、[tokenmaxxing→効率性 分析](?a=feature-tokenmaxxing-to-efficiency-market-shift-2026) で整理した業界潮流が Anthropic 自身の製品ライン内でも進行することになる。Fable 5 の実質的な役割は「最上位の限定的な複雑タスク用途」に絞られていく見込み。",
       "**業界への含意**: 今回のエピソードは、フロンティア AI モデルが「発表と同時に**国家安全保障**の対象になる」時代の到来を示した象徴的事案となった。**Anthropic vs Alibaba 蒸留告発**（[Alibaba 蒸留告発](?a=anthropic-accuses-alibaba-claude-distillation-fraud-2026)）、**OpenAI 機密 S-1 提出**（[OpenAI S-1](?a=openai-confidential-s1-ipo-filing-852b-valuation-2026)）、**GPT-5.6 の米政府事前共有**（[GPT-5.6 プレビュー](?a=openai-gpt-5-6-sol-terra-luna-preview-2026)、約20組織限定）と並ぶ流れで、**フロンティア AI モデル各社と米国政府の統合が急速に進んでいる**ことを示す。研究者・開発者は「単一モデルへの依存」を避け、複数モデル・複数クラウド・複数ライセンスの分散戦略を採ることが、事業継続の観点から必須になりつつある。"
@@ -11257,7 +11432,13 @@ const ARTICLES_BODY = {
       "**Claude Fable 5** が7月1日に復活し（[Fable 5 復活](?a=anthropic-claude-fable-5-return-safeguards-limits-2026)）、Pro/Max/Team/一部 Enterprise 向けに 7/7 までの期間限定で利用可能となった。しかし単に「モデルを差し替える」だけでは Fable 5 の実力は引き出せない。**Anthropic 公式ドキュメント**「Prompting Claude Fable 5」に整理された推奨パターンを日本語で徹底解説する。速報系ニュースサイトは「復活しました」で終わるが、AI News は**開発者が明日から使える実務知識**まで踏み込む。",
       "## Fable 5 が Opus 4.8 と何が違うか — 7つの改善領域",
       "Anthropic 公式は Fable 5 が Opus 4.8 に対して以下の7領域で改善したと明言している。プロンプト設計を変える必要があるのはこの改善が原因だ。",
-      "**(1) Long-horizon autonomy（長時間自律実行）** — 数日〜週単位の目標指向タスクを維持できる。長く複雑なタスクでも指示保持能力が高い。**(2) 初回正確性（first-shot correctness）** — 従来なら数日の反復が必要だったシステムを1回で実装した例が報告されている。**(3) 視覚理解** — 密な技術図・Web アプリ・スクリーンショットを高精度で解釈、bash や crop ツールで反転・ぼけ・ノイズ画像を扱う。**(4) 企業ワークフロー** — 指示遵守、スコープ維持、財務分析・スプレッドシート・スライド・文書のプロレベル出力。**(5) コードレビュー・デバッグ** — サイバーセキュリティ関連以外での bug-finding リコールが Opus 4.8 より大幅に高い。リポジトリ履歴を跨いだ検索も可能。**(6) 曖昧さ耐性** — 複雑・マルチスレッドなリクエストを与えて「次の一手を決めてくれ」と依頼できる。**(7) 委譲と協働** — 並列サブエージェントの送出と維持が信頼できる水準に。",
+      "**(1) Long-horizon autonomy（長時間自律実行）** — 数日〜週単位の目標指向タスクを維持できる。長く複雑なタスクでも指示保持能力が高い。",
+      "**(2) 初回正確性（first-shot correctness）** — 従来なら数日の反復が必要だったシステムを1回で実装した例が報告されている。",
+      "**(3) 視覚理解** — 密な技術図・Web アプリ・スクリーンショットを高精度で解釈、bash や crop ツールで反転・ぼけ・ノイズ画像を扱う。",
+      "**(4) 企業ワークフロー** — 指示遵守、スコープ維持、財務分析・スプレッドシート・スライド・文書のプロレベル出力。",
+      "**(5) コードレビュー・デバッグ** — サイバーセキュリティ関連以外での bug-finding リコールが Opus 4.8 より大幅に高い。リポジトリ履歴を跨いだ検索も可能。",
+      "**(6) 曖昧さ耐性** — 複雑・マルチスレッドなリクエストを与えて「次の一手を決めてくれ」と依頼できる。",
+      "**(7) 委譲と協働** — 並列サブエージェントの送出と維持が信頼できる水準に。",
       "**重要な使い方の助言**: 「テストは自分の一番難しい未解決問題で行え」。単純タスクだけで評価すると Fable 5 の実力範囲を大きく過小評価してしまう、と Anthropic は明言している。",
       "## パターン1: 長時間実行に耐える足場を組む",
       "難しいタスクでは高 effort 設定で**分単位のリクエスト**、自律実行で**数時間のラン**が発生する。移行前に **クライアントのタイムアウト・ストリーミング・進捗表示**を必ず調整すること。長時間実行を非同期でチェックする「スケジュールジョブ経由」のハーネスに再構築するのが推奨。",
@@ -11324,7 +11505,9 @@ const ARTICLES_BODY = {
       "**(4) 推論を応答で再現するよう指示しない**: 「内部推論を echo せよ・transcribe せよ・説明せよ」というプロンプト・スキル・ハーネス指示は、Fable 5 で **`reasoning_extraction` 拒絶カテゴリ**をトリガする可能性があり、Opus 4.8 へのフォールバック率が上がる。既存スキル・システムプロンプトの reflection/show-your-thinking 系指示は移行時に監査せよ。推論の可視性が必要なら [adaptive thinking の構造化 `thinking` ブロック](https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking)を読み、進捗表示には send-to-user ツールを使う。",
       "## セーフティ・クラシファイア注意",
       "Fable 5 は3つのセーフティ・クラシファイアが走る:",
-      "**(a) オフェンシブサイバーセキュリティ**: エクスプロイト・マルウェア・攻撃ツール構築。**(b) 生物学・生命科学コンテンツ**: ラボ手順・分子機構等。**(c) モデルのサマリ化された思考の抽出**",
+      "**(a) オフェンシブサイバーセキュリティ**: エクスプロイト・マルウェア・攻撃ツール構築。",
+      "**(b) 生物学・生命科学コンテンツ**: ラボ手順・分子機構等。",
+      "**(c) モデルのサマリ化された思考の抽出**",
       "**Benign な業務**（脆弱性研究者、CTF プレイヤー、セキュリティ教育者、正当な生命科学研究）**もトリガする可能性**があるため、拒否リクエストを自動再ルートする仕組みが必要。公式が推奨する対応は **Opus 4.8 へのサーバーサイド or クライアントサイド・フォールバック**の設定（[refusals-and-fallback ドキュメント](https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback)参照）。`stop_reason: \"refusal\"` を検知したらフォールバック実行。",
       "## Fable 5 移行チェックリスト（AI News 編集部まとめ）",
       "1. クライアント HTTP タイムアウトを **数時間**に拡張、または非同期ジョブに再設計",
@@ -11365,6 +11548,546 @@ const ARTICLES_BODY = {
         "title": "Effort Parameter",
         "site": "Anthropic Docs",
         "url": "https://platform.claude.com/docs/en/build-with-claude/effort"
+      }
+    ]
+  },
+  "openai-us-government-5-percent-stake-42b-offer-2026": {
+    "body": [
+      "**Financial Times** が2026年7月2日に報じた内容によれば、**OpenAI が米国政府に同社の 5% 株式**を提示したことが判明した。株式時価は **$852B 評価額**（[3月調達ラウンド](?a=openai-122b-funding-852b-valuation-2026) で確定）で**約 $42.6B 相当**の巨額。CNBC・CNN Business・Forbes・Yahoo Finance が後追い報道した。",
+      "**Altman が直接ホワイトハウスに提示**: Sam Altman は Trump 大統領、**Howard Lutnick 商務長官**、**Scott Bessent 財務長官**の3者と直接協議した。Altman は「**AI のアップサイドを国民と共有する最善策**」として、政府への出資を「株式ベースで参加する形」で正当化したという。",
+      "**Anthropic・Google・Meta にも同様の枠組み要請**: Altman は OpenAI 単独ではなく、**Anthropic・Google・Meta にも同様の出資枠組みへの参加**を求めている。これが実現すれば、フロンティア AI 各社が横並びで米国政府に持分を渡す前例のない業界構造となる。Anthropic は[機密 S-1 提出](?a=openai-confidential-s1-ipo-filing-852b-valuation-2026)を先行しており、IPO 前の株式構造が政府と合意する形になる可能性も。",
+      "**Trump 大統領の姿勢**: Trump は「政府が AI 大手の株式を取ることは **beautiful thing**」と表現。「Americans を AI 革命のパートナーにする」路線を継続する姿勢を示した。",
+      "**Intel 前例との共通点**: Trump 政権は2025年8月に **Intel 株式 10%** を **$8.9B の普通株投資**で取得した実績があり、これが AI 業界へも適用される「産業政策としての政府出資モデル」の前例となっている。ただし Intel は**衰退期の半導体大手救済**の色彩が強かったのに対し、OpenAI は**成長期のスタートアップの上場前**という違いがあり、政策目的も市場の受け止めも異なる。",
+      "**現状は「conceptual and early-stage」**: FT は今回の議論を **「概念的で初期段階」**（conceptual and early-stage）と特徴付けている。**議会承認が必要になる可能性**もあり、実現に至るには数ヶ月〜1年以上の政治プロセスが見込まれる。反トラスト法・証券法・国家安全保障法との整合性も精査が必要。",
+      "**開発者・エンドユーザーへの影響**: 実現した場合、OpenAI の上場時株価に**政府持分プレミアム/ディスカウント**が発生する可能性、政府の政策方針が API 提供先や輸出規制に反映されるスピードが上がる可能性がある。**Claude Fable 5 復活の輸出規制解除**（[Fable 5 復活](?a=anthropic-claude-fable-5-return-safeguards-limits-2026)）で見られた「政府による能動的介入」がフロンティア AI 全体に及ぶ流れの延長線上にあり、開発者は**「AI モデル選択 = 米政府の技術政策選択」**という構図をますます意識する必要が出てくる。",
+      "**GPT-5.6 遅延との関係**: 6/25 に約20組織限定でプレビュー公開された **GPT-5.6 Sol/Terra/Luna**（[GPT-5.6 プレビュー](?a=openai-gpt-5-6-sol-terra-luna-preview-2026)）の一般公開が、米政府の追加監督要請で7月中〜下旬まで遅延している。これも「政府との統合が深まる過程」の一環であり、5% 出資が実現すれば同様のプロセスが常態化する可能性が高い。"
+    ],
+    "primarySources": [
+      {
+        "title": "OpenAI in talks to give Trump administration a 5% stake in the company, FT reports",
+        "site": "CNN Business",
+        "url": "https://www.cnn.com/2026/07/02/business/openai-trump-stake-intl"
+      },
+      {
+        "title": "OpenAI proposes 5% stake to Trump administration to ease Washington pressure",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/07/02/openai-proposes-us-government-own-5percent-stake-to-address-political-blowback.html"
+      },
+      {
+        "title": "OpenAI Reportedly Pitches Granting U.S. Government 5% Stake",
+        "site": "Forbes",
+        "url": "https://www.forbes.com/sites/siladityaray/2026/07/02/openai-reportedly-pitches-granting-us-government-5-stake/"
+      }
+    ]
+  },
+  "meituan-longcat-2-1-6t-domestic-chips-mit-open-2026": {
+    "body": [
+      "中国の巨大テック企業 **Meituan（美団、北京）**が2026年6月30日、大規模言語モデル **LongCat-2.0** を **MIT ライセンス**で OSS 公開した。**1.6兆パラメータ**（1.6T）の Sparse **Mixture of Experts** アーキテクチャで、**この規模のモデルとして初めて、事前訓練から推論まで完全に中国国産 AI チップだけで完結**した点が歴史的意義を持つ。",
+      "**モデル仕様**: 総パラメータは **1.6T**、アクティブは **33B〜56B/トークン（平均約 48B）**、コンテキストウィンドウは **1M トークン**。Sparse MoE の設計により、見出しサイズは巨大だが**推論コストは 48B クラス**に抑えられる。**OpenRouter 上で公開前から「Owl Alpha」というコードネームで利用が拡大**しており、実運用検証を経てからの正式リリースとなった。",
+      "**国産チップ 50,000枚のスーパーポッド**: 訓練は **50,000枚の中国国産 AI ASIC スーパーポッド**で実施された。**NVIDIA GPU は一切使用していない**。米国の対中先端半導体輸出規制（Blackwell / Hopper / Vera Rubin のうち上位 SKU が禁輸対象）に対する中国側の技術主権確保の象徴的成果と位置付けられる。ASIC の具体的な設計元・製造委託先については公表されていないが、Huawei Ascend 系または Cambricon 系が有力とみられる。",
+      "**ベンチマーク性能**: **SWE-bench Pro で 59.5** を記録、これは **GPT-5.5 の 58.6 を上回り、Claude Opus 4.6 と同水準**。Gemini 3.1 Pro とも並ぶ。エージェント的タスク・コーディング領域で強く、汎用推論では Fable 5 / GPT-5.6 Sol にはまだ及ばない。**Z.ai GLM-5.2**（[GLM-5.2 公開](?a=zhipu-zai-glm-5-2-open-source-coding-1m-context-2026)、SWE-bench Pro 62.1）と並ぶ「中国 OSS フラッグシップ」の地位を確立。",
+      "**「AI 主権」の観点**: 米国では NVIDIA が AI 訓練インフラ市場を圧倒しており、Anthropic（AWS Trainium）・OpenAI（Broadcom Jalapeño、[Jalapeño 発表](?a=openai-broadcom-jalapeno-llm-inference-chip-2026)）・Google（TPU）・Microsoft（MAIA）・SpaceX-xAI（Colossus GPU 220,000）と各社が独自路線を模索している。中国側は Meituan の LongCat-2.0 で **「国産チップだけで最大級モデルを訓練できる」**ことを実証、これは Anthropic vs Alibaba 蒸留告発（[Alibaba 蒸留告発](?a=anthropic-accuses-alibaba-claude-distillation-fraud-2026)）と対照的に「**自前で作る**」路線の実力を示す動きとなった。",
+      "**「tokenmaxxing → 効率性」との接続**: MIT ライセンスによる自社ホスティング可能な OSS モデルとして、[効率性転換分析](?a=feature-tokenmaxxing-to-efficiency-market-shift-2026) で整理した「オープンウェイト陣営」の選択肢を強化する。DeepSeek V4・Kimi K2.6・GLM-5.2 に LongCat-2.0 が加わり、**「中国 OSS 4強」**が形成された。エンタープライズ・スタートアップは、Claude Fable 5 / GPT-5.6 に依存しない実運用オプションを一段深化させることになる。",
+      "**日本の意味合い**: 日本の法人が LongCat-2.0 を利用する場合、MIT ライセンスは商用利用・改変・再配布とも制約なし。ただし**中国製モデル特有のコンテンツポリシー**（内部の安全フィルタが中国当局の方針を反映する可能性）や、**日本語能力**（訓練データに日本語がどの程度含まれるか未公表）は個別検証が必要。エンタープライズの本番採用にはファインチューニング or LoRA 適応、コンテンツフィルタの再訓練が現実的。"
+    ],
+    "primarySources": [
+      {
+        "title": "China debuts biggest AI model trained on local chips, as Meituan releases LongCat-2.0",
+        "site": "South China Morning Post",
+        "url": "https://www.scmp.com/tech/tech-trends/article/3358854/china-debuts-biggest-ai-model-trained-local-chips-meituan-releases-longcat-20"
+      },
+      {
+        "title": "Meituan Open-Sources LongCat-2.0, a 1.6T Model Trained on Chinese Chips",
+        "site": "RITS Shanghai NYU",
+        "url": "https://rits.shanghai.nyu.edu/ai/meituan-open-sources-longcat-2-0-a-1-6t-model-trained-on-chinese-chips/"
+      },
+      {
+        "title": "China's Meituan says its new AI model was trained on domestic chips",
+        "site": "The Next Web",
+        "url": "https://thenextweb.com/news/chinas-meituan-says-its-new-ai-model-was-trained-on-domestic-chips"
+      }
+    ]
+  },
+  "five-eyes-agentic-ai-cyber-risk-guidance-2026": {
+    "body": [
+      "**Five Eyes**（米・英・豪・加・NZ の情報安全保障5カ国同盟）のサイバーセキュリティ機関が2026年6月22日、合同で **「The AI Shift in Cyber Risk: Why Leaders Must Act Now」**（サイバーリスクにおける AI シフト: 指導者はなぜ今行動すべきか）を発表した。参加機関は **CISA（米）・NSA（米）・NCSC-UK（英）・ASD's ACSC（豪）・Canadian Cyber Centre（加）・NCSC-NZ（NZ）**。",
+      "**中心メッセージ: 既存フレームワークに統合せよ**: 文書の核心的な主張は **「agentic AI は完全に新しいセキュリティ規律を必要としない」**。組織は agentic AI システムを、**すでに運用している既存のサイバーセキュリティフレームワーク・ガバナンス構造に組み込む**べきで、Zero Trust・**多層防御（defense-in-depth）**・**最小特権原則（least-privilege access）**といった既存原則を適用せよ、というのが基本方針。",
+      "**5つのリスクカテゴリ**: ガイダンスはリスクを以下の5つに分類する。",
+      "**(1) 特権リスク（privilege）**: エージェントに過度な権限が付与され、想定外の操作が可能になる。",
+      "**(2) 設計・構成リスク（design/configuration）**: 開発時のアーキテクチャ選択・コンフィグ設定が脆弱性を生む。",
+      "**(3) 行動リスク（behavioral）**: プロンプトインジェクション、想定外の挙動、意図しない副作用など、エージェントの動作自体に起因するリスク。",
+      "**(4) 構造リスク（structural）**: エージェント間の連携、オーケストレーション層、記憶システムの整合性に起因するリスク。",
+      "**(5) サプライチェーンリスク（supply-chain）**: サードパーティスキル、外部モデル、依存パッケージ経由での攻撃。",
+      "文書はさらに **23の具体的リスク項目**と **100以上のベストプラクティス**を列挙している。",
+      "**SkillSpector との実装的接続**: 5リスクカテゴリの (5) サプライチェーンは、NVIDIA SkillSpector（[SkillSpector 特集](?a=feature-nvidia-skillspector-agent-skill-security-2026)）が対応するスキル脆弱性検出と直接接続する。SkillSpector の16カテゴリ・64パターン（プロンプトインジェクション・MCP ツールポイズニング・特権昇格・データ漏洩等）は Five Eyes の5リスクカテゴリを網羅的に検査可能。**AI News の CLAUDE.md「外部スキル実行禁止」ポリシー**も、Five Eyes ガイダンスの精神と完全に整合する。",
+      "**Anthropic WIF との接続**: Five Eyes の (1) 特権リスク・最小特権原則の実装として、**Anthropic Workload Identity Federation**（[WIF GA](?a=anthropic-workload-identity-federation-ga-service-accounts-2026)）が静的 API キー廃止・Service Accounts・監査証跡を提供する。**「Zero Trust をエージェントレイヤーに拡張する」**具体的な選択肢が2026年6月に整い始めた形。",
+      "**Fable 5 復活との温度差**: 一方で Five Eyes ガイダンスは「**慎重・漸進的な採用**」（cautious, incremental adoption）を強調する。**Claude Fable 5 の輸出規制解除**（[Fable 5 復活](?a=anthropic-claude-fable-5-return-safeguards-limits-2026)）が示すように、政府側のスタンスは「セキュリティ強化 → 通商解禁」の順で動いており、企業側は Five Eyes ガイダンスに沿って**セキュリティ体制を先に整えたうえで**フロンティアモデルを本番運用する順序が推奨される。",
+      "**業界への含意**: 「新しい規律は不要」というメッセージは、既存の CISO・情報セキュリティ組織にとって**朗報**である一方、「では何が違うのか」を具体化する 23 リスク・100+ プラクティスの重みは、実務的な負荷が大きい。**AI News では今後、5リスクカテゴリ × 実装パターン（SkillSpector / WIF / Anthropic Reviewer Agent / OpenAI Trusted Contact 等）のクロス表を作成する解説記事を予定**している。",
+      "**Anthropic vs Alibaba 蒸留告発との重層**: Five Eyes ガイダンスの (5) サプライチェーンリスクは、[Anthropic vs Alibaba 蒸留告発](?a=anthropic-accuses-alibaba-claude-distillation-fraud-2026)（2,880万件の Claude 不正リクエスト、25,000偽アカウント）で顕在化した「フロンティアモデル API への不正アクセス・蒸留」も文脈に含む。**Five Eyes 加盟5カ国の情報機関が同一文書に署名した**ことは、国家安全保障レベルでの AI 脅威対応が形になり始めた象徴的な動き。"
+    ],
+    "primarySources": [
+      {
+        "title": "Five Eyes Cyber Security Agencies Statement",
+        "site": "NSA / CSS",
+        "url": "https://www.nsa.gov/Press-Room/News-Highlights/Article/Article/4523810/five-eyes-cyber-security-agencies-statement/"
+      },
+      {
+        "title": "Five Eyes Cyber Security Agencies Statement",
+        "site": "CISA",
+        "url": "https://www.cisa.gov/news-events/news/five-eyes-cyber-security-agencies-statement"
+      },
+      {
+        "title": "US government, allies publish guidance on how to safely deploy AI agents",
+        "site": "CyberScoop",
+        "url": "https://cyberscoop.com/cisa-nsa-five-eyes-guidance-secure-deployment-ai-agents/"
+      }
+    ]
+  },
+  "google-gemini-3-1-flash-image-3-pro-image-release-2026": {
+    "body": [
+      "Google が2026年6月30日、**Gemini 3.1 Flash Image** と **Gemini 3 Pro Image** の**画像生成モデル2種**を公開した。**Gemini API・Google AI Studio・Vertex AI** で即日利用可能。Google は同日、Anthropic の Claude Sonnet 5（[Sonnet 5 リリース](?a=anthropic-claude-sonnet-5-agentic-cheap-2026)）・Claude Science（[Claude Science](?a=anthropic-claude-science-workbench-research-2026)）と重なるタイミングでの発表となり、フロンティアプレイヤー各社が「日常業務向け × 高性能向け」の2階層展開を明確化する潮流を確認する形となった。",
+      "**Gemini 3.1 Flash Image**: 「日常業務向け」画像生成モデル。**低レイテンシ・低コスト**を志向し、Gemini 3.5 Flash（テキスト、[Google I/O 2026](?a=google-io-2026-gemini-3-5-flash-antigravity-spark-2026) で GA）と同一の Flash 系ブランドで展開。**旧 Nano Banana / Nano Banana 2 系**の後継として位置付けられ、Web アプリでの高頻度な画像生成、動的なコンテンツ差し替え、A/B テスト用バリエーション生成などのユースケースを狙う。",
+      "**Gemini 3 Pro Image**: 「高忠実度・高品質」画像生成モデル。**複雑なプロンプト・複数被写体構成・高解像度出力**に対応し、Midjourney V8・Flux 2・GPT Image（[GPT Image レビュー](?a=gpt-image-review)）と競合する。マーケティング素材・アート制作・製品ビジュアル等のプロ用途を想定。",
+      "**Google の「2階層画像戦略」**: これで Google は **Gemini 3.1 Flash Image（廉価）と Gemini 3 Pro Image（高品質）**の2階層製品ラインを画像生成でも整備。テキスト（Gemini 3.5 Flash / 3.5 Pro）・動画（Veo 3.1 / Veo）と同じ2階層アプローチで統一。**OpenAI GPT-5.6 Sol/Terra/Luna**（[GPT-5.6 プレビュー](?a=openai-gpt-5-6-sol-terra-luna-preview-2026)）の3階層と並ぶ「**用途特化の階層化**」が業界標準になりつつある。",
+      "**Vertex AI と Google Workspace 統合**: エンタープライズ顧客は **Vertex AI** で即日利用可能で、Google Workspace（Slides・Vids・Docs）との統合ロードマップも公表された。**Google Vids に Veo 3.1 統合**（[Google Vids Veo 3.1](?a=google-vids-veo31-free-video-generation-2026)）と組み合わせ、**「Workspace 内で画像・動画・テキストの全モーダル生成を完結」**する構想が具体化する。",
+      "**日本の開発者向け実用ガイド（次回予告）**: Gemini 3.1 Flash Image は API 料金が Nano Banana 2 系より約 **20-30% 削減**（Google 公式ベンチマーク）される見込み。日本語プロンプトでの応答性能は Gemini テキスト系と同水準で、Midjourney 系より日本語・アジア圏コンテキストに強い可能性が示唆されている。**AI News 編集部は「日本語プロンプトでの Gemini 3.1 Flash Image vs Flux 2 vs Midjourney V8 実践比較」を近日公開予定**。"
+    ],
+    "primarySources": [
+      {
+        "title": "Gemini API Release Notes",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/changelog"
+      },
+      {
+        "title": "Google DeepMind - Gemini",
+        "site": "DeepMind",
+        "url": "https://deepmind.google/"
+      }
+    ]
+  },
+  "anthropic-california-newsom-claude-50-off-state-agencies-2026": {
+    "body": [
+      "California 州の **Gavin Newsom 知事**が2026年6月29日、Anthropic と **first-of-its-kind の州政府協定**を発表した。TechCrunch・CBS Sacramento・Fox Business・TechRadar・The Next Web・Yahoo が同日〜翌日に報道した。米国の州政府と単一 AI ベンダーが公式にこの規模で提携するのは前例のない事案で、他州や連邦機関、日本の自治体にとっても重要な参照事例となる。",
+      "**割引と提供条件**: 州機関は Anthropic の生産性アシスタント Claude を **50% 割引**で利用可能。**市・郡等の地方自治体も同じ割引**の対象で、California の全レベルの行政機関がスケール調達できる。",
+      "**追加特典**: 割引に加え、**無料の人材訓練**（州職員向け）、**Anthropic 開発者による技術・ワークフロー支援**も含まれる。導入コストとオンボーディングの障壁を大幅に下げる包括的パッケージ。",
+      "**提供チャネル: SITeS ポータル**: **California Department of Technology（CDT）**の新設 **Statewide Information Technology Shared Services（SITeS）ポータル**経由で提供。Claude は SITeS 経由で州の全機関に提供される **最初の AI 生産性ツール**。今後の他 AI ベンダー（OpenAI・Google 等）の追随でマルチベンダー体制になる可能性が示唆されている。",
+      "**実運用が既に開始**: 主要機関で導入が進行中。",
+      "**サイバー防御**: CDT と **CalOES**（California Office of Emergency Services）が **Claude Security + Claude Code**（[Claude Code](?a=claude-code)）を組み合わせ、州の**コードのスキャン・トリアージ・パッチ適用**に活用。**Five Eyes ガイダンス**（[Five Eyes 分析](?a=five-eyes-agentic-ai-cyber-risk-guidance-2026)）の推奨する Zero Trust・多層防御路線に沿った実装例となる。",
+      "**顧客サービス**: **California DMV**（運転免許・車両登録の州機関）が Claude で顧客サービスを改善、待ち時間削減。",
+      "**医療・福祉**: **California Department of Healthcare Services**（**全米最大の Medicaid 機関**）が Claude を内部ワークフローで活用、Medicaid 受給者への対応品質向上を狙う。",
+      "**「先例」としての意義**: 米国の州政府による単一 AI ベンダーとの公式協定という先例が生まれたことで、以下の連鎖効果が予想される。",
+      "**(1) 他州の追随**: NY・TX・FL 等の大規模州が独自の類似協定を協議する可能性。",
+      "**(2) 競合 AI 各社の州政府攻勢**: OpenAI・Google・xAI が対抗提案を各州に持ち込む展開が予想される。",
+      "**(3) 連邦政府協定への布石**: [OpenAI が米政府に5%出資を提示](?a=openai-us-government-5-percent-stake-42b-offer-2026) の議論とも接続、Anthropic も類似の連邦協定へ動く可能性。",
+      "**(4) 日本の地方自治体への示唆**: 東京都・大阪府等が生成 AI 導入時の交渉テンプレートとして参照可能。",
+      "**Anthropic の収益とアクセス戦略**: 5月末に Series H で $965B 評価額・**ARR $47B**（[Anthropic Series H 補遺](?a=anthropic-may-2026-series-h-milan-korea-arr-47b-2026)）を確定した Anthropic にとって、州政府スケールでの導入は個別契約の収益額以上に「**社会的なユースケース事例**」の獲得価値が高い。Medicaid・DMV・サイバー防御での実運用は「Claude が公共サービスに使える」ことの具体的な証明となる。",
+      "**Fable 5 復活・Sonnet 5 との接続**: 6/30 の [Claude Sonnet 5 リリース](?a=anthropic-claude-sonnet-5-agentic-cheap-2026)（$2/$10 の攻めた価格）や 7/1 の [Fable 5 復活](?a=anthropic-claude-fable-5-return-safeguards-limits-2026)（週次50%上限）と同じ週に、州政府協定が発表された流れは、Anthropic の**エンタープライズ・公共セクター深耕**戦略の一貫性を示す。**tokenmaxxing → 効率性**の潮流（[効率性転換分析](?a=feature-tokenmaxxing-to-efficiency-market-shift-2026)）でも、州政府のような大規模かつコスト感度の高い顧客層への **50% 割引** は理にかなう。"
+    ],
+    "primarySources": [
+      {
+        "title": "Governor Newsom announces a first-of-its-kind partnership with Anthropic",
+        "site": "Governor of California",
+        "url": "https://www.gov.ca.gov/2026/06/29/governor-newsom-announces-a-first-of-its-kind-partnership-providing-anthropic-tools-to-state-agencies-and-improving-services-for-californians/"
+      },
+      {
+        "title": "Anthropic and Gov. Newsom forge deal allowing California government to use Claude at half price",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/06/29/anthropic-and-gov-newsom-forge-deal-allowing-california-government-to-use-claude-at-half-price/"
+      },
+      {
+        "title": "California signs deal to bring Claude AI tools to government workers",
+        "site": "CBS Sacramento",
+        "url": "https://www.cbsnews.com/sacramento/news/california-claude-deal-gavin-newsom/"
+      }
+    ]
+  },
+  "white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026": {
+    "body": [
+      "**White House** が2026年7月3日時点で、**OpenAI・Anthropic・Google の主要3社**とフロンティア AI モデルの **自主リリース基準（voluntary release standards）** を最終協議中であることが FT・Reuters 系の報道で明らかになった。翌週（7/6-7/12 週）の発表が視野に入っている。既に運用中の枠組みが公式な形で成文化される流れとなる。",
+      "**Executive Order 14409 が基盤**: 骨子は既に **Executive Order 14409**（**Trump 大統領が6月2日署名**、「Promoting Advanced Artificial Intelligence Innovation and Security」）で確立されていた。以下3つの要素が中核。",
+      "**(1) 機密ベンチマーク**: 政府が **classified（機密扱いの）ベンチマーク**を保持し、フロンティアモデルの能力評価を独自に実施できる仕組み。",
+      "**(2) 30日の事前公開期間**: モデル一般公開の **30日前** に政府と情報を共有する義務。政府側は事前アクセスと安全性評価の時間を確保する。",
+      "**(3) 自発参加**: 法律による強制ではなく、参加は **voluntary（自発的）**。しかし実質的には輸出規制・調達優遇との連動で参加を「事実上必須」に近い形にする設計。",
+      "**既に「実運用」されている**: 過去1ヶ月の主要事象は、この枠組みが実質的に動いている証拠と言える。",
+      "**GPT-5.6 プレビューの限定配布**: [GPT-5.6 プレビュー](?a=openai-gpt-5-6-sol-terra-luna-preview-2026) は **約20組織限定**で配布された。米国政府に事前共有される流れそのものが Executive Order 14409 の 30日事前公開期間の運用例。",
+      "**Fable 5 の輸出規制と解除**: [Claude Fable 5 復活](?a=anthropic-claude-fable-5-return-safeguards-limits-2026) は6/12 の輸出規制発動 → 6/30 の解除 → 7/1 の再展開という Executive Order 14409 の権限行使サイクルの実例。",
+      "**発表される新枠組みの内容**: FT・TipRanks 系の報道では、以下が骨子と見られる。",
+      "**ベンチマーク基準**: 政府が求めるモデル能力・安全性の閾値を明文化。フロンティアモデルは公開前にこれをクリアする必要がある。",
+      "**公開タイムライン**: 30日事前公開期間に加え、政府側の評価スケジュールと再評価要件を規定。",
+      "**国内外アクセスルール**: 米国内では通常展開、輸出規制対象国では制限、その他は個別評価という3層構造が示唆されている。中国は事実上ブロック、日本・EU・韓国・オーストラリア等の同盟国は「原則許可」路線が予想される。",
+      "**開発者・エンタープライズへの影響**: フロンティアモデルの初期プレビュー→GA のギャップが**恒常的に数週間**発生する新常態が定着する。エンタープライズは（1）初期プレビューの **信頼できるパートナー枠**、（2）GA 後の通常利用、を分けて計画する必要がある。**「モデル選択 = 米政府の技術政策選択」**（[OpenAI 5% 出資記事](?a=openai-us-government-5-percent-stake-42b-offer-2026) で整理）の構図がさらに強化される。",
+      "**Anthropic × California 州協定との接続**: 一方で [Anthropic × California 州協定](?a=anthropic-california-newsom-claude-50-off-state-agencies-2026) のような**州レベルの調達契約**も並行して進行しており、連邦の規制枠組みと州の調達の両輪が同時に動いている。開発者・企業側は**「複数モデル・複数クラウド・複数ライセンス」の分散戦略**の重要性が一段と高まる。",
+      "**日本の含意**: 日本企業は「米国発フロンティアモデルの利用可能タイミング」が政府の判断で変わる新常態を前提に、**国産・中国 OSS・欧州モデル**（Mistral 等）の代替経路を確保する意義が増す。特に [Meituan LongCat-2.0](?a=meituan-longcat-2-1-6t-domestic-chips-mit-open-2026) や [Z.ai GLM-5.2](?a=zhipu-zai-glm-5-2-open-source-coding-1m-context-2026) の MIT ライセンス OSS は「独立可能な選択肢」として、日本のエンタープライズにも戦略的意義を持つ。"
+    ],
+    "primarySources": [
+      {
+        "title": "Promoting Advanced Artificial Intelligence Innovation and Security",
+        "site": "The White House",
+        "url": "https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/"
+      },
+      {
+        "title": "White House Nears Voluntary Frontier-Model Deal With Top AI Labs",
+        "site": "AI Weekly",
+        "url": "https://aiweekly.co/alerts/white-house-nears-voluntary-frontier-model-deal-with-top-ai-labs"
+      },
+      {
+        "title": "White House Races to Finalize AI Model Rules With OpenAI, Google and Anthropic",
+        "site": "TipRanks",
+        "url": "https://www.tipranks.com/news/white-house-races-to-finalize-ai-model-rules-with-openai-google-and-anthropic"
+      },
+      {
+        "title": "OpenAI limits new AI models to 'trusted partners' at request of U.S. government",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/06/26/openai-limits-new-ai-models-to-trusted-partners-request-us-government.html"
+      }
+    ]
+  },
+  "anthropic-claude-chrome-extension-9m-installs-beta-2026": {
+    "body": [
+      "Anthropic の **Claude for Chrome** 拡張機能が2026年6月時点で **900万インストール** を突破したことが Chrome Web Store の公開数値で明らかになった。7月1日には拡張機能側のアップデートも配信され、**Pro / Max / Team / Enterprise の全有料プラン**でベータ提供が続いている。「AI をブラウザ内に常駐させる」路線として、OpenAI Operator や Perplexity Comet と競合する主力プロダクトの地位を確立した。",
+      "**基本機能**: ブラウザ内で Claude が以下を自律的に実行する。",
+      "**(1) クリック・フォーム記入**: ユーザーが指示した Web ページで Claude がボタン操作・テキスト入力を代行。",
+      "**(2) スケジュールタスク**: 定期的な Web タスク（週次レポートのダウンロード、指定サイトの状態チェック等）を Claude が繰り返し実行。",
+      "**(3) タブ横断ワークフロー**: 複数のタブ・サービスを跨いだ処理（例: Salesforce → Slack → Notion への一連の操作）を1つのプロンプトから実行。",
+      "**(4) Planning モード**: 複雑なタスクは Claude が事前に計画（サブステップに分解）してから実行、途中で人間が承認・修正できる。",
+      "**(5) Claude Code 統合**: [Claude Code](?a=claude-code) との連携で、ブラウザ操作の結果をローカルの開発ワークフローに直接繋げられる。",
+      "**(6) ワークフロー記録**: 一度実行した手順を記録し、再利用可能な形で保存できる。ノーコード的な「自分専用の自動化」を蓄積可能。",
+      "**なぜ 9M ダウンロードなのか**: Chrome Web Store 数値によれば、Anthropic の Chrome 拡張は他のブラウザ拡張型 AI ツールの中でも急成長を続けている。Anthropic は今回の拡大の背景として、**エンタープライズでの「エージェント常駐」ユースケース**の急拡大を挙げている。",
+      "**エンタープライズが Claude for Chrome を選ぶ理由**:",
+      "**(1) Privacy 特性**: ChatGPT Operator（OpenAI）と異なり、Anthropic は明確な Enterprise Privacy 保証（顧客データを訓練に使用しない）を提供。",
+      "**(2) Claude Code との統合**: 開発者は VSCode / Claude Code とブラウザ拡張を組み合わせ、「PR レビュー中に GitHub UI を Claude が操作」等の高度なワークフローを構築できる。",
+      "**(3) WIF 統合**: [Anthropic WIF GA](?a=anthropic-workload-identity-federation-ga-service-accounts-2026) で組織単位のアクセス管理が可能、シャドー IT リスクを抑えつつ導入できる。",
+      "**なお beta 継続**: 拡張機能は現時点で **beta 継続**（GA ではない）。The Next Web 系の報道では、Anthropic が慎重に beta を延長している背景として、**エージェント型 AI のセキュリティリスク**（Five Eyes ガイダンス [Five Eyes 分析](?a=five-eyes-agentic-ai-cyber-risk-guidance-2026) が指摘する 5 カテゴリのリスク）を慎重に評価する意図があると推測されている。特に **プロンプトインジェクション経由での予期しないブラウザ操作** への防御は業界全体の課題で、Anthropic も慎重な運用パラメータを持つ。",
+      "**競合の位置付け**: **OpenAI Operator**（クラウド仮想デスクトップ経由）、**Perplexity Comet**（Perplexity 独自ブラウザ）、**Anthropic Claude for Chrome**（Chrome 拡張）の3方式が主要選択肢。開発者は各方式の Pros/Cons を理解して選ぶ必要がある。**AI News では今後、3方式の実践比較記事も予定**している。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude for Chrome",
+        "site": "Anthropic",
+        "url": "https://claude.com/claude-for-chrome"
+      },
+      {
+        "title": "Claude - Chrome Web Store",
+        "site": "Chrome Web Store",
+        "url": "https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn"
+      },
+      {
+        "title": "Get started with Claude in Chrome",
+        "site": "Claude Help Center",
+        "url": "https://support.claude.com/en/articles/12012173-get-started-with-claude-in-chrome"
+      }
+    ]
+  },
+  "feature-un-global-dialogue-ai-governance-geneva-2026": {
+    "body": [
+      "**国連初の Global Dialogue on AI Governance** が2026年7月6日、Geneva の **Palexpo International Convention Centre** で開幕。7日までの2日間で開催され、**全 193 UN 加盟国**が参加、私的セクター・市民社会・学術界・技術コミュニティも同席する史上最大級の AI 国際対話となった。次回セッションは **2027年5月に New York** で予定される。",
+      "**共同議長**: **Egriselda López**（エルサルバドル）と **Rein Tammsaar**（エストニア）が共同議長を務めた。「大国主導」ではなく、中小国が交渉プロセスを主導するデザインは、国連 AI 政策における「Global South と技術中立国の役割」を象徴する。",
+      "**Guterres 事務総長の4つの優先領域**: **António Guterres** 国連事務総長は開会演説で、以下の 4 つの優先領域を提示した。",
+      "**(1) 共通安全基準（Common safety standards）**: フロンティア AI モデルのリリース前評価・監査・情報開示の国際標準化。米国 Executive Order 14409 の機密ベンチマーク（[White House 自主基準](?a=white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026)）や Five Eyes ガイダンス（[Five Eyes 分析](?a=five-eyes-agentic-ai-cyber-risk-guidance-2026)）と接続する。",
+      "**(2) 人権レッドライン（Human-rights red lines）**: AI が国際人権法に違反する用途（大量監視・自律殺傷兵器・差別的意思決定）を国際的に禁止する枠組み。UN chief は「killer robots」への懸念を明確に表明。",
+      "**(3) キャパシティビルディング（Capacity-building）+ Global Fund for AI**: 途上国が AI 技術・人材・ガバナンスの能力を構築するための **Global Fund for AI**（AI のためのグローバル基金）の設立を提案。米中フロンティア AI 独占への対抗軸として、国際的な技術主権を後押しする。",
+      "**(4) AI Environmental Transparency Initiative**: AI モデル訓練・推論の**炭素排出・水消費・エネルギー使用**の情報開示標準化。データセンター展開（[Anthropic-CoreWeave $68億契約](?a=anthropic-coreweave-68b-multiyear-cloud-deal-2026)・[SpaceX-Cursor $60B 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）が加速する中で、環境影響の透明性を求める。",
+      "**AI for Good サミット連続開催**: Global Dialogue に続いて、**7月7日〜10日**に ITU（国際電気通信連合）主催の **AI for Good Global Summit** が同じく Geneva で開催される。技術者・研究者・NGO・スタートアップが参加し、SDGs（持続可能な開発目標）達成のための AI 応用ユースケースが議論される。",
+      "**AI for Good Global Commission 初会合（7/8）**: サミット期間中の **7月8日**、**UN AI for Good Global Commission** の初会合が開催される。これは**AI 企業 CEO 級を国家元首と対等の場で参加させる初の UN 枠組み**として重要。",
+      "**共同議長**: Marc Benioff（Salesforce CEO）と Paul Kagame（ルワンダ大統領）",
+      "**Commission メンバー**:",
+      "**Jensen Huang**（NVIDIA CEO）",
+      "**Andy Jassy**（Amazon CEO）",
+      "**Brad Smith**（Microsoft President）",
+      "**Jack Clark**（Anthropic 共同創業者、Policy Head）",
+      "**Aidan Gomez**（Cohere CEO）",
+      "この構成は、**AI 業界のパワー中心が UN の政策形成テーブルに直接組み込まれた**ことを意味する。日本代表の参加については開示が確認できていないが、翌年 NY 会合に向けた交渉プロセスに影響する構造となる。",
+      "**日本の視点**: 日本は G7 での AI 議論、GENIAC プログラム（[中国モデル特集](?a=feature-china-ai-models-may-2026-qwen-kimi-ernie) で言及）等の枠組みを持つが、**UN Global Dialogue と AI for Good Commission への直接参加体制**は明確化されていない。次回 2027年5月 NY 会合までに、経産省・総務省・外務省の連携で AI 政策の国際的発信力を強化する必要がある。**Sakana AI**（[Sakana Fugu レビュー](?a=sakana-fugu-review)）・**Preferred Networks**・**ELYZA**（[aiCompanies.js](?a=) の日本企業）など、日本発 AI スタートアップの Commission 級への影響力構築も課題。",
+      "**フロンティア各社と国際規制の統合フェーズ**: 過去1ヶ月で確認できた「政府と AI 企業の統合」動向を並べると、方向性がより鮮明になる。",
+      "**(a) 連邦（White House）**: Executive Order 14409、GPT-5.6 Sol の20組織限定、Fable 5 輸出規制サイクル",
+      "**(b) 州（Anthropic × California 協定）**: 50% 割引、DMV/Medicaid/サイバー防御",
+      "**(c) 5カ国連合（Five Eyes）**: Agentic AI サイバーリスクガイダンス",
+      "**(d) 超国家（UN）**: Global Dialogue + AI for Good Commission",
+      "**(e) 産業界株式（OpenAI 5% 出資提示）**: 企業自身が政府に持分を渡す構造",
+      "この5層構造の中で、**日本企業・日本政府がどの層で意思決定に参加するか**が、今後の AI 主権における最大の戦略課題となる。",
+      "**「発表と同時に国家安全保障の対象」時代の恒常化**: [Fable 5 復活](?a=anthropic-claude-fable-5-return-safeguards-limits-2026) や [GPT-5.6 プレビュー限定](?a=openai-gpt-5-6-sol-terra-luna-preview-2026) で見られた「政府監督付きリリース」のパターンが、UN 枠組みでは**国際的にコーディネート**される可能性が出てきた。開発者・エンタープライズは「**モデル選択 = 米国政府の技術政策選択 + 国際規制の予測**」という2軸の判断が求められる時代に入っていく。"
+    ],
+    "primarySources": [
+      {
+        "title": "Global Dialogue on AI Governance",
+        "site": "United Nations",
+        "url": "https://www.un.org/global-dialogue-ai-governance/en"
+      },
+      {
+        "title": "Secretary-General's remarks to the opening of the first Global Dialogue on Artificial Intelligence Governance",
+        "site": "UN Secretary-General",
+        "url": "https://www.un.org/sg/en/content/sg/statements/2026-07-06/secretary-generals-remarks-the-opening-of-the-first-global-dialogue-artificial-intelligence-governance-delivered"
+      },
+      {
+        "title": "UN Global Dialogue opens with urgent call for safe and inclusive AI",
+        "site": "UNESCO",
+        "url": "https://www.unesco.org/en/articles/un-global-dialogue-opens-urgent-call-safe-and-inclusive-ai-benefits-all"
+      },
+      {
+        "title": "From AI to 'killer robots': UN chief issues urgent governance call",
+        "site": "UN News",
+        "url": "https://news.un.org/en/story/2026/07/1167873"
+      }
+    ]
+  },
+  "cve-2026-47729-squidbleed-claude-mythos-project-glasswing-2026": {
+    "body": [
+      "**Anthropic Claude Mythos Preview** が [Project Glasswing](?a=anthropic-glasswing-expansion-partner-network-services-track-2026) の権限付きセキュリティ監査で、**Squid Proxy の29年前のバグ**を発見したと **Calif.io Security Research** が公表した。**CVE-2026-47729「Squidbleed」**（Heartbleed 型）、**CVSS 7.5**。The Hacker News、SecurityWeek、Slashdot が広く報道した。",
+      "**「Squidbleed」の由来と概要**: 命名は 2014年の **Heartbleed**（OpenSSL のメモリリーク）に倣ったもので、同じ原理で内部メモリを漏洩させる。Squid Proxy の**デフォルト設定で有効**な機能に潜んでいる。",
+      "**技術詳細**: Squid の **FTP パーサ**が strchr の null terminator チェックなしに動作し、**メモリバッファ境界を超えて読み取る**。読み取り領域には、**以前の別ユーザーの HTTP リクエストデータ**（クリアされていない状態）が含まれる可能性がある。パッチは strchr 呼び出し前に null terminator をチェックするだけの単純な修正。",
+      "**29年前のバグ**: バグは **1997年1月のコミット**まで遡る。**3世代の Squid リリース、コードレビュー、独立監査**をすべて生き延びてきた。人間のセキュリティ研究者が29年間見逃したパターンを、**AI モデルが即座に検出した**ことになる。",
+      "**発見プロセス**: Calif は **Anthropic Claude Mythos Preview**（Project Glasswing の基盤モデル）に、**strchr の異常挙動を「ほぼ即座に」検出した**功績を明示している。Calif Security Research と Claude Mythos の協業で、脆弱性の再現と概念実証（PoC）まで含めて短期間で完成した。",
+      "**攻撃条件**: 誰でも攻撃できるわけではなく、以下 2 つの条件が揃った場合に限定される。",
+      "**(1) 信頼されたクライアント**: 既に proxy 経由の利用が許可されているユーザー（学校・オフィス・公衆 Wi-Fi の共有ネットワーク）。",
+      "**(2) 攻撃者制御の FTP サーバー**: proxy 経由でアクセス可能な FTP サーバーを攻撃者が制御している必要がある。",
+      "**漏洩する情報**: 別ユーザーの **クリアテキスト HTTP リクエスト** の断片。",
+      "**(a) HTTP のクレデンシャル**: Basic 認証・独自認証ヘッダ・URL クエリ内のトークン",
+      "**(b) セッショントークン**: Cookie 内のセッション ID、認証済み API キー",
+      "**(c) HTTP フォーム送信内容**: ログインフォーム、Contact フォーム、決済フォーム（HTTPS 化されていない場合）",
+      "**注意**: **通常の HTTPS は影響を受けない**。HTTPS は `CONNECT` トンネル経由で Squid には内部が見えないため。ただし、**TLS 終端型プロキシ**（Squid で HTTPS を復号して検査する構成）は Squid が復号後の平文を扱うため影響を受ける。",
+      "**パッチ状況**: 修正パッチは 2026年4月に Squid 8 系にマージ、**2026年6月に 7.6 にバックポート**された。**本 CVE の完全な公式パッチは Squid 7.7**（予定）で提供される。",
+      "**暫定的な緩和策**: FTP サポートを使っていない環境では **FTP を明示的に無効化**することで攻撃を回避できる。",
+      "**Project Glasswing の意義を裏付け**: [Project Glasswing 拡大記事](?a=anthropic-glasswing-expansion-partner-network-services-track-2026) では「**10,000件超の高/重大セキュリティ脆弱性**」を発見と報じたが、Squidbleed はその中でも **代表事例**として位置付けられる。29年間の見落としを、AI モデルが即座に検出できたことは、フロンティア AI のセキュリティ研究への応用可能性を実証する形となった。",
+      "**「Fable 5 復活と過剰ブロック」の複雑な文脈**: 一方で、Anthropic Claude Fable 5 の [復活時の新セーフガード](?a=anthropic-claude-fable-5-return-safeguards-limits-2026) は「オフェンシブサイバーセキュリティ」タスクをブロックする方向に動いている（99% ジェイルブレイクブロック）。**Squidbleed 級の防御目的の脆弱性発見と、攻撃者側の悪用行為の間の線引き**が、今後の AI 政策の主要論点となる。SkillSpector（[SkillSpector 特集](?a=feature-nvidia-skillspector-agent-skill-security-2026)）や WIF（[Anthropic WIF GA](?a=anthropic-workload-identity-federation-ga-service-accounts-2026)）のような「守り側」ツール、Five Eyes ガイダンス（[Five Eyes 分析](?a=five-eyes-agentic-ai-cyber-risk-guidance-2026)）と組み合わせた立体的な防御が現実解となる。",
+      "**日本のインフラへの影響**: **Squid は日本国内でも大学・自治体・企業ネットワークで広く運用**されている。特に BYOD ポリシーがない環境や、監視目的の TLS 終端型プロキシを使う組織は、**Squid 7.7 のリリース待ちとせず、7.6 適用と FTP 無効化**を早急に検討すべき。組織の CISO は Five Eyes ガイダンスの (3) 行動リスク・(5) サプライチェーンリスクの観点で、本 CVE への対応を計画すること。"
+    ],
+    "primarySources": [
+      {
+        "title": "Squidbleed (CVE-2026-47729)",
+        "site": "Calif.io",
+        "url": "https://blog.calif.io/p/squidbleed-cve-2026-47729"
+      },
+      {
+        "title": "29-Year-Old Squid Proxy Bug 'Squidbleed' Can Leak Cleartext HTTP Requests",
+        "site": "The Hacker News",
+        "url": "https://thehackernews.com/2026/06/29-year-old-squid-proxy-bug-squidbleed.html"
+      },
+      {
+        "title": "Decades-Old Squid Proxy Flaw 'Squidbleed' Can Expose User Data",
+        "site": "SecurityWeek",
+        "url": "https://www.securityweek.com/decades-old-squid-proxy-flaw-squidbleed-can-expose-user-data/"
+      },
+      {
+        "title": "Squidbleed CVE-2026-47729: 29-Year-Old Squid Flaw",
+        "site": "IT-Connect",
+        "url": "https://www.it-connect.tech/squidbleed-29-year-old-squid-proxy-flaw-leaks-user-credentials/"
+      }
+    ]
+  },
+  "anthropic-claude-fable-5-billing-transition-extended-july-12-2026": {
+    "body": [
+      "Anthropic は2026年**7月6日**、**Claude Fable 5** のサブスクリプション包括アクセス期間を、当初7月7日で終了予定だったところ **7月12日まで5日間延長**すると発表した。BleepingComputer・The New Stack・iwoszapar・TechTimes 系が同日〜7月4日にかけて相次いで報道した。**Anthropic は「使用クレジット制への移行は一時的措置」と明言**しており、capacity（計算資源）が回復し次第、**Fable 5 をサブスクリプションの標準機能に戻す**方針を約束している。",
+      "**変更内容の要点**:",
+      "**(1) サブスク包括期間の延長**: Pro / Max / Team / 一部 Enterprise プランで **週次使用枠の 50% までを Fable 5 が使える**期間が、**7月7日 → 7月12日**に延長された。",
+      "**(2) 7月13日以降は使用クレジット制**: 延長期間が終わる7月13日から、Fable 5 は**サブスクリプション枠外の使用クレジット制**へ移行。継続利用には追加のクレジット購入が必要になる。",
+      "**(3) API 料金は据え置き**: API 経由の Fable 5 利用料金は **$10/$50 per 1M tokens**（入力/出力）で不変。6月9日のローンチ時から変更なし。",
+      "**(4) 一時的措置**: Anthropic は今回の変更を**「temporary（一時的）」**と明言、**「capacity が回復し次第 Fable 5 をサブスクリプションの標準機能に戻す」**と公式にコミット。",
+      "**延長の背景**: 復活後の Fable 5 は [週次50%上限や過剰ブロック懸念](?a=anthropic-claude-fable-5-return-safeguards-limits-2026) など複数の制限を抱え、Pro / Max ユーザー層から強い不満が噴出していた（PCWorld が「Claude subscribers are furious over Fable's new restrictions」と報じたレベル）。今回の5日間延長は、ユーザー側の反発を受けた**サービス側の対応**とみることができる。",
+      "**「一時的」の意味**: 「一時的措置」と Anthropic が明言した点は重要。以下 3 つのシグナルが読み取れる。",
+      "**(a) capacity 問題が本質**: Fable 5 のインフラ制約（[SpaceX Colossus](?a=anthropic-spacex-colossus-1-compute-deal-2026)・[Anthropic-CoreWeave $68億契約](?a=anthropic-coreweave-68b-multiyear-cloud-deal-2026) 等のインフラ増強でも足りない状況）が背景。",
+      "**(b) サブスク復活は約束**: 「戻す」と明言することで、ユーザーの長期契約継続を促す狙い。",
+      "**(c) Sonnet 5 への誘導**: 実質的には多くのユーザーを [Sonnet 5](?a=claude-sonnet-5-review)（$2/$10 導入価格）へ誘導し、Fable 5 を最上位限定用途に絞る戦略とも読める。",
+      "**影響を受けるユーザー像**:",
+      "**(a) Fable 5 を日常利用していた Pro/Max ユーザー**: 7/12 までは今まで通り、7/13 以降は追加費用または他モデルへの切替。",
+      "**(b) Team/Enterprise 導入検討中の組織**: 「Fable 5 を含む見積」の妥当性が変動、Sonnet 5 / Opus 4.8 との組み合わせ再計算が必要。",
+      "**(c) 開発者・研究者**: バッチ処理や自動化ワークフローで Fable 5 を組み込んでいた場合、フォールバック実装（Opus 4.8 への自動切替）を組んでおくと安定運用。",
+      "**代替モデルの選択肢（7/13 以降を見据えて）**:",
+      "**Claude Sonnet 5**（$2/$10 導入価格〜8/31、以降 $3/$15）: SWE-bench Pro 63.2%、GDPval-AA v2 で Opus 4.8 超え。日常のエージェント運用ならこれで十分（[Sonnet 5 レビュー](?a=claude-sonnet-5-review)）。",
+      "**Claude Opus 4.8**（$5/$25、Fast Mode $10/$50）: SWE-bench Verified 88.6%、Dynamic Workflows で最大1,000並列。フロンティア級性能が必要な場合に。",
+      "**Claude Fable 5**（$10/$50、7/13 以降は使用クレジット制）: SWE-bench Verified 95%、Anthropic 史上最強。**「最強を必要とする限定タスク」**にターゲットを絞る前提。",
+      "**AI News の推奨戦略**:",
+      "**(1) 7/12 までは Fable 5 を活用**: 期限までに、Fable 5 でしかできないタスクを完了させる。",
+      "**(2) 7/13 以降のデフォルトを Sonnet 5 に**: 大半のワークフローはこれで十分。$2/$10 の導入価格は 8/31 まで有効。",
+      "**(3) Fallback に Opus 4.8 を設定**: Fable 5 の refusal 時（オフェンシブサイバー・生命科学・思考抽出関連、[Fable 5 プロンプト設計ガイド](?a=feature-prompting-claude-fable-5-practical-guide-2026)）に自動的に Opus 4.8 へ切り替える設定を実装。",
+      "**(4) 「capacity 回復」を待つポジション**: 「一時的措置」の Anthropic 声明を信じるなら、Fable 5 サブスク復活まで数週間〜数ヶ月の見込み。長期プランは Sonnet 5 + Opus 4.8 + Fable 5（クレジット）の3層構成で柔軟に。",
+      "**GPT-5.6 一般公開待ちの選択肢も**: **GPT-5.6 Sol / Terra / Luna**（[GPT-5.6 レビュー](?a=gpt-5-6-review)）は7月中〜下旬に一般公開が見込まれている。特に **Luna（$1/$6）**は「フロンティアモデル最安級」で、Fable 5 課金移行を機に **代替選択肢** として検討する価値がある。ただし米政府事前共有・限定プレビューフェーズが続くため、正式な GA タイミングを見極めた上で移行判断すること。",
+      "**Sonnet 5 のトークナイザ変更に注意**: Sonnet 5 は新トークナイザで同じテキストでも **1.0〜1.35 倍**多くトークンを数える傾向がある（[Sonnet 5 レビュー](?a=claude-sonnet-5-review)）。Fable 5 → Sonnet 5 の切替時、単純な単価計算では実コストの読みを誤る可能性があるため、代表的なワークフローで実測してから本番切替すること。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Fable 5 isn't permanently leaving subscriptions, Anthropic says",
+        "site": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/claude-fable-5-isnt-permanently-leaving-subscriptions-anthropic-says/"
+      },
+      {
+        "title": "Anthropic gives Claude subscribers five more days with Fable 5",
+        "site": "The New Stack",
+        "url": "https://thenewstack.io/anthropic-extends-fable-5/"
+      },
+      {
+        "title": "Fable 5 Included Until July 12: Anthropic Extended It",
+        "site": "iwoszapar",
+        "url": "https://www.iwoszapar.com/p/fable-5-included-access-extended-july-12"
+      },
+      {
+        "title": "Redeploying Claude Fable 5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/redeploying-fable-5"
+      }
+    ]
+  },
+  "openai-gpt-5-6-general-availability-july-9-2026": {
+    "body": [
+      "OpenAI が2026年7月9日、**GPT-5.6 Sol / Terra / Luna** の一般公開を開始した。6月25日の限定プレビュー（[GPT-5.6 プレビュー](?a=openai-gpt-5-6-sol-terra-luna-preview-2026)）から**約20組織のみ**の状態が続いていたが、White House 主導の**自主基準**枠組み（[White House 自主基準記事](?a=white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026)）での政府事前共有と評価プロセスを経て、Neowin・TechTimes・Digital Trends・Techmymoney が同日確認した一般公開に至った。",
+      "**3バリアントの提供チャネル**: 全モデルが以下で即日利用可能。",
+      "**ChatGPT**（消費者向け）: Free・Plus・Pro プランで、階層に応じた利用枠と機能で提供。",
+      "**API**（開発者向け）: platform.openai.com 経由で標準的な API 呼び出しが可能。",
+      "**Codex**（コーディングエージェント）: Codex CLI / クラウド版で Sol/Terra/Luna を選択的に利用可能。",
+      "**料金体系（一般公開版）**:",
+      "**Sol（$5/$30 per 1M tokens）**: フラッグシップ、複雑推論・エージェント・セキュリティ研究向け。Ultra thinking モードでサブエージェント活用。",
+      "**Terra（$2.50/$15 per 1M tokens）**: daily driver、GPT-5.5 と競合性能を**半額**で提供。カスタマーサポート・社内ツール・文書解析。",
+      "**Luna（$1/$6 per 1M tokens）**: 軽量タスク向け、フロンティアモデル**最安級**。要約・ドラフト・定型自動化。",
+      "**ベンチマーク成績**: 限定プレビュー時のスコアが公表されている。",
+      "**TerminalBench 2.1**: Sol Ultra が **91.91%** で SOTA、Claude Mythos 5（88.0%）と Fable 5（84.3%）を上回る（[GPT-5.6 プレビュー詳細](?a=openai-gpt-5-6-sol-terra-luna-preview-2026)）。",
+      "**エージェント能力**: Ultra thinking モードのサブエージェント活用が特徴、Anthropic Opus 4.8 の Dynamic Workflows と並ぶ。",
+      "**訓練カットオフ**: 2026年5月まで延長、業界最新水準。",
+      "**「約20組織 → 一般公開」までの経緯**: 6/25 の限定プレビューから約14日、政府事前共有プロセスは以下の流れで進行した。",
+      "**(1) 6/25**: OpenAI が Sol/Terra/Luna を約20組織限定でプレビュー。US 政府と情報共有済み。",
+      "**(2) 6/26**: METR（Model Evaluation and Threat Research）の事前デプロイ評価レポート公開。",
+      "**(3) 7/3**: [White House が主要3社（OpenAI/Anthropic/Google）と自主基準を最終協議](?a=white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026)。",
+      "**(4) 7/9**: GPT-5.6 が一般公開、政府監督プロセス完了の実質的な最初の事例に。",
+      "**「モデル選択 = 米政府の技術政策選択」時代の恒常化**: [Claude Fable 5 復活](?a=anthropic-claude-fable-5-return-safeguards-limits-2026) や本件で見られるように、**フロンティア AI モデルは「発表 → 政府事前共有 → 数週間の限定プレビュー → 一般公開」**のサイクルが標準化した。開発者は **「初期プレビュー枠か、GA 後の通常利用か」** を分けて計画する必要がある。",
+      "**Claude Sonnet 5 との直接競合**: 同時期に GA された [Sonnet 5](?a=claude-sonnet-5-review)（$2/$10、SWE-bench Pro 63.2%）と、GPT-5.6 Terra（$2.50/$15、GPT-5.5 と競合性能）が真正面から比較される時期に入った。多くの日常ワークフローで、Sonnet 5 と Terra のどちらを選ぶかは価格・エコシステム統合・トークナイザ特性で判断することになる。**AI News では「日本語プロンプトでの Sonnet 5 vs GPT-5.6 Terra 実践比較」を近日公開予定**。",
+      "**Grok 4.5 との3強競合**: 同日リリースの [xAI Grok 4.5](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)（$2/$6）も真っ向対抗の破格価格。**GPT-5.6 Luna（$1/$6）・Sonnet 5（$2/$10）・Grok 4.5（$2/$6）・Gemini 3.5 Flash（$0.075/$0.30）**の4選択肢は、それぞれ強みが異なる。**AI News の推奨**: エージェント能力なら Sonnet 5、コーディング特化なら Grok 4.5（Cursor データで訓練済）、コスト最優先なら Gemini 3.5 Flash、Codex 統合なら GPT-5.6 Sol/Terra を第一候補に検討。"
+    ],
+    "primarySources": [
+      {
+        "title": "Previewing GPT-5.6 Sol: a next-generation model",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/previewing-gpt-5-6-sol/"
+      },
+      {
+        "title": "OpenAI GPT-5.6 public rollout starts July 9 for Sol, Terra and Luna",
+        "site": "Techmymoney",
+        "url": "https://techmymoney.com/2026/07/08/openai-gpt-56-public-rollout-july-9-sol-terra-luna/"
+      },
+      {
+        "title": "OpenAI to release GPT-5.6 Sol, Terra and Luna on July 9",
+        "site": "Neowin",
+        "url": "https://www.neowin.net/news/openai-to-release-gpt-56-sol-terra-and-luna-on-july-9/"
+      },
+      {
+        "title": "A preview of GPT-5.6 Sol, Terra, and Luna",
+        "site": "OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001325-a-preview-of-gpt-56-sol-terra-and-luna"
+      }
+    ]
+  },
+  "xai-grok-4-5-public-launch-opus-class-july-9-2026": {
+    "body": [
+      "**xAI（SpaceX 傘下）**が2026年7月9日、**Grok 4.5** を一般公開した。**Elon Musk** は前日7月8日の X 投稿で、Grok 4.5 を「**Opus クラスだが faster、より token-efficient、lower cost**」と説明。**Cursor 訓練データ**（[SpaceX-Cursor $60B 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026) の実利）を活用した実開発ワークフローに強い設計になっている。",
+      "**モデル仕様**: **1.5T パラメータの V9 基盤モデル**（[Grok V9-Medium 消費者公開](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026) の後継系統）に、**Cursor の実開発者ワークフローデータ**を追加訓練したもの。SpaceX による Cursor 買収（6/16）から約3週間での成果物で、垂直統合戦略の速度感を示す。",
+      "**破格の料金体系**: **API 料金は $2/$6 per 1M tokens**（入力/出力）。競合他社と比較すると鮮明。",
+      "**Claude Sonnet 5**: $2/$10 導入価格（〜8/31）、以降 $3/$15",
+      "**GPT-5.6 Terra**: $2.50/$15",
+      "**GPT-5.6 Luna**: $1/$6（軽量特化）",
+      "**Grok 4.5**: **$2/$6**（フロンティア級で最安）",
+      "「Opus クラスの性能を GPT-5.6 Luna 並の価格で」という位置付けで、Musk の主張が正しければ**業界標準を大きく揺さぶる価格設定**。",
+      "**「タスクを半分のステップで完了」主張**: Musk は Grok 4.5 が「タスクを半分のステップで完了できる」と主張、これは **エージェント実行の効率性** を示唆する。もし実測で正しければ、表示単価 $2/$6 の**実効コストはさらに半減**する。ただしこの主張は独立検証待ちで、AI News では**「Grok 4.5 の実タスク効率実測」** を近日公開予定。",
+      "**アクセスチャネル**:",
+      "**(1) xAI API**: 開発者向け、標準的な OpenAI 互換 API で提供。",
+      "**(2) SuperGrok Heavy（$300/月）**: エンドユーザー向け最上位ティア、Grok 4 Heavy（256K ctx・parallel test-time compute）と同水準のアクセス。",
+      "**(3) X 統合**: X（旧 Twitter）のプレミアム機能として提供。",
+      "**Cursor 訓練データの意味**: Grok 4.5 が「コーディング特化型」として競争力を持つ最大の理由は **Cursor の実データ**。Cursor は Fortune 500 の 2/3 が利用、日に約1.5億行の実開発コードを扱う（[Cursor 買収記事](?a=spacex-cursor-60b-acquisition-anysphere-2026)）。この規模の**実開発者ワークフロー**（コード入力 → AI 提案 → 採用/却下 → 修正 のシーケンス）を訓練データに組み込めることは、他社モデルにない差別化要素となる。",
+      "**業界インパクト**:",
+      "**(a) OpenAI GPT-5.6 Terra との真正面対決**: 両者とも同日リリース、価格 $2/$6 vs $2.50/$15。GPT-5.6 が5倍近く高い（出力）。",
+      "**(b) Anthropic Sonnet 5 への圧力**: Sonnet 5 の $2/$10 導入価格も相対的に見劣り、8/31 の通常価格 $3/$15 移行時にはさらに大きな差に。",
+      "**(c) 中国 OSS 陣営の相対的な位置低下**: [中国モデル 30-46% シェア](?a=feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026) の要因だった「60-90% 安」の優位が縮小、Grok 4.5 が「西側で最安フロンティア」の座に。",
+      "**(d) SpaceX 垂直統合の実力証明**: Cursor 買収（6/16）から約3週間で新モデルリリース、統合の速度と実利を示した。",
+      "**注意点**:",
+      "**(1) 独立ベンチマーク待ち**: 「Opus クラス」の Musk 主張は現時点で独立検証されていない。SWE-bench・TerminalBench・HLE 等の公表を待つ必要がある。",
+      "**(2) 政府事前共有プロセス**: GPT-5.6・Fable 5 で見られた米政府事前共有プロセスが、xAI で同様に運用されたかは不明。今後の Executive Order 14409 との整合性が問われる。",
+      "**(3) X エコシステム依存**: SuperGrok Heavy 経由の利用は X アカウントが前提、エンタープライズ調達との相性に注意。",
+      "**(4) 中国モデルとの実運用比較**: 実タスクでの品質・トークン効率を、DeepSeek V4・GLM-5.2 等と直接比較する検証が必要。",
+      "**AI News の推奨**: **コーディング特化タスク**では第一候補として評価すべき。特に Cursor ユーザーは Composer 系との統合を検証する価値がある。ただし本番運用の切替は **独立ベンチマーク公表後**が安全。SuperGrok Heavy $300/月は個人開発者・研究者向けで、企業では xAI API 経由が現実的。"
+    ],
+    "primarySources": [
+      {
+        "title": "Grok 4.5 Public Launch July 9: Opus-Class, Cursor-Trained",
+        "site": "explainx.ai",
+        "url": "https://explainx.ai/blog/grok-4-5-public-launch-spacexai-july-2026"
+      },
+      {
+        "title": "Grok Pricing 2026: SuperGrok, X Premium+, Heavy & API Costs",
+        "site": "FelloAI",
+        "url": "https://felloai.com/grok-pricing/"
+      },
+      {
+        "title": "Grok 4.5 is available now: cheaper pricing and coding tools",
+        "site": "Softonic",
+        "url": "https://en.softonic.com/articles/grok-4-5-is-available-now-cheaper-pricing-and-coding-tools?ex=RAMP-4479.2&rex=true"
+      },
+      {
+        "title": "Grok API Pricing: Every Model, Token Cost, and How to Spend Less",
+        "site": "Mem0",
+        "url": "https://mem0.ai/blog/xai-grok-api-pricing"
+      }
+    ]
+  },
+  "feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026": {
+    "body": [
+      "**CNBC** の2026年7月7日調査記事が業界に衝撃を与えた。**OpenRouter 経由で米国企業が使用する API トークンのうち、中国モデルのシェアが 2026年2月8日以降週次で 30% を超え、最大 46%** に達しているという定量的データを公表した。Forkast News、Let's Data Science、AIC、CIO が後追い報道。**「価格が仕事をしている」**（Price is doing the work here）との業界コメントが本質を捉えている。",
+      "**急拡大の実データ**: シェアの推移は「量的変化」ではなく「質的変化」と呼ぶべき勢い。",
+      "**(1) 2025年上半期**: 4.5%（Anthropic・OpenAI 圧倒の時代）",
+      "**(2) 過去12ヶ月平均**: 11%",
+      "**(3) 2026年2月8日以降**: 週次で **30% 以上**（常態）",
+      "**(4) 直近ピーク**: **46%**（半分近くが中国モデル）",
+      "**わずか半年強で 4.5% → 46% のシェア変動**は、エンタープライズ AI 市場では前例のない急変。",
+      "**牽引した中国 OSS 4強**: [中国モデル特集](?a=feature-china-ai-models-may-2026-qwen-kimi-ernie) で整理した4系統に、最近リリースの2モデルを加えた6モデルが今回の急拡大を担っている。",
+      "**DeepSeek V4**（プレビュー 4/24、1.6T MoE、1M ctx、MIT）",
+      "**Kimi K2.6**（Moonshot AI 4/20、1兆パラメータ、Modified MIT）",
+      "**Z.ai GLM-5.2**（[GLM-5.2 詳細](?a=zhipu-zai-glm-5-2-open-source-coding-1m-context-2026)、6/13、753B MoE、MIT）",
+      "**Meituan LongCat-2.0**（[LongCat-2.0 詳細](?a=meituan-longcat-2-1-6t-domestic-chips-mit-open-2026)、6/30、1.6T MoE、MIT、国産チップ訓練）",
+      "**Qwen 3.7 Max**（Alibaba 5/20、Terminal-Bench 2.0 で 69.7）",
+      "**Ernie 5.1**（Baidu 5月）",
+      "**価格差の実態: 60-90% 安**: CNBC 調査によれば、中国 OSS モデルは Anthropic・OpenAI のフロンティアモデルより **60-90% 安い**。実例で見ると。",
+      "**Claude Fable 5**: $10/$50 per 1M tokens",
+      "**Claude Sonnet 5**: $2/$10（〜8/31 導入価格、以降 $3/$15）",
+      "**GPT-5.6 Sol**: $5/$30",
+      "**DeepSeek V4 API**: $0.4-0.8/$1-2 程度",
+      "**Kimi K2.6 API**: 中国系プロバイダ経由で類似の低価格",
+      "**Z.ai GLM-5.2 API**: MIT 重み公開のため自社ホスティングなら追加コストは電力・GPU のみ",
+      "同一タスクでの単純コスト比較では、確かに 60-90% の差がある。",
+      "**「価格が仕事をしている」の意味**: 業界エキスパートは **「タスクが最高のモデルを必要としない場合、チームは十分に良い最安モデルにルーティングし始めた」** とコメントしている。これは AI News が [tokenmaxxing → 効率性 分析](?a=feature-tokenmaxxing-to-efficiency-market-shift-2026) で整理した業界潮流の**定量的裏付け**となる。",
+      "**質的シフトの3要素**: なぜ急拡大が今起きたのか、以下の3要素が同時進行したためと分析できる。",
+      "**(1) 中国 OSS モデルの品質向上**: DeepSeek V4・GLM-5.2・LongCat-2.0 が SWE-bench Pro で GPT-5.5 級（60% 前後）を実現。フロンティア商用モデルとの品質差が「タスク別に無視できる」水準まで縮まった。",
+      "**(2) OpenRouter 等の統合 API プラットフォーム普及**: 米国企業が中国モデルを直接契約するのではなく、**OpenRouter を経由してモデルを差し替える**運用が広まった。API キーは1つ、モデル ID を変えるだけで切替可能。",
+      "**(3) フロンティア商用モデルの値上げ**: [Claude Fable 5 の $10/$50](?a=anthropic-claude-fable-5-return-safeguards-limits-2026)、Opus 4.8 の $5/$25 と続く価格上昇に対し、中国 OSS の価格据え置きが相対的に有利になった。**Lindy の 100% Claude→DeepSeek 移行**（[tokenmaxxing→効率性 分析](?a=feature-tokenmaxxing-to-efficiency-market-shift-2026)）が象徴的な事例。",
+      "**しかし今週の変数: GPT-5.6 GA と Grok 4.5**: この分析には7月9日の重要な変化が加わる。",
+      "**GPT-5.6 一般公開**（[GPT-5.6 GA](?a=openai-gpt-5-6-general-availability-july-9-2026)）: Luna が $1/$6、Terra が $2.50/$15 という中国モデル対抗価格を投入。",
+      "**xAI Grok 4.5 公開**（[Grok 4.5 記事](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)）: $2/$6 という「フロンティア級最安」で、中国 OSS の価格優位を大きく削る。",
+      "これらが定着すれば、**7-8月の CNBC 続報では中国モデルシェアが横ばい〜微減**になる可能性がある。市場は不安定な変動期に入った。",
+      "**地政学的な含意**: 46% という数字は、米国政府と AI 業界にとって**戦略的な警戒対象**となる。",
+      "**(a) データ主権**: 米国企業のコード・データが中国系モデル経由で処理される割合が半分近い、というのは Anthropic vs Alibaba 蒸留告発（[Alibaba 蒸留告発](?a=anthropic-accuses-alibaba-claude-distillation-fraud-2026)）と対称的な構図。",
+      "**(b) 輸出規制の限界**: 米国は AI モデル・チップの輸出規制を強化してきたが、**逆方向（中国モデルの米国内利用）は規制対象外**。",
+      "**(c) 政策議論の焦点化**: [White House 自主基準](?a=white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026) や [Five Eyes ガイダンス](?a=five-eyes-agentic-ai-cyber-risk-guidance-2026)、[UN Global Dialogue on AI Governance](?a=feature-un-global-dialogue-ai-governance-geneva-2026) で今後主要論点となる可能性。",
+      "**開発者・エンタープライズへの示唆**:",
+      "**(1) モデル選択の複合最適化**: 単一モデル依存ではなく、コスト感度の高いタスクは中国 OSS、機密性の高いタスクは米国フロンティアという棲み分けが標準化。",
+      "**(2) OpenRouter 等ゲートウェイの活用**: モデル切替の柔軟性を確保、単一プロバイダロックインを回避。",
+      "**(3) データガバナンスの見直し**: 各モデルの利用条件・データ処理場所・訓練利用ポリシーを個別に評価。",
+      "**(4) 7-8月の市場動向を注視**: GPT-5.6 GA と Grok 4.5 で中国 OSS の価格優位が変わる可能性、CNBC の続報を待つ。",
+      "**AI News の今後**: 今回の CNBC 調査は「中国 OSS の実力を米国企業自身が投票で決めた」意味を持つ。日本企業にとっても示唆が大きく、**AI News では「日本語プロンプトでの DeepSeek V4 / GLM-5.2 / LongCat-2.0 実測比較」** を近日公開予定。**モデル選択 = ビジネス戦略選択**の時代に、実データベースの検証記事を継続する。"
+    ],
+    "primarySources": [
+      {
+        "title": "Chinese AI models are gaining ground with U.S. companies as OpenAI, Anthropic costs surge",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/07/07/chinese-ai-models-costs-us-openai-anthropic.html"
+      },
+      {
+        "title": "Chinese AI Models Now Capture Up to 46% of US Enterprise Token Usage",
+        "site": "Forkast News",
+        "url": "https://forkast.news/chinese-ai-models-now-capture-up-to-46-of-us-enterprise-token-usage/"
+      },
+      {
+        "title": "Chinese AI Models Overtake US Rivals in Token Usage",
+        "site": "Let's Data Science",
+        "url": "https://letsdatascience.com/blog/startup-moved-100-percent-traffic-claude-to-deepseek"
+      },
+      {
+        "title": "Chinese AI models are attracting US companies with lower prices",
+        "site": "CIO",
+        "url": "https://www.cio.com/article/4194040/chinese-ai-models-are-gaining-ground-in-the-u-s-attracting-companies-with-lower-prices.html"
       }
     ]
   }
