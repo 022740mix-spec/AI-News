@@ -11925,6 +11925,171 @@ const ARTICLES_BODY = {
         "url": "https://www.anthropic.com/news/redeploying-fable-5"
       }
     ]
+  },
+  "openai-gpt-5-6-general-availability-july-9-2026": {
+    "body": [
+      "OpenAI が2026年7月9日、**GPT-5.6 Sol / Terra / Luna** の一般公開を開始した。6月25日の限定プレビュー（[GPT-5.6 プレビュー](?a=openai-gpt-5-6-sol-terra-luna-preview-2026)）から**約20組織のみ**の状態が続いていたが、White House 主導の**自主基準**枠組み（[White House 自主基準記事](?a=white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026)）での政府事前共有と評価プロセスを経て、Neowin・TechTimes・Digital Trends・Techmymoney が同日確認した一般公開に至った。",
+      "**3バリアントの提供チャネル**: 全モデルが以下で即日利用可能。",
+      "**ChatGPT**（消費者向け）: Free・Plus・Pro プランで、階層に応じた利用枠と機能で提供。",
+      "**API**（開発者向け）: platform.openai.com 経由で標準的な API 呼び出しが可能。",
+      "**Codex**（コーディングエージェント）: Codex CLI / クラウド版で Sol/Terra/Luna を選択的に利用可能。",
+      "**料金体系（一般公開版）**:",
+      "**Sol（$5/$30 per 1M tokens）**: フラッグシップ、複雑推論・エージェント・セキュリティ研究向け。Ultra thinking モードでサブエージェント活用。",
+      "**Terra（$2.50/$15 per 1M tokens）**: daily driver、GPT-5.5 と競合性能を**半額**で提供。カスタマーサポート・社内ツール・文書解析。",
+      "**Luna（$1/$6 per 1M tokens）**: 軽量タスク向け、フロンティアモデル**最安級**。要約・ドラフト・定型自動化。",
+      "**ベンチマーク成績**: 限定プレビュー時のスコアが公表されている。",
+      "**TerminalBench 2.1**: Sol Ultra が **91.91%** で SOTA、Claude Mythos 5（88.0%）と Fable 5（84.3%）を上回る（[GPT-5.6 プレビュー詳細](?a=openai-gpt-5-6-sol-terra-luna-preview-2026)）。",
+      "**エージェント能力**: Ultra thinking モードのサブエージェント活用が特徴、Anthropic Opus 4.8 の Dynamic Workflows と並ぶ。",
+      "**訓練カットオフ**: 2026年5月まで延長、業界最新水準。",
+      "**「約20組織 → 一般公開」までの経緯**: 6/25 の限定プレビューから約14日、政府事前共有プロセスは以下の流れで進行した。",
+      "**(1) 6/25**: OpenAI が Sol/Terra/Luna を約20組織限定でプレビュー。US 政府と情報共有済み。",
+      "**(2) 6/26**: METR（Model Evaluation and Threat Research）の事前デプロイ評価レポート公開。",
+      "**(3) 7/3**: [White House が主要3社（OpenAI/Anthropic/Google）と自主基準を最終協議](?a=white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026)。",
+      "**(4) 7/9**: GPT-5.6 が一般公開、政府監督プロセス完了の実質的な最初の事例に。",
+      "**「モデル選択 = 米政府の技術政策選択」時代の恒常化**: [Claude Fable 5 復活](?a=anthropic-claude-fable-5-return-safeguards-limits-2026) や本件で見られるように、**フロンティア AI モデルは「発表 → 政府事前共有 → 数週間の限定プレビュー → 一般公開」**のサイクルが標準化した。開発者は **「初期プレビュー枠か、GA 後の通常利用か」** を分けて計画する必要がある。",
+      "**Claude Sonnet 5 との直接競合**: 同時期に GA された [Sonnet 5](?a=claude-sonnet-5-review)（$2/$10、SWE-bench Pro 63.2%）と、GPT-5.6 Terra（$2.50/$15、GPT-5.5 と競合性能）が真正面から比較される時期に入った。多くの日常ワークフローで、Sonnet 5 と Terra のどちらを選ぶかは価格・エコシステム統合・トークナイザ特性で判断することになる。**AI News では「日本語プロンプトでの Sonnet 5 vs GPT-5.6 Terra 実践比較」を近日公開予定**。",
+      "**Grok 4.5 との3強競合**: 同日リリースの [xAI Grok 4.5](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)（$2/$6）も真っ向対抗の破格価格。**GPT-5.6 Luna（$1/$6）・Sonnet 5（$2/$10）・Grok 4.5（$2/$6）・Gemini 3.5 Flash（$0.075/$0.30）**の4選択肢は、それぞれ強みが異なる。**AI News の推奨**: エージェント能力なら Sonnet 5、コーディング特化なら Grok 4.5（Cursor データで訓練済）、コスト最優先なら Gemini 3.5 Flash、Codex 統合なら GPT-5.6 Sol/Terra を第一候補に検討。"
+    ],
+    "primarySources": [
+      {
+        "title": "Previewing GPT-5.6 Sol: a next-generation model",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/previewing-gpt-5-6-sol/"
+      },
+      {
+        "title": "OpenAI GPT-5.6 public rollout starts July 9 for Sol, Terra and Luna",
+        "site": "Techmymoney",
+        "url": "https://techmymoney.com/2026/07/08/openai-gpt-56-public-rollout-july-9-sol-terra-luna/"
+      },
+      {
+        "title": "OpenAI to release GPT-5.6 Sol, Terra and Luna on July 9",
+        "site": "Neowin",
+        "url": "https://www.neowin.net/news/openai-to-release-gpt-56-sol-terra-and-luna-on-july-9/"
+      },
+      {
+        "title": "A preview of GPT-5.6 Sol, Terra, and Luna",
+        "site": "OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001325-a-preview-of-gpt-56-sol-terra-and-luna"
+      }
+    ]
+  },
+  "xai-grok-4-5-public-launch-opus-class-july-9-2026": {
+    "body": [
+      "**xAI（SpaceX 傘下）**が2026年7月9日、**Grok 4.5** を一般公開した。**Elon Musk** は前日7月8日の X 投稿で、Grok 4.5 を「**Opus クラスだが faster、より token-efficient、lower cost**」と説明。**Cursor 訓練データ**（[SpaceX-Cursor $60B 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026) の実利）を活用した実開発ワークフローに強い設計になっている。",
+      "**モデル仕様**: **1.5T パラメータの V9 基盤モデル**（[Grok V9-Medium 消費者公開](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026) の後継系統）に、**Cursor の実開発者ワークフローデータ**を追加訓練したもの。SpaceX による Cursor 買収（6/16）から約3週間での成果物で、垂直統合戦略の速度感を示す。",
+      "**破格の料金体系**: **API 料金は $2/$6 per 1M tokens**（入力/出力）。競合他社と比較すると鮮明。",
+      "**Claude Sonnet 5**: $2/$10 導入価格（〜8/31）、以降 $3/$15",
+      "**GPT-5.6 Terra**: $2.50/$15",
+      "**GPT-5.6 Luna**: $1/$6（軽量特化）",
+      "**Grok 4.5**: **$2/$6**（フロンティア級で最安）",
+      "「Opus クラスの性能を GPT-5.6 Luna 並の価格で」という位置付けで、Musk の主張が正しければ**業界標準を大きく揺さぶる価格設定**。",
+      "**「タスクを半分のステップで完了」主張**: Musk は Grok 4.5 が「タスクを半分のステップで完了できる」と主張、これは **エージェント実行の効率性** を示唆する。もし実測で正しければ、表示単価 $2/$6 の**実効コストはさらに半減**する。ただしこの主張は独立検証待ちで、AI News では**「Grok 4.5 の実タスク効率実測」** を近日公開予定。",
+      "**アクセスチャネル**:",
+      "**(1) xAI API**: 開発者向け、標準的な OpenAI 互換 API で提供。",
+      "**(2) SuperGrok Heavy（$300/月）**: エンドユーザー向け最上位ティア、Grok 4 Heavy（256K ctx・parallel test-time compute）と同水準のアクセス。",
+      "**(3) X 統合**: X（旧 Twitter）のプレミアム機能として提供。",
+      "**Cursor 訓練データの意味**: Grok 4.5 が「コーディング特化型」として競争力を持つ最大の理由は **Cursor の実データ**。Cursor は Fortune 500 の 2/3 が利用、日に約1.5億行の実開発コードを扱う（[Cursor 買収記事](?a=spacex-cursor-60b-acquisition-anysphere-2026)）。この規模の**実開発者ワークフロー**（コード入力 → AI 提案 → 採用/却下 → 修正 のシーケンス）を訓練データに組み込めることは、他社モデルにない差別化要素となる。",
+      "**業界インパクト**:",
+      "**(a) OpenAI GPT-5.6 Terra との真正面対決**: 両者とも同日リリース、価格 $2/$6 vs $2.50/$15。GPT-5.6 が5倍近く高い（出力）。",
+      "**(b) Anthropic Sonnet 5 への圧力**: Sonnet 5 の $2/$10 導入価格も相対的に見劣り、8/31 の通常価格 $3/$15 移行時にはさらに大きな差に。",
+      "**(c) 中国 OSS 陣営の相対的な位置低下**: [中国モデル 30-46% シェア](?a=feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026) の要因だった「60-90% 安」の優位が縮小、Grok 4.5 が「西側で最安フロンティア」の座に。",
+      "**(d) SpaceX 垂直統合の実力証明**: Cursor 買収（6/16）から約3週間で新モデルリリース、統合の速度と実利を示した。",
+      "**注意点**:",
+      "**(1) 独立ベンチマーク待ち**: 「Opus クラス」の Musk 主張は現時点で独立検証されていない。SWE-bench・TerminalBench・HLE 等の公表を待つ必要がある。",
+      "**(2) 政府事前共有プロセス**: GPT-5.6・Fable 5 で見られた米政府事前共有プロセスが、xAI で同様に運用されたかは不明。今後の Executive Order 14409 との整合性が問われる。",
+      "**(3) X エコシステム依存**: SuperGrok Heavy 経由の利用は X アカウントが前提、エンタープライズ調達との相性に注意。",
+      "**(4) 中国モデルとの実運用比較**: 実タスクでの品質・トークン効率を、DeepSeek V4・GLM-5.2 等と直接比較する検証が必要。",
+      "**AI News の推奨**: **コーディング特化タスク**では第一候補として評価すべき。特に Cursor ユーザーは Composer 系との統合を検証する価値がある。ただし本番運用の切替は **独立ベンチマーク公表後**が安全。SuperGrok Heavy $300/月は個人開発者・研究者向けで、企業では xAI API 経由が現実的。"
+    ],
+    "primarySources": [
+      {
+        "title": "Grok 4.5 Public Launch July 9: Opus-Class, Cursor-Trained",
+        "site": "explainx.ai",
+        "url": "https://explainx.ai/blog/grok-4-5-public-launch-spacexai-july-2026"
+      },
+      {
+        "title": "Grok Pricing 2026: SuperGrok, X Premium+, Heavy & API Costs",
+        "site": "FelloAI",
+        "url": "https://felloai.com/grok-pricing/"
+      },
+      {
+        "title": "Grok 4.5 is available now: cheaper pricing and coding tools",
+        "site": "Softonic",
+        "url": "https://en.softonic.com/articles/grok-4-5-is-available-now-cheaper-pricing-and-coding-tools?ex=RAMP-4479.2&rex=true"
+      },
+      {
+        "title": "Grok API Pricing: Every Model, Token Cost, and How to Spend Less",
+        "site": "Mem0",
+        "url": "https://mem0.ai/blog/xai-grok-api-pricing"
+      }
+    ]
+  },
+  "feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026": {
+    "body": [
+      "**CNBC** の2026年7月7日調査記事が業界に衝撃を与えた。**OpenRouter 経由で米国企業が使用する API トークンのうち、中国モデルのシェアが 2026年2月8日以降週次で 30% を超え、最大 46%** に達しているという定量的データを公表した。Forkast News、Let's Data Science、AIC、CIO が後追い報道。**「価格が仕事をしている」**（Price is doing the work here）との業界コメントが本質を捉えている。",
+      "**急拡大の実データ**: シェアの推移は「量的変化」ではなく「質的変化」と呼ぶべき勢い。",
+      "**(1) 2025年上半期**: 4.5%（Anthropic・OpenAI 圧倒の時代）",
+      "**(2) 過去12ヶ月平均**: 11%",
+      "**(3) 2026年2月8日以降**: 週次で **30% 以上**（常態）",
+      "**(4) 直近ピーク**: **46%**（半分近くが中国モデル）",
+      "**わずか半年強で 4.5% → 46% のシェア変動**は、エンタープライズ AI 市場では前例のない急変。",
+      "**牽引した中国 OSS 4強**: [中国モデル特集](?a=feature-china-ai-models-may-2026-qwen-kimi-ernie) で整理した4系統に、最近リリースの2モデルを加えた6モデルが今回の急拡大を担っている。",
+      "**DeepSeek V4**（プレビュー 4/24、1.6T MoE、1M ctx、MIT）",
+      "**Kimi K2.6**（Moonshot AI 4/20、1兆パラメータ、Modified MIT）",
+      "**Z.ai GLM-5.2**（[GLM-5.2 詳細](?a=zhipu-zai-glm-5-2-open-source-coding-1m-context-2026)、6/13、753B MoE、MIT）",
+      "**Meituan LongCat-2.0**（[LongCat-2.0 詳細](?a=meituan-longcat-2-1-6t-domestic-chips-mit-open-2026)、6/30、1.6T MoE、MIT、国産チップ訓練）",
+      "**Qwen 3.7 Max**（Alibaba 5/20、Terminal-Bench 2.0 で 69.7）",
+      "**Ernie 5.1**（Baidu 5月）",
+      "**価格差の実態: 60-90% 安**: CNBC 調査によれば、中国 OSS モデルは Anthropic・OpenAI のフロンティアモデルより **60-90% 安い**。実例で見ると。",
+      "**Claude Fable 5**: $10/$50 per 1M tokens",
+      "**Claude Sonnet 5**: $2/$10（〜8/31 導入価格、以降 $3/$15）",
+      "**GPT-5.6 Sol**: $5/$30",
+      "**DeepSeek V4 API**: $0.4-0.8/$1-2 程度",
+      "**Kimi K2.6 API**: 中国系プロバイダ経由で類似の低価格",
+      "**Z.ai GLM-5.2 API**: MIT 重み公開のため自社ホスティングなら追加コストは電力・GPU のみ",
+      "同一タスクでの単純コスト比較では、確かに 60-90% の差がある。",
+      "**「価格が仕事をしている」の意味**: 業界エキスパートは **「タスクが最高のモデルを必要としない場合、チームは十分に良い最安モデルにルーティングし始めた」** とコメントしている。これは AI News が [tokenmaxxing → 効率性 分析](?a=feature-tokenmaxxing-to-efficiency-market-shift-2026) で整理した業界潮流の**定量的裏付け**となる。",
+      "**質的シフトの3要素**: なぜ急拡大が今起きたのか、以下の3要素が同時進行したためと分析できる。",
+      "**(1) 中国 OSS モデルの品質向上**: DeepSeek V4・GLM-5.2・LongCat-2.0 が SWE-bench Pro で GPT-5.5 級（60% 前後）を実現。フロンティア商用モデルとの品質差が「タスク別に無視できる」水準まで縮まった。",
+      "**(2) OpenRouter 等の統合 API プラットフォーム普及**: 米国企業が中国モデルを直接契約するのではなく、**OpenRouter を経由してモデルを差し替える**運用が広まった。API キーは1つ、モデル ID を変えるだけで切替可能。",
+      "**(3) フロンティア商用モデルの値上げ**: [Claude Fable 5 の $10/$50](?a=anthropic-claude-fable-5-return-safeguards-limits-2026)、Opus 4.8 の $5/$25 と続く価格上昇に対し、中国 OSS の価格据え置きが相対的に有利になった。**Lindy の 100% Claude→DeepSeek 移行**（[tokenmaxxing→効率性 分析](?a=feature-tokenmaxxing-to-efficiency-market-shift-2026)）が象徴的な事例。",
+      "**しかし今週の変数: GPT-5.6 GA と Grok 4.5**: この分析には7月9日の重要な変化が加わる。",
+      "**GPT-5.6 一般公開**（[GPT-5.6 GA](?a=openai-gpt-5-6-general-availability-july-9-2026)）: Luna が $1/$6、Terra が $2.50/$15 という中国モデル対抗価格を投入。",
+      "**xAI Grok 4.5 公開**（[Grok 4.5 記事](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)）: $2/$6 という「フロンティア級最安」で、中国 OSS の価格優位を大きく削る。",
+      "これらが定着すれば、**7-8月の CNBC 続報では中国モデルシェアが横ばい〜微減**になる可能性がある。市場は不安定な変動期に入った。",
+      "**地政学的な含意**: 46% という数字は、米国政府と AI 業界にとって**戦略的な警戒対象**となる。",
+      "**(a) データ主権**: 米国企業のコード・データが中国系モデル経由で処理される割合が半分近い、というのは Anthropic vs Alibaba 蒸留告発（[Alibaba 蒸留告発](?a=anthropic-accuses-alibaba-claude-distillation-fraud-2026)）と対称的な構図。",
+      "**(b) 輸出規制の限界**: 米国は AI モデル・チップの輸出規制を強化してきたが、**逆方向（中国モデルの米国内利用）は規制対象外**。",
+      "**(c) 政策議論の焦点化**: [White House 自主基準](?a=white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026) や [Five Eyes ガイダンス](?a=five-eyes-agentic-ai-cyber-risk-guidance-2026)、[UN Global Dialogue on AI Governance](?a=feature-un-global-dialogue-ai-governance-geneva-2026) で今後主要論点となる可能性。",
+      "**開発者・エンタープライズへの示唆**:",
+      "**(1) モデル選択の複合最適化**: 単一モデル依存ではなく、コスト感度の高いタスクは中国 OSS、機密性の高いタスクは米国フロンティアという棲み分けが標準化。",
+      "**(2) OpenRouter 等ゲートウェイの活用**: モデル切替の柔軟性を確保、単一プロバイダロックインを回避。",
+      "**(3) データガバナンスの見直し**: 各モデルの利用条件・データ処理場所・訓練利用ポリシーを個別に評価。",
+      "**(4) 7-8月の市場動向を注視**: GPT-5.6 GA と Grok 4.5 で中国 OSS の価格優位が変わる可能性、CNBC の続報を待つ。",
+      "**AI News の今後**: 今回の CNBC 調査は「中国 OSS の実力を米国企業自身が投票で決めた」意味を持つ。日本企業にとっても示唆が大きく、**AI News では「日本語プロンプトでの DeepSeek V4 / GLM-5.2 / LongCat-2.0 実測比較」** を近日公開予定。**モデル選択 = ビジネス戦略選択**の時代に、実データベースの検証記事を継続する。"
+    ],
+    "primarySources": [
+      {
+        "title": "Chinese AI models are gaining ground with U.S. companies as OpenAI, Anthropic costs surge",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/07/07/chinese-ai-models-costs-us-openai-anthropic.html"
+      },
+      {
+        "title": "Chinese AI Models Now Capture Up to 46% of US Enterprise Token Usage",
+        "site": "Forkast News",
+        "url": "https://forkast.news/chinese-ai-models-now-capture-up-to-46-of-us-enterprise-token-usage/"
+      },
+      {
+        "title": "Chinese AI Models Overtake US Rivals in Token Usage",
+        "site": "Let's Data Science",
+        "url": "https://letsdatascience.com/blog/startup-moved-100-percent-traffic-claude-to-deepseek"
+      },
+      {
+        "title": "Chinese AI models are attracting US companies with lower prices",
+        "site": "CIO",
+        "url": "https://www.cio.com/article/4194040/chinese-ai-models-are-gaining-ground-in-the-u-s-attracting-companies-with-lower-prices.html"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;

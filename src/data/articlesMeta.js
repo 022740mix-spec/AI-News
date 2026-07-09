@@ -6561,5 +6561,74 @@ export const ARTICLES_META = [
       "src": "logos/anthropic.svg",
       "alt": "Claude Fable 5 サブスク延長"
     }
+  },
+  {
+    "id": "openai-gpt-5-6-general-availability-july-9-2026",
+    "type": "news",
+    "category": "model",
+    "title": "GPT-5.6 Sol / Terra / Luna が一般公開開始（7/9）— 約20組織限定プレビューから解放、ChatGPT・API・Codex で即日利用可能",
+    "excerpt": "OpenAI が7月9日、**GPT-5.6 Sol / Terra / Luna** の一般公開を開始した。6月25日の限定プレビュー（[GPT-5.6 プレビュー](?a=openai-gpt-5-6-sol-terra-luna-preview-2026)）から**約20組織のみ**の状態が続いていたが、[White House 自主基準](?a=white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026) 枠組みでの政府事前共有プロセスを経て、一般ユーザーにアクセスが解放された。**Sol $5/$30・Terra $2.50/$15・Luna $1/$6** per 1M tokens。**ChatGPT・API・Codex** で即日利用可能。Sol Ultra は TerminalBench 2.1 で 91.91% の SOTA、Terra は「GPT-5.5 と競合する性能を半額で」、Luna は「フロンティアモデル最安級」。",
+    "date": "2026-07-10",
+    "newsDate": "2026-07-09",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "GPT-5.6",
+      "Sol",
+      "Terra",
+      "Luna",
+      "モデル"
+    ],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "GPT-5.6 一般公開"
+    },
+    "pinned": true
+  },
+  {
+    "id": "xai-grok-4-5-public-launch-opus-class-july-9-2026",
+    "type": "news",
+    "category": "model",
+    "title": "xAI Grok 4.5 を公開（7/9）— Musk「Opus クラスだが高速・低コスト」、$2/$6、Cursor 訓練データ、SuperGrok Heavy $300/月経由",
+    "excerpt": "xAI（SpaceX 傘下）が7月9日、**Grok 4.5** を公開。Elon Musk は前日7月8日の X 投稿で **「Opus クラスだが faster、トークン効率がよく、低コスト」** と説明した。**1.5T V9 基盤モデル + Cursor 訓練データ**（[SpaceX-Cursor $60B 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026) の実利）で構築。**API 料金は $2/$6 per 1M tokens**（入力/出力）で、Anthropic Sonnet 5 の導入価格 $2/$10 より安く、GPT-5.6 Terra の $2.50/$15 も下回る破格。「タスクを半分のステップで完了」と Musk 主張、実コストは表示単価より更に低くなる可能性。**SuperGrok Heavy（$300/月）** 経由でエンドユーザーもアクセス可能、xAI API でも利用可能。",
+    "date": "2026-07-10",
+    "newsDate": "2026-07-09",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "xAI",
+      "Grok 4.5",
+      "SpaceX",
+      "モデル",
+      "SuperGrok"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "xAI Grok 4.5 公開"
+    }
+  },
+  {
+    "id": "feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】中国 AI モデルが米国エンタープライズ API トークンの **30-46%** を占領（CNBC 7/7 調査）— OpenRouter 経由統計、12ヶ月平均 11% から急拡大、60-90% 安が牽引",
+    "excerpt": "CNBC の2026年7月7日調査によれば、**OpenRouter 経由で米国企業が使用する API トークンのうち、中国モデルのシェアが 2月8日以降週次で 30% を超え、最大 46%** に達している。**過去12ヶ月の平均は 11%、2025年上半期は 4.5%** だったので、わずか半年強で **6-10倍の急拡大**。牽引したのは価格差で、**DeepSeek・Z.ai GLM-5.2・Kimi K2.6・Meituan LongCat-2.0** 等のオープンウェイトモデルは Anthropic Fable 5・OpenAI GPT-5.6 に対して **60-90% 安い**。「価格が仕事をしている」との業界コメント通り、[tokenmaxxing→効率性 分析](?a=feature-tokenmaxxing-to-efficiency-market-shift-2026) の実データによる裏付けとなった。",
+    "date": "2026-07-10",
+    "newsDate": "2026-07-07",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "中国モデル",
+      "米中",
+      "DeepSeek",
+      "Z.ai",
+      "分析",
+      "OpenRouter"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "中国 AI モデル 米国シェア分析"
+    }
   }
 ];
