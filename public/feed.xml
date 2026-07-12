@@ -16,6 +16,14 @@
     <summary>OpenAI と Cerebras が7月10日、GPT-5.6 Sol が Cerebras の推論基盤で 最大 750 tokens/秒の生成速度を達成したと発表。従来のフロンティア級モデルは 30-100 tokens/秒が一般的で、7-25倍の高速化。Cerebras WSE-3（ウェハスケールエンジン）の巨大チップ設計がフロンティアモデル推論の物理層を根本的に変える可能性を実証した。6月25日発表の [OpenAI Broadcom「Jalapeño」推論チップ](?a=openai-broadcom-jalapeno-llm-inference-chip-2026) とあわせ、OpenAI が推論インフラで NVIDIA 依存を段階的に減らす戦略の第2段階として位置付けられる。</summary>
   </entry>
   <entry>
+    <title>GPT-5.6 Sol / Terra / Luna レビュー — 一般公開版（7/9 GA）、TerminalBench 2.1 で 91.91% SOTA、Cerebras で 750 tokens/秒、ChatGPT Work の駆動モデルに</title>
+    <link rel="alternate" type="text/html" href="?a=gpt-5-6-review"/>
+    <id>tag:ai-tool-news.jp,2026:gpt-5-6-review</id>
+    <published>2026-07-09T15:00:00Z</published>
+    <updated>2026-07-09T15:00:00Z</updated>
+    <summary>OpenAI の3階層フラッグシップ Sol / Terra / Luna が2026年7月9日に一般公開開始（[GPT-5.6 GA](?a=openai-gpt-5-6-general-availability-july-9-2026)）。ChatGPT・API・Codex で即日利用可能に。Sol（$5/$30、Ultra thinking モードで TerminalBench 2.1 で 91.91% SOTA）、Terra（$2.50/$15、GPT-5.5 比半額の daily driver）、Luna（$1/$6、フロンティアモデル最安級）の3階層構造。Cerebras 上で Sol が最大 750 tokens/秒（従来比 7-25倍）を達成、[ChatGPT Work](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026) の駆動モデルにも採用。1.5M コンテキスト、訓練カットオフ 2026年5月。Claude Sonnet 5・xAI Grok 4.5 との3強競合が本格化。</summary>
+  </entry>
+  <entry>
     <title>GPT-5.6 Sol / Terra / Luna が一般公開開始（7/9）— 約20組織限定プレビューから解放、ChatGPT・API・Codex で即日利用可能</title>
     <link rel="alternate" type="text/html" href="?a=openai-gpt-5-6-general-availability-july-9-2026"/>
     <id>tag:ai-tool-news.jp,2026:openai-gpt-5-6-general-availability-july-9-2026</id>
@@ -190,14 +198,6 @@
     <published>2026-06-26T15:00:00Z</published>
     <updated>2026-06-26T15:00:00Z</updated>
     <summary>2026年6月、AI モデルの利用パターンが「tokenmaxxing」（とにかく強力なモデルを大量に使う）から「効率性最優先」へ転換している。Anthropic Claude Fable 5 が $10/$50（Opus 4.8 の2倍）でローンチされた一方、OpenAI GPT-5.6 Luna は $1/$6 という最安級で投入。AI スタートアップ Lindy の CEO は同社トラフィックを 100% Claude → DeepSeek へ切替、コストを劇的削減したと公表。トークン単価競争の本格化と、フロンティアモデル独占体制への揺らぎを整理する。</summary>
-  </entry>
-  <entry>
-    <title>GPT-5.6 Sol / Terra / Luna レビュー — OpenAI 新フラッグシップ3階層、Sol Ultra が TerminalBench 2.1 で 91.91% の SOTA、Luna は $1/$6 の最安</title>
-    <link rel="alternate" type="text/html" href="?a=gpt-5-6-review"/>
-    <id>tag:ai-tool-news.jp,2026:gpt-5-6-review</id>
-    <published>2026-06-25T15:00:00Z</published>
-    <updated>2026-06-25T15:00:00Z</updated>
-    <summary>OpenAI が2026年6月25日に限定プレビュー公開した次世代フラッグシップ 3 バリアント。Sol（$5/$30、最難関タスク・複雑コーディング・セキュリティ研究）、Terra（$2.50/$15、大量業務向け daily driver、GPT-5.5 比半額）、Luna（$1/$6、要約・ドラフト・定型自動化、フロンティアモデル最安級）の3階層。Sol Ultra は TerminalBench 2.1 で 91.91% を記録、Mythos 5（88.0%）と Fable 5（84.3%）を上回り SOTA 更新。ultra thinking モードのサブエージェント活用が決定打。米国政府事前共有経由で約20組織限定プレビュー、一般公開は7月中〜下旬の見込み。1.5M コンテキスト・訓練カットオフ 2026年5月。</summary>
   </entry>
   <entry>
     <title>OpenAI が GPT-5.6 を限定プレビュー公開 — Sol/Terra/Luna の3バリアント、TerminalBench 2.1 で Sol Ultra 91.91% が Mythos 5・Fable 5 超え</title>

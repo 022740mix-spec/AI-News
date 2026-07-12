@@ -4043,30 +4043,32 @@ export const ARTICLES_META = [
     "id": "gpt-5-6-review",
     "type": "review",
     "category": "model",
-    "title": "GPT-5.6 Sol / Terra / Luna レビュー — OpenAI 新フラッグシップ3階層、Sol Ultra が TerminalBench 2.1 で 91.91% の SOTA、Luna は $1/$6 の最安",
-    "excerpt": "OpenAI が2026年6月25日に限定プレビュー公開した**次世代フラッグシップ 3 バリアント**。**Sol**（$5/$30、最難関タスク・複雑コーディング・セキュリティ研究）、Terra（$2.50/$15、大量業務向け daily driver、GPT-5.5 比半額）、**Luna**（$1/$6、要約・ドラフト・定型自動化、フロンティアモデル最安級）の3階層。**Sol Ultra は TerminalBench 2.1 で 91.91%** を記録、Mythos 5（88.0%）と Fable 5（84.3%）を上回り SOTA 更新。ultra thinking モードのサブエージェント活用が決定打。米国政府事前共有経由で**約20組織限定**プレビュー、一般公開は7月中〜下旬の見込み。1.5M コンテキスト・訓練カットオフ 2026年5月。",
-    "date": "2026-07-07",
-    "newsDate": "2026-06-25",
+    "title": "GPT-5.6 Sol / Terra / Luna レビュー — 一般公開版（7/9 GA）、TerminalBench 2.1 で 91.91% SOTA、Cerebras で 750 tokens/秒、ChatGPT Work の駆動モデルに",
+    "excerpt": "OpenAI の3階層フラッグシップ Sol / Terra / Luna が2026年7月9日に**一般公開開始**（[GPT-5.6 GA](?a=openai-gpt-5-6-general-availability-july-9-2026)）。ChatGPT・API・Codex で即日利用可能に。**Sol**（$5/$30、Ultra thinking モードで TerminalBench 2.1 で **91.91% SOTA**）、Terra（$2.50/$15、GPT-5.5 比半額の daily driver）、**Luna**（$1/$6、フロンティアモデル最安級）の3階層構造。**Cerebras 上で Sol が最大 750 tokens/秒**（従来比 7-25倍）を達成、[ChatGPT Work](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026) の駆動モデルにも採用。1.5M コンテキスト、訓練カットオフ 2026年5月。Claude Sonnet 5・xAI Grok 4.5 との3強競合が本格化。",
+    "date": "2026-07-13",
+    "newsDate": "2026-07-09",
     "author": "AI News 編集部",
-    "readTime": "7分",
+    "readTime": "8分",
     "tags": [
       "モデル",
       "OpenAI",
       "GPT-5.6",
       "Sol",
+      "Terra",
+      "Luna",
       "TerminalBench",
-      "LLM"
+      "おすすめ"
     ],
     "ratings": {
       "AI品質": 5,
-      "使いやすさ": 4,
+      "使いやすさ": 5,
       "コスパ": 5,
       "拡張性": 5,
-      "企業向け": 4
+      "企業向け": 5
     },
-    "rating": 4.5,
+    "rating": 5,
     "reviewCategory": "model",
-    "lastReviewed": "2026-07-07"
+    "lastReviewed": "2026-07-13"
   },
   {
     "id": "sakana-fugu-review",
