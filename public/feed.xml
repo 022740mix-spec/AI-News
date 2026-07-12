@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-07-09T15:00:00Z</updated>
+  <updated>2026-07-12T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>GPT-5.6 Sol が Cerebras 上で **750 tokens/秒** — フロンティア級モデルが専用推論チップで近リアルタイム化、Broadcom Jalapeño 発表後の推論戦国時代へ</title>
+    <link rel="alternate" type="text/html" href="?a=openai-gpt-5-6-sol-cerebras-750-tokens-per-second-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-gpt-5-6-sol-cerebras-750-tokens-per-second-2026</id>
+    <published>2026-07-10T15:00:00Z</published>
+    <updated>2026-07-10T15:00:00Z</updated>
+    <summary>OpenAI と Cerebras が7月10日、GPT-5.6 Sol が Cerebras の推論基盤で 最大 750 tokens/秒の生成速度を達成したと発表。従来のフロンティア級モデルは 30-100 tokens/秒が一般的で、7-25倍の高速化。Cerebras WSE-3（ウェハスケールエンジン）の巨大チップ設計がフロンティアモデル推論の物理層を根本的に変える可能性を実証した。6月25日発表の [OpenAI Broadcom「Jalapeño」推論チップ](?a=openai-broadcom-jalapeno-llm-inference-chip-2026) とあわせ、OpenAI が推論インフラで NVIDIA 依存を段階的に減らす戦略の第2段階として位置付けられる。</summary>
+  </entry>
   <entry>
     <title>GPT-5.6 Sol / Terra / Luna が一般公開開始（7/9）— 約20組織限定プレビューから解放、ChatGPT・API・Codex で即日利用可能</title>
     <link rel="alternate" type="text/html" href="?a=openai-gpt-5-6-general-availability-july-9-2026"/>
@@ -22,6 +30,22 @@
     <published>2026-07-09T15:00:00Z</published>
     <updated>2026-07-09T15:00:00Z</updated>
     <summary>xAI（SpaceX 傘下）が7月9日、Grok 4.5 を公開。Elon Musk は前日7月8日の X 投稿で 「Opus クラスだが faster、トークン効率がよく、低コスト」 と説明した。1.5T V9 基盤モデル + Cursor 訓練データ（[SpaceX-Cursor $60B 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026) の実利）で構築。API 料金は $2/$6 per 1M tokens（入力/出力）で、Anthropic Sonnet 5 の導入価格 $2/$10 より安く、GPT-5.6 Terra の $2.50/$15 も下回る破格。「タスクを半分のステップで完了」と Musk 主張、実コストは表示単価より更に低くなる可能性。SuperGrok Heavy（$300/月） 経由でエンドユーザーもアクセス可能、xAI API でも利用可能。</summary>
+  </entry>
+  <entry>
+    <title>【分析】ChatGPT Work vs Claude Cowork 同日ローンチ — 業務 AI 対決本格化、両陣営が「Chat + Agent」統合と Slack/Teams 連携、Cowork の 90% が非コーディング用途</title>
+    <link rel="alternate" type="text/html" href="?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026</id>
+    <published>2026-07-09T15:00:00Z</published>
+    <updated>2026-07-09T15:00:00Z</updated>
+    <summary>OpenAI ChatGPT Work（GPT-5.6 駆動、7/9）と Anthropic Claude Cowork の web/mobile 展開（7/7 発表・7/9 順次展開）が 同時期にローンチ。両陣営とも「Chat と Agent の統合」（OpenAI: Codex + ChatGPT 統合、Anthropic: Chat + Cowork 統合）で足並みが揃った。Slack・Teams・Gmail・Google Drive・SharePoint・Salesforce 等の職場アプリ連携も同水準。Anthropic の1.2M セッション分析データでは Cowork の 90% 以上が非コーディング用途（業務運用・コンテンツ制作）と判明、業務 AI 市場の本格化を裏付ける。ChatGPT Work は Pro/Enterprise/Edu 先行、Claude Cowork は Max プラン先行、両社の階層戦略にも差異がある。</summary>
+  </entry>
+  <entry>
+    <title>Meta が Muse Spark 1.1 をリリース — Meta 初の**有料モデル**、$1.25/$4.25、Llama 系無料 OSS 路線からの戦略転換</title>
+    <link rel="alternate" type="text/html" href="?a=meta-muse-spark-1-1-first-paid-model-2026"/>
+    <id>tag:ai-tool-news.jp,2026:meta-muse-spark-1-1-first-paid-model-2026</id>
+    <published>2026-07-09T15:00:00Z</published>
+    <updated>2026-07-09T15:00:00Z</updated>
+    <summary>Meta が7月9日、Muse Spark 1.1 を公開。Meta 初の有料モデルとして $1.25/$4.25 per 1M tokens で提供され、無料 OSS の Llama 系路線からの戦略転換を鮮明にした。同日の [OpenAI GPT-5.6 一般公開](?a=openai-gpt-5-6-general-availability-july-9-2026) と [xAI Grok 4.5 公開](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)、[Claude Cowork/ChatGPT Work ローンチ](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026) と重なる「AI 史上最重要の一日」の一角。Meta の元 CTO Mike Schroepfer 率いる MSL（Meta Superintelligence Labs）体制下での動きで、Meta が OSS 一辺倒からクローズド有料モデルへ舵を切った歴史的なマイルストーン</summary>
   </entry>
   <entry>
     <title>【分析】中国 AI モデルが米国エンタープライズ API トークンの **30-46%** を占領（CNBC 7/7 調査）— OpenRouter 経由統計、12ヶ月平均 11% から急拡大、60-90% 安が牽引</title>
