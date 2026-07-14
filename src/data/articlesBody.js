@@ -12277,6 +12277,244 @@ const ARTICLES_BODY = {
         "url": "https://solutionsreview.com/ai-news-for-the-week-of-july-10-updates-from-accenture-google-cloud-supermicro-more/"
       }
     ]
+  },
+  "samsung-health-ai-training-consent-delete-data-2026": {
+    "body": [
+      "**Samsung Health** アプリの最新リデザインで、ユーザーが記録した歩数・睡眠・服薬・生理周期・治療履歴・検査結果までの健康データを **AI 学習（human review 含む）**に使う同意が要求されている。7月13日に 9to5Google が最初に報じ、翌14日には **Hacker News のフロントページ #1** に浮上、複数の主要 Android メディア（Android Authority・Neowin・GSMArena・Cybernews・SamMobile）が追随した。健康データという最もセンシティブな領域での「実質強制同意」問題が、AI 業界のプライバシーダークパターン論争の中心に据えられた形だ。",
+      "**同意の具体的な仕様**: Samsung は「**Consent to the Use of Health Data for AI training and modelling**」というトグルを Samsung Health の設定深層に追加した。同意文面には **「human review」** も明記されており、AI 開発過程で従業員や委託業者が健康記録の一部を目視確認する可能性が示されている。既存ユーザーには次回アプリ起動時に同意ダイアログが表示される。",
+      "**拒否時の警告文**: 同意トグルをオフにしようとすると、以下の警告が表示される。「あなたは Samsung アカウントと健康データを同期できなくなり、あなたの健康データは、法令上の保持義務が適用される場合を除き削除されます」。事実上、**同意しない = クラウド同期停止 + 過去データ削除** という二者択一が迫られる構造で、Neowin 等は「Samsung will kill your health data if you don't consent」と直截に表現している。",
+      "**対象データの広さ**: 対象はフィットネス系の基本データ（歩数・心拍・睡眠）にとどまらず、以下を含む。",
+      "**服薬管理データ**: 服用中の薬・服用時刻・アドヒアランス記録",
+      "**生理周期（cycle tracking）**: Roe v. Wade 撤回以後、米国で規制議論の的になったデータカテゴリ",
+      "**治療履歴（treatments）**: 過去の治療記録",
+      "**検査結果（test results）**: 血液検査・血糖・血圧等の数値",
+      "**フル健康記録（full health records）**: Samsung 側の説明で「full health records」と明示された領域",
+      "健康データの中でも特に **生理周期** と **治療記録** は、雇用差別・保険料算定・司法手続きへの二次利用リスクが指摘されてきたカテゴリで、これらが AI 学習と human review の対象になる点への懸念が強い。",
+      "**AI News の論点整理**: 本件は「同意の設計」と「AI 学習の必然性」の2軸で評価する必要がある。",
+      "**(1) 同意設計の妥当性**: EU 一般データ保護規則（GDPR）第7条は「同意は自由に与えられ、具体的で、情報を得た上で、明確な肯定的行為による」ものと定義する。**「同意しなければ既存データを削除する」というインセンティブ構造は、自由な意思決定を歪めるダークパターン**と評価される可能性が高い。EU 域内でのローンチ時にデータ保護当局（DPA）が動く余地がある。",
+      "**(2) AI 学習に健康データが必要か**: [ChatGPT Work / Claude Cowork](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026) のような業務 AI は個人データ最小化の方向にある。Samsung Health のような**個人ヘルスケア AI** も、原則としては連合学習・差分プライバシー・on-device 推論等でセンシティブデータを外部に出さない設計が推奨される。「AI 訓練にセンシティブ健康データ生データが不可欠」という前提自体が今後精査されるだろう。",
+      "**(3) 業界全体への波及**: [White House 自主基準](?a=white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026) や [UN Global Dialogue](?a=feature-un-global-dialogue-ai-governance-geneva-2026) のような自主・多国間ガバナンス枠組みは、こうしたセンシティブ領域の運用実務までは踏み込めていない。**Samsung のような大手デバイスメーカーが「同意しなければデータ削除」を許容範囲と見なしたこと**が、業界の慣行として広まる懸念がある。",
+      "**比較対象の運用実務**: 主要フロンティア各社の健康データ扱いは以下の通り整理される。",
+      "**Apple Health**: HealthKit データは原則 on-device、iCloud 同期は end-to-end 暗号化、AI 学習不使用が公式方針",
+      "**Google Fit / Fitbit**: 匿名化された集計データのみモデル改善に利用、拒否時のペナルティなし",
+      "**Amazon Halo（サービス終了）**: 生前は healthcare research 用途利用にオプトイン、拒否時ペナルティなし",
+      "**Samsung Health（新方針）**: **拒否 = データ削除**（他社と大きく異なる強制構造）",
+      "**注意点**:",
+      "**(1) iOS 版の動向**: 本件は現時点で Android 版 Samsung Health が対象。iOS 版で同じ挙動をすると Apple の App Store Review Guidelines との整合性が問題になる。",
+      "**(2) 適用地域**: グローバル展開か、日本・EU では別扱いになるかは Samsung から公式発表待ち。EU 域内での提供時に DPA からの指導が入る可能性は高い。",
+      "**(3) 撤回時の実データ**: 実際に「削除される」データがどの範囲か（クラウド側のみか、端末側含むか）は消費者側で検証が必要。",
+      "**AI News の推奨**: Samsung Health 利用者は当面、**同意ダイアログの原文スクリーンショットを保存**した上で、以下の3択で対応する。",
+      "**(a)** 同意し、AI 学習を許容する",
+      "**(b)** 拒否し、Samsung Health を Apple Health / Google Fit にエクスポートして移行する（Samsung 側は削除される想定）",
+      "**(c)** 拒否し、Samsung 経由の同意撤回請求権行使を EU / 韓国等の当局に照会する",
+      "本件は「AI 時代の同意設計」の試金石であり、Samsung の対応と各国 DPA の反応が今後の業界慣行を決める可能性が高い。AI News は続報として、EU DPA の動向、iOS 版展開の有無、Google Fit / Apple Health の反応を追跡する。"
+    ],
+    "primarySources": [
+      {
+        "title": "Samsung Health will delete your data without AI training consent",
+        "site": "9to5Google",
+        "url": "https://9to5google.com/2026/07/13/samsung-health-ai-training-data-consent/"
+      },
+      {
+        "title": "Samsung will kill your health data if you don't consent to AI training",
+        "site": "Android Authority",
+        "url": "https://www.androidauthority.com/samsung-health-train-ai-data-3686684/"
+      },
+      {
+        "title": "Samsung will delete your health data if you don't let them use it to train AI",
+        "site": "Neowin",
+        "url": "https://www.neowin.net/news/samsung-will-delete-your-health-data-if-you-dont-let-them-use-it-to-train-ai/"
+      },
+      {
+        "title": "Samsung Health users must accept AI training or lose synced health data",
+        "site": "Cybernews",
+        "url": "https://cybernews.com/news/samsung-health-ai-training-delete-user-data/"
+      }
+    ]
+  },
+  "mcp-2026-07-28-release-candidate-stateless-core-2026": {
+    "body": [
+      "**Model Context Protocol（MCP）** の **2026-07-28 版仕様 Release Candidate** が公開された。2024年11月の初版公開以来、MCP は Anthropic を中心に OpenAI・Google・Microsoft・Palantir 等が参加するオープン仕様として成長してきたが、今回は**最大規模の仕様改訂**となる。10週間の検証窓を経て、2026年7月28日に正式版が確定する。SDK Beta（Python / TypeScript / Go / C#）も同時公開され、Tier 1 SDK メンテナーは 7/28 までに正式版対応を出すことが求められる。",
+      "**改訂の柱1 — プロトコルコアの Stateless 化**: 従来の MCP はセッション状態をサーバー側で保持する設計だったため、複数インスタンス構成では **sticky session（同一クライアント→同一サーバ）**が必要だった。今回の RC は **プロトコルコアを Stateless 化** し、通常の round-robin ロードバランサー配下で動作可能にした。運用面での意義は大きく、以下が実現される。",
+      "**(1) 通常の HTTP LB 配下で MCP サーバを展開可能**（AWS ALB / GCP Cloud LB / Cloudflare 等）",
+      "**(2) オートスケーリング時のセッション引き継ぎ不要**（インスタンス増減が自由に）",
+      "**(3) エンタープライズの HTTP キャッシング・レートリミットスタックがそのまま使える**",
+      "**(4) 障害復旧が単純化**（stateful な session store のクラッシュ対応が不要）",
+      "既存の sticky session 前提の実装は、Extensions フレームワーク経由で互換維持する経過措置が用意されるが、段階的な置き換えが推奨される。",
+      "**改訂の柱2 — MCP Apps 拡張**: 新規追加された **MCP Apps** は、MCP サーバがクライアントに **sandboxed iframe に配信する HTML UI** を提供できる仕組み。従来のツール呼び出しに加えて、サーバ側が生成した対話的 UI を LLM チャット上に埋め込めるようになる。**Anthropic Claude Chrome 拡張（9M インストール）**（[Claude Chrome 拡張](?a=anthropic-claude-chrome-extension-9m-installs-beta-2026)）のように、AI がブラウザ内で操作する UX が MCP 標準に取り込まれた形で、Cursor・Zed・Windsurf 等の IDE が MCP App を組み込むことでリッチなツール UI を持てる。",
+      "**改訂の柱3 — Tasks 拡張**: **Tasks 拡張** は、stateless 環境でも **長時間ジョブ**（ビルド・大規模検索・非同期処理等）を扱える設計。ジョブ ID とステータス取得の API が標準化され、クライアントは polling / streaming どちらでも進捗を取得できる。**ChatGPT Work / Claude Cowork のスケジュール実行**（[ChatGPT Work vs Cowork](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026)）のような長時間エージェントワークフローが、MCP 標準の上で組める意義は大きい。",
+      "**改訂の柱4 — Authorization 強化**: 従来の MCP の認可は Basic / API Key ベースが中心だったが、RC は **OAuth 2.1 / OpenID Connect 準拠** を全面採用。企業内 SSO / IdP と統合しやすくなり、監査ログや権限委譲の管理が既存のセキュリティスタックに接続できる。**Palantir・Microsoft 等のエンタープライズ導入企業**にとって、コンプライアンス要件の充足が容易になる。",
+      "**改訂の柱5 — Deprecation Policy の正式化**: これまでの仕様更新では、破壊的変更のスケジュールがアドホックだったが、RC で **正式な Deprecation Policy** が導入された。廃止予定 API は「N バージョン前告知 → M バージョン後削除」の明確なタイムラインが必須となり、実装者が安心して仕様に依拠できる。",
+      "**業界インパクト**: 本 RC は MCP を「実験的プロトコル」から「エンタープライズグレードの標準」に押し上げる位置付けと評価される。",
+      "**(a) MCP サーバのホスティングコスト低下**: Stateless 化で通常の Web ホスティング（Cloudflare Workers / Vercel Edge 等）でも安価に運用可能に",
+      "**(b) MCP エコシステムの拡大**: 既に Anthropic・OpenAI・Google Cloud・X が採用済みで、Blume（[Blume](?a=blume-hayden-bleasel-ai-ready-docs-framework-2026)）のような個人開発 OSS でも同梱パターンが広がる",
+      "**(c) エージェント認証の統一**: OAuth / OIDC 準拠で、企業内の既存 IdP（Okta / Entra ID / Auth0 等）と MCP サーバの接続が標準化",
+      "**注意点**:",
+      "**(1) 破壊的変更を含む**: sticky session 前提の既存 MCP サーバ実装は改修が必要。Extensions フレームワーク経由で互換維持は可能だが、段階的なリファクタリングを計画すべき",
+      "**(2) 10 週間の検証窓**: RC 期間中に大きな仕様変更が入る可能性は残るため、本番導入は 7/28 の正式版確定後を推奨",
+      "**(3) MCP Apps のセキュリティ**: sandboxed iframe とはいえ、サーバ側の HTML を埋め込む構造は XSS / クリックジャッキング等のリスク面での実装ガイダンス整備が必要",
+      "**AI News の推奨**: 既に MCP サーバを本番運用している企業は、SDK Beta を検証環境に投入して Stateless 化の互換性を確認する段階に入るべき。個人開発者・OSS メンテナーは、7/28 の正式版までは仕様変更を追いつつ、正式版確定後に対応版を出す計画で問題ない。特に **MCP Apps** は Cursor・Zed・Claude Code のような AI エディタでのリッチな UI 統合を可能にするため、開発ツール系プロジェクトは早期評価する価値がある。"
+    ],
+    "primarySources": [
+      {
+        "title": "The 2026-07-28 MCP Specification Release Candidate",
+        "site": "Model Context Protocol Blog",
+        "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/"
+      },
+      {
+        "title": "Beta SDKs for the 2026-07-28 MCP Spec Release Candidate Are Here",
+        "site": "Model Context Protocol Blog",
+        "url": "https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/"
+      },
+      {
+        "title": "The biggest MCP spec update ships July 28: What changes for AI agent authentication",
+        "site": "WorkOS",
+        "url": "https://workos.com/blog/mcp-2026-spec-agent-authentication"
+      },
+      {
+        "title": "MCP Is Growing Up",
+        "site": "Agentic AI Foundation",
+        "url": "https://aaif.io/blog/mcp-is-growing-up/"
+      }
+    ]
+  },
+  "deepseek-v4-mid-july-peak-off-peak-api-pricing-2026":  {
+    "body": [
+      "中国 **DeepSeek** が **V4 の正式版** を **2026年7月中旬に公開**すると告知した。同時に主要 API プロバイダとしては初めて、**peak / off-peak（時間帯別）料金**を導入する。ピーク時間は北京時間の **09:00-12:00** と **14:00-18:00** の平日日中で、この時間帯だけ通常料金の **2倍レート**が適用され、それ以外は据え置きとなる。DeepSeek は「価格の一律引き上げではなく、負荷分散とサービス安定性の向上」と位置付けているが、開発者コミュニティでは料金設計自体への評価が二分している。",
+      "**V4 の主要スペック（既公表分）**: DeepSeek V4 は 2ラインナップで提供される。",
+      "**V4 Flash**: 汎用軽量。cache-miss $0.14 / 1M input tokens、cache-hit $0.014 / 1M（cache は自動）",
+      "**V4 Pro**: フロンティア級。cache-miss $0.435 / 1M input tokens、cache-hit $0.043 / 1M",
+      "**共通仕様**: 1M コンテキストウィンドウ、自動キャッシング、ツール呼び出し・JSON モード対応",
+      "この料金水準は、**GPT-5.6 Sol の $5 / $30**（[GPT-5.6 GA](?a=openai-gpt-5-6-general-availability-july-9-2026)）や **Claude Sonnet 5 の $2 / $10**（導入価格）と比較すると **1/10〜1/20** で、[中国 AI モデルが米国企業トークンの 46%](?a=feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026) を消費するに至った価格攻勢の延長線上にある。",
+      "**peak / off-peak 料金の中身**: 北京時間 09:00-12:00 と 14:00-18:00（合計 7時間 / 日）はピーク料金として **通常の 2倍** が適用される。V4 Flash なら $0.14 → $0.28、V4 Pro なら $0.435 → $0.87 / 1M input tokens となる計算。ピーク以外の 17時間（夜間・早朝・昼休憩）は料金据え置き。米国西海岸時間（PT）で言えば、DeepSeek のピークは前日の 18:00-21:00 と 23:00-03:00 に相当し、米国西海岸企業には昼夜逆転で「常に off-peak」という副次効果もある。",
+      "**なぜ peak / off-peak 課金か**: 3つの技術的・経済的背景がある。",
+      "**(1) データセンター電力コストの時間帯差**: 中国の産業電力は時間帯別料金制度が広く導入されており、ピーク時間帯の電力コストが実際に高い。DeepSeek はこの電力コスト構造を API 料金にパススルーする形になる。",
+      "**(2) GPU 供給制約下の需要平準化**: 米国輸出規制で H100 / H200 の中国流入は制限されており、DeepSeek 等の中国モデルプロバイダは慢性的な GPU キャパシティ不足に直面している。ピーク時間帯の需要を off-peak に誘導することで、既存キャパシティで対応する経済合理性がある。",
+      "**(3) 差別的価格戦略**: 「今すぐ推論が必要」な用途（対話型チャット）はピーク料金を負担する一方、バッチ処理・非同期ジョブは off-peak にシフトできる。ユーザー種別ごとに実質的な価格差別を設計している。",
+      "**業界へのインパクト**:",
+      "**(a) 中国モデル三つ巴の再編**: DeepSeek V4 は [Kimi K2.7-Code（Moonshot AI）](?a=feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026) と [GLM-5.2（Zhipu）](?a=meituan-longcat-2-1-6t-domestic-chips-mit-open-2026) との中国モデル競争の中心に立つ。料金は DeepSeek が最安圏だが、GLM-5.2 は MIT ライセンスで OSS 化されている差別化がある",
+      "**(b) 西側 API プロバイダの追随可能性**: peak / off-peak 課金は電力・GPU 制約という共通課題への合理的な解ではあるが、西側では均一料金が標準で、追随には料金体系全面刷新が必要。まず AWS Bedrock / GCP Vertex 等のプラットフォーム側が「時間帯シフト割引」を出す形で始まる可能性がある",
+      "**(c) 企業ワークロードの時間シフトインセンティブ**: バッチ処理・レポート生成・大量文書要約等の非対話型ワークロードは、off-peak にキューイングする最適化が価値を持つようになる",
+      "**注意点**:",
+      "**(1) 「V4 発表」と「V4 GA」の区別**: 現時点の告知は「7月中旬公開」であり、具体的な日付は未確定。ベータ経由公開の可能性もある",
+      "**(2) ベンチマーク未公表**: V4 の SWE-Bench Pro / Terminal-Bench / GPQA 等の具体スコアは本稿執筆時点で未公表。V3.1 比の性能向上幅も未確定",
+      "**(3) 中国データセンター経由のデータ主権リスク**: DeepSeek の API は中国国内でホスティングされている前提で、機微データを送る場合は自社の準拠法規制との整合性を確認する必要がある",
+      "**AI News の推奨**: 個人開発者・スタートアップは **DeepSeek V4 Flash の $0.14 / 1M** で概念実証が可能な圧倒的コスト優位性を評価する価値がある。ただし本番導入は **(1) ベンチマーク公表後**、**(2) データ主権要件との照合後**、**(3) peak / off-peak を意識したジョブスケジューリングの実装後**の3条件を満たしてから。特にバッチ処理系の企業ワークロードでは、off-peak への時間シフトで実質コストを 1/2 に抑えられる設計余地が生まれる。"
+    ],
+    "primarySources": [
+      {
+        "title": "DeepSeek to launch V4 in mid-July with new peak-time API pricing",
+        "site": "TechNode",
+        "url": "https://technode.com/2026/06/30/deepseek-to-launch-v4-in-mid-july-with-new-peak-time-api-pricing/"
+      },
+      {
+        "title": "DeepSeek V4 Official Release: Peak Pricing Guide",
+        "site": "ExplainX",
+        "url": "https://explainx.ai/blog/deepseek-v4-official-release-peak-pricing-mid-july-2026"
+      },
+      {
+        "title": "DeepSeek API Pricing (July 2026): V4 Flash $0.14/M · V4 Pro $0.435/M",
+        "site": "TLDL",
+        "url": "https://www.tldl.io/resources/deepseek-api-pricing"
+      }
+    ]
+  },
+  "anthropic-claude-reflect-time-and-focus-2026": {
+    "body": [
+      "**Anthropic** が7月9日、Claude Web / Desktop に **Reflect**（月次使用リフレクションダッシュボード）と **Time and focus** 設定を追加した。Reflect は「Claude Wrapped」とも呼ばれる Spotify 年末振り返り風の UI で、過去 **1・3・6・12ヶ月**の Claude 利用データを可視化する。同時に Time and focus では **break reminder** と **quiet hours** を設定でき、iPhone Screen Time の AI 版に相当する UX がフロンティアモデル提供企業から初めて登場した。Free / Pro / Max ユーザー全員に beta で開放されており、**Memory 機能有効化が前提**となる。",
+      "**Reflect が可視化する項目**: ダッシュボードには以下が表示される。",
+      "**トピック領域**: 過去期間で最も話題にした領域（コーディング・執筆・調査・生活相談・数学等）",
+      "**最も使う日**: 曜日別の利用回数分布",
+      "**ピーク時間帯**: 時間帯別の利用回数分布",
+      "**タスク傾向**: 質問系 / 制作系 / 相談系等のバランス",
+      "**Reflective Prompts**: 「Claude ができても自分でやりたいことは何か」等の問いかけ",
+      "この最後の Reflective Prompt が Anthropic 独自の意匠で、単なる利用統計を超えて **「AI に頼っていい範囲を自分で決める」** ためのメタ認知支援ツールとして設計されている。",
+      "**Time and focus 設定**: 別途 Settings > Time and focus で以下が設定できる。",
+      "**Break reminder**: 指定時間（例: 90分）連続で Claude を使うと、休憩を促す通知が表示される",
+      "**Quiet hours**: 指定時間帯（例: 22:00-07:00）は Claude の通知や push が抑制される",
+      "**Reflection prompt schedule**: 週次・月次で Reflective Prompt がポップアップする頻度を設定可能",
+      "**「AI screen-time モーメント」の意義**: Axios は本機能を **「AI industry's screen-time moment」** と評した。スマートフォンでは 2018年の iOS 12 / Android 9 で Screen Time / Digital Wellbeing が導入され、以降「デバイスに依存する自分を可視化する」という UX が標準化した。AI では同種の機能が今まで存在せず、Claude Reflect が最初の実装例となる。",
+      "**業界への含意**:",
+      "**(1) 依存問題への予防的対応**: Claude Cowork / ChatGPT Work のような業務エージェント（[ChatGPT Work vs Cowork](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026)）が普及すれば、AI 利用時間は今後劇的に増える。Anthropic は依存問題が社会問題化する前に「セルフモニタリングツール」を提供する予防的スタンスを取った",
+      "**(2) OpenAI・Google の追随可能性**: iOS Screen Time が Android Digital Wellbeing を促した歴史から、OpenAI ChatGPT や Google Gemini でも類似機能の実装が期待される。特に ChatGPT Work は Enterprise / Edu 展開で「学生の AI 利用の可視化」という制度需要が顕在化するはず",
+      "**(3) 雇用主の監視転用リスク**: Reflect データが雇用主に共有されると、「勤務時間中の AI 利用を管理する」ツールに転用されうる。Anthropic は現時点で「Reflect 情報はこの機能内に留まり、他の目的に使わない」と明言しているが、Enterprise プランでの拡張には要注視",
+      "**(4) Memory 機能への追加インセンティブ**: Reflect は Memory 有効化が前提のため、Memory 導入率を押し上げる副次効果がある。Anthropic の Memory は Fable 5・Sonnet 5・Opus 4.8 での連続利用体験の中核機能で、Reflect による利用促進はエコシステム深化の要石になる",
+      "**注意点**:",
+      "**(1) Beta 段階**: 挙動変更・機能追加の可能性がある。特に集計対象データの範囲は今後変わりうる",
+      "**(2) Memory 前提**: Memory 無効ユーザーは Reflect が使えない。Memory は過去チャット履歴を Claude が参照できる機能で、プライバシー面で慎重な検討が必要",
+      "**(3) データの所在**: Reflect が集計するデータが Anthropic 側でどう保管されるかの詳細（暗号化・保存期間・第三者アクセス）は今後の Privacy Center 更新待ち",
+      "**(4) 業務用途での意義**: 個人利用では有用だが、業務エージェントとしての Cowork では「使用時間を減らす」より「効率的に使う」ことが目的なので、Time and focus の break reminder は無効化する運用が現実的",
+      "**AI News の推奨**: Claude Free / Pro ユーザーで Memory を有効化している場合は、まず Reflect を **1週間試用**して過去1ヶ月分の利用データを俯瞰することを推奨する。ChatGPT や Cursor Composer など他 AI ツールとの利用時間バランスを見直す契機になる。ただし **Memory 無効ユーザーが Memory を有効化するかの判断**は、プライバシーとのトレードオフを慎重に評価すべき — Memory は過去チャットの内容を Claude が参照可能にする機能であり、Reflect の便益のためだけに有効化する判断は避けたい。"
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic's Reflection: AI gets its screen-time moment",
+        "site": "Axios",
+        "url": "https://www.axios.com/2026/07/09/anthropic-reflection-ai-screen-time"
+      },
+      {
+        "title": "Anthropic Adds 'Reflect' Feature to Claude for Tracking Your Usage",
+        "site": "MacRumors",
+        "url": "https://www.macrumors.com/2026/07/09/anthropic-reflect-claude-tracking/"
+      },
+      {
+        "title": "Release notes | Claude Help Center",
+        "site": "Anthropic",
+        "url": "https://support.claude.com/en/articles/12138966-release-notes"
+      },
+      {
+        "title": "Anthropic Launches Claude Reflect Beta to Track AI Habits",
+        "site": "SQ Magazine",
+        "url": "https://sqmagazine.co.uk/claude-reflection-tool/"
+      }
+    ]
+  },
+  "blume-hayden-bleasel-ai-ready-docs-framework-2026": {
+    "body": [
+      "**Hayden Bleasel**（OpenAI Member of Technical Staff）が **Blume** をオープンソースで公開した。**Blume** は「**AI エージェント時代のドキュメントフレームワーク**」というポジショニングで、Markdown / MDX ファイルをフォルダに置いて `blume dev` を実行するだけで、production-grade のドキュメントサイトが立ち上がる。従来の Docusaurus / Nextra / VitePress 等と大きく異なるのは、**AI エージェントによるドキュメント消費を最初から前提**として設計されている点だ。",
+      "**AI-ready の中核機能**: Blume が「AI-ready」と主張する根拠は以下の実装。",
+      "**(1) `llms.txt` / `llms-full.txt` の自動生成**: サイトを build すると、Andrej Karpathy 発案の LLM 向け構造化 URL 一覧である `llms.txt` と、フル本文を含む `llms-full.txt` が自動で emit される",
+      "**(2) `.md` 拡張子で raw Markdown 配信**: 任意のページの URL に `.md` を追加すると、HTML ではなく raw Markdown が返される（LLM が直接パース可能）",
+      "**(3) 各ページの「Copy as Markdown」「Open in chat」ボタン**: 読者が該当ページをそのままクリップボードにコピー、または ChatGPT / Claude に送れる UI を標準実装",
+      "**(4) 任意の in-page「Ask AI」アシスタント**: ドキュメント内容を基にした質問応答をユーザーが直接実行可能",
+      "**(5) MCP サーバー同梱**: **Blume 自体が MCP サーバー**として動作でき、[MCP 2026-07-28 spec RC](?a=mcp-2026-07-28-release-candidate-stateless-core-2026) 準拠のクライアント（Claude Code / Cursor / Zed 等）がドキュメントを検索・読み取り可能",
+      "特に (5) は、開発ツールが Blume で書かれたドキュメントを **API 経由で AI エージェントに直接読ませられる**ことを意味し、開発者体験の質を根本的に変える設計と言える。",
+      "**技術スタック**: Blume の内部は **Astro + Vite** ベースで、静的 HTML を default 出力する。コアテーマは **クライアント JS ゼロ**で構成され、Core Web Vitals（LCP・CLS・INP）のスコアが標準で高い。ejct コマンドで独立した Astro プロジェクトに取り出せるため、大幅なカスタマイズが必要になっても脱出可能な設計。",
+      "**コンテンツソースの柔軟性**: Blume はデフォルトで Markdown フォルダを読むが、以下も設定可能。",
+      "**Remote Git repository** からのコンテンツ取得（複数リポジトリを 1 サイトにまとめられる）",
+      "**Headless CMS**（Contentful / Sanity / Strapi 等）からのフィード",
+      "**Custom backend** からの JSON / GraphQL 取得",
+      "**複数ソースのミックス** — 例えば README を GitHub から、リリースノートを CMS から、API ドキュメントを自動生成から、といった構成が同一サイトで可能",
+      "**Hayden Bleasel の背景**: 作者の Hayden Bleasel は **OpenAI の Member of Technical Staff**（LinkedIn 記載）。Vercel の元デザインリード時代から個人 OSS を継続的にリリースしており、design system と developer tooling の両方に強い実績を持つ。**OpenAI 所属の開発者がリリースする OSS ドキュメントフレームワーク**という背景自体が、「AI 業界が自ら AI-ready docs を必要としている」という業界内部の認識を示している。",
+      "**業界インパクト**:",
+      "**(a) `llms.txt` エコシステムの実装事例**: Karpathy が 2024年 に提唱した `llms.txt` 仕様は徐々に採用が広がっているが、Blume は **「一切の設定なしで自動生成される」** 最も低摩擦な導入例。今後のドキュメント SaaS が同様の実装を追随する可能性が高い",
+      "**(b) 個人開発 vs 大手フレームワーク**: Docusaurus（Meta）・Nextra（Vercel コミュニティ）・VitePress（Vue 陣営）等の既存フレームワークに対し、**個人開発の Blume が「AI 前提」という切り口で勝負する**構図。既存フレームワークが AI 対応を追加するか、Blume が地位を確立するかの競争が始まる",
+      "**(c) 中小 OSS ドキュメントの底上げ**: 「Markdown フォルダを置くだけ」の低い導入コストで、中小 OSS プロジェクトのドキュメント品質が底上げされる可能性",
+      "**注意点**:",
+      "**(1) 公開直後**: 本稿執筆時点で公開から数日程度で、GitHub Star 数・利用実績・長期メンテナンス性は未確定",
+      "**(2) MCP 依存の限界**: MCP サーバー同梱は 2026-07-28 spec 対応前提で、[MCP 2026-07-28 RC](?a=mcp-2026-07-28-release-candidate-stateless-core-2026) の正式化前は動作が変わる可能性がある",
+      "**(3) llms.txt / llms-full.txt の運用リスク**: フル本文を機械可読形式で公開することで、モデル訓練データへの取り込み・LLM 経由の情報流通・意図しない要約引用等のリスクがある。ドキュメント方針として「AI に読ませてよい」判断が必要",
+      "**(4) Astro / Vite 依存**: 内部の Astro 更新に追従する必要があり、Blume のバージョニング方針が長期メンテに耐えるかは未検証",
+      "**AI News の推奨**: **新規 OSS プロジェクトのドキュメント立ち上げ**では、Blume を第一候補として評価する価値がある。特に「AI エージェントが読むことを想定している SDK / CLI / API ドキュメント」では、Blume の「Copy as Markdown」「Open in chat」「MCP サーバー」の3点セットが Docusaurus 等では得られない差別化を生む。既存の Docusaurus / VitePress サイトからの移行は、ページ数 100 未満なら十分検討価値がある。Blume は Hayden Bleasel 個人の OSS のため、企業採用では [MCP 2026-07-28 RC](?a=mcp-2026-07-28-release-candidate-stateless-core-2026) 正式化後の長期メンテナンス方針確認が推奨される。"
+    ],
+    "primarySources": [
+      {
+        "title": "Blume — fast, AI-ready, markdown-first docs",
+        "site": "useblume.dev",
+        "url": "https://useblume.dev/"
+      },
+      {
+        "title": "haydenbleasel/blume: World-class docs for everything you ship",
+        "site": "GitHub",
+        "url": "https://github.com/haydenbleasel/blume"
+      },
+      {
+        "title": "Meet Blume: An Open-Source, Zero-Config Documentation Framework That Ships AI-Ready Docs From a Markdown Folder",
+        "site": "TechAIApp",
+        "url": "https://www.techaiapp.com/tech/meet-blume-an-open-source-zero-config-documentation-framework-that-ships-ai-ready-docs-from-a-markdown-folder/"
+      }
+    ]
   }
+
 };
 export default ARTICLES_BODY;

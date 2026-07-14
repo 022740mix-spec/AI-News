@@ -6700,5 +6700,122 @@ export const ARTICLES_META = [
       "src": "logos/openai.svg",
       "alt": "GPT-5.6 Sol on Cerebras 750 tokens/sec"
     }
+  },
+  {
+    "id": "samsung-health-ai-training-consent-delete-data-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】Samsung Health、AI 学習許可を拒否するとデータ削除 — 歩数・睡眠・服薬・治療記録まで対象、健康データ「実質強制同意」問題",
+    "excerpt": "**Samsung Health** アプリのリデザインで、歩数・睡眠・服薬・生理周期・治療履歴・検査結果まで含む健康データを **AI 学習（人間レビュー含む）** に使う同意を要求。拒否すると「Samsung アカウントとの同期が停止し、健康データが削除される（法令保持義務がある場合を除く）」との警告が表示される仕様に。7/13 に 9to5Google が報じ、7/14 に **Hacker News で #1** に浮上、健康データという最もセンシティブな領域でのプライバシーダークパターン論争の中心となった。EU / GDPR 適法性、iOS 版展開時の反応、Google Fit・Apple Health の対応が焦点。",
+    "date": "2026-07-14",
+    "newsDate": "2026-07-13",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Samsung",
+      "プライバシー",
+      "ヘルスケア",
+      "同意設計",
+      "ダークパターン",
+      "GDPR"
+    ],
+    "coverImage": {
+      "src": "articles/cover-regulation.svg",
+      "alt": "Samsung Health AI 学習強制同意問題"
+    },
+    "pinned": true
+  },
+  {
+    "id": "mcp-2026-07-28-release-candidate-stateless-core-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Model Context Protocol の 2026-07-28 仕様 RC 公開 — Stateless core・MCP Apps・Tasks 拡張の最大改訂、7/28 正式版へ 10 週間の検証窓",
+    "excerpt": "**Model Context Protocol** の **2026-07-28 版 Release Candidate** が公開された。**プロトコルレイヤーの Stateless 化** が最大の変更で、sticky session が不要になり通常の HTTP ロードバランサで動作可能に。**MCP Apps 拡張**（サーバが sandboxed iframe に HTML UI を配信）、**Tasks 拡張**（stateless 環境で長時間ジョブを扱う）、OAuth / OIDC 準拠の Authorization 強化、Deprecation Policy の正式化も同時導入。SDK Beta（Python / TypeScript / Go / C#）も公開され、10 週間の検証窓を経て 7/28 に正式版が確定する予定。",
+    "date": "2026-07-14",
+    "newsDate": "2026-07-14",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "MCP",
+      "Anthropic",
+      "プロトコル",
+      "エージェント",
+      "SDK",
+      "OAuth"
+    ],
+    "coverImage": {
+      "src": "articles/cover-server-infra.svg",
+      "alt": "MCP 2026-07-28 spec RC"
+    }
+  },
+  {
+    "id": "deepseek-v4-mid-july-peak-off-peak-api-pricing-2026",
+    "type": "news",
+    "category": "model",
+    "title": "DeepSeek V4 正式版が7月中旬に公開 — 業界初の peak/off-peak API 料金導入、北京時間 9-12時・14-18時 が2倍レート",
+    "excerpt": "中国 **DeepSeek** が **V4 の正式版** を **7月中旬公開**と告知。同時に主要 API プロバイダとしては初めて **peak / off-peak 課金**（北京時間 9-12時・14-18時が 2倍レート、それ以外は据え置き）を導入する。**V4 Flash が cache-miss $0.14 / 1M、V4 Pro が $0.435 / 1M**、1M コンテキスト・自動キャッシング付きで、西側フロンティア料金比 1/10〜1/20 の攻勢が続く。開発者コミュニティでは「時間帯によって同じ推論のコストが半分になる料金設計」への評価が二分している。",
+    "date": "2026-07-14",
+    "newsDate": "2026-07-13",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "DeepSeek",
+      "中国AI",
+      "API料金",
+      "料金設計",
+      "モデル"
+    ],
+    "coverImage": {
+      "src": "articles/cover-pricing.svg",
+      "alt": "DeepSeek V4 peak/off-peak pricing"
+    }
+  },
+  {
+    "id": "anthropic-claude-reflect-time-and-focus-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic「Reflect」ベータ公開 — AI にも screen-time モーメント、Time and focus 設定で break reminder / quiet hours",
+    "excerpt": "**Anthropic** が Claude Web / Desktop に **Reflect**（月次使用リフレクションダッシュボード）と **Time and focus** 設定（break reminder / quiet hours / reflection prompt）を追加した。過去1・3・6・12ヶ月の話題領域・最も使う日・ピーク時間帯・タスク傾向を可視化し、「Claude ができても自分でやりたいことは何か」と問いかける reflective prompt を提示する。iPhone Screen Time になぞらえた **「AI 版 screen time モーメント」** と評される新規性ある UX 実験で、Free / Pro / Max で beta、Memory 有効時のみ提供。",
+    "date": "2026-07-14",
+    "newsDate": "2026-07-09",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "ユーザー体験",
+      "依存",
+      "プライバシー",
+      "Memory"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic Reflect beta"
+    }
+  },
+  {
+    "id": "blume-hayden-bleasel-ai-ready-docs-framework-2026",
+    "type": "news",
+    "category": "editor",
+    "title": "Blume が登場 — OpenAI 所属開発者による OSS「AI 用ドキュメント」フレームワーク、llms.txt 自動生成と MCP サーバー同梱で Claude / Cursor が直読",
+    "excerpt": "**Hayden Bleasel**（OpenAI Member of Technical Staff）が **Blume** を OSS 公開。Markdown / MDX をフォルダに置いて `blume dev` するだけで docs サイトが立ち上がり、**llms.txt / llms-full.txt を自動生成**、各ページに **「Copy as Markdown」「Open in chat」** ボタン、**MCP サーバー同梱**で Claude Code / Cursor がドキュメントを直接検索・読み取り可能。Astro + Vite ベース・静的 HTML 出力・クライアント JS ゼロで Core Web Vitals も良好。「AI エージェント時代のドキュメントフレームワーク」というポジショニングで公開直後から注目を集めている。",
+    "date": "2026-07-14",
+    "newsDate": "2026-07-13",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Blume",
+      "オープンソース",
+      "ドキュメント",
+      "MCP",
+      "llms.txt",
+      "Astro",
+      "開発ツール"
+    ],
+    "coverImage": {
+      "src": "articles/cover-editor-ide.svg",
+      "alt": "Blume AI-ready docs framework"
+    }
   }
+
 ];
