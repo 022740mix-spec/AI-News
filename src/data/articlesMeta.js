@@ -6816,6 +6816,31 @@ export const ARTICLES_META = [
       "src": "articles/cover-editor-ide.svg",
       "alt": "Blume AI-ready docs framework"
     }
+  },
+  {
+    "id": "moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Moonshot AI が Kimi K3 を公開 — 世界最大 2.8T パラメータの OSS モデル、Modified MIT で 7/27 に open weights、agent 系ベンチで 6/16 首位・BrowseComp 91.2",
+    "excerpt": "**Moonshot AI** が2026年7月16日、**Kimi K3** をリリースした。**2.8兆パラメータ MoE**（896 experts のうち 16 を routing）で世界最大の open-source モデル、Kimi Delta Attention 新規注意機構と 1M コンテキスト搭載。**Modified MIT** で 7/27 に open weights 公開予定。API 料金は $3 / $15 per 1M tokens（cache-hit $0.30）で GPT-5.6 Sol の 60%。**agent 系ベンチマーク 16項目中 6項目で首位**（BrowseComp 91.2・SWE Marathon 42.0・Automation Bench 30.8・SpreadsheetBench 2 34.8・Program Bench 77.8）、多くで Fable 5・GPT-5.6 Sol と 1pt 差の接戦を演じる。",
+    "date": "2026-07-17",
+    "newsDate": "2026-07-16",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "Moonshot AI",
+      "Kimi",
+      "オープンソース",
+      "モデル",
+      "MoE",
+      "中国AI",
+      "MIT",
+      "エージェント"
+    ],
+    "coverImage": {
+      "src": "logos/moonshot.svg",
+      "alt": "Moonshot Kimi K3 release"
+    },
+    "pinned": true
   }
-
 ];

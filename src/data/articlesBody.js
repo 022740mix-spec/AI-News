@@ -12514,7 +12514,78 @@ const ARTICLES_BODY = {
         "url": "https://www.techaiapp.com/tech/meet-blume-an-open-source-zero-config-documentation-framework-that-ships-ai-ready-docs-from-a-markdown-folder/"
       }
     ]
+  },
+  "moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026": {
+    "body": [
+      "**Moonshot AI** が2026年7月16日、フラッグシップ次世代モデル **Kimi K3** を公開した。**2.8 兆パラメータ**の疎な Mixture-of-Experts（MoE）で、**896 の routed experts から各トークンで 16 個** を経路選択する疎活性化設計。**世界最大の open-source AI モデル** としてリリース時点で最大級のオープンウェイト規模を持つ。同時に **Modified MIT ライセンス**が採用され、モデルウェイトは **2026年7月27日**に公開される予定。前身の [Kimi K2.5](?a=kimi-k25-moonshot-2026) からアーキテクチャ・スケール・agent 性能で大幅な世代交代を果たした。",
+      "**アーキテクチャの主要変更点**: Kimi K3 は前世代 K2 系から3つの大きな設計変更を持ち込んだ。",
+      "**(1) Kimi Delta Attention（KDA）**: 新規開発の注意機構で、長コンテキスト時の計算コストとメモリ効率を改善。1M トークンコンテキストでの実運用性を実現する中核技術",
+      "**(2) 疎活性化 MoE の徹底**: 896 experts / 16 選択 = 活性化パラメータは全体の 1.8%（約 50B）にとどめ、2.8T の総パラメータでも推論コストは中規模モデル並みに",
+      "**(3) 1M トークンコンテキスト**: 300K トークンで自動 context compaction が発動する運用モードもサポート、超長文ワークロード向けに最適化",
+      "**2 variant 構成**: K3 には性格の異なる2バリアントが用意される。",
+      "**K3 Max**: 対話・agent タスク向けフラッグシップ。ChatGPT / Claude と競合する用途",
+      "**K3 Swarm Max**: 大規模並列処理向け。バッチ推論・大量文書処理・シミュレーション用途を想定",
+      "初期公開先は **Kimi Code**（Moonshot 独自コーディング環境）と Kimi アプリだが、OpenRouter・DeepInfra 等の主要 API 集約プロバイダにも順次展開する。",
+      "**agent ベンチマークで見えるインパクト**: Moonshot 公表の 16項目ベンチマーク（thinking effort は max / xhigh 揃え）における K3 の相対順位は以下の通り。",
+      "**首位（6項目）**: BrowseComp 91.2、SWE Marathon 42.0、Automation Bench 30.8、SpreadsheetBench 2 34.8、Program Bench 77.8、Kimi Code Bench 2.0 の 6項目で全モデル中 1位",
+      "**2位（9項目）**: FrontierSWE 81.2、Terminal Bench 2.1 88.3、AA-Briefcase Elo 1548、JobBench 52.9、CharXiv 91.3 など、Fable 5 または GPT-5.6 Sol に僅差で追随",
+      "**3位以下（1項目）**: GDPval-AA v2 Elo 1668（Fable 5 1760・GPT-5.6 Sol 1748 に次ぐ 3位）",
+      "特に注目すべきは **BrowseComp 91.2**。Fable 5 の 88.0・GPT-5.6 Sol の 90.4 を上回り、ウェブ調査型 agent タスクで OSS モデルとして初の首位に立った。**Anthropic の [Cowork](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026) や OpenAI の ChatGPT Work のような業務エージェント** の代替となる開放的な選択肢が登場した意味は大きい。",
+      "**Fable 5 との対決構図**: 16項目のうち Fable 5 が首位を取ったのは 5項目（FrontierSWE、Kimi Code Bench 2.0、GDPval-AA v2 Elo、AA-Briefcase Elo、JobBench、CharXiv）、K3 が首位を取ったのは 6項目。**「クローズド Fable 5 vs オープン K3」の性能差はほぼ拮抗**しており、多くのベンチマークで 1pt 未満の接戦。純粋な単一指標ではもはや優劣がつきにくい水準まで OSS が追いついてきた。",
+      "**API 料金と経済性**: K3 の公式 API 料金は以下:",
+      "**Cache-hit input**: $0.30 / 1M tokens",
+      "**Uncached input**: $3.00 / 1M tokens",
+      "**Output**: $15.00 / 1M tokens",
+      "比較対象:",
+      "**GPT-5.6 Sol**: $5 / $30（Kimi K3 の 60% 高い）",
+      "**Claude Sonnet 5**: $2 / $10（〜8/31 導入価格）（Kimi K3 と近い）",
+      "**Claude Fable 5**: $6 / $30（Kimi K3 の 2倍）",
+      "**DeepSeek V4 Pro**: $0.435 / 未公表（[DeepSeek V4](?a=deepseek-v4-mid-july-peak-off-peak-api-pricing-2026) — 圧倒的最安）",
+      "**cache-hit の $0.30 は Fable 5 の cache-hit $0.60 の半額**、繰り返しコンテキストが多いエージェント運用でのランニングコスト最適化に効く。",
+      "**Modified MIT ライセンス — open weights の意味**: Kimi K3 の open weights 公開（7/27 予定）は、以下の点で業界に大きな影響を与える。",
+      "**(a) 世界最大規模の完全ダウンロード可能なモデル**: 2.8T パラメータの重みが Modified MIT で入手可能になる。企業内 GPU クラスタでのオンプレ推論、fine-tuning、モデル研究の対象になる",
+      "**(b) [中国 AI モデルの米国企業シェア](?a=feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026) の加速**: OSS で入手可能になれば、米国企業側のデータ主権懸念（中国クラウド経由）が緩和され、更なる導入促進が予想される",
+      "**(c) OSS 陣営の中国優位の固定化**: [Meta が Muse Spark 1.1 で有料モデル陣営に軸足を移した](?a=meta-muse-spark-1-1-first-paid-model-2026) 後、フロンティア級 OSS の主要プレイヤーは **DeepSeek・Moonshot・Zhipu（GLM）・Meituan（LongCat）** の中国勢と一部の米欧 OSS モデルに二分される構図が明確化",
+      "**(d) 推論プロバイダーの選択肢拡大**: [Cerebras](?a=openai-gpt-5-6-sol-cerebras-750-tokens-per-second-2026)・Groq・Together・DeepInfra 等の推論プロバイダーが K3 を採用すれば、高速推論の選択肢が増える",
+      "**業界インパクト**:",
+      "**(1) 2026年後半のモデル比較の再定義**: これまで「フロンティア = Fable 5 / Opus 4.8 / GPT-5.6 Sol」だった常識に、**Kimi K3** が加わる。特に agent 特化ワークロード（BrowseComp・Automation Bench 等）では OSS が首位を取る事例が正式に成立",
+      "**(2) MoE アーキテクチャの成熟**: 896 experts / 16 routing という徹底した疎活性化は、GPT-4o・Claude Fable 5 も採用している MoE の運用実績を積み上げる。「大規模 MoE + 疎活性化 + 大量 experts」の設計パターンが業界標準になりつつある",
+      "**(3) 米中 AI 競争の力学変化**: 米国輸出規制で高性能 GPU 供給を制限された中国勢が、**アーキテクチャ効率化（Kimi Delta Attention）** と **規模拡大（2.8T）** の両方で対抗した実例。ハードウェア制約下でもソフトウェア面でイノベーションを継続する構図が示された",
+      "**(4) エージェント運用のコスト構造変化**: K3 の cache-hit $0.30 は、繰り返し context を持つ agent workflow（プロジェクト継続対話、大規模 codebase 読み込み等）のランニングコストを大幅に押し下げる。**Claude Cowork・ChatGPT Work のような業務エージェント** が K3 でも組めるようになれば、選択肢の実質的な拡大となる",
+      "**注意点**:",
+      "**(1) 公開ベンチマークは Moonshot 発表**: 掲載スコアは Moonshot 公式資料からで、独立ベンチマークによる検証は今後の課題。特に thinking effort が max / xhigh 揃えのため、実運用時の中程度 effort での相対性能は未確定",
+      "**(2) Modified MIT の細部**: 「Modified」の具体的な制約（商用利用範囲、再配布条件、モデル出力の帰属等）は公式ライセンス文書の精読が必須。K2 系と同じ内容か、K3 で更に緩和/制限があるかは 7/27 公開時に確認",
+      "**(3) 実運用時のインフラ要件**: 2.8T パラメータの本格運用には多数の GPU が必要（推論時活性化 50B でも数百 GB の VRAM）。個人・中小企業は API 経由（$3/$15）で使うのが現実解",
+      "**(4) 7/27 の open weights 公開まで API 経由のみ**: 7/27 までは Moonshot 提供の API・Kimi Code・OpenRouter 経由のみで、オンプレ展開はできない",
+      "**AI News の推奨**: agent 系ワークロードでコストを最適化したい企業は、**7/27 の open weights 公開後**に (a) API 経由で K3 Max を試験導入、(b) BrowseComp 型のウェブ調査 agent で GPT-5.6 Sol / Fable 5 との比較検証、(c) Kimi Code Bench 2.0 に近い実 codebase での実装評価、を順次実施する価値がある。**Cursor・Cline・Claude Code 等の開発ツール**が K3 を採用する場合は、Modified MIT ライセンスの適用条件を確認したうえで、[MCP 2026-07-28 spec RC](?a=mcp-2026-07-28-release-candidate-stateless-core-2026) 対応クライアントから利用する形が最も柔軟。中国モデルへのデータ主権懸念は、オンプレ推論（7/27 以降）で解消できる点が特に重要な差別化となる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Moonshot AI Releases Kimi K3: A 2.8 Trillion Parameter Open MoE Model With Kimi Delta Attention and 1M Context",
+        "site": "MarkTechPost",
+        "url": "https://www.marktechpost.com/2026/07/16/moonshot-ai-releases-kimi-k3-a-2-8-trillion-parameter-open-moe-model-with-kimi-delta-attention-and-1m-context/"
+      },
+      {
+        "title": "China's Moonshot AI releases Kimi K3, the largest open-source model ever, rivaling top U.S. systems",
+        "site": "VentureBeat",
+        "url": "https://venturebeat.com/technology/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems"
+      },
+      {
+        "title": "Kimi K3, and what we can still learn from the pelican benchmark",
+        "site": "Simon Willison",
+        "url": "https://simonwillison.net/2026/Jul/16/kimi-k3/"
+      },
+      {
+        "title": "Kimi K3 launches with 2.8 trillion parameters, open weights dropping July 27",
+        "site": "Crypto Briefing",
+        "url": "https://cryptobriefing.com/kimi-k3-open-weights-july-27/"
+      },
+      {
+        "title": "Kimi K3 - API Pricing & Benchmarks",
+        "site": "OpenRouter",
+        "url": "https://openrouter.ai/moonshotai/kimi-k3"
+      }
+    ]
   }
-
 };
 export default ARTICLES_BODY;
