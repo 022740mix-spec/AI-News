@@ -5,8 +5,40 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-07-12T15:00:00Z</updated>
+  <updated>2026-07-14T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Model Context Protocol の 2026-07-28 仕様 RC 公開 — Stateless core・MCP Apps・Tasks 拡張の最大改訂、7/28 正式版へ 10 週間の検証窓</title>
+    <link rel="alternate" type="text/html" href="?a=mcp-2026-07-28-release-candidate-stateless-core-2026"/>
+    <id>tag:ai-tool-news.jp,2026:mcp-2026-07-28-release-candidate-stateless-core-2026</id>
+    <published>2026-07-14T15:00:00Z</published>
+    <updated>2026-07-14T15:00:00Z</updated>
+    <summary>Model Context Protocol の 2026-07-28 版 Release Candidate が公開された。プロトコルレイヤーの Stateless 化 が最大の変更で、sticky session が不要になり通常の HTTP ロードバランサで動作可能に。MCP Apps 拡張（サーバが sandboxed iframe に HTML UI を配信）、Tasks 拡張（stateless 環境で長時間ジョブを扱う）、OAuth / OIDC 準拠の Authorization 強化、Deprecation Policy の正式化も同時導入。SDK Beta（Python / TypeScript / Go / C#）も公開され、10 週間の検証窓を経て 7/28 に正式版が確定する予定。</summary>
+  </entry>
+  <entry>
+    <title>【分析】Samsung Health、AI 学習許可を拒否するとデータ削除 — 歩数・睡眠・服薬・治療記録まで対象、健康データ「実質強制同意」問題</title>
+    <link rel="alternate" type="text/html" href="?a=samsung-health-ai-training-consent-delete-data-2026"/>
+    <id>tag:ai-tool-news.jp,2026:samsung-health-ai-training-consent-delete-data-2026</id>
+    <published>2026-07-13T15:00:00Z</published>
+    <updated>2026-07-13T15:00:00Z</updated>
+    <summary>Samsung Health アプリのリデザインで、歩数・睡眠・服薬・生理周期・治療履歴・検査結果まで含む健康データを AI 学習（人間レビュー含む） に使う同意を要求。拒否すると「Samsung アカウントとの同期が停止し、健康データが削除される（法令保持義務がある場合を除く）」との警告が表示される仕様に。7/13 に 9to5Google が報じ、7/14 に Hacker News で #1 に浮上、健康データという最もセンシティブな領域でのプライバシーダークパターン論争の中心となった。EU / GDPR 適法性、iOS 版展開時の反応、Google Fit・Apple Health の対応が焦点。</summary>
+  </entry>
+  <entry>
+    <title>DeepSeek V4 正式版が7月中旬に公開 — 業界初の peak/off-peak API 料金導入、北京時間 9-12時・14-18時 が2倍レート</title>
+    <link rel="alternate" type="text/html" href="?a=deepseek-v4-mid-july-peak-off-peak-api-pricing-2026"/>
+    <id>tag:ai-tool-news.jp,2026:deepseek-v4-mid-july-peak-off-peak-api-pricing-2026</id>
+    <published>2026-07-13T15:00:00Z</published>
+    <updated>2026-07-13T15:00:00Z</updated>
+    <summary>中国 DeepSeek が V4 の正式版 を 7月中旬公開と告知。同時に主要 API プロバイダとしては初めて peak / off-peak 課金（北京時間 9-12時・14-18時が 2倍レート、それ以外は据え置き）を導入する。V4 Flash が cache-miss $0.14 / 1M、V4 Pro が $0.435 / 1M、1M コンテキスト・自動キャッシング付きで、西側フロンティア料金比 1/10〜1/20 の攻勢が続く。開発者コミュニティでは「時間帯によって同じ推論のコストが半分になる料金設計」への評価が二分している。</summary>
+  </entry>
+  <entry>
+    <title>Blume が登場 — OpenAI 所属開発者による OSS「AI 用ドキュメント」フレームワーク、llms.txt 自動生成と MCP サーバー同梱で Claude / Cursor が直読</title>
+    <link rel="alternate" type="text/html" href="?a=blume-hayden-bleasel-ai-ready-docs-framework-2026"/>
+    <id>tag:ai-tool-news.jp,2026:blume-hayden-bleasel-ai-ready-docs-framework-2026</id>
+    <published>2026-07-13T15:00:00Z</published>
+    <updated>2026-07-13T15:00:00Z</updated>
+    <summary>Hayden Bleasel（OpenAI Member of Technical Staff）が Blume を OSS 公開。Markdown / MDX をフォルダに置いて `blume dev` するだけで docs サイトが立ち上がり、llms.txt / llms-full.txt を自動生成、各ページに 「Copy as Markdown」「Open in chat」 ボタン、MCP サーバー同梱で Claude Code / Cursor がドキュメントを直接検索・読み取り可能。Astro + Vite ベース・静的 HTML 出力・クライアント JS ゼロで Core Web Vitals も良好。「AI エージェント時代のドキュメントフレームワーク」というポジショニングで公開直後から注目を集めている。</summary>
+  </entry>
   <entry>
     <title>GPT-5.6 Sol が Cerebras 上で **750 tokens/秒** — フロンティア級モデルが専用推論チップで近リアルタイム化、Broadcom Jalapeño 発表後の推論戦国時代へ</title>
     <link rel="alternate" type="text/html" href="?a=openai-gpt-5-6-sol-cerebras-750-tokens-per-second-2026"/>
@@ -54,6 +86,14 @@
     <published>2026-07-09T15:00:00Z</published>
     <updated>2026-07-09T15:00:00Z</updated>
     <summary>Meta が7月9日、Muse Spark 1.1 を公開。Meta 初の有料モデルとして $1.25/$4.25 per 1M tokens で提供され、無料 OSS の Llama 系路線からの戦略転換を鮮明にした。同日の [OpenAI GPT-5.6 一般公開](?a=openai-gpt-5-6-general-availability-july-9-2026) と [xAI Grok 4.5 公開](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)、[Claude Cowork/ChatGPT Work ローンチ](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026) と重なる「AI 史上最重要の一日」の一角。Meta の元 CTO Mike Schroepfer 率いる MSL（Meta Superintelligence Labs）体制下での動きで、Meta が OSS 一辺倒からクローズド有料モデルへ舵を切った歴史的なマイルストーン</summary>
+  </entry>
+  <entry>
+    <title>Anthropic「Reflect」ベータ公開 — AI にも screen-time モーメント、Time and focus 設定で break reminder / quiet hours</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-reflect-time-and-focus-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-reflect-time-and-focus-2026</id>
+    <published>2026-07-09T15:00:00Z</published>
+    <updated>2026-07-09T15:00:00Z</updated>
+    <summary>Anthropic が Claude Web / Desktop に Reflect（月次使用リフレクションダッシュボード）と Time and focus 設定（break reminder / quiet hours / reflection prompt）を追加した。過去1・3・6・12ヶ月の話題領域・最も使う日・ピーク時間帯・タスク傾向を可視化し、「Claude ができても自分でやりたいことは何か」と問いかける reflective prompt を提示する。iPhone Screen Time になぞらえた 「AI 版 screen time モーメント」 と評される新規性ある UX 実験で、Free / Pro / Max で beta、Memory 有効時のみ提供。</summary>
   </entry>
   <entry>
     <title>【分析】中国 AI モデルが米国エンタープライズ API トークンの **30-46%** を占領（CNBC 7/7 調査）— OpenRouter 経由統計、12ヶ月平均 11% から急拡大、60-90% 安が牽引</title>
