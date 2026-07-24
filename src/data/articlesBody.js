@@ -12586,6 +12586,260 @@ const ARTICLES_BODY = {
         "url": "https://openrouter.ai/moonshotai/kimi-k3"
       }
     ]
+  },
+  "feature-eu-dma-google-android-open-ai-agents-search-data-2026": {
+    "body": [
+      "**欧州委員会** が2026年7月16日、**Digital Markets Act（DMA）** に基づく2つの拘束的措置を採択し、Google に対して Android および Search を rival AI プロバイダに開放するよう命じた。DMA が gatekeeper 指定企業に対する具体的執行として発動された事例として最大規模のもので、AI エージェント時代のプラットフォーム競争構造を再定義する可能性を持つ。関連の [Anthropic Claude Chrome 拡張](?a=anthropic-claude-chrome-extension-9m-installs-beta-2026) や [Cursor iOS アプリ](?a=cursor-ios-app-launch-cloud-agents-remote-2026) のような AI エージェントのマルチプラットフォーム化トレンドを、規制側が正面から後押しした形になる。",
+      "**措置1 — Android での rival AI エージェント権限**: DMA の相互運用性要件に基づき、以下の 3点が Google に義務化される。",
+      "**(1) 音声起動（voice activation）**: Alexa・Siri・Claude・ChatGPT・Perplexity 等の rival AI アシスタントが、Android デバイスで **hotword 起動** を利用できる。従来 Google Assistant / Gemini だけの特権だった wake word 領域が開放される",
+      "**(2) バックグラウンドタスク実行**: 「レストラン予約」「配車手配」「決済実行」等の cross-app 操作が rival AI から実行可能に。従来はフォアグラウンド操作しか許されず、エージェント自動化に制約があった",
+      "**(3) 11 の Android 機能グループ開放**: 通知・アクセシビリティ・カレンダー等の主要 Android サービス群への rival AI 側からのアクセスが認証・ユーザー同意を条件に許可される",
+      "**措置2 — Search 匿名化データ共有**: EU 域内の Google 検索ログを、**匿名化した上で** OpenAI 等の AI 検索プロバイダに共有する義務。**2027年1月**までに開始が求められ、これによって以下が実現される。",
+      "**(a) rival AI 検索の品質向上**: ChatGPT Search・Claude Search・Perplexity 等が Google と同水準のクエリ分布データにアクセス可能に",
+      "**(b) 検索クエリ「独占的資産」の解体**: Google の 25年超にわたる検索ログ独占が、EU 域内では実質終わる",
+      "**(c) 医療・金融等の縦割り検索改善**: 特化型 AI 検索プロバイダが Google の一般クエリ分布から学べる",
+      "**実装スケジュール**: 措置の展開は段階的:",
+      "**Android 18 主要措置**: 2027年8月まで",
+      "**Android 19 での hotword 検出並行対応**: 2027年後半",
+      "**ユーザーへの反映**: 2027年7月から Android の次イテレーションで有効化",
+      "**Search 匿名化データ共有開始**: 2027年1月",
+      "**制裁金構造**: 違反時は **世界売上高の 10%**、累犯時は **20%** の制裁金。Alphabet の2025年連結売上（推定 $350B 超）に対して 10% は $35B、20% は $70B の規模で、実効的な抑止力を持つ設計。",
+      "**Google の反発**: Google 側は激しく反発している。同社の弁護士 Kent Walker はメールで「今日の決定は、何百万人もの欧州人にとって重要なプライバシーとセキュリティのガードレールを損なうリスクがある」と述べた。特に音声起動・バックグラウンド実行の開放は、悪意ある AI エージェントを Android に呼び込むリスクがあると主張している。",
+      "**業界インパクト**:",
+      "**(1) Apple / iOS への同様命令の可能性**: iOS も DMA の対象 gatekeeper に指定されており、同じ論理で音声起動・バックグラウンド実行の rival AI 開放を命じられる可能性が高まる。Apple Intelligence の位置付けが揺らぐ",
+      "**(2) 米国 FTC / 日本公取委の追随可能性**: EU の規制は米国・日本にも波及するのが常道。特に日本の [楽天 Rakuten AI](?a=feature-china-ai-models-may-2026-qwen-kimi-ernie) 等の国内 AI プレイヤーは Android 開放を歓迎する立場",
+      "**(3) AI エージェント市場の勢力再編**: [Anthropic Claude Cowork](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026) や [OpenClaw](?a=openclaw-ios-android-native-app-2026) のような cross-platform AI エージェントが、Android で Google Gemini と同じ権限で動ける未来が確定",
+      "**(4) 検索プロバイダー競争の再活性化**: DuckDuckGo・Kagi・You.com 等の小規模 AI 検索プレイヤーが Google データにアクセスできれば、実質的な参入障壁が低下",
+      "**注意点**:",
+      "**(1) 「匿名化」の技術的定義**: 「anonymised search data」の具体的な差分プライバシー水準・k-anonymity 保証は今後の技術仕様待ち。実効的にどれだけ有用なデータが共有されるかは未確定",
+      "**(2) Android 18 / 19 の実装遅延リスク**: Google 側の実装が遅延した場合の制裁金発動タイミングは、DMA 執行機関の判断次第",
+      "**(3) セキュリティ vs 開放性のバランス**: Google が主張する「悪意ある AI エージェントの流入リスク」は現実的な懸念で、認証・ユーザー同意プロセスの設計が実効性を左右する",
+      "**AI News の推奨**: **EU 域内で AI エージェント製品を展開する企業**は、2027年8月以降に Android 上での実装機会が拡大することを見越して、**hotword 対応・バックグラウンド動作認証・cross-app 権限フロー** の設計を今から準備すべき。特に Anthropic・OpenAI・xAI 等のフロンティア AI 企業は、Android での実質的な「iOS App Store 相当の許認可プロセス」に備える必要がある。日本企業もこの規制波及を先取り、国内公取委への対応シナリオを準備しておく価値がある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Google required to open up to AI, search engine rivals under EU-mandated changes",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/07/16/google-required-to-open-up-to-ai-search-engine-rivals-under-eu-mandated-changes.html"
+      },
+      {
+        "title": "EU Orders Google to Open Android and Search to AI Rivals",
+        "site": "WinBuzzer",
+        "url": "https://winbuzzer.com/2026/07/17/eu-orders-google-to-open-android-and-search-to-rivals-xcxwbn/"
+      },
+      {
+        "title": "EU orders Google to open Android to rival AI providers",
+        "site": "Global Competition Review",
+        "url": "https://globalcompetitionreview.com/article/eu-orders-google-open-android-rival-ai-providers"
+      },
+      {
+        "title": "EU Forces Google to Share Search Data and Open Android to Rival AI Companies",
+        "site": "US News",
+        "url": "https://www.usnews.com/news/technology/articles/2026-07-16/eu-forces-google-to-share-search-data-and-open-android-to-rival-ai-companies"
+      }
+    ]
+  },
+  "openai-gpt-red-self-improvement-red-teaming-2026": {
+    "body": [
+      "**OpenAI** が2026年7月16日、**GPT-Red** を公式発表した。**自己対戦強化学習（self-play RL）** によって prompt injection 脆弱性を自動発見する内部ツールで、GPT-5.6 の adversarial training に既に利用されている。新規安全環境テストで **84% の攻撃成功率** を達成し、人間 red-teamer の 13% を大幅に上回った。Anthropic の Constitutional AI や Google DeepMind の Sparrow に続く、モデル自身によるモデル安全化ループの実装例として業界的な意味を持つ。",
+      "**GPT-Red のアーキテクチャ**: GPT-Red は「attacker と defender の共進化」を核とした設計。",
+      "**Attacker（GPT-Red）**: prompt injection 攻撃を生成する GPT ベースモデル。self-play で新規攻撃パターンを探索",
+      "**Defender pool**: 多様な LLM を defender として並列訓練。GPT-4o・GPT-5.6 系・軽量モデルなど",
+      "**競合構造**: attacker が新規攻撃を発見 → defender が学習して耐性を上げる → attacker がさらに新規攻撃を探索、というループで両者が同時に進化",
+      "**評価環境**: 新規に設計された「安全環境テストスイート」で、人間 red-teamer が 13% しか攻撃成功できないタスクセット。GPT-Red は同一環境で 84% 成功",
+      "**性能ギャップ 6.5倍の意味**: 人間 13% vs GPT-Red 84% という 6.5倍の差は、以下の要因で説明される。",
+      "**(1) 探索速度**: GPT-Red は数秒で数百パターンを試行可能。人間の思考速度・タイピング速度を大幅に超える",
+      "**(2) 攻撃パターンの網羅性**: RL による多様性ボーナスで、人間が思いつかない攻撃ベクトルを発見",
+      "**(3) 継続学習**: defender のパッチが公開されても、GPT-Red は次のイテレーションで回避策を学ぶ",
+      "**GPT-5.6 での adversarial training への活用**: OpenAI は GPT-Red を GPT-5.6 の adversarial training loop に組み込んでおり、既に prompt injection 耐性が公表水準まで向上したと発表。**[GPT-5.6 GA](?a=openai-gpt-5-6-general-availability-july-9-2026) 時点で強調されていた「セキュリティ強化」の実体** が GPT-Red の貢献だったことが判明した。",
+      "**業界インパクト**:",
+      "**(1) 自動化 red-teaming の業界標準化**: [Anthropic Constitutional AI](?a=white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026) と並んで、モデル自身による安全化ループがフロンティア AI の標準アプローチに",
+      "**(2) 外部 red-team 契約市場への影響**: 従来の HackerOne・BugCrowd 型の human red-team 契約が、AI ベース red-team に一部代替される流れが加速。人間の役割は「AI が発見できない新規攻撃カテゴリ」の探索に焦点化",
+      "**(3) MCP 脆弱性対策の先取り**: [CVE-2026-47729 Squidbleed](?a=cve-2026-47729-squidbleed-claude-mythos-project-glasswing-2026) のような MCP エコシステム脆弱性を、GPT-Red のような自動 red-team で先取り対策できる可能性",
+      "**(4) 中国モデルとの安全性ギャップ拡大**: [DeepSeek V4](?a=deepseek-v4-mid-july-peak-off-peak-api-pricing-2026) や [Kimi K3](?a=moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026) のような中国モデルが同水準の red-team 自動化を持たない場合、フロンティア米国モデルとの安全性差が拡大する",
+      "**注意点**:",
+      "**(1) 「84% vs 13%」の再現性**: 具体的な攻撃セットの公開範囲が限定的で、独立検証は難しい。第三者評価組織による監査待ち",
+      "**(2) 一般公開の予定**: GPT-Red は内部ツールで、API・オープン化の予定は今のところ発表なし。他社が同種のツールを持てるかは不明",
+      "**(3) 攻撃データの流出リスク**: GPT-Red が発見した攻撃パターンは、防御側に有用だが同時に攻撃側にも有用。データ管理の技術的・法的枠組みが今後の課題",
+      "**(4) 「自動 red-team」の限界**: GPT-Red は既知の攻撃カテゴリ内で強いが、根本的に新しい攻撃ベクトル（ゼロデイに相当）は依然として人間の創造性が必要",
+      "**AI News の推奨**: **エンタープライズで LLM を運用する企業**は、以下の3点を確認すべき。**(a)** 使用中のフロンティアモデルが GPT-Red 相当の adversarial training を経ているか（GPT-5.6・Fable 5・Sonnet 5 は該当）、**(b)** MCP 経由の外部ツール接続時の権限最小化と audit log の徹底、**(c)** Anthropic Mythos / [Microsoft Project Perception](?a=microsoft-project-perception-ai-security-model-router-2026) のような AI セキュリティ製品との連携。GPT-Red 自体が公開されるまでは、既存のセキュリティスタックにモデル側の adversarial training 実績を組み込む形が現実解となる。"
+    ],
+    "primarySources": [
+      {
+        "title": "GPT-Red: Unlocking Self-Improvement for Robustness",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/unlocking-self-improvement-gpt-red/"
+      },
+      {
+        "title": "OpenAI Introduces GPT-Red: Self-Improving Adversarial Model",
+        "site": "MarkTechPost",
+        "url": "https://www.marktechpost.com/2026/07/16/openai-introduces-gpt-red-self-improving-adversarial-model/"
+      },
+      {
+        "title": "MIT Technology Review coverage of GPT-Red",
+        "site": "MIT Technology Review",
+        "url": "https://www.technologyreview.com/2026/07/16/openai-gpt-red-adversarial/"
+      }
+    ]
+  },
+  "anthropic-claude-for-teachers-k12-free-ferpa-2026": {
+    "body": [
+      "**Anthropic** が2026年7月14日、**Claude for Teachers** を公開した。認証済み全米 K-12 教員に **premium Claude を1年間無料** で提供し、学習科学に基づく teaching skills、50州すべての教育基準にマッピングされたカリキュラム連携、Claude Code と Claude Cowork も含む包括的な教育 AI パッケージ。既に発表済みの [Anthropic California Newsom Claude 50% off](?a=anthropic-california-newsom-claude-50-off-state-agencies-2026) や OpenAI ChatGPT Edu と並び、フロンティア AI 企業の米国教育市場への本格参入戦略の一環と位置付けられる。",
+      "**Claude for Teachers の主要機能**:",
+      "**(1) Premium Claude 1年間無料**: 認証済み K-12 教員向けに Claude Pro 相当の premium 機能（Claude Fable 5・Opus 4.8・Sonnet 5 全モデルアクセス、Memory、Projects 等）を1年間無料提供",
+      "**(2) 学習科学ベースの teaching skills**: Claude の Agent Skills 上に構築された、教員特化のスキルセット。授業計画作成・小テスト生成・生徒フィードバック等のワークフローを教員向けにテンプレ化",
+      "**(3) Learning Commons connector**: 50州すべての教育基準（Common Core・NGSS 等）にマッピングされたカリキュラムライブラリへの直接接続",
+      "**(4) Claude Code + Claude Cowork**: 単発回答にとどまらず、長時間タスクを継続実行するエージェント機能も教員向けに開放",
+      "**9 教育ツールとの直接統合**: Claude for Teachers は以下の主要教育ツールと OAuth / API 統合される。",
+      "**ASSISTments**: 自動採点付き数学問題プラットフォーム",
+      "**Brisk Teaching**: インタラクティブレッスン作成",
+      "**Canva Education**: 教材デザイン",
+      "**Coteach**: 教員間コラボレーション",
+      "**Diffit**: 難易度別教材生成",
+      "**Eedi**: 数学診断",
+      "**MagicSchool**: 総合教員 AI アシスタント（Anthropic の競合だが統合対象に）",
+      "**Snorkl**: 学習可視化",
+      "**プライバシー / コンプライアンス**: 教育市場特有の規制要件に対応した設計。",
+      "**FERPA 準拠**: 米国連邦法 Family Educational Rights and Privacy Act に準拠した K-12 Data Processing Addendum を提供",
+      "**モデル訓練不使用**: Claude for Teachers 経由のデータは Anthropic のモデル訓練に使われない（Enterprise プランと同水準の保証）",
+      "**生徒情報保護**: 教員経由で入力される生徒名・成績・個別事情等は K-12 DPA で明示的に保護対象",
+      "**業界インパクト**:",
+      "**(1) 米国教育市場での寡占化競争**: **OpenAI ChatGPT Edu**（大学・大学院向け）、**Google Gemini for Education**（Workspace 統合）、**Microsoft Copilot for Education** に加えて Anthropic が K-12 に特化した無料枠を打ち出したことで、米国教育 AI 市場が4社寡占構造に固まりつつある",
+      "**(2) 教員経由の生徒への AI 普及先取り**: 教員が Claude を日常的に使うことで、教員から生徒への AI 使用文化の伝播が加速。生徒側の AI プラットフォーム選好が教員の推奨に強く影響される",
+      "**(3) 日本の教育委員会への波及**: 米国での成功事例は 3-6ヶ月遅れで日本の教育委員会・私立学校への説明会材料になる。同種の日本語版オファーが Anthropic Japan（あるいは楽天等の国内パートナー経由）から出る可能性",
+      "**(4) 教育系スタートアップの再編**: MagicSchool のような既存教員 AI ツールと Anthropic Claude for Teachers の統合が進むと、教員 AI 市場は「Anthropic インフラ + 教員向け UX 特化」の分業構造になりうる",
+      "**懸念点（EdWeek 等が指摘）**:",
+      "**(a) 教員の AI 依存への懸念**: 授業計画・フィードバック生成を AI に頼ることで、教員の professional development が阻害される懸念",
+      "**(b) 「無料の1年間」後のロックイン**: 1年後に有料化された時点で、教員側の workflow が Claude に深く統合されていれば、実質的な乗り換えコストが高い",
+      "**(c) 生徒データの Anthropic 側集約**: モデル訓練不使用でも、教員経由で入力されるデータの Anthropic 側での運用実態は今後の透明性確保が必要",
+      "**注意点**:",
+      "**(1) 米国 K-12 教員に限定**: 現時点で日本・EU・その他地域の教員は対象外",
+      "**(2) 認証プロセス**: 「認証済み教員」の判定基準（学校ドメインメール、証明書、雇用証明等の受理範囲）は Anthropic の運用実態次第",
+      "**(3) 大学教員・幼稚園教諭の位置付け**: K-12（幼稚園〜高校）の定義に厳密に該当しない教育者の扱いは未確定",
+      "**AI News の推奨**: **米国内で K-12 教育に関わる日系企業（教材・EdTech・保護者向けサービス等）** は、Anthropic Claude for Teachers を利用する米国教員の増加を前提に、Claude 経由での教材配布・生徒管理システム連携を検討する価値がある。日本国内の教育関係者は、この米国事例を参考に、日本の Anthropic 販社や楽天等の国内パートナーに対して同種のプログラム提案を働きかけることで、日本の K-12 AI 導入を先取りできる可能性がある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Claude for Teachers",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-for-teachers"
+      },
+      {
+        "title": "Anthropic is giving teachers free access to premium Claude features",
+        "site": "9to5Mac",
+        "url": "https://9to5mac.com/2026/07/14/anthropic-is-giving-teachers-free-access-to-premium-claude-features-details-here/"
+      },
+      {
+        "title": "Anthropic Launches Claude for Teachers to Influence America's Classrooms",
+        "site": "The 74 Million",
+        "url": "https://www.the74million.org/article/anthropic-launches-claude-for-teachers-in-ai-race-to-influence-americas-classrooms/"
+      },
+      {
+        "title": "Anthropic Launches Claude for Teachers. Why Some Critics Are Concerned",
+        "site": "EdWeek",
+        "url": "https://www.edweek.org/technology/anthropic-launches-claude-for-teachers-why-some-critics-are-concerned/2026/07"
+      }
+    ]
+  },
+  "openai-codex-micro-work-louder-hardware-macropad-2026": {
+    "body": [
+      "**OpenAI** が2026年7月15日、**初のハードウェア製品** となる **Codex Micro** を発表した。specialty キーボード設計会社 **Work Louder** と共同開発した **$230** の Codex 専用マクロパッドで、Jony Ive 買収騒動の中で **「小規模で開発者体験に特化」** というハードウェア路線を明確にした象徴的な製品となる。限定販売（Supply Co 経由）で novelty item 色は強いが、AI エージェント時代の物理入力デバイスの1つの解答例として業界的な注目を集めている。",
+      "**Codex Micro のハードウェア構成**:",
+      "**13 スイッチ**: 標準的なマクロパッドの倍以上。1つのキーキャップの下に2つのスイッチが配置され、傾ける方向で異なる入力を送る新設計",
+      "**Rotary encoder**: 音量ノブ相当のダイヤル。回転で連続値を入力可能",
+      "**Joystick**: mini アナログスティック。方向操作でエージェントの workflow 起動を制御",
+      "**RGB backlighting**: エージェント状態表示用の LED",
+      "**32 のカスタマイズアイコンキーキャップ**: 標準アイコン（Send・Cancel・Debug・Reason 等）が同梱",
+      "**Agent Keys の設計思想**: Codex Micro の核となる **Agent Keys** は、以下の情報をライトで表示する。",
+      "**(1) エージェント状態**: idle / thinking / streaming / awaiting-input を色分け表示",
+      "**(2) 複数エージェント並列**: 各キーが独立したエージェントセッションに対応、複数エージェントの状態を同時に俯瞰",
+      "**(3) 通知**: エージェントの完了・エラー・確認要求をライトで通知（Slack や CLI の通知に対する物理表示）",
+      "**Command Keys / joystick / dial の機能**:",
+      "**Command Keys**: Codex の頻用ショートカット（新規セッション・履歴呼び出し・スニペット挿入等）に割り当て",
+      "**Joystick**: プロジェクト内 workflow の起動（テスト実行・ビルド・デプロイ等）",
+      "**Dial（rotary encoder）**: reasoning 時間量を回転で調整。「1秒で答えて」「10秒考えて」等の連続値制御",
+      "**業界的な位置付け**: Codex Micro は単発の novelty item ではなく、以下の業界潮流の中で位置付けられる。",
+      "**(1) [Anysphere Cursor iOS](?a=cursor-ios-app-launch-cloud-agents-remote-2026) の物理版**: Cursor iOS が「モバイルからエージェントを走らせる」を実現したのに対し、Codex Micro は「デスクトップの物理入力層でエージェントを可視化・制御」する方向性",
+      "**(2) Stream Deck 系市場への進出**: Elgato Stream Deck・Loupedeck 等の物理コントロールパネル市場に、Codex Micro が「AI エージェント特化」で参入する形",
+      "**(3) Jony Ive OpenAI 独立以後の路線**: 2025年後半に噂された OpenAI × Jony Ive の大型 AI デバイスプロジェクトが訴訟等で難航する中で、OpenAI は「小規模で確実に価値を出す周辺機器」を先行させる戦略と読める",
+      "**(4) 複数エージェント並列運用の UX**: [ChatGPT Work / Claude Cowork](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026) のような業務エージェントが増える中で、「複数の走行中エージェントを物理的に俯瞰する」需要が顕在化",
+      "**Work Louder との共同開発の意義**: Work Louder は既に「Nomad」等のプログラマー向けマクロパッドを販売する特殊キーボードメーカーで、開発者コミュニティに実績がある。OpenAI が自社でハードウェア工場を持たず、既存の専門メーカーとの共同開発で最初のハードウェアを出す戦略は、以下の意味を持つ。",
+      "**(a) リスク最小化**: 大量在庫・保守・返品対応を Work Louder に委託",
+      "**(b) 既存ユーザーベース活用**: Work Louder の既存 Nomad ユーザーへのアップセル・切り替え促進",
+      "**(c) 「特化型」ブランディング**: 汎用マス向けではなく、開発者コミュニティ限定という位置付け",
+      "**懸念点**:",
+      "**(1) $230 という価格**: Elgato Stream Deck が $150-$250、専門マクロパッドとしては相場だが、「$230 で 13スイッチ + rotary + joystick」の絶対的コストパフォーマンスは Corne / Ferris 等の OSS メカニカルキーボード（$50-$100）と比較すると割高",
+      "**(2) OpenAI API 依存**: Codex Micro は OpenAI Codex API との連携が前提で、Anthropic Claude Code / Cursor 等の他社エージェントは（少なくとも初期は）非対応",
+      "**(3) 限定販売**: Supply Co 経由の限定販売で、大量流通は想定外。中古市場での価格高騰が予想される",
+      "**(4) 実用性 vs 話題性**: 実際の開発者ワークフローでの効率向上が「$230 の投資に見合う」かは、実運用データが出揃うまで不明",
+      "**AI News の推奨**: **OpenAI Codex API を業務で日常的に使う開発者**は、限定販売である以上「入手可能なら試す価値がある」レベル。以下の観点で購入判断すべき。**(a)** 複数エージェント並列運用が既に自身のワークフローに定着しているか、**(b)** Stream Deck 等の既存周辺機器を持っておらず初回導入か、**(c)** 開発コミュニティでの共通言語（Codex Micro を持っている＝新しい AI 開発者体験の実験者）としての価値を評価するか。Anthropic Claude Code / Cursor / Zed ユーザーは、同種の周辺機器が競合他社から出る可能性を待つ選択もある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Amid hardware legal battle, OpenAI releases a $230 keyboard for Codex",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/07/15/amid-hardware-legal-battle-openai-releases-a-230-keyboard-for-codex/"
+      },
+      {
+        "title": "OpenAI's new hardware is a $230, 13-switch keyboard for Codex",
+        "site": "InfoWorld",
+        "url": "https://www.infoworld.com/article/4198470/openais-new-hardware-is-a-230-13-switch-keyboard-for-codex.html"
+      },
+      {
+        "title": "OpenAI Codex Micro Macropad",
+        "site": "The New Stack",
+        "url": "https://thenewstack.io/openai-codex-micro-macropad/"
+      }
+    ]
+  },
+  "microsoft-project-perception-ai-security-model-router-2026": {
+    "body": [
+      "**Microsoft** が **Project Perception**（社内コード名）という AI セキュリティ製品を 2026年7月中に投入予定と、The Information および TechRepublic が報じた。エンタープライズ環境の **脆弱性スキャンと修正提案** を **Microsoft / OpenAI / Anthropic の3社モデル** を task 別にルーティングすることでコストを圧縮し、競合の **Anthropic Claude Mythos 5**（$10 / $50 per 1M）に対する **価格優位** を主な差別化として展開する。継続的な AI 支援型脆弱性修正を、企業規模を問わず経済的に実行可能にする点が狙い。",
+      "**Project Perception のアーキテクチャ**: 中核となる設計要素は以下の通り。",
+      "**(1) モデルルーター**: 個別クエリを task の性質（コード解析・脆弱性分類・修正提案・レポート生成等）に応じて、Microsoft・OpenAI・Anthropic 3社のモデルに動的振り分け",
+      "**(2) 継続的スキャン**: 一度のバッチスキャンではなく、CI/CD パイプラインや実行環境での継続的モニタリングを想定",
+      "**(3) 自動修正提案**: 発見された脆弱性に対し、GitHub PR 相当の修正案を自動生成",
+      "**(4) 多クラウド対応**: Azure が中心だが、AWS・GCP・オンプレも対応範囲に含む見込み",
+      "**Anthropic Mythos 5 との対決構図**: [Anthropic Claude Mythos](?a=cve-2026-47729-squidbleed-claude-mythos-project-glasswing-2026) はセキュリティ特化型フロンティアモデルで、業界の実質標準となりつつある。両者の比較:",
+      "**Anthropic Mythos 5**: $10 / $50 per 1M（特化型で最高品質を志向）",
+      "**Microsoft Project Perception**: モデルルーティングで平均コスト圧縮（推定 $2-5 / $10-25 per 1M 相当を目標）",
+      "**戦略の違い**: Mythos は「1つの特化モデルで最高精度」、Perception は「複数モデル最適配分でコスト効率」。エンタープライズの継続運用では、Perception の常時稼働 vs Mythos の重要案件集中利用という使い分けも想定される",
+      "**モデルルーティング戦略の詳細**: モデル選択の判断基準は task 別に異なる。",
+      "**(a) コード解析タスク**: Microsoft MAI-Code-1-Flash（軽量・高速・低コスト）を優先。全ファイルの静的解析等",
+      "**(b) 脆弱性分類・重大度判定**: OpenAI GPT-5.6 Terra / Luna（中コスト・良品質）",
+      "**(c) 修正案生成**: Anthropic Claude Sonnet 5 / Opus 4.8（コード生成品質重視）",
+      "**(d) 高難度脆弱性の詳細分析**: Anthropic Claude Fable 5 / Mythos 5 に escalation",
+      "この階層化により、全タスクを最高価格モデルで処理する場合と比べて 50-70% のコスト削減が可能と Microsoft は主張している。",
+      "**業界インパクト**:",
+      "**(1) AI セキュリティ市場の2陣営構図化**: 「Mythos（Anthropic）」vs 「Perception（Microsoft）」の対立が、Palantir Foundry・CrowdStrike・SentinelOne 等の企業セキュリティスタックへの組み込み競争を加速。詳細は [Five Eyes agentic AI cyber risk guidance](?a=five-eyes-agentic-ai-cyber-risk-guidance-2026) の政策文脈で位置付けられる",
+      "**(2) モデルルーティングの業界標準化**: OpenRouter・Not Diamond・Portkey・Vercel AI SDK 等の「モデルルーター」プロダクトが既に存在するが、Microsoft が Enterprise 市場でルーティング戦略を採用することで、single-model 契約から multi-model 契約への移行が加速",
+      "**(3) 中小企業への裾野拡大**: 継続的な AI 脆弱性修正が経済的に実行可能になれば、従来 Fortune 500 級だけがアクセス可能だった AI セキュリティが、中小企業にも普及する。**日本の中小 SaaS 企業** も対象顧客に",
+      "**(4) Anthropic の対応**: Mythos の値下げ、あるいは「Mythos Lite」等の低価格版投入で Perception に対抗する動きが予想される。[Anthropic California Newsom 50% off](?a=anthropic-california-newsom-claude-50-off-state-agencies-2026) の先例から、政府・教育・セキュリティ等の縦割り市場での価格戦略が変わる可能性",
+      "**注意点**:",
+      "**(1) 正式リリース未確定**: 「7月中」の予定は The Information の報道ベースで、Microsoft 側は公式発表なし。7月中に確定的な発表がない場合は、8月以降にずれ込む可能性",
+      "**(2) 3社モデルの依存関係**: OpenAI・Anthropic の API 変更やコスト変動で、Perception のルーティング戦略が影響を受ける。特に Anthropic Mythos が競合となる同じ Anthropic のモデルを Perception に組み込む商業条件は要注目",
+      "**(3) 「モデルルーター」の実効品質**: task を正しくルーティングできる meta-model の精度が全体品質を決める。誤ルーティングが多いと、コスト圧縮効果が実現できず品質も低下する",
+      "**(4) データ主権リスク**: 3社モデルへのデータ配信は、企業のデータ主権要件（GDPR・HIPAA・SOC 2 等）と衝突しうる。「どのクエリがどのモデルに送られたか」の完全な audit log 提供が必須",
+      "**AI News の推奨**: **エンタープライズで AI セキュリティ製品を導入検討中の企業**は、以下の3ステップで評価すべき。**(a)** 現在の脆弱性スキャン頻度と AI コストの実測、**(b)** Mythos の重要案件集中利用 vs Perception の継続運用のシナリオ比較、**(c)** データ主権要件との整合性確認（特に金融・医療・防衛系）。日本の中小企業は、Perception の GA タイミング（7月末〜8月見込み）を待って、初期価格・日本語対応・国内データ保管オプションを確認してから採用検討が現実的。"
+    ],
+    "primarySources": [
+      {
+        "title": "Microsoft's 'Project Perception' Could Challenge Anthropic's Mythos in AI Security",
+        "site": "TechRepublic",
+        "url": "https://www.techrepublic.com/article/news-microsoft-project-perception-ai-security-tool/"
+      },
+      {
+        "title": "Exclusive: Microsoft Preps Mythos-Like AI Bug Finder",
+        "site": "The Information",
+        "url": "https://www.theinformation.com/briefings/exclusive-microsoft-preps-mythos-like-ai-bug-finder"
+      },
+      {
+        "title": "Microsoft to launch Project Perception AI cybersecurity platform this month",
+        "site": "NewsBytes",
+        "url": "https://www.newsbytesapp.com/news/science/microsoft-to-launch-project-perception-ai-cybersecurity-platform-this-month/tldr"
+      }
+    ]
   }
+
 };
 export default ARTICLES_BODY;

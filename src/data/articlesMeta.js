@@ -6842,5 +6842,120 @@ export const ARTICLES_META = [
       "alt": "Moonshot Kimi K3 release"
     },
     "pinned": true
+  },
+  {
+    "id": "feature-eu-dma-google-android-open-ai-agents-search-data-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】EU が Google に Android AI 開放を命令 — DMA で rival AI エージェントの音声起動・バックグラウンド実行を義務化、Search 匿名化データも共有",
+    "excerpt": "**欧州委員会** が7月16日、**DMA（Digital Markets Act）** に基づき Google に対する2つの拘束的措置を採択した。**Android 上で rival AI アシスタントの音声起動とバックグラウンドタスク実行**（レストラン予約等）を許可する義務、および **Google 検索の匿名化データを OpenAI 等の AI 検索プロバイダに共有**する義務。**Android 18 主要措置は 2027年8月まで**、hotword 検出並行対応は Android 19。ユーザー反映は 2027年7月から。違反時は世界売上の 10%（累犯 20%）の制裁金。Google は「プライバシーとセキュリティのガードレールを損なう」と反発。",
+    "date": "2026-07-17",
+    "newsDate": "2026-07-16",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "EU",
+      "DMA",
+      "Google",
+      "Android",
+      "規制",
+      "エージェント",
+      "OpenAI"
+    ],
+    "coverImage": {
+      "src": "articles/cover-regulation.svg",
+      "alt": "EU DMA Google Android AI opening order"
+    }
+  },
+  {
+    "id": "openai-gpt-red-self-improvement-red-teaming-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI が GPT-Red を発表 — 自動 red-teaming モデル、人間 red-teamer 13% に対し 84% の攻撃成功率、GPT-5.6 の prompt injection 耐性を強化",
+    "excerpt": "**OpenAI** が7月16日、**GPT-Red** を発表。自己対戦強化学習（self-play RL）で prompt injection 脆弱性を自動発見する内部ツールで、新規安全環境テストで **84% 攻撃成功率**（人間 red-teamer 13% の 6.5倍）を達成。GPT-Red と多様な defender LLM を並列訓練し、defender が堅牢になるほど GPT-Red も新規攻撃を発見する競合構造で、既に GPT-5.6 の adversarial training に活用され prompt injection 耐性を大幅に向上させた。**Anthropic Constitutional AI**・**Google DeepMind Sparrow** に続く、モデル自身によるモデル安全化ループの実装例。",
+    "date": "2026-07-17",
+    "newsDate": "2026-07-16",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "GPT-Red",
+      "セキュリティ",
+      "Red-teaming",
+      "RL",
+      "Safety"
+    ],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI GPT-Red release"
+    }
+  },
+  {
+    "id": "anthropic-claude-for-teachers-k12-free-ferpa-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が Claude for Teachers を公開 — 全米 K-12 教員に premium Claude を1年間無料、FERPA 準拠、9 教育ツールと直接統合",
+    "excerpt": "**Anthropic** が7月14日、**Claude for Teachers** を公開。認証済み **全米 K-12 教員に premium Claude を1年間無料**で提供し、学習科学に基づく teaching skills、**50州すべての教育基準にマッピング**されたカリキュラム連携、Claude Code + Claude Cowork も含む。ASSISTments・Brisk Teaching・Canva Education・Coteach・Diffit・Eedi・MagicSchool・Snorkl の **9 教育ツールと直接統合**。モデル訓練にデータ不使用、K-12 Data Processing Addendum で FERPA 準拠を保証。応募期限 2027年6月30日まで。",
+    "date": "2026-07-17",
+    "newsDate": "2026-07-14",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "教育",
+      "K-12",
+      "FERPA",
+      "無料化"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic Claude for Teachers launch"
+    }
+  },
+  {
+    "id": "openai-codex-micro-work-louder-hardware-macropad-2026",
+    "type": "news",
+    "category": "editor",
+    "title": "OpenAI が Codex Micro を発表 — 初のハードウェア製品は Work Louder 共同設計の $230・13スイッチマクロパッド、Agent Keys でエージェント状態表示",
+    "excerpt": "**OpenAI** が7月15日、**初のハードウェア製品** となる **Codex Micro** を発表。specialty キーボード設計会社 **Work Louder** と共同開発した **$230** の Codex 専用マクロパッドで、13スイッチ・rotary encoder・joystick・RGB backlighting を搭載。Agent Keys はエージェント状態をライトで表示、Command Keys で Codex ショートカット呼び出し、joystick で workflow 起動、dial で reasoning 時間量を調整。32 のカスタマイズアイコンキーキャップ付属。限定販売（Supply Co 経由）で novelty item 色が強いが、Jony Ive 買収騒動中の OpenAI が「小規模で開発者体験に特化」というハードウェア路線を選んだ点が象徴的。",
+    "date": "2026-07-17",
+    "newsDate": "2026-07-15",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "Codex",
+      "ハードウェア",
+      "Work Louder",
+      "開発ツール"
+    ],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI Codex Micro macropad"
+    }
+  },
+  {
+    "id": "microsoft-project-perception-ai-security-model-router-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Microsoft が Project Perception を準備中 — Anthropic Mythos 対抗の AI セキュリティ、Microsoft / OpenAI / Anthropic の 3社モデルを動的ルーティング",
+    "excerpt": "**Microsoft** が **Project Perception**（社内コード名）という AI セキュリティ製品を7月中に投入予定と The Information / TechRepublic が報じた。エンタープライズ環境の脆弱性スキャンと修正提案を **Microsoft / OpenAI / Anthropic 3社のモデルを task 別にルーティング** することでコスト低減を狙う。競合の **Anthropic Claude Mythos 5**（$10 / $50 per 1M）に対する、**モデルルーターによる価格優位** が主な差別化。「継続的な AI 脆弱性修正を全企業規模で経済的に実行可能にする」ことが目標。正式リリース時期・料金・対応ワークロード・顧客要件は Microsoft 側公式未発表。",
+    "date": "2026-07-17",
+    "newsDate": "2026-07-17",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Microsoft",
+      "Project Perception",
+      "セキュリティ",
+      "モデルルーティング",
+      "Anthropic Mythos"
+    ],
+    "coverImage": {
+      "src": "articles/cover-server-infra.svg",
+      "alt": "Microsoft Project Perception AI security"
+    }
   }
+
 ];

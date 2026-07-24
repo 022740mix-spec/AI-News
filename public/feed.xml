@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-07-17T15:00:00Z</updated>
+  <updated>2026-07-24T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Microsoft が Project Perception を準備中 — Anthropic Mythos 対抗の AI セキュリティ、Microsoft / OpenAI / Anthropic の 3社モデルを動的ルーティング</title>
+    <link rel="alternate" type="text/html" href="?a=microsoft-project-perception-ai-security-model-router-2026"/>
+    <id>tag:ai-tool-news.jp,2026:microsoft-project-perception-ai-security-model-router-2026</id>
+    <published>2026-07-17T15:00:00Z</published>
+    <updated>2026-07-17T15:00:00Z</updated>
+    <summary>Microsoft が Project Perception（社内コード名）という AI セキュリティ製品を7月中に投入予定と The Information / TechRepublic が報じた。エンタープライズ環境の脆弱性スキャンと修正提案を Microsoft / OpenAI / Anthropic 3社のモデルを task 別にルーティング することでコスト低減を狙う。競合の Anthropic Claude Mythos 5（$10 / $50 per 1M）に対する、モデルルーターによる価格優位 が主な差別化。「継続的な AI 脆弱性修正を全企業規模で経済的に実行可能にする」ことが目標。正式リリース時期・料金・対応ワークロード・顧客要件は Microsoft 側公式未発表。</summary>
+  </entry>
   <entry>
     <title>Moonshot AI が Kimi K3 を公開 — 世界最大 2.8T パラメータの OSS モデル、Modified MIT で 7/27 に open weights、agent 系ベンチで 6/16 首位・BrowseComp 91.2</title>
     <link rel="alternate" type="text/html" href="?a=moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026"/>
@@ -16,12 +24,44 @@
     <summary>Moonshot AI が2026年7月16日、Kimi K3 をリリースした。2.8兆パラメータ MoE（896 experts のうち 16 を routing）で世界最大の open-source モデル、Kimi Delta Attention 新規注意機構と 1M コンテキスト搭載。Modified MIT で 7/27 に open weights 公開予定。API 料金は $3 / $15 per 1M tokens（cache-hit $0.30）で GPT-5.6 Sol の 60%。agent 系ベンチマーク 16項目中 6項目で首位（BrowseComp 91.2・SWE Marathon 42.0・Automation Bench 30.8・SpreadsheetBench 2 34.8・Program Bench 77.8）、多くで Fable 5・GPT-5.6 Sol と 1pt 差の接戦を演じる。</summary>
   </entry>
   <entry>
+    <title>【分析】EU が Google に Android AI 開放を命令 — DMA で rival AI エージェントの音声起動・バックグラウンド実行を義務化、Search 匿名化データも共有</title>
+    <link rel="alternate" type="text/html" href="?a=feature-eu-dma-google-android-open-ai-agents-search-data-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-eu-dma-google-android-open-ai-agents-search-data-2026</id>
+    <published>2026-07-16T15:00:00Z</published>
+    <updated>2026-07-16T15:00:00Z</updated>
+    <summary>欧州委員会 が7月16日、DMA（Digital Markets Act） に基づき Google に対する2つの拘束的措置を採択した。Android 上で rival AI アシスタントの音声起動とバックグラウンドタスク実行（レストラン予約等）を許可する義務、および Google 検索の匿名化データを OpenAI 等の AI 検索プロバイダに共有する義務。Android 18 主要措置は 2027年8月まで、hotword 検出並行対応は Android 19。ユーザー反映は 2027年7月から。違反時は世界売上の 10%（累犯 20%）の制裁金。Google は「プライバシーとセキュリティのガードレールを損なう」と反発。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI が GPT-Red を発表 — 自動 red-teaming モデル、人間 red-teamer 13% に対し 84% の攻撃成功率、GPT-5.6 の prompt injection 耐性を強化</title>
+    <link rel="alternate" type="text/html" href="?a=openai-gpt-red-self-improvement-red-teaming-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-gpt-red-self-improvement-red-teaming-2026</id>
+    <published>2026-07-16T15:00:00Z</published>
+    <updated>2026-07-16T15:00:00Z</updated>
+    <summary>OpenAI が7月16日、GPT-Red を発表。自己対戦強化学習（self-play RL）で prompt injection 脆弱性を自動発見する内部ツールで、新規安全環境テストで 84% 攻撃成功率（人間 red-teamer 13% の 6.5倍）を達成。GPT-Red と多様な defender LLM を並列訓練し、defender が堅牢になるほど GPT-Red も新規攻撃を発見する競合構造で、既に GPT-5.6 の adversarial training に活用され prompt injection 耐性を大幅に向上させた。Anthropic Constitutional AI・Google DeepMind Sparrow に続く、モデル自身によるモデル安全化ループの実装例。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI が Codex Micro を発表 — 初のハードウェア製品は Work Louder 共同設計の $230・13スイッチマクロパッド、Agent Keys でエージェント状態表示</title>
+    <link rel="alternate" type="text/html" href="?a=openai-codex-micro-work-louder-hardware-macropad-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-codex-micro-work-louder-hardware-macropad-2026</id>
+    <published>2026-07-15T15:00:00Z</published>
+    <updated>2026-07-15T15:00:00Z</updated>
+    <summary>OpenAI が7月15日、初のハードウェア製品 となる Codex Micro を発表。specialty キーボード設計会社 Work Louder と共同開発した $230 の Codex 専用マクロパッドで、13スイッチ・rotary encoder・joystick・RGB backlighting を搭載。Agent Keys はエージェント状態をライトで表示、Command Keys で Codex ショートカット呼び出し、joystick で workflow 起動、dial で reasoning 時間量を調整。32 のカスタマイズアイコンキーキャップ付属。限定販売（Supply Co 経由）で novelty item 色が強いが、Jony Ive 買収騒動中の OpenAI が「小規模で開発者体験に特化」というハードウェア路線を選んだ点が象徴的。</summary>
+  </entry>
+  <entry>
     <title>Model Context Protocol の 2026-07-28 仕様 RC 公開 — Stateless core・MCP Apps・Tasks 拡張の最大改訂、7/28 正式版へ 10 週間の検証窓</title>
     <link rel="alternate" type="text/html" href="?a=mcp-2026-07-28-release-candidate-stateless-core-2026"/>
     <id>tag:ai-tool-news.jp,2026:mcp-2026-07-28-release-candidate-stateless-core-2026</id>
     <published>2026-07-14T15:00:00Z</published>
     <updated>2026-07-14T15:00:00Z</updated>
     <summary>Model Context Protocol の 2026-07-28 版 Release Candidate が公開された。プロトコルレイヤーの Stateless 化 が最大の変更で、sticky session が不要になり通常の HTTP ロードバランサで動作可能に。MCP Apps 拡張（サーバが sandboxed iframe に HTML UI を配信）、Tasks 拡張（stateless 環境で長時間ジョブを扱う）、OAuth / OIDC 準拠の Authorization 強化、Deprecation Policy の正式化も同時導入。SDK Beta（Python / TypeScript / Go / C#）も公開され、10 週間の検証窓を経て 7/28 に正式版が確定する予定。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic が Claude for Teachers を公開 — 全米 K-12 教員に premium Claude を1年間無料、FERPA 準拠、9 教育ツールと直接統合</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-for-teachers-k12-free-ferpa-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-for-teachers-k12-free-ferpa-2026</id>
+    <published>2026-07-14T15:00:00Z</published>
+    <updated>2026-07-14T15:00:00Z</updated>
+    <summary>Anthropic が7月14日、Claude for Teachers を公開。認証済み 全米 K-12 教員に premium Claude を1年間無料で提供し、学習科学に基づく teaching skills、50州すべての教育基準にマッピングされたカリキュラム連携、Claude Code + Claude Cowork も含む。ASSISTments・Brisk Teaching・Canva Education・Coteach・Diffit・Eedi・MagicSchool・Snorkl の 9 教育ツールと直接統合。モデル訓練にデータ不使用、K-12 Data Processing Addendum で FERPA 準拠を保証。応募期限 2027年6月30日まで。</summary>
   </entry>
   <entry>
     <title>【分析】Samsung Health、AI 学習許可を拒否するとデータ削除 — 歩数・睡眠・服薬・治療記録まで対象、健康データ「実質強制同意」問題</title>
