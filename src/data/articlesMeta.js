@@ -6956,6 +6956,144 @@ export const ARTICLES_META = [
       "src": "articles/cover-server-infra.svg",
       "alt": "Microsoft Project Perception AI security"
     }
+  },
+  {
+    "id": "feature-google-gemini-3-5-pro-delay-coding-performance-2026",
+    "type": "feature",
+    "category": "model",
+    "title": "【分析】Google Gemini 3.5 Pro が遅延 — coding 性能が社内目標未達、Alphabet 株 -3%、Anthropic / OpenAI との差の顕在化",
+    "excerpt": "**Sundar Pichai** が5月に「6月にリリース」と明言していた **Google Gemini 3.5 Pro** が、6月・7月と遅延を重ねている。Bloomberg が現・元従業員 **10名** から取材した記事によると、社内の **coding ベンチマーク** で期待水準に届かず、長期複雑推論タスクでも Anthropic / OpenAI に劣後。Alphabet 株は報道翌日 **-3%**。6月末に訓練データを更新して再訓練したが結果は再び不十分で、Gemini 3.6 Flash（軽量版）は先行テスト中。フロンティアモデル競争で Google が段階的に後塵を拝しつつある構造的な変化の兆候。",
+    "date": "2026-07-24",
+    "newsDate": "2026-07-16",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "遅延",
+      "モデル",
+      "Alphabet",
+      "分析"
+    ],
+    "coverImage": {
+      "src": "logos/gemini.svg",
+      "alt": "Google Gemini 3.5 Pro delay"
+    }
+  },
+  {
+    "id": "anthropic-claude-cowork-record-a-skill-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Anthropic「Record a Skill」を Claude Cowork Desktop に投入 — 画面録画1回で workflow を Claude が学習・skill 化、プロンプト工学不要",
+    "excerpt": "**Anthropic** が7月21日、**Claude Cowork Desktop** に **「Record a Skill」** を追加。Pro / Max / Team ユーザーが `+ メニュー` から画面録画を開始 → 実際に業務を実行しながら音声で説明 → Claude が **screen activity・mouse clicks・keystrokes・voice** を構造化した skill ファイルに変換。以降 Claude が同じ skill を再実行可能で、従来のプロンプト工学・手動ステップ記述が不要になる。ワークスペース内共有 (デフォルト OFF) で「1回の録画が全社の標準プロセス」に化ける設計。**Codex のワークフロー自動化と同じ発想** を Anthropic 側から実装。",
+    "date": "2026-07-24",
+    "newsDate": "2026-07-21",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Anthropic",
+      "Claude Cowork",
+      "Record a Skill",
+      "エージェント",
+      "自動化",
+      "スキル"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic Record a Skill launch"
+    }
+  },
+  {
+    "id": "anthropic-claude-voice-mode-opus-sonnet-connectors-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude Voice Mode が大幅 upgrade — Opus / Sonnet 選択、テキストチャットのモデル継承、Gmail / Slack / Canva connectors 統合、多言語 beta",
+    "excerpt": "**Anthropic** が7月23日、**Claude Voice Mode** を大幅アップデート。従来 latency 優先で **Haiku 固定** だったところ、**Opus / Sonnet / Haiku を選択可能** に。テキストチャットで最後に使ったモデルを継承（デフォルトはそのモデルの高速版）、音声対話中のモデル切替も可能。有料ユーザーは **Gmail・Slack・Canva 等の connectors から context を pull** でき、多言語対応も beta で拡充。「複雑な問題を音声だけで解決できる」レベルに到達し、OpenAI Advanced Voice Mode との対決本格化。",
+    "date": "2026-07-24",
+    "newsDate": "2026-07-23",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Voice Mode",
+      "Opus",
+      "Connectors",
+      "ユーザー体験"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Claude Voice Mode upgrade"
+    }
+  },
+  {
+    "id": "notion-as-code-typescript-workspace-git-agents-beta-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Notion が「Notion as code」beta を公開 — TypeScript でワークスペース全体を定義、Git で版管理、Claude / Cursor 等 coding agents で構築、API 経由デプロイ",
+    "excerpt": "**Notion** が7月24日、**「Notion as code」beta** を発表。**TypeScript でワークスペース全体**（teamspaces / databases / custom agents 等）を定義して API 経由デプロイ、Git で版管理、**Claude / Cursor 等 coding agents で構築**可能。dev / staging / production の環境間で同一スクリプトを流用、テスト済み構成を別ワークスペースに再現できる。**Terraform / Pulumi / CDK と同じ Infrastructure as Code パラダイム** を SaaS に持ち込む業界初級の実装。X 投稿は 49万閲覧・2,251 いいねで反響大。",
+    "date": "2026-07-24",
+    "newsDate": "2026-07-24",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Notion",
+      "TypeScript",
+      "Infrastructure as Code",
+      "エージェント",
+      "開発ツール",
+      "SaaS"
+    ],
+    "coverImage": {
+      "src": "articles/cover-editor-ide.svg",
+      "alt": "Notion as code beta"
+    },
+    "pinned": true
+  },
+  {
+    "id": "alibaba-qwen-3-8-preview-waic-shanghai-2-4t-open-weight-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Alibaba が Qwen 3.8 Preview を WAIC 上海で公開 — 2.4T open-weight、Kimi K3 (2.8T) に続く中国 mega-open-weight ラッシュ、Fable 5 に次ぐ性能を主張",
+    "excerpt": "**Alibaba** が7月19日、上海で開催された **WAIC（World AI Conference）** で **Qwen 3.8 Preview** を公開。**2.4兆パラメータ open-weight** モデルで、Kimi K3 の 2.8T に続き中国発の mega-open-weight が矢継ぎ早に登場する形に。Alibaba は「**Claude Fable 5 に次ぐ overall capability**」を主張しており、ベンチマーク詳細と GA 日程は今後発表予定。DeepSeek V4 GA と同日投入で、中国 AI 陣営（DeepSeek・Moonshot Kimi・Alibaba Qwen）の同時攻勢が顕著。",
+    "date": "2026-07-24",
+    "newsDate": "2026-07-19",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Alibaba",
+      "Qwen",
+      "オープンソース",
+      "中国AI",
+      "WAIC",
+      "モデル"
+    ],
+    "coverImage": {
+      "src": "logos/alibaba.svg",
+      "alt": "Alibaba Qwen 3.8 Preview at WAIC"
+    }
+  },
+  {
+    "id": "deepseek-v4-general-availability-dynamic-pricing-2026",
+    "type": "news",
+    "category": "model",
+    "title": "DeepSeek V4 が GA へ — 7/19-20 に preview から一般公開、peak/off-peak 課金に加え dynamic pricing 導入",
+    "excerpt": "**DeepSeek** が7月19-20日、V4 を preview から **General Availability（GA）** に移行した。事前アナウンスの **peak / off-peak 料金**（北京時間 9-12時・14-18時 が2倍レート）に加えて **dynamic pricing**（実時間需要に応じた変動料金）が正式導入。V4 Flash **$0.14 / 1M**、V4 Pro $0.435 / 1M の基準料金は変わらず、cache-hit は $0.014 / $0.043 と 1/10 に。Alibaba Qwen 3.8 Preview の同日投入で、中国 AI 三つ巴（DeepSeek・Kimi・Qwen）が本格化。",
+    "date": "2026-07-24",
+    "newsDate": "2026-07-19",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "DeepSeek",
+      "中国AI",
+      "GA",
+      "API料金",
+      "Dynamic Pricing"
+    ],
+    "coverImage": {
+      "src": "articles/cover-pricing.svg",
+      "alt": "DeepSeek V4 GA + dynamic pricing"
+    }
   }
 
 ];

@@ -12839,6 +12839,344 @@ const ARTICLES_BODY = {
         "url": "https://www.newsbytesapp.com/news/science/microsoft-to-launch-project-perception-ai-cybersecurity-platform-this-month/tldr"
       }
     ]
+  },
+  "feature-google-gemini-3-5-pro-delay-coding-performance-2026": {
+    "body": [
+      "**Google Gemini 3.5 Pro** の一般公開が予告から2ヶ月以上遅延している。Sundar Pichai CEO が2026年5月に「6月にリリース」と明言していたが、6月・7月末になっても公式リリースには至らず、Alphabet 株価は Bloomberg 遅延報道翌日 **-3%** の反応。Bloomberg が現・元 Google 従業員 10名から取材した記事は、社内 coding ベンチマークでの期待水準未達を主因として挙げており、フロンティアモデル競争で Google が段階的に後塵を拝しつつある構造的な兆候として業界の注視を集めている。",
+      "**遅延の経緯**: 主要な出来事を時系列で整理:",
+      "**2026年5月**: Sundar Pichai が投資家説明会で「Gemini 3.5 Pro を6月にリリース」と明言",
+      "**2026年6月**: 6月中のリリースなし。Google は正式な理由発表なし",
+      "**2026年6月末**: Google が訓練データを更新して再訓練を実施",
+      "**2026年7月初旬**: 再訓練結果もまた内部目標未達と判明（Bloomberg 報）",
+      "**2026年7月16日**: 9to5Google・Bloomberg が遅延を公式に報道、Alphabet 株が -3%",
+      "**2026年7月21日**: なお新スケジュール発表なし。Google は「パートナーとのテスト中」とのみコメント",
+      "**性能不足の具体的領域**: 従業員 10名の証言によると、以下の2領域で目標未達:",
+      "**(1) Coding 性能**: SWE-Bench Pro / FrontierSWE / Terminal Bench 等の主要ベンチで、GPT-5.6 Sol・Claude Fable 5・[Kimi K3](?a=moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026) に劣後",
+      "**(2) 長期複雑推論**: Multi-step reasoning・long-horizon agent タスクで Anthropic Claude Cowork / OpenAI ChatGPT Work に負ける結果",
+      "特に coding 性能は「新規訓練データで改善する」と Google が期待して 6月末に再訓練を実施したが、Bloomberg 曰く「結果はまた期待水準を下回った」。",
+      "**フロンティア競争の力学変化**: 本件が示す業界構造の変化:",
+      "**(a) 米国フロンティア「三強」の再序列化**: 従来 OpenAI / Google / Anthropic の三強想定だったが、[GPT-5.6 GA](?a=openai-gpt-5-6-general-availability-july-9-2026)・[Claude Sonnet 5](?a=anthropic-claude-sonnet-5-agentic-cheap-2026)・Fable 5 の攻勢に対して Google の Pro 系が空白期間を作った形",
+      "**(b) 中国 mega-open-weight ラッシュの圧力**: [Kimi K3](?a=moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026) (2.8T)、Alibaba Qwen 3.8 (2.4T)、DeepSeek V4 の同時攻勢の中で、Google が Pro 系を出せずにいる意味は大きい。企業ワークロードでの Google Vertex AI 依存の再検討が始まる",
+      "**(c) Gemini Flash 系での対抗**: Bloomberg 報道と並行して、Gemini 3.6 Flash（軽量版）が先行テスト中との情報。Google が Pro 系不足を Flash 系（低遅延・低コスト）でカバーしようとしている可能性",
+      "**(d) TPU / DeepMind 統合効果の疑問符**: Google は自社 TPU + DeepMind 研究者を持つ「垂直統合の強者」だったが、Anthropic（AWS Trainium 活用）・[OpenAI（Cerebras + Broadcom Jalapeño）](?a=openai-gpt-5-6-sol-cerebras-750-tokens-per-second-2026) が非 NVIDIA 選択肢を確立する中で、Google の優位性が相対的に薄れつつある",
+      "**Google の公式コメントと今後**: Google は Bloomberg の取材に対して「モデルはパートナーとのテスト段階」とのみ回答。新スケジュール・特定原因・改善策の詳細は未発表。エンジニア・研究者・マネージャーの間で「Anthropic や OpenAI に地歩を失う可能性」への懸念が広がっているとされる。",
+      "**業界インパクト**:",
+      "**(1) Google Vertex AI 依存企業の代替検討**: Gemini 3.5 Pro を待っていた企業が [Kimi K3](?a=moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026)・[Claude Sonnet 5](?a=anthropic-claude-sonnet-5-agentic-cheap-2026)・[GPT-5.6 系](?a=openai-gpt-5-6-general-availability-july-9-2026) への移行を検討する契機に",
+      "**(2) Google 内部の GPU 割当再優先**: Pro 訓練に集中していたリソースが Flash 系や次期 4.0 に配分される可能性",
+      "**(3) Gemini CLI コミュニティへの影響**: [Gemini CLI](?a=gemini-cli) を業務基盤に組み込んでいた開発者は、モデル選択の見直しを迫られる",
+      "**(4) 株価反応の継続監視**: -3% の初期反応後、Google が具体的な回復策を示せない期間が長引くと、AI パイプライン全体への評価再考が続く",
+      "**注意点**:",
+      "**(1) Google の公式反論待ち**: Bloomberg 報道は複数従業員の証言ベースで、Google 側の反論・再現できる公開ベンチマークの提示は今後の課題",
+      "**(2) 「テスト中」の実態**: 「パートナーとのテスト」で使われている Gemini 3.5 Pro の中間バージョンの性能実データは非公開",
+      "**(3) Flash 系のカバー可能性**: Gemini 3.6 Flash が Pro 系不足を埋められる範囲は限定的（複雑推論では Flash では不十分な場合が多い）",
+      "**AI News の推奨**: **Google Vertex AI / Gemini API を業務利用中の企業** は、以下の3ステップで対応検討を推奨。**(a)** 現在の利用シナリオを coding / 長期推論 / 一般対話に分類し、それぞれで代替モデル比較を実施、**(b)** Anthropic Claude Sonnet 5 / OpenAI GPT-5.6 Terra / Kimi K3 の同用途評価、**(c)** マルチクラウド構成で Vertex AI 単一依存を解消する構成に移行。Gemini 3.5 Pro の新スケジュールが出るまで少なくとも 4-6 週間は「Pro 前提の企画」を凍結するのが現実的。"
+    ],
+    "primarySources": [
+      {
+        "title": "Gemini 3.5 Pro delays due to coding performance, upgraded Flash model in testing",
+        "site": "9to5Google",
+        "url": "https://9to5google.com/2026/07/16/gemini-3-5-pro-delays/"
+      },
+      {
+        "title": "Google delays Gemini 3.5 Pro release to enhance coding features",
+        "site": "Crypto Briefing",
+        "url": "https://cryptobriefing.com/google-delays-gemini-pro-coding-features/"
+      },
+      {
+        "title": "Google Gemini 3.5 Pro faces 'delays' over coding performance misses",
+        "site": "Neowin",
+        "url": "https://www.neowin.net/news/google-gemini-35-pro-faces-delays-over-coding-performance-misses/"
+      },
+      {
+        "title": "Google Delays Flagship Gemini 3.5 Pro Model as Coding Gaps",
+        "site": "JournalArta",
+        "url": "https://journalarta.com/en/2026/07/20/google-delays-gemini-3-5-pro-ai-model-coding/"
+      }
+    ]
+  },
+  "anthropic-claude-cowork-record-a-skill-2026": {
+    "body": [
+      "**Anthropic** が2026年7月21日、[Claude Cowork](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026) Desktop アプリに **「Record a Skill」** 機能を追加した。**Pro / Max / Team** ユーザーが `+ メニュー` から画面録画を開始 → 実際に業務を実行しながら音声で説明 → Claude が動作を分析して構造化 skill ファイルを自動生成する仕組み。以降 Claude が同じ workflow を再実行可能で、従来必要だったプロンプト工学・手動ステップ記述が不要になる。**Codex のワークフロー自動化と同じ発想**を Anthropic 側から実装した形で、AI エージェント運用の UX を根本的に変える可能性を持つ。",
+      "**Record a Skill の動作フロー**: 画面録画は以下のデータを同時にキャプチャする:",
+      "**(1) Screen activity**: 画面全体のビデオ録画",
+      "**(2) Mouse clicks**: クリック位置・タイミング・対象要素の座標",
+      "**(3) Keystrokes**: キーボード入力（機微情報はフィルタ推奨）",
+      "**(4) Voice**: ユーザーが「今、経費精算のためにこのボタンをクリックする」と実況する音声",
+      "録画終了後、Claude はこれらを統合分析し、「経費精算 workflow」等の構造化 skill を生成。skill 名・入力パラメータ・実行ステップ・完了判定条件を自動抽出する。",
+      "**具体的なユースケース例**:",
+      "**(a) 経費精算**: 領収書を SAP Concur にアップロード → カテゴリ選択 → 承認者指定 の一連手順を1回録画、以降 Claude が同 workflow を毎月自動実行",
+      "**(b) 週次レポート作成**: Salesforce から売上データ export → Google Sheets で加工 → Notion にペースト → Slack 投稿 という部門横断手順を skill 化",
+      "**(c) オンボーディング資料配布**: 新入社員リストから氏名 → Google Workspace アカウント作成 → 権限付与 → Welcome メール送信の連鎖操作を skill 化",
+      "**(d) データ入力業務**: 紙の伝票を撮影 → OCR → 社内 DB に登録 という単純反復作業を1回の実演で自動化",
+      "**ワークスペース共有機能**: skill の共有設定はデフォルト OFF、ユーザーが明示的に ON にすることでワークスペース内メンバー全員が同 skill を再利用できる。1人の熟練者が実演した業務プロセスが、全社の標準手順として資産化される。",
+      "**Codex ワークフロー機能との比較**: OpenAI Codex は以前から「タスクの workflow 化」機能を持っていたが、Record a Skill は以下の点で差別化される:",
+      "**(1) 録画ベースの直感性**: プロンプトで workflow を書き下すのではなく、実演を録画するだけ",
+      "**(2) 音声解説の統合**: 「なぜこの操作をするか」を音声で説明でき、Claude が意図を汲む",
+      "**(3) 共有機能内蔵**: 個人 skill をワークスペース資産化するボタン1つの操作",
+      "**(4) [Claude Cowork](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026) 全体の機能**: Codex は主にコーディング用途、Record a Skill は業務全般（経理・営業・HR 等）",
+      "**業界インパクト**:",
+      "**(1) プロンプトエンジニアリング商流の縮小**: 「プロンプトを書ける人」の希少性が下がり、「業務プロセスを整理できる人」の価値が相対的に上がる",
+      "**(2) 業務自動化 SaaS との競合**: Zapier・Make (旧 Integromat)・n8n・Power Automate 等の既存 iPaaS 系プロダクトとの直接競合。Record a Skill は「専用 SaaS を経ずに AI に直接自動化させる」道筋",
+      "**(3) 「AI が動作を模倣学習」パラダイムの本格化**: 従来「LLM に指示を与える」が主流だったが、「LLM に実演を見せる」新たな指導方法が確立。OpenAI・Google・Meta の追随が予想される",
+      "**(4) 中小企業への業務自動化普及**: プロンプト工学スキル不要で AI 自動化を導入できることで、中小企業・非エンジニア職種への浸透が加速",
+      "**プライバシー / セキュリティ懸念**:",
+      "**(a) 録画データの Anthropic 側運用**: Anthropic は7月21日時点で録画データの詳細なプライバシー / データ保持ドキュメントを公開していない。企業導入時は要確認",
+      "**(b) 機微情報の意図しない記録**: 録画中に画面に表示された顧客名・パスワード・機密数字等が skill ファイルに含まれる可能性。**録画時の画面整理・フィルタ設定が運用上重要**",
+      "**(c) キーストローク記録の法的位置付け**: 一部の国・地域ではキーロガー相当の記録に労働法上の制約がある。日本の労働基準法・EU の GDPR での適法性は Anthropic 側の説明待ち",
+      "**注意点**:",
+      "**(1) Pro / Max / Team 限定**: Free ユーザーは利用不可",
+      "**(2) Desktop アプリ必須**: Web 版 Claude では利用不可",
+      "**(3) skill の再現性**: 録画時と実行時で UI 変更（アプリアップデート等）があると skill が動作しない可能性",
+      "**(4) デバッグの難しさ**: Claude が誤解した workflow を修正するには、録画をやり直すか手動で skill ファイルを編集する必要",
+      "**AI News の推奨**: **Claude Pro / Max ユーザーの業務利用者**は、まず **短い反復業務（週次レポート・データ入力等）** で試験導入することを推奨。以下の3ステップで運用開始が現実的。**(a)** 対象業務を選定し、実行手順を紙で整理、**(b)** 画面を整理して機微情報を非表示化した状態で録画、**(c)** 生成された skill を単独テスト実行し、結果を検証してから運用投入。プライバシー面では、[Claude Cowork の非コーディング用途 90%](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026) データと合わせて、Anthropic の追加開示待ち。"
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic Ships 'Record a Skill' in Claude Cowork Desktop App",
+        "site": "AI Weekly",
+        "url": "https://aiweekly.co/alerts/anthropic-ships-record-a-skill-in-claude-cowork-desktop-app"
+      },
+      {
+        "title": "Claude Cowork Can Record Your Workflow and Turn It Into a Skill",
+        "site": "Coursiv",
+        "url": "https://coursiv.io/blog/claude-cowork-record-a-skill"
+      },
+      {
+        "title": "Claude Cowork Can Now Learn Your Workflow From a Screen Recording",
+        "site": "Stan Ventures",
+        "url": "https://www.stanventures.com/news/claude-cowork-can-now-learn-your-workflow-from-a-screen-recording-7559/"
+      },
+      {
+        "title": "Show, Don't Prompt: Claude Now Learns Your Workflows by Watching You Work",
+        "site": "Medium (Pawel)",
+        "url": "https://medium.com/@meshuggah22/show-dont-prompt-claude-now-learns-your-workflows-by-watching-you-work-4533b5f7e7f4"
+      }
+    ]
+  },
+  "anthropic-claude-voice-mode-opus-sonnet-connectors-2026": {
+    "body": [
+      "**Anthropic** が2026年7月23日、**Claude Voice Mode** を大幅にアップデートし、従来の制約を解消した。最大の変更点は、これまで latency 優先で **Haiku 固定**だったモデル選択が **Opus / Sonnet / Haiku 全モデル選択可能**になったこと。加えてテキストチャットで最後に使ったモデルを継承（デフォルトは高速版）、音声対話中のモデル切替、有料ユーザー向けの **Gmail / Slack / Canva 等の connectors 統合**、**多言語対応の beta 拡充** も同時導入された。「複雑な問題を音声だけで解決できる」レベルに Claude の音声体験が到達した形で、OpenAI Advanced Voice Mode との対決が本格化する。",
+      "**アップデート前の制約**: 従来の Claude Voice Mode は以下の設計だった:",
+      "**(1) モデルは Haiku 固定**: レイテンシ優先で、最軽量の Haiku のみ利用可能。複雑な質問には対応品質が不十分",
+      "**(2) モデル選択不可**: ユーザーが Opus / Sonnet を選ぶ選択肢なし",
+      "**(3) Connector 未統合**: Gmail・Slack 等の外部サービスとの連携が音声モードでは動作しなかった",
+      "**(4) 言語対応限定的**: 主要言語のみ、多言語での自然性が不十分",
+      "**新機能の詳細**: 今回のアップデートで解消された内容:",
+      "**(a) 3モデル選択**: Opus（複雑推論）・Sonnet（汎用）・Haiku（超低遅延）を選択可能。デフォルトはユーザーがテキストチャットで最後に使ったモデルの高速版",
+      "**(b) 対話中のモデル切替**: 会話中に「Opus に切り替えて」等の指示で動的に変更可能。複雑な議論に入る際に Opus、雑談に戻る時に Haiku 等",
+      "**(c) Connector 統合**: 有料プランで Gmail・Slack・Canva 等の [Claude Connectors](?a=anthropic-claude-chrome-extension-9m-installs-beta-2026) からリアルタイム context を pull。「昨日の Slack で David が言ってた話は？」等が音声だけで対応可能",
+      "**(d) 多言語 beta**: 主要言語での自然な intonation（イントネーション）改善、応答速度も向上。日本語対応も強化されている見込み",
+      "**「複雑な問題を音声だけで解決」の意義**: 従来 Haiku 固定だった音声モードは、以下の用途に限定されていた:",
+      "**旧制約下の用途**: 天気・スケジュール・簡単な質問応答・タイマー設定等の低複雑度タスク",
+      "**新たに可能な用途**: 「Salesforce のこの案件について、過去のメールと Slack のやり取りから提案書のポイントを整理して」等の複合的な業務タスク",
+      "音声 UX で複合タスクが解けることで、以下のシナリオが実用域に入る:",
+      "**(1) 通勤・運転中の業務**: ハンズフリーで案件確認・返信起草・タスク調整",
+      "**(2) 会議中の並行作業**: 議論を聞きながら、音声で議事録整理・関連資料検索",
+      "**(3) キッチン・ジムでの学習**: 難しいトピックを Opus と対話しながら深掘り",
+      "**(4) 視覚障害者・高齢者への実用性向上**: 音声だけで高度な業務・情報検索が可能に",
+      "**業界インパクト**:",
+      "**(1) OpenAI Advanced Voice Mode との対決本格化**: OpenAI は既に GPT-4o Voice で音声モードを持つが、GPT-5.6 Sol / Terra 系での本格 upgrade はまだ。Anthropic が先行して「フロンティアモデルでの音声対話」を実現",
+      "**(2) スマートスピーカー市場への影響**: Amazon Alexa・Google Assistant・Apple Siri 等の従来型音声アシスタントの位置付けが揺らぐ。Claude Voice が同等以上の複合タスクを解ければ、スマートスピーカー各社は Claude API 統合を迫られる",
+      "**(3) 車載音声 UX の再定義**: Android Auto・CarPlay 等の車載音声アシスタント統合で、Google / Apple の従来アシスタントが Claude Voice に代替される可能性。特に [EU DMA での Android AI 開放](?a=feature-eu-dma-google-android-open-ai-agents-search-data-2026) 命令と組み合わさると影響大",
+      "**(4) 音声 UX SaaS のバリューチェーン変化**: Vapi・Retell 等の音声 AI プラットフォームが、フロンティアモデル直接接続で不要になる領域と、それでも価値を出せる領域の再定義",
+      "**日本語対応の見込み**: Anthropic は「多言語対応の beta で自然な intonation を改善」と発表。日本語での自然な発話品質は継続的に改善されている領域で、今回のアップデートで大幅向上が期待される。日本のビジネス用途では、会議参加・議事録・カスタマー対応での実用性が焦点。",
+      "**注意点**:",
+      "**(1) Opus 選択時のコスト**: 音声モードで Opus を選ぶと入力・出力トークン量が Haiku の 5-10倍。長時間の音声対話は高額請求リスク",
+      "**(2) レイテンシとモデル品質のトレードオフ**: Opus は最初のトークンまで 1-3秒かかる場合があり、「自然な会話」の流れが途切れる。Sonnet のバランスが推奨",
+      "**(3) Connector 統合の適用範囲**: どの Connectors が音声モードで動作するかの詳細は Anthropic の公式ドキュメント待ち。Notion・Salesforce 等が初期対応しているかは要確認",
+      "**(4) 多言語 beta の品質**: 「beta」段階のため、日本語・中国語等の非英語での自然性は英語には及ばない可能性",
+      "**AI News の推奨**: **Claude Pro / Max ユーザー**は、まず以下の3ユースケースで新音声モードを試験導入することを推奨。**(a)** 通勤中の Slack / Gmail チェックと簡単な返信起草（Sonnet 使用）、**(b)** 週次進捗レポート作成の音声下書き（Sonnet → 後で Web でレビュー）、**(c)** 複雑な戦略議論の「壁打ち」相手（Opus 使用、短時間集中）。日本語対応の実運用品質は、Anthropic Japan の追加発表を待った上で本格導入する形が現実的。"
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic updates Claude voice mode with more capable models",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/07/23/anthropic-updates-claude-voice-mode-with-more-capable-models/"
+      },
+      {
+        "title": "Anthropic upgrades Claude voice mode with more powerful models",
+        "site": "9to5Mac",
+        "url": "https://9to5mac.com/2026/07/23/anthropic-upgrades-claude-voice-mode-with-more-powerful-models/"
+      },
+      {
+        "title": "Claude's voice mode just got smarter",
+        "site": "Engadget",
+        "url": "https://www.engadget.com/2221938/claude-voice-mode-just-got-smarter/"
+      },
+      {
+        "title": "Claude Voice Mode Now Supports Opus and Sonnet for Complex Problem-Solving",
+        "site": "Time News",
+        "url": "https://time.news/claude-voice-mode-now-supports-opus-and-sonnet-for-complex-problem-solving/"
+      }
+    ]
+  },
+  "notion-as-code-typescript-workspace-git-agents-beta-2026": {
+    "body": [
+      "**Notion** が2026年7月24日、**「Notion as code」beta** を発表した。**TypeScript でワークスペース全体**（teamspaces / databases / custom agents / views 等）を定義してコード化し、API 経由でデプロイ、Git で版管理、Claude Code や Cursor 等の coding agents で構築 —— Terraform / Pulumi / CDK が実現した Infrastructure as Code のパラダイムを、SaaS ワークスペースに持ち込む業界初級の実装となる。X（旧 Twitter）投稿は 49万閲覧・2,251 いいね・1,352 ブックマークで、開発者コミュニティに大きな反響を呼んだ。",
+      "**「Notion as code」の中核機能**: 主要な実装ポイント:",
+      "**(1) TypeScript による宣言的定義**: Notion ワークスペースの構造を TypeScript で書く。teamspaces・databases・custom agents・permissions・views 等の全構成要素を型付きコードで表現",
+      "**(2) API デプロイ**: 書いた TypeScript コードを Notion API に送信することで、ワークスペースが「デプロイ」される。同じスクリプトを別ワークスペースで実行すれば同一構成が再現される",
+      "**(3) Git 版管理**: TypeScript ファイルを Git リポジトリで管理することで、ワークスペースの変更履歴・レビュー・ロールバックが可能",
+      "**(4) 環境間再現性**: dev / staging / production の環境間で同一スクリプトを流用。テスト済み構成を別ワークスペース（例: 顧客ごとのテナント）に一括再現",
+      "**(5) Coding Agents 統合**: Claude Code や Cursor に「経費精算 workspace を作って」等の自然言語指示を与えると、agent が TypeScript を書いてデプロイまで実行",
+      "**Terraform / Pulumi / CDK との対比**: Infrastructure as Code の潮流を SaaS に持ち込んだ意義:",
+      "**Terraform（HashiCorp）**: インフラ（AWS・GCP・Azure）を HCL / JSON で定義",
+      "**Pulumi**: インフラを TypeScript / Python / Go 等の一般言語で定義",
+      "**AWS CDK**: TypeScript / Python 等で AWS リソースを定義",
+      "**Notion as code**: **SaaS の内部構造** を TypeScript で定義（新規カテゴリ）",
+      "従来 IaC は「インフラ層」（サーバー・DB・ネットワーク）が対象だったが、Notion as code は「アプリケーション層の設定」（ドキュメント構造・データベーススキーマ・エージェント定義）を対象にする点が新しい。",
+      "**Coding Agents と組み合わせた新パラダイム**: Notion as code は [Claude Code](?a=claude-code)・Cursor・Zed 等の AI 開発ツールとの組み合わせで真価を発揮する。",
+      "**従来の Notion 操作**: (a) UI で手動操作、(b) MCP 経由でエージェントに API 操作させる、(c) ブラウザ操作（[Claude Chrome 拡張](?a=anthropic-claude-chrome-extension-9m-installs-beta-2026) 等）",
+      "**新パラダイム**: **エージェントが Notion 構成をコードで書く**。指示例「顧客の CRM 用に、Contacts データベース・Opportunities データベース・週次レビュー用の agent を含む Sales workspace を作って」→ Claude Code が TypeScript を出力・デプロイ",
+      "この構造は **「AI で SaaS 設定を書く」新カテゴリ** の発生を意味する。従来「AI で SaaS を使う」（読み書きレベル）だったのが、「AI で SaaS を構築する」（メタレベル）に進化。",
+      "**業界インパクト**:",
+      "**(1) SaaS の CI/CD 化**: Notion 構成をコードで管理することで、企業ドキュメント基盤が CI/CD パイプラインの対象になる。「Notion 設定変更 → Pull Request → コードレビュー → デプロイ」の DevOps 化",
+      "**(2) 競合 SaaS の追随圧力**: Confluence（Atlassian）・Airtable・Coda・Linear 等の主要 SaaS が「code-as-config」対応を追随する可能性。特に Airtable は既にスクリプティング機能があり、次のステップは自然",
+      "**(3) 中小企業への標準テンプレート提供**: 「経費精算 workspace」「営業パイプライン workspace」等の標準テンプレートを OSS で公開する開発者コミュニティが形成される可能性。中小企業が「デプロイ1回」で高品質ワークスペースを立ち上げられる",
+      "**(4) [MCP 2026-07-28 spec](?a=mcp-2026-07-28-release-candidate-stateless-core-2026) との相乗**: MCP の Stateless core と組み合わせて、AI エージェントが「Notion as code で構成を書く → MCP 経由で実行する」二段構えの運用が可能に",
+      "**具体的なユースケース**:",
+      "**(a) SaaS スタートアップの新規顧客オンボーディング**: 顧客ごとに「テナント workspace」を1コマンドで生成。カスタマイズも TypeScript の differ でパッチ管理",
+      "**(b) 大企業の部門テンプレート標準化**: 「営業部 workspace テンプレート」を本社が定義、各支社が git clone して自地域向けにカスタマイズ",
+      "**(c) 教育・研修**: 「経営学 MBA コース」等の workspace 構成を OSS 公開、学習者が自分の環境で clone・実行",
+      "**(d) コンサルティング業界のナレッジ資産化**: 顧客提案書・分析テンプレートを code として資産化し、案件ごとにカスタマイズ",
+      "**注意点**:",
+      "**(1) Beta 段階**: 挙動変更・API 破壊的変更の可能性がある。本番運用は正式版確定を待つのが安全",
+      "**(2) TypeScript 学習コスト**: 従来 Notion は「非エンジニアも使える」ツールだったが、as code は TypeScript 知識が必須。ハイブリッド運用（UI 派 + code 派）の組織内調整が必要",
+      "**(3) 権限・アクセス制御**: 誰が as code の script を実行できるかの管理が新たな課題。誤操作でワークスペース全体が破壊されるリスク",
+      "**(4) 既存 workspace の code 化**: 既に運用中の Notion workspace を後から code 化する（reverse engineering）のツール整備は今後の課題",
+      "**AI News の推奨**: **Notion を業務基盤にする企業**は、まず **社内テンプレート化しやすい workspace**（週次レポート・議事録・OKR トラッキング等）で beta 試験導入することを推奨。以下の3ステップが現実的。**(a)** 頻繁に複製している既存 workspace を1つ選定、**(b)** TypeScript で as code スクリプト化して Git 管理、**(c)** Claude Code / Cursor に「この構造を別部門用にカスタマイズして」等の指示で agent 経由の workspace 生成を試験。SaaS スタートアップは、顧客オンボーディングの自動化に本機能が革命的な意味を持つ可能性が高い。"
+    ],
+    "primarySources": [
+      {
+        "title": "Now in beta: Notion as code",
+        "site": "Notion HQ (X)",
+        "url": "https://x.com/NotionHQ/status/2080331924732850687"
+      },
+      {
+        "title": "Notion Developer Platform Agent API Workers 2026",
+        "site": "BuildMVPFast",
+        "url": "https://www.buildmvpfast.com/blog/notion-developer-platform-agent-api-workers-2026"
+      },
+      {
+        "title": "Notion Developer Platform: Workers, Agent APIs, and What It Actually Means",
+        "site": "byteiota",
+        "url": "https://byteiota.com/notion-developer-platform-workers-agent-api-2026/"
+      },
+      {
+        "title": "Notion Release Notes - July 2026",
+        "site": "Releasebot",
+        "url": "https://releasebot.io/updates/notion"
+      }
+    ]
+  },
+  "alibaba-qwen-3-8-preview-waic-shanghai-2-4t-open-weight-2026": {
+    "body": [
+      "**Alibaba** が2026年7月19日、上海で開催された **WAIC（World AI Conference）** で **Qwen 3.8 Preview** を公開した。**2.4兆パラメータの open-weight** モデルで、Moonshot AI の [Kimi K3 (2.8T)](?a=moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026) に続き **中国発の mega-open-weight** が7月に立て続けに登場する形になった。Alibaba は「Claude Fable 5 に次ぐ overall capability」と主張しており、ベンチマーク詳細と GA 日程は今後の発表待ち。同日には DeepSeek V4 が GA に移行するなど、中国 AI 陣営（DeepSeek・Moonshot Kimi・Alibaba Qwen）の同時攻勢が業界の注視を集めている。",
+      "**WAIC 上海での発表内容**: 世界人工知能大会（World AI Conference）は上海で毎年開催される中国最大級の AI カンファレンス。Alibaba は同カンファレンスで発表することで、以下を狙ったと見られる:",
+      "**(1) 中国国内での存在感アピール**: DeepSeek V4 GA と同日投入で「中国 AI 陣営の主導権」を主張",
+      "**(2) 国際的な mega-open-weight プレイヤーとしての地位確立**: Kimi K3 (2.8T) との比較で「Alibaba も同水準」を示す",
+      "**(3) Anthropic Fable 5 への挑戦状**: 「Fable 5 に次ぐ overall capability」の主張は、フロンティアクラスとしての位置付けを訴求",
+      "**Qwen シリーズの系譜**: Qwen 3.8 Preview は以下の系譜:",
+      "**Qwen 3.5**: 2026年3月公開。汎用モデルとして中国国内で広く採用",
+      "**Qwen 3.6**: 5月公開、コード生成強化",
+      "**Qwen 3.7 Coder**: 6月公開、コーディング特化",
+      "**Qwen 3.8 Preview（本件）**: 7月公開、2.4T 汎用フラッグシップ",
+      "**中国 mega-open-weight ラッシュの相関**: 2026年7月の中国 open-weight リリース:",
+      "**(a) Moonshot [Kimi K3](?a=moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026)**: 2.8T MoE、7/16 発表、Modified MIT ライセンス、7/27 open weights",
+      "**(b) Alibaba Qwen 3.8 Preview**: 2.4T、7/19 発表",
+      "**(c) [DeepSeek V4](?a=deepseek-v4-general-availability-dynamic-pricing-2026)**: 7/19-20 GA、peak/off-peak + dynamic pricing",
+      "**(d) Zhipu GLM 5.3**: 2026 年末公開予定",
+      "この4連発は、中国 AI 陣営が「open-weight でフロンティアと同水準」という戦略で米国モデルに対抗する明確な意思表示となっている。",
+      "**Fable 5 との比較主張の意味**: Alibaba は「Fable 5 に次ぐ overall capability」と主張しているが、以下の点で慎重な解釈が必要:",
+      "**(1) 独立ベンチマーク未検証**: Preview 段階でベンチマーク詳細は非公開。Alibaba の主観的評価に留まる",
+      "**(2) ライセンス条件次第で「使える open-weight」かは変わる**: Kimi K3 は Modified MIT、Qwen シリーズは従来 Tongyi Qianwen ライセンス（一部制約あり）。3.8 のライセンスは要確認",
+      "**(3) 「overall capability」の粒度**: 特定ベンチマークで首位を取ることと、実運用の総合品質は別。Kimi K3 のように「agent 系で 6/16 首位」等の具体的な強みが Qwen 3.8 で示されるかが焦点",
+      "**業界インパクト**:",
+      "**(1) [Meta Muse Spark 1.1](?a=meta-muse-spark-1-1-first-paid-model-2026) との対比**: Meta が有料化に舵を切った一方、中国勢は open-weight で攻勢継続。米欧の OSS フロンティアプレイヤーが Mistral・小規模研究組織に限定される中で、中国 open-weight が実質標準化",
+      "**(2) 米国企業のトークン依存度加速**: [中国モデルが米国企業トークンの 46%](?a=feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026) を消費する現状で、Qwen 3.8 追加でその比率がさらに上がる可能性",
+      "**(3) データ主権懸念とのトレードオフ**: 中国モデルは価格・性能で優位だが、API 経由の場合は中国データセンター経由となる。オンプレ展開可能な open-weight であることが、機微データを扱う企業には重要",
+      "**(4) [Google Gemini 3.5 Pro 遅延](?a=feature-google-gemini-3-5-pro-delay-coding-performance-2026) との対照**: Google が Pro を出せずにいる間に、中国勢が矢継ぎ早に mega-open-weight を投入する構図。米国フロンティア企業の相対的な立ち位置が変化",
+      "**注意点**:",
+      "**(1) Preview 段階**: GA 日程・具体的な価格・ライセンス条件は今後発表",
+      "**(2) ベンチマーク公表待ち**: Alibaba 側からの詳細ベンチマーク公開、および独立検証（LMSys Arena・Simon Willison 等）を待つ必要",
+      "**(3) オンプレ運用要件**: 2.4T パラメータの本格運用には数百 GB VRAM の GPU クラスタが必要。API 経由（Alibaba Cloud / DashScope）で試すのが現実的",
+      "**(4) Fable 5 との実タスク比較データ待ち**: SWE-Bench Pro・Terminal Bench・BrowseComp・GPQA Diamond 等の主要 agent 系ベンチでの実データ公開が待望される",
+      "**AI News の推奨**: **中国 open-weight モデルの採用を検討中の企業**は、以下の順序で評価するのが現実的。**(a)** [Kimi K3](?a=moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026) の 7/27 open weights を先行検証（既に MIT で明確）、**(b)** Qwen 3.8 の GA / ベンチマーク公表を待って比較、**(c)** [DeepSeek V4](?a=deepseek-v4-general-availability-dynamic-pricing-2026) の cost 圧倒優位性と併せて用途別に使い分け。中国 AI 三つ巴が確立する秋以降、米国モデル vs 中国モデルの「性能・コスト・ライセンス・データ主権」4軸比較が業界標準の分析フレームになる。"
+    ],
+    "primarySources": [
+      {
+        "title": "DeepSeek and Alibaba launch fresh assaults on frontier AI",
+        "site": "Cybernews",
+        "url": "https://cybernews.com/ai-news/deepseek-and-alibaba-launch-fresh-assaults-on-frontier-ai/"
+      },
+      {
+        "title": "Qwen 3.8 Max Release Date: What We Know So Far",
+        "site": "Emergent",
+        "url": "https://emergent.sh/news/qwen-3-8-max-release-date"
+      },
+      {
+        "title": "Qwen 3.8 Max Preview — Token Plan Guide",
+        "site": "ExplainX",
+        "url": "https://explainx.ai/blog/qwen-3-8-max-preview-open-weight-token-plan-july-2026"
+      }
+    ]
+  },
+  "deepseek-v4-general-availability-dynamic-pricing-2026": {
+    "body": [
+      "**DeepSeek** が2026年7月19-20日、V4 を preview から **General Availability（GA）** に移行した。[7月初旬のアナウンス](?a=deepseek-v4-mid-july-peak-off-peak-api-pricing-2026)で予告されていた **peak / off-peak 料金**（北京時間 9-12時・14-18時が2倍レート、それ以外は据え置き）に加えて、**dynamic pricing**（実時間需要に応じた変動料金）が正式導入された。V4 Flash が cache-miss **$0.14 / 1M**、V4 Pro が **$0.435 / 1M** の基準料金は変わらず、cache-hit は $0.014 / $0.043 と 1/10 に。同日には Alibaba が [Qwen 3.8 Preview](?a=alibaba-qwen-3-8-preview-waic-shanghai-2-4t-open-weight-2026) を WAIC で公開しており、中国 AI 三つ巴（DeepSeek・Moonshot Kimi・Alibaba Qwen）の本格化を象徴する日となった。",
+      "**GA 移行の意義**: preview から GA への移行は以下を意味する:",
+      "**(1) 本番導入解禁**: 検証環境での試験に留まっていた企業が本番導入を進められる",
+      "**(2) SLA 保証**: preview 段階の「best effort」から、GA では稼働率・応答速度の SLA が保証される",
+      "**(3) 契約締結の道筋**: 大企業向けのエンタープライズ契約・請求書決済等のオプションが開ける",
+      "**(4) レート制限緩和**: preview 段階の低いレート制限が、GA では大幅緩和される",
+      "**料金体系の完全公開**: GA と同時に公開された最終料金:",
+      "**V4 Flash**: cache-miss $0.14 / 1M input tokens、cache-hit $0.014 / 1M、output $0.28 / 1M",
+      "**V4 Pro**: cache-miss $0.435 / 1M input tokens、cache-hit $0.043 / 1M、output $0.87 / 1M",
+      "**Cache-hit 比率**: cache-miss の 10% で提供（自動キャッシング、繰り返しコンテキストで大きく効く）",
+      "**Peak 時間**: 北京時間 9:00-12:00 と 14:00-18:00（合計 7時間/日）は2倍レート",
+      "**Off-peak 時間**: 上記以外（17時間/日）は基準料金据え置き",
+      "**Dynamic Pricing の導入**: preview アナウンス時には peak / off-peak の2値だけだったが、GA では **dynamic pricing** が追加され、実時間需要に応じて基準料金の 0.7-1.3倍 の変動が発生する:",
+      "**低負荷時間帯**: 需要が低い時（例: 中国深夜 03:00-06:00）は基準の 0.7倍程度に自動値下げ",
+      "**急激な需要ピーク時**: 例外的需要（バイラルイベント等）で peak 時間帯以外でも一時的な値上げが発生",
+      "**透明性**: API レスポンスヘッダーに現在の乗数が含まれ、開発者が予期しない請求を回避可能",
+      "**業界インパクト**:",
+      "**(1) API 料金設計の再定義**: 「均一料金」が標準だった API 業界に「時間帯 + 動的変動」の新モデルが登場。西側 API プロバイダー（AWS Bedrock・Vertex AI・OpenAI Direct）が追随するかが焦点",
+      "**(2) ワークロード時間シフトの最適化余地**: バッチ処理・レポート生成・大量文書要約等の非対話型ワークロードは、off-peak にキューイングすることで実質コストを半減できる。**日本企業は北京時間 off-peak（早朝・深夜）が日本の勤務時間と重なる時間帯もあり、意識的な時間帯選択で最適化可能**",
+      "**(3) 中国 AI 陣営の価格戦争激化**: [Kimi K3](?a=moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026) が $3 / $15、[Qwen 3.8](?a=alibaba-qwen-3-8-preview-waic-shanghai-2-4t-open-weight-2026) が今後料金公表される中で、DeepSeek V4 の $0.435 / $0.87（Pro）は圧倒的最安。open-weight の Kimi K3 とプロプライエタリ低価格の DeepSeek V4 の使い分けが焦点に",
+      "**(4) データ主権リスクとのトレードオフ**: 圧倒的な価格優位性がある一方、DeepSeek の API は中国国内でホスティングされている前提。機微データを送る場合は自社の準拠法規制との整合性確認が必須",
+      "**具体的なコスト比較**: 1M 入力 + 500K 出力（想定的な agent タスク）の場合:",
+      "**GPT-5.6 Sol**: $5 + $15 = $20 (基準)",
+      "**Claude Fable 5**: $6 + $15 = $21",
+      "**Claude Sonnet 5**: $2 + $5 = $7",
+      "**Kimi K3**: $3 + $7.50 = $10.50",
+      "**DeepSeek V4 Pro (off-peak)**: $0.435 + $0.435 = $0.87",
+      "**DeepSeek V4 Pro (peak)**: $0.87 + $0.87 = $1.74",
+      "**DeepSeek V4 Flash (off-peak)**: $0.14 + $0.14 = $0.28",
+      "DeepSeek V4 Flash off-peak は GPT-5.6 Sol の **1/70** のコスト。品質次第でこの圧倒的な価格差はワークロードシフトを促す。",
+      "**注意点**:",
+      "**(1) Kimi K3 のような agent 特化ベンチとの比較未検証**: DeepSeek V4 の agent 系ベンチマーク（BrowseComp・Terminal Bench 2.1 等）での実データは今後の発表待ち",
+      "**(2) データ主権リスク**: 中国データセンター経由なので、機微データを送る場合は要検討",
+      "**(3) レート制限の実運用値**: GA 移行後の実効的なレート制限値は Enterprise 契約次第で変わる",
+      "**(4) Dynamic pricing の予測困難性**: 変動幅が 0.7-1.3倍なので、月次コスト予算の変動幅が広がる。予算超過を防ぐ支出上限設定が推奨",
+      "**AI News の推奨**: **コスト最適化を最重視する企業・スタートアップ**は、DeepSeek V4 の GA を機に本番投入を検討する価値がある。以下の3ステップが現実的。**(a)** 現在のワークロードを 「対話型（peak 帯必須）」「バッチ型（off-peak OK）」「大量処理（Flash で十分）」に分類、**(b)** データ主権要件との整合性確認（金融・医療・防衛系は除外）、**(c)** cache-hit を意識した [MCP 2026-07-28 spec](?a=mcp-2026-07-28-release-candidate-stateless-core-2026) クライアント経由の運用設計。Kimi K3 open weights（7/27）と組み合わせて、agent 特化タスクは Kimi、コスト最重視バッチは DeepSeek、という使い分けが2026 後半の実運用最適解となる可能性が高い。"
+    ],
+    "primarySources": [
+      {
+        "title": "DeepSeek V4 launches with new pricing model",
+        "site": "Cybernews",
+        "url": "https://cybernews.com/ai-news/deepseek-and-alibaba-launch-fresh-assaults-on-frontier-ai/"
+      },
+      {
+        "title": "AI Updates Today (July 2026) – Latest AI Model Releases",
+        "site": "LLM Stats",
+        "url": "https://llm-stats.com/llm-updates"
+      },
+      {
+        "title": "DeepSeek to launch V4 in mid-July with new peak-time API pricing",
+        "site": "TechNode",
+        "url": "https://technode.com/2026/06/30/deepseek-to-launch-v4-in-mid-july-with-new-peak-time-api-pricing/"
+      }
+    ]
   }
 
 };

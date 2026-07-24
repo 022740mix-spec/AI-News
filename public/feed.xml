@@ -8,6 +8,46 @@
   <updated>2026-07-24T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Notion が「Notion as code」beta を公開 — TypeScript でワークスペース全体を定義、Git で版管理、Claude / Cursor 等 coding agents で構築、API 経由デプロイ</title>
+    <link rel="alternate" type="text/html" href="?a=notion-as-code-typescript-workspace-git-agents-beta-2026"/>
+    <id>tag:ai-tool-news.jp,2026:notion-as-code-typescript-workspace-git-agents-beta-2026</id>
+    <published>2026-07-24T15:00:00Z</published>
+    <updated>2026-07-24T15:00:00Z</updated>
+    <summary>Notion が7月24日、「Notion as code」beta を発表。TypeScript でワークスペース全体（teamspaces / databases / custom agents 等）を定義して API 経由デプロイ、Git で版管理、Claude / Cursor 等 coding agents で構築可能。dev / staging / production の環境間で同一スクリプトを流用、テスト済み構成を別ワークスペースに再現できる。Terraform / Pulumi / CDK と同じ Infrastructure as Code パラダイム を SaaS に持ち込む業界初級の実装。X 投稿は 49万閲覧・2,251 いいねで反響大。</summary>
+  </entry>
+  <entry>
+    <title>Claude Voice Mode が大幅 upgrade — Opus / Sonnet 選択、テキストチャットのモデル継承、Gmail / Slack / Canva connectors 統合、多言語 beta</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-voice-mode-opus-sonnet-connectors-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-voice-mode-opus-sonnet-connectors-2026</id>
+    <published>2026-07-23T15:00:00Z</published>
+    <updated>2026-07-23T15:00:00Z</updated>
+    <summary>Anthropic が7月23日、Claude Voice Mode を大幅アップデート。従来 latency 優先で Haiku 固定 だったところ、Opus / Sonnet / Haiku を選択可能 に。テキストチャットで最後に使ったモデルを継承（デフォルトはそのモデルの高速版）、音声対話中のモデル切替も可能。有料ユーザーは Gmail・Slack・Canva 等の connectors から context を pull でき、多言語対応も beta で拡充。「複雑な問題を音声だけで解決できる」レベルに到達し、OpenAI Advanced Voice Mode との対決本格化。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic「Record a Skill」を Claude Cowork Desktop に投入 — 画面録画1回で workflow を Claude が学習・skill 化、プロンプト工学不要</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-cowork-record-a-skill-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-cowork-record-a-skill-2026</id>
+    <published>2026-07-21T15:00:00Z</published>
+    <updated>2026-07-21T15:00:00Z</updated>
+    <summary>Anthropic が7月21日、Claude Cowork Desktop に 「Record a Skill」 を追加。Pro / Max / Team ユーザーが `+ メニュー` から画面録画を開始 → 実際に業務を実行しながら音声で説明 → Claude が screen activity・mouse clicks・keystrokes・voice を構造化した skill ファイルに変換。以降 Claude が同じ skill を再実行可能で、従来のプロンプト工学・手動ステップ記述が不要になる。ワークスペース内共有 (デフォルト OFF) で「1回の録画が全社の標準プロセス」に化ける設計。Codex のワークフロー自動化と同じ発想 を Anthropic 側から実装。</summary>
+  </entry>
+  <entry>
+    <title>Alibaba が Qwen 3.8 Preview を WAIC 上海で公開 — 2.4T open-weight、Kimi K3 (2.8T) に続く中国 mega-open-weight ラッシュ、Fable 5 に次ぐ性能を主張</title>
+    <link rel="alternate" type="text/html" href="?a=alibaba-qwen-3-8-preview-waic-shanghai-2-4t-open-weight-2026"/>
+    <id>tag:ai-tool-news.jp,2026:alibaba-qwen-3-8-preview-waic-shanghai-2-4t-open-weight-2026</id>
+    <published>2026-07-19T15:00:00Z</published>
+    <updated>2026-07-19T15:00:00Z</updated>
+    <summary>Alibaba が7月19日、上海で開催された WAIC（World AI Conference） で Qwen 3.8 Preview を公開。2.4兆パラメータ open-weight モデルで、Kimi K3 の 2.8T に続き中国発の mega-open-weight が矢継ぎ早に登場する形に。Alibaba は「Claude Fable 5 に次ぐ overall capability」を主張しており、ベンチマーク詳細と GA 日程は今後発表予定。DeepSeek V4 GA と同日投入で、中国 AI 陣営（DeepSeek・Moonshot Kimi・Alibaba Qwen）の同時攻勢が顕著。</summary>
+  </entry>
+  <entry>
+    <title>DeepSeek V4 が GA へ — 7/19-20 に preview から一般公開、peak/off-peak 課金に加え dynamic pricing 導入</title>
+    <link rel="alternate" type="text/html" href="?a=deepseek-v4-general-availability-dynamic-pricing-2026"/>
+    <id>tag:ai-tool-news.jp,2026:deepseek-v4-general-availability-dynamic-pricing-2026</id>
+    <published>2026-07-19T15:00:00Z</published>
+    <updated>2026-07-19T15:00:00Z</updated>
+    <summary>DeepSeek が7月19-20日、V4 を preview から General Availability（GA） に移行した。事前アナウンスの peak / off-peak 料金（北京時間 9-12時・14-18時 が2倍レート）に加えて dynamic pricing（実時間需要に応じた変動料金）が正式導入。V4 Flash $0.14 / 1M、V4 Pro $0.435 / 1M の基準料金は変わらず、cache-hit は $0.014 / $0.043 と 1/10 に。Alibaba Qwen 3.8 Preview の同日投入で、中国 AI 三つ巴（DeepSeek・Kimi・Qwen）が本格化。</summary>
+  </entry>
+  <entry>
     <title>Microsoft が Project Perception を準備中 — Anthropic Mythos 対抗の AI セキュリティ、Microsoft / OpenAI / Anthropic の 3社モデルを動的ルーティング</title>
     <link rel="alternate" type="text/html" href="?a=microsoft-project-perception-ai-security-model-router-2026"/>
     <id>tag:ai-tool-news.jp,2026:microsoft-project-perception-ai-security-model-router-2026</id>
@@ -38,6 +78,14 @@
     <published>2026-07-16T15:00:00Z</published>
     <updated>2026-07-16T15:00:00Z</updated>
     <summary>OpenAI が7月16日、GPT-Red を発表。自己対戦強化学習（self-play RL）で prompt injection 脆弱性を自動発見する内部ツールで、新規安全環境テストで 84% 攻撃成功率（人間 red-teamer 13% の 6.5倍）を達成。GPT-Red と多様な defender LLM を並列訓練し、defender が堅牢になるほど GPT-Red も新規攻撃を発見する競合構造で、既に GPT-5.6 の adversarial training に活用され prompt injection 耐性を大幅に向上させた。Anthropic Constitutional AI・Google DeepMind Sparrow に続く、モデル自身によるモデル安全化ループの実装例。</summary>
+  </entry>
+  <entry>
+    <title>【分析】Google Gemini 3.5 Pro が遅延 — coding 性能が社内目標未達、Alphabet 株 -3%、Anthropic / OpenAI との差の顕在化</title>
+    <link rel="alternate" type="text/html" href="?a=feature-google-gemini-3-5-pro-delay-coding-performance-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-google-gemini-3-5-pro-delay-coding-performance-2026</id>
+    <published>2026-07-16T15:00:00Z</published>
+    <updated>2026-07-16T15:00:00Z</updated>
+    <summary>Sundar Pichai が5月に「6月にリリース」と明言していた Google Gemini 3.5 Pro が、6月・7月と遅延を重ねている。Bloomberg が現・元従業員 10名 から取材した記事によると、社内の coding ベンチマーク で期待水準に届かず、長期複雑推論タスクでも Anthropic / OpenAI に劣後。Alphabet 株は報道翌日 -3%。6月末に訓練データを更新して再訓練したが結果は再び不十分で、Gemini 3.6 Flash（軽量版）は先行テスト中。フロンティアモデル競争で Google が段階的に後塵を拝しつつある構造的な変化の兆候。</summary>
   </entry>
   <entry>
     <title>OpenAI が Codex Micro を発表 — 初のハードウェア製品は Work Louder 共同設計の $230・13スイッチマクロパッド、Agent Keys でエージェント状態表示</title>
