@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { SITE_NAME, SITE_DESCRIPTION, getSiteTodayYmd } from "../data/articleHelpers.js";
 import { LangContext, L } from "../context/LangContext.js";
 import { STORAGE_LOCAL_NOTICE } from "../constants.js";
+import { analyticsEnabled } from "../analytics.js";
 
 function ScrollTopFab({ visible, onClick }) {
   if (!visible) return null;
@@ -138,11 +139,19 @@ function EditorialStatement({ isOpen, onClose }) {
         <h3>{en ? "Privacy & Advertising" : "プライバシーと広告"}</h3>
         <ul>
           {en ? (<>
-            <li><strong>We collect no personal data whatsoever</strong>. No cookies, analytics, or tracking</li>
+            {analyticsEnabled ? (
+              <li><strong>We collect no personally identifiable information</strong>. No cookies and no cross-site tracking. We use <a href="https://www.cloudflare.com/web-analytics/" target="_blank" rel="noopener">Cloudflare Web Analytics</a>, which is cookie-free, to record aggregate figures only: page views, referrers, country, and device type</li>
+            ) : (
+              <li><strong>We collect no personal data whatsoever</strong>. No cookies, analytics, or tracking</li>
+            )}
             <li><strong>We display no advertisements</strong>. The site is completely free</li>
             <li>No affiliate links are used</li>
           </>) : (<>
-            <li><strong>個人情報を一切収集しません</strong>。Cookie、アクセス解析、トラッキングは使用していません</li>
+            {analyticsEnabled ? (
+              <li><strong>個人を特定する情報は収集しません</strong>。Cookie による追跡は行いません。Cookie を使わない <a href="https://www.cloudflare.com/web-analytics/" target="_blank" rel="noopener">Cloudflare Web Analytics</a> により、閲覧数・参照元・国・デバイス種別といった集計値のみを記録しています</li>
+            ) : (
+              <li><strong>個人情報を一切収集しません</strong>。Cookie、アクセス解析、トラッキングは使用していません</li>
+            )}
             <li><strong>広告を一切掲載しません</strong>。完全無料で運営しています</li>
             <li>アフィリエイトリンクは使用していません</li>
           </>)}
