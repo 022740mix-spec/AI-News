@@ -13220,6 +13220,14 @@ const ARTICLES_BODY = {
       "**(4) ARC-AGI-3 の解釈**: 30.2% は次点比 3倍だが絶対値としては低く、「汎用推論が解決した」ことを意味しない",
       "**AI News の推奨**: **既に Claude Opus 4.8 を業務利用している企業**は、料金据え置きのため**即座に切り替え検証を開始する価値が高い**。以下の手順を推奨する。**(a)** 既存ワークロードを Opus 4.8 と Opus 5（effort: medium）で並走させ出力品質を比較、**(b)** タスク種別ごとに最小限で足りる effort レベルを実測して設定を確定、**(c)** high 設定時の実効トークン消費を計測し月次コストを再見積もり。**新規にフロンティアモデルを選定する企業**は、Opus 5（$5/$25・マネージド品質）と [Kimi K3](?a=moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026)（$3/$15・7/27 に open weights）を、データ主権要件とコスト許容度の2軸で比較するのが2026年後半の現実的な判断枠組みとなる。"
     ],
+    "embeds": [
+      {
+        "type": "x",
+        "afterParagraph": 0,
+        "url": "https://x.com/claudeai/status/2080699500943790198",
+        "caption": "Claude 公式アカウントによる Claude Opus 5 の発表ポスト"
+      }
+    ],
     "primarySources": [
       {
         "title": "Introducing Claude Opus 5",
