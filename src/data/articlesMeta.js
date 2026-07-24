@@ -7047,8 +7047,7 @@ export const ARTICLES_META = [
     "coverImage": {
       "src": "articles/cover-editor-ide.svg",
       "alt": "Notion as code beta"
-    },
-    "pinned": true
+    }
   },
   {
     "id": "alibaba-qwen-3-8-preview-waic-shanghai-2-4t-open-weight-2026",
@@ -7094,6 +7093,30 @@ export const ARTICLES_META = [
       "src": "articles/cover-pricing.svg",
       "alt": "DeepSeek V4 GA + dynamic pricing"
     }
+  },
+  {
+    "id": "anthropic-claude-opus-5-frontier-half-price-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Anthropic が Claude Opus 5 を公開 — Fable 5 に迫る性能を半額 ($5/$25) で、effort トグル搭載、Terminal-Bench 2.1 首位・ARC-AGI-3 で 30.2%",
+    "excerpt": "**Anthropic** が2026年7月24日、**Claude Opus 5** を公開した。上位モデル Fable 5 ($10/$50) に迫る性能を **$5 / $25 per 1M tokens**（Opus 4.8 と同料金・Fable 5 の半額）で提供する。Terminal-Bench 2.1 で首位、**ARC-AGI-3 で 30.2%**（次点モデルの約3倍）を記録。新搭載の **effort トグル**（low / medium / high）でタスクごとに「コストか能力か」をユーザーが選べる。Claude.ai / API / Claude Code / Claude Cowork および主要クラウドで即日提供、Claude Max のデフォルトモデルかつ Claude Pro の最上位モデルとなる。",
+    "date": "2026-07-24",
+    "newsDate": "2026-07-24",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Opus 5",
+      "モデル",
+      "料金",
+      "エージェント",
+      "ベンチマーク"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic Claude Opus 5 release"
+    },
+    "pinned": true
   }
-
 ];
