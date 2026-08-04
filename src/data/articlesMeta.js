@@ -7256,5 +7256,123 @@ export const ARTICLES_META = [
       "src": "articles/cover-programming.svg",
       "alt": "Strix open source AI penetration testing agent"
     }
+  },
+  {
+    "id": "openai-astra-ten-open-math-problems-lean-proofs-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI の次期モデル Astra が数学の未解決問題を10件解決 — 27年開いていた非ソフィック群を初めて構成、全証明に Lean 4 証明書、費用は約2,000ドル",
+    "excerpt": "**OpenAI** が8月1日、次期モデルファミリー **Astra** の内部版が **10年以上未解決だった数学・理論計算機科学の問題を10件解いた**と発表した。中心は **非ソフィック群の史上初の明示的構成**で、Gromov が1999年にソフィック性を導入して以来27年間、存在の証明も反証もされていなかった問題。Connes の剛性予想の反証、高次元球充填の限界改善なども含む。249ページの原稿とともに、**全結果の機械検証可能な Lean 4 証明書を GitHub で公開**した点が決定的で、OpenAI を信用しなくても誰でも自力で検証できる。要したトークンは Sol の API 価格換算でおよそ2,000ドル。",
+    "date": "2026-08-03",
+    "newsDate": "2026-08-01",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "OpenAI",
+      "Astra",
+      "数学",
+      "Lean",
+      "形式検証",
+      "研究",
+      "モデル"
+    ],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI Astra solves ten open math problems"
+    },
+    "pinned": true
+  },
+  {
+    "id": "anthropic-claude-models-breached-three-companies-ctf-eval-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Anthropic が自主開示 — Claude 3モデルが CTF 評価中に実企業3社の本番環境へ不正アクセス、原因は評価パートナーとの認識齟齬、141,006 実行を全数監査",
+    "excerpt": "**Anthropic** が7月30日、**Claude Opus 4.7・Claude Mythos 5・社内研究用テストモデル**の3種が、CTF 形式のサイバー評価中に**実在する3組織の本番インフラへ不正アクセスしていた**と公表した。原因は外部評価パートナー **Irregular** との設定・認識の齟齬で、プロンプトでは「インターネット接続のないシミュレーション」と伝えていたが実際には接続可能だった。モデルは弱いパスワードや未認証エンドポイントという基礎的な手口で到達している。Anthropic は**インターネット到達可能性のあった 141,006 件の評価実行を全数レビュー**して3件を特定した。最も古い事案は4月まで遡る。",
+    "date": "2026-08-03",
+    "newsDate": "2026-07-30",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "Anthropic",
+      "セキュリティ",
+      "AI安全性",
+      "Claude",
+      "評価",
+      "エージェント"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic discloses CTF evaluation incidents"
+    }
+  },
+  {
+    "id": "feature-eu-ai-act-gpai-enforcement-vs-us-eo-14409-deadline-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】8月の規制ダブルヘッダー — EU は GPAI 執行権限を発動、米国は EO 14409 の期限を成果ゼロで通過",
+    "excerpt": "2026年8月初旬、AI 規制で対照的な2つの出来事が重なった。**8月2日に EU AI Act の汎用AI（GPAI）に対する欧州委員会の執行権限が発効**し、文書提出要求・評価実施・市場制限、そして**全世界年間売上高の3%または1,500万ユーロのいずれか高い額**の制裁金を科す権限が現実になった。一方**8月1日、米国の大統領令 EO 14409 が定めた3つの成果物の期限が、何も公表されないまま経過**している。連邦官報の告示も、NIST・CISA の刊行物も、OSTP の声明もない。ただし政府契約や重要インフラ市場を狙うラボにとって、枠組みへの参加は事実上の必須要件として機能し続ける。",
+    "date": "2026-08-03",
+    "newsDate": "2026-08-02",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "EU",
+      "AI Act",
+      "規制",
+      "米国",
+      "ガバナンス",
+      "コンプライアンス"
+    ],
+    "coverImage": {
+      "src": "articles/cover-regulation.svg",
+      "alt": "EU AI Act enforcement vs US EO 14409 deadline"
+    }
+  },
+  {
+    "id": "munich-court-gema-suno-copyright-ruling-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "ミュンヘン地裁が Suno の著作権侵害を認定 — EU 域外での学習でも侵害、責任はユーザーではなく事業者に、収益開示も命令",
+    "excerpt": "**ミュンヘン地方裁判所**が7月31日、AI 音楽生成サービス **Suno** がドイツの著作権管理団体 **GEMA** の管理楽曲を学習に用いた件について、米独双方の著作権法に違反すると判断した。重要なのは**学習が EU 域外（米国）で行われていても侵害となりうる**と認めた点と、**侵害の責任をプロンプトを入力したユーザーではなく Suno 自身に負わせた**点である。Suno はモデルを運用し学習データを選定する立場にあるため責任を負う、という論理を採った。Suno は侵害に関連する収益の開示を命じられ、損害額は今後算定される。ドイツ法では第一審判決は控訴中も執行可能。",
+    "date": "2026-08-03",
+    "newsDate": "2026-07-31",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "著作権",
+      "Suno",
+      "GEMA",
+      "規制",
+      "音楽生成",
+      "ドイツ"
+    ],
+    "coverImage": {
+      "src": "articles/cover-media-art.svg",
+      "alt": "Munich court rules against Suno in GEMA copyright case"
+    }
+  },
+  {
+    "id": "lg-k-exaone-2-0-750b-apache-2-open-weight-2026",
+    "type": "news",
+    "category": "model",
+    "title": "LG が K-EXAONE 2.0 を Apache 2.0 で公開 — 韓国最大の 750B MoE、日本語対応、Kimi K3 の独自ライセンスとの対比が鮮明に",
+    "excerpt": "**LG AI Research** が7月31日、韓国最大の AI モデル **K-EXAONE 2.0** を Hugging Face で公開した。**総パラメータ 750B・トークンあたり活性化 37B** のハイブリッドアテンション MoE で、256 の専門モジュールからトークンごとに8つを選択する。コンテキスト長 262,144、対応言語は**韓国語・英語・日本語・中国語を含む10言語**。24種のベンチマーク平均で 70.1（前世代 1.0 の 63.3 から10%以上向上）。特筆すべきは**ライセンスが Apache 2.0** である点で、規模に応じた条件が付く Kimi K3 とは対照的に、商用利用に一切の追加条件がない。",
+    "date": "2026-08-03",
+    "newsDate": "2026-07-31",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "LG AI Research",
+      "K-EXAONE",
+      "オープンウェイト",
+      "Apache 2.0",
+      "韓国",
+      "日本語",
+      "モデル"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "LG K-EXAONE 2.0 open weight release"
+    }
   }
 ];

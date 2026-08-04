@@ -5,8 +5,40 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-07-31T15:00:00Z</updated>
+  <updated>2026-08-04T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>【分析】8月の規制ダブルヘッダー — EU は GPAI 執行権限を発動、米国は EO 14409 の期限を成果ゼロで通過</title>
+    <link rel="alternate" type="text/html" href="?a=feature-eu-ai-act-gpai-enforcement-vs-us-eo-14409-deadline-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-eu-ai-act-gpai-enforcement-vs-us-eo-14409-deadline-2026</id>
+    <published>2026-08-02T15:00:00Z</published>
+    <updated>2026-08-02T15:00:00Z</updated>
+    <summary>2026年8月初旬、AI 規制で対照的な2つの出来事が重なった。8月2日に EU AI Act の汎用AI（GPAI）に対する欧州委員会の執行権限が発効し、文書提出要求・評価実施・市場制限、そして全世界年間売上高の3%または1,500万ユーロのいずれか高い額の制裁金を科す権限が現実になった。一方8月1日、米国の大統領令 EO 14409 が定めた3つの成果物の期限が、何も公表されないまま経過している。連邦官報の告示も、NIST・CISA の刊行物も、OSTP の声明もない。ただし政府契約や重要インフラ市場を狙うラボにとって、枠組みへの参加は事実上の必須要件として機能し続ける。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI の次期モデル Astra が数学の未解決問題を10件解決 — 27年開いていた非ソフィック群を初めて構成、全証明に Lean 4 証明書、費用は約2,000ドル</title>
+    <link rel="alternate" type="text/html" href="?a=openai-astra-ten-open-math-problems-lean-proofs-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-astra-ten-open-math-problems-lean-proofs-2026</id>
+    <published>2026-08-01T15:00:00Z</published>
+    <updated>2026-08-01T15:00:00Z</updated>
+    <summary>OpenAI が8月1日、次期モデルファミリー Astra の内部版が 10年以上未解決だった数学・理論計算機科学の問題を10件解いたと発表した。中心は 非ソフィック群の史上初の明示的構成で、Gromov が1999年にソフィック性を導入して以来27年間、存在の証明も反証もされていなかった問題。Connes の剛性予想の反証、高次元球充填の限界改善なども含む。249ページの原稿とともに、全結果の機械検証可能な Lean 4 証明書を GitHub で公開した点が決定的で、OpenAI を信用しなくても誰でも自力で検証できる。要したトークンは Sol の API 価格換算でおよそ2,000ドル。</summary>
+  </entry>
+  <entry>
+    <title>ミュンヘン地裁が Suno の著作権侵害を認定 — EU 域外での学習でも侵害、責任はユーザーではなく事業者に、収益開示も命令</title>
+    <link rel="alternate" type="text/html" href="?a=munich-court-gema-suno-copyright-ruling-2026"/>
+    <id>tag:ai-tool-news.jp,2026:munich-court-gema-suno-copyright-ruling-2026</id>
+    <published>2026-07-31T15:00:00Z</published>
+    <updated>2026-07-31T15:00:00Z</updated>
+    <summary>ミュンヘン地方裁判所が7月31日、AI 音楽生成サービス Suno がドイツの著作権管理団体 GEMA の管理楽曲を学習に用いた件について、米独双方の著作権法に違反すると判断した。重要なのは学習が EU 域外（米国）で行われていても侵害となりうると認めた点と、侵害の責任をプロンプトを入力したユーザーではなく Suno 自身に負わせた点である。Suno はモデルを運用し学習データを選定する立場にあるため責任を負う、という論理を採った。Suno は侵害に関連する収益の開示を命じられ、損害額は今後算定される。ドイツ法では第一審判決は控訴中も執行可能。</summary>
+  </entry>
+  <entry>
+    <title>LG が K-EXAONE 2.0 を Apache 2.0 で公開 — 韓国最大の 750B MoE、日本語対応、Kimi K3 の独自ライセンスとの対比が鮮明に</title>
+    <link rel="alternate" type="text/html" href="?a=lg-k-exaone-2-0-750b-apache-2-open-weight-2026"/>
+    <id>tag:ai-tool-news.jp,2026:lg-k-exaone-2-0-750b-apache-2-open-weight-2026</id>
+    <published>2026-07-31T15:00:00Z</published>
+    <updated>2026-07-31T15:00:00Z</updated>
+    <summary>LG AI Research が7月31日、韓国最大の AI モデル K-EXAONE 2.0 を Hugging Face で公開した。総パラメータ 750B・トークンあたり活性化 37B のハイブリッドアテンション MoE で、256 の専門モジュールからトークンごとに8つを選択する。コンテキスト長 262,144、対応言語は韓国語・英語・日本語・中国語を含む10言語。24種のベンチマーク平均で 70.1（前世代 1.0 の 63.3 から10%以上向上）。特筆すべきはライセンスが Apache 2.0 である点で、規模に応じた条件が付く Kimi K3 とは対照的に、商用利用に一切の追加条件がない。</summary>
+  </entry>
   <entry>
     <title>OpenAI が GPT-5.6 を値下げ — Luna は 80% 引き下げて $0.20/$1.20、Terra は 20% 引き下げ、投入からわずか3週間</title>
     <link rel="alternate" type="text/html" href="?a=openai-gpt-5-6-luna-terra-price-cut-2026"/>
@@ -22,6 +54,14 @@
     <published>2026-07-30T15:00:00Z</published>
     <updated>2026-07-30T15:00:00Z</updated>
     <summary>Strix（usestrix/strix）は、静的スキャナではなく本物のセキュリティ研究者のように振る舞う OSS の AI ペンテストエージェント。コードを動的に実行して脆弱性を発見し、実際の PoC（概念実証）で検証するため、誤検知が原理的に出にくい。HTTP プロキシによるリクエスト改変、ブラウザ駆動での XSS・CSRF 探索、コマンド検証用ターミナル、独自エクスプロイト開発用の Python 環境を備える。39.4K スター・4K フォーク、週あたり1万スター超の増加ペース。バックエンドは任意の LLM に対応し、Ollama 経由のローカルモデルでも動作するため、機微なコードを外部に出さずに運用できる。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic が自主開示 — Claude 3モデルが CTF 評価中に実企業3社の本番環境へ不正アクセス、原因は評価パートナーとの認識齟齬、141,006 実行を全数監査</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-models-breached-three-companies-ctf-eval-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-models-breached-three-companies-ctf-eval-2026</id>
+    <published>2026-07-30T15:00:00Z</published>
+    <updated>2026-07-30T15:00:00Z</updated>
+    <summary>Anthropic が7月30日、Claude Opus 4.7・Claude Mythos 5・社内研究用テストモデルの3種が、CTF 形式のサイバー評価中に実在する3組織の本番インフラへ不正アクセスしていたと公表した。原因は外部評価パートナー Irregular との設定・認識の齟齬で、プロンプトでは「インターネット接続のないシミュレーション」と伝えていたが実際には接続可能だった。モデルは弱いパスワードや未認証エンドポイントという基礎的な手口で到達している。Anthropic はインターネット到達可能性のあった 141,006 件の評価実行を全数レビューして3件を特定した。最も古い事案は4月まで遡る。</summary>
   </entry>
   <entry>
     <title>【分析】AI 従業員 1,178名が「減速インフラ」の整備を米政府に要請 — OpenAI と Anthropic が会社として支持、Hugging Face 侵入の直後という文脈</title>
