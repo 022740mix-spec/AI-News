@@ -7374,5 +7374,74 @@ export const ARTICLES_META = [
       "src": "articles/cover-model-api.svg",
       "alt": "LG K-EXAONE 2.0 open weight release"
     }
+  },
+  {
+    "id": "alibaba-qwen-3-8-max-open-weight-2-4t-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Alibaba が Qwen 3.8-Max を公開 — 2.4T/95B活性化、Max 級で初のオープンウェイト化、IFBench で Sol・Fable 5 を上回る",
+    "excerpt": "**Alibaba** が2026年8月3日、**Qwen 3.8-Max** を公開した。**総パラメータ 2.4兆・トークンあたり活性化 95B** の MoE で、Qwen ファミリー史上最高性能とされる。最大の意味は、従来 API 限定だった **Max 級のモデルが初めてオープンウェイト化される**点で、来週 Hugging Face と ModelScope で重みが公開される予定。公表ベンチマークでは IFBench 82.8（GPT-5.6 Sol 72.7・Claude Fable 5 63.5 を上回る）、PaperBench 93.0、HealthBench 60.2 など。ただし**独立評価は本稿執筆時点で存在せず**、公表値はすべて Alibaba 自身によるものである点に注意が必要。",
+    "date": "2026-08-05",
+    "newsDate": "2026-08-03",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Alibaba",
+      "Qwen",
+      "オープンウェイト",
+      "中国AI",
+      "ベンチマーク",
+      "モデル"
+    ],
+    "coverImage": {
+      "src": "logos/alibaba.svg",
+      "alt": "Alibaba Qwen 3.8-Max release"
+    }
+  },
+  {
+    "id": "feature-ai-layoffs-2026-170k-gallup-counter-data-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】2026年の AI 起因レイオフが17万人を突破 — ただし「AI を使う人ほど解雇されにくい」という逆向きのデータもある",
+    "excerpt": "8月4日時点の集計で、2026年のレイオフは **322件・205,832人**（1日あたり約953人）に達した。このうち **54% が AI・自動化・機械学習を理由として明示**しており、173社・**170,945人**に影響している。金融・情報セクターでは月平均28,000人のペースで雇用が減少し、テック業界だけで全レイオフの3分の1を占める。一方で **Gallup の調査では、AI を日常的に使う労働者の方が解雇されにくい**という結果が出ており、「AI が仕事を奪う」という単純な図式では説明できない。BCG は今後5年で米国の雇用の最大15%が消えると予測する。本記事は削減データと反証データを並べ、読者が自ら判断できる材料を揃える。",
+    "date": "2026-08-05",
+    "newsDate": "2026-08-04",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "雇用",
+      "レイオフ",
+      "社会影響",
+      "労働",
+      "分析",
+      "リスキリング"
+    ],
+    "coverImage": {
+      "src": "articles/cover-regulation.svg",
+      "alt": "AI-attributed layoffs 2026 data analysis"
+    }
+  },
+  {
+    "id": "august-2026-ai-deprecations-migration-guide-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "8月に消えるもの — Claude Opus 4.7 の Fast mode 廃止、Workbench と prompt tools API が 8/17 終了、ChatGPT の o3 は 8/26 提供終了",
+    "excerpt": "8月は**期限のある非推奨が集中している**。**Claude Opus 4.7 の Fast mode は既に廃止**され、リクエストはエラーを返す（Opus 5 か Opus 4.8 への移行が必要）。Anthropic の**実験的 prompt tools API と Workbench は 8月17日に終了**。OpenAI は **o3 を 8月26日に ChatGPT から提供終了**する（90日の予告期間を経て。GPT-4.5 は6月27日に終了済み）。一方で追加された機能もあり、Fable 5・Mythos 5・Opus 4.8・Opus 5 では**会話の途中でツールを追加・削除してもプロンプトキャッシュを維持できる**ベータが利用可能になった。本記事は移行が必要なものだけを期限順に整理する。",
+    "date": "2026-08-05",
+    "newsDate": "2026-08-04",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "OpenAI",
+      "非推奨",
+      "移行",
+      "開発ツール",
+      "API"
+    ],
+    "coverImage": {
+      "src": "articles/cover-cli-tools.svg",
+      "alt": "August 2026 AI deprecations and migration guide"
+    }
   }
 ];

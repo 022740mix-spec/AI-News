@@ -13824,6 +13824,168 @@ const ARTICLES_BODY = {
         "url": "https://www.thelec.net/news/articleView.html?idxno=12739"
       }
     ]
+  },
+  "alibaba-qwen-3-8-max-open-weight-2-4t-2026": {
+    "body": [
+      "**Alibaba** が2026年8月3日、Qwen ファミリーの最上位となる **Qwen 3.8-Max** を公開した。[7月19日に WAIC 上海で Preview が公開されていた Qwen 3.8](?a=alibaba-qwen-3-8-preview-waic-shanghai-2-4t-open-weight-2026) の正式版にあたる。**総パラメータ 2.4兆・トークンあたり活性化 95B** の Mixture-of-Experts 構成で、同社は Claude Fable 5 と同等かそれを上回るスコアを主張している。ただし後述の通り、**公表されている数値はすべて Alibaba 自身によるもので、独立した評価機関による検証は本稿執筆時点で存在しない**。",
+      "**最大の意味 — Max 級のオープンウェイト化**: 本件で最も構造的に重要なのは性能そのものではなく、配布形態の変更である。Qwen シリーズはこれまで、下位・中位のモデルはオープンウェイトで公開する一方、**最上位の「Max」級は API 限定**で提供してきた。今回、Max 級として初めて重みが公開されることになる。",
+      "**現時点**: QwenCloud 経由の API で利用可能",
+      "**来週予定**: **Hugging Face および ModelScope で重みを公開**",
+      "これが実現すれば、[Kimi K3（2.8T）](?a=moonshot-kimi-k3-open-weights-license-2026)、[K-EXAONE 2.0（750B）](?a=lg-k-exaone-2-0-750b-apache-2-open-weight-2026) に続き、フロンティア級のオープンウェイトモデルがまた一つ増えることになる。",
+      "**アーキテクチャと仕様**:",
+      "**総パラメータ**: 2.4兆（2.4T）",
+      "**トークンあたり活性化**: 950億（95B）",
+      "**構成**: Mixture-of-Experts",
+      "**提供**: QwenCloud（API）、来週 Hugging Face / ModelScope（重み）",
+      "活性化が 95B にとどまるため、総パラメータ 2.4T という規模から想像されるほど推論コストは高くない。Kimi K3 の 104B 活性化と近い水準で、応答速度と運用コストを抑える設計思想は共通している。",
+      "**公表ベンチマーク**: Alibaba が示した主要スコアは以下の通り。",
+      "**IFBench 82.8**: 指示追従の評価。GPT-5.6 Sol の 72.7、Claude Fable 5 の 63.5 を大きく上回る",
+      "**PaperBench 93.0**: 論文理解・再現の評価。GPT-5.6 Sol と Claude Opus 4.8 を上回る",
+      "**HealthBench 60.2**: 医療領域",
+      "**PLawBench 73.2**: 法務領域",
+      "**PRBench-Finance 58.3**: 金融領域",
+      "医療・法務・金融という**専門領域のベンチマークで首位を主張している**点が特徴的で、汎用性能よりも業種特化の実務的な適用を意識した訴求になっている。",
+      "**独立評価の不在という重要な留保**: 上記のスコアはすべて Alibaba の公表値である。2026年8月3日時点で、**Artificial Analysis もコミュニティの leaderboard も Qwen 3.8-Max を採点していない**。ベンチマークの自己申告値は、以下の理由で慎重に扱う必要がある。",
+      "**(1) 測定条件の非対称性**: 自社モデルは最適な設定で、比較対象は既定設定で測る、といった条件差が生じうる",
+      "**(2) ベンチマークの選択**: 有利な項目を選んで公表する余地がある。実際、SWE-Bench や Terminal-Bench といった [agent 系の主要ベンチマーク](?a=moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026)のスコアは今回公表されていない",
+      "**(3) 汚染の可能性**: 学習データにベンチマークの内容が混入していないかは、外部からは検証できない。[SpaceXAI が CursorBench のスコア汚染を自己申告した事例](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)もある",
+      "重みが公開されれば第三者による検証が可能になるため、**来週の重み公開後に独立評価が出そろってから判断する**のが妥当である。",
+      "**ライセンスという未確定要素**: 実務上、性能と並んで重要なのがライセンス条件だが、Qwen 3.8-Max の重み公開時の条件は本稿執筆時点で未公表である。2026年7月以降に公開された大型オープンウェイトモデルの条件は分かれている。",
+      "**[K-EXAONE 2.0（LG）](?a=lg-k-exaone-2-0-750b-apache-2-open-weight-2026)**: Apache 2.0。規模・用途による追加条件なし",
+      "**[Kimi K3（Moonshot）](?a=moonshot-kimi-k3-open-weights-license-2026)**: 独自ライセンス。MaaS 事業者の収益基準と大規模サービスへの表示義務あり",
+      "**Qwen シリーズ（従来）**: Tongyi Qianwen 系ライセンス。一部に制約あり",
+      "**Qwen 3.8-Max**: **未公表**",
+      "従来の Qwen シリーズが Tongyi Qianwen ライセンスを採用してきた経緯から、Max 級でも同系統の条件になる可能性はあるが、Kimi K3 が K2 系の Modified MIT から独自ライセンスへ変更した前例もあり、**予断は禁物**である。",
+      "**業界へのインパクト**:",
+      "**(1) 中国勢の Max 級オープン化競争**: Moonshot が Kimi K3 で最上位モデルの重みを公開し、Alibaba も Max 級で追随する形になった。**最上位を API に囲い込む戦略が中国勢の間で崩れつつある**",
+      "**(2) 米国勢との配布戦略の乖離**: [OpenAI](?a=openai-gpt-5-6-luna-terra-price-cut-2026) と [Anthropic](?a=anthropic-claude-opus-5-frontier-half-price-2026) は最上位モデルを API 専有としており、価格引き下げで対抗している。「開くか、安くするか」という二つの戦略が並走している",
+      "**(3) 専門領域ベンチマークの重視**: 医療・法務・金融のスコアを前面に出す訴求は、汎用性能の差が縮まる中での差別化軸の変化を示している",
+      "**注意点**:",
+      "**(1) 重み公開は「来週予定」**: 現時点では API のみ。予定が変更される可能性はある",
+      "**(2) ライセンス未確定**: 商用利用の可否は条件次第。重み公開時に必ず原文を確認すべき",
+      "**(3) 運用リソース**: 2.4T の重みを扱うには大規模な GPU クラスタが必要。活性化 95B とはいえ、重み全体をメモリに載せる必要がある",
+      "**(4) データ主権**: API 利用時は中国のインフラを経由する前提。機微データの取り扱いは自社の規制要件との照合が必要",
+      "**AI News の推奨**: 現時点で本番導入を判断する材料は揃っていない。**(a)** 来週の重み公開を待ち、ライセンス条件を確認する。**(b)** Artificial Analysis や LMArena などの独立評価が出てから、公表値との乖離を確認する。**(c)** 医療・法務・金融の領域で使う予定がある場合は、公表された専門ベンチマークのスコアを自社の実データで再現できるか検証する。急いで飛びつくより、**独立評価とライセンスの2点が確定してから比較検討に入る**のが合理的である。オンプレでのフロンティア級モデル運用を検討している組織にとっては、Kimi K3・K-EXAONE 2.0 に続く第3の選択肢として、秋以降の比較対象になる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Alibaba Qwen Releases Qwen3.8-Max: A 2.4 Trillion Parameter MoE Model",
+        "site": "MarkTechPost",
+        "url": "https://www.marktechpost.com/2026/08/03/alibaba-qwen-releases-qwen3-8-max/"
+      },
+      {
+        "title": "Alibaba's Qwen3.8-Max AI Model Claims Benchmark Scores Rivaling Anthropic",
+        "site": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-08-03/alibaba-drops-another-china-ai-model-with-breakthrough-performance"
+      },
+      {
+        "title": "Alibaba releases Qwen3.8-Max, challenging GPT-5.6 Sol and Claude Fable 5 on AI benchmarks",
+        "site": "Neowin",
+        "url": "https://www.neowin.net/news/alibaba-releases-qwen38-max-challenging-gpt-56-sol-and-claude-fable-5-on-ai-benchmarks/"
+      }
+    ]
+  },
+  "feature-ai-layoffs-2026-170k-gallup-counter-data-2026": {
+    "body": [
+      "2026年8月4日時点の集計で、年初からのレイオフは **322件・205,832人**、1日あたり約953人のペースに達した。そのうち **54%** が AI・自動化・機械学習を削減理由として明示しており、**173社・170,945人**が該当する。AI が雇用に与える影響が統計として可視化されつつある一方で、同じ時期に**逆向きの結果を示す調査**も出ている。本記事は、双方のデータを並べて整理する。",
+      "**削減側のデータ**: まず、AI を理由とする雇用削減の規模を確認する。",
+      "**2026年のレイオフ総数**: 322件・205,832人（8月4日時点）",
+      "**AI を理由として明示**: 全体の 54%、173社・170,945人",
+      "**1日あたり平均**: 約953人",
+      "**5月単月**: 発表された削減の約 40% が AI を主因として挙げた",
+      "**1〜5月の累計**: AI に帰属する削減が 87,714人",
+      "**金融・情報セクター**: AI 導入が最も速い領域で、月平均 28,000人のペースで雇用が減少",
+      "**テック業界**: 2026年の全レイオフの3分の1を占める",
+      "**BCG の予測**: 今後5年で米国の雇用の最大 15% が消失",
+      "**逆向きのデータ — Gallup 調査**: 一方で Gallup の調査は、**AI を日常的に使う労働者の方が、使わない労働者よりも解雇される可能性が低い**という結果を示している。これは「AI が人間の仕事を置き換える」という一方向の理解では説明できない。少なくとも現時点では、**AI の存在そのものより、AI を使えるかどうかが個人の雇用を左右している**可能性を示唆する。",
+      "**この2つのデータは矛盾しない**: 一見すると相反するが、両立しうる。企業が AI 導入を理由に人員を削減する一方で、その削減対象が「AI を使いこなせていない層」に偏っているとすれば、双方のデータは同じ現象の別の側面を見ていることになる。ただし Gallup のデータは相関を示すものであり、**因果関係を証明するものではない**点に注意が必要である。AI を使う人が元々スキルの高い層に偏っている、という説明も同じデータで成立する。",
+      "**影響を受ける職種と、需要が伸びている職種**: 削減の対象と、逆に需要が強い領域は明確に分かれている。",
+      "**リスクが高いとされる職種**: プログラマー、カスタマーサービス担当、データ入力、コンテンツライター、マーケティング職",
+      "**需要が強い職種**: 機械学習インフラ、AI 安全性、応用研究、医療、技能職（skilled trades）",
+      "注目すべきは、**プログラマーがリスク側に、機械学習インフラが需要側に**分類されている点である。同じソフトウェア領域の中で、AI に代替されやすい層と、AI を支える基盤を作る層に分岐が起きている。医療と技能職が需要側にあるのは、物理的な作業や対人判断を伴う職種が現時点の AI では代替しにくいためと考えられる。",
+      "**数字の読み方に関する留保**: この種の統計を扱う際には、以下の点を踏まえる必要がある。",
+      "**(1) 「AI が理由」は企業側の自己申告**: 削減理由として AI を挙げることは、業績悪化や過剰採用の修正といった説明よりも、投資家に対して前向きに受け取られやすい。**実態より過大に計上されている可能性**がある",
+      "**(2) 逆に過小計上の可能性もある**: 採用を止める形での調整（欠員不補充）はレイオフ統計に現れない。特に新卒・エントリー層の採用抑制は数字に出にくい",
+      "**(3) 米国中心のデータ**: 上記は主に米国の統計であり、解雇規制の異なる日本にそのまま当てはまらない",
+      "**(4) 予測は予測でしかない**: BCG の「5年で最大15%」は前提条件に依存するシナリオであり、確定した見通しではない",
+      "**日本の状況との違い**: 日本は解雇規制が厳しく、米国型の大規模レイオフは起きにくい構造にある。そのため影響は**配置転換・採用抑制・非正規雇用の調整**という形で現れやすく、統計上は見えにくい。一方で、AI 導入による業務量の変化そのものは日本企業にも同様に起きるため、**「解雇されないが、仕事の中身が変わる」**という形の影響が中心になると考えられる。この点で、米国のレイオフ統計を日本の文脈にそのまま持ち込むのは適切でない。",
+      "**関連する政策動向との接続**: 雇用への影響は、規制側の議論とも連動している。[7月28日に1,178名の AI 従業員が署名した書簡](?a=feature-pacing-the-frontier-1178-ai-employees-letter-2026)は「AI が人間の監督速度を追い越す可能性」を論拠としていたが、雇用の議論はより直接的に、**技術の進展速度と社会の適応速度のずれ**を扱っている。[8月2日に発効した EU AI Act の執行権限](?a=feature-eu-ai-act-gpai-enforcement-vs-us-eo-14409-deadline-2026)は雇用そのものを直接規制するものではないが、AI システムの透明性を高めることで、どの業務がどう自動化されているかの可視性は上がる方向に働く。",
+      "**AI News の見方**: 現時点のデータから確実に言えるのは、**AI を理由とする雇用削減が実際に大規模に起きている**ことと、**AI を使える個人の相対的な立場は悪化していない**ことの2点である。この2つを同時に踏まえないと、実務的な判断を誤る。「AI が仕事を奪うから規制すべき」という結論にも、「AI を使えば安泰」という結論にも、現時点のデータは十分な根拠を与えていない。**個人にとっての合理的な対応は、自分の職種が代替されやすい側にあるかを見極め、AI を道具として使う側に回る努力をすること**であり、これは Gallup のデータが支持する範囲での結論である。企業にとっては、AI 導入を人員削減の手段としてのみ捉えるか、既存の人員の生産性向上として捉えるかで、中期的な組織能力に差が出る可能性がある。AI News は、日本国内の統計が整備され次第、日米の比較を継続して追跡する。"
+    ],
+    "primarySources": [
+      {
+        "title": "Gallup data finds non-AI users more likely to face layoffs in 2026",
+        "site": "Fox Business",
+        "url": "https://www.foxbusiness.com/economy/ai-adoption-job-security"
+      },
+      {
+        "title": "'AI is now the leading reason companies give for cutting jobs,' says new report",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/06/05/ai-is-now-the-leading-reason-companies-give-for-cutting-jobs-says-new-report-what-that-means-for-workers.html"
+      },
+      {
+        "title": "AI job cuts are rising, but experts say layoffs are only part of the story",
+        "site": "CBS News",
+        "url": "https://www.cbsnews.com/news/ai-layoffs-hiring-entry-level-workers/"
+      },
+      {
+        "title": "AI's Impact: Tech and Finance Sectors Losing 28,000 Jobs Monthly",
+        "site": "Claims Journal",
+        "url": "https://www.claimsjournal.com/news/national/2026/07/06/338604.htm"
+      },
+      {
+        "title": "2026 Tech Layoffs Tracker",
+        "site": "SkillSyncer",
+        "url": "https://skillsyncer.com/layoffs-tracker"
+      }
+    ]
+  },
+  "august-2026-ai-deprecations-migration-guide-2026": {
+    "body": [
+      "2026年8月は、主要な AI プラットフォームで**期限のある非推奨が集中している**。個々の変更は小さいが、期限を過ぎると動作しなくなるものが含まれるため、該当する構成を使っている場合は対応が必要になる。本記事は、移行が必要なものだけを期限順に整理する。",
+      "**既に廃止済み — Claude Opus 4.7 の Fast mode**: **Claude Opus 4.7 の Fast mode は既に廃止**されており、該当するリクエストは**エラーを返す**。モデル自体は標準速度で引き続き利用できるため、Fast mode を指定していない限り影響はない。Fast mode を使い続ける場合は、[Claude Opus 5](?a=anthropic-claude-opus-5-frontier-half-price-2026) または Claude Opus 4.8 への移行が必要になる。",
+      "**影響を受ける構成**: Opus 4.7 に対して Fast mode を明示的に指定しているアプリケーション",
+      "**対応**: モデル ID を Opus 5 または Opus 4.8 に変更する。Opus 5 は Opus 4.8 と同一料金（$5 / $25）のため、コスト面での追加負担はない",
+      "**8月17日 — Anthropic の Workbench と実験的 prompt tools API**: Anthropic の **Workbench** および**実験的な prompt tools API** が8月17日に提供終了となる。プロンプトの生成・改善・テンプレート化を支援していた実験的機能群で、正式版ではなかったものが整理される形である。",
+      "**影響を受ける構成**: Workbench 上でプロンプトを管理・検証していたワークフロー、prompt tools API を呼び出しているスクリプト",
+      "**対応**: Claude Console への移行。プロンプトをコードやリポジトリ側で管理する運用に切り替える",
+      "**8月26日 — ChatGPT の o3 提供終了**: OpenAI は **o3 を8月26日に ChatGPT から提供終了**する。90日間の予告期間を経ての実施で、同様の措置として **GPT-4.5 は既に6月27日に終了**している（こちらは30日間の予告期間だった）。",
+      "**影響を受ける構成**: ChatGPT 上で o3 を指定して使っているユーザー、o3 を前提とした業務手順",
+      "**対応**: [GPT-5.6 系](?a=openai-gpt-5-6-general-availability-july-9-2026)への移行。[7月30日に Luna と Terra が値下げされている](?a=openai-gpt-5-6-luna-terra-price-cut-2026)ため、用途によっては従来よりコストが下がる可能性がある",
+      "**期限の一覧**: 対応の優先順位をつけるための整理。",
+      "**Claude Opus 4.7 Fast mode**: 廃止済み → Opus 5 / Opus 4.8",
+      "**Anthropic Workbench + prompt tools API**: 8月17日 → Claude Console",
+      "**ChatGPT の o3**: 8月26日 → GPT-5.6 系",
+      "**ChatGPT の GPT-4.5**: 6月27日に終了済み → GPT-5.6 系",
+      "**同時期に追加された機能**: 非推奨と並行して、実務上有用な機能追加もある。",
+      "**(1) 会話途中でのツール変更（ベータ）**: Claude Fable 5・Mythos 5・Opus 4.8・Opus 5 で、**ターンの途中でツールを追加・削除してもプロンプトキャッシュを維持できる**ようになった。従来はツール定義を変更するとキャッシュが無効化され、長い会話でコストが跳ね上がる問題があった。エージェント運用で動的にツールを切り替える構成では、コスト面の改善幅が大きい",
+      "**(2) fallbacks パラメータの \"default\" モード**: 拒否のカテゴリに応じて Anthropic 推奨のフォールバックモデルを自動適用する設定。`server-side-fallback-2026-07-01` ヘッダを付けることでベータ利用が可能",
+      "**(3) Claude Code の更新**: VSCode の Focus ビュー追加、サンドボックスの認証情報マスキング改善、プラグイン・MCP・権限処理の強化、auto モードと Windows 起動の改善",
+      "**なぜ非推奨をまとめて追う必要があるか**: 個々のリリースノートは各社のドキュメントに散在しており、日常的に追いかけるのは負担が大きい。しかし**期限を過ぎてから気づくと、本番環境が停止する**種類の変更が含まれている。特に Fast mode の廃止のように「エラーを返す」形の変更は、エラーハンドリングの実装次第で障害として顕在化する。四半期に一度でも、利用中のモデル ID と API パラメータを棚卸しする運用を持っておくと、この種の事故は避けやすい。",
+      "**AI News の推奨**: **8月17日と8月26日の2つの期限**について、該当する構成があるかを今週中に確認することを推奨する。**(a)** コードベースを `opus-4-7` や `o3` といったモデル ID で検索し、ハードコードされている箇所を洗い出す。**(b)** Workbench を業務フローに組み込んでいるチームがあれば、8月17日までに代替手段へ移行する。**(c)** 移行のついでに、会話途中でのツール変更ベータが自社のエージェント構成に効くかを検証する価値がある。キャッシュ維持の効果は、ツールを動的に切り替える構成ほど大きくなる。**該当がなければ対応は不要**であり、この記事の目的は「確認して、なければ何もしない」と判断できる状態を作ることにある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Platform release notes",
+        "site": "Anthropic",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Anthropic Release Notes - August 2026",
+        "site": "Releasebot",
+        "url": "https://releasebot.io/updates/anthropic"
+      },
+      {
+        "title": "Claude Code Updates by Anthropic - August 2026",
+        "site": "Releasebot",
+        "url": "https://releasebot.io/updates/anthropic/claude-code"
+      },
+      {
+        "title": "LLM/AI Changelog — ChatGPT, Gemini, Perplexity & Copilot Release Notes",
+        "site": "reconnAI",
+        "url": "https://reconn-ai.com/llm-changelog.php"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;

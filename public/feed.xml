@@ -5,8 +5,32 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-08-04T15:00:00Z</updated>
+  <updated>2026-08-07T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>【分析】2026年の AI 起因レイオフが17万人を突破 — ただし「AI を使う人ほど解雇されにくい」という逆向きのデータもある</title>
+    <link rel="alternate" type="text/html" href="?a=feature-ai-layoffs-2026-170k-gallup-counter-data-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-ai-layoffs-2026-170k-gallup-counter-data-2026</id>
+    <published>2026-08-04T15:00:00Z</published>
+    <updated>2026-08-04T15:00:00Z</updated>
+    <summary>8月4日時点の集計で、2026年のレイオフは 322件・205,832人（1日あたり約953人）に達した。このうち 54% が AI・自動化・機械学習を理由として明示しており、173社・170,945人に影響している。金融・情報セクターでは月平均28,000人のペースで雇用が減少し、テック業界だけで全レイオフの3分の1を占める。一方で Gallup の調査では、AI を日常的に使う労働者の方が解雇されにくいという結果が出ており、「AI が仕事を奪う」という単純な図式では説明できない。BCG は今後5年で米国の雇用の最大15%が消えると予測する。本記事は削減データと反証データを並べ、読者が自ら判断できる材料を揃える。</summary>
+  </entry>
+  <entry>
+    <title>8月に消えるもの — Claude Opus 4.7 の Fast mode 廃止、Workbench と prompt tools API が 8/17 終了、ChatGPT の o3 は 8/26 提供終了</title>
+    <link rel="alternate" type="text/html" href="?a=august-2026-ai-deprecations-migration-guide-2026"/>
+    <id>tag:ai-tool-news.jp,2026:august-2026-ai-deprecations-migration-guide-2026</id>
+    <published>2026-08-04T15:00:00Z</published>
+    <updated>2026-08-04T15:00:00Z</updated>
+    <summary>8月は期限のある非推奨が集中している。Claude Opus 4.7 の Fast mode は既に廃止され、リクエストはエラーを返す（Opus 5 か Opus 4.8 への移行が必要）。Anthropic の実験的 prompt tools API と Workbench は 8月17日に終了。OpenAI は o3 を 8月26日に ChatGPT から提供終了する（90日の予告期間を経て。GPT-4.5 は6月27日に終了済み）。一方で追加された機能もあり、Fable 5・Mythos 5・Opus 4.8・Opus 5 では会話の途中でツールを追加・削除してもプロンプトキャッシュを維持できるベータが利用可能になった。本記事は移行が必要なものだけを期限順に整理する。</summary>
+  </entry>
+  <entry>
+    <title>Alibaba が Qwen 3.8-Max を公開 — 2.4T/95B活性化、Max 級で初のオープンウェイト化、IFBench で Sol・Fable 5 を上回る</title>
+    <link rel="alternate" type="text/html" href="?a=alibaba-qwen-3-8-max-open-weight-2-4t-2026"/>
+    <id>tag:ai-tool-news.jp,2026:alibaba-qwen-3-8-max-open-weight-2-4t-2026</id>
+    <published>2026-08-03T15:00:00Z</published>
+    <updated>2026-08-03T15:00:00Z</updated>
+    <summary>Alibaba が2026年8月3日、Qwen 3.8-Max を公開した。総パラメータ 2.4兆・トークンあたり活性化 95B の MoE で、Qwen ファミリー史上最高性能とされる。最大の意味は、従来 API 限定だった Max 級のモデルが初めてオープンウェイト化される点で、来週 Hugging Face と ModelScope で重みが公開される予定。公表ベンチマークでは IFBench 82.8（GPT-5.6 Sol 72.7・Claude Fable 5 63.5 を上回る）、PaperBench 93.0、HealthBench 60.2 など。ただし独立評価は本稿執筆時点で存在せず、公表値はすべて Alibaba 自身によるものである点に注意が必要。</summary>
+  </entry>
   <entry>
     <title>【分析】8月の規制ダブルヘッダー — EU は GPAI 執行権限を発動、米国は EO 14409 の期限を成果ゼロで通過</title>
     <link rel="alternate" type="text/html" href="?a=feature-eu-ai-act-gpai-enforcement-vs-us-eo-14409-deadline-2026"/>
