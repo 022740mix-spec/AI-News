@@ -1656,20 +1656,20 @@
     <summary>API に月額数万円を払うのがもったいないからローカルで動かしたい。その判断は正しいのか。7B〜70B モデルの必要スペック、Ollama / llama.cpp / vLLM の使い分け、API との損益分岐点、そして Opus 4.6 クラスがローカルで動かない物理的な理由を解説する。</summary>
   </entry>
   <entry>
-    <title>AI エディタ横断比較 — Cursor・Windsurf・VS Code+Copilot（2026年3月版）</title>
+    <title>AI エディタ横断比較 — Cursor・Devin Desktop（旧 Windsurf）・VS Code+Copilot・Zed</title>
     <link rel="alternate" type="text/html" href="?a=editor-comparison-2026-march"/>
     <id>tag:ai-tool-news.jp,2026:editor-comparison-2026-march</id>
     <published>2026-03-29T15:00:00Z</published>
     <updated>2026-03-29T15:00:00Z</updated>
-    <summary>AI エディタ三大勢力を、機能・料金・エージェント能力・拡張性の軸で横並びに比較した。Cursor/Windsurf の経営統合後の現状も含め、エディタ選びの判断材料を整理する。</summary>
+    <summary>AI エディタ4製品を、機能・料金・エージェント能力・拡張性の軸で横並びに比較した。毎月見直している記事で、最終更新は2026年8月11日。Windsurf の Devin Desktop へのブランド統合、SpaceX による Cursor 買収の発表、GitHub Copilot の従量課金移行を反映し、比較対象に Zed を加えた。</summary>
   </entry>
   <entry>
-    <title>AI 開発ツール料金プラン横断比較 — CLI・エディタ・API 全8ツール（2026年3月版）</title>
+    <title>AI 開発ツール料金プラン横断比較 — CLI・エディタ・モデル API</title>
     <link rel="alternate" type="text/html" href="?a=pricing-comparison-all-tools-2026-march"/>
     <id>tag:ai-tool-news.jp,2026:pricing-comparison-all-tools-2026-march</id>
     <published>2026-03-29T15:00:00Z</published>
     <updated>2026-03-29T15:00:00Z</updated>
-    <summary>Claude Code、Cursor、Windsurf、Codex、Gemini CLI、Copilot、Aider、Zed AI の料金体系を一覧で比較。無料枠・Pro・Enterprise まで、公式発表ベースで整理した。</summary>
+    <summary>Claude Code、Cursor、Devin Desktop（旧 Windsurf）、Codex、Gemini CLI、Copilot、Aider、Zed の料金体系を一覧で比較。無料枠から Enterprise まで公式発表ベースで整理し、主要モデルの API 単価も併記した。毎月見直している記事で、最終更新は2026年8月11日。定額から「定額＋クレジット枠＋従量」への移行が業界的な流れになっている。</summary>
   </entry>
   <entry>
     <title>用途別おすすめツール — 「何を使えばいいか」に答える（2026年3月版）</title>
@@ -1904,12 +1904,12 @@
     <summary>AIと対話しながらコードを書く「バイブコーディング」を始めるなら、どのツールを選ぶか。入門から上級まで、レベル別・目的別の推奨パスを整理した。</summary>
   </entry>
   <entry>
-    <title>CLI コーディングツール横断比較 — Claude Code・Codex・Gemini CLI・Aider・Copilot（2026年3月版）</title>
+    <title>CLI コーディングツール横断比較 — Claude Code・Codex・Gemini CLI・Aider・Copilot CLI・Cursor CLI</title>
     <link rel="alternate" type="text/html" href="?a=cli-tools-comparison-2026-march"/>
     <id>tag:ai-tool-news.jp,2026:cli-tools-comparison-2026-march</id>
     <published>2026-03-28T15:00:00Z</published>
     <updated>2026-03-28T15:00:00Z</updated>
-    <summary>主要5つの CLI コーディングツールを、機能・料金・モデル・権限制御の軸で横並びに比較した。バイブコーディングの「ターミナル層」を選ぶ際の参考に。</summary>
+    <summary>主要6つの CLI コーディングツールを、機能・料金・モデル・権限制御の軸で横並びに比較した。バイブコーディングの「ターミナル層」を選ぶ際の参考に。毎月見直している記事で、最終更新は2026年8月11日。Codex の提供範囲が Free / Go / Plus まで広がった点、Copilot が従量課金へ移行した点など、料金体系の変化を反映した。</summary>
   </entry>
   <entry>
     <title>AI 規制・訴訟の動き — 2026年 Q1 の主要トピック</title>
@@ -2286,14 +2286,6 @@
     <published>2026-03-22T15:00:00Z</published>
     <updated>2026-03-22T15:00:00Z</updated>
     <summary>動画生成AIの先駆者。Gen-5で物理シミュレーション精度が大幅向上。最長40秒の高品質動画を生成。ハリウッドのプロダクションでも採用実績。$12/月〜。</summary>
-  </entry>
-  <entry>
-    <title>Cursor、Windsurf（Codeium）を買収完了 — AIエディタ市場の統合が加速</title>
-    <link rel="alternate" type="text/html" href="?a=cursor-windsurf-merge"/>
-    <id>tag:ai-tool-news.jp,2026:cursor-windsurf-merge</id>
-    <published>2026-03-20T15:00:00Z</published>
-    <updated>2026-03-20T15:00:00Z</updated>
-    <summary>Anysphere社がCodeium社のWindsurfを買収。Cascadeフロー技術をCursorに統合予定。AIエディタ市場の寡占化が進む。</summary>
   </entry>
   <entry>
     <title>Midjourney V8 レビュー — 画像生成の王者、ついにWeb版とAPIを正式公開</title>

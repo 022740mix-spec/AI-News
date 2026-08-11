@@ -5982,21 +5982,28 @@ const ARTICLES_BODY = {
   },
   "cli-tools-comparison-2026-march": {
     "body": [
-      "ターミナルから AI にコードを書かせる CLI ツールは、2026年に入って急速に選択肢が広がった。**Claude Code**（Anthropic）、**Codex**（OpenAI）、**Gemini CLI**（Google）、**Aider**（OSS）、**GitHub Copilot CLI** の5つが主要な候補になる。それぞれ設計思想が異なるため、単純な優劣ではなく用途との相性で選ぶ。",
-      "Claude Code はローカルのファイルシステムに直接アクセスし、Bash 実行・MCP サーバ連携・スキルファイルによるカスタマイズが可能。Auto モードを使えば権限確認を減らせるが、==本番リポジトリでは --dangerously-skip-permissions を避ける==。Codex はクラウドサンドボックス上で動作し、複数タスクの並列実行に強い。ローカルファイルへの直接書き込みはない代わりに、PR 単位のワークフローに向く。",
-      "Gemini CLI は 200 万トークンのコンテキストが特徴で、大規模コードベースの一括読み込みに向く。ただし無料枠の縮小が進んでおり、本格利用には API 課金が前提になりつつある。Aider は完全 OSS で、Claude・GPT・Gemini・ローカルモデルを切り替えられる柔軟さが強み。Git との統合が深く、変更を自動コミットする設計。",
-      "Copilot CLI は GitHub のエコシステムとの統合が最大の特徴。Enterprise プランなら SSO・監査ログ・IP 補償が付き、組織導入のハードルが低い。Agent Mode の進化で自律的なタスク遂行も可能になりつつある。",
-      "選び方の目安: 個人でフル機能なら Claude Code、クラウド並列なら Codex、大規模コンテキストなら Gemini CLI、OSS・マルチモデルなら Aider、企業統制なら Copilot CLI。エディタ側の比較は[AI エディタ横断比較](?a=editor-comparison-2026-march)、料金の詳細は[料金プラン横断比較](?a=pricing-comparison-all-tools-2026-march)、用途別の選び方は[おすすめマトリクス](?a=usecase-recommendation-matrix-2026)を参照。"
+      "ターミナルから AI にコードを書かせる CLI ツールは、**Claude Code**（Anthropic）、**Codex**（OpenAI）、**Gemini CLI**（Google）、**Aider**（OSS）、**GitHub Copilot CLI**、**Cursor CLI**（Anysphere）の6つが主要な候補になる。それぞれ設計思想が異なるため、単純な優劣ではなく用途との相性で選ぶ。**本記事は月次で見直しており、最終更新は2026年8月11日**。",
+      "**Claude Code** はローカルのファイルシステムに直接アクセスし、Bash 実行・MCP サーバ連携・Skills によるカスタマイズが可能。==本番リポジトリでは --dangerously-skip-permissions を避ける==。**Dynamic Workflows**（1セッション内で最大1,000の並列サブエージェント、中断・再開可能）と **agent view** によるマルチセッション管理が現行世代の中核で、[デスクトップアプリ](?a=anthropic-claude-code-desktop-redesign-routines-2026)・Web・IDE 拡張にも展開している。標準モデルは [Claude Opus 5](?a=claude-opus-5-review)（$5/$25、effort トグル対応）で、Fable 5 / Sonnet 5 / Haiku 4.5 に切替可能。",
+      "**Codex** はクラウドサンドボックス上で動作し、複数タスクの並列実行に強い。PR 単位のワークフローに向く。**2026年に提供範囲が大きく広がり、ChatGPT Free / Go $8 / Plus $20 / Pro / Business のいずれでも利用できる**（3月版で「ChatGPT Pro $200 以上が前提」としていたのは現在では誤り）。4月2日に課金がメッセージ単位から API トークン相当のクレジット制へ移行した。CLI・IDE 拡張・Web・iOS で動作し、[プラグインマーケットプレイス](?a=codex-plugins-marketplace-2026)で Slack・Figma・Notion 等と連携する。モデルは [GPT-5.6](?a=openai-gpt-5-6-general-availability-july-9-2026) 系（Sol / Terra / Luna）。",
+      "**Gemini CLI** は大規模コンテキストが特徴で、コードベースの一括読み込みに向く。**Gemini 3.5 Flash** は Flash クラスの速度でフロンティア級の性能を出す。無料枠は Flash モデルの1日1,000リクエストに限定され、**Pro モデルは3月25日以降 Google AI Pro（$20/月）または AI Ultra（$100/月）の加入が必要**。OSS（Apache 2.0）である点は変わらない。",
+      "**Aider** は完全 OSS（Apache 2.0）で、Claude・GPT・Gemini・ローカルモデルを切り替えられる柔軟さが強み。Git との統合が深く、変更を自動コミットする設計。architect / editor のモデル分業、watch モード、prompt caching に対応する。**44,000 GitHub スター、PyPI 累計680万インストール**と、VC 資金や有償プランを持たないまま端末系エージェントの上位に留まり続けている。**ツール自体は無料で、コストは接続先 LLM の API 料金のみ**。バージョンは 0.x 系のままで、マイナーリリース間で CLI フラグや `.aider.conf.yml` の破壊的変更が入る点は運用上の注意点になる。",
+      "**Copilot CLI** は GitHub エコシステムとの統合が最大の特徴で、Issues / PR / Actions / Codespaces / Code Search と直結する。`/fleet` による並列エージェント、Autopilot による自律実行に対応し、`/model` で Claude・GPT・Gemini・Microsoft 内製の MAI-Code-1-Flash を切り替えられる。Enterprise プランは SSO・監査ログ・IP 補償を備え、組織導入のハードルが低い。**6月1日から従量課金（AI Credits）へ移行**した。",
+      "**Cursor CLI** は IDE を起動せずに Composer / Background Agent を使える独立 CLI で、Cursor のサブスクリプション枠を IDE と共有する。Slack / GitHub / PagerDuty / Microsoft Teams からのトリガーにも対応する（[→ レビュー](?a=cursor-cli)）。**Cursor をすでに契約しているなら追加費用なしで CLI 層が増える**という位置付けで、単体で選ぶツールではない。",
+      "選び方の目安: ローカルでのフル機能とエージェント並列実行なら **Claude Code**、クラウド並列と PR ベースの非同期運用なら **Codex**、大規模コンテキストとコスト重視なら **Gemini CLI**、OSS・マルチモデル・ベンダー中立なら **Aider**、企業統制と GitHub 統合なら **Copilot CLI**、Cursor 契約者の補完なら **Cursor CLI**。エディタ側の比較は[AI エディタ横断比較](?a=editor-comparison-2026-march)、料金の詳細は[料金プラン横断比較](?a=pricing-comparison-all-tools-2026-march)、用途別の選び方は[おすすめマトリクス](?a=usecase-recommendation-matrix-2026)を参照。",
+      "---",
+      "**編集履歴**",
+      "【訂正 2026-08-11】Codex について「ChatGPT Pro（$200/月）以上のプランに含まれる形で提供され、単体の低価格プランはない」とする趣旨の記述を訂正しました。現在は ChatGPT Free / Go / Plus / Pro / Business のいずれでも利用できます。",
+      "【追記 2026-08-11】月次見直しにより全面更新。(1) 比較対象に Cursor CLI を追加（5→6ツール）、(2) 各ツールの現行モデル世代（Opus 5 / GPT-5.6 / Gemini 3.5 Flash / MAI-Code-1-Flash）、(3) Codex の課金方式変更（4/2、クレジット制）と Copilot の従量課金移行（6/1）、(4) Claude Code の Dynamic Workflows・agent view、(5) Gemini CLI の Pro モデル有料化後の条件、(6) Aider の現行の規模と 0.x 系の破壊的変更リスクを反映しました。旧版の「200万トークン」等のモデル固有の数値は、世代交代により現行値の裏付けが取れないため記述を改めています。"
     ],
     "tables": [
       {
-        "afterParagraph": 4,
-        "caption": "CLI ツール横断比較（2026年3月時点）",
+        "afterParagraph": 6,
+        "caption": "CLI ツール横断比較（2026年8月11日時点・公式発表および公開情報に基づく）",
         "headers": [
           "ツール",
           "提供元",
           "実行環境",
-          "モデル",
+          "標準モデル",
           "月額目安",
           "特徴"
         ],
@@ -6004,42 +6011,50 @@ const ARTICLES_BODY = {
           [
             "Claude Code",
             "Anthropic",
-            "ローカル",
-            "Claude Opus/Sonnet",
-            "$20〜従量",
-            "MCP・スキル・Auto mode"
+            "ローカル（+クラウド Routines）",
+            "Claude Opus 5",
+            "$20〜（Pro / Max）＋ API 従量",
+            "Dynamic Workflows・agent view・MCP・Skills"
           ],
           [
             "Codex",
             "OpenAI",
-            "クラウド",
-            "GPT/Codex系",
-            "$20〜従量",
-            "並列実行・PR連携"
+            "クラウド（+ CLI ローカル）",
+            "GPT-5.6 系",
+            "$0〜（Free / Go $8 / Plus $20〜）",
+            "並列実行・PR 連携・プラグイン"
           ],
           [
             "Gemini CLI",
             "Google",
             "ローカル",
-            "Gemini Pro/Flash",
-            "無料枠あり→従量",
-            "200万トークン"
+            "Gemini 3.5 Flash",
+            "無料枠あり（Pro は $20〜）",
+            "大規模コンテキスト・OSS"
           ],
           [
             "Aider",
-            "OSS",
+            "OSS コミュニティ",
             "ローカル",
-            "任意（マルチ）",
-            "無料（API費用別）",
-            "Git統合・architect"
+            "任意（マルチベンダー）",
+            "無料（API 費用は別）",
+            "Git 統合・architect/editor 分業"
           ],
           [
             "Copilot CLI",
             "GitHub",
-            "ローカル+クラウド",
-            "GPT系",
-            "$10〜$39/席",
-            "Enterprise統制"
+            "ローカル + クラウド",
+            "選択式（Claude / GPT / MAI 等）",
+            "$0〜$39 per seat（従量併用）",
+            "`/fleet` 並列・Autopilot・企業統制"
+          ],
+          [
+            "Cursor CLI",
+            "Anysphere",
+            "ローカル + クラウド VM",
+            "Composer 2.5 / Sonic",
+            "Cursor 契約に含まれる",
+            "IDE と同一ワークフロー・チャット連携"
           ]
         ]
       }
@@ -6051,9 +6066,9 @@ const ARTICLES_BODY = {
         "url": "https://code.claude.com/docs/en/overview"
       },
       {
-        "title": "OpenAI Codex",
-        "site": "OpenAI",
-        "url": "https://openai.com/index/introducing-codex/"
+        "title": "Codex rate card",
+        "site": "OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001106-codex-rate-card"
       },
       {
         "title": "Gemini CLI",
@@ -6066,60 +6081,80 @@ const ARTICLES_BODY = {
         "url": "https://github.com/Aider-AI/aider"
       },
       {
-        "title": "GitHub Copilot",
-        "site": "GitHub",
-        "url": "https://github.com/features/copilot"
+        "title": "Models and pricing for GitHub Copilot",
+        "site": "GitHub Docs",
+        "url": "https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing"
+      },
+      {
+        "title": "Cursor CLI",
+        "site": "Cursor",
+        "url": "https://cursor.com/cli"
       }
     ]
   },
   "editor-comparison-2026-march": {
     "body": [
-      "AI 支援付きコードエディタは2026年に入って Cursor・Windsurf・VS Code+Copilot の三択が実質的な標準になった。いずれも VS Code ベース（VS Code 本体 or フォーク）で拡張機能の互換性が高いため、差が出るのは AI 統合の深さ・エージェント機能・料金体系の3点になる。",
-      "**Cursor** は Anysphere 社が開発する VS Code フォーク。Composer によるマルチファイル編集、Background Agent によるバックグラウンドタスク実行、Tab 補完の3本柱で構成される。2026年3月の [2.4 リリース](?a=cursor-2-4-subagents)で並列サブエージェント（最大20個同時、クラウド VM 実行）と BugBot（PR 自動レビュー）が追加され、エージェント能力が大幅に強化された。モデルは Sonnet 4.6 / Opus 4.6 を切り替え可能。Pro $20/月、Business $40/月。",
-      "**Windsurf** は旧 Codeium が開発した VS Code フォークで、2026年3月に [Anysphere（Cursor 親会社）に買収された](?a=cursor-windsurf-merge)。中核機能の Cascade はタスクを段階的に分解して差分プレビュー付きで実行するフローで、大規模変更の安全性に定評がある。補完速度は Codeium 時代から高速。料金は[2026年3月の改定](?a=windsurf-pricing-overhaul)で Free / Pro $20/月 / Teams / Max $200/月 の4段階になり、Cursor との価格差は消滅した。買収後も単体提供は継続中だが、長期的な Cursor への統合可能性がある。",
-      "**VS Code + GitHub Copilot** は Microsoft / GitHub のエコシステム。エディタ本体は無料で、Copilot が AI 層を担う。2026年にエージェントモード（Agent Mode）が導入され、ターミナル操作・ファイル編集を含むマルチステップタスクの自律実行に対応。Copilot Coding Agent は GitHub Issue を割り当てるだけで AI が PR を自動作成する。Individual $10/月、Business $19/月、Enterprise $39/月（IP 補償・監査ログ付き）。拡張機能エコシステムの規模は突出している。",
-      "選び方の目安: AI のネイティブ統合を最優先なら Cursor、既存の VS Code 環境を維持しつつ AI を足すなら VS Code + Copilot、Cascade のステップ分解を評価するなら Windsurf。企業で SSO・監査・IP 補償が必要なら Copilot Business/Enterprise が最も導入しやすい（[→ 企業導入チェックリスト](?a=ai-enterprise-legal-checklist-2026)）。Cursor と Windsurf は同一親会社になったため、今後の機能統合の動向にも注意が必要となる。各ツールの[料金詳細はこちら](?a=pricing-comparison-all-tools-2026-march)。"
+      "AI 支援付きコードエディタの選択肢は、2026年前半の再編を経て **Cursor・Devin Desktop（旧 Windsurf）・VS Code + GitHub Copilot・Zed** の4つに整理された。いずれも AI 統合の深さ・エージェント機能・料金体系の3点で差が出る。**本記事は月次で見直しており、最終更新は2026年8月11日**。3月版からは資本関係・製品名・料金のすべてが変わっているため、以前の版を読んだ方も改めて確認してほしい。",
+      "**Cursor** は **Anysphere** 社が開発する VS Code フォーク。[Cursor 3.x](?a=cursor-3-agent-first-workspace-2026) の **Agents Window** でローカル・worktree・クラウド VM・リモート SSH のエージェントを一画面で並列管理でき、Composer によるマルチファイル編集、Background Agent、Tab 補完がその下に並ぶ。独自モデル **Composer 2.5 / Sonic**（[Kimi K2.5 ベース + 独自 RL](?a=cursor-composer-2-kimi-2026)）に加えフロンティアモデルも選択可能。PR レビュー専用の **Bugbot** は5月に従量課金へ移行し、1 PR あたり平均 $1.00〜1.50 になった。プランは Pro $20 / Pro+ $60 / Ultra $200 / Teams Standard $40 per seat / Teams Premium $120 per seat。**2026年6月16日、SpaceX による $60B（全株式）の買収が発表され、Q3 2026 クローズ予定**（[→ 速報](?a=spacex-cursor-60b-acquisition-anysphere-2026)、[→ 市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。",
+      "**Devin Desktop（旧 Windsurf）** は、旧 Codeium の VS Code フォークを **Cognition**（自律エージェント Devin の開発元）が2025年7月に買収したもので、**2026年6月2日に Devin Desktop へブランド統合された**。中核の **Cascade** はタスクを段階的に分解し、各ステップの差分をプレビューしてから適用するフローで、大規模変更の安全性に定評がある。料金は[3月19日の改定](?a=windsurf-pricing-overhaul)でクレジット制から日次・週次クォータ制に移行し、Free / Pro $20 / Teams $40 per seat / Max $200 / Enterprise の構成。Pro が $15 から $20 になったことで **Cursor に対する価格優位は消滅**した。単体エディタというより、Devin 本体と組み合わせた一貫ワークフローの入口として位置付けるのが実態に近い。",
+      "**VS Code + GitHub Copilot** は Microsoft / GitHub のエコシステム。エディタ本体は無料で、Copilot が AI 層を担う。Agent Mode がターミナル操作・ファイル編集を含むマルチステップタスクを自律実行し、Copilot Coding Agent は GitHub Issue を割り当てるだけで PR を自動作成する。モデルは Claude / GPT / Gemini に加え Microsoft 内製の **MAI-Code-1-Flash** を `/model` で切替可能（[→ Copilot CLI レビュー](?a=github-copilot-cli)）。**2026年6月1日から従量課金（AI Credits、1クレジット = $0.01）へ移行**し、各プランに月次クレジット枠が付く形になった。Free / Pro $10 / Pro+ $39 / Business $19 per seat / Enterprise $39 per seat。拡張機能エコシステムの規模と企業統制機能は依然として突出している。",
+      "**Zed** は **Zed Industries** の Rust 製ネイティブエディタで、VS Code 系ではない唯一の選択肢。GPU レンダリングによる描画速度と、Agent Panel から外部エージェントを接続できる設計が特徴。Personal $0（編集予測 月2,000回まで、自前 API キー持込可）/ Pro $10 / Business $30 per seat。**AI 機能を自前の API キーだけで賄えるため、サブスクリプションを増やさずに AI エディタ体験を得たい場合の最有力**になる。一方、Composer 相当のマルチファイル自律編集の成熟度では先行3製品に及ばない。",
+      "選び方の目安: エージェントの並列運用を最優先なら **Cursor**、既存の VS Code 環境と GitHub の統制を活かすなら **VS Code + Copilot**、Devin との一貫ワークフローを組むなら **Devin Desktop**、速度とコスト最小化なら **Zed**。企業で SSO・監査・IP 補償が必要なら Copilot Business / Enterprise が最も導入しやすい（[→ 企業導入チェックリスト](?a=ai-enterprise-legal-checklist-2026)）。各ツールの[料金詳細はこちら](?a=pricing-comparison-all-tools-2026-march)、CLI 側の比較は[CLI ツール横断比較](?a=cli-tools-comparison-2026-march)を参照。",
+      "**資本関係は選定要因になりつつある**: SpaceX による Cursor 買収がクローズすれば、Cursor は SpaceX-xAI 系、Copilot は Microsoft 系、Devin Desktop と Zed は独立系という構図になる。エディタを選ぶことが、背後の計算インフラ・データ取り扱い方針・親会社の事業判断を選ぶことに近づいている。**開発データが訓練に使われるかどうかはプランごとに条件が異なる**ため、企業導入では Privacy Mode 相当の設定とデータ取り扱い条項を個別に確認してほしい。",
+      "---",
+      "**編集履歴**",
+      "【訂正 2026-08-11】「Windsurf は2026年3月に Anysphere（Cursor 親会社）に買収された」「Cursor と Windsurf は同一親会社になった」という記述を削除しました。**この買収は事実ではありません。** Windsurf を買収したのは Cognition で、発表は2025年7月です。誤りの元になった記事は[取り下げ](?a=cursor-windsurf-merge)しました。",
+      "【追記 2026-08-11】月次見直しにより全面更新。(1) Windsurf の Devin Desktop へのブランド統合（6/2）、(2) SpaceX による Anysphere 買収の発表（6/16）、(3) GitHub Copilot の従量課金移行（6/1）と現行プラン、(4) Cursor 3.x / Agents Window / Composer 2.5 / Bugbot 従量課金、(5) 比較対象に Zed を追加、(6) 全ツールの現行料金を反映しました。旧版のモデル世代（Sonnet 4.6 / Opus 4.6 / GPT-5.4 / o4-mini）は現行世代に置き換えています。"
     ],
     "tables": [
       {
         "afterParagraph": 4,
-        "caption": "AI エディタ横断比較（2026年3月時点）",
+        "caption": "AI エディタ横断比較（2026年8月11日時点・公式発表および公開情報に基づく）",
         "headers": [
           "エディタ",
           "提供元",
           "ベース",
-          "AI モデル",
           "月額（個人）",
+          "上位プラン",
           "エージェント機能",
           "強み"
         ],
         "rows": [
           [
             "Cursor",
-            "Anysphere",
+            "Anysphere（SpaceX が買収発表、Q3 2026 クローズ予定）",
             "VS Code フォーク",
-            "Sonnet 4.6 / Opus 4.6",
-            "$20（Pro）",
-            "Background Agent・並列サブエージェント",
-            "AI 統合の深さ・BugBot"
+            "Pro $20",
+            "Pro+ $60 / Ultra $200 / Teams $40〜$120 per seat",
+            "Agents Window（並列）・Background Agent・Bugbot",
+            "エージェント並列運用・独自モデル Composer 2.5 / Sonic"
           ],
           [
-            "Windsurf",
-            "Anysphere（旧 Codeium）",
+            "Devin Desktop（旧 Windsurf）",
+            "Cognition",
             "VS Code フォーク",
-            "Sonnet 4.6 / GPT-5.4",
-            "$20（Pro）",
+            "Pro $20",
+            "Teams $40 per seat / Max $200 / Enterprise",
             "Cascade フロー",
-            "段階的タスク分解・高速補完"
+            "段階的タスク分解・Devin 本体との連携"
           ],
           [
             "VS Code + Copilot",
             "Microsoft / GitHub",
             "VS Code 本体",
-            "GPT-5.4 / o4-mini",
-            "$10（Individual）",
+            "Pro $10",
+            "Pro+ $39 / Business $19 / Enterprise $39 per seat",
             "Agent Mode・Coding Agent",
-            "拡張機能エコシステム・Enterprise 統制"
+            "拡張機能エコシステム・モデル選択の自由度・企業統制"
+          ],
+          [
+            "Zed",
+            "Zed Industries",
+            "独自（Rust / GPU）",
+            "Pro $10",
+            "Business $30 per seat",
+            "Agent Panel（外部エージェント接続）",
+            "描画速度・自前 API キー持込で追加課金なし"
           ]
         ]
       }
@@ -6131,34 +6166,49 @@ const ARTICLES_BODY = {
         "url": "https://cursor.com/"
       },
       {
-        "title": "Windsurf",
-        "site": "Windsurf",
-        "url": "https://windsurf.com/"
+        "title": "Introducing our new Windsurf pricing plans",
+        "site": "Devin (Cognition)",
+        "url": "https://devin.ai/blog/windsurf-pricing-plans"
       },
       {
-        "title": "Visual Studio Code",
-        "site": "Microsoft",
-        "url": "https://code.visualstudio.com/"
+        "title": "GitHub Copilot is moving to usage-based billing",
+        "site": "GitHub Blog",
+        "url": "https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/"
       },
       {
-        "title": "GitHub Copilot",
-        "site": "GitHub",
-        "url": "https://github.com/features/copilot"
+        "title": "Models and pricing for GitHub Copilot",
+        "site": "GitHub Docs",
+        "url": "https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing"
+      },
+      {
+        "title": "Zed",
+        "site": "Zed Industries",
+        "url": "https://zed.dev/"
+      },
+      {
+        "title": "Cognition's acquisition of Windsurf",
+        "site": "Cognition",
+        "url": "https://cognition.com/blog/windsurf"
       }
     ]
   },
   "pricing-comparison-all-tools-2026-march": {
     "body": [
-      "AI 開発ツールの料金体系は2026年に入って改定が相次いでいる。[Windsurf の $15→$20 値上げ](?a=windsurf-pricing-overhaul)（3月19日）、[Gemini CLI の Pro 有料化](?a=gemini-cli-v035)（3月25日）など、無料・低価格路線からの転換が目立つ。ここでは主要8ツールの料金を公式発表ベースで横並びにした。",
-      "**CLI ツール**の料金は大きく3パターンに分かれる。Claude Code は Pro $20/月・Max $100〜200/月・API 従量課金の3本立て。Codex は ChatGPT Pro（$200/月）以上のプランに含まれる形で提供され、単体の低価格プランはない。Gemini CLI は Flash モデルなら無料（1日1,000リクエスト）だが、Pro モデルは有料サブスクリプション限定に移行した。Aider はツール自体が OSS 無料で、接続する LLM の API 費用のみがコストとなる。",
-      "**エディタ**では Cursor と Windsurf が同額の $20/月（Pro）に揃った。VS Code 本体は無料で、Copilot の Individual $10/月が最安の有料 AI エディタ体験となる。Zed AI はエディタ無料・AI 機能 $15/月だが、自前の API キーを持ち込めば課金なしで AI 機能を使える。",
-      "**Enterprise 向け**では GitHub Copilot Enterprise（$39/席）が IP インデムニティ（知的財産補償）・監査ログ・SAML SSO を備え、組織導入のハードルが最も低い。Claude Code は SOC 2 準拠で API 経由のエンタープライズ利用に対応。Cursor Business は $40/席で管理機能付き。企業導入の法的チェックポイントは[こちらの記事](?a=ai-enterprise-legal-checklist-2026)で詳しく整理している。",
-      "コスト最適化の考え方: 個人でコストを抑えるなら Aider（API 費用のみ）+ VS Code が最安構成。月 $20 で1ツールに絞るなら、CLI 重視で Claude Code Pro、エディタ重視で Cursor Pro。企業導入で統制を優先するなら Copilot Business/Enterprise が現実的な選択肢となる。"
+      "AI 開発ツールの料金体系は2026年を通じて改定が続いている。3月の[Windsurf の $15→$20 値上げとクォータ制移行](?a=windsurf-pricing-overhaul)、[Gemini CLI の Pro 有料化](?a=gemini-cli-v035)に始まり、**4月2日に Codex がメッセージ単位課金からクレジット制へ、6月1日に GitHub Copilot が従量課金（AI Credits）へ移行**した。定額サブスクリプションから、**「定額＋含まれるクレジット枠＋超過分は従量」というハイブリッド型への移行**が業界全体の方向になっている。ここでは主要ツールの料金を公式発表ベースで横並びにした。**本記事は月次で見直しており、最終更新は2026年8月11日**。",
+      "**CLI ツール**の料金は3パターンに分かれる。Claude Code は Pro $20/月・Max $100〜200/月・API 従量課金の3本立て。**Codex は提供範囲が大きく広がり、ChatGPT Free / Go $8 / Plus $20 / Pro / Business のいずれでも利用できる**（3月版で「ChatGPT Pro $200 以上が前提」としていたのは現在では誤り）。Gemini CLI は Flash モデルなら無料（1日1,000リクエスト）だが、Pro モデルは Google AI Pro $20/月または AI Ultra $100/月の加入が必要。Aider はツール自体が OSS 無料で、接続する LLM の API 費用のみがコストとなる。",
+      "**エディタ**では Cursor と Devin Desktop（旧 Windsurf）が同額の $20/月（Pro）で並ぶ。VS Code 本体は無料で、Copilot Pro $10/月が最安の有料 AI エディタ体験。**Zed は Personal $0（月2,000回の編集予測、自前 API キー持込可）/ Pro $10 / Business $30 per seat** で、サブスクリプションを増やさずに済ませたい場合の選択肢になる。上位帯では Cursor が Pro+ $60 / Ultra $200、Devin Desktop が Max $200 を用意しており、**エージェントを常時走らせる使い方では月 $200 前後がひとつの相場**になりつつある。",
+      "**Enterprise 向け**では GitHub Copilot Enterprise（$39 per seat）が IP インデムニティ（知的財産補償）・監査ログ・SAML SSO を備え、組織導入のハードルが最も低い。Claude Code は SOC 2 準拠に加え Workload Identity Federation でクラウド資格情報の連携に対応する。Cursor は Teams Standard $40 / Teams Premium $120 per seat。企業導入の法的チェックポイントは[こちらの記事](?a=ai-enterprise-legal-checklist-2026)で詳しく整理している。",
+      "**モデル API の単価**も比較の前提として押さえておきたい。現行フラッグシップは [Claude Opus 5](?a=claude-opus-5-review) が $5/$25、Claude Fable 5 が $10/$50、[Claude Sonnet 5](?a=claude-sonnet-5-review) が $2/$10（8月末までの導入価格）。OpenAI は [GPT-5.6 の値下げ](?a=openai-gpt-5-6-luna-terra-price-cut-2026)で Luna が $0.20/$1.20、Terra が $2/$12 になった。[Grok 4.5](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026) は $2/$6。オープンウェイト系では [Kimi K3](?a=moonshot-kimi-k3-open-weights-license-2026) が $3/$15。**サブスクリプションと API 従量のどちらが安いかは月間トークン量で逆転する**ため、月 $200 のプランを検討する段階に来たら、実測トークン量で従量課金と比較する価値がある。",
+      "コスト最適化の考え方: 個人でコストを抑えるなら **Aider（API 費用のみ）+ VS Code + Zed Personal** が最安構成。月 $20 で1ツールに絞るなら、CLI 重視で Claude Code Pro、エディタ重視で Cursor Pro。企業導入で統制を優先するなら Copilot Business / Enterprise が現実的な選択肢となる。**従量課金への移行が進んだため、定額プランの月額だけでは実効コストを見積もれない点に注意してほしい。** 導入前に、想定ワークロードで1か月の実測を取ることを推奨する。",
+      "---",
+      "**編集履歴**",
+      "【訂正 2026-08-11】(1) Codex について「ChatGPT Pro（$200/月）以上のプランに含まれる形で提供され、単体の低価格プランはない」という記述を訂正しました。現在は Free / Go / Plus / Pro / Business のいずれでも利用できます。(2) Zed AI の料金を「AI 機能 $15/月」から現行の Personal $0 / Pro $10 / Business $30 per seat に訂正しました。(3) 「Windsurf」の運営元と製品名を Cognition の Devin Desktop に訂正しました（旧版は Anysphere 傘下と記載していましたが、これは事実ではありません）。",
+      "【追記 2026-08-11】月次見直しにより全面更新。(1) Codex のクレジット制移行（4/2）と GitHub Copilot の従量課金移行（6/1）、(2) Cursor の Pro+ / Ultra / Teams Premium を含む現行プラン全体、(3) 現行モデルの API 単価（Opus 5 / Fable 5 / Sonnet 5 / GPT-5.6 / Grok 4.5 / Kimi K3）、(4) 定額から「定額＋クレジット枠＋従量」への業界的な移行という論点を追加しました。"
     ],
     "tables": [
       {
         "afterParagraph": 1,
-        "caption": "CLI ツール料金比較（2026年3月時点・公式発表値）",
+        "caption": "CLI ツール料金比較（2026年8月11日時点・公式発表および公開情報に基づく）",
         "headers": [
           "ツール",
           "無料枠",
@@ -6172,87 +6222,95 @@ const ARTICLES_BODY = {
             "Claude Code",
             "なし",
             "Pro $20/月",
-            "Max $100〜200/月",
-            "あり（トークン単価）",
+            "Max $100 / $200/月",
+            "あり（Opus 5: $5/$25 per 1M）",
             "Max は Fast Mode 含む"
           ],
           [
             "Codex",
-            "なし",
-            "—",
-            "ChatGPT Pro $200/月〜",
-            "あり",
-            "Pro/Team/Enterprise に含まれる"
+            "ChatGPT Free に含まれる（制限あり）",
+            "Go $8 / Plus $20/月",
+            "Pro $100 / $200、Business $25/月",
+            "あり（GPT-5.6 単価）",
+            "4/2 よりクレジット制（API 単価連動）"
           ],
           [
             "Gemini CLI",
             "Flash: 1日1,000回",
-            "—",
-            "有料サブスク（Pro モデル）",
+            "Google AI Pro $20/月",
+            "AI Ultra $100/月",
             "あり",
-            "3月25日より Pro 有料化"
+            "3/25 より Pro モデルは有料サブスク限定"
           ],
           [
             "Copilot CLI",
-            "無料枠あり（回数制限）",
-            "Individual $10/月",
-            "Enterprise $39/月",
-            "—",
-            "gh copilot 経由"
+            "Copilot Free（制限あり）",
+            "Pro $10 / Pro+ $39/月",
+            "Business $19 / Enterprise $39 per seat",
+            "AI Credits（1クレジット = $0.01）",
+            "6/1 より従量課金へ移行"
           ],
           [
             "Aider",
-            "ツール自体は無料",
+            "ツール自体が無料",
             "—",
             "—",
-            "接続先 LLM の API 費用",
+            "接続先 LLM の API 費用のみ",
             "OSS（Apache 2.0）"
+          ],
+          [
+            "Cursor CLI",
+            "Cursor Free に含まれる",
+            "Cursor Pro $20/月に含まれる",
+            "Pro+ $60 / Ultra $200/月",
+            "—",
+            "IDE とサブスク枠を共有"
           ]
         ]
       },
       {
         "afterParagraph": 2,
-        "caption": "エディタ料金比較（2026年3月時点・公式発表値）",
+        "caption": "エディタ料金比較（2026年8月11日時点・公式発表および公開情報に基づく）",
         "headers": [
           "エディタ",
           "無料枠",
           "個人プラン",
-          "ビジネス",
-          "Enterprise",
+          "上位（個人）",
+          "チーム / Enterprise",
           "備考"
         ],
         "rows": [
           [
             "Cursor",
-            "Hobby（機能制限）",
+            "Free（機能制限）",
             "Pro $20/月",
-            "Business $40/月",
-            "—",
-            "Background Agent は Pro 以上"
+            "Pro+ $60 / Ultra $200/月",
+            "Teams Standard $40 / Premium $120 per seat",
+            "Bugbot は従量課金（1 PR 平均 $1.00〜1.50）"
           ],
           [
-            "Windsurf",
-            "Free（制限あり）",
+            "Devin Desktop（旧 Windsurf）",
+            "Free（日次・週次クォータ）",
             "Pro $20/月",
-            "Teams（要問合せ）",
             "Max $200/月",
-            "3月に $15→$20 に改定"
+            "Teams $40 per seat / Enterprise 要問合せ",
+            "3/19 に $15→$20、クレジット制からクォータ制へ"
           ],
           [
             "VS Code + Copilot",
-            "エディタ無料 + Copilot 無料枠",
-            "Individual $10/月",
-            "Business $19/月",
-            "Enterprise $39/月",
-            "IP 補償は Enterprise のみ"
+            "エディタ無料 + Copilot Free",
+            "Pro $10/月",
+            "Pro+ $39/月",
+            "Business $19 / Enterprise $39 per seat",
+            "IP 補償は Enterprise。6/1 より AI Credits 併用"
           ],
           [
-            "Zed AI",
-            "エディタ無料",
-            "AI $15/月",
+            "Zed",
+            "Personal $0（編集予測 月2,000回）",
+            "Pro $10/月",
             "—",
-            "—",
-            "自前 API キー持込可"
+            "Business $30 per seat",
+            "自前 API キー持込で無料プランのまま利用可"
           ]
         ]
       }
@@ -6269,24 +6327,34 @@ const ARTICLES_BODY = {
         "url": "https://cursor.com/pricing"
       },
       {
-        "title": "Windsurf Pricing",
-        "site": "Windsurf",
-        "url": "https://windsurf.com/pricing"
+        "title": "Introducing our new Windsurf pricing plans",
+        "site": "Devin (Cognition)",
+        "url": "https://devin.ai/blog/windsurf-pricing-plans"
       },
       {
-        "title": "GitHub Copilot Plans",
-        "site": "GitHub",
-        "url": "https://github.com/features/copilot#pricing"
+        "title": "Models and pricing for GitHub Copilot",
+        "site": "GitHub Docs",
+        "url": "https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing"
       },
       {
-        "title": "OpenAI Codex",
-        "site": "OpenAI",
-        "url": "https://openai.com/index/introducing-codex/"
+        "title": "GitHub Copilot is moving to usage-based billing",
+        "site": "GitHub Blog",
+        "url": "https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/"
+      },
+      {
+        "title": "Codex rate card",
+        "site": "OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001106-codex-rate-card"
       },
       {
         "title": "Gemini CLI",
         "site": "Google",
         "url": "https://github.com/google-gemini/gemini-cli"
+      },
+      {
+        "title": "Zed",
+        "site": "Zed Industries",
+        "url": "https://zed.dev/"
       }
     ]
   },
@@ -6680,10 +6748,13 @@ const ARTICLES_BODY = {
     "body": [
       "2026年3月は AI 開発ツールの競争が一段と激化した月だった。エージェント機能の強化、M&A による業界再編、そして規制・法務面での大きな動きが同時進行した。この月刊まとめでは、当サイトが3月に報じたニュースを中心に月全体の流れを振り返る。",
       "**エージェント機能の競争**: 月末にかけてエージェント機能の強化が相次いだ。**Cursor 2.4** は並列サブエージェント（最大20個同時、クラウド VM 実行）と BugBot（PR 自動レビュー）を導入し、8,000行の Next.js アプリのルーター移行が17分→9分に短縮されたと発表した（[→ 詳細](?a=cursor-2-4-subagents)）。**Claude Code** は Auto mode の対象拡大とクラウド auto-fix を発表し、ユーザー確認なしの連続タスク実行が進化した（[→ 詳細](?a=claude-code-auto-mode)）。**Gemini CLI** は v0.35.0 で Plan Mode とネイティブサンドボックスを追加した一方、Pro モデルを有料化し、無料枠は Flash のみに縮小された（[→ 詳細](?a=gemini-cli-v035)）。",
-      "**M&A と業界再編**: 3月は2件の大型買収が業界地図を塗り替えた。**Anysphere（Cursor 親会社）が Windsurf（旧 Codeium）を買収**し、AI エディタ市場の選択肢が減少した（[→ 詳細](?a=cursor-windsurf-merge)）。Windsurf は単体提供を継続するも、Pro 価格を $15→$20 に改定して Cursor と同額に（[→ 詳細](?a=windsurf-pricing-overhaul)）。**OpenAI が Python ツール企業 Astral（uv・Ruff・ty）を買収**し、Codex との統合を発表。月間1.26億ダウンロードの uv を取り込み、Python エコシステム全体を Codex のパイプラインに組み込む戦略を示した（[→ 詳細](?a=openai-acquires-astral-2026)）。",
+      "**M&A と業界再編**: Windsurf は Pro 価格を $15→$20 に改定し、クレジット制から日次・週次クォータ制へ移行して Cursor と同額になった（[→ 詳細](?a=windsurf-pricing-overhaul)）。**OpenAI が Python ツール企業 Astral（uv・Ruff・ty）を買収**し、Codex との統合を発表。月間1.26億ダウンロードの uv を取り込み、Python エコシステム全体を Codex のパイプラインに組み込む戦略を示した（[→ 詳細](?a=openai-acquires-astral-2026)）。",
       "**モデル動向**: 中国勢のフロンティアモデルが存在感を示した月でもあった。**Kimi K2.5**（Moonshot AI）は SWE-Bench 76.8%・HLE 50.2% を記録し、欧米モデルに匹敵する性能を公開した（[→ 詳細](?a=kimi-k25-moonshot-2026)）。**GLM-5**（Zhipu AI）は Huawei チップで学習した点で注目された（[→ 詳細](?a=glm-5-zhipu-2026)）。**M2.7**（MiniMax）は自己進化する学習ループを実装した（[→ 詳細](?a=minimax-m27-2026)）。**Google** は [Gemini 3.1 Flash Live](?a=gemini-31-flash-live-voice-2026)（リアルタイム音声 AI）を発表し、応答遅延 0.5 秒以下を実現した。",
       "**規制・法務**: **Anthropic と米国防総省の法廷闘争**が最大の話題だった。サンフランシスコ連邦地裁が DoD による「サプライチェーンリスク」指定を暫定差止し、「修正第一条違反の報復」と判断（[→ 詳細](?a=anthropic-pentagon-injunction-2026)）。AI 企業の政府との利用条件交渉がどこまで企業側の倫理ポリシーで保護されるかという先例が形成されつつある。OpenAI の [Sora は消費者向け提供が終了](?a=openai-sora-discontinued-2026)した。規制全体の動きは [Q1 規制まとめ](?a=ai-regulation-q1-2026)を参照。",
-      "**3月のキーワード**: エージェントの並列実行（Cursor・Claude Code）、MCP の普及加速（freee リモート版、MCP v2 ロードマップ）、中国モデルのフロンティア化（Kimi K2.5・GLM-5・M2.7）、AI ツール企業の M&A（Cursor+Windsurf、OpenAI+Astral）、AI と政府の緊張関係（Anthropic vs DoD）。4月以降は EU AI Act の施行本格化と、買収後の Cursor/Windsurf 統合の進捗が注目点となる。"
+      "**3月のキーワード**: エージェントの並列実行（Cursor・Claude Code）、MCP の普及加速（freee リモート版、MCP v2 ロードマップ）、中国モデルのフロンティア化（Kimi K2.5・GLM-5・M2.7）、AI ツール企業の M&A（OpenAI+Astral）、AI と政府の緊張関係（Anthropic vs DoD）。4月以降は EU AI Act の施行本格化が注目点となる。",
+      "---",
+      "**編集履歴**",
+      "【訂正 2026-08-11】「Anysphere（Cursor 親会社）が Windsurf を買収」とする記述および関連リンクを削除しました。この買収は事実ではなく、Windsurf を買収したのは Cognition（2025年7月発表）です。元記事は[取り下げ](?a=cursor-windsurf-merge)しました。"
     ],
     "primarySources": [
       {
@@ -6742,10 +6813,12 @@ const ARTICLES_BODY = {
   "overview-2026-week-mar16": {
     "body": [
       "**3月17日（火）** — OpenAI が GPT-5.4 mini と nano を同時にリリースした。mini は無料層と Codex での利用を想定した軽量モデルで、nano は API 専用の超低コスト・高速推論モデル。並列エージェントの末端ノードに低コストモデルを配置する設計が現実的になり、エージェント運用のコスト構造が変わりうる（[→ 詳細記事](?a=gpt-54-mini-nano-2026)）。",
-      "**18日（水）** — Windsurf（旧 Codeium）のレビューが更新された。Cascade フローによる段階的な差分プレビューが強みだが、Anysphere 傘下に入ったことで長期的なロードマップが不透明になっている。新規ユーザーは Cursor との機能重複と将来の統合可能性を考慮する必要がある（[→ 詳細記事](?a=windsurf)）。",
+      "**18日（水）** — Windsurf（旧 Codeium）のレビューが更新された。Cascade フローによる段階的な差分プレビューが強み。運営元は Devin を開発する Cognition で、同社ブランドへの統合方針が長期的な論点になる（[→ 詳細記事](?a=windsurf)）。",
       "**19日（木）** — OpenAI が Python ツール企業 Astral の買収を発表した。uv（月間1.26億DL のパッケージマネージャ）・Ruff（Rust 製リンター）・ty（型チェッカー）を Codex に統合し、Python 開発の環境構築からコード品質管理までを一気通貫で押さえる戦略。OSS の中立性への懸念も出ている。同日、生成音楽ツール（Suno・Udio・Lyria 等）の権利関係と製品比較を整理した特集も掲載された（[Astral 買収](?a=openai-acquires-astral-2026)、[生成音楽の整理](?a=ai-music-generation-frontier-early-2026)）。",
-      "**20日（金）** — Anysphere（Cursor 親会社）が Windsurf の買収完了を発表した。AI エディタ市場の主要プレイヤーが1社に集約され、選択肢は実質 Cursor vs VS Code+Copilot の二極構造に近づいた。Windsurf は単体提供を継続するが、独自の機能追加がどこまで続くかは不透明（[→ 詳細記事](?a=cursor-windsurf-merge)）。",
-      "**22日（日）** — OpenAI Codex のエージェント機能をレビューした。クラウドサンドボックスでの並列実行と PR 自動作成のワークフローは、Claude Code のローカル実行とは対照的なアプローチ。o4-mini ベースで動作し、複数タスクを同時に投げられる点がチーム開発に向く（[→ 詳細記事](?a=openai-codex-agent)）。"
+      "**22日（日）** — OpenAI Codex のエージェント機能をレビューした。クラウドサンドボックスでの並列実行と PR 自動作成のワークフローは、Claude Code のローカル実行とは対照的なアプローチ。o4-mini ベースで動作し、複数タスクを同時に投げられる点がチーム開発に向く（[→ 詳細記事](?a=openai-codex-agent)）。",
+      "---",
+      "**編集履歴**",
+      "【訂正 2026-08-11】3月20日の項「Anysphere（Cursor 親会社）が Windsurf の買収完了を発表」を削除しました。この買収は事実ではありません。Windsurf を買収したのは Cognition（2025年7月発表）です。3月18日の項の「Anysphere 傘下」という記述も訂正しました。"
     ],
     "primarySources": [
       {
@@ -8041,15 +8114,27 @@ const ARTICLES_BODY = {
   },
   "cursor-windsurf-merge": {
     "body": [
-      "Anysphere社（Cursor開発元）は2026年3月、Codeium社が開発するAIエディタ「Windsurf」の買収を完了したと発表しました。買収額は非公開ですが、業界では数億ドル規模と推定されています。",
-      "この買収により、CursorはWindsurfの独自技術「Cascade」フローを統合する計画です。Cascadeはタスクを段階的に分解して実行する技術で、複雑な変更を安全に進められる点が評価されていました。",
-      "一方で、この統合によりAIエディタ市場の選択肢が減少することへの懸念も出ています。Windsurf単体の提供は当面継続されますが、長期的にはCursorへの一本化が予想されます。OSS陣営のZed AI、Void、PearAIへの注目が高まる可能性もあります。"
+      "## 本記事は取り下げました",
+      "本記事「Cursor、Windsurf（Codeium）を買収完了 — AIエディタ市場の統合が加速」（2026年3月28日公開）は、**記事の中心的な事実が誤っていた**ため、2026年8月11日に取り下げました。元の本文は削除しています。",
+      "**誤っていた点**: 本記事は「Anysphere 社（Cursor 開発元）が Windsurf（旧 Codeium）の買収を完了した」と報じましたが、**そのような買収は行われていません**。Windsurf を買収したのは **Cognition**（Devin の開発元）であり、買収の発表は2025年7月です。Windsurf は2026年6月2日に **Devin Desktop** へブランド統合されました。",
+      "また、本記事が唯一の一次ソースとして挙げていた The Verge の記事 URL は、掲載後の再検証で**該当する記事の存在を確認できませんでした**。",
+      "**正しい情報**: 現在の資本関係と製品構成については、[【分析】SpaceX-Cursor $60B 買収で AI コーディング市場が再編](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)、および[AI エディタ横断比較](?a=editor-comparison-2026-march)を参照してください。Cursor（Anysphere）は2026年6月に SpaceX による $60B の買収が発表され、Q3 2026 のクローズ予定です（[速報](?a=spacex-cursor-60b-acquisition-anysphere-2026)）。",
+      "**影響範囲**: 本記事を参照していた月刊・週刊まとめ、エディタ横断比較、Cursor / Windsurf の各レビューについても、同日付で該当箇所を訂正しました。",
+      "**再発防止**: 単一の二次ソースのみに依拠した速報を掲載しない運用に改めます。M&A のような資本関係の報道については、当事者いずれかの公式発表、または複数の独立した報道機関による確認を掲載条件とします。",
+      "---",
+      "**編集履歴**",
+      "【取り下げ 2026-08-11】主要な事実（買収主体）が誤りであり、かつ唯一の一次ソースの存在を確認できなかったため、記事を取り下げ。本文を取り下げ告知に差し替え。月次見直しの過程で発見。"
     ],
     "primarySources": [
       {
-        "title": "Anysphere acquires Windsurf (Codeium)",
-        "site": "The Verge",
-        "url": "https://www.theverge.com/news/627633/anysphere-cursor-acquires-windsurf-codeium"
+        "title": "Cognition to buy AI startup Windsurf days after Google poached CEO in $2.4 billion licensing deal",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2025/07/14/cognition-to-buy-ai-startup-windsurf-days-after-google-poached-ceo.html"
+      },
+      {
+        "title": "Cognition's acquisition of Windsurf",
+        "site": "Cognition",
+        "url": "https://cognition.com/blog/windsurf"
       }
     ]
   },
@@ -8575,12 +8660,15 @@ const ARTICLES_BODY = {
       "## 5月以降の動向",
       "- **5/11 Microsoft Teams 統合 GA**（`@Cursor` メンション）",
       "- **5月 Bugbot 課金モデルが usage-based に移行**",
-      "- **Windsurf 買収**（3月）後の Cascade 統合は継続中",
+      "- **6/16 SpaceX による Anysphere 買収を発表**（$60B・全株式、Q3 2026 クローズ予定）",
       "- **Cursor 3.x** 系列で Agents Window が正式機能化",
       "## 評価",
       "**強み**: IDE と AI エージェントが一体化したエクスペリエンス。VS Code 互換で拡張機能がそのまま動く。Agents Window でマルチセッション運用が UI レベルで自然に。Composer 2.5 + Sonic の独自モデルでコストパフォーマンス・低レイテンシを両立。",
       "**注意点**: Claude Code が CLI 中心で多サーフェス展開なのに対し、Cursor は IDE 中心。**ターミナル単体での運用には向かない**。Bugbot の usage-based 移行で PR 数の多いプロジェクトは月額予算が読みにくくなった。Pro+ / Ultra プランの追加で価格帯が広がり、適切なプラン選択が難しくなった面もある。",
-      "**関連記事**: [Cursor Composer 2](?a=cursor-composer-2-kimi-2026)、[Cursor 3 / Agents Window](?a=cursor-3-agent-first-workspace-2026)、[Microsoft Teams 統合](?a=cursor-microsoft-teams-integration-2026)、[Windsurf 買収](?a=cursor-windsurf-merge)、[AI エディタ横断比較](?a=editor-comparison-2026-march)。",
+      "**関連記事**: [Cursor Composer 2](?a=cursor-composer-2-kimi-2026)、[Cursor 3 / Agents Window](?a=cursor-3-agent-first-workspace-2026)、[Microsoft Teams 統合](?a=cursor-microsoft-teams-integration-2026)、[SpaceX による $60B 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)、[AI エディタ横断比較](?a=editor-comparison-2026-march)。",
+      "---",
+      "**編集履歴**",
+      "【訂正 2026-08-11】「Windsurf 買収（3月）後の Cascade 統合は継続中」および関連リンクを削除しました。Anysphere による Windsurf 買収は事実ではありません（Windsurf の買収元は Cognition、2025年7月発表）。当該箇所を SpaceX による Anysphere 買収の記述に差し替えました。",
       "---",
       "**【訂正 2026-08-11】** 総合評価を **5 → 4.5** に修正しました。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（4.7）と乖離していました。各軸の評価そのものは変更しておらず、**公表している算出方法どおりに総合スコアを計算し直した**ものです。"
     ],
@@ -8656,18 +8744,32 @@ const ARTICLES_BODY = {
   },
   "windsurf": {
     "body": [
-      "**Windsurf** はもともと **Codeium** というブランド名で AI コード補完サービスを提供していた企業が、エディタ製品としてリブランドしたものである。VS Code フォークをベースとし、コード補完だけでなく対話的なコード生成や編集支援まで一体化した環境を目指して開発された。2026 年 3 月に **Anysphere**（Cursor の親会社）による買収が完了し、現在は同社傘下で運営されている。",
+      "**Windsurf** はもともと **Codeium** というブランド名で AI コード補完サービスを提供していた企業が、エディタ製品としてリブランドしたものである。VS Code フォークをベースとし、コード補完だけでなく対話的なコード生成や編集支援まで一体化した環境を目指して開発された。2025年7月に **Cognition**（自律エージェント **Devin** の開発元）による買収が発表され、以降は同社傘下で運営されている。",
+      "**2026年6月2日、Windsurf は Devin Desktop へブランド統合された。** Cognition は買収直後に「Windsurf は皆さんが知る Windsurf のままである」と表明していたが、約11か月でブランドを一本化した形になる。製品としてのエディタは継続しているため、既存ユーザーが直ちに使えなくなるわけではないが、**新規に検討する場合は「Windsurf」ではなく「Devin Desktop」として提供条件を確認する必要がある**。",
       "中核機能は Cascade と呼ばれるマルチステップフローで、ユーザーの指示をタスク単位に分解し、ファイル読み取り・編集・ターミナル操作などを段階的に実行する。各ステップの差分をプレビューしてから適用する設計のため、大規模な変更でも意図しない書き換えを確認しやすい。補完機能は Codeium 時代から継続しており、反応速度に定評がある。",
-      "料金体系は無料枠と Pro プラン（月額 15 ドル前後）の 2 層構成で、無料枠でも補完と限定的な Cascade 利用が可能になっている。バックエンドモデルは Sonnet 4.6 や GPT-5.4 など複数に対応し、プランに応じて利用可能なモデルと回数が変わる。Cursor（Pro 月額 20 ドル）より低価格帯に位置づけられている。",
-      "Anysphere 傘下に入ったことで、長期的には Cursor への技術統合が進む可能性がある。現時点では Windsurf は単体製品として提供が継続されているが、ロードマップ上の独自機能追加がどこまで続くかは不透明である。新規に AI エディタを選ぶ場合、Cursor との機能重複と将来の統合計画を考慮したうえで判断する必要がある。",
+      "料金体系は2026年3月19日の改定でクレジット制から日次・週次クォータ制に移行し、Free / Pro $20 / Teams $40 per seat / Max $200 / Enterprise（要問合せ）の構成になった（[→ 改定の詳細](?a=windsurf-pricing-overhaul)）。改定前の Pro は $15 だったため、**Cursor Pro（$20）に対する価格優位は消滅している**。年額払いで17〜20%の割引がある。",
+      "選定上の論点は、**単体エディタとしての評価よりも、Cognition の製品戦略のなかでの位置付け**に移っている。Devin（自律エージェント）と Devin Desktop（エディタ）を組み合わせた一貫したワークフローを求めるなら合理的な選択肢である一方、エディタ単体で選ぶなら Cursor や VS Code + Copilot と機能・価格で正面から比較することになる。詳細は[AI エディタ横断比較](?a=editor-comparison-2026-march)を参照。",
       "---",
-      "**【訂正 2026-08-11】** 総合評価を **4 → 3.5** に修正しました。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（3.65）と乖離していました。各軸の評価そのものは変更しておらず、**公表している算出方法どおりに総合スコアを計算し直した**ものです。"
+      "**編集履歴**",
+      "【訂正 2026-08-11】「2026年3月に Anysphere（Cursor の親会社）による買収が完了し、現在は同社傘下で運営されている」という記述、および「Anysphere 傘下に入ったことで長期的には Cursor への技術統合が進む可能性がある」という段落を削除しました。**この買収は事実ではありません。** Windsurf を買収したのは Cognition で、発表は2025年7月です。誤りの元になった記事は[取り下げ](?a=cursor-windsurf-merge)しました。",
+      "【追記 2026-08-11】2026年6月2日の Devin Desktop へのブランド統合、および3月19日の料金改定後の現行プラン（Free / Pro $20 / Teams $40 / Max $200）を反映しました。旧記述の「Pro プラン月額 15 ドル前後」は改定前の値です。",
+      "【訂正 2026-08-11】総合評価を **4 → 3.5** に修正しました。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（3.65）と乖離していました。各軸の評価そのものは変更しておらず、**公表している算出方法どおりに総合スコアを計算し直した**ものです。"
     ],
     "primarySources": [
       {
-        "title": "Windsurf",
-        "site": "Windsurf",
-        "url": "https://windsurf.com/"
+        "title": "Cognition's acquisition of Windsurf",
+        "site": "Cognition",
+        "url": "https://cognition.com/blog/windsurf"
+      },
+      {
+        "title": "Introducing our new Windsurf pricing plans",
+        "site": "Devin (Cognition)",
+        "url": "https://devin.ai/blog/windsurf-pricing-plans"
+      },
+      {
+        "title": "Cognition to buy AI startup Windsurf days after Google poached CEO in $2.4 billion licensing deal",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2025/07/14/cognition-to-buy-ai-startup-windsurf-days-after-google-poached-ceo.html"
       }
     ]
   },

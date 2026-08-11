@@ -1901,11 +1901,11 @@ export const ARTICLES_META = [
     "id": "cli-tools-comparison-2026-march",
     "type": "feature",
     "category": "cli",
-    "title": "CLI コーディングツール横断比較 — Claude Code・Codex・Gemini CLI・Aider・Copilot（2026年3月版）",
-    "excerpt": "主要5つの CLI コーディングツールを、機能・料金・モデル・権限制御の軸で横並びに比較した。バイブコーディングの「ターミナル層」を選ぶ際の参考に。",
+    "title": "CLI コーディングツール横断比較 — Claude Code・Codex・Gemini CLI・Aider・Copilot CLI・Cursor CLI",
+    "excerpt": "主要6つの CLI コーディングツールを、機能・料金・モデル・権限制御の軸で横並びに比較した。バイブコーディングの「ターミナル層」を選ぶ際の参考に。**毎月見直している記事で、最終更新は2026年8月11日**。Codex の提供範囲が Free / Go / Plus まで広がった点、Copilot が従量課金へ移行した点など、料金体系の変化を反映した。",
     "date": "2026-03-28",
     "author": "AI News 編集部",
-    "readTime": "7分",
+    "readTime": "9分",
     "tags": [
       "CLI",
       "比較",
@@ -1921,17 +1921,17 @@ export const ARTICLES_META = [
     },
     "heroScope": "none",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-03-29"
+    "lastReviewed": "2026-08-11"
   },
   {
     "id": "editor-comparison-2026-march",
     "type": "feature",
     "category": "editor",
-    "title": "AI エディタ横断比較 — Cursor・Windsurf・VS Code+Copilot（2026年3月版）",
-    "excerpt": "AI エディタ三大勢力を、機能・料金・エージェント能力・拡張性の軸で横並びに比較した。Cursor/Windsurf の経営統合後の現状も含め、エディタ選びの判断材料を整理する。",
+    "title": "AI エディタ横断比較 — Cursor・Devin Desktop（旧 Windsurf）・VS Code+Copilot・Zed",
+    "excerpt": "AI エディタ4製品を、機能・料金・エージェント能力・拡張性の軸で横並びに比較した。**毎月見直している記事で、最終更新は2026年8月11日**。Windsurf の Devin Desktop へのブランド統合、SpaceX による Cursor 買収の発表、GitHub Copilot の従量課金移行を反映し、比較対象に Zed を加えた。",
     "date": "2026-03-29",
     "author": "AI News 編集部",
-    "readTime": "7分",
+    "readTime": "9分",
     "tags": [
       "エディタ",
       "比較",
@@ -1946,17 +1946,17 @@ export const ARTICLES_META = [
     },
     "heroScope": "none",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-03-29"
+    "lastReviewed": "2026-08-11"
   },
   {
     "id": "pricing-comparison-all-tools-2026-march",
     "type": "feature",
     "category": "special",
-    "title": "AI 開発ツール料金プラン横断比較 — CLI・エディタ・API 全8ツール（2026年3月版）",
-    "excerpt": "Claude Code、Cursor、Windsurf、Codex、Gemini CLI、Copilot、Aider、Zed AI の料金体系を一覧で比較。無料枠・Pro・Enterprise まで、公式発表ベースで整理した。",
+    "title": "AI 開発ツール料金プラン横断比較 — CLI・エディタ・モデル API",
+    "excerpt": "Claude Code、Cursor、Devin Desktop（旧 Windsurf）、Codex、Gemini CLI、Copilot、Aider、Zed の料金体系を一覧で比較。無料枠から Enterprise まで公式発表ベースで整理し、主要モデルの API 単価も併記した。**毎月見直している記事で、最終更新は2026年8月11日**。定額から「定額＋クレジット枠＋従量」への移行が業界的な流れになっている。",
     "date": "2026-03-29",
     "author": "AI News 編集部",
-    "readTime": "8分",
+    "readTime": "9分",
     "tags": [
       "比較",
       "料金",
@@ -1974,7 +1974,7 @@ export const ARTICLES_META = [
     },
     "heroScope": "none",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-03-29"
+    "lastReviewed": "2026-08-11"
   },
   {
     "id": "usecase-recommendation-matrix-2026",
@@ -2895,21 +2895,19 @@ export const ARTICLES_META = [
     "id": "cursor-windsurf-merge",
     "type": "news",
     "category": "product",
-    "title": "Cursor、Windsurf（Codeium）を買収完了 — AIエディタ市場の統合が加速",
-    "excerpt": "Anysphere社がCodeium社のWindsurfを買収。Cascadeフロー技術をCursorに統合予定。AIエディタ市場の寡占化が進む。",
+    "status": "retracted",
+    "title": "【取り下げ】Cursor、Windsurf（Codeium）を買収完了 — AIエディタ市場の統合が加速",
+    "excerpt": "本記事は主要な事実が誤りであったため、2026年8月11日に取り下げました。Windsurf を買収したのは Anysphere（Cursor）ではなく Cognition です。",
     "date": "2026-03-28",
     "newsDate": "2026-03-20",
     "author": "AI News 編集部",
-    "readTime": "4分",
+    "readTime": "2分",
     "tags": [
       "エディタ",
       "買収",
       "業界動向"
     ],
-    "coverImage": {
-      "src": "logos/cursor.svg",
-      "alt": "Cursor"
-    }
+    "heroScope": "none"
   },
   {
     "id": "claude-design",
