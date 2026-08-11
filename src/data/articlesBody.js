@@ -7971,13 +7971,6 @@ const ARTICLES_BODY = {
       "### MCP / GitHub 統合 / 関数呼び出し",
       "MCP プロトコルでの外部接続、GitHub PR・Issue 連携、Structured Outputs、リアルタイム音声入力にも対応。",
       "## 料金プラン",
-      "| プラン | 月額 | 内容 |",
-      "| --- | --- | --- |",
-      "| ChatGPT Plus | $20 | Codex 制限付き利用 |",
-      "| ChatGPT Pro | $200 | Codex フル利用、並列実行枠最大 |",
-      "| ChatGPT Business | カスタム | 組織管理 |",
-      "| ChatGPT Enterprise | カスタム | SOC 2、データ越境制御 |",
-      "| Codex CLI（API 従量） | — | GPT-5.5 トークン単価ベース |",
       "## 評価",
       "**強み**: クラウド並列実行モデルは Claude Code / Cursor の「ローカル並列」アプローチと差別化。**Pull Request ベースの非同期ワークフロー**に強く、チーム開発での「並列投入 → レビュー → マージ」が自然。**4M+ アクティブユーザー**で実績は十分。**GPT-5.5 の「半額で SOTA」**コスパが ChatGPT Pro の高額さを部分的に正当化。",
       "**注意点**: ChatGPT Pro $200/月のハードルは Claude Code Pro $20/月、Cursor Pro $20/月と比べて**個人開発者には高い**。クラウド実行のため、機微データを扱う場合は**Business / Enterprise プラン + データ越境設定**が必要。Codex CLI（ローカル版）の機能成熟度は Claude Code に比べてまだ追いついていない部分がある。",
@@ -8004,6 +7997,43 @@ const ARTICLES_BODY = {
         "title": "Introducing GPT-5.5",
         "site": "OpenAI",
         "url": "https://openai.com/index/introducing-gpt-5-5/"
+      }
+    ],
+    "tables": [
+      {
+        "afterParagraph": 21,
+        "headers": [
+          "プラン",
+          "月額",
+          "内容"
+        ],
+        "rows": [
+          [
+            "ChatGPT Plus",
+            "$20",
+            "Codex 制限付き利用"
+          ],
+          [
+            "ChatGPT Pro",
+            "$200",
+            "Codex フル利用、並列実行枠最大"
+          ],
+          [
+            "ChatGPT Business",
+            "カスタム",
+            "組織管理"
+          ],
+          [
+            "ChatGPT Enterprise",
+            "カスタム",
+            "SOC 2、データ越境制御"
+          ],
+          [
+            "Codex CLI（API 従量）",
+            "—",
+            "GPT-5.5 トークン単価ベース"
+          ]
+        ]
       }
     ]
   },
@@ -8061,20 +8091,6 @@ const ARTICLES_BODY = {
       "- **Web**: [claude.ai/code](https://claude.ai/code) にアクセスするだけ。ローカル環境なしで長時間タスクを起動",
       "- **iOS アプリ**: App Store「Claude by Anthropic」",
       "## CLI 主要コマンド・フラグ",
-      "| コマンド / フラグ | 機能 |",
-      "| --- | --- |",
-      "| `claude` | 対話セッション開始 |",
-      "| `claude \"<指示>\"` | 一発指示モード |",
-      "| `claude -p \"<prompt>\"` | パイプ・スクリプト用の非対話モード（CI、cron で活用）|",
-      "| `claude agents` | **agent view を全画面で開く**（マルチセッション統合ダッシュボード）|",
-      "| `claude --bg [task]` | バックグラウンドセッション起動（ターミナルを閉じても継続）|",
-      "| `claude --teleport` | Web / iOS で起動したセッションをローカルターミナルに引き継ぎ |",
-      "| `claude --headless` | UI なしモード |",
-      "| `/bg` | 対話セッション内からバックグラウンドへ送る |",
-      "| `/desktop` | ターミナルセッションをデスクトップアプリに引き継ぎ |",
-      "| `/schedule` | Routines（クラウド定時実行）を作成 |",
-      "| `/loop` | 同じプロンプトをセッション内で繰り返し実行 |",
-      "| `/model` | 使用モデル切替（Opus 4.8 / Sonnet 4.6 / Haiku 4.5 等）|",
       "## 中核機能の全体像",
       "### モデル",
       "標準は **Claude Opus 4.8**（5/28 GA、SWE-bench Verified 88.6%、SWE-bench Pro 69.2%、USAMO 2026 96.7%、GraphWalks F1（1M ctx）68.1%）。Sonnet 4.6 / Haiku 4.5 / Mythos Preview（Project Glasswing 限定）への切替も可能。",
@@ -8106,13 +8122,6 @@ const ARTICLES_BODY = {
       "### Chrome 連携",
       "ライブ Web アプリケーションのデバッグを Claude 経由で実行。",
       "## 料金体系（Fast Mode が3倍安く）",
-      "| プラン | 月額 | Standard | Fast Mode | 主な用途 |",
-      "| --- | --- | --- | --- | --- |",
-      "| Pro | $20 | 標準枠 | — | 個人開発 |",
-      "| Max | $100 / $200 | 拡張枠 | **2.5倍速** | ヘビーユーザー |",
-      "| Team | カスタム | 拡張枠 | 対応 | 小〜中規模チーム |",
-      "| Enterprise | カスタム | 拡張枠 | 対応 | SOC 2 準拠、SSO 等 |",
-      "| API（従量） | — | $5 / $25 per M | **$10 / $50（前世代比3倍安）** | プログラム呼び出し |",
       "## 5月以降の周辺情報",
       "- **5/6 SpaceX Colossus 1 借り上げ**で Claude Code レート上限が**全有料プランで2倍**、Pro/Max のピーク時間帯制限を撤廃",
       "- **5/12 Claude Platform on AWS GA** で AWS Marketplace 経由の課金・Cost Explorer 監視に対応",
@@ -8163,6 +8172,112 @@ const ARTICLES_BODY = {
         "site": "Anthropic",
         "url": "https://www.anthropic.com/news/claude-opus-4-8"
       }
+    ],
+    "tables": [
+      {
+        "afterParagraph": 13,
+        "headers": [
+          "コマンド / フラグ",
+          "機能"
+        ],
+        "rows": [
+          [
+            "`claude`",
+            "対話セッション開始"
+          ],
+          [
+            "`claude \"<指示>\"`",
+            "一発指示モード"
+          ],
+          [
+            "`claude -p \"<prompt>\"`",
+            "パイプ・スクリプト用の非対話モード（CI、cron で活用）"
+          ],
+          [
+            "`claude agents`",
+            "**agent view を全画面で開く**（マルチセッション統合ダッシュボード）"
+          ],
+          [
+            "`claude --bg [task]`",
+            "バックグラウンドセッション起動（ターミナルを閉じても継続）"
+          ],
+          [
+            "`claude --teleport`",
+            "Web / iOS で起動したセッションをローカルターミナルに引き継ぎ"
+          ],
+          [
+            "`claude --headless`",
+            "UI なしモード"
+          ],
+          [
+            "`/bg`",
+            "対話セッション内からバックグラウンドへ送る"
+          ],
+          [
+            "`/desktop`",
+            "ターミナルセッションをデスクトップアプリに引き継ぎ"
+          ],
+          [
+            "`/schedule`",
+            "Routines（クラウド定時実行）を作成"
+          ],
+          [
+            "`/loop`",
+            "同じプロンプトをセッション内で繰り返し実行"
+          ],
+          [
+            "`/model`",
+            "使用モデル切替（Opus 4.8 / Sonnet 4.6 / Haiku 4.5 等）"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 44,
+        "headers": [
+          "プラン",
+          "月額",
+          "Standard",
+          "Fast Mode",
+          "主な用途"
+        ],
+        "rows": [
+          [
+            "Pro",
+            "$20",
+            "標準枠",
+            "—",
+            "個人開発"
+          ],
+          [
+            "Max",
+            "$100 / $200",
+            "拡張枠",
+            "**2.5倍速**",
+            "ヘビーユーザー"
+          ],
+          [
+            "Team",
+            "カスタム",
+            "拡張枠",
+            "対応",
+            "小〜中規模チーム"
+          ],
+          [
+            "Enterprise",
+            "カスタム",
+            "拡張枠",
+            "対応",
+            "SOC 2 準拠、SSO 等"
+          ],
+          [
+            "API（従量）",
+            "—",
+            "$5 / $25 per M",
+            "**$10 / $50（前世代比3倍安）**",
+            "プログラム呼び出し"
+          ]
+        ]
+      }
     ]
   },
   "cursor-cli": {
@@ -8188,15 +8303,6 @@ const ARTICLES_BODY = {
       "### Microsoft Teams / Slack / GitHub / PagerDuty 統合",
       "3月の **Cursor Automations** で Slack / GitHub PR / PagerDuty トリガー、5/11 で **Microsoft Teams 統合**（`@Cursor` メンション）。CLI から起動したジョブも統合管理可能。",
       "## 料金プラン",
-      "| プラン | 月額 | 主な内容 |",
-      "| --- | --- | --- |",
-      "| Free | $0 | 制限付き利用 |",
-      "| Pro | $20 | 標準 Agent 利用枠 |",
-      "| Pro+ | $60 | Pro の5倍 Agent 上限 |",
-      "| Ultra | $200 | 最大 Agent 利用枠 |",
-      "| Teams Standard | $40/seat/月 | 組織管理、SAML SSO、Privacy Mode |",
-      "| Teams Premium | $120/seat/月 | Standard の5倍 Agent 上限 |",
-      "| Business / Enterprise | カスタム | 監査ログ、SOC 2 |",
       "**Bugbot 課金**: 2026年5月から seat-based → usage-based に移行、1 PR レビュー平均 **$1.00-$1.50**、effort level（high で時間と料金が増える代わりにバグ発見率向上）も調整可能。",
       "## 評価",
       "**強み**: IDE 統合と CLI が同じ Composer / Background Agent を共有するため、**作業環境を選ばずに同じワークフロー**を回せる。独自モデル（Composer 2.5 / Sonic）により低レイテンシ・低コストでフロンティア性能を実現。Microsoft Teams / Slack 統合でチャットアプリ起点のエージェント運用にも対応。",
@@ -8218,6 +8324,53 @@ const ARTICLES_BODY = {
         "title": "@cursor/cli on npm",
         "site": "npm",
         "url": "https://www.npmjs.com/package/@cursor/cli"
+      }
+    ],
+    "tables": [
+      {
+        "afterParagraph": 20,
+        "headers": [
+          "プラン",
+          "月額",
+          "主な内容"
+        ],
+        "rows": [
+          [
+            "Free",
+            "$0",
+            "制限付き利用"
+          ],
+          [
+            "Pro",
+            "$20",
+            "標準 Agent 利用枠"
+          ],
+          [
+            "Pro+",
+            "$60",
+            "Pro の5倍 Agent 上限"
+          ],
+          [
+            "Ultra",
+            "$200",
+            "最大 Agent 利用枠"
+          ],
+          [
+            "Teams Standard",
+            "$40/seat/月",
+            "組織管理、SAML SSO、Privacy Mode"
+          ],
+          [
+            "Teams Premium",
+            "$120/seat/月",
+            "Standard の5倍 Agent 上限"
+          ],
+          [
+            "Business / Enterprise",
+            "カスタム",
+            "監査ログ、SOC 2"
+          ]
+        ]
       }
     ]
   },
@@ -8248,13 +8401,6 @@ const ARTICLES_BODY = {
       "### GitHub 全体との統合",
       "**Issues / PR / Actions / Codespaces / Secret Scanning / Code Search**と直結。Issue を割り当てるだけで Coding Agent が自律実装、PR まで作成。",
       "## 料金プラン",
-      "| プラン | 月額 | 内容 |",
-      "| --- | --- | --- |",
-      "| Copilot Free | $0 | 基本補完（4月リストラクチャ後の新無償枠） |",
-      "| Pro | $10 | 個人開発、Sonnet 4.5 中心 |",
-      "| Pro+ | $39 | Opus 4.7/4.8 + GPT-5.5 + Project Polaris 含むフロンティアモデル全部 |",
-      "| Business | $19 | 組織管理、SAML SSO |",
-      "| Enterprise | $39 | 監査ログ、IP インデムニティ、ファインチューニング |",
       "**注**: 5/28 報道時点で Build 2026（6/2-3）に合わせ **Copilot Starter（無償）/ Pro / Enterprise の3階層**への再編成が予告されていた。実際の新プラン構造は GitHub 公式アナウンスで最終確認すべき。",
       "## 評価",
       "**強み**: GitHub エコシステム（Issues / PR / Actions / Codespaces / Code Search）とのネイティブ統合は他ツール追随不可。**モデル選択の自由度**（Claude / GPT / MAI / Gemini）が増し、ベンダーロックインを避けつつ Copilot を継続利用できる。`/fleet` で並列エージェント運用に対応、Autopilot で完全自律実行も可能。",
@@ -8266,6 +8412,43 @@ const ARTICLES_BODY = {
         "title": "GitHub Copilot",
         "site": "GitHub",
         "url": "https://github.com/features/copilot"
+      }
+    ],
+    "tables": [
+      {
+        "afterParagraph": 24,
+        "headers": [
+          "プラン",
+          "月額",
+          "内容"
+        ],
+        "rows": [
+          [
+            "Copilot Free",
+            "$0",
+            "基本補完（4月リストラクチャ後の新無償枠）"
+          ],
+          [
+            "Pro",
+            "$10",
+            "個人開発、Sonnet 4.5 中心"
+          ],
+          [
+            "Pro+",
+            "$39",
+            "Opus 4.7/4.8 + GPT-5.5 + Project Polaris 含むフロンティアモデル全部"
+          ],
+          [
+            "Business",
+            "$19",
+            "組織管理、SAML SSO"
+          ],
+          [
+            "Enterprise",
+            "$39",
+            "監査ログ、IP インデムニティ、ファインチューニング"
+          ]
+        ]
       }
     ]
   },
@@ -8374,15 +8557,6 @@ const ARTICLES_BODY = {
       "### Self-hosted Cloud Agents（3月、エンタープライズ向け）",
       "コードと実行環境を自社ネットワーク内に保持したままクラウドエージェントを利用。規制業界向け。",
       "## 料金プラン",
-      "| プラン | 月額 | 内容 |",
-      "| --- | --- | --- |",
-      "| Hobby | 無料 | 補完 + 限定 Composer |",
-      "| Pro | $20 | 標準 Agent 利用枠、無制限補完 |",
-      "| Pro+ | $60 | Pro より5倍の Agent 上限 |",
-      "| Ultra | $200 | 最大 Agent 利用枠、優先サポート |",
-      "| Teams Standard | $40/seat/月 | 組織管理、SAML SSO、Privacy Mode |",
-      "| Teams Premium | $120/seat/月 | Standard の5倍 Agent 上限 |",
-      "| Business / Enterprise | カスタム | 監査、SOC 2、契約条項 |",
       "すべて従量モデルで、各プロンプトが request-equivalent credits を消費。",
       "## 5月以降の動向",
       "- **5/11 Microsoft Teams 統合 GA**（`@Cursor` メンション）",
@@ -8414,6 +8588,53 @@ const ARTICLES_BODY = {
         "title": "Cursor in Microsoft Teams",
         "site": "Cursor Changelog",
         "url": "https://cursor.com/changelog/microsoft-teams"
+      }
+    ],
+    "tables": [
+      {
+        "afterParagraph": 27,
+        "headers": [
+          "プラン",
+          "月額",
+          "内容"
+        ],
+        "rows": [
+          [
+            "Hobby",
+            "無料",
+            "補完 + 限定 Composer"
+          ],
+          [
+            "Pro",
+            "$20",
+            "標準 Agent 利用枠、無制限補完"
+          ],
+          [
+            "Pro+",
+            "$60",
+            "Pro より5倍の Agent 上限"
+          ],
+          [
+            "Ultra",
+            "$200",
+            "最大 Agent 利用枠、優先サポート"
+          ],
+          [
+            "Teams Standard",
+            "$40/seat/月",
+            "組織管理、SAML SSO、Privacy Mode"
+          ],
+          [
+            "Teams Premium",
+            "$120/seat/月",
+            "Standard の5倍 Agent 上限"
+          ],
+          [
+            "Business / Enterprise",
+            "カスタム",
+            "監査、SOC 2、契約条項"
+          ]
+        ]
       }
     ]
   },
