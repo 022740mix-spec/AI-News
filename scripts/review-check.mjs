@@ -19,6 +19,7 @@
  *  13. 同日に pinned:true が2件以上ないか
  *  14. 取り下げ記事の heroScope が "none" か
  *  15. 比較記事（review）に lastReviewed があるか
+ *  15b. reviewCadence:"monthly" の記事が31日以内に見直されているか（Footer の公約）
  *  16. date が YYYY-MM-DD 形式か
  */
 
@@ -171,6 +172,25 @@ for (const a of ARTICLES) {
   // 15. 比較記事（review）に lastReviewed があるか
   if (a.type === "review" && !a.lastReviewed) {
     warn(a.id, "review 記事に lastReviewed が設定されていません");
+  }
+
+  // 15b. reviewCadence:"monthly" の記事が31日以上見直されていないか
+  //      Footer で「主要な比較記事・料金記事は毎月1回以上見直す」と公言しているため、
+  //      その対象記事の鮮度は機械的に検査する。
+  if (a.reviewCadence === "monthly") {
+    if (!a.lastReviewed) {
+      error(a.id, 'reviewCadence:"monthly" ですが lastReviewed がありません');
+    } else if (DATE_RE.test(a.lastReviewed)) {
+      const elapsed = Math.floor(
+        (Date.now() - new Date(`${a.lastReviewed}T00:00:00Z`).getTime()) / 86400000,
+      );
+      if (elapsed > 31) {
+        warn(
+          a.id,
+          `月次見直し対象ですが ${elapsed} 日間更新されていません（Footer の公約に抵触）`,
+        );
+      }
+    }
   }
 
   // 16. date が YYYY-MM-DD 形式か

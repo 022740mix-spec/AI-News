@@ -86,6 +86,32 @@ AI News の強みは、技術ニュースに**検証可能な社会的文脈**�
 - 書いた文脈情報を削除しても記事の主旨が変わらないなら、その文脈は不要（装飾的印象操作の恐れ）
 - 文脈情報を加えることで記事の理解が深まるなら、それは有益な文脈付加である
 
+### 比較記事・料金記事の見直しサイクル
+
+Footer の編集ステートメントで「**主要な比較記事・料金記事は毎月1回以上見直す**」と公言している。
+この約束の対象は、記事メタに `reviewCadence: "monthly"` を持つものに限定する。
+
+**月次見直しの対象（12本）**
+
+| 区分 | 対象 |
+|---|---|
+| ツール横断の料金・比較 | `pricing-comparison-all-tools-2026-march`、`cli-tools-comparison-2026-march`、`editor-comparison-2026-march` |
+| 現行世代のモデル | `gpt-5-6-review`、`claude-fable-5-mythos-5-review`、`claude-sonnet-5-review` |
+| 主要 CLI | `claude-code`、`openai-codex-agent`、`cursor-cli`、`github-copilot-cli`、`gemini-cli` |
+| 主要エディタ | `cursor-editor` |
+
+**選定基準**: 読者が採用・支出の判断に直接使い、かつ陳腐化が速いもの。
+新しい世代のモデルが主力になったら、旧世代から `reviewCadence` を外し新世代に付け替える
+（例: Opus 5 のレビューを作成したら、そちらに付与する）。
+
+**遵守事項**
+
+- `review-check.mjs` の規則 15b が、対象記事が31日を超えて未更新なら警告する
+- 見直しの際は、料金・モデル世代・提供条件が現行と合っているかを確認し、
+  本文を更新したうえで `lastReviewed` を更新する。**確認だけして日付を進める運用は禁止**
+- 対象外の記事にも `lastReviewed` は表示し続ける。ただし頻度は約束しない
+- 対象を増減させる場合は Footer の文言と本セクションを同時に更新する
+
 ### 訂正・取り下げポリシー
 
 **訂正（Correction）**
