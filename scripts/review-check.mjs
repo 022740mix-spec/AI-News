@@ -282,8 +282,10 @@ for (const a of ARTICLES) {
     if (/^\s*\|.*\|/.test(s)) {
       warn(a.id, `p${i}: 本文に Markdown テーブルが直接記述されています（tables への移行が必要）`);
     }
-    if (/\[[^\]]+\]\(https?:\/\//.test(s)) {
-      warn(a.id, `p${i}: 本文に外部 Markdown リンクがあります（レンダラは ?a= 形式のみ対応）`);
+    // 外部 Markdown リンクはレンダラが対応済み（richText.jsx）。
+    // ただし http:// は https:// に統一する。
+    for (const link of s.match(/\[[^\]]+\]\(http:\/\/[^)\s]+\)/g) ?? []) {
+      warn(a.id, `p${i}: 本文の外部リンクが http:// です: ${link.slice(0, 60)}`);
     }
   }
 

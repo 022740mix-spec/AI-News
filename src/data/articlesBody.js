@@ -6451,7 +6451,7 @@ const ARTICLES_BODY = {
       {
         "title": "MCP v2 — The 2026 MCP Roadmap",
         "site": "MCP Blog",
-        "url": "http://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/"
+        "url": "https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/"
       }
     ]
   },
@@ -6725,7 +6725,7 @@ const ARTICLES_BODY = {
       {
         "title": "MCP v2 — The 2026 MCP Roadmap",
         "site": "Model Context Protocol Blog",
-        "url": "http://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/"
+        "url": "https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/"
       },
       {
         "title": "Cursor 2.4 — Subagents, Skills, and Image Generation",
@@ -9690,7 +9690,7 @@ const ARTICLES_BODY = {
       {
         "title": "The 2026 MCP Roadmap",
         "site": "Model Context Protocol Blog",
-        "url": "http://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/"
+        "url": "https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/"
       },
       {
         "title": "The open source Model Context Protocol was just updated — here's why it's a big deal",
