@@ -111,12 +111,12 @@ function EditorialStatement({ isOpen, onClose }) {
         <h3>{en ? "Updates & Corrections" : "記事の更新と訂正"}</h3>
         <ul>
           {en ? (<>
-            <li><strong>Comparison and pricing articles</strong> are reviewed at least once a month with a "last verified" date</li>
+            <li><strong>Key comparison and pricing articles</strong> — current-generation models, major CLIs and editors, and cross-tool pricing comparisons — are reviewed <strong>at least once a month</strong>. Other comparison articles also display a "last verified" date so you can judge their freshness</li>
             <li><strong>Factual errors</strong> are corrected with a "Correction" notice at the top of the article (never silently fixed)</li>
             <li><strong>New information</strong> is appended as an "Update" at the end of the article</li>
             <li>News articles are kept individually and not deleted</li>
           </>) : (<>
-            <li><strong>比較記事・料金記事</strong>は毎月1回以上の見直しを実施し、「最終確認日」を記事に表示します</li>
+            <li><strong>主要な比較記事・料金記事</strong>（現行世代のモデル、主要な CLI・エディタ、ツール横断の料金比較）は<strong>毎月1回以上</strong>見直します。その他の比較記事にも「最終確認日」を表示し、鮮度を判断できるようにしています</li>
             <li><strong>事実の誤り</strong>を発見した場合は記事上部に「Correction」として訂正を明記します（黙って修正しません）</li>
             <li><strong>情報の追加・更新</strong>は記事末尾に「Update」として追記します</li>
             <li>ニュース記事は原則として個別に保持し、削除は行いません</li>

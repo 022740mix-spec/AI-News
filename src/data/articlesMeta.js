@@ -1920,6 +1920,7 @@ export const ARTICLES_META = [
       "alt": "ターミナル画面"
     },
     "heroScope": "none",
+    "reviewCadence": "monthly",
     "lastReviewed": "2026-03-29"
   },
   {
@@ -1944,6 +1945,7 @@ export const ARTICLES_META = [
       "alt": "コードエディタ"
     },
     "heroScope": "none",
+    "reviewCadence": "monthly",
     "lastReviewed": "2026-03-29"
   },
   {
@@ -1971,6 +1973,7 @@ export const ARTICLES_META = [
       "alt": "データ分析"
     },
     "heroScope": "none",
+    "reviewCadence": "monthly",
     "lastReviewed": "2026-03-29"
   },
   {
@@ -2853,6 +2856,7 @@ export const ARTICLES_META = [
     },
     "rating": 4,
     "reviewCategory": "cli",
+    "reviewCadence": "monthly",
     "lastReviewed": "2026-06-05"
   },
   {
@@ -2884,6 +2888,7 @@ export const ARTICLES_META = [
     },
     "rating": 4,
     "reviewCategory": "cli",
+    "reviewCadence": "monthly",
     "lastReviewed": "2026-06-05"
   },
   {
@@ -2959,6 +2964,7 @@ export const ARTICLES_META = [
     },
     "rating": 5,
     "reviewCategory": "cli",
+    "reviewCadence": "monthly",
     "lastReviewed": "2026-06-05"
   },
   {
@@ -2986,6 +2992,7 @@ export const ARTICLES_META = [
     },
     "rating": 5,
     "reviewCategory": "cli",
+    "reviewCadence": "monthly",
     "lastReviewed": "2026-06-05"
   },
   {
@@ -3013,6 +3020,7 @@ export const ARTICLES_META = [
     },
     "rating": 4.5,
     "reviewCategory": "cli",
+    "reviewCadence": "monthly",
     "lastReviewed": "2026-06-05"
   },
   {
@@ -3168,6 +3176,7 @@ export const ARTICLES_META = [
     },
     "rating": 5,
     "reviewCategory": "editor",
+    "reviewCadence": "monthly",
     "lastReviewed": "2026-06-05"
   },
   {
@@ -4009,6 +4018,7 @@ export const ARTICLES_META = [
     },
     "rating": 5,
     "reviewCategory": "model",
+    "reviewCadence": "monthly",
     "lastReviewed": "2026-07-07"
   },
   {
@@ -4037,6 +4047,7 @@ export const ARTICLES_META = [
     },
     "rating": 3.5,
     "reviewCategory": "model",
+    "reviewCadence": "monthly",
     "lastReviewed": "2026-07-07"
   },
   {
@@ -4068,6 +4079,7 @@ export const ARTICLES_META = [
     },
     "rating": 5,
     "reviewCategory": "model",
+    "reviewCadence": "monthly",
     "lastReviewed": "2026-07-13"
   },
   {
