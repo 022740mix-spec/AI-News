@@ -21,9 +21,39 @@
  *  15. 比較記事（review）に lastReviewed があるか
  *  15b. reviewCadence:"monthly" の記事が31日以内に見直されているか（Footer の公約）
  *  16. date が YYYY-MM-DD 形式か
+ *  17. newsDate が date より未来でないか
+ *  18. figures / coverImage が参照する画像が実在するか（Error）
+ *  19. tables / figures / charts / embeds に afterParagraph があるか（Error）
+ *  20. 本文に生の Markdown（フェンス単独段落・h1・表・外部リンク）が残っていないか
+ *  21. primarySources の url が外部 https URL か
+ *  22. review の rating が ratings の加重平均と一致するか
+ *
+ * 18〜22 は 2026-08 の棚卸で発覚した問題を機械的に再発防止するために追加した。
+ * いずれも「データとしては正常だが、読者の画面では壊れている」種類の欠陥で、
+ * 従来の検査では検出できなかった。
  */
 
+import { existsSync } from "node:fs";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
 import { ARTICLES, CATEGORIES } from "../src/data/aiToolsData.js";
+import { RATING_EXPLAINER } from "../src/constants.js";
+
+const PUBLIC_DIR = resolve(dirname(fileURLToPath(import.meta.url)), "..", "public");
+
+/** RATING_EXPLAINER の "AI品質（30%）" 形式のラベルから軸名と重みを取り出す */
+function parseAxisWeights(categoryId) {
+  const data = RATING_EXPLAINER[categoryId];
+  if (!data?.axes) return null;
+  const weights = {};
+  for (const [label] of data.axes) {
+    const m = label.match(/^(.+?)（(\d+)%）$/);
+    if (!m) return null;
+    weights[m[1]] = Number(m[2]) / 100;
+  }
+  return weights;
+}
 
 let errors = 0;
 let warnings = 0;
@@ -199,6 +229,102 @@ for (const a of ARTICLES) {
   }
   if (a.newsDate && !DATE_RE.test(a.newsDate)) {
     error(a.id, `newsDate "${a.newsDate}" が YYYY-MM-DD 形式ではありません`);
+  }
+
+  // 17. newsDate が date より未来でないか
+  //     ニュースの発生日が公開日より後になるのは論理矛盾。
+  if (a.newsDate && a.date && DATE_RE.test(a.newsDate) && DATE_RE.test(a.date) && a.newsDate > a.date) {
+    warn(a.id, `newsDate (${a.newsDate}) が date (${a.date}) より未来です`);
+  }
+
+  // 18. figures / coverImage が参照するファイルが実在するか
+  //     参照先が存在しなくてもデータ上は正常なため、従来は検出できなかった。
+  //     実際に figures 4件すべてが画像切れの状態で公開されていた。
+  for (const f of a.figures ?? []) {
+    if (!f.src) {
+      error(a.id, "figures に src がありません");
+    } else if (!/^https?:\/\//i.test(f.src) && !existsSync(join(PUBLIC_DIR, f.src))) {
+      error(a.id, `figures の画像が存在しません: ${f.src}`);
+    }
+  }
+  if (a.coverImage?.src && !/^https?:\/\//i.test(a.coverImage.src)) {
+    if (!existsSync(join(PUBLIC_DIR, a.coverImage.src))) {
+      error(a.id, `coverImage の画像が存在しません: ${a.coverImage.src}`);
+    }
+  }
+
+  // 19. tables / figures / charts / embeds に afterParagraph があるか
+  //     ArticleDetail.jsx は afterParagraph === i で描画位置を決めるため、
+  //     未設定だとどの段落にも描画されず、永久に非表示になる。
+  for (const key of ["tables", "figures", "charts", "embeds"]) {
+    for (const [idx, item] of (a[key] ?? []).entries()) {
+      if (typeof item.afterParagraph !== "number") {
+        error(a.id, `${key}[${idx}] に afterParagraph がありません（描画されません）`);
+      } else if (item.afterParagraph >= (a.body?.length ?? 0)) {
+        warn(
+          a.id,
+          `${key}[${idx}] の afterParagraph (${item.afterParagraph}) が本文の段落数 (${a.body?.length ?? 0}) を超えています`,
+        );
+      }
+    }
+  }
+
+  // 20. 本文に生の Markdown が残っていないか
+  //     レンダラが解釈しない記法は、記号のまま読者の画面に出る。
+  for (const [i, p] of (a.body ?? []).entries()) {
+    const s = String(p);
+    if (/^```/.test(s) && !s.includes("\n")) {
+      error(a.id, `p${i}: コードフェンスが単独の段落になっています（記号がそのまま表示されます）`);
+    }
+    if (/^#\s+/.test(s)) {
+      warn(a.id, `p${i}: 見出しが h1（#）です。レンダラは ## 〜 #### のみ対応します`);
+    }
+    if (/^\s*\|.*\|/.test(s)) {
+      warn(a.id, `p${i}: 本文に Markdown テーブルが直接記述されています（tables への移行が必要）`);
+    }
+    if (/\[[^\]]+\]\(https?:\/\//.test(s)) {
+      warn(a.id, `p${i}: 本文に外部 Markdown リンクがあります（レンダラは ?a= 形式のみ対応）`);
+    }
+  }
+
+  // 21. primarySources の URL が妥当か
+  //     内部リンクを一次ソースとして登録している例があった。
+  for (const [idx, s] of (a.primarySources ?? []).entries()) {
+    if (!s.url) {
+      error(a.id, `primarySources[${idx}] に url がありません`);
+    } else if (!/^https:\/\//i.test(s.url)) {
+      if (/^https?:\/\//i.test(s.url)) {
+        warn(a.id, `primarySources[${idx}] が http:// です: ${s.url}`);
+      } else {
+        error(a.id, `primarySources[${idx}] が外部 URL ではありません: ${s.url}`);
+      }
+    }
+  }
+
+  // 22. rating が ratings の加重平均と一致するか
+  //     サイトは「5軸の加重平均で総合スコアを算出」と公表しているため、
+  //     公表値が式と乖離していると読者への説明が虚偽になる。
+  if (a.type === "review" && a.rating != null && a.ratings && a.reviewCategory) {
+    const weights = parseAxisWeights(a.reviewCategory);
+    if (weights) {
+      let sum = 0;
+      let covered = 0;
+      for (const [axis, w] of Object.entries(weights)) {
+        if (typeof a.ratings[axis] === "number") {
+          sum += a.ratings[axis] * w;
+          covered += w;
+        }
+      }
+      if (covered > 0.99) {
+        const diff = Math.abs(sum - a.rating);
+        if (diff > 0.25) {
+          warn(
+            a.id,
+            `rating ${a.rating} が5軸の加重平均 ${sum.toFixed(2)} と ${diff.toFixed(2)} 乖離しています`,
+          );
+        }
+      }
+    }
   }
 }
 
