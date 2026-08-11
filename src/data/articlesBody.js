@@ -49,11 +49,35 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 17,
         "caption": "Claude Partner Network Services Track 3階層の要件（公式値）",
-        "headers": ["階層", "認定取得者", "本番運用顧客", "公開事例", "その他"],
+        "headers": [
+          "階層",
+          "認定取得者",
+          "本番運用顧客",
+          "公開事例",
+          "その他"
+        ],
         "rows": [
-          ["Select", "10名以上", "2案件", "1件", "—"],
-          ["Preferred", "100名", "15顧客", "3件", "—"],
-          ["Global Premier", "1,000名", "100顧客", "15件", "3地域以上、エグゼクティブ後援付き JBP"]
+          [
+            "Select",
+            "10名以上",
+            "2案件",
+            "1件",
+            "—"
+          ],
+          [
+            "Preferred",
+            "100名",
+            "15顧客",
+            "3件",
+            "—"
+          ],
+          [
+            "Global Premier",
+            "1,000名",
+            "100顧客",
+            "15件",
+            "3地域以上、エグゼクティブ後援付き JBP"
+          ]
         ]
       }
     ],
@@ -150,32 +174,116 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 14,
         "caption": "MAI 7モデル 一覧（Microsoft 公式）",
-        "headers": ["モデル", "種別", "主要スペック・ベンチ", "提供"],
+        "headers": [
+          "モデル",
+          "種別",
+          "主要スペック・ベンチ",
+          "提供"
+        ],
         "rows": [
-          ["MAI-Thinking-1", "推論", "35B active / ~1T 総 sparse MoE、256K ctx、AIME 2025 97.0%、AIME 2026 94.5%、SWE-Pro Opus 4.6 同等", "Microsoft Foundry"],
-          ["MAI-Code-1-Flash", "コーディング", "5B、Haiku 4.5 を SWE-Pro で +16pt 上回る", "GitHub Copilot / VS Code"],
-          ["MAI-Image-2.5", "画像（T2I + I2I）", "Microsoft 初の dual workload 対応", "Foundry"],
-          ["MAI-Image-2.5 Flash", "画像（高速版）", "—", "Foundry"],
-          ["MAI-Transcribe-1.5", "STT", "43言語、SOTA 級", "Foundry / Azure"],
-          ["MAI-Voice-2", "音声生成", "15+ 言語追加、新ボイス", "Foundry / Azure"],
-          ["MAI-Voice-2 Flash", "音声（高速版）", "—", "Foundry / Azure"]
+          [
+            "MAI-Thinking-1",
+            "推論",
+            "35B active / ~1T 総 sparse MoE、256K ctx、AIME 2025 97.0%、AIME 2026 94.5%、SWE-Pro Opus 4.6 同等",
+            "Microsoft Foundry"
+          ],
+          [
+            "MAI-Code-1-Flash",
+            "コーディング",
+            "5B、Haiku 4.5 を SWE-Pro で +16pt 上回る",
+            "GitHub Copilot / VS Code"
+          ],
+          [
+            "MAI-Image-2.5",
+            "画像（T2I + I2I）",
+            "Microsoft 初の dual workload 対応",
+            "Foundry"
+          ],
+          [
+            "MAI-Image-2.5 Flash",
+            "画像（高速版）",
+            "—",
+            "Foundry"
+          ],
+          [
+            "MAI-Transcribe-1.5",
+            "STT",
+            "43言語、SOTA 級",
+            "Foundry / Azure"
+          ],
+          [
+            "MAI-Voice-2",
+            "音声生成",
+            "15+ 言語追加、新ボイス",
+            "Foundry / Azure"
+          ],
+          [
+            "MAI-Voice-2 Flash",
+            "音声（高速版）",
+            "—",
+            "Foundry / Azure"
+          ]
         ]
       },
       {
         "afterParagraph": 32,
         "caption": "Build 2026 の主要発表まとめ",
-        "headers": ["カテゴリ", "発表内容", "状態"],
+        "headers": [
+          "カテゴリ",
+          "発表内容",
+          "状態"
+        ],
         "rows": [
-          ["モデル", "MAI 7モデル一斉投入", "本日公開"],
-          ["エージェント", "Scout（autopilot 第一号）", "Frontier プログラムプレビュー"],
-          ["プラットフォーム", "Windows Agent Framework", "MIT OSS、26H2 標準搭載"],
-          ["端末", "Project Solara（chip-to-cloud）", "ウェアラブル + デスクトップ実演"],
-          ["量子", "Majorana 2 量子チップ", "発表、qubit 寿命 20秒"],
-          ["科学", "Microsoft Discovery", "GA（GSK、BHP 利用中）"],
-          ["医療", "Mayo Clinic 提携", "発表"],
-          ["インフラ", "Azure HorizonDB", "プレビュー"],
-          ["インフラ", "GPU 高速 Fabric DW", "発表"],
-          ["ハードウェア", "Surface RTX Spark Dev Box", "発表"]
+          [
+            "モデル",
+            "MAI 7モデル一斉投入",
+            "本日公開"
+          ],
+          [
+            "エージェント",
+            "Scout（autopilot 第一号）",
+            "Frontier プログラムプレビュー"
+          ],
+          [
+            "プラットフォーム",
+            "Windows Agent Framework",
+            "MIT OSS、26H2 標準搭載"
+          ],
+          [
+            "端末",
+            "Project Solara（chip-to-cloud）",
+            "ウェアラブル + デスクトップ実演"
+          ],
+          [
+            "量子",
+            "Majorana 2 量子チップ",
+            "発表、qubit 寿命 20秒"
+          ],
+          [
+            "科学",
+            "Microsoft Discovery",
+            "GA（GSK、BHP 利用中）"
+          ],
+          [
+            "医療",
+            "Mayo Clinic 提携",
+            "発表"
+          ],
+          [
+            "インフラ",
+            "Azure HorizonDB",
+            "プレビュー"
+          ],
+          [
+            "インフラ",
+            "GPU 高速 Fabric DW",
+            "発表"
+          ],
+          [
+            "ハードウェア",
+            "Surface RTX Spark Dev Box",
+            "発表"
+          ]
         ]
       }
     ],
@@ -261,12 +369,42 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 22,
         "caption": "2026年 AI IPO パイプラインまとめ",
-        "headers": ["企業", "状態", "上場時期", "評価額", "調達額（目標）"],
+        "headers": [
+          "企業",
+          "状態",
+          "上場時期",
+          "評価額",
+          "調達額（目標）"
+        ],
         "rows": [
-          ["Cerebras Systems", "上場済み", "2026/5/14", "—（NASDAQ）", "$5.5B（実績）"],
-          ["SpaceX（xAI 統合後）", "S-1 公開直前と報道", "2026/6/12", "$1.75T", "$75-80B"],
-          ["Anthropic", "Confidential filing", "2026/10 目標", "$965B", "未公開（Series H で $65B 直近完了）"],
-          ["OpenAI", "上場準備", "2026/Q4", "—（直近 $852B 評価額）", "未公開"]
+          [
+            "Cerebras Systems",
+            "上場済み",
+            "2026/5/14",
+            "—（NASDAQ）",
+            "$5.5B（実績）"
+          ],
+          [
+            "SpaceX（xAI 統合後）",
+            "S-1 公開直前と報道",
+            "2026/6/12",
+            "$1.75T",
+            "$75-80B"
+          ],
+          [
+            "Anthropic",
+            "Confidential filing",
+            "2026/10 目標",
+            "$965B",
+            "未公開（Series H で $65B 直近完了）"
+          ],
+          [
+            "OpenAI",
+            "上場準備",
+            "2026/Q4",
+            "—（直近 $852B 評価額）",
+            "未公開"
+          ]
         ]
       }
     ],
@@ -393,11 +531,27 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 13,
         "caption": "Anthropic ARR 推移",
-        "headers": ["時期", "ARR", "前期比"],
+        "headers": [
+          "時期",
+          "ARR",
+          "前期比"
+        ],
         "rows": [
-          ["2025年通年", "$10B", "—"],
-          ["2026年3月", "$30B", "+3.0x"],
-          ["2026年5月", "$47B", "+57% (vs 3月)"]
+          [
+            "2025年通年",
+            "$10B",
+            "—"
+          ],
+          [
+            "2026年3月",
+            "$30B",
+            "+3.0x"
+          ],
+          [
+            "2026年5月",
+            "$47B",
+            "+57% (vs 3月)"
+          ]
         ]
       }
     ],
@@ -467,16 +621,43 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 16,
         "caption": "Microsoft Scout の主要仕様（公式・報道ベース）",
-        "headers": ["項目", "内容"],
+        "headers": [
+          "項目",
+          "内容"
+        ],
         "rows": [
-          ["基盤フレームワーク", "OpenClaw（MIT、OSS）"],
-          ["UI 入口", "Microsoft Teams"],
-          ["接続アプリ", "Outlook、OneDrive、SharePoint、Office、Edge ブラウザ"],
-          ["外部接続", "MCP（Model Context Protocol）"],
-          ["アイデンティティ", "Microsoft Entra ID（エージェントごと固有）"],
-          ["ガバナンス", "Policy Conformance System、監査証跡"],
-          ["前提条件", "Intune ポリシー、opt-in attestation、GitHub Copilot ライセンス"],
-          ["提供範囲", "プライベートプレビュー（Frontier プログラム）"]
+          [
+            "基盤フレームワーク",
+            "OpenClaw（MIT、OSS）"
+          ],
+          [
+            "UI 入口",
+            "Microsoft Teams"
+          ],
+          [
+            "接続アプリ",
+            "Outlook、OneDrive、SharePoint、Office、Edge ブラウザ"
+          ],
+          [
+            "外部接続",
+            "MCP（Model Context Protocol）"
+          ],
+          [
+            "アイデンティティ",
+            "Microsoft Entra ID（エージェントごと固有）"
+          ],
+          [
+            "ガバナンス",
+            "Policy Conformance System、監査証跡"
+          ],
+          [
+            "前提条件",
+            "Intune ポリシー、opt-in attestation、GitHub Copilot ライセンス"
+          ],
+          [
+            "提供範囲",
+            "プライベートプレビュー（Frontier プログラム）"
+          ]
         ]
       }
     ],
@@ -543,12 +724,37 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 14,
         "caption": "Microsoft MAI のモデルラインナップ（公開時系列）",
-        "headers": ["モデル", "種別", "公開時期", "備考"],
+        "headers": [
+          "モデル",
+          "種別",
+          "公開時期",
+          "備考"
+        ],
         "rows": [
-          ["MAI-Voice-1", "音声生成", "2025年8月", "1秒の演算で60秒音声"],
-          ["MAI-Transcribe-1", "STT", "2026年4月", "25言語対応"],
-          ["MAI-Image-2", "画像生成", "2026年4月", "Arena.ai Top 3"],
-          ["Project Polaris（仮名）", "コーディング", "2026年6月（Build 2026）", "GitHub Copilot 中核へ"]
+          [
+            "MAI-Voice-1",
+            "音声生成",
+            "2025年8月",
+            "1秒の演算で60秒音声"
+          ],
+          [
+            "MAI-Transcribe-1",
+            "STT",
+            "2026年4月",
+            "25言語対応"
+          ],
+          [
+            "MAI-Image-2",
+            "画像生成",
+            "2026年4月",
+            "Arena.ai Top 3"
+          ],
+          [
+            "Project Polaris（仮名）",
+            "コーディング",
+            "2026年6月（Build 2026）",
+            "GitHub Copilot 中核へ"
+          ]
         ]
       }
     ],
@@ -623,14 +829,56 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 22,
         "caption": "中国系フロンティアモデルの主要スペック比較（公式値）",
-        "headers": ["モデル", "リリース", "ベンチ要点", "コンテキスト", "価格・ライセンス"],
+        "headers": [
+          "モデル",
+          "リリース",
+          "ベンチ要点",
+          "コンテキスト",
+          "価格・ライセンス"
+        ],
         "rows": [
-          ["Qwen 3.7 Max", "5/20", "SWE-Pro 60.6、Terminal-Bench 69.7、GPQA 92.4", "1M トークン", "$2.50/$7.50 per M（クローズド）"],
-          ["Kimi K2.6", "4/20", "SWE-Verified 80.2、SWE-Pro 58.6", "ネイティブ MM", "Modified MIT（オープンウェイト、1T params）"],
-          ["DeepSeek V4 Pro", "4/24 プレビュー", "詳細未開示（公式 GA 延期）", "1M トークン", "オープンソース（1.6T MoE / 49B active）"],
-          ["Ernie 5.1", "5月", "推論・数学・MM 改善（公式詳細値非公開）", "未公開", "クローズド（中国 B2B 中心）"],
-          ["GLM 更新", "5月", "コード・論理・専門 QA 改善", "未公開", "オープンソース（個人無償）"],
-          ["Seedance 2.0", "5月", "高精細実写動画生成", "—（動画生成）", "ByteDance 提供"]
+          [
+            "Qwen 3.7 Max",
+            "5/20",
+            "SWE-Pro 60.6、Terminal-Bench 69.7、GPQA 92.4",
+            "1M トークン",
+            "$2.50/$7.50 per M（クローズド）"
+          ],
+          [
+            "Kimi K2.6",
+            "4/20",
+            "SWE-Verified 80.2、SWE-Pro 58.6",
+            "ネイティブ MM",
+            "Modified MIT（オープンウェイト、1T params）"
+          ],
+          [
+            "DeepSeek V4 Pro",
+            "4/24 プレビュー",
+            "詳細未開示（公式 GA 延期）",
+            "1M トークン",
+            "オープンソース（1.6T MoE / 49B active）"
+          ],
+          [
+            "Ernie 5.1",
+            "5月",
+            "推論・数学・MM 改善（公式詳細値非公開）",
+            "未公開",
+            "クローズド（中国 B2B 中心）"
+          ],
+          [
+            "GLM 更新",
+            "5月",
+            "コード・論理・専門 QA 改善",
+            "未公開",
+            "オープンソース（個人無償）"
+          ],
+          [
+            "Seedance 2.0",
+            "5月",
+            "高精細実写動画生成",
+            "—（動画生成）",
+            "ByteDance 提供"
+          ]
         ]
       }
     ],
@@ -706,18 +954,62 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 1,
         "caption": "Google I/O 2026 主要発表（一部）",
-        "headers": ["カテゴリ", "発表内容", "提供時期"],
+        "headers": [
+          "カテゴリ",
+          "発表内容",
+          "提供時期"
+        ],
         "rows": [
-          ["フロンティアモデル", "Gemini 3.5 Flash GA", "即日"],
-          ["フロンティアモデル", "Gemini 3.5 Pro", "翌月リリース予定"],
-          ["エージェント基盤", "Antigravity 2.0 デスクトップアプリ", "即日（全世界）"],
-          ["パーソナルエージェント", "Gemini Spark（Beta）", "来週（AI Ultra 加入者・米国先行）"],
-          ["マルチモーダル", "Gemini Omni", "Gemini アプリ・Flow・YouTube Shorts で稼働中"],
-          ["OS 統合", "Gemini Intelligence（Android/ChromeOS/Wear/Auto）", "順次展開"],
-          ["ハードウェア", "Samsung Android XR グラス", "公開"],
-          ["ハードウェア", "Android XR オーディオグラス（iPhone 対応）", "今秋"],
-          ["クリエイティブ", "Flow / Flow Music モバイルアプリ", "Flow=Android Beta、Music=iOS"],
-          ["料金", "AI Ultra プラン", "$100/月"]
+          [
+            "フロンティアモデル",
+            "Gemini 3.5 Flash GA",
+            "即日"
+          ],
+          [
+            "フロンティアモデル",
+            "Gemini 3.5 Pro",
+            "翌月リリース予定"
+          ],
+          [
+            "エージェント基盤",
+            "Antigravity 2.0 デスクトップアプリ",
+            "即日（全世界）"
+          ],
+          [
+            "パーソナルエージェント",
+            "Gemini Spark（Beta）",
+            "来週（AI Ultra 加入者・米国先行）"
+          ],
+          [
+            "マルチモーダル",
+            "Gemini Omni",
+            "Gemini アプリ・Flow・YouTube Shorts で稼働中"
+          ],
+          [
+            "OS 統合",
+            "Gemini Intelligence（Android/ChromeOS/Wear/Auto）",
+            "順次展開"
+          ],
+          [
+            "ハードウェア",
+            "Samsung Android XR グラス",
+            "公開"
+          ],
+          [
+            "ハードウェア",
+            "Android XR オーディオグラス（iPhone 対応）",
+            "今秋"
+          ],
+          [
+            "クリエイティブ",
+            "Flow / Flow Music モバイルアプリ",
+            "Flow=Android Beta、Music=iOS"
+          ],
+          [
+            "料金",
+            "AI Ultra プラン",
+            "$100/月"
+          ]
         ]
       }
     ],
@@ -783,23 +1075,73 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 2,
         "caption": "Claude Opus 4.8 vs 4.7 主要ベンチマーク（Anthropic 公式値）",
-        "headers": ["ベンチマーク", "Opus 4.8", "Opus 4.7", "差分"],
+        "headers": [
+          "ベンチマーク",
+          "Opus 4.8",
+          "Opus 4.7",
+          "差分"
+        ],
         "rows": [
-          ["SWE-bench Verified", "88.6%", "87.6%", "+1.0pt"],
-          ["SWE-bench Pro", "69.2%", "64.3%", "+4.9pt"],
-          ["USAMO 2026（数学）", "96.7%", "69.3%", "+27.4pt"],
-          ["GraphWalks F1（1M コンテキスト）", "68.1%", "40.3%", "+27.8pt"],
-          ["エージェント・コンピュータ使用", "83.4%", "82.8%", "+0.6pt"],
-          ["知識作業スコア", "1890", "1753", "+137"]
+          [
+            "SWE-bench Verified",
+            "88.6%",
+            "87.6%",
+            "+1.0pt"
+          ],
+          [
+            "SWE-bench Pro",
+            "69.2%",
+            "64.3%",
+            "+4.9pt"
+          ],
+          [
+            "USAMO 2026（数学）",
+            "96.7%",
+            "69.3%",
+            "+27.4pt"
+          ],
+          [
+            "GraphWalks F1（1M コンテキスト）",
+            "68.1%",
+            "40.3%",
+            "+27.8pt"
+          ],
+          [
+            "エージェント・コンピュータ使用",
+            "83.4%",
+            "82.8%",
+            "+0.6pt"
+          ],
+          [
+            "知識作業スコア",
+            "1890",
+            "1753",
+            "+137"
+          ]
         ]
       },
       {
         "afterParagraph": 12,
         "caption": "Opus 4.8 価格体系",
-        "headers": ["モード", "入力 / Mトークン", "出力 / Mトークン", "備考"],
+        "headers": [
+          "モード",
+          "入力 / Mトークン",
+          "出力 / Mトークン",
+          "備考"
+        ],
         "rows": [
-          ["Standard", "$5", "$25", "Opus 4.7 据え置き"],
-          ["Fast Mode", "$10", "$50", "2.5倍高速、前世代 Fast 比3倍安い"]
+          [
+            "Standard",
+            "$5",
+            "$25",
+            "Opus 4.7 据え置き"
+          ],
+          [
+            "Fast Mode",
+            "$10",
+            "$50",
+            "2.5倍高速、前世代 Fast 比3倍安い"
+          ]
         ]
       }
     ],
@@ -858,14 +1200,35 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 3,
         "caption": "Stainless の概要",
-        "headers": ["項目", "内容"],
+        "headers": [
+          "項目",
+          "内容"
+        ],
         "rows": [
-          ["所在", "ニューヨーク"],
-          ["創業", "2022年（約4年前）"],
-          ["前回評価額", "$150M（2024年12月、Series A）"],
-          ["買収交渉額", "$300M 以上（2倍以上のプレミアム）"],
-          ["主要クライアント", "OpenAI、Anthropic、Google、Meta、Cloudflare 等"],
-          ["提供価値", "API スキーマから多言語 SDK を AI で自動生成・更新"]
+          [
+            "所在",
+            "ニューヨーク"
+          ],
+          [
+            "創業",
+            "2022年（約4年前）"
+          ],
+          [
+            "前回評価額",
+            "$150M（2024年12月、Series A）"
+          ],
+          [
+            "買収交渉額",
+            "$300M 以上（2倍以上のプレミアム）"
+          ],
+          [
+            "主要クライアント",
+            "OpenAI、Anthropic、Google、Meta、Cloudflare 等"
+          ],
+          [
+            "提供価値",
+            "API スキーマから多言語 SDK を AI で自動生成・更新"
+          ]
         ]
       }
     ],
@@ -917,12 +1280,37 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 7,
         "caption": "Anthropic の主要資金調達・コンピュート契約（2026年4-5月）",
-        "headers": ["日付", "内容", "規模", "評価額・条件"],
+        "headers": [
+          "日付",
+          "内容",
+          "規模",
+          "評価額・条件"
+        ],
         "rows": [
-          ["4/20", "Amazon が追加投資（即時 $5B + 条件付き $20B）", "最大 $25B", "評価額 $380B（即時分）"],
-          ["4/24", "Google が投資（即時 $10B + 業績達成で $30B）", "最大 $40B", "評価額 $350B（即時分）"],
-          ["5/6", "SpaceX Colossus 1 借り上げ", "220K GPU / 300+ MW", "コンピュート契約（評価額には関与せず）"],
-          ["5/12-5/13", "$30-50B ラウンド交渉中（複数報道）", "$30-50B", "評価額 $900-950B"]
+          [
+            "4/20",
+            "Amazon が追加投資（即時 $5B + 条件付き $20B）",
+            "最大 $25B",
+            "評価額 $380B（即時分）"
+          ],
+          [
+            "4/24",
+            "Google が投資（即時 $10B + 業績達成で $30B）",
+            "最大 $40B",
+            "評価額 $350B（即時分）"
+          ],
+          [
+            "5/6",
+            "SpaceX Colossus 1 借り上げ",
+            "220K GPU / 300+ MW",
+            "コンピュート契約（評価額には関与せず）"
+          ],
+          [
+            "5/12-5/13",
+            "$30-50B ラウンド交渉中（複数報道）",
+            "$30-50B",
+            "評価額 $900-950B"
+          ]
         ]
       }
     ],
@@ -1201,14 +1589,49 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 16,
         "caption": "AI 会議参加アバターの比較",
-        "headers": ["プロダクト", "形態", "応答レイテンシ", "代表的な利用形態"],
+        "headers": [
+          "プロダクト",
+          "形態",
+          "応答レイテンシ",
+          "代表的な利用形態"
+        ],
         "rows": [
-          ["HeyGen Interactive Avatar", "Zoom App、OpenAI Realtime Voice 統合", "—（OpenAI 依存）", "本人代理で複数会議に同時参加"],
-          ["Tavus（Phoenix-4 / Raven-0 / Sparrow-0）", "API（CVI）", "サブ1秒", "他社プロダクトのバックエンド"],
-          ["Beyond Presence（Genesis）", "API + ノーコード", "100ms 未満", "他社プロダクト・カスタマー応対"],
-          ["Zoom AI Companion 3.0 アバター", "Zoom Workplace 標準", "—（カメラ表示用）", "本人の表情ミラー（代理会話ではない）"],
-          ["Read AI Digital Twin", "メール／カレンダー", "—（テキスト中心）", "メール返信・スケジュール調整"],
-          ["Kaltura Agentic Avatar", "エンタープライズ", "—", "CEO・経営層の代理コミュニケーション"]
+          [
+            "HeyGen Interactive Avatar",
+            "Zoom App、OpenAI Realtime Voice 統合",
+            "—（OpenAI 依存）",
+            "本人代理で複数会議に同時参加"
+          ],
+          [
+            "Tavus（Phoenix-4 / Raven-0 / Sparrow-0）",
+            "API（CVI）",
+            "サブ1秒",
+            "他社プロダクトのバックエンド"
+          ],
+          [
+            "Beyond Presence（Genesis）",
+            "API + ノーコード",
+            "100ms 未満",
+            "他社プロダクト・カスタマー応対"
+          ],
+          [
+            "Zoom AI Companion 3.0 アバター",
+            "Zoom Workplace 標準",
+            "—（カメラ表示用）",
+            "本人の表情ミラー（代理会話ではない）"
+          ],
+          [
+            "Read AI Digital Twin",
+            "メール／カレンダー",
+            "—（テキスト中心）",
+            "メール返信・スケジュール調整"
+          ],
+          [
+            "Kaltura Agentic Avatar",
+            "エンタープライズ",
+            "—",
+            "CEO・経営層の代理コミュニケーション"
+          ]
         ]
       }
     ],
@@ -1288,14 +1711,56 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 18,
         "caption": "リアルタイム翻訳: 3社製品 + OpenAI API の比較",
-        "headers": ["項目", "Microsoft Teams", "Zoom", "Google Meet", "OpenAI API（5/7発表）"],
+        "headers": [
+          "項目",
+          "Microsoft Teams",
+          "Zoom",
+          "Google Meet",
+          "OpenAI API（5/7発表）"
+        ],
         "rows": [
-          ["トランスクリプト（音声→テキスト）", "ライブキャプション（標準）", "AI Companion トランスクリプト", "ライブキャプション + Note Taker", "GPT-Realtime-Whisper（$0.017/分）"],
-          ["翻訳キャプション言語数", "Premium で展開", "46言語", "約70言語", "Realtime-Translate: 70+ 入力 → 13 出力"],
-          ["自動音声翻訳", "Interpreter（9言語、本人の声色）", "AI Companion 3.0（2025/12〜）", "Speech Translation（5ペア、Gemini、声色保持）", "GPT-Realtime-Translate（$0.034/分）"],
-          ["音声翻訳 GA 時期", "2025年初頭〜", "2025年12月", "2026/1/27", "2026/5/7（API）"],
-          ["代表的なライセンス", "Teams Premium $10/user/月 または M365 Copilot", "有料 Zoom Workplace 等", "Google AI Pro / Ultra、Workspace 上位", "従量課金"],
-          ["人間通訳併設", "16言語ペアまで", "サードパーティ統合可", "サードパーティ拡張", "—"]
+          [
+            "トランスクリプト（音声→テキスト）",
+            "ライブキャプション（標準）",
+            "AI Companion トランスクリプト",
+            "ライブキャプション + Note Taker",
+            "GPT-Realtime-Whisper（$0.017/分）"
+          ],
+          [
+            "翻訳キャプション言語数",
+            "Premium で展開",
+            "46言語",
+            "約70言語",
+            "Realtime-Translate: 70+ 入力 → 13 出力"
+          ],
+          [
+            "自動音声翻訳",
+            "Interpreter（9言語、本人の声色）",
+            "AI Companion 3.0（2025/12〜）",
+            "Speech Translation（5ペア、Gemini、声色保持）",
+            "GPT-Realtime-Translate（$0.034/分）"
+          ],
+          [
+            "音声翻訳 GA 時期",
+            "2025年初頭〜",
+            "2025年12月",
+            "2026/1/27",
+            "2026/5/7（API）"
+          ],
+          [
+            "代表的なライセンス",
+            "Teams Premium $10/user/月 または M365 Copilot",
+            "有料 Zoom Workplace 等",
+            "Google AI Pro / Ultra、Workspace 上位",
+            "従量課金"
+          ],
+          [
+            "人間通訳併設",
+            "16言語ペアまで",
+            "サードパーティ統合可",
+            "サードパーティ拡張",
+            "—"
+          ]
         ]
       }
     ],
@@ -1450,15 +1915,39 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 1,
         "caption": "Colossus 1 借り上げの規模",
-        "headers": ["項目", "数値・内容"],
+        "headers": [
+          "項目",
+          "数値・内容"
+        ],
         "rows": [
-          ["所在地", "Memphis（テネシー州）"],
-          ["GPU 数", "220,000 基超（H100 / H200 / GB200）"],
-          ["新規電力容量", "300 MW 超"],
-          ["稼働開始", "2026年5月中"],
-          ["Claude Code 5時間レート上限", "全有料プランで 2倍"],
-          ["ピーク時間帯の上限低減", "Pro / Max で撤廃"],
-          ["軌道データセンター", "ギガワット級を共同検討（研究フェーズ）"]
+          [
+            "所在地",
+            "Memphis（テネシー州）"
+          ],
+          [
+            "GPU 数",
+            "220,000 基超（H100 / H200 / GB200）"
+          ],
+          [
+            "新規電力容量",
+            "300 MW 超"
+          ],
+          [
+            "稼働開始",
+            "2026年5月中"
+          ],
+          [
+            "Claude Code 5時間レート上限",
+            "全有料プランで 2倍"
+          ],
+          [
+            "ピーク時間帯の上限低減",
+            "Pro / Max で撤廃"
+          ],
+          [
+            "軌道データセンター",
+            "ギガワット級を共同検討（研究フェーズ）"
+          ]
         ]
       }
     ],
@@ -1503,13 +1992,31 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 3,
         "caption": "GPT-5.5 Instant の主な変化（OpenAI 公式評価）",
-        "headers": ["指標", "GPT-5.3 Instant → GPT-5.5 Instant"],
+        "headers": [
+          "指標",
+          "GPT-5.3 Instant → GPT-5.5 Instant"
+        ],
         "rows": [
-          ["高ステークスでの事実誤認", "−52.5%"],
-          ["フラグ付き難会話での事実誤認", "−37.3%"],
-          ["応答単語数", "−30.2%"],
-          ["応答行数", "−29.2%"],
-          ["旧モデルの利用可否", "有料ユーザーは3ヶ月間設定で残存"]
+          [
+            "高ステークスでの事実誤認",
+            "−52.5%"
+          ],
+          [
+            "フラグ付き難会話での事実誤認",
+            "−37.3%"
+          ],
+          [
+            "応答単語数",
+            "−30.2%"
+          ],
+          [
+            "応答行数",
+            "−29.2%"
+          ],
+          [
+            "旧モデルの利用可否",
+            "有料ユーザーは3ヶ月間設定で残存"
+          ]
         ]
       }
     ],
@@ -1587,13 +2094,43 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 1,
         "caption": "Big Tech 4社（+Apple）2026 Q1 主要 AI 関連指標",
-        "headers": ["企業", "売上", "前年比", "AI 関連ハイライト"],
+        "headers": [
+          "企業",
+          "売上",
+          "前年比",
+          "AI 関連ハイライト"
+        ],
         "rows": [
-          ["Microsoft（FY Q3）", "$829億", "+18%", "AI 事業 ARR $370億（+123%）、Azure +40%"],
-          ["Alphabet", "—（+22%）", "+22%", "Google Cloud 四半期売上 $200億 初突破"],
-          ["Meta", "$470億", "+33%", "CapEx 2026 ガイダンスを $1,250〜1,450億へ上方修正（株価 -6%）"],
-          ["Amazon", "$1,590億", "+13%", "AWS $304億（+22%）、15四半期で最高の伸び"],
-          ["Apple（FY Q2）", "$1,112億", "+17%", "サービス収益 $309.8億 過去最高"]
+          [
+            "Microsoft（FY Q3）",
+            "$829億",
+            "+18%",
+            "AI 事業 ARR $370億（+123%）、Azure +40%"
+          ],
+          [
+            "Alphabet",
+            "—（+22%）",
+            "+22%",
+            "Google Cloud 四半期売上 $200億 初突破"
+          ],
+          [
+            "Meta",
+            "$470億",
+            "+33%",
+            "CapEx 2026 ガイダンスを $1,250〜1,450億へ上方修正（株価 -6%）"
+          ],
+          [
+            "Amazon",
+            "$1,590億",
+            "+13%",
+            "AWS $304億（+22%）、15四半期で最高の伸び"
+          ],
+          [
+            "Apple（FY Q2）",
+            "$1,112億",
+            "+17%",
+            "サービス収益 $309.8億 過去最高"
+          ]
         ]
       }
     ],
@@ -1670,15 +2207,39 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 2,
         "caption": "Project Deal 実験の主要数字",
-        "headers": ["項目", "数値・内容"],
+        "headers": [
+          "項目",
+          "数値・内容"
+        ],
         "rows": [
-          ["参加人数", "69 名（San Francisco オフィス）"],
-          ["1人あたり所持金", "$100"],
-          ["リスティング数", "500 品目超"],
-          ["成立取引数", "186 件"],
-          ["総取引額", "$4,000 超"],
-          ["Opus 売り手の優位", "Haiku 売り手より +$2.68/品（平均）"],
-          ["「金を払う」と回答", "46%"]
+          [
+            "参加人数",
+            "69 名（San Francisco オフィス）"
+          ],
+          [
+            "1人あたり所持金",
+            "$100"
+          ],
+          [
+            "リスティング数",
+            "500 品目超"
+          ],
+          [
+            "成立取引数",
+            "186 件"
+          ],
+          [
+            "総取引額",
+            "$4,000 超"
+          ],
+          [
+            "Opus 売り手の優位",
+            "Haiku 売り手より +$2.68/品（平均）"
+          ],
+          [
+            "「金を払う」と回答",
+            "46%"
+          ]
         ]
       }
     ],
@@ -1716,14 +2277,42 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 5,
         "caption": "DeepSeek V4 プレビュー2モデルの諸元",
-        "headers": ["項目", "V4-Pro", "V4-Flash"],
+        "headers": [
+          "項目",
+          "V4-Pro",
+          "V4-Flash"
+        ],
         "rows": [
-          ["総パラメータ", "1.6 兆", "284B"],
-          ["アクティブパラメータ", "49B", "13B"],
-          ["コンテキスト窓", "1M トークン", "1M トークン"],
-          ["最大出力", "384K トークン", "384K トークン"],
-          ["思考モード", "Thinking / Non-Thinking", "Thinking / Non-Thinking"],
-          ["公開形態", "オープンソース", "オープンソース"]
+          [
+            "総パラメータ",
+            "1.6 兆",
+            "284B"
+          ],
+          [
+            "アクティブパラメータ",
+            "49B",
+            "13B"
+          ],
+          [
+            "コンテキスト窓",
+            "1M トークン",
+            "1M トークン"
+          ],
+          [
+            "最大出力",
+            "384K トークン",
+            "384K トークン"
+          ],
+          [
+            "思考モード",
+            "Thinking / Non-Thinking",
+            "Thinking / Non-Thinking"
+          ],
+          [
+            "公開形態",
+            "オープンソース",
+            "オープンソース"
+          ]
         ]
       }
     ],
@@ -1830,13 +2419,37 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 1,
         "caption": "Amazon × Anthropic 投資・コミットメントの内訳",
-        "headers": ["項目", "規模", "条件・備考"],
+        "headers": [
+          "項目",
+          "規模",
+          "条件・備考"
+        ],
         "rows": [
-          ["既往投資", "$80億", "2023〜2025年に段階投資"],
-          ["今回の初期投資", "$50億", "即時投入、評価額 $3,800億"],
-          ["今回の条件付きトランシェ", "最大 $200億", "商業マイルストン達成時に段階解放"],
-          ["Anthropic の AWS 支出（10年間）", "$1,000億超", "コンピュート購入コミット"],
-          ["年内 Trainium2/3 容量", "約 1 GW", "AWS リージョンで構築"]
+          [
+            "既往投資",
+            "$80億",
+            "2023〜2025年に段階投資"
+          ],
+          [
+            "今回の初期投資",
+            "$50億",
+            "即時投入、評価額 $3,800億"
+          ],
+          [
+            "今回の条件付きトランシェ",
+            "最大 $200億",
+            "商業マイルストン達成時に段階解放"
+          ],
+          [
+            "Anthropic の AWS 支出（10年間）",
+            "$1,000億超",
+            "コンピュート購入コミット"
+          ],
+          [
+            "年内 Trainium2/3 容量",
+            "約 1 GW",
+            "AWS リージョンで構築"
+          ]
         ]
       }
     ],
@@ -1904,24 +2517,73 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 2,
         "caption": "Claude Opus 4.7 vs 4.6 主要ベンチマーク",
-        "headers": ["ベンチマーク", "Opus 4.7", "Opus 4.6", "差分"],
+        "headers": [
+          "ベンチマーク",
+          "Opus 4.7",
+          "Opus 4.6",
+          "差分"
+        ],
         "rows": [
-          ["SWE-bench Verified", "87.6%", "80.8%", "+6.8pt"],
-          ["Terminal-Bench 2.0", "69.4%", "65.4%", "+4.0pt"],
-          ["GPQA Diamond", "94.2%", "91.3%", "+2.9pt"],
-          ["Finance Agent", "64.4%", "60.7%", "+3.7pt"]
+          [
+            "SWE-bench Verified",
+            "87.6%",
+            "80.8%",
+            "+6.8pt"
+          ],
+          [
+            "Terminal-Bench 2.0",
+            "69.4%",
+            "65.4%",
+            "+4.0pt"
+          ],
+          [
+            "GPQA Diamond",
+            "94.2%",
+            "91.3%",
+            "+2.9pt"
+          ],
+          [
+            "Finance Agent",
+            "64.4%",
+            "60.7%",
+            "+3.7pt"
+          ]
         ]
       },
       {
         "afterParagraph": 7,
         "caption": "提供プラットフォームと料金",
-        "headers": ["プラットフォーム", "提供開始", "備考"],
+        "headers": [
+          "プラットフォーム",
+          "提供開始",
+          "備考"
+        ],
         "rows": [
-          ["Anthropic API", "2026-04-16", "$5/$25 per M トークン（4.6 と同額）"],
-          ["Amazon Bedrock", "2026-04-16", "GA"],
-          ["Google Cloud Vertex AI", "2026-04-16", "GA"],
-          ["Microsoft Foundry", "2026-04-16", "GA"],
-          ["GitHub Copilot", "2026-04-16", "Pro+/Business/Enterprise"]
+          [
+            "Anthropic API",
+            "2026-04-16",
+            "$5/$25 per M トークン（4.6 と同額）"
+          ],
+          [
+            "Amazon Bedrock",
+            "2026-04-16",
+            "GA"
+          ],
+          [
+            "Google Cloud Vertex AI",
+            "2026-04-16",
+            "GA"
+          ],
+          [
+            "Microsoft Foundry",
+            "2026-04-16",
+            "GA"
+          ],
+          [
+            "GitHub Copilot",
+            "2026-04-16",
+            "Pro+/Business/Enterprise"
+          ]
         ]
       }
     ],
@@ -1959,11 +2621,27 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 4,
         "caption": "Claude Managed Agents 早期導入パートナー",
-        "headers": ["企業", "用途", "実績"],
+        "headers": [
+          "企業",
+          "用途",
+          "実績"
+        ],
         "rows": [
-          ["Notion", "コーディング・スライド・スプレッドシート作成の委任", "数十タスクを並列実行"],
-          ["Rakuten", "部門別スペシャリストエージェント", "各エージェント1週間以内で本番稼働"],
-          ["Sentry", "コード自動化・HR・財務プロセス", "複数部門で展開中"]
+          [
+            "Notion",
+            "コーディング・スライド・スプレッドシート作成の委任",
+            "数十タスクを並列実行"
+          ],
+          [
+            "Rakuten",
+            "部門別スペシャリストエージェント",
+            "各エージェント1週間以内で本番稼働"
+          ],
+          [
+            "Sentry",
+            "コード自動化・HR・財務プロセス",
+            "複数部門で展開中"
+          ]
         ]
       }
     ],
@@ -1996,12 +2674,42 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 4,
         "caption": "Muse Spark ベンチマーク比較",
-        "headers": ["指標", "Muse Spark", "Claude Opus 4.6", "GPT-5.4", "Gemini 3.1 Pro"],
+        "headers": [
+          "指標",
+          "Muse Spark",
+          "Claude Opus 4.6",
+          "GPT-5.4",
+          "Gemini 3.1 Pro"
+        ],
         "rows": [
-          ["Intelligence Index v4.0", "52（4位）", "53（3位）", "57（1位タイ）", "57（1位タイ）"],
-          ["HealthBench Hard", "42.8%（1位）", "—", "—", "—"],
-          ["評価使用トークン", "5,800万", "1億5,700万", "1億2,000万", "5,800万"],
-          ["ソース公開", "クローズド", "クローズド", "クローズド", "クローズド"]
+          [
+            "Intelligence Index v4.0",
+            "52（4位）",
+            "53（3位）",
+            "57（1位タイ）",
+            "57（1位タイ）"
+          ],
+          [
+            "HealthBench Hard",
+            "42.8%（1位）",
+            "—",
+            "—",
+            "—"
+          ],
+          [
+            "評価使用トークン",
+            "5,800万",
+            "1億5,700万",
+            "1億2,000万",
+            "5,800万"
+          ],
+          [
+            "ソース公開",
+            "クローズド",
+            "クローズド",
+            "クローズド",
+            "クローズド"
+          ]
         ]
       }
     ],
@@ -2041,14 +2749,42 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 5,
         "caption": "Anthropic vs 国防総省 — 法廷闘争の経緯",
-        "headers": ["日付", "出来事", "結果"],
+        "headers": [
+          "日付",
+          "出来事",
+          "結果"
+        ],
         "rows": [
-          ["2025年7月", "Anthropic が DOD と $2億の契約締結", "DOD 機密ネットワークに Claude 展開"],
-          ["2025年9月", "GenAI.mil への配備交渉が決裂", "自律兵器・大量監視の利用制限が争点"],
-          ["2026年3月", "Hegseth 国防長官がサプライチェーンリスクに指定", "事実上の軍事ブラックリスト"],
-          ["2026年3月26日", "カリフォルニア地裁が予備的差止命令", "Anthropic 勝訴（指定の執行一時停止）"],
-          ["2026年4月8日", "D.C. 控訴裁が緊急差止を却下", "DOD 勝訴（ブラックリスト維持）"],
-          ["2026年5月19日", "口頭弁論（予定）", "AI 調達政策の方向性を左右"]
+          [
+            "2025年7月",
+            "Anthropic が DOD と $2億の契約締結",
+            "DOD 機密ネットワークに Claude 展開"
+          ],
+          [
+            "2025年9月",
+            "GenAI.mil への配備交渉が決裂",
+            "自律兵器・大量監視の利用制限が争点"
+          ],
+          [
+            "2026年3月",
+            "Hegseth 国防長官がサプライチェーンリスクに指定",
+            "事実上の軍事ブラックリスト"
+          ],
+          [
+            "2026年3月26日",
+            "カリフォルニア地裁が予備的差止命令",
+            "Anthropic 勝訴（指定の執行一時停止）"
+          ],
+          [
+            "2026年4月8日",
+            "D.C. 控訴裁が緊急差止を却下",
+            "DOD 勝訴（ブラックリスト維持）"
+          ],
+          [
+            "2026年5月19日",
+            "口頭弁論（予定）",
+            "AI 調達政策の方向性を左右"
+          ]
         ]
       }
     ],
@@ -2085,11 +2821,27 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 2,
         "caption": "Child Safety Blueprint の3本柱",
-        "headers": ["領域", "提言内容", "背景"],
+        "headers": [
+          "領域",
+          "提言内容",
+          "背景"
+        ],
         "rows": [
-          ["立法の更新", "AI 生成 CSAM を明確に違法化する法改正", "現行法は実在の児童のみが対象"],
-          ["報告メカニズム", "AI 生成コンテンツ検出と通報パイプラインの整備", "通報から捜査開始までの時間短縮"],
-          ["予防的セーフガード", "訓練段階から CSAM 生成を困難にする技術的措置", "IWF: 2025年前半に8,000件超検出（前年比+14%）"]
+          [
+            "立法の更新",
+            "AI 生成 CSAM を明確に違法化する法改正",
+            "現行法は実在の児童のみが対象"
+          ],
+          [
+            "報告メカニズム",
+            "AI 生成コンテンツ検出と通報パイプラインの整備",
+            "通報から捜査開始までの時間短縮"
+          ],
+          [
+            "予防的セーフガード",
+            "訓練段階から CSAM 生成を困難にする技術的措置",
+            "IWF: 2025年前半に8,000件超検出（前年比+14%）"
+          ]
         ]
       }
     ],
@@ -2128,23 +2880,57 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 3,
         "caption": "Copilot エージェント権限モデル",
-        "headers": ["モード", "概要", "有効化方法"],
+        "headers": [
+          "モード",
+          "概要",
+          "有効化方法"
+        ],
         "rows": [
-          ["Default", "ファイル編集・コマンド実行前に逐一承認", "デフォルト"],
-          ["Bypass Approvals", "特定アクションのみ自動承認", "VS Code 設定"],
-          ["Autopilot（Preview）", "全アクション自律実行、エラー自動リトライ", "モデルピッカー / --autopilot フラグ"]
+          [
+            "Default",
+            "ファイル編集・コマンド実行前に逐一承認",
+            "デフォルト"
+          ],
+          [
+            "Bypass Approvals",
+            "特定アクションのみ自動承認",
+            "VS Code 設定"
+          ],
+          [
+            "Autopilot（Preview）",
+            "全アクション自律実行、エラー自動リトライ",
+            "モデルピッカー / --autopilot フラグ"
+          ]
         ]
       },
       {
         "afterParagraph": 5,
         "caption": "Copilot CLI v1.0.21 MCP コマンド",
-        "headers": ["コマンド", "機能"],
+        "headers": [
+          "コマンド",
+          "機能"
+        ],
         "rows": [
-          ["/mcp show", "MCP サーバー一覧・ステータス表示"],
-          ["/mcp show SERVER-NAME", "サーバー詳細・ツール一覧"],
-          ["/mcp edit SERVER-NAME", "サーバー設定の編集"],
-          ["/mcp delete SERVER-NAME", "サーバーの削除"],
-          ["/mcp disable / enable", "サーバーの有効・無効切り替え"]
+          [
+            "/mcp show",
+            "MCP サーバー一覧・ステータス表示"
+          ],
+          [
+            "/mcp show SERVER-NAME",
+            "サーバー詳細・ツール一覧"
+          ],
+          [
+            "/mcp edit SERVER-NAME",
+            "サーバー設定の編集"
+          ],
+          [
+            "/mcp delete SERVER-NAME",
+            "サーバーの削除"
+          ],
+          [
+            "/mcp disable / enable",
+            "サーバーの有効・無効切り替え"
+          ]
         ]
       }
     ],
@@ -2187,26 +2973,77 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 2,
         "caption": "Claude Mythos Preview ベンチマーク比較（システムカード p.186〜187）",
-        "headers": ["ベンチマーク", "Mythos Preview", "Claude Opus 4.6", "GPT-5.4 Pro"],
+        "headers": [
+          "ベンチマーク",
+          "Mythos Preview",
+          "Claude Opus 4.6",
+          "GPT-5.4 Pro"
+        ],
         "rows": [
-          ["HLE（ツールなし）", "56.8%", "40.0%", "42.7%"],
-          ["HLE（ツール使用）", "64.7%", "53.1%", "58.7%"],
-          ["SWE-bench Verified", "93.9%", "80.8%", "（未公表）"],
-          ["SWE-bench Pro", "77.8%", "53.4%", "（未公表）"],
-          ["公開状況", "非公開（Glasswing限定）", "一般公開", "一般公開"]
+          [
+            "HLE（ツールなし）",
+            "56.8%",
+            "40.0%",
+            "42.7%"
+          ],
+          [
+            "HLE（ツール使用）",
+            "64.7%",
+            "53.1%",
+            "58.7%"
+          ],
+          [
+            "SWE-bench Verified",
+            "93.9%",
+            "80.8%",
+            "（未公表）"
+          ],
+          [
+            "SWE-bench Pro",
+            "77.8%",
+            "53.4%",
+            "（未公表）"
+          ],
+          [
+            "公開状況",
+            "非公開（Glasswing限定）",
+            "一般公開",
+            "一般公開"
+          ]
         ]
       },
       {
         "afterParagraph": 5,
         "caption": "Project Glasswing 主要参加組織（約50社、抜粋）",
-        "headers": ["分類", "参加組織"],
+        "headers": [
+          "分類",
+          "参加組織"
+        ],
         "rows": [
-          ["クラウド大手", "AWS、Google、Microsoft"],
-          ["デバイス・半導体", "Apple、NVIDIA、Broadcom"],
-          ["セキュリティ専業", "CrowdStrike、Palo Alto Networks、Cisco"],
-          ["金融", "JPMorgan"],
-          ["OSS基盤", "Linux Foundation"],
-          ["合計予算", "$100M（約150億円）"]
+          [
+            "クラウド大手",
+            "AWS、Google、Microsoft"
+          ],
+          [
+            "デバイス・半導体",
+            "Apple、NVIDIA、Broadcom"
+          ],
+          [
+            "セキュリティ専業",
+            "CrowdStrike、Palo Alto Networks、Cisco"
+          ],
+          [
+            "金融",
+            "JPMorgan"
+          ],
+          [
+            "OSS基盤",
+            "Linux Foundation"
+          ],
+          [
+            "合計予算",
+            "$100M（約150億円）"
+          ]
         ]
       }
     ],
@@ -2230,13 +3067,37 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 3,
         "caption": "OpenAI vs Anthropic: 売上と戦略の違い",
-        "headers": ["項目", "OpenAI", "Anthropic"],
+        "headers": [
+          "項目",
+          "OpenAI",
+          "Anthropic"
+        ],
         "rows": [
-          ["年換算売上（ARR）", "約$240〜250億", "約$300億"],
-          ["主力収益源", "ChatGPT サブスク（消費者）", "API・エンタープライズ統合"],
-          ["評価額", "$8,520億", "（推定 $3,800億級）"],
-          ["代表的な統合先", "Microsoft Copilot", "Cursor, Bedrock, Vertex AI"],
-          ["週間アクティブユーザー", "9億人超（ChatGPT）", "公表なし（API中心）"]
+          [
+            "年換算売上（ARR）",
+            "約$240〜250億",
+            "約$300億"
+          ],
+          [
+            "主力収益源",
+            "ChatGPT サブスク（消費者）",
+            "API・エンタープライズ統合"
+          ],
+          [
+            "評価額",
+            "$8,520億",
+            "（推定 $3,800億級）"
+          ],
+          [
+            "代表的な統合先",
+            "Microsoft Copilot",
+            "Cursor, Bedrock, Vertex AI"
+          ],
+          [
+            "週間アクティブユーザー",
+            "9億人超（ChatGPT）",
+            "公表なし（API中心）"
+          ]
         ]
       }
     ],
@@ -2282,14 +3143,42 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 0,
         "caption": "OpenAI「Industrial Policy for the Intelligence Age」の5本柱",
-        "headers": ["柱", "提案内容", "影響範囲"],
+        "headers": [
+          "柱",
+          "提案内容",
+          "影響範囲"
+        ],
         "rows": [
-          ["労働時間短縮", "給与据え置きの週32時間/4日制パイロット、生産性維持なら恒久化", "労使・労働政策"],
-          ["自動化課税", "ロボット税、資本利得への高所得層課税、AI駆動リターンへの法人税", "税制"],
-          ["公的資産ファンド", "国民が自動的にAI企業・インフラに出資、リターンを直接分配", "社会保障・再分配"],
-          ["AIへのアクセス権", "AIを電力・インターネット並みの基礎インフラと位置づけ全員に保障", "デジタル権利・社会基盤"],
-          ["安全網の自動発動", "経済指標が閾値を超えた時に自動で支援策が動く仕組み", "セーフティネット"],
-          ["AGIガバナンス", "信頼性・アラインメント・安全性への高い基準を政府に求める", "規制・標準化"]
+          [
+            "労働時間短縮",
+            "給与据え置きの週32時間/4日制パイロット、生産性維持なら恒久化",
+            "労使・労働政策"
+          ],
+          [
+            "自動化課税",
+            "ロボット税、資本利得への高所得層課税、AI駆動リターンへの法人税",
+            "税制"
+          ],
+          [
+            "公的資産ファンド",
+            "国民が自動的にAI企業・インフラに出資、リターンを直接分配",
+            "社会保障・再分配"
+          ],
+          [
+            "AIへのアクセス権",
+            "AIを電力・インターネット並みの基礎インフラと位置づけ全員に保障",
+            "デジタル権利・社会基盤"
+          ],
+          [
+            "安全網の自動発動",
+            "経済指標が閾値を超えた時に自動で支援策が動く仕組み",
+            "セーフティネット"
+          ],
+          [
+            "AGIガバナンス",
+            "信頼性・アラインメント・安全性への高い基準を政府に求める",
+            "規制・標準化"
+          ]
         ]
       }
     ],
@@ -2345,25 +3234,73 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 1,
         "caption": "個人情報保護法 改正方針の主要項目",
-        "headers": ["項目", "内容", "影響"],
+        "headers": [
+          "項目",
+          "内容",
+          "影響"
+        ],
         "rows": [
-          ["AI学習目的の同意緩和", "統計目的（AI開発含む）なら要配慮個人情報も同意不要", "AI開発を加速、プライバシー後退の懸念"],
-          ["課徴金制度の新設", "千人超の大規模な不正取得・利用が対象、得た利益の相当額を徴収", "組織的な不正データ取得への抑止"],
-          ["漏えい通知義務の緩和", "本人への個別通知の運用見直し", "事業者の負担軽減、消費者の知る権利後退の懸念"],
-          ["オプトアウト強化", "第三者提供時の提供先・利用目的の確認義務化", "名簿屋経由の不透明流通に歯止め"],
-          ["16歳未満の保護強化", "保護者同意・年齢確認義務の議論", "SNS・ゲーム事業者に影響"],
-          ["委託先規律の見直し", "クラウド事業者・データ処理委託先の責任明確化", "BPO・SaaS事業者に影響"]
+          [
+            "AI学習目的の同意緩和",
+            "統計目的（AI開発含む）なら要配慮個人情報も同意不要",
+            "AI開発を加速、プライバシー後退の懸念"
+          ],
+          [
+            "課徴金制度の新設",
+            "千人超の大規模な不正取得・利用が対象、得た利益の相当額を徴収",
+            "組織的な不正データ取得への抑止"
+          ],
+          [
+            "漏えい通知義務の緩和",
+            "本人への個別通知の運用見直し",
+            "事業者の負担軽減、消費者の知る権利後退の懸念"
+          ],
+          [
+            "オプトアウト強化",
+            "第三者提供時の提供先・利用目的の確認義務化",
+            "名簿屋経由の不透明流通に歯止め"
+          ],
+          [
+            "16歳未満の保護強化",
+            "保護者同意・年齢確認義務の議論",
+            "SNS・ゲーム事業者に影響"
+          ],
+          [
+            "委託先規律の見直し",
+            "クラウド事業者・データ処理委託先の責任明確化",
+            "BPO・SaaS事業者に影響"
+          ]
         ]
       },
       {
         "afterParagraph": 9,
         "caption": "国際比較: AI時代のプライバシー規制の方向性",
-        "headers": ["国・地域", "方向性", "AI学習データの扱い"],
+        "headers": [
+          "国・地域",
+          "方向性",
+          "AI学習データの扱い"
+        ],
         "rows": [
-          ["EU（GDPR + AI Act）", "同意ベース堅持・リスクベース規制", "原則として同意必要、高リスクAIに厳格義務"],
-          ["米国（州ごと）", "消費者のオプトアウト権強化", "州法によるが、CCPA等は同意・通知重視"],
-          ["中国（PIPL）", "AI開発目的での例外を一部認容", "国家戦略としてのAI育成を優先"],
-          ["日本（改正案）", "AI学習目的の同意緩和＋悪質行為の課徴金", "要配慮情報も統計目的なら同意不要"]
+          [
+            "EU（GDPR + AI Act）",
+            "同意ベース堅持・リスクベース規制",
+            "原則として同意必要、高リスクAIに厳格義務"
+          ],
+          [
+            "米国（州ごと）",
+            "消費者のオプトアウト権強化",
+            "州法によるが、CCPA等は同意・通知重視"
+          ],
+          [
+            "中国（PIPL）",
+            "AI開発目的での例外を一部認容",
+            "国家戦略としてのAI育成を優先"
+          ],
+          [
+            "日本（改正案）",
+            "AI学習目的の同意緩和＋悪質行為の課徴金",
+            "要配慮情報も統計目的なら同意不要"
+          ]
         ]
       }
     ],
@@ -2412,25 +3349,73 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 7,
         "caption": "役割分担モデル: 誰が何を担うか",
-        "headers": ["領域", "担当", "理由"],
+        "headers": [
+          "領域",
+          "担当",
+          "理由"
+        ],
         "rows": [
-          ["画面・帳票・業務フロー", "現場の当事者（バイブコーディング）", "業界の機微を最もよく知る、試行錯誤が許される領域"],
-          ["データモデル・スキーマ", "Vibe Architect（専門家）", "後から壊しにくい設計、整合性の保証"],
-          ["認証・認可・権限境界", "Vibe Architect", "セキュリティ事故の多くがここで起きる"],
-          ["CI/CD・自動テスト", "Vibe Architect", "本番投入前の最低限の検証"],
-          ["監視・バックアップ・災害復旧", "Vibe Architect + プラットフォーム標準", "「沈黙の壊れ方」を検知する仕組み"],
-          ["インシデント対応（午前3時）", "専門家チーム", "コードに責任を持つ主体が必要"]
+          [
+            "画面・帳票・業務フロー",
+            "現場の当事者（バイブコーディング）",
+            "業界の機微を最もよく知る、試行錯誤が許される領域"
+          ],
+          [
+            "データモデル・スキーマ",
+            "Vibe Architect（専門家）",
+            "後から壊しにくい設計、整合性の保証"
+          ],
+          [
+            "認証・認可・権限境界",
+            "Vibe Architect",
+            "セキュリティ事故の多くがここで起きる"
+          ],
+          [
+            "CI/CD・自動テスト",
+            "Vibe Architect",
+            "本番投入前の最低限の検証"
+          ],
+          [
+            "監視・バックアップ・災害復旧",
+            "Vibe Architect + プラットフォーム標準",
+            "「沈黙の壊れ方」を検知する仕組み"
+          ],
+          [
+            "インシデント対応（午前3時）",
+            "専門家チーム",
+            "コードに責任を持つ主体が必要"
+          ]
         ]
       },
       {
         "afterParagraph": 12,
         "caption": "社会が整備すべき4つの制度",
-        "headers": ["制度", "目的", "参考にできる既存制度"],
+        "headers": [
+          "制度",
+          "目的",
+          "参考にできる既存制度"
+        ],
         "rows": [
-          ["基幹システムの建築確認", "規制業種でのAI生成コードに有資格者の署名", "建築基準法の構造計算審査"],
-          ["監査可能なバイブコーディング", "プロンプト・生成・承認のログ化", "金融業界の監査証跡規制"],
-          ["セーフティ・バイ・デフォルト", "プラットフォームの安全機能を標準ON", "GDPR の Privacy by Design"],
-          ["AI生成コード保険", "市場メカニズムで安全水準を引き上げ", "サイバー保険"]
+          [
+            "基幹システムの建築確認",
+            "規制業種でのAI生成コードに有資格者の署名",
+            "建築基準法の構造計算審査"
+          ],
+          [
+            "監査可能なバイブコーディング",
+            "プロンプト・生成・承認のログ化",
+            "金融業界の監査証跡規制"
+          ],
+          [
+            "セーフティ・バイ・デフォルト",
+            "プラットフォームの安全機能を標準ON",
+            "GDPR の Privacy by Design"
+          ],
+          [
+            "AI生成コード保険",
+            "市場メカニズムで安全水準を引き上げ",
+            "サイバー保険"
+          ]
         ]
       }
     ],
@@ -2448,13 +3433,37 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 1,
         "caption": "1Mコンテキスト: 旧モデルβ vs 4.6系GA",
-        "headers": ["項目", "Sonnet 4.5/4（β）", "Sonnet 4.6 / Opus 4.6（GA）"],
+        "headers": [
+          "項目",
+          "Sonnet 4.5/4（β）",
+          "Sonnet 4.6 / Opus 4.6（GA）"
+        ],
         "rows": [
-          ["1Mコンテキスト", "ベータヘッダー必須", "標準対応（ヘッダー不要）"],
-          ["入力料金（MTok）", "$3〜$6（長文割増あり）", "$3 / $5（統一料金）"],
-          ["利用期限", "4月30日で終了", "制限なし"],
-          ["画像/PDF上限", "100枚/リクエスト", "600枚/リクエスト"],
-          ["最大出力トークン", "標準", "300K（Batches API）"]
+          [
+            "1Mコンテキスト",
+            "ベータヘッダー必須",
+            "標準対応（ヘッダー不要）"
+          ],
+          [
+            "入力料金（MTok）",
+            "$3〜$6（長文割増あり）",
+            "$3 / $5（統一料金）"
+          ],
+          [
+            "利用期限",
+            "4月30日で終了",
+            "制限なし"
+          ],
+          [
+            "画像/PDF上限",
+            "100枚/リクエスト",
+            "600枚/リクエスト"
+          ],
+          [
+            "最大出力トークン",
+            "標準",
+            "300K（Batches API）"
+          ]
         ]
       }
     ],
@@ -2505,12 +3514,37 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 1,
         "caption": "Supabase の資金調達・評価額の推移",
-        "headers": ["ラウンド", "時期", "調達額", "評価額"],
+        "headers": [
+          "ラウンド",
+          "時期",
+          "調達額",
+          "評価額"
+        ],
         "rows": [
-          ["Series C", "2024年9月", "$80M", "〜$765M"],
-          ["Series D", "2025年4月", "$200M", "$2B"],
-          ["Series E", "2025年10月", "$100M", "$5B"],
-          ["新ラウンド（交渉中）", "2026年4月", "〜$500M", "〜$10B"]
+          [
+            "Series C",
+            "2024年9月",
+            "$80M",
+            "〜$765M"
+          ],
+          [
+            "Series D",
+            "2025年4月",
+            "$200M",
+            "$2B"
+          ],
+          [
+            "Series E",
+            "2025年10月",
+            "$100M",
+            "$5B"
+          ],
+          [
+            "新ラウンド（交渉中）",
+            "2026年4月",
+            "〜$500M",
+            "〜$10B"
+          ]
         ]
       }
     ],
@@ -2540,13 +3574,37 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 1,
         "caption": "プラン別のデータ学習ポリシー",
-        "headers": ["プラン", "データ学習", "オプトアウト"],
+        "headers": [
+          "プラン",
+          "データ学習",
+          "オプトアウト"
+        ],
         "rows": [
-          ["Copilot Free", "対象（デフォルトON）", "手動で無効化が必要"],
-          ["Copilot Pro", "対象（デフォルトON）", "手動で無効化が必要"],
-          ["Copilot Pro+", "対象（デフォルトON）", "手動で無効化が必要"],
-          ["Copilot Business", "対象外（契約で禁止）", "不要"],
-          ["Copilot Enterprise", "対象外（契約で禁止）", "不要"]
+          [
+            "Copilot Free",
+            "対象（デフォルトON）",
+            "手動で無効化が必要"
+          ],
+          [
+            "Copilot Pro",
+            "対象（デフォルトON）",
+            "手動で無効化が必要"
+          ],
+          [
+            "Copilot Pro+",
+            "対象（デフォルトON）",
+            "手動で無効化が必要"
+          ],
+          [
+            "Copilot Business",
+            "対象外（契約で禁止）",
+            "不要"
+          ],
+          [
+            "Copilot Enterprise",
+            "対象外（契約で禁止）",
+            "不要"
+          ]
         ]
       }
     ],
@@ -2590,13 +3648,31 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 4,
         "caption": "Cursor 3 の主要新機能",
-        "headers": ["機能", "概要"],
+        "headers": [
+          "機能",
+          "概要"
+        ],
         "rows": [
-          ["Agents Window", "Composer を置き換え、複数エージェントの並列実行・管理を一画面で"],
-          ["Cloud-Local Handoff", "ローカルのエージェントセッションをクラウドに移行、オフライン中も継続"],
-          ["Design Mode", "ブラウザ上でUIを直接アノテーション、視覚的にAIへ修正指示"],
-          ["マルチリポ対応", "複数リポジトリを跨いだエージェント操作"],
-          ["MCP リッチコンテンツ", "ツール出力に構造化データを含むレスポンス対応"]
+          [
+            "Agents Window",
+            "Composer を置き換え、複数エージェントの並列実行・管理を一画面で"
+          ],
+          [
+            "Cloud-Local Handoff",
+            "ローカルのエージェントセッションをクラウドに移行、オフライン中も継続"
+          ],
+          [
+            "Design Mode",
+            "ブラウザ上でUIを直接アノテーション、視覚的にAIへ修正指示"
+          ],
+          [
+            "マルチリポ対応",
+            "複数リポジトリを跨いだエージェント操作"
+          ],
+          [
+            "MCP リッチコンテンツ",
+            "ツール出力に構造化データを含むレスポンス対応"
+          ]
         ]
       }
     ],
@@ -2625,11 +3701,27 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 3,
         "caption": "DESIGN.md vs 従来のアプローチ",
-        "headers": ["アプローチ", "強み", "弱み"],
+        "headers": [
+          "アプローチ",
+          "強み",
+          "弱み"
+        ],
         "rows": [
-          ["DESIGN.md（Markdown）", "LLM が自然に理解、ツール不要、ポータブル", "LLM の解釈に依存、ピクセル精度は保証されない"],
-          ["Figma + MCP", "ピクセル精度が高い、デザイナー協業に強い", "Figma 依存、MCP セットアップが必要"],
-          ["Design Tokens（JSON）", "機械的に正確、フレームワーク非依存", "LLM にとって Markdown より理解しづらい"]
+          [
+            "DESIGN.md（Markdown）",
+            "LLM が自然に理解、ツール不要、ポータブル",
+            "LLM の解釈に依存、ピクセル精度は保証されない"
+          ],
+          [
+            "Figma + MCP",
+            "ピクセル精度が高い、デザイナー協業に強い",
+            "Figma 依存、MCP セットアップが必要"
+          ],
+          [
+            "Design Tokens（JSON）",
+            "機械的に正確、フレームワーク非依存",
+            "LLM にとって Markdown より理解しづらい"
+          ]
         ]
       }
     ],
@@ -2665,38 +3757,114 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 3,
         "caption": "GlassWorm 攻撃の被害範囲（2026年3月時点）",
-        "headers": ["プラットフォーム", "汚染件数", "主な被害対象"],
+        "headers": [
+          "プラットフォーム",
+          "汚染件数",
+          "主な被害対象"
+        ],
         "rows": [
-          ["GitHub リポジトリ", "151件以上", "React関連、Wasmer、OpenCode 関連"],
-          ["npm パッケージ", "複数件", "JavaScript/TypeScript ライブラリ"],
-          ["VS Code / Open VSX 拡張", "72件以上", "3.5万DL超の拡張含む"],
-          ["合計", "433件以上", "—"]
+          [
+            "GitHub リポジトリ",
+            "151件以上",
+            "React関連、Wasmer、OpenCode 関連"
+          ],
+          [
+            "npm パッケージ",
+            "複数件",
+            "JavaScript/TypeScript ライブラリ"
+          ],
+          [
+            "VS Code / Open VSX 拡張",
+            "72件以上",
+            "3.5万DL超の拡張含む"
+          ],
+          [
+            "合計",
+            "433件以上",
+            "—"
+          ]
         ]
       },
       {
         "afterParagraph": 6,
         "caption": "怪しいパッケージの見分け方",
-        "headers": ["チェック項目", "安全な兆候", "危険な兆候"],
+        "headers": [
+          "チェック項目",
+          "安全な兆候",
+          "危険な兆候"
+        ],
         "rows": [
-          ["GitHub リポジトリ", "存在する・README が充実・コントリビューター複数", "リポジトリがない・README が空・コントリビューター1人"],
-          ["紹介のされ方", "公式サイトやドキュメントにリンクあり", "「npx xxx で一発」だけでソースへのリンクなし"],
-          ["npm DL数", "週間1万DL以上", "数百DL以下"],
-          ["最終更新", "6ヶ月以内", "1年以上放置"],
-          ["postinstall スクリプト", "ない、またはビルド処理のみ", "外部URLへの通信・eval() の使用"],
-          ["パッケージ名", "公式と完全一致", "公式名に似ているが微妙に違う（タイポスクワッティング）"]
+          [
+            "GitHub リポジトリ",
+            "存在する・README が充実・コントリビューター複数",
+            "リポジトリがない・README が空・コントリビューター1人"
+          ],
+          [
+            "紹介のされ方",
+            "公式サイトやドキュメントにリンクあり",
+            "「npx xxx で一発」だけでソースへのリンクなし"
+          ],
+          [
+            "npm DL数",
+            "週間1万DL以上",
+            "数百DL以下"
+          ],
+          [
+            "最終更新",
+            "6ヶ月以内",
+            "1年以上放置"
+          ],
+          [
+            "postinstall スクリプト",
+            "ない、またはビルド処理のみ",
+            "外部URLへの通信・eval() の使用"
+          ],
+          [
+            "パッケージ名",
+            "公式と完全一致",
+            "公式名に似ているが微妙に違う（タイポスクワッティング）"
+          ]
         ]
       },
       {
         "afterParagraph": 10,
         "caption": "レベル別の防御策",
-        "headers": ["レベル", "対策", "やり方"],
+        "headers": [
+          "レベル",
+          "対策",
+          "やり方"
+        ],
         "rows": [
-          ["初心者", "CLAUDE.md にセキュリティルールをコピペ", "上記のルールを貼るだけでAIエージェントが自動防御"],
-          ["初心者", "ソースが不明なコマンドを実行しない", "npx xxx や curl | sh でGitHubリンクがなければ実行しない"],
-          ["中級者", "npm install --ignore-scripts", "postinstall の自動実行を防ぎ、audit後に rebuild"],
-          ["中級者", "不可視文字の検出", "ESLint no-irregular-whitespace を .eslintrc に追加"],
-          ["上級者", "CI/CD にサプライチェーン監査", "Socket / Snyk / npm audit を自動実行"],
-          ["上級者", "eval() の完全排除 + branch protection", "コードベースから eval() 排除、PR レビュー必須化"]
+          [
+            "初心者",
+            "CLAUDE.md にセキュリティルールをコピペ",
+            "上記のルールを貼るだけでAIエージェントが自動防御"
+          ],
+          [
+            "初心者",
+            "ソースが不明なコマンドを実行しない",
+            "npx xxx や curl | sh でGitHubリンクがなければ実行しない"
+          ],
+          [
+            "中級者",
+            "npm install --ignore-scripts",
+            "postinstall の自動実行を防ぎ、audit後に rebuild"
+          ],
+          [
+            "中級者",
+            "不可視文字の検出",
+            "ESLint no-irregular-whitespace を .eslintrc に追加"
+          ],
+          [
+            "上級者",
+            "CI/CD にサプライチェーン監査",
+            "Socket / Snyk / npm audit を自動実行"
+          ],
+          [
+            "上級者",
+            "eval() の完全排除 + branch protection",
+            "コードベースから eval() 排除、PR レビュー必須化"
+          ]
         ]
       }
     ],
@@ -2726,14 +3894,42 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 4,
         "caption": "サードパーティハーネス利用の変更まとめ",
-        "headers": ["項目", "変更前", "変更後（4月4日〜）"],
+        "headers": [
+          "項目",
+          "変更前",
+          "変更後（4月4日〜）"
+        ],
         "rows": [
-          ["Claude Code / Cowork", "サブスク定額枠内", "変更なし（定額枠内）"],
-          ["OpenClaw 等サードパーティ", "サブスク定額枠内（グレー）", "Extra Usage（従量課金・別請求）"],
-          ["移行クレジット", "—", "月額相当の一回限りクレジット（4/17まで引換、90日間有効）"],
-          ["クレジット利用範囲", "—", "Claude Code・Cowork・チャット・サードパーティ全て"],
-          ["割引", "—", "事前購入バンドルで最大30%オフ"],
-          ["返金", "—", "サブスク返金オプション（翌日メール）"]
+          [
+            "Claude Code / Cowork",
+            "サブスク定額枠内",
+            "変更なし（定額枠内）"
+          ],
+          [
+            "OpenClaw 等サードパーティ",
+            "サブスク定額枠内（グレー）",
+            "Extra Usage（従量課金・別請求）"
+          ],
+          [
+            "移行クレジット",
+            "—",
+            "月額相当の一回限りクレジット（4/17まで引換、90日間有効）"
+          ],
+          [
+            "クレジット利用範囲",
+            "—",
+            "Claude Code・Cowork・チャット・サードパーティ全て"
+          ],
+          [
+            "割引",
+            "—",
+            "事前購入バンドルで最大30%オフ"
+          ],
+          [
+            "返金",
+            "—",
+            "サブスク返金オプション（翌日メール）"
+          ]
         ]
       }
     ],
@@ -2790,25 +3986,73 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 1,
         "caption": "M365 コネクター対応プラットフォーム",
-        "headers": ["プラットフォーム", "対応", "備考"],
+        "headers": [
+          "プラットフォーム",
+          "対応",
+          "備考"
+        ],
         "rows": [
-          ["claude.ai（Web）", "○", "ブラウザから利用、コネクター追加も可能"],
-          ["Claude Desktop（macOS）", "○", "デスクトップアプリから利用"],
-          ["Claude Desktop（Windows）", "○", "デスクトップアプリから利用"],
-          ["Claude Mobile（iOS / Android）", "○", "利用可能だが新規コネクターの追加は不可"],
-          ["Claude Code（CLI）", "○", "MCP Connector 経由で利用"],
-          ["API", "○", "MCP Connector 経由で利用"]
+          [
+            "claude.ai（Web）",
+            "○",
+            "ブラウザから利用、コネクター追加も可能"
+          ],
+          [
+            "Claude Desktop（macOS）",
+            "○",
+            "デスクトップアプリから利用"
+          ],
+          [
+            "Claude Desktop（Windows）",
+            "○",
+            "デスクトップアプリから利用"
+          ],
+          [
+            "Claude Mobile（iOS / Android）",
+            "○",
+            "利用可能だが新規コネクターの追加は不可"
+          ],
+          [
+            "Claude Code（CLI）",
+            "○",
+            "MCP Connector 経由で利用"
+          ],
+          [
+            "API",
+            "○",
+            "MCP Connector 経由で利用"
+          ]
         ]
       },
       {
         "afterParagraph": 2,
         "caption": "Microsoft 365 コネクター対応サービス",
-        "headers": ["サービス", "できること", "ユースケース例"],
+        "headers": [
+          "サービス",
+          "できること",
+          "ユースケース例"
+        ],
         "rows": [
-          ["Outlook", "メールの検索・要約・分析", "クライアントとの過去のやり取りを要約"],
-          ["OneDrive", "個人ファイルの検索・参照", "特定のレポートを探して内容を確認"],
-          ["SharePoint", "組織ドキュメントの横断検索", "プロジェクト仕様書や戦略資料を検索"],
-          ["Teams", "チャット・チャンネル・会議メモの検索", "会議の決定事項を確認"]
+          [
+            "Outlook",
+            "メールの検索・要約・分析",
+            "クライアントとの過去のやり取りを要約"
+          ],
+          [
+            "OneDrive",
+            "個人ファイルの検索・参照",
+            "特定のレポートを探して内容を確認"
+          ],
+          [
+            "SharePoint",
+            "組織ドキュメントの横断検索",
+            "プロジェクト仕様書や戦略資料を検索"
+          ],
+          [
+            "Teams",
+            "チャット・チャンネル・会議メモの検索",
+            "会議の決定事項を確認"
+          ]
         ]
       }
     ],
@@ -2844,14 +4088,35 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 3,
         "caption": "ビデオチャットスキルの主要機能",
-        "headers": ["機能", "内容"],
+        "headers": [
+          "機能",
+          "内容"
+        ],
         "rows": [
-          ["AIアバター", "PikaStream1.0 によるリアルタイム映像生成、表情・感情表現対応"],
-          ["音声クローン", "10秒〜5分の音声サンプルから声を再現（7日未使用で失効）"],
-          ["記憶・個性維持", "MEMORY.md・デイリーログ・人物情報からコンテキスト自動構築"],
-          ["会議メモ", "退出時にミーティングノートを自動生成・共有"],
-          ["対応プラットフォーム", "Google Meet（Zoom・FaceTime は近日対応予定）"],
-          ["料金", "$0.50/分（ベータ）"]
+          [
+            "AIアバター",
+            "PikaStream1.0 によるリアルタイム映像生成、表情・感情表現対応"
+          ],
+          [
+            "音声クローン",
+            "10秒〜5分の音声サンプルから声を再現（7日未使用で失効）"
+          ],
+          [
+            "記憶・個性維持",
+            "MEMORY.md・デイリーログ・人物情報からコンテキスト自動構築"
+          ],
+          [
+            "会議メモ",
+            "退出時にミーティングノートを自動生成・共有"
+          ],
+          [
+            "対応プラットフォーム",
+            "Google Meet（Zoom・FaceTime は近日対応予定）"
+          ],
+          [
+            "料金",
+            "$0.50/分（ベータ）"
+          ]
         ]
       }
     ],
@@ -2881,11 +4146,35 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 0,
         "caption": "MAI モデル3種の比較",
-        "headers": ["モデル", "分野", "ベンチマーク", "速度", "料金"],
+        "headers": [
+          "モデル",
+          "分野",
+          "ベンチマーク",
+          "速度",
+          "料金"
+        ],
         "rows": [
-          ["MAI-Transcribe-1", "音声認識（STT）", "FLEURS 11言語で1位（WER 3.9%）", "Azure Fast比 2.5倍", "$0.36/時間"],
-          ["MAI-Voice-1", "音声生成（TTS）", "—", "60秒音声を1秒で生成", "$22/100万文字"],
-          ["MAI-Image-2", "画像生成", "Arena.ai トップ3", "従来比 2倍高速", "$5/100万トークン（入力）"]
+          [
+            "MAI-Transcribe-1",
+            "音声認識（STT）",
+            "FLEURS 11言語で1位（WER 3.9%）",
+            "Azure Fast比 2.5倍",
+            "$0.36/時間"
+          ],
+          [
+            "MAI-Voice-1",
+            "音声生成（TTS）",
+            "—",
+            "60秒音声を1秒で生成",
+            "$22/100万文字"
+          ],
+          [
+            "MAI-Image-2",
+            "画像生成",
+            "Arena.ai トップ3",
+            "従来比 2倍高速",
+            "$5/100万トークン（入力）"
+          ]
         ]
       }
     ],
@@ -2910,13 +4199,31 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 2,
         "caption": "Computer Use の利用条件",
-        "headers": ["項目", "内容"],
+        "headers": [
+          "項目",
+          "内容"
+        ],
         "rows": [
-          ["対応OS", "macOS（3月23日〜）・Windows（4月2日〜）"],
-          ["対応プラン", "Pro（$20/月）/ Max（$100〜$200/月）"],
-          ["非対応プラン", "Team / Enterprise（現時点）"],
-          ["前提条件", "最新版 Claude Desktop、PC起動中、アプリ起動中"],
-          ["セットアップ", "不要（アプリインストールのみ）"]
+          [
+            "対応OS",
+            "macOS（3月23日〜）・Windows（4月2日〜）"
+          ],
+          [
+            "対応プラン",
+            "Pro（$20/月）/ Max（$100〜$200/月）"
+          ],
+          [
+            "非対応プラン",
+            "Team / Enterprise（現時点）"
+          ],
+          [
+            "前提条件",
+            "最新版 Claude Desktop、PC起動中、アプリ起動中"
+          ],
+          [
+            "セットアップ",
+            "不要（アプリインストールのみ）"
+          ]
         ]
       }
     ],
@@ -2944,11 +4251,31 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 1,
         "caption": "Gemini API 課金ティア上限（2026年4月〜）",
-        "headers": ["ティア", "月額支出上限", "レート制限の目安", "支払い方式"],
+        "headers": [
+          "ティア",
+          "月額支出上限",
+          "レート制限の目安",
+          "支払い方式"
+        ],
         "rows": [
-          ["Tier 1", "$250", "標準", "プリペイド"],
-          ["Tier 2", "$2,000", "拡張", "プリペイド / 後払い"],
-          ["Tier 3", "$20,000〜$100,000+", "最大", "後払い（審査あり）"]
+          [
+            "Tier 1",
+            "$250",
+            "標準",
+            "プリペイド"
+          ],
+          [
+            "Tier 2",
+            "$2,000",
+            "拡張",
+            "プリペイド / 後払い"
+          ],
+          [
+            "Tier 3",
+            "$20,000〜$100,000+",
+            "最大",
+            "後払い（審査あり）"
+          ]
         ]
       }
     ],
@@ -3038,11 +4365,35 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 0,
         "caption": "LangChain / LangGraph 脆弱性一覧",
-        "headers": ["CVE", "対象", "種別", "CVSS", "修正バージョン"],
+        "headers": [
+          "CVE",
+          "対象",
+          "種別",
+          "CVSS",
+          "修正バージョン"
+        ],
         "rows": [
-          ["CVE-2025-68664", "LangChain Core", "デシリアライゼーション", "9.3（Critical）", "Core 0.3.81 / LangChain 1.2.5"],
-          ["CVE-2026-34070", "LangChain Core", "パストラバーサル", "7.5（High）", "Core 1.2.22"],
-          ["CVE-2025-67644", "LangGraph", "SQLインジェクション", "7.3（High）", "checkpoint-sqlite 3.0.1"]
+          [
+            "CVE-2025-68664",
+            "LangChain Core",
+            "デシリアライゼーション",
+            "9.3（Critical）",
+            "Core 0.3.81 / LangChain 1.2.5"
+          ],
+          [
+            "CVE-2026-34070",
+            "LangChain Core",
+            "パストラバーサル",
+            "7.5（High）",
+            "Core 1.2.22"
+          ],
+          [
+            "CVE-2025-67644",
+            "LangGraph",
+            "SQLインジェクション",
+            "7.3（High）",
+            "checkpoint-sqlite 3.0.1"
+          ]
         ]
       }
     ],
@@ -3109,12 +4460,52 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 3,
         "caption": "Gemma 4 モデルラインナップ",
-        "headers": ["モデル", "パラメータ", "アクティブ", "LMArena順位", "コンテキスト", "音声入力", "用途"],
+        "headers": [
+          "モデル",
+          "パラメータ",
+          "アクティブ",
+          "LMArena順位",
+          "コンテキスト",
+          "音声入力",
+          "用途"
+        ],
         "rows": [
-          ["31B Dense", "310億", "310億", "オープン3位（1452）", "256K", "×", "ワークステーション・ファインチューニング基盤"],
-          ["26B MoE", "260億", "38億", "オープン6位（1441）", "256K", "×", "低レイテンシ推論・サーバーサイド"],
-          ["E4B", "実効40億", "40億", "—", "128K", "○", "スマホ・エッジデバイス"],
-          ["E2B", "実効20億", "20億", "—", "128K", "○", "IoT・Raspberry Pi・Jetson"]
+          [
+            "31B Dense",
+            "310億",
+            "310億",
+            "オープン3位（1452）",
+            "256K",
+            "×",
+            "ワークステーション・ファインチューニング基盤"
+          ],
+          [
+            "26B MoE",
+            "260億",
+            "38億",
+            "オープン6位（1441）",
+            "256K",
+            "×",
+            "低レイテンシ推論・サーバーサイド"
+          ],
+          [
+            "E4B",
+            "実効40億",
+            "40億",
+            "—",
+            "128K",
+            "○",
+            "スマホ・エッジデバイス"
+          ],
+          [
+            "E2B",
+            "実効20億",
+            "20億",
+            "—",
+            "128K",
+            "○",
+            "IoT・Raspberry Pi・Jetson"
+          ]
         ]
       }
     ],
@@ -3156,21 +4547,69 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 3,
         "caption": "主要なオープンソースリアルタイム翻訳アプリ",
-        "headers": ["アプリ", "対応OS", "音声認識", "翻訳エンジン", "オフライン", "特徴"],
+        "headers": [
+          "アプリ",
+          "対応OS",
+          "音声認識",
+          "翻訳エンジン",
+          "オフライン",
+          "特徴"
+        ],
         "rows": [
-          ["RTranslator", "Android", "Whisper（ローカル）", "NLLB（ローカル）", "完全対応", "Bluetooth会話モード・サーバー不要・31言語"],
-          ["LiveCaptions-Translator", "Windows 11", "LiveCaptions（OS標準）", "Google翻訳 / ローカルLLM", "翻訳部分のみ選択可", "オーバーレイ字幕・ゲーム/動画対応"],
-          ["my-translator", "macOS / Windows", "Whisper（MLX）", "Gemma（ローカル）", "実験的に対応", "API不要・テレメトリゼロ・日英中韓対応"]
+          [
+            "RTranslator",
+            "Android",
+            "Whisper（ローカル）",
+            "NLLB（ローカル）",
+            "完全対応",
+            "Bluetooth会話モード・サーバー不要・31言語"
+          ],
+          [
+            "LiveCaptions-Translator",
+            "Windows 11",
+            "LiveCaptions（OS標準）",
+            "Google翻訳 / ローカルLLM",
+            "翻訳部分のみ選択可",
+            "オーバーレイ字幕・ゲーム/動画対応"
+          ],
+          [
+            "my-translator",
+            "macOS / Windows",
+            "Whisper（MLX）",
+            "Gemma（ローカル）",
+            "実験的に対応",
+            "API不要・テレメトリゼロ・日英中韓対応"
+          ]
         ]
       },
       {
         "afterParagraph": 5,
         "caption": "翻訳サービスのコスト比較",
-        "headers": ["方式", "1,000語あたりコスト", "所要時間", "セキュリティ"],
+        "headers": [
+          "方式",
+          "1,000語あたりコスト",
+          "所要時間",
+          "セキュリティ"
+        ],
         "rows": [
-          ["人間の翻訳者", "3,000〜15,000円", "数時間〜1日", "NDA契約で担保"],
-          ["クラウドAI翻訳（有料）", "数十円〜数百円", "数秒", "サービスにより異なる（データ二次利用リスクあり）"],
-          ["ローカルOSS翻訳", "無料（電力のみ）", "数秒", "音声データが端末外に出ない"]
+          [
+            "人間の翻訳者",
+            "3,000〜15,000円",
+            "数時間〜1日",
+            "NDA契約で担保"
+          ],
+          [
+            "クラウドAI翻訳（有料）",
+            "数十円〜数百円",
+            "数秒",
+            "サービスにより異なる（データ二次利用リスクあり）"
+          ],
+          [
+            "ローカルOSS翻訳",
+            "無料（電力のみ）",
+            "数秒",
+            "音声データが端末外に出ない"
+          ]
         ]
       }
     ],
@@ -3220,21 +4659,65 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 2,
         "caption": "Bonsai シリーズのスペック",
-        "headers": ["モデル", "パラメータ", "メモリ", "速度（M4 Pro）", "用途"],
+        "headers": [
+          "モデル",
+          "パラメータ",
+          "メモリ",
+          "速度（M4 Pro）",
+          "用途"
+        ],
         "rows": [
-          ["Bonsai 8B", "82億", "1.15 GB", "136 tok/s", "汎用・エージェント"],
-          ["Bonsai 4B", "40億", "0.5 GB", "—", "モバイル・IoT"],
-          ["Bonsai 1.7B", "17億", "0.24 GB", "—", "ロボティクス・リアルタイム"]
+          [
+            "Bonsai 8B",
+            "82億",
+            "1.15 GB",
+            "136 tok/s",
+            "汎用・エージェント"
+          ],
+          [
+            "Bonsai 4B",
+            "40億",
+            "0.5 GB",
+            "—",
+            "モバイル・IoT"
+          ],
+          [
+            "Bonsai 1.7B",
+            "17億",
+            "0.24 GB",
+            "—",
+            "ロボティクス・リアルタイム"
+          ]
         ]
       },
       {
         "afterParagraph": 2,
         "caption": "Bonsai 8B vs 同サイズモデル比較",
-        "headers": ["モデル", "ベンチマーク平均", "メモリ", "速度（M4 Pro）"],
+        "headers": [
+          "モデル",
+          "ベンチマーク平均",
+          "メモリ",
+          "速度（M4 Pro）"
+        ],
         "rows": [
-          ["Bonsai 8B（1ビット）", "70.5", "1.15 GB", "136 tok/s"],
-          ["Llama 3 8B（16ビット）", "67.1", "16 GB", "~17 tok/s"],
-          ["Ministral3 8B（16ビット）", "71.0", "16 GB", "~17 tok/s"]
+          [
+            "Bonsai 8B（1ビット）",
+            "70.5",
+            "1.15 GB",
+            "136 tok/s"
+          ],
+          [
+            "Llama 3 8B（16ビット）",
+            "67.1",
+            "16 GB",
+            "~17 tok/s"
+          ],
+          [
+            "Ministral3 8B（16ビット）",
+            "71.0",
+            "16 GB",
+            "~17 tok/s"
+          ]
         ]
       }
     ],
@@ -3271,15 +4754,39 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 3,
         "caption": "RF-DETR の主な特徴",
-        "headers": ["項目", "詳細"],
+        "headers": [
+          "項目",
+          "詳細"
+        ],
         "rows": [
-          ["開発元", "Roboflow（ICLR 2026 発表）"],
-          ["バックボーン", "DINOv2 ビジョントランスフォーマー"],
-          ["COCO mAP", "60+ mAP（リアルタイムモデル初）"],
-          ["モデルサイズ", "Nano / Small / Medium / Large / XL / 2XL"],
-          ["NMS不要", "推論時に Non-Maximum Suppression が不要（YOLO より高速）"],
-          ["ドメイン適応", "RF100-VL で 86.7 mAP（医療・工業・航空など）"],
-          ["ライセンス", "Apache 2.0（Plus モデルは PML 1.0）"]
+          [
+            "開発元",
+            "Roboflow（ICLR 2026 発表）"
+          ],
+          [
+            "バックボーン",
+            "DINOv2 ビジョントランスフォーマー"
+          ],
+          [
+            "COCO mAP",
+            "60+ mAP（リアルタイムモデル初）"
+          ],
+          [
+            "モデルサイズ",
+            "Nano / Small / Medium / Large / XL / 2XL"
+          ],
+          [
+            "NMS不要",
+            "推論時に Non-Maximum Suppression が不要（YOLO より高速）"
+          ],
+          [
+            "ドメイン適応",
+            "RF100-VL で 86.7 mAP（医療・工業・航空など）"
+          ],
+          [
+            "ライセンス",
+            "Apache 2.0（Plus モデルは PML 1.0）"
+          ]
         ]
       }
     ],
@@ -3334,16 +4841,97 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 2,
         "caption": "主要ベンチマーク比較（スクリーンショットのデータより）",
-        "headers": ["ベンチマーク", "分野", "Qwen3.6-Plus", "Qwen3.5-397B", "Kimi K2.5", "GLM5", "Claude 4.5 Opus", "Gemini3-Pro"],
+        "headers": [
+          "ベンチマーク",
+          "分野",
+          "Qwen3.6-Plus",
+          "Qwen3.5-397B",
+          "Kimi K2.5",
+          "GLM5",
+          "Claude 4.5 Opus",
+          "Gemini3-Pro"
+        ],
         "rows": [
-          ["Terminal-Bench 2.0", "エージェント型ターミナル操作", "61.6", "52.5", "50.8", "56.2", "59.3", "—"],
-          ["SWE-bench Pro", "エージェント型コーディング", "56.6", "50.9", "53.8", "—", "55.1", "57.1"],
-          ["SWE-bench Verified", "エージェント型コーディング", "78.8", "76.2", "76.8", "77.8", "80.9", "—"],
-          ["SWE-bench Multilingual", "多言語コーディング", "73.8", "—", "69.3", "73.0", "80.9", "77.5"],
-          ["Claw-Eval (pass^3)", "実世界エージェント", "58.7", "48.1", "52.9", "57.7", "59.6", "—"],
-          ["MMMU", "マルチモーダル推論", "86.0", "85.0", "84.3", "—", "80.7", "87.2"],
-          ["OmniDocBench v1.5", "文書認識", "91.2", "90.8", "88.8", "—", "87.7", "88.5"],
-          ["Video-MME", "動画推論", "87.8", "87.5", "87.4", "—", "77.6", "88.4"]
+          [
+            "Terminal-Bench 2.0",
+            "エージェント型ターミナル操作",
+            "61.6",
+            "52.5",
+            "50.8",
+            "56.2",
+            "59.3",
+            "—"
+          ],
+          [
+            "SWE-bench Pro",
+            "エージェント型コーディング",
+            "56.6",
+            "50.9",
+            "53.8",
+            "—",
+            "55.1",
+            "57.1"
+          ],
+          [
+            "SWE-bench Verified",
+            "エージェント型コーディング",
+            "78.8",
+            "76.2",
+            "76.8",
+            "77.8",
+            "80.9",
+            "—"
+          ],
+          [
+            "SWE-bench Multilingual",
+            "多言語コーディング",
+            "73.8",
+            "—",
+            "69.3",
+            "73.0",
+            "80.9",
+            "77.5"
+          ],
+          [
+            "Claw-Eval (pass^3)",
+            "実世界エージェント",
+            "58.7",
+            "48.1",
+            "52.9",
+            "57.7",
+            "59.6",
+            "—"
+          ],
+          [
+            "MMMU",
+            "マルチモーダル推論",
+            "86.0",
+            "85.0",
+            "84.3",
+            "—",
+            "80.7",
+            "87.2"
+          ],
+          [
+            "OmniDocBench v1.5",
+            "文書認識",
+            "91.2",
+            "90.8",
+            "88.8",
+            "—",
+            "87.7",
+            "88.5"
+          ],
+          [
+            "Video-MME",
+            "動画推論",
+            "87.8",
+            "87.5",
+            "87.4",
+            "—",
+            "77.6",
+            "88.4"
+          ]
         ]
       }
     ],
@@ -3353,11 +4941,31 @@ const ARTICLES_BODY = {
         "title": "Terminal-Bench 2.0（エージェント型ターミナル操作）",
         "subtitle": "スコアが高いほど優秀",
         "bars": [
-          { "label": "Qwen3.6-Plus", "value": 61.6, "color": "#7c3aed" },
-          { "label": "Claude 4.5 Opus", "value": 59.3, "color": "#f97316" },
-          { "label": "GLM5", "value": 56.2, "color": "#6366f1" },
-          { "label": "Qwen3.5-397B", "value": 52.5, "color": "#c4b5fd" },
-          { "label": "Kimi K2.5", "value": 50.8, "color": "#93c5fd" }
+          {
+            "label": "Qwen3.6-Plus",
+            "value": 61.6,
+            "color": "#7c3aed"
+          },
+          {
+            "label": "Claude 4.5 Opus",
+            "value": 59.3,
+            "color": "#f97316"
+          },
+          {
+            "label": "GLM5",
+            "value": 56.2,
+            "color": "#6366f1"
+          },
+          {
+            "label": "Qwen3.5-397B",
+            "value": 52.5,
+            "color": "#c4b5fd"
+          },
+          {
+            "label": "Kimi K2.5",
+            "value": 50.8,
+            "color": "#93c5fd"
+          }
         ],
         "maxValue": 65,
         "unit": "%"
@@ -3389,14 +4997,49 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 2,
         "caption": "Page Agent と他のブラウザ自動化ツールの比較",
-        "headers": ["項目", "Page Agent", "Selenium / Playwright", "browser-use"],
+        "headers": [
+          "項目",
+          "Page Agent",
+          "Selenium / Playwright",
+          "browser-use"
+        ],
         "rows": [
-          ["動作環境", "ブラウザ内 JavaScript", "サーバーサイド（Python等）", "サーバーサイド（Python）"],
-          ["セットアップ", "script タグ1行 or npm install", "Python + WebDriver + ブラウザ", "Python + ブラウザ"],
-          ["LLM 要件", "テキスト LLM のみ", "—（ルールベース）", "マルチモーダル LLM"],
-          ["API キー（デモ）", "不要", "—", "必要"],
-          ["複数タブ操作", "Chrome 拡張で対応", "標準対応", "標準対応"],
-          ["ライセンス", "MIT", "Apache 2.0", "AGPL-3.0"]
+          [
+            "動作環境",
+            "ブラウザ内 JavaScript",
+            "サーバーサイド（Python等）",
+            "サーバーサイド（Python）"
+          ],
+          [
+            "セットアップ",
+            "script タグ1行 or npm install",
+            "Python + WebDriver + ブラウザ",
+            "Python + ブラウザ"
+          ],
+          [
+            "LLM 要件",
+            "テキスト LLM のみ",
+            "—（ルールベース）",
+            "マルチモーダル LLM"
+          ],
+          [
+            "API キー（デモ）",
+            "不要",
+            "—",
+            "必要"
+          ],
+          [
+            "複数タブ操作",
+            "Chrome 拡張で対応",
+            "標準対応",
+            "標準対応"
+          ],
+          [
+            "ライセンス",
+            "MIT",
+            "Apache 2.0",
+            "AGPL-3.0"
+          ]
         ]
       }
     ],
@@ -6257,18 +7900,10 @@ const ARTICLES_BODY = {
       "**Gemini CLI** は Google が開発する **Apache 2.0 のオープンソース AI コーディングエージェント**。**Gemini 3 / 3.5 Flash** を裏側に Google Search grounding と MCP 接続を組み合わせ、Apache 2.0 ライセンスで GitHub 公開されている（star 数は10万級）。2026年6月時点での網羅評価。",
       "## インストール / 起動",
       "**正しいインストールコマンド（npm 経由）**:",
-      "```bash",
-      "npm install -g @google/gemini-cli           # 安定版",
-      "npm install -g @google/gemini-cli@preview   # プレビュー版（週次）",
-      "npm install -g @google/gemini-cli@nightly   # ナイトリー（日次）",
-      "```",
+      "```bash\nnpm install -g @google/gemini-cli           # 安定版\nnpm install -g @google/gemini-cli@preview   # プレビュー版（週次）\nnpm install -g @google/gemini-cli@nightly   # ナイトリー（日次）\n```",
       "**前提**: Node.js **20+**。",
       "**起動**:",
-      "```bash",
-      "gemini                            # 対話セッション",
-      "gemini -p \"<指示>\"                # 一発実行 / パイプ",
-      "gemini --sandbox                  # Docker / Podman でサンドボックス実行",
-      "```",
+      "```bash\ngemini                            # 対話セッション\ngemini -p \"<指示>\"                # 一発実行 / パイプ\ngemini --sandbox                  # Docker / Podman でサンドボックス実行\n```",
       "**認証**: 初回起動時に Google アカウントでログインを求められる。Gemini API キー（AI Studio）または Vertex AI 認証情報も使用可。",
       "## モデルと無料枠",
       "**Gemini 3.5 Flash（5/19 GA、I/O 2026 で発表）**:",
@@ -6322,23 +7957,9 @@ const ARTICLES_BODY = {
       "**OpenAI Codex** は **クラウド版（ChatGPT 経由）と CLI 版（Codex CLI）** の2形態で提供される OpenAI のコーディングエージェント。2026年6月時点で **4M+ アクティブユーザー、基盤モデルは GPT-5.5**（4/23 リリース）。本レビューは2026年6月時点の網羅評価。",
       "## インストール / 起動（Codex CLI）",
       "**インストール（複数経路）**:",
-      "```bash",
-      "# macOS / Linux（推奨）",
-      "curl -fsSL https://chatgpt.com/codex/install.sh | sh",
-      "",
-      "# Windows PowerShell",
-      "powershell -ExecutionPolicy ByPass -c \"irm https://chatgpt.com/codex/install.ps1 | iex\"",
-      "",
-      "# npm 経由（Node.js 22+ 必須）",
-      "npm install -g @openai/codex",
-      "```",
+      "```bash\n# macOS / Linux（推奨）\ncurl -fsSL https://chatgpt.com/codex/install.sh | sh\n\n# Windows PowerShell\npowershell -ExecutionPolicy ByPass -c \"irm https://chatgpt.com/codex/install.ps1 | iex\"\n\n# npm 経由（Node.js 22+ 必須）\nnpm install -g @openai/codex\n```",
       "**起動コマンド**:",
-      "```bash",
-      "codex                      # 対話セッション開始",
-      "codex \"<指示>\"             # ワンショット",
-      "codex --model gpt-5.5      # モデル指定",
-      "codex --headless           # ヘッドレスモード（CI 用）",
-      "```",
+      "```bash\ncodex                      # 対話セッション開始\ncodex \"<指示>\"             # ワンショット\ncodex --model gpt-5.5      # モデル指定\ncodex --headless           # ヘッドレスモード（CI 用）\n```",
       "**認証**: 初回起動時に ChatGPT アカウント / OpenAI API キーでサインイン。",
       "## 中核機能",
       "### 基盤モデル: GPT-5.5（4/23 リリース）",
@@ -6434,23 +8055,9 @@ const ARTICLES_BODY = {
       "**Claude Code** は **Anthropic** が提供する AI コーディングエージェントで、ターミナル CLI を中核に **VS Code 拡張・JetBrains プラグイン・デスクトップアプリ・Web（claude.ai/code）・iOS アプリ・Slack・Chrome** と同じエンジンで連動する。本レビューは **2026年6月時点（v2.1.139+、Opus 4.8 対応版）** での全機能網羅版。基盤モデル更新と5月の機能追加で「**1人の開発者が並列にエージェントを束ねる**」運用が公式サポートされた。",
       "## インストールコマンド（公式、複数経路）",
       "**ネイティブインストール（推奨、自動更新あり）**:",
-      "```bash",
-      "# macOS / Linux / WSL",
-      "curl -fsSL https://claude.ai/install.sh | bash",
-      "",
-      "# Windows PowerShell",
-      "irm https://claude.ai/install.ps1 | iex",
-      "",
-      "# Windows CMD",
-      "curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd",
-      "```",
+      "```bash\n# macOS / Linux / WSL\ncurl -fsSL https://claude.ai/install.sh | bash\n\n# Windows PowerShell\nirm https://claude.ai/install.ps1 | iex\n\n# Windows CMD\ncurl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd\n```",
       "**パッケージマネージャ**:",
-      "```bash",
-      "brew install --cask claude-code           # 安定版（1週遅れ）",
-      "brew install --cask claude-code@latest    # 最新版",
-      "winget install Anthropic.ClaudeCode       # Windows",
-      "# Linux: apt / dnf / apk にも対応（Debian, Fedora, RHEL, Alpine）",
-      "```",
+      "```bash\nbrew install --cask claude-code           # 安定版（1週遅れ）\nbrew install --cask claude-code@latest    # 最新版\nwinget install Anthropic.ClaudeCode       # Windows\n# Linux: apt / dnf / apk にも対応（Debian, Fedora, RHEL, Alpine）\n```",
       "**起動コマンド**: プロジェクトディレクトリで `cd your-project && claude` で対話セッション開始。初回はブラウザログインを求められる。",
       "## 各サーフェスへのインストール",
       "- **VS Code**: マーケットプレイスで「Claude Code」を検索 → 拡張インストール → `Cmd+Shift+P` → \"Claude Code: Open in New Tab\"。インラインの diff 表示、@ メンション、計画レビュー、会話履歴が IDE 内で完結",
@@ -6568,16 +8175,9 @@ const ARTICLES_BODY = {
       "**Cursor CLI** は **Anysphere** が提供する Cursor の独立 CLI ツール。**IDE を起動せずにターミナルだけで Composer / Background Agent を使える**ようになり、Claude Code や GitHub Copilot CLI の直接競合に位置付けられた。2026年6月時点での網羅評価。",
       "## インストール / 起動",
       "**インストール**:",
-      "```bash",
-      "npm install -g @cursor/cli       # 公式 npm パッケージ",
-      "cursor auth                      # ブラウザでサインイン",
-      "```",
+      "```bash\nnpm install -g @cursor/cli       # 公式 npm パッケージ\ncursor auth                      # ブラウザでサインイン\n```",
       "**起動コマンド**:",
-      "```bash",
-      "cursor                            # 対話セッション",
-      "cursor --headless \"<指示>\"        # ヘッドレス（CI、cron 用）",
-      "cursor --bg [task]                # バックグラウンドエージェント",
-      "```",
+      "```bash\ncursor                            # 対話セッション\ncursor --headless \"<指示>\"        # ヘッドレス（CI、cron 用）\ncursor --bg [task]                # バックグラウンドエージェント\n```",
       "Node.js 20+ 必須。",
       "## 主要機能",
       "### Composer / Agent loop（multi-file）",
@@ -6631,20 +8231,9 @@ const ARTICLES_BODY = {
       "**GitHub Copilot CLI** は **GitHub**（**Microsoft** 傘下）が提供する Copilot coding agent のターミナル版。`copilot` コマンドで対話セッション、`/fleet` でサブエージェント並列実行、`/model` でモデル切替が可能な、本格的な CLI コーディングエージェント。2026年6月時点の網羅評価。",
       "## インストール / 起動",
       "**インストール（複数経路）**:",
-      "```bash",
-      "npm install -g @github/copilot                     # npm 経由（Node.js 22+ 必須）",
-      "brew install copilot-cli                            # macOS Homebrew",
-      "winget install GitHub.Copilot                       # Windows WinGet",
-      "curl -fsSL https://gh.io/copilot-install | bash    # Linux / WSL 等の汎用",
-      "gh copilot                                          # GitHub CLI からの初回起動・インストール",
-      "```",
+      "```bash\nnpm install -g @github/copilot                     # npm 経由（Node.js 22+ 必須）\nbrew install copilot-cli                            # macOS Homebrew\nwinget install GitHub.Copilot                       # Windows WinGet\ncurl -fsSL https://gh.io/copilot-install | bash    # Linux / WSL 等の汎用\ngh copilot                                          # GitHub CLI からの初回起動・インストール\n```",
       "**起動コマンド**:",
-      "```bash",
-      "copilot                  # 対話セッション",
-      "copilot \"<指示>\"         # ワンショット",
-      "gh copilot suggest       # シェルコマンド提案（既存サブコマンド）",
-      "gh copilot explain       # コマンド解説（既存サブコマンド）",
-      "```",
+      "```bash\ncopilot                  # 対話セッション\ncopilot \"<指示>\"         # ワンショット\ngh copilot suggest       # シェルコマンド提案（既存サブコマンド）\ngh copilot explain       # コマンド解説（既存サブコマンド）\n```",
       "## 中核機能",
       "### 既定モデルと `/model` 切替",
       "**既定モデル: Claude Sonnet 4.5**。`/model` コマンドで切替可能なラインナップ:",
@@ -9887,15 +11476,47 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 4,
         "caption": "--add-dir で読み込まれるもの・読み込まれないもの",
-        "headers": ["項目", "自動読み込み", "備考"],
+        "headers": [
+          "項目",
+          "自動読み込み",
+          "備考"
+        ],
         "rows": [
-          ["ファイルの読み書き", "○", "権限モードに従う"],
-          [".claude/skills/", "○", "セッション中の編集もリアルタイム反映"],
-          ["CLAUDE.md", "×（設定で○）", "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1 で有効化"],
-          [".claude/agents/", "×", "ユーザーレベル（~/.claude/）に配置で対応"],
-          [".claude/commands/", "×", "同上"],
-          ["Hooks", "×", "プロジェクトの settings.json で定義"],
-          [".claude/rules/", "×", "シンボリックリンクで共有可能"]
+          [
+            "ファイルの読み書き",
+            "○",
+            "権限モードに従う"
+          ],
+          [
+            ".claude/skills/",
+            "○",
+            "セッション中の編集もリアルタイム反映"
+          ],
+          [
+            "CLAUDE.md",
+            "×（設定で○）",
+            "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1 で有効化"
+          ],
+          [
+            ".claude/agents/",
+            "×",
+            "ユーザーレベル（~/.claude/）に配置で対応"
+          ],
+          [
+            ".claude/commands/",
+            "×",
+            "同上"
+          ],
+          [
+            "Hooks",
+            "×",
+            "プロジェクトの settings.json で定義"
+          ],
+          [
+            ".claude/rules/",
+            "×",
+            "シンボリックリンクで共有可能"
+          ]
         ]
       }
     ],
@@ -9930,20 +11551,72 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 3,
         "caption": "TimesFM 2.5 と MiroFish の比較",
-        "headers": ["項目", "TimesFM 2.5", "MiroFish"],
+        "headers": [
+          "項目",
+          "TimesFM 2.5",
+          "MiroFish"
+        ],
         "rows": [
-          ["開発元", "Google Research", "郭杭江（北京郵電大学）"],
-          ["アプローチ", "時系列データの統計的予測", "マルチエージェント社会シミュレーション"],
-          ["予測対象", "売上・需要・在庫など数値データ", "世論・利害関係者の反応・社会動向"],
-          ["モデルサイズ", "200M パラメータ", "LLM API 依存（エージェント数で変動）"],
-          ["入力", "過去の時系列データ（最大16K点）", "ニュース・政策文書・財務レポート"],
-          ["出力", "数値予測 + 不確実性区間", "シナリオレポート + エージェント行動ログ"],
-          ["ゼロショット", "対応（再学習不要）", "対応（知識グラフから自動構築）"],
-          ["本番環境", "BigQuery GA / Google Sheets", "セルフホスト（Docker）"],
-          ["ライセンス", "Apache-2.0（商用可）", "AGPL-3.0（セルフホスト前提）"],
-          ["GitHub Stars", "13,000+", "48,000+"],
-          ["得意なこと", "安定した数値トレンドの高精度予測", "複雑な社会的反応のシナリオ探索"],
-          ["苦手なこと", "前例のない事象、社会的要因の影響", "精密な数値予測、コスト管理"]
+          [
+            "開発元",
+            "Google Research",
+            "郭杭江（北京郵電大学）"
+          ],
+          [
+            "アプローチ",
+            "時系列データの統計的予測",
+            "マルチエージェント社会シミュレーション"
+          ],
+          [
+            "予測対象",
+            "売上・需要・在庫など数値データ",
+            "世論・利害関係者の反応・社会動向"
+          ],
+          [
+            "モデルサイズ",
+            "200M パラメータ",
+            "LLM API 依存（エージェント数で変動）"
+          ],
+          [
+            "入力",
+            "過去の時系列データ（最大16K点）",
+            "ニュース・政策文書・財務レポート"
+          ],
+          [
+            "出力",
+            "数値予測 + 不確実性区間",
+            "シナリオレポート + エージェント行動ログ"
+          ],
+          [
+            "ゼロショット",
+            "対応（再学習不要）",
+            "対応（知識グラフから自動構築）"
+          ],
+          [
+            "本番環境",
+            "BigQuery GA / Google Sheets",
+            "セルフホスト（Docker）"
+          ],
+          [
+            "ライセンス",
+            "Apache-2.0（商用可）",
+            "AGPL-3.0（セルフホスト前提）"
+          ],
+          [
+            "GitHub Stars",
+            "13,000+",
+            "48,000+"
+          ],
+          [
+            "得意なこと",
+            "安定した数値トレンドの高精度予測",
+            "複雑な社会的反応のシナリオ探索"
+          ],
+          [
+            "苦手なこと",
+            "前例のない事象、社会的要因の影響",
+            "精密な数値予測、コスト管理"
+          ]
         ]
       }
     ],
@@ -9991,31 +11664,103 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 2,
         "caption": "/powerup で学べる10機能",
-        "headers": ["レッスン", "コマンド/機能", "概要"],
+        "headers": [
+          "レッスン",
+          "コマンド/機能",
+          "概要"
+        ],
         "rows": [
-          ["Talk to your codebase", "@ファイル参照, 行番号指定", "特定ファイルや行を会話に引用"],
-          ["Steer with modes", "Shift+Tab (plan, auto)", "計画モード・自動モードの切り替え"],
-          ["Undo anything", "/rewind, Esc-Esc", "任意の時点まで会話を巻き戻し"],
-          ["Run in the background", "tasks, /tasks", "バックグラウンドでタスク実行"],
-          ["Teach Claude your rules", "CLAUDE.md, /memory", "プロジェクト固有のルールを記憶"],
-          ["Extend with tools", "MCP", "外部ツール・DB・API と接続"],
-          ["Automate your workflow", "Skills, Hooks", "カスタムスキルとイベントフック"],
-          ["Multiply yourself", "Subagents, /agents", "マルチエージェントで並列作業"],
-          ["Code from anywhere", "/remote-control, /teleport", "リモートマシンからの操作"],
-          ["Dial the model", "/model, /effort", "モデル・思考深度の切り替え"]
+          [
+            "Talk to your codebase",
+            "@ファイル参照, 行番号指定",
+            "特定ファイルや行を会話に引用"
+          ],
+          [
+            "Steer with modes",
+            "Shift+Tab (plan, auto)",
+            "計画モード・自動モードの切り替え"
+          ],
+          [
+            "Undo anything",
+            "/rewind, Esc-Esc",
+            "任意の時点まで会話を巻き戻し"
+          ],
+          [
+            "Run in the background",
+            "tasks, /tasks",
+            "バックグラウンドでタスク実行"
+          ],
+          [
+            "Teach Claude your rules",
+            "CLAUDE.md, /memory",
+            "プロジェクト固有のルールを記憶"
+          ],
+          [
+            "Extend with tools",
+            "MCP",
+            "外部ツール・DB・API と接続"
+          ],
+          [
+            "Automate your workflow",
+            "Skills, Hooks",
+            "カスタムスキルとイベントフック"
+          ],
+          [
+            "Multiply yourself",
+            "Subagents, /agents",
+            "マルチエージェントで並列作業"
+          ],
+          [
+            "Code from anywhere",
+            "/remote-control, /teleport",
+            "リモートマシンからの操作"
+          ],
+          [
+            "Dial the model",
+            "/model, /effort",
+            "モデル・思考深度の切り替え"
+          ]
         ]
       },
       {
         "afterParagraph": 3,
         "caption": "NO_FLICKER モードの主な操作",
-        "headers": ["操作", "方法", "備考"],
+        "headers": [
+          "操作",
+          "方法",
+          "備考"
+        ],
         "rows": [
-          ["有効化", "CLAUDE_CODE_NO_FLICKER=1 claude", "シェルプロファイルに export で恒久化"],
-          ["半画面スクロール", "PgUp / PgDn", "MacBook は Fn+↑/↓"],
-          ["トランスクリプト検索", "Ctrl+O → /", "n/N で前後一致に移動"],
-          ["ネイティブ検索に書き出し", "Ctrl+O → [", "ターミナルのスクロールバックに出力"],
-          ["マウス無効化", "CLAUDE_CODE_DISABLE_MOUSE=1", "ネイティブ選択を維持"],
-          ["スクロール速度変更", "CLAUDE_CODE_SCROLL_SPEED=N", "1〜20（デフォルト3）"]
+          [
+            "有効化",
+            "CLAUDE_CODE_NO_FLICKER=1 claude",
+            "シェルプロファイルに export で恒久化"
+          ],
+          [
+            "半画面スクロール",
+            "PgUp / PgDn",
+            "MacBook は Fn+↑/↓"
+          ],
+          [
+            "トランスクリプト検索",
+            "Ctrl+O → /",
+            "n/N で前後一致に移動"
+          ],
+          [
+            "ネイティブ検索に書き出し",
+            "Ctrl+O → [",
+            "ターミナルのスクロールバックに出力"
+          ],
+          [
+            "マウス無効化",
+            "CLAUDE_CODE_DISABLE_MOUSE=1",
+            "ネイティブ選択を維持"
+          ],
+          [
+            "スクロール速度変更",
+            "CLAUDE_CODE_SCROLL_SPEED=N",
+            "1〜20（デフォルト3）"
+          ]
         ]
       }
     ],
@@ -10062,23 +11807,73 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 4,
         "caption": "draw.io MCP の4つの導入方法",
-        "headers": ["方式", "セットアップ", "対応フォーマット", "特徴"],
+        "headers": [
+          "方式",
+          "セットアップ",
+          "対応フォーマット",
+          "特徴"
+        ],
         "rows": [
-          ["MCP App Server（ホスト版）", "リモートMCPサーバーURLを追加するだけ", "XML", "インストール不要・会話内にインタラクティブ表示"],
-          ["MCP Tool Server", "npx @drawio/mcp", "XML, CSV, Mermaid", "draw.ioエディタで直接編集可能"],
-          ["Skill + CLI", "スキルファイルをコピー", "XML", "MCP不要・PNG/SVG/PDFエクスポート対応"],
-          ["Project Instructions", "プロンプトをペースト", "XML, CSV, Mermaid", "完全インストール不要・Python実行で動作"]
+          [
+            "MCP App Server（ホスト版）",
+            "リモートMCPサーバーURLを追加するだけ",
+            "XML",
+            "インストール不要・会話内にインタラクティブ表示"
+          ],
+          [
+            "MCP Tool Server",
+            "npx @drawio/mcp",
+            "XML, CSV, Mermaid",
+            "draw.ioエディタで直接編集可能"
+          ],
+          [
+            "Skill + CLI",
+            "スキルファイルをコピー",
+            "XML",
+            "MCP不要・PNG/SVG/PDFエクスポート対応"
+          ],
+          [
+            "Project Instructions",
+            "プロンプトをペースト",
+            "XML, CSV, Mermaid",
+            "完全インストール不要・Python実行で動作"
+          ]
         ]
       },
       {
         "afterParagraph": 6,
         "caption": "環境別の対応状況",
-        "headers": ["環境", "リアルタイム描画", "ファイル生成", "備考"],
+        "headers": [
+          "環境",
+          "リアルタイム描画",
+          "ファイル生成",
+          "備考"
+        ],
         "rows": [
-          ["Claude.ai（Web / デスクトップ）", "○", "○", "MCP App Server で iframe 内に即時表示"],
-          ["VS Code + MCP 拡張", "○", "○", "エディタ内パネルにインタラクティブ表示"],
-          ["Claude Desktop", "○", "○", "MCP App Server または Tool Server"],
-          ["Claude Code CLI（ターミナル）", "×", "○", "Skill + CLI で .drawio ファイル生成→エディタで確認"]
+          [
+            "Claude.ai（Web / デスクトップ）",
+            "○",
+            "○",
+            "MCP App Server で iframe 内に即時表示"
+          ],
+          [
+            "VS Code + MCP 拡張",
+            "○",
+            "○",
+            "エディタ内パネルにインタラクティブ表示"
+          ],
+          [
+            "Claude Desktop",
+            "○",
+            "○",
+            "MCP App Server または Tool Server"
+          ],
+          [
+            "Claude Code CLI（ターミナル）",
+            "×",
+            "○",
+            "Skill + CLI で .drawio ファイル生成→エディタで確認"
+          ]
         ]
       }
     ],
@@ -10107,8 +11902,7 @@ const ARTICLES_BODY = {
         "url": "https://github.com/jgraph/drawio-mcp/tree/main/mcp-app-server"
       }
     ]
-  }
-  ,
+  },
   "google-vids-veo31-free-video-generation-2026": {
     "body": [
       "Google は2026年4月1日、動画編集ツール Google Vids に DeepMind の最新動画生成AI「Veo 3.1」を統合したと発表した。これにより、テキストプロンプトを入力するだけでプロフェッショナル品質の動画をブラウザ上で生成できるようになった。URL バーに vids.new と入力するだけで即座に新規プロジェクトを開始できる。",
@@ -10130,14 +11924,49 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 8,
         "caption": "動画生成AI 主要サービス比較（2026年4月時点）",
-        "headers": ["", "Veo 3.1", "Runway Gen-4.5", "Kling"],
+        "headers": [
+          "",
+          "Veo 3.1",
+          "Runway Gen-4.5",
+          "Kling"
+        ],
         "rows": [
-          ["最大解像度", "4K (3840×2160)", "1080p", "1080p"],
-          ["最大尺", "140秒超（連結）", "可変", "120秒"],
-          ["音声合成", "ネイティブ対応", "なし", "なし"],
-          ["縦動画 (9:16)", "対応", "対応", "対応"],
-          ["エコシステム", "Workspace / YouTube / Photos", "スタンドアロン", "スタンドアロン"],
-          ["強み", "品質・統合・音声", "クリエイティブ制御", "速度・コスト"]
+          [
+            "最大解像度",
+            "4K (3840×2160)",
+            "1080p",
+            "1080p"
+          ],
+          [
+            "最大尺",
+            "140秒超（連結）",
+            "可変",
+            "120秒"
+          ],
+          [
+            "音声合成",
+            "ネイティブ対応",
+            "なし",
+            "なし"
+          ],
+          [
+            "縦動画 (9:16)",
+            "対応",
+            "対応",
+            "対応"
+          ],
+          [
+            "エコシステム",
+            "Workspace / YouTube / Photos",
+            "スタンドアロン",
+            "スタンドアロン"
+          ],
+          [
+            "強み",
+            "品質・統合・音声",
+            "クリエイティブ制御",
+            "速度・コスト"
+          ]
         ]
       }
     ],
@@ -10429,12 +12258,47 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 7,
         "caption": "Claude の画面操作4手法の比較",
-        "headers": ["方法", "操作対象", "速度", "トークン効率", "ヘッドレス", "必要なもの"],
+        "headers": [
+          "方法",
+          "操作対象",
+          "速度",
+          "トークン効率",
+          "ヘッドレス",
+          "必要なもの"
+        ],
         "rows": [
-          ["Computer Use", "デスクトップ全般", "遅い", "低い", "不可", "Cowork（Pro/Max）"],
-          ["Claude in Chrome", "ブラウザ（認証済み）", "最速", "高い", "不可", "Chrome 拡張"],
-          ["DevTools MCP", "ブラウザ内部（DOM・コンソール等）", "速い", "高い", "可", "MCP サーバー設定"],
-          ["Playwright MCP", "ブラウザ操作の自動化", "速い", "低い", "可", "MCP サーバー設定"]
+          [
+            "Computer Use",
+            "デスクトップ全般",
+            "遅い",
+            "低い",
+            "不可",
+            "Cowork（Pro/Max）"
+          ],
+          [
+            "Claude in Chrome",
+            "ブラウザ（認証済み）",
+            "最速",
+            "高い",
+            "不可",
+            "Chrome 拡張"
+          ],
+          [
+            "DevTools MCP",
+            "ブラウザ内部（DOM・コンソール等）",
+            "速い",
+            "高い",
+            "可",
+            "MCP サーバー設定"
+          ],
+          [
+            "Playwright MCP",
+            "ブラウザ操作の自動化",
+            "速い",
+            "低い",
+            "可",
+            "MCP サーバー設定"
+          ]
         ]
       }
     ],
@@ -11371,31 +13235,127 @@ const ARTICLES_BODY = {
       {
         "afterParagraph": 2,
         "caption": "Claude Science プリコンフィグ済み 主要データベース（公開情報から名前が確認できたもの）",
-        "headers": ["分野", "データベース", "概要"],
+        "headers": [
+          "分野",
+          "データベース",
+          "概要"
+        ],
         "rows": [
-          ["ゲノミクス", "GenBank", "NCBI が運営する核酸塩基配列の公的アーカイブ。ほぼ全ての公開遺伝子配列を格納"],
-          ["ゲノミクス", "Ensembl", "EBI・Sanger が運営する脊椎動物中心のゲノム注釈データベース。遺伝子・転写産物・変異を統合"],
-          ["ゲノミクス", "GEO（Gene Expression Omnibus）", "NCBI の遺伝子発現データリポジトリ。マイクロアレイ・RNA-seq を公開"],
-          ["ゲノミクス", "BioMart", "Ensembl・EBI などの複数バイオ DB を横断クエリするデータマイニング基盤"],
-          ["臨床・変異", "ClinVar", "NCBI のヒト変異と臨床的意義の解釈を集約したデータベース"],
-          ["プロテオミクス", "UniProt", "EBI・SIB・PIR 共同のタンパク質配列・機能・アノテーション統合 DB"],
-          ["構造生物学", "RCSB PDB（Protein Data Bank）", "実験決定されたタンパク質・核酸の3次元構造アーカイブ"],
-          ["構造生物学", "AlphaFold DB", "DeepMind と EBI による AlphaFold2 予測タンパク質構造（2億超構造）"],
-          ["経路・システム", "Reactome", "手作業でキュレートされたヒト生物学経路データベース"],
-          ["単細胞", "Human Cell Atlas", "国際共同プロジェクトによるヒト全身の単細胞レファレンスアトラス"],
-          ["単細胞", "CellGuide", "単細胞データの探索・視覚化ツール（コネクタ）"],
-          ["単細胞・製品連携", "10x Genomics", "単細胞解析プラットフォームの公式コネクタ"],
-          ["化学・創薬", "PubChem", "NCBI の化合物・実質・生物活性データベース。数億の化学構造を収載"],
-          ["化学・創薬", "ChEMBL", "EBI が運営する薬理活性化合物のマニュアルキュレーション DB。創薬初期に必須"],
-          ["ラボ運用", "Benchling", "ライフサイエンスの電子ラボノート・実験データ管理 SaaS（コネクタ）"],
-          ["ラボ運用", "Synapse.org", "Sage Bionetworks が運営する共同研究データ共有プラットフォーム"],
-          ["文献検索", "PubMed", "NCBI が運営する生物医学文献データベース。3,500万論文超"],
-          ["文献検索", "Europe PMC", "EBI 主導の生物医学文献リポジトリ。全文検索対応"],
-          ["文献検索", "Semantic Scholar", "AI2 の研究論文検索エンジン。引用ネットワーク解析"],
-          ["文献検索", "ArXiv", "物理・数学・CS 等のプレプリントサーバー"],
-          ["文献検索", "BioRxiv", "Cold Spring Harbor Lab の生物学プレプリントサーバー"],
-          ["制作補助", "BioRender", "科学イラスト作成 SaaS（コネクタ）"],
-          ["制作補助", "Wiley Scholar Gateway", "Wiley の学術文献ゲートウェイ（コネクタ）"]
+          [
+            "ゲノミクス",
+            "GenBank",
+            "NCBI が運営する核酸塩基配列の公的アーカイブ。ほぼ全ての公開遺伝子配列を格納"
+          ],
+          [
+            "ゲノミクス",
+            "Ensembl",
+            "EBI・Sanger が運営する脊椎動物中心のゲノム注釈データベース。遺伝子・転写産物・変異を統合"
+          ],
+          [
+            "ゲノミクス",
+            "GEO（Gene Expression Omnibus）",
+            "NCBI の遺伝子発現データリポジトリ。マイクロアレイ・RNA-seq を公開"
+          ],
+          [
+            "ゲノミクス",
+            "BioMart",
+            "Ensembl・EBI などの複数バイオ DB を横断クエリするデータマイニング基盤"
+          ],
+          [
+            "臨床・変異",
+            "ClinVar",
+            "NCBI のヒト変異と臨床的意義の解釈を集約したデータベース"
+          ],
+          [
+            "プロテオミクス",
+            "UniProt",
+            "EBI・SIB・PIR 共同のタンパク質配列・機能・アノテーション統合 DB"
+          ],
+          [
+            "構造生物学",
+            "RCSB PDB（Protein Data Bank）",
+            "実験決定されたタンパク質・核酸の3次元構造アーカイブ"
+          ],
+          [
+            "構造生物学",
+            "AlphaFold DB",
+            "DeepMind と EBI による AlphaFold2 予測タンパク質構造（2億超構造）"
+          ],
+          [
+            "経路・システム",
+            "Reactome",
+            "手作業でキュレートされたヒト生物学経路データベース"
+          ],
+          [
+            "単細胞",
+            "Human Cell Atlas",
+            "国際共同プロジェクトによるヒト全身の単細胞レファレンスアトラス"
+          ],
+          [
+            "単細胞",
+            "CellGuide",
+            "単細胞データの探索・視覚化ツール（コネクタ）"
+          ],
+          [
+            "単細胞・製品連携",
+            "10x Genomics",
+            "単細胞解析プラットフォームの公式コネクタ"
+          ],
+          [
+            "化学・創薬",
+            "PubChem",
+            "NCBI の化合物・実質・生物活性データベース。数億の化学構造を収載"
+          ],
+          [
+            "化学・創薬",
+            "ChEMBL",
+            "EBI が運営する薬理活性化合物のマニュアルキュレーション DB。創薬初期に必須"
+          ],
+          [
+            "ラボ運用",
+            "Benchling",
+            "ライフサイエンスの電子ラボノート・実験データ管理 SaaS（コネクタ）"
+          ],
+          [
+            "ラボ運用",
+            "Synapse.org",
+            "Sage Bionetworks が運営する共同研究データ共有プラットフォーム"
+          ],
+          [
+            "文献検索",
+            "PubMed",
+            "NCBI が運営する生物医学文献データベース。3,500万論文超"
+          ],
+          [
+            "文献検索",
+            "Europe PMC",
+            "EBI 主導の生物医学文献リポジトリ。全文検索対応"
+          ],
+          [
+            "文献検索",
+            "Semantic Scholar",
+            "AI2 の研究論文検索エンジン。引用ネットワーク解析"
+          ],
+          [
+            "文献検索",
+            "ArXiv",
+            "物理・数学・CS 等のプレプリントサーバー"
+          ],
+          [
+            "文献検索",
+            "BioRxiv",
+            "Cold Spring Harbor Lab の生物学プレプリントサーバー"
+          ],
+          [
+            "制作補助",
+            "BioRender",
+            "科学イラスト作成 SaaS（コネクタ）"
+          ],
+          [
+            "制作補助",
+            "Wiley Scholar Gateway",
+            "Wiley の学術文献ゲートウェイ（コネクタ）"
+          ]
         ]
       }
     ],
@@ -12398,7 +14358,7 @@ const ARTICLES_BODY = {
       }
     ]
   },
-  "deepseek-v4-mid-july-peak-off-peak-api-pricing-2026":  {
+  "deepseek-v4-mid-july-peak-off-peak-api-pricing-2026": {
     "body": [
       "中国 **DeepSeek** が **V4 の正式版** を **2026年7月中旬に公開**すると告知した。同時に主要 API プロバイダとしては初めて、**peak / off-peak（時間帯別）料金**を導入する。ピーク時間は北京時間の **09:00-12:00** と **14:00-18:00** の平日日中で、この時間帯だけ通常料金の **2倍レート**が適用され、それ以外は据え置きとなる。DeepSeek は「価格の一律引き上げではなく、負荷分散とサービス安定性の向上」と位置付けているが、開発者コミュニティでは料金設計自体への評価が二分している。",
       "**V4 の主要スペック（既公表分）**: DeepSeek V4 は 2ラインナップで提供される。",
