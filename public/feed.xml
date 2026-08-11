@@ -192,6 +192,14 @@
     <summary>Moonshot AI が7月27日、[Kimi K3](?a=moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026) の重みを Hugging Face で公開した。96 shards・約1.56TB で、2.8兆パラメータを MXFP4 ネイティブ重み + MXFP8 活性化で配布するため通常の数分の一のサイズに収まる。Artificial Analysis Intelligence Index で 57 を記録し、オープンウェイトとして最高値。ただしライセンスは MIT でも Apache 2.0 でもない独自の Kimi K3 License で、大規模な MaaS 事業者への個別契約義務と、巨大サービスへの名称表示義務という2つの条件が付く。自社内利用・研究・製品組み込み・fine-tune・再配布は無償で可能。</summary>
   </entry>
   <entry>
+    <title>Kimi K3 レビュー — オープンウェイト最高性能。データ主権とフロンティア性能を両立できる数少ない選択肢</title>
+    <link rel="alternate" type="text/html" href="?a=moonshot-kimi-k3-review"/>
+    <id>tag:ai-tool-news.jp,2026:moonshot-kimi-k3-review</id>
+    <published>2026-07-27T15:00:00Z</published>
+    <updated>2026-07-27T15:00:00Z</updated>
+    <summary>Moonshot AI の 2.8兆パラメータ MoE。Artificial Analysis Intelligence Index 57 はオープンウェイトモデルとして最高値で、agent 系16項目のうち6項目で全モデル中1位。API は $3/$15（cache-hit $0.30）と安く、重みを自社インフラで動かせば中国クラウドにデータを送らずに中国製フロンティアモデルを使える。ただし重みは1.56TB でオンプレ運用のハードルは高く、ライセンスは MIT ではなく収益規模で条件が付く独自ライセンス。</summary>
+  </entry>
+  <entry>
     <title>Notion が「Notion as code」beta を公開 — TypeScript でワークスペース全体を定義、Git で版管理、Claude / Cursor 等 coding agents で構築、API 経由デプロイ</title>
     <link rel="alternate" type="text/html" href="?a=notion-as-code-typescript-workspace-git-agents-beta-2026"/>
     <id>tag:ai-tool-news.jp,2026:notion-as-code-typescript-workspace-git-agents-beta-2026</id>
@@ -398,6 +406,14 @@
     <published>2026-07-09T15:00:00Z</published>
     <updated>2026-07-09T15:00:00Z</updated>
     <summary>Anthropic が Claude Web / Desktop に Reflect（月次使用リフレクションダッシュボード）と Time and focus 設定（break reminder / quiet hours / reflection prompt）を追加した。過去1・3・6・12ヶ月の話題領域・最も使う日・ピーク時間帯・タスク傾向を可視化し、「Claude ができても自分でやりたいことは何か」と問いかける reflective prompt を提示する。iPhone Screen Time になぞらえた 「AI 版 screen time モーメント」 と評される新規性ある UX 実験で、Free / Pro / Max で beta、Memory 有効時のみ提供。</summary>
+  </entry>
+  <entry>
+    <title>Grok 4.5 レビュー — 「Opus クラス」は言い過ぎ。ただしトークン効率4.2倍が実効コストを塗り替える</title>
+    <link rel="alternate" type="text/html" href="?a=xai-grok-4-5-review"/>
+    <id>tag:ai-tool-news.jp,2026:xai-grok-4-5-review</id>
+    <published>2026-07-09T15:00:00Z</published>
+    <updated>2026-07-09T15:00:00Z</updated>
+    <summary>xAI が7月9日に公開したコーディング特化フロンティア。$2/$6 per 1M tokens は西側フロンティアで最安帯。公開当初は独立検証待ちだったベンチマークが8月に出揃い、Artificial Analysis Intelligence Index で 54（4位） と、Musk の「Opus クラス」という主張は裏付けられなかった。一方で 1タスクあたりの出力トークンが Opus 4.8 の約4.2分の1 という効率は実測で確認され、実効コストでは表示単価以上の差がつく。Cursor の実開発ワークフローデータで訓練された点が差別化軸。</summary>
   </entry>
   <entry>
     <title>【分析】中国 AI モデルが米国エンタープライズ API トークンの **30-46%** を占領（CNBC 7/7 調査）— OpenRouter 経由統計、12ヶ月平均 11% から急拡大、60-90% 安が牽引</title>

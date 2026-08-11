@@ -7714,5 +7714,62 @@ export const ARTICLES_META = [
     "reviewCategory": "model",
     "reviewCadence": "monthly",
     "lastReviewed": "2026-08-11"
+  },
+  {
+    "id": "xai-grok-4-5-review",
+    "type": "review",
+    "category": "model",
+    "title": "Grok 4.5 レビュー — 「Opus クラス」は言い過ぎ。ただしトークン効率4.2倍が実効コストを塗り替える",
+    "excerpt": "xAI が7月9日に公開したコーディング特化フロンティア。**$2/$6 per 1M tokens** は西側フロンティアで最安帯。公開当初は独立検証待ちだったベンチマークが8月に出揃い、**Artificial Analysis Intelligence Index で 54（4位）** と、Musk の「Opus クラス」という主張は裏付けられなかった。一方で **1タスクあたりの出力トークンが Opus 4.8 の約4.2分の1** という効率は実測で確認され、**実効コストでは表示単価以上の差**がつく。Cursor の実開発ワークフローデータで訓練された点が差別化軸。",
+    "date": "2026-08-11",
+    "newsDate": "2026-07-09",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "モデル",
+      "xAI",
+      "Grok",
+      "LLM",
+      "エージェント"
+    ],
+    "ratings": {
+      "AI品質": 4,
+      "使いやすさ": 4,
+      "コスパ": 5,
+      "拡張性": 4,
+      "企業向け": 3
+    },
+    "rating": 4,
+    "reviewCategory": "model",
+    "lastReviewed": "2026-08-11"
+  },
+  {
+    "id": "moonshot-kimi-k3-review",
+    "type": "review",
+    "category": "model",
+    "title": "Kimi K3 レビュー — オープンウェイト最高性能。データ主権とフロンティア性能を両立できる数少ない選択肢",
+    "excerpt": "Moonshot AI の 2.8兆パラメータ MoE。**Artificial Analysis Intelligence Index 57 はオープンウェイトモデルとして最高値**で、agent 系16項目のうち6項目で全モデル中1位。API は **$3/$15**（cache-hit $0.30）と安く、重みを自社インフラで動かせば**中国クラウドにデータを送らずに中国製フロンティアモデルを使える**。ただし重みは1.56TB でオンプレ運用のハードルは高く、ライセンスは MIT ではなく収益規模で条件が付く独自ライセンス。",
+    "date": "2026-08-11",
+    "newsDate": "2026-07-27",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "モデル",
+      "Moonshot AI",
+      "Kimi",
+      "オープンソース",
+      "中国AI",
+      "LLM"
+    ],
+    "ratings": {
+      "AI品質": 5,
+      "使いやすさ": 3,
+      "コスパ": 5,
+      "拡張性": 5,
+      "企業向け": 4
+    },
+    "rating": 4.5,
+    "reviewCategory": "model",
+    "lastReviewed": "2026-08-11"
   }
 ];
