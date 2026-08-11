@@ -17,7 +17,11 @@ export function trimUrlForHref(raw) {
  */
 export function linkifyPlainToNodes(segment, mkKey) {
   if (!segment) return [];
-  const re = /\[([^\]]+)\]\((\?a=[a-z0-9-]+)\)|https?:\/\/[^\s<>"')」']+|\?a=[a-z0-9-]+/gi;
+  // 1: 内部リンクのテキスト / 2: 内部リンクの href
+  // 3: 外部リンクのテキスト / 4: 外部リンクの href
+  // 以降は裸の URL と裸の ?a= を拾う
+  const re =
+    /\[([^\]]+)\]\((\?a=[a-z0-9-]+)\)|\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)|https?:\/\/[^\s<>"')」']+|\?a=[a-z0-9-]+/gi;
   const out = [];
   let last = 0;
   let m;
@@ -32,6 +36,22 @@ export function linkifyPlainToNodes(segment, mkKey) {
         : m[2];
       out.push(
         <a key={mkKey()} href={href} className="prose-link">{m[1]}</a>,
+      );
+      last = m.index + m[0].length;
+      continue;
+    }
+    // [テキスト](https://...) 形式の外部マークダウンリンク
+    if (m[3] && m[4]) {
+      out.push(
+        <a
+          key={mkKey()}
+          href={trimUrlForHref(m[4])}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="prose-link"
+        >
+          {m[3]}
+        </a>,
       );
       last = m.index + m[0].length;
       continue;

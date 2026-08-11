@@ -2486,7 +2486,7 @@ export const ARTICLES_META = [
       "拡張性": 2,
       "企業向け": 1
     },
-    "rating": 4,
+    "rating": 3.5,
     "reviewCategory": "other",
     "lastReviewed": "2026-03-28"
   },
@@ -2962,7 +2962,7 @@ export const ARTICLES_META = [
       "拡張性": 5,
       "企業向け": 5
     },
-    "rating": 5,
+    "rating": 4.5,
     "reviewCategory": "cli",
     "reviewCadence": "monthly",
     "lastReviewed": "2026-06-05"
@@ -2990,7 +2990,7 @@ export const ARTICLES_META = [
       "拡張性": 4,
       "企業向け": 4
     },
-    "rating": 5,
+    "rating": 4.5,
     "reviewCategory": "cli",
     "reviewCadence": "monthly",
     "lastReviewed": "2026-06-05"
@@ -3045,7 +3045,7 @@ export const ARTICLES_META = [
       "拡張性": 4,
       "企業向け": 1
     },
-    "rating": 4,
+    "rating": 3.5,
     "reviewCategory": "cli",
     "lastReviewed": "2026-03-28"
   },
@@ -3070,7 +3070,7 @@ export const ARTICLES_META = [
       "拡張性": 2,
       "企業向け": 1
     },
-    "rating": 4,
+    "rating": 3,
     "reviewCategory": "cli",
     "lastReviewed": "2026-03-28"
   },
@@ -3096,7 +3096,7 @@ export const ARTICLES_META = [
       "拡張性": 3,
       "企業向け": 5
     },
-    "rating": 4,
+    "rating": 3.5,
     "reviewCategory": "cli",
     "lastReviewed": "2026-03-28"
   },
@@ -3122,7 +3122,7 @@ export const ARTICLES_META = [
       "拡張性": 4,
       "企業向け": 1
     },
-    "rating": 4,
+    "rating": 3.5,
     "reviewCategory": "cli",
     "lastReviewed": "2026-03-28"
   },
@@ -3174,7 +3174,7 @@ export const ARTICLES_META = [
       "拡張性": 5,
       "企業向け": 4
     },
-    "rating": 5,
+    "rating": 4.5,
     "reviewCategory": "editor",
     "reviewCadence": "monthly",
     "lastReviewed": "2026-06-05"
@@ -3201,7 +3201,7 @@ export const ARTICLES_META = [
       "拡張性": 3,
       "企業向け": 2
     },
-    "rating": 4,
+    "rating": 3.5,
     "reviewCategory": "editor",
     "lastReviewed": "2026-03-28"
   },
@@ -3227,7 +3227,7 @@ export const ARTICLES_META = [
       "拡張性": 2,
       "企業向け": 1
     },
-    "rating": 4,
+    "rating": 3,
     "reviewCategory": "editor",
     "lastReviewed": "2026-03-28"
   },
@@ -3253,7 +3253,7 @@ export const ARTICLES_META = [
       "拡張性": 5,
       "企業向け": 5
     },
-    "rating": 4,
+    "rating": 4.5,
     "reviewCategory": "editor",
     "lastReviewed": "2026-03-28"
   },
@@ -3279,7 +3279,7 @@ export const ARTICLES_META = [
       "拡張性": 3,
       "企業向け": 1
     },
-    "rating": 4,
+    "rating": 3,
     "reviewCategory": "editor",
     "lastReviewed": "2026-03-28"
   },
@@ -3304,7 +3304,7 @@ export const ARTICLES_META = [
       "拡張性": 2,
       "企業向け": 1
     },
-    "rating": 3,
+    "rating": 2.5,
     "reviewCategory": "editor",
     "lastReviewed": "2026-03-28"
   },
@@ -4133,7 +4133,7 @@ export const ARTICLES_META = [
       "拡張性": 4,
       "企業向け": 3
     },
-    "rating": 4.5,
+    "rating": 4,
     "reviewCategory": "image",
     "lastReviewed": "2026-03-29"
   },
@@ -4159,7 +4159,7 @@ export const ARTICLES_META = [
       "拡張性": 3,
       "企業向け": 3
     },
-    "rating": 4,
+    "rating": 3.5,
     "reviewCategory": "video",
     "lastReviewed": "2026-03-29"
   },
@@ -4236,7 +4236,7 @@ export const ARTICLES_META = [
       "拡張性": 4,
       "企業向け": 3
     },
-    "rating": 4,
+    "rating": 4.5,
     "reviewCategory": "image",
     "lastReviewed": "2026-03-29"
   },
@@ -4470,7 +4470,7 @@ export const ARTICLES_META = [
       "拡張性": 3,
       "企業向け": 2
     },
-    "rating": 3.5,
+    "rating": 4,
     "reviewCategory": "search",
     "lastReviewed": "2026-03-29"
   },
@@ -4496,7 +4496,7 @@ export const ARTICLES_META = [
       "拡張性": 3,
       "企業向け": 3
     },
-    "rating": 4,
+    "rating": 4.5,
     "reviewCategory": "search",
     "lastReviewed": "2026-03-29"
   },
