@@ -12185,9 +12185,9 @@ const ARTICLES_BODY = {
         "url": "https://x.com/bcherny"
       },
       {
-        "title": "claude-code v2.1.91 diff analysis",
+        "title": "claude-code-changelog（Claude Code のプロンプト・feature flag 追跡）",
         "site": "GitHub",
-        "url": "https://github.com/marckrenn/claude-code-source-and-prompt-diff-tracker"
+        "url": "https://github.com/marckrenn/claude-code-changelog"
       }
     ]
   },
@@ -12816,9 +12816,9 @@ const ARTICLES_BODY = {
         "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q1/press-release-webcast"
       },
       {
-        "title": "Agent 365: A new way to manage your AI agents",
-        "site": "Microsoft",
-        "url": "https://www.microsoft.com/en-us/microsoft-cloud/blog/2026/05/01/agent-365-ga/"
+        "title": "Microsoft Agent 365, now generally available, expands capabilities and integrations",
+        "site": "Microsoft Security Blog",
+        "url": "https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/"
       }
     ]
   },
