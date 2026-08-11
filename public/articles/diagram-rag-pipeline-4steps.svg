@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-labelledby="tr1 dr1">
+  <title id="tr1">RAG パイプラインの4ステップ</title>
+  <desc id="dr1">取り込み・前処理、ベクトル化・格納、検索、生成の4段階でドキュメントが回答になる流れ</desc>
+  <rect width="720" height="260" fill="#f8fafc"/>
+  <text x="360" y="32" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#0f172a">RAG パイプラインの4ステップ</text>
+  <g font-family="system-ui,sans-serif">
+    <rect x="20" y="56" width="155" height="128" rx="10" fill="#ffffff" stroke="#0ea5e9" stroke-width="2"/>
+    <text x="97" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#0284c7">Step 1</text>
+    <text x="97" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">取り込み・前処理</text>
+    <text x="97" y="122" text-anchor="middle" font-size="11" fill="#475569">PDF / HTML / DB</text>
+    <text x="97" y="140" text-anchor="middle" font-size="11" fill="#475569">→ テキスト抽出</text>
+    <text x="97" y="158" text-anchor="middle" font-size="11" fill="#475569">→ チャンキング</text>
+    <text x="97" y="176" text-anchor="middle" font-size="11" fill="#475569">→ メタデータ付与</text>
+
+    <rect x="195" y="56" width="155" height="128" rx="10" fill="#ffffff" stroke="#6366f1" stroke-width="2"/>
+    <text x="272" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#4f46e5">Step 2</text>
+    <text x="272" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">ベクトル化・格納</text>
+    <text x="272" y="126" text-anchor="middle" font-size="11" fill="#475569">Embedding モデルで</text>
+    <text x="272" y="144" text-anchor="middle" font-size="11" fill="#475569">ベクトル化</text>
+    <text x="272" y="166" text-anchor="middle" font-size="11" fill="#475569">→ ベクトル DB に格納</text>
+
+    <rect x="370" y="56" width="155" height="128" rx="10" fill="#ffffff" stroke="#f59e0b" stroke-width="2"/>
+    <text x="447" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#d97706">Step 3</text>
+    <text x="447" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">検索</text>
+    <text x="447" y="126" text-anchor="middle" font-size="11" fill="#475569">類似検索</text>
+    <text x="447" y="144" text-anchor="middle" font-size="11" fill="#475569">+ BM25</text>
+    <text x="447" y="162" text-anchor="middle" font-size="11" fill="#475569">+ リランキング</text>
+
+    <rect x="545" y="56" width="155" height="128" rx="10" fill="#ffffff" stroke="#10b981" stroke-width="2"/>
+    <text x="622" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#059669">Step 4</text>
+    <text x="622" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">生成</text>
+    <text x="622" y="126" text-anchor="middle" font-size="11" fill="#475569">検索結果を</text>
+    <text x="622" y="144" text-anchor="middle" font-size="11" fill="#475569">プロンプトに含め</text>
+    <text x="622" y="162" text-anchor="middle" font-size="11" fill="#475569">LLM で回答＋引用</text>
+
+    <g stroke="#94a3b8" stroke-width="2" fill="none">
+      <path d="M175 120 L192 120" marker-end="url(#ar1)"/>
+      <path d="M350 120 L367 120" marker-end="url(#ar1)"/>
+      <path d="M525 120 L542 120" marker-end="url(#ar1)"/>
+    </g>
+    <text x="360" y="216" text-anchor="middle" font-size="11.5" fill="#64748b">各ステップの品質が最終回答の精度を決める。チャンクは 200〜500 トークンが目安</text>
+    <text x="360" y="238" text-anchor="middle" font-size="10.5" fill="#94a3b8">出典: OpenAI Embeddings Guide ほか（記事内 primarySources 参照）</text>
+  </g>
+  <defs>
+    <marker id="ar1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+</svg>

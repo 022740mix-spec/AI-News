@@ -520,14 +520,6 @@
     <summary>California 州の Gavin Newsom 知事が6月29日、Anthropic と first-of-its-kind の州政府協定を発表。全州機関に Claude を 50% 割引で提供し、市・郡等の地方自治体も同一割引の対象。無料の労働力訓練と Anthropic 開発者の技術支援も含む。実運用は既に開始しており、CDT + CalOES がサイバー防御（Claude Security + Claude Code）、DMV が顧客対応、Dept of Healthcare Services（全米最大の Medicaid 機関）が内部ワークフローで導入済み。CA Dept of Technology の SITeS ポータル経由で提供、生成 AI 導入における州政府スケールでの新しい先例に。</summary>
   </entry>
   <entry>
-    <title>John Jumper（2024年ノーベル化学賞）が Google DeepMind → Anthropic 移籍 — Shazeer に続く Google AI 人材流出の第2波</title>
-    <link rel="alternate" type="text/html" href="?a=john-jumper-google-deepmind-to-anthropic-nobel-2026"/>
-    <id>tag:ai-tool-news.jp,2026:john-jumper-google-deepmind-to-anthropic-nobel-2026</id>
-    <published>2026-06-26T15:00:00Z</published>
-    <updated>2026-06-26T15:00:00Z</updated>
-    <summary>John Jumper が約9年勤めた Google DeepMind を離れ Anthropic に移籍したと発表。Jumper は AlphaFold2 開発者として2024年に Demis Hassabis と共にノーベル化学賞を共同受賞した人物。1週間前の Noam Shazeer の OpenAI 移籍に続く Google AI トップ人材の流出第2波で、Alphabet 株は週後半に追加で下落、Gemini 3.5 Pro GA 延期続報と相まって Google AI の組織モメンタムへの市場の疑念が一段と強まる結果に。</summary>
-  </entry>
-  <entry>
     <title>【分析】「tokenmaxxing」から効率性へ — Lindy が Claude → DeepSeek 100% 移行、Fable 5 値上げで価格感度が市場を動かし始めた</title>
     <link rel="alternate" type="text/html" href="?a=feature-tokenmaxxing-to-efficiency-market-shift-2026"/>
     <id>tag:ai-tool-news.jp,2026:feature-tokenmaxxing-to-efficiency-market-shift-2026</id>
@@ -614,6 +606,14 @@
     <published>2026-06-22T15:00:00Z</published>
     <updated>2026-06-22T15:00:00Z</updated>
     <summary>米・英・豪・加・NZ の Five Eyes サイバーセキュリティ機関（CISA / NSA / NCSC-UK / ASD&apos;s ACSC / Canadian Cyber Centre / NCSC-NZ）が6月22日、「The AI Shift in Cyber Risk: Why Leaders Must Act Now」を合同で公表。23のリスクと 100以上のベストプラクティスを整理し、リスクを特権・設計/構成・行動・構造・サプライチェーンの5カテゴリに分類。中心メッセージは 「agentic AI は新しいセキュリティ規律を必要としない」——既存の Zero Trust・多層防御・最小特権原則をエージェント環境にも適用せよ、という慎重路線。SkillSpector（NVIDIA）や Anthropic WIF との実装的接続も整理する。</summary>
+  </entry>
+  <entry>
+    <title>John Jumper（2024年ノーベル化学賞）が Google DeepMind → Anthropic 移籍 — Shazeer に続く Google AI 人材流出の第2波</title>
+    <link rel="alternate" type="text/html" href="?a=john-jumper-google-deepmind-to-anthropic-nobel-2026"/>
+    <id>tag:ai-tool-news.jp,2026:john-jumper-google-deepmind-to-anthropic-nobel-2026</id>
+    <published>2026-06-19T15:00:00Z</published>
+    <updated>2026-06-19T15:00:00Z</updated>
+    <summary>John Jumper が約9年勤めた Google DeepMind を離れ Anthropic に移籍したと発表。Jumper は AlphaFold2 開発者として2024年に Demis Hassabis と共にノーベル化学賞を共同受賞した人物。1週間前の Noam Shazeer の OpenAI 移籍に続く Google AI トップ人材の流出第2波で、Alphabet 株は週後半に追加で下落、Gemini 3.5 Pro GA 延期続報と相まって Google AI の組織モメンタムへの市場の疑念が一段と強まる結果に。</summary>
   </entry>
   <entry>
     <title>Noam Shazeer が Google → OpenAI 移籍 — Transformer 共著者が Architecture Research Lead 就任、Alphabet 株は 7% 下落</title>
@@ -1376,12 +1376,12 @@
     <summary>不可視のUnicode制御文字を使い悪意あるコードを隠蔽するサイバー攻撃手法「GlassWorm」が2026年3月に急拡大。GitHub上の151以上のリポジトリ、npmパッケージ、VS Code拡張機能など433件以上が汚染された。1行のコードに1万8000行の不可視コードが埋め込まれた例も。React関連ライブラリやWasmer、OpenCode関連プロジェクトも被害。LLMでもっともらしいコードを大量生成している可能性が指摘されている。</summary>
   </entry>
   <entry>
-    <title>16歳の高校生が3Dインタラクティブ周期表アプリ「Zperiod」を開発 — 3D原子モデル・化学式バランサー・溶解度表をブラウザで無料提供</title>
+    <title>3Dインタラクティブ周期表アプリ「Zperiod」— 3D原子モデル・化学式バランサー・溶解度表をブラウザで無料提供</title>
     <link rel="alternate" type="text/html" href="?a=zperiod-3d-periodic-table-high-school-student-2026"/>
     <id>tag:ai-tool-news.jp,2026:zperiod-3d-periodic-table-high-school-student-2026</id>
     <published>2026-04-03T15:00:00Z</published>
     <updated>2026-04-03T15:00:00Z</updated>
-    <summary>16歳の高校生 Philip Zhao が開発した3Dインタラクティブ化学学習アプリ「Zperiod」が X で話題に。全118元素の3D原子モデル、化学反応式の自動バランサー、経験式計算機、溶解度表をブラウザ上で無料提供。19万回表示・4,000いいねを超える反響を集めた。</summary>
+    <summary>3Dインタラクティブな化学学習アプリ「Zperiod」が X で話題を集めた。全118元素の3D原子モデル、化学反応式の自動バランサー、経験式計算機、溶解度表をブラウザ上で無料提供する。インストール不要で、3D表示はデスクトップブラウザを推奨。学生・教員が手軽に使える化学学習ツールとして注目された。</summary>
   </entry>
   <entry>
     <title>Microsoft が独自AIモデル3種を公開 — 文字起こし・音声生成・画像生成、Foundry で即日商用利用可能</title>

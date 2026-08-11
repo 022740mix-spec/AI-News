@@ -2752,18 +2752,20 @@ const ARTICLES_BODY = {
   },
   "zperiod-3d-periodic-table-high-school-student-2026": {
     "body": [
-      "16歳の高校生 **Philip Zhao**（@Zhilips2009）が開発した3Dインタラクティブ化学学習アプリ「**Zperiod**」が X で大きな反響を呼んでいる。@adxtyahq が「高校生がこんな美しい3Dインタラクティブ化学アプリを作った」と紹介した投稿は19万回表示・4,000いいね超を記録した。",
+      "3Dインタラクティブな化学学習アプリ「**Zperiod**」が X で反響を呼んだ。個人開発者が制作したブラウザ向けの無料アプリで、第三者による紹介投稿をきっかけに広く知られるようになった。",
       "Zperiod は全118元素に対応したインタラクティブ周期表で、各元素をクリックすると**3D原子モデル**（電子殻のアニメーション付き）が表示される。元素ごとに発見年、発見者、命名由来、一般的な用途、危険性、イオン情報などの詳細データがスワイプ可能なカード形式で閲覧できる。カテゴリ別の色分けや標準状態（STP）での相データも表示される。",
       "周期表だけでなく、化学学習に必要な実用ツールも充実している。**化学反応式バランサー**は複雑な化学式を自動でバランスし、ストイキオメトリー（化学量論）のフィードバックを視覚的に表示する。**経験式計算機**は分子量を元素ごとの質量内訳付きで瞬時に算出する。**溶解度表**ではイオン性化合物の溶解性をインタラクティブなチャートとルールで参照できる。いずれも Grade 9〜12（中学3年〜高校3年相当）の化学学習を想定した設計だ。",
-      "ブラウザベースの Web アプリとして **zperiod.app** で無料公開されており、3D体験はデスクトップブラウザ推奨。インストール不要で即座に利用できる。Philip Zhao 本人も X で「Zperiod を作った高校生です。フィードバックをお待ちしています」と応答しており、ユーザーからは「学生時代にこんなツールがあれば」という声が多数寄せられている。",
-      "AIツールが日々進化する中で、10代の開発者がそれらを活用して教育分野のプロダクトを自ら設計・構築・公開している事実は注目に値する。Zperiod は「AIが人間の仕事を奪う」という議論の裏側で、若い世代がAI時代のツールを武器に創造的なプロダクトを生み出している一例だ。"
+      "ブラウザベースの Web アプリとして **zperiod.app** で無料公開されており、3D体験はデスクトップブラウザ推奨。インストール不要で即座に利用できる。",
+      "AIツールが日々進化する中で、個人開発者がそれらを活用して教育分野のプロダクトを自ら設計・構築・公開できるようになった事実は注目に値する。Zperiod は「AIが人間の仕事を奪う」という議論の裏側で、AI時代のツールを武器に創造的なプロダクトが生まれている一例だ。",
+      "---",
+      "**【訂正 2026-08-11】** 本記事は公開当初、開発者を実名および X アカウント名で特定し、年齢（16歳・高校生）をタイトルと本文に記載していました。しかし当サイトが提示できる出典はアプリの公式サイト1件のみで、**本人の同一性・年齢を検証できる一次ソースを欠いていました**。また「19万回表示・4,000いいね」という数値と、開発者本人の発言として引用した内容にも出典がありませんでした。CLAUDE.md の「特定個人への帰属は検証可能な一次ソースがある場合のみ記載する」および「SNS の投稿を引用する場合、アカウントの実在と投稿内容を可能な限り検証する」に違反する状態であり、**未成年である可能性の高い私人の実名・アカウント名を、裏付けなく公開していた**ことになります。個人を特定する記述、未検証の数値、出典のない引用をすべて削除し、アプリ自体の紹介に記事の主旨を絞りました。お詫びして訂正します。"
     ],
     "embeds": [
       {
         "type": "x",
         "afterParagraph": 0,
         "url": "https://x.com/adxtyahq/status/2040034179812139393",
-        "caption": "@adxtyahq による Zperiod 紹介ポスト（19万回表示）"
+        "caption": "第三者アカウントによる Zperiod の紹介ポスト"
       }
     ],
     "primarySources": [
@@ -9263,6 +9265,7 @@ const ARTICLES_BODY = {
     ],
     "tables": [
       {
+        "afterParagraph": 33,
         "title": "Claude Code トークン消費バグの経緯",
         "headers": [
           "日付",
@@ -9419,6 +9422,7 @@ const ARTICLES_BODY = {
     ],
     "tables": [
       {
+        "afterParagraph": 15,
         "title": "流出で判明した未公開機能フラグ",
         "headers": [
           "機能名",
@@ -9489,6 +9493,7 @@ const ARTICLES_BODY = {
         ]
       },
       {
+        "afterParagraph": 36,
         "title": "Anthropic 2026年3月のセキュリティ事故一覧",
         "headers": [
           "日付",
@@ -9588,6 +9593,7 @@ const ARTICLES_BODY = {
     ],
     "tables": [
       {
+        "afterParagraph": 5,
         "title": "攻撃タイムライン",
         "headers": [
           "時刻 (UTC)",
@@ -9629,6 +9635,7 @@ const ARTICLES_BODY = {
         ]
       },
       {
+        "afterParagraph": 3,
         "title": "プラットフォーム別ペイロードと感染痕跡（IoC）",
         "headers": [
           "OS",
@@ -11111,15 +11118,28 @@ const ARTICLES_BODY = {
     "body": [
       "**John Jumper** が約9年勤めた **Google DeepMind** を離れ、**Anthropic** に移籍することが2026年6月26日に明らかになった。Jumper は **AlphaFold2** の主要開発者で、2024年に DeepMind CEO **Demis Hassabis** と共にノーベル化学賞を共同受賞した人物。1週間前の **Noam Shazeer の OpenAI 移籍**（[Shazeer 移籍](?a=noam-shazeer-google-to-openai-architecture-research-2026)）に続く Google AI トップ人材の**流出第2波**となる。",
       "**Jumper の功績**: AlphaFold2 は2020年にタンパク質構造予測のブレークスルーをもたらし、生命科学・創薬研究の地形を変えた。論文は被引用数で記録を打ち立て、CASP14 で他手法を圧倒する精度を示した。Jumper はこの研究の中核を担い、ノーベル賞の共同受賞者として Hassabis・David Baker と並んで名を刻んだ。Anthropic では Claude のサイエンス領域（[Claude for Legal](?a=anthropic-claude-for-legal-plugins-cocounsel-2026) と並ぶ専門分野展開）に関わるとみられるが、具体的な役職は未公表。",
-      "**Google からの連続流出**: 6月18日に Transformer 共著者 Noam Shazeer が OpenAI へ、続けてノーベル化学賞共同受賞者の Jumper が Anthropic へという**8日間で2人のトップ研究者離脱**は、Google AI の組織モメンタムへの懸念を市場が再評価する材料となった。Alphabet 株は Shazeer 移籍時の **7% 下落**に続き、週後半に追加の下落を記録。Gemini 3.5 Pro GA 延期続報（[Gemini Pro 延期](?a=google-gemini-3-5-pro-ga-delay-deep-think-2026)）と相まって、Google AI への市場の信頼回復には時間が必要な状況。",
+      "**Google からの連続流出**: 6月18日に Transformer 共著者 Noam Shazeer が OpenAI へ、その翌19日にノーベル化学賞共同受賞者の Jumper が Anthropic へと、**わずか2日間で2人のトップ研究者が離脱**した。Google AI の組織モメンタムへの懸念を市場が再評価する材料となり、Gemini 3.5 Pro GA 延期続報（[Gemini Pro 延期](?a=google-gemini-3-5-pro-ga-delay-deep-think-2026)）と相まって、Google AI への市場の信頼回復には時間が必要な状況となった。",
       "**Anthropic への意義**: Anthropic は5月28日に **Series H $65B / $965B 評価額**確定（[Anthropic 5月補遺](?a=anthropic-may-2026-series-h-milan-korea-arr-47b-2026)）、6月1日に**機密 S-1 提出**、6月9日に **Claude Fable 5 + Mythos 5 リリース**（[Fable 5 / Mythos 5](?a=anthropic-claude-fable-5-mythos-5-ga-2026)）と立て続けに大型ニュースを発信してきた。今回の Jumper 加入で、生命科学・タンパク質設計領域での Claude 専門化が進む可能性が高い。OpenAI が **GPT-Rosalind**（[GPT-Rosalind](?a=openai-gpt-rosalind-life-sciences-update-2026)）で生命科学領域に踏み込んでいる中、Anthropic も同領域で人材厚みを強化する形だ。",
-      "**Google が直面する構造課題**: Google はもともと Transformer 論文を生んだ場所であり、AlphaFold で生命科学 AI の標準を作った組織でもある。それらの主要研究者が**わずか8日間で OpenAI と Anthropic の双方に流出**する事態は、Google が「研究の発祥地」から「研究の供給源」へと立場を変化させつつあることを示唆する。報酬・組織自由度・モデル投入スピードのどの要素が決定打になったかは公式には語られていないが、Demis Hassabis 体制下の DeepMind 統合後の文化的調整が試される局面となった。"
+      "**Google が直面する構造課題**: Google はもともと Transformer 論文を生んだ場所であり、AlphaFold で生命科学 AI の標準を作った組織でもある。それらの主要研究者が**わずか2日間で OpenAI と Anthropic の双方に流出**する事態は、Google が「研究の発祥地」から「研究の供給源」へと立場を変化させつつあることを示唆する。報酬・組織自由度・モデル投入スピードのどの要素が決定打になったかは公式には語られていないが、Demis Hassabis 体制下の DeepMind 統合後の文化的調整が試される局面となった。",
+      "---",
+      "**【訂正 2026-08-11】** 3点を訂正しました。**(1)** 発表日:（誤）newsDate を 2026-06-26 と記載 →（正）**2026年6月19日**。Jumper 本人が同日に X で「After nearly nine years, I have decided to leave Google DeepMind and join Anthropic」と表明し、Bloomberg・CNBC が同日報じています。**(2)** 経過日数:（誤）「8日間で2人のトップ研究者離脱」「わずか8日間で双方に流出」→（正）Shazeer の表明が6月18日、Jumper が6月19日のため **わずか2日間**。**(3)** 株価に関する記述: 「Alphabet 株は Shazeer 移籍時の 7% 下落に続き、週後半に追加の下落を記録」という記述を削除しました。市場データの出典を提示できず、下落と移籍の因果も裏付けられないためです。あわせて、公開当初の一次ソースが二次情報2件のみだった点を改め、**Bloomberg・CNBC を出典に追加**しました。移籍そのものは本人の表明により確認済みの事実です。"
     ],
     "primarySources": [
       {
-        "title": "Alphabet shares plunge as Nobel winner exits Google for Anthropic",
-        "site": "Crypto Briefing",
-        "url": "https://cryptobriefing.com/alphabet-shares-tumble-ai-leader-departs/"
+        "title": "Nobel Winner John Jumper to Leave Google DeepMind for Anthropic",
+        "site": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-06-19/nobel-winner-john-jumper-to-leave-google-deepmind-for-anthropic",
+        "note": "本人の X 投稿「After nearly nine years, I have decided to leave Google DeepMind and join Anthropic」を報道"
+      },
+      {
+        "title": "John Jumper to leave Google DeepMind for Anthropic",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/06/19/john-jumper-to-leave-google-deepmind-for-anthropic.html"
+      },
+      {
+        "title": "Google DeepMind Nobel winner John Jumper joins Anthropic in latest AI talent coup",
+        "site": "People Matters",
+        "url": "https://sea.peoplemattersglobal.com/news/leadership/google-deepmind-nobel-winner-john-jumper-joins-anthropic-in-latest-ai-talent-coup-50417"
       },
       {
         "title": "Google Loses Two Top AI Researchers To OpenAI & Anthropic",
