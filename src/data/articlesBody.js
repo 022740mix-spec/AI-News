@@ -7508,11 +7508,6 @@ const ARTICLES_BODY = {
         "title": "Stability AI — Stable Diffusion",
         "site": "Stability AI",
         "url": "https://stability.ai/"
-      },
-      {
-        "title": "Nano Banana 2（当サイト別稿）",
-        "site": "AI News 編集部",
-        "url": "?a=google-nano-banana-2-gemini-flash-image-2026"
       }
     ]
   },

@@ -2399,7 +2399,7 @@ export const ARTICLES_META = [
     "title": "AI 開発と言語ランタイムの周辺 — Python・JavaScript・Node.js・Bun のいま（2026）",
     "excerpt": "エージェントや RAG のサンプルは Python / TypeScript が中心になりがち。uv・Ruff・ty や OpenAI の Astral 買収、Node の LTS 運用、Bun・Deno、ブラウザ側 JS と SSR の分断など、周辺ニュースを実務の選び方に落とし込む。",
     "date": "2026-03-28",
-    "newsDate": "2026-03-29",
+    "newsDate": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "11分",
     "tags": [
@@ -2425,7 +2425,7 @@ export const ARTICLES_META = [
     "title": "AI アプリのバックエンドと DB — Postgres・pgvector・Supabase 周辺の設計",
     "excerpt": "RAG・チャット・エージェントの永続層は多くの場合がリレーショナル＋ベクトル拡張。Supabase（Postgres＋Auth＋Realtime＋Edge Functions）を軸に、RLS・接続プール・ハイブリッド検索の論点を整理する。",
     "date": "2026-03-28",
-    "newsDate": "2026-03-29",
+    "newsDate": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "12分",
     "tags": [
@@ -2449,7 +2449,7 @@ export const ARTICLES_META = [
     "title": "TypeScript バックエンドの ORM — Drizzle と Prisma を AI アプリ開発でどう切るか",
     "excerpt": "スキーマ駆動・マイグレーション・型安全クエリは、エージェントが SQL を組み立てる時代にも土台として残る。Prisma（Client・Schema・Migrate・Accelerate）と Drizzle（SQL に近い API・軽量ランタイム）の役割分け、サーバーレス Postgres・Supabase との相性を整理する。",
     "date": "2026-03-28",
-    "newsDate": "2026-03-29",
+    "newsDate": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "11分",
     "tags": [
@@ -2636,7 +2636,7 @@ export const ARTICLES_META = [
     "title": "動画フロンティアの料金の軸 — Veo 3.1・Runway Gen-4.5・Kling など（公式再確認前提）",
     "excerpt": "秒単価・クレジット制・バンドル販売が混在するため「安い／高い」一発比較は誤魔化しやすい。公式 pricing の単位（秒・分・解像度・Fast/Standard）を揃えて読む。",
     "date": "2026-03-28",
-    "newsDate": "2026-03-29",
+    "newsDate": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "10分",
     "tags": [
