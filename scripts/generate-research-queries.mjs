@@ -53,7 +53,20 @@ const GENERIC_WORDS = new Set([
   "studio", "lab", "labs", "platform", "engine", "hub", "bot",
   "chatgpt", "マーケットプレイス", "ショッピング", "連携", "報道",
   "ベンチマーク", "コンテスト", "モデル群",
+  // 以下は 2026-08 の点検で誤マッチ源として実測された語。
+  // 例:「モデル」は140記事、「for」は37記事にマッチし、
+  // AssemblyAI や ABEJA を誤って Tier 1（毎日必須）に昇格させていた。
+  "モデル", "システム", "エディタ", "クラウド", "インフラ",
+  "プラットフォーム", "サービス", "ツール", "エージェント", "アプリ",
+  "推論", "学習", "生成", "検索", "音声", "画像", "動画",
+  "for", "llm", "orm", "arc", "the", "and", "inc", "ltd",
+  // 他社製品・汎用製品を指す語。自社を特定しないため除外する。
+  "h100", "h200", "b200", "foundry", "business", "retail", "insight",
+  "series", "シリーズ", "コンテナ", "ランタイム",
 ]);
+
+/** 他社の社名は、その企業を指す語として使わない（例: CoreWeave の製品説明にある NVIDIA） */
+const OTHER_COMPANY_NAMES = new Set();
 
 function extractMatchTerms(names) {
   const terms = [];
@@ -68,9 +81,11 @@ function extractMatchTerms(names) {
     if (clean.split(/\s+/).length >= 2 && !GENERIC_WORDS.has(clean.split(/\s+/)[0])) {
       terms.push(clean);
     }
-    // 単語ごとにも追加するが、汎用語は除外
+    // 単語ごとにも追加するが、汎用語と他社名は除外。
+    // 最小長を 4 にしているのは、3文字語（for / llm / orm / arc）が
+    // platform・transform・architecture 等の部分一致で大量に誤爆したため。
     for (const word of clean.split(/\s+/)) {
-      if (word.length >= 3 && !GENERIC_WORDS.has(word)) {
+      if (word.length >= 4 && !GENERIC_WORDS.has(word) && !OTHER_COMPANY_NAMES.has(word)) {
         terms.push(word);
       }
     }
@@ -78,9 +93,24 @@ function extractMatchTerms(names) {
   return [...new Set(terms)];
 }
 
+// 各社の社名を登録しておき、他社の製品説明に含まれる社名で
+// 誤って記事数がカウントされるのを防ぐ（例: CoreWeave の products にある "NVIDIA H100"）。
+for (const company of companies) {
+  for (const word of company.name.toLowerCase().split(/[\s/（(]+/)) {
+    if (word.length >= 4) OTHER_COMPANY_NAMES.add(word);
+  }
+}
+
 const companyArticleCounts = {};
 for (const company of companies) {
+  // 自社名は当然マッチ対象なので、他社名の除外セットから一時的に外す
+  const ownWords = company.name
+    .toLowerCase()
+    .split(/[\s/（(]+/)
+    .filter((w) => w.length >= 4);
+  for (const w of ownWords) OTHER_COMPANY_NAMES.delete(w);
   const terms = extractMatchTerms([company.name, ...(company.products || [])]);
+  for (const w of ownWords) OTHER_COMPANY_NAMES.add(w);
   let count = 0;
   for (const article of articles) {
     const text = `${article.title} ${article.excerpt} ${(article.tags || []).join(" ")}`.toLowerCase();
