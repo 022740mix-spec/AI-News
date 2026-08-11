@@ -208,6 +208,14 @@
     <summary>Anthropic が2026年7月24日、Claude Opus 5 を公開した。上位モデル Fable 5 ($10/$50) に迫る性能を $5 / $25 per 1M tokens（Opus 4.8 と同料金・Fable 5 の半額）で提供する。Terminal-Bench 2.1 で首位、ARC-AGI-3 で 30.2%（次点モデルの約3倍）を記録。新搭載の effort トグル（low / medium / high）でタスクごとに「コストか能力か」をユーザーが選べる。Claude.ai / API / Claude Code / Claude Cowork および主要クラウドで即日提供、Claude Max のデフォルトモデルかつ Claude Pro の最上位モデルとなる。</summary>
   </entry>
   <entry>
+    <title>Claude Opus 5 レビュー — Fable 5 の半額で近い性能、effort トグルでコストを能動的に制御できる現行の主力</title>
+    <link rel="alternate" type="text/html" href="?a=claude-opus-5-review"/>
+    <id>tag:ai-tool-news.jp,2026:claude-opus-5-review</id>
+    <published>2026-07-24T15:00:00Z</published>
+    <updated>2026-07-24T15:00:00Z</updated>
+    <summary>Anthropic が2026年7月24日に投入した現行の Opus 級フラッグシップ。$5 / $25 per 1M tokens で、上位の Fable 5（$10/$50）の半額、前世代 Opus 4.8 とは同額に据え置かれた。Claude Max の既定モデルであり Claude Pro で選べる最上位でもある。最大の実用的な変化は effort トグル（low / medium / high） で、モデルを切り替えずにタスク単位でコストと能力を調整できる。ARC-AGI-3 で 30.2%（次点の約3倍）という抽象推論の突出が目を引く。ただし SWE-bench Verified の公表値は情報源によって 72.5% から 97% まで開きがあり、本稿では確定値として扱わない。</summary>
+  </entry>
+  <entry>
     <title>Claude Voice Mode が大幅 upgrade — Opus / Sonnet 選択、テキストチャットのモデル継承、Gmail / Slack / Canva connectors 統合、多言語 beta</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-voice-mode-opus-sonnet-connectors-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-voice-mode-opus-sonnet-connectors-2026</id>

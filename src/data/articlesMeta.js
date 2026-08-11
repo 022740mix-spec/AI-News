@@ -7686,5 +7686,35 @@ export const ARTICLES_META = [
       "src": "articles/cover-database-rag.svg",
       "alt": "Independent research on model training cutoffs"
     }
+  },
+  {
+    "id": "claude-opus-5-review",
+    "type": "review",
+    "category": "model",
+    "title": "Claude Opus 5 レビュー — Fable 5 の半額で近い性能、effort トグルでコストを能動的に制御できる現行の主力",
+    "excerpt": "Anthropic が2026年7月24日に投入した現行の Opus 級フラッグシップ。**$5 / $25 per 1M tokens** で、上位の Fable 5（$10/$50）の半額、前世代 Opus 4.8 とは同額に据え置かれた。**Claude Max の既定モデル**であり Claude Pro で選べる最上位でもある。最大の実用的な変化は **effort トグル（low / medium / high）** で、モデルを切り替えずにタスク単位でコストと能力を調整できる。**ARC-AGI-3 で 30.2%**（次点の約3倍）という抽象推論の突出が目を引く。ただし SWE-bench Verified の公表値は情報源によって 72.5% から 97% まで開きがあり、**本稿では確定値として扱わない**。",
+    "date": "2026-08-11",
+    "newsDate": "2026-07-24",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "モデル",
+      "Anthropic",
+      "Opus 5",
+      "LLM",
+      "エージェント",
+      "おすすめ"
+    ],
+    "ratings": {
+      "AI品質": 5,
+      "使いやすさ": 5,
+      "コスパ": 4,
+      "拡張性": 5,
+      "企業向け": 4
+    },
+    "rating": 4.5,
+    "reviewCategory": "model",
+    "reviewCadence": "monthly",
+    "lastReviewed": "2026-08-11"
   }
 ];

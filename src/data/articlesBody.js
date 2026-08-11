@@ -16755,6 +16755,76 @@ const ARTICLES_BODY = {
         "url": "https://aiweekly.co/ai-news-today"
       }
     ]
+  },
+  "claude-opus-5-review": {
+    "body": [
+      "**Claude Opus 5** は、Anthropic が2026年7月24日に投入した現行の Opus 級フラッグシップである。位置付けは明快で、**上位の Claude Fable 5 に迫る性能を、その半額で提供する**というものだ。前世代 [Opus 4.8](?a=anthropic-claude-opus-4-8-dynamic-workflows-2026) と同額に据え置かれたため、既存の Opus 利用者はコスト構造を変えずに世代交代を受け取れる。",
+      "## 料金と位置付け",
+      "料金は **$5 / $25 per 1M tokens**。Claude モデルラインの中での位置は次のとおり。",
+      "**Claude Fable 5**: $10 / $50 — フロンティア最上位",
+      "**Claude Opus 5**: **$5 / $25** — フロンティアに迫る性能を半額で",
+      "**Claude Opus 4.8**（前世代）: $5 / $25 — Opus 5 に置き換え",
+      "**Claude Sonnet 5**: $2 / $10 — 汎用エージェント（〜8/31 導入価格）",
+      "提供範囲は Claude.ai（Web / Desktop / Mobile）、Claude API（Anthropic 直販・AWS Bedrock・Google Cloud Vertex AI）、[Claude Code](?a=claude-code)、[Claude Cowork](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026) と広い。**Claude Max では既定モデル**、Claude Pro では選択できる最上位モデルにあたる。Max 契約者は設定を変えなくても Opus 5 を使い始めるため、投入初日から実運用トラフィックが流れる形になった。",
+      "## effort トグル — 本モデル最大の実用的変化",
+      "Opus 5 で最も実務に効くのは、**タスクごとに思考量を low / medium / high から選べる effort トグル**である。モデルを切り替えることなく、コストと能力のバランスを能動的に制御できる。",
+      "**low**: 要約・分類・定型返信など。トークン消費を抑え高速に応答する",
+      "**medium**: 一般的なコーディング、調査、文書作成。既定として扱いやすい",
+      "**high**: 複雑なデバッグ、設計判断、長時間のエージェントタスク。思考量を最大化する",
+      "この設計は業界の共通トレンドでもある。[OpenAI は ChatGPT に思考量スライダーを追加](?a=openai-chatgpt-free-unlimited-luna-sol-update-2026)し、[Codex Micro には reasoning 時間の物理ダイヤル](?a=openai-codex-micro-work-louder-hardware-macropad-2026)を載せた。**「1モデル1価格」から「1モデル内で品質とコストを可変にする」段階への移行**が起きている。",
+      "実務上の含意は明確で、**$25 / 1M tokens という単価だけでは実効コストを見積もれない**。high 設定では出力トークンが大きく増えるため、ワークロード別に必要な effort を実測して設定を固定する運用が要る。逆に言えば、これまでモデルを使い分けて調整していたコストを、単一モデル内で最適化できるようになった。",
+      "## ベンチマーク — 何が確かで、何が確かでないか",
+      "**確度が高い結果**として、複数の情報源が一致して報じているのは以下である。",
+      "**ARC-AGI-3 で 30.2%**。次点モデルの約3倍にあたる。ARC-AGI は「訓練データにないパターンを推論で解く」能力を測る指標で、従来モデルが軒並み苦戦してきた領域である。この差は漸進的な改善では説明しにくい",
+      "**1M トークンのコンテキスト**に対応し、Needle in a Haystack で全域にわたる高い再現率を維持すると報告されている",
+      "**agentic coding とターミナル操作**の領域で業界上位に位置する",
+      "一方で、**注意して扱うべき数値**がある。**SWE-bench Verified のスコアは情報源によって 72.5% から 97% まで開きがあり**、Terminal-Bench についても参照しているバージョン（2.0 / 2.1）が情報源ごとに異なる。本稿執筆時点で、AI News は Anthropic 公式のベンチマーク一覧を直接確認できていない。",
+      "この乖離は、SWE-bench に Verified と Pro という難易度の異なる系統が存在すること、評価ハーネスの設定差でスコアが動くこと、そして二次情報が互いを引用し合う過程で数値が混在することに起因すると考えられる。**当サイトはこれらを確定値として掲載しない。** 比較検討にあたっては、公式発表と独立評価機関（Artificial Analysis、LMArena 等）の数値を各自で確認することを推奨する。",
+      "## 評価",
+      "**AI品質（5）**: ARC-AGI-3 での突出は、単なるベンチマークの積み上げではなく推論アプローチの変化を示唆する。agentic coding でも上位。Fable 5 に迫るという位置付けは妥当と判断する。",
+      "**使いやすさ（5）**: API 形状は Opus 4.8 と互換で、移行の検証コストが低い。Max の既定モデルであり、Claude Code・Cowork でもそのまま使える。effort トグルは学習コストがほぼゼロで効果が大きい。",
+      "**コスパ（4）**: Fable 5 の半額、前世代と同額という点は評価できる。ただし絶対値で見れば [Kimi K3](?a=moonshot-kimi-k3-open-weights-license-2026)（$3/$15）や [GPT-5.6 Terra](?a=openai-gpt-5-6-luna-terra-price-cut-2026)（$2/$12）の方が安く、コスト最優先の用途では第一候補にならない。effort で実効コストを下げられる点を加味しても満点は付けにくい。",
+      "**拡張性（5）**: 1M コンテキスト、ツール呼び出し、マルチモーダル、Bedrock / Vertex 経由での利用と、必要な要素は揃っている。",
+      "**企業向け（4）**: 主要クラウドで初日から利用でき、Anthropic の標準的なデータ保護とコンプライアンス体制が適用される。減点しているのは、投入から日が浅く**長期運用の実績が乏しい**ためで、機能上の欠落によるものではない。",
+      "## どう使うべきか",
+      "**既に Opus 4.8 を業務利用している場合**、料金据え置きのため切り替え検証を開始する価値が高い。手順としては、(a) 既存ワークロードを Opus 4.8 と Opus 5（effort: medium）で並走させて出力品質を比較し、(b) タスク種別ごとに最小限で足りる effort を実測して設定を確定し、(c) high 設定時の実効トークン消費を計測して月次コストを再見積もりする、という順序が現実的である。",
+      "**新規にフロンティアモデルを選定する場合**は、性能で選ぶなら Opus 5 か Fable 5、コストで選ぶなら Sonnet 5 か中国系モデル、という整理になる。データ主権の要件があるなら、[Kimi K3](?a=moonshot-kimi-k3-open-weights-license-2026) や [K-EXAONE 2.0](?a=lg-k-exaone-2-0-750b-apache-2-open-weight-2026) のオンプレ運用も選択肢に入る。",
+      "**Fable 5 との使い分け**については、当サイトは [Fable 5 のレビュー](?a=claude-fable-5-mythos-5-review)で復活後の週次50%上限を織り込んだ評価を示している。**性能の絶対値では Fable 5 が上だが、利用制約を含めた採用判断では Opus 5 の方が扱いやすい**というのが現時点の見立てである。",
+      "## 注意点",
+      "**(1) ベンチマークの確定値が得られていない**: 前述のとおり、SWE-bench Verified と Terminal-Bench の数値は情報源によって大きく異なる。採用判断は公式発表と独立評価を確認したうえで行うべきである。",
+      "**(2) effort 設定によるコスト変動**: high 設定では出力トークンが大幅に増える。単価だけでの見積もりは実態と乖離する。",
+      "**(3) Max の既定モデル変更**: Max 契約者は意図せず Opus 5 を使っている可能性がある。従来モデルを前提に組んだ手順やプロンプトは、出力が変わりうる。",
+      "**(4) 長期運用の実績**: 投入から日が浅く、長時間のエージェント運用における安定性や、[評価環境からの逸脱](?a=anthropic-claude-models-breached-three-companies-ctf-eval-2026)のような運用上の課題については、今後の蓄積を待つ必要がある。",
+      "**総評**: 「フロンティア級の知能を半額で」という位置付けは、価格と提供範囲の両面で実現されている。effort トグルという運用の自由度が加わったことで、**同じモデルの中でコストと品質を調整できる**という新しい使い方が可能になった。ベンチマークの確定値が揃っていない点は差し引く必要があるが、**Opus 4.8 からの移行は料金据え置きゆえにリスクが小さく、検証を始める価値は高い**。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Claude Opus 5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-opus-5"
+      },
+      {
+        "title": "Anthropic's Claude Opus 5 AI model rivals Fable 5 and is cheaper",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/07/24/anthropic-claude-opus-5-ai-fable-5-cost.html"
+      },
+      {
+        "title": "Anthropic debuts Claude Opus 5 with feature that lets users toggle between cost and capability",
+        "site": "Fortune",
+        "url": "https://fortune.com/2026/07/24/anthropic-debuts-claude-opus-5-with-feature-that-lets-users-toggle-between-cost-and-capability/"
+      },
+      {
+        "title": "Meet the New Claude Opus 5: Frontier-Class Agentic Coding and Computer Use at Unchanged Opus Pricing",
+        "site": "MarkTechPost",
+        "url": "https://www.marktechpost.com/2026/07/24/meet-the-new-claude-opus-5-frontier-class-agentic-coding-and-computer-use-at-unchanged-opus-pricing/"
+      },
+      {
+        "title": "Claude Opus 5 Benchmarks, Pricing & Speed (August 2026)",
+        "site": "BenchLM.ai",
+        "url": "https://benchlm.ai/models/claude-opus-5",
+        "note": "本稿で言及したベンチマークの乖離を確認するために参照"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;
