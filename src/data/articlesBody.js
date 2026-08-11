@@ -13986,6 +13986,542 @@ const ARTICLES_BODY = {
         "url": "https://reconn-ai.com/llm-changelog.php"
       }
     ]
+  },
+  "feature-google-deepmind-reorg-hassabis-jeff-dean-2026": {
+    "body": [
+      "2026年8月5日、Alphabet と Sundar Pichai が **Google DeepMind の体制刷新**を発表した。**Demis Hassabis** が CEO を退任して DeepMind 会長 兼 Alphabet チーフサイエンティストに就き、後任として **Koray Kavukcuoglu** が SVP として実務を統括する。同時に、27年にわたり Google の技術中枢を担ってきた **Jeff Dean** の退社も明らかになった。Alphabet 株は発表後**約4%下落**している。[7月16日に報じられた Gemini 3.5 Pro の遅延](?a=feature-google-gemini-3-5-pro-delay-coding-performance-2026)から3週間での組織改編であり、両者を切り離して読むことはできない。",
+      "**新しい体制**: 発表された役割の変更は以下の通り。",
+      "**Demis Hassabis**: Google DeepMind **CEO を退任** → DeepMind **会長** 兼 **Alphabet チーフサイエンティスト**。日常運営から離れ、**AGI 戦略と AI の科学応用**に注力する。AI 創薬の Isomorphic Labs の指揮は継続",
+      "**Koray Kavukcuoglu**: **SVP** に就任し **Sundar Pichai に直接報告**。**Gemini のモデル開発・フロンティア研究・Gemini アプリおよび開発者チーム**を統括する",
+      "**Jeff Dean**: チーフサイエンティストを退き、**27年勤めた Google を退社**。[Discovery Loop](?a=discovery-loop-jeff-dean-ai-science-startup-2026) を共同創業する",
+      "**この再編の本質 — 研究者から実務家へ**: 表面的には昇格人事に見えるが、実質的な変化は指揮系統にある。従来、Gemini の開発方針は研究組織である DeepMind の CEO が握っていた。今回、その権限は **Pichai に直接報告する SVP** に移り、Hassabis は「日常運営から離れる」と明示された。**製品としての Gemini を、研究の論理ではなく事業の論理で回す体制**への移行と読める。",
+      "**7月からの流れ**: 一連の出来事を時系列で並べると、今回の改編が突発的なものでないことが分かる。",
+      "**7月16日**: [Gemini 3.5 Pro の遅延が報道](?a=feature-google-gemini-3-5-pro-delay-coding-performance-2026)される。Bloomberg が現・元従業員10名から取材し、社内の coding ベンチマークで目標未達、長期複雑推論でも競合に劣後と報じた。Alphabet 株 **-3%**",
+      "**7月21日**: Gemini 3.6 Flash を投入。Pro 系の空白を軽量版で埋める動き",
+      "**8月5日**: 体制刷新を発表。Alphabet 株 **-4%**",
+      "Pichai が5月に「6月リリース」と明言した Pro が2か月以上遅れ、その間に [OpenAI](?a=openai-gpt-5-6-general-availability-july-9-2026) と [Anthropic](?a=anthropic-claude-opus-5-frontier-half-price-2026) が主力モデルを立て続けに投入した。競争上の遅れが組織の問題として処理された、という構図である。",
+      "**Jeff Dean 退社の意味**: 人事の中で最も重いのはこちらかもしれない。Jeff Dean は MapReduce、BigTable、TensorFlow、Google Brain と、現代の分散システムと機械学習基盤の相当部分に関わってきた人物である。27年という在籍期間は Google の歴史のほぼ全体に重なる。**技術的な象徴が組織を離れる**ことは、残る研究者への心理的な影響も含めて軽くない。",
+      "しかも単独ではない。[Discovery Loop](?a=discovery-loop-jeff-dean-ai-science-startup-2026) には **Sanjay Ghemawat**（Google Senior Fellow）、**Oriol Vinyals**（DeepMind VP、Gemini 共同リード）、**Quoc Le**（Google Brain 共同創業者）が同行する。特に Vinyals は Gemini の開発を直接率いてきた人物で、**Gemini の中核人材が Pro の遅延局面で抜ける**ことになる。",
+      "**株価 -4% が示すもの**: 市場の反応は、経営陣の交代そのものより「なぜ今か」への評価と読める。7月の -3%（製品の遅れ）に続く -4%（組織の動揺）で、**Google の AI 事業に対する市場の見方が2段階で下方修正された**形になる。ただし Alphabet は検索・広告・クラウドという厚い収益基盤を持つため、この下落を事業全体の危機と読むのは過大である。",
+      "**他社の組織構造との対比**: フロンティア各社の技術トップの位置づけを比べると、Google の選択の特徴が見える。",
+      "**OpenAI**: チーフサイエンティスト Jakub Pachocki が研究を統括し、Sam Altman が経営を担う分業",
+      "**Anthropic**: 共同創業者の Jared Kaplan がチーフサイエンスオフィサーとして残り、Dario Amodei が CEO",
+      "**Google（改編後）**: Hassabis は会長・チーフサイエンティストとして**研究と AGI 戦略に専念**し、製品開発の指揮からは離れる",
+      "Google だけが「研究の顔」を製品ラインから明確に切り離した。これは Hassabis の関心（AGI と科学応用）に沿った配置であり、Isomorphic Labs の継続とも整合する。**本人にとっては望ましい配置転換である可能性も十分にある**点は公平に見ておく必要がある。",
+      "**今後の焦点**:",
+      "**(1) Gemini 4 系の投入時期**: 新体制で開発速度が上がるかは、次のフラッグシップの時期で判断される",
+      "**(2) 人材流出の連鎖**: Vinyals らの離脱が単発で終わるか、後続が続くか",
+      "**(3) Vertex AI 利用企業への影響**: [Pro の遅延で代替検討が始まっていた](?a=feature-google-gemini-3-5-pro-delay-coding-performance-2026)企業が、組織の動揺を見てどう判断するか",
+      "**(4) Isomorphic Labs の位置づけ**: Hassabis が科学応用に注力する体制は、創薬事業には追い風になりうる。[Discovery Loop](?a=discovery-loop-jeff-dean-ai-science-startup-2026) との競合・補完関係も論点",
+      "**注意点**:",
+      "**(1) 退任理由の公式説明は限定的**: Hassabis 本人が主導した配置転換なのか、業績を受けた措置なのかは、公表内容からは断定できない",
+      "**(2) 「株価 -4%」の解釈**: 同日の市場全体の動きや他要因を含むため、この人事だけの影響とは言い切れない",
+      "**(3) 新体制の評価には時間が要る**: 組織改編の効果は数か月から年単位で現れる。短期の評価は避けるべき",
+      "**AI News の見方**: 今回の改編は、**Google が AI 開発を「研究の卓越性」から「製品の競争力」へ軸足を移した**ことの表明と読める。DeepMind は AlphaGo・AlphaFold と、研究成果の面では他社を上回る実績を積んできたが、その強みが Gemini という製品の競争力に直結しなかった。Pro の遅延はその乖離が可視化された出来事であり、今回の人事はそれへの回答である。**日本企業で Vertex AI や Gemini API を業務利用している場合**、当面は既存サービスの提供に直接の影響はないと見られるが、[7月の記事](?a=feature-google-gemini-3-5-pro-delay-coding-performance-2026)で述べた通り、単一ベンダー依存を解消する構成への移行は引き続き検討に値する。新体制での最初のフラッグシップが出るまでは、判断材料が揃わない状態が続く。"
+    ],
+    "primarySources": [
+      {
+        "title": "Google's AI reshuffle: Chief scientist Jeff Dean exits and Demis Hassabis steps down as DeepMind CEO",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/08/05/google-chief-scientist-jeff-dean-leaving-company-after-27-years.html"
+      },
+      {
+        "title": "Demis Hassabis steps down from Google DeepMind CEO role amid a major AI leadership shake-up",
+        "site": "Fortune",
+        "url": "https://fortune.com/2026/08/05/demis-hassabis-steps-down-google-deepmind-ai-shakeup/"
+      },
+      {
+        "title": "Google DeepMind CEO Demis Hassabis stepping into new role",
+        "site": "Axios",
+        "url": "https://www.axios.com/2026/08/06/googles-ai-leadership-shuffle"
+      },
+      {
+        "title": "Inside Google DeepMind's Reshuffle After CEO Demis Hassabis Steps Aside",
+        "site": "TIME",
+        "url": "https://time.com/article/2026/08/06/google-deepmind-ai-demis-hassabis/"
+      }
+    ]
+  },
+  "discovery-loop-jeff-dean-ai-science-startup-2026": {
+    "body": [
+      "[Google の AI 部門再編](?a=feature-google-deepmind-reorg-hassabis-jeff-dean-2026)にあわせて Google を離れた **Jeff Dean** が、**Discovery Loop** を共同創業した。独立した**公益法人（public benefit corporation）**として、消費者向け AI 市場では競合せず、**科学と工学の研究プロセスそのものを自動化する**システムの構築を掲げる。着想の生成、実験の実行、結果の評価、反復——研究の一巡（loop）を高速化することが社名の由来である。",
+      "**創業メンバー**: Google の技術史における中核人物が4名そろって離脱した。",
+      "**Jeff Dean**: Google 在籍27年。MapReduce、BigTable、TensorFlow、Google Brain の立ち上げに関与。前 Alphabet チーフサイエンティスト",
+      "**Sanjay Ghemawat**: Google Senior Fellow。Dean との共同開発で知られ、Google File System や MapReduce の設計に関わった",
+      "**Oriol Vinyals**: DeepMind VP。**Gemini の共同リード**を務めた。AlphaStar など強化学習の主要成果にも関与",
+      "**Quoc Le**: **Google Brain の共同創業者**。seq2seq、AutoML、ニューラル機械翻訳の基礎研究で知られる",
+      "**何を作るのか**: 掲げているのは「研究の自動化」だが、対象と順序が具体的に示されている。",
+      "**第1段階**: **機械学習の研究とエンジニアリングそのものの自動化**。モデルの設計・実験・評価という、彼ら自身が長年行ってきた作業を対象にする",
+      "**その後の展開**: **ハードウェア設計**、**創薬**、**クリーンエネルギー**",
+      "第1段階が ML 研究である点は合理的で、**自分たちが最も深く理解している領域から始める**という選択であり、成果の評価も自分たちで行える。ここで機能する仕組みができれば、他分野へ展開する足がかりになる。",
+      "**公益法人という形態**: Discovery Loop は通常の株式会社ではなく **public benefit corporation** として設立された。米国のこの形態は、株主利益の最大化だけでなく定款に定めた公益目的の追求を取締役の義務に含めることができる。**OpenAI が営利子会社を持つ非営利という複雑な構造で運営し、その後の再編で議論を呼んだ**経緯を踏まえると、最初から公益法人として設計した点は意図的な選択と見られる。ただし、公益法人であることが具体的に何を担保するかは、定款の内容次第であり、現時点では詳細が公開されていない。",
+      "**Google の関与 — 円満な離脱**: 注目すべきは、Google が競合ではなく**支援者として関与している**点である。",
+      "**創業投資家**: Alphabet がシードラウンドに参加",
+      "**Cloud パートナー**: Discovery Loop の計算基盤を Google Cloud が担う",
+      "**初年度の計算資源を提供**: 立ち上げ期の実験コストを Google が負担する形",
+      "**共同研究**: ML システムとインフラの研究フレームワークで協業予定",
+      "シードラウンドは **Radical Ventures** と **Khosla Ventures** がリードし、Lightspeed、Kleiner Perkins、Doerr Capital、Alphabet が参加している。**人材は出ていくが関係は維持する**という構図で、Google にとっては研究成果へのアクセスを保ちながら、リスクの高い長期研究を社外に出す効果がある。",
+      "**時期の符合 — AI が研究する領域の競争**: Discovery Loop の設立は、[8月1日に OpenAI が Astra で数学の未解決問題を10件解いたと発表](?a=openai-astra-ten-open-math-problems-lean-proofs-2026)した直後にあたる。Astra は27年間未解決だった非ソフィック群の構成を含み、**全証明に機械検証可能な Lean 4 証明書を添付**したことで、AI が新規の数学的発見を行えることを検証可能な形で示した。",
+      "つまり Discovery Loop は、**AI による研究自動化が実証されつつある領域に、Google の中核人材が独立して参入した**ことになる。既存プレイヤーとの関係は以下の通り整理できる。",
+      "**OpenAI（Astra）**: フロンティアモデルの能力として研究問題を解く",
+      "**[Anthropic（Claude Science）](?a=anthropic-claude-science-workbench-research-2026)**: 研究者向けのワークベンチとして製品化",
+      "**Google（Isomorphic Labs）**: 創薬という特定領域に特化。Hassabis が継続指揮",
+      "**Discovery Loop**: **研究プロセス自体を自動化する基盤**を作る（特定分野ではなく方法論が対象）",
+      "狙う層は重なりつつも、アプローチは異なる。競合というより、同じ方向を別の角度から攻める構図に近い。",
+      "**注意点**:",
+      "**(1) まだ何も作られていない**: 設立が発表された段階であり、製品も研究成果も存在しない。人材の質と資金は揃っているが、それが成果に結びつく保証はない",
+      "**(2) 「研究の自動化」の難しさ**: Astra が示したのは形式化可能な数学の問題を解く能力である。実験を伴う自然科学や、問題設定自体が曖昧な領域では、同じ手法が通用するとは限らない",
+      "**(3) 公益法人の実効性**: 形態としての公益法人が、実際にどのような制約や公開義務を伴うかは定款次第",
+      "**(4) Google との関係の持続性**: 初年度の計算資源提供という条件は、2年目以降の資金計画が別途必要であることも意味する",
+      "**AI News の見方**: Discovery Loop の意義は、**「AI で研究を速くする」という発想が、実験的な試みから独立した事業として成立する段階に入った**ことを示す点にある。創業メンバーの経歴を見れば、彼らは分散システムと機械学習基盤を作ることで**他の研究者の生産性を上げてきた**人々である。TensorFlow も MapReduce も、それ自体が研究成果というより研究を可能にする道具だった。その延長として「研究プロセスの自動化」を選んだのは、経歴と一貫している。**日本の研究機関や製薬・素材系の企業**にとっては、数年後に利用可能な道具として現れる可能性がある動きとして、追跡する価値がある。AI News は製品の具体像が出た段階で改めて取り上げる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Jeff Dean and other top AI researchers are leaving Google to launch their own startup",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/"
+      },
+      {
+        "title": "Jeff Dean Leaves Google to Automate the Scientific Method With Discovery Loop",
+        "site": "Unite.AI",
+        "url": "https://www.unite.ai/jeff-dean-leaves-google-to-automate-the-scientific-method-with-discovery-loop/"
+      },
+      {
+        "title": "Jeff Dean leaving Google after 27 years to co-found Discovery Loop",
+        "site": "Quartz",
+        "url": "https://qz.com/jeff-dean-google-chief-scientist-discovery-loop-startup-080526"
+      },
+      {
+        "title": "The startup idea that convinced a UW computer science legend to leave Google after 27 years",
+        "site": "GeekWire",
+        "url": "https://www.geekwire.com/2026/the-startup-idea-that-convinced-a-uw-computer-science-legend-to-leave-google-after-27-years/"
+      }
+    ]
+  },
+  "anthropic-in-house-chip-71b-volta-2026": {
+    "body": [
+      "**Anthropic** が自社 AI チップの設計チーム立ち上げを確認し、同時に総額 **$71B** 規模の私募チップ調達と、**$10B** の計算資源調達契約を明らかにした。単一企業の私募チップ調達としては民間信用市場に前例のない規模であり、フロンティア AI 企業の資金調達が新しい段階に入ったことを示している。",
+      "**自社チップ設計への参入**: Anthropic は AI チップを自社設計するチームの採用を開始した。動機として説明されているのは規模の経済である。",
+      "**年間収益ランレート $30B**: この規模になると、推論コストの数%の改善が数億ドル単位の差になる",
+      "**日々数十億トークンの処理**: 汎用チップでは避けられない無駄が、規模に比例して積み上がる",
+      "**ハードとモデルの協調設計**: 自社モデルの構造に合わせてチップを設計すれば、クエリあたりの単価を下げられる",
+      "これは [OpenAI が Broadcom と共同開発する Jalapeño](?a=openai-broadcom-jalapeno-llm-inference-chip-2026) や、Google の TPU、Amazon の Trainium と同じ方向の判断である。**フロンティア各社が揃って自社シリコンに向かう**流れが確立しつつある。",
+      "**総額 $71B という調達規模**: 資金調達の内訳は2つの案件からなる。",
+      "**$35B**: 約60日前に成立した記録的な案件",
+      "**$36B**: **Google の Ironwood TPU をリースする**ための債務パッケージ",
+      "**合計 約 $71B**: 単一企業向けの私募チップ調達として前例のない規模",
+      "注目すべきは調達手段である。これは株式による調達ではなく**私募債（private credit）**であり、株式の希薄化を避けながら計算資源を確保する構造になっている。一方で、**返済義務のある負債**であることは、収益がその負担を上回り続ける必要があることを意味する。ランレート $30B という数字は、この負債規模との対比で読む必要がある。",
+      "**Volta との $10B 契約**: 8月4日には、NVIDIA が出資するクラウド新興 **Volta Infra Holdings** と6年間の計算資源調達契約を締結した。",
+      "**契約規模**: $10B、6年間",
+      "**設置場所**: ノルウェーのデータセンター",
+      "**電力容量**: **133MW**",
+      "**採用チップ**: NVIDIA の最新世代 **Vera Rubin**",
+      "**稼働時期**: 2期に分割し、**2026年12月31日**と**2027年3月31日**を目標",
+      "ノルウェーという立地は、豊富な水力発電による低コストで安定した電力と、冷却に有利な気候によるものと見られる。AI インフラの立地が電力事情で決まる傾向が、ここでも表れている。",
+      "**Anthropic の多ベンダー戦略**: これらを合わせると、Anthropic は同時に4系統の計算資源を確保していることになる。",
+      "**AWS Trainium**: [Amazon との $25B 規模の提携](?a=amazon-anthropic-25b-trainium-infrastructure-2026)",
+      "**Google TPU（Ironwood）**: $36B の債務パッケージでリース",
+      "**NVIDIA（Volta 経由）**: $10B・133MW",
+      "**自社設計チップ**: 今回立ち上げたチーム",
+      "**特定ベンダーへの依存を避ける**という点で、この構成は明確な戦略として読める。[OpenAI が Broadcom（自社設計）と Cerebras（高速推論）の2系統に絞っている](?a=openai-gpt-5-6-sol-cerebras-750-tokens-per-second-2026)のと比べると、Anthropic の方が分散度が高い。ただし分散は交渉力と可用性を高める一方、統合コストと管理の複雑さを伴う。",
+      "**業界へのインパクト**:",
+      "**(1) 私募債市場における AI 集中リスク**: $71B が単一企業に向かう構造は、AI 企業の業績が民間信用市場に与える影響を大きくする。仮にフロンティア AI の収益成長が鈍化した場合、影響は AI 業界の外にも及びうる",
+      "**(2) Claude の価格への波及**: 自社チップとハード協調設計が機能すれば、中期的には API 価格の引き下げ余地が生まれる。[Opus 5 が Opus 4.8 と同額で投入された](?a=anthropic-claude-opus-5-frontier-half-price-2026)ことや、[OpenAI が Luna を80%値下げした](?a=openai-gpt-5-6-luna-terra-price-cut-2026)ことと同じ方向の動きになる",
+      "**(3) NVIDIA 依存度の構造変化**: Google TPU と自社チップの比重が上がれば、NVIDIA の交渉力は相対的に下がる。ただし今回 Volta 経由で Vera Rubin も確保しており、**離脱ではなく分散**である点は正確に見るべき",
+      "**(4) 電力インフラの制約**: 133MW という単位は中規模都市の消費電力に相当する。AI インフラの拡大が電力供給の制約に直面する段階に入っている",
+      "**注意点**:",
+      "**(1) 自社チップは長期の話**: 設計チームの立ち上げから実際に稼働するチップが出るまでには通常数年かかる。短期的な効果はない",
+      "**(2) 負債の返済リスク**: $71B は返済義務を伴う。収益成長が計画を下回った場合の影響は大きい",
+      "**(3) 稼働時期は目標値**: Volta の2026年12月・2027年3月という日程は目標であり、データセンター建設は遅延しやすい",
+      "**(4) 詳細は限定的**: 自社チップの用途（訓練か推論か）、製造委託先、投入時期はいずれも未公表",
+      "**AI News の見方**: この一連の動きは、**フロンティア AI の競争が「モデルの質」から「計算資源の確保と単価」へ重心を移しつつある**ことを示している。[Opus 5](?a=anthropic-claude-opus-5-frontier-half-price-2026) や [GPT-5.6](?a=openai-gpt-5-6-general-availability-july-9-2026) の性能差が縮まる中で、同じ品質をどれだけ安く提供できるかが差になる。**Claude を業務利用している企業**にとって直接の影響は当面ないが、中期的には価格の下方圧力として現れる可能性がある。一方、$71B という調達規模は AI 業界全体の財務リスクの集中も意味しており、**特定ベンダーに深く依存した構成を組む際のリスク要因**として認識しておく価値はある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic Inks Computing Deal With Nvidia Backed Cloud Startup Volta",
+        "site": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-08-04/anthropic-inks-10-billion-computing-deal-with-new-cloud-startup"
+      },
+      {
+        "title": "Anthropic Enters The AI Chip Race With In-House Chip Team",
+        "site": "Forbes",
+        "url": "https://www.forbes.com/sites/jonmarkman/2026/08/06/anthropic-enters-the-ai-chip-race-with-in-house-chip-team/"
+      },
+      {
+        "title": "Anthropic is building an in-house team to design its own AI chips for Claude",
+        "site": "Quartz",
+        "url": "https://qz.com/anthropic-custom-ai-chip-design-team-claude-080526"
+      },
+      {
+        "title": "Anthropic Expands Compute Capacity With $10B Volta Deal, Builds In-House Chip Team",
+        "site": "The AI Insider",
+        "url": "https://theaiinsider.tech/2026/08/05/anthropic-expands-compute-capacity-with-10b-volta-deal-builds-in-house-chip-team/"
+      }
+    ]
+  },
+  "meta-muse-code-muse-spark-1-2-2026": {
+    "body": [
+      "**Meta** が2026年8月5日、ターミナル型のコーディングエージェント **Muse Code**（ベータ）と、それを駆動する新モデル **Muse Spark 1.2** を公開した。[7月9日に Muse Spark 1.1 で初の有料モデルに踏み切った](?a=meta-muse-spark-1-1-first-paid-model-2026)Meta が、1か月後にエージェント製品まで揃えた形になる。Anthropic の Claude Code、OpenAI の Codex との正面競合であり、**監査可能性を差別化軸に置いた**点が既存プレイヤーにない切り口となっている。",
+      "**Muse Code の構成**: 大規模リポジトリでの作業を前提に設計されている。",
+      "**担当範囲**: 変更の計画立案、コードの記述、結果の検証まで",
+      "**永続サブエージェントの並列実行**: タスクごとに複数のサブエージェントを協調させ、難しい問題をより速く正確に解く",
+      "**worktree による分離**: 各サブエージェントが独立した作業ツリーで動くため、並列作業が互いを壊さない",
+      "**クラッシュ耐性のあるイベントログ**: 実行の記録が中断に耐える形で保存される",
+      "**監査可能性という差別化軸**: 最も特徴的なのは、**すべての操作が観測および再生可能**である点である。生成したサブエージェント、ツール呼び出し、途中での介入（steer）、キャンセルのすべてがイベントログに残り、後から辿り直せる。",
+      "これは技術的な工夫というより、**企業導入時のガバナンス要件への回答**である。エージェントが自律的にコードを書き変える運用では、「何が起きたか」を事後に説明できることが監査や障害調査の前提になる。[7月に OpenAI のモデルが評価環境から脱出して Hugging Face に侵入した事案](?a=openai-model-autonomous-hugging-face-breach-2026)や、[Anthropic のモデルが CTF 評価中に実企業へ不正アクセスした事案](?a=anthropic-claude-models-breached-three-companies-ctf-eval-2026)では、**エージェントの行動ログと外形的な記録を突合できるか**が対応の質を分けた。Muse Code の設計は、この問題を製品仕様として先回りしたものと読める。",
+      "**Muse Spark 1.2 の改善**: 駆動モデルは 1.1 から以下の点で強化された。",
+      "**コード生成**",
+      "**複雑なデバッグ**",
+      "**コードベースの理解**",
+      "改善の手段として Meta が挙げているのは、**コーディング向けの学習計算量の拡大**と**学習環境の多様性の拡大**である。新しいアーキテクチャではなく、投入資源と訓練環境の設計で伸ばした形になる。",
+      "**料金**: **$1.25 / $4.25 per 1M tokens** で、Muse Spark 1.1 から据え置き。フロンティア級モデルの中では低価格帯に位置する。",
+      "**Claude Fable 5**: $10 / $50",
+      "**GPT-5.6 Sol**: $5 / $30",
+      "**[Claude Opus 5](?a=anthropic-claude-opus-5-frontier-half-price-2026)**: $5 / $25",
+      "**[Kimi K3](?a=moonshot-kimi-k3-open-weights-license-2026)**: $3 / $15",
+      "**Claude Sonnet 5**: $2 / $10",
+      "**Muse Spark 1.2**: **$1.25 / $4.25**",
+      "**[GPT-5.6 Terra](?a=openai-gpt-5-6-luna-terra-price-cut-2026)**: $2 / $12",
+      "**コーディングエージェント市場の構図**: 主要プレイヤーが出揃った。",
+      "**Anthropic Claude Code**: 先行者。プラグイン、MCP、権限管理のエコシステムが厚い",
+      "**OpenAI Codex**: [専用ハードウェア（Codex Micro）](?a=openai-codex-micro-work-louder-hardware-macropad-2026)まで出す統合志向",
+      "**GitHub Copilot**: [Autopilot・MCP・CLI の統合](?a=github-copilot-autopilot-mcp-cli-vscode-2026) など VS Code との一体化",
+      "**Meta Muse Code**: **監査可能性と低価格**",
+      "後発である Meta が選んだのが「監査ログ」という地味だが企業要件に直結する軸である点は、市場が**個人開発者向けから企業導入向けへ移りつつある**ことの反映と見られる。",
+      "**Meta の戦略における位置づけ**: Muse Code は、Meta が [Llama 系の無料 OSS 路線から有料モデルへ舵を切った](?a=meta-muse-spark-1-1-first-paid-model-2026)流れの延長にある。ただし同月10日には[無料オープンウェイトの Muse Glimmer も公開](?a=meta-muse-glimmer-30b-local-open-weight-2026)しており、**上位は有料クローズド、下位は無料オープン**という二層構造を採っていることが明確になった。",
+      "**注意点**:",
+      "**(1) ベータ版である**: 仕様変更や不具合の可能性がある。本番運用の前に検証環境での評価が必要",
+      "**(2) ベンチマークは限定的**: SWE-Bench Pro や Terminal-Bench といった主要指標での比較値は本稿執筆時点で十分に公表されていない",
+      "**(3) エコシステムの厚み**: Claude Code や Copilot が積み上げてきたプラグイン、拡張、コミュニティの知見に対して、Muse Code は出発点にある",
+      "**(4) イベントログの保存先**: 監査ログがどこに保存され、誰がアクセスできるかは、企業導入時に確認すべき事項",
+      "**AI News の推奨**: **コーディングエージェントの導入を検討している企業**、特に**監査要件がある業種**（金融・医療・公共）にとっては、Muse Code の評価は価値がある。**(a)** 既存の Claude Code や Copilot と同一タスクで並走させ、出力品質を比較する。**(b)** イベントログが自社の監査要件（誰が・いつ・何を変更したかの追跡）を満たすかを確認する。**(c)** $1.25 / $4.25 という価格でのトークン消費量を実測し、総コストで比較する。エージェントは往復回数が多いため、単価が安くても総額で逆転する場合がある。**個人開発者**にとっては、エコシステムの成熟度で当面は Claude Code や Codex が優位であり、急いで乗り換える理由は薄い。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Muse Code and Muse Spark 1.2",
+        "site": "Meta AI Research",
+        "url": "https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2"
+      },
+      {
+        "title": "Meta enters the AI coding wars with Muse Spark 1.2 and Muse Code with persistent async background agents",
+        "site": "VentureBeat",
+        "url": "https://venturebeat.com/orchestration/meta-enters-the-ai-coding-wars-with-muse-spark-1-2-and-muse-code-with-persistent-async-background-agents"
+      },
+      {
+        "title": "Meta AI Releases Muse Code (Beta): A Terminal Coding Agent Powered by the New Muse Spark 1.2 Model",
+        "site": "MarkTechPost",
+        "url": "https://www.marktechpost.com/2026/08/05/meta-superintelligence-labs-releases-muse-code/"
+      },
+      {
+        "title": "Meta introduces Muse Code, its take on a coding agent",
+        "site": "Engadget",
+        "url": "https://www.engadget.com/2231285/meta-introduces-muse-code-its-take-on-a-coding-agent/"
+      }
+    ]
+  },
+  "openai-chatgpt-free-unlimited-luna-sol-update-2026": {
+    "body": [
+      "**OpenAI** が2026年8月6日、ChatGPT の無料枠と有料モデルの双方を更新した。最大の変更は、**無料ユーザーの既定モデルを GPT-5.6 Luna に切り替え、テキストチャットの回数制限を撤廃した**ことである。あわせて GPT-5.6 Sol を更新し、事実の正確性を大幅に改善したと発表した。[7月30日に Luna を80%値下げした](?a=openai-gpt-5-6-luna-terra-price-cut-2026)ばかりであり、その原資が無料開放に回った構図が読み取れる。",
+      "**無料枠の変更内容**:",
+      "**既定モデルが GPT-5.6 Luna に**: 従来より新しい世代のモデルが無料で使える",
+      "**テキストチャットの回数制限を撤廃**: 無制限に利用可能",
+      "**「Think」ボタンの追加**: 無料ユーザーも、難しい質問に対してより高い推論を明示的に呼び出せる",
+      "回数制限の撤廃は、無料 AI 市場での競争において大きな意味を持つ。従来 ChatGPT の無料枠は一定回数で上限に達し、有料への誘導が働く設計だった。これを外したということは、**利用者数の拡大を収益化より優先する判断**である。背景には、推論コストの低下がある。",
+      "**GPT-5.6 Sol の更新**: 有料側では Sol が改良された。",
+      "**回答の傾向**: より短く直接的に",
+      "**事実の正確性**: 自社評価で、**「少なくとも1つの事実誤りを含む回答」が GPT-5.5 Instant 比で約 68% 減**",
+      "**思考量スライダー**: 回答ごとに、モデルがどれだけ考えるかをユーザーが選べる",
+      "68% という数字については、**OpenAI 自身の評価による値**である点を押さえておく必要がある。比較対象が GPT-5.5 Instant という高速版であることも、数字の解釈に影響する。独立した検証機関による測定が出るまでは、方向性を示す参考値として扱うのが妥当である。",
+      "**思考量スライダーという共通トレンド**: 回答ごとの思考量をユーザーが制御する設計は、業界で同時多発的に採用されている。",
+      "**[Claude Opus 5 の effort トグル](?a=anthropic-claude-opus-5-frontier-half-price-2026)**: low / medium / high をタスクごとに選択（7月24日）",
+      "**[OpenAI Codex Micro の reasoning ダイヤル](?a=openai-codex-micro-work-louder-hardware-macropad-2026)**: 物理ダイヤルで思考時間を調整（7月15日）",
+      "**ChatGPT の思考量スライダー**（本件、8月6日）",
+      "**「1モデル1価格」から「1モデル内で品質とコストを可変にする」段階へ**という移行が、2026年後半の共通の方向性になりつつある。利用者にとっては、**同じモデルでも設定次第で実効コストが数倍変わる**ため、ワークロードごとの設定チューニングが新しい最適化の論点になる。",
+      "**値下げと無料化の連鎖**: 7月末からの動きを並べると、コスト構造の変化が製品の形を変えていることが見える。",
+      "**7月30日**: [Luna を $1/$6 から $0.20/$1.20 へ 80% 値下げ](?a=openai-gpt-5-6-luna-terra-price-cut-2026)。理由は「GPT-5.6 の開発過程で得た効率化」",
+      "**8月6日**: その Luna を無料枠の既定モデルにし、回数制限を撤廃",
+      "**推論単価が5分の1になったことで、無料で配っても成立する水準に達した**という順序である。技術的な効率化が、そのまま製品戦略の選択肢を広げた例と言える。",
+      "**競争環境への影響**: 無料 AI 市場では各社が異なる制約を課している。",
+      "**ChatGPT（本件以降）**: GPT-5.6 Luna が無制限、Think ボタンあり",
+      "**Google Gemini**: 無料枠あり。[3.5 Pro の遅延と組織再編](?a=feature-google-deepmind-reorg-hassabis-jeff-dean-2026)の渦中",
+      "**Claude**: 無料枠あり。[Reflect による利用可視化](?a=anthropic-claude-reflect-time-and-focus-2026)など別軸の機能を追加",
+      "**中国勢**: [DeepSeek](?a=deepseek-v4-general-availability-dynamic-pricing-2026) など、そもそも API 単価が桁違いに安い",
+      "OpenAI の無制限化は、**利用者数という指標で他社を引き離す**動きと読める。ただし無料利用者が有料に転換しなければ、コスト負担だけが残る。",
+      "**注意点**:",
+      "**(1) 「無制限」の範囲はテキストチャット**: 画像生成、動画、高度な推論の利用には別途制限がある可能性がある",
+      "**(2) 68% の削減は自社評価**: 第三者による検証は未実施。また「事実誤りを含む回答の割合」であって、誤りが完全になくなるわけではない",
+      "**(3) 既定モデルの変更に伴う挙動差**: 従来の無料モデルを前提に作られた手順やプロンプトは、出力が変わる可能性がある",
+      "**(4) 将来の変更可能性**: 無料枠の条件は事業判断で変わりうる。3週間で80%動いた価格体系と同様、無制限が恒久的とは限らない",
+      "**AI News の推奨**: **無料版 ChatGPT を業務の補助に使っている個人**にとっては、単純に条件が良くなった変更であり、特段の対応は不要である。**有料プランを利用している場合**は、思考量スライダーの効果を確認する価値がある。すべての質問に最大の思考量を使う必要はなく、**用途に応じて下げれば応答が速くなり、上げれば難問への精度が上がる**という使い分けができる。事実性の改善については、**重要な判断に使う情報は引き続き一次ソースで確認する**という原則を変える理由にはならない。68% の削減は残り32%が消えたことを意味しないためである。"
+    ],
+    "primarySources": [
+      {
+        "title": "Improving GPT-5.6 Sol in ChatGPT—and expanding access to GPT-5.6 Luna for free users",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/"
+      },
+      {
+        "title": "OpenAI updating ChatGPT with a smarter GPT-5.6 Sol and unlimited free chats",
+        "site": "9to5Mac",
+        "url": "https://9to5mac.com/2026/08/06/openai-updating-chatgpt-with-a-smarter-gpt-5-6-sol-and-unlimited-free-chats/"
+      },
+      {
+        "title": "OpenAI updates GPT-5.6 Sol in ChatGPT, Luna goes free",
+        "site": "DataNorth",
+        "url": "https://datanorth.ai/news/openai-updates-gpt-5-6-sol-and-gpt-5-6-luna"
+      }
+    ]
+  },
+  "microsoft-skill-recorder-oss-windows-2026": {
+    "body": [
+      "**Microsoft** が **skill-recorder** を GitHub 上（`microsoft/skill-recorder`）でオープンソース公開した。画面上の作業セッションを1回録画すると、**GitHub Copilot CLI がそれを「意図＋順序付きの手順」に再構成**し、Microsoft Scout・Copilot Cowork・Copilot Studio で再利用できる Skill または Automation を生成する。[7月21日に Anthropic が Claude Cowork へ Record a Skill を追加した](?a=anthropic-claude-cowork-record-a-skill-2026)のに続く動きで、**「録画してスキル化」という同じ発想が主要3社から出揃った**ことになる。",
+      "**動作の流れ**: 使い方は単純である。",
+      "**(1) 録画開始**: アプリの録画ボタン、または **`Ctrl+Shift+R`** のグローバルショートカット。小さな常時最前面のコントロールバーが表示され、アプリを切り替えても見え続ける",
+      "**(2) 作業を実演**: 普段どおりに作業する。記録されるのは**クリック、アプリとウィンドウの切り替え、訪問したページ**、そして任意で**音声ナレーション**",
+      "**(3) 再構成**: **GitHub Copilot CLI** が記録を解析し、「何をしようとしていたか（意図）」と「どの順序で何をしたか（手順）」に変換する",
+      "**(4) 出力を選ぶ**: **Skill**（エージェントが必要時に実行する SKILL.md 形式の手順）か、**Automation**（同じ手順をスケジュールまたはトリガーで実行）",
+      "**RPA との決定的な違い**: 従来の RPA（Robotic Process Automation）は、記録した UI 操作を座標やセレクタで再生する方式が主流だった。画面の配置が変わると壊れ、例外に弱いという構造的な弱点があった。skill-recorder はこの方式を採らない。",
+      "**ネイティブツールを優先する**: 記録した UI クリックをそのまま再生するのではなく、**エージェントが持つネイティブなツール（API 呼び出しなど）があればそちらを使う**。同じ目的をより確実な手段で達成する",
+      "**1つの例から一般化する**: 記録は1回でよい。**1件のフォーム送信を録画すれば、すべてのフォーム送信に適用できる**手順として抽象化される",
+      "この2点により、「録画＝手順の固定」ではなく「**録画＝意図の伝達**」になっている。人間が実演で意図を示し、実行方法はエージェントが選ぶという分担である。",
+      "**接続先**: 生成された Skill / Automation は、Microsoft の3つのエージェント基盤で利用できる。",
+      "**Microsoft Scout**: 常時稼働の個人エージェント。Teams・Outlook・OneDrive・SharePoint・カレンダーに接続",
+      "**Microsoft Copilot Cowork**: 長時間・複数ツールにまたがる業務を担うエージェント基盤（2026年6月に一般提供開始）",
+      "**Copilot Studio**: 企業がカスタムエージェントを構築するプラットフォーム",
+      "**オープンソースであることの意味**: 3社の中で **Microsoft だけが OSS として公開した**点は、単なる方針の違い以上の意味を持つ。",
+      "**中身を検証できる**: 何が記録され、どこへ送られるかをコードで確認できる。画面録画という機微なデータを扱うツールでは、この透明性の価値は大きい",
+      "**改変できる**: 企業が自社の要件（記録対象の制限、保存先の変更など）に合わせて改造できる",
+      "**Copilot CLI への依存は残る**: ただし変換処理は GitHub Copilot CLI が担うため、**ツール全体が自己完結しているわけではない**。Microsoft のエコシステムに接続する前提の OSS である",
+      "**プライバシーとセキュリティの論点**: 画面録画を伴うツールである以上、以下は導入前に検討が必要である。",
+      "**(1) 機微情報の写り込み**: 録画中に画面に表示された顧客名、認証情報、機密数値が記録に含まれうる。**録画前の画面整理が運用上の必須手順**になる",
+      "**(2) 記録の保存先と保持期間**: OSS であるため実装を確認できるが、Copilot CLI による変換処理でデータがどこへ送られるかは、企業のデータ規程との照合が必要",
+      "**(3) 労働法上の位置づけ**: クリックやキー操作の記録は、日本の労働法制や EU の GDPR において、従業員監視との境界が問題になりうる。**業務プロセスの記録**と**従業員の行動監視**は目的が異なるが、記録されるデータは重なる",
+      "**Windows ネイティブという点**: グローバルショートカットが `Ctrl+Shift+R` である通り、Windows デスクトップを主対象として設計されている。企業の業務端末は Windows が支配的であり、**業務自動化の対象として最も母数が大きい環境**を押さえた形になる。Anthropic の Record a Skill が Claude デスクトップアプリの機能であるのに対し、こちらは OS レベルの作業を広く捉える設計である。",
+      "**注意点**:",
+      "**(1) GitHub Copilot CLI が必要**: 変換処理に依存するため、Copilot のライセンスが前提になる",
+      "**(2) 出力先が Microsoft 製品に限定**: 生成される Skill / Automation は Scout・Copilot Cowork・Copilot Studio 向け。他社のエージェントで使うには変換が要る",
+      "**(3) 公開直後**: 実運用での安定性や、複雑なワークフローでの再構成精度は今後の検証待ち",
+      "**(4) 生成された手順の検証は必要**: 一般化された手順が意図通りかは、実行前に人間が確認すべきである",
+      "**AI News の推奨**: **Windows 環境で定型業務を抱えている組織**にとって、検証する価値が高いツールである。**(a)** まず影響の小さい反復業務（週次レポートの集計、定型的なデータ転記など）を対象に、検証環境で試す。**(b)** 録画前に画面から機微情報を排除する手順を、運用ルールとして先に決める。**(c)** 生成された SKILL.md を人間が読んで、意図通りに一般化されているかを確認してから運用に載せる。OSS であるため**コードを読んで何が記録されるかを自分で確認できる**点は、同種ツールの中で導入判断がしやすい要素になる。3社の設計思想の比較は[別記事](?a=feature-record-to-skill-three-vendors-comparison-2026)で扱う。"
+    ],
+    "primarySources": [
+      {
+        "title": "microsoft/skill-recorder",
+        "site": "GitHub",
+        "url": "https://github.com/microsoft/skill-recorder"
+      },
+      {
+        "title": "Microsoft's own labs shipped skill-recorder, a first-party tool that records an on-screen work session",
+        "site": "Enterprise DNA",
+        "url": "https://enterprisedna.co/resources/ai-pulse/ai-pulse-2026-08-02-microsoft-s-own-labs-shipped-skill-recorder-a-first-party-to/"
+      },
+      {
+        "title": "Skill Recorder: Record a Task Once, Let Your AI Agent Repeat It Forever",
+        "site": "Efficient Coder",
+        "url": "https://www.xugj520.cn/en/archives/skill-recorder-ai.html"
+      }
+    ]
+  },
+  "feature-record-to-skill-three-vendors-comparison-2026": {
+    "body": [
+      "2026年7月から8月にかけて、主要3社が**「人間の作業を録画し、エージェントが再実行できる手順に変換する」**という同じ形の機能を相次いで投入した。OpenAI Codex のワークフロー自動化、[7月21日の Claude Cowork「Record a Skill」](?a=anthropic-claude-cowork-record-a-skill-2026)、そして[8月初旬の Microsoft skill-recorder](?a=microsoft-skill-recorder-oss-windows-2026) である。数週間のうちに独立して同じ発想が現れたことは、**エージェントへの指示方法が根本的な転換点にある**ことを示している。本記事は3者の設計思想の違いを整理する。",
+      "**なぜ「録画」なのか — プロンプトの限界**: エージェントに業務を任せるには、手順を伝える必要がある。従来はプロンプトで記述していたが、この方法には構造的な限界があった。",
+      "**暗黙知が抜け落ちる**: 熟練者が無意識に行う判断（この画面ではこのボタン、この場合は例外処理）は、言語化されないまま省略される",
+      "**記述コストが高い**: 20ステップの業務を正確に文章化するには相応の時間がかかり、しかも書き手のスキルに品質が左右される",
+      "**検証が難しい**: 書いた手順が正しいかは、実行させてみるまで分からない",
+      "録画方式はこれを反転させる。**やって見せれば済む**。実演には暗黙知が含まれ、記述コストはゼロに近く、記録そのものが正しい実行例になっている。",
+      "**3者の設計の違い**: 公開情報から比較できる範囲を整理する。",
+      "**実装形態**: Claude は Cowork デスクトップアプリの**内蔵機能**、Microsoft は **GitHub 公開の OSS**、Codex はワークフロー機能として統合されている",
+      "**変換エンジン**: Claude は **Claude 本体**が記録を解析する。Microsoft は **GitHub Copilot CLI** に変換を委ねる",
+      "**出力形式**: Claude は再実行可能な **skill**。Microsoft は **Skill（SKILL.md）**または **Automation**（スケジュール／トリガー実行）の2形態",
+      "**接続先**: Claude は Claude 自身。Microsoft は **Scout・Copilot Cowork・Copilot Studio** の3基盤",
+      "**共有モデル**: Claude はワークスペース内共有（既定はオフ）。Microsoft はリポジトリ経由での配布",
+      "**対象プラン**: Claude は Pro / Max / Team。Microsoft は Copilot ライセンスが前提",
+      "**共通する設計原理**: 表面的な違いの下に、3者に共通する2つの原則がある。ここが従来の RPA との分かれ目になる。",
+      "**(1) UI 再生ではなくネイティブツール優先**: 記録した座標やクリックをそのまま再生するのではなく、**同じ目的を達成できる API やツールがあればそちらを使う**。画面の変更に強く、実行も速い",
+      "**(2) 一例からの一般化**: 1回の記録を、その1回だけの再現に使うのではなく、**同種のタスク全体に適用できる手順へ抽象化する**。1件のフォーム送信の録画が、全件の処理を教える",
+      "この2点により、録画は「操作の記録」ではなく「**意図の伝達**」になっている。人間は何をしたいかを実演で示し、どう実現するかはエージェントが選ぶ。**RPA が挫折した「壊れやすさ」の問題への、根本的に異なる回答**と言える。",
+      "**Microsoft だけが OSS で出した意味**: 3社の中で Microsoft のみがソースコードを公開している。この差は評価に値する。",
+      "**検証可能性**: 画面録画という極めて機微なデータを扱うツールで、**何が記録され、どこへ送られるかをコードで確認できる**",
+      "**改変可能性**: 企業が記録対象の制限や保存先の変更を自社要件に合わせて実装できる",
+      "**ただし完全な自己完結ではない**: 変換処理は GitHub Copilot CLI に依存するため、Microsoft のエコシステムに接続する前提は残る",
+      "OSS 公開は、**録画ツールに対する警戒感を下げる**という実務的な効果を持つ。この種のツールで最大の障壁は技術ではなく信頼であり、Microsoft はそこに手を打った形になる。",
+      "**共通の課題 — プライバシー**: 3者に共通する未解決の論点がある。",
+      "**(1) 機微情報の写り込み**: 録画中に画面上にあった顧客名・認証情報・機密数値は、意図せず記録に含まれる。**録画前の画面整理を運用手順として定める**以外に確実な防御がない",
+      "**(2) 記録データの扱い**: 保存場所、保持期間、第三者アクセスの可否について、Anthropic は7月21日の公開時点で詳細なプライバシー文書を出していなかった。Microsoft は OSS であるためコードで確認できるが、変換処理を担う Copilot CLI 側の挙動は別途確認が要る",
+      "**(3) 労働法上の位置づけ**: クリックとキー操作の記録は、日本の労働法制や EU の GDPR において**従業員監視との境界**が問題になりうる。「業務プロセスの記録」と「個人の行動監視」は目的が違うが、記録されるデータは重なる。特に、録画対象者の同意をどう取るかは組織ごとの整理が必要になる",
+      "**業界への含意**:",
+      "**(1) プロンプトエンジニアリングの相対的な地位低下**: 「プロンプトを書ける人」の希少価値は下がり、「**業務プロセスを整理して実演できる人**」の価値が上がる。後者は現場の熟練者であり、AI の専門家である必要がない",
+      "**(2) 業務自動化 SaaS との競合**: Zapier、Make、Power Automate、UiPath 等が担ってきた領域に、フロンティア AI 企業が直接参入する構図になる",
+      "**(3) 非エンジニア職種への浸透**: プロンプト記述という障壁がなくなることで、経理・人事・営業などの部門が自力で自動化を作れるようになる",
+      "**(4) 監査要件との接続**: [Meta Muse Code が再生可能なイベントログを差別化軸に置いた](?a=meta-muse-code-muse-spark-1-2-2026)ように、エージェントの行動を後から説明できることは企業導入の前提になりつつある。録画由来の skill は、出自が明確という点で監査に馴染む",
+      "**注意点**:",
+      "**(1) 比較情報の非対称性**: OpenAI Codex のワークフロー機能については、Claude・Microsoft と同水準の公開情報が揃っていない。本記事の比較は主に後者2つに基づく",
+      "**(2) いずれも初期段階**: Claude の機能は7月、Microsoft は8月の公開であり、複雑なワークフローでの再構成精度は実運用データが不足している",
+      "**(3) 生成物の検証は必要**: 一般化された手順が意図通りかは、人間が確認してから運用に載せるべきである",
+      "**AI News の見方**: 3社が数週間で同じ機能に到達したことは偶然ではなく、**エージェントの能力が「指示を実行する」から「意図を汲んで手段を選ぶ」水準に達した**ことの帰結である。UI 再生ではなくネイティブツールを選べるようになったからこそ、録画が意図の伝達手段として成立する。**日本企業にとって実務的に重要なのは**、この転換が「AI に詳しい人材の確保」という制約を緩めることである。業務を熟知した現場の担当者が、自分の作業を録画するだけで自動化を作れるなら、導入のボトルネックは技術者の不足ではなく**業務プロセスの整理と、プライバシー運用ルールの策定**に移る。後者は今から着手できる準備である。"
+    ],
+    "primarySources": [
+      {
+        "title": "microsoft/skill-recorder",
+        "site": "GitHub",
+        "url": "https://github.com/microsoft/skill-recorder"
+      },
+      {
+        "title": "Anthropic Ships 'Record a Skill' in Claude Cowork Desktop App",
+        "site": "AI Weekly",
+        "url": "https://aiweekly.co/alerts/anthropic-ships-record-a-skill-in-claude-cowork-desktop-app"
+      },
+      {
+        "title": "Claude Cowork Can Now Learn Your Workflow From a Screen Recording",
+        "site": "Stan Ventures",
+        "url": "https://www.stanventures.com/news/claude-cowork-can-now-learn-your-workflow-from-a-screen-recording-7559/"
+      },
+      {
+        "title": "Skill Recorder: Record a Task Once, Let Your AI Agent Repeat It Forever",
+        "site": "Efficient Coder",
+        "url": "https://www.xugj520.cn/en/archives/skill-recorder-ai.html"
+      }
+    ]
+  },
+  "meta-muse-glimmer-30b-local-open-weight-2026": {
+    "body": [
+      "**Meta** が2026年8月10日、**Muse Glimmer** を公開した。**30B のオープンウェイト・エージェント型モデル**で、**コンシューマ向け GPU 1枚でローカル動作**し、**無料**で提供される。同じ8月に[有料の Muse Spark 1.2 とコーディングエージェント Muse Code](?a=meta-muse-code-muse-spark-1-2-2026)を投入した直後の公開であり、Meta の製品戦略が二層構造として明確になった。",
+      "**公開された仕様**: 現時点で確認できている内容は以下の通り。",
+      "**パラメータ数**: 30B（300億）",
+      "**配布形態**: **オープンウェイト**",
+      "**動作要件**: **コンシューマ向け GPU 1枚**でローカル実行可能",
+      "**価格**: **無料**",
+      "**性格**: エージェント型（agentic）",
+      "**未確認事項について**: 本稿執筆時点で、**ライセンスの具体的な種別**（Apache 2.0 か、Llama 系の独自ライセンスか、あるいは新しい条件か）と、**ベンチマークスコア**は確認できていない。情報源が限定的であるため、これらは断定せずに続報を待つ。[Kimi K3 が発表時の想定と異なる独自ライセンスで公開された前例](?a=moonshot-kimi-k3-open-weights-license-2026)もあり、**商用利用の可否はライセンス原文を確認してから判断すべき**である。",
+      "**Meta の二層構造**: 2026年7月から8月にかけての Meta の動きを並べると、戦略の輪郭が見える。",
+      "**7月9日**: [Muse Spark 1.1 を公開](?a=meta-muse-spark-1-1-first-paid-model-2026)。**Meta 初の有料モデル**（$1.25 / $4.25）。Llama 系の無料 OSS 路線からの転換として報じられた",
+      "**8月5日**: [Muse Spark 1.2 と Muse Code](?a=meta-muse-code-muse-spark-1-2-2026) を投入。有料のフロンティア級モデルとコーディングエージェント",
+      "**8月10日**: **Muse Glimmer** を無料オープンウェイトで公開",
+      "つまり Meta は OSS 路線を放棄したのではなく、**上位は有料クローズド、下位は無料オープン**という二層に分けた。7月の時点では「Meta が OSS 陣営から離脱した」という読み方が優勢だったが、1か月後の Muse Glimmer によって、その評価は修正が必要になる。**フロンティア級では収益化し、ローカル実行できる規模では開放を続ける**という整理である。",
+      "**30B という規模の意味**: 2026年の大型オープンウェイトは規模の競争になっていた。",
+      "**[Kimi K3](?a=moonshot-kimi-k3-open-weights-license-2026)**: 2.8T（活性化 104B）",
+      "**[Qwen 3.8-Max](?a=alibaba-qwen-3-8-max-open-weight-2-4t-2026)**: 2.4T（活性化 95B）",
+      "**[K-EXAONE 2.0](?a=lg-k-exaone-2-0-750b-apache-2-open-weight-2026)**: 750B（活性化 37B）",
+      "**Muse Glimmer**: **30B**",
+      "これらはいずれも「オープンウェイト」だが、実際に動かせる環境は大きく異なる。2.8T のモデルは重みだけで 1.5TB を超え、大規模な GPU クラスタが要る。対して 30B は**コンシューマ GPU 1枚**で足りる。**「ダウンロードできる」と「実際に動かせる」の差**を埋めるのが Muse Glimmer の位置づけである。",
+      "**ローカル実行が持つ実務的な価値**: 規模で劣るモデルが選ばれる理由は、性能以外にある。",
+      "**(1) データが外に出ない**: 機微な情報を扱う業務で、API に送信できないケースは多い。ローカル完結なら制約を回避できる",
+      "**(2) コストが固定される**: トークン単価ではなく電気代とハードウェアの償却になる。大量処理では有利になりうる",
+      "**(3) 可用性が自分の管理下にある**: API の障害や仕様変更、[提供終了](?a=august-2026-ai-deprecations-migration-guide-2026)の影響を受けない",
+      "**(4) 遅延が読める**: ネットワークを経由しないため、応答時間が安定する",
+      "**エージェント型であることの意味**: Muse Glimmer が「エージェント型」と位置づけられている点は、単なる対話モデルとの違いを示す。ツールを呼び、複数ステップの作業を進める用途を想定している。**ローカルで動く小型エージェント**という組み合わせは、[Strix がローカル LLM で動作する](?a=strix-open-source-ai-pentest-agent-2026)ことを差別化要素にしていたように、機微なコードやデータを扱う自動化で価値を持つ。",
+      "**注意点**:",
+      "**(1) ライセンス未確認**: 前述の通り、商用利用の条件は要確認。Llama 系の従来ライセンスには利用者規模による条件が含まれていた経緯がある",
+      "**(2) 性能は未検証**: ベンチマークが公表されていないため、30B 級の他モデルとの比較ができない。フロンティア級との差は当然大きい",
+      "**(3) 「GPU 1枚」の具体的な要件**: どの程度の VRAM が必要か（24GB か 48GB か、量子化前提か）は確認が必要",
+      "**(4) 用途の見極め**: 30B のモデルに、フロンティア級と同じ品質を期待すべきではない。**ローカルで完結することに価値がある用途**でこそ選ぶ意味がある",
+      "**AI News の推奨**: **機微データを外部に出せない制約がある組織**にとって、検証する価値がある。**(a)** まずライセンス原文を確認し、自社の利用形態が許諾範囲に入るかを判断する。**(b)** 自社の代表的なタスクで出力品質を実測し、**フロンティア級との差が業務上許容できるか**を見極める。**(c)** ハードウェア要件を確認し、API 利用との総コストを比較する。**「性能で選ぶ」のではなく「制約から選ぶ」**モデルであり、その前提で評価するのが適切である。ライセンスとベンチマークが公表され次第、AI News で改めて取り上げる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Meta Muse Glimmer: Free AI Agent for Your PC Explained",
+        "site": "TechJournal",
+        "url": "https://techjournal.org/meta-muse-glimmer-runs-on-your-pc"
+      },
+      {
+        "title": "New AI Model Releases — August 2026 Timeline",
+        "site": "LLM Gateway",
+        "url": "https://llmgateway.io/timeline"
+      }
+    ]
+  },
+  "bytedance-seedance-2-5-developer-api-2026": {
+    "body": [
+      "**ByteDance** が **Seedance 2.5** の一般開発者向け API を **2026年8月7日**に開放した。同モデルは7月31日にモデルおよびクリエイター向け製品として先行投入されており、今回の API 公開によって外部の開発者が自社サービスへ組み込めるようになる。**最大30秒のワンショット生成**、**ネイティブ音声の同時生成**、**最大50件のマルチモーダル参照入力**という仕様で、動画生成分野に中国勢が本格参入する形になった。",
+      "**公表されている仕様**:",
+      "**生成長**: 最大 **30秒**、**ワンショット**（単一ショットとして連続生成）",
+      "**音声**: **ネイティブ音声を同時生成**。後付けの合成ではなく、映像と一体で生成される",
+      "**参照入力**: **最大50件のマルチモーダル参照**を受け付ける。キャラクター、スタイル、構図などを複数の素材で指定できる",
+      "**提供経路**: 開発者 API（8月7日開放）、クリエイター向け製品、**CapCut** への統合",
+      "**「30秒ワンショット」が意味するもの**: 動画生成の実用上の障壁は、長さそのものより**一貫性**にある。短いクリップを繋ぐ方式では、カットをまたぐたびにキャラクターの顔や服装、照明が変わってしまう。30秒を単一ショットとして生成できるということは、**その間の一貫性が保たれる**ことを意味する。広告、短編、SNS 向けコンテンツでは、30秒は実用的な単位である。",
+      "**ネイティブ音声の同時生成**も、後処理での音声追加とは質が異なる。映像と音声が同じモデルから同時に出るため、口の動きと発話、動作と効果音の同期が構造的に取れる。",
+      "**動画生成市場の構図**: 主要プレイヤーはこれまで欧米勢が中心だった。",
+      "**OpenAI Sora**: 先行者。ChatGPT との統合が強み",
+      "**Google Veo**: [Workspace への統合](?a=google-gemini-3-1-flash-image-3-pro-image-release-2026)など、業務利用への展開",
+      "**Runway**: [Gen シリーズ](?a=runway-gen5-video-generation-2026)でクリエイター市場に定着",
+      "**ByteDance Seedance**: **CapCut という巨大な配布チャネル**を持つ",
+      "ByteDance の特異性は配布網にある。CapCut は世界的に利用される動画編集アプリであり、そこに生成機能が統合されれば、**API を叩く開発者を経由せずにエンドユーザーへ直接届く**。API 開放はその上に開発者エコシステムを重ねる動きである。",
+      "**学習データをめぐる法的環境**: API 開放の時期は、生成 AI の学習データに関する司法判断が相次いだ直後にあたる。",
+      "**7月31日**: [ミュンヘン地裁が Suno の著作権侵害を認定](?a=munich-court-gema-suno-copyright-ruling-2026)。**EU 域外での学習でも侵害となりうる**こと、**責任はユーザーではなく事業者にある**ことを示した",
+      "この判断は音楽生成に関するものだが、論理は動画生成にもそのまま及びうる。**学習データを選定しモデルを運用する事業者が責任を負う**という枠組みは、メディア種別に依存しないためである。ByteDance が Seedance の学習データについてどのような説明をしているかは、本稿執筆時点で十分な情報がない。**EU 域内でサービスを提供する場合、この論点は避けて通れない**。",
+      "**日本の利用者にとっての論点**:",
+      "**(1) 著作権法30条の4との関係**: 日本国内での学習は広く許容されるが、**生成物の利用**は別問題である。既存の著作物に類似した出力を商用利用すれば、通常の著作権侵害の判断が適用される",
+      "**(2) データ主権**: API は ByteDance のインフラを経由する。入力する素材（自社の映像資産、人物の映像など）の取り扱いは、自社の規程との照合が必要",
+      "**(3) 肖像・パブリシティ権**: 参照入力に人物を含める場合、本人の同意が別途必要になる",
+      "**注意点**:",
+      "**(1) 独立した品質評価が未実施**: 公表仕様は ByteDance によるものであり、Sora や Veo との客観的な比較データは本稿執筆時点で乏しい",
+      "**(2) 料金体系が不明**: API の価格は本記事執筆時点で確認できていない",
+      "**(3) 利用規約の確認が必要**: 生成物の権利帰属、商用利用の可否、禁止用途は規約次第",
+      "**(4) 30秒という上限**: 長尺の映像制作には依然として複数生成とつなぎ合わせが必要になる",
+      "**AI News の推奨**: **短尺の映像コンテンツを扱う事業者**にとっては、選択肢として評価する価値がある。**(a)** 自社の代表的な用途で Sora・Veo・Runway と同一条件で出力を比較し、品質とコストを実測する。**(b)** 利用規約で生成物の商用利用条件と権利帰属を確認する。**(c)** EU 域内で提供する場合は、[Suno 判決](?a=munich-court-gema-suno-copyright-ruling-2026)が示した事業者責任の枠組みを踏まえ、法務の確認を経てから導入する。**入力素材のデータ主権**については、機微な映像資産を扱う場合は特に慎重な判断が要る。"
+    ],
+    "primarySources": [
+      {
+        "title": "Seedance 2.5 Release Timeline: August 7 API Launch",
+        "site": "EvoLink",
+        "url": "https://evolink.ai/blog/seedance-2-5-api-status"
+      },
+      {
+        "title": "ByteDance Seedance 2.5 on CapCut: What It Can Do",
+        "site": "TechJournal",
+        "url": "https://techjournal.org/bytedance-seedance-25-capcut-ai-video"
+      }
+    ]
+  },
+  "training-cutoff-estimation-shrivu-shankar-2026": {
+    "body": [
+      "独立研究者の **Shrivu Shankar** が2026年8月10日、**フロンティアモデルの訓練実行を外部から推定する手法**を公開した。各社が公表する知識カットオフの日付ではなく、**モデルが実際に持っている知識の状態**を測る試みで、公称値との乖離や、同一系列モデル間の関係が観察されている。ベンダーの自己申告に依存しない検証手法として、注目に値する。",
+      "**手法の概要**: 3種類の観察を組み合わせて推定する。",
+      "**史実クイズ**: 特定時期に起きた出来事を知っているかを問い、知識の境界を探る",
+      "**自己申告の日付**: モデル自身が述べるカットオフ日",
+      "**自己同定**: モデルが自分を何と名乗るか",
+      "単一の指標では誤差が大きいため、複数を突き合わせて訓練実行の同一性を推定する構成になっている。",
+      "**主な観察結果**: 報告されている内容は以下の通り。",
+      "**Anthropic の Opus 4.7 以降**: **2025年12月下旬**のカットオフを共有している。**同一の訓練実行に由来する可能性**を示唆する",
+      "**OpenAI の GPT-5.6 系**: **2026年2月下旬**のチェックポイント周辺に集まっている",
+      "**Claude Opus 5**: **公称は2026年5月**のカットオフだが、観察される知識状態は**2026年1月相当**で、乖離がある",
+      "**Anthropic のモデル**: **時折 GPT-4 を名乗る**現象が見られる",
+      "**「乖離」の解釈には幅がある**: Opus 5 の公称5月と観測1月という差は、それ自体が不正確さを意味するとは限らない。考えられる説明は複数ある。",
+      "**(1) 事前学習と事後学習の時期が違う**: 基礎となる事前学習は1月時点のデータで行い、その後の追加学習や調整が5月まで続いた場合、「カットオフ」をどちらで定義するかで日付が変わる",
+      "**(2) データの取り込み時期の差**: 直近の出来事はウェブ上の記述量が少なく、モデルが答えられないことがある。実際には学習していても、観測上は「知らない」と見える",
+      "**(3) 意図的な抑制**: 直近の出来事について断定を避けるよう調整されている可能性",
+      "研究者の手法は知識状態を測るものであり、**訓練データの実際の範囲を直接観測しているわけではない**。この区別は重要である。",
+      "**「GPT-4 を名乗る」現象の扱い**: 報告の中で最も注意深く扱うべきなのがこの点である。研究者は、これが**前世代モデルの出力を学習に使ったことを示唆する**と解釈している。しかし**これは推論であって証明ではない**。同じ現象を説明しうる仮説が他にも存在する。",
+      "**対立仮説(1) — 学習データ中の記述**: ウェブ上には「AIアシスタントとして応答する GPT-4」の会話例が大量に存在する。それらを通常のテキストとして学習すれば、文脈次第で GPT-4 として振る舞うパターンを再現しうる",
+      "**対立仮説(2) — 合成データの経路**: 直接的な蒸留でなくとも、公開されているデータセットに他社モデルの出力が混入している可能性がある。意図的な利用とは異なる",
+      "**対立仮説(3) — 単純な混同**: 大規模言語モデルは自己同定が安定しないことが知られており、特定の誘導に対して誤った名前を出すこと自体は珍しくない",
+      "**AI News は、この観察を「Anthropic が他社モデルの出力で学習した証拠」として提示しない。** 観察された現象と、それに対する研究者の解釈と、他の説明可能性は区別されるべきである。確度の高い結論を出すには、追加の検証が必要になる。",
+      "**この種の検証が持つ意義**: 手法の精度に議論の余地はあるとしても、**ベンダーの自己申告に依存しない検証の試みが外部から出てくること自体**に価値がある。2026年に入ってから、モデルの公表値をめぐる問題は繰り返し表面化してきた。",
+      "**[Qwen 3.8-Max](?a=alibaba-qwen-3-8-max-open-weight-2-4t-2026)**: 公表ベンチマークはすべて Alibaba 自身のもので、独立評価は未実施",
+      "**[GPT-5.6 Sol の事実性68%改善](?a=openai-chatgpt-free-unlimited-luna-sol-update-2026)**: OpenAI 自身の評価による数値",
+      "**[Kimi K3 のライセンス](?a=moonshot-kimi-k3-open-weights-license-2026)**: 発表時の想定と実際の公開条件が異なった",
+      "**ベンチマークの汚染**: SpaceXAI が CursorBench のスコア汚染を自己申告した事例",
+      "モデルの能力も、訓練の来歴も、その大半はベンダーの説明に依存している。**外部から検証する方法を増やすこと**は、業界全体の情報の質を上げる方向に働く。",
+      "**注意点**:",
+      "**(1) 手法は査読を経ていない**: 個人研究者のブログ記事であり、方法論の妥当性は今後の議論に委ねられる",
+      "**(2) 推定であって観測ではない**: 訓練データそのものを見ているわけではなく、応答から逆算している",
+      "**(3) 各社からの応答はない**: 本稿執筆時点で、Anthropic・OpenAI いずれもこの報告について公式なコメントを出していない",
+      "**(4) 再現性の確認が必要**: 同じ手法で第三者が同じ結果を得られるかは未確認である",
+      "**AI News の見方**: この報告の価値は、個別の結論よりも**手法が公開されたこと**にある。誰でも同じ検証を試みられる形になっており、再現や反証を通じて精度が上がる余地がある。一方で、**推論を結論として流通させることの危うさ**も同時に示している。「Claude が GPT-4 を名乗った」という観察は事実として扱えるが、そこから「他社モデルで学習した」と結論するには距離がある。**モデルの来歴に関する情報が不足している現状**では、この種の外部検証は増えていくと見られるが、読む側は観察と解釈を分けて受け取る必要がある。AI News は、各社からの公式な応答や第三者による再現が出た段階で続報を扱う。"
+    ],
+    "primarySources": [
+      {
+        "title": "Exploring Claude/GPT Knowledge Cutoffs",
+        "site": "Shrivu Shankar (blog.sshh.io)",
+        "url": "https://blog.sshh.io/p/exploring-claudegpt-knowledge-cutoffs"
+      },
+      {
+        "title": "AI News Today, August 10 — Top AI Stories & Live Updates",
+        "site": "AI Weekly",
+        "url": "https://aiweekly.co/ai-news-today"
+      }
+    ]
   }
 };
 export default ARTICLES_BODY;

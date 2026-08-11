@@ -184,6 +184,19 @@ node scripts/generate-research-queries.mjs --format=markdown --priority=high
 - Hacker News の AI 関連トップストーリー
 - X/Twitter で話題の AI ツール・論文・デモ
 
+### Step 2.5: 公式 org リポジトリの巡回（必須・毎日）
+
+企業が GitHub の公式 org で静かに公開するツールは、企業名検索でも GitHub Trending でも
+Hacker News でも拾えないことがある。以下の org の新規・更新リポジトリを毎日確認する。
+
+- `github.com/microsoft/*`、`github.com/openai/*`、`github.com/anthropics/*`
+- `github.com/googleapis/*`、`github.com/google-deepmind/*`、`github.com/meta-llama/*`
+- `github.com/modelcontextprotocol/*`
+
+**実例**: `microsoft/skill-recorder`（2026年8月公開、画面録画からエージェントのスキルを生成）は、
+Tier 1 企業横断・GitHub Trending・Hacker News のいずれの系統でも検出できず、ユーザーの
+指摘で初めて把握した。スター数が伸びる前でも、公式 org からの公開は記事価値が高い。
+
 ### Step 3: Tier 2〜3 企業の調査
 
 - Tier 2（記事2〜4本の企業）: 毎日軽くチェック

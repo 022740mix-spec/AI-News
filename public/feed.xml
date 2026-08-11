@@ -5,8 +5,80 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-08-07T15:00:00Z</updated>
+  <updated>2026-08-11T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Meta が Muse Glimmer を公開 — 30B オープンウェイトのエージェント、コンシューマ GPU 1枚でローカル動作、無料</title>
+    <link rel="alternate" type="text/html" href="?a=meta-muse-glimmer-30b-local-open-weight-2026"/>
+    <id>tag:ai-tool-news.jp,2026:meta-muse-glimmer-30b-local-open-weight-2026</id>
+    <published>2026-08-10T15:00:00Z</published>
+    <updated>2026-08-10T15:00:00Z</updated>
+    <summary>Meta が8月10日、Muse Glimmer を公開した。30B のオープンウェイト・エージェント型モデルで、コンシューマ向け GPU 1枚でローカル動作し、無料で提供される。7月9日に Muse Spark 1.1 で初の有料モデルに踏み切り、8月5日に Muse Spark 1.2 と Muse Code を投入した Meta が、同じ月に無料のオープンウェイトも出した形になる。上位は有料クローズド、下位は無料オープンという二層構造が明確になった。Kimi K3・Qwen 3.8-Max・K-EXAONE 2.0 が数百B から数T の規模で競う中、30B でローカル完結という別方向の選択肢を示している。</summary>
+  </entry>
+  <entry>
+    <title>個人研究者が「訓練カットオフの実測」手法を公開 — Opus 5 は公称5月なのに知識は1月相当、Claude が GPT-4 を名乗る現象も報告</title>
+    <link rel="alternate" type="text/html" href="?a=training-cutoff-estimation-shrivu-shankar-2026"/>
+    <id>tag:ai-tool-news.jp,2026:training-cutoff-estimation-shrivu-shankar-2026</id>
+    <published>2026-08-10T15:00:00Z</published>
+    <updated>2026-08-10T15:00:00Z</updated>
+    <summary>独立研究者の Shrivu Shankar が8月10日、フロンティアモデルの訓練実行を外部から推定する手法を公開した。史実クイズ・自己申告日付・自己同定を組み合わせ、公称値ではない実際の知識状態を推定する。主な観察は、Anthropic の Opus 4.7 以降が 2025年12月下旬のカットオフを共有すること（同一訓練実行の可能性）、OpenAI GPT-5.6 系は 2026年2月下旬のチェックポイント周辺に集まること、Opus 5 は公称2026年5月カットオフだが知識状態は1月相当と乖離すること、そして Anthropic のモデルが時折 GPT-4 を名乗ることである。最後の点について研究者は前世代モデル出力での学習を示唆すると解釈するが、これは推論であって証明ではない。</summary>
+  </entry>
+  <entry>
+    <title>ByteDance が Seedance 2.5 の開発者 API を公開 — 30秒ワンショット生成・ネイティブ音声付き、参照入力を最大50件</title>
+    <link rel="alternate" type="text/html" href="?a=bytedance-seedance-2-5-developer-api-2026"/>
+    <id>tag:ai-tool-news.jp,2026:bytedance-seedance-2-5-developer-api-2026</id>
+    <published>2026-08-07T15:00:00Z</published>
+    <updated>2026-08-07T15:00:00Z</updated>
+    <summary>ByteDance が7月31日にモデルとクリエイター向け製品として Seedance 2.5 を投入し、8月7日に一般開発者向け API を開放した。最大30秒のワンショット動画生成に対応し、ネイティブ音声を同時生成、最大50件のマルチモーダル参照入力を受け付ける。動画生成は OpenAI Sora・Google Veo・Runway が主戦場だったが、中国勢が API 開放によって開発者エコシステムに本格参入した形になる。CapCut への統合も進んでいる。学習データの責任が事業者に帰属すると判断された7月31日のミュンヘン地裁 Suno 判決の直後という時期も重なる。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI が ChatGPT 無料枠を無制限化 — 既定モデルを GPT-5.6 Luna に、Sol は事実誤りを 68% 削減、思考量スライダーも追加</title>
+    <link rel="alternate" type="text/html" href="?a=openai-chatgpt-free-unlimited-luna-sol-update-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-chatgpt-free-unlimited-luna-sol-update-2026</id>
+    <published>2026-08-06T15:00:00Z</published>
+    <updated>2026-08-06T15:00:00Z</updated>
+    <summary>OpenAI が8月6日、ChatGPT を更新した。無料ユーザーの既定モデルを GPT-5.6 Luna に変更し、テキストチャットの回数制限を撤廃して無制限にした。無料枠にも「Think」ボタンが追加され、難しい質問で高い推論を使える。あわせて GPT-5.6 Sol を更新し、より短く直接的な回答と事実の正確性を改善。自社評価では「少なくとも1つの事実誤りを含む回答」が GPT-5.5 Instant 比で約 68% 減とされる。さらに回答ごとの思考量を選べるスライダーを新設した。7月30日の Luna 80% 値下げが、この無料開放の原資になった構図が読み取れる。</summary>
+  </entry>
+  <entry>
+    <title>【分析】「録画してスキル化」が3社出揃った — Codex・Claude・Microsoft の設計思想はどこが違うのか</title>
+    <link rel="alternate" type="text/html" href="?a=feature-record-to-skill-three-vendors-comparison-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-record-to-skill-three-vendors-comparison-2026</id>
+    <published>2026-08-06T15:00:00Z</published>
+    <updated>2026-08-06T15:00:00Z</updated>
+    <summary>わずか数週間のうちに、主要3社が「人間の作業を録画して、エージェントが再実行できる手順に変換する」同じ形の機能を投入した。OpenAI Codex のワークフロー自動化、7月21日の Claude Cowork「Record a Skill」、そして8月初旬の Microsoft skill-recorder である。プロンプトを書く時代から実演して見せる時代への移行が、業界横断で同時に起きている。本記事は3者の設計思想の違い——実装形態、変換エンジン、出力形式、共有モデル——を整理し、共通する設計原理（UI クリック再生ではなくネイティブツール優先と一例からの一般化）と、録画データのプライバシーという共通課題を検討する。</summary>
+  </entry>
+  <entry>
+    <title>【分析】Google が AI 部門を再編 — Hassabis が CEO を退き Alphabet チーフサイエンティストへ、Jeff Dean は27年で退社、株価 -4%</title>
+    <link rel="alternate" type="text/html" href="?a=feature-google-deepmind-reorg-hassabis-jeff-dean-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-google-deepmind-reorg-hassabis-jeff-dean-2026</id>
+    <published>2026-08-05T15:00:00Z</published>
+    <updated>2026-08-05T15:00:00Z</updated>
+    <summary>8月5日、Alphabet が Google DeepMind の体制刷新を発表した。Demis Hassabis が CEO を退任し、DeepMind 会長 兼 Alphabet チーフサイエンティストへ。日常運営を離れ AGI 戦略と AI の科学応用に注力する。後任の Koray Kavukcuoglu が SVP として Sundar Pichai 直属となり、Gemini のモデル開発・フロンティア研究・Gemini アプリ／開発者チームを統括する。同時にチーフサイエンティストの Jeff Dean が27年勤めた Google を退社した。Alphabet 株は約4%下落。7月16日に報じられた Gemini 3.5 Pro の遅延（株価 -3%）から3週間での組織改編であり、研究者が経営を離れ実務家が Gemini を握るという性格変化が起きている。</summary>
+  </entry>
+  <entry>
+    <title>Discovery Loop 始動 — Jeff Dean ら Google 中核4名が独立、「研究プロセスそのものの自動化」に挑む公益法人</title>
+    <link rel="alternate" type="text/html" href="?a=discovery-loop-jeff-dean-ai-science-startup-2026"/>
+    <id>tag:ai-tool-news.jp,2026:discovery-loop-jeff-dean-ai-science-startup-2026</id>
+    <published>2026-08-05T15:00:00Z</published>
+    <updated>2026-08-05T15:00:00Z</updated>
+    <summary>Jeff Dean、Sanjay Ghemawat（MapReduce・BigTable の共同開発者）、Oriol Vinyals（DeepMind VP・Gemini 共同リード）、Quoc Le（Google Brain 共同創業者）の4名が、Discovery Loop を設立した。独立した公益法人（public benefit corporation）として、消費者向け AI では競合せず、科学・工学の研究プロセス自体を自動化するシステムを構築する。着想から実験、評価、反復までを高速に回すことを狙い、まず ML 研究の自動化から着手して、ハードウェア設計・創薬・クリーンエネルギーへ展開する計画。Google は創業投資家かつ Cloud パートナーとして参加し初年度の計算資源も提供する。シードは Radical Ventures と Khosla Ventures がリード。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic が自社チップ設計に参入 — 私募チップ調達 総額 $71B は前例なし、Volta と $10B・ノルウェー 133MW も締結</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-in-house-chip-71b-volta-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-in-house-chip-71b-volta-2026</id>
+    <published>2026-08-05T15:00:00Z</published>
+    <updated>2026-08-05T15:00:00Z</updated>
+    <summary>Anthropic が自社 AI チップの設計チーム立ち上げを確認した。年間収益ランレート $30B と日々数十億トークンの処理という規模から、ハードウェアとモデルの協調設計でクエリ単価を下げる狙いがある。調達も過去最大級で、Google の Ironwood TPU をリースするための $36B の債務パッケージと、既に成立済みの $35B を合わせて総額約 $71B——単一企業の私募チップ調達として民間信用市場に前例のない規模になる。さらに8月4日には、NVIDIA 出資のクラウド新興 Volta と $10B・6年の計算資源契約（ノルウェーで 133MW、NVIDIA Vera Rubin を採用、2026年12月と2027年3月の2期稼働）を締結した。</summary>
+  </entry>
+  <entry>
+    <title>Meta が Muse Code を投入 — Muse Spark 1.2 駆動のターミナル型エージェント、worktree 分離と再生可能なイベントログで監査性を前面に</title>
+    <link rel="alternate" type="text/html" href="?a=meta-muse-code-muse-spark-1-2-2026"/>
+    <id>tag:ai-tool-news.jp,2026:meta-muse-code-muse-spark-1-2-2026</id>
+    <published>2026-08-05T15:00:00Z</published>
+    <updated>2026-08-05T15:00:00Z</updated>
+    <summary>Meta が8月5日、Muse Code（ベータ） を公開した。新モデル Muse Spark 1.2 が駆動するターミナル型コーディングエージェントで、大規模リポジトリでの計画立案・実装・検証を担う。特徴は永続サブエージェントの並列実行、worktree による分離、そしてクラッシュ耐性のあるイベントログで、生成したサブエージェント・ツール呼び出し・介入・キャンセルのすべてが観測および再生可能になっている。監査可能性を差別化軸に置いた点が Claude Code や OpenAI Codex にない切り口で、企業導入時のガバナンス要件に効く。料金は $1.25 / $4.25 で Muse Spark 1.1 から据え置き。</summary>
+  </entry>
   <entry>
     <title>【分析】2026年の AI 起因レイオフが17万人を突破 — ただし「AI を使う人ほど解雇されにくい」という逆向きのデータもある</title>
     <link rel="alternate" type="text/html" href="?a=feature-ai-layoffs-2026-170k-gallup-counter-data-2026"/>
@@ -38,6 +110,14 @@
     <published>2026-08-02T15:00:00Z</published>
     <updated>2026-08-02T15:00:00Z</updated>
     <summary>2026年8月初旬、AI 規制で対照的な2つの出来事が重なった。8月2日に EU AI Act の汎用AI（GPAI）に対する欧州委員会の執行権限が発効し、文書提出要求・評価実施・市場制限、そして全世界年間売上高の3%または1,500万ユーロのいずれか高い額の制裁金を科す権限が現実になった。一方8月1日、米国の大統領令 EO 14409 が定めた3つの成果物の期限が、何も公表されないまま経過している。連邦官報の告示も、NIST・CISA の刊行物も、OSTP の声明もない。ただし政府契約や重要インフラ市場を狙うラボにとって、枠組みへの参加は事実上の必須要件として機能し続ける。</summary>
+  </entry>
+  <entry>
+    <title>Microsoft が skill-recorder を OSS 公開 — 画面録画1回を GitHub Copilot CLI がスキル化、Windows ネイティブで Scout / Copilot Cowork / Copilot Studio に対応</title>
+    <link rel="alternate" type="text/html" href="?a=microsoft-skill-recorder-oss-windows-2026"/>
+    <id>tag:ai-tool-news.jp,2026:microsoft-skill-recorder-oss-windows-2026</id>
+    <published>2026-08-02T15:00:00Z</published>
+    <updated>2026-08-02T15:00:00Z</updated>
+    <summary>Microsoft が skill-recorder を GitHub（`microsoft/skill-recorder`）で公開した。画面上の作業セッションを1回録画すると、GitHub Copilot CLI が「意図＋順序付きの手順」に再構成し、Microsoft Scout・Copilot Cowork・Copilot Studio 向けの再利用可能な Skill（オンデマンド実行の SKILL.md）または Automation（スケジュール／トリガー実行）を生成する。記録対象はクリック、アプリとウィンドウの切り替え、訪問ページ、任意で音声ナレーション。`Ctrl+Shift+R` のグローバルショートカットと常時最前面のコントロールバーを備える。UI クリックの再生ではなくエージェントのネイティブツールを優先し、1つの例から一般化する設計になっている。</summary>
   </entry>
   <entry>
     <title>OpenAI の次期モデル Astra が数学の未解決問題を10件解決 — 27年開いていた非ソフィック群を初めて構成、全証明に Lean 4 証明書、費用は約2,000ドル</title>
