@@ -2835,7 +2835,7 @@ export const ARTICLES_META = [
     "id": "gemini-cli",
     "type": "review",
     "category": "cli",
-    "title": "Gemini CLI レビュー — Google の OSS CLI、Gemini 3.5 Flash + Antigravity 2.0 / Spark 連携対応版",
+    "title": "Gemini CLI レビュー — Google の OSS CLI、Gemini 3.5 Flash 対応。Pro 世代は GA 遅延が続く",
     "excerpt": "Google が Apache 2.0 で公開する OSS AI コーディングエージェント。基盤モデルは Gemini 3.5 Flash（I/O 2026 で GA、Terminal-Bench 2.1 76.2%、他社フロンティアの4倍速）。`npm install -g @google/gemini-cli` でインストール、`gemini` で起動。Plan Mode、サンドボックス（Docker/Podman）、MCP 対応、Google Search grounding が中核。5/19 の I/O 2026 で発表された Antigravity 2.0 エージェント基盤と Gemini Spark への連携も追加。Flash モデルは1日1,000リクエストまで無料、Pro は AI Pro/Ultra サブスクリプション必要。",
     "date": "2026-06-05",
     "newsDate": "2026-05-19",
@@ -2857,13 +2857,13 @@ export const ARTICLES_META = [
     "rating": 4,
     "reviewCategory": "cli",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-06-05"
+    "lastReviewed": "2026-08-11"
   },
   {
     "id": "openai-codex-agent",
     "type": "review",
     "category": "cli",
-    "title": "OpenAI Codex レビュー — クラウド版 + Codex CLI、GPT-5.5 + Daybreak + Workspace Agents 統合の最新版",
+    "title": "OpenAI Codex レビュー — クラウド版 + Codex CLI、GPT-5.6 Sol / Terra / Luna 対応、Free / Go プランでも利用可に",
     "excerpt": "ChatGPT 上のクラウド版と独立 Codex CLI の2形態で提供される OpenAI コーディングエージェント。**4M+ アクティブユーザー、基盤モデルは GPT-5.5**（4/23 リリース、Coding Index 半額 SOTA）。CLI は `curl -fsSL https://chatgpt.com/codex/install.sh | sh` または `npm install -g @openai/codex` でインストール、`codex` で起動。クラウド並列実行で PR を量産するワークフローが最大の武器。5/7 の Daybreak（Codex Security 拡張、GPT-5.5-Cyber 含む3層）、4/22 の Workspace Agents（Codex で動作、Slack/Salesforce/Notion 連動）も統合。料金は ChatGPT Plus $20 から、フル並列利用は Pro $200。",
     "date": "2026-06-05",
     "newsDate": "2026-05-07",
@@ -2889,7 +2889,7 @@ export const ARTICLES_META = [
     "rating": 4,
     "reviewCategory": "cli",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-06-05"
+    "lastReviewed": "2026-08-11"
   },
   {
     "id": "cursor-windsurf-merge",
@@ -2941,7 +2941,7 @@ export const ARTICLES_META = [
     "id": "claude-code",
     "type": "review",
     "category": "cli",
-    "title": "Claude Code レビュー — Anthropic の CLI エージェント、Opus 4.8 + Dynamic Workflows + agent view 対応版",
+    "title": "Claude Code レビュー — Anthropic の CLI エージェント、Opus 5 + effort トグル + Dynamic Workflows + agent view 対応版",
     "excerpt": "claude コマンド1つでリポジトリ全体を読み込み、バグ修正からテスト実行、コミットまで自律的に行う。基盤モデルが Opus 4.8 に更新され、SWE-bench Verified 88.6% に。研究プレビューで agent view（マルチセッションダッシュボード）と Dynamic Workflows（最大1,000サブエージェント並列）が追加され、長時間自律実行と大規模並列タスクが本格化。Fast Mode は前世代比3倍安い $10/$50 で、コストとレイテンシのトレードオフを明示的に選べる。",
     "date": "2026-06-05",
     "newsDate": "2026-05-28",
@@ -2963,7 +2963,7 @@ export const ARTICLES_META = [
     "rating": 4.5,
     "reviewCategory": "cli",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-06-05"
+    "lastReviewed": "2026-08-11"
   },
   {
     "id": "cursor-cli",
@@ -2991,13 +2991,13 @@ export const ARTICLES_META = [
     "rating": 4.5,
     "reviewCategory": "cli",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-06-05"
+    "lastReviewed": "2026-08-11"
   },
   {
     "id": "github-copilot-cli",
     "type": "review",
     "category": "cli",
-    "title": "GitHub Copilot CLI レビュー — `/fleet` 並列エージェント、Autopilot、`/model` 切替（Sonnet 4.5 / Opus 4.7-4.8 / GPT-5.5 / MAI-Code-1-Flash）対応",
+    "title": "GitHub Copilot CLI レビュー — `/fleet` 並列エージェント、Autopilot、`/model` 切替（Opus 5 / GPT-5.6 / MAI-Code-1-Flash）、AI Credits 従量課金対応",
     "excerpt": "GitHub（Microsoft 傘下）の Copilot coding agent ターミナル版。`npm install -g @github/copilot`（Node 22+）、`brew install copilot-cli`、`winget install GitHub.Copilot`、`gh copilot` の4経路でインストール、`copilot` で起動。既定モデル **Claude Sonnet 4.5**、`/model` で **Opus 4.7/4.8 / GPT-5.5 / Project Polaris (MAI-Code-1-Flash)** に切替可能。`/fleet` でサブエージェント並列実行、VS Code Autopilot mode で完全自律実行、`copilot mcp` で MCP サーバー管理。Build 2026（6/2-3）で Copilot Starter（無償）/ Pro / Enterprise 3階層への再編成も予告された。",
     "date": "2026-06-05",
     "newsDate": "2026-06-02",
@@ -3019,7 +3019,7 @@ export const ARTICLES_META = [
     "rating": 4.5,
     "reviewCategory": "cli",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-06-05"
+    "lastReviewed": "2026-08-11"
   },
   {
     "id": "aider",
@@ -3175,7 +3175,7 @@ export const ARTICLES_META = [
     "rating": 4.5,
     "reviewCategory": "editor",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-06-05"
+    "lastReviewed": "2026-08-11"
   },
   {
     "id": "windsurf",
@@ -4017,7 +4017,7 @@ export const ARTICLES_META = [
     "rating": 5,
     "reviewCategory": "model",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-07-07"
+    "lastReviewed": "2026-08-11"
   },
   {
     "id": "claude-fable-5-mythos-5-review",
@@ -4046,7 +4046,7 @@ export const ARTICLES_META = [
     "rating": 3.5,
     "reviewCategory": "model",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-07-07"
+    "lastReviewed": "2026-08-11"
   },
   {
     "id": "gpt-5-6-review",

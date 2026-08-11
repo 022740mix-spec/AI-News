@@ -792,7 +792,7 @@
     <summary>Microsoft が6月2日、開発者カンファレンス Build 2026 で Scout を発表した。OSS の AI エージェント基盤 OpenClaw をベースとする「autopilot（オートパイロット）」型の常時稼働エージェントで、ユーザーの代理として動き、固有の Entra アイデンティティで管理される。Teams からアクセスし、Outlook（メール）、OneDrive、SharePoint、Excel を横断して読み書きでき、外部アプリは MCP（Model Context Protocol）で接続可能。デモでは「Outlook の顧客メール読解 → SharePoint で注文番号照合 → Excel ダッシュボード更新 → Teams で確認返信」を1セッションで完遂した。ポリシーコンフォーマンス・システムによる継続的監査と監査証跡を内蔵。提供はプライベートプレビューから開始し、Intune ポリシー設定、opt-in 同意、GitHub Copilot ライセンスが前提条件。前日報道の Project Polaris（自社製コーディング AI）と並ぶ、Micro</summary>
   </entry>
   <entry>
-    <title>GitHub Copilot CLI レビュー — `/fleet` 並列エージェント、Autopilot、`/model` 切替（Sonnet 4.5 / Opus 4.7-4.8 / GPT-5.5 / MAI-Code-1-Flash）対応</title>
+    <title>GitHub Copilot CLI レビュー — `/fleet` 並列エージェント、Autopilot、`/model` 切替（Opus 5 / GPT-5.6 / MAI-Code-1-Flash）、AI Credits 従量課金対応</title>
     <link rel="alternate" type="text/html" href="?a=github-copilot-cli"/>
     <id>tag:ai-tool-news.jp,2026:github-copilot-cli</id>
     <published>2026-06-02T15:00:00Z</published>
@@ -840,7 +840,7 @@
     <summary>Anthropic が5月28日、フラッグシップモデル Claude Opus 4.8 を公開した。Opus 4.7（4/16 GA）から約6週間という短サイクルで、SWE-bench Verified 88.6%、SWE-bench Pro 69.2%、USAMO 2026 数学が 69.3% → 96.7%、1M トークン長コンテキストの GraphWalks F1 が 40.3% → 68.1% と大幅改善。価格は Opus 4.7 据え置きで $5/$25 per M トークン。新しい Fast Mode は 2.5倍高速・前世代比3倍安い $10/$50。Claude Code 向けには最大1,000の並列サブエージェントをオーケストレーションできる Dynamic Workflows（リサーチプレビュー）を導入し、Anthropic は「より鋭い判断力・進捗の honest な自己報告・長時間の自律実行」を新世代の重点に置く。提供は Anthropic API、Amazon Bedrock、Google Cloud Vertex AI、Microsoft Foundry で</summary>
   </entry>
   <entry>
-    <title>Claude Code レビュー — Anthropic の CLI エージェント、Opus 4.8 + Dynamic Workflows + agent view 対応版</title>
+    <title>Claude Code レビュー — Anthropic の CLI エージェント、Opus 5 + effort トグル + Dynamic Workflows + agent view 対応版</title>
     <link rel="alternate" type="text/html" href="?a=claude-code"/>
     <id>tag:ai-tool-news.jp,2026:claude-code</id>
     <published>2026-05-28T15:00:00Z</published>
@@ -880,7 +880,7 @@
     <summary>Google が5月19日からの Google I/O 2026 で 100以上の発表を行った。中心は Gemini 3.5 Flash の即時 GA — Terminal-Bench 2.1 で 76.2%、GDPval-AA 1656 Elo、MCP Atlas 83.6% を記録し、Flash クラスのコスト・速度で 3.1 Pro を超える性能を達成。新エージェント基盤 Antigravity 2.0 がデスクトップアプリとして全世界提供開始。Gemini Spark（パーソナルエージェント）は来週から AI Ultra 加入者向けにベータ展開。新しい AI Ultra プラン $100/月 にこれが含まれる。マルチモーダルの Gemini Omni、Samsung 製 Android XR 眼鏡、Veo / Lyria / Imagen / Nano Banana 2 の連携など、OS レベルから生成 AI まで広範に投入。Anthropic の Claude Opus 4.8（5/28）と並ぶ「5月後半の AI フロンティア集中発表週」となった。</summary>
   </entry>
   <entry>
-    <title>Gemini CLI レビュー — Google の OSS CLI、Gemini 3.5 Flash + Antigravity 2.0 / Spark 連携対応版</title>
+    <title>Gemini CLI レビュー — Google の OSS CLI、Gemini 3.5 Flash 対応。Pro 世代は GA 遅延が続く</title>
     <link rel="alternate" type="text/html" href="?a=gemini-cli"/>
     <id>tag:ai-tool-news.jp,2026:gemini-cli</id>
     <published>2026-05-19T15:00:00Z</published>
@@ -992,7 +992,7 @@
     <summary>OpenAI が5月7日、AI 開発・サイバー防衛・利用者保護にまたがる3つの大きな更新を一斉に発表した。①GPT-5.5-Cyber — 重要インフラを守るディフェンダー向けに、より許容範囲の広いサイバーセキュリティ特化モデルを Trusted Access for Cyber（TAC） プログラムで限定提供開始。②Trusted Contact — ChatGPT のオプション機能で、自傷リスクが自動検知＋人間レビューで「深刻」と判定された場合、ユーザーが事前に指定した成人連絡先へ SMS / メールで通知する。③新しい音声 AI モデルを API に追加 — リアルタイム音声インテリジェンスのレイヤーを刷新。Anthropic SpaceX 契約（5/6）の翌日に「サイバー × 安全 × 音声」の3軸で並行投入する形で、フロンティアモデル各社の競争は 能力ベンチマークから安全運用と業界別パッケージング へと軸足を移しつつある。</summary>
   </entry>
   <entry>
-    <title>OpenAI Codex レビュー — クラウド版 + Codex CLI、GPT-5.5 + Daybreak + Workspace Agents 統合の最新版</title>
+    <title>OpenAI Codex レビュー — クラウド版 + Codex CLI、GPT-5.6 Sol / Terra / Luna 対応、Free / Go プランでも利用可に</title>
     <link rel="alternate" type="text/html" href="?a=openai-codex-agent"/>
     <id>tag:ai-tool-news.jp,2026:openai-codex-agent</id>
     <published>2026-05-07T15:00:00Z</published>
