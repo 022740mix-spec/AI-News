@@ -6096,7 +6096,7 @@ const ARTICLES_BODY = {
     "body": [
       "AI 支援付きコードエディタの選択肢は、2026年前半の再編を経て **Cursor・Devin Desktop（旧 Windsurf）・VS Code + GitHub Copilot・Zed** の4つに整理された。いずれも AI 統合の深さ・エージェント機能・料金体系の3点で差が出る。**本記事は月次で見直しており、最終更新は2026年8月11日**。3月版からは資本関係・製品名・料金のすべてが変わっているため、以前の版を読んだ方も改めて確認してほしい。",
       "**Cursor** は **Anysphere** 社が開発する VS Code フォーク。[Cursor 3.x](?a=cursor-3-agent-first-workspace-2026) の **Agents Window** でローカル・worktree・クラウド VM・リモート SSH のエージェントを一画面で並列管理でき、Composer によるマルチファイル編集、Background Agent、Tab 補完がその下に並ぶ。独自モデル **Composer 2.5 / Sonic**（[Kimi K2.5 ベース + 独自 RL](?a=cursor-composer-2-kimi-2026)）に加えフロンティアモデルも選択可能。PR レビュー専用の **Bugbot** は5月に従量課金へ移行し、1 PR あたり平均 $1.00〜1.50 になった。プランは Pro $20 / Pro+ $60 / Ultra $200 / Teams Standard $40 per seat / Teams Premium $120 per seat。**2026年6月16日、SpaceX による $60B（全株式）の買収が発表され、Q3 2026 クローズ予定**（[→ 速報](?a=spacex-cursor-60b-acquisition-anysphere-2026)、[→ 市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。",
-      "**Devin Desktop（旧 Windsurf）** は、旧 Codeium の VS Code フォークを **Cognition**（自律エージェント Devin の開発元）が2025年7月に買収したもので、**2026年6月2日に Devin Desktop へブランド統合された**。中核の **Cascade** はタスクを段階的に分解し、各ステップの差分をプレビューしてから適用するフローで、大規模変更の安全性に定評がある。料金は[3月19日の改定](?a=windsurf-pricing-overhaul)でクレジット制から日次・週次クォータ制に移行し、Free / Pro $20 / Teams $40 per seat / Max $200 / Enterprise の構成。Pro が $15 から $20 になったことで **Cursor に対する価格優位は消滅**した。単体エディタというより、Devin 本体と組み合わせた一貫ワークフローの入口として位置付けるのが実態に近い。",
+      "**Devin Desktop（旧 Windsurf）** は、旧 Codeium の VS Code フォークを **Cognition**（自律エージェント Devin の開発元）が2025年7月に買収したもので、**2026年6月2日に Devin Desktop へブランド統合された**。中核エージェントは **Devin Local** で、Rust で書き直された Cascade の後継にあたる。**Cascade は2026年7月1日に提供終了しており**、現行の評価対象は Devin Local になる。Cascade 比でトークン効率が最大30%改善し、サブエージェントをネイティブに扱える。既存ユーザーは自動移行されたが、**CI やスクリプトから Cascade を明示的に呼んでいた場合は 7/1 までに Devin Local へ振り替える必要があった**。料金は[3月19日の改定](?a=windsurf-pricing-overhaul)でクレジット制から日次・週次クォータ制に移行し、Free / Pro $20 / Teams $40 per seat / Max $200 / Enterprise の構成。Pro が $15 から $20 になったことで **Cursor に対する価格優位は消滅**した。単体エディタというより、Devin 本体と組み合わせた一貫ワークフローの入口として位置付けるのが実態に近い。",
       "**VS Code + GitHub Copilot** は Microsoft / GitHub のエコシステム。エディタ本体は無料で、Copilot が AI 層を担う。Agent Mode がターミナル操作・ファイル編集を含むマルチステップタスクを自律実行し、Copilot Coding Agent は GitHub Issue を割り当てるだけで PR を自動作成する。モデルは Claude / GPT / Gemini に加え Microsoft 内製の **MAI-Code-1-Flash** を `/model` で切替可能（[→ Copilot CLI レビュー](?a=github-copilot-cli)）。**2026年6月1日から従量課金（AI Credits、1クレジット = $0.01）へ移行**し、各プランに月次クレジット枠が付く形になった。Free / Pro $10 / Pro+ $39 / Business $19 per seat / Enterprise $39 per seat。拡張機能エコシステムの規模と企業統制機能は依然として突出している。",
       "**Zed** は **Zed Industries** の Rust 製ネイティブエディタで、VS Code 系ではない唯一の選択肢。GPU レンダリングによる描画速度と、Agent Panel から外部エージェントを接続できる設計が特徴。Personal $0（編集予測 月2,000回まで、自前 API キー持込可）/ Pro $10 / Business $30 per seat。**AI 機能を自前の API キーだけで賄えるため、サブスクリプションを増やさずに AI エディタ体験を得たい場合の最有力**になる。一方、Composer 相当のマルチファイル自律編集の成熟度では先行3製品に及ばない。",
       "選び方の目安: エージェントの並列運用を最優先なら **Cursor**、既存の VS Code 環境と GitHub の統制を活かすなら **VS Code + Copilot**、Devin との一貫ワークフローを組むなら **Devin Desktop**、速度とコスト最小化なら **Zed**。企業で SSO・監査・IP 補償が必要なら Copilot Business / Enterprise が最も導入しやすい（[→ 企業導入チェックリスト](?a=ai-enterprise-legal-checklist-2026)）。各ツールの[料金詳細はこちら](?a=pricing-comparison-all-tools-2026-march)、CLI 側の比較は[CLI ツール横断比較](?a=cli-tools-comparison-2026-march)を参照。",
@@ -6104,7 +6104,8 @@ const ARTICLES_BODY = {
       "---",
       "**編集履歴**",
       "【訂正 2026-08-11】「Windsurf は2026年3月に Anysphere（Cursor 親会社）に買収された」「Cursor と Windsurf は同一親会社になった」という記述を削除しました。**この買収は事実ではありません。** Windsurf を買収したのは Cognition で、発表は2025年7月です。誤りの元になった記事は[取り下げ](?a=cursor-windsurf-merge)しました。",
-      "【追記 2026-08-11】月次見直しにより全面更新。(1) Windsurf の Devin Desktop へのブランド統合（6/2）、(2) SpaceX による Anysphere 買収の発表（6/16）、(3) GitHub Copilot の従量課金移行（6/1）と現行プラン、(4) Cursor 3.x / Agents Window / Composer 2.5 / Bugbot 従量課金、(5) 比較対象に Zed を追加、(6) 全ツールの現行料金を反映しました。旧版のモデル世代（Sonnet 4.6 / Opus 4.6 / GPT-5.4 / o4-mini）は現行世代に置き換えています。"
+      "【追記 2026-08-11】月次見直しにより全面更新。(1) Windsurf の Devin Desktop へのブランド統合（6/2）、(2) SpaceX による Anysphere 買収の発表（6/16）、(3) GitHub Copilot の従量課金移行（6/1）と現行プラン、(4) Cursor 3.x / Agents Window / Composer 2.5 / Bugbot 従量課金、(5) 比較対象に Zed を追加、(6) 全ツールの現行料金を反映しました。旧版のモデル世代（Sonnet 4.6 / Opus 4.6 / GPT-5.4 / o4-mini）は現行世代に置き換えています。",
+      "【訂正 2026-08-11】同日の更新時に「中核の Cascade は〜」と、**Cascade を現行の中核機能として記載していました**。**Cascade は2026年7月1日に提供終了**しており、現行は後継の Devin Local です。当該箇所と比較表を訂正しました。ブランド統合と運営元は確認したものの、機能レベルの世代交代を確認していなかったことによる誤りです。"
     ],
     "tables": [
       {
@@ -6135,7 +6136,7 @@ const ARTICLES_BODY = {
             "VS Code フォーク",
             "Pro $20",
             "Teams $40 per seat / Max $200 / Enterprise",
-            "Cascade フロー",
+            "Devin Local（Cascade の後継、7/1 に置換）",
             "段階的タスク分解・Devin 本体との連携"
           ],
           [
@@ -8783,13 +8784,14 @@ const ARTICLES_BODY = {
     "body": [
       "**Windsurf** はもともと **Codeium** というブランド名で AI コード補完サービスを提供していた企業が、エディタ製品としてリブランドしたものである。VS Code フォークをベースとし、コード補完だけでなく対話的なコード生成や編集支援まで一体化した環境を目指して開発された。2025年7月に **Cognition**（自律エージェント **Devin** の開発元）による買収が発表され、以降は同社傘下で運営されている。",
       "**2026年6月2日、Windsurf は Devin Desktop へブランド統合された。** Cognition は買収直後に「Windsurf は皆さんが知る Windsurf のままである」と表明していたが、約11か月でブランドを一本化した形になる。製品としてのエディタは継続しているため、既存ユーザーが直ちに使えなくなるわけではないが、**新規に検討する場合は「Windsurf」ではなく「Devin Desktop」として提供条件を確認する必要がある**。",
-      "中核機能は Cascade と呼ばれるマルチステップフローで、ユーザーの指示をタスク単位に分解し、ファイル読み取り・編集・ターミナル操作などを段階的に実行する。各ステップの差分をプレビューしてから適用する設計のため、大規模な変更でも意図しない書き換えを確認しやすい。補完機能は Codeium 時代から継続しており、反応速度に定評がある。",
+      "**中核エージェントは Devin Local に置き換わった。** かつての中核だった **Cascade は2026年7月1日に提供終了**し、6月2日のブランド統合と同時に既定となった Devin Local へ移行している。Devin Local は Rust による書き直しで、**Cascade 比でトークン効率が最大30%改善**し、サブエージェントをネイティブに扱える。既存ユーザーは自動移行されたが、**CI パイプラインやスクリプトから Cascade を明示的に呼び出していた場合は、7月1日までに振り替えが必要だった**。ユーザーの指示をタスク単位に分解し、各ステップの差分をプレビューしてから適用するという設計思想自体は Cascade から引き継がれている。補完機能は Codeium 時代から継続しており、反応速度に定評がある。",
       "料金体系は2026年3月19日の改定でクレジット制から日次・週次クォータ制に移行し、Free / Pro $20 / Teams $40 per seat / Max $200 / Enterprise（要問合せ）の構成になった（[→ 改定の詳細](?a=windsurf-pricing-overhaul)）。改定前の Pro は $15 だったため、**Cursor Pro（$20）に対する価格優位は消滅している**。年額払いで17〜20%の割引がある。",
       "選定上の論点は、**単体エディタとしての評価よりも、Cognition の製品戦略のなかでの位置付け**に移っている。Devin（自律エージェント）と Devin Desktop（エディタ）を組み合わせた一貫したワークフローを求めるなら合理的な選択肢である一方、エディタ単体で選ぶなら Cursor や VS Code + Copilot と機能・価格で正面から比較することになる。詳細は[AI エディタ横断比較](?a=editor-comparison-2026-march)を参照。",
       "---",
       "**編集履歴**",
       "【訂正 2026-08-11】「2026年3月に Anysphere（Cursor の親会社）による買収が完了し、現在は同社傘下で運営されている」という記述、および「Anysphere 傘下に入ったことで長期的には Cursor への技術統合が進む可能性がある」という段落を削除しました。**この買収は事実ではありません。** Windsurf を買収したのは Cognition で、発表は2025年7月です。誤りの元になった記事は[取り下げ](?a=cursor-windsurf-merge)しました。",
       "【追記 2026-08-11】2026年6月2日の Devin Desktop へのブランド統合、および3月19日の料金改定後の現行プラン（Free / Pro $20 / Teams $40 / Max $200）を反映しました。旧記述の「Pro プラン月額 15 ドル前後」は改定前の値です。",
+      "【訂正 2026-08-11】同日の更新時点で「中核機能は Cascade」と記載していましたが、**Cascade は2026年7月1日に提供終了**しており、現行の中核エージェントは後継の **Devin Local**（Rust による書き直し、Cascade 比でトークン効率が最大30%改善）です。当該段落を訂正しました。ブランド統合と運営元は確認したものの、**機能レベルの世代交代を確認していなかった**ことによる誤りです。",
       "【訂正 2026-08-11】総合評価を **4 → 3.5** に修正しました。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（3.65）と乖離していました。各軸の評価そのものは変更しておらず、**公表している算出方法どおりに総合スコアを計算し直した**ものです。"
     ],
     "primarySources": [

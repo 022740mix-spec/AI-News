@@ -801,7 +801,7 @@ const _AI_COMPANIES_UNSORTED = [
       tickers: [],
       detail: "非上場。Founders Fund 等が出資、2026年時点で評価額20億ドル超と報道",
     },
-    products: ["Devin", "Devin Desktop", "Windsurf", "Cascade"],
+    products: ["Devin", "Devin Desktop", "Devin Local", "Windsurf"],
     officialUrl: "https://devin.ai/",
     notes: [
       "「AIソフトウェアエンジニア」として話題を呼んだ自律型コーディングエージェント",
