@@ -104,13 +104,13 @@ function ModelComparisonSection() {
         </div>
       </nav>
       <BenchmarkChart data={MODEL_COMPARISON} title={activeBench.title} scoreKey={activeBench.key} />
-      <RatingExplainer categoryId="models" />
+      <BenchScoreExplainer />
       <div className="review-comparison-table-wrap">
         <table className="review-comparison-table">
           <thead>
             <tr>
               <th scope="col">モデル</th>
-              <th scope="col">評価</th>
+              <th scope="col">ベンチマーク総合</th>
               <th scope="col">概要</th>
             </tr>
           </thead>
@@ -119,7 +119,6 @@ function ModelComparisonSection() {
               <tr key={m.name} className="review-comparison-row" style={{ cursor: "default" }}>
                 <td className="review-comparison-name">{m.name}</td>
                 <td className="review-comparison-rating">
-                  <span className="review-stars">{renderStars(m.rating)}</span>
                   <span className="review-score">{m.rating}</span>
                 </td>
                 <td className="review-comparison-excerpt">{m.summary}</td>
@@ -129,6 +128,42 @@ function ModelComparisonSection() {
         </table>
       </div>
     </section>
+  );
+}
+
+/**
+ * モデル比較表のスコアが何を表すかを説明する。
+ *
+ * この表の数値は公開ベンチマークの結果に基づく「性能の総合値」であり、
+ * レビュー記事に表示される★（5軸の加重平均）とは別の尺度である。
+ * 両者は同じ画面に並ぶため、混同されないよう明示する必要がある。
+ */
+function BenchScoreExplainer() {
+  return (
+    <details className="benchmark-explainer">
+      <summary className="benchmark-explainer__summary">
+        「ベンチマーク総合」とは（タップで開く）
+      </summary>
+      <div className="benchmark-explainer__body">
+        <p>
+          この表の数値は、<strong>公開ベンチマークの結果に基づく性能の総合値</strong>です。
+          SWE-Bench、Terminal-Bench、OSWorld、BrowseComp、GPQA Diamond などのスコアを
+          もとに算出しています。
+        </p>
+        <p>
+          <strong>レビュー記事の★とは別の尺度です。</strong>
+          レビュー記事の★は、AI品質・使いやすさ・コスパ・拡張性・企業向けの5軸を
+          加重平均したもので、料金や提供条件、利用制限も評価に含みます。
+        </p>
+        <p>
+          このため、<strong>同じモデルでも2つの数値が食い違うことがあります</strong>。
+          たとえば性能は最高水準でも、料金が高い、利用上限が厳しいといった条件があれば、
+          レビュー記事の★は低くなります。
+          <strong>採用判断にはレビュー記事の★を、純粋な性能比較にはこの表を</strong>
+          参照してください。
+        </p>
+      </div>
+    </details>
   );
 }
 
@@ -146,6 +181,12 @@ function RatingExplainer({ categoryId }) {
           ))}
         </dl>
         <p>評価は公式ドキュメント・ベンチマーク・ユーザーレビューに基づき、編集部が判断しています。</p>
+        {categoryId === "models" ? (
+          <p>
+            なお、モデル比較表の「ベンチマーク総合」は<strong>性能のみを見た別の尺度</strong>です。
+            料金や利用制限を含むこの★とは値が食い違うことがあります。
+          </p>
+        ) : null}
       </div>
     </details>
   );
