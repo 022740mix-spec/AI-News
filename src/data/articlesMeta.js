@@ -62,7 +62,7 @@ export const ARTICLES_META = [
     "newsDate": "2026-06-02",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["Microsoft", "Build 2026", "Windows", "エージェント", "OSS"],
+    "tags": ["Microsoft", "Build 2026", "Windows", "エージェント", "オープンソース"],
     "coverImage": {
       "src": "logos/microsoft.svg",
       "alt": "Windows Agent Framework"
@@ -126,7 +126,7 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-20",
     "author": "AI News 編集部",
     "readTime": "7分",
-    "tags": ["中国", "Qwen", "Kimi", "Ernie", "オープンソース"],
+    "tags": ["中国AI", "Qwen", "Kimi", "Ernie", "オープンソース"],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "China AI Models May 2026"
@@ -174,7 +174,7 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-14",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["Anthropic", "M&A", "SDK", "開発者ツール", "戦略"],
+    "tags": ["Anthropic", "M&A", "SDK", "開発ツール", "戦略"],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Anthropic × Stainless"
@@ -206,7 +206,7 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-12",
     "author": "AI News 編集部",
     "readTime": "6分",
-    "tags": ["Anthropic", "Claude", "法務", "MCP", "プラグイン"],
+    "tags": ["Anthropic", "Claude", "法律", "MCP", "プラグイン"],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Claude for Legal"
@@ -318,7 +318,7 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-07",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["OpenAI", "ChatGPT", "セキュリティ", "安全性", "音声"],
+    "tags": ["OpenAI", "ChatGPT", "セキュリティ", "AI安全性", "音声"],
     "coverImage": {
       "src": "logos/openai.svg",
       "alt": "OpenAI 5/7 アップデート"
@@ -334,7 +334,7 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-06",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["Anthropic", "SpaceX", "Claude", "インフラ", "GPU"],
+    "tags": ["Anthropic", "SpaceX", "Claude", "AI インフラ", "GPU"],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Anthropic × SpaceX Colossus 1"
@@ -350,7 +350,7 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-05",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["OpenAI", "ChatGPT", "GPT-5.5", "ハルシネーション", "メモリ"],
+    "tags": ["OpenAI", "ChatGPT", "GPT-5", "ハルシネーション", "メモリ"],
     "coverImage": {
       "src": "logos/openai.svg",
       "alt": "GPT-5.5 Instant"
@@ -430,7 +430,7 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-24",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["DeepSeek", "オープンソース", "モデルリリース", "MoE", "中国"],
+    "tags": ["DeepSeek", "オープンソース", "モデルリリース", "MoE", "中国AI"],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "DeepSeek V4"
@@ -446,7 +446,7 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-23",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["OpenAI", "GPT-5.5", "モデルリリース", "エージェント", "GitHub Copilot"],
+    "tags": ["OpenAI", "GPT-5", "モデルリリース", "エージェント", "GitHub Copilot"],
     "coverImage": {
       "src": "logos/openai.svg",
       "alt": "OpenAI GPT-5.5"
@@ -542,7 +542,7 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-08",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["Meta", "Muse Spark", "モデルリリース", "クローズドソース", "ヘルスケア"],
+    "tags": ["Meta", "Muse", "モデルリリース", "オープンソース", "ヘルスケア"],
     "coverImage": {
       "src": "logos/meta.svg",
       "alt": "Meta Muse Spark"
@@ -574,7 +574,7 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-08",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["OpenAI", "安全性", "児童保護", "規制", "研究"],
+    "tags": ["OpenAI", "AI安全性", "児童保護", "規制", "研究"],
     "coverImage": {
       "src": "logos/openai.svg",
       "alt": "OpenAI Child Safety Blueprint"
@@ -676,8 +676,7 @@ export const ARTICLES_META = [
       "日本",
       "個人情報保護法",
       "規制",
-      "プライバシー",
-      "AI政策"
+      "プライバシー"
     ],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
@@ -719,7 +718,7 @@ export const ARTICLES_META = [
     "tags": [
       "Cursor",
       "エージェント",
-      "コードエディタ",
+      "エディタ",
       "バイブコーディング",
       "開発ツール"
     ],
@@ -761,7 +760,7 @@ export const ARTICLES_META = [
     "readTime": "4分",
     "tags": [
       "GitHub",
-      "Copilot",
+      "GitHub Copilot",
       "プライバシー",
       "データ学習",
       "開発ツール"
@@ -807,8 +806,7 @@ export const ARTICLES_META = [
       "Anthropic",
       "バイオテック",
       "買収",
-      "ヘルスケア",
-      "AI"
+      "ヘルスケア"
     ],
     "coverImage": {
       "src": "logos/anthropic.svg",
@@ -959,7 +957,7 @@ export const ARTICLES_META = [
     "readTime": "5分",
     "tags": [
       "Pika",
-      "動画生成AI",
+      "動画生成",
       "エージェント",
       "オープンソース",
       "ビデオ会議"
@@ -982,8 +980,8 @@ export const ARTICLES_META = [
     "tags": [
       "Microsoft",
       "音声認識",
-      "音声生成",
-      "画像生成AI",
+      "音声合成",
+      "画像生成",
       "Azure"
     ],
     "coverImage": {
@@ -1027,8 +1025,7 @@ export const ARTICLES_META = [
       "Google",
       "Gemini",
       "API",
-      "料金",
-      "課金"
+      "料金"
     ],
     "coverImage": {
       "src": "logos/gemini.svg",
@@ -1115,7 +1112,6 @@ export const ARTICLES_META = [
     "tags": [
       "セキュリティ",
       "LangChain",
-      "脆弱性",
       "エージェント",
       "CVE"
     ],
@@ -1135,7 +1131,7 @@ export const ARTICLES_META = [
     "author": "AI News 編集部",
     "readTime": "7分",
     "tags": [
-      "AI規制",
+      "規制",
       "アメリカ",
       "コロラド州",
       "プリエンプション",
@@ -1159,7 +1155,7 @@ export const ARTICLES_META = [
     "tags": [
       "Google",
       "Veo",
-      "動画生成AI",
+      "動画生成",
       "Google Workspace",
       "Vids",
       "アバター"
@@ -1368,10 +1364,8 @@ export const ARTICLES_META = [
     "tags": [
       "Mistral",
       "Voxtral",
-      "TTS",
       "音声合成",
-      "オープンソース",
-      "ボイスクローン"
+      "オープンソース"
     ],
     "coverImage": {
       "src": "logos/mistral.svg",
@@ -1414,7 +1408,7 @@ export const ARTICLES_META = [
       "Pinecone",
       "ベクトルDB",
       "RAG",
-      "無料枠",
+      "無料",
       "サーバーレス"
     ]
   },
@@ -1490,7 +1484,7 @@ export const ARTICLES_META = [
     "tags": [
       "画像生成",
       "API",
-      "開発者向け",
+      "開発ツール",
       "GPT Image",
       "Flux",
       "Midjourney",
@@ -1540,7 +1534,7 @@ export const ARTICLES_META = [
       "Ollama",
       "vLLM",
       "API",
-      "コスト",
+      "料金",
       "VRAM",
       "非エンジニア"
     ],
@@ -1563,7 +1557,7 @@ export const ARTICLES_META = [
     "tags": [
       "Cursor",
       "Composer 2",
-      "Kimi K2.5",
+      "Kimi",
       "Moonshot AI",
       "エディタ",
       "モデル",
@@ -1589,8 +1583,7 @@ export const ARTICLES_META = [
       "Google",
       "Agent Smith",
       "Antigravity",
-      "エージェント",
-      "自律実行"
+      "エージェント"
     ],
     "coverImage": {
       "src": "logos/google.svg",
@@ -1613,7 +1606,7 @@ export const ARTICLES_META = [
       "KAT-Coder",
       "モデル",
       "コーディング",
-      "中国"
+      "中国AI"
     ],
     "coverImage": {
       "src": "logos/kwai.svg",
@@ -1656,10 +1649,10 @@ export const ARTICLES_META = [
     "author": "AI News 編集部",
     "readTime": "3分",
     "tags": [
-      "Zhipu AI",
-      "GLM-5",
+      "Z.ai",
+      "GLM",
       "モデル",
-      "中国",
+      "中国AI",
       "オープンソース"
     ],
     "coverImage": {
@@ -1683,7 +1676,7 @@ export const ARTICLES_META = [
       "M2.7",
       "モデル",
       "自己進化",
-      "中国"
+      "中国AI"
     ],
     "heroScope": "none"
   },
@@ -1717,10 +1710,8 @@ export const ARTICLES_META = [
     "author": "AI News 編集部",
     "readTime": "5分",
     "tags": [
-      "特集",
       "シンギュラリティ",
       "Mythos",
-      "2026年",
       "AI安全性"
     ],
     "coverImage": {
@@ -1786,7 +1777,7 @@ export const ARTICLES_META = [
     "tags": [
       "Google",
       "Gemini",
-      "音声AI",
+      "音声",
       "リアルタイム",
       "Flash Live"
     ],
@@ -1913,7 +1904,7 @@ export const ARTICLES_META = [
       "Codex",
       "Gemini CLI",
       "Aider",
-      "Copilot"
+      "GitHub Copilot"
     ],
     "coverImage": {
       "src": "articles/cover-cli-tools.svg",
@@ -1938,7 +1929,7 @@ export const ARTICLES_META = [
       "Cursor",
       "Windsurf",
       "VS Code",
-      "Copilot"
+      "GitHub Copilot"
     ],
     "coverImage": {
       "src": "articles/cover-editor-ide.svg",
@@ -1965,7 +1956,7 @@ export const ARTICLES_META = [
       "Windsurf",
       "Codex",
       "Gemini CLI",
-      "Copilot",
+      "GitHub Copilot",
       "Aider"
     ],
     "coverImage": {
@@ -1990,7 +1981,7 @@ export const ARTICLES_META = [
       "おすすめ",
       "用途別",
       "初心者",
-      "Enterprise"
+      "エンタープライズ"
     ],
     "heroScope": "none",
     "lastReviewed": "2026-03-29"
@@ -2054,7 +2045,7 @@ export const ARTICLES_META = [
       "Git",
       "Claude Code",
       "Codex",
-      "Copilot",
+      "GitHub Copilot",
       "PR",
       "コードレビュー",
       "実用スキル"
@@ -2075,8 +2066,7 @@ export const ARTICLES_META = [
       "訴訟",
       "Anthropic",
       "OpenAI",
-      "EU AI Act",
-      "2026年Q1"
+      "EU AI Act"
     ],
     "coverImage": {
       "src": "articles/cover-regulation.svg",
@@ -2137,7 +2127,7 @@ export const ARTICLES_META = [
     "author": "AI News 編集部",
     "readTime": "10分",
     "tags": [
-      "Enterprise",
+      "エンタープライズ",
       "法律",
       "セキュリティ",
       "コンプライアンス",
@@ -2156,7 +2146,6 @@ export const ARTICLES_META = [
     "readTime": "12分",
     "tags": [
       "月刊まとめ",
-      "2026年3月",
       "エージェント",
       "M&A",
       "規制",
@@ -2177,10 +2166,9 @@ export const ARTICLES_META = [
     "readTime": "9分",
     "tags": [
       "週刊まとめ",
-      "2026年3月",
       "MCP v2",
       "ARC-AGI-3",
-      "Gemini 3.1 Pro",
+      "Gemini",
       "エージェント",
       "Claude"
     ],
@@ -2205,7 +2193,6 @@ export const ARTICLES_META = [
     "readTime": "7分",
     "tags": [
       "週刊まとめ",
-      "2026年3月",
       "OpenAI",
       "Cursor",
       "Windsurf",
@@ -2233,10 +2220,9 @@ export const ARTICLES_META = [
     "tags": [
       "ガイド",
       "メディア生成",
-      "画像",
-      "動画",
-      "音楽",
-      "特集"
+      "画像生成",
+      "動画生成",
+      "音楽生成"
     ]
   },
   {
@@ -2256,7 +2242,7 @@ export const ARTICLES_META = [
       "Mythos",
       "Capybara",
       "セキュリティ",
-      "業界動向",
+      "分析",
       "リーク"
     ],
     "coverImage": {
@@ -2477,7 +2463,7 @@ export const ARTICLES_META = [
       "ディクテーション",
       "Mac",
       "Windows",
-      "開発者向け"
+      "開発ツール"
     ],
     "ratings": {
       "AI品質": 4,
@@ -2503,7 +2489,7 @@ export const ARTICLES_META = [
     "tags": [
       "音声",
       "Whisper",
-      "STT",
+      "音声認識",
       "API",
       "プライバシー"
     ],
@@ -2547,8 +2533,7 @@ export const ARTICLES_META = [
       "Midjourney",
       "Flux",
       "Imagen",
-      "比較",
-      "2026年"
+      "比較"
     ]
   },
   {
@@ -2600,11 +2585,11 @@ export const ARTICLES_META = [
     "author": "AI News 編集部",
     "readTime": "7分",
     "tags": [
-      "動画",
+      "動画生成",
       "ディープフェイク",
       "C2PA",
       "ガバナンス",
-      "法務"
+      "法律"
     ]
   },
   {
@@ -2640,7 +2625,7 @@ export const ARTICLES_META = [
     "author": "AI News 編集部",
     "readTime": "10分",
     "tags": [
-      "動画",
+      "動画生成",
       "料金",
       "Veo",
       "Runway",
@@ -2723,7 +2708,7 @@ export const ARTICLES_META = [
     "tags": [
       "エディタ",
       "Cursor",
-      "サブエージェント",
+      "マルチエージェント",
       "速報"
     ],
     "coverImage": {
@@ -2827,7 +2812,7 @@ export const ARTICLES_META = [
     "tags": [
       "エディタ",
       "Windsurf",
-      "料金改定",
+      "料金",
       "速報"
     ]
   },
@@ -2844,7 +2829,7 @@ export const ARTICLES_META = [
     "tags": [
       "CLI",
       "Google",
-      "OSS",
+      "オープンソース",
       "Gemini"
     ],
     "ratings": {
@@ -2873,7 +2858,7 @@ export const ARTICLES_META = [
       "CLI",
       "OpenAI",
       "エージェント",
-      "GPT-5.5"
+      "GPT-5"
     ],
     "coverImage": {
       "src": "logos/codex.svg",
@@ -2905,7 +2890,7 @@ export const ARTICLES_META = [
     "tags": [
       "エディタ",
       "買収",
-      "業界動向"
+      "分析"
     ],
     "heroScope": "none"
   },
@@ -3006,8 +2991,8 @@ export const ARTICLES_META = [
     "tags": [
       "CLI",
       "GitHub",
-      "Copilot",
-      "Enterprise"
+      "GitHub Copilot",
+      "エンタープライズ"
     ],
     "ratings": {
       "AI品質": 5,
@@ -3033,7 +3018,7 @@ export const ARTICLES_META = [
     "readTime": "5分",
     "tags": [
       "CLI",
-      "OSS",
+      "オープンソース",
       "無料"
     ],
     "ratings": {
@@ -3110,7 +3095,7 @@ export const ARTICLES_META = [
     "readTime": "4分",
     "tags": [
       "CLI",
-      "OSS",
+      "オープンソース",
       "プライバシー"
     ],
     "ratings": {
@@ -3189,7 +3174,7 @@ export const ARTICLES_META = [
     "readTime": "5分",
     "tags": [
       "エディタ",
-      "無料プラン有り",
+      "無料",
       "買収"
     ],
     "ratings": {
@@ -3267,7 +3252,7 @@ export const ARTICLES_META = [
     "readTime": "3分",
     "tags": [
       "エディタ",
-      "OSS",
+      "オープンソース",
       "プライバシー"
     ],
     "ratings": {
@@ -3293,7 +3278,7 @@ export const ARTICLES_META = [
     "readTime": "3分",
     "tags": [
       "エディタ",
-      "OSS"
+      "オープンソース"
     ],
     "ratings": {
       "AI品質": 2,
@@ -3319,7 +3304,7 @@ export const ARTICLES_META = [
     "tags": [
       "エディタ",
       "無料",
-      "中国"
+      "中国AI"
     ],
     "ratings": {
       "AI品質": 3,
@@ -3409,7 +3394,7 @@ export const ARTICLES_META = [
       "Claude",
       "コンテキスト",
       "1Mトークン",
-      "料金改定",
+      "料金",
       "速報"
     ]
   },
@@ -3523,7 +3508,7 @@ export const ARTICLES_META = [
     "readTime": "6分",
     "tags": [
       "OpenAI",
-      "GPT-5.4",
+      "GPT-5",
       "mini",
       "nano",
       "モデル",
@@ -3563,9 +3548,9 @@ export const ARTICLES_META = [
       "Microsoft",
       "M365",
       "E7",
-      "Copilot",
+      "GitHub Copilot",
       "Claude",
-      "Enterprise",
+      "エンタープライズ",
       "料金"
     ],
     "coverImage": {
@@ -3590,7 +3575,7 @@ export const ARTICLES_META = [
       "ノーコード",
       "ローコード",
       "Dataverse",
-      "Enterprise",
+      "エンタープライズ",
       "バイブコーディング"
     ],
     "heroScope": "none"
@@ -3609,7 +3594,7 @@ export const ARTICLES_META = [
       "Supabase",
       "Azure SQL",
       "バックエンド",
-      "Enterprise",
+      "エンタープライズ",
       "比較",
       "Entra ID"
     ],
@@ -3651,10 +3636,9 @@ export const ARTICLES_META = [
       "Entra ID",
       "PostgreSQL",
       "Azure",
-      "Enterprise",
+      "エンタープライズ",
       "セキュリティ",
       "SharePoint",
-      "AI",
       "バックエンド"
     ],
     "heroScope": "none"
@@ -3711,9 +3695,9 @@ export const ARTICLES_META = [
       "プライバシー",
       "Claude Code",
       "Cursor",
-      "Copilot",
+      "GitHub Copilot",
       "Gemini CLI",
-      "Enterprise",
+      "エンタープライズ",
       "比較"
     ],
     "heroScope": "none",
@@ -3771,10 +3755,10 @@ export const ARTICLES_META = [
       "Anthropic",
       "Claude",
       "Mythos",
-      "サイバーセキュリティ",
+      "セキュリティ",
       "株式市場",
       "リーク",
-      "業界動向"
+      "分析"
     ]
   },
   {
@@ -3948,8 +3932,8 @@ export const ARTICLES_META = [
     "readTime": "5分",
     "tags": [
       "モデル",
-      "中国",
-      "OSS",
+      "中国AI",
+      "オープンソース",
       "MoE"
     ],
     "ratings": {
@@ -4033,7 +4017,7 @@ export const ARTICLES_META = [
       "モデル",
       "Anthropic",
       "Fable 5",
-      "Mythos 5",
+      "Mythos",
       "LLM"
     ],
     "ratings": {
@@ -4061,7 +4045,7 @@ export const ARTICLES_META = [
     "tags": [
       "モデル",
       "OpenAI",
-      "GPT-5.6",
+      "GPT-5",
       "Sol",
       "Terra",
       "Luna",
@@ -4093,9 +4077,8 @@ export const ARTICLES_META = [
     "tags": [
       "モデル",
       "Sakana AI",
-      "オーケストレーション",
-      "日本",
       "マルチエージェント",
+      "日本",
       "LLM"
     ],
     "ratings": {
@@ -4198,8 +4181,8 @@ export const ARTICLES_META = [
     "readTime": "4分",
     "tags": [
       "動画生成",
-      "中国",
-      "無料枠"
+      "中国AI",
+      "無料"
     ],
     "ratings": {
       "AI品質": 4,
@@ -4277,7 +4260,7 @@ export const ARTICLES_META = [
     "tags": [
       "画像生成",
       "フォトリアル",
-      "OSS"
+      "オープンソース"
     ],
     "ratings": {
       "AI品質": 4,
@@ -4379,7 +4362,7 @@ export const ARTICLES_META = [
     "readTime": "4分",
     "tags": [
       "音楽生成",
-      "OSS",
+      "オープンソース",
       "効果音"
     ],
     "ratings": {
@@ -4406,7 +4389,7 @@ export const ARTICLES_META = [
     "tags": [
       "エージェント",
       "汎用AI",
-      "中国"
+      "中国AI"
     ],
     "ratings": {
       "AI品質": 4,
@@ -4537,8 +4520,8 @@ export const ARTICLES_META = [
     "readTime": "5分",
     "tags": [
       "モデル",
-      "中国",
-      "OSS",
+      "中国AI",
+      "オープンソース",
       "推論",
       "MoE"
     ],
@@ -4565,8 +4548,8 @@ export const ARTICLES_META = [
     "readTime": "8分",
     "tags": [
       "モデル",
-      "中国",
-      "OSS",
+      "中国AI",
+      "オープンソース",
       "Alibaba"
     ],
     "ratings": {
@@ -4592,7 +4575,7 @@ export const ARTICLES_META = [
     "readTime": "4分",
     "tags": [
       "モデル",
-      "中国",
+      "中国AI",
       "Baidu",
       "マルチモーダル"
     ],
@@ -4622,7 +4605,7 @@ export const ARTICLES_META = [
       "買収",
       "エージェント",
       "Manus",
-      "業界動向"
+      "分析"
     ]
   },
   {
@@ -4640,7 +4623,7 @@ export const ARTICLES_META = [
       "Dario Amodei",
       "ポッドキャスト",
       "AGI",
-      "業界動向"
+      "分析"
     ]
   },
   {
@@ -4734,7 +4717,7 @@ export const ARTICLES_META = [
       "Lex Fridman",
       "ポッドキャスト",
       "エージェント",
-      "OSS"
+      "オープンソース"
     ]
   },
   {
@@ -4752,7 +4735,7 @@ export const ARTICLES_META = [
       "ポッドキャスト",
       "LLM",
       "スケーリング",
-      "中国",
+      "中国AI",
       "エージェント"
     ]
   },
@@ -4805,7 +4788,7 @@ export const ARTICLES_META = [
     "readTime": "6分",
     "tags": [
       "CLI",
-      "OSS",
+      "オープンソース",
       "マルチエージェント",
       "コミュニティ",
       "Claude Code"
@@ -4823,7 +4806,7 @@ export const ARTICLES_META = [
     "readTime": "5分",
     "tags": [
       "Microsoft",
-      "Copilot",
+      "GitHub Copilot",
       "エージェント",
       "Anthropic",
       "エンタープライズ"
@@ -4895,7 +4878,7 @@ export const ARTICLES_META = [
     "readTime": "5分",
     "tags": [
       "GitHub",
-      "Copilot",
+      "GitHub Copilot",
       "コードレビュー",
       "エージェント",
       "GA"
@@ -4968,7 +4951,7 @@ export const ARTICLES_META = [
     "readTime": "7分",
     "tags": [
       "Microsoft",
-      "Copilot",
+      "GitHub Copilot",
       "マルチモデル",
       "Researcher",
       "Claude",
@@ -5105,7 +5088,7 @@ export const ARTICLES_META = [
       "ハーバード大学",
       "セキュリティ",
       "オープンソース",
-      "AI コーディング",
+      "コーディング",
       "教育"
     ]
   },
@@ -5282,7 +5265,7 @@ export const ARTICLES_META = [
       "OpenAI",
       "資金調達",
       "Amazon",
-      "Nvidia",
+      "NVIDIA",
       "SoftBank",
       "IPO",
       "ChatGPT",
@@ -5303,7 +5286,7 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-10",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["Anthropic", "CoreWeave", "クラウドインフラ", "GPU", "NVIDIA"],
+    "tags": ["Anthropic", "CoreWeave", "AI インフラ", "GPU", "NVIDIA"],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Anthropic CoreWeave Deal"
@@ -5367,7 +5350,7 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-13",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["Stanford", "AI Index", "中国", "透明性", "環境"],
+    "tags": ["Stanford", "AI Index", "中国AI", "透明性", "環境"],
     "coverImage": {
       "src": "articles/cover-regulation.svg",
       "alt": "Stanford AI Index 2026"
@@ -5399,7 +5382,7 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-14",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["OpenAI", "GPT-5.4", "サイバーセキュリティ", "モデルリリース", "Anthropic"],
+    "tags": ["OpenAI", "GPT-5", "セキュリティ", "モデルリリース", "Anthropic"],
     "coverImage": {
       "src": "logos/openai.svg",
       "alt": "GPT-5.4-Cyber"
@@ -5462,7 +5445,7 @@ export const ARTICLES_META = [
     "date": "2026-04-06",
     "author": "AI News 編集部",
     "readTime": "7分",
-    "tags": ["週刊まとめ", "2026年4月", "OpenAI", "Cursor", "セキュリティ", "Claude"],
+    "tags": ["週刊まとめ", "OpenAI", "Cursor", "セキュリティ", "Claude"],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 3/30〜4/5"
@@ -5482,7 +5465,7 @@ export const ARTICLES_META = [
     "date": "2026-04-13",
     "author": "AI News 編集部",
     "readTime": "7分",
-    "tags": ["週刊まとめ", "2026年4月", "Anthropic", "Meta", "OpenAI", "GitHub Copilot"],
+    "tags": ["週刊まとめ", "Anthropic", "Meta", "OpenAI", "GitHub Copilot"],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 4/6〜4/12"
@@ -5502,7 +5485,7 @@ export const ARTICLES_META = [
     "date": "2026-04-20",
     "author": "AI News 編集部",
     "readTime": "7分",
-    "tags": ["週刊まとめ", "2026年4月", "Anthropic", "Opus 4.7", "Claude Design", "Apple"],
+    "tags": ["週刊まとめ", "Anthropic", "Claude", "Claude Design", "Apple"],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 4/13〜4/19"
@@ -5522,7 +5505,7 @@ export const ARTICLES_META = [
     "date": "2026-04-27",
     "author": "AI News 編集部",
     "readTime": "7分",
-    "tags": ["週刊まとめ", "2026年4月", "OpenAI", "Anthropic", "DeepSeek", "GPT-5.5"],
+    "tags": ["週刊まとめ", "OpenAI", "Anthropic", "DeepSeek", "GPT-5"],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 4/20〜4/26"
@@ -5542,7 +5525,7 @@ export const ARTICLES_META = [
     "date": "2026-05-04",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["週刊まとめ", "2026年4-5月", "Microsoft", "Meta", "決算", "規制"],
+    "tags": ["週刊まとめ", "Microsoft", "Meta", "決算", "規制"],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 4/27〜5/3"
@@ -5562,7 +5545,7 @@ export const ARTICLES_META = [
     "date": "2026-05-11",
     "author": "AI News 編集部",
     "readTime": "6分",
-    "tags": ["週刊まとめ", "2026年5月", "OpenAI", "Anthropic", "GPT-5.5", "音声API"],
+    "tags": ["週刊まとめ", "OpenAI", "Anthropic", "GPT-5", "音声"],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 5/4〜5/10"
@@ -5582,7 +5565,7 @@ export const ARTICLES_META = [
     "date": "2026-05-18",
     "author": "AI News 編集部",
     "readTime": "8分",
-    "tags": ["週刊まとめ", "2026年5月", "Anthropic", "Cursor", "Google", "会議AI"],
+    "tags": ["週刊まとめ", "Anthropic", "Cursor", "Google", "会議AI"],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 5/11〜5/17"
@@ -5602,7 +5585,7 @@ export const ARTICLES_META = [
     "date": "2026-05-25",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["週刊まとめ", "2026年5月", "Google", "I/O 2026", "中国モデル", "Qwen"],
+    "tags": ["週刊まとめ", "Google", "I/O 2026", "中国AI", "Qwen"],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 5/18〜5/24"
@@ -5622,7 +5605,7 @@ export const ARTICLES_META = [
     "date": "2026-06-01",
     "author": "AI News 編集部",
     "readTime": "6分",
-    "tags": ["週刊まとめ", "2026年5月", "Anthropic", "Opus 4.8", "Series H", "Microsoft"],
+    "tags": ["週刊まとめ", "Anthropic", "Claude", "Series H", "Microsoft"],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 5/25〜5/31"
@@ -5647,7 +5630,7 @@ export const ARTICLES_META = [
       "xAI",
       "Grok",
       "モデル",
-      "音声AI",
+      "音声",
       "MCP"
     ],
     "coverImage": {
@@ -5712,7 +5695,7 @@ export const ARTICLES_META = [
       "Anthropic",
       "Claude",
       "Fable 5",
-      "Mythos 5",
+      "Mythos",
       "モデル"
     ],
     "coverImage": {
@@ -5800,10 +5783,10 @@ export const ARTICLES_META = [
     "tags": [
       "NVIDIA",
       "SkillSpector",
-      "AIエージェント",
+      "エージェント",
       "セキュリティ",
       "MCP",
-      "OSS"
+      "オープンソース"
     ],
     "coverImage": {
       "src": "logos/nvidia.svg",
@@ -5844,8 +5827,8 @@ export const ARTICLES_META = [
     "author": "AI News 編集部",
     "readTime": "8分",
     "tags": [
-      "AI コーディング",
-      "市場分析",
+      "コーディング",
+      "分析",
       "SpaceX",
       "Cursor",
       "Cognition",
@@ -5913,7 +5896,6 @@ export const ARTICLES_META = [
     "tags": [
       "xAI",
       "Grok",
-      "Grok V9",
       "モデル",
       "Cursor"
     ],
@@ -5957,7 +5939,6 @@ export const ARTICLES_META = [
     "tags": [
       "Google",
       "Gemini",
-      "Gemini 3.5 Pro",
       "Deep Think",
       "Vertex AI"
     ],
@@ -5975,7 +5956,7 @@ export const ARTICLES_META = [
     "date": "2026-06-08",
     "author": "AI News 編集部",
     "readTime": "7分",
-    "tags": ["週刊まとめ", "2026年6月", "Microsoft", "Anthropic", "OpenAI", "xAI"],
+    "tags": ["週刊まとめ", "Microsoft", "Anthropic", "OpenAI", "xAI"],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 6/1〜6/7"
@@ -5995,7 +5976,7 @@ export const ARTICLES_META = [
     "date": "2026-06-15",
     "author": "AI News 編集部",
     "readTime": "6分",
-    "tags": ["週刊まとめ", "2026年6月", "Apple", "WWDC", "Anthropic", "Fable 5", "OpenAI"],
+    "tags": ["週刊まとめ", "Apple", "WWDC", "Anthropic", "Fable 5", "OpenAI"],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 6/8〜6/14"
@@ -6015,7 +5996,7 @@ export const ARTICLES_META = [
     "date": "2026-06-22",
     "author": "AI News 編集部",
     "readTime": "7分",
-    "tags": ["週刊まとめ", "2026年6月", "SpaceX", "Cursor", "xAI", "Anthropic", "Google"],
+    "tags": ["週刊まとめ", "SpaceX", "Cursor", "xAI", "Anthropic", "Google"],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 6/15〜6/21"
@@ -6040,7 +6021,6 @@ export const ARTICLES_META = [
     "tags": [
       "Sakana AI",
       "Sakana Fugu",
-      "オーケストレーション",
       "マルチエージェント",
       "日本",
       "モデル"
@@ -6062,7 +6042,7 @@ export const ARTICLES_META = [
     "readTime": "6分",
     "tags": [
       "OpenAI",
-      "GPT-5.6",
+      "GPT-5",
       "モデル",
       "TerminalBench",
       "Sol"
@@ -6132,7 +6112,7 @@ export const ARTICLES_META = [
       "Alibaba",
       "Claude",
       "蒸留",
-      "米中AI"
+      "米中"
     ],
     "coverImage": {
       "src": "logos/anthropic.svg",
@@ -6151,12 +6131,12 @@ export const ARTICLES_META = [
     "author": "AI News 編集部",
     "readTime": "7分",
     "tags": [
-      "市場分析",
+      "分析",
       "効率性",
       "DeepSeek",
       "Anthropic",
       "OpenAI",
-      "価格戦略"
+      "料金"
     ],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
@@ -6175,10 +6155,9 @@ export const ARTICLES_META = [
     "readTime": "5分",
     "tags": [
       "Z.ai",
-      "Zhipu",
-      "GLM-5.2",
-      "中国モデル",
-      "OSS",
+      "GLM",
+      "中国AI",
+      "オープンソース",
       "コーディング"
     ],
     "coverImage": {
@@ -6201,7 +6180,7 @@ export const ARTICLES_META = [
       "Nemotron",
       "音声認識",
       "ASR",
-      "OSS",
+      "オープンソース",
       "多言語"
     ],
     "coverImage": {
@@ -6221,7 +6200,6 @@ export const ARTICLES_META = [
     "readTime": "6分",
     "tags": [
       "Anthropic",
-      "Claude Sonnet",
       "Sonnet 5",
       "モデル",
       "エージェント"
@@ -6268,7 +6246,7 @@ export const ARTICLES_META = [
       "OpenClaw",
       "iOS",
       "Android",
-      "OSS",
+      "オープンソース",
       "エージェント",
       "パーソナルAI"
     ],
@@ -6312,7 +6290,7 @@ export const ARTICLES_META = [
     "readTime": "7分",
     "tags": [
       "Anthropic",
-      "Claude Fable 5",
+      "Fable 5",
       "輸出規制",
       "米国政府",
       "セキュリティ"
@@ -6335,7 +6313,7 @@ export const ARTICLES_META = [
     "readTime": "15分",
     "tags": [
       "Anthropic",
-      "Claude Fable 5",
+      "Fable 5",
       "プロンプト設計",
       "実用ガイド",
       "エージェント"
@@ -6381,9 +6359,9 @@ export const ARTICLES_META = [
     "tags": [
       "Meituan",
       "LongCat",
-      "中国モデル",
+      "中国AI",
       "国産チップ",
-      "OSS",
+      "オープンソース",
       "MoE"
     ],
     "coverImage": {
@@ -6403,8 +6381,8 @@ export const ARTICLES_META = [
     "readTime": "8分",
     "tags": [
       "Five Eyes",
-      "サイバーセキュリティ",
-      "agentic AI",
+      "セキュリティ",
+      "エージェント",
       "CISA",
       "NSA",
       "規制"
@@ -6517,7 +6495,7 @@ export const ARTICLES_META = [
     "readTime": "8分",
     "tags": [
       "国連",
-      "AI ガバナンス",
+      "ガバナンス",
       "Guterres",
       "Jensen Huang",
       "規制",
@@ -6541,7 +6519,7 @@ export const ARTICLES_META = [
     "readTime": "7分",
     "tags": [
       "Anthropic",
-      "Claude Mythos",
+      "Mythos",
       "Project Glasswing",
       "セキュリティ",
       "CVE",
@@ -6564,7 +6542,7 @@ export const ARTICLES_META = [
     "readTime": "5分",
     "tags": [
       "Anthropic",
-      "Claude Fable 5",
+      "Fable 5",
       "料金",
       "サブスクリプション",
       "クレジット"
@@ -6586,7 +6564,7 @@ export const ARTICLES_META = [
     "readTime": "6分",
     "tags": [
       "OpenAI",
-      "GPT-5.6",
+      "GPT-5",
       "Sol",
       "Terra",
       "Luna",
@@ -6609,7 +6587,7 @@ export const ARTICLES_META = [
     "readTime": "6分",
     "tags": [
       "xAI",
-      "Grok 4.5",
+      "Grok",
       "SpaceX",
       "モデル",
       "SuperGrok"
@@ -6630,7 +6608,7 @@ export const ARTICLES_META = [
     "author": "AI News 編集部",
     "readTime": "8分",
     "tags": [
-      "中国モデル",
+      "中国AI",
       "米中",
       "DeepSeek",
       "Z.ai",
@@ -6678,9 +6656,9 @@ export const ARTICLES_META = [
     "readTime": "5分",
     "tags": [
       "Meta",
-      "Muse Spark",
+      "Muse",
       "モデル",
-      "有料化",
+      "料金",
       "MSL"
     ],
     "coverImage": {
@@ -6701,7 +6679,7 @@ export const ARTICLES_META = [
     "tags": [
       "OpenAI",
       "Cerebras",
-      "GPT-5.6",
+      "GPT-5",
       "推論",
       "AI インフラ",
       "WSE-3"
@@ -6771,8 +6749,7 @@ export const ARTICLES_META = [
     "tags": [
       "DeepSeek",
       "中国AI",
-      "API料金",
-      "料金設計",
+      "料金",
       "モデル"
     ],
     "coverImage": {
@@ -6893,7 +6870,7 @@ export const ARTICLES_META = [
       "セキュリティ",
       "Red-teaming",
       "RL",
-      "Safety"
+      "AI安全性"
     ],
     "coverImage": {
       "src": "logos/openai.svg",
@@ -6916,7 +6893,7 @@ export const ARTICLES_META = [
       "教育",
       "K-12",
       "FERPA",
-      "無料化"
+      "無料"
     ],
     "coverImage": {
       "src": "logos/anthropic.svg",
@@ -6960,7 +6937,7 @@ export const ARTICLES_META = [
       "Project Perception",
       "セキュリティ",
       "モデルルーティング",
-      "Anthropic Mythos"
+      "Mythos"
     ],
     "coverImage": {
       "src": "articles/cover-server-infra.svg",
@@ -7096,8 +7073,7 @@ export const ARTICLES_META = [
       "DeepSeek",
       "中国AI",
       "GA",
-      "API料金",
-      "Dynamic Pricing"
+      "料金"
     ],
     "coverImage": {
       "src": "articles/cover-pricing.svg",
@@ -7188,9 +7164,8 @@ export const ARTICLES_META = [
     "readTime": "6分",
     "tags": [
       "OpenAI",
-      "GPT-5.6",
-      "API料金",
-      "価格競争",
+      "GPT-5",
+      "料金",
       "中国AI"
     ],
     "coverImage": {
@@ -7536,8 +7511,8 @@ export const ARTICLES_META = [
     "readTime": "7分",
     "tags": [
       "Meta",
-      "Muse Code",
-      "コーディングエージェント",
+      "Muse",
+      "コーディング",
       "開発ツール",
       "監査",
       "エージェント"
@@ -7560,8 +7535,8 @@ export const ARTICLES_META = [
     "tags": [
       "OpenAI",
       "ChatGPT",
-      "GPT-5.6",
-      "無料化",
+      "GPT-5",
+      "無料",
       "ユーザー体験"
     ],
     "coverImage": {
@@ -7582,7 +7557,7 @@ export const ARTICLES_META = [
     "tags": [
       "Microsoft",
       "skill-recorder",
-      "Copilot",
+      "GitHub Copilot",
       "Windows",
       "オープンソース",
       "自動化"
@@ -7628,7 +7603,7 @@ export const ARTICLES_META = [
     "readTime": "6分",
     "tags": [
       "Meta",
-      "Muse Glimmer",
+      "Muse",
       "オープンウェイト",
       "ローカルLLM",
       "エッジAI",
@@ -7673,7 +7648,7 @@ export const ARTICLES_META = [
     "author": "AI News 編集部",
     "readTime": "6分",
     "tags": [
-      "検証",
+      "分析",
       "ベンチマーク",
       "Anthropic",
       "OpenAI",
