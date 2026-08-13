@@ -1990,26 +1990,26 @@ export const ARTICLES_META = [
     "id": "ai-config-files-comprehensive-guide-2026",
     "type": "feature",
     "category": "cli",
-    "title": "AI 設定ファイル総合ガイド — CLAUDE.md・SKILL.md・AGENTS.md・.cursor/rules を一本化して理解する",
-    "excerpt": "Claude Code の CLAUDE.md、スキルファイル、Codex の AGENTS.md、Cursor の .cursor/rules、llms.txt。AI コーディングツールの「設定ファイル」が乱立する中、それぞれの役割・配置場所・書き方のベストプラクティスを1本にまとめた。",
+    "title": "AI 設定ファイル実務ガイド — ルールとスキルをどこに置き、どちらを優先させるか",
+    "excerpt": "CLAUDE.md・AGENTS.md・.cursor/rules・スキル。置き場所も優先順位もツールごとに違い、**個人・チーム・会社の管理層・外部パッケージ**が衝突したときの勝敗は逆転する。まず押さえるべきは、**ルールファイルが強制力を持たない**こと。Claude Code は公式ドキュメントで確認した4層と5層の構造、権限のマージ挙動、フックによる決定論的な強制までを整理し、他6ツールの優先順位と併用時の設計指針を示す。",
     "date": "2026-03-29",
     "author": "AI News 編集部",
-    "readTime": "12分",
+    "readTime": "18分",
     "tags": [
-      "CLAUDE.md",
-      "SKILL.md",
-      "AGENTS.md",
-      "Cursor",
-      "設定",
-      "チーム開発",
-      "実用スキル"
+        "CLAUDE.md",
+        "AGENTS.md",
+        "Cursor",
+        "設定",
+        "チーム開発",
+        "実用スキル",
+        "エンタープライズ"
     ],
     "coverImage": {
       "src": "articles/cover-cli-tools.svg",
       "alt": "ターミナル"
     },
     "heroScope": "none",
-    "lastReviewed": "2026-03-29"
+    "lastReviewed": "2026-08-11"
   },
   {
     "id": "mcp-comprehensive-guide-2026",
