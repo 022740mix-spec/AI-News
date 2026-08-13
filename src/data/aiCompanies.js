@@ -191,11 +191,16 @@ const _AI_COMPANIES_UNSORTED = [
     revenue: "非公開",
     stock: {
       listed: false,
-      detail: "未上場。Windsurf（旧 Codeium）の買収が報じられる",
+      detail:
+        "未上場。2026年1月の Series D で評価額 $29.3B。2026年6月16日に SpaceX による $60B（全株式）での買収を発表、Q3 2026 クローズ予定",
     },
-    products: ["Cursor", "Windsurf", "Cascade（統合予定）", "Skills"],
+    products: ["Cursor", "Cursor CLI", "Composer", "Bugbot", "Skills"],
     officialUrl: "https://cursor.com/",
-    notes: ["VS Code フォーク系 AI エディタ", "Windsurf は Codeium 由来ブランド"],
+    notes: [
+      "VS Code フォーク系 AI エディタ",
+      "独自モデル Composer 2.5 / Sonic を自社開発",
+      "SpaceX による買収成立後は SpaceX-xAI 系に組み込まれる見込み",
+    ],
   },
   {
     id: "deepgram",
@@ -666,8 +671,8 @@ const _AI_COMPANIES_UNSORTED = [
   },
   {
     id: "zhipu-ai",
-    name: "Zhipu AI（智譜AI）",
-    legalName: "Beijing Zhipu Huazhang Technology Co., Ltd.",
+    name: "Z.ai（旧 Zhipu AI・智譜AI）",
+    legalName: "Knowledge Atlas Technology Joint Stock Co., Ltd.",
     country: "中国",
     hq: "北京",
     foundedYear: 2019,
@@ -676,11 +681,16 @@ const _AI_COMPANIES_UNSORTED = [
     stock: {
       listed: true,
       tickers: [{ symbol: "2361", exchange: "HKEX", name: "普通株" }],
-      detail: "香港証券取引所に上場。GLM-5 発表後に株価34%上昇",
+      detail:
+        "2026年1月に香港証券取引所へ H 株上場。GLM-5 発表後に株価34%上昇。2026年6月1日に上海証券取引所 STAR Board への A 株上場を取締役会で決議",
     },
-    products: ["GLM-5", "GLM-5-Turbo", "ChatGLM", "BigModel API"],
-    officialUrl: "https://www.zhipuai.cn/en",
-    notes: ["清華大学からのスピンオフ", "Huawei Ascend チップで学習"],
+    products: ["GLM-5.2", "GLM-5", "GLM-5-Turbo", "ChatGLM", "BigModel API"],
+    officialUrl: "https://z.ai/",
+    notes: [
+      "清華大学からのスピンオフ",
+      "Huawei Ascend チップで学習",
+      "2025年7月に国際ブランドを Zhipu AI から Z.ai へ変更。英文社名も Z.AI Co., Ltd. へ変更する方針",
+    ],
   },
   {
     id: "minimax",
@@ -791,9 +801,12 @@ const _AI_COMPANIES_UNSORTED = [
       tickers: [],
       detail: "非上場。Founders Fund 等が出資、2026年時点で評価額20億ドル超と報道",
     },
-    products: ["Devin（AIソフトウェアエンジニア）"],
+    products: ["Devin", "Devin Desktop", "Devin Local", "Windsurf"],
     officialUrl: "https://devin.ai/",
-    notes: ["「AIソフトウェアエンジニア」として話題を呼んだ自律型コーディングエージェント"],
+    notes: [
+      "「AIソフトウェアエンジニア」として話題を呼んだ自律型コーディングエージェント",
+      "2025年7月に Windsurf（旧 Codeium）を買収。2026年6月2日に Devin Desktop へブランド統合",
+    ],
   },
   {
     id: "genspark",

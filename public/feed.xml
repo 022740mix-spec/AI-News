@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-08-11T15:00:00Z</updated>
+  <updated>2026-08-13T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>Meta が Muse Glimmer を公開 — 30B オープンウェイトのエージェント、コンシューマ GPU 1枚でローカル動作、無料</title>
@@ -1696,12 +1696,12 @@
     <summary>Web 開発、データ分析、企業導入、初心者など用途別に最適なツールの組み合わせを整理した。目的と予算に合わせて選べるマトリクス形式。</summary>
   </entry>
   <entry>
-    <title>AI 設定ファイル総合ガイド — CLAUDE.md・SKILL.md・AGENTS.md・.cursor/rules を一本化して理解する</title>
+    <title>AI 設定ファイル実務ガイド — ルールとスキルをどこに置き、どちらを優先させるか</title>
     <link rel="alternate" type="text/html" href="?a=ai-config-files-comprehensive-guide-2026"/>
     <id>tag:ai-tool-news.jp,2026:ai-config-files-comprehensive-guide-2026</id>
     <published>2026-03-29T15:00:00Z</published>
     <updated>2026-03-29T15:00:00Z</updated>
-    <summary>Claude Code の CLAUDE.md、スキルファイル、Codex の AGENTS.md、Cursor の .cursor/rules、llms.txt。AI コーディングツールの「設定ファイル」が乱立する中、それぞれの役割・配置場所・書き方のベストプラクティスを1本にまとめた。</summary>
+    <summary>CLAUDE.md・AGENTS.md・.cursor/rules・スキル。置き場所も優先順位もツールごとに違い、個人・チーム・会社の管理層・外部パッケージが衝突したときの勝敗は逆転する。まず押さえるべきは、ルールファイルが強制力を持たないこと。Claude Code は公式ドキュメントで確認した4層と5層の構造、権限のマージ挙動、フックによる決定論的な強制までを整理し、他6ツールの優先順位と併用時の設計指針を示す。</summary>
   </entry>
   <entry>
     <title>MCP（Model Context Protocol）総合ガイド — 仕様・サーバ選定・DB連携・ブラウザ操作・セキュリティ</title>

@@ -23,7 +23,13 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      # Cloudflare Web Analytics のサイト識別子を build 時に注入する。
+      # Secret 未設定なら空文字になり、src/analytics.js が beacon を
+      # 一切読み込まない（＝ 外部通信ゼロ）ため、未設定のままでも安全。
+      # この値は公開サイト識別子であり認証情報ではない（CLAUDE.md 参照）。
       - run: npm run build
+        env:
+          VITE_CF_BEACON_TOKEN: ${{ secrets.CF_BEACON_TOKEN }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

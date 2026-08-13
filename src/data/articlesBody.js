@@ -6096,7 +6096,7 @@ const ARTICLES_BODY = {
     "body": [
       "AI 支援付きコードエディタの選択肢は、2026年前半の再編を経て **Cursor・Devin Desktop（旧 Windsurf）・VS Code + GitHub Copilot・Zed** の4つに整理された。いずれも AI 統合の深さ・エージェント機能・料金体系の3点で差が出る。**本記事は月次で見直しており、最終更新は2026年8月11日**。3月版からは資本関係・製品名・料金のすべてが変わっているため、以前の版を読んだ方も改めて確認してほしい。",
       "**Cursor** は **Anysphere** 社が開発する VS Code フォーク。[Cursor 3.x](?a=cursor-3-agent-first-workspace-2026) の **Agents Window** でローカル・worktree・クラウド VM・リモート SSH のエージェントを一画面で並列管理でき、Composer によるマルチファイル編集、Background Agent、Tab 補完がその下に並ぶ。独自モデル **Composer 2.5 / Sonic**（[Kimi K2.5 ベース + 独自 RL](?a=cursor-composer-2-kimi-2026)）に加えフロンティアモデルも選択可能。PR レビュー専用の **Bugbot** は5月に従量課金へ移行し、1 PR あたり平均 $1.00〜1.50 になった。プランは Pro $20 / Pro+ $60 / Ultra $200 / Teams Standard $40 per seat / Teams Premium $120 per seat。**2026年6月16日、SpaceX による $60B（全株式）の買収が発表され、Q3 2026 クローズ予定**（[→ 速報](?a=spacex-cursor-60b-acquisition-anysphere-2026)、[→ 市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。",
-      "**Devin Desktop（旧 Windsurf）** は、旧 Codeium の VS Code フォークを **Cognition**（自律エージェント Devin の開発元）が2025年7月に買収したもので、**2026年6月2日に Devin Desktop へブランド統合された**。中核の **Cascade** はタスクを段階的に分解し、各ステップの差分をプレビューしてから適用するフローで、大規模変更の安全性に定評がある。料金は[3月19日の改定](?a=windsurf-pricing-overhaul)でクレジット制から日次・週次クォータ制に移行し、Free / Pro $20 / Teams $40 per seat / Max $200 / Enterprise の構成。Pro が $15 から $20 になったことで **Cursor に対する価格優位は消滅**した。単体エディタというより、Devin 本体と組み合わせた一貫ワークフローの入口として位置付けるのが実態に近い。",
+      "**Devin Desktop（旧 Windsurf）** は、旧 Codeium の VS Code フォークを **Cognition**（自律エージェント Devin の開発元）が2025年7月に買収したもので、**2026年6月2日に Devin Desktop へブランド統合された**。中核エージェントは **Devin Local** で、Rust で書き直された Cascade の後継にあたる。**Cascade は2026年7月1日に提供終了しており**、現行の評価対象は Devin Local になる。Cascade 比でトークン効率が最大30%改善し、サブエージェントをネイティブに扱える。既存ユーザーは自動移行されたが、**CI やスクリプトから Cascade を明示的に呼んでいた場合は 7/1 までに Devin Local へ振り替える必要があった**。料金は[3月19日の改定](?a=windsurf-pricing-overhaul)でクレジット制から日次・週次クォータ制に移行し、Free / Pro $20 / Teams $40 per seat / Max $200 / Enterprise の構成。Pro が $15 から $20 になったことで **Cursor に対する価格優位は消滅**した。単体エディタというより、Devin 本体と組み合わせた一貫ワークフローの入口として位置付けるのが実態に近い。",
       "**VS Code + GitHub Copilot** は Microsoft / GitHub のエコシステム。エディタ本体は無料で、Copilot が AI 層を担う。Agent Mode がターミナル操作・ファイル編集を含むマルチステップタスクを自律実行し、Copilot Coding Agent は GitHub Issue を割り当てるだけで PR を自動作成する。モデルは Claude / GPT / Gemini に加え Microsoft 内製の **MAI-Code-1-Flash** を `/model` で切替可能（[→ Copilot CLI レビュー](?a=github-copilot-cli)）。**2026年6月1日から従量課金（AI Credits、1クレジット = $0.01）へ移行**し、各プランに月次クレジット枠が付く形になった。Free / Pro $10 / Pro+ $39 / Business $19 per seat / Enterprise $39 per seat。拡張機能エコシステムの規模と企業統制機能は依然として突出している。",
       "**Zed** は **Zed Industries** の Rust 製ネイティブエディタで、VS Code 系ではない唯一の選択肢。GPU レンダリングによる描画速度と、Agent Panel から外部エージェントを接続できる設計が特徴。Personal $0（編集予測 月2,000回まで、自前 API キー持込可）/ Pro $10 / Business $30 per seat。**AI 機能を自前の API キーだけで賄えるため、サブスクリプションを増やさずに AI エディタ体験を得たい場合の最有力**になる。一方、Composer 相当のマルチファイル自律編集の成熟度では先行3製品に及ばない。",
       "選び方の目安: エージェントの並列運用を最優先なら **Cursor**、既存の VS Code 環境と GitHub の統制を活かすなら **VS Code + Copilot**、Devin との一貫ワークフローを組むなら **Devin Desktop**、速度とコスト最小化なら **Zed**。企業で SSO・監査・IP 補償が必要なら Copilot Business / Enterprise が最も導入しやすい（[→ 企業導入チェックリスト](?a=ai-enterprise-legal-checklist-2026)）。各ツールの[料金詳細はこちら](?a=pricing-comparison-all-tools-2026-march)、CLI 側の比較は[CLI ツール横断比較](?a=cli-tools-comparison-2026-march)を参照。",
@@ -6104,7 +6104,8 @@ const ARTICLES_BODY = {
       "---",
       "**編集履歴**",
       "【訂正 2026-08-11】「Windsurf は2026年3月に Anysphere（Cursor 親会社）に買収された」「Cursor と Windsurf は同一親会社になった」という記述を削除しました。**この買収は事実ではありません。** Windsurf を買収したのは Cognition で、発表は2025年7月です。誤りの元になった記事は[取り下げ](?a=cursor-windsurf-merge)しました。",
-      "【追記 2026-08-11】月次見直しにより全面更新。(1) Windsurf の Devin Desktop へのブランド統合（6/2）、(2) SpaceX による Anysphere 買収の発表（6/16）、(3) GitHub Copilot の従量課金移行（6/1）と現行プラン、(4) Cursor 3.x / Agents Window / Composer 2.5 / Bugbot 従量課金、(5) 比較対象に Zed を追加、(6) 全ツールの現行料金を反映しました。旧版のモデル世代（Sonnet 4.6 / Opus 4.6 / GPT-5.4 / o4-mini）は現行世代に置き換えています。"
+      "【追記 2026-08-11】月次見直しにより全面更新。(1) Windsurf の Devin Desktop へのブランド統合（6/2）、(2) SpaceX による Anysphere 買収の発表（6/16）、(3) GitHub Copilot の従量課金移行（6/1）と現行プラン、(4) Cursor 3.x / Agents Window / Composer 2.5 / Bugbot 従量課金、(5) 比較対象に Zed を追加、(6) 全ツールの現行料金を反映しました。旧版のモデル世代（Sonnet 4.6 / Opus 4.6 / GPT-5.4 / o4-mini）は現行世代に置き換えています。",
+      "【訂正 2026-08-11】同日の更新時に「中核の Cascade は〜」と、**Cascade を現行の中核機能として記載していました**。**Cascade は2026年7月1日に提供終了**しており、現行は後継の Devin Local です。当該箇所と比較表を訂正しました。ブランド統合と運営元は確認したものの、機能レベルの世代交代を確認していなかったことによる誤りです。"
     ],
     "tables": [
       {
@@ -6135,7 +6136,7 @@ const ARTICLES_BODY = {
             "VS Code フォーク",
             "Pro $20",
             "Teams $40 per seat / Max $200 / Enterprise",
-            "Cascade フロー",
+            "Devin Local（Cascade の後継、7/1 に置換）",
             "段階的タスク分解・Devin 本体との連携"
           ],
           [
@@ -6454,39 +6455,207 @@ const ARTICLES_BODY = {
   },
   "ai-config-files-comprehensive-guide-2026": {
     "body": [
-      "AI コーディングツールの普及に伴い、リポジトリに置く「AI 向け設定ファイル」が増えている。CLAUDE.md、SKILL.md、AGENTS.md、.cursor/rules、llms.txt — それぞれ目的と配置場所が異なるが、共通するのは「Git 管理下のテキストで AI の振る舞いを固定する」という設計思想。ここでは全ツールの設定ファイルを横断的に整理する。",
-      "**CLAUDE.md（Claude Code）**: AI が「常に読む」プロジェクトルール。三層構造で配置する。~/.claude/CLAUDE.md がグローバル設定（全プロジェクト共通）、プロジェクトルートの CLAUDE.md がプロジェクト設定、.claude/CLAUDE.md が個人設定（.gitignore 推奨）。書くべき内容は「linter で検出できないルール」— アーキテクチャ方針、命名規則、禁止パターン。肥大化するとコンテキストを圧迫するため、簡潔に保つことが公式で推奨されている。",
-      "**SKILL.md（Claude Code / Cursor）**: 「必要なときだけ読まれる」詳細な手順書。.claude/skills/ や .cursor/skills/ にフォルダ単位で配置し、YAML フロントマター（名前・説明・互換性）+ 本文（ワークフロー・チェックリスト・禁止事項）で構成する。CLAUDE.md は常時ロード、SKILL.md は段階的開示でトークンを抑える設計。==外部からスキルをコピーする場合は隠し文字やプロンプトインジェクションがないか必ず確認する==（[→ セキュリティリスクの詳細](?a=ai-autonomous-execution-risks-2026)）。",
-      "**AGENTS.md（Codex）**: OpenAI の Codex 向け設定ファイル。CLAUDE.md と同じ役割で、プロジェクトルートに配置する。コーディング規約、テストフレームワーク、デプロイ手順を記述。codex.md でも読み込まれる。",
-      "**.cursor/rules（Cursor）**: Cursor 専用の AI ルールファイル。使用言語、命名規則、禁止パターンを記述する。.cursorrules（プロジェクトルート）と .cursor/rules/（ディレクトリ単位）の2つの配置方法がある。",
-      "**llms.txt**: サイトやプロダクトの LLM 向け要約入口。検索クローラではなく AI が一次情報を辿るためのインデックスとして位置づけられている。自社ドキュメントの URL と要約の境界を明確にし、著作権・利用条件に沿った引用に留める。",
-      "**チーム運用のベストプラクティス**: (1) プロジェクトルートの設定ファイルは Git 管理してチーム共有。個人設定は .gitignore で分離。(2) ルール同士の矛盾を防ぐため、定期的な lint とオーナー明記。(3) 複数ツールを併用する場合、フロントマターの互換フィールドやディレクトリ規約を揃えると移行コストが下がる。(4) [MCP](?a=mcp-comprehensive-guide-2026) や [Hooks](?a=claude-code) と組み合わせることで AI の動作をより精密に制御できる。"
+      "AI コーディングエージェントに「こう書け」「これはするな」を伝える手段は、ツールごとに置き場所も名前も優先順位も違う。しかも**個人の設定・チームの設定・会社が強制する設定・外部から取り込んだパッケージの設定**が同時に存在し、衝突したときにどれが勝つかはツールによって逆転する。本記事は、その全体像と実務上の設計指針を一本にまとめたものである。",
+      "**確度についての断り**: 本記事のうち **Claude Code に関する記述は公式ドキュメントの本文を直接確認済み**である。他のツールについては、公式ドキュメントの所在は特定したものの、調査環境のネットワーク制約により本文を直接確認できていない箇所がある。該当箇所には都度その旨を記した。導入前には各ツールの公式ドキュメントで最終確認をしてほしい。",
+      "## 最初に押さえるべき前提 — ルールファイルは強制力を持たない",
+      "多くの失敗は、ここを取り違えたまま設計することから始まる。**CLAUDE.md や AGENTS.md は「コンテキストとして読ませるテキスト」であって、ツールが従うことを保証された設定ファイルではない。** Anthropic の公式ドキュメントはこれを明言している。曰く、Claude はこれらをコンテキストとして扱うのであって強制される設定ではなく、**Claude の判断に関わらず動作を止めたいなら PreToolUse フックを使え**、と。",
+      "同じ文書には「設定ファイルの規則はクライアントが強制するが、CLAUDE.md の指示は振る舞いを形づくるだけで強制層ではない」とも書かれている。つまり**「禁止事項をルールファイルに書いた」だけでは統制になっていない**。これは Claude Code に限った話ではなく、テキストをコンテキストに注入する方式のツールすべてに当てはまる。",
+      "この前提を踏まえると、設計は自然と2階建てになる。**振る舞いの誘導はルールファイルで、絶対に踏ませたくない一線は権限設定とフックで**。後半で具体的な分け方を示す。",
+      "## Claude Code — 4層のルールと5層の設定",
+      "Claude Code は指示ファイルと設定ファイルが別系統で、それぞれ層構造を持つ。まず指示ファイル（CLAUDE.md）から。",
+      "**重要なのは、これらが上書きではなく連結されること**である。作業ディレクトリから上へディレクトリツリーを遡って探索し、見つかったものはすべてコンテキストに入る。順序はファイルシステムのルート側から作業ディレクトリ側へで、**起動した場所に近いものほど後に読まれる**。各階層では `CLAUDE.md` の後に `CLAUDE.local.md` が追記される。作業ディレクトリより下のサブディレクトリにあるものは起動時ではなく、Claude がそのディレクトリのファイルを読んだ時点で読み込まれる。",
+      "**管理ポリシーの CLAUDE.md は個人の設定で除外できない。** `claudeMdExcludes` でモノレポの他チームのファイルを弾くことはできるが、管理ポリシー層だけは対象外になる。また `managed-settings.json` の `claudeMd` キーを使えば、別ファイルを配らずに管理設定の中へ直接内容を書き込める。",
+      "設定ファイル（`settings.json`）は指示ファイルとは別の層構造を持ち、優先順位は上から **管理 → コマンドライン引数 → ローカル（`.claude/settings.local.json`）→ プロジェクト（`.claude/settings.json`）→ ユーザー（`~/.claude/settings.json`）** となる。管理層のパスは macOS が `/Library/Application Support/ClaudeCode/managed-settings.json`、Linux と WSL が `/etc/claude-code/managed-settings.json`、Windows が `C:¥Program Files¥ClaudeCode¥managed-settings.json`。同じ場所の `managed-settings.d/` に置いたファイルは systemd と同じくアルファベット順にマージされる。MDM 経由なら macOS は `com.anthropic.claudecode` の管理対象環境設定、Windows は `HKLM¥SOFTWARE¥Policies¥ClaudeCode` レジストリキーが使える。",
+      "**そして権限だけは挙動が違う。** `permissions` の `allow` / `deny` / `ask` は**上書きではなくマージされる**。つまり管理層が置いた `deny` を、プロジェクト設定の `allow` で打ち消すことはできない。**開発者は上位層が設定した権限規則を削除できない**。さらに管理設定でのみ有効な `allowManagedPermissionRulesOnly` を立てると、ユーザー設定とプロジェクト設定は権限規則を一切定義できなくなる。**「絶対に踏ませたくない一線」を置く場所はここである。**",
+      "### `--add-dir` の落とし穴",
+      "共有ルールを別リポジトリで管理しているチームが最も踏みやすい罠がこれである。**`--add-dir` で追加したディレクトリの CLAUDE.md は、既定では読み込まれない。** 読ませるには環境変数が要る。",
+      "```bash\n# これだけでは共有リポジトリの CLAUDE.md は読まれない\nclaude --add-dir ../shared-config\n\n# 環境変数を立てて初めて読まれる\nCLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1 claude --add-dir ../shared-config\n```",
+      "この環境変数を立てると、追加ディレクトリの `CLAUDE.md`・`.claude/CLAUDE.md`・`.claude/rules/*.md`・`CLAUDE.local.md` が読まれるようになる。ただし `--setting-sources` から `local` を除外している場合、`CLAUDE.local.md` は対象外になる。",
+      "### 外部のルールを取り込む4つの入り口",
+      "**Claude Code は AGENTS.md を読まない。** 他のエージェントと共通のルールを1つのファイルで持ちたい場合は、`CLAUDE.md` から取り込む必要がある。取り込み手段は4つある。",
+      "**(1) `@path` インポート**: `CLAUDE.md` の中に `@AGENTS.md` と書けば、そのファイルが展開されて起動時にコンテキストへ入る。相対パス・絶対パスとも使え、相対パスは**インポート元のファイルからの相対**で解決される。再帰的なインポートは**最大4ホップ**まで。バッククォートで囲んだ `` `@README` `` は展開されず文字列として残る。**プロジェクトの指示ファイルから作業ディレクトリの外を参照するインポートは「外部インポート」として扱われ、初回に承認ダイアログが出る**。断ると以降は無効のままになる。共有プロジェクトに他人がコミットしたファイルから身を守るための仕組みで、ユーザー scope の指示ファイル内のインポートにはダイアログが出ない。",
+      "**(2) シンボリックリンク**: `ln -s AGENTS.md CLAUDE.md` でも同じことができる。ただし Windows でのシンボリックリンク作成には管理者権限か開発者モードが要るため、Windows 混在チームでは `@AGENTS.md` インポートのほうが確実である。",
+      "**(3) `/init`**: 既存の `.cursor/rules/`・`.cursorrules`・`.github/copilot-instructions.md` を読んで、生成する CLAUDE.md に反映する。環境変数 `CLAUDE_CODE_NEW_INIT=1` を立てると、さらに `AGENTS.md`・`.devin/rules/`・`.windsurf/rules/` または `.windsurfrules`・`.clinerules` も読む。",
+      "**(4) `/import`**: v2.1.213 以降で使える。他のコーディングエージェントの構成を Claude Code に取り込むもので、指示ファイルを対応する CLAUDE.md へ一度だけ追記するほか、**MCP サーバー・コマンド・サブエージェント・スキルまで引き継ぐ**。",
+      "### 常時読ませるものと、必要なときだけ読ませるもの",
+      "**CLAUDE.md は毎セッション全文がコンテキストに入る。** 公式は**1ファイル200行未満**を目安とし、長いほどコンテキストを消費して遵守率が下がると明記している。そして重要な点として、**`@path` インポートに分割しても総量は減らない**。インポート先も起動時に読み込まれるためで、これは整理のための手段であってコンテキスト削減の手段ではない。",
+      "量を減らしたいなら手段は2つある。**`.claude/rules/` に置いて `paths` フロントマターでファイル種別に紐づける**か、**Skills に移す**か。前者は該当するファイルを Claude が読んだときだけロードされ、後者は呼び出したときか関連すると判断されたときだけロードされる。長い手順書は Skills 側が向いている。",
+      "```yaml\n---\npaths:\n  - \"src/api/**/*.ts\"\n  - \"lib/**/*.{ts,tsx}\"\n---\n# API 開発のルール\n- すべてのエンドポイントに入力バリデーションを入れる\n```",
+      "なお `paths` を持たないルールは起動時に無条件で読まれ、`.claude/CLAUDE.md` と同じ優先度になる。**ユーザーレベルの `~/.claude/rules/` はプロジェクトのルールより先に読まれる**ため、プロジェクト側のほうが優先度が高い。",
+      "## 他ツールの置き場所と優先順位",
+      "ここから先は、**公式ドキュメントの本文を直接確認できていない**箇所を含む。所在は特定しているので、導入前に各社の公式ドキュメントで確認してほしい。",
+      "**OpenAI Codex** は実行ごとに指示チェーンを組み立てる。Codex ホーム（`CODEX_HOME`、既定は `~/.codex`）でまず `AGENTS.override.md`、無ければ `AGENTS.md` を読む。次にプロジェクトルートから作業ディレクトリまで各階層で同じ順に探す。**連結され、現在地に近いものが後ろに来て、競合時に優先される**。合計サイズには上限があり、既定は 32 KiB。**上限に達すると以降が読み込まれなくなる**ため、外部パッケージを大量に取り込むと自社のルールが切り落とされうる。管理層は Unix が `/etc/codex/managed_config.toml`、macOS は MDM の `com.openai.codex`。**管理デフォルトはユーザーの `config.toml` の上にマージされ、`--config` による上書きより強い。**",
+      "**GitHub Copilot（IDE）** は他ツールと様相が異なる。優先順位は上から Personal instructions → Repository → Organization とされ、**個人設定が組織設定より上位に置かれる**。しかし同時に公式は「**関連するすべての指示セットが Copilot に提供される**」とも述べており、**上位が下位を無効化する仕組みではない**。つまり順位はあっても打ち消しはされず、矛盾した指示は矛盾したまま両方渡る。パス別の `.github/instructions/**/*.instructions.md` はフロントマターの `applyTo` で対象を絞れる。組織のカスタム指示は Copilot Business / Enterprise 契約が要り、**適用範囲は GitHub 上の Copilot Chat・コードレビュー・クラウドエージェントに限られる**。IDE のチャットには効かない点に注意がいる。",
+      "**GitHub Copilot CLI** はさらに踏み込んで、**公式が「これらのファイル間の一般的な優先順位は定義しない。矛盾する指示は避けること」と明記している**。読むのは `$HOME/.copilot/copilot-instructions.md`、`.github/copilot-instructions.md`、`.github/instructions/**/*.instructions.md`、`AGENTS.md`、`CLAUDE.md`、`GEMINI.md` など。複数ファイルは結合され同一内容は重複排除される。`/instructions` コマンドで、実際に読み込まれたファイルの確認と個別の有効・無効化ができる。**Agent Skills は `.github/skills` / `.claude/skills` / `.agents/skills` を読む** — つまり Claude Code のディレクトリをそのまま読む。",
+      "**Cursor** の優先は **Team Rules → Project Rules → User Rules** で、先に来るものが勝つ。Project Rules は `.cursor/rules/` に `.mdc` 形式で置き、フロントマターの `description` / `globs` / `alwaysApply` で適用条件を制御する。**フロントマターを持てない `.md` はルールとして無視される**。Team Rules は Cursor のサーバーに保存されてダッシュボードから全メンバーへ同期され、**管理者がルールごとに「必須」に設定すると、メンバー側で無効化できない**。ルート直下の `.cursorrules` はレガシー扱いで、**現時点では動作するが将来廃止予定**である。`AGENTS.md` はネイティブに読むが、プレーン Markdown のため glob による適用制御は持たない。",
+      "**Devin Desktop（旧 Windsurf）** は `.devin/rules` を優先し、`.windsurf/rules` を後方互換のフォールバックとして読む。グローバルは `global_rules.md`。**文字数上限があり、ワークスペースのルールファイルが各12,000文字、グローバルが6,000文字、グローバルとワークスペースの合計が12,000文字**とされる。超過分はグローバルを優先して残りにワークスペースを詰める形になる。**なお中核エージェントの Cascade は2026年7月1日に提供終了しており**、現行は Rust で書き直された後継の Devin Local である。組織・エンタープライズレベルでルールを強制する仕組みについては、公開情報を確認できなかった。",
+      "**VS Code 上の Claude Code 拡張**は設定が2系統ある点に注意がいる。VS Code の拡張設定（`useTerminal`、`initialPermissionMode`、`respectGitIgnore` 等）は**拡張の挙動だけ**を制御するもので、AI の振る舞いそのものは `~/.claude/settings.json` が決める。公式はこの設定が拡張と CLI の間で共有されると明記している。",
+      "**その他のツール**も置き場所は異なる。Gemini CLI は `~/.gemini/GEMINI.md` とプロジェクト配下を**連結**し、具体的なものが優先される。Kiro は `.kiro/steering/`（`.amazonq/rules/` をレガシー互換で読む）、JetBrains Junie は `.junie/guidelines.md`、Cline は `.clinerules/`、Continue.dev は `.continue/rules/`、Aider は `CONVENTIONS.md`。**Cline は AGENTS.md・.cursorrules・.windsurfrules も検出してトグルで有効化できる**という、他にない可視化 UI を持つ。",
+      "## 4層が衝突したとき、ツールによって上下が逆転する",
+      "この記事の核心はここである。**「会社の規約を必ず守らせたい」という要件を、満たせるツールと満たせないツールがある。**",
+      "Claude Code・Codex・Cursor は管理層／チーム層が個人層に勝ち、**個人が外せない**。一方 GitHub Copilot は Personal instructions が Organization より上位に置かれ、しかも上位が下位を無効化しないため、**組織の指示と個人の指示が両方モデルに渡って矛盾したまま残る**。Devin Desktop には組織強制の公開情報がない。",
+      "**事故は「上位が下位を消す」ときではなく「両方渡って矛盾する」ときに起きる。** Copilot CLI の公式が「矛盾する指示は避けること」とわざわざ警告しているのは、この構造があるからである。同じ論点を複数の層に書いた時点で、どちらが効くかは不定になる。",
+      "## だから設計は「勝つ層に何を置くか」で決める",
+      "実務上の指針は4つに集約できる。",
+      "**(1) 絶対禁止事項は管理層へ。** Claude Code なら `permissions.deny` は開発者が削除できない。外部への送信、認証情報へのアクセス、`curl | sh` の類はここに置く。ルールファイルに「してはいけない」と書くのではなく、**踏めない状態にする**。",
+      "**(2) チーム規約はプロジェクト層へ。** Git 管理して差分レビューの対象にする。誰がいつ何を変えたかが追える状態を保つ。",
+      "**(3) 個人の好みは個人層へ。** 出力言語やレビューの粒度など、**矛盾しても害のないもの**だけを置く。",
+      "**(4) 矛盾しうる指示を複数層に書かない。** とくに Copilot 系は全部が渡るため、同じ論点を2箇所に書いた時点で挙動が不定になる。",
+      "加えて、**常時読まれるルールは短く保ち、長い手順書は Skills に移す**。Claude Code の公式が示す200行という目安は、遵守率とコンテキスト消費の両面から来ている。",
+      "## ルールを「守らせる」— フックと CI ゲート",
+      "前提で述べたとおり、ルールファイルは強制層ではない。決定論的に止めたいなら**フック**を使う。Claude Code の `PreToolUse` フックは、終了コード 2 を返すか、`permissionDecision` に `deny` を入れた JSON を返すことでツール呼び出しをブロックできる。",
+      "```bash\n#!/bin/bash\ninput=$(cat)\ncommand=$(jq -r '.tool_input.command' <<<\"$input\")\n\nif [[ \"$command\" == rm* ]]; then\n  echo \"Blocked: rm は許可されていません\" >&2\n  exit 2   # ツール呼び出しをブロック\nfi\nexit 0     # 判定なし。通常の権限フローへ\n```",
+      "**そして管理層のフックはユーザーが外せない。** ユーザー・プロジェクト・ローカル設定で `disableAllHooks` を立てても管理層のフックは無効化されず、無効化できるのは管理設定レベルで指定した場合だけである。さらに `allowManagedHooksOnly` を立てると、ユーザー・プロジェクト・プラグイン由来のフックを一律で遮断できる。フックの登録もまた**上書きではなくマージ**なので、下位層は自分のフックを足せるが上位層のものを消せない。",
+      "これは「**AI が出したものを、別のプロセスが独立に検証する**」という構図の、開発者の手元における実装形でもある。企業の開発標準の側でも同じ発想が現れていて、**富士通は生成層とは別に品質を監査する層を置き、NTTデータは内部統制のスリーラインモデルをソフトウェア開発に適用している**。各社の設計思想の比較は別記事で扱う。",
+      "## 外部パッケージを安全に取り込む",
+      "GitHub には、ルール・スキル・テンプレートをまとめたパッケージが多数公開されている。取り込みの手順は**順序を間違えないこと**が要点になる。",
+      "**(1) 入れる前に読む。** `npx <package>` は postinstall まで実行してしまうため、**インストール後に確認では遅い**。まず `git clone` してリポジトリの中身を読む。README だけでなく、実際に配置されるファイルを見る。",
+      "**(2) ライセンスを層で確認する。** 本体と収録資産でライセンスが違う例がある。取り込み元の資産ごとに条件が異なるリポジトリや、大半は OSS だが一部が source-available というものも存在する。",
+      "**(3) スキルのフロントマターと本文の危険操作を確認する。** `allowed-tools` の指定と、`curl | sh`・認証情報の参照・外部 URL への送信を grep する。",
+      "**(4) 目に見えない指示が埋まっていないか確認する。** プロンプトインジェクションの持ち込み経路になる。",
+      "**(5) 管理層で封じ込めてから入れる。** 外部パッケージが持ち込むルールより、管理層の禁止事項が上に来る構成を先に作る。Claude Code なら `strictKnownMarketplaces` や `blockedMarketplaces`、Codex なら管理側での hook 制限が使える。**順序が逆だと、封じ込める前に踏む。**",
+      "**(6) バージョンを固定し、更新時に差分をレビューする。** 一度読んで安全だったことは、次のバージョンの安全を意味しない。",
+      "**(7) 信頼できない入力に対して自動実行しない。** 外部コントリビュータからの PR を自動でエージェントに処理させる構成は、プロンプトインジェクションの標的になる。",
+      "## 複数ツール併用とモノレポの現実解",
+      "単一の真実を `AGENTS.md` に置くのが基本形になる。Cursor と Codex と Devin Desktop はネイティブに読み、Copilot CLI は結合して重複排除し、Claude Code は `@AGENTS.md` インポートかシンボリックリンクで取り込める。**ツール固有の適用制御**（Claude Code の `paths`、Cursor の `globs`、Copilot の `applyTo`）だけを各ツールのディレクトリに置く。",
+      "ただし **Devin Desktop には合計12,000文字の上限がある**ため、AGENTS.md を単一の真実に据える設計は上限に当たりやすい。上限を持つツールが混ざるチームでは、共通部分を絞り込む必要がある。",
+      "モノレポでは、サブディレクトリの `.claude/skills/` や `.cursor/skills/` を各パッケージに併置すると、必要になった時点だけロードされてトークンを食わない。他チームの CLAUDE.md が拾われて困る場合は、Claude Code の `claudeMdExcludes` でパスまたは glob で除外できる。**ただし管理ポリシー層だけは除外できない。**",
+      "## 効いているかを確認する",
+      "設定した後に「本当に読まれているか」を確かめる手段を持っておきたい。Claude Code なら `/context` を実行すると **Memory files** の一覧に実際にロードされたファイルが出る。`/memory` は場所の一覧と編集、`InstructionsLoaded` フックを使えば**どの指示ファイルがいつ、なぜ読み込まれたかをログに残せる**。GitHub Copilot CLI は `/instructions` で読み込まれたファイルの確認と個別の有効・無効化ができる。",
+      "運用としては、`.claude/settings.json` を Git 管理して変更履歴を残し、プラグインのバージョンを固定する。**この記録が、AI 事業者ガイドラインや ISO/IEC 42001 が求める開発過程のトレーサビリティに接続する。**",
+      "---",
+      "**編集履歴**",
+      "【全面改稿 2026-08-11】旧版（2026-03-29 公開）は本文7段落で、各ツールの優先順位・層の衝突時の挙動・エンタープライズ層・強制力の有無を扱っておらず、実務判断に必要な情報を欠いていました。全面的に書き直しています。",
+      "【訂正 2026-08-11】（誤）`.claude/CLAUDE.md` が個人設定 →（正）**`./CLAUDE.md` と `./.claude/CLAUDE.md` はどちらもプロジェクト設定**です。個人設定は `~/.claude/CLAUDE.md`、Git 管理外の個人ローカル設定は `./CLAUDE.local.md`。また旧版は三層構造と説明していましたが、正しくは**管理ポリシー層を含む4層**であり、各層は上書きではなく**連結**されます。",
+      "【訂正 2026-08-11】（誤）AGENTS.md は「codex.md でも読み込まれる」→（正）現行の公式ドキュメントでは、Codex ホームおよび各階層で `AGENTS.override.md` → `AGENTS.md` → 設定で指定した別名の順に探索されます。`codex.md` が既定のフォールバックであることは現行資料で確認できませんでした。",
+      "【訂正 2026-08-11】（誤）Cursor は「`.cursorrules` と `.cursor/rules/` の2つの配置方法がある」→（正）`.cursorrules` は**レガシー扱いで将来廃止予定**です。また旧版は Team Rules（管理者が必須指定でき、メンバーが無効化できない層）に触れていませんでした。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 7,
+        "caption": "Claude Code の CLAUDE.md 配置場所（広い scope から順に読み込まれ、連結される。公式ドキュメントで確認済み）",
+        "headers": [
+          "scope",
+          "場所",
+          "共有範囲",
+          "用途"
+        ],
+        "rows": [
+          [
+            "管理ポリシー",
+            "macOS: /Library/Application Support/ClaudeCode/CLAUDE.md ／ Linux・WSL: /etc/claude-code/CLAUDE.md ／ Windows: C:¥Program Files¥ClaudeCode¥CLAUDE.md",
+            "組織の全ユーザー",
+            "全社のコーディング規約、セキュリティ方針、コンプライアンス要件。**個人設定では除外できない**"
+          ],
+          [
+            "ユーザー",
+            "~/.claude/CLAUDE.md",
+            "自分（全プロジェクト）",
+            "個人の好み、ツールのショートカット"
+          ],
+          [
+            "プロジェクト",
+            "./CLAUDE.md または ./.claude/CLAUDE.md",
+            "チーム（バージョン管理経由）",
+            "アーキテクチャ、規約、共通ワークフロー"
+          ],
+          [
+            "ローカル",
+            "./CLAUDE.local.md",
+            "自分（当該プロジェクトのみ）",
+            "個人のサンドボックス URL、テストデータ。.gitignore 対象"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 39,
+        "caption": "4層が衝突したときの勝敗（Claude Code のみ公式ドキュメントで確認済み。他は公式の本文を直接確認できていない）",
+        "headers": [
+          "ツール",
+          "優先順位",
+          "個人が上位層を外せるか",
+          "注意点"
+        ],
+        "rows": [
+          [
+            "Claude Code",
+            "管理 → CLI引数 → ローカル → プロジェクト → ユーザー",
+            "**外せない**",
+            "permissions は上書きでなくマージ。allowManagedPermissionRulesOnly で下位層の権限定義を封じられる"
+          ],
+          [
+            "OpenAI Codex",
+            "階層を連結し、現在地に近いものが優先。管理デフォルトは --config より強い",
+            "**外せない**",
+            "合計 32 KiB の上限。超えると以降が読まれず、自社ルールが切られうる"
+          ],
+          [
+            "GitHub Copilot（IDE）",
+            "Personal → Repository → Organization",
+            "実質外せる（**個人が最上位**）",
+            "**上位が下位を無効化しない。全部渡る**。組織指示は GitHub 上のみで IDE チャットには効かない"
+          ],
+          [
+            "GitHub Copilot CLI",
+            "**公式が「優先順位を定義しない」と明記**",
+            "—",
+            "矛盾する指示を書かないことがユーザー側の責任になる。/instructions で確認可"
+          ],
+          [
+            "Cursor",
+            "Team Rules → Project Rules → User Rules",
+            "**外せない**（管理者が必須指定した場合）",
+            "フロントマターを持てない .md は無視される。.cursorrules は将来廃止予定"
+          ],
+          [
+            "Devin Desktop（旧 Windsurf）",
+            ".devin/rules を優先、.windsurf/rules は後方互換",
+            "組織強制の公開情報を確認できず",
+            "合計12,000文字の上限。超過分はグローバルを優先して詰める"
+          ]
+        ]
+      }
     ],
     "primarySources": [
       {
-        "title": "Claude Code — Memory (CLAUDE.md)",
+        "title": "Settings — Claude Code Docs",
+        "site": "Anthropic",
+        "url": "https://code.claude.com/docs/en/settings"
+      },
+      {
+        "title": "How Claude remembers your project（CLAUDE.md / auto memory）",
         "site": "Anthropic",
         "url": "https://code.claude.com/docs/en/memory"
       },
       {
-        "title": "Agent skills overview (SKILL.md)",
+        "title": "Hooks — Claude Code Docs",
         "site": "Anthropic",
-        "url": "https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills/overview"
+        "url": "https://code.claude.com/docs/en/hooks"
       },
       {
-        "title": "Introducing AGENTS.md",
-        "site": "OpenAI Developers",
-        "url": "https://developers.openai.com/codex/guides/agents-md/"
+        "title": "Skills — Claude Code Docs",
+        "site": "Anthropic",
+        "url": "https://code.claude.com/docs/en/skills"
       },
       {
-        "title": "Rules — Cursor docs",
+        "title": "Custom instructions with AGENTS.md",
+        "site": "OpenAI",
+        "url": "https://developers.openai.com/codex/guides/agents-md"
+      },
+      {
+        "title": "About customizing GitHub Copilot chat responses",
+        "site": "GitHub Docs",
+        "url": "https://docs.github.com/copilot/concepts/about-customizing-github-copilot-chat-responses"
+      },
+      {
+        "title": "Rules — Cursor Docs",
         "site": "Cursor",
         "url": "https://cursor.com/docs/context/rules"
       },
       {
-        "title": "llms.txt standard",
-        "site": "llmstxt.org",
-        "url": "https://llmstxt.org/"
+        "title": "Provide context with GEMINI.md files",
+        "site": "Google",
+        "url": "https://google-gemini.github.io/gemini-cli/docs/cli/gemini-md.html"
       }
     ]
   },
@@ -8783,13 +8952,14 @@ const ARTICLES_BODY = {
     "body": [
       "**Windsurf** はもともと **Codeium** というブランド名で AI コード補完サービスを提供していた企業が、エディタ製品としてリブランドしたものである。VS Code フォークをベースとし、コード補完だけでなく対話的なコード生成や編集支援まで一体化した環境を目指して開発された。2025年7月に **Cognition**（自律エージェント **Devin** の開発元）による買収が発表され、以降は同社傘下で運営されている。",
       "**2026年6月2日、Windsurf は Devin Desktop へブランド統合された。** Cognition は買収直後に「Windsurf は皆さんが知る Windsurf のままである」と表明していたが、約11か月でブランドを一本化した形になる。製品としてのエディタは継続しているため、既存ユーザーが直ちに使えなくなるわけではないが、**新規に検討する場合は「Windsurf」ではなく「Devin Desktop」として提供条件を確認する必要がある**。",
-      "中核機能は Cascade と呼ばれるマルチステップフローで、ユーザーの指示をタスク単位に分解し、ファイル読み取り・編集・ターミナル操作などを段階的に実行する。各ステップの差分をプレビューしてから適用する設計のため、大規模な変更でも意図しない書き換えを確認しやすい。補完機能は Codeium 時代から継続しており、反応速度に定評がある。",
+      "**中核エージェントは Devin Local に置き換わった。** かつての中核だった **Cascade は2026年7月1日に提供終了**し、6月2日のブランド統合と同時に既定となった Devin Local へ移行している。Devin Local は Rust による書き直しで、**Cascade 比でトークン効率が最大30%改善**し、サブエージェントをネイティブに扱える。既存ユーザーは自動移行されたが、**CI パイプラインやスクリプトから Cascade を明示的に呼び出していた場合は、7月1日までに振り替えが必要だった**。ユーザーの指示をタスク単位に分解し、各ステップの差分をプレビューしてから適用するという設計思想自体は Cascade から引き継がれている。補完機能は Codeium 時代から継続しており、反応速度に定評がある。",
       "料金体系は2026年3月19日の改定でクレジット制から日次・週次クォータ制に移行し、Free / Pro $20 / Teams $40 per seat / Max $200 / Enterprise（要問合せ）の構成になった（[→ 改定の詳細](?a=windsurf-pricing-overhaul)）。改定前の Pro は $15 だったため、**Cursor Pro（$20）に対する価格優位は消滅している**。年額払いで17〜20%の割引がある。",
       "選定上の論点は、**単体エディタとしての評価よりも、Cognition の製品戦略のなかでの位置付け**に移っている。Devin（自律エージェント）と Devin Desktop（エディタ）を組み合わせた一貫したワークフローを求めるなら合理的な選択肢である一方、エディタ単体で選ぶなら Cursor や VS Code + Copilot と機能・価格で正面から比較することになる。詳細は[AI エディタ横断比較](?a=editor-comparison-2026-march)を参照。",
       "---",
       "**編集履歴**",
       "【訂正 2026-08-11】「2026年3月に Anysphere（Cursor の親会社）による買収が完了し、現在は同社傘下で運営されている」という記述、および「Anysphere 傘下に入ったことで長期的には Cursor への技術統合が進む可能性がある」という段落を削除しました。**この買収は事実ではありません。** Windsurf を買収したのは Cognition で、発表は2025年7月です。誤りの元になった記事は[取り下げ](?a=cursor-windsurf-merge)しました。",
       "【追記 2026-08-11】2026年6月2日の Devin Desktop へのブランド統合、および3月19日の料金改定後の現行プラン（Free / Pro $20 / Teams $40 / Max $200）を反映しました。旧記述の「Pro プラン月額 15 ドル前後」は改定前の値です。",
+      "【訂正 2026-08-11】同日の更新時点で「中核機能は Cascade」と記載していましたが、**Cascade は2026年7月1日に提供終了**しており、現行の中核エージェントは後継の **Devin Local**（Rust による書き直し、Cascade 比でトークン効率が最大30%改善）です。当該段落を訂正しました。ブランド統合と運営元は確認したものの、**機能レベルの世代交代を確認していなかった**ことによる誤りです。",
       "【訂正 2026-08-11】総合評価を **4 → 3.5** に修正しました。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（3.65）と乖離していました。各軸の評価そのものは変更しておらず、**公表している算出方法どおりに総合スコアを計算し直した**ものです。"
     ],
     "primarySources": [
@@ -12185,9 +12355,9 @@ const ARTICLES_BODY = {
         "url": "https://x.com/bcherny"
       },
       {
-        "title": "claude-code v2.1.91 diff analysis",
+        "title": "claude-code-changelog（Claude Code のプロンプト・feature flag 追跡）",
         "site": "GitHub",
-        "url": "https://github.com/marckrenn/claude-code-source-and-prompt-diff-tracker"
+        "url": "https://github.com/marckrenn/claude-code-changelog"
       }
     ]
   },
@@ -12816,9 +12986,9 @@ const ARTICLES_BODY = {
         "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q1/press-release-webcast"
       },
       {
-        "title": "Agent 365: A new way to manage your AI agents",
-        "site": "Microsoft",
-        "url": "https://www.microsoft.com/en-us/microsoft-cloud/blog/2026/05/01/agent-365-ga/"
+        "title": "Microsoft Agent 365, now generally available, expands capabilities and integrations",
+        "site": "Microsoft Security Blog",
+        "url": "https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/"
       }
     ]
   },

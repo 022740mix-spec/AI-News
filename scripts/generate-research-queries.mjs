@@ -138,14 +138,28 @@ const hotTags = Object.entries(tagCounts)
   .map(([tag, count]) => ({ tag, count }));
 
 // ── 検索クエリ生成 ──
+// 企業名・プロダクト名から、検索語として不要な注記を落とす。
+// aiCompanies.js の name / products には「Tongyi（通義プラットフォーム）」
+// 「GitHub（子会社）」のような編集上の注記が入っている。これをそのまま
+// 検索クエリにすると和文の括弧書きがノイズになり、ヒット率が落ちる。
+function toSearchTerm(raw) {
+  return raw
+    .replace(/[（(][^）)]*[）)]/g, "") // 全角・半角の括弧書きを除去
+    .replace(/ \/ .+$/, "") // 「A / B」形式は先頭のみ
+    .replace(/ 等$/, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function generateCompanyQueries(company, tier) {
   const queries = [];
   const name = company.name;
+  const searchName = toSearchTerm(name);
   const products = (company.products || []).slice(0, 5); // 上位5プロダクトに絞る
 
   // メインクエリ: 企業名 + "announcement" or "release"
   queries.push({
-    query: `${name} AI announcement ${new Date().toISOString().slice(0, 7)}`,
+    query: `${searchName} AI announcement ${new Date().toISOString().slice(0, 7)}`,
     tier,
     type: "company",
     source: name,
@@ -153,7 +167,8 @@ function generateCompanyQueries(company, tier) {
 
   // プロダクト個別クエリ
   for (const product of products) {
-    const cleanProduct = product.replace(/ \/ .+$/, "").replace(/ 等$/, "");
+    const cleanProduct = toSearchTerm(product);
+    if (!cleanProduct) continue;
     queries.push({
       query: `${cleanProduct} release update ${new Date().toISOString().slice(0, 7)}`,
       tier,
