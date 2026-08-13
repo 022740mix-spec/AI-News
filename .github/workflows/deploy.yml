@@ -23,6 +23,14 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+
+      # 公開の直前に置く関門。ここが落ちれば deploy まで進まないため、
+      # 個人情報や環境固有の情報を含んだまま公開されることはない。
+      - name: 個人情報・環境固有情報チェック（記事データ）
+        env:
+          PRIVATE_TERMS: ${{ secrets.PRIVATE_TERMS }}
+        run: node scripts/check-private-info.mjs
+
       # Cloudflare Web Analytics のサイト識別子を build 時に注入する。
       # Secret 未設定なら空文字になり、src/analytics.js が beacon を
       # 一切読み込まない（＝ 外部通信ゼロ）ため、未設定のままでも安全。
@@ -30,6 +38,14 @@ jobs:
       - run: npm run build
         env:
           VITE_CF_BEACON_TOKEN: ${{ secrets.CF_BEACON_TOKEN }}
+
+      # ビルド成果物にも同じ検査をかける。記事データを経由しない経路
+      # （コンポーネント等）から混入した場合を捕まえる。
+      - name: 個人情報・環境固有情報チェック（ビルド成果物）
+        env:
+          PRIVATE_TERMS: ${{ secrets.PRIVATE_TERMS }}
+        run: node scripts/check-private-info.mjs --dist
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

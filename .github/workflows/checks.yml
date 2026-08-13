@@ -1,0 +1,35 @@
+name: Content checks
+
+# PR と main への push の両方で走らせる。
+# これまで PR には CI が一切なく、校閲チェックはローカル実行に依存していた。
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - name: 校閲チェック
+        run: node scripts/review-check.mjs
+
+      - name: 個人情報・環境固有情報チェック（記事データ）
+        env:
+          # 追加の検出語。Secrets に登録されていなければ空で、所有者名の照合のみ行う。
+          PRIVATE_TERMS: ${{ secrets.PRIVATE_TERMS }}
+        run: node scripts/check-private-info.mjs
+
+      - run: npm run build
+
+      - name: 個人情報・環境固有情報チェック（ビルド成果物）
+        env:
+          PRIVATE_TERMS: ${{ secrets.PRIVATE_TERMS }}
+        run: node scripts/check-private-info.mjs --dist
