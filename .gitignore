@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# ローカル実行用の個人情報検出語（check-private-info.mjs が読む。コミットしない）
+.private-terms
