@@ -17385,5 +17385,273 @@ const ARTICLES_BODY = {
       }
     ]
   }
+,
+  "cursor-origin-code-hosting-rollout-2026": {
+    "body": [
+      "**Anysphere** が、コードホスティングサービス **Origin** の提供を2026年8月18日（月）から有料プラン向けに開始した。発表自体は6月17日に行われており、そこから約2か月でのロールアウトになる。",
+      "掲げている前提が明快である。**「バージョン管理システムの主要な利用者が、もはや人間でないとしたら」** — この問いから設計を組み直した git ホスティングだと説明されている。",
+      "## 提供される機能",
+      "初期リリースの範囲は絞られている。**リポジトリのホスティング、プルリクエスト、コードブラウジング、コードレビュー**、そして **GitHub との同期**。「必要最小限から始めるが、エージェントの規模を前提に設計する」という位置付けである。",
+      "初日から **Vercel・Depot・Buildkite** が統合されている。CI/CD とビルドインフラを最初から押さえている形で、既存のワークフローを載せ替える際の摩擦を下げる狙いと読める。",
+      "## GitHub を置き換えるものではない",
+      "重要なのは、**Origin が GitHub との相互運用を前提に作られている**点である。既存の GitHub リポジトリを Cursor 側へ同期して使う設計で、GitHub からの全面移行を求めるものではない。",
+      "これは実務的な判断だろう。GitHub Actions、Issue の運用、組織の権限管理、外部サービスとの連携といった蓄積は、ホスティングを変えたからといって一晩で移せるものではない。**同期を入口に置くことで、いきなり乗り換えなくても試せる**構成にしている。",
+      "## タイミングが持つ意味",
+      "ロールアウト前日の8月17日、**GitHub が7時間36分にわたる大規模障害**を起こしている（[→ 詳細](?a=github-outage-august-17-2026-7h36m)）。Actions・API・Copilot 認証まで波及した障害で、エラー率はリポジトリコンテンツのダウンロードで約50%に達した。",
+      "**両者に因果関係はない。** Origin の発表は6月17日で、障害の2か月前である。ただし同じ週に並んだことで、「AI エージェントが主要な利用者になったとき、Git ホスティングに何が求められるのか」という問いが可視化された面はある。この論点は[別記事で整理](?a=feature-github-outage-cursor-origin-same-week-2026)した。",
+      "## 資本関係も評価に入る",
+      "Cursor は現在 **SpaceX 傘下**にある（$60B の全株式買収、[→ 速報](?a=spacex-cursor-60b-acquisition-anysphere-2026)）。コードホスティングは、エディタや CLI と違って**ソースコードそのものを預ける**サービスである。エディタの選択以上に、データの所在と親会社の事業判断が評価対象になる。",
+      "企業導入を検討する場合は、機能と価格の比較に加えて、**リポジトリのデータがどこに置かれ、どう扱われるのか**を契約条項で確認したい。市場の勢力図については[市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)を参照。",
+      "**注記**: 本記事は調査環境のネットワーク制約により `cursor.com` の公式チェンジログ本文を直接確認できていない。記載内容は複数の報道に基づく。機能の詳細と提供条件は公式ページで確認してほしい。"
+    ],
+    "primarySources": [
+      {
+        "title": "Origin Code Hosting",
+        "site": "Cursor Changelog",
+        "url": "https://cursor.com/changelog/origin-code-hosting"
+      },
+      {
+        "title": "Cursor launches Origin code hosting service to compete with GitHub",
+        "site": "SiliconANGLE",
+        "url": "https://siliconangle.com/2026/08/17/cursor-launches-origin-code-hosting-service-to-compete-with-github/"
+      },
+      {
+        "title": "Cursor launches Origin code hosting platform as GitHub outage exposes opening in AI coding race",
+        "site": "VentureBeat",
+        "url": "https://venturebeat.com/infrastructure/cursor-launches-origin-code-hosting-platform-as-github-outage-exposes-opening-in-ai-coding-race"
+      },
+      {
+        "title": "Cursor begins Origin code hosting rollout for paid plans",
+        "site": "TestingCatalog",
+        "url": "https://www.testingcatalog.com/cursor-begins-origin-code-hosting-rollout-for-paid-plans/"
+      }
+    ]
+  },
+  "github-outage-august-17-2026-7h36m": {
+    "body": [
+      "**GitHub** が2026年8月17日（月）、大規模な障害を起こした。ステータスページで critical-impact として起票されたのが **13時40分（UTC）**、解決宣言が **21時15分**。**7時間36分**にわたる障害だった。",
+      "## 何が止まったか",
+      "最初の2時間でステータスページがフラグを立てたのは、**API Requests・Actions・Webhooks・Issues・Pull Requests・Copilot・Pages・Git Operations** の8系統。エラー率は Web と API で約20%まで上昇し、**リポジトリコンテンツとアーカイブのダウンロードでは約50%**に達したと報じられている。",
+      "エンタープライズ利用者への影響も大きかった。**SAML と OIDC の認証、SCIM、Team Sync** が影響を受けており、開発環境そのものにアクセスできない状態が生じた組織があったとされる。",
+      "## 復旧が一直線ではなかった",
+      "この障害の特徴は、**復旧宣言のあとに再発している**ことである。16時59分に7サービスを mitigated と宣言したが、**うち3つが再び劣化**した。Issues は2度目の劣化でさらに **2時間46分**にわたって影響を受けている。",
+      "そして最後の3時間は、**Copilot 認証の単一障害**に絞られた。一部のアプリケーションで認証が失敗する一方、GitHub CLI と GitHub App は動作し続けるという、切り分けの難しい状態が続いた。",
+      "## 原因は開示されていない",
+      "**この障害について、36件出された更新のいずれも原因を開示していない。** 解決通知には「詳細な根本原因分析は利用可能になり次第共有する」とあるのみで、本稿執筆時点で公開されていない。",
+      "背景として、**AI 支援コーディングによるトラフィック急増にインフラが追いついていない**という指摘が複数の媒体から出ている。ただしこれは論評であって、GitHub 自身が今回の原因として説明したものではない。**原因の断定は根本原因分析の公表を待つべきである。**",
+      "## SLA から見た重み",
+      "この7時間36分という長さは、可用性の目標値に照らすと重い。**99.9% の可用性は年間で約8時間45分のダウンタイムに相当する**。単純計算で、**1回の障害が年間予算の約87%を消費した**ことになる。",
+      "GitHub Actions を CI/CD の中核に据えている組織にとっては、この一件だけで年間の停止許容量をほぼ使い切った形になる。**単一障害点としての Git ホスティングをどう扱うか**は、改めて設計上の論点になる。",
+      "翌8月18日には Cursor が独自のコードホスティング **Origin** のロールアウトを開始しており（[→ 詳細](?a=cursor-origin-code-hosting-rollout-2026)）、同週に並んだ両者の意味は[別記事で整理](?a=feature-github-outage-cursor-origin-same-week-2026)した。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitHub Status",
+        "site": "GitHub",
+        "url": "https://www.githubstatus.com/"
+      },
+      {
+        "title": "Microsoft confirms GitHub is down worldwide",
+        "site": "BleepingComputer",
+        "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-confirms-github-is-down-worldwide/"
+      },
+      {
+        "title": "GitHub has Issues as repo downloads hit 50% error rate",
+        "site": "The Register",
+        "url": "https://www.theregister.com/ai-and-ml/2026/08/17/github_has_issues_as_repo/"
+      },
+      {
+        "title": "The GitHub outage explained: What happened, who was affected, and how long did it last?",
+        "site": "IT Pro",
+        "url": "https://www.itpro.com/software/development/the-github-outage-explained-what-happened-who-was-affected-and-how-long-did-it-last"
+      },
+      {
+        "title": "GitHub suffers eight-hour outage affecting Actions, APIs, and Copilot",
+        "site": "CyberInsider",
+        "url": "https://cyberinsider.com/github-suffers-eight-hour-outage-affecting-actions-apis-and-copilot/"
+      }
+    ]
+  },
+  "xai-grok-4-6-500k-context-200k-toll-2026": {
+    "body": [
+      "**xAI** が2026年8月12日、**Grok 4.6** を公開した。長時間走るエージェント、より深いコーディングとナレッジワーク、対話とビジュアルを扱うプロジェクトに向けたモデルと位置付けられている。",
+      "## 前世代の弱点を埋めてきた",
+      "**Artificial Analysis Intelligence Index で 61 を記録し、GPT-5.6 Sol と同点**になった。当サイトが[Grok 4.5 のレビュー](?a=xai-grok-4-5-review)で「総合知能指標で4位にとどまり、Musk の『Opus クラス』という主張は独立検証では裏付けられなかった」と書いた状況からは、明確な前進である。",
+      "特筆すべきは **DeepSWE での改善**である。Grok 4.5 のレビューでは DeepSWE 1.1 が 53% で GPT-5.5 の 67% に大きく劣ることを「明確な弱点」として挙げていた。4.6 ではここが大きく伸びたと報じられている。",
+      "コンテキストは **500K トークン**で、Grok 4.5 から据え置き。長時間走るエージェントの性能が改善されたとされる。",
+      "## 200Kトークンという料金の閾値",
+      "**この記事で最も実務に効くのはここである。** 表示単価は $2 / $6 per 1M tokens で Grok 4.5 から据え置きだが、**料金体系に閾値が設けられた**。",
+      "**プロンプトが 200K トークンに達すると、そのリクエスト全体が $4 / $12 で課金される。** 200K を超えた分だけが高い単価になるのではなく、xAI は**そのリクエストのすべてのトークン**に高い方のレートを適用すると説明している。",
+      "つまり 500K コンテキストは使えるが、**200K を超えた時点で実効単価が2倍になる**。「500K 使える」と「500K を安く使える」は別の話である。",
+      "**コンテキストを積み上げていくエージェント運用では、この閾値が特に効く。** 長時間のセッションで会話履歴とファイル内容が蓄積されると、意図せず閾値を越え、以降のリクエストがすべて倍額になる。**採用検討では、自社のワークロードが 200K をどの程度の頻度で越えるかを実測する必要がある。**",
+      "## 提供経路",
+      "xAI の API に加え、**GitHub Copilot にも追加**された。VS Code と GitHub のワークフローから Grok 4.6 を選べる形になる（[→ Copilot CLI レビュー](?a=github-copilot-cli)）。Copilot のマルチベンダー戦略に、また一つ選択肢が加わったことになる。",
+      "なお xAI は前日の8月11日に **Grok Bot** も公開している。企業のソフトウェアにサインインして多段階のタスクを自律実行するエージェント群で、ベータ提供とされる。",
+      "## 評価にあたって",
+      "料金の比較は[料金プラン横断比較](?a=pricing-comparison-all-tools-2026-march)に整理しているが、**Grok 4.6 は単価表だけでは比較できないモデル**になった。同じ $2/$6 でも、200K を頻繁に越えるワークロードでは実質 $4/$12 のモデルとして扱う必要がある。",
+      "総合知能で GPT-5.6 Sol と並んだこと自体は大きい。ただし当サイトは[Grok 4.5 のレビュー](?a=xai-grok-4-5-review)で、xAI が公開時に Cursor のコードベースが訓練データに混入していたことを自己申告した経緯にも触れている。**ベンダー公表値と独立指標を分けて読む姿勢は、引き続き必要である。**"
+    ],
+    "primarySources": [
+      {
+        "title": "Grok 4.6 — Intelligence, Performance & Price Analysis",
+        "site": "Artificial Analysis",
+        "url": "https://artificialanalysis.ai/models/grok-4-6"
+      },
+      {
+        "title": "Grok 4.6 - API Pricing & Benchmarks",
+        "site": "OpenRouter",
+        "url": "https://openrouter.ai/x-ai/grok-4.6"
+      },
+      {
+        "title": "What's new in Grok 4.6: from 500K context to pricing",
+        "site": "Appwrite",
+        "url": "https://appwrite.io/blog/post/whats-new-in-grok-46-from-500k-context-to-pricing"
+      },
+      {
+        "title": "xAI News",
+        "site": "xAI",
+        "url": "https://x.ai/news"
+      }
+    ]
+  },
+  "anthropic-claude-synthid-text-watermark-global-2026": {
+    "body": [
+      "**Anthropic** が、Claude の生成するテキストに**機械可読な不可視の透かし**を埋め込む方針を明らかにした。EU AI Act の透明性義務への対応だが、**適用範囲は EU 域内に限らず全世界**である。",
+      "## なぜ全世界なのか",
+      "Anthropic は2026年7月に **EU の「AI生成コンテンツの透明性に関する行動規範」に署名**している。透明性義務は **2026年8月2日に執行可能**となり、EU 市場にサービスを提供する事業者は AI 生成テキストにマークを付けることが求められる（[→ 8月の規制ダブルヘッダー](?a=feature-eu-ai-act-gpai-enforcement-vs-us-eo-14409-deadline-2026)）。",
+      "**地域で切り分ける確実な手段がない**というのが、全世界適用の理由として説明されている。ユーザーがどこからアクセスし、生成物がどこへ流れるかを事業者側で確実に判定できない以上、一律に適用するほうが確実だという判断である。",
+      "非遵守の制裁は軽くない。**最大1,500万ユーロ、または全世界年間売上高の3%のいずれか高い方**とされる。",
+      "## 技術的にはどうやっているか",
+      "採用されているのは、**Google DeepMind が2024年に Nature で公表した SynthID-Text の応用**である。",
+      "仕組みは、**次の単語を選ぶときの乱数源だけを変える**というもの。モデルが単語を選ぶ確率分布そのものは変えず、選択に使う乱数に規則性を持たせる。結果として単語選択に微細な偏りが生じ、**十分な分量があれば統計的に検出できる**。",
+      "この方式には実務上の重要な性質がある。**透かしはテキストそのものに埋め込まれているため、コピー&ペーストしても付いて回る。** ファイルのメタデータに書き込む方式と違い、貼り付けただけでは落ちない。",
+      "## 適用範囲と時期",
+      "**2026年8月2日以降に投入された Claude モデル**に適用され、それ以前のモデルは今後数か月かけて追随するとされている。したがって、[Claude Opus 5](?a=claude-opus-5-review) など8月2日より前に投入されたモデルは、現時点では順次対応の対象になる。",
+      "## 何が分かって、何が分からないか",
+      "**ここを取り違えないでほしい。** 透かしが検出されても、分かるのは「**Claude がどこかの時点で関与した可能性が高い**」ということだけである。",
+      "具体的には、次の区別ができない。**Claude が書いたものなのか、人間の草稿を Claude が大幅に編集したものなのか。** どちらも同じように検出されうる。",
+      "そして重要な点として、**透かしにはユーザーに関する情報が一切含まれない**。誰が生成したかを特定する仕組みではない。この設計は、透明性の要求とプライバシーの両立を意図したものと読める。",
+      "## 実務への影響",
+      "開発者にとっては、**Claude の出力を成果物に含める場合、その出力が統計的に検出可能になる**という前提が加わる。コード生成そのものへの影響は限定的と考えられるが、ドキュメント・仕様書・レポートといった散文の成果物では意識する場面が出てくるだろう。",
+      "また、この動きは Anthropic 単独で終わらない可能性が高い。**同じ透明性義務は EU 市場にサービスを提供する他の事業者にも等しくかかる**。OpenAI や Google が追随するかどうかは、今後の観察点になる。"
+    ],
+    "primarySources": [
+      {
+        "title": "How Claude marks AI-generated content",
+        "site": "Anthropic Help Center",
+        "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content"
+      },
+      {
+        "title": "EU compliance, delivered globally: Anthropic to watermark Claude's output worldwide",
+        "site": "Euronews",
+        "url": "https://www.euronews.com/next/2026/08/11/eu-compliance-delivered-globally-anthropic-to-watermark-claudes-output-worldwide"
+      },
+      {
+        "title": "Anthropic pledges to embed watermarks to help discern AI slop in sop to EU",
+        "site": "The Register",
+        "url": "https://www.theregister.com/ai-and-ml/2026/08/11/anthropic_watermarks/"
+      },
+      {
+        "title": "Anthropic's Claude Adds Invisible Watermarks To AI-Generated Text",
+        "site": "Forbes",
+        "url": "https://www.forbes.com/sites/anishasircar/2026/08/13/claude-will-now-leave-a-watermark-on-everything-it-writes-what-does-that-mean/"
+      }
+    ]
+  },
+  "oss-long-horizon-agent-tools-ohmypi-loopx-2026": {
+    "body": [
+      "GitHub 上で、**エージェントを長時間走らせることを前提にした OSS** が育っている。エージェント本体を作るフレームワークではなく、**走り続けさせるための基盤**を名乗るものが増えているのが特徴である。ここでは規模が確認できた2本を取り上げる。",
+      "**数値は2026年8月19日時点で GitHub API から取得した実測値**である。この種の数字は数週間で動くため、参照時点を明記しておく。",
+      "## oh-my-pi — ターミナル型エージェント、25,712スター",
+      "**can1357/oh-my-pi**（MIT ライセンス）は、ターミナル向けの AI コーディングエージェント。リポジトリの作成は2025年12月31日で、**スターは 25,712、フォークは 2,477**。5月時点で約7,000スターと報じられていたので、3か月あまりで3倍以上に伸びたことになる。",
+      "技術的な特徴は、**Python と Bun の永続実行カーネル**を持つ点にある。セッションをまたいで生き続けるカーネルの上でツール呼び出しのループを回す構成で、**どちらのカーネルからも、ループバックのブリッジ経由でエージェント自身のツールを呼び戻せる**。エージェントが書いたコードが、そのエージェントの能力を使い返せるということである。",
+      "ほかに **hash-anchored edits**（ハッシュで位置を固定した編集）、**LSP ワークスペース統合**、**DAP デバッガのアタッチ**、**スキーマ検証付きのサブエージェント生成**、ブラウザアクセスを備える。TypeScript 実装だが、Rust のコアを持つ。",
+      "hash-anchored edits は、AI の編集で起きがちな「行番号がずれて別の場所を書き換える」問題への対処と読める。**AI が壊しやすい箇所を、仕組みで潰しにいく**設計思想が見える。",
+      "## LoopX — 「長期タスクの制御プレーン」、4,918スター",
+      "**huangruiteng/loopx**（Apache 2.0）は、自らを **「Codex・Claude Code その他のハーネス横断で、耐久性があり統制の効いた作業のための長期タスク制御プレーン」** と説明する。リポジトリの作成は2026年5月31日と新しく、**スターは 4,918、フォークは 423**。Python 実装。",
+      "掲げている構成要素が、この分野の課題をそのまま映している。**durable goals**（中断しても消えない目標）、**quota-aware auto-wake**（利用枠を見ながら自動で再開する）、**executable todos**（実行可能な形の残タスク）、**evidence logs**（根拠のログ）、**verifiable handoffs**（検証可能な引き継ぎ）。",
+      "特に **quota-aware auto-wake** と **evidence logs** は示唆的である。前者は、長時間タスクがレート上限や利用枠に当たって止まることを前提にした設計。後者は、エージェントが何を根拠に判断したかを後から追える形で残すもので、**当サイトが[実務ガイド](?a=ai-config-files-comprehensive-guide-2026)で扱った「効いているかを確認する」という論点と重なる**。",
+      "## 共通しているもの",
+      "この2本に共通するのは、**エージェントの賢さではなく、運用の耐久性を扱っている**という点である。",
+      "エージェントを1回動かすことは、もう難しくない。難しいのは、**数時間から数日にわたって走らせ、途中で止まっても再開でき、何をしたか後から検証できる状態を保つ**ことである。oh-my-pi は永続カーネルとハッシュ固定の編集で、LoopX は目標の永続化と証跡で、それぞれ別の角度から同じ問題に取り組んでいる。",
+      "**ベンダー各社が「長時間自律実行」を売りにする一方で、その運用を支える層は OSS 側から出てきている。** 商用ツールを使う場合でも、こうしたプロジェクトが何を課題として設定しているかは、自社の運用設計を点検する材料になる。",
+      "**注記**: 両プロジェクトとも本稿では機能の実測評価を行っていない。README とリポジトリのメタデータに基づく紹介であり、導入検討にあたっては[外部パッケージの取り込み手順](?a=ai-config-files-comprehensive-guide-2026)に従って中身を確認してほしい。"
+    ],
+    "primarySources": [
+      {
+        "title": "can1357/oh-my-pi",
+        "site": "GitHub",
+        "url": "https://github.com/can1357/oh-my-pi"
+      },
+      {
+        "title": "oh-my-pi 公式サイト",
+        "site": "omp.sh",
+        "url": "https://omp.sh/"
+      },
+      {
+        "title": "huangruiteng/loopx",
+        "site": "GitHub",
+        "url": "https://github.com/huangruiteng/loopx"
+      }
+    ]
+  },
+  "feature-github-outage-cursor-origin-same-week-2026": {
+    "body": [
+      "2026年8月17日、**GitHub が7時間36分停止した**。翌18日、**Cursor が独自のコードホスティング Origin のロールアウトを開始した**。",
+      "**最初に断っておくと、両者に因果関係はない。** Origin の発表は6月17日で、障害の2か月前である。障害を見て急いで出したものではない。",
+      "それでも、この2つが同じ週に並んだことには意味がある。**AI エージェントが主要な利用者になったとき、Git ホスティングに求められるものは変わるのか** — この問いが、たまたま可視化されたからである。",
+      "## 障害が示したもの",
+      "GitHub の障害は、規模だけでなく**形**が示唆的だった（[→ 詳細](?a=github-outage-august-17-2026-7h36m)）。",
+      "13時40分（UTC）に起票され、16時59分に7サービスを mitigated と宣言。**しかしうち3つが再発した**。Issues は2度目の劣化でさらに2時間46分。最後の3時間は Copilot 認証の単一障害に絞られ、一部アプリで認証が失敗する一方、GitHub CLI と GitHub App は動作し続けた。",
+      "**一度直したものが戻る、という形の障害である。** 単一のコンポーネントが落ちて復旧するのではなく、依存関係のどこかが不安定なまま複数のサービスを揺らし続けた形に見える。ただし **GitHub は36件の更新のいずれでも原因を開示していない**ため、これは外形からの推測にすぎない。",
+      "## SLA の観点では、1回で年間予算をほぼ使い切った",
+      "**99.9% の可用性は、年間で約8時間45分のダウンタイムに相当する。** 7時間36分は、その約87%である。",
+      "GitHub Actions を CI/CD の中核に据えている組織にとって、この一件は**年間の停止許容量をほぼ消費した**ことを意味する。可用性目標を掲げている受託開発やサービス運営では、無視できない数字になる。",
+      "## Origin が置いた前提",
+      "一方の Origin は、**「バージョン管理システムの主要な利用者が、もはや人間でないとしたら」**という前提から設計を組み直したと説明されている（[→ 詳細](?a=cursor-origin-code-hosting-rollout-2026)）。",
+      "この前提が具体的に何を変えるのかは、初期リリースの機能セット（リポジトリ、プルリクエスト、コードブラウジング、コードレビュー、GitHub 同期）からは読み取りきれない。**現時点では思想の表明であって、実装の差として検証できる段階にない。**",
+      "ただし、問い自体は妥当である。人間が1日に出すプルリクエストは数本だが、**並列エージェントは桁違いの頻度でリポジトリを読み、ブランチを作り、差分を出す**。読み取りの集中、ブランチの大量生成、CI のトリガー頻度 — 負荷の質が変わることは想像に難くない。",
+      "実際、今回の障害についても「**AI 支援コーディングによるトラフィック急増にインフラが追いついていない**」という論評が複数の媒体から出ている。**ただしこれは論評であって、GitHub 自身の説明ではない。** 根本原因分析が公表されるまで、断定はできない。",
+      "## 「代替」と呼ぶには早い3つの理由",
+      "**(1) Origin 自身が GitHub 同期を前提にしている。** 全面移行を求める設計ではなく、既存の GitHub リポジトリを同期して使う入口を用意している。つまり **GitHub が落ちたときの避難先としては、まだ機能しない**構成である。",
+      "**(2) 移せないものが多い。** GitHub Actions のワークフロー、Issue の運用、組織の権限管理、外部サービスとの webhook 連携。ホスティングを変えても、これらの蓄積は自動では移らない。今回の障害で SAML / OIDC 認証や SCIM が影響を受けたことが示すように、**エンタープライズが依存しているのはリポジトリそのものより周辺の統合である**。",
+      "**(3) 単一障害点が別の単一障害点に変わるだけの可能性がある。** GitHub の可用性が課題なら、より新しく、より小規模なサービスに移すことが解になるとは限らない。Origin の可用性実績はこれから積み上がる段階である。",
+      "## では何を考えるべきか",
+      "この週の出来事から実務として引き出せるのは、**乗り換えの検討ではなく、依存の点検**だと考える。",
+      "**自社の CI/CD が GitHub のどの機能に、どの深さで依存しているか。** Actions が止まったときにデプロイできるのか。認証が落ちたときに開発環境へ入れるのか。今回の障害では、リポジトリの読み書きよりも **認証と CI の停止**が痛かった組織が多かったはずである。",
+      "そして**エージェント運用を拡大する組織は、負荷の掛け方を意識する段階に入りつつある**。並列エージェントがリポジトリに与える読み取り頻度とブランチ生成量は、人間中心の運用とは異なる。これはホスティング事業者側の課題であると同時に、利用者側の設計課題でもある。",
+      "## 市場の構図として",
+      "Cursor は現在 **SpaceX 傘下**、GitHub は **Microsoft 傘下**である。コードホスティングの選択は、エディタや CLI の選択と違って**ソースコードそのものを預ける判断**になる（[→ 市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。",
+      "**機能と価格の比較に、データの所在と親会社の事業判断が加わる。** これは今回の2件に限った話ではなく、AI コーディング基盤全体で進んでいる変化である。当サイトが[エディタ横断比較](?a=editor-comparison-2026-march)で「資本関係は選定要因になりつつある」と書いたのと同じ論点が、ホスティング層にも及んできた。",
+      "**総括**: 障害と新サービスが同じ週に並んだのは偶然である。だが「エージェントが主要な利用者になる」という前提が、思想の表明として提示され、同時に既存インフラの限界が実際の障害として現れた。**どちらも、まだ答えではなく問いの段階にある。** 結論を急がず、自社の依存関係を点検するところから始めたい。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitHub Status",
+        "site": "GitHub",
+        "url": "https://www.githubstatus.com/"
+      },
+      {
+        "title": "Origin Code Hosting",
+        "site": "Cursor Changelog",
+        "url": "https://cursor.com/changelog/origin-code-hosting"
+      },
+      {
+        "title": "Cursor launches Origin code hosting platform as GitHub outage exposes opening in AI coding race",
+        "site": "VentureBeat",
+        "url": "https://venturebeat.com/infrastructure/cursor-launches-origin-code-hosting-platform-as-github-outage-exposes-opening-in-ai-coding-race"
+      },
+      {
+        "title": "Microsoft's GitHub Hit by Major Outage as AI-Driven Demand Strains Infrastructure",
+        "site": "DevOps.com",
+        "url": "https://devops.com/microsofts-github-hit-by-major-outage-as-ai-driven-demand-strains-infrastructure/"
+      },
+      {
+        "title": "The GitHub outage explained: What happened, who was affected, and how long did it last?",
+        "site": "IT Pro",
+        "url": "https://www.itpro.com/software/development/the-github-outage-explained-what-happened-who-was-affected-and-how-long-did-it-last"
+      }
+    ]
+  }
 };
 export default ARTICLES_BODY;

@@ -5,8 +5,56 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-08-13T15:00:00Z</updated>
+  <updated>2026-08-19T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>長時間エージェント運用を支える OSS が伸びている — oh-my-pi が25,712スター、LoopX は「制御プレーン」を名乗る</title>
+    <link rel="alternate" type="text/html" href="?a=oss-long-horizon-agent-tools-ohmypi-loopx-2026"/>
+    <id>tag:ai-tool-news.jp,2026:oss-long-horizon-agent-tools-ohmypi-loopx-2026</id>
+    <published>2026-08-19T15:00:00Z</published>
+    <updated>2026-08-19T15:00:00Z</updated>
+    <summary>GitHub 上で、エージェントを長時間走らせる前提の OSS が育っている。oh-my-pi（MIT）はターミナル型のコーディングエージェントで、5月に約7,000だったスターが25,712に。Python と Bun の永続実行カーネルを持ち、どちらからもエージェント自身のツールを呼び戻せる。LoopX（Apache 2.0）は Codex や Claude Code の上に乗る「長期タスクの制御プレーン」を掲げ、4,918スター。どちらもエージェントを作るのではなく、走り続けさせるための基盤である点が共通する。</summary>
+  </entry>
+  <entry>
+    <title>【分析】GitHub の7時間36分と Cursor Origin の同週ローンチ — AI コーディングは Git ホスティングに何を要求し始めたのか</title>
+    <link rel="alternate" type="text/html" href="?a=feature-github-outage-cursor-origin-same-week-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-github-outage-cursor-origin-same-week-2026</id>
+    <published>2026-08-19T15:00:00Z</published>
+    <updated>2026-08-19T15:00:00Z</updated>
+    <summary>8月17日に GitHub が7時間36分停止し、翌18日に Cursor が独自のコードホスティング Origin をロールアウトした。因果関係はない（Origin の発表は6月17日）。だが両者が同じ週に並んだことで、ひとつの問いが可視化された。AI エージェントが主要な利用者になったとき、Git ホスティングに求められるものは変わるのか。 障害の内訳、SLA の消費量、Origin の設計思想、そして「代替」と呼ぶには早い理由を整理する。</summary>
+  </entry>
+  <entry>
+    <title>Cursor が「Origin」の提供を開始 — エージェントを主要な利用者と想定したコードホスティング、GitHub 大規模障害と同週</title>
+    <link rel="alternate" type="text/html" href="?a=cursor-origin-code-hosting-rollout-2026"/>
+    <id>tag:ai-tool-news.jp,2026:cursor-origin-code-hosting-rollout-2026</id>
+    <published>2026-08-18T15:00:00Z</published>
+    <updated>2026-08-18T15:00:00Z</updated>
+    <summary>Anysphere が6月17日に発表していた git ホスティング Origin を、8月18日から有料プラン向けにロールアウトした。掲げる前提は「バージョン管理システムの主要な利用者が、もはや人間でないとしたら」。リポジトリ・プルリクエスト・コードブラウジング・コードレビューに加え、既存の GitHub リポジトリを同期できる。初日から Vercel・Depot・Buildkite が統合。GitHub を置き換えるのではなく相互運用する設計だが、前日に GitHub が7時間36分の大規模障害を起こしており、否応なく対比される形になった。</summary>
+  </entry>
+  <entry>
+    <title>GitHub が7時間36分の大規模障害 — Actions・API・Copilot 認証まで波及、36件の更新すべてで原因は未開示</title>
+    <link rel="alternate" type="text/html" href="?a=github-outage-august-17-2026-7h36m"/>
+    <id>tag:ai-tool-news.jp,2026:github-outage-august-17-2026-7h36m</id>
+    <published>2026-08-17T15:00:00Z</published>
+    <updated>2026-08-17T15:00:00Z</updated>
+    <summary>2026年8月17日13時40分（UTC）に critical-impact として起票され、21時15分に解決。7時間36分の障害だった。エラー率は Web と API で約20%、リポジトリコンテンツとアーカイブのダウンロードで約50%に達した。16時59分に7サービスを mitigated と宣言したがうち3つが再発し、最後の3時間は Copilot 認証の単一障害に絞られている。36件の更新のいずれも原因を開示していない。</summary>
+  </entry>
+  <entry>
+    <title>xAI が Grok 4.6 を公開 — Artificial Analysis で GPT-5.6 Sol と同点の61、ただし200Kトークンを超えると単価が倍になる</title>
+    <link rel="alternate" type="text/html" href="?a=xai-grok-4-6-500k-context-200k-toll-2026"/>
+    <id>tag:ai-tool-news.jp,2026:xai-grok-4-6-500k-context-200k-toll-2026</id>
+    <published>2026-08-12T15:00:00Z</published>
+    <updated>2026-08-12T15:00:00Z</updated>
+    <summary>8月12日リリース。500K コンテキストは Grok 4.5 から据え置きだが、Artificial Analysis Intelligence Index で 61 を記録し GPT-5.6 Sol と並んだ。前世代の明確な弱点だった DeepSWE で大きく改善している。表示単価も $2/$6 で据え置き。ただしプロンプトが 200K トークンに達すると、そのリクエスト全体が $4/$12 で課金される。コンテキストを積み上げるエージェント運用では、この閾値が実効コストを左右する。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic が Claude の出力に不可視の透かしを導入 — EU AI Act 対応を全世界に適用、SynthID-Text の応用</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-synthid-text-watermark-global-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-synthid-text-watermark-global-2026</id>
+    <published>2026-08-11T15:00:00Z</published>
+    <updated>2026-08-11T15:00:00Z</updated>
+    <summary>EU の透明性義務が8月2日に執行可能となったことを受け、Claude が生成するテキストに機械可読な透かしを埋め込む。地域で切り分ける確実な手段がないため、EU 域内に限らず全世界に適用する。技術的には Google DeepMind が2024年に Nature で公表した SynthID-Text の応用で、次の単語を選ぶ乱数源だけを変える。コピーしても透かしは付いて回るが、検出できるのは「Claude が関与した可能性が高い」ことまでで、ユーザーの情報は一切含まない。</summary>
+  </entry>
   <entry>
     <title>Meta が Muse Glimmer を公開 — 30B オープンウェイトのエージェント、コンシューマ GPU 1枚でローカル動作、無料</title>
     <link rel="alternate" type="text/html" href="?a=meta-muse-glimmer-30b-local-open-weight-2026"/>

@@ -7746,5 +7746,117 @@ export const ARTICLES_META = [
     "rating": 4.5,
     "reviewCategory": "model",
     "lastReviewed": "2026-08-11"
+  },
+  {
+    "id": "cursor-origin-code-hosting-rollout-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Cursor が「Origin」の提供を開始 — エージェントを主要な利用者と想定したコードホスティング、GitHub 大規模障害と同週",
+    "excerpt": "Anysphere が6月17日に発表していた git ホスティング **Origin** を、8月18日から有料プラン向けにロールアウトした。掲げる前提は「**バージョン管理システムの主要な利用者が、もはや人間でないとしたら**」。リポジトリ・プルリクエスト・コードブラウジング・コードレビューに加え、既存の GitHub リポジトリを同期できる。初日から Vercel・Depot・Buildkite が統合。GitHub を置き換えるのではなく相互運用する設計だが、前日に GitHub が7時間36分の大規模障害を起こしており、否応なく対比される形になった。",
+    "date": "2026-08-19",
+    "newsDate": "2026-08-18",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Cursor",
+      "エディタ",
+      "開発ツール",
+      "GitHub",
+      "エージェント"
+    ],
+    "heroScope": "none"
+  },
+  {
+    "id": "github-outage-august-17-2026-7h36m",
+    "type": "news",
+    "category": "product",
+    "title": "GitHub が7時間36分の大規模障害 — Actions・API・Copilot 認証まで波及、36件の更新すべてで原因は未開示",
+    "excerpt": "2026年8月17日13時40分（UTC）に critical-impact として起票され、21時15分に解決。**7時間36分**の障害だった。エラー率は Web と API で約20%、リポジトリコンテンツとアーカイブのダウンロードで約50%に達した。16時59分に7サービスを mitigated と宣言したが**うち3つが再発**し、最後の3時間は Copilot 認証の単一障害に絞られている。**36件の更新のいずれも原因を開示していない**。",
+    "date": "2026-08-19",
+    "newsDate": "2026-08-17",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "GitHub",
+      "開発ツール",
+      "GitHub Copilot",
+      "エンタープライズ"
+    ],
+    "heroScope": "none"
+  },
+  {
+    "id": "xai-grok-4-6-500k-context-200k-toll-2026",
+    "type": "news",
+    "category": "model",
+    "title": "xAI が Grok 4.6 を公開 — Artificial Analysis で GPT-5.6 Sol と同点の61、ただし200Kトークンを超えると単価が倍になる",
+    "excerpt": "8月12日リリース。500K コンテキストは Grok 4.5 から据え置きだが、**Artificial Analysis Intelligence Index で 61 を記録し GPT-5.6 Sol と並んだ**。前世代の明確な弱点だった DeepSWE で大きく改善している。表示単価も $2/$6 で据え置き。ただし**プロンプトが 200K トークンに達すると、そのリクエスト全体が $4/$12 で課金される**。コンテキストを積み上げるエージェント運用では、この閾値が実効コストを左右する。",
+    "date": "2026-08-19",
+    "newsDate": "2026-08-12",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "モデル",
+      "xAI",
+      "Grok",
+      "LLM",
+      "料金"
+    ],
+    "heroScope": "none"
+  },
+  {
+    "id": "anthropic-claude-synthid-text-watermark-global-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "Anthropic が Claude の出力に不可視の透かしを導入 — EU AI Act 対応を全世界に適用、SynthID-Text の応用",
+    "excerpt": "EU の透明性義務が8月2日に執行可能となったことを受け、Claude が生成するテキストに機械可読な透かしを埋め込む。**地域で切り分ける確実な手段がないため、EU 域内に限らず全世界に適用**する。技術的には Google DeepMind が2024年に Nature で公表した **SynthID-Text** の応用で、次の単語を選ぶ乱数源だけを変える。**コピーしても透かしは付いて回る**が、検出できるのは「Claude が関与した可能性が高い」ことまでで、ユーザーの情報は一切含まない。",
+    "date": "2026-08-19",
+    "newsDate": "2026-08-11",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "規制",
+      "EU AI Act",
+      "透明性"
+    ],
+    "heroScope": "none"
+  },
+  {
+    "id": "oss-long-horizon-agent-tools-ohmypi-loopx-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "長時間エージェント運用を支える OSS が伸びている — oh-my-pi が25,712スター、LoopX は「制御プレーン」を名乗る",
+    "excerpt": "GitHub 上で、エージェントを長時間走らせる前提の OSS が育っている。**oh-my-pi**（MIT）はターミナル型のコーディングエージェントで、5月に約7,000だったスターが**25,712**に。Python と Bun の永続実行カーネルを持ち、どちらからもエージェント自身のツールを呼び戻せる。**LoopX**（Apache 2.0）は Codex や Claude Code の上に乗る「長期タスクの制御プレーン」を掲げ、4,918スター。どちらもエージェントを作るのではなく、走り続けさせるための基盤である点が共通する。",
+    "date": "2026-08-19",
+    "newsDate": "2026-08-19",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "オープンソース",
+      "CLI",
+      "エージェント",
+      "開発ツール",
+      "マルチエージェント"
+    ],
+    "heroScope": "none"
+  },
+  {
+    "id": "feature-github-outage-cursor-origin-same-week-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】GitHub の7時間36分と Cursor Origin の同週ローンチ — AI コーディングは Git ホスティングに何を要求し始めたのか",
+    "excerpt": "8月17日に GitHub が7時間36分停止し、翌18日に Cursor が独自のコードホスティング Origin をロールアウトした。**因果関係はない**（Origin の発表は6月17日）。だが両者が同じ週に並んだことで、ひとつの問いが可視化された。**AI エージェントが主要な利用者になったとき、Git ホスティングに求められるものは変わるのか。** 障害の内訳、SLA の消費量、Origin の設計思想、そして「代替」と呼ぶには早い理由を整理する。",
+    "date": "2026-08-19",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "分析",
+      "GitHub",
+      "Cursor",
+      "開発ツール",
+      "エージェント"
+    ],
+    "heroScope": "none"
   }
 ];
