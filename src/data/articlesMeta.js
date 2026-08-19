@@ -4037,7 +4037,7 @@ export const ARTICLES_META = [
     "type": "review",
     "category": "model",
     "title": "GPT-5.6 Sol / Terra / Luna レビュー — 一般公開版（7/9 GA）、TerminalBench 2.1 で 91.91% SOTA、Cerebras で 750 tokens/秒、ChatGPT Work の駆動モデルに",
-    "excerpt": "OpenAI の3階層フラッグシップ Sol / Terra / Luna が2026年7月9日に**一般公開開始**（[GPT-5.6 GA](?a=openai-gpt-5-6-general-availability-july-9-2026)）。ChatGPT・API・Codex で即日利用可能に。**Sol**（$5/$30、Ultra thinking モードで TerminalBench 2.1 で **91.91% SOTA**）、Terra（$2.50/$15、GPT-5.5 比半額の daily driver）、**Luna**（$1/$6、フロンティアモデル最安級）の3階層構造。**Cerebras 上で Sol が最大 750 tokens/秒**（従来比 7-25倍）を達成、[ChatGPT Work](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026) の駆動モデルにも採用。1.5M コンテキスト、訓練カットオフ 2026年5月。Claude Sonnet 5・xAI Grok 4.5 との3強競合が本格化。",
+    "excerpt": "OpenAI の3階層フラッグシップ Sol / Terra / Luna。**Sol**（$5/$30、Ultra thinking モードで TerminalBench 2.1 で **91.91% SOTA**）、Terra（$2/$12）、Luna（$0.20/$1.20）の構成で、**7月31日に Luna が80%・Terra が20%値下げ**された。Cerebras 上で Sol が最大 750 tokens/秒、8月には Standard 比14倍の Ultrafast モードも追加。1.5M コンテキスト。ただし8月12日の Grok 4.6 が Artificial Analysis で **Sol と同点の61** に達し、Opus 5 も同価格帯に入ったため、**競合は3強から4強へ**移った。",
     "date": "2026-07-13",
     "newsDate": "2026-07-09",
     "author": "AI News 編集部",
@@ -4057,12 +4057,12 @@ export const ARTICLES_META = [
       "使いやすさ": 5,
       "コスパ": 5,
       "拡張性": 5,
-      "企業向け": 5
+      "企業向け": 4
     },
     "rating": 5,
     "reviewCategory": "model",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-07-13"
+    "lastReviewed": "2026-08-19"
   },
   {
     "id": "sakana-fugu-review",
