@@ -7858,5 +7858,61 @@ export const ARTICLES_META = [
       "エージェント"
     ],
     "heroScope": "none"
+  },
+  {
+    "id": "claude-code-concise-output-style-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code に「Concise」出力スタイルが追加 — 前置きと実況を省いて結果から書く、組み込みスタイルは5種類に",
+    "excerpt": "8月20日、Claude Code に組み込みの出力スタイル **Concise** が加わった。**結果から書き、前置きと実況を省き、既定で応答を短く保つ**。ただし作業の徹底度は Default と変わらず、説明を求めれば full で答える。**エラー報告・セキュリティ警告・破壊的操作の確認だけは常に全文を維持**する設計。v2.1.237 以降が必要。あわせて組み込みスタイルは Default / Proactive / Concise / Explanatory / Learning の5種類になった。",
+    "date": "2026-08-21",
+    "newsDate": "2026-08-20",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "設定",
+      "開発体験"
+    ],
+    "heroScope": "none"
+  },
+  {
+    "id": "tencentdb-agent-memory-team-level-23k-stars-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Tencent Cloud の「TencentDB Agent Memory」が23,476スター — 個人ではなくチーム単位のエージェント記憶、ただしライセンスは標準 OSS ではない",
+    "excerpt": "会話・ドキュメント・コードを **Chat Memory / Skill / LLM-Wiki / Code-Graph の4種の再利用可能な記憶資産**に変換し、複数のエージェントとフレームワークをまたいで共有する「チームレベルの記憶ハブ」。2026年4月7日の公開から約4か月半で **23,476スター**（8月21日時点、GitHub API 実測）。個人のエージェントに記憶を持たせる製品が多いなかで、**組織の資産として統治する**という設計が異色。**ライセンスは NOASSERTION** で、標準的な OSS ライセンスではない点に注意がいる。",
+    "date": "2026-08-21",
+    "newsDate": "2026-08-21",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "オープンソース",
+      "エージェント",
+      "中国AI",
+      "エンタープライズ",
+      "開発ツール"
+    ],
+    "heroScope": "none"
+  },
+  {
+    "id": "feature-ai-code-verification-gap-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】検証がボトルネックになった — 96%が AI のコードを信用せず、実際に毎回確かめるのは48%",
+    "excerpt": "Sonar が1,100名超の開発者を対象に実施した調査（2026年1月公開）は、AI コーディングの現実を数字で示している。**96%が AI 生成コードを完全には信用していない**。にもかかわらず**コミット前に必ず検証するのは48%**。そして**38%が「AI のコードのレビューは、人間の同僚のコードより手間がかかる」**と答えた。書く速度は上がったが、確かめる仕組みが追いついていない。この非対称は何を意味し、どう設計で埋めるのか。",
+    "date": "2026-08-21",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "分析",
+      "コーディング",
+      "開発ツール",
+      "AI品質",
+      "エージェント"
+    ],
+    "heroScope": "none"
   }
 ];
