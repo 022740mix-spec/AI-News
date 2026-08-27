@@ -7914,5 +7914,99 @@ export const ARTICLES_META = [
       "エージェント"
     ],
     "heroScope": "none"
+  },
+  {
+    "id": "openai-jalapeno-first-results-inferencex-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI が自社チップ Jalapeño の初期ベンチマークを公開 — 電力あたり1.5〜1.9倍、対話型では最大4.1倍、本格展開は2027年",
+    "excerpt": "6月に Broadcom と発表した自社設計の推論アクセラレータ **Jalapeño** の測定結果が8月25日に公表された。公開ベンチマーク **InferenceX** を GPT-OSS 120B・DeepSeek R1 670B・Kimi K2.5 1T で回し、比較システムに対し **電力あたりのピーク性能で1.5〜1.9倍、エンドツーエンドのレイテンシで1.7〜3.6倍の低減**。対話性の高いワークロードでは 2.1〜4.1倍。Broadcom CEO は運用コストが一般的な AI GPU 比で約50%削減しうると述べた。ただし**2026年末はごく少量で、本格展開は2027年**である点は押さえておきたい。",
+    "date": "2026-08-27",
+    "newsDate": "2026-08-25",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "OpenAI",
+      "半導体",
+      "推論",
+      "NVIDIA",
+      "AI インフラ"
+    ],
+    "heroScope": "none"
+  },
+  {
+    "id": "anthropic-claude-academy-japanese-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic の学習サイト「Claude Academy」が日本語に対応 — 無料・サインイン不要、社内教育プログラムがベース",
+    "excerpt": "8月20日に公開された Anthropic 公式の学習サイト **Claude Academy** が、**一部を除き日本語表示に対応**した。**完全無料**で、サインインしなくても読める範囲がある。同社が従業員向けに実施している AI 教育プログラムをベースにしており、Claude の操作方法だけでなく、**特定のモデルに依存しない AI の使い方や考え方**を扱う点が特徴。バッジと進捗管理によるゲーミフィケーション要素も持つ。社内で AI の教え役がいない組織にとって、日本語の公式教材が無料で手に入る意味は小さくない。",
+    "date": "2026-08-27",
+    "newsDate": "2026-08-20",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "教育",
+      "日本",
+      "非エンジニア"
+    ],
+    "heroScope": "none"
+  },
+  {
+    "id": "xpeng-robotics-900m-embodied-ai-record-2026",
+    "type": "news",
+    "category": "product",
+    "title": "XPENG のロボティクス事業が9億ドル超を調達 — 評価額63億ドル超、中国の具現化AIで過去最大の単一ラウンド",
+    "excerpt": "8月24日、XPENG（小鵬汽車）のロボティクス事業が初回の資金調達で **9億米ドル超**を集め、ポストマネー評価額は **63億米ドル超**に達した。**中国の具現化AI（embodied AI）業界における単一ラウンドの民間調達としては過去最大**とされる。IDG Capital がリードし、**Tencent と Alibaba が戦略投資家として参加**。資金は Physical AI モデルの訓練と反復、高品質データ生成、量産設備の開発に充てられる。ヒューマノイド **XPENG IRON** は2026年末に量産入り予定。",
+    "date": "2026-08-27",
+    "newsDate": "2026-08-24",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "中国AI",
+      "ロボティクス",
+      "資金調達",
+      "エッジAI",
+      "業界動向"
+    ],
+    "heroScope": "none"
+  },
+  {
+    "id": "ponytail-yagni-agent-skill-112k-stars-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "「書かなかったコードが最良のコード」— エージェントに YAGNI を教える ponytail が112,530スター",
+    "excerpt": "**「AI エージェントを、部屋で一番怠惰なシニア開発者のように考えさせる」**——この一文を掲げるリポジトリが、公開から約2か月半で **112,530スター**に達した（8月27日時点、GitHub API 実測）。やることは Claude Code / Cursor 向けのルールとスキルの配布で、**コードを書かせるのではなく、書かないよう仕向ける**。エージェントが過剰実装しがちだという広く共有された不満が、この数字に表れている。MIT ライセンス。",
+    "date": "2026-08-27",
+    "newsDate": "2026-08-27",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "オープンソース",
+      "Claude Code",
+      "Cursor",
+      "エージェント",
+      "開発体験"
+    ],
+    "heroScope": "none"
+  },
+  {
+    "id": "feature-watermark-removal-c2pa-vs-synthid-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】透かし除去ツールが伸びている — ただし C2PA と SynthID では「消せる」の意味がまったく違う",
+    "excerpt": "AI 生成物に来歴を刻む動きが規制で加速する一方、**それを剥がすツールが GitHub で伸びている**。Anthropic が透かし導入を発表した8月11日に作られたリポジトリは、16日で **18,538スター**に達した。だが「透かしは簡単に消せる」という理解は**半分しか正しくない**。**C2PA はファイルに埋め込む署名付きマニフェストなのでスクリーンショット1枚で落ちる**が、**SynthID は生成時のトークン選択に統計的な偏りを入れるため、内容そのものを書き換えない限り残る**。この違いを踏まえないと、コンプライアンス設計を誤る。",
+    "date": "2026-08-27",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "分析",
+      "規制",
+      "透明性",
+      "EU AI Act",
+      "セキュリティ"
+    ],
+    "heroScope": "none"
   }
 ];

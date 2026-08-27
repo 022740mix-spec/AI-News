@@ -5,8 +5,40 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-08-21T15:00:00Z</updated>
+  <updated>2026-08-27T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>「書かなかったコードが最良のコード」— エージェントに YAGNI を教える ponytail が112,530スター</title>
+    <link rel="alternate" type="text/html" href="?a=ponytail-yagni-agent-skill-112k-stars-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ponytail-yagni-agent-skill-112k-stars-2026</id>
+    <published>2026-08-27T15:00:00Z</published>
+    <updated>2026-08-27T15:00:00Z</updated>
+    <summary>「AI エージェントを、部屋で一番怠惰なシニア開発者のように考えさせる」——この一文を掲げるリポジトリが、公開から約2か月半で 112,530スターに達した（8月27日時点、GitHub API 実測）。やることは Claude Code / Cursor 向けのルールとスキルの配布で、コードを書かせるのではなく、書かないよう仕向ける。エージェントが過剰実装しがちだという広く共有された不満が、この数字に表れている。MIT ライセンス。</summary>
+  </entry>
+  <entry>
+    <title>【分析】透かし除去ツールが伸びている — ただし C2PA と SynthID では「消せる」の意味がまったく違う</title>
+    <link rel="alternate" type="text/html" href="?a=feature-watermark-removal-c2pa-vs-synthid-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-watermark-removal-c2pa-vs-synthid-2026</id>
+    <published>2026-08-27T15:00:00Z</published>
+    <updated>2026-08-27T15:00:00Z</updated>
+    <summary>AI 生成物に来歴を刻む動きが規制で加速する一方、それを剥がすツールが GitHub で伸びている。Anthropic が透かし導入を発表した8月11日に作られたリポジトリは、16日で 18,538スターに達した。だが「透かしは簡単に消せる」という理解は半分しか正しくない。C2PA はファイルに埋め込む署名付きマニフェストなのでスクリーンショット1枚で落ちるが、SynthID は生成時のトークン選択に統計的な偏りを入れるため、内容そのものを書き換えない限り残る。この違いを踏まえないと、コンプライアンス設計を誤る。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI が自社チップ Jalapeño の初期ベンチマークを公開 — 電力あたり1.5〜1.9倍、対話型では最大4.1倍、本格展開は2027年</title>
+    <link rel="alternate" type="text/html" href="?a=openai-jalapeno-first-results-inferencex-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-jalapeno-first-results-inferencex-2026</id>
+    <published>2026-08-25T15:00:00Z</published>
+    <updated>2026-08-25T15:00:00Z</updated>
+    <summary>6月に Broadcom と発表した自社設計の推論アクセラレータ Jalapeño の測定結果が8月25日に公表された。公開ベンチマーク InferenceX を GPT-OSS 120B・DeepSeek R1 670B・Kimi K2.5 1T で回し、比較システムに対し 電力あたりのピーク性能で1.5〜1.9倍、エンドツーエンドのレイテンシで1.7〜3.6倍の低減。対話性の高いワークロードでは 2.1〜4.1倍。Broadcom CEO は運用コストが一般的な AI GPU 比で約50%削減しうると述べた。ただし2026年末はごく少量で、本格展開は2027年である点は押さえておきたい。</summary>
+  </entry>
+  <entry>
+    <title>XPENG のロボティクス事業が9億ドル超を調達 — 評価額63億ドル超、中国の具現化AIで過去最大の単一ラウンド</title>
+    <link rel="alternate" type="text/html" href="?a=xpeng-robotics-900m-embodied-ai-record-2026"/>
+    <id>tag:ai-tool-news.jp,2026:xpeng-robotics-900m-embodied-ai-record-2026</id>
+    <published>2026-08-24T15:00:00Z</published>
+    <updated>2026-08-24T15:00:00Z</updated>
+    <summary>8月24日、XPENG（小鵬汽車）のロボティクス事業が初回の資金調達で 9億米ドル超を集め、ポストマネー評価額は 63億米ドル超に達した。中国の具現化AI（embodied AI）業界における単一ラウンドの民間調達としては過去最大とされる。IDG Capital がリードし、Tencent と Alibaba が戦略投資家として参加。資金は Physical AI モデルの訓練と反復、高品質データ生成、量産設備の開発に充てられる。ヒューマノイド XPENG IRON は2026年末に量産入り予定。</summary>
+  </entry>
   <entry>
     <title>Tencent Cloud の「TencentDB Agent Memory」が23,476スター — 個人ではなくチーム単位のエージェント記憶、ただしライセンスは標準 OSS ではない</title>
     <link rel="alternate" type="text/html" href="?a=tencentdb-agent-memory-team-level-23k-stars-2026"/>
@@ -30,6 +62,14 @@
     <published>2026-08-20T15:00:00Z</published>
     <updated>2026-08-20T15:00:00Z</updated>
     <summary>8月20日、Claude Code に組み込みの出力スタイル Concise が加わった。結果から書き、前置きと実況を省き、既定で応答を短く保つ。ただし作業の徹底度は Default と変わらず、説明を求めれば full で答える。エラー報告・セキュリティ警告・破壊的操作の確認だけは常に全文を維持する設計。v2.1.237 以降が必要。あわせて組み込みスタイルは Default / Proactive / Concise / Explanatory / Learning の5種類になった。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic の学習サイト「Claude Academy」が日本語に対応 — 無料・サインイン不要、社内教育プログラムがベース</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-academy-japanese-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-academy-japanese-2026</id>
+    <published>2026-08-20T15:00:00Z</published>
+    <updated>2026-08-20T15:00:00Z</updated>
+    <summary>8月20日に公開された Anthropic 公式の学習サイト Claude Academy が、一部を除き日本語表示に対応した。完全無料で、サインインしなくても読める範囲がある。同社が従業員向けに実施している AI 教育プログラムをベースにしており、Claude の操作方法だけでなく、特定のモデルに依存しない AI の使い方や考え方を扱う点が特徴。バッジと進捗管理によるゲーミフィケーション要素も持つ。社内で AI の教え役がいない組織にとって、日本語の公式教材が無料で手に入る意味は小さくない。</summary>
   </entry>
   <entry>
     <title>長時間エージェント運用を支える OSS が伸びている — oh-my-pi が25,712スター、LoopX は「制御プレーン」を名乗る</title>
