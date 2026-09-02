@@ -102,7 +102,91 @@ jobs:
       # DEAD（404 / 410 / 名前解決失敗）だけがエラー。
       # 403・429・5xx は判定不能として扱う。これを「リンク切れ」と見なして
       # 機械的に削除すると、正しい出典を失う。
+      #
+      # continue-on-error だけだとジョブが success になり、到達できない URL が
+      # ログに埋もれる。初回の実行で17件が実際に埋もれたため、件数を出力に取り、
+      # 1件でもあれば Issue にする。
       - name: 出典 URL の到達性
         if: steps.gate.outputs.run == 'true'
-        continue-on-error: true
-        run: node scripts/check-source-urls.mjs --concurrency=4 --timeout=20000
+        id: urls
+        run: |
+          node scripts/check-source-urls.mjs --json --concurrency=4 --timeout=20000 > /tmp/urls.json || true
+          node -e '
+            const fs = require("fs");
+            let data;
+            try {
+              data = JSON.parse(fs.readFileSync("/tmp/urls.json", "utf8"));
+            } catch (e) {
+              console.log("JSON を読めませんでした: " + e.message);
+              fs.appendFileSync(process.env.GITHUB_OUTPUT, "dead=unknown\n");
+              process.exit(0);
+            }
+            const r = data.results || [];
+            const n = (s) => r.filter((x) => x.status === s).length;
+            console.log(`全 ${r.length} 件 — OK ${n("OK")} / 判定不能 ${n("INDETERMINATE")} / サーバ障害 ${n("SERVER_ERROR")} / 到達不可 ${n("DEAD")}`);
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, `dead=${n("DEAD")}\n`);
+          '
+
+      # 到達できない URL は記事の信頼性に直結するため、必ず表に出す。
+      # ただし「到達できない」は「記事が間違っている」ことを意味しない。
+      # 過去の実例では DEAD 2件がいずれも「実在する事柄に誤った URL が
+      # 付いていた」ケースで、URL の差し替えだけで済んでいる。
+      - name: 到達できない URL を Issue にする
+        if: steps.gate.outputs.run == 'true' && steps.urls.outputs.dead != '0' && steps.urls.outputs.dead != 'unknown'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require("fs");
+            const data = JSON.parse(fs.readFileSync("/tmp/urls.json", "utf8"));
+            const dead = (data.results || []).filter((x) => x.status === "DEAD");
+            const today = new Date().toISOString().slice(0, 10);
+
+            const lines = [
+              `## 到達できない出典 URL（${dead.length} 件）`,
+              "",
+              "**この一覧を根拠に記事を取り下げないでください。**",
+              "DEAD が意味するのは「その URL が違う」ことだけです。過去の実例では、",
+              "DEAD だった2件はいずれも実在する事柄に誤った URL が付いていたケースで、",
+              "正しい URL に差し替えるだけで済みました。",
+              "**対応を決める前に、必ず対象の事実そのものを外部で検証してください。**",
+              "",
+              "| URL | 状態 | 掲載記事 |",
+              "|---|---|---|",
+              ...dead.map((d) => `| ${d.url} | ${d.detail} | \`${d.where}\` |`),
+              "",
+              "---",
+              "",
+              "403・429・5xx は判定不能として除外しています。bot 対策で弾かれている",
+              "だけの場合が多く、リンク切れとして機械的に削除すると正しい出典を失います。",
+              "",
+              `検査日: ${today} / \`daily-maintenance.yml\` が自動で作成しました。`,
+            ];
+
+            const title = `出典 URL: 到達できないものが ${dead.length} 件あります（${today}）`;
+            const { data: open } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: "open",
+              labels: "maintenance",
+              per_page: 20,
+            });
+            const existing = open.find((i) => i.title.startsWith("出典 URL:"));
+            if (existing) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                title,
+                body: lines.join("\n"),
+              });
+              core.notice(`既存の Issue #${existing.number} を更新しました。`);
+            } else {
+              const { data: created } = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body: lines.join("\n"),
+                labels: ["maintenance"],
+              });
+              core.notice(`Issue #${created.number} を作成しました。`);
+            }
