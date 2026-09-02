@@ -4200,7 +4200,7 @@ export const ARTICLES_META = [
     "id": "claude-sonnet-5-review",
     "type": "review",
     "category": "model",
-    "title": "Claude Sonnet 5 レビュー — Anthropic 新ミッドレンジ・フラッグシップ、Opus 4.8 に迫る性能を $2/$10 で、エージェント運用の主力",
+    "title": "Claude Sonnet 5 レビュー — Anthropic 新ミッドレンジ・フラッグシップ、Opus 4.8 に迫る性能を $3/$15 で、エージェント運用の主力",
     "excerpt": "Anthropic が2026年6月30日に GA した新ミッドレンジ・フラッグシップ。**SWE-bench Pro 63.2%**（Sonnet 4.6: 58.1% / Opus 4.8: 69.2%）、**GDPval-AA v2 で Opus 4.8 超え**（1618 vs 1615）、HLE with tools でも 57.4% とほぼ互角。**現行価格 $3/$15**（〜8/31 は導入価格 $2/$10 だった）。1Mコンテキスト、Adaptive Thinking 常時オン。claude.ai Free/Pro のデフォルト、Claude Code・Cursor・VS Code・GitHub Copilot で即日利用可能。**「これまでで最もエージェント的な Sonnet」** と Anthropic が公表する通り、エージェント・コーディング・ブラウザ自動化での実力が特筆される。ただし新トークナイザは同じテキストで 1-1.35 倍多くトークンを数える傾向あり、実コスト予測に注意。",
     "date": "2026-07-07",
     "newsDate": "2026-06-30",
