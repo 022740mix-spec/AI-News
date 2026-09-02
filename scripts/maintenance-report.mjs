@@ -113,7 +113,61 @@ let actionable = false;
   }
 }
 
-// ── 4. 校閲チェックの警告 ──
+// ── 4. トップのヒーローが古くなっていないか ──
+// HomePage は「heroScope が none でない最新記事」をヒーローに選ぶ。
+// 新着に一律で heroScope: "none" が付くと候補が尽き、トップだけが
+// 何週間も過去で止まる。実際に8月11日以降の18本すべてに none が付き、
+// ヒーローが23日間 8月10日の記事のままになっていた。
+//
+// データとしては正常なので既存のどの検査にも掛からない。読者の画面で
+// 何が見えているかを見に行く必要がある。
+{
+  const mod = await import(pathToFileURL(join(rootDir, "src/data/articlesMeta.js")).href);
+  const meta = mod.ARTICLES_META || [];
+  const ymd = (a) =>
+    a?.newsDate && /^\d{4}-\d{2}-\d{2}$/.test(a.newsDate)
+      ? a.newsDate
+      : a?.date && /^\d{4}-\d{2}-\d{2}$/.test(a.date)
+        ? a.date
+        : "";
+  const sorted = [...meta].sort((a, b) => ymd(b).localeCompare(ymd(a)));
+  const hero = sorted.find((a) => (a.heroScope ?? "day") !== "none");
+  const newest = sorted[0];
+
+  if (!hero) {
+    actionable = true;
+    sections.push({
+      level: "error",
+      title: "トップに出せる記事が1本もない",
+      note: "全記事に heroScope: \"none\" が付いています。トップのヒーローが空になります。",
+    });
+  } else {
+    const gapDays = Math.floor(
+      (new Date(`${ymd(newest)}T00:00:00Z`) - new Date(`${ymd(hero)}T00:00:00Z`)) / 86400000
+    );
+    // 新着が数本 none でも数日は許容する。1週間空いたら異常とみなす。
+    if (gapDays > 7) {
+      actionable = true;
+      const blocked = sorted
+        .filter((a) => ymd(a) > ymd(hero) && (a.heroScope ?? "day") === "none")
+        .filter((a) => a.status !== "retracted");
+      sections.push({
+        level: "warn",
+        title: `トップのヒーローが ${gapDays} 日ぶん古い`,
+        note:
+          `最新記事は ${ymd(newest)} ですが、トップに出ているのは ${ymd(hero)} の記事です。\n` +
+          `間の記事に \`heroScope: "none"\` が付いてヒーロー候補から外れています。\n` +
+          "取り下げ記事以外に none を付ける理由が無ければ、外してください。",
+        body: blocked
+          .slice(0, 20)
+          .map((a) => `- \`${a.id}\` — ${ymd(a)} — ${a.title}`)
+          .join("\n"),
+      });
+    }
+  }
+}
+
+// ── 5. 校閲チェックの警告 ──
 {
   const r = run("review-check.mjs");
   const warns = r.out.split("\n").filter((l) => l.startsWith("⚠️"));
@@ -163,7 +217,7 @@ if (!actionable) {
   lines.push("---");
   lines.push("");
   lines.push("この Issue は `daily-maintenance.yml` が自動で作成しました。");
-  lines.push("記事データの編集は自律実行では行いません。対話セッションで対応してください。");
+  lines.push("訂正は「訂正・取り下げポリシー」に従い、編集履歴に必ず記録してください。黙って直さないこと。");
 }
 console.log(lines.join("\n"));
 

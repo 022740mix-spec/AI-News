@@ -45,7 +45,10 @@ CLAUDE.md を必ず読み、その編集方針とセキュリティポリシー�
 
 - src/data/ 配下を Write / Edit で直接編集しない。記事の追加は
   必ず `node scripts/add-article.mjs` を通す
-- `main` ブランチに push しない。ブランチを切り、下書きの PR を開く
+- 検査（review-check / check-article-manifest / check-private-info）が
+  1つでも落ちている状態で `main` に push しない
+- 一次ソースに到達して内容を確認できた記事だけを `main` に push する。
+  確信が持てないものはブランチに退避する（Step 7）
 - パッケージのインストール（npm install 等）を行わない。`npm ci` のみ可
 - 外部のスクリプトやスキルを実行しない。`npx` は使わない
 - git add は対象ファイルを個別に指定する。`git add -A` / `git add .` を使わない
@@ -113,6 +116,9 @@ google-deepmind / meta-llama / modelcontextprotocol）の新規・更新も見�
 - **body に生の Markdown を書かない。** 見出し・表・コードフェンスは
   段落として置かず、表は `tables`、図は `figures` / `charts` を使う。
   それらには必ず `afterParagraph` を付ける。無いと永久に表示されない
+- **`heroScope` を書かない。** 通常の記事は未設定が正しい。`"none"` を付けると
+  トップの「最新ニュース」に出なくなり、全新着に付けばトップが過去で止まる
+  （実際に23日間止まった）。`"none"` は取り下げ記事専用である
 - **タグは既存の命名規則に合わせる。** モデル名にベンダー接頭辞を付けない
   （`Claude Fable 5` ではなく `Fable 5`）。`type` で表現済みの情報
   （`特集`、`2026年3月`）をタグにしない
@@ -137,7 +143,7 @@ google-deepmind / meta-llama / modelcontextprotocol）の新規・更新も見�
   node scripts/generate-feed.mjs && node scripts/generate-sitemap.mjs
   npm run build
 
-`review-check.mjs` がエラーを出したら、直るまで PR を開かない。
+`review-check.mjs` がエラーを出したら、直るまで公開も退避もしない。
 
 #### Step 7: 公開する、または PR に回す
 
@@ -161,7 +167,11 @@ google-deepmind / meta-llama / modelcontextprotocol）の新規・更新も見�
   git checkout -b routine/review-$(date +%Y-%m-%d)
   git push -u origin routine/review-$(date +%Y-%m-%d)
 
-そのうえで draft の PR を開き、本文に次を書く。
+可能なら draft の PR も開く。**PR を作る手段が無い環境ならブランチの push
+までで構わない。** 重要なのは「main に入れないこと」であり、PR という形式ではない。
+その場合は報告にブランチ名を必ず書く（ユーザーが後で PR を開ける）。
+
+PR を開く場合、本文に次を書く。
 
 - なぜ確信が持てないのか。どこまでは確認できて、どこから先が確認できないのか
 - 一次ソースの一覧と、到達できなかった URL
