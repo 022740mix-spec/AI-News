@@ -3982,7 +3982,9 @@ const ARTICLES_BODY = {
       "セキュリティ面では、認証に **OAuth 2.0 On-Behalf-Of（OBO）フロー**と PKCE を採用しており、パスワードは一切保存されない。全ての Microsoft Graph API 呼び出しは組織の Microsoft 365 監査ログに記録される。Team・Enterprise プランでは管理者が利用可能なユーザー/グループを制限したり、アクセス可能な M365 サービスを選択的に制御できる。",
       "今回の全プラン開放で注目すべきは **Microsoft Copilot との価格比較**だ。Microsoft は同じ Outlook・OneDrive・SharePoint・Teams 内で AI アシスタント機能を提供する Copilot に **$30/ユーザー/月** を課金している。一方、Claude の M365 コネクターは Free プランでも利用可能——つまり **$0** で同じデータにアクセスできる。しかも M365 コネクターは Microsoft 自身が構築し、Microsoft Marketplace で承認したものだ。テックアナリストの Aakash Gupta（@aakashgupta）は「Anthropic は Microsoft 自身の配管を使って Claude を売り込んでいる」と指摘している。",
       "Copilot の普及は想定より遅れている。Microsoft は2025年初頭時点で有料 Copilot シートが約200万と報告しており、M365 の有料アカウント4億に対して**浸透率は1%未満**だ。$30/月という追加コストと、既存の M365 ライセンスの上に重ねる料金体系がハードルになっている。kate zhou（@katekatezhou）はこの動きを「古典的なアンバンドリング戦略」と分析し、「Anthropic は Microsoft の環境をユーザー獲得のユーティリティレイヤーとして扱い、Microsoft にモデル品質で競争することを強いている。『最良のモデル』が『組み込みツール』に勝つという高リスクな賭けだ」と述べている。",
-      "この機能拡大は、Claude を「高機能なチャットボット」から「日常業務に参加するアシスタント」へと進化させる戦略の一環だ。同日の Windows 版 Computer Use 対応と合わせ、Anthropic はユーザーの既存のワークフロー（メール、ドキュメント、デスクトップ操作）に Claude を直接統合する方向を鮮明にしている。GitHub では Max プランへの M365 コネクター開放を求める要望（#20469）が2026年1月から上がっており、ユーザーの声に応えた形だ。"
+      "この機能拡大は、Claude を「高機能なチャットボット」から「日常業務に参加するアシスタント」へと進化させる戦略の一環だ。同日の Windows 版 Computer Use 対応と合わせ、Anthropic はユーザーの既存のワークフロー（メール、ドキュメント、デスクトップ操作）に Claude を直接統合する方向を鮮明にしている。GitHub では Max プランへの M365 コネクター開放を求める要望（#20469）が2026年1月から上がっており、ユーザーの声に応えた形だ。",
+      "**編集履歴**",
+      "【訂正 2026-09-02】**一次ソースとして挙げていた X の投稿 URL（`x.com/claudeai/status/2040123456789012345`）が実在しないものであったため削除した。** 出典 URL の到達性検査で404が判明し、ステータスIDが連番の並びであることから、実在の投稿を指していない捏造された URL だと確認した。本記事の事実関係そのものは、残る2件の一次ソース（Anthropic 公式のコネクター案内とサポート記事）で裏付けられているため、記事は取り下げず出典のみを訂正する。**実在しない出典を掲げていたことは、内容の正誤とは別の問題である。** 今後は `scripts/check-source-urls.mjs` を GitHub Actions で週次実行し、到達できない出典を Issue として自動検出する。"
     ],
     "tables": [
       {
@@ -4059,11 +4061,6 @@ const ARTICLES_BODY = {
       }
     ],
     "primarySources": [
-      {
-        "title": "@claudeai — Microsoft 365 connectors announcement",
-        "site": "X (Twitter)",
-        "url": "https://x.com/claudeai/status/2040123456789012345"
-      },
       {
         "title": "Microsoft 365 Connector",
         "site": "Claude",
