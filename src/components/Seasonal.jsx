@@ -5,8 +5,12 @@ function SeasonalScene({ accent }) {
   const preset = ACCENT_PRESETS.find(p => p.id === accent);
   const season = preset?.season;
   if (!season) return null;
-  // summer / autumn / winter のシーンは季節になったら公開予定
-  const scenes = { spring: SpringScene };
+  const scenes = {
+    spring: SpringScene,
+    summer: SummerScene,
+    autumn: AutumnScene,
+    winter: WinterScene,
+  };
   const Scene = scenes[season];
   if (!Scene) return null;
   return (
@@ -93,10 +97,9 @@ function SeasonalEffect({ visible, accent }) {
   if (!season) return null;
 
   if (season === "spring") return <SpringEffect />;
-  // summer / autumn / winter の演出は季節になったら公開予定
-  // if (season === "summer") return <SummerEffect />;
-  // if (season === "autumn") return <AutumnEffect />;
-  // if (season === "winter") return <WinterEffect />;
+  if (season === "summer") return <SummerEffect />;
+  if (season === "autumn") return <AutumnEffect />;
+  if (season === "winter") return <WinterEffect />;
   return null;
 }
 
