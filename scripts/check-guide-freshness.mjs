@@ -15,10 +15,18 @@
  *
  * 1. 対応レビューの lastReviewed が、ガイド節の lastReviewed より新しい
  *    → レビューを更新したのにガイドを見ていない
- * 2. ガイド中のモデル名が、同じ系列の最新世代より古い
- *    ただし「GPT-4o などのマルチモーダル」のように説明用の例として過去の
- *    モデルを挙げている場合は正しい記述である。この検査は候補を出すだけで、
- *    「誤り」と断定しない。**疑わしきは削除に振り切ると、正しい記述まで壊す。**
+ * 2. モデル世代に依存した記述がある（同系列の最新より古い名前を含む）
+ *
+ *    **この検査は「最新の名前」を提示しない。** 提示すると名前だけの差し替えを
+ *    誘うためである。差し替えは「新しく見えるのに誰も検証していない記述」を作り、
+ *    古いままより質が悪い。実際、「Gemini 2.5 Pro の 200 万トークン」の数字は
+ *    2.5 Pro に紐づいており、名前だけ変えると数字が根拠を失う。同ツールの
+ *    レビューは「Pro 世代は GA 遅延が続く」と書いており、差し替えれば存在しない
+ *    構成を書くことになる。「Team プラン + Sonnet 4.6 が条件」の条件部分も、
+ *    モデル名とは独立に変わる。
+ *
+ *    記述はモデル世代に依存しているのだから、世代が変われば**記述ごと変わる**。
+ *    説明用の例として過去のモデルを挙げている場合は、そのままで正しい。
  * 3. パッチバージョン（v2.1.90 のような3桁）がガイドに埋まっている
  *    → 日単位で古くなる値であり、ガイドに載せること自体が持続しない
  * 4. 同一の文が複数箇所に複製されている
@@ -167,7 +175,9 @@ for (const [key, meta] of Object.entries(SECTIONS)) {
       const sig = `${fam}|${ver}`;
       if (seenModel.has(sig)) continue;
       seenModel.add(sig);
-      findings.model.push({ key, found: mt[0], newest: `${mt[1]} ${max}`, excerpt: t.slice(0, 110) });
+      // 「最新は X」を出さない。出すと名前だけの差し替えを誘う。
+      // 記述はモデル世代に依存しているので、世代が変われば記述ごと変わる。
+      findings.model.push({ key, found: mt[0], excerpt: t.slice(0, 160) });
     }
     for (const pv of t.match(PATCH) || []) {
       if (seenPatch.has(pv)) continue;
@@ -218,11 +228,21 @@ if (n(findings.drift)) {
   console.log("");
 }
 if (n(findings.model)) {
-  console.log(`🟡 旧世代のモデル名がある: ${n(findings.model)} 件`);
-  console.log("   **すべてが誤りとは限りません。** 「GPT-4o などのマルチモーダル」のように");
-  console.log("   説明用の例として過去のモデルを挙げているなら、そのままで正しい。");
-  console.log("   現行の条件・仕様として書いているものだけが直す対象です。");
-  for (const f of findings.model.slice(0, 20)) console.log(`   ${f.key} — 「${f.found}」→ サイトの最新は ${f.newest}\n      ${f.excerpt}`);
+  console.log(`🟡 モデル世代に依存した記述: ${n(findings.model)} 件`);
+  console.log("");
+  console.log("   **名前だけを差し替えてはいけません。** 差し替えると「新しく見えるのに");
+  console.log("   誰も検証していない記述」ができ、古いままより質が悪くなります。");
+  console.log("");
+  console.log("   実例: 「Gemini 2.5 Pro の 200 万トークン」の数字は 2.5 Pro に紐づいており、");
+  console.log("   名前だけ 3.5 にすると数字が根拠を失う。しかもサイト自身のレビューは");
+  console.log("   「Pro 世代は GA 遅延が続く」と書いており、存在しない構成を書くことになる。");
+  console.log("");
+  console.log("   取りうる対応は3つ。**どれを選ぶかは記述ごとの判断です。**");
+  console.log("     (a) 世代に依存しない書き方に直す（ガイドでは多くの場合これ）");
+  console.log("     (b) 可変部分をレビュー記事へのリンクに置き換える");
+  console.log("     (c) そのままでよい（説明用の例として過去のモデルを挙げている場合）");
+  console.log("");
+  for (const f of findings.model.slice(0, 20)) console.log(`   ${f.key} — 「${f.found}」を含む\n      ${f.excerpt}`);
   console.log("");
 }
 if (n(findings.patch)) {
