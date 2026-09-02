@@ -127,6 +127,15 @@ jobs:
             fs.appendFileSync(process.env.GITHUB_OUTPUT, `dead=${n("DEAD")}\n`);
           '
 
+      # 404 の大半は「情報が消えた」のではなく「URL が変わった」だけである。
+      # 出典を削除すれば記事の裏付けは薄くなるので、先に移転先を探す。
+      # agent の実行環境はネットワークが絞られていて探索できないため、
+      # 制限のないここで行う。候補は提示するだけで自動適用はしない。
+      - name: 移転先の候補を探す
+        if: steps.gate.outputs.run == 'true' && steps.urls.outputs.dead != '0' && steps.urls.outputs.dead != 'unknown'
+        continue-on-error: true
+        run: node scripts/find-moved-urls.mjs --from-json=/tmp/urls.json --json > /tmp/moved.json
+
       # 到達できない URL は記事の信頼性に直結するため、必ず表に出す。
       # ただし「到達できない」は「記事が間違っている」ことを意味しない。
       # 過去の実例では DEAD 2件がいずれも「実在する事柄に誤った URL が
@@ -161,6 +170,36 @@ jobs:
               "",
               `検査日: ${today} / \`daily-maintenance.yml\` が自動で作成しました。`,
             ];
+
+            // 移転先の候補が見つかっていれば添える。
+            // 404 の大半は情報が消えたのではなく URL が変わっただけであり、
+            // 出典を削除する前に差し替えを検討できるようにする。
+            try {
+              const moved = JSON.parse(fs.readFileSync("/tmp/moved.json", "utf8"));
+              const withCands = (moved.report || []).filter((r) => r.candidates?.length);
+              if (withCands.length) {
+                lines.push(
+                  "",
+                  `## 移転先の候補（${withCands.length} 件）`,
+                  "",
+                  "**自動では差し替えていません。** 「それらしい URL」を機械的に当てはめると、",
+                  "実在しない出典を掲げる事故を繰り返します。内容を確認してから採否を決めてください。",
+                  "",
+                  "| 元の URL | 候補 | 確度 | 根拠 |",
+                  "|---|---|---|---|",
+                  ...withCands.flatMap((r) =>
+                    r.candidates.map((c) => `| ${r.url} | ${c.url} | ${c.confidence} | ${c.how} |`)
+                  ),
+                  ""
+                );
+              }
+              const none = (moved.report || []).length - withCands.length;
+              if (none > 0) {
+                lines.push("", `候補が見つからなかったものが ${none} 件あります。出典の削除を検討してください。`, "");
+              }
+            } catch {
+              // 候補探索が走らなかった場合は本体だけを出す
+            }
 
             const title = `出典 URL: 到達できないものが ${dead.length} 件あります（${today}）`;
             const { data: open } = await github.rest.issues.listForRepo({
