@@ -17,10 +17,10 @@ const dataDir = resolve(__dirname, "../src/data");
 const META_KEYS = [
   "id", "type", "category", "title", "excerpt", "date", "newsDate",
   "author", "readTime", "tags", "coverImage", "heroScope", "pinned",
-  "weekRoundupPeriod", "lastReviewed", "ratings", "rating", "status",
-  "reviewCategory",
+  "weekRoundupPeriod", "lastReviewed", "reviewCadence", "ratings", "rating",
+  "status", "reviewCategory",
 ];
-const BODY_KEYS = ["body", "tables", "figures", "charts", "primarySources"];
+const BODY_KEYS = ["body", "tables", "figures", "charts", "embeds", "primarySources"];
 
 // ── メタデータ配列 ──
 const metaArr = ARTICLES.map((a) => {

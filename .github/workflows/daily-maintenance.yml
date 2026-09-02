@@ -1,0 +1,108 @@
+name: Daily maintenance
+
+# 判断が要らない検査だけを毎日走らせる。
+# ニュース調査と記事執筆は言語モデルが要るため、ここでは行わない（Routine 側）。
+# 公開リポジトリなので Actions の実行時間は無料、外部 API も鍵も使わない。
+
+on:
+  schedule:
+    # 記事作成 Routine（07:00 / 15:00 JST）の直前に置く。
+    # 先に点検が回っていれば、消失や期限切れを抱えたまま記事が
+    # 積み上がるのを防げる。
+    # 毎時ちょうどは GitHub 側が混んで遅延しやすいため分をずらす。
+    - cron: "40 21 * * *"   # 06:40 JST
+    - cron: "40 5 * * *"    # 14:40 JST
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  maintenance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - name: 点検レポートを作る
+        id: report
+        run: |
+          node scripts/maintenance-report.mjs > /tmp/report.md
+          echo "--- レポート内容 ---"
+          cat /tmp/report.md
+
+      # 「異常なし」を毎日 Issue に出すと通知が無視されるようになるため、
+      # 報告すべきことがある場合だけ Issue を立てる。
+      # 同じ内容の Issue が積み上がらないよう、開いている当日分があれば更新する。
+      - name: 必要なときだけ Issue を立てる
+        if: steps.report.outputs.actionable == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require("fs");
+            const body = fs.readFileSync("/tmp/report.md", "utf-8");
+            const title = `定期点検: 対応が必要な項目があります（${new Date().toISOString().slice(0,10)}）`;
+
+            const { data: open } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: "open",
+              labels: "maintenance",
+              per_page: 20,
+            });
+
+            const existing = open.find((i) => i.title === title);
+            if (existing) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                body,
+              });
+              core.notice(`既存の Issue #${existing.number} を更新しました。`);
+            } else {
+              const { data: created } = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ["maintenance"],
+              });
+              core.notice(`Issue #${created.number} を作成しました。`);
+            }
+
+  # 出典 URL の到達性は週1回。930件あり毎日叩くと相手側に負荷をかける。
+  # agent の実行環境と違い Actions はネットワーク制限が無いため、
+  # ここで走らせたほうが判定不能が減る。
+  source-urls:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - name: 月曜だけ実行する
+        id: gate
+        run: |
+          if [ "$(date -u +%u)" = "1" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "月曜ではないため省略します。"
+          fi
+
+      # DEAD（404 / 410 / 名前解決失敗）だけがエラー。
+      # 403・429・5xx は判定不能として扱う。これを「リンク切れ」と見なして
+      # 機械的に削除すると、正しい出典を失う。
+      - name: 出典 URL の到達性
+        if: steps.gate.outputs.run == 'true'
+        continue-on-error: true
+        run: node scripts/check-source-urls.mjs --concurrency=4 --timeout=20000

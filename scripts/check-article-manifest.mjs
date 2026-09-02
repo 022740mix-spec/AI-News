@@ -44,6 +44,8 @@ import { readFileSync, writeFileSync, existsSync } from "fs";
 import { fileURLToPath, pathToFileURL } from "url";
 import { dirname, join } from "path";
 
+import { META_KEYS, BODY_KEYS } from "./serialize-articles.mjs";
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
 const MANIFEST = join(__dirname, "article-manifest.json");
@@ -138,6 +140,33 @@ if (added.length) {
   console.log("");
 }
 
-const failed = missing.length + bodyMissing.length;
-console.log(failed ? `❌ 記事の消失が ${failed} 件あります。` : "✅ 記事の消失はありません。");
+// ── フィールドの消失検知 ──
+// 記事そのものが残っていても、フィールドが消えれば機能は黙って壊れる。
+// 実際 reviewCadence（月次見直し対象13本を駆動）と embeds（4記事）は
+// キーリストから漏れており、split-articles.mjs を再実行すれば
+// 消えるにもかかわらず、どの検査にも掛からない状態だった。
+// データに実在するキーが必ずキーリストに載っていることを確認する。
+const unknownMeta = new Set();
+for (const a of meta) {
+  for (const k of Object.keys(a)) if (!META_KEYS.includes(k)) unknownMeta.add(k);
+}
+const unknownBody = new Set();
+for (const e of Object.values(body)) {
+  for (const k of Object.keys(e)) if (!BODY_KEYS.includes(k)) unknownBody.add(k);
+}
+if (unknownMeta.size || unknownBody.size) {
+  console.log("❌ キーリストに載っていないフィールドがデータに存在します:");
+  if (unknownMeta.size) console.log(`   meta: ${[...unknownMeta].join(", ")} → META_KEYS に追加`);
+  if (unknownBody.size) console.log(`   body: ${[...unknownBody].join(", ")} → BODY_KEYS に追加`);
+  console.log("   scripts/serialize-articles.mjs と scripts/split-articles.mjs の両方を更新してください。");
+  console.log("   放置すると、再生成時にこのフィールドが黙って消えます。");
+  console.log("");
+}
+
+const failed = missing.length + bodyMissing.length + (unknownMeta.size || unknownBody.size ? 1 : 0);
+console.log(
+  failed
+    ? "❌ 記事またはフィールドの消失があります。"
+    : "✅ 記事の消失はありません。"
+);
 process.exit(failed ? 1 : 0);

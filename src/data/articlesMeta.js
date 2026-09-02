@@ -14,7 +14,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-06-03",
     "author": "AI News 編集部",
     "readTime": "6分",
-    "tags": ["Anthropic", "Project Glasswing", "Partner Network", "セキュリティ", "エコシステム"],
+    "tags": [
+      "Anthropic",
+      "Project Glasswing",
+      "Partner Network",
+      "セキュリティ",
+      "エコシステム"
+    ],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Anthropic 6/2-3 announcements"
@@ -30,7 +36,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-06-02",
     "author": "AI News 編集部",
     "readTime": "8分",
-    "tags": ["Microsoft", "Build 2026", "MAI", "Project Solara", "量子コンピュータ"],
+    "tags": [
+      "Microsoft",
+      "Build 2026",
+      "MAI",
+      "Project Solara",
+      "量子コンピュータ"
+    ],
     "coverImage": {
       "src": "logos/microsoft.svg",
       "alt": "Microsoft Build 2026"
@@ -46,7 +58,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-06-01",
     "author": "AI News 編集部",
     "readTime": "7分",
-    "tags": ["IPO", "Cerebras", "SpaceX", "Anthropic", "OpenAI"],
+    "tags": [
+      "IPO",
+      "Cerebras",
+      "SpaceX",
+      "Anthropic",
+      "OpenAI"
+    ],
     "coverImage": {
       "src": "articles/cover-pricing.svg",
       "alt": "AI IPO 2026"
@@ -62,7 +80,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-06-02",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["Microsoft", "Build 2026", "Windows", "エージェント", "オープンソース"],
+    "tags": [
+      "Microsoft",
+      "Build 2026",
+      "Windows",
+      "エージェント",
+      "オープンソース"
+    ],
     "coverImage": {
       "src": "logos/microsoft.svg",
       "alt": "Windows Agent Framework"
@@ -78,7 +102,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-28",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["Anthropic", "資金調達", "Series H", "海外展開", "ARR"],
+    "tags": [
+      "Anthropic",
+      "資金調達",
+      "Series H",
+      "海外展開",
+      "ARR"
+    ],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Anthropic May 2026 Updates"
@@ -94,7 +124,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-06-02",
     "author": "AI News 編集部",
     "readTime": "6分",
-    "tags": ["Microsoft", "Scout", "OpenClaw", "エージェント", "Build 2026"],
+    "tags": [
+      "Microsoft",
+      "Scout",
+      "OpenClaw",
+      "エージェント",
+      "Build 2026"
+    ],
     "coverImage": {
       "src": "logos/microsoft.svg",
       "alt": "Microsoft Scout Build 2026"
@@ -110,7 +146,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-28",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["Microsoft", "GitHub Copilot", "MAI", "Build 2026", "OpenAI"],
+    "tags": [
+      "Microsoft",
+      "GitHub Copilot",
+      "MAI",
+      "Build 2026",
+      "OpenAI"
+    ],
     "coverImage": {
       "src": "logos/microsoft.svg",
       "alt": "Microsoft Build 2026 Project Polaris"
@@ -126,7 +168,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-20",
     "author": "AI News 編集部",
     "readTime": "7分",
-    "tags": ["中国AI", "Qwen", "Kimi", "Ernie", "オープンソース"],
+    "tags": [
+      "中国AI",
+      "Qwen",
+      "Kimi",
+      "Ernie",
+      "オープンソース"
+    ],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "China AI Models May 2026"
@@ -142,7 +190,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-19",
     "author": "AI News 編集部",
     "readTime": "7分",
-    "tags": ["Google", "Gemini", "I/O 2026", "エージェント", "Android"],
+    "tags": [
+      "Google",
+      "Gemini",
+      "I/O 2026",
+      "エージェント",
+      "Android"
+    ],
     "coverImage": {
       "src": "logos/google.svg",
       "alt": "Google I/O 2026"
@@ -158,7 +212,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-28",
     "author": "AI News 編集部",
     "readTime": "6分",
-    "tags": ["Anthropic", "Claude", "モデルリリース", "ベンチマーク", "エージェント"],
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "モデルリリース",
+      "ベンチマーク",
+      "エージェント"
+    ],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Claude Opus 4.8"
@@ -174,7 +234,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-14",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["Anthropic", "M&A", "SDK", "開発ツール", "戦略"],
+    "tags": [
+      "Anthropic",
+      "M&A",
+      "SDK",
+      "開発ツール",
+      "戦略"
+    ],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Anthropic × Stainless"
@@ -190,7 +256,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-13",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["Anthropic", "資金調達", "投資", "評価額", "OpenAI"],
+    "tags": [
+      "Anthropic",
+      "資金調達",
+      "投資",
+      "評価額",
+      "OpenAI"
+    ],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Anthropic $900B 評価額"
@@ -206,7 +278,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-12",
     "author": "AI News 編集部",
     "readTime": "6分",
-    "tags": ["Anthropic", "Claude", "法律", "MCP", "プラグイン"],
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "法律",
+      "MCP",
+      "プラグイン"
+    ],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Claude for Legal"
@@ -222,7 +300,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-11",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["Cursor", "Microsoft Teams", "エージェント", "PR", "開発ツール"],
+    "tags": [
+      "Cursor",
+      "Microsoft Teams",
+      "エージェント",
+      "PR",
+      "開発ツール"
+    ],
     "coverImage": {
       "src": "logos/microsoft.svg",
       "alt": "Cursor in Microsoft Teams"
@@ -238,7 +322,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-12",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["Google", "Gemini", "Googlebook", "Android", "ハードウェア"],
+    "tags": [
+      "Google",
+      "Gemini",
+      "Googlebook",
+      "Android",
+      "ハードウェア"
+    ],
     "coverImage": {
       "src": "logos/google.svg",
       "alt": "Google Googlebook と Gemini Intelligence"
@@ -254,7 +344,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-12",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["Anthropic", "Claude", "AWS", "Claude Code", "エージェント"],
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "AWS",
+      "Claude Code",
+      "エージェント"
+    ],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Anthropic 5/12 同日発表"
@@ -270,7 +366,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-12",
     "author": "AI News 編集部",
     "readTime": "8分",
-    "tags": ["アバター", "エージェント", "会議", "HeyGen", "Tavus"],
+    "tags": [
+      "アバター",
+      "エージェント",
+      "会議",
+      "HeyGen",
+      "Tavus"
+    ],
     "coverImage": {
       "src": "articles/cover-media-video.svg",
       "alt": "AI アバター会議参加 特集"
@@ -286,7 +388,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-12",
     "author": "AI News 編集部",
     "readTime": "8分",
-    "tags": ["リアルタイム翻訳", "Microsoft Teams", "Zoom", "Google Meet", "OpenAI"],
+    "tags": [
+      "リアルタイム翻訳",
+      "Microsoft Teams",
+      "Zoom",
+      "Google Meet",
+      "OpenAI"
+    ],
     "coverImage": {
       "src": "articles/cover-voice-audio.svg",
       "alt": "リアルタイム翻訳 特集"
@@ -302,7 +410,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-02",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["規制", "映画", "著作権", "クリエイティブ", "倫理"],
+    "tags": [
+      "規制",
+      "映画",
+      "著作権",
+      "クリエイティブ",
+      "倫理"
+    ],
     "coverImage": {
       "src": "articles/cover-regulation.svg",
       "alt": "Academy Oscar AI ルール"
@@ -318,7 +432,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-07",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["OpenAI", "ChatGPT", "セキュリティ", "AI安全性", "音声"],
+    "tags": [
+      "OpenAI",
+      "ChatGPT",
+      "セキュリティ",
+      "AI安全性",
+      "音声"
+    ],
     "coverImage": {
       "src": "logos/openai.svg",
       "alt": "OpenAI 5/7 アップデート"
@@ -334,7 +454,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-06",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["Anthropic", "SpaceX", "Claude", "AI インフラ", "GPU"],
+    "tags": [
+      "Anthropic",
+      "SpaceX",
+      "Claude",
+      "AI インフラ",
+      "GPU"
+    ],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Anthropic × SpaceX Colossus 1"
@@ -350,7 +476,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-05",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["OpenAI", "ChatGPT", "GPT-5", "ハルシネーション", "メモリ"],
+    "tags": [
+      "OpenAI",
+      "ChatGPT",
+      "GPT-5",
+      "ハルシネーション",
+      "メモリ"
+    ],
     "coverImage": {
       "src": "logos/openai.svg",
       "alt": "GPT-5.5 Instant"
@@ -366,7 +498,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-05-01",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["Microsoft", "エージェント", "エンタープライズ", "ガバナンス", "セキュリティ"],
+    "tags": [
+      "Microsoft",
+      "エージェント",
+      "エンタープライズ",
+      "ガバナンス",
+      "セキュリティ"
+    ],
     "coverImage": {
       "src": "logos/microsoft.svg",
       "alt": "Microsoft Agent 365"
@@ -382,7 +520,14 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-29",
     "author": "AI News 編集部",
     "readTime": "7分",
-    "tags": ["決算", "Microsoft", "Meta", "Amazon", "Alphabet", "投資"],
+    "tags": [
+      "決算",
+      "Microsoft",
+      "Meta",
+      "Amazon",
+      "Alphabet",
+      "投資"
+    ],
     "coverImage": {
       "src": "articles/cover-pricing.svg",
       "alt": "Big Tech 4社決算"
@@ -398,7 +543,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-22",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["OpenAI", "ChatGPT", "エージェント", "Codex", "エンタープライズ"],
+    "tags": [
+      "OpenAI",
+      "ChatGPT",
+      "エージェント",
+      "Codex",
+      "エンタープライズ"
+    ],
     "coverImage": {
       "src": "logos/openai.svg",
       "alt": "OpenAI Workspace Agents"
@@ -414,7 +565,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-25",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["Anthropic", "Claude", "エージェント", "研究", "経済"],
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "エージェント",
+      "研究",
+      "経済"
+    ],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Anthropic Project Deal"
@@ -430,7 +587,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-24",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["DeepSeek", "オープンソース", "モデルリリース", "MoE", "中国AI"],
+    "tags": [
+      "DeepSeek",
+      "オープンソース",
+      "モデルリリース",
+      "MoE",
+      "中国AI"
+    ],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "DeepSeek V4"
@@ -446,7 +609,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-23",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["OpenAI", "GPT-5", "モデルリリース", "エージェント", "GitHub Copilot"],
+    "tags": [
+      "OpenAI",
+      "GPT-5",
+      "モデルリリース",
+      "エージェント",
+      "GitHub Copilot"
+    ],
     "coverImage": {
       "src": "logos/openai.svg",
       "alt": "OpenAI GPT-5.5"
@@ -462,7 +631,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-21",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["Hugging Face", "オープンソース", "エージェント", "smolagents", "ML エンジニアリング"],
+    "tags": [
+      "Hugging Face",
+      "オープンソース",
+      "エージェント",
+      "smolagents",
+      "ML エンジニアリング"
+    ],
     "coverImage": {
       "src": "articles/cover-programming.svg",
       "alt": "Hugging Face ml-intern"
@@ -478,7 +653,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-20",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["Anthropic", "Amazon", "AWS", "Trainium", "投資"],
+    "tags": [
+      "Anthropic",
+      "Amazon",
+      "AWS",
+      "Trainium",
+      "投資"
+    ],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Amazon $25B Anthropic 追加投資"
@@ -494,7 +675,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-17",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["Anthropic", "Claude", "デザイン", "Figma", "Claude Code"],
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "デザイン",
+      "Figma",
+      "Claude Code"
+    ],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Claude Design"
@@ -510,7 +697,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-16",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["Anthropic", "Claude", "モデルリリース", "エージェント", "ベンチマーク"],
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "モデルリリース",
+      "エージェント",
+      "ベンチマーク"
+    ],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Claude Opus 4.7 GA"
@@ -526,7 +719,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-08",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["Anthropic", "Claude", "エージェント", "API", "エンタープライズ"],
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "エージェント",
+      "API",
+      "エンタープライズ"
+    ],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Claude Managed Agents"
@@ -542,7 +741,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-08",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["Meta", "Muse", "モデルリリース", "オープンソース", "ヘルスケア"],
+    "tags": [
+      "Meta",
+      "Muse",
+      "モデルリリース",
+      "オープンソース",
+      "ヘルスケア"
+    ],
     "coverImage": {
       "src": "logos/meta.svg",
       "alt": "Meta Muse Spark"
@@ -558,7 +763,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-08",
     "author": "AI News 編集部",
     "readTime": "6分",
-    "tags": ["Anthropic", "規制", "軍事", "Claude", "訴訟"],
+    "tags": [
+      "Anthropic",
+      "規制",
+      "軍事",
+      "Claude",
+      "訴訟"
+    ],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Anthropic vs Pentagon"
@@ -574,7 +785,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-08",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["OpenAI", "AI安全性", "児童保護", "規制", "研究"],
+    "tags": [
+      "OpenAI",
+      "AI安全性",
+      "児童保護",
+      "規制",
+      "研究"
+    ],
     "coverImage": {
       "src": "logos/openai.svg",
       "alt": "OpenAI Child Safety Blueprint"
@@ -590,7 +807,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-08",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["GitHub Copilot", "エージェント", "MCP", "IDE", "開発ツール"],
+    "tags": [
+      "GitHub Copilot",
+      "エージェント",
+      "MCP",
+      "IDE",
+      "開発ツール"
+    ],
     "coverImage": {
       "src": "logos/github.svg",
       "alt": "GitHub Copilot Autopilot MCP"
@@ -1996,13 +2219,13 @@ export const ARTICLES_META = [
     "author": "AI News 編集部",
     "readTime": "18分",
     "tags": [
-        "CLAUDE.md",
-        "AGENTS.md",
-        "Cursor",
-        "設定",
-        "チーム開発",
-        "実用スキル",
-        "エンタープライズ"
+      "CLAUDE.md",
+      "AGENTS.md",
+      "Cursor",
+      "設定",
+      "チーム開発",
+      "実用スキル",
+      "エンタープライズ"
     ],
     "coverImage": {
       "src": "articles/cover-cli-tools.svg",
@@ -3864,7 +4087,7 @@ export const ARTICLES_META = [
       "拡張性": 5,
       "企業向け": 5
     },
-    "rating": 4.0,
+    "rating": 4,
     "reviewCategory": "model",
     "lastReviewed": "2026-06-05"
   },
@@ -3977,7 +4200,7 @@ export const ARTICLES_META = [
     "id": "claude-sonnet-5-review",
     "type": "review",
     "category": "model",
-    "title": "Claude Sonnet 5 レビュー — Anthropic 新ミッドレンジ・フラッグシップ、Opus 4.8 に迫る性能を $2/$10 で、エージェント運用の主力",
+    "title": "Claude Sonnet 5 レビュー — Anthropic 新ミッドレンジ・フラッグシップ、Opus 4.8 に迫る性能を $3/$15 で、エージェント運用の主力",
     "excerpt": "Anthropic が2026年6月30日に GA した新ミッドレンジ・フラッグシップ。**SWE-bench Pro 63.2%**（Sonnet 4.6: 58.1% / Opus 4.8: 69.2%）、**GDPval-AA v2 で Opus 4.8 超え**（1618 vs 1615）、HLE with tools でも 57.4% とほぼ互角。**現行価格 $3/$15**（〜8/31 は導入価格 $2/$10 だった）。1Mコンテキスト、Adaptive Thinking 常時オン。claude.ai Free/Pro のデフォルト、Claude Code・Cursor・VS Code・GitHub Copilot で即日利用可能。**「これまでで最もエージェント的な Sonnet」** と Anthropic が公表する通り、エージェント・コーディング・ブラウザ自動化での実力が特筆される。ただし新トークナイザは同じテキストで 1-1.35 倍多くトークンを数える傾向あり、実コスト予測に注意。",
     "date": "2026-07-07",
     "newsDate": "2026-06-30",
@@ -5286,7 +5509,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-10",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["Anthropic", "CoreWeave", "AI インフラ", "GPU", "NVIDIA"],
+    "tags": [
+      "Anthropic",
+      "CoreWeave",
+      "AI インフラ",
+      "GPU",
+      "NVIDIA"
+    ],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Anthropic CoreWeave Deal"
@@ -5302,7 +5531,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-09",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["OpenAI", "ChatGPT", "広告", "収益", "ビジネスモデル"],
+    "tags": [
+      "OpenAI",
+      "ChatGPT",
+      "広告",
+      "収益",
+      "ビジネスモデル"
+    ],
     "coverImage": {
       "src": "logos/openai.svg",
       "alt": "OpenAI ChatGPT Ads"
@@ -5318,7 +5553,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-09",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["Shopify", "MCP", "オープンソース", "エージェント", "開発ツール"],
+    "tags": [
+      "Shopify",
+      "MCP",
+      "オープンソース",
+      "エージェント",
+      "開発ツール"
+    ],
     "coverImage": {
       "src": "articles/cover-programming.svg",
       "alt": "Shopify AI Toolkit"
@@ -5334,7 +5575,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-13",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["Apple", "Apple Intelligence", "Siri", "人事", "リーダーシップ"],
+    "tags": [
+      "Apple",
+      "Apple Intelligence",
+      "Siri",
+      "人事",
+      "リーダーシップ"
+    ],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "Apple AI Leadership"
@@ -5350,7 +5597,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-13",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["Stanford", "AI Index", "中国AI", "透明性", "環境"],
+    "tags": [
+      "Stanford",
+      "AI Index",
+      "中国AI",
+      "透明性",
+      "環境"
+    ],
     "coverImage": {
       "src": "articles/cover-regulation.svg",
       "alt": "Stanford AI Index 2026"
@@ -5366,7 +5619,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-13",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["Anthropic", "Claude", "Claude Code", "パフォーマンス", "ユーザー体験"],
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Claude Code",
+      "パフォーマンス",
+      "ユーザー体験"
+    ],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Claude Performance Issues"
@@ -5382,7 +5641,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-14",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["OpenAI", "GPT-5", "セキュリティ", "モデルリリース", "Anthropic"],
+    "tags": [
+      "OpenAI",
+      "GPT-5",
+      "セキュリティ",
+      "モデルリリース",
+      "Anthropic"
+    ],
     "coverImage": {
       "src": "logos/openai.svg",
       "alt": "GPT-5.4-Cyber"
@@ -5398,7 +5663,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-14",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["Anthropic", "Claude Code", "IDE", "Routines", "Computer Use"],
+    "tags": [
+      "Anthropic",
+      "Claude Code",
+      "IDE",
+      "Routines",
+      "Computer Use"
+    ],
     "coverImage": {
       "src": "logos/anthropic.svg",
       "alt": "Claude Code Desktop Redesign"
@@ -5414,7 +5685,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-14",
     "author": "AI News 編集部",
     "readTime": "4分",
-    "tags": ["Google", "Gemini", "パーソナライズ", "プライバシー", "グローバル展開"],
+    "tags": [
+      "Google",
+      "Gemini",
+      "パーソナライズ",
+      "プライバシー",
+      "グローバル展開"
+    ],
     "coverImage": {
       "src": "logos/google.svg",
       "alt": "Gemini Personal Intelligence"
@@ -5430,7 +5707,13 @@ export const ARTICLES_META = [
     "newsDate": "2026-04-14",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["Anthropic", "Claude", "Computer Use", "MCP", "開発ツール"],
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Computer Use",
+      "MCP",
+      "開発ツール"
+    ],
     "coverImage": {
       "src": "articles/cover-cli-tools.svg",
       "alt": "Claude Screen Viewing Methods"
@@ -5445,7 +5728,13 @@ export const ARTICLES_META = [
     "date": "2026-04-06",
     "author": "AI News 編集部",
     "readTime": "7分",
-    "tags": ["週刊まとめ", "OpenAI", "Cursor", "セキュリティ", "Claude"],
+    "tags": [
+      "週刊まとめ",
+      "OpenAI",
+      "Cursor",
+      "セキュリティ",
+      "Claude"
+    ],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 3/30〜4/5"
@@ -5465,7 +5754,13 @@ export const ARTICLES_META = [
     "date": "2026-04-13",
     "author": "AI News 編集部",
     "readTime": "7分",
-    "tags": ["週刊まとめ", "Anthropic", "Meta", "OpenAI", "GitHub Copilot"],
+    "tags": [
+      "週刊まとめ",
+      "Anthropic",
+      "Meta",
+      "OpenAI",
+      "GitHub Copilot"
+    ],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 4/6〜4/12"
@@ -5485,7 +5780,13 @@ export const ARTICLES_META = [
     "date": "2026-04-20",
     "author": "AI News 編集部",
     "readTime": "7分",
-    "tags": ["週刊まとめ", "Anthropic", "Claude", "Claude Design", "Apple"],
+    "tags": [
+      "週刊まとめ",
+      "Anthropic",
+      "Claude",
+      "Claude Design",
+      "Apple"
+    ],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 4/13〜4/19"
@@ -5505,7 +5806,13 @@ export const ARTICLES_META = [
     "date": "2026-04-27",
     "author": "AI News 編集部",
     "readTime": "7分",
-    "tags": ["週刊まとめ", "OpenAI", "Anthropic", "DeepSeek", "GPT-5"],
+    "tags": [
+      "週刊まとめ",
+      "OpenAI",
+      "Anthropic",
+      "DeepSeek",
+      "GPT-5"
+    ],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 4/20〜4/26"
@@ -5525,7 +5832,13 @@ export const ARTICLES_META = [
     "date": "2026-05-04",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["週刊まとめ", "Microsoft", "Meta", "決算", "規制"],
+    "tags": [
+      "週刊まとめ",
+      "Microsoft",
+      "Meta",
+      "決算",
+      "規制"
+    ],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 4/27〜5/3"
@@ -5545,7 +5858,13 @@ export const ARTICLES_META = [
     "date": "2026-05-11",
     "author": "AI News 編集部",
     "readTime": "6分",
-    "tags": ["週刊まとめ", "OpenAI", "Anthropic", "GPT-5", "音声"],
+    "tags": [
+      "週刊まとめ",
+      "OpenAI",
+      "Anthropic",
+      "GPT-5",
+      "音声"
+    ],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 5/4〜5/10"
@@ -5565,7 +5884,13 @@ export const ARTICLES_META = [
     "date": "2026-05-18",
     "author": "AI News 編集部",
     "readTime": "8分",
-    "tags": ["週刊まとめ", "Anthropic", "Cursor", "Google", "会議AI"],
+    "tags": [
+      "週刊まとめ",
+      "Anthropic",
+      "Cursor",
+      "Google",
+      "会議AI"
+    ],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 5/11〜5/17"
@@ -5585,7 +5910,13 @@ export const ARTICLES_META = [
     "date": "2026-05-25",
     "author": "AI News 編集部",
     "readTime": "5分",
-    "tags": ["週刊まとめ", "Google", "I/O 2026", "中国AI", "Qwen"],
+    "tags": [
+      "週刊まとめ",
+      "Google",
+      "I/O 2026",
+      "中国AI",
+      "Qwen"
+    ],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 5/18〜5/24"
@@ -5605,7 +5936,13 @@ export const ARTICLES_META = [
     "date": "2026-06-01",
     "author": "AI News 編集部",
     "readTime": "6分",
-    "tags": ["週刊まとめ", "Anthropic", "Claude", "Series H", "Microsoft"],
+    "tags": [
+      "週刊まとめ",
+      "Anthropic",
+      "Claude",
+      "Series H",
+      "Microsoft"
+    ],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 5/25〜5/31"
@@ -5956,7 +6293,13 @@ export const ARTICLES_META = [
     "date": "2026-06-08",
     "author": "AI News 編集部",
     "readTime": "7分",
-    "tags": ["週刊まとめ", "Microsoft", "Anthropic", "OpenAI", "xAI"],
+    "tags": [
+      "週刊まとめ",
+      "Microsoft",
+      "Anthropic",
+      "OpenAI",
+      "xAI"
+    ],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 6/1〜6/7"
@@ -5976,7 +6319,14 @@ export const ARTICLES_META = [
     "date": "2026-06-15",
     "author": "AI News 編集部",
     "readTime": "6分",
-    "tags": ["週刊まとめ", "Apple", "WWDC", "Anthropic", "Fable 5", "OpenAI"],
+    "tags": [
+      "週刊まとめ",
+      "Apple",
+      "WWDC",
+      "Anthropic",
+      "Fable 5",
+      "OpenAI"
+    ],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 6/8〜6/14"
@@ -5996,7 +6346,14 @@ export const ARTICLES_META = [
     "date": "2026-06-22",
     "author": "AI News 編集部",
     "readTime": "7分",
-    "tags": ["週刊まとめ", "SpaceX", "Cursor", "xAI", "Anthropic", "Google"],
+    "tags": [
+      "週刊まとめ",
+      "SpaceX",
+      "Cursor",
+      "xAI",
+      "Anthropic",
+      "Google"
+    ],
     "coverImage": {
       "src": "articles/cover-model-api.svg",
       "alt": "週刊まとめ 6/15〜6/21"
