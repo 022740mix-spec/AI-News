@@ -183,70 +183,62 @@ export const VIBE_CODING_PRACTICAL = {
 
 /** @type {{ lead: string, columns: [string, string, string, string, string], rows: VibeToolComboRow[] }} */
 export const VIBE_TOOL_COMBO_TABLE = {
-  lead: "上の道筋と同じく、チャット → Copilot/Cowork → デスクトップアプリ → エディタ＋CLI の流れで並べている。料金・モデル名は各公式の最新情報を確認のこと。",
-  columns: ["パターン", "IDE・エディタ", "AI（対話・エージェント）", "音声・入力補助", "ひとこと"],
+  lead:
+    "どのツールが==どこで動き、どう入れて、何が得意か==を横に並べたもの。" +
+    "散らばっている情報を一箇所で見られるようにするのがこの表の役目です。\n" +
+    "**インストール方法によって、その後の更新の手間が変わります。** " +
+    "自動更新されるものと、自分で更新コマンドを打つものがあります。" +
+    "会社の PC では winget や Homebrew が管理者権限で止まることもあるため、" +
+    "そこも含めて選ぶことになります。\n" +
+    "==出典は各公式ドキュメント。== 到達できず未確認のものはその旨を記しています。" +
+    "料金・提供範囲は変わりやすいので、導入前に必ず公式を確認してください。",
+  columns: ["ツール", "どこで動くか", "どう入れるか", "自動更新", "得意なこと"],
   rows: [
     {
-      pattern: "Claude チャット（第一歩）",
-      ide: "Claude 公式アプリ／ブラウザ（claude.ai）",
-      ai: "対話。コード片やアーティファクト的なまとまりをその場で試す",
-      voice: "アプリ／ブラウザの音声入力・アクアボイス 等",
-      note: "バイブ開始のデフォルト候補。ChatGPT・Gemini でも可。",
+      pattern: "**Claude Code**",
+      ide: "ターミナル / VS Code / JetBrains / デスクトップアプリ / Web・モバイル",
+      ai: "==ネイティブ（公式推奨）== `curl -fsSL https://claude.ai/install.sh | bash`（Windows は `irm https://claude.ai/install.ps1 | iex`）\nHomebrew `brew install --cask claude-code`\nWinGet `winget install Anthropic.ClaudeCode`\nLinux は apt / dnf / apk",
+      voice: "**ネイティブのみ自動更新**。Homebrew と WinGet は `brew upgrade` / `winget upgrade` を自分で実行",
+      note: "長時間の自律作業。CLAUDE.md・スキル・Hooks で挙動を決められる。同じ設定が全形態で共通",
     },
     {
-      pattern: "企業向け Copilot・Power 文脈",
-      ide: "VS Code／GitHub／M365／Power Platform など契約に合わせた枠",
-      ai: "GitHub Copilot、Copilot Chat、Microsoft 365 Copilot 等",
-      voice: "各クライアントの音声・聞き取り機能",
-      note: "会社で決まっている足場を優先。個人サブスクだけでは揃わないことがある。",
+      pattern: "**Codex**",
+      ide: "ターミナル / VS Code・Cursor・Windsurf 拡張 / デスクトップ（`codex app`）/ Web（chatgpt.com/codex）",
+      ai: "npm `npm install -g @openai/codex`\nHomebrew `brew install --cask codex`\nスクリプト `curl -fsSL https://chatgpt.com/codex/install.sh | sh`\nGitHub Releases からバイナリも配布",
+      voice: "公式ドキュメントに記載なし",
+      note: "クラウドのサンドボックスで実行し PR で返す使い方。ChatGPT のサブスクで認証できる",
     },
     {
-      pattern: "Claude Pro → Cowork（個人の次の段階）",
-      ide: "ブラウザ／アプリ（リポジトリを開かなくてもよい）",
-      ai: "**Cowork** でコード寄りのタスク・編集イメージに近づける",
-      voice: "同上",
-      note: "この段階では CLI に急がないほうが混乱しにくい。課金プランは公式を確認。",
+      pattern: "Gemini CLI",
+      ide: "ターミナル / VS Code 連携 / GitHub Actions",
+      ai: "npm `npm install -g @google/gemini-cli`\nHomebrew `brew install gemini-cli`\n試すだけなら `npx @google/gemini-cli`\nMacPorts `sudo port install gemini-cli`",
+      voice: "公式ドキュメントに記載なし",
+      note: "オープンソース。GitHub Actions で PR レビューや Issue の仕分けに組み込める",
     },
     {
-      pattern: "Claude Code デスクトップアプリ",
-      ide: "Claude Code（**アプリ**。リポジトリ／ローカル作業）",
-      ai: "対話でファイル操作・実行寄りのフロー",
-      voice: "（任意）指示はチャットへ貼る運用が中心になりがち",
-      note: "CLI 以前に、ローカルとの往復をアプリで慣れる段階。",
+      pattern: "Cursor",
+      ide: "エディタ本体 / CLI",
+      ai: "公式サイトからインストーラを取得（!!公式ドキュメントに到達できず未確認!!）",
+      voice: "未確認",
+      note: "エディタ内で完結する体験。**操作方法より、搭載モデル（Composer 等）の世代が選定の焦点になりやすい**",
     },
     {
-      pattern: "Cursor／VS Code 本格運用",
-      ide: "Cursor または Visual Studio Code",
-      ai: "内蔵 AI・Composer・Copilot 等をフォルダ単位で使う",
-      voice: "アクアボイス で仕様・コメント・長文指示",
-      note: ".cursor/rules やスコープ宣言で AI のブレを抑えやすくなる。",
+      pattern: "GitHub Copilot",
+      ide: "VS Code ほか各種 IDE 拡張 / CLI / GitHub 上",
+      ai: "IDE の拡張機能マーケットプレイスから（!!公式ドキュメントに到達できず未確認!!）",
+      voice: "拡張機能として更新",
+      note: "会社が契約している足場に乗りやすい。Business 以上で IP 補償が付く",
     },
     {
-      pattern: "ターミナル Claude Code（CLI）",
-      ide: "ターミナル（リポジトリ直下に `cd`）",
-      ai: "`claude` 対話・`claude -p`・`--permission-mode`・エージェントチーム等",
-      voice: "**エディタに貼る**・パイプ・クリップボード経由が中心になりがち",
-      note: "本格担当者向け。権限モードとプラン要件は公式 CLI ドキュメントで確認。",
-    },
-    {
-      pattern: "OpenAI Codex 系（任意）",
-      ide: "VS Code／Cursor／ターミナル",
-      ai: "Codex CLI・IDE 拡張・エージェントモード",
-      voice: "（任意）音声",
-      note: "サンドボックスと承認フロー前提。ファイル書き込み範囲を理解してから任せる。",
-    },
-    {
-      pattern: "Chrome・Gemini（画面・タブ補助）",
-      ide: "Chrome 等ブラウザ",
-      ai: "Gemini と**開いている画面／タブ**の文脈を組み合わせる系",
-      voice: "ブラウザの音声入力",
-      note: "コーディングの別軸の補助。要件が合えば公式を追う価値はある。",
+      pattern: "VS Code",
+      ide: "エディタ本体",
+      ai: "公式インストーラ / winget / Homebrew（!!公式ドキュメントに到達できず未確認!!）",
+      voice: "本体の自動更新あり",
+      note: "上記の多くを拡張として載せる土台。どれを選んでも置き場所になりやすい",
     },
   ],
 };
 
-/** Claude Code CLI・公式に沿った起動・モードのメモ（バイブコーディング用） */
-/** @type {GlossaryGenre} */
 export const VIBE_CLAUDE_CODE = {
   id: "vibe-claude-code",
   title: "Claude Code 日常リファレンス",
@@ -755,7 +747,7 @@ export const VIBE_CLAUDE_CODE = {
 
 /** 基本ルール見出し直下 */
 export const VIBE_BASIC_RULES_LEAD =
-  "バイブコーディングで最初に押さえておくべき安全習慣。チャットだけの段階では全部を意識しなくてよいが、ファイルを触り始めたら必須になる。";
+  "バイブコーディングで最初に押さえておくべき安全習慣。チャットだけの段階では全部を意識しなくてよいが、ファイルを触り始めたら必須になる。==正解集ではなく一般論です。== 所属先にルールがあるなら、そちらが優先されます。この領域は前提が動き続けるので、==詳しい人どうしで話しながら更新していく前提==で読んでください。";
 
 /** @type {VibeBasicRule[]} */
 export const VIBE_BASIC_RULES = [
@@ -782,6 +774,41 @@ export const VIBE_BASIC_RULES = [
   {
     title: "疑わしい提案は一度「なぜ？」と聞く",
     mean: "型を無効化する回避・権限の広い設定・`eval` 系などは、採用前に理由とリスクを AI に言語化させます。",
+  },
+  {
+    title: "入れる前に見る（入れてからでは遅い）",
+    mean:
+      "パッケージの導入時に自動実行される仕組み（npm の `postinstall` など）があります。" +
+      "==インストールしてから中身を確認する順序では、確認より先に実行されています。==" +
+      "入れる前に中身を見る、あるいは自動実行を止めた状態で入れる、のどちらかになります。" +
+      "AI エージェントに任せている場合、この判断もエージェント側で起きるので、" +
+      "何を入れてよいかをあらかじめ決めておくほうが現実的です。",
+  },
+  {
+    title: "スター数を安全の根拠にしない",
+    mean:
+      "スターは人気の指標であって、安全性の指標ではありません。" +
+      "見るなら、公開しているのが誰か（個人か、実在する組織か）、" +
+      "更新が続いているか、ライセンスが明示されているか、" +
+      "導入時に何が実行されるかが読めるか、あたりです。" +
+      "==どれも「これがあれば安全」ではなく、「無ければ立ち止まる」ための材料です。==",
+  },
+  {
+    title: "「公式」を検索結果の上位で判断しない",
+    mean:
+      "検索の上位が公式とは限りません。配布元のドメイン、リポジトリの所有者、" +
+      "公式サイトからそのページへリンクが張られているか、を確かめます。" +
+      "==同じ組織でもドメインが複数あることがあり、片方が見られなくても" +
+      "「公式で確認できない」とは限りません。==",
+  },
+  {
+    title: "戻せるようにしてから進む",
+    mean:
+      "コミットを小さく分ける、作業前の状態に戻せるようにしておく、" +
+      "本番と練習用を分ける。==事故をゼロにはできませんが、" +
+      "起きたときの範囲を小さくすることはできます。==" +
+      "大きなリポジトリでも事故は起きています。防ぐことより、" +
+      "起きる前にリスクを減らし、起きた後に戻せることのほうが現実的です。",
   },
 ];
 
@@ -2538,3 +2565,63 @@ export function filterToolReference(searchQuery, toolId) {
     total,
   };
 }
+
+/**
+ * ガイド各節の鮮度メタデータ。
+ *
+ * ## なぜ必要か
+ *
+ * ガイドは**古びても古く見えない**。ニュースには日付が付き、レビューには
+ * 「最終確認日」があるが、ガイドの「Gemini 2.5 Pro の 200 万トークン」は
+ * 書かれた時点で正しく、今も文として自然に読める。だから誰も直さない。
+ *
+ * 実際にこうなっていた。gemini-cli のレビューは月次見直しの対象で
+ * 2026-08-11 に更新されているのに、ガイド側は Gemini 2.5 のままだった。
+ * **同じサイトの中でレビューとガイドが食い違っていた。** 両者を結ぶものが
+ * 何も無かったためである。
+ *
+ * ## reviews の意味
+ *
+ * その節の内容を裏付けているレビュー記事の id。ここが埋まっていると、
+ * **レビューの lastReviewed がガイド節の lastReviewed より新しいとき**に
+ * 警告できる。「レビューを更新したらガイドも見る」を、規則ではなく検査に
+ * できる。
+ *
+ * ## lastReviewed が null であることの意味
+ *
+ * **「この仕組みの下でまだ一度も点検していない」**という意味であり、
+ * 嘘の日付を入れないためにこうしている。CLAUDE.md は「確認だけして
+ * lastReviewed を進める運用」を禁じている。実際に読み直した日にだけ
+ * 日付を入れること。
+ */
+export const GUIDE_SECTION_META = {
+  // ── ツール別リファレンス（TOOL_REFERENCES の id と一致させる） ──
+  "tool:claude-code": { lastReviewed: null, reviews: ["claude-code"] },
+  "tool:cursor": { lastReviewed: null, reviews: ["cursor-cli", "cursor-editor"] },
+  "tool:codex": { lastReviewed: null, reviews: ["openai-codex-agent"] },
+  "tool:gemini-cli": { lastReviewed: null, reviews: ["gemini-cli"] },
+  "tool:copilot": { lastReviewed: null, reviews: ["github-copilot-cli"] },
+  // Power Apps は対応するレビュー記事が無い。価格を8種類抱えており、
+  // 突き合わせ先が無いまま古びる。レビューを作るか、価格の記述を
+  // 落とすかの判断が要る。
+  "tool:power-apps": { lastReviewed: null, reviews: [] },
+  "tool:cross-tool": { lastReviewed: null, reviews: ["cli-tools-comparison-2026-march"] },
+
+  // ── ガイド本体 ──
+  VIBE_SETUP_GUIDE: { lastReviewed: null, reviews: [] },
+  VIBE_PROGRESSION_PATH: { lastReviewed: null, reviews: [] },
+  VIBE_CODING_PRACTICAL: { lastReviewed: null, reviews: [] },
+  VIBE_TOOL_COMBO_TABLE: {
+    lastReviewed: null,
+    reviews: ["cli-tools-comparison-2026-march", "pricing-comparison-all-tools-2026-march"],
+  },
+  VIBE_CLAUDE_CODE: { lastReviewed: null, reviews: ["claude-code"] },
+  VIBE_BASIC_RULES: { lastReviewed: null, reviews: [] },
+  VIBE_MEDIA_TAXONOMY: { lastReviewed: null, reviews: [] },
+  VIBE_GUIDE_PITFALLS: { lastReviewed: null, reviews: [] },
+  VIBE_IDEAL_STACKS: {
+    lastReviewed: null,
+    reviews: ["cli-tools-comparison-2026-march", "editor-comparison-2026-march"],
+  },
+  GLOSSARY_BY_GENRE: { lastReviewed: null, reviews: [] },
+};
