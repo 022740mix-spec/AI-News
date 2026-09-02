@@ -8120,8 +8120,7 @@ export const ARTICLES_META = [
       "開発ツール",
       "GitHub",
       "エージェント"
-    ],
-    "heroScope": "none"
+    ]
   },
   {
     "id": "github-outage-august-17-2026-7h36m",
@@ -8138,8 +8137,7 @@ export const ARTICLES_META = [
       "開発ツール",
       "GitHub Copilot",
       "エンタープライズ"
-    ],
-    "heroScope": "none"
+    ]
   },
   {
     "id": "xai-grok-4-6-500k-context-200k-toll-2026",
@@ -8157,8 +8155,7 @@ export const ARTICLES_META = [
       "Grok",
       "LLM",
       "料金"
-    ],
-    "heroScope": "none"
+    ]
   },
   {
     "id": "anthropic-claude-synthid-text-watermark-global-2026",
@@ -8176,8 +8173,7 @@ export const ARTICLES_META = [
       "規制",
       "EU AI Act",
       "透明性"
-    ],
-    "heroScope": "none"
+    ]
   },
   {
     "id": "oss-long-horizon-agent-tools-ohmypi-loopx-2026",
@@ -8195,8 +8191,7 @@ export const ARTICLES_META = [
       "エージェント",
       "開発ツール",
       "マルチエージェント"
-    ],
-    "heroScope": "none"
+    ]
   },
   {
     "id": "feature-github-outage-cursor-origin-same-week-2026",
@@ -8213,8 +8208,7 @@ export const ARTICLES_META = [
       "Cursor",
       "開発ツール",
       "エージェント"
-    ],
-    "heroScope": "none"
+    ]
   },
   {
     "id": "claude-code-concise-output-style-2026",
@@ -8232,8 +8226,7 @@ export const ARTICLES_META = [
       "Anthropic",
       "設定",
       "開発体験"
-    ],
-    "heroScope": "none"
+    ]
   },
   {
     "id": "tencentdb-agent-memory-team-level-23k-stars-2026",
@@ -8251,8 +8244,7 @@ export const ARTICLES_META = [
       "中国AI",
       "エンタープライズ",
       "開発ツール"
-    ],
-    "heroScope": "none"
+    ]
   },
   {
     "id": "feature-ai-code-verification-gap-2026",
@@ -8269,8 +8261,7 @@ export const ARTICLES_META = [
       "開発ツール",
       "AI品質",
       "エージェント"
-    ],
-    "heroScope": "none"
+    ]
   },
   {
     "id": "openai-jalapeno-first-results-inferencex-2026",
@@ -8288,8 +8279,7 @@ export const ARTICLES_META = [
       "推論",
       "NVIDIA",
       "AI インフラ"
-    ],
-    "heroScope": "none"
+    ]
   },
   {
     "id": "anthropic-claude-academy-japanese-2026",
@@ -8307,8 +8297,7 @@ export const ARTICLES_META = [
       "教育",
       "日本",
       "非エンジニア"
-    ],
-    "heroScope": "none"
+    ]
   },
   {
     "id": "xpeng-robotics-900m-embodied-ai-record-2026",
@@ -8326,8 +8315,7 @@ export const ARTICLES_META = [
       "資金調達",
       "エッジAI",
       "業界動向"
-    ],
-    "heroScope": "none"
+    ]
   },
   {
     "id": "ponytail-yagni-agent-skill-112k-stars-2026",
@@ -8345,8 +8333,7 @@ export const ARTICLES_META = [
       "Cursor",
       "エージェント",
       "開発体験"
-    ],
-    "heroScope": "none"
+    ]
   },
   {
     "id": "feature-watermark-removal-c2pa-vs-synthid-2026",
@@ -8363,8 +8350,7 @@ export const ARTICLES_META = [
       "透明性",
       "EU AI Act",
       "セキュリティ"
-    ],
-    "heroScope": "none"
+    ]
   },
   {
     "id": "eu-designates-chatgpt-vlose-dsa-2026",
@@ -8382,8 +8368,7 @@ export const ARTICLES_META = [
       "ChatGPT",
       "EU",
       "透明性"
-    ],
-    "heroScope": "none"
+    ]
   },
   {
     "id": "openai-chatgpt-ads-1b-run-rate-2026",
@@ -8401,8 +8386,7 @@ export const ARTICLES_META = [
       "広告",
       "ビジネスモデル",
       "EU"
-    ],
-    "heroScope": "none"
+    ]
   },
   {
     "id": "deepseek-v4-flash-vision-exp-multimodal-2026",
@@ -8420,8 +8404,7 @@ export const ARTICLES_META = [
       "中国AI",
       "マルチモーダル",
       "料金"
-    ],
-    "heroScope": "none"
+    ]
   },
   {
     "id": "feature-google-publisher-ai-optout-single-crawler-2026",
@@ -8438,7 +8421,6 @@ export const ARTICLES_META = [
       "AI検索",
       "規制",
       "ビジネスモデル"
-    ],
-    "heroScope": "none"
+    ]
   }
 ];
