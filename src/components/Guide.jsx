@@ -4,6 +4,7 @@ import {
   VIBE_BASIC_RULES_LEAD, VIBE_BASIC_RULES, VIBE_CODING_DEFINITION,
   VIBE_CODING_PRACTICAL, VIBE_GUIDE_PITFALLS, VIBE_SETUP_GUIDE,
   MEDIA_GUIDE_INTRO, VIBE_MEDIA_TAXONOMY, GLOSSARY_BY_GENRE,
+  VIBE_PROGRESSION_PATH, VIBE_IDEAL_STACKS, VIBE_TOOL_COMBO_TABLE,
 } from "../data/vibeCodingGuide.js";
 import { richInlineLine, CopyableCodeBlock } from "../utils/richText.jsx";
 
@@ -98,6 +99,91 @@ function GuideSetupPanel() {
           {richInlineLine(VIBE_SETUP_GUIDE.lead, mkKey)}
         </p>
         <SetupStepList sections={VIBE_SETUP_GUIDE.sections} mkKey={mkKey} />
+      </section>
+
+      {/* 進み方・推奨構成・比較表は、データにありながら長らく描画されていなかった。
+          初心者が最初に見るセットアップタブに置く。 */}
+      <section id="vibe-progression" className="guide-section guide-section--vibe">
+        <h2 className="guide-section__title">{VIBE_PROGRESSION_PATH.title}</h2>
+        <p className="guide-section__lead">
+          {richInlineLine(VIBE_PROGRESSION_PATH.lead, mkKey)}
+        </p>
+        <dl className="glossary-dl">
+          {VIBE_PROGRESSION_PATH.steps.map((st) => (
+            <Fragment key={st.heading}>
+              <dt className="glossary-dl__term">{richInlineLine(st.heading, mkKey)}</dt>
+              <dd className="glossary-dl__body">
+                <GuideLinkifiedP text={st.body} className="glossary-dl__mean" />
+              </dd>
+            </Fragment>
+          ))}
+        </dl>
+        {VIBE_PROGRESSION_PATH.footnote ? (
+          <p className="guide-section__lead">
+            {richInlineLine(VIBE_PROGRESSION_PATH.footnote, mkKey)}
+          </p>
+        ) : null}
+      </section>
+
+      <section id="vibe-stacks" className="guide-section guide-section--vibe">
+        <h2 className="guide-section__title">目的別のおすすめ構成</h2>
+        <dl className="glossary-dl">
+          {VIBE_IDEAL_STACKS.map((st) => (
+            <Fragment key={st.id}>
+              <dt className="glossary-dl__term">
+                {st.emoji ? `${st.emoji} ` : ""}
+                {richInlineLine(st.title, mkKey)}
+              </dt>
+              <dd className="glossary-dl__body">
+                <GuideLinkifiedP
+                  text={[st.forWho, st.summary].filter(Boolean).join("\n")}
+                  className="glossary-dl__mean"
+                />
+                {/* combo は {role, picks, tip} の配列。文字列として繋ぐと
+                    [object Object] になるので、役割ごとに開いて出す。 */}
+                {Array.isArray(st.combo) ? (
+                  <ul className="glossary-dl__mean">
+                    {st.combo.map((c) => (
+                      <li key={c.role}>
+                        <strong>{c.role}</strong>: {richInlineLine(c.picks, mkKey)}
+                        {c.tip ? <> — {richInlineLine(c.tip, mkKey)}</> : null}
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </dd>
+            </Fragment>
+          ))}
+        </dl>
+      </section>
+
+      <section id="vibe-combo" className="guide-section guide-section--vibe">
+        <h2 className="guide-section__title">ツールの組み合わせ早見表</h2>
+        <p className="guide-section__lead">
+          {richInlineLine(VIBE_TOOL_COMBO_TABLE.lead, mkKey)}
+        </p>
+        <div className="table-scroll">
+          <table className="article-table">
+            <thead>
+              <tr>
+                {VIBE_TOOL_COMBO_TABLE.columns.map((c) => (
+                  <th key={c} scope="col">{c}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {VIBE_TOOL_COMBO_TABLE.rows.map((r) => (
+                <tr key={r.pattern}>
+                  <th scope="row">{richInlineLine(r.pattern, mkKey)}</th>
+                  <td>{richInlineLine(r.ide, mkKey)}</td>
+                  <td>{richInlineLine(r.ai, mkKey)}</td>
+                  <td>{richInlineLine(r.voice, mkKey)}</td>
+                  <td>{richInlineLine(r.note, mkKey)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </section>
     </div>
   );
