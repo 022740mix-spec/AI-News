@@ -17453,7 +17453,9 @@ const ARTICLES_BODY = {
       "## SLA から見た重み",
       "この7時間36分という長さは、可用性の目標値に照らすと重い。**99.9% の可用性は年間で約8時間45分のダウンタイムに相当する**。単純計算で、**1回の障害が年間予算の約87%を消費した**ことになる。",
       "GitHub Actions を CI/CD の中核に据えている組織にとっては、この一件だけで年間の停止許容量をほぼ使い切った形になる。**単一障害点としての Git ホスティングをどう扱うか**は、改めて設計上の論点になる。",
-      "翌8月18日には Cursor が独自のコードホスティング **Origin** のロールアウトを開始しており（[→ 詳細](?a=cursor-origin-code-hosting-rollout-2026)）、同週に並んだ両者の意味は[別記事で整理](?a=feature-github-outage-cursor-origin-same-week-2026)した。"
+      "翌8月18日には Cursor が独自のコードホスティング **Origin** のロールアウトを開始しており（[→ 詳細](?a=cursor-origin-code-hosting-rollout-2026)）、同週に並んだ両者の意味は[別記事で整理](?a=feature-github-outage-cursor-origin-same-week-2026)した。",
+      "**編集履歴**",
+      "【訂正 2026-09-02】一次ソースの URL が到達できなくなっていたため、移転先に差し替えた（The Register の記事 URL が短縮形から展開形に変更されていた）。掲載日・セクションが一致することを確認したうえで差し替えており、**参照している記事そのものは変わっていない**。"
     ],
     "primarySources": [
       {
@@ -17469,7 +17471,7 @@ const ARTICLES_BODY = {
       {
         "title": "GitHub has Issues as repo downloads hit 50% error rate",
         "site": "The Register",
-        "url": "https://www.theregister.com/ai-and-ml/2026/08/17/github_has_issues_as_repo/"
+        "url": "https://www.theregister.com/ai-and-ml/2026/08/17/github-has-issues-as-repo-downloads-hit-50-error-rate/5288543"
       },
       {
         "title": "The GitHub outage explained: What happened, who was affected, and how long did it last?",
@@ -17544,7 +17546,9 @@ const ARTICLES_BODY = {
       "そして重要な点として、**透かしにはユーザーに関する情報が一切含まれない**。誰が生成したかを特定する仕組みではない。この設計は、透明性の要求とプライバシーの両立を意図したものと読める。",
       "## 実務への影響",
       "開発者にとっては、**Claude の出力を成果物に含める場合、その出力が統計的に検出可能になる**という前提が加わる。コード生成そのものへの影響は限定的と考えられるが、ドキュメント・仕様書・レポートといった散文の成果物では意識する場面が出てくるだろう。",
-      "また、この動きは Anthropic 単独で終わらない可能性が高い。**同じ透明性義務は EU 市場にサービスを提供する他の事業者にも等しくかかる**。OpenAI や Google が追随するかどうかは、今後の観察点になる。"
+      "また、この動きは Anthropic 単独で終わらない可能性が高い。**同じ透明性義務は EU 市場にサービスを提供する他の事業者にも等しくかかる**。OpenAI や Google が追随するかどうかは、今後の観察点になる。",
+      "**編集履歴**",
+      "【訂正 2026-09-02】一次ソースの URL が到達できなくなっていたため、移転先に差し替えた（The Register の記事 URL が短縮形から展開形に変更されていた）。掲載日・セクションが一致することを確認したうえで差し替えており、**参照している記事そのものは変わっていない**。"
     ],
     "primarySources": [
       {
@@ -17560,7 +17564,7 @@ const ARTICLES_BODY = {
       {
         "title": "Anthropic pledges to embed watermarks to help discern AI slop in sop to EU",
         "site": "The Register",
-        "url": "https://www.theregister.com/ai-and-ml/2026/08/11/anthropic_watermarks/"
+        "url": "https://www.theregister.com/ai-and-ml/2026/08/11/anthropic-pledges-to-embed-watermarks-to-help-discern-ai-slop-in-sop-to-eu/5285792"
       },
       {
         "title": "Anthropic's Claude Adds Invisible Watermarks To AI-Generated Text",
@@ -17776,7 +17780,9 @@ const ARTICLES_BODY = {
       "最後に、組織的な論点をひとつ。**AI がコードを書く量が増えると、レビューの負荷はシニア開発者に集中する。**",
       "書く作業は AI に委譲できるが、**「これは妥当か」と判断する作業は、判断できる人にしか委譲できない**。42%が65%になる過程で、この負荷はさらに偏る。ツールの導入効果を「開発者1人あたりの生産量」で測っていると、**レビュー側に溜まっているコストが見えない**。",
       "**総括**: 検証ギャップは、AI コーディングの副作用ではなく構造的な帰結である。書く速度だけが上がったのだから、確かめる側が詰まるのは必然だった。**注意深さで埋めようとせず、機械的な関門・生成と検証の分離・差分の粒度という3点で設計する**のが現実的な対処だと考える。そして導入効果を測るときは、**レビュー側の負荷も指標に入れる**べきである。",
-      "**注記**: 引用した数値はすべて Sonar の2026年1月公開の調査によるものである。単一の調査であり、対象は1,100名超のプロフェッショナル開発者。回答者の地域構成や業種の偏りについては原典を参照してほしい。"
+      "**注記**: 引用した数値はすべて Sonar の2026年1月公開の調査によるものである。単一の調査であり、対象は1,100名超のプロフェッショナル開発者。回答者の地域構成や業種の偏りについては原典を参照してほしい。",
+      "**編集履歴**",
+      "【訂正 2026-09-02】一次ソースの URL が到達できなくなっていたため、移転先に差し替えた（The Register の記事 URL が短縮形から展開形に変更されていた）。掲載日・セクションが一致することを確認したうえで差し替えており、**参照している記事そのものは変わっていない**。"
     ],
     "primarySources": [
       {
@@ -17797,7 +17803,7 @@ const ARTICLES_BODY = {
       {
         "title": "Devs doubt AI-written code, but don't always check it",
         "site": "The Register",
-        "url": "https://www.theregister.com/software/2026/01/09/devs_doubt_ai_written_code/"
+        "url": "https://www.theregister.com/software/2026/01/09/devs-doubt-ai-written-code-but-dont-always-check-it/4932910"
       }
     ]
   },
