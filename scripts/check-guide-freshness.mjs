@@ -140,7 +140,46 @@ for (const m of constants.MODEL_COMPARISON || []) {
   if (!currentPrice.has(fam)) currentPrice.set(fam, p);
 }
 
-const findings = { drift: [], model: [], patch: [], price: [], dup: [], unreviewed: [], alias: [] };
+const findings = { unrendered: [], drift: [], model: [], patch: [], price: [], dup: [], unreviewed: [], alias: [] };
+
+// ── 0. その節は画面に出ているか ──
+// 鮮度より先に到達可能性を見る。実際に、進み方・目的別構成・組み合わせ表の
+// 3節がデータにあって項目数にも数えられているのに、Guide.jsx が import して
+// おらず一度も表示されていなかった。「128項目あります」と出しながら読めるのは
+// 109項目だった。**古いことより、存在しないことのほうが重い。**
+{
+  const { readdirSync, readFileSync } = await import("node:fs");
+  const dirs = ["src/components", "src/data"];
+  let src = "";
+  for (const d of dirs) {
+    for (const f of readdirSync(join(rootDir, d))) {
+      if (!/\.(jsx?|mjs)$/.test(f)) continue;
+      if (f === "vibeCodingGuide.js") continue; // 定義元は数えない
+      src += readFileSync(join(rootDir, d, f), "utf-8");
+    }
+  }
+  for (const key of Object.keys(SECTIONS)) {
+    // ツール別は TOOL_REFERENCES 経由で描画される
+    if (key.startsWith("tool:")) {
+      if (!src.includes("TOOL_REFERENCES")) findings.unrendered.push({ key, name: "TOOL_REFERENCES" });
+      continue;
+    }
+    if (src.includes(key)) continue;
+
+    // 名前で参照されていなくても、別の節の一部として同じオブジェクトが
+    // 描画されている場合がある。VIBE_CLAUDE_CODE は TOOL_REFERENCES の
+    // claude-code エントリの ref そのもので、ツール別タブに出ている。
+    // 名前だけを見ると誤検出になるため、実体で辿る。
+    const data = sectionData(key);
+    const reachable =
+      data &&
+      (guide.TOOL_REFERENCES || []).some(
+        (t) => t.ref === data || t.practical === data || t === data
+      ) &&
+      src.includes("TOOL_REFERENCES");
+    if (!reachable) findings.unrendered.push({ key, name: key });
+  }
+}
 
 // ── 節どうしが同じオブジェクトを共有していないか ──
 // TOOL_REFERENCES[claude-code].ref は VIBE_CLAUDE_CODE そのものである。
@@ -276,6 +315,15 @@ if (asJson) {
 const n = (a) => a.length;
 console.log(`ガイドの鮮度チェック（節 ${Object.keys(SECTIONS).length} / 記事 ${ARTICLES.length}）\n`);
 
+if (n(findings.unrendered)) {
+  console.log(`🔴 データにあるのに画面に出ていない節: ${n(findings.unrendered)} 件`);
+  console.log("   古いことより重い欠陥です。読者には存在しないのと同じで、");
+  console.log("   しかも項目数には数えられているため「あるはず」に見えます。");
+  console.log("   src/components から参照されているか確認してください。");
+  console.log("");
+  for (const f of findings.unrendered) console.log(`   ${f.key}（${f.name} がどこからも参照されていない）`);
+  console.log("");
+}
 if (n(findings.drift)) {
   // 1つの節が複数のレビューに紐づくと同じ行が並ぶため、節ごとにまとめる
   const byKey = new Map();
@@ -344,7 +392,9 @@ if (n(findings.unreviewed)) {
   console.log("");
 }
 
-const actionable = n(findings.drift) + n(findings.model) + n(findings.price) + n(findings.patch) + n(findings.dup);
+const actionable =
+  n(findings.unrendered) + n(findings.drift) + n(findings.model) +
+  n(findings.price) + n(findings.patch) + n(findings.dup);
 console.log(actionable ? `対応が必要: ${actionable} 件` : "✅ 対応が必要な項目はありません。");
 
 // 終了コードは常に 0。これは「助言の質」ではなく「明らかな古さ」の報告であり、
