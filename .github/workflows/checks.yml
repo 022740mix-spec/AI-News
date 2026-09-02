@@ -21,6 +21,12 @@ jobs:
       - name: 校閲チェック
         run: node scripts/review-check.mjs
 
+      - name: 記事の消失チェック
+        run: node scripts/check-article-manifest.mjs
+
+      - name: 期限切れの記述チェック（警告のみ・CI は止めない）
+        run: node scripts/check-expired-content.mjs
+
       - name: 個人情報・環境固有情報チェック（記事データ）
         env:
           # 追加の検出語。Secrets に登録されていなければ空で、所有者名の照合のみ行う。

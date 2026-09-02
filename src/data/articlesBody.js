@@ -6201,12 +6201,13 @@ const ARTICLES_BODY = {
       "**CLI ツール**の料金は3パターンに分かれる。Claude Code は Pro $20/月・Max $100〜200/月・API 従量課金の3本立て。**Codex は提供範囲が大きく広がり、ChatGPT Free / Go $8 / Plus $20 / Pro / Business のいずれでも利用できる**（3月版で「ChatGPT Pro $200 以上が前提」としていたのは現在では誤り）。Gemini CLI は Flash モデルなら無料（1日1,000リクエスト）だが、Pro モデルは Google AI Pro $20/月または AI Ultra $100/月の加入が必要。Aider はツール自体が OSS 無料で、接続する LLM の API 費用のみがコストとなる。",
       "**エディタ**では Cursor と Devin Desktop（旧 Windsurf）が同額の $20/月（Pro）で並ぶ。VS Code 本体は無料で、Copilot Pro $10/月が最安の有料 AI エディタ体験。**Zed は Personal $0（月2,000回の編集予測、自前 API キー持込可）/ Pro $10 / Business $30 per seat** で、サブスクリプションを増やさずに済ませたい場合の選択肢になる。上位帯では Cursor が Pro+ $60 / Ultra $200、Devin Desktop が Max $200 を用意しており、**エージェントを常時走らせる使い方では月 $200 前後がひとつの相場**になりつつある。",
       "**Enterprise 向け**では GitHub Copilot Enterprise（$39 per seat）が IP インデムニティ（知的財産補償）・監査ログ・SAML SSO を備え、組織導入のハードルが最も低い。Claude Code は SOC 2 準拠に加え Workload Identity Federation でクラウド資格情報の連携に対応する。Cursor は Teams Standard $40 / Teams Premium $120 per seat。企業導入の法的チェックポイントは[こちらの記事](?a=ai-enterprise-legal-checklist-2026)で詳しく整理している。",
-      "**モデル API の単価**も比較の前提として押さえておきたい。現行フラッグシップは [Claude Opus 5](?a=claude-opus-5-review) が $5/$25、Claude Fable 5 が $10/$50、[Claude Sonnet 5](?a=claude-sonnet-5-review) が $2/$10（8月末までの導入価格）。OpenAI は [GPT-5.6 の値下げ](?a=openai-gpt-5-6-luna-terra-price-cut-2026)で Luna が $0.20/$1.20、Terra が $2/$12 になった。[Grok 4.5](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026) は $2/$6。オープンウェイト系では [Kimi K3](?a=moonshot-kimi-k3-open-weights-license-2026) が $3/$15。**サブスクリプションと API 従量のどちらが安いかは月間トークン量で逆転する**ため、月 $200 のプランを検討する段階に来たら、実測トークン量で従量課金と比較する価値がある。",
+      "**モデル API の単価**も比較の前提として押さえておきたい。現行フラッグシップは [Claude Opus 5](?a=claude-opus-5-review) が $5/$25、Claude Fable 5 が $10/$50、[Claude Sonnet 5](?a=claude-sonnet-5-review) が $3/$15（〜8/31 は導入価格 $2/$10 だった）。OpenAI は [GPT-5.6 の値下げ](?a=openai-gpt-5-6-luna-terra-price-cut-2026)で Luna が $0.20/$1.20、Terra が $2/$12 になった。[Grok 4.5](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026) は $2/$6。オープンウェイト系では [Kimi K3](?a=moonshot-kimi-k3-open-weights-license-2026) が $3/$15。**サブスクリプションと API 従量のどちらが安いかは月間トークン量で逆転する**ため、月 $200 のプランを検討する段階に来たら、実測トークン量で従量課金と比較する価値がある。",
       "コスト最適化の考え方: 個人でコストを抑えるなら **Aider（API 費用のみ）+ VS Code + Zed Personal** が最安構成。月 $20 で1ツールに絞るなら、CLI 重視で Claude Code Pro、エディタ重視で Cursor Pro。企業導入で統制を優先するなら Copilot Business / Enterprise が現実的な選択肢となる。**従量課金への移行が進んだため、定額プランの月額だけでは実効コストを見積もれない点に注意してほしい。** 導入前に、想定ワークロードで1か月の実測を取ることを推奨する。",
       "---",
       "**編集履歴**",
       "【訂正 2026-08-11】(1) Codex について「ChatGPT Pro（$200/月）以上のプランに含まれる形で提供され、単体の低価格プランはない」という記述を訂正しました。現在は Free / Go / Plus / Pro / Business のいずれでも利用できます。(2) Zed AI の料金を「AI 機能 $15/月」から現行の Personal $0 / Pro $10 / Business $30 per seat に訂正しました。(3) 「Windsurf」の運営元と製品名を Cognition の Devin Desktop に訂正しました（旧版は Anysphere 傘下と記載していましたが、これは事実ではありません）。",
-      "【追記 2026-08-11】月次見直しにより全面更新。(1) Codex のクレジット制移行（4/2）と GitHub Copilot の従量課金移行（6/1）、(2) Cursor の Pro+ / Ultra / Teams Premium を含む現行プラン全体、(3) 現行モデルの API 単価（Opus 5 / Fable 5 / Sonnet 5 / GPT-5.6 / Grok 4.5 / Kimi K3）、(4) 定額から「定額＋クレジット枠＋従量」への業界的な移行という論点を追加しました。"
+      "【追記 2026-08-11】月次見直しにより全面更新。(1) Codex のクレジット制移行（4/2）と GitHub Copilot の従量課金移行（6/1）、(2) Cursor の Pro+ / Ultra / Teams Premium を含む現行プラン全体、(3) 現行モデルの API 単価（Opus 5 / Fable 5 / Sonnet 5 / GPT-5.6 / Grok 4.5 / Kimi K3）、(4) 定額から「定額＋クレジット枠＋従量」への業界的な移行という論点を追加しました。",
+      "【訂正 2026-09-02】Claude Sonnet 5 の単価を現行の **$3/$15** に更新した。**8月31日で導入価格 $2/$10 が終了している。** 本記事は月次見直し対象であり、料金は読者が採用と支出の判断に直接使うため、期限を過ぎた値を残してはならない。"
     ],
     "tables": [
       {
@@ -8373,7 +8374,7 @@ const ARTICLES_BODY = {
       "## CLI 主要コマンド・フラグ",
       "## 中核機能の全体像",
       "### モデル",
-      "標準は **[Claude Opus 5](?a=claude-opus-5-review)**（7/24 投入、$5/$25）。**Claude Max では既定モデル**にあたるため、設定を変えていない Max 契約者はすでに Opus 5 を使っている。**タスクごとに思考量を low / medium / high から選べる effort トグル**を備え、モデルを切り替えずにコストと能力を調整できるのが前世代との最大の違いになる。[Claude Fable 5](?a=claude-fable-5-mythos-5-review)（$10/$50）、[Claude Sonnet 5](?a=claude-sonnet-5-review)（$2/$10、〜8/31 導入価格）、Haiku 4.5 への切替も可能。",
+      "標準は **[Claude Opus 5](?a=claude-opus-5-review)**（7/24 投入、$5/$25）。**Claude Max では既定モデル**にあたるため、設定を変えていない Max 契約者はすでに Opus 5 を使っている。**タスクごとに思考量を low / medium / high から選べる effort トグル**を備え、モデルを切り替えずにコストと能力を調整できるのが前世代との最大の違いになる。[Claude Fable 5](?a=claude-fable-5-mythos-5-review)（$10/$50）、[Claude Sonnet 5](?a=claude-sonnet-5-review)（$3/$15）、Haiku 4.5 への切替も可能。",
       "### agent view（5/12 研究プレビュー）",
       "`claude agents` で全画面のセッション一覧テーブルとディスパッチ入力を表示。各セッションの状態（**待機中・作業中・完了**）を一覧化し、Enter/→ でアタッチ。コードレビュー中に別タスクを並行で進める運用が可能に。",
       "### Dynamic Workflows（5/28 研究プレビュー）",
@@ -8561,7 +8562,7 @@ const ARTICLES_BODY = {
             "—",
             "**Opus 5: $5 / $25 per 1M**",
             "対応",
-            "プログラム呼び出し。Fable 5 は $10/$50、Sonnet 5 は $2/$10"
+            "プログラム呼び出し。Fable 5 は $10/$50、Sonnet 5 は $3/$15"
           ]
         ]
       }
@@ -10219,7 +10220,7 @@ const ARTICLES_BODY = {
       "**性能ベンチマーク（後継との比較）**: SWE-bench Pro で Sonnet 4.6 は **58.1%**、Sonnet 5 は **63.2%**（+5.1pt）。GDPval-AA v2 では Sonnet 5 が Opus 4.8（1615）を上回る 1618 を記録するなど、後継 Sonnet 5 は Opus 4.8 に肉薄する性能で、Sonnet 4.6 との差は明確。",
       "**得意領域（当時）**: 1M コンテキスト、日常のコーディング（定型的なバグ修正、テスト生成、ドキュメント作成、中規模のリファクタリング）を高速に処理できるバランス型モデル。Cursor や Windsurf のデフォルトモデルとして広く利用され、レスポンス速度が Opus より速く、インタラクティブな対話型開発に適していた。",
       "**継続利用する場合の判断基準**: (1) 既存パイプラインで Sonnet 4.6 を採用しており、検証コスト無しで継続したいケース、(2) Sonnet 5 の新トークナイザ（同じテキストで 1.0-1.35倍多くカウント）による実コスト予測の不透明さを避けたい場合、(3) Claude Code や Cursor 等の周辺ツールが Sonnet 5 完全対応前の過渡期に安定運用したい場合。",
-      "**料金**: 入力 $3 / 出力 $15（1M トークンあたり）。**Sonnet 5 の 8/31 までの導入価格 $2/$10** と比較すると割高。9/1 以降は Sonnet 5 の通常料金 $3/$15 で並ぶが、それでも性能差から Sonnet 5 の選択が推奨される。",
+      "**料金**: 入力 $3 / 出力 $15（1M トークンあたり）。**Sonnet 5 の通常料金 $3/$15** と同額である（〜8/31 は Sonnet 5 が導入価格 $2/$10 だった）。同額になった今も性能差から Sonnet 5 の選択が推奨される。",
       "**エンタープライズでの使い分け**: バッチ API（50% 割引）と組み合わせれば、大量処理では依然として競争力がある。ただし新規プロジェクトでは Sonnet 5 の**エージェント能力**（Anthropic 曰く「これまでで最もエージェント的な Sonnet」）が優位で、複雑なマルチステップワークフロー・ブラウザ自動化・Claude Code 統合の面で差が拡大している。",
       "【編集履歴】",
       "・【追記 2026-07-07】後継 Claude Sonnet 5（6/30 GA）リリースに伴い、本記事を「前世代 Sonnet レビュー」として位置付けを明確化。タイトル・excerpt・本文を更新し、Sonnet 5 との比較（SWE-bench Pro、価格）を追加。新規採用では Sonnet 5 を推奨する旨を明記。rating 4.0→3.5、lastReviewed 更新。"
@@ -10241,12 +10242,12 @@ const ARTICLES_BODY = {
     "body": [
       "**Claude Sonnet 5** は Anthropic が2026年6月30日に GA した新ミッドレンジ・フラッグシップモデル。「これまでで最もエージェント的な Sonnet」を Anthropic が公表しており、**プランニング・ブラウザやターミナル使用・自律実行**を Sonnet サイズで実現する。「数ヶ月前まで大型で高価なモデルが必要だった水準の自律性を Sonnet サイズで」というのが位置付け。",
       "**性能ベンチマーク**: SWE-bench Pro **63.2%**（Sonnet 4.6: 58.1% → +5.1pt、Opus 4.8: 69.2%）。**GDPval-AA v2（知識労働）では 1618 で Opus 4.8（1615）を上回り**、Humanity's Last Exam（ツール利用）は 57.4%（Opus 4.8: 57.9%）でほぼ互角、プロンプトインジェクション安全性でも Opus 4.8 と同水準。「Sonnet で Opus 級」がほぼ現実に。",
-      "**料金**: **8月31日までの導入価格が $2/$10 per 1M tokens**、以降は **$3/$15**（Sonnet 4.6 と同じ）。**本稿更新時点（8/11）で導入価格の残りは約20日である。** 年間契約や予算計上を検討している場合、$3/$15 を前提に見積もることを勧める。なお新トークナイザは同じテキストで **1.0〜1.35 倍**多くトークンを数える傾向があり、単純換算では実コストの読みを誤る可能性がある。それでも実運用では [Opus 5](?a=claude-opus-5-review)（$5/$25）や Claude Fable 5（$10/$50）に対して価格優位を保つ。",
+      "**料金**: **$3/$15 per 1M tokens**（Sonnet 4.6 と同額）。**2026年8月31日まで適用されていた導入価格 $2/$10 は終了した。** なお新トークナイザは同じテキストで **1.0〜1.35 倍**多くトークンを数える傾向があり、単純換算では実コストの読みを誤る可能性がある。それでも [Opus 5](?a=claude-opus-5-review)（$5/$25）や Claude Fable 5（$10/$50）に対しては価格優位を保つ。",
       "**Adaptive Thinking と 1M コンテキスト**: 1M トークンのコンテキストは Sonnet 4.6・Opus 系と同水準。**Adaptive Thinking が常時オン**で、Claude Code や API では **エフォートのデフォルトが high** に設定されている。最大出力は 128K、batch-API のベータヘッダで最大 300K トークン出力まで拡張可能。訓練データのカットオフは **2026年1月**まで延長。",
       "**利用可能プラットフォーム**: **claude.ai の Free / Pro のデフォルト**モデルとして即日切替。Max・Team・Enterprise でも利用可能。API に加え、[Claude Code](?a=claude-code)、[Cursor](?a=cursor-editor)、VS Code、[GitHub Copilot CLI](?a=github-copilot-cli) でも即日採用。マルチプラットフォーム展開の速度が特筆される。",
       "**強み**:",
       "**(1) エージェント能力**: プランニング・ツール呼び出し・結果読み取り・継続実行を人間の介入なしで長時間維持。",
-      "**(2) コスパ**: 導入価格 $2/$10 は Opus 4.8 の 2/5 コスト。Fable 5 の 1/5 で 70% 以上の性能を出せる。",
+      "**(2) コスパ**: $3/$15 は [Opus 5](?a=claude-opus-5-review)（$5/$25）の6割、Fable 5（$10/$50）の3割。導入価格 $2/$10 の期間ほどの割安感はなくなったが、性能対価格の水準は依然として高い。",
       "**(3) マルチプラットフォーム統合**: Claude Code・Cursor・VS Code・GitHub Copilot が即日対応、実装リスクが低い。",
       "**(4) Adaptive Thinking 標準**: 難易度に応じた推論深さの自動調整。",
       "**注意点**:",
@@ -10257,7 +10258,8 @@ const ARTICLES_BODY = {
       "**AI News の推奨**: **エージェントを量で回すワークロードの第一候補**。既存 Sonnet 4.6 パイプラインは Sonnet 5 への移行を検証すべきで、コスト削減効果が大きい。ただし **8/31 で導入価格が終わり $3/$15 になる**ため、採用判断は改定後の単価で行うこと。難易度の高いタスクでは [Opus 5](?a=claude-opus-5-review)（$5/$25、effort トグルで思考量を調整可）との比較を勧める。Fable 5 級の性能が必要な場合や、Sonnet 5 のセーフガード（[Fable 5 プロンプト設計ガイド](?a=feature-prompting-claude-fable-5-practical-guide-2026) でも触れた reasoning_extraction 拒絶等）が問題になる用途は個別評価が必要。",
       "---",
       "**編集履歴**",
-      "【追記 2026-08-11】月次見直しにより更新。(1) **導入価格 $2/$10 の残りが約20日**である点を明記し、採用判断は改定後の $3/$15 で行うよう推奨を改めました、(2) 7/24 投入の [Opus 5](?a=claude-opus-5-review)（$5/$25）により上位モデルとの価格差が縮まった点を注意点に追加、(3) 競合の [GPT-5.6 値下げ](?a=openai-gpt-5-6-luna-terra-price-cut-2026)（Terra $2/$12、Luna $0.20/$1.20）を反映しました。旧版に記載の「GPT-5.6 Terra $2.50/$15」は値下げ前の単価です。"
+      "【追記 2026-08-11】月次見直しにより更新。(1) **導入価格 $2/$10 の残りが約20日**である点を明記し、採用判断は改定後の $3/$15 で行うよう推奨を改めました、(2) 7/24 投入の [Opus 5](?a=claude-opus-5-review)（$5/$25）により上位モデルとの価格差が縮まった点を注意点に追加、(3) 競合の [GPT-5.6 値下げ](?a=openai-gpt-5-6-luna-terra-price-cut-2026)（Terra $2/$12、Luna $0.20/$1.20）を反映しました。旧版に記載の「GPT-5.6 Terra $2.50/$15」は値下げ前の単価です。",
+      "【訂正 2026-09-02】**導入価格 $2/$10 は8月31日で終了した。** 本文の料金とコスパの記述を現行の **$3/$15** に更新した。改定前の記述を残していたため、9月1日以降に本記事を読んだ読者に誤った単価を示していた。**期限付きの記述は、期日を過ぎたら必ず更新する。** 今後は `scripts/check-expired-content.mjs` で機械的に検出する。"
     ],
     "primarySources": [
       {
@@ -10290,7 +10292,7 @@ const ARTICLES_BODY = {
       "**(a) オフェンシブサイバーセキュリティ**: エクスプロイト・マルウェア・攻撃ツール構築",
       "**(b) 生物学・生命科学コンテンツ**: ラボ手順・分子機構等（Claude Science で緩和される可能性）",
       "**(c) モデルのサマリ化された思考の抽出**",
-      "**料金**: $10/$50 per 1M tokens。前世代 Mythos Preview の半額以下だが、Sonnet 5（$2/$10 → 9月以降 $3/$15）や [Opus 5](?a=claude-opus-5-review)（$5/$25）と比べると高価。**「最強を必要とする限定タスク用途」**にターゲットが絞られる料金設定。",
+      "**料金**: $10/$50 per 1M tokens。前世代 Mythos Preview の半額以下だが、Sonnet 5（$3/$15。〜8/31 は導入価格 $2/$10 だった）や [Opus 5](?a=claude-opus-5-review)（$5/$25）と比べると高価。**「最強を必要とする限定タスク用途」**にターゲットが絞られる料金設定。",
       "**Opus 5 の投入で位置付けが変わった**: 2026年7月24日、Anthropic は **[Claude Opus 5](?a=claude-opus-5-review) を $5/$25 で投入した**。公称は「Fable 5 に迫る性能を半額で」であり、**Fable 5 の週次50%上限に相当する制約を持たない**。当サイトのレビュー★は Fable 5 が 3.5、Opus 5 が 4.5 で、**性能の絶対値では Fable 5 が上だが、利用制約と価格を含めた採用判断では Opus 5 の方が扱いやすい**というのが現時点の見立てである。Fable 5 を選ぶ理由は、**Opus 5 でも届かない最難関タスクが実際に存在する場合に限られる**ようになった。",
       "**プロンプト設計の推奨**: [Fable 5 プロンプト設計ガイド](?a=feature-prompting-claude-fable-5-practical-guide-2026) で全訳した Anthropic 公式推奨に従うこと。長時間実行（数時間〜数日）が現実的になるため、クライアントタイムアウト・非同期実行・進捗根拠付け・拒否時の Opus 4.8 フォールバックを事前に組み込む必要がある。**旧来の Opus 4.8 向けプロンプトは Fable 5 では過度に規範的で性能を下げる**ため、リファクタが必要。",
       "**強み**:",
@@ -10353,7 +10355,7 @@ const ARTICLES_BODY = {
       "**価格**: Grok 4.6 の表示単価は $2/$6 で、GPT-5.6 Terra は値下げ後 $2/$12。出力側は依然 Grok が安い。**ただし Grok 4.6 はプロンプトが 200K トークンに達するとリクエスト全体が $4/$12 になる**ため、長いコンテキストを積むエージェント運用では Terra のほうが安くなる場合がある。",
       "**エコシステム**: GPT-5.6 は ChatGPT / Codex の広い普及、Grok は X および SpaceX-Cursor 統合が強み。Grok 4.6 は **GitHub Copilot にも追加**され、選択肢としての露出が増えた。",
       "**Claude Sonnet 5 との対比**: [Sonnet 5](?a=claude-sonnet-5-review) は SWE-bench Pro 63.2%（Opus 4.8 に肉薄）、Sonnet 5 と GPT-5.6 Terra が「ミドルレンジフラッグシップ」で真正面から対決。",
-      "**Sonnet 5**: **$2/$10 の導入価格は8月31日まで**で、9月以降は $3/$15 に戻る。Adaptive Thinking 常時オン、Claude Code / Cursor 統合の強み。**価格改定後は Terra（$2/$12）のほうが入力単価で安くなる**ため、9月以降の比較は前提が変わる。",
+      "**Sonnet 5**: **導入価格 $2/$10 は8月31日で終了し、現在は $3/$15**。Adaptive Thinking 常時オン、Claude Code / Cursor 統合の強み。**この改定により、入力単価では Terra（$2/$12）のほうが安くなった。** 出力側も Terra が $12 で Sonnet 5 の $15 より安い。",
       "**GPT-5.6 Terra**: $2/$12、ChatGPT Work 統合の強み、Codex CLI 対応。",
       "**強み**:",
       "**(1) TerminalBench SOTA**: Sol Ultra が Fable 5・Mythos 5 を上回る初の GPT。エージェント・コーディング領域でフロンティア最上位。",
@@ -10378,7 +10380,8 @@ const ARTICLES_BODY = {
       "**(e) ChatGPT Work 経由**: 業務ワークフロー自動化には API 直接ではなく ChatGPT Work（Pro/Enterprise/Edu）を検討",
       "**Sonnet 5 と GPT-5.6 Terra の使い分けは、Claude Code / Cursor 中心のワークフローなら Sonnet 5、Codex CLI / ChatGPT Work 中心なら Terra** が現実的な棲み分け。**AI News では「日本語プロンプトでの Sonnet 5 vs Terra 実践比較」** を近日公開予定。",
       "【編集履歴】",
-      "・【改訂 2026-07-13】限定プレビュー → 一般公開（7/9 GA）への状態変化を全面反映。Cerebras 750 tok/s 実測（7/10）・ChatGPT Work 駆動モデル採用・Sonnet 5/Grok 4.5 との3強競合構図・中国 OSS 46% シェアとの位置関係を追加。rating を 4.5 → 5.0 に引き上げ（GA 実現とエコシステム統合により実運用可能性が飛躍したため）。使いやすさ 4→5、企業向け 4→5 に修正。「おすすめ」タグ追加。lastReviewed 2026-07-13。"
+      "・【改訂 2026-07-13】限定プレビュー → 一般公開（7/9 GA）への状態変化を全面反映。Cerebras 750 tok/s 実測（7/10）・ChatGPT Work 駆動モデル採用・Sonnet 5/Grok 4.5 との3強競合構図・中国 OSS 46% シェアとの位置関係を追加。rating を 4.5 → 5.0 に引き上げ（GA 実現とエコシステム統合により実運用可能性が飛躍したため）。使いやすさ 4→5、企業向け 4→5 に修正。「おすすめ」タグ追加。lastReviewed 2026-07-13。",
+      "【訂正 2026-09-02】Sonnet 5 との比較を現行価格に更新した。導入価格 $2/$10 は8月31日で終了しており、「9月以降は〜」という将来形の記述が期日を過ぎて不正確になっていた。"
     ],
     "primarySources": [
       {
@@ -13713,11 +13716,12 @@ const ARTICLES_BODY = {
     "body": [
       "Anthropic が2026年6月30日、新しいミッドレンジ・フラッグシップ **Claude Sonnet 5** を公開した。「これまでで最もエージェント的な Sonnet」と位置付けられ、「数ヶ月前までなら大型で高価なモデルが必要だった水準の**自律的なプランニング・ブラウザ/ターミナル操作・ツール使用**を、Sonnet サイズで実現する」と Anthropic は説明する。あわせて研究者向けの **Claude Science** も同時公開されている。",
       "**性能ベンチマーク**: 公表値では **SWE-bench Pro で 63.2%**（Sonnet 4.6: 58.1% → +5.1pt、Opus 4.8: 69.2%）。Opus 4.8 との差は約 6pt に縮まり、価格差3倍・4倍を考慮すれば実質的な優位に。**GDPval-AA v2（知識労働）では 1618 で Opus 4.8（1615）を上回り**、**Humanity's Last Exam（ツール利用）は 57.4%**（Opus 4.8: 57.9%）でほぼ互角、**プロンプトインジェクション安全性でも同水準**を達成。「Sonnet で Opus 級」がほぼ現実になった。",
-      "**料金体系**: **8月31日までの導入価格が $2/$10 per 1M tokens**（入力/出力）、**9月1日以降は $3/$15**（Sonnet 4.6 と同じ）。ただし新トークナイザは同じテキストで **1.0〜1.35倍**多くトークンを数える傾向があり、レート表通りの単純換算では実コストの読みを誤る可能性がある。それでも実運用では Opus 4.8（$5/$25）や Claude Fable 5（$10/$50）に対して大幅な優位。",
+      "**料金体系**: 公開当初は **8月31日までの導入価格 $2/$10 per 1M tokens**（入力/出力）が適用され、**9月1日以降は $3/$15**（Sonnet 4.6 と同じ）となった。**現行価格は $3/$15 である。** ただし新トークナイザは同じテキストで **1.0〜1.35倍**多くトークンを数える傾向があり、レート表通りの単純換算では実コストの読みを誤る。",
       "**Adaptive Thinking と 1M コンテキスト**: **1M トークン**のコンテキストは Sonnet 4.6・Opus 系と同水準を維持。**Adaptive Thinking が常時オン**で、Claude Code や API では**エフォートのデフォルトが high**に設定されている。最大出力は 128K、batch-API のベータヘッダ `output-300k-2026-03-24` を指定すれば **最大 300K トークン出力**まで拡張可能。訓練データのカットオフは **2026年1月**まで延長。",
       "**利用可能プラットフォーム**: **claude.ai の Free と Pro のデフォルト**モデルとして即日切替。Max・Team・Enterprise でも利用可能。API に加え、**Claude Code**（[Claude Code レビュー](?a=claude-code)）、**Cursor**（[Cursor レビュー](?a=cursor-editor)）、**VS Code**、**GitHub Copilot**（[Copilot CLI レビュー](?a=github-copilot-cli)）でも即日採用。マルチプラットフォーム展開の速度が特筆される。",
       "**「tokenmaxxing → 効率性」の答え**: 直前に公開された分析記事（[効率性転換分析](?a=feature-tokenmaxxing-to-efficiency-market-shift-2026)）で整理した「価格2極化と効率性優先」の潮流に対する Anthropic の明確な回答。Fable 5（$10/$50）は限定的な最上位ニーズ向けに残しつつ、**日常のエージェント運用は Sonnet 5** で受ける戦略。OpenAI が GPT-5.6 Sol/Terra/Luna（[GPT-5.6 プレビュー](?a=openai-gpt-5-6-sol-terra-luna-preview-2026)）で階層を投入した動きへの直接的な対抗でもある。",
-      "**Alibaba 蒸留告発との並行**: 6/24 の [Anthropic vs Alibaba 蒸留告発](?a=anthropic-accuses-alibaba-claude-distillation-fraud-2026) に続くタイミングで、「**フロンティア性能を安価に提供することで、蒸留する経済的インセンティブそのものを減らす**」戦略的な意味合いもある。エンタープライズ・スタートアップに正規ルートでの利用を促進し、Anthropic の収益基盤を厚くする狙い。**Claude Science** の同時投入で、生命科学領域（John Jumper 加入と接続 [Jumper 移籍](?a=john-jumper-google-deepmind-to-anthropic-nobel-2026)）でも競争力を強化した。"
+      "**Alibaba 蒸留告発との並行**: 6/24 の [Anthropic vs Alibaba 蒸留告発](?a=anthropic-accuses-alibaba-claude-distillation-fraud-2026) に続くタイミングで、「**フロンティア性能を安価に提供することで、蒸留する経済的インセンティブそのものを減らす**」戦略的な意味合いもある。エンタープライズ・スタートアップに正規ルートでの利用を促進し、Anthropic の収益基盤を厚くする狙い。**Claude Science** の同時投入で、生命科学領域（John Jumper 加入と接続 [Jumper 移籍](?a=john-jumper-google-deepmind-to-anthropic-nobel-2026)）でも競争力を強化した。",
+      "【追記 2026-09-02】導入価格 $2/$10 は予定どおり8月31日で終了し、現在は $3/$15 である。本記事は6月30日公開の速報だが、料金の記述が現在の条件と誤認されうるため現行価格を明記した。"
     ],
     "primarySources": [
       {
@@ -14566,7 +14570,7 @@ const ARTICLES_BODY = {
       "**xAI（SpaceX 傘下）**が2026年7月9日、**Grok 4.5** を一般公開した。**Elon Musk** は前日7月8日の X 投稿で、Grok 4.5 を「**Opus クラスだが faster、より token-efficient、lower cost**」と説明。**Cursor 訓練データ**（[SpaceX-Cursor $60B 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026) の実利）を活用した実開発ワークフローに強い設計になっている。",
       "**モデル仕様**: **1.5T パラメータの V9 基盤モデル**（[Grok V9-Medium 消費者公開](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026) の後継系統）に、**Cursor の実開発者ワークフローデータ**を追加訓練したもの。SpaceX による Cursor 買収（6/16）から約3週間での成果物で、垂直統合戦略の速度感を示す。",
       "**破格の料金体系**: **API 料金は $2/$6 per 1M tokens**（入力/出力）。競合他社と比較すると鮮明。",
-      "**Claude Sonnet 5**: $2/$10 導入価格（〜8/31）、以降 $3/$15",
+      "**Claude Sonnet 5**: $3/$15（〜8/31 は導入価格 $2/$10 だった）",
       "**GPT-5.6 Terra**: $2.50/$15",
       "**GPT-5.6 Luna**: $1/$6（軽量特化）",
       "**Grok 4.5**: **$2/$6**（フロンティア級で最安）",
@@ -14631,7 +14635,7 @@ const ARTICLES_BODY = {
       "**Ernie 5.1**（Baidu 5月）",
       "**価格差の実態: 60-90% 安**: CNBC 調査によれば、中国 OSS モデルは Anthropic・OpenAI のフロンティアモデルより **60-90% 安い**。実例で見ると。",
       "**Claude Fable 5**: $10/$50 per 1M tokens",
-      "**Claude Sonnet 5**: $2/$10（〜8/31 導入価格、以降 $3/$15）",
+      "**Claude Sonnet 5**: $3/$15（〜8/31 は導入価格 $2/$10 だった）",
       "**GPT-5.6 Sol**: $5/$30",
       "**DeepSeek V4 API**: $0.4-0.8/$1-2 程度",
       "**Kimi K2.6 API**: 中国系プロバイダ経由で類似の低価格",
@@ -14761,7 +14765,7 @@ const ARTICLES_BODY = {
       "**料金と競合比較**: Muse Spark 1.1 の **$1.25/$4.25** は、フロンティアモデルの中でも **Google Gemini 3.1 Flash-Lite** に近い低価格帯。他社との比較:",
       "**GPT-5.6 Luna**: $1/$6",
       "**xAI Grok 4.5**: $2/$6",
-      "**Claude Sonnet 5**: $2/$10（〜8/31 導入価格）、以降 $3/$15",
+      "**Claude Sonnet 5**: $3/$15（〜8/31 は導入価格 $2/$10 だった）",
       "**Meta Muse Spark 1.1**: **$1.25/$4.25**",
       "**Google Gemini 3.5 Flash**: $0.075/$0.30（最安）",
       "Muse Spark 1.1 は「Luna より僅かに高いが、出力側は Luna より安い」ポジション。総合的には**フロンティア価格帯の下位**に位置付けられる。",
@@ -15096,7 +15100,7 @@ const ARTICLES_BODY = {
       "**Output**: $15.00 / 1M tokens",
       "比較対象:",
       "**GPT-5.6 Sol**: $5 / $30（Kimi K3 の 60% 高い）",
-      "**Claude Sonnet 5**: $2 / $10（〜8/31 導入価格）（Kimi K3 と近い）",
+      "**Claude Sonnet 5**: $3 / $15（〜8/31 は導入価格 $2/$10 だった）",
       "**Claude Fable 5**: $6 / $30（Kimi K3 の 2倍）",
       "**DeepSeek V4 Pro**: $0.435 / 未公表（[DeepSeek V4](?a=deepseek-v4-mid-july-peak-off-peak-api-pricing-2026) — 圧倒的最安）",
       "**cache-hit の $0.30 は Fable 5 の cache-hit $0.60 の半額**、繰り返しコンテキストが多いエージェント運用でのランニングコスト最適化に効く。",
@@ -15745,7 +15749,7 @@ const ARTICLES_BODY = {
       "**Claude Fable 5**: $10 / $50 — フロンティア最上位",
       "**Claude Opus 5（本件）**: **$5 / $25** — フロンティアに迫る性能を半額で",
       "**Claude Opus 4.8（前世代）**: $5 / $25 — Opus 5 に置き換え",
-      "**Claude Sonnet 5**: $2 / $10 — 汎用エージェント（〜8/31 導入価格）",
+      "**Claude Sonnet 5**: $3 / $15 — 汎用エージェント（〜8/31 は導入価格 $2/$10 だった）",
       "重要なのは **Opus 4.8 からの値上げがない** 点で、既存の Opus 4.8 利用者はコスト構造を変えずに性能向上を受け取れる。Anthropic は自社の最上位モデル Fable 5 に対して「半額」を訴求しており、**自社製品同士のカニバリゼーションを承知の上で価格性能比を前面に出す**戦略を選んだことになる。",
       "**ベンチマーク結果**: 公表された主要スコアは以下の通り。",
       "**Terminal-Bench 2.1**: 業界首位。ターミナル操作・エージェント型コーディングのワークフローで最高スコア",
@@ -16741,7 +16745,7 @@ const ARTICLES_BODY = {
       "**GPT-5.6 Sol**: $5 / $30",
       "**[Claude Opus 5](?a=anthropic-claude-opus-5-frontier-half-price-2026)**: $5 / $25",
       "**[Kimi K3](?a=moonshot-kimi-k3-open-weights-license-2026)**: $3 / $15",
-      "**Claude Sonnet 5**: $2 / $10",
+      "**Claude Sonnet 5**: $3 / $15",
       "**Muse Spark 1.2**: **$1.25 / $4.25**",
       "**[GPT-5.6 Terra](?a=openai-gpt-5-6-luna-terra-price-cut-2026)**: $2 / $12",
       "**コーディングエージェント市場の構図**: 主要プレイヤーが出揃った。",
@@ -17093,7 +17097,7 @@ const ARTICLES_BODY = {
       "**Claude Fable 5**: $10 / $50 — フロンティア最上位",
       "**Claude Opus 5**: **$5 / $25** — フロンティアに迫る性能を半額で",
       "**Claude Opus 4.8**（前世代）: $5 / $25 — Opus 5 に置き換え",
-      "**Claude Sonnet 5**: $2 / $10 — 汎用エージェント（〜8/31 導入価格）",
+      "**Claude Sonnet 5**: $3 / $15 — 汎用エージェント（〜8/31 は導入価格 $2/$10 だった）",
       "提供範囲は Claude.ai（Web / Desktop / Mobile）、Claude API（Anthropic 直販・AWS Bedrock・Google Cloud Vertex AI）、[Claude Code](?a=claude-code)、[Claude Cowork](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026) と広い。**Claude Max では既定モデル**、Claude Pro では選択できる最上位モデルにあたる。Max 契約者は設定を変えなくても Opus 5 を使い始めるため、投入初日から実運用トラフィックが流れる形になった。",
       "## effort トグル — 本モデル最大の実用的変化",
       "Opus 5 で最も実務に効くのは、**タスクごとに思考量を low / medium / high から選べる effort トグル**である。モデルを切り替えることなく、コストと能力のバランスを能動的に制御できる。",
@@ -17154,8 +17158,7 @@ const ARTICLES_BODY = {
         "note": "本稿で言及したベンチマークの乖離を確認するために参照"
       }
     ]
-  }
-,
+  },
   "xai-grok-4-5-review": {
     "body": [
       "**Grok 4.5** は **xAI**（SpaceX 傘下）が2026年7月9日に一般公開したフロンティアモデルである。1.5T パラメータの V9 基盤に、**Cursor の実開発ワークフローデータ**を追加訓練したコーディング特化型で、API 料金は **$2/$6 per 1M tokens**。SpaceX による [Cursor（Anysphere）の $60B 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)から約3週間での投入という異例の速度だった。",
@@ -17359,9 +17362,9 @@ const ARTICLES_BODY = {
           ],
           [
             "Claude Sonnet 5",
-            "$2.00（〜8/31、以降 $3）",
+            "$3.00",
             "—",
-            "$10.00（以降 $15）",
+            "$15.00",
             "不可"
           ],
           [
@@ -17396,8 +17399,7 @@ const ARTICLES_BODY = {
         "url": "https://openrouter.ai/moonshotai/kimi-k3"
       }
     ]
-  }
-,
+  },
   "cursor-origin-code-hosting-rollout-2026": {
     "body": [
       "**Anysphere** が、コードホスティングサービス **Origin** の提供を2026年8月18日（月）から有料プラン向けに開始した。発表自体は6月17日に行われており、そこから約2か月でのロールアウトになる。",
@@ -17664,8 +17666,7 @@ const ARTICLES_BODY = {
         "url": "https://www.itpro.com/software/development/the-github-outage-explained-what-happened-who-was-affected-and-how-long-did-it-last"
       }
     ]
-  }
-,
+  },
   "claude-code-concise-output-style-2026": {
     "body": [
       "**Anthropic** が2026年8月20日、Claude Code に組み込みの出力スタイル **Concise** を追加した。長年寄せられてきた「状況報告が長すぎる」という指摘への直接の回答にあたる。",
@@ -17802,8 +17803,7 @@ const ARTICLES_BODY = {
         "url": "https://www.theregister.com/software/2026/01/09/devs_doubt_ai_written_code/"
       }
     ]
-  }
-,
+  },
   "openai-jalapeno-first-results-inferencex-2026": {
     "body": [
       "**OpenAI** が2026年8月25日、自社設計の推論アクセラレータ **Jalapeño** の初期ベンチマーク結果を公表した。6月27日に Broadcom との共同で発表したチップ（[→ 発表時の記事](?a=openai-broadcom-jalapeno-llm-inference-chip-2026)）の、実測値が出た形になる。",
@@ -18009,4 +18009,5 @@ const ARTICLES_BODY = {
     ]
   }
 };
+
 export default ARTICLES_BODY;
