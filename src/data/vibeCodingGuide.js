@@ -2538,3 +2538,63 @@ export function filterToolReference(searchQuery, toolId) {
     total,
   };
 }
+
+/**
+ * ガイド各節の鮮度メタデータ。
+ *
+ * ## なぜ必要か
+ *
+ * ガイドは**古びても古く見えない**。ニュースには日付が付き、レビューには
+ * 「最終確認日」があるが、ガイドの「Gemini 2.5 Pro の 200 万トークン」は
+ * 書かれた時点で正しく、今も文として自然に読める。だから誰も直さない。
+ *
+ * 実際にこうなっていた。gemini-cli のレビューは月次見直しの対象で
+ * 2026-08-11 に更新されているのに、ガイド側は Gemini 2.5 のままだった。
+ * **同じサイトの中でレビューとガイドが食い違っていた。** 両者を結ぶものが
+ * 何も無かったためである。
+ *
+ * ## reviews の意味
+ *
+ * その節の内容を裏付けているレビュー記事の id。ここが埋まっていると、
+ * **レビューの lastReviewed がガイド節の lastReviewed より新しいとき**に
+ * 警告できる。「レビューを更新したらガイドも見る」を、規則ではなく検査に
+ * できる。
+ *
+ * ## lastReviewed が null であることの意味
+ *
+ * **「この仕組みの下でまだ一度も点検していない」**という意味であり、
+ * 嘘の日付を入れないためにこうしている。CLAUDE.md は「確認だけして
+ * lastReviewed を進める運用」を禁じている。実際に読み直した日にだけ
+ * 日付を入れること。
+ */
+export const GUIDE_SECTION_META = {
+  // ── ツール別リファレンス（TOOL_REFERENCES の id と一致させる） ──
+  "tool:claude-code": { lastReviewed: null, reviews: ["claude-code"] },
+  "tool:cursor": { lastReviewed: null, reviews: ["cursor-cli", "cursor-editor"] },
+  "tool:codex": { lastReviewed: null, reviews: ["openai-codex-agent"] },
+  "tool:gemini-cli": { lastReviewed: null, reviews: ["gemini-cli"] },
+  "tool:copilot": { lastReviewed: null, reviews: ["github-copilot-cli"] },
+  // Power Apps は対応するレビュー記事が無い。価格を8種類抱えており、
+  // 突き合わせ先が無いまま古びる。レビューを作るか、価格の記述を
+  // 落とすかの判断が要る。
+  "tool:power-apps": { lastReviewed: null, reviews: [] },
+  "tool:cross-tool": { lastReviewed: null, reviews: ["cli-tools-comparison-2026-march"] },
+
+  // ── ガイド本体 ──
+  VIBE_SETUP_GUIDE: { lastReviewed: null, reviews: [] },
+  VIBE_PROGRESSION_PATH: { lastReviewed: null, reviews: [] },
+  VIBE_CODING_PRACTICAL: { lastReviewed: null, reviews: [] },
+  VIBE_TOOL_COMBO_TABLE: {
+    lastReviewed: null,
+    reviews: ["cli-tools-comparison-2026-march", "pricing-comparison-all-tools-2026-march"],
+  },
+  VIBE_CLAUDE_CODE: { lastReviewed: null, reviews: ["claude-code"] },
+  VIBE_BASIC_RULES: { lastReviewed: null, reviews: [] },
+  VIBE_MEDIA_TAXONOMY: { lastReviewed: null, reviews: [] },
+  VIBE_GUIDE_PITFALLS: { lastReviewed: null, reviews: [] },
+  VIBE_IDEAL_STACKS: {
+    lastReviewed: null,
+    reviews: ["cli-tools-comparison-2026-march", "editor-comparison-2026-march"],
+  },
+  GLOSSARY_BY_GENRE: { lastReviewed: null, reviews: [] },
+};

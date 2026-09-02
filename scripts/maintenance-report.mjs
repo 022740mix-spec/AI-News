@@ -167,7 +167,38 @@ let actionable = false;
   }
 }
 
-// ── 5. 校閲チェックの警告 ──
+// ── 5. ガイドの陳腐化 ──
+// ガイドは古びても古く見えない。ニュースには日付が付き、レビューには
+// 「最終確認日」があるが、ガイドの「Gemini 2.5 Pro の200万トークン」は
+// 書かれた時点で正しく、今も文として自然に読める。だから誰も直さない。
+// サイト自身（レビューの lastReviewed と現行モデル一覧）を突き合わせ先にする。
+{
+  const r = run("check-guide-freshness.mjs");
+  const m = r.out.match(/対応が必要: (\d+) 件/);
+  const count = m ? Number(m[1]) : 0;
+
+  // ガイドの陳腐化はゆっくり進む。毎日 Issue にすると同じ内容が続き、
+  // 通知そのものが無視されるようになる。週1回（月曜）だけ通知に載せ、
+  // 他の曜日は、別の理由で Issue が立つときにだけ添える。
+  const jstDay = new Date(Date.now() + 9 * 3600 * 1000).getUTCDay();
+  const notifyToday = jstDay === 1;
+
+  if (count > 0) {
+    if (notifyToday) actionable = true;
+    sections.push({
+      passive: !notifyToday,
+      level: "warn",
+      title: `ガイドに古い記述の疑いがある（${count} 件）`,
+      note:
+        "レビューは月次で見直しているのに、同じツールのガイドが置き去りになっていないかを見ています。\n" +
+        "**旧世代のモデル名は、説明用の例なら正しい記述です。** 現行の条件として書いているものだけが対象になります。\n" +
+        "ガイドの書き換えは編集判断を伴うため、自律実行では行いません。",
+      body: r.out.trim().slice(0, 6000),
+    });
+  }
+}
+
+// ── 6. 校閲チェックの警告 ──
 {
   const r = run("review-check.mjs");
   const warns = r.out.split("\n").filter((l) => l.startsWith("⚠️"));
