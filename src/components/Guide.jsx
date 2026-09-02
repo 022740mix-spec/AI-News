@@ -8,6 +8,25 @@ import {
 } from "../data/vibeCodingGuide.js";
 import { richInlineLine, CopyableCodeBlock } from "../utils/richText.jsx";
 
+/**
+ * 表セル内の改行を行として出す。
+ * richInlineLine は1行を前提としているため、\n を含む文字列をそのまま渡すと
+ * HTML 上で改行が潰れ、インストール手順が1行に繋がって読めなくなる。
+ */
+function ComboCell({ text, mkKey }) {
+  const lines = String(text ?? "").split("\n");
+  return (
+    <>
+      {lines.map((line, i) => (
+        <Fragment key={`cc-${i}`}>
+          {i > 0 ? <br /> : null}
+          {richInlineLine(line, mkKey)}
+        </Fragment>
+      ))}
+    </>
+  );
+}
+
 /** プレーンテキスト段落内の URL をリンク化（用語集リードや CLI 案内向け） */
 function GuideLinkifiedP({ text, className }) {
   let k = 0;
@@ -175,10 +194,10 @@ function GuideSetupPanel() {
               {VIBE_TOOL_COMBO_TABLE.rows.map((r) => (
                 <tr key={r.pattern}>
                   <th scope="row">{richInlineLine(r.pattern, mkKey)}</th>
-                  <td>{richInlineLine(r.ide, mkKey)}</td>
-                  <td>{richInlineLine(r.ai, mkKey)}</td>
-                  <td>{richInlineLine(r.voice, mkKey)}</td>
-                  <td>{richInlineLine(r.note, mkKey)}</td>
+                  <td><ComboCell text={r.ide} mkKey={mkKey} /></td>
+                  <td><ComboCell text={r.ai} mkKey={mkKey} /></td>
+                  <td><ComboCell text={r.voice} mkKey={mkKey} /></td>
+                  <td><ComboCell text={r.note} mkKey={mkKey} /></td>
                 </tr>
               ))}
             </tbody>

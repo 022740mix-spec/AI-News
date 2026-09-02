@@ -183,70 +183,62 @@ export const VIBE_CODING_PRACTICAL = {
 
 /** @type {{ lead: string, columns: [string, string, string, string, string], rows: VibeToolComboRow[] }} */
 export const VIBE_TOOL_COMBO_TABLE = {
-  lead: "上の道筋と同じく、チャット → Copilot/Cowork → デスクトップアプリ → エディタ＋CLI の流れで並べている。料金・モデル名は各公式の最新情報を確認のこと。",
-  columns: ["パターン", "IDE・エディタ", "AI（対話・エージェント）", "音声・入力補助", "ひとこと"],
+  lead:
+    "どのツールが==どこで動き、どう入れて、何が得意か==を横に並べたもの。" +
+    "散らばっている情報を一箇所で見られるようにするのがこの表の役目です。\n" +
+    "**インストール方法によって、その後の更新の手間が変わります。** " +
+    "自動更新されるものと、自分で更新コマンドを打つものがあります。" +
+    "会社の PC では winget や Homebrew が管理者権限で止まることもあるため、" +
+    "そこも含めて選ぶことになります。\n" +
+    "==出典は各公式ドキュメント。== 到達できず未確認のものはその旨を記しています。" +
+    "料金・提供範囲は変わりやすいので、導入前に必ず公式を確認してください。",
+  columns: ["ツール", "どこで動くか", "どう入れるか", "自動更新", "得意なこと"],
   rows: [
     {
-      pattern: "Claude チャット（第一歩）",
-      ide: "Claude 公式アプリ／ブラウザ（claude.ai）",
-      ai: "対話。コード片やアーティファクト的なまとまりをその場で試す",
-      voice: "アプリ／ブラウザの音声入力・アクアボイス 等",
-      note: "バイブ開始のデフォルト候補。ChatGPT・Gemini でも可。",
+      pattern: "**Claude Code**",
+      ide: "ターミナル / VS Code / JetBrains / デスクトップアプリ / Web・モバイル",
+      ai: "==ネイティブ（公式推奨）== `curl -fsSL https://claude.ai/install.sh | bash`（Windows は `irm https://claude.ai/install.ps1 | iex`）\nHomebrew `brew install --cask claude-code`\nWinGet `winget install Anthropic.ClaudeCode`\nLinux は apt / dnf / apk",
+      voice: "**ネイティブのみ自動更新**。Homebrew と WinGet は `brew upgrade` / `winget upgrade` を自分で実行",
+      note: "長時間の自律作業。CLAUDE.md・スキル・Hooks で挙動を決められる。同じ設定が全形態で共通",
     },
     {
-      pattern: "企業向け Copilot・Power 文脈",
-      ide: "VS Code／GitHub／M365／Power Platform など契約に合わせた枠",
-      ai: "GitHub Copilot、Copilot Chat、Microsoft 365 Copilot 等",
-      voice: "各クライアントの音声・聞き取り機能",
-      note: "会社で決まっている足場を優先。個人サブスクだけでは揃わないことがある。",
+      pattern: "**Codex**",
+      ide: "ターミナル / VS Code・Cursor・Windsurf 拡張 / デスクトップ（`codex app`）/ Web（chatgpt.com/codex）",
+      ai: "npm `npm install -g @openai/codex`\nHomebrew `brew install --cask codex`\nスクリプト `curl -fsSL https://chatgpt.com/codex/install.sh | sh`\nGitHub Releases からバイナリも配布",
+      voice: "公式ドキュメントに記載なし",
+      note: "クラウドのサンドボックスで実行し PR で返す使い方。ChatGPT のサブスクで認証できる",
     },
     {
-      pattern: "Claude Pro → Cowork（個人の次の段階）",
-      ide: "ブラウザ／アプリ（リポジトリを開かなくてもよい）",
-      ai: "**Cowork** でコード寄りのタスク・編集イメージに近づける",
-      voice: "同上",
-      note: "この段階では CLI に急がないほうが混乱しにくい。課金プランは公式を確認。",
+      pattern: "Gemini CLI",
+      ide: "ターミナル / VS Code 連携 / GitHub Actions",
+      ai: "npm `npm install -g @google/gemini-cli`\nHomebrew `brew install gemini-cli`\n試すだけなら `npx @google/gemini-cli`\nMacPorts `sudo port install gemini-cli`",
+      voice: "公式ドキュメントに記載なし",
+      note: "オープンソース。GitHub Actions で PR レビューや Issue の仕分けに組み込める",
     },
     {
-      pattern: "Claude Code デスクトップアプリ",
-      ide: "Claude Code（**アプリ**。リポジトリ／ローカル作業）",
-      ai: "対話でファイル操作・実行寄りのフロー",
-      voice: "（任意）指示はチャットへ貼る運用が中心になりがち",
-      note: "CLI 以前に、ローカルとの往復をアプリで慣れる段階。",
+      pattern: "Cursor",
+      ide: "エディタ本体 / CLI",
+      ai: "公式サイトからインストーラを取得（!!公式ドキュメントに到達できず未確認!!）",
+      voice: "未確認",
+      note: "エディタ内で完結する体験。**操作方法より、搭載モデル（Composer 等）の世代が選定の焦点になりやすい**",
     },
     {
-      pattern: "Cursor／VS Code 本格運用",
-      ide: "Cursor または Visual Studio Code",
-      ai: "内蔵 AI・Composer・Copilot 等をフォルダ単位で使う",
-      voice: "アクアボイス で仕様・コメント・長文指示",
-      note: ".cursor/rules やスコープ宣言で AI のブレを抑えやすくなる。",
+      pattern: "GitHub Copilot",
+      ide: "VS Code ほか各種 IDE 拡張 / CLI / GitHub 上",
+      ai: "IDE の拡張機能マーケットプレイスから（!!公式ドキュメントに到達できず未確認!!）",
+      voice: "拡張機能として更新",
+      note: "会社が契約している足場に乗りやすい。Business 以上で IP 補償が付く",
     },
     {
-      pattern: "ターミナル Claude Code（CLI）",
-      ide: "ターミナル（リポジトリ直下に `cd`）",
-      ai: "`claude` 対話・`claude -p`・`--permission-mode`・エージェントチーム等",
-      voice: "**エディタに貼る**・パイプ・クリップボード経由が中心になりがち",
-      note: "本格担当者向け。権限モードとプラン要件は公式 CLI ドキュメントで確認。",
-    },
-    {
-      pattern: "OpenAI Codex 系（任意）",
-      ide: "VS Code／Cursor／ターミナル",
-      ai: "Codex CLI・IDE 拡張・エージェントモード",
-      voice: "（任意）音声",
-      note: "サンドボックスと承認フロー前提。ファイル書き込み範囲を理解してから任せる。",
-    },
-    {
-      pattern: "Chrome・Gemini（画面・タブ補助）",
-      ide: "Chrome 等ブラウザ",
-      ai: "Gemini と**開いている画面／タブ**の文脈を組み合わせる系",
-      voice: "ブラウザの音声入力",
-      note: "コーディングの別軸の補助。要件が合えば公式を追う価値はある。",
+      pattern: "VS Code",
+      ide: "エディタ本体",
+      ai: "公式インストーラ / winget / Homebrew（!!公式ドキュメントに到達できず未確認!!）",
+      voice: "本体の自動更新あり",
+      note: "上記の多くを拡張として載せる土台。どれを選んでも置き場所になりやすい",
     },
   ],
 };
 
-/** Claude Code CLI・公式に沿った起動・モードのメモ（バイブコーディング用） */
-/** @type {GlossaryGenre} */
 export const VIBE_CLAUDE_CODE = {
   id: "vibe-claude-code",
   title: "Claude Code 日常リファレンス",
