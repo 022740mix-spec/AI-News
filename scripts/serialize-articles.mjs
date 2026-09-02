@@ -30,12 +30,12 @@ export const DATA_DIR = resolve(__dirname, "../src/data");
 export const META_KEYS = [
   "id", "type", "category", "title", "excerpt", "date", "newsDate",
   "author", "readTime", "tags", "coverImage", "heroScope", "pinned",
-  "weekRoundupPeriod", "lastReviewed", "ratings", "rating", "status",
-  "reviewCategory",
+  "weekRoundupPeriod", "lastReviewed", "reviewCadence", "ratings", "rating",
+  "status", "reviewCategory",
 ];
 
 /** body 側に置くキー。split-articles.mjs と同一に保つこと */
-export const BODY_KEYS = ["body", "tables", "figures", "charts", "primarySources"];
+export const BODY_KEYS = ["body", "tables", "figures", "charts", "embeds", "primarySources"];
 
 /** 記事1件を meta 部と body 部に分ける */
 export function splitArticle(article) {
