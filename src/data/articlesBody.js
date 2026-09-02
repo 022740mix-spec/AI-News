@@ -18125,6 +18125,110 @@ const ARTICLES_BODY = {
         "url": "https://explodingtopics.com/blog/sites-blocked-google"
       }
     ]
+  },
+  "anthropic-claude-fable-5-1-mythos-5-1-cache-read-cut-2026": {
+    "body": [
+      "Anthropic が9月1日、**Claude Fable 5.1** と **Claude Mythos 5.1** を公開した。[Fable 5 / Mythos 5 の一般提供開始](?a=anthropic-claude-fable-5-mythos-5-ga-2026)が6月9日だったので、約3か月での世代更新になる。同社は「コーディングとナレッジワークにおいて世界で最も高度なモデル」と位置づけ、公開初日から全プラットフォームで利用できるとしている。",
+      "開発者にとって最も重要な変更は**料金の構造**である。ここは見出しの数字と実際の請求額がずれやすいため、順に整理する。",
+      "**基本料金は1トークンも変わっていない。** 入力 $10 / 出力 $50（100万トークンあたり）で、Fable 5 と同額である。下がったのは**キャッシュ読み取り単価のみ**で、**75%減の $0.25**（100万トークンあたり）になった。Anthropic は「典型的なワークロードで約25%、エージェント型の重い用途では最大45%」請求額が下がると説明している。",
+      "つまり**下げ幅は自分のキャッシュヒット率に完全に依存する**。同じ大きなコンテキストを何度も読み直すエージェント型のループでは効きが大きい。一方、毎回異なる入力を1回ずつ投げるような使い方では、キャッシュ読み取りがほとんど発生しないため**恩恵はほぼゼロ**になる。「25〜45%安くなった」という表現を自分の請求額の予測にそのまま使うと外れる。**まず自分のキャッシュヒット率を確認してから見積もること。**",
+      "この値下げの形は、[Opus 5 が Fable 5 の半額（$5/$25）で投入された](?a=anthropic-claude-opus-5-frontier-half-price-2026)ときとは性質が違う。あちらは基本単価そのものを下げたが、今回は**基本単価を維持したまま、繰り返し読み込みのコストだけを下げている**。上位モデルの価格帯を守りつつ、長時間動くエージェントの運用コストを下げる、という選択になっている。",
+      "サードパーティの計測も出ている。Cognition は自社のコーディング・ベンチマークで、1タスクあたりのコストが前世代の $5.84 から **$2.68** に下がったと報告した。ベンダー自身の見積もりとは独立した数字であり、エージェント型の用途では実際にコストが下がることを支持している。",
+      "**性能面の主張と、その読み方**",
+      "Anthropic は **Terminal-Bench-Science 0.1** で Fable 5.1 が **52.6%** を記録したとしている。同社が併記した比較値は次のとおりである。",
+      "あわせて Terminal-Bench 4.0 で 55.8、エージェント型コーディングで30%以上の改善、低〜中 effort では Fable 5 と同等以上、高 effort ではそれを大きく上回る、としている。",
+      "これらの数値を読むうえで、事実として押さえておくべき点が2つある。**いずれも数値を否定するものではないが、確度の判断に必要な材料である。**",
+      "1つは、**上記のスコアはいずれも Anthropic 自身が計測して公表した値**であり、第三者による再現ではないこと。もう1つは、**Terminal-Bench-Science が非常に新しいベンチマークである**こと。v0.1 のタスク受け付け（プルリクエスト）の締め切りは2026年8月17日で、Fable 5.1 の発表はその約2週間後にあたる。v0.2 は10月5日を目標に準備が進んでいる。",
+      "この2点は、スコアが誤りであることを意味しない。ただし**成立して間もないベンチマークでの、ベンダー自己申告の数値**であるという条件は、採用判断の材料として明示しておく価値がある。独立した検証が出そろうまでは、確定値としてではなく暫定値として扱うのが妥当だろう。当サイトでは、第三者計測が出た時点で本記事に追記する。",
+      "**Fable 5.1 と Mythos 5.1 の違い**",
+      "両者は**同一のモデル**であり、違いは適用されているセーフガードの水準だけである。この構造は[6月の Fable 5 / Mythos 5](?a=anthropic-claude-fable-5-mythos-5-ga-2026)から変わっていない。Fable 5.1 が一般提供、Mythos 5.1 は信頼済みアクセスプログラム経由に限定され、そのセーフガードはサイバーセキュリティとライフサイエンスの業務を支えるよう設計されている、と説明されている。",
+      "**採用を検討する場合に確認すべきこと**",
+      "第一に、自分のワークロードのキャッシュヒット率。ここが低ければ、今回の更新でコストは下がらない。第二に、[Fable 5 に設定されていた週次50%上限](?a=anthropic-claude-fable-5-return-safeguards-limits-2026)などの提供条件が 5.1 でどう扱われるか。本記事の執筆時点では、この点について確認できる情報が得られていない。**上限の有無は実運用の可否を左右するため、契約前に必ず確認すること。**",
+      "**確認できていないこと**",
+      "本記事の執筆環境からは、Anthropic の公式発表ページに到達できなかった（ネットワークポリシーによる遮断）。**したがって本記事の数値は、複数の二次報道が一致して伝えている内容に基づいている。** 公式ドキュメントとの一次照合は行えていない。単価・ベンチマーク値・提供条件については、採用判断の前に公式の料金ページとモデルカードで各自確認してほしい。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 7,
+        "title": "Terminal-Bench-Science 0.1（いずれも Anthropic 公表値）",
+        "headers": [
+          "モデル",
+          "スコア"
+        ],
+        "rows": [
+          [
+            "Claude Fable 5.1",
+            "52.6%"
+          ],
+          [
+            "Claude Opus 5",
+            "29.0%"
+          ],
+          [
+            "Claude Fable 5",
+            "24.7%"
+          ],
+          [
+            "GPT-5.6 Sol",
+            "22.4%"
+          ]
+        ],
+        "caption": "出典: Anthropic の発表を伝える各報道。第三者による再現値ではない"
+      },
+      {
+        "afterParagraph": 3,
+        "title": "料金の変更点（100万トークンあたり）",
+        "headers": [
+          "項目",
+          "Fable 5",
+          "Fable 5.1",
+          "変化"
+        ],
+        "rows": [
+          [
+            "入力",
+            "$10",
+            "$10",
+            "据え置き"
+          ],
+          [
+            "出力",
+            "$50",
+            "$50",
+            "据え置き"
+          ],
+          [
+            "キャッシュ読み取り",
+            "$1.00",
+            "$0.25",
+            "75%減"
+          ]
+        ],
+        "caption": "キャッシュ読み取りの従来値は、75%減という発表と改定後の $0.25 から逆算した値"
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Fable — Anthropic",
+        "url": "https://www.anthropic.com/claude/fable"
+      },
+      {
+        "title": "Anthropic Releases Claude Fable 5.1 and Claude Mythos 5.1: 52.6% on Terminal-Bench-Science and 75% Cheaper Cache Reads",
+        "url": "https://www.marktechpost.com/2026/09/01/anthropic-releases-claude-fable-5-1-and-claude-mythos-5-1-52-6-on-terminal-bench-science-and-75-cheaper-cache-reads/"
+      },
+      {
+        "title": "Terminal-Bench-Science — Snorkel AI leaderboard",
+        "url": "https://snorkel.ai/leaderboard/terminal-bench-science/"
+      },
+      {
+        "title": "terminal-bench-science — harbor-framework (GitHub)",
+        "url": "https://github.com/harbor-framework/terminal-bench-science"
+      },
+      {
+        "title": "Anthropic's Claude Fable 5.1 promises better coding and research at up to 45 percent less",
+        "url": "https://the-decoder.com/anthropics-claude-fable-5-1-promises-better-coding-and-research-at-up-to-45-percent-less/"
+      }
+    ]
   }
 };
 
