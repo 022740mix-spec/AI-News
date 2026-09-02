@@ -501,6 +501,20 @@ node scripts/generate-research-queries.mjs --format=markdown --priority=high
 - Hacker News の AI 関連トップストーリー
 - X/Twitter で話題の AI ツール・論文・デモ
 
+### Step 1.5: 主要ベンダーのモデル世代更新（必須・毎日）
+
+Anthropic（Claude）/ OpenAI（GPT）/ Google（Gemini）/ Meta / xAI / DeepSeek /
+Alibaba（Qwen）/ Moonshot（Kimi）について、**マイナーバージョンを含めて**
+新しいモデルが出ていないかを毎回確認する。
+
+**実例**: 2026年9月1日に公開された **Claude Fable 5.1 / Mythos 5.1** を取りこぼした。
+その前日に「8/27〜9/2」として更新を出したにもかかわらず、サイトに1本も記事が無かった。
+サイトには Fable 関連の記事が14本あり、Anthropic は中心的な取材対象である。**それでも落ちた。**
+
+原因は、既存記事に「Fable 5」が多数あるため既報と混同しやすく、
+「5」と「5.1」の差が検索結果の見た目で埋もれたことにある。
+**メジャーバージョンが既報でも、マイナーバージョンは別の出来事として扱う。**
+
 ### Step 2.5: 公式 org リポジトリの巡回（必須・毎日）
 
 企業が GitHub の公式 org で静かに公開するツールは、企業名検索でも GitHub Trending でも

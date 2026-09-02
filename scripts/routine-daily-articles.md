@@ -76,6 +76,20 @@ CLAUDE.md を必ず読み、その編集方針とセキュリティポリシー�
 google-deepmind / meta-llama / modelcontextprotocol）の新規・更新も見る。
 企業名検索でも GitHub Trending でも Hacker News でも拾えない公開があるため。
 
+**主要ベンダーのモデル世代更新は最優先で確認する。** 具体的には
+Anthropic（Claude）/ OpenAI（GPT）/ Google（Gemini）/ Meta / xAI / DeepSeek /
+Alibaba（Qwen）/ Moonshot（Kimi）について、**マイナーバージョンを含めて**
+新しいモデルが出ていないかを毎回確認すること。
+
+2026年9月、Anthropic が9月1日に公開した **Claude Fable 5.1 / Mythos 5.1** を
+取りこぼした。その前日に「8/27〜9/2」として更新を出したにもかかわらず、
+サイトに1本も記事が無い状態だった。サイトには Fable 関連の記事が14本あり、
+Anthropic は中心的な取材対象である。**それでも落ちた。**
+
+原因は、既存記事に「Fable 5」が多数あるため既報と混同しやすく、
+「5」と「5.1」の差が検索結果の見た目で埋もれたことにある。
+**メジャーバージョンが既報でも、マイナーバージョンは別の出来事として扱う。**
+
 #### Step 2: 重複の確認
 
   node -e 'import("./src/data/articlesMeta.js").then(m=>{const a=m.ARTICLES_META;console.log(a.slice(-40).map(x=>[x.id,x.newsDate,x.title].join(" | ")).join("\n"))})'
