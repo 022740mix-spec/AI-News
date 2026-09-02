@@ -12946,13 +12946,21 @@ const ARTICLES_BODY = {
       "**4月25日（土）** — Anthropic が **Project Deal** を公表。Claude エージェント69体が社内マーケットで186件・$4,000超を自律取引、「Agent Quality Gap」研究のサンプルを公開（[Project Deal](?a=anthropic-project-deal-agent-marketplace-experiment-2026)）。",
       "**週の総括** — 米中フラッグシップ更新が同時進行した1週間。OpenAI が GPT-5.5 で「半額の SOTA」、DeepSeek V4 が 1.6T MoE と 1M ctx のオープンウェイトを投入。Amazon-Anthropic の $25B 追加投資はクラウド3強の縄張り争いを加速させ、Hugging Face と OpenAI のエージェント新製品はマルチエージェント時代の到来を示した。",
       "**編集履歴**",
-      "【訂正 2026-09-02】一次ソースのうち `https://www.anthropic.com/news/expanding-our-partnership-with-amazon` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 1 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。"
+      "【訂正 2026-09-02】一次ソースとして挙げていた `https://www.anthropic.com/news/expanding-our-partnership-with-amazon` は **実在しない URL だった**。当初は「移転先が見つからなかった」として削除したが、改めて調査したところ、この URL には被リンクも検索インデックスも一件も存在せず、**発表内容を要約したそれらしい slug が最初から誤って記録されていた**と判断した。発表そのものは実在するため、**正しい公式発表を出典として追加した**。投資額・評価額は Amazon 側の公式発表に、コンピュート契約の規模は Anthropic 側の公式発表に記載がある。 **実在しない出典を掲げていたことは、記事内容の正誤とは別の問題である。**"
     ],
     "primarySources": [
       {
         "title": "Introducing GPT-5.5",
         "site": "OpenAI",
         "url": "https://openai.com/index/gpt-5-5/"
+      },
+      {
+        "title": "Anthropic and Amazon expand collaboration for up to 5 gigawatts of new compute",
+        "url": "https://www.anthropic.com/news/anthropic-amazon-compute"
+      },
+      {
+        "title": "Amazon invests additional $5 billion in Anthropic",
+        "url": "https://www.aboutamazon.com/news/company-news/amazon-invests-additional-5-billion-anthropic-ai"
       }
     ]
   },
@@ -12983,13 +12991,17 @@ const ARTICLES_BODY = {
       "**5月7日（木）** — OpenAI が **3つの大型発表**。GPT-5.5-Cyber「Trusted Access」プログラム、ChatGPT「Trusted Contact」自傷防止機能、新音声 API（GPT-Realtime-2 / Translate / Whisper）。会議・翻訳・安全領域を一気に拡張（[5/7 3発表](?a=openai-cyber-trusted-contact-voice-may7-2026)）。OpenAI Codex のレビューも公開、GPT-5.5 + Daybreak + Workspace Agents 統合の最新版を整理（[Codex レビュー](?a=openai-codex-agent)）。",
       "**週の総括** — OpenAI と Anthropic の「軍拡」が一段と加速。OpenAI は ChatGPT デフォルトを更新し信頼性で攻め、5/7 の3発表でセキュリティ・安全・音声に同時投資。Anthropic は SpaceX Colossus 1 という異色のインフラ調達で計算リソースを確保した。プラットフォーム戦略の差が鮮明になりつつある。",
       "**編集履歴**",
-      "【訂正 2026-09-02】一次ソースのうち `https://www.anthropic.com/news/spacex-colossus-1` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 1 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。"
+      "【訂正 2026-09-02】一次ソースとして挙げていた `https://www.anthropic.com/news/spacex-colossus-1` は **実在しない URL だった**。当初は「移転先が見つからなかった」として削除したが、改めて調査したところ、この URL には被リンクも検索インデックスも一件も存在せず、**発表内容を要約したそれらしい slug が最初から誤って記録されていた**と判断した。発表そのものは実在するため、**正しい公式発表を出典として追加した**。発表の表題は Colossus 1 ではなく利用上限の引き上げが主で、その中で SpaceX との契約が説明されている。 **実在しない出典を掲げていたことは、記事内容の正誤とは別の問題である。**"
     ],
     "primarySources": [
       {
         "title": "GPT-5.5 Instant Now Default in ChatGPT",
         "site": "OpenAI",
         "url": "https://openai.com/index/gpt-5-5-instant-default/"
+      },
+      {
+        "title": "Higher usage limits for Claude and a compute deal with SpaceX",
+        "url": "https://www.anthropic.com/news/higher-limits-spacex"
       }
     ]
   },
@@ -13001,13 +13013,21 @@ const ARTICLES_BODY = {
       "**5月14日（木）** — Anthropic が **Stainless 買収交渉中**（$300M+）と報じられる。OpenAI と Google も使う AI モデル SDK 自動生成基盤を取り込み、開発者体験レイヤーを統合する戦略（[Stainless 買収](?a=anthropic-stainless-acquisition-sdk-infrastructure-2026)）。",
       "**週の総括** — Anthropic 週間と呼ぶべき1週間。Claude for Legal・AWS GA・agent view・$900B 調達・Stainless 買収と5発進、評価額・売上シェアで OpenAI を逆転。Cursor は Microsoft Teams 統合でエンタープライズ流通を強化し、Google は Googlebook で AI ネイティブ PC の新カテゴリを提示した。会議系AI（アバター・翻訳）の特集2本も AI 業界の生活浸透フェーズを示している。",
       "**編集履歴**",
-      "【訂正 2026-09-02】一次ソースのうち `https://www.anthropic.com/news/claude-for-legal` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 1 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。"
+      "【訂正 2026-09-02】一次ソースとして挙げていた `https://www.anthropic.com/news/claude-for-legal` は **実在しない URL だった**。当初は「移転先が見つからなかった」として削除したが、改めて調査したところ、この URL には被リンクも検索インデックスも一件も存在せず、**発表内容を要約したそれらしい slug が最初から誤って記録されていた**と判断した。発表そのものは実在するため、**正しい公式発表を出典として追加した**。Anthropic は製品系の発表を claude.com/blog に置いている。あわせて公式 GitHub リポジトリ（Apache-2.0、12プラグインと CoCounsel 連携を含む）を出典に加えた。 **実在しない出典を掲げていたことは、記事内容の正誤とは別の問題である。**"
     ],
     "primarySources": [
       {
         "title": "Anthropic targets $900 billion valuation",
         "site": "Reuters",
         "url": "https://www.reuters.com/technology/anthropic-targets-900-billion-valuation-2026/"
+      },
+      {
+        "title": "Claude for the legal industry — Claude by Anthropic",
+        "url": "https://claude.com/blog/claude-for-the-legal-industry"
+      },
+      {
+        "title": "anthropics/claude-for-legal (GitHub)",
+        "url": "https://github.com/anthropics/claude-for-legal"
       }
     ]
   },
