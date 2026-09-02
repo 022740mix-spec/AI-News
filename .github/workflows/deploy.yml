@@ -26,6 +26,12 @@ jobs:
 
       # 公開の直前に置く関門。ここが落ちれば deploy まで進まないため、
       # 個人情報や環境固有の情報を含んだまま公開されることはない。
+      # 記事の消失は公開前に必ず止める。articlesBody.js は18,000行あり、
+      # 生成・再構築の途中で切れると記事が静かに消える。review-check は
+      # 「ある記事が正しいか」しか見ないため、この検査が最後の砦になる。
+      - name: 記事の消失チェック
+        run: node scripts/check-article-manifest.mjs
+
       - name: 個人情報・環境固有情報チェック（記事データ）
         env:
           PRIVATE_TERMS: ${{ secrets.PRIVATE_TERMS }}

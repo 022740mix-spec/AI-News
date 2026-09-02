@@ -1,0 +1,63 @@
+# 期限切れ検出（check-expired-content.mjs）の対象外にする記事
+#
+# 「〇月〇日まで」という記述があっても、それが**その時点の出来事の記録**であり、
+# 読者が現在の条件と誤認するおそれがないものはここに登録する。
+#
+# 登録するときは「なぜ対象外でよいか」を必ずコメントで残すこと。
+# 現行の料金・提供条件を示す記述は、期限が過ぎたら必ず更新すること。
+# 迷ったら登録せず、記事を直す。
+
+# 移行措置の記録。当時の期限を事実として述べたもので、現在の条件ではない
+anthropic-claude-third-party-harness-extra-usage-2026
+
+# 発表時点の提供予定を述べた速報。当時の記録として正しい
+openai-workspace-agents-codex-enterprise-2026
+
+# カンファレンス（Build 2026）のセッション期間。イベントの記録
+microsoft-scout-openclaw-build-2026-2026
+
+# Fable 5 / Mythos 5 の GA 速報。当時の限定公開期間の記録
+anthropic-claude-fable-5-mythos-5-ga-2026
+
+# Cursor iOS アプリ公開時の期間限定割引の記録。速報として当時の事実
+cursor-ios-app-launch-cloud-agents-remote-2026
+
+# Fable 5 復活時の週次上限と 7/7 期限の記録。後続記事で延長を報じている
+anthropic-claude-fable-5-return-safeguards-limits-2026
+
+# 上記の続報。7/12 への延長そのものを報じた記事で、期限は記事の主題
+anthropic-claude-fable-5-billing-transition-extended-july-12-2026
+
+# 助成プログラムの応募期限。当時の募集要項の記録
+anthropic-claude-science-workbench-research-2026
+
+# 週刊まとめ。当時の週の出来事の記録
+overview-2026-week-jun08
+
+# Devin Desktop の Cascade 提供終了(7/1)の記述。製品史として正しく、
+# 現行が Devin Local であることは同じ段落で明記している
+editor-comparison-2026-march
+
+# Fable 5 復活時の週次上限と 7/7 期限の記録。レビュー本文で経緯を説明している
+claude-fable-5-mythos-5-review
+
+# Kimi K3 の重み公開(7/27)前の状況を述べた速報。当時の記録
+moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026
+
+# 週刊まとめ。当時の週の出来事の記録
+overview-2026-week-jun08
+
+# Devin Desktop の Cascade 提供終了(7/1)の記述。製品史として正しく、
+# 現行が Devin Local であることは同じ段落で明記している
+editor-comparison-2026-march
+
+# Fable 5 復活時の週次上限と 7/7 期限の記録。レビュー本文で経緯を説明している
+claude-fable-5-mythos-5-review
+
+# Kimi K3 の重み公開(7/27)前の状況を述べた速報。当時の記録
+moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026
+
+# Sonnet 5 公開時の速報。2026-09-02 の訂正で「公開当初は8月31日まで $2/$10
+# だったが、現行価格は $3/$15」と経緯と現状の両方を明記したため対象外とする。
+# 読者が現在の条件を誤認するおそれはない
+anthropic-claude-sonnet-5-agentic-cheap-2026
