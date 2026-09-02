@@ -8422,5 +8422,25 @@ export const ARTICLES_META = [
       "規制",
       "ビジネスモデル"
     ]
+  },
+  {
+    "id": "anthropic-claude-fable-5-1-mythos-5-1-cache-read-cut-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Anthropic が Claude Fable 5.1 / Mythos 5.1 を公開 — 破壊的変更が3つ、値下げはキャッシュ読み取りのみ",
+    "excerpt": "Anthropic が9月1日、Claude Fable 5.1 と Mythos 5.1 を公開した。報道は「最大45%安い」を見出しにしているが、**入力 $10 / 出力 $50 の基本料金は据え置き**で、下がったのは**キャッシュ読み取りのみ（$1 → $0.25）**。下げ幅は各自のキャッシュヒット率に依存する。それ以前に、既存コードが 400 エラーで止まりうる**破壊的変更が3つ**ある。公式ドキュメントで確認した内容をまとめる。",
+    "date": "2026-09-02",
+    "newsDate": "2026-09-01",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Fable 5",
+      "モデル",
+      "料金",
+      "ベンチマーク",
+      "エージェント"
+    ]
   }
 ];
