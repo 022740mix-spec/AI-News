@@ -11,6 +11,30 @@ export const ACCENT_PRESETS = [
   { id: "purple", label: "冬",     en: "Winter", color: "#8b5cf6", cyan: "#a78bfa", season: "winter" },
 ];
 
+/**
+ * 日付から季節のアクセントを決める。
+ *
+ * 季節の演出を手で切り替える運用にしていたため、9月に桜が舞い続ける状態が
+ * 起きた。誰かが気づいて直すまで季節外れのままになる作りをやめ、日付から
+ * 導出する。
+ *
+ * 区切りは暦ではなく日本での体感に寄せている。9月上旬はまだ残暑であり、
+ * 紅葉には早い。逆に紅葉の見頃は10月末から11月なので、秋を長めに取る。
+ *
+ *   春 3/1〜5/31   … 桜
+ *   夏 6/1〜9/15   … 新緑・蛍
+ *   秋 9/16〜11/30 … 紅葉
+ *   冬 12/1〜2/28  … 雪
+ */
+export function getSeasonalAccentId(date = new Date()) {
+  const m = date.getMonth() + 1;
+  const d = date.getDate();
+  if (m >= 3 && m <= 5) return "sakura";
+  if (m >= 6 && (m < 9 || (m === 9 && d <= 15))) return "green";
+  if ((m === 9 && d >= 16) || m === 10 || m === 11) return "orange";
+  return "purple";
+}
+
 export const FILTERS = [
   { id: "all", label: "すべて", en: "All" },
   { id: "special", label: "特集", en: "Feature" },

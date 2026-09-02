@@ -33,6 +33,7 @@ import {
   STORAGE_LANG,
   ACCENT_PRESETS,
   REVIEW_CATEGORIES,
+  getSeasonalAccentId,
 } from "./constants.js";
 import { syncDocumentSeo } from "./utils/seo.js";
 import { syncAppUrl, readInitialRouteState } from "./utils/routing.js";
@@ -75,7 +76,16 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [statementOpen, setStatementOpen] = useState(false);
   const [page, setPage] = useState(1);
-  const [accentId, setAccentId] = useState(() => localStorage.getItem(STORAGE_ACCENT) || "blue");
+  const [accentId, setAccentId] = useState(() => {
+    const stored = localStorage.getItem(STORAGE_ACCENT);
+    const seasonal = getSeasonalAccentId();
+    if (!stored) return seasonal;
+    // 保存されているのが季節プリセットなら、現在の季節に寄せる。
+    // 春に桜を選んだ人へ9月も桜を出し続けないため。
+    // 季節と結び付かないテーマ（ブルー）を選んでいる人の選択は尊重する。
+    const preset = ACCENT_PRESETS.find(p => p.id === stored);
+    return preset?.season ? seasonal : stored;
+  });
   const [lang, setLang] = useState(() => localStorage.getItem(STORAGE_LANG) || "ja");
   const searchRef = useRef(null);
   const ITEMS_PER_PAGE = 15;
