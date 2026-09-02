@@ -18007,6 +18007,168 @@ const ARTICLES_BODY = {
         "url": "https://medium.com/@vektormemory/synthid-watermarking-and-removal-methods-are-a-joke-6ca5680e51ac"
       }
     ]
+  },
+  "eu-designates-chatgpt-vlose-dsa-2026": {
+    "body": [
+      "**欧州委員会**が2026年8月31日、**ChatGPT を DSA（デジタルサービス法）の VLOSE — Very Large Online Search Engine、超大型オンライン検索エンジン — に指定**した。**AIチャットボットがこの区分に指定されたのは初めて**である。同日、**Reddit と Roblox が VLOP（超大型オンラインプラットフォーム）**に指定されている。",
+      "## 数字の根拠",
+      "DSA の VLOSE / VLOP 指定は、EU 域内の月間アクティブ利用者数が **4,500万人**を超えることが要件になる。ChatGPT の EU 月間アクティブユーザーは **1億5,910万人**と報告されており、閾値を大きく上回る。",
+      "## 指定の論理がもっとも重要である",
+      "**ここを取り違えないでほしい。** 今回の指定は「ChatGPT が AI 製品だから」なされたものではない。**ChatGPT が備えるライブのウェブ検索機能**が、検索エンジンとしての規制対象に当たると判断された。",
+      "この違いは実務上きわめて大きい。**AI という製品カテゴリに対する新しい規制ではなく、既存の枠組みを機能ベースで当てはめた**ということだからである。",
+      "したがって、**同じ論理は Gemini・Claude・Perplexity にも及びうる**。ウェブ検索機能を持ち、EU の利用者数が閾値を超えれば、AI であるかどうかに関わらず同じ区分に入る。規制当局から見れば、AI ごとに新しい枠を作らずに済む「使い回せる型」を手にしたことになる。",
+      "## 何が義務づけられるか",
+      "VLOSE / VLOP に指定されると、DSA のもとで最も厳しい義務が課される。システミックリスクの評価と軽減、独立した監査、データへの研究者アクセス、透明性報告、そして推薦システムに関する説明などが含まれる。",
+      "**遵守期限は2026年12月**。違反した場合の制裁は、**全世界年間売上高の最大6%**である。",
+      "## 8月2日の透明性義務との関係",
+      "EU の AI 規制はこの数か月で層が重なってきた。**8月2日に EU AI Act の GPAI 執行権限が発動**し、同じ日に第50条の透明性義務が適用可能になっている（[→ 8月の規制ダブルヘッダー](?a=feature-eu-ai-act-gpai-enforcement-vs-us-eo-14409-deadline-2026)）。Anthropic が Claude の出力に透かしを入れる判断をしたのも、この義務への対応だった（[→ 詳細](?a=anthropic-claude-synthid-text-watermark-global-2026)）。",
+      "**AI Act と DSA は別の法律である。** 前者は AI モデルの提供者を、後者はオンラインの仲介サービスを規律する。今回の指定は、**同じ事業者が両方の枠組みに同時に服する**局面が現実になったことを示している。",
+      "## 開発者への影響",
+      "直接の義務は OpenAI 側にかかるものであり、API を利用する開発者に新たな義務が生じるわけではない。ただし**間接的な影響は想定しておきたい**。",
+      "透明性報告や推薦システムの説明義務は、**プロダクトの挙動に対する説明可能性の水準**を引き上げる方向に働く。EU 域内の利用者を持つサービスに ChatGPT を組み込んでいる場合、**自社サービス側の説明責任がどこまで及ぶか**は確認しておく価値がある。",
+      "また、同日に OpenAI が広告事業の年換算10億ドル到達を発表している（[→ 詳細](?a=openai-chatgpt-ads-1b-run-rate-2026)）。**収益化を加速する動きと、規制の網がかかる動きが同じ日に並んだ**ことになる。DSA は推薦システムと広告の透明性にも義務を課すため、この2つは無関係ではない。",
+      "**注記**: 本記事は欧州委員会の公式発表および報道に基づく。義務の詳細な適用範囲については、EU の公式文書を確認してほしい。"
+    ],
+    "primarySources": [
+      {
+        "title": "Commission designates ChatGPT, Reddit, Roblox under Digital Services Act",
+        "site": "European Commission",
+        "url": "https://digital-strategy.ec.europa.eu/en/news/commission-designates-chatgpt-reddit-roblox-under-digital-services-act"
+      },
+      {
+        "title": "DSA: EU Commission classifies ChatGPT as \"very large search engine\"",
+        "site": "heise online",
+        "url": "https://www.heise.de/en/news/DSA-EU-Commission-classifies-ChatGPT-as-very-large-search-engine-11435758.html"
+      },
+      {
+        "title": "EU designates ChatGPT a Very Large Search Engine under DSA",
+        "site": "AI Weekly",
+        "url": "https://aiweekly.co/alerts/eu-designates-chatgpt-a-very-large-search-engine-under-dsa"
+      }
+    ]
+  },
+  "openai-chatgpt-ads-1b-run-rate-2026": {
+    "body": [
+      "**OpenAI** が2026年8月31日、**ChatGPT の広告事業が年換算10億ドル（$1B run rate）の収益ペースに達した**と発表した。**開始から200日未満**での到達である。",
+      "## 当サイトの既報からの伸び",
+      "この数字は、当サイトが追ってきた経緯の延長線上にある。",
+      "**2026年3月**: パイロット開始2か月で ARR 1億ドル（[→ 当時の報道](?a=tbpn-chatgpt-ads-anthropic-stories-2026-march)）。**4月**: OpenAI が2026年に25億ドル、2030年に1000億ドルという収益予測を示した（[→ 詳細](?a=openai-chatgpt-ads-25b-revenue-projection-2026)）。そして**8月末に10億ドル**。",
+      "3月の1億ドルから**5か月で10倍**になった計算になる。4月時点の「2026年に25億ドル」という予測に対しては、年内の残り期間を考えると射程に入る水準である。",
+      "## 提供地域が広がった",
+      "同日から、**インド・欧州・中東・北アフリカ**で広告主が **Ads Manager 経由で直接購入**できるようになった。セルフサーブでの出稿が可能な地域が一気に広がった形である。",
+      "利用している広告主は**数万社規模**とされる。",
+      "## OpenAI の説明",
+      "OpenAI は広告の扱いについて3点を説明している。**広告は明示的に区別される**こと、**ChatGPT の回答内容に影響しない**こと、そして**広告主が利用者の私的な会話にアクセスすることはない**こと。",
+      "**この3点はいずれも検証が難しい性質のものである。** 「回答内容に影響しない」ことを外部から確かめる手段は、現時点で公開されていない。当サイトとしては、**事業者の説明として記録するにとどめ、独立した検証が出た段階で改めて扱いたい**。",
+      "## 同日に規制の網がかかった",
+      "**この発表と同じ8月31日、欧州委員会が ChatGPT を DSA の VLOSE に指定している**（[→ 詳細](?a=eu-designates-chatgpt-vlose-dsa-2026)）。",
+      "偶然の一致だが、並べると構図が見える。**収益化を加速する動きと、規制の網がかかる動きが同じ日に起きた。** そして DSA は、**推薦システムと広告の透明性**にも義務を課す枠組みである。欧州で広告のセルフサーブを開放した日に、欧州の規制対象として指定されたことになる。",
+      "遵守期限は2026年12月であり、**広告事業の設計にも影響が及ぶ可能性がある**。",
+      "## 開発者にとっての含意",
+      "API を利用する開発者に直接の影響はない。ただし**プラットフォームの収益構造が変わることの意味**は考えておきたい。",
+      "無料枠の無制限化（[→ 8月の更新](?a=openai-chatgpt-free-unlimited-luna-sol-update-2026)）と広告事業の拡大は、**同じ戦略の両輪**と読める。利用者数を最大化し、広告で収益化する。サブスクリプションと API に依存しない収益源ができることは、**API の料金政策にも影響しうる**。",
+      "実際、GPT-5.6 は7月末に Luna が80%、Terra が20%値下げされている（[→ 詳細](?a=openai-gpt-5-6-luna-terra-price-cut-2026)）。**広告収益が育つほど、API を安く出す余地は広がる。** 開発者にとっては悪い話ではないが、**プラットフォームの優先順位がどこに置かれるか**は見ておく価値がある。"
+    ],
+    "primarySources": [
+      {
+        "title": "A milestone in expanding access to AI",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads/"
+      },
+      {
+        "title": "OpenAI's ChatGPT ads business hits $1 billion run rate as Europe gets self-serve access",
+        "site": "Digiday",
+        "url": "https://digiday.com/media-buying/openais-chatgpt-ads-business-hits-1-billion-run-rate-as-europe-gets-self-serve-access/"
+      },
+      {
+        "title": "OpenAI Says Ad Business Reaches $1 Billion Run Rate",
+        "site": "PYMNTS",
+        "url": "https://www.pymnts.com/news/artificial-intelligence/2026/openai-says-ad-business-reaches-1-billion-run-rate/"
+      }
+    ]
+  },
+  "deepseek-v4-flash-vision-exp-multimodal-2026": {
+    "body": [
+      "**DeepSeek** が2026年8月21日、実験的なマルチモーダルモデル **DeepSeek-V4-Flash-Vision-Exp** を公開した。既存の V4-Flash に画像理解を追加したものである。",
+      "## 構成",
+      "**284B 総パラメータ / 13B 活性化**の疎な Mixture-of-Experts。活性化率は約4.6%にとどまる。",
+      "画像理解を足しつつ、**テキスト側の性能（エージェント、推論、世界知識）はベースモデルと同等を保つ**とされる。マルチモーダル化にあたって既存の能力を犠牲にしていない、という位置付けである。",
+      "## 料金が据え置かれた点が実務的に大きい",
+      "**ビジョンを追加しても、料金は V4-Flash と同額に据え置かれた。**",
+      "画像はトークンとして課金され、**1画像あたり384トークンが上限**になる。上限が定まっているため、**画像を含むワークロードのコストが見積もりやすい**。「画像1枚が何トークンになるか分からない」という不確実性がない設計である。",
+      "マルチモーダル対応を有料オプションや上位モデルとして切り出すベンダーが多いなかで、**同一料金での提供**は明確な差別化になっている。",
+      "## 向く用途",
+      "公表されている想定用途は3つ。**文書と図表の理解**、**視覚的な質問応答**、そして**テキストと画像を交互に扱うエージェントのワークフロー**である。",
+      "3つ目が実務では効く。スクリーンショットを読ませて次の操作を判断させる、図表を含む資料から数値を抽出して処理する、といった構成が、追加コストなしで組めることになる。",
+      "## 位置付け",
+      "DeepSeek は7月に V4 を GA し、**業界初の peak / off-peak 課金**と dynamic pricing を導入している（[→ 詳細](?a=deepseek-v4-general-availability-dynamic-pricing-2026)）。今回のビジョン対応も含め、**価格設計で差をつける方針が一貫している**。",
+      "中国モデルが米国エンタープライズの API トークンで30〜46%を占めるという調査もあり（[→ 分析](?a=feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026)）、価格の低さがシェアの主要因になっている。**マルチモーダルを追加料金なしで開けたことは、その優位をさらに広げる方向に働く。**",
+      "## 注意点",
+      "**名称に Exp（experimental）が付いている**とおり、実験的な位置付けである。本番ワークロードへの投入は、安定性と可用性の実測を経てからが妥当である。",
+      "また、当サイトが [Kimi K3 のレビュー](?a=moonshot-kimi-k3-review)で扱ったとおり、**中国ベンダーのモデルはライセンスと提供条件を個別に確認する必要がある**。データの所在が要件になる組織では、API 経由の利用そのものが検討対象になる。",
+      "**注記**: 本記事は DeepSeek の公式ドキュメントおよび API 集約プロバイダの公開情報に基づく。ベンチマークの独立検証は本稿執筆時点で確認していない。"
+    ],
+    "primarySources": [
+      {
+        "title": "DeepSeek-V4-Flash-Vision-Exp Release: Multimodal API Now Live",
+        "site": "DeepSeek API Docs",
+        "url": "https://api-docs.deepseek.com/news/news260821/"
+      },
+      {
+        "title": "DeepSeek V4 Flash Vision Exp — API Pricing & Providers",
+        "site": "OpenRouter",
+        "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-vision-exp"
+      },
+      {
+        "title": "Change Log",
+        "site": "DeepSeek API Docs",
+        "url": "https://api-docs.deepseek.com/updates/"
+      }
+    ]
+  },
+  "feature-google-publisher-ai-optout-single-crawler-2026": {
+    "body": [
+      "**Google** はウェブサイト運営者向けに、AI 検索への表示を制御する手段を用意している。だが「選べるようになった」という説明と、「実際に選べるか」は別の話である。",
+      "## 用意されているもの",
+      "**Search Console に AI 検索のオプトアウト用トグル**がある。これを使うと、自サイトのコンテンツを **AI Overviews・AI Mode・Discover 内の AI Overviews** に表示させないよう指定できる。",
+      "Google は、**このオプトアウトはランキング要因にはならず、通常の検索順位を不利にしない**と明言している。",
+      "また8月には、読者が「よく見たい情報源」を指定できる **Preferred Sources ボタン**が用意された。運営者が自サイトに設置でき、指定した読者に対して Google 検索・Discover・Google ニュースで優先的に表示されるようになる。",
+      "## それでも選べない理由",
+      "**ここが本稿の核心である。**",
+      "**Google は、従来の検索インデックス作成と AI への供給に、同一のクローラーを使っている。** つまり **AI Overviews に食わせるボットをブロックすると、Google 検索そのものからも消える。**",
+      "したがって運営者が実際に持っている選択肢は、次の2つに縮む。",
+      "**(a) AI Overviews への表示を受け入れ、Google 検索に載り続ける。** **(b) クローラーを止めて AI から外れ、同時に Google 検索からも消える。**",
+      "Search Console のトグルは (a) の中での調整であって、**「AI には出さないが検索には出す」という第三の選択肢を作るものではない**、という理解が要る。",
+      "## 何が争点なのか",
+      "背景にあるのは、**AI 検索によるトラフィックの減少**である。従来は検索結果からサイトへ流入していた読者が、AI が生成した要約で用を済ませるようになれば、運営者の収益基盤が細る。",
+      "この構造に対して、運営者側には有効な交渉手段が乏しい。**検索からの流入を人質にとられている**形になるためである。実際、Google のクローラーをブロックする運営者が現れているという報告もあるが、それは検索流入を捨てる決断を伴う。",
+      "## 事実として並べておきたいこと",
+      "**Google 側の説明にも根拠はある。** 単一クローラーは技術的な設計の帰結でもあり、インデックス作成と AI 供給を分離するには相応の再構築が要る。またオプトアウトがランキングに影響しないという明言は、運営者にとって意味のある保証である。",
+      "**一方で、その保証は (a) の範囲内でしか働かない。** 「不利にしない」ことと「選べる」ことは違う。",
+      "**当サイトはどちらかの立場を推奨しない。** 判断材料として、次の2点を確認することを勧める。**(1) 自サイトの検索流入のうち、AI Overviews が表示されるクエリの割合はどの程度か。** **(2) その流入が失われた場合に、事業として成立するか。** この2つが分かれば、(a) と (b) の比較は具体的な数字の問題になる。",
+      "## 規制との関係",
+      "この論点は、規制の側からも触れられ始めている。**欧州委員会は8月31日、ChatGPT を DSA の VLOSE に指定した**（[→ 詳細](?a=eu-designates-chatgpt-vlose-dsa-2026)）。指定の根拠は「AI 製品だから」ではなく「**ライブのウェブ検索機能を持つから**」だった。",
+      "**検索とAIを機能として同一視する判断が、規制側から出た**ということである。運営者が直面している「検索とAIを分離できない」という問題と、規制当局が採った「検索機能があれば検索エンジンとして規律する」という論理は、**同じ現実の別の側面**を見ている。",
+      "分離できないものを分離させるのか、一体のものとして規律するのか。**この問いに対する答えは、まだどの当局からも出ていない。**",
+      "**注記**: 本記事は Google の公式説明および複数の報道に基づく。クローラーの内部構成や、オプトアウトの技術的な実装詳細については公開情報の範囲で記述している。"
+    ],
+    "primarySources": [
+      {
+        "title": "Google gives publishers a new way to fight AI-driven traffic losses",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/08/20/google-gives-publishers-a-new-way-to-fight-ai-driven-traffic-losses/"
+      },
+      {
+        "title": "Google's forced AI opt out: what changes — and what doesn't — for publishers",
+        "site": "Digiday",
+        "url": "https://digiday.com/media/googles-forced-ai-opt-out-what-changes-and-what-doesnt-for-publishers/"
+      },
+      {
+        "title": "Publishers move to block Google crawlers as AI search surges",
+        "site": "Exploding Topics",
+        "url": "https://explodingtopics.com/blog/sites-blocked-google"
+      }
+    ]
   }
 };
 

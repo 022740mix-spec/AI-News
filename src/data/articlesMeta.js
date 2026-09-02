@@ -8008,5 +8008,80 @@ export const ARTICLES_META = [
       "セキュリティ"
     ],
     "heroScope": "none"
+  },
+  {
+    "id": "eu-designates-chatgpt-vlose-dsa-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "欧州委員会が ChatGPT を DSA の「超大型オンライン検索エンジン」に指定 — AIチャットボットとして初、根拠は「検索機能」",
+    "excerpt": "2026年8月31日、欧州委員会が **ChatGPT を DSA（デジタルサービス法）の VLOSE（超大型オンライン検索エンジン）に指定**した。AIチャットボットとしては初。EU の月間アクティブユーザーは **1億5,910万人**で、閾値4,500万を大きく超える。**重要なのは指定の根拠が「AI製品だから」ではなく「ライブのウェブ検索機能を持つから」**である点で、同じ論理は Gemini・Claude・Perplexity にも及びうる。遵守期限は2026年12月、違反は全世界年間売上高の最大6%。",
+    "date": "2026-09-02",
+    "newsDate": "2026-08-31",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "規制",
+      "OpenAI",
+      "ChatGPT",
+      "EU",
+      "透明性"
+    ],
+    "heroScope": "none"
+  },
+  {
+    "id": "openai-chatgpt-ads-1b-run-rate-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ChatGPT 広告が年換算10億ドルに到達 — 開始200日未満、同日に EU が DSA 指定という対照",
+    "excerpt": "OpenAI が8月31日、**ChatGPT 広告事業が年換算10億ドルの収益ペースに達した**と発表した。開始から**200日未満**での到達で、当サイトが4月に報じた「パイロット6週間で ARR 1億ドル」から10倍になった計算。同日から **インド・欧州・中東・北アフリカで Ads Manager 経由の直接購入**が可能になる。OpenAI は広告が明示的に区別され、回答内容に影響せず、広告主が私的な会話にアクセスできないと説明している。",
+    "date": "2026-09-02",
+    "newsDate": "2026-08-31",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "ChatGPT",
+      "広告",
+      "ビジネスモデル",
+      "EU"
+    ],
+    "heroScope": "none"
+  },
+  {
+    "id": "deepseek-v4-flash-vision-exp-multimodal-2026",
+    "type": "news",
+    "category": "model",
+    "title": "DeepSeek が V4-Flash-Vision-Exp を公開 — 画像理解を足しても料金は据え置き、1画像384トークン上限",
+    "excerpt": "DeepSeek が8月21日、実験的なマルチモーダルモデル **V4-Flash-Vision-Exp** を公開した。**284B 総パラメータ・13B 活性化**の疎な MoE で、V4-Flash にビジョンを足しつつテキスト性能（エージェント・推論・世界知識）は同等を保つ。注目すべきは料金で、**ビジョンを追加しても V4-Flash と同額**に据え置かれた。画像はトークンとして課金され、**1画像あたり384トークンが上限**。文書・図表の理解、視覚的な質問応答、テキストと画像を交互に扱うエージェント用途に向く。",
+    "date": "2026-09-02",
+    "newsDate": "2026-08-21",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "モデル",
+      "DeepSeek",
+      "中国AI",
+      "マルチモーダル",
+      "料金"
+    ],
+    "heroScope": "none"
+  },
+  {
+    "id": "feature-google-publisher-ai-optout-single-crawler-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】Google が AI 検索のオプトアウトを用意した — ただしクローラーが1本である限り、実質的に選べない",
+    "excerpt": "Google は Search Console に **AI Overviews・AI Mode への表示を拒否するトグル**を用意し、オプトアウトはランキング要因にならないと明言している。だが**構造上の制約が残る**。**Google は従来の検索インデックスと AI 学習に同一のクローラーを使っており**、AI Overviews に食わせるボットを止めると **Google 検索からも消える**。「選べるようになった」という説明と、「実際に選べるか」は別の話である。運営者が直面している選択の実像を整理する。",
+    "date": "2026-09-02",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "分析",
+      "Google",
+      "AI検索",
+      "規制",
+      "ビジネスモデル"
+    ],
+    "heroScope": "none"
   }
 ];
