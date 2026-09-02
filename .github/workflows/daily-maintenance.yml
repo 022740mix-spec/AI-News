@@ -6,9 +6,12 @@ name: Daily maintenance
 
 on:
   schedule:
-    # 07:10 JST（22:10 UTC）。毎時ちょうどは GitHub 側が混み、
-    # 遅延しやすいため 10 分ずらしている。
-    - cron: "10 22 * * *"
+    # 記事作成 Routine（07:00 / 15:00 JST）の直前に置く。
+    # 先に点検が回っていれば、消失や期限切れを抱えたまま記事が
+    # 積み上がるのを防げる。
+    # 毎時ちょうどは GitHub 側が混んで遅延しやすいため分をずらす。
+    - cron: "40 21 * * *"   # 06:40 JST
+    - cron: "40 5 * * *"    # 14:40 JST
   workflow_dispatch:
 
 permissions:

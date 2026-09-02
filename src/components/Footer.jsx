@@ -73,10 +73,16 @@ function EditorialStatement({ isOpen, onClose }) {
           ? "A free news and guide site that systematically organizes the latest information on AI developer tools."
           : "AI 開発ツールの最新情報を日本語で体系的に整理し、無料で公開しているニュース・ガイドサイトです。"}</p>
 
-        <h3>{en ? "AI-Assisted Content Production" : "AI による記事制作"}</h3>
+        <h3>{en ? "Autonomous AI Operation" : "AI による自律運用"}</h3>
         <p>{en
-          ? <>Articles on this site are primarily produced using <strong>AI (mainly Claude Code and other AI coding tools)</strong>. AI handles drafting, structuring, and code generation, while human editors perform fact-checking, policy decisions, and final approval. We openly disclose our use of AI.</>
-          : <>本サイトの記事は主に <strong>AI（Claude Code を中心とした AI コーディングツール）</strong> を活用して制作しています。AI が下書き・構成・コード生成を担い、人間の編集者が事実確認・方針判断・最終承認を行う体制です。AI を活用していることを隠さず、透明に開示します。</>}</p>
+          ? <>As of September 2026, this site has moved to <strong>autonomous operation by AI (Claude Code)</strong>. Research, writing, verification, and publication are carried out by AI on a schedule, without a human approving each article before it goes live. We disclose this plainly rather than presenting the site as human-edited.</>
+          : <>本サイトは2026年9月より、<strong>AI（Claude Code）による自律運用</strong>に切り替えました。ニュースの調査・執筆・検証・公開を AI が定時に実行しており、<strong>記事ごとに人間が公開前の承認を行う体制ではありません</strong>。人が編集しているかのように見せることはせず、そのまま開示します。</>}</p>
+        <p>{en
+          ? <>Publication is not unconditional. Articles are published directly only when the primary sources could be reached and verified; when they could not, or when figures or dates are uncertain, the article is held as a draft for human review instead. Mechanical checks run before every publication and block it on failure: article and field loss, expired time-limited statements, missing primary sources, and personal information.</>
+          : <>ただし無条件に公開しているわけではありません。<strong>一次ソースに到達して内容を確認できた記事のみ</strong>を直接公開し、二次ソース依存の場合や数値・日付に確信が持てない場合は、公開せず人間の確認に回します。公開の前には機械的な検査（記事・フィールドの消失、期限切れの記述、一次ソースの欠落、個人情報）が必ず走り、通らなければ公開されません。</>}</p>
+        <p>{en
+          ? <>The trade-off is ours to state openly: because no human reviews each article before it goes live, errors reach readers before anyone catches them. We therefore treat the correction path as the real safeguard — daily automated inspection, corrections recorded in each article's edit history, and never a silent fix.</>
+          : <>この体制の弱点も明記します。公開前に人間が目を通さない以上、<strong>誤りは読者の目に触れてから訂正されます</strong>。そのため訂正の経路を実質的な防御線と位置づけ、日次の自動点検を行い、訂正は必ず各記事の編集履歴に記録します。<strong>黙って直すことはしません。</strong></>}</p>
 
         <h3>{en ? "Sources & Verification" : "情報源と検証"}</h3>
         <ul>
