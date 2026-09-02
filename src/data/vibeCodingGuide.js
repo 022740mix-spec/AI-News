@@ -2335,7 +2335,7 @@ export const TOOL_REFERENCES = [
     ref: {
       id: "ref-codex",
       title: "Codex（OpenAI）日常リファレンス",
-      lead: "OpenAI が提供する AI コーディングエージェント。デスクトップアプリ・ブラウザ・CLI・IDE 拡張の4形態で提供されている。クラウド上のサンドボックスで安全に実行される点が最大の特徴。バックエンドには GPT-5.x-Codex（コーディング特化モデル）が使われる。公式は https://openai.com/codex/ を参照。",
+      lead: "OpenAI が提供する AI コーディングエージェント。デスクトップアプリ・ブラウザ・CLI・IDE 拡張の4形態で提供されている。クラウド上のサンドボックスで安全に実行される点が最大の特徴。バックエンドには GPT-5.x-Codex（コーディング特化モデル）が使われる。公式は https://openai.com/codex/ を参照。\n\n==確認状況について。== インストール方法と実行形態は公式リポジトリ（github.com/openai/codex）で確認しました。一方、**サンドボックス・承認モード・スラッシュコマンド・設定ファイルの詳細は、公式リポジトリでは外部ドキュメントへの案内のみ**で、その参照先には本サイトの調査環境から到達できていません。以下のコマンドや設定の記述は、その制約下で書かれたものです。!!実際の挙動は必ず公式ドキュメントで確認してください。!!",
       terms: [
         // ── 使い方の種類 ──
         { word: "A. デスクトップアプリで使う", section: "使い方の種類", mean: "Codex の専用アプリ（macOS / Windows）を起動して使う。独自の画面でファイルツリーやチャットが見える。マウス操作で感覚的に使いたい人向け。ターミナルに慣れていない人はここから始めるとよい。" },
@@ -2344,6 +2344,8 @@ export const TOOL_REFERENCES = [
         { word: "D. IDE 拡張機能で使う", section: "使い方の種類", mean: "VS Code・Cursor・Windsurf・JetBrains IDE 向けの Codex 拡張機能をインストールして、エディタ内から直接タスクを投げられる。開いているファイルのコンテキストを自動で認識する。" },
         { word: "どの方法でも共通", section: "使い方の種類", mean: "処理はクラウドのサンドボックス上で実行される。ローカルのファイルに直接触れないため安全性が高い。結果は PR（Pull Request）として GitHub に提出される。" },
         // ── 基本操作 ──
+        { word: "入れ方（公式リポジトリで確認）", section: "基本操作", mean: "npm / Homebrew / インストールスクリプト / GitHub Releases のバイナリ、の4系統がある。==Claude Code と違い、公式は自動更新の有無を明記していない。== 更新方法は入れ方に合わせて自分で決めることになる。", code: "npm install -g @openai/codex\nbrew install --cask codex\ncurl -fsSL https://chatgpt.com/codex/install.sh | sh", codeLang: "bash" },
+        { word: "IDE 拡張が使えるエディタ", section: "使い方の種類", mean: "公式リポジトリによると **VS Code・Cursor・Windsurf** で拡張が使える。==Cursor を使いながら中身は Codex、という組み合わせも成立する。== エディタとエージェントは1対1ではない。" },
         { word: "起動: `codex`（CLI の場合）", section: "基本操作", mean: "ターミナルで対話セッションを開始する。Claude Code と同じようにプロジェクトのフォルダに `cd` で移動してから実行する。ファイル操作はクラウドのサンドボックス上で行われる。", code: "cd C:\\Users\\あなた\\Projects\\my-app\ncodex", codeLang: "bash" },
         { word: "自動実行: `--full-auto`", section: "基本操作", mean: "確認なしで自動実行するモード。サンドボックス（隔離環境）内で動作するためローカルファイルが直接壊れるリスクは低いが、結果のレビューは必須。", code: "codex --full-auto \"テストを書いて全部パスさせて\"", codeLang: "bash" },
         { word: "非対話: `codex -q`（quiet モード）", section: "基本操作", mean: "質問への回答だけ返して終了する。CI（自動化パイプライン）やスクリプトからの利用に向く。", code: "codex -q \"このエラーの原因を説明して\"", codeLang: "bash" },
