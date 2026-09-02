@@ -174,8 +174,22 @@ let actionable = false;
 // サイト自身（レビューの lastReviewed と現行モデル一覧）を突き合わせ先にする。
 {
   const r = run("check-guide-freshness.mjs");
+
+  // 検査そのものが落ちたら、それ自体をエラーとして報告する。
+  // 終了コードを見ないと、例外で落ちても件数が 0 件に読めてしまい、
+  // 「異常なし」と区別がつかない。検査が静かに無効化される。
+  if (r.code !== 0) {
+    actionable = true;
+    sections.push({
+      level: "error",
+      title: "ガイド鮮度チェックがエラーで落ちている",
+      note: "検査が動いていません。落ちたまま放置すると、ガイドの陳腐化を誰も検知できなくなります。",
+      body: r.out.trim().slice(0, 4000),
+    });
+  }
+
   const m = r.out.match(/対応が必要: (\d+) 件/);
-  const count = m ? Number(m[1]) : 0;
+  const count = r.code === 0 && m ? Number(m[1]) : 0;
 
   // ガイドの陳腐化はゆっくり進む。毎日 Issue にすると同じ内容が続き、
   // 通知そのものが無視されるようになる。週1回（月曜）だけ通知に載せ、
@@ -235,7 +249,6 @@ if (!actionable) {
   lines.push("対応が必要な項目はありません。");
 } else {
   for (const s of sections) {
-    if (s.passive && !actionable) continue;
     lines.push(`### ${icon[s.level] ?? ""} ${s.title}`);
     lines.push("");
     if (s.note) { lines.push(s.note); lines.push(""); }

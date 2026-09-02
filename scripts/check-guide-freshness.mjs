@@ -84,6 +84,41 @@ function familyKey(name, vPrefix) {
   return name.replace(/^Claude /i, "").trim().toLowerCase() + (vPrefix ? "|v" : "");
 }
 
+/**
+ * 文字列からモデル名の言及を拾う。素朴に FAMILY を回すだけでは2つ取り逃す。
+ *
+ * 1. **系列を共有した表記**。「Opus/Sonnet 4.6 が条件」は末尾の Sonnet 4.6 しか
+ *    一致せず、同じく旧世代の Opus 4.6 が報告されない。実際にガイドにこの表記がある。
+ * 2. **意図的なワイルドカード**。「GPT-5.x-Codex」は世代非依存にするための書き方
+ *    なのに、小数以下が英字なので GPT-5 として切り詰められ、誤検出になる。
+ *    これは直すべき記述ではなく、むしろ推奨される書き方である。
+ */
+function modelHits(text) {
+  const out = [];
+  // 系列共有（A/B ver）を先に展開する
+  const SHARED = /\b([A-Za-z][A-Za-z0-9 ]*?)\s*\/\s*([A-Za-z][A-Za-z0-9 ]*?)[ -]?(v?)(\d+(?:\.\d+)?)(?![.\d]*[a-zA-Z])/g;
+  for (const mt of text.matchAll(SHARED)) {
+    for (const nameRaw of [mt[1], mt[2]]) {
+      const name = nameRaw.trim();
+      const fam = familyKey(name, mt[3]);
+      if (!newest.has(fam)) continue;
+      out.push({ fam, ver: parseFloat(mt[4]), label: `${name} ${mt[4]}` });
+    }
+  }
+  for (const mt of text.matchAll(FAMILY)) {
+    // 直後が「.x」「.y」のように英字ならワイルドカード表記。世代非依存に
+    // するための正しい書き方なので対象外とする。
+    const after = text.slice(mt.index + mt[0].length);
+    if (/^\.[a-zA-Z]/.test(after)) continue;
+    const fam = familyKey(mt[1], mt[2]);
+    const ver = parseFloat(mt[3]);
+    if (!Number.isFinite(ver)) continue;
+    if (out.some((o) => o.fam === fam && o.ver === ver)) continue;
+    out.push({ fam, ver, label: mt[0] });
+  }
+  return out;
+}
+
 const newest = new Map();
 for (const m of constants.MODEL_COMPARISON || []) {
   for (const mt of String(m.name).matchAll(FAMILY)) {
@@ -94,7 +129,18 @@ for (const m of constants.MODEL_COMPARISON || []) {
   }
 }
 
-const findings = { drift: [], model: [], patch: [], dup: [], unreviewed: [], alias: [] };
+// サイト自身が現行として書いている単価。MODEL_COMPARISON の summary から拾う。
+const currentPrice = new Map();
+for (const m of constants.MODEL_COMPARISON || []) {
+  const p = (String(m.summary || "").match(/\$[\d.]+\/\$[\d.]+/) || [])[0];
+  if (!p) continue;
+  const short = String(m.name).replace(/^Claude /i, "").trim().toLowerCase();
+  if (!currentPrice.has(short)) currentPrice.set(short, p);
+  const fam = short.replace(/\s+[\d.]+.*$/, "");
+  if (!currentPrice.has(fam)) currentPrice.set(fam, p);
+}
+
+const findings = { drift: [], model: [], patch: [], price: [], dup: [], unreviewed: [], alias: [] };
 
 // ── 節どうしが同じオブジェクトを共有していないか ──
 // TOOL_REFERENCES[claude-code].ref は VIBE_CLAUDE_CODE そのものである。
@@ -166,19 +212,36 @@ for (const [key, meta] of Object.entries(SECTIONS)) {
   const texts = ownedStrings(key, data);
   const seenModel = new Set();
   const seenPatch = new Set();
+  const seenPrice = new Set();
   for (const t of texts) {
-    for (const mt of t.matchAll(FAMILY)) {
-      const fam = familyKey(mt[1], mt[2]);
-      const ver = parseFloat(mt[3]);
-      const max = newest.get(fam);
-      if (max === undefined || !Number.isFinite(ver) || ver >= max) continue;
-      const sig = `${fam}|${ver}`;
+    for (const hit of modelHits(t)) {
+      const max = newest.get(hit.fam);
+      if (max === undefined || hit.ver >= max) continue;
+      // 重複排除に文そのものを含める。含めないと、同じ節の別の箇所に同じ
+      // 旧バージョンがあっても最初の1件しか報告されず、残りが編集者から
+      // 完全に見えなくなる。
+      const sig = `${hit.fam}|${hit.ver}|${t.slice(0, 60)}`;
       if (seenModel.has(sig)) continue;
       seenModel.add(sig);
       // 「最新は X」を出さない。出すと名前だけの差し替えを誘う。
       // 記述はモデル世代に依存しているので、世代が変われば記述ごと変わる。
-      findings.model.push({ key, found: mt[0], excerpt: t.slice(0, 160) });
+      findings.model.push({ key, found: hit.label, excerpt: t.slice(0, 160) });
     }
+    // ── 価格 ──
+    // 「Opus: $15/$75、Sonnet: $3/$15」のように、同じ一文の中で片方が現行・
+    // 片方が旧価格という状態が実際に存在した（Opus 5 は $5/$25）。
+    // モデル名と単価が同じ文に並んでいるときだけ、サイトの現行値と突き合わせる。
+    for (const pm of t.matchAll(/([A-Za-z][A-Za-z0-9 .]{1,14}?)\s*[:：]?\s*(\$[\d.]+\s*\/\s*\$[\d.]+)/g)) {
+      const name = pm[1].trim();
+      const priced = pm[2].replace(/\s+/g, "");
+      const cur = currentPrice.get(name.toLowerCase());
+      if (!cur || cur === priced) continue;
+      const sig = `${name}|${priced}|${t.slice(0, 40)}`;
+      if (seenPrice.has(sig)) continue;
+      seenPrice.add(sig);
+      findings.price.push({ key, name, found: priced, current: cur, excerpt: t.slice(0, 150) });
+    }
+
     for (const pv of t.match(PATCH) || []) {
       if (seenPatch.has(pv)) continue;
       seenPatch.add(pv);
@@ -245,9 +308,21 @@ if (n(findings.model)) {
   for (const f of findings.model.slice(0, 20)) console.log(`   ${f.key} — 「${f.found}」を含む\n      ${f.excerpt}`);
   console.log("");
 }
+if (n(findings.price)) {
+  console.log(`🟡 サイトの現行価格と食い違う単価: ${n(findings.price)} 件`);
+  console.log("   読者が見積もりに使う数字です。**名前だけでなく単価も世代に紐づきます。**");
+  console.log("");
+  for (const f of findings.price.slice(0, 15)) {
+    console.log(`   ${f.key} — ${f.name}: ガイド ${f.found} / サイトの現行 ${f.current}`);
+    console.log(`      ${f.excerpt}`);
+  }
+  console.log("");
+}
 if (n(findings.patch)) {
   console.log(`🟡 パッチバージョンがガイドに埋まっている: ${n(findings.patch)} 件`);
   console.log("   日単位で古くなる値です。載せ続けるか、記述を落とすかの判断が要ります。");
+  console.log("   **すべてが誤りとは限りません。** 「vX で追加された」という導入時期の記述なら、");
+  console.log("   機能が現存する限り誤りではない。ただし読者には確認しようがない情報です。");
   for (const f of findings.patch.slice(0, 20)) console.log(`   ${f.key} — ${f.version}\n      ${f.excerpt}`);
   console.log("");
 }
@@ -269,7 +344,7 @@ if (n(findings.unreviewed)) {
   console.log("");
 }
 
-const actionable = n(findings.drift) + n(findings.model) + n(findings.patch) + n(findings.dup);
+const actionable = n(findings.drift) + n(findings.model) + n(findings.price) + n(findings.patch) + n(findings.dup);
 console.log(actionable ? `対応が必要: ${actionable} 件` : "✅ 対応が必要な項目はありません。");
 
 // 終了コードは常に 0。これは「助言の質」ではなく「明らかな古さ」の報告であり、
