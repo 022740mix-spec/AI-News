@@ -823,7 +823,9 @@ const ARTICLES_BODY = {
       "**2. データ越境と規制**: 中国の AI 法・データ越境規制により、グローバル運用では設計上の制約が大きい。エンタープライズ採用では権限・地理リージョン分離が必要。",
       "**3. エコシステム接続性**: Hugging Face、MCP、IDE / Agent ツール群との接続性は、米国モデルが先行している。OSS モデルがクラウド以外で広く採用されるには、SDK・ドキュメント・コミュニティの充実が引き続き課題となる。",
       "## 5月の AI 業界全体像との接続",
-      "Anthropic Opus 4.8（5/28）、Google I/O 2026（5/19〜、Gemini 3.5 Flash / Antigravity / Spark）、そして本特集の中国系5モデル更新を並べると、**米国フロンティアモデル × エージェント基盤** と **中国フロンティアモデル × オープンウェイト × 価格破壊** が、5月という同じ月にほぼ同期して動いた構図が浮かび上がる。**フロンティア競争はもはや3軸（米クローズド・米オープン寄り・中オープン寄り）になりつつある**——というのが、5月末時点の見立てだ。"
+      "Anthropic Opus 4.8（5/28）、Google I/O 2026（5/19〜、Gemini 3.5 Flash / Antigravity / Spark）、そして本特集の中国系5モデル更新を並べると、**米国フロンティアモデル × エージェント基盤** と **中国フロンティアモデル × オープンウェイト × 価格破壊** が、5月という同じ月にほぼ同期して動いた構図が浮かび上がる。**フロンティア競争はもはや3軸（米クローズド・米オープン寄り・中オープン寄り）になりつつある**——というのが、5月末時点の見立てだ。",
+      "**編集履歴**",
+      "【訂正 2026-09-02】一次ソースのうち `https://aiscopehub.com/latest-domestic-ai-updates-in-may-2026-large-model-upgrades-new-ai-tools/` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 5 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。"
     ],
     "tables": [
       {
@@ -902,11 +904,6 @@ const ARTICLES_BODY = {
         "title": "moonshotai/Kimi-K2.6",
         "site": "Hugging Face",
         "url": "https://huggingface.co/moonshotai/Kimi-K2.6"
-      },
-      {
-        "title": "Latest Domestic AI Updates in May 2026: Large Model Upgrades & New AI Tools",
-        "site": "AI Scope Hub",
-        "url": "https://aiscopehub.com/latest-domestic-ai-updates-in-may-2026-large-model-upgrades-new-ai-tools/"
       },
       {
         "title": "Best Chinese AI Models 2026: Kimi K2.6, DeepSeek V3.2, Step 3.5 Flash, Qwen, GLM Compared",
@@ -1274,7 +1271,9 @@ const ARTICLES_BODY = {
       "**3. リスク**: $30B ARR は AI 企業として歴史的水準だが、$900B 評価額は **30倍 ARR マルチプル**。Microsoft が GitHub Copilot に Claude を採用する一方で、独自モデル（OpenAI 経由含む）を強化するという構造もあり、配布チャネル依存のリスクは残る。",
       "**4. $1T 到達のシナリオ**: 月内クローズが実現すれば、スタートアップが**創業から約5年で評価額 $1T**に届くのは過去最速。OpenAI も同水準ラウンドを準備していると報じられており、両社が**前後して $1T を超えるレース**になる可能性がある。",
       "## 公式確認の現状",
-      "5月13日時点で、**Anthropic 自身は今回のラウンドを公式に確認していない**。Bloomberg は「複数の関係者からの情報」、New York Times は Mike Isaac の記事として伝えている。クローズまでの最終的な条件・引受先・実際の評価額は今後の正式発表を待つ必要がある。本記事は両社の報道に基づく時点情報として位置付ける。"
+      "5月13日時点で、**Anthropic 自身は今回のラウンドを公式に確認していない**。Bloomberg は「複数の関係者からの情報」、New York Times は Mike Isaac の記事として伝えている。クローズまでの最終的な条件・引受先・実際の評価額は今後の正式発表を待つ必要がある。本記事は両社の報道に基づく時点情報として位置付ける。",
+      "**編集履歴**",
+      "【訂正 2026-09-02】一次ソースのうち `https://ramp.com/leading-indicators/ai-index-may-2026` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 4 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。"
     ],
     "tables": [
       {
@@ -1329,11 +1328,6 @@ const ARTICLES_BODY = {
         "title": "Anthropic in talks for funding at a valuation as high as $950 billion",
         "site": "Sherwood News",
         "url": "https://sherwood.news/tech/anthropic-in-talks-for-funding-at-a-valuation-as-high-as-950-billion-which-would-make-it-bigger-than-openai/"
-      },
-      {
-        "title": "Anthropic beats OpenAI on business adoption",
-        "site": "Ramp AI Index",
-        "url": "https://ramp.com/leading-indicators/ai-index-may-2026"
       },
       {
         "title": "EU confirms OpenAI offers access to cybersecurity model, Anthropic lags behind",
@@ -7652,7 +7646,9 @@ const ARTICLES_BODY = {
       "**選び方の軸**: 画像生成モデルの選定は「何を作るか」で決まる。(1) マーケティング素材やSNS投稿 → GPT Image（ChatGPT 経由で手軽）または Midjourney（アート性が高い）。(2) 製品写真やフォトリアル → Flux 2（品質と速度のバランス）。(3) ロゴ・アイコン・ブランド素材 → Recraft（SVG 出力対応）。(4) 企業の商用利用で著作権リスクを最小化 → Adobe Firefly（著作権補償付き）。(5) 自社サーバーで完結させたい → Stable Diffusion（オープンウェイト、ローカル実行可能）。(6) Google Cloud 上で大量処理 → Imagen 4。",
       "**主要モデルの特徴**: **GPT Image 1.5**（OpenAI）は画像内テキストの精度とプロンプト追従で評価が高い。ChatGPT 経由での利用が中心で、API からも呼び出し可能。**Midjourney V8** はアート性と美的コントロールに強く、クリエイティブ用途で根強い支持がある。**Flux 2**（Black Forest Labs）はフォトリアル系でレイテンシと品質のバランスが良い。**Ideogram 3.0** は画像内の文字・タイポグラフィ生成に特化。**Adobe Firefly Image 3** は Creative Cloud 統合と著作権補償（商用利用時の IP 保護）が最大の差別化要素。",
       "**エンタープライズと規制**: 商用利用では著作権・肖像権のリスク管理が重要。Adobe Firefly は学習データの著作権を明示し、商用利用への補償を提供している点で法務部門の承認が得やすい。Google Imagen 4 は Vertex AI 上で安全フィルタと監査ログが標準搭載される。Stable Diffusion はオープンウェイトだが、生成物の責任はユーザー側にある点を理解しておく必要がある。",
-      "**Google 周りの整理**: **Imagen 4**（Cloud / 開発者向けドキュメント側）と、別稿で扱う [Nano Banana 2](?a=google-nano-banana-2-gemini-flash-image-2026)（Gemini 3.1 Flash Image）が表裏で混同されやすい。後者は動画ツール Flow の既定「画像」モデルでもあり、動画生成そのもの（Veo 等）とは別ライン。動画の比較は[動画まとめ](?a=ai-video-generators-landscape-2026)を参照。"
+      "**Google 周りの整理**: **Imagen 4**（Cloud / 開発者向けドキュメント側）と、別稿で扱う [Nano Banana 2](?a=google-nano-banana-2-gemini-flash-image-2026)（Gemini 3.1 Flash Image）が表裏で混同されやすい。後者は動画ツール Flow の既定「画像」モデルでもあり、動画生成そのもの（Veo 等）とは別ライン。動画の比較は[動画まとめ](?a=ai-video-generators-landscape-2026)を参照。",
+      "**編集履歴**",
+      "【訂正 2026-09-02】一次ソースのうち `https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/imagen` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 7 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。"
     ],
     "tables": [
       {
@@ -7737,11 +7733,6 @@ const ARTICLES_BODY = {
         "title": "Recraft",
         "site": "Recraft",
         "url": "https://www.recraft.ai/"
-      },
-      {
-        "title": "Imagen on Vertex AI — Google Cloud",
-        "site": "Google Cloud",
-        "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/imagen"
       },
       {
         "title": "Adobe Firefly",
@@ -8038,18 +8029,15 @@ const ARTICLES_BODY = {
     "body": [
       "GitHubは2026年3月、Copilot Coding AgentのJetBrains IDE正式対応（GA）を発表しました。これまでVS Code限定だったAgent Mode、セマンティックコード検索、Issue→PRワークフローがJetBrainsでもフル機能で利用可能になります。",
       "セマンティックコード検索の導入により、ファイルパスを指定しなくても概念的に関連するコードを自動発見できるようになりました。これにより、Coding Agentの初期化時間が従来の約40秒から20秒へと50%短縮されています。",
-      "EclipseとXcodeへのAgent Mode展開もパブリックプレビューとして開始され、全Copilotユーザーが利用可能です。さらにセッションログの可視性も向上し、リポジトリクローンやエージェントファイアウォールのステップが確認できるようになりました。"
+      "EclipseとXcodeへのAgent Mode展開もパブリックプレビューとして開始され、全Copilotユーザーが利用可能です。さらにセッションログの可視性も向上し、リポジトリクローンやエージェントファイアウォールのステップが確認できるようになりました。",
+      "**編集履歴**",
+      "【訂正 2026-09-02】一次ソースのうち `https://github.blog/changelog/2026-03-27-copilot-coding-agent-ga/` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 1 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。"
     ],
     "primarySources": [
       {
         "title": "GitHub Copilot",
         "site": "GitHub",
         "url": "https://github.com/features/copilot"
-      },
-      {
-        "title": "Copilot coding agent is now generally available",
-        "site": "GitHub Blog",
-        "url": "https://github.blog/changelog/2026-03-27-copilot-coding-agent-ga/"
       }
     ]
   },
@@ -9322,18 +9310,15 @@ const ARTICLES_BODY = {
       "OpenAI は2026年3月24日のブログ投稿で、ChatGPT のショッピング体験を全面刷新すると発表しました。当初リリースした「Instant Checkout」（ChatGPT 内で直接購入まで完結）は、Walmart との実験で ChatGPT 内購入のコンバージョン率がサイト誘導比で 3 分の 1 に留まったことを受け廃止。「商品発見（Product Discovery）」に注力する方向へ転換します。",
       "新しいショッピング体験では、商品をビジュアルカードで並べて比較し、価格・レビュー・在庫などのリアルタイム情報を一覧表示します。購入自体は各小売業者のサイトへ誘導するため、OpenAI は Agentic Commerce Protocol（ACP）を通じて小売パートナーと連携しています。Walmart・Etsy・Shopify などが参加しています。",
       "Walmart は「Sparky」ブランドの ChatGPT 内アプリを Web ブラウザ向けに公開し、iOS/Android への展開も近日予定。Walmart アカウントとのリンクやロイヤルティポイントの利用、Walmart 決済が ChatGPT 内から可能です。",
-      "AI ショッピングエージェントの課題として浮き彫りになったのは「最後の一マイル（実購入）」の難しさです。ChatGPT の強みが情報収集・比較にあり、購入決断は依然ユーザー主導というパターンが多い実態が見えてきました。OpenAI は今後の課題として決済・配送トラッキング・返品のエージェント対応を挙げています。"
+      "AI ショッピングエージェントの課題として浮き彫りになったのは「最後の一マイル（実購入）」の難しさです。ChatGPT の強みが情報収集・比較にあり、購入決断は依然ユーザー主導というパターンが多い実態が見えてきました。OpenAI は今後の課題として決済・配送トラッキング・返品のエージェント対応を挙げています。",
+      "**編集履歴**",
+      "【訂正 2026-09-02】一次ソースのうち `https://www.cnbc.com/2026/03/24/openai-revamps-shopping-experience-in-chatgpt-after-struggling-with-instant-checkout.html` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 2 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。"
     ],
     "primarySources": [
       {
         "title": "Powering Product Discovery in ChatGPT",
         "site": "OpenAI",
         "url": "https://openai.com/index/powering-product-discovery-in-chatgpt/"
-      },
-      {
-        "title": "OpenAI revamps shopping experience in ChatGPT after struggling with Instant Checkout",
-        "site": "CNBC",
-        "url": "https://www.cnbc.com/2026/03/24/openai-revamps-shopping-experience-in-chatgpt-after-struggling-with-instant-checkout.html"
       },
       {
         "title": "Walmart brings Sparky to ChatGPT as OpenAI rethinks Instant Checkout",
@@ -9781,7 +9766,9 @@ const ARTICLES_BODY = {
       "**AI API キーの管理**: 企業が契約している AI サービス（Claude API、OpenAI API 等）のキーは、Azure Key Vault に格納するのが Microsoft エコシステムでの標準的な方法。サーバーサイドの中間層が Key Vault から取得し、フロントエンドには API キーが一切露出しない構成にする。Managed Identity を使えば、中間層から Key Vault へのアクセスにもパスワードが不要になる。「会社が契約している AI API を社員に安全に使わせる」には、この Key Vault + Managed Identity + 中間層の3点セットが基本形。",
       "**バックエンド DB の選択**: Azure Database for PostgreSQL Flexible Server は Entra ID 認証をネイティブサポートしており、パスワードなしでデータベース接続が可能。料金は Burstable B1ms（1vCPU・2GB）で月額約$13〜、汎用 D2ds_v5（2vCPU・8GB）で月額約$100〜。Supabase Pro（$25/月）と比べると、小規模では Supabase が安く、大規模では Azure が Enterprise 機能（HA、バックアップ、Geo-redundancy）で優位。Supabase を使う場合は Entra ID を OAuth プロバイダーとして登録し、Microsoft アカウントでログインできるようにする（[→ 構成パターンの詳細](?a=react-frontend-ms-backend-architecture-2026)）。",
       "**SharePoint・OneDrive の社内文書を AI で活用する課題**: 非エンジニアの社員は SharePoint に PDF をアップロードし、OneDrive でファイルを共有する。これが企業にとっての「データベース」の実態。しかし PDF は AI が直接扱いにくいフォーマットで、テーブルやレイアウトの構造が失われやすい。実用的な対策は3つある。(1) PDF を Markdown に変換してから RAG パイプラインに投入する（Azure AI Document Intelligence や Apache Tika が使える）。(2) 構造化データは JSON に変換して PostgreSQL に格納する。(3) Microsoft Graph API 経由で SharePoint のドキュメントライブラリにアクセスし、インデックス化する。いずれの場合も、==元の PDF は SharePoint に残し、AI 用の変換データを別途管理する二重管理==が実運用では避けられない。",
-      "**非エンジニアにとってのデータ維持管理**: 企業の一般社員は「データベース」ではなく「SharePoint のフォルダ」「OneDrive のファイル」「Teams のチャネル」にデータを置く。技術者がいくら PostgreSQL や Dataverse を整備しても、入力元がこれらのサービスである限り、そこからデータを吸い上げる仕組みが必要。Power Automate で SharePoint のファイル更新をトリガーに自動変換・格納するフローを組むのが Microsoft エコシステム内での定番パターン。バイブコーディングで構築したカスタムアプリと SharePoint の橋渡しには Microsoft Graph API が核となる。==エンジニアが DB を設計して終わりではなく、非エンジニアの日常のファイル操作から DB にデータが流れる仕組みまで設計する==ことが企業 AI アプリの実用化の鍵になる。"
+      "**非エンジニアにとってのデータ維持管理**: 企業の一般社員は「データベース」ではなく「SharePoint のフォルダ」「OneDrive のファイル」「Teams のチャネル」にデータを置く。技術者がいくら PostgreSQL や Dataverse を整備しても、入力元がこれらのサービスである限り、そこからデータを吸い上げる仕組みが必要。Power Automate で SharePoint のファイル更新をトリガーに自動変換・格納するフローを組むのが Microsoft エコシステム内での定番パターン。バイブコーディングで構築したカスタムアプリと SharePoint の橋渡しには Microsoft Graph API が核となる。==エンジニアが DB を設計して終わりではなく、非エンジニアの日常のファイル操作から DB にデータが流れる仕組みまで設計する==ことが企業 AI アプリの実用化の鍵になる。",
+      "**編集履歴**",
+      "【訂正 2026-09-02】一次ソースのうち `https://learn.microsoft.com/en-us/entra/identity-platform/tutorial-single-page-app-react-sign-in` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 5 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。"
     ],
     "figures": [
       {
@@ -9792,11 +9779,6 @@ const ARTICLES_BODY = {
       }
     ],
     "primarySources": [
-      {
-        "title": "MSAL.js for React SPAs",
-        "site": "Microsoft Learn",
-        "url": "https://learn.microsoft.com/en-us/entra/identity-platform/tutorial-single-page-app-react-sign-in"
-      },
       {
         "title": "Azure Key Vault",
         "site": "Microsoft Learn",
@@ -12495,7 +12477,9 @@ const ARTICLES_BODY = {
       "Google の強みは単なる動画生成にとどまらず、Workspace・YouTube・Photos という既存エコシステムとのシームレスな統合にある。Google Vids で作った動画をそのまま YouTube Shorts にアップロードしたり、Google Drive で共有・共同編集したりできる。これはスタンドアロンの動画生成ツールにはない優位性だ。",
       "## 開発者にとっての意味",
       "Gemini API 経由で Veo 3.1 を呼び出せるため、動画生成をプロダクトに組み込むハードルが下がった。Veo 3.1 Lite の登場でコスト面の障壁も緩和されている。9:16 の縦動画にネイティブ対応しているため、モバイルファーストのアプリケーションとの相性も良い。",
-      "動画生成AIの品質が実用レベルに達し、しかもブラウザから数クリックで使える時代に入った。動画コンテンツの制作コストが劇的に下がることで、これまで動画を作る余裕がなかった個人開発者や小規模チームにとって大きなチャンスになるだろう。"
+      "動画生成AIの品質が実用レベルに達し、しかもブラウザから数クリックで使える時代に入った。動画コンテンツの制作コストが劇的に下がることで、これまで動画を作る余裕がなかった個人開発者や小規模チームにとって大きなチャンスになるだろう。",
+      "**編集履歴**",
+      "【訂正 2026-09-02】一次ソースのうち `https://x.com/GoogleWorkspace/status/1907525219448082763` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 2 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。"
     ],
     "tables": [
       {
@@ -12551,11 +12535,6 @@ const ARTICLES_BODY = {
     "charts": [],
     "embeds": [],
     "primarySources": [
-      {
-        "title": "@GoogleWorkspace - Veo 3.1 integration announcement",
-        "site": "X",
-        "url": "https://x.com/GoogleWorkspace/status/1907525219448082763"
-      },
       {
         "title": "Veo - Google DeepMind",
         "site": "Google DeepMind",
@@ -12965,18 +12944,15 @@ const ARTICLES_BODY = {
       "**4月23日（木）** — OpenAI が **GPT-5.5** をリリース。GPT-5.4 から6週間という短サイクル、エージェントコーディングで SOTA を「半額」で達成し Plus/Pro/Business/Enterprise 全プランに即日展開（[GPT-5.5](?a=openai-gpt-5-5-release-agentic-coding-2026)、[レビュー](?a=gpt-5-5-review)）。",
       "**4月24日（金）** — **DeepSeek V4** プレビュー公開。1.6T MoE と 1M トークンコンテキスト、Pro と Flash の2モデルをオープンソース。Bloomberg は国産チップ統合優先で GA が延期されたと報じる（[DeepSeek V4](?a=deepseek-v4-preview-1m-context-mixture-experts-2026)、[レビュー](?a=deepseek-v4-review)）。",
       "**4月25日（土）** — Anthropic が **Project Deal** を公表。Claude エージェント69体が社内マーケットで186件・$4,000超を自律取引、「Agent Quality Gap」研究のサンプルを公開（[Project Deal](?a=anthropic-project-deal-agent-marketplace-experiment-2026)）。",
-      "**週の総括** — 米中フラッグシップ更新が同時進行した1週間。OpenAI が GPT-5.5 で「半額の SOTA」、DeepSeek V4 が 1.6T MoE と 1M ctx のオープンウェイトを投入。Amazon-Anthropic の $25B 追加投資はクラウド3強の縄張り争いを加速させ、Hugging Face と OpenAI のエージェント新製品はマルチエージェント時代の到来を示した。"
+      "**週の総括** — 米中フラッグシップ更新が同時進行した1週間。OpenAI が GPT-5.5 で「半額の SOTA」、DeepSeek V4 が 1.6T MoE と 1M ctx のオープンウェイトを投入。Amazon-Anthropic の $25B 追加投資はクラウド3強の縄張り争いを加速させ、Hugging Face と OpenAI のエージェント新製品はマルチエージェント時代の到来を示した。",
+      "**編集履歴**",
+      "【訂正 2026-09-02】一次ソースのうち `https://www.anthropic.com/news/expanding-our-partnership-with-amazon` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 1 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。"
     ],
     "primarySources": [
       {
         "title": "Introducing GPT-5.5",
         "site": "OpenAI",
         "url": "https://openai.com/index/gpt-5-5/"
-      },
-      {
-        "title": "Anthropic and Amazon expand strategic partnership",
-        "site": "Anthropic",
-        "url": "https://www.anthropic.com/news/expanding-our-partnership-with-amazon"
       }
     ]
   },
@@ -13005,18 +12981,15 @@ const ARTICLES_BODY = {
       "**5月5日（火）** — OpenAI が **GPT-5.5 Instant** を ChatGPT のデフォルトに昇格。ハルシネーション 52.5% 減・出力が30%短く、Plus/Pro 向けに過去チャット参照機能も解禁（[GPT-5.5 Instant](?a=openai-gpt-5-5-instant-default-chatgpt-2026)）。",
       "**5月6日（水）** — Anthropic が **SpaceX の Colossus 1** を全量借り上げ。220,000 NVIDIA GPU・300+ MW のコンピュート基盤を確保し、Claude Code レート上限を即日2倍に。AWS Trainium と並行する「クラウド多重化」戦略（[Anthropic-SpaceX](?a=anthropic-spacex-colossus-1-compute-deal-2026)）。",
       "**5月7日（木）** — OpenAI が **3つの大型発表**。GPT-5.5-Cyber「Trusted Access」プログラム、ChatGPT「Trusted Contact」自傷防止機能、新音声 API（GPT-Realtime-2 / Translate / Whisper）。会議・翻訳・安全領域を一気に拡張（[5/7 3発表](?a=openai-cyber-trusted-contact-voice-may7-2026)）。OpenAI Codex のレビューも公開、GPT-5.5 + Daybreak + Workspace Agents 統合の最新版を整理（[Codex レビュー](?a=openai-codex-agent)）。",
-      "**週の総括** — OpenAI と Anthropic の「軍拡」が一段と加速。OpenAI は ChatGPT デフォルトを更新し信頼性で攻め、5/7 の3発表でセキュリティ・安全・音声に同時投資。Anthropic は SpaceX Colossus 1 という異色のインフラ調達で計算リソースを確保した。プラットフォーム戦略の差が鮮明になりつつある。"
+      "**週の総括** — OpenAI と Anthropic の「軍拡」が一段と加速。OpenAI は ChatGPT デフォルトを更新し信頼性で攻め、5/7 の3発表でセキュリティ・安全・音声に同時投資。Anthropic は SpaceX Colossus 1 という異色のインフラ調達で計算リソースを確保した。プラットフォーム戦略の差が鮮明になりつつある。",
+      "**編集履歴**",
+      "【訂正 2026-09-02】一次ソースのうち `https://www.anthropic.com/news/spacex-colossus-1` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 1 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。"
     ],
     "primarySources": [
       {
         "title": "GPT-5.5 Instant Now Default in ChatGPT",
         "site": "OpenAI",
         "url": "https://openai.com/index/gpt-5-5-instant-default/"
-      },
-      {
-        "title": "Anthropic and SpaceX Compute Deal",
-        "site": "Anthropic",
-        "url": "https://www.anthropic.com/news/spacex-colossus-1"
       }
     ]
   },
@@ -13026,18 +12999,15 @@ const ARTICLES_BODY = {
       "**5月12日（火）** — 1日で5本の大型発表。Anthropic が **Claude for Legal** を公開、12分野の実務プラグイン＋20超 MCP コネクタ、Thomson Reuters CoCounsel と提携（[Claude for Legal](?a=anthropic-claude-for-legal-plugins-cocounsel-2026)）。Google が **Googlebook** と **Gemini Intelligence** を発表、Chromebook 後継の AI ネイティブ・ノート PC（[Googlebook](?a=google-googlebook-gemini-intelligence-android-show-2026)）。Anthropic は **Claude Platform on AWS** GA と Claude Code の「agent view」も同日発表（[Anthropic 5/12](?a=anthropic-claude-platform-aws-ga-agent-view-2026)）。会議系特集2本も同時公開（[アバター会議特集](?a=feature-ai-avatar-agents-join-meetings-2026)、[リアルタイム翻訳特集](?a=feature-realtime-translation-teams-zoom-meet-openai-2026)）。",
       "**5月13日（水）** — Anthropic が **$900B 評価額** で $30-50B の調達交渉中と報じられる。OpenAI（$852B）を抜き「世界最高評価額の AI 企業」へ。Ramp 指数では業務利用シェアでも OpenAI を上回ったと判明（[Anthropic $900B](?a=anthropic-900b-valuation-funding-overtakes-openai-2026)）。",
       "**5月14日（木）** — Anthropic が **Stainless 買収交渉中**（$300M+）と報じられる。OpenAI と Google も使う AI モデル SDK 自動生成基盤を取り込み、開発者体験レイヤーを統合する戦略（[Stainless 買収](?a=anthropic-stainless-acquisition-sdk-infrastructure-2026)）。",
-      "**週の総括** — Anthropic 週間と呼ぶべき1週間。Claude for Legal・AWS GA・agent view・$900B 調達・Stainless 買収と5発進、評価額・売上シェアで OpenAI を逆転。Cursor は Microsoft Teams 統合でエンタープライズ流通を強化し、Google は Googlebook で AI ネイティブ PC の新カテゴリを提示した。会議系AI（アバター・翻訳）の特集2本も AI 業界の生活浸透フェーズを示している。"
+      "**週の総括** — Anthropic 週間と呼ぶべき1週間。Claude for Legal・AWS GA・agent view・$900B 調達・Stainless 買収と5発進、評価額・売上シェアで OpenAI を逆転。Cursor は Microsoft Teams 統合でエンタープライズ流通を強化し、Google は Googlebook で AI ネイティブ PC の新カテゴリを提示した。会議系AI（アバター・翻訳）の特集2本も AI 業界の生活浸透フェーズを示している。",
+      "**編集履歴**",
+      "【訂正 2026-09-02】一次ソースのうち `https://www.anthropic.com/news/claude-for-legal` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 1 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。"
     ],
     "primarySources": [
       {
         "title": "Anthropic targets $900 billion valuation",
         "site": "Reuters",
         "url": "https://www.reuters.com/technology/anthropic-targets-900-billion-valuation-2026/"
-      },
-      {
-        "title": "Introducing Claude for Legal",
-        "site": "Anthropic",
-        "url": "https://www.anthropic.com/news/claude-for-legal"
       }
     ]
   },
@@ -13045,18 +13015,15 @@ const ARTICLES_BODY = {
     "body": [
       "**5月19日（火）** — **Google I/O 2026** 開幕。Gemini 3.5 Flash GA、エージェントオーケストレーション「Antigravity」と「Gemini Spark」を投入、Android XR 眼鏡と Search Live など多領域で発表（[Google I/O 2026](?a=google-io-2026-gemini-3-5-flash-antigravity-spark-2026)、[Gemini CLI レビュー](?a=gemini-cli)）。",
       "**5月20日（水）** — **中国系 AI モデル5月集中更新** の特集記事を公開。Qwen 3.7 Max（5/20、杭州 Cloud Summit）が Opus 4.6 を一部凌駕、Kimi K2.6（4/20）がオープンウェイトで GPT-5.4 を抜く、Ernie 5.1 も論理推論を大幅改善（[中国モデル特集](?a=feature-china-ai-models-may-2026-qwen-kimi-ernie)）。",
-      "**週の総括** — 静かな週だが内容は濃い。Google I/O 2026 で Gemini 3.5 Flash・Antigravity・Spark を矢継ぎ早に投入、エージェント分野で Google が攻勢に転じた。並行して中国陣営も Qwen 3.7 Max・Kimi K2.6・Ernie 5.1 を集中投入、Artificial Analysis スコアで米中ギャップを更に縮めた。「米国2強+中国OSS」の3極構造が固まりつつある。"
+      "**週の総括** — 静かな週だが内容は濃い。Google I/O 2026 で Gemini 3.5 Flash・Antigravity・Spark を矢継ぎ早に投入、エージェント分野で Google が攻勢に転じた。並行して中国陣営も Qwen 3.7 Max・Kimi K2.6・Ernie 5.1 を集中投入、Artificial Analysis スコアで米中ギャップを更に縮めた。「米国2強+中国OSS」の3極構造が固まりつつある。",
+      "**編集履歴**",
+      "【訂正 2026-09-02】一次ソースのうち `https://qwenlm.github.io/blog/qwen3.7-max` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 1 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。"
     ],
     "primarySources": [
       {
         "title": "Google I/O 2026 Keynote",
         "site": "Google",
         "url": "https://io.google/2026"
-      },
-      {
-        "title": "Qwen 3.7 Max",
-        "site": "Alibaba Cloud",
-        "url": "https://qwenlm.github.io/blog/qwen3.7-max"
       }
     ]
   },
@@ -13376,18 +13343,15 @@ const ARTICLES_BODY = {
       "**モデル仕様**: Grok V9-Medium は **1.5兆パラメータ**で、現行本番モデル **v8-small（500億パラメータ）の3倍**の規模。Elon Musk が5月25日に「訓練完了、評価結果は良好」と発表（[xAI 6月集中更新](?a=xai-grok-june-2026-voice-imagine-connectors-2026)）、その後 supervised fine-tuning と reinforcement learning を経て、約3週間後に消費者向け公開となった。",
       "**Cursor データでの訓練**: 本モデルは **Cursor の実開発者ワークフロー**（コード入力 → AI 提案 → 採用/却下 → 修正 のシーケンス）を訓練データに採用した点が特徴。これは Cursor が **Fortune 500 の約2/3** に使われ、日に約 **1.5億行**のコードを処理している規模を考えると、訓練データとして極めて貴重。SpaceX-Cursor 統合の最初の実利となる。",
       "**API 未開放**: 一方で **API は未開放**で、6月19日時点でも xAI ドキュメントの release notes には grok-v9-medium が掲載されていない。SuperGrok 加入者の利用とエンタープライズ API 利用は別ゲートで運用される xAI の設計上、エンタープライズ展開には今後数週間〜数ヶ月の追加待機が必要。",
-      "**コーディング・ベンチマーク戦略**: xAI は Grok V9-Medium で Claude（Opus 4.8 / Fable 5）・GPT-5.5 の SWE-bench リードを切り崩すことを目標としているが、公式ベンチマーク値はまだ未公表。Cursor 開発者データを訓練に組み込んだことで、**実プロダクト挙動への適合度**で差別化を狙う構図だ。"
+      "**コーディング・ベンチマーク戦略**: xAI は Grok V9-Medium で Claude（Opus 4.8 / Fable 5）・GPT-5.5 の SWE-bench リードを切り崩すことを目標としているが、公式ベンチマーク値はまだ未公表。Cursor 開発者データを訓練に組み込んだことで、**実プロダクト挙動への適合度**で差別化を狙う構図だ。",
+      "**編集履歴**",
+      "【訂正 2026-09-02】一次ソースのうち `https://chatforest.com/builders-log/xai-grok-v9-medium-1-5t-coding-model-mid-june-2026-builder-guide/` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 1 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。"
     ],
     "primarySources": [
       {
         "title": "Grok V9-Medium Arrives as SpaceX Seals Cursor: Developers Face Model-Choice Risk",
         "site": "TechTimes",
         "url": "https://www.techtimes.com/articles/318495/20260616/grok-v9-medium-arrives-spacex-seals-cursor-developers-face-model-choice-risk.htm"
-      },
-      {
-        "title": "Grok V9-Medium Is Not Grok 5: A Builder's Guide",
-        "site": "ChatForest",
-        "url": "https://chatforest.com/builders-log/xai-grok-v9-medium-1-5t-coding-model-mid-june-2026-builder-guide/"
       }
     ]
   },
@@ -15054,7 +15018,9 @@ const ARTICLES_BODY = {
       "**(2) MCP 依存の限界**: MCP サーバー同梱は 2026-07-28 spec 対応前提で、[MCP 2026-07-28 RC](?a=mcp-2026-07-28-release-candidate-stateless-core-2026) の正式化前は動作が変わる可能性がある",
       "**(3) llms.txt / llms-full.txt の運用リスク**: フル本文を機械可読形式で公開することで、モデル訓練データへの取り込み・LLM 経由の情報流通・意図しない要約引用等のリスクがある。ドキュメント方針として「AI に読ませてよい」判断が必要",
       "**(4) Astro / Vite 依存**: 内部の Astro 更新に追従する必要があり、Blume のバージョニング方針が長期メンテに耐えるかは未検証",
-      "**AI News の推奨**: **新規 OSS プロジェクトのドキュメント立ち上げ**では、Blume を第一候補として評価する価値がある。特に「AI エージェントが読むことを想定している SDK / CLI / API ドキュメント」では、Blume の「Copy as Markdown」「Open in chat」「MCP サーバー」の3点セットが Docusaurus 等では得られない差別化を生む。既存の Docusaurus / VitePress サイトからの移行は、ページ数 100 未満なら十分検討価値がある。Blume は Hayden Bleasel 個人の OSS のため、企業採用では [MCP 2026-07-28 RC](?a=mcp-2026-07-28-release-candidate-stateless-core-2026) 正式化後の長期メンテナンス方針確認が推奨される。"
+      "**AI News の推奨**: **新規 OSS プロジェクトのドキュメント立ち上げ**では、Blume を第一候補として評価する価値がある。特に「AI エージェントが読むことを想定している SDK / CLI / API ドキュメント」では、Blume の「Copy as Markdown」「Open in chat」「MCP サーバー」の3点セットが Docusaurus 等では得られない差別化を生む。既存の Docusaurus / VitePress サイトからの移行は、ページ数 100 未満なら十分検討価値がある。Blume は Hayden Bleasel 個人の OSS のため、企業採用では [MCP 2026-07-28 RC](?a=mcp-2026-07-28-release-candidate-stateless-core-2026) 正式化後の長期メンテナンス方針確認が推奨される。",
+      "**編集履歴**",
+      "【訂正 2026-09-02】一次ソースのうち `https://www.techaiapp.com/tech/meet-blume-an-open-source-zero-config-documentation-framework-that-ships-ai-ready-docs-from-a-markdown-folder/` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 2 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。"
     ],
     "primarySources": [
       {
@@ -15066,11 +15032,6 @@ const ARTICLES_BODY = {
         "title": "haydenbleasel/blume: World-class docs for everything you ship",
         "site": "GitHub",
         "url": "https://github.com/haydenbleasel/blume"
-      },
-      {
-        "title": "Meet Blume: An Open-Source, Zero-Config Documentation Framework That Ships AI-Ready Docs From a Markdown Folder",
-        "site": "TechAIApp",
-        "url": "https://www.techaiapp.com/tech/meet-blume-an-open-source-zero-config-documentation-framework-that-ships-ai-ready-docs-from-a-markdown-folder/"
       }
     ]
   },
@@ -15223,23 +15184,15 @@ const ARTICLES_BODY = {
       "**(2) 一般公開の予定**: GPT-Red は内部ツールで、API・オープン化の予定は今のところ発表なし。他社が同種のツールを持てるかは不明",
       "**(3) 攻撃データの流出リスク**: GPT-Red が発見した攻撃パターンは、防御側に有用だが同時に攻撃側にも有用。データ管理の技術的・法的枠組みが今後の課題",
       "**(4) 「自動 red-team」の限界**: GPT-Red は既知の攻撃カテゴリ内で強いが、根本的に新しい攻撃ベクトル（ゼロデイに相当）は依然として人間の創造性が必要",
-      "**AI News の推奨**: **エンタープライズで LLM を運用する企業**は、以下の3点を確認すべき。**(a)** 使用中のフロンティアモデルが GPT-Red 相当の adversarial training を経ているか（GPT-5.6・Fable 5・Sonnet 5 は該当）、**(b)** MCP 経由の外部ツール接続時の権限最小化と audit log の徹底、**(c)** Anthropic Mythos / [Microsoft Project Perception](?a=microsoft-project-perception-ai-security-model-router-2026) のような AI セキュリティ製品との連携。GPT-Red 自体が公開されるまでは、既存のセキュリティスタックにモデル側の adversarial training 実績を組み込む形が現実解となる。"
+      "**AI News の推奨**: **エンタープライズで LLM を運用する企業**は、以下の3点を確認すべき。**(a)** 使用中のフロンティアモデルが GPT-Red 相当の adversarial training を経ているか（GPT-5.6・Fable 5・Sonnet 5 は該当）、**(b)** MCP 経由の外部ツール接続時の権限最小化と audit log の徹底、**(c)** Anthropic Mythos / [Microsoft Project Perception](?a=microsoft-project-perception-ai-security-model-router-2026) のような AI セキュリティ製品との連携。GPT-Red 自体が公開されるまでは、既存のセキュリティスタックにモデル側の adversarial training 実績を組み込む形が現実解となる。",
+      "**編集履歴**",
+      "【訂正 2026-09-02】一次ソースのうち `https://www.marktechpost.com/2026/07/16/openai-introduces-gpt-red-self-improving-adversarial-model/`、`https://www.technologyreview.com/2026/07/16/openai-gpt-red-adversarial/` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 1 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。"
     ],
     "primarySources": [
       {
         "title": "GPT-Red: Unlocking Self-Improvement for Robustness",
         "site": "OpenAI",
         "url": "https://openai.com/index/unlocking-self-improvement-gpt-red/"
-      },
-      {
-        "title": "OpenAI Introduces GPT-Red: Self-Improving Adversarial Model",
-        "site": "MarkTechPost",
-        "url": "https://www.marktechpost.com/2026/07/16/openai-introduces-gpt-red-self-improving-adversarial-model/"
-      },
-      {
-        "title": "MIT Technology Review coverage of GPT-Red",
-        "site": "MIT Technology Review",
-        "url": "https://www.technologyreview.com/2026/07/16/openai-gpt-red-adversarial/"
       }
     ]
   },
