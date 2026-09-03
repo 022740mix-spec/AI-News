@@ -8547,5 +8547,23 @@ export const ARTICLES_META = [
       "MCP",
       "プライバシー"
     ]
+  },
+  {
+    "id": "gitspawn-ai-coding-agent-git-config-rce-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】「開くだけで実行される」— AI コーディングエージェント7種に共通する Git 設定悪用の脆弱性クラス「GitSpawn」",
+    "excerpt": "セキュリティ企業 Manifold Security が、**Claude Code・Codex・Cursor・goose・Hermes Agent・Qwen Code・Grok Build** など主要な AI コーディングエージェント CLI 7種にまたがる脆弱性クラス「**GitSpawn**」を報告したと、複数のセキュリティ専門メディアが2026年9月1〜2日に伝えている。**リポジトリの `.git/config` に仕込んだ `core.fsmonitor` 設定が、エージェントが起動時に自動で実行する `git status` 等のコマンドをきっかけに、ユーザーの承認なしで任意コードを実行させる**という手口で、9月1日の再検証時点で一部のツールは未修正だったと報じられている。**本記事は一次資料（Manifold Security の報告書、各社のセキュリティアドバイザリ）に直接到達できておらず、複数の独立したセキュリティ専門メディアの報道を突き合わせて記述した二次情報依存の記事である。**",
+    "date": "2026-09-03",
+    "newsDate": "2026-09-01",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "セキュリティ",
+      "エージェント",
+      "Claude Code",
+      "Codex",
+      "Cursor"
+    ]
   }
 ];

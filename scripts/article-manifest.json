@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-03",
-  "count": 382,
+  "count": 383,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -194,6 +194,7 @@
     "github-copilot-training-data-policy-change-2026",
     "github-outage-august-17-2026-7h36m",
     "gitreverse-repo-to-prompt-openclaw-2026",
+    "gitspawn-ai-coding-agent-git-config-rce-2026",
     "glassworm-invisible-unicode-malware-github-supply-chain-2026",
     "glm-5-zhipu-2026",
     "google-agent-smith-2026",

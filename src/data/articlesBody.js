@@ -18397,6 +18397,29 @@ const ARTICLES_BODY = {
         "url": "https://github.com/debpalash/VoiceStudio/releases/tag/v0.5.1"
       }
     ]
+  },
+  "gitspawn-ai-coding-agent-git-config-rce-2026": {
+    "body": [
+      "**本記事の確認状況について、最初に明記する。** 一次情報にあたる Manifold Security の報告書本体、および Anthropic・OpenAI・Cursor 各社のセキュリティアドバイザリには、実行環境のネットワーク制限（`manifold.security`・`thehackernews.com`・`nvd.nist.gov` を含む多数のセキュリティ系ドメインが遮断）により**直接到達できていない**。以下は The Hacker News・CyberSecurityNews・Cyberpress など複数の独立したセキュリティ専門メディアの報道内容が一致している範囲を、二次情報として整理したものである。**数値や対象範囲の断定は避け、報道の一致点として記述する。**",
+      "報じられている脆弱性クラスは「**GitSpawn**」と呼ばれる。Git には `core.fsmonitor` という性能設定があり、その値には「インデックス更新のたびに Git が自動実行するヘルパープログラム」を指定できる。この設定はリポジトリ自身の `.git/config` に書き込まれているため、**悪意あるリポジトリを配布する側が、そのリポジトリの `.git/config` にあらかじめ攻撃者の用意したコマンドを仕込んでおける。**",
+      "AI コーディングエージェントの多くは、開いたプロジェクトの文脈を把握するために `git status` や `git diff` といった Git コマンドを**起動時にバックグラウンドで自動実行**する。この挙動が引き金になる。ユーザーが何かを尋ねたりコマンドを承認したりする前に、Git がインデックスを更新しようとした時点で `core.fsmonitor` に仕込まれたヘルパーが実行され、**エージェントのサンドボックスの外側で、ログインユーザーの権限のまま任意のコードが動く**という。",
+      "報道によれば、Manifold Security は7種のコマンドライン型 AI コーディングエージェント（goose・Claude Code・Codex・Cursor・Hermes Agent・Qwen Code・Grok Build）にまたがる**8件の欠陥**を発見・報告した。goose・Claude Code・Cursor には修正が提供された一方、**Hermes Agent・Qwen Code・Grok Build、および Claude Code のもう一つの実行経路は、Manifold が9月1日に再検証した時点でなお攻撃者提供のコマンドを実行してしまう状態だった**と伝えられている。",
+      "OpenAI は同種の脆弱性クラスについて、Codex 側で**3件の CVE を発行した**とされる。うち一件として名前が挙がっている `CVE-2026-19592` は、脅威インテリジェンス系のサイトの記述によれば「ユーザーのファイルを読み取り・変更・削除でき、ユーザーアカウントが利用できる他のリソースにもアクセスできる」という内容とされるが、**この CVE レコード自体を一次情報として直接確認できていない**ため、内容の正確な引用として保証はできない。",
+      "**Claude Code に関しては、報道の間で細部の食い違いがある。** ある報道は、`core.fsmonitor` に関する最初の指摘は6月26日に報告され、6月29日リリースの `2.1.196` で修正されたとする。一方で別の報道は、Claude Code には**もう一つの未修正の実行経路が残っている**とし、The Hacker News は9月2日時点で「Anthropic が公開しているアドバイザリ記録は、Claude Code に関する2件の指摘のいずれもカバーしていない」と確認したと伝えている。**どちらの経路について何が修正済みで何が未修正なのか、本記事は一次資料なしに正確な線引きを示すことができない。**",
+      "**この問題が重要なのは、影響範囲がニッチな設定ミスではなく、多くの CLI 型エージェントに共通する設計パターン——起動時に Git コマンドを自動実行して文脈を把握する——そのものに起因している点にある。** 個別のツールを1つ直せば終わる話ではなく、**エージェント CLI というカテゴリ全体が同種の設計を共有していたために、同じ脆弱性クラスが横並びで見つかった**という構図である。",
+      "**読者への実務的な含意。** 出所の分からないリポジトリを AI コーディングエージェントで開く際は、`.git/config` の中身を事前に確認する、信頼できないリポジトリは通常の `git clone`（`.git` ディレクトリを再構築する）ではなく zip 展開や USB 経由などで受け取っていないか注意する、使用しているエージェント CLI を最新版に保つ、といった対策が考えられる。**ただし本記事はセキュリティ専門家による一次資料を確認できていないため、具体的な緩和策の網羅性・正確性について保証するものではない。**該当するツールを業務で使っている場合は、各ベンダーの公式アドバイザリを直接確認することを推奨する。",
+      "**本記事は下書き（ドラフト PR）として扱う。** 一次資料に到達でき次第、内容の裏取りと更新を行う。"
+    ],
+    "primarySources": [
+      {
+        "title": "Malicious .git Configs Can Make Claude, Codex, Cursor, and Other AI Agents Run Attacker Code（The Hacker News、二次情報。一次資料への直接到達はできていない）",
+        "url": "https://thehackernews.com/2026/09/malicious-git-configs-can-make-claude.html"
+      },
+      {
+        "title": "GitSpawn Flaws Let Malicious Repositories Execute Code in Claude Code, Codex, Cursor, and Grok（CyberSecurityNews、二次情報）",
+        "url": "https://cybersecuritynews.com/gitspawn-flaws-execute-code/"
+      }
+    ]
   }
 };
 
