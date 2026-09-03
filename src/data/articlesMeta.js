@@ -8476,5 +8476,21 @@ export const ARTICLES_META = [
       "マルチエージェント",
       "Claude Code"
     ]
+  },
+  {
+    "id": "oss-heretic-model-safety-removal-2026",
+    "type": "feature",
+    "category": "model",
+    "title": "【分析】オープンウェイトの「安全策」は技術的に外せる — 拒否応答を自動除去するOSS「Heretic」が3万スター",
+    "excerpt": "個人開発者 Philipp Emanuel Weidmann 氏が公開する **Heretic** が、GitHub で**3万226スター・3,300フォーク**を集めている。トランスフォーマー型モデルの内部で拒否応答に対応する方向を検出し、それを抑制する「abliteration」という手法を、パラメータ探索によって追加学習なしに自動適用するツールで、コミュニティは既に5,000以上の派生モデルを公開している。オープンウェイトで配布したモデルの安全策は、後から利用者側で外せてしまうという構造的な事実を、具体的な数字で示す事例になっている。",
+    "date": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "AI安全性",
+      "オープンソース",
+      "モデル",
+      "分析"
+    ]
   }
 ];

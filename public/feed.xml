@@ -24,6 +24,14 @@
     <summary>個人開発者が公開する Auto-Research-In-Sleep(ARIS) が15,700スターを集めている。Claude Code を実行役、Codex 経由の GPT系モデル等を独立したレビュー役に据え、着想から実験、論文執筆までを81のスキルで自動化する MIT ライセンスのフレームワーク。実行するモデルとレビューするモデルを分ける設計思想は、AI News が自社の記事検証で採用している方針とも重なる。</summary>
   </entry>
   <entry>
+    <title>【分析】オープンウェイトの「安全策」は技術的に外せる — 拒否応答を自動除去するOSS「Heretic」が3万スター</title>
+    <link rel="alternate" type="text/html" href="?a=oss-heretic-model-safety-removal-2026"/>
+    <id>tag:ai-tool-news.jp,2026:oss-heretic-model-safety-removal-2026</id>
+    <published>2026-09-03T15:00:00Z</published>
+    <updated>2026-09-03T15:00:00Z</updated>
+    <summary>個人開発者 Philipp Emanuel Weidmann 氏が公開する Heretic が、GitHub で3万226スター・3,300フォークを集めている。トランスフォーマー型モデルの内部で拒否応答に対応する方向を検出し、それを抑制する「abliteration」という手法を、パラメータ探索によって追加学習なしに自動適用するツールで、コミュニティは既に5,000以上の派生モデルを公開している。オープンウェイトで配布したモデルの安全策は、後から利用者側で外せてしまうという構造的な事実を、具体的な数字で示す事例になっている。</summary>
+  </entry>
+  <entry>
     <title>【分析】Google が AI 検索のオプトアウトを用意した — ただしクローラーが1本である限り、実質的に選べない</title>
     <link rel="alternate" type="text/html" href="?a=feature-google-publisher-ai-optout-single-crawler-2026"/>
     <id>tag:ai-tool-news.jp,2026:feature-google-publisher-ai-optout-single-crawler-2026</id>

@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-03",
-  "count": 378,
+  "count": 379,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -302,6 +302,7 @@
     "openai-workspace-agents-codex-enterprise-2026",
     "openclaw-ios-android-native-app-2026",
     "orm-drizzle-prisma-ai-backend-2026",
+    "oss-heretic-model-safety-removal-2026",
     "oss-long-horizon-agent-tools-ohmypi-loopx-2026",
     "overview-2026-spring",
     "overview-2026-week-apr06",
