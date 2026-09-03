@@ -8442,5 +8442,55 @@ export const ARTICLES_META = [
       "ベンチマーク",
       "エージェント"
     ]
+  },
+  {
+    "id": "k-dense-scientific-agent-skills-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "「どんなAIエージェントも科学者にする」スキル集が週間GitHubトレンド1位に — 163種のスキルで100超の科学データベースへ接続",
+    "excerpt": "K-Dense Inc. が公開する **scientific-agent-skills** が、直近1週間で7,558スター増の**42,103スター**に達し、GitHub週間トレンド(Python)で1位になった。Cursor・Claude Code・Codex・Google Antigravity など Agent Skills 標準に対応するホストで、PubChem・ChEMBL・UniProt など100以上の科学データベースと70以上の Python パッケージのワークフローを呼び出せる163個のスキルを収録する。バイオインフォマティクスから材料科学まで、専門ドメインの知識を汎用エージェントに注入する動きの具体例になっている。",
+    "date": "2026-09-03",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "エージェント",
+      "オープンソース",
+      "開発ツール",
+      "Claude Code"
+    ]
+  },
+  {
+    "id": "aris-auto-research-in-sleep-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "「寝ている間に研究を進める」個人開発の自律研究フレームワーク ARIS が1.5万スター — レビュー役に別モデルを立てて自己検証の限界を補う",
+    "excerpt": "個人開発者が公開する **Auto-Research-In-Sleep(ARIS)** が15,700スターを集めている。Claude Code を実行役、Codex 経由の GPT系モデル等を独立したレビュー役に据え、着想から実験、論文執筆までを81のスキルで自動化する MIT ライセンスのフレームワーク。**実行するモデルとレビューするモデルを分ける**設計思想は、AI News が自社の記事検証で採用している方針とも重なる。",
+    "date": "2026-09-03",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "エージェント",
+      "オープンソース",
+      "マルチエージェント",
+      "Claude Code"
+    ]
+  },
+  {
+    "id": "oss-heretic-model-safety-removal-2026",
+    "type": "feature",
+    "category": "model",
+    "title": "【分析】オープンウェイトの「安全策」は技術的に外せる — 拒否応答を自動除去するOSS「Heretic」が3万スター",
+    "excerpt": "個人開発者 Philipp Emanuel Weidmann 氏が公開する **Heretic** が、GitHub で**3万226スター・3,300フォーク**を集めている。トランスフォーマー型モデルの内部で拒否応答に対応する方向を検出し、それを抑制する「abliteration」という手法を、パラメータ探索によって追加学習なしに自動適用するツールで、コミュニティは既に5,000以上の派生モデルを公開している。オープンウェイトで配布したモデルの安全策は、後から利用者側で外せてしまうという構造的な事実を、具体的な数字で示す事例になっている。",
+    "date": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "AI安全性",
+      "オープンソース",
+      "モデル",
+      "分析"
+    ]
   }
 ];

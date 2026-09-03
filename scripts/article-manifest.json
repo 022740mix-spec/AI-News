@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-09-02",
-  "count": 376,
+  "generatedAt": "2026-09-03",
+  "count": 379,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -78,6 +78,7 @@
     "apple-wwdc-2026-siri-ai-keynote-2026",
     "aqua-voice-review",
     "arc-agi-3-launch-2026",
+    "aris-auto-research-in-sleep-2026",
     "august-2026-ai-deprecations-migration-guide-2026",
     "axios-npm-supply-chain-attack-rat-2026",
     "bigtech-q1-2026-earnings-ai-capex-700b-feature",
@@ -216,6 +217,7 @@
     "huggingface-ml-intern-open-source-agent-2026",
     "japan-personal-info-protection-law-ai-amendment-2026",
     "john-jumper-google-deepmind-to-anthropic-nobel-2026",
+    "k-dense-scientific-agent-skills-2026",
     "kat-coder-pro-v2-2026",
     "kimi-k2-5-review",
     "kimi-k25-moonshot-2026",
@@ -300,6 +302,7 @@
     "openai-workspace-agents-codex-enterprise-2026",
     "openclaw-ios-android-native-app-2026",
     "orm-drizzle-prisma-ai-backend-2026",
+    "oss-heretic-model-safety-removal-2026",
     "oss-long-horizon-agent-tools-ohmypi-loopx-2026",
     "overview-2026-spring",
     "overview-2026-week-apr06",
