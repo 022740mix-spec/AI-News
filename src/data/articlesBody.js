@@ -18506,6 +18506,36 @@ const ARTICLES_BODY = {
         "url": "https://github.com/ShawnPana/smux"
       }
     ]
+  },
+  "nyc-schools-generative-ai-ban-2026": {
+    "body": [
+      "ニューヨーク市教育局（NYC Public Schools）が2026年9月2日、**幼稚園（Pre-K/2-K）から8年生までの児童・生徒を対象に、生成AIの利用を1年間モラトリアムする**方針を発表した。ブルックリンの STEAM Center で開かれた記者会見には、Zohran Mamdani 市長と Kamar Samuels 教育長（chancellor）が同席した。ニューヨーク市の公立学校は米国最大の学校区であり、**対象となる約60万人は同区の全生徒のおよそ3分の2**にあたる。",
+      "## 何が止まるのか",
+      "モラトリアムの対象は、**児童・生徒が直接使う生成AI**である。ChatGPT や Claude など主要な生成AIサービスに加え、**コンパニオン型チャットボット**についても、全学年でブロックの対象になる。あわせて、教育局はこれまで許可していた**38以上のプログラムについて、安全基準・監督体制の新基準を満たさないAI機能を無効化または利用停止する**とした。これは、区が過去に承認していたAI活用の一部を、今回撤回する形になる。",
+      "## 高校生には限定的な活用を残す",
+      "一律禁止ではなく、学年で扱いを分けている。**高校生（9〜12年生）に対しては、年2回の「AIクリティカルシンキング」授業を新たに導入**し、**少数のクラスでの限定的なAI活用パイロット**も維持する。あわせて、学年に応じたスクリーンタイムの制限も導入する。",
+      "## 今後の枠組み",
+      "教育者・保護者・生徒で構成される「Technology in Schools Coalition」が、今回の方針の影響を評価し、今後の運用方針を勧告する役割を担うとされる。Mamdani 市長は会見で、今回の措置を「全米で最も包括的なものだ」と述べている。",
+      "## 位置付け",
+      "教育現場での生成AI活用をめぐっては、効率化や個別最適化への期待と、児童・生徒の思考力育成やコンパニオン型AIの心理的な影響への懸念の両方が指摘されてきた。今回のニューヨーク市の方針は、**特定の技術的リスクの実証を理由に挙げたものではなく**、既存プログラムの安全基準・監督体制が不十分だったという判断に基づく制度的な対応である点が、報道されている情報からは読み取れる。全米最大の学校区が下した判断であるため、他の学校区の政策にも参照される可能性がある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Mayor Mamdani and Chancellor Samuels Put Students First with Nation's Broadest Generative AI Moratorium in Schools",
+        "site": "The Official Website of the City of New York（検索インデックス経由で見出しを確認、本文への直接到達は本稿執筆時点で不可）",
+        "url": "https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-and-chancellor-samuels-put-students-first-with-nat"
+      },
+      {
+        "title": "Nation's largest school district bans AI in the classroom through 8th grade",
+        "site": "CNN Business",
+        "url": "https://www.cnn.com/2026/09/02/tech/new-york-city-classroom-ai-ban"
+      },
+      {
+        "title": "NYC's new school AI ban explained: What students and teachers need to know",
+        "site": "Chalkbeat New York",
+        "url": "https://www.chalkbeat.org/newyork/2026/09/02/what-to-know-about-nyc-public-schools-generative-ai-ban-screen-time-limits/"
+      }
+    ]
   }
 };
 
