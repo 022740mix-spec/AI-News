@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-03",
-  "count": 382,
+  "count": 383,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -266,6 +266,7 @@
     "noam-shazeer-google-to-openai-architecture-research-2026",
     "notebooklm-review",
     "notion-as-code-typescript-workspace-git-agents-beta-2026",
+    "nvidia-acquires-hugging-face-2026",
     "nvidia-nemotron-3-5-asr-open-multilingual-stt-2026",
     "nvidia-openclaw-nemoclaw-2026",
     "nvidia-physical-ai-data-factory-blueprint-2026",

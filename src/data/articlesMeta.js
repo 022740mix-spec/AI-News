@@ -8547,5 +8547,23 @@ export const ARTICLES_META = [
       "MCP",
       "プライバシー"
     ]
+  },
+  {
+    "id": "nvidia-acquires-hugging-face-2026",
+    "type": "news",
+    "category": "product",
+    "title": "NVIDIA が Hugging Face を $12.93B で買収 — オープンモデルの中核ハブが、GPU最大手の傘下に",
+    "excerpt": "NVIDIA が2026年9月2日、**Hugging Face を総額 $12.93B（株主への$11.9B＋従業員向けリテンション最大$1.0B）で買収する確定契約**を締結したと発表した。クロージングは**2027年前半、規制当局の承認が条件**。Hugging Face は**18M人超の開発者が3M超のモデル・50万件のデータセットを共有する**プラットフォームで、200K社超が利用する。NVIDIA は「マルチクラウド・マルチアクセラレータ対応を継続し、NVIDIA製コンピュートの利用を必須としない」と明言している。",
+    "date": "2026-09-04",
+    "newsDate": "2026-09-02",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "NVIDIA",
+      "Hugging Face",
+      "買収",
+      "オープンソース",
+      "半導体"
+    ]
   }
 ];

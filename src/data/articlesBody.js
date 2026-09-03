@@ -18397,6 +18397,42 @@ const ARTICLES_BODY = {
         "url": "https://github.com/debpalash/VoiceStudio/releases/tag/v0.5.1"
       }
     ]
+  },
+  "nvidia-acquires-hugging-face-2026": {
+    "body": [
+      "**NVIDIA** が2026年9月2日、**Hugging Face を買収する確定契約（definitive agreement）を締結**したと発表した。買収総額は**約 $12.93B**で、内訳は**株主への支払い約$11.9B**と、**NVIDIA に合流する Hugging Face 従業員向けのリテンション（引き留め）用エクイティ最大約$1.0B**。クロージングは**2027年前半を見込み、規制当局の承認が条件**となる。",
+      "## Hugging Face の規模",
+      "Hugging Face は、**18M人超の開発者・研究者・クリエイターが利用し、3M超のモデルと50万件超のデータセットを共有する**プラットフォームである。**200K社超の企業**が、AI モデルの発見・評価・カスタマイズ・デプロイに利用しているとされる。オープンウェイトモデルの配布拠点として、事実上ほぼすべての主要 AI 研究機関・企業が利用してきた「中立的なハブ」としての位置付けが強い。",
+      "## 一度は断られていた5億ドルの出資",
+      "報道によれば、Hugging Face の CEO Clément Delangue 氏は以前、**評価額$7Bで NVIDIA から提示された$500Mの出資**を断っていた。その後の数週間で Delangue 氏の側から NVIDIA CEO の Jensen Huang 氏に接触し、出資ではなく**買収という形での合意**に至ったという。2023年時点の Hugging Face の評価額は$4.5Bだったとされ、今回の買収額はそこから大きく積み上がっている。",
+      "## 「オープン性は維持する」という約束",
+      "Huang 氏は、Hugging Face が**オープンソース・オープンウェイトモデルを支持し続け、AI エコシステム全体に開かれたプラットフォームであり続ける**とコメントしている。具体的には、**Hugging Face の利用に NVIDIA 製コンピュートを必須としない**こと、**マルチクラウド・マルチアクセラレータ対応を継続する**ことを明言した。GPU最大手が、ベンダー中立を前提としてきたハブを買収するにあたり、こうしたコミットメントを明示的に打ち出した点は、それ自体が今回の買収に伴う懸念（特定チップベンダーへの依存が生じるのではないか、という業界の見方）を反映していると読める。",
+      "## クロージングまでの論点",
+      "買収は**規制当局の承認が条件**となっており、正式なクロージングは2027年前半が見込まれている。承認プロセスにおいて、AI インフラの中核的な配布拠点が GPU 最大手の傘下に入ることの競争上の影響が論点になる可能性がある。",
+      "**注記**: 本記事作成時点で、NVIDIA公式ブログ（blogs.nvidia.com）および米SEC提出書類（sec.gov）へは本稿の調査環境のネットワークポリシー上到達できなかった。ただし、上記の金額・日付・条件は、Bloomberg・CNBC・CNN Business・The Information・Forbes・Variety など独立した複数の主要メディアが一致して報じており、内容に矛盾は見られない。"
+    ],
+    "primarySources": [
+      {
+        "title": "NVIDIA to Acquire Hugging Face",
+        "site": "NVIDIA Blog（検索インデックス経由で存在・見出しを確認、本文への直接到達は不可）",
+        "url": "https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/"
+      },
+      {
+        "title": "Nvidia confirms it will buy Hugging Face for $12.9 billion",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/"
+      },
+      {
+        "title": "Nvidia agrees to buy Hugging Face for almost $13 billion, AI expansion",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/09/03/nvidia-agrees-to-buy-hugging-face-for-almost-13-billion-ai-expansion.html"
+      },
+      {
+        "title": "Nvidia inks $13 billion deal to buy Hugging Face",
+        "site": "CNN Business",
+        "url": "https://www.cnn.com/2026/09/03/tech/nvidia-hugging-face-ai-acquisition"
+      }
+    ]
   }
 };
 

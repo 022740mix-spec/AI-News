@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-09-03T15:00:00Z</updated>
+  <updated>2026-09-04T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>「どんなAIエージェントも科学者にする」スキル集が週間GitHubトレンド1位に — 163種のスキルで100超の科学データベースへ接続</title>
@@ -46,6 +46,14 @@
     <published>2026-09-02T15:00:00Z</published>
     <updated>2026-09-02T15:00:00Z</updated>
     <summary>Google は Search Console に AI Overviews・AI Mode への表示を拒否するトグルを用意し、オプトアウトはランキング要因にならないと明言している。だが構造上の制約が残る。Google は従来の検索インデックスと AI 学習に同一のクローラーを使っており、AI Overviews に食わせるボットを止めると Google 検索からも消える。「選べるようになった」という説明と、「実際に選べるか」は別の話である。運営者が直面している選択の実像を整理する。</summary>
+  </entry>
+  <entry>
+    <title>NVIDIA が Hugging Face を $12.93B で買収 — オープンモデルの中核ハブが、GPU最大手の傘下に</title>
+    <link rel="alternate" type="text/html" href="?a=nvidia-acquires-hugging-face-2026"/>
+    <id>tag:ai-tool-news.jp,2026:nvidia-acquires-hugging-face-2026</id>
+    <published>2026-09-02T15:00:00Z</published>
+    <updated>2026-09-02T15:00:00Z</updated>
+    <summary>NVIDIA が2026年9月2日、Hugging Face を総額 $12.93B（株主への$11.9B＋従業員向けリテンション最大$1.0B）で買収する確定契約を締結したと発表した。クロージングは2027年前半、規制当局の承認が条件。Hugging Face は18M人超の開発者が3M超のモデル・50万件のデータセットを共有するプラットフォームで、200K社超が利用する。NVIDIA は「マルチクラウド・マルチアクセラレータ対応を継続し、NVIDIA製コンピュートの利用を必須としない」と明言している。</summary>
   </entry>
   <entry>
     <title>Anthropic が Claude Fable 5.1 / Mythos 5.1 を公開 — 破壊的変更が3つ、値下げはキャッシュ読み取りのみ</title>
