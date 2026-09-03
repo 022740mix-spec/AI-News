@@ -18299,6 +18299,21 @@ const ARTICLES_BODY = {
         "url": "https://github.com/K-Dense-AI/scientific-agent-skills"
       }
     ]
+  },
+  "aris-auto-research-in-sleep-2026": {
+    "body": [
+      "個人開発者 wanshuiyin 氏が公開する **Auto-Research-In-Sleep(ARIS)** が、GitHub で**15,700スター・1,400フォーク**を集めている。フレームワークやインフラへの依存を持たない、Markdown ベースの自律研究手法を掲げるプロジェクトで、MIT ライセンスで配布されている。",
+      "仕組みはシンプルで、**Claude Code を実行役**として研究ワークフロー(着想、実験、論文執筆)を進めさせる一方、**別のモデルを独立したレビュー役**に据える。標準構成では Codex MCP 経由の GPT-5.6-Sol がレビューを担当し、GPT-5.5、Gemini、Kimi への差し替えにも対応する。README は自らの評価方式を「stochastic(確率的)ではなく adversarial(敵対的)」と表現しており、実行したモデル自身に採点させるのではなく、別のモデルが批判的に検証する構成を取っている。",
+      "収録されているのは**81個のユーザー向けスキルと54個の補助リソース**で、論文執筆、着想の発掘、実験の監査、証明の確認、文献調査など研究プロセスの各段階をカバーする。Claude Code 以外にも Codex CLI、Cursor、Trae、Antigravity、Copilot CLI 上で動作するとされ、README は「Claude Code を別のツールに置き換えてもワークフローはそのまま動く」としている。",
+      "**実行と検証を別のモデルに分ける**という設計思想は、生成と検証を同じ主体に任せると同じ誤りを見逃しやすい(generator-verifier gap)という近年の指摘と符合する。本サイトも重要な記事の公開前に、執筆過程を渡さない別モデルへ事実確認と網羅性の検証を分離して依頼する運用を取っており、個人開発の研究自動化ツールが同じ問題意識に基づいて設計されている点は興味深い。",
+      "ただし、ARIS はあくまで研究プロセスを回すためのスキル集であり、生成された仮説や実験結果、論文原稿の正しさそのものを保証する仕組みではない。README を確認した範囲では、レビュー役のモデルが見逃した誤りについての免責や限界の記載は見当たらず、**最終的な事実確認は依然として人間の役割として残る**。"
+    ],
+    "primarySources": [
+      {
+        "title": "wanshuiyin/Auto-claude-code-research-in-sleep (GitHub)",
+        "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep"
+      }
+    ]
   }
 };
 

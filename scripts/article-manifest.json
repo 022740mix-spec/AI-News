@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-03",
-  "count": 377,
+  "count": 378,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -78,6 +78,7 @@
     "apple-wwdc-2026-siri-ai-keynote-2026",
     "aqua-voice-review",
     "arc-agi-3-launch-2026",
+    "aris-auto-research-in-sleep-2026",
     "august-2026-ai-deprecations-migration-guide-2026",
     "axios-npm-supply-chain-attack-rat-2026",
     "bigtech-q1-2026-earnings-ai-capex-700b-feature",

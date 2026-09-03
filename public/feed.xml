@@ -16,6 +16,14 @@
     <summary>K-Dense Inc. が公開する scientific-agent-skills が、直近1週間で7,558スター増の42,103スターに達し、GitHub週間トレンド(Python)で1位になった。Cursor・Claude Code・Codex・Google Antigravity など Agent Skills 標準に対応するホストで、PubChem・ChEMBL・UniProt など100以上の科学データベースと70以上の Python パッケージのワークフローを呼び出せる163個のスキルを収録する。バイオインフォマティクスから材料科学まで、専門ドメインの知識を汎用エージェントに注入する動きの具体例になっている。</summary>
   </entry>
   <entry>
+    <title>「寝ている間に研究を進める」個人開発の自律研究フレームワーク ARIS が1.5万スター — レビュー役に別モデルを立てて自己検証の限界を補う</title>
+    <link rel="alternate" type="text/html" href="?a=aris-auto-research-in-sleep-2026"/>
+    <id>tag:ai-tool-news.jp,2026:aris-auto-research-in-sleep-2026</id>
+    <published>2026-09-03T15:00:00Z</published>
+    <updated>2026-09-03T15:00:00Z</updated>
+    <summary>個人開発者が公開する Auto-Research-In-Sleep(ARIS) が15,700スターを集めている。Claude Code を実行役、Codex 経由の GPT系モデル等を独立したレビュー役に据え、着想から実験、論文執筆までを81のスキルで自動化する MIT ライセンスのフレームワーク。実行するモデルとレビューするモデルを分ける設計思想は、AI News が自社の記事検証で採用している方針とも重なる。</summary>
+  </entry>
+  <entry>
     <title>【分析】Google が AI 検索のオプトアウトを用意した — ただしクローラーが1本である限り、実質的に選べない</title>
     <link rel="alternate" type="text/html" href="?a=feature-google-publisher-ai-optout-single-crawler-2026"/>
     <id>tag:ai-tool-news.jp,2026:feature-google-publisher-ai-optout-single-crawler-2026</id>

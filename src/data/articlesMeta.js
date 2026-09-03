@@ -8459,5 +8459,22 @@ export const ARTICLES_META = [
       "開発ツール",
       "Claude Code"
     ]
+  },
+  {
+    "id": "aris-auto-research-in-sleep-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "「寝ている間に研究を進める」個人開発の自律研究フレームワーク ARIS が1.5万スター — レビュー役に別モデルを立てて自己検証の限界を補う",
+    "excerpt": "個人開発者が公開する **Auto-Research-In-Sleep(ARIS)** が15,700スターを集めている。Claude Code を実行役、Codex 経由の GPT系モデル等を独立したレビュー役に据え、着想から実験、論文執筆までを81のスキルで自動化する MIT ライセンスのフレームワーク。**実行するモデルとレビューするモデルを分ける**設計思想は、AI News が自社の記事検証で採用している方針とも重なる。",
+    "date": "2026-09-03",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "エージェント",
+      "オープンソース",
+      "マルチエージェント",
+      "Claude Code"
+    ]
   }
 ];
