@@ -18376,6 +18376,27 @@ const ARTICLES_BODY = {
         "url": "https://github.com/QwenLM/Qwen3.8-Flash-Next"
       }
     ]
+  },
+  "voicestudio-elevenlabs-local-alternative-2026": {
+    "body": [
+      "音声クローン・音声デザイン・動画吹き替え・書き起こし・オーディオブック生成を1本にまとめた OSS デスクトップアプリ「**VoiceStudio**」（開発者: debpalash 氏）が、2026年9月3日時点で GitHub Trending の上位に入っている。README は自らを「**完全にローカルで動く ElevenLabs の代替**」と位置づけている。",
+      "技術面の特徴は、単一のエンジンに依存しない構成にある。**音声合成（TTS）エンジンを16種類**（既定は OmniVoice、ほかに CosyVoice 3・GPT-SoVITS・VoxCPM2 など）、**音声認識（ASR）エンジンを11種類**（既定は WhisperX、ほかに Faster-Whisper・Moonshine など）から選んで切り替えられる。音声クローンは5〜15秒程度の短い音声サンプルからのゼロショット合成で行い、対応言語は646言語とされる。",
+      "**「完全にローカル」という主張は、アーキテクチャの作りに裏付けられている。** デスクトップシェルに Tauri（Rust）、フロントエンドに React、バックエンドに FastAPI を使い、すべて localhost 内で通信する構成になっており、ユーザーが明示的にリモート機能を選ばない限り、音声・声紋・プロジェクトデータは端末外に出ない。CUDA・Apple Silicon（MPS/MLX）・ROCm での GPU アクセラレーションに加え、CPU のみでの動作にも対応する。",
+      "**8月28日公開の v0.5.1 では、VoiceStudio を「ローカル音声プラットフォーム」として再定義する変更が加わった。** HTTP・WebSocket・JSON-RPC・CLI に加えて **MCP（Model Context Protocol）経由の呼び出し**にも対応し、他のエージェントツールから音声合成・認識機能を直接呼び出せるようになっている。あわせて、最大8セグメントをまとめて処理するバッチ合成や FlashInfer による高速化、curl・PowerShell スクリプトによるワンコマンドインストールなどが加わった。",
+      "ライセンスはアプリ本体が AGPL-3.0。ダウンロードして使う各音声モデル自体は、それぞれの提供元が定める別のライセンスに従う。対応 OS は macOS 13.3以降（Apple Silicon）・Windows 10/11（x64）・Linux（x86_64）で、最小要件は RAM 8GB・ディスク10GB、GPU は任意（推奨 VRAM 4GB以上）。",
+      "**プロジェクトは2026年5月に「OmniVoice-Studio」の名で最初に話題になり、その後 VoiceStudio へと改名・再編されている。** 今回のトレンド入りは、5月時点の初出ではなく、MCP対応などを加えた8月末のアップデート以降に生じた新しい伸びである点に注意されたい。",
+      "**クラウド型の音声生成サービスは、音声データを外部サーバーに送信して処理するのが一般的である。** VoiceStudio はこれとは異なり、処理を端末内で完結させる設計を選んでいる。どちらが適切かは用途によって異なり、本記事はいずれか一方を推奨するものではない。"
+    ],
+    "primarySources": [
+      {
+        "title": "debpalash/VoiceStudio（GitHub 公式リポジトリ README）",
+        "url": "https://github.com/debpalash/VoiceStudio"
+      },
+      {
+        "title": "Release v0.5.1 — VoiceStudio（GitHub リリースノート）",
+        "url": "https://github.com/debpalash/VoiceStudio/releases/tag/v0.5.1"
+      }
+    ]
   }
 };
 

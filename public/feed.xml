@@ -72,6 +72,14 @@
     <summary>OpenAI が8月31日、ChatGPT 広告事業が年換算10億ドルの収益ペースに達したと発表した。開始から200日未満での到達で、当サイトが4月に報じた「パイロット6週間で ARR 1億ドル」から10倍になった計算。同日から インド・欧州・中東・北アフリカで Ads Manager 経由の直接購入が可能になる。OpenAI は広告が明示的に区別され、回答内容に影響せず、広告主が私的な会話にアクセスできないと説明している。</summary>
   </entry>
   <entry>
+    <title>完全ローカル動作の ElevenLabs 代替「VoiceStudio」が GitHub トレンド上位に — 16種の音声合成エンジンと MCP 対応を1本のデスクトップアプリに集約</title>
+    <link rel="alternate" type="text/html" href="?a=voicestudio-elevenlabs-local-alternative-2026"/>
+    <id>tag:ai-tool-news.jp,2026:voicestudio-elevenlabs-local-alternative-2026</id>
+    <published>2026-08-28T15:00:00Z</published>
+    <updated>2026-08-28T15:00:00Z</updated>
+    <summary>音声クローン・吹き替え・書き起こしを完全にローカルで処理する OSS デスクトップアプリ「VoiceStudio」が、GitHub Trending の上位に入っている。16種の音声合成エンジンと11種の音声認識エンジンを切り替え可能にし、646言語に対応。8月28日公開の v0.5.1 で MCP を含む複数の通信プロトコルをサポートし、他のエージェントツールから直接呼び出せる「ローカル音声プラットフォーム」を志向するようになった。</summary>
+  </entry>
+  <entry>
     <title>「書かなかったコードが最良のコード」— エージェントに YAGNI を教える ponytail が112,530スター</title>
     <link rel="alternate" type="text/html" href="?a=ponytail-yagni-agent-skill-112k-stars-2026"/>
     <id>tag:ai-tool-news.jp,2026:ponytail-yagni-agent-skill-112k-stars-2026</id>

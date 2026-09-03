@@ -8529,5 +8529,23 @@ export const ARTICLES_META = [
       "src": "logos/alibaba.svg",
       "alt": "Alibaba Qwen3.8-Flash-Next release"
     }
+  },
+  {
+    "id": "voicestudio-elevenlabs-local-alternative-2026",
+    "type": "news",
+    "category": "media",
+    "title": "完全ローカル動作の ElevenLabs 代替「VoiceStudio」が GitHub トレンド上位に — 16種の音声合成エンジンと MCP 対応を1本のデスクトップアプリに集約",
+    "excerpt": "音声クローン・吹き替え・書き起こしを**完全にローカルで**処理する OSS デスクトップアプリ「**VoiceStudio**」が、GitHub Trending の上位に入っている。**16種の音声合成エンジンと11種の音声認識エンジンを切り替え可能**にし、646言語に対応。8月28日公開の v0.5.1 で **MCP を含む複数の通信プロトコル**をサポートし、他のエージェントツールから直接呼び出せる「ローカル音声プラットフォーム」を志向するようになった。",
+    "date": "2026-09-03",
+    "newsDate": "2026-08-28",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "オープンソース",
+      "音声生成",
+      "エッジAI",
+      "MCP",
+      "プライバシー"
+    ]
   }
 ];
