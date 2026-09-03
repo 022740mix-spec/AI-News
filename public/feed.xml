@@ -40,6 +40,14 @@
     <summary>音楽生成AI Suno が2026年8月10日に告知したダウンロードポリシーの変更が、9月3日に発効した。無料プランは生涯7回、Pro は月20回、Premier は月60回で、9月3日より前に生成した楽曲も対象になる。Suno は「大量に書き出す使われ方を難しくするため」と説明している。</summary>
   </entry>
   <entry>
+    <title>個人開発の Soup が「layer streaming」でVRAM問題を解く — 4GBノートPCのGPUで8Bモデルを学習、直近1週間で+1,700スター</title>
+    <link rel="alternate" type="text/html" href="?a=soup-layer-streaming-finetune-2026"/>
+    <id>tag:ai-tool-news.jp,2026:soup-layer-streaming-finetune-2026</id>
+    <published>2026-09-03T15:00:00Z</published>
+    <updated>2026-09-03T15:00:00Z</updated>
+    <summary>個人開発者 Makazhan Alpamys 氏が公開した CLI ツール Soup が、GitHub で直近1週間に+1,700スターを集め5,100スター超に達した。目玉は「layer streaming」という技術で、凍結したベースモデルを VRAM に置かず、デコーダ層を1層ずつホストRAMからGPUへ流し込むことで、VRAM 4GB のノートPC用GPUで8Bモデルの学習を可能にした。1つのYAML設定ファイルで SFT・DPO・GRPO・PPO 等の学習手法に対応する。</summary>
+  </entry>
+  <entry>
     <title>【分析】Google が AI 検索のオプトアウトを用意した — ただしクローラーが1本である限り、実質的に選べない</title>
     <link rel="alternate" type="text/html" href="?a=feature-google-publisher-ai-optout-single-crawler-2026"/>
     <id>tag:ai-tool-news.jp,2026:feature-google-publisher-ai-optout-single-crawler-2026</id>

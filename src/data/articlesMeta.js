@@ -8583,5 +8583,23 @@ export const ARTICLES_META = [
       "エンタープライズ",
       "エージェント"
     ]
+  },
+  {
+    "id": "soup-layer-streaming-finetune-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "個人開発の Soup が「layer streaming」でVRAM問題を解く — 4GBノートPCのGPUで8Bモデルを学習、直近1週間で+1,700スター",
+    "excerpt": "個人開発者 Makazhan Alpamys 氏が公開した CLI ツール **Soup** が、GitHub で**直近1週間に+1,700スター**を集め5,100スター超に達した。目玉は「**layer streaming**」という技術で、凍結したベースモデルを VRAM に置かず、**デコーダ層を1層ずつホストRAMからGPUへ流し込む**ことで、**VRAM 4GB のノートPC用GPUで8Bモデルの学習**を可能にした。1つのYAML設定ファイルで SFT・DPO・GRPO・PPO 等の学習手法に対応する。",
+    "date": "2026-09-04",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "オープンソース",
+      "ファインチューニング",
+      "エッジAI",
+      "個人開発",
+      "GPU"
+    ]
   }
 ];

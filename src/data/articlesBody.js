@@ -18462,6 +18462,26 @@ const ARTICLES_BODY = {
         "url": "https://www.cio.com/article/4214458/salesforce-anthropic-partner-to-deliver-claudeforce.html"
       }
     ]
+  },
+  "soup-layer-streaming-finetune-2026": {
+    "body": [
+      "個人開発者 **Makazhan Alpamys** 氏が公開した CLI ツール「**Soup**」が、GitHub で急速にスターを集めている。**直近1週間で約+1,700スター**増え、現在は**5,100スター超**。**1つの YAML 設定ファイルを書くだけで LLM のファインチューニングを実行**できるツールで、バッチサイズの調整・GPU の検出・量子化の設定を自動で行う。",
+      "## 「layer streaming」という発想",
+      "目玉機能が「**layer streaming**」である。通常のファインチューニングは、ベースモデル全体を VRAM に載せた状態で学習を行う。Soup はこれを変え、**凍結したベースモデルをホストの通常 RAM に置いたまま、デコーダ層を1層ずつ GPU へ順番にストリーミング**して forward / backward パスを処理する。学習が進む間、**アクティブな層の処理に必要な VRAM は約113MBのバッファ2つ**のみで済む設計になっている。",
+      "## 実測値",
+      "公開されているベンチマークによれば、**VRAM 4GB の RTX 3050 Laptop で Llama-3.1-8B-Instruct を NF4量子化で学習**し、**119.6 tok/s・ピークメモリ 3.32GB** を記録した。同一の設定を H100 上で再現した場合は 113.00 tok/s で、**通常のフル常駐実行と bit-exact（数値的に同一）な結果**が得られるとしている。ピーク VRAM の削減幅は**約75%**にのぼる。",
+      "## 対応する学習手法",
+      "SFT（教師ありファインチューニング）に加え、**DPO・ORPO・SimPO・IPO・BCO・KTO** といった選好ベースの手法、**GRPO・PPO** の強化学習系手法まで対応する。ツール呼び出し用途や PRM、事前学習、蒸留といった用途にも対応するとされる。",
+      "## ライセンスと透明性",
+      "**Apache-2.0** ライセンスで公開されており、リポジトリの `benchmarks/` ディレクトリには、**撤回した主張や失敗した実験も含めて計測記録を残している**という。個人開発の小規模ツールでありながら、検証可能性を意識した公開姿勢が伸びの一因になっているとみられる。"
+    ],
+    "primarySources": [
+      {
+        "title": "MakazhanAlpamys/Soup",
+        "site": "GitHub",
+        "url": "https://github.com/MakazhanAlpamys/Soup"
+      }
+    ]
   }
 };
 

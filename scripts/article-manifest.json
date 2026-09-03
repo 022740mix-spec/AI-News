@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-03",
-  "count": 384,
+  "count": 385,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -347,6 +347,7 @@
     "satya-nadella-dwarkesh-podcast-2026",
     "shopify-ai-toolkit-oss-mcp-agent-2026",
     "singularity-mythos-2026-spring",
+    "soup-layer-streaming-finetune-2026",
     "spacex-cursor-60b-acquisition-anysphere-2026",
     "stable-audio-review",
     "stanford-hai-ai-index-2026-china-transparency-2026",
