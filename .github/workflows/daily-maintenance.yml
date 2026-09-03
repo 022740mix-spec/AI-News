@@ -15,14 +15,20 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  # マージ済みの作業ブランチを削除するため write が要る。
+  # 削除対象は routine/ 接頭辞かつ「記事 id が全部 main にある」ものだけで、
+  # main や claude/* には触れない（check-stale-branches.mjs 側で二重に確認）。
+  contents: write
   issues: write
 
 jobs:
   maintenance:
     runs-on: ubuntu-latest
     steps:
+      # 棚卸しが他ブランチの articlesMeta.js を読むため、全 ref を取る
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -35,6 +41,41 @@ jobs:
           node scripts/maintenance-report.mjs > /tmp/report.md
           echo "--- レポート内容 ---"
           cat /tmp/report.md
+
+      # Routine は1日2回走り、一次ソースに到達できなかった記事をブランチに
+      # 退避する。退避は正しい判断だが、ブランチは誰も消さない。放置すると
+      # 月60本のペースで増え、開いた PR が並び続けることで通知そのものが
+      # 無視されるようになる。
+      #
+      # 消すのは「ブランチ上の記事 id が全部 main にある」ものだけ。
+      # squash merge では元コミットが main の履歴に残らないため、
+      # コミットの到達性ではなく記事の中身で判定する。日付では判定しない。
+      #
+      # 未決着の下書きはここでは絶対に消さない。保留理由の大半は実行環境の
+      # egress であって記事の欠陥ではなく、到達可否は日によって変わる。
+      # 時間で消すと、検証できるようになった瞬間に捨てることになる。
+      - name: マージ済みの作業ブランチを削除する
+        continue-on-error: true
+        run: |
+          node scripts/check-stale-branches.mjs --json > /tmp/branches.json
+          node -e '
+            const fs = require("fs");
+            const d = JSON.parse(fs.readFileSync("/tmp/branches.json", "utf8"));
+            // 接頭辞をここでも確認する。棚卸し側と二重にすることで、
+            // 片方が壊れても main や claude/* を消さない。
+            const safe = d.merged.map(m => m.branch).filter(b => b.startsWith("routine/"));
+            fs.writeFileSync("/tmp/delete.txt", safe.join("\n"));
+            console.log(safe.length ? `削除対象 ${safe.length} 本:\n` + safe.join("\n") : "削除対象はありません。");
+          '
+          while IFS= read -r b; do
+            [ -z "$b" ] && continue
+            case "$b" in
+              routine/*) ;;
+              *) echo "接頭辞が違うため飛ばします: $b"; continue ;;
+            esac
+            echo "削除: $b"
+            git push origin --delete "$b" || echo "  削除に失敗しました（既に無い可能性）"
+          done < /tmp/delete.txt
 
       # 「異常なし」を毎日 Issue に出すと通知が無視されるようになるため、
       # 報告すべきことがある場合だけ Issue を立てる。
