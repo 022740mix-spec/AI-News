@@ -18482,6 +18482,30 @@ const ARTICLES_BODY = {
         "url": "https://github.com/MakazhanAlpamys/Soup"
       }
     ]
+  },
+  "phone-harness-mobile-agent-2026": {
+    "body": [
+      "個人開発者 **ShawnPana** 氏が公開した OSS ツール「**phone-harness**」は、AI エージェント（Claude、Codex など）に**実機のスマートフォンを直接操作させる**ハーネスである。**ジェイルブレイクや専用アプリのインストールを必要としない**点が特徴で、MIT ライセンスで公開され、現在**2,300スター**を集めている。",
+      "## iPhone は画面ミラーリング、Android は adb",
+      "**iPhone** は、macOS Sequoia の「iPhone Mirroring」機能でスマホの画面を Mac のウィンドウとして表示させ、そのウィンドウをキャプチャして **Apple の Vision framework で OCR** する。エージェントは、認識したテキストとタップ可能な座標をもとに、**CGEvents（HIDレベルの入力イベント）でタップ・長押し・ドラッグ・スクロール・文字入力**を実行する。",
+      "**Android** は、USB または Wi-Fi 経由の **adb（Android Debug Bridge）**を使う。`screencap` による画面取得と、**端末のアクセシビリティツリーによる要素の特定**を組み合わせ、`input tap` / `input swipe` / `input text` 等のコマンドを直接送信する。Mac のウィンドウフォーカスに依存しない設計で、iPhone 版とは独立して動作する。",
+      "## セットアップとデザインの方針",
+      "iPhone の場合は iPhone Mirroring のペアリングに加え、ターミナルに Accessibility と画面収録の権限を許可する必要がある。Android は開発者向けオプションを有効にし、USB 接続の承認、またはペアリングコードを使った Wi-Fi デバッグで接続する。動作確認用の `--doctor` コマンドや、ガイド付きのオンボーディングも用意されている。**常駐デーモンを必要とせず、実行のたびに完結する**設計を採っている点も特徴である。",
+      "## 同じ作者の smux",
+      "作者の ShawnPana 氏は、AI エージェント同士に tmux のペイン越しに対話させる OSS「**smux**」の開発者でもある。smux では、Claude Code が隣のペインの Codex にプロンプトを送り、Codex が応答を返す、といったエージェント間通信を tmux ブリッジ経由で実現している。ターミナル内のエージェント連携（smux）と、実機デバイスの操作（phone-harness）という異なる対象に、同じ「エージェントに既存のインターフェースをそのまま触らせる」アプローチを適用している点が共通している。"
+    ],
+    "primarySources": [
+      {
+        "title": "ShawnPana/phone-harness",
+        "site": "GitHub",
+        "url": "https://github.com/ShawnPana/phone-harness"
+      },
+      {
+        "title": "ShawnPana/smux",
+        "site": "GitHub",
+        "url": "https://github.com/ShawnPana/smux"
+      }
+    ]
   }
 };
 

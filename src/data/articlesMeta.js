@@ -8601,5 +8601,23 @@ export const ARTICLES_META = [
       "個人開発",
       "GPU"
     ]
+  },
+  {
+    "id": "phone-harness-mobile-agent-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "AIエージェントに実機スマホを操作させる phone-harness — ジェイルブレイク・専用アプリ不要、2,300スター",
+    "excerpt": "個人開発者 ShawnPana 氏が公開した OSS「**phone-harness**」は、Claude Code や Codex などの AI エージェントに、**ジェイルブレイクや専用アプリを使わず実機のスマートフォンを操作させる**ハーネス。iPhone は macOS の画面ミラーリング経由、Android は adb 経由で接続し、**画面キャプチャとOCR（iPhoneは Apple Vision framework、Androidはアクセシビリティツリー）でエージェントに画面を「見せ」、タップ・スワイプ・入力を実行**させる。現在 **2,300スター**。同じ作者は、AI エージェント同士を tmux 上で通信させる「smux」も公開している。",
+    "date": "2026-09-04",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "オープンソース",
+      "エージェント",
+      "モバイル",
+      "開発ツール",
+      "個人開発"
+    ]
   }
 ];

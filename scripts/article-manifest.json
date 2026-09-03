@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-03",
-  "count": 385,
+  "count": 386,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -323,6 +323,7 @@
     "overview-2026-week-may25",
     "pearai",
     "perplexity-review",
+    "phone-harness-mobile-agent-2026",
     "pika-pikastream-video-chat-skill-2026",
     "pika-review",
     "pinecone-serverless-free-tier-2026",
