@@ -8442,5 +8442,22 @@ export const ARTICLES_META = [
       "ベンチマーク",
       "エージェント"
     ]
+  },
+  {
+    "id": "k-dense-scientific-agent-skills-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "「どんなAIエージェントも科学者にする」スキル集が週間GitHubトレンド1位に — 163種のスキルで100超の科学データベースへ接続",
+    "excerpt": "K-Dense Inc. が公開する **scientific-agent-skills** が、直近1週間で7,558スター増の**42,103スター**に達し、GitHub週間トレンド(Python)で1位になった。Cursor・Claude Code・Codex・Google Antigravity など Agent Skills 標準に対応するホストで、PubChem・ChEMBL・UniProt など100以上の科学データベースと70以上の Python パッケージのワークフローを呼び出せる163個のスキルを収録する。バイオインフォマティクスから材料科学まで、専門ドメインの知識を汎用エージェントに注入する動きの具体例になっている。",
+    "date": "2026-09-03",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "エージェント",
+      "オープンソース",
+      "開発ツール",
+      "Claude Code"
+    ]
   }
 ];

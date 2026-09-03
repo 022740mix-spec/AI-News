@@ -18284,6 +18284,21 @@ const ARTICLES_BODY = {
         "url": "https://www.marktechpost.com/2026/09/01/anthropic-releases-claude-fable-5-1-and-claude-mythos-5-1-52-6-on-terminal-bench-science-and-75-cheaper-cache-reads/"
       }
     ]
+  },
+  "k-dense-scientific-agent-skills-2026": {
+    "body": [
+      "K-Dense Inc. が GitHub で公開する **scientific-agent-skills** が、GitHub トレンド(Python、週間)で1位に立った。9月3日時点のスター数は**42,103**で、直近1週間だけで7,558増えている。掲げるコンセプトは「どんなAIエージェントもAI科学者に変える(Turn any AI agent into an AI Scientist)」で、MIT ライセンスで配布されている。",
+      "中身は**163個のスキル**からなるライブラリで、Anthropic の Agent Skills 標準に対応するホスト(Cursor、Claude Code、Codex、Google Antigravity、`gh skill` 経由の GitHub CLI 等)から呼び出せる。PubChem・ChEMBL・UniProt をはじめとする**100以上の科学データベース**と、70以上の Python パッケージを使ったワークフローをスキルとして束ねており、対象領域はバイオインフォマティクス・ゲノミクス、創薬(ケモインフォマティクス)、臨床研究、マルチオミクス、材料科学、データ分析・可視化、規制対応まで幅広い。",
+      "リポジトリの説明では、この仕組みは既に**19万人以上の科学者**に使われているとされる。ただしこれは開発元による自己申告の数字であり、外部機関による独立した検証は確認できていない。手法自体は `arXiv:2609.00065` として論文化されており、専門データベースへのアクセスと実行手順をスキルという単位に切り出すことで、汎用エージェントに専門ドメインの知識を持たせるアプローチを取っている。",
+      "同種の動きは今回が初めてではない。8月には、コーディングエージェントに YAGNI(You Aren't Gonna Need It)の規律を教える [ponytail](?a=ponytail-yagni-agent-skill-112k-stars-2026) が11万スターを超えて伸びていた。ponytail が「エージェントの振る舞いを制約する」方向のスキルだったのに対し、scientific-agent-skills は「エージェントに専門知識を追加する」方向で、Agent Skills という同じ形式が異なる目的に使われている点が興味深い。",
+      "一方で、専門データベースへの自動アクセスや外部パッケージの実行を伴うスキルを大量に導入する以上、[Agent Skill 自体のセキュリティ](?a=feature-nvidia-skillspector-agent-skill-security-2026)、すなわちスキル内に埋め込まれたコードや依存パッケージの信頼性は、導入前に個別に確認する必要がある。"
+    ],
+    "primarySources": [
+      {
+        "title": "K-Dense-AI/scientific-agent-skills (GitHub)",
+        "url": "https://github.com/K-Dense-AI/scientific-agent-skills"
+      }
+    ]
   }
 };
 
