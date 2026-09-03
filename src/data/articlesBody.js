@@ -18359,6 +18359,23 @@ const ARTICLES_BODY = {
         "url": "https://www.musicbusinessworldwide.com/warner-music-group-settles-with-suno-strikes-first-of-its-kind-deal-with-ai-song-generator/"
       }
     ]
+  },
+  "alibaba-qwen-3-8-flash-next-2026": {
+    "body": [
+      "**Alibaba** の Qwen チームが2026年8月26日、新しいオープンウェイトモデル **Qwen3.8-Flash-Next** を GitHub の公式リポジトリ `QwenLM/Qwen3.8-Flash-Next` で公開した。",
+      "最大の特徴はアーキテクチャにある。README は、履歴の圧縮を担う **Gated DeltaNet（GDN）**と、長系列を効率処理する **Qwen Sparse Attention（QSA）**を組み合わせた**ハイブリッド構造**を採用したと説明している。これに加えて Gated Residual 設計、N-gram 埋め込みによるスケーリング、Muon オプティマイザといった要素も導入された。Qwen チームはこの構成を、次世代アーキテクチャ「Qwen4」の設計を先取りしたプレビューと位置づけている。",
+      "パラメータ構成は、**メインモデルが125B、トークンあたりの活性化は6B**という疎な MoE。これとは別に**51BのN-gram埋め込み**を追加で持つ点が、通常の MoE モデルとは異なる構成になっている。README に記載されたデプロイ例でのネイティブ文脈長は **262,144トークン**である。",
+      "学習コストについて Qwen チームは、**Qwen3.7-Plus と比べて約1/9の学習コストで、コーディング・オフィス作業の性能はむしろ上回る**と主張している。ベンチマークの具体的な数値は README には記載されておらず、「評価結果は Qwen3.8-Flash-Next ブログを参照」とされている。**この学習コスト比較・性能比較はいずれも Qwen 自身の公表値であり、本稿執筆時点で独立した第三者による再現・検証は確認できていない。**",
+      "ライセンスについて README は「モデル重みとともに Hugging Face Hub・ModelScope で配布されるライセンスファイルを参照すること」としており、リポジトリ自体には具体的なライセンス種別の記載がない。**この点は Hugging Face・ModelScope 側のモデルカードで直接確認できておらず、本稿では断定しない。**",
+      "Alibaba は2026年8月3日にも、総パラメータ2.4兆・活性化95Bの旗艦モデル **Qwen 3.8-Max** を[オープンウェイトで公開している](?a=alibaba-qwen-3-8-max-open-weight-2-4t-2026)。**Qwen3.8-Flash-Next はそれとは別系統の、軽量・高効率を志向したモデルである。**同社は Max 級の大型モデルと、今回のような効率重視の中型モデルを並行して展開する戦略を続けている。",
+      "本記事は GitHub の Qwen 公式組織（QwenLM）が公開したリポジトリの README を一次情報として直接確認して執筆した。ベンチマークの詳細数値やライセンス種別など README に記載のない情報については、二次情報の裏付けがあっても本文中に明記のうえ慎重に扱った。"
+    ],
+    "primarySources": [
+      {
+        "title": "QwenLM/Qwen3.8-Flash-Next（GitHub 公式リポジトリ README）",
+        "url": "https://github.com/QwenLM/Qwen3.8-Flash-Next"
+      }
+    ]
   }
 };
 

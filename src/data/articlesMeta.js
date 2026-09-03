@@ -8507,5 +8507,27 @@ export const ARTICLES_META = [
       "音楽生成",
       "料金"
     ]
+  },
+  {
+    "id": "alibaba-qwen-3-8-flash-next-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Alibaba が Qwen3.8-Flash-Next を公開 — Qwen4 の設計を先出しする「GDN+QSA」ハイブリッド構造、学習コストは Qwen3.7-Plus の1/9",
+    "excerpt": "**Alibaba** の Qwen チームが2026年8月26日、**Qwen3.8-Flash-Next** を GitHub 公式リポジトリで公開した。**総パラメータ125B・トークンあたり活性化6B**の MoE に加え、**N-gram埋め込み51Bを別枠で持つ**構成が特徴。**Gated DeltaNet（GDN）と Qwen Sparse Attention（QSA）を組み合わせたハイブリッド構造**を採用し、次世代アーキテクチャ「Qwen4」の設計を先出しする位置づけとされる。README上のネイティブ文脈長は**262,144トークン**。Qwen チームは**学習コストが Qwen3.7-Plus の約1/9**で済んだとしつつコーディング・オフィス用途の性能は上回ると主張しているが、この数値は Qwen 自身の公表値であり独立検証は存在しない。",
+    "date": "2026-09-03",
+    "newsDate": "2026-08-26",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Alibaba",
+      "Qwen",
+      "オープンウェイト",
+      "中国AI",
+      "モデル"
+    ],
+    "coverImage": {
+      "src": "logos/alibaba.svg",
+      "alt": "Alibaba Qwen3.8-Flash-Next release"
+    }
   }
 ];

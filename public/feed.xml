@@ -88,6 +88,14 @@
     <summary>AI 生成物に来歴を刻む動きが規制で加速する一方、それを剥がすツールが GitHub で伸びている。Anthropic が透かし導入を発表した8月11日に作られたリポジトリは、16日で 18,538スターに達した。だが「透かしは簡単に消せる」という理解は半分しか正しくない。C2PA はファイルに埋め込む署名付きマニフェストなのでスクリーンショット1枚で落ちるが、SynthID は生成時のトークン選択に統計的な偏りを入れるため、内容そのものを書き換えない限り残る。この違いを踏まえないと、コンプライアンス設計を誤る。</summary>
   </entry>
   <entry>
+    <title>Alibaba が Qwen3.8-Flash-Next を公開 — Qwen4 の設計を先出しする「GDN+QSA」ハイブリッド構造、学習コストは Qwen3.7-Plus の1/9</title>
+    <link rel="alternate" type="text/html" href="?a=alibaba-qwen-3-8-flash-next-2026"/>
+    <id>tag:ai-tool-news.jp,2026:alibaba-qwen-3-8-flash-next-2026</id>
+    <published>2026-08-26T15:00:00Z</published>
+    <updated>2026-08-26T15:00:00Z</updated>
+    <summary>Alibaba の Qwen チームが2026年8月26日、Qwen3.8-Flash-Next を GitHub 公式リポジトリで公開した。総パラメータ125B・トークンあたり活性化6Bの MoE に加え、N-gram埋め込み51Bを別枠で持つ構成が特徴。Gated DeltaNet（GDN）と Qwen Sparse Attention（QSA）を組み合わせたハイブリッド構造を採用し、次世代アーキテクチャ「Qwen4」の設計を先出しする位置づけとされる。README上のネイティブ文脈長は262,144トークン。Qwen チームは学習コストが Qwen3.7-Plus の約1/9で済んだとしつつコーディング・オフィス用途の性能は上回ると主張しているが、この数値は Qwen 自身の公表値であり独立検証は存在しない。</summary>
+  </entry>
+  <entry>
     <title>OpenAI が自社チップ Jalapeño の初期ベンチマークを公開 — 電力あたり1.5〜1.9倍、対話型では最大4.1倍、本格展開は2027年</title>
     <link rel="alternate" type="text/html" href="?a=openai-jalapeno-first-results-inferencex-2026"/>
     <id>tag:ai-tool-news.jp,2026:openai-jalapeno-first-results-inferencex-2026</id>
