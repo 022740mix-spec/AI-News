@@ -24,7 +24,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
 const asJson = process.argv.includes("--json");
 
-const today = new Date().toISOString().slice(0, 10);
+// 日付に依存する検査（月次見直しの超過、記事が止まっていないか）を
+// 実際に鳴らして確かめられるよう、基準日を差し替えられるようにする。
+// 検査を書いたが一度も鳴らしたことがない、という状態を作らないため。
+const today = /^\d{4}-\d{2}-\d{2}$/.test(process.env.MAINTENANCE_TODAY ?? "")
+  ? process.env.MAINTENANCE_TODAY
+  : new Date().toISOString().slice(0, 10);
 
 /** 子スクリプトを走らせ、終了コードと出力を取る */
 function run(script, args = []) {
@@ -162,6 +167,52 @@ let actionable = false;
           .slice(0, 20)
           .map((a) => `- \`${a.id}\` — ${ymd(a)} — ${a.title}`)
           .join("\n"),
+      });
+    }
+  }
+}
+
+// ── 4b. 記事が止まっていないか ──
+// Routine が 07:00 / 15:00 JST に走る前提で運用しているが、Routine 側の
+// 失敗はここからは見えない。実行ステータスが SUCCEEDED でも、記事が1本も
+// 出ていないことがある（「インフラ上の異常なく終了した」しか意味しないため）。
+//
+// 2026年9月3日、Routine はリポジトリへの書き込み権限が無く push だけが拒否
+// されたが、ステータスは緑のままで、4本の記事が失われた。ヒーローの鮮度検知
+// （項目4）は7日空くまで鳴らないため、その間ずっと気づけない。
+//
+// したがって「サイトに新しい記事が出ているか」を直接見る。
+// 原因は問わない。止まっていることだけを検知する。
+{
+  const mod = await import(pathToFileURL(join(rootDir, "src/data/articlesMeta.js")).href);
+  const meta = mod.ARTICLES_META || [];
+  const ymd = (a) =>
+    a?.newsDate && /^\d{4}-\d{2}-\d{2}$/.test(a.newsDate)
+      ? a.newsDate
+      : a?.date && /^\d{4}-\d{2}-\d{2}$/.test(a.date)
+        ? a.date
+        : "";
+  const newest = [...meta].map(ymd).filter(Boolean).sort().pop();
+
+  if (newest) {
+    const days = Math.floor(
+      (new Date(`${today}T00:00:00Z`) - new Date(`${newest}T00:00:00Z`)) / 86400000
+    );
+    // ニュースの少ない日は本数を減らしてよい運用のため、1日空くのは正常。
+    // 3日空いたら、少ない日が続いたのではなく仕組みが止まっている疑いが濃い。
+    if (days >= 3) {
+      actionable = true;
+      sections.push({
+        level: "warn",
+        title: `新しい記事が ${days} 日出ていない`,
+        note:
+          `最新記事は ${newest} です。記事作成 Routine（07:00 / 15:00 JST）が\n` +
+          "動いていない可能性があります。**実行ステータスが緑でも記事が出ていない\n" +
+          "ことがあります**（インフラ上の異常なく終了したことしか意味しないため）。\n\n" +
+          "確認する順に並べます。\n\n" +
+          "1. Routine にリポジトリが紐付いているか（紐付いていないと clone は通るが push だけ拒否される）\n" +
+          "2. Routine の実行記録に、記事を書いたのに push できなかった旨が残っていないか\n" +
+          "3. ニュースが本当に少なかっただけか（その場合は対応不要）",
       });
     }
   }
