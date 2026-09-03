@@ -18333,20 +18333,30 @@ const ARTICLES_BODY = {
   },
   "suno-download-limits-2026": {
     "body": [
-      "**確認できたこと、できなかったことを先に明記する。** 本記事は Suno 公式サイト(suno.com)およびヘルプセンター(help.suno.com)へ、実行環境のネットワーク制限により直接アクセスできなかった。以下は、Suno ユーザーコミュニティで知られる複数の独立した発信者(Kol Tregaskes 氏など)が、Suno からの通知やヘルプ記事の内容を直接引用する形で伝えている情報を、日本語・英語双方の複数アカウントの記述内容が一致していることを確認したうえでまとめたものである。**一次ソースでの直接確認ではない点に注意されたい。**",
-      "伝えられている内容によれば、Suno は2026年9月3日から、楽曲のダウンロードに上限を設ける。**無料プランは生涯7回まで、Proプランは月20回まで、Premierプランは月60回まで**で、Suno Studio 利用者のみ対象外とされる。上限は契約更新日にリセットされ、未使用分は繰り越されない。",
-      "重要な変更点として、**この制限は9月3日より前に生成した楽曲にも遡って適用される**とされる。また、商用利用の可否がダウンロードの実行有無に紐づけられ、**Suno から「承認済み」としてダウンロードした楽曲でなければ商用利用ができない**という説明がなされている。一方で、いったん承認済みダウンロードを得た楽曲の商用利用権は、その後にプランを解約・降格しても、ダウンロード上限を使い切っても、失われないとも伝えられている。楽曲の再生や共有そのものは制限を受けないという。",
-      "この変更は、2025年11月に Suno と Warner Music Group の間で成立した和解合意に含まれていたとされるダウンロード制限条項の履行という位置づけで語られている。あわせて、今後数週間以内に音声の透かし・フィンガープリンティング機能を導入する計画があるとも伝えられている。",
-      "Suno を巡っては、[ミュンヘン地裁が7月31日、ドイツの著作権管理団体 GEMA の楽曲学習について著作権侵害を認定し、責任はユーザーではなく事業者側にあると判断している](?a=munich-court-gema-suno-copyright-ruling-2026)。今回のダウンロード制限・商用利用条件の厳格化が、こうした著作権を巡る一連の対応の延長線上にあるのかどうかは、公式な説明を直接確認できていないため本記事では判断を保留する。"
+      "音楽生成AI **Suno** が、楽曲のダウンロードに上限を設けるポリシー変更を2026年8月10日に告知し、9月3日に発効した。**無料プランは生涯7回、Pro プランは月20回、Premier プランは月60回**で、Premier 契約者が Suno Studio から書き出す場合は上限の対象外とされる。上限を超える分は追加購入できる。",
+      "**この上限は9月3日より前に生成した楽曲にも適用される。** 制限がかかるのはダウンロードであって、再生や共有そのものではない。未使用分の繰り越しはない。",
+      "商用利用の条件も整理された。**有料プランでダウンロードした楽曲は商用・個人のいずれにも使える**一方、**無料プランの「トライアルダウンロード」は個人利用に限られる**。",
+      "Suno は変更の理由を、健全な音楽のエコシステムは人間の創作の上に成り立つという考えのもと、**悪意ある利用者が大量に楽曲を書き出すことを難しくするため**、およびプラットフォームを意図をもった制作に使ってもらうためだと説明している。",
+      "**この変更は、2025年11月に成立した Warner Music Group との和解合意で予告されていた内容の履行にあたる。** 当時の発表では、無料プランで作った楽曲はダウンロードできず再生と共有のみになること、有料プランには月次の上限を設けたうえで追加分を購入可能にすること、Premier 契約者は Suno Studio から上限なく書き出せることが示されていた。**実際に発効した内容は、無料プランに生涯7回のトライアル枠が残された点で、当時の予告よりもわずかに緩い。** ただし Suno 自身が公表した説明は大量書き出しの抑止を理由に挙げており、和解合意との関係を Suno がどう位置づけているかは、本記事では断定しない。",
+      "Suno を巡っては、[ミュンヘン地裁が7月31日、ドイツの著作権管理団体 GEMA の楽曲学習について著作権侵害を認定し、責任はユーザーではなく事業者側にあると判断している](?a=munich-court-gema-suno-copyright-ruling-2026)。",
+      "**本記事の確認状況について明記する。** 実行環境のネットワーク制限により `suno.com` および `help.suno.com` へ直接アクセスできていない。上記の数値・日付・理由は、Suno 公式の告知記事とヘルプ記事が実在することを検索インデックス上で確認したうえで、Variety・Music Business Worldwide を含む複数の独立した報道が同一の内容を伝えていることを突き合わせて記述した。**公式ページの本文を直接読んで確認したものではない。**"
     ],
     "primarySources": [
       {
-        "title": "Suno ヘルプセンター(本文参照。今回の調査では直接到達できず)",
-        "url": "https://help.suno.com/en/articles/download-limits"
+        "title": "An update to our downloads policy and Terms of Service（Suno 公式ブログ）",
+        "url": "https://suno.com/blog/suno-updates-tos"
       },
       {
-        "title": "Kol Tregaskes氏によるSuno通知内容の引用(X)",
-        "url": "https://x.com/koltregaskes/status/2086943048815239534"
+        "title": "Upcoming Changes FAQ: Downloads, Models, and Terms of Service（Suno ヘルプセンター）",
+        "url": "https://help.suno.com/en/articles/13614785"
+      },
+      {
+        "title": "Suno limits Pro subscribers to 20 song downloads per month（Music Business Worldwide）",
+        "url": "https://www.musicbusinessworldwide.com/suno-limits-subscribers-downloads-per-month/"
+      },
+      {
+        "title": "Warner Music Group strikes 'landmark' deal with Suno（Music Business Worldwide、2025年11月）",
+        "url": "https://www.musicbusinessworldwide.com/warner-music-group-settles-with-suno-strikes-first-of-its-kind-deal-with-ai-song-generator/"
       }
     ]
   }
