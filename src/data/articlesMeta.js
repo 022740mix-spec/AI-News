@@ -8492,5 +8492,20 @@ export const ARTICLES_META = [
       "モデル",
       "分析"
     ]
+  },
+  {
+    "id": "suno-download-limits-2026",
+    "type": "news",
+    "category": "media",
+    "title": "Suno が9月3日からダウンロード上限を導入 — 無料は生涯7回、Pro は月20回、Premier は月60回",
+    "excerpt": "音楽生成AI **Suno** が2026年8月10日に告知したダウンロードポリシーの変更が、9月3日に発効した。無料プランは生涯7回、Pro は月20回、Premier は月60回で、9月3日より前に生成した楽曲も対象になる。Suno は「大量に書き出す使われ方を難しくするため」と説明している。",
+    "date": "2026-09-03",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "音楽生成",
+      "料金"
+    ]
   }
 ];
