@@ -18433,6 +18433,35 @@ const ARTICLES_BODY = {
         "url": "https://www.cnn.com/2026/09/03/tech/nvidia-hugging-face-ai-acquisition"
       }
     ]
+  },
+  "anthropic-salesforce-claudeforce-2026": {
+    "body": [
+      "**Anthropic** と **Salesforce** が2026年8月26日、両社の統合を「**Claudeforce**」と名付けた戦略的提携として発表した。双方向の統合になっている点が特徴で、**Claude が Salesforce に入り、Salesforce が Claude に入る**という構成である。",
+      "## Salesforce の中に Claude が入る",
+      "Salesforce 側では、**Claude が既定の推論モデル**として組み込まれる。対象は **Atlas Reasoning Engine・Agentforce Vibes・Agentforce Coworker** で、いずれも Claude が既定エンジンとして動く。**Agent Builder では選択可能なモデルの一つ**として提供され、**Slack でも既定モデルが Claude** になる。",
+      "## Claude の中に Salesforce が入る",
+      "逆方向の統合が「**Salesforce in Claude**」プラグインである。**37種の営業スキルをあらかじめ内蔵**しており、商談準備（meeting prep）、案件の健全性レビュー（deal health review）、パイプラインレビューなどを、**Claude 上でライブの売上データを参照しながら実行**できる。ガバナンスの効いたアクション実行（governed action）を Claude 側から直接行える設計になっている。",
+      "## 提供時期",
+      "「Salesforce in Claude」は、**発表時点で一部のパイロット顧客向けに提供開始済み**。両社は**2026年9月にオープンベータを開始する計画**を示している。",
+      "**注記**: 本記事作成時点で、Salesforce公式プレスリリース（salesforce.com / investor.salesforce.com）へは本稿の調査環境のネットワークポリシー上到達できなかった。ただし、両サイトの見出し・要旨は検索インデックス経由で確認でき、CIO.com・Digital Commerce 360 等の独立した複数の業界メディアが同一の内容（プラグイン名、スキル数、対象製品、提供時期）を報じている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Salesforce and Anthropic Announce Claudeforce: The #1 AI Meets the #1 AI CRM",
+        "site": "Salesforce Newsroom",
+        "url": "https://www.salesforce.com/news/press-releases/2026/08/26/salesforce-and-anthropic-announce-claudeforce/"
+      },
+      {
+        "title": "Salesforce and Anthropic Announce Claudeforce",
+        "site": "Salesforce Investor Relations",
+        "url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-and-Anthropic-Announce-Claudeforce-The-1-AI-Meets-the-1-AI-CRM/default.aspx"
+      },
+      {
+        "title": "Salesforce, Anthropic partner to deliver Claudeforce",
+        "site": "CIO.com",
+        "url": "https://www.cio.com/article/4214458/salesforce-anthropic-partner-to-deliver-claudeforce.html"
+      }
+    ]
   }
 };
 

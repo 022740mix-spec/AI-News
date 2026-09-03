@@ -8565,5 +8565,23 @@ export const ARTICLES_META = [
       "オープンソース",
       "半導体"
     ]
+  },
+  {
+    "id": "anthropic-salesforce-claudeforce-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic と Salesforce が「Claudeforce」提携を発表 — Claude が Agentforce の既定エンジンに、Salesforce は37スキルの Claude 用プラグインとして参入",
+    "excerpt": "Anthropic と Salesforce が2026年8月26日、**「Claudeforce」提携**を発表した。**Claude が Atlas Reasoning Engine・Agentforce Vibes・Agentforce Coworker の既定の推論モデルとなり、Slack でも既定モデルに**なる。逆方向では、**「Salesforce in Claude」プラグインが37種の営業スキルを内蔵**し、商談準備・パイプラインレビュー等を Claude 上から直接行えるようにする。パイロット顧客向けには提供開始済みで、**オープンベータは2026年9月開始予定**。",
+    "date": "2026-09-04",
+    "newsDate": "2026-08-26",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Salesforce",
+      "エンタープライズ",
+      "エージェント"
+    ]
   }
 ];
