@@ -48,6 +48,14 @@
     <summary>全米最大の学校区であるニューヨーク市の公立学校が2026年9月2日、幼稚園（Pre-K/2-K）〜8年生を対象に、生成AIを1年間モラトリアムする方針を発表した。対象は全生徒の約3分の2にあたる約60万人。ChatGPT・Claude 等の主要サービスやコンパニオン型チャットボットを全学年でブロックするほか、安全基準を満たさない既存38以上のプログラムのAI機能を無効化する。高校生には限定的なAI活用と「AIクリティカルシンキング」授業を維持する。</summary>
   </entry>
   <entry>
+    <title>【解説】Work IQ は「AI 検索の言い換え」なのか — Microsoft が M365 Copilot の下に敷いた記憶と推論の層</title>
+    <link rel="alternate" type="text/html" href="?a=microsoft-work-iq-explainer-2026"/>
+    <id>tag:ai-tool-news.jp,2026:microsoft-work-iq-explainer-2026</id>
+    <published>2026-09-04T15:00:00Z</published>
+    <updated>2026-09-04T15:00:00Z</updated>
+    <summary>Microsoft が Microsoft 365 Copilot の知能層と位置づける Work IQ が2026年6月16日に GA した。「結局は社内検索の名前替えでは」という受け止めがあるが、Microsoft 自身は権限も露出するデータも変えていないと明言している。では何が新しいのか。データ・記憶・推論の3層、4つの API 領域、そして課金がどこで切り替わるかを整理する。</summary>
+  </entry>
+  <entry>
     <title>「どんなAIエージェントも科学者にする」スキル集が週間GitHubトレンド1位に — 163種のスキルで100超の科学データベースへ接続</title>
     <link rel="alternate" type="text/html" href="?a=k-dense-scientific-agent-skills-2026"/>
     <id>tag:ai-tool-news.jp,2026:k-dense-scientific-agent-skills-2026</id>

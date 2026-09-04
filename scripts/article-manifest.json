@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-09-03",
-  "count": 387,
+  "generatedAt": "2026-09-04",
+  "count": 388,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -254,6 +254,7 @@
     "microsoft-project-perception-ai-security-model-router-2026",
     "microsoft-scout-openclaw-build-2026-2026",
     "microsoft-skill-recorder-oss-windows-2026",
+    "microsoft-work-iq-explainer-2026",
     "midjourney-v8-api-launch-2026",
     "midjourney-v8-review",
     "minimax-m27-2026",

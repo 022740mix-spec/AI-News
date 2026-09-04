@@ -18536,6 +18536,93 @@ const ARTICLES_BODY = {
         "url": "https://www.chalkbeat.org/newyork/2026/09/02/what-to-know-about-nyc-public-schools-generative-ai-ban-screen-time-limits/"
       }
     ]
+  },
+  "microsoft-work-iq-explainer-2026": {
+    "body": [
+      "**Work IQ** は、Microsoft が **Microsoft 365 Copilot** の「知能層」と位置づけているものである。API と従量課金が **2026年6月16日に一般提供（GA）** に入った。",
+      "この名前が出たとき、開発者側の受け止めは割れた。**「社内検索（セマンティックインデックス）の言い換えではないか」**というものである。実際、Microsoft 自身の記述を読むと、この見方は**半分は当たっている**。そして半分は外れている。どこが線引きなのかを、公式の説明に沿って整理する。",
+      "Microsoft は Work IQ を **3つの層**として説明している。**データ**（ファイル・メール・会議・チャット・業務システムのシグナルを統合する）、**記憶**（人やチームがどう働くかの持続的な理解を作る）、**推論**（モデル・スキル・ツールを組み合わせて考え、実行する）の3つである。",
+      "**Microsoft Graph との関係**も明示されている。Work IQ は Graph の上に載る層で、**Graph が「どんな情報が存在するか」という一般的な問いに答えるのに対し、Work IQ はその情報が何を意味するかを解釈し、応答に織り込む**、という分担である。",
+      "**「言い換えでは」という疑問に対する、最も直接的な答えは Microsoft 自身の言葉にある。** 社内展開を書いた記事で、Microsoft は Work IQ について **「権限を変えたわけでも、新しいデータを露出させたわけでもない。既にある関係性を見えるようにした」** と述べている。",
+      "つまり**データへの到達路そのものは、以前からセマンティックインデックスや Graph の側にあった**。Work IQ が足したのは、その上に載る**記憶の層と、それによって可能になる推論**である。「まったく新しいデータ基盤ができた」でもなければ、「ただの名前替え」でもない。**足されたのは、取り出したものをどう解釈するかの部分**だと読むのが、公式の記述に最も忠実である。",
+      "Microsoft はもう一つ、**構造化データと非構造化データをまたいで同時に推論する**ことを差別化点として挙げている。権威ある構造化データと、非構造化データにある**意図・ニュアンス・文脈**を結び合わせる、という説明である。参照するシグナルとして挙がっているのは、SharePoint のサイトと共同作業のパターン、OneDrive の個人の作業、Teams のチャット・チャネル・会議の書き起こし、Outlook のメールとスレッド、そして優先度や関連性を示すカレンダーのシグナルである。",
+      "開発者から見た実体は、**4つの API 領域**である。",
+      "接続手段としては **REST API** と **Model Context Protocol（MCP）** が用意されている。MCP 側は「段階的開示（progressive disclosure）」という方式を採り、**操作を10個の汎用ツールに畳んで**エージェントから扱いやすくしている。**MCP サーバがあるということは、Claude Code をはじめとする他社のエージェントからも M365 のデータに接地できる**ということでもある。ここは開発者にとって実務上の意味が大きい。",
+      "性能については、Microsoft は Work IQ の API が**従来の API に比べて実行時間あたり2倍速く、コーディングハーネスにおいてトークンを80%少なく使う**と主張している。合成済みの回答ではなく、エージェントが扱いやすい形に整えた文脈を返すことによる、という位置づけである。**これは Microsoft 自身が公表した数値であり、独立した第三者による検証は本記事の調査時点では確認できていない。**",
+      "**採用を検討する側にとって、最も影響が大きいのは課金の切り替わり方である。**",
+      "Work IQ には**専用のサブスクリプションも SKU もユーザー単位のライセンスも存在しない**。課金は **Copilot Credits** による従量制で、**Tools API のアクションとツール呼び出しは1 API 呼び出しあたり 0.1 Copilot Credits の固定**、接地・取得・推論にあたる部分は**クエリ的な変動課金**になる。Microsoft はライト・ミディアム・ヘビーの想定シナリオを例示しているが、**価格はシナリオの複雑さによって変動する**としており、確定値は Copilot Credit のガイドを参照するよう案内している。",
+      "**この構造が意味するのは、「Copilot を使う」と「Copilot のデータに他から接地する」で線が引かれている**ということである。既製のエージェントを使う限りは既存のライセンスの内側だが、自前のエージェントを Copilot Studio や Foundry、あるいは他社の AI プラットフォームで作って M365 データに接地させた瞬間に、従量課金の側へ移る。**エージェントを内製する組織ほど、この線を越える**ことになる。",
+      "**確認できたことと、できなかったことを明記する。** 本記事は Microsoft の公式ページのうち、Work IQ API の発表記事、ライセンス情報のページ、社内導入を書いた Inside Track の記事の**3本を直接読んで執筆した**。一方で、**技術リファレンスにあたる Microsoft Learn のページと、Microsoft Community Hub の解説記事には、実行環境のネットワーク制限により到達できていない**。CLI の詳細な仕様、Copilot Studio でのプレビュー提供の条件、セマンティックインデックスの側の最新の記述については、直接確認できていない。",
+      "また、**管理者による従量課金の有効化が前提になる**という記述は複数の二次情報が一致して伝えているが、直接読めた3本の公式ページの範囲では明示を確認できなかった。導入前には管理センター側の設定要件を公式ドキュメントで確認されたい。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 8,
+        "caption": "Work IQ の4つの API 領域（Microsoft 365 ブログの記述による）",
+        "headers": [
+          "領域",
+          "役割"
+        ],
+        "rows": [
+          [
+            "Chat",
+            "Microsoft 365 Copilot の能力にプログラムから接続する。引用とエージェントへの接続を含む"
+          ],
+          [
+            "Context",
+            "合成した回答ではなく、エージェントが扱いやすい形に整えた文脈と元データを返す"
+          ],
+          [
+            "Tools",
+            "メール送信や会議設定など、単純な動詞の集合で M365 のエンティティと操作にアクセスする"
+          ],
+          [
+            "Workspaces",
+            "エージェントが実行中に持つ中間状態とデータを、Microsoft 365 テナントの境界内に保管する"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 11,
+        "caption": "課金がどこで切り替わるか（Microsoft のライセンス情報ページによる）",
+        "headers": [
+          "使い方",
+          "課金"
+        ],
+        "rows": [
+          [
+            "Microsoft 365 Copilot の既製エージェントを使う",
+            "ライセンスの範囲内。Copilot Credits は不要"
+          ],
+          [
+            "自前のエージェントやアプリから Work IQ API を呼ぶ",
+            "Copilot Credits による従量課金"
+          ],
+          [
+            "他社のエージェントから M365 データに接地する",
+            "Copilot Credits による従量課金"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Announcing the new Work IQ APIs（Microsoft 365 ブログ、2026年6月2日）",
+        "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/02/announcing-the-new-work-iq-apis/"
+      },
+      {
+        "title": "Work IQ general availability（Microsoft ライセンス情報）",
+        "url": "https://www.microsoft.com/en-us/licensing/news/work-iq-general-availability"
+      },
+      {
+        "title": "Intelligence on tap: How Work IQ enables AI and agents at Microsoft（Microsoft Inside Track）",
+        "url": "https://www.microsoft.com/insidetrack/blog/intelligence-on-tap-how-work-iq-enables-ai-and-agents-at-microsoft/"
+      },
+      {
+        "title": "Work IQ overview（Microsoft Learn。本記事では直接到達できていない）",
+        "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/"
+      }
+    ]
   }
 };
 

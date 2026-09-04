@@ -8636,5 +8636,24 @@ export const ARTICLES_META = [
       "米国",
       "倫理"
     ]
+  },
+  {
+    "id": "microsoft-work-iq-explainer-2026",
+    "type": "feature",
+    "category": "data",
+    "title": "【解説】Work IQ は「AI 検索の言い換え」なのか — Microsoft が M365 Copilot の下に敷いた記憶と推論の層",
+    "excerpt": "Microsoft が **Microsoft 365 Copilot** の知能層と位置づける **Work IQ** が2026年6月16日に GA した。「結局は社内検索の名前替えでは」という受け止めがあるが、Microsoft 自身は**権限も露出するデータも変えていない**と明言している。では何が新しいのか。データ・記憶・推論の3層、4つの API 領域、そして**課金がどこで切り替わるか**を整理する。",
+    "date": "2026-09-04",
+    "newsDate": "2026-06-16",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Microsoft",
+      "Microsoft 365",
+      "AI検索",
+      "MCP",
+      "エンタープライズ",
+      "料金"
+    ]
   }
 ];
