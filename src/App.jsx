@@ -38,26 +38,28 @@ import {
 import { syncDocumentSeo } from "./utils/seo.js";
 import { syncAppUrl, readInitialRouteState } from "./utils/routing.js";
 import { parseDate, compareArticleOrder, pickRelatedArticles } from "./utils/dateUtils.js";
+import { retryChunk, clearChunkReloadFlag, stripReloadParam } from "./utils/lazyChunk.js";
+import ChunkErrorBoundary from "./components/ChunkErrorBoundary.jsx";
 
 import { Header, HamburgerMenu } from "./components/Header.jsx";
 import { StorageLocalNotice, EditorialStatement, SiteFooter, ScrollTopFab, SiteSectionNav } from "./components/Footer.jsx";
 import HomePage from "./components/HomePage.jsx";
 import { TypeFilterBar, FilterBar, Pagination, HeroToday, ArticleCard } from "./components/ArticleList.jsx";
-const ArticleDetail = lazy(() => import("./components/ArticleDetail.jsx"));
+const ArticleDetail = lazy(retryChunk(() => import("./components/ArticleDetail.jsx")));
 import { Sidebar, WeekRoundupNav } from "./components/Sidebars.jsx";
 import { GuideSidebar, ToolSidebar, CompaniesSidebar } from "./components/Sidebars.jsx";
-const GuideTabBar = lazy(() => import("./components/Guide.jsx").then(m => ({ default: m.GuideTabBar })));
-const GuideSetupPanel = lazy(() => import("./components/Guide.jsx").then(m => ({ default: m.GuideSetupPanel })));
-const GuideRulesPanel = lazy(() => import("./components/Guide.jsx").then(m => ({ default: m.GuideRulesPanel })));
-const GuidePracticalPanel = lazy(() => import("./components/Guide.jsx").then(m => ({ default: m.GuidePracticalPanel })));
-const MediaToolsGuidePanel = lazy(() => import("./components/Guide.jsx").then(m => ({ default: m.MediaToolsGuidePanel })));
-const GlossaryGuidePanel = lazy(() => import("./components/Guide.jsx").then(m => ({ default: m.GlossaryGuidePanel })));
-const ReviewTabBar = lazy(() => import("./components/Reviews.jsx").then(m => ({ default: m.ReviewTabBar })));
-const ModelComparisonSection = lazy(() => import("./components/Reviews.jsx").then(m => ({ default: m.ModelComparisonSection })));
-const ReviewComparisonTable = lazy(() => import("./components/Reviews.jsx").then(m => ({ default: m.ReviewComparisonTable })));
-const CompanyCard = lazy(() => import("./components/Reviews.jsx").then(m => ({ default: m.CompanyCard })));
-const ToolTabBar = lazy(() => import("./components/Tools.jsx").then(m => ({ default: m.ToolTabBar })));
-const ToolReferencePanel = lazy(() => import("./components/Tools.jsx").then(m => ({ default: m.ToolReferencePanel })));
+const GuideTabBar = lazy(retryChunk(() => import("./components/Guide.jsx").then(m => ({ default: m.GuideTabBar }))));
+const GuideSetupPanel = lazy(retryChunk(() => import("./components/Guide.jsx").then(m => ({ default: m.GuideSetupPanel }))));
+const GuideRulesPanel = lazy(retryChunk(() => import("./components/Guide.jsx").then(m => ({ default: m.GuideRulesPanel }))));
+const GuidePracticalPanel = lazy(retryChunk(() => import("./components/Guide.jsx").then(m => ({ default: m.GuidePracticalPanel }))));
+const MediaToolsGuidePanel = lazy(retryChunk(() => import("./components/Guide.jsx").then(m => ({ default: m.MediaToolsGuidePanel }))));
+const GlossaryGuidePanel = lazy(retryChunk(() => import("./components/Guide.jsx").then(m => ({ default: m.GlossaryGuidePanel }))));
+const ReviewTabBar = lazy(retryChunk(() => import("./components/Reviews.jsx").then(m => ({ default: m.ReviewTabBar }))));
+const ModelComparisonSection = lazy(retryChunk(() => import("./components/Reviews.jsx").then(m => ({ default: m.ModelComparisonSection }))));
+const ReviewComparisonTable = lazy(retryChunk(() => import("./components/Reviews.jsx").then(m => ({ default: m.ReviewComparisonTable }))));
+const CompanyCard = lazy(retryChunk(() => import("./components/Reviews.jsx").then(m => ({ default: m.CompanyCard }))));
+const ToolTabBar = lazy(retryChunk(() => import("./components/Tools.jsx").then(m => ({ default: m.ToolTabBar }))));
+const ToolReferencePanel = lazy(retryChunk(() => import("./components/Tools.jsx").then(m => ({ default: m.ToolReferencePanel }))));
 import { SeasonalScene, SeasonalEffect } from "./components/Seasonal.jsx";
 
 export default function App() {
@@ -98,6 +100,14 @@ export default function App() {
       localStorage.setItem(STORAGE_LANG, next);
       return next;
     });
+  }, []);
+
+  // 立ち上がりに成功した時点で、チャンク読み直しの印を消す。
+  // 消さないと、次にデプロイがあったときに1回目のやり直しが使えなくなる。
+  // 併せて、やり直しに使った使い捨てクエリを URL から取り除く。
+  useEffect(() => {
+    clearChunkReloadFlag();
+    stripReloadParam();
   }, []);
 
   useEffect(() => {
@@ -447,17 +457,17 @@ export default function App() {
                   <FilterBar active={filter} setActive={setFilter} />
                   </>
                 ) : siteSection === "reviews" ? (
-                  <Suspense fallback={null}>
+                  <ChunkErrorBoundary><Suspense fallback={null}>
                   <ReviewTabBar reviewTab={reviewTab} onSelect={setReviewTab} />
-                  </Suspense>
+                  </Suspense></ChunkErrorBoundary>
                 ) : siteSection === "guide" ? (
-                  <Suspense fallback={null}>
+                  <ChunkErrorBoundary><Suspense fallback={null}>
                   <GuideTabBar guideTab={guideTab} onSelect={selectGuideTab} />
-                  </Suspense>
+                  </Suspense></ChunkErrorBoundary>
                 ) : siteSection === "tools" ? (
-                  <Suspense fallback={null}>
+                  <ChunkErrorBoundary><Suspense fallback={null}>
                   <ToolTabBar toolTab={toolTab} onSelect={selectToolTab} />
-                  </Suspense>
+                  </Suspense></ChunkErrorBoundary>
                 ) : null}
               </>
             ) : null}
@@ -495,7 +505,7 @@ export default function App() {
               query={query}
               setQuery={setQuery}
             />
-          <Suspense fallback={<div className="loading">読み込み中...</div>}>
+          <ChunkErrorBoundary><Suspense fallback={<div className="loading">読み込み中...</div>}>
           <ArticleDetail
             article={selected}
             onBack={() => {
@@ -506,7 +516,7 @@ export default function App() {
             relatedArticles={pickRelatedArticles(selected, ARTICLES_META, 3)}
             onOpenRelated={handleSelect}
           />
-          </Suspense>
+          </Suspense></ChunkErrorBoundary>
           </>
         ) : siteSection === "home" ? (
           <HomePage
@@ -522,7 +532,7 @@ export default function App() {
               {siteSection === "articles" || siteSection === "reviews" ? (
                 <>
                   {siteSection === "reviews" && !query ? (
-                    <Suspense fallback={<div className="loading">読み込み中...</div>}>
+                    <ChunkErrorBoundary><Suspense fallback={<div className="loading">読み込み中...</div>}>
                     <div className="review-comparisons">
                       {reviewTab === "models" ? (
                         <ModelComparisonSection />
@@ -549,7 +559,7 @@ export default function App() {
                           />
                         ))}
                     </div>
-                    </Suspense>
+                    </Suspense></ChunkErrorBoundary>
                   ) : null}
 
                   {featured && siteSection === "articles" ? (
@@ -628,12 +638,12 @@ export default function App() {
                   />
                 </>
               ) : siteSection === "tools" ? (
-                <Suspense fallback={<div className="loading">読み込み中...</div>}>
+                <ChunkErrorBoundary><Suspense fallback={<div className="loading">読み込み中...</div>}>
                   <ToolReferencePanel
                     referenceData={toolRef.ref}
                     practical={toolRef.practical}
                   />
-                </Suspense>
+                </Suspense></ChunkErrorBoundary>
               ) : siteSection === "companies" ? (
                 <>
                   <div className="section-feed companies-page-intro">
@@ -643,7 +653,7 @@ export default function App() {
                     </p>
                     <p className="companies-disclaimer">{COMPANIES_DISCLAIMER}</p>
                   </div>
-                  <Suspense fallback={<div className="loading">読み込み中...</div>}>
+                  <ChunkErrorBoundary><Suspense fallback={<div className="loading">読み込み中...</div>}>
                   {filteredCompanies.length > 0 ? (
                     <div className="companies-stack">
                       {filteredCompanies.map((c) => (
@@ -653,7 +663,7 @@ export default function App() {
                   ) : (
                     <div className="empty-state">{lang === "en" ? "No matching companies" : "該当する企業がありません"}</div>
                   )}
-                  </Suspense>
+                  </Suspense></ChunkErrorBoundary>
                 </>
               ) : (
                 <div
@@ -661,7 +671,7 @@ export default function App() {
                   role="tabpanel"
                   aria-labelledby={`guide-subtab-${guideTab}`}
                 >
-                  <Suspense fallback={<div className="loading">読み込み中...</div>}>
+                  <ChunkErrorBoundary><Suspense fallback={<div className="loading">読み込み中...</div>}>
                   {guideTab === "setup" ? (
                     <GuideSetupPanel />
                   ) : guideTab === "rules" ? (
@@ -677,7 +687,7 @@ export default function App() {
                       glossaryGenres={glossaryGuide.glossary}
                     />
                   )}
-                  </Suspense>
+                  </Suspense></ChunkErrorBoundary>
                 </div>
               )}
             </div>

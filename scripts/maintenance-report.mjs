@@ -218,6 +218,94 @@ let actionable = false;
   }
 }
 
+// ── 4c. Routine の作業ブランチの棚卸し ──
+// Routine は1日2回走り、一次ソースに到達できなかった記事をブランチに退避する。
+// 退避は正しい判断だが、ブランチは誰も消さない。放置すると月60本の
+// ペースで増え、開いた PR が並び続けることで通知そのものが無視される。
+//
+// 導入から2日で3本あり、そのうち2本は記事が既に main に入っている
+// 「残骸」だった。溜まる原因の大半は未決着の下書きではなく、こちらである。
+//
+// 判定は日付ではなく「ブランチ上の記事 id が全部 main にあるか」で行う。
+// squash merge では元コミットが main の履歴に残らないため。
+{
+  const r = run("check-stale-branches.mjs", ["--json"]);
+  if (r.code !== 0) {
+    actionable = true;
+    sections.push({
+      level: "error",
+      title: "ブランチ棚卸しがエラーで落ちている",
+      note: "落ちたまま放置すると、作業ブランチが際限なく溜まります。",
+      body: r.out.trim().slice(0, 3000),
+    });
+  } else {
+    let data = null;
+    try {
+      data = JSON.parse(r.out);
+    } catch {
+      // 出力が壊れている場合は上の code チェックと同様に扱う
+      actionable = true;
+      sections.push({
+        level: "error",
+        title: "ブランチ棚卸しの出力を読めない",
+        body: r.out.trim().slice(0, 2000),
+      });
+    }
+
+    if (data) {
+      // 残骸は削除するだけなので、それ単体では Issue を立てない。
+      // ワークフロー側が自動削除し、他の理由で Issue が立つときだけ添える。
+      if (data.merged.length) {
+        sections.push({
+          passive: true,
+          level: "info",
+          title: `マージ済みの作業ブランチ（${data.merged.length} 本）`,
+          note: "記事はすべて main にあります。ワークフローが自動削除します。",
+          body: data.merged.map((m) => `- \`${m.branch}\`（最終 ${m.last}）`).join("\n"),
+        });
+      }
+
+      // 未決着は「期限で削除」ではなく「期限で決着させる」。
+      // 保留理由の大半は実行環境の egress であって記事の欠陥ではなく、
+      // 日によって到達可否が変わる。時間で消すと、検証できるように
+      // なった瞬間に捨てることになる。
+      const recheck = data.needsRecheck ?? [];
+      const decide = data.needsDecision ?? [];
+
+      if (decide.length) {
+        actionable = true;
+        sections.push({
+          level: "warn",
+          title: `保留中の下書きが決着していない（${decide.length} 本）`,
+          note:
+            `${data.decideDays} 日を超えました。公開するか、クローズするかを決めてください。\n` +
+            "**クローズする場合は理由を1行残してください。** 記録が無いと、同じネタを\n" +
+            "来週また調査して、また保留にする、を繰り返します。\n\n" +
+            "多くはクローズになるはずで、それで構いません。価値は「出さなかったこと」にあります。",
+          body: decide
+            .map((p) => `- \`${p.branch}\`（${p.days}日経過）\n${p.articles.map((a) => `  - ${a}`).join("\n")}`)
+            .join("\n"),
+        });
+      }
+
+      if (recheck.length) {
+        sections.push({
+          passive: true,
+          level: "info",
+          title: `保留中の下書きの再検証時期（${recheck.length} 本）`,
+          note:
+            `${data.recheckDays} 日が経過しました。保留理由の大半は実行環境の egress であり、\n` +
+            "**記事の欠陥ではありません。** 到達可否は日によって変わるため、裏取りを\n" +
+            "やり直すと公開できる場合があります。記事作成 Routine が次回に見直します。",
+          body: recheck
+            .map((p) => `- \`${p.branch}\`（${p.days}日経過）\n${p.articles.map((a) => `  - ${a}`).join("\n")}`)
+            .join("\n"),
+        });
+      }
+    }
+  }
+}
+
 // ── 5. ガイドの陳腐化 ──
 // ガイドは古びても古く見えない。ニュースには日付が付き、レビューには
 // 「最終確認日」があるが、ガイドの「Gemini 2.5 Pro の200万トークン」は

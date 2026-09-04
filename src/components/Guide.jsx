@@ -181,8 +181,11 @@ function GuideSetupPanel() {
         <p className="guide-section__lead">
           {richInlineLine(VIBE_TOOL_COMBO_TABLE.lead, mkKey)}
         </p>
-        <div className="table-scroll">
-          <table className="article-table">
+        {/* メディア生成タブの表と同じ枠を使う。`.table-scroll` は CSS に存在せず、
+            overflow-x が効かないまま min-width 36rem の表が置かれていたため、
+            ページ全体が横に広がってモバイルで縮小表示になっていた。 */}
+        <div className="vibe-tool-table-wrap">
+          <table className="vibe-tool-table vibe-tool-table--dense">
             <thead>
               <tr>
                 {VIBE_TOOL_COMBO_TABLE.columns.map((c) => (

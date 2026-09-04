@@ -21,6 +21,12 @@ jobs:
       - name: 校閲チェック
         run: node scripts/review-check.mjs
 
+      # 存在しない CSS クラスで幅広の表を包み、overflow-x が効かないまま
+      # ページ全体が横に 435px はみ出して、モバイルで縮小表示になっていた。
+      # ビルドは通り、既存のどの検査にも掛からず、読者の目視で見つかった。
+      - name: className に CSS 定義があるか
+        run: node scripts/check-css-classes.mjs
+
       - name: 記事の消失チェック
         run: node scripts/check-article-manifest.mjs
 

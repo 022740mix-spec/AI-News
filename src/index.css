@@ -1230,6 +1230,42 @@ body {
   font-size: var(--text-sm);
 }
 
+/* ── 遅延読み込みに失敗したときの表示 ── */
+/* 白紙にしないための最後の受け皿。目立たせすぎず、やることを1つだけ示す */
+.chunk-error {
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-solid);
+  color: var(--text);
+}
+
+.chunk-error__title {
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+}
+
+.chunk-error__body {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+.chunk-error__button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--card-solid);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.chunk-error__button:hover {
+  border-color: var(--accent);
+}
+
 /* ── 世界地図マッピング ── */
 .company-map-wrap {
   margin-bottom: 1.5rem;
