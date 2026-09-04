@@ -67,6 +67,24 @@ const hasEntry = (tag) => {
   return headLower.some((w) => w.includes(t));
 };
 
+/**
+ * **見出しに無くても、既存の定義文の中で説明されていることがある。**
+ *
+ * 例として「コンテキストウィンドウ」は、見出し「コンテキスト」の定義に
+ * 「上限（コンテキストウィンドウ）」と書かれている。新規に足すのではなく
+ * **見出しに昇格させるか、既存の見出しを言い換える**のが正しい対応になる。
+ *
+ * 見出しだけを見ていると、この2つを同じ「無い」として扱ってしまう。
+ */
+const definitions = [];
+for (const block of guide.GLOSSARY_BY_GENRE ?? []) {
+  for (const t of block.terms ?? []) {
+    if (t?.mean) definitions.push({ word: String(t.word), mean: String(t.mean) });
+  }
+}
+const explainedIn = (tag) =>
+  definitions.filter((d) => d.mean.includes(tag)).map((d) => d.word);
+
 /** 固有名詞（企業名・製品名・モデル名）は用語集の対象ではない */
 const properNouns = new Set();
 for (const c of companies.AI_COMPANIES ?? []) {
@@ -117,7 +135,7 @@ const missing = [...uses]
   .filter(([tag, n]) =>
     n >= minUses && !META_TAGS.has(tag) && !allowed.has(tag) && !isProperNoun(tag) && !hasEntry(tag)
   )
-  .map(([tag, n]) => ({ tag, uses: n }))
+  .map(([tag, n]) => ({ tag, uses: n, explainedIn: explainedIn(tag) }))
   .sort((a, b) => b.uses - a.uses);
 
 // 使われていない見出し語: 統廃合の検討材料（CLAUDE.md の四半期見直し）
@@ -150,7 +168,10 @@ if (missing.length) {
   console.log(`📝 記事で ${minUses} 回以上使われているのに、用語集に見出しが無い語: ${missing.length} 件`);
   console.log("");
   for (const m of missing.slice(0, 25)) {
-    console.log(`   ${String(m.uses).padStart(3)} 記事  ${m.tag}`);
+    const note = m.explainedIn.length
+      ? `  ← 「${m.explainedIn[0]}」の定義文で触れている（見出しへの昇格を検討）`
+      : "";
+    console.log(`   ${String(m.uses).padStart(3)} 記事  ${m.tag}${note}`);
   }
   if (missing.length > 25) console.log(`   … 他 ${missing.length - 25} 件`);
   console.log("");
