@@ -35,12 +35,53 @@ jobs:
           cache: npm
       - run: npm ci
 
-      - name: 点検レポートを作る
+      # 通知の周期を分ける。検知を足すほど1つの Issue に性質の違うものが
+      # 混ざり、急ぎのものが埋もれる。実際、日次の報告にガイドの指摘28件が
+      # 並んでいた。**検知を増やすことより、周期を分けるほうが効く。**
+      - name: 周期を決める
+        id: scope
+        run: |
+          DOW=$(TZ=Asia/Tokyo date +%u)   # 1=月
+          DOM=$(TZ=Asia/Tokyo date +%d)
+          echo "daily=true" >> "$GITHUB_OUTPUT"
+          [ "$DOW" = "1" ] && echo "weekly=true" >> "$GITHUB_OUTPUT" || echo "weekly=false" >> "$GITHUB_OUTPUT"
+          [ "$DOM" = "01" ] && echo "monthly=true" >> "$GITHUB_OUTPUT" || echo "monthly=false" >> "$GITHUB_OUTPUT"
+
+      - name: 点検レポートを作る（日次）
         id: report
         run: |
-          node scripts/maintenance-report.mjs > /tmp/report.md
+          node scripts/maintenance-report.mjs --scope=daily > /tmp/report.md
           echo "--- レポート内容 ---"
           cat /tmp/report.md
+
+      - name: 点検レポートを作る（週次・月曜）
+        id: report_weekly
+        if: steps.scope.outputs.weekly == 'true'
+        run: |
+          node scripts/maintenance-report.mjs --scope=weekly > /tmp/report-weekly.md
+          cat /tmp/report-weekly.md
+
+      - name: 点検レポートを作る（月次・1日）
+        id: report_monthly
+        if: steps.scope.outputs.monthly == 'true'
+        run: |
+          node scripts/maintenance-report.mjs --scope=monthly > /tmp/report-monthly.md
+          cat /tmp/report-monthly.md
+
+      # 点検が動いた証跡を残す。ワークフローは自分が動かなかったことを
+      # 検知できないため、**別のスケジューラ（Claude Routine）がこれを見る。**
+      # 日付だけなので、1日2回走ってもコミットは1日1回に収まる。
+      - name: 心拍を更新する
+        run: |
+          node scripts/check-maintenance-heartbeat.mjs --write \
+            --run-url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          if ! git diff --quiet scripts/maintenance-heartbeat.json 2>/dev/null; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add scripts/maintenance-heartbeat.json
+            git commit -m "chore: 点検の心拍を更新"
+            git push origin HEAD:main || echo "心拍の push に失敗しました（次回に持ち越します）"
+          fi
 
       # Routine は1日2回走り、一次ソースに到達できなかった記事をブランチに
       # 退避する。退避は正しい判断だが、ブランチは誰も消さない。放置すると
@@ -80,41 +121,49 @@ jobs:
       # 「異常なし」を毎日 Issue に出すと通知が無視されるようになるため、
       # 報告すべきことがある場合だけ Issue を立てる。
       # 同じ内容の Issue が積み上がらないよう、開いている当日分があれば更新する。
+      # 周期ごとに別の Issue にする。同じ Issue に混ぜると、月次の棚卸しが
+      # 日次の指摘に埋もれる。**分けた意味が無くなる。**
+      # 同じ周期の当日ぶんが既に開いていれば更新する（重複を積み上げない）。
       - name: 必要なときだけ Issue を立てる
-        if: steps.report.outputs.actionable == 'true'
+        if: always()
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require("fs");
-            const body = fs.readFileSync("/tmp/report.md", "utf-8");
-            const title = `定期点検: 対応が必要な項目があります（${new Date().toISOString().slice(0,10)}）`;
+            const today = new Intl.DateTimeFormat("en-CA", {
+              timeZone: "Asia/Tokyo", year: "numeric", month: "2-digit", day: "2-digit",
+            }).format(new Date());
+
+            const jobs = [
+              { file: "/tmp/report.md",         label: "日次", ok: "${{ steps.report.outputs.actionable }}" },
+              { file: "/tmp/report-weekly.md",  label: "週次", ok: "${{ steps.report_weekly.outputs.actionable }}" },
+              { file: "/tmp/report-monthly.md", label: "月次", ok: "${{ steps.report_monthly.outputs.actionable }}" },
+            ];
 
             const { data: open } = await github.rest.issues.listForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              state: "open",
-              labels: "maintenance",
-              per_page: 20,
+              owner: context.repo.owner, repo: context.repo.repo,
+              state: "open", labels: "maintenance", per_page: 50,
             });
 
-            const existing = open.find((i) => i.title === title);
-            if (existing) {
-              await github.rest.issues.update({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: existing.number,
-                body,
-              });
-              core.notice(`既存の Issue #${existing.number} を更新しました。`);
-            } else {
-              const { data: created } = await github.rest.issues.create({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                title,
-                body,
-                labels: ["maintenance"],
-              });
-              core.notice(`Issue #${created.number} を作成しました。`);
+            for (const j of jobs) {
+              if (j.ok !== "true") continue;
+              if (!fs.existsSync(j.file)) continue;
+              const body = fs.readFileSync(j.file, "utf-8");
+              const title = `${j.label}点検: 対応が必要な項目があります（${today}）`;
+              const existing = open.find((i) => i.title === title);
+              if (existing) {
+                await github.rest.issues.update({
+                  owner: context.repo.owner, repo: context.repo.repo,
+                  issue_number: existing.number, body,
+                });
+                core.notice(`${j.label}: 既存の Issue #${existing.number} を更新しました。`);
+              } else {
+                const { data: created } = await github.rest.issues.create({
+                  owner: context.repo.owner, repo: context.repo.repo,
+                  title, body, labels: ["maintenance"],
+                });
+                core.notice(`${j.label}: Issue #${created.number} を作成しました。`);
+              }
             }
 
   # 出典 URL の到達性は週1回。930件あり毎日叩くと相手側に負荷をかける。

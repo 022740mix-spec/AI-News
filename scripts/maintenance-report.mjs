@@ -24,6 +24,30 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
 const asJson = process.argv.includes("--json");
 
+/**
+ * 通知の周期を分ける。
+ *
+ * ── なぜ必要か ──
+ * 検知を足すほど、1つの Issue に性質の違うものが混ざる。実際、日次の報告に
+ * ガイドの指摘28件が並び、**急ぎのものがその中に埋もれる**状態になっていた。
+ *
+ * 直し手と急ぎ具合で分ける。
+ *
+ *   daily   … 放置すると誤情報が公開され続けるもの。Routine が直せるものが多い
+ *   weekly  … 編集の材料。月曜にまとめて見る
+ *   monthly … 棚卸し。人間の判断が要り、1日2日では動かないもの
+ *
+ * **検知を増やすことより、周期を分けることのほうが効く。**
+ */
+const SCOPES = ["daily", "weekly", "monthly"];
+const scopeArg = process.argv.find((a) => a.startsWith("--scope="))?.slice(8) ?? "daily";
+if (!SCOPES.includes(scopeArg)) {
+  console.error(`--scope は ${SCOPES.join(" / ")} のいずれかです。`);
+  process.exit(2);
+}
+const scope = scopeArg;
+const inScope = (s) => s === scope;
+
 // 日付に依存する検査（月次見直しの超過、記事が止まっていないか）を
 // 実際に鳴らして確かめられるよう、基準日を差し替えられるようにする。
 // 検査を書いたが一度も鳴らしたことがない、という状態を作らないため。
@@ -53,6 +77,7 @@ const sections = [];
 let actionable = false;
 
 // ── 1. 記事・フィールドの消失 ──
+if (inScope("daily"))
 {
   const r = run("check-article-manifest.mjs");
   if (r.code !== 0) {
@@ -67,6 +92,7 @@ let actionable = false;
 }
 
 // ── 2. 期限切れの記述 ──
+if (inScope("daily"))
 {
   const r = run("check-expired-content.mjs");
   const hits = r.out.split("\n").filter((l) => /^\s*[-•]/.test(l));
@@ -82,6 +108,7 @@ let actionable = false;
 }
 
 // ── 3. 月次見直しの期限超過 ──
+if (inScope("monthly"))
 {
   const mod = await import(pathToFileURL(join(rootDir, "src/data/articlesMeta.js")).href);
   const meta = mod.ARTICLES_META || [];
@@ -126,6 +153,7 @@ let actionable = false;
 //
 // データとしては正常なので既存のどの検査にも掛からない。読者の画面で
 // 何が見えているかを見に行く必要がある。
+if (inScope("daily"))
 {
   const mod = await import(pathToFileURL(join(rootDir, "src/data/articlesMeta.js")).href);
   const meta = mod.ARTICLES_META || [];
@@ -183,6 +211,7 @@ let actionable = false;
 //
 // したがって「サイトに新しい記事が出ているか」を直接見る。
 // 原因は問わない。止まっていることだけを検知する。
+if (inScope("daily"))
 {
   const mod = await import(pathToFileURL(join(rootDir, "src/data/articlesMeta.js")).href);
   const meta = mod.ARTICLES_META || [];
@@ -225,6 +254,7 @@ let actionable = false;
 //
 // 週次を続けると決めた以上、止まったら鳴らす。頻度の約束は、
 // 検知が付いていなければ守られない。
+if (inScope("weekly"))
 {
   const mod = await import(pathToFileURL(join(rootDir, "src/data/articlesMeta.js")).href);
   const meta = mod.ARTICLES_META || [];
@@ -263,6 +293,7 @@ let actionable = false;
 // 2026年9月、実際にずれていた。Claude Fable 5.1 / Mythos 5.1 の記事は
 // 9月1日に出ているのに、MODEL_COMPARISON には Fable 5 までしか無かった。
 // どの検査にも掛からず、指摘されるまで誰も気づかなかった。
+if (inScope("daily"))
 {
   const r = run("check-model-coverage.mjs", ["--json"]);
   if (r.code === 0) {
@@ -304,6 +335,7 @@ let actionable = false;
 //
 // 判定は日付ではなく「ブランチ上の記事 id が全部 main にあるか」で行う。
 // squash merge では元コミットが main の履歴に残らないため。
+if (inScope("daily"))
 {
   const r = run("check-stale-branches.mjs", ["--json"]);
   if (r.code !== 0) {
@@ -387,6 +419,7 @@ let actionable = false;
 // 「最終確認日」があるが、ガイドの「Gemini 2.5 Pro の200万トークン」は
 // 書かれた時点で正しく、今も文として自然に読める。だから誰も直さない。
 // サイト自身（レビューの lastReviewed と現行モデル一覧）を突き合わせ先にする。
+if (inScope("weekly"))
 {
   const r = run("check-guide-freshness.mjs");
 
@@ -407,15 +440,11 @@ let actionable = false;
   const count = r.code === 0 && m ? Number(m[1]) : 0;
 
   // ガイドの陳腐化はゆっくり進む。毎日 Issue にすると同じ内容が続き、
-  // 通知そのものが無視されるようになる。週1回（月曜）だけ通知に載せ、
-  // 他の曜日は、別の理由で Issue が立つときにだけ添える。
-  const jstDay = new Date(Date.now() + 9 * 3600 * 1000).getUTCDay();
-  const notifyToday = jstDay === 1;
-
+  // 通知そのものが無視されるようになる。**周期の分離（--scope=weekly）が
+  // その役割を担うので、ここでの曜日判定は不要になった。**
   if (count > 0) {
-    if (notifyToday) actionable = true;
+    actionable = true;
     sections.push({
-      passive: !notifyToday,
       level: "warn",
       title: `ガイドに古い記述の疑いがある（${count} 件）`,
       note:
@@ -428,6 +457,7 @@ let actionable = false;
 }
 
 // ── 6. 校閲チェックの警告 ──
+if (inScope("daily"))
 {
   const r = run("review-check.mjs");
   const warns = r.out.split("\n").filter((l) => l.startsWith("⚠️"));
@@ -448,6 +478,119 @@ let actionable = false;
       passive: true,
     });
   }
+}
+
+// ── 7. 企業台帳の鮮度（月次） ──
+// 71社すべてが時間で腐るデータ（従業員数・売上・評価額・株式）を持つのに、
+// **更新の経路も鮮度の検査も無かった。** 実例として、台帳は Hugging Face を
+// 「未上場・評価額 $4.5B（2023年）」としていたが、記事側では NVIDIA が
+// $12.93B で買収したことを報じていた。
+//
+// 記事の期限切れ検査は料金語の近くにある期限しか拾わないため、台帳の
+// 事業イベント（買収のクローズ、施設の稼働）は別の検査で見る。
+if (inScope("monthly"))
+{
+  const r = run("check-company-data.mjs", ["--json"]);
+  if (r.code === 0) {
+    let d = null;
+    try { d = JSON.parse(r.out); } catch { /* 壊れていれば飛ばす */ }
+    if (d) {
+      const lines = [];
+      if (d.overdue?.length) {
+        lines.push(`**期日を過ぎた「予定」: ${d.overdue.length} 件**`);
+        for (const o of d.overdue.slice(0, 8)) {
+          lines.push(`- ${o.name}（${o.where}）「${o.raw}」= ${o.date} → ${Math.abs(o.diff)}日前`);
+        }
+        lines.push("");
+      }
+      if (d.upcoming?.length) {
+        lines.push(`**90日以内に期日を迎える: ${d.upcoming.length} 件**`);
+        for (const o of d.upcoming.slice(0, 8)) {
+          lines.push(`- ${o.name}「${o.raw}」= ${o.date}（あと${o.diff}日）`);
+        }
+        lines.push("");
+      }
+      if (d.stale?.length) {
+        lines.push(`**記述が古い社: ${d.stale.length} / ${d.companies}**`);
+        for (const o of d.stale.slice(0, 12)) lines.push(`- ${o.newestYear} — ${o.name}`);
+      }
+      if (lines.length) {
+        actionable = true;
+        sections.push({
+          level: "warn",
+          title: "企業台帳（aiCompanies.js）の鮮度",
+          note:
+            "**台帳は Routine では直せません**（設計判断を伴うため Read のみ）。\n" +
+            "一次ソースを確認したうえで、対話セッションで更新してください。\n\n" +
+            "「記述が古い」は、その社の記述に出てくる最も新しい年で判定しています。\n" +
+            "年を書く性質でない社（Adobe、Apple 等）は対象外です。",
+          body: lines.join("\n"),
+        });
+      }
+    }
+  }
+}
+
+// ── 8. 月次見直しの対象外レビューの放置（月次） ──
+// 月次見直しの対象は12本と決めた。それ自体は方針どおりだが、
+// **対象外が43本あり、最も古いものは半年近く放置されている**という事実は
+// どこにも見えていなかった。頻度は約束しないが、見えないのとは違う。
+if (inScope("monthly"))
+{
+  const mod = await import(pathToFileURL(join(rootDir, "src/data/articlesMeta.js")).href);
+  const meta = mod.ARTICLES_META || [];
+  const now = new Date(`${today}T00:00:00Z`);
+  const others = meta
+    .filter((a) => a.type === "review" && a.reviewCadence !== "monthly")
+    .filter((a) => a.status !== "retracted")
+    .map((a) => {
+      const base = a.lastReviewed || a.date;
+      return { id: a.id, title: a.title, last: base,
+               days: Math.floor((now - new Date(`${base}T00:00:00Z`)) / 86400000) };
+    })
+    .filter((a) => a.days >= 120)
+    .sort((x, y) => y.days - x.days);
+
+  if (others.length) {
+    actionable = true;
+    sections.push({
+      level: "warn",
+      title: `月次対象外のレビューが長く放置されている（${others.length} 本）`,
+      note:
+        "月次見直しの対象は12本で、それ以外に頻度は約束していません（Footer の記載どおり）。\n" +
+        "**約束していないことと、見えていないことは違います。** 120日以上経ったものを出します。\n\n" +
+        "対象を増やすなら `reviewCadence: \"monthly\"` を付け、**Footer の文言も同時に直してください。**\n" +
+        "取り下げる判断もありえます。放置し続けるのが最も悪い選択です。",
+      body: others.slice(0, 15).map((o) => `- ${o.days}日 — \`${o.id}\` — ${o.title}`).join("\n"),
+    });
+  }
+}
+
+// ── 9. 点検そのものが動いているか（日次） ──
+// 「異常があるときだけ Issue」の設計は、通知が無視されるのを防ぐために
+// 正しいが、**異常が無い状態と点検が止まった状態を区別できない。**
+//
+// ワークフローは自分が動かなかったことを検知できない。動いていないのだから。
+// ここでは心拍ファイルを読み、Routine 側からも同じ検査を走らせることで、
+// **独立した2つのスケジューラが互いを見る**形にしている。
+if (inScope("daily"))
+{
+  const r = run("check-maintenance-heartbeat.mjs", ["--json"]);
+  try {
+    const d = JSON.parse(r.out);
+    if (!d.ok) {
+      actionable = true;
+      sections.push({
+        level: "error",
+        title: `日次点検の心拍が ${d.days ?? "?"} 日止まっている`,
+        note:
+          `最終実行は ${d.lastRunJst || "記録なし"} です。\n` +
+          "**点検が止まると、記事の消失も期限切れも誰も見ていない状態になります。**\n" +
+          "Actions が無効化されていないか（60日間動きが無いと schedule は自動停止します）、\n" +
+          "ワークフローが失敗し続けていないかを確認してください。",
+      });
+    }
+  } catch { /* 読めなければ黙って飛ばす。心拍は補助的な検査である */ }
 }
 
 // ── 出力 ──
