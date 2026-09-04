@@ -18397,6 +18397,145 @@ const ARTICLES_BODY = {
         "url": "https://github.com/debpalash/VoiceStudio/releases/tag/v0.5.1"
       }
     ]
+  },
+  "nvidia-acquires-hugging-face-2026": {
+    "body": [
+      "**NVIDIA** が2026年9月2日、**Hugging Face を買収する確定契約（definitive agreement）を締結**したと発表した。買収総額は**約 $12.93B**で、内訳は**株主への支払い約$11.9B**と、**NVIDIA に合流する Hugging Face 従業員向けのリテンション（引き留め）用エクイティ最大約$1.0B**。クロージングは**2027年前半を見込み、規制当局の承認が条件**となる。",
+      "## Hugging Face の規模",
+      "Hugging Face は、**18M人超の開発者・研究者・クリエイターが利用し、3M超のモデルと50万件超のデータセットを共有する**プラットフォームである。**200K社超の企業**が、AI モデルの発見・評価・カスタマイズ・デプロイに利用しているとされる。オープンウェイトモデルの配布拠点として、事実上ほぼすべての主要 AI 研究機関・企業が利用してきた「中立的なハブ」としての位置付けが強い。",
+      "## 一度は断られていた5億ドルの出資",
+      "報道によれば、Hugging Face の CEO Clément Delangue 氏は以前、**評価額$7Bで NVIDIA から提示された$500Mの出資**を断っていた。その後の数週間で Delangue 氏の側から NVIDIA CEO の Jensen Huang 氏に接触し、出資ではなく**買収という形での合意**に至ったという。2023年時点の Hugging Face の評価額は$4.5Bだったとされ、今回の買収額はそこから大きく積み上がっている。",
+      "## 「オープン性は維持する」という約束",
+      "Huang 氏は、Hugging Face が**オープンソース・オープンウェイトモデルを支持し続け、AI エコシステム全体に開かれたプラットフォームであり続ける**とコメントしている。具体的には、**Hugging Face の利用に NVIDIA 製コンピュートを必須としない**こと、**マルチクラウド・マルチアクセラレータ対応を継続する**ことを明言した。GPU最大手が、ベンダー中立を前提としてきたハブを買収するにあたり、こうしたコミットメントを明示的に打ち出した点は、それ自体が今回の買収に伴う懸念（特定チップベンダーへの依存が生じるのではないか、という業界の見方）を反映していると読める。",
+      "## クロージングまでの論点",
+      "買収は**規制当局の承認が条件**となっており、正式なクロージングは2027年前半が見込まれている。承認プロセスにおいて、AI インフラの中核的な配布拠点が GPU 最大手の傘下に入ることの競争上の影響が論点になる可能性がある。",
+      "**注記**: 本記事作成時点で、NVIDIA公式ブログ（blogs.nvidia.com）および米SEC提出書類（sec.gov）へは本稿の調査環境のネットワークポリシー上到達できなかった。ただし、上記の金額・日付・条件は、Bloomberg・CNBC・CNN Business・The Information・Forbes・Variety など独立した複数の主要メディアが一致して報じており、内容に矛盾は見られない。"
+    ],
+    "primarySources": [
+      {
+        "title": "NVIDIA to Acquire Hugging Face",
+        "site": "NVIDIA Blog（検索インデックス経由で存在・見出しを確認、本文への直接到達は不可）",
+        "url": "https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/"
+      },
+      {
+        "title": "Nvidia confirms it will buy Hugging Face for $12.9 billion",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/"
+      },
+      {
+        "title": "Nvidia agrees to buy Hugging Face for almost $13 billion, AI expansion",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/09/03/nvidia-agrees-to-buy-hugging-face-for-almost-13-billion-ai-expansion.html"
+      },
+      {
+        "title": "Nvidia inks $13 billion deal to buy Hugging Face",
+        "site": "CNN Business",
+        "url": "https://www.cnn.com/2026/09/03/tech/nvidia-hugging-face-ai-acquisition"
+      }
+    ]
+  },
+  "anthropic-salesforce-claudeforce-2026": {
+    "body": [
+      "**Anthropic** と **Salesforce** が2026年8月26日、両社の統合を「**Claudeforce**」と名付けた戦略的提携として発表した。双方向の統合になっている点が特徴で、**Claude が Salesforce に入り、Salesforce が Claude に入る**という構成である。",
+      "## Salesforce の中に Claude が入る",
+      "Salesforce 側では、**Claude が既定の推論モデル**として組み込まれる。対象は **Atlas Reasoning Engine・Agentforce Vibes・Agentforce Coworker** で、いずれも Claude が既定エンジンとして動く。**Agent Builder では選択可能なモデルの一つ**として提供され、**Slack でも既定モデルが Claude** になる。",
+      "## Claude の中に Salesforce が入る",
+      "逆方向の統合が「**Salesforce in Claude**」プラグインである。**37種の営業スキルをあらかじめ内蔵**しており、商談準備（meeting prep）、案件の健全性レビュー（deal health review）、パイプラインレビューなどを、**Claude 上でライブの売上データを参照しながら実行**できる。ガバナンスの効いたアクション実行（governed action）を Claude 側から直接行える設計になっている。",
+      "## 提供時期",
+      "「Salesforce in Claude」は、**発表時点で一部のパイロット顧客向けに提供開始済み**。両社は**2026年9月にオープンベータを開始する計画**を示している。",
+      "**注記**: 本記事作成時点で、Salesforce公式プレスリリース（salesforce.com / investor.salesforce.com）へは本稿の調査環境のネットワークポリシー上到達できなかった。ただし、両サイトの見出し・要旨は検索インデックス経由で確認でき、CIO.com・Digital Commerce 360 等の独立した複数の業界メディアが同一の内容（プラグイン名、スキル数、対象製品、提供時期）を報じている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Salesforce and Anthropic Announce Claudeforce: The #1 AI Meets the #1 AI CRM",
+        "site": "Salesforce Newsroom",
+        "url": "https://www.salesforce.com/news/press-releases/2026/08/26/salesforce-and-anthropic-announce-claudeforce/"
+      },
+      {
+        "title": "Salesforce and Anthropic Announce Claudeforce",
+        "site": "Salesforce Investor Relations",
+        "url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-and-Anthropic-Announce-Claudeforce-The-1-AI-Meets-the-1-AI-CRM/default.aspx"
+      },
+      {
+        "title": "Salesforce, Anthropic partner to deliver Claudeforce",
+        "site": "CIO.com",
+        "url": "https://www.cio.com/article/4214458/salesforce-anthropic-partner-to-deliver-claudeforce.html"
+      }
+    ]
+  },
+  "soup-layer-streaming-finetune-2026": {
+    "body": [
+      "個人開発者 **Makazhan Alpamys** 氏が公開した CLI ツール「**Soup**」が、GitHub で急速にスターを集めている。**直近1週間で約+1,700スター**増え、現在は**5,100スター超**。**1つの YAML 設定ファイルを書くだけで LLM のファインチューニングを実行**できるツールで、バッチサイズの調整・GPU の検出・量子化の設定を自動で行う。",
+      "## 「layer streaming」という発想",
+      "目玉機能が「**layer streaming**」である。通常のファインチューニングは、ベースモデル全体を VRAM に載せた状態で学習を行う。Soup はこれを変え、**凍結したベースモデルをホストの通常 RAM に置いたまま、デコーダ層を1層ずつ GPU へ順番にストリーミング**して forward / backward パスを処理する。学習が進む間、**アクティブな層の処理に必要な VRAM は約113MBのバッファ2つ**のみで済む設計になっている。",
+      "## 実測値",
+      "公開されているベンチマークによれば、**VRAM 4GB の RTX 3050 Laptop で Llama-3.1-8B-Instruct を NF4量子化で学習**し、**119.6 tok/s・ピークメモリ 3.32GB** を記録した。同一の設定を H100 上で再現した場合は 113.00 tok/s で、**通常のフル常駐実行と bit-exact（数値的に同一）な結果**が得られるとしている。ピーク VRAM の削減幅は**約75%**にのぼる。",
+      "## 対応する学習手法",
+      "SFT（教師ありファインチューニング）に加え、**DPO・ORPO・SimPO・IPO・BCO・KTO** といった選好ベースの手法、**GRPO・PPO** の強化学習系手法まで対応する。ツール呼び出し用途や PRM、事前学習、蒸留といった用途にも対応するとされる。",
+      "## ライセンスと透明性",
+      "**Apache-2.0** ライセンスで公開されており、リポジトリの `benchmarks/` ディレクトリには、**撤回した主張や失敗した実験も含めて計測記録を残している**という。個人開発の小規模ツールでありながら、検証可能性を意識した公開姿勢が伸びの一因になっているとみられる。"
+    ],
+    "primarySources": [
+      {
+        "title": "MakazhanAlpamys/Soup",
+        "site": "GitHub",
+        "url": "https://github.com/MakazhanAlpamys/Soup"
+      }
+    ]
+  },
+  "phone-harness-mobile-agent-2026": {
+    "body": [
+      "個人開発者 **ShawnPana** 氏が公開した OSS ツール「**phone-harness**」は、AI エージェント（Claude、Codex など）に**実機のスマートフォンを直接操作させる**ハーネスである。**ジェイルブレイクや専用アプリのインストールを必要としない**点が特徴で、MIT ライセンスで公開され、現在**2,300スター**を集めている。",
+      "## iPhone は画面ミラーリング、Android は adb",
+      "**iPhone** は、macOS Sequoia の「iPhone Mirroring」機能でスマホの画面を Mac のウィンドウとして表示させ、そのウィンドウをキャプチャして **Apple の Vision framework で OCR** する。エージェントは、認識したテキストとタップ可能な座標をもとに、**CGEvents（HIDレベルの入力イベント）でタップ・長押し・ドラッグ・スクロール・文字入力**を実行する。",
+      "**Android** は、USB または Wi-Fi 経由の **adb（Android Debug Bridge）**を使う。`screencap` による画面取得と、**端末のアクセシビリティツリーによる要素の特定**を組み合わせ、`input tap` / `input swipe` / `input text` 等のコマンドを直接送信する。Mac のウィンドウフォーカスに依存しない設計で、iPhone 版とは独立して動作する。",
+      "## セットアップとデザインの方針",
+      "iPhone の場合は iPhone Mirroring のペアリングに加え、ターミナルに Accessibility と画面収録の権限を許可する必要がある。Android は開発者向けオプションを有効にし、USB 接続の承認、またはペアリングコードを使った Wi-Fi デバッグで接続する。動作確認用の `--doctor` コマンドや、ガイド付きのオンボーディングも用意されている。**常駐デーモンを必要とせず、実行のたびに完結する**設計を採っている点も特徴である。",
+      "## 同じ作者の smux",
+      "作者の ShawnPana 氏は、AI エージェント同士に tmux のペイン越しに対話させる OSS「**smux**」の開発者でもある。smux では、Claude Code が隣のペインの Codex にプロンプトを送り、Codex が応答を返す、といったエージェント間通信を tmux ブリッジ経由で実現している。ターミナル内のエージェント連携（smux）と、実機デバイスの操作（phone-harness）という異なる対象に、同じ「エージェントに既存のインターフェースをそのまま触らせる」アプローチを適用している点が共通している。"
+    ],
+    "primarySources": [
+      {
+        "title": "ShawnPana/phone-harness",
+        "site": "GitHub",
+        "url": "https://github.com/ShawnPana/phone-harness"
+      },
+      {
+        "title": "ShawnPana/smux",
+        "site": "GitHub",
+        "url": "https://github.com/ShawnPana/smux"
+      }
+    ]
+  },
+  "nyc-schools-generative-ai-ban-2026": {
+    "body": [
+      "ニューヨーク市教育局（NYC Public Schools）が2026年9月2日、**幼稚園（Pre-K/2-K）から8年生までの児童・生徒を対象に、生成AIの利用を1年間モラトリアムする**方針を発表した。ブルックリンの STEAM Center で開かれた記者会見には、Zohran Mamdani 市長と Kamar Samuels 教育長（chancellor）が同席した。ニューヨーク市の公立学校は米国最大の学校区であり、**対象となる約60万人は同区の全生徒のおよそ3分の2**にあたる。",
+      "## 何が止まるのか",
+      "モラトリアムの対象は、**児童・生徒が直接使う生成AI**である。ChatGPT や Claude など主要な生成AIサービスに加え、**コンパニオン型チャットボット**についても、全学年でブロックの対象になる。あわせて、教育局はこれまで許可していた**38以上のプログラムについて、安全基準・監督体制の新基準を満たさないAI機能を無効化または利用停止する**とした。これは、区が過去に承認していたAI活用の一部を、今回撤回する形になる。",
+      "## 高校生には限定的な活用を残す",
+      "一律禁止ではなく、学年で扱いを分けている。**高校生（9〜12年生）に対しては、年2回の「AIクリティカルシンキング」授業を新たに導入**し、**少数のクラスでの限定的なAI活用パイロット**も維持する。あわせて、学年に応じたスクリーンタイムの制限も導入する。",
+      "## 今後の枠組み",
+      "教育者・保護者・生徒で構成される「Technology in Schools Coalition」が、今回の方針の影響を評価し、今後の運用方針を勧告する役割を担うとされる。Mamdani 市長は会見で、今回の措置を「全米で最も包括的なものだ」と述べている。",
+      "## 位置付け",
+      "教育現場での生成AI活用をめぐっては、効率化や個別最適化への期待と、児童・生徒の思考力育成やコンパニオン型AIの心理的な影響への懸念の両方が指摘されてきた。今回のニューヨーク市の方針は、**特定の技術的リスクの実証を理由に挙げたものではなく**、既存プログラムの安全基準・監督体制が不十分だったという判断に基づく制度的な対応である点が、報道されている情報からは読み取れる。全米最大の学校区が下した判断であるため、他の学校区の政策にも参照される可能性がある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Mayor Mamdani and Chancellor Samuels Put Students First with Nation's Broadest Generative AI Moratorium in Schools",
+        "site": "The Official Website of the City of New York（検索インデックス経由で見出しを確認、本文への直接到達は本稿執筆時点で不可）",
+        "url": "https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-and-chancellor-samuels-put-students-first-with-nat"
+      },
+      {
+        "title": "Nation's largest school district bans AI in the classroom through 8th grade",
+        "site": "CNN Business",
+        "url": "https://www.cnn.com/2026/09/02/tech/new-york-city-classroom-ai-ban"
+      },
+      {
+        "title": "NYC's new school AI ban explained: What students and teachers need to know",
+        "site": "Chalkbeat New York",
+        "url": "https://www.chalkbeat.org/newyork/2026/09/02/what-to-know-about-nyc-public-schools-generative-ai-ban-screen-time-limits/"
+      }
+    ]
   }
 };
 

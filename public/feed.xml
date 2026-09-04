@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-09-03T15:00:00Z</updated>
+  <updated>2026-09-04T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>「どんなAIエージェントも科学者にする」スキル集が週間GitHubトレンド1位に — 163種のスキルで100超の科学データベースへ接続</title>
@@ -40,12 +40,44 @@
     <summary>音楽生成AI Suno が2026年8月10日に告知したダウンロードポリシーの変更が、9月3日に発効した。無料プランは生涯7回、Pro は月20回、Premier は月60回で、9月3日より前に生成した楽曲も対象になる。Suno は「大量に書き出す使われ方を難しくするため」と説明している。</summary>
   </entry>
   <entry>
+    <title>個人開発の Soup が「layer streaming」でVRAM問題を解く — 4GBノートPCのGPUで8Bモデルを学習、直近1週間で+1,700スター</title>
+    <link rel="alternate" type="text/html" href="?a=soup-layer-streaming-finetune-2026"/>
+    <id>tag:ai-tool-news.jp,2026:soup-layer-streaming-finetune-2026</id>
+    <published>2026-09-03T15:00:00Z</published>
+    <updated>2026-09-03T15:00:00Z</updated>
+    <summary>個人開発者 Makazhan Alpamys 氏が公開した CLI ツール Soup が、GitHub で直近1週間に+1,700スターを集め5,100スター超に達した。目玉は「layer streaming」という技術で、凍結したベースモデルを VRAM に置かず、デコーダ層を1層ずつホストRAMからGPUへ流し込むことで、VRAM 4GB のノートPC用GPUで8Bモデルの学習を可能にした。1つのYAML設定ファイルで SFT・DPO・GRPO・PPO 等の学習手法に対応する。</summary>
+  </entry>
+  <entry>
+    <title>AIエージェントに実機スマホを操作させる phone-harness — ジェイルブレイク・専用アプリ不要、2,300スター</title>
+    <link rel="alternate" type="text/html" href="?a=phone-harness-mobile-agent-2026"/>
+    <id>tag:ai-tool-news.jp,2026:phone-harness-mobile-agent-2026</id>
+    <published>2026-09-03T15:00:00Z</published>
+    <updated>2026-09-03T15:00:00Z</updated>
+    <summary>個人開発者 ShawnPana 氏が公開した OSS「phone-harness」は、Claude Code や Codex などの AI エージェントに、ジェイルブレイクや専用アプリを使わず実機のスマートフォンを操作させるハーネス。iPhone は macOS の画面ミラーリング経由、Android は adb 経由で接続し、画面キャプチャとOCR（iPhoneは Apple Vision framework、Androidはアクセシビリティツリー）でエージェントに画面を「見せ」、タップ・スワイプ・入力を実行させる。現在 2,300スター。同じ作者は、AI エージェント同士を tmux 上で通信させる「smux」も公開している。</summary>
+  </entry>
+  <entry>
     <title>【分析】Google が AI 検索のオプトアウトを用意した — ただしクローラーが1本である限り、実質的に選べない</title>
     <link rel="alternate" type="text/html" href="?a=feature-google-publisher-ai-optout-single-crawler-2026"/>
     <id>tag:ai-tool-news.jp,2026:feature-google-publisher-ai-optout-single-crawler-2026</id>
     <published>2026-09-02T15:00:00Z</published>
     <updated>2026-09-02T15:00:00Z</updated>
     <summary>Google は Search Console に AI Overviews・AI Mode への表示を拒否するトグルを用意し、オプトアウトはランキング要因にならないと明言している。だが構造上の制約が残る。Google は従来の検索インデックスと AI 学習に同一のクローラーを使っており、AI Overviews に食わせるボットを止めると Google 検索からも消える。「選べるようになった」という説明と、「実際に選べるか」は別の話である。運営者が直面している選択の実像を整理する。</summary>
+  </entry>
+  <entry>
+    <title>NVIDIA が Hugging Face を $12.93B で買収 — オープンモデルの中核ハブが、GPU最大手の傘下に</title>
+    <link rel="alternate" type="text/html" href="?a=nvidia-acquires-hugging-face-2026"/>
+    <id>tag:ai-tool-news.jp,2026:nvidia-acquires-hugging-face-2026</id>
+    <published>2026-09-02T15:00:00Z</published>
+    <updated>2026-09-02T15:00:00Z</updated>
+    <summary>NVIDIA が2026年9月2日、Hugging Face を総額 $12.93B（株主への$11.9B＋従業員向けリテンション最大$1.0B）で買収する確定契約を締結したと発表した。クロージングは2027年前半、規制当局の承認が条件。Hugging Face は18M人超の開発者が3M超のモデル・50万件のデータセットを共有するプラットフォームで、200K社超が利用する。NVIDIA は「マルチクラウド・マルチアクセラレータ対応を継続し、NVIDIA製コンピュートの利用を必須としない」と明言している。</summary>
+  </entry>
+  <entry>
+    <title>【分析】NYC公立校が生成AIを幼稚園〜8年生で1年間モラトリアム — 対象60万人、既存38プログラムのAI機能も無効化</title>
+    <link rel="alternate" type="text/html" href="?a=nyc-schools-generative-ai-ban-2026"/>
+    <id>tag:ai-tool-news.jp,2026:nyc-schools-generative-ai-ban-2026</id>
+    <published>2026-09-02T15:00:00Z</published>
+    <updated>2026-09-02T15:00:00Z</updated>
+    <summary>全米最大の学校区であるニューヨーク市の公立学校が2026年9月2日、幼稚園（Pre-K/2-K）〜8年生を対象に、生成AIを1年間モラトリアムする方針を発表した。対象は全生徒の約3分の2にあたる約60万人。ChatGPT・Claude 等の主要サービスやコンパニオン型チャットボットを全学年でブロックするほか、安全基準を満たさない既存38以上のプログラムのAI機能を無効化する。高校生には限定的なAI活用と「AIクリティカルシンキング」授業を維持する。</summary>
   </entry>
   <entry>
     <title>Anthropic が Claude Fable 5.1 / Mythos 5.1 を公開 — 破壊的変更が3つ、値下げはキャッシュ読み取りのみ</title>
@@ -102,6 +134,14 @@
     <published>2026-08-26T15:00:00Z</published>
     <updated>2026-08-26T15:00:00Z</updated>
     <summary>Alibaba の Qwen チームが2026年8月26日、Qwen3.8-Flash-Next を GitHub 公式リポジトリで公開した。総パラメータ125B・トークンあたり活性化6Bの MoE に加え、N-gram埋め込み51Bを別枠で持つ構成が特徴。Gated DeltaNet（GDN）と Qwen Sparse Attention（QSA）を組み合わせたハイブリッド構造を採用し、次世代アーキテクチャ「Qwen4」の設計を先出しする位置づけとされる。README上のネイティブ文脈長は262,144トークン。Qwen チームは学習コストが Qwen3.7-Plus の約1/9で済んだとしつつコーディング・オフィス用途の性能は上回ると主張しているが、この数値は Qwen 自身の公表値であり独立検証は存在しない。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic と Salesforce が「Claudeforce」提携を発表 — Claude が Agentforce の既定エンジンに、Salesforce は37スキルの Claude 用プラグインとして参入</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-salesforce-claudeforce-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-salesforce-claudeforce-2026</id>
+    <published>2026-08-26T15:00:00Z</published>
+    <updated>2026-08-26T15:00:00Z</updated>
+    <summary>Anthropic と Salesforce が2026年8月26日、「Claudeforce」提携を発表した。Claude が Atlas Reasoning Engine・Agentforce Vibes・Agentforce Coworker の既定の推論モデルとなり、Slack でも既定モデルになる。逆方向では、「Salesforce in Claude」プラグインが37種の営業スキルを内蔵し、商談準備・パイプラインレビュー等を Claude 上から直接行えるようにする。パイロット顧客向けには提供開始済みで、オープンベータは2026年9月開始予定。</summary>
   </entry>
   <entry>
     <title>OpenAI が自社チップ Jalapeño の初期ベンチマークを公開 — 電力あたり1.5〜1.9倍、対話型では最大4.1倍、本格展開は2027年</title>

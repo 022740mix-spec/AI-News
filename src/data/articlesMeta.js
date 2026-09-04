@@ -8547,5 +8547,94 @@ export const ARTICLES_META = [
       "MCP",
       "プライバシー"
     ]
+  },
+  {
+    "id": "nvidia-acquires-hugging-face-2026",
+    "type": "news",
+    "category": "product",
+    "title": "NVIDIA が Hugging Face を $12.93B で買収 — オープンモデルの中核ハブが、GPU最大手の傘下に",
+    "excerpt": "NVIDIA が2026年9月2日、**Hugging Face を総額 $12.93B（株主への$11.9B＋従業員向けリテンション最大$1.0B）で買収する確定契約**を締結したと発表した。クロージングは**2027年前半、規制当局の承認が条件**。Hugging Face は**18M人超の開発者が3M超のモデル・50万件のデータセットを共有する**プラットフォームで、200K社超が利用する。NVIDIA は「マルチクラウド・マルチアクセラレータ対応を継続し、NVIDIA製コンピュートの利用を必須としない」と明言している。",
+    "date": "2026-09-04",
+    "newsDate": "2026-09-02",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "NVIDIA",
+      "Hugging Face",
+      "買収",
+      "オープンソース",
+      "半導体"
+    ]
+  },
+  {
+    "id": "anthropic-salesforce-claudeforce-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic と Salesforce が「Claudeforce」提携を発表 — Claude が Agentforce の既定エンジンに、Salesforce は37スキルの Claude 用プラグインとして参入",
+    "excerpt": "Anthropic と Salesforce が2026年8月26日、**「Claudeforce」提携**を発表した。**Claude が Atlas Reasoning Engine・Agentforce Vibes・Agentforce Coworker の既定の推論モデルとなり、Slack でも既定モデルに**なる。逆方向では、**「Salesforce in Claude」プラグインが37種の営業スキルを内蔵**し、商談準備・パイプラインレビュー等を Claude 上から直接行えるようにする。パイロット顧客向けには提供開始済みで、**オープンベータは2026年9月開始予定**。",
+    "date": "2026-09-04",
+    "newsDate": "2026-08-26",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Salesforce",
+      "エンタープライズ",
+      "エージェント"
+    ]
+  },
+  {
+    "id": "soup-layer-streaming-finetune-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "個人開発の Soup が「layer streaming」でVRAM問題を解く — 4GBノートPCのGPUで8Bモデルを学習、直近1週間で+1,700スター",
+    "excerpt": "個人開発者 Makazhan Alpamys 氏が公開した CLI ツール **Soup** が、GitHub で**直近1週間に+1,700スター**を集め5,100スター超に達した。目玉は「**layer streaming**」という技術で、凍結したベースモデルを VRAM に置かず、**デコーダ層を1層ずつホストRAMからGPUへ流し込む**ことで、**VRAM 4GB のノートPC用GPUで8Bモデルの学習**を可能にした。1つのYAML設定ファイルで SFT・DPO・GRPO・PPO 等の学習手法に対応する。",
+    "date": "2026-09-04",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "オープンソース",
+      "ファインチューニング",
+      "エッジAI",
+      "個人開発",
+      "GPU"
+    ]
+  },
+  {
+    "id": "phone-harness-mobile-agent-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "AIエージェントに実機スマホを操作させる phone-harness — ジェイルブレイク・専用アプリ不要、2,300スター",
+    "excerpt": "個人開発者 ShawnPana 氏が公開した OSS「**phone-harness**」は、Claude Code や Codex などの AI エージェントに、**ジェイルブレイクや専用アプリを使わず実機のスマートフォンを操作させる**ハーネス。iPhone は macOS の画面ミラーリング経由、Android は adb 経由で接続し、**画面キャプチャとOCR（iPhoneは Apple Vision framework、Androidはアクセシビリティツリー）でエージェントに画面を「見せ」、タップ・スワイプ・入力を実行**させる。現在 **2,300スター**。同じ作者は、AI エージェント同士を tmux 上で通信させる「smux」も公開している。",
+    "date": "2026-09-04",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "オープンソース",
+      "エージェント",
+      "モバイル",
+      "開発ツール",
+      "個人開発"
+    ]
+  },
+  {
+    "id": "nyc-schools-generative-ai-ban-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】NYC公立校が生成AIを幼稚園〜8年生で1年間モラトリアム — 対象60万人、既存38プログラムのAI機能も無効化",
+    "excerpt": "全米最大の学校区であるニューヨーク市の公立学校が2026年9月2日、**幼稚園（Pre-K/2-K）〜8年生を対象に、生成AIを1年間モラトリアムする**方針を発表した。対象は**全生徒の約3分の2にあたる約60万人**。ChatGPT・Claude 等の主要サービスやコンパニオン型チャットボットを全学年でブロックするほか、**安全基準を満たさない既存38以上のプログラムのAI機能を無効化**する。高校生には限定的なAI活用と「AIクリティカルシンキング」授業を維持する。",
+    "date": "2026-09-04",
+    "newsDate": "2026-09-02",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "規制",
+      "教育",
+      "米国",
+      "倫理"
+    ]
   }
 ];
