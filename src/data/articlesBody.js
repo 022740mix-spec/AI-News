@@ -18662,6 +18662,35 @@ const ARTICLES_BODY = {
         "url": "https://www.axios.com/2026/09/03/openai-astra-gpt-6-agi-brockman"
       }
     ]
+  },
+  "meta-muse-spark-1-3-2026": {
+    "body": [
+      "**Meta** が2026年9月2日、**Muse Spark 1.3** を公開した。前バージョンの 1.2 から約4週間でのリリースで、**Muse Code とモデル API の両方でドロップイン（既存の呼び出し方のまま置き換え可能）アップグレード**として提供される。コンテキスト長は**1Mトークン**を維持し、テキスト・画像・動画の入力に対応する。",
+      "## ベンチマークの内訳",
+      "第三者評価機関 Artificial Analysis の Intelligence Index では、**636モデル中6位**にランクされたとされる。個別のベンチマークでは、エンドツーエンドのソフトウェア開発タスクを測る **DeepSWE 1.1 で75.4%**、**Terminal-Bench 2.1 で88.8%**、コードベース質問応答の **SWE Atlas CodeBase QnA で59.4%**、長文コンテキスト検索では**98.5%**を記録したという。一方で、**純粋なエージェントタスクのベンチマーク6項目中4項目では、依然として Anthropic の Opus 5（max 構成）が上回っている**とも報じられている。",
+      "## 「最高スコア」と「実際に使えるモデル」の差",
+      "Meta によれば、1.2 比で**同等のコーディング作業をこなすのに必要なツール呼び出し数が約20%、トークン消費量が約25%減った**という。ただし報道の中には、**最も高いベンチマークスコアを出しているのは開発者が広く使える構成ではない「max」構成であり、実際に幅広く提供されるのは一段抑えたモデル**だと指摘するものがある。ベンチマーク上位の数字と、実際に手元で使えるモデルの性能が必ずしも一致しない点は、比較検討する際に踏まえておく必要がある。",
+      "## 料金体系",
+      "標準エンドポイントの料金は**入力$1.25 / 出力$4.25（100万トークンあたり）**で、前バージョン 1.1 から据え置き。加えて、**利用データを Meta の学習に提供することと引き換えに10〜20倍程度安くなる「contributor」エンドポイント**も引き続き用意されている。",
+      "**注記**: 本記事作成時点で、Meta 公式のモデルブログ（research.meta.ai、ai.meta.com）へは本稿の調査環境のネットワークポリシー上、直接到達できなかった。ただし、ベンチマーク数値・料金・リリース日は VentureBeat・TechTimes・eesel AI など独立した複数のメディアの報道で一致しており、内容に矛盾は見られない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Meta says Muse Spark 1.3 has frontier performance — but its best results come from a model developers can't broadly use yet",
+        "site": "VentureBeat",
+        "url": "https://venturebeat.com/technology/meta-says-muse-spark-1-3-has-frontier-performance-but-its-best-results-come-from-a-model-developers-cant-broadly-use-yet"
+      },
+      {
+        "title": "Muse Spark 1.3 Jumps 16 Points on DeepSWE: How Meta Training Loop Closed Gap",
+        "site": "Tech Times",
+        "url": "https://www.techtimes.com/articles/326417/20260903/muse-spark-13-jumps-16-points-deepswe-how-meta-training-loop-closed-gap.htm"
+      },
+      {
+        "title": "Meta Muse Spark 1.3: benchmarks, pricing, and what changed",
+        "site": "eesel AI",
+        "url": "https://www.eesel.ai/blog/muse-spark-1-3"
+      }
+    ]
   }
 };
 

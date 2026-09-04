@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-04",
-  "count": 389,
+  "count": 390,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -242,6 +242,7 @@
     "meta-muse-code-muse-spark-1-2-2026",
     "meta-muse-glimmer-30b-local-open-weight-2026",
     "meta-muse-spark-1-1-first-paid-model-2026",
+    "meta-muse-spark-1-3-2026",
     "meta-muse-spark-closed-source-msl-2026",
     "mico-kubectl-ai",
     "microsoft-365-e7-copilot-pricing-2026",

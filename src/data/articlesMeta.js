@@ -8673,5 +8673,23 @@ export const ARTICLES_META = [
       "セキュリティ",
       "AI安全性"
     ]
+  },
+  {
+    "id": "meta-muse-spark-1-3-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Meta が Muse Spark 1.3 を公開 — Artificial Analysis 総合6位、ただし最上位スコアは「まだ広く使えないモデル」の数字",
+    "excerpt": "Meta が2026年9月2日、**Muse Spark 1.3** を Muse Code とモデル API 向けに公開した。**Artificial Analysis Intelligence Index で636モデル中6位**、DeepSWE 1.1（エンドツーエンドのソフトウェア開発）は**75.4%**、長文コンテキスト検索は**98.5%**。1.2 比で**ツール呼び出し数が約20%、トークン消費が約25%減った**という。ただし最高スコアを出しているのは「max」構成で、実際に広く提供されるのは一段控えめな構成という点に注意が必要。料金は $1.25 / $4.25（100万トークンあたり）で 1.1 から据え置き。",
+    "date": "2026-09-04",
+    "newsDate": "2026-09-02",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Meta",
+      "Muse",
+      "モデル",
+      "ベンチマーク",
+      "コーディング"
+    ]
   }
 ];
