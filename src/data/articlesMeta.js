@@ -8709,5 +8709,22 @@ export const ARTICLES_META = [
       "ライティング",
       "Claude Code"
     ]
+  },
+  {
+    "id": "zaporizhzhia-autonomous-drone-civilian-deaths-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】NYTの調査報道 — 完全自律AIドローンが民間人3人を殺害、ウクライナで確認された「初めての事例」",
+    "excerpt": "**New York Times の調査報道**によると、ウクライナ・ザポリージャで2026年7月6日、**ロシアの Molniya 型攻撃ドローンが、人が操縦することなく自らガソリンスタンドへの着弾地点を選び**、19歳の学生を含む民間人3人が死亡した。機体に積まれていたのは**軍用ではなく市販の NVIDIA Jetson Orin 系ミニコンピュータ**で、暗号化されておらず、事後に画像認識用の学習データが読み取れる状態だったという。専門家は、**AIによる自律標的選択が民間人の死につながった事例として確認されたのは初めて**だとしている。",
+    "date": "2026-09-04",
+    "newsDate": "2026-07-06",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "軍事",
+      "ドローン",
+      "NVIDIA",
+      "規制"
+    ]
   }
 ];

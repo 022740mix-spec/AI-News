@@ -18712,6 +18712,43 @@ const ARTICLES_BODY = {
         "url": "https://github.com/blader/humanizer"
       }
     ]
+  },
+  "zaporizhzhia-autonomous-drone-civilian-deaths-2026": {
+    "body": [
+      "**New York Times** の調査報道によると、2026年7月6日、ウクライナ南東部**ザポリージャ**市内のガソリンスタンド付近で、ロシア軍が投入した**Molniya型攻撃ドローン**が民間人3人を殺害した。ウクライナの防空当局者と、機体の残骸を調べた鑑識チームが同紙の取材に対し、**このドローンには操縦者との通信用アンテナがなく、飛行中も電波を発していなかった**と説明している。これは、**最終的な着弾地点を機体側のソフトウェアが自律的に選んでいたことを示す状況証拠**とされる。",
+      "亡くなったのは、ザポリージャ国立大学の会計学専攻の学生 **Tetiana Bubynets さん（19歳）**、**Oleksiy Svirin さん（41歳）**、**Roman Karpiy さん（48歳）**の3人。操縦者はドローンをガソリンスタンド方面に向けて発進させたが、**目標に接近した後の最終的な狙いの選定は機体に搭載されたソフトウェアが担っていた**とみられ、プロパンタンクなど特定の物体を認識するよう学習されていた可能性が高いという。ドローンは近くの集合住宅の壁を避けきれずに激突・爆発し、その場に避難していた人々を巻き込んだ。",
+      "## ハードウェアが語るもの",
+      "機体から回収されたのは、**軍用に設計されたコンピュータではなく、市販の NVIDIA Jetson Orin 系ミニコンピュータ**（廉価な構成で$249程度から入手可能とされる）だった。専門家によれば、このモジュールは**暗号化されておらず**、内部に残っていた画像データから、**どのような物体を標的として認識するよう学習されていたかを事後に確認できた**という。データセンター向けのAIアクセラレータは米国の輸出規制の対象になる一方、**Jetson Orin のようなエッジ向け（末端機器搭載向け）の小型モジュールは同じ規制の対象になっていない**とされ、この違いが調達を可能にした一因として指摘されている。",
+      "## 「初めて確認された事例」という位置づけ",
+      "シンクタンク CSIS の Wadhwani AI Center に所属する専門家は、これを**ロシア・ウクライナ戦争において、完全自律のAI標的選択システムによって民間人の死亡が確認された初めての事例**だと述べている。ウクライナ側は、ロシアが同種のシステムを**2026年5月頃からザポリージャ周辺で試験投入していた**とみている。国連のグテーレス事務総長はこれまで繰り返し、**人間の関与なしに致死的な判断を行う兵器システム（自律型致死兵器システム、LAWS）に対する拘束力のある国際規制**を求めてきた経緯があり、この事例はその議論に具体的な材料を与える形になる。",
+      "## この記事で確認できていないこと",
+      "本記事は New York Times の調査報道と、それを引用した複数の独立系メディア（Tom's Hardware、Gizmodo、Futurism、Euromaidan Press、Meduza、The Insider など）の報道内容が一致していることを根拠にしている。**NYT 原記事および現地の鑑識報告書そのものへは、本稿の調査環境のネットワークポリシー上、直接到達できていない。** ロシア側からの公式な見解・反論は本稿執筆時点で確認できておらず、攻撃の意図（民間施設を誤認識した結果か、他の要因によるものか）についても断定できる材料はない。事実関係の重み付けは、今後の追加報道・独立検証によって更新されうる。",
+      "## なぜこれが「開発者にとっての」ニュースなのか",
+      "この事例で使われたとされる部品は、消費者向け・産業向けのロボティクスやエッジAI開発で広く流通している市販品である。**AI開発における『民生』と『軍事』の境界が、部品レベルでは事実上存在しない**という構図は、当サイトが以前取り上げた物体検出技術のデュアルユース（民生・軍事双方への転用）の議論とも重なる。オープンウェイトモデルやエッジ推論チップを扱う開発者にとって、**自分の作った技術やコードが想定外の用途に転用されうる**という問題は、抽象的な規制論ではなく、供給網の実態として存在している。",
+      "**注記**: 本記事は、亡くなった方々の氏名・年齢を含め、複数の独立した報道機関が一致して報じている情報に基づいて作成した。事実関係に新たな情報が確認された場合は、訂正・追記ポリシーに従って更新する。"
+    ],
+    "primarySources": [
+      {
+        "title": "Nvidia Jetson Orin-guided Russian AI drone killed three civilians in Ukraine, forensic teams say",
+        "site": "Yahoo News（New York Times の調査報道を引用）",
+        "url": "https://www.yahoo.com/news/world/articles/nvidia-jetson-orin-guided-russian-124022413.html"
+      },
+      {
+        "title": "NYT: A fully autonomous Russian AI drone run by an Nvidia minicomputer killed 3 civilians in the Ukrainian city of Zaporizhzhia",
+        "site": "Meduza",
+        "url": "https://meduza.io/en/feature/2026/08/24/nyt-a-fully-autonomous-russian-ai-drone-run-by-an-nvidia-minicomputer-killed-3-civilians-in-the-ukrainian-city-of-zaporizhzhia"
+      },
+      {
+        "title": "A Russian drone chose its own target and killed three. The code that told it what to look for was readable",
+        "site": "Euromaidan Press",
+        "url": "https://euromaidanpress.com/2026/08/25/a-russian-drone-chose-its-own-target-and-killed-three-the-code-that-told-it-what-to-look-for-was-readable/"
+      },
+      {
+        "title": "Nvidia Jetson Orin-guided the Russian AI drone that killed three civilians in Ukraine, forensic teams say",
+        "site": "Tom's Hardware",
+        "url": "https://www.tomshardware.com/tech-industry/drones/nvidia-jetson-orin-guided-the-russian-ai-drone-that-killed-three-civilians-in-ukraine-forensic-teams-say"
+      }
+    ]
   }
 };
 

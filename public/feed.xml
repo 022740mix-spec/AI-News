@@ -80,6 +80,14 @@
     <summary>Wikipedia の「Signs of AI Writing（AI執筆の兆候）」プロジェクトが整理した35のパターンをもとに、AI が書いた文章の「いかにもらしさ」を直す Agent Skill Humanizer が、GitHub で41,800スター超（2026年9月4日時点）に達している。コードやモデルを含まない SKILL.md 1枚で、Claude Code・Cursor など Agent Skills 対応ツールから呼び出せる。事実の創作は行わず、原文にある情報の言い回しだけを直す設計で、作者自身がリポジトリ内で「AI検出の回避」と「悪い書き癖の是正」を明確に区別している。</summary>
   </entry>
   <entry>
+    <title>【分析】NYTの調査報道 — 完全自律AIドローンが民間人3人を殺害、ウクライナで確認された「初めての事例」</title>
+    <link rel="alternate" type="text/html" href="?a=zaporizhzhia-autonomous-drone-civilian-deaths-2026"/>
+    <id>tag:ai-tool-news.jp,2026:zaporizhzhia-autonomous-drone-civilian-deaths-2026</id>
+    <published>2026-09-04T15:00:00Z</published>
+    <updated>2026-09-04T15:00:00Z</updated>
+    <summary>New York Times の調査報道によると、ウクライナ・ザポリージャで2026年7月6日、ロシアの Molniya 型攻撃ドローンが、人が操縦することなく自らガソリンスタンドへの着弾地点を選び、19歳の学生を含む民間人3人が死亡した。機体に積まれていたのは軍用ではなく市販の NVIDIA Jetson Orin 系ミニコンピュータで、暗号化されておらず、事後に画像認識用の学習データが読み取れる状態だったという。専門家は、AIによる自律標的選択が民間人の死につながった事例として確認されたのは初めてだとしている。</summary>
+  </entry>
+  <entry>
     <title>「どんなAIエージェントも科学者にする」スキル集が週間GitHubトレンド1位に — 163種のスキルで100超の科学データベースへ接続</title>
     <link rel="alternate" type="text/html" href="?a=k-dense-scientific-agent-skills-2026"/>
     <id>tag:ai-tool-news.jp,2026:k-dense-scientific-agent-skills-2026</id>
