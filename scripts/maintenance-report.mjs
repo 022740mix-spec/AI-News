@@ -218,6 +218,43 @@ let actionable = false;
   }
 }
 
+// ── 4b-2. 週次の計器が出ているか ──
+// 週まとめは2026年3月〜6月に14本出たあと、74日間止まっていた。
+// **止まったことに誰も気づかなかった。** 公約はしていなかったが、
+// UI には「毎週月曜公開」「毎週の振り返り」と書いてあり、実態と食い違っていた。
+//
+// 週次を続けると決めた以上、止まったら鳴らす。頻度の約束は、
+// 検知が付いていなければ守られない。
+{
+  const mod = await import(pathToFileURL(join(rootDir, "src/data/articlesMeta.js")).href);
+  const meta = mod.ARTICLES_META || [];
+  const weeklies = meta.filter((a) => a.heroScope === "week" || a.weekRoundupPeriod);
+  const pub = (a) =>
+    /^\d{4}-\d{2}-\d{2}$/.test(String(a?.date ?? "")) ? String(a.date) : String(a?.newsDate ?? "");
+  const latest = weeklies.map(pub).filter(Boolean).sort().pop();
+
+  if (latest) {
+    const days = Math.floor(
+      (new Date(`${today}T00:00:00Z`) - new Date(`${latest}T00:00:00Z`)) / 86400000
+    );
+    // 月曜公開なので、通常は最大7日。8日を超えたら1回飛んでいる
+    if (days > 8) {
+      actionable = true;
+      sections.push({
+        level: "warn",
+        title: `週次の計器が ${days} 日出ていない`,
+        note:
+          `最後の週次は ${latest} です。**月曜公開なので、通常は7日以内に次が出ます。**\n\n` +
+          "記事作成 Routine の月曜の回が担当します。数字は\n" +
+          "`node scripts/weekly-metrics.mjs` で出ます（外部サイトに依存しないため、\n" +
+          "調査が egress で詰まる日でも必ず出せます）。\n\n" +
+          "**出さないと決めたなら、UI の「毎週月曜公開」「毎週の振り返り」も同時に直してください。**\n" +
+          "実態と食い違う文言を残さないこと。",
+      });
+    }
+  }
+}
+
 // ── 4c. Routine の作業ブランチの棚卸し ──
 // Routine は1日2回走り、一次ソースに到達できなかった記事をブランチに退避する。
 // 退避は正しい判断だが、ブランチは誰も消さない。放置すると月60本の
