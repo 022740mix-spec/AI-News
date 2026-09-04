@@ -61,10 +61,19 @@ for (const block of guide.GLOSSARY_BY_GENRE ?? []) {
 }
 const headLower = headwords.map((h) => h.word.toLowerCase());
 
-/** 見出し語は「LLM（大規模言語モデル）」のように括弧付きなので、包含で照合する */
+/**
+ * 見出し語は「LLM（大規模言語モデル）」のように括弧付きなので、包含で照合する。
+ *
+ * **空白を無視する。** 用語集の本文は「LLM がテキストを」のように和欧間に
+ * 空白を入れる書き方で統一されているため、見出しも「エッジ AI」「ローカル LLM」
+ * となる。一方タグ側は「エッジAI」「ローカルLLM」で空白が無い。
+ * 正規化しないと、**追加したばかりの語が候補に出続ける。**
+ */
+const squash = (x) => x.toLowerCase().replace(/[\s\u3000]/g, "");
+const headSquashed = headLower.map(squash);
 const hasEntry = (tag) => {
-  const t = tag.toLowerCase();
-  return headLower.some((w) => w.includes(t));
+  const t = squash(tag);
+  return headSquashed.some((w) => w.includes(t));
 };
 
 /**
@@ -83,7 +92,7 @@ for (const block of guide.GLOSSARY_BY_GENRE ?? []) {
   }
 }
 const explainedIn = (tag) =>
-  definitions.filter((d) => d.mean.includes(tag)).map((d) => d.word);
+  definitions.filter((d) => squash(d.mean).includes(squash(tag))).map((d) => d.word);
 
 /** 固有名詞（企業名・製品名・モデル名）は用語集の対象ではない */
 const properNouns = new Set();
