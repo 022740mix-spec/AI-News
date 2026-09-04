@@ -18623,6 +18623,132 @@ const ARTICLES_BODY = {
         "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/"
       }
     ]
+  },
+  "openai-gpt-6-astra-critical-cyber-2026": {
+    "body": [
+      "**OpenAI** が2026年9月3日、新モデル **GPT-6 Astra** を公開した。公式発表を「the world's most intelligent and aligned model（世界で最も知能が高く、整合性の取れたモデル）」と位置付けており、コンピュータ操作・ブラウジング・ソフトウェア開発・サイバーセキュリティ・科学・専門業務の各分野で自社の最高性能だとしている。",
+      "## ベンチマークが示す数字",
+      "OpenAI が示した数値は、**FrontierMath Tier 4 で98%**、**ARC-AGI-3 で99.9%**、既知の脆弱性から実際に動く攻撃コードを組み立てられるかを測る自社ベンチマーク **ExploitBench で100%**。エンドツーエンドのソフトウェア開発タスクを測る **DeepSWE v1.1 では74.1%** で、Anthropic の Opus 5（73.7%）、Google の Gemini 3.8 Flash（73.8%）とわずかな差で並ぶ水準だとされる。",
+      "## 自社初の「Critical」判定",
+      "今回の発表で最も重い扱いを受けているのが、OpenAI が自主的に運用する **Preparedness Framework（危険能力を段階評価する社内フレームワーク）でのサイバーセキュリティ区分**である。OpenAI は GPT-6 Astra について、**適切なツールとアクセス権を与えれば、人が手順を逐一導かなくても、防御の堅いシステムに対して未知の脆弱性を発見し、新たな攻撃手段を組み立てられる**として、自社モデルとして初めて最高区分の「Critical」に達したと説明している。これを受けて、**サイバー悪用や意図しない自律行動への対策を強化するため、開発の一部と公開時期を数週間遅らせた**という。",
+      "「Critical」は OpenAI 自身が定めた評価であり、外部機関による独立審査を経た値ではない。フレームワークの妥当性や運用の中立性そのものが議論の対象になりうる点は留意が必要である。",
+      "## 「AGI」を巡る表現",
+      "OpenAI の共同創業者 Greg Brockman 氏は、GPT-6 Astra を「世代を画す進化（generational leap）」と表現しており、一部報道はこれを「AGI（汎用人工知能）を体現するモデルか」という論調で伝えている。ただし「AGI」の定義自体が業界内で統一されておらず、OpenAI の公式発表も「AGIである」と断定する形は取っていない。エグゼクティブの発言と第三者による評価・定義の間には距離があることを踏まえて受け止める必要がある。",
+      "## 価格と展開",
+      "API は **Standard ティアが入力$10 / 出力$50（100万トークンあたり）**、**Fast ティアは約2.5倍の速度で価格も2倍**とされる。キャッシュ入力は$1、キャッシュ書き込みは$12.5（いずれも100万トークンあたり）。展開は段階的で、まずサイバーセキュリティ関連プログラム「Daybreak」参加企業向けに限定公開し、その後 ChatGPT の Plus / Pro / Business / Enterprise、API、AWS 経由へと数日かけて広げる計画だという。",
+      "## Codex での統合はすでに始まっている",
+      "OpenAI 公式の GitHub リポジトリ `openai/codex` では、**2026年9月3日付のリリース 0.153.1 で「モデル選択 UI に表示せず、API 経由でのみ GPT-6-Astra を設定可能にする」変更**が、続く 0.153.2 で Fast ティアの表示文言修正が確認できる。モデル名・提供時期そのものはこの一次ソースで裏付けが取れる形になっている。",
+      "**注記**: 本記事作成時点で、OpenAI 公式ページ（openai.com、deploymentsafety.openai.com）へは本稿の調査環境のネットワークポリシー上、直接到達できなかった。ただし該当ページは検索エンジンの索引上に実在が確認でき、見出しや数値は Axios・CNBC・NBC News・Forbes など独立した複数の主要メディアの報道と一致している。GitHub 上の `openai/codex` リリースノートは直接到達・確認済みの一次ソースである。"
+    ],
+    "primarySources": [
+      {
+        "title": "GPT-6 Astra（OpenAI 公式発表ページ）",
+        "site": "OpenAI（検索インデックス経由で存在・見出しを確認、本文への直接到達は本稿の調査環境では不可）",
+        "url": "https://openai.com/index/gpt-6-astra/"
+      },
+      {
+        "title": "GPT-6 Astra System Card",
+        "site": "OpenAI Deployment Safety Hub（検索インデックス経由で存在確認、本文への直接到達は本稿の調査環境では不可）",
+        "url": "https://deploymentsafety.openai.com/gpt-6-astra"
+      },
+      {
+        "title": "openai/codex Releases（0.153.1 / 0.153.2 で GPT-6-Astra 対応を確認）",
+        "site": "GitHub（直接到達・確認済み）",
+        "url": "https://github.com/openai/codex/releases"
+      },
+      {
+        "title": "OpenAI releases new model GPT-6 Astra, says it may represent AGI",
+        "site": "Axios",
+        "url": "https://www.axios.com/2026/09/03/openai-astra-gpt-6-agi-brockman"
+      }
+    ]
+  },
+  "meta-muse-spark-1-3-2026": {
+    "body": [
+      "**Meta** が2026年9月2日、**Muse Spark 1.3** を公開した。前バージョンの 1.2 から約4週間でのリリースで、**Muse Code とモデル API の両方でドロップイン（既存の呼び出し方のまま置き換え可能）アップグレード**として提供される。コンテキスト長は**1Mトークン**を維持し、テキスト・画像・動画の入力に対応する。",
+      "## ベンチマークの内訳",
+      "第三者評価機関 Artificial Analysis の Intelligence Index では、**636モデル中6位**にランクされたとされる。個別のベンチマークでは、エンドツーエンドのソフトウェア開発タスクを測る **DeepSWE 1.1 で75.4%**、**Terminal-Bench 2.1 で88.8%**、コードベース質問応答の **SWE Atlas CodeBase QnA で59.4%**、長文コンテキスト検索では**98.5%**を記録したという。一方で、**純粋なエージェントタスクのベンチマーク6項目中4項目では、依然として Anthropic の Opus 5（max 構成）が上回っている**とも報じられている。",
+      "## 「最高スコア」と「実際に使えるモデル」の差",
+      "Meta によれば、1.2 比で**同等のコーディング作業をこなすのに必要なツール呼び出し数が約20%、トークン消費量が約25%減った**という。ただし報道の中には、**最も高いベンチマークスコアを出しているのは開発者が広く使える構成ではない「max」構成であり、実際に幅広く提供されるのは一段抑えたモデル**だと指摘するものがある。ベンチマーク上位の数字と、実際に手元で使えるモデルの性能が必ずしも一致しない点は、比較検討する際に踏まえておく必要がある。",
+      "## 料金体系",
+      "標準エンドポイントの料金は**入力$1.25 / 出力$4.25（100万トークンあたり）**で、前バージョン 1.1 から据え置き。加えて、**利用データを Meta の学習に提供することと引き換えに10〜20倍程度安くなる「contributor」エンドポイント**も引き続き用意されている。",
+      "**注記**: 本記事作成時点で、Meta 公式のモデルブログ（research.meta.ai、ai.meta.com）へは本稿の調査環境のネットワークポリシー上、直接到達できなかった。ただし、ベンチマーク数値・料金・リリース日は VentureBeat・TechTimes・eesel AI など独立した複数のメディアの報道で一致しており、内容に矛盾は見られない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Meta says Muse Spark 1.3 has frontier performance — but its best results come from a model developers can't broadly use yet",
+        "site": "VentureBeat",
+        "url": "https://venturebeat.com/technology/meta-says-muse-spark-1-3-has-frontier-performance-but-its-best-results-come-from-a-model-developers-cant-broadly-use-yet"
+      },
+      {
+        "title": "Muse Spark 1.3 Jumps 16 Points on DeepSWE: How Meta Training Loop Closed Gap",
+        "site": "Tech Times",
+        "url": "https://www.techtimes.com/articles/326417/20260903/muse-spark-13-jumps-16-points-deepswe-how-meta-training-loop-closed-gap.htm"
+      },
+      {
+        "title": "Meta Muse Spark 1.3: benchmarks, pricing, and what changed",
+        "site": "eesel AI",
+        "url": "https://www.eesel.ai/blog/muse-spark-1-3"
+      }
+    ]
+  },
+  "humanizer-ai-writing-patterns-skill-2026": {
+    "body": [
+      "**blader/humanizer** というリポジトリが、GitHub で**41,800スター超**（本稿確認時点）を集めている。実装はコードやモデルを含まない **SKILL.md 1枚**で、Claude Code・Cursor など Agent Skills 対応ツールから呼び出す形の**ルール配布型**のパッケージである。",
+      "## 何をするものか",
+      "参照しているのは、Wikipedia の編集者コミュニティが整理してきた **「Signs of AI Writing（AI執筆の兆候）」プロジェクト**の知見で、そこから抽出した**35の具体的なパターン**を下敷きにする。README で挙げられている例には、根拠のない重要性の強調（significance inflation）、be動詞の多用を避ける不自然な言い換え（copula avoidance）、三点セットで畳みかける構成（rule of three）、ダッシュの多用などがある。処理は**2パス構成**で、まず下書きを作り、次にそのパターン一覧に照らして書き直す。ユーザーが自分の文章サンプルを与えれば、その文体に寄せることもできる。",
+      "## 「検出回避」との違いを作者自身が明記",
+      "この種のツールが必ず直面するのが、**「AI検出をすり抜けるためのツールではないか」という疑問**である。Humanizer の README は、この点について**事実を創作しない**こと、**情報は原文や執筆者から得たものに限る**ことを明記し、目的を「読みやすさと自然さの向上」に置くと述べている。すなわち、著者自身が「AI検出の回避」と「AIらしい書き癖の是正」を区別した立場を取っている。この作者による立場表明そのものが一次情報であり、外部が「これは検出回避ツールだ」と決めつける前段にあたる事実として扱える。",
+      "## 開発者にとっての位置づけ",
+      "ponytail（YAGNI をエージェントに教えるスキル）や、当サイトで紹介してきた他の Agent Skills 系リポジトリと同様、**モデルもフレームワークも持たず、既存のエージェントに読ませる指示書だけで動く**という設計は共通している。コード生成だけでなく、レポートやドキュメントの草稿を AI に書かせたあと、人が最終チェックする前に**文章の癖を整える工程**として位置づけられるツールだと言える。",
+      "## 導入を検討するなら",
+      "ルール配布型のパッケージは、指示の中身を読まずに導入するとエージェントの振る舞いに意図しない変化を招く。とりわけ「文章を書き換える」性質のスキルは、**事実関係まで変えてしまわないか**を実際の出力で確認してから常用に移すのが安全である。学術的な誠実性が問われる文脈（論文・レポート等）でこの種のツールを使う場合は、**所属先や提出先のルールが優先される**点にも注意したい。",
+      "**注記**: 本記事はリポジトリの README とスター数の実測に基づく紹介であり、パターン検出の精度そのものを検証したものではない。"
+    ],
+    "primarySources": [
+      {
+        "title": "blader/humanizer",
+        "site": "GitHub",
+        "url": "https://github.com/blader/humanizer"
+      }
+    ]
+  },
+  "zaporizhzhia-autonomous-drone-civilian-deaths-2026": {
+    "body": [
+      "**New York Times** の調査報道によると、2026年7月6日、ウクライナ南東部**ザポリージャ**市内のガソリンスタンド付近で、ロシア軍が投入した**Molniya型攻撃ドローン**が民間人3人を殺害した。ウクライナの防空当局者と、機体の残骸を調べた鑑識チームが同紙の取材に対し、**このドローンには操縦者との通信用アンテナがなく、飛行中も電波を発していなかった**と説明している。これは、**最終的な着弾地点を機体側のソフトウェアが自律的に選んでいたことを示す状況証拠**とされる。",
+      "亡くなったのは、ザポリージャ国立大学の会計学専攻の学生 **Tetiana Bubynets さん（19歳）**、**Oleksiy Svirin さん（41歳）**、**Roman Karpiy さん（48歳）**の3人。操縦者はドローンをガソリンスタンド方面に向けて発進させたが、**目標に接近した後の最終的な狙いの選定は機体に搭載されたソフトウェアが担っていた**とみられ、プロパンタンクなど特定の物体を認識するよう学習されていた可能性が高いという。ドローンは近くの集合住宅の壁を避けきれずに激突・爆発し、その場に避難していた人々を巻き込んだ。",
+      "## ハードウェアが語るもの",
+      "機体から回収されたのは、**軍用に設計されたコンピュータではなく、市販の NVIDIA Jetson Orin 系ミニコンピュータ**（廉価な構成で$249程度から入手可能とされる）だった。専門家によれば、このモジュールは**暗号化されておらず**、内部に残っていた画像データから、**どのような物体を標的として認識するよう学習されていたかを事後に確認できた**という。データセンター向けのAIアクセラレータは米国の輸出規制の対象になる一方、**Jetson Orin のようなエッジ向け（末端機器搭載向け）の小型モジュールは同じ規制の対象になっていない**とされ、この違いが調達を可能にした一因として指摘されている。",
+      "## 「初めて確認された事例」という位置づけ",
+      "シンクタンク CSIS の Wadhwani AI Center に所属する専門家は、これを**ロシア・ウクライナ戦争において、完全自律のAI標的選択システムによって民間人の死亡が確認された初めての事例**だと述べている。ウクライナ側は、ロシアが同種のシステムを**2026年5月頃からザポリージャ周辺で試験投入していた**とみている。国連のグテーレス事務総長はこれまで繰り返し、**人間の関与なしに致死的な判断を行う兵器システム（自律型致死兵器システム、LAWS）に対する拘束力のある国際規制**を求めてきた経緯があり、この事例はその議論に具体的な材料を与える形になる。",
+      "## この記事で確認できていないこと",
+      "本記事は New York Times の調査報道と、それを引用した複数の独立系メディア（Tom's Hardware、Gizmodo、Futurism、Euromaidan Press、Meduza、The Insider など）の報道内容が一致していることを根拠にしている。**NYT 原記事および現地の鑑識報告書そのものへは、本稿の調査環境のネットワークポリシー上、直接到達できていない。** ロシア側からの公式な見解・反論は本稿執筆時点で確認できておらず、攻撃の意図（民間施設を誤認識した結果か、他の要因によるものか）についても断定できる材料はない。事実関係の重み付けは、今後の追加報道・独立検証によって更新されうる。",
+      "## なぜこれが「開発者にとっての」ニュースなのか",
+      "この事例で使われたとされる部品は、消費者向け・産業向けのロボティクスやエッジAI開発で広く流通している市販品である。**AI開発における『民生』と『軍事』の境界が、部品レベルでは事実上存在しない**という構図は、当サイトが以前取り上げた物体検出技術のデュアルユース（民生・軍事双方への転用）の議論とも重なる。オープンウェイトモデルやエッジ推論チップを扱う開発者にとって、**自分の作った技術やコードが想定外の用途に転用されうる**という問題は、抽象的な規制論ではなく、供給網の実態として存在している。",
+      "**注記**: 本記事は、亡くなった方々の氏名・年齢を含め、複数の独立した報道機関が一致して報じている情報に基づいて作成した。事実関係に新たな情報が確認された場合は、訂正・追記ポリシーに従って更新する。"
+    ],
+    "primarySources": [
+      {
+        "title": "Nvidia Jetson Orin-guided Russian AI drone killed three civilians in Ukraine, forensic teams say",
+        "site": "Yahoo News（New York Times の調査報道を引用）",
+        "url": "https://www.yahoo.com/news/world/articles/nvidia-jetson-orin-guided-russian-124022413.html"
+      },
+      {
+        "title": "NYT: A fully autonomous Russian AI drone run by an Nvidia minicomputer killed 3 civilians in the Ukrainian city of Zaporizhzhia",
+        "site": "Meduza",
+        "url": "https://meduza.io/en/feature/2026/08/24/nyt-a-fully-autonomous-russian-ai-drone-run-by-an-nvidia-minicomputer-killed-3-civilians-in-the-ukrainian-city-of-zaporizhzhia"
+      },
+      {
+        "title": "A Russian drone chose its own target and killed three. The code that told it what to look for was readable",
+        "site": "Euromaidan Press",
+        "url": "https://euromaidanpress.com/2026/08/25/a-russian-drone-chose-its-own-target-and-killed-three-the-code-that-told-it-what-to-look-for-was-readable/"
+      },
+      {
+        "title": "Nvidia Jetson Orin-guided the Russian AI drone that killed three civilians in Ukraine, forensic teams say",
+        "site": "Tom's Hardware",
+        "url": "https://www.tomshardware.com/tech-industry/drones/nvidia-jetson-orin-guided-the-russian-ai-drone-that-killed-three-civilians-in-ukraine-forensic-teams-say"
+      }
+    ]
   }
 };
 

@@ -8655,5 +8655,76 @@ export const ARTICLES_META = [
       "エンタープライズ",
       "料金"
     ]
+  },
+  {
+    "id": "openai-gpt-6-astra-critical-cyber-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI が GPT-6 Astra を公開 — Preparedness Framework で自社初の「Critical」サイバー評価、ExploitBench は満点",
+    "excerpt": "OpenAI が2026年9月3日、新モデル **GPT-6 Astra** を公開した。ExploitBench 100%・ARC-AGI-3 99.9%・FrontierMath Tier 4 98% を主張し、**自社の Preparedness Framework でサイバーセキュリティ区分が初めて「Critical」に達した**とする。人が手順を逐一指示しなくても、未知の脆弱性を発見し攻撃コードを組み立てられる能力があるとして、**公開を数週間遅らせて防御策を強化した**という。GitHub 上の Codex リポジトリでは9月3日付でモデル設定の追加が確認できる。",
+    "date": "2026-09-04",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "OpenAI",
+      "GPT-6",
+      "Astra",
+      "セキュリティ",
+      "AI安全性"
+    ]
+  },
+  {
+    "id": "meta-muse-spark-1-3-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Meta が Muse Spark 1.3 を公開 — Artificial Analysis 総合6位、ただし最上位スコアは「まだ広く使えないモデル」の数字",
+    "excerpt": "Meta が2026年9月2日、**Muse Spark 1.3** を Muse Code とモデル API 向けに公開した。**Artificial Analysis Intelligence Index で636モデル中6位**、DeepSWE 1.1（エンドツーエンドのソフトウェア開発）は**75.4%**、長文コンテキスト検索は**98.5%**。1.2 比で**ツール呼び出し数が約20%、トークン消費が約25%減った**という。ただし最高スコアを出しているのは「max」構成で、実際に広く提供されるのは一段控えめな構成という点に注意が必要。料金は $1.25 / $4.25（100万トークンあたり）で 1.1 から据え置き。",
+    "date": "2026-09-04",
+    "newsDate": "2026-09-02",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Meta",
+      "Muse",
+      "モデル",
+      "ベンチマーク",
+      "コーディング"
+    ]
+  },
+  {
+    "id": "humanizer-ai-writing-patterns-skill-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "「AIっぽい文章」を35パターンで直す Agent Skill「Humanizer」が4万スター超 — 掲げるのは検出回避ではなく作法の是正",
+    "excerpt": "Wikipedia の「Signs of AI Writing（AI執筆の兆候）」プロジェクトが整理した**35のパターン**をもとに、AI が書いた文章の「いかにもらしさ」を直す Agent Skill **Humanizer** が、GitHub で**41,800スター超**（2026年9月4日時点）に達している。コードやモデルを含まない SKILL.md 1枚で、Claude Code・Cursor など Agent Skills 対応ツールから呼び出せる。事実の創作は行わず、原文にある情報の言い回しだけを直す設計で、作者自身がリポジトリ内で「AI検出の回避」と「悪い書き癖の是正」を明確に区別している。",
+    "date": "2026-09-04",
+    "newsDate": "2026-09-04",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "エージェント",
+      "オープンソース",
+      "スキル",
+      "ライティング",
+      "Claude Code"
+    ]
+  },
+  {
+    "id": "zaporizhzhia-autonomous-drone-civilian-deaths-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】NYTの調査報道 — 完全自律AIドローンが民間人3人を殺害、ウクライナで確認された「初めての事例」",
+    "excerpt": "**New York Times の調査報道**によると、ウクライナ・ザポリージャで2026年7月6日、**ロシアの Molniya 型攻撃ドローンが、人が操縦することなく自らガソリンスタンドへの着弾地点を選び**、19歳の学生を含む民間人3人が死亡した。機体に積まれていたのは**軍用ではなく市販の NVIDIA Jetson Orin 系ミニコンピュータ**で、暗号化されておらず、事後に画像認識用の学習データが読み取れる状態だったという。専門家は、**AIによる自律標的選択が民間人の死につながった事例として確認されたのは初めて**だとしている。",
+    "date": "2026-09-04",
+    "newsDate": "2026-07-06",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "軍事",
+      "ドローン",
+      "NVIDIA",
+      "規制"
+    ]
   }
 ];
