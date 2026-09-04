@@ -16,6 +16,7 @@ import {
   SITE_NAME,
   SITE_DESCRIPTION,
   getArticleNewsYmd,
+  getArticlePublishYmd,
   getSiteTodayYmd,
 } from "./data/articleHelpers.js";
 import { AI_COMPANIES, COMPANIES_DISCLAIMER } from "./data/aiCompanies.js";
@@ -317,9 +318,12 @@ export default function App() {
           a.tags.some((t) => t.toLowerCase().includes(q))
       );
     }
+    // 「本日のニュース」は**掲載日**で選ぶ。
+    // 出来事の日で「今日」を探すと、今日公開した記事でも出来事が数日前なら
+    // 候補に入らず、前日の記事が居座り続ける（2026年9月4日に実際に起きた）。
     const todayYmd = getSiteTodayYmd();
     const todayPool = list.filter((a) => {
-      if (getArticleNewsYmd(a) !== todayYmd) return false;
+      if (getArticlePublishYmd(a) !== todayYmd) return false;
       const scope = a.heroScope ?? "day";
       return scope !== "none";
     });
@@ -331,7 +335,7 @@ export default function App() {
     });
     // 今日の記事がなければカテゴリの最新記事をフォールバック
     const featured = sortedToday[0]
-      ?? [...list].sort((a, b) => parseDate(getArticleNewsYmd(b)) - parseDate(getArticleNewsYmd(a)))[0]
+      ?? [...list].sort((a, b) => compareArticleOrder(a, b, "date-desc"))[0]
       ?? null;
     const restRaw = featured
       ? list.filter((a) => a.id !== featured.id)
@@ -585,7 +589,7 @@ export default function App() {
                           ) : (
                             <>
                               {siteSection === "reviews" ? "各ツールの詳細レビュー" : "掲載記事"}を
-                              <span title="報道・公式発表など、事実が表に出た日の目安">ニュース日</span>
+                              <span title="この記事をサイトに載せた日。出来事の日が異なる場合は各カードに併記しています">掲載日</span>
                               の新しい順に並べています（
                               <strong style={{ color: "var(--text-secondary)" }}>{rest.length}</strong>
                               件）{query ? " · 検索で絞り込み中" : ""}。

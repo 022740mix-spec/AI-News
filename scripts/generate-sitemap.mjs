@@ -11,7 +11,7 @@ import { fileURLToPath } from "node:url";
 import {
   ARTICLES,
   SITE_URL,
-  getArticleNewsYmd,
+  getArticlePublishYmd,
   getSiteTodayYmd,
 } from "../src/data/aiToolsData.js";
 
@@ -44,7 +44,7 @@ function main() {
     },
     ...liveArticles.map((article) => ({
       loc: `${baseUrl}/?a=${encodeURIComponent(article.id)}`,
-      lastmod: getArticleNewsYmd(article) || today,
+      lastmod: getArticlePublishYmd(article) || today,
       changefreq: article.type === "review" ? "monthly" : "weekly",
       priority: article.type === "feature" ? "0.9" : article.type === "review" ? "0.7" : "0.8",
     })),

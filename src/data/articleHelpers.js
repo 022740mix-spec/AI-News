@@ -16,6 +16,30 @@ export function getArticleNewsYmd(a) {
 }
 
 /**
+ * 記事が**サイトに載った日**（掲載日）。date があれば優先、なければ newsDate。
+ *
+ * ── なぜ2つ要るのか ──
+ * `newsDate`（出来事の日）と `date`（掲載日）は 387件中 278件でずれている。
+ * レビュー記事では最大433日離れる（モデルの発表日と執筆日）。
+ *
+ * 「最近のニュース」を出来事の日で並べると、**今日公開した記事が
+ * 数日前の記事の下に埋もれて、読者からは何も増えていないように見える。**
+ *
+ * 2026年9月4日にこれが起きた。朝に5本公開したのに、トップは前日のままで、
+ * NVIDIA の Hugging Face 買収（出来事 9/2）は7番目、Anthropic × Salesforce
+ * （出来事 8/26）はさらに下だった。RSS でも pubDate が古いため、
+ * 購読者のリーダーで新着が下に沈んでいた。
+ *
+ * **「新着」を出す場所は掲載日で並べる。**「いつ起きたか」は本文と
+ * カードの表示で伝える。どちらの日付も隠さない。
+ */
+export function getArticlePublishYmd(a) {
+  if (a?.date && NEWS_YMD.test(String(a.date))) return String(a.date);
+  if (a?.newsDate && NEWS_YMD.test(String(a.newsDate))) return String(a.newsDate);
+  return "";
+}
+
+/**
  * サイト表示・フィード生成の「本日」YYYY-MM-DD（Asia/Tokyo）。
  * 更新のたびに定数を繰り上げず、実行時点の日付を使う。
  */
