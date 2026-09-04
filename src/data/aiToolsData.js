@@ -47,6 +47,7 @@ export const ARTICLES = ARTICLES_META.map((meta) => ({
 // ヘルパー関数・定数を re-export（互換性維持）
 export {
   getArticleNewsYmd,
+  getArticlePublishYmd,
   getSiteTodayYmd,
   SITE_NAME,
   SITE_DESCRIPTION,

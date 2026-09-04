@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CATEGORIES, getArticleNewsYmd } from "../data/articleHelpers.js";
+import { CATEGORIES, getArticleNewsYmd, getArticlePublishYmd } from "../data/articleHelpers.js";
 import { LangContext } from "../context/LangContext.js";
 import { resolveMediaSrc } from "../utils/seo.js";
 import { parseDate } from "../utils/dateUtils.js";
@@ -8,10 +8,16 @@ import { IconNewspaper, IconStar, IconBook, IconWrench, IconBuilding } from "./I
 
 function HomePage({ articles, onSelect, onSection }) {
   const lang = useContext(LangContext);
+  // トップは「サイトに何が増えたか」を見せる場所なので、**掲載日**で並べる。
+  // 出来事の日で並べると、今日公開した記事が数日前の記事の下に埋もれ、
+  // 読者からは何も増えていないように見える（2026年9月4日に実際に起きた）。
+  // 出来事の日は下のカードに併記するので、どちらも隠していない。
   const sorted = [...articles].sort((a, b) => {
-    const da = parseDate(getArticleNewsYmd(a));
-    const db = parseDate(getArticleNewsYmd(b));
-    return db - da;
+    const da = parseDate(getArticlePublishYmd(a));
+    const db = parseDate(getArticlePublishYmd(b));
+    if (db !== da) return db - da;
+    // 同じ日に複数公開したときは、出来事の新しいほうを上にする
+    return parseDate(getArticleNewsYmd(b)) - parseDate(getArticleNewsYmd(a));
   });
 
   const hero = sorted.find((a) => {
@@ -65,7 +71,16 @@ function HomePage({ articles, onSelect, onSection }) {
                   ) : null}
                   <span className="home-card__category">{CATEGORIES[a.category]?.label}</span>
                   <h3 className="home-card__title">{a.title}</h3>
-                  <span className="home-card__date">{a.newsDate ?? a.date}</span>
+                  <span className="home-card__date">
+                    {getArticlePublishYmd(a)}
+                    {getArticleNewsYmd(a) && getArticleNewsYmd(a) !== getArticlePublishYmd(a) ? (
+                      <span className="home-card__newsdate">
+                        {lang === "en"
+                          ? ` (event ${getArticleNewsYmd(a)})`
+                          : `（出来事 ${getArticleNewsYmd(a)}）`}
+                      </span>
+                    ) : null}
+                  </span>
                 </article>
               ))}
             </div>

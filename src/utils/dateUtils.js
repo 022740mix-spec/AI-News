@@ -1,4 +1,4 @@
-import { getArticleNewsYmd } from "../data/articleHelpers.js";
+import { getArticleNewsYmd, getArticlePublishYmd } from "../data/articleHelpers.js";
 
 export const MONTHS_EN = [
   "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC",
@@ -9,11 +9,27 @@ export function parseDate(s) {
   return new Date(y, m - 1, d).getTime();
 }
 
+/**
+ * 記事の並び順。
+ *
+ * 日付順は**掲載日**で並べる。出来事の日で並べると、今日公開した記事が
+ * 数日前の記事の下に埋もれ、読者からは何も増えていないように見える。
+ *
+ * 2026年9月4日にこれが起きた。朝に5本公開したのに、一覧では
+ * Anthropic × Salesforce（出来事 8/26）が17位＝2ページ目にあり、
+ * **公開初日から読者の目に触れない状態**だった。
+ *
+ * 出来事の日は各カードに併記するので、どちらの日付も隠していない。
+ */
 export function compareArticleOrder(a, b, sort) {
   if (sort === "title") return a.title.localeCompare(b.title, "ja");
-  const da = parseDate(getArticleNewsYmd(a));
-  const db = parseDate(getArticleNewsYmd(b));
-  return sort === "date-asc" ? da - db : db - da;
+  const da = parseDate(getArticlePublishYmd(a));
+  const db = parseDate(getArticlePublishYmd(b));
+  if (da !== db) return sort === "date-asc" ? da - db : db - da;
+  // 同じ日に複数公開したときは、出来事の新しいほうを先に見せる
+  const na = parseDate(getArticleNewsYmd(a));
+  const nb = parseDate(getArticleNewsYmd(b));
+  return sort === "date-asc" ? na - nb : nb - na;
 }
 
 /** タグ・カテゴリの重なりで関連記事を最大 limit 件 */

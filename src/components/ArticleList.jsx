@@ -1,5 +1,5 @@
 import { useCallback, useContext } from "react";
-import { CATEGORIES, renderStars, getArticleNewsYmd } from "../data/articleHelpers.js";
+import { CATEGORIES, renderStars, getArticleNewsYmd, getArticlePublishYmd } from "../data/articleHelpers.js";
 import { LangContext, L } from "../context/LangContext.js";
 import { FILTERS, TYPE_FILTERS, getCategoryIcon } from "../constants.js";
 import { richArticleText } from "../utils/richText.jsx";
@@ -155,7 +155,13 @@ function HeroToday({ article, onClick }) {
             <p className="hero-today__date">対象週 {roundupPeriod}</p>
           ) : !isWeekRoundup ? (
             <p className="hero-today__date">
-              {formatPickDate(getArticleNewsYmd(article))}
+              {formatPickDate(getArticlePublishYmd(article))}
+              {getArticleNewsYmd(article) &&
+              getArticleNewsYmd(article) !== getArticlePublishYmd(article) ? (
+                <span className="card-article__newsdate">
+                  {`（出来事 ${formatPickDate(getArticleNewsYmd(article))}）`}
+                </span>
+              ) : null}
             </p>
           ) : null}
           <h2 className="hero-today__title">{article.title}</h2>
@@ -237,7 +243,15 @@ function ArticleCard({
         {richArticleText(article.excerpt, `card-${article.id}-`)}
       </p>
       <div className="card-article__foot">
-        <span>{formatPickDate(getArticleNewsYmd(article))}</span>
+        <span>
+          {formatPickDate(getArticlePublishYmd(article))}
+          {getArticleNewsYmd(article) &&
+          getArticleNewsYmd(article) !== getArticlePublishYmd(article) ? (
+            <span className="card-article__newsdate">
+              {`（出来事 ${formatPickDate(getArticleNewsYmd(article))}）`}
+            </span>
+          ) : null}
+        </span>
         {article.rating ? (
           <span style={{ color: "#fbbf24" }}>{renderStars(article.rating)}</span>
         ) : null}

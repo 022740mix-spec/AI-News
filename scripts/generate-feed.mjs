@@ -10,6 +10,7 @@ import {
   SITE_NAME,
   SITE_DESCRIPTION,
   getArticleNewsYmd,
+  getArticlePublishYmd,
   getSiteTodayYmd,
 } from "../src/data/aiToolsData.js";
 
@@ -39,8 +40,11 @@ function main() {
   mkdirSync(dirname(OUT), { recursive: true });
 
   const sorted = ARTICLES.filter((a) => a.status !== "retracted").sort((a, b) => {
-    const [ya, ma, da] = getArticleNewsYmd(a).split("-").map(Number);
-    const [yb, mb, db] = getArticleNewsYmd(b).split("-").map(Number);
+    // RSS リーダーは pubDate で並べる。出来事の日を入れると、今日公開した
+    // 記事が数日前の日付になり、購読者の画面で新着が下に沈んで気づかれない。
+    // 並びも日付も掲載日で揃える。出来事の日は本文に書いてある。
+    const [ya, ma, da] = getArticlePublishYmd(a).split("-").map(Number);
+    const [yb, mb, db] = getArticlePublishYmd(b).split("-").map(Number);
     return new Date(yb, mb - 1, db) - new Date(ya, ma - 1, da);
   });
 
@@ -48,7 +52,7 @@ function main() {
 
   const entries = sorted
     .map((article) => {
-      const updated = atomDateFromYmd(getArticleNewsYmd(article));
+      const updated = atomDateFromYmd(getArticlePublishYmd(article));
       const summary = escapeXml(excerptPlain(article.excerpt));
       return `  <entry>
     <title>${escapeXml(article.title)}</title>
