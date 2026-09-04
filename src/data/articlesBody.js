@@ -18623,6 +18623,45 @@ const ARTICLES_BODY = {
         "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/"
       }
     ]
+  },
+  "openai-gpt-6-astra-critical-cyber-2026": {
+    "body": [
+      "**OpenAI** が2026年9月3日、新モデル **GPT-6 Astra** を公開した。公式発表を「the world's most intelligent and aligned model（世界で最も知能が高く、整合性の取れたモデル）」と位置付けており、コンピュータ操作・ブラウジング・ソフトウェア開発・サイバーセキュリティ・科学・専門業務の各分野で自社の最高性能だとしている。",
+      "## ベンチマークが示す数字",
+      "OpenAI が示した数値は、**FrontierMath Tier 4 で98%**、**ARC-AGI-3 で99.9%**、既知の脆弱性から実際に動く攻撃コードを組み立てられるかを測る自社ベンチマーク **ExploitBench で100%**。エンドツーエンドのソフトウェア開発タスクを測る **DeepSWE v1.1 では74.1%** で、Anthropic の Opus 5（73.7%）、Google の Gemini 3.8 Flash（73.8%）とわずかな差で並ぶ水準だとされる。",
+      "## 自社初の「Critical」判定",
+      "今回の発表で最も重い扱いを受けているのが、OpenAI が自主的に運用する **Preparedness Framework（危険能力を段階評価する社内フレームワーク）でのサイバーセキュリティ区分**である。OpenAI は GPT-6 Astra について、**適切なツールとアクセス権を与えれば、人が手順を逐一導かなくても、防御の堅いシステムに対して未知の脆弱性を発見し、新たな攻撃手段を組み立てられる**として、自社モデルとして初めて最高区分の「Critical」に達したと説明している。これを受けて、**サイバー悪用や意図しない自律行動への対策を強化するため、開発の一部と公開時期を数週間遅らせた**という。",
+      "「Critical」は OpenAI 自身が定めた評価であり、外部機関による独立審査を経た値ではない。フレームワークの妥当性や運用の中立性そのものが議論の対象になりうる点は留意が必要である。",
+      "## 「AGI」を巡る表現",
+      "OpenAI の共同創業者 Greg Brockman 氏は、GPT-6 Astra を「世代を画す進化（generational leap）」と表現しており、一部報道はこれを「AGI（汎用人工知能）を体現するモデルか」という論調で伝えている。ただし「AGI」の定義自体が業界内で統一されておらず、OpenAI の公式発表も「AGIである」と断定する形は取っていない。エグゼクティブの発言と第三者による評価・定義の間には距離があることを踏まえて受け止める必要がある。",
+      "## 価格と展開",
+      "API は **Standard ティアが入力$10 / 出力$50（100万トークンあたり）**、**Fast ティアは約2.5倍の速度で価格も2倍**とされる。キャッシュ入力は$1、キャッシュ書き込みは$12.5（いずれも100万トークンあたり）。展開は段階的で、まずサイバーセキュリティ関連プログラム「Daybreak」参加企業向けに限定公開し、その後 ChatGPT の Plus / Pro / Business / Enterprise、API、AWS 経由へと数日かけて広げる計画だという。",
+      "## Codex での統合はすでに始まっている",
+      "OpenAI 公式の GitHub リポジトリ `openai/codex` では、**2026年9月3日付のリリース 0.153.1 で「モデル選択 UI に表示せず、API 経由でのみ GPT-6-Astra を設定可能にする」変更**が、続く 0.153.2 で Fast ティアの表示文言修正が確認できる。モデル名・提供時期そのものはこの一次ソースで裏付けが取れる形になっている。",
+      "**注記**: 本記事作成時点で、OpenAI 公式ページ（openai.com、deploymentsafety.openai.com）へは本稿の調査環境のネットワークポリシー上、直接到達できなかった。ただし該当ページは検索エンジンの索引上に実在が確認でき、見出しや数値は Axios・CNBC・NBC News・Forbes など独立した複数の主要メディアの報道と一致している。GitHub 上の `openai/codex` リリースノートは直接到達・確認済みの一次ソースである。"
+    ],
+    "primarySources": [
+      {
+        "title": "GPT-6 Astra（OpenAI 公式発表ページ）",
+        "site": "OpenAI（検索インデックス経由で存在・見出しを確認、本文への直接到達は本稿の調査環境では不可）",
+        "url": "https://openai.com/index/gpt-6-astra/"
+      },
+      {
+        "title": "GPT-6 Astra System Card",
+        "site": "OpenAI Deployment Safety Hub（検索インデックス経由で存在確認、本文への直接到達は本稿の調査環境では不可）",
+        "url": "https://deploymentsafety.openai.com/gpt-6-astra"
+      },
+      {
+        "title": "openai/codex Releases（0.153.1 / 0.153.2 で GPT-6-Astra 対応を確認）",
+        "site": "GitHub（直接到達・確認済み）",
+        "url": "https://github.com/openai/codex/releases"
+      },
+      {
+        "title": "OpenAI releases new model GPT-6 Astra, says it may represent AGI",
+        "site": "Axios",
+        "url": "https://www.axios.com/2026/09/03/openai-astra-gpt-6-agi-brockman"
+      }
+    ]
   }
 };
 

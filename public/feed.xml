@@ -56,6 +56,14 @@
     <summary>Microsoft が Microsoft 365 Copilot の知能層と位置づける Work IQ が2026年6月16日に GA した。「結局は社内検索の名前替えでは」という受け止めがあるが、Microsoft 自身は権限も露出するデータも変えていないと明言している。では何が新しいのか。データ・記憶・推論の3層、4つの API 領域、そして課金がどこで切り替わるかを整理する。</summary>
   </entry>
   <entry>
+    <title>OpenAI が GPT-6 Astra を公開 — Preparedness Framework で自社初の「Critical」サイバー評価、ExploitBench は満点</title>
+    <link rel="alternate" type="text/html" href="?a=openai-gpt-6-astra-critical-cyber-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-gpt-6-astra-critical-cyber-2026</id>
+    <published>2026-09-04T15:00:00Z</published>
+    <updated>2026-09-04T15:00:00Z</updated>
+    <summary>OpenAI が2026年9月3日、新モデル GPT-6 Astra を公開した。ExploitBench 100%・ARC-AGI-3 99.9%・FrontierMath Tier 4 98% を主張し、自社の Preparedness Framework でサイバーセキュリティ区分が初めて「Critical」に達したとする。人が手順を逐一指示しなくても、未知の脆弱性を発見し攻撃コードを組み立てられる能力があるとして、公開を数週間遅らせて防御策を強化したという。GitHub 上の Codex リポジトリでは9月3日付でモデル設定の追加が確認できる。</summary>
+  </entry>
+  <entry>
     <title>「どんなAIエージェントも科学者にする」スキル集が週間GitHubトレンド1位に — 163種のスキルで100超の科学データベースへ接続</title>
     <link rel="alternate" type="text/html" href="?a=k-dense-scientific-agent-skills-2026"/>
     <id>tag:ai-tool-news.jp,2026:k-dense-scientific-agent-skills-2026</id>

@@ -8655,5 +8655,23 @@ export const ARTICLES_META = [
       "エンタープライズ",
       "料金"
     ]
+  },
+  {
+    "id": "openai-gpt-6-astra-critical-cyber-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI が GPT-6 Astra を公開 — Preparedness Framework で自社初の「Critical」サイバー評価、ExploitBench は満点",
+    "excerpt": "OpenAI が2026年9月3日、新モデル **GPT-6 Astra** を公開した。ExploitBench 100%・ARC-AGI-3 99.9%・FrontierMath Tier 4 98% を主張し、**自社の Preparedness Framework でサイバーセキュリティ区分が初めて「Critical」に達した**とする。人が手順を逐一指示しなくても、未知の脆弱性を発見し攻撃コードを組み立てられる能力があるとして、**公開を数週間遅らせて防御策を強化した**という。GitHub 上の Codex リポジトリでは9月3日付でモデル設定の追加が確認できる。",
+    "date": "2026-09-04",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "OpenAI",
+      "GPT-6",
+      "Astra",
+      "セキュリティ",
+      "AI安全性"
+    ]
   }
 ];
