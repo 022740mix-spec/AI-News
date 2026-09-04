@@ -72,6 +72,14 @@
     <summary>Meta が2026年9月2日、Muse Spark 1.3 を Muse Code とモデル API 向けに公開した。Artificial Analysis Intelligence Index で636モデル中6位、DeepSWE 1.1（エンドツーエンドのソフトウェア開発）は75.4%、長文コンテキスト検索は98.5%。1.2 比でツール呼び出し数が約20%、トークン消費が約25%減ったという。ただし最高スコアを出しているのは「max」構成で、実際に広く提供されるのは一段控えめな構成という点に注意が必要。料金は $1.25 / $4.25（100万トークンあたり）で 1.1 から据え置き。</summary>
   </entry>
   <entry>
+    <title>「AIっぽい文章」を35パターンで直す Agent Skill「Humanizer」が4万スター超 — 掲げるのは検出回避ではなく作法の是正</title>
+    <link rel="alternate" type="text/html" href="?a=humanizer-ai-writing-patterns-skill-2026"/>
+    <id>tag:ai-tool-news.jp,2026:humanizer-ai-writing-patterns-skill-2026</id>
+    <published>2026-09-04T15:00:00Z</published>
+    <updated>2026-09-04T15:00:00Z</updated>
+    <summary>Wikipedia の「Signs of AI Writing（AI執筆の兆候）」プロジェクトが整理した35のパターンをもとに、AI が書いた文章の「いかにもらしさ」を直す Agent Skill Humanizer が、GitHub で41,800スター超（2026年9月4日時点）に達している。コードやモデルを含まない SKILL.md 1枚で、Claude Code・Cursor など Agent Skills 対応ツールから呼び出せる。事実の創作は行わず、原文にある情報の言い回しだけを直す設計で、作者自身がリポジトリ内で「AI検出の回避」と「悪い書き癖の是正」を明確に区別している。</summary>
+  </entry>
+  <entry>
     <title>「どんなAIエージェントも科学者にする」スキル集が週間GitHubトレンド1位に — 163種のスキルで100超の科学データベースへ接続</title>
     <link rel="alternate" type="text/html" href="?a=k-dense-scientific-agent-skills-2026"/>
     <id>tag:ai-tool-news.jp,2026:k-dense-scientific-agent-skills-2026</id>

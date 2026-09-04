@@ -8691,5 +8691,23 @@ export const ARTICLES_META = [
       "ベンチマーク",
       "コーディング"
     ]
+  },
+  {
+    "id": "humanizer-ai-writing-patterns-skill-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "「AIっぽい文章」を35パターンで直す Agent Skill「Humanizer」が4万スター超 — 掲げるのは検出回避ではなく作法の是正",
+    "excerpt": "Wikipedia の「Signs of AI Writing（AI執筆の兆候）」プロジェクトが整理した**35のパターン**をもとに、AI が書いた文章の「いかにもらしさ」を直す Agent Skill **Humanizer** が、GitHub で**41,800スター超**（2026年9月4日時点）に達している。コードやモデルを含まない SKILL.md 1枚で、Claude Code・Cursor など Agent Skills 対応ツールから呼び出せる。事実の創作は行わず、原文にある情報の言い回しだけを直す設計で、作者自身がリポジトリ内で「AI検出の回避」と「悪い書き癖の是正」を明確に区別している。",
+    "date": "2026-09-04",
+    "newsDate": "2026-09-04",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "エージェント",
+      "オープンソース",
+      "スキル",
+      "ライティング",
+      "Claude Code"
+    ]
   }
 ];
