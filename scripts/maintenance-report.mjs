@@ -218,6 +218,82 @@ let actionable = false;
   }
 }
 
+// ── 4b-2. 週次の計器が出ているか ──
+// 週まとめは2026年3月〜6月に14本出たあと、74日間止まっていた。
+// **止まったことに誰も気づかなかった。** 公約はしていなかったが、
+// UI には「毎週月曜公開」「毎週の振り返り」と書いてあり、実態と食い違っていた。
+//
+// 週次を続けると決めた以上、止まったら鳴らす。頻度の約束は、
+// 検知が付いていなければ守られない。
+{
+  const mod = await import(pathToFileURL(join(rootDir, "src/data/articlesMeta.js")).href);
+  const meta = mod.ARTICLES_META || [];
+  const weeklies = meta.filter((a) => a.heroScope === "week" || a.weekRoundupPeriod);
+  const pub = (a) =>
+    /^\d{4}-\d{2}-\d{2}$/.test(String(a?.date ?? "")) ? String(a.date) : String(a?.newsDate ?? "");
+  const latest = weeklies.map(pub).filter(Boolean).sort().pop();
+
+  if (latest) {
+    const days = Math.floor(
+      (new Date(`${today}T00:00:00Z`) - new Date(`${latest}T00:00:00Z`)) / 86400000
+    );
+    // 月曜公開なので、通常は最大7日。8日を超えたら1回飛んでいる
+    if (days > 8) {
+      actionable = true;
+      sections.push({
+        level: "warn",
+        title: `週次の計器が ${days} 日出ていない`,
+        note:
+          `最後の週次は ${latest} です。**月曜公開なので、通常は7日以内に次が出ます。**\n\n` +
+          "記事作成 Routine の月曜の回が担当します。数字は\n" +
+          "`node scripts/weekly-metrics.mjs` で出ます（外部サイトに依存しないため、\n" +
+          "調査が egress で詰まる日でも必ず出せます）。\n\n" +
+          "**出さないと決めたなら、UI の「毎週月曜公開」「毎週の振り返り」も同時に直してください。**\n" +
+          "実態と食い違う文言を残さないこと。",
+      });
+    }
+  }
+}
+
+// ── 4b-3. ニュースに出たモデルが比較表に載っているか ──
+// 新モデルの発表時にはベンチマークも同時に公開されることが多い。
+// **記事を書いた日が、比較表を更新できる日**である。
+// ところが記事だけ出して表を更新しないと、両者が静かにずれていく。
+//
+// 2026年9月、実際にずれていた。Claude Fable 5.1 / Mythos 5.1 の記事は
+// 9月1日に出ているのに、MODEL_COMPARISON には Fable 5 までしか無かった。
+// どの検査にも掛からず、指摘されるまで誰も気づかなかった。
+{
+  const r = run("check-model-coverage.mjs", ["--json"]);
+  if (r.code === 0) {
+    let data = null;
+    try { data = JSON.parse(r.out); } catch { /* 出力が壊れていれば黙って飛ばす */ }
+    // 直近30日に記事が出たものだけを対象にする。古い取りこぼしを毎日蒸し返さない
+    const cut = new Date(Date.now() - 30 * 86400000).toISOString().slice(0, 10);
+    const fresh = (data?.missing ?? []).filter((m) => m.latest >= cut);
+    if (fresh.length) {
+      actionable = true;
+      sections.push({
+        level: "warn",
+        title: `比較表に無いモデルが記事に出ている（${fresh.length} 件）`,
+        note:
+          "新モデルの発表時にはベンチマークも同時に公開されます。**記事を書いた日が、\n" +
+          "表を更新できる日**です。\n\n" +
+          "**そのまま足さないこと。** 記事本文の言い回しから未発表のモデル名を拾うことが\n" +
+          "あります（「Qwen4 の設計を先出し」等）。公式のベンチマーク値を確認できたものだけを\n" +
+          "`node scripts/upsert-model.mjs <model.json>` で追加してください。\n\n" +
+          "**ベンチマークの版が違う値を同じ列に入れないこと。** 表の terminalBench は\n" +
+          "2.0 / 2.1 の値で、4.0 の値を並べると比較にならなくなります。版が違うものは\n" +
+          "列を null にして summary に版付きで書きます。",
+        body: fresh
+          .slice(0, 10)
+          .map((m) => `- **${m.name}** — 記事 ${m.hits} 件（最新 ${m.latest}）\n  ${m.example}`)
+          .join("\n"),
+      });
+    }
+  }
+}
+
 // ── 4c. Routine の作業ブランチの棚卸し ──
 // Routine は1日2回走り、一次ソースに到達できなかった記事をブランチに退避する。
 // 退避は正しい判断だが、ブランチは誰も消さない。放置すると月60本の
