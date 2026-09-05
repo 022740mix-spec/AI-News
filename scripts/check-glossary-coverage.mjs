@@ -148,10 +148,13 @@ const missing = [...uses]
   .sort((a, b) => b.uses - a.uses);
 
 // 使われていない見出し語: 統廃合の検討材料（CLAUDE.md の四半期見直し）
-const tagSet = new Set([...uses.keys()].map((t) => t.toLowerCase()));
+// **こちらも空白を無視する。** 上の hasEntry と揃えないと、
+// 「AI 検索」（見出し）と「AI検索」（タグ）が別物と判定され、
+// **足したばかりの語が「使われていない」側に出る。** 実際に出た。
+const tagSet = new Set([...uses.keys()].map(squash));
 const unusedEntries = headwords
   .filter((h) => {
-    const w = h.word.toLowerCase();
+    const w = squash(h.word);
     // 見出し語がタグのどれとも重ならない
     return ![...tagSet].some((t) => w.includes(t) || t.includes(w));
   })
