@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-09-04",
-  "count": 388,
+  "generatedAt": "2026-09-05",
+  "count": 389,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -250,6 +250,7 @@
     "microsoft-build-2026-project-polaris-mai-coding-2026",
     "microsoft-build-2026-windows-agent-framework-2026",
     "microsoft-copilot-cowork-launch-2026",
+    "microsoft-intelligent-terminal-acp-preview-2026",
     "microsoft-mai-transcribe-voice-image-foundry-2026",
     "microsoft-project-perception-ai-security-model-router-2026",
     "microsoft-scout-openclaw-build-2026-2026",

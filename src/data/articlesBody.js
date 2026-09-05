@@ -18623,6 +18623,28 @@ const ARTICLES_BODY = {
         "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/"
       }
     ]
+  },
+  "microsoft-intelligent-terminal-acp-preview-2026": {
+    "body": [
+      "Microsoft が5月の Build 2026 で構想として示した「Intelligent Terminal」が、Windows Terminal の実験的フォークとして GitHub で実際に動く形になっている。初版 v0.1.0 は5月29日に公開され、最新版は v0.2.23（8月21日公開）。3か月ほどで機能が積み上がった（[→ Build 2026 での予告](?a=microsoft-build-2026-windows-agent-framework-2026)）。",
+      "中核にあるのは「Agent Pane」という、ターミナルに常駐するエージェント専用ペインだ。PowerShell と Bash/WSL 双方のシェル出力を横断して監視し、コマンドを勝手に実行することなくコンテキストとして把握する。コマンドが失敗すると自動で検知し、エージェントに修正案を出させる導線も備える。稼働中・過去のエージェントセッションを一覧管理する機能や、「?」で呼び出すコマンドパレット経由のエージェントタスク実行も用意されている。",
+      "対応するのは Agent Client Protocol（ACP）というオープンな仕様に沿ったエージェント CLI で、既定は GitHub Copilot CLI だが、Claude Code・Codex CLI・Gemini CLI・OpenCode も選べる。OpenAI 互換エンドポイントを指定すれば、自前のモデルを持ち込む BYOK 構成にも対応する。",
+      "つまり Windows Terminal というひとつのアプリの中で、ベンダーをまたいで複数のエージェント CLI を切り替えて使える環境になりつつある。「エディタとエージェントは1対1ではない」という構図が、エディタだけでなくターミナル側でも起きている。",
+      "位置づけには注意が要る。Intelligent Terminal は既存の Windows Terminal を置き換えるものではなく、別アプリとしてインストールし、使いたい人だけが有効化する opt-in の形を取る。README は「実験段階」であることを繰り返し明記しており、Mermaid の自動解析、汎用オートレイアウト、ホスト型の共有機能、WYSIWYG 編集は現時点で意図的にスコープ外とされている。動作には Windows 10 バージョン 2004（19041）以降が必要。",
+      "本記事は GitHub 上のリポジトリ本体とリリースノートを一次情報として確認した。Microsoft 公式ブログ（devblogs.microsoft.com）の発表記事自体は、本稿執筆時点のネットワーク環境から到達できなかったため、参照はリポジトリと README の記述にとどめている。"
+    ],
+    "primarySources": [
+      {
+        "title": "microsoft/intelligent-terminal",
+        "site": "GitHub",
+        "url": "https://github.com/microsoft/intelligent-terminal"
+      },
+      {
+        "title": "Releases · microsoft/intelligent-terminal",
+        "site": "GitHub",
+        "url": "https://github.com/microsoft/intelligent-terminal/releases"
+      }
+    ]
   }
 };
 

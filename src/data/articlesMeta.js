@@ -8655,5 +8655,23 @@ export const ARTICLES_META = [
       "エンタープライズ",
       "料金"
     ]
+  },
+  {
+    "id": "microsoft-intelligent-terminal-acp-preview-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Microsoft の「Intelligent Terminal」、Build 2026 の予告から実働プレビューへ — ACP 経由で Copilot CLI・Claude Code・Codex CLI・Gemini CLI・OpenCode を1つのターミナルで切り替え",
+    "excerpt": "Microsoft が5月の Build 2026 で構想として示した「Intelligent Terminal」が、Windows Terminal の実験的フォークとして GitHub で実際に動く形になっている。最新版 v0.2.23（8月21日）時点で、Agent Client Protocol（ACP）に対応した複数ベンダーのエージェント CLI を1つのターミナルの中で切り替えて使える。位置づけは既存 Windows Terminal と共存する opt-in の別アプリで、README は繰り返し「実験段階」と明記する。",
+    "date": "2026-09-05",
+    "newsDate": "2026-08-21",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "エージェント",
+      "オープンソース",
+      "CLI",
+      "ターミナル",
+      "開発ツール"
+    ]
   }
 ];
