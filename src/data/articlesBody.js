@@ -19033,6 +19033,30 @@ const ARTICLES_BODY = {
         "url": "https://www.aerotime.aero/articles/russian-drone-guided-entirely-by-ai-kills-civilians-in-ukraine"
       }
     ]
+  },
+  "doj-statement-of-interest-openai-nyt-fair-use-2026": {
+    "body": [
+      "**本記事の確認状況について、最初に明記する。** 一次資料にあたる米司法省(DOJ)の意見書本体、および裁判記録を保管する courtlistener.com、司法省公式サイト justice.gov には、実行環境のネットワーク制限により**直接到達できていない**。以下は Bloomberg Law・Deadline・gHacks・Tech Times・Above the Law など、本稿執筆時点で確認できた検索結果が伝える内容が一致する範囲を整理したものであり、**一次資料そのものを読んで検証した記述ではない**。数値・日付・固有名詞は複数の独立した報道の一致をもって記載するが、断定はしない。",
+      "報じられているところによれば、米司法省は2026年9月1日、ニューヨーク南部地区連邦地裁(担当判事 Sidney Stein)に係属する著作権訴訟群 *In re: OpenAI Inc. Copyright Infringement Litigation*(事件番号 25-md-03143)に Statement of Interest(意見書)を提出した。この訴訟群は、New York Times が2023年末に OpenAI と Microsoft を相手取り、記事を無断で学習データに使用したとして提起したものを中心に、複数の著作者・出版社・報道機関が原告に加わっている。",
+      "DOJ の意見書は、著作権保護された文章で大規模言語モデルを学習させることは「**非常に変容的(exceedingly transformative)**」であり、米国著作権法のフェアユース(公正利用)規定に該当するという立場を示したと報じられている。あわせて、学習データとしての利用と、モデルの出力・データ取得方法をめぐる別の論点とは切り分けて論じているとされる。Statement of Interest は当事者として訴訟に参加するものではなく、法的な拘束力も持たないが、連邦政府がAI学習と著作権をめぐる一連の訴訟で**公式に立場を表明した初めての例**だと位置づけられている。",
+      "この意見書自体は法廷での一論点に過ぎないが、時期的に重なる別の事実がある。**OpenAI は2026年7月、米国政府に対して自社株式の5%(評価額 $852B に基づき約$42.6B相当)を提供する枠組みを提示しており**([OpenAI が米国政府に5%出資を提示](?a=openai-us-government-5-percent-stake-42b-offer-2026))、これは本件の意見書提出とは別の時期・別の交渉として進んでいる話である。両者の間に因果関係を示す報道は確認できていないが、**AI企業の規制当局であり将来の株主にもなりうる政府**という構造が、同じ時期に並行して存在している事実として記録しておく。",
+      "報道の中には、New York Times がこの意見書提出に強く反発したと伝えるものもある。ただし本稿はその反応の詳細を一次資料で確認できていないため、反発の具体的な文言や根拠についてはここでは立ち入らない。",
+      "**本記事は下書き(ドラフトPR)として扱う。** 一次資料(justice.gov の意見書原本、courtlistener.com の裁判記録)に到達でき次第、意見書の正確な文言と、New York Times 側の反応の詳細を確認したうえで公開版に更新する。"
+    ],
+    "primarySources": [
+      {
+        "title": "In re: OpenAI Inc. Copyright Infringement Litigation, No. 25-md-03143 (S.D.N.Y., 裁判記録 — 本稿執筆時点で未到達)",
+        "url": "https://www.courtlistener.com/docket/?q=25-md-03143"
+      },
+      {
+        "title": "Trump Administration Backs Open AI in New York Times Copyright Case（gHacks、二次情報）",
+        "url": "https://www.ghacks.net/2026/09/03/trump-administration-backs-open-ai-in-new-york-times-copyright-case-calling-ai-training-fair-use/"
+      },
+      {
+        "title": "NY Times Rips Trump's DOJ For Backing AI Companies In Class Action Suit（Deadline、二次情報）",
+        "url": "https://deadline.com/2026/09/new-york-times-justice-department-openai-1237066310/"
+      }
+    ]
   }
 };
 

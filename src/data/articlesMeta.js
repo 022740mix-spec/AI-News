@@ -8744,5 +8744,22 @@ export const ARTICLES_META = [
       "規制",
       "エッジAI"
     ]
+  },
+  {
+    "id": "doj-statement-of-interest-openai-nyt-fair-use-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】米司法省がOpenAI著作権訴訟に「AI学習はフェアユース」と意見書 — 政府が私人間訴訟に立場表明した初めての例",
+    "excerpt": "**本記事は一次資料(justice.gov・裁判記録)に実行環境から直接到達できておらず、複数の独立した報道機関の記事内容が一致する範囲を二次情報として整理した下書きである。** 米司法省(DOJ)が2026年9月1日、ニューヨーク南部地区連邦地裁の著作権訴訟(*In re: OpenAI Inc. Copyright Infringement Litigation*, No. 25-md-03143)に Statement of Interest(意見書)を提出し、著作権保護されたテキストでの大規模言語モデル学習は「非常に変容的」でフェアユースに該当すると主張したと報じられている。AI学習と著作権をめぐる訴訟群で連邦政府が公式に立場を示した初めての例とされる。",
+    "date": "2026-09-05",
+    "newsDate": "2026-09-01",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "規制",
+      "著作権",
+      "分析",
+      "OpenAI"
+    ]
   }
 ];
