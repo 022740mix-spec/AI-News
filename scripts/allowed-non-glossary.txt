@@ -104,6 +104,7 @@ EU AI Act           個別の法令名（固有名詞）
 #    aiCompanies.js に無いために自動判定を通り抜けるもの
 Mythos              Anthropic のモデル名
 Sol                 OpenAI のモデル名
+Astra               OpenAI のモデル名
 Terra               OpenAI のモデル名
 Luna                OpenAI のモデル名
 SpaceX              企業名
