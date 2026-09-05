@@ -192,14 +192,14 @@ const _AI_COMPANIES_UNSORTED = [
     stock: {
       listed: false,
       detail:
-        "未上場。2026年1月の Series D で評価額 $29.3B。2026年6月16日に SpaceX による $60B（全株式）での買収を発表、Q3 2026 クローズ予定",
+        "SpaceX の完全子会社。2026年1月の Series D で評価額 $29.3B。2026年6月16日に SpaceX による $60B（全株式交換）での買収を発表し、2026年8月14日に合併の効力が発生した。SpaceX 子会社 X67 Inc. を吸収する逆三角合併で、対価は SpaceX Class A 株式 約3.91億株",
     },
     products: ["Cursor", "Cursor CLI", "Composer", "Bugbot", "Skills"],
     officialUrl: "https://cursor.com/",
     notes: [
       "VS Code フォーク系 AI エディタ",
       "独自モデル Composer 2.5 / Sonic を自社開発",
-      "SpaceX による買収成立後は SpaceX-xAI 系に組み込まれる見込み",
+      "2026年8月14日に SpaceX の完全子会社となり、新設の SpaceXAI 部門に入った。ブランド名・開発の独立性・料金体系への影響は未発表",
     ],
   },
   {
