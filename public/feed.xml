@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-09-05T15:00:00Z</updated>
+  <updated>2026-09-06T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>Microsoft の「Intelligent Terminal」、Build 2026 の予告から実働プレビューへ — ACP 経由で Copilot CLI・Claude Code・Codex CLI・Gemini CLI・OpenCode を1つのターミナルで切り替え</title>
@@ -46,6 +46,14 @@
     <published>2026-09-05T15:00:00Z</published>
     <updated>2026-09-05T15:00:00Z</updated>
     <summary>New York Times の調査報道によると、2026年7月6日にウクライナ・ザポリージャで、ロシアの Molniya 型ドローンが人の操縦を受けずに自ら着弾地点を選び、民間人3人が死亡した。専門家は、自律的な標的選択が民間人の死につながった確認された初めての事例だとしている。機体から出たのは市販の NVIDIA Jetson Orin モジュールで、ウクライナの調査班が同じ基板を確認したのはこれで4つ目の兵器系統にあたる。データセンター向けの AI アクセラレータは米国の輸出規制の対象だが、このエッジ向けモジュールは対象になっていない。</summary>
+  </entry>
+  <entry>
+    <title>ハードウェアに合わせてローカルモデルを選ぶ推論サーバ「Magnitude」— Claude Code・Cline 等にAPIキー無しで接続、GitHub トレンド入り</title>
+    <link rel="alternate" type="text/html" href="?a=magnitude-local-inference-server-coding-agents-2026"/>
+    <id>tag:ai-tool-news.jp,2026:magnitude-local-inference-server-coding-agents-2026</id>
+    <published>2026-09-05T15:00:00Z</published>
+    <updated>2026-09-05T15:00:00Z</updated>
+    <summary>OSS の推論サーバ「Magnitude」が GitHub トレンドで1日+686スターを集め、累計3,163スターに達した。特徴は手元のマシンを自動でプロファイリングし、動かせるモデルを推薦したうえでダウンロード・チューニング・起動まで面倒を見る設計にある。Claude Code・Cline・Codex など主要なコーディングエージェントにバックエンドとして接続でき、モデルは使用要求時にロードし、アイドル時やメモリ逼迫時に自動アンロードされる。トークン課金・APIキー・レート制限なしを掲げ、ダウンロード後は完全オフラインで動作する。</summary>
   </entry>
   <entry>
     <title>NVIDIA が Hugging Face を $12.93B で買収 — オープンモデルの中核ハブが、GPU最大手の傘下に</title>

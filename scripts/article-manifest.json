@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-05",
-  "count": 393,
+  "count": 394,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -232,6 +232,7 @@
     "lg-k-exaone-2-0-750b-apache-2-open-weight-2026",
     "local-llm-vs-api-reality-2026",
     "m365-copilot-researcher-critique-council-2026",
+    "magnitude-local-inference-server-coding-agents-2026",
     "manus-review",
     "mcp-2026-07-28-release-candidate-stateless-core-2026",
     "mcp-2026-07-28-specification-final-release-2026",
