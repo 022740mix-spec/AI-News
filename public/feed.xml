@@ -40,6 +40,14 @@
     <summary>AI コーディングエディタ Cursor を運営する Anysphere の買収を、SpaceX が完了した。効力発生日は2026年8月14日、全株式交換で評価額600億ドル。SpaceX の子会社 X67 Inc. が Anysphere に吸収される形の合併で、Cursor は SpaceX の完全子会社として存続し、新設の SpaceXAI 部門に入る。ベンチャー支援を受けたスタートアップの買収としては過去最大とされる。</summary>
   </entry>
   <entry>
+    <title>【分析】完全自律ドローンが民間人3人を殺害 — 同じエッジAIモジュールが、4つの兵器から見つかっている</title>
+    <link rel="alternate" type="text/html" href="?a=zaporizhzhia-autonomous-drone-civilian-deaths-2026"/>
+    <id>tag:ai-tool-news.jp,2026:zaporizhzhia-autonomous-drone-civilian-deaths-2026</id>
+    <published>2026-09-05T15:00:00Z</published>
+    <updated>2026-09-05T15:00:00Z</updated>
+    <summary>New York Times の調査報道によると、2026年7月6日にウクライナ・ザポリージャで、ロシアの Molniya 型ドローンが人の操縦を受けずに自ら着弾地点を選び、民間人3人が死亡した。専門家は、自律的な標的選択が民間人の死につながった確認された初めての事例だとしている。機体から出たのは市販の NVIDIA Jetson Orin モジュールで、ウクライナの調査班が同じ基板を確認したのはこれで4つ目の兵器系統にあたる。データセンター向けの AI アクセラレータは米国の輸出規制の対象だが、このエッジ向けモジュールは対象になっていない。</summary>
+  </entry>
+  <entry>
     <title>NVIDIA が Hugging Face を $12.93B で買収 — オープンモデルの中核ハブが、GPU最大手の傘下に</title>
     <link rel="alternate" type="text/html" href="?a=nvidia-acquires-hugging-face-2026"/>
     <id>tag:ai-tool-news.jp,2026:nvidia-acquires-hugging-face-2026</id>

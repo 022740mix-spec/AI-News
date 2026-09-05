@@ -18927,6 +18927,112 @@ const ARTICLES_BODY = {
         "url": "https://qz.com/spacex-buying-cursor-anysphere-60-billion-deal-061626"
       }
     ]
+  },
+  "zaporizhzhia-autonomous-drone-civilian-deaths-2026": {
+    "body": [
+      "**New York Times** が2026年8月24日に公開した調査報道によると、同年**7月6日**、ウクライナ南東部**ザポリージャ**市内のガソリンスタンド付近で、ロシア軍が投入した **Molniya 型攻撃ドローン**が民間人3人を殺害した。ウクライナの防空当局者と、機体の残骸を調べた鑑識チームが同紙に対し、**このドローンには操縦者との通信用アンテナがなく、飛行中も電波を発していなかった**と説明している。最終的な着弾地点を機体側のソフトウェアが自律的に選んでいたことを示す状況証拠とされる。",
+      "## 何が起きたか",
+      "操縦者はドローンをガソリンスタンド方面に向けて発進させた。**しかし目標に接近したあとの最終的な狙いの選定は、機体に搭載されたソフトウェアが担っていた**とみられる。標的認識のソフトウェアは、プロパンタンクなど特定の種類の物体を認識するよう学習されていた。ドローンは近くの建物の壁を避けきれずに激突・爆発し、その場にいた人々を巻き込んだ。",
+      "亡くなったのは、ザポリージャ国立大学で会計学を学んでいた **Tetiana Bubynets さん（19歳）**、**Oleksiy Svirin さん（41歳）**、**Roman Karpiy さん（48歳）**の3人である。**CSIS（戦略国際問題研究所）の Kateryna Bondar 氏**は、これをロシア・ウクライナ戦争において、完全自律の標的選択によって民間人の死亡が確認された初めての事例だとしている。",
+      "## 同じ基板が、4つの兵器から出ている",
+      "機体から回収されたのは、軍用に設計された計算機ではなく、**市販の NVIDIA Jetson Orin モジュール**だった。ロボティクスやエッジ AI の開発で広く使われている汎用品である。**そしてウクライナの調査班が同じ基板を確認したのは、これが最初ではない。**",
+      "回収された基板には **Made in China** の刻印があった。正規の輸出経路ではなく、**再販業者の段階で流出した**ことを示すものとして報じられている。単発の事故ではなく、**調達経路が継続的に機能している**ことを示す点が、この事例の重い部分である。",
+      "モジュールは**暗号化されていなかった**。そのため調査班は、内部に残っていた地形画像と標的認識ソフトウェアの一部を事後に読み取り、**何を標的として認識するよう学習されていたかを確認できた**。皮肉なことに、自律兵器の中身がここまで具体的に判明したのは、それが民生品そのままで、保護されていなかったからである。",
+      "## 「自律」は一つの状態ではない",
+      "報道によれば、ロシアは AI 誘導型の Molniya の試験飛行を**2026年5月**に開始しており、それ以前から V2U 攻撃ドローンで自己標的化を数か月にわたり試していた。ただし **V2U の飛行の一部は、人間が最初の標的を選んだあとの「ラストマイル」に自律を限定する**形だったとされる。",
+      "**同じ「AI ドローン」という言葉が、まったく違う設計を指している。** 人が標的を決めて最終誘導だけを機械に任せるのか、機体が着弾地点そのものを選ぶのか。今回の事例が「初めて」とされるのは、後者に該当し、かつ民間人の死亡が確認されたためである。報道を読むときは、この線がどこに引かれているかを見る必要がある。",
+      "## 輸出規制が引いている線",
+      "米国はモデルの学習に使われる高性能な AI アクセラレータを輸出規制の対象にしている。一方で、**学習済みモデルを末端の機器で動かすためのモジュールは対象になっていない**。Jetson Orin NX は規制リストに載っていない。",
+      "**この線引きは、学習の能力を止めることを意図している。** 実際に戦場で標的を選んでいるのは推論の側であり、そこに必要な計算能力は、規制対象になるほど大きくない。規制の設計と、現場で起きていることの間に差がある。",
+      "## 開発者にとって何を意味するか",
+      "この事例で使われた部品は、消費者向け・産業向けのロボティクスやエッジ AI 開発で広く流通している市販品である。**AI 開発における「民生」と「軍事」の境界は、部品のレベルでは事実上存在しない。** 同じモジュールが、工場の検品にも、農業機械にも、この事例にも使われている。",
+      "オープンウェイトのモデルやエッジ推論チップを扱う開発者にとって、**自分が作った技術やコードが想定外の用途に転用されうる**という問題は、抽象的な規制論ではなく供給網の実態として存在している。当サイトが以前扱った物体検出技術のデュアルユース（民生・軍事双方への転用）の議論と、構図は同じである。",
+      "## 確認できていないこと",
+      "本記事は New York Times の調査報道と、それを引用した複数の独立系メディア（Tom's Hardware、Meduza、Euromaidan Press、The Insider、AeroTime など）の報道が一致していることを根拠にしている。**NYT の原記事および現地の鑑識報告書そのものには、本記事の調査環境のネットワークポリシー上、直接到達できていない。**",
+      "ロシア側からの公式な見解・反論は確認できていない。攻撃の意図（民間施設を誤認識した結果か、他の要因によるものか）を断定できる材料もない。**NVIDIA および流通事業者の見解も、本記事の調査では確認できていない。** これらのモジュールの販売自体は合法であり、ロボティクス用途で世界中に流通している。",
+      "**注記**: 亡くなった方々の氏名・年齢を含め、複数の独立した報道機関が一致して報じている情報のみに基づいて記載した。事実関係に新たな情報が確認された場合は、訂正・追記ポリシーに従って更新する。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 5,
+        "caption": "ウクライナの調査班が同じ NVIDIA 製モジュールを確認したとされる兵器系統（報道による）",
+        "headers": [
+          "系統",
+          "種別"
+        ],
+        "rows": [
+          [
+            "V2U",
+            "攻撃ドローン"
+          ],
+          [
+            "Shahed MS001 派生型",
+            "攻撃ドローン"
+          ],
+          [
+            "S-71M「Monochrome」",
+            "巡航ミサイル"
+          ],
+          [
+            "Molniya",
+            "攻撃ドローン（本件）"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 11,
+        "caption": "米国の輸出規制が対象にしているもの／していないもの",
+        "headers": [
+          "区分",
+          "用途",
+          "規制"
+        ],
+        "rows": [
+          [
+            "H100 / B200 など",
+            "モデルの学習（データセンター）",
+            "対象"
+          ],
+          [
+            "Jetson Orin NX など",
+            "学習済みモデルの実行（末端機器）",
+            "対象外"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Nvidia Jetson Orin-guided Russian AI drone killed three civilians in Ukraine, forensic teams say",
+        "site": "Tom's Hardware（New York Times の調査報道を引用）",
+        "url": "https://www.tomshardware.com/tech-industry/drones/nvidia-jetson-orin-guided-the-russian-ai-drone-that-killed-three-civilians-in-ukraine-forensic-teams-say"
+      },
+      {
+        "title": "NYT: A fully autonomous Russian AI drone run by an Nvidia minicomputer killed 3 civilians in the Ukrainian city of Zaporizhzhia",
+        "site": "Meduza",
+        "url": "https://meduza.io/en/feature/2026/08/24/nyt-a-fully-autonomous-russian-ai-drone-run-by-an-nvidia-minicomputer-killed-3-civilians-in-the-ukrainian-city-of-zaporizhzhia"
+      },
+      {
+        "title": "A Russian drone chose its own target and killed three. The code that told it what to look for was readable",
+        "site": "Euromaidan Press",
+        "url": "https://euromaidanpress.com/2026/08/25/a-russian-drone-chose-its-own-target-and-killed-three-the-code-that-told-it-what-to-look-for-was-readable/"
+      },
+      {
+        "title": "Ukraine documents first civilian deaths caused by an experimental Russian AI-controlled drone, NYT reports",
+        "site": "The Insider",
+        "url": "https://theins.press/en/news/296403"
+      },
+      {
+        "title": "Nvidia Jetson chip found in Russian cruise missile, Ukraine claims — S-71 'Monochrome'",
+        "site": "Tom's Hardware",
+        "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-jetson-chip-found-in-russian-cruise-missile-ukraine-claims-presence-in-s-71-monochrome-weapon-may-indicate-use-of-ai-tech"
+      },
+      {
+        "title": "Russian drone guided entirely by AI kills civilians in Ukraine",
+        "site": "AeroTime",
+        "url": "https://www.aerotime.aero/articles/russian-drone-guided-entirely-by-ai-kills-civilians-in-ukraine"
+      }
+    ]
   }
 };
 
