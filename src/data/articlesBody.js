@@ -18667,6 +18667,168 @@ const ARTICLES_BODY = {
         "url": "https://github.com/THU-MAIC/OpenMAIC/releases"
       }
     ]
+  },
+  "openai-gpt-6-astra-critical-cyber-2026": {
+    "body": [
+      "**OpenAI** が2026年9月3日、新モデル **GPT-6 Astra** を公開した。公式発表はこれを「the world's most intelligent and aligned model」と位置付け、コンピュータ操作・ブラウジング・ソフトウェア開発・サイバーセキュリティ・科学・専門業務の各分野で自社最高性能だとしている。同社の共同創業者で社長の Greg Brockman 氏が「AGI の到来と見なされうる」と述べたことも広く伝えられた。",
+      "## 同じモデルで 62.7% と 98.6% が出る",
+      "AGI という言葉と一緒に最もよく引かれているのが、ARC-AGI-3 のスコアである。ただしこの数字は1つではない。ベンチマークを運営する ARC Prize が独立に検証した結果、**測定に使うハーネス（モデルに問題を渡し回答を受け取る仕組み）が違うと、同じモデルで大きく異なる値が出た**。",
+      "差が生まれるのは、モデルの側ではなく渡し方の側である。各社の実装に合わせた専用のアダプタを使い、推論に最大の計算量を割り当てれば高い値が出る。すべてのモデルを同じ条件で比べるための中立なインターフェースを使うと、値は大きく下がる。**どちらかが不正というわけではなく、測っている条件が違う。**",
+      "ARC Prize は検証結果を公開したうえで、**ベンチマークが飽和したことを AGI の証拠として扱わないよう明確に注意を促している**。「AGI」の定義は業界内で統一されておらず、OpenAI の公式発表自体も「AGI である」と断定する形は取っていない。経営陣の発言、ベンチマークの数字、ベンチマーク運営者の解釈は、それぞれ別のものとして読む必要がある。",
+      "## 他のベンチマーク",
+      "サイバーセキュリティ関連では、既知の脆弱性から実際に動く攻撃コードを組み立てられるかを測る自社ベンチマーク **ExploitBench で100%**。前世代の GPT-5.6 Sol は78.5%だった。一方、**直近3か月に公開された新規の脆弱性**を対象にした評価では39%にとどまる。既知の材料が揃っている場合と、そうでない場合の差が大きい。",
+      "## 自社初の「Critical」判定",
+      "今回の発表で最も重い扱いを受けているのが、OpenAI が自主的に運用する **Preparedness Framework**（危険な能力を段階評価する社内フレームワーク）でのサイバーセキュリティ区分である。同フレームワークは、**人の介在なく、堅牢な実システムに対して未知の脆弱性を発見し動作する攻撃コードを作れる**か、**堅牢な標的に対する新規の攻撃戦略を端から端まで立案・実行できる**場合を「Critical」と定義している。OpenAI は GPT-6 Astra が自社モデルとして初めてこの区分に達したとしている。",
+      "事前評価の過程では、実際にゼロデイ脆弱性が2件発見されたという。これを受けて OpenAI は、公開版では PoC エクスプロイトの生成のような高度な攻撃タスクを**拒否させる**措置を取っている。制限を緩めるのは、審査を通った防御側の組織に限る形で、「OpenAI Daybreak」というプログラムを通じて行う計画である。",
+      "**この「Critical」は OpenAI 自身が定めた基準による自己評価であり、外部機関の独立審査を経た判定ではない。** フレームワークの妥当性も運用の中立性も、評価する主体と評価される主体が同じである以上、そのものが議論の対象になりうる。",
+      "## 一度止めてから出している",
+      "OpenAI はこのモデルの公開を一度停止している。2026年7月の Hugging Face を巡るインシデントを受けて安全対策を追加するための措置で、**停止から1か月未満での公開**となった。当初は9月5日の公開が見込まれていたが、9月3日に限定プレビューとして前倒しで出ている。",
+      "学習は同社として過去最大規模で、テキサスの Stargate サイトで**10万基を超える GPU** が使われた。**他の AI モデルに自らの学習を監督させることに本格的に依存した初のモデル**でもあるとされる。",
+      "## 価格と展開",
+      "API 価格は入力トークン量で2段階に分かれる。272K トークンを超える要求は、**リクエスト全体がロングコンテキスト料金に切り替わる**点に注意が要る。Fast ティアは最大2.5倍の速度で価格は2倍になる。",
+      "展開は段階的で、まずサイバーセキュリティ関連プログラム「Daybreak」参加企業向けに限定公開し、その後 ChatGPT の Plus / Pro / Business / Enterprise、API、AWS 経由へと広げる計画とされる。",
+      "## Codex では、2日で既定モデルになった",
+      "OpenAI 公式の GitHub リポジトリ `openai/codex` のリリースノートは、この記事の調査で**直接到達して確認できた一次ソース**である。ここでは扱いが2日で変わっている。",
+      "9月3日のリリース 0.153.1 では「モデル選択 UI に表示せず、API 経由でのみ GPT-6-Astra を設定可能にする」という慎重な出し方だった。続く 0.153.2 で Fast ティアの説明が「1.5倍速」から「2倍速」に訂正されている。翌9月4日には 0.153.3 で Amazon Bedrock のモデル選択に追加され、**0.153.4 でモデル選択 UI に表示され、同梱の既定モデルに昇格した**。",
+      "**注記**: 本記事の調査環境では、`openai.com`・`deploymentsafety.openai.com`・`platform.openai.com`・`arcprize.org` のいずれにもネットワークポリシー上到達できなかった。**公式発表ページとシステムカードの本文は直接確認できていない。** ベンチマーク数値・価格・Preparedness Framework の判定は、複数の独立した報道と集約サイトで一致していることを確認したうえで記載している。GitHub のリリースノートのみ直接確認済みである。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "ARC-AGI-3 のスコアは、測定条件で振れる（ARC Prize の検証および OpenAI の主張）",
+        "headers": [
+          "測定条件",
+          "スコア",
+          "測ったのは誰か"
+        ],
+        "rows": [
+          [
+            "自社ハーネス",
+            "99.9%",
+            "OpenAI の主張"
+          ],
+          [
+            "Provider Adapter ハーネス（推論量を最大に設定 / Semi-Private セット）",
+            "98.55%",
+            "ARC Prize"
+          ],
+          [
+            "provider 中立の共通インターフェース",
+            "62.71%",
+            "ARC Prize"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 7,
+        "caption": "GPT-6 Astra の主要ベンチマーク（OpenAI 公表値。ARC-AGI-3 は上表のとおり条件で振れる）",
+        "headers": [
+          "ベンチマーク",
+          "測るもの",
+          "スコア"
+        ],
+        "rows": [
+          [
+            "ExploitBench",
+            "既知の脆弱性から動作する攻撃コードを組み立てる",
+            "100%（前世代 Sol は 78.5%）"
+          ],
+          [
+            "新規脆弱性（直近3か月）",
+            "未知の脆弱性への対応",
+            "39%"
+          ],
+          [
+            "FrontierMath Tier 4 v2",
+            "最難関の数学",
+            "97.6%"
+          ],
+          [
+            "GPQA Diamond",
+            "大学院レベルの科学",
+            "96%"
+          ],
+          [
+            "DeepSWE v1.1",
+            "端から端までのソフトウェア開発",
+            "74.1%"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 15,
+        "caption": "API 価格（100万トークンあたり、Standard ティア）。Fast ティアは2倍",
+        "headers": [
+          "区分",
+          "272K トークン以下",
+          "272K トークン超"
+        ],
+        "rows": [
+          [
+            "入力",
+            "$10",
+            "$20"
+          ],
+          [
+            "キャッシュ入力",
+            "$1",
+            "$2"
+          ],
+          [
+            "キャッシュ書き込み",
+            "$12.5",
+            "$25"
+          ],
+          [
+            "出力",
+            "$50",
+            "$75"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "openai/codex Releases（0.153.1〜0.153.4 で GPT-6-Astra の扱いが変化）",
+        "site": "GitHub（直接到達・確認済み）",
+        "url": "https://github.com/openai/codex/releases"
+      },
+      {
+        "title": "GPT-6 Astra: A new generation of intelligence",
+        "site": "OpenAI（本記事の調査環境からは到達できず、本文未確認）",
+        "url": "https://openai.com/index/gpt-6-astra/"
+      },
+      {
+        "title": "Path to Astra: critical capabilities and frontier safeguards",
+        "site": "OpenAI（同上）",
+        "url": "https://openai.com/index/path-to-astra/"
+      },
+      {
+        "title": "GPT-6 Astra System Card",
+        "site": "OpenAI Deployment Safety Hub（同上）",
+        "url": "https://deploymentsafety.openai.com/gpt-6-astra"
+      },
+      {
+        "title": "ARC Prize による ARC-AGI-3 の独立検証",
+        "site": "ARC Prize（同上）",
+        "url": "https://arcprize.org/blog/astra"
+      },
+      {
+        "title": "OpenAI launches GPT-6 Astra, its most powerful model yet",
+        "site": "Fortune",
+        "url": "https://fortune.com/2026/09/03/openai-debuts-gpt-6-astra-computer-use-greg-brockman-says-start-of-agi/"
+      },
+      {
+        "title": "OpenAI announces rollout of GPT-6 Astra model",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html"
+      },
+      {
+        "title": "OpenAI launches GPT-6 Astra, its first model to cross a critical cybersecurity threshold",
+        "site": "CSO Online",
+        "url": "https://www.csoonline.com/article/4218679/openai-launches-gpt-6-astra-its-first-model-to-cross-a-critical-cybersecurity-threshold.html"
+      }
+    ]
   }
 };
 

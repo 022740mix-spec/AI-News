@@ -8690,5 +8690,24 @@ export const ARTICLES_META = [
       "教育",
       "中国AI"
     ]
+  },
+  {
+    "id": "openai-gpt-6-astra-critical-cyber-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI が GPT-6 Astra を公開 — ARC-AGI-3 は「62.7% と 98.6%」、自社初の Critical サイバー評価",
+    "excerpt": "OpenAI が2026年9月3日、新モデル **GPT-6 Astra** を公開した。自社の Preparedness Framework でサイバーセキュリティ区分が**初めて最高段階の「Critical」**に達したとしている。同時に AGI を巡る発言が広く伝えられたが、その根拠として引かれる ARC-AGI-3 のスコアは**測定の仕方で 62.7% から 99.9% まで振れる**。ARC Prize は独立検証したうえで、飽和を AGI の証拠とみなさないよう釘を刺している。",
+    "date": "2026-09-05",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "OpenAI",
+      "GPT-6",
+      "Astra",
+      "セキュリティ",
+      "AI安全性",
+      "ベンチマーク"
+    ]
   }
 ];

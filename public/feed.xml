@@ -24,6 +24,14 @@
     <summary>清華大学の研究グループ THU-MAIC が開発する OpenMAIC が8月27日に v1.0.0 に到達した。トピックや資料を渡すと、スライド・クイズ・体験型シナリオ・PBL 課題を、複数の AI エージェントが講師役・生徒役を演じながら生成する。査読付き論文の裏付けがあり、3.1万スター・5,200フォークを集めている。</summary>
   </entry>
   <entry>
+    <title>OpenAI が GPT-6 Astra を公開 — ARC-AGI-3 は「62.7% と 98.6%」、自社初の Critical サイバー評価</title>
+    <link rel="alternate" type="text/html" href="?a=openai-gpt-6-astra-critical-cyber-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-gpt-6-astra-critical-cyber-2026</id>
+    <published>2026-09-05T15:00:00Z</published>
+    <updated>2026-09-05T15:00:00Z</updated>
+    <summary>OpenAI が2026年9月3日、新モデル GPT-6 Astra を公開した。自社の Preparedness Framework でサイバーセキュリティ区分が初めて最高段階の「Critical」に達したとしている。同時に AGI を巡る発言が広く伝えられたが、その根拠として引かれる ARC-AGI-3 のスコアは測定の仕方で 62.7% から 99.9% まで振れる。ARC Prize は独立検証したうえで、飽和を AGI の証拠とみなさないよう釘を刺している。</summary>
+  </entry>
+  <entry>
     <title>NVIDIA が Hugging Face を $12.93B で買収 — オープンモデルの中核ハブが、GPU最大手の傘下に</title>
     <link rel="alternate" type="text/html" href="?a=nvidia-acquires-hugging-face-2026"/>
     <id>tag:ai-tool-news.jp,2026:nvidia-acquires-hugging-face-2026</id>
