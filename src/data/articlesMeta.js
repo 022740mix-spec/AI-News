@@ -8744,5 +8744,41 @@ export const ARTICLES_META = [
       "規制",
       "エッジAI"
     ]
+  },
+  {
+    "id": "magnitude-local-inference-server-coding-agents-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "ハードウェアに合わせてローカルモデルを選ぶ推論サーバ「Magnitude」— Claude Code・Cline 等にAPIキー無しで接続、GitHub トレンド入り",
+    "excerpt": "OSS の推論サーバ「**Magnitude**」が GitHub トレンドで**1日+686スター**を集め、累計3,163スターに達した。特徴は**手元のマシンを自動でプロファイリングし、動かせるモデルを推薦したうえでダウンロード・チューニング・起動まで面倒を見る**設計にある。Claude Code・Cline・Codex など主要なコーディングエージェントにバックエンドとして接続でき、モデルは使用要求時にロードし、アイドル時やメモリ逼迫時に自動アンロードされる。トークン課金・APIキー・レート制限なしを掲げ、ダウンロード後は完全オフラインで動作する。",
+    "date": "2026-09-05",
+    "newsDate": "2026-09-05",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "オープンソース",
+      "ローカルLLM",
+      "エッジAI",
+      "開発ツール",
+      "Claude Code"
+    ]
+  },
+  {
+    "id": "humanizer-ai-text-detection-evasion-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】「AIらしさ」を消す文章ツールも伸びている — Wikipedia の35パターンを逆用するHumanizerが4.3万スター",
+    "excerpt": "個人開発者 Siqi Chen 氏(GitHubアカウント blader)が公開する Claude Code 用スキル「**Humanizer**」が、GitHub トレンドで**1日+988スター**を集め、累計**4.34万スター**に達した。Wikipedia の「AI文章の兆候」ガイドラインが定める**35パターン**を基準に、AI生成文章特有の言い回しを検出・除去して人間が書いたような文体に書き換える。事実関係は書き換えないと明記する一方、AI検出ツールが拾う特徴そのものを消す設計であり、モデルの安全策を外すHereticや透かし除去ツールと同じ「後段の対策を利用者側で無効化できる」構造がテキストにも及んでいることを示す事例になっている。",
+    "date": "2026-09-05",
+    "newsDate": "2026-09-05",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "オープンソース",
+      "分析",
+      "倫理",
+      "Claude Code",
+      "個人開発"
+    ]
   }
 ];
