@@ -18829,6 +18829,104 @@ const ARTICLES_BODY = {
         "url": "https://www.csoonline.com/article/4218679/openai-launches-gpt-6-astra-its-first-model-to-cross-a-critical-cybersecurity-threshold.html"
       }
     ]
+  },
+  "spacex-closes-cursor-anysphere-acquisition-2026": {
+    "body": [
+      "AI コーディングエディタ **Cursor** を運営する **Anysphere** の買収を、**SpaceX** が完了した。6月16日に締結した全株式交換の最終契約に基づくもので、**合併の効力発生日は2026年8月14日**。翌15日に各社が完了を報じた。評価額は600億ドルで、**ベンチャー支援を受けたスタートアップの買収としては過去最大**とされる。",
+      "## 取引の構造",
+      "形式は逆三角合併である。SpaceX がこの取引のために設立した子会社 **X67 Inc.** が Anysphere に吸収され、**Anysphere が存続会社として SpaceX の完全子会社になる**。現金ではなく SpaceX の Class A 株式が対価に充てられ、未付与のストックオプションや RSU も SpaceX 側のものに引き継がれた。",
+      "以下の株数は、SpaceX が提出した Form 8-K の内容として複数の報道が一致して伝えているものである。**本記事の調査環境からは SEC の原文に到達できておらず、8-K 本文は直接確認できていない。**",
+      "## 起点は4月のオプション契約",
+      "この取引は6月の発表が始まりではない。**2026年4月21日**、SpaceX は Anysphere とオプション契約を結んでいる。**600億ドルで買収するか、あるいは解約金と繰延サービス料の合計およそ100億ドルを支払って手を引くか**を、SpaceX が選べる内容だった。Anysphere が予定していた Series E は、この提案によって先回りされた形になる。",
+      "**「提携か買収か」の選択ではなく、「買収するか、100億ドル払って降りるか」の選択だった**点は、報道で表現が揺れやすい部分である。オプションを確保した時点で、SpaceX は相当額のコミットを負っていたことになる。",
+      "## 600億ドルの根拠になった成長",
+      "Anysphere は2022年の創業で、Cursor の年換算収益（ARR）は半年で4倍になっている。**6か月連続で3か月ごとに倍増**した計算になる。Fortune 500 企業の6割超が導入しており、NVIDIA・Uber・Adobe などが名を挙げられている。",
+      "## 読者にとって何が変わるか（まだ分からないこと）",
+      "Cursor は SpaceX の完全子会社として、新設の **SpaceXAI** 部門の下で運営される。**一方で、利用者から見て何が変わるかは、現時点で公表されていない。** ブランド名を維持するのか、開発の独立性がどこまで保たれるのか、料金体系や無料枠に影響が及ぶのかは、いずれも未発表である。",
+      "当サイトは `cursor-editor` と `cursor-cli` の両記事を月次見直しの対象にしている。**所有権の変更そのものは事実として確定した**ため、次回の見直しでこの点を反映する。ただし製品面の変更は、公式発表が出るまで推測で書かない。",
+      "**注記**: 本記事の調査環境からは `cursor.com`・`techcrunch.com`・`sec.gov` のいずれにも到達できず、**Cursor 公式の発表と SEC 提出書類の原文は直接確認できていない**。効力発生日・株数・オプション契約の条件は、いずれも Form 8-K の内容として複数の独立した報道が一致して伝えている値である。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "対価として交付・引き継がれた SpaceX Class A 株式（報道が伝える Form 8-K の内容）",
+        "headers": [
+          "対象",
+          "株数"
+        ],
+        "rows": [
+          [
+            "Anysphere の普通株・優先株の転換分",
+            "389,289,254 株"
+          ],
+          [
+            "付与済み RSU の転換分",
+            "1,752,426 株"
+          ],
+          [
+            "未付与 RSU の引き継ぎ（assumed RSU）",
+            "約 29,128,326 株"
+          ],
+          [
+            "ストックオプションの引き継ぎ",
+            "約 44,365,047 株"
+          ],
+          [
+            "発行規模の合計",
+            "約 3.91 億株"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 8,
+        "caption": "Cursor の年換算収益（ARR）の推移（報道による）",
+        "headers": [
+          "時点",
+          "ARR"
+        ],
+        "rows": [
+          [
+            "2025年11月",
+            "10億ドル"
+          ],
+          [
+            "2026年2月",
+            "20億ドル"
+          ],
+          [
+            "2026年6月",
+            "40億ドル"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "SpaceX officially closes its Cursor acquisition",
+        "site": "TechCrunch（本記事の調査環境からは到達できず、本文未確認）",
+        "url": "https://techcrunch.com/2026/08/15/spacex-officially-closes-its-cursor-acquisition/"
+      },
+      {
+        "title": "SpaceX to acquire Cursor for $60B in stock, days after blockbuster IPO",
+        "site": "TechCrunch（同上）",
+        "url": "https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/"
+      },
+      {
+        "title": "SpaceX completes record $60 billion acquisition of AI coding platform Cursor",
+        "site": "Yahoo Finance",
+        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-completes-record-60-billion-131311785.html"
+      },
+      {
+        "title": "SpaceX completes $60B acquisition of Cursor as Musk-led firm tries to gain edge in AI coding",
+        "site": "Seeking Alpha",
+        "url": "https://seekingalpha.com/news/4633335-spacex-completes-60b-acquisition-of-cursor-as-musk-led-firm-tries-to-gain-edge-in-ai-coding"
+      },
+      {
+        "title": "SpaceX agrees to buy Cursor parent Anysphere for $60 billion",
+        "site": "Quartz",
+        "url": "https://qz.com/spacex-buying-cursor-anysphere-60-billion-deal-061626"
+      }
+    ]
   }
 };
 

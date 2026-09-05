@@ -8709,5 +8709,22 @@ export const ARTICLES_META = [
       "AI安全性",
       "ベンチマーク"
     ]
+  },
+  {
+    "id": "spacex-closes-cursor-anysphere-acquisition-2026",
+    "type": "news",
+    "category": "editor",
+    "title": "SpaceX が Cursor の買収を完了 — 効力発生は8月14日、対価は SpaceX 株 約3.91億株、新設 SpaceXAI 部門へ",
+    "excerpt": "AI コーディングエディタ **Cursor** を運営する Anysphere の買収を、SpaceX が完了した。**効力発生日は2026年8月14日**、全株式交換で評価額600億ドル。SpaceX の子会社 X67 Inc. が Anysphere に吸収される形の合併で、Cursor は SpaceX の完全子会社として存続し、新設の **SpaceXAI** 部門に入る。**ベンチャー支援を受けたスタートアップの買収としては過去最大**とされる。",
+    "date": "2026-09-05",
+    "newsDate": "2026-08-14",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Cursor",
+      "SpaceX",
+      "買収",
+      "エディタ"
+    ]
   }
 ];
