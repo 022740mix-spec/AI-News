@@ -18667,6 +18667,56 @@ const ARTICLES_BODY = {
         "url": "https://github.com/THU-MAIC/OpenMAIC/releases"
       }
     ]
+  },
+  "openai-gpt-6-astra-release-2026": {
+    "body": [
+      "OpenAI が9月3日、次世代モデルファミリーの正式名称を「GPT-6 Astra」として発表した。コンピュータ操作・ブラウジング・ソフトウェアエンジニアリング・サイバーセキュリティ・科学・専門的な業務全般で「世界最高水準」を掲げるモデルとして位置づけられている。",
+      "公表されたベンチマークは、FrontierMath Tier 4 で98%、ARC-AGI-3 で99.9%、ExploitBench で100%。長年未解決だった数学の課題を解いたと8月に報じられていた内部プレビュー版の延長線上にある成果として紹介されている。",
+      "提供は ChatGPT の Plus・Pro・Business・Enterprise 各プランと API、Amazon Web Services 経由で「数日中」に開始するとされる。サイバーセキュリティの応用プログラムに参加している企業が最初にアクセスできる。API 価格は入力 100万トークンあたり10ドル、出力は50ドルで、キャッシュ入力は1ドル、バッチ・フレックス処理は半額、高速モードは倍額という価格体系が報じられている。",
+      "**確認できていないこと**: 本記事は CNBC・9to5Mac・Forbes などの報道と、OpenAI コミュニティフォーラムに投稿された公式アナウンスの要約に基づく。openai.com・platform.openai.com・help.openai.com のいずれも、本稿執筆時点のネットワーク環境からは到達できず、一次ソースの本文を直接確認できていない。価格体系・ベンチマーク数値の最終確認は、到達可能な環境での再検証を要する。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing GPT-6-Astra: The most intelligent and aligned model in the world",
+        "site": "OpenAI Developer Community",
+        "url": "https://community.openai.com/t/introducing-gpt-6-astra-the-most-intelligent-and-aligned-model-in-the-world/1394703"
+      },
+      {
+        "title": "OpenAI announces rollout of GPT-6 Astra model",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html"
+      },
+      {
+        "title": "OpenAI releasing major upgrade to ChatGPT and Codex with GPT-6 Astra",
+        "site": "9to5Mac",
+        "url": "https://9to5mac.com/2026/09/04/openai-releasing-major-upgrade-to-chatgpt-and-codex-with-gpt-6-astra-details-here/"
+      }
+    ]
+  },
+  "spacex-closes-cursor-anysphere-acquisition-2026": {
+    "body": [
+      "AIコーディングツール Cursor を運営する Anysphere の買収を、SpaceX が完了したと複数の報道が伝えている。発表は6月16日、全株式交換で評価額600億ドル。8月15日に closing したとされ、ベンチャー支援を受けたスタートアップの買収としては過去最大級と報じられている。",
+      "経緯としては、4月にSpaceXが約100億ドルでの提携か、後日600億ドルでの買収かを選べるオプションを確保していたとされ、6月にそのオプションを行使する形で買収を正式発表したという流れが報じられている。Cursor はこの取引後、SpaceXの新設AI部門の傘下企業として運営されるとされる。",
+      "Cursor は2025年1月時点で年換算収益1億ドル規模だったのが、2026年6月時点で約40億ドル規模まで急成長したとされ、Fortune 500企業の6割超が利用しているという報道もある。本サイトは cursor-editor・cursor-cli の両記事を毎月見直し対象としており、この所有権の変化は次回レビューで確認・反映すべき事実にあたる。",
+      "**確認できていないこと**: 本記事は Yahoo Finance・TechCrunch・Techmeme（Reuters発）などの検索結果に基づく。cursor.com・techcrunch.com・qz.com・devops.com のいずれも、本稿執筆時点のネットワーク環境からは到達できず、一次ソース本文・Cursor公式ブログの発表内容を直接確認できていない。買収完了後のブランド名・独立性・料金体系への影響について、公式発表での再確認を要する。"
+    ],
+    "primarySources": [
+      {
+        "title": "SpaceX to acquire Cursor for $60B in stock, days after blockbuster IPO",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/"
+      },
+      {
+        "title": "SpaceX officially closes its Cursor acquisition",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/08/15/spacex-officially-closes-its-cursor-acquisition/"
+      },
+      {
+        "title": "SpaceX completes record $60 billion acquisition of AI coding platform Cursor",
+        "site": "Yahoo Finance",
+        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-completes-record-60-billion-131311785.html"
+      }
+    ]
   }
 };
 

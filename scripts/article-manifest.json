@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-05",
-  "count": 390,
+  "count": 392,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -296,6 +296,7 @@
     "openai-gpt-5-6-sol-cerebras-750-tokens-per-second-2026",
     "openai-gpt-5-6-sol-terra-luna-preview-2026",
     "openai-gpt-54-cyber-tac-cybersecurity-2026",
+    "openai-gpt-6-astra-release-2026",
     "openai-gpt-red-self-improvement-red-teaming-2026",
     "openai-gpt-rosalind-life-sciences-update-2026",
     "openai-industrial-policy-intelligence-age-4day-workweek-2026",
@@ -353,6 +354,7 @@
     "shopify-ai-toolkit-oss-mcp-agent-2026",
     "singularity-mythos-2026-spring",
     "soup-layer-streaming-finetune-2026",
+    "spacex-closes-cursor-anysphere-acquisition-2026",
     "spacex-cursor-60b-acquisition-anysphere-2026",
     "stable-audio-review",
     "stanford-hai-ai-index-2026-china-transparency-2026",

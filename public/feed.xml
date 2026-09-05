@@ -24,6 +24,22 @@
     <summary>清華大学の研究グループ THU-MAIC が開発する OpenMAIC が8月27日に v1.0.0 に到達した。トピックや資料を渡すと、スライド・クイズ・体験型シナリオ・PBL 課題を、複数の AI エージェントが講師役・生徒役を演じながら生成する。査読付き論文の裏付けがあり、3.1万スター・5,200フォークを集めている。</summary>
   </entry>
   <entry>
+    <title>OpenAI が GPT-6 Astra を正式公開 — ChatGPT/Codex/API に展開、FrontierMath Tier 4 で98%、価格は入力$10/出力$50</title>
+    <link rel="alternate" type="text/html" href="?a=openai-gpt-6-astra-release-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-gpt-6-astra-release-2026</id>
+    <published>2026-09-05T15:00:00Z</published>
+    <updated>2026-09-05T15:00:00Z</updated>
+    <summary>OpenAI が9月3日、次世代モデル GPT-6 Astra を正式発表した。コンピュータ操作・ブラウジング・ソフトウェア開発・サイバーセキュリティ・科学分野で最高水準の性能を主張し、FrontierMath Tier 4で98%、ARC-AGI-3で99.9%のスコアを公表。ChatGPT Plus/Pro/Business/Enterprise と API、AWS経由での提供を「数日中」に開始する。サイバー防衛の応用プログラム参加企業から先行提供する。本記事は複数の報道と OpenAI コミュニティフォーラムの公式投稿の要約に基づくが、OpenAI 公式サイト（openai.com）には本稿執筆時点のネットワーク環境から到達できていない。</summary>
+  </entry>
+  <entry>
+    <title>SpaceX が Cursor（Anysphere）の600億ドル買収を完了 — 8月15日closing、開発ツール企業として過去最大級のM&amp;A</title>
+    <link rel="alternate" type="text/html" href="?a=spacex-closes-cursor-anysphere-acquisition-2026"/>
+    <id>tag:ai-tool-news.jp,2026:spacex-closes-cursor-anysphere-acquisition-2026</id>
+    <published>2026-09-05T15:00:00Z</published>
+    <updated>2026-09-05T15:00:00Z</updated>
+    <summary>SpaceX が6月16日に発表していたAIコーディングツール Cursor の運営元 Anysphere の買収（全株式交換、600億ドル規模）が、8月15日に完了したと報じられている。Cursor は SpaceX の新設AI部門の傘下に入る形となる。ベンチャー支援スタートアップの買収としては過去最大級とされる。本記事は複数の報道の要約に基づくが、Cursor公式ブログ・TechCrunch本文には本稿執筆時点のネットワーク環境から到達できていない。</summary>
+  </entry>
+  <entry>
     <title>NVIDIA が Hugging Face を $12.93B で買収 — オープンモデルの中核ハブが、GPU最大手の傘下に</title>
     <link rel="alternate" type="text/html" href="?a=nvidia-acquires-hugging-face-2026"/>
     <id>tag:ai-tool-news.jp,2026:nvidia-acquires-hugging-face-2026</id>

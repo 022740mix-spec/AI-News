@@ -8690,5 +8690,37 @@ export const ARTICLES_META = [
       "教育",
       "中国AI"
     ]
+  },
+  {
+    "id": "openai-gpt-6-astra-release-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI が GPT-6 Astra を正式公開 — ChatGPT/Codex/API に展開、FrontierMath Tier 4 で98%、価格は入力$10/出力$50",
+    "excerpt": "OpenAI が9月3日、次世代モデル GPT-6 Astra を正式発表した。コンピュータ操作・ブラウジング・ソフトウェア開発・サイバーセキュリティ・科学分野で最高水準の性能を主張し、FrontierMath Tier 4で98%、ARC-AGI-3で99.9%のスコアを公表。ChatGPT Plus/Pro/Business/Enterprise と API、AWS経由での提供を「数日中」に開始する。サイバー防衛の応用プログラム参加企業から先行提供する。本記事は複数の報道と OpenAI コミュニティフォーラムの公式投稿の要約に基づくが、OpenAI 公式サイト（openai.com）には本稿執筆時点のネットワーク環境から到達できていない。",
+    "date": "2026-09-05",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "GPT-6",
+      "OpenAI",
+      "エージェント"
+    ]
+  },
+  {
+    "id": "spacex-closes-cursor-anysphere-acquisition-2026",
+    "type": "news",
+    "category": "product",
+    "title": "SpaceX が Cursor（Anysphere）の600億ドル買収を完了 — 8月15日closing、開発ツール企業として過去最大級のM&A",
+    "excerpt": "SpaceX が6月16日に発表していたAIコーディングツール Cursor の運営元 Anysphere の買収（全株式交換、600億ドル規模）が、8月15日に完了したと報じられている。Cursor は SpaceX の新設AI部門の傘下に入る形となる。ベンチャー支援スタートアップの買収としては過去最大級とされる。本記事は複数の報道の要約に基づくが、Cursor公式ブログ・TechCrunch本文には本稿執筆時点のネットワーク環境から到達できていない。",
+    "date": "2026-09-05",
+    "newsDate": "2026-08-15",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Cursor",
+      "M&A",
+      "エディタ"
+    ]
   }
 ];
