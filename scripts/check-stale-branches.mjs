@@ -67,7 +67,10 @@ function articleIds(ref) {
 
 // リモートのブランチを取りに行く。Actions の checkout は既定で
 // 既定ブランチしか持ってこないため、ここで明示的に取得する。
-tryGit(["fetch", "-q", "origin", "+refs/heads/*:refs/remotes/origin/*"]);
+// **--prune を付ける。** 付けないと、削除済みのブランチがローカルの
+// リモート追跡参照に残り続け、**もう存在しないブランチを毎回報告する。**
+// 2026年9月5日、自動削除が済んだ fable-5-1 が翌日も一覧に出ていた。
+tryGit(["fetch", "-q", "--prune", "origin", "+refs/heads/*:refs/remotes/origin/*"]);
 
 const mainIds = articleIds("origin/main");
 if (!mainIds) {

@@ -105,7 +105,10 @@ jobs:
             // 接頭辞をここでも確認する。棚卸し側と二重にすることで、
             // 片方が壊れても main や claude/* を消さない。
             const safe = d.merged.map(m => m.branch).filter(b => b.startsWith("routine/"));
-            fs.writeFileSync("/tmp/delete.txt", safe.join("\n"));
+            // **末尾に改行を付ける。** 付けないと `while IFS= read -r` が最後の1行を
+            // 読み飛ばす。2026年9月5日の初回実行で実際に起き、削除対象2本のうち
+            // 1本だけが消えた。
+            fs.writeFileSync("/tmp/delete.txt", safe.length ? safe.join("\n") + "\n" : "");
             console.log(safe.length ? `削除対象 ${safe.length} 本:\n` + safe.join("\n") : "削除対象はありません。");
           '
           while IFS= read -r b; do
