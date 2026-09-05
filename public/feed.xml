@@ -16,6 +16,14 @@
     <summary>Microsoft が5月の Build 2026 で構想として示した「Intelligent Terminal」が、Windows Terminal の実験的フォークとして GitHub で実際に動く形になっている。最新版 v0.2.23（8月21日）時点で、Agent Client Protocol（ACP）に対応した複数ベンダーのエージェント CLI を1つのターミナルの中で切り替えて使える。位置づけは既存 Windows Terminal と共存する opt-in の別アプリで、README は繰り返し「実験段階」と明記する。</summary>
   </entry>
   <entry>
+    <title>清華大学発「マルチエージェント教室」OpenMAIC が v1.0.0 — 1つのプロンプトから講義・クイズ・体験シナリオまで自動生成、3万人超のスターを集める</title>
+    <link rel="alternate" type="text/html" href="?a=openmaic-multi-agent-classroom-tsinghua-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openmaic-multi-agent-classroom-tsinghua-2026</id>
+    <published>2026-09-05T15:00:00Z</published>
+    <updated>2026-09-05T15:00:00Z</updated>
+    <summary>清華大学の研究グループ THU-MAIC が開発する OpenMAIC が8月27日に v1.0.0 に到達した。トピックや資料を渡すと、スライド・クイズ・体験型シナリオ・PBL 課題を、複数の AI エージェントが講師役・生徒役を演じながら生成する。査読付き論文の裏付けがあり、3.1万スター・5,200フォークを集めている。</summary>
+  </entry>
+  <entry>
     <title>NVIDIA が Hugging Face を $12.93B で買収 — オープンモデルの中核ハブが、GPU最大手の傘下に</title>
     <link rel="alternate" type="text/html" href="?a=nvidia-acquires-hugging-face-2026"/>
     <id>tag:ai-tool-news.jp,2026:nvidia-acquires-hugging-face-2026</id>

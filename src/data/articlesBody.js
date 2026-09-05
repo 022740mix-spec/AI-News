@@ -18645,6 +18645,28 @@ const ARTICLES_BODY = {
         "url": "https://github.com/microsoft/intelligent-terminal/releases"
       }
     ]
+  },
+  "openmaic-multi-agent-classroom-tsinghua-2026": {
+    "body": [
+      "清華大学の研究グループ THU-MAIC（Multi-Agent Interactive Classroom）が開発するオープンソース「OpenMAIC」が、8月27日に v1.0.0 へ到達した。3月26日の初版公開から5か月で、31,600スター・5,200フォークを集めている。",
+      "できることは、トピックや資料を1つ渡すと、スライド・ナレーション・クイズ・ホワイトボード協働・体験型シナリオ・プロジェクト型学習（PBL）課題までを一括生成し、複数の AI エージェントが講師役や生徒役を演じながら授業を進めるというもの。オーケストレーションには LangGraph を使い、状態遷移を司る「再生エンジン」と、音声合成やホワイトボード描画など28種類以上の演出を実行する「実行エンジン」を分けて設計している。",
+      "v1.0.0 で加わったのは、カリキュラムの立案からページ生成、生成途中での軌道修正までを担う常駐型のワークブックエージェント。PowerPoint・HTML・オフライン対応 ZIP へのエクスポートにも対応し、OpenClaw・Codex・DeepSeek といった外部のエージェント基盤ともメッセージング経由で連携できる。",
+      "裏付けとして、2026年発行の Journal of Computer Science and Technology に「From MOOC to MAIC」という査読付き論文が出ている。個人開発の思いつきの OSS ではなく、大学の研究プログラムとして継続的に開発されている点は、他の急成長 OSS とは性格が異なる。",
+      "ライセンスは MIT（同梱の mathml2omml のみ LGPL-3.0）。想定される利用者は高等教育・企業研修が中心で、Node.js 22 以上・PostgreSQL・複数の API キーが必要になることから、個人が気軽に触るというより教育機関やチームでの導入を前提にした構成になっている。",
+      "本記事は GitHub 上のリポジトリ本体とリリースノートを一次情報として確認した。"
+    ],
+    "primarySources": [
+      {
+        "title": "THU-MAIC/OpenMAIC",
+        "site": "GitHub",
+        "url": "https://github.com/THU-MAIC/OpenMAIC"
+      },
+      {
+        "title": "Releases · THU-MAIC/OpenMAIC",
+        "site": "GitHub",
+        "url": "https://github.com/THU-MAIC/OpenMAIC/releases"
+      }
+    ]
   }
 };
 
