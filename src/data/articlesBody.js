@@ -19099,6 +19099,53 @@ const ARTICLES_BODY = {
         "url": "https://github.com/cathrynlavery/diagram-design"
       }
     ]
+  },
+  "challenger-report-ai-layoffs-restructuring-2026": {
+    "body": [
+      "人材コンサルティング大手 **Challenger, Gray & Christmas** が9月3日に公表した月次の雇用削減報告によると、2026年8月に米国企業が発表した解雇は **52,881件**。前月比では58%増だが、前年同月比では38%減で、**8月としては2022年以来もっとも低い水準**だった。",
+      "今回の報告で注目されるのは、解雇理由の順位である。**「リストラ(restructuring)」が16,173件・全体の31%で首位**となり、**AI を理由とする解雇は3,462件で4位**に後退した。AI が月間の首位理由だったのは3月からの5ヶ月間続いていたが、8月にその連続記録が途切れた形になる。月間のAI理由件数としては、2025年12月(142件)以来の低水準でもある。",
+      "一方で、**年初来(1〜8月)の累計で見るとAIは今も首位**である。2026年に入ってから解雇理由としてAIが挙げられた件数は**116,175件、全解雇理由の約22%**にのぼり、単月の首位が途切れたあとも年間トレンドとしては変わっていない。「単月では後退したが、年間では依然として最大の理由」という、一見矛盾するようで実は矛盾しない2つの事実が、同じ調査の中に同時に存在している。",
+      "業種別では、消費財(Consumer Products)が10,057件で8月として今年最多となり、Procter & Gamble・Estée Lauder 等の発表が押し上げた。食品業界も7,982件で8月の業種別2位となり、Tyson が肉牛の供給不足を理由とする発表で月間件数の3割弱を占めた。年初来の業種別では、**テクノロジー分野が155,126件で引き続き最多**、以下 運輸(42,279件)、ヘルスケア・製品(35,637件)、消費財(28,574件)、サービス(26,778件)と続く。",
+      "この記事はNVIDIAによるHugging Face買収や大型モデル発表のような単発ニュースではなく、**同じ調査機関が同じ方法で毎月測り続けている定点データ**である。数字が示すのは「AI が解雇を増やしている/減っている」のどちらか一方ではなく、**月ごとの振れと年間の傾向は別物として扱う必要がある**、という調査結果そのものである。",
+      "なお、Challenger, Gray & Christmas の公式サイト(challengergray.com)は本記事の執筆環境からは直接アクセスできなかった。上記の数値は、同社の発表を報じた複数の独立したメディア・金融データサービスが一致して報告している内容にもとづいている。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "title": "AIを理由とした解雇 — 8月単月 と 年初来(1〜8月)の対比",
+        "headers": [
+          "区分",
+          "AI理由の件数",
+          "順位",
+          "備考"
+        ],
+        "rows": [
+          [
+            "8月単月",
+            "3,462件",
+            "4位",
+            "1位はリストラ(16,173件・31%)。2025年12月以来の低水準"
+          ],
+          [
+            "年初来(1〜8月)",
+            "116,175件",
+            "1位",
+            "全解雇理由の約22%。年間を通じて最多の理由"
+          ]
+        ],
+        "caption": "出典: Challenger, Gray & Christmas「Job Cut Announcement Report」2026年8月分"
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Challenger, Gray & Christmas — Job Cut Announcement Report (August 2026)",
+        "url": "https://www.challengergray.com/wp-content/uploads/2026/09/Challenger-Report-August-2026.pdf"
+      },
+      {
+        "title": "Challenger, Gray & Christmas — Challenger Report: August Job Cuts Up 58%, Consumer Products, Food Lead",
+        "url": "https://www.challengergray.com/blog/challenger-report-august-job-cuts-up-58-consumer-products-food-lead/"
+      }
+    ]
   }
 };
 

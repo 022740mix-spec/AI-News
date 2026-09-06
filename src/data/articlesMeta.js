@@ -8816,5 +8816,22 @@ export const ARTICLES_META = [
       "ダイアグラム",
       "Claude Code"
     ]
+  },
+  {
+    "id": "challenger-report-ai-layoffs-restructuring-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】8月の米解雇理由、AIは首位から4位に転落 — ただし年初来では今も22%でトップ、5ヶ月連続の首位は途切れた",
+    "excerpt": "人材コンサル大手 Challenger, Gray & Christmas の月次報告によると、2026年8月の米国の解雇理由で **AI は「リストラ」に次ぐ4位(3,462件)に後退**し、3月から続いていた**AIが月間首位という状態は5ヶ月で途切れた**。一方で**年初来の累計では、AIは今も全解雇理由の約22%(116,175件)を占め首位を維持**している。単月の順位変動と年間トレンドは、同じデータの別の断面である。",
+    "date": "2026-09-06",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "雇用",
+      "労働",
+      "レイオフ",
+      "米国"
+    ]
   }
 ];

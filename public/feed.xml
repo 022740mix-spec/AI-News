@@ -40,6 +40,14 @@
     <summary>個人開発の Agent Skill Diagram Design が 32,300スター超に達した。Claude Code・Codex・Factory Droid・Pi 向けに、39種類の図表タイプを自己完結の HTML + SVG として生成する。Mermaid のような「AIっぽい」自動レイアウトではなく、対象サイトの配色・フォントを自動抽出してブランドに合わせるのが特徴で、直近1週間も9月6日まで継続してコミットされている。</summary>
   </entry>
   <entry>
+    <title>【分析】8月の米解雇理由、AIは首位から4位に転落 — ただし年初来では今も22%でトップ、5ヶ月連続の首位は途切れた</title>
+    <link rel="alternate" type="text/html" href="?a=challenger-report-ai-layoffs-restructuring-2026"/>
+    <id>tag:ai-tool-news.jp,2026:challenger-report-ai-layoffs-restructuring-2026</id>
+    <published>2026-09-06T15:00:00Z</published>
+    <updated>2026-09-06T15:00:00Z</updated>
+    <summary>人材コンサル大手 Challenger, Gray &amp; Christmas の月次報告によると、2026年8月の米国の解雇理由で AI は「リストラ」に次ぐ4位(3,462件)に後退し、3月から続いていたAIが月間首位という状態は5ヶ月で途切れた。一方で年初来の累計では、AIは今も全解雇理由の約22%(116,175件)を占め首位を維持している。単月の順位変動と年間トレンドは、同じデータの別の断面である。</summary>
+  </entry>
+  <entry>
     <title>Microsoft の「Intelligent Terminal」、Build 2026 の予告から実働プレビューへ — ACP 経由で Copilot CLI・Claude Code・Codex CLI・Gemini CLI・OpenCode を1つのターミナルで切り替え</title>
     <link rel="alternate" type="text/html" href="?a=microsoft-intelligent-terminal-acp-preview-2026"/>
     <id>tag:ai-tool-news.jp,2026:microsoft-intelligent-terminal-acp-preview-2026</id>
