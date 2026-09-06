@@ -8744,5 +8744,25 @@ export const ARTICLES_META = [
       "規制",
       "エッジAI"
     ]
+  },
+  {
+    "id": "cyber-safeguards-three-labs-same-week-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】OpenAI・Google・Anthropicが72時間で相次ぎ「サイバー領域の安全策」を発表 — Critical評価、防御特化モデル、企業向け不正検知",
+    "excerpt": "2026年9月2日〜4日の3日間に、3大ラボがそれぞれ独立に「サイバー領域の安全策」を打ち出した。OpenAI は GPT-6 Astra に自社初の Critical サイバー評価を付けた直後、防御側支援に**10億ドル**を投じる Daybreak for Frontline Defenders を発表。Google は脆弱性の発見と自動パッチ当てに特化した Gemini 3.8 Flash Cyber を、政府・重要インフラ限定の Fairwind プログラム経由で提供開始。Anthropic はゼロデータ保持と不正利用検知を両立させる Enterprise Frontier Safeguards を公開した。**3社に協調はないが、同じ72時間に並んだ**という事実だけは動かない。",
+    "date": "2026-09-06",
+    "newsDate": "2026-09-02",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "分析",
+      "セキュリティ",
+      "AI安全性",
+      "エンタープライズ",
+      "OpenAI",
+      "Google",
+      "Anthropic"
+    ]
   }
 ];
