@@ -19033,6 +19033,22 @@ const ARTICLES_BODY = {
         "url": "https://www.aerotime.aero/articles/russian-drone-guided-entirely-by-ai-kills-civilians-in-ukraine"
       }
     ]
+  },
+  "anthropic-commerce-agents-blueprint-2026": {
+    "body": [
+      "Anthropic が GitHub 上で **Claude Commerce Agents**(anthropics/commerce-agents)を公開した。オンラインコマース向けにエージェントを組み込みたい開発者向けの参考実装ブループリントで、ライセンスは **Apache 2.0**。単体のデモではなく、実際にプロダクトへ組み込むことを想定した構成になっている。",
+      "収録されているのは役割の異なる2つのエージェントである。**ショッピングエージェント**は顧客向けで、検索・比較・カート管理・注文追跡を担う。**マーチャントエージェント**は店舗スタッフ向けで、在庫管理・価格設定・キャンペーン運用・分析を担う。買い手と売り手の両側を1つのリポジトリでカバーしている点が特徴になる。",
+      "実行環境は3通りから選べる。**Messages API** を直接叩く参考実装、**Claude Agent SDK** を使う構成、そして Anthropic 自身がホストする **Managed Agents** 上で動かす構成である。どの経路を取るかは、開発者がどこまで自前でインフラを持つかによって変わる。",
+      "業種別のサンプルは4つ用意されている。基本的な買い物を扱う **retail**、日付ベースの在庫(空き部屋・空席等)を扱う **travel**、アカウント文脈と規制対応が絡む **telecom**、時間制限付きの確保やウェイトリストを扱う **entertainment** である。1つの汎用エージェントではなく、業種ごとに要件が変わる部分を作り分けている。",
+      "安全面の設計も明示されている。**フェンシング(権限の境界)、来歴(provenance)の検証、上限(キャップ)、メモリの検証、マーチャント側の承認ゲート**などが `docs/safety.md` にまとめられている。リポジトリ内の会社名・ブランド・人物はすべて架空で、実際の注文や決済は発生しない安全な実装である旨も明記されている。",
+      "動作要件は Python 3.11 以上・Node 22 で、7つの pip パッケージで構成され、pytest によるテストが付属する。単なる設計文書ではなく、手元で実際に動かして中身を確認できる形で公開されている点は、コマース領域でエージェントの安全性・権限設計を検討する開発者にとって実用的な参照先になる。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitHub — anthropics/commerce-agents",
+        "url": "https://github.com/anthropics/commerce-agents"
+      }
+    ]
   }
 };
 

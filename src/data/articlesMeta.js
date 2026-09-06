@@ -8744,5 +8744,23 @@ export const ARTICLES_META = [
       "規制",
       "エッジAI"
     ]
+  },
+  {
+    "id": "anthropic-commerce-agents-blueprint-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が「Claude Commerce Agents」を公開 — 買い物客とマーチャント双方向けの参考実装をApache 2.0で無償公開",
+    "excerpt": "Anthropic が GitHub 上で **Claude Commerce Agents** を公開した。**買い物客向けの「ショッピングエージェント」と、店舗スタッフ向けの「マーチャントエージェント」を1つのブループリントにまとめた参考実装**で、ライセンスは Apache 2.0。Messages API・Claude Agent SDK・Managed Agents の3つの実行環境に対応し、小売・旅行・通信・エンタメの4業種向けサンプルを収録する。",
+    "date": "2026-09-06",
+    "newsDate": "2026-08-31",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "エージェント",
+      "オープンソース",
+      "Eコマース"
+    ]
   }
 ];
