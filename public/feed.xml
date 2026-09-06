@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-09-05T15:00:00Z</updated>
+  <updated>2026-09-06T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>【分析】OpenAI・Google・Anthropicが72時間で相次ぎ「サイバー領域の安全策」を発表 — Critical評価、防御特化モデル、企業向け不正検知</title>
+    <link rel="alternate" type="text/html" href="?a=cyber-safeguards-three-labs-same-week-2026"/>
+    <id>tag:ai-tool-news.jp,2026:cyber-safeguards-three-labs-same-week-2026</id>
+    <published>2026-09-06T15:00:00Z</published>
+    <updated>2026-09-06T15:00:00Z</updated>
+    <summary>2026年9月2日〜4日の3日間に、3大ラボがそれぞれ独立に「サイバー領域の安全策」を打ち出した。OpenAI は GPT-6 Astra に自社初の Critical サイバー評価を付けた直後、防御側支援に10億ドルを投じる Daybreak for Frontline Defenders を発表。Google は脆弱性の発見と自動パッチ当てに特化した Gemini 3.8 Flash Cyber を、政府・重要インフラ限定の Fairwind プログラム経由で提供開始。Anthropic はゼロデータ保持と不正利用検知を両立させる Enterprise Frontier Safeguards を公開した。3社に協調はないが、同じ72時間に並んだという事実だけは動かない。</summary>
+  </entry>
   <entry>
     <title>Microsoft の「Intelligent Terminal」、Build 2026 の予告から実働プレビューへ — ACP 経由で Copilot CLI・Claude Code・Codex CLI・Gemini CLI・OpenCode を1つのターミナルで切り替え</title>
     <link rel="alternate" type="text/html" href="?a=microsoft-intelligent-terminal-acp-preview-2026"/>
