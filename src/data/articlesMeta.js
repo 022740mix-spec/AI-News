@@ -8780,5 +8780,23 @@ export const ARTICLES_META = [
       "エージェント",
       "API"
     ]
+  },
+  {
+    "id": "google-genai-kotlin-sdk-ga-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Google が Gen AI SDK for Kotlin 1.0 を公開 — Android/JVMからGemini Developer APIとEnterprise Agent Platformの両方に",
+    "excerpt": "Google の公式 org `googleapis` が **Gen AI SDK for Kotlin** の **v1.0.0(一般提供版)** を公開した。Kotlin Multiplatform 対応で、JVM・Android(API level 21以上)の両方から Gemini Developer API と Gemini Enterprise Agent Platform API に接続できる。企業名検索や GitHub Trending には出にくい、公式 org からの静かな公開である。",
+    "date": "2026-09-06",
+    "newsDate": "2026-09-02",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "SDK",
+      "Android",
+      "Kotlin"
+    ]
   }
 ];

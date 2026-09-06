@@ -19066,6 +19066,25 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/release-notes/overview"
       }
     ]
+  },
+  "google-genai-kotlin-sdk-ga-2026": {
+    "body": [
+      "Google の公式 GitHub org `googleapis` が9月2日、**Gen AI SDK for Kotlin(kotlin-genai)** の **v1.0.0** を公開した。7月9日のv0.2.0以降、8月に入ってv0.3.0・v0.4.0・v0.5.0と約1〜2週間おきに更新を重ねたうえでの、**一般提供(GA)版**という位置づけになる。",
+      "対応プラットフォームは **Kotlin Multiplatform(KMP)**・**JVM**(Maven 向けに `-jvm` サフィックス版も用意)・**Android**(API level 21以上)。1つのコードベースから、Android アプリ・サーバーサイドの JVM アプリの双方で同じ SDK を使い回せる。ライセンスは Apache-2.0。",
+      "特徴は、**Gemini Developer API** と、企業向けの **Gemini Enterprise Agent Platform API**(旧 Vertex AI の系譜にあたる)の両方に、同じ SDK から接続できる点である。個人開発の検証段階から企業導入まで、SDK を切り替えずに移行できることを想定した設計になっている。",
+      "v1.0.0 は「安定した公開 API(Stable public API)」と位置づけられており、公式は 1.x 系列内でのソースコード互換性維持を明言している。主な機能として、モデルが必要な関数を自動判断して呼び出す自動関数呼び出し、有効期限付きの一時的な認証トークン(エフェメラルトークン)、ファイルのアップロード・登録機能などが含まれる。なお README では、一般公開する Android アプリでは API キーを直接埋め込むこの SDK ではなく **Firebase AI Logic** の利用を推奨する旨のセキュリティ上の注意書きがある点も付記しておく。",
+      "スター数は9月6日時点で18件とまだ目立った動きではないが、Gemini の Kotlin/Android サポートが「実験版」から「安定版・一級市民」へ切り替わった出来事として、Android/Kotlin エンジニアにとっては見ておく価値がある更新である。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitHub — googleapis/kotlin-genai",
+        "url": "https://github.com/googleapis/kotlin-genai"
+      },
+      {
+        "title": "googleapis/kotlin-genai — Releases",
+        "url": "https://github.com/googleapis/kotlin-genai/releases"
+      }
+    ]
   }
 };
 

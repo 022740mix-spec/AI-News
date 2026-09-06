@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-06",
-  "count": 395,
+  "count": 396,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -204,6 +204,7 @@
     "google-gemini-3-1-flash-image-3-pro-image-release-2026",
     "google-gemini-3-5-pro-ga-delay-deep-think-2026",
     "google-gemini-personal-intelligence-global-2026",
+    "google-genai-kotlin-sdk-ga-2026",
     "google-googlebook-gemini-intelligence-android-show-2026",
     "google-io-2026-gemini-3-5-flash-antigravity-spark-2026",
     "google-nano-banana-2-gemini-flash-image-2026",
