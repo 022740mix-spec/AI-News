@@ -8762,5 +8762,23 @@ export const ARTICLES_META = [
       "オープンソース",
       "Eコマース"
     ]
+  },
+  {
+    "id": "claude-platform-ant-apply-devtools-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Anthropic が「ant apply」を追加 — エージェント・環境・スキルをコードで宣言的に管理、会話途中の推論強度変更も",
+    "excerpt": "Anthropic の `ant` CLI が v1.30.0 で **`ant apply`** を追加した。エージェント・環境・スキル・メモリストア・デプロイをファイルに書き、Git でレビューしてから適用する **宣言的(IaC的)な管理**が可能になる。同時期には Messages API 側にも、**会話途中で推論強度(effort)を変更できるベータ機能**など、エージェント開発者向けの細かい追加が入っている。",
+    "date": "2026-09-06",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "CLI",
+      "エージェント",
+      "API"
+    ]
   }
 ];

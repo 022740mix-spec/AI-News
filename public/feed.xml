@@ -16,6 +16,14 @@
     <summary>Anthropic が GitHub 上で Claude Commerce Agents を公開した。買い物客向けの「ショッピングエージェント」と、店舗スタッフ向けの「マーチャントエージェント」を1つのブループリントにまとめた参考実装で、ライセンスは Apache 2.0。Messages API・Claude Agent SDK・Managed Agents の3つの実行環境に対応し、小売・旅行・通信・エンタメの4業種向けサンプルを収録する。</summary>
   </entry>
   <entry>
+    <title>Anthropic が「ant apply」を追加 — エージェント・環境・スキルをコードで宣言的に管理、会話途中の推論強度変更も</title>
+    <link rel="alternate" type="text/html" href="?a=claude-platform-ant-apply-devtools-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-platform-ant-apply-devtools-2026</id>
+    <published>2026-09-06T15:00:00Z</published>
+    <updated>2026-09-06T15:00:00Z</updated>
+    <summary>Anthropic の `ant` CLI が v1.30.0 で `ant apply` を追加した。エージェント・環境・スキル・メモリストア・デプロイをファイルに書き、Git でレビューしてから適用する 宣言的(IaC的)な管理が可能になる。同時期には Messages API 側にも、会話途中で推論強度(effort)を変更できるベータ機能など、エージェント開発者向けの細かい追加が入っている。</summary>
+  </entry>
+  <entry>
     <title>Microsoft の「Intelligent Terminal」、Build 2026 の予告から実働プレビューへ — ACP 経由で Copilot CLI・Claude Code・Codex CLI・Gemini CLI・OpenCode を1つのターミナルで切り替え</title>
     <link rel="alternate" type="text/html" href="?a=microsoft-intelligent-terminal-acp-preview-2026"/>
     <id>tag:ai-tool-news.jp,2026:microsoft-intelligent-terminal-acp-preview-2026</id>

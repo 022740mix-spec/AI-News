@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-06",
-  "count": 394,
+  "count": 395,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -111,6 +111,7 @@
     "claude-opus-4-7-review",
     "claude-opus-5-review",
     "claude-paid-subscriptions-double-2026",
+    "claude-platform-ant-apply-devtools-2026",
     "claude-screen-viewing-4-methods-comparison-2026",
     "claude-sonnet-4-6-review",
     "claude-sonnet-5-review",
