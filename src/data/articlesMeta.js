@@ -8798,5 +8798,23 @@ export const ARTICLES_META = [
       "Android",
       "Kotlin"
     ]
+  },
+  {
+    "id": "diagram-design-agent-skill-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "個人開発の「Diagram Design」が3.2万スターに — Claude Code/Codex向けにブランド準拠の図表39種を自己完結HTML+SVGで生成",
+    "excerpt": "個人開発の Agent Skill **Diagram Design** が **32,300スター超**に達した。Claude Code・Codex・Factory Droid・Pi 向けに、**39種類の図表タイプ**を自己完結の HTML + SVG として生成する。Mermaid のような「AIっぽい」自動レイアウトではなく、**対象サイトの配色・フォントを自動抽出してブランドに合わせる**のが特徴で、直近1週間も9月6日まで継続してコミットされている。",
+    "date": "2026-09-06",
+    "newsDate": "2026-09-06",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "エージェント",
+      "オープンソース",
+      "実用スキル",
+      "ダイアグラム",
+      "Claude Code"
+    ]
   }
 ];

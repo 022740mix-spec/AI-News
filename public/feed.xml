@@ -32,6 +32,14 @@
     <summary>Google の公式 org `googleapis` が Gen AI SDK for Kotlin の v1.0.0(一般提供版) を公開した。Kotlin Multiplatform 対応で、JVM・Android(API level 21以上)の両方から Gemini Developer API と Gemini Enterprise Agent Platform API に接続できる。企業名検索や GitHub Trending には出にくい、公式 org からの静かな公開である。</summary>
   </entry>
   <entry>
+    <title>個人開発の「Diagram Design」が3.2万スターに — Claude Code/Codex向けにブランド準拠の図表39種を自己完結HTML+SVGで生成</title>
+    <link rel="alternate" type="text/html" href="?a=diagram-design-agent-skill-2026"/>
+    <id>tag:ai-tool-news.jp,2026:diagram-design-agent-skill-2026</id>
+    <published>2026-09-06T15:00:00Z</published>
+    <updated>2026-09-06T15:00:00Z</updated>
+    <summary>個人開発の Agent Skill Diagram Design が 32,300スター超に達した。Claude Code・Codex・Factory Droid・Pi 向けに、39種類の図表タイプを自己完結の HTML + SVG として生成する。Mermaid のような「AIっぽい」自動レイアウトではなく、対象サイトの配色・フォントを自動抽出してブランドに合わせるのが特徴で、直近1週間も9月6日まで継続してコミットされている。</summary>
+  </entry>
+  <entry>
     <title>Microsoft の「Intelligent Terminal」、Build 2026 の予告から実働プレビューへ — ACP 経由で Copilot CLI・Claude Code・Codex CLI・Gemini CLI・OpenCode を1つのターミナルで切り替え</title>
     <link rel="alternate" type="text/html" href="?a=microsoft-intelligent-terminal-acp-preview-2026"/>
     <id>tag:ai-tool-news.jp,2026:microsoft-intelligent-terminal-acp-preview-2026</id>

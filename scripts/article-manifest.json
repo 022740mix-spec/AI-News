@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-06",
-  "count": 396,
+  "count": 397,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -144,6 +144,7 @@
     "design-md-ai-agent-design-system-format-2026",
     "devin-review",
     "dexter-financial-agent-2026",
+    "diagram-design-agent-skill-2026",
     "discovery-loop-jeff-dean-ai-science-startup-2026",
     "drawio-mcp-diagram-streaming-claude-2026",
     "dylan-patel-dwarkesh-ai-compute-bottlenecks",

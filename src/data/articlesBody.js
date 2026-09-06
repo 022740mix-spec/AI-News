@@ -19085,6 +19085,20 @@ const ARTICLES_BODY = {
         "url": "https://github.com/googleapis/kotlin-genai/releases"
       }
     ]
+  },
+  "diagram-design-agent-skill-2026": {
+    "body": [
+      "個人開発者 cathrynlavery が公開している **Diagram Design**(MIT ライセンス)が、9月6日時点で **32,300スター超・フォーク2,100超**に達している。Claude Code・Codex・Factory Droid・Pi など、Agent Skills 互換のホストから呼び出せる図表生成スキルで、**39種類の図表タイプ**を自己完結の HTML + SVG として出力する。",
+      "他の図表生成ツールとの違いとして README が強調するのは、**ドラッグ&ドロップの編集画面を持たない**こと。エージェントがコンテキストから最適な図表タイプを自動的に選び、生成する設計になっている。加えて、**対象ウェブサイトの配色・フォントを自動抽出してブランドに合わせる**機能や、既存の Draw.io / Mermaid 図を読み込んで同じスタイルで再描画する機能、スクリーンリーダー対応やモーション設定などアクセシビリティへの配慮も備える。",
+      "開発は継続的で、直近1週間だけでも8月30日・9月1日・9月2日・9月3日・9月6日とほぼ間を置かずコミットが入っている。issue が18件、pull request が17件開いている状態で、単発の話題づくりではなく実際に使われながら改修が続いているプロジェクトであることがうかがえる。",
+      "「Mermaid で図を貼ると、いかにも AI が作った見た目になる」という不満は開発者の間でよく聞かれる話だが、Diagram Design はそこに正面から取り組んでいる部類のプロジェクトである。エージェントに文章だけでなく図表まで任せる場面が増えるなかで、**見た目の「らしさ」**を扱う専用スキルというのは、本サイトでまだ取り上げてこなかった切り口になる。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitHub — cathrynlavery/diagram-design",
+        "url": "https://github.com/cathrynlavery/diagram-design"
+      }
+    ]
   }
 };
 
