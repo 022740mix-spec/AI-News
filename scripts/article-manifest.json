@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-07",
-  "count": 403,
+  "count": 406,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -25,6 +25,7 @@
     "alibaba-qwen-3-8-flash-next-2026",
     "alibaba-qwen-3-8-max-open-weight-2-4t-2026",
     "alibaba-qwen-3-8-preview-waic-shanghai-2-4t-open-weight-2026",
+    "alibaba-qwenwork-international-2026",
     "amazon-anthropic-25b-trainium-infrastructure-2026",
     "amazon-q",
     "anthropic-1m-context-beta-deadline-april30-2026",
@@ -170,6 +171,7 @@
     "feature-eu-ai-act-gpai-enforcement-vs-us-eo-14409-deadline-2026",
     "feature-eu-dma-google-android-open-ai-agents-search-data-2026",
     "feature-github-outage-cursor-origin-same-week-2026",
+    "feature-google-assistant-gemini-forced-migration-2026",
     "feature-google-deepmind-reorg-hassabis-jeff-dean-2026",
     "feature-google-gemini-3-5-pro-delay-coding-performance-2026",
     "feature-google-publisher-ai-optout-single-crawler-2026",
@@ -297,6 +299,7 @@
     "openai-codex-plugin-cc-claude-code-2026",
     "openai-confidential-s1-ipo-filing-852b-valuation-2026",
     "openai-cyber-trusted-contact-voice-may7-2026",
+    "openai-daybreak-frontline-defenders-2026",
     "openai-gpt-5-5-instant-default-chatgpt-2026",
     "openai-gpt-5-5-release-agentic-coding-2026",
     "openai-gpt-5-6-general-availability-july-9-2026",

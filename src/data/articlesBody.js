@@ -19242,6 +19242,69 @@ const ARTICLES_BODY = {
         "url": "https://github.com/anthropics/sandbox-runtime/releases"
       }
     ]
+  },
+  "openai-daybreak-frontline-defenders-2026": {
+    "body": [
+      "OpenAI が9月3日、サイバー防御プログラム「Daybreak」を拡張し、**「Daybreak for Frontline Defenders」**という新しい枠組みを発表した。電力網・上下水道・地方自治体・地域金融機関・非営利団体など、専任のセキュリティ予算を十分に持たない組織を対象に、Daybreak のモデルアクセス・ハンズオントレーニング・技術支援・パートナーシップを**10億ドル規模で補助**する。",
+      "第一弾は米国内向けの「Daybreak for America」で、州・地方・部族・準州レベルの情報共有機関である **MS-ISAC（Multi-State Information Sharing and Analysis Center）**とのパイロットから始まる。公共部門や上下水道事業者の防御担当者に対し、脆弱性の発見結果の検証・優先順位付け、対応の調整、再現可能な手順の確立を、ハンズオンのトレーニングと合わせて支援するという。米国内での展開を先行させたのち、数ヶ月かけて他の同盟国にも広げる計画が示されている。",
+      "## Daybreak Blue と Daybreak Red の2階層",
+      "プログラムは2つの階層に分かれる。**Daybreak Blue** は標準モデルを使った一般的な防御タスク向け、**Daybreak Red** は審査を通過した組織のみが使える、より高度でセンシティブな作業向けの専用サイバーモデルという棲み分けだ。すでに**約2,000の組織・ワークスペース**が Daybreak を利用しており、セキュリティ企業、防衛関連団体、法執行機関などが含まれるとされている。",
+      "OpenAI は8月にもサイバー防御専用モデルを投入しており、AI を使った攻撃の増加を背景に防御側の能力強化を急いでいた。今回の発表はその流れの延長線上にあり、**攻撃側だけでなく防御側にもフロンティアモデルを行き渡らせる**という狙いを、初めて数字（10億ドル・2,000組織）とともに具体化したものといえる。",
+      "## 編集履歴",
+      "【初版】2026年9月8日 — OpenAI 公式発表を一次資料として記載しているが、本記事執筆時の調査環境からは `openai.com` を含む複数の一般的なニュース・技術系ドメインへのアクセスがネットワークポリシーによりブロックされており、記事内容は独立した複数の技術・セキュリティ系メディアの報道の一致点に基づいて構成した。公式サイトでの直接確認ができ次第、内容の裏取りを行う。"
+    ],
+    "primarySources": [
+      {
+        "title": "Daybreak for Frontline Defenders: $1B to protect essential services | OpenAI",
+        "url": "https://openai.com/index/daybreak-for-frontline-defenders/"
+      },
+      {
+        "title": "Daybreak Defense Network | OpenAI",
+        "url": "https://openai.com/daybreak/partners-new/"
+      }
+    ]
+  },
+  "alibaba-qwenwork-international-2026": {
+    "body": [
+      "Alibaba が、職場向けAIエージェントプラットフォーム**「QwenWork」の国際版**を公開ベータとして提供開始した。ユーザーからの認可を得たうえで、Webサイトの操作・ローカルPCの操作・自然言語指示に基づく複数ステップのタスク実行を行うエージェントで、Web版と専用デスクトップクライアントの両方が用意されている。",
+      "QwenWork は新規サービスではなく、Alibaba が個別に展開してきた**3つの既存サービスを1つに統合**したものだ。コーディングやWebアプリ制作に特化した **QoderWork**、複数ステップのワークフローを編成する **MuleRun**、Webサイトやローカルコンピュータの操作を担う **Wukong** がそれぞれの役割を担う形で組み込まれている。",
+      "対応言語は現時点で**英語と簡体字中国語**のみだが、繁体字中国語・スペイン語・ポルトガル語・日本語・韓国語などへの対応拡大が予定されている。展開対象地域も、まずアジア・中東・中南米のユーザーと企業に限定してスタートする形だ。料金体系は**サブスクリプション＋クレジット制**で、個人向け・エンタープライズ向けにそれぞれ Basic / Advanced のモデル階層が用意されている。",
+      "Alibaba は Qwen 系モデルを中心に据えたエージェント製品群の展開を続けており、QwenWork はその中でも「社内の複数のエージェントサービスを1つの職場向けプラットフォームにまとめて海外展開する」という、統合と国際化を同時に進める動きにあたる。中国国内の生成AI企業がグローバル市場でのエージェント製品競争に本格的に参入する動きの一つとして注目される。",
+      "## 編集履歴",
+      "【初版】2026年9月8日 — Alibaba Cloud・Alibaba Group の公式発表を一次資料として記載しているが、本記事執筆時の調査環境からは `alibabacloud.com` `alibabagroup.com` を含む複数のドメインへのアクセスがネットワークポリシーによりブロックされており、記事内容は独立した複数のメディア報道の一致点に基づいて構成した。公式サイトでの直接確認ができ次第、内容の裏取りを行う。"
+    ],
+    "primarySources": [
+      {
+        "title": "Alibaba Launches QwenWork International Edition (Alibaba Cloud Community)",
+        "url": "https://www.alibabacloud.com/blog/alibaba-launches-qwenwork-international-edition-extending-its-all-in-one-workplace-ai-agent-to-global-markets_603500"
+      },
+      {
+        "title": "Alibaba Launches QwenWork (Alibaba Group)",
+        "url": "https://www.alibabagroup.com/en-US/document-2021039099929952256"
+      }
+    ]
+  },
+  "feature-google-assistant-gemini-forced-migration-2026": {
+    "body": [
+      "Google が、Android と Wear OS 上で10年以上運用してきた **Google Assistant を9月4日から段階的に終了**する。対象はスマートフォン・タブレット・Wear OS 搭載のスマートウォッチ、Bluetooth イヤホン、Android Auto 経由で接続する車載機器。後継は **Gemini のみ**で、既存ユーザーには Google からメールで通知が届いている。ロールアウトには数週間かかる見込みだが、**一度切り替わったユーザーは旧 Assistant に戻る手段がない**。唯一の例外は「Google built-in」を搭載した Android Automotive 車で、こちらは当面 Assistant が生き残るとされる。",
+      "## 「シームレスな移行のため」という理由で1年延期されていた",
+      "この移行は、当初は**2025年内に大半のモバイル端末で完了させる計画**だった。しかし Google は詳細な理由を明かさないまま「シームレスな移行を実現するため」としてスケジュールを2026年に押し戻し、その後 9月4日という具体的な期日を確定させた経緯がある。複数の報道は、延期の背景として **Gemini が単純な音声コマンド（デバイスの直接操作など）の処理で Assistant に及ばず、置き換えに耐える品質に達していなかった**ことを挙げている。",
+      "## 確定的なシステムから確率的なシステムへ、選択肢なしで",
+      "この移行が持つ意味は、単なるアプリの世代交代にとどまらない。Google Assistant は**あらかじめ定義されたコマンドとインテントに基づく、予測可能な音声インターフェース**として10年以上運用されてきた。後継の Gemini は**大規模言語モデルベースであり、同じ入力に対して常に同じ出力を返すとは限らない**。「タイマーをセットして」「電気を消して」といった、これまで確実に動作していた単純な操作が、確率的な応答モデルに置き換わることを、Google 自身が1年がかりの延期という形で認めていたことになる。",
+      "しかも今回の切り替えには**オプトアウトが用意されていない**。数億台規模とされる既存ユーザーベースに対し、代替手段なしの一斉移行が行われる点は、日常的な音声操作という生活インフラに近い機能で、企業側の判断だけで確率的なAIシステムへの全面移行が強制されるケースとして記録に値する。",
+      "## 編集履歴",
+      "【初版】2026年9月8日 — Google の公式発表・メール通知を一次資料としているが、本記事執筆時の調査環境からは Google 公式ブログ・サポートページを含む複数のドメインへのアクセスがネットワークポリシーによりブロックされており、記事内容は独立した複数の技術メディアの報道の一致点に基づいて構成した。公式サイトでの直接確認ができ次第、内容の裏取りを行う。"
+    ],
+    "primarySources": [
+      {
+        "title": "Google will shut down Google Assistant starting September 2026 as Gemini takes over on Android and Wear OS (the-decoder)",
+        "url": "https://the-decoder.com/google-will-shut-down-google-assistant-starting-september-2026-as-gemini-takes-over-on-android-and-wear-os/"
+      },
+      {
+        "title": "Google Assistant shutting down on Android and Wear OS in September (9to5Google)",
+        "url": "https://9to5google.com/2026/08/04/google-assistant-september-2026-shutdown/"
+      }
+    ]
   }
 };
 

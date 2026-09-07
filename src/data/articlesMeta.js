@@ -8942,5 +8942,55 @@ export const ARTICLES_META = [
       "オープンソース",
       "開発ツール"
     ]
+  },
+  {
+    "id": "openai-daybreak-frontline-defenders-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI が「Daybreak for Frontline Defenders」を発表 — 電力・上下水道・地方自治体向けにサイバー防御AIを10億ドル規模で補助",
+    "excerpt": "OpenAI が9月3日、サイバー防御モデル群「Daybreak」の拡張として「Daybreak for Frontline Defenders」を発表した。電力網・上下水道・地方自治体・地域金融機関・非営利団体など、十分なセキュリティ予算を持たない組織向けに、モデルアクセスの補助・トレーニング・技術支援を10億ドル規模で提供する。米国内の州・地方政府の情報共有機関 MS-ISAC とのパイロットを皮切りに、順次国際展開する計画。",
+    "date": "2026-09-08",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "セキュリティ",
+      "AI安全性",
+      "重要インフラ"
+    ]
+  },
+  {
+    "id": "alibaba-qwenwork-international-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Alibaba が「QwenWork」国際版を公開ベータ提供 — QoderWork・MuleRun・Wukong を1つの職場向けAIエージェントに統合",
+    "excerpt": "Alibaba が、社内向けに提供してきた3つのAIエージェントサービス（コーディング特化の QoderWork、ワークフロー編成の MuleRun、Webブラウザ・ローカルPC操作の Wukong）を1つに統合した「QwenWork」の国際版を公開ベータで提供開始した。英語・簡体字中国語に対応し、まずアジア・中東・中南米のユーザー・企業を対象とする。Web版とデスクトップ版クライアントを用意し、サブスクリプション+クレジット制の料金体系を採る。",
+    "date": "2026-09-08",
+    "newsDate": "2026-08-26",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Alibaba",
+      "Qwen",
+      "エージェント",
+      "中国AI"
+    ]
+  },
+  {
+    "id": "feature-google-assistant-gemini-forced-migration-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】Google Assistant が9月4日で終了、後継はGemini一択 — 「シームレスな移行」を理由に1年延期した末の強制切り替え",
+    "excerpt": "Google が Android と Wear OS 上の Google Assistant を9月4日から段階的に終了し、後継は Gemini のみになる。スマートフォン・タブレット・スマートウォッチ・Android Auto 搭載車が対象で、切り替わったユーザーは旧 Assistant に戻れない。移行は当初2025年内の予定だったが「シームレスな移行のため」延期されており、単純な音声コマンド処理での性能不足が背景にあったと報じられている。10年運用された確定的な音声アシスタントを、確率的なLLMベースのアシスタントへ選択肢なしで置き換える、規模としては最大級の強制移行である。",
+    "date": "2026-09-08",
+    "newsDate": "2026-09-04",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "ユーザー体験"
+    ]
   }
 ];
