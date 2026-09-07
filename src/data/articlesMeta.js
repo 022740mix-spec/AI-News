@@ -8855,5 +8855,27 @@ export const ARTICLES_META = [
       "src": "articles/cover-model-api.svg",
       "alt": "ECC エージェントハーネス最適化"
     }
+  },
+  {
+    "id": "openmed-local-medical-ai-privacy-2026",
+    "type": "news",
+    "category": "product",
+    "title": "臨床データを一切クラウドに送らない「OpenMed」が5,300スター — 2,200超の医療モデルをオンデバイスで動かす",
+    "excerpt": "臨床テキストの構造化抽出と個人識別情報の除去をローカル完結で行うオープンソース「OpenMed」がGitHubで支持を集めている。21言語対応・Apache-2.0ライセンス。ただし開発元自身が「SDK利用のみではHIPAA準拠を確立しない」と明記しており、法令準拠と技術の間には距離がある。",
+    "date": "2026-09-07",
+    "newsDate": "2026-09-07",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "オープンソース",
+      "エッジAI",
+      "プライバシー",
+      "医療",
+      "個人開発"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "OpenMed ローカル完結の医療AI"
+    }
   }
 ];
