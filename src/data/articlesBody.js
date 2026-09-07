@@ -19242,6 +19242,27 @@ const ARTICLES_BODY = {
         "url": "https://github.com/anthropics/sandbox-runtime/releases"
       }
     ]
+  },
+  "openai-daybreak-frontline-defenders-2026": {
+    "body": [
+      "OpenAI が9月3日、サイバー防御プログラム「Daybreak」を拡張し、**「Daybreak for Frontline Defenders」**という新しい枠組みを発表した。電力網・上下水道・地方自治体・地域金融機関・非営利団体など、専任のセキュリティ予算を十分に持たない組織を対象に、Daybreak のモデルアクセス・ハンズオントレーニング・技術支援・パートナーシップを**10億ドル規模で補助**する。",
+      "第一弾は米国内向けの「Daybreak for America」で、州・地方・部族・準州レベルの情報共有機関である **MS-ISAC（Multi-State Information Sharing and Analysis Center）**とのパイロットから始まる。公共部門や上下水道事業者の防御担当者に対し、脆弱性の発見結果の検証・優先順位付け、対応の調整、再現可能な手順の確立を、ハンズオンのトレーニングと合わせて支援するという。米国内での展開を先行させたのち、数ヶ月かけて他の同盟国にも広げる計画が示されている。",
+      "## Daybreak Blue と Daybreak Red の2階層",
+      "プログラムは2つの階層に分かれる。**Daybreak Blue** は標準モデルを使った一般的な防御タスク向け、**Daybreak Red** は審査を通過した組織のみが使える、より高度でセンシティブな作業向けの専用サイバーモデルという棲み分けだ。すでに**約2,000の組織・ワークスペース**が Daybreak を利用しており、セキュリティ企業、防衛関連団体、法執行機関などが含まれるとされている。",
+      "OpenAI は8月にもサイバー防御専用モデルを投入しており、AI を使った攻撃の増加を背景に防御側の能力強化を急いでいた。今回の発表はその流れの延長線上にあり、**攻撃側だけでなく防御側にもフロンティアモデルを行き渡らせる**という狙いを、初めて数字（10億ドル・2,000組織）とともに具体化したものといえる。",
+      "## 編集履歴",
+      "【初版】2026年9月8日 — OpenAI 公式発表を一次資料として記載しているが、本記事執筆時の調査環境からは `openai.com` を含む複数の一般的なニュース・技術系ドメインへのアクセスがネットワークポリシーによりブロックされており、記事内容は独立した複数の技術・セキュリティ系メディアの報道の一致点に基づいて構成した。公式サイトでの直接確認ができ次第、内容の裏取りを行う。"
+    ],
+    "primarySources": [
+      {
+        "title": "Daybreak for Frontline Defenders: $1B to protect essential services | OpenAI",
+        "url": "https://openai.com/index/daybreak-for-frontline-defenders/"
+      },
+      {
+        "title": "Daybreak Defense Network | OpenAI",
+        "url": "https://openai.com/daybreak/partners-new/"
+      }
+    ]
   }
 };
 

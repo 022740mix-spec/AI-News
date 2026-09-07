@@ -8942,5 +8942,22 @@ export const ARTICLES_META = [
       "オープンソース",
       "開発ツール"
     ]
+  },
+  {
+    "id": "openai-daybreak-frontline-defenders-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI が「Daybreak for Frontline Defenders」を発表 — 電力・上下水道・地方自治体向けにサイバー防御AIを10億ドル規模で補助",
+    "excerpt": "OpenAI が9月3日、サイバー防御モデル群「Daybreak」の拡張として「Daybreak for Frontline Defenders」を発表した。電力網・上下水道・地方自治体・地域金融機関・非営利団体など、十分なセキュリティ予算を持たない組織向けに、モデルアクセスの補助・トレーニング・技術支援を10億ドル規模で提供する。米国内の州・地方政府の情報共有機関 MS-ISAC とのパイロットを皮切りに、順次国際展開する計画。",
+    "date": "2026-09-08",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "セキュリティ",
+      "AI安全性",
+      "重要インフラ"
+    ]
   }
 ];
