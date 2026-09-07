@@ -8976,5 +8976,21 @@ export const ARTICLES_META = [
       "エージェント",
       "中国AI"
     ]
+  },
+  {
+    "id": "feature-google-assistant-gemini-forced-migration-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】Google Assistant が9月4日で終了、後継はGemini一択 — 「シームレスな移行」を理由に1年延期した末の強制切り替え",
+    "excerpt": "Google が Android と Wear OS 上の Google Assistant を9月4日から段階的に終了し、後継は Gemini のみになる。スマートフォン・タブレット・スマートウォッチ・Android Auto 搭載車が対象で、切り替わったユーザーは旧 Assistant に戻れない。移行は当初2025年内の予定だったが「シームレスな移行のため」延期されており、単純な音声コマンド処理での性能不足が背景にあったと報じられている。10年運用された確定的な音声アシスタントを、確率的なLLMベースのアシスタントへ選択肢なしで置き換える、規模としては最大級の強制移行である。",
+    "date": "2026-09-08",
+    "newsDate": "2026-09-04",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "ユーザー体験"
+    ]
   }
 ];

@@ -19283,6 +19283,28 @@ const ARTICLES_BODY = {
         "url": "https://www.alibabagroup.com/en-US/document-2021039099929952256"
       }
     ]
+  },
+  "feature-google-assistant-gemini-forced-migration-2026": {
+    "body": [
+      "Google が、Android と Wear OS 上で10年以上運用してきた **Google Assistant を9月4日から段階的に終了**する。対象はスマートフォン・タブレット・Wear OS 搭載のスマートウォッチ、Bluetooth イヤホン、Android Auto 経由で接続する車載機器。後継は **Gemini のみ**で、既存ユーザーには Google からメールで通知が届いている。ロールアウトには数週間かかる見込みだが、**一度切り替わったユーザーは旧 Assistant に戻る手段がない**。唯一の例外は「Google built-in」を搭載した Android Automotive 車で、こちらは当面 Assistant が生き残るとされる。",
+      "## 「シームレスな移行のため」という理由で1年延期されていた",
+      "この移行は、当初は**2025年内に大半のモバイル端末で完了させる計画**だった。しかし Google は詳細な理由を明かさないまま「シームレスな移行を実現するため」としてスケジュールを2026年に押し戻し、その後 9月4日という具体的な期日を確定させた経緯がある。複数の報道は、延期の背景として **Gemini が単純な音声コマンド（デバイスの直接操作など）の処理で Assistant に及ばず、置き換えに耐える品質に達していなかった**ことを挙げている。",
+      "## 確定的なシステムから確率的なシステムへ、選択肢なしで",
+      "この移行が持つ意味は、単なるアプリの世代交代にとどまらない。Google Assistant は**あらかじめ定義されたコマンドとインテントに基づく、予測可能な音声インターフェース**として10年以上運用されてきた。後継の Gemini は**大規模言語モデルベースであり、同じ入力に対して常に同じ出力を返すとは限らない**。「タイマーをセットして」「電気を消して」といった、これまで確実に動作していた単純な操作が、確率的な応答モデルに置き換わることを、Google 自身が1年がかりの延期という形で認めていたことになる。",
+      "しかも今回の切り替えには**オプトアウトが用意されていない**。数億台規模とされる既存ユーザーベースに対し、代替手段なしの一斉移行が行われる点は、日常的な音声操作という生活インフラに近い機能で、企業側の判断だけで確率的なAIシステムへの全面移行が強制されるケースとして記録に値する。",
+      "## 編集履歴",
+      "【初版】2026年9月8日 — Google の公式発表・メール通知を一次資料としているが、本記事執筆時の調査環境からは Google 公式ブログ・サポートページを含む複数のドメインへのアクセスがネットワークポリシーによりブロックされており、記事内容は独立した複数の技術メディアの報道の一致点に基づいて構成した。公式サイトでの直接確認ができ次第、内容の裏取りを行う。"
+    ],
+    "primarySources": [
+      {
+        "title": "Google will shut down Google Assistant starting September 2026 as Gemini takes over on Android and Wear OS (the-decoder)",
+        "url": "https://the-decoder.com/google-will-shut-down-google-assistant-starting-september-2026-as-gemini-takes-over-on-android-and-wear-os/"
+      },
+      {
+        "title": "Google Assistant shutting down on Android and Wear OS in September (9to5Google)",
+        "url": "https://9to5google.com/2026/08/04/google-assistant-september-2026-shutdown/"
+      }
+    ]
   }
 };
 

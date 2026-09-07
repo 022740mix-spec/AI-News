@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-07",
-  "count": 405,
+  "count": 406,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -171,6 +171,7 @@
     "feature-eu-ai-act-gpai-enforcement-vs-us-eo-14409-deadline-2026",
     "feature-eu-dma-google-android-open-ai-agents-search-data-2026",
     "feature-github-outage-cursor-origin-same-week-2026",
+    "feature-google-assistant-gemini-forced-migration-2026",
     "feature-google-deepmind-reorg-hassabis-jeff-dean-2026",
     "feature-google-gemini-3-5-pro-delay-coding-performance-2026",
     "feature-google-publisher-ai-optout-single-crawler-2026",

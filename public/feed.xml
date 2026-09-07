@@ -32,6 +32,14 @@
     <summary>Alibaba が、社内向けに提供してきた3つのAIエージェントサービス（コーディング特化の QoderWork、ワークフロー編成の MuleRun、Webブラウザ・ローカルPC操作の Wukong）を1つに統合した「QwenWork」の国際版を公開ベータで提供開始した。英語・簡体字中国語に対応し、まずアジア・中東・中南米のユーザー・企業を対象とする。Web版とデスクトップ版クライアントを用意し、サブスクリプション+クレジット制の料金体系を採る。</summary>
   </entry>
   <entry>
+    <title>【分析】Google Assistant が9月4日で終了、後継はGemini一択 — 「シームレスな移行」を理由に1年延期した末の強制切り替え</title>
+    <link rel="alternate" type="text/html" href="?a=feature-google-assistant-gemini-forced-migration-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-google-assistant-gemini-forced-migration-2026</id>
+    <published>2026-09-08T15:00:00Z</published>
+    <updated>2026-09-08T15:00:00Z</updated>
+    <summary>Google が Android と Wear OS 上の Google Assistant を9月4日から段階的に終了し、後継は Gemini のみになる。スマートフォン・タブレット・スマートウォッチ・Android Auto 搭載車が対象で、切り替わったユーザーは旧 Assistant に戻れない。移行は当初2025年内の予定だったが「シームレスな移行のため」延期されており、単純な音声コマンド処理での性能不足が背景にあったと報じられている。10年運用された確定的な音声アシスタントを、確率的なLLMベースのアシスタントへ選択肢なしで置き換える、規模としては最大級の強制移行である。</summary>
+  </entry>
+  <entry>
     <title>個人開発の「ECC」が25.2万スター — 68種のサブエージェントと286スキルで複数コーディングハーネスを横断統合</title>
     <link rel="alternate" type="text/html" href="?a=ecc-agent-harness-optimization-2026"/>
     <id>tag:ai-tool-news.jp,2026:ecc-agent-harness-optimization-2026</id>
