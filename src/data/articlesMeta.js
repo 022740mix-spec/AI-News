@@ -8924,5 +8924,26 @@ export const ARTICLES_META = [
       "start": "2026-08-31",
       "end": "2026-09-06"
     }
+  },
+  {
+    "id": "anthropic-pentagon-lethal-weapons-dispute-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【未確認情報】Anthropic対米国防総省、Claude の兵器転用制限を巡る対立 — 連邦判事は「サプライチェーンリスク」指定を違法と判断も、国防総省は維持を表明と報道",
+    "excerpt": "米連邦地裁が、国防総省によるAnthropicへの「サプライチェーンリスク」指定を違法と判断したと複数の米メディアが報じている。背景にあるのは、Anthropicが完全自律型致死兵器・大量監視への利用制限の撤廃を拒んだこと。判決後も国防総省側は指定を維持する姿勢を示しているとされ、司法と行政の対立が続いている模様。一次ソースに到達できておらず、確定情報として扱わない。",
+    "date": "2026-09-07",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "規制",
+      "AI安全性",
+      "軍事"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "Anthropic と国防総省の対立"
+    }
   }
 ];
