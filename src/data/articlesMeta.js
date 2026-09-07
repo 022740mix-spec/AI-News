@@ -8959,5 +8959,22 @@ export const ARTICLES_META = [
       "AI安全性",
       "重要インフラ"
     ]
+  },
+  {
+    "id": "alibaba-qwenwork-international-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Alibaba が「QwenWork」国際版を公開ベータ提供 — QoderWork・MuleRun・Wukong を1つの職場向けAIエージェントに統合",
+    "excerpt": "Alibaba が、社内向けに提供してきた3つのAIエージェントサービス（コーディング特化の QoderWork、ワークフロー編成の MuleRun、Webブラウザ・ローカルPC操作の Wukong）を1つに統合した「QwenWork」の国際版を公開ベータで提供開始した。英語・簡体字中国語に対応し、まずアジア・中東・中南米のユーザー・企業を対象とする。Web版とデスクトップ版クライアントを用意し、サブスクリプション+クレジット制の料金体系を採る。",
+    "date": "2026-09-08",
+    "newsDate": "2026-08-26",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Alibaba",
+      "Qwen",
+      "エージェント",
+      "中国AI"
+    ]
   }
 ];

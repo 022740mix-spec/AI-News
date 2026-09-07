@@ -24,6 +24,14 @@
     <summary>OpenAI が9月3日、サイバー防御モデル群「Daybreak」の拡張として「Daybreak for Frontline Defenders」を発表した。電力網・上下水道・地方自治体・地域金融機関・非営利団体など、十分なセキュリティ予算を持たない組織向けに、モデルアクセスの補助・トレーニング・技術支援を10億ドル規模で提供する。米国内の州・地方政府の情報共有機関 MS-ISAC とのパイロットを皮切りに、順次国際展開する計画。</summary>
   </entry>
   <entry>
+    <title>Alibaba が「QwenWork」国際版を公開ベータ提供 — QoderWork・MuleRun・Wukong を1つの職場向けAIエージェントに統合</title>
+    <link rel="alternate" type="text/html" href="?a=alibaba-qwenwork-international-2026"/>
+    <id>tag:ai-tool-news.jp,2026:alibaba-qwenwork-international-2026</id>
+    <published>2026-09-08T15:00:00Z</published>
+    <updated>2026-09-08T15:00:00Z</updated>
+    <summary>Alibaba が、社内向けに提供してきた3つのAIエージェントサービス（コーディング特化の QoderWork、ワークフロー編成の MuleRun、Webブラウザ・ローカルPC操作の Wukong）を1つに統合した「QwenWork」の国際版を公開ベータで提供開始した。英語・簡体字中国語に対応し、まずアジア・中東・中南米のユーザー・企業を対象とする。Web版とデスクトップ版クライアントを用意し、サブスクリプション+クレジット制の料金体系を採る。</summary>
+  </entry>
+  <entry>
     <title>個人開発の「ECC」が25.2万スター — 68種のサブエージェントと286スキルで複数コーディングハーネスを横断統合</title>
     <link rel="alternate" type="text/html" href="?a=ecc-agent-harness-optimization-2026"/>
     <id>tag:ai-tool-news.jp,2026:ecc-agent-harness-optimization-2026</id>

@@ -19263,6 +19263,26 @@ const ARTICLES_BODY = {
         "url": "https://openai.com/daybreak/partners-new/"
       }
     ]
+  },
+  "alibaba-qwenwork-international-2026": {
+    "body": [
+      "Alibaba が、職場向けAIエージェントプラットフォーム**「QwenWork」の国際版**を公開ベータとして提供開始した。ユーザーからの認可を得たうえで、Webサイトの操作・ローカルPCの操作・自然言語指示に基づく複数ステップのタスク実行を行うエージェントで、Web版と専用デスクトップクライアントの両方が用意されている。",
+      "QwenWork は新規サービスではなく、Alibaba が個別に展開してきた**3つの既存サービスを1つに統合**したものだ。コーディングやWebアプリ制作に特化した **QoderWork**、複数ステップのワークフローを編成する **MuleRun**、Webサイトやローカルコンピュータの操作を担う **Wukong** がそれぞれの役割を担う形で組み込まれている。",
+      "対応言語は現時点で**英語と簡体字中国語**のみだが、繁体字中国語・スペイン語・ポルトガル語・日本語・韓国語などへの対応拡大が予定されている。展開対象地域も、まずアジア・中東・中南米のユーザーと企業に限定してスタートする形だ。料金体系は**サブスクリプション＋クレジット制**で、個人向け・エンタープライズ向けにそれぞれ Basic / Advanced のモデル階層が用意されている。",
+      "Alibaba は Qwen 系モデルを中心に据えたエージェント製品群の展開を続けており、QwenWork はその中でも「社内の複数のエージェントサービスを1つの職場向けプラットフォームにまとめて海外展開する」という、統合と国際化を同時に進める動きにあたる。中国国内の生成AI企業がグローバル市場でのエージェント製品競争に本格的に参入する動きの一つとして注目される。",
+      "## 編集履歴",
+      "【初版】2026年9月8日 — Alibaba Cloud・Alibaba Group の公式発表を一次資料として記載しているが、本記事執筆時の調査環境からは `alibabacloud.com` `alibabagroup.com` を含む複数のドメインへのアクセスがネットワークポリシーによりブロックされており、記事内容は独立した複数のメディア報道の一致点に基づいて構成した。公式サイトでの直接確認ができ次第、内容の裏取りを行う。"
+    ],
+    "primarySources": [
+      {
+        "title": "Alibaba Launches QwenWork International Edition (Alibaba Cloud Community)",
+        "url": "https://www.alibabacloud.com/blog/alibaba-launches-qwenwork-international-edition-extending-its-all-in-one-workplace-ai-agent-to-global-markets_603500"
+      },
+      {
+        "title": "Alibaba Launches QwenWork (Alibaba Group)",
+        "url": "https://www.alibabagroup.com/en-US/document-2021039099929952256"
+      }
+    ]
   }
 };
 
