@@ -19146,6 +19146,25 @@ const ARTICLES_BODY = {
         "url": "https://www.challengergray.com/blog/challenger-report-august-job-cuts-up-58-consumer-products-food-lead/"
       }
     ]
+  },
+  "ecc-agent-harness-optimization-2026": {
+    "body": [
+      "個人開発者 affaan-m が公開する「ECC」（The Agent Harness Performance Optimization System）が、GitHub の週間トレンドで大きく伸び、スター数25.2万・フォーク3.78万に達した。MIT ライセンスで公開されており、npm パッケージ `ecc-universal` を通じてインストールする。",
+      "ECC が解決しようとしているのは、「どのコーディングエージェントを使うか」ではなく「複数のコーディングエージェントを併用するときの重複」である。Claude Code・Codex・Cursor・OpenCode・Gemini・Zed・Kimi Code・GitHub Copilot など対応ハーネスは多岐にわたり、ツールごとに書き直しがちなサブエージェント定義・スキル・コマンドを共通レイヤーとして持たせる設計になっている。README によれば、68種の専用サブエージェント、286の再利用可能なスキル、94の互換コマンドシムを含み、フック・ルール・メモリ機構に加えて `ecc-agentshield` というセキュリティスキャン用の別パッケージも用意する。",
+      "最新のメジャーリリースである v2.2 系では、対話式のインストーラーに加え、Antigravity 2.0 のネイティブサポートや Nasiko CLI とのライフサイクル連携（実験的機能）が加わっている。導入は `npx ecc-universal setup` で行うガイド付きセットアップが用意されている。",
+      "**エディタとエージェントは1対1ではない。** この観点は、ツール別ページを分けて解説してきた本サイトの前提そのものに関わる。ECC のような「複数ハーネス共通の後付けレイヤー」が数十万スター規模で支持される状況は、開発者が単一のエージェントに固定されず、タスクや局面に応じてハーネスを切り替える運用が既に一般化しつつあることを示している。",
+      "一方で、68種のサブエージェントと286のスキルという規模は、導入・学習コストも相応に大きいことを意味する。個人開発の後付けレイヤーであるため、対応ハーネス側のアップデートに追従し続けられるかという継続性の観点は、利用を検討する際に確認しておく価値がある。"
+    ],
+    "primarySources": [
+      {
+        "title": "affaan-m/ECC - GitHub",
+        "url": "https://github.com/affaan-m/ECC"
+      },
+      {
+        "title": "affaan-m/ECC Releases",
+        "url": "https://github.com/affaan-m/ECC/releases"
+      }
+    ]
   }
 };
 

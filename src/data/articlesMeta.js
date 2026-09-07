@@ -8833,5 +8833,27 @@ export const ARTICLES_META = [
       "レイオフ",
       "米国"
     ]
+  },
+  {
+    "id": "ecc-agent-harness-optimization-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "個人開発の「ECC」が25.2万スター — 68種のサブエージェントと286スキルで複数コーディングハーネスを横断統合",
+    "excerpt": "GitHub の affaan-m/ECC が週間トレンド上位で急伸し、スター数25.2万に到達。Claude Code・Codex・Cursor・Gemini・Zed・Kimi Code・GitHub Copilot など複数のコーディングハーネスに、共通のサブエージェント・スキル・セキュリティスキャン層を後付けするオープンソースの「ハーネス最適化レイヤー」。",
+    "date": "2026-09-07",
+    "newsDate": "2026-09-07",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "オープンソース",
+      "エージェント",
+      "開発ツール",
+      "Claude Code",
+      "個人開発"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "ECC エージェントハーネス最適化"
+    }
   }
 ];

@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-09-06",
-  "count": 398,
+  "generatedAt": "2026-09-07",
+  "count": 399,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -149,6 +149,7 @@
     "discovery-loop-jeff-dean-ai-science-startup-2026",
     "drawio-mcp-diagram-streaming-claude-2026",
     "dylan-patel-dwarkesh-ai-compute-bottlenecks",
+    "ecc-agent-harness-optimization-2026",
     "editor-comparison-2026-march",
     "elon-musk-dwarkesh-podcast-2026",
     "enterprise-backend-dataverse-supabase-azure-2026",
