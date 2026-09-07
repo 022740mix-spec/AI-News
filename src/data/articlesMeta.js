@@ -8898,5 +8898,31 @@ export const ARTICLES_META = [
       "src": "articles/cover-model-api.svg",
       "alt": "Agent Skill 形式の収斂"
     }
+  },
+  {
+    "id": "weekly-metrics-2026-week-aug31",
+    "type": "feature",
+    "category": "special",
+    "title": "週次の計器 — 公開27本、記事は中国AIを17本書いたのにガイドの言及は0行",
+    "excerpt": "2026年8月31日〜9月6日の週次データ。公開本数は前週5本から27本に急増（1日2回の調査運用への切り替えが反映された最初の週）。タグは「オープンソース」「エージェント」が伸び、「中国AI」は17記事書きながらガイドでの言及が依然として0回。「AI安全性」「透明性」も同じ形の空白として残る。",
+    "date": "2026-09-07",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "週刊まとめ",
+      "オープンソース",
+      "エージェント",
+      "中国AI",
+      "AI安全性"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "週次の計器 8/31〜9/6"
+    },
+    "heroScope": "week",
+    "weekRoundupPeriod": {
+      "start": "2026-08-31",
+      "end": "2026-09-06"
+    }
   }
 ];

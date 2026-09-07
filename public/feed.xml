@@ -32,6 +32,14 @@
     <summary>自己完結HTML+SVGで図表を生成する「Diagram Design」、163種の科学スキルを束ねる「K-Dense」、複数コーディングハーネスを横断統合する「ECC」——用途はまったく異なる個人開発プロジェクトが、いずれも「Agent Skill」という同じパッケージ形式を選んでいる。個別のツールの話ではなく、配布形式そのものの収斂として読む。</summary>
   </entry>
   <entry>
+    <title>週次の計器 — 公開27本、記事は中国AIを17本書いたのにガイドの言及は0行</title>
+    <link rel="alternate" type="text/html" href="?a=weekly-metrics-2026-week-aug31"/>
+    <id>tag:ai-tool-news.jp,2026:weekly-metrics-2026-week-aug31</id>
+    <published>2026-09-07T15:00:00Z</published>
+    <updated>2026-09-07T15:00:00Z</updated>
+    <summary>2026年8月31日〜9月6日の週次データ。公開本数は前週5本から27本に急増（1日2回の調査運用への切り替えが反映された最初の週）。タグは「オープンソース」「エージェント」が伸び、「中国AI」は17記事書きながらガイドでの言及が依然として0回。「AI安全性」「透明性」も同じ形の空白として残る。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が「Claude Commerce Agents」を公開 — 買い物客とマーチャント双方向けの参考実装をApache 2.0で無償公開</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-commerce-agents-blueprint-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-commerce-agents-blueprint-2026</id>
