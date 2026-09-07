@@ -8877,5 +8877,26 @@ export const ARTICLES_META = [
       "src": "articles/cover-model-api.svg",
       "alt": "OpenMed ローカル完結の医療AI"
     }
+  },
+  {
+    "id": "feature-agent-skills-open-standard-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】「Agent Skill」形式が事実上の標準になりつつある — 図表・科学研究・ハーネス統合、別々の個人開発が同じ器を選んでいる",
+    "excerpt": "自己完結HTML+SVGで図表を生成する「Diagram Design」、163種の科学スキルを束ねる「K-Dense」、複数コーディングハーネスを横断統合する「ECC」——用途はまったく異なる個人開発プロジェクトが、いずれも「Agent Skill」という同じパッケージ形式を選んでいる。個別のツールの話ではなく、配布形式そのものの収斂として読む。",
+    "date": "2026-09-07",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "エージェント",
+      "オープンソース",
+      "Claude Code",
+      "分析",
+      "開発ツール"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "Agent Skill 形式の収斂"
+    }
   }
 ];

@@ -24,6 +24,14 @@
     <summary>臨床テキストの構造化抽出と個人識別情報の除去をローカル完結で行うオープンソース「OpenMed」がGitHubで支持を集めている。21言語対応・Apache-2.0ライセンス。ただし開発元自身が「SDK利用のみではHIPAA準拠を確立しない」と明記しており、法令準拠と技術の間には距離がある。</summary>
   </entry>
   <entry>
+    <title>【分析】「Agent Skill」形式が事実上の標準になりつつある — 図表・科学研究・ハーネス統合、別々の個人開発が同じ器を選んでいる</title>
+    <link rel="alternate" type="text/html" href="?a=feature-agent-skills-open-standard-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-agent-skills-open-standard-2026</id>
+    <published>2026-09-07T15:00:00Z</published>
+    <updated>2026-09-07T15:00:00Z</updated>
+    <summary>自己完結HTML+SVGで図表を生成する「Diagram Design」、163種の科学スキルを束ねる「K-Dense」、複数コーディングハーネスを横断統合する「ECC」——用途はまったく異なる個人開発プロジェクトが、いずれも「Agent Skill」という同じパッケージ形式を選んでいる。個別のツールの話ではなく、配布形式そのものの収斂として読む。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が「Claude Commerce Agents」を公開 — 買い物客とマーチャント双方向けの参考実装をApache 2.0で無償公開</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-commerce-agents-blueprint-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-commerce-agents-blueprint-2026</id>
