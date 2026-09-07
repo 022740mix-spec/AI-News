@@ -8924,5 +8924,23 @@ export const ARTICLES_META = [
       "start": "2026-08-31",
       "end": "2026-09-06"
     }
+  },
+  {
+    "id": "anthropic-sandbox-runtime-public-oss-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code を裏で守る「sandbox-runtime」が公式OSSに — バイナリ解析で発見された内部パッケージが、既知の抜け穴付きで公開されていた",
+    "excerpt": "2026年3月、Reddit ユーザーがバイナリ解析で見つけた Claude Code 内部の未公開パッケージ `@anthropic-ai/sandbox-runtime` が、Anthropic 公式の GitHub リポジトリとして公開されている。macOS・Linux・Windows でエージェントの実行をファイルシステム/ネットワーク単位で隔離する軽量サンドボックスで、Apache 2.0・5,200スター超。ドキュメントには「`docker.sock` を許可すると隔離を回避できる」「Linux はプロキシ環境変数を無視するツールで抜けうる」といった既知の限界も明記されている。",
+    "date": "2026-09-08",
+    "newsDate": "2026-09-01",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "セキュリティ",
+      "オープンソース",
+      "開発ツール"
+    ]
   }
 ];
