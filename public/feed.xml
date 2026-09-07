@@ -40,6 +40,14 @@
     <summary>2026年8月31日〜9月6日の週次データ。公開本数は前週5本から27本に急増（1日2回の調査運用への切り替えが反映された最初の週）。タグは「オープンソース」「エージェント」が伸び、「中国AI」は17記事書きながらガイドでの言及が依然として0回。「AI安全性」「透明性」も同じ形の空白として残る。</summary>
   </entry>
   <entry>
+    <title>【未確認情報】Anthropic対米国防総省、Claude の兵器転用制限を巡る対立 — 連邦判事は「サプライチェーンリスク」指定を違法と判断も、国防総省は維持を表明と報道</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-pentagon-lethal-weapons-dispute-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-pentagon-lethal-weapons-dispute-2026</id>
+    <published>2026-09-07T15:00:00Z</published>
+    <updated>2026-09-07T15:00:00Z</updated>
+    <summary>米連邦地裁が、国防総省によるAnthropicへの「サプライチェーンリスク」指定を違法と判断したと複数の米メディアが報じている。背景にあるのは、Anthropicが完全自律型致死兵器・大量監視への利用制限の撤廃を拒んだこと。判決後も国防総省側は指定を維持する姿勢を示しているとされ、司法と行政の対立が続いている模様。一次ソースに到達できておらず、確定情報として扱わない。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が「Claude Commerce Agents」を公開 — 買い物客とマーチャント双方向けの参考実装をApache 2.0で無償公開</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-commerce-agents-blueprint-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-commerce-agents-blueprint-2026</id>
