@@ -24,6 +24,14 @@
     <summary>スタンフォード大学のFei-Fei Liが共同創業した「空間知能」スタートアップ World Labsが9月1日、オムニワールドモデル「Atlas」を公開した。テキスト・画像・動画・3Dをゼロから同一の空間コンテキストとして扱うマルチモーダル自己回帰拡散トランスフォーマーで、数枚の写真から3D世界を生成・再構成し、最大1440p・最長1分のカメラ制御可能な映像として出力できるとしている。World Labsは7月にロボティクス向け空間知能を強化するためSceniXを買収しており、Atlasはその延長線上に位置付けられる。評価額の根拠となる12億ドル規模の資金背景を持つ企業の、これまでで最も具体的な製品発表である。</summary>
   </entry>
   <entry>
+    <title>Sony Music Publishing と Warner Chappell が Anthropic を提訴 — CEO・共同創業者を個人名で名指し、1曲あたり最大15万ドルの法定損害賠償を請求</title>
+    <link rel="alternate" type="text/html" href="?a=sony-warner-chappell-sue-anthropic-copyright-2026"/>
+    <id>tag:ai-tool-news.jp,2026:sony-warner-chappell-sue-anthropic-copyright-2026</id>
+    <published>2026-09-09T15:00:00Z</published>
+    <updated>2026-09-09T15:00:00Z</updated>
+    <summary>Sony Music PublishingとWarner Chappell Musicが8月28日、著作権侵害を理由にAnthropicを米カリフォルニア北部地区連邦地裁に提訴した。訴状はAnthropic、CEOのDario Amodei、共同創業者のBenjamin Mannを個人名で被告に加えている。両社は、Anthropicが海賊版サイト（Library Genesis、Pirate Library Mirror等）からの違法なトレント・スクレイピングや、MusixmatchやLyricFindなど正規の歌詞サイトからのスクレイピングを通じて数万曲を無断で学習に用いたと主張し、1曲あたり最大15万ドル、著作権管理情報の除去1件につき最大2万5000ドルの法定損害賠償を陪審審理で求めている。Anthropicは容疑を否認し、学習は変容的なフェアユースにあたるとして争う姿勢を示している。</summary>
+  </entry>
+  <entry>
     <title>Claude Code を裏で守る「sandbox-runtime」が公式OSSに — バイナリ解析で発見された内部パッケージが、既知の抜け穴付きで公開されていた</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-sandbox-runtime-public-oss-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-sandbox-runtime-public-oss-2026</id>

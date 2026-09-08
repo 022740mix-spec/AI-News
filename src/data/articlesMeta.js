@@ -9068,5 +9068,26 @@ export const ARTICLES_META = [
       "src": "articles/cover-model-api.svg",
       "alt": "World Labs Atlas world model"
     }
+  },
+  {
+    "id": "sony-warner-chappell-sue-anthropic-copyright-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "Sony Music Publishing と Warner Chappell が Anthropic を提訴 — CEO・共同創業者を個人名で名指し、1曲あたり最大15万ドルの法定損害賠償を請求",
+    "excerpt": "Sony Music PublishingとWarner Chappell Musicが8月28日、著作権侵害を理由にAnthropicを米カリフォルニア北部地区連邦地裁に提訴した。訴状はAnthropic、CEOのDario Amodei、共同創業者のBenjamin Mannを個人名で被告に加えている。両社は、Anthropicが海賊版サイト（Library Genesis、Pirate Library Mirror等）からの違法なトレント・スクレイピングや、MusixmatchやLyricFindなど正規の歌詞サイトからのスクレイピングを通じて数万曲を無断で学習に用いたと主張し、1曲あたり最大15万ドル、著作権管理情報の除去1件につき最大2万5000ドルの法定損害賠償を陪審審理で求めている。Anthropicは容疑を否認し、学習は変容的なフェアユースにあたるとして争う姿勢を示している。",
+    "date": "2026-09-09",
+    "newsDate": "2026-08-28",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "著作権",
+      "訴訟",
+      "規制"
+    ],
+    "coverImage": {
+      "src": "articles/cover-regulation.svg",
+      "alt": "Sony Music Publishing and Warner Chappell sue Anthropic"
+    }
   }
 ];

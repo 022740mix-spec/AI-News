@@ -19355,6 +19355,28 @@ const ARTICLES_BODY = {
         "url": "https://www.worldlabs.ai/blog/atlas"
       }
     ]
+  },
+  "sony-warner-chappell-sue-anthropic-copyright-2026": {
+    "body": [
+      "Sony Music PublishingとWarner Chappell Musicが8月28日（金）、著作権侵害を理由にAnthropicを米カリフォルニア北部地区連邦地方裁判所に提訴した。訴状はAnthropic本体に加え、CEOのDario AmodeiとAnthropic共同創業者のBenjamin Mannを個人の被告として名指ししている点が特徴である。",
+      "両社の主張によれば、Anthropicは「違法なトレント・スクレイピング・ダウンロードによる大規模なキャンペーン」を通じて、数万曲規模の楽曲の歌詞・楽譜を無断でClaudeの学習に使用したとされる。具体的な入手経路として、海賊版書籍サイトLibrary Genesisや Pirate Library Mirrorからの取得に加え、Musixmatch・LyricFindといった正規の歌詞配信サイトからのスクレイピングも挙げられている。訴状で名指しされた楽曲例には「Ain't No Mountain High Enough」「All I Want for Christmas Is You」「Eye of the Tiger」やTaylor Swiftの「Paper Rings」などがあるほか、一部報道では「I Am the Walrus」「Hallelujah」も対象に含まれるとされる。",
+      "両社は陪審審理を求めた上で、著作権侵害1件（1曲）あたり最大15万ドル、著作権管理情報（CMI）の除去1件あたり最大2万5000ドルの法定損害賠償を請求している。対象が数万曲規模とされることから、報道各社は「数十億ドル規模になりうる」と評している。",
+      "Anthropicは容疑を否認し、法廷で争う意向を示している。同社は生成AIモデルの学習は変容的なフェアユースにあたるとの立場を取っており、今回の提訴についても、既に他の訴訟で争われている論点の繰り返しだと位置付けているという。",
+      "Anthropicにとって著作権をめぐる訴訟はこれが初めてではない。書籍著者らが起こした集団訴訟では、判決による法的判断を経ないまま15億ドルでの和解に至っている（[→ AI著作権をめぐる動向まとめ](?a=ai-copyright-landscape-2026)）。今回は音楽出版社2社が原告となり、CEOと共同創業者を個人名で被告に加えた点で、これまでの著作権訴訟とは性質が異なる。",
+      "本記事の情報は、複数の報道（TechCrunch、Variety、Engadget、Fortune、CelebrityAccess、Music Business Worldwide等）の記述を検索経由で突き合わせて確認したものである。各社サイトおよびAnthropic公式見解の一次ページは、本稿執筆時点のネットワーク環境から直接の到達を確認できておらず、直接閲覧はできていない。訴状原本（PACER等の裁判所記録）も未確認である。"
+    ],
+    "primarySources": [
+      {
+        "title": "Sony Music, Warner sue Anthropic, alleging a 'brazen campaign' of intellectual property theft",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/"
+      },
+      {
+        "title": "Sony, Warner Sue Anthropic for Allegedly Illegally Training Claude",
+        "site": "Variety",
+        "url": "https://variety.com/2026/music/news/sony-music-publishing-warner-chappell-anthropic-lawsuit-1236847442/"
+      }
+    ]
   }
 };
 
