@@ -224,6 +224,7 @@ export const MODEL_COMPARISON = [
 
   // === Google ===
   { name: "Gemini 3.5 Flash", rating: 4.5, summary: "Google 最新（I/O 2026・5/19 GA）。Flash クラスの速度で 3.1 Pro 超え。Terminal-Bench 2.1 76.2%、GDPval-AA 1656 Elo、MCP Atlas 83.6%", swe: null, swePro: null, terminalBench: 76.2, osworld: null, browseComp: null, gpqa: null, aime: null, hle: null },
+  { name: "Gemini 3.8 Flash", rating: 4.5, summary: "Google Flash系列最新（9/2）。3.7 Flashから6週間での投入で価格据え置き（$0.75/$3.75 per 1M）のままTerminal-Bench 2.1が81.6%→90.8%に上昇。HLE-Verified 54.9%。防御者限定の3.8 Flash Cyberも同時公開", swe: null, swePro: null, terminalBench: 90.8, osworld: null, browseComp: null, gpqa: null, aime: null, hle: 54.9 },
   { name: "Gemini 3.1 Pro", rating: 4.0, summary: "Google フラッグシップ。2Mコンテキストは業界最大。長大なコードベースの一括読み込みに強い。SWE-bench Verified 80.6%。$1.25/$5", swe: 80.6, swePro: null, terminalBench: null, osworld: null, browseComp: null, gpqa: null, aime: null, hle: null },
   { name: "Gemini 3.1 Flash", rating: 3.5, summary: "Google 高速。1Mコンテキスト、極めて低コスト。速度重視の処理に向く。$0.075/$0.30", swe: 78, swePro: null, terminalBench: null, osworld: null, browseComp: null, gpqa: null, aime: null, hle: null },
   { name: "Gemini 2.5 Pro", rating: 3.0, summary: "Google 旧世代。1Mコンテキスト、安定した実績。$1.25/$5", swe: 64, swePro: null, terminalBench: null, osworld: null, browseComp: null, gpqa: null, aime: null, hle: null },
