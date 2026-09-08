@@ -8963,5 +8963,26 @@ export const ARTICLES_META = [
       "src": "articles/cover-model-api.svg",
       "alt": "Gemini 3.8 Flash"
     }
+  },
+  {
+    "id": "github-copilot-hydrafusion-multi-model-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "GitHub が「Project HydraFusion」を研究プレビュー公開 — Copilot CLI に複数モデルの実行時オーケストレーションを実装",
+    "excerpt": "GitHubが9月4日、複数のAIモデルをタスクに応じて実行時に組み合わせる「Project HydraFusion」をCopilot CLIの研究プレビューとして公開した。Single・Cascade・Critiqueの3方式を自動選択し、GitHub公式評価ではTerminal-Bench 2.1でClaude Opus 5比67%低コスト・正答率+4.9ポイントを報告している。",
+    "date": "2026-09-08",
+    "newsDate": "2026-09-04",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "GitHub Copilot",
+      "エージェント",
+      "マルチエージェント",
+      "コーディング"
+    ],
+    "coverImage": {
+      "src": "articles/cover-cli-tools.svg",
+      "alt": "GitHub Copilot HydraFusion"
+    }
   }
 ];

@@ -24,6 +24,14 @@
     <summary>Googleが9月2日、Gemini 3.8 Flashと防御者限定の3.8 Flash Cyberを公開した。価格は3.7 Flashと同じ100万トークンあたり$0.75/$3.75を維持したまま、Terminal-Bench 2.1が90.8%まで上昇。6週間で3世代目となるFlashリリースである。</summary>
   </entry>
   <entry>
+    <title>GitHub が「Project HydraFusion」を研究プレビュー公開 — Copilot CLI に複数モデルの実行時オーケストレーションを実装</title>
+    <link rel="alternate" type="text/html" href="?a=github-copilot-hydrafusion-multi-model-2026"/>
+    <id>tag:ai-tool-news.jp,2026:github-copilot-hydrafusion-multi-model-2026</id>
+    <published>2026-09-08T15:00:00Z</published>
+    <updated>2026-09-08T15:00:00Z</updated>
+    <summary>GitHubが9月4日、複数のAIモデルをタスクに応じて実行時に組み合わせる「Project HydraFusion」をCopilot CLIの研究プレビューとして公開した。Single・Cascade・Critiqueの3方式を自動選択し、GitHub公式評価ではTerminal-Bench 2.1でClaude Opus 5比67%低コスト・正答率+4.9ポイントを報告している。</summary>
+  </entry>
+  <entry>
     <title>個人開発の「ECC」が25.2万スター — 68種のサブエージェントと286スキルで複数コーディングハーネスを横断統合</title>
     <link rel="alternate" type="text/html" href="?a=ecc-agent-harness-optimization-2026"/>
     <id>tag:ai-tool-news.jp,2026:ecc-agent-harness-optimization-2026</id>

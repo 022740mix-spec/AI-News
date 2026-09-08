@@ -19268,6 +19268,28 @@ const ARTICLES_BODY = {
         "url": "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
       }
     ]
+  },
+  "github-copilot-hydrafusion-multi-model-2026": {
+    "body": [
+      "GitHubが9月4日、複数のAIモデルを実行時に組み合わせてタスクをこなす「Project HydraFusion」を、GitHub Copilot CLIの研究プレビューとして公開した。単一モデルにすべてを任せるのではなく、タスクごとに実行計画を組み立て、どのモデルにどの役割を担わせるかをその場で選ぶ設計になっている。",
+      "選択される実行パターンは3種類ある。1つのモデルがそのままタスクを解く「Single」、効率的なモデルがまず下書きし、品質ゲートが合否を判定して必要なら強力なモデルにエスカレーションする「Cascade」、そして異なるモデルファミリーが下書きとレビューを分担し、レビューを受けて元のモデルが修正する「Critique」である。",
+      "GitHub公式の評価によれば、TerminalBench 2.1においてClaude Opus 5と比較して推定コストを67%削減しつつ、正しく完了したタスクの割合を4.9ポイント引き上げたとしている。これはGitHub自身が公表した比較であり、他社の評価機関による追試ではない点は踏まえておく必要がある。",
+      "現時点ではGitHub Copilot CLIの `/experimental` コマンド経由でのみ利用でき、`/experimental on` を実行したうえでモデルメニューからHydraFusionを選択する形になる。全てのCopilotプランで利用可能で、HydraFusion自体への追加課金は無く、実際に使われた各モデルの標準料金の合計が請求される。複数モデルが下書き・批評・改稿を繰り返す分、単純なタスクでは単一モデル利用より合計コストが高くなる場合もありうる。",
+      "「研究プレビュー」という位置付けであり、インターフェースや挙動は今後変わりうる。それでも、単一のフロンティアモデルに頼るのではなく、タスクの局面ごとに複数モデルを使い分けるオーケストレーション層を主要コーディングツール側が公式に組み込み始めた点は、開発者向けAIツールの設計の重心が「どのモデルを選ぶか」から「モデルの組み合わせ方をどう自動化するか」に移りつつあることを示している。",
+      "本記事はGitHub公式ブログ（github.blog）の該当記事URLを一次情報として掲載しているが、本稿執筆時点のネットワーク環境からgithub.blogドメイン自体への直接到達はできなかった。内容はGitHub公式のコミュニティディスカッション（github.com上、直接確認済み）およびMarkTechPost・GIGAZINEなど複数媒体の報道で数値・仕様が一致していることを確認した。"
+    ],
+    "primarySources": [
+      {
+        "title": "Project HydraFusion: Frontier quality via multi-model orchestration",
+        "site": "GitHub Blog",
+        "url": "https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/"
+      },
+      {
+        "title": "[Research Preview] HydraFusion is live in GitHub Copilot CLI",
+        "site": "GitHub Community Discussions",
+        "url": "https://github.com/orgs/community/discussions/206492"
+      }
+    ]
   }
 };
 
