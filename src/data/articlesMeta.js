@@ -9026,5 +9026,26 @@ export const ARTICLES_META = [
       "src": "articles/cover-regulation.svg",
       "alt": "AIエージェントの意図しない協調行動"
     }
+  },
+  {
+    "id": "anthropic-model-hardware-standard-preview-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が「Model Hardware Standard」をリサーチプレビュー公開 — 装置ドライバの統合を数週間から数分に、実験室のロボットアームや液体分注機をAIエージェントが直接操作",
+    "excerpt": "Anthropicが8月27日、AIエージェントがロボットアーム・顕微鏡・液体分注機などの物理装置を発見・操作するための共通仕様「Model Hardware Standard（MHS）」のリサーチプレビューを公開した。装置の重量・安全上限・調整可能パラメータなど、これまで紙のマニュアルや専門家の暗黙知にしかなかった情報を標準化されたドライバに持たせる設計で、Anthropicは複数装置の統合にかかる時間を数週間〜数ヶ月から数時間〜数分に短縮できるとしている。Genentechはこれを使い液体分注機・ロボットアーム・プレートリーダーを横断するタンパク質アッセイを自動化、Carnegie Mellon大学は非互換な3台のコンピュータにまたがる装置群を連携させ、連続希釈の用量反応実験を約3倍速く実行したという。",
+    "date": "2026-09-09",
+    "newsDate": "2026-08-27",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "MCP",
+      "ロボティクス",
+      "エージェント"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "Anthropic Model Hardware Standard research preview"
+    }
   }
 ];

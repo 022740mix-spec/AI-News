@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-08",
-  "count": 407,
+  "count": 408,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -66,6 +66,7 @@
     "anthropic-in-house-chip-71b-volta-2026",
     "anthropic-ipo-october-2026",
     "anthropic-may-2026-series-h-milan-korea-arr-47b-2026",
+    "anthropic-model-hardware-standard-preview-2026",
     "anthropic-mythos-cyber-impact-2026",
     "anthropic-mythos-leak",
     "anthropic-overtakes-openai-revenue-30b-run-rate-2026",

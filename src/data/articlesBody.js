@@ -19323,6 +19323,22 @@ const ARTICLES_BODY = {
         "url": "https://collusion.wiki/"
       }
     ]
+  },
+  "anthropic-model-hardware-standard-preview-2026": {
+    "body": [
+      "Anthropicが8月27日、AIエージェントが物理的なハードウェアを発見・通信・操作するための共通仕様「Model Hardware Standard（MHS）」のリサーチプレビューを公開した。対象はロボットアーム、顕微鏡、液体分注機など、科学研究や製造現場で使われる装置群である。ソフトウェア向けにAnthropicが2024年に公開したMCP（Model Context Protocol）の物理版にあたる位置付けで、報道各社もその類比で紹介している。",
+      "仕組みの核は標準化されたドライバである。OS側と装置側の間に入り、「read」「write」といった単純なコマンドで変換を行う。加えてドライバ自体が、装置の重量・安全上限・調整可能なパラメータといった、これまで紙のマニュアルか専門家の暗黙知としてしか存在しなかった情報を保持する設計になっている。特定のAIモデルに紐づかず、プログラム可能な制御面を持つ装置であれば原理的に接続できるとされる。",
+      "Anthropicは、この標準により複数装置を統合する作業にかかる時間を、これまでの数週間〜数ヶ月単位から数時間〜数分単位に短縮できると説明している。現時点では一部の組織に限定したリサーチプレビューとしての提供で、プレビュー終了後に一般公開する意向を示しているが、具体的な時期は明言していない。",
+      "実例としては、Genentechが液体分注機・ロボットアーム・プレートリーダーを横断するタンパク質アッセイの手順をMHS経由で自動化した。Carnegie Mellon大学では、互換性のない3台のコンピュータにそれぞれ接続された液体分注機・プレートリーダー・ロボットアーム・監視カメラをAIエージェントが1つのオーケストレーションとしてまとめ、連続希釈の用量反応実験を従来比で約3倍速く実行したという。",
+      "本記事の情報は、Anthropic公式発表（anthropic.com）を報じた複数の技術メディア（MarkTechPost、the-decoder、MLQ、Quartz等）の記述を検索経由で突き合わせて確認したものである。anthropic.com自体は本稿執筆時点のネットワーク環境から直接の到達を確認できておらず、直接閲覧はできていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Previewing the Model Hardware Standard",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/model-hardware-standard-research-preview"
+      }
+    ]
   }
 };
 
