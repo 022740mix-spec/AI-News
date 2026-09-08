@@ -16,6 +16,14 @@
     <summary>2026年3月、Reddit ユーザーがバイナリ解析で見つけた Claude Code 内部の未公開パッケージ `@anthropic-ai/sandbox-runtime` が、Anthropic 公式の GitHub リポジトリとして公開されている。macOS・Linux・Windows でエージェントの実行をファイルシステム/ネットワーク単位で隔離する軽量サンドボックスで、Apache 2.0・5,200スター超。ドキュメントには「`docker.sock` を許可すると隔離を回避できる」「Linux はプロキシ環境変数を無視するツールで抜けうる」といった既知の限界も明記されている。</summary>
   </entry>
   <entry>
+    <title>Google が Gemini 3.8 Flash を公開 — 6週間で3世代目のFlash、価格据え置きでTerminal-Bench 2.1が81.6%→90.8%に</title>
+    <link rel="alternate" type="text/html" href="?a=google-gemini-3-8-flash-2026"/>
+    <id>tag:ai-tool-news.jp,2026:google-gemini-3-8-flash-2026</id>
+    <published>2026-09-08T15:00:00Z</published>
+    <updated>2026-09-08T15:00:00Z</updated>
+    <summary>Googleが9月2日、Gemini 3.8 Flashと防御者限定の3.8 Flash Cyberを公開した。価格は3.7 Flashと同じ100万トークンあたり$0.75/$3.75を維持したまま、Terminal-Bench 2.1が90.8%まで上昇。6週間で3世代目となるFlashリリースである。</summary>
+  </entry>
+  <entry>
     <title>個人開発の「ECC」が25.2万スター — 68種のサブエージェントと286スキルで複数コーディングハーネスを横断統合</title>
     <link rel="alternate" type="text/html" href="?a=ecc-agent-harness-optimization-2026"/>
     <id>tag:ai-tool-news.jp,2026:ecc-agent-harness-optimization-2026</id>

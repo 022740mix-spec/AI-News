@@ -19242,6 +19242,32 @@ const ARTICLES_BODY = {
         "url": "https://github.com/anthropics/sandbox-runtime/releases"
       }
     ]
+  },
+  "google-gemini-3-8-flash-2026": {
+    "body": [
+      "Googleが9月2日、Gemini Flash系列の最新モデル「Gemini 3.8 Flash」と、サイバーセキュリティ防御者向けに絞った派生モデル「Gemini 3.8 Flash Cyber」を公開した。3.7 Flashからわずか6週間での投入で、この系列としては3世代目のFlashリリースになる。Google自身は「3.7 Flashと同じ速度・低コストのまま、これまでで最も推論とコーディングに強いFlashモデル」と位置付けている。",
+      "公式発表によるベンチマークでは、長時間にわたるソフトウェアエンジニアリング作業を測るTerminal-Bench 2.1が3.7 Flashの81.6%から90.8%に上昇し、長期タスクの一貫性を測るDeepSWE v1.1では、3.8 Flashより大きなフロンティアモデルの一部を上回ったとしている。安全性・専門知識を問うHLE-Verifiedは54.9%、金融エージェント向けVals Finance Agent V2や法務エージェント向けHarvey Legal Agent Benchmarkでも3.7 Flashや他のフロンティアモデルを上回ったと報告されている。いずれもGoogle公式の発表値であり、独立系のベンチマーク集計サイトArtificial Analysisや技術メディアDataCampの追跡記事でも同じ数値が確認できる。",
+      "価格は100万トークンあたり入力$0.75・出力$3.75と、3.7 Flashからの据え置きである。ただしGoogle自身も「3.7 Flashに比べて精度は上がるが、その分トークン消費量は増える」と説明しており、1タスクあたりの実効コストは処理内容によって変わりうる点には注意が要る。",
+      "サイバーセキュリティ用途に特化した「Gemini 3.8 Flash Cyber」は、標準の3.8 Flashとは別枠で、Googleの信頼できる防御者向けプログラム「Fairwind Program」参加者に限定して提供される。一般提供されている標準モデルと違い、誰でも使える形にはなっていない。",
+      "本記事の情報は、Google公式ブログ（blog.google）とGemini API公式ドキュメント（ai.google.dev）の内容を検索経由で確認し、Google Cloud公式ドキュメント・Google DeepMindのモデルカード・独立系ベンチマークサイトの記述と突き合わせたものである。これらのドメイン自体は本稿執筆時点のネットワーク環境から直接の到達を確認できなかったため、直接閲覧はできていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
+        "site": "Google",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/"
+      },
+      {
+        "title": "Gemini 3.8 Flash | Gemini API",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash"
+      },
+      {
+        "title": "Gemini 3.8 Flash - Model Card",
+        "site": "Google DeepMind",
+        "url": "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+      }
+    ]
   }
 };
 

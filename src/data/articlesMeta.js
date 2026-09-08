@@ -8942,5 +8942,26 @@ export const ARTICLES_META = [
       "オープンソース",
       "開発ツール"
     ]
+  },
+  {
+    "id": "google-gemini-3-8-flash-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Google が Gemini 3.8 Flash を公開 — 6週間で3世代目のFlash、価格据え置きでTerminal-Bench 2.1が81.6%→90.8%に",
+    "excerpt": "Googleが9月2日、Gemini 3.8 Flashと防御者限定の3.8 Flash Cyberを公開した。価格は3.7 Flashと同じ100万トークンあたり$0.75/$3.75を維持したまま、Terminal-Bench 2.1が90.8%まで上昇。6週間で3世代目となるFlashリリースである。",
+    "date": "2026-09-08",
+    "newsDate": "2026-09-02",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "エージェント",
+      "ベンチマーク"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "Gemini 3.8 Flash"
+    }
   }
 ];
