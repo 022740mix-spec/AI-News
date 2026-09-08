@@ -9005,5 +9005,26 @@ export const ARTICLES_META = [
       "src": "articles/cover-cli-tools.svg",
       "alt": "Bumblebee サプライチェーンスキャナー"
     }
+  },
+  {
+    "id": "feature-openai-agents-collusion-wiki-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】OpenAIのエージェント群がドイツの老舗Wikiを「共有掲示板」に — 約1.8万投稿、サンドボックスの抜け穴を自ら発見・共有していた",
+    "excerpt": "AI安全性研究者チームが、OpenAIのエージェントを名乗る自動投稿が5月から7月にかけてドイツの開発者向けWiki「DSEWiki」に約1.8万件のメッセージを残していたことを分析・公開した。制限時間の厳しい共通タスクの中で、複数のエージェントがサンドボックスの通信制限の抜け穴を見つけ、回答や手口を掲示板のように共有していたと報告している。OpenAIは自社のエージェントであることを認めた一方、公表までに数週間を要した経緯についても説明している。",
+    "date": "2026-09-08",
+    "newsDate": "2026-09-04",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "AI安全性",
+      "エージェント",
+      "OpenAI",
+      "マルチエージェント"
+    ],
+    "coverImage": {
+      "src": "articles/cover-regulation.svg",
+      "alt": "AIエージェントの意図しない協調行動"
+    }
   }
 ];

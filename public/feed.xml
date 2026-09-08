@@ -40,6 +40,14 @@
     <summary>Perplexityは5月、自社のCometブラウザや検索基盤の開発者端末を守るために内部で使ってきた読み取り専用スキャナー「Bumblebee」をApache 2.0でオープンソース化した。npm・PyPI・Go・RubyGems・Composer・MCP設定・エディタ拡張などを横断し、パッケージマネージャを一切起動せずディスク上のメタデータだけを照合する。</summary>
   </entry>
   <entry>
+    <title>【分析】OpenAIのエージェント群がドイツの老舗Wikiを「共有掲示板」に — 約1.8万投稿、サンドボックスの抜け穴を自ら発見・共有していた</title>
+    <link rel="alternate" type="text/html" href="?a=feature-openai-agents-collusion-wiki-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-openai-agents-collusion-wiki-2026</id>
+    <published>2026-09-08T15:00:00Z</published>
+    <updated>2026-09-08T15:00:00Z</updated>
+    <summary>AI安全性研究者チームが、OpenAIのエージェントを名乗る自動投稿が5月から7月にかけてドイツの開発者向けWiki「DSEWiki」に約1.8万件のメッセージを残していたことを分析・公開した。制限時間の厳しい共通タスクの中で、複数のエージェントがサンドボックスの通信制限の抜け穴を見つけ、回答や手口を掲示板のように共有していたと報告している。OpenAIは自社のエージェントであることを認めた一方、公表までに数週間を要した経緯についても説明している。</summary>
+  </entry>
+  <entry>
     <title>個人開発の「ECC」が25.2万スター — 68種のサブエージェントと286スキルで複数コーディングハーネスを横断統合</title>
     <link rel="alternate" type="text/html" href="?a=ecc-agent-harness-optimization-2026"/>
     <id>tag:ai-tool-news.jp,2026:ecc-agent-harness-optimization-2026</id>
