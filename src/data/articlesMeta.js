@@ -8984,5 +8984,26 @@ export const ARTICLES_META = [
       "src": "articles/cover-cli-tools.svg",
       "alt": "GitHub Copilot HydraFusion"
     }
+  },
+  {
+    "id": "perplexity-bumblebee-supply-chain-scanner-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Perplexityが読み取り専用のサプライチェーンスキャナー「Bumblebee」をOSS公開 — パッケージマネージャを一切起動しない設計",
+    "excerpt": "Perplexityは5月、自社のCometブラウザや検索基盤の開発者端末を守るために内部で使ってきた読み取り専用スキャナー「Bumblebee」をApache 2.0でオープンソース化した。npm・PyPI・Go・RubyGems・Composer・MCP設定・エディタ拡張などを横断し、パッケージマネージャを一切起動せずディスク上のメタデータだけを照合する。",
+    "date": "2026-09-08",
+    "newsDate": "2026-05-22",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "オープンソース",
+      "セキュリティ",
+      "サプライチェーン",
+      "Perplexity"
+    ],
+    "coverImage": {
+      "src": "articles/cover-cli-tools.svg",
+      "alt": "Bumblebee サプライチェーンスキャナー"
+    }
   }
 ];

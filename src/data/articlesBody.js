@@ -19290,6 +19290,22 @@ const ARTICLES_BODY = {
         "url": "https://github.com/orgs/community/discussions/206492"
       }
     ]
+  },
+  "perplexity-bumblebee-supply-chain-scanner-2026": {
+    "body": [
+      "Perplexityが5月22日、自社の検索基盤やCometブラウザ、Computerエージェントを支える開発者端末の保護に内部で使ってきたスキャナー「Bumblebee」をApache 2.0ライセンスでオープンソース化した。GitHub上のリポジトリは本稿執筆時点で5,000以上のスターを獲得し、開発が継続している。",
+      "Bumblebeeが答えようとする問いは狭く具体的である。「あるパッケージ・拡張機能・バージョンに脆弱性が報告されたとき、自社のどの開発者端末がそれに一致する状態にあるか」を、ディスク上のロックファイルやインストールメタデータ、拡張機能のマニフェストを読むだけで洗い出す。対象はnpm・pnpm・Yarn・Bun・PyPI・Goモジュール・RubyGems・Composer・Homebrew・MCP設定・VS Code/Cursorの拡張機能・ブラウザ拡張・エージェントスキルと幅広い。",
+      "設計上の要点は「読み取り専用」を徹底している点にある。パッケージマネージャのコマンドを一切起動せず、ソースコードそのものも読まない。これはスキャン行為自体がインストールスクリプトの実行を誘発してしまう攻撃を防ぐためで、Go言語で書かれた単一のスタティックバイナリとして配布され、標準ライブラリ以外への依存を持たない。出力は構造化されたNDJSON形式で、セキュリティ基盤への組み込みを想定している。用途に応じてbaseline・project・deepの3段階のスキャンプロファイルが用意されている。",
+      "2026年は npm・PyPI 等のパッケージレジストリを狙ったサプライチェーン攻撃が相次いで報じられ、「postinstallスクリプトを実行前に確認する」という発想が一般の開発者にも浸透した年でもあった。Bumblebeeは、AI企業が自社の開発基盤を守るために作った内製ツールを、その手口の説明ごと外部に公開した例のひとつと言える。",
+      "本記事はGitHub公式リポジトリ（github.com/perplexityai/bumblebee）を直接確認した一次情報に基づく。"
+    ],
+    "primarySources": [
+      {
+        "title": "perplexityai/bumblebee",
+        "site": "GitHub",
+        "url": "https://github.com/perplexityai/bumblebee"
+      }
+    ]
   }
 };
 

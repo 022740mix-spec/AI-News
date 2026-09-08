@@ -32,6 +32,14 @@
     <summary>GitHubが9月4日、複数のAIモデルをタスクに応じて実行時に組み合わせる「Project HydraFusion」をCopilot CLIの研究プレビューとして公開した。Single・Cascade・Critiqueの3方式を自動選択し、GitHub公式評価ではTerminal-Bench 2.1でClaude Opus 5比67%低コスト・正答率+4.9ポイントを報告している。</summary>
   </entry>
   <entry>
+    <title>Perplexityが読み取り専用のサプライチェーンスキャナー「Bumblebee」をOSS公開 — パッケージマネージャを一切起動しない設計</title>
+    <link rel="alternate" type="text/html" href="?a=perplexity-bumblebee-supply-chain-scanner-2026"/>
+    <id>tag:ai-tool-news.jp,2026:perplexity-bumblebee-supply-chain-scanner-2026</id>
+    <published>2026-09-08T15:00:00Z</published>
+    <updated>2026-09-08T15:00:00Z</updated>
+    <summary>Perplexityは5月、自社のCometブラウザや検索基盤の開発者端末を守るために内部で使ってきた読み取り専用スキャナー「Bumblebee」をApache 2.0でオープンソース化した。npm・PyPI・Go・RubyGems・Composer・MCP設定・エディタ拡張などを横断し、パッケージマネージャを一切起動せずディスク上のメタデータだけを照合する。</summary>
+  </entry>
+  <entry>
     <title>個人開発の「ECC」が25.2万スター — 68種のサブエージェントと286スキルで複数コーディングハーネスを横断統合</title>
     <link rel="alternate" type="text/html" href="?a=ecc-agent-harness-optimization-2026"/>
     <id>tag:ai-tool-news.jp,2026:ecc-agent-harness-optimization-2026</id>
