@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-08",
-  "count": 408,
+  "count": 409,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -399,6 +399,7 @@
     "white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026",
     "windsurf",
     "windsurf-pricing-overhaul",
+    "world-labs-atlas-world-model-2026",
     "x-grok-auto-translation-2026",
     "xai-grok-4-5-public-launch-opus-class-july-9-2026",
     "xai-grok-4-5-review",

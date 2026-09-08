@@ -19339,6 +19339,22 @@ const ARTICLES_BODY = {
         "url": "https://www.anthropic.com/news/model-hardware-standard-research-preview"
       }
     ]
+  },
+  "world-labs-atlas-world-model-2026": {
+    "body": [
+      "コンピュータビジョン研究の第一人者として知られるFei-Fei Li（スタンフォード大学）が共同創業した「空間知能」スタートアップ World Labsが9月1日、オムニワールドモデル「Atlas」を公開した。数枚の写真を入力するだけで、任意の角度から見渡せる詳細な3D環境を生成・再構成できる点が特徴とされる。",
+      "技術的には、テキスト・画像・動画・3Dをゼロから同一の空間コンテキストの中で扱うよう学習された、マルチモーダル自己回帰拡散トランスフォーマーである。生成物はピクセル単位で精密かつカメラ制御可能な画像・映像で、解像度は最大1440p、生成時間は最長1分に達するとされる。動画生成モデルを先に作ってから3D情報を後付けで復元する一般的なアプローチとは異なり、3Dを含む全モダリティを最初から1つの空間表現として学習している点が、Atlasの技術的な主張である。",
+      "World Labsは7月、ロボティクス向けの空間知能を強化する目的でSceniXを買収している。AtlasはFei-Fei Liがかねて提唱してきた「空間知能」——AIが物理世界を本当に理解するには、3D上の物体・人物・環境と、それらの相互作用をネイティブに推論できる必要がある、という考え方——を、実際に動くモデルとして形にしたものと位置付けられる。",
+      "World Labsは非公開企業で、複数の報道によれば累計12億ドル規模の資金を調達済みとされる。Atlasが一般提供・API・料金体系のいずれの形で展開されるかについては、本稿執筆時点で確認できる一次情報が乏しく、明記を避ける。",
+      "本記事の情報は、World Labs公式ブログ（worldlabs.ai）を報じた複数の技術メディア（SiliconANGLE、the-decoder、KuCoin、Dealroom、CryptoBriefing等）の記述を検索経由で突き合わせて確認したものである。worldlabs.ai自体は本稿執筆時点のネットワーク環境から直接の到達を確認できておらず、直接閲覧はできていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Atlas: A World Model for Spatial Intelligence",
+        "site": "World Labs",
+        "url": "https://www.worldlabs.ai/blog/atlas"
+      }
+    ]
   }
 };
 

@@ -9047,5 +9047,26 @@ export const ARTICLES_META = [
       "src": "articles/cover-model-api.svg",
       "alt": "Anthropic Model Hardware Standard research preview"
     }
+  },
+  {
+    "id": "world-labs-atlas-world-model-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Fei-Fei Li の World Labs が「Atlas」を公開 — 数枚の写真から3D世界を生成・再構成・シミュレーションする単一モデル、最長1分・最大1440p",
+    "excerpt": "スタンフォード大学のFei-Fei Liが共同創業した「空間知能」スタートアップ World Labsが9月1日、オムニワールドモデル「Atlas」を公開した。テキスト・画像・動画・3Dをゼロから同一の空間コンテキストとして扱うマルチモーダル自己回帰拡散トランスフォーマーで、数枚の写真から3D世界を生成・再構成し、最大1440p・最長1分のカメラ制御可能な映像として出力できるとしている。World Labsは7月にロボティクス向け空間知能を強化するためSceniXを買収しており、Atlasはその延長線上に位置付けられる。評価額の根拠となる12億ドル規模の資金背景を持つ企業の、これまでで最も具体的な製品発表である。",
+    "date": "2026-09-09",
+    "newsDate": "2026-09-01",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "World Labs",
+      "マルチモーダル",
+      "動画生成",
+      "ロボティクス"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "World Labs Atlas world model"
+    }
   }
 ];

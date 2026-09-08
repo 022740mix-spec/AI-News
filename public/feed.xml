@@ -16,6 +16,14 @@
     <summary>Anthropicが8月27日、AIエージェントがロボットアーム・顕微鏡・液体分注機などの物理装置を発見・操作するための共通仕様「Model Hardware Standard（MHS）」のリサーチプレビューを公開した。装置の重量・安全上限・調整可能パラメータなど、これまで紙のマニュアルや専門家の暗黙知にしかなかった情報を標準化されたドライバに持たせる設計で、Anthropicは複数装置の統合にかかる時間を数週間〜数ヶ月から数時間〜数分に短縮できるとしている。Genentechはこれを使い液体分注機・ロボットアーム・プレートリーダーを横断するタンパク質アッセイを自動化、Carnegie Mellon大学は非互換な3台のコンピュータにまたがる装置群を連携させ、連続希釈の用量反応実験を約3倍速く実行したという。</summary>
   </entry>
   <entry>
+    <title>Fei-Fei Li の World Labs が「Atlas」を公開 — 数枚の写真から3D世界を生成・再構成・シミュレーションする単一モデル、最長1分・最大1440p</title>
+    <link rel="alternate" type="text/html" href="?a=world-labs-atlas-world-model-2026"/>
+    <id>tag:ai-tool-news.jp,2026:world-labs-atlas-world-model-2026</id>
+    <published>2026-09-09T15:00:00Z</published>
+    <updated>2026-09-09T15:00:00Z</updated>
+    <summary>スタンフォード大学のFei-Fei Liが共同創業した「空間知能」スタートアップ World Labsが9月1日、オムニワールドモデル「Atlas」を公開した。テキスト・画像・動画・3Dをゼロから同一の空間コンテキストとして扱うマルチモーダル自己回帰拡散トランスフォーマーで、数枚の写真から3D世界を生成・再構成し、最大1440p・最長1分のカメラ制御可能な映像として出力できるとしている。World Labsは7月にロボティクス向け空間知能を強化するためSceniXを買収しており、Atlasはその延長線上に位置付けられる。評価額の根拠となる12億ドル規模の資金背景を持つ企業の、これまでで最も具体的な製品発表である。</summary>
+  </entry>
+  <entry>
     <title>Claude Code を裏で守る「sandbox-runtime」が公式OSSに — バイナリ解析で発見された内部パッケージが、既知の抜け穴付きで公開されていた</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-sandbox-runtime-public-oss-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-sandbox-runtime-public-oss-2026</id>
