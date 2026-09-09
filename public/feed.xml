@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-09-09T15:00:00Z</updated>
+  <updated>2026-09-10T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>Anthropic が「Model Hardware Standard」をリサーチプレビュー公開 — 装置ドライバの統合を数週間から数分に、実験室のロボットアームや液体分注機をAIエージェントが直接操作</title>
@@ -38,6 +38,14 @@
     <published>2026-09-09T15:00:00Z</published>
     <updated>2026-09-09T15:00:00Z</updated>
     <summary>Google DeepMind が公開する軽量エージェントハーネス「Amplio」は、SQLite による DB-first 設計でクラッシュ後も自動再開できる長時間タスク基盤。7月末の公開から2ヶ月近く経つが、スター数はまだ83にとどまり、企業名検索でも GitHub Trending でも表面化していなかった。</summary>
+  </entry>
+  <entry>
+    <title>Suno が「レーベルと組んだ初のモデル」v6 を公開 — Warner・BMG・Believe の楽曲で学習、生成のたびに著作権者へ支払う設計に転換</title>
+    <link rel="alternate" type="text/html" href="?a=suno-v6-licensed-warner-bmg-believe-2026"/>
+    <id>tag:ai-tool-news.jp,2026:suno-v6-licensed-warner-bmg-believe-2026</id>
+    <published>2026-09-09T15:00:00Z</published>
+    <updated>2026-09-09T15:00:00Z</updated>
+    <summary>音楽生成AI Suno が9月9日、v6 / v6-wild / v6-mini の3モデルを公開した。Warner Music Group・BMG・Believe の楽曲データを使って学習した「音楽業界と組んだ初のモデル」で、旧モデルは同日で退役する。これまでの無断学習を巡る訴訟から一転、生成のたびにレーベル・パブリッシャーへ支払いが発生する収益分配の仕組みが導入された。</summary>
   </entry>
   <entry>
     <title>Claude Code を裏で守る「sandbox-runtime」が公式OSSに — バイナリ解析で発見された内部パッケージが、既知の抜け穴付きで公開されていた</title>

@@ -19396,6 +19396,38 @@ const ARTICLES_BODY = {
         "url": "https://github.com/google-deepmind/amplio/commits/main"
       }
     ]
+  },
+  "suno-v6-licensed-warner-bmg-believe-2026": {
+    "body": [
+      "音楽生成AIの**Suno**が9月9日（現地時間）、新しいモデル群「v6」「v6-wild」「v6-mini」を公開した。Suno自身がこれを「音楽業界と組んで作った初めてのモデル」と位置付けており、Warner Music Group・BMG・Believeの楽曲データをライセンスして学習に使っている。旧モデルはv6の公開と同時に退役する。",
+      "3モデルの提供条件は分かれる。より完成度の高い出力を狙う「v6」と、あえて予測しにくい結果を返す「v6-wild」はPro / Premierプランの契約者限定で、無料プランを含む全ユーザーが使えるのは軽量版の「v6-mini」のみである。機能面では、曲の一部だけを自然言語で編集する部分編集、複数の音源を組み合わせるマッシュアップ、音声分離、テキスト・音声・画像・動画のいずれからでも生成できるプロンプト入力などが新たに加わった。",
+      "最大の変化は収益の分配構造にある。v6モデルで楽曲が生成されるたびに、その学習元となった楽曲の権利者（レーベル・パブリッシャー）へ支払いが発生する仕組みが導入された。受け取った対価をアーティスト・ソングライターにどう配分するかはレーベル・パブリッシャー側の裁量であり、Sunoが直接個々のアーティストに支払うわけではない。",
+      "この転換の背景には、Sunoが複数のレーベルから受けてきた著作権訴訟がある。SunoはWarner Music Groupと昨年（2025年）に和解し、BMGとも先月ライセンス契約を結んだ。無断学習を理由に提訴されていた側が、一転してレーベルからライセンスを受けて学習するモデルへと切り替えた形になる。同様の構図はUdioとUniversal Music Groupの和解でも見られ、AI音楽生成を巡る業界全体の流れが、訴訟から事前ライセンス契約へと移りつつあることがうかがえる。",
+      "この和解・ライセンスの枠組みを巡っては、別の当事者からも異議が出ている。全米音楽家連盟（AFM）は今年、Warner・Universalがレーベル所属ミュージシャンの演奏データをSuno・Udioへのライセンスに用いた際、労働協約（SRLA）上必要な「新用途」通知・対価支払いを行っていないとして両社を提訴した。今回公開されたSuno v6の収益分配は、生成のたびにレーベル・パブリッシャーへ支払う設計までが公表されており、その先の個々のアーティストへの配分方法や金額は明らかにされていない。",
+      "本記事の情報は、TechCrunch・Billboard・Music Business Worldwide・Bloomberg（Techmeme経由の要約）など複数の独立した報道機関の記事を検索経由で確認し、内容が一致することを確認したものである。Suno公式サイト（suno.com）およびWarner Music Group公式サイトは、本稿執筆時点のネットワーク環境から直接の到達を確認できなかったため、直接閲覧はできていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Suno replaces its AI models with a new one trained on licensed music as copyright suits pile up",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/09/suno-replaces-its-ai-models-with-a-new-one-trained-on-licensed-music-as-copyright-suits-pile-up/"
+      },
+      {
+        "title": "Suno v6 AI music models launch in partnership with Warner Music, BMG, and Believe",
+        "site": "Music Business Worldwide",
+        "url": "https://www.musicbusinessworldwide.com/suno-v6-ai-music-models-launch-in-partnership-with-wmg-bmg-and-believe/"
+      },
+      {
+        "title": "Suno Launches First AI Models 'in Partnership with the Music Industry'",
+        "site": "Billboard",
+        "url": "https://www.billboard.com/pro/suno-launches-ai-music-models-partnership-with-music-biz/"
+      },
+      {
+        "title": "Summary of the AFM v. Universal, Warner, and Atlantic \"New Use\" Litigation",
+        "site": "American Federation of Musicians",
+        "url": "https://www.afm.org/2026/08/summary-of-the-afm-v-universal-warner-and-atlantic-new-use-litigation/"
+      }
+    ]
   }
 };
 

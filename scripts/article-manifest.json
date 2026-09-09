@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-09",
-  "count": 411,
+  "count": 412,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -377,6 +377,7 @@
     "strix-open-source-ai-pentest-agent-2026",
     "suno-download-limits-2026",
     "suno-v5-review",
+    "suno-v6-licensed-warner-bmg-believe-2026",
     "supabase-500m-funding-10b-valuation-2026",
     "supabase-pgvector-0-8-2026",
     "supabase-ssh-docs-virtual-filesystem-2026",

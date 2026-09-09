@@ -9111,5 +9111,21 @@ export const ARTICLES_META = [
       "src": "articles/cover-cli-tools.svg",
       "alt": "Amplio エージェントハーネス"
     }
+  },
+  {
+    "id": "suno-v6-licensed-warner-bmg-believe-2026",
+    "type": "news",
+    "category": "media",
+    "title": "Suno が「レーベルと組んだ初のモデル」v6 を公開 — Warner・BMG・Believe の楽曲で学習、生成のたびに著作権者へ支払う設計に転換",
+    "excerpt": "音楽生成AI **Suno** が9月9日、v6 / v6-wild / v6-mini の3モデルを公開した。Warner Music Group・BMG・Believe の楽曲データを使って学習した「音楽業界と組んだ初のモデル」で、旧モデルは同日で退役する。これまでの無断学習を巡る訴訟から一転、生成のたびにレーベル・パブリッシャーへ支払いが発生する収益分配の仕組みが導入された。",
+    "date": "2026-09-09",
+    "newsDate": "2026-09-09",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "音楽生成",
+      "著作権",
+      "Suno"
+    ]
   }
 ];
