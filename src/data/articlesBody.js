@@ -19396,6 +19396,38 @@ const ARTICLES_BODY = {
         "url": "https://github.com/google-deepmind/amplio/commits/main"
       }
     ]
+  },
+  "cognition-series-e-48b-valuation-2026": {
+    "body": [
+      "Devin開発元のCognitionが2026年9月8日、シリーズEで20億ドル超を調達し、評価額480億ドルに達したと複数メディアが報じた。主導したのはa16z（Andreessen Horowitz）とAccelで、既存投資家のFounders Fund・General Catalyst・Avenirに加え、Benchmark・Bessemer・Kleiner Perkins・NVIDIAなど多数の投資家が参加したと報じられている。",
+      "報道によれば、Cognitionのラン・レート収益は、2026年5月のシリーズD（10億ドル超・評価額260億ドル）時点の4.92億ドルから、直近ではおよそ9億ドル近くまで伸びたという。事実であれば、4ヶ月弱で評価額がほぼ倍増したことになる。",
+      "一部報道では、Devin Desktopで最も使われているモデルとして新しい「SWE-1.6」（最大950トークン/秒）の名も挙がっているが、モデルカードや詳細仕様は本稿執筆時点で確認できていない。",
+      "Cognition公式ブログ（cognition.ai）およびリード投資家a16zの発表ページには、本稿の調査時点で実行環境からアクセスできなかった。本記事はBloomberg・TechCrunchなど複数の二次報道の内容が一致していることにもとづいており、金額・評価額・投資家名はいずれの報道でも概ね一致しているが、一次ソースでの裏付けが取れるまで確定情報としては扱わない。"
+    ],
+    "primarySources": [
+      {
+        "title": "AI Startup Cognition Raises $2 Billion at a $48 Billion Value - Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-08/ai-startup-cognition-raises-2-billion-at-a-48-billion-value"
+      },
+      {
+        "title": "Cognition hits $48B valuation - TechCrunch",
+        "url": "https://techcrunch.com/2026/09/08/cognition-hits-48b-valuation-signaling-investors-believe-ai-coding-is-far-from-a-winner-take-all-market/"
+      }
+    ]
+  },
+  "meta-muse-spark-1-3-2026": {
+    "body": [
+      "Metaが2026年9月2日、大規模言語モデル「Muse Spark」の最新版1.3を公開したと複数メディアが報じている。Muse CodeおよびMeta Model API経由で提供され、コンテキストウィンドウは前バージョンと同じ100万トークンを維持するという。",
+      "報道されているベンチマークでは、エージェント型ソフトウェアエンジニアリングを測るDeepSWE 1.1で75.4%、Terminal-Bench 2.1で88.8%、長文脈検索で98.5%とされる。Metaはコーディング関連のツール呼び出し回数を1.2比で約20%、消費トークン数を約25%削減したとしている。",
+      "公開されているのは「xhigh」構成とされ、より高性能とされる「max」構成はMetaのパートナー限定プレビューにとどまり、追加の安全性検証を経て後日提供されるという。この構成差を含め、独立系ベンチマーク（Artificial Analysis）上での位置づけについて報道間で解釈が割れている。",
+      "Meta公式のai.meta.comには、本稿の調査時点で実行環境からアクセスできなかった。本記事はVentureBeat等の複数の二次報道にもとづいており、ベンチマーク数値の解釈を巡って報道間で食い違いがあるとの指摘もあるため、一次資料での確認が取れるまで確定情報としては扱わない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Meta says Muse Spark 1.3 has frontier performance - VentureBeat",
+        "url": "https://venturebeat.com/technology/meta-says-muse-spark-1-3-has-frontier-performance-but-its-best-results-come-from-a-model-developers-cant-broadly-use-yet"
+      }
+    ]
   }
 };
 

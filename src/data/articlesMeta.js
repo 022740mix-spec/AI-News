@@ -9111,5 +9111,41 @@ export const ARTICLES_META = [
       "src": "articles/cover-cli-tools.svg",
       "alt": "Amplio エージェントハーネス"
     }
+  },
+  {
+    "id": "cognition-series-e-48b-valuation-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Cognition（Devin）がシリーズEで20億ドル超を調達、評価額480億ドルに — 複数メディア報道、公式一次情報は未確認",
+    "excerpt": "Devin開発元のCognitionが2026年9月8日、a16zとAccel主導のシリーズEで20億ドル超を調達し評価額480億ドルに達したとBloomberg・TechCrunch等が報じた。5月のシリーズD（評価額260億ドル）から4ヶ月弱で倍増した計算になるが、Cognition公式ブログと主導投資家の発表ページには本稿執筆時点でアクセスできず、二次報道の一致にもとづく内容として扱う。",
+    "date": "2026-09-09",
+    "newsDate": "2026-09-08",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Cognition",
+      "Devin",
+      "資金調達",
+      "コーディング",
+      "エージェント"
+    ]
+  },
+  {
+    "id": "meta-muse-spark-1-3-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Meta が Muse Spark 1.3 を公開したと報道 — コーディング関連ベンチマークで前バージョンを大幅更新、公式一次情報は未確認",
+    "excerpt": "Metaが2026年9月2日にMuse Spark 1.3を公開したと複数メディアが報じた。DeepSWE 1.1で75.4%、Terminal-Bench 2.1で88.8%など、コーディング・エージェント関連ベンチマークで前バージョンを上回るとされる。ただし公開されているのは複数構成のうち一部で、Meta公式ページには本稿執筆時点でアクセスできず、ベンチマーク解釈を巡る報道間の食い違いも指摘されている。",
+    "date": "2026-09-09",
+    "newsDate": "2026-09-02",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Meta",
+      "Muse",
+      "モデル",
+      "コーディング",
+      "エージェント"
+    ]
   }
 ];
