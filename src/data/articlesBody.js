@@ -19396,6 +19396,24 @@ const ARTICLES_BODY = {
         "url": "https://github.com/google-deepmind/amplio/commits/main"
       }
     ]
+  },
+  "cognition-series-e-48b-valuation-2026": {
+    "body": [
+      "Devin開発元のCognitionが2026年9月8日、シリーズEで20億ドル超を調達し、評価額480億ドルに達したと複数メディアが報じた。主導したのはa16z（Andreessen Horowitz）とAccelで、既存投資家のFounders Fund・General Catalyst・Avenirに加え、Benchmark・Bessemer・Kleiner Perkins・NVIDIAなど多数の投資家が参加したと報じられている。",
+      "報道によれば、Cognitionのラン・レート収益は、2026年5月のシリーズD（10億ドル超・評価額260億ドル）時点の4.92億ドルから、直近ではおよそ9億ドル近くまで伸びたという。事実であれば、4ヶ月弱で評価額がほぼ倍増したことになる。",
+      "一部報道では、Devin Desktopで最も使われているモデルとして新しい「SWE-1.6」（最大950トークン/秒）の名も挙がっているが、モデルカードや詳細仕様は本稿執筆時点で確認できていない。",
+      "Cognition公式ブログ（cognition.ai）およびリード投資家a16zの発表ページには、本稿の調査時点で実行環境からアクセスできなかった。本記事はBloomberg・TechCrunchなど複数の二次報道の内容が一致していることにもとづいており、金額・評価額・投資家名はいずれの報道でも概ね一致しているが、一次ソースでの裏付けが取れるまで確定情報としては扱わない。"
+    ],
+    "primarySources": [
+      {
+        "title": "AI Startup Cognition Raises $2 Billion at a $48 Billion Value - Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-08/ai-startup-cognition-raises-2-billion-at-a-48-billion-value"
+      },
+      {
+        "title": "Cognition hits $48B valuation - TechCrunch",
+        "url": "https://techcrunch.com/2026/09/08/cognition-hits-48b-valuation-signaling-investors-believe-ai-coding-is-far-from-a-winner-take-all-market/"
+      }
+    ]
   }
 };
 

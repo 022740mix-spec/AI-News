@@ -40,6 +40,14 @@
     <summary>Google DeepMind が公開する軽量エージェントハーネス「Amplio」は、SQLite による DB-first 設計でクラッシュ後も自動再開できる長時間タスク基盤。7月末の公開から2ヶ月近く経つが、スター数はまだ83にとどまり、企業名検索でも GitHub Trending でも表面化していなかった。</summary>
   </entry>
   <entry>
+    <title>Cognition（Devin）がシリーズEで20億ドル超を調達、評価額480億ドルに — 複数メディア報道、公式一次情報は未確認</title>
+    <link rel="alternate" type="text/html" href="?a=cognition-series-e-48b-valuation-2026"/>
+    <id>tag:ai-tool-news.jp,2026:cognition-series-e-48b-valuation-2026</id>
+    <published>2026-09-09T15:00:00Z</published>
+    <updated>2026-09-09T15:00:00Z</updated>
+    <summary>Devin開発元のCognitionが2026年9月8日、a16zとAccel主導のシリーズEで20億ドル超を調達し評価額480億ドルに達したとBloomberg・TechCrunch等が報じた。5月のシリーズD（評価額260億ドル）から4ヶ月弱で倍増した計算になるが、Cognition公式ブログと主導投資家の発表ページには本稿執筆時点でアクセスできず、二次報道の一致にもとづく内容として扱う。</summary>
+  </entry>
+  <entry>
     <title>Claude Code を裏で守る「sandbox-runtime」が公式OSSに — バイナリ解析で発見された内部パッケージが、既知の抜け穴付きで公開されていた</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-sandbox-runtime-public-oss-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-sandbox-runtime-public-oss-2026</id>
