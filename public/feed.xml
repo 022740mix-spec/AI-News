@@ -32,6 +32,14 @@
     <summary>Sony Music PublishingとWarner Chappell Musicが8月28日、著作権侵害を理由にAnthropicを米カリフォルニア北部地区連邦地裁に提訴した。訴状はAnthropic、CEOのDario Amodei、共同創業者のBenjamin Mannを個人名で被告に加えている。両社は、Anthropicが海賊版サイト（Library Genesis、Pirate Library Mirror等）からの違法なトレント・スクレイピングや、MusixmatchやLyricFindなど正規の歌詞サイトからのスクレイピングを通じて数万曲を無断で学習に用いたと主張し、1曲あたり最大15万ドル、著作権管理情報の除去1件につき最大2万5000ドルの法定損害賠償を陪審審理で求めている。Anthropicは容疑を否認し、学習は変容的なフェアユースにあたるとして争う姿勢を示している。</summary>
   </entry>
   <entry>
+    <title>Google DeepMind が軽量エージェントハーネス「Amplio」を静かに公開 — クラッシュ後も自動再開する長時間タスク基盤、スター数はまだ83</title>
+    <link rel="alternate" type="text/html" href="?a=google-deepmind-amplio-agent-harness-2026"/>
+    <id>tag:ai-tool-news.jp,2026:google-deepmind-amplio-agent-harness-2026</id>
+    <published>2026-09-09T15:00:00Z</published>
+    <updated>2026-09-09T15:00:00Z</updated>
+    <summary>Google DeepMind が公開する軽量エージェントハーネス「Amplio」は、SQLite による DB-first 設計でクラッシュ後も自動再開できる長時間タスク基盤。7月末の公開から2ヶ月近く経つが、スター数はまだ83にとどまり、企業名検索でも GitHub Trending でも表面化していなかった。</summary>
+  </entry>
+  <entry>
     <title>Claude Code を裏で守る「sandbox-runtime」が公式OSSに — バイナリ解析で発見された内部パッケージが、既知の抜け穴付きで公開されていた</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-sandbox-runtime-public-oss-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-sandbox-runtime-public-oss-2026</id>

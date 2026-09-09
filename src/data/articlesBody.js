@@ -19377,6 +19377,25 @@ const ARTICLES_BODY = {
         "url": "https://variety.com/2026/music/news/sony-music-publishing-warner-chappell-anthropic-lawsuit-1236847442/"
       }
     ]
+  },
+  "google-deepmind-amplio-agent-harness-2026": {
+    "body": [
+      "Google DeepMind が、長時間稼働する AI エージェントタスクの実行基盤として「Amplio」を GitHub で公開している。Go 言語で書かれた単一バイナリの軽量エージェントハーネスで、Apache-2.0 ライセンスのオープンソースである。LLM プロバイダとして Vertex AI・Claude・Gemini に対応する。リポジトリの最初のコミットは2026年7月26日で、9月に入っても更新が続いているが、スター数は83・フォーク5にとどまり、企業名検索や GitHub Trending、ニュース報道では表面化していなかった。",
+      "中核は SQLite による「DB-first」の永続化設計である。README は「エージェントループのどの時点でクラッシュしても堅牢に再開できる」と説明しており、サブエージェントのセッションツリーもサーバー再起動時に自動的に再開される。長時間の自律実行を前提に、実行の途中経過を都度 DB へ書き込む構成になっている。",
+      "エージェントが使えるツールはあえて絞り込まれており、シェル実行・ファイル編集・サブエージェントの起動・エージェント間の連携調整という汎用的な少数セットにとどめている。実行は完全自律でも、ユーザーとの対話を挟む人間参加型でも選べる。`amplio serve` コマンドを実行すると組み込みの Web フロントエンドが立ち上がり、実行中のセッションを確認できる。",
+      "一方で README は「エージェントのシェルをサンドボックス化していない」と明記している。エージェントはサーバーを起動したユーザーの権限でコマンドを実行するため、信頼できる環境での利用に限るという注記が添えられている。長時間タスクを自動で再開できる利便性と、実行権限の広さは表裏一体である。",
+      "この種の公式 org からの静かな公開は、企業名検索・GitHub Trending・Hacker News のいずれでも拾いにくい。以前取り上げた Microsoft の skill-recorder や GitHub の Project HydraFusion と同様、スター数が伸びる前の段階でも、大手ラボがどのようなエージェント基盤を内部で使っているかを知る手がかりとして記事化した。"
+    ],
+    "primarySources": [
+      {
+        "title": "google-deepmind/amplio - GitHub",
+        "url": "https://github.com/google-deepmind/amplio"
+      },
+      {
+        "title": "google-deepmind/amplio - Commits",
+        "url": "https://github.com/google-deepmind/amplio/commits/main"
+      }
+    ]
   }
 };
 

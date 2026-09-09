@@ -9089,5 +9089,27 @@ export const ARTICLES_META = [
       "src": "articles/cover-regulation.svg",
       "alt": "Sony Music Publishing and Warner Chappell sue Anthropic"
     }
+  },
+  {
+    "id": "google-deepmind-amplio-agent-harness-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Google DeepMind が軽量エージェントハーネス「Amplio」を静かに公開 — クラッシュ後も自動再開する長時間タスク基盤、スター数はまだ83",
+    "excerpt": "Google DeepMind が公開する軽量エージェントハーネス「Amplio」は、SQLite による DB-first 設計でクラッシュ後も自動再開できる長時間タスク基盤。7月末の公開から2ヶ月近く経つが、スター数はまだ83にとどまり、企業名検索でも GitHub Trending でも表面化していなかった。",
+    "date": "2026-09-09",
+    "newsDate": "2026-07-26",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Google",
+      "DeepMind",
+      "エージェント",
+      "オープンソース",
+      "開発ツール"
+    ],
+    "coverImage": {
+      "src": "articles/cover-cli-tools.svg",
+      "alt": "Amplio エージェントハーネス"
+    }
   }
 ];
