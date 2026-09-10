@@ -9232,5 +9232,22 @@ export const ARTICLES_META = [
       "推論",
       "量子化"
     ]
+  },
+  {
+    "id": "okf-agent-memory-git-native-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ベクトルDBなしでコーディングエージェントに記憶を持たせる「okf-agent-memory」— Git管理のMarkdownとBM25検索、埋め込みMCPサーバーを1バイナリに",
+    "excerpt": "「okf-agent-memory」は、AIエージェントとの対話で得た知見をコンテキストウィンドウが閉じても失わないよう、**Git管理下のMarkdown+YAMLファイルとして永続化**するOSSツールである。ベクトルDBや埋め込みAPIを一切使わず、**ローカルのBM25全文検索**で概念を300マイクロ秒未満で検索し、Claude・Cursor等と直接つながる**組み込みMCPサーバー**を1バイナリで提供する。Googleが2026年7月に公開した知識フォーマット仕様「Open Knowledge Format(OKF) v0.2」を実装した独立プロジェクトで、Google自身とは無関係。",
+    "date": "2026-09-11",
+    "newsDate": "2026-09-05",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "エージェント",
+      "MCP",
+      "メモリ",
+      "オープンソース"
+    ]
   }
 ];
