@@ -9180,5 +9180,22 @@ export const ARTICLES_META = [
       "規制",
       "DeepSeek"
     ]
+  },
+  {
+    "id": "anthropic-enterprise-frontier-safeguards-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が「Enterprise Frontier Safeguards」を発表 — 監視用データを顧客自身のクラウドに保存、ただし閲覧権はAnthropic側に残る",
+    "excerpt": "Anthropic が9月1日、不正利用検知用の監視データを Anthropic 自社基盤ではなく**顧客が管理するクラウド**（AWS S3・Azure Blob・GCS）に保存できる新機能「Enterprise Frontier Safeguards（EFS）」を発表した。ゼロデータ保持と自動監視の両立を狙うが、不正利用検知を理由に Anthropic 側の閲覧権自体は残るため、「ゼロデータ保持」という呼称がどこまで実態と一致するかは論点になりうる。",
+    "date": "2026-09-10",
+    "newsDate": "2026-09-01",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "エンタープライズ",
+      "プライバシー",
+      "AI安全性"
+    ]
   }
 ];

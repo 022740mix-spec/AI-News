@@ -19531,6 +19531,26 @@ const ARTICLES_BODY = {
         "url": "https://www.unite.ai/nsa-cisa-fbi-warn-china-based-ai-firms-distill-us-frontier-models/"
       }
     ]
+  },
+  "anthropic-enterprise-frontier-safeguards-2026": {
+    "body": [
+      "Anthropic が9月1日、企業顧客向けの新機能「Enterprise Frontier Safeguards（EFS）」を発表した。ゼロデータ保持（ZDR）によるプライバシー確保と、不正利用を検知するための自動監視という、一見両立しにくい2つの要求を同時に満たすことを狙った仕組みである。",
+      "核となるのは、監視に使う顧客の利用データの保存場所を、Anthropic 自社のインフラから**顧客自身が管理するクラウドアカウント**（Amazon S3、Azure Blob Storage、Google Cloud Storage）に移す設計である。データの保管場所・暗号鍵・人間によるレビューのいずれも顧客側が持つ。金融・医療・製造・通信・法務・小売・公共部門など、100社を超える顧客と共同で開発したとされ、Goldman Sachs・Morgan Stanley・Citi・Bank of America・Wells Fargo といった金融機関の名前が報じられている。",
+      "提供範囲は Claude Code・Claude Enterprise・Claude Platform・Amazon Bedrock・Google Agent Platform・Microsoft Foundry と幅広く、この秋から段階的に展開される。EFS の準備が整うまでの間、対象顧客には Fable 5 / Fable 5.1 でのゼロデータ保持が提供されるという。",
+      "報じられている仕様で見落とせないのは、EFS下でも**Anthropic は保存されたデータへの閲覧権自体は保持する**とされている点である。理由として不正利用検知が挙げられており、保存場所を顧客管理のクラウドに移したことと、Anthropic がそのデータを見られるかどうかは別の話になる。この構図をどう評価するかは意見が分かれるところで、「保存場所の主権を顧客に返した前進」と見ることもできれば、「ゼロデータ保持という呼称ほどにはAnthropicからデータが切り離されていない」と見ることもできる。本記事はどちらの評価が妥当かを判断せず、両方の見方が成立しうる事実関係を提示するにとどめる。",
+      "この発表の背景には、企業顧客からのデータ保持ポリシーに対する反発があったと報じられている。エージェントが長時間・広範囲にわたってツールを実行する形態が広がるほど、「何のために」「どこに」利用データを残すかという論点は、料金や性能とは別軸の採用判断材料になりつつある。",
+      "本記事の情報は、CNBC・MarkTechPost・Unite.AI・AI Weekly 等の複数の技術メディア報道を検索経由で突き合わせて確認したものである。Anthropic 公式発表（anthropic.com/news/enterprise-frontier-safeguards）自体は本稿執筆時点のネットワーク環境から直接到達できておらず、直接閲覧はできていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Developing Enterprise Frontier Safeguards with our customers (Anthropic、未到達)",
+        "url": "https://www.anthropic.com/news/enterprise-frontier-safeguards"
+      },
+      {
+        "title": "Anthropic Announces Enterprise Frontier Safeguards, Customer-Held Data",
+        "url": "https://www.unite.ai/anthropic-announces-enterprise-frontier-safeguards-customer-held-data/"
+      }
+    ]
   }
 };
 
