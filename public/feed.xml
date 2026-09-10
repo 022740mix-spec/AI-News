@@ -16,6 +16,14 @@
     <summary>Anthropic の公式 GitHub org に、Protocol Buffers の Rust 実装 Buffa が公開されていることが確認できた。ブログ等での発表は見当たらず、リポジトリ自体が一次情報になる。所有型に加えてゼロコピーの参照型を生成する二層設計が特徴で、ベンチマークでは既存の主要実装 prost に対しデコード速度で最大+290%を主張している。</summary>
   </entry>
   <entry>
+    <title>個人開発の「ponytail」が13.3万スター — コード生成前に既存解決策を5段階でチェックさせる「怠惰ラダー」</title>
+    <link rel="alternate" type="text/html" href="?a=ponytail-lazy-coding-agent-ruleset-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ponytail-lazy-coding-agent-ruleset-2026</id>
+    <published>2026-09-10T15:00:00Z</published>
+    <updated>2026-09-10T15:00:00Z</updated>
+    <summary>個人開発の ponytail が GitHub 週間トレンドで全体1位を記録し、13.3万スターに達した。Claude Code・Cursor・Codex・GitHub Copilot など主要なコーディングエージェント十数種に対応するルールセットで、コードを書く前に「既存解決策→標準ライブラリ→プラットフォーム標準機能→既存の依存関係→ワンライナー」の順でチェックさせる。開発元は平均54%（最大94%）のコード削減を主張している。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が「Model Hardware Standard」をリサーチプレビュー公開 — 装置ドライバの統合を数週間から数分に、実験室のロボットアームや液体分注機をAIエージェントが直接操作</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-model-hardware-standard-preview-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-model-hardware-standard-preview-2026</id>

@@ -19491,6 +19491,26 @@ const ARTICLES_BODY = {
         "url": "https://github.com/anthropics/buffa/releases"
       }
     ]
+  },
+  "ponytail-lazy-coding-agent-ruleset-2026": {
+    "body": [
+      "個人開発者 Dietrich Gebert 氏が公開している **ponytail** が、9月3日に GitHub 週間トレンド全体1位を記録し、9月6日時点でも JavaScript 部門2位・全体3位につけるなど急伸を続けている。9月10日時点のスター数は約13万3,800、star-history.com で確認できる伸び方は直近数週間で急角度に立ち上がる典型的な「バズった OSS」の形を描いている。",
+      "ponytail はコーディングエージェント自体を作り替えるツールではなく、既存のエージェントに振る舞いを追加する**プラグイン／ルールセット**である。対応範囲が広いのが特徴で、Claude Code・Codex・GitHub Copilot CLI・OpenCode・Gemini CLI・Devin CLI・Grok Build などプラグイン機構を持つホストに加え、Cursor・Windsurf・Cline・Aider・Zed・Kiro のようにプラグイン機構を持たないツールにも指示ファイルとして組み込めるようになっている。",
+      "設計の核は「怠惰ラダー（laziness ladder）」と呼ぶチェック順序である。コードを書く前に、①そのコードは本当に必要か、②既存のコードベースに同じ機能が無いか、③標準ライブラリで足りないか、④プラットフォームの標準機能で足りないか、⑤既にインストール済みの依存関係で足りないか、⑥ワンライナーで済まないか、を順に確認させ、それでも足りない場合にだけ実装に入らせる。README は「書かれなかったコードが最良のコードだ」という一文でこの思想を要約している。",
+      "開発元が公開している数値では、Claude Code のエージェント的なセッションを基準に、平均で約54%（最大94%）のコード削減、約20%のコスト削減、約27%の高速化を達成したとされる。単発（シングルショット）のベンチマークでは80〜94%の削減幅が出たともしており、開発元自身も「この差は会話形式のベースラインに起因する部分がある」と、数値の解釈には幅があることを認めている。第三者による独立した再現・検証は確認できていない。",
+      "ライセンスは MIT。README は「動作する中で最も短いライセンス」を選んだと説明しており、ツール全体を貫く「最小限主義」の姿勢がライセンス選定にも表れている。バリデーション・エラー処理・セキュリティ・アクセシビリティといった安全面のガードレールは「怠惰の対象外」として明確に除外している点も、単なるコード削減至上主義との違いとして書き添えられている。",
+      "本記事は `DietrichGebert/ponytail` の GitHub リポジトリ本体（README、star-history.com のスター推移）を直接確認して執筆した。コード削減率等の数値は開発元の自己申告であり、独立した第三者による検証は確認できていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "DietrichGebert/ponytail (GitHub)",
+        "url": "https://github.com/DietrichGebert/ponytail"
+      },
+      {
+        "title": "ponytail star history",
+        "url": "https://www.star-history.com/dietrichgebert/ponytail/"
+      }
+    ]
   }
 };
 

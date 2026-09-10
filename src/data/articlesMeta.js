@@ -9144,5 +9144,23 @@ export const ARTICLES_META = [
       "Anthropic",
       "Rust"
     ]
+  },
+  {
+    "id": "ponytail-lazy-coding-agent-ruleset-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "個人開発の「ponytail」が13.3万スター — コード生成前に既存解決策を5段階でチェックさせる「怠惰ラダー」",
+    "excerpt": "個人開発の **ponytail** が GitHub 週間トレンドで全体1位を記録し、13.3万スターに達した。Claude Code・Cursor・Codex・GitHub Copilot など主要なコーディングエージェント十数種に対応するルールセットで、コードを書く前に「既存解決策→標準ライブラリ→プラットフォーム標準機能→既存の依存関係→ワンライナー」の順でチェックさせる。開発元は平均54%（最大94%）のコード削減を主張している。",
+    "date": "2026-09-10",
+    "newsDate": "2026-09-06",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "エージェント",
+      "オープンソース",
+      "開発ツール",
+      "個人開発",
+      "Claude Code"
+    ]
   }
 ];
