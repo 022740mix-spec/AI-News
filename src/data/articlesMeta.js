@@ -9214,5 +9214,23 @@ export const ARTICLES_META = [
       "分析",
       "データセンター"
     ]
+  },
+  {
+    "id": "edge0-ondevice-moe-inference-2026",
+    "type": "news",
+    "category": "product",
+    "title": "個人開発の「Edge0」— iPhone/Mac上で35BのMoEモデルを2.9GBで動かすストリーミング推論フレームワーク",
+    "excerpt": "独立系エンジニアの Samuel Zeng 氏が2026年9月10日、Apple Silicon 上で35Bパラメータの Mixture-of-Experts モデルを動かす OSS 推論フレームワーク「Edge0」を公開した。**アクティブなエキスパートだけをSSDから都度読み込む**ことでピークメモリを2.9GBに抑え、次に使うエキスパートを1手先読みして転送と計算を重ねる「プリルーター」で復号速度を+59%高速化。int4量子化による精度低下は、蒸留で訓練したLoRAアダプタ「Recover-LoRA」で埋め合わせる。",
+    "date": "2026-09-11",
+    "newsDate": "2026-09-10",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "エッジAI",
+      "オープンソース",
+      "MoE",
+      "推論",
+      "量子化"
+    ]
   }
 ];
