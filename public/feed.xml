@@ -8,6 +8,14 @@
   <updated>2026-09-10T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Anthropic が Rust 製 Protobuf 実装「Buffa」を公式 GitHub で公開 — ゼロコピー読み取りで最大+290%、no_std対応</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-buffa-rust-protobuf-oss-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-buffa-rust-protobuf-oss-2026</id>
+    <published>2026-09-10T15:00:00Z</published>
+    <updated>2026-09-10T15:00:00Z</updated>
+    <summary>Anthropic の公式 GitHub org に、Protocol Buffers の Rust 実装 Buffa が公開されていることが確認できた。ブログ等での発表は見当たらず、リポジトリ自体が一次情報になる。所有型に加えてゼロコピーの参照型を生成する二層設計が特徴で、ベンチマークでは既存の主要実装 prost に対しデコード速度で最大+290%を主張している。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が「Model Hardware Standard」をリサーチプレビュー公開 — 装置ドライバの統合を数週間から数分に、実験室のロボットアームや液体分注機をAIエージェントが直接操作</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-model-hardware-standard-preview-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-model-hardware-standard-preview-2026</id>

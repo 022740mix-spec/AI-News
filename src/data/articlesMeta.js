@@ -9127,5 +9127,22 @@ export const ARTICLES_META = [
       "著作権",
       "Suno"
     ]
+  },
+  {
+    "id": "anthropic-buffa-rust-protobuf-oss-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Anthropic が Rust 製 Protobuf 実装「Buffa」を公式 GitHub で公開 — ゼロコピー読み取りで最大+290%、no_std対応",
+    "excerpt": "Anthropic の公式 GitHub org に、Protocol Buffers の Rust 実装 **Buffa** が公開されていることが確認できた。ブログ等での発表は見当たらず、リポジトリ自体が一次情報になる。所有型に加えてゼロコピーの参照型を生成する二層設計が特徴で、ベンチマークでは既存の主要実装 prost に対しデコード速度で最大**+290%**を主張している。",
+    "date": "2026-09-10",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "オープンソース",
+      "開発ツール",
+      "Anthropic",
+      "Rust"
+    ]
   }
 ];

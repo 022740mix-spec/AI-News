@@ -19428,6 +19428,69 @@ const ARTICLES_BODY = {
         "url": "https://www.afm.org/2026/08/summary-of-the-afm-v-universal-warner-and-atlantic-new-use-litigation/"
       }
     ]
+  },
+  "anthropic-buffa-rust-protobuf-oss-2026": {
+    "body": [
+      "Anthropic 公式の GitHub org に、Protocol Buffers（protobuf）の Rust 実装 **`anthropics/buffa`** が公開されていることを確認した。プレスリリースやブログでの発表は見当たらず、リポジトリの存在そのものが一次情報になる案件である。9月3日付の最新リリース `v0.9.2` まで開発が継続しており、Apache 2.0 ライセンスで公開、9月10日時点で883スター・87フォークを集めている。",
+      "Buffa が埋めようとしているのは、Rust の protobuf 実装が長らく「Editions」と呼ばれる新しいスキーマ形式に本格対応してこなかったという隙間である。README は proto2 / proto3 を Editions モデルのプリセットとして扱う「Editions-first」設計を掲げ、バイナリ・JSON・textproto の全ワイヤーフォーマットで protobuf 準拠テストスイートを完全通過しているとしている。`no_std` 環境（`alloc` があればコア機能が動作）にも対応し、組み込み用途も視野に入れている。",
+      "技術的な特徴は、1つのメッセージ定義から**所有型**（`MyMessage`）と**ゼロコピーの参照型**（`MyMessageView<'a>`）を両方生成する二層設計にある。ネットワーク越しに受け取ったバイト列をコピーせずそのまま参照できるビュー型を使うことで、デコード性能を大きく引き上げられるという主張である。未知のフィールドを保持したままラウンドトリップできる設計や、`DescriptorPool` / `DynamicMessage` によるランタイムリフレクションも備える。",
+      "公開されているベンチマーク（自己申告値、第三者による独立検証は確認できていない）では、既存の代表的な実装である prost・protobuf-v4 との比較で、メッセージの種類によって差はあるものの、ゼロコピーのビュー型を使った場合にデコード速度で大きな差が出るとされている。",
+      "エンコード速度やJSONシリアライズでは prost との差は小さいものの上回る結果が多く、既存実装からの置き換えを狙った設計であることがうかがえる。Anthropic 社内でどのプロダクトに使われているかは README・DESIGN.md からは読み取れず、公表されていない。",
+      "本記事は `anthropics/buffa` の GitHub リポジトリ（README、DESIGN.md、Releases ページ）を直接確認して執筆した。anthropic.com 等の公式サイトでの言及は本稿執筆時点のネットワーク環境から確認できておらず、リポジトリ本体以外に一次情報は無い。ベンチマーク数値は開発元の自己申告であり、独立した第三者による再検証は確認できていない点に留意されたい。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "Buffa のバイナリデコード速度比較（開発元公表値、MiB/s）",
+        "headers": [
+          "メッセージ種別",
+          "buffa（所有型）",
+          "buffa（ゼロコピー view）",
+          "prost",
+          "protobuf-v4"
+        ],
+        "rows": [
+          [
+            "ApiResponse",
+            "575",
+            "872（+52%）",
+            "550",
+            "430"
+          ],
+          [
+            "LogRecord",
+            "572",
+            "1,336（+134%）",
+            "481",
+            "555"
+          ],
+          [
+            "AnalyticsEvent",
+            "123",
+            "225（+83%）",
+            "148",
+            "222"
+          ],
+          [
+            "MediaFrame",
+            "10,619",
+            "41,441（+290%）",
+            "6,002",
+            "11,005"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "anthropics/buffa (GitHub)",
+        "url": "https://github.com/anthropics/buffa"
+      },
+      {
+        "title": "buffa Releases",
+        "url": "https://github.com/anthropics/buffa/releases"
+      }
+    ]
   }
 };
 
