@@ -19551,6 +19551,26 @@ const ARTICLES_BODY = {
         "url": "https://www.unite.ai/anthropic-announces-enterprise-frontier-safeguards-customer-held-data/"
       }
     ]
+  },
+  "california-data-center-ratepayer-bills-2026": {
+    "body": [
+      "カリフォルニア州議会が2026年の会期閉会にあたり、データセンター向けの電力供給に関する複数の法案を可決し、Gavin Newsom 知事の署名待ちの状態になっていると複数のメディアが報じている。焦点は、AIブームで急増するデータセンター需要に応じた送電網増強・発電コストを、データセンター以外の一般の電力利用者（家庭など）が電気料金を通じて肩代わりさせられていないか、という点である。",
+      "中心となるのは AB 2383（提出者: Rick Chavez Zbur 州議会議員、通称「Fair Share in Energy Act」）と SB 886 の2法案である。両法案は、カリフォルニア州公益事業委員会（CPUC）に対し、データセンター向けに個別の電気料金区分と接続ルールを新設するよう求める内容で、2027年1月1日以降に新規で電力供給を受ける大口需要家（データセンターを含む）を対象にしている。狙いは、新規の発電・送電網増強コストをデータセンター自身に負担させ、既存の住宅・企業向け料金に上乗せさせないことにある。",
+      "もう一本の SB 887（提出者: Steve Padilla 州上院議員）は毛色が異なり、データセンターに一律に適用されてきたカリフォルニア州環境品質法（CEQA）の適用除外を撤廃する内容である。一方で、ゼロカーボンかつ送電網にとって有益と認められる施設については、迅速な司法審査の手続きを新設するという、規制強化と手続き簡素化を組み合わせた設計になっている。",
+      "これらの法案は、いずれも党派に沿った賛否で可決されたと報じられている。9月10日時点で Newsom 知事はまだ署名・拒否権のいずれの判断も示しておらず、州法の慣例に従えば9月末が判断の期限とされる。",
+      "この動きが示しているのは、AIの恩恵とコストの分配という論点が、規制やベンチマークの世界を離れ、**電気料金という生活に直結する数字**として住民の目に見える形になりつつあるということである。データセンター誘致は雇用や税収という形で地域経済への恩恵も語られる一方、電力インフラの増強コストを誰が負担するかという配分の問題は、AI企業と住民の間だけでなく、州政府・電力会社を含む複数の利害関係者が絡む論点になっている。カリフォルニア州の判断は、同様の議論を抱える他州の規制動向にも参照される可能性がある。",
+      "本記事の情報は、KQED・DataCenterDynamics・Net-Zero California・Pillsbury Law（法律事務所の解説）等の複数の報道・解説記事を検索経由で突き合わせて確認したものである。各サイトおよびカリフォルニア州議会公式サイト（leginfo.legislature.ca.gov）は、本稿執筆時点のネットワーク環境から直接の到達を確認できておらず、直接閲覧はできていない。Newsom知事の最終的な署名・拒否権行使の判断は本稿執筆時点で未確定である。"
+    ],
+    "primarySources": [
+      {
+        "title": "AB 2383: Electricity: data centers. (Digital Democracy、未到達)",
+        "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab2383"
+      },
+      {
+        "title": "California lawmakers pass data center ratepayer protection bills, send to governor for approval",
+        "url": "https://www.datacenterdynamics.com/en/news/california-lawmakers-pass-data-center-ratepayer-protection-bills-send-to-governor-for-approval/"
+      }
+    ]
   }
 };
 

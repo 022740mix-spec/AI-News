@@ -40,6 +40,14 @@
     <summary>Anthropic が9月1日、不正利用検知用の監視データを Anthropic 自社基盤ではなく顧客が管理するクラウド（AWS S3・Azure Blob・GCS）に保存できる新機能「Enterprise Frontier Safeguards（EFS）」を発表した。ゼロデータ保持と自動監視の両立を狙うが、不正利用検知を理由に Anthropic 側の閲覧権自体は残るため、「ゼロデータ保持」という呼称がどこまで実態と一致するかは論点になりうる。</summary>
   </entry>
   <entry>
+    <title>【分析】カリフォルニア州、データセンターの電力コストを住民に転嫁させない州法を可決 — Newsom知事の署名待ち</title>
+    <link rel="alternate" type="text/html" href="?a=california-data-center-ratepayer-bills-2026"/>
+    <id>tag:ai-tool-news.jp,2026:california-data-center-ratepayer-bills-2026</id>
+    <published>2026-09-10T15:00:00Z</published>
+    <updated>2026-09-10T15:00:00Z</updated>
+    <summary>カリフォルニア州議会が、データセンター向けの電力コスト（送電網増強費用など）を一般家庭など他の需要家に転嫁させない仕組みを盛り込んだ AB 2383・SB 886・SB 887 を可決し、Newsom知事の署名待ちの状態にある。AIブームを支えるデータセンター建設のコストが、電気料金という形で住民に及ぶ構図に対し、米国最大の州が具体的な法制化に踏み出した事例である。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が「Model Hardware Standard」をリサーチプレビュー公開 — 装置ドライバの統合を数週間から数分に、実験室のロボットアームや液体分注機をAIエージェントが直接操作</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-model-hardware-standard-preview-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-model-hardware-standard-preview-2026</id>
