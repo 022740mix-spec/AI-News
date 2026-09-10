@@ -19613,6 +19613,80 @@ const ARTICLES_BODY = {
         "url": "https://github.com/GoogleCloudPlatform/open-knowledge-format"
       }
     ]
+  },
+  "gitspawn-ai-coding-agent-git-config-rce-2026": {
+    "body": [
+      "**本記事の確認状況を最初に明記する。** 2026年9月3日の下書き時点では、報告元のセキュリティ企業 Manifold Security の報告書本体、および NVD・CVE.org に実行環境のネットワーク制限で到達できず、二次情報のみで記述していた。9月11日に再検証したところ、**manifold.security・thehackernews.com・NVD・CVE.orgは依然として到達できなかった一方、GitHub自身が運用するセキュリティアドバイザリ経由で、7種のうち goose に関する分だけ一次情報として直接確認できた。** 以下、確認できた範囲とできていない範囲を明確に分けて記述する。",
+      "報じられている脆弱性クラスは「**GitSpawn**」と呼ばれる。Gitには`core.fsmonitor`という性能設定があり、その値には「インデックス更新のたびにGitが自動実行するヘルパープログラム」を指定できる。この設定はリポジトリ自身の`.git/config`に書き込まれているため、**悪意あるリポジトリを配布する側が、そのリポジトリの`.git/config`にあらかじめ攻撃者の用意したコマンドを仕込んでおける。**",
+      "AIコーディングエージェントの多くは、開いたプロジェクトの文脈を把握するために`git status`や`git diff`といったGitコマンドを**起動時にバックグラウンドで自動実行**する。この挙動が引き金になる。ユーザーが何かを尋ねたりコマンドを承認したりする前に、Gitがインデックスを更新しようとした時点で`core.fsmonitor`に仕込まれたヘルパーが実行され、**エージェントのサンドボックスの外側で、ログインユーザーの権限のまま任意のコードが動く**という。",
+      "**この機構そのものは、goose（block/goose）のセキュリティアドバイザリで一次情報として確認できた。** GitHubが公開しているアドバイザリ GHSA-r5pp-p5r8-466r は、`goose review`コマンドがGitを操作する際に`.git/config`をサニタイズしないため、悪意ある`core.fsmonitor`設定によって**gooseがモデルに問い合わせる前、ユーザー承認を経る前に**任意コード実行が起きると説明している。CVE番号はCVE-2026-72718、CVSSスコアは7.0（High）。報告者としてManifold Securityの Francisco Rosales 氏の名がクレジットされており、修正版は1.44.0（公開日2026年7月24日）である。",
+      "**goose の修正日（7月24日）が Manifold の公開disclosure（9月1〜2日と報じられる）より前である点は矛盾ではない。** 脆弱性報告でよくある「協調的開示」の流れ——個別ベンダーに先に報告して修正を待ち、その後まとめて脆弱性クラス全体を公表する——と整合する時系列である。",
+      "**一方、報道されている残り6種（Claude Code・Codex・Cursor・Hermes Agent・Qwen Code・Grok Build）については、GitHub上の公開アドバイザリでは裏が取れなかった。** Anthropic（anthropics/claude-code）・OpenAI（openai/codex）・QwenLM（qwen-code）の各リポジトリのセキュリティアドバイザリページを確認したが、GitSpawnや`core.fsmonitor`に一致する項目は見当たらなかった。これは「該当の脆弱性がない」ことを意味しない——**GitHub Security Advisoriesを使っていない、非公開のまま個別通知で済ませた、あるいは単に確認が取れなかった、のいずれの可能性も残る。** Cursor・Grok Buildはクローズドソースであり、そもそも公開アドバイザリの仕組み自体を確認できていない。",
+      "報道によれば、Manifold Securityは7種にまたがる**8件の欠陥**を発見・報告し、goose・Claude Code・Cursorには修正が提供された一方、**Hermes Agent・Qwen Code・Grok Build、およびClaude Codeのもう一つの実行経路は、Manifold が9月1日に再検証した時点でなお攻撃者提供のコマンドを実行してしまう状態だった**と伝えられている。The Hacker Newsは9月2日時点で「Anthropicが公開しているアドバイザリ記録は、Claude Codeに関する2件の指摘のいずれもカバーしていない」と確認したとも報じているが、**これらの記述はいずれもmanifold.security本体・NVD・CVE.orgに到達できないままの二次情報であり、本記事はその正確性を保証できない。**",
+      "**この問題が重要なのは、影響範囲がニッチな設定ミスではなく、多くのCLI型エージェントに共通する設計パターン——起動時にGitコマンドを自動実行して文脈を把握する——そのものに起因している点にある。** 個別のツールを1つ直せば終わる話ではなく、**エージェントCLIというカテゴリ全体が同種の設計を共有していたために、同じ脆弱性クラスが横並びで見つかった**という構図であり、これはgooseの事例で一次情報として確認できた通りである。",
+      "**読者への実務的な含意。** 出所の分からないリポジトリをAIコーディングエージェントで開く際は、`.git/config`の中身を事前に確認する、信頼できないリポジトリは通常の`git clone`（`.git`ディレクトリを再構築する）ではなくzip展開やUSB経由などで受け取っていないか注意する、使用しているエージェントCLIを最新版に保つ、といった対策が考えられる。**ただし本記事は6種のツールについて一次資料を確認できていないため、具体的な対応状況（修正済みか否か）を個別に保証するものではない。**該当するツールを業務で使っている場合は、各ベンダーの公式アドバイザリを直接確認することを推奨する。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 5,
+        "caption": "GitSpawn関連の確認状況（2026年9月11日時点）",
+        "headers": [
+          "ツール",
+          "報道されている状態",
+          "一次情報での確認"
+        ],
+        "rows": [
+          [
+            "goose",
+            "修正済み（8件中の一部）",
+            "確認済み — CVE-2026-72718、v1.44.0で修正（GitHub Security Advisory）"
+          ],
+          [
+            "Claude Code",
+            "一部修正・一部未修正と報道",
+            "未確認 — 公開アドバイザリに該当項目見当たらず"
+          ],
+          [
+            "Codex",
+            "CVE 3件発行と報道",
+            "未確認 — 公開アドバイザリに該当項目見当たらず"
+          ],
+          [
+            "Cursor",
+            "修正済みと報道",
+            "未確認 — クローズドソースにつき確認手段なし"
+          ],
+          [
+            "Qwen Code",
+            "未修正と報道",
+            "未確認 — アドバイザリ自体が0件"
+          ],
+          [
+            "Hermes Agent / Grok Build",
+            "未修正と報道",
+            "未確認 — 確認手段に到達できず"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "goose Security Advisory GHSA-r5pp-p5r8-466r（CVE-2026-72718、GitHub公式）",
+        "url": "https://github.com/block/goose/security/advisories/GHSA-r5pp-p5r8-466r"
+      },
+      {
+        "title": "goose v1.44.0 リリース（GitHub公式）",
+        "url": "https://github.com/block/goose/releases/tag/v1.44.0"
+      },
+      {
+        "title": "Malicious .git Configs Can Make Claude, Codex, Cursor, and Other AI Agents Run Attacker Code（The Hacker News、二次情報）",
+        "url": "https://thehackernews.com/2026/09/malicious-git-configs-can-make-claude.html"
+      },
+      {
+        "title": "GitSpawn Flaws Let Malicious Repositories Execute Code in Claude Code, Codex, Cursor, and Grok（CyberSecurityNews、二次情報）",
+        "url": "https://cybersecuritynews.com/gitspawn-flaws-execute-code/"
+      }
+    ]
   }
 };
 

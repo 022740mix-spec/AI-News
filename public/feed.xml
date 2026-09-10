@@ -24,6 +24,14 @@
     <summary>「okf-agent-memory」は、AIエージェントとの対話で得た知見をコンテキストウィンドウが閉じても失わないよう、Git管理下のMarkdown+YAMLファイルとして永続化するOSSツールである。ベクトルDBや埋め込みAPIを一切使わず、ローカルのBM25全文検索で概念を300マイクロ秒未満で検索し、Claude・Cursor等と直接つながる組み込みMCPサーバーを1バイナリで提供する。Googleが2026年7月に公開した知識フォーマット仕様「Open Knowledge Format(OKF) v0.2」を実装した独立プロジェクトで、Google自身とは無関係。</summary>
   </entry>
   <entry>
+    <title>【分析】「開くだけで実行される」— AIコーディングエージェント複数種に共通するGit設定悪用の脆弱性クラス「GitSpawn」、goose版はCVE番号付きで確認</title>
+    <link rel="alternate" type="text/html" href="?a=gitspawn-ai-coding-agent-git-config-rce-2026"/>
+    <id>tag:ai-tool-news.jp,2026:gitspawn-ai-coding-agent-git-config-rce-2026</id>
+    <published>2026-09-11T15:00:00Z</published>
+    <updated>2026-09-11T15:00:00Z</updated>
+    <summary>セキュリティ企業 Manifold Security が2026年9月1日、AIコーディングエージェントCLI 7種（goose・Claude Code・Codex・Cursor・Hermes Agent・Qwen Code・Grok Build）にまたがる脆弱性クラス「GitSpawn」を報告したと、複数のセキュリティ専門メディアが伝えている。リポジトリの`.git/config`に仕込んだ`core.fsmonitor`設定が、エージェントが起動時に自動実行する`git status`等をきっかけにユーザー承認なしで任意コードを実行させる手口である。7種のうち goose については、GitHub自身のセキュリティアドバイザリで CVE-2026-72718（CVSS 7.0）として同じ手口が確認でき、Manifold Security の関与も一次情報として裏付けが取れた。 残り6種については、報告元の manifold.security 本体・NVD・CVE.org に実行環境から到達できず、二次情報の域を出ない。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が Rust 製 Protobuf 実装「Buffa」を公式 GitHub で公開 — ゼロコピー読み取りで最大+290%、no_std対応</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-buffa-rust-protobuf-oss-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-buffa-rust-protobuf-oss-2026</id>
