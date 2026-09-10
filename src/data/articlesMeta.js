@@ -9162,5 +9162,23 @@ export const ARTICLES_META = [
       "個人開発",
       "Claude Code"
     ]
+  },
+  {
+    "id": "nsa-cisa-china-ai-distillation-advisory-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】NSA・CISA・FBIが中国系AI6社を「産業規模の蒸留」で名指し — DeepSeekの560万ドル訓練費は「蒸留コストを除外」と指摘",
+    "excerpt": "米NSA・CISA・FBIが9月8日、共同勧告 **AA26-251A** を公表し、DeepSeek・Alibaba・Moonshot AI・MiniMax・StepFun・Z.AI の6社が2024年後半以降、Claude・GPT・Gemini・Grok から**数十億トークン規模**を抽出する「知識蒸留」キャンペーンを続けていると主張した。cisa.gov 自体には本稿執筆時点で到達できておらず、複数の独立した専門メディアの報道が一致する範囲を整理した二次情報依存の記事である。",
+    "date": "2026-09-10",
+    "newsDate": "2026-09-08",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "中国AI",
+      "AI安全性",
+      "分析",
+      "規制",
+      "DeepSeek"
+    ]
   }
 ];

@@ -19511,6 +19511,26 @@ const ARTICLES_BODY = {
         "url": "https://www.star-history.com/dietrichgebert/ponytail/"
       }
     ]
+  },
+  "nsa-cisa-china-ai-distillation-advisory-2026": {
+    "body": [
+      "米国家安全保障局（NSA）・サイバーセキュリティ・インフラセキュリティ庁（CISA）・連邦捜査局（FBI）が9月8日、共同のサイバーセキュリティ勧告「AA26-251A」を公表したと複数の専門メディアが報じている。勧告は DeepSeek・Alibaba・Moonshot AI・MiniMax・StepFun・Z.AI の中国系AI6社を名指しし、2024年後半以降「攻撃的・悪意があり・標的を絞った」知識蒸留キャンペーンを展開していると主張している。",
+      "知識蒸留（knowledge distillation）自体は、より高性能な大規模モデルの出力を使って小規模モデルを学習させる、機械学習分野で広く使われる正当な手法である。勧告はこの手法自体を問題視しているのではなく、競合他社のモデルから、正規の手段で開発するより短期間・低コストで能力を獲得する目的に悪用されている点を問題視していると報じられている。",
+      "勧告の中でとりわけ具体的な名指しを受けているのが DeepSeek である。同社は2024年後半以降、Claude・GPT・Gemini・Grok など米国製フロンティアモデルに対し組織的な蒸留キャンペーンを行い、2025年初頭にリリースした R1 を含む自社モデルの学習データを合成的に生成していたと報じられている。勧告は、DeepSeek が公表している560万ドルという訓練コストについて、「悪意ある蒸留によって得たデータのコストを除外しており、実態を誤解させるものだ」と指摘しているという。",
+      "勧告はまた、これらのキャンペーンが「各社のAI開発戦略の単なる補完ではなく、中核をなす」ものだとし、中国政府の関与について「認識していた可能性が高い（likely with Chinese government awareness）」という表現を用いていると報じられている。米AI企業に対しては、行動監視ツールの導入、疑わしいアカウントへの出力を密かに劣化させる対応、業界間での脅威情報共有を推奨しているとされる。",
+      "この勧告が示しているのは、米中のAI開発競争が「モデル性能の比較」という枠を超え、**学習データの入手経路そのものが安全保障上の争点になっている**という構図である。学習データを巡る争いは、著作権者がAI企業を訴える形（本サイト既報の Sony Music・Warner Chappell 対 Anthropic 訴訟など）でも起きているが、今回は逆に、米国の政府機関がAI企業の側に立ち、他国のAI企業による「データの不正な入手」を安全保障上の脅威として名指しした点が異なる。ただし、勧告が推奨する「疑わしいアカウントへの出力を密かに劣化させる」という対応が、実際にどの程度の技術的・倫理的な線引きを伴うものかは、複数の二次報道からは詳細を確認できていない。",
+      "本記事は、cisa.gov（勧告原文 AA26-251A）への直接到達が本稿執筆時点のネットワーク環境からできなかったため、Unite.AI・GBHackers・Startup Fortune・Technology.org など、勧告の名指し企業・具体的な数値・引用表現が一致する複数の独立したメディアの報道を突き合わせて整理した。政府機関による一次資料そのものは未確認であり、疑惑の当否そのものについての判断は本記事では行わない。"
+    ],
+    "primarySources": [
+      {
+        "title": "China-Based AI Companies Conducting Industrial-Scale Distillation Campaigns (CISA AA26-251A、未到達)",
+        "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-251a"
+      },
+      {
+        "title": "NSA, CISA, FBI Warn China-Based AI Firms Distill US Frontier Models",
+        "url": "https://www.unite.ai/nsa-cisa-fbi-warn-china-based-ai-firms-distill-us-frontier-models/"
+      }
+    ]
   }
 };
 
