@@ -9329,5 +9329,24 @@ export const ARTICLES_META = [
       "規制",
       "行政"
     ]
+  },
+  {
+    "id": "anthropic-threat-report-kimi-deepseek-routing-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "Anthropic、Kimi と DeepSeek が「利用者のリクエストを Claude に転送していた」と報告 — 5社・約2億件の蒸留を名指し",
+    "excerpt": "Anthropic が9月10日に公表した脅威情報レポートで、中国系 AI 5社（Alibaba・Moonshot AI・DeepSeek・Xiaomi・Z.ai）による**約2億件**の「不正な蒸留」を名指しした。**とりわけ Moonshot と DeepSeek については、自社サービスの利用者のリクエストを黙って Claude に転送し、Claude の回答を自社モデルの回答として表示していた**としている。学習データの無断取得とは別に、**利用者が「どのモデルと話しているか」を知らされていなかった**という論点を含む。",
+    "date": "2026-09-12",
+    "newsDate": "2026-09-10",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "Anthropic",
+      "Moonshot AI",
+      "Kimi",
+      "DeepSeek",
+      "蒸留",
+      "プライバシー"
+    ]
   }
 ];

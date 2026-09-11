@@ -19756,6 +19756,96 @@ const ARTICLES_BODY = {
         "url": "https://techcrunch.com/2026/09/10/ai-agents-are-flooding-public-services-with-new-requests/"
       }
     ]
+  },
+  "anthropic-threat-report-kimi-deepseek-routing-2026": {
+    "body": [
+      "**Anthropic** が2026年9月10日、脅威情報レポート（September 2026 threat intelligence report）を公表した。この中で同社は、中国に拠点を置く AI 5社 — **Alibaba・Moonshot AI・DeepSeek・Xiaomi・Z.ai（智譜）** — による**合計およそ2億件**のやり取りを「不正な蒸留（illicit distillation）」として名指ししている。",
+      "## 学習データの取得と、利用者への提示は別の話",
+      "報告されている行為は、**性質の違う2つ**を含んでいる。一つは、自社モデルの学習のために他社モデルの出力を無断で集めること。これはラボ間の争いであり、[6月の Alibaba に関する告発](?a=anthropic-accuses-alibaba-claude-distillation-fraud-2026)や[米政府機関の共同勧告](?a=nsa-cisa-china-ai-distillation-advisory-2026)で既に扱われた論点と同じ枠に入る。",
+      "もう一つが今回新しく出てきた部分である。Anthropic は、**Moonshot AI が Kimi の利用者のリクエストの一部を、利用者に知らせないまま Claude に転送し、Claude の回答を Kimi の回答として表示していた**としている。ある10日間で**約30万件**の利用者リクエストが中継され、**5,380個の不正アカウント**が使われたという。DeepSeek についても同じ形の中継があったとしている。Anthropic は中国国内からの利用を認めていないため、これらのアカウントはシンガポールや日本に所在するように見えていたとされる。",
+      "## 5社の内訳",
+      "レポートが挙げる規模は社ごとに大きく違う。Alibaba のものが最大で、Anthropic が計測した中で過去最大の規模だとしている。",
+      "## 機微な情報が混じっていたとされる",
+      "Anthropic は、中継された利用者のリクエストの中に機微な内容が含まれていた例として2件を挙げている。**人民解放軍に関係する利用者が Claude に監視カメラ映像の解析を求めた要求を Moonshot が中継した**とされるもの、そして **DeepSeek が中継した要求にロシア政府のデータベースへの有効な認証情報が含まれていた**とされるものである。中継が事実であれば、**利用者は自分の入力が第三国の別の事業者に渡ることを知らないまま送っていた**ことになる。",
+      "## 蒸留そのものは正当な手法である",
+      "誤解を避けるために書いておくと、**知識蒸留（distillation）は機械学習で広く使われる正当な手法**であり、それ自体が問題視されているのではない。Anthropic が問題としているのは、利用規約に反する形での大規模な取得、不正アカウントによる地理的制限の回避、そして利用者への非開示である。**また、これは競合他社である Anthropic 自身による主張であり、同社は当事者でもある。** 検知の手法は公開されておらず、挙げられた数値を外部から検証する手段は現時点で無い。",
+      "## 反論と、確認できていないこと",
+      "本記事の調査時点で、名指しされた5社それぞれからの個別の反論は確認できていない。中国商務部と外交部は2026年の4月・7月にも同種の主張を否定しており、**蒸留疑惑が中国 AI 企業の抑圧の口実に使われるなら「断固たる対抗措置」を取る**と述べている。疑惑の当否そのものについて、本記事では判断しない。",
+      "## 自分でホストしているなら、話が別になる",
+      "開発者にとって重要なのは、**今回の指摘が対象にしているのは Moonshot や DeepSeek が運営するホスト型サービス**であって、公開された重みを自分の環境で動かす経路ではない、という点である。当サイトの [Kimi K3 レビュー](?a=moonshot-kimi-k3-review)が評価したのは後者、つまり1.56TB の重みを自社インフラに置いて動かす使い方で、そこには今回の中継は関係しない。**同じ「Kimi を使う」でも、経路によって話がまったく違う。**",
+      "より一般的な教訓として残るのは、**ホスト型 API の向こうで実際にどのモデルが答えているかは、利用者の側から検証できない**ということである。これはモデルを束ねて中継するアグリゲータや、[Cursor Composer 2 が Kimi K2.5 ベースだと API 解析で判明した件](?a=cursor-composer-2-kimi-2026)のように、提供側が構成を明示していない場合すべてに当てはまる。入力が外に出ては困るのであれば、**契約と規約で縛るか、自分の環境で動かすか**のいずれかになる。",
+      "**注記**: Anthropic のレポート原文（`anthropic.com` および `claude.com`）には、本記事の調査環境のネットワークポリシー上**到達できていない**。記載した数値・社名・具体例は、Bloomberg・CNBC・TechCrunch・Quartz・SCMP など複数の独立した報道が一致している範囲に限った。レポートは蒸留以外の話題（サイバー作戦、影響工作など）も扱っているが、本記事では対象外とした。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 5,
+        "caption": "Anthropic が「不正な蒸留」として挙げた5社（同社レポートの内容として複数の報道が伝える数値）",
+        "headers": [
+          "社",
+          "規模",
+          "内容として挙げられているもの"
+        ],
+        "rows": [
+          [
+            "Alibaba",
+            "5〜7月で 1億5,100万件超。ピークは1日約300万件",
+            "3,500超の不正アカウント。Claude Opus の出力を Qwen の学習に用いたとされる"
+          ],
+          [
+            "Moonshot AI",
+            "5〜7月で 2,300万件超",
+            "5,380の不正アカウント。**Kimi 利用者のリクエストを Claude に中継**。10日間で約30万件"
+          ],
+          [
+            "DeepSeek",
+            "7月の14日間で 1,210万件",
+            "同じく**利用者のリクエストを中継**したとされる"
+          ],
+          [
+            "Z.ai（智譜）",
+            "340万件超",
+            "Opus 4.6 を対象に、サイバー分野の推論能力を狙ったとされる"
+          ],
+          [
+            "Xiaomi",
+            "40万件超の開発者セッション",
+            "1,500のアカウントで再実行したとされる"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Countering misuse of AI: September 2026（Anthropic 脅威情報レポート）",
+        "site": "Anthropic（本記事の調査環境からは到達できず、本文未確認）",
+        "url": "https://www.anthropic.com/threat-intelligence-report-september-2026"
+      },
+      {
+        "title": "Moonshot Secretly Routed User Requests Through Claude, Anthropic Says",
+        "site": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-10/moonshot-secretly-routed-user-requests-through-claude-anthropic-says"
+      },
+      {
+        "title": "Chinese AI labs secretly used millions of Claude exchanges to train their models, Anthropic says",
+        "site": "CNBC",
+        "url": "https://www.cnbc.com/2026/09/11/chinese-ai-labs-moonshot-deepseek-alibaba-anthropic.html"
+      },
+      {
+        "title": "Anthropic details distillation campaigns from Alibaba, Moonshot AI, and DeepSeek",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/10/anthropic-details-distillation-campaigns-from-alibaba-moonshot-ai-and-deepseek/"
+      },
+      {
+        "title": "Anthropic accuses Chinese AI labs of illicit distillation attacks",
+        "site": "Quartz",
+        "url": "https://qz.com/anthropic-chinese-ai-labs-distillation-alibaba-deepseek-moonshot-091126"
+      },
+      {
+        "title": "Moonshot, DeepSeek secretly routed user requests to Claude, Anthropic claims",
+        "site": "South China Morning Post",
+        "url": "https://www.scmp.com/news/us/diplomacy/article/3367112/moonshot-deepseek-secretly-routed-user-requests-claude-anthropic-claims"
+      }
+    ]
   }
 };
 

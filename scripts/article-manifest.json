@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-11",
-  "count": 423,
+  "count": 424,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -80,6 +80,7 @@
     "anthropic-sandbox-runtime-public-oss-2026",
     "anthropic-spacex-colossus-1-compute-deal-2026",
     "anthropic-stainless-acquisition-sdk-infrastructure-2026",
+    "anthropic-threat-report-kimi-deepseek-routing-2026",
     "anthropic-workload-identity-federation-ga-service-accounts-2026",
     "apple-ai-chief-giannandrea-departure-2026",
     "apple-google-siri-gemini-2026",

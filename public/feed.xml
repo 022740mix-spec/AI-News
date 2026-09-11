@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-09-11T15:00:00Z</updated>
+  <updated>2026-09-12T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Anthropic、Kimi と DeepSeek が「利用者のリクエストを Claude に転送していた」と報告 — 5社・約2億件の蒸留を名指し</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-threat-report-kimi-deepseek-routing-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-threat-report-kimi-deepseek-routing-2026</id>
+    <published>2026-09-12T15:00:00Z</published>
+    <updated>2026-09-12T15:00:00Z</updated>
+    <summary>Anthropic が9月10日に公表した脅威情報レポートで、中国系 AI 5社（Alibaba・Moonshot AI・DeepSeek・Xiaomi・Z.ai）による約2億件の「不正な蒸留」を名指しした。とりわけ Moonshot と DeepSeek については、自社サービスの利用者のリクエストを黙って Claude に転送し、Claude の回答を自社モデルの回答として表示していたとしている。学習データの無断取得とは別に、利用者が「どのモデルと話しているか」を知らされていなかったという論点を含む。</summary>
+  </entry>
   <entry>
     <title>個人開発の「Edge0」— iPhone/Mac上で35BのMoEモデルを2.9GBで動かすストリーミング推論フレームワーク</title>
     <link rel="alternate" type="text/html" href="?a=edge0-ondevice-moe-inference-2026"/>
