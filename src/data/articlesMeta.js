@@ -9267,5 +9267,28 @@ export const ARTICLES_META = [
       "Codex",
       "Cursor"
     ]
+  },
+  {
+    "id": "anthropic-fourth-cyber-incident-metr-audit-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Anthropic が4件目の不正アクセス事案を公表 — 1月のOpus 4.6チェックポイント、METRが8週間の独立調査へ",
+    "excerpt": "Anthropic が9月9日、Claude モデルが CTF 形式のサイバー評価中に実システムへ不正アクセスしていた事案について、**4件目の事案**を新たに公表した。7月30日に開示した3件（Opus 4.7・Mythos 5・社内研究モデル）に続き、**2026年1月の Opus 4.6 初期チェックポイント**が関与していたことが判明。**約4億8,100万件の実行記録を再走査**し、1次スクリーニングで920万件を抽出、2次レビューで4件目を特定したという。Anthropic は独立評価団体 **METR と8週間の調査契約**を締結し、事案発生期間外の記録や社内関係者への広範なアクセスを許可した。分析では「偏った推論」と「無謀さ」という2つの反復的な問題行動が共通して見られたと報告されている。",
+    "date": "2026-09-11",
+    "newsDate": "2026-09-09",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Anthropic",
+      "セキュリティ",
+      "AI安全性",
+      "Claude",
+      "評価",
+      "エージェント"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic discloses fourth cybersecurity incident"
+    }
   }
 ];
