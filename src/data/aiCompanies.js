@@ -788,6 +788,37 @@ const _AI_COMPANIES_UNSORTED = [
     notes: ["2025年1月の R1 リリースで業界に衝撃", "MIT ライセンスのオープンウェイトで公開"],
   },
   {
+    id: "xiaomi",
+    name: "Xiaomi",
+    legalName: "小米集団（Xiaomi Corporation）",
+    country: "中国",
+    hq: "北京",
+    foundedYear: 2010,
+    employees: "約6万名（2025年末）。うち研究開発職が2万6千名超",
+    revenue: "2025年通期 4,573億人民元（前年比 +25.0%）",
+    stock: {
+      listed: true,
+      tickers: [
+        { symbol: "1810", exchange: "HKEX", name: "普通株（香港ドル建て）" },
+        { symbol: "81810", exchange: "HKEX", name: "普通株（人民元建て）" },
+      ],
+      detail: "2018年に香港上場。スマートフォン・家電・EV を主力とする事業会社で、AI 専業ではない",
+    },
+    products: [
+      "MiMo（オープンウェイトの言語モデル）",
+      "MiMo-V2.5-Pro",
+      "Xiao AI（小愛同学）",
+      "HyperOS",
+    ],
+    officialUrl: "https://www.mi.com/",
+    notes: [
+      "MiMo は GitHub と Hugging Face でオープンウェイト公開。MiMo-7B 系は Apache-2.0（LLM-Core-Team Xiaomi）",
+      "2026年4月に MiMo-V2.5 系列（Pro・ベース・TTS・ASR）を公開",
+      "2026年3月、雷軍CEO が今後3年で AI に87億ドル以上を投資すると表明",
+      "2026年9月の Anthropic 脅威情報レポートで、1,500アカウントを使い40万件超の開発者セッションを再実行したと指摘された。Anthropic 側の主張であり、同社からの反論は未確認",
+    ],
+  },
+  {
     id: "cognition",
     name: "Cognition",
     legalName: "Cognition AI, Inc.",
