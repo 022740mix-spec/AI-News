@@ -1218,13 +1218,16 @@ const _AI_COMPANIES_UNSORTED = [
     revenue: "非公開（未上場）",
     stock: {
       listed: false,
-      detail: "未上場。Salesforce Ventures・Sequoia・Google 等が出資、評価額 $4.5B（2023年）",
+      detail: "未上場。2026年9月2日に NVIDIA が総額 $12.93B（株主への $11.9B ＋ 従業員向けリテンション最大 $1.0B）での買収の確定契約を締結した。ただしクロージングはまだ済んでいない。2027年前半を見込み、米国と EU の規制当局の承認が条件。それ以前の出資は Salesforce Ventures・Sequoia・Google 等で、2023年時点の評価額は $4.5B",
     },
     products: ["Hugging Face Hub", "Transformers / Datasets / Accelerate（OSS）", "Spaces", "Inference Endpoints"],
     officialUrl: "https://huggingface.co/",
     notes: [
       "オープンソース ML モデル・データセットのデファクト共有プラットフォーム",
-      "100万モデル超を公開、Meta・Google・Mistral・DeepSeek 等の OSS モデル配布拠点",
+      "300万超のモデルと50万件超のデータセットを公開。開発者1,800万人超、企業20万社超が利用するとされる",
+      "Meta・Google・Mistral・DeepSeek 等の OSS モデル配布拠点",
+      "NVIDIA は買収にあたり、プラットフォームを開かれた状態に保ち、利用に NVIDIA 製コンピュートを必須とせず、マルチクラウド・マルチアクセラレータ対応を継続すると表明している",
+      "買収前、NVIDIA から評価額 $7B での $500M 出資を一度断った経緯が報じられている",
     ],
   },
   {
