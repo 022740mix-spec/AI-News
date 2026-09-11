@@ -75,6 +75,31 @@ function findPromiseDates(text) {
     const y = Number(m[1]), mo = Number(m[2]);
     if (mo >= 1 && mo <= 12) add(new Date(Date.UTC(y, mo, 0)), m[0], "年月");
   }
+  // 2027年前半 / 2027年後半 / 2027年上半期 / 2027年下半期
+  //
+  // **半期の言い方を落としていた。** 2026年9月、Hugging Face の買収について
+  // 「2027年前半を見込み」と書いたところ、四半期・年月・年月日のどれにも
+  // 当たらず**候補にすら出なかった**。買収のクロージングは半期で告知される
+  // ことが多く、台帳がいちばん腐りやすい形がここである。
+  //
+  // 「2020年代前半」は拾わない。`年?` の直後に半期の語が来る場合だけを見て
+  // いるため、「2020年代前半」は `代` で外れる。
+  for (const m of text.matchAll(/(\d{4})\s*年?\s*(前半|後半|上半期|下半期)/g)) {
+    const y = Number(m[1]);
+    const second = m[2] === "後半" || m[2] === "下半期";
+    add(new Date(Date.UTC(y, second ? 12 : 6, 0)), m[0], "半期");
+  }
+  // H1 2027 / 2027 H1
+  //
+  // **`H100` に当たらない。** `H1` の次に4桁が続く必要があるため、
+  // `H100`（3桁）も `H200` も外れる。半期を表す語は増やしすぎない。
+  // 拾える表現を広げるほど、誤検出で検査そのものが無視される。
+  for (const m of text.matchAll(/H([12])\s*(\d{4})/g)) {
+    add(new Date(Date.UTC(Number(m[2]), Number(m[1]) * 6, 0)), m[0], "半期");
+  }
+  for (const m of text.matchAll(/(\d{4})\s*H([12])/g)) {
+    add(new Date(Date.UTC(Number(m[1]), Number(m[2]) * 6, 0)), m[0], "半期");
+  }
   // 2026年6月16日
   for (const m of text.matchAll(/(\d{4})年(\d{1,2})月(\d{1,2})日/g)) {
     const y = Number(m[1]), mo = Number(m[2]), d = Number(m[3]);
