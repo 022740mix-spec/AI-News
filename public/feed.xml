@@ -64,6 +64,14 @@
     <summary>GovAI（Centre for the Governance of AI）と Hertie School の研究者が、12ヶ国の行政サービスを調査し、AIエージェントの利用によって申請・苦情件数が急増した84件の事例を11の法域で特定したとする研究を発表したと複数メディアが報じている。英国の住宅オンブズマンへの苦情は ChatGPT 登場後に2倍以上（2022年の2,600件→2025年に7,000件超）、米消費者金融保護局（CFPB）の苦情は同期間で5倍になったという。研究は、増加の大半が本来受給資格のある人が「申請の手間」という行政負担を AI に肩代わりさせて権利を行使できるようになった結果だと位置づけつつ、一部の政府は手数料の復活や IP 制限といった摩擦の追加で対応しており、それがデジタルに不慣れな層や低所得層から先に締め出す副作用を伴うと指摘している。</summary>
   </entry>
   <entry>
+    <title>DeepSeek が V4.1 Flash を公開 — ネイティブ画像理解を搭載、9月14日から V4 Pro の全リクエストを自動で肩代わり</title>
+    <link rel="alternate" type="text/html" href="?a=deepseek-v4-1-flash-vision-pro-retirement-2026"/>
+    <id>tag:ai-tool-news.jp,2026:deepseek-v4-1-flash-vision-pro-retirement-2026</id>
+    <published>2026-09-11T15:00:00Z</published>
+    <updated>2026-09-11T15:00:00Z</updated>
+    <summary>DeepSeek が9月10日、新アーキテクチャ世代の第一弾 V4.1 Flash を公開した。552B 総パラメータの疎な MoE で、入力読解に8B・出力生成に16Bのみを活性化しつつ画像のネイティブ理解を新たに搭載、コンテキストは1Mトークン、ライセンスは MIT。9月14日正午（北京時間）以降、V4 Pro 宛のリクエストはすべて自動で V4.1 Flash に転送され、課金も Flash 料金に切り替わる——後継の V4.1 Pro が出るまでの暫定運用である。エージェント系ベンチマークで GPT-5.6 Sol や Claude Opus-5.0 を上回るとする数値も公表しているが、DeepSeek 自身の発表値であり独立検証はまだない。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が Rust 製 Protobuf 実装「Buffa」を公式 GitHub で公開 — ゼロコピー読み取りで最大+290%、no_std対応</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-buffa-rust-protobuf-oss-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-buffa-rust-protobuf-oss-2026</id>

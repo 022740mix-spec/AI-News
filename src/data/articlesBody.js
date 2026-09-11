@@ -19846,6 +19846,33 @@ const ARTICLES_BODY = {
         "url": "https://www.scmp.com/news/us/diplomacy/article/3367112/moonshot-deepseek-secretly-routed-user-requests-claude-anthropic-claims"
       }
     ]
+  },
+  "deepseek-v4-1-flash-vision-pro-retirement-2026": {
+    "body": [
+      "**DeepSeek** が2026年9月10日、新しいアーキテクチャ世代の最初のモデルとなる **V4.1 Flash** を公開した。自社ブログで「新アーキテクチャファミリーの中で最も小さいモデルで、ネイティブな視覚理解を持つ」と位置づけている。",
+      "## アーキテクチャと料金",
+      "**552B の総パラメータを持つ疎な Mixture-of-Experts** で、入力の読解には**8B**、出力の生成には**16B**しか活性化しない。**画像のネイティブ理解**を新たに備え、コンテキスト長は**1Mトークン**、最大出力は**384Kトークン**。ライセンスは **MIT**で、重みは Hugging Face で公開されている。API 料金はオフピーク時で**入力 $0.15 / 百万トークン（キャッシュヒット時は $0.003）、出力 $0.60 / 百万トークン**とされ、ピーク時間帯はいずれも倍額になる。",
+      "## V4 Pro は9月14日から自動で置き換わる",
+      "DeepSeek は、**9月14日正午（北京時間）以降、`deepseek-v4-pro` 宛のすべてのリクエストを V4.1 Flash に自動転送し、課金も V4.1 Flash の料金体系に切り替える**としている。理由として「広範なテストの結果、V4.1 Flash は性能・コスト・速度・処理時間の総合で V4 Pro を上回った」ことを挙げている。後継となる V4.1 Pro が出るまでの暫定措置で、旧 V4 Pro を明示的に使い続ける手段は案内されていない。",
+      "## ベンチマークは自社発表値のみ",
+      "DeepSeek は、5つの難関エージェント系ベンチマークのうち4つで OpenAI の GPT-5.6 Sol と Anthropic の Claude Opus-5.0 を上回ったと主張している。DeepSWE v1.1 で74.2（Sol は73.0）、AutomationBench で54.8（同45.8）、Agent's Last Exam で31.8（同26.7）、CyberGym で88.1（同84.5）という数値を挙げている。**いずれも DeepSeek 自身が発表した数値であり、本稿執筆時点で第三者による独立検証は確認できていない。**",
+      "## 位置づけ",
+      "DeepSeek はこれまでも V4 Pro（1.6T MoE）と V4 Flash（284B、後に画像理解を追加した V4-Flash-Vision-Exp）を並行して提供してきたが、V4.1 Flash は両者とは異なる新アーキテクチャの初弾であり、当面は同社のラインアップで事実上の主力モデルとなる。中国系 AI 各社が低価格・高性能モデルで欧米勢に対抗する動きは、[Alibaba の Qwen3.8-Max オープンウェイト化](?a=alibaba-qwen-3-8-max-open-weight-2-4t-2026)や[Moonshot AI の Kimi K3](?a=moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026)に続くものである。"
+    ],
+    "primarySources": [
+      {
+        "title": "deepseek-ai/FlashMLA（GitHub, 公式リポジトリ）",
+        "url": "https://github.com/deepseek-ai/FlashMLA"
+      },
+      {
+        "title": "deepseek-ai/DeepSeek-V4.1-Flash（Hugging Face モデルカード）",
+        "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash"
+      },
+      {
+        "title": "DeepSeek API ドキュメント",
+        "url": "https://api-docs.deepseek.com/"
+      }
+    ]
   }
 };
 

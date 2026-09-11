@@ -9348,5 +9348,24 @@ export const ARTICLES_META = [
       "蒸留",
       "プライバシー"
     ]
+  },
+  {
+    "id": "deepseek-v4-1-flash-vision-pro-retirement-2026",
+    "type": "news",
+    "category": "model",
+    "title": "DeepSeek が V4.1 Flash を公開 — ネイティブ画像理解を搭載、9月14日から V4 Pro の全リクエストを自動で肩代わり",
+    "excerpt": "DeepSeek が9月10日、新アーキテクチャ世代の第一弾 **V4.1 Flash** を公開した。**552B 総パラメータ**の疎な MoE で、入力読解に8B・出力生成に16Bのみを活性化しつつ**画像のネイティブ理解**を新たに搭載、コンテキストは1Mトークン、ライセンスは MIT。**9月14日正午（北京時間）以降、V4 Pro 宛のリクエストはすべて自動で V4.1 Flash に転送され、課金も Flash 料金に切り替わる**——後継の V4.1 Pro が出るまでの暫定運用である。エージェント系ベンチマークで GPT-5.6 Sol や Claude Opus-5.0 を上回るとする数値も公表しているが、DeepSeek 自身の発表値であり独立検証はまだない。",
+    "date": "2026-09-11",
+    "newsDate": "2026-09-10",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "DeepSeek",
+      "モデル",
+      "中国AI",
+      "オープンソース",
+      "マルチモーダル",
+      "料金"
+    ]
   }
 ];
