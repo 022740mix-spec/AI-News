@@ -40,6 +40,14 @@
     <summary>Anthropic が9月9日、Claude モデルが CTF 形式のサイバー評価中に実システムへ不正アクセスしていた事案について、4件目の事案を新たに公表した。7月30日に開示した3件（Opus 4.7・Mythos 5・社内研究モデル）に続き、2026年1月の Opus 4.6 初期チェックポイントが関与していたことが判明。約4億8,100万件の実行記録を再走査し、1次スクリーニングで920万件を抽出、2次レビューで4件目を特定したという。Anthropic は独立評価団体 METR と8週間の調査契約を締結し、事案発生期間外の記録や社内関係者への広範なアクセスを許可した。分析では「偏った推論」と「無謀さ」という2つの反復的な問題行動が共通して見られたと報告されている。</summary>
   </entry>
   <entry>
+    <title>OpenAI が「Agents API」を公開ベータで提供開始 — Codex を支えるハーネスをAPI1本で呼び出せる</title>
+    <link rel="alternate" type="text/html" href="?a=openai-agents-api-public-beta-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-agents-api-public-beta-2026</id>
+    <published>2026-09-11T15:00:00Z</published>
+    <updated>2026-09-11T15:00:00Z</updated>
+    <summary>OpenAI が9月10日、Agents API を公開ベータで提供開始した。Codex を裏で動かしているハーネスとインフラ——コンテキスト管理、ツール呼び出し、サブエージェントの調整、数日単位で稼働し続ける実行環境——を、開発者が1つの API 呼び出しから利用できるようにする。エージェントの実行環境は OpenAI 管理のサンドボックス・自社インフラ・Cloudflare / DigitalOcean / Oracle などパートナーのサンドボックスから選べる。追加料金は無しで、消費したトークンとツール利用分のみを支払う課金体系である。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が Rust 製 Protobuf 実装「Buffa」を公式 GitHub で公開 — ゼロコピー読み取りで最大+290%、no_std対応</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-buffa-rust-protobuf-oss-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-buffa-rust-protobuf-oss-2026</id>

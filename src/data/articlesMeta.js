@@ -9290,5 +9290,27 @@ export const ARTICLES_META = [
       "src": "logos/anthropic.svg",
       "alt": "Anthropic discloses fourth cybersecurity incident"
     }
+  },
+  {
+    "id": "openai-agents-api-public-beta-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI が「Agents API」を公開ベータで提供開始 — Codex を支えるハーネスをAPI1本で呼び出せる",
+    "excerpt": "OpenAI が9月10日、**Agents API** を公開ベータで提供開始した。**Codex を裏で動かしているハーネスとインフラ**——コンテキスト管理、ツール呼び出し、サブエージェントの調整、数日単位で稼働し続ける実行環境——を、開発者が1つの API 呼び出しから利用できるようにする。エージェントの実行環境は OpenAI 管理のサンドボックス・自社インフラ・Cloudflare / DigitalOcean / Oracle などパートナーのサンドボックスから選べる。**追加料金は無し**で、消費したトークンとツール利用分のみを支払う課金体系である。",
+    "date": "2026-09-11",
+    "newsDate": "2026-09-10",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "Codex",
+      "エージェント",
+      "API",
+      "開発ツール"
+    ],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI Agents API public beta"
+    }
   }
 ];

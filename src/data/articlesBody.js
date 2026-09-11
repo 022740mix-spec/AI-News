@@ -19716,6 +19716,26 @@ const ARTICLES_BODY = {
         "url": "https://thenextweb.com/news/anthropic-alignment-assessment-cybersecurity-incidents-481-million-transcripts"
       }
     ]
+  },
+  "openai-agents-api-public-beta-2026": {
+    "body": [
+      "OpenAI が9月10日、**Agents API** を公開ベータとして全開発者向けに提供開始したと公式発表および複数の技術メディアが報じている。これまで ChatGPT の Codex 機能の内部でのみ使われていた「ハーネス」——長時間にわたるエージェントの実行を支える基盤——を、開発者が自分のアプリケーションから直接呼び出せるようにする API である。",
+      "**何が新しいのか。** Codex は単なるモデル呼び出しではなく、その裏で「コンテキストの管理」「ツールの効率的な呼び出し」「サブエージェント間の調整」「数日単位で処理を継続させるための復旧・再開の仕組み」といった一連のインフラを動かしている。Agents API は、この**ハーネスそのものを API 経由で公開する**という位置づけであり、開発者はツールの定義と実行環境の選択さえ行えば、セッション管理やオーケストレーションの実装を自前で作り込む必要がなくなる。",
+      "**実行環境は3種類から選べる。** OpenAI が管理するホスト型サンドボックス、開発者自身のインフラ、そして Cloudflare・DigitalOcean・Oracle など提携先が提供するサンドボックスのいずれかを選択できるとされる。エージェントはこの環境内でファイル操作やコード実行、中間結果の保存を行いながら、長時間にわたってタスクを継続できる設計だという。",
+      "**課金は追加料金なし。** 公開ベータの利用に別建ての料金は発生せず、消費したトークンと利用したツール分のみを支払う体系だと報じられている。これは、複雑なエージェント基盤を独自に構築するコストとハードルを下げ、Codex 相当の機能を自社サービスに組み込みたい開発者の裾野を広げる狙いとみられる。",
+      "**背景にある利用実態。** 2026年6月時点で Codex のヘビーユーザーは1日平均60時間超もエージェントを稼働させているという報道があり、長時間・高頻度のエージェント運用がすでに一般的になりつつあることが、今回のAPI化の前提になっていると考えられる。",
+      "**開発者視点で見た意味。** これまで「エージェントらしい振る舞い」——複数ステップの計画立案、失敗からの復旧、長時間タスクの継続——を自作しようとすると、セッション管理やコンテキスト圧縮、サブエージェント間の通信など地味だが手間のかかる基盤部分の実装が必要だった。Anthropic も同様の発想で Claude Agent SDK やエージェント向けのインフラ整備を進めており、**「モデル単体の性能」から「エージェントを安定運用するための基盤」へと競争の重心が移っている**ことを示す一例と言える。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing the Agents API (OpenAI)",
+        "url": "https://openai.com/index/introducing-the-agents-api/"
+      },
+      {
+        "title": "OpenAI Launches the Agents API in Public Beta (MarkTechPost)",
+        "url": "https://www.marktechpost.com/2026/09/10/openai-launches-the-agents-api-in-public-beta-putting-the-codex-harness-behind-one-api-call/"
+      }
+    ]
   }
 };
 
