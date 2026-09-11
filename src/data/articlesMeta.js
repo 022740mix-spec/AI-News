@@ -9312,5 +9312,22 @@ export const ARTICLES_META = [
       "src": "logos/openai.svg",
       "alt": "OpenAI Agents API public beta"
     }
+  },
+  {
+    "id": "feature-agentic-flooding-government-services-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】「エージェント的洪水」が行政サービスを襲う — 11ヶ国84件、英住宅オンブズマンの苦情は2,600件から7,000件超に",
+    "excerpt": "GovAI（Centre for the Governance of AI）と Hertie School の研究者が、**12ヶ国の行政サービスを調査し、AIエージェントの利用によって申請・苦情件数が急増した84件の事例を11の法域で特定した**とする研究を発表したと複数メディアが報じている。英国の住宅オンブズマンへの苦情は ChatGPT 登場後に2倍以上（2022年の2,600件→2025年に7,000件超）、米消費者金融保護局（CFPB）の苦情は同期間で5倍になったという。研究は、増加の大半が**本来受給資格のある人が「申請の手間」という行政負担を AI に肩代わりさせて権利を行使できるようになった結果**だと位置づけつつ、一部の政府は手数料の復活や IP 制限といった摩擦の追加で対応しており、それが**デジタルに不慣れな層や低所得層から先に締め出す**副作用を伴うと指摘している。",
+    "date": "2026-09-11",
+    "newsDate": "2026-09-10",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "エージェント",
+      "分析",
+      "規制",
+      "行政"
+    ]
   }
 ];
