@@ -24,6 +24,14 @@
     <summary>Anthropic が9月10日に公表した脅威情報レポートには、[中国系AI5社による蒸留の名指し](?a=anthropic-threat-report-kimi-deepseek-routing-2026)とは別に、従来型兵器・生物兵器への悪用を扱う章がある。ロシア拠点の脅威主体による自律攻撃可能な FPV 特攻ドローン群の開発、イエメンのフーシ派によるミサイル誘導・飛行制御ソフトウェアへの利用、中国3件・ロシア2件・イエメン1件の従来型兵器関連の事例を検知・遮断したとし、研究機関に所属する科学者による生物兵器研究への悪用を5件阻止したとしている。対象期間は2025年12月から2026年8月。</summary>
   </entry>
   <entry>
+    <title>個人開発の「Context Mode」が22万スター超 — ツール出力を仮想環境に隔離し、コンテキスト消費を98%削減</title>
+    <link rel="alternate" type="text/html" href="?a=context-mode-agent-output-sandboxing-2026"/>
+    <id>tag:ai-tool-news.jp,2026:context-mode-agent-output-sandboxing-2026</id>
+    <published>2026-09-12T15:00:00Z</published>
+    <updated>2026-09-12T15:00:00Z</updated>
+    <summary>トルコの開発者 mksglu が個人開発する「Context Mode」が GitHub で22,200スター・1,600フォークを集めている。コーディングエージェントがコマンド実行結果やファイル内容をそのままコンテキストに読み込むのではなく、隔離したサブプロセス上で処理し、標準出力だけを会話に渡すことで、README 上の記載ではコンテキスト消費を98%削減するという。Claude Code・Cursor・GitHub Copilot CLI・Gemini CLI・OpenCode・OpenClaw など17以上のプラットフォームに対応し、ライセンスは Elastic License 2.0。</summary>
+  </entry>
+  <entry>
     <title>個人開発の「Edge0」— iPhone/Mac上で35BのMoEモデルを2.9GBで動かすストリーミング推論フレームワーク</title>
     <link rel="alternate" type="text/html" href="?a=edge0-ondevice-moe-inference-2026"/>
     <id>tag:ai-tool-news.jp,2026:edge0-ondevice-moe-inference-2026</id>

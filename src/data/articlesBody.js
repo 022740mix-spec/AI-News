@@ -19900,6 +19900,21 @@ const ARTICLES_BODY = {
         "url": "https://www.cnn.com/2026/09/10/health/anthropic-bioweapons-report"
       }
     ]
+  },
+  "context-mode-agent-output-sandboxing-2026": {
+    "body": [
+      "コーディングエージェントを長時間使い続けると、ツールの実行結果やファイルの中身がそのままコンテキストウィンドウに積み上がり、やがて会話が圧縮（compaction）されて過去の作業内容を失う——この問題に取り組む個人開発ツール「**Context Mode**」（開発者: mksglu / Mert Köseoğlu 氏）が、GitHub で**22,200スター・1,600フォーク**を集めている。",
+      "仕組みは大きく4つ。第一に、**出力のサンドボックス化**。JavaScript・Python・Shell・Go・Rust など12種のランタイムをそれぞれ隔離したサブプロセスで動かし、生のデータを会話に渡さず標準出力のみを取り込む。第二に、**セッションの永続化**。ファイル編集・Git操作・エラー・タスク・判断の記録を SQLite の FTS5（全文検索インデックス）に蓄積し、会話が圧縮された後もエージェントが作業状態を復元できるようにする。第三に、**コードによる分析**。複数ファイルをそのままコンテキストに読み込む代わりに、モデルが計算スクリプトを生成し、結果だけを受け取る。第四に、出力の**形式は縛らない**——生データはコンテキストの外に置くが、モデルの応答の書式そのものを制約しないことで、推論ベンチマークの低下を避けているという。",
+      "README の記載によれば、これらのフックを有効にした場合の**コンテキスト削減効果は約98%**で、圧縮までのセッション時間を約30分から約3時間に延ばせるとしている。対応プラットフォームは Claude Code・Cursor・VS Code Copilot・JetBrains Copilot・GitHub Copilot CLI・Gemini CLI・OpenCode・OpenClaw・Codex CLI・Kiro・Zed など17以上に及ぶ。ライセンスは Elastic License 2.0（ELv2）で、per-seat の課金や利用制限は無いとされている。",
+      "本記事の内容は、GitHub 上の同リポジトリ README を直接確認して作成した。数値（98%削減、スター数等）は開発者自身の主張であり、第三者による独立した計測結果ではない点には留意が必要である。"
+    ],
+    "primarySources": [
+      {
+        "title": "mksglu/context-mode: Context window optimization for AI coding agents",
+        "site": "GitHub",
+        "url": "https://github.com/mksglu/context-mode"
+      }
+    ]
   }
 };
 

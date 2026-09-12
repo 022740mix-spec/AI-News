@@ -9384,5 +9384,21 @@ export const ARTICLES_META = [
       "セキュリティ",
       "規制"
     ]
+  },
+  {
+    "id": "context-mode-agent-output-sandboxing-2026",
+    "type": "news",
+    "category": "product",
+    "title": "個人開発の「Context Mode」が22万スター超 — ツール出力を仮想環境に隔離し、コンテキスト消費を98%削減",
+    "excerpt": "トルコの開発者 mksglu が個人開発する「Context Mode」が GitHub で**22,200スター・1,600フォーク**を集めている。コーディングエージェントがコマンド実行結果やファイル内容をそのままコンテキストに読み込むのではなく、**隔離したサブプロセス上で処理し、標準出力だけを会話に渡す**ことで、README 上の記載では**コンテキスト消費を98%削減**するという。Claude Code・Cursor・GitHub Copilot CLI・Gemini CLI・OpenCode・OpenClaw など17以上のプラットフォームに対応し、ライセンスは Elastic License 2.0。",
+    "date": "2026-09-12",
+    "newsDate": "2026-09-11",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "エージェント",
+      "オープンソース",
+      "コンテキストウィンドウ"
+    ]
   }
 ];
