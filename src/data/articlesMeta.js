@@ -9416,5 +9416,27 @@ export const ARTICLES_META = [
       "規制",
       "AI安全性"
     ]
+  },
+  {
+    "id": "zhipu-zai-glm-5-3-post-training-cyber-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Z.ai が GLM-5.3 / GLM-5.3-Flash を公開 — ベース重みは GLM-5.2 のまま、ポストトレーニングだけで強化しサイバー防御用途に対応",
+    "excerpt": "中国 **Z.ai**（清華大学発 Zhipu AI の国際ブランド）が8月14日に **GLM-5.3**、8月26日に軽量版 **GLM-5.3-Flash** を公開した。**ベースの重みは GLM-5.2 と同一**で、大規模な長期ホライズンのポストトレーニングだけで性能を引き上げた点が特徴。Terminal-Bench 3.0・CyberGym など新設・改訂されたベンチマークでの結果が中心で、旧版との数値比較はできない。AI News では GLM-5.2（6月）以来の更新が抜けていたため、まとめて掲載する。",
+    "date": "2026-09-12",
+    "newsDate": "2026-08-26",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Z.ai",
+      "GLM",
+      "中国AI",
+      "オープンソース",
+      "セキュリティ"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "Z.ai GLM-5.3 リリース"
+    }
   }
 ];

@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-12",
-  "count": 428,
+  "count": 429,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -430,6 +430,7 @@
     "zaporizhzhia-autonomous-drone-civilian-deaths-2026",
     "zed-ai",
     "zhipu-zai-glm-5-2-open-source-coding-1m-context-2026",
+    "zhipu-zai-glm-5-3-post-training-cyber-2026",
     "zperiod-3d-periodic-table-high-school-student-2026"
   ]
 }
