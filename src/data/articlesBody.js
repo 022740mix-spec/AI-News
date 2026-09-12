@@ -19956,6 +19956,26 @@ const ARTICLES_BODY = {
         "url": "https://github.com/zai-org/GLM-5"
       }
     ]
+  },
+  "openai-tunnel-client-secure-mcp-2026": {
+    "body": [
+      "OpenAI の公式 GitHub 組織に、企業名検索や GitHub Trending、Hacker News のいずれからも拾いにくい形でひっそり公開されているツールがある。**tunnel-client**、通称「Secure MCP Tunnel」である。",
+      "**解決している課題はシンプルである。** ノートPCや社内VM、Kubernetesクラスタ、あるいは完全に閉じた社内ネットワーク上で動く MCP（Model Context Protocol）サーバーを、ChatGPT や Codex のような OpenAI がホストする製品から呼び出したい場合がある。従来であれば、そのサーバーを外部からアクセス可能にするために新しい受信ファイアウォールルールを開けたり、公開エンドポイントを立てたりする必要があった。tunnel-client は、**そうした変更を一切行わずに**、ローカルの MCP サーバーと OpenAI 側のサービスを安全に橋渡しする。",
+      "**仕組みはロングポーリング方式である。** クライアントは OpenAI 側のトンネルサービスに対して通常の HTTPS リクエスト（`GET /v1/tunnels/{tunnel_id}/poll` など）を定期的に送り、コントロールプレーンから届いた JSON-RPC リクエストを、手元で設定した MCP サーバーに HTTP・stdio・インメモリのいずれかの経路で転送する。ローカル側にはヘルスチェック用エンドポイントや管理用の簡易UIも用意されている。",
+      "GitHub 上のリリース履歴で確認できる限り、初出は5月7日の v0.0.8 で、7月2日の v0.0.10 では Go SDK と Python・TypeScript ラッパーが追加され、8月20日の v0.0.12 ではランタイムバイナリの署名検証が強化された。**直近の v0.0.14（9月1日）では、複数レプリカ環境での OAuth・内部通信のロールアウト対応と、MCP の新しい「初期化不要（self-contained/sessionless）」なリクエスト形式への対応が加わっている。** 五月から九月まで途切れず機能追加が続いており、実験的なプロトタイプではなく実運用を意識した継続開発であることがうかがえる。",
+      "**なぜ地味だが取り上げる価値があるか。** MCP はエージェントがツールや社内システムに接続するための標準になりつつあるが、「社内ネットワークの奥にあるサーバーを、安全性を保ったまま外部のホスト型エージェントに繋ぐ」という運用上の課題は、これまであまり語られてこなかった。企業が自社の機密データやレガシーシステムに触れる MCP サーバーを、パブリックインターネットに晒さずに ChatGPT や Codex から使わせたい場合、tunnel-client のような仕組みは実務上の選択肢になりうる。スター数がまだ大きく伸びていない段階でも、公式組織からの継続的な機能拡張は記事化の価値がある——という本サイトの方針どおりの事例である。",
+      "**確認できていないこと。** tunnel-client がどの程度の企業・チームで実際に使われているか、利用実績を示す公式な発表は見つかっていない。また OpenAI 公式ブログ（`openai.com`）側でのアナウンスの有無は、本稿執筆時点のネットワーク環境から確認できなかった。ここに記した内容はすべて、GitHub 上の README・リリースノートを直接読んで確認したものである。"
+    ],
+    "primarySources": [
+      {
+        "title": "openai/tunnel-client — 公式 GitHub リポジトリ（README・アーキテクチャ説明）",
+        "url": "https://github.com/openai/tunnel-client"
+      },
+      {
+        "title": "openai/tunnel-client — Releases（v0.0.8〜v0.0.14 の変更履歴）",
+        "url": "https://github.com/openai/tunnel-client/releases"
+      }
+    ]
   }
 };
 

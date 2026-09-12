@@ -48,6 +48,14 @@
     <summary>中国 Z.ai（清華大学発 Zhipu AI の国際ブランド）が8月14日に GLM-5.3、8月26日に軽量版 GLM-5.3-Flash を公開した。ベースの重みは GLM-5.2 と同一で、大規模な長期ホライズンのポストトレーニングだけで性能を引き上げた点が特徴。Terminal-Bench 3.0・CyberGym など新設・改訂されたベンチマークでの結果が中心で、旧版との数値比較はできない。AI News では GLM-5.2（6月）以来の更新が抜けていたため、まとめて掲載する。</summary>
   </entry>
   <entry>
+    <title>OpenAI が「Secure MCP Tunnel」をひっそり整備 — ローカル・社内ネットワークのMCPサーバーを、ファイアウォールを開けずに ChatGPT / Codex に接続</title>
+    <link rel="alternate" type="text/html" href="?a=openai-tunnel-client-secure-mcp-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-tunnel-client-secure-mcp-2026</id>
+    <published>2026-09-12T15:00:00Z</published>
+    <updated>2026-09-12T15:00:00Z</updated>
+    <summary>OpenAI が公式 GitHub 組織で公開している tunnel-client は、ノートPCや社内VM・Kubernetesクラスタ上で動くローカル・非公開の MCP サーバーを、新しい受信ファイアウォールルールや公開エンドポイントを一切作らずに ChatGPT・Codex などの OpenAI ホスト型製品から利用できるようにするツールである。企業名検索や GitHub Trending では拾いにくい地味な公式リポジトリだが、5月の初期リリースから9月1日の最新版まで継続的に機能追加されている。</summary>
+  </entry>
+  <entry>
     <title>個人開発の「Edge0」— iPhone/Mac上で35BのMoEモデルを2.9GBで動かすストリーミング推論フレームワーク</title>
     <link rel="alternate" type="text/html" href="?a=edge0-ondevice-moe-inference-2026"/>
     <id>tag:ai-tool-news.jp,2026:edge0-ondevice-moe-inference-2026</id>

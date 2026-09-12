@@ -9438,5 +9438,26 @@ export const ARTICLES_META = [
       "src": "articles/cover-model-api.svg",
       "alt": "Z.ai GLM-5.3 リリース"
     }
+  },
+  {
+    "id": "openai-tunnel-client-secure-mcp-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI が「Secure MCP Tunnel」をひっそり整備 — ローカル・社内ネットワークのMCPサーバーを、ファイアウォールを開けずに ChatGPT / Codex に接続",
+    "excerpt": "OpenAI が公式 GitHub 組織で公開している **tunnel-client** は、ノートPCや社内VM・Kubernetesクラスタ上で動くローカル・非公開の MCP サーバーを、**新しい受信ファイアウォールルールや公開エンドポイントを一切作らずに** ChatGPT・Codex などの OpenAI ホスト型製品から利用できるようにするツールである。企業名検索や GitHub Trending では拾いにくい地味な公式リポジトリだが、5月の初期リリースから9月1日の最新版まで継続的に機能追加されている。",
+    "date": "2026-09-12",
+    "newsDate": "2026-09-01",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "MCP",
+      "エージェント",
+      "セキュリティ"
+    ],
+    "coverImage": {
+      "src": "articles/cover-server-infra.svg",
+      "alt": "OpenAI Secure MCP Tunnel"
+    }
   }
 ];
