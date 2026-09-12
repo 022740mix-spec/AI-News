@@ -16,6 +16,14 @@
     <summary>Anthropic が9月10日に公表した脅威情報レポートで、中国系 AI 5社（Alibaba・Moonshot AI・DeepSeek・Xiaomi・Z.ai）による約2億件の「不正な蒸留」を名指しした。とりわけ Moonshot と DeepSeek については、自社サービスの利用者のリクエストを黙って Claude に転送し、Claude の回答を自社モデルの回答として表示していたとしている。学習データの無断取得とは別に、利用者が「どのモデルと話しているか」を知らされていなかったという論点を含む。</summary>
   </entry>
   <entry>
+    <title>Anthropic の脅威情報レポート、もう一つの柱は「兵器開発への悪用」— ロシアの自律型ドローン群、イエメンのミサイル誘導、5件の生物兵器研究を阻止したと報告</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-threat-report-weapons-research-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-threat-report-weapons-research-2026</id>
+    <published>2026-09-12T15:00:00Z</published>
+    <updated>2026-09-12T15:00:00Z</updated>
+    <summary>Anthropic が9月10日に公表した脅威情報レポートには、[中国系AI5社による蒸留の名指し](?a=anthropic-threat-report-kimi-deepseek-routing-2026)とは別に、従来型兵器・生物兵器への悪用を扱う章がある。ロシア拠点の脅威主体による自律攻撃可能な FPV 特攻ドローン群の開発、イエメンのフーシ派によるミサイル誘導・飛行制御ソフトウェアへの利用、中国3件・ロシア2件・イエメン1件の従来型兵器関連の事例を検知・遮断したとし、研究機関に所属する科学者による生物兵器研究への悪用を5件阻止したとしている。対象期間は2025年12月から2026年8月。</summary>
+  </entry>
+  <entry>
     <title>個人開発の「Edge0」— iPhone/Mac上で35BのMoEモデルを2.9GBで動かすストリーミング推論フレームワーク</title>
     <link rel="alternate" type="text/html" href="?a=edge0-ondevice-moe-inference-2026"/>
     <id>tag:ai-tool-news.jp,2026:edge0-ondevice-moe-inference-2026</id>

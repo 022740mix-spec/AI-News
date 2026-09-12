@@ -19873,6 +19873,33 @@ const ARTICLES_BODY = {
         "url": "https://api-docs.deepseek.com/"
       }
     ]
+  },
+  "anthropic-threat-report-weapons-research-2026": {
+    "body": [
+      "Anthropic が9月10日に公表した脅威情報レポート「Detecting and countering misuse of AI: September 2026」は、[中国系AI5社による約2億件の「不正な蒸留」を名指しした記事](?a=anthropic-threat-report-kimi-deepseek-routing-2026)で扱った内容とは別に、**従来型兵器・生物兵器の開発にモデルが悪用された事例**を扱う章を含んでいる。同じレポートの中でも、本記事はこの部分だけを対象にする。",
+      "報告によれば、対象期間は**2025年12月から2026年8月**まで。サイバー作戦・影響工作・監視・詐欺・生物兵器・従来型兵器開発・蒸留の**7つの被害領域**にわたり、社内で追跡していた約40の主体を対象にしたとされる。",
+      "**従来型兵器の開発では、中国3件・ロシア2件・イエメン1件の事例を検知・対処した**と報じられている。ロシア拠点の脅威主体は、標的を検知して人間の判断なしに起爆を指示できる「自律攻撃（autonomous lethal engagement）」機能を持つ FPV（一人称視点）特攻ドローン群の開発に、Claude のコーディング能力を使おうとしたとされる。イエメンでは、イランと連携するフーシ派が、ミサイル誘導・飛行制御ソフトウェアの開発に Claude を利用しようとした動きを Anthropic が阻止したと報じられている。",
+      "**生物兵器に関連する悪用では、研究者を名乗る利用者による5件の試みを検知・阻止した**とされる。その一つは2026年5月の事例で、軍事系研究機関に所属する科学者が、蚊が媒介するチクングニア熱ウイルスを対象とした「機能獲得（gain-of-function）」研究の助成金申請書作成を Claude に依頼したというもの。報告はこの科学者が軍事系研究機関の所属だったとしている。",
+      "レポートはさらに、どのモデルが関与していたかについても触れているとされる。**関与した事例は Claude の Haiku・Sonnet・Opus 系モデルが中心で、最新世代の Fable・Mythos 系モデルが使われた事例は、蒸留に関する1件を除いて確認されていない**という。Anthropic が自社の最新モデルについて、悪用の観点から明確な区分を示した点は、他の悪用事例（サイバー作戦や影響工作など）と合わせて読む価値がある。",
+      "**確認できていないこと。** レポート原文（`anthropic.com` および PDF 配布元の `www-cdn.anthropic.com`）には、本稿執筆時点のネットワーク環境から到達できなかった。上記の数値・事例は、Bloomberg・CNN・Breitbart・Gizmodo・TechTimes・Cyberscoop など、本稿が確認できた範囲の独立した複数の報道機関の記事内容が一致する部分を整理したものであり、一次資料そのものを読んで検証した記述ではない。件数や日付の細部について、一次資料に到達できた段階で再確認する。",
+      "この種の報告には、**競合他社でもあるAnthropic自身による主張である**という留保が常につく。検知の手法は公開されておらず、挙げられた事例やモデルの関与度を外部から独立に検証する手段は現時点でない。名指しされた主体からの反論も、本稿執筆時点では確認できていない。それでも、フロンティアモデルの開発企業自身が「自社モデルが兵器開発に使われた」と数値付きで開示している点は、[8月の Anthropic 不正アクセス事案の公表](?a=anthropic-fourth-cyber-incident-metr-audit-2026)などと同様、**都合の悪い情報を自ら出す運用**の一例として記録しておく価値がある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Detecting and countering misuse of AI: September 2026（Anthropic 公式。本稿執筆時点で未到達）",
+        "url": "https://www.anthropic.com/threat-intelligence-report-september-2026"
+      },
+      {
+        "title": "Anthropic Says Iran, Russia Used Claude for Weapons Research",
+        "site": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-11/anthropic-says-us-adversaries-aimed-claude-at-weapons-research"
+      },
+      {
+        "title": "Anthropic says it blocked possible attempts to use AI to develop bioweapons",
+        "site": "CNN",
+        "url": "https://www.cnn.com/2026/09/10/health/anthropic-bioweapons-report"
+      }
+    ]
   }
 };
 
