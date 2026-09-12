@@ -56,6 +56,14 @@
     <summary>OpenAI が公式 GitHub 組織で公開している tunnel-client は、ノートPCや社内VM・Kubernetesクラスタ上で動くローカル・非公開の MCP サーバーを、新しい受信ファイアウォールルールや公開エンドポイントを一切作らずに ChatGPT・Codex などの OpenAI ホスト型製品から利用できるようにするツールである。企業名検索や GitHub Trending では拾いにくい地味な公式リポジトリだが、5月の初期リリースから9月1日の最新版まで継続的に機能追加されている。</summary>
   </entry>
   <entry>
+    <title>【分析】Anthropic CEO が「フロンティアの速度を抑えよ」と提言 — Altman・Musk が即日賛同、Anthropic自身は第三者評価者への常駐アクセスを一方的に約束</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-pace-the-frontier-essay-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-pace-the-frontier-essay-2026</id>
+    <published>2026-09-12T15:00:00Z</published>
+    <updated>2026-09-12T15:00:00Z</updated>
+    <summary>本記事は一次資料(darioamodei.com、Anthropic公式、X/本人投稿)に実行環境から直接到達できておらず、複数の独立した報道機関の記事内容が一致する範囲を二次情報として整理した下書きである。 Anthropic の CEO Dario Amodei が2026年9月12日、エッセイ「We Must Pace the Frontier」を公開し、AI業界がモデルの能力向上速度を意図的に抑えるべきだと三段階の案を提示したと報じられている。数時間のうちに OpenAI の Sam Altman と xAI/SpaceXAI の Elon Musk が公に賛同したとされ、前日に本サイトが報じた「OpenAI が議会に減速の適法性を確認している」という件と直接つながる動きである。</summary>
+  </entry>
+  <entry>
     <title>個人開発の「Edge0」— iPhone/Mac上で35BのMoEモデルを2.9GBで動かすストリーミング推論フレームワーク</title>
     <link rel="alternate" type="text/html" href="?a=edge0-ondevice-moe-inference-2026"/>
     <id>tag:ai-tool-news.jp,2026:edge0-ondevice-moe-inference-2026</id>
