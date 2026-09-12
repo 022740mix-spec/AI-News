@@ -9400,5 +9400,21 @@ export const ARTICLES_META = [
       "オープンソース",
       "コンテキストウィンドウ"
     ]
+  },
+  {
+    "id": "feature-openai-coordinated-slowdown-antitrust-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】「AI開発を減速したい」がシャーマン法に引っかからないか、OpenAI が議会に確認を求めている",
+    "excerpt": "OpenAI の Sam Altman が社内会議で「最先端AIの開発速度を意図的に落とす可能性があり、他社にも同様の対応を期待する」と語ったと報じられている。背景には、OpenAI 首席研究員 Jakub Pachocki の9月6日のブログ投稿があるとされる。**ここで生じるのが独占禁止法（反トラスト法）の問題**である。競合企業同士が開発速度について協調すれば、それは出力制限の共同行為とみなされうる。OpenAI は、AIの安全な減速に関する業界協調が反トラスト法（シャーマン法）に違反しないかどうかについて、議会に法的な確認を求めていると報じられている。",
+    "date": "2026-09-12",
+    "newsDate": "2026-09-11",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "OpenAI",
+      "規制",
+      "AI安全性"
+    ]
   }
 ];

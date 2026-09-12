@@ -32,6 +32,14 @@
     <summary>トルコの開発者 mksglu が個人開発する「Context Mode」が GitHub で22,200スター・1,600フォークを集めている。コーディングエージェントがコマンド実行結果やファイル内容をそのままコンテキストに読み込むのではなく、隔離したサブプロセス上で処理し、標準出力だけを会話に渡すことで、README 上の記載ではコンテキスト消費を98%削減するという。Claude Code・Cursor・GitHub Copilot CLI・Gemini CLI・OpenCode・OpenClaw など17以上のプラットフォームに対応し、ライセンスは Elastic License 2.0。</summary>
   </entry>
   <entry>
+    <title>【分析】「AI開発を減速したい」がシャーマン法に引っかからないか、OpenAI が議会に確認を求めている</title>
+    <link rel="alternate" type="text/html" href="?a=feature-openai-coordinated-slowdown-antitrust-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-openai-coordinated-slowdown-antitrust-2026</id>
+    <published>2026-09-12T15:00:00Z</published>
+    <updated>2026-09-12T15:00:00Z</updated>
+    <summary>OpenAI の Sam Altman が社内会議で「最先端AIの開発速度を意図的に落とす可能性があり、他社にも同様の対応を期待する」と語ったと報じられている。背景には、OpenAI 首席研究員 Jakub Pachocki の9月6日のブログ投稿があるとされる。ここで生じるのが独占禁止法（反トラスト法）の問題である。競合企業同士が開発速度について協調すれば、それは出力制限の共同行為とみなされうる。OpenAI は、AIの安全な減速に関する業界協調が反トラスト法（シャーマン法）に違反しないかどうかについて、議会に法的な確認を求めていると報じられている。</summary>
+  </entry>
+  <entry>
     <title>個人開発の「Edge0」— iPhone/Mac上で35BのMoEモデルを2.9GBで動かすストリーミング推論フレームワーク</title>
     <link rel="alternate" type="text/html" href="?a=edge0-ondevice-moe-inference-2026"/>
     <id>tag:ai-tool-news.jp,2026:edge0-ondevice-moe-inference-2026</id>
