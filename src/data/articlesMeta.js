@@ -9542,5 +9542,22 @@ export const ARTICLES_META = [
       "セキュリティ",
       "AI安全性"
     ]
+  },
+  {
+    "id": "openai-ipo-delay-2027-safety-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】OpenAI、IPOを2027年に延期 — Altman「フロンティアの速度を落とす」発言の翌日、経営判断として表面化",
+    "excerpt": "OpenAI の CEO **Sam Altman** が2026年9月12日、Fortune の取材に対し2026年内の IPO を否定し、**「2027年より前ではない」**と述べたと複数の報道が伝えている。理由に挙げたのは市場環境ではなく**AIの安全性**で、「10年以内に人類全体を失わせる10%の確率を取るのは容認できない」とまで踏み込んだという。当サイトが6月に報じた際の上場目標は**2026年9月**だった。",
+    "date": "2026-09-13",
+    "newsDate": "2026-09-12",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "IPO",
+      "AI安全性",
+      "規制"
+    ]
   }
 ];

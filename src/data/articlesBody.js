@@ -20119,6 +20119,26 @@ const ARTICLES_BODY = {
         "url": "https://www.securityweek.com/anthropic-details-response-to-security-incidents-unveils-enterprise-safeguards/"
       }
     ]
+  },
+  "openai-ipo-delay-2027-safety-2026": {
+    "body": [
+      "OpenAI の CEO **Sam Altman** が2026年9月12日、Fortune 誌の取材に応じ、2026年内の新規株式公開（IPO）を明確に否定したと複数の報道機関が伝えている。2026年の上場が今も選択肢に入っているかを直接尋ねられた Altman は「**2026年ではない（not 2026）**」と答え、今年の上場は「時期尚早（ill-timed）」だと述べたとされる。",
+      "Altman が挙げた理由は景気や市場環境ではなく、**AIの安全性**だった。報道によれば同氏は「10年が終わるまでに人類全体を失わせる10%の確率を取ることは容認できない」とまで踏み込み、能力向上の速度を意図的に落とすことと、独立した安全性評価の導入が、社内で継続的に議論されているトピックだと明かしたという。上場よりも「安全性とアライメントに応える責務、業界と政府がどう協調できるか」に取り組む段階だとも語ったとされる。",
+      "この発言は、当サイトが前日（9月12日掲載、9月11〜12日の出来事として）報じた **Anthropic CEO Dario Amodei の「We Must Pace the Frontier」エッセイ**（[→ 詳細](?a=anthropic-pace-the-frontier-essay-2026)）と無関係ではない。あの記事では、Altman がエッセイ公開から数時間のうちに SNS 上で「Dario の言う通り、フロンティアの速度を落とす必要があるという点に同意する」と述べたと報じられていた。**両者は別々に報じられた発言であり、同一のインタビューや投稿ではない**が、同じ9月12日という日に、Altman が (1) SNS 上で減速への賛同を表明し、(2) 別の取材で自社の上場計画そのものを1年以上先送りする理由として安全性を挙げた、という2つの事実が並んでいる点は記録しておく価値がある。",
+      "当サイトの過去記事と照らすと、変化の大きさがわかる。6月10日に報じたとおり、OpenAI は機密の S-1 を SEC に提出し、**評価額852B ドル・9月上場目標**と伝えられていた（[→ 詳細](?a=openai-confidential-s1-ipo-filing-852b-valuation-2026)）。今回の発言が事実なら、当初の目標から**1年以上の延期**になる。S-1 提出自体が撤回されたのか、単に上場時期だけが動いたのかは、今回の報道からは判別できない。",
+      "上場延期の理由を安全性だけに帰することには留保が必要である。IPO の時期は市場環境や引受幹事との調整、競合の動向など複数の要因で動くのが通例であり、**Altman が公の場で語った理由と、延期の実際の意思決定要因が完全に一致するとは限らない**。本稿はあくまで「Altman が安全性を理由として語った」という事実を報じるものであり、それが延期の唯一ないし真の理由であると断定するものではない。",
+      "**確認状況**: 本稿の調査環境からは Bloomberg（bloomberg.com）および OpenAI 公式サイト（openai.com）に直接到達できなかった。ただし WION、TechJournal、Briefs、Yoopya、Pupuweb など独立した複数の報道機関が、「not 2026」「ill-timed」「10% chance of killing everybody by the end of the decade」という同一の引用文言で一致して報じており、この一致をもって内容を確認できたと判断した。Bloomberg 原文および Fortune のインタビュー全文には、到達できる調査環境で改めて確認することが望ましい。"
+    ],
+    "primarySources": [
+      {
+        "title": "OpenAI CEO Sam Altman Says IPO Won't Be Until 2027 Due to AI Safety Concerns - Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-12/openai-ipo-won-t-happen-until-2027-sam-altman-tells-fortune"
+      },
+      {
+        "title": "OpenAI delays IPO to 2027 as Sam Altman cites escalating artificial intelligence risks",
+        "url": "https://www.wionews.com/world/openai-delays-ipo-to-2027-as-sam-altman-cites-escalating-artificial-intelligence-risks-1789294721882"
+      }
+    ]
   }
 };
 
