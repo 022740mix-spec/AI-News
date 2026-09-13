@@ -48,6 +48,14 @@
     <summary>OpenAI の CEO Sam Altman が2026年9月12日、Fortune の取材に対し2026年内の IPO を否定し、「2027年より前ではない」と述べたと複数の報道が伝えている。理由に挙げたのは市場環境ではなくAIの安全性で、「10年以内に人類全体を失わせる10%の確率を取るのは容認できない」とまで踏み込んだという。当サイトが6月に報じた際の上場目標は2026年9月だった。</summary>
   </entry>
   <entry>
+    <title>OpenAI が「GPT-Live-1」を API 公開 — 全二重音声、$0.05/分、前モデル比でターン検知性能+30%</title>
+    <link rel="alternate" type="text/html" href="?a=openai-gpt-live-1-voice-api-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-gpt-live-1-voice-api-2026</id>
+    <published>2026-09-13T15:00:00Z</published>
+    <updated>2026-09-13T15:00:00Z</updated>
+    <summary>OpenAI が2026年9月10日、全二重（同時に聞き・話せる）音声モデル「GPT-Live-1」を API で公開した。価格は音声フロントエンド層あたり分$0.05。前モデル「GPT-Realtime-2.1」比で Full Duplex Bench のターン検知性能が+30%向上したとされ、電話応対のような常時接続用途を見据えたテレフォニー対応も加わった。深い推論・実行は Codex や ChatGPT Work 側に委ねる設計だという。</summary>
+  </entry>
+  <entry>
     <title>Anthropic、Kimi と DeepSeek が「利用者のリクエストを Claude に転送していた」と報告 — 5社・約2億件の蒸留を名指し</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-threat-report-kimi-deepseek-routing-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-threat-report-kimi-deepseek-routing-2026</id>

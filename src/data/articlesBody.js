@@ -20139,6 +20139,26 @@ const ARTICLES_BODY = {
         "url": "https://www.wionews.com/world/openai-delays-ipo-to-2027-as-sam-altman-cites-escalating-artificial-intelligence-risks-1789294721882"
       }
     ]
+  },
+  "openai-gpt-live-1-voice-api-2026": {
+    "body": [
+      "OpenAI が2026年9月10日、音声対話に特化した新モデル**「GPT-Live-1」**を API で公開したと複数の報道が伝えている。最大の特徴は**全二重（full-duplex）**、つまり相手の発話を聞きながら同時に自分も話せる点で、人間同士の自然な会話に近い割り込み・相槌の挙動を再現できるという。価格は音声のフロントエンド層のみで**1分あたり$0.05**とされる。",
+      "OpenAI の説明では、GPT-Live-1 自体は深い推論やツール実行を担わず、**音声のやり取りそのものに特化**し、実際の判断や作業は Codex や「ChatGPT Work」など組み合わせるモデル・ツール側に委ねる設計だという。デモとして Codex との連携、および ChatGPT Work との組み合わせが紹介されたと報じられている。",
+      "機能面では、背景の状況判断を逐一声に出さずに処理する「サイレントなコンテキスト管理」、長時間セッションにまたがる文脈保持、そして飲食店の予約やカスタマーサポートの通話のような**常時接続の電話エージェント向けテレフォニー対応**が挙げられている。ASR（音声認識）の書き起こしと応答テキストをネイティブに提供するほか、キーワードバイアス（特定語の認識精度を上げる機能）や英数字の理解にも対応し、**ターンベースのモデルではないとしながらも、ターン検知自体はネイティブにサポート**しており、開発者は明示的な発話交代の境界を組み立てられるとしている。",
+      "性能面では、前モデルとされる「**GPT-Realtime-2.1**」と比較して、Full Duplex Bench（全二重会話のベンチマーク）でのターン検知性能が**+30%**向上したと報じられている。発話の交代にかかる遅延（レイテンシ）と、対話としての自然さの両面で改善が見られたという。",
+      "当サイトは9月10日、OpenAI が Codex のハーネスを1本の API として呼び出せる「**Agents API**」を公開ベータで提供開始したことを報じている（[→ 詳細](?a=openai-agents-api-public-beta-2026)）。GPT-Live-1 は同じ9月10日の発表ながら**音声対話に特化した別系統のリリース**であり、両者は同一の製品ではない点に注意したい。",
+      "**確認状況**: 本稿の調査環境からは OpenAI 公式サイト（openai.com）をはじめ、Unite.AI・GIGAZINE・AiCybr など個別の報道サイトにも直接到達できなかった。ただし WebSearch で得られた複数の独立した報道の要約が、公開日（9月10日）・価格（$0.05/分）・性能向上幅（+30%）について一致しており、この一致をもって内容を確認できたと判断した。OpenAI 公式ブログの原文表現は、到達できる環境で改めて確認することが望ましい。"
+    ],
+    "primarySources": [
+      {
+        "title": "OpenAI's GPT-Live-1 Arrives in the API at $0.05 Per Minute - Unite.AI",
+        "url": "https://www.unite.ai/openais-gpt-live-1-arrives-in-the-api-at-0-05-per-minute/"
+      },
+      {
+        "title": "Build more natural voice experiences with GPT‑Live‑1 in the API | OpenAI",
+        "url": "https://openai.com/index/introducing-gpt-live-1-in-the-api/"
+      }
+    ]
   }
 };
 

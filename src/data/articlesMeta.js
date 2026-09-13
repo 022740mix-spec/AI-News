@@ -9559,5 +9559,22 @@ export const ARTICLES_META = [
       "AI安全性",
       "規制"
     ]
+  },
+  {
+    "id": "openai-gpt-live-1-voice-api-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI が「GPT-Live-1」を API 公開 — 全二重音声、$0.05/分、前モデル比でターン検知性能+30%",
+    "excerpt": "OpenAI が2026年9月10日、**全二重（同時に聞き・話せる）音声モデル「GPT-Live-1」**を API で公開した。価格は**音声フロントエンド層あたり分$0.05**。前モデル「GPT-Realtime-2.1」比で Full Duplex Bench のターン検知性能が**+30%**向上したとされ、電話応対のような常時接続用途を見据えたテレフォニー対応も加わった。深い推論・実行は Codex や ChatGPT Work 側に委ねる設計だという。",
+    "date": "2026-09-13",
+    "newsDate": "2026-09-10",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "音声",
+      "API",
+      "エージェント"
+    ]
   }
 ];
