@@ -9459,5 +9459,26 @@ export const ARTICLES_META = [
       "src": "articles/cover-server-infra.svg",
       "alt": "OpenAI Secure MCP Tunnel"
     }
+  },
+  {
+    "id": "anthropic-pace-the-frontier-essay-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】Anthropic CEOが「フロンティアの速度を落とせ」と提言 — OpenAI・xAIのトップが数時間で賛同、自社は評価者への常駐アクセスを一方的に約束",
+    "excerpt": "Anthropic の CEO Dario Amodei が9月12日、エッセイ「We Must Pace the Frontier」を公開した。主張は「モデルの能力向上速度そのものを意図的に落とす」べきというもので、訓練の停止ではなく、各社が安全性検証に十分な時間を取れるようにすることが狙いだとされる。3段階の提案のうち第一段階（第三者評価チームに社員に準じる常駐アクセスを与える）を Anthropic は他社の合意を待たず単独で実行すると表明。競合する OpenAI の Sam Altman と xAI の Elon Musk が数時間のうちに公に賛同したと報じられており、AI安全性を巡る提言としては異例の広がりを見せている。",
+    "date": "2026-09-13",
+    "newsDate": "2026-09-12",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Anthropic",
+      "OpenAI",
+      "AI安全性",
+      "規制"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic - Pace the Frontier"
+    }
   }
 ];
