@@ -32,6 +32,14 @@
     <summary>米司法省(DOJ)が2026年9月1日、ニューヨーク南部地区連邦地裁に係属する著作権訴訟群『In re: OpenAI Inc. Copyright Infringement Litigation』(事件番号25-md-03143、New York Times らが原告)に約20ページの意見書(Statement of Interest)を提出したと複数のメディアが報じている。著作権保護された文章での大規模言語モデル学習は「非常に変容的(extraordinarily transformative)」でありフェアユースに該当するとの立場を示し、この慣行を制限すれば科学的進歩・経済競争力・国家安全保障を損なうと警告したとされる。連邦政府がAI学習と著作権を巡る私人間訴訟に公式に立場を表明した初めての例と位置づけられている。New York Times は「政権は数兆ドル規模のAI企業数社の側に立ち、作品を奪われた無数の米国のクリエイターを犠牲にしている」と反発したと報じられている。</summary>
   </entry>
   <entry>
+    <title>【分析】OpenAI・Google・Anthropicが数日のうちに相次ぎ「サイバー領域の安全策」を発表 — Critical評価、防御特化モデル、企業向け不正検知</title>
+    <link rel="alternate" type="text/html" href="?a=cyber-safeguards-three-labs-same-week-2026"/>
+    <id>tag:ai-tool-news.jp,2026:cyber-safeguards-three-labs-same-week-2026</id>
+    <published>2026-09-13T15:00:00Z</published>
+    <updated>2026-09-13T15:00:00Z</updated>
+    <summary>2026年9月1日から4日にかけて、OpenAI・Google・Anthropic がそれぞれ独立に「サイバー領域の安全策」を発表した。示し合わせた形跡はなく3社は競合関係にあるが、同じ数日間に3件が並んだという事実は残る。Anthropicは「Enterprise Frontier Safeguards」で不正利用の監視ログを顧客自身のクラウドに保存する仕組みを発表(100社超の金融機関と共同開発)。Googleは脆弱性発見・自動パッチ特化の「Gemini 3.8 Flash Cyber」を政府機関等に限定提供する「Fairwind」プログラムを開始。OpenAIはGPT-6 AstraのCritical評価公表の翌日、重要インフラの守り手向けに10億ドル規模のクレジットを提供する「Daybreak for Frontline Defenders」を発表した。3社の協調を示す証拠ではないが、「能力の引き上げ」と「安全策の追加」が切り離されずに語られる構図が共通している。</summary>
+  </entry>
+  <entry>
     <title>Anthropic、Kimi と DeepSeek が「利用者のリクエストを Claude に転送していた」と報告 — 5社・約2億件の蒸留を名指し</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-threat-report-kimi-deepseek-routing-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-threat-report-kimi-deepseek-routing-2026</id>

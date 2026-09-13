@@ -9524,5 +9524,23 @@ export const ARTICLES_META = [
       "src": "logos/openai.svg",
       "alt": "DOJ statement of interest - OpenAI copyright case"
     }
+  },
+  {
+    "id": "cyber-safeguards-three-labs-same-week-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】OpenAI・Google・Anthropicが数日のうちに相次ぎ「サイバー領域の安全策」を発表 — Critical評価、防御特化モデル、企業向け不正検知",
+    "excerpt": "2026年9月1日から4日にかけて、OpenAI・Google・Anthropic がそれぞれ独立に「サイバー領域の安全策」を発表した。示し合わせた形跡はなく3社は競合関係にあるが、同じ数日間に3件が並んだという事実は残る。Anthropicは「Enterprise Frontier Safeguards」で不正利用の監視ログを顧客自身のクラウドに保存する仕組みを発表(100社超の金融機関と共同開発)。Googleは脆弱性発見・自動パッチ特化の「Gemini 3.8 Flash Cyber」を政府機関等に限定提供する「Fairwind」プログラムを開始。OpenAIはGPT-6 AstraのCritical評価公表の翌日、重要インフラの守り手向けに10億ドル規模のクレジットを提供する「Daybreak for Frontline Defenders」を発表した。3社の協調を示す証拠ではないが、「能力の引き上げ」と「安全策の追加」が切り離されずに語られる構図が共通している。",
+    "date": "2026-09-13",
+    "newsDate": "2026-09-04",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "OpenAI",
+      "Google",
+      "Anthropic",
+      "セキュリティ",
+      "AI安全性"
+    ]
   }
 ];

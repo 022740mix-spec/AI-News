@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-13",
-  "count": 433,
+  "count": 434,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -145,6 +145,7 @@
     "cursor-origin-code-hosting-rollout-2026",
     "cursor-windsurf-merge",
     "cve-2026-47729-squidbleed-claude-mythos-project-glasswing-2026",
+    "cyber-safeguards-three-labs-same-week-2026",
     "dario-amodei-dwarkesh-podcast-2026-feb",
     "deepseek-r1-review",
     "deepseek-v4-1-flash-vision-pro-retirement-2026",
