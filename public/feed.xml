@@ -64,6 +64,14 @@
     <summary>xAI が、社員3名が事業名も製品も業種も何も決めていない白紙の状態から、AIエージェント「Grok Bot」だけを使って会社を立ち上げる過程を72時間ぶっ通しでライブ配信するイベント「Grok Bot Galaxy」を予告した。会期は9月15〜17日、サンフランシスコの会場と全世界向け配信を並行する。狙いは、エージェント基盤が1社の運営を丸ごと任せられるかを公開の場で試すことだという。</summary>
   </entry>
   <entry>
+    <title>個人開発の「Geiger」— マシン上の全AIエージェント・MCPサーバー・拡張機能を読み取り専用で棚卸しする</title>
+    <link rel="alternate" type="text/html" href="?a=geiger-agent-permission-scanner-2026"/>
+    <id>tag:ai-tool-news.jp,2026:geiger-agent-permission-scanner-2026</id>
+    <published>2026-09-13T15:00:00Z</published>
+    <updated>2026-09-13T15:00:00Z</updated>
+    <summary>Atomburst の個人開発者が公開した「Geiger」は、`npx geiger-scan` の一行で、そのマシンで動いているAIエージェント・MCPサーバー・プラグイン・ブラウザ拡張機能を丸ごと棚卸しするツールである。見つけた対象ごとに「何ができるか」（実行権限・秘密情報保持・広範なファイルシステムアクセス・ネットワーク通信）を表示し、読み取り専用で何も書き込まない設計を掲げる。「設定を読むだけで、実際の挙動までは分からない」という限界も自ら明記している。</summary>
+  </entry>
+  <entry>
     <title>Anthropic、Kimi と DeepSeek が「利用者のリクエストを Claude に転送していた」と報告 — 5社・約2億件の蒸留を名指し</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-threat-report-kimi-deepseek-routing-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-threat-report-kimi-deepseek-routing-2026</id>

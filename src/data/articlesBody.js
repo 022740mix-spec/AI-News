@@ -20178,6 +20178,22 @@ const ARTICLES_BODY = {
         "url": "https://x.ai/galaxy"
       }
     ]
+  },
+  "geiger-agent-permission-scanner-2026": {
+    "body": [
+      "Atomburst の個人開発者が GitHub で公開した「**Geiger**」（`Atomburstofficial/geiger`）は、**AIエージェント向けのガイガーカウンター**を自称するツールである。`npx geiger-scan` を一度実行するだけで、そのマシン上にある Claude Code のエージェント・MCPサーバー、Claude Desktop・Cursor・Windsurf・VS Code・Cline などの MCP ホスト、Codex CLI・Gemini CLI・Aider といった他系統のエージェント、フック・エディタ拡張、JetBrains 系 IDE の設定、グローバルにインストールされた CLI エージェント、そして Comet・Dia・ChatGPT Atlas などの AI ブラウザやその拡張機能まで、幅広いカテゴリを横断して棚卸しする。",
+      "見つけた対象ごとに、**何であるか・どこから来たか（レジストリ／ストア／Git／ローカルスクリプト／リモートサーバー、あるいは出所不明）・何ができるか**を表示する設計になっている。「何ができるか」は `[EXECUTES]`（実行可能）・`[HOLDS-SECRETS]`（秘密情報を保持）・`[BROAD-FILESYSTEM]`（広範なファイルシステムアクセス）・`[NETWORK]`（ネットワーク通信）といったラベルで示され、判定の根拠となった設定ファイルのパスも「証拠」として併記される。利用者が自分の手で裏を取れる形にしている点が特徴である。",
+      "設計上の制約も自ら明記している。Geiger は**設定ファイルを読むだけで、実行時の挙動そのものは追跡しない**。あるプラグインが実際に何をしたかまでは分からず、あくまで「その立場にいれば何ができたか」しか示せない。同様に、あるパッケージが悪意あるものかどうかを判定する機能もなく、**出所と権限の範囲を示すところまでが役割**だとされている。依存パッケージはゼロ、Node.js 18以上で動作し、実行しても JSON/HTML 出力を明示的に指定しない限り何も書き込まないという。GitHub 上のスター数は本稿執筆時点で119。",
+      "この種のツールが求められる背景は、当サイトがこれまで報じてきた一連の事案と地続きである。**Git 設定を悪用したエージェントの遠隔実行を狙う「GitSpawn」**（[→ 詳細](?a=gitspawn-ai-coding-agent-git-config-rce-2026)）のように、開発者が意識しないところでエージェントが持つ権限が攻撃面になる例が実際に確認されている。Geiger のようなツールは、攻撃を防ぐものではなく、**「今、自分のマシンに何がいて、それぞれ何ができるのか」を可視化する一段階前の対策**にあたる。",
+      "なお、本サイトの CLAUDE.md は `npx` による外部パッケージの無検証な実行を禁じている。本記事は Geiger の存在と設計を紹介するものであり、当サイトの制作過程でこのツールを実行したものではない。導入を検討する読者は、まず GitHub 上のソースコードを自分で確認したうえで判断してほしい。",
+      "**確認状況**: 本稿の調査環境からは Hacker News の該当スレッドおよび開発元サイト（atomburst.io）に直接到達できなかった。GitHub リポジトリ本体（github.com/Atomburstofficial/geiger）には直接到達でき、スター数・機能一覧・制約についてはそこから直接確認している。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitHub - Atomburstofficial/geiger: A Geiger counter for AI agents",
+        "url": "https://github.com/Atomburstofficial/geiger"
+      }
+    ]
   }
 };
 

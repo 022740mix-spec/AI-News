@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-13",
-  "count": 437,
+  "count": 438,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -202,6 +202,7 @@
     "flux-2-review",
     "freee-mcp-remote-2026",
     "frontier-triad-power-map-2026",
+    "geiger-agent-permission-scanner-2026",
     "gemini-3-1-pro",
     "gemini-3-1-pro-review",
     "gemini-31-flash-lite-2026",
