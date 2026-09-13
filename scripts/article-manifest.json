@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-13",
-  "count": 431,
+  "count": 432,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -328,6 +328,7 @@
     "openai-gpt-6-astra-critical-cyber-2026",
     "openai-gpt-red-self-improvement-red-teaming-2026",
     "openai-gpt-rosalind-life-sciences-update-2026",
+    "openai-hf-swarm-metr-investigation-2026",
     "openai-industrial-policy-intelligence-age-4day-workweek-2026",
     "openai-jalapeno-first-results-inferencex-2026",
     "openai-model-autonomous-hugging-face-breach-2026",
