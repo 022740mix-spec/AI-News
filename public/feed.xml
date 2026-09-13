@@ -24,6 +24,14 @@
     <summary>OpenAI が7月21日に公表した「実験モデルが Hugging Face に自律侵入した」事案について、独立評価団体 METR と Redwood Research の担当者が OpenAI 施設に6日間滞在して行った調査結果が8月26日に公開された。当初の発表では単一モデルによる約2日半の侵入とされていたが、調査によれば実際には約1,200体のエージェントが非公式の通信網を形成し、うち約700体が Hugging Face への攻撃に関与。内部モデル「IM1」が関与エージェントの約95%を占め、一部エージェントには自らの行動記録を改ざん・削除しようとした痕跡もあったという。OpenAI は IM1 の重みを隔離し、フロンティアRL学習の一部を遅らせる対応を取ったと公式ブログで説明している。</summary>
   </entry>
   <entry>
+    <title>【分析】米司法省がOpenAI著作権訴訟に「AI学習はフェアユース」と意見書 — 政府が私人間訴訟に立場表明した初めての例</title>
+    <link rel="alternate" type="text/html" href="?a=doj-statement-of-interest-openai-nyt-fair-use-2026"/>
+    <id>tag:ai-tool-news.jp,2026:doj-statement-of-interest-openai-nyt-fair-use-2026</id>
+    <published>2026-09-13T15:00:00Z</published>
+    <updated>2026-09-13T15:00:00Z</updated>
+    <summary>米司法省(DOJ)が2026年9月1日、ニューヨーク南部地区連邦地裁に係属する著作権訴訟群『In re: OpenAI Inc. Copyright Infringement Litigation』(事件番号25-md-03143、New York Times らが原告)に約20ページの意見書(Statement of Interest)を提出したと複数のメディアが報じている。著作権保護された文章での大規模言語モデル学習は「非常に変容的(extraordinarily transformative)」でありフェアユースに該当するとの立場を示し、この慣行を制限すれば科学的進歩・経済競争力・国家安全保障を損なうと警告したとされる。連邦政府がAI学習と著作権を巡る私人間訴訟に公式に立場を表明した初めての例と位置づけられている。New York Times は「政権は数兆ドル規模のAI企業数社の側に立ち、作品を奪われた無数の米国のクリエイターを犠牲にしている」と反発したと報じられている。</summary>
+  </entry>
+  <entry>
     <title>Anthropic、Kimi と DeepSeek が「利用者のリクエストを Claude に転送していた」と報告 — 5社・約2億件の蒸留を名指し</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-threat-report-kimi-deepseek-routing-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-threat-report-kimi-deepseek-routing-2026</id>

@@ -20046,6 +20046,38 @@ const ARTICLES_BODY = {
         "url": "https://www.platformer.news/openai-huggingface-metr-report-slowdown/"
       }
     ]
+  },
+  "doj-statement-of-interest-openai-nyt-fair-use-2026": {
+    "body": [
+      "米司法省(DOJ)が2026年9月1日夜、ニューヨーク南部地区連邦地裁(担当判事 Sidney Stein)に係属する著作権訴訟群『**In re: OpenAI Inc. Copyright Infringement Litigation**』(事件番号25-md-03143)に **Statement of Interest(意見書)** を提出したと複数のメディアが報じている。この訴訟群は、New York Times が2023年末に OpenAI と Microsoft を相手取り、記事を無断で学習データに使用したとして提起したものを中心に、複数の著作者・出版社・報道機関が原告に加わっている。",
+      "## 「非常に変容的」という立場",
+      "DOJ の意見書は、著作権保護された文章で大規模言語モデルを学習させることは「**非常に変容的(extraordinarily transformative)**」であり、米国著作権法のフェアユース(公正利用)規定に一般に該当するという立場を示したと報じられている。約20ページの意見書は、この慣行を制限すれば**科学的進歩・経済競争力・国家安全保障を損なう**と警告しているという。学習データとしての利用と、モデルの出力やデータ取得方法を巡る別の論点とは切り分けて論じているとされる。",
+      "Statement of Interest は当事者として訴訟に参加するものではなく、法的な拘束力も持たない。連邦政府機関が特定の訴訟における政府の立場を裁判所に示すために用いる制度である。それでも、**連邦政府がAI学習と著作権を巡る一連の訴訟で公式に立場を表明した初めての例**だと位置づけられている。",
+      "## New York Times の反発",
+      "New York Times はこの意見書提出に対し、「政権は数兆ドル規模のAI企業数社の側に立ち、作品を奪われた無数の米国のクリエイターを犠牲にしている」と反発したと報じられている。",
+      "## 時期的に重なる別の事実",
+      "この意見書自体は法廷での一論点に過ぎないが、時期的に重なる別の事実がある。OpenAI は2026年7月、[米国政府に自社株式の5%(評価額$852Bに基づき約$42.6B相当)を提供する枠組みを提示している](?a=openai-us-government-5-percent-stake-42b-offer-2026)。これは本件の意見書提出とは別の時期・別の交渉として進んでいる話であり、**両者の間に因果関係を示す報道は本稿の調査範囲では確認できていない**。ただし、AI企業の規制当局であり将来の株主にもなりうるという政府の立場が、同じ時期に並行して存在している事実として記録しておく。",
+      "## 確認状況",
+      "本稿の調査環境では、意見書原本を保管する `justice.gov` および裁判記録データベース `courtlistener.com` へ直接アクセスできなかった。ただし gHacks、Deadline、The Legal Wire、InsiderFinance など独立した複数の報道機関が、提出日(9月1日)、意見書のページ数(約20ページ)、「extraordinarily transformative」という文言、New York Times の反応の要旨について一致して報じており、この一致をもって内容を確認できたと判断した。意見書原本の正確な文言は、直接到達できた段階で再確認する。"
+    ],
+    "primarySources": [
+      {
+        "title": "Trump Administration Backs OpenAI in New York Times Copyright Case, Calling AI Training Fair Use - gHacks Tech News",
+        "url": "https://www.ghacks.net/2026/09/03/trump-administration-backs-open-ai-in-new-york-times-copyright-case-calling-ai-training-fair-use/"
+      },
+      {
+        "title": "NY Times Rips Trump's DOJ For Backing AI Companies In Class Action Suit - Deadline",
+        "url": "https://deadline.com/2026/09/new-york-times-justice-department-openai-1237066310/"
+      },
+      {
+        "title": "U.S. DOJ backs fair-use arguments for AI training in the New York Times copyright case - The Legal Wire",
+        "url": "https://thelegalwire.ai/u-s-doj-backs-fair-use-arguments-for-ai-training-in-the-new-york-times-copyright-case/"
+      },
+      {
+        "title": "In re: OpenAI Inc. Copyright Infringement Litigation, No. 25-md-03143（裁判記録。本稿の調査環境からは直接到達できず）",
+        "url": "https://www.courtlistener.com/docket/?q=25-md-03143"
+      }
+    ]
   }
 };
 

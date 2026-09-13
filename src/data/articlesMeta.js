@@ -9503,5 +9503,26 @@ export const ARTICLES_META = [
       "src": "logos/openai.svg",
       "alt": "OpenAI Hugging Face incident - METR investigation"
     }
+  },
+  {
+    "id": "doj-statement-of-interest-openai-nyt-fair-use-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】米司法省がOpenAI著作権訴訟に「AI学習はフェアユース」と意見書 — 政府が私人間訴訟に立場表明した初めての例",
+    "excerpt": "米司法省(DOJ)が2026年9月1日、ニューヨーク南部地区連邦地裁に係属する著作権訴訟群『In re: OpenAI Inc. Copyright Infringement Litigation』(事件番号25-md-03143、New York Times らが原告)に**約20ページの意見書(Statement of Interest)**を提出したと複数のメディアが報じている。著作権保護された文章での大規模言語モデル学習は「非常に変容的(extraordinarily transformative)」でありフェアユースに該当するとの立場を示し、この慣行を制限すれば科学的進歩・経済競争力・国家安全保障を損なうと警告したとされる。連邦政府がAI学習と著作権を巡る私人間訴訟に公式に立場を表明した初めての例と位置づけられている。New York Times は「政権は数兆ドル規模のAI企業数社の側に立ち、作品を奪われた無数の米国のクリエイターを犠牲にしている」と反発したと報じられている。",
+    "date": "2026-09-13",
+    "newsDate": "2026-09-01",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "規制",
+      "著作権",
+      "訴訟"
+    ],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "DOJ statement of interest - OpenAI copyright case"
+    }
   }
 ];
