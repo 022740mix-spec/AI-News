@@ -20220,6 +20220,31 @@ const ARTICLES_BODY = {
         "url": "https://www.axios.com/2026/09/03/pentagon-reaffirms-anthropic-blacklist"
       }
     ]
+  },
+  "openai-daybreak-frontline-defenders-2026": {
+    "body": [
+      "OpenAIは2026年9月3日、重要インフラを担うサイバー防御者向けの新プログラム「Daybreak for Frontline Defenders」を発表した。水道・電力網の事業者、州・地方自治体、地域銀行、非営利団体、オープンソースのメンテナーなど、セキュリティ予算が限られがちな組織を優先対象とし、補助価格でのアクセス・研修・技術支援・パートナーシップに10億ドル相当を投じるとしている。この規模のクレジットは今後6ヶ月ほどで消費される見込みだという。",
+      "提供は2段階に分かれる。「Daybreak Blue」は主力モデルを用いた一般的な防御作業向けで、「Daybreak Red」はより機密性が高く技術的に高度な作業を担う承認組織限定の専用サイバーモデルという位置づけである。認証された公共・民間部門の防御者が、許可された範囲でサイバー防御にフロンティアAIを活用できるようにする狙いがある。",
+      "既に2,000の承認組織・ワークスペースにまたがる数千人の防御者がDaybreakを利用しているとされ、利用組織にはサイバーセキュリティ企業、防衛関連組織、法執行機関などが含まれるという。あわせて、州・地方・部族・準州レベルの公共機関にサイバー脅威情報や事案対応支援を提供する非営利団体 Multi-State Information Sharing and Analysis Center（MS-ISAC）とのパイロット提携も開始し、水道システムの防御者を皮切りに、公共部門の防御者への研修と伴走型の支援を組み合わせて提供するとしている。",
+      "AI企業がサイバー防御領域での提供を強化する動きは他社にも見られる。本サイトは9月11日、Anthropicの脅威情報レポート（自律型ドローン群の悪用阻止や生物兵器研究の阻止事例を含む）を記事化しており、フロンティアモデルの開発企業がサイバー・安全保障領域での取り組みを相次いで打ち出す局面が続いている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Daybreak for Frontline Defenders: $1B to protect essential services",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/daybreak-for-frontline-defenders/"
+      },
+      {
+        "title": "OpenAI commits $1B in AI credits to frontline cyber defenders",
+        "site": "The Register",
+        "url": "https://www.theregister.com/security/2026/09/04/openai_commits_1b_in_ai_credits_to_frontline_cyber_defenders/"
+      },
+      {
+        "title": "OpenAI Pledges $1 Billion to Bring Frontier AI to Critical Infrastructure Defenders",
+        "site": "SecurityWeek",
+        "url": "https://www.securityweek.com/openai-pledges-1-billion-to-bring-frontier-ai-to-critical-infrastructure-defenders/"
+      }
+    ]
   }
 };
 

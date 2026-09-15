@@ -9635,5 +9635,26 @@ export const ARTICLES_META = [
       "src": "logos/anthropic.svg",
       "alt": "Anthropic vs Pentagon"
     }
+  },
+  {
+    "id": "openai-daybreak-frontline-defenders-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAIが「Daybreak for Frontline Defenders」を発表 — 重要インフラの防御者に10億ドル相当のサイバーAIを提供",
+    "excerpt": "OpenAIは9月3日、水道・電力網・地方自治体など予算の限られる組織のサイバー防御者に、最先端のサイバーセキュリティAIを補助価格で提供するプログラム「Daybreak for Frontline Defenders」を発表した。今後6ヶ月で消費される想定のアクセス・研修・技術支援に10億ドル相当を投じる。一般的な防御作業向けの「Daybreak Blue」と、承認組織限定でより高度な作業向けの「Daybreak Red」の2段階を用意し、既に2,000の承認組織・ワークスペースで数千人が利用しているという。",
+    "date": "2026-09-16",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "OpenAI",
+      "セキュリティ",
+      "政府",
+      "エンタープライズ"
+    ],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI Daybreak for Frontline Defenders"
+    }
   }
 ];
