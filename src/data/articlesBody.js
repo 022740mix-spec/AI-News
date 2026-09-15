@@ -20297,6 +20297,27 @@ const ARTICLES_BODY = {
         "url": "https://valueaddvc.com/pulse/google-assistant-shutdown-gemini-replacement-2026"
       }
     ]
+  },
+  "mcp-skills-over-mcp-sep2640-2026": {
+    "body": [
+      "Model Context Protocol（MCP）の仕様を管理する modelcontextprotocol 組織で、「Skills over MCP」と呼ばれる拡張の標準化作業が進んでいる。仕様は「SEP-2640: Skills Extension」として modelcontextprotocol.io 上に公開されており、専用の「Skills Over MCP Working Group」が策定にあたっている。",
+      "この拡張が扱うのは、Anthropicが提唱してきたAgent Skills形式――SKILL.mdファイルと付随ファイルからなるディレクトリで、エージェントに対して複数ステップのワークフローや条件分岐を含む手順知識を渡す仕組み――を、MCPサーバー自身から配信できるようにする仕組みである。MCPサーバーはこれまでツール（tools）を提供する役割が中心だったが、この拡張により、ツールと「それらをどう組み合わせて使うか」という手順書を一体で配布できるようになる。",
+      "技術的には、既存のResourcesプリミティブを利用する形で設計されている。スキルを構成する各ファイルは skill:// というURIスキームのMCPリソースとして公開され、resources/read で読み出せる。加えて、サーバーが提供するスキル一覧を返す skills/list、URIを指定して個別のスキルを取得する skills/get という専用メソッドが定義されている。",
+      "modelcontextprotocol/experimental-ext-skills リポジトリでは、この仕様に対する実装側の追随も始まっている。9月時点で、静的マニフェストと遅延読み込みによる「プロバイダー保有のAgent SkillsをMCPサーバーに同居させ、公式のskills拡張で公開する」実装が、公式のサーバー適合性テストに合格したとの報告が挙がっている。",
+      "本サイトは以前、Agent Skill形式が事実上の標準になりつつあるという分析記事（図表・科学研究・ハーネス統合が同じ配布形式を選んでいるという内容）を掲載している。今回のSEP-2640は、その標準化の流れがMCPというプロトコルレベルにも及んでいることを示す動きであり、Claude以外のクライアント・サーバー実装がAgent Skillsを扱う際の共通の土台になる可能性がある。なお、この拡張はあくまで実験的な検討段階にあり、MCPの正式仕様として確定したものではない。"
+    ],
+    "primarySources": [
+      {
+        "title": "SEP-2640: Skills Extension - Model Context Protocol",
+        "site": "Model Context Protocol",
+        "url": "https://modelcontextprotocol.io/seps/2640-skills-extension"
+      },
+      {
+        "title": "modelcontextprotocol/experimental-ext-skills: Experimental exploration of skills discovery and distribution through MCP primitives",
+        "site": "GitHub",
+        "url": "https://github.com/modelcontextprotocol/experimental-ext-skills"
+      }
+    ]
   }
 };
 

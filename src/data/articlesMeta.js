@@ -9698,5 +9698,22 @@ export const ARTICLES_META = [
       "src": "logos/google.svg",
       "alt": "Google Assistant から Gemini への移行"
     }
+  },
+  {
+    "id": "mcp-skills-over-mcp-sep2640-2026",
+    "type": "news",
+    "category": "special",
+    "title": "MCPに「Skills over MCP」拡張(SEP-2640)が進行中 — SKILL.mdをMCPサーバーから配信し、Agent Skillsをオープン標準へ",
+    "excerpt": "Model Context Protocol（MCP）の公式団体が、Agent Skills形式（SKILL.mdと付随ファイルからなるディレクトリ）をMCPサーバーから直接配信できるようにする拡張「SEP-2640: Skills Extension」を「Skills Over MCP Working Group」名義で進めている。既存のResourcesプリミティブを使い、skill:// スキームでスキルをリソース化、skills/list・skills/getで一覧・取得する仕組みを定義する。MCPサーバーがツールと使い方の手順を一体で配布できるようになる提案で、複数の実装が既に追随し始めている。",
+    "date": "2026-09-16",
+    "newsDate": "2026-09-14",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "MCP",
+      "スキル",
+      "エージェント",
+      "オープンソース"
+    ]
   }
 ];
