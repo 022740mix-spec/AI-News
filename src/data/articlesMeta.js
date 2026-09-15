@@ -9677,5 +9677,26 @@ export const ARTICLES_META = [
       "src": "logos/alibaba.svg",
       "alt": "Alibaba QwenWork International Edition"
     }
+  },
+  {
+    "id": "google-assistant-shutdown-gemini-migration-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】Google Assistantが9月4日から終了開始、Geminiへの移行にオプトアウトなし — 数年運用された音声アシスタントの置き換え",
+    "excerpt": "Googleは2026年9月4日から、Android・Wear OS向けGoogle Assistantの提供を段階的に終了し、Geminiへの一本化を進めている。対象はスマートフォン・タブレット・スマートウォッチ・Android Auto車載機で、移行が到達した端末ではAssistantへ戻すオプトアウトの手段が用意されていない。Google built-in搭載車やGeminiの動作要件を満たさない端末などは対象外とされる。数年にわたり標準の音声インターフェースだった製品が、ユーザーの選択を経ずに置き換わる事例として、多くのメディアが移行の一方向性を伝えている。",
+    "date": "2026-09-16",
+    "newsDate": "2026-09-04",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "Android",
+      "音声"
+    ],
+    "coverImage": {
+      "src": "logos/google.svg",
+      "alt": "Google Assistant から Gemini への移行"
+    }
   }
 ];
