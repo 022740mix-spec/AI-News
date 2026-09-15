@@ -20194,6 +20194,32 @@ const ARTICLES_BODY = {
         "url": "https://github.com/Atomburstofficial/geiger"
       }
     ]
+  },
+  "anthropic-pentagon-first-amendment-ruling-2026": {
+    "body": [
+      "米連邦地裁（北カリフォルニア地区）のRita F. Lin判事は2026年8月27日、国防総省（DoD）がAnthropicを「サプライチェーンリスク」に指定した措置について、修正第一条（表現の自由に対する報復の禁止）および修正第五条（適正手続き）に違反する「違法かつ根拠のない（illegal and baseless）」措置だったと判断した。判事は「国家安全保障を空虚に持ち出すことは、政府への批判者を罰し報復するための白紙委任状ではない」と述べたと複数の報道が伝えている。",
+      "対立の背景は2026年3月まで遡る。AnthropicはDoDとの契約交渉において、Claudeの利用規約にある「完全自律型致死兵器システムへの使用」「米国民に対する大量監視」という2つの用途の制限を撤廃するよう求められたが、これを拒否した。DoDはこれを契約上の障害とみなし、当時のHegseth国防長官が2月末にAnthropicを「サプライチェーンリスク」に指定。Lin判事は3月26日に暫定差止命令を発してこの指定の執行を一時的に止め、DoD側が控訴した結果、4月8日には控訴裁判所が緊急の差止申立てを却下し、係争は5月の口頭弁論、そして今回の8月27日の判断へと続いてきた。",
+      "今回の判断は、この一連の訴訟における地裁側の本案判断にあたる。Lin判事は、DoDが主張した「国家安全保障上のリスク」という説明が実質を欠くと認定し、Anthropicが事前の告知・弁明の機会を与えられないまま指定を受けたことも適正手続き違反にあたると判断した。",
+      "ただし、この勝利がただちに指定の撤回を意味するわけではない。Anthropicは北カリフォルニアとは別に、ワシントンD.C.の連邦地裁でも同様の争いを続けており、そちらの訴訟が決着するまでは、指定は形式上維持されたままになるとされる。実際、国防副長官のEmil Michael氏は9月3日、Anthropicは依然として「サプライチェーンリスク」であるとの見解を改めて示したと報じられている。これは商務長官のHoward Lutnick氏が前日にAnthropicについて「正しい側に戻った」と発言した直後のタイミングであり、政権内でもAnthropicへの評価が一枚岩ではないことをうかがわせる。",
+      "司法が指定を違法と認定した後も、行政側がそれに従わない状態が続いているという構図は、判断の実効性という観点でも注目に値する。AI企業が利用規約に定めた倫理的な制限を、政府調達との取引材料としてどこまで維持できるかという先例として、今後の展開が引き続き注視される。"
+    ],
+    "primarySources": [
+      {
+        "title": "Judge rules the Pentagon's supply chain risk label for Anthropic unlawful",
+        "site": "CNN Business",
+        "url": "https://www.cnn.com/2026/08/27/tech/anthropic-pentagon-supply-chain-risk-unlawful-hnk"
+      },
+      {
+        "title": "Anthropic gets its first court win over the Pentagon's supply-chain risk label",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/08/28/anthropic-gets-its-first-court-win-over-the-pentagons-supply-chain-risk-label/"
+      },
+      {
+        "title": "Top Pentagon official reaffirms Anthropic blacklist despite Lutnick comments",
+        "site": "Axios",
+        "url": "https://www.axios.com/2026/09/03/pentagon-reaffirms-anthropic-blacklist"
+      }
+    ]
   }
 };
 

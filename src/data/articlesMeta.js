@@ -9611,5 +9611,29 @@ export const ARTICLES_META = [
       "MCP",
       "個人開発"
     ]
+  },
+  {
+    "id": "anthropic-pentagon-first-amendment-ruling-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】Anthropic vs 米国防総省、連邦地裁が「サプライチェーンリスク」指定を違法と判断 — 国防副長官は9月3日、なお維持の意向",
+    "excerpt": "北カリフォルニア連邦地裁のRita F. Lin判事は8月27日、国防総省(DoD)がAnthropicを「サプライチェーンリスク」に指定した措置について、修正第一条(表現の自由への報復)と修正第五条(適正手続き)に違反する「違法かつ根拠のない」措置だったと判断した。ただしD.C.での別訴訟は継続中で指定自体は技術的に維持されたままであり、国防副長官のEmil Michael氏は9月3日、指定を維持する意向を改めて示した。司法判断と行政の対応が食い違う状態が続いている。",
+    "date": "2026-09-16",
+    "newsDate": "2026-08-27",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "規制",
+      "軍事",
+      "訴訟",
+      "政府",
+      "修正第一条"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic vs Pentagon"
+    }
   }
 ];
