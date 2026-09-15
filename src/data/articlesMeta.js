@@ -9656,5 +9656,26 @@ export const ARTICLES_META = [
       "src": "logos/openai.svg",
       "alt": "OpenAI Daybreak for Frontline Defenders"
     }
+  },
+  {
+    "id": "alibaba-qwenwork-international-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Alibaba「QwenWork」海外版を公開 — QoderWork・MuleRun・Wukong AIを統合したオールインワン業務エージェント",
+    "excerpt": "Alibabaは8月26日、業務向けAIエージェントプラットフォーム「QwenWork」の国際版をパブリックベータとして公開した。同社のQoderWork・MuleRun・Wukong AIの各プラットフォームの機能を1つのWeb・デスクトップ製品に統合したもので、自然言語での指示に基づき、権限の範囲内でウェブ操作・ローカルPC操作・複数ステップの業務ワークフローを実行する。東南アジア・中東・中南米などの市場を主なターゲットとし、英語・簡体字中国語に対応（繁体字中国語・スペイン語・ポルトガル語・日本語・韓国語などを追加予定）。",
+    "date": "2026-09-16",
+    "newsDate": "2026-08-26",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Alibaba",
+      "Qwen",
+      "エージェント",
+      "エンタープライズ"
+    ],
+    "coverImage": {
+      "src": "logos/alibaba.svg",
+      "alt": "Alibaba QwenWork International Edition"
+    }
   }
 ];

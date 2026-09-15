@@ -20245,6 +20245,32 @@ const ARTICLES_BODY = {
         "url": "https://www.securityweek.com/openai-pledges-1-billion-to-bring-frontier-ai-to-critical-infrastructure-defenders/"
       }
     ]
+  },
+  "alibaba-qwenwork-international-2026": {
+    "body": [
+      "Alibabaは2026年8月26日、業務向けAIエージェントプラットフォーム「QwenWork」の国際版をパブリックベータとして公開した。Web版・デスクトップ版の両方を提供し、公式サイトから利用登録できる。",
+      "QwenWork Internationalは、同社が展開してきたQoderWork・MuleRun・Wukong AIという複数のAIエージェント関連プラットフォームの機能を1つの生産性製品に統合したものと位置づけられている。ユーザーが自然言語でタスクを指示すると、エージェントが認可された範囲内でウェブサイトの操作・ローカルPCの操作・複数ステップにまたがる業務ワークフローの実行を代行する。",
+      "対応言語は当初英語と簡体字中国語で、繁体字中国語・スペイン語・ポルトガル語・日本語・韓国語などへの対応を今後追加する計画という。ターゲット市場として東南アジア・中東・中南米といった成長市場が挙げられており、中国国内で先行してきたQwenWorkを海外の企業・個人ユーザーに広げる位置づけの製品である。",
+      "料金体系はサブスクリプションとクレジット制を組み合わせたもので、個人向け・法人向けにそれぞれStandard・Advancedの2つのプランを用意し、タスクの複雑さに応じて選べるとされる。具体的な価格については、本稿執筆時点で確認できた報道の範囲では詳細が示されておらず、今後の公式発表を確認する必要がある。",
+      "業務エージェント分野では、Microsoft・Google・OpenAIなど各社が同様のオールインワン型ワークプレイスエージェントを相次いで投入しており、AlibabaのQwenWorkはQwenモデルファミリーの海外展開を後押しする位置づけの製品といえる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Alibaba Launches QwenWork International Edition, Extending Its All-in-One Workplace AI Agent to Global Markets",
+        "site": "Alibaba Cloud Community",
+        "url": "https://www.alibabacloud.com/blog/alibaba-launches-qwenwork-international-edition-extending-its-all-in-one-workplace-ai-agent-to-global-markets_603500"
+      },
+      {
+        "title": "Alibaba unveils QwenWork International Edition",
+        "site": "FutureCIO",
+        "url": "https://futurecio.tech/alibaba-unveils-qwenwork-international-edition/"
+      },
+      {
+        "title": "Alibaba opens QwenWork workplace AI agent to global users",
+        "site": "TechNode Global",
+        "url": "https://technode.global/2026/08/26/alibaba-qwenwork-international-public-beta/"
+      }
+    ]
   }
 };
 
