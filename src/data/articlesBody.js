@@ -20355,6 +20355,25 @@ const ARTICLES_BODY = {
         "url": "https://www.pymnts.com/news/artificial-intelligence/2026/cognition-secures-48-billion-valuation-as-demand-for-ai-coding-surges/"
       }
     ]
+  },
+  "meta-muse-spark-1-3-2026": {
+    "body": [
+      "Metaが2026年9月2日、大規模言語モデル「Muse Spark」の最新版1.3を公開した。前バージョン1.2からおよそ4週間での更新となる。Muse CodeおよびMeta Model API経由で提供され、コンテキストウィンドウは前バージョンと同じ100万トークンを維持する。",
+      "コーディング・エージェント関連のベンチマークでは、エージェント型ソフトウェアエンジニアリングを測るDeepSWE 1.1で75.4%、Terminal-Bench 2.1で88.8%、SWEAtlas CodeBase QnAで59.4%、長文脈検索で98.5%を記録したという。Metaはコーディング関連のツール呼び出し回数を1.2比で約20%、消費トークン数を約25%削減したとしている。独立系ベンチマークのArtificial Analysisでは、公開されている「xhigh」構成がIntelligence Indexで61点となり、GPT-5.6 Sol（max）やGrok 4.6（high）と並ぶ水準とされる。",
+      "価格は入力100万トークンあたり0.10ドル、キャッシュ入力0.002ドル、出力0.20ドルで提供されている。",
+      "一方、より高性能とされる「max」構成はMetaのパートナー限定プレビューにとどまり、Artificial Analysisの評価では62点とされる。一般開発者が使える「xhigh」との性能差があるため、公表されたベンチマークの解釈を巡って報道間で見方が分かれている。",
+      "Meta公式サイト（ai.meta.com）には本稿執筆時点のネットワーク環境からアクセスできなかったが、VentureBeatの報道内容と独立系ベンチマーク機関Artificial Analysisの実測値は一致しており、本記事はこれらの情報にもとづく。"
+    ],
+    "primarySources": [
+      {
+        "title": "Meta says Muse Spark 1.3 has frontier performance - VentureBeat",
+        "url": "https://venturebeat.com/technology/meta-says-muse-spark-1-3-has-frontier-performance-but-its-best-results-come-from-a-model-developers-cant-broadly-use-yet"
+      },
+      {
+        "title": "Muse Spark 1.3: Meta reaches the frontier - Artificial Analysis",
+        "url": "https://artificialanalysis.ai/articles/muse-spark-1-3"
+      }
+    ]
   }
 };
 
