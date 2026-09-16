@@ -9769,5 +9769,23 @@ export const ARTICLES_META = [
       "コーディング",
       "エージェント"
     ]
+  },
+  {
+    "id": "anthropic-claude-financial-advisors-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が「Claude for Financial Advisors」を発表 — Schwab・BlackRock・Addepar等と連携するプラグイン、月額70〜120ドル程度",
+    "excerpt": "Anthropicが2026年9月14日、投資助言業者（ファイナンシャルアドバイザー）向けの新プラグイン「Claude for Financial Advisors」を発表した。オンボーディングやポートフォリオのリバランス確認、コンプライアンスチェックなどの業務スキルと、Charles Schwab・BlackRock・Addeparなど資産運用系ソフトウェアとの連携をまとめている。利用にはClaude Co-Workとプラグイン（無料）が必要で、費用はユーザーあたり月額70〜120ドル程度とされる。",
+    "date": "2026-09-16",
+    "newsDate": "2026-09-14",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "金融",
+      "エージェント",
+      "エンタープライズ"
+    ]
   }
 ];

@@ -72,6 +72,14 @@
     <summary>Metaが2026年9月2日、Muse Spark 1.3を公開した。DeepSWE 1.1で75.4%、Terminal-Bench 2.1で88.8%、長文脈検索で98.5%と、コーディング・エージェント関連ベンチマークで前バージョンから伸びた。ツール呼び出し回数を約20%、消費トークンを約25%削減したという。ただし公開されているのは「xhigh」構成で、より高性能な「max」構成はパートナー限定プレビューにとどまる。</summary>
   </entry>
   <entry>
+    <title>Anthropic が「Claude for Financial Advisors」を発表 — Schwab・BlackRock・Addepar等と連携するプラグイン、月額70〜120ドル程度</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-financial-advisors-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-financial-advisors-2026</id>
+    <published>2026-09-16T15:00:00Z</published>
+    <updated>2026-09-16T15:00:00Z</updated>
+    <summary>Anthropicが2026年9月14日、投資助言業者（ファイナンシャルアドバイザー）向けの新プラグイン「Claude for Financial Advisors」を発表した。オンボーディングやポートフォリオのリバランス確認、コンプライアンスチェックなどの業務スキルと、Charles Schwab・BlackRock・Addeparなど資産運用系ソフトウェアとの連携をまとめている。利用にはClaude Co-Workとプラグイン（無料）が必要で、費用はユーザーあたり月額70〜120ドル程度とされる。</summary>
+  </entry>
+  <entry>
     <title>【分析】Anthropic CEOが「フロンティアの速度を落とせ」と提言 — OpenAI・xAIのトップが数時間で賛同、自社は評価者への常駐アクセスを一方的に約束</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-pace-the-frontier-essay-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-pace-the-frontier-essay-2026</id>

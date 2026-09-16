@@ -20374,6 +20374,29 @@ const ARTICLES_BODY = {
         "url": "https://artificialanalysis.ai/articles/muse-spark-1-3"
       }
     ]
+  },
+  "anthropic-claude-financial-advisors-2026": {
+    "body": [
+      "Anthropicが2026年9月14日、ファイナンシャルアドバイザー（投資助言業者）の日常業務向けに設計した新プラグイン「Claude for Financial Advisors」を発表した。カストディアン・資産運用会社・ウェルステック企業へのコネクタと、業務スキル群をまとめた製品である。",
+      "含まれるスキルには、アドバイザーのオンボーディング、オルタナティブ投資のブリーフィング、コンプライアンス・AIポリシーのレビュー、相続・税務のブリーフィング、ポートフォリオのリバランス確認、面談後のメモ作成とフォローアップ、面談前の準備・見込み客のインテークが挙がっている。コンプライアンス関連のスキルは、顧客向け文言をSECのマーケティングルールに照らしてチェックする機能を持つとされ、すべての重要なタスクにはアドバイザー自身の承認が必要な設計になっている。",
+      "連携先として、Charles Schwab・BlackRock・Addepar・Envestnet・iCapital・Orion・SS&C Black Diamond・Wealthbox・Wealth.com・Vanguard・Zocksが挙がっており、Microsoft 365・Salesforce・DocuSign・Box・FactSet・S&P Global・Morningstarとの既存連携も維持される。",
+      "利用にはClaude Co-Workと当該プラグイン（プラグイン自体は無料）が必要で、費用はユーザーあたり月額70〜120ドル程度と報じられている。監査ログを含むEnterpriseプランでの利用が推奨されているという。",
+      "Anthropic公式サイト（anthropic.com・claude.com）には本稿執筆時点のネットワーク環境からアクセスできなかったが、Bloomberg・ThinkAdvisor・WealthManagement・AdvisorHub・Yahoo Financeなど複数の独立した経済・金融専門メディアが同内容を報じており、機能・連携先・価格帯について矛盾は見られない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic Expands Into Finance With Claude Tool Linking Advisors to Analytics - Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-14/anthropic-pitches-new-claude-tool-for-financial-advisors"
+      },
+      {
+        "title": "Anthropic Releases Claude for Financial Advisors - ThinkAdvisor",
+        "url": "https://www.thinkadvisor.com/2026/09/15/anthropic-releases-claude-for-financial-advisors/"
+      },
+      {
+        "title": "Anthropic Launches Claude for Financial Advisors Tool - WealthManagement",
+        "url": "https://www.wealthmanagement.com/artificial-intelligence/anthropic-launches-claude-for-financial-advisors"
+      }
+    ]
   }
 };
 
