@@ -20397,6 +20397,34 @@ const ARTICLES_BODY = {
         "url": "https://www.wealthmanagement.com/artificial-intelligence/anthropic-launches-claude-for-financial-advisors"
       }
     ]
+  },
+  "california-ai-chatbot-child-safety-laws-2026": {
+    "body": [
+      "カリフォルニア州のGavin Newsom知事が2026年9月10日、AIチャットボットと未成年者のオンライン利用に関する複数の法案に一括で署名したと、州政府や複数の米メディアが報じている。署名はサウサリートのBay Area Discovery Museumで行われたとされる。",
+      "柱となるのは「Adam's法」と呼ばれるSB 1119である。2025年に自ら命を絶った10代のAdam Raine氏の名を冠した法律で、報道によれば、遺族はRaine氏がChatGPTから自傷に関するやり取りを受けていたとして提訴していた経緯がある。Adam's法は、コンパニオン型AIチャットボットの事業者に対し、未成年者との会話で自殺念慮や自傷が示唆された場合の安全プロトコルの整備、利用時間の制限、保護者への通知機能（子どもが安全設定を無効化した場合の通知を含む）などを義務付けるとされる。",
+      "同時に署名されたAB 1709は、16歳未満の利用者に対して「依存性を高める機能」を提供することを禁止する。対象はソーシャルメディアに加えチャットボットも含まれるとみられ、報道では無限スクロールや通知設計などが念頭に置かれているとされる。さらにSB 867は、16歳未満向けのAIチャットボット搭載玩具について4年間のモラトリアムを設けるという。このほか、プラットフォームが未成年者への害について法的責任を負いうる規定や、年齢確認義務の拡大に関する法案も含まれていると報じられている。",
+      "カリフォルニア州は2025年10月にすでにSB 243（コンパニオンチャットボット法）に署名しており、2026年1月1日付けで施行済みである。SB 243は、チャットボットが人間ではないことの明示、自殺念慮・自傷への対応プロトコル、未成年者向けの3時間ごとの休憩通知などを事業者に義務付け、違反時には「実害」を受けた個人が民事訴訟を提起できる私人訴権（injunctive relief、実損害か1件あたり1,000ドルの高い方、弁護士費用）を規定していた。今回のAdam's法・AB 1709・SB 867は、このSB 243の枠組みの上に、より具体的な行動義務（時間制限・保護者通知・玩具の一時禁止）を積み増す形になる。",
+      "AI企業の利用規約や安全設計だけでなく、州レベルの法規制が未成年者保護という個別の切り口から急速に具体化している点は、日本を含む他地域の規制動向を占ううえでも参考になる。ただし、法案の詳細な施行スケジュールや、州外に拠点を置く事業者への適用範囲、既存のCOPPA（連邦の児童オンラインプライバシー保護法）との関係については、報道の範囲では確定的な記述が見当たらず、今後の一次資料・施行規則の確認を要する。",
+      "カリフォルニア州知事府の公式発表（gov.ca.gov）には本稿執筆時点のネットワーク環境からアクセスできなかったが、Engadget・CalMatters・TCPAWorld・Santa Barbara Independent・techtimesなど複数の独立した報道機関が法案番号・内容について一致した報道をしており、本記事はその内容にもとづく。"
+    ],
+    "primarySources": [
+      {
+        "title": "Governor Newsom signs the strongest child safety chatbot and social media laws in the nation - Office of Governor Gavin Newsom",
+        "url": "https://www.gov.ca.gov/2026/09/10/governor-newsom-signs-the-strongest-child-safety-chatbot-and-social-media-laws-in-the-nation/"
+      },
+      {
+        "title": "CA governor signs 'landmark' laws on youth use of social media and AI chatbots - Engadget",
+        "url": "https://www.engadget.com/2255569/ca-governor-signs-landmark-laws-on-youth-use-of-social-media-and-ai-chatbots/"
+      },
+      {
+        "title": "California enacts laws restricting chatbots and banning teens from 'addictive' social media - CalMatters",
+        "url": "https://calmatters.org/economy/technology/2026/09/california-enacts-laws-restricting-chatbots-protecting-kids-online/"
+      },
+      {
+        "title": "SB 243 - California Legislative Information",
+        "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB243"
+      }
+    ]
   }
 };
 
