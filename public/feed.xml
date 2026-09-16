@@ -48,6 +48,14 @@
     <summary>Model Context Protocol（MCP）の公式団体が、Agent Skills形式（SKILL.mdと付随ファイルからなるディレクトリ）をMCPサーバーから直接配信できるようにする拡張「SEP-2640: Skills Extension」を「Skills Over MCP Working Group」名義で進めている。既存のResourcesプリミティブを使い、skill:// スキームでスキルをリソース化、skills/list・skills/getで一覧・取得する仕組みを定義する。MCPサーバーがツールと使い方の手順を一体で配布できるようになる提案で、複数の実装が既に追随し始めている。</summary>
   </entry>
   <entry>
+    <title>DeepSeek のオープンソース版エージェントハーネス「Harness」が22.5万スター — 「あらゆる要素がプラグイン」、Claude Code 型ハーネスへの対抗軸に</title>
+    <link rel="alternate" type="text/html" href="?a=deepseek-harness-dsh-oss-2026"/>
+    <id>tag:ai-tool-news.jp,2026:deepseek-harness-dsh-oss-2026</id>
+    <published>2026-09-16T15:00:00Z</published>
+    <updated>2026-09-16T15:00:00Z</updated>
+    <summary>DeepSeek AI が公式 GitHub 組織で公開したエージェントハーネス「DeepSeek Harness（dsh）」が、2026年8月13日の開発者プレビュー公開から1ヶ月あまりで22.5万スター・2.7万フォークに達している。モデルアダプタ、ツールレジストリ、セッションログ、エージェントループ自体までを差し替え可能な「プラグイン」として設計する「everything-is-a-plugin」アーキテクチャを採用し、独自のコンポーネント合成基盤「Cordis」の上に構築されている。MIT ライセンスで npm 経由（`npx @deepseek-ai/dsh web`）からすぐに試せる一方、現時点では開発者プレビュー段階で破壊的変更もあり得るとされる。</summary>
+  </entry>
+  <entry>
     <title>【分析】Anthropic CEOが「フロンティアの速度を落とせ」と提言 — OpenAI・xAIのトップが数時間で賛同、自社は評価者への常駐アクセスを一方的に約束</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-pace-the-frontier-essay-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-pace-the-frontier-essay-2026</id>

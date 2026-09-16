@@ -20318,6 +20318,21 @@ const ARTICLES_BODY = {
         "url": "https://github.com/modelcontextprotocol/experimental-ext-skills"
       }
     ]
+  },
+  "deepseek-harness-dsh-oss-2026": {
+    "body": [
+      "DeepSeek AI が、公式 GitHub 組織 `deepseek-ai` で公開しているエージェントハーネス「DeepSeek Harness（コマンド名 dsh）」が、2026年8月13日の開発者プレビュー公開から1ヶ月あまりで22.5万スター・2.7万フォークに達している。Claude Code や Codex のような統合型のコーディングエージェント環境に対して、モデルを問わず使えるオープンソースの代替を提供する狙いの製品である。",
+      "設計の中心は「あらゆる要素がプラグインである」という考え方だ。モデルアダプタ、ツールレジストリ、セッションのログ、そしてエージェントループそのものまでが差し替え可能なプラグインとして実装されており、開発者は個々の層を自作のものに置き換えられる。この合成の仕組みは DeepSeek が独自に開発した基盤「Cordis」の上に構築されており、その設計思想は論文「A Programming Paradigm for Spatiotemporal Composability」（arXiv:2608.25512）で説明されている。",
+      "配布は MIT ライセンスで、`npx @deepseek-ai/dsh web` を実行するだけで `http://127.0.0.1:3080` に Web UI が立ち上がる。ソースからのビルドや pnpm 経由でのインストールにも対応する。DeepSeek 自身は本プロジェクトを「開発者プレビュー」段階と位置づけており、コアのプラグイン API は今後も変更が続く前提であることを明記している。",
+      "プラグイン開発者が公開したプラグインを GitHub 上で見つけやすくするため、`dsh-plugin` トピックタグを付ける運用も案内されている。サポートは GitHub Discussions と Discord コミュニティが中心で、まだ商用の統合サポート体制が整った製品ではない。",
+      "本サイトはこれまで、個人開発者による軽量なエージェント関連 OSS（メモリ管理の「okf-agent-memory」、出力隔離の「Context Mode」など）を継続して取り上げてきたが、今回は主要 AI ラボである DeepSeek 自身がこの潮流に「モデルに依存しない差し替え可能なハーネス」という形で参入した事例にあたる。エージェントの実行基盤そのものをオープンソース化し、モデル選択とハーネスの選択を切り離す動きが、大手・個人開発の双方から同時に進んでいる。"
+    ],
+    "primarySources": [
+      {
+        "title": "deepseek-ai/deepseek-harness: DeepSeek Harness: Everything is a Plugin.",
+        "url": "https://github.com/deepseek-ai/deepseek-harness"
+      }
+    ]
   }
 };
 

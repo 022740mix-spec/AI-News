@@ -9715,5 +9715,23 @@ export const ARTICLES_META = [
       "エージェント",
       "オープンソース"
     ]
+  },
+  {
+    "id": "deepseek-harness-dsh-oss-2026",
+    "type": "news",
+    "category": "product",
+    "title": "DeepSeek のオープンソース版エージェントハーネス「Harness」が22.5万スター — 「あらゆる要素がプラグイン」、Claude Code 型ハーネスへの対抗軸に",
+    "excerpt": "DeepSeek AI が公式 GitHub 組織で公開したエージェントハーネス「DeepSeek Harness（dsh）」が、2026年8月13日の開発者プレビュー公開から1ヶ月あまりで22.5万スター・2.7万フォークに達している。モデルアダプタ、ツールレジストリ、セッションログ、エージェントループ自体までを差し替え可能な「プラグイン」として設計する「everything-is-a-plugin」アーキテクチャを採用し、独自のコンポーネント合成基盤「Cordis」の上に構築されている。MIT ライセンスで npm 経由（`npx @deepseek-ai/dsh web`）からすぐに試せる一方、現時点では開発者プレビュー段階で破壊的変更もあり得るとされる。",
+    "date": "2026-09-16",
+    "newsDate": "2026-08-13",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "DeepSeek",
+      "エージェント",
+      "オープンソース",
+      "CLI",
+      "プラグイン"
+    ]
   }
 ];
