@@ -221,6 +221,7 @@ export const MODEL_COMPARISON = [
 
   // === Meta MSL（Meta Superintelligence Labs） ===
   { name: "Muse Spark 1.1", rating: 4.0, summary: "Meta 初の有料モデル（7/9 リリース）。$1.25/$4.25 per 1M tokens。Llama 系無料 OSS 路線からの戦略転換、MSL 体制での初主要有料製品。詳細ベンチマーク未公表", swe: null, swePro: null, terminalBench: null, osworld: null, browseComp: null, gpqa: null, aime: null, hle: null },
+  { name: "Muse Spark 1.3", rating: 4.5, summary: "Meta 最新版（9/2 リリース、xhigh構成が一般提供）。100万トークンコンテキスト。Terminal-Bench 2.1 88.8%、長文脈検索 98.5%。ツール呼び出し-20%・消費トークン-25%。より高性能な max 構成はパートナー限定プレビュー。$0.10/$0.20 per 1M tokens", swe: null, swePro: null, terminalBench: 88.8, osworld: null, browseComp: null, gpqa: null, aime: null, hle: null },
 
   // === Google ===
   { name: "Gemini 3.5 Flash", rating: 4.5, summary: "Google 最新（I/O 2026・5/19 GA）。Flash クラスの速度で 3.1 Pro 超え。Terminal-Bench 2.1 76.2%、GDPval-AA 1656 Elo、MCP Atlas 83.6%", swe: null, swePro: null, terminalBench: 76.2, osworld: null, browseComp: null, gpqa: null, aime: null, hle: null },
