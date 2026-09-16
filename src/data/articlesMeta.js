@@ -9733,5 +9733,23 @@ export const ARTICLES_META = [
       "CLI",
       "プラグイン"
     ]
+  },
+  {
+    "id": "cognition-series-e-48b-valuation-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Cognition（Devin）がシリーズEで20億ドル超を調達、評価額480億ドルに — ARR は4ヶ月弱で約2倍の9億ドル規模へ",
+    "excerpt": "Devin開発元のCognitionが2026年9月8日、a16zとAccel主導のシリーズEで20億ドル超を調達し、評価額480億ドルに達したと発表した。5月のシリーズD（評価額260億ドル）からわずか4ヶ月弱で評価額はほぼ倍増し、年換算収益（ARR）も4.92億ドルから約9億ドルへ伸びたとされる。NVIDIA・GE Aerospace・Citi・Mercedes-Benzなど大企業での導入が広がっている。",
+    "date": "2026-09-16",
+    "newsDate": "2026-09-08",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Cognition",
+      "Devin",
+      "資金調達",
+      "コーディング",
+      "エージェント"
+    ]
   }
 ];

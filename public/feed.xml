@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-09-16T15:00:00Z</updated>
+  <updated>2026-09-17T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>【分析】Anthropic vs 米国防総省、連邦地裁が「サプライチェーンリスク」指定を違法と判断 — 国防副長官は9月3日、なお維持の意向</title>
@@ -54,6 +54,14 @@
     <published>2026-09-16T15:00:00Z</published>
     <updated>2026-09-16T15:00:00Z</updated>
     <summary>DeepSeek AI が公式 GitHub 組織で公開したエージェントハーネス「DeepSeek Harness（dsh）」が、2026年8月13日の開発者プレビュー公開から1ヶ月あまりで22.5万スター・2.7万フォークに達している。モデルアダプタ、ツールレジストリ、セッションログ、エージェントループ自体までを差し替え可能な「プラグイン」として設計する「everything-is-a-plugin」アーキテクチャを採用し、独自のコンポーネント合成基盤「Cordis」の上に構築されている。MIT ライセンスで npm 経由（`npx @deepseek-ai/dsh web`）からすぐに試せる一方、現時点では開発者プレビュー段階で破壊的変更もあり得るとされる。</summary>
+  </entry>
+  <entry>
+    <title>Cognition（Devin）がシリーズEで20億ドル超を調達、評価額480億ドルに — ARR は4ヶ月弱で約2倍の9億ドル規模へ</title>
+    <link rel="alternate" type="text/html" href="?a=cognition-series-e-48b-valuation-2026"/>
+    <id>tag:ai-tool-news.jp,2026:cognition-series-e-48b-valuation-2026</id>
+    <published>2026-09-16T15:00:00Z</published>
+    <updated>2026-09-16T15:00:00Z</updated>
+    <summary>Devin開発元のCognitionが2026年9月8日、a16zとAccel主導のシリーズEで20億ドル超を調達し、評価額480億ドルに達したと発表した。5月のシリーズD（評価額260億ドル）からわずか4ヶ月弱で評価額はほぼ倍増し、年換算収益（ARR）も4.92億ドルから約9億ドルへ伸びたとされる。NVIDIA・GE Aerospace・Citi・Mercedes-Benzなど大企業での導入が広がっている。</summary>
   </entry>
   <entry>
     <title>【分析】Anthropic CEOが「フロンティアの速度を落とせ」と提言 — OpenAI・xAIのトップが数時間で賛同、自社は評価者への常駐アクセスを一方的に約束</title>

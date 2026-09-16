@@ -20333,6 +20333,28 @@ const ARTICLES_BODY = {
         "url": "https://github.com/deepseek-ai/deepseek-harness"
       }
     ]
+  },
+  "cognition-series-e-48b-valuation-2026": {
+    "body": [
+      "Devin開発元のCognitionが2026年9月8日、シリーズEで20億ドル超を調達し、評価額480億ドルに達したと発表した。主導したのはa16z（Andreessen Horowitz）とAccelで、既存投資家のFounders Fund・General Catalyst・Avenirも参加した。",
+      "5月27日に完了したシリーズD（調達額10億ドル超・評価額260億ドル）からわずか4ヶ月弱で評価額はほぼ倍増した計算になる。年換算収益（ARR）は、シリーズD完了時点の4.92億ドルから、今回のラウンド時点でおよそ9億ドル規模まで伸びたと報じられている。",
+      "Devinは現在、NVIDIA・GE Aerospace・Citi・Mercedes-Benz・Modalなど大企業を含む顧客基盤で稼働しているとされる。急成長する一方で、評価額に対する収益倍率の高さを懸念する報道も出ており、AIコーディング市場全体の過熱ぶりを示す事例としても注目されている。",
+      "Cognition公式ブログ（cognition.ai）には本稿執筆時点のネットワーク環境からアクセスできなかったが、Bloomberg・TechCrunch・PYMNTSなど複数の独立した経済メディアが調達額・評価額・投資家名について一致した内容を報じている。"
+    ],
+    "primarySources": [
+      {
+        "title": "AI Startup Cognition Raises $2 Billion at a $48 Billion Value",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-08/ai-startup-cognition-raises-2-billion-at-a-48-billion-value"
+      },
+      {
+        "title": "Cognition hits $48B valuation - TechCrunch",
+        "url": "https://techcrunch.com/2026/09/08/cognition-hits-48b-valuation-signaling-investors-believe-ai-coding-is-far-from-a-winner-take-all-market/"
+      },
+      {
+        "title": "Cognition Secures $48 Billion Valuation as Demand for AI Coding Surges - PYMNTS",
+        "url": "https://www.pymnts.com/news/artificial-intelligence/2026/cognition-secures-48-billion-valuation-as-demand-for-ai-coding-surges/"
+      }
+    ]
   }
 };
 
