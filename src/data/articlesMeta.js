@@ -9733,5 +9733,23 @@ export const ARTICLES_META = [
       "CLI",
       "プラグイン"
     ]
+  },
+  {
+    "id": "anthropic-claude-financial-advisors-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が「Claude for Financial Advisors」を発表と報道 — カストディアン・資産運用会社との連携プラグイン、公式一次情報は未確認",
+    "excerpt": "複数の海外メディアが、Anthropic が2026年9月14日に「Claude for Financial Advisors」を発表したと報じている。報道によれば、advisor向けオンボーディングやポートフォリオのリバランス確認、コンプライアンスチェック（SECマーケティングルールに沿った表現の確認）などの業務スキルをまとめたプラグインで、BlackRock・Charles Schwab・Addeparなど資産運用系ソフトウェアとの連携が含まれるとされる。**実行環境から anthropic.com・claude.com のいずれにも到達できず、公式発表原文は確認できていない。** 本記事は複数の独立した報道が一致する範囲を整理した二次情報依存の記事であり、確認が取れるまで main には反映せず下書きとして保留する。",
+    "date": "2026-09-16",
+    "newsDate": "2026-09-14",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "金融",
+      "エージェント",
+      "エンタープライズ"
+    ]
   }
 ];

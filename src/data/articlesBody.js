@@ -20333,6 +20333,20 @@ const ARTICLES_BODY = {
         "url": "https://github.com/deepseek-ai/deepseek-harness"
       }
     ]
+  },
+  "anthropic-claude-financial-advisors-2026": {
+    "body": [
+      "複数の海外メディアが、Anthropic が2026年9月14日に「Claude for Financial Advisors」という新プラグインを発表したと報じている。報道内容が一致している範囲では、これはファイナンシャルアドバイザー（投資助言業者）の日常業務向けに設計されたスキル群と、カストディアン・資産運用会社・ウェルステック企業へのコネクタをまとめたプラグインだとされる。",
+      "報道によれば、含まれるスキルにはアドバイザーのオンボーディング、オルタナティブ投資のブリーフィング、コンプライアンス・AIポリシーのレビュー、相続・税務のブリーフィング、ポートフォリオのリバランス確認、面談後のメモ作成とフォローアップ、面談前の準備・見込み客のインテークなどが挙がっている。コンプライアンス関連のスキルは、顧客向け文言をSECのマーケティングルールに照らしてチェックする機能を持つとされる。すべての重要なタスクにはアドバイザー自身の承認が必要な設計だと報じられている。",
+      "連携先として BlackRock・Charles Schwab・Addepar といった投資分析・資産管理ソフトウェア企業の名前が複数の報道で挙がっている。利用には Claude Co-Work と当該プラグイン（プラグイン自体は無料とされる）が必要で、監査ログを含む Enterprise プランでの利用が推奨されているという。",
+      "**この記事は一次資料への到達を前提とする本サイトの公開基準を満たしていない。** 実行環境から anthropic.com・claude.com のいずれにもアクセスできず、Anthropic 自身の発表文を直接確認する手段がなかった。unite.ai・AdvisorHub・FFNews など複数の独立した専門媒体が同内容を報じている点は確認できたが、一次資料と数値を突き合わせるまでは事実関係を確定できないと判断し、この下書きは main に反映せず保留する。"
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic Launches Claude for Financial Advisors With Partner Connectors",
+        "url": "https://www.unite.ai/anthropic-launches-claude-for-financial-advisors-with-partner-connectors/"
+      }
+    ]
   }
 };
 

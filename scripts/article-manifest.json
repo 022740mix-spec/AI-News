@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-16",
-  "count": 444,
+  "count": 445,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -43,6 +43,7 @@
     "anthropic-claude-fable-5-billing-transition-extended-july-12-2026",
     "anthropic-claude-fable-5-mythos-5-ga-2026",
     "anthropic-claude-fable-5-return-safeguards-limits-2026",
+    "anthropic-claude-financial-advisors-2026",
     "anthropic-claude-for-legal-plugins-cocounsel-2026",
     "anthropic-claude-for-teachers-k12-free-ferpa-2026",
     "anthropic-claude-managed-agents-public-beta-2026",
