@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-17",
-  "count": 452,
+  "count": 453,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -136,6 +136,7 @@
     "cline",
     "codebuff",
     "codex-plugins-marketplace-2026",
+    "cognition-devin-rsa-260-factorization-2026",
     "cognition-series-e-48b-valuation-2026",
     "context-mode-agent-output-sandboxing-2026",
     "copilot-agentic-code-review-ga-2026",

@@ -40,6 +40,14 @@
     <summary>Microsoft AI が2026年9月14日、自社の AI 開発方針を定めた「Humanist AI」行動規範の草案を公開した。「人間はAIより重要である」という前提から出発し、AIモデルに法人格を認めない、常に人間が介入・修正できる状態を保つ、人間が検証できない形の推論（いわゆる neuralese）を避けるといった原則を掲げる。あらゆる能力を1つのモデルに詰め込む「万能超知能」競争からは距離を置くとし、一般性・自律性・能力を犠牲にしてでも安全性を優先すると明言している。6週間の意見募集を経て改訂し、2027年からの自社モデル開発の指針とする計画。</summary>
   </entry>
   <entry>
+    <title>Cognition のエンジニアが Devin を使い RSA-260 を素因数分解 — 2020年からの記録を更新、GPU 4,900日分をエージェントが自律運用</title>
+    <link rel="alternate" type="text/html" href="?a=cognition-devin-rsa-260-factorization-2026"/>
+    <id>tag:ai-tool-news.jp,2026:cognition-devin-rsa-260-factorization-2026</id>
+    <published>2026-09-17T15:00:00Z</published>
+    <updated>2026-09-17T15:00:00Z</updated>
+    <summary>Cognition（Devin の開発元）のエンジニア Eric Lu が、1991年から続く「RSA Factoring Challenge」の未解決問題の一つ「RSA-260」（862ビット、260桁）の素因数分解に成功し、2026年9月3日に結果を公開した。使用したのは CADO-NFS をベースに GPU で高速化した数体篩法の実装で、コーディング・クラスタ運用・最適化の大半を Devin エージェントが自律的に担当したという。総計算量は約4,900 GPU日・費用は約40万ドルとされ、2020年に樹立された「RSA-250」の記録を6年ぶりに更新した。なお、これは現在主流の RSA-2048 等の実用的な暗号強度には影響しない、研究記録上の成果である。</summary>
+  </entry>
+  <entry>
     <title>【分析】Anthropic vs 米国防総省、連邦地裁が「サプライチェーンリスク」指定を違法と判断 — 国防副長官は9月3日、なお維持の意向</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-pentagon-first-amendment-ruling-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-pentagon-first-amendment-ruling-2026</id>

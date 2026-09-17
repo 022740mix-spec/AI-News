@@ -20503,6 +20503,25 @@ const ARTICLES_BODY = {
         "url": "https://fortune.com/2026/09/14/microsoft-suleyman-ai-safety-code-of-conduct/"
       }
     ]
+  },
+  "cognition-devin-rsa-260-factorization-2026": {
+    "body": [
+      "AIコーディングエージェント「Devin」を開発する Cognition のエンジニア Eric Lu が、1991年に RSA Laboratories が提示した「RSA Factoring Challenge」のうち未解決だった**「RSA-260」（862ビット、10進数で260桁）の素因数分解**に成功したと、2026年9月3日に発表した。",
+      "手法は、オープンソースの数体篩法（GNFS）実装 **CADO-NFS** をベースに GPU 向けへ独自に高速化したもので、**コーディング・計算クラスタの運用・チューニングの大半を Devin エージェントが自律的に実行した**とされる。Lu 自身が行ったのは優先順位付けや方向性の指示が中心で、最適化コードそのものの大部分は Devin が書いたという。",
+      "総計算量は約**4,900 GPU日**、費用は概算で**40万ドル**規模とされる。この結果により、2020年に樹立され6年間破られていなかった「RSA-250」（829ビット）の記録が更新され、一般的なアルゴリズムで素因数分解された数としては過去最大となった。結果の公開後、Wikipedia の RSA 数一覧ページも速やかに更新されている。",
+      "強調しておくべき点として、この成果はあくまで**研究上のチャレンジ記録の更新**であり、現在の商用システムで広く使われている RSA-2048 やそれ以上の鍵長には計算量の観点で全く届いておらず、実用的な暗号の安全性には影響しない。焦点はむしろ、**GPU 高速化された既存の数論アルゴリズムを、AIエージェントがどこまで自律的に運用・最適化できるか**という点にある。",
+      "本記事は Cognition 公式ブログ（cognition.com）の発表内容を、Scientific American の技術解説記事など複数の報道が一致して伝える範囲に基づく。本稿執筆時点のネットワーク環境から cognition.com への直接アクセスはできなかったが、独立した複数の情報源が同じ数値（GPU日数・費用・破られた旧記録）を報じている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Factoring RSA-260",
+        "url": "https://cognition.com/blog/factoring-rsa-260"
+      },
+      {
+        "title": "What's the tech behind the record-breaking RSA-260 crack?",
+        "url": "https://www.scientificamerican.com/article/whats-the-tech-behind-the-record-breaking-rsa-260-crack/"
+      }
+    ]
   }
 };
 

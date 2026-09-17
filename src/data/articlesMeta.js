@@ -9882,5 +9882,25 @@ export const ARTICLES_META = [
       "src": "logos/microsoft.svg",
       "alt": "Microsoft Humanist Superintelligence"
     }
+  },
+  {
+    "id": "cognition-devin-rsa-260-factorization-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Cognition のエンジニアが Devin を使い RSA-260 を素因数分解 — 2020年からの記録を更新、GPU 4,900日分をエージェントが自律運用",
+    "excerpt": "Cognition（Devin の開発元）のエンジニア Eric Lu が、1991年から続く「RSA Factoring Challenge」の未解決問題の一つ**「RSA-260」（862ビット、260桁）の素因数分解に成功**し、2026年9月3日に結果を公開した。使用したのは CADO-NFS をベースに GPU で高速化した数体篩法の実装で、**コーディング・クラスタ運用・最適化の大半を Devin エージェントが自律的に担当**したという。総計算量は約4,900 GPU日・費用は約40万ドルとされ、2020年に樹立された「RSA-250」の記録を6年ぶりに更新した。なお、これは現在主流の RSA-2048 等の実用的な暗号強度には影響しない、研究記録上の成果である。",
+    "date": "2026-09-17",
+    "newsDate": "2026-09-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Cognition",
+      "エージェント",
+      "セキュリティ"
+    ],
+    "coverImage": {
+      "src": "articles/cover-programming.svg",
+      "alt": "RSA-260 factorization by Devin agent"
+    }
   }
 ];
