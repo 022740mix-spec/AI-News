@@ -16,6 +16,14 @@
     <summary>OpenAI が公式 GitHub org で公開している「Symphony」は、Linear・Jira・GitHub Issues 等の課題管理ボードを直接ポーリングし、Codex エージェントを自動でディスパッチしてPRを作るオーケストレーション基盤である。Elixir/BEAM の監視ツリーで数百体規模のエージェントを障害耐性つきに動かす設計で、最新の v0.0.3（9月15日）時点でも「信頼できる環境向けの控えめなエンジニアリングプレビュー」という注記を外していない。それでいてスター数はすでに2.7万を超える。</summary>
   </entry>
   <entry>
+    <title>Google DeepMind「Science Skills」— AlphaGenomeなど30以上の科学データベースをエージェントに繋ぐSKILL.md集、v1.2.1へ</title>
+    <link rel="alternate" type="text/html" href="?a=google-deepmind-science-skills-2026"/>
+    <id>tag:ai-tool-news.jp,2026:google-deepmind-science-skills-2026</id>
+    <published>2026-09-17T15:00:00Z</published>
+    <updated>2026-09-17T15:00:00Z</updated>
+    <summary>Google DeepMind が公式 GitHub org で公開する「Science Skills」は、ゲノミクス・構造生物学・ケモインフォマティクス・文献検索にまたがる42種のエージェント向けスキルを、AlphaGenome・AlphaFold DB・UniProt・PubMed など30以上のデータベースに接続する形でまとめたコレクションである。配布形式は Anthropic発の SKILL.md（YAML フロントマター付き指示ファイル）で、当サイトが9月14日に報じた「Skills over MCP」拡張が正式な標準になる前から、ベンダーを越えてこの形式で科学スキルが実配布されている実例になっている。</summary>
+  </entry>
+  <entry>
     <title>【分析】Anthropic vs 米国防総省、連邦地裁が「サプライチェーンリスク」指定を違法と判断 — 国防副長官は9月3日、なお維持の意向</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-pentagon-first-amendment-ruling-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-pentagon-first-amendment-ruling-2026</id>

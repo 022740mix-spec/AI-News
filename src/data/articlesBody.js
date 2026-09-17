@@ -20444,6 +20444,22 @@ const ARTICLES_BODY = {
         "url": "https://github.com/openai/symphony/releases"
       }
     ]
+  },
+  "google-deepmind-science-skills-2026": {
+    "body": [
+      "Google DeepMind が公式 GitHub org（`google-deepmind/science-skills`）で公開している「**Science Skills**」は、科学分野のエージェント向けワークフローを高速化するためのスキル集である。README は「グラウンディングとトークン効率を高めて、AI駆動の科学的ワークフローを加速する」ことを目的に掲げ、AlphaGenome・AlphaFold Database（AFDB）・UniProt・ClinVar・OpenAlex・PubMed を含む**30以上のデータベース・ツールとの連携**を42種のスキルとして提供している。各スキルは YAML フロントマター付きの `SKILL.md` ファイルと、`scripts/` フォルダ内の補助スクリプト、任意の参考資料という構成で統一されている。",
+      "配布はパッケージマネージャ `uv` を前提にしつつ、利用者は `npx skills add google-deepmind/science-skills/` で導入できる形になっている。Google の agentic ワークベンチ「Google Antigravity」向けには、設定画面からプラグインとして有効化する導線も用意されている。AlphaGenome・OpenAlex のように API キーを要求するスキルもあれば、ClinVar のようにキー無しでも動くがあれば通信量の上限が上がるものもある、と README は使い分けを明記している。",
+      "この配布形式そのものに、当サイトの取材対象として興味深い点がある。SKILL.md という指示ファイル形式は Anthropic の Agent Skills に由来し、当サイトは9月14日に、それを MCP サーバーから直接配信できるようにする拡張仕様「Skills over MCP」（SEP-2640、[→ 詳細](?a=mcp-skills-over-mcp-sep2640-2026)）がまだ議論段階にあると報じたばかりである。Science Skills は、その標準化が固まるより前から、**競合ベンダーである Google が同じ SKILL.md 形式で大規模なスキル集をすでに実配布している**という現状を示す実例であり、フォーマットの事実上の標準化が仕様の確定を先に追い越しつつある様子がうかがえる。",
+      "GitHub 上のコミット履歴を直接確認したところ、最初の公開コミットは5月19日（`michaeloneill` による \"Initial public release of Science Skills\"）で、以後 `artsobolev` を中心に活発に更新が続いている。直近では9月8日に v1.2.0、9月14日に v1.2.1 がリリースされており、本稿執筆時点でのスター数は3.1k・フォークは349件だった。",
+      "**セキュリティ上の注記**: 当サイトの CLAUDE.md は、中身を事前に確認できない外部パッケージ・スキルを `npx` 経由で無検証に実行することを禁じている。本記事は Science Skills の存在と設計を GitHub 上の公開情報に基づいて紹介するものであり、当サイトの制作過程で `npx skills add` を実行して導入したものではない。導入を検討する読者は、まず GitHub 上のソースコードと `SKILL_LICENSES.md`（データソースごとのライセンス）を自分で確認したうえで判断してほしい。",
+      "**確認状況**: `github.com/google-deepmind/science-skills` の README・コミット履歴には本稿執筆時点で直接到達し、機能一覧・バージョン履歴・スター数はそこから直接確認している。AlphaGenome の技術詳細を説明する Google DeepMind 公式サイト（deepmind.google）は本稿の調査環境からは遮断されており、AlphaGenome 自体の性能・仕様についての公式説明は未確認である。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitHub - google-deepmind/science-skills: GDM Science Skills to speed up agentic scientific workflows",
+        "url": "https://github.com/google-deepmind/science-skills"
+      }
+    ]
   }
 };
 

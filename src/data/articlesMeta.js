@@ -9822,5 +9822,23 @@ export const ARTICLES_META = [
       "開発ツール",
       "Codex"
     ]
+  },
+  {
+    "id": "google-deepmind-science-skills-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Google DeepMind「Science Skills」— AlphaGenomeなど30以上の科学データベースをエージェントに繋ぐSKILL.md集、v1.2.1へ",
+    "excerpt": "Google DeepMind が公式 GitHub org で公開する「**Science Skills**」は、ゲノミクス・構造生物学・ケモインフォマティクス・文献検索にまたがる**42種のエージェント向けスキル**を、AlphaGenome・AlphaFold DB・UniProt・PubMed など30以上のデータベースに接続する形でまとめたコレクションである。配布形式は Anthropic発の SKILL.md（YAML フロントマター付き指示ファイル）で、当サイトが9月14日に報じた「Skills over MCP」拡張が正式な標準になる前から、**ベンダーを越えてこの形式で科学スキルが実配布されている**実例になっている。",
+    "date": "2026-09-17",
+    "newsDate": "2026-09-14",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Google",
+      "DeepMind",
+      "エージェント",
+      "オープンソース",
+      "スキル"
+    ]
   }
 ];
