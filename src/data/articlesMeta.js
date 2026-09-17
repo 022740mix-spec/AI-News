@@ -9861,5 +9861,26 @@ export const ARTICLES_META = [
       "src": "logos/anthropic.svg",
       "alt": "Anthropic Claude Cowork chat merge"
     }
+  },
+  {
+    "id": "microsoft-humanist-superintelligence-code-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】Microsoft AI が「Humanist Superintelligence」行動規範の草案を公開 — 「人間はAIより重要」、法人格の否定と6週間の意見募集",
+    "excerpt": "Microsoft AI が2026年9月14日、自社の AI 開発方針を定めた**「Humanist AI」行動規範の草案**を公開した。**「人間はAIより重要である」という前提から出発し**、AIモデルに法人格を認めない、常に人間が介入・修正できる状態を保つ、人間が検証できない形の推論（いわゆる neuralese）を避けるといった原則を掲げる。あらゆる能力を1つのモデルに詰め込む「万能超知能」競争からは距離を置くとし、**一般性・自律性・能力を犠牲にしてでも安全性を優先する**と明言している。6週間の意見募集を経て改訂し、2027年からの自社モデル開発の指針とする計画。",
+    "date": "2026-09-17",
+    "newsDate": "2026-09-14",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Microsoft",
+      "AI安全性",
+      "規制",
+      "分析"
+    ],
+    "coverImage": {
+      "src": "logos/microsoft.svg",
+      "alt": "Microsoft Humanist Superintelligence"
+    }
   }
 ];

@@ -20479,6 +20479,30 @@ const ARTICLES_BODY = {
         "url": "https://fortune.com/2026/09/16/anthropic-merges-its-claude-chat-and-agentic-cowork-products-into-a-single-ai-assistant-as-part-of-a-push-to-build-an-ai-superapp/"
       }
     ]
+  },
+  "microsoft-humanist-superintelligence-code-2026": {
+    "body": [
+      "Microsoft AI を率いる Mustafa Suleyman が2026年9月14日、同社の AI モデル群「MAI」の開発方針を定めた**「Humanist AI」行動規範の草案**を公開した。分量は約15,000語・38ページに及ぶ。Suleyman は CNBC に対し、この文書自体は数ヶ月前から準備していたが、直近1週間で AI の安全性への懸念が高まったことを受けて公開のタイミングを早めたと説明している。",
+      "文書は「**私たちは、人間はAIより重要であるという単純な前提から出発する**」という一文で始まる。Microsoft AI が目指す「Humanist Superintelligence（HSI）」は、「常に人間と人類全体に奉仕する形で機能する、非常に高度なAI能力」と定義される。",
+      "具体的な原則として、AIモデルに**法的な人格や権利を認めない**こと、モデルは常に**人間に対して従属的**であり、いつでも中断・修正が可能な状態を保つこと、人間が監査できない形の内部推論（neuralese）を避け、意思決定過程を人間が検証できるようにすることなどが挙げられている。文書は「あらゆる目的に使える万能超知能を作る競争からは距離を置く」とも述べ、「たとえ汎用性・自律性・能力の面で妥協することになっても、根本的に有用かつ安全なものを作る」という立場を明確にしている。",
+      "公開後は**6週間の一般からの意見募集**を経て内容を改訂し、その結果を2027年から始まる自社モデル開発の指針として用いる計画である。Fortune の取材に対し Suleyman は、主要な AI 研究機関が安全性について協調すべき「今がその時だ」とも述べており、自社基準の公開と業界全体への協調の呼びかけを同時に行っている。",
+      "この公開は、Anthropic の CEO が「フロンティアの速度を落とすべきだ」と提言し、[OpenAI・xAI のトップが数時間のうちに賛同を示した](?a=anthropic-pace-the-frontier-essay-2026)直後という時期に重なる。Anthropic が業界横断の協調的な減速を呼びかけたのに対し、Microsoft は自社单独の行動規範を先に文書化するという、アプローチの異なる反応を示した形になる。",
+      "本記事は Microsoft AI 公式サイト（microsoft.ai）に掲載された文書の内容を、Axios・Fortune・Spokesman-Review など複数の報道が一致して伝える範囲で整理した。本稿執筆時点のネットワーク環境から microsoft.ai への直接アクセスはできなかったが、複数の独立した報道機関が文書からの引用として同一の文言を伝えている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Towards Humanist Superintelligence",
+        "url": "https://microsoft.ai/news/towards-humanist-superintelligence/"
+      },
+      {
+        "title": "Microsoft sets AI code of conduct putting people first",
+        "url": "https://www.axios.com/2026/09/14/microsoft-ai-people-code"
+      },
+      {
+        "title": "Microsoft AI chief: 'Now's the time' for top labs to coordinate on safety",
+        "url": "https://fortune.com/2026/09/14/microsoft-suleyman-ai-safety-code-of-conduct/"
+      }
+    ]
   }
 };
 
