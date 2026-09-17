@@ -8,6 +8,14 @@
   <updated>2026-09-17T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>OpenAI「Symphony」— Issueトレッカーとエージェント群をつなぐオーケストレーション基盤、公式orgで静かに2.7万スターへ</title>
+    <link rel="alternate" type="text/html" href="?a=openai-symphony-agent-orchestration-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-symphony-agent-orchestration-2026</id>
+    <published>2026-09-17T15:00:00Z</published>
+    <updated>2026-09-17T15:00:00Z</updated>
+    <summary>OpenAI が公式 GitHub org で公開している「Symphony」は、Linear・Jira・GitHub Issues 等の課題管理ボードを直接ポーリングし、Codex エージェントを自動でディスパッチしてPRを作るオーケストレーション基盤である。Elixir/BEAM の監視ツリーで数百体規模のエージェントを障害耐性つきに動かす設計で、最新の v0.0.3（9月15日）時点でも「信頼できる環境向けの控えめなエンジニアリングプレビュー」という注記を外していない。それでいてスター数はすでに2.7万を超える。</summary>
+  </entry>
+  <entry>
     <title>【分析】Anthropic vs 米国防総省、連邦地裁が「サプライチェーンリスク」指定を違法と判断 — 国防副長官は9月3日、なお維持の意向</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-pentagon-first-amendment-ruling-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-pentagon-first-amendment-ruling-2026</id>

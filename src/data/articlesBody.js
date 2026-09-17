@@ -20425,6 +20425,25 @@ const ARTICLES_BODY = {
         "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB243"
       }
     ]
+  },
+  "openai-symphony-agent-orchestration-2026": {
+    "body": [
+      "OpenAI が公式 GitHub org（`openai/symphony`）で公開している「**Symphony**」は、プロジェクトの作業そのものを**隔離された自律実装ランに変換する**オーケストレーション基盤である。README は狙いを「エージェントを監督することから、こなすべき仕事を管理することへ」と表現している。仕組みは単純で、Linear・GitHub Issues・Jira Cloud・Asana・GitLab Issues といった課題管理ボードを定期的にポーリングし、着手可能なタスクを見つけると**Issueごとに隔離されたワークスペースを作成**、そこに Codex エージェントを app-server モードでディスパッチする。エージェントは CI の結果・レビューでの指摘・複雑度分析・作業内容を説明するウォークスルー動画といった「作業の証拠」を添えて完了を報告し、受理されれば**人間を介さずに安全にPRを着地させる**設計になっている。",
+      "実装言語に Elixir を選んだ理由も README で説明されている。BEAM 仮想マシンの監視ツリー（supervision tree）は、1体のエージェントがクラッシュしてもエラー内容を保持したまま自動再起動でき、他のエージェントの処理は止まらない。数百体規模の並行エージェントを扱う前提で、軽量プロセス管理と分散実行のサポートを最初から組み込める点を採用理由に挙げている。",
+      "GitHub 上のコミット履歴を直接確認したところ、開発自体は今年5月から続いており、7月18日に最初のタグ付きリリース v0.0.1（Elixir によるオーケストレーション、Phoenix 製の可観測性ダッシュボード、SSH ワーカー対応）、7月24日に v0.0.2（Linear・GitHub Issues・Jira Cloud・Asana・GitLab Issues に対応する汎用トラッカーインターフェース）、そして直近の9月15日に v0.0.3（Symphony 用リリーススキルの追加、GitHub/GitLab 認証トークンのスクラビング強化）と、着実にバージョンを重ねている。それでも README の警告文は一貫して「信頼できる環境向けの控えめなエンジニアリングプレビュー」のままであり、本番運用を前提にした機能追加のペースにはまだ慎重さが見える。",
+      "一方でスター数はすでに2.7万・フォーク2,800件に達しており、OpenAI の公式リポジトリという知名度に見合うだけの一般ニュース化はまだされていない。当サイトが9月10日に報じた「Agents API」（[→ 詳細](?a=openai-agents-api-public-beta-2026)）が長時間セッションやサンドボックス実行そのものを提供するAPIだったのに対し、Symphony はその一段上のレイヤー、つまり**「どのタスクに、いつ、どのエージェントを割り当てるか」という管理層**を担う。両者は競合というより補完の関係にあり、OpenAI がエージェント活用を「対話ツール」から「無人の作業実行基盤」へと段階的に押し広げている動きの一部として位置づけられる。",
+      "**確認状況**: `github.com/openai/symphony` の README・リリースノート・コミット履歴には本稿執筆時点で直接到達し、バージョン履歴とスター数はそこから直接確認した。OpenAI 公式サイト（openai.com）は本稿の調査環境からは遮断されており、Symphony に関する公式ブログ上のアナウンスがあるかどうかは確認できていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitHub - openai/symphony: Symphony turns project work into isolated, autonomous implementation runs",
+        "url": "https://github.com/openai/symphony"
+      },
+      {
+        "title": "Releases · openai/symphony",
+        "url": "https://github.com/openai/symphony/releases"
+      }
+    ]
   }
 };
 

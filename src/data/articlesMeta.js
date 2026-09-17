@@ -9804,5 +9804,23 @@ export const ARTICLES_META = [
       "チャットボット",
       "児童保護"
     ]
+  },
+  {
+    "id": "openai-symphony-agent-orchestration-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI「Symphony」— Issueトレッカーとエージェント群をつなぐオーケストレーション基盤、公式orgで静かに2.7万スターへ",
+    "excerpt": "OpenAI が公式 GitHub org で公開している「**Symphony**」は、Linear・Jira・GitHub Issues 等の**課題管理ボードを直接ポーリングし、Codex エージェントを自動でディスパッチしてPRを作るオーケストレーション基盤**である。Elixir/BEAM の監視ツリーで数百体規模のエージェントを障害耐性つきに動かす設計で、最新の v0.0.3（9月15日）時点でも「信頼できる環境向けの控えめなエンジニアリングプレビュー」という注記を外していない。それでいてスター数はすでに2.7万を超える。",
+    "date": "2026-09-17",
+    "newsDate": "2026-09-15",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "エージェント",
+      "オープンソース",
+      "開発ツール",
+      "Codex"
+    ]
   }
 ];
