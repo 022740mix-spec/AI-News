@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-09-17T15:00:00Z</updated>
+  <updated>2026-09-18T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>OpenAI「Symphony」— Issueトレッカーとエージェント群をつなぐオーケストレーション基盤、公式orgで静かに2.7万スターへ</title>
@@ -22,6 +22,14 @@
     <published>2026-09-17T15:00:00Z</published>
     <updated>2026-09-17T15:00:00Z</updated>
     <summary>Google DeepMind が公式 GitHub org で公開する「Science Skills」は、ゲノミクス・構造生物学・ケモインフォマティクス・文献検索にまたがる42種のエージェント向けスキルを、AlphaGenome・AlphaFold DB・UniProt・PubMed など30以上のデータベースに接続する形でまとめたコレクションである。配布形式は Anthropic発の SKILL.md（YAML フロントマター付き指示ファイル）で、当サイトが9月14日に報じた「Skills over MCP」拡張が正式な標準になる前から、ベンダーを越えてこの形式で科学スキルが実配布されている実例になっている。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic が Cowork とチャットを1つに統合 — Claude Docs・Slides・Design も会話の中から使えるように</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-one-claude-cowork-chat-merge-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-one-claude-cowork-chat-merge-2026</id>
+    <published>2026-09-17T15:00:00Z</published>
+    <updated>2026-09-17T15:00:00Z</updated>
+    <summary>Anthropic が2026年9月16日、これまで別のモードだったチャットと Claude Cowork を1つの Claude に統合すると発表した。ユーザーがチャットと Cowork のどちらを使うべきか都度判断する必要があったことへの不満を踏まえ、Claude が要求内容を見て、その場で答えるべきか長時間タスクとして引き受けるべきかを自動判断する設計に変わる。同時に、共同編集可能な文書ツール「Claude Docs」（ベータ）と、プレゼン作成ツール「Claude Slides」を新たに投入し、これまで Cowork や Design 専用だった機能も通常の会話内から呼び出せるようになる。</summary>
   </entry>
   <entry>
     <title>【分析】Anthropic vs 米国防総省、連邦地裁が「サプライチェーンリスク」指定を違法と判断 — 国防副長官は9月3日、なお維持の意向</title>

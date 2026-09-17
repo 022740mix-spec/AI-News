@@ -9840,5 +9840,26 @@ export const ARTICLES_META = [
       "オープンソース",
       "スキル"
     ]
+  },
+  {
+    "id": "anthropic-one-claude-cowork-chat-merge-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が Cowork とチャットを1つに統合 — Claude Docs・Slides・Design も会話の中から使えるように",
+    "excerpt": "Anthropic が2026年9月16日、これまで別のモードだった**チャットと Claude Cowork を1つの Claude に統合**すると発表した。ユーザーがチャットと Cowork のどちらを使うべきか都度判断する必要があったことへの不満を踏まえ、**Claude が要求内容を見て、その場で答えるべきか長時間タスクとして引き受けるべきかを自動判断**する設計に変わる。同時に、共同編集可能な文書ツール「**Claude Docs**」（ベータ）と、プレゼン作成ツール「**Claude Slides**」を新たに投入し、これまで Cowork や Design 専用だった機能も通常の会話内から呼び出せるようになる。",
+    "date": "2026-09-17",
+    "newsDate": "2026-09-16",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "ドキュメント",
+      "ユーザー体験"
+    ],
+    "coverImage": {
+      "src": "logos/anthropic.svg",
+      "alt": "Anthropic Claude Cowork chat merge"
+    }
   }
 ];

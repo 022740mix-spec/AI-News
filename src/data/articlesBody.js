@@ -20460,6 +20460,25 @@ const ARTICLES_BODY = {
         "url": "https://github.com/google-deepmind/science-skills"
       }
     ]
+  },
+  "anthropic-one-claude-cowork-chat-merge-2026": {
+    "body": [
+      "Anthropic が2026年9月16日、**Claude のチャットと Claude Cowork を1つのインターフェースに統合する**と発表した。Cowork は2026年1月、フォルダ内の複数ファイルを読み込んでレポートをまとめるといった「1回のやり取りでは終わらないタスク」向けに、通常のチャットとは別のモードとして導入された機能である。",
+      "この2モード制には利用者側の不満が伴っていた。あるタスクがチャット向けなのか Cowork 向けなのかを利用者自身が事前に判断しなければならず、しかも**一方のモードで始めた作業がもう一方に引き継がれない**という制約があった。今回の変更で、Claude は要求の内容を見て、即答すべき質問なのか、複数ステップにまたがる長時間タスクとして引き受けるべきなのかを**自動的に判断**するようになり、利用者がタブやアプリを切り替える必要がなくなる。",
+      "機能面では、共同編集可能な文書作成ツール「**Claude Docs**」がベータで提供開始され、作成した文書は共有リンクで他者と閲覧・編集できる。プレゼンテーション作成ツール「**Claude Slides**」も投入され、これまで Cowork や Design に限定されていた機能が、通常の会話の中から直接呼び出せるようになる。文書共同編集とプレゼン作成という位置づけは、Google Docs / Slides や Microsoft 365 が担ってきた領域と重なる。",
+      "展開は**Pro・Max プランから**、web・デスクトップ・モバイルの各アプリに数週間かけて順次行われる。Team・Free プランは後日追随する予定で、Enterprise の管理者には組織全体への変更が及ぶ**30日以上前に通知**するとしている。",
+      "本記事は Anthropic 公式ブログ（claude.com/blog）の発表と、Fortune・Engadget・TechRepublic・Computerworld・9to5Mac など複数の独立した報道機関の記事が一致する内容に基づく。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Cowork and chat are now one Claude",
+        "url": "https://claude.com/blog/cowork-is-now-claude"
+      },
+      {
+        "title": "Anthropic merges its chat and agentic products into one AI assistant in push to build a superapp",
+        "url": "https://fortune.com/2026/09/16/anthropic-merges-its-claude-chat-and-agentic-cowork-products-into-a-single-ai-assistant-as-part-of-a-push-to-build-an-ai-superapp/"
+      }
+    ]
   }
 };
 
