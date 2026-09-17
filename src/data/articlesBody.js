@@ -20522,6 +20522,25 @@ const ARTICLES_BODY = {
         "url": "https://www.scientificamerican.com/article/whats-the-tech-behind-the-record-breaking-rsa-260-crack/"
       }
     ]
+  },
+  "pentagon-ai-targeting-human-oversight-concerns-2026": {
+    "body": [
+      "米国防総省は2023年の AI 導入戦略で「高速・精密・強靭なキルチェーン（kill chain）」の実現を目標として掲げ、2026年の戦略ではさらに踏み込み、**軍の作戦や意思決定の手順そのものを、現時点のAI能力に合わせて再設計する「AIファースト」の戦闘部隊化**を打ち出している。",
+      "この方針をめぐり、2026年9月中旬に開かれた議会証言の場で、複数の専門家が**人間による実効的な監督が追いつかなくなりつつある**との懸念を示したと、Federal Times・Air Force Times・C4ISRNet など米国防専門メディア(Sightline Media Group系列)が9月16日に一斉に報じた。証言では、**複数のAI対応システムを同時に監督する担当者が、誤った推奨内容を認識し、被害が生じる前に介入するだけの時間・情報・権限を持てない**場面が想定されるとの指摘がなされている。ウクライナでの事例が、AIによって意思決定が「数時間から数分へ」圧縮された例として引き合いに出された。",
+      "証言ではさらに、**AIが関与した判断が民間人被害につながった場合に、誰が責任を負うのかという説明責任の空白**も指摘されている。これに加えて、国防総省の商用AIパートナーの一社である Anthropic 自身も、自社モデルが**十分な人間の監督体制を伴わないまま兵器のターゲティングに利用されうる**との懸念を示したと報じられている。",
+      "Anthropic と国防総省の関係は、完全自律型致死兵器や大量監視への利用制限をめぐって過去に法廷でも争われてきた。[連邦地裁は8月27日、国防総省による「サプライチェーンリスク」指定を違法と判断している](?a=anthropic-pentagon-first-amendment-ruling-2026)一方、Anthropic は9月11日公表の脅威情報レポートで、[ロシアの自律型ドローン群やイエメンのミサイル誘導への悪用を検知したと報告](?a=anthropic-threat-report-weapons-research-2026)するなど、軍事転用のリスクそのものへの警戒も継続して発信している。今回の証言は、契約関係を維持しながらも、AIの軍事利用における人間の関与の水準について当事者間で緊張が残っていることを示している。",
+      "本記事は Federal Times・Air Force Times・C4ISRNet（いずれも Sightline Media Group 系列の国防専門メディア）が2026年9月16日に伝えた内容に基づく。これらは同一の取材に基づく系列媒体での配信であり、独立した複数系統のメディアによる裏付けとは性質が異なる点に留意されたい。"
+    ],
+    "primarySources": [
+      {
+        "title": "AI military targeting may move faster than humans can authenticate, critics warn",
+        "url": "https://www.c4isrnet.com/news/your-military/2026/09/16/ai-military-targeting-may-move-faster-than-humans-can-authenticate-critics-warn/"
+      },
+      {
+        "title": "AI military targeting may move faster than humans can authenticate, critics warn",
+        "url": "https://www.airforcetimes.com/industry/techwatch/2026/09/16/ai-military-targeting-may-move-faster-than-humans-can-authenticate-critics-warn/"
+      }
+    ]
   }
 };
 

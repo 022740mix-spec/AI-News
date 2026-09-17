@@ -9902,5 +9902,26 @@ export const ARTICLES_META = [
       "src": "articles/cover-programming.svg",
       "alt": "RSA-260 factorization by Devin agent"
     }
+  },
+  {
+    "id": "pentagon-ai-targeting-human-oversight-concerns-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】AIによる軍事ターゲティングは人間の承認より速く動きうる — 議会証言で専門家が警告、Anthropicも懸念を表明",
+    "excerpt": "米国防総省が2023年の AI 導入戦略以来掲げる「高速・精密・強靭なキルチェーン」を追求し、軍の作戦をAIの現有能力に合わせて再設計する**「AIファースト」の方針**を進める中、2026年9月、議会証言の場で専門家から**人間による有効な監督が追いつかなくなりつつある**との懸念が示されたと複数の米国防専門メディアが報じた。複数のAIシステムを同時に監督する担当者が、誤った推奨に気づいて介入するだけの時間・情報を持てない場面が増えているという指摘で、国防総省の商用AIパートナーである Anthropic 自身も、自社モデルが十分な人間の監督体制なしに兵器のターゲティングに使われかねないとの懸念を示したとされる。",
+    "date": "2026-09-17",
+    "newsDate": "2026-09-16",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "軍事",
+      "AI安全性",
+      "規制",
+      "Anthropic"
+    ],
+    "coverImage": {
+      "src": "articles/cover-regulation.svg",
+      "alt": "AI military targeting human oversight"
+    }
   }
 ];

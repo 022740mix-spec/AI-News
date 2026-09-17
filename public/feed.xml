@@ -48,6 +48,14 @@
     <summary>Cognition（Devin の開発元）のエンジニア Eric Lu が、1991年から続く「RSA Factoring Challenge」の未解決問題の一つ「RSA-260」（862ビット、260桁）の素因数分解に成功し、2026年9月3日に結果を公開した。使用したのは CADO-NFS をベースに GPU で高速化した数体篩法の実装で、コーディング・クラスタ運用・最適化の大半を Devin エージェントが自律的に担当したという。総計算量は約4,900 GPU日・費用は約40万ドルとされ、2020年に樹立された「RSA-250」の記録を6年ぶりに更新した。なお、これは現在主流の RSA-2048 等の実用的な暗号強度には影響しない、研究記録上の成果である。</summary>
   </entry>
   <entry>
+    <title>【分析】AIによる軍事ターゲティングは人間の承認より速く動きうる — 議会証言で専門家が警告、Anthropicも懸念を表明</title>
+    <link rel="alternate" type="text/html" href="?a=pentagon-ai-targeting-human-oversight-concerns-2026"/>
+    <id>tag:ai-tool-news.jp,2026:pentagon-ai-targeting-human-oversight-concerns-2026</id>
+    <published>2026-09-17T15:00:00Z</published>
+    <updated>2026-09-17T15:00:00Z</updated>
+    <summary>米国防総省が2023年の AI 導入戦略以来掲げる「高速・精密・強靭なキルチェーン」を追求し、軍の作戦をAIの現有能力に合わせて再設計する「AIファースト」の方針を進める中、2026年9月、議会証言の場で専門家から人間による有効な監督が追いつかなくなりつつあるとの懸念が示されたと複数の米国防専門メディアが報じた。複数のAIシステムを同時に監督する担当者が、誤った推奨に気づいて介入するだけの時間・情報を持てない場面が増えているという指摘で、国防総省の商用AIパートナーである Anthropic 自身も、自社モデルが十分な人間の監督体制なしに兵器のターゲティングに使われかねないとの懸念を示したとされる。</summary>
+  </entry>
+  <entry>
     <title>【分析】Anthropic vs 米国防総省、連邦地裁が「サプライチェーンリスク」指定を違法と判断 — 国防副長官は9月3日、なお維持の意向</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-pentagon-first-amendment-ruling-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-pentagon-first-amendment-ruling-2026</id>
