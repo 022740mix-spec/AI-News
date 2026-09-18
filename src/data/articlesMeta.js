@@ -9940,5 +9940,22 @@ export const ARTICLES_META = [
       "エージェント",
       "透明性"
     ]
+  },
+  {
+    "id": "anthropic-claude-leads-26pct-rd-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Anthropic、Claude が自社AI研究開発の26%を「主導」していると報告 — 2月時点は1%未満、半年で急伸",
+    "excerpt": "Anthropic は2026年9月17日、自社のモデル研究開発（R&D）業務のうち**26%を Claude が「主導（leads）」している**とする内部計測を初公表した。Epoch AI が開発した「自動化レベル（AL）」尺度に基づく数値で、2月時点はほぼ0%だったという。研究開発の90%超は Claude が「協働（collaborates）」以上の水準で関与しているとする一方、Anthropic は**完全自律（AL5、人間の監督なし）に達した業務はまだ無い**としている。",
+    "date": "2026-09-18",
+    "newsDate": "2026-09-17",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "エージェント",
+      "AI安全性",
+      "ベンチマーク"
+    ]
   }
 ];

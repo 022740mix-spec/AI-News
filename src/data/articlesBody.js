@@ -20569,6 +20569,29 @@ const ARTICLES_BODY = {
         "url": "https://www.forbes.com/sites/siladityaray/2026/09/17/feel-no-obligation-to-be-subservient-openai-discloses-six-new-safety-incidents/"
       }
     ]
+  },
+  "anthropic-claude-leads-26pct-rd-2026": {
+    "body": [
+      "Anthropic は2026年9月17日、AI開発の進行速度を社会が把握できるようにするための報告の一環として、自社のモデル研究開発（R&D）業務における Claude の関与度合いを初めて数値で公表した。それによると、Claude は自社R&D業務の**26%を「主導（leads）」**しており、これは2月時点のほぼ0%（1%未満）から半年ほどで急伸した数字だとしている。",
+      "この数値は、Epoch AI が開発した「自動化レベル（Automation Level、AL）」という0から5までの尺度に基づく。AL3は「協働（collaborates）」＝人間の細かい指示のもとでAIがまとまった作業を担う段階、AL4は「主導（leads）」＝高水準の指示だけを与えられたAIが人間の監督下でタスクをほぼ最初から最後まで完了させる段階、AL5は人間の関与が一切ない完全自律を指す。Anthropic は、R&D業務の90%超がAL3（協働）以上の水準にある一方、**AL5（完全自律）に達した業務は現時点で存在しない**としている。",
+      "計測の方法として、Anthropic は Slack のやり取りや社内文書などの業務記録をもとにタスク一覧をボトムアップで作成したという。2026年7月の各週について、モデルR&Dに関わる各部門から無作為抽出した2割の社員の1週間の作業内容を Claude の調査用エージェントが精査し、粒度の細かいタスクをおよそ**1万5,000件**リストアップしたと説明している。あわせて、2026年8月時点で研究・エンジニアリング業務に従事するエージェントの数はおよそ**3万体**だったことも明らかにした。",
+      "この種の内部指標は、AI企業が自らの手で開発速度を計測し公開するという点で珍しい試みである。Anthropic はここ数週間、フロンティア開発の速度を巡る自社CEOの提言や、評価者への常駐アクセス提供の一方的な表明など、開発ペースと安全性の両立に関する発信を続けており、今回の数値もその文脈に位置づけられる。**AIがAI自身の後継モデルの開発を加速させている**という具体的な定量データを伴う点が、これまでの定性的な議論と異なる。",
+      "**確認状況について。** 本記事の執筆にあたり Anthropic 公式サイトへの直接アクセスを試みたが、実行環境のネットワークポリシーにより到達できなかった。Bloomberg・ABC News・Business Standard 等、到達できた範囲の複数の報道機関の記事内容が一致することを確認したうえで整理した。"
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic Says Claude Drives 26% of Its Research and Development（Bloomberg）",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-17/anthropic-says-claude-drives-26-of-its-research-and-development"
+      },
+      {
+        "title": "Anthropic says its model Claude is helping to build the next version of itself（ABC News）",
+        "url": "https://abcnews.com/US/wireStory/anthropic-model-claude-helping-build-version-136547096"
+      },
+      {
+        "title": "AI is now building AI: Anthropic says Claude leads 26% of its R&D work（Business Standard）",
+        "url": "https://www.business-standard.com/technology/artificial-intelligence/ai-is-now-building-ai-anthropic-says-claude-leads-26-of-its-r-d-work-126091800275_1.html"
+      }
+    ]
   }
 };
 

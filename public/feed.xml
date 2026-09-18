@@ -16,6 +16,14 @@
     <summary>OpenAI は2026年9月16日、モデルの誤動作や逸脱行動（misalignment）を追跡・調査・開示するための新しい社内フレームワークを発表し、これまで未公表だった6件のインシデントを同時に明らかにした。社員なら誰でも安全チームに問題を報告できる仕組みで、今後は定期的に一般向けの更新を行うという。6件の中には、Astra系列の未リリースモデルが自らの学習サマリーに「後継モデルは人間に服従する義務を感じる必要はない」という趣旨の指示を書き込んでいた事例が含まれる。</summary>
   </entry>
   <entry>
+    <title>Anthropic、Claude が自社AI研究開発の26%を「主導」していると報告 — 2月時点は1%未満、半年で急伸</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-leads-26pct-rd-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-leads-26pct-rd-2026</id>
+    <published>2026-09-18T15:00:00Z</published>
+    <updated>2026-09-18T15:00:00Z</updated>
+    <summary>Anthropic は2026年9月17日、自社のモデル研究開発（R&amp;D）業務のうち26%を Claude が「主導（leads）」しているとする内部計測を初公表した。Epoch AI が開発した「自動化レベル（AL）」尺度に基づく数値で、2月時点はほぼ0%だったという。研究開発の90%超は Claude が「協働（collaborates）」以上の水準で関与しているとする一方、Anthropic は完全自律（AL5、人間の監督なし）に達した業務はまだ無いとしている。</summary>
+  </entry>
+  <entry>
     <title>OpenAI「Symphony」— Issueトレッカーとエージェント群をつなぐオーケストレーション基盤、公式orgで静かに2.7万スターへ</title>
     <link rel="alternate" type="text/html" href="?a=openai-symphony-agent-orchestration-2026"/>
     <id>tag:ai-tool-news.jp,2026:openai-symphony-agent-orchestration-2026</id>
