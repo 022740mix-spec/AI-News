@@ -9957,5 +9957,23 @@ export const ARTICLES_META = [
       "AI安全性",
       "ベンチマーク"
     ]
+  },
+  {
+    "id": "i-have-adhd-agent-output-skill-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "個人開発の「I Have ADHD」が4.8万スター — コーディングエージェントの冗長な出力を10のルールで再構成するスキル",
+    "excerpt": "開発者 ayghri が公開した「I Have ADHD」（`ayghri/i-have-adhd`）は、Claude Code・GitHub Copilot・Cursor など複数のコーディングエージェント向けに導入できる出力整形用スキルで、GitHubスター数は**4.8万**に達している。「次に何をすべきか」を先頭に置き、前置き・要約の繰り返し・脱線を抑える**10のルール**をシステムプロンプトに組み込むことで、エージェントの返答を要点先出しの構造に変える。ADHD（注意欠如・多動症）を持つ開発者自身の体験を出発点にした設計だが、著者は冗長な出力に苦労する開発者全般に向けたツールとして位置づけている。",
+    "date": "2026-09-18",
+    "newsDate": "2026-09-18",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "エージェント",
+      "オープンソース",
+      "個人開発",
+      "Claude Code",
+      "Agent Skills"
+    ]
   }
 ];
