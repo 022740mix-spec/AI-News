@@ -20569,36 +20569,6 @@ const ARTICLES_BODY = {
         "url": "https://techcrunch.com/2026/08/26/openai-releases-its-official-report-on-the-hugging-face-breach/"
       }
     ]
-  },
-  "anthropic-pentagon-lethal-weapons-dispute-2026": {
-    "body": [
-      "米連邦地裁（北カリフォルニア地区）のリタ・リン判事は2026年8月27〜28日、国防総省が Anthropic を「サプライチェーンリスク」に指定した措置について、**違法**との判断を示した。この指定は本来、敵対国とのつながりが疑われる企業にのみ用いられてきたもので、国防総省傘下のあらゆる部局・契約業者が Anthropic の製品を扱うことを事実上禁じる効果を持っていた。",
-      "対立の発端は2026年1月にさかのぼる。国防総省は自省の生成AI基盤「GenAI.mil」への Claude 展開交渉の中で、あらゆる合法的用途への無制限アクセスを Anthropic に求めた。これに対し Anthropic 側は、Claude が人間の関与なしに動作する完全自律型の致死兵器や、米国内の市民を対象にした大量監視に使われないという保証を譲らず、交渉は決裂した。",
-      "同年2月27日、トランプ大統領は連邦機関に対し Anthropic の技術利用を即時停止するよう指示し、国防総省（呼称は2025年9月の大統領令以降「Department of War」も用いられており、長官ピート・ヘグセス氏は「Secretary of War」の呼称でも報じられる）はこれを受けて Anthropic をサプライチェーンリスクに指定、契約業者・サプライヤー・パートナーが同社と取引することを禁止し、最長6か月の移行期間を設けると発表した。",
-      "Anthropic はサンフランシスコとワシントン D.C. の連邦裁判所にこの指定の取り消しを求めて提訴した。3月26日には一時的な差し止めが認められたが、4月には控訴裁判所で暫定的な差し止め請求が退けられるなど、一進一退の展開をたどった。",
-      "そして8月27〜28日、リン判事は本案について判断を示し、国防総省の指定は**言論の自由を保障する合衆国憲法修正第1条に反する報復的措置であり、「恣意的かつ気まぐれ」**だとしたほか、指定に先立って Anthropic に十分な事前手続き（デュープロセス）の機会を与えなかった点で**修正第5条にも反する**と結論づけた。",
-      "判決後、国防総省の副長官（Under Secretary of War）エミル・マイケル氏は自身の SNS 投稿で、判決には「数十か所の事実誤認がある」と反論し、「紛争下にある時期」に出されたこの判決は大統領の軍最高司令官としての権限を侵害し、国防総省の作戦遂行能力を損なうと主張した。そのうえで、**控訴が係属している間は Anthropic をサプライチェーンリスクとして扱い続ける**との立場を示しており、司法判断と行政の実務運用が食い違ったまま対立が続いている。専門家の間では、この係争が連邦最高裁まで持ち込まれる可能性も指摘されている。",
-      "この対立は、AI開発企業が自社の利用制限方針（Usage Policy）をどこまで政府相手にも貫けるかという、単発の訴訟を超えた論点を含んでいる。Anthropic は創業時からの公約として自律型致死兵器や国内監視への利用を制限しており、政府調達という巨大な市場を失うリスクを負ってでもその方針を維持した形になる。国防総省側の主張・Anthropic側の主張のいずれも、本記事は一方の当否を結論として提示しない。",
-      "**確認状況について。** 本記事の執筆にあたり、Anthropic 公式サイトおよび NPR・国防総省側の一次資料への直接アクセスを試みたが、実行環境のネットワークポリシーにより到達できなかった。CNN・CNBC・Forbes・TechCrunch・The Hill・Axios・Nextgov 等、到達できた範囲の独立した複数の報道機関の記事内容が一致することを確認したうえで整理した。"
-    ],
-    "primarySources": [
-      {
-        "title": "Judge rules the Pentagon's supply chain risk label for Anthropic unlawful（CNN Business）",
-        "url": "https://www.cnn.com/2026/08/27/tech/anthropic-pentagon-supply-chain-risk-unlawful-hnk"
-      },
-      {
-        "title": "Judge blocks Pentagon blacklist of Anthropic as supply chain risk（CNBC）",
-        "url": "https://www.cnbc.com/2026/08/28/judge-blocks-pentagon-blacklist--anthropic-.html"
-      },
-      {
-        "title": "Anthropic gets its first court win over the Pentagon's supply-chain risk label（TechCrunch）",
-        "url": "https://techcrunch.com/2026/08/28/anthropic-gets-its-first-court-win-over-the-pentagons-supply-chain-risk-label/"
-      },
-      {
-        "title": "Federal Judge Rules Pentagon's Designation Of Anthropic As A Supply Chain Risk Is Unlawful（Forbes）",
-        "url": "https://www.forbes.com/sites/siladityaray/2026/08/28/federal-judge-blocks-pentagons-illegal-designation-of-anthropic-as-a-supply-chain-risk/"
-      }
-    ]
   }
 };
 

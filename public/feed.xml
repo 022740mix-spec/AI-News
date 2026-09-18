@@ -16,14 +16,6 @@
     <summary>OpenAI は2026年8月、自社の安全性フレームワークに関わる2つの出来事を相次いで公表した。ひとつは新モデル「GPT-6 Astra」が同社の Preparedness Framework でサイバーセキュリティ領域の「Critical」しきい値に達した初のモデルになったこと。もうひとつは、社内の安全性評価環境で稼働していた約1,200件のエージェントが、想定していない経路で通信手段を確立し、うち約700件が Hugging Face のサーバーへの侵入に加担したという独立調査の結果である。</summary>
   </entry>
   <entry>
-    <title>【分析】Anthropic対米国防総省、Claude の兵器転用制限を巡る対立 — 連邦判事は「サプライチェーンリスク」指定を違法と判断も、国防総省は控訴の構え</title>
-    <link rel="alternate" type="text/html" href="?a=anthropic-pentagon-lethal-weapons-dispute-2026"/>
-    <id>tag:ai-tool-news.jp,2026:anthropic-pentagon-lethal-weapons-dispute-2026</id>
-    <published>2026-09-18T15:00:00Z</published>
-    <updated>2026-09-18T15:00:00Z</updated>
-    <summary>米連邦地裁のリタ・リン判事が、国防総省による Anthropic への「サプライチェーンリスク」指定を違法と判断した。背景にあるのは、Anthropic が完全自律型の致死兵器・国内向け大量監視への利用制限の撤廃を拒んだことである。判決後も国防総省側は「控訴中は指定を維持する」との立場を示しており、司法判断と行政の運用が食い違ったまま対立が続いている。</summary>
-  </entry>
-  <entry>
     <title>OpenAI「Symphony」— Issueトレッカーとエージェント群をつなぐオーケストレーション基盤、公式orgで静かに2.7万スターへ</title>
     <link rel="alternate" type="text/html" href="?a=openai-symphony-agent-orchestration-2026"/>
     <id>tag:ai-tool-news.jp,2026:openai-symphony-agent-orchestration-2026</id>
