@@ -1,6 +1,6 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-09-17",
+  "generatedAt": "2026-09-18",
   "count": 454,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
