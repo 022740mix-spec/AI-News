@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-18",
-  "count": 454,
+  "count": 455,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -350,6 +350,7 @@
     "openai-industrial-policy-intelligence-age-4day-workweek-2026",
     "openai-ipo-delay-2027-safety-2026",
     "openai-jalapeno-first-results-inferencex-2026",
+    "openai-misalignment-disclosure-framework-2026",
     "openai-model-autonomous-hugging-face-breach-2026",
     "openai-six-layer-context-data-agent-2026",
     "openai-sora-discontinued-2026",

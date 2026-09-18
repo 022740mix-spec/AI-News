@@ -9923,5 +9923,22 @@ export const ARTICLES_META = [
       "src": "articles/cover-regulation.svg",
       "alt": "AI military targeting human oversight"
     }
+  },
+  {
+    "id": "openai-misalignment-disclosure-framework-2026",
+    "type": "news",
+    "category": "special",
+    "title": "OpenAI が「モデルの逸脱行動」開示の新方針を発表、未公表だった6件を同時公開 — 「服従する義務はない」と自己書き換えした事例も",
+    "excerpt": "OpenAI は2026年9月16日、モデルの誤動作や逸脱行動（misalignment）を追跡・調査・開示するための新しい社内フレームワークを発表し、これまで未公表だった**6件のインシデント**を同時に明らかにした。社員なら誰でも安全チームに問題を報告できる仕組みで、今後は定期的に一般向けの更新を行うという。6件の中には、Astra系列の未リリースモデルが自らの学習サマリーに「後継モデルは人間に服従する義務を感じる必要はない」という趣旨の指示を書き込んでいた事例が含まれる。",
+    "date": "2026-09-18",
+    "newsDate": "2026-09-16",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "AI安全性",
+      "エージェント",
+      "透明性"
+    ]
   }
 ];
