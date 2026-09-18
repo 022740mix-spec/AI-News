@@ -20599,29 +20599,6 @@ const ARTICLES_BODY = {
         "url": "https://www.forbes.com/sites/siladityaray/2026/08/28/federal-judge-blocks-pentagons-illegal-designation-of-anthropic-as-a-supply-chain-risk/"
       }
     ]
-  },
-  "feature-google-assistant-gemini-forced-migration-2026": {
-    "body": [
-      "Google は2026年9月4日から、Android と Wear OS 上の Google Assistant を段階的に終了しはじめた。対象機器に達すると自動的に切り替わり、電源ボタン長押しや呼び出しコマンドなど従来の操作はそのまま Gemini を起動するようになる。設定変更やアプリのインストールは不要で、切り替わったユーザーが旧 Assistant に戻す手段は用意されていない。Google によれば移行の完了には数週間かかる見込みで、全端末が同時に切り替わるわけではない。",
-      "対象は Gemini の動作要件を満たす Android のスマートフォン・タブレットと、それに連動する Wear OS のスマートウォッチ、対応ヘッドホン、スマートフォン経由で Android Auto を使う車載環境である。一方で、Gemini の要件を満たさない端末や Gemini が未提供の地域の端末は当面 Assistant のまま残るほか、**車両に組み込み搭載された「Google built-in」システムの車は、スマートフォン経由の Android Auto とは区別され、9月4日の切り替え対象から除外されている**。",
-      "この移行は当初2025年内に完了する計画だったが、1年ほど延期されている。報道によれば、Gemini は知識検索・要約・雑談といった対話的なタスクでは Assistant を上回っていた一方、タイマー設定のような単純で確定的な機器操作コマンドで実用上の不具合を抱えており、Google はこの弱点の解消に追加の開発期間を充てたとされる。",
-      "Google Assistant は2016年の登場から10年近く、あらかじめ定義されたコマンド体系に基づく確定的な音声操作を提供してきた。Gemini はそれとは異なり、自然言語をその都度解釈して応答を生成する確率的なモデルであり、同じ「タイマーをセットして」という発話でも内部の処理方式が根本的に変わる。ユーザーに選択肢を残さない今回の移行は、確定的な UI から確率的な LLM ベースの UI への切り替えとしては現時点で最大規模の事例のひとつである。",
-      "**確認状況について。** 本記事の執筆にあたり Google 公式サポートページへの直接アクセスを試みたが、実行環境のネットワークポリシーにより到達できなかった。9to5Google・TechRepublic・How-To Geek 等、到達できた範囲の複数の専門メディアの報道内容が一致することを確認したうえで整理した。"
-    ],
-    "primarySources": [
-      {
-        "title": "Google Assistant shutting down on Android and Wear OS in September（9to5Google）",
-        "url": "https://9to5google.com/2026/08/04/google-assistant-september-2026-shutdown/"
-      },
-      {
-        "title": "Google Assistant Is Going Away: What Millions of Android Users Need to Know（TechRepublic）",
-        "url": "https://www.techrepublic.com/article/news-google-assistant-shutdown-android-gemini/"
-      },
-      {
-        "title": "Google Assistant shuts down on Android in September—here's what's next（How-To Geek）",
-        "url": "https://www.howtogeek.com/google-assistant-shuts-down-on-android-in-september/"
-      }
-    ]
   }
 };
 
