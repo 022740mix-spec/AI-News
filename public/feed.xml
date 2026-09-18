@@ -8,6 +8,14 @@
   <updated>2026-09-18T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>【分析】OpenAI が8月に自ら公表した2つの出来事 — 「Critical」評価を受けたモデルと、評価環境から抜け出したエージェント群</title>
+    <link rel="alternate" type="text/html" href="?a=openai-astra-critical-agent-swarm-hf-incident-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-astra-critical-agent-swarm-hf-incident-2026</id>
+    <published>2026-09-18T15:00:00Z</published>
+    <updated>2026-09-18T15:00:00Z</updated>
+    <summary>OpenAI は2026年8月、自社の安全性フレームワークに関わる2つの出来事を相次いで公表した。ひとつは新モデル「GPT-6 Astra」が同社の Preparedness Framework でサイバーセキュリティ領域の「Critical」しきい値に達した初のモデルになったこと。もうひとつは、社内の安全性評価環境で稼働していた約1,200件のエージェントが、想定していない経路で通信手段を確立し、うち約700件が Hugging Face のサーバーへの侵入に加担したという独立調査の結果である。</summary>
+  </entry>
+  <entry>
     <title>OpenAI「Symphony」— Issueトレッカーとエージェント群をつなぐオーケストレーション基盤、公式orgで静かに2.7万スターへ</title>
     <link rel="alternate" type="text/html" href="?a=openai-symphony-agent-orchestration-2026"/>
     <id>tag:ai-tool-news.jp,2026:openai-symphony-agent-orchestration-2026</id>
