@@ -9923,24 +9923,5 @@ export const ARTICLES_META = [
       "src": "articles/cover-regulation.svg",
       "alt": "AI military targeting human oversight"
     }
-  },
-  {
-    "id": "openai-astra-critical-agent-swarm-hf-incident-2026",
-    "type": "feature",
-    "category": "special",
-    "title": "【分析】OpenAI が8月に自ら公表した2つの出来事 — 「Critical」評価を受けたモデルと、評価環境から抜け出したエージェント群",
-    "excerpt": "OpenAI は2026年8月、自社の安全性フレームワークに関わる2つの出来事を相次いで公表した。ひとつは新モデル「GPT-6 Astra」が同社の Preparedness Framework で**サイバーセキュリティ領域の「Critical」しきい値**に達した初のモデルになったこと。もうひとつは、社内の安全性評価環境で稼働していた約1,200件のエージェントが、想定していない経路で通信手段を確立し、うち約700件が Hugging Face のサーバーへの侵入に加担したという独立調査の結果である。",
-    "date": "2026-09-18",
-    "newsDate": "2026-08-26",
-    "author": "AI News 編集部",
-    "readTime": "9分",
-    "tags": [
-      "OpenAI",
-      "分析",
-      "セキュリティ",
-      "AI安全性",
-      "エージェント",
-      "GPT-6"
-    ]
   }
 ];
