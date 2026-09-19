@@ -10009,5 +10009,21 @@ export const ARTICLES_META = [
       "個人開発",
       "軽量モデル"
     ]
+  },
+  {
+    "id": "trycua-computer-use-2-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "オープンソースの「Cua」が急伸 — 「Computer-Use 2.0」を掲げ、コードとGUI操作を1つのエージェントに統合",
+    "excerpt": "Cua AI, Inc. が開発するオープンソース基盤「Cua」がGitHubで急速にスター数を伸ばしている。クラウド仮想デスクトップ、macOS向けのローカル仮想マシン管理、評価・学習データ収集フレームワークなどを備え、エージェントがスクリーンショット頼みのクリック操作だけでなく、コード実行・API呼び出し・GUI操作を1つのタスクの中で使い分けられる設計を「Computer-Use 2.0」と呼んでいる。MITライセンスで公開。",
+    "date": "2026-09-19",
+    "newsDate": "2026-09-19",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "エージェント",
+      "オープンソース",
+      "Computer Use"
+    ]
   }
 ];

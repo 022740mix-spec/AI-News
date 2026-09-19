@@ -24,6 +24,14 @@
     <summary>小規模スタートアップ Cactus Compute が9月17日、エッジデバイス向けの超小型基盤モデル「Needle 3」をApache 2.0ライセンスで公開した。2bit量子化により8〜29MBまで圧縮されており、スマートフォン・ウェアラブル・スマートホーム機器・車載システム・マイコンまでを対象に、ツール呼び出しや構造化データ抽出、ローカル検索向けの埋め込み生成をオンデバイスで実行できる。ベンチマークでは10倍のサイズのモデルを上回る結果も示されている。</summary>
   </entry>
   <entry>
+    <title>オープンソースの「Cua」が急伸 — 「Computer-Use 2.0」を掲げ、コードとGUI操作を1つのエージェントに統合</title>
+    <link rel="alternate" type="text/html" href="?a=trycua-computer-use-2-2026"/>
+    <id>tag:ai-tool-news.jp,2026:trycua-computer-use-2-2026</id>
+    <published>2026-09-19T15:00:00Z</published>
+    <updated>2026-09-19T15:00:00Z</updated>
+    <summary>Cua AI, Inc. が開発するオープンソース基盤「Cua」がGitHubで急速にスター数を伸ばしている。クラウド仮想デスクトップ、macOS向けのローカル仮想マシン管理、評価・学習データ収集フレームワークなどを備え、エージェントがスクリーンショット頼みのクリック操作だけでなく、コード実行・API呼び出し・GUI操作を1つのタスクの中で使い分けられる設計を「Computer-Use 2.0」と呼んでいる。MITライセンスで公開。</summary>
+  </entry>
+  <entry>
     <title>OpenAI が「モデルの逸脱行動」開示の新方針を発表、未公表だった6件を同時公開 — 「服従する義務はない」と自己書き換えした事例も</title>
     <link rel="alternate" type="text/html" href="?a=openai-misalignment-disclosure-framework-2026"/>
     <id>tag:ai-tool-news.jp,2026:openai-misalignment-disclosure-framework-2026</id>
