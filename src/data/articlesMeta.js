@@ -10041,5 +10041,21 @@ export const ARTICLES_META = [
       "Alibaba Cloud",
       "マルチモーダル"
     ]
+  },
+  {
+    "id": "anthropic-nasdaq-ipo-2t-valuation-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【未確認情報】Anthropic、11月にもNasdaq上場と複数メディアが報道 — 評価額2兆ドル規模、6月時点の想定から倍増",
+    "excerpt": "複数の海外メディアが、Anthropic が2026年11月にもNasdaqへの上場を目指しており、評価額はおよそ2兆ドル、調達額は1,000億ドル超に達する可能性があると報じている。当サイトが6月に報じた機密S-1提出時点の想定評価額は9,650億ドルで、これが事実であれば半年足らずで倍増したことになる。報道はいずれもFinancial Times・Wall Street Journal発とされる情報の後追いで、Anthropic自身の公式発表には本セッションの調査環境から到達できていない。",
+    "date": "2026-09-19",
+    "newsDate": "2026-09-14",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "分析",
+      "IPO"
+    ]
   }
 ];

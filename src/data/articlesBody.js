@@ -20667,6 +20667,24 @@ const ARTICLES_BODY = {
         "url": "https://www.marktechpost.com/2026/09/18/alibaba-qwen-releases-qwen3-8-omni-flash/"
       }
     ]
+  },
+  "anthropic-nasdaq-ipo-2t-valuation-2026": {
+    "body": [
+      "crypto.news・TechTimes など複数の海外メディアが、Anthropic が2026年11月にもNasdaqへの上場を目指していると報じている。評価額はおよそ2兆ドル、調達額は1,000億ドルを超える可能性があるとされ、これが事実であれば history上最大規模のIPOとなり、2026年6月に上場したSpaceXの863億ドルを大きく上回る。NVIDIAがこのIPOに約100億ドルを拠出することを検討しているとの報道もある。",
+      "当サイトが6月に報じた際、Anthropic は6月1日付でSECに機密版S-1（IPO登録書）を提出しており、その時点の想定評価額は9,650億ドルだった。今回報じられている2兆ドルという数字が事実であれば、半年足らずで評価額がおよそ倍増したことになる。あわせて、Anthropicの年換算売上高は第2四半期時点で650億ドル、年末までに1,100億ドルを超える見通しだとする報道もある。",
+      "本セッションの調査環境からは Anthropic 公式サイト（anthropic.com）、platform.claude.com のいずれからもIPO関連の一次発表は見当たらず、SECへの登録書提出は非公開（confidential filing）の性質上、そもそも一般には正式公開されない。本記事は複数の独立した報道機関が伝える内容を整理した二次情報依存の記事であり、金額・時期とも確定情報としては扱っていない。",
+      "OpenAIは9月12日、Sam Altman CEOが「2027年より前ではない」とIPOを否定する発言をしたと報じられたばかりで、当サイトもこれを分析記事として報じている。同じ時期にAnthropicのIPO観測がむしろ加速して伝えられている点は対照的であり、事実関係が固まり次第、両社の状況を比較する形で改めて取り上げる余地がある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic targets November IPO at potential $2 trillion valuation（crypto.news）",
+        "url": "https://crypto.news/anthropic-targets-november-ipo/"
+      },
+      {
+        "title": "Anthropic Picks Nasdaq for $2 Trillion IPO（TechTimes）",
+        "url": "https://www.techtimes.com/articles/327492/20260914/anthropic-picks-nasdaq-2-trillion-ipo-trump-linked-compute-deal-tests-safety-mission.htm"
+      }
+    ]
   }
 };
 
