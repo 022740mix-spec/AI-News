@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-09-18",
-  "count": 457,
+  "generatedAt": "2026-09-19",
+  "count": 458,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -106,6 +106,7 @@
     "chatgpt-shopping-revamp-2026",
     "claude-1m-context-ga-2026",
     "claude-code",
+    "claude-code-agents-md-support-2026",
     "claude-code-auto-memory-disable-2026",
     "claude-code-auto-mode",
     "claude-code-autofix-cloud",

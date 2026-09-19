@@ -9975,5 +9975,22 @@ export const ARTICLES_META = [
       "Claude Code",
       "Agent Skills"
     ]
+  },
+  {
+    "id": "claude-code-agents-md-support-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code が AGENTS.md 対応を追加 — CLAUDE.md が無いプロジェクトの後方互換に、Auto Mode はサーバー側判定でコスト構造も変更",
+    "excerpt": "Anthropic が Claude Code v2.1.277（9月18日）で、他のコーディングエージェントでも使われてきたプロジェクト指示ファイル「AGENTS.md」への対応を追加した。CLAUDE.md が存在しないプロジェクトではこれを代わりに読み込む仕組みで、/config の「Project instructions」から切り替えられる。翌日の v2.1.278 では Auto Mode の判定方式も変更され、Claude API・Enterprise 利用者はサーバー側の分類器がデフォルトになり、分類にかかる追加課金が無くなった。",
+    "date": "2026-09-19",
+    "newsDate": "2026-09-18",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "開発ツール",
+      "エージェント"
+    ]
   }
 ];

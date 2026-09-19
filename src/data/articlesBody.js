@@ -20607,6 +20607,20 @@ const ARTICLES_BODY = {
         "url": "https://github.com/ayghri/i-have-adhd"
       }
     ]
+  },
+  "claude-code-agents-md-support-2026": {
+    "body": [
+      "Anthropic は Claude Code の v2.1.277（2026年9月18日）で、プロジェクトの指示ファイルとして「AGENTS.md」を読み込む機能を追加した。これまで Claude Code は独自の CLAUDE.md だけを読んでいたが、プロジェクトに CLAUDE.md が存在しない場合には AGENTS.md を代わりに読み込むようになる。切り替えは /config の「Project instructions」から行える。",
+      "AGENTS.md は Claude Code 以外のコーディングエージェントでも使われてきた、プロジェクトの背景・規約・注意点をエージェントに伝えるための指示ファイルの命名規約である。複数のエージェントツールを併用するチームは、これまでツールごとに別の指示ファイルを用意するか、CLAUDE.md を都度リネームして運用する必要があったが、AGENTS.md をそのまま後方互換として読める分だけ、乗り換えや併用の手間が減る。公式の変更履歴によれば、この対応は Bedrock・Vertex・Foundry 経由の利用ではまだ提供されていない。",
+      "翌日の v2.1.278（9月19日）では、Auto Mode（モデルの自動選択）の判定方式が変更された。Claude API と Enterprise プランの利用者では、判定をサーバー側の分類器で行うことがデフォルトになり、これまで発生していた分類処理そのものへの追加課金が無くなった。/status コマンドには判定がどちらで行われているかを示す「Auto mode server」の行が追加され、設定を確認できるようになっている。",
+      "この1週間の Claude Code は v2.1.268 から v2.1.278 まで、ほぼ毎日リリースが続くペースだった。個別の変更は permission チェックの修正や MCP 接続まわりの調整など細かいものが大半だが、AGENTS.md 対応と Auto Mode の課金構造の変更は、他ツールとの相互運用性とコストの両面に関わる実務上の変更にあたる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code Changelog（公式変更履歴）",
+        "url": "https://code.claude.com/docs/en/changelog"
+      }
+    ]
   }
 };
 

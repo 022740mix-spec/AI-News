@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-09-19T15:00:00Z</updated>
+  <updated>2026-09-20T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Claude Code が AGENTS.md 対応を追加 — CLAUDE.md が無いプロジェクトの後方互換に、Auto Mode はサーバー側判定でコスト構造も変更</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-agents-md-support-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-agents-md-support-2026</id>
+    <published>2026-09-19T15:00:00Z</published>
+    <updated>2026-09-19T15:00:00Z</updated>
+    <summary>Anthropic が Claude Code v2.1.277（9月18日）で、他のコーディングエージェントでも使われてきたプロジェクト指示ファイル「AGENTS.md」への対応を追加した。CLAUDE.md が存在しないプロジェクトではこれを代わりに読み込む仕組みで、/config の「Project instructions」から切り替えられる。翌日の v2.1.278 では Auto Mode の判定方式も変更され、Claude API・Enterprise 利用者はサーバー側の分類器がデフォルトになり、分類にかかる追加課金が無くなった。</summary>
+  </entry>
   <entry>
     <title>OpenAI が「モデルの逸脱行動」開示の新方針を発表、未公表だった6件を同時公開 — 「服従する義務はない」と自己書き換えした事例も</title>
     <link rel="alternate" type="text/html" href="?a=openai-misalignment-disclosure-framework-2026"/>
