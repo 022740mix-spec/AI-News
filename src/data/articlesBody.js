@@ -20649,6 +20649,24 @@ const ARTICLES_BODY = {
         "url": "https://github.com/trycua/cua"
       }
     ]
+  },
+  "qwen3-8-omni-flash-release-2026": {
+    "body": [
+      "TechNode・MarkTechPost など複数の海外メディアが、Alibaba が2026年9月18日に新しいマルチモーダルモデル「Qwen3.8-Omni-Flash」をAPI限定で公開したと報じている。テキスト・画像・音声・動画をネイティブに理解し、1Mトークンのコンテキストウィンドウを持つとされる。",
+      "報道によれば、前世代の Qwen3.5-Omni-Plus と比べて音声入力のコストを98%超、音声・映像入力のコストを93%超削減したとされ、Alibaba Cloud Model Studio 上の価格表では入力100万トークンあたり0.8元、出力100万トークンあたり2.7元という数字も伝えられている。思考モード・ツール呼び出し・Web検索にも対応するという。",
+      "本セッションの調査環境からは Alibaba Cloud の公式ドキュメント（alibabacloud.com、help.aliyun.com）、Qwen の Hugging Face・ModelScope ページのいずれにも到達できず、一次資料を直接確認できていない。GitHub 上の Qwen 公式組織ページでも Omni-Flash 単体のリポジトリは確認できなかった（API限定リリースのため独立リポジトリが無い可能性がある）。",
+      "本記事は、報道内容が一致する複数の独立したメディア（TechNode、MarkTechPost、orcarouter.ai など）を突き合わせて整理した二次情報依存の記事であり、確定情報として扱っていない。一次資料に到達でき次第、内容を確認のうえ本公開に切り替える。"
+    ],
+    "primarySources": [
+      {
+        "title": "Alibaba's Qwen releases Qwen3.8-Omni-Flash with 1M-token context（TechNode）",
+        "url": "https://technode.com/2026/09/18/alibabas-qwen-releases-qwen3-8-omni-flash-with-1m-token-context/"
+      },
+      {
+        "title": "Alibaba Qwen Releases Qwen3.8-Omni-Flash（MarkTechPost）",
+        "url": "https://www.marktechpost.com/2026/09/18/alibaba-qwen-releases-qwen3-8-omni-flash/"
+      }
+    ]
   }
 };
 

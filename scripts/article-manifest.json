@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-19",
-  "count": 460,
+  "count": 461,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -398,6 +398,7 @@
     "prismml-bonsai-1bit-llm-edge-2026",
     "qwen-3-6-plus-agentic-coding-multimodal-2026",
     "qwen-3-review",
+    "qwen3-8-omni-flash-release-2026",
     "rag-chunking-ingestion-2026",
     "rag-enterprise-acl-privacy-2026",
     "rag-evaluation-citations-2026",
