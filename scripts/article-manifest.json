@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-19",
-  "count": 458,
+  "count": 459,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "ai-autonomous-execution-risks-2026",
@@ -100,6 +100,7 @@
     "bigtech-q1-2026-earnings-ai-capex-700b-feature",
     "blume-hayden-bleasel-ai-ready-docs-framework-2026",
     "bytedance-seedance-2-5-developer-api-2026",
+    "cactus-needle-3-edge-ai-2026",
     "california-ai-chatbot-child-safety-laws-2026",
     "california-data-center-ratepayer-bills-2026",
     "challenger-report-ai-layoffs-restructuring-2026",

@@ -16,6 +16,14 @@
     <summary>Anthropic が Claude Code v2.1.277（9月18日）で、他のコーディングエージェントでも使われてきたプロジェクト指示ファイル「AGENTS.md」への対応を追加した。CLAUDE.md が存在しないプロジェクトではこれを代わりに読み込む仕組みで、/config の「Project instructions」から切り替えられる。翌日の v2.1.278 では Auto Mode の判定方式も変更され、Claude API・Enterprise 利用者はサーバー側の分類器がデフォルトになり、分類にかかる追加課金が無くなった。</summary>
   </entry>
   <entry>
+    <title>個人規模スタートアップ「Cactus Compute」が Needle 3 を公開 — 8〜29MBのオンデバイス基盤モデル、Apache 2.0</title>
+    <link rel="alternate" type="text/html" href="?a=cactus-needle-3-edge-ai-2026"/>
+    <id>tag:ai-tool-news.jp,2026:cactus-needle-3-edge-ai-2026</id>
+    <published>2026-09-19T15:00:00Z</published>
+    <updated>2026-09-19T15:00:00Z</updated>
+    <summary>小規模スタートアップ Cactus Compute が9月17日、エッジデバイス向けの超小型基盤モデル「Needle 3」をApache 2.0ライセンスで公開した。2bit量子化により8〜29MBまで圧縮されており、スマートフォン・ウェアラブル・スマートホーム機器・車載システム・マイコンまでを対象に、ツール呼び出しや構造化データ抽出、ローカル検索向けの埋め込み生成をオンデバイスで実行できる。ベンチマークでは10倍のサイズのモデルを上回る結果も示されている。</summary>
+  </entry>
+  <entry>
     <title>OpenAI が「モデルの逸脱行動」開示の新方針を発表、未公表だった6件を同時公開 — 「服従する義務はない」と自己書き換えした事例も</title>
     <link rel="alternate" type="text/html" href="?a=openai-misalignment-disclosure-framework-2026"/>
     <id>tag:ai-tool-news.jp,2026:openai-misalignment-disclosure-framework-2026</id>

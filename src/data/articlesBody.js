@@ -20621,6 +20621,20 @@ const ARTICLES_BODY = {
         "url": "https://code.claude.com/docs/en/changelog"
       }
     ]
+  },
+  "cactus-needle-3-edge-ai-2026": {
+    "body": [
+      "Cactus Compute, Inc. が2026年9月17日、エッジデバイス向けの基盤モデル「Needle 3」を Apache 2.0 ライセンスで公開した。GitHub 上で「Laddered Simple Attention Network」と説明されるアーキテクチャを採用し、Monarch Hadamard MLP と GQA（Grouped Query Attention）を組み合わせることで、リソースが極めて限られたハードウェア上での動作を狙っている。",
+      "最大の特徴はサイズで、独自の2bit量子化方式（1重みあたり約2.125bit、Cactus Quants と呼ばれる）により、モデルサイズは8〜29MBに収まる。対応領域として挙げられているのはスマートフォン、ウェアラブル端末、スマートホーム機器、ロボット、車載システム、そしてマイコンまでで、macOS ARM64・Linux ARM64 向けなどの1MB未満の実行エンジンも配布されている。",
+      "機能はツール呼び出し（ユーザーの要求に応じた関数実行）、非構造化テキストからの構造化データ抽出、ローカル検索・マッチング向けのテキスト埋め込み生成の3つに絞られている。公開されているベンチマークでは、モバイル環境でのツール呼び出しタスクにおいて自身の10倍のサイズのモデルを上回り、抽出タスクでは2〜3倍のサイズのモデルに匹敵する結果が示されている。",
+      "大手クラウドAIベンダーが提供する基盤モデルの多くはネットワーク接続とサーバー側の計算資源を前提にしているのに対し、Needle 3 はモデルそのものをデバイス上に置き切ることを狙った設計であり、通信不要・低遅延・プライバシー保護の観点から、エージェント機能をエッジデバイスへ組み込みたい開発者にとって選択肢の一つになりうる。"
+    ],
+    "primarySources": [
+      {
+        "title": "cactus-compute/needle（GitHub）",
+        "url": "https://github.com/cactus-compute/needle"
+      }
+    ]
   }
 };
 
