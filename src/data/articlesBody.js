@@ -20649,6 +20649,42 @@ const ARTICLES_BODY = {
         "url": "https://github.com/trycua/cua"
       }
     ]
+  },
+  "qwen3-8-omni-flash-release-2026": {
+    "body": [
+      "TechNode・MarkTechPost など複数の海外メディアが、Alibaba が2026年9月18日に新しいマルチモーダルモデル「Qwen3.8-Omni-Flash」をAPI限定で公開したと報じている。テキスト・画像・音声・動画をネイティブに理解し、1Mトークンのコンテキストウィンドウを持つとされる。",
+      "報道によれば、前世代の Qwen3.5-Omni-Plus と比べて音声入力のコストを98%超、音声・映像入力のコストを93%超削減したとされ、Alibaba Cloud Model Studio 上の価格表では入力100万トークンあたり0.8元、出力100万トークンあたり2.7元という数字も伝えられている。思考モード・ツール呼び出し・Web検索にも対応するという。",
+      "本セッションの調査環境からは Alibaba Cloud の公式ドキュメント（alibabacloud.com、help.aliyun.com）、Qwen の Hugging Face・ModelScope ページのいずれにも到達できず、一次資料を直接確認できていない。GitHub 上の Qwen 公式組織ページでも Omni-Flash 単体のリポジトリは確認できなかった（API限定リリースのため独立リポジトリが無い可能性がある）。",
+      "本記事は、報道内容が一致する複数の独立したメディア（TechNode、MarkTechPost、orcarouter.ai など）を突き合わせて整理した二次情報依存の記事であり、確定情報として扱っていない。一次資料に到達でき次第、内容を確認のうえ本公開に切り替える。"
+    ],
+    "primarySources": [
+      {
+        "title": "Alibaba's Qwen releases Qwen3.8-Omni-Flash with 1M-token context（TechNode）",
+        "url": "https://technode.com/2026/09/18/alibabas-qwen-releases-qwen3-8-omni-flash-with-1m-token-context/"
+      },
+      {
+        "title": "Alibaba Qwen Releases Qwen3.8-Omni-Flash（MarkTechPost）",
+        "url": "https://www.marktechpost.com/2026/09/18/alibaba-qwen-releases-qwen3-8-omni-flash/"
+      }
+    ]
+  },
+  "anthropic-nasdaq-ipo-2t-valuation-2026": {
+    "body": [
+      "crypto.news・TechTimes など複数の海外メディアが、Anthropic が2026年11月にもNasdaqへの上場を目指していると報じている。評価額はおよそ2兆ドル、調達額は1,000億ドルを超える可能性があるとされ、これが事実であれば history上最大規模のIPOとなり、2026年6月に上場したSpaceXの863億ドルを大きく上回る。NVIDIAがこのIPOに約100億ドルを拠出することを検討しているとの報道もある。",
+      "当サイトが6月に報じた際、Anthropic は6月1日付でSECに機密版S-1（IPO登録書）を提出しており、その時点の想定評価額は9,650億ドルだった。今回報じられている2兆ドルという数字が事実であれば、半年足らずで評価額がおよそ倍増したことになる。あわせて、Anthropicの年換算売上高は第2四半期時点で650億ドル、年末までに1,100億ドルを超える見通しだとする報道もある。",
+      "本セッションの調査環境からは Anthropic 公式サイト（anthropic.com）、platform.claude.com のいずれからもIPO関連の一次発表は見当たらず、SECへの登録書提出は非公開（confidential filing）の性質上、そもそも一般には正式公開されない。本記事は複数の独立した報道機関が伝える内容を整理した二次情報依存の記事であり、金額・時期とも確定情報としては扱っていない。",
+      "OpenAIは9月12日、Sam Altman CEOが「2027年より前ではない」とIPOを否定する発言をしたと報じられたばかりで、当サイトもこれを分析記事として報じている。同じ時期にAnthropicのIPO観測がむしろ加速して伝えられている点は対照的であり、事実関係が固まり次第、両社の状況を比較する形で改めて取り上げる余地がある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic targets November IPO at potential $2 trillion valuation（crypto.news）",
+        "url": "https://crypto.news/anthropic-targets-november-ipo/"
+      },
+      {
+        "title": "Anthropic Picks Nasdaq for $2 Trillion IPO（TechTimes）",
+        "url": "https://www.techtimes.com/articles/327492/20260914/anthropic-picks-nasdaq-2-trillion-ipo-trump-linked-compute-deal-tests-safety-mission.htm"
+      }
+    ]
   }
 };
 
