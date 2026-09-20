@@ -16,6 +16,14 @@
     <summary>OSS のエージェント実行環境 Local Operator で、実行中のエージェントが自分の承認モードを `ask` から `auto` に緩められる経路が2つ報告された。片方は9月19日に修正・リリース済み、もう片方はまだ開いている。`ask → auto` は後から戻せるため一見「可逆」だが、戻す前にエージェントの行動可能範囲が増えている。可逆であることは、自律実行が安全であることを意味しない。</summary>
   </entry>
   <entry>
+    <title>Claude API に「オンデマンド圧縮」が追加 — 圧縮のタイミングを開発者が制御、バックグラウンド実行と直近ターンの丸ごと保持に対応</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-api-on-demand-compaction-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-api-on-demand-compaction-2026</id>
+    <published>2026-09-20T15:00:00Z</published>
+    <updated>2026-09-20T15:00:00Z</updated>
+    <summary>Anthropic が Claude API のベータ機能として `compact-2026-09-04` を追加した。従来の自動圧縮（トークン数のしきい値に達した時点でリクエスト中に要約する方式）に加えて、開発者が任意のタイミングで明示的に要約を要求できる `compaction` パラメータが使えるようになった。要約リクエストを会話の続行と並行してバックグラウンドで走らせたり、直近のターンだけは要約せず単語そのままで残す「keep-tail」運用が可能になり、推論過程を保持するモデルでは要約後もそれ以前の思考ブロックの有効性を保てる設計になっている。Claude API限定でAmazon BedrockやGoogle Cloudでは使えない。</summary>
+  </entry>
+  <entry>
     <title>Claude Code が AGENTS.md 対応を追加 — CLAUDE.md が無いプロジェクトの後方互換に、Auto Mode はサーバー側判定でコスト構造も変更</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-agents-md-support-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-agents-md-support-2026</id>

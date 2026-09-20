@@ -10042,5 +10042,23 @@ export const ARTICLES_META = [
       "オープンソース",
       "AI安全性"
     ]
+  },
+  {
+    "id": "anthropic-claude-api-on-demand-compaction-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude API に「オンデマンド圧縮」が追加 — 圧縮のタイミングを開発者が制御、バックグラウンド実行と直近ターンの丸ごと保持に対応",
+    "excerpt": "Anthropic が Claude API のベータ機能として `compact-2026-09-04` を追加した。従来の自動圧縮（トークン数のしきい値に達した時点でリクエスト中に要約する方式）に加えて、開発者が任意のタイミングで明示的に要約を要求できる `compaction` パラメータが使えるようになった。要約リクエストを会話の続行と並行してバックグラウンドで走らせたり、直近のターンだけは要約せず単語そのままで残す「keep-tail」運用が可能になり、推論過程を保持するモデルでは要約後もそれ以前の思考ブロックの有効性を保てる設計になっている。Claude API限定でAmazon BedrockやGoogle Cloudでは使えない。",
+    "date": "2026-09-20",
+    "newsDate": "2026-09-14",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "API",
+      "コンテキストウィンドウ",
+      "エージェント"
+    ]
   }
 ];
