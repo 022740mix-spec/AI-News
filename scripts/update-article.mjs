@@ -30,9 +30,21 @@
  *   "replacements": [
  *     { "find": "置換前の正確な文字列", "replace": "置換後" }
  *   ],
+ *   "insertAfter": [                           // 任意。既存段落の直後に段落を挿入する
+ *     { "find": "挿入位置の目印になる文字列", "paragraphs": ["新しい段落"] }
+ *   ],
  *   "appendToBody": "【追記 2026-09-20】…",   // 任意。body の末尾に段落を足す
  *   "setMeta": { "lastReviewed": "2026-09-20" } // 任意。meta の項目を差し替える
  * }
+ *
+ * **段落の中に改行を入れないこと。** 本文は `<p>{richArticleText(p)}</p>` で描画され、
+ * `richArticleText` は改行を扱わず、CSS にも `white-space: pre-wrap` が無い。
+ * **`\n\n` は空白1つに潰れ、段落として表示されない。** 段落を分けたいときは
+ * `insertAfter` を使う。
+ *
+ * **`insertAfter` は `afterParagraph` を自動で補正する。** 段落を挿入すると
+ * 以降の添字が1つずつずれ、**表や図が別の場所に移動する。** `review-check.mjs` の
+ * 規則19は `afterParagraph` の有無しか見ないため、**ずれても検査を通り抜ける。**
  *
  * **find は、その記事の body 内でちょうど1回だけ出現しなければならない。**
  * 0回なら誤り、2回以上なら意図しない箇所を壊しうるため、どちらも中断する。
@@ -81,6 +93,37 @@ for (const r of reps) {
   const i = newBody.body.findIndex((p) => p.includes(r.find));
   newBody.body[i] = newBody.body[i].replace(r.find, r.replace);
 }
+
+// ── 段落の挿入。afterParagraph の補正を伴う ──
+const inserts = patch.insertAfter ?? [];
+for (const ins of inserts) {
+  if (typeof ins.find !== "string" || !Array.isArray(ins.paragraphs)) {
+    fail("insertAfter の各要素は find（文字列）と paragraphs（配列）が必要です。");
+  }
+  for (const para of ins.paragraphs) {
+    if (typeof para !== "string") fail("insertAfter.paragraphs の要素は文字列である必要があります。");
+    if (para.includes("\n") && !para.trimStart().startsWith("```")) {
+      fail(`段落に改行が含まれています。描画側で空白に潰れます: 「${para.slice(0, 40)}」`);
+    }
+  }
+  const at = newBody.body.findIndex((p) => p.includes(ins.find));
+  if (at === -1) fail(`挿入位置が見つかりません: 「${ins.find.slice(0, 60)}」`);
+  if (newBody.body.filter((p) => p.includes(ins.find)).length > 1) {
+    fail(`挿入位置が複数あります: 「${ins.find.slice(0, 60)}」`);
+  }
+  newBody.body.splice(at + 1, 0, ...ins.paragraphs);
+  // 挿入位置より後ろを指している添字を、挿入した数だけずらす
+  const shift = ins.paragraphs.length;
+  for (const key of ["tables", "figures", "charts", "embeds"]) {
+    if (!Array.isArray(newBody[key])) continue;
+    newBody[key] = newBody[key].map((x) =>
+      typeof x.afterParagraph === "number" && x.afterParagraph > at
+        ? { ...x, afterParagraph: x.afterParagraph + shift }
+        : x
+    );
+  }
+}
+
 if (patch.appendToBody) newBody.body.push(patch.appendToBody);
 
 const newMeta = { ...meta };
@@ -93,6 +136,7 @@ if (dryRun) {
   console.log(`✅ 検査を通過しました（--dry-run のため書き込みません）`);
   console.log(`   対象: ${patch.id}`);
   for (const r of reps) console.log(`   置換: 「${r.find.slice(0, 50)}」→「${r.replace.slice(0, 50)}」`);
+  for (const ins of inserts) console.log(`   挿入: 「${ins.find.slice(0, 40)}」の直後に ${ins.paragraphs.length} 段落`);
   if (patch.appendToBody) console.log(`   追記: 「${patch.appendToBody.slice(0, 60)}」`);
   for (const [k, v] of Object.entries(patch.setMeta ?? {})) console.log(`   meta: ${k} = ${v}`);
   process.exit(0);

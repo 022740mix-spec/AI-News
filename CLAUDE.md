@@ -484,12 +484,12 @@ RSS も `pubDate` が出来事の日だったため、購読者のリーダー�
 Footer の編集ステートメントで「**主要な比較記事・料金記事は毎月1回以上見直す**」と公言している。
 この約束の対象は、記事メタに `reviewCadence: "monthly"` を持つものに限定する。
 
-**月次見直しの対象（12本）**
+**月次見直しの対象（13本）**
 
 | 区分 | 対象 |
 |---|---|
 | ツール横断の料金・比較 | `pricing-comparison-all-tools-2026-march`、`cli-tools-comparison-2026-march`、`editor-comparison-2026-march` |
-| 現行世代のモデル | `gpt-5-6-review`、`claude-fable-5-mythos-5-review`、`claude-sonnet-5-review` |
+| 現行世代のモデル | `gpt-5-6-review`、`claude-fable-5-mythos-5-review`、`claude-sonnet-5-review`、`claude-opus-5-review` |
 | 主要 CLI | `claude-code`、`openai-codex-agent`、`cursor-cli`、`github-copilot-cli`、`gemini-cli` |
 | 主要エディタ | `cursor-editor` |
 
