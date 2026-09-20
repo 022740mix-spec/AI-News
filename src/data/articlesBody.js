@@ -20861,6 +20861,33 @@ const ARTICLES_BODY = {
         "url": "https://www.marktechpost.com/2026/09/18/alibaba-qwen-releases-qwen3-8-omni-flash/"
       }
     ]
+  },
+  "cursor-projects-coordinator-agent-2026": {
+    "body": [
+      "Cursor を開発する Anysphere は2026年9月10日、新機能「Projects」をベータ公開した。従来の Cursor エージェントが1回のプロンプトに対して1つのタスクをこなす設計だったのに対し、Projects はユーザーが「機能追加」「大規模な移行」「アプリ全体の構築」といった月単位にまたがる作業のまとまりを渡すと、それを継続的に管理する仕組みを提供する。",
+      "ユーザーが直接対話する相手は「コーディネーターエージェント」と呼ばれる存在で、これ自体はコードを1行も書かない。作業を計画し、実装を担当するサブエージェントに委任し、仕上がった成果物をユーザーに確認用として差し戻す役割に徹する。コード生成の実行そのものから切り離されているため、大量のサブエージェントを並行して走らせている最中でも、ユーザーからの指示にすぐ応答できるとされる。",
+      "各 Project はユーザーのノートPC上ではなく、クラウド上の専用マシンで稼働し続ける。ラップトップを閉じても作業は止まらない。プロジェクトごとにコンテキストを蓄積するファイル群を持ち、あるサブエージェントが学んだこと（コードベースの構造、特定サービスへの接続方法、開発者が好むテストパターンなど）は次のサブエージェントに引き継がれ、セッションをまたぐたびにゼロから調べ直す必要がなくなるという。",
+      "もう一つの特徴が「無人トリガー」への対応である。コーディネーターに対して、特定の Slack チャンネルを監視する、決まったスケジュールで動く、リポジトリの全プルリクエストを追従する、といった指示を与えておくと、該当する出来事が発生するたびに自動で作業を開始する。ユーザーが都度プロンプトを送らなくても、CI の失敗修正や lint ルールの生成、コンポーネントの抽出といった継続的な「手入れ」作業を任せられる設計である。",
+      "Anysphere は、Projects を主な作業手段として使ったエンジニアは通常の IDE 利用者と比べて6倍のプルリクエストをマージし、通常の IDE と併用した新規ユーザーでも30%多くマージしたという数値を公表している。ただしこれは Anysphere 自身が示した数値であり、独立した検証は確認できていない。",
+      "エージェントに数百件規模の並行作業を任せる方向性は、OpenAI の Codex 向け Agents API（9月10日に公開ベータ開始）や、GitHub 公式org で公開された OpenAI の Symphony など、他社でも同時多発的に見られる。コーディングエージェントの単位が「1タスク」から「継続的なプロジェクト管理」へ移りつつある動きの一つとして位置づけられる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Projects",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/projects"
+      },
+      {
+        "title": "Cursor launches Projects in beta: cloud coordinator dispatches thousands of parallel subagents across month-long workloads",
+        "site": "Pondero",
+        "url": "https://pondero.ai/news/2026-09-11-cursor-projects/"
+      },
+      {
+        "title": "Cursor Ships Projects Beta With Delegating Coordinator Agent",
+        "site": "AI Weekly",
+        "url": "https://aiweekly.co/alerts/cursor-ships-projects-beta-with-delegating-coordinator-agent"
+      }
+    ]
   }
 };
 

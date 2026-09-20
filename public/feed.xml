@@ -40,6 +40,14 @@
     <summary>Alibaba の Qwen チームが9月18日、テキスト・画像・音声・映像をネイティブに扱う「Qwen3.8-Omni-Flash」を公開した。1Mトークンのコンテキストウィンドウと、理解・計画・ツール実行・結果提示までを1モデルで完結させるエージェント指向の設計が特徴。約30種のベンチマーク平均で前世代比26%超の向上を報告し、音声入力コストは前世代の98%減、音声+映像は93%減とした。API提供のみでオープンウェイトは無い。</summary>
   </entry>
   <entry>
+    <title>Cursor が「Projects」をベータ公開 — コード自体は書かない「コーディネーター」が数千のサブエージェントに月単位の作業を任せる</title>
+    <link rel="alternate" type="text/html" href="?a=cursor-projects-coordinator-agent-2026"/>
+    <id>tag:ai-tool-news.jp,2026:cursor-projects-coordinator-agent-2026</id>
+    <published>2026-09-20T15:00:00Z</published>
+    <updated>2026-09-20T15:00:00Z</updated>
+    <summary>Anysphere は9月10日、Cursor に新機能「Projects」をベータ公開した。ユーザーが対話するのはコード自体を書かない「コーディネーターエージェント」で、作業を計画してサブエージェントに委任し、結果をまとめて差し戻す。プロジェクトはローカルPCではなくクラウド上の専用マシンで動き続け、Slack監視・スケジュール実行・PR追従といった「無人トリガー」にも対応する。</summary>
+  </entry>
+  <entry>
     <title>Claude Code が AGENTS.md 対応を追加 — CLAUDE.md が無いプロジェクトの後方互換に、Auto Mode はサーバー側判定でコスト構造も変更</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-agents-md-support-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-agents-md-support-2026</id>

@@ -10099,5 +10099,26 @@ export const ARTICLES_META = [
       "src": "logos/alibaba.svg",
       "alt": "Alibaba Qwen3.8-Omni-Flash"
     }
+  },
+  {
+    "id": "cursor-projects-coordinator-agent-2026",
+    "type": "news",
+    "category": "editor",
+    "title": "Cursor が「Projects」をベータ公開 — コード自体は書かない「コーディネーター」が数千のサブエージェントに月単位の作業を任せる",
+    "excerpt": "Anysphere は9月10日、Cursor に新機能「Projects」をベータ公開した。ユーザーが対話するのはコード自体を書かない「コーディネーターエージェント」で、作業を計画してサブエージェントに委任し、結果をまとめて差し戻す。プロジェクトはローカルPCではなくクラウド上の専用マシンで動き続け、Slack監視・スケジュール実行・PR追従といった「無人トリガー」にも対応する。",
+    "date": "2026-09-20",
+    "newsDate": "2026-09-10",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Cursor",
+      "Anysphere",
+      "エージェント",
+      "マルチエージェント"
+    ],
+    "coverImage": {
+      "src": "logos/cursor.svg",
+      "alt": "Cursor Projects coordinator agent"
+    }
   }
 ];
