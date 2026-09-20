@@ -27,6 +27,7 @@
  *   node scripts/check-stale-branches.mjs --json    # ワークフロー用
  */
 import { execFileSync } from "node:child_process";
+import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -37,6 +38,34 @@ const rootDir = join(__dirname, "..");
 const PREFIX = "routine/";
 
 /** 再検証の目安。egress は日によって変わるため、一度は自動でやり直す */
+/**
+ * 決着させた下書き。`closed-drafts.txt` に理由付きで記録する。
+ *
+ * **公開せずにクローズした下書きは、記事が main に入らない。** そのため
+ * 「記事がすべて main にあるか」で判定するこの棚卸しでは、**永久に
+ * 「未決着」のまま報告され続ける。**
+ *
+ * ブランチを消せば止まるが、**エージェントの実行環境からは消せない**
+ * （git proxy が ref の削除を拒否する）。ブラウザからの手作業が済むまでの間、
+ * 決着済みのものが鳴り続けることになる。
+ *
+ * CLAUDE.md は「クローズする場合は理由を1行残す」と定めているのに、
+ * **その1行を残す場所が無かった。**
+ */
+function loadClosedDrafts() {
+  const f = join(__dirname, "closed-drafts.txt");
+  const out = new Map();
+  if (!existsSync(f)) return out;
+  for (const line of readFileSync(f, "utf-8").split("\n")) {
+    const t = line.trim();
+    if (!t || t.startsWith("#")) continue;
+    const [name, ...rest] = t.split(/\s{2,}|\t/);
+    out.set(name.trim(), rest.join(" ").trim());
+  }
+  return out;
+}
+const closedDrafts = loadClosedDrafts();
+
 const RECHECK_DAYS = 7;
 /** 決着の期限。公開するかクローズするかを決める */
 const DECIDE_DAYS = 14;
@@ -92,6 +121,7 @@ const today = new Date(
 
 const merged = [];
 const pending = [];
+const closed = [];
 
 for (const b of branches) {
   const ids = articleIds(`origin/${b}`);
@@ -102,6 +132,10 @@ for (const b of branches) {
 
   if (extra.length === 0) {
     merged.push({ branch: b, last, days });
+  } else if (closedDrafts.has(b)) {
+    // 公開せずに決着させたもの。記事は main に入らないので、
+    // 記録が無ければ永久に「未決着」として鳴り続ける
+    closed.push({ branch: b, last, days, articles: extra, reason: closedDrafts.get(b) });
   } else {
     pending.push({ branch: b, last, days, articles: extra });
   }
@@ -109,6 +143,7 @@ for (const b of branches) {
 
 merged.sort((a, b) => b.days - a.days);
 pending.sort((a, b) => b.days - a.days);
+closed.sort((a, b) => b.days - a.days);
 
 const result = {
   recheckDays: RECHECK_DAYS,
@@ -117,6 +152,8 @@ const result = {
   merged,
   // main に無い記事を抱えている = まだ決着していない
   pending,
+  // 公開せずに決着済み。ブランチだけが残っている
+  closed,
   needsRecheck: pending.filter((p) => p.days >= RECHECK_DAYS && p.days < DECIDE_DAYS),
   needsDecision: pending.filter((p) => p.days >= DECIDE_DAYS),
 };
@@ -134,6 +171,14 @@ if (merged.length) {
   console.log("");
 } else {
   console.log("■ 削除してよいブランチはありません\n");
+}
+
+if (closed.length) {
+  console.log(`■ 決着済み（公開せずにクローズ。ブランチだけ残っている）: ${closed.length} 本`);
+  console.log("  **ブラウザから削除してください。** エージェントの実行環境からは");
+  console.log("  ref の削除ができません（git proxy が拒否します）。");
+  for (const c of closed) console.log(`  - ${c.branch}\n      理由: ${c.reason}`);
+  console.log("");
 }
 
 if (pending.length) {
