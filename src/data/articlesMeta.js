@@ -10027,22 +10027,6 @@ export const ARTICLES_META = [
     ]
   },
   {
-    "id": "qwen3-8-omni-flash-release-2026",
-    "type": "news",
-    "category": "model",
-    "title": "【未確認情報】Alibaba が Qwen3.8-Omni-Flash を公開したと複数メディアが報道 — 1Mトークンコンテキストの音声・映像対応モデル",
-    "excerpt": "複数の海外メディアが、Alibaba が2026年9月18日に音声・画像・動画をネイティブに扱う「Qwen3.8-Omni-Flash」をAPI限定で公開したと報じている。1Mトークンのコンテキスト、音声入力コストを前世代比98%超削減という数字が伝えられているが、本セッションの調査環境から Alibaba Cloud 公式ドキュメント（alibabacloud.com・help.aliyun.com）に到達できず、一次資料は未確認。複数の独立したメディア報道が一致する範囲を二次情報として整理した。",
-    "date": "2026-09-19",
-    "newsDate": "2026-09-18",
-    "author": "AI News 編集部",
-    "readTime": "4分",
-    "tags": [
-      "Qwen",
-      "Alibaba Cloud",
-      "マルチモーダル"
-    ]
-  },
-  {
     "id": "anthropic-nasdaq-ipo-2t-valuation-2026",
     "type": "feature",
     "category": "special",
