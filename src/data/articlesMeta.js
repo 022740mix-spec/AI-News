@@ -10120,5 +10120,26 @@ export const ARTICLES_META = [
       "src": "logos/cursor.svg",
       "alt": "Cursor Projects coordinator agent"
     }
+  },
+  {
+    "id": "openai-sponsored-agents-chatgpt-ads-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】OpenAI「Sponsored Agents」— 広告主自身のエージェントが、ChatGPT の会話の中で直接ユーザーに応対する",
+    "excerpt": "OpenAI が9月16日、ChatGPT 広告の新形式「Sponsored Agents」を発表した。広告をクリックすると、広告主が運営する専用のエージェントとの会話が始まり、ユーザーの要望を聞いた上で follow-up 質問に答え、準備が整えば広告主のサイトへ誘導する。Wayfair・Angi など早期参加企業に加え、HubSpot・Shopify との連携も同時発表された。バナー広告ではなく「広告主自身の会話エージェント」がユーザーと直接やり取りする形式は、AIチャット上の広告として新しい段階にあたる。",
+    "date": "2026-09-20",
+    "newsDate": "2026-09-16",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "広告",
+      "エージェント",
+      "透明性"
+    ],
+    "coverImage": {
+      "src": "logos/openai.svg",
+      "alt": "OpenAI Sponsored Agents in ChatGPT"
+    }
   }
 ];

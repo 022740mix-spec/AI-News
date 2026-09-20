@@ -20888,6 +20888,38 @@ const ARTICLES_BODY = {
         "url": "https://aiweekly.co/alerts/cursor-ships-projects-beta-with-delegating-coordinator-agent"
       }
     ]
+  },
+  "openai-sponsored-agents-chatgpt-ads-2026": {
+    "body": [
+      "OpenAI は2026年9月16日、ChatGPT 上の広告の新しい形式「Sponsored Agents」を発表した。米国内の一部広告主を対象にしたテスト段階で、Wayfair・Angi・Newegg・Best Buy・Lowe's・VistaPrint が早期参加企業として名を連ねている。あわせて、HubSpot が初のCRM連携パートナー、Shopify が初のEC連携パートナーとなり、9月16日から米国の Shopify 加盟店向けに ChatGPT Ads アプリの提供も始まった。",
+      "従来の ChatGPT 広告は、ChatGPT 自身の回答に付随する形で表示されるバナー的な広告だった。当サイトが8月31日に報じた「[ChatGPT 広告が年換算10億ドルに到達](?a=openai-chatgpt-ads-1b-run-rate-2026)」の時点でも、広告は明示的に区別され、回答内容には影響しないという説明だった。今回の Sponsored Agents はその先にある形式で、ユーザーが広告をクリックすると、ChatGPT 自身の回答とは別に、広告主が運営するエージェントとの会話がその場で始まる。",
+      "OpenAI の説明によれば、この広告主エージェントとの会話は「明確にラベル表示され」「ChatGPT 自身の回答とは別のもの」であり、ユーザーがもともと進めていた会話とも切り離された、独立したやり取りとして扱われる。Wayfair のエージェントは家具に関する詳細な質問に答え、Angi のエージェントはユーザーを地域の施工業者につなぐといった形で機能するという。",
+      "この形式の技術的な新しさは、広告主が用意した「タスクを遂行するAIプロセス」が、ユーザーの発言に応じてその場で follow-up 質問に答え、実際のアクション（施工業者の手配など）まで実行できる点にある。静的なバナーやリンク集ではなく、ユーザーが抱える個別の事情を聞き取った上で反応する会話型の窓口が、広告としてChatGPTの中に組み込まれる。",
+      "OpenAI の広告事業は急拡大を続けている。当サイトが4月に報じた「パイロット開始6週間でARR1億ドル」から、8月31日時点で年換算10億ドルに達したことはすでに報じたとおりで、Sponsored Agents はその収益源をさらに広げる位置づけの新機能である。",
+      "読者が判断材料として押さえておくべき事実は次の2点である。第一に、OpenAI は会話が明確にラベル表示され、ChatGPT 本来の回答や元の会話とは区別されると説明している。第二に、その会話の相手は広告主自身が費用を払って運営する「営業目的のエージェント」であり、ユーザーが最初に ChatGPT に相談していた文脈と同じチャット画面の中で、独立した会話として展開される。この2つの事実をどう受け止めるかは、読者それぞれの判断に委ねられる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Reimagining advertising with AI",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/reimagining-advertising-with-ai/"
+      },
+      {
+        "title": "Sponsored Agents in ChatGPT Ads",
+        "site": "OpenAI Help Center",
+        "url": "https://help.openai.com/en/articles/20001524-sponsored-agents-in-chatgpt-ads"
+      },
+      {
+        "title": "OpenAI's Sponsored Agents Turn ChatGPT Into an Ad Platform Where Brands Are the Product",
+        "site": "Yahoo Finance",
+        "url": "https://finance.yahoo.com/media-advertising/articles/openai-sponsored-agents-turn-chatgpt-155347973.html"
+      },
+      {
+        "title": "OpenAI Tests Sponsored AI Agents in ChatGPT Ads",
+        "site": "PYMNTS",
+        "url": "https://www.pymnts.com/news/artificial-intelligence/2026/openai-tests-sponsored-ai-agents-in-chatgpt-ads/"
+      }
+    ]
   }
 };
 

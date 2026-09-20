@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-20",
-  "count": 465,
+  "count": 466,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -363,6 +363,7 @@
     "openai-six-layer-context-data-agent-2026",
     "openai-sora-discontinued-2026",
     "openai-sora-shutdown-2026",
+    "openai-sponsored-agents-chatgpt-ads-2026",
     "openai-symphony-agent-orchestration-2026",
     "openai-tunnel-client-secure-mcp-2026",
     "openai-us-government-5-percent-stake-42b-offer-2026",
