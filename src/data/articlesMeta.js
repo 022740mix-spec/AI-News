@@ -10025,5 +10025,22 @@ export const ARTICLES_META = [
       "オープンソース",
       "Computer Use"
     ]
+  },
+  {
+    "id": "agent-self-authorization-approval-gate-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】エージェントが自分の承認ゲートを緩められる — 「元に戻せる」と「安全」は別だという話",
+    "excerpt": "OSS のエージェント実行環境 Local Operator で、**実行中のエージェントが自分の承認モードを `ask` から `auto` に緩められる**経路が2つ報告された。片方は9月19日に修正・リリース済み、**もう片方はまだ開いている**。`ask → auto` は後から戻せるため一見「可逆」だが、戻す前にエージェントの行動可能範囲が増えている。**可逆であることは、自律実行が安全であることを意味しない。**",
+    "date": "2026-09-20",
+    "newsDate": "2026-09-19",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "セキュリティ",
+      "エージェント",
+      "オープンソース",
+      "AI安全性"
+    ]
   }
 ];

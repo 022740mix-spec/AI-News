@@ -8,6 +8,14 @@
   <updated>2026-09-20T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>【分析】エージェントが自分の承認ゲートを緩められる — 「元に戻せる」と「安全」は別だという話</title>
+    <link rel="alternate" type="text/html" href="?a=agent-self-authorization-approval-gate-2026"/>
+    <id>tag:ai-tool-news.jp,2026:agent-self-authorization-approval-gate-2026</id>
+    <published>2026-09-20T15:00:00Z</published>
+    <updated>2026-09-20T15:00:00Z</updated>
+    <summary>OSS のエージェント実行環境 Local Operator で、実行中のエージェントが自分の承認モードを `ask` から `auto` に緩められる経路が2つ報告された。片方は9月19日に修正・リリース済み、もう片方はまだ開いている。`ask → auto` は後から戻せるため一見「可逆」だが、戻す前にエージェントの行動可能範囲が増えている。可逆であることは、自律実行が安全であることを意味しない。</summary>
+  </entry>
+  <entry>
     <title>Claude Code が AGENTS.md 対応を追加 — CLAUDE.md が無いプロジェクトの後方互換に、Auto Mode はサーバー側判定でコスト構造も変更</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-agents-md-support-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-agents-md-support-2026</id>

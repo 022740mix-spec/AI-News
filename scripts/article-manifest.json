@@ -1,9 +1,10 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-09-19",
-  "count": 460,
+  "generatedAt": "2026-09-20",
+  "count": 461,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
+    "agent-self-authorization-approval-gate-2026",
     "ai-autonomous-execution-risks-2026",
     "ai-backend-postgres-supabase-2026",
     "ai-config-files-comprehensive-guide-2026",
