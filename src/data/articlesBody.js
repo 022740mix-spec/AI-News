@@ -20782,6 +20782,30 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/release-notes/overview"
       }
     ]
+  },
+  "tencent-browserskill-agent-real-browser-2026": {
+    "body": [
+      "Tencent が公式 GitHub org（`Tencent/BrowserSkill`）で公開している「BrowserSkill」は、AIエージェントに、ユーザーがすでにログインしている実際のブラウザのタブを一時的に「借用」させ、作業を終えたら返却させる仕組みである。目的は、Webサイトを操作するタスクのたびに専用のテスト用アカウントやAPIキーを用意する手間を省くことにある。実体は `bsk` というCLI／デーモンとブラウザ拡張機能の2部構成で、借用したタブの作業は独立した「Agent Window」上で進むため、ユーザーは自分のブラウザで作業を続けながら並行してエージェントに作業させられる。CAPTCHA・ログイン・確認ダイアログなど人間でなければ処理できない場面に達すると、エージェントは操作をユーザーに引き渡し、完了後に処理を引き継ぐ「human-in-loop」が組み込まれている。対応クライアントはCursor・Claude Code・Codex・OpenClaw・CodeBuddy・WorkBuddy・Pi・Hermes Agent・DeepSeek Harnessなどで、シェルを呼べるエージェントであれば特定のモデルやフレームワークに縛られずに利用できるとされる。対応OSはmacOS・Linux・Windows、対応ブラウザはChromeとMicrosoft Edge（他のChromiumベースのブラウザも動作する見込みとされ、Firefoxは対応予定）。MITライセンスで公開されている。",
+      "9月16日公開のv0.3.0では、セキュリティに関わる機能が2つ追加された。1つは「リモート接続」で、エージェント・CLI・デーモンをサーバー側に置き、ユーザーのPC上ではブラウザ拡張機能だけが動く構成に対応した。拡張機能側からサーバーへ外向きの接続を開始する設計のため、ユーザーのPC側で受信用のポートを開ける必要がない。デバイスのペアリング、接続の認証、認証情報の更新・失効の仕組みが `bsk` に組み込まれており、別のアカウントシステムを用意しなくても、ペアリング用の一度限りのリンクを使って接続できる。もう1つは「操作審査（operation audit）」で、既定はオフ。オンにすると、エージェントが実行した操作をタスク単位で後から見返せるようになるが、記録されるのはタスクID・時刻・ツールの種類・タブ番号・アクセス先のプロトコルとドメイン・操作の成否といった要約データのみで、スクリーンショット・ページ本文・完全なDOM・入力値・スクリプト・生のエラーメッセージ・アップロードしたファイルの内容などは保存されない。保存先はデーモンが動くホスト上で、ファイル権限はmacOS/Linuxで0600（ディレクトリは0700）、保持期間は終了済みタスクについて30日。Tencent自身のドキュメントは「本機能は個人の振り返り用であり、改ざん防止や否認防止を保証するものではない」と明記しており、同一システムアカウント配下の悪意あるプロセスに対する安全境界にはならないという限界も添えている。",
+      "同じv0.3.0では、旧バージョンで使えた `--unattended` や `tab borrow --no-confirm`、`BSK_REQUEST_HELP=off` といったフラグが「非推奨の互換入力」に位置づけ直され、ブラウザ拡張機能側で保存された「借用確認」「人間へのヘルプ要請」のスイッチを、これらのフラグでは上書きできなくなった。無人運用（unattended）のワークフローを組んでいる場合は、アップグレード時に拡張機能側の設定を見直す必要があるとされている。裏を返せば、これまではコマンドライン側のフラグ一つで人間への確認ステップを黙って迂回できたということでもあり、v0.3.0はその抜け道を塞いだ形になる。",
+      "この存在は、企業名での横断検索やGitHub Trending、Hacker Newsのいずれからも今回は拾えず、Tencentの公式GitHub orgを直接確認して初めて把握した。同種の見落としは9月にOpenAIの「Symphony」（Issueトラッカーとエージェント群をつなぐオーケストレーション基盤）でも起きており、知名度の高い企業の公式orgが、プレスリリースを伴わずに実用段階のツールを静かに公開する例が続いている。BrowserSkillのCHANGELOGは0.2.0以降CLI・拡張機能・DSH（DeepSeek Harness）プラグインのバージョン番号を統一しており、Windowsインストーラの細かい修正まで追跡されているなど、開発は継続的に進んでいる様子がうかがえる。",
+      "一方で、エージェントに実際のログイン済みブラウザを触らせるという設計そのものにはリスクが伴う。テスト用の別アカウントで動かす自動化と違い、エージェントが訪れたページの内容によって意図しない指示を実行させられた場合（プロンプトインジェクション等）、ユーザー本人の認証済みセッションで操作されうる。借用確認や人間への引き渡し、操作の要約ログといったBrowserSkillの対策はリスクを減らすものであり、なくすものではない。これは同ツールに限らず「自分の実ブラウザを使わせる」という発想を持つツール全般に共通するトレードオフである。",
+      "**確認状況**: `github.com/Tencent/BrowserSkill` のREADME・CHANGELOG・LICENSE・ドキュメント（`docs/operation-audit.md`、`docs/remote-extension-connection.md`）には、GitHubのraw配信（`raw.githubusercontent.com`）経由で本稿執筆時点で直接到達し、内容を確認した。GitHub本体のWebページ（リポジトリのスター数・フォーク数・Issue一覧・Releasesページ）は本稿の調査環境から遮断されており、スター数など到達できなかった指標については本文中に数値を記載していない。Tencentの企業サイトも同様に遮断されており、公式ブログ上の別発表があるかどうかは確認できていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Tencent/BrowserSkill — README",
+        "url": "https://raw.githubusercontent.com/Tencent/BrowserSkill/main/README.md"
+      },
+      {
+        "title": "Tencent/BrowserSkill — CHANGELOG (v0.3.0, 2026-09-16)",
+        "url": "https://raw.githubusercontent.com/Tencent/BrowserSkill/main/CHANGELOG.md"
+      },
+      {
+        "title": "Tencent/BrowserSkill — Operation audit documentation",
+        "url": "https://raw.githubusercontent.com/Tencent/BrowserSkill/main/docs/operation-audit.md"
+      }
+    ]
   }
 };
 

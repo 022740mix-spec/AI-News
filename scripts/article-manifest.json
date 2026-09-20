@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-20",
-  "count": 462,
+  "count": 463,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -430,6 +430,7 @@
     "supabase-ssh-docs-virtual-filesystem-2026",
     "tbpn-benchmark-sora-spacex-2026-march",
     "tbpn-chatgpt-ads-anthropic-stories-2026-march",
+    "tencent-browserskill-agent-real-browser-2026",
     "tencentdb-agent-memory-team-level-23k-stars-2026",
     "timesfm-mirofish-business-forecasting-2026",
     "trae",

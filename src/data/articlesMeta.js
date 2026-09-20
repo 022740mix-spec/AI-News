@@ -10060,5 +10060,23 @@ export const ARTICLES_META = [
       "コンテキストウィンドウ",
       "エージェント"
     ]
+  },
+  {
+    "id": "tencent-browserskill-agent-real-browser-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Tencent がオープンソース「BrowserSkill」を公開 — エージェントに『ログイン済みの実ブラウザ』を借用させる仕組み、v0.3.0で操作審査ログを追加",
+    "excerpt": "Tencent が公式 GitHub org で公開する「BrowserSkill」は、Cursor・Claude Code・Codex・DeepSeek Harness など、シェルを呼べるエージェントに、ユーザーが既にログイン済みのブラウザタブを一時的に借用させ、作業が終われば返却する仕組みである。個別の自動化用ログインを用意する必要がなく、CAPTCHAやログイン、確認ダイアログなど人間でなければ通過できない場面ではエージェントから操作を人間に引き渡す。9月16日公開のv0.3.0では、サーバー上のエージェントから利用者のPC上のブラウザを操作するリモート接続と、既定オフで要約データのみを30日保存する操作審査ログを追加した。MITライセンス。",
+    "date": "2026-09-20",
+    "newsDate": "2026-09-16",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Tencent",
+      "エージェント",
+      "ブラウザ自動化",
+      "オープンソース",
+      "セキュリティ"
+    ]
   }
 ];
