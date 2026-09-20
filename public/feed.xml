@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-09-20T15:00:00Z</updated>
+  <updated>2026-09-21T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>【分析】エージェントが自分の承認ゲートを緩められる — 「元に戻せる」と「安全」は別だという話</title>
@@ -30,6 +30,14 @@
     <published>2026-09-20T15:00:00Z</published>
     <updated>2026-09-20T15:00:00Z</updated>
     <summary>Tencent が公式 GitHub org で公開する「BrowserSkill」は、Cursor・Claude Code・Codex・DeepSeek Harness など、シェルを呼べるエージェントに、ユーザーが既にログイン済みのブラウザタブを一時的に借用させ、作業が終われば返却する仕組みである。個別の自動化用ログインを用意する必要がなく、CAPTCHAやログイン、確認ダイアログなど人間でなければ通過できない場面ではエージェントから操作を人間に引き渡す。9月16日公開のv0.3.0では、サーバー上のエージェントから利用者のPC上のブラウザを操作するリモート接続と、既定オフで要約データのみを30日保存する操作審査ログを追加した。MITライセンス。</summary>
+  </entry>
+  <entry>
+    <title>Alibaba が Qwen3.8-Omni-Flash を公開 — 音声・映像・テキストを1モデルで理解しツールも呼ぶ、音声コストは前世代比98%減</title>
+    <link rel="alternate" type="text/html" href="?a=alibaba-qwen3-8-omni-flash-2026"/>
+    <id>tag:ai-tool-news.jp,2026:alibaba-qwen3-8-omni-flash-2026</id>
+    <published>2026-09-20T15:00:00Z</published>
+    <updated>2026-09-20T15:00:00Z</updated>
+    <summary>Alibaba の Qwen チームが9月18日、テキスト・画像・音声・映像をネイティブに扱う「Qwen3.8-Omni-Flash」を公開した。1Mトークンのコンテキストウィンドウと、理解・計画・ツール実行・結果提示までを1モデルで完結させるエージェント指向の設計が特徴。約30種のベンチマーク平均で前世代比26%超の向上を報告し、音声入力コストは前世代の98%減、音声+映像は93%減とした。API提供のみでオープンウェイトは無い。</summary>
   </entry>
   <entry>
     <title>Claude Code が AGENTS.md 対応を追加 — CLAUDE.md が無いプロジェクトの後方互換に、Auto Mode はサーバー側判定でコスト構造も変更</title>

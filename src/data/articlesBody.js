@@ -20806,6 +20806,61 @@ const ARTICLES_BODY = {
         "url": "https://raw.githubusercontent.com/Tencent/BrowserSkill/main/docs/operation-audit.md"
       }
     ]
+  },
+  "alibaba-qwen3-8-omni-flash-2026": {
+    "body": [
+      "Alibaba の Qwen チームは2026年9月18日、テキスト・画像・音声・映像をネイティブに扱う新モデル「Qwen3.8-Omni-Flash」を公開した。QwenCloud・Alibaba Cloud Model Studio・Qwen Studio上で提供が始まっており、コンテキストウィンドウは100万トークンに達する。8月26日に公開したオープンウェイトの Qwen3.8-Flash-Next とは異なり、Qwen3.8-Omni-Flash は API 提供のみで、本稿執筆時点で重みの公開は発表されていない。",
+      "設計の軸に置かれているのは「理解する→タスクを計画する→ツールを使って実行する→結果を届ける」という一連の流れを1モデルで完結させることで、Qwen チーム自身がこれを「エージェント能力を中心に据えた初のオムニモーダルモデル」と位置づけている。音声・映像を見聞きするだけでなく、そこから得た情報をもとに複数ステップのタスクを自律的に遂行する用途を想定した設計である。",
+      "性能面では、約30種の公開・社内ベンチマークの平均で前世代の Qwen3.5-Omni-Plus 比26%超の向上を報告しており、特に音声・映像を伴うエージェントタスク、コーディング、長文脈処理、リアルタイムのマルチモーダル対話で伸びが大きいとしている。",
+      "料金面での変化も大きい。Qwen チームの発表によれば、音声入力1時間あたりのコストは Qwen3.5-Omni-Plus 比で98%減、音声と映像を組み合わせた場合でも93%減になるという。これらの数値は Qwen 自身が示したものであり、独立した検証は確認できていない。",
+      "あわせて、マルチモーダル向けの開発者ツール群「Qwen-MM-Plugins」を拡張し、リアルタイムの連続的なマルチモーダル対話を実装するための「Qwen-Live Harness」をオープンソースで公開した。フラッグシップモデル本体は非公開のAPI提供にとどめつつ、その周辺の開発ツールはオープンにするという役割分担が見て取れる。",
+      "Alibaba は8月の Qwen3.8-Max（2.4兆パラメータ）、8月26日の Qwen3.8-Flash-Next（次世代アーキテクチャ「Qwen4」の設計を先出しするハイブリッド構造）に続き、1か月足らずでモデルファミリーの拡充を続けている。今回の Qwen3.8-Omni-Flash は、その中でも「音声・映像を扱うエージェント」という用途に特化した位置づけといえる。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "Qwen3.5-Omni-Plus 比のコスト削減率（Qwen 自身の公表値、独立検証なし）",
+        "headers": [
+          "入力タイプ",
+          "コスト削減率"
+        ],
+        "rows": [
+          [
+            "音声のみ（1時間あたり）",
+            "98%減"
+          ],
+          [
+            "音声＋映像（1時間あたり）",
+            "93%減"
+          ]
+        ]
+      }
+    ],
+    "embeds": [
+      {
+        "type": "x",
+        "afterParagraph": 1,
+        "url": "https://x.com/Alibaba_Qwen/status/2100785962414702599",
+        "caption": "Qwen 公式アカウントによる Qwen3.8-Omni-Flash 発表ポスト"
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Qwen3.8-Omni-Flash 発表ポスト",
+        "site": "X (@Alibaba_Qwen)",
+        "url": "https://x.com/Alibaba_Qwen/status/2100785962414702599"
+      },
+      {
+        "title": "Alibaba's Qwen releases Qwen3.8-Omni-Flash with 1M-token context",
+        "site": "TechNode",
+        "url": "https://technode.com/2026/09/18/alibabas-qwen-releases-qwen3-8-omni-flash-with-1m-token-context/"
+      },
+      {
+        "title": "Alibaba Qwen Releases Qwen3.8-Omni-Flash: A 1M-Context Omni-Modal Model Built Around Agentic Audio-Video Understanding and Tool Use",
+        "site": "MarkTechPost",
+        "url": "https://www.marktechpost.com/2026/09/18/alibaba-qwen-releases-qwen3-8-omni-flash/"
+      }
+    ]
   }
 };
 

@@ -10078,5 +10078,26 @@ export const ARTICLES_META = [
       "オープンソース",
       "セキュリティ"
     ]
+  },
+  {
+    "id": "alibaba-qwen3-8-omni-flash-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Alibaba が Qwen3.8-Omni-Flash を公開 — 音声・映像・テキストを1モデルで理解しツールも呼ぶ、音声コストは前世代比98%減",
+    "excerpt": "Alibaba の Qwen チームが9月18日、テキスト・画像・音声・映像をネイティブに扱う「Qwen3.8-Omni-Flash」を公開した。1Mトークンのコンテキストウィンドウと、理解・計画・ツール実行・結果提示までを1モデルで完結させるエージェント指向の設計が特徴。約30種のベンチマーク平均で前世代比26%超の向上を報告し、音声入力コストは前世代の98%減、音声+映像は93%減とした。API提供のみでオープンウェイトは無い。",
+    "date": "2026-09-20",
+    "newsDate": "2026-09-18",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Qwen",
+      "Alibaba Cloud",
+      "マルチモーダル",
+      "エージェント"
+    ],
+    "coverImage": {
+      "src": "logos/alibaba.svg",
+      "alt": "Alibaba Qwen3.8-Omni-Flash"
+    }
   }
 ];

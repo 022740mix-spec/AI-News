@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-20",
-  "count": 463,
+  "count": 464,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -26,6 +26,7 @@
     "alibaba-qwen-3-8-flash-next-2026",
     "alibaba-qwen-3-8-max-open-weight-2-4t-2026",
     "alibaba-qwen-3-8-preview-waic-shanghai-2-4t-open-weight-2026",
+    "alibaba-qwen3-8-omni-flash-2026",
     "alibaba-qwenwork-international-2026",
     "amazon-anthropic-25b-trainium-infrastructure-2026",
     "amazon-q",
