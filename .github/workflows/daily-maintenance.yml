@@ -123,10 +123,22 @@ jobs:
 
       # 「異常なし」を毎日 Issue に出すと通知が無視されるようになるため、
       # 報告すべきことがある場合だけ Issue を立てる。
-      # 同じ内容の Issue が積み上がらないよう、開いている当日分があれば更新する。
       # 周期ごとに別の Issue にする。同じ Issue に混ぜると、月次の棚卸しが
       # 日次の指摘に埋もれる。**分けた意味が無くなる。**
-      # 同じ周期の当日ぶんが既に開いていれば更新する（重複を積み上げない）。
+      #
+      # **周期ごとに1本だけを回す。** 以前はタイトルに日付を含めたまま
+      # 完全一致で既存を探していたため、**前日分が見つからず毎日新規に作られた。**
+      # 2026年9月20日時点で日次の Issue が16本開いており、内容はほぼ同じだった。
+      # **19本開いている状態では誰も読まない。** CLAUDE.md が検査について書いている
+      # 「鳴りすぎると無視される」が、Issue の層でそのまま起きていた。
+      #
+      # 同じファイルの中に正解があった。出典 URL の Issue は
+      # `title.startsWith("出典 URL:")` で探しており、**1本だけで回っている。**
+      # こちらも接頭辞で探す。タイトルの日付は「最後に更新した日」として更新する。
+      #
+      # **報告すべきことが無くなったら閉じる。** そうすると状態に意味が出る。
+      #   開いている → いま対応が要る
+      #   閉じている → 片付いている
       - name: 必要なときだけ Issue を立てる
         if: always()
         uses: actions/github-script@v7
@@ -149,17 +161,50 @@ jobs:
             });
 
             for (const j of jobs) {
-              if (j.ok !== "true") continue;
-              if (!fs.existsSync(j.file)) continue;
+              // その周期の Issue を接頭辞で探す。日付では探さない
+              const prefix = `${j.label}点検:`;
+              const mine = open.filter((i) => i.title.startsWith(prefix));
+
+              if (j.ok !== "true" || !fs.existsSync(j.file)) {
+                // 報告すべきことが無い。開いているものがあれば閉じる
+                for (const i of mine) {
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner, repo: context.repo.repo,
+                    issue_number: i.number,
+                    body: `${today} の点検では、報告すべき項目がありませんでした。片付いたものとして閉じます。再発すれば同じ Issue が開き直されます。`,
+                  });
+                  await github.rest.issues.update({
+                    owner: context.repo.owner, repo: context.repo.repo,
+                    issue_number: i.number, state: "closed", state_reason: "completed",
+                  });
+                  core.notice(`${j.label}: 指摘が無くなったため Issue #${i.number} を閉じました。`);
+                }
+                continue;
+              }
+
               const body = fs.readFileSync(j.file, "utf-8");
-              const title = `${j.label}点検: 対応が必要な項目があります（${today}）`;
-              const existing = open.find((i) => i.title === title);
-              if (existing) {
+              const title = `${j.label}点検: 対応が必要な項目があります（最終更新 ${today}）`;
+
+              if (mine.length) {
+                // 1本だけ残して更新する。過去の取りこぼしがあれば畳む
+                const [keep, ...extra] = mine.sort((a, b) => a.number - b.number);
                 await github.rest.issues.update({
                   owner: context.repo.owner, repo: context.repo.repo,
-                  issue_number: existing.number, body,
+                  issue_number: keep.number, title, body,
                 });
-                core.notice(`${j.label}: 既存の Issue #${existing.number} を更新しました。`);
+                core.notice(`${j.label}: Issue #${keep.number} を更新しました。`);
+                for (const i of extra) {
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner, repo: context.repo.repo,
+                    issue_number: i.number,
+                    body: `この Issue の内容は #${keep.number} に引き継がれています。重複のため閉じます。`,
+                  });
+                  await github.rest.issues.update({
+                    owner: context.repo.owner, repo: context.repo.repo,
+                    issue_number: i.number, state: "closed", state_reason: "not_planned",
+                  });
+                  core.notice(`${j.label}: 重複の Issue #${i.number} を閉じました。`);
+                }
               } else {
                 const { data: created } = await github.rest.issues.create({
                   owner: context.repo.owner, repo: context.repo.repo,
