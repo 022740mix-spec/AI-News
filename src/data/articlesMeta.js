@@ -10158,5 +10158,22 @@ export const ARTICLES_META = [
       "オープンソース",
       "開発ツール"
     ]
+  },
+  {
+    "id": "anthropic-managed-agents-auto-permission-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude Managed Agents に「auto」権限ポリシーが追加 — ツール呼び出しの許可判断をサーバー側で評価",
+    "excerpt": "Anthropic が Claude Managed Agents の権限ポリシーに新モード「auto」を追加した。エージェントやMCPツールの呼び出し1件ごとに、実行・拒否・承認待ちのいずれかをサーバー側が評価して振り分ける仕組みで、`agent.tool_use` / `agent.mcp_tool_use` イベントに評価結果を示す `evaluation` フィールドが加わる。あわせて `ant` CLI が v1.32.0 になり、`ant beta:sessions connect` でターミナルから実行中のセッションに接続し、ライブでメッセージ送信やツール呼び出しの承認・拒否ができるようになった。",
+    "date": "2026-09-21",
+    "newsDate": "2026-09-10",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "エージェント",
+      "開発ツール",
+      "CLI"
+    ]
   }
 ];

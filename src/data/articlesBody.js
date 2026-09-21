@@ -20938,6 +20938,24 @@ const ARTICLES_BODY = {
         "url": "https://github.com/google/ax/releases/tag/v0.3.0"
       }
     ]
+  },
+  "anthropic-managed-agents-auto-permission-2026": {
+    "body": [
+      "Anthropic が Claude Managed Agents の権限ポリシーに、新しい評価モード「auto」を追加した。公式のAPIリリースノートによると、エージェントやMCPツールの呼び出しが発生するたびに、サーバー側がその呼び出しを「実行する」「拒否する」「承認待ちで一時停止する」のいずれかに振り分ける。判定結果は `agent.tool_use` と `agent.mcp_tool_use` の各イベントに新設された `evaluation` フィールドに記録され、`evaluated_permission` と合わせて確認できる。",
+      "これまでの権限ポリシーは、許可リストに基づく静的な設定か、人間が都度承認するかのいずれかが中心だったのに対し、「auto」はその判断自体をサーバー側のロジックに委ねる点が異なる。エージェントがどのツールをどう使おうとしているかという文脈に応じて、実行の可否をリクエストごとに動的に決めることになる。",
+      "同時に公開されたコマンドラインツール `ant` は v1.32.0 に更新され、新コマンド `ant beta:sessions connect` が追加された。ターミナルから実行中の Managed Agents セッションに接続し、ライブでその様子を追いながらメッセージを送ったり、ツール呼び出しを承認・拒否したりできる。`--web` フラグを付けると、Claude Console のセッションビューアをローカルに立ち上げて見ることもできる。",
+      "この種の「エージェントの判断をどこまで自動承認してよいか」という設計は、[エージェントが自分の承認ゲートを緩められる問題](?a=agent-self-authorization-approval-gate-2026)とも地続きにある論点である。承認をサーバー側の評価に委ねる仕組みそのものは利便性を高める一方、その評価ロジックが何を基準に「実行してよい」と判断しているかは、利用者が個別に確認する必要がある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Managed Agents: Auto Permission Policy Evaluation（Claude Platform リリースノート）",
+        "url": "https://platform.claude.com/docs/en/managed-agents/permission-policies#let-the-server-evaluate-each-call-with-auto"
+      },
+      {
+        "title": "ant CLI: sessions connect（Claude Platform ドキュメント）",
+        "url": "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/sessions-connect"
+      }
+    ]
   }
 };
 

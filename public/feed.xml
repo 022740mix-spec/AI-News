@@ -16,6 +16,14 @@
     <summary>Google が GitHub の公式org（google/ax）で、自律エージェントのワークロードをKubernetesクラスタ上で大規模に動かすための実行基盤「ax」を公開している。大きな発表を伴わず5月から開発が続き、Apache 2.0・3.8kスターまで育っているが、企業名検索やGitHub Trendingでは拾いにくい位置にあった。Task・Workspace・Gateway・Modelの4つの宣言的リソースでエージェントをサンドボックス実行し、ネットワークを制限し、状態を一時停止・再開できるようにする設計。プロジェクト自身が「安定版の前に破壊的変更を入れる」と明記する開発中の段階にある。</summary>
   </entry>
   <entry>
+    <title>Claude Managed Agents に「auto」権限ポリシーが追加 — ツール呼び出しの許可判断をサーバー側で評価</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-managed-agents-auto-permission-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-managed-agents-auto-permission-2026</id>
+    <published>2026-09-21T15:00:00Z</published>
+    <updated>2026-09-21T15:00:00Z</updated>
+    <summary>Anthropic が Claude Managed Agents の権限ポリシーに新モード「auto」を追加した。エージェントやMCPツールの呼び出し1件ごとに、実行・拒否・承認待ちのいずれかをサーバー側が評価して振り分ける仕組みで、`agent.tool_use` / `agent.mcp_tool_use` イベントに評価結果を示す `evaluation` フィールドが加わる。あわせて `ant` CLI が v1.32.0 になり、`ant beta:sessions connect` でターミナルから実行中のセッションに接続し、ライブでメッセージ送信やツール呼び出しの承認・拒否ができるようになった。</summary>
+  </entry>
+  <entry>
     <title>【分析】エージェントが自分の承認ゲートを緩められる — 「元に戻せる」と「安全」は別だという話</title>
     <link rel="alternate" type="text/html" href="?a=agent-self-authorization-approval-gate-2026"/>
     <id>tag:ai-tool-news.jp,2026:agent-self-authorization-approval-gate-2026</id>
