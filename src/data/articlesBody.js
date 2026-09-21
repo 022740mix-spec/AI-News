@@ -20956,6 +20956,24 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/sessions-connect"
       }
     ]
+  },
+  "alibaba-qwen-image-2-1-2026": {
+    "body": [
+      "Alibaba の Qwen チームが2026年9月20日、テキストからの画像生成と画像編集を1つのモデルに統合した「Qwen-Image-2.1」を公開した。Hugging Face・ModelScope・GitHub の3プラットフォームに同時公開され、Diffusers（Hugging Face）・ComfyUI・vLLM-Omni・SGLang・LightX2V の各フレームワークが公開初日から対応している。",
+      "視覚生成を担う部分は32層の Single-Stream DiT（Diffusion Transformer）構成でパラメータ数は7B。前身にあたる「Qwen-Image」が60ブロック・約20Bパラメータの MMDiT（Multimodal Diffusion Transformer）で Apache 2.0 ライセンスにより公開されていたのに対し、パラメータ数は大幅に縮小された構成となる。効率化技術として、粒度の異なる注意機構を組み合わせる mixed-granularity attention と、プレフィックス部分の KV キャッシュを再利用する仕組みが採用されている。",
+      "機能面では、ネイティブ2K解像度・複数アスペクト比でのテキストから画像生成に加え、最大10枚の参照画像を使った画像編集に対応する。透過（RGBA）画像をネイティブに生成・編集できる点、円描画やマスクによる局所編集範囲の指定に対応する点、人物・製品の同一性を維持したまま編集できる点が新機能として挙げられている。",
+      "ライセンス面では、前身の Qwen-Image が Apache 2.0 で公開されていたのに対し、Qwen-Image-2.1 は GitHub リポジトリの LICENSE ファイルによれば「Qwen Research License Agreement」に切り替わっている。この契約は非商用目的に限定した無償ライセンスであり、商用利用には Hangzhou Tongyi Laboratory Technology との別途契約が必要になる。派生モデルを作成した場合は「Built with Qwen」という表示義務も課される。オープンウェイトモデルの相次ぐ公開が続く中国系ベンダーの中でも、ライセンス条件が世代によって変わる例として記録に値する。"
+    ],
+    "primarySources": [
+      {
+        "title": "QwenLM/Qwen-Image-2.1（GitHub）",
+        "url": "https://github.com/QwenLM/Qwen-Image-2.1"
+      },
+      {
+        "title": "Qwen-Image-2.1 LICENSE（GitHub）",
+        "url": "https://github.com/QwenLM/Qwen-Image-2.1/blob/main/LICENSE"
+      }
+    ]
   }
 };
 

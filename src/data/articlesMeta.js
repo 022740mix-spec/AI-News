@@ -10175,5 +10175,22 @@ export const ARTICLES_META = [
       "開発ツール",
       "CLI"
     ]
+  },
+  {
+    "id": "alibaba-qwen-image-2-1-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Alibaba の Qwen チームが Qwen-Image-2.1 を公開 — 視覚生成部は7Bに縮小、ライセンスは Apache 2.0 から非商用限定に転換",
+    "excerpt": "Alibaba の Qwen チームが2026年9月20日、画像生成と画像編集を1モデルに統合した「Qwen-Image-2.1」を公開した。視覚生成部分は32層の Single-Stream DiT・7Bパラメータで構成され、前身の Qwen-Image（60ブロック・約20B パラメータの MMDiT）から大幅に縮小されている。最大10枚の参照画像を使った編集、透過（RGBA）画像のネイティブ生成、円やマスクによる局所編集指定などに対応し、Hugging Face・ModelScope・GitHub に同時公開、Diffusers・ComfyUI・vLLM-Omni・SGLang・LightX2V が Day-0 で対応した。一方でライセンスは、Apache 2.0 だった Qwen-Image から一転し、非商用利用限定の「Qwen Research License Agreement」に切り替わっている。",
+    "date": "2026-09-22",
+    "newsDate": "2026-09-20",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Alibaba",
+      "Qwen",
+      "画像生成",
+      "オープンウェイト"
+    ]
   }
 ];
