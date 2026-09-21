@@ -24,6 +24,14 @@
     <summary>Microsoft の MSR Systems Research Group と Azure Research - Systems が共同で、信頼できないコードをハードウェア強制の分離で実行する超軽量マイクロVMサンドボックス「nvx」を GitHub の公式org（microsoft）で公開している。OpenVMM 上に Linux をゲストとして構築し、Linux+KVM・Linux+MSHV（Microsoft Hypervisor）・Windows+WHP（Windows Hypervisor Platform）に対応、ライセンスは MIT。README では自律エージェントなど「エージェント的ワークロード」の隔離が用途として明記されている。スター数はまだ6件と目立たないが、dev ブランチには176件のコミットが積まれ、自動生成の開発版プレリリースが9月21日だけで10件公開されるなど、開発は活発に続いている。</summary>
   </entry>
   <entry>
+    <title>【分析・一次資料未到達】ChatGPT の「__obi」クッキーが外部サイトを横断追跡か — セキュリティ研究者の指摘、OpenAI からの技術的回答はまだ無し</title>
+    <link rel="alternate" type="text/html" href="?a=openai-obi-ad-tracking-cookie-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-obi-ad-tracking-cookie-2026</id>
+    <published>2026-09-22T15:00:00Z</published>
+    <updated>2026-09-22T15:00:00Z</updated>
+    <summary>セキュリティ研究者が2026年9月20日前後に公表した分析によれば、ChatGPT が発行する「__obi」というクッキーが、ChatGPT アカウントと外部の広告主サイトでの行動を紐づけて追跡している可能性があるという。ChatGPT を開くとクライアント側で識別子が生成され、アカウントに紐づく短命の署名付きトークンが発行される。このトークンが SameSite=None のクッキーとして保存され、OpenAI の広告計測ピクセルを埋め込んだ外部サイトを訪れた際に送り返される仕組みだと報告されている。研究者は9月14日に OpenAI の press / privacy 窓口へ問い合わせたが、9月20日時点では受領確認のみで技術的な回答は得られていないという。本記事は複数の独立した二次報道が一致する内容を整理したものであり、元となった一次資料（研究者本人のブログ）にはこの実行環境から到達できていない。数値や技術的細部の確度は一次資料での確認を経ておらず、確定情報として扱わない。</summary>
+  </entry>
+  <entry>
     <title>Google が公式orgでエージェント実行基盤「ax」を静かに公開 — kubectl風CLIで自律エージェントをクラスタ規模でサンドボックス実行</title>
     <link rel="alternate" type="text/html" href="?a=google-ax-agent-orchestrator-2026"/>
     <id>tag:ai-tool-news.jp,2026:google-ax-agent-orchestrator-2026</id>

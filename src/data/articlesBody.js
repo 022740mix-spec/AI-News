@@ -20992,6 +20992,25 @@ const ARTICLES_BODY = {
         "url": "https://github.com/microsoft/nvx/releases"
       }
     ]
+  },
+  "openai-obi-ad-tracking-cookie-2026": {
+    "body": [
+      "【この記事について】本記事は一次資料に到達できていない状態で作成した下書きである。元となったセキュリティ研究者本人のブログ記事に、この記事を書いている実行環境のネットワークポリシーから到達できなかった。複数の独立したセキュリティ系メディアが伝える内容は細部まで一致しているため二次情報として整理するが、元資料そのものでの確認は経ていない。数値・仕組みの詳細は今後の検証で変わる可能性がある前提で読んでほしい。",
+      "報告によれば、問題とされているのは ChatGPT が発行する「__obi」という名前のクッキーである。ユーザーが ChatGPT を開くと、クライアント側でランダムな識別子が生成され、アカウントに紐づく値・obi識別子・同意状態（analytics_allowed）を含む短命の署名付きトークンが OpenAI のバックエンドから発行されるという。このクッキーは SameSite=None・Secure の設定になっており、ブラウザの仕様上、他サイトへのリクエストにも同梱されうる状態になっている。",
+      "研究者は、OpenAI の広告計測ピクセルを埋め込んだ外部の広告主サイトを訪問した際に、このクッキーの値が OpenAI 側に送り返されることを確認したとしている。複数の報道では、確認された広告主ピクセルの数は900件超、ホスト名は1,000件超に及ぶと伝えられている。ピクセル自体は広告主ページのタグマネージャーが持つデータレイヤーからメールアドレスや電話番号などの識別情報も収集しているとの指摘もある。",
+      "問題視されているのは分類上の扱いである。OpenAI 自身のクッキーポリシーは「__obi」を「マーケティング」ではなく「アナリティクス」クッキーに分類しているが、報告では、マーケティングへの同意を拒否したユーザーの環境でも、アナリティクス同意（analytics_allowed）に基づいてこのクッキーが送信され続けていたとされる。研究者は2026年9月14日に OpenAI の press 窓口・privacy 窓口へ問い合わせたが、9月20日の報道時点では自動受領確認のみで、分類や同意の扱いについての技術的な回答は得られていないという。",
+      "この話題は9月21日に Hacker News で大きく取り上げられ、議論が広がったと報じられている。広告のクロスサイト計測とプライバシー同意の扱いは各社共通の論点であり、ChatGPT のように非常に多くのユーザーがログイン状態で使うサービスでは、同種の仕組みが持つ影響範囲も相応に大きくなる。続報が一次資料に到達できる形で確認でき次第、内容を更新する。"
+    ],
+    "primarySources": [
+      {
+        "title": "OpenAI's __obi Cookie Tracks ChatGPT Users Across Sites, Analysis Reveals（pasqualepillitteri.it、二次報道）",
+        "url": "https://pasqualepillitteri.it/en/news/17191/openai-obi-cookie-tracks-chatgpt-users-across-sites"
+      },
+      {
+        "title": "ChatGPT Ad Tracking Cookie Follows Users Across Third-Party Advertiser Websites（cybersecuritynews.com、二次報道）",
+        "url": "https://cybersecuritynews.com/chatgpt-ad-tracking-cookie-follows-users/"
+      }
+    ]
   }
 };
 
