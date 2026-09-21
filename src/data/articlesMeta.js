@@ -10192,5 +10192,22 @@ export const ARTICLES_META = [
       "画像生成",
       "オープンウェイト"
     ]
+  },
+  {
+    "id": "microsoft-nvx-microvm-sandbox-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Microsoft が公式orgで「nvx」を静かに公開 — エージェントの実行を隔離するクロスプラットフォーム マイクロVMサンドボックス",
+    "excerpt": "Microsoft の MSR Systems Research Group と Azure Research - Systems が共同で、信頼できないコードをハードウェア強制の分離で実行する超軽量マイクロVMサンドボックス「nvx」を GitHub の公式org（microsoft）で公開している。OpenVMM 上に Linux をゲストとして構築し、Linux+KVM・Linux+MSHV（Microsoft Hypervisor）・Windows+WHP（Windows Hypervisor Platform）に対応、ライセンスは MIT。README では自律エージェントなど「エージェント的ワークロード」の隔離が用途として明記されている。スター数はまだ6件と目立たないが、dev ブランチには176件のコミットが積まれ、自動生成の開発版プレリリースが9月21日だけで10件公開されるなど、開発は活発に続いている。",
+    "date": "2026-09-22",
+    "newsDate": "2026-09-21",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Microsoft",
+      "エージェント",
+      "セキュリティ",
+      "オープンソース"
+    ]
   }
 ];

@@ -20974,6 +20974,24 @@ const ARTICLES_BODY = {
         "url": "https://github.com/QwenLM/Qwen-Image-2.1/blob/main/LICENSE"
       }
     ]
+  },
+  "microsoft-nvx-microvm-sandbox-2026": {
+    "body": [
+      "Microsoft の公式 GitHub org（github.com/microsoft）で、「nvx」という名前のマイクロVMサンドボックスが公開されている。開発元は MSR（Microsoft Research）の Systems Research Group と Azure Research - Systems の共同チームで、リポジトリの説明には「Nanvix プロジェクトの研究を土台にした」とある。企業名検索や GitHub Trending、Hacker News のいずれでも表面化しにくい、公式orgからの静かな公開の一例である。",
+      "nvx は「信頼できないコードをハードウェア強制の分離で実行する」ことを目的とした超軽量マイクロVMサンドボックスで、Microsoft 自身が開発してきた仮想化基盤 OpenVMM の上に Linux をゲストOSとして構築している。対応環境は Linux 上の KVM、Linux 上の MSHV（Microsoft Hypervisor）、Windows 上の WHP（Windows Hypervisor Platform）の3系統で、ライセンスは MIT。",
+      "リポジトリの説明文には「Cross-Platform Micro-VM Sandbox for Agentic Workloads」とあり、想定用途として自律的に動作するAIエージェントなど、信頼度の低いコード実行を担う処理の隔離が明記されている。エージェントに任せる作業が増えるほど、実行環境そのものをどう隔離するかが課題になるという文脈に位置づけられるプロジェクトである。",
+      "公開範囲としてはまだ小規模で、スター数6件・フォーク2件にとどまる。ただし主ブランチである dev には176件のコミットが積まれており、9月21日だけでも「v0.1.0-dev」系の自動生成プレリリースが10件公開されるなど、社内では継続的に開発が進んでいる様子がうかがえる。スター数の伸びを待たずに紹介する価値がある段階の公開だと判断した。"
+    ],
+    "primarySources": [
+      {
+        "title": "microsoft/nvx（GitHub）",
+        "url": "https://github.com/microsoft/nvx"
+      },
+      {
+        "title": "microsoft/nvx Releases（GitHub）",
+        "url": "https://github.com/microsoft/nvx/releases"
+      }
+    ]
   }
 };
 
