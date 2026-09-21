@@ -10141,5 +10141,22 @@ export const ARTICLES_META = [
       "src": "logos/openai.svg",
       "alt": "OpenAI Sponsored Agents in ChatGPT"
     }
+  },
+  {
+    "id": "google-ax-agent-orchestrator-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Google が公式orgでエージェント実行基盤「ax」を静かに公開 — kubectl風CLIで自律エージェントをクラスタ規模でサンドボックス実行",
+    "excerpt": "Google が GitHub の公式org（google/ax）で、自律エージェントのワークロードをKubernetesクラスタ上で大規模に動かすための実行基盤「ax」を公開している。大きな発表を伴わず5月から開発が続き、Apache 2.0・3.8kスターまで育っているが、企業名検索やGitHub Trendingでは拾いにくい位置にあった。Task・Workspace・Gateway・Modelの4つの宣言的リソースでエージェントをサンドボックス実行し、ネットワークを制限し、状態を一時停止・再開できるようにする設計。プロジェクト自身が「安定版の前に破壊的変更を入れる」と明記する開発中の段階にある。",
+    "date": "2026-09-21",
+    "newsDate": "2026-09-21",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "エージェント",
+      "オープンソース",
+      "開発ツール"
+    ]
   }
 ];

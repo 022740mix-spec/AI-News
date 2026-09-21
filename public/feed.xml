@@ -8,6 +8,14 @@
   <updated>2026-09-21T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Google が公式orgでエージェント実行基盤「ax」を静かに公開 — kubectl風CLIで自律エージェントをクラスタ規模でサンドボックス実行</title>
+    <link rel="alternate" type="text/html" href="?a=google-ax-agent-orchestrator-2026"/>
+    <id>tag:ai-tool-news.jp,2026:google-ax-agent-orchestrator-2026</id>
+    <published>2026-09-21T15:00:00Z</published>
+    <updated>2026-09-21T15:00:00Z</updated>
+    <summary>Google が GitHub の公式org（google/ax）で、自律エージェントのワークロードをKubernetesクラスタ上で大規模に動かすための実行基盤「ax」を公開している。大きな発表を伴わず5月から開発が続き、Apache 2.0・3.8kスターまで育っているが、企業名検索やGitHub Trendingでは拾いにくい位置にあった。Task・Workspace・Gateway・Modelの4つの宣言的リソースでエージェントをサンドボックス実行し、ネットワークを制限し、状態を一時停止・再開できるようにする設計。プロジェクト自身が「安定版の前に破壊的変更を入れる」と明記する開発中の段階にある。</summary>
+  </entry>
+  <entry>
     <title>【分析】エージェントが自分の承認ゲートを緩められる — 「元に戻せる」と「安全」は別だという話</title>
     <link rel="alternate" type="text/html" href="?a=agent-self-authorization-approval-gate-2026"/>
     <id>tag:ai-tool-news.jp,2026:agent-self-authorization-approval-gate-2026</id>

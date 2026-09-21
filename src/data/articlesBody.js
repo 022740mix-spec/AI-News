@@ -20920,6 +20920,24 @@ const ARTICLES_BODY = {
         "url": "https://www.pymnts.com/news/artificial-intelligence/2026/openai-tests-sponsored-ai-agents-in-chatgpt-ads/"
       }
     ]
+  },
+  "google-ax-agent-orchestrator-2026": {
+    "body": [
+      "Google が GitHub の公式組織（github.com/google）で、自律エージェントのワークロードを Kubernetes クラスタ上で大規模に実行するためのオーケストレーター「ax」を公開している。目立ったブログ発表やプレスリリースを伴わず、初版 v0.1.0 は5月20日に出ており、9月20日には v0.3.0 が出るまで開発が続いてきた。スター数は3.8k、フォーク175、Apache 2.0 ライセンス。企業名での検索や GitHub Trending、Hacker News のいずれの経路でも見つけにくい位置にあり、公式org自体を巡回して初めて把握できるタイプの公開である。",
+      "README はプロジェクトの動機を「エージェントは通常のマイクロサービスやバッチジョブとは異なるワークロード種別である。状態を蓄積し、厳格な隔離を必要とし、モデルAPIやツールサーバーを呼び出し、誰も見ていなければループでコストを溶かしかねない」と説明する。ax はこの種のワークロードを安全に、宣言的な設定で大規模実行するための基盤と位置づけられている。",
+      "中核となるのは4つのリソースである。「Task」は信頼できないエージェントのコードを CPU・メモリ制限付きの隔離サンドボックスで実行し、「Workspace」は Git リポジトリ・MCPサーバー・スキルパッケージをあらかじめ用意してエージェントの起動を速くし、「Gateway」は許可リストに載ったホスト以外への通信を遮断し、「Model」は Kubernetes Secrets 経由で LLM プロバイダーの認証情報を扱う。エージェントの状態は `suspend` / `resume` でチェックポイントでき、`ax ssh` でサンドボックス内部に入って調査することもできる。操作感は Kubernetes の `kubectl` に近く設計されており、`apply` / `get` / `describe` / `watch` / `delete` といった見慣れたサブコマンドに、エージェント固有の操作がいくつか加わる形になっている。",
+      "実行には Kubernetes クラスタ・コンテナレジストリ・サンドボックス実行を担う「Agent Substrate」の Control API が前提となる。README は「中核となる概念・プロトコル・仕様をまだ活発に見直している最中であり、安定版に至る前に大きな破壊的変更を入れる可能性が高い」と明記しており、本番導入にはまだ早い開発中のプロジェクトであることを自ら断っている。"
+    ],
+    "primarySources": [
+      {
+        "title": "google/ax（GitHub）",
+        "url": "https://github.com/google/ax"
+      },
+      {
+        "title": "google/ax v0.3.0 リリースノート",
+        "url": "https://github.com/google/ax/releases/tag/v0.3.0"
+      }
+    ]
   }
 };
 
