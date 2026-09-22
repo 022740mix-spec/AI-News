@@ -39,7 +39,10 @@
  *   "addTables": [                             // 任意。表を足す。位置は段落の文字列で指定する
  *     { "after": "この段落の直後に置く", "caption": "…", "headers": [...], "rows": [[...]] }
  *   ],
- *   "appendToBody": "【追記 2026-09-20】…",   // 任意。body の末尾に段落を足す
+ *   "appendToBody": "【追記 2026-09-20】…",   // 任意。body の末尾に段落を足す（配列も可）
+ *   "addPrimarySources": [                     // 任意。出典を足す。url の重複は中断する
+ *     { "title": "…", "site": "…", "url": "https://…" }
+ *   ],
  *   "setMeta": { "lastReviewed": "2026-09-20" } // 任意。meta の項目を差し替える
  * }
  *
@@ -187,7 +190,41 @@ for (const t of patch.addTables ?? []) {
   ];
 }
 
-if (patch.appendToBody) newBody.body.push(patch.appendToBody);
+// ── 本文末尾への追記 ──
+//
+// **文字列と配列の両方を受ける。** 配列をそのまま push すると body の要素が
+// 配列になり、描画側で `[object Array]` 相当の壊れ方をする。**型を検査する。**
+const appended = patch.appendToBody === undefined
+  ? []
+  : Array.isArray(patch.appendToBody)
+    ? patch.appendToBody
+    : [patch.appendToBody];
+for (const para of appended) {
+  if (typeof para !== "string") fail("appendToBody は文字列か、文字列の配列である必要があります。");
+  if (para.includes("\n") && !para.trimStart().startsWith("```")) {
+    fail(`追記する段落に改行が含まれています。描画側で空白に潰れます: 「${para.slice(0, 40)}」`);
+  }
+  newBody.body.push(para);
+}
+
+// ── primarySources の追加 ──
+//
+// **訂正のたびに出典は増える。** 到達できなかったページに後日到達できた場合、
+// 本文だけ直して出典を足せないと、**記事の主張と出典一覧が食い違う。**
+// `primarySources` は body 側にあるため `setMeta` では触れない。
+const addedSources = patch.addPrimarySources ?? [];
+if (addedSources.length) {
+  const list = [...(newBody.primarySources ?? [])];
+  for (const src of addedSources) {
+    if (!src || typeof src.url !== "string" || !/^https?:\/\//.test(src.url)) {
+      fail(`addPrimarySources の url が外部 URL ではありません: ${JSON.stringify(src).slice(0, 60)}`);
+    }
+    if (typeof src.title !== "string" || !src.title) fail("addPrimarySources には title が必要です。");
+    if (list.some((x) => x.url === src.url)) fail(`既に載っている出典です: ${src.url}`);
+    list.push({ title: src.title, ...(src.site ? { site: src.site } : {}), url: src.url });
+  }
+  newBody.primarySources = list;
+}
 
 const newMeta = { ...meta };
 for (const [k, v] of Object.entries(patch.setMeta ?? {})) {
@@ -202,7 +239,8 @@ if (dryRun) {
   for (const ins of inserts) console.log(`   挿入: 「${ins.find.slice(0, 40)}」の直後に ${ins.paragraphs.length} 段落`);
   for (const t of patch.replaceTables ?? []) console.log(`   表の差し替え: 「${t.matchCaption.slice(0, 40)}」`);
   for (const t of patch.addTables ?? []) console.log(`   表: 「${(t.caption || "").slice(0, 36)}」を「${t.after.slice(0, 30)}」の直後へ`);
-  if (patch.appendToBody) console.log(`   追記: 「${patch.appendToBody.slice(0, 60)}」`);
+  for (const para of appended) console.log(`   追記: 「${para.slice(0, 60)}」`);
+  for (const src of addedSources) console.log(`   出典の追加: ${src.title} — ${src.url}`);
   for (const [k, v] of Object.entries(patch.setMeta ?? {})) console.log(`   meta: ${k} = ${v}`);
   process.exit(0);
 }
