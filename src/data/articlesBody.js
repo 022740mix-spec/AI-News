@@ -21401,6 +21401,23 @@ const ARTICLES_BODY = {
         "url": "https://news.ycombinator.com/item?id=46887382"
       }
     ]
+  },
+  "tencent-weknora-rag-agent-wiki-2026": {
+    "body": [
+      "**Tencent** の公式GitHub org で公開されているOSS「**WeKnora**」が、GitHub Trending の機械学習カテゴリで上位に入り、star数を伸ばしている（本稿執筆時点で2.89万star・3,900フォーク）。ライセンスはMIT。",
+      "## RAG・エージェント・Wikiを1つの基盤で",
+      "WeKnora は、社内の生の文書を「問い合わせ可能な形」に変換することを目的にしたナレッジ基盤で、用途に応じて3通りの使い方を提供する。**素早い一問一答向けのRAG検索**、**複数ステップにまたがる調べ物を自律的にこなすReActエージェント**、そして**文書群から構造化されたMarkdownのナレッジベースを自動生成するWikiモード**である。",
+      "実務寄りの機能も揃えている。Docker・E2B・Cube のいずれかを使ったセッション単位のサンドボックス環境、セッションをまたいで利用者の好みや過去の事実を覚える長期記憶、Feishu・GitLab・Notion・Yuque・DingTalk・RSSフィードからの自動データ同期、20以上のLLMプロバイダー（OpenAI・DeepSeek・Claude・Qwenなど）への対応、PostgreSQL pgvector・Elasticsearch・Milvus・Weaviate・Qdrant といった複数のベクトルデータベースへの対応、テナントごとに権限を分けるRBAC、Langfuseによる推論ログの可視化などを備える。",
+      "## Tencentの公式orgからは今月2件目",
+      "Tencent の公式orgからは、[実ブラウザをエージェントに貸し出す「BrowserSkill」](?a=tencent-browserskill-agent-real-browser-2026)に続き、今月だけで2件目の注目OSSとなる。企業名検索やGitHub Trendingだけでは見つけにくい「公式orgからの静かな公開」が、Trendingへの掲載をきっかけに顕在化した形である。"
+    ],
+    "primarySources": [
+      {
+        "title": "Tencent/WeKnora",
+        "site": "GitHub",
+        "url": "https://github.com/Tencent/WeKnora"
+      }
+    ]
   }
 };
 

@@ -10319,5 +10319,23 @@ export const ARTICLES_META = [
       "Claude Code",
       "Rust"
     ]
+  },
+  {
+    "id": "tencent-weknora-rag-agent-wiki-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Tencent が OSS「WeKnora」で急伸 — RAG・自律エージェント・自己更新Wikiを1つにした社内ナレッジ基盤",
+    "excerpt": "**Tencent** が公式GitHub org で公開しているOSS「**WeKnora**」がGitHub Trendingで上位に入り、star数が2.89万まで伸びている。生の社内文書（Feishu・Notion・GitLab・Yuqueなどから自動同期）を、**素早い検索用のRAG**・**複数ステップで調べ物をするReActエージェント**・**構造化されたMarkdownとして自動整理するWikiモード**の3通りで扱えるようにする社内ナレッジ基盤で、MITライセンス。[BrowserSkill](?a=tencent-browserskill-agent-real-browser-2026)に続き、Tencentの公式orgからは今月2件目の注目OSSとなる。",
+    "date": "2026-09-23",
+    "newsDate": "2026-09-21",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "オープンソース",
+      "RAG",
+      "エージェント",
+      "Tencent",
+      "中国AI"
+    ]
   }
 ];
