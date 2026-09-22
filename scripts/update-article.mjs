@@ -33,6 +33,9 @@
  *   "insertAfter": [                           // 任意。既存段落の直後に段落を挿入する
  *     { "find": "挿入位置の目印になる文字列", "paragraphs": ["新しい段落"] }
  *   ],
+ *   "addTables": [                             // 任意。表を足す。位置は段落の文字列で指定する
+ *     { "after": "この段落の直後に置く", "caption": "…", "headers": [...], "rows": [[...]] }
+ *   ],
  *   "appendToBody": "【追記 2026-09-20】…",   // 任意。body の末尾に段落を足す
  *   "setMeta": { "lastReviewed": "2026-09-20" } // 任意。meta の項目を差し替える
  * }
@@ -124,6 +127,32 @@ for (const ins of inserts) {
   }
 }
 
+// ── 表の追加 ──
+//
+// **位置は段落の添字ではなく文字列で指定する。** 添字は挿入や削除でずれるため、
+// パッチを書いた時点の番号がそのまま使える保証がない。
+// `review-check.mjs` の規則19は `afterParagraph` の**有無**しか見ないので、
+// **ずれても検査を通り抜ける。**
+for (const t of patch.addTables ?? []) {
+  if (typeof t.after !== "string") fail("addTables の各要素は after（位置の目印になる文字列）が必要です。");
+  if (!Array.isArray(t.headers) || !Array.isArray(t.rows) || !t.headers.length || !t.rows.length) {
+    fail("addTables の各要素は headers と rows（どちらも空でない配列）が必要です。");
+  }
+  const hits = newBody.body.filter((p) => p.includes(t.after)).length;
+  if (hits === 0) fail(`表の位置が見つかりません: 「${t.after.slice(0, 60)}」`);
+  if (hits > 1) fail(`表の位置が複数あります: 「${t.after.slice(0, 60)}」`);
+  const at = newBody.body.findIndex((p) => p.includes(t.after));
+  for (const r of t.rows) {
+    if (!Array.isArray(r) || r.length !== t.headers.length) {
+      fail(`行の列数が headers と合いません（期待 ${t.headers.length}）: ${JSON.stringify(r).slice(0, 60)}`);
+    }
+  }
+  newBody.tables = [
+    ...(newBody.tables ?? []),
+    { afterParagraph: at, ...(t.caption ? { caption: t.caption } : {}), headers: t.headers, rows: t.rows },
+  ];
+}
+
 if (patch.appendToBody) newBody.body.push(patch.appendToBody);
 
 const newMeta = { ...meta };
@@ -137,6 +166,7 @@ if (dryRun) {
   console.log(`   対象: ${patch.id}`);
   for (const r of reps) console.log(`   置換: 「${r.find.slice(0, 50)}」→「${r.replace.slice(0, 50)}」`);
   for (const ins of inserts) console.log(`   挿入: 「${ins.find.slice(0, 40)}」の直後に ${ins.paragraphs.length} 段落`);
+  for (const t of patch.addTables ?? []) console.log(`   表: 「${(t.caption || "").slice(0, 36)}」を「${t.after.slice(0, 30)}」の直後へ`);
   if (patch.appendToBody) console.log(`   追記: 「${patch.appendToBody.slice(0, 60)}」`);
   for (const [k, v] of Object.entries(patch.setMeta ?? {})) console.log(`   meta: ${k} = ${v}`);
   process.exit(0);
