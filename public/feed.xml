@@ -24,6 +24,14 @@
     <summary>Apple が9月14日、iOS 27・iPadOS 27・macOS 27（Golden Gate）を公開し、目玉機能「Siri AI」の提供を英語圏から開始した。6月のWWDCで発表した内容の実際の出荷にあたる。モデルはGoogleと共同開発し、複雑な処理はApple Private Cloud Compute（基盤にはGoogle Cloud・NVIDIA・Intelのチップを使用）で処理する。ただし全員がすぐ使えるわけではない。処理能力に応じた待機リスト制で、EUはDMAを巡る規制紛争で対象外、中国も現地規制の審査待ちで未提供。</summary>
   </entry>
   <entry>
+    <title>xAI が Grok 4.7 を公開 — 料金は4.6のまま据え置き、だが新指標では総合知能で GPT-6 Astra・Fable 5.1 に見劣り</title>
+    <link rel="alternate" type="text/html" href="?a=xai-grok-4-7-release-2026"/>
+    <id>tag:ai-tool-news.jp,2026:xai-grok-4-7-release-2026</id>
+    <published>2026-09-23T15:00:00Z</published>
+    <updated>2026-09-23T15:00:00Z</updated>
+    <summary>xAI が9月21日、Grok 4.7 を公開した。単価・コンテキスト（500K トークン）とも[Grok 4.6](?a=xai-grok-4-6-500k-context-200k-toll-2026)から据え置きで、Musk 氏によればパラメータ数は2.1兆（4.6比+40%）。ただし Artificial Analysis が同時期に Terminal-Bench 4.0 を新規採用して刷新した最新版の総合指標では、総合スコアが46に対し GPT-6 Astra・Claude Fable 5.1 はともに53。個別ベンチマークでは Fable 5.1 を上回る項目もあるが、指標が刷新されたばかりのため旧版のGrok 4.6のスコアとは直接比較できない。</summary>
+  </entry>
+  <entry>
     <title>Alibaba の Qwen チームが Qwen-Image-2.1 を公開 — 視覚生成部は7Bに縮小、ライセンスは Apache 2.0 から非商用限定に転換</title>
     <link rel="alternate" type="text/html" href="?a=alibaba-qwen-image-2-1-2026"/>
     <id>tag:ai-tool-news.jp,2026:alibaba-qwen-image-2-1-2026</id>

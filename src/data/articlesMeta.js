@@ -10264,5 +10264,23 @@ export const ARTICLES_META = [
       "iOS 27",
       "プライバシー"
     ]
+  },
+  {
+    "id": "xai-grok-4-7-release-2026",
+    "type": "news",
+    "category": "model",
+    "title": "xAI が Grok 4.7 を公開 — 料金は4.6のまま据え置き、だが新指標では総合知能で GPT-6 Astra・Fable 5.1 に見劣り",
+    "excerpt": "xAI が9月21日、**Grok 4.7** を公開した。単価・コンテキスト（500K トークン）とも[Grok 4.6](?a=xai-grok-4-6-500k-context-200k-toll-2026)から据え置きで、Musk 氏によればパラメータ数は2.1兆（4.6比+40%）。ただし Artificial Analysis が同時期に Terminal-Bench 4.0 を新規採用して刷新した最新版の総合指標では、総合スコアが46に対し GPT-6 Astra・Claude Fable 5.1 はともに53。個別ベンチマークでは Fable 5.1 を上回る項目もあるが、指標が刷新されたばかりのため旧版のGrok 4.6のスコアとは直接比較できない。",
+    "date": "2026-09-23",
+    "newsDate": "2026-09-21",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "モデル",
+      "xAI",
+      "Grok",
+      "LLM",
+      "料金"
+    ]
   }
 ];
