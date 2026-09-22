@@ -10282,5 +10282,24 @@ export const ARTICLES_META = [
       "LLM",
       "料金"
     ]
+  },
+  {
+    "id": "caisi-glm-5-3-cyber-assessment-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】米CAISIがGLM-5.3のサイバー能力を独立評価 — 「オープンウェイト最高水準」も米フロンティアには4ヶ月遅れ",
+    "excerpt": "米商務省傘下 NIST の Center for AI Standards and Innovation（CAISI）が9月17日、中国 **Z.ai** の **GLM-5.3** に対するサイバー能力の独立評価を公表した。結論は「これまでで最もサイバー能力の高いオープンウェイトモデル」でありながら、**米フロンティアモデルの水準には集計指標でおよそ4ヶ月遅れている**というもの。AI News は8月の記事で GLM-5.3 のサイバー系ベンチマークについて「Z.ai 自身の計測値のみで独立検証は確認できていない」と書いたが、今回その独立検証にあたる材料が公的機関から出た形になる。",
+    "date": "2026-09-23",
+    "newsDate": "2026-09-17",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Z.ai",
+      "GLM",
+      "中国AI",
+      "セキュリティ",
+      "AI安全性",
+      "規制"
+    ]
   }
 ];

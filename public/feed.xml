@@ -32,6 +32,14 @@
     <summary>xAI が9月21日、Grok 4.7 を公開した。単価・コンテキスト（500K トークン）とも[Grok 4.6](?a=xai-grok-4-6-500k-context-200k-toll-2026)から据え置きで、Musk 氏によればパラメータ数は2.1兆（4.6比+40%）。ただし Artificial Analysis が同時期に Terminal-Bench 4.0 を新規採用して刷新した最新版の総合指標では、総合スコアが46に対し GPT-6 Astra・Claude Fable 5.1 はともに53。個別ベンチマークでは Fable 5.1 を上回る項目もあるが、指標が刷新されたばかりのため旧版のGrok 4.6のスコアとは直接比較できない。</summary>
   </entry>
   <entry>
+    <title>【分析】米CAISIがGLM-5.3のサイバー能力を独立評価 — 「オープンウェイト最高水準」も米フロンティアには4ヶ月遅れ</title>
+    <link rel="alternate" type="text/html" href="?a=caisi-glm-5-3-cyber-assessment-2026"/>
+    <id>tag:ai-tool-news.jp,2026:caisi-glm-5-3-cyber-assessment-2026</id>
+    <published>2026-09-23T15:00:00Z</published>
+    <updated>2026-09-23T15:00:00Z</updated>
+    <summary>米商務省傘下 NIST の Center for AI Standards and Innovation（CAISI）が9月17日、中国 Z.ai の GLM-5.3 に対するサイバー能力の独立評価を公表した。結論は「これまでで最もサイバー能力の高いオープンウェイトモデル」でありながら、米フロンティアモデルの水準には集計指標でおよそ4ヶ月遅れているというもの。AI News は8月の記事で GLM-5.3 のサイバー系ベンチマークについて「Z.ai 自身の計測値のみで独立検証は確認できていない」と書いたが、今回その独立検証にあたる材料が公的機関から出た形になる。</summary>
+  </entry>
+  <entry>
     <title>Alibaba の Qwen チームが Qwen-Image-2.1 を公開 — 視覚生成部は7Bに縮小、ライセンスは Apache 2.0 から非商用限定に転換</title>
     <link rel="alternate" type="text/html" href="?a=alibaba-qwen-image-2-1-2026"/>
     <id>tag:ai-tool-news.jp,2026:alibaba-qwen-image-2-1-2026</id>
