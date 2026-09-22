@@ -33,6 +33,9 @@
  *   "insertAfter": [                           // 任意。既存段落の直後に段落を挿入する
  *     { "find": "挿入位置の目印になる文字列", "paragraphs": ["新しい段落"] }
  *   ],
+ *   "replaceTables": [                         // 任意。既存の表を caption で特定して差し替える
+ *     { "matchCaption": "既存の caption の一部", "caption": "…", "headers": [...], "rows": [[...]] }
+ *   ],
  *   "addTables": [                             // 任意。表を足す。位置は段落の文字列で指定する
  *     { "after": "この段落の直後に置く", "caption": "…", "headers": [...], "rows": [[...]] }
  *   ],
@@ -127,6 +130,37 @@ for (const ins of inserts) {
   }
 }
 
+// ── 表の差し替え ──
+//
+// **訂正では、表そのものが古くなることがある。** 追加しかできないと、
+// 古い表を残したまま新しい表を足すことになり、読者には矛盾して見える。
+// 位置（`afterParagraph`）は既存のものを引き継ぐ。
+for (const t of patch.replaceTables ?? []) {
+  if (typeof t.matchCaption !== "string") fail("replaceTables の各要素は matchCaption が必要です。");
+  const list = newBody.tables ?? [];
+  const hits = list.filter((x) => String(x.caption ?? "").includes(t.matchCaption));
+  if (hits.length === 0) fail(`差し替える表が見つかりません: 「${t.matchCaption.slice(0, 60)}」`);
+  if (hits.length > 1) fail(`差し替える表が複数あります: 「${t.matchCaption.slice(0, 60)}」`);
+  if (t.rows) {
+    const headers = t.headers ?? hits[0].headers;
+    for (const r of t.rows) {
+      if (!Array.isArray(r) || r.length !== headers.length) {
+        fail(`行の列数が headers と合いません（期待 ${headers.length}）: ${JSON.stringify(r).slice(0, 60)}`);
+      }
+    }
+  }
+  newBody.tables = list.map((x) =>
+    x === hits[0]
+      ? {
+          afterParagraph: x.afterParagraph,
+          caption: t.caption ?? x.caption,
+          headers: t.headers ?? x.headers,
+          rows: t.rows ?? x.rows,
+        }
+      : x
+  );
+}
+
 // ── 表の追加 ──
 //
 // **位置は段落の添字ではなく文字列で指定する。** 添字は挿入や削除でずれるため、
@@ -166,6 +200,7 @@ if (dryRun) {
   console.log(`   対象: ${patch.id}`);
   for (const r of reps) console.log(`   置換: 「${r.find.slice(0, 50)}」→「${r.replace.slice(0, 50)}」`);
   for (const ins of inserts) console.log(`   挿入: 「${ins.find.slice(0, 40)}」の直後に ${ins.paragraphs.length} 段落`);
+  for (const t of patch.replaceTables ?? []) console.log(`   表の差し替え: 「${t.matchCaption.slice(0, 40)}」`);
   for (const t of patch.addTables ?? []) console.log(`   表: 「${(t.caption || "").slice(0, 36)}」を「${t.after.slice(0, 30)}」の直後へ`);
   if (patch.appendToBody) console.log(`   追記: 「${patch.appendToBody.slice(0, 60)}」`);
   for (const [k, v] of Object.entries(patch.setMeta ?? {})) console.log(`   meta: ${k} = ${v}`);
