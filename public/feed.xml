@@ -32,6 +32,22 @@
     <summary>イタリアのエンジニア Vincenzo Fornaro 氏が個人開発したC言語製・依存ゼロの推論エンジン「Colibri」が、GitHubで直近1週間だけで5,000スター超を積み増し、週間トレンドで上位に入った（本稿執筆時点で3.69万スター・4,000フォーク）。ディスク・RAM・VRAMを1つのメモリ階層として扱い、GLM-5.2/5.3（744B）やKimi K3（2.8T）級のMoEモデルの重みをディスクから必要な部分だけストリーミングして読み込むことで、GPU無しの一般的なPCでも動作させられるとしている。ライセンスはApache 2.0。</summary>
   </entry>
   <entry>
+    <title>xAI が Grok 4.7 を公開 — パラメータ2.1T（前世代比40%増）、コンテキスト50万トークン、価格は前バージョンと同水準</title>
+    <link rel="alternate" type="text/html" href="?a=xai-grok-4-7-release-2026"/>
+    <id>tag:ai-tool-news.jp,2026:xai-grok-4-7-release-2026</id>
+    <published>2026-09-22T15:00:00Z</published>
+    <updated>2026-09-22T15:00:00Z</updated>
+    <summary>xAI が2026年9月21日、新モデル「Grok 4.7」を公開した。ベースモデルのパラメータ数は2.1Tで、前世代Grok 4.6の1.5Tから約40%増加したとされる。コンテキストウィンドウは（xhigh構成で）50万トークンに達し、推論の強度を low・medium・high（既定）・xhigh の4段階から選べる。価格は入力100万トークンあたり2ドル・出力6ドルとGrok 4.6から据え置き。Cursor等のサードパーティ製品でも提供が始まっている。本記事は複数の独立した報道・技術系メディアの内容が一致する範囲に基づいており、xAI公式サイト（x.ai）には本稿執筆時点のネットワーク環境から到達できていない。</summary>
+  </entry>
+  <entry>
+    <title>【分析】Amazon が Meta の AI エージェント「Muse」を締め出し、Shopify は逆に統合を発表 — 小売各社で分かれる「エージェント型ショッピング」への対応</title>
+    <link rel="alternate" type="text/html" href="?a=amazon-meta-muse-agent-standoff-2026"/>
+    <id>tag:ai-tool-news.jp,2026:amazon-meta-muse-agent-standoff-2026</id>
+    <published>2026-09-22T15:00:00Z</published>
+    <updated>2026-09-22T15:00:00Z</updated>
+    <summary>Amazonが2026年9月21日夜、Meta の個人向けAIエージェント「Muse」による自社サイトでの購入をブロックした。Amazon側は「Museが自らをボットと明示せず、顧客の認証情報を収集・保持しているように見える」ことを理由に挙げ、事前にMetaへ自社サイトをMuseの対象外にするよう求めていたという。Meta側は「実際の決済情報はStripeの使い捨てカード番号を使っており、Museがパスワードや決済情報を見られる状態にはない」と反論している。同じタイミングで Shopify は逆に、Google と共同開発した「Universal Commerce Protocol」を通じてMuseとのチェックアウト連携を発表した。</summary>
+  </entry>
+  <entry>
     <title>Google が公式orgでエージェント実行基盤「ax」を静かに公開 — kubectl風CLIで自律エージェントをクラスタ規模でサンドボックス実行</title>
     <link rel="alternate" type="text/html" href="?a=google-ax-agent-orchestrator-2026"/>
     <id>tag:ai-tool-news.jp,2026:google-ax-agent-orchestrator-2026</id>
