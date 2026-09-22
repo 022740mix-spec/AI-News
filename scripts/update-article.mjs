@@ -33,7 +33,16 @@
  *   "insertAfter": [                           // 任意。既存段落の直後に段落を挿入する
  *     { "find": "挿入位置の目印になる文字列", "paragraphs": ["新しい段落"] }
  *   ],
- *   "appendToBody": "【追記 2026-09-20】…",   // 任意。body の末尾に段落を足す
+ *   "replaceTables": [                         // 任意。既存の表を caption で特定して差し替える
+ *     { "matchCaption": "既存の caption の一部", "caption": "…", "headers": [...], "rows": [[...]] }
+ *   ],
+ *   "addTables": [                             // 任意。表を足す。位置は段落の文字列で指定する
+ *     { "after": "この段落の直後に置く", "caption": "…", "headers": [...], "rows": [[...]] }
+ *   ],
+ *   "appendToBody": "【追記 2026-09-20】…",   // 任意。body の末尾に段落を足す（配列も可）
+ *   "addPrimarySources": [                     // 任意。出典を足す。url の重複は中断する
+ *     { "title": "…", "site": "…", "url": "https://…" }
+ *   ],
  *   "setMeta": { "lastReviewed": "2026-09-20" } // 任意。meta の項目を差し替える
  * }
  *
@@ -124,7 +133,98 @@ for (const ins of inserts) {
   }
 }
 
-if (patch.appendToBody) newBody.body.push(patch.appendToBody);
+// ── 表の差し替え ──
+//
+// **訂正では、表そのものが古くなることがある。** 追加しかできないと、
+// 古い表を残したまま新しい表を足すことになり、読者には矛盾して見える。
+// 位置（`afterParagraph`）は既存のものを引き継ぐ。
+for (const t of patch.replaceTables ?? []) {
+  if (typeof t.matchCaption !== "string") fail("replaceTables の各要素は matchCaption が必要です。");
+  const list = newBody.tables ?? [];
+  const hits = list.filter((x) => String(x.caption ?? "").includes(t.matchCaption));
+  if (hits.length === 0) fail(`差し替える表が見つかりません: 「${t.matchCaption.slice(0, 60)}」`);
+  if (hits.length > 1) fail(`差し替える表が複数あります: 「${t.matchCaption.slice(0, 60)}」`);
+  if (t.rows) {
+    const headers = t.headers ?? hits[0].headers;
+    for (const r of t.rows) {
+      if (!Array.isArray(r) || r.length !== headers.length) {
+        fail(`行の列数が headers と合いません（期待 ${headers.length}）: ${JSON.stringify(r).slice(0, 60)}`);
+      }
+    }
+  }
+  newBody.tables = list.map((x) =>
+    x === hits[0]
+      ? {
+          afterParagraph: x.afterParagraph,
+          caption: t.caption ?? x.caption,
+          headers: t.headers ?? x.headers,
+          rows: t.rows ?? x.rows,
+        }
+      : x
+  );
+}
+
+// ── 表の追加 ──
+//
+// **位置は段落の添字ではなく文字列で指定する。** 添字は挿入や削除でずれるため、
+// パッチを書いた時点の番号がそのまま使える保証がない。
+// `review-check.mjs` の規則19は `afterParagraph` の**有無**しか見ないので、
+// **ずれても検査を通り抜ける。**
+for (const t of patch.addTables ?? []) {
+  if (typeof t.after !== "string") fail("addTables の各要素は after（位置の目印になる文字列）が必要です。");
+  if (!Array.isArray(t.headers) || !Array.isArray(t.rows) || !t.headers.length || !t.rows.length) {
+    fail("addTables の各要素は headers と rows（どちらも空でない配列）が必要です。");
+  }
+  const hits = newBody.body.filter((p) => p.includes(t.after)).length;
+  if (hits === 0) fail(`表の位置が見つかりません: 「${t.after.slice(0, 60)}」`);
+  if (hits > 1) fail(`表の位置が複数あります: 「${t.after.slice(0, 60)}」`);
+  const at = newBody.body.findIndex((p) => p.includes(t.after));
+  for (const r of t.rows) {
+    if (!Array.isArray(r) || r.length !== t.headers.length) {
+      fail(`行の列数が headers と合いません（期待 ${t.headers.length}）: ${JSON.stringify(r).slice(0, 60)}`);
+    }
+  }
+  newBody.tables = [
+    ...(newBody.tables ?? []),
+    { afterParagraph: at, ...(t.caption ? { caption: t.caption } : {}), headers: t.headers, rows: t.rows },
+  ];
+}
+
+// ── 本文末尾への追記 ──
+//
+// **文字列と配列の両方を受ける。** 配列をそのまま push すると body の要素が
+// 配列になり、描画側で `[object Array]` 相当の壊れ方をする。**型を検査する。**
+const appended = patch.appendToBody === undefined
+  ? []
+  : Array.isArray(patch.appendToBody)
+    ? patch.appendToBody
+    : [patch.appendToBody];
+for (const para of appended) {
+  if (typeof para !== "string") fail("appendToBody は文字列か、文字列の配列である必要があります。");
+  if (para.includes("\n") && !para.trimStart().startsWith("```")) {
+    fail(`追記する段落に改行が含まれています。描画側で空白に潰れます: 「${para.slice(0, 40)}」`);
+  }
+  newBody.body.push(para);
+}
+
+// ── primarySources の追加 ──
+//
+// **訂正のたびに出典は増える。** 到達できなかったページに後日到達できた場合、
+// 本文だけ直して出典を足せないと、**記事の主張と出典一覧が食い違う。**
+// `primarySources` は body 側にあるため `setMeta` では触れない。
+const addedSources = patch.addPrimarySources ?? [];
+if (addedSources.length) {
+  const list = [...(newBody.primarySources ?? [])];
+  for (const src of addedSources) {
+    if (!src || typeof src.url !== "string" || !/^https?:\/\//.test(src.url)) {
+      fail(`addPrimarySources の url が外部 URL ではありません: ${JSON.stringify(src).slice(0, 60)}`);
+    }
+    if (typeof src.title !== "string" || !src.title) fail("addPrimarySources には title が必要です。");
+    if (list.some((x) => x.url === src.url)) fail(`既に載っている出典です: ${src.url}`);
+    list.push({ title: src.title, ...(src.site ? { site: src.site } : {}), url: src.url });
+  }
+  newBody.primarySources = list;
+}
 
 const newMeta = { ...meta };
 for (const [k, v] of Object.entries(patch.setMeta ?? {})) {
@@ -137,7 +237,10 @@ if (dryRun) {
   console.log(`   対象: ${patch.id}`);
   for (const r of reps) console.log(`   置換: 「${r.find.slice(0, 50)}」→「${r.replace.slice(0, 50)}」`);
   for (const ins of inserts) console.log(`   挿入: 「${ins.find.slice(0, 40)}」の直後に ${ins.paragraphs.length} 段落`);
-  if (patch.appendToBody) console.log(`   追記: 「${patch.appendToBody.slice(0, 60)}」`);
+  for (const t of patch.replaceTables ?? []) console.log(`   表の差し替え: 「${t.matchCaption.slice(0, 40)}」`);
+  for (const t of patch.addTables ?? []) console.log(`   表: 「${(t.caption || "").slice(0, 36)}」を「${t.after.slice(0, 30)}」の直後へ`);
+  for (const para of appended) console.log(`   追記: 「${para.slice(0, 60)}」`);
+  for (const src of addedSources) console.log(`   出典の追加: ${src.title} — ${src.url}`);
   for (const [k, v] of Object.entries(patch.setMeta ?? {})) console.log(`   meta: ${k} = ${v}`);
   process.exit(0);
 }
