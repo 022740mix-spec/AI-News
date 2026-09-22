@@ -10209,5 +10209,23 @@ export const ARTICLES_META = [
       "セキュリティ",
       "オープンソース"
     ]
+  },
+  {
+    "id": "colibri-moe-inference-engine-2026",
+    "type": "news",
+    "category": "product",
+    "title": "個人開発の推論エンジン「Colibri」が急伸 — 744B〜2.8TパラメータのMoEモデルをディスク・RAM・VRAM統合でGPU無しでも動かす",
+    "excerpt": "イタリアのエンジニア Vincenzo Fornaro 氏が個人開発したC言語製・依存ゼロの推論エンジン「Colibri」が、GitHubで直近1週間だけで5,000スター超を積み増し、週間トレンドで上位に入った（本稿執筆時点で3.69万スター・4,000フォーク）。ディスク・RAM・VRAMを1つのメモリ階層として扱い、GLM-5.2/5.3（744B）やKimi K3（2.8T）級のMoEモデルの重みをディスクから必要な部分だけストリーミングして読み込むことで、GPU無しの一般的なPCでも動作させられるとしている。ライセンスはApache 2.0。",
+    "date": "2026-09-22",
+    "newsDate": "2026-09-21",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "オープンソース",
+      "MoE",
+      "ローカルLLM",
+      "エッジAI",
+      "個人開発"
+    ]
   }
 ];
