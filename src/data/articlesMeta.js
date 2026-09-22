@@ -10227,5 +10227,38 @@ export const ARTICLES_META = [
       "エッジAI",
       "個人開発"
     ]
+  },
+  {
+    "id": "xai-grok-4-7-release-2026",
+    "type": "news",
+    "category": "model",
+    "title": "xAI が Grok 4.7 を公開 — パラメータ2.1T（前世代比40%増）、コンテキスト50万トークン、価格は前バージョンと同水準",
+    "excerpt": "xAI が2026年9月21日、新モデル「Grok 4.7」を公開した。ベースモデルのパラメータ数は2.1Tで、前世代Grok 4.6の1.5Tから約40%増加したとされる。コンテキストウィンドウは（xhigh構成で）50万トークンに達し、推論の強度を low・medium・high（既定）・xhigh の4段階から選べる。価格は入力100万トークンあたり2ドル・出力6ドルとGrok 4.6から据え置き。Cursor等のサードパーティ製品でも提供が始まっている。本記事は複数の独立した報道・技術系メディアの内容が一致する範囲に基づいており、xAI公式サイト（x.ai）には本稿執筆時点のネットワーク環境から到達できていない。",
+    "date": "2026-09-22",
+    "newsDate": "2026-09-21",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "xAI",
+      "Grok",
+      "ベンチマーク"
+    ]
+  },
+  {
+    "id": "amazon-meta-muse-agent-standoff-2026",
+    "type": "feature",
+    "category": "product",
+    "title": "【分析】Amazon が Meta の AI エージェント「Muse」を締め出し、Shopify は逆に統合を発表 — 小売各社で分かれる「エージェント型ショッピング」への対応",
+    "excerpt": "Amazonが2026年9月21日夜、Meta の個人向けAIエージェント「Muse」による自社サイトでの購入をブロックした。Amazon側は「Museが自らをボットと明示せず、顧客の認証情報を収集・保持しているように見える」ことを理由に挙げ、事前にMetaへ自社サイトをMuseの対象外にするよう求めていたという。Meta側は「実際の決済情報はStripeの使い捨てカード番号を使っており、Museがパスワードや決済情報を見られる状態にはない」と反論している。同じタイミングで Shopify は逆に、Google と共同開発した「Universal Commerce Protocol」を通じてMuseとのチェックアウト連携を発表した。",
+    "date": "2026-09-22",
+    "newsDate": "2026-09-21",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Meta",
+      "Amazon",
+      "エージェント",
+      "エージェント型コマース"
+    ]
   }
 ];

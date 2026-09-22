@@ -21007,6 +21007,54 @@ const ARTICLES_BODY = {
         "url": "https://github.com/JustVugg/colibri"
       }
     ]
+  },
+  "xai-grok-4-7-release-2026": {
+    "body": [
+      "xAI が2026年9月21日、新モデル「Grok 4.7」を公開した。ベースモデルのパラメータ数は2.1Tとされ、前世代 Grok 4.6 の1.5Tから約40%増加している。訓練では、より難易度の高い数時間規模の問題を使った強化学習を長めに実施したほか、関連会社 SpaceX の内部エンジニアリング記録（Starlink衛星のテレメトリ、製造ログ、故障解析データ等）を訓練データに加えたと報じられている。",
+      "コンテキストウィンドウは、最も強度の高い xhigh 構成で50万トークンに達する。推論の強度は low・medium・high（既定）・xhigh の4段階から選べる設計で、強度を上げるほどモデルが難問に費やす時間が長くなる。",
+      "価格は入力100万トークンあたり2ドル、出力100万トークンあたり6ドル（20万トークン未満のプロンプトの場合。キャッシュ利用時は入力0.5ドル）と、Grok 4.6から据え置かれている。ベンチマークでは、DeepSWE v1.1（high設定）でGrok 4.6の65.2%からGrok 4.7で71.0%に向上したと報じられている。",
+      "提供は Cursor をはじめとするサードパーティ製品でも始まっており、xAI の API からも利用できる。",
+      "**確認状況について明記する。** 本記事は MarkTechPost・Androidheadlines・daily.dev・Artificial Analysis 等、複数の独立した報道・技術系メディアが伝える内容が一致する範囲を整理したものであり、xAI公式サイト（x.ai）には本稿執筆時点のネットワーク環境から到達できていない。数値は報道の一致点に基づくものであり、公式発表そのものを読んで検証した記述ではない。"
+    ],
+    "primarySources": [
+      {
+        "title": "SpaceXAI Releases Grok 4.7: A Larger Base Model at the Same $2/$6 Price as Grok 4.6（MarkTechPost、二次情報。xAI公式サイトへの直接到達はできていない）",
+        "url": "https://www.marktechpost.com/2026/09/21/spacexai-releases-grok-4-7/"
+      },
+      {
+        "title": "xAI Releases Grok 4.7 AI Model（Androidheadlines、二次情報）",
+        "url": "https://www.androidheadlines.com/2026/09/grok-4-7-ai-launch-coding-upgrades-pricing.html"
+      }
+    ]
+  },
+  "amazon-meta-muse-agent-standoff-2026": {
+    "body": [
+      "Amazon が2026年9月21日（日）夜、Meta の個人向けAIエージェント「Muse」による自社サイトでの購入をブロックした。Muse経由で購入を完了しようとしたユーザーには「無許可のAIエージェントによる継続的なアクセスは、お客様が同意済みのAmazon利用規約に違反します」というポップアップが表示されるようになったと報じられている。",
+      "Amazon 側が挙げる理由は3点とされる。Muse が Amazon のサイト上で自らをボットだと明示していないこと、顧客の認証情報を収集・保持しているように見えること、そしてこれらがAmazonの了承なしに行われていること。報道によれば、Amazonはブロックに踏み切る前に、自社サイトをMuseの対象範囲から外すようMetaに求めていたが、Metaが応じなかったという。",
+      "Meta 側はこれに対し、Muse はMetaのクラウド上の専用仮想マシンで動作し、決済には「Link by Stripe」の使い捨てカード番号を使っているため、ユーザーの実際の決済情報がMuseに晒されることはないと説明している。認証情報についても、安全な保管領域にMuseが「使えるが見えない」形で渡されているとし、Amazonが指摘するような形でのアクセスを否定している。",
+      "**この対立には、両社が同時に提携相手でもあるという背景がある。** Amazon の商品は2023年以降、Facebook・Instagram上でも販売可能になっている。また Meta は2026年4月、Amazon の Graviton チップ上でエージェント型AIのワークロードを実行する契約を結んだと報じられている。競合しつつ協業もする関係の中で、今回のブロックが起きた。",
+      "Muse は2026年9月8日に一般公開されたばかりの個人向けAIエージェントで、メール送信・旅行予約・フォーム入力・購入代行などを行う。米国限定で提供され、WhatsApp内でも使えるようになっている。公開から2週間足らずでApple App Storeの無料アプリ1位に達したと報じられている。",
+      "一方 Shopify は、Amazon のブロックとほぼ同じタイミングで、Muse とのチェックアウト連携を発表した。Google と Shopify が共同開発した「Universal Commerce Protocol」という規格を通じて、Shopify の加盟店がMuse上で発見・購入可能になり、決済は Shopify の「Shop Pay」を通じて行われる。この規格は Perplexity・Gemini・ChatGPT など他社のAIエージェントとの相互運用も念頭に置いているとされる。",
+      "同じ「AIエージェントによる代理購入」という技術に対して、Amazon は自社サイトへのアクセスを遮断し、Shopify は自社の決済網に組み込む形で対応した。どちらの対応が妥当かは本記事では判断しない。エージェント型コマースを、認証情報の扱いやボットの明示義務を含めてどう統制するかについて、小売各社の足並みがまだ揃っていないという事実がここにある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Amazon blocks Meta's Muse AI assistant in new standoff over agentic shopping（GeekWire、二次情報。一次発表への直接到達はできていない）",
+        "url": "https://www.geekwire.com/2026/amazon-blocks-metas-muse-ai-assistant-in-new-standoff-over-agentic-shopping/"
+      },
+      {
+        "title": "Amazon Blocks Meta's Muse AI Agent From Its Retail Site（Bloomberg、二次情報）",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-21/amazon-blocks-meta-s-muse-ai-agent-from-its-retail-site"
+      },
+      {
+        "title": "Meta's AI agent has been blocked from using Amazon.com（TechCrunch、二次情報）",
+        "url": "https://techcrunch.com/2026/09/21/metas-ai-agent-has-been-blocked-from-using-amazon-com/"
+      },
+      {
+        "title": "Shopify adds Meta Muse to agentic AI strategy（American Banker、二次情報）",
+        "url": "https://www.americanbanker.com/payments/news/shopify-adds-meta-muse-to-agentic-ai-strategy"
+      }
+    ]
   }
 };
 
