@@ -21298,6 +21298,34 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/about-claude/pricing"
       }
     ]
+  },
+  "apple-siri-ai-ios-27-launch-2026": {
+    "body": [
+      "**Apple** が2026年9月14日、**iOS 27・iPadOS 27・macOS 27（Golden Gate）・watchOS 27・visionOS 27** を公開した。最大の目玉は、生成AIで一から作り直した「**Siri AI**」である。[6月のWWDCで発表した内容](?a=apple-wwdc-2026-siri-ai-keynote-2026)が、実際に出荷された形になる。",
+      "Siri AIは自然な会話に応じ、Messagesなどアプリ内の個人情報や画面上の表示内容を理解したうえでアプリをまたいだ操作を行う。Apple自身は「これまでより格段に高性能でパーソナルなアシスタント」と位置付けている。",
+      "## モデルはGoogleと共同開発、処理はGoogle Cloud上のPrivate Cloud Compute",
+      "技術的に注目すべき点は、Siriを支える基盤モデルを**Appleが Google と共同開発した**ことである。単純な処理は端末上で完結するが、複雑なリクエストは Apple の「Private Cloud Compute」が担う。この Private Cloud Compute自体が **Google Cloud のインフラ（NVIDIA・Intel のチップ）上で稼働している**と報じられている。Apple はこの経路で処理する際、利用者の個人データを Apple 自身を含めて誰にも保存・アクセスさせない設計だとしている。",
+      "Apple の AI 責任者だった John Giannandrea が[今年4月に8年で退任し](?a=apple-ai-chief-giannandrea-departure-2026)、Siri の遅延の責任を問われる形になっていた。今回の出荷は、後任の Amar Subramanya（元 Google VP）体制のもとでの最初の大型リリースにあたる。",
+      "## 全員がすぐ使えるわけではない — 待機リスト制、EU・中国は対象外",
+      "提供は英語からで、フランス語・日本語・韓国語・ポルトガル語・スペイン語は10月に追う。対応端末は iPhone 15 Pro 以降（Apple Intelligence 対応機種）で、13歳未満のアカウントには提供されない。",
+      "**対応言語・端末の条件を満たしても、すぐには使えない。** Private Cloud Compute の処理能力に応じた**待機リスト制**が敷かれており、登録後の待ち時間は数分から数日までばらつくと報じられている。",
+      "**EU は現時点で完全に対象外である。** Apple は6月、EU向けの遅延を公式に発表しており、理由は Digital Markets Act（DMA）を巡る欧州委員会との対立にある。Apple は他社アシスタントにも Siri AI と同じシステムデータへのアクセスを開放するよう欧州委員会から求められ、「Trusted System Agent」という制御された仲介方式と18ヶ月の段階的展開案を提示したが、欧州委員会はいずれも拒否したという。Apple 側は、無制限のアクセス開放は利用者のプライバシーを脅かしうると反論している。**中国でも同様に未提供**で、Apple は現地の規制審査を理由に挙げるのみで、具体的な提供時期は示していない。",
+      "つまり、同じ Siri AI でも「使える条件」と「実際に使える速さ」は別の話であり、**対応言語・対応端末・待機リスト・地域規制という4つの絞り込みを同時に満たす必要がある。**"
+    ],
+    "primarySources": [
+      {
+        "title": "Siri AI, a profoundly more capable and personal assistant, is here",
+        "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/"
+      },
+      {
+        "title": "Major updates for Apple's software platforms are now available",
+        "url": "https://www.apple.com/newsroom/2026/09/major-updates-for-apples-software-platforms-are-now-available/"
+      },
+      {
+        "title": "Due to DMA, Siri AI delayed in EU for iOS 27 and iPadOS 27",
+        "url": "https://www.apple.com/newsroom/2026/06/due-to-dma-siri-ai-delayed-in-eu-for-ios-27-and-ipados-27/"
+      }
+    ]
   }
 };
 

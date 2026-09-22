@@ -10246,5 +10246,23 @@ export const ARTICLES_META = [
       "料金",
       "エージェント"
     ]
+  },
+  {
+    "id": "apple-siri-ai-ios-27-launch-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Apple が Siri AI を iOS 27 で提供開始 — 待機リスト制、EU は DMA 紛争で対象外、Google と共同開発",
+    "excerpt": "Apple が9月14日、iOS 27・iPadOS 27・macOS 27（Golden Gate）を公開し、目玉機能「Siri AI」の提供を英語圏から開始した。6月のWWDCで発表した内容の実際の出荷にあたる。モデルはGoogleと共同開発し、複雑な処理はApple Private Cloud Compute（基盤にはGoogle Cloud・NVIDIA・Intelのチップを使用）で処理する。ただし全員がすぐ使えるわけではない。処理能力に応じた**待機リスト制**で、**EUはDMAを巡る規制紛争で対象外、中国も現地規制の審査待ちで未提供**。",
+    "date": "2026-09-23",
+    "newsDate": "2026-09-14",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Apple",
+      "Siri",
+      "Apple Intelligence",
+      "iOS 27",
+      "プライバシー"
+    ]
   }
 ];

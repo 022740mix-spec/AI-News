@@ -16,6 +16,14 @@
     <summary>Anthropic が2026年9月22日、Claude Opus 5.5 を公開した。公式ドキュメントは推奨を入れ替え、「ほとんどのワークロードでは Opus 5.5 から始めよ」としている。単価は $4 / $20（Opus 5 は $5 / $25）で20%減。ただし「40%安い」という報じ方をそのまま請求額の予測に使うことはできない。既定の effort が `high` から `medium` に下がり、かつ同じ effort なら Opus 5 より多く思考すると公式が明記しているためである。破壊的変更は4つある。</summary>
   </entry>
   <entry>
+    <title>Apple が Siri AI を iOS 27 で提供開始 — 待機リスト制、EU は DMA 紛争で対象外、Google と共同開発</title>
+    <link rel="alternate" type="text/html" href="?a=apple-siri-ai-ios-27-launch-2026"/>
+    <id>tag:ai-tool-news.jp,2026:apple-siri-ai-ios-27-launch-2026</id>
+    <published>2026-09-23T15:00:00Z</published>
+    <updated>2026-09-23T15:00:00Z</updated>
+    <summary>Apple が9月14日、iOS 27・iPadOS 27・macOS 27（Golden Gate）を公開し、目玉機能「Siri AI」の提供を英語圏から開始した。6月のWWDCで発表した内容の実際の出荷にあたる。モデルはGoogleと共同開発し、複雑な処理はApple Private Cloud Compute（基盤にはGoogle Cloud・NVIDIA・Intelのチップを使用）で処理する。ただし全員がすぐ使えるわけではない。処理能力に応じた待機リスト制で、EUはDMAを巡る規制紛争で対象外、中国も現地規制の審査待ちで未提供。</summary>
+  </entry>
+  <entry>
     <title>Alibaba の Qwen チームが Qwen-Image-2.1 を公開 — 視覚生成部は7Bに縮小、ライセンスは Apache 2.0 から非商用限定に転換</title>
     <link rel="alternate" type="text/html" href="?a=alibaba-qwen-image-2-1-2026"/>
     <id>tag:ai-tool-news.jp,2026:alibaba-qwen-image-2-1-2026</id>

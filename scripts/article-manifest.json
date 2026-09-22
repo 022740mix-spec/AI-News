@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-22",
-  "count": 472,
+  "count": 473,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -97,6 +97,7 @@
     "anthropic-workload-identity-federation-ga-service-accounts-2026",
     "apple-ai-chief-giannandrea-departure-2026",
     "apple-google-siri-gemini-2026",
+    "apple-siri-ai-ios-27-launch-2026",
     "apple-wwdc-2026-siri-ai-keynote-2026",
     "aqua-voice-review",
     "arc-agi-3-launch-2026",
