@@ -21011,6 +21011,8 @@ const ARTICLES_BODY = {
   "anthropic-claude-opus-5-5-release-2026": {
     "body": [
       "**Anthropic** が2026年9月22日、**Claude Opus 5.5** を公開した。モデル ID は `claude-opus-5-5`、コンテキストは1Mトークン、最大出力は128Kトークン。Claude API に加え Amazon Bedrock・Google Cloud・Microsoft Foundry・Claude Platform on AWS で同日提供される。",
+      "公式発表はこれを「**新しい Claude 5.5 ファミリーの最初のモデル**」と位置づけている。**Sonnet 5.5 と Haiku 5.5 が数週間のうちに続く**とされ、「性能・効率・安全性の同じ改善の多くを備える」と説明されている。**現行ラインナップは、これで確定ではない。**",
+      "性能については「**ほとんどの作業で Claude Fable 5.1 の水準**で動き、Opus 5 より40%安く動く」としている。Fable 5.1 の単価は $10 / $50、Opus 5.5 は $4 / $20 である。",
       "公式ドキュメントは**推奨の順序を入れ替えた**。これまで「ほとんどのワークロードでは Opus 5 から始めよ」としていたところが、**Opus 5.5 から始めよ**に変わり、[Fable 5.1](?a=anthropic-claude-fable-5-1-mythos-5-1-cache-read-cut-2026) は「要求の厳しい推論と長時間のエージェント作業、または高い effort の Opus 5.5 でも自分の評価基準に届かないとき」に回った。**Opus 5 は legacy の一覧に移っている。**",
       "## 単価は20%減。ただし請求額がそのまま20%減るとは限らない",
       "基本単価は下がった。キャッシュ読み取りは基本入力の**0.05倍**で、他の Claude モデルの0.1倍の半分にあたる（Fable 5.1 と Mythos 5.1 は0.025倍）。",
@@ -21041,11 +21043,12 @@ const ARTICLES_BODY = {
       "Anthropic は同時に、**Pro・Max・Team および席課金の Enterprise プランで5時間あたりの利用上限を引き上げる**と発表している。加えて Opus 5.5 は単価が下がっているため、**同じ上限の中でより長く使える**ことになる。",
       "Claude API と Claude Platform では **Fast mode**（リサーチプレビュー）が Opus 5.5 で使える。最大2.5倍の速度で、価格は**入力 $8 / 出力 $40**。通常の $4 / $20 の2倍にあたる。Amazon Bedrock・Claude Platform on AWS・Google Cloud・Microsoft Foundry では提供されない。",
       "**確認状況**: 本記事の数値・仕様・破壊的変更・提供範囲は、すべて `platform.claude.com` の公式ドキュメント（モデル概要、Opus 5.5 のモデルページ、What's new、移行ガイド）に**直接到達して確認した**。ベンチマークのスコアは、これらのページには掲載がないため本記事には含めていない。`anthropic.com` の発表ページとシステムカードには本稿執筆時点で到達できていない。",
-      "【訂正 2026-09-23】公開時、本文に「**公式ドキュメントは「40%安い」とは書いていない**」と記載しましたが、**誤りでした。** 執筆時点で `platform.claude.com` のドキュメント群には到達できた一方、`anthropic.com` の発表ページには到達できておらず、そちらに「costs 40% less than Opus 5 on typical workloads」と明記されていました。（誤）公式にその数字は無い →（正）公式の数字であり、内訳は「1トークンあたりの単価減 × 1タスクあたりのトークン数減」。該当箇所を書き直し、公式ベンチマーク（Terminal-Bench 4.0 ほか）、キャッシュ読み取りの60%減、生成速度30%以上、Claude Code の利用上限引き上げ、Fast mode の価格を追記しました。**「単価20%減」と「実測40%減」は単位が違うだけで、どちらも正しい**という本記事の趣旨は変わりません。"
+      "【訂正 2026-09-23】公開時、本文に「**公式ドキュメントは「40%安い」とは書いていない**」と記載しましたが、**誤りでした。** 執筆時点で `platform.claude.com` のドキュメント群には到達できた一方、`anthropic.com` の発表ページには到達できておらず、そちらに「costs 40% less than Opus 5 on typical workloads」と明記されていました。（誤）公式にその数字は無い →（正）公式の数字であり、内訳は「1トークンあたりの単価減 × 1タスクあたりのトークン数減」。該当箇所を書き直し、公式ベンチマーク（Terminal-Bench 4.0 ほか）、キャッシュ読み取りの60%減、生成速度30%以上、Claude Code の利用上限引き上げ、Fast mode の価格を追記しました。**「単価20%減」と「実測40%減」は単位が違うだけで、どちらも正しい**という本記事の趣旨は変わりません。",
+      "【追記 2026-09-23】公式発表が Opus 5.5 を「新しい Claude 5.5 ファミリーの最初のモデル」と位置づけ、**Sonnet 5.5 と Haiku 5.5 が数週間のうちに続く**としている点を冒頭に追加しました。本記事の「現行ラインナップ」の表は公開時点のもので、**数週間のうちに変わる前提**でご覧ください。"
     ],
     "tables": [
       {
-        "afterParagraph": 3,
+        "afterParagraph": 5,
         "caption": "料金の比較（100万トークンあたり。公式ドキュメントより）",
         "headers": [
           "項目",
@@ -21093,7 +21096,7 @@ const ARTICLES_BODY = {
         ]
       },
       {
-        "afterParagraph": 13,
+        "afterParagraph": 15,
         "caption": "Opus 5 から移行する際の破壊的変更（いずれも 400 エラー）",
         "headers": [
           "変更",
@@ -21124,7 +21127,7 @@ const ARTICLES_BODY = {
         ]
       },
       {
-        "afterParagraph": 24,
+        "afterParagraph": 26,
         "caption": "現行ラインナップ（公式ドキュメントより）",
         "headers": [
           "モデル",
@@ -21165,7 +21168,7 @@ const ARTICLES_BODY = {
         ]
       },
       {
-        "afterParagraph": 10,
+        "afterParagraph": 12,
         "caption": "Anthropic 公式発表の数値（Terminal-Bench は 4.0 であり、当サイトの比較表の列（2.0 / 2.1）とは版が違う）",
         "headers": [
           "ベンチマーク",
