@@ -21007,6 +21007,178 @@ const ARTICLES_BODY = {
         "url": "https://github.com/JustVugg/colibri"
       }
     ]
+  },
+  "anthropic-claude-opus-5-5-release-2026": {
+    "body": [
+      "**Anthropic** が2026年9月22日、**Claude Opus 5.5** を公開した。モデル ID は `claude-opus-5-5`、コンテキストは1Mトークン、最大出力は128Kトークン。Claude API に加え Amazon Bedrock・Google Cloud・Microsoft Foundry・Claude Platform on AWS で同日提供される。",
+      "公式ドキュメントは**推奨の順序を入れ替えた**。これまで「ほとんどのワークロードでは Opus 5 から始めよ」としていたところが、**Opus 5.5 から始めよ**に変わり、[Fable 5.1](?a=anthropic-claude-fable-5-1-mythos-5-1-cache-read-cut-2026) は「要求の厳しい推論と長時間のエージェント作業、または高い effort の Opus 5.5 でも自分の評価基準に届かないとき」に回った。**Opus 5 は legacy の一覧に移っている。**",
+      "## 単価は20%減。ただし請求額がそのまま20%減るとは限らない",
+      "基本単価は下がった。キャッシュ読み取りは基本入力の**0.05倍**で、他の Claude モデルの0.1倍の半分にあたる（Fable 5.1 と Mythos 5.1 は0.025倍）。",
+      "問題はここから先である。**公式ドキュメントは「40%安い」とは書いていない。** 書いてあるのは上表の単価と、次の2つの挙動変化である。",
+      "1つ目は、**`effort` を省略したときの既定が `high` から `medium` に下がった**こと。同じコードをモデル名だけ変えて動かすと、**思考量が減った状態で走る。** 安くはなるが、それは値引きではなく設定が変わった結果である。公式は「**effort を明示的に設定し、sweep をやり直せ**」としている。",
+      "2つ目はその逆で、**同じ effort なら Opus 5 より多く思考する**。公式の表現は「at the same effort setting the model tends to think more per turn than Claude Opus 5, most of all at `xhigh` and `max`」。**単価は下がるが、1ターンあたりのトークンは増えうる。** `max_tokens` に思考のぶんの余裕を残すようにとも書かれている。",
+      "つまり **effort を揃えて比べたときの実効コストは、単価の差ほど単純には動かない。** 自分のワークロードで測り直すほかない。",
+      "## 破壊的変更は4つ",
+      "既に Opus 5 で動いているコードに影響する変更が4つある。**最初の3つは Fable 5.1 と共通**で、当サイトは9月2日にそちらを報じている。",
+      "**4つ目はプラットフォームによって挙動が違う。** Claude API と Google Cloud では旧 `computer_20251124` が 400 で弾かれ、`computer_toolset_20260801` の宣言に変える必要がある。一方**Amazon Bedrock では旧ツールがそのまま動き続ける。** 同じモデル ID でも、どこで動かしているかで対応が変わる。",
+      "**思考ブロックの束縛**は、ルーターやフォールバックを組んでいる場合に効く。Opus 5.5 の思考ブロックを読めるのは、Claude API 上の **Fable 5.1 と Mythos 5.1 だけ**である。それ以外のモデルへ会話を移すと、移した先のターンは前のモデルの推論なしで走る。逆に Opus 5.5 は、Opus 5 以前の Opus・Sonnet・Haiku の思考ブロックは読めるが、**Fable / Mythos のものは読めない。**",
+      "読めないブロックは**モデルに渡る前に API 側が落とし、課金もされない**。リクエスト自体は成功するため、**気づかないまま推論が失われる。** `thinking-binding-controls-2026-08-01` ベータヘッダを付けると、落とされたことが `input_transformations` で報告される。",
+      "## エラーにならないが、画面が静かになる",
+      "**リクエストは成功するのに表示が変わる**変更が1つある。ツール呼び出しの合間にモデルが書く短い進捗メッセージが、`text` ブロックではなく**進捗用の `thinking` ブロック**で返るようになった。",
+      "既定の `display` は `\"omitted\"` で、このとき `thinking` フィールドは**空**である。したがって、その文字を利用者に流していたアプリは**ツール呼び出しの間、無言になる。** エラーは出ない。取り戻すには `display` に `\"updates\"`（ベータ）か `\"summarized\"` を設定して、空でない `thinking` ブロックを描画する。",
+      "## 拒否の分類が増えた",
+      "Opus 5.5 は**生物学の安全分類器**をサイバーのものに加えて動かす。また、**モデル内部の推論を出力に再現させようとする要求**は `reasoning_extraction` の分類で拒否されうる。拒否は HTTP 200 で `stop_reason: \"refusal\"` として返る。",
+      "運用上の注意として、**サーバ側フォールバックは `reasoning_extraction` の拒否を再試行しない。** その拒否は呼び出し側に返る。",
+      "## 乗り換えるかどうか",
+      "Anthropic 自身が Opus 5.5 を既定の出発点に置き、Opus 5 を legacy に移した以上、**新規に組むなら Opus 5.5 が素直な選択**になる。単価も下がっている。",
+      "既存のコードを移す場合の要点は3つに絞れる。**`thinking` を無効化していないか**（していれば 400 で止まる）、**`tool_choice` に `any` / `tool` を使っていないか**（同じく 400）、そして**進捗表示を出しているか**（無言になる）。computer use を使っているなら、動かしている場所も確認する。",
+      "そのうえで、**effort を明示して測り直す。** 既定が下がり、同じ設定では思考が増える。両方が同時に効くため、**モデル名だけ差し替えて数字を据え置くと、品質もコストも予想から外れる。**",
+      "**確認状況**: 本記事の数値・仕様・破壊的変更・提供範囲は、すべて `platform.claude.com` の公式ドキュメント（モデル概要、Opus 5.5 のモデルページ、What's new、移行ガイド）に**直接到達して確認した**。ベンチマークのスコアは、これらのページには掲載がないため本記事には含めていない。`anthropic.com` の発表ページとシステムカードには本稿執筆時点で到達できていない。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "料金の比較（100万トークンあたり。公式ドキュメントより）",
+        "headers": [
+          "項目",
+          "Opus 5",
+          "Opus 5.5",
+          "Fable 5.1"
+        ],
+        "rows": [
+          [
+            "入力",
+            "$5",
+            "**$4**",
+            "$10"
+          ],
+          [
+            "出力",
+            "$25",
+            "**$20**",
+            "$50"
+          ],
+          [
+            "キャッシュ書き込み（5分）",
+            "—",
+            "$5",
+            "$12.50"
+          ],
+          [
+            "キャッシュ書き込み（1時間）",
+            "—",
+            "$8",
+            "$20"
+          ],
+          [
+            "キャッシュ読み取り",
+            "—",
+            "**$0.20**（入力の0.05倍）",
+            "$0.25（0.025倍）"
+          ],
+          [
+            "バッチ処理",
+            "50%引き",
+            "$2 / $10",
+            "50%引き"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 9,
+        "caption": "Opus 5 から移行する際の破壊的変更（いずれも 400 エラー）",
+        "headers": [
+          "変更",
+          "何が起きるか",
+          "Fable 5.1 と共通か"
+        ],
+        "rows": [
+          [
+            "思考を無効化できない",
+            "`thinking: disabled` と `enabled + budget_tokens` が拒否される。`effort` で深さを制御する",
+            "共通"
+          ],
+          [
+            "強制ツール呼び出しが不可",
+            "`tool_choice` の `any` / `tool` が拒否される。`auto` ＋ strict tool use か structured outputs へ",
+            "共通"
+          ],
+          [
+            "思考ブロックがモデルと会話に束縛される",
+            "会話を別モデルへ移すと推論が引き継がれない。過去ターンの編集も無効化の対象",
+            "共通"
+          ],
+          [
+            "旧 computer use ツールが不可",
+            "Claude API と Google Cloud で `computer_20251124` が拒否される。**Bedrock では従来どおり動く**",
+            "Opus 5.5 のみ"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 20,
+        "caption": "現行ラインナップ（公式ドキュメントより）",
+        "headers": [
+          "モデル",
+          "単価",
+          "既定 effort",
+          "コンテキスト",
+          "知識カットオフ"
+        ],
+        "rows": [
+          [
+            "Fable 5.1",
+            "$10 / $50",
+            "`high`",
+            "1M",
+            "2026年6月"
+          ],
+          [
+            "**Opus 5.5**",
+            "**$4 / $20**",
+            "**`medium`**",
+            "1M",
+            "2026年6月"
+          ],
+          [
+            "Sonnet 5",
+            "$2 / $10",
+            "`high`",
+            "1M",
+            "2026年1月"
+          ],
+          [
+            "Haiku 4.5",
+            "$1 / $5",
+            "—",
+            "200K",
+            "2025年2月"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Opus 5.5（モデルページ）",
+        "site": "Anthropic 公式ドキュメント（直接到達・確認済み）",
+        "url": "https://platform.claude.com/docs/en/models/opus-5-5/overview"
+      },
+      {
+        "title": "What's new in Claude Opus 5.5",
+        "site": "Anthropic 公式ドキュメント（直接到達・確認済み）",
+        "url": "https://platform.claude.com/docs/en/models/opus-5-5/whats-new-opus-5-5"
+      },
+      {
+        "title": "Migrating to Claude Opus 5.5",
+        "site": "Anthropic 公式ドキュメント（直接到達・確認済み）",
+        "url": "https://platform.claude.com/docs/en/models/opus-5-5/migration-guide"
+      },
+      {
+        "title": "Models overview",
+        "site": "Anthropic 公式ドキュメント（直接到達・確認済み）",
+        "url": "https://platform.claude.com/docs/en/models/overview"
+      }
+    ]
   }
 };
 

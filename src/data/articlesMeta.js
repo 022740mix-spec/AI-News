@@ -10227,5 +10227,24 @@ export const ARTICLES_META = [
       "エッジAI",
       "個人開発"
     ]
+  },
+  {
+    "id": "anthropic-claude-opus-5-5-release-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Anthropic が Claude Opus 5.5 を公開 — 単価は20%減、ただし「同じ effort でより多く考える」と公式が明記",
+    "excerpt": "Anthropic が2026年9月22日、**Claude Opus 5.5** を公開した。公式ドキュメントは推奨を入れ替え、「ほとんどのワークロードでは Opus 5.5 から始めよ」としている。単価は **$4 / $20**（Opus 5 は $5 / $25）で20%減。ただし「40%安い」という報じ方をそのまま請求額の予測に使うことはできない。**既定の effort が `high` から `medium` に下がり**、かつ**同じ effort なら Opus 5 より多く思考する**と公式が明記しているためである。**破壊的変更は4つある。**",
+    "date": "2026-09-23",
+    "newsDate": "2026-09-22",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Opus 5",
+      "モデル",
+      "料金",
+      "エージェント"
+    ]
   }
 ];
