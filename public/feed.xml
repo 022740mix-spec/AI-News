@@ -40,6 +40,14 @@
     <summary>米商務省傘下 NIST の Center for AI Standards and Innovation（CAISI）が9月17日、中国 Z.ai の GLM-5.3 に対するサイバー能力の独立評価を公表した。結論は「これまでで最もサイバー能力の高いオープンウェイトモデル」でありながら、米フロンティアモデルの水準には集計指標でおよそ4ヶ月遅れているというもの。AI News は8月の記事で GLM-5.3 のサイバー系ベンチマークについて「Z.ai 自身の計測値のみで独立検証は確認できていない」と書いたが、今回その独立検証にあたる材料が公的機関から出た形になる。</summary>
   </entry>
   <entry>
+    <title>個人開発の「Clash」— 複数のAIコーディングエージェントを並列稼働させたときのマージ衝突を事前検出するCLI</title>
+    <link rel="alternate" type="text/html" href="?a=clash-worktree-merge-conflict-2026"/>
+    <id>tag:ai-tool-news.jp,2026:clash-worktree-merge-conflict-2026</id>
+    <published>2026-09-23T15:00:00Z</published>
+    <updated>2026-09-23T15:00:00Z</updated>
+    <summary>個人開発者が公開したOSSツール「Clash」が、Claude Code・Codex・Cursor などのコーディングエージェントを複数の git worktree で同時に走らせる運用向けに、マージする前に衝突箇所を検出するCLIとして Hacker News の Show HN で紹介されている。git worktree 同士で三方向マージを試算するだけで、実際のリポジトリには一切書き込まない読み取り専用設計。星数はまだ64と小規模だが、複数エージェントの並列運用という具体的な悩みに対する、的を絞ったツールである。</summary>
+  </entry>
+  <entry>
     <title>Alibaba の Qwen チームが Qwen-Image-2.1 を公開 — 視覚生成部は7Bに縮小、ライセンスは Apache 2.0 から非商用限定に転換</title>
     <link rel="alternate" type="text/html" href="?a=alibaba-qwen-image-2-1-2026"/>
     <id>tag:ai-tool-news.jp,2026:alibaba-qwen-image-2-1-2026</id>

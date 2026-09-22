@@ -21378,6 +21378,29 @@ const ARTICLES_BODY = {
         "url": "https://www.nist.gov/caisi"
       }
     ]
+  },
+  "clash-worktree-merge-conflict-2026": {
+    "body": [
+      "AIコーディングエージェントを**複数同時に走らせる**運用が広がるにつれ、同じリポジトリの異なる箇所を別々のエージェントが並行して書き換え、あとでマージすると衝突する、という悩みが増えている。個人開発者が公開したOSSツール「**Clash**」は、この問題に絞って作られたCLIである。",
+      "## 何をするツールか",
+      "Clash は Claude Code・Codex・Cursor などのエージェントを **git worktree** ごとに分けて並列稼働させる構成を前提に、worktree 同士の**ペアで三方向マージを試算**し、衝突が起きそうなファイルを事前に洗い出す。重要なのは、この試算が**リポジトリを一切変更しない読み取り専用の動作**である点で、実際にマージする前の「下見」として使える設計になっている。",
+      "機能としては、単一ファイルの衝突有無を調べる `clash check <file>`、どの worktree の組み合わせで衝突が出ているかを一覧できる「衝突マトリクス」を表示する status コマンド、ファイル変更をリアルタイムに監視する watch モード、CI やエージェントからの自動処理に使える JSON 出力がある。Claude Code に対しては、ファイル書き込み前のフック（PreToolUse）に組み込むことで、衝突を自動検出する連携も用意されている。",
+      "実装は Rust で、MIT ライセンス。GitHub 上の star 数は本稿執筆時点で64と、まだ規模の大きいプロジェクトではない。Hacker News の Show HN に投稿されており、複数のAIエージェントを並列運用する際の共通の悩みとして議論の対象になっている。",
+      "## なぜ載せる価値があるか",
+      "**この種のツールが求められること自体が、コーディングの作業単位が「1人の開発者」から「複数の並列エージェント」に移りつつあることを示している。** git worktree を使ったエージェントの並列運用は、Claude Code や Codex のドキュメントでも推奨される構成になっており、Clash はその運用上の隙間を埋める、地味だが実務に効くツールである。まだ小規模なプロジェクトだが、同種の課題に取り組む個人開発者・小規模チームのツールが今後も増えると見られる領域である。"
+    ],
+    "primarySources": [
+      {
+        "title": "clash-sh/clash",
+        "site": "GitHub",
+        "url": "https://github.com/clash-sh/clash"
+      },
+      {
+        "title": "Show HN: I built Clash to avoid conflicts when running AI agents in parallel",
+        "site": "Hacker News",
+        "url": "https://news.ycombinator.com/item?id=46887382"
+      }
+    ]
   }
 };
 

@@ -10301,5 +10301,23 @@ export const ARTICLES_META = [
       "AI安全性",
       "規制"
     ]
+  },
+  {
+    "id": "clash-worktree-merge-conflict-2026",
+    "type": "news",
+    "category": "product",
+    "title": "個人開発の「Clash」— 複数のAIコーディングエージェントを並列稼働させたときのマージ衝突を事前検出するCLI",
+    "excerpt": "個人開発者が公開したOSSツール「Clash」が、Claude Code・Codex・Cursor などのコーディングエージェントを**複数の git worktree で同時に走らせる**運用向けに、**マージする前に衝突箇所を検出する**CLIとして Hacker News の Show HN で紹介されている。git worktree 同士で三方向マージを試算するだけで、実際のリポジトリには一切書き込まない読み取り専用設計。星数はまだ64と小規模だが、複数エージェントの並列運用という具体的な悩みに対する、的を絞ったツールである。",
+    "date": "2026-09-23",
+    "newsDate": "2026-09-20",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "オープンソース",
+      "マルチエージェント",
+      "個人開発",
+      "Claude Code",
+      "Rust"
+    ]
   }
 ];
