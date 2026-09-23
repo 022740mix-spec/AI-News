@@ -10388,5 +10388,35 @@ export const ARTICLES_META = [
       "エージェント",
       "オープンソース"
     ]
+  },
+  {
+    "id": "alibaba-qwen4-apsara-unveil-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Alibabaが「Qwen4」を発表 — Apsara Conferenceで4系統を公開、価格・ベンチマークは未定",
+    "excerpt": "Alibabaが9月22日、杭州で開催のApsara Conference 2026で次世代モデル「Qwen4」を発表した。Qwen4 Max・Flash・Plus・27Bの4系統が公開されたが、複数の海外メディアの報道によれば学習中の段階で、リリース日・価格・コンテキスト長・ベンチマーク数値はいずれも未公開という。Alibaba公式サイト・Qwen公式ブログへは本セッションの実行環境から到達できず、この記事は複数の二次報道の一致をもって書いている。",
+    "date": "2026-09-23",
+    "newsDate": "2026-09-22",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Qwen",
+      "Alibaba"
+    ]
+  },
+  {
+    "id": "un-security-council-ai-briefing-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】OpenAI・Anthropicのトップが国連安保理でAIリスクを説明 — 「人類全体へのリスクになりうる」",
+    "excerpt": "フランスが議長を務めた国連安全保障理事会のハイレベル会合で、OpenAIのSam Altman CEO・AnthropicのDario Amodei CEO・Hugging FaceのClément Delangue CEO・国連の科学者パネル共同議長Yoshua Bengio氏がAIリスクについて説明した。複数の海外報道は「管理を誤ればAIは人類全体へのリスクになりうる」というAmodei氏の発言、「危険は現実かつ差し迫っている」というBengio氏の発言を伝えている。国連公式サイトへは本セッションの実行環境から到達できず、この記事は複数の海外報道の一致をもって書いている。",
+    "date": "2026-09-23",
+    "newsDate": "2026-09-23",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "AI安全性",
+      "規制"
+    ]
   }
 ];
