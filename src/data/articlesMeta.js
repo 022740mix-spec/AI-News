@@ -10414,5 +10414,23 @@ export const ARTICLES_META = [
       "start": "2026-09-14",
       "end": "2026-09-20"
     }
+  },
+  {
+    "id": "humanizer-ai-writing-skill-style-vs-watermark-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】「AIっぽい文章」を直す Humanizer が5万スター — 文体で見分ける方法と、透かしで見分ける方法は別々に効く",
+    "excerpt": "AI が書いた文章の「いかにもらしさ」を直す Agent Skill **Humanizer** が、GitHub で約**5万スター**に達している。9月6日の v3.0.0 で、Wikipedia 由来の35パターンを**25に整理**した。「検出をすり抜ける道具か」という問いには、見分け方を分けて答える必要がある。**公開された一覧に基づく文体の判定は、同じ一覧で回避できる。** 一方、Claude の出力に入る**透かしはモデルの段階で付く**ため、Claude の上で書き直した文章には改めて付きうる。導入するなら `npx` を実行する前に SKILL.md を読むこと。",
+    "date": "2026-09-23",
+    "newsDate": "2026-09-06",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "スキル",
+      "透明性",
+      "オープンソース",
+      "Claude Code",
+      "倫理"
+    ]
   }
 ];
