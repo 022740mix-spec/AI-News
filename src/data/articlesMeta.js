@@ -10388,5 +10388,31 @@ export const ARTICLES_META = [
       "エージェント",
       "オープンソース"
     ]
+  },
+  {
+    "id": "weekly-metrics-2026-week-sep14",
+    "type": "feature",
+    "category": "special",
+    "title": "週次の計器 — 9月14日〜20日は28本。「AI安全性」の記事は3週で6件から25件に増え、ガイドの言及は0行のまま",
+    "excerpt": "2026年9月14日〜20日の週次データ。公開は28本（前週39本）。エージェントを束ねる話（Cursor Projects、OpenAI Symphony）と、スキルを配る器の話（Skills over MCP、DeepMind Science Skills）が並んだ。**いちばん大きな数字は、ガイドの空白が広がっていること**で、「AI安全性」の記事は3週前の6件から25件に増えたが、ガイドでの言及は0回のまま。3週前に同じ指摘をして何も変わっていない理由も書く。",
+    "date": "2026-09-23",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "週刊まとめ",
+      "エージェント",
+      "AI安全性",
+      "中国AI",
+      "スキル"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "週次の計器 9/14〜9/20"
+    },
+    "heroScope": "week",
+    "weekRoundupPeriod": {
+      "start": "2026-09-14",
+      "end": "2026-09-20"
+    }
   }
 ];

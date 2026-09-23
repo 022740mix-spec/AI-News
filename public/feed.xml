@@ -80,6 +80,14 @@
     <summary>Model Context Protocol（MCP）公式組織のリポジトリ modelcontextprotocol/ext-tasks に、公開用TypeScript SDK「@modelcontextprotocol/ext-tasks」を追加するプルリクエストがマージされた。数分かかる処理や人間の承認待ち、クライアント切断をまたぐ処理をMCPで扱うための拡張「Tasks」（SEP-2663）を、実際のアプリケーションに組み込みやすくするための実装である。</summary>
   </entry>
   <entry>
+    <title>週次の計器 — 9月14日〜20日は28本。「AI安全性」の記事は3週で6件から25件に増え、ガイドの言及は0行のまま</title>
+    <link rel="alternate" type="text/html" href="?a=weekly-metrics-2026-week-sep14"/>
+    <id>tag:ai-tool-news.jp,2026:weekly-metrics-2026-week-sep14</id>
+    <published>2026-09-23T15:00:00Z</published>
+    <updated>2026-09-23T15:00:00Z</updated>
+    <summary>2026年9月14日〜20日の週次データ。公開は28本（前週39本）。エージェントを束ねる話（Cursor Projects、OpenAI Symphony）と、スキルを配る器の話（Skills over MCP、DeepMind Science Skills）が並んだ。いちばん大きな数字は、ガイドの空白が広がっていることで、「AI安全性」の記事は3週前の6件から25件に増えたが、ガイドでの言及は0回のまま。3週前に同じ指摘をして何も変わっていない理由も書く。</summary>
+  </entry>
+  <entry>
     <title>Alibaba の Qwen チームが Qwen-Image-2.1 を公開 — 視覚生成部は7Bに縮小、ライセンスは Apache 2.0 から非商用限定に転換</title>
     <link rel="alternate" type="text/html" href="?a=alibaba-qwen-image-2-1-2026"/>
     <id>tag:ai-tool-news.jp,2026:alibaba-qwen-image-2-1-2026</id>

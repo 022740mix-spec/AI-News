@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-23",
-  "count": 480,
+  "count": 481,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -464,6 +464,7 @@
     "vscode",
     "warp-ai",
     "weekly-metrics-2026-week-aug31",
+    "weekly-metrics-2026-week-sep14",
     "white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026",
     "windsurf",
     "windsurf-pricing-overhaul",
