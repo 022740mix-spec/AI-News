@@ -10372,5 +10372,21 @@ export const ARTICLES_META = [
       "規制",
       "エンタープライズ"
     ]
+  },
+  {
+    "id": "mcp-tasks-extension-typescript-sdk-2026",
+    "type": "news",
+    "category": "special",
+    "title": "MCPの「Tasks拡張」にTypeScript SDKが登場 — 長時間実行タスクを標準プロトコルで扱う仕組みが実装段階へ",
+    "excerpt": "Model Context Protocol（MCP）公式組織のリポジトリ modelcontextprotocol/ext-tasks に、公開用TypeScript SDK「@modelcontextprotocol/ext-tasks」を追加するプルリクエストがマージされた。数分かかる処理や人間の承認待ち、クライアント切断をまたぐ処理をMCPで扱うための拡張「Tasks」（SEP-2663）を、実際のアプリケーションに組み込みやすくするための実装である。",
+    "date": "2026-09-23",
+    "newsDate": "2026-09-23",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "MCP",
+      "エージェント",
+      "オープンソース"
+    ]
   }
 ];

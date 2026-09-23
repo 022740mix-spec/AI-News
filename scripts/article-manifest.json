@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-23",
-  "count": 479,
+  "count": 480,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -294,6 +294,7 @@
     "mcp-2026-07-28-specification-final-release-2026",
     "mcp-comprehensive-guide-2026",
     "mcp-skills-over-mcp-sep2640-2026",
+    "mcp-tasks-extension-typescript-sdk-2026",
     "mcp-v2-spec-launch-2026",
     "meituan-longcat-2-1-6t-domestic-chips-mit-open-2026",
     "meta-acquires-manus-2025",

@@ -21476,6 +21476,27 @@ const ARTICLES_BODY = {
         "url": "https://www.anthropic.com/news/accenture-embedded-evaluation"
       }
     ]
+  },
+  "mcp-tasks-extension-typescript-sdk-2026": {
+    "body": [
+      "Model Context Protocol（MCP）の仕様を管理する modelcontextprotocol 組織で、拡張「Tasks」（SEP-2663）向けの公開用TypeScript SDK「@modelcontextprotocol/ext-tasks」（v0.2.0）を追加するプルリクエストが、9月23日にリポジトリ modelcontextprotocol/ext-tasks へマージされた。",
+      "Tasks拡張が扱うのは、MCPのリクエストの中に「すぐには終わらない処理」がある問題である。README は「MCPのリクエストの多くは短時間で終わるが、数分かかるもの、人間の入力を待つもの、クライアントが切断しても処理を継続する必要があるものもある」と説明する。この拡張を使うと、受け手（レシーバー）側はリクエストに対してすぐに結果を返す代わりに、処理を追跡できる「タスクハンドル」を返せるようになり、呼び出し側（リクエスター）はあとから進捗確認や結果取得を非同期に行える。長時間計算・承認フロー・外部ジョブシステム・遅延結果を返すAPIとの連携が主な用途として挙げられている。",
+      "仕様自体は2026年7月28日付けの版で「Stable（安定版）」の扱いになっており、2025年11月25日付けの旧世代（V1）との互換も維持している。今回追加されたTypeScript SDKは、この2つの仕様世代の違いをアプリケーション側から隠蔽する「世代非依存」の設計を取り、リクエスター向け（/client）・レシーバー向け（/receiver）・共通コア（/core）などエントリポイントを分けて提供する。スキーマはTypeScriptの型定義から ts-to-zod と Zod を使って自動生成しており、実行時の検証と型定義の整合性を保つ仕組みになっている。",
+      "本サイトは9月14日、同じmodelcontextprotocol組織で進む別の拡張「Skills over MCP」（SEP-2640、SKILL.mdをMCPサーバーから配信する仕組み）を報じている。Tasksは非同期処理、Skillsは手順知識の配布と、扱う対象は異なるが、いずれも「MCPのコア仕様に手を入れず、拡張（extension）としてリソースやメソッドを追加する」という同じ形式を取っている。MCPの標準化団体が、ツール呼び出しという中核機能の外側に、こうした周辺機能を拡張として積み上げる段階に入っていることがうかがえる。",
+      "なお、ext-tasksリポジトリ自体のスター数は47（9月23日時点）とまだ小規模で、Tasks拡張を実際にサポートするMCPサーバー・クライアントの実装例は限られる。SDKが公開されたことは実装のハードルを下げる一歩だが、対応するサーバー・クライアントが今後どれだけ増えるかは別の問題である。"
+    ],
+    "primarySources": [
+      {
+        "title": "modelcontextprotocol/ext-tasks",
+        "site": "GitHub",
+        "url": "https://github.com/modelcontextprotocol/ext-tasks"
+      },
+      {
+        "title": "Introduce extension SDK for TS (#21) · modelcontextprotocol/ext-tasks",
+        "site": "GitHub",
+        "url": "https://github.com/modelcontextprotocol/ext-tasks/pull/21"
+      }
+    ]
   }
 };
 

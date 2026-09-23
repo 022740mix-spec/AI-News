@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-09-23T15:00:00Z</updated>
+  <updated>2026-09-24T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>Anthropic が Claude Opus 5.5 を公開 — 単価は20%減、ただし「同じ effort でより多く考える」と公式が明記</title>
@@ -70,6 +70,14 @@
     <published>2026-09-23T15:00:00Z</published>
     <updated>2026-09-23T15:00:00Z</updated>
     <summary>Anthropicが9月18日、Accentureの内部組織Faculty部門と提携し、外部評価者が社員と同等のアクセス権を持って社内からモデル開発・アライメント・レッドチーム結果を評価する「エンベデッド評価」を始めると発表した。両社で5年間に少なくとも10億ドルを評価体制の構築に投じる。Anthropicは提携が非独占的であるとしつつ、評価者への長期的な資金は本来プールされた資金や政府資金から出るべきだとも述べており、評価対象企業自身が評価費用を負担する現在の構造を暫定的なものと位置づけている。</summary>
+  </entry>
+  <entry>
+    <title>MCPの「Tasks拡張」にTypeScript SDKが登場 — 長時間実行タスクを標準プロトコルで扱う仕組みが実装段階へ</title>
+    <link rel="alternate" type="text/html" href="?a=mcp-tasks-extension-typescript-sdk-2026"/>
+    <id>tag:ai-tool-news.jp,2026:mcp-tasks-extension-typescript-sdk-2026</id>
+    <published>2026-09-23T15:00:00Z</published>
+    <updated>2026-09-23T15:00:00Z</updated>
+    <summary>Model Context Protocol（MCP）公式組織のリポジトリ modelcontextprotocol/ext-tasks に、公開用TypeScript SDK「@modelcontextprotocol/ext-tasks」を追加するプルリクエストがマージされた。数分かかる処理や人間の承認待ち、クライアント切断をまたぐ処理をMCPで扱うための拡張「Tasks」（SEP-2663）を、実際のアプリケーションに組み込みやすくするための実装である。</summary>
   </entry>
   <entry>
     <title>Alibaba の Qwen チームが Qwen-Image-2.1 を公開 — 視覚生成部は7Bに縮小、ライセンスは Apache 2.0 から非商用限定に転換</title>
