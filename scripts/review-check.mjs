@@ -164,7 +164,10 @@ for (const a of ARTICLES) {
       if (!allIds.has(targetId)) {
         error(a.id, `内部リンク ?a=${targetId} の参照先が存在しません`);
       }
-      if (retractedIds.has(targetId)) {
+      // 編集履歴（【訂正】等）から取り下げ告知へのリンクは、読者が取り下げを
+      // 確かめるための正当な参照である。これを警告すると毎回同じ行が並び、
+      // 本当に直すべき参照が埋もれる。
+      if (retractedIds.has(targetId) && !/^【(訂正|追記|取り下げ)/.test(p)) {
         warn(a.id, `内部リンク ?a=${targetId} は取り下げ済み記事を参照しています`);
       }
     }
