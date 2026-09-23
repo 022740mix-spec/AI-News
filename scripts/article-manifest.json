@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-09-22",
-  "count": 477,
+  "generatedAt": "2026-09-23",
+  "count": 478,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -76,6 +76,7 @@
     "anthropic-glasswing-expansion-partner-network-services-track-2026",
     "anthropic-in-house-chip-71b-volta-2026",
     "anthropic-ipo-october-2026",
+    "anthropic-life-sciences-verification-program-2026",
     "anthropic-managed-agents-auto-permission-2026",
     "anthropic-may-2026-series-h-milan-korea-arr-47b-2026",
     "anthropic-model-hardware-standard-preview-2026",

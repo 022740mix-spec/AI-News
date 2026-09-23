@@ -10337,5 +10337,23 @@ export const ARTICLES_META = [
       "Tencent",
       "中国AI"
     ]
+  },
+  {
+    "id": "anthropic-life-sciences-verification-program-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が「Life Sciences Verification Program」を開始 — 検証済み研究者に安全策を調整したClaudeアクセスを提供、バイオセキュリティとの両立を模索",
+    "excerpt": "Anthropicが9月17日、ライフサイエンス分野の検証済み研究者・組織向けに、生物学関連の作業に合わせて安全策を調整したClaude（Mythos・Opus・Sonnet）へのアクセスを提供する「Life Sciences Verification Program」を発表した。通常業務向けの「Standard Use」と、悪用リスクの高い特定プロジェクト向けに安全策を個別に解除する「High-risk Use」の2区分を設け、組織単位の審査と用途の申告、事後の利用状況照合で正当な研究と悪用の線引きを図る。",
+    "date": "2026-09-23",
+    "newsDate": "2026-09-17",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "AI安全性",
+      "創薬",
+      "エンタープライズ"
+    ]
   }
 ];

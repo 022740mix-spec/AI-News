@@ -56,6 +56,14 @@
     <summary>Tencent が公式GitHub org で公開しているOSS「WeKnora」がGitHub Trendingで上位に入り、star数が2.89万まで伸びている。生の社内文書（Feishu・Notion・GitLab・Yuqueなどから自動同期）を、素早い検索用のRAG・複数ステップで調べ物をするReActエージェント・構造化されたMarkdownとして自動整理するWikiモードの3通りで扱えるようにする社内ナレッジ基盤で、MITライセンス。[BrowserSkill](?a=tencent-browserskill-agent-real-browser-2026)に続き、Tencentの公式orgからは今月2件目の注目OSSとなる。</summary>
   </entry>
   <entry>
+    <title>Anthropic が「Life Sciences Verification Program」を開始 — 検証済み研究者に安全策を調整したClaudeアクセスを提供、バイオセキュリティとの両立を模索</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-life-sciences-verification-program-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-life-sciences-verification-program-2026</id>
+    <published>2026-09-23T15:00:00Z</published>
+    <updated>2026-09-23T15:00:00Z</updated>
+    <summary>Anthropicが9月17日、ライフサイエンス分野の検証済み研究者・組織向けに、生物学関連の作業に合わせて安全策を調整したClaude（Mythos・Opus・Sonnet）へのアクセスを提供する「Life Sciences Verification Program」を発表した。通常業務向けの「Standard Use」と、悪用リスクの高い特定プロジェクト向けに安全策を個別に解除する「High-risk Use」の2区分を設け、組織単位の審査と用途の申告、事後の利用状況照合で正当な研究と悪用の線引きを図る。</summary>
+  </entry>
+  <entry>
     <title>Alibaba の Qwen チームが Qwen-Image-2.1 を公開 — 視覚生成部は7Bに縮小、ライセンスは Apache 2.0 から非商用限定に転換</title>
     <link rel="alternate" type="text/html" href="?a=alibaba-qwen-image-2-1-2026"/>
     <id>tag:ai-tool-news.jp,2026:alibaba-qwen-image-2-1-2026</id>

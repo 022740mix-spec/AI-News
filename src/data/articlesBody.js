@@ -21418,6 +21418,48 @@ const ARTICLES_BODY = {
         "url": "https://github.com/Tencent/WeKnora"
       }
     ]
+  },
+  "anthropic-life-sciences-verification-program-2026": {
+    "body": [
+      "Anthropicが2026年9月17日、ライフサイエンス分野で働く検証済みの研究者・組織向けに、生物学関連の業務に合わせて安全策を調整したClaudeモデル（Mythos・Opus・Sonnet）へのアクセスを提供する「Life Sciences Verification Program（LSVP）」を発表した。",
+      "Anthropicは公式発表の中で、ワクチン開発のような正当な研究と病原体の武器化のような悪用を外部から区別することの難しさを課題として挙げており、個々のプロンプト単位の判定ではなく、組織単位での検証と用途の申告によってこれに対応する設計だとしている。",
+      "アクセスは2区分に分かれる。「Standard Use」は創薬・研究開発・臨床開発・製造・規制対応など通常のライフサイエンス業務向けで、チーム単位で付与され年次更新となる。「High-risk Use」は悪用の可能性が相対的に高い特定プロジェクト向けに、そのプロジェクトに限って安全策を解除するもので、6ヶ月ごとの更新が必要になる。Claude Mythosについては、米政府との連携を前提に当面 High-risk Use の提供を制限するとしている。",
+      "申請組織は研究実績・セキュリティ水準・倫理的監督体制の審査を受け、想定する利用目的を申告する。Anthropicはリアルタイムでの遮断ではなく、申告された用途と実際の利用状況を30日間保持したログで事後照合する運用を取るとしており、想定する脅威モデルとしてアクセス権の乗っ取り、組織内部の人間による悪用、エージェント経由の逸脱の3つを挙げている。",
+      "提供形態はAPI・Claude Science・Claude for Enterprise・Teamプラン向けのベータで、個人向けプランや、医療情報の取り扱いに関するBAA（Business Associate Agreement）締結組織への提供、サードパーティプラットフォーム経由の利用はまだ対応していない。発表にはXaira Therapeutics・Edison Scientific・Manifold Bioの3社が導入コメントを寄せている。",
+      "Anthropicは9月10日に公表した脅威情報レポートで、研究機関所属の科学者による生物兵器研究への悪用を5件阻止したと報告したばかりである（[Anthropicの脅威情報レポート、もう一つの柱は「兵器開発への悪用」](?a=anthropic-threat-report-weapons-research-2026)）。LSVPは、悪用の摘発だけでなく、正当な研究者側のアクセスを制度として整備する側の取り組みという位置づけになる。"
+    ],
+    "tables": [
+      {
+        "title": "Life Sciences Verification Program の2区分",
+        "headers": [
+          "区分",
+          "対象業務",
+          "安全策の扱い",
+          "更新周期"
+        ],
+        "rows": [
+          [
+            "Standard Use",
+            "創薬・研究開発・臨床開発・製造・規制対応など通常業務",
+            "標準の安全策を維持",
+            "年次（チーム単位）"
+          ],
+          [
+            "High-risk Use",
+            "悪用リスクが高い特定プロジェクト",
+            "そのプロジェクトに限り安全策を解除",
+            "6ヶ月ごと（Claude Mythosは当面制限）"
+          ]
+        ],
+        "afterParagraph": 2
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing the Life Sciences Verification Program - Anthropic",
+        "url": "https://www.anthropic.com/news/life-sciences-verification-program"
+      }
+    ]
   }
 };
 
