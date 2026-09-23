@@ -21521,6 +21521,31 @@ const ARTICLES_BODY = {
         "url": "https://github.com/QwenLM"
       }
     ]
+  },
+  "un-security-council-ai-briefing-2026": {
+    "body": [
+      "【未確認情報】国連安全保障理事会は9月23日、人工知能と国際安全保障をテーマにしたハイレベル会合を開いたと複数の海外メディアが報じている。フランスのJean-Noël Barrot外相が議長を務め、OpenAIのSam Altman CEO、AnthropicのDario Amodei CEO、Hugging FaceのClément Delangue CEO、国連の独立科学者パネル（IISP-AI）共同議長を務めるYoshua Bengio氏が説明者として出席したという。",
+      "報道が伝える発言として、Amodei氏は「管理を誤れば、AIは人類全体へのリスクになりうると私は考えている」と述べたとされる。Bengio氏は「危険は現実であり、差し迫っている」と発言したと伝えられる。Altman氏は、各国がAIの能力と安全対策を測るための共通のベンチマーク策定を各国首脳に呼びかける方針だったと報じられている。",
+      "本セッションの実行環境からは、国連の公式ページ（news.un.org、press.un.org、webtv.un.org、un.org）、および複数の海外通信社サイトへの接続がいずれも拒否され、一次情報（国連公式の会議記録・プレスリリース・動画）を直接確認できていない。ここで参照している内容は、Bloomberg系・US News（AP配信）・WSLS（AP配信）など独立した複数の報道機関が伝える内容の一致に基づく。",
+      "この記事は、国際的なAI安全保障の議論が国連安保理という場に持ち込まれたという動き自体の重要性を踏まえ、一次情報への到達を諦めずに下書きとして残す。一次情報（国連公式の会議録・プレスリリース）に到達でき次第、発言の正確な引用と会議の正式な位置づけ（決議の有無など）を確認して本文を更新する。"
+    ],
+    "primarySources": [
+      {
+        "title": "AI leaders warn UN of security risks as systems grow more powerful",
+        "site": "BNN Bloomberg",
+        "url": "https://www.bnnbloomberg.ca/business/artificial-intelligence/2026/09/23/ai-leaders-warn-un-of-security-risks-as-systems-grow-more-powerful/"
+      },
+      {
+        "title": "Heads of AI Firms Tell UN Security Council That It Could Be a Risk to All Humanity",
+        "site": "US News (AP)",
+        "url": "https://www.usnews.com/news/world/articles/2026-09-23/heads-of-ai-firms-tell-un-security-council-that-it-could-be-a-risk-to-all-humanity"
+      },
+      {
+        "title": "LIVE: OpenAI and Anthropic brief Security Council amid 'real and imminent' threat posed by runaway AI",
+        "site": "UN News",
+        "url": "https://news.un.org/en/story/2026/09/1168414"
+      }
+    ]
   }
 };
 
