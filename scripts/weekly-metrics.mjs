@@ -82,8 +82,13 @@ const inRange = (a, s, e) => {
   return d >= s && d <= e;
 };
 
-const week = ARTICLES_META.filter((a) => inRange(a, start, end));
-const prev = ARTICLES_META.filter((a) => inRange(a, prevStart, prevEnd));
+// **計器は自分自身を数えない。** 週次の記事（heroScope: "week"）は「中国AI」
+// 「AI安全性」のように、計器が指摘した語をタグに持つ。これを数えると、
+// 計器を出すたびに指摘した語の件数が1ずつ増える。実際、2本目を出した時点で
+// 「AI安全性」「中国AI」が2件ずつ水増しされていた。
+const SOURCE = ARTICLES_META.filter((a) => a.heroScope !== "week");
+const week = SOURCE.filter((a) => inRange(a, start, end));
+const prev = SOURCE.filter((a) => inRange(a, prevStart, prevEnd));
 
 /** 出現数を数える */
 function tally(list, pick) {
@@ -131,7 +136,7 @@ const toolDepth = new Map(guide.TOOL_REFERENCES.map((t) => [t.id, countItems(t.r
 
 // 直近90日のニュース量を分母にする。1週間だけだと0が並んで比較にならない
 const since90 = addDays(todayJst(), -90);
-const recent = ARTICLES_META.filter((a) => publishYmd(a) >= since90);
+const recent = SOURCE.filter((a) => publishYmd(a) >= since90);
 
 const balance = Object.entries(TOOL_TAGS).map(([id, names]) => {
   const hit = (list) => list.filter((a) => (a.tags ?? []).some((t) => names.includes(t))).length;
