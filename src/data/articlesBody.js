@@ -21497,6 +21497,30 @@ const ARTICLES_BODY = {
         "url": "https://github.com/modelcontextprotocol/ext-tasks/pull/21"
       }
     ]
+  },
+  "alibaba-qwen4-apsara-unveil-2026": {
+    "body": [
+      "【未確認情報】Alibabaが9月22日、杭州で開催されたApsara Conference 2026で次世代モデル「Qwen4」を発表したと、複数の海外メディア・SNS上のAI動向アカウントが報じている。報道が一致して伝える内容は、Qwen4 Max・Qwen4 Flash・Qwen4 Plus・Qwen4 27Bの4系統が名称として公開されたこと、いずれもリリース日・価格・コンテキスト長・公開ベンチマーク数値は示されなかったこと、CEOのEddie Wu氏が今後のQwen4.5・Qwen5世代で5〜10兆パラメータ規模を目指すロードマップに言及したこと、である。",
+      "GitHubのQwenLM公式組織（github.com/QwenLM）を本セッションの実行環境から直接確認したが、9月23日時点でQwen4系統のリポジトリやモデルカードは見当たらず、これは「まだ学習中でリリースされていない」という報道内容と矛盾しない。ただし、これは公式リポジトリに存在しないことの確認にとどまり、Apsara Conferenceでの発表内容そのもの（4系統の名称、ロードマップの数値など）をAlibaba・Qwen自身の一次情報（公式サイト・公式ブログ・公式X/GitHub投稿）で直接確認できてはいない。本セッションの実行環境からは alibabacloud.com、qwen.ai、qwenlm.github.io、x.com への接続がいずれも拒否された。",
+      "この記事は、複数の独立した二次報道（Pandaily、MarkTechPostなど）とSNS上のAI動向アカウントの投稿内容が細部まで一致していることを根拠に、下書きとして残す。一次情報に到達でき次第、本文を確認・更新する。"
+    ],
+    "primarySources": [
+      {
+        "title": "Alibaba unveils Qwen 4 and a 10 trillion parameter roadmap",
+        "site": "Pasquale Pillitteri",
+        "url": "https://pasqualepillitteri.it/en/news/17552/qwen-4-alibaba-apsara-en"
+      },
+      {
+        "title": "Alibaba Puts Qwen4 Family Into Training; Roadmap Points to 5–10T Qwen4.5 and Qwen5",
+        "site": "Pandaily",
+        "url": "https://pandaily.com/alibaba-qwen4-training-roadmap-5-10t-apsara-2026"
+      },
+      {
+        "title": "QwenLM (公式GitHub組織、Qwen4未掲載であることの確認用)",
+        "site": "GitHub",
+        "url": "https://github.com/QwenLM"
+      }
+    ]
   }
 };
 
