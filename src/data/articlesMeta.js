@@ -10355,5 +10355,22 @@ export const ARTICLES_META = [
       "創薬",
       "エンタープライズ"
     ]
+  },
+  {
+    "id": "anthropic-accenture-embedded-evaluation-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】Anthropic が Accenture と「エンベデッド評価」を開始 — 評価者に社員レベルのアクセス権、5年で10億ドルを投じる独立監視の試み",
+    "excerpt": "Anthropicが9月18日、Accentureの内部組織Faculty部門と提携し、外部評価者が社員と同等のアクセス権を持って社内からモデル開発・アライメント・レッドチーム結果を評価する「エンベデッド評価」を始めると発表した。両社で5年間に少なくとも10億ドルを評価体制の構築に投じる。Anthropicは提携が非独占的であるとしつつ、評価者への長期的な資金は本来プールされた資金や政府資金から出るべきだとも述べており、評価対象企業自身が評価費用を負担する現在の構造を暫定的なものと位置づけている。",
+    "date": "2026-09-23",
+    "newsDate": "2026-09-18",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Anthropic",
+      "AI安全性",
+      "規制",
+      "エンタープライズ"
+    ]
   }
 ];

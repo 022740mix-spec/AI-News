@@ -21460,6 +21460,22 @@ const ARTICLES_BODY = {
         "url": "https://www.anthropic.com/news/life-sciences-verification-program"
       }
     ]
+  },
+  "anthropic-accenture-embedded-evaluation-2026": {
+    "body": [
+      "Anthropicが2026年9月18日、Accentureの独立組織「Faculty」部門と提携し、フロンティアAIモデルの独立評価を行う「エンベデッド評価（embedded evaluation）」を始めると発表した。",
+      "エンベデッド評価とは、外部から成果物だけを見て評価する従来型の監査とは異なり、評価者がAnthropic社員と同等レベルのアクセス権を持って社内に入り、モデル開発の過程を直接観察し、業務上の意思決定をレビューし、アライメント評価やレッドチーム結果の検証を行う形態を指す。Accentureは複数業界にまたがる企業導入の知見を安全性評価に持ち込む役割を担うとされる。",
+      "Anthropicはこの取り組みを、CEOのDario Amodeiが公表したエッセイ「We Must Pace the Frontier」で示した方針の実行と位置づけている。独立した監視の透明な仕組みを整備する一方で、モデルの安全性に対するAnthropic自身の一次的な責任は減じないという立場を明示している。",
+      "両社は5年間で少なくとも10億ドルを評価体制の構築に投じる計画だとしている。Anthropicはこの提携が非独占的であることも強調しており、METRなど非営利の評価機関とも別建ての資金枠組みで対話を続けているという。",
+      "Anthropic自身が公表文の中で述べている論点として、評価者のアクセス範囲や報告の仕組みについて業界標準はまだ存在しないこと、そして評価に必要な長期的資金は本来、特定企業ではなくプールされた資金や政府資金から出るのが望ましいという考えを示している。現時点では評価対象企業であるAnthropic自身が評価費用の主要な出し手になっており、この構造をAnthropicも暫定的なものと位置づけていることになる。",
+      "AI企業が自社モデルの安全性評価にどこまで資金と設計を主導すべきかは、英国AISIや米国CAISIのような政府系評価機関の役割とも重なる論点である。エンベデッド評価がこうした独立機関による評価を補完するのか代替するのかは、現時点で公表されている情報からは判断できない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Partnering with Accenture on embedded evaluation - Anthropic",
+        "url": "https://www.anthropic.com/news/accenture-embedded-evaluation"
+      }
+    ]
   }
 };
 

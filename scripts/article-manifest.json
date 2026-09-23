@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-23",
-  "count": 478,
+  "count": 479,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -34,6 +34,7 @@
     "anthropic-1m-context-beta-deadline-april30-2026",
     "anthropic-1m-context-beta-retirement-2026",
     "anthropic-900b-valuation-funding-overtakes-openai-2026",
+    "anthropic-accenture-embedded-evaluation-2026",
     "anthropic-accuses-alibaba-claude-distillation-fraud-2026",
     "anthropic-buffa-rust-protobuf-oss-2026",
     "anthropic-california-newsom-claude-50-off-state-agencies-2026",
