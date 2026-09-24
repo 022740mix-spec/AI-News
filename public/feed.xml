@@ -40,6 +40,14 @@
     <summary>Google DeepMind が公式orgで公開しているPythonライブラリ「ProEval」は、新しいモデルをベンチマークにかける際、全問題を解かせる代わりに統計的に選んだ一部だけを実行し、誤差±1%程度の精度でスコアを推定する。手法はガウス過程に基づく事前分布サンプリング（BQPriorSampler）で、GSM8K・MMLU・StrategyQA・Jigsaw等で検証済み。ICML 2026採択論文に基づき、PyPIパッケージは9月22日に v0.1.1 へ更新されたばかりだが、大きな技術メディアでの報道は見当たらない。</summary>
   </entry>
   <entry>
+    <title>オープンソースのオフィス基盤「Univer」がv1.0を公開 — 名乗りを「AIエージェント向けオフィスハーネス」に転換、GitHub Trending 3位</title>
+    <link rel="alternate" type="text/html" href="?a=univer-office-harness-ai-agents-2026"/>
+    <id>tag:ai-tool-news.jp,2026:univer-office-harness-ai-agents-2026</id>
+    <published>2026-09-24T15:00:00Z</published>
+    <updated>2026-09-24T15:00:00Z</updated>
+    <summary>2021年から開発されてきたオープンソースのオフィス基盤「Univer」（DreamNum開発、Apache 2.0）が9月23日にv1.0.0を公開し、リポジトリの説明を「The Office Harness for AI Agents」に変更した。スプレッドシート・ドキュメント・スライドをエージェントが構造化APIで操作し、変更はworktreeで隔離してから人間がレビューして取り込む設計。GitHub Trendingで当日3位、1,060スターを積み増した。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が Claude Opus 5.5 を公開 — 単価は20%減、ただし「同じ effort でより多く考える」と公式が明記</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-opus-5-5-release-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-opus-5-5-release-2026</id>

@@ -10502,5 +10502,20 @@ export const ARTICLES_META = [
       "ベンチマーク",
       "研究"
     ]
+  },
+  {
+    "id": "univer-office-harness-ai-agents-2026",
+    "type": "news",
+    "category": "product",
+    "title": "オープンソースのオフィス基盤「Univer」がv1.0を公開 — 名乗りを「AIエージェント向けオフィスハーネス」に転換、GitHub Trending 3位",
+    "excerpt": "2021年から開発されてきたオープンソースのオフィス基盤「Univer」（DreamNum開発、Apache 2.0）が9月23日にv1.0.0を公開し、リポジトリの説明を「The Office Harness for AI Agents」に変更した。スプレッドシート・ドキュメント・スライドをエージェントが構造化APIで操作し、変更はworktreeで隔離してから人間がレビューして取り込む設計。GitHub Trendingで当日3位、1,060スターを積み増した。",
+    "date": "2026-09-24",
+    "newsDate": "2026-09-23",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "エージェント",
+      "オープンソース"
+    ]
   }
 ];

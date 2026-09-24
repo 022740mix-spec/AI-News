@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-24",
-  "count": 486,
+  "count": 487,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -458,6 +458,7 @@
     "training-cutoff-estimation-shrivu-shankar-2026",
     "trycua-computer-use-2-2026",
     "udio-review",
+    "univer-office-harness-ai-agents-2026",
     "us-ai-regulation-federal-vs-state-preemption-2026",
     "usecase-recommendation-matrix-2026",
     "vector-db-comparison-2026",
