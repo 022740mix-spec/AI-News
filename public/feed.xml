@@ -8,6 +8,14 @@
   <updated>2026-09-24T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Claude Code のクラウドセッションが正式提供に — 既存の Pro に $100、Max に $250 の一度限りのクレジット</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-code-cloud-sessions-ga-credit-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-code-cloud-sessions-ga-credit-2026</id>
+    <published>2026-09-24T15:00:00Z</published>
+    <updated>2026-09-24T15:00:00Z</updated>
+    <summary>Anthropic が Claude Code のクラウドセッションをリサーチプレビューから正式提供に移した。PC を閉じても Claude Code が動き続ける仕組みで、既存の購読者には一度限りのクレジット（Pro $100、Max $250）が付く。受け取りは日本時間10月8日 15:59まで。公式ドキュメントによれば、普段のクラウドセッションは手元の利用と同じ上限を共有しており、クレジットはその外側に期限付きの枠を足すものである。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が Claude Opus 5.5 を公開 — 単価は20%減、ただし「同じ effort でより多く考える」と公式が明記</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-opus-5-5-release-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-opus-5-5-release-2026</id>
@@ -78,6 +86,22 @@
     <published>2026-09-23T15:00:00Z</published>
     <updated>2026-09-23T15:00:00Z</updated>
     <summary>Model Context Protocol（MCP）公式組織のリポジトリ modelcontextprotocol/ext-tasks に、公開用TypeScript SDK「@modelcontextprotocol/ext-tasks」を追加するプルリクエストがマージされた。数分かかる処理や人間の承認待ち、クライアント切断をまたぐ処理をMCPで扱うための拡張「Tasks」（SEP-2663）を、実際のアプリケーションに組み込みやすくするための実装である。</summary>
+  </entry>
+  <entry>
+    <title>週次の計器 — 9月14日〜20日は28本。「AI安全性」の記事は3週で6件から25件に増え、ガイドの言及は0行のまま</title>
+    <link rel="alternate" type="text/html" href="?a=weekly-metrics-2026-week-sep14"/>
+    <id>tag:ai-tool-news.jp,2026:weekly-metrics-2026-week-sep14</id>
+    <published>2026-09-23T15:00:00Z</published>
+    <updated>2026-09-23T15:00:00Z</updated>
+    <summary>2026年9月14日〜20日の週次データ。公開は28本（前週39本）。エージェントを束ねる話（Cursor Projects、OpenAI Symphony）と、スキルを配る器の話（Skills over MCP、DeepMind Science Skills）が並んだ。いちばん大きな数字は、ガイドの空白が広がっていることで、「AI安全性」の記事は3週前の6件から25件に増えたが、ガイドでの言及は0回のまま。3週前に同じ指摘をして何も変わっていない理由も書く。</summary>
+  </entry>
+  <entry>
+    <title>【分析】「AIっぽい文章」を直す Humanizer が5万スター — 文体で見分ける方法と、透かしで見分ける方法は別々に効く</title>
+    <link rel="alternate" type="text/html" href="?a=humanizer-ai-writing-skill-style-vs-watermark-2026"/>
+    <id>tag:ai-tool-news.jp,2026:humanizer-ai-writing-skill-style-vs-watermark-2026</id>
+    <published>2026-09-23T15:00:00Z</published>
+    <updated>2026-09-23T15:00:00Z</updated>
+    <summary>AI が書いた文章の「いかにもらしさ」を直す Agent Skill Humanizer が、GitHub で約5万スターに達している。9月6日の v3.0.0 で、Wikipedia 由来の35パターンを25に整理した。「検出をすり抜ける道具か」という問いには、見分け方を分けて答える必要がある。公開された一覧に基づく文体の判定は、同じ一覧で回避できる。 一方、Claude の出力に入る透かしはモデルの段階で付くため、Claude の上で書き直した文章には改めて付きうる。導入するなら `npx` を実行する前に SKILL.md を読むこと。</summary>
   </entry>
   <entry>
     <title>Alibaba の Qwen チームが Qwen-Image-2.1 を公開 — 視覚生成部は7Bに縮小、ライセンスは Apache 2.0 から非商用限定に転換</title>

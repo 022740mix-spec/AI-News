@@ -10388,5 +10388,67 @@ export const ARTICLES_META = [
       "エージェント",
       "オープンソース"
     ]
+  },
+  {
+    "id": "weekly-metrics-2026-week-sep14",
+    "type": "feature",
+    "category": "special",
+    "title": "週次の計器 — 9月14日〜20日は28本。「AI安全性」の記事は3週で6件から25件に増え、ガイドの言及は0行のまま",
+    "excerpt": "2026年9月14日〜20日の週次データ。公開は28本（前週39本）。エージェントを束ねる話（Cursor Projects、OpenAI Symphony）と、スキルを配る器の話（Skills over MCP、DeepMind Science Skills）が並んだ。**いちばん大きな数字は、ガイドの空白が広がっていること**で、「AI安全性」の記事は3週前の6件から25件に増えたが、ガイドでの言及は0回のまま。3週前に同じ指摘をして何も変わっていない理由も書く。",
+    "date": "2026-09-23",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "週刊まとめ",
+      "エージェント",
+      "AI安全性",
+      "中国AI",
+      "スキル"
+    ],
+    "coverImage": {
+      "src": "articles/cover-model-api.svg",
+      "alt": "週次の計器 9/14〜9/20"
+    },
+    "heroScope": "week",
+    "weekRoundupPeriod": {
+      "start": "2026-09-14",
+      "end": "2026-09-20"
+    }
+  },
+  {
+    "id": "humanizer-ai-writing-skill-style-vs-watermark-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】「AIっぽい文章」を直す Humanizer が5万スター — 文体で見分ける方法と、透かしで見分ける方法は別々に効く",
+    "excerpt": "AI が書いた文章の「いかにもらしさ」を直す Agent Skill **Humanizer** が、GitHub で約**5万スター**に達している。9月6日の v3.0.0 で、Wikipedia 由来の35パターンを**25に整理**した。「検出をすり抜ける道具か」という問いには、見分け方を分けて答える必要がある。**公開された一覧に基づく文体の判定は、同じ一覧で回避できる。** 一方、Claude の出力に入る**透かしはモデルの段階で付く**ため、Claude の上で書き直した文章には改めて付きうる。導入するなら `npx` を実行する前に SKILL.md を読むこと。",
+    "date": "2026-09-23",
+    "newsDate": "2026-09-06",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "スキル",
+      "透明性",
+      "オープンソース",
+      "Claude Code",
+      "倫理"
+    ]
+  },
+  {
+    "id": "anthropic-claude-code-cloud-sessions-ga-credit-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code のクラウドセッションが正式提供に — 既存の Pro に $100、Max に $250 の一度限りのクレジット",
+    "excerpt": "Anthropic が Claude Code の**クラウドセッション**をリサーチプレビューから正式提供に移した。PC を閉じても Claude Code が動き続ける仕組みで、既存の購読者には一度限りのクレジット（**Pro $100、Max $250**）が付く。受け取りは日本時間10月8日 15:59まで。公式ドキュメントによれば、普段のクラウドセッションは**手元の利用と同じ上限を共有**しており、クレジットはその外側に期限付きの枠を足すものである。",
+    "date": "2026-09-24",
+    "newsDate": "2026-09-24",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "エージェント",
+      "料金",
+      "クラウド"
+    ]
   }
 ];

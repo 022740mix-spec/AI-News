@@ -627,6 +627,67 @@ if (inScope("daily"))
   } catch { /* 読めなければ黙って飛ばす。心拍は補助的な検査である */ }
 }
 
+// ── 10. 同じ指摘が続いているか（全周期） ──
+//
+// **検知はあるのに、処理が無い。** これがこのリポジトリで繰り返し起きた形である。
+// 「比較表に無いモデル」は13日間、毎日同じ Issue に並び続けた。個々の指摘は
+// 正しく出ていたが、**「ずっと出ている」こと自体は誰にも見えていなかった。**
+//
+// 毎日見る Issue に同じ行があると、読む側はそれを背景として読み飛ばす。
+// そこで、指摘ごとに初めて出た日を記録し、長く続いているものを先頭に上げる。
+//
+// 指摘の同一性はタイトルの数字を伏せて判定する。「（4 件）」が「（5 件）」に
+// 変わっても同じ指摘である。記録は `--record` のときだけ書く（点検ワークフローが
+// 心拍と同じコミットで保存する）。手元や Routine で走らせても記録は動かない。
+const STREAK_FILE = join(__dirname, "maintenance-streaks.json");
+// 前回から何日空いたら「途切れた」とみなすか。周期ごとに間隔が違う
+const STREAK_GAP = { daily: 2, weekly: 8, monthly: 32 };
+// 何日続いたら先頭に上げるか
+const STREAK_ALERT = { daily: 7, weekly: 14, monthly: 31 };
+const record = process.argv.includes("--record");
+{
+  const { readFileSync, writeFileSync, existsSync } = await import("node:fs");
+  let state = {};
+  try {
+    if (existsSync(STREAK_FILE)) state = JSON.parse(readFileSync(STREAK_FILE, "utf-8"));
+  } catch { state = {}; }
+  const prev = state[scope] ?? {};
+  const next = {};
+  const dayDiff = (a, b) => Math.round((Date.parse(a) - Date.parse(b)) / 86400000);
+  const keyOf = (title) => title.replace(/\d[\d,.]*/g, "#");
+  const long = [];
+  for (const s of sections) {
+    if (s.level !== "error" && s.level !== "warn") continue;
+    const key = keyOf(s.title);
+    const p = prev[key];
+    const continuing = p && dayDiff(today, p.last) >= 0 && dayDiff(today, p.last) <= STREAK_GAP[scope];
+    const first = continuing ? p.first : today;
+    next[key] = { first, last: today };
+    const days = dayDiff(today, first) + 1;
+    if (days >= STREAK_ALERT[scope]) {
+      s.streakDays = days;
+      s.title = `${s.title}（${days} 日連続）`;
+      long.push({ title: s.title, first, days });
+    }
+  }
+  if (long.length) {
+    long.sort((a, b) => b.days - a.days);
+    sections.unshift({
+      level: "warn",
+      title: `同じ指摘が長く続いている（${long.length} 件）`,
+      note:
+        "次の指摘は、ほぼ毎回この Issue に出ていながら片付いていません。\n" +
+        "**毎回並ぶ行は、読む側にとって背景になります。** 直すか、直さないと決めて\n" +
+        "検査側の許可リストに理由付きで登録するか、どちらかで決着させてください。",
+      body: long.map((x) => `- ${x.title} — 初回 ${x.first}`).join("\n"),
+    });
+  }
+  if (record) {
+    state[scope] = next;
+    writeFileSync(STREAK_FILE, JSON.stringify(state, null, 2) + "\n");
+  }
+}
+
 // ── 出力 ──
 if (asJson) {
   console.log(JSON.stringify({ date: today, actionable, sections }, null, 2));

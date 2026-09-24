@@ -50,7 +50,7 @@ jobs:
       - name: 点検レポートを作る（日次）
         id: report
         run: |
-          node scripts/maintenance-report.mjs --scope=daily > /tmp/report.md
+          node scripts/maintenance-report.mjs --scope=daily --record > /tmp/report.md
           echo "--- レポート内容 ---"
           cat /tmp/report.md
 
@@ -58,14 +58,14 @@ jobs:
         id: report_weekly
         if: steps.scope.outputs.weekly == 'true'
         run: |
-          node scripts/maintenance-report.mjs --scope=weekly > /tmp/report-weekly.md
+          node scripts/maintenance-report.mjs --scope=weekly --record > /tmp/report-weekly.md
           cat /tmp/report-weekly.md
 
       - name: 点検レポートを作る（月次・1日）
         id: report_monthly
         if: steps.scope.outputs.monthly == 'true'
         run: |
-          node scripts/maintenance-report.mjs --scope=monthly > /tmp/report-monthly.md
+          node scripts/maintenance-report.mjs --scope=monthly --record > /tmp/report-monthly.md
           cat /tmp/report-monthly.md
 
       # 点検が動いた証跡を残す。ワークフローは自分が動かなかったことを
@@ -75,11 +75,13 @@ jobs:
         run: |
           node scripts/check-maintenance-heartbeat.mjs --write \
             --run-url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          if ! git diff --quiet scripts/maintenance-heartbeat.json 2>/dev/null; then
+          # 指摘ごとの初出日（maintenance-streaks.json）も同じコミットに載せる。
+          # 同じ指摘が何日続いているかを、次回の点検が読むため。
+          if ! git diff --quiet scripts/maintenance-heartbeat.json scripts/maintenance-streaks.json 2>/dev/null; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add scripts/maintenance-heartbeat.json
-            git commit -m "chore: 点検の心拍を更新"
+            git add scripts/maintenance-heartbeat.json scripts/maintenance-streaks.json
+            git commit -m "chore: 点検の心拍と指摘の継続日数を更新"
             git push origin HEAD:main || echo "心拍の push に失敗しました（次回に持ち越します）"
           fi
 
