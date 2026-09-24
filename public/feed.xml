@@ -32,6 +32,14 @@
     <summary>OpenAI の GitHub 公式org（openai）に、GitHub Actions のホストランナーをロックダウンする「Fence」というActionが公開されている。ジョブの最初のステップとして差し込むだけで、許可リストに無い送信接続をすべて遮断し、パスワード無しsudoとDockerアクセスも無効化する。仕様書は「侵入したCIステップに秘密情報やソースコードを外部へ持ち出させない」ことを主目的に掲げ、脅威モデル文書まで公開する徹底ぶりだが、スター数はまだ目立たず、広く報じられてはいない。</summary>
   </entry>
   <entry>
+    <title>Google DeepMind が評価コストを最大100分の1にする「ProEval」を公開 — 統計的サンプリングでベンチマーク実行数を絞る</title>
+    <link rel="alternate" type="text/html" href="?a=google-deepmind-proeval-cost-cutting-2026"/>
+    <id>tag:ai-tool-news.jp,2026:google-deepmind-proeval-cost-cutting-2026</id>
+    <published>2026-09-24T15:00:00Z</published>
+    <updated>2026-09-24T15:00:00Z</updated>
+    <summary>Google DeepMind が公式orgで公開しているPythonライブラリ「ProEval」は、新しいモデルをベンチマークにかける際、全問題を解かせる代わりに統計的に選んだ一部だけを実行し、誤差±1%程度の精度でスコアを推定する。手法はガウス過程に基づく事前分布サンプリング（BQPriorSampler）で、GSM8K・MMLU・StrategyQA・Jigsaw等で検証済み。ICML 2026採択論文に基づき、PyPIパッケージは9月22日に v0.1.1 へ更新されたばかりだが、大きな技術メディアでの報道は見当たらない。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が Claude Opus 5.5 を公開 — 単価は20%減、ただし「同じ effort でより多く考える」と公式が明記</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-opus-5-5-release-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-opus-5-5-release-2026</id>

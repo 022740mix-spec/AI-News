@@ -21887,6 +21887,25 @@ const ARTICLES_BODY = {
         "url": "https://github.com/openai/fence/blob/main/docs/threat-model.md"
       }
     ]
+  },
+  "google-deepmind-proeval-cost-cutting-2026": {
+    "body": [
+      "Google DeepMind の公式org（github.com/google-deepmind）に、「ProEval」というPythonライブラリが公開されている。READMEの説明は率直で、「GenAI評価のコストを最大100倍削減しながら、モデルの失敗パターンを能動的に発見する」ことを謳う。新しいモデルが出るたびにベンチマークの全問題を解かせ直すのではなく、統計的に選んだ一部の問題だけを実行してスコアを推定する仕組みだ。",
+      "中核にあるのは `BQPriorSampler` というサンプラーで、ガウス過程（Gaussian Process）による事前分布を使う。既存の複数モデルが同じベンチマークでどう間違えたかの履歴データを手がかりに、「どの問題を実際に解かせれば、全体の正解率を最も効率よく推定できるか」を計算し、限られた予算（サンプル数）の中で情報量の多い問題を優先的に選ぶ。README のサンプルコードでは、`budget=3` のように評価に使う件数を明示的に指定し、推定された誤り率と、実際に選ばれた問題のインデックスを返す形になっている。",
+      "検証はGSM8K・MMLU・StrategyQA・Jigsaw等の複数のベンチマークで行われており、「わずかなサンプル数で±1%程度の精度を達成する」としている。手法の元になっているのは、著者4名（Yizheng Huang、Wenjun Zeng、Aditi Kumaresan、Zi Wang）による ICML 2026 採択論文「ProEval: Proactive Failure Discovery and Efficient Performance Estimation for Generative AI Evaluation」で、GitHubのCitation欄にも同論文が明記されている。ライセンスはApache 2.0で、「これは公式のGoogle製品ではない」という注記もある。",
+      "パッケージはPyPIで配布されており、初版の v0.1.0 は4月28日、直近の v0.1.1 は9月22日に公開されたばかりである。研究再現用の予測CSVやエンベディング（約381MB）はPyPIのパッケージには含めず、GitHubリポジトリ本体にのみ置くという分割方針も取られている。既存の評価ハーネスとの統合を意図した設計になっており、`plan()` で評価すべき問題IDの一覧を受け取り、外部のエージェントや推論基盤で実際にそれらを解かせた結果を `estimate()` に渡すと誤り率が返る、という使い方ができる。",
+      "新しいモデルが週単位で登場し、各社が独自のベンチマークやリーダーボードを競い合う現状では、モデル1つを評価するのに要する推論コストそのものが無視できない負担になりつつある。ProEval のような「全問題を解かせずに統計的に推定する」手法が実用段階に入れば、大規模な計算資源を持たない開発者やチームでも、独自データセットでの評価をより低コストで回せるようになる可能性がある。もっとも、あくまで統計的推定である以上、少数の重大な失敗ケースを取りこぼすリスクとのトレードオフは残る。"
+    ],
+    "primarySources": [
+      {
+        "title": "google-deepmind/proeval — GitHub",
+        "url": "https://github.com/google-deepmind/proeval"
+      },
+      {
+        "title": "proeval · PyPI",
+        "url": "https://pypi.org/project/proeval/"
+      }
+    ]
   }
 };
 

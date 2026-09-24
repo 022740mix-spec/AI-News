@@ -10485,5 +10485,22 @@ export const ARTICLES_META = [
       "オープンソース",
       "サプライチェーン攻撃"
     ]
+  },
+  {
+    "id": "google-deepmind-proeval-cost-cutting-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Google DeepMind が評価コストを最大100分の1にする「ProEval」を公開 — 統計的サンプリングでベンチマーク実行数を絞る",
+    "excerpt": "Google DeepMind が公式orgで公開しているPythonライブラリ「ProEval」は、新しいモデルをベンチマークにかける際、全問題を解かせる代わりに統計的に選んだ一部だけを実行し、誤差±1%程度の精度でスコアを推定する。手法はガウス過程に基づく事前分布サンプリング（BQPriorSampler）で、GSM8K・MMLU・StrategyQA・Jigsaw等で検証済み。ICML 2026採択論文に基づき、PyPIパッケージは9月22日に v0.1.1 へ更新されたばかりだが、大きな技術メディアでの報道は見当たらない。",
+    "date": "2026-09-24",
+    "newsDate": "2026-09-22",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "オープンソース",
+      "ベンチマーク",
+      "研究"
+    ]
   }
 ];
