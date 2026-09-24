@@ -16,6 +16,14 @@
     <summary>Anthropic が Claude Code のクラウドセッションをリサーチプレビューから正式提供に移した。PC を閉じても Claude Code が動き続ける仕組みで、既存の購読者には一度限りのクレジット（Pro $100、Max $250）が付く。受け取りは日本時間10月8日 15:59まで。公式ドキュメントによれば、普段のクラウドセッションは手元の利用と同じ上限を共有しており、クレジットはその外側に期限付きの枠を足すものである。</summary>
   </entry>
   <entry>
+    <title>【分析】Claude が CRISPR に似た未知の酵素系「ART」を発見 — 医療への影響は未知数。論文が示した本題は「道具を与えるほど見落とした」ほうだった</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-discovers-art-crispr-like-enzyme-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-discovers-art-crispr-like-enzyme-2026</id>
+    <published>2026-09-24T15:00:00Z</published>
+    <updated>2026-09-24T15:00:00Z</updated>
+    <summary>Anthropic の新設研究チームで、Claude がバクテリオファージから未知の酵素系「ART」を見つけた。何をする系なのかは論文自身が「不明」と書いている段階で、CRISPR の年表でいえば1987年にあたる。似ているのは並び方で、系統的に近いのは CRISPR ではなくレトロンである。査読前論文を読むと、より実務的な結果が載っていた。生の配列を文脈に入れたモデルは9割以上で反復に気づいたのに、ファイルと解析ツールを与えると32%まで落ちた。 39%の試行は連続200塩基すら読んでいなかった。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が Claude Opus 5.5 を公開 — 単価は20%減、ただし「同じ effort でより多く考える」と公式が明記</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-opus-5-5-release-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-opus-5-5-release-2026</id>
