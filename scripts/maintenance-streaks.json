@@ -1,3 +1,9 @@
 {
-  "note": "maintenance-report.mjs --record が更新する。指摘ごとに初めて出た日を持つ。手で編集しない"
+  "note": "maintenance-report.mjs --record が更新する。指摘ごとに初めて出た日を持つ。手で編集しない",
+  "daily": {
+    "比較表に無いモデルが記事に出ている（# 件）": {
+      "first": "2026-09-24",
+      "last": "2026-09-24"
+    }
+  }
 }
