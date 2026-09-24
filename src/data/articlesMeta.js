@@ -10432,5 +10432,23 @@ export const ARTICLES_META = [
       "Claude Code",
       "倫理"
     ]
+  },
+  {
+    "id": "anthropic-claude-code-cloud-sessions-ga-credit-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code のクラウドセッションが正式提供に — 既存の Pro に $100、Max に $250 の一度限りのクレジット",
+    "excerpt": "Anthropic が Claude Code の**クラウドセッション**をリサーチプレビューから正式提供に移した。PC を閉じても Claude Code が動き続ける仕組みで、既存の購読者には一度限りのクレジット（**Pro $100、Max $250**）が付く。受け取りは日本時間10月8日 15:59まで。公式ドキュメントによれば、普段のクラウドセッションは**手元の利用と同じ上限を共有**しており、クレジットはその外側に期限付きの枠を足すものである。",
+    "date": "2026-09-24",
+    "newsDate": "2026-09-24",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "エージェント",
+      "料金",
+      "クラウド"
+    ]
   }
 ];
