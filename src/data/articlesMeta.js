@@ -10468,5 +10468,22 @@ export const ARTICLES_META = [
       "マルチエージェント",
       "医療"
     ]
+  },
+  {
+    "id": "openai-fence-github-actions-egress-lockdown-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI が公式orgで「Fence」を静かに公開 — CIランナーの通信を封じるエグレスフィルタリング",
+    "excerpt": "OpenAI の GitHub 公式org（openai）に、GitHub Actions のホストランナーをロックダウンする「Fence」というActionが公開されている。ジョブの最初のステップとして差し込むだけで、許可リストに無い送信接続をすべて遮断し、パスワード無しsudoとDockerアクセスも無効化する。仕様書は「侵入したCIステップに秘密情報やソースコードを外部へ持ち出させない」ことを主目的に掲げ、脅威モデル文書まで公開する徹底ぶりだが、スター数はまだ目立たず、広く報じられてはいない。",
+    "date": "2026-09-24",
+    "newsDate": "2026-09-24",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "セキュリティ",
+      "オープンソース",
+      "サプライチェーン攻撃"
+    ]
   }
 ];

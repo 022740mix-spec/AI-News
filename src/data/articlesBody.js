@@ -21864,6 +21864,29 @@ const ARTICLES_BODY = {
         "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapies-treat-patients-sickle-cell-disease"
       }
     ]
+  },
+  "openai-fence-github-actions-egress-lockdown-2026": {
+    "body": [
+      "OpenAI の GitHub 公式org（github.com/openai）に、「Fence」という名前の GitHub Action が公開されている。README の説明は「A fence keeps things out, but also in.」（塀は外からの侵入を防ぐと同時に、中のものを閉じ込める）というシンプルな一文で始まり、実体は GitHub Actions のホストランナー（ubuntu-24.04 / ubuntu-latest の x64）を対象にした、エグレスフィルタリングとランナーロックダウンのツールである。",
+      "使い方は、ワークフローの最初のステップとして差し込むだけでよい。デフォルトでは、許可リストに無い送信接続をすべてブロックし、パスワード無しの sudo を無効化し、Docker・コンテナへのアクセスも遮断する。ネットワーク活動はジョブサマリーとログに記録される。許可したい通信先はホスト名・ポート・プロトコル（TCP/UDP）・IPアドレス・CIDR範囲で個別に指定でき、最大64エントリまで登録できる。いきなり block モードで運用するとワークフローが壊れるため、まず audit モード（実際には遮断せず、遮断対象になる通信を可視化するだけ）で許可リストを固めてから block に切り替える運用が想定されている。",
+      "何のためのツールかは、リポジトリが公開している脅威モデル文書（threat-model.md）に率直に書かれている。ジョブの後半で動く「信頼できないステップ」——チェックアウトしたコードのビルドスクリプトや、サードパーティの Action、依存パッケージの postinstall フックなど——が、認証情報やソースコードを外部に送信することを防ぐのが主目的だ。文書は「Fence は送信ネットワークアクセスを制限するが、許可済みの GitHub サービスやユーザーが承認した宛先へのデータ送信までは止められない」と、できないことも明記している。",
+      "設計面の踏み込みも大きい。仕様書（v0.md）は Fence を「ソースコードを監査可能な小さな Rust エージェント」と位置づけ、`main` ブランチにはソースコードのみを置き、実際に配布される実行バイナリは署名付きの別コミットとしてリリース時に生成する運用にしている。ネットワーク遮断は Linux の `nftables` を使い、ロックダウンの前後で意図したポリシーと実際に適用されたルールのハッシュを突き合わせて検証する。仕様書の最終レビュー日は2026年7月15日付になっており、少なくとも数ヶ月は開発が続いていることになる。",
+      "この種の「公式orgで静かに公開される」ツールは、企業名での検索にも GitHub Trending にも Hacker News にも引っかかりにくい。実際、Fence についても大きな技術メディアの報道は見当たらず、本稿の執筆時点でスター数は目立って伸びていない。だが中身は、CI 上で動く AI コーディングエージェントや自動化パイプラインが、悪意ある依存パッケージや汚染された Pull Request 経由で秘密情報を持ち出されるリスクへの対策そのものであり、開発者にとっての実用性は高い。README にも「still in early, and active development」とあり、対応環境も Ubuntu の2種類の GitHub ホストランナーに限られるなど、現時点ではまだ発展途上のツールである。"
+    ],
+    "primarySources": [
+      {
+        "title": "openai/fence — GitHub",
+        "url": "https://github.com/openai/fence"
+      },
+      {
+        "title": "Fence v0 Specification (docs/v0.md)",
+        "url": "https://github.com/openai/fence/blob/main/docs/v0.md"
+      },
+      {
+        "title": "Fence v0 Threat Model (docs/threat-model.md)",
+        "url": "https://github.com/openai/fence/blob/main/docs/threat-model.md"
+      }
+    ]
   }
 };
 
