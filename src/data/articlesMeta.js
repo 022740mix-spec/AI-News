@@ -10517,5 +10517,22 @@ export const ARTICLES_META = [
       "エージェント",
       "オープンソース"
     ]
+  },
+  {
+    "id": "anthropic-claude-refusal-billing-expansion-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude API、出力前拒否のうち「bio」「frontier_llm」「reasoning_extraction」の3カテゴリを課金対象に — 誤検知が少ない領域に限定して適用",
+    "excerpt": "Anthropic は2026年9月24日、Claude API のセーフティ分類器が出力前に拒否したリクエストのうち、`stop_details.category` が `\"bio\"`・`\"frontier_llm\"`・`\"reasoning_extraction\"` のいずれかである場合を新たに課金対象にした。対象は「誤検知の発生率が低いと計測されている」3カテゴリに限定され、`\"cyber\"`・`\"general_harms\"`・カテゴリ未分類の拒否は引き続き無料のままである。出力途中で止まる「ミッドストリーム拒否」は従来どおり課金対象。Claude API・Amazon Bedrock・Google Cloud・Microsoft Foundry など全プラットフォームに適用される。",
+    "date": "2026-09-25",
+    "newsDate": "2026-09-24",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude API",
+      "料金",
+      "AI安全性"
+    ]
   }
 ];

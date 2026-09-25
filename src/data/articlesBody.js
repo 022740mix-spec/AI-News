@@ -21970,6 +21970,25 @@ const ARTICLES_BODY = {
         "url": "https://github.com/dream-num/univer/releases"
       }
     ]
+  },
+  "anthropic-claude-refusal-billing-expansion-2026": {
+    "body": [
+      "Anthropic は Claude API のドキュメント「Refusals and fallback」を更新し、2026年9月24日付けでセーフティ分類器による拒否（refusal）の課金ルールを変更した。Claude Fable 5.1・Fable 5・Opus 5.5・Opus 5 はリクエストの内容によって応答をエラーではなく `stop_reason: \"refusal\"` として返すセーフティ分類器を備えており、`stop_details.category` にどの政策領域が引っかかったかが記録される。今回の変更は、この拒否が**出力を一切生成する前に発生した場合**の課金条件に関するものである。",
+      "公式ドキュメントが定義する拒否カテゴリは5種類で、それぞれ「出力前に課金されるか」が明記されている。`\"cyber\"`（サイバー攻撃を助長しうる内容。無害なセキュリティ研究も該当しうる）と `\"general_harms\"`（他の4分類に当てはまらない利用ポリシー違反）は引き続き無料。これに対し `\"bio\"`（生物学的危害。無害なライフサイエンス研究も該当しうる）、`\"frontier_llm\"`（競合AIモデルの開発支援。Anthropicの商用利用規約で制限されており、無害な機械学習研究も該当しうる）、`\"reasoning_extraction\"`（モデルの内部推論をそのまま応答テキストに再現させようとする要求）の3カテゴリは、出力前の拒否であっても実行したモデルの通常レートで課金されるようになった。カテゴリが `null`（政策領域に紐づかない拒否）の場合は従来どおり無料である。",
+      "Anthropic はこの変更の理由を「Anthropicのセーフガードを大規模に回避しようとする試みを妨げるため」と説明し、対象を「2026年9月時点で誤検知の発生率が低いと計測されている」3カテゴリに限定したとしている。ただし同じドキュメントは `\"bio\"` と `\"frontier_llm\"` のカテゴリ説明で「無害な研究も該当しうる」と明記しており、誤検知率が低いことは「無害な利用が拒否されうる」こと自体を否定していない。ライフサイエンスや機械学習の研究目的で送ったリクエストが分類器に引っかかって拒否された場合、内容が無害であっても今回から課金対象になりうる点は、該当分野を扱う開発者にとって実務上の注意点になる。なお、出力の途中で止まる「ミッドストリーム拒否」は今回の変更以前から課金対象であり、変わっていない。",
+      "課金ルールは Claude API・Amazon Bedrock・Claude Platform on AWS・Google Cloud・Microsoft Foundry の全プラットフォームに一律で適用される。ドキュメントは「課金対象カテゴリは、Anthropicがセーフガードの誤検知率を継続的に計測・改善する中で今後も変わりうる」とも付記しており、対象範囲は固定されたものではない。サーバー側フォールバック（`fallbacks: \"default\"` で拒否時に別モデルへ自動リトライする機能）を使っている場合、リトライのきっかけになった拒否自体も、それがミッドストリームまたは課金対象カテゴリであればフォールバック先のリクエストとは別に課金される。",
+      "**確認状況**: Anthropic の公式ドキュメント（`platform.claude.com`）の該当ページに本稿執筆時点で直接到達し、カテゴリの定義・課金条件・適用日・対応プラットフォームの記述はすべてそこから直接確認した。Anthropic の企業サイト（`anthropic.com`）は到達できたがニュースルーム上に本件を扱うブログ記事は確認できておらず、本稿はAPIドキュメントの記述のみを一次ソースとしている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Docs — Refusals and fallback (How refusals are billed)",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback#how-refusals-are-billed"
+      },
+      {
+        "title": "Claude Docs — API release notes (September 24, 2026)",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      }
+    ]
   }
 };
 
