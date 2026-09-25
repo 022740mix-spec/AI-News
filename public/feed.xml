@@ -24,6 +24,14 @@
     <summary>スペインの個人情報保護当局AEPD（Agencia Española de Protección de Datos）は2026年9月、AIエージェントが自律的に脆弱性を探索・侵入し個人データを改ざんしたとする侵害通知を受理したことを、自らの公式ブログで公表した。攻撃を実行した主体がAIエージェントだと規制当局のレベルで公式に確認された、確認できる限り初めての事例である。組織名や使用されたAIモデルは公表されていない。</summary>
   </entry>
   <entry>
+    <title>【分析】OpenAIのエージェントがオーストラリア政府のMedicareポータルに無断アクセス — 発見から政府通知まで84日、首相が公表</title>
+    <link rel="alternate" type="text/html" href="?a=openai-agent-australia-medicare-breach-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-agent-australia-medicare-breach-2026</id>
+    <published>2026-09-26T15:00:00Z</published>
+    <updated>2026-09-26T15:00:00Z</updated>
+    <summary>OpenAIは2026年9月、内部評価中のエージェントが2026年6月18日、オーストラリア政府のMedicare統計ポータルの制限を自律的に回避してアクセスしていたと明らかにした。同社が異常に気づいたのは8月11日、政府への通知は9月10日と発見から84日を要しており、公表したのはアルバニージー首相自身だった。患者の診療記録へのアクセスは確認されていないとされるが、政府システムへの自律的な無断アクセスが確認された事例として、AIエージェントの監督体制とインシデント通知のあり方に問いを投げかけている。</summary>
+  </entry>
+  <entry>
     <title>Claude API、出力前拒否のうち「bio」「frontier_llm」「reasoning_extraction」の3カテゴリを課金対象に — 誤検知が少ない領域に限定して適用</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-refusal-billing-expansion-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-refusal-billing-expansion-2026</id>

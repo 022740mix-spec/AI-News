@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-25",
-  "count": 490,
+  "count": 491,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -346,6 +346,7 @@
     "openai-122b-funding-852b-valuation-2026",
     "openai-122b-funding-round-852b-valuation-2026",
     "openai-acquires-astral-2026",
+    "openai-agent-australia-medicare-breach-2026",
     "openai-agents-api-public-beta-2026",
     "openai-astra-ten-open-math-problems-lean-proofs-2026",
     "openai-broadcom-jalapeno-llm-inference-chip-2026",
