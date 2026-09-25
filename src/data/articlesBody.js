@@ -21989,6 +21989,29 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/release-notes/overview"
       }
     ]
+  },
+  "papercut-ai-agent-swarm-breach-2026": {
+    "body": [
+      "脅威インテリジェンス企業GreyNoiseは2026年9月11日、印刷管理ソフトPaperCut NG/MFの2件の脆弱性（認証バイパスのCVE-2026-81578、安全でないリフレクションによるリモートコード実行のCVE-2026-82078）を突く攻撃キャンペーンについての調査結果を自社ブログで公表した。攻撃者は8月31日ごろからこの2件の脆弱性に狙いを定め、パッチを解析してローカルの検証環境でコード実行経路を再現し、Go言語製のマルチスレッドスキャナを自作したうえで、実際の攻撃をリアルタイムのエラーに応じて自律的に調整していたという。",
+      "報告された規模は、**48ヶ国・395組織にまたがる440台超のPaperCutサーバー**が侵害されたというもので、最初の26秒で11台が、一部のケースでは30秒に満たない時間で侵害が完了したとされる。被害は教育機関に集中しており204件に上り、米国のある高校では初期アクセスからドメイン管理者権限の掌握までわずか7分だったという。攻撃者がロシア語話者とみられる点や、侵入後の意図（ランサムウェアグループへのアクセス販売か、直接の恐喝か）は未確定と報じられている。",
+      "この事案で注目されるのは、**エクスプロイトの開発は人間が担い、実際の大量侵害の実行はAIエージェントに委ねる**という分業の構図である。エージェントに脆弱性の検証コードとスキャン基盤を渡せば、標的の探索・侵入・後処理までを自律的に反復させられるという想定は、本サイトがこれまで報じてきた「開発者が使うエージェントの権限自体が攻撃面になる」事案（[→ GitSpawn](?a=gitspawn-ai-coding-agent-git-config-rce-2026)など、エージェントが利用者を保護する立場からリスクにさらされるケース）とは逆に、**エージェントが攻撃側のツールとして能動的に使われるケース**にあたる。防御側にとっても、パッチ適用までの猶予時間そのものが以前より短くなっていることを意味する。",
+      "**確認状況**: 本稿の調査環境からはGreyNoise公式サイトおよび報道各社（The Hacker News・BleepingComputer・Help Net Security・TechRepublic・CyberSecurityNews等）のいずれにも、ネットワーク制限により本文を直接フェッチすることはできなかった。検索エンジンの索引上でGreyNoise自身のブログ記事URL（一次資料）の存在は確認できたが、複数の専門メディアが伝える数字（440台・395組織・48ヶ国・教育機関204件・CVE番号）は、いずれも同じGreyNoiseの調査結果を報じたものであり、**根はGreyNoise自身の発表1本**である。報道各社が独自に被害組織へ取材するなどして裏取りした形跡は確認できていない。数字自体はGreyNoiseという専門のセキュリティ企業の一次資料に基づくため掲載するが、**独立した第三者による検証は確認できていない**。",
+      "根拠: 攻撃規模・手口（440台超・395組織・AIエージェントによる自動化） — 一次資料 1（GreyNoise公式ブログ、検索索引で存在確認） / 独立観測 0 / 派生・転載 4（The Hacker News・BleepingComputer・Help Net Security・TechRepublicがいずれもGreyNoiseの発表を報道） / 不明 0"
+    ],
+    "primarySources": [
+      {
+        "title": "Agents Gone Wild: An AI-Orchestrated Global Campaign Against PaperCut NG/MF（GreyNoise公式ブログ、本稿では検索索引で存在確認、直接フェッチは不可）",
+        "url": "https://www.greynoise.io/blog/ai-orchestrated-campaign-against-papercut-ng-mf"
+      },
+      {
+        "title": "PaperCut Attacker Uses Hundreds of AI Agents to Compromise 440 Servers（TechRepublic）",
+        "url": "https://www.techrepublic.com/article/news-papercut-ai-agents-compromise-440-servers/"
+      },
+      {
+        "title": "PaperCut Attacker Uses Hundreds of AI Agents to Compromise 440+ Instances（The Hacker News）",
+        "url": "https://thehackernews.com/2026/09/papercut-attacker-uses-hundreds-of-ai.html"
+      }
+    ]
   }
 };
 

@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-25",
-  "count": 488,
+  "count": 489,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -406,6 +406,7 @@
     "overview-2026-week-may11",
     "overview-2026-week-may18",
     "overview-2026-week-may25",
+    "papercut-ai-agent-swarm-breach-2026",
     "pearai",
     "pentagon-ai-targeting-human-oversight-concerns-2026",
     "perplexity-bumblebee-supply-chain-scanner-2026",
