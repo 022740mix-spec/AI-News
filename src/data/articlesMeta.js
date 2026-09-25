@@ -10551,5 +10551,23 @@ export const ARTICLES_META = [
       "料金",
       "モデル"
     ]
+  },
+  {
+    "id": "google-openai-anthropic-frontier-ai-standards-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【未確認情報・分析】Google・OpenAI・Anthropic が業界自主規制団体「フロンティアAI標準機関」を準備中と報道 — 政府監督なしの第三者評価の枠組みを模索",
+    "excerpt": "複数の海外メディアの報道によれば、Google・OpenAI・Anthropic の3社は、政府の監督を伴わない業界自主規制団体（仮称「Frontier AI Standards Agency」）の設立に向けて協議を進めており、年内または2027年早期の発足を目指しているという。トップに元ホワイトハウスAI政策顧問の Sriram Krishnan 氏を迎える交渉が伝えられ、FINRA（米金融業規制機構）を参考にした第三者評価・監査の枠組みが検討されているとされる。背景には Anthropic CEO Dario Amodei 氏が9月12日に公表したとされるエッセイ「We Must Pace the Frontier」があるとの報道もある。本稿の調査環境からは3社の公式発表・報道各社に直接到達できておらず、未確認情報として掲載する。",
+    "date": "2026-09-25",
+    "newsDate": "2026-09-21",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "AI安全性",
+      "規制",
+      "Anthropic",
+      "OpenAI",
+      "Google"
+    ]
   }
 ];

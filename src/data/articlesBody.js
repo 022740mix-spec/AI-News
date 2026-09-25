@@ -22008,6 +22008,26 @@ const ARTICLES_BODY = {
         "url": "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/"
       }
     ]
+  },
+  "google-openai-anthropic-frontier-ai-standards-2026": {
+    "body": [
+      "**本記事は一次資料に到達できておらず、複数の報道の一致にもとづく未確認情報として扱う。** 通常は一次ソースを確認できた記事のみを公開する方針だが、フロンティアAIの安全性ガバナンスという社会的インパクトの大きいテーマであり、業界内の動きとして記録する価値があると判断し、未確認情報である旨を明記した上で掲載する。一次資料に到達でき次第、内容を訂正・補強する。",
+      "複数の海外メディアの報道によれば、Google・OpenAI・Anthropic の3社は、政府の監督を伴わない業界自主規制団体の設立に向けて協議を進めているという。仮称は「Frontier AI Standards Agency」で、米国の証券業界における自主規制機関 FINRA（Financial Industry Regulatory Authority）をモデルにしているとされる。報道では、共有の技術評価、リリース前監査、独立した試験の枠組み、標準化された安全プロトコルといった柱が検討されているとされ、年内または2027年早期の発足が見込まれているという。",
+      "トップ人事としては、元ホワイトハウスAI政策顧問（2025年1月〜2026年6月、第2次トランプ政権下で在任したとされる）の Sriram Krishnan 氏に打診しているとの報道がある。同氏はかつて「AIのためのFDAは作るべきではない」と、AI規制のための一元的な政府機関の設置に反対する立場を取っていたとも報じられており、事実であれば政府主導ではなく業界主導の枠組みを志向する人選という見方ができる。OpenAI の Chief Global Affairs Officer である Chris Lehane 氏が9月15日のワシントンでのブリーフィングで、3社が数週間にわたり安全プロトコルについて協議してきたことを認めたとの報道もある。",
+      "この動きの背景として報じられているのが、Anthropic CEO の Dario Amodei 氏が2026年9月12日に公表したとされるエッセイ「We Must Pace the Frontier（フロンティアのペースを落とさなければならない）」である。報道によれば、同エッセイは「AIモデルの能力向上のペースを意図的に落とすべきだ」と主張し、(1) 第三者評価者に社員レベルの常時アクセス権を与える（Anthropicが単独でコミットするとされる段階）、(2) 民主主義国のラボ間で共通の安全基準を定める、(3) 権威主義国も含めた国際的な協調、という3段階のプランを提示しているという。OpenAIのSam Altman氏が「Darioの言う通り、フロンティアのペースを落とす必要があるという点に同意する」と反応したとの報道もある。この文脈は、本サイトが既に報じた[Anthropic と Accenture による「エンベデッド評価」の開始](?a=anthropic-accenture-embedded-evaluation-2026)（2026年9月18日）とも時系列上つながっている。",
+      "事実であれば、主要3社が足並みを揃えて政府に先んじた自主規制の枠組みを作ろうとしている動きであり、規制当局によるトップダウンの規制とは異なる経路でのガバナンス形成として注目される。一方で、自主規制団体が実効性を持つかどうか、競合3社の利害調整がどこまで機能するかは未知数であり、報道の時点では発足前の協議段階にとどまる。",
+      "**確認状況**: 本稿の調査環境からは Anthropic・OpenAI・Google の公式サイト（一部ページ）、darioamodei.com、および報道各社（CNBC・BankInfoSecurity等）のいずれにも、ネットワーク制限により直接到達できなかった。上記の内容は WebSearch で得られた検索結果の要約にもとづいており、独立した複数の情報源が同じ骨子（Frontier AI Standards Agency という仮称、Sriram Krishnan氏への打診、FINRAをモデルにした構想、年内〜2027年早期の発足目標）を伝えている点は参考にしているが、**本稿の執筆者自身がいずれの記事本文も直接読めていない。** 団体名・人事・発足時期の詳細は、一次資料（各社の公式発表）での裏取りが済むまで確定情報として扱わないでほしい。"
+    ],
+    "primarySources": [
+      {
+        "title": "Google, OpenAI, Anthropic Plan Frontier AI Standards Body（BankInfoSecurity、二次情報。本稿では直接到達できず）",
+        "url": "https://www.bankinfosecurity.com/google-openai-anthropic-plan-frontier-ai-standards-body-a-32926"
+      },
+      {
+        "title": "We Must Pace the Frontier（Dario Amodei氏個人サイト、二次報道からの言及。本稿では直接到達できず）",
+        "url": "https://darioamodei.com/post/we-must-pace-the-frontier"
+      }
+    ]
   }
 };
 

@@ -24,6 +24,14 @@
     <summary>複数の海外メディアの報道によれば、OpenAI は2026年9月22日、GPT-6 Astra の技術を継承した廉価モデル「GPT-6 Sol」「GPT-6 Luna」を ChatGPT・Codex・APIで公開した。報道されている価格は Sol が入力$2/出力$10（旧 GPT-5.6 Sol比で半額）、Luna が入力$0.10/出力$0.50。OSWorld 2.0 で Claude Opus 5 に匹敵するスコアを約8割低いコストで達成したとも報じられている。本稿の調査環境からは OpenAI 公式サイト・GitHub Changelog・大手テック系メディアのいずれにも直接到達できておらず、未確認情報として掲載する。</summary>
   </entry>
   <entry>
+    <title>【未確認情報・分析】Google・OpenAI・Anthropic が業界自主規制団体「フロンティアAI標準機関」を準備中と報道 — 政府監督なしの第三者評価の枠組みを模索</title>
+    <link rel="alternate" type="text/html" href="?a=google-openai-anthropic-frontier-ai-standards-2026"/>
+    <id>tag:ai-tool-news.jp,2026:google-openai-anthropic-frontier-ai-standards-2026</id>
+    <published>2026-09-25T15:00:00Z</published>
+    <updated>2026-09-25T15:00:00Z</updated>
+    <summary>複数の海外メディアの報道によれば、Google・OpenAI・Anthropic の3社は、政府の監督を伴わない業界自主規制団体（仮称「Frontier AI Standards Agency」）の設立に向けて協議を進めており、年内または2027年早期の発足を目指しているという。トップに元ホワイトハウスAI政策顧問の Sriram Krishnan 氏を迎える交渉が伝えられ、FINRA（米金融業規制機構）を参考にした第三者評価・監査の枠組みが検討されているとされる。背景には Anthropic CEO Dario Amodei 氏が9月12日に公表したとされるエッセイ「We Must Pace the Frontier」があるとの報道もある。本稿の調査環境からは3社の公式発表・報道各社に直接到達できておらず、未確認情報として掲載する。</summary>
+  </entry>
+  <entry>
     <title>Claude Code のクラウドセッションが正式提供に — 既存の Pro に $100、Max に $250 の一度限りのクレジット</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-code-cloud-sessions-ga-credit-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-code-cloud-sessions-ga-credit-2026</id>
