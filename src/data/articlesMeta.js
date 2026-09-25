@@ -10534,5 +10534,40 @@ export const ARTICLES_META = [
       "料金",
       "AI安全性"
     ]
+  },
+  {
+    "id": "openai-gpt-6-sol-luna-release-2026",
+    "type": "news",
+    "category": "model",
+    "title": "【未確認情報】OpenAI が GPT-6 Sol / Luna を公開 — API価格を旧世代比で半減、Opus 5 級の性能を8割低コストで、と報道",
+    "excerpt": "複数の海外メディアの報道によれば、OpenAI は2026年9月22日、GPT-6 Astra の技術を継承した廉価モデル「GPT-6 Sol」「GPT-6 Luna」を ChatGPT・Codex・APIで公開した。報道されている価格は Sol が入力$2/出力$10（旧 GPT-5.6 Sol比で半額）、Luna が入力$0.10/出力$0.50。OSWorld 2.0 で Claude Opus 5 に匹敵するスコアを約8割低いコストで達成したとも報じられている。本稿の調査環境からは OpenAI 公式サイト・GitHub Changelog・大手テック系メディアのいずれにも直接到達できておらず、未確認情報として掲載する。",
+    "date": "2026-09-25",
+    "newsDate": "2026-09-22",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "GPT",
+      "料金",
+      "モデル"
+    ]
+  },
+  {
+    "id": "google-openai-anthropic-frontier-ai-standards-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【未確認情報・分析】Google・OpenAI・Anthropic が業界自主規制団体「フロンティアAI標準機関」を準備中と報道 — 政府監督なしの第三者評価の枠組みを模索",
+    "excerpt": "複数の海外メディアの報道によれば、Google・OpenAI・Anthropic の3社は、政府の監督を伴わない業界自主規制団体（仮称「Frontier AI Standards Agency」）の設立に向けて協議を進めており、年内または2027年早期の発足を目指しているという。トップに元ホワイトハウスAI政策顧問の Sriram Krishnan 氏を迎える交渉が伝えられ、FINRA（米金融業規制機構）を参考にした第三者評価・監査の枠組みが検討されているとされる。背景には Anthropic CEO Dario Amodei 氏が9月12日に公表したとされるエッセイ「We Must Pace the Frontier」があるとの報道もある。本稿の調査環境からは3社の公式発表・報道各社に直接到達できておらず、未確認情報として掲載する。",
+    "date": "2026-09-25",
+    "newsDate": "2026-09-21",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "AI安全性",
+      "規制",
+      "Anthropic",
+      "OpenAI",
+      "Google"
+    ]
   }
 ];
