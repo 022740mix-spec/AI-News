@@ -22012,6 +22012,29 @@ const ARTICLES_BODY = {
         "url": "https://thehackernews.com/2026/09/papercut-attacker-uses-hundreds-of-ai.html"
       }
     ]
+  },
+  "spain-aepd-agentic-ai-breach-2026": {
+    "body": [
+      "スペインの個人情報保護当局AEPD（Agencia Española de Protección de Datos）は、ある組織から2026年9月14日に受理した個人データ侵害通知について、自らの公式ブログで公表した。通知の内容は、**AIエージェントが汎用的なファイルの脆弱性を探索し、不正にログインしたうえで、さらにアプリケーション内の脆弱性を自律的に探索し、その結果として個人データを改ざんし請求書等にアクセスした**というものである。AEPDは、通知の内容は被害組織からの申告に基づくものであり、今後の分析対象であるとも付言している。",
+      "AEPDはあわせて、**使用されたAIモデルが特定の製品であったからといって、そのモデルや提供元のインフラ自体が侵害されたことを意味せず、当該ツールが悪意ある用途向けに設計されていたことを意味するものでもない**、と明記している。攻撃の主体はあくまでAIエージェントを悪用した攻撃者であって、AIモデルの提供企業側の落ち度を示すものではないという整理である。",
+      "GDPR（EU一般データ保護規則）は、個人データの侵害が発生した場合、規制当局への通知を義務付けている。**「攻撃を実行した主体がAIエージェントである」と規制当局のレベルで公式に確認された事例は、確認できる限りこれが初めて**とみられる。AIエージェントに業務上の権限を与える組織にとっては、インシデントが人間の継続的な関与なしに複数の攻撃フェーズを自律的に進みうることを、規制当局自身が公式に認めた先例になる。",
+      "**確認状況**: 本稿の調査環境からはAEPD公式サイト（aepd.es）、および報道各社（SecurityWeek・BleepingComputer等）のいずれにも、ネットワーク制限により本文を直接フェッチすることはできなかった。検索エンジンの索引上で、AEPD公式ブログの当該記事タイトル「Primera notificación de una brecha de datos personales causada por un ataque ejecutado mediante un agente de IA」を確認しており、これを一次資料として扱う。被害組織名、使用されたAIモデルの名称、具体的な被害範囲はAEPD自身が公表しておらず、本稿でも「不明」として扱う。",
+      "根拠: AIエージェントによる侵害通知をAEPDが受理した事実 — 一次資料 1（AEPD公式ブログ、検索索引でタイトル一致を確認、本文の直接フェッチは不可） / 独立観測 0 / 派生・転載 複数（SecurityWeek・BleepingComputer等がAEPDの発表を報道） / 不明: 被害組織名・使用AIモデル名・被害範囲の詳細"
+    ],
+    "primarySources": [
+      {
+        "title": "Primera notificación de una brecha de datos personales causada por un ataque ejecutado mediante un agente de IA（AEPD公式ブログ、本稿では検索索引でタイトル一致を確認、直接フェッチは不可）",
+        "url": "https://www.aepd.es/prensa-y-comunicacion/blog/primera-notiviacion-brecha-datos-personales-causada-por-ataque-ejecutado-mediante-agente-ia"
+      },
+      {
+        "title": "First Agentic AI Data Breach Reported to Spanish Regulator（SecurityWeek）",
+        "url": "https://www.securityweek.com/first-agentic-ai-data-breach-reported-to-spanish-regulator/"
+      },
+      {
+        "title": "Spain's data agency gets first report of AI-powered data breach（BleepingComputer）",
+        "url": "https://www.bleepingcomputer.com/news/security/spains-data-agency-gets-first-report-of-ai-powered-data-breach/"
+      }
+    ]
   }
 };
 

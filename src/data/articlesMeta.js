@@ -10550,5 +10550,22 @@ export const ARTICLES_META = [
       "エージェント",
       "AI安全性"
     ]
+  },
+  {
+    "id": "spain-aepd-agentic-ai-breach-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "スペイン当局AEPDが「AIエージェントによる初の侵害通知」を公式ブログで公表 — 自律的に脆弱性を探索し個人データを改ざん",
+    "excerpt": "スペインの個人情報保護当局AEPD（Agencia Española de Protección de Datos）は2026年9月、AIエージェントが自律的に脆弱性を探索・侵入し個人データを改ざんしたとする侵害通知を受理したことを、自らの公式ブログで公表した。攻撃を実行した主体がAIエージェントだと規制当局のレベルで公式に確認された、確認できる限り初めての事例である。組織名や使用されたAIモデルは公表されていない。",
+    "date": "2026-09-26",
+    "newsDate": "2026-09-14",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "規制",
+      "セキュリティ",
+      "AI安全性",
+      "エージェント"
+    ]
   }
 ];

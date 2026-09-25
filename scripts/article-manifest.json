@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-25",
-  "count": 489,
+  "count": 490,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -441,6 +441,7 @@
     "soup-layer-streaming-finetune-2026",
     "spacex-closes-cursor-anysphere-acquisition-2026",
     "spacex-cursor-60b-acquisition-anysphere-2026",
+    "spain-aepd-agentic-ai-breach-2026",
     "stable-audio-review",
     "stanford-hai-ai-index-2026-china-transparency-2026",
     "strix-open-source-ai-pentest-agent-2026",
