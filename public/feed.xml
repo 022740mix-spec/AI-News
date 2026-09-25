@@ -16,6 +16,14 @@
     <summary>Anthropic は2026年9月24日、Claude API のセーフティ分類器が出力前に拒否したリクエストのうち、`stop_details.category` が `&quot;bio&quot;`・`&quot;frontier_llm&quot;`・`&quot;reasoning_extraction&quot;` のいずれかである場合を新たに課金対象にした。対象は「誤検知の発生率が低いと計測されている」3カテゴリに限定され、`&quot;cyber&quot;`・`&quot;general_harms&quot;`・カテゴリ未分類の拒否は引き続き無料のままである。出力途中で止まる「ミッドストリーム拒否」は従来どおり課金対象。Claude API・Amazon Bedrock・Google Cloud・Microsoft Foundry など全プラットフォームに適用される。</summary>
   </entry>
   <entry>
+    <title>【未確認情報】OpenAI が GPT-6 Sol / Luna を公開 — API価格を旧世代比で半減、Opus 5 級の性能を8割低コストで、と報道</title>
+    <link rel="alternate" type="text/html" href="?a=openai-gpt-6-sol-luna-release-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-gpt-6-sol-luna-release-2026</id>
+    <published>2026-09-25T15:00:00Z</published>
+    <updated>2026-09-25T15:00:00Z</updated>
+    <summary>複数の海外メディアの報道によれば、OpenAI は2026年9月22日、GPT-6 Astra の技術を継承した廉価モデル「GPT-6 Sol」「GPT-6 Luna」を ChatGPT・Codex・APIで公開した。報道されている価格は Sol が入力$2/出力$10（旧 GPT-5.6 Sol比で半額）、Luna が入力$0.10/出力$0.50。OSWorld 2.0 で Claude Opus 5 に匹敵するスコアを約8割低いコストで達成したとも報じられている。本稿の調査環境からは OpenAI 公式サイト・GitHub Changelog・大手テック系メディアのいずれにも直接到達できておらず、未確認情報として掲載する。</summary>
+  </entry>
+  <entry>
     <title>Claude Code のクラウドセッションが正式提供に — 既存の Pro に $100、Max に $250 の一度限りのクレジット</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-code-cloud-sessions-ga-credit-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-code-cloud-sessions-ga-credit-2026</id>

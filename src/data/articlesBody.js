@@ -21989,6 +21989,25 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/release-notes/overview"
       }
     ]
+  },
+  "openai-gpt-6-sol-luna-release-2026": {
+    "body": [
+      "**本記事は一次資料に到達できておらず、複数の独立した報道の一致にもとづく未確認情報として扱う。** 本サイトは通常、一次ソースに到達して内容を確認できた記事のみを公開する方針だが、報じられている内容が開発者のAPI選定・コスト試算に直結するため、注意喚起を兼ねて記録する価値があると判断し、未確認情報である旨を明記した上で掲載する。一次資料に到達でき次第、内容を訂正・補強する。",
+      "報道によれば、OpenAI は2026年9月22日、9月上旬に公開した最上位モデル「GPT-6 Astra」の技術をもとにした廉価版モデル「GPT-6 Sol」と「GPT-6 Luna」を、ChatGPT・Codex・APIで公開した。位置づけとしては従来の「GPT-5.6 Sol」「GPT-5.6 Luna」の後継にあたるとされる。",
+      "報じられている料金は、GPT-6 Sol が入力100万トークンあたり$2・出力$10（GPT-5.6 Sol のプロモーション価格比で半額）、GPT-6 Luna が入力$0.10・出力$0.50（同じく半額程度）。性能面では、エージェント型のコンピュータ操作ベンチマーク「OSWorld 2.0」のオフライン評価で、GPT-6 Sol（xhigh設定）が60.5%を記録し、Claude Opus 5（medium設定）の60.3%に匹敵するスコアを、タスクあたり約8割低いコストで達成したと報じられている。また、ユーザーが誤りを指摘した実会話にもとづく内部の事実性評価では、GPT-6 Sol は前世代の約半分の誤り率で、上位モデルのAstraに近い信頼性に達したともされる。",
+      "提供範囲は、ChatGPT Work・Codexでは大半の有料アカウント向けにAPIとあわせて提供が始まり、Luna はデスクトップアプリおよび無料・Goプランのユーザー向けにも展開されるとされる。事実であれば、コーディングエージェント用途で「上位モデルに近い性能を大幅な低コストで」という選択肢が広がることになり、Claude・Gemini系との価格・性能競争にも影響しうる報道内容である。",
+      "**確認状況**: 本稿の調査環境からは OpenAI 公式サイト（openai.com、developers.openai.com、community.openai.com）、GitHub公式Changelog（github.blog）、および報道各社（TechCrunch・VentureBeat・The New Stack等）のいずれにも、ネットワーク制限により直接到達できなかった。上記の内容は WebSearch で得られた検索結果の要約にもとづいており、複数の独立した情報源（TechCrunch・VentureBeat・The New Stack・GitHub公式Changelogのタイトル・OpenAI Developer Communityのスレッドタイトル）が同じ日付（9月22日）と整合する価格・性能の数字を伝えている点は参考にしているが、**本稿の執筆者自身がいずれの記事本文も直接読めていない。** 価格・ベンチマーク数値・提供範囲の詳細は、一次資料（OpenAI公式ブログ、API料金ページ）での裏取りが済むまで確定情報として扱わないでほしい。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing GPT-6 Sol and Luna（OpenAI公式ブログ、二次報道からの言及。本稿では直接到達できず）",
+        "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
+      },
+      {
+        "title": "OpenAI launches GPT-6 Sol and Luna, boasting lower cost and fewer mistakes（TechCrunch、二次情報。本稿では直接到達できず）",
+        "url": "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/"
+      }
+    ]
   }
 };
 
