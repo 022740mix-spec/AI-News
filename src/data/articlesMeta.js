@@ -10655,5 +10655,20 @@ export const ARTICLES_META = [
       "Alibaba",
       "モデル"
     ]
+  },
+  {
+    "id": "un-security-council-ai-briefing-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】OpenAI・Anthropicのトップが国連安保理でAIリスクを説明 — 「人類全体へのリスクになりうる」",
+    "excerpt": "フランスが議長を務めた国連安全保障理事会のハイレベル会合で、OpenAIのSam Altman CEO・AnthropicのDario Amodei CEO・Hugging FaceのClément Delangue CEO・国連の科学者パネル共同議長Yoshua Bengio氏がAIリスクについて説明した。「管理を誤ればAIは人類全体へのリスクになりうる」というAmodei氏の発言、「危険は現実かつ差し迫っている」というBengio氏の発言を、複数の独立した海外メディアが伝えている。",
+    "date": "2026-09-26",
+    "newsDate": "2026-09-23",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "AI安全性",
+      "規制"
+    ]
   }
 ];

@@ -64,6 +64,14 @@
     <summary>Alibabaが9月22日、杭州で開催のApsara Conference 2026で次世代モデル「Qwen4」を発表した。Qwen4 Max・Flash・Plus・27Bの4系統が名称として公開されたが、複数の海外メディアの報道によれば学習中の段階で、リリース日・価格・コンテキスト長・ベンチマーク数値はいずれも未公開という。Qwen4.5・Qwen5世代では5〜10兆パラメータ規模を目指すロードマップにも言及があった。</summary>
   </entry>
   <entry>
+    <title>【分析】OpenAI・Anthropicのトップが国連安保理でAIリスクを説明 — 「人類全体へのリスクになりうる」</title>
+    <link rel="alternate" type="text/html" href="?a=un-security-council-ai-briefing-2026"/>
+    <id>tag:ai-tool-news.jp,2026:un-security-council-ai-briefing-2026</id>
+    <published>2026-09-26T15:00:00Z</published>
+    <updated>2026-09-26T15:00:00Z</updated>
+    <summary>フランスが議長を務めた国連安全保障理事会のハイレベル会合で、OpenAIのSam Altman CEO・AnthropicのDario Amodei CEO・Hugging FaceのClément Delangue CEO・国連の科学者パネル共同議長Yoshua Bengio氏がAIリスクについて説明した。「管理を誤ればAIは人類全体へのリスクになりうる」というAmodei氏の発言、「危険は現実かつ差し迫っている」というBengio氏の発言を、複数の独立した海外メディアが伝えている。</summary>
+  </entry>
+  <entry>
     <title>Claude API、出力前拒否のうち「bio」「frontier_llm」「reasoning_extraction」の3カテゴリを課金対象に — 誤検知が少ない領域に限定して適用</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-refusal-billing-expansion-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-refusal-billing-expansion-2026</id>

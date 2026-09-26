@@ -22149,6 +22149,33 @@ const ARTICLES_BODY = {
         "url": "https://github.com/QwenLM"
       }
     ]
+  },
+  "un-security-council-ai-briefing-2026": {
+    "body": [
+      "国連安全保障理事会は9月23日、人工知能と国際安全保障をテーマにしたハイレベル会合を開いたと複数の海外メディアが報じている。フランスが議長を務め、OpenAIのSam Altman CEO、AnthropicのDario Amodei CEO、Hugging FaceのClément Delangue CEO、国連の独立科学者パネル（IISP-AI）共同議長を務めるYoshua Bengio氏が説明者として出席した。DeepSeekとMoonshotの中国AI企業2社も声明のために招かれたと伝えられている。",
+      "報道が伝える発言として、Amodei氏は「管理を誤れば、AIは人類全体へのリスクになりうると私は考えている」と述べ、いずれの国・企業も単独ではAIのリスクを管理できないという趣旨を語ったとされる。Bengio氏は「危険は現実であり、差し迫っている」と発言したと伝えられる。Altman氏は、各国がAIの能力と安全対策を測るための共通のベンチマーク策定を各国首脳に呼びかける方針だったと報じられている。",
+      "この会合は、政府によるAI規制の枠組みづくりが各国で足並みを揃えられていない状況の中で、フロンティアAI企業のトップ自身が国際安全保障の最高機関に直接リスクを説明する場を持ったという点で異例である。当サイトが別に報じている、Google・OpenAI・Anthropicが業界主導の自主規制団体設立を準備しているという報道（未確認、下書きのまま保留中）とあわせて見ると、政府主導の規制が停滞する中でフロンティア企業側が国際的な発言・自主的な枠組みづくりの両方を同時に進めている構図が見えてくる。",
+      "**確認できたこと・できなかったこと。** 本記事は Cointelegraph・BNN Bloomberg・US News（AP配信）・The Jerusalem Post・insideai.news など、独立した複数の報道機関が伝える内容の一致に基づいている。国連自身の公式記録（news.un.org、press.un.org における会議録・プレスリリース）には、本セッションの実行環境のネットワーク制限により直接到達できなかった。会合の開催自体・出席者・発言の大意は複数の独立報道で一致しており内容の確度は高いと判断したが、発言の一言一句の正確な引用は国連公式の会議録で改めて確認する余地がある。",
+      "根拠: 会合の開催・出席者・発言内容 — 一次資料 0（国連公式記録は本セッションから到達不可） / 独立観測 5（Cointelegraph・BNN Bloomberg・US News＝AP配信・Jerusalem Post・insideai.newsがそれぞれ報道） / 派生・転載 0 / 不明 0"
+    ],
+    "primarySources": [
+      {
+        "title": "AI leaders warn UN of security risks as systems grow more powerful（BNN Bloomberg）",
+        "url": "https://www.bnnbloomberg.ca/business/artificial-intelligence/2026/09/23/ai-leaders-warn-un-of-security-risks-as-systems-grow-more-powerful/"
+      },
+      {
+        "title": "Heads of AI Firms Tell UN Security Council That It Could Be a Risk to All Humanity（US News, AP配信）",
+        "url": "https://www.usnews.com/news/world/articles/2026-09-23/heads-of-ai-firms-tell-un-security-council-that-it-could-be-a-risk-to-all-humanity"
+      },
+      {
+        "title": "LIVE: OpenAI and Anthropic brief Security Council amid 'real and imminent' threat posed by runaway AI（UN News、国連公式。本セッションでは接続がブロックされ直接確認不可）",
+        "url": "https://news.un.org/en/story/2026/09/1168414"
+      },
+      {
+        "title": "OpenAI and Anthropic CEOs Join UN Security Council AI Briefing（Cointelegraph）",
+        "url": "https://cointelegraph.com/news/openai-anthropic-to-brief-un-security-council-on-ai-risks"
+      }
+    ]
   }
 };
 
