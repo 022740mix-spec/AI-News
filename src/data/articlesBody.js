@@ -22298,6 +22298,29 @@ const ARTICLES_BODY = {
         "url": "https://github.com/microsoft/agent-governance-toolkit"
       }
     ]
+  },
+  "anthropic-pentagon-dc-circuit-appeal-2026": {
+    "body": [
+      "【この記事について】本記事は一次資料（裁判所自身の判決文）に到達できていない状態の下書きである。CNBC・ABC News・PBS NewsHour・Axios・Broadband Breakfast・Lawfareなど複数の独立した報道機関が、連邦控訴審（D.C. Circuit）が9月25日に2対1でPentagon（国防総省）によるAnthropicの「サプライチェーンリスク」指定を支持したと報じている。ただし裁判所自身のサイト（cadc.uscourts.gov）、判決文アグリゲータ（courtlistener.com）、および複数の主要報道機関（cnbc.com、abcnews.com）に、本セッションの実行環境のネットワーク制限からいずれも直接到達できず、判決文そのものを未確認のまま記事化することはできない。",
+      "特に整理が必要なのは、当サイトが2026年9月16日に報じた記事（[Anthropic vs 米国防総省、連邦地裁が「サプライチェーンリスク」指定を違法と判断](?a=anthropic-pentagon-first-amendment-ruling-2026)、newsDate 8/27）との関係である。検索結果からは、カリフォルニアの連邦地裁（Rita Lin判事）が8月に別の訴訟でこの指定を違法と判断し、その判断は現在も有効なままである一方、D.C. Circuitは『第二の指定（second designation）』を巡る別の訴訟を審理し、そちらについてはPentagon側を支持した、と読める記述が複数の二次報道にある。つまり指定そのものが複数回行われ、それぞれ別の訴訟で別の結果になっている可能性がある。この構造（指定の数・各訴訟の対象・両判断の関係）を一次資料（判決文・訴訟記録）で確認できるまで、本文の詳細な記述は保留する。",
+      "背景として、Anthropicは2025年7月にPentagonと2億ドル規模の契約を結んだが、同年9月にClaudeのGenAI.mil基盤への展開交渉が決裂したと報じられている。国防総省は自社モデルへの無制限アクセスを求めたが、Anthropicは完全自律型兵器・国内大量監視での利用を禁じる「レッドライン」の保証を求めた、という経緯が伝えられている。",
+      "Anthropicは「異議がある（respectfully disagree）」との立場を示し、同じ3人の裁判官による再審理・D.C. Circuit全体でのen banc審理・連邦最高裁への上訴のいずれかを検討しているという。これが事実であれば訴訟はまだ終わっていない。",
+      "根拠: D.C. Circuitが控訴審でPentagonの指定を支持したこと — 一次資料 0（判決文・裁判所公式ページとも本セッションから到達不可） / 独立観測 4（CNBC・ABC News・Axios・Broadband Breakfastがそれぞれ報道、いずれも同じ判決を報じているとみられるが、各社が独自に判決文を読んだか、AP等の配信を経由したかは未確認） / 派生・転載 不明 / 不明あり（8月の連邦地裁判断との関係を含む訴訟構造全体）"
+    ],
+    "primarySources": [
+      {
+        "title": "U.S. appeals court upholds Pentagon designation of Anthropic as supply chain risk（CNBC、本セッションでは接続がブロックされ直接確認不可）",
+        "url": "https://www.cnbc.com/2026/09/25/pentagon-anthropic-ai-risk-appeals-court.html"
+      },
+      {
+        "title": "Federal appeals court upholds Pentagon designation of Anthropic as supply chain risk（ABC News、本セッションでは接続がブロックされ直接確認不可）",
+        "url": "https://abcnews.com/Business/anthropic-appeals-court-declines-block-pentagon-blacklisting/story?id=136755690"
+      },
+      {
+        "title": "Anthropic Challenges the Pentagon's Supply Chain Risk Determination（Lawfare、訴訟の背景整理）",
+        "url": "https://www.lawfaremedia.org/article/anthropic-challenges-the-pentagon-s-supply-chain-risk-determination"
+      }
+    ]
   }
 };
 

@@ -10755,5 +10755,22 @@ export const ARTICLES_META = [
       "Anthropic",
       "Microsoft"
     ]
+  },
+  {
+    "id": "anthropic-pentagon-dc-circuit-appeal-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "下書き: Anthropic対米国防総省、連邦控訴審(D.C. Circuit)がサプライチェーンリスク指定を支持(要一次ソース・訴訟関係の整理)",
+    "excerpt": "【下書き・要確認】複数の海外メディアによれば、米連邦控訴審（D.C. Circuit）が9月25日、2対1の判断でPentagon（国防総省）によるAnthropicの「サプライチェーンリスク」指定を支持したと報じられている。当サイトは9月16日、別の連邦地裁（Rita Lin判事）がこの指定を違法と判断したことを報じており、両者の関係（同一の指定を巡る訴訟なのか、指定が複数あるのか）を一次資料で確認できていないため、下書きのまま保留する。",
+    "date": "2026-09-26",
+    "newsDate": "2026-09-25",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "規制",
+      "軍事",
+      "訴訟"
+    ]
   }
 ];
