@@ -2994,4 +2994,10 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://022740mix-spec.github.io/AI-News/?a=anthropic-microsoft-agent-sandbox-tools-2026</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

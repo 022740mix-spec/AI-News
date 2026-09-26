@@ -22280,6 +22280,24 @@ const ARTICLES_BODY = {
         "url": "https://cbs12.com/news/local/florida-woman-featured-in-cbs12-investigation-takes-flock-camera-case-to-congress-florida-news-florida-politics-news-congress-local-flock"
       }
     ]
+  },
+  "anthropic-microsoft-agent-sandbox-tools-2026": {
+    "body": [
+      "Anthropicが公式GitHub組織（github.com/anthropics）で、「Sandbox Runtime（srt）」というツールを公開している。README自身が「Claude Code向けに開発された研究プレビューであり、より広いエコシステムがより安全なエージェントシステムを構築できるよう、早期のオープンソースプレビューとして公開する」と説明している通り、これはコンテナを使わずにOSレベルでファイルシステム・ネットワークアクセスを制限する軽量なサンドボックス機構である。macOSはsandbox-exec（Seatbelt）、Linuxはbubblewrapによるネットワーク名前空間分離、Windowsは専用ローカルユーザーとWindows Filtering Platform（WFP）を使うアルファ実装、という3プラットフォームに対応する。ライセンスはApache-2.0で、本稿確認時点で5.3k star・761コミット。ドメイン単位の許可/拒否リストによる通信制御、ファイル単位の読み書き制御、Unixソケット制御、macOSでのリアルタイム違反監視などの機能を持つ。",
+      "同じ時期、Microsoftも公式GitHub組織（github.com/microsoft）で「agent-governance-toolkit」を公開している。README によれば、プロンプトレベルの安全対策だけでは不十分であり、ポリシー違反を「起こりにくくする」のではなく「構造的に不可能にする」決定論的なアプリケーション層の制御が必要だという考え方に基づく。Microsoft Agent Framework・Semantic Kernel（.NET/Python）にはネイティブのミドルウェアとして組み込まれ、AutoGen・LangGraph/LangChain・CrewAI・OpenAI Agents SDK・Claude Code・Google ADK・LlamaIndex・Haystack・Mastra・Difyにはアダプタで対応するという。ライセンスはMITで、「OWASP Agentic Top 10の10項目すべて」への対応を主張している。2,742コミットの履歴があり、活発に開発が続いている。",
+      "両ツールはアプローチが異なる。srtはOSのプロセス隔離という下層のレイヤーで「エージェントに何をさせないか」を強制する仕組みであるのに対し、agent-governance-toolkitはアプリケーション/ミドルウェア層で「どのフレームワーク上でも同じポリシーを効かせる」ことを狙う横断ツールに近い。当サイトが直近報じてきたGreyNoiseによるPaperCut侵害事案や、OpenAIエージェントによるオーストラリア政府ポータルへの無断アクセス事案などの「エージェントの権限そのものが攻撃面になる」流れを踏まえると、フロンティア研究所側（Anthropic）とプラットフォーム側（Microsoft）の双方が、ほぼ同じ課題に別々のレイヤーから取り組み始めていることが分かる。",
+      "本記事はいずれもGitHubの公式組織リポジトリ（github.com/anthropics、github.com/microsoft）のREADMEを本セッションから直接確認して書いている。両リポジトリともコミット履歴が数百〜数千件に及び、公開そのものはある程度前から進んでいたとみられるため、突発的なニュースではなく「静かに進んでいた公開」として紹介する。"
+    ],
+    "primarySources": [
+      {
+        "title": "anthropics/sandbox-runtime（Anthropic公式GitHub組織）",
+        "url": "https://github.com/anthropics/sandbox-runtime"
+      },
+      {
+        "title": "microsoft/agent-governance-toolkit（Microsoft公式GitHub組織）",
+        "url": "https://github.com/microsoft/agent-governance-toolkit"
+      }
+    ]
   }
 };
 

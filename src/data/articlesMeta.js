@@ -10737,5 +10737,23 @@ export const ARTICLES_META = [
       "監視",
       "プライバシー"
     ]
+  },
+  {
+    "id": "anthropic-microsoft-agent-sandbox-tools-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic と Microsoft が同じ週にエージェント隔離ツールを公式orgで公開 — コンテナ無しでOS層から権限を絞る「srt」と、10種のフレームワークに刺さる「agent-governance-toolkit」",
+    "excerpt": "Anthropicが公式GitHub組織で「Sandbox Runtime（srt）」を、Microsoftが「agent-governance-toolkit」を、いずれも静かに公開している。srtはClaude Code向けに作られたコンテナ不要のOS層サンドボックス（Apache-2.0、5.3k star）、agent-governance-toolkitはAutoGen・LangGraph・CrewAIなど10種のエージェントフレームワークに横断対応するポリシー実行基盤（MIT、OWASP Agentic Top 10の10項目に対応を主張）。両社が同時期に「エージェントの権限をどう縛るか」という同じ課題に別々のアプローチで取り組んでいる構図が見える。",
+    "date": "2026-09-26",
+    "newsDate": "2026-09-21",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "エージェント",
+      "オープンソース",
+      "セキュリティ",
+      "Anthropic",
+      "Microsoft"
+    ]
   }
 ];

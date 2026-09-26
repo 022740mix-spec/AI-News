@@ -104,6 +104,14 @@
     <summary>米上院司法委員会の犯罪・テロ対策小委員会が9月23日、AIによるナンバープレート自動読み取り網を全米49州12万カ所以上に展開する「Flock Safety」を対象とした公聴会「Always Watching」を開いた。フロリダ州の女性Lindsey Isaacsさんは、無関係の死亡事故現場付近をFlockのカメラが自分の車として記録したことをきっかけに逮捕され、独居拘禁を含め13日間勾留された経緯を証言した。検察は5月に不起訴を決定している。</summary>
   </entry>
   <entry>
+    <title>Anthropic と Microsoft が同じ週にエージェント隔離ツールを公式orgで公開 — コンテナ無しでOS層から権限を絞る「srt」と、10種のフレームワークに刺さる「agent-governance-toolkit」</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-microsoft-agent-sandbox-tools-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-microsoft-agent-sandbox-tools-2026</id>
+    <published>2026-09-26T15:00:00Z</published>
+    <updated>2026-09-26T15:00:00Z</updated>
+    <summary>Anthropicが公式GitHub組織で「Sandbox Runtime（srt）」を、Microsoftが「agent-governance-toolkit」を、いずれも静かに公開している。srtはClaude Code向けに作られたコンテナ不要のOS層サンドボックス（Apache-2.0、5.3k star）、agent-governance-toolkitはAutoGen・LangGraph・CrewAIなど10種のエージェントフレームワークに横断対応するポリシー実行基盤（MIT、OWASP Agentic Top 10の10項目に対応を主張）。両社が同時期に「エージェントの権限をどう縛るか」という同じ課題に別々のアプローチで取り組んでいる構図が見える。</summary>
+  </entry>
+  <entry>
     <title>Claude API、出力前拒否のうち「bio」「frontier_llm」「reasoning_extraction」の3カテゴリを課金対象に — 誤検知が少ない領域に限定して適用</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-refusal-billing-expansion-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-refusal-billing-expansion-2026</id>
