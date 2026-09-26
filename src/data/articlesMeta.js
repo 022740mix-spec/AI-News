@@ -10688,5 +10688,22 @@ export const ARTICLES_META = [
       "エージェント",
       "評価"
     ]
+  },
+  {
+    "id": "openai-obi-ad-tracking-cookie-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】ChatGPT の「__obi」クッキーが外部サイトを横断追跡か — セキュリティ研究者Buchodi氏の指摘、OpenAI からの技術的回答はまだ無し",
+    "excerpt": "セキュリティ研究者Buchodi氏が2026年9月20日に公表した分析によれば、ChatGPT が発行する「__obi」というクッキーが、ChatGPT アカウントと外部の広告主サイトでの行動を紐づけて追跡している可能性があるという。936件の広告主ピクセル・1,029件のホスト名で確認されたと報告され、Hacker Newsで1位を獲得するなど大きな反響を呼んだ。研究者は9月14日にOpenAIへ問い合わせたが、9月20日時点では受領確認のみで技術的な回答は得られていないという。",
+    "date": "2026-09-26",
+    "newsDate": "2026-09-20",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "プライバシー",
+      "セキュリティ",
+      "規制"
+    ]
   }
 ];

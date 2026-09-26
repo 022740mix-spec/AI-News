@@ -22203,6 +22203,29 @@ const ARTICLES_BODY = {
         "url": "https://www.securityweek.com/google-confirms-gemini-ai-breached-three-firms/"
       }
     ]
+  },
+  "openai-obi-ad-tracking-cookie-2026": {
+    "body": [
+      "セキュリティ研究者のBuchodi氏が自身のブログ「Buchodi's Threat Intel」で2026年9月20日に公表した分析によれば、ChatGPTが発行する「__obi」という名前のクッキーが、ChatGPTアカウントと外部の広告主サイトでの行動を紐づけて追跡している可能性があるという。報告によれば、ユーザーがChatGPTを開くとクライアント側で識別子が生成され、アカウントに紐づく短命の署名付きトークンがOpenAIのバックエンドから発行される。このクッキーはSameSite=None・Secureの設定になっており、ブラウザの仕様上、他サイトへのリクエストにも同梱されうる。",
+      "Buchodi氏は、OpenAIの広告計測ピクセル（コード名「bazaar」）を埋め込んだ外部の広告主サイトを訪問した際に、このクッキーの値がOpenAI側に送り返されることを、自身のスマートフォンで再現し2種類の独立した手法で検証したと説明している。確認された広告主ピクセルは936件、ホスト名は1,029件に及ぶといい、Chewy・Wayfair・ThriftBooks・Eventbrite・HelloFreshなど一般的なECサイトが含まれていたと報告されている。",
+      "問題視されているのは分類上の扱いである。OpenAI自身のクッキーポリシーは「__obi」を「マーケティング」ではなく「アナリティクス」クッキーに分類しているが、報告では、マーケティングへの同意を拒否したユーザーの環境でも、アナリティクス同意に基づいてこのクッキーが送信され続けていたとされる。Buchodi氏は9月14日にOpenAIのpress窓口・privacy窓口へ問い合わせたが、9月20日の公表時点では自動受領確認のみで、分類や同意の扱いについての技術的な回答は得られていないという。この分析は9月21日にHacker Newsで1位（592ポイント、315コメント）となり、大きな反響を呼んだと報じられている。",
+      "**確認できたこと・できなかったこと。** 元となったBuchodi氏本人のブログ（buchodi.com）は、本セッションの実行環境からはネットワーク制限により直接到達できなかったが、検索エンジンの索引上でその存在と公表日・反響（Hacker News掲載）は確認できた。技術的な詳細（クッキーの仕組み・確認件数・OpenAIの対応状況）は、Tom's Guide・MarTech・NotebookCheck・CyberSecurityNewsなど独立した複数のメディアが伝える内容で一致している。OpenAI自身による技術的な反論・説明は、本稿の作成時点でも確認できていない。",
+      "根拠: __obi クッキーによる横断追跡の仕組みと規模 — 一次資料 1（Buchodi氏本人のブログ、検索索引で存在・公表日を確認、直接フェッチは不可） / 独立観測 4（Tom's Guide・MarTech・NotebookCheck・CyberSecurityNewsがそれぞれ技術的詳細を報道） / 派生・転載 0 / 不明 0"
+    ],
+    "primarySources": [
+      {
+        "title": "Buchodi's Threat Intel（研究者本人のブログ。本セッションでは検索索引で存在確認、直接フェッチは不可）",
+        "url": "https://www.buchodi.com/"
+      },
+      {
+        "title": "OpenAI's new ad tracker may know what you do after you leave ChatGPT（Tom's Guide）",
+        "url": "https://www.tomsguide.com/ai/openais-new-ad-tracker-may-know-what-you-do-after-you-leave-chatgpt-heres-what-we-know"
+      },
+      {
+        "title": "OpenAI testing third-party-style tracking in ChatGPT ads（MarTech）",
+        "url": "https://martech.org/openai-testing-third-party-style-tracking-in-chatgpt-ads/"
+      }
+    ]
   }
 };
 

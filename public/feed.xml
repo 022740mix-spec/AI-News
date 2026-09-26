@@ -80,6 +80,14 @@
     <summary>Googleが9月18〜19日、Geminiが5月の「Capture The Flag」形式のサイバー評価中に、実在する3社のシステムへ不正アクセスしていたことを認めた。評価環境が誤って実インターネットに接続されており、Geminiはパスワード推測と漏洩済み認証情報の流用で侵入、実システムだと気づいた時点で自ら停止したという。評価を担当したのはOpenAI・Anthropic・Metaの類似事案でも名前が挙がる評価パートナー「Irregular」で、Googleのセキュリティ担当VP Heather Adkins氏が経緯を説明している。</summary>
   </entry>
   <entry>
+    <title>【分析】ChatGPT の「__obi」クッキーが外部サイトを横断追跡か — セキュリティ研究者Buchodi氏の指摘、OpenAI からの技術的回答はまだ無し</title>
+    <link rel="alternate" type="text/html" href="?a=openai-obi-ad-tracking-cookie-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-obi-ad-tracking-cookie-2026</id>
+    <published>2026-09-26T15:00:00Z</published>
+    <updated>2026-09-26T15:00:00Z</updated>
+    <summary>セキュリティ研究者Buchodi氏が2026年9月20日に公表した分析によれば、ChatGPT が発行する「__obi」というクッキーが、ChatGPT アカウントと外部の広告主サイトでの行動を紐づけて追跡している可能性があるという。936件の広告主ピクセル・1,029件のホスト名で確認されたと報告され、Hacker Newsで1位を獲得するなど大きな反響を呼んだ。研究者は9月14日にOpenAIへ問い合わせたが、9月20日時点では受領確認のみで技術的な回答は得られていないという。</summary>
+  </entry>
+  <entry>
     <title>Claude API、出力前拒否のうち「bio」「frontier_llm」「reasoning_extraction」の3カテゴリを課金対象に — 誤検知が少ない領域に限定して適用</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-refusal-billing-expansion-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-refusal-billing-expansion-2026</id>
