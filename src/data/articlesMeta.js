@@ -10705,5 +10705,21 @@ export const ARTICLES_META = [
       "セキュリティ",
       "規制"
     ]
+  },
+  {
+    "id": "anthropic-nasdaq-ipo-2t-valuation-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】Anthropic、11月にもNasdaq上場と報道 — 評価額2兆ドル規模、6月時点の想定から倍増",
+    "excerpt": "Financial TimesとWall Street Journalがそれぞれ報じたところによると、Anthropicは2026年11月にもNasdaqへの上場を目指しており、評価額はおよそ2兆ドル、調達額は1,000億ドル超に達する可能性があるという。当サイトが6月に報じた機密S-1提出時点の想定評価額は9,650億ドルで、これが事実であれば半年足らずで倍増したことになる。Anthropic自身・Nasdaqはこの件について公にコメントしておらず、報道は未確定の観測として扱う。",
+    "date": "2026-09-26",
+    "newsDate": "2026-09-14",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "分析",
+      "IPO"
+    ]
   }
 ];

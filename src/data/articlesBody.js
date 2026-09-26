@@ -22226,6 +22226,33 @@ const ARTICLES_BODY = {
         "url": "https://martech.org/openai-testing-third-party-style-tracking-in-chatgpt-ads/"
       }
     ]
+  },
+  "anthropic-nasdaq-ipo-2t-valuation-2026": {
+    "body": [
+      "Financial Times、続いてWall Street Journalがそれぞれ独自に報じたところによると、Anthropicは2026年11月にもNasdaqへの上場を目指しているという。評価額はおよそ2兆ドル、調達額は1,000億ドルを超える可能性があるとされ、これが事実であれば史上最大規模のIPOとなり、2026年6月に上場したSpaceXの863億ドルを大きく上回る。NVIDIAがこのIPOに約100億ドルを拠出することを検討しているとの報道もある。",
+      "当サイトが6月に報じた際、Anthropicは6月1日付でSECに機密版S-1（IPO登録書）を提出しており、その時点の想定評価額は9,650億ドルだった。今回報じられている2兆ドルという数字が事実であれば、半年足らずで評価額がおよそ倍増したことになる。あわせて、Anthropicの年換算売上高は第2四半期時点で650億ドル、年末までに1,100億ドルを超える見通しだとする報道もある。上場時期が当初想定の10月から11月にずれたのは、第3四半期の業績を開示してOpenAIのGPT-6 Astra公開後も競争力があることを示すためだという報道もある。",
+      "非公開の機密S-1提出という性質上、SECへの登録内容はそもそも一般公開されておらず、Anthropic自身・証券取引所側も具体的な条件についてコメントを避けているとされる。本記事は、FTとWSJという独立した2つの大手経済メディアがそれぞれ報じた内容を、他の複数メディアが後追いする形で伝えている状況を整理したものであり、金額・時期はいずれも確定情報として扱っていない。OpenAIは9月12日、Sam Altman CEOが「2027年より前ではない」とIPOを否定する発言をしたと報じられたばかりで、同じ時期にAnthropicのIPO観測がむしろ加速して伝えられている点は対照的である。",
+      "**確認できたこと・できなかったこと。** 本記事の実行環境からはAnthropic公式サイト（anthropic.com）、platform.claude.com、SEC EDGARのいずれからもIPO関連の一次発表・提出書類は確認できなかった（機密提出のため一般公開されていない）。FT・WSJ本文はいずれも有料契約が必要な上、本セッションのネットワーク制限により直接到達できず、両紙の報道内容はcryptobriefing・TechTimes・marketscreenerなど独立した複数の二次報道が伝える引用・要約に基づいて確認した。",
+      "根拠: 11月Nasdaq上場・評価額2兆ドル規模の観測 — 一次資料 0（Anthropic自身の公式発表・SEC公開書類なし、機密提出のため） / 独立観測 2（Financial Times・Wall Street Journalがそれぞれ独自に報道したと複数の二次報道が伝える） / 派生・転載 数件（crypto.news・TechTimes・marketscreener等がFT/WSJの報道を後追い） / 不明 0"
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic plans November IPO amid tech firm public offering trend: WSJ（cryptobriefing、WSJ報道の後追い）",
+        "url": "https://cryptobriefing.com/anthropic-plans-november-ipo-amid-tech-firm-public-offering-trend-wsj/"
+      },
+      {
+        "title": "Anthropic plans an IPO as early as 2026, FT reports（marketscreener、FT報道の後追い）",
+        "url": "https://www.marketscreener.com/news/anthropic-plans-an-ipo-as-early-as-2026-ft-reports-ce7d51d9d08cf326"
+      },
+      {
+        "title": "Anthropic targets November IPO at potential $2 trillion valuation（crypto.news）",
+        "url": "https://crypto.news/anthropic-targets-november-ipo/"
+      },
+      {
+        "title": "Anthropic Picks Nasdaq for $2 Trillion IPO（TechTimes）",
+        "url": "https://www.techtimes.com/articles/327492/20260914/anthropic-picks-nasdaq-2-trillion-ipo-trump-linked-compute-deal-tests-safety-mission.htm"
+      }
+    ]
   }
 };
 
