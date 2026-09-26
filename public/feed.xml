@@ -40,6 +40,14 @@
     <summary>Amazonが2026年9月21日夜、Meta の個人向けAIエージェント「Muse」による自社サイトでの購入をブロックした。Amazon側は「Museが自らをボットと明示せず、顧客の認証情報を収集・保持しているように見える」ことを理由に挙げ、事前にMetaへ自社サイトをMuseの対象外にするよう求めていたという。Meta側は「実際の決済情報はStripeの使い捨てカード番号を使っており、Museがパスワードや決済情報を見られる状態にはない」と反論している。同じタイミングで Shopify は逆に、Google と共同開発した「Universal Commerce Protocol」を通じてMuseとのチェックアウト連携を発表した。</summary>
   </entry>
   <entry>
+    <title>オープンソース「Hindsight」が3万スター超え — エージェントの長期記憶を「保持・想起・省察」の3操作で扱う、MITライセンス</title>
+    <link rel="alternate" type="text/html" href="?a=vectorize-hindsight-agent-memory-2026"/>
+    <id>tag:ai-tool-news.jp,2026:vectorize-hindsight-agent-memory-2026</id>
+    <published>2026-09-26T15:00:00Z</published>
+    <updated>2026-09-26T15:00:00Z</updated>
+    <summary>スタートアップ Vectorize が開発するオープンソースのエージェント向け長期記憶システム「Hindsight」が、GitHub公式リポジトリで3万スターを超えた。会話履歴をそのまま貯めるのではなく、事実・出来事・関係性を抽出して正規化し、意味検索・キーワード検索・グラフ探索・時間範囲検索を組み合わせて呼び出す設計で、記憶どうしを結びつけて新しい答えを導く「省察」機能も持つ。MITライセンスで、Claude Code・LangChain・CrewAI など60以上のツールと連携できるとしている。</summary>
+  </entry>
+  <entry>
     <title>Claude API、出力前拒否のうち「bio」「frontier_llm」「reasoning_extraction」の3カテゴリを課金対象に — 誤検知が少ない領域に限定して適用</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-refusal-billing-expansion-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-refusal-billing-expansion-2026</id>

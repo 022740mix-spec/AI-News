@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-26",
-  "count": 492,
+  "count": 493,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -467,6 +467,7 @@
     "us-ai-regulation-federal-vs-state-preemption-2026",
     "usecase-recommendation-matrix-2026",
     "vector-db-comparison-2026",
+    "vectorize-hindsight-agent-memory-2026",
     "veo-review",
     "vibe-coding-enterprise-backend-maintenance-2026",
     "vibe-coding-getting-started-2026",

@@ -22092,6 +22092,24 @@ const ARTICLES_BODY = {
         "url": "https://www.americanbanker.com/payments/news/shopify-adds-meta-muse-to-agentic-ai-strategy"
       }
     ]
+  },
+  "vectorize-hindsight-agent-memory-2026": {
+    "body": [
+      "スタートアップ Vectorize が開発するオープンソースのエージェント向け長期記憶システム「Hindsight」（github.com/vectorize-io/hindsight）が、GitHub公式リポジトリで3万スターを超えた。本稿執筆時点で確認できたスター数は30,200、ライセンスはMIT。今年1月に公開されて以降、最初の4ヶ月は2,000スター未満と目立たない存在だったが、その後の伸びが急で、120日目から222日目までの約100日間で1万4,000スター以上を追加したと運営元は説明している。",
+      "Hindsightの設計は「保持（retain）」「想起（recall）」「省察（reflect）」という3つの操作に分かれる。保持は、入力された情報から事実・時間情報・エンティティ・関係性を抽出し、ベクトル索引と検索索引を持つ正規化された形に変換する処理。想起は、意味的類似度・BM25によるキーワード一致・エンティティや時間軸を辿るグラフ探索・時間範囲での絞り込みという4つの手法を並行して走らせ、結果を統合してランキングする。省察は、既存の記憶どうしを結びつけて単純な検索では出せない答えを合成する、より深い分析にあたる。",
+      "長期記憶の評価に使われるベンチマーク「LongMemEval」で高い精度を記録したと運営元は発表しているが、具体的な数値は発表元・掲載メディアによって振れがあり、本稿では数値の確定は避ける。25以上のLLMプロバイダに対応し、Docker・pipによるベアメタル導入・Kubernetes向けHelmチャート・マネージドクラウドサービスなど複数の導入形態を用意している点は、GitHub公式リポジトリで直接確認できた。",
+      "直近のリリースを見ると、9月14日にトークナイザをtiktokenからquicktokに切り替えるv0.10.0、9月21日には添付ファイル名の扱いを改善するv0.10.1が出ており、開発は現在も活発に続いている。エージェントに「会話を重ねるほど賢くなる記憶」を持たせる需要は、Claude Code のようなコーディングエージェントの普及とともに広がっており、Hindsightはその需要に応える形の一つと位置づけられる。"
+    ],
+    "primarySources": [
+      {
+        "title": "vectorize-io/hindsight（GitHub公式リポジトリ）",
+        "url": "https://github.com/vectorize-io/hindsight"
+      },
+      {
+        "title": "Releases · vectorize-io/hindsight",
+        "url": "https://github.com/vectorize-io/hindsight/releases"
+      }
+    ]
   }
 };
 
