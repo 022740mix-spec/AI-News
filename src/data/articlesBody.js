@@ -22110,6 +22110,24 @@ const ARTICLES_BODY = {
         "url": "https://github.com/vectorize-io/hindsight/releases"
       }
     ]
+  },
+  "openai-gpt-6-sol-luna-release-2026": {
+    "body": [
+      "OpenAI が2026年9月22日、上位モデル「GPT-6 Astra」の技術を継承した中位・下位モデル「GPT-6 Sol」「GPT-6 Luna」を ChatGPT・Codex・APIで公開した。Astraが今の主力である一方、SolとLunaは「それほど高い知能を必要としない共通タスクのための実務モデル」という位置づけで、企業利用を主な想定にしている。",
+      "API価格は、Sol が入力100万トークンあたり$2・出力$10、Luna が入力$0.10・出力$0.50。いずれも前世代のGPT-5.6系モデルの半額以下になる。VentureBeatの取材にOpenAIは、この価格はローンチ時だけの割引ではなく恒久的な設定だと説明したと報じられている。コンテキストウィンドウは両モデルともAstraと同じ105万トークン（入力上限92.2万トークン）で、最大出力は12.8万トークン、テキストと画像を入力してテキストを出力する構成も共通する。知識のカットオフはLunaが2026年5月18日、Solが2026年4月20日で、上位モデルAstra（4月30日）よりLunaの方が新しい。",
+      "コンピュータ操作ベンチマーク「OSWorld 2.0」（オフライン評価）では、Sol を最も高い推論強度（xhigh）で動かした場合に60.5%を記録し、Claude Opus 5 の中位設定（medium、60.3%）にほぼ並ぶスコアを、推定で約8割低いコストで達成したと報じられている。Luna も最大設定（max）で GPT-5.6 Sol の中位設定を上回るとされ、コストはその約10分の1という。別のコーディング系ベンチマーク「DeepSWE v1.1」でも、Sol は最大設定で68.8%を記録し、Claude Fable 5 の最高スコアに1.1ポイント差まで迫りつつ、コストは約8割低いとされる。いずれの数値も、複数の技術系メディアが伝えるベンチマーク結果に基づき、OpenAI自身による発表値であって独立した第三者検証ではない。",
+      "SolとLunaはいずれもAstraより性能・知能で劣るが、価格と処理コストを大きく下げたことで、常時稼働させるエージェント用途や大量リクエストを処理する企業用途での採用を狙った布陣とみられる。本記事はOpenAI公式サイト（openai.com・help.openai.com・platform.openai.com）への直接到達が本稿執筆時点のネットワーク環境からできず、VentureBeat・The New Stack など複数の独立した技術系メディアの報道内容が一致する範囲に基づいている。"
+    ],
+    "primarySources": [
+      {
+        "title": "OpenAI releases GPT-6 Sol and Luna models, slashing API costs 50% or more（VentureBeat）",
+        "url": "https://venturebeat.com/technology/openai-releases-gpt-6-sol-and-luna-models-slashing-api-costs-50-or-more"
+      },
+      {
+        "title": "OpenAI releases GPT-6 Sol and Luna — and cuts token prices in half（The New Stack）",
+        "url": "https://thenewstack.io/openai-gpt-6-sol-luna-release/"
+      }
+    ]
   }
 };
 

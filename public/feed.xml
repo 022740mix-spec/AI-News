@@ -48,6 +48,14 @@
     <summary>スタートアップ Vectorize が開発するオープンソースのエージェント向け長期記憶システム「Hindsight」が、GitHub公式リポジトリで3万スターを超えた。会話履歴をそのまま貯めるのではなく、事実・出来事・関係性を抽出して正規化し、意味検索・キーワード検索・グラフ探索・時間範囲検索を組み合わせて呼び出す設計で、記憶どうしを結びつけて新しい答えを導く「省察」機能も持つ。MITライセンスで、Claude Code・LangChain・CrewAI など60以上のツールと連携できるとしている。</summary>
   </entry>
   <entry>
+    <title>OpenAI が GPT-6 Sol / Luna を公開 — API価格を半減、OSWorld 2.0 で Opus 5 級の性能を8割低コストで</title>
+    <link rel="alternate" type="text/html" href="?a=openai-gpt-6-sol-luna-release-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-gpt-6-sol-luna-release-2026</id>
+    <published>2026-09-26T15:00:00Z</published>
+    <updated>2026-09-26T15:00:00Z</updated>
+    <summary>OpenAI が2026年9月22日、GPT-6 Astra の廉価版にあたる「GPT-6 Sol」「GPT-6 Luna」をChatGPT・Codex・APIで公開した。価格はSolが入力$2/出力$10、Lunaが入力$0.10/出力$0.50で、いずれも旧世代（GPT-5.6系）の半額以下。OpenAIはVentureBeatに対し、この価格はローンチ時の割引ではなく恒久的な設定だと説明している。コンピュータ操作ベンチマークOSWorld 2.0では、Sol（xhigh設定）が60.5%とClaude Opus 5（medium設定、60.3%）にほぼ並び、コストは約8割低いという。性能はいずれも上位モデルGPT-6 Astraには及ばない。</summary>
+  </entry>
+  <entry>
     <title>Claude API、出力前拒否のうち「bio」「frontier_llm」「reasoning_extraction」の3カテゴリを課金対象に — 誤検知が少ない領域に限定して適用</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-refusal-billing-expansion-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-refusal-billing-expansion-2026</id>

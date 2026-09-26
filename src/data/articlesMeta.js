@@ -10622,5 +10622,22 @@ export const ARTICLES_META = [
       "オープンソース",
       "コンテキストウィンドウ"
     ]
+  },
+  {
+    "id": "openai-gpt-6-sol-luna-release-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI が GPT-6 Sol / Luna を公開 — API価格を半減、OSWorld 2.0 で Opus 5 級の性能を8割低コストで",
+    "excerpt": "OpenAI が2026年9月22日、GPT-6 Astra の廉価版にあたる「GPT-6 Sol」「GPT-6 Luna」をChatGPT・Codex・APIで公開した。価格はSolが入力$2/出力$10、Lunaが入力$0.10/出力$0.50で、いずれも旧世代（GPT-5.6系）の半額以下。OpenAIはVentureBeatに対し、この価格はローンチ時の割引ではなく恒久的な設定だと説明している。コンピュータ操作ベンチマークOSWorld 2.0では、Sol（xhigh設定）が60.5%とClaude Opus 5（medium設定、60.3%）にほぼ並び、コストは約8割低いという。性能はいずれも上位モデルGPT-6 Astraには及ばない。",
+    "date": "2026-09-26",
+    "newsDate": "2026-09-22",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "GPT",
+      "料金",
+      "モデル"
+    ]
   }
 ];
