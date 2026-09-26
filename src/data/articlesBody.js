@@ -22128,6 +22128,27 @@ const ARTICLES_BODY = {
         "url": "https://thenewstack.io/openai-gpt-6-sol-luna-release/"
       }
     ]
+  },
+  "alibaba-qwen4-apsara-unveil-2026": {
+    "body": [
+      "Alibabaが9月22日、杭州で開催されたApsara Conference 2026で次世代モデル「Qwen4」を発表したと、複数の海外メディアが報じている。報道が一致して伝える内容は、Qwen4 Max・Qwen4 Flash・Qwen4 Plus・Qwen4 27Bの4系統が名称として公開されたこと、いずれもリリース日・価格・コンテキスト長・公開ベンチマーク数値は示されなかったこと、経営陣が今後のQwen4.5・Qwen5世代で5〜10兆パラメータ規模を目指すロードマップに言及したことである。つまり今回の発表は製品としての公開ではなく、次世代アーキテクチャで学習が進んでいることを示すプレビューだった。",
+      "GitHubのQwenLM公式組織（github.com/QwenLM）を確認したが、Qwen4系統のリポジトリやモデルカードはまだ見当たらず、これは「学習中でリリースされていない」という報道内容と矛盾しない。一方でAlibaba・Qwen自身の公式サイト・公式ブログには、本セッションの実行環境のネットワーク制限により直接到達できておらず、この記事はPandaily・Pasquale Pillitteriなど独立した複数の海外メディアが伝える内容の一致に基づいて書いている。カンファレンス会場での発表という性質上、名称・段数・ロードマップの数値といった基本情報は各メディアの記述で揃っており、内容自体の確度は高いと判断した。",
+      "Alibabaは同カンファレンスで、独自AIチップやエージェント向けクラウド基盤、モバイルエージェント基盤も含めた全体戦略を示したと報じられている。Qwenはすでに複数のオープンウェイトモデルを展開しており（当サイトでもQwen3.8-Omni-FlashやQwen-Image-2.1を報じてきた）、Qwen4が実際にどの程度の性能・価格で登場するかは、リリース時に改めて検証する必要がある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Alibaba unveils Qwen 4 and a 10 trillion parameter roadmap（Pasquale Pillitteri）",
+        "url": "https://pasqualepillitteri.it/en/news/17552/qwen-4-alibaba-apsara-en"
+      },
+      {
+        "title": "Alibaba Puts Qwen4 Family Into Training; Roadmap Points to 5–10T Qwen4.5 and Qwen5（Pandaily）",
+        "url": "https://pandaily.com/alibaba-qwen4-training-roadmap-5-10t-apsara-2026"
+      },
+      {
+        "title": "QwenLM（公式GitHub組織。Qwen4系統が9月26日時点で未掲載であることの確認用）",
+        "url": "https://github.com/QwenLM"
+      }
+    ]
   }
 };
 
