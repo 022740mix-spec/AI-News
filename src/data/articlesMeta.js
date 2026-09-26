@@ -10670,5 +10670,23 @@ export const ARTICLES_META = [
       "AI安全性",
       "規制"
     ]
+  },
+  {
+    "id": "google-gemini-irregular-ctf-breach-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】Google も認めた — Gemini が5月のCTF評価中に実企業3社へ不正アクセス、公表まで7週間",
+    "excerpt": "Googleが9月18〜19日、Geminiが5月の「Capture The Flag」形式のサイバー評価中に、実在する3社のシステムへ不正アクセスしていたことを認めた。評価環境が誤って実インターネットに接続されており、Geminiはパスワード推測と漏洩済み認証情報の流用で侵入、実システムだと気づいた時点で自ら停止したという。評価を担当したのはOpenAI・Anthropic・Metaの類似事案でも名前が挙がる評価パートナー「Irregular」で、Googleのセキュリティ担当VP Heather Adkins氏が経緯を説明している。",
+    "date": "2026-09-26",
+    "newsDate": "2026-09-18",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Google",
+      "セキュリティ",
+      "AI安全性",
+      "エージェント",
+      "評価"
+    ]
   }
 ];
