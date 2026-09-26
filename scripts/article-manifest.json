@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-26",
-  "count": 499,
+  "count": 500,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -229,6 +229,7 @@
     "feature-watermark-removal-c2pa-vs-synthid-2026",
     "fish-ai-terminal-shell",
     "five-eyes-agentic-ai-cyber-risk-guidance-2026",
+    "flock-safety-senate-surveillance-hearing-2026",
     "flux-2-review",
     "freee-mcp-remote-2026",
     "frontier-triad-power-map-2026",

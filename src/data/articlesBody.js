@@ -22253,6 +22253,33 @@ const ARTICLES_BODY = {
         "url": "https://www.techtimes.com/articles/327492/20260914/anthropic-picks-nasdaq-2-trillion-ipo-trump-linked-compute-deal-tests-safety-mission.htm"
       }
     ]
+  },
+  "flock-safety-senate-surveillance-hearing-2026": {
+    "body": [
+      "米上院司法委員会の犯罪・テロ対策小委員会は9月23日、Josh Hawley議員（共和党・ミズーリ州）の主宰で「Always Watching: Flock's Nationwide AI Surveillance Network」と題した公聴会を開いた。対象となったのは、AIでナンバープレートを自動的に読み取り・記録する監視カメラ網を運営する企業Flock Safetyで、そのカメラは全米49州の12万カ所以上に設置されているという。",
+      "証言したフロリダ州の住人Lindsey Isaacsさんによれば、2025年10月にフロリダ州ボルシア郡の高速道路I-4で起きた死亡事故に自分は無関係だったが、Flockのカメラがその現場から数マイル離れた場所で自分の車を捉えたことが手がかりとなり、2026年4月に自動車運転による殺人罪など複数の容疑で逮捕された。Isaacsさんは出頭後、独居拘禁を含む最大警備区での勾留を含めて13日間拘束され、証言によれば独居房のドアが約86時間開かなかった時間帯もあったという。弁護人が4月28日、事故で生じたはずの損傷が押収車両に無いことを示す写真を提出し、翌日保釈。検察は5月、不起訴（No Information）を決定している。",
+      "この公聴会にはIsaacsさんの他、Institute for Justiceの弁護士、アリゾナ州ピナル郡の保安官、サイバーセキュリティ専門家、ACLUの上級政策顧問Chad Marlow氏らが出席したと報じられている。ACLUは、Flockのデータが法執行機関の枠を超えて共有される仕組みや、令状なしでの利用実態について懸念を示したとされる。誤認識1件が実際の逮捕・拘禁に直結した今回の事案は、AIによる自動判定が刑事手続きの入口として使われる場面での説明責任と検証可能性を問う具体的な事例として、公聴会という公的な記録に残った。",
+      "**確認できたこと・できなかったこと。** 米上院司法委員会の公式ページ（judiciary.senate.gov）は、本セッションの実行環境のネットワーク制限により直接到達できなかった。本記事は、Roll Call・Fox 35 Orlando・Fox 13 Tampa Bay・CBS12・Yahoo News（AP配信）など独立した複数の報道機関が伝える内容の一致に基づいている。Isaacsさんの氏名・逮捕から釈放までの経緯・検察の不起訴決定という核となる事実は、地元密着で取材したCBS12・Fox系列を含む複数媒体で一致しており、確度は高いと判断した。",
+      "根拠: 公聴会の開催・Isaacsさんの逮捕から不起訴までの経緯 — 一次資料 0（上院公式ページは本セッションから到達不可） / 独立観測 4（Roll Call・Fox 35 Orlando・Fox 13 Tampa Bay・CBS12がそれぞれ取材・報道） / 派生・転載 数件（Yahoo NewsはAP配信の転載） / 不明 0"
+    ],
+    "primarySources": [
+      {
+        "title": "Flock cameras draw bipartisan concerns at Senate hearing（Roll Call）",
+        "url": "https://rollcall.com/2026/09/23/flock-cameras-draw-bipartisan-concerns-at-senate-hearing"
+      },
+      {
+        "title": "Florida woman wrongly jailed in deadly crash takes fight against AI surveillance to US Senate（Fox 35 Orlando）",
+        "url": "https://www.fox35orlando.com/news/florida-woman-wrongly-jail-deadly-crash-takes-fight-against-ai-surveillance-us-senate"
+      },
+      {
+        "title": "U.S. Senate investigates Flock camera abuses after innocent Florida woman jailed 13 days（Fox 13 Tampa Bay）",
+        "url": "https://www.fox13news.com/news/u-s-senate-investigates-flock-camera-abuses-after-innocent-florida-woman-jailed-13-days"
+      },
+      {
+        "title": "Florida woman featured in CBS12 investigation takes Flock camera case to Congress（CBS12）",
+        "url": "https://cbs12.com/news/local/florida-woman-featured-in-cbs12-investigation-takes-flock-camera-case-to-congress-florida-news-florida-politics-news-congress-local-flock"
+      }
+    ]
   }
 };
 

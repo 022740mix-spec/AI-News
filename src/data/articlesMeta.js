@@ -10721,5 +10721,21 @@ export const ARTICLES_META = [
       "分析",
       "IPO"
     ]
+  },
+  {
+    "id": "flock-safety-senate-surveillance-hearing-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】AIナンバープレート監視網「Flock」を米上院が公聴会に — 誤認識で13日間拘束された女性が証言",
+    "excerpt": "米上院司法委員会の犯罪・テロ対策小委員会が9月23日、AIによるナンバープレート自動読み取り網を全米49州12万カ所以上に展開する「Flock Safety」を対象とした公聴会「Always Watching」を開いた。フロリダ州の女性Lindsey Isaacsさんは、無関係の死亡事故現場付近をFlockのカメラが自分の車として記録したことをきっかけに逮捕され、独居拘禁を含め13日間勾留された経緯を証言した。検察は5月に不起訴を決定している。",
+    "date": "2026-09-26",
+    "newsDate": "2026-09-23",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "規制",
+      "監視",
+      "プライバシー"
+    ]
   }
 ];
