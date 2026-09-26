@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-09-25",
-  "count": 491,
+  "generatedAt": "2026-09-26",
+  "count": 492,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -30,6 +30,7 @@
     "alibaba-qwen3-8-omni-flash-2026",
     "alibaba-qwenwork-international-2026",
     "amazon-anthropic-25b-trainium-infrastructure-2026",
+    "amazon-meta-muse-agent-standoff-2026",
     "amazon-q",
     "anthropic-1m-context-beta-deadline-april30-2026",
     "anthropic-1m-context-beta-retirement-2026",

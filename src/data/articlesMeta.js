@@ -10589,5 +10589,22 @@ export const ARTICLES_META = [
       "src": "articles/cover-regulation.svg",
       "alt": "OpenAI agent Australia Medicare breach"
     }
+  },
+  {
+    "id": "amazon-meta-muse-agent-standoff-2026",
+    "type": "feature",
+    "category": "product",
+    "title": "【分析】Amazon が Meta の AI エージェント「Muse」を締め出し、Shopify は逆に統合を発表 — 小売各社で分かれる「エージェント型ショッピング」への対応",
+    "excerpt": "Amazonが2026年9月21日夜、Meta の個人向けAIエージェント「Muse」による自社サイトでの購入をブロックした。Amazon側は「Museが自らをボットと明示せず、顧客の認証情報を収集・保持しているように見える」ことを理由に挙げ、事前にMetaへ自社サイトをMuseの対象外にするよう求めていたという。Meta側は「実際の決済情報はStripeの使い捨てカード番号を使っており、Museがパスワードや決済情報を見られる状態にはない」と反論している。同じタイミングで Shopify は逆に、Google と共同開発した「Universal Commerce Protocol」を通じてMuseとのチェックアウト連携を発表した。",
+    "date": "2026-09-26",
+    "newsDate": "2026-09-21",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Meta",
+      "Amazon",
+      "エージェント",
+      "エージェント型コマース"
+    ]
   }
 ];
