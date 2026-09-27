@@ -24,6 +24,14 @@
     <summary>AIコーディングエージェントに「原始人のように話させる」ことでトークンを削減するOSS「Caveman」が10万スターを超えた。見出しの主張は「65%削減」だが、JetBrainsが86タスクで独立に測定した結果は8.5%にとどまる。差が生まれた理由と、導入前に確認すべき点を整理する。</summary>
   </entry>
   <entry>
+    <title>週次の計器 — 9月21日〜27日は36本、過去最多。「エージェントの不正利用」報告が1週間に6件重なった一方、「AI安全性」のガイド言及は0のまま33件目に</title>
+    <link rel="alternate" type="text/html" href="?a=weekly-metrics-2026-week-sep21"/>
+    <id>tag:ai-tool-news.jp,2026:weekly-metrics-2026-week-sep21</id>
+    <published>2026-09-28T15:00:00Z</published>
+    <updated>2026-09-28T15:00:00Z</updated>
+    <summary>2026年9月21日〜27日の週次データ。公開36本は同時期で最多。特徴は本数ではなく中身で、PaperCut・AEPD・OpenAI・Google・Flockと、エージェント型AIの不正利用・侵害を扱う報告が1週間に6件重なったこと。「AI安全性」タグは直近90日で33件に達したが、ガイドでの言及は3週連続で0のまま。「エージェント型コマース」「監視」が今週はじめて登場したタグである。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が「Knowledge Work Plugins」を公式org公開 — Claude Cowork を営業・法務・財務など11職種の専門家に変える無料プラグイン集</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-knowledge-work-plugins-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-knowledge-work-plugins-2026</id>
