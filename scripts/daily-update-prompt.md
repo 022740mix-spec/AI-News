@@ -21,7 +21,7 @@ AI-News 日次更新
 node scripts/generate-research-queries.mjs --format=markdown
 ```
 
-このスクリプトは aiCompanies.js（51社）のプロダクト名と articlesMeta.js の頻出タグから
+このスクリプトは aiCompanies.js のプロダクト名と articlesMeta.js の頻出タグから
 優先度付きの検索クエリを自動生成する。出力されたクエリを WebSearch で順次実行する。
 
 **調査の優先順位:**
