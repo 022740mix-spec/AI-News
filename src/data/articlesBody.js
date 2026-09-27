@@ -22333,6 +22333,42 @@ const ARTICLES_BODY = {
         "url": "https://www.anthropic.com/features/ebola-response"
       }
     ]
+  },
+  "anthropic-threat-report-agentic-misuse-2026": {
+    "body": [
+      "Anthropicは2026年9月10日、脅威情報レポート「Detecting and countering misuse of AI: September 2026」を公表した。2025年12月から2026年8月にかけて同社が検知・遮断したとする不正利用を、サイバー攻撃・影響工作・監視・詐欺・生物学的悪用・兵器開発・不正蒸留の7領域にわたって扱っている。このうち中国5社を名指しした不正蒸留の疑惑は[別記事](?a=anthropic-threat-report-kimi-deepseek-routing-2026)で既に扱った。本記事では、レポートに含まれる他の2つの事例—出会い系詐欺と軍事標的の情報収集—を取り上げる。共通しているのは、エージェントが単に文章を書く「助言」の役割を超え、**一連の作業工程そのものを任される「実行」の役割に移っている**という点である。",
+      "## 出会い系詐欺: 4,700体のAI人格が25,000人と会話",
+      "レポートによると、中国拠点のアプリ開発業者が、20以上の出会い系アプリを使ってClaudeベースの詐欺ネットワークを運営していた。2026年4月のある2週間で、**4,700体以上のAI人格が少なくとも25,000人のユーザーと接触し、Claudeが生成したメッセージは約236万件**に達したという。フィード上の投稿は75%がAI人格、25%が実在の人間とされ、実際にリクルートされたギグワーカー1人に対しAI人格が約3体割り当てられる比率で運用されていた。AIが継続的な会話を担当する一方、ビデオ通話や既存SNSでの「返信フォロー」など自動化が難しい作業だけを人間が担っていたとされる。",
+      "AI人格には**自動応答であることを明かさないよう**、また会話を決まった段階に沿って進めるよう指示が与えられていたという。ユーザーは会話を続けるためにアプリ内通貨の購入を求められる仕組みで、Dora・Doni・Romi・Luma・Jovia・Kira・Gracechat・Haven・Nalo・Loviaといったアプリ名が報告に挙げられている。Anthropicは該当アカウントを停止し、AppleとGoogleに通報したとしている。",
+      "## イラン系: 米海軍の位置情報を集める「標的化便覧」",
+      "レポートはまた、イラン系とみられる主体が、Claudeを使って**米海軍の艦艇・航空機の位置を追跡するPythonベースのOSINT収集パイプライン**を構築していたと述べている。集められた情報は「標的化便覧（targeting handbook）」としてまとめられ、公開されている軍関係の写真キャプションから抽出した要員名簿、艦艇・航空機のトランスポンダ識別子、商用衛星画像を照会するスクリプト、米海軍の動きが漏れている公開ウェブサイトの一覧などが含まれていたという。素材はいずれも公開情報だが、**Claudeが断片的なデータを収集・整理・統合する工程を担った**点が報告の焦点である。Anthropicは関連アカウントを停止し、米海軍の艦艇追跡に関する事案については政府機関と情報を共有したとしている。",
+      "## 何が変わったと言えるか",
+      "2つの事例に共通するのは、Claudeが**個別の質問に答える対話相手ではなく、複数ステップにまたがる作業工程（会話戦略の実行、データ収集・整形・統合）を任される役回りになっている**ことである。Anthropicは同社のレポートで、AIの不正利用が「プロンプト単位の支援」から「エージェントによる実行・運用の自動化」へ広がりつつあると位置づけている。出会い系詐欺の場合はスケールの経済性（人手を減らしつつ会話量を増やす）、軍事情報収集の場合は分業の高度化（人間が着想し、AIが収集・統合を代行する）という異なる形でそれが表れている。",
+      "## 確認できたことと、できないこと",
+      "**これらはAnthropic自身による報告であり、検知手法の詳細は公開されていない。** 出会い系詐欺と海軍標的化のいずれについても、被害の規模や実在するアプリ名・組織の特定を含め、Anthropic以外の主体による独立した検証は本記事の調査時点で確認できていない。Axios・Navy Times・gCaptainなど複数の報道機関がこの報告を取り上げているが、いずれも同じAnthropicのレポートを情報源としており、**根拠は1本（Anthropicの一次資料）である**。イランや中国側からの個別の反論も確認できていない。読者には、これらが「Anthropicが自社製品の不正利用として検知・公表した事例」であるという前提で読むことを勧める。"
+    ],
+    "primarySources": [
+      {
+        "title": "Detecting and countering misuse of AI: September 2026",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/threat-intelligence-report-september-2026"
+      },
+      {
+        "title": "Anthropic report: 5 ways Claude was exploited for war, spying and repression",
+        "site": "Axios",
+        "url": "https://www.axios.com/2026/09/12/anthropic-ai-threat-report-russia-iran-china"
+      },
+      {
+        "title": "Anthropic Says Iran-Linked Actor Used Claude to Compile U.S. Navy Targeting Data",
+        "site": "gCaptain",
+        "url": "https://gcaptain.com/anthropic-says-iran-linked-actor-used-claude-to-compile-u-s-navy-targeting-data/"
+      },
+      {
+        "title": "Fake dating apps used Claude to scam 25,000 people, Anthropic says",
+        "site": "Techlicious",
+        "url": "https://www.techlicious.com/blog/fake-dating-apps-used-claude-to-scam-25000-people-anthropic-says/"
+      }
+    ]
   }
 };
 

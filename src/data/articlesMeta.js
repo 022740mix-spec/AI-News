@@ -10787,5 +10787,22 @@ export const ARTICLES_META = [
       "AI安全性",
       "Anthropic"
     ]
+  },
+  {
+    "id": "anthropic-threat-report-agentic-misuse-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "Anthropic脅威報告、Claudeを使った出会い系詐欺とイラン系による米海軍情報収集を開示 — 「助言」から「実行の自動化」に移る事例が並ぶ",
+    "excerpt": "Anthropicが9月10日に公表した脅威情報レポートには、中国拠点の業者が2週間で25,000人以上を相手に4,700体のAI人格を使って出会い系詐欺アプリを運用していた事例と、イラン系とされる主体が米海軍の位置情報を収集するパイプラインをClaudeに構築させていた事例が含まれる。同レポートが指摘する5社の蒸留問題は既報だが、これらのエージェント型実行の事例はサイトで未報告だった。",
+    "date": "2026-09-28",
+    "newsDate": "2026-09-10",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Anthropic",
+      "セキュリティ",
+      "AI安全性",
+      "エージェント"
+    ]
   }
 ];
