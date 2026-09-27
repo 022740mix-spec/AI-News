@@ -43,6 +43,9 @@
  *   "addPrimarySources": [                     // 任意。出典を足す。url の重複は中断する
  *     { "title": "…", "site": "…", "url": "https://…" }
  *   ],
+ *   "updatePrimarySources": [                  // 任意。url で1件を特定し title / site を差し替える
+ *     { "url": "https://…", "title": "…" }
+ *   ],
  *   "setMeta": { "lastReviewed": "2026-09-20" } // 任意。meta の項目を差し替える
  * }
  *
@@ -226,6 +229,31 @@ if (addedSources.length) {
   newBody.primarySources = list;
 }
 
+// ── primarySources の書き換え ──
+//
+// **出典の説明は、状況とともに古くなる。** 「PR #1324、未マージ」と書いた出典は、
+// マージされた時点で誤りになる。本文だけ直して出典欄を残すと、同じ記事の中で
+// 本文と出典が食い違う。url で1件を特定し、title / site だけを差し替える。
+// url そのものは変えない（変えるなら削除と追加であり、別の操作である）。
+const updatedSources = patch.updatePrimarySources ?? [];
+if (updatedSources.length) {
+  const list = [...(newBody.primarySources ?? [])];
+  for (const src of updatedSources) {
+    if (!src || typeof src.url !== "string") fail("updatePrimarySources には url が必要です。");
+    const hits = list.filter((x) => x.url === src.url);
+    if (hits.length === 0) fail(`書き換える出典が見つかりません: ${src.url}`);
+    if (hits.length > 1) fail(`同じ url の出典が複数あります: ${src.url}`);
+    if (src.title === undefined && src.site === undefined) fail(`title か site のどちらかが必要です: ${src.url}`);
+    const i = list.indexOf(hits[0]);
+    list[i] = {
+      ...list[i],
+      ...(src.title !== undefined ? { title: src.title } : {}),
+      ...(src.site !== undefined ? { site: src.site } : {}),
+    };
+  }
+  newBody.primarySources = list;
+}
+
 const newMeta = { ...meta };
 for (const [k, v] of Object.entries(patch.setMeta ?? {})) {
   if (!META_KEYS.includes(k)) fail(`meta に無いキーです: ${k}`);
@@ -241,6 +269,7 @@ if (dryRun) {
   for (const t of patch.addTables ?? []) console.log(`   表: 「${(t.caption || "").slice(0, 36)}」を「${t.after.slice(0, 30)}」の直後へ`);
   for (const para of appended) console.log(`   追記: 「${para.slice(0, 60)}」`);
   for (const src of addedSources) console.log(`   出典の追加: ${src.title} — ${src.url}`);
+  for (const src of updatedSources) console.log(`   出典の書き換え: ${src.url} → ${src.title ?? '(title そのまま)'}`);
   for (const [k, v] of Object.entries(patch.setMeta ?? {})) console.log(`   meta: ${k} = ${v}`);
   process.exit(0);
 }
