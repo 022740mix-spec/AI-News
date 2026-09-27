@@ -22298,6 +22298,21 @@ const ARTICLES_BODY = {
         "url": "https://github.com/microsoft/agent-governance-toolkit"
       }
     ]
+  },
+  "anthropic-knowledge-work-plugins-2026": {
+    "body": [
+      "Anthropicが公式GitHub組織（github.com/anthropics）で「knowledge-work-plugins」というリポジトリを公開している。本稿確認時点で25.7k star・3.0k fork、Apache-2.0ライセンス、mainブランチに1,066コミットが積まれている。目的はシンプルで、Claudeを特定の職種・チーム・会社向けの専門家に変えるプラグイン集を提供することだ。",
+      "収録されているのは11種のプラグインで、それぞれ既存の業務ツールとMCP（Model Context Protocol）経由で接続する。Sales（HubSpot・Close・Clay・ZoomInfo等で見込み客調査や商談準備）、Customer Support（Intercom・HubSpot・Guru等でチケット対応やエスカレーション判断）、Product Management（Linear・Figma・Amplitude等で仕様書作成やユーザーリサーチの統合）、Marketing（Canva・HubSpot・Ahrefs等でコンテンツ制作やブランド運用）、Legal（Box・Egnyte・Microsoft 365等で契約レビューやコンプライアンス確認）、Finance（Snowflake・Databricks・BigQuery等で仕訳や財務諸表作成）、Data（Snowflake・Hex・Amplitude等でSQLクエリや可視化）、Enterprise Search（メール・チャット・ドキュメントの横断検索）、Bio Research（PubMed・BioRender・ChEMBL等での前臨床研究支援）に加え、Productivity（Slack・Notion・Asana・Linear・Jira等のタスク管理）、そして新規プラグインを自作するためのCowork Plugin Managementが含まれる。",
+      "各プラグインの中身はコードやビルド手順を伴わず、`.claude-plugin/plugin.json`（マニフェスト）、`.mcp.json`（ツール接続設定）、`commands/`（`/sales:call-prep`のようなスラッシュコマンド）、`skills/`（ドメイン知識とワークフロー）というMarkdown/JSONベースのファイル構成で完結している。README は、`.mcp.json` のコネクタを入れ替え、自社固有の用語やワークフローを追記することで、そのまま自社向けにカスタマイズできる設計だと説明している。",
+      "利用経路は2つある。Claude Coworkからは claude.com/plugins より直接インストールでき、Claude Codeからは `claude plugin marketplace add anthropics/knowledge-work-plugins` でマーケットプレイスを追加したうえで `claude plugin install sales@knowledge-work-plugins` のように個別プラグインを導入する。Claude Coworkという特定の製品向けの機能を、汎用のプラグイン機構としてClaude Codeからも使えるようにしている点が、Anthropicの他のOSS公開（Sandbox Runtime等）と共通する「同じ基盤を製品横断で使い回す」設計思想を映している。",
+      "本記事はGitHubの公式組織リポジトリ（github.com/anthropics/knowledge-work-plugins）を本セッションから直接確認して書いている。star数・コミット数は確認時点のものであり、以後も増減しうる。リポジトリ自体にはmainブランチへの1,066コミットという蓄積があり、正確な初回公開日は本セッションからは特定できていない。突発的な新発表ではなく、静かに進んでいた公開を本日確認できた、という位置づけで紹介する。"
+    ],
+    "primarySources": [
+      {
+        "title": "anthropics/knowledge-work-plugins（Anthropic公式GitHub組織）",
+        "url": "https://github.com/anthropics/knowledge-work-plugins"
+      }
+    ]
   }
 };
 

@@ -8,6 +8,14 @@
   <updated>2026-09-27T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Anthropic が「Knowledge Work Plugins」を公式org公開 — Claude Cowork を営業・法務・財務など11職種の専門家に変える無料プラグイン集</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-knowledge-work-plugins-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-knowledge-work-plugins-2026</id>
+    <published>2026-09-27T15:00:00Z</published>
+    <updated>2026-09-27T15:00:00Z</updated>
+    <summary>Anthropicが公式GitHub組織で「knowledge-work-plugins」を公開している。Sales・Legal・Finance・Product Management・Marketing・Customer Support・Data・Bio Researchなど11種の職種別プラグインをApache-2.0で提供し、HubSpotやSnowflakeなど既存の業務ツールとMCP経由で接続する。Claude Coworkから直接インストールできるほか、Claude Codeでも `claude plugin marketplace add` で利用できる。コードやインフラ構築を伴わず、Markdown/JSONベースのファイルで完結する設計になっている。</summary>
+  </entry>
+  <entry>
     <title>セキュリティ企業GreyNoiseが「AIエージェント群による自動侵害キャンペーン」を報告 — PaperCutの脆弱性を突き48ヶ国440台超を侵害、一部は30秒未満</title>
     <link rel="alternate" type="text/html" href="?a=papercut-ai-agent-swarm-breach-2026"/>
     <id>tag:ai-tool-news.jp,2026:papercut-ai-agent-swarm-breach-2026</id>

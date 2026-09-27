@@ -10755,5 +10755,22 @@ export const ARTICLES_META = [
       "Anthropic",
       "Microsoft"
     ]
+  },
+  {
+    "id": "anthropic-knowledge-work-plugins-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が「Knowledge Work Plugins」を公式org公開 — Claude Cowork を営業・法務・財務など11職種の専門家に変える無料プラグイン集",
+    "excerpt": "Anthropicが公式GitHub組織で「knowledge-work-plugins」を公開している。Sales・Legal・Finance・Product Management・Marketing・Customer Support・Data・Bio Researchなど11種の職種別プラグインをApache-2.0で提供し、HubSpotやSnowflakeなど既存の業務ツールとMCP経由で接続する。Claude Coworkから直接インストールできるほか、Claude Codeでも `claude plugin marketplace add` で利用できる。コードやインフラ構築を伴わず、Markdown/JSONベースのファイルで完結する設計になっている。",
+    "date": "2026-09-27",
+    "newsDate": "2026-09-27",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "エージェント",
+      "オープンソース",
+      "MCP",
+      "Anthropic"
+    ]
   }
 ];
