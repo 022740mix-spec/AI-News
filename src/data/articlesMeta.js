@@ -10772,5 +10772,20 @@ export const ARTICLES_META = [
       "MCP",
       "Anthropic"
     ]
+  },
+  {
+    "id": "anthropic-claude-ebola-response-drc-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】コンゴのエボラ対応にClaudeが使われている — WHO・CEPI・現地研究機関が導入、判断は人間に残す設計",
+    "excerpt": "Anthropicが、コンゴ民主共和国（DRC）で拡大するエボラ（ブンディブギョ株）の流行対応にClaudeが使われていることを公式ページで公表した。WHOアフリカ地域事務局・CEPI（感染症流行対策イノベーション連合）・現地の国立生物医学研究所INRBが、状況報告の自動化・流行予測モデルの並行実行・ワクチン候補の進捗管理・ゲノム解析にClaudeを利用しているという。CEPIは「どのコホートを分析すべきかをClaudeが決めることはない」と、科学的判断は人間に残ることを強調している。",
+    "date": "2026-09-27",
+    "newsDate": "2026-09-19",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "AI安全性",
+      "Anthropic"
+    ]
   }
 ];
