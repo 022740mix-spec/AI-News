@@ -145,7 +145,6 @@ export default function App() {
     });
   }, [selected, siteSection, query, guideTab, toolTab]);
 
-  // selected が変わったらレンダリング後にページ先頭へスクロール
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [selected]);
