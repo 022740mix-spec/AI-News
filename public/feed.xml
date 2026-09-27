@@ -24,6 +24,14 @@
     <summary>Anthropicが、コンゴ民主共和国（DRC）で拡大するエボラ（ブンディブギョ株）の流行対応にClaudeが使われていることを公式ページで公表した。WHOアフリカ地域事務局・CEPI（感染症流行対策イノベーション連合）・現地の国立生物医学研究所INRBが、状況報告の自動化・流行予測モデルの並行実行・ワクチン候補の進捗管理・ゲノム解析にClaudeを利用しているという。CEPIは「どのコホートを分析すべきかをClaudeが決めることはない」と、科学的判断は人間に残ることを強調している。</summary>
   </entry>
   <entry>
+    <title>Alibabaのチップ子会社T-Headが「Zhenwu V900」を発表 — 216GBメモリ・前世代比3倍、50万枚規模のクラスタを想定</title>
+    <link rel="alternate" type="text/html" href="?a=alibaba-zhenwu-v900-ai-chip-2026"/>
+    <id>tag:ai-tool-news.jp,2026:alibaba-zhenwu-v900-ai-chip-2026</id>
+    <published>2026-09-27T15:00:00Z</published>
+    <updated>2026-09-27T15:00:00Z</updated>
+    <summary>Alibaba傘下のチップ設計会社T-Headが、杭州で開催されたApsara Conference 2026でAIアクセラレータ「Zhenwu V900」を発表したと複数の業界メディアが報じた。報道によれば216GBメモリ・チップ間帯域1,200GB/sで、前世代Zhenwu M890比で3倍の性能を主張し、最大50万枚規模のスーパーノードクラスタへの拡張と、将来の5兆〜10兆パラメータ級Qwenモデルの学習を見据えるという。量産開始は2027年第1四半期を予定と報じられている。</summary>
+  </entry>
+  <entry>
     <title>セキュリティ企業GreyNoiseが「AIエージェント群による自動侵害キャンペーン」を報告 — PaperCutの脆弱性を突き48ヶ国440台超を侵害、一部は30秒未満</title>
     <link rel="alternate" type="text/html" href="?a=papercut-ai-agent-swarm-breach-2026"/>
     <id>tag:ai-tool-news.jp,2026:papercut-ai-agent-swarm-breach-2026</id>

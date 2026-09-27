@@ -22327,6 +22327,24 @@ const ARTICLES_BODY = {
         "url": "https://www.anthropic.com/features/ebola-response"
       }
     ]
+  },
+  "alibaba-zhenwu-v900-ai-chip-2026": {
+    "body": [
+      "Alibaba傘下のチップ設計会社T-Head（平頭哥）が、2026年9月22日に杭州で開催されたApsara Conference 2026で、新型AIアクセラレータ「Zhenwu V900」を発表したと、Tom's Hardware・TechNode・Digitimes・Forkastなど複数の業界メディアが報じている。",
+      "報道によれば、Zhenwu V900は216GBのメモリと1,200GB/sのチップ間帯域幅を持ち、高精度の学習と超低精度（FP8/FP4）の推論の両方に対応する。前世代のZhenwu M890比で3倍の性能を主張しており、T-Head社内では「中国国産で最も強力なAIチップ」と位置づけているという。最大50万枚規模の「スーパーノード」クラスタへのスケールアウトに対応し、将来的な5兆〜10兆パラメータ級のQwenモデルの学習を見据えた設計だと報じられている。量産・販売開始は2027年第1四半期を予定しているという。",
+      "AlibabaグループはX（旧Twitter）の公式アカウントでも同発表に触れる投稿をしているが、本セッションの実行環境からはx.com・technode.com・tomshardware.comのいずれにも直接アクセスできず、内容を一次ソースから直接確認することはできなかった。この記事は独立した複数の業界専門メディアの報道が伝えるスペック（メモリ容量・帯域幅・性能倍率・クラスタ規模・量産時期）が一致していることを根拠に書いているが、**独立した一次ソースでの確認は済んでいない**。",
+      "この発表は、米国の対中輸出規制下でAlibabaが自社製チップによるAIインフラの内製化を進める動きの一環として位置づけられる。NVIDIA製GPUへの依存を減らし、コンピューティング・ストレージ・ネットワークを含むフルスタックの自社チップ戦略へと拡張している構図が、複数の報道から共通して読み取れる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Alibaba unveils Zhenwu V900 AI accelerator（Tom's Hardware、検索結果からの参照。本セッションからは直接確認できず）",
+        "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/alibaba-unveils-zhenwu-v900-ai-accelerator-claims-its-the-most-powerful-ai-chip-in-china-accelerator-supports-500-000-chip-supercluster-with-a-10t-parameter-qwen-model-on-the-roadmap"
+      },
+      {
+        "title": "T-Head unveils Zhenwu V900 AI chip（TechNode、検索結果からの参照。本セッションからは直接確認できず）",
+        "url": "https://technode.com/2026/09/22/t-head-unveils-zhenwu-v900-ai-chip-in-alibabas-push-to-expand-its-ai-infrastructure-stack/"
+      }
+    ]
   }
 };
 
