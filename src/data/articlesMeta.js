@@ -10804,5 +10804,23 @@ export const ARTICLES_META = [
       "AI安全性",
       "エージェント"
     ]
+  },
+  {
+    "id": "caveman-token-savings-jetbrains-verification-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "「トークン65%削減」を謳うCaveman、JetBrainsの独立検証では実質8.5% — 主張と実測の差が開いた理由",
+    "excerpt": "AIコーディングエージェントに「原始人のように話させる」ことでトークンを削減するOSS「Caveman」が10万スターを超えた。見出しの主張は「65%削減」だが、JetBrainsが86タスクで独立に測定した結果は8.5%にとどまる。差が生まれた理由と、導入前に確認すべき点を整理する。",
+    "date": "2026-09-28",
+    "newsDate": "2026-07-22",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "オープンソース",
+      "Claude Code",
+      "エージェント",
+      "開発体験",
+      "サプライチェーン"
+    ]
   }
 ];

@@ -22369,6 +22369,47 @@ const ARTICLES_BODY = {
         "url": "https://www.techlicious.com/blog/fake-dating-apps-used-claude-to-scam-25000-people-anthropic-says/"
       }
     ]
+  },
+  "caveman-token-savings-jetbrains-verification-2026": {
+    "body": [
+      "**「トークンを大量に使うな、少しで済ませろ」**——この方針をAIコーディングエージェントに徹底させることでAPIコストを削るOSS「**Caveman**」が、10万スターを超える規模に達している（本稿執筆時点でJuliusBrussee/caveman が108,100スター・6,300フォーク）。Claude Code・Codex・Cursor・Gemini CLIなど30種以上のエージェントに対応し、MITライセンスで公開されている。",
+      "見出しに掲げられた数字は「**トークン65%削減**」。だが、この数字を独立に検証したJetBrainsのテストでは、実際の削減幅は**8.5%**にとどまった。主張と実測のあいだにある7倍近い差は、どこから生まれているのか。",
+      "**時系列としては新しい話ではない。** リポジトリは2026年4月に公開されて数週間で数万スターを集め、JetBrainsの検証結果も7月には公開されていた（7月22日には利用者がこの数字の落差をGitHub Issueで指摘している）。当サイトでは未紹介だったため、開発者が実際に導入を検討する際の判断材料として、あらためて整理する。",
+      "## 何をするツールか",
+      "Cavemanは「スキル」と「プロキシ」の2階層で構成される。スキルはエージェントの**出力**を圧縮する仕組みで、あいさつや「これから何をするか」「何をしたか」といった説明的な前置き・後置きを省かせ、コードやコマンド、エラーメッセージはそのままの形で残す。プロキシはエージェントとAPIの間に挟まり、**入力側**のトークンも圧縮する。導入は `npx skills add JuliusBrussee/caveman -g` でスキルのみ、フル機能にはインストールスクリプトの実行が必要になる。",
+      "## JetBrainsの独立検証: 86タスク・約240試行",
+      "JetBrainsはHarborという自社のOSS評価基盤と、SkillsBenchのタスクセットを使い、Claude Code上でCavemanを有効化した場合と無効化した場合をペアで比較するA/Bベンチマークを実施した。86タスク・約240試行、費用にして約106ドル分。結果は**出力トークンで8.5%の削減**、品質面では明確な劣化は見られなかったとしている。",
+      "重要なのは測定条件である。Cavemanは本来「caveman mode」などの合図で利用者が任意に有効化する設計だが、JetBrainsのテストでは**すべての応答で強制的に有効化**した。つまり8.5%という数字は、Cavemanにとって最も有利な条件下での上限値であり、通常の使い方ではこれを下回る可能性が高い。JetBrainsは削減幅が小さい理由として、**エージェントの出力の大半をコード・差分・ツール呼び出しが占め、Cavemanはそこに手を付けない設計になっている**ことを挙げている。この結果はInfoWorldでも独立に報じられている。",
+      "## リポジトリ自身も数字を書き換えている",
+      "現在のREADMEを見ると、「65%」という見出しの主張とは別に、より詳細な内訳が併記されている。**プロキシによる入力トークン削減は54回のベンチマークで33.2%**、**JetBrainsの検証結果である8.5%**も自ら引用し、Adobe Researchの論文が示す「出力側の圧縮でコストを1.4〜2.4倍、最大3倍削減」という数字にも言及している。ベンチマーク結果の中には**HTML生成タスクでコストが9.9%増加した行も隠さず残している**という。見出しの主張と、本文で開示している実測値の間に落差があること自体を、開発者は把握した上で公開していると読める。",
+      "## 導入前に確認したいこと",
+      "**(1) 課金方式を確認する。** GitHub Copilot Premiumのようにリクエスト単位で課金される場合、トークン削減の効果はそもそも小さい。開発者自身がREADMEで「リクエスト課金なら見送ってよい」と明記している。",
+      "**(2) スキルは追加コストも生む。** ルール自体が1回の呼び出しにつき約1,000トークンの入力を追加するとされ、短い一問一答が多いワークロードでは削減分を打ち消しうる。",
+      "**(3) インストール手段を吟味する。** `npx` で外部スキルを取得・実行するコマンド、および `curl | bash` 形式のフルインストーラが公式手順として示されている。いずれも中身を確認しないまま実行すればサプライチェーンリスクを伴う一般的なパターンであり、実行前にスクリプトの内容を読むことを勧める。プロキシ部分はBSL-1.1ライセンス（2030年6月21日または初回リリースから4年後にApache 2.0へ移行）で、この間はソースコードが公開されていても完全なオープンソースではない点も踏まえておきたい。",
+      "**まとめると、Cavemanが謳う「65%」と、実際の運用で得られる削減幅は別の数字である。** どちらも公開情報としては正しいが、指している条件が異なる。数字だけを見て導入を決めず、自分のワークロードで実測してから常用に移すのが安全である。"
+    ],
+    "primarySources": [
+      {
+        "title": "JuliusBrussee/caveman",
+        "site": "GitHub",
+        "url": "https://github.com/JuliusBrussee/caveman"
+      },
+      {
+        "title": "Speaking to AI Agents like Cavemen Saves 65% of Tokens. We Test.",
+        "site": "JetBrains Blog",
+        "url": "https://blog.jetbrains.com/ai/2026/07/speak-to-ai-agents-like-cavemen-tosave-tokens/"
+      },
+      {
+        "title": "'Talk like a caveman' prompts save tokens, but far less than promised",
+        "site": "InfoWorld",
+        "url": "https://www.infoworld.com/article/4193775/talk-like-a-caveman-prompts-save-tokens-but-far-less-than-promised.html"
+      },
+      {
+        "title": "Advertised saving: 65%. Measured saving: 8.5%. (Issue #733)",
+        "site": "GitHub",
+        "url": "https://github.com/JuliusBrussee/caveman/issues/733"
+      }
+    ]
   }
 };
 
