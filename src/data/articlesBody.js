@@ -22486,6 +22486,207 @@ const ARTICLES_BODY = {
         "url": "https://claude.com/blog/build-plugins-for-claude"
       }
     ]
+  },
+  "anthropic-claude-sonnet-5-5-release-2026": {
+    "body": [
+      "**Anthropic** が2026年9月28日、**Claude Sonnet 5.5** を公開した。モデル ID は `claude-sonnet-5-5`。公式発表は「Claude 5.5 ファミリーの**2番目のモデル**」と位置づけている。9月22日の [Opus 5.5](?a=anthropic-claude-opus-5-5-release-2026) に続くもので、**Haiku 5.5 は「数週間のうちに」続く**とされている。",
+      "先に、いちばん気をつけたい点を書く。**Sonnet 5 から移るとき、リクエストの書き方によっては 400 エラーになる。** 単価は据え置きだが、切り替えは名前の差し替えだけでは済まない。",
+      "## 公式が言っていること",
+      "公式発表は Sonnet 5.5 を「Sonnet 5 の明確なアップグレード。**30%以上速く、多くの作業で最大30%安い**」と説明している。位置づけは、Opus 5.5 の「より速く安い相棒」である。Opus 5.5 が「careful judgment（慎重な判断）を要する複雑な作業」向けなのに対し、Sonnet 5.5 は**範囲の定まった日常の作業、バグ修正、資料・スライド・表計算の作成**に強いとしている。",
+      "**単価は Sonnet 5 と同じ**である。入力 $2、出力 $10、キャッシュ読み取り $0.20（100万トークンあたり）。安くなるのは単価ではなく**1タスクあたりのトークン数が減る**ためで、公式は「テストでは前世代より最大30%安い」と書いている。Opus 5.5 のときと同じく、**「安い」の中身は単価ではなく使用量**である。",
+      "Opus 5.5 との差は、単純な2倍ではない。**キャッシュ読み取りは両方とも $0.20** で、キャッシュ書き込みが $2.50 と $5。バッチ処理では、Opus 5.5 が $2 / $10 で、**標準料金の Sonnet 5.5 と同じ単価**になる（Sonnet 5.5 のバッチは $1 / $5）。Fast mode は、公式ドキュメントでは Opus 系にだけ載っている。**比較するときは、既定の effort が場所で違う**ことにも注意したい。発表は「Claude Code とアプリの既定は Medium、Claude Platform の既定は High」と書いている。さらに公式は、Sonnet 5.5 が Opus 5.5 を補うのは「低い effort のとき」で、「高い設定では、同程度の費用で同程度の性能になりうる」と述べている。**effort を上げると、安さの差は縮む。**",
+      "## 数字は、大きく動いた",
+      "公式の比較表はこうなっている。Sonnet 5 の値が低い点は、後で触れる。",
+      "**Terminal-Bench 4.0 は Sonnet 5.5 が 70.6%、Sonnet 5 が 10.3%。** 7倍近い差で、しかも**上位の Opus 5.5（66.4%）を上回っている。** ただし脚注1に、Opus 5.5 の値は **xhigh の最高スコア**、と書かれている。設定が揃った比較ではない。公式自身が「ベンチマークは一面にすぎず、複雑で判断の持続が要る作業では Opus 5.5 のほうが明確に強い」とも書いている。**数字上の逆転を、そのまま能力の逆転として読まないこと。**",
+      "**Sonnet 5 の 10.3% は、そのまま受け取りにくい数字である。** 同じ Terminal-Bench 4.0 で、Opus 5.5 の記事に書いた Opus 5 は 52.3%（Anthropic による再現値。公開リーダーボードは 51.8%）、Sonnet 5.5 は 70.6% で、Sonnet 5 だけが極端に低い。**発表ページは、この低さの理由を説明していない。** 1世代前の Sonnet の実力なのか、この評価との相性なのかは、本稿では判断できない。Sonnet 5 を使っている読者は、この数字で自分の使い方を判断せず、**自分の作業で測り直したい。**",
+      "もう一つ、脚注2が読ませる。**FrontierCode では、Sonnet 5.5 は Max effort のほうが xhigh より点が低い**（46.2% と 52.1%）。理由も書かれている。Max では Claude Code のコードレビュー機能を使う頻度が上がり、それが多数のサブエージェントに作業を分けた結果、**タイムアウトや、依頼範囲を超える余計な変更**を招いた。FrontierCode は範囲外の変更を減点する採点である。**強い設定ほど良い、とは限らない**という実例を、発表側が自分で載せている。",
+      "**GDPval-AA は Sonnet 5.5 が 1844、Opus 5.5 が 1846**（Sonnet 5 は 1449）。ほぼ同点である。ただし脚注3は、この評価が**構造化出力を使うリクエストで応答を悪化させうるバグ**のある事前公開版で走らせたものだと述べ、「影響があるとしても小さく、性能を低く見積もる方向」としている。修正済みである。なお GPT-6 Sol の3項目（GDPval-AA、AA-Briefcase、Chartography）には、OpenAI が画像理解のバグを直した直後で、最新版の値が反映されていない可能性がある、と脚注4が注記している。",
+      "## 移行で 400 エラーになるところ",
+      "公式の「新機能」ページは、Sonnet 5 で動いているコードに影響する**破壊的変更を5つ**挙げている。うち4つはリクエストが 400 エラーになり、thinking ブロックの1つは条件つきである。",
+      "- **強制のツール指定が使えない。** `tool_choice` の `any` と `tool` は 400 エラーになる。`auto` にして、ツールに `strict: true` を付け、いつ使うかをプロンプトで書く",
+      "- **`thinking: {\"type\": \"disabled\"}` が使えない。** 代わりに `between_tools` を使う。これは最も低い思考設定で、`low`・`medium`・`high` でのみ有効。`xhigh` と `max` では 400 エラーになる。**`between_tools` の間は、途中で effort を変えられない**",
+      "- **computer use は `computer_toolset_20260801` だけ。** Claude API と Google Cloud では旧版の `computer_20251124` が 400 エラーになる。Bedrock は従来のまま",
+      "- **thinking ブロックはモデルと会話に紐づく。** Opus 5・Opus 5.5・Fable・Mythos 系のブロックは読めず、API は黙って捨てる（200 を返し、課金もされない）。2026年8月31日以降に作られたアカウントでは、**履歴を途中で書き換えたあとに古いブロックを再送すると 400 エラー**になる",
+      "- **advisor ツールの組み合わせが減る。** Sonnet 5.5 が実行役のとき、Sonnet 5・Sonnet 4.6・Opus 4.8・4.7・4.6 の相談役は 400 エラーになる",
+      "エラーにはならないが**画面が静かになる**変更もある。ツール呼び出しの間にモデルが書く**一文か二文より長い注記は、`thinking` ブロックで返る**ようになった。既定の表示（`omitted`）では中身が空なので、その注記をユーザーに流している画面は、**エラーも出さずに黙る**。effort の水準も再調整されており、Sonnet 5 と同じ設定が同じだけの思考量にならない。",
+      "公式の一覧では、**Sonnet 5 は廃止されていない**（提供終了は2027年6月30日より前にはならない）。Sonnet 5.5 のほうは2027年9月28日より前にはならない。レート制限も、Sonnet 5.5 と Sonnet 5 で**別枠**である。**急いで移る必要は無く、上の変更を確かめてから移せる。**",
+      "## Claude Code で使うなら",
+      "Claude Code の公式ドキュメントには、次のことが書かれている。",
+      "- Sonnet 5.5 には **Claude Code v2.1.284 以降**が要る（`claude update`）。Opus 5.5 は v2.1.280 以降",
+      "- 既定の effort は、Opus 5.5 と同じ **`medium`**。API の既定（`high`）とは違う",
+      "- **`sonnet` の別名が指すモデルは、提供元で違う。** Anthropic API では Sonnet 5.5 だが、Claude Platform on AWS では Sonnet 4.6、Amazon Bedrock と Google Cloud では Sonnet 4.5、Microsoft Foundry でも Sonnet 4.5 のまま",
+      "- 安全策の分類器が拒否したとき、サイバーの拒否は Sonnet 5 で再実行される。**生物学の拒否には再実行先が無く、そのまま拒否で終わる**",
+      "クラウド経由で使っている場合、`sonnet` と書いたままでは Sonnet 5.5 にならない。固定したいときは、完全なモデル名か環境変数で指定する。",
+      "## 動きの違い（公式の使い方の指針より）",
+      "公式の指針は、Sonnet 5.5 の癖を挙げている。**既存の Sonnet 5 のプロンプトは、ほぼそのまま動くはず**としつつ、「最も難しい長期の作業は Opus のほうがよい」とも書いている。",
+      "- **低〜中の effort のエージェント的なコーディングで、途中で確認を求めて止まることがある。** 計画の確認、自分で答えられる質問、複数の部分に分かれた作業の途中での「続けますか」。まず effort を上げる",
+      "- **頼んでいないテスト、ドキュメント、小さな補助ファイルを足す傾向がある。** どの effort でも起き、高いほど多い。変更の本体は依頼に近いまま",
+      "- **`low` では、確認を走らせずに完了と報告することがある。** 例として、依存が入っていなくてテストを飛ばす",
+      "- **チャットや調査で、検索なら拾える変更（許可、要件、料金）を、学習済みの知識から答えることがある**",
+      "顧客の引用には、CodeRabbit の「Sonnet 5 が Web 検索に頼りすぎる癖と高いトークン使用は、新しいモデルでは無くなった」という一文がある。一方、公式の指針は上のとおり、検索で確かめるべき変更を学習済みの知識から答えることがあると書く。**どちらも発表側が載せた記述で、独立した測定ではない。** 検索の使い方が変わったことはうかがえるが、どちらに寄ったのかは、自分の作業で確かめるしかない。",
+      "## 安全側の変更",
+      "Sonnet 5.5 は、**Sonnet として初めてサイバー安全策とフォールバックを付けて出る**。サイバー能力が Sonnet 5 から大きく上がり、Opus 5 並みになったためである。日常のバグ修正は影響を受けないが、危険度の高いサイバー作業は Sonnet 5 に切り替わる（API のサーバー側フォールバックはベータ版で、`fallbacks: \"default\"` を指定する必要があり、対象は `cyber` と `frontier_llm` の拒否に限られる）。拒否の分類も5つに増え、`cyber`・`bio`・`frontier_llm`・`reasoning_extraction`・`general_harms` が `stop_details` に返る。生物学の安全策は Sonnet 5 と同じで、**一部の微生物学・ウイルス学の依頼が誤って検知されることがある**と公式は認めている。ゼロデータ保持でも利用できる。",
+      "アラインメントの評価は、Sonnet 5.5 が「能力の最前線を押し上げるモデルではない」として、**対象を絞って**行われた。公式は、自動の行動監査で Sonnet 5 と同等かそれ以上とし、「全体では Opus 5.5 のほうがわずかに良い」と書く。",
+      "あわせて、**推論の抽出を防ぐ分類器**を Sonnet として初めて載せた。蒸留攻撃（偽アカウントを大量に作ってモデルの能力を抜き取る手口）への対策で、思考ブロックを作ったアカウントから切り離せないようにしている。**アカウントを途中で切り替える使い方（Claude Code でセッション中に切り替える場合を含む）は影響を受けうる**、と公式は注意している。",
+      "Opus 5.5 の記事で書いたとおり、**拒否の一部は課金対象になる**（[出力前拒否の課金](?a=anthropic-claude-refusal-billing-expansion-2026)）。新しい分類が増えたぶん、拒否の扱いは実装側で確認しておきたい。",
+      "## 今のラインナップ",
+      "Opus 5.5 の記事の「現行ラインナップ」の表は、これで古くなった。公式のモデル一覧の現在の形は次のとおり。**Haiku 5.5 はまだ出ていない。**",
+      "**確認状況**: 数値・価格・脚注・移行の変更点・モデル一覧は、`anthropic.com` の発表ページ、`platform.claude.com` のモデル一覧・料金・Sonnet 5.5 の概要と移行ガイドに**直接到達して確認した**。Claude Code 側の記述は `code.claude.com` の公式ドキュメントで、使い方の指針は `platform.claude.com` のプロンプトガイドで確認した。Sonnet 5.5 のシステムカードは、配信元（`www-cdn.anthropic.com`）に到達できず**読めていない**。**速度・コスト・ベンチマークの数値はいずれも発表ページ1本による Anthropic 自身の計測で、GDPval-AA と AA-Briefcase は Artificial Analysis による評価だが、実行は Anthropic 側の依頼による事前公開版である**（脚注3）。独立した第三者による再現は、本稿執筆時点で確認していない。顧客の引用（Epic Games、Zendesk、Box など）は発表ページの記載で、各社の一次記録には当たっていない。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 7,
+        "caption": "Anthropic 公式発表の比較表（一部。Sonnet 5.5 の値は原則 Max effort）",
+        "headers": [
+          "ベンチマーク",
+          "Sonnet 5.5",
+          "Sonnet 5",
+          "Opus 5.5",
+          "GPT-6 Sol"
+        ],
+        "rows": [
+          [
+            "Terminal-Bench 4.0",
+            "**70.6%**",
+            "10.3%",
+            "66.4%（xhigh）",
+            "—"
+          ],
+          [
+            "FrontierCode 1.1 Main",
+            "46.2%（Max）/ **52.1%（xhigh）**",
+            "42.4%",
+            "54.4%",
+            "49.3%"
+          ],
+          [
+            "CursorBench 4.0",
+            "**55.5%**",
+            "34.1%",
+            "57.8%",
+            "—"
+          ],
+          [
+            "GDPval-AA v2.1",
+            "**1844**",
+            "1449",
+            "1846",
+            "1487"
+          ],
+          [
+            "AA-Briefcase v1.1",
+            "1811",
+            "1359",
+            "1822",
+            "1483"
+          ],
+          [
+            "Humanity's Last Exam（ツールあり）",
+            "64.5%",
+            "54.9%",
+            "67.7%",
+            "—"
+          ],
+          [
+            "OSWorld 2.1（partial）",
+            "80.1%",
+            "57.0%",
+            "81.8%",
+            "—"
+          ],
+          [
+            "Chartography（ツールなし）",
+            "61.6%",
+            "15.6%",
+            "64.4%",
+            "53.6%"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 41,
+        "caption": "現行ラインナップ（公式ドキュメントより。2026年9月28日時点）",
+        "headers": [
+          "モデル",
+          "単価（入力 / 出力）",
+          "既定 effort",
+          "コンテキスト",
+          "知識カットオフ"
+        ],
+        "rows": [
+          [
+            "Fable 5.1",
+            "$10 / $50",
+            "`high`",
+            "1M",
+            "2026年6月"
+          ],
+          [
+            "Opus 5.5",
+            "$4 / $20",
+            "`medium`",
+            "1M",
+            "2026年6月"
+          ],
+          [
+            "**Sonnet 5.5**",
+            "**$2 / $10**",
+            "**`high`**",
+            "1M",
+            "2026年6月"
+          ],
+          [
+            "Haiku 4.5",
+            "$1 / $5",
+            "—",
+            "200K",
+            "2025年2月"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Claude Sonnet 5.5",
+        "site": "Anthropic（直接到達・確認済み）",
+        "url": "https://www.anthropic.com/claude-sonnet-5-5"
+      },
+      {
+        "title": "Migrating to Claude Sonnet 5.5",
+        "site": "Anthropic 公式ドキュメント（直接到達・確認済み）",
+        "url": "https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide"
+      },
+      {
+        "title": "What's new in Claude Sonnet 5.5",
+        "site": "Anthropic 公式ドキュメント（直接到達・確認済み）",
+        "url": "https://platform.claude.com/docs/en/models/sonnet-5-5/whats-new-sonnet-5-5"
+      },
+      {
+        "title": "Models overview",
+        "site": "Anthropic 公式ドキュメント（直接到達・確認済み）",
+        "url": "https://platform.claude.com/docs/en/about-claude/models/overview"
+      },
+      {
+        "title": "Pricing",
+        "site": "Anthropic 公式ドキュメント（直接到達・確認済み）",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Prompting Claude Sonnet 5.5",
+        "site": "Anthropic 公式ドキュメント（直接到達・確認済み）",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5-5"
+      },
+      {
+        "title": "Model configuration（Claude Code）",
+        "site": "Claude Code Docs（直接到達・確認済み）",
+        "url": "https://code.claude.com/docs/en/model-config"
+      },
+      {
+        "title": "Model deprecations",
+        "site": "Anthropic 公式ドキュメント（直接到達・確認済み）",
+        "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+      }
+    ]
   }
 };
 

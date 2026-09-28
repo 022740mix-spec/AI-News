@@ -10861,5 +10861,23 @@ export const ARTICLES_META = [
       "MCP",
       "プラグイン"
     ]
+  },
+  {
+    "id": "anthropic-claude-sonnet-5-5-release-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Anthropic が Claude Sonnet 5.5 を公開 — 単価は据え置き、Terminal-Bench 4.0 は 10.3%→70.6%。ただし移行では破壊的変更が5つある",
+    "excerpt": "Anthropic が Claude 5.5 ファミリーの2番目のモデル **Sonnet 5.5** を公開した。単価は Sonnet 5 と同じ $2 / $10 で、**30%以上速く、多くの作業で最大30%安い**（使用トークンが減るため）。Terminal-Bench 4.0 は 10.3% から **70.6%** に上がり、上位の Opus 5.5（66.4%）を上回るが、**Opus 側は xhigh の最高スコアで、設定は揃っていない**。Sonnet 5 からの移行では、強制のツール指定と `thinking: disabled` が 400 エラーになるなど、**名前の差し替えだけでは済まない**。",
+    "date": "2026-09-28",
+    "newsDate": "2026-09-28",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "Anthropic",
+      "Sonnet 5",
+      "エージェント",
+      "料金",
+      "API"
+    ]
   }
 ];
