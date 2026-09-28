@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-09-28T15:00:00Z</updated>
+  <updated>2026-09-29T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>Anthropic脅威報告、Claudeを使った出会い系詐欺とイラン系による米海軍情報収集を開示 — 「助言」から「実行の自動化」に移る事例が並ぶ</title>
@@ -38,6 +38,14 @@
     <published>2026-09-28T15:00:00Z</published>
     <updated>2026-09-28T15:00:00Z</updated>
     <summary>Anthropic が9月25日、サードパーティ拡張の主な配布形式を「プラグイン」に一本化し、その提出用ディレクトリポータルを公開した。プラグインはMCPコネクタとAgent Skillsの一方または両方を束ねたパッケージで、提出後は自動検証（安全性スキャン）・審査状況の追跡・公開タイミングの制御・公開後の利用分析までが1つの導線でできる。あわせてMCP 2.0の対応も明記され、初期化ハンドシェイクとセッション状態を廃した「ステートレスコア」により、MCPサーバーをサーバーレス・エッジ基盤で動かし水平スケールさせやすくなる。ポータルの利用には有料プラン（Pro/Max/Team/Enterprise）が必要で、無料アカウントは提出できない。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic が Claude Sonnet 5.5 を公開 — 単価は据え置き、Terminal-Bench 4.0 は 10.3%→70.6%。ただし移行では破壊的変更が5つある</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-sonnet-5-5-release-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-sonnet-5-5-release-2026</id>
+    <published>2026-09-28T15:00:00Z</published>
+    <updated>2026-09-28T15:00:00Z</updated>
+    <summary>Anthropic が Claude 5.5 ファミリーの2番目のモデル Sonnet 5.5 を公開した。単価は Sonnet 5 と同じ $2 / $10 で、30%以上速く、多くの作業で最大30%安い（使用トークンが減るため）。Terminal-Bench 4.0 は 10.3% から 70.6% に上がり、上位の Opus 5.5（66.4%）を上回るが、Opus 側は xhigh の最高スコアで、設定は揃っていない。Sonnet 5 からの移行では、強制のツール指定と `thinking: disabled` が 400 エラーになるなど、名前の差し替えだけでは済まない。</summary>
   </entry>
   <entry>
     <title>Anthropic が「Knowledge Work Plugins」を公式org公開 — Claude Cowork を営業・法務・財務など11職種の専門家に変える無料プラグイン集</title>
