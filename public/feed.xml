@@ -32,6 +32,14 @@
     <summary>2026年9月21日〜27日の週次データ。公開36本は同時期で最多。特徴は本数ではなく中身で、PaperCut・AEPD・OpenAI・Google・Flockと、エージェント型AIの不正利用・侵害を扱う報告が1週間に6件重なったこと。「AI安全性」タグは直近90日で33件に達したが、ガイドでの言及は3週連続で0のまま。「エージェント型コマース」「監視」が今週はじめて登場したタグである。</summary>
   </entry>
   <entry>
+    <title>Anthropic が Claude 向け「プラグイン」提出ポータルを公開 — MCP 2.0はステートレス化、審査状況の追跡と公開後の分析が付く</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-plugins-directory-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-plugins-directory-2026</id>
+    <published>2026-09-28T15:00:00Z</published>
+    <updated>2026-09-28T15:00:00Z</updated>
+    <summary>Anthropic が9月25日、サードパーティ拡張の主な配布形式を「プラグイン」に一本化し、その提出用ディレクトリポータルを公開した。プラグインはMCPコネクタとAgent Skillsの一方または両方を束ねたパッケージで、提出後は自動検証（安全性スキャン）・審査状況の追跡・公開タイミングの制御・公開後の利用分析までが1つの導線でできる。あわせてMCP 2.0の対応も明記され、初期化ハンドシェイクとセッション状態を廃した「ステートレスコア」により、MCPサーバーをサーバーレス・エッジ基盤で動かし水平スケールさせやすくなる。ポータルの利用には有料プラン（Pro/Max/Team/Enterprise）が必要で、無料アカウントは提出できない。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が「Knowledge Work Plugins」を公式org公開 — Claude Cowork を営業・法務・財務など11職種の専門家に変える無料プラグイン集</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-knowledge-work-plugins-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-knowledge-work-plugins-2026</id>

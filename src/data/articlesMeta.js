@@ -10844,5 +10844,22 @@ export const ARTICLES_META = [
       "start": "2026-09-21",
       "end": "2026-09-27"
     }
+  },
+  {
+    "id": "anthropic-claude-plugins-directory-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が Claude 向け「プラグイン」提出ポータルを公開 — MCP 2.0はステートレス化、審査状況の追跡と公開後の分析が付く",
+    "excerpt": "Anthropic が9月25日、サードパーティ拡張の主な配布形式を「プラグイン」に一本化し、その提出用ディレクトリポータルを公開した。プラグインはMCPコネクタとAgent Skillsの一方または両方を束ねたパッケージで、提出後は自動検証（安全性スキャン）・審査状況の追跡・公開タイミングの制御・公開後の利用分析までが1つの導線でできる。あわせてMCP 2.0の対応も明記され、初期化ハンドシェイクとセッション状態を廃した「ステートレスコア」により、MCPサーバーをサーバーレス・エッジ基盤で動かし水平スケールさせやすくなる。ポータルの利用には有料プラン（Pro/Max/Team/Enterprise）が必要で、無料アカウントは提出できない。",
+    "date": "2026-09-28",
+    "newsDate": "2026-09-25",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "MCP",
+      "プラグイン"
+    ]
   }
 ];
