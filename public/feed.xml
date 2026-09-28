@@ -40,6 +40,14 @@
     <summary>Anthropic が9月25日、サードパーティ拡張の主な配布形式を「プラグイン」に一本化し、その提出用ディレクトリポータルを公開した。プラグインはMCPコネクタとAgent Skillsの一方または両方を束ねたパッケージで、提出後は自動検証（安全性スキャン）・審査状況の追跡・公開タイミングの制御・公開後の利用分析までが1つの導線でできる。あわせてMCP 2.0の対応も明記され、初期化ハンドシェイクとセッション状態を廃した「ステートレスコア」により、MCPサーバーをサーバーレス・エッジ基盤で動かし水平スケールさせやすくなる。ポータルの利用には有料プラン（Pro/Max/Team/Enterprise）が必要で、無料アカウントは提出できない。</summary>
   </entry>
   <entry>
+    <title>Alibaba の「Qwen Intelligence」、HONOR Magic9シリーズに搭載 — スマホを『指示待ち』から『先回り』に変える3エージェント構成</title>
+    <link rel="alternate" type="text/html" href="?a=alibaba-qwen-intelligence-honor-magic9-2026"/>
+    <id>tag:ai-tool-news.jp,2026:alibaba-qwen-intelligence-honor-magic9-2026</id>
+    <published>2026-09-28T15:00:00Z</published>
+    <updated>2026-09-28T15:00:00Z</updated>
+    <summary>Alibabaが9月22日のApsara Conferenceで発表した「Qwen Intelligence」がHONORと組み、9月28日発売のMagic9シリーズおよびHONOR Robot Phoneに初搭載される。スマートフォン向けのフルスタック型エージェント基盤で、第1弾は「Mobile Planner Agent」を中核とする3エージェント構成。複数の報道が伝える社内ベンチマークでは、100ステップを超える一連の操作を91.8%の精度でこなすとされる。この記事は複数の二次報道をもとにしており、Alibaba・HONOR公式の一次情報に直接アクセスして内容を確認できていない。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が「Knowledge Work Plugins」を公式org公開 — Claude Cowork を営業・法務・財務など11職種の専門家に変える無料プラグイン集</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-knowledge-work-plugins-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-knowledge-work-plugins-2026</id>

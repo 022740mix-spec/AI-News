@@ -10861,5 +10861,22 @@ export const ARTICLES_META = [
       "MCP",
       "プラグイン"
     ]
+  },
+  {
+    "id": "alibaba-qwen-intelligence-honor-magic9-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Alibaba の「Qwen Intelligence」、HONOR Magic9シリーズに搭載 — スマホを『指示待ち』から『先回り』に変える3エージェント構成",
+    "excerpt": "Alibabaが9月22日のApsara Conferenceで発表した「Qwen Intelligence」がHONORと組み、9月28日発売のMagic9シリーズおよびHONOR Robot Phoneに初搭載される。スマートフォン向けのフルスタック型エージェント基盤で、第1弾は「Mobile Planner Agent」を中核とする3エージェント構成。複数の報道が伝える社内ベンチマークでは、100ステップを超える一連の操作を91.8%の精度でこなすとされる。**この記事は複数の二次報道をもとにしており、Alibaba・HONOR公式の一次情報に直接アクセスして内容を確認できていない。**",
+    "date": "2026-09-28",
+    "newsDate": "2026-09-22",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Alibaba",
+      "Qwen",
+      "エージェント",
+      "エッジAI"
+    ]
   }
 ];

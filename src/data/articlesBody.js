@@ -22486,6 +22486,20 @@ const ARTICLES_BODY = {
         "url": "https://claude.com/blog/build-plugins-for-claude"
       }
     ]
+  },
+  "alibaba-qwen-intelligence-honor-magic9-2026": {
+    "body": [
+      "Alibabaが9月22日、杭州で開催したApsara Conferenceで「Qwen Intelligence」を発表した。スマートフォンメーカー向けに、Qwenのモデルと専用のエージェント群を一括で提供するフルスタック型ソリューションと報じられている。第一弾のパートナーはHONORで、9月28日発売の「Magic9シリーズ」と「HONOR Robot Phone」に初めて搭載される。",
+      "複数の報道によると、Qwen IntelligenceはHONORの独自OS「MagicOS」と組み合わさり、スマートフォンを『聞かれたら答える』受動的な存在から、『先回りして動く』能動的な存在に変えることを狙う。第1フェーズでは3種類のエージェントが用意され、中核となる「Mobile Planner Agent」がタスクの分解・ツールの呼び出し順序の決定・状況に応じた計画の調整までを担うとされる。",
+      "性能面では、社内ベンチマークでタスク精度が最大91.8%、100ステップを超える一連の操作を自律的にこなせるという数字が複数の媒体で伝えられている。ただしこれらの数値の出典は、AlibabaまたはHONOR自身が発表したとされる資料を引用する形の二次報道であり、当編集部はAlibaba Cloud公式ブログ（alibabacloud.com）およびAlibabaの公式ニュースルーム（alizila.com）へ直接アクセスして原文を確認することができなかった。実行環境のネットワークポリシーにより、これら2つの公式ドメインに加え、報道各社のサイト（technode.global、Manila Bulletinなど）も接続できない状態だった。",
+      "スマートフォンへのエージェント機能搭載は、AppleがQwenをApple Intelligenceの中国向け提供に採用した件（2026年7月）に続き、Alibabaが「クラウド・モデル・端末」の全層でQwenを展開する動きの一環と位置づけられる。一次情報に到達できていないため、本記事は速報時点での二次情報に基づく整理として掲載する。"
+    ],
+    "primarySources": [
+      {
+        "title": "Alibaba Launches Qwen Intelligence to Power Next-Generation Agentic Smartphones（Alizila、Alibaba公式ニュースルーム。編集部は接続不可のため未検証）",
+        "url": "https://www.alizila.com/alibaba-launches-qwen-intelligence-to-power-next-generation-agentic-smartphones/"
+      }
+    ]
   }
 };
 
