@@ -22695,6 +22695,30 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
       }
     ]
+  },
+  "nvidia-open-agent-safety-platform-sentry-2026": {
+    "body": [
+      "NVIDIA は2026年9月28日、AI エージェントの安全性を扱う「Open Agent Safety Platform」を発表した。検索結果に表示された発表文の要約によると、構成要素は2つある。1つはオープンソースの実行基盤「NVIDIA OpenShell」、もう1つはハードウェア側から監視する参照システム設計「NVIDIA Sentry」である。",
+      "OpenShell は GitHub（NVIDIA/OpenShell）で読める。README は「自律エージェントの群れのための、安全で私的なランタイム」と説明し、カーネルレベルでファイル・システムコール・ネットワークを制限するサンドボックス、ポリシー変更を承認前に形式検証して危険なアクセス付与を指摘する仕組み、エージェントに実際の認証情報を見せず承認済みの宛先にだけ実行時に注入する仕組みを挙げている。ライセンスは Apache License 2.0。SDK は Python・TypeScript・Go・Rust に対応し、Linux、Apple Silicon の macOS、WSL 2 上の Windows で動く。本稿の執筆時点でスターは約1万500、フォークは約1,400である。",
+      "GitHub のリリースページには、v0.1.0（9月25日）、v0.1.1（9月26日）、v0.1.2（9月28日）が並んでいる。バージョンが 0.1 系であることは、この基盤がまだ初期段階にあることを示している。",
+      "Sentry について、発表文の要約は次のように伝えている。OpenShell が Vera CPU 上で動くエージェントの全行動を記録してポリシーを強制し、Sentry は NVIDIA BlueField-4 DPU 上で動く「帯域外」の監視役として、エージェントの挙動を継続的に見張る。境界を越えようとしたエージェントは、ミリ秒単位で隔離できるという。OpenShell はオープンソースなので Arm や Intel などの他社の計算基盤にも拡張できる、とも書かれている。参加組織は100以上で、Anthropic、Cisco、CrowdStrike、Dell Technologies、Figure、HPE などが名を連ねると伝えられている。",
+      "確認できていないことを分けて書く。第一に、NVIDIA の発表文（nvidianews.nvidia.com、GlobeNewswire、同社の技術ブログ）には、本稿の作成環境からは到達できなかった。上記の Sentry・100組織・ミリ秒といった記述は、検索結果に表示された要約に依拠しており、原文で確認していない。第二に、GitHub の OpenShell のリリースノートを確認した範囲では、Sentry・BlueField・Vera CPU への言及は見つからなかった。Sentry は「参照システム設計」と説明されており、OpenShell のソフトウェアとは別の成果物とみられるが、公開場所や提供時期は確認できていない。第三に、隔離までの時間などの性能値は NVIDIA 自身の主張であり、独立した検証は確認できていない。",
+      "9月下旬には、Anthropic の srt や Microsoft の agent-governance-toolkit、OpenAI の Fence など、エージェントの実行を隔離する公式orgのツールが相次いで公開されている。ソフトウェア層で権限を絞るもの、CI の通信を制限するもの、そして今回のようにハードウェア側から監視するものと、置かれる層が異なる。各社の発表は当事者による自社製品の説明であり、どの層が実際にどの脅威を防げるかを比較した第三者の評価は、本稿の時点で確認できていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "NVIDIA/OpenShell — GitHub",
+        "url": "https://github.com/NVIDIA/OpenShell"
+      },
+      {
+        "title": "NVIDIA/OpenShell リリース一覧 — GitHub",
+        "url": "https://github.com/NVIDIA/OpenShell/releases"
+      },
+      {
+        "title": "NVIDIA Launches Open Agent Safety Platform to Secure Agents From Testing to Deployment — NVIDIA Newsroom（未到達）",
+        "url": "https://nvidianews.nvidia.com/news/open-agent-safety-platform"
+      }
+    ]
   }
 };
 

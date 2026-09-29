@@ -10879,5 +10879,23 @@ export const ARTICLES_META = [
       "料金",
       "API"
     ]
+  },
+  {
+    "id": "nvidia-open-agent-safety-platform-sentry-2026",
+    "type": "news",
+    "category": "product",
+    "title": "NVIDIA が「Open Agent Safety Platform」を発表 — OpenShell に、DPU上でエージェントを監視する参照設計「Sentry」を組み合わせる",
+    "excerpt": "NVIDIA は9月28日、オープンソースのエージェント実行基盤「OpenShell」と、BlueField-4 DPU 上で動く帯域外の監視役「Sentry」の参照設計を組み合わせた Open Agent Safety Platform を発表した。OpenShell 自体は Apache 2.0 で GitHub に公開済みだが、Sentry については当サイトは NVIDIA の発表文そのものに到達できておらず、確認できた範囲と未確認の範囲を分けて記す。",
+    "date": "2026-09-29",
+    "newsDate": "2026-09-28",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "NVIDIA",
+      "エージェント",
+      "セキュリティ",
+      "オープンソース",
+      "サンドボックス"
+    ]
   }
 ];

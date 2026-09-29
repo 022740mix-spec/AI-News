@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-09-28",
-  "count": 508,
+  "generatedAt": "2026-09-29",
+  "count": 509,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -351,6 +351,7 @@
     "nsa-cisa-china-ai-distillation-advisory-2026",
     "nvidia-acquires-hugging-face-2026",
     "nvidia-nemotron-3-5-asr-open-multilingual-stt-2026",
+    "nvidia-open-agent-safety-platform-sentry-2026",
     "nvidia-openclaw-nemoclaw-2026",
     "nvidia-physical-ai-data-factory-blueprint-2026",
     "nyc-schools-generative-ai-ban-2026",
