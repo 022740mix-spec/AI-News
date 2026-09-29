@@ -8,6 +8,14 @@
   <updated>2026-09-29T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>NVIDIA が「Open Agent Safety Platform」を発表 — ソフトの境界「OpenShell」と、DPU上で監視する「Sentry」の二層構成</title>
+    <link rel="alternate" type="text/html" href="?a=nvidia-open-agent-safety-platform-2026"/>
+    <id>tag:ai-tool-news.jp,2026:nvidia-open-agent-safety-platform-2026</id>
+    <published>2026-09-29T15:00:00Z</published>
+    <updated>2026-09-29T15:00:00Z</updated>
+    <summary>NVIDIA が9月28日、AIエージェントを実行境界の内側に留める「Open Agent Safety Platform」を発表した。オープンソースの実行境界 OpenShell と、BlueField-4 上で動く監視機構 Sentry の組み合わせで、Linux Foundation 傘下の新団体には120超の組織が参加したと報じられている。ただし本稿は NVIDIA の一次資料に到達できておらず、報道と GitHub リポジトリに基づく。</summary>
+  </entry>
+  <entry>
     <title>Anthropic脅威報告、Claudeを使った出会い系詐欺とイラン系による米海軍情報収集を開示 — 「助言」から「実行の自動化」に移る事例が並ぶ</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-threat-report-agentic-misuse-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-threat-report-agentic-misuse-2026</id>

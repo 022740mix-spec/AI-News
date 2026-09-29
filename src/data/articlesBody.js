@@ -22695,6 +22695,25 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
       }
     ]
+  },
+  "nvidia-open-agent-safety-platform-2026": {
+    "body": [
+      "NVIDIA は2026年9月28日、AIエージェントが許可された範囲の外に出ることを防ぐ「Open Agent Safety Platform」を発表したと、TechCrunch、CNBC、SecurityWeek などが報じている。構成は2つある。1つは実行時の境界を作るオープンソースソフトウェア「OpenShell」、もう1つは NVIDIA BlueField-4 の DPU（データ処理ユニット）上で動き、エージェントの挙動を外側から独立して監視する「Sentry」である。報道によれば、Sentry は許可された境界を越えようとするエージェントを数ミリ秒で隔離・停止できるとされる。この「数ミリ秒」は NVIDIA の説明として報じられている数値である。",
+      "OpenShell については GitHub の NVIDIA 組織にリポジトリがあり、README は「ファイル・API・認証情報へのアクセスをカーネルレベルで強制し、アクセスポリシーを形式検証するランタイム」と説明している。ライセンスは Apache License 2.0 である。一方、本稿で確認したリポジトリのページには Sentry や BlueField への言及は無かった。つまり Sentry のハードウェア側の仕様は、本稿では報道の記述以上には確認できていない。",
+      "報道によれば、OpenShell は NVIDIA の Vera CPU 上での実行を想定しつつ、Arm や Intel など他社の計算基盤にも拡張できるオープンソースとして提供される。また Linux Foundation の新団体「Open Secure AI Alliance」に120超の組織が参加し、CrowdStrike、Palo Alto Networks、Cisco が連携先に挙がっている。Yahoo Finance の見出しは、この発表がジェンスン・フアン氏による Anthropic・OpenAI の警告への「奇妙だ」という発言の後だったと伝えている。",
+      "当サイトは今週、エージェントの隔離をめぐる公開として、Anthropic の Sandbox Runtime（OSレイヤー）と Microsoft の agent-governance-toolkit（アプリケーション層）を取り上げた。それらがソフトウェア側の制御であるのに対し、今回の Sentry は「エージェントが動くソフトウェアの外側」に監視を置く点が構成として異なる。どの層の制御がどの種類の逸脱に効くかは、独立した評価がまだ出ておらず、本稿では優劣を判断しない。",
+      "本稿の確認範囲について。NVIDIA のニュースルームと技術ブログ、ならびに TechCrunch・SecurityWeek などの報道ページは、本セッションの実行環境から遮断されており、内容を直接読めていない。上の記述は検索結果に表示された要約と、直接読めた GitHub のリポジトリに基づく。Sentry の提供時期・価格・対応製品、参加組織の正確な数と顔ぶれは、公式資料での確認が必要である。"
+    ],
+    "primarySources": [
+      {
+        "title": "NVIDIA Newsroom: NVIDIA Launches Open Agent Safety Platform（本セッションからは到達できず、検索結果のタイトルのみ確認）",
+        "url": "https://nvidianews.nvidia.com/news/open-agent-safety-platform"
+      },
+      {
+        "title": "NVIDIA/OpenShell（GitHub）",
+        "url": "https://github.com/NVIDIA/OpenShell"
+      }
+    ]
   }
 };
 
