@@ -14806,7 +14806,7 @@ const ARTICLES_BODY = {
       "**xAI（SpaceX 傘下）**が2026年7月9日、**Grok 4.5** を一般公開した。**Elon Musk** は前日7月8日の X 投稿で、Grok 4.5 を「**Opus クラスだが faster、より token-efficient、lower cost**」と説明。**Cursor 訓練データ**（[SpaceX-Cursor $60B 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026) の実利）を活用した実開発ワークフローに強い設計になっている。",
       "**モデル仕様**: **1.5T パラメータの V9 基盤モデル**（[Grok V9-Medium 消費者公開](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026) の後継系統）に、**Cursor の実開発者ワークフローデータ**を追加訓練したもの。SpaceX による Cursor 買収（6/16）から約3週間での成果物で、垂直統合戦略の速度感を示す。",
       "**破格の料金体系**: **API 料金は $2/$6 per 1M tokens**（入力/出力）。競合他社と比較すると鮮明。",
-      "**Claude Sonnet 5**: $3/$15（〜8/31 は導入価格 $2/$10 だった）",
+      "**Claude Sonnet 5**: $2/$10（本記事公開時は8/31までの導入価格として案内されていたが、その後標準価格として恒久化された。公式発表は2026年8月10日）",
       "**GPT-5.6 Terra**: $2.50/$15",
       "**GPT-5.6 Luna**: $1/$6（軽量特化）",
       "**Grok 4.5**: **$2/$6**（フロンティア級で最安）",
@@ -14819,7 +14819,7 @@ const ARTICLES_BODY = {
       "**Cursor 訓練データの意味**: Grok 4.5 が「コーディング特化型」として競争力を持つ最大の理由は **Cursor の実データ**。Cursor は Fortune 500 の 2/3 が利用、日に約1.5億行の実開発コードを扱う（[Cursor 買収記事](?a=spacex-cursor-60b-acquisition-anysphere-2026)）。この規模の**実開発者ワークフロー**（コード入力 → AI 提案 → 採用/却下 → 修正 のシーケンス）を訓練データに組み込めることは、他社モデルにない差別化要素となる。",
       "**業界インパクト**:",
       "**(a) OpenAI GPT-5.6 Terra との真正面対決**: 両者とも同日リリース、価格 $2/$6 vs $2.50/$15。GPT-5.6 が5倍近く高い（出力）。",
-      "**(b) Anthropic Sonnet 5 への圧力**: Sonnet 5 の $2/$10 導入価格も相対的に見劣り、8/31 の通常価格 $3/$15 移行時にはさらに大きな差に。",
+      "**(b) Anthropic Sonnet 5 への圧力**: Sonnet 5 の $2/$10 は Grok 4.5 の $2/$6 と入力が同額で、出力単価は Grok 4.5 のほうが低い。本記事公開時は9/1に $3/$15 へ引き上げられる予定と案内されていたが、この引き上げは行われず、$2/$10 が標準価格として恒久化された（2026年8月10日に公式が発表）。",
       "**(c) 中国 OSS 陣営の相対的な位置低下**: [中国モデル 30-46% シェア](?a=feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026) の要因だった「60-90% 安」の優位が縮小、Grok 4.5 が「西側で最安フロンティア」の座に。",
       "**(d) SpaceX 垂直統合の実力証明**: Cursor 買収（6/16）から約3週間で新モデルリリース、統合の速度と実利を示した。",
       "**注意点**:",
@@ -14828,7 +14828,8 @@ const ARTICLES_BODY = {
       "**(3) X エコシステム依存**: SuperGrok Heavy 経由の利用は X アカウントが前提、エンタープライズ調達との相性に注意。",
       "**(4) 中国モデルとの実運用比較**: 実タスクでの品質・トークン効率を、DeepSeek V4・GLM-5.2 等と直接比較する検証が必要。",
       "**(5) CursorBench のスコアが公表比較から除外されている**: SpaceXAI と Cursor は launch 時に、**Cursor のコードベースの過去スナップショットが Grok 4.5 の学習データに誤って含まれていた**ことを自己申告した。Cursor 独自の内部ベンチマーク（CursorBench）のスコアが不当に高く出る可能性があるため、**当該指標は公表比較から除外**され、汚染データは以降のモデル向けに除去されたとしている。買収した子会社の独自ベンチマークで親会社のモデルを評価する構図は、それ自体が利益相反に近い。**自己申告して数値を取り下げた対応は評価できる**が、公表されている他のベンチマークについても独立検証を待つ理由になる。",
-      "**AI News の推奨**: **コーディング特化タスク**では第一候補として評価すべき。特に Cursor ユーザーは Composer 系との統合を検証する価値がある。ただし本番運用の切替は **独立ベンチマーク公表後**が安全。SuperGrok Heavy $300/月は個人開発者・研究者向けで、企業では xAI API 経由が現実的。"
+      "**AI News の推奨**: **コーディング特化タスク**では第一候補として評価すべき。特に Cursor ユーザーは Composer 系との統合を検証する価値がある。ただし本番運用の切替は **独立ベンチマーク公表後**が安全。SuperGrok Heavy $300/月は個人開発者・研究者向けで、企業では xAI API 経由が現実的。",
+      "【訂正 2026-09-30】（誤）Claude Sonnet 5 は $3/$15（〜8/31 は導入価格 $2/$10）、8/31 の通常価格 $3/$15 移行時に Grok 4.5 との差がさらに拡大 →（正）Sonnet 5 は $2/$10 で、9/1 の $3/$15 への引き上げは行われず、$2/$10 が標準価格として恒久化された（2026年8月10日に公式が発表）。価格比較の段落と冒頭要約を修正した。あわせて「Sonnet 5 の導入価格 $2/$10 より安く」は入力単価が同額（$2）であるため「出力単価が安く」に正した。"
     ],
     "primarySources": [
       {
@@ -14850,6 +14851,26 @@ const ARTICLES_BODY = {
         "title": "Grok API Pricing: Every Model, Token Cost, and How to Spend Less",
         "site": "Mem0",
         "url": "https://mem0.ai/blog/xai-grok-api-pricing"
+      },
+      {
+        "title": "Pricing - Claude API Docs（Claude Sonnet 5 の脚注3）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Claude Sonnet 5 モデルページ（Pricing 節）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/models/sonnet-5/overview"
+      },
+      {
+        "title": "Release notes（2026年8月10日: Claude Sonnet 5 の導入価格が標準価格に）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Introducing Claude Sonnet 5（Edit August 10, 2026）",
+        "site": "anthropic.com",
+        "url": "https://www.anthropic.com/news/claude-sonnet-5"
       }
     ]
   },

@@ -6937,7 +6937,7 @@ export const ARTICLES_META = [
     "type": "news",
     "category": "model",
     "title": "xAI Grok 4.5 を公開（7/9）— Musk「Opus クラスだが高速・低コスト」、$2/$6、Cursor 訓練データ、SuperGrok Heavy $300/月経由",
-    "excerpt": "xAI（SpaceX 傘下）が7月9日、**Grok 4.5** を公開。Elon Musk は前日7月8日の X 投稿で **「Opus クラスだが faster、トークン効率がよく、低コスト」** と説明した。**1.5T V9 基盤モデル + Cursor 訓練データ**（[SpaceX-Cursor $60B 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026) の実利）で構築。**API 料金は $2/$6 per 1M tokens**（入力/出力）で、Anthropic Sonnet 5 の導入価格 $2/$10 より安く、GPT-5.6 Terra の $2.50/$15 も下回る破格。「タスクを半分のステップで完了」と Musk 主張、実コストは表示単価より更に低くなる可能性。**SuperGrok Heavy（$300/月）** 経由でエンドユーザーもアクセス可能、xAI API でも利用可能。",
+    "excerpt": "xAI（SpaceX 傘下）が7月9日、**Grok 4.5** を公開。Elon Musk は前日7月8日の X 投稿で **「Opus クラスだが faster、トークン効率がよく、低コスト」** と説明した。**1.5T V9 基盤モデル + Cursor 訓練データ**（[SpaceX-Cursor $60B 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026) の実利）で構築。**API 料金は $2/$6 per 1M tokens**（入力/出力）で、Anthropic Sonnet 5 の $2/$10（発表時は導入価格とされ、その後標準価格として恒久化。公式発表は2026年8月10日）より出力単価が安く、GPT-5.6 Terra の $2.50/$15 も下回る破格。「タスクを半分のステップで完了」と Musk 主張、実コストは表示単価より更に低くなる可能性。**SuperGrok Heavy（$300/月）** 経由でエンドユーザーもアクセス可能、xAI API でも利用可能。",
     "date": "2026-07-10",
     "newsDate": "2026-07-09",
     "author": "AI News 編集部",
