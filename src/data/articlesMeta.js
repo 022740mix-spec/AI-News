@@ -3072,7 +3072,7 @@ export const ARTICLES_META = [
     "type": "review",
     "category": "cli",
     "title": "OpenAI Codex レビュー — クラウド版 + Codex CLI、GPT-5.6 Sol / Terra / Luna 対応、Free / Go プランでも利用可に",
-    "excerpt": "ChatGPT 上のクラウド版と独立 Codex CLI の2形態で提供される OpenAI コーディングエージェント。**4M+ アクティブユーザー、基盤モデルは GPT-5.5**（4/23 リリース、Coding Index 半額 SOTA）。CLI は `curl -fsSL https://chatgpt.com/codex/install.sh | sh` または `npm install -g @openai/codex` でインストール、`codex` で起動。クラウド並列実行で PR を量産するワークフローが最大の武器。5/7 の Daybreak（Codex Security 拡張、GPT-5.5-Cyber 含む3層）、4/22 の Workspace Agents（Codex で動作、Slack/Salesforce/Notion 連動）も統合。料金は ChatGPT Plus $20 から、フル並列利用は Pro $200。",
+    "excerpt": "ChatGPT デスクトップアプリ・Codex CLI・IDE 拡張・Codex Cloud で提供される OpenAI のコーディングエージェント。2026年9月30日時点の CLI 既定モデルかつ公式の推奨は GPT-6.1 Sol（9/29 に Codex へ、Plus 以上でロールアウト中）で、本稿の GPT-5.6・GPT-5.5 に関する記述は7〜8月時点。CLI は `curl -fsSL https://chatgpt.com/codex/install.sh | sh`、`npm install -g @openai/codex`、`brew install --cask codex` で入れ、`codex` で起動する。料金は ChatGPT Plus $20 から、Pro は $100 / $200 / $500 の3段階。Free / Go はデスクトップアプリで GPT-6 Luna。クラウド並列実行で PR を量産するワークフローが最大の武器（4M+ アクティブユーザーは6月時点の記載）。",
     "date": "2026-06-05",
     "newsDate": "2026-05-07",
     "author": "AI News 編集部",
@@ -3097,7 +3097,7 @@ export const ARTICLES_META = [
     "rating": 4,
     "reviewCategory": "cli",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-08-11"
+    "lastReviewed": "2026-09-30"
   },
   {
     "id": "cursor-windsurf-merge",

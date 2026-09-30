@@ -8258,38 +8258,50 @@ const ARTICLES_BODY = {
   },
   "openai-codex-agent": {
     "body": [
-      "**OpenAI Codex** は **クラウド版（ChatGPT 経由）と CLI 版（Codex CLI）** の2形態で提供される OpenAI のコーディングエージェント。2026年6月時点で **4M+ アクティブユーザー、基盤モデルは GPT-5.5**（4/23 リリース）。本レビューは2026年6月時点の網羅評価。",
+      "**OpenAI Codex** は **クラウド版（ChatGPT 経由）と CLI 版（Codex CLI）** の2形態で提供される OpenAI のコーディングエージェント。2026年6月時点で **4M+ アクティブユーザー、基盤モデルは GPT-5.5**（4/23 リリース）。本レビューの初版は2026年6月時点の網羅評価で、以降の月次見直しで更新している。2026年9月30日時点で、Codex CLI の既定モデル（同梱カタログ）かつ公式の推奨は GPT-6.1 Sol である。",
+      "2026年9月30日時点の提供面は次のとおりである。ChatGPT デスクトップアプリ内の Codex（Codex アプリは7月9日に ChatGPT デスクトップアプリへ統合され、Chat・Work と並ぶ表示として残った。macOS と Windows で提供され、Linux は8月にプレビューが始まった）、Codex CLI、IDE 拡張、Codex Cloud（ChatGPT の Web またはデスクトップアプリから開始し、Web・モバイル・デスクトップで続けられる）、ChatGPT のモバイルアプリからの Remote 接続。非コーディング業務向けの ChatGPT Work は Codex と同じ使用枠・クレジットを共有する。以上は公式ドキュメント（learn.chatgpt.com）による。",
+      "中核機能の確認: Codex という製品名と、CLI・IDE 拡張・クラウドという提供面に、提供終了になったものは確認できなかった。入れ替わったのはモデルである。既定・推奨モデルは GPT-5.5 から GPT-5.6、さらに GPT-6 世代へ移った（GPT-6 Sol と Luna は9月22日、GPT-6.1 Sol は9月29日に Codex へ）。GPT-5.4 は8月31日、GPT-5.3-Codex-Spark は9月14日に ChatGPT サインインの Codex から退役済みで、GPT-5.5 は10月14日に ChatGPT・Work・Codex から退役する予定である（API は対象外）。",
       "## インストール / 起動（Codex CLI）",
       "**インストール（複数経路）**:",
-      "```bash\n# macOS / Linux（推奨）\ncurl -fsSL https://chatgpt.com/codex/install.sh | sh\n\n# Windows PowerShell\npowershell -ExecutionPolicy ByPass -c \"irm https://chatgpt.com/codex/install.ps1 | iex\"\n\n# npm 経由（Node.js 22+ 必須）\nnpm install -g @openai/codex\n```",
+      "```bash\n# macOS / Linux（推奨）\ncurl -fsSL https://chatgpt.com/codex/install.sh | sh\n\n# Windows PowerShell\npowershell -ExecutionPolicy ByPass -c \"irm https://chatgpt.com/codex/install.ps1 | iex\"\n\n# npm 経由（npm パッケージの engines は Node.js 16 以上）\nnpm install -g @openai/codex\n\n# Homebrew\nbrew install --cask codex\n```",
+      "curl や PowerShell の1行インストールは、ダウンロードしたスクリプトをそのまま実行する形式である。上の URL（chatgpt.com/codex/install.sh と install.ps1）は公式ドキュメント（learn.chatgpt.com の CLI ページ）に載っているものだが、実行前に先に curl -fsSL で保存して中身を読み、問題がなければ実行する方法もある。npm と Homebrew も同じ公式ドキュメントに載っている。",
       "**起動コマンド**:",
-      "```bash\ncodex                      # 対話セッション開始\ncodex \"<指示>\"             # ワンショット\ncodex --model gpt-5.5      # モデル指定\ncodex --headless           # ヘッドレスモード（CI 用）\n```",
+      "```bash\ncodex                      # 対話セッション開始\ncodex \"<指示>\"             # ワンショット\ncodex --model gpt-6.1-sol  # モデル指定\ncodex exec \"<指示>\"       # 非対話実行（CI・スクリプト用）\n```",
       "**認証**: 初回起動時に ChatGPT アカウント / OpenAI API キーでサインイン。",
       "## 中核機能",
-      "### 基盤モデル: GPT-5.5（4/23 リリース）",
-      "**[GPT-5.6](?a=gpt-5-6-review)（7/9 一般公開）が標準モデル**。**Sol / Terra / Luna** の3バリアント構成で、Sol が最上位、Terra が汎用、Luna が軽量。TerminalBench 2.1 で Sol が 91.91% を記録した。**7/31 に投入から3週間で値下げ**され、Luna は80%引き下げて $0.20/$1.20、Terra は20%引き下げて $2/$12 になった（[→ 詳細](?a=openai-gpt-5-6-luna-terra-price-cut-2026)）。8月には ChatGPT の無料枠が無制限化され、既定モデルが Luna に変更されている（[→ 詳細](?a=openai-chatgpt-free-unlimited-luna-sol-update-2026)）。",
-      "**Daybreak / GPT-5.5-Cyber**（5/7、Trusted Access for Cyber プログラム経由）への対応も可能。",
+      "### 基盤モデル: CLI の既定は GPT-6.1 Sol（2026年9月30日時点。GPT-5.5 は4/23 リリース）",
+      "2026年9月30日時点で、公式モデルページは複雑な作業に GPT-6.1 Sol、繰り返しの作業に Luna を勧め（カードは Astra・GPT-6.1 Sol・GPT-6 Luna）、Codex CLI 0.159.1（9月29日）は GPT-6.1 Sol を同梱カタログの既定モデルにした。GPT-6.1 Sol は Plus・Pro・Business・Enterprise・Edu でロールアウト中で、Free / Go は launch 時点で対象外、Enterprise / Edu は管理者が有効にするまでオフである。以下は GPT-5.6 世代についての7〜8月時点の記述である。[GPT-5.6](?a=gpt-5-6-review)（7/9 一般公開）は公式モデルページ上「ロールアウト中は引き続き利用できる」とされるが、推奨モデルの一覧には載っていない。**Sol / Terra / Luna** の3バリアント構成で、Sol が最上位、Terra が汎用、Luna が軽量。TerminalBench 2.1 で Sol が 91.91% を記録した。**7/30 に投入から3週間で値下げ**され、Luna は80%引き下げて $0.20/$1.20、Terra は20%引き下げて $2/$12 になった（[→ 詳細](?a=openai-gpt-5-6-luna-terra-price-cut-2026)）。ChatGPT のチャットでは Free / Go の既定モデルが GPT-5.6 Luna とされている（公式 What's new の8月3〜7日の項）。Codex の Free / Go は現在デスクトップアプリで GPT-6 Luna が使える（公式料金ページ）。無料枠の無制限化は Codex の公式ドキュメントでは確認できていない（[→ 当サイトの記事](?a=openai-chatgpt-free-unlimited-luna-sol-update-2026)）。",
+      "**Daybreak**（Trusted Access for Cyber の承認が必要）は8月10日から Daybreak Blue（GPT-5.6 Sol など汎用モデルを防御用途に使う）と Daybreak Red（別途承認、GPT-5.6 Cyber など専用モデル）の2段階になり、Codex の料金ページにも Blue / Red のクレジット単価が載っている。",
       "### クラウド並列実行が最大の武器",
       "複数のタスクを同時に Codex に投げると、それぞれが**独立したクラウドサンドボックス**で並列実行される。「機能 A の実装」と「機能 B のテスト作成」を同時に依頼し、それぞれ別の **Pull Request として返ってくる**ワークフロー。「バグ修正10件を朝一でまとめて投入、昼までに全 PR が揃う」運用が可能。",
       "### Codex CLI（ローカル実行）",
-      "クラウド版とは別に **ローカルマシンで動作する CLI 版**もある。`codex` コマンドで対話セッション、`-p` フラグでパイプ・スクリプト利用、`--sandbox` でサンドボックス実行。**Claude Code や Cursor CLI と直接競合する位置付け**。",
+      "クラウド版とは別に **ローカルマシンで動作する CLI 版**もある。`codex` コマンドで対話セッション、非対話実行は `codex exec`（CI・スクリプト向け）、`--sandbox` でサンドボックス実行。**Claude Code や Cursor CLI と直接競合する位置付け**。",
       "### Codex Security（3月リリース、5/11 Daybreak で拡張）",
-      "コードベース特有の**脅威モデルを構築**し、現実的な攻撃経路を検査、隔離環境で問題を検証、レビュー用のパッチを提案。**Daybreak**（5/11）でさらに脆弱性検出・パッチ検証ツールとして再ポジショニング。3層構造（GPT-5.5 標準 / Trusted Access 検証 / GPT-5.5-Cyber 許容版）。",
+      "コードベース特有の**脅威モデルを構築**し、現実的な攻撃経路を検査、隔離環境で問題を検証、レビュー用のパッチを提案。現在の Codex Security は、デスクトップアプリの Security ワークベンチとローカルのプラグイン、CLI と TypeScript SDK（npm パッケージ @openai/codex-security）、GitHub リポジトリを対象にする Codex Security Cloud（研究プレビュー）、PR を解析する Security Review（研究プレビュー、Plus は対象外）に広がっている（公式ドキュメント）。",
       "### Workspace Agents との連動（4/22）",
       "OpenAI Workspace Agents が **Codex で動作する**ため、Codex CLI / クラウド版で書いたエージェントを Slack / Salesforce / Notion 等の SaaS 上から呼び出せる。",
       "### MCP / GitHub 統合 / 関数呼び出し",
       "MCP プロトコルでの外部接続、GitHub PR・Issue 連携、Structured Outputs、リアルタイム音声入力にも対応。",
       "## 料金プラン",
       "## 評価",
-      "**強み**: クラウド並列実行モデルは Claude Code / Cursor の「ローカル並列」アプローチと差別化。**Pull Request ベースの非同期ワークフロー**に強く、チーム開発での「並列投入 → レビュー → マージ」が自然。**4M+ アクティブユーザー**で実績は十分。**GPT-5.5 の「半額で SOTA」**コスパが ChatGPT Pro の高額さを部分的に正当化。",
+      "**強み**: クラウド並列実行モデルは Claude Code / Cursor の「ローカル並列」アプローチと差別化。**Pull Request ベースの非同期ワークフロー**に強く、チーム開発での「並列投入 → レビュー → マージ」が自然。**4M+ アクティブユーザー**で実績は十分。6月版では GPT-5.5 の「半額で SOTA」というコスパを強みに挙げていた。GPT-5.5 は Codex（ChatGPT サインイン）で2026年10月14日に退役する予定で、現在の推奨は GPT-6.1 Sol（API 価格 $2/$10）など GPT-6 世代である。コスパの再評価は行っていない。",
       "**注意点**: クラウド実行のため、機微データを扱う場合は**Business / Enterprise プラン + データ越境設定**が必要。Codex CLI（ローカル版）の機能成熟度は Claude Code に比べてまだ追いついていない部分がある。**4月2日に課金がメッセージ単位から API トークン相当のクレジット制に変わった**ため、定額プランの月額だけでは実効コストを見積もれない。ヘビーな並列投入は月 $100〜200 相当に達しうる。",
-      "**参入障壁は大きく下がった**: 6月版では「ChatGPT Pro $200/月のハードルが個人開発者には高い」と評価したが、**現在 Codex は ChatGPT Free / Go $8 / Plus $20 / Pro / Business のいずれでも利用できる**。CLI・IDE 拡張・Web・iOS で動作し、価格を理由に Codex を候補から外す必要はなくなった。",
+      "**参入障壁は大きく下がった**: 6月版では「ChatGPT Pro $200/月のハードルが個人開発者には高い」と評価したが、**現在 Codex は ChatGPT Free / Go $8 / Plus $20 / Pro / Business のいずれでも利用できる**。ただし Free / Go で使えるのはデスクトップアプリ（GPT-6 Luna、ロールアウトに依存）で、Web・CLI・IDE 拡張・iOS は Plus 以上の項目に載っている（公式料金ページ）。Pro は $100 / $200 / $500 の3段階になっている。",
       "**Claude Code との使い分け**: Codex はクラウド × PR ベースの非同期、Claude Code はローカル × IDE/CLI 中心の対話的編集 + agent view でローカル並列。両者を[併用するマルチエージェント構成](?a=claude-code-codex-multi-agent-2026)が実用化されている。",
       "**関連記事**: [GPT-5.6 一般公開](?a=openai-gpt-5-6-general-availability-july-9-2026)、[GPT-5.6 レビュー](?a=gpt-5-6-review)、[GPT-5.6 値下げ](?a=openai-gpt-5-6-luna-terra-price-cut-2026)、[Codex Micro（ハードウェア）](?a=openai-codex-micro-work-louder-hardware-macropad-2026)、[Workspace Agents](?a=openai-workspace-agents-codex-enterprise-2026)、[Codex プラグイン公開](?a=openai-codex-plugin-cc-claude-code-2026)、[CLI 横断比較](?a=cli-tools-comparison-2026-march)。",
       "---",
       "**編集履歴**",
       "【訂正 2026-08-11】料金表および評価から「ChatGPT Pro $200/月が事実上の前提」という趣旨の記述を訂正しました。現在 Codex は ChatGPT Free / Go $8 / Plus $20 / Pro / Business のいずれでも利用できます。",
-      "【追記 2026-08-11】月次見直しにより更新。(1) 基盤モデルを GPT-5.5 から [GPT-5.6](?a=gpt-5-6-review)（Sol / Terra / Luna、7/9 GA）に更新し、7/31 の値下げを反映、(2) 4/2 のクレジット制移行と、それによって月額だけでは実効コストを見積もれなくなった点を注意点に追加、(3) 現行の料金プラン表に更新、(4) [Codex Micro](?a=openai-codex-micro-work-louder-hardware-macropad-2026)（初のハードウェア製品）を関連記事に追加しました。"
+      "【追記 2026-08-11】月次見直しにより更新。(1) 基盤モデルを GPT-5.5 から [GPT-5.6](?a=gpt-5-6-review)（Sol / Terra / Luna、7/9 GA）に更新し、7/31 の値下げを反映、(2) 4/2 のクレジット制移行と、それによって月額だけでは実効コストを見積もれなくなった点を注意点に追加、(3) 現行の料金プラン表に更新、(4) [Codex Micro](?a=openai-codex-micro-work-louder-hardware-macropad-2026)（初のハードウェア製品）を関連記事に追加しました。",
+      "【訂正 2026-09-30】（誤）`-p` フラグでパイプ・スクリプト利用、`codex --headless` でヘッドレス（CI 用） →（正）非対話実行は `codex exec`。`-p` は `--profile` の短縮形で、`--headless` は Codex CLI ではなく Codex Security CLI のフラグである（公式 CLI リファレンス）。",
+      "【訂正 2026-09-30】（誤）npm 経由のインストールは Node.js 22+ 必須 →（正）npm パッケージのメタデータ上の要件は Node.js 16 以上である。標準インストーラと Homebrew（`brew install --cask codex`）も公式ドキュメントにある。",
+      "【訂正 2026-09-30】（誤）GPT-5.6 が標準モデル →（正）2026年9月30日時点の CLI 既定（同梱カタログ）かつ公式の推奨は GPT-6.1 Sol（9月29日、Plus 以上でロールアウト中）。GPT-5.6 は当時の標準だった。",
+      "【訂正 2026-09-30】（誤）Free / Go は CLI・IDE 拡張・Web・iOS で Codex を使える →（正）公式料金ページは Free / Go の内容をデスクトップアプリの GPT-6 Luna（Standard 速度、ロールアウトに依存）とし、Web・CLI・IDE 拡張・iOS は Plus 以上の項目に載せている。料金表の「8月に無料枠が無制限化」も、Codex の公式ドキュメントでは確認できていない。",
+      "【訂正 2026-09-30】（誤）Daybreak は5/7・5/11、3層構造（GPT-5.5 標準 / Trusted Access 検証 / GPT-5.5-Cyber）、対応モデルは GPT-5.5-Cyber →（正）8月10日から Daybreak Blue と Daybreak Red の2段階で、専用モデルは GPT-5.6 Cyber である（公式 changelog 2026-08-10）。5月の日付は今回確認できていない。",
+      "【訂正 2026-09-30】（誤）Luna と Terra の値下げは7/31 →（正）7/30。OpenAI の API changelog と Codex の What's new がいずれも7月30日としている。",
+      "【追記 2026-09-30】月次見直しにより更新。使用枠と料金の現況（公式料金ページ）: Plus と Standard Business のローカルメッセージ目安は5時間あたり GPT-6.1 Sol が15〜160、GPT-6 Sol が15〜150、GPT-6 Luna が350〜3,000、GPT-6 Astra が5〜45で、固定の上限ではない。Fast モードは含まれる使用枠を2.5倍、購入クレジットを2倍消費する。GPT-6 Astra の Ultrafast は Pro $500 と対象の Enterprise / Edu で使え、含まれる使用枠を8倍、購入クレジットを6倍消費する。クレジット単価（100万トークンあたり）は GPT-6.1 Sol が入力50・出力250、GPT-6 Luna が入力2.5・出力12.5、GPT-6 Astra が入力250・出力1,250である。",
+      "【追記 2026-09-30】機能と CLI の動き（公式 changelog と What's new）: 環境を公開して再利用できる Codex Cloud の環境（各タスクは隔離された作業領域で開始）、研究プレビューの Codex Security Cloud、Astra Ultrafast が9月29日前後に案内された。CLI は 0.147.0（8月上旬）で Agent Plugins と `--approve-for-me`、8月11日に Claude Code・Cursor からの `/import`、0.156.0（9月22日）で音声会話と `/usage`、0.159.1（9月29日）で GPT-6.1 Sol の既定化が入った。npm の最新は 0.159.2 である。",
+      "【追記 2026-09-30】今回確認できなかった点: 4M+ アクティブユーザー（6月時点として記載）、Workspace Agents が Codex で動くこと、4月2日の課金方式変更の日付、Pro の並列枠の倍率、Enterprise の SOC 2、Codex Security の3月リリースは、当サイトの記載のままである。openai.com と help.openai.com には調査環境から到達できなかった（platform.openai.com は developers.openai.com に転送され読める）。本稿の★は変更していない。"
     ],
     "primarySources": [
       {
@@ -8311,52 +8323,82 @@ const ARTICLES_BODY = {
         "title": "Introducing GPT-5.5",
         "site": "OpenAI",
         "url": "https://openai.com/index/introducing-gpt-5-5/"
+      },
+      {
+        "title": "Pricing | Codex",
+        "site": "OpenAI ChatGPT Learn",
+        "url": "https://learn.chatgpt.com/docs/pricing"
+      },
+      {
+        "title": "Models | Codex",
+        "site": "OpenAI ChatGPT Learn",
+        "url": "https://learn.chatgpt.com/docs/models"
+      },
+      {
+        "title": "ChatGPT & Codex changelog",
+        "site": "OpenAI ChatGPT Learn",
+        "url": "https://learn.chatgpt.com/docs/changelog"
+      },
+      {
+        "title": "What's new | ChatGPT Learn",
+        "site": "OpenAI ChatGPT Learn",
+        "url": "https://learn.chatgpt.com/docs/whats-new"
+      },
+      {
+        "title": "Codex Cloud",
+        "site": "OpenAI ChatGPT Learn",
+        "url": "https://learn.chatgpt.com/docs/cloud"
+      },
+      {
+        "title": "Pricing | OpenAI API",
+        "site": "OpenAI Developers",
+        "url": "https://developers.openai.com/api/docs/pricing"
       }
     ],
     "tables": [
       {
-        "afterParagraph": 21,
+        "afterParagraph": 24,
+        "caption": "Codex を含む ChatGPT プラン（2026年9月30日時点）",
         "headers": [
           "プラン",
           "月額",
           "内容"
         ],
-        "caption": "Codex を含む ChatGPT プラン（2026年8月11日時点）",
         "rows": [
           [
             "ChatGPT Free",
             "$0",
-            "Codex を制限付きで利用可（8月に無料枠が無制限化、既定モデルは Luna）"
+            "デスクトップアプリで GPT-6 Luna（Standard 速度）が使える。提供はロールアウトに依存（公式料金ページ）"
           ],
           [
             "ChatGPT Go",
             "$8",
-            "低価格帯。Codex 利用可"
+            "低価格帯。Free と同じ内容（デスクトップアプリで GPT-6 Luna、ロールアウトに依存）"
           ],
           [
             "ChatGPT Plus",
             "$20",
-            "Codex 標準利用。個人開発者の実用ライン"
+            "Web・CLI・IDE 拡張・iOS で利用。GPT-6.1 Sol・GPT-6 Sol・GPT-6 Luna。ChatGPT クレジットで追加購入可。個人開発者の実用ライン"
           ],
           [
             "ChatGPT Pro",
-            "$100 / $200",
-            "Codex フル利用、並列実行枠最大（Plus の5倍 / 20倍）"
+            "$100 / $200 / $500",
+            "Plus の内容に加え、5時間あたりの上限が現時点で無い（公式 FAQ）。Astra Ultrafast は Pro $500 が対象。並列実行枠の倍率（旧版の「Plus の5倍 / 20倍」）は今回確認できていない"
           ],
           [
             "ChatGPT Business",
-            "$20（年払）/ $25（月払） per seat",
-            "組織管理"
+            "$20（年払・2席以上）/ $25（月払） per seat",
+            "組織管理。SAML SSO・MFA、クレジットで追加購入可、クラウド用の大きい VM"
           ],
           [
-            "ChatGPT Enterprise",
+            "ChatGPT Enterprise / Edu",
             "カスタム",
-            "SOC 2、データ越境制御"
+            "SCIM・EKM・RBAC・Compliance API による監査ログ・データ保持と所在地の制御・優先処理（公式料金ページ）。旧版の「SOC 2」は今回公式ページで確認できていない"
           ],
           [
-            "Codex CLI（API 従量）",
+            "Codex（API キー）",
             "—",
-            "GPT-5.6 トークン単価ベース（Luna $0.20/$1.20、Terra $2/$12）"
+            "使えるモデルは API キーで使えるモデルに従い、API 価格の従量課金。272K トークンまでの入力で GPT-6.1 Sol $2/$10、GPT-6 Sol $2/$10、GPT-6 Luna $0.10/$0.50、GPT-6 Astra $10/$50。旧世代の GPT-5.6 は Terra $2/$12、Luna $0.20/$1.20、Sol $4/$20（プロモーション価格）。GitHub コードレビューや Slack などクラウド機能は使えない"
           ]
         ]
       }
