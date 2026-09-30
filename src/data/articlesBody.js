@@ -10277,25 +10277,28 @@ const ARTICLES_BODY = {
   "claude-sonnet-5-review": {
     "body": [
       "**Claude Sonnet 5** は Anthropic が2026年6月30日に GA した新ミッドレンジ・フラッグシップモデル。「これまでで最もエージェント的な Sonnet」を Anthropic が公表しており、**プランニング・ブラウザやターミナル使用・自律実行**を Sonnet サイズで実現する。「数ヶ月前まで大型で高価なモデルが必要だった水準の自律性を Sonnet サイズで」というのが位置付け。",
+      "【2026年9月30日時点の注記】本レビューの対象は Sonnet 5 であり、2026年9月28日に後継の Sonnet 5.5（claude-sonnet-5-5）が公開された。公式のモデル一覧では Sonnet 5.5 が Sonnet の最新、Sonnet 5 は Legacy（引き続き利用可能。廃止は早くても2027年6月30日）とされている。Sonnet 5.5 の料金は Sonnet 5 と同じ $2/$10 で、Anthropic は同じ作業に必要なトークンが少なく、タスクあたりのコストが最大30%下がる場合があると説明している（当事者の説明であり、独立した検証は本稿では確認できていない）。Claude Code では、Anthropic API 経由の場合、Sonnet の既定モデルは 2.1.284（2026年9月28日）で Sonnet 5.5 になった（Amazon Bedrock、Google Cloud の Agent Platform、Microsoft Foundry 経由では Sonnet 4.5 のまま）。API を Sonnet 5 から移す場合、公式ドキュメントは5つの破壊的変更を挙げている。up-front thinking を止めるには thinking: disabled ではなく between_tools を使う、強制ツール呼び出しはエラーになる、思考ブロックは生成したモデルと会話に紐づく、computer_20251124 は Claude API と Google Cloud で受け付けられない、advisor ツールは Opus 4.8・Opus 4.7・Sonnet 5 を advisor として受け付けない。本レビューの評価と推奨は Sonnet 5 に対するもので、Sonnet 5.5 の評価は含まない。",
       "**性能ベンチマーク**: SWE-bench Pro **63.2%**（Sonnet 4.6: 58.1% → +5.1pt、Opus 4.8: 69.2%）。**GDPval-AA v2（知識労働）では 1618 で Opus 4.8（1615）を上回り**、Humanity's Last Exam（ツール利用）は 57.4%（Opus 4.8: 57.9%）でほぼ互角、プロンプトインジェクション安全性でも Opus 4.8 と同水準。「Sonnet で Opus 級」がほぼ現実に。",
-      "**料金**: **$3/$15 per 1M tokens**（Sonnet 4.6 と同額）。**2026年8月31日まで適用されていた導入価格 $2/$10 は終了した。** なお新トークナイザは同じテキストで **1.0〜1.35 倍**多くトークンを数える傾向があり、単純換算では実コストの読みを誤る可能性がある。それでも [Opus 5](?a=claude-opus-5-review)（$5/$25）や Claude Fable 5（$10/$50）に対しては価格優位を保つ。",
-      "**Adaptive Thinking と 1M コンテキスト**: 1M トークンのコンテキストは Sonnet 4.6・Opus 系と同水準。**Adaptive Thinking が常時オン**で、Claude Code や API では **エフォートのデフォルトが high** に設定されている。最大出力は 128K、batch-API のベータヘッダで最大 300K トークン出力まで拡張可能。訓練データのカットオフは **2026年1月**まで延長。",
+      "**料金**: $2/$10 per 1M tokens（Sonnet 4.6 の $3/$15 より低い）。発売時は8月31日までの導入価格と案内されたが、公式が標準価格として恒久化し、9月1日に予定されていた $3/$15 への引き上げは行われていない。 なお新トークナイザは同じテキストで **1.0〜1.35 倍**多くトークンを数える傾向があり、単純換算では実コストの読みを誤る可能性がある。それでも [Opus 5](?a=claude-opus-5-review)（$5/$25）や Claude Fable 5（$10/$50）に対しては価格優位を保つ。",
+      "**Adaptive Thinking と 1M コンテキスト**: 1M トークンのコンテキストは Sonnet 4.6・Opus 系と同水準。Adaptive Thinking が既定でオン（thinking に disabled を指定すれば無効にできる）で、Claude Code や API では **エフォートのデフォルトが high** に設定されている。最大出力は 128K、batch-API のベータヘッダで最大 300K トークン出力まで拡張可能。訓練データのカットオフは **2026年1月**まで延長。",
       "**利用可能プラットフォーム**: **claude.ai の Free / Pro のデフォルト**モデルとして即日切替。Max・Team・Enterprise でも利用可能。API に加え、[Claude Code](?a=claude-code)、[Cursor](?a=cursor-editor)、VS Code、[GitHub Copilot CLI](?a=github-copilot-cli) でも即日採用。マルチプラットフォーム展開の速度が特筆される。",
       "**強み**:",
       "**(1) エージェント能力**: プランニング・ツール呼び出し・結果読み取り・継続実行を人間の介入なしで長時間維持。",
-      "**(2) コスパ**: $3/$15 は [Opus 5](?a=claude-opus-5-review)（$5/$25）の6割、Fable 5（$10/$50）の3割。導入価格 $2/$10 の期間ほどの割安感はなくなったが、性能対価格の水準は依然として高い。",
+      "**(2) コスパ**: $2/$10 は [Opus 5](?a=claude-opus-5-review)（$5/$25）の4割、Fable 5（$10/$50）の2割。導入価格は恒久化されたため、この価格差は9月以降も続いている。",
       "**(3) マルチプラットフォーム統合**: Claude Code・Cursor・VS Code・GitHub Copilot が即日対応、実装リスクが低い。",
       "**(4) Adaptive Thinking 標準**: 難易度に応じた推論深さの自動調整。",
       "**注意点**:",
       "**(1) トークナイザ変更**: 同じテキストで 1.0-1.35 倍多くトークンを数える。既存の**予算計画・請求予測が狂う可能性**。",
       "**(2) Fable 5 との差**: SWE-bench Pro で 63.2% vs Fable 5 の 95%（Verified）。**最難関のコーディング・研究タスク**では依然として Fable 5 or GPT-5.6 Sol が優位。",
-      "**(3) 競合の値下げ**: OpenAI は7/31に [GPT-5.6 を値下げ](?a=openai-gpt-5-6-luna-terra-price-cut-2026)し、直接競合の **Terra は $2/$12**、軽量の **Luna は $0.20/$1.20** になった。Sonnet 5 が8/31以降 $3/$15 に戻ると、**入力単価で Terra を上回る**。モデル選択がインフラ・ベンダー選択と直結する点も併せて検討したい（[SpaceX-Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026) 参照）。",
-      "**(4) 上位モデルとの価格差が縮まった**: 7/24 に投入された **[Claude Opus 5](?a=claude-opus-5-review)（$5/$25）** は、Fable 5 に迫る性能を半額で提供する。8/31 以降の Sonnet 5（$3/$15）との差は **入力1.7倍・出力1.7倍**にとどまるため、**難易度の高いタスクでは Opus 5 を選ぶ判断が以前より合理的**になっている。Opus 5 の effort トグル（low / medium / high）で思考量を抑えれば、実効コスト差はさらに縮む。",
-      "**AI News の推奨**: **エージェントを量で回すワークロードの第一候補**。既存 Sonnet 4.6 パイプラインは Sonnet 5 への移行を検証すべきで、コスト削減効果が大きい。ただし **8/31 で導入価格が終わり $3/$15 になる**ため、採用判断は改定後の単価で行うこと。難易度の高いタスクでは [Opus 5](?a=claude-opus-5-review)（$5/$25、effort トグルで思考量を調整可）との比較を勧める。Fable 5 級の性能が必要な場合や、Sonnet 5 のセーフガード（[Fable 5 プロンプト設計ガイド](?a=feature-prompting-claude-fable-5-practical-guide-2026) でも触れた reasoning_extraction 拒絶等）が問題になる用途は個別評価が必要。",
+      "**(3) 競合の値下げ**: OpenAI は7/31に [GPT-5.6 を値下げ](?a=openai-gpt-5-6-luna-terra-price-cut-2026)し、直接競合の **Terra は $2/$12**、軽量の **Luna は $0.20/$1.20** になった。Sonnet 5 は $2/$10 が恒久化されたため、上記の Terra（$2/$12）と比べて入力単価は同じで、出力単価は Sonnet 5 のほうが低い。モデル選択がインフラ・ベンダー選択と直結する点も併せて検討したい（[SpaceX-Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026) 参照）。",
+      "**(4) 上位モデルとの価格差が縮まった**: 7/24 に投入された **[Claude Opus 5](?a=claude-opus-5-review)（$5/$25）** は、Fable 5 に迫る性能を半額で提供する。Sonnet 5（$2/$10）との差は入力・出力ともに2.5倍である（$3/$15 への引き上げは行われなかったため、8月時点で見込んでいた1.7倍という差にはなっていない）。Opus 5 の effort トグル（low / medium / high / xhigh / max の5段階）で思考量を抑えれば、実効コスト差はさらに縮む。",
+      "**AI News の推奨**: **エージェントを量で回すワークロードの第一候補**。既存 Sonnet 4.6 パイプラインは Sonnet 5 への移行を検証すべきで、コスト削減効果が大きい。なお導入価格 $2/$10 は8月31日で終わらず恒久化されているため、採用判断は $2/$10 を前提に行える。難易度の高いタスクでは [Opus 5](?a=claude-opus-5-review)（$5/$25、effort トグルで思考量を調整可）との比較を勧める。Fable 5 級の性能が必要な場合や、Sonnet 5 のセーフガード（[Fable 5 プロンプト設計ガイド](?a=feature-prompting-claude-fable-5-practical-guide-2026) でも触れた reasoning_extraction 拒絶等）が問題になる用途は個別評価が必要。",
       "---",
       "**編集履歴**",
       "【追記 2026-08-11】月次見直しにより更新。(1) **導入価格 $2/$10 の残りが約20日**である点を明記し、採用判断は改定後の $3/$15 で行うよう推奨を改めました、(2) 7/24 投入の [Opus 5](?a=claude-opus-5-review)（$5/$25）により上位モデルとの価格差が縮まった点を注意点に追加、(3) 競合の [GPT-5.6 値下げ](?a=openai-gpt-5-6-luna-terra-price-cut-2026)（Terra $2/$12、Luna $0.20/$1.20）を反映しました。旧版に記載の「GPT-5.6 Terra $2.50/$15」は値下げ前の単価です。",
-      "【訂正 2026-09-02】**導入価格 $2/$10 は8月31日で終了した。** 本文の料金とコスパの記述を現行の **$3/$15** に更新した。改定前の記述を残していたため、9月1日以降に本記事を読んだ読者に誤った単価を示していた。**期限付きの記述は、期日を過ぎたら必ず更新する。** 今後は `scripts/check-expired-content.mjs` で機械的に検出する。 **タイトルにも $2/$10 が残っていたため、あわせて $3/$15 に修正した（2026-09-02 追加修正）。** 本文と excerpt だけを直してタイトルを見落としており、一覧・検索結果・SNS 共有時にもっとも目に触れる位置に誤った単価が出ていた。**価格を直す際は、本文・excerpt・タイトルの3か所すべてを確認する。**"
+      "【訂正 2026-09-02】**導入価格 $2/$10 は8月31日で終了した。** 本文の料金とコスパの記述を現行の **$3/$15** に更新した。改定前の記述を残していたため、9月1日以降に本記事を読んだ読者に誤った単価を示していた。**期限付きの記述は、期日を過ぎたら必ず更新する。** 今後は `scripts/check-expired-content.mjs` で機械的に検出する。 **タイトルにも $2/$10 が残っていたため、あわせて $3/$15 に修正した（2026-09-02 追加修正）。** 本文と excerpt だけを直してタイトルを見落としており、一覧・検索結果・SNS 共有時にもっとも目に触れる位置に誤った単価が出ていた。**価格を直す際は、本文・excerpt・タイトルの3か所すべてを確認する。**",
+      "【訂正 2026-09-30】（誤）導入価格 $2/$10 は8月31日で終了し、Sonnet 5 は $3/$15 になった →（正）$2/$10 は公式が標準価格として恒久化しており、9月1日に予定されていた $3/$15 への引き上げは行われていない。根拠は Anthropic の料金ページの脚注と、Claude Code 更新履歴 2.1.243（2026年8月25日）の「限定価格ではなく標準の定価として表示する」旨の記載である。本記事の9月2日付の訂正は、この恒久化を確認しないまま $3/$15 へ書き換えたもので誤りだった。タイトル、概要、本文の料金・コスパ・競合比較・推奨の記述を $2/$10 に直した。あわせて、（誤）Adaptive Thinking が常時オン →（正）既定でオン（thinking: disabled で無効にできる）、（誤）Opus 5 の effort は low / medium / high →（正）low / medium / high / xhigh / max の5段階、にそれぞれ訂正した。",
+      "【追記 2026-09-30】月次見直しにより、料金、モデル世代、提供範囲、廃止予定を公式ドキュメントで確認し、後継 Sonnet 5.5（9/28）と Opus 5.5（9/22）の公開を冒頭に注記した。5軸の採点は Sonnet 5 に対するもので、今回は変更していない。SWE-bench Pro 63.2% など発表時のベンチマーク数値は、公式発表ページ上でチャート画像として掲載されており本文から確認できていない。claude.ai の既定モデルが現在どれかは、公式の資料で確認できていない。"
     ],
     "primarySources": [
       {
@@ -10312,6 +10315,36 @@ const ARTICLES_BODY = {
         "title": "Anthropic launches Claude Sonnet 5 as a cheaper way to run agents",
         "site": "TechCrunch",
         "url": "https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/"
+      },
+      {
+        "title": "Pricing",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Models overview",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/models/overview"
+      },
+      {
+        "title": "Model deprecations",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+      },
+      {
+        "title": "Claude Sonnet 5.5",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/models/sonnet-5-5/overview"
+      },
+      {
+        "title": "Introducing Claude Sonnet 5.5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/claude-sonnet-5-5"
+      },
+      {
+        "title": "Claude Code changelog",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/changelog"
       }
     ]
   },
