@@ -2142,7 +2142,7 @@ export const ARTICLES_META = [
     "type": "feature",
     "category": "editor",
     "title": "AI エディタ横断比較 — Cursor・Devin Desktop（旧 Windsurf）・VS Code+Copilot・Zed",
-    "excerpt": "AI エディタ4製品を、機能・料金・エージェント能力・拡張性の軸で横並びに比較した。**毎月見直している記事で、最終更新は2026年8月11日**。Windsurf の Devin Desktop へのブランド統合、SpaceX による Cursor 買収の発表、GitHub Copilot の従量課金移行を反映し、比較対象に Zed を加えた。",
+    "excerpt": "AI エディタ4製品を、機能・料金・エージェント能力・拡張性の軸で横並びに比較した。**毎月見直している記事で、最終更新は2026年9月30日**。SpaceX による Cursor 買収の完了（8月14日）、Devin Desktop での Cascade 削除（9月8日）、GitHub Copilot の従量課金と個人向け Max プラン、Devin の現行料金などを反映した。",
     "date": "2026-03-29",
     "author": "AI News 編集部",
     "readTime": "9分",
@@ -2160,7 +2160,7 @@ export const ARTICLES_META = [
     },
     "heroScope": "none",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-08-11"
+    "lastReviewed": "2026-09-30"
   },
   {
     "id": "pricing-comparison-all-tools-2026-march",

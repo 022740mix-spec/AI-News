@@ -6154,23 +6154,29 @@ const ARTICLES_BODY = {
   },
   "editor-comparison-2026-march": {
     "body": [
-      "AI 支援付きコードエディタの選択肢は、2026年前半の再編を経て **Cursor・Devin Desktop（旧 Windsurf）・VS Code + GitHub Copilot・Zed** の4つに整理された。いずれも AI 統合の深さ・エージェント機能・料金体系の3点で差が出る。**本記事は月次で見直しており、最終更新は2026年8月11日**。3月版からは資本関係・製品名・料金のすべてが変わっているため、以前の版を読んだ方も改めて確認してほしい。",
-      "**Cursor** は **Anysphere** 社が開発する VS Code フォーク。[Cursor 3.x](?a=cursor-3-agent-first-workspace-2026) の **Agents Window** でローカル・worktree・クラウド VM・リモート SSH のエージェントを一画面で並列管理でき、Composer によるマルチファイル編集、Background Agent、Tab 補完がその下に並ぶ。独自モデル **Composer 2.5 / Sonic**（[Kimi K2.5 ベース + 独自 RL](?a=cursor-composer-2-kimi-2026)）に加えフロンティアモデルも選択可能。PR レビュー専用の **Bugbot** は5月に従量課金へ移行し、1 PR あたり平均 $1.00〜1.50 になった。プランは Pro $20 / Pro+ $60 / Ultra $200 / Teams Standard $40 per seat / Teams Premium $120 per seat。**2026年6月16日、SpaceX による $60B（全株式）の買収が発表され、Q3 2026 クローズ予定**（[→ 速報](?a=spacex-cursor-60b-acquisition-anysphere-2026)、[→ 市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。",
-      "**Devin Desktop（旧 Windsurf）** は、旧 Codeium の VS Code フォークを **Cognition**（自律エージェント Devin の開発元）が2025年7月に買収したもので、**2026年6月2日に Devin Desktop へブランド統合された**。中核エージェントは **Devin Local** で、Rust で書き直された Cascade の後継にあたる。**Cascade は2026年7月1日に提供終了しており**、現行の評価対象は Devin Local になる。Cascade 比でトークン効率が最大30%改善し、サブエージェントをネイティブに扱える。既存ユーザーは自動移行されたが、**CI やスクリプトから Cascade を明示的に呼んでいた場合は 7/1 までに Devin Local へ振り替える必要があった**。料金は[3月19日の改定](?a=windsurf-pricing-overhaul)でクレジット制から日次・週次クォータ制に移行し、Free / Pro $20 / Teams $40 per seat / Max $200 / Enterprise の構成。Pro が $15 から $20 になったことで **Cursor に対する価格優位は消滅**した。単体エディタというより、Devin 本体と組み合わせた一貫ワークフローの入口として位置付けるのが実態に近い。",
-      "**VS Code + GitHub Copilot** は Microsoft / GitHub のエコシステム。エディタ本体は無料で、Copilot が AI 層を担う。Agent Mode がターミナル操作・ファイル編集を含むマルチステップタスクを自律実行し、Copilot Coding Agent は GitHub Issue を割り当てるだけで PR を自動作成する。モデルは Claude / GPT / Gemini に加え Microsoft 内製の **MAI-Code-1-Flash** を `/model` で切替可能（[→ Copilot CLI レビュー](?a=github-copilot-cli)）。**2026年6月1日から従量課金（AI Credits、1クレジット = $0.01）へ移行**し、各プランに月次クレジット枠が付く形になった。Free / Pro $10 / Pro+ $39 / Business $19 per seat / Enterprise $39 per seat。拡張機能エコシステムの規模と企業統制機能は依然として突出している。",
-      "**Zed** は **Zed Industries** の Rust 製ネイティブエディタで、VS Code 系ではない唯一の選択肢。GPU レンダリングによる描画速度と、Agent Panel から外部エージェントを接続できる設計が特徴。Personal $0（編集予測 月2,000回まで、自前 API キー持込可）/ Pro $10 / Business $30 per seat。**AI 機能を自前の API キーだけで賄えるため、サブスクリプションを増やさずに AI エディタ体験を得たい場合の最有力**になる。一方、Composer 相当のマルチファイル自律編集の成熟度では先行3製品に及ばない。",
+      "AI 支援付きコードエディタの選択肢は、2026年前半の再編を経て **Cursor・Devin Desktop（旧 Windsurf）・VS Code + GitHub Copilot・Zed** の4つに整理された。いずれも AI 統合の深さ・エージェント機能・料金体系の3点で差が出る。**本記事は月次で見直しており、最終更新は2026年9月30日**。3月版からは資本関係・製品名・料金のすべてが変わっているため、以前の版を読んだ方も改めて確認してほしい。",
+      "**Cursor** は **Anysphere** 社が開発する VS Code フォーク。[Cursor 3.x](?a=cursor-3-agent-first-workspace-2026) の **Agents Window** でローカル・worktree・クラウド VM・リモート SSH のエージェントを一画面で並列管理でき、Composer によるマルチファイル編集、Cloud Agents（旧 Background Agent）、Tab 補完がその下に並ぶ。独自モデル **Composer 2.5 / Sonic**（[Kimi K2.5 ベース + 独自 RL](?a=cursor-composer-2-kimi-2026)）に加え、SpaceXAI の Grok 4.7 / 4.6 / 4.5 が Composer 2.5 と同じ「Cursor Models」利用枠に含まれ、Anthropic・OpenAI・Google などのフロンティアモデルは別枠（API 価格ベース）で選択できる。Cursor の現行のモデル一覧では Sonic を確認できていない。PR レビュー専用の **Bugbot** は5月に従量課金へ移行し、1 PR あたり平均 $1.00〜1.50 になった。プランは Pro $20 / Pro+ $60 / Ultra $200 / Teams Standard $40 per seat / Teams Premium $120 per seat。**2026年8月14日に SpaceX による Cursor の買収が完了した**（Cursor 公式ブログ「Cursor is now a part of SpaceX」で確認。6月16日の発表と $60B（全株式）は当サイトの既報による記述で、公式ブログには記載がない。[→ 完了の記事](?a=spacex-closes-cursor-anysphere-acquisition-2026)、[→ 速報](?a=spacex-cursor-60b-acquisition-anysphere-2026)、[→ 市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。",
+      "**Devin Desktop（旧 Windsurf）** は、旧 Codeium の VS Code フォークを **Cognition**（自律エージェント Devin の開発元）が2025年7月に買収したもので、**2026年6月2日に Devin Desktop へブランド統合された**。中核エージェントは **Devin Local** で、Rust で書き直された Cascade の後継にあたる。**Cascade は、2026年6月2日の発表で「7月1日まで」（公式 FAQ では「7月中」）は使えると予告されていたが、実際には残り、2026年9月8日リリースの v3.9.19 で Devin Desktop から削除された**。Devin Local が唯一のエージェントになり、現行の評価対象は Devin Local になる。Cascade 比でトークン効率が最大30%改善し、サブエージェントをネイティブに扱える。既存ユーザーは自動移行されたが、Cascade の既存の会話は、Devin Desktop の「Continue in Devin Local」で新エージェントへ移行する形になった（予告上の期限は7月1日だった）。料金は[3月19日の改定](?a=windsurf-pricing-overhaul)でクレジット制から日次・週次クォータ制に移行し、Free / Pro $20 / Teams（チーム基本料 $80/月 + フルユーザー1席あたり $40/月、最大200ユーザー）/ Max $200 / Enterprise の構成（Devin の現行料金ページ）。Pro は $20/月で、Cursor Pro（$20）と同額である（Devin の3月の発表では、既存の Pro・Teams 加入者は従来価格が据え置かれる）。単体エディタというより、Devin 本体と組み合わせた一貫ワークフローの入口として位置付けるのが実態に近い。",
+      "**VS Code + GitHub Copilot** は Microsoft / GitHub のエコシステム。エディタ本体は無料で、Copilot が AI 層を担う。Agent Mode がターミナル操作・ファイル編集を含むマルチステップタスクを自律実行し、Copilot cloud agent（本記事の旧版では Coding Agent と表記）は GitHub Issue を割り当てるだけで PR を自動作成する。モデルは Claude / GPT / Gemini に加え Microsoft 内製の **MAI-Code-1.1-Flash**（旧 MAI-Code-1-Flash は2026年9月10日に置き換え）を `/model` で切替可能（[→ Copilot CLI レビュー](?a=github-copilot-cli)）。**2026年6月1日から従量課金（AI Credits、1クレジット = $0.01）へ移行**し、各プランに月次クレジット枠が付く形になった。Free / Student / Pro $10 / Pro+ $39 / Max $100 / Business $19 per seat / Enterprise $39 per seat。拡張機能エコシステムの規模と企業統制機能は依然として突出している。",
+      "**Zed** は **Zed Industries** の Rust 製ネイティブエディタで、VS Code 系ではない唯一の選択肢。GPU レンダリングによる描画速度と、Agent Panel から外部エージェントを接続できる設計が特徴。Personal $0（採用された編集予測 2,000回まで、自前 API キー・外部エージェントは無制限）/ Pro $10（$5 分のトークン込み、超過は API 定価 +10% の従量）/ Business $30 per seat。**AI 機能を自前の API キーだけで賄えるため、サブスクリプションを増やさずに AI エディタ体験を得たい場合の最有力**になる。一方、Composer 相当のマルチファイル自律編集の成熟度では先行3製品に及ばない。",
       "選び方の目安: エージェントの並列運用を最優先なら **Cursor**、既存の VS Code 環境と GitHub の統制を活かすなら **VS Code + Copilot**、Devin との一貫ワークフローを組むなら **Devin Desktop**、速度とコスト最小化なら **Zed**。企業で SSO・監査・IP 補償が必要なら Copilot Business / Enterprise が最も導入しやすい（[→ 企業導入チェックリスト](?a=ai-enterprise-legal-checklist-2026)）。各ツールの[料金詳細はこちら](?a=pricing-comparison-all-tools-2026-march)、CLI 側の比較は[CLI ツール横断比較](?a=cli-tools-comparison-2026-march)を参照。",
-      "**資本関係は選定要因になりつつある**: SpaceX による Cursor 買収がクローズすれば、Cursor は SpaceX-xAI 系、Copilot は Microsoft 系、Devin Desktop と Zed は独立系という構図になる。エディタを選ぶことが、背後の計算インフラ・データ取り扱い方針・親会社の事業判断を選ぶことに近づいている。**開発データが訓練に使われるかどうかはプランごとに条件が異なる**ため、企業導入では Privacy Mode 相当の設定とデータ取り扱い条項を個別に確認してほしい。",
+      "**資本関係は選定要因になりつつある**: SpaceX による Cursor 買収は2026年8月14日に完了しており、Cursor は SpaceX 傘下（モデル面では SpaceXAI の Grok を組み込み）、Copilot は Microsoft 系、Devin Desktop と Zed は独立系という構図になっている。エディタを選ぶことが、背後の計算インフラ・データ取り扱い方針・親会社の事業判断を選ぶことに近づいている。**開発データが訓練に使われるかどうかはプランごとに条件が異なる**ため、企業導入では Privacy Mode 相当の設定とデータ取り扱い条項を個別に確認してほしい。",
+      "【追記 2026-09-30】この比較の対象外だが、状況として次の3点がある。(1) Google は Antigravity（デスクトップアプリの Antigravity 2.0、IDE、CLI）を提供しており、個人向けに $0 のプランがある（Antigravity 公式の料金ページ）。本記事では比較していない。(2) VS Code のリリースノート（1.139、2026年9月23日）には、エージェントのセッションを扱う専用の Agents window に関する記述がある。(3) Zed Industries は2026年8月12日に、エージェントと共同作業する環境 Delta を発表し、9月16日にパブリックベータとした。Zed 本体とは別の製品である。いずれも各社の説明に基づく記述で、独立した検証は確認できていない。",
       "---",
       "**編集履歴**",
       "【訂正 2026-08-11】「Windsurf は2026年3月に Anysphere（Cursor 親会社）に買収された」「Cursor と Windsurf は同一親会社になった」という記述を削除しました。**この買収は事実ではありません。** Windsurf を買収したのは Cognition で、発表は2025年7月です。誤りの元になった記事は[取り下げ](?a=cursor-windsurf-merge)しました。",
       "【追記 2026-08-11】月次見直しにより全面更新。(1) Windsurf の Devin Desktop へのブランド統合（6/2）、(2) SpaceX による Anysphere 買収の発表（6/16）、(3) GitHub Copilot の従量課金移行（6/1）と現行プラン、(4) Cursor 3.x / Agents Window / Composer 2.5 / Bugbot 従量課金、(5) 比較対象に Zed を追加、(6) 全ツールの現行料金を反映しました。旧版のモデル世代（Sonnet 4.6 / Opus 4.6 / GPT-5.4 / o4-mini）は現行世代に置き換えています。",
-      "【訂正 2026-08-11】同日の更新時に「中核の Cascade は〜」と、**Cascade を現行の中核機能として記載していました**。**Cascade は2026年7月1日に提供終了**しており、現行は後継の Devin Local です。当該箇所と比較表を訂正しました。ブランド統合と運営元は確認したものの、機能レベルの世代交代を確認していなかったことによる誤りです。"
+      "【訂正 2026-08-11】同日の更新時に「中核の Cascade は〜」と、**Cascade を現行の中核機能として記載していました**。**Cascade は2026年7月1日に提供終了**しており、現行は後継の Devin Local です。当該箇所と比較表を訂正しました。ブランド統合と運営元は確認したものの、機能レベルの世代交代を確認していなかったことによる誤りです。",
+      "【訂正 2026-09-30】Cascade について、（誤）「Cascade は2026年7月1日に提供終了」「CI やスクリプトから Cascade を明示的に呼んでいた場合は 7/1 までに Devin Local へ振り替える必要があった」→（正）7月1日は、2026年6月2日の Devin 公式ブログが予告した移行期限（公式 FAQ は「7月中」で食い違う）だった。実際には Cascade は7月末のリリースにも残り、削除は v3.9.19（2026年9月8日）で、以降 Devin Local が唯一のエージェントになった。2026-08-11 の訂正文も同じ日付を提供終了日として書いていたため、あわせて改める。",
+      "【訂正 2026-09-30】Cursor について、（誤）SpaceX による買収は「Q3 2026 クローズ予定」→（正）2026年8月14日に完了した（Cursor 公式ブログ）。（誤）Background Agent →（正）Cloud Agents（Cursor 公式ドキュメントに旧称 Background Agents の記載あり）。",
+      "【訂正 2026-09-30】Devin Desktop の料金について、（誤）「Teams $40 per seat」→（正）チーム基本料 $80/月 + フルユーザー1席あたり $40/月（最大200ユーザー、Devin の料金ページ）。（誤）「Pro が $15 から $20 になったことで Cursor に対する価格優位は消滅した」→（正）Pro は $20/月で Cursor Pro と同額。$15 からの値上げは Devin の公式ページで確認できず、既存の Pro・Teams 加入者は従来価格が据え置かれるとされている。",
+      "【訂正 2026-09-30】GitHub Copilot について、（誤）MAI-Code-1-Flash →（正）GitHub Docs の廃止履歴では2026年9月10日に MAI-Code-1.1-Flash へ置き換えられている。（誤）Coding Agent →（正）現行の GitHub Docs の表記は Copilot cloud agent。個人向けプランに Max（$100/月）と Student（無料）があることを加えた。Zed について、（誤）「編集予測 月2,000回まで」→（正）Zed の料金ページの記載は「2,000 accepted edit predictions」で、期間の記載は確認できなかった。",
+      "【追記 2026-09-30】月次見直し。(1) SpaceX による Cursor 買収の完了と Grok モデルの組み込み、(2) Devin Desktop での Cascade 削除と現行料金、(3) Copilot の個人向け Max プラン、(4) Zed の現行プラン、(5) 比較対象外の動き（Antigravity、VS Code の Agents window、Zed の Delta）を反映しました。Cursor の Sonic、Bugbot の1 PR あたり平均費用、Composer 2.5 が Kimi K2.5 ベースである点、SpaceX による買収の発表日（6/16）と金額（$60B、全株式）は、Cursor の公式ブログに記載がなく裏付けを取れていません。2026年9月30日時点の記述です。"
     ],
     "tables": [
       {
         "afterParagraph": 4,
-        "caption": "AI エディタ横断比較（2026年8月11日時点・公式発表および公開情報に基づく）",
+        "caption": "AI エディタ横断比較（2026年9月30日時点・公式発表および公開情報に基づく）",
         "headers": [
           "エディタ",
           "提供元",
@@ -6183,20 +6189,20 @@ const ARTICLES_BODY = {
         "rows": [
           [
             "Cursor",
-            "Anysphere（SpaceX が買収発表、Q3 2026 クローズ予定）",
+            "Anysphere（2026年8月14日に SpaceX が買収完了）",
             "VS Code フォーク",
             "Pro $20",
             "Pro+ $60 / Ultra $200 / Teams $40〜$120 per seat",
-            "Agents Window（並列）・Background Agent・Bugbot",
-            "エージェント並列運用・独自モデル Composer 2.5 / Sonic"
+            "Agents Window（並列）・Cloud Agents（旧 Background Agent）・Bugbot",
+            "エージェント並列運用・独自モデル Composer 2.5 と Grok 4.7 等の Cursor Models 枠"
           ],
           [
             "Devin Desktop（旧 Windsurf）",
             "Cognition",
             "VS Code フォーク",
             "Pro $20",
-            "Teams $40 per seat / Max $200 / Enterprise",
-            "Devin Local（Cascade の後継、7/1 に置換）",
+            "Teams $80/月 + $40 per full seat / Max $200 / Enterprise",
+            "Devin Local（Cascade の後継。7/1 は予告された移行期限で、Cascade の削除は 9/8）",
             "段階的タスク分解・Devin 本体との連携"
           ],
           [
@@ -6204,8 +6210,8 @@ const ARTICLES_BODY = {
             "Microsoft / GitHub",
             "VS Code 本体",
             "Pro $10",
-            "Pro+ $39 / Business $19 / Enterprise $39 per seat",
-            "Agent Mode・Coding Agent",
+            "Pro+ $39 / Max $100 / Business $19 / Enterprise $39 per seat",
+            "Agent Mode・Copilot cloud agent",
             "拡張機能エコシステム・モデル選択の自由度・企業統制"
           ],
           [
@@ -6250,6 +6256,56 @@ const ARTICLES_BODY = {
         "title": "Cognition's acquisition of Windsurf",
         "site": "Cognition",
         "url": "https://cognition.com/blog/windsurf"
+      },
+      {
+        "title": "Cursor is now a part of SpaceX",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/joining-spacex"
+      },
+      {
+        "title": "Cursor Models & Pricing",
+        "site": "Cursor Docs",
+        "url": "https://cursor.com/docs/models-and-pricing"
+      },
+      {
+        "title": "Devin plans and pricing",
+        "site": "Devin (Cognition)",
+        "url": "https://devin.ai/pricing"
+      },
+      {
+        "title": "Windsurf is now Devin Desktop",
+        "site": "Devin (Cognition)",
+        "url": "https://devin.ai/blog/windsurf-is-now-devin-desktop"
+      },
+      {
+        "title": "Devin Desktop FAQ",
+        "site": "Devin Docs",
+        "url": "https://docs.devin.ai/desktop/devin-desktop-faq"
+      },
+      {
+        "title": "Devin Desktop changelog",
+        "site": "Devin Docs",
+        "url": "https://docs.devin.ai/desktop/changelog"
+      },
+      {
+        "title": "Plans for GitHub Copilot",
+        "site": "GitHub Docs",
+        "url": "https://docs.github.com/en/copilot/get-started/plans"
+      },
+      {
+        "title": "Supported AI models in GitHub Copilot",
+        "site": "GitHub Docs",
+        "url": "https://docs.github.com/en/copilot/reference/ai-models/supported-models"
+      },
+      {
+        "title": "Zed pricing",
+        "site": "Zed Industries",
+        "url": "https://zed.dev/pricing"
+      },
+      {
+        "title": "Visual Studio Code 1.139",
+        "site": "Microsoft",
+        "url": "https://code.visualstudio.com/updates/v1_139"
       }
     ]
   },
