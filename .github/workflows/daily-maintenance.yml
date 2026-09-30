@@ -57,6 +57,10 @@ jobs:
       - name: 点検レポートを作る（週次・月曜）
         id: report_weekly
         if: steps.scope.outputs.weekly == 'true'
+        env:
+          # 関門の集計（check-gate-stats.mjs）が Actions の実行履歴を読む。公開データだが、
+          # 無認証だと共有 IP の上限に当たることがあるため、ジョブのトークンを渡す。
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           node scripts/maintenance-report.mjs --scope=weekly --record > /tmp/report-weekly.md
           cat /tmp/report-weekly.md
