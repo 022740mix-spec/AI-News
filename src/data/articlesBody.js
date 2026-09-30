@@ -22695,6 +22695,33 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
       }
     ]
+  },
+  "openai-gpt-6-1-sol-devday-2026": {
+    "body": [
+      "OpenAI は2026年9月29日、サンフランシスコで開催した開発者会議 DevDay で新モデル「GPT-6.1 Sol」を発表した。OpenAI の Codex（github.com/openai/codex）の公式リリースノートでは、同日付けの版 0.159.1 が「GPT-6.1 Sol を同梱カタログと Amazon Bedrock のカタログで既定モデルにした」と記している。ここまでは一次資料で直接確認できた。",
+      "以下は一次資料ではなく、複数の技術系メディアの報道が伝える内容である。API 価格は入力100万トークンあたり$2、出力$10、キャッシュ入力は$0.10。ChatGPT では Plus・Pro・Business・Enterprise・Edu の利用者が、ChatGPT の Work と Codex で9月29日から使えるとされ、API のモデル名は gpt-6.1-sol と報じられている。性能は、エージェント的なコーディング、コンピュータ操作、専門業務のタスクで上位モデル GPT-6 Astra にほぼ並び、標準の入出力価格は Astra の5分の1だという。",
+      "9月22日に公開された GPT-6 Sol も、報道では入力$2・出力$10とされている。GPT-6.1 Sol と GPT-6 Sol の価格・性能の違いは、今回確認できた範囲では読み取れていない。",
+      "DevDay では20件以上の発表があったと報じられている。伝えられているのは、会話が終わった後も自分のクラウド環境と承認済みのツールで作業を続ける「Dots」、ChatGPT と Codex の中で動くプラグイン、データの扱いを利用者が制御しやすくする「OpenAI Private Intelligence」、高速動作の Ultrafast と月額$500の「Pro 500」プランなど。各項目の仕様・価格・提供時期はここでは検証していない。なお Pro 500 は、9月24日に ChatGPT のコード内の文字列から見つかった「Pro Max」の月額$500プランとの関係も含め、公式の説明を確認できていない。",
+      "本記事の性質について。OpenAI の公式サイト（openai.com・platform.openai.com・community.openai.com）は執筆時点のネットワーク環境から到達できなかった。価格・提供範囲・ベンチマークの数値は、OpenAI の発表を報じた複数の記事に依拠しており、報道が複数あっても元は同じ発表である可能性が高く、独立した検証ではない。数値は OpenAI 自身の主張として読むべきである。公式ページに到達でき次第、本文を更新する。"
+    ],
+    "primarySources": [
+      {
+        "title": "openai/codex Release 0.159.1（GPT-6.1 Sol を既定モデルに追加）",
+        "url": "https://github.com/openai/codex/releases/tag/rust-v0.159.1"
+      },
+      {
+        "title": "OpenAI DevDay 2026（公式イベントページ・未到達）",
+        "url": "https://openai.com/index/devday-2026/"
+      },
+      {
+        "title": "OpenAI releases GPT-6.1 Sol at a fifth of GPT-6 Astra's token prices（The Next Web）",
+        "url": "https://thenextweb.com/news/openai-gpt-6-1-sol-price-astra-devday"
+      },
+      {
+        "title": "OpenAI Unveils GPT-6.1 Sol at DevDay With New Codex and ChatGPT Tools（Unite.AI）",
+        "url": "https://www.unite.ai/openai-unveils-gpt-6-1-sol-at-devday-with-new-codex-and-chatgpt-tools/"
+      }
+    ]
   }
 };
 

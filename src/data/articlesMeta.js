@@ -10879,5 +10879,23 @@ export const ARTICLES_META = [
       "料金",
       "API"
     ]
+  },
+  {
+    "id": "openai-gpt-6-1-sol-devday-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI が DevDay で GPT-6.1 Sol を公開 — 報道では入力$2/出力$10、Astra の5分の1。公式ページには未到達",
+    "excerpt": "OpenAI が2026年9月29日の開発者会議 DevDay で「GPT-6.1 Sol」を発表した。Codex の公式リリースノートで、同日付けの版が GPT-6.1 Sol を既定モデルに加えたことは直接確認できた。価格や提供範囲は複数の報道が伝える内容で、OpenAI 公式ページには到達できていない。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "OpenAI",
+      "GPT",
+      "Codex",
+      "料金",
+      "モデル"
+    ]
   }
 ];

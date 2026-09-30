@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-09-29T15:00:00Z</updated>
+  <updated>2026-09-30T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>OpenAI が DevDay で GPT-6.1 Sol を公開 — 報道では入力$2/出力$10、Astra の5分の1。公式ページには未到達</title>
+    <link rel="alternate" type="text/html" href="?a=openai-gpt-6-1-sol-devday-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-gpt-6-1-sol-devday-2026</id>
+    <published>2026-09-30T15:00:00Z</published>
+    <updated>2026-09-30T15:00:00Z</updated>
+    <summary>OpenAI が2026年9月29日の開発者会議 DevDay で「GPT-6.1 Sol」を発表した。Codex の公式リリースノートで、同日付けの版が GPT-6.1 Sol を既定モデルに加えたことは直接確認できた。価格や提供範囲は複数の報道が伝える内容で、OpenAI 公式ページには到達できていない。</summary>
+  </entry>
   <entry>
     <title>Anthropic脅威報告、Claudeを使った出会い系詐欺とイラン系による米海軍情報収集を開示 — 「助言」から「実行の自動化」に移る事例が並ぶ</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-threat-report-agentic-misuse-2026"/>
