@@ -14134,10 +14134,11 @@ const ARTICLES_BODY = {
   },
   "overview-2026-week-jun15": {
     "body": [
-      "**6月16日（火）** — AI 業界史上最大級の M&A 発表。**SpaceX が Cursor（Anysphere）を $60B で買収**、史上最大の VC バック・スタートアップ買収を更新（[SpaceX-Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）。同日 **Grok V9-Medium が X と SuperGrok で消費者公開**、1.5T パラメータ・Cursor 開発者ワークフローデータで訓練（[Grok V9-Medium](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)）。両発表が同日になったのは偶然ではなく、SpaceX-xAI-Cursor の垂直統合戦略の起点（[市場再編 分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。",
+      "**6月16日（火）** — AI 業界史上最大級の M&A 発表。**SpaceX が Cursor（Anysphere）を $60B で買収**、史上最大の VC バック・スタートアップ買収を更新（[SpaceX-Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）。同日、Grok V9-Medium（1.5T パラメータ）の公開が予定として報じられたが、6月中に公開されなかったとみられる（[Grok V9-Medium](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)）。Elon Musk は5月25日に Cursor のデータを補足訓練に追加したと述べており、Cursor は7月8日に、Grok 4.5 の訓練に数兆トークンの Cursor データが含まれたと説明している（いずれも当事者の説明）（[市場再編 分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。",
       "**6月17日（水）** — Anthropic が **Workload Identity Federation（WIF）を GA**、静的 API キーが不要に。AWS IAM・GCP・Azure・GitHub Actions・OIDC で直接認証、Service Accounts も導入。エンタープライズセキュリティの大改革（[WIF GA](?a=anthropic-workload-identity-federation-ga-service-accounts-2026)）。",
       "**6月18日（木）** — **Noam Shazeer が Google → OpenAI 移籍**、Transformer 共著者が OpenAI Architecture Research Lead 就任、Alphabet 株 7% 下落（[Shazeer 移籍](?a=noam-shazeer-google-to-openai-architecture-research-2026)）。同日 **Grok Imagine Video 1.5** が公開、AI 動画 leaderboard 1位・Sora 比 86% 安（[Grok Video 1.5](?a=xai-grok-imagine-video-1-5-86percent-below-sora-2026)）。",
-      "**週の総括** — AI 業界の勢力図が劇的に動いた1週間。SpaceX-Cursor 買収は「**モデル選択 = インフラ選択**」時代の到来を告げ、Grok V9-Medium の同日公開で xAI の垂直統合戦略が形になった。Anthropic は WIF GA で静的 API キーを過去のものにし、エンタープライズ認証の標準を更新。Noam Shazeer の移籍は Google AI の人材維持力に対する市場の疑念を強め、Alphabet 株 7% 下落と Gemini 3.5 Pro GA 延期続報（[Gemini Pro 延期](?a=google-gemini-3-5-pro-ga-delay-deep-think-2026)）と相まって、米国3強の力学が変化していることを示した。"
+      "**週の総括** — AI 業界の勢力図が劇的に動いた1週間。SpaceX-Cursor 買収は「**モデル選択 = インフラ選択**」時代の到来を告げた。Anthropic は WIF GA で静的 API キーを過去のものにし、エンタープライズ認証の標準を更新。Noam Shazeer の移籍は Google AI の人材維持力に対する市場の疑念を強め、Alphabet 株 7% 下落と Gemini 3.5 Pro GA 延期続報（[Gemini Pro 延期](?a=google-gemini-3-5-pro-ga-delay-deep-think-2026)）と相まって、米国3強の力学が変化していることを示した。",
+      "【訂正 2026-09-30】（誤）「Grok V9-Medium が X と SuperGrok で消費者公開、Cursor 開発者ワークフローデータで訓練」「両発表が同日になったのは偶然ではなく」→（正）6月16日の報道は V9-Medium の公開を予定として書いており、実際の公開は確認できない。Cursor データは Musk（5月25日）と Cursor（7月8日）が訓練への使用を述べている（当事者の説明）。同日とする因果の記述は根拠がないため削除した。"
     ],
     "primarySources": [
       {
