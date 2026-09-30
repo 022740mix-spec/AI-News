@@ -3362,7 +3362,7 @@ export const ARTICLES_META = [
     "type": "review",
     "category": "editor",
     "title": "Cursor レビュー — Cursor 3.x の Agents Window + Composer 2.5 + Microsoft Teams 統合 + Bugbot usage-based 対応版",
-    "excerpt": "Anysphere の VS Code フォーク AI エディタ。**Cursor 3.0 で Agents Window**（`Cmd+Shift+P` → Agents Window）が追加され、ローカル・worktree・クラウド・SSH を横断するマルチエージェント運用を実現。独自モデル **Composer 2.5**（Kimi K2.5 ベース + 独自 RL、CursorBench で Opus 4.6 超え）と **Sonic**（低レイテンシ）を採用。Cursor Automations（Slack/GitHub/PagerDuty）に加え、**5/11 に Microsoft Teams 統合 GA**。Bugbot は **5月から usage-based 課金**（1 PR 平均 $1.00-$1.50）。料金 Free / Pro $20 / Pro+ $60 / Ultra $200、Teams Standard $40-Premium $120/seat、Self-hosted Cloud Agents もエンタープライズ向けに提供。",
+    "excerpt": "Anysphere の VS Code フォーク AI エディタ。**Cursor 3.0 で Agents Window**（`Cmd+Shift+P` → Agents Window）が追加され、ローカル・worktree・クラウド・SSH を横断するマルチエージェント運用を実現。独自モデル **Composer 2.5**（Kimi K2.5 ベース + 独自 RL）を採用。Cursor Automations（Slack/GitHub/PagerDuty）に加え、**5/11 に Microsoft Teams 統合 GA**。Bugbot は **5月から usage-based 課金**。料金 Free / Pro $20 / Pro+ $60 / Ultra $200、Teams Standard $40-Premium $120/seat、Self-hosted Cloud Agents もエンタープライズ向けに提供。",
     "date": "2026-06-05",
     "newsDate": "2026-05-11",
     "author": "AI News 編集部",
@@ -3383,7 +3383,7 @@ export const ARTICLES_META = [
     "rating": 4.5,
     "reviewCategory": "editor",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-08-11"
+    "lastReviewed": "2026-09-30"
   },
   {
     "id": "windsurf",

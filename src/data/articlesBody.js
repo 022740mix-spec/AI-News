@@ -8923,13 +8923,13 @@ const ARTICLES_BODY = {
       "## 主要機能（2026 最新）",
       "### Agents Window（Cursor 3.0 で追加、5/11 Teams 統合 6/3 完成）",
       "**`Cmd+Shift+P` → Agents Window** で開く専用 UI。**複数エージェントを並列実行**でき、ローカル・worktree・クラウド・リモート SSH と環境を横断管理できる。Claude Code の agent view に相当する Cursor 側の答え。",
-      "### Background Agent",
+      "### Cloud Agents（本記事の旧表記は Background Agent）",
       "**クラウドサンドボックス VM** で稼働する非同期エージェント。**GitHub Issue や Slack メッセージを起点に PR ドラフトまで作成**する。ローカルマシンを閉じても継続実行。",
       "### Microsoft Teams 統合（5/11 GA）",
       "Teams チャネルで **`@Cursor` メンション**でクラウドエージェントにタスク委任。スレッド全体を文脈として読み、リポジトリ・モデルを自動選択し、PR を作成して返す。3月の Slack/GitHub/PagerDuty トリガー（Cursor Automations）に続く第2の主要チャットアプリ統合。",
       "### Composer + Tab v2 + Sonic",
       "- **Composer**: 自然言語の指示から関連ファイルを自動特定し、複数ファイル横断の変更を生成",
-      "- **Composer 2 / 2.5**: Cursor 独自モデル（Kimi K2.5 ベース + 独自 RL）。CursorBench で Opus 4.6 を上回るスコア",
+      "- **Composer 2 / 2.5**: Cursor 独自モデル（Kimi K2.5 ベース + 独自 RL）。なお、CursorBench で Opus 4.6 を上回るという比較は、Cursor 公式ブログ（Composer 2.5）の本文では確認できていない",
       "- **Tab v2**: 高速インライン補完",
       "- **Sonic**: 低レイテンシ編集に特化した内製モデル",
       "### Cmd+K インライン編集",
@@ -8937,13 +8937,13 @@ const ARTICLES_BODY = {
       "### MCP / Skills / Rules",
       "- **MCP**: 外部ツール・データソース接続",
       "- **Skills**: 再利用可能なプロンプトテンプレート",
-      "- **Rules**: `.cursorrules` ファイルでプロジェクト固有の規約を渡す（Claude Code の CLAUDE.md に相当）",
+      "- **Rules**: `.cursor/rules` 配下のルールファイルでプロジェクト固有の規約を渡す（Claude Code の CLAUDE.md に相当）",
       "### Bugbot（5月以降は従量課金）",
       "PR レビュー専用エージェント。**2026年5月から seat-based から usage-based 課金に移行**、1 PR レビュー当たり平均 $1.00-$1.50。effort level（high で時間と料金が増える代わりにバグ発見率向上）も調整可能に。",
       "### Self-hosted Cloud Agents（3月、エンタープライズ向け）",
       "コードと実行環境を自社ネットワーク内に保持したままクラウドエージェントを利用。規制業界向け。",
       "## 料金プラン",
-      "すべて従量モデルで、各プロンプトが request-equivalent credits を消費。",
+      "Pro / Pro+ / Ultra には Cursor Models（Grok 4.7 / 4.6 / 4.5、Composer 2.5）と Other Models（第三者モデル。API 価格で課金）の2つの利用枠が含まれ、枠を超えた分はオンデマンドで課金される。インド向けの Start は Cursor Models の枠のみで、Other Models の枠とオンデマンドは含まれない。Teams では第三者モデルに Cursor Token Rate（100万トークンあたり $0.25）が加わる（Cursor 公式ドキュメント）。",
       "## 5月以降の動向",
       "- **5/11 Microsoft Teams 統合 GA**（`@Cursor` メンション）",
       "- **5月 Bugbot 課金モデルが usage-based に移行**",
@@ -8953,14 +8953,17 @@ const ARTICLES_BODY = {
       "## 評価",
       "**強み**: IDE と AI エージェントが一体化したエクスペリエンス。VS Code 互換で拡張機能がそのまま動く。Agents Window でマルチセッション運用が UI レベルで自然に。Composer 2.5 + Sonic の独自モデルでコストパフォーマンス・低レイテンシを両立。iOS アプリの追加で、**席を離れてもエージェントの進行を確認・介入できる**ようになった。",
       "**注意点**: Claude Code が CLI 中心で多サーフェス展開なのに対し、Cursor は IDE 中心。**ターミナル単体での運用には向かない**。Bugbot の usage-based 移行で PR 数の多いプロジェクトは月額予算が読みにくくなった。Pro+ / Ultra プランの追加で価格帯が広がり、適切なプラン選択が難しくなった面もある。",
-      "**資本関係が選定要因になった**: 買収は2026年8月14日にクローズ済みで、Cursor は既に SpaceX の完全子会社である（[→ 詳細](?a=spacex-closes-cursor-anysphere-acquisition-2026)）。すでに [Grok V9-Medium は Cursor の開発者ワークフローデータで訓練](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)されており、**内部モデルが Composer 系から Grok 系へ寄る可能性**がある。機能・価格の比較に加え、**開発データの流れと親会社の事業判断**を評価に含める段階に入った（[→ 市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。企業導入では Privacy Mode の設定とデータ利用条項を継続的に確認してほしい。",
+      "**資本関係が選定要因になった**: 買収は2026年8月14日にクローズ済みで、Cursor は既に SpaceX の完全子会社である（[→ 詳細](?a=spacex-closes-cursor-anysphere-acquisition-2026)）。Cursor 公式ドキュメント（Models & Pricing）では、現行の Cursor Models の利用枠に Grok 4.7 / 4.6 / 4.5 が Composer 2.5 と並んで含まれている。当サイトの別記事は [Grok V9-Medium が Cursor の開発者ワークフローデータで訓練された](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)と伝えているが、この点は Cursor の公式発表では確認できていない。機能・価格の比較に加え、**開発データの流れと親会社の事業判断**を評価に含める段階に入った（[→ 市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。企業導入では Privacy Mode の設定とデータ利用条項を継続的に確認してほしい。",
       "**関連記事**: [Cursor Composer 2](?a=cursor-composer-2-kimi-2026)、[Cursor 3 / Agents Window](?a=cursor-3-agent-first-workspace-2026)、[Microsoft Teams 統合](?a=cursor-microsoft-teams-integration-2026)、[SpaceX による $60B 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)、[AI エディタ横断比較](?a=editor-comparison-2026-march)。",
       "---",
       "**編集履歴**",
       "【訂正 2026-08-11】「Windsurf 買収（3月）後の Cascade 統合は継続中」および関連リンクを削除しました。Anysphere による Windsurf 買収は事実ではありません（Windsurf の買収元は Cognition、2025年7月発表）。当該箇所を SpaceX による Anysphere 買収の記述に差し替えました。",
       "【追記 2026-08-11】月次見直しにより更新。iOS アプリの公開（6/30）、および SpaceX 買収に伴うモデル・データ方針の変化リスクを評価に追加しました。",
       "【訂正 2026-08-11】総合評価を **5 → 4.5** に修正しました。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（4.7）と乖離していました。各軸の評価そのものは変更しておらず、**公表している算出方法どおりに総合スコアを計算し直した**ものです。",
-      "【追記 2026-09-20】SpaceX による Anysphere 買収の**完了**を反映しました。本文は「Q3 2026 クローズ予定」のままでしたが、合併の効力は**2026年8月14日**に発生しており、当サイトも9月12日に報じています。記事間で食い違っていたため、該当箇所を更新しました。なお料金・切替可能モデルの現行確認は行っていないため、`lastReviewed` は据え置いています。"
+      "【追記 2026-09-20】SpaceX による Anysphere 買収の**完了**を反映しました。本文は「Q3 2026 クローズ予定」のままでしたが、合併の効力は**2026年8月14日**に発生しており、当サイトも9月12日に報じています。記事間で食い違っていたため、該当箇所を更新しました。なお料金・切替可能モデルの現行確認は行っていないため、`lastReviewed` は据え置いています。",
+      "【訂正 2026-09-30】（誤）「Background Agent」という名称 →（正）現行の公式ドキュメントでは Cloud Agents。（誤）「すべて従量モデルで、各プロンプトが request-equivalent credits を消費」→（正）現行の公式ドキュメントでは、Cursor Models と Other Models の2つの利用枠を API 価格ベースで消費する方式で、request 単位の課金は旧プラン（レガシー）の扱いになっている。`.cursorrules` の記述は、現行ドキュメントが説明している `.cursor/rules` 配下のルールファイルに改めた（`.cursorrules` への言及は現行ドキュメントには見当たらない）。",
+      "【訂正 2026-09-30】料金表の「Business / Enterprise」を、公式ドキュメントの区分（Teams と Enterprise の2つの法人向けプラン）に合わせて「Enterprise」に改め、（誤）Ultra「優先サポート」→（正）公式料金ページの Ultra は「Priority access to new features」（新機能への優先アクセス）。Hobby の内容を公式料金ページの記載に、Teams の SSO 表記を SAML/OIDC SSO に合わせた。インド向けの Start プラン（₹649/月・税込）を追記した。（誤）Pro+「Pro の5倍 Agent 上限」→（正）Cursor 公式料金ページ（Pro+ / Ultra の切替表示）では Pro+ は「3x Pro limits on Agent」、Ultra は「20x Pro limits on Agent」。Enterprise 行の「SOC 2」は料金ページ下部の会社全体の認証表示でありプランの機能ではないため外し、Enterprise 列に記載のある「優先サポートとアカウント管理」に差し替えた。",
+      "【追記 2026-09-30】Cursor 公式ドキュメントでの現行の確認結果。(1) SpaceX による買収は、Cursor 公式ブログ（2026年8月14日「Cursor is now a part of SpaceX」）が「SpaceX に正式に買収された。4月に発表した SpaceXAI との提携から始まった手続きの完了」と述べている。本文中の取引額・株式交換の形態・完全子会社化・SpaceXAI 部門への配置は、当サイトの別記事に依っており、この公式ブログには書かれていない。(2) Models & Pricing の Cursor Models 利用枠は Grok 4.7 / 4.6 / 4.5 と Composer 2.5 で、Sonic の記載は見当たらない。Grok 4.7 は 2026年9月21日、Grok 4.6 は 8月12日に公開されている。第三者モデルは Claude Fable 5.1 / Opus 5.5 / Sonnet 5.5、GPT-5.6（Luna / Sol / Terra）、Gemini 3.1 Pro / 3.8 Flash などが並ぶ。(3) Auto は Cursor Router（2026年7月22日）で動き、Cost / Balance / Intelligence の3モードがある。(4) 6月29日の iOS アプリは公式 changelog では public beta と記載されており、7月29日に iPad 版も加わった。8月17日に Origin（コードホスティング、early beta）、9月2日に自己ホスト型マシン（self-hosted machines）、9月10日に Projects（複数エージェントを束ねる機能、beta）、9月23日に Rollouts と Security Review（Teams / Enterprise 向け）が公開された。(5) Bugbot は 2026年6月10日の公式 changelog で、Composer 2.5 が動力になり、平均レビュー時間が約90秒、1回あたりの費用が約22%減と説明されている。これは Cursor 自身の説明であり、独立した検証は確認できていない。本文の「1 PR 平均 $1.00-$1.50」は、この変更以前の値かどうかを含め、公式ページでは確認できていない。"
     ],
     "primarySources": [
       {
@@ -8982,6 +8985,31 @@ const ARTICLES_BODY = {
         "title": "Cursor in Microsoft Teams",
         "site": "Cursor Changelog",
         "url": "https://cursor.com/changelog/microsoft-teams"
+      },
+      {
+        "title": "Models & Pricing（現行の利用枠・プラン）",
+        "site": "Cursor Docs",
+        "url": "https://cursor.com/docs/models-and-pricing#plans"
+      },
+      {
+        "title": "Pricing",
+        "site": "Cursor",
+        "url": "https://cursor.com/pricing"
+      },
+      {
+        "title": "Cursor Changelog",
+        "site": "Cursor",
+        "url": "https://cursor.com/changelog"
+      },
+      {
+        "title": "Cursor is now a part of SpaceX",
+        "site": "Cursor Blog",
+        "url": "https://cursor.com/blog/joining-spacex"
+      },
+      {
+        "title": "Agents Window",
+        "site": "Cursor Docs",
+        "url": "https://cursor.com/docs/agent/agents-window"
       }
     ],
     "tables": [
@@ -8996,37 +9024,42 @@ const ARTICLES_BODY = {
           [
             "Hobby",
             "無料",
-            "補完 + 限定 Composer"
+            "限定的な Agent リクエスト、Composer の利用（公式料金ページの記載）"
           ],
           [
             "Pro",
             "$20",
-            "標準 Agent 利用枠、無制限補完"
+            "Agent の拡張上限、Grok の利用枠、フロンティアモデル、Cloud Agents、無制限の Tab 補完"
           ],
           [
             "Pro+",
             "$60",
-            "Pro より5倍の Agent 上限"
+            "Pro の3倍の Agent 上限"
           ],
           [
             "Ultra",
             "$200",
-            "最大 Agent 利用枠、優先サポート"
+            "Pro の20倍の Agent 上限、新機能への優先アクセス"
+          ],
+          [
+            "Start（インド限定）",
+            "₹649/月（税込）",
+            "Cursor Models（Grok・Composer）と Cloud Agents を含む。第三者モデルの利用枠は含まれない"
           ],
           [
             "Teams Standard",
             "$40/seat/月",
-            "組織管理、SAML SSO、Privacy Mode"
+            "組織管理、SAML/OIDC SSO、チーム全体の Privacy Mode"
           ],
           [
             "Teams Premium",
             "$120/seat/月",
-            "Standard の5倍 Agent 上限"
+            "Standard の5倍の利用量"
           ],
           [
-            "Business / Enterprise",
+            "Enterprise",
             "カスタム",
-            "監査、SOC 2、契約条項"
+            "プール利用、請求書払い、SCIM、監査ログ、優先サポートとアカウント管理"
           ]
         ]
       }
