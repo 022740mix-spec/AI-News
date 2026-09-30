@@ -3171,7 +3171,7 @@ export const ARTICLES_META = [
     "rating": 4.5,
     "reviewCategory": "cli",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-08-11"
+    "lastReviewed": "2026-09-30"
   },
   {
     "id": "cursor-cli",

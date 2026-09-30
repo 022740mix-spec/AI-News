@@ -8489,6 +8489,7 @@ const ARTICLES_BODY = {
   "claude-code": {
     "body": [
       "**Claude Code** は **Anthropic** が提供する AI コーディングエージェントで、ターミナル CLI を中核に **VS Code 拡張・JetBrains プラグイン・デスクトップアプリ・Web（claude.ai/code）・iOS アプリ・Slack・Chrome** と同じエンジンで連動する。本レビューは **2026年6月時点（v2.1.139+、Opus 4.8 対応版）** での全機能網羅版。基盤モデル更新と5月の機能追加で「**1人の開発者が並列にエージェントを束ねる**」運用が公式サポートされた。",
+      "【追記 2026-09-30】本文の「v2.1.139+」「Opus 4.8 対応版」は執筆時点（2026年6月）の記述である。2026年9月30日時点の最新版は v2.1.285（9/29）で、既定モデルは Opus 5.5 に変わっている（「モデル」節と末尾の編集履歴を参照）。★評価と「評価」節は Opus 5 世代までの内容に基づいており、Opus 5.5 世代での再採点は行っていない。",
       "## インストールコマンド（公式、複数経路）",
       "**ネイティブインストール（推奨、自動更新あり）**:",
       "```bash\n# macOS / Linux / WSL\ncurl -fsSL https://claude.ai/install.sh | bash\n\n# Windows PowerShell\nirm https://claude.ai/install.ps1 | iex\n\n# Windows CMD\ncurl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd\n```",
@@ -8497,18 +8498,19 @@ const ARTICLES_BODY = {
       "**起動コマンド**: プロジェクトディレクトリで `cd your-project && claude` で対話セッション開始。初回はブラウザログインを求められる。",
       "## 各サーフェスへのインストール",
       "- **VS Code**: マーケットプレイスで「Claude Code」を検索 → 拡張インストール → `Cmd+Shift+P` → \"Claude Code: Open in New Tab\"。インラインの diff 表示、@ メンション、計画レビュー、会話履歴が IDE 内で完結",
-      "- **JetBrains**（IntelliJ / PyCharm / WebStorm 等）: JetBrains Marketplace から「Claude Code」プラグインをインストールして IDE 再起動",
-      "- **デスクトップアプリ**: macOS / Windows（x64 / ARM64）の DMG / Setup を [claude.ai/api/desktop](https://claude.ai/api/desktop/) から入手。並列セッション、ビジュアル diff、スケジュール、クラウドセッション",
+      "- **JetBrains**（IntelliJ / PyCharm / WebStorm 等）: JetBrains Marketplace から「Claude Code」プラグインをインストールして IDE 再起動（プラグインとは別に Claude Code CLI のインストールが必要）",
+      "- **デスクトップアプリ**: macOS（Intel / Apple Silicon）/ Windows（x64 / ARM64）/ Ubuntu・Debian（ベータ、apt で導入）の DMG / Setup を [claude.ai/api/desktop](https://claude.ai/api/desktop/) から入手。並列セッション、ビジュアル diff、スケジュール、クラウドセッション",
       "- **Web**: [claude.ai/code](https://claude.ai/code) にアクセスするだけ。ローカル環境なしで長時間タスクを起動",
-      "- **iOS アプリ**: App Store「Claude by Anthropic」",
+      "- **iOS アプリ**: App Store「Claude by Anthropic」（公式ドキュメント上、Claude のモバイルアプリは iOS と Android に対応）",
       "## CLI 主要コマンド・フラグ",
+      "上の表について（2026-09-30 訂正）: claude --headless は公式の CLI リファレンスに載っていない。UI なしの実行は claude -p（表の3行目）を使う。表の claude \"<指示>\" は一発実行ではなく、最初の指示を渡して対話セッションを開始するもので、一発実行は -p である。/model については、Anthropic API ではエイリアス opus / sonnet / fable / haiku がそれぞれ Opus 5.5 / Sonnet 5.5 / Fable 5.1 / Haiku 4.5 を指し、旧モデルはモデル ID（例: claude-opus-5）で指定する。Amazon Bedrock や Microsoft Foundry ではエイリアスの解決先が異なる（例: Bedrock の sonnet は Sonnet 4.5）。",
       "## 中核機能の全体像",
       "### モデル",
-      "標準は **[Claude Opus 5](?a=claude-opus-5-review)**（7/24 投入、$5/$25）。**Claude Max では既定モデル**にあたるため、設定を変えていない Max 契約者はすでに Opus 5 を使っている。**タスクごとに思考量を low / medium / high から選べる effort トグル**を備え、モデルを切り替えずにコストと能力を調整できるのが前世代との最大の違いになる。[Claude Fable 5](?a=claude-fable-5-mythos-5-review)（$10/$50）、[Claude Sonnet 5](?a=claude-sonnet-5-review)（$3/$15）、Haiku 4.5 への切替も可能。",
+      "2026年9月30日時点の公式ドキュメントでは、既定モデル（default）は Pro・Max・Team・Enterprise・Anthropic API のいずれでも Claude Opus 5.5（9/22 投入、Claude Code v2.1.280 以降、1M コンテキスト、API 料金 $4/$20）である。v2.1.280 より前は、Pro と Team Standard の既定が Sonnet、Max・Team Premium・Enterprise・API の既定が [Claude Opus 5](?a=claude-opus-5-review)（7/24 投入、$5/$25）だった。タスクごとに思考量を選べる effort は、対応モデルでは low / medium / high / xhigh / max の5段階で、Opus 5.5 と Sonnet 5.5 の既定は medium である。モデルを切り替えずにコストと能力を調整できる点は変わらない。Opus 5 は API 側ではレガシーモデル扱いだが、明示すれば選べる。Fable は現行が Fable 5.1（$10/$50。[Claude Fable 5](?a=claude-fable-5-mythos-5-review) と同額）で、どのプランでも既定ではなく /model fable などで明示的に選ぶ。Sonnet は Sonnet 5.5（9/28 投入、v2.1.284 以降）と Sonnet 5 がいずれも $2/$10 で、[Claude Sonnet 5](?a=claude-sonnet-5-review) の $3/$15 への値上げは実施されず $2/$10 が標準価格になった。Haiku 4.5 への切替も可能。",
       "### agent view（5/12 研究プレビュー）",
-      "`claude agents` で全画面のセッション一覧テーブルとディスパッチ入力を表示。各セッションの状態（**待機中・作業中・完了**）を一覧化し、Enter/→ でアタッチ。コードレビュー中に別タスクを並行で進める運用が可能に。",
+      "`claude agents` で全画面のセッション一覧テーブルとディスパッチ入力を表示。各セッションの状態（**入力待ち（Needs input）・作業中（Working）・完了（Completed）**）を一覧化し、Enter/→ でアタッチ。コードレビュー中に別タスクを並行で進める運用が可能に。",
       "### Dynamic Workflows（5/28 研究プレビュー）",
-      "Opus 4.8 と同時投入の**最大の機能拡張**。Claude 自身がオーケストレーションスクリプトを書き、**1セッション内で最大1,000の並列サブエージェント**を起動し、繰り返し検証しながら作業を進める。**resumable state** で中断・再開も可能。Max / Team / Enterprise（管理者有効化必要）/ API / Bedrock / Vertex / Foundry で提供。",
+      "Opus 4.8 と同時投入の**最大の機能拡張**。Claude 自身がオーケストレーションスクリプトを書き、**1回の実行あたり合計で最大1,000のサブエージェント（同時実行は既定で最大16）**を起動し、繰り返し検証しながら作業を進める。**resumable state** で中断・再開も可能。現在は全有料プランで利用でき（Pro は /config の Dynamic workflows で有効化）、Anthropic API、Amazon Bedrock、Google Cloud の Agent Platform、Microsoft Foundry でも提供される。プロンプトにキーワード ultracode を含めるか /effort ultracode で起動を自動化できる（v2.1.160 で workflow から改名）。",
       "### Routines / Desktop scheduled tasks / `/loop`",
       "3種類の定時実行手段:",
       "- **Routines**: Anthropic 管理インフラで実行。`/schedule` で作成、Web・Desktop からも作成可。**マシンが OFF でも継続**、API 呼び出しや GitHub イベントでトリガー可能",
@@ -8519,7 +8521,7 @@ const ARTICLES_BODY = {
       "### MCP（Model Context Protocol）",
       "外部ツール・データソースとの標準接続規格。Google Drive、Jira、Slack、社内 API などへ繋ぐ。MCP クイックスタートで初回サーバ接続が可能。",
       "### Hooks / Skills / CLAUDE.md / Auto memory",
-      "- **Hooks**: シェルコマンドを Claude Code のアクション前後で実行（PostToolUse、Pre-commit など）。`hookSpecificOutput.updatedToolOutput` で全ツールの出力差し替えも可能",
+      "- **Hooks**: シェルコマンドを Claude Code のアクション前後で実行（PreToolUse、PostToolUse など）。`hookSpecificOutput.updatedToolOutput` で全ツールの出力差し替えも可能",
       "- **Skills**: 再利用可能なプロンプトテンプレート（`/review-pr`、`/deploy-staging` など）。チーム共有も可",
       "- **CLAUDE.md**: プロジェクトルートに置く markdown ファイル。すべてのセッション開始時に Claude が読む。コーディング規約・アーキテクチャ判断・優先ライブラリ・レビューチェックリスト等を記述",
       "- **Auto memory**: ビルドコマンド・デバッグ知見など、Claude が作業中に学んだことを自動保存（手動記述不要）",
@@ -8527,12 +8529,13 @@ const ARTICLES_BODY = {
       "- **Remote Control**: 席を離れて電話やブラウザから作業継続",
       "- **Channels**: Telegram / Discord / iMessage / 独自 Webhook からセッションにイベント投入",
       "- **Dispatch**: スマホからタスクをメッセージ送信、デスクトップアプリでセッション化",
-      "- **Slack**: チャネルで `@Claude` メンションでバグ報告 → 返ってくるのは PR",
+      "- **Slack**: チャネルで `@Claude` メンションでバグ報告 → 返ってくるのは PR。公式ドキュメントによると、Team・Enterprise 向けにはこの旧来の Claude Code in Slack が Claude Tag に置き換えられつつあり（切替日は Anthropic のアカウント担当に確認）、Pro・Max では従来のセットアップが引き続き案内されている",
       "### GitHub Actions / GitLab CI/CD / GitHub Code Review",
       "PR レビュー・Issue トリアージの CI 自動化。**GitHub Code Review** で全 PR に自動レビュー付与。",
       "### Chrome 連携",
       "ライブ Web アプリケーションのデバッグを Claude 経由で実行。",
-      "## 料金体系（Fast Mode が3倍安く）",
+      "## 料金体系（Fast Mode は標準料金の2倍で最大2.5倍速）",
+      "上の表について（2026-09-30 時点の公式情報）: API 従量の現行料金は、Opus 5.5 が $4/$20、Opus 5 が $5/$25、Fable 5.1 と Fable 5 が $10/$50、Sonnet 5.5 と Sonnet 5 が $2/$10 で、Sonnet 5 の $3/$15 への値上げは実施されなかった。Fast Mode は Pro・Max・Team・Enterprise のすべてが対象で、利用クレジット（usage credits）を有効にした場合のみ使え、サブスクリプションの利用枠には含まれない（Team・Enterprise は管理者による有効化も必要）。表の Max 行にある「2.5倍速」は Max 固有ではなく、全プラン共通の Fast Mode の性能（最大）である。料金は標準料金の2倍で、Opus 5.5 が $8/$40、Opus 5 と Opus 4.8 が $10/$50。Team は席料金が公開されており、Standard 席が年払い $20・月払い $25、Premium 席が年払い $100・月払い $125（いずれも席あたり月額）。Enterprise は席あたり月額 $20（年払い）に API 料金での従量課金が加わる形で公開されている（営業経由の契約は個別）。表の「SOC 2 準拠」について、Anthropic は SOC 2 Type I / Type II の報告書を取得している（Anthropic Trust Center。code.claude.com/docs/en/security）。これは Anthropic 全体の認証であり、Enterprise プラン固有の特長ではない。Enterprise 固有の機能は SCIM、監査ログ、Compliance API、支出上限などである（claude.com/pricing）。",
       "## 6月以降の主な変化（8月時点）",
       "- **7/24 [Claude Opus 5](?a=claude-opus-5-review) が標準モデルに**。effort トグル（low / medium / high）でタスクごとに思考量を選べるようになった。料金は前世代 Opus 4.8 と同額の $5/$25 に据え置き",
       "- **7/13 [Claude Cowork](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026) 公開**。非エンジニアを含む業務ワークフローに Claude Code の実行基盤が広がった",
@@ -8540,8 +8543,8 @@ const ARTICLES_BODY = {
       "- **7/24 [Voice Mode の大幅アップグレード](?a=anthropic-claude-voice-mode-opus-sonnet-connectors-2026)** — Opus / Sonnet の選択、テキストチャットからのモデル継承、Gmail / Slack / Canva コネクタ",
       "- **6/24 [Workload Identity Federation GA](?a=anthropic-workload-identity-federation-ga-service-accounts-2026)** — 静的 API キーなしで AWS / GCP / Azure / GitHub Actions から認証できるようになり、企業導入の鍵管理負荷が下がった",
       "- **7/7 [Claude Chrome 拡張が 9M インストール](?a=anthropic-claude-chrome-extension-9m-installs-beta-2026)** に到達、Claude Code 統合・複数タブ横断の自動化に対応",
-      "- **8月の廃止**: Opus 4.7 の Fast mode 終了、Workbench と prompt tools API が 8/17 終了（[→ 移行ガイド](?a=august-2026-ai-deprecations-migration-guide-2026)）",
-      "- **Claude Code SDK** でカスタムエージェント構築。Web 版を **iOS Claude アプリ**から起動可能（`claude --teleport` で端末に取り戻し）",
+      "- **8月の廃止**: 旧 Workbench（legacy Workbench）と prompt tools API が 8/17 終了（Workbench は playground として続いている。なお Opus 4.7 の Fast mode の終了は8月ではなく7/24）（[→ 移行ガイド](?a=august-2026-ai-deprecations-migration-guide-2026)）",
+      "- **Agent SDK** でカスタムエージェント構築。Web 版を **モバイルの Claude アプリ（iOS / Android）**から起動可能（`claude --teleport` で端末に取り戻し）",
       "## 第三者プロバイダ対応",
       "Terminal CLI と VS Code 拡張は **third-party providers**（Bedrock、Vertex AI、Foundry 等）に対応。**自社の AWS / GCP / Azure 契約経由**で Claude を利用できる。Anthropic API 直接以外の経路でも全機能が使える設計。",
       "## 評価",
@@ -8552,7 +8555,15 @@ const ARTICLES_BODY = {
       "---",
       "**編集履歴**",
       "【追記 2026-08-11】月次見直しにより更新。(1) 標準モデルを Opus 4.8 から [Opus 5](?a=claude-opus-5-review) に更新し、effort トグルを追記、(2) 6月以降の変化（Cowork 公開、Record a Skill、Voice Mode 刷新、WIF GA、8月の廃止予定）を反映、(3) API 料金表を Opus 5 の $5/$25 に更新、(4) 評価に長時間自律実行のリスク実例（CTF 評価中の不正アクセス自主開示）を追記しました。",
-      "【訂正 2026-08-11】総合評価を **5 → 4.5** に修正しました。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（4.55）と乖離していました。各軸の評価そのものは変更しておらず、**公表している算出方法どおりに総合スコアを計算し直した**ものです。"
+      "【訂正 2026-08-11】総合評価を **5 → 4.5** に修正しました。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（4.55）と乖離していました。各軸の評価そのものは変更しておらず、**公表している算出方法どおりに総合スコアを計算し直した**ものです。",
+      "【訂正 2026-09-30】（誤）effort は low / medium / high の3段階 →（正）Claude Opus 5 も low / medium / high / xhigh / max の5段階に対応し、Opus 5 の既定は high（Opus 5.5 と Sonnet 5.5 の Claude Code での既定は medium）。",
+      "【訂正 2026-09-30】（誤）Sonnet 5 は $3/$15 →（正）Sonnet 5 は $2/$10。$3/$15 への値上げは実施されず、$2/$10 が標準価格になった。",
+      "【訂正 2026-09-30】（誤）Dynamic Workflows は1セッションで最大1,000の並列サブエージェント →（正）1回の実行あたり合計で最大1,000、同時実行は既定で最大16。",
+      "【訂正 2026-09-30】（誤）claude --headless（UI なしモード）→（正）公式 CLI リファレンスに該当フラグはない。UI なしの実行は claude -p。（誤）claude \"<指示>\" は一発指示モード →（正）最初の指示を渡して対話セッションを開始する。（誤）Hooks は PostToolUse、Pre-commit など →（正）PreToolUse、PostToolUse など（Pre-commit はイベント名ではない）。",
+      "【訂正 2026-09-30】（誤）Claude Code SDK →（正）Agent SDK。（誤）agent view の状態「待機中・作業中・完了」→（正）入力待ち（Needs input）・作業中・完了。（誤）Opus 4.7 の Fast mode 終了を8月の廃止に分類 →（正）7/24 に終了。（誤）Workbench が 8/17 終了 →（正）終了したのは旧 Workbench で、Workbench は playground として続いている。「Fast Mode が3倍安い」（見出し）は現行の公式文書に根拠がなく、現在の Fast Mode は標準料金の2倍で最大2.5倍速のため、見出しを事実に合わせた。",
+      "【追記 2026-09-30】その後の変更: 既定モデルは 9/22 の v2.1.280 で Opus 5.5 に変わった。これにより Pro・Max・Team・Enterprise・API のいずれも既定は Opus 5.5 になった（それ以前は Pro と Team Standard が Sonnet、Max などが Opus 5 だった。Max の既定が Opus 5 だったのは v2.1.219 以降で、執筆時点では正しい記述だった）。Opus 5.5（9/22、$4/$20）、Fable 5.1（9/1、$10/$50）、Sonnet 5.5（9/28、$2/$10）が現行世代で、本記事の★評価と「評価」節は Opus 5 世代までを前提としており、Opus 5.5 世代での再採点は行っていない。",
+      "【追記 2026-09-30】その後の変更: Dynamic Workflows は現在、全有料プランで利用できる（Pro は /config で有効化）。本文の Max / Team / Enterprise（管理者有効化必要）という提供範囲は、その後拡大した。起動キーワードは v2.1.160 で workflow から ultracode に変わった。Fast Mode は現在 Pro を含む全有料プランが利用クレジットで使える。Team・Enterprise は席料金が公開されている。あわせて、デスクトップアプリの Ubuntu・Debian ベータ、モバイルアプリの Android 対応、Slack 連携の Claude Tag への移行を追記した。",
+      "【追記 2026-09-30】claude.ai のサブスクリプションでログインした対話セッションでは、利用上限に達すると上限のリセット後に作業を自動で再開する（v2.1.234 以降、既定で有効、/config で無効化できる）。Dynamic Workflows も上限到達時は一時停止してリセット後に再開する（v2.1.271 以降）。"
     ],
     "primarySources": [
       {
@@ -8589,11 +8600,61 @@ const ARTICLES_BODY = {
         "title": "Introducing Claude Opus 4.8",
         "site": "Anthropic",
         "url": "https://www.anthropic.com/news/claude-opus-4-8"
+      },
+      {
+        "title": "Claude Code changelog",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/changelog"
+      },
+      {
+        "title": "Model configuration",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/model-config"
+      },
+      {
+        "title": "Speed up responses with fast mode",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/fast-mode"
+      },
+      {
+        "title": "Orchestrate subagents at scale with dynamic workflows",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/workflows"
+      },
+      {
+        "title": "CLI reference",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/cli-reference"
+      },
+      {
+        "title": "Claude Code in Slack",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/slack"
+      },
+      {
+        "title": "Pricing",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Models overview",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/models/overview"
+      },
+      {
+        "title": "Claude plans and pricing",
+        "site": "Claude",
+        "url": "https://claude.com/pricing"
+      },
+      {
+        "title": "Security",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/security"
       }
     ],
     "tables": [
       {
-        "afterParagraph": 13,
+        "afterParagraph": 14,
         "headers": [
           "コマンド / フラグ",
           "機能"
@@ -8650,7 +8711,7 @@ const ARTICLES_BODY = {
         ]
       },
       {
-        "afterParagraph": 44,
+        "afterParagraph": 46,
         "headers": [
           "プラン",
           "月額",
