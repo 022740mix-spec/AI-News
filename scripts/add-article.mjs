@@ -129,12 +129,24 @@ for (const [i, a] of incoming.entries()) {
 
   // ── 表示位置を持つ埋め込み ──
   // afterParagraph がないと永久に非表示になる（review-check.mjs 規則19）
-  for (const key of ["tables", "figures", "charts", "embeds"]) {
+  for (const key of ["tables", "figures", "charts", "embeds", "videos", "demos"]) {
     if (!Array.isArray(a[key])) continue;
     a[key].forEach((item, j) => {
       if (item && typeof item === "object" && item.afterParagraph === undefined) {
         at(`${key}[${j}] に afterParagraph がありません（記事に表示されません）。`);
       }
+    });
+  }
+
+  // ── videos / demos: src と必須項目 ──
+  for (const key of ["videos", "demos"]) {
+    if (!Array.isArray(a[key])) continue;
+    a[key].forEach((item, j) => {
+      if (!item || typeof item !== "object") return;
+      if (!item.src) at(`${key}[${j}] に src がありません。`);
+      else if (/^([a-z]+:)?\/\//i.test(item.src)) at(`${key}[${j}] の src は public/ 配下の相対パスにしてください: ${item.src}`);
+      if (!item.caption) at(`${key}[${j}] に caption がありません。`);
+      if (key === "demos" && !item.title) at(`demos[${j}] に title がありません（iframe の title に使います）。`);
     });
   }
 
