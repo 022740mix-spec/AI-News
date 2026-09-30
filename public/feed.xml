@@ -976,12 +976,12 @@
     <summary>2026年3月、Reddit ユーザーがバイナリ解析で見つけた Claude Code 内部の未公開パッケージ `@anthropic-ai/sandbox-runtime` が、Anthropic 公式の GitHub リポジトリとして公開されている。macOS・Linux・Windows でエージェントの実行をファイルシステム/ネットワーク単位で隔離する軽量サンドボックスで、Apache 2.0・5,200スター超。ドキュメントには「`docker.sock` を許可すると隔離を回避できる」「Linux はプロキシ環境変数を無視するツールで抜けうる」といった既知の限界も明記されている。</summary>
   </entry>
   <entry>
-    <title>Google が Gemini 3.8 Flash を公開 — 6週間で3世代目のFlash、価格据え置きでTerminal-Bench 2.1が81.6%→90.8%に</title>
+    <title>Google が Gemini 3.8 Flash を公開 — 6週間で3世代目のFlash、価格据え置きでTerminal-Bench 2.1が85.8%→89.4%に</title>
     <link rel="alternate" type="text/html" href="?a=google-gemini-3-8-flash-2026"/>
     <id>tag:ai-tool-news.jp,2026:google-gemini-3-8-flash-2026</id>
     <published>2026-09-08T15:00:00Z</published>
     <updated>2026-09-08T15:00:00Z</updated>
-    <summary>Googleが9月2日、Gemini 3.8 Flashと防御者限定の3.8 Flash Cyberを公開した。価格は3.7 Flashと同じ100万トークンあたり$0.75/$3.75を維持したまま、Terminal-Bench 2.1が90.8%まで上昇。6週間で3世代目となるFlashリリースである。</summary>
+    <summary>Googleが9月2日、Gemini 3.8 Flashと防御者限定の3.8 Flash Cyberを公開した。価格は3.7 Flashと同じ100万トークンあたり$0.75/$3.75を維持したまま、Terminal-Bench 2.1が89.4%（3.7 Flashは85.8%）まで上昇。6週間で3世代目となるFlashリリースである。</summary>
   </entry>
   <entry>
     <title>GitHub が「Project HydraFusion」を研究プレビュー公開 — Copilot CLI に複数モデルの実行時オーケストレーションを実装</title>
@@ -1461,7 +1461,7 @@
     <id>tag:ai-tool-news.jp,2026:xai-grok-4-5-review</id>
     <published>2026-08-11T15:00:00Z</published>
     <updated>2026-08-11T15:00:00Z</updated>
-    <summary>xAI が7月9日に公開したコーディング特化フロンティア。$2/$6 per 1M tokens は西側フロンティアで最安帯。公開当初は独立検証待ちだったベンチマークが8月に出揃い、Artificial Analysis Intelligence Index で 54（4位） と、Musk の「Opus クラス」という主張は裏付けられなかった。一方で 1タスクあたりの出力トークンが Opus 4.8 の約4.2分の1 という効率は実測で確認され、実効コストでは表示単価以上の差がつく。Cursor の実開発ワークフローデータで訓練された点が差別化軸。</summary>
+    <summary>xAI が7月9日に公開したコーディング特化フロンティア。$2/$6 per 1M tokens は西側フロンティアで最安帯。公開当初は独立検証待ちだったベンチマークが8月に出揃い、Artificial Analysis Intelligence Index で 54（4位） と、Musk の「Opus クラス」という主張は裏付けられなかった。一方で 1タスクあたりの出力トークンが Opus 4.8 の約4.2分の1 という効率は実測で確認され、実効コストでは表示単価以上の差がつく。Cursor は数兆トークンの Cursor データを訓練に含めたと公式に説明している（当事者の説明）。</summary>
   </entry>
   <entry>
     <title>Kimi K3 レビュー — オープンウェイト最高性能。データ主権とフロンティア性能を両立できる数少ない選択肢</title>
@@ -1997,7 +1997,7 @@
     <id>tag:ai-tool-news.jp,2026:spacex-cursor-60b-acquisition-anysphere-2026</id>
     <published>2026-06-24T15:00:00Z</published>
     <updated>2026-06-24T15:00:00Z</updated>
-    <summary>SpaceX が6月16日、Cursor 開発元の Anysphere を $60B のオールストック取引で買収するオプション行使を発表した。史上最大の VC バック・スタートアップ買収。SpaceX は6月12日に IPO したばかりで、5月の xAI 合併（$250B 評価額）に続く AI 領域の大型 M&amp;A。Cursor は ARR $4B、Fortune 500 の約2/3が利用、日に約1.5億行のコードを生成する規模。Q3 2026 のクロージング予定で、Cursor の開発者ワークフローデータは Grok 訓練に投入される。</summary>
+    <summary>SpaceX が6月16日、Cursor 開発元の Anysphere を $60B のオールストック取引で買収する合併契約の締結を発表した。史上最大の VC バック・スタートアップ買収。SpaceX は6月12日に IPO したばかりで、5月の xAI 合併（$250B 評価額）に続く AI 領域の大型 M&amp;A。Cursor は ARR $4B、Fortune 500 の約2/3が利用、日に約1.5億行のコードを生成する規模。2026年8月14日に完了した（追記参照）。Cursor は公式ブログ（7月8日）で、提携の下、Grok 4.5 の訓練に数兆トークンの Cursor データが含まれたと説明している（当事者の説明）。</summary>
   </entry>
   <entry>
     <title>【分析】SpaceX-Cursor $60B 買収で AI コーディング市場が再編 — Cursor は xAI 配下、Cognition (Devin・Windsurf) 独立、GitHub Copilot / Claude Code が直接競合に</title>
@@ -2024,12 +2024,12 @@
     <summary>Anthropic が6月17日、Workload Identity Federation（WIF） を Claude Platform で一般提供開始した。静的 API キーが不要になり、ワークロードは既に持っている ID（AWS IAM ロール、GCP/Kubernetes サービスアカウント、Azure マネージド ID、GitHub Actions トークン、Okta 等 OIDC プロバイダー）で認証できる。あわせて Service Accounts が組織レベルで導入され、ワークロードごとに ID・ロール・監査証跡を持てるようになった。API キーと WIF は併存、段階的移行が可能。</summary>
   </entry>
   <entry>
-    <title>xAI Grok V9-Medium が X と SuperGrok で消費者向け公開 — 1.5T パラメータ、Cursor 開発者ワークフローデータで訓練、API はまだ開放されず</title>
+    <title>Grok V9-Medium — 6/16 の消費者公開は確認できず（TechTimes は6/29に公開予定の窓が発売のないまま過ぎたと報道）、V9 基盤とされるモデルは 7/8 に Grok 4.5 として公開（Cursor の訓練データは Cursor が説明）</title>
     <link rel="alternate" type="text/html" href="?a=xai-grok-v9-medium-consumer-release-cursor-data-2026"/>
     <id>tag:ai-tool-news.jp,2026:xai-grok-v9-medium-consumer-release-cursor-data-2026</id>
     <published>2026-06-24T15:00:00Z</published>
     <updated>2026-06-24T15:00:00Z</updated>
-    <summary>xAI の次世代モデル Grok V9-Medium（1.5兆パラメータ、現行 v8-small の3倍）が6月16日、X と SuperGrok で消費者向けに利用可能になった。SpaceX が同日 Cursor を $60B で買収（[Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）した経緯と直結しており、Grok V9 は Cursor の実開発者ワークフローデータで訓練されている。ただし API は未開放（6/19 時点で xAI ドキュメントに未掲載）、コーディング領域での Claude 競合を狙う。</summary>
+    <summary>xAI の次世代基盤モデル Grok V9-Medium（1.5兆パラメータ）について、Elon Musk は5月25日に訓練完了と Cursor データの補足訓練を投稿し、2〜3週間後の公開を予告した。6月16日に X と SuperGrok で消費者向けに公開されたとする当初の記述は、公式資料で確認できず、公開されなかったとみられる（6月29日の TechTimes は公開の窓が発売のないまま過ぎたと報道）。V9 基盤とされるモデルは7月8日に Grok 4.5 として公開された。Cursor は公式ブログで、Grok 4.5 の訓練に数兆トークンの Cursor データが含まれたと説明している（当事者の説明）。速報を経緯の整理に再構成した。</summary>
   </entry>
   <entry>
     <title>xAI Grok Imagine Video 1.5 が公開 — AI 動画 leaderboard で1位、Sora 比 86% 安、xAI の動画生成攻勢</title>
