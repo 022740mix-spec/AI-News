@@ -15396,10 +15396,10 @@ const ARTICLES_BODY = {
       "**Output**: $15.00 / 1M tokens",
       "比較対象:",
       "**GPT-5.6 Sol**: $5 / $30（Kimi K3 の 60% 高い）",
-      "**Claude Sonnet 5**: $3 / $15（〜8/31 は導入価格 $2/$10 だった）",
-      "**Claude Fable 5**: $6 / $30（Kimi K3 の 2倍）",
+      "**Claude Sonnet 5**: $2 / $10（記事公開時は8/31までの導入価格として案内されていたが、その後標準価格として恒久化された。公式発表は2026年8月10日）",
+      "**Claude Fable 5**: $10 / $50（Kimi K3 の約3.3倍）",
       "**DeepSeek V4 Pro**: $0.435 / 未公表（[DeepSeek V4](?a=deepseek-v4-mid-july-peak-off-peak-api-pricing-2026) — 圧倒的最安）",
-      "**cache-hit の $0.30 は Fable 5 の cache-hit $0.60 の半額**、繰り返しコンテキストが多いエージェント運用でのランニングコスト最適化に効く。",
+      "**cache-hit の $0.30 は Fable 5 の cache-hit $1 の30%（約3分の1）**、繰り返しコンテキストが多いエージェント運用でのランニングコスト最適化に効く。",
       "**オープンウェイト公開の意味**: Kimi K3 の重み公開（2026年7月27日に実施）は、以下の点で業界に大きな影響を与える。",
       "**(a) 世界最大規模の完全ダウンロード可能なモデル**: 2.8T パラメータの重みが入手可能になる。企業内 GPU クラスタでのオンプレ推論、fine-tuning、モデル研究の対象になる（ただしライセンスには MaaS 事業者向けの収益基準など固有の条件がある）",
       "**(b) [中国 AI モデルの米国企業シェア](?a=feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026) の加速**: OSS で入手可能になれば、米国企業側のデータ主権懸念（中国クラウド経由）が緩和され、更なる導入促進が予想される",
@@ -15417,7 +15417,9 @@ const ARTICLES_BODY = {
       "**(4) 7/27 の open weights 公開まで API 経由のみ**: 7/27 までは Moonshot 提供の API・Kimi Code・OpenRouter 経由のみで、オンプレ展開はできない",
       "**AI News の推奨**: agent 系ワークロードでコストを最適化したい企業は、**7/27 の open weights 公開後**に (a) API 経由で K3 Max を試験導入、(b) BrowseComp 型のウェブ調査 agent で GPT-5.6 Sol / Fable 5 との比較検証、(c) Kimi Code Bench 2.0 に近い実 codebase での実装評価、を順次実施する価値がある。**Cursor・Cline・Claude Code 等の開発ツール**が K3 を採用する場合は、Kimi K3 License の適用条件（MaaS 収益基準・表示義務）を確認したうえで、[MCP 2026-07-28 spec](?a=mcp-2026-07-28-release-candidate-stateless-core-2026) 対応クライアントから利用する形が最も柔軟。中国モデルへのデータ主権懸念は、オンプレ推論（7/27 以降）で解消できる点が特に重要な差別化となる。",
       "---",
-      "**【訂正 2026-07-31】**（誤）本記事は公開当初、Kimi K3 のライセンスを「Modified MIT」と記載していました →（正）2026年7月27日に実際に公開された重みのライセンスは、MIT でも Apache 2.0 でもない**独自の「Kimi K3 License」**です。前世代 K2 系の Modified MIT パターンは踏襲されませんでした。タイトル・要約・本文の該当箇所を修正し、ライセンス条件の詳細を追記しました。なお本記事の ID には `modified-mit` の文字列が含まれますが、他記事から多数リンクされているため ID は変更していません。詳細は [Kimi K3 重み公開の記事](?a=moonshot-kimi-k3-open-weights-license-2026) を参照してください。"
+      "**【訂正 2026-07-31】**（誤）本記事は公開当初、Kimi K3 のライセンスを「Modified MIT」と記載していました →（正）2026年7月27日に実際に公開された重みのライセンスは、MIT でも Apache 2.0 でもない**独自の「Kimi K3 License」**です。前世代 K2 系の Modified MIT パターンは踏襲されませんでした。タイトル・要約・本文の該当箇所を修正し、ライセンス条件の詳細を追記しました。なお本記事の ID には `modified-mit` の文字列が含まれますが、他記事から多数リンクされているため ID は変更していません。詳細は [Kimi K3 重み公開の記事](?a=moonshot-kimi-k3-open-weights-license-2026) を参照してください。",
+      "【訂正 2026-09-30】（誤）比較対象の Claude Sonnet 5: $3 / $15（〜8/31 は導入価格 $2/$10 だった）→（正）Sonnet 5 は $2 / $10 で、9/1 の $3/$15 への引き上げは行われず、$2/$10 が標準価格として恒久化された（2026年8月10日に公式が発表）。Kimi K3 の API 料金（$3 / $15）は変更していない。",
+      "【訂正 2026-09-30】（誤）Claude Fable 5: $6 / $30（Kimi K3 の 2倍）→（正）Claude Fable 5 は $10 / $50（6月9日のローンチ時から同額。Anthropic の Fable 5 / Mythos 5 発表と platform.claude.com の料金表で確認）で、Kimi K3（$3 / $15）の約3.3倍。段落24の「Fable 5 の cache-hit $0.60 の半額」も（正）Fable 5 の cache read は $1 / MTok で、Kimi K3 の $0.30 は30%（約3分の1）。半額ではない。なお Fable 5 は掲載時（7/17）も $10 / $50 で、$6 / $30 は掲載時点で誤っていた。"
     ],
     "primarySources": [
       {
@@ -15444,6 +15446,31 @@ const ARTICLES_BODY = {
         "title": "Kimi K3 - API Pricing & Benchmarks",
         "site": "OpenRouter",
         "url": "https://openrouter.ai/moonshotai/kimi-k3"
+      },
+      {
+        "title": "Pricing - Claude API Docs（Claude Sonnet 5 の脚注3）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Claude Sonnet 5 モデルページ（Pricing 節）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/models/sonnet-5/overview"
+      },
+      {
+        "title": "Release notes（2026年8月10日: Claude Sonnet 5 の導入価格が標準価格に）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Introducing Claude Sonnet 5（Edit August 10, 2026）",
+        "site": "anthropic.com",
+        "url": "https://www.anthropic.com/news/claude-sonnet-5"
+      },
+      {
+        "title": "Introducing Claude Fable 5 and Claude Mythos 5",
+        "site": "anthropic.com",
+        "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
       }
     ]
   },
