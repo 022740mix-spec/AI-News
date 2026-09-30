@@ -11322,5 +11322,22 @@ export const ARTICLES_META = [
       "Microsoft",
       "オープンソース"
     ]
+  },
+  {
+    "id": "claude-code-wrap-up-allowance-5-hour-limit-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code、5時間の上限に達しても区切りのよいところまで進める——週次枠から小さな固定分を使い、Pro は週1回・Max は毎回",
+    "excerpt": "Anthropic の開発者向け公式アカウントは2026年9月25日、Claude Code が5時間の利用上限に達したとき、編集の途中で打ち切らず区切りのよい停止点を探すようになると発表した。そのために、週次の利用枠から小さな固定の割り当てを引く。使える頻度は Pro が週1回、Max と Team Premium が5時間の上限に達するたびで、続きは追加利用で進められる。国内報道はこれを「残業」と呼ぶ。割り当ての大きさや対象バージョンは、公式の投稿には書かれていない。",
+    "date": "2026-10-01",
+    "newsDate": "2026-09-25",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "料金",
+      "開発体験"
+    ]
   }
 ];

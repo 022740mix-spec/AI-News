@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-30",
-  "count": 529,
+  "count": 530,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -147,6 +147,7 @@
     "claude-code-source-leak-npm-sourcemap-2026",
     "claude-code-token-drain-prompt-cache-bug-2026",
     "claude-code-v2-1-90-powerup-no-flicker-2026",
+    "claude-code-wrap-up-allowance-5-hour-limit-2026",
     "claude-computer-use-windows-launch-2026",
     "claude-design",
     "claude-fable-5-1-mythos-5-1-review",
