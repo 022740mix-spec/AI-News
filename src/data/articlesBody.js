@@ -23096,6 +23096,117 @@ const ARTICLES_BODY = {
         "url": "https://learn.chatgpt.com/docs/plugins"
       }
     ]
+  },
+  "openai-gpt-6-1-sol-codex-work-api-2026": {
+    "body": [
+      "OpenAI は2026年9月29日、GPT-6.1 Sol を Codex と ChatGPT Work 向けに公開したと changelog で告知した。同日の DevDay 2026 のまとめページでも、API と Codex で使えるモデルとして紹介されている。OpenAI の説明では、GPT-6.1 Sol は複雑なコーディングや専門的な業務向けに「Astra に近い性能を、Astra より低いコストで」提供するモデルで、反復的で長時間にわたる作業（コード、アプリ、ドキュメント）での利用を想定している。API のモデル ID は gpt-6.1-sol である。",
+      "位置づけについて、公式ドキュメントは3つのモデルの使い分けを示している。最も難しいエンドツーエンドの作業には Astra、コストが重要な反復的・長時間の作業には GPT-6.1 Sol、内容が明確で繰り返しの多い作業には Luna という整理だ。API のモデルページも、Astra との比較は自分のタスクで行い、品質とコストのトレードオフを評価するよう案内している。なお「Astra に近い性能」は OpenAI 自身の説明で、参照した公式ドキュメントにはこの比較を裏づけるベンチマーク数値は載っておらず、独立した検証も確認できていない。既存の GPT-6 Sol とは別のモデルで、公式ドキュメントも GPT-6.1 Sol は別のロールアウトだと書いている。GPT-6 Sol と GPT-6 Luna については別記事を参照されたい。",
+      "Codex と ChatGPT Work での提供範囲は、公式のモデルページによると、公開時点のロールアウトが Plus、Pro、Business、Enterprise、Edu の各プランで、ChatGPT デスクトップアプリ内の Codex と Codex CLI、および ChatGPT Work の Web とモバイルを含む。ロールアウトの列挙に IDE 拡張は出てこないが、同じページのモデルカードでは Codex IDE 拡張の項目が対応ありとなっており、資料の間で書き方に差がある。Enterprise と Edu では、管理者が有効化するまでオフの状態が既定になる。Free と Go は公開時点では含まれない。ChatGPT では GPT-6.1 Sol は Work と Codex で使え、Chat では使えないと記されている。ただし提供は、プラン、クライアント、ワークスペース設定に依存すると公式が繰り返し留保しており、モデルを選択しても、ワークスペースの権限が変わったりアクセスが付与されたりすることはない。",
+      "Codex CLI では、2026年9月29日に公開された 0.159.1 で、GPT-6.1 Sol が同梱カタログと Amazon Bedrock の Mantle・Runtime カタログの既定モデルとして追加された。公式ドキュメントには、起動時に codex --model gpt-6.1-sol と指定する例と、非対話実行の codex exec -m gpt-6.1-sol の例がある。速度面では、公開時点で Standard と Fast が使え、Ultrafast への対応は後日とされている。Codex の Fast モードは CLI の /fast で切り替えられ、含まれる購読上限の消費は Standard の2.5倍、購入クレジットと Enterprise の従量課金は2倍で計算される。この倍率は速度向上の倍率を表すものではないと公式は書いている。",
+      "推論の強さ（reasoning effort）は、ChatGPT と Codex のクライアント上では Light から Ultra までの範囲で、Max と Ultra は設定に依存する。これは UI 上の呼び名であり、API の reasoning.effort（low から max）とは別の体系である。公式ドキュメントは、まずクライアントの既定値から始めてタスクに応じて調整することを勧めており、世代が違うモデル間で推論設定は正確には対応しないため、慣れたタスクを低めの設定で試すよう案内している。Enterprise と Edu の管理者は、GPT-6.1 Sol の既定値をワークスペースで変更する前に、ワークスペースのモデル設定と Codex のモデルページ上のロールアウト情報を確認することになる。公式は、ローカル設定でモデルを指定してもアクセスは付与されないと明記している。",
+      "API のモデルページによると、GPT-6.1 Sol のコンテキストウィンドウは1,050,000トークン、最大出力は128,000トークン、知識のカットオフは2026年4月30日で、入力はテキストと画像、出力はテキストである。reasoning.effort は low、medium（既定）、high、xhigh、max に対応し、none と minimal は非対応。レート制限は使用量の階層で決まり、Free は非対応、Tier 1 が500 RPM・500,000 TPM、Tier 5 が15,000 RPM・40,000,000 TPM と記載されている。ツール呼び出しには Responses API を使う必要があり、Chat Completions はツール呼び出しなしでの利用に限られる。ファインチューニングは非対応で、Responses API では Web 検索、ファイル検索、コードインタープリター、ホスト型シェル、Apply Patch、Skills、Computer Use、MCP、ツール検索などが使える。",
+      "価格は、developers.openai.com の価格ページで、Standard、Batch、Flex、Fast、Ultrafast の区分ごとに、100万トークンあたりの入力・キャッシュ入力・キャッシュ書き込み・出力が、短いコンテキストと長いコンテキストに分けて掲載されている。GPT-6.1 Sol は Ultrafast の行には載っていない。下の表は、その GPT-6.1 Sol の行を写したものである。",
+      "モデルページの注記によると、キャッシュ入力は非キャッシュ入力の5%の価格、キャッシュ書き込みは非キャッシュ入力の1.25倍で課金される。入力が272Kトークンを超えるプロンプトは、リクエスト全体が入力とキャッシュ系は2倍、出力は1.5倍の料金になる。Fast モードは Standard の2倍、Batch と Flex は Standard より50%安く、リージョン処理が利用できる場合は10%の割増が付く（価格ページによると、2026年3月5日以降に公開されたモデルが対象）。一方、ChatGPT のクレジット制プランでは、GPT-6.1 Sol の Standard 速度の料金は100万トークンあたり入力50クレジット、キャッシュ入力2.5クレジット、出力250クレジットと記載されている。公式は、API のトークン価格と購読の利用枠は別物であり、API の価格から含まれるタスク数を見積もらないよう注意している。",
+      "DevDay 2026 のページによると、GPT-6.1 Sol は Responses API の Multi-agent（ベータ）と、Standard・Flex・Batch での EU データレジデンシーに対応する。Multi-agent は、モデルが並列にサブエージェントを立てて調整する機能で、公式ガイドでは GPT-6.1 Sol と GPT-5.6 の全モデルで、ベータ機能として利用できる。HTTP では betas 引数に responses_multi_agent=v1 を渡す。WebSocket は betas 引数を受け付けず、OpenAI-Beta ヘッダーで指定する。ベータの間は項目のスキーマが変わる可能性があると明記されている。",
+      "Multi-agent には制約もある。公式ガイドによると、有効にすると /responses/compact エンドポイントは使えず、context_management を設定しなくてもサーバー側の自動コンパクションが暗黙にオンになる。サブエージェントの木の深さと総数には固定の上限がなく、同時に動かせる数の max_concurrent_subagents の既定値は3で、公式もこの値を推奨している。サブエージェントを増やすとトークン使用量が増えうるとも書かれている。データレジデンシーについては、モデルページは米国と EU に対応する一方で EU では Fast モードは使えないとしており、API の Ultrafast は米国のデータレジデンシーとグローバル処理のみで EU は非対応と、Ultrafast のガイドにある（Ultrafast は GPT-6 Astra の機能で、GPT-6.1 Sol の価格表には行がない）。ここまでの性能・コストに関する記述はいずれも OpenAI の公式ドキュメントに基づき、独立した検証は確認できていない。導入する場合は、自分のタスクで Astra や現行の Sol と比較してから判断する必要がある。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 6,
+        "caption": "GPT-6.1 Sol の API 価格（USD / 100万トークン、OpenAI 価格ページの gpt-6.1-sol の行）",
+        "headers": [
+          "区分",
+          "短コンテキスト 入力",
+          "短 キャッシュ入力",
+          "短 キャッシュ書き込み",
+          "短 出力",
+          "長コンテキスト 入力",
+          "長 キャッシュ入力",
+          "長 キャッシュ書き込み",
+          "長 出力"
+        ],
+        "rows": [
+          [
+            "Standard",
+            "$2.00",
+            "$0.10",
+            "$2.50",
+            "$10.00",
+            "$4.00",
+            "$0.20",
+            "$5.00",
+            "$15.00"
+          ],
+          [
+            "Batch",
+            "$1.00",
+            "$0.05",
+            "$1.25",
+            "$5.00",
+            "$2.00",
+            "$0.10",
+            "$2.50",
+            "$7.50"
+          ],
+          [
+            "Flex",
+            "$1.00",
+            "$0.05",
+            "$1.25",
+            "$5.00",
+            "$2.00",
+            "$0.10",
+            "$2.50",
+            "$7.50"
+          ],
+          [
+            "Fast",
+            "$4.00",
+            "$0.20",
+            "$5.00",
+            "$20.00",
+            "$8.00",
+            "$0.40",
+            "$10.00",
+            "$30.00"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "GPT-6.1 Sol Model | OpenAI API",
+        "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+      },
+      {
+        "title": "Pricing | OpenAI API",
+        "url": "https://developers.openai.com/api/docs/pricing"
+      },
+      {
+        "title": "Codex models（GPT-6.1 Sol）",
+        "url": "https://learn.chatgpt.com/docs/models"
+      },
+      {
+        "title": "Speed（Fast モード）",
+        "url": "https://learn.chatgpt.com/docs/agent-configuration/speed"
+      },
+      {
+        "title": "Workspace model availability",
+        "url": "https://learn.chatgpt.com/docs/enterprise/workspace-model-availability"
+      },
+      {
+        "title": "ChatGPT & Codex changelog",
+        "url": "https://learn.chatgpt.com/docs/changelog"
+      },
+      {
+        "title": "DevDay 2026（What's new）",
+        "url": "https://learn.chatgpt.com/docs/whats-new/devday-2026"
+      },
+      {
+        "title": "Multi-agent | OpenAI API",
+        "url": "https://developers.openai.com/api/docs/guides/responses-multi-agent"
+      }
+    ]
   }
 };
 

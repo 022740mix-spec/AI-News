@@ -11027,5 +11027,24 @@ export const ARTICLES_META = [
       "セキュリティ",
       "開発ツール"
     ]
+  },
+  {
+    "id": "openai-gpt-6-1-sol-codex-work-api-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI、GPT-6.1 Sol を公開：Codex・ChatGPT Work・API で利用可能に、API は入力 $2 / 出力 $10（100万トークンあたり・Standard）",
+    "excerpt": "OpenAI は2026年9月29日、GPT-6.1 Sol を Codex と ChatGPT Work で公開した。API でも利用できるとされている。公式ドキュメントは「Astra に近い性能を、Astra より低いコストで」と説明している。API のモデル ID は gpt-6.1-sol で、Standard の価格は100万トークンあたり入力 $2.00・出力 $10.00。Codex CLI 0.159.1 では同梱カタログの既定モデルになった。Enterprise と Edu では管理者が有効化するまで無効で、Free と Go は公開時点の対象外とされている。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "Codex",
+      "ChatGPT",
+      "API",
+      "料金",
+      "マルチエージェント"
+    ]
   }
 ];
