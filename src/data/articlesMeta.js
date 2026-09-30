@@ -3044,7 +3044,7 @@ export const ARTICLES_META = [
     "type": "review",
     "category": "cli",
     "title": "Gemini CLI レビュー — Google の OSS CLI、Gemini 3.5 Flash 対応。Pro 世代は GA 遅延が続く",
-    "excerpt": "Google が Apache 2.0 で公開する OSS AI コーディングエージェント。基盤モデルは Gemini 3.5 Flash（I/O 2026 で GA、Terminal-Bench 2.1 76.2%、他社フロンティアの4倍速）。`npm install -g @google/gemini-cli` でインストール、`gemini` で起動。Plan Mode、サンドボックス（Docker/Podman）、MCP 対応、Google Search grounding が中核。5/19 の I/O 2026 で発表された Antigravity 2.0 エージェント基盤と Gemini Spark への連携も追加。Flash モデルは1日1,000リクエストまで無料、Pro は AI Pro/Ultra サブスクリプション必要。",
+    "excerpt": "Google が Apache 2.0 で公開する OSS AI コーディングエージェント。基盤モデルは Gemini 3.5 Flash（I/O 2026 で GA、Terminal-Bench 2.1 76.2%、他社フロンティアの4倍速）。`npm install -g @google/gemini-cli` でインストール、`gemini` で起動。Plan Mode、サンドボックス（Docker/Podman）、MCP 対応、Google Search grounding が中核。2026年6月18日に、個人向け（Google AI Pro/Ultra と無料の Code Assist for individuals）の Gemini CLI 提供は終了し Antigravity CLI に移行、組織ライセンスと有料 API キーでは継続（9月30日時点で訂正）。",
     "date": "2026-06-05",
     "newsDate": "2026-05-19",
     "author": "AI News 編集部",
@@ -3065,7 +3065,7 @@ export const ARTICLES_META = [
     "rating": 4,
     "reviewCategory": "cli",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-08-11"
+    "lastReviewed": "2026-09-30"
   },
   {
     "id": "openai-codex-agent",

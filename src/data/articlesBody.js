@@ -8194,22 +8194,23 @@ const ARTICLES_BODY = {
   "gemini-cli": {
     "body": [
       "**Gemini CLI** は Google が開発する **Apache 2.0 のオープンソース AI コーディングエージェント**。**Gemini 3 / 3.5 Flash** を裏側に Google Search grounding と MCP 接続を組み合わせ、Apache 2.0 ライセンスで GitHub 公開されている（star 数は10万級）。2026年6月時点での網羅評価。",
+      "【2026年9月30日時点の注記】個人向けの提供形態は、本レビューの公開後に変わっている。Google は2026年5月19日に、6月18日で Gemini CLI（および Gemini Code Assist の IDE 拡張）が Google AI Pro / Ultra 契約者と、Gemini Code Assist for individuals の無料利用者へのリクエスト提供を終了し、消費者向けは Antigravity CLI に移ると発表した。一方、Gemini Code Assist Standard / Enterprise の組織ライセンスと、有料の Gemini API キー・Gemini Enterprise Agent Platform の API キーでの利用は継続すると説明している。geminicli.com の各ページにも同趣旨の告知バナーが出ている。以下の無料枠・認証・連携に関する記述のうち、この変更に反する部分は訂正した。モデルの世代（Flash 系）と、5軸採点は本文の前提が旧いまま残っている。採点は変更していない。",
       "## インストール / 起動",
       "**正しいインストールコマンド（npm 経由）**:",
       "```bash\nnpm install -g @google/gemini-cli           # 安定版\nnpm install -g @google/gemini-cli@preview   # プレビュー版（週次）\nnpm install -g @google/gemini-cli@nightly   # ナイトリー（日次）\n```",
       "**前提**: Node.js **20+**。",
       "**起動**:",
       "```bash\ngemini                            # 対話セッション\ngemini -p \"<指示>\"                # 一発実行 / パイプ\ngemini --sandbox                  # Docker / Podman でサンドボックス実行\n```",
-      "**認証**: 初回起動時に Google アカウントでログインを求められる。Gemini API キー（AI Studio）または Vertex AI 認証情報も使用可。",
+      "**認証**: 認証方式は Google アカウントでのログイン、Gemini API キー（AI Studio）、Vertex AI 認証情報の3種類（公式ドキュメントの分類）。ただし個人の Google アカウント（無料の Gemini Code Assist for individuals、Google AI Pro / Ultra）でのログインによる利用は、Google の発表で2026年6月18日に提供終了となっている。継続が明記されているのは Gemini Code Assist Standard / Enterprise の組織ライセンス、有料の Gemini API キー、Gemini Enterprise Agent Platform（Vertex AI）の API キーである。公式ドキュメントの認証ページには個人アカウントでのログインを推奨と読める記載が残っており、資料間で食い違いがある。ここでは発表と各ページの告知バナーを優先した。",
       "## モデルと無料枠",
       "**Gemini 3.5 Flash（5/19 GA、I/O 2026 で発表）**:",
       "- Terminal-Bench 2.1 で 76.2%、GDPval-AA 1656 Elo、MCP Atlas 83.6%",
       "- Flash クラスの速度（**他社フロンティアの4倍速**）で 3.1 Pro を超える性能",
       "- 出力レイテンシと知能のバランスでフロンティア級",
-      "**【2026年9月時点の注記】Flash 系は本レビュー以降に2世代進んでいる。** 2026年9月2日に [Gemini 3.8 Flash が公開](?a=google-gemini-3-8-flash-2026)され、6週間で3世代目の Flash にあたる。価格は 3.7 Flash と同じ100万トークンあたり **$0.75 / $3.75 に据え置き**のまま、Terminal-Bench 2.1 が **81.6% → 90.8%** に上昇したとされる。CLI 側がどの世代を既定で使うかは別途確認が必要で、本レビューの以下の記述は 3.5 系を前提にしている。",
+      "**【2026年9月時点の注記】Flash 系は本レビュー以降に2世代進んでいる。** 2026年9月2日に [Gemini 3.8 Flash が公開](?a=google-gemini-3-8-flash-2026)され、6週間で3世代目の Flash にあたる。価格は 3.7 Flash と同じ100万トークンあたり $0.75 / $3.75 に据え置き（ai.google.dev の料金表ではこれは期間限定の価格で、通常価格は $1.50 / $7.50 と記載されている）のまま、Terminal-Bench 2.1 が 81.6% から 90.8% に上昇したとされる（当サイトの 3.8 Flash 記事の記載）。一方、DeepMind の 3.8 Flash モデルカード（2026年9月時点の結果）は 3.7 Flash 85.8%、3.8 Flash 89.4% と掲載しており、公表値が資料により異なる。いずれも Google 自身の公表値で、独立した検証は確認できていない。CLI 側の既定については、GitHub main ブランチのソース（packages/core/src/config/models.ts）で、Flash 層の基準が gemini-3.5-flash、実験フラグで有効になる最新が gemini-3.8-flash と定義されている（フラグの適用状況はアカウントごとに異なりうる。また main の内容であり、安定版 v0.62.0 と同一とは限らない）。公式ドキュメントの /model の説明は Auto (Gemini 3) を gemini-3-pro-preview と gemini-3-flash-preview と記載しており、3.5 以降の Flash には触れていない。本レビューの以下の記述は 3.5 系を前提にしている。",
       "**Gemini 3.5 Pro は GA が遅れている**。6月版で「翌月リリース予定」としていたが、**8月時点でも Vertex AI 限定プレビューのまま**である。Pichai は6月に「もう1ヶ月待ってほしい」と述べ、その後**コーディング性能が社内目標に届いていない**ことが遅延理由として報じられた（発表を受け Alphabet 株は3%下落）。Deep Think と 2M コンテキストを備えるとされるが、**本稿執筆時点で一般提供の時期は確定していない**（[→ GA 延期続報](?a=google-gemini-3-5-pro-ga-delay-deep-think-2026)、[→ 遅延の分析](?a=feature-google-gemini-3-5-pro-delay-coding-performance-2026)）。",
       "**実務上の含意**: Gemini CLI で当面前提にすべきは **3.5 Flash** である。Flash クラスとしては強力だが、**エージェント的なコーディングで Opus 5 / GPT-5.6 Sol クラスと正面から比較する段階には至っていない**。Pro 世代の投入を待って採用判断する選択肢もある。",
-      "**無料枠**: Flash モデルは 1日1,000リクエストまで無料。Pro モデルは **2026年3月25日**以降は有料サブスクリプション限定（Google AI Pro $20/月、AI Ultra $100/月）。",
+      "**無料枠**: Google アカウントでのログインによる無料枠（1日1,000リクエスト）は、Google の発表で2026年6月18日に個人向けの提供が終了するとされた。公式の Quotas and pricing ページには、これとは別に Gemini API キー（未課金）の1日250リクエスト・Flash モデルのみ、Vertex AI Express Mode（課金の有効化まで90日）の無料利用が記載されているが、発表が継続を明記しているのは有料の API キーであり、バナーは「Unpaid tier」の置き換えと述べているため、これらが現在も使えるかは資料間で食い違う。有料側の1日あたり上限は、Gemini Code Assist Standard が1,500、Enterprise が2,000リクエスト。API キーと Vertex AI の従量課金は tier により異なる。同ページの表には Google AI Pro 1,500 / AI Ultra 2,000 の行も残っているが、発表では AI Pro / Ultra は6月18日で提供終了とされており、ページ内でも食い違っている。Pro モデルは2026年3月25日以降は有料サブスクリプション限定とされていた（Google AI Pro は月額 $19.99、AI Ultra は月額 $99.99 から。gemini.google/subscriptions の現行表示）。ただし、AI Pro / Ultra のログインによる CLI 利用自体が6月18日に終了している（上記）。",
       "## 主要機能",
       "### 組み込みツール",
       "- ファイル read / write / edit",
@@ -8219,24 +8220,30 @@ const ARTICLES_BODY = {
       "- **MCP 接続**（任意の Model Context Protocol サーバを追加可能、DB / 内部 API / デザインシステム等）",
       "### サンドボックスモード",
       "**Docker / Podman でコンテナ隔離実行**。すべてのファイル変更とシェルコマンドはユーザーの明示的承認を要求。Linux / macOS / Windows 対応。",
-      "### Plan Mode（v0.35.0+）",
+      "### Plan Mode（v0.29.0 で導入、v0.34.0 から既定で有効）",
       "変更実行前に計画を提示し、ユーザー承認後に実装。Anthropic Plan Mode、Cursor の Composer プレビューに相当。",
       "### サブエージェントアーキテクチャ",
       "ローカル実行、ツール分離、動的フィルタリング機能を備え、長時間タスクを段階的に分解実行。",
       "### Antigravity 2.0 連携（5/19 I/O 2026）",
-      "Google の新エージェント基盤 **Antigravity 2.0** と Gemini CLI が統合。Antigravity 上で Managed Agents として動作させたり、Google AI Studio から呼び出したりが可能。OpenAI Workspace Agents / Anthropic Claude Managed Agents に相当する Google 側の答え。",
+      "Google の新エージェント基盤 **Antigravity 2.0** は Antigravity の新しいデスクトップアプリで、Antigravity CLI と同じ agent harness を共有する。Google は同日（5/19）に、Antigravity への取り組みの統合を発表し、Gemini CLI の個人向け提供は Antigravity CLI（Go 製）へ移行するとした。Antigravity CLI は Agent Skills・Hooks・Subagents・Extensions（Antigravity plugins）を引き継ぐとされるが、機能が1対1で同等ではないと Google 自身が説明している。なお Gemini API 側には Antigravity Agent（マネージドエージェント）が提供されている（ai.google.dev の changelog）が、Gemini CLI がそのまま Managed Agents として動作するという記述は、公式資料では確認できていない。OpenAI Workspace Agents / Anthropic Claude Managed Agents に相当する Google 側の答え。",
       "### Gemini Spark 連携（5/19 発表、ベータ）",
       "Gemini 3.5 を基盤としたパーソナルエージェント Spark との接続。AI Ultra 加入者向けにベータ提供。",
       "## 評価",
-      "**強み**: Apache 2.0 で完全 OSS、Google エコシステム（Vertex AI、Firebase、Cloud Run、Google Workspace、Google Search grounding）とのネイティブ統合、Flash クラスの低レイテンシ、無料枠の存在。Antigravity 2.0 と Gemini Spark の登場で「単なる CLI」から「Google エージェント基盤への入口」へと位置付けが変化。",
+      "**強み**: Apache 2.0 で完全 OSS、Google エコシステム（Vertex AI、Firebase、Cloud Run、Google Workspace、Google Search grounding）とのネイティブ統合、Flash クラスの低レイテンシ。個人向けの Google ログイン無料枠は6月18日に終了している（上記参照）。Antigravity 2.0 と Gemini Spark の登場で「単なる CLI」から「Google エージェント基盤への入口」へと位置付けが変化。",
       "**注意点**: エージェント機能の成熟度では Claude Code（agent view + Dynamic Workflows）や Cursor（Agents Window）にまだ及ばない場面がある。**プライバシー設定が CLI 内に存在しない**点は企業利用で課題（GDPR 対応に関するコミュニティ懸念が GitHub Issue #1489 等で続いている）。Vertex AI 経由なら統制可能。",
-      "**最大の不確実性はモデル側にある**: Gemini 3.5 Pro の GA 遅延により、**CLI の性能上限が Flash クラスに据え置かれた状態が続いている**。CLI 自体の設計（OSS・サンドボックス・MCP・Plan Mode）は堅実だが、コーディング性能で他社フロンティアと競うには Pro 世代の投入が前提になる。**8月時点では「無料枠と OSS 性を活かした補助的な用途」に位置付けるのが現実的**で、主力の採用判断は Pro の GA を見てからで遅くない。",
+      "**最大の不確実性はモデル側にある**: Gemini 3.5 Pro の GA 遅延により、**CLI の性能上限が Flash クラスに据え置かれた状態が続いている**。CLI 自体の設計（OSS・サンドボックス・MCP・Plan Mode）は堅実だが、コーディング性能で他社フロンティアと競うには Pro 世代の投入が前提になる。**8月時点では「OSS 性を活かした補助的な用途」（個人向けの無料枠は6月18日で終了）に位置付けるのが現実的**で、主力の採用判断は Pro の GA を見てからで遅くない。",
       "**関連記事**: [Gemini 3.5 Pro GA 延期](?a=google-gemini-3-5-pro-ga-delay-deep-think-2026)、[遅延の分析](?a=feature-google-gemini-3-5-pro-delay-coding-performance-2026)、[Gemini CLI v0.35.0 詳細](?a=gemini-cli-v035)、[CLI 横断比較](?a=cli-tools-comparison-2026-march)、[セキュリティ設定比較](?a=ai-tool-security-settings-comparison-2026)。",
       "---",
       "**編集履歴**",
       "【訂正 2026-08-11】「Gemini 3.5 Pro: 翌月リリース予定（テスト中）」という記述を訂正しました。**8月時点でも Vertex AI 限定プレビューのままで、一般提供の時期は確定していません。** コーディング性能が社内目標に届いていないことが遅延理由として報じられています。",
       "【追記 2026-08-11】月次見直しにより更新。Pro 世代の GA 遅延がツールの位置付けに与える影響（性能上限が Flash クラスに据え置かれている点）を評価に追加しました。",
-      "【追記 2026-09-20】**本レビューが、Flash 系の2世代ぶんの更新（3.8 Flash まで）に触れていなかった**ため、該当箇所に注記を追加しました。当サイトは9月8日にこの公開を報じています。なお `ai.google.dev` には本稿更新時点で調査環境から到達できなかったため、CLI が既定で用いるモデル世代の確認は行えておらず、5軸採点と `lastReviewed` は変更していません。"
+      "【追記 2026-09-20】**本レビューが、Flash 系の2世代ぶんの更新（3.8 Flash まで）に触れていなかった**ため、該当箇所に注記を追加しました。当サイトは9月8日にこの公開を報じています。なお `ai.google.dev` には本稿更新時点で調査環境から到達できなかったため、CLI が既定で用いるモデル世代の確認は行えておらず、5軸採点と `lastReviewed` は変更していません。",
+      "【訂正 2026-09-30】（誤）Flash モデルは1日1,000リクエストまで無料 →（正）Google ログインによる個人向けの無料枠は、Google の発表で2026年6月18日に終了するとされた。AI Pro / Ultra 契約でのログイン利用も同日に終了。公式 Quotas and pricing ページには未課金 API キー（1日250リクエスト・Flash のみ）と Vertex AI Express Mode の無料利用が残っているが、発表とバナーとの関係は資料間で食い違う。認証・強み・評価の該当箇所と概要（excerpt）もあわせて訂正した。",
+      "【訂正 2026-09-30】（誤）Managed Agents として Gemini CLI が動作 →（正）該当の記述は公式資料で確認できていないため置き換えた。Gemini API 側に Antigravity Agent（マネージドエージェント）があることは確認済み。",
+      "【追記 2026-09-30】Antigravity 2.0 は Antigravity のデスクトップアプリで、Antigravity CLI と同じ agent harness を共有する。Google は Gemini CLI の個人向け提供を Antigravity CLI に移行するとした（当事者の発表）。",
+      "【訂正 2026-09-30】（誤）Plan Mode（v0.35.0+）→（正）Plan Mode は v0.29.0（2026-02-17）で導入、v0.34.0（2026-03-17）から既定で有効（公式リリースノートによる）。調査用サブエージェントなどの拡張は v0.33.0（2026-03-11）の項目。",
+      "【追記 2026-09-30】月次見直しにより、次世代の Flash が出ていることを確認した。ai.google.dev のモデル一覧では Gemini 3.8 Flash（gemini-3.8-flash、2026年9月）が Stable、3.7 Flash と 3.6 Flash が前世代、3.5 Flash は legacy と表示されている。Pro 系は Gemini 3.1 Pro が Preview のままで、Gemini 3.5 Pro は ai.google.dev のモデル一覧・料金表・changelog のいずれにも掲載が見つからなかった（Vertex AI 側の記述は本稿では確認できていない）。GitHub main のソースは Flash の基準を 3.5 Flash、実験フラグ経由の最新を 3.8 Flash としており、Gemini CLI の既定モデルは本稿では確定できない。本レビューのモデル・ベンチマーク・料金の記述は3.5 Flash 世代を前提としたままで、5軸採点も変更していない。安定版は npm 上で v0.62.0（2026年9月29日公開）だが、公式ドキュメントの Stable 表示は v0.61.0 で、公開時点が異なる。",
+      "【追記 2026-09-30】Gemini CLI の中身に関する確認結果。サンドボックスは Docker / Podman のほか、macOS Seatbelt、Windows Native Sandbox、gVisor（runsc）、LXC（実験的）が公式ドキュメントに記載されている。Node.js 20 以上、npm の stable / preview / nightly、Apache 2.0 は現行のドキュメント・README と一致した。"
     ],
     "primarySources": [
       {
@@ -8253,6 +8260,31 @@ const ARTICLES_BODY = {
         "title": "Gemini CLI | Gemini for Google Cloud",
         "site": "Google Cloud Docs",
         "url": "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-cli"
+      },
+      {
+        "title": "An important update: Transitioning Gemini CLI to Antigravity CLI",
+        "site": "Google Developers Blog",
+        "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli"
+      },
+      {
+        "title": "Gemini CLI: Quotas and pricing",
+        "site": "Gemini CLI Docs",
+        "url": "https://geminicli.com/docs/resources/quota-and-pricing"
+      },
+      {
+        "title": "Gemini Developer API pricing",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing"
+      },
+      {
+        "title": "Gemini 3.8 Flash model card",
+        "site": "Google DeepMind",
+        "url": "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+      },
+      {
+        "title": "gemini-cli packages/core/src/config/models.ts",
+        "site": "GitHub (raw)",
+        "url": "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/packages/core/src/config/models.ts"
       }
     ]
   },
