@@ -17717,7 +17717,7 @@ const ARTICLES_BODY = {
       "Moonshot 公表の16項目ベンチマークでは、**6項目で全モデル中1位**を取った。特筆すべきは **BrowseComp 91.2** で、Claude Fable 5 の 88.0、GPT-5.6 Sol の 90.4 を上回る。**ウェブ調査型のエージェントタスクで、オープンウェイトモデルが初めて首位に立った**事例になる。ほかに SWE Marathon 42.0、Automation Bench 30.8、SpreadsheetBench 2 34.8、Program Bench 77.8、Kimi Code Bench 2.0 で1位。9項目で2位につけている。",
       "**ただしこの16項目は Moonshot 自身の公表値であり、かつ thinking effort を max / xhigh に揃えた条件下の測定である。** 実運用の中程度の effort でどこまで再現するかは未確定で、この点は割り引いて読む必要がある。独立指標である Artificial Analysis の 57 という数字のほうが、比較の基準としては信頼できる。",
       "## 経済性 — cache-hit $0.30 がエージェント運用に効く",
-      "API 料金は **uncached input $3.00 / output $15.00 per 1M tokens**。加えて **cache-hit input が $0.30** と安い。**Claude Fable 5 の cache-hit $0.60 の半額**であり、同じコンテキストを繰り返し読み込むエージェント運用ではここが効く。プロジェクトを跨いだ継続対話や、大規模コードベースの反復読み込みといった用途で、ランニングコストの差が積み上がる。",
+      "API 料金は **uncached input $3.00 / output $15.00 per 1M tokens**。加えて **cache-hit input が $0.30** と安い。**Claude Fable 5 の cache-hit $1 の30%（約3分の1）**であり、同じコンテキストを繰り返し読み込むエージェント運用ではここが効く。プロジェクトを跨いだ継続対話や、大規模コードベースの反復読み込みといった用途で、ランニングコストの差が積み上がる。",
       "**さらに重みを自社で動かせば、トークン単価という概念自体がなくなる。** 固定的な GPU コストに置き換わるため、**トークン消費量が大きいほどオンプレの経済性が有利になる**。この損益分岐点を自社のワークロードで試算することが、K3 を検討する際の実質的な作業になる。",
       "## 運用のハードルは高い",
       "重みは Hugging Face 上に **96 shards・約1.56TB** で配布されている。2.8兆パラメータとしては異例に小さいが、これは **MXFP4 のネイティブ重み + MXFP8 の活性化**という低精度フォーマットを学習時点から組み込んだ結果で、後処理の量子化ではないため精度劣化は最小限に抑えられている。",
@@ -17731,7 +17731,7 @@ const ARTICLES_BODY = {
       "## 評価",
       "**AI品質（5）**: 独立指標でオープンウェイト最高値、agent 系16項目中6項目で1位。BrowseComp でクローズドの最上位を上回った点は、単なる追随ではなく特定領域での優位を示す。",
       "**使いやすさ（3）**: 最も低い評価をつけた軸である。**1.56TB のオンプレ運用は多くの組織にとって非現実的**で、API 経由なら手軽だがツール・エコシステムの成熟度は Claude や OpenAI に及ばない。Kimi Code は Moonshot 独自環境で、既存のワークフローにそのまま乗るわけではない。",
-      "**コスパ（5）**: uncached $3/$15 でも十分安く、cache-hit $0.30 は Fable 5 の半額。オンプレならトークン課金自体が消える。",
+      "**コスパ（5）**: uncached $3/$15 でも十分安く、cache-hit $0.30 は Fable 5 の cache-hit $1 の30%（約3分の1）。オンプレならトークン課金自体が消える。",
       "**拡張性（5）**: 重みが手に入るため fine-tune・派生モデル配布・オンプレ推論がすべて可能。1M コンテキスト、マルチモーダル入力も揃っている。",
       "**企業向け（4）**: **データ主権の要件とフロンティア性能を両立できる数少ない選択肢**である点を高く評価した。一方で、独自ライセンスの法務確認が必要な点、中国ベンダー製であること自体を調達要件で問題とする組織がある点、そして**独自ライセンスは将来のバージョンで条件が変わりうる**点（K2 系から K3 で実際に変わった）を減点材料とした。",
       "## どう使うべきか",
@@ -17742,12 +17742,14 @@ const ARTICLES_BODY = {
       "**総評**: 「中国モデルは OSS」という一括りの理解は、[Qwen の Tongyi Qianwen ライセンス](?a=alibaba-qwen-3-8-preview-waic-shanghai-2-4t-open-weight-2026)、GLM の MIT、K3 の独自ライセンスと条件が分かれた現在、もう成り立たない。K3 は**条件付きだが実務上ほとんどの企業には無償**という設計で、フロンティア級の重みを手元に置ける。**性能とデータ主権を同時に要求される場面での回答**として、明確な価値がある。",
       "---",
       "**編集履歴**",
-      "【新規 2026-08-11】[7月16日の発表](?a=moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026)と[7月27日の重み公開](?a=moonshot-kimi-k3-open-weights-license-2026)の2本の速報を踏まえ、Artificial Analysis の独立指標が出た段階でレビューとして公開しました。"
+      "【新規 2026-08-11】[7月16日の発表](?a=moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026)と[7月27日の重み公開](?a=moonshot-kimi-k3-open-weights-license-2026)の2本の速報を踏まえ、Artificial Analysis の独立指標が出た段階でレビューとして公開しました。",
+      "【訂正 2026-09-30】（誤）Claude Fable 5 の cache-hit は $0.60 で、Kimi K3 の $0.30 はその半額（本文2か所と比較表）→（正）Fable 5 の cache read は $1 / MTok（公式料金表。入力 $10 の 0.1 倍）で、Kimi K3 の $0.30 は30%（約3分の1）。半額ではない。比較表の Fable 5 の cache-hit も $0.60 から $1.00 に訂正した。",
+      "【訂正 2026-09-30】（誤）比較表の Claude Sonnet 5: 入力 $3.00 / 出力 $15.00 →（正）$2.00 / $10.00。Sonnet 5 の $2/$10 は公開時に8/31までの導入価格とされたが、9/1 の $3/$15 への引き上げは行われず、標準価格として恒久化された。この恒久化は2026年8月10日に公式が発表しており、本記事の掲載日（8/11）はその翌日のため、表の $3.00 / $15.00 は掲載時点で既に誤っていた。"
     ],
     "tables": [
       {
         "afterParagraph": 8,
-        "caption": "Kimi K3 の API 料金と比較（2026年8月11日時点、per 1M tokens）",
+        "caption": "Kimi K3 の API 料金と比較（2026年8月11日時点、per 1M tokens。2026-09-30 に Fable 5 の cache-hit と Sonnet 5 の価格を訂正）",
         "headers": [
           "モデル",
           "入力（uncached）",
@@ -17766,7 +17768,7 @@ const ARTICLES_BODY = {
           [
             "Claude Fable 5",
             "$10.00",
-            "$0.60",
+            "$1.00",
             "$50.00",
             "不可"
           ],
@@ -17779,9 +17781,9 @@ const ARTICLES_BODY = {
           ],
           [
             "Claude Sonnet 5",
-            "$3.00",
+            "$2.00",
             "—",
-            "$15.00",
+            "$10.00",
             "不可"
           ],
           [
@@ -17814,6 +17816,26 @@ const ARTICLES_BODY = {
         "title": "moonshotai/kimi-k3",
         "site": "OpenRouter",
         "url": "https://openrouter.ai/moonshotai/kimi-k3"
+      },
+      {
+        "title": "Pricing - Claude API Docs（Claude Sonnet 5 の脚注3）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Release notes（2026年8月10日: Claude Sonnet 5 の導入価格が標準価格に）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Introducing Claude Sonnet 5（Edit August 10, 2026）",
+        "site": "anthropic.com",
+        "url": "https://www.anthropic.com/news/claude-sonnet-5"
+      },
+      {
+        "title": "Introducing Claude Fable 5 and Claude Mythos 5",
+        "site": "anthropic.com",
+        "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
       }
     ]
   },
