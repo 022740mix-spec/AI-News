@@ -2116,7 +2116,7 @@ export const ARTICLES_META = [
     "type": "feature",
     "category": "cli",
     "title": "CLI コーディングツール横断比較 — Claude Code・Codex・Gemini CLI・Aider・Copilot CLI・Cursor CLI",
-    "excerpt": "主要6つの CLI コーディングツールを、機能・料金・モデル・権限制御の軸で横並びに比較した。バイブコーディングの「ターミナル層」を選ぶ際の参考に。**毎月見直している記事で、最終更新は2026年8月11日**。Codex の提供範囲が Free / Go / Plus まで広がった点、Copilot が従量課金へ移行した点など、料金体系の変化を反映した。",
+    "excerpt": "主要6つの CLI コーディングツールを、機能・料金・モデル・権限制御の軸で横並びに比較した。バイブコーディングの「ターミナル層」を選ぶ際の参考に。**毎月見直している記事で、最終更新は2026年9月30日**。Gemini CLI の個人向け提供終了（Antigravity CLI への置き換え）、Claude Code の標準モデルと Dynamic Workflows の上限、Codex の現行モデル世代、Copilot CLI のモデル名変更などを反映した。",
     "date": "2026-03-28",
     "author": "AI News 編集部",
     "readTime": "9分",
@@ -2135,7 +2135,7 @@ export const ARTICLES_META = [
     },
     "heroScope": "none",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-08-11"
+    "lastReviewed": "2026-09-30"
   },
   {
     "id": "editor-comparison-2026-march",

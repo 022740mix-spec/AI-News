@@ -5991,23 +5991,29 @@ const ARTICLES_BODY = {
   },
   "cli-tools-comparison-2026-march": {
     "body": [
-      "ターミナルから AI にコードを書かせる CLI ツールは、**Claude Code**（Anthropic）、**Codex**（OpenAI）、**Gemini CLI**（Google）、**Aider**（OSS）、**GitHub Copilot CLI**、**Cursor CLI**（Anysphere）の6つが主要な候補になる。それぞれ設計思想が異なるため、単純な優劣ではなく用途との相性で選ぶ。**本記事は月次で見直しており、最終更新は2026年8月11日**。",
-      "**Claude Code** はローカルのファイルシステムに直接アクセスし、Bash 実行・MCP サーバ連携・Skills によるカスタマイズが可能。==本番リポジトリでは --dangerously-skip-permissions を避ける==。**Dynamic Workflows**（1セッション内で最大1,000の並列サブエージェント、中断・再開可能）と **agent view** によるマルチセッション管理が現行世代の中核で、[デスクトップアプリ](?a=anthropic-claude-code-desktop-redesign-routines-2026)・Web・IDE 拡張にも展開している。標準モデルは [Claude Opus 5](?a=claude-opus-5-review)（$5/$25、effort トグル対応）で、Fable 5 / Sonnet 5 / Haiku 4.5 に切替可能。",
-      "**Codex** はクラウドサンドボックス上で動作し、複数タスクの並列実行に強い。PR 単位のワークフローに向く。**2026年に提供範囲が大きく広がり、ChatGPT Free / Go $8 / Plus $20 / Pro / Business のいずれでも利用できる**（3月版で「ChatGPT Pro $200 以上が前提」としていたのは現在では誤り）。4月2日に課金がメッセージ単位から API トークン相当のクレジット制へ移行した。CLI・IDE 拡張・Web・iOS で動作し、[プラグインマーケットプレイス](?a=codex-plugins-marketplace-2026)で Slack・Figma・Notion 等と連携する。モデルは [GPT-5.6](?a=openai-gpt-5-6-general-availability-july-9-2026) 系（Sol / Terra / Luna）。",
-      "**Gemini CLI** は大規模コンテキストが特徴で、コードベースの一括読み込みに向く。**Gemini 3.5 Flash** は Flash クラスの速度でフロンティア級の性能を出す。無料枠は Flash モデルの1日1,000リクエストに限定され、**Pro モデルは3月25日以降 Google AI Pro（$20/月）または AI Ultra（$100/月）の加入が必要**。OSS（Apache 2.0）である点は変わらない。",
-      "**Aider** は完全 OSS（Apache 2.0）で、Claude・GPT・Gemini・ローカルモデルを切り替えられる柔軟さが強み。Git との統合が深く、変更を自動コミットする設計。architect / editor のモデル分業、watch モード、prompt caching に対応する。**44,000 GitHub スター、PyPI 累計680万インストール**と、VC 資金や有償プランを持たないまま端末系エージェントの上位に留まり続けている。**ツール自体は無料で、コストは接続先 LLM の API 料金のみ**。バージョンは 0.x 系のままで、マイナーリリース間で CLI フラグや `.aider.conf.yml` の破壊的変更が入る点は運用上の注意点になる。",
-      "**Copilot CLI** は GitHub エコシステムとの統合が最大の特徴で、Issues / PR / Actions / Codespaces / Code Search と直結する。`/fleet` による並列エージェント、Autopilot による自律実行に対応し、`/model` で Claude・GPT・Gemini・Microsoft 内製の MAI-Code-1-Flash を切り替えられる。Enterprise プランは SSO・監査ログ・IP 補償を備え、組織導入のハードルが低い。**6月1日から従量課金（AI Credits）へ移行**した。",
-      "**Cursor CLI** は IDE を起動せずに Composer / Background Agent を使える独立 CLI で、Cursor のサブスクリプション枠を IDE と共有する。Slack / GitHub / PagerDuty / Microsoft Teams からのトリガーにも対応する（[→ レビュー](?a=cursor-cli)）。**Cursor をすでに契約しているなら追加費用なしで CLI 層が増える**という位置付けで、単体で選ぶツールではない。",
-      "選び方の目安: ローカルでのフル機能とエージェント並列実行なら **Claude Code**、クラウド並列と PR ベースの非同期運用なら **Codex**、大規模コンテキストとコスト重視なら **Gemini CLI**、OSS・マルチモデル・ベンダー中立なら **Aider**、企業統制と GitHub 統合なら **Copilot CLI**、Cursor 契約者の補完なら **Cursor CLI**。エディタ側の比較は[AI エディタ横断比較](?a=editor-comparison-2026-march)、料金の詳細は[料金プラン横断比較](?a=pricing-comparison-all-tools-2026-march)、用途別の選び方は[おすすめマトリクス](?a=usecase-recommendation-matrix-2026)を参照。",
+      "ターミナルから AI にコードを書かせる CLI ツールは、**Claude Code**（Anthropic）、**Codex**（OpenAI）、**Gemini CLI**（Google。個人向けは2026年6月18日に Antigravity CLI へ移行、後述）、**Aider**（OSS）、**GitHub Copilot CLI**、**Cursor CLI**（Anysphere）の6つが主要な候補になる。それぞれ設計思想が異なるため、単純な優劣ではなく用途との相性で選ぶ。**本記事は月次で見直しており、最終更新は2026年9月30日**。",
+      "**Claude Code** はローカルのファイルシステムに直接アクセスし、Bash 実行・MCP サーバ連携・Skills によるカスタマイズが可能。==本番リポジトリでは --dangerously-skip-permissions を避ける==。**Dynamic Workflows**（1回の実行あたり合計1,000エージェントまで、同時実行は既定で16（環境変数で最大256）、同一セッション内で再開可能）と **agent view** によるマルチセッション管理が現行世代の中核で、[デスクトップアプリ](?a=anthropic-claude-code-desktop-redesign-routines-2026)・Web・IDE 拡張にも展開している。標準モデルは Claude Opus 5.5（API 価格は入力 $4 / 出力 $20 per MTok。前世代の [Claude Opus 5](?a=claude-opus-5-review) は $5/$25）で、effort は low から max の5段階、Fable 5.1 / Fable 5 / Sonnet 5.5 / Haiku 4.5 などに切替可能。",
+      "**Codex** はクラウドサンドボックス上で動作し、複数タスクの並列実行に強い。PR 単位のワークフローに向く。**2026年に提供範囲が大きく広がり、ChatGPT Free / Go $8 / Plus $20 / Pro（月額 $100 / $200 / $500 の3段階）/ Business のいずれでも利用できる**（3月版で「ChatGPT Pro $200 以上が前提」としていたのは現在では誤り）。4月2日に課金がメッセージ単位から API トークン相当のクレジット制へ移行した。CLI・IDE 拡張・Web・iOS で動作し（OpenAI の料金ページの記載では、これらは Plus 以上。Free / Go は ChatGPT デスクトップアプリで GPT-6 Luna を使う形）、[プラグインマーケットプレイス](?a=codex-plugins-marketplace-2026)で Slack・Figma・Notion 等と連携する。モデルは [GPT-5.6](?a=openai-gpt-5-6-general-availability-july-9-2026) 系（Sol / Terra / Luna）。",
+      "【追記 2026-09-30】Codex のモデル世代について: 上の段落の「GPT-5.6 系」は、この記事の前の版が前提にした世代である。OpenAI の Codex 公式ドキュメントでは現在、GPT-6.1 Sol（Plus 以上）と GPT-6 Luna が推奨され、最上位に GPT-6 Astra がある。GPT-5.6 系は展開期間中は選択でき、GPT-5.5 は2026年10月14日に ChatGPT と Codex から提供終了と案内されている。GPT-6 世代の料金・提供条件までは、本記事では改めていない。",
+      "**Gemini CLI** は大規模コンテキストが特徴で、コードベースの一括読み込みに向く。2026年6月18日に、個人向け（Google AI Pro / Ultra でのログイン、および Gemini Code Assist for individuals の無料利用）での Gemini CLI の提供は終了し、Google の Antigravity CLI に置き換えられた（Google 公式ブログ、2026年5月19日付）。Gemini CLI は、Gemini Code Assist Standard / Enterprise ライセンスと、有料の Gemini および Gemini Enterprise Agent Platform の API キー（クォータ表には Vertex AI の名称が残る）では引き続き利用できると案内されている。OSS（Apache 2.0）である点は変わらず、npm の最新版は 0.62.0（2026年9月29日公開）。ソース上の Flash モデルは、基準が Gemini 3.5 Flash、最新の定義が Gemini 3.8 Flash になっている。Gemini CLI 公式のクォータ表には個人アカウントの1日1,000リクエストなどが残っているが、同ページの冒頭には置き換え済みの告知が出ている。",
+      "Antigravity CLI（コマンド名 agy、Go 製）は、デスクトップアプリの Antigravity 2.0 と同じエージェント基盤と設定を共有し、Agent Skills・Hooks・Subagents・Extensions（プラグインとして）を引き継ぐが、Google 自身が機能は完全には同等でないと説明している。Antigravity の料金ページでは、個人向けの無料プラン（$0）でも Gemini 3.8 Flash・3.7 Flash・3.6 Flash・3.1 Pro などを基本の週次レート制限つきで利用でき、Google AI Pro / Ultra ではより大きな枠が付く。Gemini CLI の設定は agy plugin import gemini などで取り込める（Google の移行ガイド）。以上は Google の説明に基づく記述で、独立した検証は確認できていない。",
+      "**Aider** は完全 OSS（Apache 2.0）で、Claude・GPT・Gemini・ローカルモデルを切り替えられる柔軟さが強み。Git との統合が深く、変更を自動コミットする設計。architect / editor のモデル分業、watch モード、prompt caching に対応する。**PyPI 累計680万インストール**、約49,000 GitHub スター（2026年9月時点、GitHub の値を集約する外部サービスでの確認値）と、VC 資金や有償プランを持たないまま端末系エージェントの上位に留まり続けている。**ツール自体は無料で、コストは接続先 LLM の API 料金のみ**。バージョンは 0.x 系のままで（PyPI の最新は2026年2月12日公開の 0.86.2）、マイナーリリース間で CLI フラグや `.aider.conf.yml` の破壊的変更が入る点は運用上の注意点になる。",
+      "**Copilot CLI** は GitHub エコシステムとの統合が最大の特徴で、Issues / PR / Actions / Codespaces / Code Search と直結する。`/fleet` による並列エージェント、Autopilot による自律実行に対応し、`/model` で Claude・GPT・Gemini・Microsoft 内製の MAI-Code-1.1-Flash（旧 MAI-Code-1-Flash は2026年9月10日に置き換え）を切り替えられる。Enterprise プランは SSO・監査ログ・IP 補償を備え、組織導入のハードルが低い。**6月1日から従量課金（AI Credits）へ移行**した。",
+      "**Cursor CLI** は IDE を起動せずに Composer / Cloud Agents（旧 Background Agent）を使える独立 CLI（コマンドは agent） で、Cursor のサブスクリプション枠を IDE と共有する。Slack / GitHub / PagerDuty / Microsoft Teams からのトリガーにも対応する（[→ レビュー](?a=cursor-cli)）。**Cursor をすでに契約しているなら追加費用なしで CLI 層が増える**という位置付けで、単体で選ぶツールではない。",
+      "選び方の目安: ローカルでのフル機能とエージェント並列実行なら **Claude Code**、クラウド並列と PR ベースの非同期運用なら **Codex**、Google 系の端末エージェントなら **Antigravity CLI**（個人向けの Gemini CLI は提供終了。Code Assist 契約や API キーでは Gemini CLI も利用可）、OSS・マルチモデル・ベンダー中立なら **Aider**、企業統制と GitHub 統合なら **Copilot CLI**、Cursor 契約者の補完なら **Cursor CLI**。エディタ側の比較は[AI エディタ横断比較](?a=editor-comparison-2026-march)、料金の詳細は[料金プラン横断比較](?a=pricing-comparison-all-tools-2026-march)、用途別の選び方は[おすすめマトリクス](?a=usecase-recommendation-matrix-2026)を参照。",
       "---",
       "**編集履歴**",
       "【訂正 2026-08-11】Codex について「ChatGPT Pro（$200/月）以上のプランに含まれる形で提供され、単体の低価格プランはない」とする趣旨の記述を訂正しました。現在は ChatGPT Free / Go / Plus / Pro / Business のいずれでも利用できます。",
-      "【追記 2026-08-11】月次見直しにより全面更新。(1) 比較対象に Cursor CLI を追加（5→6ツール）、(2) 各ツールの現行モデル世代（Opus 5 / GPT-5.6 / Gemini 3.5 Flash / MAI-Code-1-Flash）、(3) Codex の課金方式変更（4/2、クレジット制）と Copilot の従量課金移行（6/1）、(4) Claude Code の Dynamic Workflows・agent view、(5) Gemini CLI の Pro モデル有料化後の条件、(6) Aider の現行の規模と 0.x 系の破壊的変更リスクを反映しました。旧版の「200万トークン」等のモデル固有の数値は、世代交代により現行値の裏付けが取れないため記述を改めています。"
+      "【追記 2026-08-11】月次見直しにより全面更新。(1) 比較対象に Cursor CLI を追加（5→6ツール）、(2) 各ツールの現行モデル世代（Opus 5 / GPT-5.6 / Gemini 3.5 Flash / MAI-Code-1-Flash）、(3) Codex の課金方式変更（4/2、クレジット制）と Copilot の従量課金移行（6/1）、(4) Claude Code の Dynamic Workflows・agent view、(5) Gemini CLI の Pro モデル有料化後の条件、(6) Aider の現行の規模と 0.x 系の破壊的変更リスクを反映しました。旧版の「200万トークン」等のモデル固有の数値は、世代交代により現行値の裏付けが取れないため記述を改めています。",
+      "【訂正 2026-09-30】Gemini CLI について、（誤）「無料枠は Flash モデルの1日1,000リクエストに限定され、Pro モデルは3月25日以降 Google AI Pro（$20/月）または AI Ultra（$100/月）の加入が必要」→（正）個人向けの Gemini CLI は2026年6月18日に提供を終了し Antigravity CLI に置き換えられた。Gemini CLI は Code Assist Standard / Enterprise ライセンスと有料 API キーで継続。無料枠が Flash に限定されるのは Gemini API キー（無料）利用の場合（1日250リクエスト）で、Google アカウントでの無料枠は Gemini モデル群から自動選択される旨がクォータ表にある。AI Pro / Ultra の月額は公式ページの静的な記載で確認できなかったため、本文から外した。",
+      "【訂正 2026-09-30】Claude Code について、（誤）「1セッション内で最大1,000の並列サブエージェント」→（正）公式ドキュメントでは、1回の実行あたり合計1,000エージェントまで、同時実行は既定で16（環境変数で1〜256）。また（誤）標準モデルは Claude Opus 5（$5/$25）→（正）Pro / Max / Team / Enterprise / Anthropic API の既定は Claude Opus 5.5（$4/$20）。",
+      "【訂正 2026-09-30】Copilot CLI について、（誤）MAI-Code-1-Flash →（正）GitHub Docs の廃止履歴では MAI-Code-1-Flash は2026年9月10日に MAI-Code-1.1-Flash へ置き換えられている。Cursor CLI について、（誤）Background Agent →（正）Cloud Agents（Cursor 公式ドキュメントに旧称 Background Agents の記載あり）。Aider について、（誤）44,000 スター →（正）約49,000（GitHub の公開データを集約する外部サービスでの確認。GitHub API へは到達できなかった）。Codex について、（誤）Free / Go を含む全プランで CLI・IDE 拡張・Web・iOS が使えるかのような書き方 →（正）OpenAI の料金ページでは、これらは Plus 以上の記載で、Free / Go は ChatGPT デスクトップアプリでの GPT-6 Luna。Pro は月額 $100 / $200 / $500 の3段階。",
+      "【追記 2026-09-30】月次見直し。(1) Gemini CLI の個人向け提供終了と Antigravity CLI の説明、(2) Codex の現行モデル世代（GPT-6.1 Sol / GPT-6 Luna / GPT-6 Astra）と GPT-5.5 の提供終了予定、(3) 比較表の標準モデル・料金の更新を反映しました。Codex の4月2日の課金方式変更、Aider のマイナー間の破壊的変更の有無、Copilot Enterprise の IP 補償・SSO の記載は、今回の確認では裏付けを取れていません。Gemini CLI・Antigravity CLI・Codex・Copilot のモデル世代は変化が速いため、上記は2026年9月30日時点の記述です。"
     ],
     "tables": [
       {
-        "afterParagraph": 6,
-        "caption": "CLI ツール横断比較（2026年8月11日時点・公式発表および公開情報に基づく）",
+        "afterParagraph": 8,
+        "caption": "CLI ツール横断比較（2026年9月30日時点・公式発表および公開情報に基づく）",
         "headers": [
           "ツール",
           "提供元",
@@ -6021,7 +6027,7 @@ const ARTICLES_BODY = {
             "Claude Code",
             "Anthropic",
             "ローカル（+クラウド Routines）",
-            "Claude Opus 5",
+            "Claude Opus 5.5",
             "$20〜（Pro / Max）＋ API 従量",
             "Dynamic Workflows・agent view・MCP・Skills"
           ],
@@ -6029,17 +6035,17 @@ const ARTICLES_BODY = {
             "Codex",
             "OpenAI",
             "クラウド（+ CLI ローカル）",
-            "GPT-5.6 系",
-            "$0〜（Free / Go $8 / Plus $20〜）",
+            "GPT-5.6 系（現行の推奨は GPT-6.1 Sol / GPT-6 Luna）",
+            "$0〜（Free / Go $8 / Plus $20 / Pro $100〜）",
             "並列実行・PR 連携・プラグイン"
           ],
           [
-            "Gemini CLI",
+            "Gemini CLI / Antigravity CLI",
             "Google",
             "ローカル",
-            "Gemini 3.5 Flash",
-            "無料枠あり（Pro は $20〜）",
-            "大規模コンテキスト・OSS"
+            "Gemini 3.8 Flash・3.1 Pro 等（Antigravity の対応モデル表）",
+            "個人向けは Antigravity（$0 の基本枠、Google AI Pro / Ultra で拡張）。Gemini CLI は Code Assist ライセンスまたは API キー",
+            "大規模コンテキスト・Gemini CLI は OSS（Apache 2.0）"
           ],
           [
             "Aider",
@@ -6053,15 +6059,15 @@ const ARTICLES_BODY = {
             "Copilot CLI",
             "GitHub",
             "ローカル + クラウド",
-            "選択式（Claude / GPT / MAI 等）",
-            "$0〜$39 per seat（従量併用）",
+            "選択式（Claude / GPT / Gemini / MAI-Code-1.1-Flash 等）",
+            "$0〜（Pro $10 / Pro+ $39 / Max $100、Business $19・Enterprise $39 per seat、AI Credits 従量併用）",
             "`/fleet` 並列・Autopilot・企業統制"
           ],
           [
             "Cursor CLI",
             "Anysphere",
             "ローカル + クラウド VM",
-            "Composer 2.5 / Sonic",
+            "Auto / Composer 2.5 / Grok 4.7 等（Cursor Models 枠）",
             "Cursor 契約に含まれる",
             "IDE と同一ワークフロー・チャット連携"
           ]
@@ -6098,6 +6104,51 @@ const ARTICLES_BODY = {
         "title": "Cursor CLI",
         "site": "Cursor",
         "url": "https://cursor.com/cli"
+      },
+      {
+        "title": "An important update: Transitioning Gemini CLI to Antigravity CLI",
+        "site": "Google Developers Blog",
+        "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli"
+      },
+      {
+        "title": "Migrating from Gemini CLI",
+        "site": "Google Antigravity Docs",
+        "url": "https://antigravity.google/docs/cli/gcli-migration"
+      },
+      {
+        "title": "Claude Code model configuration",
+        "site": "Anthropic",
+        "url": "https://code.claude.com/docs/en/model-config"
+      },
+      {
+        "title": "Orchestrate subagents at scale with dynamic workflows",
+        "site": "Anthropic",
+        "url": "https://code.claude.com/docs/en/workflows"
+      },
+      {
+        "title": "Claude pricing",
+        "site": "Anthropic",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Codex pricing",
+        "site": "OpenAI",
+        "url": "https://learn.chatgpt.com/docs/pricing"
+      },
+      {
+        "title": "Codex models",
+        "site": "OpenAI",
+        "url": "https://learn.chatgpt.com/docs/models"
+      },
+      {
+        "title": "Supported AI models in GitHub Copilot",
+        "site": "GitHub Docs",
+        "url": "https://docs.github.com/en/copilot/reference/ai-models/supported-models"
+      },
+      {
+        "title": "Cursor CLI",
+        "site": "Cursor Docs",
+        "url": "https://cursor.com/docs/cli/overview"
       }
     ]
   },
