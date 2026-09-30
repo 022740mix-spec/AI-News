@@ -6135,7 +6135,7 @@ export const ARTICLES_META = [
     "type": "news",
     "category": "product",
     "title": "SpaceX が Cursor（Anysphere）を $60B で買収 — IPO 翌週、史上最大の VC バック買収、Q3 2026 close 予定",
-    "excerpt": "SpaceX が6月16日、Cursor 開発元の **Anysphere** を **$60B のオールストック取引**で買収するオプション行使を発表した。**史上最大の VC バック・スタートアップ買収**。SpaceX は6月12日に IPO したばかりで、5月の xAI 合併（$250B 評価額）に続く AI 領域の大型 M&A。Cursor は ARR $4B、Fortune 500 の約2/3が利用、日に約1.5億行のコードを生成する規模。Q3 2026 のクロージング予定で、Cursor の開発者ワークフローデータは Grok 訓練に投入される。",
+    "excerpt": "SpaceX が6月16日、Cursor 開発元の **Anysphere** を **$60B のオールストック取引**で買収する合併契約の締結を発表した。**史上最大の VC バック・スタートアップ買収**。SpaceX は6月12日に IPO したばかりで、5月の xAI 合併（$250B 評価額）に続く AI 領域の大型 M&A。Cursor は ARR $4B、Fortune 500 の約2/3が利用、日に約1.5億行のコードを生成する規模。2026年8月14日に完了した（追記参照）。Cursor は公式ブログ（7月8日）で、提携の下、Grok 4.5 の訓練に数兆トークンの Cursor データが含まれたと説明している（当事者の説明）。",
     "date": "2026-06-24",
     "newsDate": "2026-06-16",
     "author": "AI News 編集部",

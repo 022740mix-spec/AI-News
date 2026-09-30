@@ -13867,12 +13867,15 @@ const ARTICLES_BODY = {
   },
   "spacex-cursor-60b-acquisition-anysphere-2026": {
     "body": [
-      "SpaceX が2026年6月16日、Cursor 開発元の **Anysphere, Inc.** を **$60B のオールストック取引**で買収するオプション行使を発表した。**史上最大の VC バック・スタートアップ買収**として直ちに記録を更新。SpaceX が6月12日に NYSE で **$135/株**でIPO したばかりで、買収発表日には **$192.46/株**まで急騰した直後のディールとなる。",
+      "SpaceX が2026年6月16日、Cursor 開発元の **Anysphere, Inc.** を **$60B のオールストック取引**で買収する合併契約の締結を発表した。**史上最大の VC バック・スタートアップ買収**として直ちに記録を更新。SpaceX が6月12日に Nasdaq で **$135/株**でIPO したばかりで、買収発表日には **$192.46/株**まで急騰した直後のディールとなる。",
       "**ディール構造**: 取引は Anysphere と SpaceX の100%子会社との株式合併として組まれ、SpaceX が IPO で調達した現金は使われない構造。Anysphere 株主は **7日間 VWAP** ベースの SpaceX クラス A 株を受け取る。クロージングは規制当局承認次第で **2026年 Q3** を予定。SpaceX-xAI 合併（5月6日確定、xAI 評価額 ~$250B）に続く2回目のフロンティア AI 領域統合で、SpaceX が AI 領域の事業ホールディング体制を本格的に固めた格好。",
       "**Cursor の事業規模**: Cursor は創業から4年弱で **ARR 約$4B**（うち約 **$2.6B** がエンタープライズ B2B 由来）に到達。**5万社超**のエンタープライズ顧客を抱え、**Fortune 500 の約2/3** に開発者ベースの利用がある。1日あたり **約1.5億行**のエンタープライズコードが Cursor 経由で書かれている計算で、AI コーディング市場の支配的プレイヤーとしての地位を確立していた（[Cursor 3 Agent-first Workspace](?a=cursor-3-agent-first-workspace-2026)）。",
-      "**戦略的合理性**: SpaceX が買うのは「**データ・計算・人材**」の3点だ。第一にデータ — Cursor の実開発者ワークフロー（コード・PR・レビュー・修正履歴）が Grok 訓練パイプラインに流れ込む。実際、買収同日に消費者公開された Grok V9-Medium は Cursor データで訓練済（[Grok V9-Medium 公開](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)）。第二に計算 — Cursor は xAI の **Colossus** スーパークラスター（220,000 GPU）にアクセス可能になり、独自モデル Composer 系の継続訓練が大幅加速。第三に人材 — xAI は2026年3月までに **共同創業者11名全員**が離脱しており、Cursor の技術陣がエンジニアリングギャップを埋める。",
+      "**戦略的合理性**: SpaceX 自身が買収の狙いを詳しく説明した資料は確認できていない。以下は当サイトによる整理で、「データ・計算・人材」の3点で見る。第一にデータ。SpaceX の8-K（6月16日）は合併の条件を記すのみで、訓練データには触れていない。一方、Cursor の公式ブログ（7月8日）は、SpaceXAI と共同で訓練した Grok 4.5 の訓練に、数兆トークンの Cursor データ（コードベースやツールとの利用者のやりとり、開発者とエージェントのやりとりを含む）が含まれたと説明している（[Grok V9-Medium の記事](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)）。これは4月21日発表の提携の下で、買収完了（8月14日）より前に行われた訓練で、当事者の説明であり独立した検証は確認できていない。Elon Musk も5月25日に V9-Medium の補足訓練へ Cursor データを追加したと述べている（原文は未読）。 第二に計算 — Cursor は xAI の **Colossus** スーパークラスター（220,000 GPU）にアクセス可能になり、独自モデル Composer 系の継続訓練が大幅加速。第三に人材 — xAI は2026年3月までに **共同創業者11名全員**が離脱しており、Cursor の技術陣がエンジニアリングギャップを埋める。",
       "**市場への影響**: Cursor は買収後もブランド・製品ライン継続が確認されているが、モデル選択肢に変化が出る可能性は高い。これまで Claude Sonnet 4.6・Opus 4.7/4.8 を中心に使ってきた Cursor が、今後 Grok 系を優先する可能性は否定できず、エンタープライズ顧客は「**モデル選択がそのままインフラ選択になる**」現実に向き合うことになる。詳細な市場再編は[AI コーディング市場再編 分析記事](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)を参照。",
-      "**規制リスク**: AI 領域・宇宙領域を同一体制下に置く SpaceX-xAI-Cursor の3層構造は、米国 FTC・DOJ のアンチトラスト審査の対象になる可能性が高い。Q3 close 予定は楽観的シナリオで、規制対応次第では 2027 にずれ込む可能性も指摘されている。"
+      "**規制リスク**: AI 領域・宇宙領域を同一体制下に置く SpaceX-xAI-Cursor の3層構造は、米国 FTC・DOJ のアンチトラスト審査の対象になる可能性が高い。Q3 close 予定は楽観的シナリオで、規制対応次第では 2027 にずれ込む可能性も指摘されている。",
+      "【追記 2026-09-30】Cursor 公式ブログ（2026年8月14日）によると、SpaceX による買収は同日完了した。SpaceX の8-K（8月14日提出、Item 2.01）は、Cursor（Anysphere）が SpaceX の完全子会社として存続し、SpaceX の Class A 普通株が交付されたと記載している（暗黙の株式価値は $60B、対価は合併前7取引日の出来高加重平均価格に基づく）。この記事が「Q3 2026 予定」と書いたクロージングは、Q3 内に完了したことになる。完了の詳細は[別記事](?a=spacex-closes-cursor-anysphere-acquisition-2026)を参照。なお Cursor の公式ブログは買収額（$60B）には触れていない。",
+      "【訂正 2026-09-30】（誤）「買収するオプション行使を発表」→（正）6月16日の8-Kは合併契約（Agreement and Plan of Merger）の締結を記載しており、オプション行使の記載はない（4月21日に SpaceX 自身が発表したとされる「Cursor を $60B で買収する権利」に関する経緯は、Bloomberg の見出し「SpaceX Has Deal for Right to Acquire Cursor for $60 Billion」で確認したが原文は未読。TechCrunch は派生）。（誤）「NYSE で IPO」→（正）SpaceX の8-Kの表紙は取引所を The Nasdaq Stock Market LLC / Nasdaq Texas, LLC（銘柄 SPCX）と記載している。",
+      "【訂正 2026-09-30】（誤）「Cursor の開発者ワークフローデータは Grok 訓練に投入される」「買収同日に消費者公開された Grok V9-Medium は Cursor データで訓練済」→（正）Cursor は公式ブログ（7月8日）で、Grok 4.5 の訓練に数兆トークンの Cursor データが含まれたと説明している。この訓練は提携（4月21日）の下で買収完了（8月14日）より前に行われた。買収完了後のデータの扱いは確認できていない。V9-Medium の6月16日の消費者公開は公式資料で確認できていない（詳細は[Grok V9-Medium の記事](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)の訂正を参照）。"
     ],
     "primarySources": [
       {
@@ -13889,6 +13892,26 @@ const ARTICLES_BODY = {
         "title": "SpaceX Buys Cursor for $60B: What the Deal Means in 2026",
         "site": "Digital Applied",
         "url": "https://www.digitalapplied.com/blog/spacex-acquires-cursor-anysphere-60b-ai-coding-2026"
+      },
+      {
+        "title": "SpaceX Form 8-K (2026-06-16): Agreement and Plan of Merger with Anysphere",
+        "site": "SEC EDGAR",
+        "url": "https://www.sec.gov/Archives/edgar/data/0001181412/000162828026043411/spaceexplorationtechnologi.htm"
+      },
+      {
+        "title": "SpaceX Form 8-K (2026-08-14): completion of acquisition",
+        "site": "SEC EDGAR",
+        "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026056945/spcx-20260814.htm"
+      },
+      {
+        "title": "Cursor is now a part of SpaceX (2026-08-14)",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/joining-spacex"
+      },
+      {
+        "title": "Introducing Grok 4.5 (2026-07-08)",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/grok-4-5"
       }
     ]
   },
