@@ -10928,7 +10928,8 @@ const ARTICLES_BODY = {
       "【追記 2026-09-30】月次見直しにより、提供状況を確認した。GPT-5.6 は API では引き続き選べ、gpt-5.6 の別名は Sol に向く。API の Deprecations ページは、旧 GPT-5 系スナップショットの移行先として gpt-5.6-sol / terra / luna を挙げており、GPT-5.6 自体の廃止予定は見当たらない。Codex では、公式モデルページが「GPT-5.6 Sol / Terra / Luna はロールアウト中も引き続き利用できる」と記す一方、推奨モデルの一覧には載っていない。ChatGPT のチャットでは、8月3〜7日の What's new が、Plus と Pro のスライダーが GPT-5.6 Sol に効くこと、Free と Go の既定が GPT-5.6 Luna であることを記している。GPT-6 系はチャットでは使えず、Work と Codex で提供される。",
       "【追記 2026-09-30】次世代が出ている。GPT-6 Astra は9月3日に公開され、API 価格は入力 $10 / 出力 $50 である。GPT-6 Sol と GPT-6 Luna は9月22日に公開され、標準価格は Sol が $2/$10、Luna が $0.10/$0.50 で、いずれも GPT-5.6 の同名モデルより低い。GPT-6.1 Sol は9月29日に公開され、価格は $2/$10、Codex CLI 0.159.1 は同梱カタログの既定モデルにしている。Codex の公式モデルページは、複雑な作業には GPT-6.1 Sol、繰り返しの作業には Luna を勧めている。なお GPT-5.5 は、ChatGPT・Work・Codex では10月14日に退役予定である（API は対象外）。本稿の Sol / Terra / Luna の価格比較、Sonnet 5 との比較、推奨は GPT-5.6 世代に紐づいており、GPT-6 世代に置き換えていない。★の採点にも手を付けていない。",
       "【追記 2026-09-30】競合側も世代が進んでいる。Anthropic の公式料金表には Claude Sonnet 5.5（$2/$10）、Opus 5.5（$4/$20）、Fable 5.1（$10/$50）が載っている。本稿の「4強」の記述と Sonnet 5 との比較は、これらを反映していない。",
-      "【追記 2026-09-30】今回確認できなかった点を明記する。TerminalBench 2.1 の 91.91%、Artificial Analysis の指数、Cerebras 上の 750 tokens/秒（Cerebras の発表に基づく）、事実誤りを68%削減したとする発表、ChatGPT 無料枠の無制限化は、当サイトの記載のままで、独立した検証は確認できていない。openai.com と help.openai.com には調査環境から到達できなかった（platform.openai.com は developers.openai.com に転送され読める）。"
+      "【追記 2026-09-30】今回確認できなかった点を明記する。TerminalBench 2.1 の 91.91%、Artificial Analysis の指数、Cerebras 上の 750 tokens/秒（Cerebras の発表に基づく）、事実誤りを68%削減したとする発表、ChatGPT 無料枠の無制限化は、当サイトの記載のままで、独立した検証は確認できていない。openai.com と help.openai.com には調査環境から到達できなかった（platform.openai.com は developers.openai.com に転送され読める）。",
+      "【追記 2026-09-30】後継世代のレビュー [GPT-6 世代のレビュー](?a=gpt-6-review) を公開した。月次見直しの対象は後継のレビューに移し、本記事は当時の世代の記録として残す。"
     ],
     "primarySources": [
       {
