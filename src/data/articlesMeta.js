@@ -11008,5 +11008,24 @@ export const ARTICLES_META = [
       "オープンソース",
       "プライバシー"
     ]
+  },
+  {
+    "id": "chatgpt-sites-visitor-connected-data-plugins-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ChatGPT の Sites が訪問者自身の接続アプリを使えるように。workspace-private な Site でプラグインが利用可能",
+    "excerpt": "OpenAI は2026年9月29日の DevDay 2026 で、訪問者それぞれの接続アプリのデータを使う Site を作れる Sites with connected data を紹介した。Site 内でのプラグイン利用は、機能が有効（where enabled）なワークスペースの、そのワークスペースに限定された Site で使え、訪問者がアカウントを選んで同意する。要件上、接続データの利用にはワークスペースが必要になる。Sites は ChatGPT が Web サイトや Web アプリ、ゲームを作成・ホスト・共有する機能で、公開ベータとして Plus、Pro、Business、Enterprise、Edu で提供されている。管理者向けには、プラグインごとの許可設定やテナントのコネクタ、ネットワークアクセスなどの制御が用意されている。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "ChatGPT",
+      "プラグイン",
+      "エンタープライズ",
+      "セキュリティ",
+      "開発ツール"
+    ]
   }
 ];

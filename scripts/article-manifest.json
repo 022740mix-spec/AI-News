@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-30",
-  "count": 515,
+  "count": 516,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -128,6 +128,7 @@
     "caveman-token-savings-jetbrains-verification-2026",
     "challenger-report-ai-layoffs-restructuring-2026",
     "chatgpt-shopping-revamp-2026",
+    "chatgpt-sites-visitor-connected-data-plugins-2026",
     "clash-worktree-merge-conflict-2026",
     "claude-1m-context-ga-2026",
     "claude-code",
