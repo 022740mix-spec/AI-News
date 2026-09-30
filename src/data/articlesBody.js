@@ -25623,6 +25623,27 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/about-claude/models/overview"
       }
     ]
+  },
+  "microsoft-win-dev-skills-winui-2026": {
+    "body": [
+      "Microsoft は GitHub の公式 org に、Windows ネイティブアプリ（WinUI 3 と Windows App SDK）の開発をエージェントに任せるためのプラグイン「win-dev-skills」を置いている。リポジトリの説明は「WinUI 3 と Windows App SDK で Windows アプリを作るためのエージェントとスキル」。ライセンスは MIT で、取得時点（2026年9月30日）でスターは453、コミットは168件だった。",
+      "収録されているのは8つのスキル。winui-dev-workflow（ビルド・実行・クラッシュ診断）、winui-design（XAML と Fluent Design）、winui-code-review、winui-ui-testing（UI テストの生成）、winui-packaging（MSIX の作成と署名）、winui-wpf-migration（WPF から WinUI への変換）、winui-session-report（診断レポート）、winui-setup（マシンの前提条件）である。スキル本体に加えて、Roslyn アナライザー（Microsoft.WindowsAppSDK.Analyzers.dll）、メタデータ索引ツール winmd.exe、PowerShell の補助スクリプト（BuildAndRun.ps1、Analyze-Session.ps1）が同梱される。",
+      "対応エージェントは README の記載で、GitHub Copilot CLI、Claude Code、OpenAI Codex、OpenClaw、OpenCode の5つ。Copilot CLI では `copilot plugin marketplace add microsoft/win-dev-skills` のあと `copilot plugin install winui@win-dev-skills`、Claude Code では `claude plugin marketplace add microsoft/win-dev-skills` のあと `claude plugin install winui@win-dev-skills` と、同じリポジトリをマーケットプレイスとして登録する形になっている。Codex はマーケットプレイスを追加してプラグイン一覧から winui を有効化し、OpenCode はスキルをグローバルのスキルディレクトリにリンクする方式で、マーケットプレイスは使わない。",
+      "前提条件は、Git 2.54 以上、.NET SDK 8.0.100 以上（推奨は 10.0）、WinApp CLI 0.6.0 以上、そして Windows の開発者モードの有効化。README は「Visual Studio は不要で、dotnet だけでビルドする」と明記している。一方、WinApp CLI はプラグインに同梱されず、`winget install Microsoft.WinAppCli` で別に入れる必要がある。",
+      "この構成で注目できるのは、Microsoft 自身の開発ツールである GitHub Copilot CLI だけでなく、Anthropic の Claude Code や OpenAI の Codex にも同じプラグインを配る前提で作られている点だ。スキルは特定のエディタやエージェントに閉じない形式で書かれており、エディタとエージェントは1対1ではない、という状況が Microsoft の公式リポジトリでも表れている。",
+      "注意点も README に書かれている。冒頭に「Preview · v0.x — 破壊的変更を想定してください。スキル名、ディスク上のレイアウト、エージェント設定、アナライザーのルール ID、CLI ツールの表面はすべて予告なく変わりうる」とあり、v1.0 までは SemVer の約束もない。また、リポジトリ内で配布されるツールはプレビュー中は署名されていない。さらに「出力は提案であって確定的な答えではない。コミットや出荷の前に確認すること」とも書かれている。",
+      "この記事で確認できているのは README に書かれた仕様と導入手順までで、実際に生成されるコードの品質や、各スキルがどこまで自律的に動くかは試していない。また、WPF からの移行を支援するスキルが実際のアプリでどの程度機能するかは、公式の検証結果が見当たらないため不明である。導入する場合は、署名されていないツールを含む点を踏まえ、本番の開発機ではなく検証用の環境で中身を読んでから試すのが安全だろう。"
+    ],
+    "primarySources": [
+      {
+        "title": "microsoft/win-dev-skills（GitHub）",
+        "url": "https://github.com/microsoft/win-dev-skills"
+      },
+      {
+        "title": "win-dev-skills README",
+        "url": "https://raw.githubusercontent.com/microsoft/win-dev-skills/main/README.md"
+      }
+    ]
   }
 };
 

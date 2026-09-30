@@ -11303,5 +11303,24 @@ export const ARTICLES_META = [
       "Sonnet 5.5",
       "分析"
     ]
+  },
+  {
+    "id": "microsoft-win-dev-skills-winui-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Microsoft が WinUI 3 向けの「win-dev-skills」を公式orgで公開 — Copilot CLI・Claude Code・Codex などに入る8つのスキル、Visual Studio なしで dotnet だけでビルド",
+    "excerpt": "Microsoft の GitHub 公式 org に、Windows アプリ（WinUI 3 / Windows App SDK）開発をエージェントに任せるためのプラグイン「win-dev-skills」が登場。設計・ビルド・テスト・MSIX 署名・WPF 移行までの8スキルを収録し、MIT ライセンス。v0.x のプレビューで、破壊的変更が前提と明記されている。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-30",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Agent Skills",
+      "GitHub Copilot",
+      "Claude Code",
+      "Codex",
+      "Microsoft",
+      "オープンソース"
+    ]
   }
 ];

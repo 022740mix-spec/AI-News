@@ -168,6 +168,14 @@
     <summary>Opus 5.5、Opus 5、Sonnet 5.5、Sonnet 5 に、同一の依頼文で40秒の空飛ぶ映像（単一 HTML）を1回ずつ作らせた。セッション作成から最後の成果物更新までは、Sonnet 5 が5分16秒、Sonnet 5.5 が6分21秒、Opus 5.5 が9分16秒、Opus 5 が49分46秒。モデル名を伏せた2つの審査役の順位は、Opus 5.5 が1位、Sonnet 5 が4位で一致し、中間の2つは入れ替わった。各モデル1回の結果であり、一般的な優劣を示すものではない。</summary>
   </entry>
   <entry>
+    <title>Microsoft が WinUI 3 向けの「win-dev-skills」を公式orgで公開 — Copilot CLI・Claude Code・Codex などに入る8つのスキル、Visual Studio なしで dotnet だけでビルド</title>
+    <link rel="alternate" type="text/html" href="?a=microsoft-win-dev-skills-winui-2026"/>
+    <id>tag:ai-tool-news.jp,2026:microsoft-win-dev-skills-winui-2026</id>
+    <published>2026-09-30T15:00:00Z</published>
+    <updated>2026-09-30T15:00:00Z</updated>
+    <summary>Microsoft の GitHub 公式 org に、Windows アプリ（WinUI 3 / Windows App SDK）開発をエージェントに任せるためのプラグイン「win-dev-skills」が登場。設計・ビルド・テスト・MSIX 署名・WPF 移行までの8スキルを収録し、MIT ライセンス。v0.x のプレビューで、破壊的変更が前提と明記されている。</summary>
+  </entry>
+  <entry>
     <title>Anthropic脅威報告、Claudeを使った出会い系詐欺とイラン系による米海軍情報収集を開示 — 「助言」から「実行の自動化」に移る事例が並ぶ</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-threat-report-agentic-misuse-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-threat-report-agentic-misuse-2026</id>
