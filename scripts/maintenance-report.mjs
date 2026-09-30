@@ -600,6 +600,27 @@ if (inScope("monthly"))
   }
 }
 
+// ── 8b. 公開の関門がどの段で止めたか（週次・参考） ──
+// 「ルールは仮説である」ため、規則を整理するには、どの検査が何回止めたかの記録が要る。
+// 失敗が無いこと自体は正常で、これだけで Issue を立てない（passive）。
+// 四半期の整理では `node scripts/check-gate-stats.mjs --days=90` を直接走らせる。
+// 取得できなかったときは「0件」ではなく「判定不能」と出る。
+if (inScope("weekly"))
+{
+  const r = run("check-gate-stats.mjs");
+  if (r.out.trim()) {
+    sections.push({
+      passive: true,
+      level: "info",
+      title: "公開の関門が過去28日に止めた回数（参考）",
+      note:
+        "規則の整理（CLAUDE.md「ルールは仮説である」）の材料です。**0 件は要らない規則の証拠ではありません。**\n" +
+        "CI より前（手元の Stop フック・add-article.mjs）で止まったものは数えていません。",
+      body: r.out.trim(),
+    });
+  }
+}
+
 // ── 9. 点検そのものが動いているか（日次） ──
 // 「異常があるときだけ Issue」の設計は、通知が無視されるのを防ぐために
 // 正しいが、**異常が無い状態と点検が止まった状態を区別できない。**
