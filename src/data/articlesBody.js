@@ -14693,22 +14693,23 @@ const ARTICLES_BODY = {
       "**「一時的」の意味**: 「一時的措置」と Anthropic が明言した点は重要。以下 3 つのシグナルが読み取れる。",
       "**(a) capacity 問題が本質**: Fable 5 のインフラ制約（[SpaceX Colossus](?a=anthropic-spacex-colossus-1-compute-deal-2026)・[Anthropic-CoreWeave $68億契約](?a=anthropic-coreweave-68b-multiyear-cloud-deal-2026) 等のインフラ増強でも足りない状況）が背景。",
       "**(b) サブスク復活は約束**: 「戻す」と明言することで、ユーザーの長期契約継続を促す狙い。",
-      "**(c) Sonnet 5 への誘導**: 実質的には多くのユーザーを [Sonnet 5](?a=claude-sonnet-5-review)（$2/$10 導入価格）へ誘導し、Fable 5 を最上位限定用途に絞る戦略とも読める。",
+      "**(c) Sonnet 5 への誘導**: 実質的には多くのユーザーを [Sonnet 5](?a=claude-sonnet-5-review)（$2/$10。当時は8/31までの導入価格とされたが、その後標準価格として恒久化された。公式発表は2026年8月10日）へ誘導し、Fable 5 を最上位限定用途に絞る戦略とも読める。",
       "**影響を受けるユーザー像**:",
       "**(a) Fable 5 を日常利用していた Pro/Max ユーザー**: 7/12 までは今まで通り、7/13 以降は追加費用または他モデルへの切替。",
       "**(b) Team/Enterprise 導入検討中の組織**: 「Fable 5 を含む見積」の妥当性が変動、Sonnet 5 / Opus 4.8 との組み合わせ再計算が必要。",
       "**(c) 開発者・研究者**: バッチ処理や自動化ワークフローで Fable 5 を組み込んでいた場合、フォールバック実装（Opus 4.8 への自動切替）を組んでおくと安定運用。",
       "**代替モデルの選択肢（7/13 以降を見据えて）**:",
-      "**Claude Sonnet 5**（$2/$10 導入価格〜8/31、以降 $3/$15）: SWE-bench Pro 63.2%、GDPval-AA v2 で Opus 4.8 超え。日常のエージェント運用ならこれで十分（[Sonnet 5 レビュー](?a=claude-sonnet-5-review)）。",
+      "**Claude Sonnet 5**（$2/$10。当時は8/31までの導入価格とされたが、9/1 の $3/$15 への引き上げは行われず、その後標準価格として恒久化された。公式発表は2026年8月10日）: SWE-bench Pro 63.2%、GDPval-AA v2 で Opus 4.8 超え。日常のエージェント運用ならこれで十分（[Sonnet 5 レビュー](?a=claude-sonnet-5-review)）。",
       "**Claude Opus 4.8**（$5/$25、Fast Mode $10/$50）: SWE-bench Verified 88.6%、Dynamic Workflows で最大1,000並列。フロンティア級性能が必要な場合に。",
       "**Claude Fable 5**（$10/$50、7/13 以降は使用クレジット制）: SWE-bench Verified 95%、Anthropic 史上最強。**「最強を必要とする限定タスク」**にターゲットを絞る前提。",
       "**AI News の推奨戦略**:",
       "**(1) 7/12 までは Fable 5 を活用**: 期限までに、Fable 5 でしかできないタスクを完了させる。",
-      "**(2) 7/13 以降のデフォルトを Sonnet 5 に**: 大半のワークフローはこれで十分。$2/$10 の導入価格は 8/31 まで有効。",
+      "**(2) 7/13 以降のデフォルトを Sonnet 5 に**: 大半のワークフローはこれで十分。Sonnet 5 の $2/$10 は、当時は8/31までの導入価格として案内されていたが、その後標準価格として恒久化された（2026年8月10日に公式が発表）。",
       "**(3) Fallback に Opus 4.8 を設定**: Fable 5 の refusal 時（オフェンシブサイバー・生命科学・思考抽出関連、[Fable 5 プロンプト設計ガイド](?a=feature-prompting-claude-fable-5-practical-guide-2026)）に自動的に Opus 4.8 へ切り替える設定を実装。",
       "**(4) 「capacity 回復」を待つポジション**: 「一時的措置」の Anthropic 声明を信じるなら、Fable 5 サブスク復活まで数週間〜数ヶ月の見込み。長期プランは Sonnet 5 + Opus 4.8 + Fable 5（クレジット）の3層構成で柔軟に。",
       "**GPT-5.6 一般公開待ちの選択肢も**: **GPT-5.6 Sol / Terra / Luna**（[GPT-5.6 レビュー](?a=gpt-5-6-review)）は7月中〜下旬に一般公開が見込まれている。特に **Luna（$1/$6）**は「フロンティアモデル最安級」で、Fable 5 課金移行を機に **代替選択肢** として検討する価値がある。ただし米政府事前共有・限定プレビューフェーズが続くため、正式な GA タイミングを見極めた上で移行判断すること。",
-      "**Sonnet 5 のトークナイザ変更に注意**: Sonnet 5 は新トークナイザで同じテキストでも **1.0〜1.35 倍**多くトークンを数える傾向がある（[Sonnet 5 レビュー](?a=claude-sonnet-5-review)）。Fable 5 → Sonnet 5 の切替時、単純な単価計算では実コストの読みを誤る可能性があるため、代表的なワークフローで実測してから本番切替すること。"
+      "**Sonnet 5 のトークナイザ変更に注意**: Sonnet 5 は新トークナイザで同じテキストでも **1.0〜1.35 倍**多くトークンを数える傾向がある（[Sonnet 5 レビュー](?a=claude-sonnet-5-review)）。Fable 5 → Sonnet 5 の切替時、単純な単価計算では実コストの読みを誤る可能性があるため、代表的なワークフローで実測してから本番切替すること。",
+      "【訂正 2026-09-30】（誤）Sonnet 5 は $2/$10 が導入価格で 8/31 まで有効、以降 $3/$15 →（正）当時（7月）は8/31までの導入価格として案内されていたが、9/1 の $3/$15 への引き上げは行われず、$2/$10 が標準価格として恒久化された（2026年8月10日に公式が発表）。該当する3段落を修正した。7/6 時点の Fable 5 課金移行に関する記述は変更していない。"
     ],
     "primarySources": [
       {
@@ -14730,6 +14731,26 @@ const ARTICLES_BODY = {
         "title": "Redeploying Claude Fable 5",
         "site": "Anthropic",
         "url": "https://www.anthropic.com/news/redeploying-fable-5"
+      },
+      {
+        "title": "Pricing - Claude API Docs（Claude Sonnet 5 の脚注3）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Claude Sonnet 5 モデルページ（Pricing 節）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/models/sonnet-5/overview"
+      },
+      {
+        "title": "Release notes（2026年8月10日: Claude Sonnet 5 の導入価格が標準価格に）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Introducing Claude Sonnet 5（Edit August 10, 2026）",
+        "site": "anthropic.com",
+        "url": "https://www.anthropic.com/news/claude-sonnet-5"
       }
     ]
   },
