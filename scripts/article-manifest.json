@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-30",
-  "count": 524,
+  "count": 525,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -160,6 +160,7 @@
     "claude-platform-ant-apply-devtools-2026",
     "claude-screen-viewing-4-methods-comparison-2026",
     "claude-sonnet-4-6-review",
+    "claude-sonnet-5-5-review",
     "claude-sonnet-5-review",
     "claw-code-oss-agent-harness-100k-stars-2026",
     "cli-agent-community-oss-2026",

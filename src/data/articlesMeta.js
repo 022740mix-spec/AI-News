@@ -11196,5 +11196,34 @@ export const ARTICLES_META = [
     },
     "rating": 4.1,
     "reviewCategory": "model"
+  },
+  {
+    "id": "claude-sonnet-5-5-review",
+    "type": "review",
+    "category": "model",
+    "title": "Claude Sonnet 5.5 レビュー — $2/$10 の現行 Sonnet、範囲の明確な作業を速く安く。ただし API の破壊的変更に注意",
+    "excerpt": "Anthropic が2026年9月28日に公開した Claude 5.5 ファミリーの2番目のモデル。価格は $2/$10 per 1M tokens（Opus 5.5 は $4/$20）で、Sonnet 5 と同額。Sonnet 5 の $2/$10 は導入価格ではなく標準価格になったと公式料金表が記載している。Anthropic は「Sonnet 5 より30%以上高速、多くの作業で最大30%安い」と説明するが、いずれも当事者の説明で独立した検証は確認できていない。一方で Anthropic 自身が、複雑で判断の持続が必要な作業では Opus 5.5 が明確に強いと述べている。Sonnet 5 からは、thinking の無効化・強制ツール呼び出しなど API の破壊的変更が5件ある。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-28",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "モデル",
+      "Anthropic",
+      "Sonnet 5",
+      "LLM",
+      "エージェント"
+    ],
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": "monthly",
+    "ratings": {
+      "AI品質": 4,
+      "使いやすさ": 4,
+      "コスパ": 4.5,
+      "拡張性": 4,
+      "企業向け": 4
+    },
+    "rating": 4.1,
+    "reviewCategory": "model"
   }
 ];
