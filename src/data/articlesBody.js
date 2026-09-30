@@ -16064,7 +16064,7 @@ const ARTICLES_BODY = {
       "**Claude Fable 5**: $10 / $50 — フロンティア最上位",
       "**Claude Opus 5（本件）**: **$5 / $25** — フロンティアに迫る性能を半額で",
       "**Claude Opus 4.8（前世代）**: $5 / $25 — Opus 5 に置き換え",
-      "**Claude Sonnet 5**: $3 / $15 — 汎用エージェント（〜8/31 は導入価格 $2/$10 だった）",
+      "**Claude Sonnet 5**: $2 / $10 — 汎用エージェント（記事公開時は8/31までの導入価格として案内されていたが、その後標準価格として恒久化された。公式発表は2026年8月10日）",
       "重要なのは **Opus 4.8 からの値上げがない** 点で、既存の Opus 4.8 利用者はコスト構造を変えずに性能向上を受け取れる。Anthropic は自社の最上位モデル Fable 5 に対して「半額」を訴求しており、**自社製品同士のカニバリゼーションを承知の上で価格性能比を前面に出す**戦略を選んだことになる。",
       "**ベンチマーク結果**: 公表された主要スコアは以下の通り。",
       "**Terminal-Bench 2.1**: 業界首位。ターミナル操作・エージェント型コーディングのワークフローで最高スコア",
@@ -16097,7 +16097,8 @@ const ARTICLES_BODY = {
       "**(2) 「Fable 5 に迫る」の定量的定義**: どのベンチマークで何ポイント差なのかの明示が限定的。用途によっては差が大きく開く可能性がある",
       "**(3) effort 設定によるコスト変動**: high 設定では出力トークンが大幅に増えるため、$25 / 1M という単価だけでは実効コストを見積もれない。**ワークロード別の実測が必須**",
       "**(4) ARC-AGI-3 の解釈**: 30.2% は次点比 3倍だが絶対値としては低く、「汎用推論が解決した」ことを意味しない",
-      "**AI News の推奨**: **既に Claude Opus 4.8 を業務利用している企業**は、料金据え置きのため**即座に切り替え検証を開始する価値が高い**。以下の手順を推奨する。**(a)** 既存ワークロードを Opus 4.8 と Opus 5（effort: medium）で並走させ出力品質を比較、**(b)** タスク種別ごとに最小限で足りる effort レベルを実測して設定を確定、**(c)** high 設定時の実効トークン消費を計測し月次コストを再見積もり。**新規にフロンティアモデルを選定する企業**は、Opus 5（$5/$25・マネージド品質）と [Kimi K3](?a=moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026)（$3/$15・7/27 に open weights）を、データ主権要件とコスト許容度の2軸で比較するのが2026年後半の現実的な判断枠組みとなる。"
+      "**AI News の推奨**: **既に Claude Opus 4.8 を業務利用している企業**は、料金据え置きのため**即座に切り替え検証を開始する価値が高い**。以下の手順を推奨する。**(a)** 既存ワークロードを Opus 4.8 と Opus 5（effort: medium）で並走させ出力品質を比較、**(b)** タスク種別ごとに最小限で足りる effort レベルを実測して設定を確定、**(c)** high 設定時の実効トークン消費を計測し月次コストを再見積もり。**新規にフロンティアモデルを選定する企業**は、Opus 5（$5/$25・マネージド品質）と [Kimi K3](?a=moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026)（$3/$15・7/27 に open weights）を、データ主権要件とコスト許容度の2軸で比較するのが2026年後半の現実的な判断枠組みとなる。",
+      "【訂正 2026-09-30】（誤）Claude Sonnet 5: $3 / $15 — 汎用エージェント（〜8/31 は導入価格 $2/$10 だった）→（正）Sonnet 5 は $2 / $10 で、9/1 の $3/$15 への引き上げは行われず、$2/$10 が標準価格として恒久化された（2026年8月10日に公式が発表）。Opus 5 の料金（$5 / $25）等は変更していない。"
     ],
     "embeds": [
       {
@@ -16132,6 +16133,26 @@ const ARTICLES_BODY = {
         "title": "Anthropic upgrades Claude with new Opus 5 model",
         "site": "9to5Mac",
         "url": "https://9to5mac.com/2026/07/24/anthropic-upgrades-claude-with-new-opus-5-model-details-here/"
+      },
+      {
+        "title": "Pricing - Claude API Docs（Claude Sonnet 5 の脚注3）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Claude Sonnet 5 モデルページ（Pricing 節）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/models/sonnet-5/overview"
+      },
+      {
+        "title": "Release notes（2026年8月10日: Claude Sonnet 5 の導入価格が標準価格に）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Introducing Claude Sonnet 5（Edit August 10, 2026）",
+        "site": "anthropic.com",
+        "url": "https://www.anthropic.com/news/claude-sonnet-5"
       }
     ]
   },
