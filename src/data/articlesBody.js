@@ -17097,7 +17097,7 @@ const ARTICLES_BODY = {
       "**GPT-5.6 Sol**: $5 / $30",
       "**[Claude Opus 5](?a=anthropic-claude-opus-5-frontier-half-price-2026)**: $5 / $25",
       "**[Kimi K3](?a=moonshot-kimi-k3-open-weights-license-2026)**: $3 / $15",
-      "**Claude Sonnet 5**: $3 / $15",
+      "**Claude Sonnet 5**: $2 / $10",
       "**Muse Spark 1.2**: **$1.25 / $4.25**",
       "**[GPT-5.6 Terra](?a=openai-gpt-5-6-luna-terra-price-cut-2026)**: $2 / $12",
       "**コーディングエージェント市場の構図**: 主要プレイヤーが出揃った。",
@@ -17112,7 +17112,8 @@ const ARTICLES_BODY = {
       "**(2) ベンチマークは限定的**: SWE-Bench Pro や Terminal-Bench といった主要指標での比較値は本稿執筆時点で十分に公表されていない",
       "**(3) エコシステムの厚み**: Claude Code や Copilot が積み上げてきたプラグイン、拡張、コミュニティの知見に対して、Muse Code は出発点にある",
       "**(4) イベントログの保存先**: 監査ログがどこに保存され、誰がアクセスできるかは、企業導入時に確認すべき事項",
-      "**AI News の推奨**: **コーディングエージェントの導入を検討している企業**、特に**監査要件がある業種**（金融・医療・公共）にとっては、Muse Code の評価は価値がある。**(a)** 既存の Claude Code や Copilot と同一タスクで並走させ、出力品質を比較する。**(b)** イベントログが自社の監査要件（誰が・いつ・何を変更したかの追跡）を満たすかを確認する。**(c)** $1.25 / $4.25 という価格でのトークン消費量を実測し、総コストで比較する。エージェントは往復回数が多いため、単価が安くても総額で逆転する場合がある。**個人開発者**にとっては、エコシステムの成熟度で当面は Claude Code や Codex が優位であり、急いで乗り換える理由は薄い。"
+      "**AI News の推奨**: **コーディングエージェントの導入を検討している企業**、特に**監査要件がある業種**（金融・医療・公共）にとっては、Muse Code の評価は価値がある。**(a)** 既存の Claude Code や Copilot と同一タスクで並走させ、出力品質を比較する。**(b)** イベントログが自社の監査要件（誰が・いつ・何を変更したかの追跡）を満たすかを確認する。**(c)** $1.25 / $4.25 という価格でのトークン消費量を実測し、総コストで比較する。エージェントは往復回数が多いため、単価が安くても総額で逆転する場合がある。**個人開発者**にとっては、エコシステムの成熟度で当面は Claude Code や Codex が優位であり、急いで乗り換える理由は薄い。",
+      "【訂正 2026-09-30】（誤）Claude Sonnet 5: $3 / $15 →（正）Sonnet 5 は $2 / $10（比較表の Sonnet 5 の行）。9/1 の $3/$15 への引き上げは行われず、$2/$10 が標準価格として恒久化された。この恒久化は2026年8月10日に公式が発表しており、本記事の掲載日（8/11）はその翌日のため、$3 / $15 の記載は掲載時点で既に誤っていた。Muse Spark 1.2 の料金（$1.25 / $4.25）等は変更していない。"
     ],
     "primarySources": [
       {
@@ -17134,6 +17135,26 @@ const ARTICLES_BODY = {
         "title": "Meta introduces Muse Code, its take on a coding agent",
         "site": "Engadget",
         "url": "https://www.engadget.com/2231285/meta-introduces-muse-code-its-take-on-a-coding-agent/"
+      },
+      {
+        "title": "Pricing - Claude API Docs（Claude Sonnet 5 の脚注3）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Claude Sonnet 5 モデルページ（Pricing 節）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/models/sonnet-5/overview"
+      },
+      {
+        "title": "Release notes（2026年8月10日: Claude Sonnet 5 の導入価格が標準価格に）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Introducing Claude Sonnet 5（Edit August 10, 2026）",
+        "site": "anthropic.com",
+        "url": "https://www.anthropic.com/news/claude-sonnet-5"
       }
     ]
   },
