@@ -6550,7 +6550,7 @@ export const ARTICLES_META = [
     "type": "news",
     "category": "model",
     "title": "Anthropic が Claude Sonnet 5 を公開 — SWE-bench Pro 63.2% で Opus 4.8 に迫る、8月末まで $2/$10 の攻めた導入価格でエージェント本格投入",
-    "excerpt": "Anthropic が6月30日、**Claude Sonnet 5** を公開。「これまでで最もエージェント的な Sonnet」と位置付け、**SWE-bench Pro で 63.2%**（Sonnet 4.6: 58.1% / Opus 4.8: 69.2%）を記録、**GDPval-AA v2 では Opus 4.8 を上回る**。料金は**現在 $3/$15**（Sonnet 4.6 と同じ）。公開当初は8月31日まで $2/$10 の導入価格だった。1Mコンテキスト、Adaptive Thinking 常時オン。claude.ai の Free/Pro デフォルト、Claude Code・Cursor・VS Code・GitHub Copilot でも即日利用可能。",
+    "excerpt": "Anthropic が6月30日、**Claude Sonnet 5** を公開。「これまでで最もエージェント的な Sonnet」と位置付け、**SWE-bench Pro で 63.2%**（Sonnet 4.6: 58.1% / Opus 4.8: 69.2%）を記録、**GDPval-AA v2 では Opus 4.8 を上回る**。料金は **$2/$10**（公開時は8月31日までの導入価格とされたが、その後標準価格として恒久化された（2026年8月10日に公式が発表）。9/1 の $3/$15 への引き上げは行われていない。Sonnet 4.6 は $3/$15）。1Mコンテキスト、Adaptive Thinking 常時オン。claude.ai の Free/Pro デフォルト、Claude Code・Cursor・VS Code・GitHub Copilot でも即日利用可能。",
     "date": "2026-06-30",
     "newsDate": "2026-06-30",
     "author": "AI News 編集部",

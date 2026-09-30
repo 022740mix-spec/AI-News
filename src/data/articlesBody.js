@@ -13914,13 +13914,14 @@ const ARTICLES_BODY = {
   "anthropic-claude-sonnet-5-agentic-cheap-2026": {
     "body": [
       "Anthropic が2026年6月30日、新しいミッドレンジ・フラッグシップ **Claude Sonnet 5** を公開した。「これまでで最もエージェント的な Sonnet」と位置付けられ、「数ヶ月前までなら大型で高価なモデルが必要だった水準の**自律的なプランニング・ブラウザ/ターミナル操作・ツール使用**を、Sonnet サイズで実現する」と Anthropic は説明する。あわせて研究者向けの **Claude Science** も同時公開されている。",
-      "**性能ベンチマーク**: 公表値では **SWE-bench Pro で 63.2%**（Sonnet 4.6: 58.1% → +5.1pt、Opus 4.8: 69.2%）。Opus 4.8 との差は約 6pt に縮まり、価格差3倍・4倍を考慮すれば実質的な優位に。**GDPval-AA v2（知識労働）では 1618 で Opus 4.8（1615）を上回り**、**Humanity's Last Exam（ツール利用）は 57.4%**（Opus 4.8: 57.9%）でほぼ互角、**プロンプトインジェクション安全性でも同水準**を達成。「Sonnet で Opus 級」がほぼ現実になった。",
-      "**料金体系**: 公開当初は **8月31日までの導入価格 $2/$10 per 1M tokens**（入力/出力）が適用され、**9月1日以降は $3/$15**（Sonnet 4.6 と同じ）となった。**現行価格は $3/$15 である。** ただし新トークナイザは同じテキストで **1.0〜1.35倍**多くトークンを数える傾向があり、レート表通りの単純換算では実コストの読みを誤る。",
+      "**性能ベンチマーク**: 公表値では **SWE-bench Pro で 63.2%**（Sonnet 4.6: 58.1% → +5.1pt、Opus 4.8: 69.2%）。Opus 4.8 との差は約 6pt に縮まり、価格差（Opus 4.8 は $5/$25、Sonnet 5 は $2/$10 で 2.5倍）を考慮すれば実質的な優位に。**GDPval-AA v2（知識労働）では 1618 で Opus 4.8（1615）を上回り**、**Humanity's Last Exam（ツール利用）は 57.4%**（Opus 4.8: 57.9%）でほぼ互角、**プロンプトインジェクション安全性でも同水準**を達成。「Sonnet で Opus 級」がほぼ現実になった。",
+      "**料金体系**: 公開時は **8月31日までの導入価格 $2/$10 per 1M tokens**（入力/出力）として案内され、9月1日に $3/$15 へ引き上げられる予定だったが、**この引き上げは行われず、$2/$10 が標準価格として恒久化された（2026年8月10日に公式が発表）。** **現行価格は $2/$10 である**（Sonnet 4.6 は $3/$15）。 ただし新トークナイザは同じテキストで **1.0〜1.35倍**多くトークンを数える傾向があり、レート表通りの単純換算では実コストの読みを誤る。",
       "**Adaptive Thinking と 1M コンテキスト**: **1M トークン**のコンテキストは Sonnet 4.6・Opus 系と同水準を維持。**Adaptive Thinking が常時オン**で、Claude Code や API では**エフォートのデフォルトが high**に設定されている。最大出力は 128K、batch-API のベータヘッダ `output-300k-2026-03-24` を指定すれば **最大 300K トークン出力**まで拡張可能。訓練データのカットオフは **2026年1月**まで延長。",
       "**利用可能プラットフォーム**: **claude.ai の Free と Pro のデフォルト**モデルとして即日切替。Max・Team・Enterprise でも利用可能。API に加え、**Claude Code**（[Claude Code レビュー](?a=claude-code)）、**Cursor**（[Cursor レビュー](?a=cursor-editor)）、**VS Code**、**GitHub Copilot**（[Copilot CLI レビュー](?a=github-copilot-cli)）でも即日採用。マルチプラットフォーム展開の速度が特筆される。",
       "**「tokenmaxxing → 効率性」の答え**: 直前に公開された分析記事（[効率性転換分析](?a=feature-tokenmaxxing-to-efficiency-market-shift-2026)）で整理した「価格2極化と効率性優先」の潮流に対する Anthropic の明確な回答。Fable 5（$10/$50）は限定的な最上位ニーズ向けに残しつつ、**日常のエージェント運用は Sonnet 5** で受ける戦略。OpenAI が GPT-5.6 Sol/Terra/Luna（[GPT-5.6 プレビュー](?a=openai-gpt-5-6-sol-terra-luna-preview-2026)）で階層を投入した動きへの直接的な対抗でもある。",
       "**Alibaba 蒸留告発との並行**: 6/24 の [Anthropic vs Alibaba 蒸留告発](?a=anthropic-accuses-alibaba-claude-distillation-fraud-2026) に続くタイミングで、「**フロンティア性能を安価に提供することで、蒸留する経済的インセンティブそのものを減らす**」戦略的な意味合いもある。エンタープライズ・スタートアップに正規ルートでの利用を促進し、Anthropic の収益基盤を厚くする狙い。**Claude Science** の同時投入で、生命科学領域（John Jumper 加入と接続 [Jumper 移籍](?a=john-jumper-google-deepmind-to-anthropic-nobel-2026)）でも競争力を強化した。",
-      "【追記 2026-09-02】導入価格 $2/$10 は予定どおり8月31日で終了し、現在は $3/$15 である。本記事は6月30日公開の速報だが、料金の記述が現在の条件と誤認されうるため現行価格を明記した。"
+      "【追記 2026-09-02】（この追記は書いた時点で既に誤っていたため 2026-09-30 に訂正済み。下の【訂正 2026-09-30】参照）導入価格 $2/$10 が8月31日で終了し 9月1日から $3/$15 になると記していたが、この引き上げは撤回が2026年8月10日に公式発表されており、9/2 の時点で既に $2/$10 が標準価格だった。",
+      "【訂正 2026-09-30】（誤）導入価格 $2/$10 は8月31日で終了し、9月1日以降の現行価格は $3/$15（Sonnet 4.6 と同じ）→（正）Sonnet 5 の公式料金は $2/$10 で、公開時に案内された 9/1 の $3/$15 への引き上げは行われず、$2/$10 が標準価格として恒久化された（公式料金表の脚注、Sonnet 5 モデルページ、Claude Code 2.1.243 の changelog で確認）。excerpt・料金体系の段落・2026-09-02 の追記を修正した。なお 9/2 の追記は、引き上げの撤回が公式発表された 8/10 より後に書かれており、書いた時点で既に誤っていた。あわせて段落[1]の Opus 4.8 との価格差「3倍・4倍」を、公式料金表の $5/$25 対 $2/$10 に基づく 2.5倍に訂正した。"
     ],
     "primarySources": [
       {
@@ -13942,6 +13943,21 @@ const ARTICLES_BODY = {
         "title": "Anthropic Claude Sonnet 5 vs Sonnet 4.6 vs Opus 4.8: Agentic Coding Benchmarks",
         "site": "MarkTechPost",
         "url": "https://www.marktechpost.com/2026/06/30/anthropic-claude-sonnet-5-vs-sonnet-4-6-vs-opus-4-8-agentic-coding-benchmarks-api-pricing-and-cost-performance-tradeoffs-compared/"
+      },
+      {
+        "title": "Pricing - Claude API Docs（Claude Sonnet 5 の脚注3）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Claude Sonnet 5 モデルページ（Pricing 節）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/models/sonnet-5/overview"
+      },
+      {
+        "title": "Release notes（2026年8月10日: Claude Sonnet 5 の導入価格が標準価格に）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
       }
     ]
   },
