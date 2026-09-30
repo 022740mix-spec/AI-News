@@ -17191,24 +17191,25 @@ const ARTICLES_BODY = {
   },
   "claude-opus-5-review": {
     "body": [
-      "**Claude Opus 5** は、Anthropic が2026年7月24日に投入した現行の Opus 級フラッグシップである。位置付けは明快で、**上位の Claude Fable 5 に迫る性能を、その半額で提供する**というものだ。前世代 [Opus 4.8](?a=anthropic-claude-opus-4-8-dynamic-workflows-2026) と同額に据え置かれたため、既存の Opus 利用者はコスト構造を変えずに世代交代を受け取れる。",
+      "Claude Opus 5 は、Anthropic が2026年7月24日に投入した Opus 級フラッグシップである（2026年9月22日に後継の Opus 5.5 が公開され、9月30日時点で Opus 5 は Legacy 扱い）。位置付けは明快で、**上位の Claude Fable 5 に迫る性能を、その半額で提供する**というものだ。前世代 [Opus 4.8](?a=anthropic-claude-opus-4-8-dynamic-workflows-2026) と同額に据え置かれたため、既存の Opus 利用者はコスト構造を変えずに世代交代を受け取れる。",
+      "【2026年9月30日時点の注記】本レビューの対象は Opus 5 であり、2026年9月22日に後継の Opus 5.5（claude-opus-5-5）が公開された。公式のモデル一覧では Opus 5.5 が Opus の最新、Opus 5 は Legacy（引き続き利用可能。廃止は早くても2027年7月24日）とされ、料金は Opus 5 が $5 / $25、Opus 5.5 が $4 / $20（キャッシュ読み取りは $0.50 と $0.20）である。Anthropic は Opus 5.5 を「ほとんどの作業で Fable 5.1 と同水準で、Opus 5 より運用コストが40%低い」と説明し、公式のモデル一覧は多くのワークロードでは Opus 5.5 から始めることを勧めているが、これは当事者の説明であり、独立した検証は本稿では確認できていない。Opus 5 から Opus 5.5 へ API を移す場合、公式ドキュメントは4つの破壊的変更を挙げている（thinking を無効にできない、強制ツール呼び出しはエラーになる、思考ブロックは生成したモデルと会話に紐づく、Claude API と Google Cloud では computer_20251124 が受け付けられない）。本レビューの評価、料金比較、推奨は Opus 5 が最新だった時点のもので、Opus 5.5 の評価は含まない。",
       "## 料金と位置付け",
       "料金は **$5 / $25 per 1M tokens**。Claude モデルラインの中での位置は次のとおり。",
       "**Claude Fable 5**: $10 / $50 — フロンティア最上位",
       "**Claude Opus 5**: **$5 / $25** — フロンティアに迫る性能を半額で",
       "**Claude Opus 4.8**（前世代）: $5 / $25 — Opus 5 に置き換え",
-      "**Claude Sonnet 5**: $3 / $15 — 汎用エージェント（〜8/31 は導入価格 $2/$10 だった）",
+      "**Claude Sonnet 5**: $2 / $10 — 汎用エージェント（発売時は〜8/31 の導入価格とされたが、公式が標準価格として恒久化）",
       "提供範囲は Claude.ai（Web / Desktop / Mobile）、Claude API（Anthropic 直販・AWS Bedrock・Google Cloud Vertex AI）、[Claude Code](?a=claude-code)、[Claude Cowork](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026) と広い。**Claude Max では既定モデル**、Claude Pro では選択できる最上位モデルにあたる。Max 契約者は設定を変えなくても Opus 5 を使い始めるため、投入初日から実運用トラフィックが流れる形になった。",
       "## effort トグル — 本モデル最大の実用的変化",
-      "Opus 5 で最も実務に効くのは、**タスクごとに思考量を low / medium / high から選べる effort トグル**である。モデルを切り替えることなく、コストと能力のバランスを能動的に制御できる。",
+      "Opus 5 で最も実務に効くのは、**タスクごとに思考量を low / medium / high / xhigh / max の5段階から選べる effort トグル**である。モデルを切り替えることなく、コストと能力のバランスを能動的に制御できる。",
       "**low**: 要約・分類・定型返信など。トークン消費を抑え高速に応答する",
-      "**medium**: 一般的なコーディング、調査、文書作成。既定として扱いやすい",
-      "**high**: 複雑なデバッグ、設計判断、長時間のエージェントタスク。思考量を最大化する",
+      "**medium**: 一般的なコーディング、調査、文書作成。コストと品質の中間として扱いやすい",
+      "**high**: 複雑なデバッグ、設計判断、長時間のエージェントタスク。思考量を大きくする（Opus 5 の API 既定はこの high で、さらに上に xhigh と max がある）",
       "この設計は業界の共通トレンドでもある。[OpenAI は ChatGPT に思考量スライダーを追加](?a=openai-chatgpt-free-unlimited-luna-sol-update-2026)し、[Codex Micro には reasoning 時間の物理ダイヤル](?a=openai-codex-micro-work-louder-hardware-macropad-2026)を載せた。**「1モデル1価格」から「1モデル内で品質とコストを可変にする」段階への移行**が起きている。",
       "実務上の含意は明確で、**$25 / 1M tokens という単価だけでは実効コストを見積もれない**。high 設定では出力トークンが大きく増えるため、ワークロード別に必要な effort を実測して設定を固定する運用が要る。逆に言えば、これまでモデルを使い分けて調整していたコストを、単一モデル内で最適化できるようになった。",
       "## ベンチマーク — 何が確かで、何が確かでないか",
       "**確度が高い結果**として、複数の情報源が一致して報じているのは以下である。",
-      "**ARC-AGI-3 で 30.2%**。次点モデルの約3倍にあたる。ARC-AGI は「訓練データにないパターンを推論で解く」能力を測る指標で、従来モデルが軒並み苦戦してきた領域である。この差は漸進的な改善では説明しにくい",
+      "ARC-AGI-3 で次点モデルの約3倍（Anthropic の発表本文に「次点の3倍」と記載。30.2% という数値は、公式発表ではチャート画像のため本文から確認できていない）。ARC-AGI は「訓練データにないパターンを推論で解く」能力を測る指標で、従来モデルが軒並み苦戦してきた領域である。この差は漸進的な改善では説明しにくい",
       "**1M トークンのコンテキスト**に対応し、Needle in a Haystack で全域にわたる高い再現率を維持すると報告されている",
       "**agentic coding とターミナル操作**の領域で業界上位に位置する",
       "一方で、**注意して扱うべき数値**がある。**SWE-bench Verified のスコアは情報源によって 72.5% から 97% まで開きがあり**、Terminal-Bench についても参照しているバージョン（2.0 / 2.1）が情報源ごとに異なる。本稿執筆時点で、AI News は Anthropic 公式のベンチマーク一覧を直接確認できていない。",
@@ -17228,7 +17229,9 @@ const ARTICLES_BODY = {
       "**(2) effort 設定によるコスト変動**: high 設定では出力トークンが大幅に増える。単価だけでの見積もりは実態と乖離する。",
       "**(3) Max の既定モデル変更**: Max 契約者は意図せず Opus 5 を使っている可能性がある。従来モデルを前提に組んだ手順やプロンプトは、出力が変わりうる。",
       "**(4) 長期運用の実績**: 投入から日が浅く、長時間のエージェント運用における安定性や、[評価環境からの逸脱](?a=anthropic-claude-models-breached-three-companies-ctf-eval-2026)のような運用上の課題については、今後の蓄積を待つ必要がある。",
-      "**総評**: 「フロンティア級の知能を半額で」という位置付けは、価格と提供範囲の両面で実現されている。effort トグルという運用の自由度が加わったことで、**同じモデルの中でコストと品質を調整できる**という新しい使い方が可能になった。ベンチマークの確定値が揃っていない点は差し引く必要があるが、**Opus 4.8 からの移行は料金据え置きゆえにリスクが小さく、検証を始める価値は高い**。"
+      "**総評**: 「フロンティア級の知能を半額で」という位置付けは、価格と提供範囲の両面で実現されている。effort トグルという運用の自由度が加わったことで、**同じモデルの中でコストと品質を調整できる**という新しい使い方が可能になった。ベンチマークの確定値が揃っていない点は差し引く必要があるが、**Opus 4.8 からの移行は料金据え置きゆえにリスクが小さく、検証を始める価値は高い**。",
+      "【訂正 2026-09-30】（誤）effort トグルは low / medium / high の3段階 →（正）Opus 5 は low / medium / high / xhigh / max の5段階で、API の既定は high（公式 effort ドキュメント）。（誤）ARC-AGI-3 で 30.2% を確度の高い結果として太字で掲載 →（正）「次点の約3倍」は Anthropic の発表本文に文章で記載があるが、30.2% という数値は公式発表ではチャート画像のため本文から確認できていない（本文と概要から数値を外した）。",
+      "【追記 2026-09-30】月次見直しにより、次の状態の変化を反映した。いずれも当時の記述は正しく、その後に変わったものである。(1) 2026年9月22日に Opus 5.5 が公開され、Opus 5 は「現行」ではなく Legacy 扱いになった（タイトルと概要の「現行」は「7月時点」に改めた）。(2) Sonnet 5 の $2/$10 は、発売時に8月31日までの導入価格とされたが、公式が標準価格として恒久化した（料金ページ脚注）。あわせて、後継 Opus 5.5 と Sonnet 5.5 の公開を冒頭に注記した。5軸の採点は Opus 5 に対するもので、今回は変更していない。提供範囲と Max の既定モデルに関する記述は投入時（7月）の公式発表に基づく。Claude Code の既定は、Anthropic API、Pro、Max、Team、Enterprise では Opus 5.5（v2.1.280 以降、Claude Code のモデル設定ドキュメント）と確認できる。確認できていないのは claude.ai アプリの既定モデルである。ベンチマークについては、9月30日時点の公式発表本文に SWE-bench Verified の数値は見当たらず、ARC-AGI-3 は「次点のモデルの3倍」と文章で記載されている（30.2% という数値はチャート画像上で、本文から確認できていない）。"
     ],
     "primarySources": [
       {
@@ -17256,6 +17259,36 @@ const ARTICLES_BODY = {
         "site": "BenchLM.ai",
         "url": "https://benchlm.ai/models/claude-opus-5",
         "note": "本稿で言及したベンチマークの乖離を確認するために参照"
+      },
+      {
+        "title": "Pricing",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Models overview",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/models/overview"
+      },
+      {
+        "title": "Model deprecations",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+      },
+      {
+        "title": "Claude Opus 5.5",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/models/opus-5-5/overview"
+      },
+      {
+        "title": "Introducing Claude Opus 5.5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/claude-opus-5-5"
+      },
+      {
+        "title": "Effort",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/effort"
       }
     ]
   },
