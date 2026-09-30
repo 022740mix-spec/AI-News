@@ -13965,19 +13965,53 @@ const ARTICLES_BODY = {
   },
   "xai-grok-v9-medium-consumer-release-cursor-data-2026": {
     "body": [
-      "xAI の次世代モデル **Grok V9-Medium** が2026年6月16日、**X と SuperGrok** で消費者向けに利用可能になった。SpaceX が同日に Cursor を $60B で買収（[Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）した経緯と深く結びついており、本モデルは **Cursor の実開発者ワークフローデータ**で訓練されている。コーディング領域での Claude / GPT-5.5 への対抗が明確な狙い。",
-      "**モデル仕様**: Grok V9-Medium は **1.5兆パラメータ**で、現行本番モデル **v8-small（500億パラメータ）の3倍**の規模。Elon Musk が5月25日に「訓練完了、評価結果は良好」と発表（[xAI 6月集中更新](?a=xai-grok-june-2026-voice-imagine-connectors-2026)）、その後 supervised fine-tuning と reinforcement learning を経て、約3週間後に消費者向け公開となった。",
-      "**Cursor データでの訓練**: 本モデルは **Cursor の実開発者ワークフロー**（コード入力 → AI 提案 → 採用/却下 → 修正 のシーケンス）を訓練データに採用した点が特徴。これは Cursor が **Fortune 500 の約2/3** に使われ、日に約 **1.5億行**のコードを処理している規模を考えると、訓練データとして極めて貴重。SpaceX-Cursor 統合の最初の実利となる。",
-      "**API 未開放**: 一方で **API は未開放**で、6月19日時点でも xAI ドキュメントの release notes には grok-v9-medium が掲載されていない。SuperGrok 加入者の利用とエンタープライズ API 利用は別ゲートで運用される xAI の設計上、エンタープライズ展開には今後数週間〜数ヶ月の追加待機が必要。",
-      "**コーディング・ベンチマーク戦略**: xAI は Grok V9-Medium で Claude（Opus 4.8 / Fable 5）・GPT-5.5 の SWE-bench リードを切り崩すことを目標としているが、公式ベンチマーク値はまだ未公表。Cursor 開発者データを訓練に組み込んだことで、**実プロダクト挙動への適合度**で差別化を狙う構図だ。",
+      "xAI の次世代基盤モデル Grok V9-Medium（1.5兆パラメータ）について、Elon Musk が2026年5月25日に X で訓練の完了を投稿し、2〜3週間後の公開を予告した。当初この記事は「6月16日に X と SuperGrok で消費者向けに公開された」と伝えたが、その公開は公式資料で確認できない。6月16日の TechTimes は見出しに反して本文では公開を予定として書き、6月29日の同紙は「公開の窓は発売のないまま過ぎた」と書いている。V9 基盤とされるモデルは、7月8日に Grok 4.5 として公開された。本稿は速報を、確認できる経緯の整理に再構成した（編集履歴を参照）。SpaceX は6月16日に Cursor（Anysphere）との合併契約を締結している（[Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）。",
+      "確認できる経緯: Musk は5月25日の X 投稿で、V9-Medium（1.5T）の訓練が完了し、評価結果は良好で、fine-tuning は進行中、reinforcement learning は数日後に始まり、公開まで2〜3週間と述べた（[xAI 6月集中更新](?a=xai-grok-june-2026-voice-imagine-connectors-2026)）。投稿の原文は直接読めておらず、検索索引に出た文面と複数媒体の引用で確認した。規模は現行の本番モデル v8-small の約3倍で、TechTimes は v8-small を approximately 500 billion（約5000億）パラメータと書き、1.5兆の3分の1とも一致する（一次資料は未読）。",
+      "Cursor データについて（当事者の説明）: Musk の5月25日の投稿は、補足訓練で Cursor のデータを多く追加し、今後さらに追加すると述べている。Cursor の公式ブログ「Introducing Grok 4.5」（2026年7月8日）は、Grok 4.5 を SpaceXAI と共同で訓練したとし、訓練には「コードベースやソフトウェアツールと利用者とのやりとりを幅広く捉えた、数兆トークンの Cursor データ」が含まれ、このデータによりモデルは既存のソフトウェアと「開発者とエージェントのやりとり」の両方から学べる、と説明している（英語原文の要約）。同ブログは、Cursor のコードベースの過去のスナップショットが誤って訓練に入り、CursorBench で有利になったことも述べている。いずれも当事者（xAI 側の Musk と Cursor）の説明で、独立した検証は確認できていない。Musk の投稿は V9-Medium、Cursor のブログは Grok 4.5 を指しており、両者の対応は Musk の6月28日の発言（Grok 4.5 は 1.5T の V9 基盤モデルに基づく）による。この発言は GIGAZINE や Free Press Journal などの引用でのみ確認でき、原文は読めていない。この訓練は4月21日発表の SpaceXAI との提携の下で行われ、買収の完了（8月14日）より前のことである。Cursor のどの利用者のデータが対象か（Privacy Mode の利用者が除外されるか等）は確認できていない。「コード入力、AI 提案、採用または却下、修正」という系列の表現は当サイトの当初の記述で、Cursor の資料にも報道（TechTimes は、開発者が要件を記述し、コードベースをたどり、修正を重ね、AI の応答を導く様子と書く）にも同じ文言はない。SpaceX の8-K（6月16日、8月14日）は訓練データに触れていない。",
+      "提供状況: 6月16日の TechTimes は、見出しは「Arrives」だが本文では公開を「6月中旬が目標で、その窓は今開いている」という予定の段階で書き、6月17日の Big Hat Group は「any day now」と書き、6月29日の TechTimes は「当初は6月中旬の公開が見込まれたが、発売のないまま窓は過ぎた」と書いた（いずれも二次情報）。Musk は6月28日に Grok 4.5 が SpaceX と Tesla での private beta に入ったと述べたと報じられている（原文は未読）。V9 基盤とされるモデルの一般提供は、Cursor ブログと xAI の API release notes で確認できる7月8日の Grok 4.5 である。xAI の API release notes に grok-v9-medium の掲載はなく、6月中の公開を示す公式資料は見つからない。6月16日に公開されたとする根は、出典不明の集約サイト系の1系統のみで、元記事が挙げていた ChatForest は現在 404 である。以上から6月16日の消費者公開は行われなかったとみられるが、公開しなかったと当事者が述べた資料は見つかっていない。",
+      "ベンチマークについて、TechTimes（6月16日）は SpaceX が SWE-bench Verified で Claude や GPT-5.5 と比較する意向を示したと報じた。V9-Medium 自体の公式ベンチマーク値は確認できていない。",
       "**編集履歴**",
-      "【訂正 2026-09-02】一次ソースのうち `https://chatforest.com/builders-log/xai-grok-v9-medium-1-5t-coding-model-mid-june-2026-builder-guide/` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 1 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。"
+      "【訂正 2026-09-02】一次ソースのうち `https://chatforest.com/builders-log/xai-grok-v9-medium-1-5t-coding-model-mid-june-2026-builder-guide/` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 1 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。",
+      "【訂正 2026-09-30】（誤）「Grok V9-Medium が2026年6月16日に X と SuperGrok で消費者向けに公開された」→（正）公開は公式資料で確認できず、行われなかったとみられる。V9 基盤とされるモデルは7月8日に Grok 4.5 として公開された。あわせて、速報だった本稿を後日、確認できる経緯の整理に再構成した。根拠: xAI・SpaceX・Cursor の公式資料に6月の公開はなく、6月16日の TechTimes は、見出しに反して本文では公開を予定として書き、6月29日の同紙は「公開の窓は発売のないまま過ぎた」と書いた。",
+      "【訂正 2026-09-30】（誤）v8-small「500億パラメータ」→（正）約5000億パラメータ（1.5兆の3分の1で、TechTimes の approximately 500 billion と一致。一次資料は未読）。",
+      "【訂正 2026-09-30】（誤）「Cursor の実開発者ワークフローデータ（コード入力→AI 提案→採用/却下→修正）を訓練データに採用」「SpaceX-Cursor 統合の最初の実利」「Fortune 500 の約2/3・日に約1.5億行という規模を考えると極めて貴重」→（正）Cursor は公式ブログ（7月8日）で、Grok 4.5 の訓練に数兆トークンの Cursor データ（利用者とコードベース・ツールのやりとり、開発者とエージェントのやりとりを含む）が含まれたと説明している。訓練は提携の下で買収完了より前に行われた。「採用/却下」の系列という記述と、利用規模の数字を訓練データ量と結びつける記述には根拠がないため削除した。",
+      "【訂正 2026-09-30】（誤）「Claude / GPT-5.5 への対抗が明確な狙い」「エンタープライズ展開には今後数週間〜数ヶ月の追加待機が必要」「Claude・GPT-5.5 の SWE-bench リードを切り崩すことを目標」→（正）当事者の公式な目標表明は確認できていないため削除・書き換えた。"
     ],
     "primarySources": [
       {
         "title": "Grok V9-Medium Arrives as SpaceX Seals Cursor: Developers Face Model-Choice Risk",
         "site": "TechTimes",
         "url": "https://www.techtimes.com/articles/318495/20260616/grok-v9-medium-arrives-spacex-seals-cursor-developers-face-model-choice-risk.htm"
+      },
+      {
+        "title": "Elon Musk on X: Grok foundation model V9-Medium (1.5T) has finished training (2026-05-25。原文は未読、検索索引で確認)",
+        "site": "X",
+        "url": "https://x.com/elonmusk/status/2058787384364265734"
+      },
+      {
+        "title": "Introducing Grok 4.5 (2026-07-08)",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/grok-4-5"
+      },
+      {
+        "title": "Cursor partners with SpaceX on model training (2026-04-21)",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/spacex-model-training"
+      },
+      {
+        "title": "Cursor is now a part of SpaceX (2026-08-14)",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/joining-spacex"
+      },
+      {
+        "title": "Release Notes | SpaceXAI Docs",
+        "site": "SpaceXAI Docs",
+        "url": "https://docs.x.ai/developers/release-notes"
+      },
+      {
+        "title": "（二次資料）Grok 4.5 Enters Private Beta at SpaceX and Tesla: No Public Access, No Independent Benchmark (2026-06-29)",
+        "site": "TechTimes",
+        "url": "https://www.techtimes.com/articles/319314/20260629/grok-45-enters-private-beta-spacex-tesla-no-public-access-no-independent-benchmark.htm"
       }
     ]
   },
