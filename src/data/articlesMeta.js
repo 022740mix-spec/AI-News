@@ -10879,5 +10879,23 @@ export const ARTICLES_META = [
       "料金",
       "API"
     ]
+  },
+  {
+    "id": "openai-mcp-events-chatgpt-webhook-mcp-2-0-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ChatGPT に MCP Events、MCP サーバーの更新を監視して動く仕組み。MCP Events は MCP 2.0 とドラフト仕様の Webhook 配信が前提",
+    "excerpt": "OpenAI は2026年9月29日の DevDay 2026 で MCP Events を紹介した。ユーザーが ChatGPT に MCP サーバーの更新を監視させ、条件に合うイベントが届いたら動くよう頼める機能である。ChatGPT の MCP Events は MCP 2.0（プロトコルバージョン 2026-07-28）を必要とし、ドラフト段階の MCP Events 仕様のうち Webhook 配信とコールバック検証に対応する。ポーリングとストリーミングは非対応。サーバー側は events/list、events/subscribe、events/unsubscribe の3メソッドと署名付き配信の実装が求められる。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "MCP",
+      "ChatGPT",
+      "OpenAI",
+      "プラグイン",
+      "セキュリティ"
+    ]
   }
 ];
