@@ -35,7 +35,7 @@ export const META_KEYS = [
 ];
 
 /** body 側に置くキー。split-articles.mjs と同一に保つこと */
-export const BODY_KEYS = ["body", "tables", "figures", "charts", "embeds", "primarySources"];
+export const BODY_KEYS = ["body", "tables", "figures", "charts", "embeds", "videos", "demos", "primarySources"];
 
 /** 記事1件を meta 部と body 部に分ける */
 export function splitArticle(article) {
