@@ -4260,7 +4260,7 @@ export const ARTICLES_META = [
     "type": "review",
     "category": "model",
     "title": "GPT-5.6 Sol / Terra / Luna レビュー — 一般公開版（7/9 GA）、TerminalBench 2.1 で 91.91% SOTA、Cerebras で 750 tokens/秒、ChatGPT Work の駆動モデルに",
-    "excerpt": "OpenAI の3階層フラッグシップ Sol / Terra / Luna。**Sol**（$5/$30、Ultra thinking モードで TerminalBench 2.1 で **91.91% SOTA**）、Terra（$2/$12）、Luna（$0.20/$1.20）の構成で、**7月31日に Luna が80%・Terra が20%値下げ**された。Cerebras 上で Sol が最大 750 tokens/秒、8月には Standard 比14倍の Ultrafast モードも追加。1.5M コンテキスト。ただし8月12日の Grok 4.6 が Artificial Analysis で **Sol と同点の61** に達し、Opus 5 も同価格帯に入ったため、**競合は3強から4強へ**移った。",
+    "excerpt": "OpenAI の3階層モデル Sol / Terra / Luna（GPT-5.6）のレビュー。2026年9月30日時点で GPT-5.6 は現行世代ではなく、GPT-6 Astra（9/3）、GPT-6 Sol / Luna（9/22）、GPT-6.1 Sol（9/29）が出ている。本稿の記述は GPT-5.6 世代のもの。API 価格は Sol が $4/$20（8/21 に引き下げ）、Terra が $2/$12、Luna が $0.20/$1.20（7/30 に Luna 80%・Terra 20% 値下げ）。コンテキストは API モデルページ表記で 1,050,000 トークン。Ultrafast は Cerebras 上の提供で、GPT-5.6 Sol では限定プレビュー。",
     "date": "2026-07-13",
     "newsDate": "2026-07-09",
     "author": "AI News 編集部",
@@ -4285,7 +4285,7 @@ export const ARTICLES_META = [
     "rating": 5,
     "reviewCategory": "model",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-08-19"
+    "lastReviewed": "2026-09-30"
   },
   {
     "id": "sakana-fugu-review",

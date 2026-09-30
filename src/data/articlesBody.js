@@ -10541,25 +10541,25 @@ const ARTICLES_BODY = {
     "body": [
       "**GPT-5.6** は OpenAI の3階層フラッグシップモデルで、**Sol / Terra / Luna** の3バリアント構成。2026年6月25日の約20組織限定プレビュー（[GPT-5.6 プレビュー](?a=openai-gpt-5-6-sol-terra-luna-preview-2026)）を経て、**7月9日に一般公開開始**（[GPT-5.6 GA](?a=openai-gpt-5-6-general-availability-july-9-2026)）。**ChatGPT・API・Codex** で即日利用可能。用途別の使い分けを OpenAI 自身が標準化した意欲的な戦略で、業務 AI の [ChatGPT Work](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026) の駆動モデルにも即日採用された。",
       "**【2026年9月時点の注記】本レビューの対象は GPT-5.6 であり、その後 OpenAI は次世代の GPT-6 Astra を公開している。** 2026年9月3日の公開で、[当サイトも報じている](?a=openai-gpt-6-astra-critical-cyber-2026)。自社の Preparedness Framework でサイバーセキュリティ区分が**初めて最高段階の「Critical」**に達したとされ、公開版は PoC エクスプロイトの生成を拒否する。API 価格は入力 $10 / 出力 $50 で、**272K トークンを超えるとリクエスト全体が $20 / $75 に切り替わる**。",
-      "**本レビューを GPT-6 Astra 向けに置き換えていないのは、採点の材料が揃っていないためである。** 当サイトの★は料金・提供条件・利用制限を含む5軸の加重平均で、採用判断に使われる。`openai.com` と `platform.openai.com` には、本稿更新時点を含め複数回にわたり調査環境から到達できておらず、**公式の料金表と提供条件を直接確認できていない。** 到達できた時点で、新世代のレビューを作成し月次見直しの対象を移す。",
+      "**本レビューを GPT-6 Astra 向けに置き換えていないのは、採点の材料が揃っていないためである。** 当サイトの★は料金・提供条件・利用制限を含む5軸の加重平均で、採用判断に使われる。`openai.com` には調査環境から到達できないままだが（`platform.openai.com` は `developers.openai.com` に転送され読める）、2026年9月30日の見直しで `developers.openai.com`（API の価格・モデルページ・changelog）と `learn.chatgpt.com`（Codex と ChatGPT Work の料金・モデル・changelog）に到達でき、GPT-6 世代の料金と提供条件は公式ドキュメントで確認できた（下の【追記 2026-09-30】）。それでも新世代のレビューを作成していないのは、5軸の採点が人の判断を要するためである。作成した時点で、月次見直しの対象を移す。",
       "**提供チャネル**: 全モデルが以下で利用可能。",
       "**ChatGPT**（消費者向け）: Free・Plus・Pro プランで、階層に応じた利用枠と機能。",
       "**API**（開発者向け）: platform.openai.com 経由で標準的な API 呼び出し。",
       "**Codex**（コーディングエージェント）: Codex CLI / クラウド版で Sol/Terra/Luna を選択的に利用可能。",
       "**ChatGPT Work**: 業務エージェントの駆動モデル、Pro/Enterprise/Edu 先行展開。",
       "**3バリアントの使い分け**:",
-      "**(1) Sol（$5/$30）**: 最難関タスク向けフラッグシップ。複雑コーディング・セキュリティ研究など。Ultra thinking モードでサブエージェント活用。",
-      "**(2) Terra（$2/$12）**: daily driver、大量業務向け。カスタマーサポート・社内ツール・文書解析。**7月31日に20%値下げされ $2.50/$15 から現行価格になった**。",
-      "**(3) Luna（$0.20/$1.20）**: 軽量タスク向け（要約・ドラフト・定型自動化）。**7月31日に80%という大幅な値下げ**を受け、$1/$6 から現行価格になった。投入からわずか3週間での改定である。",
-      "**性能ベンチマーク**: **Sol Ultra が TerminalBench 2.1 で 91.91%** の record-high を記録、Sol max は 88.76%。これは Claude Mythos 5（88.0%）と Fable 5（84.3%）を上回り、コーディング領域でフロンティアの最上位に立った。旧世代 GPT-5.5 の 83.4% から大幅アップ。",
-      "**1.5M コンテキスト**: GPT-5.6 シリーズは **1.5M トークンのコンテキストウィンドウ**を備える（GPT-5.5 の 1M、Codex の 400K を超える業界最大級）。訓練データのカットオフは **2026年5月まで**延長。4月の「Where the Goblins Came From」事後分析で記録されたアラインメント失敗に対応する**再設計された報酬監査パイプライン**も搭載。",
+      "**(1) Sol（$4/$20）**: 最難関タスク向けフラッグシップ。複雑コーディング・セキュリティ研究など。Ultra thinking モードでサブエージェント活用。",
+      "**(2) Terra（$2/$12）**: daily driver、大量業務向け。カスタマーサポート・社内ツール・文書解析。**7月30日に20%値下げされ $2.50/$15 から現行価格になった**。",
+      "**(3) Luna（$0.20/$1.20）**: 軽量タスク向け（要約・ドラフト・定型自動化）。**7月30日に80%という大幅な値下げ**を受け、$1/$6 から現行価格になった。投入からわずか3週間での改定である。",
+      "**性能ベンチマーク**: **Sol Ultra が TerminalBench 2.1 で 91.91%** の record-high を記録、Sol max は 88.76%。これは Claude Mythos 5（88.0%）と Fable 5（84.3%）を上回り、コーディング領域でフロンティアの最上位に立った。旧世代 GPT-5.5 の 83.4% から大幅アップ。ただしこれらの数値は当サイトが記載したもので、今回の見直しでは一次資料（openai.com 等）に到達できず、独立した検証も確認できていない。",
+      "**コンテキスト**: GPT-5.6 シリーズ（Sol / Terra / Luna）の API モデルページは、コンテキストウィンドウを 1,050,000 トークン、最大出力を 128,000 トークン、知識カットオフを2026年2月16日と表記している。GPT-5.5 のモデルページも 1,050,000 トークンで、GPT-5.6 で拡大した値ではない。272K トークンを超える入力は、リクエスト全体が入力2倍・出力1.5倍の料金になる。4月の「Where the Goblins Came From」事後分析で記録されたアラインメント失敗に対応する**再設計された報酬監査パイプライン**も搭載。",
       "**Ultra モードの仕組み**: 高得点の決定打となった **ultra thinking モード**は、**サブエージェントを動的に活用**して複雑な計画・反復・ツール協調を高速化する。Anthropic Opus 4.8 の Dynamic Workflows（[Opus 4.8](?a=anthropic-claude-opus-4-8-dynamic-workflows-2026)）や [Sakana Fugu レビュー](?a=sakana-fugu-review) と並ぶ「マルチエージェント・オーケストレーション層」を、モデル内蔵で実現する点が特徴。",
       "**Cerebras 上で 750 tokens/秒**: 7月10日、GPT-5.6 Sol が [Cerebras 上で最大 750 tokens/秒](?a=openai-gpt-5-6-sol-cerebras-750-tokens-per-second-2026) を達成したと発表。従来の Fable 5（30-50 tok/s）・Opus 4.8（40-80 tok/s）・GPT-5.5（50-100 tok/s）と比較して **7-25倍の高速化**。ほぼリアルタイム生成が可能になり、エージェント用途の生産性が飛躍的に向上する。[Broadcom Jalapeño](?a=openai-broadcom-jalapeno-llm-inference-chip-2026) と補完的な OpenAI の推論戦略第2段階。",
       "## 8月の動向（月次見直しで追記）",
-      "**7月31日の値下げ**: 投入から3週間で Luna が80%、Terra が20%引き下げられた（[→ 詳細](?a=openai-gpt-5-6-luna-terra-price-cut-2026)）。フロンティアモデルの価格が四半期を待たずに動く状況になっており、**年間契約や予算計上の前提が短期間で変わりうる**点は運用上の注意点になる。",
+      "**7月30日の値下げ**: 投入から3週間で Luna が80%、Terra が20%引き下げられた（[→ 詳細](?a=openai-gpt-5-6-luna-terra-price-cut-2026)）。フロンティアモデルの価格が四半期を待たずに動く状況になっており、**年間契約や予算計上の前提が短期間で変わりうる**点は運用上の注意点になる。",
       "**ChatGPT 無料枠の無制限化**: 8月に無料枠が無制限化され、**既定モデルが Luna に切り替わった**。あわせて Sol は事実誤りを68%削減したと発表されている（[→ 詳細](?a=openai-chatgpt-free-unlimited-luna-sol-update-2026)）。値下げと無料枠拡大が同時に来ており、利用者の裾野を widen する方向に振れている。",
-      "**Ultrafast モード（8月13日）**: GPT-5.6 Sol 向けの API サービスティアとして追加された。**Standard 比で最大14倍高速**とされる。Cerebras 経由の 750 tokens/秒とは別系統の高速化手段で、リアルタイム性が要るエージェント用途の選択肢が増えた形になる。",
-      "**Codex 側の更新（8月14日）**: **Goal mode が GA** となり、アプリ・IDE・CLI の全面で使えるようになった。成果と成功条件を定義しておくと、Codex がそこへ向けて作業を継続する仕組みである。あわせて **Appshots**（macOS でアプリのウィンドウをホットキーで Codex のスレッドに添付する）、対話型クイズ、プロジェクトメモリ、ディクテーションが追加された（[→ Codex レビュー](?a=openai-codex-agent)）。",
+      "**Ultrafast モード（8月13日）**: GPT-5.6 Sol 向けの API サービスティアとして発表された。OpenAI の API changelog は「一部の顧客向けの限定プレビュー」とし、Standard 比で最大14倍高速とする。Cerebras の公式ブログによれば、この Ultrafast は Cerebras 上で GPT-5.6 Sol を動かす構成で、最大 750 tokens/秒はこの提供を指す。つまり Cerebras 経由の 750 tokens/秒とは別系統ではなく、同じ提供である。2026年9月30日時点の Ultrafast ガイドは、GPT-6 Astra には広く提供し、GPT-5.6 Sol はプレビュー（アカウントチームへの問い合わせ）と記している。",
+      "**Codex 側の更新（Goal mode と Appshots は5月21日）**: **Goal mode は5月21日に実験的機能から外れ**、アプリ・IDE 拡張・CLI で使える。成果と成功条件を定義しておくと、Codex がそこへ向けて作業を継続する仕組みである。同日に **Appshots**（macOS でアプリのウィンドウをホットキーで Codex のスレッドに添付する）も追加された。対話型クイズ、プロジェクトメモリ、ディクテーションは公式 changelog で日付を確認できていない（[→ Codex レビュー](?a=openai-codex-agent)）。",
       "**総合知能で並ばれた**: 8月12日の [Grok 4.6](?a=xai-grok-4-6-500k-context-200k-toll-2026) が Artificial Analysis Intelligence Index で **61 を記録し、GPT-5.6 Sol と同点**になった。7月13日時点で書いた「コーディング領域でフロンティアの最上位」という位置付けは、**総合知能の指標では単独首位ではなくなっている**。",
       "## 3強競合構図（GA 後）",
       "**xAI Grok との対比（8月更新）**: 7月9日には [Grok 4.5](?a=xai-grok-4-5-review) が同日一般公開されたが、**8月12日の Grok 4.6 で状況が変わった**。Artificial Analysis Intelligence Index で **Grok 4.6 が 61 を記録し、GPT-5.6 Sol と同点**になっている（[→ 詳細](?a=xai-grok-4-6-500k-context-200k-toll-2026)）。総合知能で並ばれた形である。",
@@ -10567,13 +10567,13 @@ const ARTICLES_BODY = {
       "**価格**: Grok 4.6 の表示単価は $2/$6 で、GPT-5.6 Terra は値下げ後 $2/$12。出力側は依然 Grok が安い。**ただし Grok 4.6 はプロンプトが 200K トークンに達するとリクエスト全体が $4/$12 になる**ため、長いコンテキストを積むエージェント運用では Terra のほうが安くなる場合がある。",
       "**エコシステム**: GPT-5.6 は ChatGPT / Codex の広い普及、Grok は X および SpaceX-Cursor 統合が強み。Grok 4.6 は **GitHub Copilot にも追加**され、選択肢としての露出が増えた。",
       "**Claude Sonnet 5 との対比**: [Sonnet 5](?a=claude-sonnet-5-review) は SWE-bench Pro 63.2%（Opus 4.8 に肉薄）、Sonnet 5 と GPT-5.6 Terra が「ミドルレンジフラッグシップ」で真正面から対決。",
-      "**Sonnet 5**: **導入価格 $2/$10 は8月31日で終了し、現在は $3/$15**。Adaptive Thinking 常時オン、Claude Code / Cursor 統合の強み。**この改定により、入力単価では Terra（$2/$12）のほうが安くなった。** 出力側も Terra が $12 で Sonnet 5 の $15 より安い。",
+      "**Sonnet 5**: **導入価格 $2/$10 は8月31日までの予定だったが、Anthropic の公式料金表は「9月1日に予定していた $3/$15 への引き上げは行わず、$2/$10 が標準価格になった」と記している**。Adaptive Thinking 常時オン、Claude Code / Cursor 統合の強み。入力単価は Terra（$2/$12）と Sonnet 5 で同じ $2、出力単価は Sonnet 5（$10）のほうが Terra（$12）より安い。",
       "**GPT-5.6 Terra**: $2/$12、ChatGPT Work 統合の強み、Codex CLI 対応。",
       "**強み**:",
       "**(1) TerminalBench SOTA**: Sol Ultra が Fable 5・Mythos 5 を上回る初の GPT。エージェント・コーディング領域でフロンティア最上位。",
       "**(2) 3階層戦略**: Sol/Terra/Luna の使い分けが明確、コスト最適化しやすい。同じ API で切替可能。",
-      "**(3) 1.5M ctx**: 業界最大級のコンテキスト、大規模コードベース・長文書に強い。",
-      "**(4) Luna の破格**: 7月31日の80%値下げで **$0.20/$1.20** となり、フロンティア級として突出して安い。中国 OSS モデル（46% シェア、[中国モデル分析](?a=feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026)）への対抗軸として、価格差の論点そのものを大きく塗り替えた。",
+      "**(3) 1,050,000 トークンのコンテキスト**（API モデルページの表記）: 大規模コードベース・長文書を扱える。",
+      "**(4) Luna の破格**: 7月30日の80%値下げで **$0.20/$1.20** となり、フロンティア級として突出して安い。中国 OSS モデル（46% シェア、[中国モデル分析](?a=feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026)）への対抗軸として、価格差の論点そのものを大きく塗り替えた。",
       "**(5) 内蔵オーケストレーション**: Ultra thinking モードにより、外付け [Sakana Fugu](?a=sakana-fugu-review) 等のトークン消費 4-6倍問題を回避。",
       "**(6) ChatGPT Work 統合**: [業務 AI 対決分析](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026) で紹介した業務エージェントの駆動モデル、Slack/Teams/Gmail/Drive 等と統合済み。",
       "**(7) Cerebras 高速化**: 750 tokens/秒でほぼリアルタイム生成、エージェント用途の生産性が飛躍。",
@@ -10588,13 +10588,23 @@ const ARTICLES_BODY = {
       "**(a) Sol Ultra**: 最難関コーディング・セキュリティ研究・複雑なマルチステップワークフロー",
       "**(b) Terra**: 日常業務・カスタマーサポート・文書解析（Sonnet 5 とも比較検討）",
       "**(c) Luna**: 要約・ドラフト・大量バッチ（Gemini 3.5 Flash と価格比較）",
-      "**(d) Cerebras Sol**: リアルタイム性が必要なエージェント・ChatGPT Work のスケジュールタスク",
+      "**(d) Cerebras Sol**: リアルタイム性が必要なエージェント・ChatGPT Work のスケジュールタスク（Ultrafast は GPT-5.6 Sol ではプレビュー扱いで、誰でも選べるわけではない）",
       "**(e) ChatGPT Work 経由**: 業務ワークフロー自動化には API 直接ではなく ChatGPT Work（Pro/Enterprise/Edu）を検討",
       "**Sonnet 5 と GPT-5.6 Terra の使い分けは、Claude Code / Cursor 中心のワークフローなら Sonnet 5、Codex CLI / ChatGPT Work 中心なら Terra** が現実的な棲み分け。**AI News では「日本語プロンプトでの Sonnet 5 vs Terra 実践比較」** を近日公開予定。",
       "【編集履歴】",
       "・【改訂 2026-07-13】限定プレビュー → 一般公開（7/9 GA）への状態変化を全面反映。Cerebras 750 tok/s 実測（7/10）・ChatGPT Work 駆動モデル採用・Sonnet 5/Grok 4.5 との3強競合構図・中国 OSS 46% シェアとの位置関係を追加。rating を 4.5 → 5.0 に引き上げ（GA 実現とエコシステム統合により実運用可能性が飛躍したため）。使いやすさ 4→5、企業向け 4→5 に修正。「おすすめ」タグ追加。lastReviewed 2026-07-13。",
       "【訂正 2026-09-02】Sonnet 5 との比較を現行価格に更新した。導入価格 $2/$10 は8月31日で終了しており、「9月以降は〜」という将来形の記述が期日を過ぎて不正確になっていた。",
-      "【追記 2026-09-20】**本レビューが、次世代の GPT-6 Astra（2026年9月3日公開）に触れていなかった**ため、冒頭に注記を2段落追加しました。あわせて、月次見直しの対象を新世代へ移せていない理由も明記しています。★の採点には料金・提供条件の一次確認が必要ですが、OpenAI の公式面には調査環境から到達できていません。5軸採点と `lastReviewed` は変更していません。"
+      "【追記 2026-09-20】**本レビューが、次世代の GPT-6 Astra（2026年9月3日公開）に触れていなかった**ため、冒頭に注記を2段落追加しました。あわせて、月次見直しの対象を新世代へ移せていない理由も明記しています。★の採点には料金・提供条件の一次確認が必要ですが、OpenAI の公式面には調査環境から到達できていません。5軸採点と `lastReviewed` は変更していません。",
+      "【訂正 2026-09-30】（誤）Goal mode の GA と Appshots の追加は8月14日 →（正）Codex の公式 changelog では、Goal mode が実験的機能から外れ、macOS の Appshots が使えるようになったのは5月21日である。8月10〜14日の What's new と changelog に該当はない。",
+      "【訂正 2026-09-30】（誤）Sol の API 価格は $5/$30 →（正）OpenAI の API changelog は2026年8月21日に $4/$20 への引き下げを記録している。モデルページはこの価格を「プロモーション価格」と表記しており、公式ページは「少なくとも2026年11月21日まで」と記している（期限は公式の記載であり、延長・終了は公式ページで確認が必要）。",
+      "【訂正 2026-09-30】（誤）Luna と Terra の値下げは7月31日 →（正）7月30日。OpenAI の API changelog と Codex の What's new がいずれも7月30日としている。",
+      "【訂正 2026-09-30】（誤）コンテキスト 1.5M トークン、知識カットオフ2026年5月、GPT-5.5 や他モデルを超える業界最大級 →（正）API モデルページは 1,050,000 トークン、知識カットオフ2026年2月16日と表記し、GPT-5.5 も同じ 1,050,000 トークンである。",
+      "【訂正 2026-09-30】（誤）Ultrafast は Cerebras 経由の 750 tokens/秒とは別系統で追加された →（正）Cerebras の公式ブログは Ultrafast を Cerebras 上の提供としており、同じものを指す。GPT-5.6 Sol では限定プレビューで、2026年9月30日時点の公式ガイドも GPT-5.6 Sol をプレビュー扱いとしている。",
+      "【訂正 2026-09-30】（誤）Sonnet 5 は導入価格終了後 $3/$15 で、入力・出力とも Terra のほうが安い →（正）Anthropic の公式料金表は $2/$10 が標準価格のままとしている。入力は同額、出力は Sonnet 5 のほうが安い。",
+      "【追記 2026-09-30】月次見直しにより、提供状況を確認した。GPT-5.6 は API では引き続き選べ、gpt-5.6 の別名は Sol に向く。API の Deprecations ページは、旧 GPT-5 系スナップショットの移行先として gpt-5.6-sol / terra / luna を挙げており、GPT-5.6 自体の廃止予定は見当たらない。Codex では、公式モデルページが「GPT-5.6 Sol / Terra / Luna はロールアウト中も引き続き利用できる」と記す一方、推奨モデルの一覧には載っていない。ChatGPT のチャットでは、8月3〜7日の What's new が、Plus と Pro のスライダーが GPT-5.6 Sol に効くこと、Free と Go の既定が GPT-5.6 Luna であることを記している。GPT-6 系はチャットでは使えず、Work と Codex で提供される。",
+      "【追記 2026-09-30】次世代が出ている。GPT-6 Astra は9月3日に公開され、API 価格は入力 $10 / 出力 $50 である。GPT-6 Sol と GPT-6 Luna は9月22日に公開され、標準価格は Sol が $2/$10、Luna が $0.10/$0.50 で、いずれも GPT-5.6 の同名モデルより低い。GPT-6.1 Sol は9月29日に公開され、価格は $2/$10、Codex CLI 0.159.1 は同梱カタログの既定モデルにしている。Codex の公式モデルページは、複雑な作業には GPT-6.1 Sol、繰り返しの作業には Luna を勧めている。なお GPT-5.5 は、ChatGPT・Work・Codex では10月14日に退役予定である（API は対象外）。本稿の Sol / Terra / Luna の価格比較、Sonnet 5 との比較、推奨は GPT-5.6 世代に紐づいており、GPT-6 世代に置き換えていない。★の採点にも手を付けていない。",
+      "【追記 2026-09-30】競合側も世代が進んでいる。Anthropic の公式料金表には Claude Sonnet 5.5（$2/$10）、Opus 5.5（$4/$20）、Fable 5.1（$10/$50）が載っている。本稿の「4強」の記述と Sonnet 5 との比較は、これらを反映していない。",
+      "【追記 2026-09-30】今回確認できなかった点を明記する。TerminalBench 2.1 の 91.91%、Artificial Analysis の指数、Cerebras 上の 750 tokens/秒（Cerebras の発表に基づく）、事実誤りを68%削減したとする発表、ChatGPT 無料枠の無制限化は、当サイトの記載のままで、独立した検証は確認できていない。openai.com と help.openai.com には調査環境から到達できなかった（platform.openai.com は developers.openai.com に転送され読める）。"
     ],
     "primarySources": [
       {
@@ -10616,6 +10626,41 @@ const ARTICLES_BODY = {
         "title": "Summary of METR's predeployment evaluation of GPT-5.6 Sol",
         "site": "METR",
         "url": "https://metr.org/blog/2026-06-26-gpt-5-6-sol/"
+      },
+      {
+        "title": "GPT-5.6 Sol Model | OpenAI API",
+        "site": "OpenAI Developers",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol"
+      },
+      {
+        "title": "Changelog | OpenAI API",
+        "site": "OpenAI Developers",
+        "url": "https://developers.openai.com/api/docs/changelog"
+      },
+      {
+        "title": "Pricing | OpenAI API",
+        "site": "OpenAI Developers",
+        "url": "https://developers.openai.com/api/docs/pricing"
+      },
+      {
+        "title": "Models | Codex",
+        "site": "OpenAI ChatGPT Learn",
+        "url": "https://learn.chatgpt.com/docs/models"
+      },
+      {
+        "title": "What's new | ChatGPT Learn",
+        "site": "OpenAI ChatGPT Learn",
+        "url": "https://learn.chatgpt.com/docs/whats-new"
+      },
+      {
+        "title": "Accelerating GPT-5.6 Sol Ultrafast",
+        "site": "Cerebras",
+        "url": "https://www.cerebras.ai/blog/accelerating-gpt-5-6-sol-ultrafast-with-openai"
+      },
+      {
+        "title": "Pricing | Claude API Docs",
+        "site": "Anthropic",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
       }
     ]
   },
