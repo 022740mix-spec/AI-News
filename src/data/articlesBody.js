@@ -8626,7 +8626,7 @@ const ARTICLES_BODY = {
       "- **Web**: [claude.ai/code](https://claude.ai/code) にアクセスするだけ。ローカル環境なしで長時間タスクを起動",
       "- **iOS アプリ**: App Store「Claude by Anthropic」（公式ドキュメント上、Claude のモバイルアプリは iOS と Android に対応）",
       "## CLI 主要コマンド・フラグ",
-      "上の表について（2026-09-30 訂正）: claude --headless は公式の CLI リファレンスに載っていない。UI なしの実行は claude -p（表の3行目）を使う。表の claude \"<指示>\" は一発実行ではなく、最初の指示を渡して対話セッションを開始するもので、一発実行は -p である。/model については、Anthropic API ではエイリアス opus / sonnet / fable / haiku がそれぞれ Opus 5.5 / Sonnet 5.5 / Fable 5.1 / Haiku 4.5 を指し、旧モデルはモデル ID（例: claude-opus-5）で指定する。Amazon Bedrock や Microsoft Foundry ではエイリアスの解決先が異なる（例: Bedrock の sonnet は Sonnet 4.5）。",
+      "上の表は 2026-09-30 に公式の CLI リファレンスに基づいて差し替えた。差し替え前の表には、公式の CLI リファレンスに載っていない claude --headless の行があった。UI なしの実行は claude -p（表の3行目）を使う。差し替え前の表は claude \"<指示>\" を「一発指示モード」としていたが、実際は一発実行ではなく、最初の指示を渡して対話セッションを開始するもので、一発実行は -p である。/model については、Anthropic API ではエイリアス opus / sonnet / fable / haiku がそれぞれ Opus 5.5 / Sonnet 5.5 / Fable 5.1 / Haiku 4.5 を指し、旧モデルはモデル ID（例: claude-opus-5）で指定する。Amazon Bedrock や Microsoft Foundry ではエイリアスの解決先が異なる（例: Bedrock の sonnet は Sonnet 4.5）。",
       "## 中核機能の全体像",
       "### モデル",
       "2026年9月30日時点の公式ドキュメントでは、既定モデル（default）は Pro・Max・Team・Enterprise・Anthropic API のいずれでも Claude Opus 5.5（9/22 投入、Claude Code v2.1.280 以降、1M コンテキスト、API 料金 $4/$20）である。v2.1.280 より前は、Pro と Team Standard の既定が Sonnet、Max・Team Premium・Enterprise・API の既定が [Claude Opus 5](?a=claude-opus-5-review)（7/24 投入、$5/$25）だった。タスクごとに思考量を選べる effort は、対応モデルでは low / medium / high / xhigh / max の5段階で、Opus 5.5 と Sonnet 5.5 の既定は medium である。モデルを切り替えずにコストと能力を調整できる点は変わらない。Opus 5 は API 側ではレガシーモデル扱いだが、明示すれば選べる。Fable は現行が Fable 5.1（$10/$50。[Claude Fable 5](?a=claude-fable-5-mythos-5-review) と同額）で、どのプランでも既定ではなく /model fable などで明示的に選ぶ。Sonnet は Sonnet 5.5（9/28 投入、v2.1.284 以降）と Sonnet 5 がいずれも $2/$10 で、[Claude Sonnet 5](?a=claude-sonnet-5-review) の $3/$15 への値上げは実施されず $2/$10 が標準価格になった。Haiku 4.5 への切替も可能。",
@@ -8658,7 +8658,7 @@ const ARTICLES_BODY = {
       "### Chrome 連携",
       "ライブ Web アプリケーションのデバッグを Claude 経由で実行。",
       "## 料金体系（Fast Mode は標準料金の2倍で最大2.5倍速）",
-      "上の表について（2026-09-30 時点の公式情報）: API 従量の現行料金は、Opus 5.5 が $4/$20、Opus 5 が $5/$25、Fable 5.1 と Fable 5 が $10/$50、Sonnet 5.5 と Sonnet 5 が $2/$10 で、Sonnet 5 の $3/$15 への値上げは実施されなかった。Fast Mode は Pro・Max・Team・Enterprise のすべてが対象で、利用クレジット（usage credits）を有効にした場合のみ使え、サブスクリプションの利用枠には含まれない（Team・Enterprise は管理者による有効化も必要）。表の Max 行にある「2.5倍速」は Max 固有ではなく、全プラン共通の Fast Mode の性能（最大）である。料金は標準料金の2倍で、Opus 5.5 が $8/$40、Opus 5 と Opus 4.8 が $10/$50。Team は席料金が公開されており、Standard 席が年払い $20・月払い $25、Premium 席が年払い $100・月払い $125（いずれも席あたり月額）。Enterprise は席あたり月額 $20（年払い）に API 料金での従量課金が加わる形で公開されている（営業経由の契約は個別）。表の「SOC 2 準拠」について、Anthropic は SOC 2 Type I / Type II の報告書を取得している（Anthropic Trust Center。code.claude.com/docs/en/security）。これは Anthropic 全体の認証であり、Enterprise プラン固有の特長ではない。Enterprise 固有の機能は SCIM、監査ログ、Compliance API、支出上限などである（claude.com/pricing）。",
+      "上の表は 2026-09-30 時点の公式情報に基づいて差し替えた。補足: API 従量の現行料金は、Opus 5.5 が $4/$20、Opus 5 が $5/$25、Fable 5.1 と Fable 5 が $10/$50、Sonnet 5.5 と Sonnet 5 が $2/$10 で、Sonnet 5 の $3/$15 への値上げは実施されなかった。Fast Mode は Pro・Max・Team・Enterprise のすべてが対象で、利用クレジット（usage credits）を有効にした場合のみ使え、サブスクリプションの利用枠には含まれない（Team・Enterprise は管理者による有効化も必要）。差し替え前の表は Max 行に「2.5倍速」を置いていたが、これは Max 固有ではなく、全プラン共通の Fast Mode の性能（最大）である。料金は標準料金の2倍で、Opus 5.5 が $8/$40、Opus 5 と Opus 4.8 が $10/$50。Team は席料金が公開されており、Standard 席が年払い $20・月払い $25、Premium 席が年払い $100・月払い $125（いずれも席あたり月額）。Enterprise は席あたり月額 $20（年払い）に API 料金での従量課金が加わる形で公開されている（営業経由の契約は個別）。差し替え前の表の Enterprise 行にあった「SOC 2 準拠」について、Anthropic は SOC 2 Type I / Type II の報告書を取得している（Anthropic Trust Center。code.claude.com/docs/en/security）。これは Anthropic 全体の認証であり、Enterprise プラン固有の特長ではない。Enterprise 固有の機能は SCIM、監査ログ、Compliance API、支出上限などである（claude.com/pricing）。",
       "## 6月以降の主な変化（8月時点）",
       "- **7/24 [Claude Opus 5](?a=claude-opus-5-review) が標準モデルに**。effort トグル（low / medium / high）でタスクごとに思考量を選べるようになった。料金は前世代 Opus 4.8 と同額の $5/$25 に据え置き",
       "- **7/13 [Claude Cowork](?a=feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026) 公開**。非エンジニアを含む業務ワークフローに Claude Code の実行基盤が広がった",
@@ -8686,7 +8686,8 @@ const ARTICLES_BODY = {
       "【訂正 2026-09-30】（誤）Claude Code SDK →（正）Agent SDK。（誤）agent view の状態「待機中・作業中・完了」→（正）入力待ち（Needs input）・作業中・完了。（誤）Opus 4.7 の Fast mode 終了を8月の廃止に分類 →（正）7/24 に終了。（誤）Workbench が 8/17 終了 →（正）終了したのは旧 Workbench で、Workbench は playground として続いている。「Fast Mode が3倍安い」（見出し）は現行の公式文書に根拠がなく、現在の Fast Mode は標準料金の2倍で最大2.5倍速のため、見出しを事実に合わせた。",
       "【追記 2026-09-30】その後の変更: 既定モデルは 9/22 の v2.1.280 で Opus 5.5 に変わった。これにより Pro・Max・Team・Enterprise・API のいずれも既定は Opus 5.5 になった（それ以前は Pro と Team Standard が Sonnet、Max などが Opus 5 だった。Max の既定が Opus 5 だったのは v2.1.219 以降で、執筆時点では正しい記述だった）。Opus 5.5（9/22、$4/$20）、Fable 5.1（9/1、$10/$50）、Sonnet 5.5（9/28、$2/$10）が現行世代で、本記事の★評価と「評価」節は Opus 5 世代までを前提としており、Opus 5.5 世代での再採点は行っていない。",
       "【追記 2026-09-30】その後の変更: Dynamic Workflows は現在、全有料プランで利用できる（Pro は /config で有効化）。本文の Max / Team / Enterprise（管理者有効化必要）という提供範囲は、その後拡大した。起動キーワードは v2.1.160 で workflow から ultracode に変わった。Fast Mode は現在 Pro を含む全有料プランが利用クレジットで使える。Team・Enterprise は席料金が公開されている。あわせて、デスクトップアプリの Ubuntu・Debian ベータ、モバイルアプリの Android 対応、Slack 連携の Claude Tag への移行を追記した。",
-      "【追記 2026-09-30】claude.ai のサブスクリプションでログインした対話セッションでは、利用上限に達すると上限のリセット後に作業を自動で再開する（v2.1.234 以降、既定で有効、/config で無効化できる）。Dynamic Workflows も上限到達時は一時停止してリセット後に再開する（v2.1.271 以降）。"
+      "【追記 2026-09-30】claude.ai のサブスクリプションでログインした対話セッションでは、利用上限に達すると上限のリセット後に作業を自動で再開する（v2.1.234 以降、既定で有効、/config で無効化できる）。Dynamic Workflows も上限到達時は一時停止してリセット後に再開する（v2.1.271 以降）。",
+      "【訂正 2026-09-30】caption を持たない2つの表を差し替えた。（誤）コマンド表の claude --headless、claude \"<指示>\" を「一発指示モード」としていた記述、/model の旧選択肢 →（正）公式の CLI リファレンスに基づく現行のコマンド表。（誤）料金表の Pro の Fast Mode「—」、Max 行の「2.5倍速」、Team・Enterprise の「カスタム」、Enterprise の「SOC 2 準拠」、API の Opus 5 $5/$25 と Sonnet 5 $3/$15 →（正）Pro を含む全プランが利用クレジットで Fast Mode を利用でき（サブスクの枠外）、2.5倍速は全プラン共通の性能で、Team と Enterprise の料金は公開されており、SOC 2 は Anthropic 全体の認証で、API の現行単価は Opus 5.5 $4/$20、Sonnet 5 $2/$10。"
     ],
     "primarySources": [
       {
@@ -8778,6 +8779,7 @@ const ARTICLES_BODY = {
     "tables": [
       {
         "afterParagraph": 14,
+        "caption": "Claude Code の主なコマンドとフラグ（2026年9月30日時点。公式の CLI リファレンスとコマンド一覧に基づく）",
         "headers": [
           "コマンド / フラグ",
           "機能"
@@ -8785,98 +8787,103 @@ const ARTICLES_BODY = {
         "rows": [
           [
             "`claude`",
-            "対話セッション開始"
+            "対話セッションを開始する"
           ],
           [
             "`claude \"<指示>\"`",
-            "一発指示モード"
+            "最初の指示を渡して対話セッションを開始する"
           ],
           [
             "`claude -p \"<prompt>\"`",
-            "パイプ・スクリプト用の非対話モード（CI、cron で活用）"
+            "非対話モード。応答を出力して終了する（CI・cron・パイプ向け。UI なしで実行したいときはこれを使う）"
           ],
           [
             "`claude agents`",
-            "**agent view を全画面で開く**（マルチセッション統合ダッシュボード）"
+            "agent view を開き、並列のバックグラウンドセッションを監視・投入する"
           ],
           [
             "`claude --bg [task]`",
-            "バックグラウンドセッション起動（ターミナルを閉じても継続）"
+            "バックグラウンドエージェントとして起動し、すぐにターミナルへ戻る"
           ],
           [
             "`claude --teleport`",
-            "Web / iOS で起動したセッションをローカルターミナルに引き継ぎ"
+            "クラウドセッション（Web やモバイルアプリから起動したもの）をローカルのターミナルで再開する"
           ],
           [
-            "`claude --headless`",
-            "UI なしモード"
+            "`/background`（別名 `/bg`）",
+            "対話中のセッションをバックグラウンドエージェントとして切り離す"
           ],
           [
-            "`/bg`",
-            "対話セッション内からバックグラウンドへ送る"
-          ],
-          [
-            "`/desktop`",
-            "ターミナルセッションをデスクトップアプリに引き継ぎ"
+            "`/desktop`（別名 `/app`）",
+            "現在のセッションをデスクトップアプリで続ける（macOS / x64 Windows、サブスクリプションが必要）"
           ],
           [
             "`/schedule`",
-            "Routines（クラウド定時実行）を作成"
+            "Routines（クラウドで動く定期実行）を作成・更新・一覧・実行する"
           ],
           [
             "`/loop`",
-            "同じプロンプトをセッション内で繰り返し実行"
+            "セッションが開いている間、同じプロンプトを繰り返し実行する（間隔を省くと Claude が間隔を決める）"
           ],
           [
             "`/model`",
-            "使用モデル切替（Opus 5 / Fable 5 / Sonnet 5 / Haiku 4.5 等）"
+            "モデルを切り替える。Anthropic API では、エイリアス opus / sonnet / fable / haiku が指すのは Opus 5.5 / Sonnet 5.5 / Fable 5.1 / Haiku 4.5。旧モデルはモデル ID（例: claude-opus-5）で指定する"
+          ],
+          [
+            "`/effort`",
+            "思考量を low / medium / high / xhigh / max から選ぶ（段階はモデルによる）。`/effort ultracode` で動的ワークフローを使う設定になる"
+          ],
+          [
+            "`/fast`",
+            "Fast Mode を切り替える（Opus 5.5 / Opus 5 / Opus 4.8）"
           ]
         ]
       },
       {
         "afterParagraph": 46,
+        "caption": "Claude Code を使えるプランと料金（2026年9月30日時点。claude.com/pricing と公式ドキュメントに基づく。価格は税抜）",
         "headers": [
           "プラン",
           "月額",
-          "Standard",
+          "利用枠",
           "Fast Mode",
-          "主な用途"
+          "主な用途・特長"
         ],
         "rows": [
           [
             "Pro",
-            "$20",
-            "標準枠",
-            "—",
+            "$20（月払い）/ $17（年払い）",
+            "標準",
+            "利用クレジットで利用（サブスクの枠外）",
             "個人開発"
           ],
           [
             "Max",
-            "$100 / $200",
-            "拡張枠",
-            "**2.5倍速**",
+            "$100（Max 5x）/ $200（Max 20x）",
+            "Pro の5倍 / 20倍",
+            "利用クレジットで利用（サブスクの枠外）",
             "ヘビーユーザー"
           ],
           [
             "Team",
-            "カスタム",
-            "拡張枠",
-            "対応",
-            "小〜中規模チーム"
+            "Standard 席 $25（月払い）/ $20（年払い）、Premium 席 $125 / $100（いずれも席あたり月額）",
+            "Standard 席は Pro より多く、Premium 席はその5倍",
+            "Owner が有効化したうえで、組織の利用クレジットで利用",
+            "2〜150人のチーム"
           ],
           [
             "Enterprise",
-            "カスタム",
-            "拡張枠",
-            "対応",
-            "SOC 2 準拠、SSO 等"
+            "席あたり $20（年払い）＋ API 料金での従量",
+            "利用量に応じて課金",
+            "Owner が有効化したうえで、組織の利用クレジットで利用",
+            "SCIM、監査ログ、Compliance API、支出上限など"
           ],
           [
             "API（従量）",
             "—",
-            "**Opus 5: $5 / $25 per 1M**",
-            "対応",
-            "プログラム呼び出し。Fable 5 は $10/$50、Sonnet 5 は $3/$15"
+            "Opus 5.5: $4 / $20 per 1M（Opus 5: $5 / $25）",
+            "Opus 5.5 $8 / $40、Opus 5・Opus 4.8 $10 / $50（Claude API のみ）",
+            "Fable 5.1・Fable 5 $10 / $50、Sonnet 5.5・Sonnet 5 $2 / $10、Haiku 4.5 $1 / $5"
           ]
         ]
       }
