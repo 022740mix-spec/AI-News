@@ -16025,7 +16025,7 @@ const ARTICLES_BODY = {
       "**(4) データ主権リスクとのトレードオフ**: 圧倒的な価格優位性がある一方、DeepSeek の API は中国国内でホスティングされている前提。機微データを送る場合は自社の準拠法規制との整合性確認が必須",
       "**具体的なコスト比較**: 1M 入力 + 500K 出力（想定的な agent タスク）の場合:",
       "**GPT-5.6 Sol**: $5 + $15 = $20 (基準)",
-      "**Claude Fable 5**: $6 + $15 = $21",
+      "**Claude Fable 5**: $10 + $25 = $35",
       "**Claude Sonnet 5**: $2 + $5 = $7",
       "**Kimi K3**: $3 + $7.50 = $10.50",
       "**DeepSeek V4 Pro (off-peak)**: $0.435 + $0.435 = $0.87",
@@ -16037,7 +16037,8 @@ const ARTICLES_BODY = {
       "**(2) データ主権リスク**: 中国データセンター経由なので、機微データを送る場合は要検討",
       "**(3) レート制限の実運用値**: GA 移行後の実効的なレート制限値は Enterprise 契約次第で変わる",
       "**(4) Dynamic pricing の予測困難性**: 変動幅が 0.7-1.3倍なので、月次コスト予算の変動幅が広がる。予算超過を防ぐ支出上限設定が推奨",
-      "**AI News の推奨**: **コスト最適化を最重視する企業・スタートアップ**は、DeepSeek V4 の GA を機に本番投入を検討する価値がある。以下の3ステップが現実的。**(a)** 現在のワークロードを 「対話型（peak 帯必須）」「バッチ型（off-peak OK）」「大量処理（Flash で十分）」に分類、**(b)** データ主権要件との整合性確認（金融・医療・防衛系は除外）、**(c)** cache-hit を意識した [MCP 2026-07-28 spec](?a=mcp-2026-07-28-release-candidate-stateless-core-2026) クライアント経由の運用設計。Kimi K3 open weights（7/27）と組み合わせて、agent 特化タスクは Kimi、コスト最重視バッチは DeepSeek、という使い分けが2026 後半の実運用最適解となる可能性が高い。"
+      "**AI News の推奨**: **コスト最適化を最重視する企業・スタートアップ**は、DeepSeek V4 の GA を機に本番投入を検討する価値がある。以下の3ステップが現実的。**(a)** 現在のワークロードを 「対話型（peak 帯必須）」「バッチ型（off-peak OK）」「大量処理（Flash で十分）」に分類、**(b)** データ主権要件との整合性確認（金融・医療・防衛系は除外）、**(c)** cache-hit を意識した [MCP 2026-07-28 spec](?a=mcp-2026-07-28-release-candidate-stateless-core-2026) クライアント経由の運用設計。Kimi K3 open weights（7/27）と組み合わせて、agent 特化タスクは Kimi、コスト最重視バッチは DeepSeek、という使い分けが2026 後半の実運用最適解となる可能性が高い。",
+      "【訂正 2026-09-30】（誤）具体的なコスト比較の Claude Fable 5: $6 + $15 = $21 →（正）$10 + $25 = $35。Fable 5 は入力 $10 / 出力 $50 per 1M tokens（6月9日のローンチ時から同額。Anthropic の発表と公式料金表で確認）で、1M 入力 + 500K 出力なら $10 + $25。$6 / $30 相当の単価は誤りだった（21 も $6 + $15 の計算結果）。GPT-5.6 Sol の行など他の行は変更していない。"
     ],
     "primarySources": [
       {
@@ -16054,6 +16055,16 @@ const ARTICLES_BODY = {
         "title": "DeepSeek to launch V4 in mid-July with new peak-time API pricing",
         "site": "TechNode",
         "url": "https://technode.com/2026/06/30/deepseek-to-launch-v4-in-mid-july-with-new-peak-time-api-pricing/"
+      },
+      {
+        "title": "Introducing Claude Fable 5 and Claude Mythos 5",
+        "site": "anthropic.com",
+        "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
+      },
+      {
+        "title": "Pricing - Claude API Docs（Claude Sonnet 5 の脚注3）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
       }
     ]
   },
