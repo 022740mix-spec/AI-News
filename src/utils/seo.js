@@ -97,6 +97,12 @@ export const COMPANIES_SEO = {
     "主要 AI・開発ツール企業の所在地・設立・規模・市場の骨子（公開情報ベース）。",
 };
 
+export const UPDATES_SEO = {
+  titleSuffix: "更新履歴",
+  description:
+    "記事の訂正・追記・月次見直し・取り下げの一覧。各記事の末尾に記録した履歴を、日付の新しい順に並べています。",
+};
+
 /**
  * @param {{ selectedArticle: object | null, siteSection: string, guideTab?: string }} ctx
  */
@@ -116,6 +122,10 @@ export function syncDocumentSeo(ctx) {
     title = `${g.titleSuffix} | ${SITE_NAME}`;
     descRaw = g.description;
     ogTitle = `${g.titleSuffix} | ${SITE_NAME}`;
+  } else if (siteSection === "updates") {
+    title = `${UPDATES_SEO.titleSuffix} | ${SITE_NAME}`;
+    descRaw = UPDATES_SEO.description;
+    ogTitle = `${UPDATES_SEO.titleSuffix} | ${SITE_NAME}`;
   } else if (siteSection === "companies") {
     title = `${COMPANIES_SEO.titleSuffix} | ${SITE_NAME}`;
     descRaw = COMPANIES_SEO.description;

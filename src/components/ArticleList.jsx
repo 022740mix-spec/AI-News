@@ -5,6 +5,7 @@ import { FILTERS, TYPE_FILTERS, getCategoryIcon } from "../constants.js";
 import { richArticleText } from "../utils/richText.jsx";
 import { resolveMediaSrc } from "../utils/seo.js";
 import { formatPickDate, formatWeekRoundupPeriodJp } from "../utils/dateUtils.js";
+import { ArticleCorrectionBadge } from "./Updates.jsx";
 
 function Pagination({ current, total, onChange }) {
   if (total <= 1) return null;
@@ -164,6 +165,9 @@ function HeroToday({ article, onClick }) {
               ) : null}
             </p>
           ) : null}
+          <p className="hero-today__correction">
+            <ArticleCorrectionBadge articleId={article.id} />
+          </p>
           <h2 className="hero-today__title">{article.title}</h2>
           <p className="hero-today__excerpt">
             {richArticleText(article.excerpt, "hero-ex-")}
@@ -235,6 +239,7 @@ function ArticleCard({
           >
             {cat.label}
           </span>
+          <ArticleCorrectionBadge articleId={article.id} />
         </div>
         <ShareBtn articleId={article.id} articleTitle={article.title} />
       </div>

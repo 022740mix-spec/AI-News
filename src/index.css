@@ -67,6 +67,10 @@
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
   --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.12);
   --progress-bg: linear-gradient(90deg, var(--accent), var(--cyan));
+  /* 訂正の色。赤は「危険」に見えるので使わず、琥珀色で「注意して読んでほしい」を表す */
+  --correction: #fbbf24;
+  --correction-dim: rgba(251, 191, 36, 0.12);
+  --correction-border: rgba(251, 191, 36, 0.45);
 }
 
 :root[data-theme="light"] {
@@ -89,6 +93,9 @@
   --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.07);
   --shadow-glow: 0 12px 40px rgba(0, 0, 0, 0.04);
   --progress-bg: #3f3f46;
+  --correction: #92400e;
+  --correction-dim: rgba(245, 158, 11, 0.14);
+  --correction-border: rgba(180, 83, 9, 0.45);
 }
 
 html[data-theme="light"] {
@@ -3772,3 +3779,277 @@ a.article-embed__x-link {
   color: var(--text);
 }
 
+/* ── 更新履歴（訂正・追記・月次見直し・取り下げ） ──
+   強さの付け方: 訂正・取り下げは色付きの左線とラベルで目立たせ、
+   追記・月次見直しは線もラベルの背景も付けず、文字だけで控えめに出す。 */
+.updates-page {
+  max-width: 820px;
+}
+
+.updates-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1.25rem;
+}
+
+.updates-filter__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 36px;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card-solid);
+  color: var(--text-secondary);
+  font-family: var(--font);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition), background var(--transition);
+}
+
+.updates-filter__btn:hover {
+  border-color: var(--accent);
+}
+
+.updates-filter__btn:focus-visible,
+.updates-more__btn:focus-visible,
+.updates-row__title:focus-visible,
+.article-update-bar a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.updates-filter__btn.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.updates-filter__count {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  opacity: 0.85;
+  font-variant-numeric: tabular-nums;
+}
+
+.updates-day {
+  margin-bottom: 1.5rem;
+}
+
+.updates-day__head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--border);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.updates-day__count {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.updates-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.updates-row {
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid transparent;
+}
+
+.updates-row--strong {
+  margin-bottom: 0.25rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--correction);
+  background: var(--card);
+}
+
+.updates-row--retraction {
+  border-left-color: var(--text-secondary);
+}
+
+.updates-row__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.2rem 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.updates-kind {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.updates-kind--correction {
+  padding: 0.1rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--correction-border);
+  background: var(--correction-dim);
+  color: var(--correction);
+}
+
+.updates-kind--retraction {
+  padding: 0.1rem 0.5rem;
+  border-radius: 6px;
+  background: var(--text);
+  color: var(--bg0);
+}
+
+.updates-rating {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--correction);
+  font-variant-numeric: tabular-nums;
+}
+
+.updates-also {
+  font-size: var(--text-xs);
+  color: var(--muted);
+}
+
+.updates-row__title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.updates-row--strong .updates-row__title {
+  -webkit-line-clamp: 3;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.updates-row__title:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.updates-row__summary {
+  margin: 0.2rem 0 0;
+  overflow-wrap: anywhere;
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.updates-row--strong .updates-row__summary {
+  margin-top: 0.3rem;
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+}
+
+.updates-more {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0 1rem;
+}
+
+.updates-more__btn {
+  min-height: 40px;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--card-solid);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: var(--text-base);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.updates-more__btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* 一覧カード・ヒーローの「訂正あり M/D」バッジ */
+.correction-badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--correction-border);
+  background: var(--correction-dim);
+  color: var(--correction);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.hero-today__correction {
+  margin: 0 0 0.4rem;
+}
+
+.hero-today__correction:empty {
+  display: none;
+}
+
+/* 記事冒頭の「この記事は…訂正されました」の帯 */
+.article-update-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem 0.9rem;
+  margin: 0 0 1.25rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--card);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.article-update-bar--correction {
+  border-color: var(--correction-border);
+  background: var(--correction-dim);
+  color: var(--text);
+}
+
+.article-update-bar__text {
+  font-weight: 600;
+}
+
+.article-update-bar__links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.9rem;
+}
+
+.article-update-bar a {
+  padding: 0.15rem 0;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+#article-history {
+  scroll-margin-top: 5rem;
+}
