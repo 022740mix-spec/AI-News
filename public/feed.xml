@@ -8,6 +8,14 @@
   <updated>2026-10-01T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Claude Code、5時間の上限に達しても区切りのよいところまで進める——週次枠から小さな固定分を使い、Pro は週1回・Max は毎回</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-wrap-up-allowance-5-hour-limit-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-wrap-up-allowance-5-hour-limit-2026</id>
+    <published>2026-10-01T15:00:00Z</published>
+    <updated>2026-10-01T15:00:00Z</updated>
+    <summary>Anthropic の開発者向け公式アカウントは2026年9月25日、Claude Code が5時間の利用上限に達したとき、編集の途中で打ち切らず区切りのよい停止点を探すようになると発表した。そのために、週次の利用枠から小さな固定の割り当てを引く。使える頻度は Pro が週1回、Max と Team Premium が5時間の上限に達するたびで、続きは追加利用で進められる。国内報道はこれを「残業」と呼ぶ。割り当ての大きさや対象バージョンは、公式の投稿には書かれていない。</summary>
+  </entry>
+  <entry>
     <title>ChatGPT に MCP Events、MCP サーバーの更新を監視して動く仕組み。MCP Events は MCP 2.0 とドラフト仕様の Webhook 配信が前提</title>
     <link rel="alternate" type="text/html" href="?a=openai-mcp-events-chatgpt-webhook-mcp-2-0-2026"/>
     <id>tag:ai-tool-news.jp,2026:openai-mcp-events-chatgpt-webhook-mcp-2-0-2026</id>
