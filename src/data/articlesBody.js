@@ -10328,10 +10328,11 @@ const ARTICLES_BODY = {
       "**性能ベンチマーク（後継との比較）**: SWE-bench Pro で Sonnet 4.6 は **58.1%**、Sonnet 5 は **63.2%**（+5.1pt）。GDPval-AA v2 では Sonnet 5 が Opus 4.8（1615）を上回る 1618 を記録するなど、後継 Sonnet 5 は Opus 4.8 に肉薄する性能で、Sonnet 4.6 との差は明確。",
       "**得意領域（当時）**: 1M コンテキスト、日常のコーディング（定型的なバグ修正、テスト生成、ドキュメント作成、中規模のリファクタリング）を高速に処理できるバランス型モデル。Cursor や Windsurf のデフォルトモデルとして広く利用され、レスポンス速度が Opus より速く、インタラクティブな対話型開発に適していた。",
       "**継続利用する場合の判断基準**: (1) 既存パイプラインで Sonnet 4.6 を採用しており、検証コスト無しで継続したいケース、(2) Sonnet 5 の新トークナイザ（同じテキストで 1.0-1.35倍多くカウント）による実コスト予測の不透明さを避けたい場合、(3) Claude Code や Cursor 等の周辺ツールが Sonnet 5 完全対応前の過渡期に安定運用したい場合。",
-      "**料金**: 入力 $3 / 出力 $15（1M トークンあたり）。**Sonnet 5 の通常料金 $3/$15** と同額である（〜8/31 は Sonnet 5 が導入価格 $2/$10 だった）。同額になった今も性能差から Sonnet 5 の選択が推奨される。",
+      "**料金**: 入力 $3 / 出力 $15（1M トークンあたり）。Sonnet 5 は $2/$10 で、Sonnet 4.6 より入力・出力とも単価が低い（公開時は8/31までの導入価格とされたが、9/1 の $3/$15 への引き上げは行われず、$2/$10 が標準価格として恒久化された。公式発表は2026年8月10日）。単価・性能の両面で Sonnet 5 のほうが有利なため、新規採用では Sonnet 5 が推奨される。",
       "**エンタープライズでの使い分け**: バッチ API（50% 割引）と組み合わせれば、大量処理では依然として競争力がある。ただし新規プロジェクトでは Sonnet 5 の**エージェント能力**（Anthropic 曰く「これまでで最もエージェント的な Sonnet」）が優位で、複雑なマルチステップワークフロー・ブラウザ自動化・Claude Code 統合の面で差が拡大している。",
       "【編集履歴】",
-      "・【追記 2026-07-07】後継 Claude Sonnet 5（6/30 GA）リリースに伴い、本記事を「前世代 Sonnet レビュー」として位置付けを明確化。タイトル・excerpt・本文を更新し、Sonnet 5 との比較（SWE-bench Pro、価格）を追加。新規採用では Sonnet 5 を推奨する旨を明記。rating 4.0→3.5、lastReviewed 更新。"
+      "・【追記 2026-07-07】後継 Claude Sonnet 5（6/30 GA）リリースに伴い、本記事を「前世代 Sonnet レビュー」として位置付けを明確化。タイトル・excerpt・本文を更新し、Sonnet 5 との比較（SWE-bench Pro、価格）を追加。新規採用では Sonnet 5 を推奨する旨を明記。rating 4.0→3.5、lastReviewed 更新。",
+      "【訂正 2026-09-30】（誤）Sonnet 5 の通常料金は $3/$15 で Sonnet 4.6 と同額（〜8/31 は導入価格 $2/$10 だった）→（正）Sonnet 5 は $2/$10 で、公式料金表では Sonnet 4.6 が $3/$15。公開時に案内された 9/1 の $3/$15 への引き上げは行われず、$2/$10 が標準価格として恒久化された（2026年8月10日に公式が発表）。excerpt と料金の段落を修正した。"
     ],
     "primarySources": [
       {
@@ -10343,6 +10344,21 @@ const ARTICLES_BODY = {
         "title": "Introducing Claude Sonnet 5",
         "site": "Anthropic",
         "url": "https://www.anthropic.com/news/claude-sonnet-5"
+      },
+      {
+        "title": "Pricing - Claude API Docs（Claude Sonnet 5 の脚注3）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Claude Sonnet 5 モデルページ（Pricing 節）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/models/sonnet-5/overview"
+      },
+      {
+        "title": "Release notes（2026年8月10日: Claude Sonnet 5 の導入価格が標準価格に）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
       }
     ]
   },

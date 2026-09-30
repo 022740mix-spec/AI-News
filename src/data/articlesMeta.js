@@ -4175,7 +4175,7 @@ export const ARTICLES_META = [
     "type": "review",
     "category": "model",
     "title": "Claude Sonnet 4.6 レビュー — Anthropic 前世代 Sonnet（後継 Sonnet 5 リリース済）、1Mコンテキスト・バランス型",
-    "excerpt": "Anthropic の前世代 Sonnet モデル（後継 **Claude Sonnet 5** が2026年6月30日にリリース済み）。1Mコンテキスト、日常のコーディングに最適だった主力。**新規採用では Sonnet 5 を推奨**、Sonnet 5 は SWE-bench Pro 63.2%（4.6 の 58.1%）で明確に上回り、料金は Sonnet 5 も **$3/$15** で同額（〜8/31 は Sonnet 5 が導入価格 $2/$10 だった）。Sonnet 4.6 は既存パイプラインの互換性維持や、Sonnet 5 のトークナイザ変更（1-1.35倍）で実コストが読みにくい環境向け。$3/$15 per 1M tokens。",
+    "excerpt": "Anthropic の前世代 Sonnet モデル（後継 **Claude Sonnet 5** が2026年6月30日にリリース済み）。1Mコンテキスト、日常のコーディングに最適だった主力。**新規採用では Sonnet 5 を推奨**、Sonnet 5 は SWE-bench Pro 63.2%（4.6 の 58.1%）で明確に上回り、料金は Sonnet 4.6 が $3/$15、Sonnet 5 は $2/$10（公開時は8/31までの導入価格とされたが、その後標準価格として恒久化された。公式発表は2026年8月10日）。Sonnet 4.6 は既存パイプラインの互換性維持や、Sonnet 5 のトークナイザ変更（1-1.35倍）で実コストが読みにくい環境向け。$3/$15 per 1M tokens。",
     "date": "2026-03-29",
     "newsDate": "2026-03-15",
     "author": "AI News 編集部",
