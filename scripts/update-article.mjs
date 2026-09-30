@@ -35,6 +35,8 @@
  *   ],
  *   "replaceTables": [                         // 任意。既存の表を caption で特定して差し替える
  *     { "matchCaption": "既存の caption の一部", "caption": "…", "headers": [...], "rows": [[...]] }
+ *     // caption を持たない表は matchIndex（tables 配列の添字、0 始まり）で指す:
+ *     { "matchIndex": 0, "caption": "…", "headers": [...], "rows": [[...]] }
  *   ],
  *   "addTables": [                             // 任意。表を足す。位置は段落の文字列で指定する
  *     { "after": "この段落の直後に置く", "caption": "…", "headers": [...], "rows": [[...]] }
@@ -42,6 +44,9 @@
  *   "appendToBody": "【追記 2026-09-20】…",   // 任意。body の末尾に段落を足す（配列も可）
  *   "addPrimarySources": [                     // 任意。出典を足す。url の重複は中断する
  *     { "title": "…", "site": "…", "url": "https://…" }
+ *   ],
+ *   "removePrimarySources": [                  // 任意。url で1件を特定して出典を外す（存在しない URL の除去など）
+ *     { "url": "https://…" }
  *   ],
  *   "updatePrimarySources": [                  // 任意。url で1件を特定し title / site を差し替える
  *     { "url": "https://…", "title": "…" }
@@ -97,6 +102,11 @@ for (const r of reps) {
   const n = (bodyEntry.body ?? []).filter((p) => p.includes(r.find)).length;
   if (n === 0) fail(`見つかりません: 「${r.find.slice(0, 60)}」`);
   if (n > 1) fail(`${n} 箇所に一致します。意図しない箇所を壊しうるため中断: 「${r.find.slice(0, 60)}」`);
+  // 同じ段落の中に複数回出ると、置換は最初の1回にしか効かず、残りが取り残される。
+  const para = (bodyEntry.body ?? []).find((p) => p.includes(r.find));
+  if (para.split(r.find).length - 1 > 1) {
+    fail(`同じ段落内に複数回出現します。1回しか置換されず取り残しが出るため中断: 「${r.find.slice(0, 60)}」`);
+  }
 }
 
 // ── 1件だけ組み立てる ──
@@ -142,11 +152,18 @@ for (const ins of inserts) {
 // 古い表を残したまま新しい表を足すことになり、読者には矛盾して見える。
 // 位置（`afterParagraph`）は既存のものを引き継ぐ。
 for (const t of patch.replaceTables ?? []) {
-  if (typeof t.matchCaption !== "string") fail("replaceTables の各要素は matchCaption が必要です。");
+  const hasCaption = typeof t.matchCaption === "string";
+  const hasIndex = Number.isInteger(t.matchIndex);
+  if (hasCaption === hasIndex) fail("replaceTables の各要素は matchCaption か matchIndex のどちらか一方が必要です。");
   const list = newBody.tables ?? [];
-  const hits = list.filter((x) => String(x.caption ?? "").includes(t.matchCaption));
-  if (hits.length === 0) fail(`差し替える表が見つかりません: 「${t.matchCaption.slice(0, 60)}」`);
-  if (hits.length > 1) fail(`差し替える表が複数あります: 「${t.matchCaption.slice(0, 60)}」`);
+  // caption を持たない表は matchCaption で特定できない。tables 配列の添字（0 始まり）で指す。
+  // 添字は表の並びに依存するため、caption があるならそちらを優先して使うこと。
+  const label = hasCaption ? `「${t.matchCaption.slice(0, 60)}」` : `添字 ${t.matchIndex}`;
+  const hits = hasCaption
+    ? list.filter((x) => String(x.caption ?? "").includes(t.matchCaption))
+    : (list[t.matchIndex] ? [list[t.matchIndex]] : []);
+  if (hits.length === 0) fail(`差し替える表が見つかりません: ${label}`);
+  if (hits.length > 1) fail(`差し替える表が複数あります: ${label}`);
   if (t.rows) {
     const headers = t.headers ?? hits[0].headers;
     for (const r of t.rows) {
@@ -254,6 +271,26 @@ if (updatedSources.length) {
   newBody.primarySources = list;
 }
 
+// ── primarySources の削除 ──
+//
+// **出典が、存在しないものを指していたと分かることがある。** 実際に、存在しない
+// npm パッケージの URL が出典欄に載っていた。名前だけ実在しない URL は、読者が
+// 名前を拾い、第三者が同名で公開すれば実行される。誤りを記事から消せなければ
+// 訂正にならない。url で1件を特定して外す（url が無い/複数なら中断する）。
+const removedSources = patch.removePrimarySources ?? [];
+if (removedSources.length) {
+  let list = [...(newBody.primarySources ?? [])];
+  for (const src of removedSources) {
+    if (!src || typeof src.url !== "string") fail("removePrimarySources には url が必要です。");
+    const hits = list.filter((x) => x.url === src.url);
+    if (hits.length === 0) fail(`外す出典が見つかりません: ${src.url}`);
+    if (hits.length > 1) fail(`同じ url の出典が複数あります: ${src.url}`);
+    list = list.filter((x) => x.url !== src.url);
+  }
+  if (list.length === 0) fail("removePrimarySources で出典が0件になります。出典は最低1件残してください。");
+  newBody.primarySources = list;
+}
+
 const newMeta = { ...meta };
 for (const [k, v] of Object.entries(patch.setMeta ?? {})) {
   if (!META_KEYS.includes(k)) fail(`meta に無いキーです: ${k}`);
@@ -265,11 +302,12 @@ if (dryRun) {
   console.log(`   対象: ${patch.id}`);
   for (const r of reps) console.log(`   置換: 「${r.find.slice(0, 50)}」→「${r.replace.slice(0, 50)}」`);
   for (const ins of inserts) console.log(`   挿入: 「${ins.find.slice(0, 40)}」の直後に ${ins.paragraphs.length} 段落`);
-  for (const t of patch.replaceTables ?? []) console.log(`   表の差し替え: 「${t.matchCaption.slice(0, 40)}」`);
+  for (const t of patch.replaceTables ?? []) console.log(`   表の差し替え: ${typeof t.matchCaption === "string" ? `「${t.matchCaption.slice(0, 40)}」` : `添字 ${t.matchIndex}`}`);
   for (const t of patch.addTables ?? []) console.log(`   表: 「${(t.caption || "").slice(0, 36)}」を「${t.after.slice(0, 30)}」の直後へ`);
   for (const para of appended) console.log(`   追記: 「${para.slice(0, 60)}」`);
   for (const src of addedSources) console.log(`   出典の追加: ${src.title} — ${src.url}`);
   for (const src of updatedSources) console.log(`   出典の書き換え: ${src.url} → ${src.title ?? '(title そのまま)'}`);
+  for (const src of removedSources) console.log(`   出典の削除: ${src.url}`);
   for (const [k, v] of Object.entries(patch.setMeta ?? {})) console.log(`   meta: ${k} = ${v}`);
   process.exit(0);
 }
@@ -325,8 +363,20 @@ if (JSON.stringify(got) !== JSON.stringify(newBody)) restore(`本文が意図と
 if (JSON.stringify(after.meta.find((x) => x.id === patch.id)) !== JSON.stringify(newMeta)) {
   restore(`meta が意図と一致しません: ${patch.id}`);
 }
+// 置換前の文字列が、意図しない場所に残っていないこと。
+// ただし、パッチ自身が出す文（置換後の文・挿入した段落・追記）が置換前の文字列を
+// 含むのは正当である。【訂正】は「（誤）〜」と旧文を引用するのが役割で、
+// 「X」を「X（補足）」に拡張する置換も同じ。これらまで残存扱いにすると、
+// 訂正の記録を書けなくなる。本文が意図どおりであることは上で厳密に検査済みなので、
+// ここで拾うのは「パッチが出していない段落に旧文が残った」場合だけにする。
+const provided = [
+  ...reps.map((r) => r.replace),
+  ...inserts.flatMap((i) => i.paragraphs),
+  ...appended,
+];
 for (const r of reps) {
-  if (got.body.some((p) => p.includes(r.find))) restore(`置換前の文字列が残っています: 「${r.find.slice(0, 40)}」`);
+  const stray = got.body.filter((p) => p.includes(r.find) && !provided.some((t) => p.includes(t)));
+  if (stray.length) restore(`置換前の文字列が残っています: 「${r.find.slice(0, 40)}」`);
 }
 
 console.log(`✅ 更新しました: ${patch.id}`);
