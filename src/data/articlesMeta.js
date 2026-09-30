@@ -8044,7 +8044,7 @@ export const ARTICLES_META = [
     },
     "rating": 4.5,
     "reviewCategory": "model",
-    "reviewCadence": "monthly",
+    "reviewCadence": null,
     "lastReviewed": "2026-09-30"
   },
   {
