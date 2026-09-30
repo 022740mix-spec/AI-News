@@ -11101,5 +11101,23 @@ export const ARTICLES_META = [
       "プラグイン",
       "開発ツール"
     ]
+  },
+  {
+    "id": "chatgpt-work-cross-device-sync-local-computer-access-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ChatGPT Work がデバイス間継続に対応、デスクトップで始めたタスクをウェブ・モバイルで続行できる仕組みと管理者の確認点",
+    "excerpt": "OpenAI は2026年9月29日付の DevDay 2026 のまとめで、ChatGPT Work の新しい同期タスクをデスクトップで開始し、ウェブやモバイルで続けられる機能を掲載した。オンラインで接続されたコンピュータが、ローカルのファイルやツールを必要とする手順を実行する。既存のタスクは元のモードのままで、新しいタスクから対象になる。有効化にはワークスペース所有者が Work Cloud と「Allow local computer access」を有効にし、デスクトップアプリ 26.929 以上への更新が必要と公式ドキュメントは説明している。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "ChatGPT",
+      "OpenAI",
+      "エンタープライズ",
+      "エージェント",
+      "セキュリティ"
+    ]
   }
 ];
