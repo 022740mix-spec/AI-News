@@ -88,6 +88,22 @@
     <summary>OpenAI は2026年9月14日、GPT-5.5 を10月14日に ChatGPT、ChatGPT Work、Codex の全プランで退役させると告知した。OpenAI API は対象外。Codex で ChatGPT サインインを使う場合、Plus・Pro・Business・Enterprise・Edu は GPT-6 Sol、Free・Go は GPT-6 Luna が公式の案内する移行先になる。ワークスペース既定、保存済みのモデル設定、管理構成、カスタムエージェント、スケジュールタスク、スクリプトの gpt-5.5 指定を置き換える必要がある。</summary>
   </entry>
   <entry>
+    <title>Codex Cloud、セットアップを Codex に準備・テストさせて「公開」する再利用可能な環境を導入。新規タスクは準備済みファイルシステムの分離ワークスペースで開始</title>
+    <link rel="alternate" type="text/html" href="?a=codex-reusable-cloud-environments-publish-2026"/>
+    <id>tag:ai-tool-news.jp,2026:codex-reusable-cloud-environments-publish-2026</id>
+    <published>2026-09-30T15:00:00Z</published>
+    <updated>2026-09-30T15:00:00Z</updated>
+    <summary>OpenAI は2026年9月29日の DevDay 2026 で、Codex Cloud の「再利用可能なクラウド環境」を紹介した。開発環境の説明をもとに Codex がリポジトリを調べて依存関係やツールを導入・テストし、公開（Publish）すると、以後の新規タスクはその準備済みファイルシステムから、タスクごとに分離されたワークスペースで始まる。Web・モバイル・デスクトップアプリから継続できる。インターネットアクセス、環境変数とネットワークシークレット、VPN、OIDC の設定も公式ドキュメントに整理されている。提供範囲はプランとワークスペース設定に依存すると公式は書いており、プランごとの可否は明記されていない。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI、Codex Security Cloud を research preview で公開。接続した GitHub リポジトリのスキャンとコミット監視、検証エビデンスとパッチの確認、ドラフト PR 作成まで</title>
+    <link rel="alternate" type="text/html" href="?a=codex-security-cloud-research-preview-github-scan-2026"/>
+    <id>tag:ai-tool-news.jp,2026:codex-security-cloud-research-preview-github-scan-2026</id>
+    <published>2026-09-30T15:00:00Z</published>
+    <updated>2026-09-30T15:00:00Z</updated>
+    <summary>OpenAI は2026年9月29日の DevDay 2026 で、Security Cloud プラグイン（research preview、Web とデスクトップアプリ）を発表した。接続した GitHub リポジトリを Codex cloud でスキャンし、新規コミットも監視でき、検出結果・検証エビデンス・パッチを確認してからドラフトのプルリクエストを作成する。Repository スキャンと Commit changes の2種類があり、脅威モデルは監視対象ごとに編集できる。公式ドキュメントは SAST や人手のレビューの代替ではないと明記している。効果に関する説明は OpenAI のもので、独立した検証は確認できていない。</summary>
+  </entry>
+  <entry>
     <title>Anthropic脅威報告、Claudeを使った出会い系詐欺とイラン系による米海軍情報収集を開示 — 「助言」から「実行の自動化」に移る事例が並ぶ</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-threat-report-agentic-misuse-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-threat-report-agentic-misuse-2026</id>
