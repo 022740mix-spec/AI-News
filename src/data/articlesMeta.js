@@ -10989,5 +10989,24 @@ export const ARTICLES_META = [
       "エンタープライズ",
       "プライバシー"
     ]
+  },
+  {
+    "id": "openai-sign-in-with-chatgpt-plan-usage-limited-trial-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Sign in with ChatGPT、DevDay 2026 でプラン利用と開発者向けの提供範囲を掲載。商用サインインは限定トライアル",
+    "excerpt": "Sign in with ChatGPT は新機能ではなく、OpenAI の changelog によると2026年7月29日に Airtable、GitLab、HubSpot、Notion、Supabase、Vercel を皮切りにベータの展開が始まっている。2026年9月29日の DevDay 2026 のページでは、対象の Plus/Pro ユーザーが自分の ChatGPT プランをアプリの AI リクエストに使えることと、開発者向けの提供範囲が示された。商用サインインは選定パートナーとの限定トライアルで、プラン利用はオープンソースのパートナーと選定した非公開クライアントに提供される。公式ドキュメントには、プラン利用対応のアプリ12件、サインインのみ5件、オープンソース連携4件が掲載されている。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "ChatGPT",
+      "認証",
+      "API",
+      "オープンソース",
+      "プライバシー"
+    ]
   }
 ];

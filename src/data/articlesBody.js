@@ -22996,6 +22996,37 @@ const ARTICLES_BODY = {
         "url": "https://learn.chatgpt.com/docs/whats-new/september-28-october-2-2026"
       }
     ]
+  },
+  "openai-sign-in-with-chatgpt-plan-usage-limited-trial-2026": {
+    "body": [
+      "Sign in with ChatGPT は、2026年9月29日の DevDay 2026 で登場した機能ではない。OpenAI の changelog には、2026年7月29日に、対応するプラグインとパートナーサイトでベータの展開が始まったと記載されており、最初の対象は Airtable、GitLab、HubSpot、Notion、Supabase、Vercel である。このときの説明は、プラグインの接続時にサービス側のアカウントを少ない手順で作成・連携できる、というものだった。9月29日付の DevDay 2026 のページで新たに掲載されているのは、対応アプリで対象の ChatGPT Plus と Pro の契約者が自分の ChatGPT プランを AI リクエストに使えることと、開発者向けの提供範囲である。プラン利用がいつ最初に案内されたかは、今回確認した資料からは分からない。以下は OpenAI の公式ドキュメント（ユーザー向けページ、開発者向けクイックスタート、DevDay 2026 のページ、changelog）に書かれた範囲でまとめる。",
+      "提供範囲について、DevDay 2026 のページと開発者向けクイックスタートは同じ内容を書いている。商用のサインインは選定された商用パートナーとの限定トライアルであり、ChatGPT プランの利用はオープンソースのパートナーと、選定された非公開クライアントに提供される。ユーザー向けページの一覧では、ChatGPT プラン利用に対応するアプリとして Amp Code、Conductor、Dactyl、Devin、Hermes Agent、Hyperagent、Kilo Code、Lovable（coming soon と表記されている）、Notion、Vercel、Vorflux、Warp の12件、サインインのみのアプリとして Airtable、Canva、GitLab、HubSpot、Supabase の5件、オープンソース連携として OpenClaw、OpenCode、Pi、T3 の4件が挙がっている。",
+      "ユーザー側の流れは、対応アプリで Continue with ChatGPT を選び、使いたい ChatGPT アカウントでサインインし、アプリが求める名前・メールアドレス・プロフィール写真などの情報を確認して進む、というものだ。同じメールアドレスのアカウントがすでにアプリにある場合は、アプリの案内に従って確認とアカウントの連携を行う。すでにアプリのアカウントを持っている場合は、アプリにサインインしたうえで、アカウントや請求の設定にある ChatGPT のオプションから連携もできる。ChatGPT プランを使う場合は、アプリが Use your ChatGPT plan の許可を求めるので、内容を確認して許可するかどうかを選ぶ。公式ドキュメントによると、この利用は、プランに含まれる Codex / ChatGPT work の利用枠を使う。",
+      "コストの扱いについて、公式ドキュメントは次のように書いている。アプリの利用は既存のプランの上限に数えられ、アプリを接続しても新しい利用枠は加わらない。アプリ側に独自の料金がある場合もある。開発者向けクイックスタートでは、オープンソースの開発者は、ユーザーに API キーの提供を求めずに、ユーザーの ChatGPT プランで AI の処理を動かせると説明されている。このフローではクライアント シークレットやパートナーの API キーなしで、対象の Responses API リクエスト向けの OAuth 認証情報が発行される。承認済みのパートナーアプリについては、ユーザーの ChatGPT プランに含まれる利用分、または利用可能なクレジットで対象の AI リクエストを完了できると書かれている。つまり、この記述の範囲では、AI リクエストの利用分はユーザー側のプランに数えられる。アプリ側の課金や、開発者側に費用が生じるかどうかの詳細は、今回確認した文書には書かれていない。",
+      "ユーザーが自分で管理できる点は、公式ドキュメントに具体的に書かれている。ChatGPT の Settings > Usage で、接続したアプリがプランをどれだけ使っているかを確認できる。App limits でアプリごとの週間上限を、プラン全体の週間利用量に対する割合として設定でき、この上限は上限値であって、別枠の利用枠や確保された割り当てではない。外部パートナーのツールへのアクセスを完全に切る場合は、Settings > Security and login > Sign in with ChatGPT でアプリを選んで Disconnect する。プラン利用で名指しされている対象は Plus と Pro のみで、ワークスペースの管理者がプラン利用を制御する仕組みは、今回確認した資料には見当たらない。資料で確認できる制御は、ユーザー側の App limits と Disconnect である。",
+      "開発者向けクイックスタートは、統合を3種類に分けている。ウェブサイトへのサインイン、ChatGPT プラグイン向けのサインイン、オープンソースアプリでの ChatGPT プラン利用である。サインインのボタンは Continue with ChatGPT と表記し、他のサインイン手段と同程度の目立ち方で並べ、OpenAI の承認済みブランド表示を使うこと、既存アカウントには確認とリンクの手段を用意すること、企業のシングルサインオンが必要な場合は既存のサインイン体験へ誘導することが挙げられている。流れは、アプリが PKCE 付きの OpenID Connect サインインを開始し、ユーザーが OpenAI で認証と同意を行い、OpenAI が登録済みのコールバックに認可コードを返し、バックエンドがコードを交換して OpenAI の ID トークンを検証し、アプリがローカルアカウントを特定または作成して独自のセッションを発行する、という5段階である。アカウント作成、企業向けのサインインポリシー、セッション、認可、コネクタのアクセスはアプリ側の責任で、Sign in with ChatGPT は検証済みの OpenAI の ID を提供する、と整理されている。",
+      "スコープの区別は、実装者が最初に確認する点だろう。ID のみのクライアントは openid profile email を要求して、サインイン用の ID トークンを受け取る。この ID スコープにより、アプリは安定したアカウント識別子と、名前・メールアドレス・プロフィール写真を受け取れる。ChatGPT プランを使うクライアントは、Responses API 向けの別のスコープも要求し、ユーザーがそれを許可した場合にだけ、トークンのレスポンスに対象の推論リクエスト用のアクセストークンが含まれる。プラグインの場合は、ChatGPT にコネクタの認可コードを返し、コネクタの権限と認証情報は OpenAI の ID トークンとは別に保たれる。パートナーに渡る情報について、7月29日の changelog は、名前、メールアドレス、プロフィール写真（取得できる場合）のみで、プラグインが求めるアクセスは別の手順で確認・承認する必要があると書いている。",
+      "OpenAI は、ID スコープは ChatGPT の会話や OpenAI API のリソースへのアクセスを付与せず、プラン利用のスコープもユーザーの API キーや会話へのアクセスを与えず、プランを使ってもアプリが会話やメモリにアクセスできるようにはならない、と説明している。これらは当事者である OpenAI 自身の説明であり、独立した検証は確認できていない。",
+      "確認できていない範囲も明記する。開発者向けドキュメントのサイドバーには、Request a client ID、Registration and sign-in、Token reference、Errors and recovery、Preview limitations、Self-hosted VMs といったページが並んでいるが、これらの本文と、オープンソース向けの認可・リクエストの詳細な仕様（token-sharing-open-source）は、本記事では読んでいない。特に Preview limitations は提供上の制約に関わる可能性があり、実装前に当該ページで確認してほしい。商用アプリの開発者が確認すべきなのは、自分のアプリが選定パートナーに当たるかどうか、オープンソースとして提供する場合はどの条件で対象になるかである。以上はすべて OpenAI 自身の公式ドキュメントに基づく当事者の説明で、独立した検証は確認できていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Sign in with ChatGPT（ユーザー向けドキュメント）",
+        "url": "https://learn.chatgpt.com/docs/sign-in-with-chatgpt"
+      },
+      {
+        "title": "Quickstart – Sign in with ChatGPT（OpenAI Developers）",
+        "url": "https://developers.openai.com/siwc/quickstart"
+      },
+      {
+        "title": "DevDay 2026（What's new）",
+        "url": "https://learn.chatgpt.com/docs/whats-new/devday-2026"
+      },
+      {
+        "title": "Codex changelog（2026-07-29 Sign in with ChatGPT (beta)）",
+        "url": "https://learn.chatgpt.com/docs/changelog#codex-2026-07-29"
+      }
+    ]
   }
 };
 
