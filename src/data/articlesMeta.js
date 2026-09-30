@@ -10934,5 +10934,23 @@ export const ARTICLES_META = [
       "エンタープライズ",
       "API"
     ]
+  },
+  {
+    "id": "codex-cli-0-159-release-notes-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.159.0〜0.159.2 の変更点、instant_interrupt と GPT-6.1 Sol 既定化",
+    "excerpt": "OpenAI は2026年9月29日に Codex CLI の 0.159.0、0.159.1、0.159.2 を公開した。0.159.0 は opt-in の instant_interrupt、新規セッションの簡素なウェルカム画面、警告ビューアの変更、Mermaid の対応拡大、app-server のスレッド履歴ページネーションなどを追加。0.159.1 は GPT-6.1 Sol をバンドルカタログと Amazon Bedrock のカタログで既定にし、0.159.2 は Windows のコンソール窓のちらつきを抑えた。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "GPT-6",
+      "開発ツール"
+    ]
   }
 ];
