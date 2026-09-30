@@ -271,6 +271,72 @@ function ArticleEmbed({ embed }) {
   return null;
 }
 
+/** 自前の動画。自動再生しない。再生できない環境向けに代替テキストとファイルへのリンクを添える */
+function ArticleVideo({ video }) {
+  const src = resolveMediaSrc(video.src);
+  const poster = video.poster ? resolveMediaSrc(video.poster) : undefined;
+  const label = video.alt || video.caption || "動画";
+  return (
+    <figure className="article-video">
+      <video
+        className="article-video__player"
+        controls
+        preload="metadata"
+        playsInline
+        src={src}
+        poster={poster}
+        aria-label={label}
+        {...(typeof video.width === "number" ? { width: video.width } : {})}
+        {...(typeof video.height === "number" ? { height: video.height } : {})}
+      >
+        <p className="article-video__fallback">
+          このブラウザでは動画を再生できません。{label}
+          <a href={src} target="_blank" rel="noopener noreferrer">動画ファイルを開く</a>
+        </p>
+      </video>
+      <figcaption className="article-figure__caption">
+        {video.caption}
+        <a className="article-video__file-link" href={src} target="_blank" rel="noopener noreferrer">
+          動画ファイルを開く
+        </a>
+      </figcaption>
+    </figure>
+  );
+}
+
+const DEMO_ASPECT_RE = /^\d+(?:\.\d+)?\s*\/\s*\d+(?:\.\d+)?$/;
+
+/**
+ * 自前の埋め込みデモ。モデルが生成したコードを含むため sandbox="allow-scripts" のみで隔離する。
+ * allow-same-origin は付けない（付けるとサイトの localStorage / Cookie に触れられる）。
+ */
+function ArticleDemo({ demo }) {
+  const src = resolveMediaSrc(demo.src);
+  const aspect = typeof demo.aspect === "string" && DEMO_ASPECT_RE.test(demo.aspect) ? demo.aspect : "16/9";
+  return (
+    <figure className="article-demo">
+      <div className="article-demo__frame" style={{ aspectRatio: aspect }}>
+        <iframe
+          src={src}
+          title={demo.title}
+          sandbox="allow-scripts"
+          loading="lazy"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+      <figcaption className="article-figure__caption">
+        {demo.caption}
+        <span className="article-demo__note">
+          モデルが生成したコードを、サイトから隔離した枠（sandbox）の中で読み込んでいます。
+          表示されない場合は
+          <a href={src} target="_blank" rel="noopener noreferrer">別タブで開く</a>
+          ことができます。
+        </span>
+      </figcaption>
+    </figure>
+  );
+}
+
 /** トップ：WEBデザインギャラリー風「本日の1本」 */
 function ArticleProse({ article }) {
   const figures = article.figures ?? [];
@@ -281,6 +347,10 @@ function ArticleProse({ article }) {
   const tablesAfter = (i) => tables.filter((t) => t.afterParagraph === i);
   const chartsAfter = (i) => charts.filter((c) => c.afterParagraph === i);
   const embedsAfter = (i) => embeds.filter((e) => e.afterParagraph === i);
+  const videos = article.videos ?? [];
+  const demos = article.demos ?? [];
+  const videosAfter = (i) => videos.filter((v) => v.afterParagraph === i);
+  const demosAfter = (i) => demos.filter((d) => d.afterParagraph === i);
   return (
     <div className="prose prose--article">
       {article.body.map((p, i) => {
@@ -316,6 +386,12 @@ function ArticleProse({ article }) {
           ))}
           {embedsAfter(i).map((e, ei) => (
             <ArticleEmbed key={`embed-${i}-${ei}`} embed={e} />
+          ))}
+          {videosAfter(i).map((v, vi) => (
+            <ArticleVideo key={`video-${i}-${vi}`} video={v} />
+          ))}
+          {demosAfter(i).map((d, di) => (
+            <ArticleDemo key={`demo-${i}-${di}`} demo={d} />
           ))}
         </Fragment>
       );

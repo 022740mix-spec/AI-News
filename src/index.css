@@ -1889,6 +1889,55 @@ a.article-embed__x-link {
   background: var(--bg1);
 }
 
+/* ── 記事内 動画・埋め込みデモ ── */
+.article-video,
+.article-demo {
+  margin: 1.35rem 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface-solid);
+}
+.article-video__player {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  background: #000;
+}
+.article-video__fallback {
+  padding: 1rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--text-base);
+}
+.article-video__file-link {
+  margin-left: 0.5rem;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.article-demo__note a {
+  color: var(--accent);
+  white-space: nowrap;
+}
+.article-demo__frame {
+  width: 100%;
+  background: var(--bg1);
+}
+.article-demo__frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+.article-demo__note {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: var(--text-sm);
+  color: var(--muted);
+}
+
 /* ── 記事内 比較表 ── */
 .article-table-figure {
   margin: 1.35rem 0;

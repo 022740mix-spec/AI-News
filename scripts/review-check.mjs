@@ -23,17 +23,19 @@
  *  16. date が YYYY-MM-DD 形式か
  *  17. newsDate が date より未来でないか
  *  18. figures / coverImage が参照する画像が実在するか（Error）
- *  19. tables / figures / charts / embeds に afterParagraph があるか（Error）
+ *  19. tables / figures / charts / embeds / videos / demos に afterParagraph があるか（Error）
  *  20. 本文に生の Markdown（フェンス単独段落・h1・表・外部リンク）が残っていないか
  *  21. primarySources の url が外部 https URL か
  *  22. review の rating が ratings の加重平均と一致するか
+ *  23. videos / demos の src が public/ 配下に実在するか、サイズが過大でないか、
+ *      demos の HTML が外部通信をしていないか（AI 生成コードを iframe で読むための安全確認）
  *
  * 18〜22 は 2026-08 の棚卸で発覚した問題を機械的に再発防止するために追加した。
  * いずれも「データとしては正常だが、読者の画面では壊れている」種類の欠陥で、
  * 従来の検査では検出できなかった。
  */
 
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync, statSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -259,7 +261,7 @@ for (const a of ARTICLES) {
   // 19. tables / figures / charts / embeds に afterParagraph があるか
   //     ArticleDetail.jsx は afterParagraph === i で描画位置を決めるため、
   //     未設定だとどの段落にも描画されず、永久に非表示になる。
-  for (const key of ["tables", "figures", "charts", "embeds"]) {
+  for (const key of ["tables", "figures", "charts", "embeds", "videos", "demos"]) {
     for (const [idx, item] of (a[key] ?? []).entries()) {
       if (typeof item.afterParagraph !== "number") {
         error(a.id, `${key}[${idx}] に afterParagraph がありません（描画されません）`);
@@ -270,6 +272,53 @@ for (const a of ARTICLES) {
         );
       }
     }
+  }
+
+  // 23. videos / demos が参照するファイル
+  //     - 実在しなければ動画は再生できず、iframe は空白になる（データ上は正常）
+  //     - 動画が大きすぎると GitHub Pages 経由でモバイル回線の読者に負担をかける
+  //     - demos は AI が生成したコード。sandbox（allow-scripts のみ）で隔離するが、
+  //       外部通信・外部スクリプトを含むものは「自己完結」の前提が崩れるため警告する
+  const VIDEO_MAX_BYTES = 15 * 1024 * 1024;
+  const DEMO_MAX_BYTES = 2 * 1024 * 1024;
+  const resolvePublic = (src) => {
+    const full = resolve(PUBLIC_DIR, src.replace(/^\.\//, "").replace(/^\/+/, ""));
+    return full.startsWith(PUBLIC_DIR + "/") ? full : null;
+  };
+  for (const [idx, v] of (a.videos ?? []).entries()) {
+    if (!v.src) { error(a.id, `videos[${idx}] に src がありません`); continue; }
+    if (/^([a-z]+:)?\/\//i.test(v.src)) { error(a.id, `videos[${idx}] の src は public/ 配下の相対パスにしてください: ${v.src}`); continue; }
+    if (!/\.(webm|mp4)$/i.test(v.src)) warn(a.id, `videos[${idx}] の拡張子が webm / mp4 ではありません: ${v.src}`);
+    if (!v.caption) warn(a.id, `videos[${idx}] に caption がありません`);
+    const full = resolvePublic(v.src);
+    if (!full || !existsSync(full)) { error(a.id, `videos の動画が存在しません: ${v.src}`); continue; }
+    const size = statSync(full).size;
+    if (size > VIDEO_MAX_BYTES) warn(a.id, `videos[${idx}] が大きすぎます (${(size / 1048576).toFixed(1)}MB > 15MB): ${v.src}`);
+    if (v.poster) {
+      const pf = /^https?:\/\//i.test(v.poster) ? null : resolvePublic(v.poster);
+      if (/^https?:\/\//i.test(v.poster)) warn(a.id, `videos[${idx}] の poster は public/ 配下のファイルにしてください: ${v.poster}`);
+      else if (!pf || !existsSync(pf)) error(a.id, `videos の poster が存在しません: ${v.poster}`);
+    }
+  }
+  for (const [idx, d] of (a.demos ?? []).entries()) {
+    if (!d.src) { error(a.id, `demos[${idx}] に src がありません`); continue; }
+    if (/^([a-z]+:)?\/\//i.test(d.src)) { error(a.id, `demos[${idx}] の src は public/ 配下の相対パスにしてください: ${d.src}`); continue; }
+    if (!/\.html?$/i.test(d.src)) warn(a.id, `demos[${idx}] の拡張子が .html ではありません: ${d.src}`);
+    if (!d.title) warn(a.id, `demos[${idx}] に title がありません`);
+    if (!d.caption) warn(a.id, `demos[${idx}] に caption がありません`);
+    const full = resolvePublic(d.src);
+    if (!full || !existsSync(full)) { error(a.id, `demos の HTML が存在しません: ${d.src}`); continue; }
+    const size = statSync(full).size;
+    if (size > DEMO_MAX_BYTES) warn(a.id, `demos[${idx}] が大きすぎます (${(size / 1048576).toFixed(1)}MB > 2MB): ${d.src}`);
+    const html = readFileSync(full, "utf8");
+    // xmlns 名前空間（SVG 等）は通信ではないので除外して外部 URL を探す
+    const stripped = html.replace(/xmlns(:\w+)?\s*=\s*["'][^"']*["']/g, "");
+    const ext = stripped.match(/(?:https?:)?\/\/[a-z0-9-]+(?:\.[a-z0-9-]+)+[^\s"'<>)]*/gi) ?? [];
+    if (ext.length) warn(a.id, `demos[${idx}] (${d.src}) に外部 URL があります（自己完結にしてください）: ${[...new Set(ext)].slice(0, 3).join(", ")}`);
+    if (/<script\b[^>]*\bsrc\s*=/i.test(html)) warn(a.id, `demos[${idx}] (${d.src}) が <script src=…> を使っています（インライン化してください）`);
+    if (/\b(?:fetch|XMLHttpRequest|WebSocket|EventSource|sendBeacon)\b/.test(html)) warn(a.id, `demos[${idx}] (${d.src}) に外部通信 API (fetch / XMLHttpRequest / WebSocket 等) があります。iframe 内の文書には親ページの CSP が及ばないため、意図を確認してください`);
+    if (!/<meta[^>]+http-equiv\s*=\s*["']?Content-Security-Policy/i.test(html)) warn(a.id, `demos[${idx}] (${d.src}) に CSP の <meta> がありません（default-src 'none' 等で自ら外部通信を封じることを推奨）`);
+    if (/\b(?:window\.)?(?:parent|top)\s*\.|window\.(?:parent|top)\b/.test(html)) warn(a.id, `demos[${idx}] (${d.src}) が親ウィンドウ (parent / top) を参照しています`);
   }
 
   // 20. 本文に生の Markdown が残っていないか

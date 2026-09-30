@@ -20,7 +20,7 @@ const META_KEYS = [
   "weekRoundupPeriod", "lastReviewed", "reviewCadence", "ratings", "rating",
   "status", "reviewCategory",
 ];
-const BODY_KEYS = ["body", "tables", "figures", "charts", "embeds", "primarySources"];
+const BODY_KEYS = ["body", "tables", "figures", "charts", "embeds", "videos", "demos", "primarySources"];
 
 // ── メタデータ配列 ──
 const metaArr = ARTICLES.map((a) => {
