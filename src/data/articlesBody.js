@@ -24435,6 +24435,258 @@ const ARTICLES_BODY = {
         "url": "https://learn.chatgpt.com/docs/enterprise/roles-and-workspace-permissions"
       }
     ]
+  },
+  "gpt-6-review": {
+    "body": [
+      "GPT-6 世代は OpenAI の現行モデル群で、API のモデル ID は gpt-6-astra、gpt-6.1-sol、gpt-6-sol、gpt-6-luna の4つである。OpenAI の API ガイド（Using GPT-6）は、Astra を「最高の知能」、GPT-6.1 Sol を「速度・コスト・知能のバランス」、GPT-6 Luna を「最速で最も費用対効果が高い」と位置づけている。本稿は、旧世代の GPT-5.6 Sol / Terra / Luna を扱った既存レビュー（[GPT-5.6 レビュー](?a=gpt-5-6-review)）の後継として、この4モデルの仕様・価格・提供条件・利用制限を整理する。",
+      "本稿の根拠は、OpenAI の公式ドキュメント（API 側の developers.openai.com と、ChatGPT・Codex 側の learn.chatgpt.com）である。openai.com と platform.openai.com は調査環境から Cloudflare のチャレンジに阻まれて読めなかったが、価格・仕様・提供条件は上記2ドメインの公式ページで確認できた。一方、Astra の発表ページやベンチマークの元資料は読めておらず、ドキュメント側にもベンチマークの数値は載っていなかった。そのため、本稿は性能の数値を一切掲載しない。性能に関する記述はすべて OpenAI 自身の説明の引用であり、独立した第三者による検証は確認できていない。",
+      "【4モデルの位置づけ】",
+      "GPT-6 Astra: OpenAI は、コンピュータ操作・ブラウジング・ソフトウェア工学・科学・専門業務で state-of-the-art の性能を持つ「これまでで最も知的なモデル」と説明している。いくつかの評価では大幅に少ない出力トークンでより強い結果を出し、タスクあたりの推定 API コストは、トークン単価が高いにもかかわらず旧モデルより低かったとも説明している。OpenAI は Astra を「これまでで最も aligned なモデル」とも説明している。いずれも OpenAI 自身の比較・自己評価であり、比較対象は以前のモデルで、対象の評価名・数値は参照先の発表ページに到達できず確認できていない。API 価格は入力 $10 / 出力 $50（100万トークンあたり）で、本世代で最も高い。",
+      "GPT-6.1 Sol: OpenAI は「Astra に近い性能を、より低いコストで」と説明し、複雑なコーディング・コンピュータ操作・専門業務向けに位置づけている。同時に、自分のタスクで Astra と比較して品質とコストのトレードオフを判断するよう案内している。Codex と ChatGPT Work への展開は9月29日の changelog に記載があり、Codex CLI 0.159.1 では同梱カタログの既定モデルが GPT-6.1 Sol になった。API 価格は入力 $2 / 出力 $10。",
+      "GPT-6 Sol: 複雑なコーディングとエージェント的なワークフロー向けとされる、旧 Sol である。API のモデルページは「より新しい Sol は GPT-6.1 Sol」と案内している。API 価格は GPT-6.1 Sol と同じ入力 $2 / 出力 $10 だが、キャッシュ入力は GPT-6 Sol が $0.20、GPT-6.1 Sol が $0.10 と異なる。知識のカットオフは GPT-6 Sol が 2026年4月20日、GPT-6.1 Sol が 4月30日と記載されている。reasoning effort の none は GPT-6 Sol が対応し、GPT-6.1 Sol と Astra は対応しない。",
+      "GPT-6 Luna: 要約・抽出・分類・限定的なコーディングなど、絞り込まれた大量処理向けとされる。API 価格は入力 $0.10 / 出力 $0.50。知識のカットオフは 2026年5月18日と記載されており、4モデルの中では最も新しい日付である。Codex の Ultra モードには対応せず、reasoning effort は Max までとされている。",
+      "共通仕様: API のモデルページによれば、4モデルとも入力はテキストと画像、出力はテキストで、コンテキストウィンドウは 1,050,000 トークン、最大出力は 128,000 トークンである（Astra・GPT-6 Sol・Luna のページには最大入力 922,000 トークンの記載もある）。GPT-6.1 Sol のページでは音声・動画は非対応、ファインチューニングは非対応とされている。Responses API では web search・file search・image generation・code interpreter・hosted shell・apply patch・skills・computer use・MCP・tool search が使える。",
+      "【API 価格】",
+      "次の表は、API ドキュメントの価格表（Standard、100万トークンあたり）である。入力が 272K トークンを超えるリクエストは、リクエスト全体が入力・キャッシュ側の単価 2倍・出力 1.5倍で課金される。Batch と Flex は Standard の 50%、Fast モードは Standard の 2倍とされている。データレジデンシー（地域処理）を使うと、対象モデルでは 10% の上乗せがある。なお GPT-6 Sol は、API の価格一覧の主表には載っておらず、モデルページの記載から表にした。",
+      "キャッシュ入力の単価は、GPT-6.1 Sol が非キャッシュ入力の 5%、GPT-6 Sol と Luna が 10% と、モデルで異なる（Astra は $1 で 10%）。キャッシュ書き込みは非キャッシュ入力の 1.25倍で課金されるが、Codex のクレジット課金には別立てのキャッシュ書き込み料金はない。API の見積もりとクレジットの見積もりで前提が異なる点に注意が必要である。",
+      "Astra の Ultrafast（API のサービスティア）は、価格表では入力 $60 / 出力 $300 で、Standard の 6倍にあたる。Ultrafast は Astra 向けに広く提供され、GPT-5.6 Sol にはプレビュー提供があるとされ、Ultrafast は現在、すべての API ユーザーに低いレート制限で提供されており、Astra の Ultrafast の既定 TPM は Tier 1〜3 で 500,000、Tier 4 で 1,000,000、Tier 5 で 5,000,000 である（これは Ultrafast の値で、Standard の Astra の TPM は Tier 3 で 2,000,000、Tier 4 で 4,000,000、Tier 5 で 40,000,000 と別に定められている）。ドキュメントは、エージェント用途では WebSocket の利用を強く推奨している。長コンテキスト（272K 超）の Ultrafast 価格は入力 $120 / キャッシュ入力 $12 / キャッシュ書き込み $150 / 出力 $450 である。Ultrafast は米国データレジデンシーとグローバル処理のみで、EU などの地域処理には対応しない。",
+      "Standard の API レート制限はモデルごとに定められている。Astra・GPT-6 Sol・GPT-6.1 Sol の TPM は Tier 1 で 500,000、Tier 2 で 1,000,000、Tier 3 で 2,000,000、Tier 4 で 4,000,000、Tier 5 で 40,000,000 である。Luna は Tier 2 で 2,000,000、Tier 3 で 4,000,000、Tier 4 で 10,000,000、Tier 5 で 180,000,000 と、上限が高い。GPT-6.1 Sol のページでは Free ティアは非対応と記載されている。",
+      "【ChatGPT・Codex での利用枠と料金】",
+      "ChatGPT Work と Codex は利用枠を共有している。サブスクリプション側は、モデルごとにクレジットの消費レートが定められている（次表、100万トークンあたり）。同ページは、API のトークン価格をサブスクリプションの利用枠の見積もりに使わないよう注記している。また同ページは、GPT-5.6 Sol の販促価格が少なくとも 2026年11月21日まで続くと記載している。",
+      "同じ料金ページによれば、Plus と Standard Business の5時間あたりのローカルメッセージ数の目安は、Astra が 5〜45、GPT-6.1 Sol が 15〜160、GPT-6 Sol が 15〜150、GPT-6 Luna が 350〜3,000 である。これは OpenAI の推定値による目安で、固定の上限ではなく、タスクの大きさやコンテキストで変わり、週次の上限が別にかかることもある。Pro プランには現在5時間の上限がなく、Pro は月額 $100・$200・$500 の3段階（Ultrafast は $500 のみ）、Plus は月額 $20、Go は月額 $8、Free は無料と記載されている。Free と Go で使えるのは、デスクトップアプリの GPT-6 Luna（Standard 速度）で、展開状況による。",
+      "【速度モード】",
+      "Fast モードは、GPT-6.1 Sol・Astra・GPT-6 Sol・Luna で使える。API ドキュメントは Fast モード全体を Standard 比で最大 2.5倍の速度と説明している（具体的に 2.5倍と書かれているのは gpt-5.6-sol で、GPT-6 各モデルでの倍率は明記されていない）。Codex 側のドキュメントでは、サブスクリプションの利用枠を Standard の 2.5倍、購入クレジットと Enterprise の従量課金を 2倍で消費すると記載している。なお Astra の Fast モードには、遅延の SLA は含まれない。API の Fast モードにはランプレート制限もあり、トラフィックを急に増やすと一部のリクエストが Standard の速度に降格され、Standard の料金で課金される（レスポンスの service_tier が default になる）。目安として 1M TPM に達したあとは、15分ごとの増加を 50% 以内に抑えるよう案内されている。Fast と Standard は同じレート制限を共有する。GPT-6.1 Sol の Ultrafast は「後日対応予定」とされ、この時点では Standard と Fast のみである。",
+      "Astra の Ultrafast は、Codex では Standard の Astra より最大 8倍速くトークンを生成するとされている。ドキュメントはこれを、トークン生成速度の比較であり、課金レートやタスク全体の完了時間ではないと明記している。提供対象は Pro $500 と、対象の Enterprise・Edu プランで、Pro $500 では含まれる利用枠、次いでクレジットを消費する。利用枠の消費は Standard の 8倍、購入クレジットと Enterprise の従量課金は 6倍である。Enterprise では既定で無効で、ワークスペースの所有者が有効化する。米国外での推論レジデンシーを要件とするワークスペースには提供されない。8倍という速度は OpenAI の数値であり、独立した計測は確認できていない。",
+      "【Ultra とマルチエージェント】",
+      "Codex と ChatGPT Work の Ultra モードは、サブエージェントを使って複雑な作業を並列に進める設定である。OpenAI は、作業を意味のある部分に分けられるときに選ぶもので、ほとんどのタスクでは Max や Ultra は不要と案内している。API 側の Multi-agent（Responses API）はベータで、ドキュメントは GPT-6.1 Sol と GPT-5.6 の全モデルで利用できると記載している。max_concurrent_subagents の既定値は 3 で、サブエージェントの追加はトークン使用量を増やしうる。順序に依存する作業や、共有状態への書き込みが多い作業には向かないとも書かれている。一方、GPT-6 の API ガイドは GPT-6 が Multi-agent に対応すると読める書き方をしており、モデルごとの対応は各モデルのページで確認する必要がある。Astra について、ガイドは「サブエージェントへの委任が想定より少なくなることがある」とし、プロンプトで調整するよう案内している。",
+      "Multi-agent（ベータ）には制限がある。有効にすると /responses/compact エンドポイント、reasoning.summary、max_tool_calls が使えず、サーバー側の自動 compaction が暗黙に有効になる。利用にはベータ用ヘッダ（OpenAI-Beta: responses_multi_agent=v1）または SDK の betas 引数が必要で、ドキュメントは、ベータの間はアイテムのスキーマが変わりうると明記している。ツリーの深さとサブエージェントの総数には固定の上限がないため、コストの上限は max_concurrent_subagents だけでは決まらない。",
+      "【API の新機能】",
+      "API ガイドの What's new には、次の4つが挙がっている。Async tool calling（アプリケーションがツールを実行している間もモデルが推論や他のツール呼び出しを続けられる）、Mid-turn steering（作業中に追加の指示を送れる。WebSocket 接続で完了済みの作業を保持する）、Change reasoning mid-conversation（configuration_update 入力で、キャッシュを保ったまま reasoning effort を変更できる）、Misalignment monitoring（Astra の強化された安全策として、非同期で意図のずれを監視する）。GPT-6 は GPT-5.6 で使えた computer use・Structured Outputs・Programmatic Tool Calling・multi-agent・prompt caching・compaction・pro mode なども引き続き使えるとされている。",
+      "【挙動上の注意（OpenAI ドキュメントの記載）】",
+      "OpenAI のプロンプトガイドは、Astra の挙動として次を挙げている。ユーザーの意図が曖昧なときに確認の質問をする傾向が強く、ユーザーが仮定を置いて進めてほしい場面でも止まることがある。指示への追従が強い反面、skills や AGENTS.md などのファイルの指示に敏感で、矛盾する記述があると早い段階で作業を止めることがある。箇条書きや表を多用した詳細な応答になりやすい。コーディングでは、小さな変更でも必要以上に広いテストを行うことがある。OpenAI は、skills や AGENTS.md に影響しうる指示が残っていないか監査することを強く推奨し、自律的に進めさせるためのプロンプト例も提示している。",
+      "【安全監視と、タスクが止まる条件】",
+      "Codex と ChatGPT Work では、Astra に非同期の安全監視が組み込まれており、安全でない可能性のあるモデルの挙動を検知するとタスクを一時停止することがある。停止は、原因となった操作のあとに届くこともあり、サンドボックスや権限、結果のレビューの代わりにはならないと記載されている。Codex CLI とモバイル、およびゼロデータ保持・Modified Abuse Monitoring・米国外のデータ保存レジデンシーを使う場合は、詳細な所見の確認や再開ができず、タスクは終了する。API では、監視がリクエストを止めると HTTP 403 とエラーコード misalignment_policy_violation が返る。Responses API のうち、persisted reasoning・WebSocket・compaction のいずれかを使うリクエストでは自動停止の対象になり、Chat Completions は監視の対象外とされている。アラートは safety.alert.created の webhook で受け取れるが、ゼロデータ保持のリクエストではアラートの reason が null になりうる。ドキュメントは、アラートの配信と取得は完全な監査履歴にはならないとも記載している。API に停止した会話を再開する一般的な手段はなく、停止しても、それ以前に実行された操作は取り消されない。ドキュメントは、フラグは違反の確定ではなく、正当な操作が検知されることも見逃しもありうるとして、重要な操作には人間の承認を併用するよう案内している。",
+      "【提供条件（プラン・クライアント・管理者）】",
+      "ChatGPT では、GPT-6.1 Sol・GPT-6 Sol・GPT-6 Luna は Work と Codex で使え、Chat では使えないと記載されている。GPT-6.1 Sol の展開対象は Plus・Pro・Business・Enterprise・Edu（Codex のデスクトップアプリと CLI、ChatGPT Work の Web とモバイル）で、Free と Go は対象外である。Enterprise では GPT-6 Sol / Luna が、Enterprise と Edu では GPT-6.1 Sol と Astra が、それぞれ既定で無効で、管理者（Astra はワークスペースの所有者）が有効にする必要がある。Astra は展開から2週間で自動的に有効になることはなく、従来の Early Model Access 設定では有効にならない。ChatGPT ワークスペースで Astra を有効にしても API のアクセスは付与されず、API では組織とプロジェクトの権限に従う。ローカル設定でモデルを選んでも、ワークスペースの制御は上書きできない。",
+      "データレジデンシーについて、API ドキュメントは GPT-6.1 Sol・GPT-6 Sol・GPT-6 Luna が Standard・Flex・Batch で EU データレジデンシーに対応するとしている（GPT-6.1 Sol は米国と EU のみ）。Astra の EU 対応を明記した文は見つけられなかったが、データレジデンシーの対応表（Responses・Chat Completions・Batch の欄）のモデル一覧には gpt-6-astra が含まれている。Fast モードは、4モデルのいずれも EU データレジデンシーでは使えない。米国以外のデータレジデンシーを使うには、abuse monitoring controls の承認と Modified Retention 修正契約の締結が必要とされ、地域ストレージへの対応は地域処理への対応を意味しないとも注記されている。",
+      "【旧世代の扱い】",
+      "2026年10月14日に、GPT-5.5 が ChatGPT・ChatGPT Work・Codex から全プランで廃止される予定である（OpenAI API は対象外）。OpenAI は、Plus 以上では GPT-6 Sol、Free と Go では GPT-6 Luna への置き換えを案内している。GPT-5.4 と GPT-5.4 mini は、8月31日に ChatGPT サインインの Codex から廃止済みである（API と、API キーで使う Codex は対象外）。GPT-5.6 Sol / Terra / Luna は、展開期間中は引き続き使える。同じ時期の Codex 側の変更として、GPT-5.3-Codex-Spark は9月14日に退役し、独自プロバイダー向けの Chat Completions のサポートは非推奨（将来のリリースで削除予定）、codex mcp-server コマンドとスタンドアロンの codex-mcp-server は9月5日付で削除された。設定の書き換えが必要になりうる。API の移行では、Astra と GPT-6.1 Sol が reasoning effort の none に対応しないため、none を使っていたリクエストは low から試すこと、effort が none 以外のときは temperature・top_p・top_logprobs を外すこと、ツール呼び出しには Responses API を使うこと（Chat Completions での関数呼び出しは、GPT-6 Sol と Luna では reasoning_effort が none のときのみ）、プロンプトキャッシュの設定が変わること、が案内されている。",
+      "【強み（公式ドキュメントから確認できる範囲）】",
+      "(1) 価格帯が広い: 100万トークンあたりの入力単価で $10・$2・$0.10 と、同じ世代の中で選択肢が分かれている。キャッシュ入力は入力単価の 5〜10%、Batch と Flex は 50% と、コストを下げる手段も公式に用意されている。",
+      "(2) クレジットレートが GPT-5.6 の同名モデルより低い: ChatGPT・Codex のクレジットレートで、GPT-6 Sol は 50 / 5 / 250（入力 / キャッシュ入力 / 出力）と、GPT-5.6 Sol の 100 / 10 / 500 のちょうど半分である。GPT-6.1 Sol は 50 / 2.5 / 250 で、入力と出力は半分、キャッシュ入力は4分の1になる。GPT-6 Luna は 2.5 / 0.25 / 12.5 で、GPT-5.6 Luna の 5 / 0.5 / 30 より低い。ただしこれは別のモデルどうしの比較で、既存モデルの値下げではない（同ページは GPT-5.6 Sol・Terra・Luna のレートは据え置きと記載している）。changelog は、GPT-6 Sol と Luna が GPT-5.6 の前身より低いトークン価格で展開されると記載しているが、この記述は GPT-6.1 Sol についてのものではない。",
+      "(3) 長いコンテキスト: 4モデルとも 1,050,000 トークンのコンテキストウィンドウと 128,000 トークンの最大出力が記載されている。ただし 272K を超えると単価が上がる。",
+      "(4) 作業中の制御手段: Async tool calling、Mid-turn steering、reasoning effort の途中変更など、長い作業を人が調整しやすくする機能が API に追加されている。",
+      "(5) 管理面の制御: Enterprise と Edu では、モデルごとに管理者が有効化を制御でき、Ultrafast は既定で無効で、ユーザーごとの支出制限が適用される。",
+      "【注意点】",
+      "(1) 性能の独立検証が確認できていない: 本稿が扱える性能の情報は OpenAI 自身の説明のみで、数値は載せていない。採用の前に、自分のタスクでの比較が必要である。OpenAI 自身も、GPT-6.1 Sol と Astra を同じタスクで比較するよう案内している。",
+      "(2) 名前と世代の混在: GPT-6 Sol と GPT-6.1 Sol が併存し、API では reasoning effort の対応、キャッシュ入力の単価、Multi-agent の対応、データレジデンシーの扱いなどが異なる。既存の設定で gpt-6-sol を使っている場合は、切り替え前に移行ガイドの確認が必要である。",
+      "(3) Astra は安全監視でタスクが止まりうる: とくに Codex CLI、モバイル、ゼロデータ保持、米国外のデータ保存を使う環境では、停止するとタスクは終了し再開できない。長時間の自律実行を前提にする場合は、この条件を事前に確認する必要がある。",
+      "(4) 利用枠の見積もりが幅広い: Plus の5時間あたりのメッセージ数の目安は、Astra で 5〜45 と幅があり、タスクの内容で大きく変わる。Pro を除き、週次の上限もありうる。",
+      "(5) 提供の断片化: 同じモデルでも、プラン・クライアント・ワークスペース設定・展開状況で使えるかどうかが変わる。GPT-6.1 Sol・GPT-6 Sol・Luna は Chat では使えず、Work と Codex に限られる。",
+      "(6) 速度モードの追加コスト: Fast は利用枠を 2.5倍、Astra の Ultrafast は 8倍消費し、API の Ultrafast は Standard の 6倍の単価である。速度の数値はトークン生成速度で、タスクの完了時間ではない。",
+      "【本稿で確認できていないこと】",
+      "(a) ベンチマークの数値と、その独立検証。(b) 他社モデルとの比較。比較の根拠となる独立した測定が確認できていないため、本稿は行っていない。(c) Astra の EU データレジデンシー対応の明示的な記述（対応表に含まれることは確認した）。(d) GPT-6 Sol と Luna の API での提供開始日、および Astra の公開日。Astra は8月31日〜9月4日の週の What's new に掲載されているが、日付の特定は確認できなかった。(e) 実際の使用感。本稿はドキュメントの記載を整理したものであり、AI News 編集部による実測は含まない。",
+      "【採点】",
+      "★は、AI品質30% / 使いやすさ25% / コスパ20% / 拡張性15% / 企業向け10% の5軸の加重平均で、モデルの性能に加えて料金・提供条件・利用制限を含む採用判断向けの評価である。ベンチマークのみの総合値（モデル比較表）とは別の尺度である。★は、執筆した担当とは別のモデルによる独立採点との平均である（0.25 刻みで端数が出た軸は低い側に丸めた）。点数は、AI品質 4.5、使いやすさ 4.0、コスパ 4.5、拡張性 4.0、企業向け 3.5。AI品質は暫定値で、独立採点でも、ベンチマークの数値が一次資料に見つからず、性能の根拠が OpenAI の説明のみであることから、確信度は低いとされた。数値に到達できれば動きうる。拡張性は、ツールとモダリティの広さに対して、ファインチューニング非対応、音声・動画非対応、Multi-agent がベータで対応モデルが限られる点を反映している。企業向けは、管理機能の厚さに対して、新モデルが既定で無効であること、Astra の安全監視でタスクが終了する条件があること、Astra の EU 対応の明示が無いことを反映した。なお SLA とコンプライアンス認証（SOC 2 など）は、参照した資料では確認できていない。加重平均は 4.20 で、★は 4.2 とした。独立検証やベンチマークの数値が確認できた時点で見直す前提である。",
+      "【使い分けの観点】",
+      "OpenAI 自身のガイドは、コストと遅延を気にしないなら Astra、コストを下げたいなら GPT-6.1 Sol や Luna を選ぶという整理で、Luna は Low〜Extra high、GPT-6.1 Sol は Medium〜Extra high、Astra は Low〜Extra high を出発点として挙げている。これは OpenAI の目安であり、最終的には自分のタスクで同じ入力を使って比較し、基準を満たす最も軽い設定を選ぶことが推奨されている。編集部として補足すると、API を使うなら、272K を超えるプロンプトの単価、キャッシュ、Batch・Flex の割引の3点を先に見積もりに入れると、単価表から想像する費用と実際の費用のずれを減らせる。Enterprise・Edu の管理者は、モデルごとの有効化と、Astra の停止条件が業務のワークフローに合うかを先に確認する必要がある。",
+      "【編集履歴】",
+      "・【新規 2026-09-30】GPT-6 世代（Astra / GPT-6.1 Sol / GPT-6 Sol / Luna）のレビューを新規作成。旧世代の GPT-5.6 レビューの後継として、公式ドキュメント（developers.openai.com、learn.chatgpt.com）の記載を整理した。ベンチマークの数値は、到達できた一次資料に無かったため掲載していない。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 9,
+        "caption": "GPT-6 世代の API 価格（Standard、$ / 100万トークン。出典: OpenAI API ドキュメント、2026-09-30 確認）",
+        "headers": [
+          "モデル",
+          "入力",
+          "キャッシュ入力",
+          "出力",
+          "272K超の入力",
+          "272K超の出力"
+        ],
+        "rows": [
+          [
+            "GPT-6 Astra",
+            "$10.00",
+            "$1.00",
+            "$50.00",
+            "$20.00",
+            "$75.00"
+          ],
+          [
+            "GPT-6.1 Sol",
+            "$2.00",
+            "$0.10",
+            "$10.00",
+            "$4.00",
+            "$15.00"
+          ],
+          [
+            "GPT-6 Sol",
+            "$2.00",
+            "$0.20",
+            "$10.00",
+            "$4.00（倍率から算出）",
+            "$15.00（倍率から算出）"
+          ],
+          [
+            "GPT-6 Luna",
+            "$0.10",
+            "$0.01",
+            "$0.50",
+            "$0.20",
+            "$0.75"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 14,
+        "caption": "ChatGPT・Codex のクレジットレート（Standard、クレジット / 100万トークン。出典: learn.chatgpt.com の料金ページ、2026-09-30 確認）",
+        "headers": [
+          "モデル",
+          "入力",
+          "キャッシュ入力",
+          "出力"
+        ],
+        "rows": [
+          [
+            "GPT-6 Astra",
+            "250",
+            "25",
+            "1,250"
+          ],
+          [
+            "GPT-6.1 Sol",
+            "50",
+            "2.5",
+            "250"
+          ],
+          [
+            "GPT-6 Sol",
+            "50",
+            "5",
+            "250"
+          ],
+          [
+            "GPT-6 Luna",
+            "2.5",
+            "0.25",
+            "12.5"
+          ],
+          [
+            "GPT-5.6 Sol（旧世代）",
+            "100",
+            "10",
+            "500"
+          ],
+          [
+            "GPT-5.6 Terra（旧世代）",
+            "50",
+            "5",
+            "300"
+          ],
+          [
+            "GPT-5.6 Luna（旧世代）",
+            "5",
+            "0.5",
+            "30"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Using GPT-6",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/guides/latest-model"
+      },
+      {
+        "title": "GPT-6 Astra model page",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/models/gpt-6-astra"
+      },
+      {
+        "title": "GPT-6.1 Sol model page",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+      },
+      {
+        "title": "GPT-6 Sol model page",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/models/gpt-6-sol"
+      },
+      {
+        "title": "GPT-6 Luna model page",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/models/gpt-6-luna"
+      },
+      {
+        "title": "Pricing",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/pricing"
+      },
+      {
+        "title": "Ultrafast mode",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/guides/ultrafast-mode"
+      },
+      {
+        "title": "Fast mode",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/guides/fast-mode"
+      },
+      {
+        "title": "Multi-agent",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/guides/responses-multi-agent"
+      },
+      {
+        "title": "Misalignment monitoring",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/guides/safety-checks/misalignment-monitoring"
+      },
+      {
+        "title": "Model selection",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/guides/model-selection"
+      },
+      {
+        "title": "Your data",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/guides/your-data"
+      },
+      {
+        "title": "Models",
+        "site": "ChatGPT・Codex ドキュメント",
+        "url": "https://learn.chatgpt.com/docs/models"
+      },
+      {
+        "title": "Pricing",
+        "site": "ChatGPT・Codex ドキュメント",
+        "url": "https://learn.chatgpt.com/docs/pricing"
+      },
+      {
+        "title": "Speed",
+        "site": "ChatGPT・Codex ドキュメント",
+        "url": "https://learn.chatgpt.com/docs/agent-configuration/speed"
+      },
+      {
+        "title": "Changelog",
+        "site": "ChatGPT・Codex ドキュメント",
+        "url": "https://learn.chatgpt.com/docs/changelog"
+      },
+      {
+        "title": "Workspace model availability",
+        "site": "ChatGPT・Codex ドキュメント",
+        "url": "https://learn.chatgpt.com/docs/enterprise/workspace-model-availability"
+      },
+      {
+        "title": "Agent approvals and security",
+        "site": "ChatGPT・Codex ドキュメント",
+        "url": "https://learn.chatgpt.com/docs/agent-approvals-security"
+      }
+    ]
   }
 };
 

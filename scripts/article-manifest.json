@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-30",
-  "count": 522,
+  "count": 523,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -290,6 +290,7 @@
     "gpt-5-5-review",
     "gpt-5-6-review",
     "gpt-54-mini-nano-2026",
+    "gpt-6-review",
     "gpt-image-review",
     "guide-media-generative-tools-2026",
     "harvard-vibe-coding-course-2026",

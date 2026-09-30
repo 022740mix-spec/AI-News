@@ -11137,5 +11137,35 @@ export const ARTICLES_META = [
       "エージェント",
       "セキュリティ"
     ]
+  },
+  {
+    "id": "gpt-6-review",
+    "type": "review",
+    "category": "model",
+    "title": "GPT-6 Astra / GPT-6.1 Sol / Sol / Luna レビュー — API は $10/$50 から $0.10/$0.50 まで、Astra は安全監視でタスクが止まりうる、性能値は OpenAI 自身の説明のみ",
+    "excerpt": "OpenAI の GPT-6 世代を、公式ドキュメントの記載で整理した。API 価格は Astra が入力 $10 / 出力 $50、GPT-6.1 Sol と GPT-6 Sol が $2 / $10、Luna が $0.10 / $0.50。4モデルとも 1,050,000 トークンのコンテキストを持つ。Astra には非同期の安全監視があり、Codex CLI やモバイルでは停止するとタスクが終了する。Enterprise・Edu では新モデルが既定で無効。性能の数値は OpenAI 自身の説明のみで、独立した検証は確認できていないため、本稿は数値を掲載していない。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "10分",
+    "tags": [
+      "モデル",
+      "OpenAI",
+      "GPT-6",
+      "Astra",
+      "Sol",
+      "Luna"
+    ],
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": "monthly",
+    "ratings": {
+      "AI品質": 4.5,
+      "使いやすさ": 4,
+      "コスパ": 4.5,
+      "拡張性": 4,
+      "企業向け": 3.5
+    },
+    "rating": 4.2,
+    "reviewCategory": "model"
   }
 ];
