@@ -11284,5 +11284,24 @@ export const ARTICLES_META = [
     },
     "rating": 4.1,
     "reviewCategory": "model"
+  },
+  {
+    "id": "exp-sky-flight-four-claude-models-2026",
+    "type": "feature",
+    "category": "model",
+    "title": "同じ依頼で4つの Claude に「天空を飛ぶ映像」を作らせた実験——作業時間は5分から50分、盲検審査では Opus 5.5 が1位",
+    "excerpt": "Opus 5.5、Opus 5、Sonnet 5.5、Sonnet 5 に、同一の依頼文で40秒の空飛ぶ映像（単一 HTML）を1回ずつ作らせた。セッション作成から最後の成果物更新までは、Sonnet 5 が5分16秒、Sonnet 5.5 が6分21秒、Opus 5.5 が9分16秒、Opus 5 が49分46秒。モデル名を伏せた2つの審査役の順位は、Opus 5.5 が1位、Sonnet 5 が4位で一致し、中間の2つは入れ替わった。各モデル1回の結果であり、一般的な優劣を示すものではない。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-30",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "Anthropic",
+      "Opus 5",
+      "Opus 5.5",
+      "Sonnet 5",
+      "Sonnet 5.5",
+      "分析"
+    ]
   }
 ];
