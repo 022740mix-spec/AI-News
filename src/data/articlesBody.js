@@ -6188,22 +6188,25 @@ const ARTICLES_BODY = {
   },
   "pricing-comparison-all-tools-2026-march": {
     "body": [
-      "AI 開発ツールの料金体系は2026年を通じて改定が続いている。3月の[Windsurf の $15→$20 値上げとクォータ制移行](?a=windsurf-pricing-overhaul)、[Gemini CLI の Pro 有料化](?a=gemini-cli-v035)に始まり、**4月2日に Codex がメッセージ単位課金からクレジット制へ、6月1日に GitHub Copilot が従量課金（AI Credits）へ移行**した。定額サブスクリプションから、**「定額＋含まれるクレジット枠＋超過分は従量」というハイブリッド型への移行**が業界全体の方向になっている。ここでは主要ツールの料金を公式発表ベースで横並びにした。**本記事は月次で見直しており、最終更新は2026年8月11日**。",
-      "**CLI ツール**の料金は3パターンに分かれる。Claude Code は Pro $20/月・Max $100〜200/月・API 従量課金の3本立て。**Codex は提供範囲が大きく広がり、ChatGPT Free / Go $8 / Plus $20 / Pro / Business のいずれでも利用できる**（3月版で「ChatGPT Pro $200 以上が前提」としていたのは現在では誤り）。Gemini CLI は Flash モデルなら無料（1日1,000リクエスト）だが、Pro モデルは Google AI Pro $20/月または AI Ultra $100/月の加入が必要。Aider はツール自体が OSS 無料で、接続する LLM の API 費用のみがコストとなる。",
+      "AI 開発ツールの料金体系は2026年を通じて改定が続いている。3月の[Windsurf の $15→$20 値上げとクォータ制移行](?a=windsurf-pricing-overhaul)、[Gemini CLI の Pro 有料化](?a=gemini-cli-v035)に始まり、**4月2日に Codex がメッセージ単位課金からクレジット制へ、6月1日に GitHub Copilot が従量課金（AI Credits）へ移行**した。定額サブスクリプションから、**「定額＋含まれるクレジット枠＋超過分は従量」というハイブリッド型への移行**が業界全体の方向になっている。ここでは主要ツールの料金を公式発表ベースで横並びにした。**本記事は月次で見直しており、最終更新は2026年9月30日**。",
+      "**CLI ツール**の料金は3パターンに分かれる。Claude Code は Pro $20/月・Max $100〜200/月・API 従量課金の3本立て。**Codex は提供範囲が大きく広がり、ChatGPT Free / Go $8 / Plus $20 / Pro / Business のいずれでも利用できる**（3月版で「ChatGPT Pro $200 以上が前提」としていたのは現在では誤り）。Gemini CLI は、2026年6月18日に個人向け（無料の Gemini Code Assist for individuals、Google AI Pro、Google AI Ultra）への提供を終了している。Google の公式ブログ（5/19 付）は、個人向けの後継を Antigravity CLI としている。Gemini CLI は Gemini Code Assist Standard / Enterprise ライセンスと有料の API キーでは引き続き使える。Antigravity CLI は無料（$0/月、週次の利用制限つき）から始められ、Google AI Pro（$19.99/月）と AI Ultra（$99.99/月から）は5時間ごとに更新される枠が大きくなる。Aider はツール自体が OSS 無料で、接続する LLM の API 費用のみがコストとなる。",
       "**エディタ**では Cursor と Devin Desktop（旧 Windsurf）が同額の $20/月（Pro）で並ぶ。VS Code 本体は無料で、Copilot Pro $10/月が最安の有料 AI エディタ体験。**Zed は Personal $0（月2,000回の編集予測、自前 API キー持込可）/ Pro $10 / Business $30 per seat** で、サブスクリプションを増やさずに済ませたい場合の選択肢になる。上位帯では Cursor が Pro+ $60 / Ultra $200、Devin Desktop が Max $200 を用意しており、**エージェントを常時走らせる使い方では月 $200 前後がひとつの相場**になりつつある。",
       "**Enterprise 向け**では GitHub Copilot Enterprise（$39 per seat）が IP インデムニティ（知的財産補償）・監査ログ・SAML SSO を備え、組織導入のハードルが最も低い。Claude Code は SOC 2 準拠に加え Workload Identity Federation でクラウド資格情報の連携に対応する。Cursor は Teams Standard $40 / Teams Premium $120 per seat。企業導入の法的チェックポイントは[こちらの記事](?a=ai-enterprise-legal-checklist-2026)で詳しく整理している。",
-      "**モデル API の単価**も比較の前提として押さえておきたい。現行フラッグシップは [Claude Opus 5](?a=claude-opus-5-review) が $5/$25、Claude Fable 5 が $10/$50、[Claude Sonnet 5](?a=claude-sonnet-5-review) が $3/$15（〜8/31 は導入価格 $2/$10 だった）。OpenAI は [GPT-5.6 の値下げ](?a=openai-gpt-5-6-luna-terra-price-cut-2026)で Luna が $0.20/$1.20、Terra が $2/$12 になった。[Grok 4.5](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026) は $2/$6。オープンウェイト系では [Kimi K3](?a=moonshot-kimi-k3-open-weights-license-2026) が $3/$15。**サブスクリプションと API 従量のどちらが安いかは月間トークン量で逆転する**ため、月 $200 のプランを検討する段階に来たら、実測トークン量で従量課金と比較する価値がある。",
+      "**モデル API の単価**も比較の前提として押さえておきたい。現行フラッグシップは [Claude Opus 5](?a=claude-opus-5-review) が $5/$25、Claude Fable 5 が $10/$50、[Claude Sonnet 5](?a=claude-sonnet-5-review) が $2/$10（導入価格として告知されていた $2/$10 が8月31日以降も標準価格となり、予定されていた $3/$15 への引き上げは行われなかった）。OpenAI は [GPT-5.6 の値下げ](?a=openai-gpt-5-6-luna-terra-price-cut-2026)で Luna が $0.20/$1.20、Terra が $2/$12 になった。[Grok 4.5](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026) は $2/$6。オープンウェイト系では [Kimi K3](?a=moonshot-kimi-k3-open-weights-license-2026) が $3/$15。**サブスクリプションと API 従量のどちらが安いかは月間トークン量で逆転する**ため、月 $200 のプランを検討する段階に来たら、実測トークン量で従量課金と比較する価値がある。",
+      "【2026年9月30日時点の注記】本節の API 単価は8月11日版の世代を前提としている。その後、Anthropic の公式料金表には Claude Opus 5.5（$4/$20）、Claude Sonnet 5.5（$2/$10）、Claude Fable 5.1（$10/$50）が加わり、OpenAI の API 料金表には GPT-6 世代（Astra $10/$50、6.1 Sol $2/$10、Luna $0.10/$0.50）が載っている。xAI は Grok 4.7（$2/$6）を公開しており、Grok 4.5 のモデルページも同じ $2/$6 を示している。本文の単価は前提世代のまま残している。旧世代の単価は世代に紐づいており、名前だけ差し替えると根拠を失うためである。CLI 表の API 従量課金の列は、Claude Code と Codex の両方で、前提世代と現行世代の単価を同じ形式で併記した。Kimi K3 の $3/$15 は Moonshot の公式料金表で確認できた。",
       "コスト最適化の考え方: 個人でコストを抑えるなら **Aider（API 費用のみ）+ VS Code + Zed Personal** が最安構成。月 $20 で1ツールに絞るなら、CLI 重視で Claude Code Pro、エディタ重視で Cursor Pro。企業導入で統制を優先するなら Copilot Business / Enterprise が現実的な選択肢となる。**従量課金への移行が進んだため、定額プランの月額だけでは実効コストを見積もれない点に注意してほしい。** 導入前に、想定ワークロードで1か月の実測を取ることを推奨する。",
       "---",
       "**編集履歴**",
       "【訂正 2026-08-11】(1) Codex について「ChatGPT Pro（$200/月）以上のプランに含まれる形で提供され、単体の低価格プランはない」という記述を訂正しました。現在は Free / Go / Plus / Pro / Business のいずれでも利用できます。(2) Zed AI の料金を「AI 機能 $15/月」から現行の Personal $0 / Pro $10 / Business $30 per seat に訂正しました。(3) 「Windsurf」の運営元と製品名を Cognition の Devin Desktop に訂正しました（旧版は Anysphere 傘下と記載していましたが、これは事実ではありません）。",
       "【追記 2026-08-11】月次見直しにより全面更新。(1) Codex のクレジット制移行（4/2）と GitHub Copilot の従量課金移行（6/1）、(2) Cursor の Pro+ / Ultra / Teams Premium を含む現行プラン全体、(3) 現行モデルの API 単価（Opus 5 / Fable 5 / Sonnet 5 / GPT-5.6 / Grok 4.5 / Kimi K3）、(4) 定額から「定額＋クレジット枠＋従量」への業界的な移行という論点を追加しました。",
-      "【訂正 2026-09-02】Claude Sonnet 5 の単価を現行の **$3/$15** に更新した。**8月31日で導入価格 $2/$10 が終了している。** 本記事は月次見直し対象であり、料金は読者が採用と支出の判断に直接使うため、期限を過ぎた値を残してはならない。"
+      "【訂正 2026-09-02】Claude Sonnet 5 の単価を現行の **$3/$15** に更新した。**8月31日で導入価格 $2/$10 が終了している。** 本記事は月次見直し対象であり、料金は読者が採用と支出の判断に直接使うため、期限を過ぎた値を残してはならない。",
+      "【訂正 2026-09-30】(1) Claude Sonnet 5 の単価について、9/2 の訂正で「現行の $3/$15」としたのは誤りだった。（誤）$3/$15、8月31日で導入価格 $2/$10 が終了 →（正）$2/$10。Anthropic の公式料金表の脚注は、導入価格として告知していた $2/$10 が標準価格になり、9/1 に予定されていた $3/$15 への引き上げは行われないと記している。(2) Gemini CLI について、（誤）Flash モデルは1日1,000リクエストまで無料、Pro モデルは Google AI Pro / Ultra の加入が必要 →（正）6/18 に個人向け（無料・Google AI Pro・Google AI Ultra）への提供が終了し、個人向けの後継は Antigravity CLI。出典は Google Developers Blog（5/19）と Gemini CLI 公式サイトのプラン表示。個人でも有料の API キーなら Gemini CLI を使い続けられる。(3) Claude Code の備考について、（誤）Max は Fast Mode 含む →（正）Fast Mode は Pro / Max / Team / Enterprise でも利用クレジットのみで、サブスクの上限には含まれない。(4) Codex の上位プランに Pro $500 を加えた。公式の料金ページは Pro を $100 / $200 / $500 としている。Business は月払い $25、年払い $20。あわせて CLI 表の API 従量課金の列を、Claude Code と Codex で同じ形式（前提世代の単価と、2026-09-30 時点の現行世代の単価の併記）に揃えた。Codex の列は（旧）GPT-5.6 単価 →（新）前提世代 GPT-5.6 と現行世代 GPT-6.1 Sol $2/$10・Astra $10/$50 の併記。Claude Code の Fast Mode 単価は Opus 5 $10/$50、Opus 5.5 $8/$40 の両方を記載した。(5) Devin Desktop の Teams について、（誤）$40 per seat →（正）チーム基本料 $80/月 + フル開発者席 $40/月（最大200人）。",
+      "【追記 2026-09-30】月次見直し。(1) GitHub Copilot に個人向けの Copilot Max（$100/月、基本 10,000 クレジット）が加わったため、表に追記した。Copilot Pro $10 / Pro+ $39 / Business $19 / Enterprise $39 と 1クレジット = $0.01 は公式ドキュメントで再確認した。(2) Cursor（Pro $20 / Pro+ $60 / Ultra $200 / Teams $40・$120）、Devin Desktop（Free / Pro $20 / Max $200）、Zed（Personal $0 / Pro $10 / Business $30）、Aider（Apache 2.0）の料金は変更がないことを確認した。(3) API 単価の節に、本記事が前提とする世代より新しいモデルが出ている旨の注記を加えた。(4) 公式の資料で確認できなかった項目は直していない。Codex のクレジット制移行日（4/2）、Cursor CLI が Cursor Free に含まれるかどうか、Copilot の IP 補償がどのプランまで及ぶか、Zed Personal の編集予測 2,000回が月単位かどうかは、いずれも今回の確認範囲では一次資料に到達できていない。"
     ],
     "tables": [
       {
         "afterParagraph": 1,
-        "caption": "CLI ツール料金比較（2026年8月11日時点・公式発表および公開情報に基づく）",
+        "caption": "CLI ツール料金比較（2026年9月30日見直し・公式発表および公開情報に基づく）",
         "headers": [
           "ツール",
           "無料枠",
@@ -6218,29 +6221,29 @@ const ARTICLES_BODY = {
             "なし",
             "Pro $20/月",
             "Max $100 / $200/月",
-            "あり（Opus 5: $5/$25 per 1M）",
-            "Max は Fast Mode 含む"
+            "前提世代（8/11 版）: Opus 5 $5/$25 per 1M / 現行世代（2026-09-30 時点）: Opus 5.5 $4/$20、Fable 5.1 $10/$50 per 1M",
+            "Fast Mode はサブスクの上限に含まれず、利用クレジットでの課金（Opus 5 は $10/$50、Opus 5.5 は $8/$40 per 1M）"
           ],
           [
             "Codex",
             "ChatGPT Free に含まれる（制限あり）",
             "Go $8 / Plus $20/月",
-            "Pro $100 / $200、Business $25/月",
-            "あり（GPT-5.6 単価）",
+            "Pro $100 / $200 / $500、Business $25/月（年払いは $20）",
+            "前提世代（8/11 版）: GPT-5.6 Sol $4/$20、Terra $2/$12 per 1M / 現行世代（2026-09-30 時点）: GPT-6.1 Sol $2/$10、Astra $10/$50 per 1M",
             "4/2 よりクレジット制（API 単価連動）"
           ],
           [
             "Gemini CLI",
-            "Flash: 1日1,000回",
-            "Google AI Pro $20/月",
-            "AI Ultra $100/月",
-            "あり",
-            "3/25 より Pro モデルは有料サブスク限定"
+            "個人向けの無料提供は6/18に終了（後継の Antigravity CLI は $0・週次の利用制限つき）",
+            "Gemini CLI での個人向け提供（AI Pro・無料枠）は終了。個人でも有料の API キーなら継続利用可（Antigravity CLI では Google AI Pro $19.99/月）",
+            "Code Assist Standard / Enterprise ライセンス（Antigravity CLI では Google AI Ultra $99.99/月から）",
+            "あり（有料の API キー経由）",
+            "5/19 発表・6/18 に個人向け提供終了。3/25 の Pro モデル有料化はその前の経緯"
           ],
           [
             "Copilot CLI",
             "Copilot Free（制限あり）",
-            "Pro $10 / Pro+ $39/月",
+            "Pro $10 / Pro+ $39 / Max $100/月",
             "Business $19 / Enterprise $39 per seat",
             "AI Credits（1クレジット = $0.01）",
             "6/1 より従量課金へ移行"
@@ -6265,7 +6268,7 @@ const ARTICLES_BODY = {
       },
       {
         "afterParagraph": 2,
-        "caption": "エディタ料金比較（2026年8月11日時点・公式発表および公開情報に基づく）",
+        "caption": "エディタ料金比較（2026年9月30日見直し・公式発表および公開情報に基づく）",
         "headers": [
           "エディタ",
           "無料枠",
@@ -6288,14 +6291,14 @@ const ARTICLES_BODY = {
             "Free（日次・週次クォータ）",
             "Pro $20/月",
             "Max $200/月",
-            "Teams $40 per seat / Enterprise 要問合せ",
+            "Teams $80/月（チーム基本料）+ フル開発者席 $40/月（最大200人）/ Enterprise 要問合せ",
             "3/19 に $15→$20、クレジット制からクォータ制へ"
           ],
           [
             "VS Code + Copilot",
             "エディタ無料 + Copilot Free",
             "Pro $10/月",
-            "Pro+ $39/月",
+            "Pro+ $39 / Max $100/月",
             "Business $19 / Enterprise $39 per seat",
             "IP 補償は Enterprise。6/1 より AI Credits 併用"
           ],
@@ -6350,6 +6353,56 @@ const ARTICLES_BODY = {
         "title": "Zed",
         "site": "Zed Industries",
         "url": "https://zed.dev/"
+      },
+      {
+        "title": "Pricing (Claude API)",
+        "site": "Anthropic",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Speed up responses with fast mode",
+        "site": "Anthropic",
+        "url": "https://code.claude.com/docs/en/fast-mode"
+      },
+      {
+        "title": "Plans for GitHub Copilot",
+        "site": "GitHub Docs",
+        "url": "https://docs.github.com/en/copilot/get-started/plans"
+      },
+      {
+        "title": "Codex Pricing",
+        "site": "OpenAI (ChatGPT Learn)",
+        "url": "https://learn.chatgpt.com/docs/pricing"
+      },
+      {
+        "title": "OpenAI API Pricing",
+        "site": "OpenAI",
+        "url": "https://developers.openai.com/api/docs/pricing"
+      },
+      {
+        "title": "An important update: Transitioning Gemini CLI to Antigravity CLI",
+        "site": "Google Developers Blog",
+        "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli"
+      },
+      {
+        "title": "Plans & AI Credits",
+        "site": "Google Antigravity Docs",
+        "url": "https://antigravity.google/docs/plans"
+      },
+      {
+        "title": "Plans and Pricing",
+        "site": "Devin (Cognition)",
+        "url": "https://devin.ai/pricing"
+      },
+      {
+        "title": "Models & Pricing",
+        "site": "Cursor Docs",
+        "url": "https://cursor.com/docs/models-and-pricing"
+      },
+      {
+        "title": "Zed Pricing",
+        "site": "Zed Industries",
+        "url": "https://zed.dev/pricing"
       }
     ]
   },

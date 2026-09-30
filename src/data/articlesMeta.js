@@ -2167,7 +2167,7 @@ export const ARTICLES_META = [
     "type": "feature",
     "category": "special",
     "title": "AI 開発ツール料金プラン横断比較 — CLI・エディタ・モデル API",
-    "excerpt": "Claude Code、Cursor、Devin Desktop（旧 Windsurf）、Codex、Gemini CLI、Copilot、Aider、Zed の料金体系を一覧で比較。無料枠から Enterprise まで公式発表ベースで整理し、主要モデルの API 単価も併記した。**毎月見直している記事で、最終更新は2026年8月11日**。定額から「定額＋クレジット枠＋従量」への移行が業界的な流れになっている。",
+    "excerpt": "Claude Code、Cursor、Devin Desktop（旧 Windsurf）、Codex、Gemini CLI、Copilot、Aider、Zed の料金体系を一覧で比較。無料枠から Enterprise まで公式発表ベースで整理し、主要モデルの API 単価も併記した。**毎月見直している記事で、最終更新は2026年9月30日**。定額から「定額＋クレジット枠＋従量」への移行が業界的な流れになっている。",
     "date": "2026-03-29",
     "author": "AI News 編集部",
     "readTime": "9分",
@@ -2188,7 +2188,7 @@ export const ARTICLES_META = [
     },
     "heroScope": "none",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-08-11"
+    "lastReviewed": "2026-09-30"
   },
   {
     "id": "usecase-recommendation-matrix-2026",
