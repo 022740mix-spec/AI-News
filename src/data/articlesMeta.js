@@ -4231,7 +4231,7 @@ export const ARTICLES_META = [
     "type": "review",
     "category": "model",
     "title": "Claude Fable 5 / Mythos 5 レビュー — Anthropic フロンティア、SWE-bench 95% で史上最強、ただし復活後は週次50%上限＆過剰ブロック懸念",
-    "excerpt": "Anthropic が2026年6月9日に一般公開した Mythos クラスの**史上最強一般公開モデル**。**SWE-bench Verified 95%** で Opus 4.8（88.6%）を上回る。ただし6/12 に輸出規制で停止、19日後の 7/1 に復活したが**週次使用枠 50% 上限**（Pro/Max/Team/一部 Enterprise、7/7 まで）、以降は使用クレジット制。新 classifier が 99% ジェイルブレイクをブロックするが benign なコーディング/セキュリティ要求も過剰ブロックの懸念あり。Mythos 5 は Project Glasswing 経由の限定公開のまま。**$10/$50** per 1M tokens。「制限付きの最強」という現状評価が難しいモデル。",
+    "excerpt": "Anthropic が2026年6月9日に一般公開した Mythos クラスの**史上最強一般公開モデル**。**SWE-bench Verified 95%** で Opus 4.8（88.6%）を上回る。ただし6/12 に輸出規制で停止、19日後の 7/1 に復活したが週次使用枠 50% 上限（当初は 7/7 までとされ、7/19 に終了した。9月時点の Help Center では Max 等が週次枠の50%まで、Pro 等は使用クレジット）。新 classifier は報告された特定の手法を99%超ブロックするが benign なコーディング/セキュリティ要求も過剰ブロックの懸念あり。Mythos 5 は Project Glasswing 経由の限定公開のまま。**$10/$50** per 1M tokens。「制限付きの最強」という現状評価が難しいモデル。 【9月30日時点】後継の Fable 5.1（9/1公開）があり、本レビューは Fable 5 / Mythos 5 が対象。",
     "date": "2026-07-07",
     "newsDate": "2026-06-09",
     "author": "AI News 編集部",
@@ -4253,7 +4253,7 @@ export const ARTICLES_META = [
     "rating": 3.5,
     "reviewCategory": "model",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-08-11"
+    "lastReviewed": "2026-09-30"
   },
   {
     "id": "gpt-5-6-review",

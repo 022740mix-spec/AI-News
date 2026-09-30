@@ -10319,18 +10319,20 @@ const ARTICLES_BODY = {
     "body": [
       "**Claude Fable 5 と Mythos 5** は Anthropic が2026年6月9日にリリースした Mythos クラスの一般公開モデル。Fable 5 は「Anthropic 史上最強の一般公開モデル」を公称、**SWE-bench Verified で 95%** を達成し Opus 4.8（88.6%）を上回った。Mythos 5 は Project Glasswing 経由の限定公開のまま。ただし、6/12〜6/30 の**19日間の輸出規制**を経て、7/1 に**制限付きで復活**（[Fable 5 復活](?a=anthropic-claude-fable-5-return-safeguards-limits-2026)）した経緯を持つ。",
       "**【2026年9月時点の注記】本レビューの対象は Fable 5 / Mythos 5 であり、その後継である 5.1 は別世代である。** 2026年9月1日に [Fable 5.1 / Mythos 5.1 が公開](?a=anthropic-claude-fable-5-1-mythos-5-1-cache-read-cut-2026)された。API を呼んでいる場合、移行には**公式が「破壊的」と明示した変更が3つ**あり、いずれも既存コードが 400 エラーで止まりうる（強制ツール呼び出しが使えない、過去モデルが 5.1 の思考ブロックを読めない、過去ターンを編集すると思考ブロックが無効になる）。",
+      "【2026年9月30日時点の注記】公式のモデル一覧（platform.claude.com）では、Fable 5.1（2026年9月1日公開）が Fable の最新、Fable 5 と Mythos 5 は Legacy（引き続き利用可能）とされ、廃止は早くても2027年6月9日とされている。Mythos 5.1 は引き続き Project Glasswing 参加者向けの招待制である。料金は Fable 5 / 5.1 とも基本入力 $10 / 出力 $50 で、キャッシュ読み取りは Fable 5 が $1、Fable 5.1 が $0.25 である。",
+      "同じ一覧には、2026年9月22日に公開された Opus 5.5（$4 / $20）と9月28日に公開された Sonnet 5.5（$2 / $10）も載っており、公式は多くのワークロードでは Opus 5.5 から始め、Fable 5.1 は要求水準の高い推論や長時間のエージェント作業、または Opus 5.5 を高い effort で使っても評価が届かない場合に使う、としている。Anthropic は Opus 5.5 を「ほとんどの作業で Fable 5.1 と同水準」と説明しているが、これは当事者の説明であり、独立した検証は本稿では確認できていない。この記事の「Opus 5 の投入で位置付けが変わった」の節と推奨は Opus 5 が最新だった時点のもので、Opus 5.5 の評価は含まない。",
       "料金は**基本入力 $10 / 出力 $50 が据え置き**で、下がったのは**キャッシュ読み取りのみ**（$1 → $0.25）である。報道の「最大45%安い」をそのまま請求額の予測に使うと外れる。**下げ幅は自分のキャッシュヒット率に完全に依存する。** なお Anthropic 自身は「**ほとんどのワークロードでは Opus 5 から始めること**」としており、5.1 への無条件の移行は案内していない。",
       "**性能ベンチマーク**: Fable 5 は SWE-bench Verified 95%、Stripe の初期テストでは「本来チーム全体で2ヶ月以上かかるコードベースマイグレーションを1日で完了」と報告。公開ベンチマークの大半で SOTA、ソフトウェアエンジニアリング・ナレッジワーク・視覚・科学研究などで最上位。Mythos 5 は公開値なし。",
       "**復活後の使用制限（重要）**:",
-      "**(1) 週次使用枠 50% まで**（Pro/Max/Team/一部 Enterprise）。サブスクリプションの包括アクセスは当初 7/7 期限とされたが **7/12 まで延長**され、Anthropic は「使用クレジット制は一時的な措置で、capacity が回復し次第サブスク標準に戻す」と明言した（[→ 詳細](?a=anthropic-claude-fable-5-billing-transition-extended-july-12-2026)）。**8月時点でこの復帰は完了しておらず、実質的な利用枠は依然として読みにくい。**",
-      "**(2) 新 classifier が 99% ジェイルブレイクをブロック** → benign なコーディング/セキュリティ要求も過剰ブロックの懸念（PCWorld: ユーザー激怒）",
-      "**(3) AWS Bedrock / GCP Vertex AI / Azure Foundry は段階的復活**",
+      "**(1) 週次使用枠 50% まで**（Pro/Max/Team/一部 Enterprise）。サブスクリプションの包括アクセスは当初 7/7 期限とされたが **7/12 まで延長**され、Anthropic は「使用クレジット制は一時的な措置で、capacity が回復し次第サブスク標準に戻す」と明言した（[→ 詳細](?a=anthropic-claude-fable-5-billing-transition-extended-july-12-2026)）。Anthropic の Help Center（Claude Fable models on your plan）によれば、Fable 5 を週次使用枠に含める措置は2026年7月19日23:59:59（PT）に終了しており、Fable 5.1 は最初からこの措置の対象外だった。2026年9月30日時点では、Max プラン、Team のプレミアムシート、旧型シートベース Enterprise のプレミアムシートで、Fable 5 と Fable 5.1 は週次使用枠の50%まで追加費用なしで使え（他のモデルと同じ週次枠を早く消費する）、それを超える分は使用クレジットで続けるか他のモデルに切り替える。Pro、Team の標準シート、旧型シートベース Enterprise の標準シートでは、Fable は使用クレジット（従量課金）で使う。",
+      "(2) 新しい classifier は、Amazon の研究者が報告した特定の手法を99%超のケースでブロックするとされる（Anthropic の説明であり、ジェイルブレイク全般の99%という意味ではない）。一方で Anthropic 自身が、日常的なコーディングやデバッグの正当な要求を以前より多く検知することを認めており、過剰ブロックの懸念がある（PCWorld: ユーザー激怒）",
+      "(3) AWS Bedrock / GCP Vertex AI / Azure Foundry は、7月の復活時点では段階的な再開だった。2026年9月30日時点の Fable 5 のモデルページは、提供先として Claude API、Amazon Bedrock、Google Cloud、Microsoft Foundry、Claude Platform on AWS を挙げている",
       "**(4) 米政府の継続監督**（3点約束: セキュリティリスク検知、リリースプロトコル協力、悪意活動報告）",
       "**セーフティ・クラシファイア注意**（詳細は [Fable 5 プロンプト設計ガイド](?a=feature-prompting-claude-fable-5-practical-guide-2026) 参照）:",
       "**(a) オフェンシブサイバーセキュリティ**: エクスプロイト・マルウェア・攻撃ツール構築",
       "**(b) 生物学・生命科学コンテンツ**: ラボ手順・分子機構等（Claude Science で緩和される可能性）",
       "**(c) モデルのサマリ化された思考の抽出**",
-      "**料金**: $10/$50 per 1M tokens。前世代 Mythos Preview の半額以下だが、Sonnet 5（$3/$15。〜8/31 は導入価格 $2/$10 だった）や [Opus 5](?a=claude-opus-5-review)（$5/$25）と比べると高価。**「最強を必要とする限定タスク用途」**にターゲットが絞られる料金設定。",
+      "**料金**: $10/$50 per 1M tokens。前世代 Mythos Preview の半額以下だが、Sonnet 5（$2/$10。発売時は〜8/31 の導入価格とされたが、公式が標準価格として恒久化した）や [Opus 5](?a=claude-opus-5-review)（$5/$25）と比べると高価。**「最強を必要とする限定タスク用途」**にターゲットが絞られる料金設定。",
       "**Opus 5 の投入で位置付けが変わった**: 2026年7月24日、Anthropic は **[Claude Opus 5](?a=claude-opus-5-review) を $5/$25 で投入した**。公称は「Fable 5 に迫る性能を半額で」であり、**Fable 5 の週次50%上限に相当する制約を持たない**。当サイトのレビュー★は Fable 5 が 3.5、Opus 5 が 4.5 で、**性能の絶対値では Fable 5 が上だが、利用制約と価格を含めた採用判断では Opus 5 の方が扱いやすい**というのが現時点の見立てである。Fable 5 を選ぶ理由は、**Opus 5 でも届かない最難関タスクが実際に存在する場合に限られる**ようになった。",
       "**プロンプト設計の推奨**: [Fable 5 プロンプト設計ガイド](?a=feature-prompting-claude-fable-5-practical-guide-2026) で全訳した Anthropic 公式推奨に従うこと。長時間実行（数時間〜数日）が現実的になるため、クライアントタイムアウト・非同期実行・進捗根拠付け・拒否時の Opus 4.8 フォールバックを事前に組み込む必要がある。**旧来の Opus 4.8 向けプロンプトは Fable 5 では過度に規範的で性能を下げる**ため、リファクタが必要。",
       "**強み**:",
@@ -10338,7 +10340,7 @@ const ARTICLES_BODY = {
       "**(2) 長時間自律実行**: 数日〜週単位の目標指向タスクを維持できる。",
       "**(3) 視覚理解の強化**: 密な技術図・スクリーンショット処理が高精度。",
       "**注意点**:",
-      "**(1) 使用制限**: 週次50%・7/7 期限・段階的クラウド復活で計画が立てにくい。",
+      "**(1) 使用制限**: 週次使用枠の50%まで（Max 等。Pro 等は使用クレジット）というプラン別の扱いで、計画が立てにくい。",
       "**(2) 過剰ブロック**: セキュリティ研究・脆弱性検証・生命科学タスクが正当な用途でも拒否される。",
       "**(3) 米政府監督**: 将来的な制限追加リスク（[White House 自主基準](?a=white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026) 参照）。",
       "**(4) 料金**: Sonnet 5・Opus 4.8 との性能差に見合うかは用途次第。",
@@ -10346,7 +10348,9 @@ const ARTICLES_BODY = {
       "---",
       "**編集履歴**",
       "【追記 2026-08-11】月次見直しにより更新。(1) 週次50%上限について、7/12 への期限延長と「クレジット制は一時的」との Anthropic の説明、および**8月時点でサブスク標準への復帰が完了していない**ことを反映、(2) 7/24 投入の [Opus 5](?a=claude-opus-5-review)（$5/$25、利用制約なし）により Fable 5 の位置付けが変わった点を追記、(3) **推奨を「まず Opus 5 で試す」に改訂**し、フォールバック先を Opus 4.8 から Opus 5 に更新、(4) 6月版で「一般公開後は再評価が必要」としていた GPT-5.6 Sol は7/9に公開済みである旨を反映しました。",
-      "【追記 2026-09-20】**本レビューが、対象モデルの後継である Fable 5.1 / Mythos 5.1（2026年9月1日公開）に一切触れていなかった**ため、冒頭に注記を2段落追加しました。当サイトは9月2日にこの世代更新を公式ドキュメントで直接確認して報じており、**レビュー側だけが取り残されていました。** 破壊的変更3件・料金の実態・Anthropic 自身の推奨用途を要約し、詳細は該当記事へのリンクに委ねています。本レビューの5軸採点は Fable 5 / Mythos 5 に対する評価であり、今回は変更していません。`lastReviewed` も、料金・提供条件の全面確認を行っていないため据え置いています。"
+      "【追記 2026-09-20】**本レビューが、対象モデルの後継である Fable 5.1 / Mythos 5.1（2026年9月1日公開）に一切触れていなかった**ため、冒頭に注記を2段落追加しました。当サイトは9月2日にこの世代更新を公式ドキュメントで直接確認して報じており、**レビュー側だけが取り残されていました。** 破壊的変更3件・料金の実態・Anthropic 自身の推奨用途を要約し、詳細は該当記事へのリンクに委ねています。本レビューの5軸採点は Fable 5 / Mythos 5 に対する評価であり、今回は変更していません。`lastReviewed` も、料金・提供条件の全面確認を行っていないため据え置いています。",
+      "【訂正 2026-09-30】（誤）新 classifier が99%のジェイルブレイクをブロックする →（正）Amazon の研究者が報告した特定の手法を99%超のケースでブロックする（Anthropic の説明）。",
+      "【追記 2026-09-30】月次見直しにより、次の状態の変化を反映した。いずれも当時の記述は正しく、その後に変わったものである。(1) 週次50%の適用範囲は、7/1 の発表どおり Pro/Max/Team/一部 Enterprise だったが、Fable 5 を週次使用枠に含める措置は7月19日に終了し、9月時点では Max 等が週次枠の50%まで、Pro 等は使用クレジットで使う（Help Center）。8月時点で復帰未完了としていた記述は、この現状に差し替えた。(2) クラウド3社は7月の復活時点では段階的な再開だったが、9月時点の Fable 5 のモデルページは Claude API、Bedrock、Google Cloud、Microsoft Foundry、Claude Platform on AWS を提供先に挙げている。(3) Sonnet 5 の $2/$10 は、発売時に8月31日までの導入価格とされたが、公式が標準価格として恒久化した（料金ページ脚注）。あわせて、Fable 5.1（9/1）、Opus 5.5（9/22）、Sonnet 5.5（9/28）の公開と、Fable 5 が Legacy 扱いであることを冒頭に注記した。5軸の採点は Fable 5 / Mythos 5 に対するもので、今回は変更していない。SWE-bench Verified 95% など公式発表のベンチマーク数値は、発表ページ上でチャート画像として掲載されており本文から確認できていない。"
     ],
     "primarySources": [
       {
@@ -10363,6 +10367,36 @@ const ARTICLES_BODY = {
         "title": "Prompting Claude Fable 5",
         "site": "Anthropic Docs",
         "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5"
+      },
+      {
+        "title": "Pricing",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Models overview",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/models/overview"
+      },
+      {
+        "title": "Model deprecations",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+      },
+      {
+        "title": "Claude Fable models on your plan",
+        "site": "Claude Help Center",
+        "url": "https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan"
+      },
+      {
+        "title": "Claude Fable 5.1",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/models/fable-5-1/overview"
+      },
+      {
+        "title": "Claude Opus 5.5",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/models/opus-5-5/overview"
       }
     ]
   },
