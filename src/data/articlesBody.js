@@ -23313,6 +23313,101 @@ const ARTICLES_BODY = {
         "url": "https://learn.chatgpt.com/docs/whats-new/devday-2026"
       }
     ]
+  },
+  "codex-security-cloud-research-preview-github-scan-2026": {
+    "body": [
+      "OpenAI は2026年9月29日の DevDay 2026 で、Codex の項目に「Codex Security Cloud」を挙げた。公式の説明は、Security Cloud プラグインで接続済みの GitHub リポジトリをスキャンし、または新しいコミットを監視できるというもので、research preview（研究プレビュー）として提供される。検出結果、検証のエビデンス、パッチを確認したうえで、ドラフトのプルリクエストを作成する流れである。公式ドキュメントでは Web とデスクトップアプリで利用でき、アクセスの有無は「ワークスペース管理者に確認する」とされている。本記事は、公式ドキュメントで確認できる範囲での整理であり、防御側の機能説明に限る。",
+      "セットアップは次の順序である。ChatGPT の Web またはデスクトップアプリで Plugins を開き、マーケットプレイスで「Codex Security Cloud」をインストール・有効化して、Security Cloud を開く。Codex cloud がワークスペースで設定済みであることを確認し、「New scan」で必要なら「Connect GitHub」から対象リポジトリへのアクセスを許可する。続いてリポジトリと互換性のある Cloud environment を選ぶ（なければ「Create environment」で作成）。「What to scan」で既定の「Repository」を選び「Start scan」を押す。公式の前提条件は、Codex Security Cloud にアクセスできるワークスペース、接続済みの GitHub リポジトリ、互換性のある Codex cloud 環境の3つである。クラウド環境の作り方は公式の Cloud environments ドキュメントに詳しい。なお Cloud setup ページの環境作成の案内リンクは旧版（Legacy）のページを指しているが、原文は「compatible Cloud environment」としか書いておらず、どちらの環境が対象かは明記されていない。",
+      "結果は Scans で進捗と成果物を追い、Findings で個別の指摘を開いて確認する。各指摘では、影響を受けるコード、検証のエビデンス、修正の指針が見られる。「Fix with Codex」が表示された指摘では、提案パッチを生成でき、内容を確認してから「Create draft pull request」を選ぶ。公式 FAQ は、パッチを自動では適用しないこと、パッチは PR ブランチを直接変更せず、差分やパッチファイル、提案として保守担当者やレビュアーが確認してから適用することを明記している。出力は、重大度付きで順位付けされた指摘、検証エビデンス、修正の指針、提案パッチ（あれば）と説明されている。",
+      "継続的な監視は「Commit changes」で設定する。New scan でリポジトリと Cloud environment を選び、What to scan で Commit changes を選んで Create を押す。公式 FAQ によると、Repository スキャンはリポジトリ全体を1回だけ調べ、Commit changes は新しいコミットを監視し、既存のコミット履歴もレビューできる。監視の調整は Repositories で対象を選び「Monitoring settings」から行い、Cloud environment の変更、レビューする履歴の日数、監視の一時停止と再開ができる。",
+      "分析の流れとして公式 FAQ は4段階を挙げる。Analysis でリポジトリの脅威モデルを作り、Scanning で1回のレビューまたはコミットの監視を行い、Validation で有力な脆弱性を隔離環境で再現できるか試して誤検知を減らし、Remediation でガイダンスと、可能なら提案パッチを出す。各分析・検証ジョブは使い捨ての隔離された Codex コンテナで実行され、対象リポジトリは一時的にクローンされ、成果物が取り出されたのちジョブ完了時にコンテナは破棄される。再現に成功した指摘は「validated」と表示され、失敗した指摘は unvalidated のまま残り、試行の記録は残る。この誤検知を減らすという説明は OpenAI 自身のもので、独立した検証は確認できていない。また検証の工程は、隔離コンテナ内でコマンドやテストを実行し、再現のためビルドも試みる。",
+      "脅威モデルは、リポジトリの動作を要約したセキュリティ上の文脈で、最初の草案は Codex Security がコードから作成し、以後のコミットのスキャンと指摘の優先順位付けに使われる。公式は、エントリポイントと信頼できない入力、信頼境界と認証の前提、機密データの経路や特権操作、チームが先に見たい領域を書くよう勧めている。編集は Repositories で監視対象を選び、Monitoring settings の Project context にある Threat model を書き換えて Save する。変更は今後のスキャンに適用される。アーキテクチャや優先事項が変わったとき、または指摘が重視する領域を外しているときに見直す、と説明されている。公式は、生成された脅威モデルを Project context で確認・編集するよう案内しており、指摘の優先順位付けに使われるため、リポジトリの担当者が内容を見直す対象になる。",
+      "公式は限界も明記している。Codex Security は SAST を置き換えるものではなく、LLM に基づく意味的な推論と自動検証を加えるもので、決定論的な広い網羅は既存の SAST が担うとされる。人手のセキュリティレビューも置き換えず、コードレベルの検証、悪用可能性の確認、人による脅威評価の代わりにはならない。対応言語は言語非依存だが、実際の性能は言語やフレームワークに対するモデルの推論能力に依存するとされる。ビルドは必須でなく、自動検証の際に再現のためコンテナ内でビルドを試みることがある。スキャン時間はリポジトリの規模と検証の量で変わる。ここに書かれた効果の説明は OpenAI のものであり、独立した検証は確認できていない。",
+      "ドキュメントには、ここで述べた Cloud プラグインとは別の Codex Security の経路が並ぶ。デスクトップアプリと Codex CLI で使う Codex Security プラグイン（ローカルリポジトリ向け）は、Security ワークベンチの Scans、Findings、Repositories で保存済みの結果を管理する。標準スキャンはリポジトリまたは1フォルダを1回調べ、ディープスキャンは公式によればより広く探索して実行ごとのばらつきを減らすとされる（OpenAI の説明であり、独立した検証は確認できていない）。一方で時間とリソースが増え、既定の上限は96時間で、値を下げると見逃しが増えうるとされる。さらに、プルリクエストや差分には使えない。差分にはコード変更のレビューを使い、未コミット、コミット、リビジョン範囲を対象にできる。既存の指摘の棚卸しにはトリアージがあり、コードを実行しない静的な分析で1件ずつ判定を返す。結果は JSON、CSV、SARIF に書き出せ、Linear、GitHub、Jira の Issue（1回に最大25件）や、非公開のドラフト GitHub Security Advisory に、承認後に登録できる。脆弱性レポートの作成、セキュリティ強化案の提案もある。プラグインの最新リリースノートは2026年9月24日の 0.1.30 で、直前の 0.1.25 と同じ動作とされている。",
+      "ドキュメントの複数のページ（ワークベンチとスキャンのページ）は、最良のスキャン品質のために「gpt-5.6-sol」と xhigh の推論設定を使うよう書いており、SDK も既定は gpt-5.6-sol の extra-high とする。同じ週の2026年9月29日には GPT-6.1 Sol も発表されているが、この記載との関係は原文からは分からない。",
+      "CLI と TypeScript SDK は公開パッケージ @openai/codex-security として提供される。CLI は GitHub リポジトリの探索、一括スキャンの再開、スキャンをまたぐ指摘の追跡、誤検知フィードバックの記録などを行い、SDK はスキャンや進捗報告、コスト制御をアプリに組み込むためのものである。CLI の CI ガイドが扱う例は GitHub Actions と GitLab CI/CD で、Azure Pipelines と Jenkins の例はコード変更レビューのページにある。GitLab の手順は、コミットの変更と保護ブランチをスキャンして GitLab Security に SARIF を渡し、任意で検証済みの修正をドラフトのマージリクエストに提案するもので、生成された変更は必ず人が確認してからマージするとされる。GitLab の手順は GitLab Ultimate 19.2 以上と信頼できるランナーを前提とし、まずスキャンのみで始めて、認証情報の境界を確認してから修復を有効にするよう勧めている。スキャンの実行には Codex Security へのアクセスが必要で、CLI と SDK はローカルの OS 権限で承認を求めずに動くため、無関係な認証情報を外してから始めるよう公式は書いている。SDK の codexOverrides ではファイルアクセスも承認ポリシーも制限できず、セッションイベントにはコードや認証情報が含まれうるため、共有ログに流す前にフィルタするよう求めている。全体スキャンでは Trusted Access for Cyber が必要になる場合があり、推奨もされている。",
+      "GitHub のプルリクエスト向けには別途 Codex Security Review がある。ChatGPT Enterprise、Business、Edu、Pro で使え、Plus では使えない。@codex security review というコメントで手動起動でき、自動レビューの既定では High と Critical、手動では Medium 以上が報告される。PR に投稿された指摘はその PR の GitHub 上の可視性を引き継ぎ、公開リポジトリなどでは PR を見られる人なら誰でも見られる。投稿されるのは閾値を満たすものだけで、フルレポートは Codex 側に残る。Security Review は Codex の利用枠またはクレジットを消費し、自動設定には GitHub の push または admin 権限が要る。管理者は報告のしきい値を選ぶ際にこの点を確認したい。まとめると、Security Cloud は research preview であり、Security Cloud のスキャンの料金や使用量の消費、research preview の対象プランは原文に明記が見当たらない。利用にはアクセスのあるワークスペースが必要で、公式は、アクセスがない場合はワークスペース管理者に確認するよう書いている。指摘の妥当性や修正の適否を人が確認する工程は残る。本記事の内容はすべて OpenAI 自身の公式ドキュメントに基づく当事者の説明で、検出精度などの独立した第三者による検証は確認できていない。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 7,
+        "caption": "Codex Security の経路の違い（OpenAI 公式ドキュメントより）",
+        "headers": [
+          "経路",
+          "対象",
+          "実行場所",
+          "備考"
+        ],
+        "rows": [
+          [
+            "Security Cloud プラグイン",
+            "接続した GitHub リポジトリ",
+            "Codex cloud",
+            "research preview。Web とデスクトップアプリ"
+          ],
+          [
+            "Codex Security プラグイン",
+            "ローカルリポジトリ",
+            "Codex のタスク",
+            "デスクトップアプリまたは Codex CLI"
+          ],
+          [
+            "CLI と TypeScript SDK",
+            "ローカルのリポジトリと変更",
+            "自分の OS 権限",
+            "公開パッケージ @openai/codex-security"
+          ],
+          [
+            "Security Review",
+            "GitHub のプルリクエスト",
+            "Codex cloud",
+            "Enterprise、Business、Edu、Pro。Plus は対象外"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Codex Security Cloud setup (OpenAI)",
+        "url": "https://learn.chatgpt.com/docs/security/setup"
+      },
+      {
+        "title": "Codex Security overview (OpenAI)",
+        "url": "https://learn.chatgpt.com/docs/security"
+      },
+      {
+        "title": "Improving the threat model (OpenAI)",
+        "url": "https://learn.chatgpt.com/docs/security/threat-model"
+      },
+      {
+        "title": "Codex Security Cloud FAQ (OpenAI)",
+        "url": "https://learn.chatgpt.com/docs/security/faq"
+      },
+      {
+        "title": "Codex Security plugin (OpenAI)",
+        "url": "https://learn.chatgpt.com/docs/security/plugin"
+      },
+      {
+        "title": "Codex Security plugin changelog (OpenAI)",
+        "url": "https://learn.chatgpt.com/docs/security/plugin/changelog"
+      },
+      {
+        "title": "Codex Security CLI (OpenAI)",
+        "url": "https://learn.chatgpt.com/docs/security/cli"
+      },
+      {
+        "title": "Codex Security in GitLab CI/CD (OpenAI)",
+        "url": "https://learn.chatgpt.com/docs/security/cli/ci/gitlab"
+      },
+      {
+        "title": "Security Review (OpenAI)",
+        "url": "https://learn.chatgpt.com/docs/security/security-review"
+      },
+      {
+        "title": "DevDay 2026 (OpenAI)",
+        "url": "https://learn.chatgpt.com/docs/whats-new/devday-2026"
+      }
+    ]
   }
 };
 

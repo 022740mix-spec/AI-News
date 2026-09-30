@@ -11083,5 +11083,23 @@ export const ARTICLES_META = [
       "エンタープライズ",
       "開発ツール"
     ]
+  },
+  {
+    "id": "codex-security-cloud-research-preview-github-scan-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI、Codex Security Cloud を research preview で公開。接続した GitHub リポジトリのスキャンとコミット監視、検証エビデンスとパッチの確認、ドラフト PR 作成まで",
+    "excerpt": "OpenAI は2026年9月29日の DevDay 2026 で、Security Cloud プラグイン（research preview、Web とデスクトップアプリ）を発表した。接続した GitHub リポジトリを Codex cloud でスキャンし、新規コミットも監視でき、検出結果・検証エビデンス・パッチを確認してからドラフトのプルリクエストを作成する。Repository スキャンと Commit changes の2種類があり、脅威モデルは監視対象ごとに編集できる。公式ドキュメントは SAST や人手のレビューの代替ではないと明記している。効果に関する説明は OpenAI のもので、独立した検証は確認できていない。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Codex",
+      "OpenAI",
+      "セキュリティ",
+      "プラグイン",
+      "開発ツール"
+    ]
   }
 ];
