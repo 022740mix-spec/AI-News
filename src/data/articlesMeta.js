@@ -3178,7 +3178,7 @@ export const ARTICLES_META = [
     "type": "review",
     "category": "cli",
     "title": "Cursor CLI レビュー — IDE 不要で Composer / Background Agent を使える独立 CLI（Composer 2.5 / Sonic 対応、Microsoft Teams 統合版）",
-    "excerpt": "Anysphere が提供する Cursor の独立 CLI。`npm install -g @cursor/cli` でインストール、`cursor auth` でサインイン、`cursor` で対話セッション、`cursor --headless` で CI 用。**Composer 2.5**（Cursor 独自モデル、CursorBench で Opus 4.6 を上回る）と **Sonic**（低レイテンシ編集特化）に加え、**Background Agent**（クラウドサンドボックス、GitHub Issue や Slack 起点で PR ドラフト作成）が中核。3月の Cursor Automations（Slack/GitHub/PagerDuty）に加えて、**5/11 に Microsoft Teams 統合 GA**。料金は Free / Pro $20 / Pro+ $60 / Ultra $200 / Teams Standard $40 seat / Premium $120 seat。",
+    "excerpt": "Anysphere が提供する Cursor の独立 CLI。公式インストールスクリプト（`curl https://cursor.com/install -fsS | bash`）でインストール、`agent login` でサインイン、`agent` で対話セッション、`agent -p` で CI 用の非対話実行。**Composer 2.5**（Cursor 独自モデル、Kimi K2.5 ベース）に加え、**Cloud Agents**（旧称 Background Agent。クラウドサンドボックス、GitHub Issue や Slack 起点で PR ドラフト作成）が中核。3月の Cursor Automations（Slack/GitHub/PagerDuty）に加えて、**5/11 に Microsoft Teams 統合 GA**。料金は Free / Pro $20 / Pro+ $60 / Ultra $200 / Teams Standard $40 seat / Premium $120 seat。",
     "date": "2026-06-05",
     "newsDate": "2026-05-11",
     "author": "AI News 編集部",
@@ -3199,7 +3199,7 @@ export const ARTICLES_META = [
     "rating": 4.5,
     "reviewCategory": "cli",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-08-11"
+    "lastReviewed": "2026-09-30"
   },
   {
     "id": "github-copilot-cli",

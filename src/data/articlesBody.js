@@ -8613,21 +8613,21 @@ const ARTICLES_BODY = {
       "**Cursor CLI** は **Anysphere** が提供する Cursor の独立 CLI ツール。**IDE を起動せずにターミナルだけで Composer / Background Agent を使える**ようになり、Claude Code や GitHub Copilot CLI の直接競合に位置付けられた。2026年6月時点での網羅評価。",
       "## インストール / 起動",
       "**インストール**:",
-      "```bash\nnpm install -g @cursor/cli       # 公式 npm パッケージ\ncursor auth                      # ブラウザでサインイン\n```",
+      "```bash\ncurl https://cursor.com/install -fsS | bash   # 公式インストールスクリプト（macOS / Linux / WSL）\nirm 'https://cursor.com/install?win32=true' | iex   # Windows（PowerShell）\nagent login                      # ブラウザでサインイン（スクリプトでは CURSOR_API_KEY も利用可）\n```",
       "**起動コマンド**:",
-      "```bash\ncursor                            # 対話セッション\ncursor --headless \"<指示>\"        # ヘッドレス（CI、cron 用）\ncursor --bg [task]                # バックグラウンドエージェント\n```",
-      "Node.js 20+ 必須。",
+      "```bash\nagent                             # 対話セッション\nagent -p \"<指示>\"                # 非対話の print モード（CI、cron 用。ファイル変更は --force 併用）\n& <指示>                          # 会話中に先頭へ & を付けると Cloud Agent へ引き継ぐ\n```",
+      "インストールは公式のインストールスクリプト経由で、更新は `agent update` で行う。スクリプトを実行する前に、`curl -fsS https://cursor.com/install` の出力を先に読んで内容を確認することを勧める。",
       "## 主要機能",
       "### Composer / Agent loop（multi-file）",
       "プロジェクト全体をインデックスし、自然言語の指示から関連ファイルを自動特定して複数ファイル横断の変更を一括生成。Claude Code 同等の自律エージェント動作。",
-      "### Background Agent（クラウドサンドボックス）",
+      "### Cloud Agents（クラウドサンドボックス。本記事の旧表記は Background Agent）",
       "**Anysphere 管理のクラウド VM 上で動く非同期エージェント**。GitHub Issue や Slack メッセージを起点に作業を進め、**PR ドラフトを返す**まで自律実行。ローカル環境を閉じても継続。",
       "### モデル: Composer 2.5 / Sonic / 主要フロンティア",
-      "- **Composer 2.5**: Cursor 独自モデル（Kimi K2.5 ベース + 独自 RL）。CursorBench で Opus 4.6 を上回るスコア",
+      "- **Composer 2.5**: Cursor 独自モデル（Kimi K2.5 ベース + 独自 RL）。なお、CursorBench で Opus 4.6 を上回るという比較は、Cursor 公式ブログ（Composer 2.5）の本文では確認できていない",
       "- **Sonic**: 低レイテンシ編集に特化した内製モデル",
       "- **[Claude Opus 5](?a=claude-opus-5-review)、Fable 5、[GPT-5.6](?a=gpt-5-6-review)、Gemini 3.x** など主要フロンティアモデルも切替可能",
       "### MCP / Rules / Skills",
-      "Claude Code と同様、MCP プロトコルで外部接続、`.cursorrules` でプロジェクト規約共有、Skills でテンプレート再利用。",
+      "Claude Code と同様、MCP プロトコルで外部接続、`.cursor/rules` 配下のルールファイルでプロジェクト規約共有、Skills でテンプレート再利用。",
       "### Microsoft Teams / Slack / GitHub / PagerDuty 統合",
       "3月の **Cursor Automations** で Slack / GitHub PR / PagerDuty トリガー、5/11 で **Microsoft Teams 統合**（`@Cursor` メンション）。CLI から起動したジョブも統合管理可能。",
       "## 料金プラン",
@@ -8635,13 +8635,17 @@ const ARTICLES_BODY = {
       "## 評価",
       "**強み**: IDE 統合と CLI が同じ Composer / Background Agent を共有するため、**作業環境を選ばずに同じワークフロー**を回せる。独自モデル（Composer 2.5 / Sonic）により低レイテンシ・低コストでフロンティア性能を実現。Microsoft Teams / Slack 統合でチャットアプリ起点のエージェント運用にも対応。",
       "**注意点**: Claude Code が Anthropic 純正の CLI として Anthropic Console / Bedrock / Vertex / Foundry を経由できるのに対し、Cursor CLI は Anysphere 経由でモデルを利用する形態（クレジット消費型）。**規制業界での運用は Cursor の Privacy Mode + Self-hosted Cloud Agents の組み合わせが必要**。",
-      "**資本関係の変化を織り込む必要がある**: 2026年6月16日に発表された **SpaceX による Anysphere の $60B（全株式交換）買収は、2026年8月14日に効力が発生して完了した**（[→ 詳細](?a=spacex-closes-cursor-anysphere-acquisition-2026)）。Anysphere は SpaceX の完全子会社となり、新設の SpaceXAI 部門に入っている（[→ 速報](?a=spacex-cursor-60b-acquisition-anysphere-2026)）。すでに [Grok V9-Medium が Cursor の開発者ワークフローデータで訓練](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)されており、**内部モデルが Grok 系へ寄っていく可能性**がある。開発データの取り扱い方針が変わりうるため、企業導入では Privacy Mode の設定とデータ利用条項を継続的に確認することを勧める（[→ 市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。",
+      "**資本関係の変化を織り込む必要がある**: 2026年6月16日に発表された **SpaceX による Anysphere の $60B（全株式交換）買収は、2026年8月14日に効力が発生して完了した**（[→ 詳細](?a=spacex-closes-cursor-anysphere-acquisition-2026)）。Anysphere は SpaceX の完全子会社となり、新設の SpaceXAI 部門に入っている（[→ 速報](?a=spacex-cursor-60b-acquisition-anysphere-2026)）。Cursor 公式ドキュメント（Models & Pricing）では、現行の Cursor Models の利用枠に Grok 4.7 / 4.6 / 4.5 が Composer 2.5 と並んで含まれている。当サイトの別記事は [Grok V9-Medium が Cursor の開発者ワークフローデータで訓練された](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)と伝えているが、この点は Cursor の公式発表では確認できていない。開発データの取り扱い方針が変わりうるため、企業導入では Privacy Mode の設定とデータ利用条項を継続的に確認することを勧める（[→ 市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。",
       "**関連記事**: [Cursor 3 / Agents Window](?a=cursor-3-agent-first-workspace-2026)、[Composer 2 / Kimi K2.5](?a=cursor-composer-2-kimi-2026)、[Microsoft Teams 統合](?a=cursor-microsoft-teams-integration-2026)、[Cursor iOS アプリ](?a=cursor-ios-app-launch-cloud-agents-remote-2026)、[CLI 横断比較](?a=cli-tools-comparison-2026-march)。",
       "---",
       "**編集履歴**",
       "【追記 2026-08-11】月次見直しにより更新。(1) 切替可能モデルを現行世代（Opus 5 / Fable 5 / GPT-5.6）に更新、(2) SpaceX による Anysphere 買収の発表（6/16）と、それに伴うモデル・データ方針の変化リスクを注意点に追加、(3) iOS アプリ公開（6/30）を関連記事に追加しました。",
       "【訂正 2026-08-11】総合評価を **5 → 4.5** に修正しました。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（4.25）と乖離していました。各軸の評価そのものは変更しておらず、**公表している算出方法どおりに総合スコアを計算し直した**ものです。",
-      "【追記 2026-09-20】SpaceX による Anysphere 買収の**完了**を反映しました。本文は「Q3 2026 のクローズが予定されている」のままでしたが、合併の効力は**2026年8月14日**に発生しており、当サイトも9月12日に報じています。記事間で食い違っていたため、該当箇所を更新しました。なお料金・切替可能モデルの現行確認は行っていないため、`lastReviewed` は据え置いています。"
+      "【追記 2026-09-20】SpaceX による Anysphere 買収の**完了**を反映しました。本文は「Q3 2026 のクローズが予定されている」のままでしたが、合併の効力は**2026年8月14日**に発生しており、当サイトも9月12日に報じています。記事間で食い違っていたため、該当箇所を更新しました。なお料金・切替可能モデルの現行確認は行っていないため、`lastReviewed` は据え置いています。",
+      "【訂正 2026-09-30】（誤）インストールは `npm install -g @cursor/cli`、サインインは `cursor auth`、起動は `cursor` / `cursor --headless` / `cursor --bg`、Node.js 20+ 必須 →（正）Cursor 公式ドキュメント（cursor.com/docs/cli）の手順は `curl https://cursor.com/install -fsS | bash`（Windows は PowerShell の `irm 'https://cursor.com/install?win32=true' | iex`）で、コマンドは `agent`、サインインは `agent login`、非対話実行は `-p, --print`（ファイル変更は `--force` 併用）、クラウドへの引き継ぎは会話の先頭に `&` を付ける方式である。`--headless` と `--bg` は公式のパラメータ一覧に載っておらず、Node.js の要件も公式ドキュメントでは確認できなかった。また、2026-09-30 時点で npm レジストリに `@cursor/cli` というパッケージは存在しない（レジストリの応答は Not found）。存在しない名前は第三者に先に取得されるおそれがあるため、この名前を `npm install` しないこと。",
+      "【訂正 2026-09-30】（誤）「Background Agent」という名称 →（正）現行の公式ドキュメントでは Cloud Agents と表記されている。`.cursorrules` の記述は、現行ドキュメントが説明している `.cursor/rules` 配下のルールファイルに改めた（`.cursorrules` への言及は現行ドキュメントには見当たらない）。",
+      "【訂正 2026-09-30】料金表の「Business / Enterprise」を、公式ドキュメントの区分（Teams と Enterprise の2つの法人向けプラン）に合わせて「Enterprise」に改め、Teams の SSO 表記を公式の SAML/OIDC SSO に合わせた。インド向けの Start プラン（₹649/月・税込）を追記した。（誤）Pro+「Pro の5倍 Agent 上限」→（正）Cursor 公式料金ページ（Pro+ / Ultra の切替表示）では Pro+ は「3x Pro limits on Agent」、Ultra は「20x Pro limits on Agent」。Enterprise 行の「SOC 2」は料金ページ下部の会社全体の認証表示でありプランの機能ではないため外し、Enterprise 列に記載のある「優先サポートとアカウント管理」に差し替えた。",
+      "【追記 2026-09-30】Cursor 公式ドキュメントでの現行の確認結果。(1) SpaceX による買収は、Cursor 公式ブログ（2026年8月14日「Cursor is now a part of SpaceX」）が「SpaceX に正式に買収された。4月に発表した SpaceXAI との提携から始まった手続きの完了」と述べている。本文中の取引額・株式交換の形態・完全子会社化・SpaceXAI 部門への配置は、当サイトの別記事に依っており、この公式ブログには書かれていない。(2) Models & Pricing の Cursor Models 利用枠は Grok 4.7 / 4.6 / 4.5 と Composer 2.5、第三者モデルは別枠（API 価格で課金）で、Sonic の記載は見当たらない。第三者モデルの名称は Claude Fable 5.1 / Opus 5.5 / Sonnet 5.5、GPT-5.6（Luna / Sol / Terra）、Gemini 3.1 Pro / 3.8 Flash などが並んでおり、本文の切替可能モデルの記述（Opus 5、Fable 5、GPT-5.6、Gemini 3.x）は世代の細かい版が古い前提のまま残している。(3) Auto は Cursor Router（2026年7月22日）で動く。CLI は 2026年8月11日のリリースで実行中ターンへの割り込み誘導が、8月26日のリリースで `agent persist` による永続セッションが加わった（自己ホスト型ワーカーは 2026年3月以前から CLI にあり、8月のリリースはその拡張）。(4) Bugbot は 2026年6月10日の公式 changelog で、Composer 2.5 が動力になり、平均レビュー時間が約90秒、1回あたりの費用が約22%減と説明されている。これは Cursor 自身の説明であり、独立した検証は確認できていない。本文の「1 PR 平均 $1.00-$1.50」は、この変更以前の値かどうかを含め、公式ページでは確認できていない。"
     ],
     "primarySources": [
       {
@@ -8655,9 +8659,39 @@ const ARTICLES_BODY = {
         "url": "https://cursor.com/changelog/microsoft-teams"
       },
       {
-        "title": "@cursor/cli on npm",
+        "title": "@cursor/cli on npm（2026-09-30 時点で npm レジストリに該当パッケージなし。参照・インストール不可）",
         "site": "npm",
         "url": "https://www.npmjs.com/package/@cursor/cli"
+      },
+      {
+        "title": "Cursor CLI — Installation",
+        "site": "Cursor Docs",
+        "url": "https://cursor.com/docs/cli/installation"
+      },
+      {
+        "title": "Cursor CLI — Parameters",
+        "site": "Cursor Docs",
+        "url": "https://cursor.com/docs/cli/reference/parameters"
+      },
+      {
+        "title": "Cursor CLI — Changelog",
+        "site": "Cursor Docs",
+        "url": "https://cursor.com/docs/cli/changelog"
+      },
+      {
+        "title": "Models & Pricing",
+        "site": "Cursor Docs",
+        "url": "https://cursor.com/docs/models-and-pricing"
+      },
+      {
+        "title": "Pricing",
+        "site": "Cursor",
+        "url": "https://cursor.com/pricing"
+      },
+      {
+        "title": "Cursor is now a part of SpaceX",
+        "site": "Cursor Blog",
+        "url": "https://cursor.com/blog/joining-spacex"
       }
     ],
     "tables": [
@@ -8682,17 +8716,22 @@ const ARTICLES_BODY = {
           [
             "Pro+",
             "$60",
-            "Pro の5倍 Agent 上限"
+            "Pro の3倍の Agent 上限"
           ],
           [
             "Ultra",
             "$200",
-            "最大 Agent 利用枠"
+            "Pro の20倍の Agent 上限"
+          ],
+          [
+            "Start（インド限定）",
+            "₹649/月（税込）",
+            "Cursor Models（Grok・Composer）と Cloud Agents を含む。第三者モデルの利用枠は含まれない"
           ],
           [
             "Teams Standard",
             "$40/seat/月",
-            "組織管理、SAML SSO、Privacy Mode"
+            "組織管理、SAML/OIDC SSO、チーム全体の Privacy Mode"
           ],
           [
             "Teams Premium",
@@ -8700,9 +8739,9 @@ const ARTICLES_BODY = {
             "Standard の5倍 Agent 上限"
           ],
           [
-            "Business / Enterprise",
+            "Enterprise",
             "カスタム",
-            "監査ログ、SOC 2"
+            "プール利用、請求書払い、SCIM、監査ログ、優先サポートとアカウント管理"
           ]
         ]
       }
