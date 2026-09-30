@@ -24953,6 +24953,223 @@ const ARTICLES_BODY = {
         "url": "https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings"
       }
     ]
+  },
+  "claude-fable-5-1-mythos-5-1-review": {
+    "body": [
+      "**Claude Fable 5.1 と Claude Mythos 5.1** は Anthropic が2026年9月1日に公開したモデルで、Anthropic は両者を「同じモデルで、セーフガードの水準だけが異なる」と説明している。Fable 5.1（API ID `claude-fable-5-1`）は一般提供で、Claude API・Amazon Bedrock・Claude Platform on AWS・Google Cloud・Microsoft Foundry で使える。Mythos 5.1（`claude-mythos-5-1`）は Project Glasswing 参加者向けの招待制で、サイバーセキュリティとライフサイエンスの用途に合わせた別のセーフガードを持つ。どちらもコンテキストウィンドウは 1M トークン、最大出力は 128k トークン、思考は常時オンの適応型（adaptive thinking）である（[前世代のレビュー](?a=claude-fable-5-mythos-5-review)は Fable 5 / Mythos 5 が対象）。",
+      "**【位置づけの注記】** Fable 5.1 の公開後に、Anthropic は 9月22日に Claude Opus 5.5（$4 / $20）、9月28日に Claude Sonnet 5.5（$2 / $10）を公開している。公式のモデル一覧は「ほとんどのワークロードでは Opus 5.5 から始め、Fable 5.1 は要求水準の高い推論と長時間のエージェント作業、または Opus 5.5 を高い effort で試しても評価が届かない場合に使う」と案内している（Fable 5.1 のモデルページには同趣旨の文が Opus 5 を名指しして残っている）。Help Center のリリースノートは Opus 5.5 を「ほとんどの作業で Fable 5.1 と同水準」と説明しているが、これも Anthropic 自身の説明であり、独立した検証は確認できていない。本レビューの★は Fable 5.1 の採用判断に対する評価であり、性能のみを見るモデル比較表の総合値とは別の尺度である。",
+      "**公表されている性能（当事者の値）**: Anthropic の発表ページは、Fable 5.1 を Fable 5、Opus 5、GPT-5.6 Sol と比較する表を載せている。**いずれも Anthropic が自社の環境で測った値で、独立した第三者による再現は確認できていない。** 数値は Anthropic の表のとおりで、Fable 5.1 は表の全行で Fable 5 を上回る。**発表ページの図で確認できた行（Terminal-Bench-Science 0.1、Terminal-Bench 4.0、CursorBench 3.2.0）の Fable 5.1 の値は max effort のもので、Claude Code の既定である high ではない。** 例えば Terminal-Bench 4.0 は max で 55.8%（1タスクあたり平均約 $19.50）、high で 49.4%（約 $10.50）と図に示されている。他の行の effort 条件は本文からは確認できない。",
+      "表の注記も原文にある。Fable 5.1 は本番のセーフガードを有効にして評価されており、セーフガードが介入したタスクでは、OSWorld 2.0 の Fable 5.1 と Fable 5 が 0点、AutomationBench の Fable 5 が 0点として扱われ、それ以外の介入ではサイバー関連タスクを Opus 4.8、生物関連タスクを Opus 5 が処理した。Anthropic は、これが Fable 5.1 と Fable 5 の成績を押し下げている可能性が高いと書いている。OSWorld 2.0 は2026年8月のタスク公開版での値で、以前の公表値とは直接比較できないとされ、競合の値は載っていない。Terminal-Bench 4.0 は max effort で Fable 5.1 が 55.8%、Mythos 5.1 が 60.9%（high では Mythos 5.1 が 57.1%）で、Anthropic は両者の差を「以前のサイバー向けセーフガードが介入したタスク」によるものと説明している。Fable 5 は 42.0%、Opus 5 は 52.3%、GPT-5.6 Sol は 37.3% と表に載っているが、これらの effort 条件は確認できず、他社モデルとの比較は Anthropic の環境での値で独立検証はない。同ページは、low または medium effort でも Fable 5 と同等以上の結果がはるかに低いコストで出ると説明している。早期アクセス顧客の引用は Anthropic が選んだ掲載であり、ここでは扱わない。",
+      "**料金**: 基本料金は入力 $10 / 出力 $50（100万トークンあたり、Fable 5 と同じ）。変わったのは**キャッシュ読み取りだけ**で、$1 から $0.25（基本入力の 0.025 倍）になった。キャッシュ書き込みは 5分 $12.50、1時間 $20 のまま、Batch API は入出力とも 50% 割引で、1M のコンテキスト全体が標準単価で課金される。Anthropic は、ユーザーが実際に支払う額は「一般的なワークロードで Fable 5 より約25%、キャッシュ読み取りが大半を占める高度にエージェント的な作業で最大約45%」下がると説明している。ただし、この数字は 2026年8月の4週間の実利用をデフォルト effort で集計した Anthropic の試算であり、**下げ幅は自分のキャッシュヒット率に依存する**。また Anthropic が述べているのは「トークン課金の場合」の削減であり、サブスクリプションの週次上限の消費が同じだけ減るとは書かれていない。",
+      "同時期の他モデルとの比較（公式の料金表）: Opus 5.5 は入力 $4 / 出力 $20、キャッシュ読み取り $0.20、Sonnet 5.5 は入力 $2 / 出力 $10、Opus 5 は入力 $5 / 出力 $25 である。基本料金で比べると Fable 5.1 は Opus 5.5 の 2.5 倍で、キャッシュ読み取りの単価は Fable 5.1 の方が高い（$0.25 と $0.20）。1タスクあたりの費用は使うトークン量と effort で変わるため、この比だけでは総額を予測できない。Anthropic は、Fable 5.1 の low または medium effort が Fable 5 の結果と同等かそれ以上で、より低コストだと説明している（グラフの読み取り値は本文に載せない）。",
+      "**プランごとの利用条件**: Help Center の「Claude Fable models on your plan」によると、Fable 5.1 は Pro・Max・Team・Enterprise の有料プランで使え、無料プランでは使えない。**Max、Team のプレミアムシート、席課金 Enterprise のプレミアムシート**では Fable が標準で含まれ、週次使用上限のうち Fable に使えるのは最大 50% までで（週次上限の内数であり、上乗せではない。他モデルの使用も同じ上限から引かれる）、通常より速く消費される。上限に達したら、利用クレジットで続けるか、別モデルに切り替える。**Pro、Team の標準シート、席課金 Enterprise の標準シート**では Fable は使用上限に含まれず、最初から従量課金の利用クレジット（標準 API 料金）で使う。標準シートの Enterprise は組織が利用クレジットを有効にしている場合のみ使える。使用量課金の Enterprise と API は標準 API 料金である。",
+      "**Fable 5 の包括措置は 5.1 に及ばない**: 以前、Fable 5 を週次上限の最大 50% まで追加費用なしで使える措置があり、2026年7月19日 23:59:59（太平洋時間）に終了した。Help Center は、この措置と、Pro・Team 標準シート向けに Fable 5 の移行時に配られた一回限りのクレジットが Fable 5 のみを対象とし、**Fable 5.1 は対象外だった（同等のクレジットもない）**と明記している。Pro や Team 標準シートで Fable 5.1 を使う場合は、最初から利用クレジットの残高が必要になる。",
+      "**Claude Code での扱い**: 公式ドキュメントでは Fable 5.1 は Claude Code v2.1.257 以降が必要で（Help Center は v2.1.255 以降と書いており、Anthropic の文書間で記載が食い違う。変更履歴では 2.1.257 が 9月1日に Fable 5.1 を追加している）、`/model fable` または `claude --model fable` で選ぶ。`fable` エイリアスは Fable 5.1 に解決されるが、Claude apps gateway のセッションでは Fable 5 のままなので `/model claude-fable-5-1` で指定する（5.1 を提供するよう設定されていない gateway は 5.1 へのリクエストを拒否する）。Fable はどのプラン・プロバイダーでも既定モデルではない。Anthropic に直接つないでいてユーザー設定に `claude-fable-5` が保存されている場合は、v2.1.257 以降の初回起動で `fable` エイリアス（5.1）に自動で書き換わる。Fable 5 を使い続けたい場合は model ID で指定する。Anthropic は Fable 5.1 の既定 effort を Claude Code で high、Claude Cowork と claude.ai で medium と説明している。**利用クレジットで課金される場合、対話セッションでは同意画面が出るが、`-p`（非対話）や同意画面を出さない Agent SDK アプリでは確認なしで課金される**とドキュメントに書かれている。自動実行に組み込む場合は、先に利用クレジットの上限を決めておく必要がある。**v2.1.257 から v2.1.259 には、Fable 5.1 でツール結果の後ろの文脈がキャッシュされず毎回キャッシュなしで再送される不具合、`/model` のピッカーに 5.1 が出ない不具合、会話途中の `/effort` 変更でキャッシュが無効になる不具合があり、2.1.260（9月3日）で修正された**（変更履歴）。キャッシュ値下げの効果を見込むなら 2.1.260 以降が前提になる。",
+      "**セーフガードとフォールバック**: Fable 5.1 は全リクエストに分類器（classifier）を走らせ、対象と判定した要求を Opus 系モデルに回す。Help Center が挙げる対象は、エクスプロイトやマルウェアなどの攻撃的サイバーセキュリティ、生物学のデュアルユース領域の多く（ウイルス学・毒性学・創薬・分子設計）、要約された思考の抽出などの蒸留攻撃、フロンティア LLM 開発の限られた作業である。回し先は、生物・化学・ライフサイエンスが Opus 5、攻撃的サイバーが Opus 4.8 である。分類器はモデルが読む内容（メモリ、コネクタ、ウェブ検索結果、ファイル）も検査するため、自分で入力していない内容で発動することがある。API では自動切り替えは既定で無効で、フォールバックを設定するまでは停止理由付きの 200 応答が返る（サーバー側フォールバックはベータで `fallbacks: \"default\"` により設定でき、Fable 5.1 の回し先は Opus 4.8 と Opus 5）。Claude Code では、CLAUDE.md や git status などの作業環境の内容で分類器が反応し、最初のリクエストからフォールバックしうる。原因の切り分けには `claude --safe-mode`、自動切り替えの停止には設定 `switchModelsOnFlag` を使う。生物関連の作業は最初のフラグで Opus 5 に移り、Opus 5 には生物の回し先がないため以後は拒否で終わる。",
+      "Anthropic は 5.1 でセーフガードを見直したと説明している（当事者の数字）。Claude Code の1セッションあたりのサイバー関連の介入は従来比で平均約60%減り、初歩的な生物・医療の良性の質問への介入は Fable 5 の公開時のセーフガードと比べて 85% 減った（この改善は Fable 5 にも適用される）。Fable 5.1 は脆弱性の発見には使えるようになったが、エクスプロイトの開発は対象外である。ペネトレーションテスト、エクスプロイト生成、バイナリベースの脆弱性スキャンは引き続き Opus に回される。ライフサイエンスの研究開発の質問も Opus に回される。**なお 9月24日から、出力が始まる前の拒否のうち `bio`・`frontier_llm`・`reasoning_extraction` のカテゴリは課金対象に戻った**（プラットフォームのリリースノート）。それ以外のカテゴリの出力前拒否は課金されない。",
+      "**API の破壊的変更（Fable 5 から移る場合）**: 公式ドキュメントが破壊的と明示するのは3つである。(1) `tool_choice` の `any` と `tool`（強制ツール呼び出し）は 400 エラーになる。`auto` と `none` は従来どおりで、スキーマに合った入力を保証するには strict tool use か structured outputs を使う。(2) Fable 5.1 が出した思考ブロックは、それを出したモデルか新しいモデルでしか保持されず、以前のモデルは読めない（API は以前のモデルに再送された思考ブロックを落とす）。(3) 思考ブロックより前の内容（system、tools、過去のメッセージ）を変更すると、次のリクエストでエラーになるか、オプトインすればブロックが落とされる。このチェックは 2026年8月31日以降に作成した新規アカウントで強制され、それ以前のアカウントでは `thinking.block_binding.prefix_mismatch_behavior` を指定した場合のみ作用する。Claude Code、claude.ai、Claude Managed Agents、Claude Agent SDK は前置部分を自動で保つ。Anthropic はこの変更を蒸留対策と説明している。",
+      "**Fable 5 から挙動が変わる点**（コードを変えなくても表に出る）: 並列のツール呼び出しが減り、1ターン1呼び出しになりやすい（往復・トークン・時間が増える）。小さな変更でもファイル全体を書き直しやすい。要約で原文を引用符なしに再現しやすい。長いツール実行中の進捗報告が減る。low effort では検索せず記憶から答えやすい。prefill、thinking の無効化、`temperature` などを既定値以外にすることは、Fable 5 と同じく 400 エラーである。",
+      "追加された機能は、途中で effort を変えられる per-message effort（ベータ、プロンプトキャッシュを維持）、その回だけ有効なターン単位の system メッセージ（ベータ）、ツール呼び出しの間の進捗更新を返す `thinking.display: \"updates\"`（ベータ）、キャッシュ読み取りの値下げ、出力へのコンテンツ来歴表示である。テキストには Anthropic の透かし（ウォーターマーク）が付き、コード実行ツールが生成する画像・動画・音声は Files API 経由で C2PA Content Credentials が付く。データ保持は、Fable 5 と同じく 30日保持が必須で、Anthropic が個別に認めた場合を除きゼロデータ保持では使えない。一方、Anthropic の発表は、Enterprise Frontier Safeguards（顧客のクラウドにデータを置き、ゼロデータ保持と同等のプライバシーを保つ仕組み）が使えるようになるまでは、対象の顧客が Fable 5.1 をゼロデータ保持で使えると説明している（対象条件は本稿では確認していない）。Enterprise Frontier Safeguards は今秋から段階的に提供される予定で、本稿の時点で提供状況は確認できていない。思考ブロックの履歴編集を制限する蒸留対策は、現在は新規アカウントが対象だが、Anthropic は将来のモデルでは既存のアカウントにも適用すると述べている。",
+      "**Mythos 5.1（招待制）**: 公開されている範囲では、Mythos 5.1 は Fable 5.1 と同一のモデルで、セーフガードだけが異なる。仕様と料金は Fable 5.1 と同じで、利用は Cyber Verification Program（CVP）と Life Sciences Verification Program（LSVP）の2つの信頼アクセスプログラム経由とされる。ただし現時点で動いているのは LSVP だけで、米国政府との連携で最初の参加者が登録済みである。CVP は現在 Opus・Sonnet 級のモデルが対象で、Anthropic は「近い将来」Mythos 級モデルも含めると書いている。提供先のプラットフォームは Fable 5.1 の5つのうち Claude Platform on AWS を除く4つである。現時点では米国の一部組織のみが対象で、国内外への拡大は米国政府と調整中である。アクセスの窓口は Anthropic、AWS、Google Cloud のアカウントチームで、一般の申し込みはできない。Anthropic は Claude Security（コードベースの脆弱性を走査して修正案を出す製品）が Mythos 5.1 で動くようになったと説明している。Mythos 5.1 について本稿が確認できたのは Anthropic の公表内容のみで、独立した評価は確認できていない。Anthropic は、Mythos 5.1 が設計したタンパク質結合体が、外部2機関の実験で12の標的のうち約50%の設計で結合したと報告しているが、これも当事者の報告であり、本稿では検証していない。",
+      "**強み**:",
+      "(1) **Fable 5 世代からの改善**: 当事者の公表値では、掲載された全行で Fable 5 を上回り、長時間のエージェント作業、調査、文書・表計算・スライド作成が重点として挙げられている。",
+      "(2) **キャッシュ読み取りの値下げ**: 基本料金を据え置いたまま、コンテキストを繰り返し読むエージェント型の利用では請求額が下がる余地がある。下げ幅はキャッシュヒット率に依存する。",
+      "(3) **提供範囲と長い出力**: 5つのプラットフォームで提供され、1M コンテキストを標準単価で使え、最大 128k トークンを出力できる。per-message effort により、キャッシュを保ったまま途中で思考の深さを変えられる。",
+      "**注意点**:",
+      "(1) **利用条件が読みにくい**: Max・Team プレミアムシートでも Fable に使えるのは週次上限の最大 50% で、Pro と標準シートは最初から従量課金である。Fable 5 の包括措置は 5.1 に適用されなかった。",
+      "(2) **API 移行の手間**: 強制ツール呼び出しの廃止、思考ブロックのモデル間非互換、履歴編集での無効化の3つが破壊的で、自前で messages を組み立てるコードは移行前の確認が要る。",
+      "(3) **セーフガードによる迂回**: 攻撃的サイバー、生物のデュアルユース、蒸留の疑いなどは Opus 系に回される。5.1 で介入は減ったと Anthropic は説明するが、セキュリティ研究やライフサイエンスの本格的な作業は Mythos 5.1 の対象で、招待制である。",
+      "(4) **データ保持と基本料金**: 30日保持が必須で、ゼロデータ保持は個別承認が必要。基本料金は Opus 5.5 の 2.5 倍である。",
+      "(5) **独立検証の不在**: 性能の根拠は Anthropic の公表値のみで、第三者による再現は確認できていない。",
+      "**★の付け方**: 本レビューの★は、執筆した担当とは別のモデルが同じ5軸（AI品質30% / 使いやすさ25% / コスパ20% / 拡張性15% / 企業向け10%）で独立に付けた点数との平均で、0.25 または 0.75 になる軸は低い側に丸めた。結果は AI品質 4.5、使いやすさ 3、コスパ 2.5、拡張性 4、企業向け 3 で、加重平均は 3.5 である。二つの採点が分かれたのは、使いやすさ（3.5 と 3）、コスパ（3 と 2.5）、企業向け（3.5 と 3）だった。分かれた主な理由は、週次上限と利用クレジットの扱いをどこまで重く見るかにある。事実としては、Pro と標準シートは最初から利用クレジット、Max などでも Fable に使えるのは週次上限の最大 50%、Fable 5 の包括措置は 5.1 に適用されず、`-p` では確認なしで課金され、基本料金は Opus 5.5 の 2.5 倍で Anthropic 自身が多くの用途で Opus 5.5 から始めるよう案内している。この★は性能のみを見るモデル比較表の総合値とは別の尺度で、値が食い違うことがある。",
+      "**AI News の見立て**: Fable 5.1 は、Anthropic 自身が「要求水準の高い推論と長時間のエージェント作業、または Opus 5.5 を高い effort で試しても足りない場合」に位置づけているモデルである。この位置づけを前提にすると、採用の順序は、まず自分の評価用タスクを Opus 5.5 などで動かし、届かないものだけを Fable 5.1 に回す形が現実的と考える。Fable 5.1 を組み込む場合は、拒否時の Opus フォールバックを API 側で設定し、`-p` や自動実行では利用クレジットの上限を先に決め、履歴を編集する実装がないかを `input_transformations` のログで確認するとよい。Mythos 5.1 は招待制のため、一般の利用者が選べる選択肢ではない。ここに書いたのは一般論であり、契約するプランや所属先のルールがある場合はそちらが優先される。前提は動き続けるため、公式ドキュメントとの差異があればこの記事を更新する。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "Anthropic が発表ページで公表したベンチマーク（当事者の値。独立検証は確認できていない。max effort は Fable 5.1 の値で、他の列の effort は確認できない）",
+        "headers": [
+          "指標",
+          "Fable 5.1",
+          "Fable 5",
+          "Opus 5",
+          "GPT-5.6 Sol"
+        ],
+        "rows": [
+          [
+            "Terminal-Bench-Science 0.1（max effort）",
+            "52.6%",
+            "24.7%",
+            "29.0%",
+            "22.4%"
+          ],
+          [
+            "Terminal-Bench 4.0（max effort。Fable 5.1 は high で 49.4%）",
+            "55.8%",
+            "42.0%",
+            "52.3%",
+            "37.3%"
+          ],
+          [
+            "GDPval-AA v2（スコア）",
+            "1853",
+            "1723",
+            "1824",
+            "1711"
+          ],
+          [
+            "OSWorld 2.0（partial）",
+            "77.9%",
+            "72.9%",
+            "75.4%",
+            "—"
+          ],
+          [
+            "OSWorld 2.0（strict）",
+            "41.7%",
+            "36.1%",
+            "39.6%",
+            "—"
+          ],
+          [
+            "Humanity's Last Exam（ツールなし）",
+            "60.9%",
+            "57.8%",
+            "56.6%",
+            "—"
+          ],
+          [
+            "Humanity's Last Exam（ツールあり）",
+            "65.0%",
+            "63.8%",
+            "63.6%",
+            "—"
+          ],
+          [
+            "AutomationBench",
+            "31.4%",
+            "17.1%",
+            "26.9%",
+            "19.6%"
+          ],
+          [
+            "CursorBench 3.2.0（max effort）",
+            "73.4%",
+            "70.5%",
+            "70.0%",
+            "67.2%"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 4,
+        "caption": "API 料金（100万トークンあたり、Anthropic 公式の料金表）",
+        "headers": [
+          "モデル",
+          "入力",
+          "5分キャッシュ書き込み",
+          "1時間キャッシュ書き込み",
+          "キャッシュ読み取り",
+          "出力"
+        ],
+        "rows": [
+          [
+            "Fable 5.1 / Mythos 5.1（招待制）",
+            "$10",
+            "$12.50",
+            "$20",
+            "$0.25",
+            "$50"
+          ],
+          [
+            "Fable 5 / Mythos 5",
+            "$10",
+            "$12.50",
+            "$20",
+            "$1",
+            "$50"
+          ],
+          [
+            "Opus 5.5",
+            "$4",
+            "$5",
+            "$8",
+            "$0.20",
+            "$20"
+          ],
+          [
+            "Opus 5",
+            "$5",
+            "$6.25",
+            "$10",
+            "$0.50",
+            "$25"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Claude Fable 5.1 and Claude Mythos 5.1",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+      },
+      {
+        "title": "Claude Fable 5.1（モデルページ）",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/models/fable-5-1/overview"
+      },
+      {
+        "title": "What's new in Claude Fable 5.1",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/models/fable-5-1/whats-new-fable-5-1"
+      },
+      {
+        "title": "Claude Mythos 5.1（モデルページ）",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/models/mythos-5-1/overview"
+      },
+      {
+        "title": "Pricing",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Claude Platform release notes",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Model deprecations",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+      },
+      {
+        "title": "Claude Fable models on your plan",
+        "site": "Claude Help Center",
+        "url": "https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan"
+      },
+      {
+        "title": "Why Claude switched models in your conversation with Fable 5 or Fable 5.1",
+        "site": "Claude Help Center",
+        "url": "https://support.claude.com/en/articles/15363606-why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1"
+      },
+      {
+        "title": "Manage usage credits for paid Claude plans",
+        "site": "Claude Help Center",
+        "url": "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans"
+      },
+      {
+        "title": "Claude Code model configuration",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/model-config"
+      },
+      {
+        "title": "Claude Code changelog",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/changelog"
+      }
+    ]
   }
 };
 

@@ -11225,5 +11225,34 @@ export const ARTICLES_META = [
     },
     "rating": 4.1,
     "reviewCategory": "model"
+  },
+  {
+    "id": "claude-fable-5-1-mythos-5-1-review",
+    "type": "review",
+    "category": "model",
+    "title": "Claude Fable 5.1 / Mythos 5.1 レビュー — 基本料金は据え置きでキャッシュ読み取りのみ値下げ、Fable 5 の包括措置は対象外、Mythos 5.1 は招待制",
+    "excerpt": "Anthropic が2026年9月1日に公開した Fable 5.1（一般提供）と Mythos 5.1（招待制）のレビュー。基本料金は**入力 $10 / 出力 $50 のまま**で、下がったのは**キャッシュ読み取り（$1 → $0.25）だけ**。Max・Team プレミアムシートで Fable に使えるのは週次上限の最大50%で、Pro と標準シートは利用クレジットのみ。Fable 5 の包括措置は5.1には及ばなかった。API には破壊的変更が3つあり、性能は Anthropic の公表値のみで独立検証は確認できていない。9月22日には Opus 5.5（$4 / $20）が公開され、Anthropic は多くの用途で Opus 5.5 から始めるよう案内している。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-01",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "モデル",
+      "Anthropic",
+      "Fable 5",
+      "Mythos",
+      "LLM"
+    ],
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": "monthly",
+    "ratings": {
+      "AI品質": 4.5,
+      "使いやすさ": 3,
+      "コスパ": 2.5,
+      "拡張性": 4,
+      "企業向け": 3
+    },
+    "rating": 3.5,
+    "reviewCategory": "model"
   }
 ];
