@@ -1911,9 +1911,12 @@ a.article-embed__x-link {
   color: var(--muted);
   font-size: var(--text-base);
 }
-.article-video__file-link,
-.article-demo__note a {
+.article-video__file-link {
   margin-left: 0.5rem;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.article-demo__note a {
   color: var(--accent);
   white-space: nowrap;
 }
