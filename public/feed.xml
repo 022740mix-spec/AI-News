@@ -16,6 +16,14 @@
     <summary>Anthropic の開発者向け公式アカウントは2026年9月25日、Claude Code が5時間の利用上限に達したとき、編集の途中で打ち切らず区切りのよい停止点を探すようになると発表した。そのために、週次の利用枠から小さな固定の割り当てを引く。使える頻度は Pro が週1回、Max と Team Premium が5時間の上限に達するたびで、続きは追加利用で進められる。国内報道はこれを「残業」と呼ぶ。割り当ての大きさや対象バージョンは、公式の投稿には書かれていない。</summary>
   </entry>
   <entry>
+    <title>Google が Gemini 4 Argon を発表——一般提供は未定で、まず信頼できるサイバー防衛者に Fairwind プログラムで提供。出力上限は1Mトークン</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-4-argon-fairwind-trusted-testers-2026"/>
+    <id>tag:ai-tool-news.jp,2026:gemini-4-argon-fairwind-trusted-testers-2026</id>
+    <published>2026-10-01T15:00:00Z</published>
+    <updated>2026-10-01T15:00:00Z</updated>
+    <summary>Google DeepMind は2026年9月30日付で、新しいフロンティアモデル「Gemini 4 Argon」を発表した。提供はまず「信頼できるサイバー防衛者」向けの Fairwind プログラムに限られ、開発者・企業・一般向けには、有料 API の顧客と Google AI Ultra の加入者から「できるだけ早く」広げるとしている。出力トークン上限は従来の64Kから1Mに拡大され、導入価格は入力100万トークンあたり2ドル、出力10ドルで、導入期間の終了後は4ドルと20ドルになる。Google の比較表では、GPT-6 Astra、Claude Fable 5.1、Claude Opus 5.5 と並べた19項目のうち14項目で最高値（1項目は同値）だが、5項目では他社が上回る。比較の数値には各社の自己申告や自社計測が含まれる。</summary>
+  </entry>
+  <entry>
     <title>ChatGPT に MCP Events、MCP サーバーの更新を監視して動く仕組み。MCP Events は MCP 2.0 とドラフト仕様の Webhook 配信が前提</title>
     <link rel="alternate" type="text/html" href="?a=openai-mcp-events-chatgpt-webhook-mcp-2-0-2026"/>
     <id>tag:ai-tool-news.jp,2026:openai-mcp-events-chatgpt-webhook-mcp-2-0-2026</id>
