@@ -6658,7 +6658,7 @@ const ARTICLES_BODY = {
       "**GitHub Copilot（IDE）** は他ツールと様相が異なる。優先順位は上から Personal instructions → Repository → Organization とされ、**個人設定が組織設定より上位に置かれる**。しかし同時に公式は「**関連するすべての指示セットが Copilot に提供される**」とも述べており、**上位が下位を無効化する仕組みではない**。つまり順位はあっても打ち消しはされず、矛盾した指示は矛盾したまま両方渡る。パス別の `.github/instructions/**/*.instructions.md` はフロントマターの `applyTo` で対象を絞れる。組織のカスタム指示は Copilot Business / Enterprise 契約が要り、**適用範囲は GitHub 上の Copilot Chat・コードレビュー・クラウドエージェントに限られる**。IDE のチャットには効かない点に注意がいる。",
       "**GitHub Copilot CLI** はさらに踏み込んで、**公式が「これらのファイル間の一般的な優先順位は定義しない。矛盾する指示は避けること」と明記している**。読むのは `$HOME/.copilot/copilot-instructions.md`、`.github/copilot-instructions.md`、`.github/instructions/**/*.instructions.md`、`AGENTS.md`、`CLAUDE.md`、`GEMINI.md` など。複数ファイルは結合され同一内容は重複排除される。`/instructions` コマンドで、実際に読み込まれたファイルの確認と個別の有効・無効化ができる。**Agent Skills は `.github/skills` / `.claude/skills` / `.agents/skills` を読む** — つまり Claude Code のディレクトリをそのまま読む。",
       "**Cursor** の優先は **Team Rules → Project Rules → User Rules** で、先に来るものが勝つ。Project Rules は `.cursor/rules/` に `.mdc` 形式で置き、フロントマターの `description` / `globs` / `alwaysApply` で適用条件を制御する。**フロントマターを持てない `.md` はルールとして無視される**。Team Rules は Cursor のサーバーに保存されてダッシュボードから全メンバーへ同期され、**管理者がルールごとに「必須」に設定すると、メンバー側で無効化できない**。ルート直下の `.cursorrules` はレガシー扱いで、**現時点では動作するが将来廃止予定**である。`AGENTS.md` はネイティブに読むが、プレーン Markdown のため glob による適用制御は持たない。",
-      "**Devin Desktop（旧 Windsurf）** は `.devin/rules` を優先し、`.windsurf/rules` を後方互換のフォールバックとして読む。グローバルは `global_rules.md`。**文字数上限があり、ワークスペースのルールファイルが各12,000文字、グローバルが6,000文字、グローバルとワークスペースの合計が12,000文字**とされる。超過分はグローバルを優先して残りにワークスペースを詰める形になる。**なお中核エージェントの Cascade は2026年7月1日に提供終了しており**、現行は Rust で書き直された後継の Devin Local である。組織・エンタープライズレベルでルールを強制する仕組みについては、公開情報を確認できなかった。",
+      "**Devin Desktop（旧 Windsurf）** は `.devin/rules` を優先し、`.windsurf/rules` を後方互換のフォールバックとして読む。グローバルは `global_rules.md`。**文字数上限があり、ワークスペースのルールファイルが各12,000文字、グローバルが6,000文字、グローバルとワークスペースの合計が12,000文字**とされる。超過分はグローバルを優先して残りにワークスペースを詰める形になる。**なお中核エージェントの Cascade は、2026年6月2日の発表で7月1日までの利用が予告され（公式 FAQ では「7月中」）、実際には2026年9月8日の v3.9.19 で削除されており**、現行は Rust で書き直された後継の Devin Local である。組織・エンタープライズレベルでルールを強制する仕組みについては、公開情報を確認できなかった。",
       "**VS Code 上の Claude Code 拡張**は設定が2系統ある点に注意がいる。VS Code の拡張設定（`useTerminal`、`initialPermissionMode`、`respectGitIgnore` 等）は**拡張の挙動だけ**を制御するもので、AI の振る舞いそのものは `~/.claude/settings.json` が決める。公式はこの設定が拡張と CLI の間で共有されると明記している。",
       "**その他のツール**も置き場所は異なる。Gemini CLI は `~/.gemini/GEMINI.md` とプロジェクト配下を**連結**し、具体的なものが優先される。Kiro は `.kiro/steering/`（`.amazonq/rules/` をレガシー互換で読む）、JetBrains Junie は `.junie/guidelines.md`、Cline は `.clinerules/`、Continue.dev は `.continue/rules/`、Aider は `CONVENTIONS.md`。**Cline は AGENTS.md・.cursorrules・.windsurfrules も検出してトグルで有効化できる**という、他にない可視化 UI を持つ。",
       "## 4層が衝突したとき、ツールによって上下が逆転する",
@@ -6698,7 +6698,8 @@ const ARTICLES_BODY = {
       "【全面改稿 2026-08-11】旧版（2026-03-29 公開）は本文7段落で、各ツールの優先順位・層の衝突時の挙動・エンタープライズ層・強制力の有無を扱っておらず、実務判断に必要な情報を欠いていました。全面的に書き直しています。",
       "【訂正 2026-08-11】（誤）`.claude/CLAUDE.md` が個人設定 →（正）**`./CLAUDE.md` と `./.claude/CLAUDE.md` はどちらもプロジェクト設定**です。個人設定は `~/.claude/CLAUDE.md`、Git 管理外の個人ローカル設定は `./CLAUDE.local.md`。また旧版は三層構造と説明していましたが、正しくは**管理ポリシー層を含む4層**であり、各層は上書きではなく**連結**されます。",
       "【訂正 2026-08-11】（誤）AGENTS.md は「codex.md でも読み込まれる」→（正）現行の公式ドキュメントでは、Codex ホームおよび各階層で `AGENTS.override.md` → `AGENTS.md` → 設定で指定した別名の順に探索されます。`codex.md` が既定のフォールバックであることは現行資料で確認できませんでした。",
-      "【訂正 2026-08-11】（誤）Cursor は「`.cursorrules` と `.cursor/rules/` の2つの配置方法がある」→（正）`.cursorrules` は**レガシー扱いで将来廃止予定**です。また旧版は Team Rules（管理者が必須指定でき、メンバーが無効化できない層）に触れていませんでした。"
+      "【訂正 2026-08-11】（誤）Cursor は「`.cursorrules` と `.cursor/rules/` の2つの配置方法がある」→（正）`.cursorrules` は**レガシー扱いで将来廃止予定**です。また旧版は Team Rules（管理者が必須指定でき、メンバーが無効化できない層）に触れていませんでした。",
+      "【訂正 2026-09-30】（誤）「Cascade は2026年7月1日に提供終了」→（正）7月1日は、2026年6月2日の Devin 公式ブログが予告した Cascade の移行期限（公式 FAQ は「7月中」で食い違う）だった。実際には Cascade は7月末のリリースにも残り、Devin Desktop から削除されたのは v3.9.19（2026年9月8日）で、以降 Devin Local が唯一のエージェントになった。2026-08-11 の訂正文も同じ日付を提供終了日として書いていたため、あわせて改める。"
     ],
     "tables": [
       {
@@ -6826,6 +6827,21 @@ const ARTICLES_BODY = {
         "title": "Provide context with GEMINI.md files",
         "site": "Google",
         "url": "https://google-gemini.github.io/gemini-cli/docs/cli/gemini-md.html"
+      },
+      {
+        "title": "Windsurf is now Devin Desktop",
+        "site": "Devin (Cognition)",
+        "url": "https://devin.ai/blog/windsurf-is-now-devin-desktop"
+      },
+      {
+        "title": "Devin Desktop FAQ",
+        "site": "Devin Docs",
+        "url": "https://docs.devin.ai/desktop/devin-desktop-faq"
+      },
+      {
+        "title": "Devin Desktop changelog",
+        "site": "Devin Docs",
+        "url": "https://docs.devin.ai/desktop/changelog"
       }
     ]
   },
