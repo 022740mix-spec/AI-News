@@ -16864,7 +16864,8 @@ const ARTICLES_BODY = {
       "---",
       "**編集履歴**",
       "【追記 2026-08-27】**8月26日の o3 提供終了は予定どおり実施された。** ただし補足が要る。ChatGPT のモデルピッカーから消えたのは消費者向けの o3 であり、**o3-pro は Pro / Team / Enterprise / Edu 契約では引き続き利用できる**。「o3 系が完全になくなった」わけではない点に注意してほしい。",
-      "【追記 2026-08-27】**次の期限は8月31日である。** [Claude Sonnet 5](?a=claude-sonnet-5-review) の導入価格 $2/$10 がこの日で終了し、9月以降は $3/$15 に戻る。モデルの提供終了ではないが、**単価が1.5倍になるため予算計上と採用判断に影響する**。9月以降は [GPT-5.6 Terra](?a=gpt-5-6-review)（$2/$12）のほうが入力単価で安くなる。"
+      "【追記 2026-08-27】**8月31日は、Sonnet 5 の価格が変わる期限にはならなかった。** [Claude Sonnet 5](?a=claude-sonnet-5-review) の導入価格 $2/$10 は、6月30日の公開時には8月31日までと案内され、9月1日に $3/$15 へ引き上げられる予定だった。しかし **2026年8月10日に公式が、この引き上げは行わず $2/$10 を標準価格とすると発表していた**（公式料金表と release notes で2026-09-30に確認）。8月27日のこの追記は、17日前のこの発表を見落とし、引き上げの予定がなお有効であるかのように書いていた。モデルの提供終了ではなく単価変更の予告としても、8月31日に対応が必要な事項はなかった。",
+      "【訂正 2026-09-30】（誤）8月31日で Sonnet 5 の導入価格 $2/$10 が終了し、9月以降は $3/$15 に戻る。単価が1.5倍になり予算計上と採用判断に影響する。9月以降は GPT-5.6 Terra（$2/$12）のほうが入力単価で安くなる →（正）Sonnet 5 の 9/1 の $3/$15 への引き上げは行われず、$2/$10 が標準価格として恒久化された。この恒久化は2026年8月10日に公式が発表しており（release notes と anthropic.com の Sonnet 5 の告知に Edit August 10, 2026 として記載）、8月27日の追記は書いた時点で既に誤っていた。単価の1.5倍化も、それに基づく Terra との入力単価比較（Terra $2/$12 は Sonnet 5 $2/$10 と入力同額）も成立しないため、2026-08-27 の追記を修正し、Terra との比較文を削除した。本記事の主旨（提供終了・移行期限のある変更の整理）に変更はない。"
     ],
     "primarySources": [
       {
@@ -16886,6 +16887,21 @@ const ARTICLES_BODY = {
         "title": "LLM/AI Changelog — ChatGPT, Gemini, Perplexity & Copilot Release Notes",
         "site": "reconnAI",
         "url": "https://reconn-ai.com/llm-changelog.php"
+      },
+      {
+        "title": "Pricing - Claude API Docs（Claude Sonnet 5 の脚注3）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Claude Sonnet 5 モデルページ（Pricing 節）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/models/sonnet-5/overview"
+      },
+      {
+        "title": "Introducing Claude Sonnet 5（Edit August 10, 2026）",
+        "site": "anthropic.com",
+        "url": "https://www.anthropic.com/news/claude-sonnet-5"
       }
     ]
   },
