@@ -22718,6 +22718,44 @@ const ARTICLES_BODY = {
         "url": "https://learn.chatgpt.com/docs/whats-new/devday-2026"
       }
     ]
+  },
+  "openai-plugin-extensions-website-annotations-chatgpt-ui-2026": {
+    "body": [
+      "OpenAI は2026年9月29日の DevDay 2026 の発表で、Sites & plugins の項目に Plugin Extensions と Website annotations を挙げた。どちらも ChatGPT の画面側に開発者が手を入れられるようにするものだが、対象は異なる。Plugin Extensions はプラグインの側に、Website annotations は自分の Web サイトの側に実装する。開発者が実装する単位が違うので、以下では分けて整理する。",
+      "Plugin Extensions について、公式ドキュメントは OpenAI MCP Extensions を、プラグインを ChatGPT のサイドバー、コンポーザー、ファイルビューアなど主要な画面に接続するものと説明している。拡張の一覧は、サイドバーアプリ（サイドバーから開いて全画面で使う）、会話パネル（会話の横で開く）、プラグイン設定（プラグイン固有の設定を ChatGPT 内で行う）、ファイルビューア/エディタ（対応ファイルを自前のインターフェースで開き、読み取り・ライブ更新・保存を扱う）、表示モード、ディープリンク（サイドバーアプリ内の特定のページや項目へ移動）、Model-App Context（ChatGPT と MCP アプリの双方向のコンテキスト共有）、コンポーザーのメンション、リッチフォーム（構造化入力や画像からの選択を受けて、ツールに返す）である。既存のプラグイン機能には影響しない、と公式は書いている。",
+      "実装の単位はプラグインの MCP サーバーと UI である。サイドバーアプリは、MCP アプリのツールを登録するときの _meta に openai/ui のエントリーポイントを加えて宣言し、種類は全体（global）がグローバルサイドバーに入口を追加してアプリを全画面で開くもの、thread が会話のサイドパネルで開くものに対応する。ファイルビューアは file のエントリーポイントに対応する拡張子を列挙し、アプリは開かれたファイルのリソース URI を受け取って、アプリ SDK で読み取る。リッチフォームは、フォーム要求の requestedSchema に、const と title を持つ選択肢（任意でサムネイル用の x-openai-thumbnail）を渡す。OpenAI に登録された MCP サーバーでは multi-round-trip requests（MRTR）が必須とされ、旧来（legacy）の elicitInput ヘルパーは直接接続の MCP 向けに SDK のガイドで説明されている。宣言のための TypeScript SDK と Python SDK、言語非依存のプロトコル仕様が GitHub で公開されている。コード例は公式ドキュメントを参照してほしい。",
+      "パッケージと対応環境について、DevDay の説明は、インターフェースをプラグインのツールやスキルと一緒にパッケージ化できるとしている。プラグイン一般については、公式のドキュメントで、スキルと MCP サーバーを含む導入可能なバンドルであり、MCP サーバーはツールを公開し、任意でカスタム UI を含められると説明されている。マニフェストの書式など具体的なパッケージ構成は、別ページの Package your plugin に書かれており、今回確認できた資料には含まれていないため、ここでは書かない。制約として、プラグイン一般の資料は、IDE 拡張ではプラグインが利用できないと書いている。コンポーザーのメンションは ChatGPT デスクトップアプリでのみ利用でき、ChatGPT Free と Go 向けの Web の拡張は近日対応とされている。事例として、Canva のサイドバータブ、Figma のコンポーザーメンション、Adobe のファイル拡張子ハンドラー（Acrobat と Photoshop での編集）が紹介されている。",
+      "Website annotations は Annotations Extensibility と呼ばれる。ChatGPT の内蔵ブラウザでは、コードを変えなくても、ページの一部を選んでコメントを付け、Codex や ChatGPT Work に送れる。Browser Annotation API を使うと、サイトが選択対象、フィードバックに添える文脈、変更をプレビューして送信前に確認するための操作を、アプリ固有に用意できる。デザインシステムのプレビューで、コンポーネントの候補を添える例が挙げられている。対応環境は、DevDay 2026 リリース以降の ChatGPT デスクトップアプリの内蔵ブラウザで、HTTPS または localhost のような安全な最上位ページに限られる。API は document.oai.annotation から使え、メソッドごとに存在を確認してから使うよう求められている。ChatGPT Enterprise と Edu のワークスペースでは、Browser Annotation API は現在利用できないと明記されている。",
+      "開発者が触れる部品は、HTML の属性と JavaScript のメソッドに分かれる。属性側では、oai-annotation-container が選択ルールの適用範囲を、oai-annotatable が選択可能な対象（値は利用者とモデルに見える名前）を、oai-annotation-metadata が画面に出ない文脈を、oai-annotation-container-text がテキスト範囲の選択を有効にする領域を、それぞれ指定する。metadata は、6項目以内、キーは64文字以内、文字列値は256文字以内、直列化して2,048バイト以内の平坦な JSON で、利用者とモデルの両方に共有される内容だけを入れるよう求められている。メソッド側では、request がサイト自身のボタンから注釈を開き（初期コメントは240 UTF-16 コードユニットまで、テキスト範囲は20,000まで）、registerControls が color、range、select、toggle の操作を最大12個まで登録し、registerSurface が canvas 内の個々のオブジェクトを選択可能にし、toggle と isActive が注釈モードの切り替えと状態取得を担う。",
+      "変更のプレビューは、oaiannotationcontrolchange イベントで行う。詳細に callback、value、action が入り、action は preview、preview-original、reset のいずれかで、いずれもサイト側が渡された値を適用する。ドキュメントは、プレビューが恒久的な変更の要求ではなく、保存は通常の保存フローで行うこと、dispose は登録を外すだけでプレビューの変更は元に戻さないことを述べている。注釈を開くことはメッセージの送信ではなく、送信できるのは利用者だけである。サイトからの要求には利用者の許可が要る場合がある。テストは、デスクトップアプリの内蔵ブラウザでサイトを開き、選択、ボタンからの注釈、コントロールのプレビューとリセット、canvas、保存と再編集、送信内容を確認し、さらに API のないブラウザで通常の操作が壊れていないことも確かめる、という手順が示されている。",
+      "整理すると、Plugin Extensions は ChatGPT の中に自分のプラグインの画面を置くための単位、Website annotations は自分のサイトを ChatGPT に指し示してもらうための単位である。どちらも環境の制約が異なるので、対象ユーザーのプランと利用環境（デスクトップアプリか Web か、Enterprise/Edu か）を確認してから実装範囲を決めることになる。以上は OpenAI の公式ドキュメントに基づく記述であり、独立した検証は確認できていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Plugin Extensions（OpenAI Developers）",
+        "url": "https://developers.openai.com/plugins/build/extensions"
+      },
+      {
+        "title": "Annotations Extensibility（ChatGPT ドキュメント）",
+        "url": "https://learn.chatgpt.com/docs/annotations-extensibility"
+      },
+      {
+        "title": "Build plugins（ChatGPT ドキュメント）",
+        "url": "https://learn.chatgpt.com/docs/build-plugins"
+      },
+      {
+        "title": "Plugins（ChatGPT ドキュメント）",
+        "url": "https://learn.chatgpt.com/docs/plugins"
+      },
+      {
+        "title": "Skills & Plugins（ChatGPT ドキュメント）",
+        "url": "https://learn.chatgpt.com/docs/skills-and-plugins"
+      },
+      {
+        "title": "DevDay 2026（ChatGPT ドキュメント）",
+        "url": "https://learn.chatgpt.com/docs/whats-new/devday-2026"
+      }
+    ]
   }
 };
 

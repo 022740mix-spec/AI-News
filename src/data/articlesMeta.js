@@ -10897,5 +10897,23 @@ export const ARTICLES_META = [
       "プラグイン",
       "セキュリティ"
     ]
+  },
+  {
+    "id": "openai-plugin-extensions-website-annotations-chatgpt-ui-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ChatGPT に Plugin Extensions と Website annotations、プラグインが UI を持ち、Web サイトが選択対象と文脈を指定できる",
+    "excerpt": "OpenAI は2026年9月29日の DevDay 2026 で、Plugin Extensions と Website annotations を発表した。前者はサイドバーアプリ、会話パネル、ファイルビューア/エディタ、フォームを ChatGPT に加え、プラグインのツールやスキルと一緒にパッケージ化できる。後者は Annotations Extensibility として、Web サイトが選択可能な要素の指定、文脈の添付、変更のプレビュー制御を行える。コンポーザーのメンションはデスクトップアプリのみで、Free と Go の Web 向け拡張は近日対応とされている。Browser Annotation API は対応バージョンのデスクトップアプリの内蔵ブラウザで使える。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "プラグイン",
+      "ChatGPT",
+      "OpenAI",
+      "開発ツール",
+      "MCP"
+    ]
   }
 ];
