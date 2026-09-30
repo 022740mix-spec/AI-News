@@ -69,3 +69,11 @@ anthropic-claude-sonnet-5-agentic-cheap-2026
 claude-sonnet-4-6-review
 claude-sonnet-5-review
 claude-opus-5-review
+
+# Sonnet 5 の導入価格「8月31日まで」を歴史として書いた箇所。「発売時は8月31日までの導入価格と
+# 告知されたが、8/10 に公式が標準価格として恒久化した」と経緯と現状（$2/$10）を同じ文で明記している
+claude-sonnet-5-5-review
+
+# 「8月31日〜9月4日の週の What's new に載っている」という週の範囲の記述で、期限ではない
+# （検査の「〜9月4日」が期限に見える誤検知）
+gpt-6-review
