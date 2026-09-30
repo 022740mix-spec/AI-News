@@ -8940,11 +8940,6 @@ const ARTICLES_BODY = {
         "url": "https://cursor.com/changelog/microsoft-teams"
       },
       {
-        "title": "@cursor/cli on npm（2026-09-30 時点で npm レジストリに該当パッケージなし。参照・インストール不可）",
-        "site": "npm",
-        "url": "https://www.npmjs.com/package/@cursor/cli"
-      },
-      {
         "title": "Cursor CLI — Installation",
         "site": "Cursor Docs",
         "url": "https://cursor.com/docs/cli/installation"
