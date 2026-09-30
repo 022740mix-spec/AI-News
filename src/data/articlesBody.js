@@ -3620,15 +3620,31 @@ const ARTICLES_BODY = {
       "**【取り下げのお知らせ（2026-06-05）】** 本記事は、同じ OpenAI $122B 資金調達を扱う先行記事と内容が重複していたため、編集ポリシーに基づき取り下げました。",
       "同じ事象に関する canonical 記事は「[OpenAI が史上最大の$122B（約18兆円）を調達、評価額$852B — Amazon・Nvidia・SoftBank が巨額出資、AI スーパーアプリ構想へ](?a=openai-122b-funding-852b-valuation-2026)」をご参照ください。Bloomberg・TechCrunch・CoinDesk・The AI Insider の一次ソースに基づき、出資内訳・スーパーアプリ構想・IPO 観測まで網羅しています。",
       "【編集履歴】",
-      "・【月次見直し 2026-08-19】(1) **7月31日の値下げを全面反映**。Luna $1/$6 → $0.20/$1.20（80%引き下げ）、Terra $2.50/$15 → $2/$12（20%引き下げ）。旧版の価格記述は改定前の値だった。(2) 8月の動向として ChatGPT 無料枠の無制限化と既定モデルの Luna 化、Ultrafast モード（8/13）、Codex の Goal mode GA と Appshots（8/14）を追加。(3) 競合構図を更新 — Grok 4.6 が Artificial Analysis で Sol と同点の61に達し、Claude Opus 5 が Sol と同価格帯に参入したため「3強」から「4強」に改めた。(4) Sonnet 5 の導入価格が8月31日で終了し、9月以降は Terra のほうが入力単価で安くなる点を追記。",
+      "・【月次見直し 2026-08-19】(1) **7月31日の値下げを全面反映**。Luna $1/$6 → $0.20/$1.20（80%引き下げ）、Terra $2.50/$15 → $2/$12（20%引き下げ）。旧版の価格記述は改定前の値だった。(2) 8月の動向として ChatGPT 無料枠の無制限化と既定モデルの Luna 化、Ultrafast モード（8/13）、Codex の Goal mode GA と Appshots（8/14）を追加。(3) 競合構図を更新 — Grok 4.6 が Artificial Analysis で Sol と同点の61に達し、Claude Opus 5 が Sol と同価格帯に参入したため「3強」から「4強」に改めた。(4) Sonnet 5 の導入価格が8月31日で終了し、9月以降は Terra のほうが入力単価で安くなる点を追記した（この追記内容は誤りだった。2026-09-30 の訂正を参照）。",
       "・【訂正 2026-08-19】企業向けの評価を **5 → 4** に修正しました。本記事は注意点として「OpenAI 依存とガバナンスリスク」「米政府事前共有プロセスの継続」を挙げているにもかかわらず、企業向けを満点としており、**評価と本文の記述が整合していませんでした**。各軸の加重平均は 4.90 で、公表している総合 ★5.0 との差は許容範囲内のため総合値は据え置きます。",
-      "・【取り下げ 2026-06-05】同事象の先行記事と重複していたため取り下げ。canonical 記事への案内に置換。元の本文は削除しました。"
+      "・【取り下げ 2026-06-05】同事象の先行記事と重複していたため取り下げ。canonical 記事への案内に置換。元の本文は削除しました。",
+      "【訂正 2026-09-30】（誤）2026-08-19 の月次見直しで「Sonnet 5 の導入価格が8月31日で終了し、9月以降は Terra のほうが入力単価で安くなる」と記した →（正）Sonnet 5 の $2/$10 は標準価格として恒久化され、9/1 の $3/$15 への引き上げは行われなかった。この恒久化は2026年8月10日に公式が発表しており、8/19 の見直しの時点で既に誤っていた。Terra（$2/$12）と Sonnet 5（$2/$10）は入力が同額で、9月以降に Terra のほうが入力単価で安くなることはない。本文には該当する比較の記述が残っていないため、編集履歴の記述のみを訂正した。"
     ],
     "primarySources": [
       {
         "title": "OpenAI raises $122 billion to accelerate the next phase of AI",
         "site": "OpenAI",
         "url": "https://openai.com/index/accelerating-the-next-phase-ai/"
+      },
+      {
+        "title": "Pricing - Claude API Docs（Claude Sonnet 5 の脚注3）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Release notes（2026年8月10日: Claude Sonnet 5 の導入価格が標準価格に）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Introducing Claude Sonnet 5（Edit August 10, 2026）",
+        "site": "anthropic.com",
+        "url": "https://www.anthropic.com/news/claude-sonnet-5"
       }
     ]
   },
