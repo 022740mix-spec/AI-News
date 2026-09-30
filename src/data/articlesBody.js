@@ -15043,7 +15043,7 @@ const ARTICLES_BODY = {
       "**料金と競合比較**: Muse Spark 1.1 の **$1.25/$4.25** は、フロンティアモデルの中でも **Google Gemini 3.1 Flash-Lite** に近い低価格帯。他社との比較:",
       "**GPT-5.6 Luna**: $1/$6",
       "**xAI Grok 4.5**: $2/$6",
-      "**Claude Sonnet 5**: $3/$15（〜8/31 は導入価格 $2/$10 だった）",
+      "**Claude Sonnet 5**: $2/$10（記事公開時は8/31までの導入価格として案内されていたが、その後標準価格として恒久化された。公式発表は2026年8月10日）",
       "**Meta Muse Spark 1.1**: **$1.25/$4.25**",
       "**Google Gemini 3.5 Flash**: $0.075/$0.30（最安）",
       "Muse Spark 1.1 は「Luna より僅かに高いが、出力側は Luna より安い」ポジション。総合的には**フロンティア価格帯の下位**に位置付けられる。",
@@ -15060,7 +15060,8 @@ const ARTICLES_BODY = {
       "**(1) ベンチマーク未公表**: Muse Spark 1.1 の詳細な性能ベンチマーク（SWE-bench・TerminalBench・HLE 等）は本稿執筆時点で不明。",
       "**(2) Llama の継続**: Meta は Llama の OSS 継続方針は明確に撤回していないが、**新規最上位モデルは有料化**する二重路線となる。",
       "**(3) 提供チャネル**: 具体的な API アクセス経路（Meta 直接 API、AWS Bedrock 経由、Azure 経由等）の詳細は今後の発表待ち。",
-      "**AI News の推奨**: 現時点では**独立ベンチマーク公表と実運用検証**を待つ段階。$1.25/$4.25 の価格帯は魅力的だが、Sonnet 5・Grok 4.5・GPT-5.6 Terra との実タスクでの品質差を確認してから採用判断すべき。Meta のエコシステム（Instagram・WhatsApp・Facebook）と連携する広告・コンテンツ生成用途では、独自の実力を持つ可能性がある。"
+      "**AI News の推奨**: 現時点では**独立ベンチマーク公表と実運用検証**を待つ段階。$1.25/$4.25 の価格帯は魅力的だが、Sonnet 5・Grok 4.5・GPT-5.6 Terra との実タスクでの品質差を確認してから採用判断すべき。Meta のエコシステム（Instagram・WhatsApp・Facebook）と連携する広告・コンテンツ生成用途では、独自の実力を持つ可能性がある。",
+      "【訂正 2026-09-30】（誤）Claude Sonnet 5: $3/$15（〜8/31 は導入価格 $2/$10 だった）→（正）Sonnet 5 は $2/$10 で、9/1 の $3/$15 への引き上げは行われず、$2/$10 が標準価格として恒久化された（2026年8月10日に公式が発表）。"
     ],
     "primarySources": [
       {
@@ -15072,6 +15073,26 @@ const ARTICLES_BODY = {
         "title": "AI Updates Today (July 2026) – Latest AI Model Releases",
         "site": "LLM Stats",
         "url": "https://llm-stats.com/llm-updates"
+      },
+      {
+        "title": "Pricing - Claude API Docs（Claude Sonnet 5 の脚注3）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Claude Sonnet 5 モデルページ（Pricing 節）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/models/sonnet-5/overview"
+      },
+      {
+        "title": "Release notes（2026年8月10日: Claude Sonnet 5 の導入価格が標準価格に）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Introducing Claude Sonnet 5（Edit August 10, 2026）",
+        "site": "anthropic.com",
+        "url": "https://www.anthropic.com/news/claude-sonnet-5"
       }
     ]
   },
