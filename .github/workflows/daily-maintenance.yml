@@ -19,6 +19,8 @@ permissions:
   # 削除対象は routine/ 接頭辞かつ「記事 id が全部 main にある」ものだけで、
   # main や claude/* には触れない（check-stale-branches.mjs 側で二重に確認）。
   contents: write
+  # 関門の集計（check-gate-stats.mjs）が実行履歴を読む。読み取りのみ。
+  actions: read
   issues: write
 
 jobs:
