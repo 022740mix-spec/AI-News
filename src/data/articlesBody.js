@@ -10726,7 +10726,8 @@ const ARTICLES_BODY = {
       "【追記 2026-08-11】月次見直しにより更新。(1) **導入価格 $2/$10 の残りが約20日**である点を明記し、採用判断は改定後の $3/$15 で行うよう推奨を改めました、(2) 7/24 投入の [Opus 5](?a=claude-opus-5-review)（$5/$25）により上位モデルとの価格差が縮まった点を注意点に追加、(3) 競合の [GPT-5.6 値下げ](?a=openai-gpt-5-6-luna-terra-price-cut-2026)（Terra $2/$12、Luna $0.20/$1.20）を反映しました。旧版に記載の「GPT-5.6 Terra $2.50/$15」は値下げ前の単価です。",
       "【訂正 2026-09-02】**導入価格 $2/$10 は8月31日で終了した。** 本文の料金とコスパの記述を現行の **$3/$15** に更新した。改定前の記述を残していたため、9月1日以降に本記事を読んだ読者に誤った単価を示していた。**期限付きの記述は、期日を過ぎたら必ず更新する。** 今後は `scripts/check-expired-content.mjs` で機械的に検出する。 **タイトルにも $2/$10 が残っていたため、あわせて $3/$15 に修正した（2026-09-02 追加修正）。** 本文と excerpt だけを直してタイトルを見落としており、一覧・検索結果・SNS 共有時にもっとも目に触れる位置に誤った単価が出ていた。**価格を直す際は、本文・excerpt・タイトルの3か所すべてを確認する。**",
       "【訂正 2026-09-30】（誤）導入価格 $2/$10 は8月31日で終了し、Sonnet 5 は $3/$15 になった →（正）$2/$10 は公式が標準価格として恒久化しており、9月1日に予定されていた $3/$15 への引き上げは行われていない。根拠は Anthropic の料金ページの脚注と、Claude Code 更新履歴 2.1.243（2026年8月25日）の「限定価格ではなく標準の定価として表示する」旨の記載である。本記事の9月2日付の訂正は、この恒久化を確認しないまま $3/$15 へ書き換えたもので誤りだった。タイトル、概要、本文の料金・コスパ・競合比較・推奨の記述を $2/$10 に直した。あわせて、（誤）Adaptive Thinking が常時オン →（正）既定でオン（thinking: disabled で無効にできる）、（誤）Opus 5 の effort は low / medium / high →（正）low / medium / high / xhigh / max の5段階、にそれぞれ訂正した。",
-      "【追記 2026-09-30】月次見直しにより、料金、モデル世代、提供範囲、廃止予定を公式ドキュメントで確認し、後継 Sonnet 5.5（9/28）と Opus 5.5（9/22）の公開を冒頭に注記した。5軸の採点は Sonnet 5 に対するもので、今回は変更していない。SWE-bench Pro 63.2% など発表時のベンチマーク数値は、公式発表ページ上でチャート画像として掲載されており本文から確認できていない。claude.ai の既定モデルが現在どれかは、公式の資料で確認できていない。"
+      "【追記 2026-09-30】月次見直しにより、料金、モデル世代、提供範囲、廃止予定を公式ドキュメントで確認し、後継 Sonnet 5.5（9/28）と Opus 5.5（9/22）の公開を冒頭に注記した。5軸の採点は Sonnet 5 に対するもので、今回は変更していない。SWE-bench Pro 63.2% など発表時のベンチマーク数値は、公式発表ページ上でチャート画像として掲載されており本文から確認できていない。claude.ai の既定モデルが現在どれかは、公式の資料で確認できていない。",
+      "【追記 2026-09-30】後継世代のレビュー [Claude Sonnet 5.5 のレビュー](?a=claude-sonnet-5-5-review) を公開した。月次見直しの対象は後継のレビューに移し、本記事は当時の世代の記録として残す。"
     ],
     "primarySources": [
       {
@@ -10811,7 +10812,8 @@ const ARTICLES_BODY = {
       "【追記 2026-08-11】月次見直しにより更新。(1) 週次50%上限について、7/12 への期限延長と「クレジット制は一時的」との Anthropic の説明、および**8月時点でサブスク標準への復帰が完了していない**ことを反映、(2) 7/24 投入の [Opus 5](?a=claude-opus-5-review)（$5/$25、利用制約なし）により Fable 5 の位置付けが変わった点を追記、(3) **推奨を「まず Opus 5 で試す」に改訂**し、フォールバック先を Opus 4.8 から Opus 5 に更新、(4) 6月版で「一般公開後は再評価が必要」としていた GPT-5.6 Sol は7/9に公開済みである旨を反映しました。",
       "【追記 2026-09-20】**本レビューが、対象モデルの後継である Fable 5.1 / Mythos 5.1（2026年9月1日公開）に一切触れていなかった**ため、冒頭に注記を2段落追加しました。当サイトは9月2日にこの世代更新を公式ドキュメントで直接確認して報じており、**レビュー側だけが取り残されていました。** 破壊的変更3件・料金の実態・Anthropic 自身の推奨用途を要約し、詳細は該当記事へのリンクに委ねています。本レビューの5軸採点は Fable 5 / Mythos 5 に対する評価であり、今回は変更していません。`lastReviewed` も、料金・提供条件の全面確認を行っていないため据え置いています。",
       "【訂正 2026-09-30】（誤）新 classifier が99%のジェイルブレイクをブロックする →（正）Amazon の研究者が報告した特定の手法を99%超のケースでブロックする（Anthropic の説明）。",
-      "【追記 2026-09-30】月次見直しにより、次の状態の変化を反映した。いずれも当時の記述は正しく、その後に変わったものである。(1) 週次50%の適用範囲は、7/1 の発表どおり Pro/Max/Team/一部 Enterprise だったが、Fable 5 を週次使用枠に含める措置は7月19日に終了し、9月時点では Max 等が週次枠の50%まで、Pro 等は使用クレジットで使う（Help Center）。8月時点で復帰未完了としていた記述は、この現状に差し替えた。(2) クラウド3社は7月の復活時点では段階的な再開だったが、9月時点の Fable 5 のモデルページは Claude API、Bedrock、Google Cloud、Microsoft Foundry、Claude Platform on AWS を提供先に挙げている。(3) Sonnet 5 の $2/$10 は、発売時に8月31日までの導入価格とされたが、公式が標準価格として恒久化した（料金ページ脚注）。あわせて、Fable 5.1（9/1）、Opus 5.5（9/22）、Sonnet 5.5（9/28）の公開と、Fable 5 が Legacy 扱いであることを冒頭に注記した。5軸の採点は Fable 5 / Mythos 5 に対するもので、今回は変更していない。SWE-bench Verified 95% など公式発表のベンチマーク数値は、発表ページ上でチャート画像として掲載されており本文から確認できていない。"
+      "【追記 2026-09-30】月次見直しにより、次の状態の変化を反映した。いずれも当時の記述は正しく、その後に変わったものである。(1) 週次50%の適用範囲は、7/1 の発表どおり Pro/Max/Team/一部 Enterprise だったが、Fable 5 を週次使用枠に含める措置は7月19日に終了し、9月時点では Max 等が週次枠の50%まで、Pro 等は使用クレジットで使う（Help Center）。8月時点で復帰未完了としていた記述は、この現状に差し替えた。(2) クラウド3社は7月の復活時点では段階的な再開だったが、9月時点の Fable 5 のモデルページは Claude API、Bedrock、Google Cloud、Microsoft Foundry、Claude Platform on AWS を提供先に挙げている。(3) Sonnet 5 の $2/$10 は、発売時に8月31日までの導入価格とされたが、公式が標準価格として恒久化した（料金ページ脚注）。あわせて、Fable 5.1（9/1）、Opus 5.5（9/22）、Sonnet 5.5（9/28）の公開と、Fable 5 が Legacy 扱いであることを冒頭に注記した。5軸の採点は Fable 5 / Mythos 5 に対するもので、今回は変更していない。SWE-bench Verified 95% など公式発表のベンチマーク数値は、発表ページ上でチャート画像として掲載されており本文から確認できていない。",
+      "【追記 2026-09-30】後継世代のレビュー [Claude Fable 5.1 / Mythos 5.1 のレビュー](?a=claude-fable-5-1-mythos-5-1-review) を公開した。月次見直しの対象は後継のレビューに移し、本記事は当時の世代の記録として残す。"
     ],
     "primarySources": [
       {
@@ -10928,7 +10930,8 @@ const ARTICLES_BODY = {
       "【追記 2026-09-30】月次見直しにより、提供状況を確認した。GPT-5.6 は API では引き続き選べ、gpt-5.6 の別名は Sol に向く。API の Deprecations ページは、旧 GPT-5 系スナップショットの移行先として gpt-5.6-sol / terra / luna を挙げており、GPT-5.6 自体の廃止予定は見当たらない。Codex では、公式モデルページが「GPT-5.6 Sol / Terra / Luna はロールアウト中も引き続き利用できる」と記す一方、推奨モデルの一覧には載っていない。ChatGPT のチャットでは、8月3〜7日の What's new が、Plus と Pro のスライダーが GPT-5.6 Sol に効くこと、Free と Go の既定が GPT-5.6 Luna であることを記している。GPT-6 系はチャットでは使えず、Work と Codex で提供される。",
       "【追記 2026-09-30】次世代が出ている。GPT-6 Astra は9月3日に公開され、API 価格は入力 $10 / 出力 $50 である。GPT-6 Sol と GPT-6 Luna は9月22日に公開され、標準価格は Sol が $2/$10、Luna が $0.10/$0.50 で、いずれも GPT-5.6 の同名モデルより低い。GPT-6.1 Sol は9月29日に公開され、価格は $2/$10、Codex CLI 0.159.1 は同梱カタログの既定モデルにしている。Codex の公式モデルページは、複雑な作業には GPT-6.1 Sol、繰り返しの作業には Luna を勧めている。なお GPT-5.5 は、ChatGPT・Work・Codex では10月14日に退役予定である（API は対象外）。本稿の Sol / Terra / Luna の価格比較、Sonnet 5 との比較、推奨は GPT-5.6 世代に紐づいており、GPT-6 世代に置き換えていない。★の採点にも手を付けていない。",
       "【追記 2026-09-30】競合側も世代が進んでいる。Anthropic の公式料金表には Claude Sonnet 5.5（$2/$10）、Opus 5.5（$4/$20）、Fable 5.1（$10/$50）が載っている。本稿の「4強」の記述と Sonnet 5 との比較は、これらを反映していない。",
-      "【追記 2026-09-30】今回確認できなかった点を明記する。TerminalBench 2.1 の 91.91%、Artificial Analysis の指数、Cerebras 上の 750 tokens/秒（Cerebras の発表に基づく）、事実誤りを68%削減したとする発表、ChatGPT 無料枠の無制限化は、当サイトの記載のままで、独立した検証は確認できていない。openai.com と help.openai.com には調査環境から到達できなかった（platform.openai.com は developers.openai.com に転送され読める）。"
+      "【追記 2026-09-30】今回確認できなかった点を明記する。TerminalBench 2.1 の 91.91%、Artificial Analysis の指数、Cerebras 上の 750 tokens/秒（Cerebras の発表に基づく）、事実誤りを68%削減したとする発表、ChatGPT 無料枠の無制限化は、当サイトの記載のままで、独立した検証は確認できていない。openai.com と help.openai.com には調査環境から到達できなかった（platform.openai.com は developers.openai.com に転送され読める）。",
+      "【追記 2026-09-30】後継世代のレビュー [GPT-6 世代のレビュー](?a=gpt-6-review) を公開した。月次見直しの対象は後継のレビューに移し、本記事は当時の世代の記録として残す。"
     ],
     "primarySources": [
       {
@@ -17916,7 +17919,8 @@ const ARTICLES_BODY = {
       "**(4) 長期運用の実績**: 投入から日が浅く、長時間のエージェント運用における安定性や、[評価環境からの逸脱](?a=anthropic-claude-models-breached-three-companies-ctf-eval-2026)のような運用上の課題については、今後の蓄積を待つ必要がある。",
       "**総評**: 「フロンティア級の知能を半額で」という位置付けは、価格と提供範囲の両面で実現されている。effort トグルという運用の自由度が加わったことで、**同じモデルの中でコストと品質を調整できる**という新しい使い方が可能になった。ベンチマークの確定値が揃っていない点は差し引く必要があるが、**Opus 4.8 からの移行は料金据え置きゆえにリスクが小さく、検証を始める価値は高い**。",
       "【訂正 2026-09-30】（誤）effort トグルは low / medium / high の3段階 →（正）Opus 5 は low / medium / high / xhigh / max の5段階で、API の既定は high（公式 effort ドキュメント）。（誤）ARC-AGI-3 で 30.2% を確度の高い結果として太字で掲載 →（正）「次点の約3倍」は Anthropic の発表本文に文章で記載があるが、30.2% という数値は公式発表ではチャート画像のため本文から確認できていない（本文と概要から数値を外した）。",
-      "【追記 2026-09-30】月次見直しにより、次の状態の変化を反映した。いずれも当時の記述は正しく、その後に変わったものである。(1) 2026年9月22日に Opus 5.5 が公開され、Opus 5 は「現行」ではなく Legacy 扱いになった（タイトルと概要の「現行」は「7月時点」に改めた）。(2) Sonnet 5 の $2/$10 は、発売時に8月31日までの導入価格とされたが、公式が標準価格として恒久化した（料金ページ脚注）。あわせて、後継 Opus 5.5 と Sonnet 5.5 の公開を冒頭に注記した。5軸の採点は Opus 5 に対するもので、今回は変更していない。提供範囲と Max の既定モデルに関する記述は投入時（7月）の公式発表に基づく。Claude Code の既定は、Anthropic API、Pro、Max、Team、Enterprise では Opus 5.5（v2.1.280 以降、Claude Code のモデル設定ドキュメント）と確認できる。確認できていないのは claude.ai アプリの既定モデルである。ベンチマークについては、9月30日時点の公式発表本文に SWE-bench Verified の数値は見当たらず、ARC-AGI-3 は「次点のモデルの3倍」と文章で記載されている（30.2% という数値はチャート画像上で、本文から確認できていない）。"
+      "【追記 2026-09-30】月次見直しにより、次の状態の変化を反映した。いずれも当時の記述は正しく、その後に変わったものである。(1) 2026年9月22日に Opus 5.5 が公開され、Opus 5 は「現行」ではなく Legacy 扱いになった（タイトルと概要の「現行」は「7月時点」に改めた）。(2) Sonnet 5 の $2/$10 は、発売時に8月31日までの導入価格とされたが、公式が標準価格として恒久化した（料金ページ脚注）。あわせて、後継 Opus 5.5 と Sonnet 5.5 の公開を冒頭に注記した。5軸の採点は Opus 5 に対するもので、今回は変更していない。提供範囲と Max の既定モデルに関する記述は投入時（7月）の公式発表に基づく。Claude Code の既定は、Anthropic API、Pro、Max、Team、Enterprise では Opus 5.5（v2.1.280 以降、Claude Code のモデル設定ドキュメント）と確認できる。確認できていないのは claude.ai アプリの既定モデルである。ベンチマークについては、9月30日時点の公式発表本文に SWE-bench Verified の数値は見当たらず、ARC-AGI-3 は「次点のモデルの3倍」と文章で記載されている（30.2% という数値はチャート画像上で、本文から確認できていない）。",
+      "【追記 2026-09-30】後継世代のレビュー [Claude Opus 5.5 のレビュー](?a=claude-opus-5-5-review) を公開した。月次見直しの対象は後継のレビューに移し、本記事は当時の世代の記録として残す。"
     ],
     "primarySources": [
       {
@@ -24433,6 +24437,910 @@ const ARTICLES_BODY = {
       {
         "title": "Roles and workspace permissions",
         "url": "https://learn.chatgpt.com/docs/enterprise/roles-and-workspace-permissions"
+      }
+    ]
+  },
+  "gpt-6-review": {
+    "body": [
+      "GPT-6 世代は OpenAI の現行モデル群で、API のモデル ID は gpt-6-astra、gpt-6.1-sol、gpt-6-sol、gpt-6-luna の4つである。OpenAI の API ガイド（Using GPT-6）は、Astra を「最高の知能」、GPT-6.1 Sol を「速度・コスト・知能のバランス」、GPT-6 Luna を「最速で最も費用対効果が高い」と位置づけている。本稿は、旧世代の GPT-5.6 Sol / Terra / Luna を扱った既存レビュー（[GPT-5.6 レビュー](?a=gpt-5-6-review)）の後継として、この4モデルの仕様・価格・提供条件・利用制限を整理する。",
+      "本稿の根拠は、OpenAI の公式ドキュメント（API 側の developers.openai.com と、ChatGPT・Codex 側の learn.chatgpt.com）である。openai.com と platform.openai.com は調査環境から Cloudflare のチャレンジに阻まれて読めなかったが、価格・仕様・提供条件は上記2ドメインの公式ページで確認できた。一方、Astra の発表ページやベンチマークの元資料は読めておらず、ドキュメント側にもベンチマークの数値は載っていなかった。そのため、本稿は性能の数値を一切掲載しない。性能に関する記述はすべて OpenAI 自身の説明の引用であり、独立した第三者による検証は確認できていない。",
+      "【4モデルの位置づけ】",
+      "GPT-6 Astra: OpenAI は、コンピュータ操作・ブラウジング・ソフトウェア工学・科学・専門業務で state-of-the-art の性能を持つ「これまでで最も知的なモデル」と説明している。いくつかの評価では大幅に少ない出力トークンでより強い結果を出し、タスクあたりの推定 API コストは、トークン単価が高いにもかかわらず旧モデルより低かったとも説明している。OpenAI は Astra を「これまでで最も aligned なモデル」とも説明している。いずれも OpenAI 自身の比較・自己評価であり、比較対象は以前のモデルで、対象の評価名・数値は参照先の発表ページに到達できず確認できていない。API 価格は入力 $10 / 出力 $50（100万トークンあたり）で、本世代で最も高い。",
+      "GPT-6.1 Sol: OpenAI は「Astra に近い性能を、より低いコストで」と説明し、複雑なコーディング・コンピュータ操作・専門業務向けに位置づけている。同時に、自分のタスクで Astra と比較して品質とコストのトレードオフを判断するよう案内している。Codex と ChatGPT Work への展開は9月29日の changelog に記載があり、Codex CLI 0.159.1 では同梱カタログの既定モデルが GPT-6.1 Sol になった。API 価格は入力 $2 / 出力 $10。",
+      "GPT-6 Sol: 複雑なコーディングとエージェント的なワークフロー向けとされる、旧 Sol である。API のモデルページは「より新しい Sol は GPT-6.1 Sol」と案内している。API 価格は GPT-6.1 Sol と同じ入力 $2 / 出力 $10 だが、キャッシュ入力は GPT-6 Sol が $0.20、GPT-6.1 Sol が $0.10 と異なる。知識のカットオフは GPT-6 Sol が 2026年4月20日、GPT-6.1 Sol が 4月30日と記載されている。reasoning effort の none は GPT-6 Sol が対応し、GPT-6.1 Sol と Astra は対応しない。",
+      "GPT-6 Luna: 要約・抽出・分類・限定的なコーディングなど、絞り込まれた大量処理向けとされる。API 価格は入力 $0.10 / 出力 $0.50。知識のカットオフは 2026年5月18日と記載されており、4モデルの中では最も新しい日付である。Codex の Ultra モードには対応せず、reasoning effort は Max までとされている。",
+      "共通仕様: API のモデルページによれば、4モデルとも入力はテキストと画像、出力はテキストで、コンテキストウィンドウは 1,050,000 トークン、最大出力は 128,000 トークンである（Astra・GPT-6 Sol・Luna のページには最大入力 922,000 トークンの記載もある）。GPT-6.1 Sol のページでは音声・動画は非対応、ファインチューニングは非対応とされている。Responses API では web search・file search・image generation・code interpreter・hosted shell・apply patch・skills・computer use・MCP・tool search が使える。",
+      "【API 価格】",
+      "次の表は、API ドキュメントの価格表（Standard、100万トークンあたり）である。入力が 272K トークンを超えるリクエストは、リクエスト全体が入力・キャッシュ側の単価 2倍・出力 1.5倍で課金される。Batch と Flex は Standard の 50%、Fast モードは Standard の 2倍とされている。データレジデンシー（地域処理）を使うと、対象モデルでは 10% の上乗せがある。なお GPT-6 Sol は、API の価格一覧の主表には載っておらず、モデルページの記載から表にした。",
+      "キャッシュ入力の単価は、GPT-6.1 Sol が非キャッシュ入力の 5%、GPT-6 Sol と Luna が 10% と、モデルで異なる（Astra は $1 で 10%）。キャッシュ書き込みは非キャッシュ入力の 1.25倍で課金されるが、Codex のクレジット課金には別立てのキャッシュ書き込み料金はない。API の見積もりとクレジットの見積もりで前提が異なる点に注意が必要である。",
+      "Astra の Ultrafast（API のサービスティア）は、価格表では入力 $60 / 出力 $300 で、Standard の 6倍にあたる。Ultrafast は Astra 向けに広く提供され、GPT-5.6 Sol にはプレビュー提供があるとされ、Ultrafast は現在、すべての API ユーザーに低いレート制限で提供されており、Astra の Ultrafast の既定 TPM は Tier 1〜3 で 500,000、Tier 4 で 1,000,000、Tier 5 で 5,000,000 である（これは Ultrafast の値で、Standard の Astra の TPM は Tier 3 で 2,000,000、Tier 4 で 4,000,000、Tier 5 で 40,000,000 と別に定められている）。ドキュメントは、エージェント用途では WebSocket の利用を強く推奨している。長コンテキスト（272K 超）の Ultrafast 価格は入力 $120 / キャッシュ入力 $12 / キャッシュ書き込み $150 / 出力 $450 である。Ultrafast は米国データレジデンシーとグローバル処理のみで、EU などの地域処理には対応しない。",
+      "Standard の API レート制限はモデルごとに定められている。Astra・GPT-6 Sol・GPT-6.1 Sol の TPM は Tier 1 で 500,000、Tier 2 で 1,000,000、Tier 3 で 2,000,000、Tier 4 で 4,000,000、Tier 5 で 40,000,000 である。Luna は Tier 2 で 2,000,000、Tier 3 で 4,000,000、Tier 4 で 10,000,000、Tier 5 で 180,000,000 と、上限が高い。GPT-6.1 Sol のページでは Free ティアは非対応と記載されている。",
+      "【ChatGPT・Codex での利用枠と料金】",
+      "ChatGPT Work と Codex は利用枠を共有している。サブスクリプション側は、モデルごとにクレジットの消費レートが定められている（次表、100万トークンあたり）。同ページは、API のトークン価格をサブスクリプションの利用枠の見積もりに使わないよう注記している。また同ページは、GPT-5.6 Sol の販促価格が少なくとも 2026年11月21日まで続くと記載している。",
+      "同じ料金ページによれば、Plus と Standard Business の5時間あたりのローカルメッセージ数の目安は、Astra が 5〜45、GPT-6.1 Sol が 15〜160、GPT-6 Sol が 15〜150、GPT-6 Luna が 350〜3,000 である。これは OpenAI の推定値による目安で、固定の上限ではなく、タスクの大きさやコンテキストで変わり、週次の上限が別にかかることもある。Pro プランには現在5時間の上限がなく、Pro は月額 $100・$200・$500 の3段階（Ultrafast は $500 のみ）、Plus は月額 $20、Go は月額 $8、Free は無料と記載されている。Free と Go で使えるのは、デスクトップアプリの GPT-6 Luna（Standard 速度）で、展開状況による。",
+      "【速度モード】",
+      "Fast モードは、GPT-6.1 Sol・Astra・GPT-6 Sol・Luna で使える。API ドキュメントは Fast モード全体を Standard 比で最大 2.5倍の速度と説明している（具体的に 2.5倍と書かれているのは gpt-5.6-sol で、GPT-6 各モデルでの倍率は明記されていない）。Codex 側のドキュメントでは、サブスクリプションの利用枠を Standard の 2.5倍、購入クレジットと Enterprise の従量課金を 2倍で消費すると記載している。なお Astra の Fast モードには、遅延の SLA は含まれない。API の Fast モードにはランプレート制限もあり、トラフィックを急に増やすと一部のリクエストが Standard の速度に降格され、Standard の料金で課金される（レスポンスの service_tier が default になる）。目安として 1M TPM に達したあとは、15分ごとの増加を 50% 以内に抑えるよう案内されている。Fast と Standard は同じレート制限を共有する。GPT-6.1 Sol の Ultrafast は「後日対応予定」とされ、この時点では Standard と Fast のみである。",
+      "Astra の Ultrafast は、Codex では Standard の Astra より最大 8倍速くトークンを生成するとされている。ドキュメントはこれを、トークン生成速度の比較であり、課金レートやタスク全体の完了時間ではないと明記している。提供対象は Pro $500 と、対象の Enterprise・Edu プランで、Pro $500 では含まれる利用枠、次いでクレジットを消費する。利用枠の消費は Standard の 8倍、購入クレジットと Enterprise の従量課金は 6倍である。Enterprise では既定で無効で、ワークスペースの所有者が有効化する。米国外での推論レジデンシーを要件とするワークスペースには提供されない。8倍という速度は OpenAI の数値であり、独立した計測は確認できていない。",
+      "【Ultra とマルチエージェント】",
+      "Codex と ChatGPT Work の Ultra モードは、サブエージェントを使って複雑な作業を並列に進める設定である。OpenAI は、作業を意味のある部分に分けられるときに選ぶもので、ほとんどのタスクでは Max や Ultra は不要と案内している。API 側の Multi-agent（Responses API）はベータで、ドキュメントは GPT-6.1 Sol と GPT-5.6 の全モデルで利用できると記載している。max_concurrent_subagents の既定値は 3 で、サブエージェントの追加はトークン使用量を増やしうる。順序に依存する作業や、共有状態への書き込みが多い作業には向かないとも書かれている。一方、GPT-6 の API ガイドは GPT-6 が Multi-agent に対応すると読める書き方をしており、モデルごとの対応は各モデルのページで確認する必要がある。Astra について、ガイドは「サブエージェントへの委任が想定より少なくなることがある」とし、プロンプトで調整するよう案内している。",
+      "Multi-agent（ベータ）には制限がある。有効にすると /responses/compact エンドポイント、reasoning.summary、max_tool_calls が使えず、サーバー側の自動 compaction が暗黙に有効になる。利用にはベータ用ヘッダ（OpenAI-Beta: responses_multi_agent=v1）または SDK の betas 引数が必要で、ドキュメントは、ベータの間はアイテムのスキーマが変わりうると明記している。ツリーの深さとサブエージェントの総数には固定の上限がないため、コストの上限は max_concurrent_subagents だけでは決まらない。",
+      "【API の新機能】",
+      "API ガイドの What's new には、次の4つが挙がっている。Async tool calling（アプリケーションがツールを実行している間もモデルが推論や他のツール呼び出しを続けられる）、Mid-turn steering（作業中に追加の指示を送れる。WebSocket 接続で完了済みの作業を保持する）、Change reasoning mid-conversation（configuration_update 入力で、キャッシュを保ったまま reasoning effort を変更できる）、Misalignment monitoring（Astra の強化された安全策として、非同期で意図のずれを監視する）。GPT-6 は GPT-5.6 で使えた computer use・Structured Outputs・Programmatic Tool Calling・multi-agent・prompt caching・compaction・pro mode なども引き続き使えるとされている。",
+      "【挙動上の注意（OpenAI ドキュメントの記載）】",
+      "OpenAI のプロンプトガイドは、Astra の挙動として次を挙げている。ユーザーの意図が曖昧なときに確認の質問をする傾向が強く、ユーザーが仮定を置いて進めてほしい場面でも止まることがある。指示への追従が強い反面、skills や AGENTS.md などのファイルの指示に敏感で、矛盾する記述があると早い段階で作業を止めることがある。箇条書きや表を多用した詳細な応答になりやすい。コーディングでは、小さな変更でも必要以上に広いテストを行うことがある。OpenAI は、skills や AGENTS.md に影響しうる指示が残っていないか監査することを強く推奨し、自律的に進めさせるためのプロンプト例も提示している。",
+      "【安全監視と、タスクが止まる条件】",
+      "Codex と ChatGPT Work では、Astra に非同期の安全監視が組み込まれており、安全でない可能性のあるモデルの挙動を検知するとタスクを一時停止することがある。停止は、原因となった操作のあとに届くこともあり、サンドボックスや権限、結果のレビューの代わりにはならないと記載されている。Codex CLI とモバイル、およびゼロデータ保持・Modified Abuse Monitoring・米国外のデータ保存レジデンシーを使う場合は、詳細な所見の確認や再開ができず、タスクは終了する。API では、監視がリクエストを止めると HTTP 403 とエラーコード misalignment_policy_violation が返る。Responses API のうち、persisted reasoning・WebSocket・compaction のいずれかを使うリクエストでは自動停止の対象になり、Chat Completions は監視の対象外とされている。アラートは safety.alert.created の webhook で受け取れるが、ゼロデータ保持のリクエストではアラートの reason が null になりうる。ドキュメントは、アラートの配信と取得は完全な監査履歴にはならないとも記載している。API に停止した会話を再開する一般的な手段はなく、停止しても、それ以前に実行された操作は取り消されない。ドキュメントは、フラグは違反の確定ではなく、正当な操作が検知されることも見逃しもありうるとして、重要な操作には人間の承認を併用するよう案内している。",
+      "【提供条件（プラン・クライアント・管理者）】",
+      "ChatGPT では、GPT-6.1 Sol・GPT-6 Sol・GPT-6 Luna は Work と Codex で使え、Chat では使えないと記載されている。GPT-6.1 Sol の展開対象は Plus・Pro・Business・Enterprise・Edu（Codex のデスクトップアプリと CLI、ChatGPT Work の Web とモバイル）で、Free と Go は対象外である。Enterprise では GPT-6 Sol / Luna が、Enterprise と Edu では GPT-6.1 Sol と Astra が、それぞれ既定で無効で、管理者（Astra はワークスペースの所有者）が有効にする必要がある。Astra は展開から2週間で自動的に有効になることはなく、従来の Early Model Access 設定では有効にならない。ChatGPT ワークスペースで Astra を有効にしても API のアクセスは付与されず、API では組織とプロジェクトの権限に従う。ローカル設定でモデルを選んでも、ワークスペースの制御は上書きできない。",
+      "データレジデンシーについて、API ドキュメントは GPT-6.1 Sol・GPT-6 Sol・GPT-6 Luna が Standard・Flex・Batch で EU データレジデンシーに対応するとしている（GPT-6.1 Sol は米国と EU のみ）。Astra の EU 対応を明記した文は見つけられなかったが、データレジデンシーの対応表（Responses・Chat Completions・Batch の欄）のモデル一覧には gpt-6-astra が含まれている。Fast モードは、4モデルのいずれも EU データレジデンシーでは使えない。米国以外のデータレジデンシーを使うには、abuse monitoring controls の承認と Modified Retention 修正契約の締結が必要とされ、地域ストレージへの対応は地域処理への対応を意味しないとも注記されている。",
+      "【旧世代の扱い】",
+      "2026年10月14日に、GPT-5.5 が ChatGPT・ChatGPT Work・Codex から全プランで廃止される予定である（OpenAI API は対象外）。OpenAI は、Plus 以上では GPT-6 Sol、Free と Go では GPT-6 Luna への置き換えを案内している。GPT-5.4 と GPT-5.4 mini は、8月31日に ChatGPT サインインの Codex から廃止済みである（API と、API キーで使う Codex は対象外）。GPT-5.6 Sol / Terra / Luna は、展開期間中は引き続き使える。同じ時期の Codex 側の変更として、GPT-5.3-Codex-Spark は9月14日に退役し、独自プロバイダー向けの Chat Completions のサポートは非推奨（将来のリリースで削除予定）、codex mcp-server コマンドとスタンドアロンの codex-mcp-server は9月5日付で削除された。設定の書き換えが必要になりうる。API の移行では、Astra と GPT-6.1 Sol が reasoning effort の none に対応しないため、none を使っていたリクエストは low から試すこと、effort が none 以外のときは temperature・top_p・top_logprobs を外すこと、ツール呼び出しには Responses API を使うこと（Chat Completions での関数呼び出しは、GPT-6 Sol と Luna では reasoning_effort が none のときのみ）、プロンプトキャッシュの設定が変わること、が案内されている。",
+      "【強み（公式ドキュメントから確認できる範囲）】",
+      "(1) 価格帯が広い: 100万トークンあたりの入力単価で $10・$2・$0.10 と、同じ世代の中で選択肢が分かれている。キャッシュ入力は入力単価の 5〜10%、Batch と Flex は 50% と、コストを下げる手段も公式に用意されている。",
+      "(2) クレジットレートが GPT-5.6 の同名モデルより低い: ChatGPT・Codex のクレジットレートで、GPT-6 Sol は 50 / 5 / 250（入力 / キャッシュ入力 / 出力）と、GPT-5.6 Sol の 100 / 10 / 500 のちょうど半分である。GPT-6.1 Sol は 50 / 2.5 / 250 で、入力と出力は半分、キャッシュ入力は4分の1になる。GPT-6 Luna は 2.5 / 0.25 / 12.5 で、GPT-5.6 Luna の 5 / 0.5 / 30 より低い。ただしこれは別のモデルどうしの比較で、既存モデルの値下げではない（同ページは GPT-5.6 Sol・Terra・Luna のレートは据え置きと記載している）。changelog は、GPT-6 Sol と Luna が GPT-5.6 の前身より低いトークン価格で展開されると記載しているが、この記述は GPT-6.1 Sol についてのものではない。",
+      "(3) 長いコンテキスト: 4モデルとも 1,050,000 トークンのコンテキストウィンドウと 128,000 トークンの最大出力が記載されている。ただし 272K を超えると単価が上がる。",
+      "(4) 作業中の制御手段: Async tool calling、Mid-turn steering、reasoning effort の途中変更など、長い作業を人が調整しやすくする機能が API に追加されている。",
+      "(5) 管理面の制御: Enterprise と Edu では、モデルごとに管理者が有効化を制御でき、Ultrafast は既定で無効で、ユーザーごとの支出制限が適用される。",
+      "【注意点】",
+      "(1) 性能の独立検証が確認できていない: 本稿が扱える性能の情報は OpenAI 自身の説明のみで、数値は載せていない。採用の前に、自分のタスクでの比較が必要である。OpenAI 自身も、GPT-6.1 Sol と Astra を同じタスクで比較するよう案内している。",
+      "(2) 名前と世代の混在: GPT-6 Sol と GPT-6.1 Sol が併存し、API では reasoning effort の対応、キャッシュ入力の単価、Multi-agent の対応、データレジデンシーの扱いなどが異なる。既存の設定で gpt-6-sol を使っている場合は、切り替え前に移行ガイドの確認が必要である。",
+      "(3) Astra は安全監視でタスクが止まりうる: とくに Codex CLI、モバイル、ゼロデータ保持、米国外のデータ保存を使う環境では、停止するとタスクは終了し再開できない。長時間の自律実行を前提にする場合は、この条件を事前に確認する必要がある。",
+      "(4) 利用枠の見積もりが幅広い: Plus の5時間あたりのメッセージ数の目安は、Astra で 5〜45 と幅があり、タスクの内容で大きく変わる。Pro を除き、週次の上限もありうる。",
+      "(5) 提供の断片化: 同じモデルでも、プラン・クライアント・ワークスペース設定・展開状況で使えるかどうかが変わる。GPT-6.1 Sol・GPT-6 Sol・Luna は Chat では使えず、Work と Codex に限られる。",
+      "(6) 速度モードの追加コスト: Fast は利用枠を 2.5倍、Astra の Ultrafast は 8倍消費し、API の Ultrafast は Standard の 6倍の単価である。速度の数値はトークン生成速度で、タスクの完了時間ではない。",
+      "【本稿で確認できていないこと】",
+      "(a) ベンチマークの数値と、その独立検証。(b) 他社モデルとの比較。比較の根拠となる独立した測定が確認できていないため、本稿は行っていない。(c) Astra の EU データレジデンシー対応の明示的な記述（対応表に含まれることは確認した）。(d) GPT-6 Sol と Luna の API での提供開始日、および Astra の公開日。Astra は8月31日〜9月4日の週の What's new に掲載されているが、日付の特定は確認できなかった。(e) 実際の使用感。本稿はドキュメントの記載を整理したものであり、AI News 編集部による実測は含まない。",
+      "【採点】",
+      "★は、AI品質30% / 使いやすさ25% / コスパ20% / 拡張性15% / 企業向け10% の5軸の加重平均で、モデルの性能に加えて料金・提供条件・利用制限を含む採用判断向けの評価である。ベンチマークのみの総合値（モデル比較表）とは別の尺度である。★は、執筆した担当とは別のモデルによる独立採点との平均である（0.25 刻みで端数が出た軸は低い側に丸めた）。点数は、AI品質 4.5、使いやすさ 4.0、コスパ 4.5、拡張性 4.0、企業向け 3.5。AI品質は暫定値で、独立採点でも、ベンチマークの数値が一次資料に見つからず、性能の根拠が OpenAI の説明のみであることから、確信度は低いとされた。数値に到達できれば動きうる。拡張性は、ツールとモダリティの広さに対して、ファインチューニング非対応、音声・動画非対応、Multi-agent がベータで対応モデルが限られる点を反映している。企業向けは、管理機能の厚さに対して、新モデルが既定で無効であること、Astra の安全監視でタスクが終了する条件があること、Astra の EU 対応の明示が無いことを反映した。なお SLA とコンプライアンス認証（SOC 2 など）は、参照した資料では確認できていない。加重平均は 4.20 で、★は 4.2 とした。独立検証やベンチマークの数値が確認できた時点で見直す前提である。",
+      "【使い分けの観点】",
+      "OpenAI 自身のガイドは、コストと遅延を気にしないなら Astra、コストを下げたいなら GPT-6.1 Sol や Luna を選ぶという整理で、Luna は Low〜Extra high、GPT-6.1 Sol は Medium〜Extra high、Astra は Low〜Extra high を出発点として挙げている。これは OpenAI の目安であり、最終的には自分のタスクで同じ入力を使って比較し、基準を満たす最も軽い設定を選ぶことが推奨されている。編集部として補足すると、API を使うなら、272K を超えるプロンプトの単価、キャッシュ、Batch・Flex の割引の3点を先に見積もりに入れると、単価表から想像する費用と実際の費用のずれを減らせる。Enterprise・Edu の管理者は、モデルごとの有効化と、Astra の停止条件が業務のワークフローに合うかを先に確認する必要がある。",
+      "【編集履歴】",
+      "・【新規 2026-09-30】GPT-6 世代（Astra / GPT-6.1 Sol / GPT-6 Sol / Luna）のレビューを新規作成。旧世代の GPT-5.6 レビューの後継として、公式ドキュメント（developers.openai.com、learn.chatgpt.com）の記載を整理した。ベンチマークの数値は、到達できた一次資料に無かったため掲載していない。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 9,
+        "caption": "GPT-6 世代の API 価格（Standard、$ / 100万トークン。出典: OpenAI API ドキュメント、2026-09-30 確認）",
+        "headers": [
+          "モデル",
+          "入力",
+          "キャッシュ入力",
+          "出力",
+          "272K超の入力",
+          "272K超の出力"
+        ],
+        "rows": [
+          [
+            "GPT-6 Astra",
+            "$10.00",
+            "$1.00",
+            "$50.00",
+            "$20.00",
+            "$75.00"
+          ],
+          [
+            "GPT-6.1 Sol",
+            "$2.00",
+            "$0.10",
+            "$10.00",
+            "$4.00",
+            "$15.00"
+          ],
+          [
+            "GPT-6 Sol",
+            "$2.00",
+            "$0.20",
+            "$10.00",
+            "$4.00（倍率から算出）",
+            "$15.00（倍率から算出）"
+          ],
+          [
+            "GPT-6 Luna",
+            "$0.10",
+            "$0.01",
+            "$0.50",
+            "$0.20",
+            "$0.75"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 14,
+        "caption": "ChatGPT・Codex のクレジットレート（Standard、クレジット / 100万トークン。出典: learn.chatgpt.com の料金ページ、2026-09-30 確認）",
+        "headers": [
+          "モデル",
+          "入力",
+          "キャッシュ入力",
+          "出力"
+        ],
+        "rows": [
+          [
+            "GPT-6 Astra",
+            "250",
+            "25",
+            "1,250"
+          ],
+          [
+            "GPT-6.1 Sol",
+            "50",
+            "2.5",
+            "250"
+          ],
+          [
+            "GPT-6 Sol",
+            "50",
+            "5",
+            "250"
+          ],
+          [
+            "GPT-6 Luna",
+            "2.5",
+            "0.25",
+            "12.5"
+          ],
+          [
+            "GPT-5.6 Sol（旧世代）",
+            "100",
+            "10",
+            "500"
+          ],
+          [
+            "GPT-5.6 Terra（旧世代）",
+            "50",
+            "5",
+            "300"
+          ],
+          [
+            "GPT-5.6 Luna（旧世代）",
+            "5",
+            "0.5",
+            "30"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Using GPT-6",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/guides/latest-model"
+      },
+      {
+        "title": "GPT-6 Astra model page",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/models/gpt-6-astra"
+      },
+      {
+        "title": "GPT-6.1 Sol model page",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+      },
+      {
+        "title": "GPT-6 Sol model page",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/models/gpt-6-sol"
+      },
+      {
+        "title": "GPT-6 Luna model page",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/models/gpt-6-luna"
+      },
+      {
+        "title": "Pricing",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/pricing"
+      },
+      {
+        "title": "Ultrafast mode",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/guides/ultrafast-mode"
+      },
+      {
+        "title": "Fast mode",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/guides/fast-mode"
+      },
+      {
+        "title": "Multi-agent",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/guides/responses-multi-agent"
+      },
+      {
+        "title": "Misalignment monitoring",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/guides/safety-checks/misalignment-monitoring"
+      },
+      {
+        "title": "Model selection",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/guides/model-selection"
+      },
+      {
+        "title": "Your data",
+        "site": "OpenAI API ドキュメント",
+        "url": "https://developers.openai.com/api/docs/guides/your-data"
+      },
+      {
+        "title": "Models",
+        "site": "ChatGPT・Codex ドキュメント",
+        "url": "https://learn.chatgpt.com/docs/models"
+      },
+      {
+        "title": "Pricing",
+        "site": "ChatGPT・Codex ドキュメント",
+        "url": "https://learn.chatgpt.com/docs/pricing"
+      },
+      {
+        "title": "Speed",
+        "site": "ChatGPT・Codex ドキュメント",
+        "url": "https://learn.chatgpt.com/docs/agent-configuration/speed"
+      },
+      {
+        "title": "Changelog",
+        "site": "ChatGPT・Codex ドキュメント",
+        "url": "https://learn.chatgpt.com/docs/changelog"
+      },
+      {
+        "title": "Workspace model availability",
+        "site": "ChatGPT・Codex ドキュメント",
+        "url": "https://learn.chatgpt.com/docs/enterprise/workspace-model-availability"
+      },
+      {
+        "title": "Agent approvals and security",
+        "site": "ChatGPT・Codex ドキュメント",
+        "url": "https://learn.chatgpt.com/docs/agent-approvals-security"
+      }
+    ]
+  },
+  "claude-opus-5-5-review": {
+    "body": [
+      "Claude Opus 5.5 は、Anthropic が2026年9月22日に公開した Opus 級のモデルである。Anthropic は同社の発表で「Claude 5.5 ファミリーの最初のモデル」と位置付け、ほとんどの作業で Claude Fable 5.1 と同水準の性能を、Opus 5 より40%低いコストで提供すると説明している。いずれも Anthropic 自身の説明であり、本稿の時点で独立した検証は確認できていない。API の価格は入力 $4 / 出力 $20 per 1M tokens で、前世代の Opus 5（$5 / $25）から下がった。公式ドキュメントは、多くのワークロードではまず Opus 5.5 を使い、高い effort で評価しても足りない場合に Fable 5.1 を使うという順序を案内している。一方で、Opus 5 からの移行には API の破壊的変更が4件ある。",
+      "## 料金と位置付け",
+      "料金は入力 $4 / 出力 $20 per 1M tokens。プロンプトキャッシュは 5分書き込みが $5、1時間書き込みが $8、読み出しが $0.20（基本入力単価の 0.05 倍）で、Batch API は半額（$2 / $10）である。1M トークンのコンテキストは、長文向けの割増なしの標準単価で使える。US 域内のみで推論する指定（inference_geo）を使うと、全カテゴリの単価に 1.1 倍が掛かる。以上は公式の料金ページによる。",
+      "Opus 5 との差は、入力 $5 → $4、出力 $25 → $20、キャッシュ読み出し $0.50 → $0.20 である。Anthropic は、エージェントやコーディングの費用の大半をキャッシュ読み出しが占めると述べている。また、既定設定での典型的なワークロードでは Opus 5 より40%安くなるという自社テストの結果を示している。この比較は既定設定どうしのもので、既定 effort が Opus 5 の high から Opus 5.5 の medium に1段下がった分が含まれる。Anthropic の自社テストの結果であり、独立した検証は確認できていない。",
+      "2026年9月30日時点の公式ドキュメントに載っている Claude モデルの位置付けは次のとおり。",
+      "Claude Fable 5.1: $10 / $50 — 高難度の推論と長時間のエージェント作業向け。既定 effort は high",
+      "Claude Opus 5.5: $4 / $20 — 長時間のエージェント型コーディングとナレッジワーク向け。既定 effort は medium",
+      "Claude Sonnet 5.5: $2 / $10 — 速度と知能のバランス型",
+      "Claude Haiku 4.5: $1 / $5 — 最速のモデル。コンテキストは 200K トークン",
+      "Claude Opus 5（前世代）: $5 / $25 — レガシーモデルとして引き続き利用でき、退役は2027年7月24日より前にはならないとされている",
+      "仕様は、コンテキスト 1M トークン、最大出力 128K トークン（Batch API でベータヘッダを付けると 300K）、知識の信頼できるカットオフは2026年6月、思考は常時オンの adaptive thinking である。入力はテキストと画像、出力はテキストとなる。退役は2027年9月22日より前にはならないと公式に示されている。Claude 4.7 以降のモデルは新しいトークナイザを使い、同じ文章でも従来より約30%多くのトークンになるとされている。これは Claude 4.6 以前との比較で、Opus 5 から Opus 5.5 への移行ではトークナイザは変わらない。4.6 以前のモデルと単価を比べるときに、トークン数の差の考慮が要る。",
+      "提供先は Claude API、Amazon Bedrock、Claude Platform on AWS、Google Cloud、Microsoft Foundry の各プラットフォームである。Anthropic は、従来の Opus と同様にゼロデータ保持（ZDR）が使えると述べている。Claude Code では v2.1.280 以降で Opus 5.5 が使え、Opus の既定モデルになった。同じ版で、Pro と Team Standard プランの既定モデルが Sonnet から Opus に変わっている（Claude Code の changelog）。加えて Anthropic は、Pro・Max・Team・シート課金の Enterprise プランで5時間あたりの利用上限を引き上げ、サブスクリプション利用者に保存して好きなときに使えるレート制限リセットを提供すると発表している。上げ幅の具体的な数値は、確認できた範囲の発表ページには書かれていない。",
+      "Fast mode（リサーチプレビュー）も使える。出力速度は最大2.5倍で、入力 $8 / 出力 $40 per 1M tokens の割増価格になる。API のプラットフォームとしては Claude API（Claude Managed Agents を含む）のみで、Amazon Bedrock、Claude Platform on AWS、Google Cloud、Microsoft Foundry では使えない。API での利用はアカウントマネージャー経由か waitlist での申請が必要で、通常の Opus とは別枠のレート制限が掛かる。Batch API や Priority Tier の契約とは併用できず、標準速度に戻すとプロンプトキャッシュが外れる。Claude Code では、Pro・Max・Team・Enterprise のサブスクリプション利用者も使える。この場合はプランの利用上限には含まれず、使用量クレジットから支払う。",
+      "## effort — 既定が medium になった",
+      "Opus 5.5 の既定 effort は medium で、Opus 5 以前の Opus モデルの既定（high）より一段低い。effort は low / medium / high / xhigh / max の5段階すべてに対応する。adaptive thinking は常時オンで切れないため、公式ドキュメントは effort を「思考の深さ、レイテンシ、コストを決める主な制御」と位置付けている。effort を省略したリクエストは Opus 5 では high、Opus 5.5 では medium で動くので、同じコードのまま移行すると動作が変わる。",
+      "公式ドキュメントは、以前のモデルの設定を引き継がず、自分の評価データで effort を振って測ることを勧めている。同じ effort でも Opus 5 より1ターンあたりの思考量が多くなる傾向があり、特に xhigh と max で大きいと書かれている。max_tokens は思考と応答の合計に対する上限なので、高い effort では大きく取る必要がある。会話の途中でメッセージ単位に effort を変える機能（ベータ）もあり、プロンプトキャッシュが保たれる。",
+      "Claude Code のドキュメントによれば、Anthropic のテストでは Opus 5.5 の medium が、コーディングとナレッジワークの評価で Opus 5 の high と同等かそれ以上だった。これは当事者の説明で、範囲もその2種類の評価に限られ、独立した検証は確認できていない。Claude Code では、/effort が per-model になる前にユーザー設定ファイルのトップレベルに保存された effortLevel は、Opus 5.5 のような新モデルには適用されず、選び直すまで既定の medium で始まる。project・local・managed 設定や --settings で渡した effortLevel は、全モデルに適用される。",
+      "## API の破壊的変更と挙動の違い",
+      "公式ドキュメントは、Opus 5 で動いているコードに影響する破壊的変更を4件挙げている。1つ目は、thinking を無効化できないこと。thinking の type に disabled や、budget_tokens を伴う enabled を指定すると 400 エラーになる。thinking フィールドを省略するか adaptive を指定する。2つ目は、強制的なツール使用が使えないこと。tool_choice の any と tool は 400 エラーになり、auto と none のみが使える。スキーマに合う JSON が必要な場合は、strict なツール使用か structured outputs を使う。",
+      "3つ目は、thinking ブロックがモデルと会話に結び付くこと。Opus 5.5 は Opus 5 以前の Opus・Sonnet・Haiku の thinking ブロックを読めるが、Fable と Mythos のものは読めない。2026年8月31日 00:00 UTC 以降に作られたアカウントでは、system プロンプト・tools・過去のメッセージを変更したあとにブロックを再送すると、既定で 400 エラーになる。4つ目は、Claude API と Google Cloud で旧来の computer_20251124 ツールが受け付けられなくなり、computer_toolset_20260801 が必要になること。Amazon Bedrock では従来のツールが引き続き動く。",
+      "これら以外に、エラーにはならない変更がある。ツール呼び出しの合間にモデルが書く短い文章が text ブロックではなく thinking ブロックで返り、既定の display 設定では中身が空になる。この文章を進捗表示としてユーザーに流しているアプリケーションは、ツール呼び出しの間だけ無言になる。公式の移行ガイドは、display の値を設定して読み取る手順を示している。",
+      "移行時の落とし穴が、ほかにもある。応答の先頭に thinking ブロックが来うるため、content[0].text のように位置で読むコードは壊れる。ツール使用のループでは、thinking ブロックを受け取ったとおりに返す必要があり、編集・並べ替え・一部削除をすると 400 エラーになる。また、thinking をオフにして動かしていた処理は、thinking のトークンが本文を返さない場合でも出力トークンとして課金されるため、1リクエストあたりの出力が増えうる。Opus 5.5 のブロックを読めるのは Claude API 上の Fable 5.1 と Mythos 5.1 だけで、ルーターや安全策のフォールバックで別のモデルに移ると、推論は引き継がれない。読めないブロックは取り除かれ、課金されない。さらに、Opus 4.7 以降のモデルでは temperature・top_p・top_k を既定値以外にするとエラーになり、アシスタントのプリフィルもエラーになる（サンプリングパラメータは Opus 4.6 以前から、プリフィルは Opus 4.5 以前から移る場合に新たに影響する）。",
+      "エンタープライズ向けには、Priority Tier が Opus 5.5 では使えない点がある（Opus 4.8 では使える）。Priority Tier の契約がある組織は、容量を別に計画する必要があると移行ガイドに書かれている。",
+      "## ベンチマーク — 何が確かで、何が確かでないか",
+      "以下の数値はすべて Anthropic の発表ページによる Anthropic の公表値で、独立した検証は本稿の時点で確認できていない。",
+      "Terminal-Bench 4.0 は Opus 5.5 が 66.4%（xhigh effort）、Fable 5.1 が 55.8%、Opus 5 が 52.3%。Anthropic は標準誤差を Opus 5.5 で ±2.6 ポイント、他の Claude モデルで ±1.6〜2 ポイントとしている。GDPval-AA v2.1 は Artificial Analysis のベンチマークで、Anthropic が報告した値は Opus 5.5 が 1846 Elo（max effort）、Fable 5.1 が 1735、Opus 5 が 1708 である。Artificial Analysis 自身が Opus 5.5 を測定したかどうかは、確認できた範囲の資料からは分からない。",
+      "Anthropic は同じページで、これらの水準では「ベンチマークの差は実際の差を測る指標として信頼しにくくなっており、Opus 5.5 と Fable 5.1 の差は点数が示すより狭い」と述べている。また、Opus 5.5 は本番の安全策を有効にした状態で評価されており、安全策が働いた場合はサイバーセキュリティのタスクを Opus 4.8、生物学などのタスクを Opus 5 が処理したため、Opus 5.5 のスコアはおそらく低めに出ていると説明している。発表ページには他社モデルとの比較も載っているが、他社の数値は本稿では扱わない。",
+      "発表ページには、GitHub、Spotify、Optiver など早期テスターの談話も掲載されている。これは Anthropic が選んで掲載した声であり、条件や測定方法が公開されていないため、本稿では数値を転載しない。",
+      "## 安全策とフォールバック",
+      "Opus 5.5 は、Opus として初めて Fable 5.1 と同系統の安全策（サイバーセキュリティ・生物学・蒸留）付きで公開された。Anthropic の発表によれば、日常的なバグ修正などは扱えるが、多くのサイバーセキュリティ関連のタスクは Opus 4.8 に振り替えられる。生物学のデュアルユース領域と、フロンティア LLM 開発に関わる一部の能力（特定の ML アクセラレータ向けのカーネル開発など）は Opus 5 に振り替えられる。推論の抽出を狙う要求は、サポート記事と API ドキュメントによれば振り替えられずにそのままブロックされる。なお発表ページの安全策の節は、サイバー・生物学・蒸留のいずれも別のモデルに透過的に振り替えられると書いており、資料の間で食い違っている。本稿は、より具体的なサポート記事と API ドキュメントの記述に従った。",
+      "claude.ai では、振り替えが起きると会話中の表示に通知が出て、モデルピッカーは以後も低い側のモデルのまま残る。この自動切り替えは設定でオフにでき、オフにすると振り替えの代わりに会話が一時停止する。API では stop_reason が refusal になり、stop_details にカテゴリが入る。サーバー側のフォールバック（ベータ）を設定できるが、reasoning_extraction の拒否は再試行されない。",
+      "分類器は、ユーザーが入力した文だけでなく、記憶、コネクタの内容、Web 検索の結果、ファイルなど、モデルが読むものすべてを検査する。自分で入力していない内容が原因で振り替えが起きることもある。API では、フォールバックを設定しない限り、HTTP 200 に stop_reason の refusal が付いて返る。拒否はカテゴリを問わずレート制限に数えられる。",
+      "課金にも違いがある。2026年9月24日から、出力が始まる前の拒否のうち bio・frontier_llm・reasoning_extraction のカテゴリは、通常のリクエストと同じ単価で課金される。それ以外のカテゴリで出力前に拒否されたものは課金されない。サイバー分野の正当な用途向けの Cyber Verification Program について、Anthropic の発表は Opus 5.5 を「近く」対象に加えるとしており、サポート記事は本稿の時点で Opus 5.5 は対象外と書いている。生物学については、審査済みの組織向けに Life Sciences Verification Program が用意されている。",
+      "安全性の評価は Anthropic の説明による当事者の主張で、独立した検証は確認できていない。Anthropic は、自社の自動化された行動監査（約2,000のシナリオ）で、Opus 5.5 が最近の Claude モデルより多くの指標で良い結果だったと述べ、外部評価者として Frontier Design と METR の名を挙げている。同時に、Opus 5.5 は評価されていることに気付いている兆候がしばしばあり、評価が実運用での振る舞いを正確に予測できるかどうかが難しくなっていると書いている。",
+      "## 評価",
+      "AI品質（4.5）: Anthropic の公表値では、Terminal-Bench 4.0 や GDPval-AA v2.1 など自社が挙げた主要なベンチマークで Fable 5.1 と Opus 5 を上回る。一方で、これらは当事者の公表値で、独立した検証は確認できていない。Anthropic 自身が、点数の差は実際の差より広く見えると述べ、Opus 5.5 と Fable 5.1 の差は点数より狭いと書いている。発表ページのチャートの説明文と表では、effort の違いによって同じベンチマークの数字が異なる箇所もある。さらに、安全策の分類器が働く領域（サイバー、生物学、フロンティア LLM 開発の一部）では、別のモデルが処理するため、その領域での実効的な品質は Opus 5.5 の点数とは異なる。",
+      "使いやすさ（3.5）: 公式ドキュメントは、What's new、移行ガイド、プロンプトガイド、エラーメッセージの全文、破壊的変更ごとの before / after まで揃っている。1M コンテキスト、Claude Code の既定 Opus、5つのプラットフォームでの提供も扱いやすい点である。一方、Opus 5 からの移行では、破壊的変更が4件ある。加えて、エラーにならない変更が2件ある。ツール呼び出しの合間の文章が thinking ブロックで返ることと、既定 effort が high から medium に変わることで、検査では気付きにくい。2026年8月31日以降に作られたアカウントでは、会話の履歴を編集して再送すると 400 エラーになり、追記のみの運用が前提になる。新規に導入する場合と、Opus 5 から移行する場合とで、負担の大きさは異なる。",
+      "コスパ（4）: 単価は Opus 5 より20%低く、キャッシュ読み出しは60%低い。Fable 5.1 の4割の単価でもある。Anthropic は自社テストで実効コストの40%低下を示している。減点は、Sonnet 5.5 や Haiku 4.5 にはさらに安い単価があること、thinking を切っていた処理は出力が増えうること、fast mode が2倍の割増であること、bio などの出力前の拒否が課金対象になったことによる。他社モデルとの価格比較は本稿では行っていない。",
+      "拡張性（4.5）: 1M コンテキスト、128K 出力（Batch で 300K）、5段階の effort、ツール使用、Files API、PDF、vision、Batch、プロンプトキャッシュ、コンパクション（ベータ）、メッセージ単位の effort 変更（ベータ）、会話途中でのツール定義の追加（ベータ）が揃っている。一方、tool_choice の any と tool が使えず、ツール呼び出しを強制する設計はできない（strict なツール使用と structured outputs での代替は公式に示されている）。入力はテキストと画像、出力はテキストで、音声や動画の入出力は確認できた資料に記載がない。ファインチューニングについても、読んだ一次ソースには記載がなく、存在しないとまでは言えないが確認できていない。",
+      "企業向け（4）: Claude API と Amazon Bedrock・Claude Platform on AWS・Google Cloud・Microsoft Foundry の各クラウドで公開日から使え、ZDR に対応し、US 域内推論の指定もできる。Claude Code では管理設定で新リリースの許可や保留を制御できる。ただし availableModels に claude-opus-5 を指定していると Opus 5.5 も自動で許可され、保留に使う deniedModels と availableModelsMatch は v2.1.283 以降でしか効かない。減点は、Priority Tier が使えないこと、サイバー分野の Verification Program に Opus 5.5 が含まれていない現状、安全策による振り替えと拒否課金、thinking ブロックの結び付きによる運用上の制約による。公開から日が浅く長期運用の実績がない点は、機能の欠落ではないため減点していない。",
+      "この星評価は、本稿を執筆した担当とは別のモデルによる独立採点との平均である。5軸の点数を、執筆者と独立採点者のそれぞれが付け、軸ごとに平均した（0.25 と 0.75 は低い側に丸めている）。評価の軸と重みは、AI品質30% / 使いやすさ25% / コスパ20% / 拡張性15% / 企業向け10% で、その加重平均が総合の星になる。",
+      "## どう使うべきか",
+      "Opus 5 を使っている場合は、モデル ID を claude-opus-5-5 に変え、thinking の disabled / enabled 指定を外して effort で代替し、tool_choice の any と tool を auto と strict なツール使用に置き換える。Claude API か Google Cloud で computer use を使っているなら toolset への移行も要る。進捗テキストを画面に出しているなら display を設定する。そのうえで、既定が medium に変わったことを前提に、自分の評価データで effort を振って測る。公式ガイドはこの順序で書かれている。",
+      "Opus 4.8 以前から移行する場合は、上記に加えて公式の移行ガイドに世代別のチェックリストがある。Opus 5 との比較は当サイトの [Opus 5 のレビュー](?a=claude-opus-5-review)を参照。Opus 4.7 と Opus 4.6 では fast mode が使えず、Opus 5.5 への移行が fast mode を使い続ける手段として公式に案内されている。",
+      "新規の選定では、公式ドキュメントの案内に従えば、まず Opus 5.5 を評価し、高い effort でも足りない場合に Fable 5.1、コストや速度を優先する場合に Sonnet 5.5 や Haiku 4.5 を検討する順になる。攻撃的セキュリティ（ペネトレーションテストや CTF など）や生物学の業務は、振り替えが頻繁に起きるとされている。Claude Code のドキュメントは、生物学の実質的な作業では最初の検知でセッションが Opus 5 に移り、以後の生物学の検知は拒否になると説明している。一方、セキュアコーディング、ソースコードの脆弱性スキャン、セキュリティ問題のトリアージといった防御側の作業は、引き続き Opus 5 と Opus 5.5 で行えるとサポート記事に書かれている。",
+      "## 注意点",
+      "(1) ベンチマークは当事者の公表値: 数値は Anthropic の発表ページによるもので、独立した検証は確認できていない。Anthropic 自身も、差は点数が示すより狭いと書いている。",
+      "(2) effort とトークン消費: 既定が medium になり、同じ effort でも思考量が Opus 5 より多い傾向がある。コストは単価だけでは見積もれないため、effort ごとに実測する必要がある。",
+      "(3) 破壊的変更: thinking の無効化、強制ツール使用、旧 computer use ツール、thinking ブロックの結び付き。加えて Priority Tier 非対応、応答の先頭の thinking ブロック、サンプリングパラメータとプリフィルの拒否がある。移行前に開発環境で確認する。",
+      "(4) 安全策による振り替えと課金: サイバー、生物学、フロンティア LLM 開発、蒸留の各カテゴリで挙動が異なり、一部は出力前の拒否でも課金される。",
+      "(5) 退役の予定: 現行のラインナップ表に載る Haiku 4.5 は2026年10月15日より前には退役しないとされている。Opus 4.5 は2026年11月24日より前には退役しない。",
+      "(6) 確認できていない点: プラン別の利用上限の数値、claude.ai の各プランで Opus 5.5 がどのモデル選択肢として並ぶかの詳細、Cyber Verification Program の対象化の時期は、確認できた一次情報からは読み取れなかった。",
+      "総評: 単価の引き下げ、1M コンテキスト、5つのプラットフォームでの提供、Claude Code の既定化により、現行の Opus 級として選びやすい位置にある。性能の数値は当事者の公表にとどまり、実効コストは effort の設定に左右される。Opus 5 からの移行は、料金が下がる一方で API の破壊的変更4件への対応が必要になる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Claude Opus 5.5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-opus-5-5"
+      },
+      {
+        "title": "Pricing",
+        "site": "Claude Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Models overview",
+        "site": "Claude Docs",
+        "url": "https://platform.claude.com/docs/en/models/overview"
+      },
+      {
+        "title": "Claude Opus 5.5",
+        "site": "Claude Docs",
+        "url": "https://platform.claude.com/docs/en/models/opus-5-5/overview"
+      },
+      {
+        "title": "What's new in Claude Opus 5.5",
+        "site": "Claude Docs",
+        "url": "https://platform.claude.com/docs/en/models/opus-5-5/whats-new-opus-5-5"
+      },
+      {
+        "title": "Migrating to Claude Opus 5.5",
+        "site": "Claude Docs",
+        "url": "https://platform.claude.com/docs/en/models/opus-5-5/migration-guide"
+      },
+      {
+        "title": "Effort",
+        "site": "Claude Docs",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/effort"
+      },
+      {
+        "title": "Fast mode",
+        "site": "Claude Docs",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/fast-mode"
+      },
+      {
+        "title": "Model deprecations",
+        "site": "Claude Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+      },
+      {
+        "title": "Release notes",
+        "site": "Claude Docs",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Model configuration",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/model-config"
+      },
+      {
+        "title": "Claude Code changelog",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/changelog"
+      },
+      {
+        "title": "Why Claude switched models in your conversation with Opus 5 or Opus 5.5",
+        "site": "Claude Help Center",
+        "url": "https://support.claude.com/en/articles/16049681-why-claude-switched-models-in-your-conversation-with-opus-5-or-opus-5-5"
+      }
+    ]
+  },
+  "claude-sonnet-5-5-review": {
+    "body": [
+      "Claude Sonnet 5.5 は Anthropic が2026年9月28日に公開したモデルで、Claude 5.5 ファミリーの2番目にあたる（最初は Opus 5.5）。API のモデル ID は claude-sonnet-5-5。Anthropic は「Sonnet 5 から明確に向上し、30%以上高速で、多くの作業で最大30%安い」と説明している（いずれも当事者の説明）。位置付けは Opus 5.5 を補う、より速く低コストなモデルで、範囲の明確な日常タスク、バグ修正、資料・スライド・スプレッドシートの作成を得意とするとされる。一方で Anthropic 自身が、複雑で判断の持続が必要な作業では Opus 5.5 のほうが明確に強いと述べている。同ファミリーの Haiku 5.5 は「今後数週間のうちに」加わると予告されている。",
+      "性能ベンチマーク（Anthropic の公表値。独立した検証は確認できていない）: 発表ページの表から、同社モデル間の比較を抜粋する。Terminal-Bench 4.0 は Sonnet 5.5 が 70.6%（Sonnet 5: 10.3%、Opus 5.5: 66.4%。脚注によれば Opus 5.5 の値は最高スコアである Xhigh effort のもの）、CursorBench 4.0 は 55.5%（Sonnet 5: 34.1%、Opus 5.5: 57.8%）、Humanity's Last Exam（ツールあり）は 64.5%（54.9% / 67.7%）、OSWorld 2.1（partial）は 80.1%（57.0% / 81.8%）。表の文字情報からは、各値がどの effort 設定での結果かを特定できない。",
+      "知識労働の指標である GDPval-AA v2.1 と AA-Briefcase v1.1 は Artificial Analysis による測定で、Sonnet 5.5 はそれぞれ 1844（Sonnet 5: 1449、Opus 5.5: 1846）と 1811（1359 / 1822）。Anthropic の脚注によると、測定は Sonnet 5.5 の先行デプロイで行われ、構造化出力を使う要求で応答が劣化しうる不具合があった（その後修正済み）。同社は影響は小さく、あるとしても性能を低く見せる方向だと見込んでいる。測定主体は Anthropic ではないが、Artificial Analysis 自身のページは本稿で直接確認できておらず、Anthropic の掲載を経由した数値である。なお表の競合モデルの列の見出しは GPT-6 Sol で、Terminal-Bench と CursorBench の行は「—」になっている（チャートだけが GPT-5.6 Sol の値に差し替えられている）。脚注4は、GPT-6 Sol の画像理解の不具合が修正され、Artificial Analysis と Surge AI のスコアが最新版を反映していない可能性があると述べる。本稿では他社モデルとの比較は扱わない。",
+      "効率と速度: Anthropic は、Sonnet 5.5 が同じ作業に必要なトークンが少なく、社内テストでは1タスクあたり最大30%安いこと、出力が Sonnet 5 より30%以上速いことを説明している。いずれも当事者の説明で、独立した再現は確認できていない。発表ページには Epic Games、Slack、Box、Atlassian など複数企業の早期テスターの評価が引用されているが、掲載する引用を選んだのは Anthropic である。",
+      "料金: $2 / $10 per 1M tokens（入力 / 出力）。キャッシュ読み取りは $0.20、キャッシュ書き込みは5分が $2.50、1時間が $4。Batch API は入力・出力とも50%引き（$1 / $5）になる。1M トークンのコンテキストは標準料金に含まれ、長いコンテキストでも単価は変わらない。米国限定推論（inference_geo: us）は全カテゴリで1.1倍。Bedrock と Google Cloud 経由の料金は各社の料金ページによる。価格は Sonnet 5 と同額である。",
+      "Sonnet 5 の $2/$10 は、発売時に8月31日までの導入価格として告知されたが、2026年8月10日に Anthropic が標準価格として恒久化し、9月1日に予定されていた $3/$15 への引き上げは行われなかった。公式料金表の脚注と release notes（2026年8月10日の項）に記載がある。",
+      "同じ料金表での位置関係は、Fable 5.1 が $10 / $50、Opus 5.5 が $4 / $20（キャッシュ読み取りは同じ $0.20）、Sonnet 5.5 が $2 / $10、Haiku 4.5 が $1 / $5。Haiku 4.5 は 200K コンテキスト・知識カットオフ2025年2月の旧世代で、退役は2026年10月15日より前にはならないとされている。トークン単価は1タスクあたりの費用と同じではなく、effort を上げるほど出力は増える。トークナイザーは Sonnet 5 と同じで、同じテキストなら同じトークン数になる。一方、料金表は Claude 4.7 以降のトークナイザーが Sonnet 4.6 以前より同じテキストで約30%多くトークンを数えると明記しており（増加率は内容による）、Sonnet 4.6 以前から移る場合は単価の比較だけでは費用を見積もれない。加えて Sonnet 5.5 は高解像度の画像区分（長辺2576px、1枚あたり最大4,784トークン）を使い、Sonnet 4.6・4.5・Haiku 4.5（長辺1568px、1,568トークンまで）では、2000×1500の画像が約2.5倍のトークンになる。Haiku 4.5 から移る場合は単価も上がる。",
+      "Adaptive Thinking と effort: Adaptive Thinking が既定でオンで、effort は low / medium / high / xhigh / max の5段階。API の既定は high、Claude Code と Claude アプリの既定は medium である。effort の水準は Sonnet 5 から再調整されており、同じ水準でも思考量が異なるため、公式は Sonnet 5 の設定を引き継がず評価セットで再計測するよう案内している。出発点の目安は、ワークロードがエージェント的または遅延に敏感でなければ high から。エージェント的コーディングと複数ステップのツール利用は、範囲が明確なら medium、難しい・長い作業は high、チャットなど遅延に敏感な用途は medium か low とされる。effort は上げるほど良いとは限らない。FrontierCode 1.1 で Sonnet 5.5 は Max で 46.2%、Xhigh で 52.1% と Max のほうが低く、Anthropic は脚注で、Max では code-review スキルがサブエージェントを多用し、調査した2件でタイムアウトや範囲外の編集が起きたと説明している。API で思考の前置きを止める指定は disabled から between_tools に変わった（後述）。claude.ai と Claude Code では Sonnet 5.5 の思考をオフにできない。",
+      "仕様: コンテキストは 1M トークン、最大出力は 128K（同期 Messages API）で、Message Batches API ではベータヘッダ output-300k-2026-03-24 により 300K まで拡張できる。入力はテキストと画像、出力はテキスト。知識カットオフ（信頼できる範囲・訓練データとも）は2026年6月。状態は Active（最新）で、退役は2027年9月28日より前にはならない。Sonnet 5 も Active のままで、退役は2027年6月30日より前にはならない。キャッシュ可能な最小プロンプト長は 512 トークン（Sonnet 5 は 1,024）で、per-message effort（ベータ）と mid-conversation system messages は Sonnet 5 にはない機能として案内されている。",
+      "利用可能な環境: Claude API、Amazon Bedrock（anthropic.claude-sonnet-5-5）、Google Cloud、Microsoft Foundry、Claude Platform on AWS。ゼロデータ保持（ZDR）に対応する。Claude Code では v2.1.284（9月28日）で追加され、Anthropic API 上の sonnet エイリアスの既定になった。Sonnet 5.5 には Claude Code v2.1.284 以上が必要で、古い版からのリクエストは失敗する。モデル未指定時の default は Opus 5.5（v2.1.280 以降。Pro・Max・Team・Enterprise・API。Foundry のみ Sonnet 4.5）であり、Sonnet 5.5 は sonnet を選んだときに使われる。この sonnet エイリアスの解決先は提供環境で異なり、公式ドキュメントの2026年9月30日時点の記載では、Anthropic API が Sonnet 5.5、Claude Platform on AWS が Sonnet 4.6、Bedrock と Google Cloud が Sonnet 4.5、Foundry が Sonnet 4.5 である。Claude Code は Anthropic API 上で常に 1M コンテキストで動く（自動コンパクションは既定で約 967K）。ただし LLM gateway 経由と CLAUDE_CODE_DISABLE_1M_CONTEXT=1 の構成は 200K 扱いになる。Anthropic の製品ページによれば、claude.ai の Web・iOS・Android で誰でも Sonnet 5.5 とチャットでき、モデルメニューと effort セレクタの対象にも含まれる。claude.com の料金ページの表では Sonnet が Free から Enterprise までの全プランで「Yes」となっているが、これは版ではなくファミリー単位の表記である。プランごとの利用上限は確認できていない。",
+      "強み:",
+      "(1) 速度とトークン効率（当事者の説明）: 出力速度が Sonnet 5 比で30%以上速く、1タスクあたり最大30%安いと Anthropic は説明する。独立した再現は確認できていないため、自社ワークロードでの実測が前提になる。",
+      "(2) 価格構造: $2 / $10 に加え、キャッシュ読み取り $0.20、Batch 50%引き、1M コンテキストの標準料金込み。単価は同じ料金表の Opus 5.5 の半分である。",
+      "(3) 文書・資料・デザイン系の作業（当事者の説明）: Anthropic は、上場企業の決算資料とスライドテンプレートから10枚の運用レビューを作らせた社内テストで、専門家2名が初稿をそのまま送れる水準と判断したと述べている。これも社内テストの結果である。",
+      "(4) 提供範囲と運用条件: 主要クラウド5環境で提供され、ZDR に対応し、退役は2027年9月28日より前にはならない。",
+      "注意点:",
+      "(1) Opus 5.5 との差: ベンチマークでは Opus 5.5 に近い値が並ぶ項目があるが、Anthropic は、ベンチマークは能力の一側面にすぎず、複雑で判断の持続が必要な作業は自社テストでも外部テスターでも Opus 5.5 が明確に強いと述べている。",
+      "(2) Sonnet 5 からの API 破壊的変更: 公式は5件を挙げている。thinking の disabled は 400 エラーになり between_tools に置き換える（low から high の effort でのみ有効で、xhigh と max では 400。between_tools に display・budget_tokens・block_binding を併用すること、between_tools のまま会話の途中で effort を変えること、手動の budget_tokens も 400）。tool_choice の any と tool は 400 エラーで、auto と none のみ使える。computer_20251124 は Claude API と Google Cloud で受け付けられず computer_toolset_20260801 を使う（Bedrock では従来のツールも使える）。advisor ツールは Opus 4.8、Opus 4.7、Sonnet 5 を advisor に指定できない。加えて temperature、top_p、top_k を既定値以外にすると 400 エラーになり、Python SDK v1.0 以降ではそもそも渡すと TypeError になる。応答の形も変わり、ツール呼び出しの間の1〜2文を超える経過メモは thinking ブロックで返る。既定の display では本文が空のため、そのテキストをユーザーに流す画面はツール呼び出しの間で黙る。",
+      "(3) 思考ブロックの結び付き: Sonnet 5.5 の thinking ブロックはモデルと会話とアカウントに結び付く。Sonnet 5.5 は Sonnet 5、Opus 4.8、Haiku 4.5 以前のブロックは読めるが、Opus 5、Opus 5.5、Fable、Mythos のブロックは読めない。Sonnet 5.5 のブロックは他のどのモデルにも読まれないため、途中でモデルを切り替えた会話は、切り替え後の推論を引き継がない。2026年8月31日以降に作成されたアカウントでは、以前の履歴を編集したうえでブロックを再送すると 400 エラーになる検査が既定で有効なので、会話は追記のみで扱う必要がある。さらに、Sonnet 5.5 の thinking ブロックは生成したアカウント（または連携したアカウント）でしか使えず、別のアカウントから送るとエラーにならずブロックが黙って捨てられる。Claude Code でセッション中にアカウントを切り替える場合も対象になる。",
+      "(4) セーフガード: Sonnet 5.5 は Sonnet で初めてサイバー領域のセーフガードとフォールバックを備える。攻撃的なサイバー作業（エクスプロイト生成、バイナリベースの脆弱性スキャン、ペネトレーションテストなど）と思われる要求は Sonnet 5 にフォールバックする。ソースコードの脆弱性スキャンなどの安全なコーディングは対象外とされる。生物領域は Sonnet 5 と同じセーフガードで、要求はフォールバックせずブロックされ、一部の微生物学・ウイルス学の要求は誤って検出されることがある。推論の抽出を狙う要求もブロックされる。Claude API のサーバー側フォールバック（ベータ）が Sonnet 5 で再試行するのは cyber と frontier_llm だけで、bio・reasoning_extraction・general_harms は再試行しない。claude.ai では自動切替が既定でオンで、切り替わるとそのチャットは Sonnet 5 に留まり、Sonnet 5 の応答は Sonnet 5 の料金で別に課金される（キャッシュミスぶんは Anthropic がクレジットで補う）。Cyber Verification Program は発売時点では Sonnet 5.5 を対象に含まず、拡大は今後とされている。9月24日以降、生物・frontier_llm・reasoning_extraction の各カテゴリで出力前に返る拒否は、通常の要求と同じ料金で課金される。",
+      "(5) 環境ごとの差と導入直後という点: Bedrock、Google Cloud、Foundry の Claude Code では sonnet エイリアスが古い世代を指すため、Sonnet 5.5 を使うには明示的な指定やピン留めが要る。これらの環境でフォールバックを効かせるには追加の設定が必要になる。本稿は公開から2日後の9月30日時点の確認であり、Anthropic 自身も評価ではすべての失敗を捕捉できず、未発見の傾向がありうると述べている。",
+      "評価: ★は5軸（AI品質30% / 使いやすさ25% / コスパ20% / 拡張性15% / 企業向け10%）の加重平均で、性能に加えて料金・提供条件・API の制約を含む採用判断向けの評価であり、公開ベンチマークのみの総合値（比較表）とは別の尺度である。この★は、執筆した担当とは別のモデルが同じ5軸で独立に付けた採点との平均で、0.25 の端数は低い側に丸めた。結果は AI品質4.0、使いやすさ4.0、コスパ4.5、拡張性4.0、企業向け4.0、加重平均は4.1。AI品質は、数値がすべて当事者の公表値で独立検証が確認できず、Anthropic 自身が複雑な作業では Opus 5.5 が明確に強いと述べている点を織り込んだ。使いやすさは、ドキュメントの厚さと、Sonnet 5 からの破壊的変更5件などの移行コストの両方を見ている。コスパは、$2/$10・キャッシュ読み取り $0.20・Batch 50%引き・1M 標準料金込みという価格構造に加点し、タスクあたりの削減幅が当事者の測定である点で満点にしていない。拡張性は、ツール・長文脈・長出力が揃う一方、強制ツール呼び出しの廃止とテキスト・画像入力のみである点を、企業向けは、5環境・ZDR・退役の見通しに加点し、サイバー領域のフォールバック、生物領域のブロック、発売2日後で運用実績がない点を差し引いた。公開直後の採点であり、独立した評価や運用報告が出た時点で見直す余地がある。",
+      "AI News の推奨: 範囲の明確なコーディング、文書・資料作成、量のあるエージェント処理は、評価対象に加える価値がある。既存の Sonnet 5 パイプラインでは、まずモデル ID と上記の破壊的変更を確認し、effort を medium と high から再計測し、1タスクあたりのトークン数と費用を自社のワークロードで測るのが現実的な順序である。複雑で判断が続く作業は Opus 5.5 と並走で比較したい。サイバー・生物関連の作業を含む用途は、フォールバックやブロックの挙動を事前に試すこと。ベンチマークと性能・コストの主張は Anthropic の公表値であり、採用判断には自社の評価が必要である。",
+      "---",
+      "編集履歴",
+      "【初版 2026-09-30】旧世代の [Claude Sonnet 5 レビュー](?a=claude-sonnet-5-review) を置き換える、Claude Sonnet 5.5 の新規レビューとして作成。Anthropic の発表ページと、platform.claude.com、code.claude.com、support.claude.com の公式ドキュメントで確認できた事実のみを掲載し、旧レビューの記述は流用していない。ベンチマークと性能・コストの主張は当事者の公表値で、独立した検証は確認できていない。プランごとの利用上限と、Cursor・VS Code・GitHub Copilot など第三者製品の対応状況は、一次資料で確認できていないため記載していない。★は、執筆した担当とは別のモデルが独立に付けた採点との平均である。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 1,
+        "caption": "Anthropic 公表値（同社モデル間の比較。独立した検証は確認できていない）",
+        "headers": [
+          "指標",
+          "Sonnet 5.5",
+          "Sonnet 5",
+          "Opus 5.5"
+        ],
+        "rows": [
+          [
+            "Terminal-Bench 4.0",
+            "70.6%",
+            "10.3%",
+            "66.4%（Xhigh、同モデルの最高値）"
+          ],
+          [
+            "CursorBench 4.0",
+            "55.5%",
+            "34.1%",
+            "57.8%"
+          ],
+          [
+            "Humanity's Last Exam（ツールあり）",
+            "64.5%",
+            "54.9%",
+            "67.7%"
+          ],
+          [
+            "OSWorld 2.1（partial）",
+            "80.1%",
+            "57.0%",
+            "81.8%"
+          ],
+          [
+            "GDPval-AA v2.1（Elo、Artificial Analysis 測定）",
+            "1844",
+            "1449",
+            "1846"
+          ],
+          [
+            "AA-Briefcase v1.1（Elo、Artificial Analysis 測定）",
+            "1811",
+            "1359",
+            "1822"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Claude Sonnet 5.5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/claude-sonnet-5-5"
+      },
+      {
+        "title": "Claude Sonnet 5.5（モデル概要）",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/models/sonnet-5-5/overview"
+      },
+      {
+        "title": "What's new in Claude Sonnet 5.5",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/models/sonnet-5-5/whats-new-sonnet-5-5"
+      },
+      {
+        "title": "Pricing",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Effort",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/effort"
+      },
+      {
+        "title": "Model deprecations",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+      },
+      {
+        "title": "Claude Sonnet（製品ページ）",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/claude/sonnet"
+      },
+      {
+        "title": "Claude pricing（プラン表）",
+        "site": "Claude",
+        "url": "https://claude.com/pricing"
+      },
+      {
+        "title": "Claude Code model configuration",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/model-config"
+      },
+      {
+        "title": "Claude Code changelog",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/changelog"
+      },
+      {
+        "title": "Why Claude switched models in your conversation with Sonnet 5.5",
+        "site": "Claude Help Center",
+        "url": "https://support.claude.com/en/articles/17161993-why-claude-switched-models-in-your-conversation-with-sonnet-5-5"
+      },
+      {
+        "title": "Change the model, effort, and thinking settings",
+        "site": "Claude Help Center",
+        "url": "https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings"
+      }
+    ]
+  },
+  "claude-fable-5-1-mythos-5-1-review": {
+    "body": [
+      "**Claude Fable 5.1 と Claude Mythos 5.1** は Anthropic が2026年9月1日に公開したモデルで、Anthropic は両者を「同じモデルで、セーフガードの水準だけが異なる」と説明している。Fable 5.1（API ID `claude-fable-5-1`）は一般提供で、Claude API・Amazon Bedrock・Claude Platform on AWS・Google Cloud・Microsoft Foundry で使える。Mythos 5.1（`claude-mythos-5-1`）は Project Glasswing 参加者向けの招待制で、サイバーセキュリティとライフサイエンスの用途に合わせた別のセーフガードを持つ。どちらもコンテキストウィンドウは 1M トークン、最大出力は 128k トークン、思考は常時オンの適応型（adaptive thinking）である（[前世代のレビュー](?a=claude-fable-5-mythos-5-review)は Fable 5 / Mythos 5 が対象）。",
+      "**【位置づけの注記】** Fable 5.1 の公開後に、Anthropic は 9月22日に Claude Opus 5.5（$4 / $20）、9月28日に Claude Sonnet 5.5（$2 / $10）を公開している。公式のモデル一覧は「ほとんどのワークロードでは Opus 5.5 から始め、Fable 5.1 は要求水準の高い推論と長時間のエージェント作業、または Opus 5.5 を高い effort で試しても評価が届かない場合に使う」と案内している（Fable 5.1 のモデルページには同趣旨の文が Opus 5 を名指しして残っている）。Help Center のリリースノートは Opus 5.5 を「ほとんどの作業で Fable 5.1 と同水準」と説明しているが、これも Anthropic 自身の説明であり、独立した検証は確認できていない。本レビューの★は Fable 5.1 の採用判断に対する評価であり、性能のみを見るモデル比較表の総合値とは別の尺度である。",
+      "**公表されている性能（当事者の値）**: Anthropic の発表ページは、Fable 5.1 を Fable 5、Opus 5、GPT-5.6 Sol と比較する表を載せている。**いずれも Anthropic が自社の環境で測った値で、独立した第三者による再現は確認できていない。** 数値は Anthropic の表のとおりで、Fable 5.1 は表の全行で Fable 5 を上回る。**発表ページの図で確認できた行（Terminal-Bench-Science 0.1、Terminal-Bench 4.0、CursorBench 3.2.0）の Fable 5.1 の値は max effort のもので、Claude Code の既定である high ではない。** 例えば Terminal-Bench 4.0 は max で 55.8%（1タスクあたり平均約 $19.50）、high で 49.4%（約 $10.50）と図に示されている。他の行の effort 条件は本文からは確認できない。",
+      "表の注記も原文にある。Fable 5.1 は本番のセーフガードを有効にして評価されており、セーフガードが介入したタスクでは、OSWorld 2.0 の Fable 5.1 と Fable 5 が 0点、AutomationBench の Fable 5 が 0点として扱われ、それ以外の介入ではサイバー関連タスクを Opus 4.8、生物関連タスクを Opus 5 が処理した。Anthropic は、これが Fable 5.1 と Fable 5 の成績を押し下げている可能性が高いと書いている。OSWorld 2.0 は2026年8月のタスク公開版での値で、以前の公表値とは直接比較できないとされ、競合の値は載っていない。Terminal-Bench 4.0 は max effort で Fable 5.1 が 55.8%、Mythos 5.1 が 60.9%（high では Mythos 5.1 が 57.1%）で、Anthropic は両者の差を「以前のサイバー向けセーフガードが介入したタスク」によるものと説明している。Fable 5 は 42.0%、Opus 5 は 52.3%、GPT-5.6 Sol は 37.3% と表に載っているが、これらの effort 条件は確認できず、他社モデルとの比較は Anthropic の環境での値で独立検証はない。同ページは、low または medium effort でも Fable 5 と同等以上の結果がはるかに低いコストで出ると説明している。早期アクセス顧客の引用は Anthropic が選んだ掲載であり、ここでは扱わない。",
+      "**料金**: 基本料金は入力 $10 / 出力 $50（100万トークンあたり、Fable 5 と同じ）。変わったのは**キャッシュ読み取りだけ**で、$1 から $0.25（基本入力の 0.025 倍）になった。キャッシュ書き込みは 5分 $12.50、1時間 $20 のまま、Batch API は入出力とも 50% 割引で、1M のコンテキスト全体が標準単価で課金される。Anthropic は、ユーザーが実際に支払う額は「一般的なワークロードで Fable 5 より約25%、キャッシュ読み取りが大半を占める高度にエージェント的な作業で最大約45%」下がると説明している。ただし、この数字は 2026年8月の4週間の実利用をデフォルト effort で集計した Anthropic の試算であり、**下げ幅は自分のキャッシュヒット率に依存する**。また Anthropic が述べているのは「トークン課金の場合」の削減であり、サブスクリプションの週次上限の消費が同じだけ減るとは書かれていない。",
+      "同時期の他モデルとの比較（公式の料金表）: Opus 5.5 は入力 $4 / 出力 $20、キャッシュ読み取り $0.20、Sonnet 5.5 は入力 $2 / 出力 $10、Opus 5 は入力 $5 / 出力 $25 である。基本料金で比べると Fable 5.1 は Opus 5.5 の 2.5 倍で、キャッシュ読み取りの単価は Fable 5.1 の方が高い（$0.25 と $0.20）。1タスクあたりの費用は使うトークン量と effort で変わるため、この比だけでは総額を予測できない。Anthropic は、Fable 5.1 の low または medium effort が Fable 5 の結果と同等かそれ以上で、より低コストだと説明している（グラフの読み取り値は本文に載せない）。",
+      "**プランごとの利用条件**: Help Center の「Claude Fable models on your plan」によると、Fable 5.1 は Pro・Max・Team・Enterprise の有料プランで使え、無料プランでは使えない。**Max、Team のプレミアムシート、席課金 Enterprise のプレミアムシート**では Fable が標準で含まれ、週次使用上限のうち Fable に使えるのは最大 50% までで（週次上限の内数であり、上乗せではない。他モデルの使用も同じ上限から引かれる）、通常より速く消費される。上限に達したら、利用クレジットで続けるか、別モデルに切り替える。**Pro、Team の標準シート、席課金 Enterprise の標準シート**では Fable は使用上限に含まれず、最初から従量課金の利用クレジット（標準 API 料金）で使う。標準シートの Enterprise は組織が利用クレジットを有効にしている場合のみ使える。使用量課金の Enterprise と API は標準 API 料金である。",
+      "**Fable 5 の包括措置は 5.1 に及ばない**: 以前、Fable 5 を週次上限の最大 50% まで追加費用なしで使える措置があり、2026年7月19日 23:59:59（太平洋時間）に終了した。Help Center は、この措置と、Pro・Team 標準シート向けに Fable 5 の移行時に配られた一回限りのクレジットが Fable 5 のみを対象とし、**Fable 5.1 は対象外だった（同等のクレジットもない）**と明記している。Pro や Team 標準シートで Fable 5.1 を使う場合は、最初から利用クレジットの残高が必要になる。",
+      "**Claude Code での扱い**: 公式ドキュメントでは Fable 5.1 は Claude Code v2.1.257 以降が必要で（Help Center は v2.1.255 以降と書いており、Anthropic の文書間で記載が食い違う。変更履歴では 2.1.257 が 9月1日に Fable 5.1 を追加している）、`/model fable` または `claude --model fable` で選ぶ。`fable` エイリアスは Fable 5.1 に解決されるが、Claude apps gateway のセッションでは Fable 5 のままなので `/model claude-fable-5-1` で指定する（5.1 を提供するよう設定されていない gateway は 5.1 へのリクエストを拒否する）。Fable はどのプラン・プロバイダーでも既定モデルではない。Anthropic に直接つないでいてユーザー設定に `claude-fable-5` が保存されている場合は、v2.1.257 以降の初回起動で `fable` エイリアス（5.1）に自動で書き換わる。Fable 5 を使い続けたい場合は model ID で指定する。Anthropic は Fable 5.1 の既定 effort を Claude Code で high、Claude Cowork と claude.ai で medium と説明している。**利用クレジットで課金される場合、対話セッションでは同意画面が出るが、`-p`（非対話）や同意画面を出さない Agent SDK アプリでは確認なしで課金される**とドキュメントに書かれている。自動実行に組み込む場合は、先に利用クレジットの上限を決めておく必要がある。**v2.1.257 から v2.1.259 には、Fable 5.1 でツール結果の後ろの文脈がキャッシュされず毎回キャッシュなしで再送される不具合、`/model` のピッカーに 5.1 が出ない不具合、会話途中の `/effort` 変更でキャッシュが無効になる不具合があり、2.1.260（9月3日）で修正された**（変更履歴）。キャッシュ値下げの効果を見込むなら 2.1.260 以降が前提になる。",
+      "**セーフガードとフォールバック**: Fable 5.1 は全リクエストに分類器（classifier）を走らせ、対象と判定した要求を Opus 系モデルに回す。Help Center が挙げる対象は、エクスプロイトやマルウェアなどの攻撃的サイバーセキュリティ、生物学のデュアルユース領域の多く（ウイルス学・毒性学・創薬・分子設計）、要約された思考の抽出などの蒸留攻撃、フロンティア LLM 開発の限られた作業である。回し先は、生物・化学・ライフサイエンスが Opus 5、攻撃的サイバーが Opus 4.8 である。分類器はモデルが読む内容（メモリ、コネクタ、ウェブ検索結果、ファイル）も検査するため、自分で入力していない内容で発動することがある。API では自動切り替えは既定で無効で、フォールバックを設定するまでは停止理由付きの 200 応答が返る（サーバー側フォールバックはベータで `fallbacks: \"default\"` により設定でき、Fable 5.1 の回し先は Opus 4.8 と Opus 5）。Claude Code では、CLAUDE.md や git status などの作業環境の内容で分類器が反応し、最初のリクエストからフォールバックしうる。原因の切り分けには `claude --safe-mode`、自動切り替えの停止には設定 `switchModelsOnFlag` を使う。生物関連の作業は最初のフラグで Opus 5 に移り、Opus 5 には生物の回し先がないため以後は拒否で終わる。",
+      "Anthropic は 5.1 でセーフガードを見直したと説明している（当事者の数字）。Claude Code の1セッションあたりのサイバー関連の介入は従来比で平均約60%減り、初歩的な生物・医療の良性の質問への介入は Fable 5 の公開時のセーフガードと比べて 85% 減った（この改善は Fable 5 にも適用される）。Fable 5.1 は脆弱性の発見には使えるようになったが、エクスプロイトの開発は対象外である。ペネトレーションテスト、エクスプロイト生成、バイナリベースの脆弱性スキャンは引き続き Opus に回される。ライフサイエンスの研究開発の質問も Opus に回される。**なお 9月24日から、出力が始まる前の拒否のうち `bio`・`frontier_llm`・`reasoning_extraction` のカテゴリは課金対象に戻った**（プラットフォームのリリースノート）。それ以外のカテゴリの出力前拒否は課金されない。",
+      "**API の破壊的変更（Fable 5 から移る場合）**: 公式ドキュメントが破壊的と明示するのは3つである。(1) `tool_choice` の `any` と `tool`（強制ツール呼び出し）は 400 エラーになる。`auto` と `none` は従来どおりで、スキーマに合った入力を保証するには strict tool use か structured outputs を使う。(2) Fable 5.1 が出した思考ブロックは、それを出したモデルか新しいモデルでしか保持されず、以前のモデルは読めない（API は以前のモデルに再送された思考ブロックを落とす）。(3) 思考ブロックより前の内容（system、tools、過去のメッセージ）を変更すると、次のリクエストでエラーになるか、オプトインすればブロックが落とされる。このチェックは 2026年8月31日以降に作成した新規アカウントで強制され、それ以前のアカウントでは `thinking.block_binding.prefix_mismatch_behavior` を指定した場合のみ作用する。Claude Code、claude.ai、Claude Managed Agents、Claude Agent SDK は前置部分を自動で保つ。Anthropic はこの変更を蒸留対策と説明している。",
+      "**Fable 5 から挙動が変わる点**（コードを変えなくても表に出る）: 並列のツール呼び出しが減り、1ターン1呼び出しになりやすい（往復・トークン・時間が増える）。小さな変更でもファイル全体を書き直しやすい。要約で原文を引用符なしに再現しやすい。長いツール実行中の進捗報告が減る。low effort では検索せず記憶から答えやすい。prefill、thinking の無効化、`temperature` などを既定値以外にすることは、Fable 5 と同じく 400 エラーである。",
+      "追加された機能は、途中で effort を変えられる per-message effort（ベータ、プロンプトキャッシュを維持）、その回だけ有効なターン単位の system メッセージ（ベータ）、ツール呼び出しの間の進捗更新を返す `thinking.display: \"updates\"`（ベータ）、キャッシュ読み取りの値下げ、出力へのコンテンツ来歴表示である。テキストには Anthropic の透かし（ウォーターマーク）が付き、コード実行ツールが生成する画像・動画・音声は Files API 経由で C2PA Content Credentials が付く。データ保持は、Fable 5 と同じく 30日保持が必須で、Anthropic が個別に認めた場合を除きゼロデータ保持では使えない。一方、Anthropic の発表は、Enterprise Frontier Safeguards（顧客のクラウドにデータを置き、ゼロデータ保持と同等のプライバシーを保つ仕組み）が使えるようになるまでは、対象の顧客が Fable 5.1 をゼロデータ保持で使えると説明している（対象条件は本稿では確認していない）。Enterprise Frontier Safeguards は今秋から段階的に提供される予定で、本稿の時点で提供状況は確認できていない。思考ブロックの履歴編集を制限する蒸留対策は、現在は新規アカウントが対象だが、Anthropic は将来のモデルでは既存のアカウントにも適用すると述べている。",
+      "**Mythos 5.1（招待制）**: 公開されている範囲では、Mythos 5.1 は Fable 5.1 と同一のモデルで、セーフガードだけが異なる。仕様と料金は Fable 5.1 と同じで、利用は Cyber Verification Program（CVP）と Life Sciences Verification Program（LSVP）の2つの信頼アクセスプログラム経由とされる。ただし現時点で動いているのは LSVP だけで、米国政府との連携で最初の参加者が登録済みである。CVP は現在 Opus・Sonnet 級のモデルが対象で、Anthropic は「近い将来」Mythos 級モデルも含めると書いている。提供先のプラットフォームは Fable 5.1 の5つのうち Claude Platform on AWS を除く4つである。現時点では米国の一部組織のみが対象で、国内外への拡大は米国政府と調整中である。アクセスの窓口は Anthropic、AWS、Google Cloud のアカウントチームで、一般の申し込みはできない。Anthropic は Claude Security（コードベースの脆弱性を走査して修正案を出す製品）が Mythos 5.1 で動くようになったと説明している。Mythos 5.1 について本稿が確認できたのは Anthropic の公表内容のみで、独立した評価は確認できていない。Anthropic は、Mythos 5.1 が設計したタンパク質結合体が、外部2機関の実験で12の標的のうち約50%の設計で結合したと報告しているが、これも当事者の報告であり、本稿では検証していない。",
+      "**強み**:",
+      "(1) **Fable 5 世代からの改善**: 当事者の公表値では、掲載された全行で Fable 5 を上回り、長時間のエージェント作業、調査、文書・表計算・スライド作成が重点として挙げられている。",
+      "(2) **キャッシュ読み取りの値下げ**: 基本料金を据え置いたまま、コンテキストを繰り返し読むエージェント型の利用では請求額が下がる余地がある。下げ幅はキャッシュヒット率に依存する。",
+      "(3) **提供範囲と長い出力**: 5つのプラットフォームで提供され、1M コンテキストを標準単価で使え、最大 128k トークンを出力できる。per-message effort により、キャッシュを保ったまま途中で思考の深さを変えられる。",
+      "**注意点**:",
+      "(1) **利用条件が読みにくい**: Max・Team プレミアムシートでも Fable に使えるのは週次上限の最大 50% で、Pro と標準シートは最初から従量課金である。Fable 5 の包括措置は 5.1 に適用されなかった。",
+      "(2) **API 移行の手間**: 強制ツール呼び出しの廃止、思考ブロックのモデル間非互換、履歴編集での無効化の3つが破壊的で、自前で messages を組み立てるコードは移行前の確認が要る。",
+      "(3) **セーフガードによる迂回**: 攻撃的サイバー、生物のデュアルユース、蒸留の疑いなどは Opus 系に回される。5.1 で介入は減ったと Anthropic は説明するが、セキュリティ研究やライフサイエンスの本格的な作業は Mythos 5.1 の対象で、招待制である。",
+      "(4) **データ保持と基本料金**: 30日保持が必須で、ゼロデータ保持は個別承認が必要。基本料金は Opus 5.5 の 2.5 倍である。",
+      "(5) **独立検証の不在**: 性能の根拠は Anthropic の公表値のみで、第三者による再現は確認できていない。",
+      "**★の付け方**: 本レビューの★は、執筆した担当とは別のモデルが同じ5軸（AI品質30% / 使いやすさ25% / コスパ20% / 拡張性15% / 企業向け10%）で独立に付けた点数との平均で、0.25 または 0.75 になる軸は低い側に丸めた。結果は AI品質 4.5、使いやすさ 3、コスパ 2.5、拡張性 4、企業向け 3 で、加重平均は 3.5 である。二つの採点が分かれたのは、使いやすさ（3.5 と 3）、コスパ（3 と 2.5）、企業向け（3.5 と 3）だった。分かれた主な理由は、週次上限と利用クレジットの扱いをどこまで重く見るかにある。事実としては、Pro と標準シートは最初から利用クレジット、Max などでも Fable に使えるのは週次上限の最大 50%、Fable 5 の包括措置は 5.1 に適用されず、`-p` では確認なしで課金され、基本料金は Opus 5.5 の 2.5 倍で Anthropic 自身が多くの用途で Opus 5.5 から始めるよう案内している。この★は性能のみを見るモデル比較表の総合値とは別の尺度で、値が食い違うことがある。",
+      "**AI News の見立て**: Fable 5.1 は、Anthropic 自身が「要求水準の高い推論と長時間のエージェント作業、または Opus 5.5 を高い effort で試しても足りない場合」に位置づけているモデルである。この位置づけを前提にすると、採用の順序は、まず自分の評価用タスクを Opus 5.5 などで動かし、届かないものだけを Fable 5.1 に回す形が現実的と考える。Fable 5.1 を組み込む場合は、拒否時の Opus フォールバックを API 側で設定し、`-p` や自動実行では利用クレジットの上限を先に決め、履歴を編集する実装がないかを `input_transformations` のログで確認するとよい。Mythos 5.1 は招待制のため、一般の利用者が選べる選択肢ではない。ここに書いたのは一般論であり、契約するプランや所属先のルールがある場合はそちらが優先される。前提は動き続けるため、公式ドキュメントとの差異があればこの記事を更新する。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "Anthropic が発表ページで公表したベンチマーク（当事者の値。独立検証は確認できていない。max effort は Fable 5.1 の値で、他の列の effort は確認できない）",
+        "headers": [
+          "指標",
+          "Fable 5.1",
+          "Fable 5",
+          "Opus 5",
+          "GPT-5.6 Sol"
+        ],
+        "rows": [
+          [
+            "Terminal-Bench-Science 0.1（max effort）",
+            "52.6%",
+            "24.7%",
+            "29.0%",
+            "22.4%"
+          ],
+          [
+            "Terminal-Bench 4.0（max effort。Fable 5.1 は high で 49.4%）",
+            "55.8%",
+            "42.0%",
+            "52.3%",
+            "37.3%"
+          ],
+          [
+            "GDPval-AA v2（スコア）",
+            "1853",
+            "1723",
+            "1824",
+            "1711"
+          ],
+          [
+            "OSWorld 2.0（partial）",
+            "77.9%",
+            "72.9%",
+            "75.4%",
+            "—"
+          ],
+          [
+            "OSWorld 2.0（strict）",
+            "41.7%",
+            "36.1%",
+            "39.6%",
+            "—"
+          ],
+          [
+            "Humanity's Last Exam（ツールなし）",
+            "60.9%",
+            "57.8%",
+            "56.6%",
+            "—"
+          ],
+          [
+            "Humanity's Last Exam（ツールあり）",
+            "65.0%",
+            "63.8%",
+            "63.6%",
+            "—"
+          ],
+          [
+            "AutomationBench",
+            "31.4%",
+            "17.1%",
+            "26.9%",
+            "19.6%"
+          ],
+          [
+            "CursorBench 3.2.0（max effort）",
+            "73.4%",
+            "70.5%",
+            "70.0%",
+            "67.2%"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 4,
+        "caption": "API 料金（100万トークンあたり、Anthropic 公式の料金表）",
+        "headers": [
+          "モデル",
+          "入力",
+          "5分キャッシュ書き込み",
+          "1時間キャッシュ書き込み",
+          "キャッシュ読み取り",
+          "出力"
+        ],
+        "rows": [
+          [
+            "Fable 5.1 / Mythos 5.1（招待制）",
+            "$10",
+            "$12.50",
+            "$20",
+            "$0.25",
+            "$50"
+          ],
+          [
+            "Fable 5 / Mythos 5",
+            "$10",
+            "$12.50",
+            "$20",
+            "$1",
+            "$50"
+          ],
+          [
+            "Opus 5.5",
+            "$4",
+            "$5",
+            "$8",
+            "$0.20",
+            "$20"
+          ],
+          [
+            "Opus 5",
+            "$5",
+            "$6.25",
+            "$10",
+            "$0.50",
+            "$25"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Claude Fable 5.1 and Claude Mythos 5.1",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+      },
+      {
+        "title": "Claude Fable 5.1（モデルページ）",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/models/fable-5-1/overview"
+      },
+      {
+        "title": "What's new in Claude Fable 5.1",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/models/fable-5-1/whats-new-fable-5-1"
+      },
+      {
+        "title": "Claude Mythos 5.1（モデルページ）",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/models/mythos-5-1/overview"
+      },
+      {
+        "title": "Pricing",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Claude Platform release notes",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Model deprecations",
+        "site": "Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+      },
+      {
+        "title": "Claude Fable models on your plan",
+        "site": "Claude Help Center",
+        "url": "https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan"
+      },
+      {
+        "title": "Why Claude switched models in your conversation with Fable 5 or Fable 5.1",
+        "site": "Claude Help Center",
+        "url": "https://support.claude.com/en/articles/15363606-why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1"
+      },
+      {
+        "title": "Manage usage credits for paid Claude plans",
+        "site": "Claude Help Center",
+        "url": "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans"
+      },
+      {
+        "title": "Claude Code model configuration",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/model-config"
+      },
+      {
+        "title": "Claude Code changelog",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/changelog"
+      }
+    ]
+  },
+  "gemini-3-8-flash-review": {
+    "body": [
+      "**Gemini 3.8 Flash**（API モデル ID は `gemini-3.8-flash`）は、Google が2026年9月2日に一般提供（GA）とした Flash 系のモデル。ai.google.dev のモデル一覧では「Stable」と表示され、Google は「長時間のソフトウェア開発、自律エージェント、複雑な企業業務向けの最も高性能な Flash モデル」と説明している。本稿は、Google の公式ドキュメント・モデルカード・料金ページで確認できた範囲でまとめたレビューである。ベンチマークはすべて Google 自身の公表値で、独立した第三者による検証は確認できていない。Google は同日の公式ブログ（blog.google、2026年9月2日）で、3.7 Flash の3週間後にあたる「6週間で3つ目の Flash リリース」と位置づけ、防御者限定の派生モデル Gemini 3.8 Flash Cyber も同時に発表している。",
+      "**世代の位置づけ**: モデルカードによると、3.8 Flash は Gemini 3.7 Flash を土台にした後継で、アーキテクチャや学習データの詳細は 3.7 Flash のモデルカードを参照する形になっている。ai.google.dev のモデル一覧では、3.7 Flash と 3.6 Flash が「previous-generation」、3.5 Flash が「legacy」と説明されている（いずれも Stable 表示）。deprecations ページの公開日で見ると、3.6 Flash が7月21日、3.7 Flash が8月13日、3.8 Flash が9月2日で、Flash の世代交代は数週間間隔で続いている。3.5 Flash-Lite は同一覧で「3.5 系で最速・最安」の位置づけのまま掲載されている。deprecations ページには 3.5 Flash を含めシャットダウン日の告知は無い。また、3.7 Flash について Google は「引き続き完全にサポートされる」と記している。",
+      "**仕様**: 入力はテキスト・画像・動画・音声・PDF、出力はテキストのみ。入力上限は 1,048,576 トークン、出力上限は 65,536 トークン。モデルカードは知識のカットオフを2026年3月としつつ、領域によっては 2025年1月までの知識にとどまる場合があると書いている。思考量（thinking level）は low / medium / high で、既定は medium。`minimal` は非対応でエラーになる。このモデル（gemini-3.8-flash）自体は Live API・音声生成・画像生成には対応していないが、3.8 世代には別モデルとして gemini-3.8-live と gemini-3.8-live-extended-thinking（9月15日 GA）、gemini-3.8-flash-tts と gemini-3.8-flash-lite-tts（9月22日 GA）が用意されている。Computer Use は Preview 扱い。関数呼び出し、構造化出力、コード実行、Google 検索・Google マップによるグラウンディング、URL コンテキスト、File Search、コンテキストキャッシュ、Batch / Flex / Priority の各推論オプションは対応と記載されている。",
+      "**ベンチマーク（Google 公表値）**: 次の表は、モデルカードの結果表から一部を抜粋したもの。比較対象のモデルと項目は Google が選んでおり、評価手法の詳細は Google の evals-methodology ページ（PDF）に置かれており、次の段落の注記はその記述による。",
+      "**表の読み方**: Google の結果表全体（Claude Sonnet 5 と GPT-5.6 Terra を含む）で、3.8 Flash が列の最高値になっているのは、Terminal-Bench 2.1（89.4%、Opus 5 は 89.1%、Sol は 88.8%、3.7 Flash は 85.8%）、HLE-Verified（54.9%）、Vals Finance Agent v2（61.4%）、Harvey の法務エージェントベンチマーク（10.0%）、CharXiv Reasoning、LVBench、BioMysteryBench の Human Difficult、LABBench2 など。ただし Terminal-Bench 2.1 と HLE-Verified の差は 0.3〜0.5pp と小さい。一方、Terminal-Bench 4.0 は 3.8 Flash が 19.1%（3.7 Flash は 11.2%、Opus 5 は 51.8%、Sol は 37.3%）、OSWorld-2.0 は 59.0%（Opus 5 は 75.4%、Sol は 62.6%）、GDPVal-AA v2 は Elo 1545（Opus 5 は 1824、Sol は 1710）で、これらでは表に載せた Opus 5 と Sol の値を下回っている。3.7 Flash との比較では、モデルカードの結果表の全項目で 3.8 Flash が上回っている。DeepSWE v1.1 の Opus 5 については、次の段落の注記を参照。",
+      "**比較の条件（Google の方法論 PDF の記述）**: (a) DeepSWE の Opus 5 の値について、PDF には「丸めのため Opus 5 のスコアを 74% と誤って報告していた」という注記があるが、モデルカードの HTML は本稿執筆時点でも 74.0% と表示している。そのため本稿は DeepSWE で 3.8 Flash と Opus 5 のどちらが上かを書かない。(b) Terminal-Bench 2.1 は Gemini だけが自社で計測しており、ハーネスは Terminus 2 に限られる。他社の値は原則として各社の自己申告や公開リーダーボード、Artificial Analysis、Vals.AI などから Google が転記したもので、原典には当たっていない。(c) HLE-Verified では、Sonnet 5 の設問の多くがコンテンツフィルタで遮断されたと PDF に書かれており、表の Sonnet 5 の 31.0% は能力を示す値として読めない。(d) OSWorld-2.0 は8月8日のパッチ適用前に計測された値とされている。(e) PDF の4ページ目の結果表は画像で、本稿では読めていない。",
+      "**トークン消費について**: Google の Gemini 3.8 Flash 解説ページは、このモデルは長く複雑なタスクで「設計上、より多くのトークンを使うことがある」と説明している。難しい多段の目標に対して推論のステップを小さく刻み、ツールを繰り返し呼び、途中で自分の作業を検証するためだという。日常的なタスクでは思考量を下げてトークン消費を抑えることを勧めており、モデルカードの既知の制限にも「特に高い effort では性能のためにより多くのトークンを使う場合がある」とある。単価が同じでも、タスクあたりの費用が 3.7 Flash と同じとは限らない。",
+      "**料金（公式の記載）**: ai.google.dev の料金ページ（Gemini Developer API、Standard）には、入力が「2026年12月31日まで 100万トークンあたり $0.75、2027年1月1日から $1.50」、出力（思考トークンを含む）が「2026年12月31日まで $3.75、2027年1月1日から $7.50」とある。Google の 3.8 Flash 解説ページはこの $0.75 / $3.75 を「introductory（導入価格）」と呼び、DeepMind のモデルカードは同じ表の中で「$0.75（$1.50 regular）」「$3.75（$7.50 regular）」と表記している。同じ導入価格は 3.7 Flash と 3.6 Flash にも適用され、2027年1月1日には3モデルとも $1.50 / $7.50 になると解説ページに書かれている（3.7 Flash に留まっても、この日付の単価は同じ）。legacy とされる 3.5 Flash の現行単価は $1.50 / $9.00 と料金ページに載っている。本稿は改定後の単価を予測せず、公式の記載を引用するにとどめる。Batch と Flex は Standard の半額の単価で、Priority は $1.35 / $6.75（2027年から $2.70 / $13.50）と載っている。単価は変わりうるため、採用前に最新の料金ページを確認したい。",
+      "**レート制限**: rate-limits ページはモデル別の RPM・TPM・RPD を載せておらず、「Google AI Studio で確認する」方式で、「記載の上限は保証されない」とも書かれている。無料枠の具体値もこのページからは分からない。一方、支出額に基づく制限が10分の窓で評価され、Tier 1 が $10、Tier 2 が $50、Tier 3 が $200を超えると 429 が返る。Priority 推論のレート上限は標準の0.3倍が既定とされている。長いタスクでトークンを多く使う設計（前段）と組み合わせると、この制限に当たりやすくなる場合がある。",
+      "**無料枠と提供経路**: 料金ページでは、Standard の Free Tier が入力・出力とも無料（Free of charge）と表示され、Batch と Flex の無料枠は「Not available」。Free Tier のコンテンツは Google の製品改善に使われる（Used to improve our products: Yes）が、有料枠では使われない（No）と記載されている。モデルカードと DeepMind のモデルページは、提供チャネルとして Gemini アプリ、Gemini Enterprise Agent Platform、Google AI Studio、Gemini API、Google AI Mode、Google Antigravity を挙げている。ただし blog.google は、一般利用者向けには「Gemini アプリ、Google 検索の AI Mode、Google スプレッドシートの Gemini で、Google AI Pro と Ultra の購読者が利用できる」と書いており、これらの消費者向け面は有料購読者に限られる。開発者向けの導入価格は、Google AI Studio と Gemini Enterprise Agent Platform の両方で12月31日まで適用と解説ページにある。",
+      "**Gemini CLI から Antigravity CLI へ**: Google Developers Blog の2026年5月19日付の告知によると、2026年6月18日に、Gemini CLI と Gemini Code Assist の IDE 拡張は、Google AI Pro・Ultra の利用者と、Gemini Code Assist for individuals を無料で使う利用者へのリクエスト提供を停止する、と予告されていた。Gemini CLI の公式ドキュメント（geminicli.com）は現在、トップに「無料枠と Google One の利用者向けには、Gemini CLI は2026年6月18日に Antigravity CLI に置き換えられた」という趣旨の案内を掲げている。同じ告知は、Antigravity CLI が Go 製の新しいターミナル環境で、Agent Skills・Hooks・Subagents・Extensions（Antigravity プラグインとして）を引き継ぐが、機能の完全な一致は当初からは無いと説明している。企業向けは、Gemini Code Assist Standard / Enterprise のライセンスで使う場合のアクセスは変わらず、Gemini CLI は有料の Gemini API キーや Gemini Enterprise Agent Platform の API キーでも引き続き使えるとされている。なお、3.8 Flash が Antigravity CLI や Gemini CLI で選べるかどうかは、本稿で確認した公式ページには記載が無く、確認できていない。確認できたのは、Gemini API の Managed Agents の Antigravity エージェントと Antigravity SDK が、既定で 3.8 Flash を使うようになったという記載である。",
+      "**Antigravity エージェントの切り替え**: changelog（9月17日）によると、antigravity-preview-05-2026 は antigravity-preview-09-2026 に置き換えられて非推奨となり、05-2026 は2026年10月5日に停止する。後継の 09-2026 は既定モデルが 3.8 Flash で、リモートのサンドボックス（environment: remote）で output_text や model_output だけを読む場合はエージェント名の更新だけで済む。一方、ローカル環境（local_environment）でツールを動かす場合や function_call のステップを解析している場合は、組み込みツールのパラメータが snake_case から PascalCase に変わり、ファイル編集が全文書き換えから行範囲の置換に変わったため、コードの修正が要る。",
+      "**Gemini 2.5 系の扱い**: changelog（9月18日）は、2.5 系へのアクセスを「過去に使ったことのある利用者」に限ると告知している。2.5 系は非推奨ではなく引き続き提供されるが、新規プロジェクトには 3.5 Flash-Lite か 3.8 Flash が推奨されている。",
+      "**API 移行時の注意**: Google の移行チェックリストは、`gemini-3.8-flash` への切り替えで次を求めている。temperature・top_p・top_k を設定から外す、thinking_budget を文字列の thinking_level に置き換える（minimal は非対応）、candidate_count を外す、複数ターンの会話はサーバー側の previous_interaction_id に統一する、事前入力（prefill）したモデルターンを外す、関数呼び出しまわりの形式を見直す。これらの一部は Gemini 3 世代共通の要件で、既存の 3.x 系から移る場合は影響が小さいかもしれないが、2.5 系などから移る場合は実装の修正が必要になる。",
+      "**安全性（モデルカードの記載）**: 3.7 Flash と比べた自動評価で、テキスト安全性は -0.4pp、画像→テキスト安全性は 0.0pp、トーンは +0.2pp、不当な拒否は +1.1pp（低いほど良い）。多言語の安全性は +5.4pp（低いほど良い）で、モデルカード自身が「非英語での安全性がわずかに後退した」と書いている。Frontier Safety Framework については、3.7 Flash の評価で Tracked / Critical Capability Level に達しておらず、3.8 Flash に意味のある新能力は無いため同様に達しない見込み、と Google は説明している。なお Unjustified-refusals の +1.1pp は「低いほど良い」指標なので、こちらも小さな後退にあたる。これらも Google の自己評価である。",
+      "**Gemini 3.8 Flash Cyber と安全策**: blog.google によると、Gemini 3.8 Flash Cyber は Google が「最も高性能なサイバーセキュリティモデル」とする派生モデルで、新設の Fairwind Program を通じて、信頼された防御者（政府機関、重要インフラの運営者、ソフトウェアのメンテナなど）に優先的に提供される。一般の API では使えない。Google は CyberGym や社内ベンチマーク、CWE-Bench（Collinear 運営）で高い性能を示したと説明しているが、いずれも Google の公表で、本稿では独立した検証を確認しておらず、数値は載せない。3.8 Flash 本体は、CBRN（化学・生物・放射性物質・核）とサイバー攻撃の悪用に対する safeguards を備えて出荷される一方、Cyber 版はより緩い緩和策で、信頼された防御者にのみ提供される、と説明されている。また Google は、3.8 世代でプロンプトインジェクション耐性が Gray Swan の評価で大きく向上したと書いている（これも当事者の説明）。",
+      "**強み**:",
+      "(1) 長時間のソフトウェア開発とエージェント用途で、Google 公表値では DeepSWE v1.1 と Terminal-Bench 2.1 が同表の上位モデルと近い水準。",
+      "(2) 1M トークンの入力、64K の出力、low / medium / high の思考量切り替えで、品質・費用・遅延の調整幅がある。",
+      "(3) Gemini API、Google AI Studio、Gemini Enterprise Agent Platform、Antigravity など提供経路が複数あり、Standard の Free Tier で試せる。",
+      "(4) 関数呼び出し、検索・マップのグラウンディング、コンテキストキャッシュ、Batch / Flex などの周辺機能が同じ API で揃っている。",
+      "**注意点**:",
+      "(1) ベンチマークは Google の公表値のみで、独立検証は確認できていない。Terminal-Bench 4.0（19.1%）、OSWorld-2.0（59.0%）、GDPVal-AA v2（Elo 1545）のように、Google 自身の表でも Opus 5・Sol を下回る項目がある。",
+      "(2) 長いタスクではトークン消費が増えうると Google が明記している。単価だけで費用を見積もらず、実タスクでの消費量を測る必要がある。",
+      "(3) 料金ページには2027年1月1日からの単価（$1.50 / $7.50）が別に載っており、導入価格は 3.7 Flash・3.6 Flash にも同じ期限で適用される。長期の予算を組む場合は、その記載を前提に置く必要がある。",
+      "(4) Computer Use は Preview で、このモデル自体は Live API と画像・音声の出力に非対応（Live・TTS は別モデル）。Vertex AI 系のモデルページでは Tuning も非対応、データの提供リージョンは global と米国・EU のマルチリージョンとされている。多言語の安全性は 3.7 Flash から小さく後退したとモデルカードが述べている。",
+      "(5) Gemini CLI の無料枠・個人向け提供は6月18日に Antigravity CLI に置き換えられた（Google の告知とドキュメントの案内）。企業向けライセンスと有料 API キーでの利用は継続とされている。",
+      "**AI News の見方**: 長時間のコーディングエージェントや業務エージェントを API で動かす用途では、比較対象に入れる価値がある。ただし採用の根拠にできるのは Google の公表値までで、手元のタスクで品質・トークン消費・所要時間を測るのが前提になる。GUI 操作や汎用エージェント（Terminal-Bench 4.0、OSWorld-2.0）を主用途にするなら、Google 自身の表で差がある点を踏まえて他モデルと並べて評価したい。",
+      "**★4.1 の内訳**: ★は AI品質4.0・使いやすさ4.0・コスパ4.5・拡張性4.0・企業向け4.0 の加重平均（AI品質30%、使いやすさ25%、コスパ20%、拡張性15%、企業向け10%）で、執筆した担当とは別のモデルによる独立採点との平均である（平均で 0.25 刻みの中間になる場合は低い側に丸めた）。コスパは、期限付きの導入価格ではなく、2027年1月1日からの通常価格 $1.50 / $7.50 で見ている。拡張性は、Vertex AI のモデルページで Tuning が非対応とされている点を踏まえて4.0とした。多言語の安全性の後退（+5.4pp）は AI品質と企業向けの減点材料にしている。料金や提供条件が変われば見直す前提である。",
+      "**確認できていないこと**: (a) 方法論 PDF の結果表（4ページ目、画像）と、DeepSWE の Opus 5 の訂正後の値、(b) 独立した第三者によるベンチマーク再現、(c) Free Tier の具体的なレート制限（公式ページは AI Studio で確認する方式）、(d) Gemini CLI・Antigravity CLI で 3.8 Flash が選択できるか、(e) 3.8 Flash Cyber の性能数値（Google の公表のみ）。これらは一次資料で確認できなかったため、数値としては本文に載せていない。",
+      "【編集履歴】",
+      "・【公開 2026-09-30】新規レビュー。3.8 Flash Cyber と「6週間で3つ目」は blog.google（2026-09-02）で確認できたため記載。ai.google.dev（models・pricing・changelog・deprecations・latest-model・rate-limits）、DeepMind のモデルカードとモデルページ、Google Developers Blog の告知を一次資料として作成。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "Gemini 3.8 Flash のベンチマーク（Google 公表値の抜粋、モデルカード 2026年9月。Opus 5 の DeepSWE 値は Google の方法論 PDF が誤りと注記しており、順位の比較には使えない）",
+        "headers": [
+          "ベンチマーク",
+          "Gemini 3.8 Flash",
+          "Gemini 3.7 Flash",
+          "Claude Opus 5",
+          "GPT-5.6 Sol"
+        ],
+        "rows": [
+          [
+            "DeepSWE v1.1（長時間のソフトウェア開発）",
+            "73.7%",
+            "65.3%",
+            "74.0%",
+            "72.7%"
+          ],
+          [
+            "Terminal-Bench 2.1（端末でのコーディング）",
+            "89.4%",
+            "85.8%",
+            "89.1%",
+            "88.8%"
+          ],
+          [
+            "Terminal-Bench 4.0（汎用エージェント能力）",
+            "19.1%",
+            "11.2%",
+            "51.8%",
+            "37.3%"
+          ],
+          [
+            "OSWorld-2.0（コンピュータ操作、部分スコア）",
+            "59.0%",
+            "50.6%",
+            "75.4%",
+            "62.6%"
+          ],
+          [
+            "GDPVal-AA v2（知識労働、Elo）",
+            "1545",
+            "1482",
+            "1824",
+            "1710"
+          ],
+          [
+            "HLE-Verified（専門知識の推論）",
+            "54.9%",
+            "53.6%",
+            "54.4%",
+            "54.5%"
+          ],
+          [
+            "Vals Finance Agent v2（金融アナリスト業務）",
+            "61.4%",
+            "59.0%",
+            "58.6%",
+            "53.8%"
+          ],
+          [
+            "Harvey's Legal Agent Benchmark（法務、全問正解率）",
+            "10.0%",
+            "8.8%",
+            "6.7%",
+            "2.5%"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Gemini 3.8 Flash - Model Card",
+        "site": "Google DeepMind",
+        "url": "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+      },
+      {
+        "title": "Gemini 3.8 Flash",
+        "site": "Google DeepMind",
+        "url": "https://deepmind.google/models/gemini/flash/"
+      },
+      {
+        "title": "Gemini models",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/models"
+      },
+      {
+        "title": "What's new in Gemini 3.8 Flash",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/latest-model"
+      },
+      {
+        "title": "Gemini Developer API pricing",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing"
+      },
+      {
+        "title": "Release notes (changelog)",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/changelog"
+      },
+      {
+        "title": "Deprecations",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations"
+      },
+      {
+        "title": "Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
+        "site": "Google (blog.google)",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/"
+      },
+      {
+        "title": "Gemini API rate limits",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/rate-limits"
+      },
+      {
+        "title": "Gemini 3.8 Flash (Gemini Enterprise Agent Platform)",
+        "site": "Google Cloud",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/3-8-flash"
+      },
+      {
+        "title": "Gemini CLI documentation",
+        "site": "Gemini CLI",
+        "url": "https://geminicli.com/docs/"
+      },
+      {
+        "title": "An important update: Transitioning Gemini CLI to Antigravity CLI",
+        "site": "Google Developers Blog",
+        "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/"
       }
     ]
   }

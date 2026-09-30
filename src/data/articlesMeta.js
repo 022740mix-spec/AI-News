@@ -4223,7 +4223,7 @@ export const ARTICLES_META = [
     },
     "rating": 5,
     "reviewCategory": "model",
-    "reviewCadence": "monthly",
+    "reviewCadence": null,
     "lastReviewed": "2026-09-30"
   },
   {
@@ -4252,7 +4252,7 @@ export const ARTICLES_META = [
     },
     "rating": 3.5,
     "reviewCategory": "model",
-    "reviewCadence": "monthly",
+    "reviewCadence": null,
     "lastReviewed": "2026-09-30"
   },
   {
@@ -4284,7 +4284,7 @@ export const ARTICLES_META = [
     },
     "rating": 5,
     "reviewCategory": "model",
-    "reviewCadence": "monthly",
+    "reviewCadence": null,
     "lastReviewed": "2026-09-30"
   },
   {
@@ -8044,7 +8044,7 @@ export const ARTICLES_META = [
     },
     "rating": 4.5,
     "reviewCategory": "model",
-    "reviewCadence": "monthly",
+    "reviewCadence": null,
     "lastReviewed": "2026-09-30"
   },
   {
@@ -11137,5 +11137,152 @@ export const ARTICLES_META = [
       "エージェント",
       "セキュリティ"
     ]
+  },
+  {
+    "id": "gpt-6-review",
+    "type": "review",
+    "category": "model",
+    "title": "GPT-6 Astra / GPT-6.1 Sol / Sol / Luna レビュー — API は $10/$50 から $0.10/$0.50 まで、Astra は安全監視でタスクが止まりうる、性能値は OpenAI 自身の説明のみ",
+    "excerpt": "OpenAI の GPT-6 世代を、公式ドキュメントの記載で整理した。API 価格は Astra が入力 $10 / 出力 $50、GPT-6.1 Sol と GPT-6 Sol が $2 / $10、Luna が $0.10 / $0.50。4モデルとも 1,050,000 トークンのコンテキストを持つ。Astra には非同期の安全監視があり、Codex CLI やモバイルでは停止するとタスクが終了する。Enterprise・Edu では新モデルが既定で無効。性能の数値は OpenAI 自身の説明のみで、独立した検証は確認できていないため、本稿は数値を掲載していない。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "10分",
+    "tags": [
+      "モデル",
+      "OpenAI",
+      "GPT-6",
+      "Astra",
+      "Sol",
+      "Luna"
+    ],
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": "monthly",
+    "ratings": {
+      "AI品質": 4.5,
+      "使いやすさ": 4,
+      "コスパ": 4.5,
+      "拡張性": 4,
+      "企業向け": 3.5
+    },
+    "rating": 4.2,
+    "reviewCategory": "model"
+  },
+  {
+    "id": "claude-opus-5-5-review",
+    "type": "review",
+    "category": "model",
+    "title": "Claude Opus 5.5 レビュー — 入力 $4 / 出力 $20 に下がった現行の Opus、既定 effort は medium に、API には4件の破壊的変更",
+    "excerpt": "Anthropic が2026年9月22日に公開した Opus 級モデル。API の価格は入力 $4 / 出力 $20 per 1M tokens で、Opus 5（$5 / $25）から下がり、キャッシュ読み出しは $0.20 になった。既定の effort は high から medium に変わり、thinking は無効化できない。Claude Code では Opus の既定モデルになった。Anthropic は Fable 5.1 と同水準の性能を Opus 5 より40%低いコストで提供すると説明するが、ベンチマークは当事者の公表値で、独立した検証は確認できていない。Opus 5 からの移行には API の破壊的変更が4件ある。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-22",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "モデル",
+      "Anthropic",
+      "Opus 5.5",
+      "LLM",
+      "エージェント"
+    ],
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": "monthly",
+    "ratings": {
+      "AI品質": 4.5,
+      "使いやすさ": 3.5,
+      "コスパ": 4,
+      "拡張性": 4.5,
+      "企業向け": 4
+    },
+    "rating": 4.1,
+    "reviewCategory": "model"
+  },
+  {
+    "id": "claude-sonnet-5-5-review",
+    "type": "review",
+    "category": "model",
+    "title": "Claude Sonnet 5.5 レビュー — $2/$10 の現行 Sonnet、範囲の明確な作業を速く安く。ただし API の破壊的変更に注意",
+    "excerpt": "Anthropic が2026年9月28日に公開した Claude 5.5 ファミリーの2番目のモデル。価格は $2/$10 per 1M tokens（Opus 5.5 は $4/$20）で、Sonnet 5 と同額。Sonnet 5 の $2/$10 は導入価格ではなく標準価格になったと公式料金表が記載している。Anthropic は「Sonnet 5 より30%以上高速、多くの作業で最大30%安い」と説明するが、いずれも当事者の説明で独立した検証は確認できていない。一方で Anthropic 自身が、複雑で判断の持続が必要な作業では Opus 5.5 が明確に強いと述べている。Sonnet 5 からは、thinking の無効化・強制ツール呼び出しなど API の破壊的変更が5件ある。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-28",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "モデル",
+      "Anthropic",
+      "Sonnet 5",
+      "LLM",
+      "エージェント"
+    ],
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": "monthly",
+    "ratings": {
+      "AI品質": 4,
+      "使いやすさ": 4,
+      "コスパ": 4.5,
+      "拡張性": 4,
+      "企業向け": 4
+    },
+    "rating": 4.1,
+    "reviewCategory": "model"
+  },
+  {
+    "id": "claude-fable-5-1-mythos-5-1-review",
+    "type": "review",
+    "category": "model",
+    "title": "Claude Fable 5.1 / Mythos 5.1 レビュー — 基本料金は据え置きでキャッシュ読み取りのみ値下げ、Fable 5 の包括措置は対象外、Mythos 5.1 は招待制",
+    "excerpt": "Anthropic が2026年9月1日に公開した Fable 5.1（一般提供）と Mythos 5.1（招待制）のレビュー。基本料金は**入力 $10 / 出力 $50 のまま**で、下がったのは**キャッシュ読み取り（$1 → $0.25）だけ**。Max・Team プレミアムシートで Fable に使えるのは週次上限の最大50%で、Pro と標準シートは利用クレジットのみ。Fable 5 の包括措置は5.1には及ばなかった。API には破壊的変更が3つあり、性能は Anthropic の公表値のみで独立検証は確認できていない。9月22日には Opus 5.5（$4 / $20）が公開され、Anthropic は多くの用途で Opus 5.5 から始めるよう案内している。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-01",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "モデル",
+      "Anthropic",
+      "Fable 5",
+      "Mythos",
+      "LLM"
+    ],
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": "monthly",
+    "ratings": {
+      "AI品質": 4.5,
+      "使いやすさ": 3,
+      "コスパ": 2.5,
+      "拡張性": 4,
+      "企業向け": 3
+    },
+    "rating": 3.5,
+    "reviewCategory": "model"
+  },
+  {
+    "id": "gemini-3-8-flash-review",
+    "type": "review",
+    "category": "model",
+    "title": "Gemini 3.8 Flash レビュー — 9/2 GA の Flash 世代最新モデル、長時間のソフトウェア開発とエージェント向け。Google 公表値では DeepSWE 73.7%、一方で Terminal-Bench 4.0 は 19.1%",
+    "excerpt": "Google が2026年9月2日に GA とした Gemini 3.8 Flash（防御者限定の 3.8 Flash Cyber と同時発表）のレビュー。入力 1M・出力 64K トークン、思考量は low / medium / high。**Google 公表値**では DeepSWE v1.1 が 73.7%、Terminal-Bench 2.1 が 89.4%（3.7 Flash は 85.8%）だが、Terminal-Bench 4.0 は 19.1%、OSWorld-2.0 は 59.0% で、Google 自身の表でも Opus 5・Sol を下回る項目がある。独立検証は確認できていない。Google は長いタスクでトークン消費が増えうると明記している。料金は公式ページの記載を引用し、Gemini CLI の個人向け提供終了（6/18）と Antigravity CLI への移行、無料枠と提供経路もまとめた。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-02",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "モデル",
+      "Google",
+      "Gemini",
+      "Gemini 3.8 Flash",
+      "エージェント",
+      "ベンチマーク"
+    ],
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": "monthly",
+    "ratings": {
+      "AI品質": 4,
+      "使いやすさ": 4,
+      "コスパ": 4.5,
+      "拡張性": 4,
+      "企業向け": 4
+    },
+    "rating": 4.1,
+    "reviewCategory": "model"
   }
 ];
