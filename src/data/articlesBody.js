@@ -23245,6 +23245,74 @@ const ARTICLES_BODY = {
         "url": "https://learn.chatgpt.com/docs/agent-configuration/speed"
       }
     ]
+  },
+  "codex-reusable-cloud-environments-publish-2026": {
+    "body": [
+      "OpenAI は2026年9月29日の DevDay 2026 で、Codex の項目に「Reusable cloud environments」を挙げた。公式の説明は、開発セットアップを言葉で説明して Codex に準備とテストをさせ、環境を公開（publish）すると、新しいタスクは準備済みのファイルシステムを使う分離ワークスペースで始まる、というものだ。クラウドタスクは、手元のコンピュータがスリープしている間も Web・モバイル・デスクトップから続けられるとされる。本記事は公式ドキュメントで確認できる範囲を整理する。",
+      "作り方は次の流れである。Web またはデスクトップアプリで新しいタスクの「Work in」から Cloud を選び、「Select environment」で「Create environment」を選ぶ。取り込む GitHub リポジトリを選んで「Get started」を押すと、Codex がリポジトリを調べ、依存関係とツールを導入し、ワークフローをテストする。足りないアクセスや情報を求められたら供給し、バージョンやコマンド、サービスを指定することもできる。セットアップレポートと設定、ファイルを確認して保存し、「Publish」を選ぶと「Environment published」が表示され、「Start a new task」でタスクを始められる。モバイルでは環境を作れず、先に Web かデスクトップで作成・公開する必要がある。",
+      "公式は「保存」「公開」「共有」を別の操作として区別している。保存は設定を保存するもので一部は作業中のセットアップにすぐ反映され、公開は準備済みファイルシステムを新規タスク向けに取り込み、共有は誰が使えるかを決める。Codex は、テスト済みのセットアップを2つのフィールドに記録できる（can record）とされ、依存関係を準備する「Install script」と、サービスの起動と準備完了の確認を書く「Start skill」である。必須とは書かれておらず、公式はインストールスクリプトを自分で書く必要はないと説明している。",
+      "状態の扱いは次のとおり。新規タスクは公開済み環境の準備済みファイルシステムから始まり、既存タスクは未コミットの変更や導入済みツールを含む自分の保存済みファイルで続く。更新するには Environments の Edit で変更を説明し、Codex に準備・テストさせて保存し「Republish」を選ぶ。更新は新規タスクから効き、タスクでのファイル変更が環境自体を更新することはない。公式は、重要な作業はコミットするか出力を保存すること、保存された状態はソース管理の代わりにならないことを明記している。タスクの保存済み VM 状態は、既定で最後にターンを開始するか再開してから最長7日間復元できる。",
+      "クラウドタスクの VM の既定リソースはプランで異なる（下表）。より大きい VM やカスタム仕様は Enterprise 向けで、構成と料金は OpenAI のアカウントチームへの問い合わせとされている。",
+      "ネットワークは環境ごとに設定する。「Allow Codex to access internet」をオンにし、許可ドメインを「Package managers」プリセット、「Custom domains only」、「All (unrestricted)」から選ぶ。プリセットには npm、PyPI、Rust、Go、Maven と Gradle、Ubuntu と Debian、GitHub のソースとリリースなどのホストが含まれる。公式は、宛先を許可しても認証情報や権限は付与されないと書いている。値は2種類で、環境変数はプログラムがそのまま読み、ネットワークシークレットは特定の HTTPS サービス向けで、プログラムにはプレースホルダが渡されプロキシが許可宛先だけで実値に置き換える（443番ポート）。生の値をプログラムが読む必要がある場合は環境変数に置くことになる。共有環境では、各自の Personal vault の値が使われ、個人の認証情報は共有されない。",
+      "プライベートネットワークには VPN（現時点の対応は Tailscale、認証キーは Reusable と Ephemeral の両方を有効化、IPv4 前提でプライベート DNS や SSH は非対応）、クラウドリソースには OIDC が使える。OIDC は Enterprise ワークスペース向けに申請ベースで提供される。送信元 IP でアクセスを絞るサービスには公式が公開する egress IP のフィードを使えるが、その範囲は顧客間で共有されるため、公式は接続先の認証と認可を残すよう求めている。IP 許可リストだけに頼らない、というのが公式の読み方である。",
+      "共有は、Enterprise ワークスペースで Privacy > Who can use にワークスペースを選ぶと同僚が自分のタスクをその環境から始められ、Only me なら非公開に保てる。各タスクの作業ファイルは別々で、環境を使えることは他人のタスクや環境の編集権限を意味しない。ただし公式は、クラウド ID と VPN 接続が共有サービスへのアクセスを提供しうること、共有環境のタスクは設定された VPN の ID を使うこと、共有された OIDC 接続の編集はその接続を使う他の環境に影響しうることを書いており、共有前に準備済みファイルと環境所有の認証情報を確認するよう求めている。",
+      "管理側では、Agent Security がエージェント動作や管理対象の実行ネットワークのワークスペース要件を定め、環境ごとのドメイン設定と併せて適用される。旧版のドキュメントによれば、Agent Security で許可したドメインは、クラウド環境のインターネット設定の制限を上書きしない。Slack や Teams の @ChatGPT からクラウドタスクを始める機能は、Cloud delegation を有効にした Enterprise ワークスペース向けである。インターネットアクセスを説明する別ページ（cloud/internet-access）は冒頭で「Codex Cloud (Legacy)」向けと断っており、そこでは、信頼できないウェブコンテンツ経由のプロンプトインジェクション、コードやシークレットの流出、マルウェアや脆弱な依存関係の取り込みなどがリスクとして挙げられている。",
+      "制限と提供範囲。公式は、未対応でロードマップ上の機能にコンピュータ／ブラウザの利用、GitLab、セルフホストの GitHub Enterprise Server を挙げる。リポジトリ内のスキルはクラウドで使えるが、ローカルの個人スキルは同期されない。旧版（Legacy）は廃止予定とされる一方、Code Review と Linear・GitHub 連携は当面旧版側で続くと公式は書いている。提供範囲について公式の What's new は「アクセスはプランとワークスペース設定に依存する」と書くのみで、プランごとの提供可否は明記されていない。利用者は自分のワークスペースで環境を作成・公開できるか、管理者は共有環境に付けた VPN・OIDC の権限を確認することになる。本記事は OpenAI 自身の公式ドキュメントに基づく当事者の説明である。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 4,
+        "caption": "クラウドタスク VM の既定リソース（OpenAI 公式ドキュメントより）",
+        "headers": [
+          "ChatGPT プラン",
+          "vCPU",
+          "メモリ",
+          "ディスク"
+        ],
+        "rows": [
+          [
+            "Plus、Edu Plus",
+            "2",
+            "8 GiB",
+            "8 GiB"
+          ],
+          [
+            "Pro、Business、Enterprise",
+            "4",
+            "16 GiB",
+            "32 GiB"
+          ],
+          [
+            "Edu、Edu Pro",
+            "4",
+            "16 GiB",
+            "32 GiB"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Codex Cloud environments (OpenAI)",
+        "url": "https://learn.chatgpt.com/docs/environments/cloud-environments"
+      },
+      {
+        "title": "Codex Cloud overview (OpenAI)",
+        "url": "https://learn.chatgpt.com/docs/cloud"
+      },
+      {
+        "title": "Codex Cloud (Legacy): internet access (OpenAI)",
+        "url": "https://learn.chatgpt.com/docs/cloud/internet-access"
+      },
+      {
+        "title": "Codex environments (OpenAI)",
+        "url": "https://learn.chatgpt.com/docs/environments/modes"
+      },
+      {
+        "title": "DevDay 2026 (OpenAI)",
+        "url": "https://learn.chatgpt.com/docs/whats-new/devday-2026"
+      }
+    ]
   }
 };
 
