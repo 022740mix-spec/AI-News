@@ -23484,6 +23484,97 @@ const ARTICLES_BODY = {
         "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-local-security"
       }
     ]
+  },
+  "chatgpt-enterprise-team-tasks-slack-teams-shared-connections-2026": {
+    "body": [
+      "OpenAI の公式ドキュメント「DevDay 2026」（2026年9月29日付）は、Enterprise の項目として4つの機能を並べている。ChatGPT in Slack and Teams は、デプロイの接続済みツールを使って承認された会話に ChatGPT を持ち込み、デプロイごとに利用者とアクセスできるチャンネルを設定する。Team Tasks は、チームのサービスアカウントと承認済みの接続を通じて、スケジュールまたはイベント起点の作業を実行する。Workspace connections は、対応するチームやワークフロー向けに会社管理のアカウントを接続し、各接続は接続されたアカウントの権限を使う。Agent Security は、エージェントが使えるツールと、ファイルやネットワークへのアクセスを制御する。本記事は、この4つについて管理者が確認する設定を整理する。",
+      "Slack と Microsoft Teams では、ChatGPT を呼び出した会話で、要約、返信の下書き、承認されたツールの利用ができる。公式の設定ガイドでは、どこで使えるか、どのツールを使えるかを定める単位を「サーフェス」と呼び、Slack ではワークスペースごとに1つ、Enterprise Grid では接続した各ワークスペースにつき1つ作る。管理者は Admin Console で対象ワークスペースを選び、Agents から Slack を接続する。Teams では、アプリのインストール、利用者の割り当て、Microsoft の同意は Teams 管理者が扱う。",
+      "チャンネルを絞った試験導入では「Selected channels only」を選んで承認済みチャンネルを追加するが、公式は、これがダイレクトメッセージを遮断しないと明記している。したがって、この設定だけでは試験の範囲を会話の種類まで限定できない。検証では、承認済みチャンネル、除外チャンネル、ダイレクトメッセージを別々に試すよう求められている。Slack からの Codex Cloud への委任は別の設定が必要で、サービスアカウントは環境を見つけるだけで、コーディングタスクは依頼したユーザーとして動く。",
+      "アクセスの考え方にも注意点がある。公式によると、@ChatGPT は設定された接続と会話の文脈を使い、個人のファイル、アプリ、プライベートチャンネルへのアクセスは引き継がない。サーフェスのプラグインは設定された会社アカウントの権限で動き、参加者の個人権限とは異なる場合があり、共有された返信は会話の参加者から見える。提供開始時点では、@ChatGPT はメモリを含まず、個人の ChatGPT メモリも使わない。すでに ChatGPT in Slack を使っている組織では、新しい体験のために Slack 管理者が追加のアプリ権限を承認する必要があるが、既存のインストールは提供開始時にすぐには止まらないと書かれている。",
+      "Team Tasks は、ChatGPT の「チーム」に紐づく。設定は Settings の Teams から行い、タスクは Scheduled の New Task でチームを選び、トリガーとして Schedule か対応するイベントを選ぶ。公式の例には、ローンチ用の Slack チャンネルにメッセージが届いたら進捗を要約する、毎週月曜に前週の顧客の更新を要約する、といったものがある。タスクはクラウドで、チームのサービスアカウントと設定済みのアプリ接続を使って実行され、作成者の個人メモリ、カスタム指示、チャット履歴は引き継がない。",
+      "チームの作成とタスクの管理は、ワークスペースの権限「Create teams」と「Create and manage team tasks」で制御される（別の箇所では後者は「Create and manage team automations」とも表記されている）。チームを作った人は所有者になるが、ワークスペース管理者の権限は得られず、チームを削除できるのは所有者だけである。ワークスペース管理者は、承認済みの接続と、誰がそれを使えるかを管理する。チームのメンバー管理は、ワークスペースのグループや Slack・Teams のチャンネルとは別で、同期も取り込みもできない。",
+      "Team Tasks には、管理者が事前に知っておくべき挙動が書かれている。メンバーは同僚を招待でき、同じワークスペースの参加リンクは所有者の承認を必要としない。新しく参加したメンバーは過去の実行結果と生成ファイルをすべて見られ、個々のタスクや実行に別のアクセス制限は設定できない。つまり、接続アカウントの権限で得た結果が、所有者の承認なしに参加した人に見える経路がある。リンクを開いた人は、参加前にチーム名とメンバー一覧を見られる。招待前に、過去の実行と生成ファイルへのアクセスを見直すよう公式は求めている。",
+      "運用面でも留意点がある。無人の実行では新しいアプリのサインインを完了できず、アクション承認の要件も引き続き適用される。タスクの一時停止も削除も、実行中の処理の中断には頼れない。所有者が退く場合は所有権の移譲が必要で、新しい所有者がアクセスできない接続はチーム全体で無効になる。費用はワークスペースのクレジットを使い、チームの利用上限は利用者個人の上限とは別である。監査には Compliance API とチームの Activity ビューを使えるが、どの記録が利用できるかは、依拠する前に確認するよう求められている。",
+      "Workspace connections は、Slack や Team Tasks が、参加者一人ひとりに個人アカウントの接続を求めずに、会社管理のアプリアカウントを使えるようにする仕組みである。作成は Admin Console の Workspace connections から行い、接続には内容が分かるニックネームを付け、承認済みのユーザー、チーム、サービスアカウントに使用権を与える。使用の権限と管理の権限は別に見直すよう求められている。公式は、接続の操作は接続先アカウントの権限で行われ、それは個人のアクセスを上回る場合があること、接続が読めるソースにリンクがあっても他の人に権限が付くわけではないことを明記している。",
+      "対応アプリとして、Google Drive、Gmail、GitHub、Notion、Linear、Slack の設定手順がある。GitHub については、提供開始時点で GitHub app のサインインは利用できず、ユーザーアカウントのサインインを使う。アプリごとの注意点も原文にある。Gmail では、グループに購読させたメールボックスがそのグループのメッセージを受け取る一方、他のメールも見える可能性があり、共有前に内容と許可される操作を確認するよう求められている。生成ファイルは接続アカウントのみが見られる場合があり、共有前に受信者のアクセスを確認する必要がある。Drive のサービスアカウントは個人の My Drive にファイルを所有できず、書き込みには共有ドライブが要る。",
+      "接続の運用では、ChatGPT 側の接続を無効にしても、プロバイダー側の認可の取り消しにはならないため、別に行う必要がある。書き込みや送信が失敗した場合は、再試行の前に送信先を確認するよう公式は求めている。エラーが出ても処理が完了している場合があり、再試行で重複が生じ得るためである。加えて、Slack または Teams の @ChatGPT を接続で有効にすると、その接続のチームとサービスアカウントのアクセス設定も有効になり、@ChatGPT が有効な間はそれらを個別に無効にできない。",
+      "Agent Security は、Admin Console で使うポリシーと設定の管理画面で、従来の Policies & Configuration に代わるものと説明されている。各ポリシーは Global の基準から始まり、Local と Codex Cloud で対応する実行設定を上書きできる。上書きがない環境は Global を継承する。承認やウェブ検索などのオーケストレーター制御は Global に置く。そのうち、専用の画面操作があるのは「Allowed approval policies」と「Allowed web search modes」のみで、アプリ、MCP サーバー、プラグイン、コマンドルール、フックなどは TOML で設定する。サンドボックスモード、権限プロファイル、管理されたネットワークなどの実行制御は、Local と Codex Cloud で別に設定できる。",
+      "Agent Security のネットワーク制御には、原文が挙げる落とし穴がある。承認されたサンドボックスの全面昇格は、管理プロキシの許可リストを迂回しうる。「Manage Networking」と「Only allow domains added by admins」がオンで Allow の項目が1件もなければ、管理対象のコマンドはどこにも接続できない。拒否だけの設定は、残りのインターネットを暗黙に許可しない。Codex Cloud のポリシーは事前に設定できるが、Codex Cloud を有効にするまで適用されない。Agent Security の許可ドメインは、Codex Cloud 環境のインターネット設定の制限を上書きしない。Work Cloud は別の制御で、「Cloud browser use」と「Cloud network access」を Permissions & roles の Workspace capabilities にある Cloud computer capabilities で設定する。ポリシー API は Global のみを管理し、Local と Codex Cloud は画面から設定する。",
+      "以上を踏まえ、管理者が確認する項目を表にまとめる。項目名は公式ドキュメントの表記に合わせた。公式は、利用可否がプラン、クライアント、ワークスペース設定、ロールアウトに依存すると繰り返し述べている。また、権限は境界ごとに独立している。ワークスペースのアクセスがプラグインを使えるようにしても、接続先のサービスが読めるデータを決める。本記事の内容は OpenAI 自身の公式ドキュメントのみに基づいており、各機能の動作について独立した検証は確認できていない。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 13,
+        "caption": "管理者が確認する設定（OpenAI 公式ドキュメントの項目名）",
+        "headers": [
+          "対象",
+          "項目名・場所",
+          "公式が述べている確認点"
+        ],
+        "rows": [
+          [
+            "Slack / Teams",
+            "Admin Console の Agents、サーフェス、Selected channels only",
+            "Slack はワークスペースごとにサーフェスを1つ。チャンネル制限はダイレクトメッセージを遮断しない。承認済みチャンネル、除外チャンネル、DM を試験する"
+          ],
+          [
+            "Team Tasks",
+            "権限「Create teams」「Create and manage team tasks」、Settings の Teams",
+            "同じワークスペースの参加リンクは所有者の承認が不要で、新規参加者は過去の実行と生成ファイルを見られる。所有者の移譲と接続の失効に注意する"
+          ],
+          [
+            "共有接続",
+            "Admin Console の Workspace connections、使用と管理の権限",
+            "接続先アカウントの権限は個人権限を上回る場合がある。使用権限と管理権限を別に見直す"
+          ],
+          [
+            "Agent Security",
+            "Global / Local / Codex Cloud、Allowed approval policies、Allowed web search modes",
+            "承認とウェブ検索は Global で設定。実行設定は Local と Codex Cloud で上書き。サンドボックス全面昇格はプロキシ許可リストを迂回しうる。Codex Cloud のポリシーは有効化まで適用されない"
+          ],
+          [
+            "Work Cloud の制御",
+            "Workspace capabilities の Cloud browser use、Cloud network access",
+            "Agent Security の Global ポリシーや Codex Cloud の上書きでは設定されない。別に確認する"
+          ],
+          [
+            "Managed configuration",
+            "requirements.toml（要件）と既定値",
+            "要件は利用者が上書きできない制限、既定値はその範囲内の初期値。ポリシー API は Global のみ"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "DevDay 2026（OpenAI 公式ドキュメント）",
+        "url": "https://learn.chatgpt.com/docs/whats-new/devday-2026"
+      },
+      {
+        "title": "Set up and manage @ChatGPT in Slack and Microsoft Teams",
+        "url": "https://learn.chatgpt.com/docs/enterprise/chatgpt-slack-and-teams"
+      },
+      {
+        "title": "Set up and manage teams and Team Tasks",
+        "url": "https://learn.chatgpt.com/docs/enterprise/teams"
+      },
+      {
+        "title": "Workspace connections",
+        "url": "https://learn.chatgpt.com/docs/enterprise/shared-connections"
+      },
+      {
+        "title": "Agent Security",
+        "url": "https://learn.chatgpt.com/docs/enterprise/agent-security"
+      },
+      {
+        "title": "Managed configuration",
+        "url": "https://learn.chatgpt.com/docs/enterprise/managed-configuration"
+      },
+      {
+        "title": "Roles and workspace permissions",
+        "url": "https://learn.chatgpt.com/docs/enterprise/roles-and-workspace-permissions"
+      }
+    ]
   }
 };
 

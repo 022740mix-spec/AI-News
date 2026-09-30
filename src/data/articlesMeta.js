@@ -11119,5 +11119,23 @@ export const ARTICLES_META = [
       "エージェント",
       "セキュリティ"
     ]
+  },
+  {
+    "id": "chatgpt-enterprise-team-tasks-slack-teams-shared-connections-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ChatGPT Enterprise に4機能、Slack・Teams 連携、Team Tasks、共有接続、Agent Security の設定項目を整理",
+    "excerpt": "OpenAI は2026年9月29日付の DevDay 2026 のまとめで、Enterprise 向けに ChatGPT in Slack and Teams、Team Tasks、Workspace connections、Agent Security の4項目を掲載した。Slack と Microsoft Teams では承認された会話で ChatGPT を使え、Team Tasks はチームのサービスアカウントと承認済み接続でスケジュールやイベントを起点に作業を実行する。共有接続は会社管理のアカウントを接続し、各接続は接続先アカウントの権限で動く。本記事は、管理者が確認すべき設定を公式ドキュメントの項目名で整理する。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "ChatGPT",
+      "OpenAI",
+      "エンタープライズ",
+      "エージェント",
+      "セキュリティ"
+    ]
   }
 ];
