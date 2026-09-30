@@ -25670,6 +25670,183 @@ const ARTICLES_BODY = {
         "url": "https://news.yahoo.co.jp/articles/7f6e16d3400f606a9ac3ce559a49a6f6f944a715"
       }
     ]
+  },
+  "gemini-4-argon-fairwind-trusted-testers-2026": {
+    "body": [
+      "Google DeepMind は2026年9月30日付の発表で、新しいフロンティアモデル「Gemini 4 Argon」を公開した。Google の説明では、実際のソフトウェア開発、法務や財務といった企業の知的作業、サイバーセキュリティの防御という、複雑で長く続く作業に向けたモデルである。ただし、誰でも使える状態ではない。発表の時点で提供されるのは、Fairwind プログラムを通じた「信頼できるサイバー防衛者」などの限られた利用者だけで、公式の X の投稿は「信頼できるテスター」と書いている。",
+      "一般向けの提供時期は示されていない。Google は、段階的な提供が必要だとして、米国政府の任意の公開前モデルアクセスの手続きに参加しながら、アクセスを少しずつ広げていると書く。初期の利用者から得た意見でガードレールを改良したうえで、開発者、企業、一般の利用者に向けて「できるだけ早く」提供し、その最初は有料 API の顧客と Google AI Ultra の加入者だという。日付は書かれていない。サイバー防衛の信頼できる利用者と Google 社内のチームには、サイバー面のガードレールを外した状態で提供する、とも書かれている。",
+      "仕様と価格では、出力トークンの上限が従来の64Kから1Mに拡大された。Google は、モデルが数十万トークンを1回の試行で生成できる余裕があると、難しい問題を一度に解くための推論に深みが加わると説明している。価格は導入価格として入力100万トークンあたり2ドル、出力100万トークンあたり10ドルで、キャッシュされた入力は入力価格の95%引きである。脚注には、導入期間が終わると入力4ドル、出力20ドルが適用されるとある。導入期間の長さは書かれていない。なお、この価格は「提供開始時の価格」として示されたもので、現時点で一般に購入できるという意味ではない。",
+      "Google は、GPT-6 Astra、Claude Fable 5.1、Claude Opus 5.5 と並べた比較表を公表している。表は19項目（GraphWalks は2つの区間を別に数える）で、Gemini 4 Argon が最高値または同値になったのは14項目である。DeepSWE v1.1 が77.9%、Vals Index が68.9%、AutomationBench が51.3%、LVBench が91.7%などで、CWE-bench v1 は GPT-6 Astra と同じ68.0%である。一方、FrontierSWE v2（55.0%）と Terminal-Bench 4.0（57.4%）では、Argon が表の4つのモデルの中で最も低い。Terminal-Bench Science 0.1 と OSWorld-2.0 では GPT-6 Astra が、PostTrainBench では Claude Opus 5.5 が、Argon を上回る。項目ごとの数値は下の表のとおりで、これは Google の公表値であり、独立した検証は確認できていない。",
+      "この比較には、条件の違いがある。Google の評価資料によると、Argon の数値は原則 pass@1 で、Gemini API の最高の思考設定で測っている。他社モデルの数値は、各社の自己申告、または公開リーダーボードの値である。DeepSWE v1.1、Terminal-Bench 4.0、Terminal-Bench Science 0.1、Agent's Last Exam、OSWorld-2.0、LVBench の Argon の値は自社で計測し、PostTrainBench、LABBench2、GraphWalks は全モデルを自社で計測している。LVBench は Argon が1秒1フレーム、GPT-6 Astra が800フレーム、Claude Fable 5.1 が300フレーム、Claude Opus 5.5 が600フレームと、API の制約で入力条件が揃っていない。Agent's Last Exam は、公開リーダーボードに Claude Fable 5.1 の値がないため表に含まれず、OSWorld-2.0 は Anthropic がオンラインとオフラインを合算した値しか公表していないため、Claude の2モデルの欄が空いている。",
+      "Google は社内での利用例も挙げている。量子計算の研究では、重要な応用のボトルネックになるサブルーチンの時空間リソース（量子ビット数とゲート数の積）の最適化で、公表されている基準値を数分で40%上回ったという。データセンターでは、Argon のエージェント群が全体のプロファイル情報から、メモリ最適化を自律的に見つけて適用し、展開後に300TiB 超を空け、合計で500TiB から1PiB の節約を見込むとしている。libgav1（動画デコーダ）では、Rust 版の32K行の SIMD コードを置き換え、出力が同一のまま Rust 版より2.7倍速いメモリ安全なデコーダになったという。これらは Google の説明である。C/C++ から Rust への大規模な移行は、本番に出す前に自動と手動の監査、エミュレーションテスト、レビューを受けているところだと、同じ発表が書いている。",
+      "サイバー防衛については、Argon がソフトウェアの重大な脆弱性を自律的に見つけ、検証し、修正できるよう訓練したと書かれている。セキュリティ企業 Wiz は、無償で重要インフラを守る取り組み Scan for Good で Argon を使い、世界中の病院が使う医療ソフトウェアで個人情報が露出する重大な脆弱性を見つけたという。Google は、それが従来のフロンティアモデルでは見逃されたリスクだったと説明している。公開前の安全対策として、悪用の防止、間接プロンプトインジェクションへの耐性、思考過程と行動を監視する不整合の検知、サンドボックス環境の強化の4つを挙げる。プロンプトインジェクションについては Gray Swan のベンチマークで首位だと書くが、数値は示していない。",
+      "開発者や管理者にとっては、まず提供範囲の確認が先になる。現時点で API や Google AI Ultra から使えるとは書かれておらず、導入価格の期間も示されていない。比較表は Google が選んだ項目と条件の組み合わせで、Argon が上回る項目と下回る項目の両方がある。自分の用途で評価するには、提供が始まってから、同じ条件で他のモデルと並べて試すことになる。この記事の根は Google の発表とその評価資料で、当事者の発表である。社内の成果や各ベンチマークの値について、独立した第三者による検証は、当サイトでは確認できていない。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "Google DeepMind が公表した比較表（Gemini 4 Argon と GPT-6 Astra・Claude Fable 5.1・Claude Opus 5.5。各社の自己申告・公開リーダーボードの値と Google の自社計測を含む。単位は %、空欄は値なし）",
+        "headers": [
+          "ベンチマーク",
+          "Gemini 4 Argon",
+          "GPT-6 Astra",
+          "Claude Fable 5.1",
+          "Claude Opus 5.5"
+        ],
+        "rows": [
+          [
+            "Vals Index",
+            "68.9",
+            "63.1",
+            "65.8",
+            "67.0"
+          ],
+          [
+            "AutomationBench",
+            "51.3",
+            "41.4",
+            "31.4",
+            "42.5"
+          ],
+          [
+            "Vals Finance Agent v2",
+            "65.4",
+            "53.5",
+            "58.9",
+            "58.6"
+          ],
+          [
+            "Harvey's Legal Agent Benchmark",
+            "19.6",
+            "5.4",
+            "6.7",
+            "3.8"
+          ],
+          [
+            "DeepSWE v1.1",
+            "77.9",
+            "74.1",
+            "67.4",
+            "74.2"
+          ],
+          [
+            "FrontierSWE v2",
+            "55.0",
+            "65.5",
+            "56.3",
+            "62.3"
+          ],
+          [
+            "Vibe Code Bench",
+            "91.9",
+            "89.6",
+            "90.3",
+            "90.3"
+          ],
+          [
+            "Terminal-Bench 4.0",
+            "57.4",
+            "58.2",
+            "57.9",
+            "66.4"
+          ],
+          [
+            "PostTrainBench",
+            "45.3",
+            "44.3",
+            "40.2",
+            "49.3"
+          ],
+          [
+            "Terminal-Bench Science 0.1",
+            "57.6",
+            "68.1",
+            "52.6",
+            "63.3"
+          ],
+          [
+            "LABBench2",
+            "88.8",
+            "85.4",
+            "68.6",
+            "73.1"
+          ],
+          [
+            "RiemannBench",
+            "76.0",
+            "72.0",
+            "65.6",
+            "69.6"
+          ],
+          [
+            "GraphWalks（128k まで）",
+            "99.7",
+            "98.7",
+            "91.4",
+            "90.6"
+          ],
+          [
+            "GraphWalks（256k〜1M）",
+            "84.2",
+            "71.8",
+            "65.0",
+            "66.8"
+          ],
+          [
+            "Agent's Last Exam（合格率）",
+            "39.5",
+            "34.2",
+            "",
+            "38.2"
+          ],
+          [
+            "OSWorld-2.0（オフライン部分の部分点）",
+            "69.2",
+            "72.6",
+            "",
+            ""
+          ],
+          [
+            "Chartography",
+            "71.6",
+            "71.0",
+            "46.2",
+            "66.3"
+          ],
+          [
+            "LVBench",
+            "91.7",
+            "87.5",
+            "79.7",
+            "83.7"
+          ],
+          [
+            "CWE-bench v1",
+            "68.0",
+            "68.0",
+            "58.0",
+            "67.0"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Gemini 4 Argon: our next era of frontier intelligence（Google）",
+        "site": "Google",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
+      },
+      {
+        "title": "Gemini 4 Argon Model evaluation — Approach, methodology & results（Google DeepMind）",
+        "site": "Google DeepMind",
+        "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_argon_model_evaluation.pdf"
+      },
+      {
+        "title": "Google DeepMind の公式 X アカウント（2026年9月30日付の発表の投稿と比較表）",
+        "site": "X",
+        "url": "https://x.com/GoogleDeepMind"
+      }
+    ]
   }
 };
 

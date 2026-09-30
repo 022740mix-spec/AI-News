@@ -11339,5 +11339,24 @@ export const ARTICLES_META = [
       "料金",
       "開発体験"
     ]
+  },
+  {
+    "id": "gemini-4-argon-fairwind-trusted-testers-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Google が Gemini 4 Argon を発表——一般提供は未定で、まず信頼できるサイバー防衛者に Fairwind プログラムで提供。出力上限は1Mトークン",
+    "excerpt": "Google DeepMind は2026年9月30日付で、新しいフロンティアモデル「Gemini 4 Argon」を発表した。提供はまず「信頼できるサイバー防衛者」向けの Fairwind プログラムに限られ、開発者・企業・一般向けには、有料 API の顧客と Google AI Ultra の加入者から「できるだけ早く」広げるとしている。出力トークン上限は従来の64Kから1Mに拡大され、導入価格は入力100万トークンあたり2ドル、出力10ドルで、導入期間の終了後は4ドルと20ドルになる。Google の比較表では、GPT-6 Astra、Claude Fable 5.1、Claude Opus 5.5 と並べた19項目のうち14項目で最高値（1項目は同値）だが、5項目では他社が上回る。比較の数値には各社の自己申告や自社計測が含まれる。",
+    "date": "2026-10-01",
+    "newsDate": "2026-09-30",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "DeepMind",
+      "モデル",
+      "ベンチマーク",
+      "セキュリティ"
+    ]
   }
 ];
