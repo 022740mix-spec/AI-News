@@ -10879,5 +10879,263 @@ export const ARTICLES_META = [
       "料金",
       "API"
     ]
+  },
+  {
+    "id": "openai-mcp-events-chatgpt-webhook-mcp-2-0-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ChatGPT に MCP Events、MCP サーバーの更新を監視して動く仕組み。MCP Events は MCP 2.0 とドラフト仕様の Webhook 配信が前提",
+    "excerpt": "OpenAI は2026年9月29日の DevDay 2026 で MCP Events を紹介した。ユーザーが ChatGPT に MCP サーバーの更新を監視させ、条件に合うイベントが届いたら動くよう頼める機能である。ChatGPT の MCP Events は MCP 2.0（プロトコルバージョン 2026-07-28）を必要とし、ドラフト段階の MCP Events 仕様のうち Webhook 配信とコールバック検証に対応する。ポーリングとストリーミングは非対応。サーバー側は events/list、events/subscribe、events/unsubscribe の3メソッドと署名付き配信の実装が求められる。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "MCP",
+      "ChatGPT",
+      "OpenAI",
+      "プラグイン",
+      "セキュリティ"
+    ]
+  },
+  {
+    "id": "openai-plugin-extensions-website-annotations-chatgpt-ui-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ChatGPT に Plugin Extensions と Website annotations、プラグインが UI を持ち、Web サイトが選択対象と文脈を指定できる",
+    "excerpt": "OpenAI は2026年9月29日の DevDay 2026 で、Plugin Extensions と Website annotations を発表した。前者はサイドバーアプリ、会話パネル、ファイルビューア/エディタ、フォームを ChatGPT に加え、プラグインのツールやスキルと一緒にパッケージ化できる。後者は Annotations Extensibility として、Web サイトが選択可能な要素の指定、文脈の添付、変更のプレビュー制御を行える。コンポーザーのメンションはデスクトップアプリのみで、Free と Go の Web 向け拡張は近日対応とされている。Browser Annotation API は対応バージョンのデスクトップアプリの内蔵ブラウザで使える。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "プラグイン",
+      "ChatGPT",
+      "OpenAI",
+      "開発ツール",
+      "MCP"
+    ]
+  },
+  {
+    "id": "openai-astra-ultrafast-fast-mode-usage-multipliers-2026",
+    "type": "feature",
+    "category": "product",
+    "title": "CodexのFastとUltrafast、速度倍率と消費倍率を並べて読む",
+    "excerpt": "OpenAIの公式ドキュメントによると、Codexの Fast モードは含まれる利用枠を標準の2.5倍、購入クレジットと Enterprise 従量を2倍で消費する。GPT-6 Astra の Ultrafast は標準比で最大8倍のトークン生成速度とされ、利用枠は8倍、クレジットは6倍の消費になる。公式は、これらの課金倍率は速度の増加を表すものではないと明記している。速度の数字は OpenAI の説明であり、独立した検証は確認できていない。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Codex",
+      "OpenAI",
+      "料金",
+      "GPT-6",
+      "エンタープライズ",
+      "API"
+    ]
+  },
+  {
+    "id": "codex-cli-0-159-release-notes-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.159.0〜0.159.2 の変更点、instant_interrupt と GPT-6.1 Sol 既定化",
+    "excerpt": "OpenAI は2026年9月29日に Codex CLI の 0.159.0、0.159.1、0.159.2 を公開した。0.159.0 は opt-in の instant_interrupt、新規セッションの簡素なウェルカム画面、警告ビューアの変更、Mermaid の対応拡大、app-server のスレッド履歴ページネーションなどを追加。0.159.1 は GPT-6.1 Sol をバンドルカタログと Amazon Bedrock のカタログで既定にし、0.159.2 は Windows のコンソール窓のちらつきを抑えた。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "GPT-6",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "openai-chatgpt-dots-always-on-agents-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ChatGPT に常時稼働エージェント「dots」、専用のクラウドコンピュータを持ち会話の合間も作業を進める",
+    "excerpt": "OpenAI は2026年9月29日の DevDay で、ChatGPT の常時稼働エージェント「dots」を公開した。ユーザーがゴールと自律実行の範囲を与えると、dot は専用のクラウドコンピュータとブラウザで作業を進め、結果をレビューに戻し、判断が要るときに連絡する。ChatGPT Work や Codex へのタスク委任もできる。提供は eligible なアカウントへ段階的で、Pro 100 / 200 / 500 は EEA・英国・スイス以外、Business Premium と Enterprise は世界で展開中（Enterprise は既定でオフ）と公式ドキュメントは記している。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "エージェント",
+      "OpenAI",
+      "ChatGPT",
+      "Codex",
+      "プライバシー",
+      "エンタープライズ"
+    ]
+  },
+  {
+    "id": "openai-chatgpt-space-pages-collaboration-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ChatGPT Space、Pages とファイルを一か所に集約し、共同編集と @ChatGPT / @dot での生成に対応",
+    "excerpt": "OpenAI は2026年9月29日の DevDay で ChatGPT Space を紹介した。Pages と保存したファイルを一か所に集め、ChatGPT で下書きや改稿を行い、直接編集し、共同編集者に閲覧・コメント・編集の権限で共有できる。ページ内では @ChatGPT や @dot、スラッシュコマンドでテキスト・画像・可視化を生成する。公式は「where available」（利用可能な環境で）と留保しており、共有には権限の確認が必要とされる。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "ChatGPT",
+      "OpenAI",
+      "エージェント",
+      "エンタープライズ",
+      "プライバシー"
+    ]
+  },
+  {
+    "id": "openai-sign-in-with-chatgpt-plan-usage-limited-trial-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Sign in with ChatGPT、DevDay 2026 でプラン利用と開発者向けの提供範囲を掲載。商用サインインは限定トライアル",
+    "excerpt": "Sign in with ChatGPT は新機能ではなく、OpenAI の changelog によると2026年7月29日に Airtable、GitLab、HubSpot、Notion、Supabase、Vercel を皮切りにベータの展開が始まっている。2026年9月29日の DevDay 2026 のページでは、対象の Plus/Pro ユーザーが自分の ChatGPT プランをアプリの AI リクエストに使えることと、開発者向けの提供範囲が示された。商用サインインは選定パートナーとの限定トライアルで、プラン利用はオープンソースのパートナーと選定した非公開クライアントに提供される。公式ドキュメントには、プラン利用対応のアプリ12件、サインインのみ5件、オープンソース連携4件が掲載されている。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "ChatGPT",
+      "認証",
+      "API",
+      "オープンソース",
+      "プライバシー"
+    ]
+  },
+  {
+    "id": "chatgpt-sites-visitor-connected-data-plugins-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ChatGPT の Sites が訪問者自身の接続アプリを使えるように。workspace-private な Site でプラグインが利用可能",
+    "excerpt": "OpenAI は2026年9月29日の DevDay 2026 で、訪問者それぞれの接続アプリのデータを使う Site を作れる Sites with connected data を紹介した。Site 内でのプラグイン利用は、機能が有効（where enabled）なワークスペースの、そのワークスペースに限定された Site で使え、訪問者がアカウントを選んで同意する。要件上、接続データの利用にはワークスペースが必要になる。Sites は ChatGPT が Web サイトや Web アプリ、ゲームを作成・ホスト・共有する機能で、公開ベータとして Plus、Pro、Business、Enterprise、Edu で提供されている。管理者向けには、プラグインごとの許可設定やテナントのコネクタ、ネットワークアクセスなどの制御が用意されている。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "ChatGPT",
+      "プラグイン",
+      "エンタープライズ",
+      "セキュリティ",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "openai-gpt-6-1-sol-codex-work-api-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI、GPT-6.1 Sol を公開：Codex・ChatGPT Work・API で利用可能に、API は入力 $2 / 出力 $10（100万トークンあたり・Standard）",
+    "excerpt": "OpenAI は2026年9月29日、GPT-6.1 Sol を Codex と ChatGPT Work で公開した。API でも利用できるとされている。公式ドキュメントは「Astra に近い性能を、Astra より低いコストで」と説明している。API のモデル ID は gpt-6.1-sol で、Standard の価格は100万トークンあたり入力 $2.00・出力 $10.00。Codex CLI 0.159.1 では同梱カタログの既定モデルになった。Enterprise と Edu では管理者が有効化するまで無効で、Free と Go は公開時点の対象外とされている。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "Codex",
+      "ChatGPT",
+      "API",
+      "料金",
+      "マルチエージェント"
+    ]
+  },
+  {
+    "id": "openai-gpt-5-5-retirement-oct-14-codex-chatgpt-2026",
+    "type": "news",
+    "category": "product",
+    "title": "GPT-5.5、2026年10月14日に ChatGPT・ChatGPT Work・Codex から退役：移行先は GPT-6 Sol / Luna、API は対象外",
+    "excerpt": "OpenAI は2026年9月14日、GPT-5.5 を10月14日に ChatGPT、ChatGPT Work、Codex の全プランで退役させると告知した。OpenAI API は対象外。Codex で ChatGPT サインインを使う場合、Plus・Pro・Business・Enterprise・Edu は GPT-6 Sol、Free・Go は GPT-6 Luna が公式の案内する移行先になる。ワークスペース既定、保存済みのモデル設定、管理構成、カスタムエージェント、スケジュールタスク、スクリプトの gpt-5.5 指定を置き換える必要がある。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-14",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "Codex",
+      "ChatGPT",
+      "エンタープライズ",
+      "GPT-5",
+      "モデル"
+    ]
+  },
+  {
+    "id": "codex-reusable-cloud-environments-publish-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Codex Cloud、セットアップを Codex に準備・テストさせて「公開」する再利用可能な環境を導入。新規タスクは準備済みファイルシステムの分離ワークスペースで開始",
+    "excerpt": "OpenAI は2026年9月29日の DevDay 2026 で、Codex Cloud の「再利用可能なクラウド環境」を紹介した。開発環境の説明をもとに Codex がリポジトリを調べて依存関係やツールを導入・テストし、公開（Publish）すると、以後の新規タスクはその準備済みファイルシステムから、タスクごとに分離されたワークスペースで始まる。Web・モバイル・デスクトップアプリから継続できる。インターネットアクセス、環境変数とネットワークシークレット、VPN、OIDC の設定も公式ドキュメントに整理されている。提供範囲はプランとワークスペース設定に依存すると公式は書いており、プランごとの可否は明記されていない。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Codex",
+      "OpenAI",
+      "エージェント",
+      "エンタープライズ",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "codex-security-cloud-research-preview-github-scan-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI、Codex Security Cloud を research preview で公開。接続した GitHub リポジトリのスキャンとコミット監視、検証エビデンスとパッチの確認、ドラフト PR 作成まで",
+    "excerpt": "OpenAI は2026年9月29日の DevDay 2026 で、Security Cloud プラグイン（research preview、Web とデスクトップアプリ）を発表した。接続した GitHub リポジトリを Codex cloud でスキャンし、新規コミットも監視でき、検出結果・検証エビデンス・パッチを確認してからドラフトのプルリクエストを作成する。Repository スキャンと Commit changes の2種類があり、脅威モデルは監視対象ごとに編集できる。公式ドキュメントは SAST や人手のレビューの代替ではないと明記している。効果に関する説明は OpenAI のもので、独立した検証は確認できていない。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Codex",
+      "OpenAI",
+      "セキュリティ",
+      "プラグイン",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "chatgpt-work-cross-device-sync-local-computer-access-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ChatGPT Work がデバイス間継続に対応、デスクトップで始めたタスクをウェブ・モバイルで続行できる仕組みと管理者の確認点",
+    "excerpt": "OpenAI は2026年9月29日付の DevDay 2026 のまとめで、ChatGPT Work の新しい同期タスクをデスクトップで開始し、ウェブやモバイルで続けられる機能を掲載した。オンラインで接続されたコンピュータが、ローカルのファイルやツールを必要とする手順を実行する。既存のタスクは元のモードのままで、新しいタスクから対象になる。有効化にはワークスペース所有者が Work Cloud と「Allow local computer access」を有効にし、デスクトップアプリ 26.929 以上への更新が必要と公式ドキュメントは説明している。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "ChatGPT",
+      "OpenAI",
+      "エンタープライズ",
+      "エージェント",
+      "セキュリティ"
+    ]
+  },
+  {
+    "id": "chatgpt-enterprise-team-tasks-slack-teams-shared-connections-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ChatGPT Enterprise に4機能、Slack・Teams 連携、Team Tasks、共有接続、Agent Security の設定項目を整理",
+    "excerpt": "OpenAI は2026年9月29日付の DevDay 2026 のまとめで、Enterprise 向けに ChatGPT in Slack and Teams、Team Tasks、Workspace connections、Agent Security の4項目を掲載した。Slack と Microsoft Teams では承認された会話で ChatGPT を使え、Team Tasks はチームのサービスアカウントと承認済み接続でスケジュールやイベントを起点に作業を実行する。共有接続は会社管理のアカウントを接続し、各接続は接続先アカウントの権限で動く。本記事は、管理者が確認すべき設定を公式ドキュメントの項目名で整理する。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "ChatGPT",
+      "OpenAI",
+      "エンタープライズ",
+      "エージェント",
+      "セキュリティ"
+    ]
   }
 ];
