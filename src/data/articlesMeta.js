@@ -10952,5 +10952,24 @@ export const ARTICLES_META = [
       "GPT-6",
       "開発ツール"
     ]
+  },
+  {
+    "id": "openai-chatgpt-dots-always-on-agents-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ChatGPT に常時稼働エージェント「dots」、専用のクラウドコンピュータを持ち会話の合間も作業を進める",
+    "excerpt": "OpenAI は2026年9月29日の DevDay で、ChatGPT の常時稼働エージェント「dots」を公開した。ユーザーがゴールと自律実行の範囲を与えると、dot は専用のクラウドコンピュータとブラウザで作業を進め、結果をレビューに戻し、判断が要るときに連絡する。ChatGPT Work や Codex へのタスク委任もできる。提供は eligible なアカウントへ段階的で、Pro 100 / 200 / 500 は EEA・英国・スイス以外、Business Premium と Enterprise は世界で展開中（Enterprise は既定でオフ）と公式ドキュメントは記している。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "エージェント",
+      "OpenAI",
+      "ChatGPT",
+      "Codex",
+      "プライバシー",
+      "エンタープライズ"
+    ]
   }
 ];

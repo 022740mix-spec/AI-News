@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-30",
-  "count": 512,
+  "count": 513,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -366,6 +366,7 @@
     "openai-broadcom-jalapeno-llm-inference-chip-2026",
     "openai-chatgpt-ads-1b-run-rate-2026",
     "openai-chatgpt-ads-25b-revenue-projection-2026",
+    "openai-chatgpt-dots-always-on-agents-2026",
     "openai-chatgpt-dreaming-v3-memory-architecture-2026",
     "openai-chatgpt-free-unlimited-luna-sol-update-2026",
     "openai-child-safety-blueprint-safety-fellowship-2026",
