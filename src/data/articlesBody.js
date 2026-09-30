@@ -9271,13 +9271,13 @@ const ARTICLES_BODY = {
       "## 5月以降の動向",
       "- **5/11 Microsoft Teams 統合 GA**（`@Cursor` メンション）",
       "- **5月 Bugbot 課金モデルが usage-based に移行**",
-      "- **SpaceX による Anysphere 買収が完了**（$60B・全株式交換。6/16 発表、**2026年8月14日に合併の効力が発生**し、Anysphere は SpaceX の完全子会社として新設の SpaceXAI 部門へ）",
+      "- **SpaceX による Anysphere 買収が完了**（$60B・全株式交換。6/16 発表、**2026年8月14日に合併の効力が発生**し、Anysphere は SpaceX の完全子会社として存続（SpaceXAI 部門への配置は公式資料では未確認））",
       "- **6/30 [iOS アプリを公開](?a=cursor-ios-app-launch-cloud-agents-remote-2026)** — Always-on クラウドエージェントに加え、PC 上で動いているエージェントをスマホからリモート操作できる。音声入力にも対応",
       "- **Cursor 3.x** 系列で Agents Window が正式機能化",
       "## 評価",
       "**強み**: IDE と AI エージェントが一体化したエクスペリエンス。VS Code 互換で拡張機能がそのまま動く。Agents Window でマルチセッション運用が UI レベルで自然に。Composer 2.5 + Sonic の独自モデルでコストパフォーマンス・低レイテンシを両立。iOS アプリの追加で、**席を離れてもエージェントの進行を確認・介入できる**ようになった。",
       "**注意点**: Claude Code が CLI 中心で多サーフェス展開なのに対し、Cursor は IDE 中心。**ターミナル単体での運用には向かない**。Bugbot の usage-based 移行で PR 数の多いプロジェクトは月額予算が読みにくくなった。Pro+ / Ultra プランの追加で価格帯が広がり、適切なプラン選択が難しくなった面もある。",
-      "**資本関係が選定要因になった**: 買収は2026年8月14日にクローズ済みで、Cursor は既に SpaceX の完全子会社である（[→ 詳細](?a=spacex-closes-cursor-anysphere-acquisition-2026)）。Cursor 公式ドキュメント（Models & Pricing）では、現行の Cursor Models の利用枠に Grok 4.7 / 4.6 / 4.5 が Composer 2.5 と並んで含まれている。当サイトの別記事は [Grok V9-Medium が Cursor の開発者ワークフローデータで訓練された](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)と伝えているが、この点は Cursor の公式発表では確認できていない。機能・価格の比較に加え、**開発データの流れと親会社の事業判断**を評価に含める段階に入った（[→ 市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。企業導入では Privacy Mode の設定とデータ利用条項を継続的に確認してほしい。",
+      "**資本関係が選定要因になった**: 買収は2026年8月14日にクローズ済みで、Cursor は既に SpaceX の完全子会社である（[→ 詳細](?a=spacex-closes-cursor-anysphere-acquisition-2026)）。Cursor 公式ドキュメント（Models & Pricing）では、現行の Cursor Models の利用枠に Grok 4.7 / 4.6 / 4.5 が Composer 2.5 と並んで含まれている。Cursor は公式ブログ（2026年7月8日）で、SpaceXAI と共同で訓練した Grok 4.5 の訓練に、数兆トークンの Cursor データ（利用者とコードベース・ツールのやりとり、開発者とエージェントのやりとりを含む）が含まれたと説明している（[詳細](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)）。この訓練は4月の提携の下で、買収完了（8月14日）より前に行われた。当事者の説明で、独立した検証は確認できておらず、Cursor のどの利用者のデータが対象か（Privacy Mode の利用者が除外されるか等）は確認できていない。機能・価格の比較に加え、**開発データの流れと親会社の事業判断**を評価に含める段階に入った（[→ 市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。企業導入では Privacy Mode の設定とデータ利用条項を継続的に確認してほしい。",
       "**関連記事**: [Cursor Composer 2](?a=cursor-composer-2-kimi-2026)、[Cursor 3 / Agents Window](?a=cursor-3-agent-first-workspace-2026)、[Microsoft Teams 統合](?a=cursor-microsoft-teams-integration-2026)、[SpaceX による $60B 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)、[AI エディタ横断比較](?a=editor-comparison-2026-march)。",
       "---",
       "**編集履歴**",
@@ -9287,7 +9287,8 @@ const ARTICLES_BODY = {
       "【追記 2026-09-20】SpaceX による Anysphere 買収の**完了**を反映しました。本文は「Q3 2026 クローズ予定」のままでしたが、合併の効力は**2026年8月14日**に発生しており、当サイトも9月12日に報じています。記事間で食い違っていたため、該当箇所を更新しました。なお料金・切替可能モデルの現行確認は行っていないため、`lastReviewed` は据え置いています。",
       "【訂正 2026-09-30】（誤）「Background Agent」という名称 →（正）現行の公式ドキュメントでは Cloud Agents。（誤）「すべて従量モデルで、各プロンプトが request-equivalent credits を消費」→（正）現行の公式ドキュメントでは、Cursor Models と Other Models の2つの利用枠を API 価格ベースで消費する方式で、request 単位の課金は旧プラン（レガシー）の扱いになっている。`.cursorrules` の記述は、現行ドキュメントが説明している `.cursor/rules` 配下のルールファイルに改めた（`.cursorrules` への言及は現行ドキュメントには見当たらない）。",
       "【訂正 2026-09-30】料金表の「Business / Enterprise」を、公式ドキュメントの区分（Teams と Enterprise の2つの法人向けプラン）に合わせて「Enterprise」に改め、（誤）Ultra「優先サポート」→（正）公式料金ページの Ultra は「Priority access to new features」（新機能への優先アクセス）。Hobby の内容を公式料金ページの記載に、Teams の SSO 表記を SAML/OIDC SSO に合わせた。インド向けの Start プラン（₹649/月・税込）を追記した。（誤）Pro+「Pro の5倍 Agent 上限」→（正）Cursor 公式料金ページ（Pro+ / Ultra の切替表示）では Pro+ は「3x Pro limits on Agent」、Ultra は「20x Pro limits on Agent」。Enterprise 行の「SOC 2」は料金ページ下部の会社全体の認証表示でありプランの機能ではないため外し、Enterprise 列に記載のある「優先サポートとアカウント管理」に差し替えた。",
-      "【追記 2026-09-30】Cursor 公式ドキュメントでの現行の確認結果。(1) SpaceX による買収は、Cursor 公式ブログ（2026年8月14日「Cursor is now a part of SpaceX」）が「SpaceX に正式に買収された。4月に発表した SpaceXAI との提携から始まった手続きの完了」と述べている。本文中の取引額・株式交換の形態・完全子会社化・SpaceXAI 部門への配置は、当サイトの別記事に依っており、この公式ブログには書かれていない。(2) Models & Pricing の Cursor Models 利用枠は Grok 4.7 / 4.6 / 4.5 と Composer 2.5 で、Sonic の記載は見当たらない。Grok 4.7 は 2026年9月21日、Grok 4.6 は 8月12日に公開されている。第三者モデルは Claude Fable 5.1 / Opus 5.5 / Sonnet 5.5、GPT-5.6（Luna / Sol / Terra）、Gemini 3.1 Pro / 3.8 Flash などが並ぶ。(3) Auto は Cursor Router（2026年7月22日）で動き、Cost / Balance / Intelligence の3モードがある。(4) 6月29日の iOS アプリは公式 changelog では public beta と記載されており、7月29日に iPad 版も加わった。8月17日に Origin（コードホスティング、early beta）、9月2日に自己ホスト型マシン（self-hosted machines）、9月10日に Projects（複数エージェントを束ねる機能、beta）、9月23日に Rollouts と Security Review（Teams / Enterprise 向け）が公開された。(5) Bugbot は 2026年6月10日の公式 changelog で、Composer 2.5 が動力になり、平均レビュー時間が約90秒、1回あたりの費用が約22%減と説明されている。これは Cursor 自身の説明であり、独立した検証は確認できていない。本文の「1 PR 平均 $1.00-$1.50」は、この変更以前の値かどうかを含め、公式ページでは確認できていない。"
+      "【追記 2026-09-30】Cursor 公式ドキュメントでの現行の確認結果。(1) SpaceX による買収は、Cursor 公式ブログ（2026年8月14日「Cursor is now a part of SpaceX」）が「SpaceX に正式に買収された。4月に発表した SpaceXAI との提携から始まった手続きの完了」と述べている。本文中の取引額・株式交換の形態・完全子会社化・SpaceXAI 部門への配置は、当サイトの別記事に依っており、この公式ブログには書かれていない。(2) Models & Pricing の Cursor Models 利用枠は Grok 4.7 / 4.6 / 4.5 と Composer 2.5 で、Sonic の記載は見当たらない。Grok 4.7 は 2026年9月21日、Grok 4.6 は 8月12日に公開されている。第三者モデルは Claude Fable 5.1 / Opus 5.5 / Sonnet 5.5、GPT-5.6（Luna / Sol / Terra）、Gemini 3.1 Pro / 3.8 Flash などが並ぶ。(3) Auto は Cursor Router（2026年7月22日）で動き、Cost / Balance / Intelligence の3モードがある。(4) 6月29日の iOS アプリは公式 changelog では public beta と記載されており、7月29日に iPad 版も加わった。8月17日に Origin（コードホスティング、early beta）、9月2日に自己ホスト型マシン（self-hosted machines）、9月10日に Projects（複数エージェントを束ねる機能、beta）、9月23日に Rollouts と Security Review（Teams / Enterprise 向け）が公開された。(5) Bugbot は 2026年6月10日の公式 changelog で、Composer 2.5 が動力になり、平均レビュー時間が約90秒、1回あたりの費用が約22%減と説明されている。これは Cursor 自身の説明であり、独立した検証は確認できていない。本文の「1 PR 平均 $1.00-$1.50」は、この変更以前の値かどうかを含め、公式ページでは確認できていない。",
+      "【訂正 2026-09-30】上記の追記（1）の「取引額・株式交換の形態・完全子会社化は当サイトの別記事に依り、公式ブログには書かれていない」のうち、取引額（$60B）・株式対価・完全子会社としての存続・8月14日の効力発生は、SpaceX の8-K（6月16日・8月14日）に記載がある。SpaceXAI 部門への配置は8-K にも Cursor ブログにも記載がない。「Grok V9-Medium が Cursor のデータで訓練された点は Cursor の公式発表では確認できていない」→（正）Cursor は7月8日の公式ブログで Grok 4.5 の訓練に Cursor データが含まれたと説明している。"
     ],
     "primarySources": [
       {
@@ -9334,6 +9335,11 @@ const ARTICLES_BODY = {
         "title": "Agents Window",
         "site": "Cursor Docs",
         "url": "https://cursor.com/docs/agent/agents-window"
+      },
+      {
+        "title": "Introducing Grok 4.5 (2026-07-08)",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/grok-4-5"
       }
     ],
     "tables": [
