@@ -14892,7 +14892,7 @@ const ARTICLES_BODY = {
       "**Ernie 5.1**（Baidu 5月）",
       "**価格差の実態: 60-90% 安**: CNBC 調査によれば、中国 OSS モデルは Anthropic・OpenAI のフロンティアモデルより **60-90% 安い**。実例で見ると。",
       "**Claude Fable 5**: $10/$50 per 1M tokens",
-      "**Claude Sonnet 5**: $3/$15（〜8/31 は導入価格 $2/$10 だった）",
+      "**Claude Sonnet 5**: $2/$10（記事公開時は8/31までの導入価格として案内されていたが、その後標準価格として恒久化された。公式発表は2026年8月10日）",
       "**GPT-5.6 Sol**: $5/$30",
       "**DeepSeek V4 API**: $0.4-0.8/$1-2 程度",
       "**Kimi K2.6 API**: 中国系プロバイダ経由で類似の低価格",
@@ -14916,7 +14916,8 @@ const ARTICLES_BODY = {
       "**(2) OpenRouter 等ゲートウェイの活用**: モデル切替の柔軟性を確保、単一プロバイダロックインを回避。",
       "**(3) データガバナンスの見直し**: 各モデルの利用条件・データ処理場所・訓練利用ポリシーを個別に評価。",
       "**(4) 7-8月の市場動向を注視**: GPT-5.6 GA と Grok 4.5 で中国 OSS の価格優位が変わる可能性、CNBC の続報を待つ。",
-      "**AI News の今後**: 今回の CNBC 調査は「中国 OSS の実力を米国企業自身が投票で決めた」意味を持つ。日本企業にとっても示唆が大きく、**AI News では「日本語プロンプトでの DeepSeek V4 / GLM-5.2 / LongCat-2.0 実測比較」** を近日公開予定。**モデル選択 = ビジネス戦略選択**の時代に、実データベースの検証記事を継続する。"
+      "**AI News の今後**: 今回の CNBC 調査は「中国 OSS の実力を米国企業自身が投票で決めた」意味を持つ。日本企業にとっても示唆が大きく、**AI News では「日本語プロンプトでの DeepSeek V4 / GLM-5.2 / LongCat-2.0 実測比較」** を近日公開予定。**モデル選択 = ビジネス戦略選択**の時代に、実データベースの検証記事を継続する。",
+      "【訂正 2026-09-30】（誤）Claude Sonnet 5: $3/$15（〜8/31 は導入価格 $2/$10 だった）→（正）Sonnet 5 は $2/$10 で、9/1 の $3/$15 への引き上げは行われず、$2/$10 が標準価格として恒久化された（2026年8月10日に公式が発表）。CNBC 調査（7/7）の数値および「60-90% 安」の主張は当事者外の調査の引用であり、本訂正では変更していない。"
     ],
     "primarySources": [
       {
@@ -14938,6 +14939,26 @@ const ARTICLES_BODY = {
         "title": "Chinese AI models are attracting US companies with lower prices",
         "site": "CIO",
         "url": "https://www.cio.com/article/4194040/chinese-ai-models-are-gaining-ground-in-the-u-s-attracting-companies-with-lower-prices.html"
+      },
+      {
+        "title": "Pricing - Claude API Docs（Claude Sonnet 5 の脚注3）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Claude Sonnet 5 モデルページ（Pricing 節）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/models/sonnet-5/overview"
+      },
+      {
+        "title": "Release notes（2026年8月10日: Claude Sonnet 5 の導入価格が標準価格に）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Introducing Claude Sonnet 5（Edit August 10, 2026）",
+        "site": "anthropic.com",
+        "url": "https://www.anthropic.com/news/claude-sonnet-5"
       }
     ]
   },
