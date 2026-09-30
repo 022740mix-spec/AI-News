@@ -9385,15 +9385,17 @@ const ARTICLES_BODY = {
     "body": [
       "**Windsurf** はもともと **Codeium** というブランド名で AI コード補完サービスを提供していた企業が、エディタ製品としてリブランドしたものである。VS Code フォークをベースとし、コード補完だけでなく対話的なコード生成や編集支援まで一体化した環境を目指して開発された。2025年7月に **Cognition**（自律エージェント **Devin** の開発元）による買収が発表され、以降は同社傘下で運営されている。",
       "**2026年6月2日、Windsurf は Devin Desktop へブランド統合された。** Cognition は買収直後に「Windsurf は皆さんが知る Windsurf のままである」と表明していたが、約11か月でブランドを一本化した形になる。製品としてのエディタは継続しているため、既存ユーザーが直ちに使えなくなるわけではないが、**新規に検討する場合は「Windsurf」ではなく「Devin Desktop」として提供条件を確認する必要がある**。",
-      "**中核エージェントは Devin Local に置き換わった。** かつての中核だった **Cascade は2026年7月1日に提供終了**し、6月2日のブランド統合と同時に既定となった Devin Local へ移行している。Devin Local は Rust による書き直しで、**Cascade 比でトークン効率が最大30%改善**し、サブエージェントをネイティブに扱える。既存ユーザーは自動移行されたが、**CI パイプラインやスクリプトから Cascade を明示的に呼び出していた場合は、7月1日までに振り替えが必要だった**。ユーザーの指示をタスク単位に分解し、各ステップの差分をプレビューしてから適用するという設計思想自体は Cascade から引き継がれている。補完機能は Codeium 時代から継続しており、反応速度に定評がある。",
-      "料金体系は2026年3月19日の改定でクレジット制から日次・週次クォータ制に移行し、Free / Pro $20 / Teams $40 per seat / Max $200 / Enterprise（要問合せ）の構成になった（[→ 改定の詳細](?a=windsurf-pricing-overhaul)）。改定前の Pro は $15 だったため、**Cursor Pro（$20）に対する価格優位は消滅している**。年額払いで17〜20%の割引がある。",
+      "**中核エージェントは Devin Local に置き換わった。** かつての中核だった **Cascade** は、6月2日のブランド統合の発表で「7月1日まで」（公式 FAQ では「7月中」）は使えると予告され、実際には残ったまま **2026年9月8日リリースの v3.9.19 で Devin Desktop から削除された**。Devin Local は新規タブの既定となり、現在は唯一のエージェントである。Devin Local は Rust による書き直しで、**Cascade 比でトークン効率が最大30%改善**し、サブエージェントをネイティブに扱える。既存ユーザーは自動移行されたが、Cascade の既存の会話は、Devin Desktop の「Continue in Devin Local」で新エージェントへ移行する形になった（予告上の期限は7月1日だった）。ユーザーの指示をタスク単位に分解し、各ステップの差分をプレビューしてから適用するという設計思想自体は Cascade から引き継がれている。補完機能は Codeium 時代から継続しており、反応速度に定評がある。",
+      "料金体系は2026年3月19日の改定でクレジット制から日次・週次クォータ制に移行し、Free / Pro $20 / Teams（チーム基本料 $80/月 + フルユーザー1席あたり $40/月）/ Max $200 / Enterprise（要問合せ）の構成になった（Devin の現行料金ページ）（[→ 改定の詳細](?a=windsurf-pricing-overhaul)）。現行の Pro は $20 で、Cursor Pro（$20）と同額である。Devin の3月の発表では、既存の Pro・Teams 加入者は従来価格が据え置かれる。年額払いで17〜20%の割引がある。",
       "選定上の論点は、**単体エディタとしての評価よりも、Cognition の製品戦略のなかでの位置付け**に移っている。Devin（自律エージェント）と Devin Desktop（エディタ）を組み合わせた一貫したワークフローを求めるなら合理的な選択肢である一方、エディタ単体で選ぶなら Cursor や VS Code + Copilot と機能・価格で正面から比較することになる。詳細は[AI エディタ横断比較](?a=editor-comparison-2026-march)を参照。",
       "---",
       "**編集履歴**",
       "【訂正 2026-08-11】「2026年3月に Anysphere（Cursor の親会社）による買収が完了し、現在は同社傘下で運営されている」という記述、および「Anysphere 傘下に入ったことで長期的には Cursor への技術統合が進む可能性がある」という段落を削除しました。**この買収は事実ではありません。** Windsurf を買収したのは Cognition で、発表は2025年7月です。誤りの元になった記事は[取り下げ](?a=cursor-windsurf-merge)しました。",
       "【追記 2026-08-11】2026年6月2日の Devin Desktop へのブランド統合、および3月19日の料金改定後の現行プラン（Free / Pro $20 / Teams $40 / Max $200）を反映しました。旧記述の「Pro プラン月額 15 ドル前後」は改定前の値です。",
       "【訂正 2026-08-11】同日の更新時点で「中核機能は Cascade」と記載していましたが、**Cascade は2026年7月1日に提供終了**しており、現行の中核エージェントは後継の **Devin Local**（Rust による書き直し、Cascade 比でトークン効率が最大30%改善）です。当該段落を訂正しました。ブランド統合と運営元は確認したものの、**機能レベルの世代交代を確認していなかった**ことによる誤りです。",
-      "【訂正 2026-08-11】総合評価を **4 → 3.5** に修正しました。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（3.65）と乖離していました。各軸の評価そのものは変更しておらず、**公表している算出方法どおりに総合スコアを計算し直した**ものです。"
+      "【訂正 2026-08-11】総合評価を **4 → 3.5** に修正しました。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（3.65）と乖離していました。各軸の評価そのものは変更しておらず、**公表している算出方法どおりに総合スコアを計算し直した**ものです。",
+      "【訂正 2026-09-30】（誤）「Cascade は2026年7月1日に提供終了」「CI パイプラインやスクリプトから Cascade を明示的に呼び出していた場合は、7月1日までに振り替えが必要だった」→（正）7月1日は、2026年6月2日の Devin 公式ブログが予告した Cascade の移行期限（公式 FAQ は「7月中」で食い違う）だった。実際には Cascade は7月末のリリースにも残り、Devin Desktop から削除されたのは v3.9.19（2026年9月8日）で、以降 Devin Local が唯一のエージェントになった。2026-08-11 の訂正文も同じ日付を提供終了日として書いていたため、あわせて改める。",
+      "【訂正 2026-09-30】記事のタイトルと概要文について、（誤）「Windsurf — Cursor傘下で継続提供、Cascadeフローが光るAIエディタ」「Anysphere社に買収されたが、単体提供は継続中」→（正）Windsurf の運営元は Cognition で、2026年6月2日に Devin Desktop へブランド統合された（Cognition の公式発表。買収は2025年7月14日に Cognition が発表）。Anysphere（Cursor）による買収は事実ではなく、この誤りの元になった記事 cursor-windsurf-merge は2026-08-11 に取り下げ済みである。本文は2026-08-11 に訂正済みだったが、タイトルと概要文が未訂正のまま残っていたため改めた。あわせて Teams の料金を（誤）$40 per seat →（正）チーム基本料 $80/月 + フルユーザー1席あたり $40/月、「改定前の Pro は $15 だったため価格優位は消滅」→（正）現行 Pro は $20 で Cursor Pro と同額（$15 は公式ページで確認できず）に訂正した。"
     ],
     "primarySources": [
       {
@@ -9410,6 +9412,26 @@ const ARTICLES_BODY = {
         "title": "Cognition to buy AI startup Windsurf days after Google poached CEO in $2.4 billion licensing deal",
         "site": "CNBC",
         "url": "https://www.cnbc.com/2025/07/14/cognition-to-buy-ai-startup-windsurf-days-after-google-poached-ceo.html"
+      },
+      {
+        "title": "Windsurf is now Devin Desktop",
+        "site": "Devin (Cognition)",
+        "url": "https://devin.ai/blog/windsurf-is-now-devin-desktop"
+      },
+      {
+        "title": "Devin Desktop FAQ",
+        "site": "Devin Docs",
+        "url": "https://docs.devin.ai/desktop/devin-desktop-faq"
+      },
+      {
+        "title": "Devin Desktop changelog",
+        "site": "Devin Docs",
+        "url": "https://docs.devin.ai/desktop/changelog"
+      },
+      {
+        "title": "Devin plans and pricing",
+        "site": "Devin (Cognition)",
+        "url": "https://devin.ai/pricing"
       }
     ]
   },
