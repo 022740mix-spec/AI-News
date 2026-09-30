@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-30",
-  "count": 527,
+  "count": 528,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -217,6 +217,7 @@
     "env-file-api-key-security-guide-2026",
     "ernie-4-5-review",
     "eu-designates-chatgpt-vlose-dsa-2026",
+    "exp-sky-flight-four-claude-models-2026",
     "feature-agent-skills-open-standard-2026",
     "feature-agentic-flooding-government-services-2026",
     "feature-ai-avatar-agents-join-meetings-2026",
