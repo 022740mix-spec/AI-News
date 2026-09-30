@@ -34,8 +34,8 @@ anthropic-claude-science-workbench-research-2026
 # 週刊まとめ。当時の週の出来事の記録
 overview-2026-week-jun08
 
-# Devin Desktop の Cascade 提供終了(7/1)の記述。製品史として正しく、
-# 現行が Devin Local であることは同じ段落で明記している
+# Devin Desktop の Cascade の記述。7/1 は予告された移行期限で、実際の削除は
+# 9/8（v3.9.19）と本文で訂正済み。現行が Devin Local であることも同じ段落で明記している
 editor-comparison-2026-march
 
 # Fable 5 復活時の週次上限と 7/7 期限の記録。レビュー本文で経緯を説明している
@@ -47,8 +47,8 @@ moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026
 # 週刊まとめ。当時の週の出来事の記録
 overview-2026-week-jun08
 
-# Devin Desktop の Cascade 提供終了(7/1)の記述。製品史として正しく、
-# 現行が Devin Local であることは同じ段落で明記している
+# Devin Desktop の Cascade の記述。7/1 は予告された移行期限で、実際の削除は
+# 9/8（v3.9.19）と本文で訂正済み。現行が Devin Local であることも同じ段落で明記している
 editor-comparison-2026-march
 
 # Fable 5 復活時の週次上限と 7/7 期限の記録。レビュー本文で経緯を説明している
@@ -57,7 +57,15 @@ claude-fable-5-mythos-5-review
 # Kimi K3 の重み公開(7/27)前の状況を述べた速報。当時の記録
 moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026
 
-# Sonnet 5 公開時の速報。2026-09-02 の訂正で「公開当初は8月31日まで $2/$10
-# だったが、現行価格は $3/$15」と経緯と現状の両方を明記したため対象外とする。
-# 読者が現在の条件を誤認するおそれはない
+# Sonnet 5 公開時の速報。2026-09-30 の訂正で「公開当初は8月31日までの導入価格と
+# 案内されたが、8/10 に公式が $2/$10 を標準価格として恒久化した」と経緯と現状の両方を
+# 明記したため対象外とする。読者が現在の条件を誤認するおそれはない
+# （2026-09-02 の訂正が「現行は $3/$15」としたのは誤りで、9/30 に訂正済み）
 anthropic-claude-sonnet-5-agentic-cheap-2026
+
+# 2026-09-30 の訂正で、Sonnet 5 の導入価格「〜8/31」を歴史として書いた。
+# 「発売時は〜8/31 の導入価格とされたが、公式が標準価格として恒久化」と、経緯と
+# 現状（$2/$10）を同じ文で明記しており、読者が現在の条件を誤認するおそれはない
+claude-sonnet-4-6-review
+claude-sonnet-5-review
+claude-opus-5-review
