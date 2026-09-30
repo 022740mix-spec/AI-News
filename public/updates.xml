@@ -101,7 +101,7 @@
     <id>tag:ai-tool-news.jp,2026:update:cursor-cli:2026-09-30</id>
     <updated>2026-09-30T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
-    <summary>（誤）インストールは npm install -g @cursor/cli、サインインは cursor… →（正）Cursor 公式ドキュメント（cursor.com/docs/cli）の手順は curl…（同日に 訂正・訂正・追記 もあり）</summary>
+    <summary>（誤）インストールは npm install -g @cursor/cli、サインインは cursor… →（正）Cursor 公式ドキュメント（cursor.com/docs/cli）の手順は curl…（同日に 訂正・訂正・訂正・追記 もあり）</summary>
   </entry>
   <entry>
     <title>【訂正】Cursor レビュー — Cursor 3.x の Agents Window + Composer 2.5 + Microsoft Teams 統合 + Bugbot usage-based 対応版</title>
@@ -109,7 +109,7 @@
     <id>tag:ai-tool-news.jp,2026:update:cursor-editor:2026-09-30</id>
     <updated>2026-09-30T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
-    <summary>（誤）「Background Agent」という名称 →（正）現行の公式ドキュメントでは Cloud Agents（同日に 訂正・追記 もあり）</summary>
+    <summary>（誤）「Background Agent」という名称 →（正）現行の公式ドキュメントでは Cloud Agents（同日に 訂正・訂正・追記 もあり）</summary>
   </entry>
   <entry>
     <title>【訂正】DeepSeek V4 が GA へ — 7/19-20 に preview から一般公開、peak/off-peak 課金に加え dynamic pricing 導入</title>
@@ -136,6 +136,14 @@
     <summary>（誤）「Cascade は2026年7月1日に提供終了」「CI やスクリプトから Cascade… →（正）7月1日は、2026年6月2日の Devin 公式ブログが予告した移行期限（公式 FAQ は「7月中」…（同日に 訂正・訂正・訂正・追記・月次見直し もあり）</summary>
   </entry>
   <entry>
+    <title>【訂正】【分析】SpaceX-Cursor $60B 買収で AI コーディング市場が再編 — Cursor は xAI 配下、Cognition (Devin・Windsurf) 独立、GitHub Copilot / Claude Code が直接競合に</title>
+    <link rel="alternate" type="text/html" href="?a=feature-ai-coding-market-realignment-spacex-cursor-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:feature-ai-coding-market-realignment-spacex-cursor-2026:2026-09-30</id>
+    <updated>2026-09-30T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）「Cursor の開発者ワークフローが Grok の訓練データに」「Grok を Cursor… →（正）Cursor が公式ブログ（7月8日）で、Grok 4.5 の訓練に数兆トークンの Cursor…</summary>
+  </entry>
+  <entry>
     <title>【訂正】【分析】中国 AI モデルが米国エンタープライズ API トークンの 30-46% を占領（CNBC 7/7 調査）— OpenRouter 経由統計、12ヶ月平均 11% から急拡大、60-90% 安が牽引</title>
     <link rel="alternate" type="text/html" href="?a=feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026:2026-09-30</id>
@@ -158,6 +166,14 @@
     <updated>2026-09-30T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
     <summary>（誤）brew install copilot-cli（macOS のみ） →（正）brew install --cask copilot-cli（macOS / Linux。公式インストール手順の表記）（同日に 訂正・訂正・訂正・訂正・追記・月次見直し もあり）</summary>
+  </entry>
+  <entry>
+    <title>【訂正】Google が Gemini 3.8 Flash を公開 — 6週間で3世代目のFlash、価格据え置きでTerminal-Bench 2.1が85.8%→89.4%に</title>
+    <link rel="alternate" type="text/html" href="?a=google-gemini-3-8-flash-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:google-gemini-3-8-flash-2026:2026-09-30</id>
+    <updated>2026-09-30T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）Terminal-Bench 2.1「81.6%→90.8%」 →（正）「85.8%→89.4%」（同日に 訂正・訂正・追記 もあり）</summary>
   </entry>
   <entry>
     <title>【訂正】GPT-5.6 Sol / Terra / Luna レビュー — 一般公開版（7/9 GA）、TerminalBench 2.1 で 91.91% SOTA、Cerebras で 750 tokens/秒、ChatGPT Work の駆動モデルに</title>
@@ -208,12 +224,36 @@
     <summary>（誤）-p フラグでパイプ・スクリプト利用、codex --headless でヘッドレス（CI 用） →（正）非対話実行は codex exec（同日に 訂正・訂正・訂正・訂正・訂正・追記・追記・月次見直し もあり）</summary>
   </entry>
   <entry>
+    <title>【訂正】GPT-5.6 Sol / Terra / Luna が一般公開開始（7/9）— 約20組織限定プレビューから解放、ChatGPT・API・Codex で即日利用可能</title>
+    <link rel="alternate" type="text/html" href="?a=openai-gpt-5-6-general-availability-july-9-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:openai-gpt-5-6-general-availability-july-9-2026:2026-09-30</id>
+    <updated>2026-09-30T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）「コーディング特化なら Grok 4.5（Cursor データで訓練済）」 →（正）Cursor の公式ブログ（7月8日）は、Cursor データを訓練に含めたことと…</summary>
+  </entry>
+  <entry>
+    <title>【訂正】【週刊まとめ】AI開発ツール — 2026年6月15日〜21日</title>
+    <link rel="alternate" type="text/html" href="?a=overview-2026-week-jun15#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:overview-2026-week-jun15:2026-09-30</id>
+    <updated>2026-09-30T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）「Grok V9-Medium が X と SuperGrok で消費者公開、Cursor… →（正）6月16日の報道は V9-Medium の公開を予定として書いており、実際の公開は確認できない</summary>
+  </entry>
+  <entry>
     <title>【訂正】AI 開発ツール料金プラン横断比較 — CLI・エディタ・モデル API</title>
     <link rel="alternate" type="text/html" href="?a=pricing-comparison-all-tools-2026-march#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:pricing-comparison-all-tools-2026-march:2026-09-30</id>
     <updated>2026-09-30T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
     <summary>（誤）$3/$15、8月31日で導入価格 $2/$10 が終了 →（正）$2/$10（同日に 月次見直し もあり）</summary>
+  </entry>
+  <entry>
+    <title>【訂正】SpaceX が Cursor（Anysphere）を $60B で買収 — IPO 翌週、史上最大の VC バック買収、Q3 2026 close 予定</title>
+    <link rel="alternate" type="text/html" href="?a=spacex-cursor-60b-acquisition-anysphere-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:spacex-cursor-60b-acquisition-anysphere-2026:2026-09-30</id>
+    <updated>2026-09-30T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）「買収するオプション行使を発表」 →（正）6月16日の8-Kは合併契約（Agreement and Plan of Merger）の締結を記載しており、オプション行使の記載はない（4月21日に SpaceX…（同日に 訂正・追記 もあり）</summary>
   </entry>
   <entry>
     <title>【訂正】Windsurf（現 Devin Desktop）— Cognition が運営する AI エディタ</title>
@@ -229,7 +269,31 @@
     <id>tag:ai-tool-news.jp,2026:update:xai-grok-4-5-public-launch-opus-class-july-9-2026:2026-09-30</id>
     <updated>2026-09-30T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
-    <summary>（誤）Claude Sonnet 5 は $3/$15（〜8/31 は導入価格 $2/$10）、8/31… →（正）Sonnet 5 は $2/$10 で、9/1 の $3/$15 への引き上げは行われず…</summary>
+    <summary>（誤）Claude Sonnet 5 は $3/$15（〜8/31 は導入価格 $2/$10）、8/31… →（正）Sonnet 5 は $2/$10 で、9/1 の $3/$15 への引き上げは行われず…（同日に 訂正 もあり）</summary>
+  </entry>
+  <entry>
+    <title>【訂正】Grok 4.5 レビュー — 「Opus クラス」は言い過ぎ。ただしトークン効率4.2倍が実効コストを塗り替える</title>
+    <link rel="alternate" type="text/html" href="?a=xai-grok-4-5-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:xai-grok-4-5-review:2026-09-30</id>
+    <updated>2026-09-30T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）「Cursor の実開発ワークフローデータで追加訓練したコーディング特化型」「実際の開発者が書き… →（正）Cursor の公式ブログ（7月8日）は、数兆トークンの Cursor データを訓練に含めつつ…</summary>
+  </entry>
+  <entry>
+    <title>【訂正】Grok V9-Medium — 6/16 の消費者公開は確認できず（TechTimes は6/29に公開予定の窓が発売のないまま過ぎたと報道）、V9 基盤とされるモデルは 7/8 に Grok 4.5 として公開（Cursor の訓練データは Cursor が説明）</title>
+    <link rel="alternate" type="text/html" href="?a=xai-grok-v9-medium-consumer-release-cursor-data-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:xai-grok-v9-medium-consumer-release-cursor-data-2026:2026-09-30</id>
+    <updated>2026-09-30T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）「Grok V9-Medium が2026年6月16日に X と SuperGrok で消費者向けに公開された」 →（正）公開は公式資料で確認できず、行われなかったとみられる（同日に 訂正・訂正・訂正 もあり）</summary>
+  </entry>
+  <entry>
+    <title>【追記】Cursor が iOS アプリを公開 — Always-on クラウドエージェント + PC 上のエージェントリモート操作、音声入力対応、Composer 2.5 は7/5まで -75%</title>
+    <link rel="alternate" type="text/html" href="?a=cursor-ios-app-launch-cloud-agents-remote-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:cursor-ios-app-launch-cloud-agents-remote-2026:2026-09-30</id>
+    <updated>2026-09-30T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>Cursor は7月8日に Grok 4.5 を公開し、公式ブログで「Composer 2.5 は引き続き提供し、この規模のモデルを今後も出す」と述べている</summary>
   </entry>
   <entry>
     <title>【追記】Anthropic が Claude Opus 5.5 を公開 — 単価は20%減、ただし「同じ effort でより多く考える」と公式が明記</title>
@@ -464,7 +528,7 @@
     <summary>Claude Sonnet 5 の単価を現行の $3/$15 に更新した</summary>
   </entry>
   <entry>
-    <title>【訂正】xAI Grok V9-Medium が X と SuperGrok で消費者向け公開 — 1.5T パラメータ、Cursor 開発者ワークフローデータで訓練、API はまだ開放されず</title>
+    <title>【訂正】Grok V9-Medium — 6/16 の消費者公開は確認できず（TechTimes は6/29に公開予定の窓が発売のないまま過ぎたと報道）、V9 基盤とされるモデルは 7/8 に Grok 4.5 として公開（Cursor の訓練データは Cursor が説明）</title>
     <link rel="alternate" type="text/html" href="?a=xai-grok-v9-medium-consumer-release-cursor-data-2026#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:xai-grok-v9-medium-consumer-release-cursor-data-2026:2026-09-02</id>
     <updated>2026-09-02T15:00:00Z</updated>
