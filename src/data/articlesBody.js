@@ -15233,7 +15233,8 @@ const ARTICLES_BODY = {
       "**(4) 7/9**: GPT-5.6 が一般公開、政府監督プロセス完了の実質的な最初の事例に。",
       "**「モデル選択 = 米政府の技術政策選択」時代の恒常化**: [Claude Fable 5 復活](?a=anthropic-claude-fable-5-return-safeguards-limits-2026) や本件で見られるように、**フロンティア AI モデルは「発表 → 政府事前共有 → 数週間の限定プレビュー → 一般公開」**のサイクルが標準化した。開発者は **「初期プレビュー枠か、GA 後の通常利用か」** を分けて計画する必要がある。",
       "**Claude Sonnet 5 との直接競合**: 同時期に GA された [Sonnet 5](?a=claude-sonnet-5-review)（$2/$10、SWE-bench Pro 63.2%）と、GPT-5.6 Terra（$2.50/$15、GPT-5.5 と競合性能）が真正面から比較される時期に入った。多くの日常ワークフローで、Sonnet 5 と Terra のどちらを選ぶかは価格・エコシステム統合・トークナイザ特性で判断することになる。**AI News では「日本語プロンプトでの Sonnet 5 vs GPT-5.6 Terra 実践比較」を近日公開予定**。",
-      "**Grok 4.5 との3強競合**: 同日リリースの [xAI Grok 4.5](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)（$2/$6）も真っ向対抗の破格価格。**GPT-5.6 Luna（$1/$6）・Sonnet 5（$2/$10）・Grok 4.5（$2/$6）・Gemini 3.5 Flash（$0.075/$0.30）**の4選択肢は、それぞれ強みが異なる。**AI News の推奨**: エージェント能力なら Sonnet 5、コーディング特化なら Grok 4.5（Cursor データで訓練済）、コスト最優先なら Gemini 3.5 Flash、Codex 統合なら GPT-5.6 Sol/Terra を第一候補に検討。"
+      "**Grok 4.5 との3強競合**: 同日リリースの [xAI Grok 4.5](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)（$2/$6）も真っ向対抗の破格価格。**GPT-5.6 Luna（$1/$6）・Sonnet 5（$2/$10）・Grok 4.5（$2/$6）・Gemini 3.5 Flash（$0.075/$0.30）**の4選択肢は、それぞれ強みが異なる。**AI News の推奨**: エージェント能力なら Sonnet 5、コーディング特化なら Grok 4.5（Cursor の説明では数兆トークンの Cursor データを訓練に含む。ただし配合はコーディング以外の知識労働も含む）、コスト最優先なら Gemini 3.5 Flash、Codex 統合なら GPT-5.6 Sol/Terra を第一候補に検討。",
+      "【訂正 2026-09-30】（誤）「コーディング特化なら Grok 4.5（Cursor データで訓練済）」→（正）Cursor の公式ブログ（7月8日）は、Cursor データを訓練に含めたことと、訓練データの配合をコーディング特化から意図的に広げたことの両方を説明している。当事者の説明で独立した検証は確認できていない。"
     ],
     "primarySources": [
       {
@@ -15255,6 +15256,11 @@ const ARTICLES_BODY = {
         "title": "A preview of GPT-5.6 Sol, Terra, and Luna",
         "site": "OpenAI Help Center",
         "url": "https://help.openai.com/en/articles/20001325-a-preview-of-gpt-56-sol-terra-and-luna"
+      },
+      {
+        "title": "Introducing Grok 4.5 (2026-07-08)",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/grok-4-5"
       }
     ]
   },
