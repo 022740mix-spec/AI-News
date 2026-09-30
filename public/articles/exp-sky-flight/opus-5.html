@@ -1,0 +1,1261 @@
+<!doctype html><html><head><meta charset=utf8><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>exp-claude-opus-5-run1</title>
+<style>
+  /* 一枚の映写幕。暗い地に映像だけが光る、単一テーマの構成。 */
+  :root{
+    --bg:#0a0c14;
+    --fg:#e7edf7;
+    --muted:#96a1b6;
+    --line:rgba(255,255,255,.15);
+    --panel:rgba(255,255,255,.07);
+    --accent:#9fc2ff;
+    color-scheme: dark;
+  }
+  html,body{ height:100%; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--fg);
+    font-family:"Hiragino Sans","Noto Sans JP",system-ui,-apple-system,"Segoe UI",sans-serif;
+    display:flex; align-items:center; justify-content:center;
+    padding-inline:16px; padding-block:20px;
+    box-sizing:border-box;
+  }
+  #wrap{ width:100%; max-width:1280px; min-width:0; }
+  h1{
+    margin:0 0 11px;
+    font-family:"Hiragino Mincho ProN","Yu Mincho",Georgia,serif;
+    font-size:clamp(15px,2.1vw,19px); font-weight:600; letter-spacing:.09em;
+    text-wrap:balance;
+  }
+  h1 span{
+    margin-left:.7em; font-size:.8em; font-weight:400;
+    letter-spacing:.03em; color:var(--muted);
+  }
+  #stage{
+    position:relative; width:100%; max-width:100%; aspect-ratio:16/9;
+    border-radius:10px; overflow:hidden; background:#05070f;
+    box-shadow:0 18px 60px rgba(0,0,0,.6);
+  }
+  canvas#c{ display:block; width:100%; height:100%; }
+  #bar{
+    display:flex; gap:10px; align-items:center; margin-top:12px;
+    font-size:13px; color:var(--muted); flex-wrap:wrap;
+  }
+  #bar button{
+    font:inherit; color:var(--fg); background:var(--panel);
+    border:1px solid var(--line); border-radius:7px;
+    padding:6px 13px; cursor:pointer;
+  }
+  #bar button:hover{ background:rgba(255,255,255,.14); }
+  #bar button:focus-visible, #seek:focus-visible{
+    outline:2px solid var(--accent); outline-offset:2px;
+  }
+  #seek{ flex:1 1 210px; min-width:130px; accent-color:var(--accent); }
+  #tlabel{ font-variant-numeric:tabular-nums; min-width:112px; color:var(--fg); }
+</style>
+
+<div id="wrap">
+  <h1>天空飛行<span>鶴に乗って、春から冬へ ― 40秒</span></h1>
+  <div id="stage">
+    <canvas id="c" width="1280" height="720" role="img"
+      aria-label="白い鶴に乗った旅人が天空を飛び、雲海・山脈・大海原・夕暮れの街・雪の高峰を巡りながら、春夏秋冬が移ろう40秒の映像"></canvas>
+  </div>
+  <div id="bar">
+    <button id="play" type="button">再生 / 一時停止</button>
+    <button id="restart" type="button">最初から</button>
+    <input id="seek" type="range" min="0" max="40" step="0.02" value="0" aria-label="再生位置（秒）">
+    <span id="tlabel">t = 0.00 / 40</span>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* =========================================================================
+   天空飛行 — 40秒 一本道の映像 / 単一HTML / Canvas2D のみ
+   すべての描画は時刻 t(秒) のみの関数。乱数は固定シード。
+   ========================================================================= */
+
+var W=1280, H=720, DUR=40, SEED=20260930;
+
+var cv=document.getElementById('c');
+var ctx=cv.getContext('2d', {alpha:false});
+var buf=document.createElement('canvas'); buf.width=W; buf.height=H;
+var bctx=buf.getContext('2d', {alpha:false});
+
+/* ---------- math ---------- */
+function clamp(v,a,b){ return v<a?a:(v>b?b:v); }
+function lerp(a,b,u){ return a+(b-a)*u; }
+function smooth(e0,e1,x){ var u=clamp((x-e0)/(e1-e0),0,1); return u*u*(3-2*u); }
+function mixc(a,b,u){ return [a[0]+(b[0]-a[0])*u, a[1]+(b[1]-a[1])*u, a[2]+(b[2]-a[2])*u]; }
+function rgb(c){ return 'rgb('+(c[0]|0)+','+(c[1]|0)+','+(c[2]|0)+')'; }
+function rgba(c,a){ return 'rgba('+(c[0]|0)+','+(c[1]|0)+','+(c[2]|0)+','+a+')'; }
+function wrap(v,lo,hi){ var s=hi-lo; return lo+(((v-lo)%s)+s)%s; }
+
+/* ---------- 固定シード疑似乱数 ---------- */
+function mulberry32(a){
+  return function(){
+    a|=0; a=(a+0x6D2B79F5)|0;
+    var t=Math.imul(a^(a>>>15), 1|a);
+    t=(t+Math.imul(t^(t>>>7), 61|t))^t;
+    return ((t^(t>>>14))>>>0)/4294967296;
+  };
+}
+var RNG=mulberry32(SEED);
+var OFF={};
+function rr(a,b){ return a+(b-a)*RNG(); }
+
+/* ---------- シーン定義（5景・4回以上の転換） ---------- */
+/* 0: 雲海(夜明け) 1: 山脈 2: 大海原と島 3: 夕暮れの街 4: 雪の高峰(夜) */
+var SCENES=[
+ { name:'雲海', horo:6,
+   sky:[[34,58,116],[92,142,196],[214,168,166],[255,216,176]],
+   sun:{x:1042,y:296,r:52,col:[255,238,206],glow:[255,186,138],i:1.0,band:0.55},
+   haze:[238,202,186], fog:0.55 },
+ { name:'山脈', horo:-8,
+   sky:[[24,80,164],[84,156,214],[172,212,232],[228,242,246]],
+   sun:{x:256,y:104,r:44,col:[255,250,226],glow:[255,226,168],i:0.9,band:0.15},
+   haze:[204,226,238], fog:0.42 },
+ { name:'大海原', horo:22,
+   sky:[[16,90,178],[70,158,220],[162,214,238],[228,247,252]],
+   sun:{x:846,y:112,r:48,col:[255,253,238],glow:[255,238,190],i:1.0,band:0.10},
+   haze:[214,238,248], fog:0.34 },
+ { name:'夕暮れの街', horo:16,
+   sky:[[30,34,90],[108,62,124],[228,112,70],[255,192,100]],
+   sun:{x:318,y:300,r:72,col:[255,242,198],glow:[255,136,58],i:1.15,band:0.80},
+   haze:[250,182,126], fog:0.50 },
+ { name:'雪の高峰', horo:-4,
+   sky:[[4,8,30],[10,26,64],[30,60,104],[130,162,196]],
+   sun:{x:968,y:118,r:32,col:[244,248,255],glow:[164,196,240],i:0.75,band:0.08},
+   haze:[122,152,190], fog:0.60 }
+];
+var SSTART=[0,8,16,24,32];   // 各景の開始時刻
+var TW=2.6;                   // 転換の所要時間
+
+/* ---------- 季節（春→夏→秋→冬） ---------- */
+var SEASONS=[
+ { key:'春', tint:[255,192,212], ts:0.17, light:[255,234,240],
+   veg:[122,184,104], veg2:[172,216,132], rock:[124,118,122],
+   snow:0.30, coat:[240,172,196], scarf:[255,238,246] },
+ { key:'夏', tint:[124,216,255], ts:0.11, light:[255,252,228],
+   veg:[42,130,62], veg2:[88,172,80], rock:[112,108,104],
+   snow:0.14, coat:[238,246,252], scarf:[142,206,236] },
+ { key:'秋', tint:[255,148,64], ts:0.21, light:[255,206,142],
+   veg:[198,102,42], veg2:[228,160,58], rock:[128,104,84],
+   snow:0.18, coat:[204,94,54], scarf:[255,206,120] },
+ { key:'冬', tint:[196,222,255], ts:0.27, light:[224,238,255],
+   veg:[214,228,240], veg2:[238,246,252], rock:[94,102,120],
+   snow:0.78, coat:[50,70,122], scarf:[226,240,255] }
+];
+
+/* 季節の重み: 境界 10 / 20 / 30、各2.2秒の滑らかな移行 */
+function seasonWeights(t){
+  var w=[0,0,0,0], hw=2.2, b=[10,20,30], i, u;
+  for(i=0;i<3;i++){
+    if(t < b[i]-hw){ w[i]=1; return w; }
+    if(t < b[i]+hw){ u=smooth(b[i]-hw,b[i]+hw,t); w[i]=1-u; w[i+1]=u; return w; }
+  }
+  w[3]=1; return w;
+}
+function seasonState(t){
+  var w=seasonWeights(t), i, s;
+  var o={ tint:[0,0,0], ts:0, light:[0,0,0], veg:[0,0,0], veg2:[0,0,0],
+          rock:[0,0,0], snow:0, coat:[0,0,0], scarf:[0,0,0], w:w };
+  for(i=0;i<4;i++){
+    if(w[i]<=0) continue;
+    s=SEASONS[i];
+    o.tint[0]+=s.tint[0]*w[i]; o.tint[1]+=s.tint[1]*w[i]; o.tint[2]+=s.tint[2]*w[i];
+    o.light[0]+=s.light[0]*w[i]; o.light[1]+=s.light[1]*w[i]; o.light[2]+=s.light[2]*w[i];
+    o.veg[0]+=s.veg[0]*w[i]; o.veg[1]+=s.veg[1]*w[i]; o.veg[2]+=s.veg[2]*w[i];
+    o.veg2[0]+=s.veg2[0]*w[i]; o.veg2[1]+=s.veg2[1]*w[i]; o.veg2[2]+=s.veg2[2]*w[i];
+    o.rock[0]+=s.rock[0]*w[i]; o.rock[1]+=s.rock[1]*w[i]; o.rock[2]+=s.rock[2]*w[i];
+    o.coat[0]+=s.coat[0]*w[i]; o.coat[1]+=s.coat[1]*w[i]; o.coat[2]+=s.coat[2]*w[i];
+    o.scarf[0]+=s.scarf[0]*w[i]; o.scarf[1]+=s.scarf[1]*w[i]; o.scarf[2]+=s.scarf[2]*w[i];
+    o.ts+=s.ts*w[i]; o.snow+=s.snow*w[i];
+  }
+  return o;
+}
+function seasonTint(c,ss){ return mixc(c, ss.tint, ss.ts*0.60); }
+
+/* ---------- 景の選択と転換 ---------- */
+function sceneMix(t){
+  for(var i=1;i<SSTART.length;i++){
+    var c=SSTART[i];
+    if(t>c-TW/2 && t<c+TW/2) return {a:i-1,b:i,u:smooth(c-TW/2,c+TW/2,t),k:i-1};
+  }
+  var idx=0;
+  for(var j=0;j<SSTART.length;j++) if(t>=SSTART[j]) idx=j;
+  return {a:idx,b:idx,u:0,k:-1};
+}
+
+/* ---------- 透視投影（飛行感の核） ---------- */
+var FOC=620, CAMH=150;
+function pscale(z){ return FOC/z; }
+
+/* ---------- 雲スプライト（初期化時に一度だけ生成） ---------- */
+function makeCloudSprite(w,h,puff,flat,spread,lift){
+  var c=document.createElement('canvas'); c.width=w; c.height=h;
+  var g=c.getContext('2d'), i, pad=6;
+  for(i=0;i<puff;i++){
+    var px=w*0.5+(RNG()*2-1)*w*spread;
+    var py=h*lift-Math.pow(RNG(),1.25)*h*(lift-0.22);
+    var rmax=Math.min(px-pad,w-pad-px,py-pad,h-pad-py);
+    var r=Math.min(h*(0.15+RNG()*0.21),rmax);
+    if(r<5) continue;
+    var gr=g.createRadialGradient(px,py-r*0.18,r*0.05,px,py,r);
+    gr.addColorStop(0,'rgba(255,255,255,0.98)');
+    gr.addColorStop(0.5,'rgba(255,255,255,0.72)');
+    gr.addColorStop(0.82,'rgba(255,255,255,0.22)');
+    gr.addColorStop(1,'rgba(255,255,255,0)');
+    g.fillStyle=gr; g.beginPath(); g.arc(px,py,r,0,6.283185); g.fill();
+  }
+  if(flat>0){
+    g.globalCompositeOperation='destination-out';
+    var fg=g.createLinearGradient(0,h*0.66,0,h);
+    fg.addColorStop(0,'rgba(0,0,0,0)'); fg.addColorStop(1,'rgba(0,0,0,1)');
+    g.fillStyle=fg; g.fillRect(0,h*0.66,w,h*0.34);
+    g.globalCompositeOperation='source-over';
+  }
+  return c;
+}
+var SPR=[], SPRSOFT=[];
+(function(){
+  /* 全スプライトを同じ画布寸法にして、着色キャッシュの再利用で再確保が起きないようにする */
+  for(var i=0;i<5;i++) SPR.push(makeCloudSprite(272,150,16,1,0.30,0.72));
+  for(var j=0;j<4;j++) SPRSOFT.push(makeCloudSprite(272,150,22,0,0.38,0.62));
+})();
+
+/* ---------- 着色キャッシュ ---------- */
+var tintCache=new Map();
+var QSTEP=10;
+/* 量子化した色そのものを焼き込む。鍵と中身が一対一になり、
+   キャッシュの履歴に依存しない＝同じ t なら常に同じ絵になる。 */
+function qc(c){
+  return [clamp(Math.round(c[0]/QSTEP)*QSTEP,0,255),
+          clamp(Math.round(c[1]/QSTEP)*QSTEP,0,255),
+          clamp(Math.round(c[2]/QSTEP)*QSTEP,0,255)];
+}
+var TINTMAX=160;
+var TSTAT={builds:0};
+function tinted(sprite,key,cTop,cBot){
+  var a=qc(cTop), b=qc(cBot);
+  var k=key+'|'+a[0]+','+a[1]+','+a[2]+'|'+b[0]+','+b[1]+','+b[2];
+  var c=tintCache.get(k);
+  if(c) return c;
+  if(tintCache.size>=TINTMAX){
+    /* 最も古い項目の canvas を再利用する（確保し直さない） */
+    var oldK=tintCache.keys().next().value;
+    c=tintCache.get(oldK); tintCache.delete(oldK);
+    if(c.width!==sprite.width||c.height!==sprite.height){ c.width=sprite.width; c.height=sprite.height; }
+    else c.getContext('2d').clearRect(0,0,c.width,c.height);
+  } else {
+    c=document.createElement('canvas'); c.width=sprite.width; c.height=sprite.height;
+  }
+  var g=c.getContext('2d');
+  TSTAT.builds++;
+  g.globalCompositeOperation='source-over';
+  g.drawImage(sprite,0,0);
+  g.globalCompositeOperation='source-in';
+  var lg=g.createLinearGradient(0,0,0,c.height);
+  lg.addColorStop(0,rgb(a)); lg.addColorStop(1,rgb(b));
+  g.fillStyle=lg; g.fillRect(0,0,c.width,c.height);
+  tintCache.set(k,c);
+  return c;
+}
+
+/* ---------- ビルボード群（奥行きのある「上空を飛び越える」表現） ---------- */
+function makeField(n,xs,zn,zf,hmax){
+  var a=[],i;
+  for(i=0;i<n;i++){
+    a.push({ax:(RNG()*2-1)*xs, z0:zn+RNG()*(zf-zn), h:(hmax?RNG()*hmax:0),
+            s:0.55+RNG()*0.95, r:RNG(), r2:RNG(), r3:RNG(), r4:RNG()});
+  }
+  return a;
+}
+var _ord=[], _pool=[], _preA=[], _preB=[];
+function _cmpZ(p,q){ return q.z-p.z; }
+function drawField(g,items,t,cfg,fn){
+  if(OFF.field) return;
+  var zn=cfg.zn, zf=cfg.zf, span=zf-zn, i, it, z, e;
+  _ord.length=0;
+  for(i=0;i<items.length;i++){
+    it=items[i];
+    z=wrap(it.z0-t*cfg.speed, zn, zf);
+    e=_pool[i]; if(!e){ e={it:null,z:0}; _pool[i]=e; }
+    e.it=it; e.z=z; _ord.push(e);
+  }
+  _ord.sort(_cmpZ);
+  for(i=0;i<_ord.length;i++){
+    it=_ord[i].it; z=_ord[i].z;
+    var sc=pscale(z);
+    var camx=(cfg.drift||0)*Math.sin(t*0.13)+(cfg.drift||0)*0.5*Math.sin(t*0.29+1.7);
+    var x=W*0.5+(it.ax-camx)*sc;
+    var y=cfg.hor+(CAMH-(it.h+(cfg.hAdd||0)))*sc;
+    if(x<-900*sc-400||x>W+900*sc+400) continue;
+    if(y<-1400) continue;
+    var dep=(z-zn)/span;                       // 0=手前 1=奥
+    var nf=(cfg.nearFade===undefined?0.03:cfg.nearFade);
+    var al=smooth(zf,zf-span*0.30,z)*smooth(zn,zn+span*nf,z);
+    if(al<=0.004) continue;
+    fn(g,x,y,sc,al,dep,it,z);
+  }
+}
+
+/* ---------- 空 ---------- */
+var STARS=[]; (function(){ for(var i=0;i<190;i++) STARS.push([RNG(),RNG(),RNG(),RNG()]); })();
+
+function drawSky(g,si,t,hor,ss){
+  if(OFF.sky){ g.fillStyle='#345'; g.fillRect(0,0,W,H); return; }
+  var S=SCENES[si];
+  var s0=seasonTint(S.sky[0],ss), s1=seasonTint(S.sky[1],ss),
+      s2=seasonTint(S.sky[2],ss), s3=seasonTint(S.sky[3],ss);
+  var gr=g.createLinearGradient(0,0,0,hor+130);
+  gr.addColorStop(0,rgb(s0)); gr.addColorStop(0.40,rgb(s1));
+  gr.addColorStop(0.77,rgb(s2)); gr.addColorStop(1,rgb(s3));
+  /* 地上のある景では地表塗りが水平線以下を覆うので、空はそこまでで足りる */
+  g.fillStyle=gr; g.fillRect(0,0,W,si===0?H:Math.min(H,hor+22));
+
+  /* 夜景: 星とオーロラ */
+  if(si===4){
+    var i,st,tw;
+    for(i=0;i<STARS.length;i++){
+      st=STARS[i];
+      var sy=st[1]*(hor-30);
+      tw=0.35+0.65*Math.abs(Math.sin(t*(0.7+st[2]*2.2)+st[3]*9.0));
+      var sa=tw*(0.30+st[2]*0.70)*smooth(hor-10,hor-220,sy);
+      g.fillStyle='rgba(255,255,255,'+sa.toFixed(3)+')';
+      var sr=0.6+st[2]*1.5;
+      g.fillRect(st[0]*W, sy, sr, sr);
+    }
+    g.globalCompositeOperation='lighter';
+    for(i=0;i<3;i++){
+      var base=hor-330+i*54, amp=44+i*20, hgt=210+i*40;
+      var c1=i===1?[120,255,196]:(i===2?[150,190,255]:[110,240,180]);
+      var cs=c1[0]+','+c1[1]+','+c1[2];
+      var ag=g.createLinearGradient(0,0,0,hgt);
+      ag.addColorStop(0,'rgba('+cs+',0)');
+      ag.addColorStop(0.20,'rgba('+cs+',0.24)');
+      ag.addColorStop(0.52,'rgba('+cs+',0.12)');
+      ag.addColorStop(1,'rgba('+cs+',0)');
+      var stp=10;
+      for(var x=-stp;x<=W+stp;x+=stp){
+        var yy=base+Math.sin(x*0.0042+t*0.36+i*2.1)*amp+Math.sin(x*0.0011-t*0.22+i)*amp*0.7;
+        g.save(); g.translate(x,yy); g.fillStyle=ag; g.fillRect(0,0,stp,hgt); g.restore();
+      }
+    }
+    g.globalCompositeOperation='source-over';
+  }
+
+  /* 太陽 / 月 */
+  var su=S.sun;
+  var sunc=seasonTint(su.col,ss), glowc=seasonTint(su.glow,ss);
+  g.globalCompositeOperation='lighter';
+  var gg=g.createRadialGradient(su.x,su.y,0,su.x,su.y,su.r*9.5);
+  gg.addColorStop(0,rgba(glowc,0.58*su.i));
+  gg.addColorStop(0.16,rgba(glowc,0.22*su.i));
+  gg.addColorStop(0.45,rgba(glowc,0.07*su.i));
+  gg.addColorStop(1,rgba(glowc,0));
+  var gr9=su.r*9.5;
+  g.fillStyle=gg;
+  g.fillRect(clamp(su.x-gr9,0,W),clamp(su.y-gr9,0,H),
+             Math.min(gr9*2,W),Math.min(gr9*2,H));
+  if(su.band>0.2){
+    var bg=g.createLinearGradient(0,su.y-120,0,su.y+150);
+    bg.addColorStop(0,rgba(glowc,0));
+    bg.addColorStop(0.5,rgba(glowc,0.12*su.band));
+    bg.addColorStop(1,rgba(glowc,0));
+    g.fillStyle=bg; g.fillRect(0,su.y-120,W,270);
+  }
+  g.globalCompositeOperation='source-over';
+  var dg=g.createRadialGradient(su.x,su.y,0,su.x,su.y,su.r);
+  dg.addColorStop(0,rgb(sunc)); dg.addColorStop(0.72,rgba(sunc,0.96)); dg.addColorStop(1,rgba(sunc,0));
+  g.fillStyle=dg; g.beginPath(); g.arc(su.x,su.y,su.r,0,6.283185); g.fill();
+  if(si===4){ /* 月の陰 */
+    g.fillStyle='rgba(176,196,226,0.20)';
+    g.beginPath(); g.arc(su.x+9,su.y-6,su.r*0.74,0,6.283185); g.fill();
+    g.globalCompositeOperation='destination-over';
+    g.globalCompositeOperation='source-over';
+  }
+}
+
+/* ---------- 遠景の稜線（正弦合成・継ぎ目なし） ---------- */
+function ridgeYAt(x,cfg,t){
+  var y=0,k,o;
+  for(k=0;k<cfg.oct.length;k++){
+    o=cfg.oct[k];
+    var ph=(x+t*cfg.speed)*o.f+o.p;
+    y += o.abs ? o.a*Math.abs(Math.sin(ph)) : o.a*Math.sin(ph);
+  }
+  return y;
+}
+function drawRidge(g,t,hor,ss,cfg){
+  if(OFF.ridge) return;
+  var step=10, pts=[], x, minY=1e9, i;
+  var base=hor+cfg.base;
+  for(x=-step;x<=W+step;x+=step){
+    var y=base-ridgeYAt(x,cfg,t);
+    pts.push(y); if(y<minY) minY=y;
+  }
+  var haze=cfg.haze||[210,224,236];
+  var colTop=mixc(cfg.top?cfg.top:(cfg.useVeg?ss.veg:ss.rock), haze, cfg.fog);
+  var colBot=mixc(cfg.bot?cfg.bot:ss.veg, haze, cfg.fog*0.72);
+  if(cfg.shade){ colTop=mixc(colTop,[16,20,28],cfg.shade); colBot=mixc(colBot,[12,16,22],cfg.shade); }
+  var snowAmt=clamp((cfg.snowBias||0)+ss.snow*(cfg.snowMul===undefined?1:cfg.snowMul),0,1);
+  var snowCol=mixc([248,252,255],haze,cfg.fog*0.85);
+  var botY=(cfg.cut===undefined)?(H+10):(hor+cfg.cut);
+  g.beginPath();
+  g.moveTo(-step,pts[0]);
+  for(i=1;i<pts.length;i++) g.lineTo(-step+i*step,pts[i]);
+  g.lineTo(W+step,botY); g.lineTo(-step,botY); g.closePath();
+  var gr=g.createLinearGradient(0,minY,0,base+(cfg.deep||160));
+  var band=0.06+snowAmt*0.42;
+  gr.addColorStop(0,rgb(snowAmt>0.05?snowCol:colTop));
+  gr.addColorStop(clamp(band,0.02,0.85),rgb(colTop));
+  gr.addColorStop(1,rgb(colBot));
+  g.fillStyle=gr; g.fill();
+}
+
+/* ---------- 共通ユーティリティ ---------- */
+function camX(t,drift){ return drift*Math.sin(t*0.13)+drift*0.5*Math.sin(t*0.29+1.7); }
+function P(ax,h,z,t,drift,hor){
+  var sc=pscale(z);
+  return [W*0.5+(ax-camX(t,drift))*sc, hor+(CAMH-h)*sc, sc];
+}
+function drawCloudLayer(g,items,t,hor,ss,cfg){
+  if(OFF.clouds) return;
+  var arr=cfg.soft?SPRSOFT:SPR, b, q;
+  /* 着色済みスプライトは層ごとに一度だけ解決する（雲ごとだとゴミが増えて詰まる） */
+  var pre=_preA, pre2=_preB;
+  for(b=0;b<2;b++){
+    var haz=(b?0.82:0.24)*cfg.fog;
+    var ct=mixc(seasonTint(cfg.top,ss),cfg.haze,haz);
+    var cb=mixc(seasonTint(cfg.bot,ss),cfg.haze,haz*0.88);
+    var dst=b?pre2:pre;
+    dst.length=0;
+    for(q=0;q<arr.length;q++) dst.push(tinted(arr[q],(cfg.soft?'s':'c')+q+'_'+b,ct,cb));
+  }
+  var ratio=arr[0].height/arr[0].width;
+  drawField(g,items,t,{speed:cfg.speed,zn:cfg.zn,zf:cfg.zf,hor:hor,drift:cfg.drift||0,
+    hAdd:cfg.hAdd||0, nearFade:(cfg.nearFade===undefined?0.34:cfg.nearFade)},
+  function(gg,x,y,sc,al,dep,it){
+    var idx=(it.r*arr.length)|0; if(idx>=arr.length) idx=arr.length-1;
+    var w=cfg.size*sc*it.s;
+    if(w<3) return;
+    var h=w*ratio;
+    var fade=1-0.45*Math.pow(dep,0.85);
+    gg.globalAlpha=clamp(al*cfg.alpha*fade*(0.55+0.45*it.r2),0,1);
+    gg.drawImage(dep<0.5?pre[idx]:pre2[idx],x-w*0.5,y-h*0.78,w,h);
+  });
+  g.globalAlpha=1;
+}
+function drawRibbon(g,t,hor,ss,cfg){
+  var N=44,i,z,sc,ax,pl=[],pr=[];
+  for(i=0;i<=N;i++){
+    var u=i/N;
+    z=cfg.zn+(cfg.zf-cfg.zn)*Math.pow(u,2.0);
+    sc=pscale(z);
+    ax=cfg.x0+Math.sin((z+t*cfg.speed)*0.0042+cfg.ph)*cfg.wig
+             +Math.sin((z+t*cfg.speed)*0.0011+cfg.ph*2)*cfg.wig*0.8;
+    var hw=cfg.w*0.5*(1+0.35*Math.sin((z+t*cfg.speed)*0.003));
+    var cx=camX(t,cfg.drift||0);
+    var y=hor+CAMH*sc;
+    pl.push([W*0.5+(ax-hw-cx)*sc,y]);
+    pr.push([W*0.5+(ax+hw-cx)*sc,y]);
+  }
+  g.beginPath();
+  g.moveTo(pl[N][0],pl[N][1]);
+  for(i=N-1;i>=0;i--) g.lineTo(pl[i][0],pl[i][1]);
+  for(i=0;i<=N;i++) g.lineTo(pr[i][0],pr[i][1]);
+  g.closePath();
+  var gr=g.createLinearGradient(0,hor,0,H);
+  gr.addColorStop(0,rgb(cfg.far)); gr.addColorStop(1,rgb(cfg.near));
+  g.fillStyle=gr; g.fill();
+  if(cfg.spec){
+    g.globalCompositeOperation='lighter';
+    var sg=g.createLinearGradient(0,hor,0,H);
+    sg.addColorStop(0,rgba(cfg.spec,0.55)); sg.addColorStop(0.5,rgba(cfg.spec,0.18));
+    sg.addColorStop(1,rgba(cfg.spec,0));
+    g.fillStyle=sg; g.fill();
+    g.globalCompositeOperation='source-over';
+  }
+}
+function horizonHaze(g,hor,col,k){
+  var hz=g.createLinearGradient(0,hor-92,0,hor+126);
+  hz.addColorStop(0,rgba(col,0));
+  hz.addColorStop(0.24,rgba(col,k*0.42));
+  hz.addColorStop(0.44,rgba(col,k));
+  hz.addColorStop(0.68,rgba(col,k*0.30));
+  hz.addColorStop(1,rgba(col,0));
+  g.fillStyle=hz; g.fillRect(0,hor-92,W,220);
+}
+function treeBands(n,cA,cB,haze,maxHaz){
+  var out=[],b;
+  for(b=0;b<n;b++){
+    var hz=Math.pow(b/(n-1),0.85)*maxHaz;
+    var c1=mixc(cA,haze,hz), c2=mixc(cB,haze,hz);
+    out.push([rgb(c1),rgb(c2),rgb(mixc(c1,[40,34,30],0.45))]);
+  }
+  return out;
+}
+function treeShape(g,x,y,s,c1,c2,trunk,kind,r){
+  if(s<1.2) return;
+  g.fillStyle=trunk;
+  g.fillRect(x-s*0.08,y-s*0.55,s*0.16,s*0.6);
+  if(kind==='pine'){
+    g.fillStyle=c1;
+    for(var k=0;k<3;k++){
+      var yy=y-s*0.4-k*s*0.42, ww=s*(0.52-k*0.13);
+      g.beginPath(); g.moveTo(x,yy-s*0.62); g.lineTo(x+ww,yy); g.lineTo(x-ww,yy); g.closePath(); g.fill();
+    }
+  } else {
+    g.fillStyle=c1;
+    g.beginPath(); g.arc(x,y-s*0.82,s*0.46,0,6.283185); g.fill();
+    g.fillStyle=c2;
+    g.beginPath(); g.arc(x-s*0.2,y-s*0.98,s*0.3,0,6.283185); g.fill();
+    g.beginPath(); g.arc(x+s*0.24,y-s*0.74,s*0.26,0,6.283185); g.fill();
+  }
+}
+
+/* ---------- 各景のデータ（固定シードで一度だけ生成） ---------- */
+var F={};
+F.deck   = makeField(46,1000,240,1600,26);
+F.deckLo = makeField(20,1100,150,900,20);
+F.tower  = makeField(18,820,300,1600,230);
+F.midCld = makeField(22,900,250,1400,200);
+F.nearCld= makeField(5,620,150,430,140);
+F.trees1 = makeField(190,1200,170,1400,0);
+F.waves  = makeField(210,1500,150,1400,0);
+F.isles  = makeField(30,1100,200,1400,0);
+F.city   = makeField(150,900,170,1400,0);
+F.ctrees = makeField(130,1100,170,1300,0);
+F.pines  = makeField(170,1200,170,1400,0);
+F.peaks0 = makeField(14,620,180,980,0);
+F.birds  = makeField(9,720,400,1300,150);
+
+var RG={
+ cloudsea:[
+  {base:16, speed:9,  oct:[{a:74,f:0.0088,p:1.1,abs:1},{a:26,f:0.0231,p:3.3},{a:10,f:0.058,p:0.4}],
+   cut:200, fog:0.74, deep:150, snowBias:0.62, snowMul:0.3, haze:[238,206,196], top:[130,128,158], bot:[112,108,140]},
+  {base:30, speed:16, oct:[{a:58,f:0.0139,p:2.6,abs:1},{a:20,f:0.0362,p:1.9},{a:8,f:0.081,p:2.2}],
+   cut:200, fog:0.58, deep:170, snowBias:0.46, snowMul:0.3, haze:[240,206,192], top:[118,114,148], bot:[100,96,130]}
+ ],
+ mount:[
+  {base:10, speed:8,  oct:[{a:104,f:0.0094,p:0.7,abs:1},{a:40,f:0.0247,p:2.2},{a:15,f:0.061,p:4.1}],
+   cut:10, fog:0.62, deep:210, snowBias:0.48, snowMul:0.6, haze:[206,228,240], top:[120,132,156]},
+  {base:22, speed:15, oct:[{a:92,f:0.0132,p:2.9,abs:1},{a:34,f:0.0331,p:0.9},{a:13,f:0.078,p:2.0}],
+   cut:10, fog:0.42, deep:230, snowBias:0.22, snowMul:0.7, haze:[204,226,238], top:[108,118,140]},
+  {base:36, speed:27, oct:[{a:78,f:0.0176,p:4.4,abs:1},{a:30,f:0.0423,p:3.1},{a:11,f:0.095,p:1.2}],
+   cut:10, fog:0.24, deep:250, snowBias:0.06, snowMul:0.6, haze:[202,224,236], top:[96,106,126]},
+  {base:388,speed:76, oct:[{a:98,f:0.0071,p:1.5,abs:1},{a:36,f:0.0190,p:5.0},{a:14,f:0.050,p:2.8}],
+   fog:0.05, deep:340, snowBias:0.0, snowMul:0.30, haze:[200,222,236], shade:0.42, useVeg:1}
+ ],
+ coast:[
+  {base:6,  speed:8,  oct:[{a:58,f:0.0081,p:3.1,abs:1},{a:20,f:0.0224,p:1.4},{a:8,f:0.052,p:4.6}],
+   cut:10, fog:0.80, deep:120, snowBias:0.12, snowMul:0.4, haze:[214,238,248], top:[122,142,166]}
+ ],
+ town:[
+  {base:10, speed:8,  oct:[{a:92,f:0.0086,p:2.2,abs:1},{a:32,f:0.0229,p:0.6},{a:13,f:0.057,p:3.7}],
+   cut:10, fog:0.70, deep:190, snowBias:0.20, snowMul:0.5, haze:[250,186,132], top:[118,86,96]},
+  {base:24, speed:16, oct:[{a:70,f:0.0128,p:4.8,abs:1},{a:26,f:0.0338,p:2.4},{a:10,f:0.074,p:0.9}],
+   cut:10, fog:0.48, deep:220, snowBias:0.04, snowMul:0.5, haze:[248,178,124], top:[92,64,84]},
+  {base:396,speed:74, oct:[{a:86,f:0.0068,p:0.9,abs:1},{a:32,f:0.0181,p:3.4},{a:12,f:0.047,p:1.7}],
+   fog:0.04, deep:330, snowBias:0.0, snowMul:0.3, haze:[248,178,124], shade:0.62}
+ ],
+ winter:[
+  {base:8,  speed:8,  oct:[{a:118,f:0.0090,p:1.9,abs:1},{a:44,f:0.0236,p:3.6},{a:17,f:0.059,p:0.8}],
+   cut:10, fog:0.62, deep:210, snowBias:0.60, snowMul:0.6, haze:[122,152,190], top:[150,172,204], bot:[70,88,124]},
+  {base:22, speed:16, oct:[{a:102,f:0.0126,p:0.3,abs:1},{a:38,f:0.0329,p:2.7},{a:15,f:0.076,p:4.4}],
+   cut:10, fog:0.42, deep:240, snowBias:0.66, snowMul:0.6, haze:[118,148,186], top:[178,198,226], bot:[52,68,104]},
+  {base:38, speed:30, oct:[{a:88,f:0.0172,p:3.9,abs:1},{a:34,f:0.0441,p:1.1},{a:13,f:0.099,p:2.3}],
+   cut:10, fog:0.22, deep:270, snowBias:0.74, snowMul:0.6, haze:[114,144,184], top:[206,222,244], bot:[34,48,80]},
+  {base:392,speed:74, oct:[{a:92,f:0.0066,p:2.6,abs:1},{a:34,f:0.0176,p:4.9},{a:13,f:0.046,p:0.5}],
+   fog:0.04, deep:330, snowBias:0.80, snowMul:0.4, haze:[114,144,184], top:[228,240,252], bot:[26,38,66], shade:0.34}
+ ]
+};
+
+/* ============ 景 0 : 雲海（夜明け） ============ */
+function scene0(g,t,hor,ss){
+  var i;
+  for(i=0;i<RG.cloudsea.length;i++) drawRidge(g,t,hor,ss,RG.cloudsea[i]);
+  drawCloudLayer(g,F.deck,t,hor,ss,{speed:150,zn:240,zf:1600,size:172,alpha:0.95,fog:0.72,
+    top:[255,238,216],bot:[150,138,182],haze:SCENES[0].haze,drift:34});
+  drawCloudLayer(g,F.tower,t,hor,ss,{speed:130,zn:300,zf:1600,size:330,alpha:0.72,fog:0.64,soft:1,
+    top:[255,236,210],bot:[168,152,196],haze:SCENES[0].haze,drift:34});
+  drawCloudLayer(g,F.deckLo,t,hor,ss,{speed:230,zn:150,zf:900,size:205,alpha:0.62,fog:0.35,
+    nearFade:0.46,top:[255,248,236],bot:[176,160,198],haze:SCENES[0].haze,drift:34});
+  /* 遠くを行く鳥の群れ */
+  drawField(g,F.birds,t,{speed:44,zn:400,zf:1300,hor:hor,drift:34},function(gg,x,y,sc,al,dep,it){
+    var s=Math.max(1.2,7*sc*it.s);
+    gg.globalAlpha=al*0.42;
+    gg.strokeStyle='rgba(60,54,70,0.9)'; gg.lineWidth=Math.max(0.7,s*0.13);
+    var fw=Math.sin(t*4.2+it.r*9)*0.5;
+    gg.beginPath();
+    gg.moveTo(x-s,y+fw*s*0.5); gg.quadraticCurveTo(x-s*0.4,y-s*0.35,x,y);
+    gg.quadraticCurveTo(x+s*0.4,y-s*0.35,x+s,y+fw*s*0.5);
+    gg.stroke();
+  });
+  g.globalAlpha=1;
+}
+
+/* ============ 景 1 : 山脈 ============ */
+function scene1(g,t,hor,ss){
+  var i;
+  for(i=0;i<3;i++) drawRidge(g,t,hor,ss,RG.mount[i]);
+  /* 谷底 */
+  var vf=mixc(ss.veg,SCENES[1].haze,0.62);
+  var vg=g.createLinearGradient(0,hor,0,H);
+  vg.addColorStop(0,rgb(SCENES[1].haze));
+  vg.addColorStop(0.09,rgb(vf));
+  vg.addColorStop(0.34,rgb(mixc(ss.veg,SCENES[1].haze,0.26)));
+  vg.addColorStop(1,rgb(mixc(ss.veg,[22,38,24],0.42)));
+  g.fillStyle=vg; g.fillRect(0,hor,W,H-hor);
+  /* 川 */
+  drawRibbon(g,t,hor,ss,{zn:170,zf:1400,x0:-60,wig:230,w:96,ph:1.2,speed:110,drift:30,
+    far:mixc([182,216,234],SCENES[1].haze,0.62),near:[58,126,176],
+    spec:seasonTint([255,250,228],ss)});
+  /* 森 */
+  var TB1=treeBands(6,ss.veg,ss.veg2,SCENES[1].haze,0.68);
+  drawField(g,F.trees1,t,{speed:110,zn:170,zf:1400,hor:hor,drift:30},function(q,x,y,sc,al,dep,it){
+    var s=30*sc*it.s;
+    if(s<1.1||x<-70||x>W+70) return;
+    var bd=TB1[Math.min(5,(dep*6)|0)];
+    q.globalAlpha=al;
+    treeShape(q,x,y,s,bd[0],bd[1],bd[2],it.r3<0.46?'pine':'broad',it.r4);
+  });
+  g.globalAlpha=1;
+  horizonHaze(g,hor,SCENES[1].haze,0.92);
+  drawCloudLayer(g,F.midCld,t,hor,ss,{speed:168,zn:250,zf:1400,hAdd:190,size:300,alpha:0.85,fog:0.58,soft:1,
+    top:[255,255,255],bot:[206,222,236],haze:SCENES[1].haze,drift:30});
+  drawRidge(g,t,hor,ss,RG.mount[3]);
+}
+
+/* ============ 景 2 : 大海原と島 ============ */
+function scene2(g,t,hor,ss){
+  drawRidge(g,t,hor,ss,RG.coast[0]);
+  /* 海面 */
+  var deep=mixc([16,72,132],ss.tint,ss.ts*0.35);
+  var shal=mixc([96,186,216],ss.tint,ss.ts*0.35);
+  var sg=g.createLinearGradient(0,hor,0,H);
+  sg.addColorStop(0,rgb(SCENES[2].haze));
+  sg.addColorStop(0.08,rgb(mixc(shal,SCENES[2].haze,0.55)));
+  sg.addColorStop(0.30,rgb(shal)); sg.addColorStop(1,rgb(deep));
+  g.fillStyle=sg; g.fillRect(0,hor,W,H-hor);
+  /* 波 */
+  var foam=seasonTint([236,250,255],ss);
+  drawField(g,F.waves,t,{speed:190,zn:150,zf:1400,hor:hor,drift:26},function(gg,x,y,sc,al,dep,it){
+    var ww=(26+it.s*54)*sc, hh=Math.max(0.8,1.5*sc);
+    if(ww<1) return;
+    gg.globalAlpha=al*0.42*(0.35+0.65*it.r2);
+    gg.fillStyle=rgb(foam);
+    gg.beginPath(); gg.ellipse(x,y,ww,hh,0,0,6.283185); gg.fill();
+  });
+  g.globalAlpha=1;
+  /* 太陽の反射（水面のきらめき） */
+  var su=SCENES[2].sun, i;
+  g.globalCompositeOperation='lighter';
+  for(i=0;i<170;i++){
+    var q=GLIT[i];
+    var z=wrap(q[0]-t*190,150,1400), sc=pscale(z);
+    var x=su.x+(q[1]*0.42)*sc*1.6, y=hor+CAMH*sc;
+    if(y>H+20||x<-40||x>W+40) continue;
+    var tw=0.30+0.70*Math.abs(Math.sin(t*(3.0+q[2]*5.0)+q[3]*9.4));
+    var a=tw*smooth(1400,1100,z)*smooth(150,260,z)*0.70;
+    var s=Math.max(0.8,(1.4+q[2]*3.2)*sc);
+    g.globalAlpha=clamp(a,0,1);
+    g.fillStyle=rgba(seasonTint(su.col,ss),1);
+    g.beginPath(); g.ellipse(x,y,s*2.0,s*0.5,0,0,6.283185); g.fill();
+  }
+  g.globalCompositeOperation='source-over'; g.globalAlpha=1;
+  /* 島 */
+  var TB2=treeBands(6,ss.veg,ss.veg2,SCENES[2].haze,0.53);
+  drawField(g,F.isles,t,{speed:110,zn:200,zf:1400,hor:hor,drift:26},function(gg,x,y,sc,al,dep,it){
+    var w=(38+it.s*54)*sc, h=w*(0.26+it.r3*0.18);
+    if(w<4) return;
+    var haz=Math.pow(dep,0.8)*0.66;
+    gg.globalAlpha=al;
+    gg.fillStyle=rgb(mixc([236,224,196],SCENES[2].haze,haz));
+    gg.beginPath(); gg.ellipse(x,y,w*0.62,h*0.52,0,0,6.283185); gg.fill();
+    gg.fillStyle=rgb(mixc(ss.veg,SCENES[2].haze,haz));
+    gg.beginPath();
+    gg.moveTo(x-w*0.48,y);
+    gg.quadraticCurveTo(x-w*0.22,y-h*1.5,x+w*0.02,y-h*0.9);
+    gg.quadraticCurveTo(x+w*0.26,y-h*2.1,x+w*0.48,y);
+    gg.closePath(); gg.fill();
+    if(w>52){
+      var k;
+      var bd2=TB2[Math.min(5,(dep*6)|0)];
+      for(k=0;k<4;k++){
+        var tx=x+((k/3)-0.5)*w*0.6, ts=w*0.10;
+        treeShape(gg,tx,y-h*0.2,ts,bd2[0],bd2[1],bd2[2],'pine',it.r4);
+      }
+    }
+  });
+  g.globalAlpha=1;
+  horizonHaze(g,hor,SCENES[2].haze,0.85);
+  drawCloudLayer(g,F.midCld,t,hor,ss,{speed:176,zn:250,zf:1400,hAdd:190,size:290,alpha:0.78,fog:0.52,soft:1,
+    top:[255,255,255],bot:[214,232,244],haze:SCENES[2].haze,drift:26});
+}
+var GLIT=[]; (function(){ for(var i=0;i<170;i++) GLIT.push([150+RNG()*1250,(RNG()*2-1)*150,RNG(),RNG()]); })();
+
+/* ============ 景 3 : 夕暮れの街（秋） ============ */
+function scene3(g,t,hor,ss){
+  var i;
+  for(i=0;i<2;i++) drawRidge(g,t,hor,ss,RG.town[i]);
+  var gnd=mixc(mixc(ss.veg,[70,44,40],0.35),SCENES[3].haze,0.22);
+  var gg2=g.createLinearGradient(0,hor,0,H);
+  gg2.addColorStop(0,rgb(SCENES[3].haze));
+  gg2.addColorStop(0.10,rgb(mixc(gnd,SCENES[3].haze,0.42)));
+  gg2.addColorStop(1,rgb(mixc(gnd,[26,18,32],0.45)));
+  g.fillStyle=gg2; g.fillRect(0,hor,W,H-hor);
+  drawRibbon(g,t,hor,ss,{zn:170,zf:1400,x0:-70,wig:230,w:104,ph:2.4,speed:110,drift:24,
+    far:[250,196,140],near:[52,52,96],spec:[255,168,86]});
+  /* 道路 */
+  for(i=0;i<3;i++){
+    drawRibbon(g,t,hor,ss,{zn:170,zf:1300,x0:150+i*280,wig:90,w:15,ph:i*2.1,speed:110,drift:24,
+      far:mixc([248,200,150],SCENES[3].haze,0.3),near:[72,60,72]});
+  }
+  /* 紅葉の森 */
+  var TB3=[treeBands(6,mixc(ss.veg,[214,72,48],0.10),ss.veg2,SCENES[3].haze,0.60),
+           treeBands(6,mixc(ss.veg,[214,72,48],0.30),ss.veg2,SCENES[3].haze,0.60),
+           treeBands(6,mixc(ss.veg2,[214,72,48],0.38),ss.veg2,SCENES[3].haze,0.60)];
+  drawField(g,F.ctrees,t,{speed:110,zn:170,zf:1300,hor:hor,drift:24},function(q,x,y,sc,al,dep,it){
+    var s=32*sc*it.s;
+    if(s<1.2||x<-60||x>W+60) return;
+    var bd=TB3[(it.r4*3)|0>2?2:(it.r4*3)|0][Math.min(5,(dep*6)|0)];
+    q.globalAlpha=al;
+    treeShape(q,x,y,s,bd[0],bd[1],bd[2],it.r3<0.2?'pine':'broad',it.r4);
+  });
+  g.globalAlpha=1;
+  /* 街 */
+  drawCityField(g,t,hor,ss);
+  horizonHaze(g,hor,SCENES[3].haze,0.88);
+  drawCloudLayer(g,F.midCld,t,hor,ss,{speed:172,zn:250,zf:1400,hAdd:190,size:310,alpha:0.80,fog:0.60,soft:1,
+    top:[255,226,190],bot:[168,108,120],haze:SCENES[3].haze,drift:24});
+  drawRidge(g,t,hor,ss,RG.town[2]);
+}
+function drawCityField(g,t,hor,ss){
+  /* 壁と屋根の色は帯ごとに先に作る */
+  var CB=[],v,b;
+  for(v=0;v<3;v++){
+    CB.push([]);
+    for(b=0;b<6;b++){
+      var hz=Math.pow(b/5,0.85)*0.70;
+      CB[v].push([rgb(mixc(mixc([74,62,80],[168,120,110],v*0.25),SCENES[3].haze,hz)),
+                  rgb(mixc(mixc([120,96,104],[208,150,120],v*0.25),SCENES[3].haze,hz*0.9)),
+                  clamp(1-hz,0,1)]);
+    }
+  }
+  var LITS=rgb(seasonTint([255,214,134],ss));
+  drawField(g,F.city,t,{speed:110,zn:170,zf:1400,hor:hor,drift:24},function(q,x,y,sc,al,dep,it,z){
+    var bw=13+it.s*19, bh=24+it.r2*86, bd=bw*1.1;
+    var sc2=pscale(z+bd);
+    var cx=camX(t,24);
+    var xl=W*0.5+(it.ax-bw-cx)*sc, xr=W*0.5+(it.ax+bw-cx)*sc;
+    var yb=y, yt=hor+(CAMH-bh)*sc;
+    var w=xr-xl;
+    if(w<1.0||xr<-40||xl>W+40) return;
+    var vi=(it.r3*3)|0; if(vi>2) vi=2;
+    var cb=CB[vi][Math.min(5,(dep*6)|0)];
+    var wall=cb[0], roof=cb[1], vis=cb[2];
+    q.globalAlpha=al;
+    /* 屋根（奥側の面） */
+    var xl2=W*0.5+(it.ax-bw-cx)*sc2, xr2=W*0.5+(it.ax+bw-cx)*sc2;
+    var yt2=hor+(CAMH-bh)*sc2;
+    q.fillStyle=roof;
+    q.beginPath(); q.moveTo(xl,yt); q.lineTo(xr,yt); q.lineTo(xr2,yt2); q.lineTo(xl2,yt2);
+    q.closePath(); q.fill();
+    /* 正面 */
+    q.fillStyle=wall;
+    q.fillRect(xl,yt,w,Math.max(1,yb-yt));
+    /* 灯り */
+    if(w>7){
+      var cols=clamp(Math.round(w/9),1,10), rows=clamp(Math.round((yb-yt)/11),1,16);
+      q.fillStyle=LITS;
+      for(var cI=0;cI<cols;cI++){
+        for(var rI=0;rI<rows;rI++){
+          var hsh=Math.sin((cI*12.9898+rI*78.233+it.r*43.5)*1.0)*43758.5453;
+          hsh=hsh-Math.floor(hsh);
+          if(hsh<0.42) continue;
+          var fk=0.82+0.18*Math.sin(t*2.1+hsh*30);
+          q.globalAlpha=al*fk*vis;
+          q.fillRect(xl+(cI+0.26)*(w/cols), yt+(rI+0.26)*((yb-yt)/rows),
+                     Math.max(1,w/cols*0.46), Math.max(1,(yb-yt)/rows*0.42));
+        }
+      }
+      q.globalAlpha=al;
+    }
+  });
+  g.globalAlpha=1;
+}
+
+/* ============ 景 4 : 雪の高峰（夜・オーロラ） ============ */
+function scene4(g,t,hor,ss){
+  var i;
+  for(i=0;i<3;i++) drawRidge(g,t,hor,ss,RG.winter[i]);
+  var gnd=mixc([210,224,240],[30,44,78],0.42);
+  var vg=g.createLinearGradient(0,hor,0,H);
+  vg.addColorStop(0,rgb(SCENES[4].haze));
+  vg.addColorStop(0.10,rgb(mixc(gnd,SCENES[4].haze,0.45)));
+  vg.addColorStop(1,rgb(mixc([232,240,250],[16,26,52],0.34)));
+  g.fillStyle=vg; g.fillRect(0,hor,W,H-hor);
+  /* 凍った湖 */
+  drawRibbon(g,t,hor,ss,{zn:170,zf:1400,x0:240,wig:190,w:170,ph:0.6,speed:110,drift:22,
+    far:mixc([150,180,214],SCENES[4].haze,0.5),near:[38,58,104],spec:[150,190,244]});
+  var TB4=treeBands(6,[28,52,58],[236,244,252],SCENES[4].haze,0.72);
+  drawField(g,F.pines,t,{speed:110,zn:170,zf:1400,hor:hor,drift:22},function(q,x,y,sc,al,dep,it){
+    var s=34*sc*it.s;
+    if(s<1.2||x<-60||x>W+60) return;
+    var bd=TB4[Math.min(5,(dep*6)|0)];
+    q.globalAlpha=al;
+    treeShape(q,x,y,s,bd[0],bd[1],bd[2],'pine',it.r4);
+    /* 積雪 */
+    if(s>4){
+      q.globalAlpha=al*0.85;
+      q.fillStyle=bd[1];
+      for(var k=0;k<3;k++){
+        var yy=y-s*0.4-k*s*0.42, ww=s*(0.52-k*0.13);
+        q.beginPath(); q.moveTo(x,yy-s*0.62); q.lineTo(x+ww*0.55,yy-s*0.18); q.lineTo(x-ww*0.55,yy-s*0.18);
+        q.closePath(); q.fill();
+      }
+    }
+  });
+  g.globalAlpha=1;
+  horizonHaze(g,hor,SCENES[4].haze,0.38);
+  drawCloudLayer(g,F.midCld,t,hor,ss,{speed:166,zn:250,zf:1400,hAdd:190,size:320,alpha:0.62,fog:0.66,soft:1,
+    top:[188,208,238],bot:[60,80,124],haze:SCENES[4].haze,drift:22});
+  drawRidge(g,t,hor,ss,RG.winter[3]);
+}
+
+var SCENEFN=[scene0,scene1,scene2,scene3,scene4];
+function horizonOf(si,t){
+  return 330+SCENES[si].horo+9*Math.sin(t*0.27)+5*Math.sin(t*0.41+1.0);
+}
+function drawWorld(g,si,t,ss){
+  var hor=horizonOf(si,t);
+  drawSky(g,si,t,hor,ss);
+  if(!OFF.land) SCENEFN[si](g,t,hor,ss);
+}
+
+/* =====================================================================
+   主人公と乗り物 — 巨大な白鶴に乗る旅人（後方斜め視点）
+   ===================================================================== */
+function wingPath(g,dir,fl,ph){
+  var tipX=dir*(252+14*Math.cos(ph)), tipY=-40-98*fl;
+  g.beginPath();
+  g.moveTo(dir*18,-18);
+  g.quadraticCurveTo(dir*104,-46-72*fl,tipX,tipY);              /* 前縁 */
+  g.quadraticCurveTo(dir*196,tipY+40+14*fl,dir*132,tipY+62+26*fl);
+  g.quadraticCurveTo(dir*74,10-18*fl,dir*30,26);                /* 後縁 */
+  g.quadraticCurveTo(dir*22,18,dir*14,2);
+  g.closePath();
+}
+function drawCrane(g,t,ss,si,lit){
+  var flapF=0.60, ph=t*Math.PI*2*flapF, fl=Math.sin(ph);
+  var body=[252,250,248], shade=[196,198,214];
+  body=mixc(body,lit,0.30); shade=mixc(shade,lit,0.22);
+  var d,dir;
+  /* 翼（左右） */
+  for(d=0;d<2;d++){
+    dir=d===0?-1:1;
+    wingPath(g,dir,fl,ph);
+    var wg=g.createLinearGradient(0,-120,0,60);
+    wg.addColorStop(0,rgb(mixc(body,[255,255,255],0.35)));
+    wg.addColorStop(0.55,rgb(body));
+    wg.addColorStop(1,rgb(mixc(shade,[120,126,150],0.35)));
+    g.fillStyle=wg; g.fill();
+    /* 風切羽の分節 */
+    g.save(); wingPath(g,dir,fl,ph); g.clip();
+    g.strokeStyle='rgba(126,132,158,0.42)'; g.lineWidth=1.6;
+    for(var k=1;k<=6;k++){
+      var u=k/7;
+      g.beginPath();
+      g.moveTo(dir*(20+232*u),lerp(-16,-40-98*fl,u)+6);
+      g.quadraticCurveTo(dir*(40+220*u),lerp(6,-4-70*fl,u)+26,dir*(26+206*u),lerp(26,24-64*fl,u)+34);
+      g.stroke();
+    }
+    /* 翼端の黒 */
+    var tipX=dir*(252+14*Math.cos(ph)), tipY=-40-98*fl;
+    g.fillStyle='rgba(44,44,58,0.88)';
+    g.beginPath();
+    g.moveTo(dir*196,lerp(-16,tipY,0.78)+2);
+    g.quadraticCurveTo(dir*250,tipY+6,tipX,tipY);
+    g.quadraticCurveTo(dir*214,tipY+46,dir*168,lerp(26,tipY+56,0.72));
+    g.closePath(); g.fill();
+    g.restore();
+    /* 受光のリム */
+    g.save(); wingPath(g,dir,fl,ph); g.clip();
+    g.globalCompositeOperation='lighter';
+    var rg=g.createLinearGradient(dir*40,-140,dir*250,20);
+    rg.addColorStop(0,rgba(lit,0)); rg.addColorStop(1,rgba(lit,0.34));
+    g.fillStyle=rg; g.fillRect(-300,-220,600,300);
+    g.globalCompositeOperation='source-over';
+    g.restore();
+  }
+  /* 尾（手前へ広がる） */
+  g.fillStyle=rgb(mixc(shade,body,0.45));
+  g.beginPath();
+  g.moveTo(-22,6); g.quadraticCurveTo(-26,58,-12,84);
+  g.lineTo(14,84); g.quadraticCurveTo(28,58,24,6);
+  g.closePath(); g.fill();
+  g.strokeStyle='rgba(120,126,150,0.5)'; g.lineWidth=1.4;
+  for(var s2=-1;s2<=1;s2++){ g.beginPath(); g.moveTo(s2*7,14); g.lineTo(s2*11,80); g.stroke(); }
+  /* 胴 */
+  var bg=g.createRadialGradient(-10,-26,4,0,-4,50);
+  bg.addColorStop(0,rgb(mixc(body,[255,255,255],0.5)));
+  bg.addColorStop(0.62,rgb(body));
+  bg.addColorStop(1,rgb(mixc(shade,[128,134,158],0.30)));
+  g.fillStyle=bg;
+  g.beginPath(); g.ellipse(0,-8,38,34,0,0,6.283185); g.fill();
+  /* 首と頭（前方＝遠方へ） */
+  g.strokeStyle=rgb(mixc(body,[255,255,255],0.2));
+  g.lineWidth=13; g.lineCap='round';
+  g.beginPath(); g.moveTo(6,-30); g.quadraticCurveTo(26,-64,34,-96); g.stroke();
+  g.lineWidth=9;
+  g.strokeStyle=rgb(mixc(body,shade,0.35));
+  g.beginPath(); g.moveTo(8,-34); g.quadraticCurveTo(26,-62,33,-88); g.stroke();
+  g.fillStyle=rgb(mixc(body,[255,255,255],0.28));
+  g.beginPath(); g.ellipse(35,-101,11,10,0.2,0,6.283185); g.fill();
+  g.fillStyle='rgba(38,38,50,0.9)';
+  g.beginPath(); g.ellipse(33,-96,6,9,0.25,0,6.283185); g.fill();   /* 後頭の黒 */
+  g.fillStyle='rgba(206,52,52,0.95)';
+  g.beginPath(); g.ellipse(37,-108,6,4.4,0.15,0,6.283185); g.fill(); /* 丹頂 */
+  g.strokeStyle='rgba(212,196,150,0.95)'; g.lineWidth=3;
+  g.beginPath(); g.moveTo(43,-102); g.lineTo(62,-104); g.stroke();
+}
+function drawRider(g,t,ss,lit){
+  var ph=t*Math.PI*2*0.60;
+  var sway=Math.sin(ph)*2.4, lean=Math.sin(t*0.5)*0.05;
+  var coat=mixc(ss.coat,lit,0.22), coatD=mixc(coat,[30,26,48],0.42);
+  var scarf=mixc(ss.scarf,lit,0.2);
+  g.save();
+  g.translate(-2+sway*0.4,-30); g.rotate(lean*0.4);
+  /* 脚 */
+  g.fillStyle=rgb(coatD);
+  g.beginPath(); g.ellipse(-19,6,8,13,0.35,0,6.283185); g.fill();
+  g.beginPath(); g.ellipse(19,6,8,13,-0.35,0,6.283185); g.fill();
+  /* 胴（背中） */
+  var tg=g.createLinearGradient(-20,-40,20,8);
+  tg.addColorStop(0,rgb(mixc(coat,[255,255,255],0.18)));
+  tg.addColorStop(1,rgb(coatD));
+  g.fillStyle=tg;
+  g.beginPath();
+  g.moveTo(-17,6); g.quadraticCurveTo(-21,-22,-13,-38);
+  g.quadraticCurveTo(0,-44,13,-38);
+  g.quadraticCurveTo(21,-22,17,6);
+  g.closePath(); g.fill();
+  /* 腕（前方へ伸ばす） */
+  g.strokeStyle=rgb(coat); g.lineWidth=7.5; g.lineCap='round';
+  g.beginPath(); g.moveTo(-12,-30); g.quadraticCurveTo(-4,-40+sway*0.5,8,-46); g.stroke();
+  g.beginPath(); g.moveTo(12,-30); g.quadraticCurveTo(18,-40-sway*0.5,24,-48); g.stroke();
+  /* 頭と髪 */
+  g.fillStyle='rgb(228,190,164)';
+  g.beginPath(); g.arc(0,-50,11.5,0,6.283185); g.fill();
+  g.fillStyle='rgb(46,36,38)';
+  g.beginPath(); g.arc(0,-52,11.8,Math.PI*0.02,Math.PI*0.98,true); g.fill();
+  g.beginPath(); g.ellipse(0,-46,11.6,9,0,Math.PI,0,true); g.fill();
+  /* 後ろへ流れる髪 */
+  g.strokeStyle='rgb(46,36,38)'; g.lineWidth=4.2;
+  for(var k=-1;k<=1;k++){
+    g.beginPath(); g.moveTo(k*5,-48);
+    g.quadraticCurveTo(k*9-6+sway,-32,k*10-14+sway*2,-12);
+    g.stroke();
+  }
+  /* たなびく襟巻き */
+  g.lineCap='round';
+  for(var L=0;L<2;L++){
+    g.strokeStyle=rgba(L===0?scarf:mixc(scarf,[0,0,0],0.22), L===0?0.95:0.6);
+    g.lineWidth=L===0?9:6;
+    g.beginPath(); g.moveTo(-4,-38);
+    var px=-4,py=-38;
+    for(var i=1;i<=7;i++){
+      var u=i/7;
+      var xx=-4-u*86-L*10, yy=-38+u*74+Math.sin(t*3.4+u*5.2+L*1.4)*16*u;
+      g.quadraticCurveTo((px+xx)/2+Math.sin(t*2.6+u*4)*7,(py+yy)/2,xx,yy);
+      px=xx; py=yy;
+    }
+    g.stroke();
+  }
+  g.restore();
+}
+function drawHero(g,t,si,ss){
+  if(OFF.hero) return;
+  var S=SCENES[si];
+  var lit=seasonTint(S.sun.col,ss);
+  var ph=t*Math.PI*2*0.60;
+  var bob=Math.cos(ph)*8+Math.sin(ph*0.5)*4;
+  var bank=0.055*Math.sin(t*0.37)+0.030*Math.sin(t*0.83+1.2);
+  var cx=W*0.5+34*Math.sin(t*0.23)+16*Math.sin(t*0.41+2.2);
+  var cy=H*0.615+18*Math.sin(t*0.31+1.1)+bob;
+  g.save();
+  g.translate(cx,cy); g.rotate(bank);
+  drawCrane(g,t,ss,si,lit);
+  drawRider(g,t,ss,lit);
+  g.restore();
+}
+
+/* =====================================================================
+   季節の粒子 — 桜の花びら / 光の粒 / 落ち葉 / 雪
+   ===================================================================== */
+var LEAF=(function(){
+  var p=new Path2D(),N=30,i;
+  for(i=0;i<=N;i++){
+    var a=i/N*Math.PI*2;
+    var r=0.62+0.38*Math.pow(Math.abs(Math.cos(2.5*a)),1.15);
+    var x=Math.sin(a)*r, y=-Math.cos(a)*r*1.06;
+    if(i) p.lineTo(x,y); else p.moveTo(x,y);
+  }
+  p.closePath(); return p;
+})();
+var PETALP=(function(){
+  var p=new Path2D();
+  p.moveTo(0,-1); p.bezierCurveTo(0.78,-0.72,0.72,0.62,0,1);
+  p.bezierCurveTo(-0.72,0.62,-0.78,-0.72,0,-1); p.closePath(); return p;
+})();
+function mkParts(n,zn,zf,hmax){
+  var a=[],i;
+  for(i=0;i<n;i++) a.push({ax:(RNG()*2-1)*560,z0:zn+RNG()*(zf-zn),h0:RNG()*hmax,
+    ph:RNG()*6.283185,sp:0.6+RNG()*0.9,sz:0.6+RNG()*0.85,
+    rot:RNG()*6.283185,rs:(RNG()*2-1)*3.0,r:RNG(),r2:RNG()});
+  return a;
+}
+var PZN=110, PZF=1150, PZSPLIT=330;
+var PT={ petal:mkParts(96,PZN,PZF,340), mote:mkParts(80,PZN,PZF,340),
+         leaf:mkParts(120,PZN,PZF,360), snow:mkParts(260,PZN,PZF,380) };
+
+function drawParticles(g,t,hor,ss,near){
+  if(OFF.parts) return;
+  var w=ss.w, zn, zf, i, p, z, sc, x, y, a, s, cx;
+  var zlo=near?PZN:PZSPLIT, zhi=near?PZSPLIT:PZF;
+  function each(list,speed,fall,rise,cb){
+    for(i=0;i<list.length;i++){
+      p=list[i];
+      z=wrap(p.z0-t*speed,PZN,PZF);
+      if(z<zlo||z>=zhi) continue;
+      sc=pscale(z);
+      cx=camX(t,20);
+      var hh=p.h0+(rise?1:-1)*wrap(t*fall*p.sp+p.ph*60,0,420);
+      var swing=Math.sin(t*(0.9+p.sp)+p.ph)*46+Math.sin(t*2.3+p.ph*3)*18;
+      x=W*0.5+(p.ax+swing-cx)*sc;
+      y=hor+(CAMH-hh)*sc;
+      if(x<-80||x>W+80||y<-120||y>H+140) continue;
+      a=smooth(PZF,PZF-190,z)*smooth(PZN,PZN+34,z);
+      cb(p,x,y,sc,a,z);
+    }
+  }
+  /* 春: 桜の花びら（舞い上がる） */
+  if(w[0]>0.01){
+    each(PT.petal,150,34,1,function(p,x,y,sc,a){
+      s=clamp(6.2*sc*p.sz,0.9,20);
+      g.save(); g.translate(x,y);
+      g.rotate(p.rot+t*p.rs*0.7);
+      g.scale(s*Math.max(0.25,Math.abs(Math.cos(t*1.7*p.sp+p.ph))),s);
+      g.globalAlpha=a*w[0]*0.92;
+      g.fillStyle=p.r<0.5?'rgb(255,214,228)':'rgb(255,236,242)';
+      g.fill(PETALP);
+      g.restore();
+    });
+  }
+  /* 夏: 光の粒 */
+  if(w[1]>0.01){
+    g.globalCompositeOperation='lighter';
+    each(PT.mote,130,10,1,function(p,x,y,sc,a){
+      s=clamp(1.5*sc*p.sz,0.6,3.4);
+      g.globalAlpha=a*w[1]*0.34*(0.3+0.7*Math.abs(Math.sin(t*2.0+p.ph*5)));
+      g.fillStyle='rgb(255,250,214)';
+      g.beginPath(); g.arc(x,y,s,0,6.283185); g.fill();
+    });
+    g.globalCompositeOperation='source-over';
+  }
+  /* 秋: 落ち葉（回転しながら風に流れて散る） */
+  if(w[2]>0.01){
+    each(PT.leaf,140,58,0,function(p,x,y,sc,a){
+      s=clamp(8.5*sc*p.sz,1.0,30);
+      var spin=p.rot+t*p.rs;
+      var squash=Math.max(0.18,Math.abs(Math.cos(t*(1.4+p.sp*1.6)+p.ph*2)));
+      g.save(); g.translate(x,y); g.rotate(spin); g.scale(s*squash,s);
+      g.globalAlpha=a*w[2]*0.95;
+      var cc=p.r<0.34?'rgb(214,74,44)':(p.r<0.68?'rgb(232,146,40)':'rgb(198,176,58)');
+      g.fillStyle=cc; g.fill(LEAF);
+      g.restore();
+    });
+  }
+  /* 冬: 雪 */
+  if(w[3]>0.01){
+    each(PT.snow,120,42,0,function(p,x,y,sc,a){
+      s=clamp(2.6*sc*p.sz,0.8,7.4);
+      g.globalAlpha=a*w[3]*(0.55+0.45*p.r2);
+      g.fillStyle='rgb(248,252,255)';
+      g.beginPath(); g.arc(x,y,s,0,6.283185); g.fill();
+      if(s>5.4){
+        g.globalAlpha=a*w[3]*0.28;
+        g.strokeStyle='rgb(240,248,255)'; g.lineWidth=Math.max(0.5,s*0.10);
+        for(var k=0;k<3;k++){
+          var an=p.rot+t*p.rs*0.25+k*1.047;
+          g.beginPath();
+          g.moveTo(x-Math.cos(an)*s*1.12,y-Math.sin(an)*s*1.12);
+          g.lineTo(x+Math.cos(an)*s*1.12,y+Math.sin(an)*s*1.12);
+          g.stroke();
+        }
+      }
+    });
+  }
+  g.globalAlpha=1;
+}
+
+/* ---------- 手前を流れる雲（最前景の視差） ---------- */
+function drawForeClouds(g,t,hor,ss,si){
+  var dens=[1.0,0.85,0.45,0.80,0.70][si];
+  if(dens<=0) return;
+  drawCloudLayer(g,F.nearCld,t,hor,ss,{speed:300,zn:150,zf:430,hAdd:150,size:230,
+    alpha:0.32*dens,fog:0.16,soft:1,nearFade:0.50,
+    top:[255,255,255],bot:mixc([214,220,236],SCENES[si].haze,0.4),
+    haze:SCENES[si].haze,drift:20});
+}
+
+/* ---------- 景の転換（霧に包まれる / 光に溶ける / 雲を抜ける / 雪の帳） ---------- */
+var TRCOL=[[250,250,255],[255,246,222],[255,214,170],[228,240,252]];
+function drawTransition(g,k,u,t,ss){
+  var b=Math.pow(Math.sin(Math.PI*u),0.62);
+  var col=seasonTint(TRCOL[k],ss);
+  /* 猛スピードで流れる雲 */
+  drawCloudLayer(g,F.nearCld,t,horizonOf(k,t),ss,{speed:900,zn:120,zf:520,hAdd:150,size:330,
+    alpha:0.62*b,fog:0.10,soft:1,nearFade:0.42,top:[255,255,255],bot:col,haze:col,drift:18});
+  if(k===1){ /* 光に溶ける */
+    g.globalCompositeOperation='lighter';
+    var su=SCENES[1].sun;
+    var lg=g.createRadialGradient(su.x,su.y,0,su.x,su.y,W*0.95);
+    lg.addColorStop(0,rgba(col,0.95*b)); lg.addColorStop(0.35,rgba(col,0.45*b));
+    lg.addColorStop(1,rgba(col,0));
+    g.fillStyle=lg; g.fillRect(0,0,W,H);
+    g.globalCompositeOperation='source-over';
+  }
+  if(k===2||k===3){ /* 流線 */
+    g.globalAlpha=b*0.35; g.strokeStyle=rgba(col,0.8);
+    for(var i=0;i<26;i++){
+      var q=STREAK[i];
+      var yy=wrap(q[1]*H+t*(420+q[2]*520),-120,H+120);
+      g.lineWidth=0.8+q[2]*2.2;
+      g.beginPath(); g.moveTo(q[0]*W,yy); g.lineTo(q[0]*W+q[3]*40-20,yy+70+q[2]*120); g.stroke();
+    }
+    g.globalAlpha=1;
+  }
+  g.globalAlpha=clamp(b*0.94,0,1);
+  g.fillStyle=rgb(col); g.fillRect(0,0,W,H);
+  g.globalAlpha=1;
+}
+var STREAK=[]; (function(){ for(var i=0;i<26;i++) STREAK.push([RNG(),RNG(),RNG(),RNG()]); })();
+
+/* ---------- 仕上げ（統一した光・周辺減光・季節の標） ---------- */
+function drawGrade(g,t,ss){
+  if(OFF.grade) return;
+  g.globalCompositeOperation='soft-light';
+  g.globalAlpha=clamp(ss.ts*0.78,0,1);
+  g.fillStyle=rgb(mixc(ss.light,ss.tint,0.42)); g.fillRect(0,0,W,H);
+  g.globalCompositeOperation='source-over'; g.globalAlpha=1;
+  g.drawImage(VIGNETTE,0,0);
+  var f=1-smooth(0,1.1,t);
+  if(f>0.001){ g.fillStyle='rgba(0,0,0,'+f.toFixed(3)+')'; g.fillRect(0,0,W,H); }
+  var e=smooth(39.1,40,t)*0.28;
+  if(e>0.001){ g.fillStyle='rgba(2,4,12,'+e.toFixed(3)+')'; g.fillRect(0,0,W,H); }
+}
+function drawSeasonMark(g,t,ss){
+  var i,dom=0,vis=smooth(1.2,2.2,t)*(1-smooth(39.2,40,t)*0.7);
+  for(i=1;i<4;i++) if(ss.w[i]>ss.w[dom]) dom=i;
+  /* 移り変わりの最中は一度消えてから次の字が現れる（二重写しを避ける） */
+  var a=clamp(ss.w[dom]*2-1,0,1)*vis*0.30;
+  if(a<0.012) return;
+  g.textAlign='right'; g.textBaseline='alphabetic';
+  g.globalAlpha=a;
+  g.font='600 74px "Hiragino Mincho ProN","Yu Mincho",serif';
+  g.fillStyle='rgba(255,255,255,0.95)';
+  g.fillText(SEASONS[dom].key,W-46,H-46);
+  g.globalAlpha=1;
+}
+
+var VIGNETTE=(function(){
+  var c=document.createElement('canvas'); c.width=W; c.height=H;
+  var g=c.getContext('2d');
+  var vg=g.createRadialGradient(W*0.5,H*0.46,H*0.30,W*0.5,H*0.52,H*1.0);
+  vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1,'rgba(4,6,16,0.44)');
+  g.fillStyle=vg; g.fillRect(0,0,W,H);
+  return c;
+})();
+
+/* =====================================================================
+   描画パイプライン — すべては t のみの関数
+   ===================================================================== */
+function render(t){
+  t=clamp(t,0,DUR);
+  var ss=seasonState(t);
+  var m=sceneMix(t);
+  var si=(m.u>0.5?m.b:m.a);
+  if(m.u<=0.30){ drawWorld(ctx,m.a,t,ss); }
+  else if(m.u>=0.70){ drawWorld(ctx,m.b,t,ss); }
+  else{
+    drawWorld(ctx,m.a,t,ss);
+    drawWorld(bctx,m.b,t,ss);
+    ctx.globalAlpha=smooth(0.30,0.70,m.u);
+    ctx.drawImage(buf,0,0);
+    ctx.globalAlpha=1;
+  }
+  var hor=horizonOf(si,t);
+  drawParticles(ctx,t,hor,ss,false);
+  drawHero(ctx,t,si,ss);
+  drawForeClouds(ctx,t,hor,ss,si);
+  drawParticles(ctx,t,hor,ss,true);
+  if(m.k>=0) drawTransition(ctx,m.k,m.u,t,ss);
+  drawGrade(ctx,t,ss);
+  drawSeasonMark(ctx,t,ss);
+}
+
+/* =====================================================================
+   再生制御と外部API
+   ===================================================================== */
+var manual=false, playing=true, anchor=null, offset=0, curT=0;
+var elPlay=document.getElementById('play'),
+    elRe=document.getElementById('restart'),
+    elSeek=document.getElementById('seek'),
+    elLab=document.getElementById('tlabel');
+
+function syncUI(){
+  if(elSeek) elSeek.value=curT.toFixed(2);
+  if(elLab) elLab.textContent='t = '+curT.toFixed(2)+' / '+DUR;
+}
+function setTime(t){
+  manual=true; playing=false;
+  curT=clamp(Number(t)||0,0,DUR);
+  render(curT); syncUI();
+  return curT;
+}
+window.setTime=setTime;
+window.__duration=DUR;
+window.__render=render;
+window.__seed=SEED;
+window.__stats=TSTAT;
+window.__off=OFF;
+
+function frame(ms){
+  requestAnimationFrame(frame);
+  if(manual||!playing) return;
+  if(anchor===null) anchor=ms;
+  curT=offset+(ms-anchor)/1000;
+  if(curT>=DUR){ curT=DUR; playing=false; }
+  render(curT); syncUI();
+}
+if(elPlay) elPlay.addEventListener('click',function(){
+  if(curT>=DUR){ curT=0; }
+  manual=false; playing=!playing; offset=curT; anchor=null;
+});
+if(elRe) elRe.addEventListener('click',function(){
+  manual=false; playing=true; curT=0; offset=0; anchor=null; render(0); syncUI();
+});
+if(elSeek) elSeek.addEventListener('input',function(){ setTime(parseFloat(elSeek.value)); });
+
+render(0); syncUI();
+requestAnimationFrame(frame);
+})();
+</script>
+
+</body></html>

@@ -1,0 +1,618 @@
+<!doctype html><html><head><meta charset=utf8><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>exp-claude-sonnet-5-run1</title>
+<style>
+  :root{ --bg:#0a0a12; }
+  body{ margin:0; padding:0; background:var(--bg); display:flex; align-items:center; justify-content:center; min-height:100vh; overflow:hidden; }
+  #wrap{ width:1280px; height:720px; }
+  #stage{ width:1280px; height:720px; box-shadow:0 0 40px rgba(0,0,0,.6); transform-origin: top left; }
+  canvas{ display:block; background:#000; width:1280px; height:720px; }
+  @media (max-width: 1280px){
+    #wrap{ width: 100vw; height: calc(100vw * 9 / 16); max-height: 100vh; max-width: calc(100vh * 16 / 9); }
+  }
+</style>
+<div id="wrap"><div id="stage"><canvas id="c" width="1280" height="720"></canvas></div></div>
+<script>
+(function(){
+  function fitStage(){
+    var wrap = document.getElementById('wrap');
+    var stage = document.getElementById('stage');
+    var scale = wrap.clientWidth / 1280;
+    stage.style.transform = 'scale(' + scale + ')';
+  }
+  window.addEventListener('resize', fitStage);
+  fitStage();
+})();
+</script>
+<script>
+(function(){
+"use strict";
+var W = 1280, H = 720;
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+/* ---------- deterministic PRNG (mulberry32), fixed seed ---------- */
+function mulberry32(seed){
+  var a = seed >>> 0;
+  return function(){
+    a |= 0; a = (a + 0x6D2B79F5) | 0;
+    var t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+var SEED = 20260930;
+var rng = mulberry32(SEED);
+
+function lerp(a,b,t){ return a + (b-a)*t; }
+function clamp(x,a,b){ return Math.max(a, Math.min(b, x)); }
+function smoothstep(e0,e1,x){
+  var t = clamp((x-e0)/(e1-e0), 0, 1);
+  return t*t*(3-2*t);
+}
+function lerpColor(c1,c2,t){
+  return [
+    lerp(c1[0],c2[0],t),
+    lerp(c1[1],c2[1],t),
+    lerp(c1[2],c2[2],t)
+  ];
+}
+function rgb(c, a){
+  a = (a===undefined)?1:a;
+  return 'rgba('+Math.round(c[0])+','+Math.round(c[1])+','+Math.round(c[2])+','+a+')';
+}
+
+/* ---------- season model ----------
+   0 spring, 1 summer, 2 autumn, 3 winter
+   boundaries at t=10,20,30 (full duration 40s), transition half-width 1.6s
+*/
+var BOUNDS = [10,20,30];
+var TW = 1.6; // transition half width
+
+function seasonWeights(t){
+  // returns [wSpring, wSummer, wAutumn, wWinter] summing to 1
+  var wSp = 1 - smoothstep(BOUNDS[0]-TW, BOUNDS[0]+TW, t);
+  var wWi = smoothstep(BOUNDS[2]-TW, BOUNDS[2]+TW, t);
+  var mid1 = smoothstep(BOUNDS[0]-TW, BOUNDS[0]+TW, t) * (1 - smoothstep(BOUNDS[1]-TW, BOUNDS[1]+TW, t));
+  var mid2 = smoothstep(BOUNDS[1]-TW, BOUNDS[1]+TW, t) * (1 - smoothstep(BOUNDS[2]-TW, BOUNDS[2]+TW, t));
+  var wSu = mid1;
+  var wAu = mid2;
+  var sum = wSp+wSu+wAu+wWi;
+  if(sum <= 0) sum = 1;
+  return [wSp/sum, wSu/sum, wAu/sum, wWi/sum];
+}
+
+function mistBump(t){
+  var s = 0;
+  for(var i=0;i<BOUNDS.length;i++){
+    var d = (t - BOUNDS[i]) / TW;
+    s += Math.exp(-d*d*1.4);
+  }
+  return clamp(s, 0, 1) * 0.6;
+}
+
+/* ---------- palettes ---------- */
+var PAL = {
+  skyTop:   [[150,205,235],[60,140,225],[255,150,95] ,[175,198,228]],
+  skyBottom:[[255,228,236],[190,224,250],[255,205,150],[228,235,248]],
+  sun:      [[255,247,208],[255,251,220],[255,222,150],[240,245,252]],
+  accent:   [[255,196,214],[70,200,120],[214,110,60] ,[190,215,240]] // bird/ground accent tint
+};
+function blend4(arrOfColors, w){
+  var r=0,g=0,b=0;
+  for(var i=0;i<4;i++){
+    r += arrOfColors[i][0]*w[i];
+    g += arrOfColors[i][1]*w[i];
+    b += arrOfColors[i][2]*w[i];
+  }
+  return [r,g,b];
+}
+
+/* ---------- precomputed deterministic scenery data ---------- */
+// spring cloud-sea bumps (multiple horizon layers)
+function genCloudLayer(n, baseY, ampY, seedOffset){
+  var arr = [];
+  for(var i=0;i<n;i++){
+    arr.push({
+      x: rng()*W*1.6 - W*0.3,
+      y: baseY + (rng()-0.5)*ampY,
+      r: 40 + rng()*90,
+      ph: rng()*Math.PI*2
+    });
+  }
+  return arr;
+}
+var cloudSeaFar  = genCloudLayer(14, 470, 40);
+var cloudSeaNear = genCloudLayer(10, 560, 50);
+
+// summer mountains, 3 parallax ridge layers
+function genRidge(n, baseY, jag){
+  var pts = [];
+  var x = -100;
+  while(x < W+200){
+    pts.push({x:x, y: baseY - rng()*jag});
+    x += 60 + rng()*60;
+  }
+  return pts;
+}
+var ridgeFar  = genRidge(30, 430, 60);
+var ridgeMid  = genRidge(24, 480, 90);
+var ridgeNear = genRidge(18, 560, 130);
+
+// autumn city skyline
+function genCity(n){
+  var arr = [];
+  var x = -60;
+  for(var i=0;i<n;i++){
+    var w = 40 + rng()*55;
+    var h = 60 + rng()*220;
+    var windows = [];
+    var rows = Math.floor(h/22);
+    var cols = Math.max(1, Math.floor(w/16));
+    for(var r=0;r<rows;r++){
+      for(var c=0;c<cols;c++){
+        if(rng() < 0.45){
+          windows.push({r:r,c:c,ph:rng()*10});
+        }
+      }
+    }
+    arr.push({x:x, w:w, h:h, rows:rows, cols:cols, windows:windows});
+    x += w + 6 + rng()*10;
+  }
+  return arr;
+}
+var cityBuildings = genCity(22);
+
+// winter distant peaks + ice floes
+var peaksFar  = genRidge(20, 440, 50);
+var peaksNear = genRidge(16, 500, 80);
+function genFloes(n){
+  var arr = [];
+  for(var i=0;i<n;i++){
+    arr.push({
+      x: rng()*W*1.4 - W*0.2,
+      y: 600 + rng()*90,
+      r: 18 + rng()*30,
+      sp: 6 + rng()*10
+    });
+  }
+  return arr;
+}
+var iceFloes = genFloes(12);
+
+/* ---------- leaves (autumn) ---------- */
+var LEAF_COLORS = [[210,90,40],[230,150,40],[190,60,40],[225,180,70]];
+function genLeaves(n){
+  var arr = [];
+  for(var i=0;i<n;i++){
+    arr.push({
+      x0: rng()*(W+200) - 100,
+      y0: rng()*(H+200) - 200,
+      fall: 34 + rng()*46,
+      sway: 18 + rng()*38,
+      swayFreq: 0.4 + rng()*1.1,
+      rot: (rng()-0.5)*3.4,
+      size: 7 + rng()*8,
+      col: LEAF_COLORS[i % LEAF_COLORS.length],
+      ph: rng()*100
+    });
+  }
+  return arr;
+}
+var leaves = genLeaves(46);
+
+/* ---------- snow (winter) ---------- */
+function genSnow(n){
+  var arr = [];
+  for(var i=0;i<n;i++){
+    var depth = rng(); // 0 far,slow,small -> 1 near,fast,big
+    arr.push({
+      x0: rng()*(W+80) - 40,
+      y0: rng()*(H+80) - 40,
+      fall: 28 + depth*90,
+      sway: 6 + depth*22,
+      swayFreq: 0.3 + rng()*0.8,
+      size: 1.4 + depth*3.4,
+      alpha: 0.35 + depth*0.55,
+      ph: rng()*100
+    });
+  }
+  return arr;
+}
+var snow = genSnow(160);
+
+/* ---------- drawing helpers ---------- */
+function skyGradient(ctx, top, bottom){
+  var g = ctx.createLinearGradient(0,0,0,H);
+  g.addColorStop(0, rgb(top));
+  g.addColorStop(1, rgb(bottom));
+  ctx.fillStyle = g;
+  ctx.fillRect(0,0,W,H);
+}
+
+function drawSun(t, col, w){
+  if(w < 0.01) return;
+  var x = W*0.78, y = 150 + Math.sin(t*0.05)*10;
+  ctx.save();
+  ctx.globalAlpha = clamp(w,0,1);
+  var glow = ctx.createRadialGradient(x,y,0,x,y,180);
+  glow.addColorStop(0, rgb(col,0.9));
+  glow.addColorStop(1, rgb(col,0));
+  ctx.fillStyle = glow;
+  ctx.beginPath(); ctx.arc(x,y,180,0,Math.PI*2); ctx.fill();
+  ctx.fillStyle = rgb(col,1);
+  ctx.beginPath(); ctx.arc(x,y,52,0,Math.PI*2); ctx.fill();
+  ctx.restore();
+}
+
+function drawCloudLayer(layer, t, speed, y0, alpha, colorRgba){
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  ctx.fillStyle = colorRgba;
+  var scroll = (t*speed) % (W+300);
+  for(var i=0;i<layer.length;i++){
+    var b = layer[i];
+    var x = ((b.x - scroll) % (W+300) + (W+300)) % (W+300) - 150;
+    var bob = Math.sin(t*0.6 + b.ph)*4;
+    ctx.beginPath();
+    ctx.ellipse(x, b.y+bob, b.r, b.r*0.55, 0, 0, Math.PI*2);
+    ctx.fill();
+  }
+  ctx.restore();
+}
+
+function drawRidge(pts, t, speed, color, alpha){
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  ctx.fillStyle = color;
+  var scroll = (t*speed) % 400;
+  ctx.beginPath();
+  ctx.moveTo(-400-scroll, H);
+  for(var i=0;i<pts.length;i++){
+    ctx.lineTo(pts[i].x - scroll, pts[i].y);
+  }
+  ctx.lineTo(pts[pts.length-1].x + 400, H);
+  ctx.closePath();
+  ctx.fill();
+  ctx.restore();
+}
+
+function drawCloudSea(t, w){
+  if(w<0.01) return;
+  ctx.save();
+  ctx.globalAlpha = clamp(w,0,1);
+  drawCloudLayer(cloudSeaFar, t, 8, 470, 0.9, 'rgba(255,255,255,0.85)');
+  drawCloudLayer(cloudSeaNear, t, 16, 570, 0.95, 'rgba(255,235,240,0.95)');
+  ctx.fillStyle = 'rgba(255,255,255,0.98)';
+  ctx.fillRect(0, 610, W, H-610);
+  ctx.restore();
+}
+
+function drawMountains(t, w){
+  if(w<0.01) return;
+  ctx.save();
+  ctx.globalAlpha = clamp(w,0,1);
+  drawRidge(ridgeFar, t, 4, 'rgba(150,180,175,0.55)', 1);
+  drawRidge(ridgeMid, t, 9, 'rgba(70,120,85,0.8)', 1);
+  drawRidge(ridgeNear, t, 16, 'rgba(35,80,55,0.95)', 1);
+  ctx.restore();
+}
+
+function drawCity(t, w){
+  if(w<0.01) return;
+  ctx.save();
+  ctx.globalAlpha = clamp(w,0,1);
+  var scroll = (t*10) % (W*1.3);
+  ctx.fillStyle = 'rgba(40,28,44,0.92)';
+  for(var i=0;i<cityBuildings.length;i++){
+    var b = cityBuildings[i];
+    var x = ((b.x - scroll) % (W*1.3+400) + (W*1.3+400)) % (W*1.3+400) - 200;
+    var y = H - b.h - 40;
+    ctx.fillRect(x, y, b.w, b.h+60);
+    for(var k=0;k<b.windows.length;k++){
+      var win = b.windows[k];
+      var flick = 0.5 + 0.5*Math.sin(t*1.5 + win.ph);
+      ctx.fillStyle = 'rgba(255,205,120,'+(0.25+0.5*flick)+')';
+      ctx.fillRect(x + 6 + win.c*15, y + 8 + win.r*22, 7, 10);
+      ctx.fillStyle = 'rgba(40,28,44,0.92)';
+    }
+  }
+  ctx.restore();
+}
+
+function drawIceSea(t, w){
+  if(w<0.01) return;
+  ctx.save();
+  ctx.globalAlpha = clamp(w,0,1);
+  drawRidge(peaksFar, t, 3, 'rgba(210,222,236,0.7)', 1);
+  drawRidge(peaksNear, t, 7, 'rgba(180,198,222,0.9)', 1);
+  var g = ctx.createLinearGradient(0,600,0,H);
+  g.addColorStop(0,'rgba(150,182,212,0.95)');
+  g.addColorStop(1,'rgba(200,220,238,0.95)');
+  ctx.fillStyle = g;
+  ctx.fillRect(0,600,W,H-600);
+  var scroll = (t*20)%(W+200);
+  ctx.fillStyle = 'rgba(235,245,252,0.85)';
+  for(var i=0;i<iceFloes.length;i++){
+    var f = iceFloes[i];
+    var x = ((f.x - scroll) % (W+200) + (W+200)) % (W+200) - 100;
+    ctx.beginPath();
+    ctx.ellipse(x, f.y, f.r, f.r*0.4, 0, 0, Math.PI*2);
+    ctx.fill();
+  }
+  ctx.restore();
+}
+
+function drawHaze(t){
+  var g = ctx.createLinearGradient(0,300,0,H);
+  g.addColorStop(0,'rgba(255,255,255,0)');
+  g.addColorStop(1,'rgba(255,255,255,0.10)');
+  ctx.fillStyle = g;
+  ctx.fillRect(0,0,W,H);
+}
+
+/* ---------- character: bird + rider ---------- */
+function drawCharacter(t, accentColor){
+  var cx = W*0.40, cy = H*0.5;
+  var bob = Math.sin(t*2.1)*11;
+  var bank = Math.sin(t*1.3)*0.06;
+  var flap = Math.sin(t*9.0);
+  var flap2 = Math.sin(t*9.0 + 0.4);
+
+  ctx.save();
+  ctx.translate(cx, cy+bob);
+  ctx.rotate(bank);
+
+  // back wing (behind body)
+  ctx.save();
+  ctx.translate(-10, 0);
+  ctx.rotate(-0.5 - flap*0.5);
+  ctx.fillStyle = rgb(lerpColor([235,235,240], accentColor, 0.35), 0.95);
+  ctx.beginPath();
+  ctx.moveTo(0,0);
+  ctx.quadraticCurveTo(-70,-18, -128, 4 - flap*30);
+  ctx.quadraticCurveTo(-60, 22, 0, 14);
+  ctx.closePath();
+  ctx.fill();
+  ctx.restore();
+
+  // tail
+  ctx.fillStyle = rgb(lerpColor([230,230,235], accentColor, 0.5), 1);
+  ctx.beginPath();
+  ctx.moveTo(58, -6);
+  ctx.lineTo(118, -22);
+  ctx.lineTo(112, 2);
+  ctx.lineTo(120, 20);
+  ctx.lineTo(58, 10);
+  ctx.closePath();
+  ctx.fill();
+
+  // body
+  ctx.fillStyle = 'rgba(250,250,252,0.98)';
+  ctx.beginPath();
+  ctx.ellipse(0, 0, 62, 34, 0, 0, Math.PI*2);
+  ctx.fill();
+  ctx.fillStyle = rgb(accentColor, 0.55);
+  ctx.beginPath();
+  ctx.ellipse(-6, 10, 46, 18, 0, 0, Math.PI*2);
+  ctx.fill();
+
+  // neck + head
+  ctx.fillStyle = 'rgba(250,250,252,0.98)';
+  ctx.beginPath();
+  ctx.moveTo(-48,-10);
+  ctx.quadraticCurveTo(-92,-46,-104,-64);
+  ctx.quadraticCurveTo(-84,-40,-46,6);
+  ctx.closePath();
+  ctx.fill();
+  ctx.beginPath();
+  ctx.ellipse(-108,-70, 16, 13, 0.4, 0, Math.PI*2);
+  ctx.fill();
+  // beak
+  ctx.fillStyle = rgb(lerpColor([255,190,90],accentColor,0.2),1);
+  ctx.beginPath();
+  ctx.moveTo(-120,-72);
+  ctx.lineTo(-140,-68);
+  ctx.lineTo(-119,-63);
+  ctx.closePath();
+  ctx.fill();
+  // eye
+  ctx.fillStyle = 'rgba(30,30,35,0.9)';
+  ctx.beginPath(); ctx.arc(-112,-74,2.4,0,Math.PI*2); ctx.fill();
+
+  // front wing
+  ctx.save();
+  ctx.translate(-4, -2);
+  ctx.rotate(-0.3 - flap2*0.55);
+  ctx.fillStyle = 'rgba(255,255,255,0.98)';
+  ctx.beginPath();
+  ctx.moveTo(0,0);
+  ctx.quadraticCurveTo(-78,-26, -142, -6 - flap2*34);
+  ctx.quadraticCurveTo(-64, 26, 4, 16);
+  ctx.closePath();
+  ctx.fill();
+  ctx.restore();
+
+  // rider (simple silhouette) sitting on back
+  var rx = -2, ry = -30;
+  ctx.save();
+  ctx.translate(rx, ry);
+  var flutter = Math.sin(t*4.2)*8;
+  // cape
+  ctx.fillStyle = rgb(lerpColor([90,70,140], accentColor, 0.4), 0.9);
+  ctx.beginPath();
+  ctx.moveTo(6,-6);
+  ctx.quadraticCurveTo(40, 4+flutter, 46, 26+flutter*0.6);
+  ctx.quadraticCurveTo(20, 14, 4, 6);
+  ctx.closePath();
+  ctx.fill();
+  // torso
+  ctx.fillStyle = 'rgba(60,55,70,0.95)';
+  ctx.beginPath();
+  ctx.moveTo(-6,-4);
+  ctx.lineTo(10,-4);
+  ctx.lineTo(8,20);
+  ctx.lineTo(-8,20);
+  ctx.closePath();
+  ctx.fill();
+  // arm reaching to neck
+  ctx.strokeStyle = 'rgba(60,55,70,0.95)';
+  ctx.lineWidth = 5;
+  ctx.lineCap = 'round';
+  ctx.beginPath();
+  ctx.moveTo(6,-2);
+  ctx.lineTo(-24,-14);
+  ctx.stroke();
+  // head
+  ctx.fillStyle = 'rgba(235,200,175,0.98)';
+  ctx.beginPath();
+  ctx.arc(2,-14,9,0,Math.PI*2);
+  ctx.fill();
+  ctx.fillStyle = 'rgba(45,38,50,0.95)';
+  ctx.beginPath();
+  ctx.arc(2,-18,9,Math.PI,0);
+  ctx.fill();
+  ctx.restore();
+
+  ctx.restore();
+}
+
+/* ---------- particles ---------- */
+function drawLeaves(t, w){
+  if(w < 0.01) return;
+  ctx.save();
+  ctx.globalAlpha = clamp(w,0,1);
+  for(var i=0;i<leaves.length;i++){
+    var L = leaves[i];
+    var y = ((L.y0 + t*L.fall) % (H+120)) - 60;
+    var x = L.x0 + Math.sin(t*L.swayFreq + L.ph)*L.sway + (t*8);
+    x = ((x % (W+200)) + (W+200)) % (W+200) - 100;
+    var rot = t*L.rot + L.ph;
+    ctx.save();
+    ctx.translate(x,y);
+    ctx.rotate(rot);
+    ctx.fillStyle = rgb(L.col, 0.9);
+    ctx.beginPath();
+    ctx.ellipse(0,0,L.size,L.size*0.55,0,0,Math.PI*2);
+    ctx.fill();
+    ctx.restore();
+  }
+  ctx.restore();
+}
+
+function drawSnow(t, w){
+  if(w < 0.01) return;
+  ctx.save();
+  for(var i=0;i<snow.length;i++){
+    var S = snow[i];
+    var y = ((S.y0 + t*S.fall) % (H+80)) - 40;
+    var x = S.x0 + Math.sin(t*S.swayFreq + S.ph)*S.sway;
+    x = ((x % (W+80)) + (W+80)) % (W+80) - 40;
+    ctx.globalAlpha = clamp(w,0,1) * S.alpha;
+    ctx.fillStyle = 'rgba(255,255,255,1)';
+    ctx.beginPath();
+    ctx.arc(x,y,S.size,0,Math.PI*2);
+    ctx.fill();
+  }
+  ctx.restore();
+}
+
+/* ---------- transition mist overlay ---------- */
+function drawMist(t){
+  var m = mistBump(t);
+  if(m < 0.01) return;
+  ctx.save();
+  // drifting soft cloud blobs sweeping across during the bump
+  ctx.globalAlpha = m;
+  var nearestCenter = BOUNDS[0], best = 1e9;
+  for(var i=0;i<BOUNDS.length;i++){
+    var d = Math.abs(t-BOUNDS[i]);
+    if(d<best){best=d; nearestCenter=BOUNDS[i];}
+  }
+  var local = (t - nearestCenter) / (TW*2.2); // ~ -1..1
+  for(var k=0;k<5;k++){
+    var fx = ((k/5) + local*0.9) % 1;
+    fx = ((fx%1)+1)%1;
+    var x = fx*(W+400) - 200;
+    var y = 120 + k*110 + Math.sin(t*0.7+k)*20;
+    var r = 160 + k*30;
+    var grd = ctx.createRadialGradient(x,y,0,x,y,r);
+    grd.addColorStop(0,'rgba(255,255,255,0.9)');
+    grd.addColorStop(1,'rgba(255,255,255,0)');
+    ctx.fillStyle = grd;
+    ctx.beginPath();
+    ctx.arc(x,y,r,0,Math.PI*2);
+    ctx.fill();
+  }
+  ctx.fillStyle = 'rgba(255,255,255,'+(m*0.28)+')';
+  ctx.fillRect(0,0,W,H);
+  ctx.restore();
+}
+
+/* ---------- master render ---------- */
+function render(t){
+  ctx.clearRect(0,0,W,H);
+  var w = seasonWeights(t); // [spring, summer, autumn, winter]
+
+  var top = blend4(PAL.skyTop, w);
+  var bottom = blend4(PAL.skyBottom, w);
+  skyGradient(ctx, top, bottom);
+
+  var sunCol = blend4(PAL.sun, w);
+  drawSun(t, sunCol, 1);
+
+  // parallax scenery, cross-dissolving by season weight
+  drawCloudSea(t, w[0]);
+  drawMountains(t, w[1]);
+  drawCity(t, w[2]);
+  drawIceSea(t, w[3]);
+
+  drawHaze(t);
+
+  drawSnow(t, w[3]);
+  drawLeaves(t, w[2]);
+
+  var accent = blend4(PAL.accent, w);
+  drawCharacter(t, accent);
+
+  drawMist(t);
+
+  // gentle opening veil (never fully hides the scene, even at t=0)
+  if(t < 0.8){
+    ctx.save();
+    ctx.globalAlpha = 0.55 * (1 - smoothstep(0,0.8,t));
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(0,0,W,H);
+    ctx.restore();
+  }
+}
+
+/* ---------- public API ---------- */
+window.__duration = 40;
+window.setTime = function(t){
+  playing = false;
+  t = clamp(Number(t)||0, 0, 40);
+  render(t);
+};
+
+/* ---------- autoplay ---------- */
+var playing = true;
+var startPerf = null;
+function tick(now){
+  if(!playing) return;
+  if(startPerf === null) startPerf = now;
+  var t = (now - startPerf)/1000;
+  if(t >= 40){
+    render(40);
+    playing = false;
+    return;
+  }
+  render(t);
+  requestAnimationFrame(tick);
+}
+render(0);
+requestAnimationFrame(tick);
+
+})();
+</script>
+
+</body></html>
