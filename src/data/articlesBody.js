@@ -8916,7 +8916,7 @@ const ARTICLES_BODY = {
       "## 評価",
       "**強み**: IDE 統合と CLI が同じ Composer / Background Agent を共有するため、**作業環境を選ばずに同じワークフロー**を回せる。独自モデル（Composer 2.5 / Sonic）により低レイテンシ・低コストでフロンティア性能を実現。Microsoft Teams / Slack 統合でチャットアプリ起点のエージェント運用にも対応。",
       "**注意点**: Claude Code が Anthropic 純正の CLI として Anthropic Console / Bedrock / Vertex / Foundry を経由できるのに対し、Cursor CLI は Anysphere 経由でモデルを利用する形態（クレジット消費型）。**規制業界での運用は Cursor の Privacy Mode + Self-hosted Cloud Agents の組み合わせが必要**。",
-      "**資本関係の変化を織り込む必要がある**: 2026年6月16日に発表された **SpaceX による Anysphere の $60B（全株式交換）買収は、2026年8月14日に効力が発生して完了した**（[→ 詳細](?a=spacex-closes-cursor-anysphere-acquisition-2026)）。Anysphere は SpaceX の完全子会社となり、新設の SpaceXAI 部門に入っている（[→ 速報](?a=spacex-cursor-60b-acquisition-anysphere-2026)）。Cursor 公式ドキュメント（Models & Pricing）では、現行の Cursor Models の利用枠に Grok 4.7 / 4.6 / 4.5 が Composer 2.5 と並んで含まれている。当サイトの別記事は [Grok V9-Medium が Cursor の開発者ワークフローデータで訓練された](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)と伝えているが、この点は Cursor の公式発表では確認できていない。開発データの取り扱い方針が変わりうるため、企業導入では Privacy Mode の設定とデータ利用条項を継続的に確認することを勧める（[→ 市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。",
+      "**資本関係の変化を織り込む必要がある**: 2026年6月16日に発表された **SpaceX による Anysphere の $60B（全株式交換）買収は、2026年8月14日に効力が発生して完了した**（[→ 詳細](?a=spacex-closes-cursor-anysphere-acquisition-2026)）。Anysphere は SpaceX の完全子会社となった。SpaceXAI 部門への配置は、SpaceX の8-K・Cursor 公式ブログでは確認できていない（[→ 速報](?a=spacex-cursor-60b-acquisition-anysphere-2026)）。Cursor 公式ドキュメント（Models & Pricing）では、現行の Cursor Models の利用枠に Grok 4.7 / 4.6 / 4.5 が Composer 2.5 と並んで含まれている。Cursor は公式ブログ（2026年7月8日）で、SpaceXAI と共同で訓練した Grok 4.5 の訓練に、数兆トークンの Cursor データ（利用者とコードベース・ツールのやりとり、開発者とエージェントのやりとりを含む）が含まれたと説明している（[詳細](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)）。この訓練は4月の提携の下で、買収完了（8月14日）より前に行われた。当事者の説明で、独立した検証は確認できておらず、Cursor のどの利用者のデータが対象か（Privacy Mode の利用者が除外されるか等）は確認できていない。開発データの取り扱い方針が変わりうるため、企業導入では Privacy Mode の設定とデータ利用条項を継続的に確認することを勧める（[→ 市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。",
       "**関連記事**: [Cursor 3 / Agents Window](?a=cursor-3-agent-first-workspace-2026)、[Composer 2 / Kimi K2.5](?a=cursor-composer-2-kimi-2026)、[Microsoft Teams 統合](?a=cursor-microsoft-teams-integration-2026)、[Cursor iOS アプリ](?a=cursor-ios-app-launch-cloud-agents-remote-2026)、[CLI 横断比較](?a=cli-tools-comparison-2026-march)。",
       "---",
       "**編集履歴**",
@@ -8926,7 +8926,8 @@ const ARTICLES_BODY = {
       "【訂正 2026-09-30】（誤）インストールは `npm install -g @cursor/cli`、サインインは `cursor auth`、起動は `cursor` / `cursor --headless` / `cursor --bg`、Node.js 20+ 必須 →（正）Cursor 公式ドキュメント（cursor.com/docs/cli）の手順は `curl https://cursor.com/install -fsS | bash`（Windows は PowerShell の `irm 'https://cursor.com/install?win32=true' | iex`）で、コマンドは `agent`、サインインは `agent login`、非対話実行は `-p, --print`（ファイル変更は `--force` 併用）、クラウドへの引き継ぎは会話の先頭に `&` を付ける方式である。`--headless` と `--bg` は公式のパラメータ一覧に載っておらず、Node.js の要件も公式ドキュメントでは確認できなかった。また、2026-09-30 時点で npm レジストリに `@cursor/cli` というパッケージは存在しない（レジストリの応答は Not found）。存在しない名前は第三者に先に取得されるおそれがあるため、この名前を `npm install` しないこと。",
       "【訂正 2026-09-30】（誤）「Background Agent」という名称 →（正）現行の公式ドキュメントでは Cloud Agents と表記されている。`.cursorrules` の記述は、現行ドキュメントが説明している `.cursor/rules` 配下のルールファイルに改めた（`.cursorrules` への言及は現行ドキュメントには見当たらない）。",
       "【訂正 2026-09-30】料金表の「Business / Enterprise」を、公式ドキュメントの区分（Teams と Enterprise の2つの法人向けプラン）に合わせて「Enterprise」に改め、Teams の SSO 表記を公式の SAML/OIDC SSO に合わせた。インド向けの Start プラン（₹649/月・税込）を追記した。（誤）Pro+「Pro の5倍 Agent 上限」→（正）Cursor 公式料金ページ（Pro+ / Ultra の切替表示）では Pro+ は「3x Pro limits on Agent」、Ultra は「20x Pro limits on Agent」。Enterprise 行の「SOC 2」は料金ページ下部の会社全体の認証表示でありプランの機能ではないため外し、Enterprise 列に記載のある「優先サポートとアカウント管理」に差し替えた。",
-      "【追記 2026-09-30】Cursor 公式ドキュメントでの現行の確認結果。(1) SpaceX による買収は、Cursor 公式ブログ（2026年8月14日「Cursor is now a part of SpaceX」）が「SpaceX に正式に買収された。4月に発表した SpaceXAI との提携から始まった手続きの完了」と述べている。本文中の取引額・株式交換の形態・完全子会社化・SpaceXAI 部門への配置は、当サイトの別記事に依っており、この公式ブログには書かれていない。(2) Models & Pricing の Cursor Models 利用枠は Grok 4.7 / 4.6 / 4.5 と Composer 2.5、第三者モデルは別枠（API 価格で課金）で、Sonic の記載は見当たらない。第三者モデルの名称は Claude Fable 5.1 / Opus 5.5 / Sonnet 5.5、GPT-5.6（Luna / Sol / Terra）、Gemini 3.1 Pro / 3.8 Flash などが並んでおり、本文の切替可能モデルの記述（Opus 5、Fable 5、GPT-5.6、Gemini 3.x）は世代の細かい版が古い前提のまま残している。(3) Auto は Cursor Router（2026年7月22日）で動く。CLI は 2026年8月11日のリリースで実行中ターンへの割り込み誘導が、8月26日のリリースで `agent persist` による永続セッションが加わった（自己ホスト型ワーカーは 2026年3月以前から CLI にあり、8月のリリースはその拡張）。(4) Bugbot は 2026年6月10日の公式 changelog で、Composer 2.5 が動力になり、平均レビュー時間が約90秒、1回あたりの費用が約22%減と説明されている。これは Cursor 自身の説明であり、独立した検証は確認できていない。本文の「1 PR 平均 $1.00-$1.50」は、この変更以前の値かどうかを含め、公式ページでは確認できていない。"
+      "【追記 2026-09-30】Cursor 公式ドキュメントでの現行の確認結果。(1) SpaceX による買収は、Cursor 公式ブログ（2026年8月14日「Cursor is now a part of SpaceX」）が「SpaceX に正式に買収された。4月に発表した SpaceXAI との提携から始まった手続きの完了」と述べている。本文中の取引額・株式交換の形態・完全子会社化・SpaceXAI 部門への配置は、当サイトの別記事に依っており、この公式ブログには書かれていない。(2) Models & Pricing の Cursor Models 利用枠は Grok 4.7 / 4.6 / 4.5 と Composer 2.5、第三者モデルは別枠（API 価格で課金）で、Sonic の記載は見当たらない。第三者モデルの名称は Claude Fable 5.1 / Opus 5.5 / Sonnet 5.5、GPT-5.6（Luna / Sol / Terra）、Gemini 3.1 Pro / 3.8 Flash などが並んでおり、本文の切替可能モデルの記述（Opus 5、Fable 5、GPT-5.6、Gemini 3.x）は世代の細かい版が古い前提のまま残している。(3) Auto は Cursor Router（2026年7月22日）で動く。CLI は 2026年8月11日のリリースで実行中ターンへの割り込み誘導が、8月26日のリリースで `agent persist` による永続セッションが加わった（自己ホスト型ワーカーは 2026年3月以前から CLI にあり、8月のリリースはその拡張）。(4) Bugbot は 2026年6月10日の公式 changelog で、Composer 2.5 が動力になり、平均レビュー時間が約90秒、1回あたりの費用が約22%減と説明されている。これは Cursor 自身の説明であり、独立した検証は確認できていない。本文の「1 PR 平均 $1.00-$1.50」は、この変更以前の値かどうかを含め、公式ページでは確認できていない。",
+      "【訂正 2026-09-30】上記の追記（1）の「取引額・株式交換の形態・完全子会社化は当サイトの別記事に依り、公式ブログには書かれていない」のうち、取引額（$60B）・株式対価・完全子会社としての存続・8月14日の効力発生は、SpaceX の8-K（6月16日・8月14日）に記載がある。SpaceXAI 部門への配置は8-K にも Cursor ブログにも記載がない。「Grok V9-Medium が Cursor のデータで訓練された点は Cursor の公式発表では確認できていない」→（正）Cursor は7月8日の公式ブログで Grok 4.5 の訓練に Cursor データが含まれたと説明している。"
     ],
     "primarySources": [
       {
@@ -8968,6 +8969,11 @@ const ARTICLES_BODY = {
         "title": "Cursor is now a part of SpaceX",
         "site": "Cursor Blog",
         "url": "https://cursor.com/blog/joining-spacex"
+      },
+      {
+        "title": "Introducing Grok 4.5 (2026-07-08)",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/grok-4-5"
       }
     ],
     "tables": [
@@ -9265,13 +9271,13 @@ const ARTICLES_BODY = {
       "## 5月以降の動向",
       "- **5/11 Microsoft Teams 統合 GA**（`@Cursor` メンション）",
       "- **5月 Bugbot 課金モデルが usage-based に移行**",
-      "- **SpaceX による Anysphere 買収が完了**（$60B・全株式交換。6/16 発表、**2026年8月14日に合併の効力が発生**し、Anysphere は SpaceX の完全子会社として新設の SpaceXAI 部門へ）",
+      "- **SpaceX による Anysphere 買収が完了**（$60B・全株式交換。6/16 発表、**2026年8月14日に合併の効力が発生**し、Anysphere は SpaceX の完全子会社として存続（SpaceXAI 部門への配置は公式資料では未確認））",
       "- **6/30 [iOS アプリを公開](?a=cursor-ios-app-launch-cloud-agents-remote-2026)** — Always-on クラウドエージェントに加え、PC 上で動いているエージェントをスマホからリモート操作できる。音声入力にも対応",
       "- **Cursor 3.x** 系列で Agents Window が正式機能化",
       "## 評価",
       "**強み**: IDE と AI エージェントが一体化したエクスペリエンス。VS Code 互換で拡張機能がそのまま動く。Agents Window でマルチセッション運用が UI レベルで自然に。Composer 2.5 + Sonic の独自モデルでコストパフォーマンス・低レイテンシを両立。iOS アプリの追加で、**席を離れてもエージェントの進行を確認・介入できる**ようになった。",
       "**注意点**: Claude Code が CLI 中心で多サーフェス展開なのに対し、Cursor は IDE 中心。**ターミナル単体での運用には向かない**。Bugbot の usage-based 移行で PR 数の多いプロジェクトは月額予算が読みにくくなった。Pro+ / Ultra プランの追加で価格帯が広がり、適切なプラン選択が難しくなった面もある。",
-      "**資本関係が選定要因になった**: 買収は2026年8月14日にクローズ済みで、Cursor は既に SpaceX の完全子会社である（[→ 詳細](?a=spacex-closes-cursor-anysphere-acquisition-2026)）。Cursor 公式ドキュメント（Models & Pricing）では、現行の Cursor Models の利用枠に Grok 4.7 / 4.6 / 4.5 が Composer 2.5 と並んで含まれている。当サイトの別記事は [Grok V9-Medium が Cursor の開発者ワークフローデータで訓練された](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)と伝えているが、この点は Cursor の公式発表では確認できていない。機能・価格の比較に加え、**開発データの流れと親会社の事業判断**を評価に含める段階に入った（[→ 市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。企業導入では Privacy Mode の設定とデータ利用条項を継続的に確認してほしい。",
+      "**資本関係が選定要因になった**: 買収は2026年8月14日にクローズ済みで、Cursor は既に SpaceX の完全子会社である（[→ 詳細](?a=spacex-closes-cursor-anysphere-acquisition-2026)）。Cursor 公式ドキュメント（Models & Pricing）では、現行の Cursor Models の利用枠に Grok 4.7 / 4.6 / 4.5 が Composer 2.5 と並んで含まれている。Cursor は公式ブログ（2026年7月8日）で、SpaceXAI と共同で訓練した Grok 4.5 の訓練に、数兆トークンの Cursor データ（利用者とコードベース・ツールのやりとり、開発者とエージェントのやりとりを含む）が含まれたと説明している（[詳細](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)）。この訓練は4月の提携の下で、買収完了（8月14日）より前に行われた。当事者の説明で、独立した検証は確認できておらず、Cursor のどの利用者のデータが対象か（Privacy Mode の利用者が除外されるか等）は確認できていない。機能・価格の比較に加え、**開発データの流れと親会社の事業判断**を評価に含める段階に入った（[→ 市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。企業導入では Privacy Mode の設定とデータ利用条項を継続的に確認してほしい。",
       "**関連記事**: [Cursor Composer 2](?a=cursor-composer-2-kimi-2026)、[Cursor 3 / Agents Window](?a=cursor-3-agent-first-workspace-2026)、[Microsoft Teams 統合](?a=cursor-microsoft-teams-integration-2026)、[SpaceX による $60B 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)、[AI エディタ横断比較](?a=editor-comparison-2026-march)。",
       "---",
       "**編集履歴**",
@@ -9281,7 +9287,8 @@ const ARTICLES_BODY = {
       "【追記 2026-09-20】SpaceX による Anysphere 買収の**完了**を反映しました。本文は「Q3 2026 クローズ予定」のままでしたが、合併の効力は**2026年8月14日**に発生しており、当サイトも9月12日に報じています。記事間で食い違っていたため、該当箇所を更新しました。なお料金・切替可能モデルの現行確認は行っていないため、`lastReviewed` は据え置いています。",
       "【訂正 2026-09-30】（誤）「Background Agent」という名称 →（正）現行の公式ドキュメントでは Cloud Agents。（誤）「すべて従量モデルで、各プロンプトが request-equivalent credits を消費」→（正）現行の公式ドキュメントでは、Cursor Models と Other Models の2つの利用枠を API 価格ベースで消費する方式で、request 単位の課金は旧プラン（レガシー）の扱いになっている。`.cursorrules` の記述は、現行ドキュメントが説明している `.cursor/rules` 配下のルールファイルに改めた（`.cursorrules` への言及は現行ドキュメントには見当たらない）。",
       "【訂正 2026-09-30】料金表の「Business / Enterprise」を、公式ドキュメントの区分（Teams と Enterprise の2つの法人向けプラン）に合わせて「Enterprise」に改め、（誤）Ultra「優先サポート」→（正）公式料金ページの Ultra は「Priority access to new features」（新機能への優先アクセス）。Hobby の内容を公式料金ページの記載に、Teams の SSO 表記を SAML/OIDC SSO に合わせた。インド向けの Start プラン（₹649/月・税込）を追記した。（誤）Pro+「Pro の5倍 Agent 上限」→（正）Cursor 公式料金ページ（Pro+ / Ultra の切替表示）では Pro+ は「3x Pro limits on Agent」、Ultra は「20x Pro limits on Agent」。Enterprise 行の「SOC 2」は料金ページ下部の会社全体の認証表示でありプランの機能ではないため外し、Enterprise 列に記載のある「優先サポートとアカウント管理」に差し替えた。",
-      "【追記 2026-09-30】Cursor 公式ドキュメントでの現行の確認結果。(1) SpaceX による買収は、Cursor 公式ブログ（2026年8月14日「Cursor is now a part of SpaceX」）が「SpaceX に正式に買収された。4月に発表した SpaceXAI との提携から始まった手続きの完了」と述べている。本文中の取引額・株式交換の形態・完全子会社化・SpaceXAI 部門への配置は、当サイトの別記事に依っており、この公式ブログには書かれていない。(2) Models & Pricing の Cursor Models 利用枠は Grok 4.7 / 4.6 / 4.5 と Composer 2.5 で、Sonic の記載は見当たらない。Grok 4.7 は 2026年9月21日、Grok 4.6 は 8月12日に公開されている。第三者モデルは Claude Fable 5.1 / Opus 5.5 / Sonnet 5.5、GPT-5.6（Luna / Sol / Terra）、Gemini 3.1 Pro / 3.8 Flash などが並ぶ。(3) Auto は Cursor Router（2026年7月22日）で動き、Cost / Balance / Intelligence の3モードがある。(4) 6月29日の iOS アプリは公式 changelog では public beta と記載されており、7月29日に iPad 版も加わった。8月17日に Origin（コードホスティング、early beta）、9月2日に自己ホスト型マシン（self-hosted machines）、9月10日に Projects（複数エージェントを束ねる機能、beta）、9月23日に Rollouts と Security Review（Teams / Enterprise 向け）が公開された。(5) Bugbot は 2026年6月10日の公式 changelog で、Composer 2.5 が動力になり、平均レビュー時間が約90秒、1回あたりの費用が約22%減と説明されている。これは Cursor 自身の説明であり、独立した検証は確認できていない。本文の「1 PR 平均 $1.00-$1.50」は、この変更以前の値かどうかを含め、公式ページでは確認できていない。"
+      "【追記 2026-09-30】Cursor 公式ドキュメントでの現行の確認結果。(1) SpaceX による買収は、Cursor 公式ブログ（2026年8月14日「Cursor is now a part of SpaceX」）が「SpaceX に正式に買収された。4月に発表した SpaceXAI との提携から始まった手続きの完了」と述べている。本文中の取引額・株式交換の形態・完全子会社化・SpaceXAI 部門への配置は、当サイトの別記事に依っており、この公式ブログには書かれていない。(2) Models & Pricing の Cursor Models 利用枠は Grok 4.7 / 4.6 / 4.5 と Composer 2.5 で、Sonic の記載は見当たらない。Grok 4.7 は 2026年9月21日、Grok 4.6 は 8月12日に公開されている。第三者モデルは Claude Fable 5.1 / Opus 5.5 / Sonnet 5.5、GPT-5.6（Luna / Sol / Terra）、Gemini 3.1 Pro / 3.8 Flash などが並ぶ。(3) Auto は Cursor Router（2026年7月22日）で動き、Cost / Balance / Intelligence の3モードがある。(4) 6月29日の iOS アプリは公式 changelog では public beta と記載されており、7月29日に iPad 版も加わった。8月17日に Origin（コードホスティング、early beta）、9月2日に自己ホスト型マシン（self-hosted machines）、9月10日に Projects（複数エージェントを束ねる機能、beta）、9月23日に Rollouts と Security Review（Teams / Enterprise 向け）が公開された。(5) Bugbot は 2026年6月10日の公式 changelog で、Composer 2.5 が動力になり、平均レビュー時間が約90秒、1回あたりの費用が約22%減と説明されている。これは Cursor 自身の説明であり、独立した検証は確認できていない。本文の「1 PR 平均 $1.00-$1.50」は、この変更以前の値かどうかを含め、公式ページでは確認できていない。",
+      "【訂正 2026-09-30】上記の追記（1）の「取引額・株式交換の形態・完全子会社化は当サイトの別記事に依り、公式ブログには書かれていない」のうち、取引額（$60B）・株式対価・完全子会社としての存続・8月14日の効力発生は、SpaceX の8-K（6月16日・8月14日）に記載がある。SpaceXAI 部門への配置は8-K にも Cursor ブログにも記載がない。「Grok V9-Medium が Cursor のデータで訓練された点は Cursor の公式発表では確認できていない」→（正）Cursor は7月8日の公式ブログで Grok 4.5 の訓練に Cursor データが含まれたと説明している。"
     ],
     "primarySources": [
       {
@@ -9328,6 +9335,11 @@ const ARTICLES_BODY = {
         "title": "Agents Window",
         "site": "Cursor Docs",
         "url": "https://cursor.com/docs/agent/agents-window"
+      },
+      {
+        "title": "Introducing Grok 4.5 (2026-07-08)",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/grok-4-5"
       }
     ],
     "tables": [
@@ -13867,12 +13879,15 @@ const ARTICLES_BODY = {
   },
   "spacex-cursor-60b-acquisition-anysphere-2026": {
     "body": [
-      "SpaceX が2026年6月16日、Cursor 開発元の **Anysphere, Inc.** を **$60B のオールストック取引**で買収するオプション行使を発表した。**史上最大の VC バック・スタートアップ買収**として直ちに記録を更新。SpaceX が6月12日に NYSE で **$135/株**でIPO したばかりで、買収発表日には **$192.46/株**まで急騰した直後のディールとなる。",
+      "SpaceX が2026年6月16日、Cursor 開発元の **Anysphere, Inc.** を **$60B のオールストック取引**で買収する合併契約の締結を発表した。**史上最大の VC バック・スタートアップ買収**として直ちに記録を更新。SpaceX が6月12日に Nasdaq で **$135/株**でIPO したばかりで、買収発表日には **$192.46/株**まで急騰した直後のディールとなる。",
       "**ディール構造**: 取引は Anysphere と SpaceX の100%子会社との株式合併として組まれ、SpaceX が IPO で調達した現金は使われない構造。Anysphere 株主は **7日間 VWAP** ベースの SpaceX クラス A 株を受け取る。クロージングは規制当局承認次第で **2026年 Q3** を予定。SpaceX-xAI 合併（5月6日確定、xAI 評価額 ~$250B）に続く2回目のフロンティア AI 領域統合で、SpaceX が AI 領域の事業ホールディング体制を本格的に固めた格好。",
       "**Cursor の事業規模**: Cursor は創業から4年弱で **ARR 約$4B**（うち約 **$2.6B** がエンタープライズ B2B 由来）に到達。**5万社超**のエンタープライズ顧客を抱え、**Fortune 500 の約2/3** に開発者ベースの利用がある。1日あたり **約1.5億行**のエンタープライズコードが Cursor 経由で書かれている計算で、AI コーディング市場の支配的プレイヤーとしての地位を確立していた（[Cursor 3 Agent-first Workspace](?a=cursor-3-agent-first-workspace-2026)）。",
-      "**戦略的合理性**: SpaceX が買うのは「**データ・計算・人材**」の3点だ。第一にデータ — Cursor の実開発者ワークフロー（コード・PR・レビュー・修正履歴）が Grok 訓練パイプラインに流れ込む。実際、買収同日に消費者公開された Grok V9-Medium は Cursor データで訓練済（[Grok V9-Medium 公開](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)）。第二に計算 — Cursor は xAI の **Colossus** スーパークラスター（220,000 GPU）にアクセス可能になり、独自モデル Composer 系の継続訓練が大幅加速。第三に人材 — xAI は2026年3月までに **共同創業者11名全員**が離脱しており、Cursor の技術陣がエンジニアリングギャップを埋める。",
+      "**戦略的合理性**: SpaceX 自身が買収の狙いを詳しく説明した資料は確認できていない。以下は当サイトによる整理で、「データ・計算・人材」の3点で見る。第一にデータ。SpaceX の8-K（6月16日）は合併の条件を記すのみで、訓練データには触れていない。一方、Cursor の公式ブログ（7月8日）は、SpaceXAI と共同で訓練した Grok 4.5 の訓練に、数兆トークンの Cursor データ（コードベースやツールとの利用者のやりとり、開発者とエージェントのやりとりを含む）が含まれたと説明している（[Grok V9-Medium の記事](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)）。これは4月21日発表の提携の下で、買収完了（8月14日）より前に行われた訓練で、当事者の説明であり独立した検証は確認できていない。Elon Musk も5月25日に V9-Medium の補足訓練へ Cursor データを追加したと述べている（原文は未読）。 第二に計算 — Cursor は xAI の **Colossus** スーパークラスター（220,000 GPU）にアクセス可能になり、独自モデル Composer 系の継続訓練が大幅加速。第三に人材 — xAI は2026年3月までに **共同創業者11名全員**が離脱しており、Cursor の技術陣がエンジニアリングギャップを埋める。",
       "**市場への影響**: Cursor は買収後もブランド・製品ライン継続が確認されているが、モデル選択肢に変化が出る可能性は高い。これまで Claude Sonnet 4.6・Opus 4.7/4.8 を中心に使ってきた Cursor が、今後 Grok 系を優先する可能性は否定できず、エンタープライズ顧客は「**モデル選択がそのままインフラ選択になる**」現実に向き合うことになる。詳細な市場再編は[AI コーディング市場再編 分析記事](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)を参照。",
-      "**規制リスク**: AI 領域・宇宙領域を同一体制下に置く SpaceX-xAI-Cursor の3層構造は、米国 FTC・DOJ のアンチトラスト審査の対象になる可能性が高い。Q3 close 予定は楽観的シナリオで、規制対応次第では 2027 にずれ込む可能性も指摘されている。"
+      "**規制リスク**: AI 領域・宇宙領域を同一体制下に置く SpaceX-xAI-Cursor の3層構造は、米国 FTC・DOJ のアンチトラスト審査の対象になる可能性が高い。Q3 close 予定は楽観的シナリオで、規制対応次第では 2027 にずれ込む可能性も指摘されている。",
+      "【追記 2026-09-30】Cursor 公式ブログ（2026年8月14日）によると、SpaceX による買収は同日完了した。SpaceX の8-K（8月14日提出、Item 2.01）は、Cursor（Anysphere）が SpaceX の完全子会社として存続し、SpaceX の Class A 普通株が交付されたと記載している（暗黙の株式価値は $60B、対価は合併前7取引日の出来高加重平均価格に基づく）。この記事が「Q3 2026 予定」と書いたクロージングは、Q3 内に完了したことになる。完了の詳細は[別記事](?a=spacex-closes-cursor-anysphere-acquisition-2026)を参照。なお Cursor の公式ブログは買収額（$60B）には触れていない。",
+      "【訂正 2026-09-30】（誤）「買収するオプション行使を発表」→（正）6月16日の8-Kは合併契約（Agreement and Plan of Merger）の締結を記載しており、オプション行使の記載はない（4月21日に SpaceX 自身が発表したとされる「Cursor を $60B で買収する権利」に関する経緯は、Bloomberg の見出し「SpaceX Has Deal for Right to Acquire Cursor for $60 Billion」で確認したが原文は未読。TechCrunch は派生）。（誤）「NYSE で IPO」→（正）SpaceX の8-Kの表紙は取引所を The Nasdaq Stock Market LLC / Nasdaq Texas, LLC（銘柄 SPCX）と記載している。",
+      "【訂正 2026-09-30】（誤）「Cursor の開発者ワークフローデータは Grok 訓練に投入される」「買収同日に消費者公開された Grok V9-Medium は Cursor データで訓練済」→（正）Cursor は公式ブログ（7月8日）で、Grok 4.5 の訓練に数兆トークンの Cursor データが含まれたと説明している。この訓練は提携（4月21日）の下で買収完了（8月14日）より前に行われた。買収完了後のデータの扱いは確認できていない。V9-Medium の6月16日の消費者公開は公式資料で確認できていない（詳細は[Grok V9-Medium の記事](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)の訂正を参照）。"
     ],
     "primarySources": [
       {
@@ -13889,18 +13904,39 @@ const ARTICLES_BODY = {
         "title": "SpaceX Buys Cursor for $60B: What the Deal Means in 2026",
         "site": "Digital Applied",
         "url": "https://www.digitalapplied.com/blog/spacex-acquires-cursor-anysphere-60b-ai-coding-2026"
+      },
+      {
+        "title": "SpaceX Form 8-K (2026-06-16): Agreement and Plan of Merger with Anysphere",
+        "site": "SEC EDGAR",
+        "url": "https://www.sec.gov/Archives/edgar/data/0001181412/000162828026043411/spaceexplorationtechnologi.htm"
+      },
+      {
+        "title": "SpaceX Form 8-K (2026-08-14): completion of acquisition",
+        "site": "SEC EDGAR",
+        "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026056945/spcx-20260814.htm"
+      },
+      {
+        "title": "Cursor is now a part of SpaceX (2026-08-14)",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/joining-spacex"
+      },
+      {
+        "title": "Introducing Grok 4.5 (2026-07-08)",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/grok-4-5"
       }
     ]
   },
   "feature-ai-coding-market-realignment-spacex-cursor-2026": {
     "body": [
       "SpaceX による Cursor $60B 買収（[速報](?a=spacex-cursor-60b-acquisition-anysphere-2026)）は、AI コーディングツール市場の**勢力図を3極構造**に塗り替える。これまで「Cursor vs GitHub Copilot vs Claude Code」と単発の競争として論じられてきた構図が、**SpaceX-xAI 系、Microsoft 系、独立系**という親会社単位の3勢力に圧縮された。本特集では新しい勢力図と、開発者が直面する選択を整理する。",
-      "**第1極: SpaceX-xAI-Cursor 系（垂直統合）** — Cursor 製品（IDE / CLI / Background Agent / Bugbot）は継続するが、内部モデルは段階的に Grok 系へ移行が見込まれる。Cursor 独自モデル Composer 2.5（[Cursor CLI レビュー](?a=cursor-cli)）は Kimi K2.5 ベースだったが、今後は Grok V9-Medium（[消費者公開](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)）など Grok 系列モデルとの統合が進む。データ流通も双方向で、Cursor の開発者ワークフローが Grok の訓練データに、Grok の最新モデルが Cursor の Composer/Sonic 後継に。**xAI Colossus** スーパークラスター（220,000 GPU）の計算リソースを享受できる利点が大きい。",
+      "**第1極: SpaceX-xAI-Cursor 系（垂直統合）** — Cursor 製品（IDE / CLI / Background Agent / Bugbot）は継続するが、内部モデルは段階的に Grok 系へ移行が見込まれる。Cursor 独自モデル Composer 2.5（[Cursor CLI レビュー](?a=cursor-cli)）は Kimi K2.5 ベースだったが、今後は Grok 4.5（[公開記事](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)）など Grok 系列モデルとの統合が進む。Cursor のデータが Grok の訓練に使われたかについて、Cursor は公式ブログ（7月8日）で、SpaceXAI と共同で訓練した Grok 4.5 の訓練に数兆トークンの Cursor データ（利用者とコードベース・ツールのやりとり、開発者とエージェントのやりとりを含む）が含まれたと説明している。当事者の説明で、独立した検証は確認できていない。訓練は提携（4月21日発表）の下で買収完了（8月14日）より前に行われた。Cursor のどの利用者のデータが対象か（Privacy Mode の利用者が除外されるか等）は確認できていない。**xAI Colossus** スーパークラスター（220,000 GPU）の計算リソースを享受できる利点が大きい。",
       "**第2極: Microsoft-GitHub Copilot 系（モデル多重化）** — GitHub Copilot は **MAI-Code-1-Flash**（Microsoft 内製、6/2 GA）を中核に据えつつ、Claude Sonnet 4.5 / Opus 4.7-4.8、Grok、Gemini など複数のフロンティアモデルを `/model` で切替可能なマルチベンダー戦略を維持する（[Copilot CLI レビュー](?a=github-copilot-cli)）。OpenAI との関係も継続し、Codex / GPT-5.5 も統合済。Azure インフラ・Microsoft 365 統合・エンタープライズ販路という地の利を持つ。",
       "**第3極: 独立系（Anthropic Claude Code / Cognition Devin Desktop）** — Anthropic は **Claude Code**（[Opus 4.8 + Dynamic Workflows](?a=claude-code)）と **Claude Fable 5**（[Fable 5 リリース](?a=anthropic-claude-fable-5-mythos-5-ga-2026)）を武器に、特定インフラに縛られない中立路線を堅持。Workload Identity Federation（[WIF GA](?a=anthropic-workload-identity-federation-ga-service-accounts-2026)）でエンタープライズセキュリティを強化し、AWS・GCP・Azure いずれの顧客にも統合しやすい。Cognition は **Devin / Devin Desktop**（旧 Windsurf を統合）で別系統の独立勢力を形成、Devin Local の高効率エージェントが差別化軸。",
-      "**開発者への影響: モデル選択 = インフラ選択**: 従来「どの AI モデルを使うか」は API キーを差し替えるだけの軽い判断だった。SpaceX-Cursor 統合後は、**コーディングエージェントを選ぶことが、その背後の計算インフラ・データ流通・親会社の地政学を選ぶこと**になる。例えば Grok を Cursor 経由で使うと開発データが xAI 訓練に流れ、Claude を使うとデータは Anthropic で訓練に使われない（Privacy Mode 等）。エンタープライズはこの「データガバナンス」の観点で AI コーディング基盤の選択を見直す必要が出てくる。",
+      "**開発者への影響: モデル選択 = インフラ選択**: 従来「どの AI モデルを使うか」は API キーを差し替えるだけの軽い判断だった。SpaceX-Cursor 統合後は、**コーディングエージェントを選ぶことが、その背後の計算インフラ・データ流通・親会社の地政学を選ぶこと**になる。例えば Cursor 経由で Grok を使った場合のデータの扱いは、各社のデータ利用条項と Privacy Mode 等の設定で決まる。Cursor は Grok 4.5 の訓練に Cursor データを使ったと公式に説明している（[詳細](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)）。他社モデルの訓練での扱いは当稿では確認していない。エンタープライズはこの「データガバナンス」の観点で AI コーディング基盤の選択を見直す必要が出てくる。",
       "**規制と地政学**: AI 領域・宇宙領域・SNS（X）を SpaceX-xAI が一体運営する構図は、米国 FTC のアンチトラスト懸念と EU AI Act の双方で精査される。中国側では DeepSeek・Qwen・Kimi 等のオープンウェイトモデルが「独立系インフラ」を強化、米中分裂が AI コーディング層でも顕在化する。日本企業・公的機関は3極のいずれに依存するかを意識的に決める必要がある。",
-      "**今後12ヶ月の見通し**: (1) Cursor から Claude Code・Devin Desktop・GitHub Copilot への移行検討が一定数発生、(2) GitHub Copilot のマルチモデル戦略がさらに強化されデファクト中立基盤化、(3) Anthropic は Claude Code + WIF + Fable 5 でエンタープライズ深耕、(4) 中国系オープンウェイトモデルが「サードオプション」として浮上、という4本柱で市場が動く見込み。"
+      "**今後12ヶ月の見通し**: (1) Cursor から Claude Code・Devin Desktop・GitHub Copilot への移行検討が一定数発生、(2) GitHub Copilot のマルチモデル戦略がさらに強化されデファクト中立基盤化、(3) Anthropic は Claude Code + WIF + Fable 5 でエンタープライズ深耕、(4) 中国系オープンウェイトモデルが「サードオプション」として浮上、という4本柱で市場が動く見込み。",
+      "【訂正 2026-09-30】（誤）「Cursor の開発者ワークフローが Grok の訓練データに」「Grok を Cursor 経由で使うと開発データが xAI 訓練に流れ、Claude を使うとデータは Anthropic で訓練に使われない」→（正）Cursor が公式ブログ（7月8日）で、Grok 4.5 の訓練に数兆トークンの Cursor データが含まれたと説明している（当事者の説明）。Anthropic 側の扱いは当稿では確認しておらず削除した。Grok V9-Medium の6月16日の消費者公開は公式資料で確認できていない。"
     ],
     "primarySources": [
       {
@@ -13912,6 +13948,16 @@ const ARTICLES_BODY = {
         "title": "SpaceX Buys Cursor $60B: What It Means for Every Developer",
         "site": "Digital Strategy AI",
         "url": "https://digitalstrategy-ai.com/spacex-cursor-acquisition-analysis"
+      },
+      {
+        "title": "Introducing Grok 4.5 (2026-07-08)",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/grok-4-5"
+      },
+      {
+        "title": "Cursor is now a part of SpaceX (2026-08-14)",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/joining-spacex"
       }
     ]
   },
@@ -13965,19 +14011,53 @@ const ARTICLES_BODY = {
   },
   "xai-grok-v9-medium-consumer-release-cursor-data-2026": {
     "body": [
-      "xAI の次世代モデル **Grok V9-Medium** が2026年6月16日、**X と SuperGrok** で消費者向けに利用可能になった。SpaceX が同日に Cursor を $60B で買収（[Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）した経緯と深く結びついており、本モデルは **Cursor の実開発者ワークフローデータ**で訓練されている。コーディング領域での Claude / GPT-5.5 への対抗が明確な狙い。",
-      "**モデル仕様**: Grok V9-Medium は **1.5兆パラメータ**で、現行本番モデル **v8-small（500億パラメータ）の3倍**の規模。Elon Musk が5月25日に「訓練完了、評価結果は良好」と発表（[xAI 6月集中更新](?a=xai-grok-june-2026-voice-imagine-connectors-2026)）、その後 supervised fine-tuning と reinforcement learning を経て、約3週間後に消費者向け公開となった。",
-      "**Cursor データでの訓練**: 本モデルは **Cursor の実開発者ワークフロー**（コード入力 → AI 提案 → 採用/却下 → 修正 のシーケンス）を訓練データに採用した点が特徴。これは Cursor が **Fortune 500 の約2/3** に使われ、日に約 **1.5億行**のコードを処理している規模を考えると、訓練データとして極めて貴重。SpaceX-Cursor 統合の最初の実利となる。",
-      "**API 未開放**: 一方で **API は未開放**で、6月19日時点でも xAI ドキュメントの release notes には grok-v9-medium が掲載されていない。SuperGrok 加入者の利用とエンタープライズ API 利用は別ゲートで運用される xAI の設計上、エンタープライズ展開には今後数週間〜数ヶ月の追加待機が必要。",
-      "**コーディング・ベンチマーク戦略**: xAI は Grok V9-Medium で Claude（Opus 4.8 / Fable 5）・GPT-5.5 の SWE-bench リードを切り崩すことを目標としているが、公式ベンチマーク値はまだ未公表。Cursor 開発者データを訓練に組み込んだことで、**実プロダクト挙動への適合度**で差別化を狙う構図だ。",
+      "xAI の次世代基盤モデル Grok V9-Medium（1.5兆パラメータ）について、Elon Musk が2026年5月25日に X で訓練の完了を投稿し、2〜3週間後の公開を予告した。当初この記事は「6月16日に X と SuperGrok で消費者向けに公開された」と伝えたが、その公開は公式資料で確認できない。6月16日の TechTimes は見出しに反して本文では公開を予定として書き、6月29日の同紙は「公開の窓は発売のないまま過ぎた」と書いている。V9 基盤とされるモデルは、7月8日に Grok 4.5 として公開された。本稿は速報を、確認できる経緯の整理に再構成した（編集履歴を参照）。SpaceX は6月16日に Cursor（Anysphere）との合併契約を締結している（[Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）。",
+      "確認できる経緯: Musk は5月25日の X 投稿で、V9-Medium（1.5T）の訓練が完了し、評価結果は良好で、fine-tuning は進行中、reinforcement learning は数日後に始まり、公開まで2〜3週間と述べた（[xAI 6月集中更新](?a=xai-grok-june-2026-voice-imagine-connectors-2026)）。投稿の原文は直接読めておらず、検索索引に出た文面と複数媒体の引用で確認した。規模は現行の本番モデル v8-small の約3倍で、TechTimes は v8-small を approximately 500 billion（約5000億）パラメータと書き、1.5兆の3分の1とも一致する（一次資料は未読）。",
+      "Cursor データについて（当事者の説明）: Musk の5月25日の投稿は、補足訓練で Cursor のデータを多く追加し、今後さらに追加すると述べている。Cursor の公式ブログ「Introducing Grok 4.5」（2026年7月8日）は、Grok 4.5 を SpaceXAI と共同で訓練したとし、訓練には「コードベースやソフトウェアツールと利用者とのやりとりを幅広く捉えた、数兆トークンの Cursor データ」が含まれ、このデータによりモデルは既存のソフトウェアと「開発者とエージェントのやりとり」の両方から学べる、と説明している（英語原文の要約）。同ブログは、Cursor のコードベースの過去のスナップショットが誤って訓練に入り、CursorBench で有利になったことも述べている。いずれも当事者（xAI 側の Musk と Cursor）の説明で、独立した検証は確認できていない。Musk の投稿は V9-Medium、Cursor のブログは Grok 4.5 を指しており、両者の対応は Musk の6月28日の発言（Grok 4.5 は 1.5T の V9 基盤モデルに基づく）による。この発言は GIGAZINE や Free Press Journal などの引用でのみ確認でき、原文は読めていない。この訓練は4月21日発表の SpaceXAI との提携の下で行われ、買収の完了（8月14日）より前のことである。Cursor のどの利用者のデータが対象か（Privacy Mode の利用者が除外されるか等）は確認できていない。「コード入力、AI 提案、採用または却下、修正」という系列の表現は当サイトの当初の記述で、Cursor の資料にも報道（TechTimes は、開発者が要件を記述し、コードベースをたどり、修正を重ね、AI の応答を導く様子と書く）にも同じ文言はない。SpaceX の8-K（6月16日、8月14日）は訓練データに触れていない。",
+      "提供状況: 6月16日の TechTimes は、見出しは「Arrives」だが本文では公開を「6月中旬が目標で、その窓は今開いている」という予定の段階で書き、6月17日の Big Hat Group は「any day now」と書き、6月29日の TechTimes は「当初は6月中旬の公開が見込まれたが、発売のないまま窓は過ぎた」と書いた（いずれも二次情報）。Musk は6月28日に Grok 4.5 が SpaceX と Tesla での private beta に入ったと述べたと報じられている（原文は未読）。V9 基盤とされるモデルの一般提供は、Cursor ブログと xAI の API release notes で確認できる7月8日の Grok 4.5 である。xAI の API release notes に grok-v9-medium の掲載はなく、6月中の公開を示す公式資料は見つからない。6月16日に公開されたとする根は、出典不明の集約サイト系の1系統のみで、元記事が挙げていた ChatForest は現在 404 である。以上から6月16日の消費者公開は行われなかったとみられるが、公開しなかったと当事者が述べた資料は見つかっていない。",
+      "ベンチマークについて、TechTimes（6月16日）は SpaceX が SWE-bench Verified で Claude や GPT-5.5 と比較する意向を示したと報じた。V9-Medium 自体の公式ベンチマーク値は確認できていない。",
       "**編集履歴**",
-      "【訂正 2026-09-02】一次ソースのうち `https://chatforest.com/builders-log/xai-grok-v9-medium-1-5t-coding-model-mid-june-2026-builder-guide/` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 1 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。"
+      "【訂正 2026-09-02】一次ソースのうち `https://chatforest.com/builders-log/xai-grok-v9-medium-1-5t-coding-model-mid-june-2026-builder-guide/` が到達できなくなっていた（HTTP 404）ため削除した。移転先を探したが見つからなかった。**記事の事実関係そのものは、残る 1 件の一次ソースで裏付けられている。** 削除した URL をここに記録しておくのは、読者が元の記事を自分で探せるようにするためである。",
+      "【訂正 2026-09-30】（誤）「Grok V9-Medium が2026年6月16日に X と SuperGrok で消費者向けに公開された」→（正）公開は公式資料で確認できず、行われなかったとみられる。V9 基盤とされるモデルは7月8日に Grok 4.5 として公開された。あわせて、速報だった本稿を後日、確認できる経緯の整理に再構成した。根拠: xAI・SpaceX・Cursor の公式資料に6月の公開はなく、6月16日の TechTimes は、見出しに反して本文では公開を予定として書き、6月29日の同紙は「公開の窓は発売のないまま過ぎた」と書いた。",
+      "【訂正 2026-09-30】（誤）v8-small「500億パラメータ」→（正）約5000億パラメータ（1.5兆の3分の1で、TechTimes の approximately 500 billion と一致。一次資料は未読）。",
+      "【訂正 2026-09-30】（誤）「Cursor の実開発者ワークフローデータ（コード入力→AI 提案→採用/却下→修正）を訓練データに採用」「SpaceX-Cursor 統合の最初の実利」「Fortune 500 の約2/3・日に約1.5億行という規模を考えると極めて貴重」→（正）Cursor は公式ブログ（7月8日）で、Grok 4.5 の訓練に数兆トークンの Cursor データ（利用者とコードベース・ツールのやりとり、開発者とエージェントのやりとりを含む）が含まれたと説明している。訓練は提携の下で買収完了より前に行われた。「採用/却下」の系列という記述と、利用規模の数字を訓練データ量と結びつける記述には根拠がないため削除した。",
+      "【訂正 2026-09-30】（誤）「Claude / GPT-5.5 への対抗が明確な狙い」「エンタープライズ展開には今後数週間〜数ヶ月の追加待機が必要」「Claude・GPT-5.5 の SWE-bench リードを切り崩すことを目標」→（正）当事者の公式な目標表明は確認できていないため削除・書き換えた。"
     ],
     "primarySources": [
       {
         "title": "Grok V9-Medium Arrives as SpaceX Seals Cursor: Developers Face Model-Choice Risk",
         "site": "TechTimes",
         "url": "https://www.techtimes.com/articles/318495/20260616/grok-v9-medium-arrives-spacex-seals-cursor-developers-face-model-choice-risk.htm"
+      },
+      {
+        "title": "Elon Musk on X: Grok foundation model V9-Medium (1.5T) has finished training (2026-05-25。原文は未読、検索索引で確認)",
+        "site": "X",
+        "url": "https://x.com/elonmusk/status/2058787384364265734"
+      },
+      {
+        "title": "Introducing Grok 4.5 (2026-07-08)",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/grok-4-5"
+      },
+      {
+        "title": "Cursor partners with SpaceX on model training (2026-04-21)",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/spacex-model-training"
+      },
+      {
+        "title": "Cursor is now a part of SpaceX (2026-08-14)",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/joining-spacex"
+      },
+      {
+        "title": "Release Notes | SpaceXAI Docs",
+        "site": "SpaceXAI Docs",
+        "url": "https://docs.x.ai/developers/release-notes"
+      },
+      {
+        "title": "（二次資料）Grok 4.5 Enters Private Beta at SpaceX and Tesla: No Public Access, No Independent Benchmark (2026-06-29)",
+        "site": "TechTimes",
+        "url": "https://www.techtimes.com/articles/319314/20260629/grok-45-enters-private-beta-spacex-tesla-no-public-access-no-independent-benchmark.htm"
       }
     ]
   },
@@ -14066,10 +14146,11 @@ const ARTICLES_BODY = {
   },
   "overview-2026-week-jun15": {
     "body": [
-      "**6月16日（火）** — AI 業界史上最大級の M&A 発表。**SpaceX が Cursor（Anysphere）を $60B で買収**、史上最大の VC バック・スタートアップ買収を更新（[SpaceX-Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）。同日 **Grok V9-Medium が X と SuperGrok で消費者公開**、1.5T パラメータ・Cursor 開発者ワークフローデータで訓練（[Grok V9-Medium](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)）。両発表が同日になったのは偶然ではなく、SpaceX-xAI-Cursor の垂直統合戦略の起点（[市場再編 分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。",
+      "**6月16日（火）** — AI 業界史上最大級の M&A 発表。**SpaceX が Cursor（Anysphere）を $60B で買収**、史上最大の VC バック・スタートアップ買収を更新（[SpaceX-Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）。同日、Grok V9-Medium（1.5T パラメータ）の公開が予定として報じられたが、6月中に公開されなかったとみられる（[Grok V9-Medium](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)）。Elon Musk は5月25日に Cursor のデータを補足訓練に追加したと述べており、Cursor は7月8日に、Grok 4.5 の訓練に数兆トークンの Cursor データが含まれたと説明している（いずれも当事者の説明）（[市場再編 分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。",
       "**6月17日（水）** — Anthropic が **Workload Identity Federation（WIF）を GA**、静的 API キーが不要に。AWS IAM・GCP・Azure・GitHub Actions・OIDC で直接認証、Service Accounts も導入。エンタープライズセキュリティの大改革（[WIF GA](?a=anthropic-workload-identity-federation-ga-service-accounts-2026)）。",
       "**6月18日（木）** — **Noam Shazeer が Google → OpenAI 移籍**、Transformer 共著者が OpenAI Architecture Research Lead 就任、Alphabet 株 7% 下落（[Shazeer 移籍](?a=noam-shazeer-google-to-openai-architecture-research-2026)）。同日 **Grok Imagine Video 1.5** が公開、AI 動画 leaderboard 1位・Sora 比 86% 安（[Grok Video 1.5](?a=xai-grok-imagine-video-1-5-86percent-below-sora-2026)）。",
-      "**週の総括** — AI 業界の勢力図が劇的に動いた1週間。SpaceX-Cursor 買収は「**モデル選択 = インフラ選択**」時代の到来を告げ、Grok V9-Medium の同日公開で xAI の垂直統合戦略が形になった。Anthropic は WIF GA で静的 API キーを過去のものにし、エンタープライズ認証の標準を更新。Noam Shazeer の移籍は Google AI の人材維持力に対する市場の疑念を強め、Alphabet 株 7% 下落と Gemini 3.5 Pro GA 延期続報（[Gemini Pro 延期](?a=google-gemini-3-5-pro-ga-delay-deep-think-2026)）と相まって、米国3強の力学が変化していることを示した。"
+      "**週の総括** — AI 業界の勢力図が劇的に動いた1週間。SpaceX-Cursor 買収は「**モデル選択 = インフラ選択**」時代の到来を告げた。Anthropic は WIF GA で静的 API キーを過去のものにし、エンタープライズ認証の標準を更新。Noam Shazeer の移籍は Google AI の人材維持力に対する市場の疑念を強め、Alphabet 株 7% 下落と Gemini 3.5 Pro GA 延期続報（[Gemini Pro 延期](?a=google-gemini-3-5-pro-ga-delay-deep-think-2026)）と相まって、米国3強の力学が変化していることを示した。",
+      "【訂正 2026-09-30】（誤）「Grok V9-Medium が X と SuperGrok で消費者公開、Cursor 開発者ワークフローデータで訓練」「両発表が同日になったのは偶然ではなく」→（正）6月16日の報道は V9-Medium の公開を予定として書いており、実際の公開は確認できない。Cursor データは Musk（5月25日）と Cursor（7月8日）が訓練への使用を述べている（当事者の説明）。同日とする因果の記述は根拠がないため削除した。"
     ],
     "primarySources": [
       {
@@ -14354,9 +14435,10 @@ const ARTICLES_BODY = {
       "Anysphere が2026年6月29日、待望の **Cursor 公式 iOS アプリ**を App Store で公開した。SpaceX による Anysphere $60B 買収（[SpaceX-Cursor 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）の発表からわずか13日後の投入で、モバイル展開のスピードは買収後のガバナンスに影響がないことを示す形となった。有料プラン向けの Public Beta として提供される。",
       "**2 軸の機能構成**: アプリは2つの主要モードで設計されている。**(1) Always-on クラウドエージェント**: バックグラウンドで動作するエージェントを起動し、iPhone から進捗を監視できる。移動中や打ち合わせ中も指示だけ出して結果を後で確認するワークフロー。**(2) リモートコントロール**: PC 上で稼働中のエージェントを iPhone から操作する。デスク周りを離れても長時間タスクを制御できる。",
       "**音声入力とレビュー機能**: **音声ディクテーション**を搭載し、話しかけるだけでバックグラウンドのコード作業をトリガー可能。エージェントが走り続けている間に、iPhone 上で **diff レビュー**、**PR マージ**、**スクリーンショット注釈**まで完結できる設計。「モバイル1台で開発者ワークフローを完結」というビジョンが具体化した。",
-      "**料金体系**: iOS アプリ自体は有料 Cursor プランに含まれるが、**クラウドエージェント実行には有料プランが必須**で、エージェント実行は選択したモデルの API 料金で従量課金される。導入プロモーションとして、Cursor 独自モデル **Composer 2.5 が7月5日まで -75%** で提供される。SpaceX-Cursor 統合下で Composer 系の Grok V9 系（[Grok V9-Medium](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)）への段階移行も予想される中、Composer 2.5 の販促は既存モデルの利用者拡大を狙ったもの。",
+      "**料金体系**: iOS アプリ自体は有料 Cursor プランに含まれるが、**クラウドエージェント実行には有料プランが必須**で、エージェント実行は選択したモデルの API 料金で従量課金される。導入プロモーションとして、Cursor 独自モデル **Composer 2.5 が7月5日まで -75%** で提供される。SpaceX-Cursor 統合下で Composer 系から Grok 系への段階移行も予想される中（当サイトの見方で、公式の発表ではない）、Composer 2.5 の販促は既存モデルの利用者拡大を狙ったもの。",
       "**Cursor のスケール**: 買収時点の数字として、Cursor は **100万人超の有料ユーザー**、**Fortune 1,000 の 70%** をクライアントに持つ。今回の iOS アプリ投入は、この巨大な既存顧客ベースに対する新しい接点の追加で、モバイルからの利用が加われば MAU の伸びが一段加速する可能性が高い。",
-      "**モバイル・エージェントの新時代**: 同日6月29日には **OpenClaw の iOS/Android ネイティブアプリ**も公開されており（[OpenClaw モバイル](?a=openclaw-ios-android-native-app-2026)）、「エージェント AI をモバイルで走らせる」時代が偶然にも同時にスタートした。両者の違いは、Cursor はクラウドエージェントの制御端末としてのモバイル、OpenClaw はモバイルデバイス自体をエージェントの実行環境（ローカルデータへのアクセス点）とする設計の違い。開発者向けとパーソナル AI 向けで、モバイル AI の2つの方向性が明確になった。"
+      "**モバイル・エージェントの新時代**: 同日6月29日には **OpenClaw の iOS/Android ネイティブアプリ**も公開されており（[OpenClaw モバイル](?a=openclaw-ios-android-native-app-2026)）、「エージェント AI をモバイルで走らせる」時代が偶然にも同時にスタートした。両者の違いは、Cursor はクラウドエージェントの制御端末としてのモバイル、OpenClaw はモバイルデバイス自体をエージェントの実行環境（ローカルデータへのアクセス点）とする設計の違い。開発者向けとパーソナル AI 向けで、モバイル AI の2つの方向性が明確になった。",
+      "【追記 2026-09-30】Cursor は7月8日に Grok 4.5 を公開し、公式ブログで「Composer 2.5 は引き続き提供し、この規模のモデルを今後も出す」と述べている。Grok V9-Medium の6月中の公開は確認できていない（[Grok V9-Medium の記事](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026)）。"
     ],
     "primarySources": [
       {
@@ -14373,6 +14455,11 @@ const ARTICLES_BODY = {
         "title": "Cursor releases its iOS app for vibe coding on the go",
         "site": "TestingCatalog",
         "url": "https://www.testingcatalog.com/cursor-releases-its-ios-app-for-vibe-coding-on-the-go/"
+      },
+      {
+        "title": "Introducing Grok 4.5 (2026-07-08)",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/grok-4-5"
       }
     ]
   },
@@ -15164,7 +15251,8 @@ const ARTICLES_BODY = {
       "**(4) 7/9**: GPT-5.6 が一般公開、政府監督プロセス完了の実質的な最初の事例に。",
       "**「モデル選択 = 米政府の技術政策選択」時代の恒常化**: [Claude Fable 5 復活](?a=anthropic-claude-fable-5-return-safeguards-limits-2026) や本件で見られるように、**フロンティア AI モデルは「発表 → 政府事前共有 → 数週間の限定プレビュー → 一般公開」**のサイクルが標準化した。開発者は **「初期プレビュー枠か、GA 後の通常利用か」** を分けて計画する必要がある。",
       "**Claude Sonnet 5 との直接競合**: 同時期に GA された [Sonnet 5](?a=claude-sonnet-5-review)（$2/$10、SWE-bench Pro 63.2%）と、GPT-5.6 Terra（$2.50/$15、GPT-5.5 と競合性能）が真正面から比較される時期に入った。多くの日常ワークフローで、Sonnet 5 と Terra のどちらを選ぶかは価格・エコシステム統合・トークナイザ特性で判断することになる。**AI News では「日本語プロンプトでの Sonnet 5 vs GPT-5.6 Terra 実践比較」を近日公開予定**。",
-      "**Grok 4.5 との3強競合**: 同日リリースの [xAI Grok 4.5](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)（$2/$6）も真っ向対抗の破格価格。**GPT-5.6 Luna（$1/$6）・Sonnet 5（$2/$10）・Grok 4.5（$2/$6）・Gemini 3.5 Flash（$0.075/$0.30）**の4選択肢は、それぞれ強みが異なる。**AI News の推奨**: エージェント能力なら Sonnet 5、コーディング特化なら Grok 4.5（Cursor データで訓練済）、コスト最優先なら Gemini 3.5 Flash、Codex 統合なら GPT-5.6 Sol/Terra を第一候補に検討。"
+      "**Grok 4.5 との3強競合**: 同日リリースの [xAI Grok 4.5](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)（$2/$6）も真っ向対抗の破格価格。**GPT-5.6 Luna（$1/$6）・Sonnet 5（$2/$10）・Grok 4.5（$2/$6）・Gemini 3.5 Flash（$0.075/$0.30）**の4選択肢は、それぞれ強みが異なる。**AI News の推奨**: エージェント能力なら Sonnet 5、コーディング特化なら Grok 4.5（Cursor の説明では数兆トークンの Cursor データを訓練に含む。ただし配合はコーディング以外の知識労働も含む）、コスト最優先なら Gemini 3.5 Flash、Codex 統合なら GPT-5.6 Sol/Terra を第一候補に検討。",
+      "【訂正 2026-09-30】（誤）「コーディング特化なら Grok 4.5（Cursor データで訓練済）」→（正）Cursor の公式ブログ（7月8日）は、Cursor データを訓練に含めたことと、訓練データの配合をコーディング特化から意図的に広げたことの両方を説明している。当事者の説明で独立した検証は確認できていない。"
     ],
     "primarySources": [
       {
@@ -15186,13 +15274,18 @@ const ARTICLES_BODY = {
         "title": "A preview of GPT-5.6 Sol, Terra, and Luna",
         "site": "OpenAI Help Center",
         "url": "https://help.openai.com/en/articles/20001325-a-preview-of-gpt-56-sol-terra-and-luna"
+      },
+      {
+        "title": "Introducing Grok 4.5 (2026-07-08)",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/grok-4-5"
       }
     ]
   },
   "xai-grok-4-5-public-launch-opus-class-july-9-2026": {
     "body": [
-      "**xAI（SpaceX 傘下）**が2026年7月9日、**Grok 4.5** を一般公開した。**Elon Musk** は前日7月8日の X 投稿で、Grok 4.5 を「**Opus クラスだが faster、より token-efficient、lower cost**」と説明。**Cursor 訓練データ**（[SpaceX-Cursor $60B 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026) の実利）を活用した実開発ワークフローに強い設計になっている。",
-      "**モデル仕様**: **1.5T パラメータの V9 基盤モデル**（[Grok V9-Medium 消費者公開](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026) の後継系統）に、**Cursor の実開発者ワークフローデータ**を追加訓練したもの。SpaceX による Cursor 買収（6/16）から約3週間での成果物で、垂直統合戦略の速度感を示す。",
+      "**xAI（SpaceX 傘下）**が **Grok 4.5** を一般公開した。Cursor の公式ブログは公開日を「Jul 8, 2026」、xAI の API release notes は「July 8」と記載している（時間帯の記載はない）。当サイトの当初の「7月9日」は日本での報道日だった可能性があるが、確認できていない。**Elon Musk** は前日7月8日の X 投稿で、Grok 4.5 を「**Opus クラスだが faster、より token-efficient、lower cost**」と説明。Cursor の公式ブログ（7月8日）によれば、Grok 4.5 は SpaceXAI と Cursor が共同で訓練し、訓練には数兆トークンの Cursor データ（利用者とコードベース・ツールのやりとり、開発者とエージェントのやりとりを含む）が含まれた（当事者の説明）。同ブログは、訓練データの配合をコーディング特化の Composer 2.5 より意図的に広げ、STEM や研究論文などの知識労働のデータも使ったとも述べている。",
+      "**モデル仕様**: Elon Musk は6月28日、Grok 4.5 は 1.5T パラメータの V9 基盤モデルに基づき、Cursor のデータを補足訓練に加えたと述べたと報じられている（GIGAZINE などの引用でのみ確認、原文は未読）。V9 基盤との対応は Cursor・xAI の公式資料では確認できていない。前身とされる [Grok V9-Medium](?a=xai-grok-v9-medium-consumer-release-cursor-data-2026) の6月中の公開は確認できない。Cursor との合併契約の締結（6/16）から約3週間後、提携発表（4/21）から約11週間後の公開である。",
       "**破格の料金体系**: **API 料金は $2/$6 per 1M tokens**（入力/出力）。競合他社と比較すると鮮明。",
       "**Claude Sonnet 5**: $2/$10（本記事公開時は8/31までの導入価格として案内されていたが、その後標準価格として恒久化された。公式発表は2026年8月10日）",
       "**GPT-5.6 Terra**: $2.50/$15",
@@ -15204,20 +15297,21 @@ const ARTICLES_BODY = {
       "**(1) xAI API**: 開発者向け、標準的な OpenAI 互換 API で提供。",
       "**(2) SuperGrok Heavy（$300/月）**: エンドユーザー向け最上位ティア、Grok 4 Heavy（256K ctx・parallel test-time compute）と同水準のアクセス。",
       "**(3) X 統合**: X（旧 Twitter）のプレミアム機能として提供。",
-      "**Cursor 訓練データの意味**: Grok 4.5 が「コーディング特化型」として競争力を持つ最大の理由は **Cursor の実データ**。Cursor は Fortune 500 の 2/3 が利用、日に約1.5億行の実開発コードを扱う（[Cursor 買収記事](?a=spacex-cursor-60b-acquisition-anysphere-2026)）。この規模の**実開発者ワークフロー**（コード入力 → AI 提案 → 採用/却下 → 修正 のシーケンス）を訓練データに組み込めることは、他社モデルにない差別化要素となる。",
+      "**Cursor 訓練データについて**: Cursor の公式ブログ（7月8日）は、訓練に数兆トークンの Cursor データが含まれ、それはコードベースやソフトウェアツールと利用者とのやりとりを幅広く捉えたもので、開発者とエージェントのやりとりを含むと説明している。訓練は4月21日発表の提携の下で行われ、買収完了（8月14日）より前である。当事者の説明であり、独立した検証は確認できていない。Cursor のどの利用者のデータが対象か（Privacy Mode の利用者が除外されるか等）は確認できていない。当初の「コード入力 → AI 提案 → 採用/却下 → 修正 のシーケンス」という表現は当サイトのもので、Cursor の資料に同じ文言はない。",
       "**業界インパクト**:",
       "**(a) OpenAI GPT-5.6 Terra との真正面対決**: 両者とも同日リリース、価格 $2/$6 vs $2.50/$15。GPT-5.6 が5倍近く高い（出力）。",
       "**(b) Anthropic Sonnet 5 への圧力**: Sonnet 5 の $2/$10 は Grok 4.5 の $2/$6 と入力が同額で、出力単価は Grok 4.5 のほうが低い。本記事公開時は9/1に $3/$15 へ引き上げられる予定と案内されていたが、この引き上げは行われず、$2/$10 が標準価格として恒久化された（2026年8月10日に公式が発表）。",
       "**(c) 中国 OSS 陣営の相対的な位置低下**: [中国モデル 30-46% シェア](?a=feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026) の要因だった「60-90% 安」の優位が縮小、Grok 4.5 が「西側で最安フロンティア」の座に。",
-      "**(d) SpaceX 垂直統合の実力証明**: Cursor 買収（6/16）から約3週間で新モデルリリース、統合の速度と実利を示した。",
+      "**(d) SpaceX 垂直統合の実力証明**: 合併契約（6/16）から約3週間、提携（4/21）から約11週間での新モデル公開で、Cursor は SpaceXAI との共同訓練の成果と説明している。買収完了（8/14）より前の成果である。",
       "**注意点**:",
       "**(1) 独立ベンチマーク待ち**: 「Opus クラス」の Musk 主張は現時点で独立検証されていない。SWE-bench・TerminalBench・HLE 等の公表を待つ必要がある。",
       "**(2) 政府事前共有プロセス**: GPT-5.6・Fable 5 で見られた米政府事前共有プロセスが、xAI で同様に運用されたかは不明。今後の Executive Order 14409 との整合性が問われる。",
       "**(3) X エコシステム依存**: SuperGrok Heavy 経由の利用は X アカウントが前提、エンタープライズ調達との相性に注意。",
       "**(4) 中国モデルとの実運用比較**: 実タスクでの品質・トークン効率を、DeepSeek V4・GLM-5.2 等と直接比較する検証が必要。",
-      "**(5) CursorBench のスコアが公表比較から除外されている**: SpaceXAI と Cursor は launch 時に、**Cursor のコードベースの過去スナップショットが Grok 4.5 の学習データに誤って含まれていた**ことを自己申告した。Cursor 独自の内部ベンチマーク（CursorBench）のスコアが不当に高く出る可能性があるため、**当該指標は公表比較から除外**され、汚染データは以降のモデル向けに除去されたとしている。買収した子会社の独自ベンチマークで親会社のモデルを評価する構図は、それ自体が利益相反に近い。**自己申告して数値を取り下げた対応は評価できる**が、公表されている他のベンチマークについても独立検証を待つ理由になる。",
+      "**(5) CursorBench のスコアが公表比較から除外されている**: Cursor は公式ブログ（launch 時）で、Cursor のコードベースの過去スナップショットが Grok 4.5 の訓練に誤って含まれ、CursorBench で有利になったと自己申告した（影響の大きさは不明としている）。当該指標は公表比較から除外され、そのデータは以降のモデル向けに除去されたとしている。CursorBench は Cursor 自身のベンチマークで、Grok 4.5 は Cursor が SpaceXAI と共同で訓練したモデルである（同ブログ）。買収の効力発生は8月14日で、公開時点で Cursor は SpaceX の子会社ではない。自己申告して数値を除外した対応は評価できるが、公表されている他のベンチマークについても独立検証を待つ理由になる。",
       "**AI News の推奨**: **コーディング特化タスク**では第一候補として評価すべき。特に Cursor ユーザーは Composer 系との統合を検証する価値がある。ただし本番運用の切替は **独立ベンチマーク公表後**が安全。SuperGrok Heavy $300/月は個人開発者・研究者向けで、企業では xAI API 経由が現実的。",
-      "【訂正 2026-09-30】（誤）Claude Sonnet 5 は $3/$15（〜8/31 は導入価格 $2/$10）、8/31 の通常価格 $3/$15 移行時に Grok 4.5 との差がさらに拡大 →（正）Sonnet 5 は $2/$10 で、9/1 の $3/$15 への引き上げは行われず、$2/$10 が標準価格として恒久化された（2026年8月10日に公式が発表）。価格比較の段落と冒頭要約を修正した。あわせて「Sonnet 5 の導入価格 $2/$10 より安く」は入力単価が同額（$2）であるため「出力単価が安く」に正した。"
+      "【訂正 2026-09-30】（誤）Claude Sonnet 5 は $3/$15（〜8/31 は導入価格 $2/$10）、8/31 の通常価格 $3/$15 移行時に Grok 4.5 との差がさらに拡大 →（正）Sonnet 5 は $2/$10 で、9/1 の $3/$15 への引き上げは行われず、$2/$10 が標準価格として恒久化された（2026年8月10日に公式が発表）。価格比較の段落と冒頭要約を修正した。あわせて「Sonnet 5 の導入価格 $2/$10 より安く」は入力単価が同額（$2）であるため「出力単価が安く」に正した。",
+      "【訂正 2026-09-30】（誤）「Cursor 訓練データ（買収の実利）」「Cursor の実開発者ワークフローデータを追加訓練」「V9 基盤（Grok V9-Medium 消費者公開の後継系統）」→（正）Cursor の公式ブログ（7月8日）が、SpaceXAI との共同訓練に数兆トークンの Cursor データが含まれたと説明している。訓練は提携の下で買収完了より前に行われた。V9 基盤との対応は Musk の6月28日の発言（二次報道のみ）で、V9-Medium の6月中の公開は確認できない。"
     ],
     "primarySources": [
       {
@@ -15259,6 +15353,11 @@ const ARTICLES_BODY = {
         "title": "Introducing Claude Sonnet 5（Edit August 10, 2026）",
         "site": "anthropic.com",
         "url": "https://www.anthropic.com/news/claude-sonnet-5"
+      },
+      {
+        "title": "Introducing Grok 4.5 (2026-07-08)",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/grok-4-5"
       }
     ]
   },
@@ -17983,7 +18082,7 @@ const ARTICLES_BODY = {
   },
   "xai-grok-4-5-review": {
     "body": [
-      "**Grok 4.5** は **xAI**（SpaceX 傘下）が2026年7月9日に一般公開したフロンティアモデルである。1.5T パラメータの V9 基盤に、**Cursor の実開発ワークフローデータ**を追加訓練したコーディング特化型で、API 料金は **$2/$6 per 1M tokens**。SpaceX による [Cursor（Anysphere）の $60B 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)から約3週間での投入という異例の速度だった。",
+      "**Grok 4.5** は **xAI**（SpaceX 傘下）が一般公開した（Cursor ブログと xAI の release notes は7月8日と記載。時間帯の記載はなく、当サイトの「7月9日」は日本での報道日だった可能性があるが未確認）フロンティアモデルである。Cursor と SpaceXAI が共同で訓練し、数兆トークンの Cursor データが訓練に含まれたと Cursor が説明するモデル（1.5T の V9 基盤とする Musk の発言は二次報道でのみ確認）で、API 料金は **$2/$6 per 1M tokens**。SpaceX と Cursor（Anysphere）の合併契約（6/16、[$60B 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)）から約3週間での投入だった。",
       "公開時点では独立ベンチマークが存在せず、当サイトは[速報記事](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)で「本番運用の切替は独立ベンチマーク公表後が安全」と書いた。**その独立検証が8月に出揃ったため、本稿で評価を確定させる。**",
       "## Musk の主張は、半分が裏付けられ、半分が裏付けられなかった",
       "Elon Musk は公開前日の X 投稿で、Grok 4.5 を「**Opus クラスだが faster、より token-efficient、lower cost**」と説明した。この主張は3つの要素に分解できる。",
@@ -17996,22 +18095,23 @@ const ARTICLES_BODY = {
       "## ベンチマークは強弱がはっきり分かれている",
       "**強い領域**: SWE-bench Pro 64.7%（GPT-5.5 の 58.6% を上回る）、Terminal Bench 2.1 で 83.3%（GPT-5.5 の 83.4% と実質同点）。Coding Agent Index は 76。**実務のコーディング・ターミナル操作で競争力がある**。",
       "**弱い領域**: DeepSWE 1.1 では 53% で、GPT-5.5 の 67% に大きく劣る。総合知能指標の Artificial Analysis Intelligence Index も 54 で4位。**汎用的な推論の深さでは上位3モデルに届かない。**",
-      "この分布は、**Cursor の実開発ワークフローデータで追加訓練した**というモデルの出自と整合する。実際の開発者が書き、採用し、却下したシーケンスを学習したモデルは、実務的なコーディングに強く、抽象度の高い推論では相対的に弱い、という形になった。",
+      "この分布と訓練データの関係は、当サイトでは検証できない。Cursor は公式ブログ（7月8日）で、訓練データの配合を Composer 2.5（コーディング特化）より意図的に広げ、STEM や研究論文などの知識労働のデータも使ったと述べており、この強弱と訓練データの関係は、Cursor の説明からは分からない。",
       "## 評価",
       "**AI品質（4）**: 実務コーディングとターミナル操作では競争力があるが、総合知能指標で4位、DeepSWE で明確な弱点がある。フロンティアに「近い」が「並ぶ」わけではない。",
       "**使いやすさ（4）**: xAI API は OpenAI 互換で移行コストが低い。一方、消費者向け最上位の SuperGrok Heavy（$300/月）は X アカウントが前提で、企業調達との相性はよくない。企業では API 経由が現実解になる。",
       "**コスパ（5）**: $2/$6 は西側フロンティア級で最安帯であり、そこにトークン効率4.2倍が乗る。**コスト効率だけを見れば現時点で最も強い選択肢のひとつ**である。",
       "**拡張性（4）**: OpenAI 互換 API、Cursor との統合、X エコシステムへの接続。ただしオープンウェイトではなく、[Kimi K3](?a=moonshot-kimi-k3-review) のようなオンプレ展開はできない。",
-      "**企業向け（3）**: 減点理由は3つある。**(a)** GPT-5.6 や Fable 5 で見られた米政府への事前共有プロセスが xAI で同様に運用されたか不明である。**(b)** 公開時、**Cursor のコードベースの過去スナップショットが訓練データに誤って混入していた**ことが自己申告され、CursorBench のスコアが公表比較から除外された。買収先の内部ベンチマークで親会社のモデルを評価する構図そのものに利益相反の懸念がある（**自己申告して数値を取り下げた対応自体は評価できる**）。**(c)** X エコシステムとの結合度が高く、調達・ガバナンス面での独立性を求める組織には検討事項になる。",
+      "**企業向け（3）**: 減点理由は3つある。**(a)** GPT-5.6 や Fable 5 で見られた米政府への事前共有プロセスが xAI で同様に運用されたか不明である。**(b)** 公開時、**Cursor のコードベースの過去スナップショットが訓練データに誤って混入していた**ことが自己申告され、CursorBench のスコアが公表比較から除外された。CursorBench は Cursor 自身のベンチマークで、Grok 4.5 は Cursor が共同で訓練に関わったモデルである（公開時点で Cursor は SpaceX の子会社ではない）（**自己申告して数値を取り下げた対応自体は評価できる**）。**(c)** X エコシステムとの結合度が高く、調達・ガバナンス面での独立性を求める組織には検討事項になる。",
       "## どう使うべきか",
       "**コスト効率が最優先のエージェント運用**なら、現時点で最有力の候補のひとつである。特に**大量のタスクを並列に回す用途**では、トークン効率の差が月次コストに直結する。",
       "**最難関のコーディングや深い推論が必要な用途**では、[Opus 5](?a=claude-opus-5-review) や Claude Fable 5、GPT-5.6 Sol を選ぶべきである。Grok 4.5 はそこには届かない。",
-      "**Cursor をすでに使っている場合**は、Composer 系との統合を検証する価値がある。ただし [SpaceX による Cursor 買収](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)後、Cursor の内部モデルが Grok 系へ寄っていく可能性があり、**開発データが xAI の訓練に流れる経路**についてはデータ取り扱い条項を確認したうえで判断してほしい。",
+      "**Cursor をすでに使っている場合**は、Composer 系との統合を検証する価値がある。ただし [SpaceX による Cursor 買収](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)後、Cursor の内部モデルが Grok 系へ寄っていく可能性があり、Cursor は Grok 4.5 の訓練に Cursor データを使ったと公式ブログで説明しているが、対象範囲（Privacy Mode の利用者の扱い等）は確認できていない。データ取り扱い条項を確認したうえで判断してほしい。",
       "**データ主権の要件がある場合**は、オンプレ運用ができないため候補から外れる。その用途では [Kimi K3](?a=moonshot-kimi-k3-review) や [K-EXAONE 2.0](?a=lg-k-exaone-2-0-750b-apache-2-open-weight-2026) のオープンウェイトモデルが選択肢になる。",
       "**総評**: 「Opus クラス」という売り文句は実測に裏付けられなかったが、**それはこのモデルの価値を損なわない**。トークン効率4.2倍という実測結果は、表示単価の比較だけでは見えない優位であり、**エージェントを量で回す用途では実効コストを一桁変えうる**。総合知能で上位を求めるなら他を選び、コスト効率で選ぶならこれを選ぶ、という明快な位置付けのモデルである。",
       "---",
       "**編集履歴**",
-      "【新規 2026-08-11】[7月9日の公開速報](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)で「独立ベンチマーク公表後の評価が必要」としていた宿題に対応し、8月に出揃った独立検証を踏まえてレビューとして公開しました。"
+      "【新規 2026-08-11】[7月9日の公開速報](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)で「独立ベンチマーク公表後の評価が必要」としていた宿題に対応し、8月に出揃った独立検証を踏まえてレビューとして公開しました。",
+      "【訂正 2026-09-30】（誤）「Cursor の実開発ワークフローデータで追加訓練したコーディング特化型」「実際の開発者が書き、採用し、却下したシーケンスを学習したモデル」→（正）Cursor の公式ブログ（7月8日）は、数兆トークンの Cursor データを訓練に含めつつ、配合を意図的に広げ知識労働のデータも使ったと説明している。「採用/却下」の系列という記述は当サイトの推測で、Cursor の資料に同じ文言はない。"
     ],
     "tables": [
       {
@@ -18110,6 +18210,11 @@ const ARTICLES_BODY = {
         "title": "Grok 4.5 Review: Benchmarks, Price & Context",
         "site": "Kingy.ai",
         "url": "https://kingy.ai/blog/grok-4-5-benchmarks-pricing-context-window/"
+      },
+      {
+        "title": "Introducing Grok 4.5 (2026-07-08)",
+        "site": "Cursor",
+        "url": "https://cursor.com/blog/grok-4-5"
       }
     ]
   },
@@ -20119,11 +20224,15 @@ const ARTICLES_BODY = {
   },
   "google-gemini-3-8-flash-2026": {
     "body": [
-      "Googleが9月2日、Gemini Flash系列の最新モデル「Gemini 3.8 Flash」と、サイバーセキュリティ防御者向けに絞った派生モデル「Gemini 3.8 Flash Cyber」を公開した。3.7 Flashからわずか6週間での投入で、この系列としては3世代目のFlashリリースになる。Google自身は「3.7 Flashと同じ速度・低コストのまま、これまでで最も推論とコーディングに強いFlashモデル」と位置付けている。",
-      "公式発表によるベンチマークでは、長時間にわたるソフトウェアエンジニアリング作業を測るTerminal-Bench 2.1が3.7 Flashの81.6%から90.8%に上昇し、長期タスクの一貫性を測るDeepSWE v1.1では、3.8 Flashより大きなフロンティアモデルの一部を上回ったとしている。安全性・専門知識を問うHLE-Verifiedは54.9%、金融エージェント向けVals Finance Agent V2や法務エージェント向けHarvey Legal Agent Benchmarkでも3.7 Flashや他のフロンティアモデルを上回ったと報告されている。いずれもGoogle公式の発表値であり、独立系のベンチマーク集計サイトArtificial Analysisや技術メディアDataCampの追跡記事でも同じ数値が確認できる。",
+      "Googleが9月2日、Gemini Flash系列の最新モデル「Gemini 3.8 Flash」と、サイバーセキュリティ防御者向けに絞った派生モデル「Gemini 3.8 Flash Cyber」を公開した。Googleによれば3.7 Flashの3週間後の投入で、6週間で3世代目のFlashリリースになる。Google自身は「3.7 Flashと同じ速度・低コストのまま、これまでで最も推論とコーディングに強いFlashモデル」と位置付けている。",
+      "公式発表によるベンチマークでは、長時間にわたるソフトウェアエンジニアリング作業を測るTerminal-Bench 2.1が3.7 Flashの85.8%から89.4%に上昇し、長期タスクの一貫性を測るDeepSWE v1.1では、3.8 Flashより大きなフロンティアモデルの一部を上回ったとしている。安全性・専門知識を問うHLE-Verifiedは54.9%、金融エージェント向けVals Finance Agent V2や法務エージェント向けHarvey Legal Agent Benchmarkでも3.7 Flashや他のフロンティアモデルを上回ったと報告されている。いずれもGoogle公式の発表値であり、独立した検証は確認できていない。なお技術メディアDataCampの記事はTerminal-Bench 2.1を90.8%（3.7 Flashは81.6%）と伝え、数値はGoogleの開発者ドキュメントと発表に基づくとしているが、リンクは示しておらず、Googleのブログ・モデルカードの数値とは一致しない。",
       "価格は100万トークンあたり入力$0.75・出力$3.75と、3.7 Flashからの据え置きである。ただしGoogle自身も「3.7 Flashに比べて精度は上がるが、その分トークン消費量は増える」と説明しており、1タスクあたりの実効コストは処理内容によって変わりうる点には注意が要る。",
       "サイバーセキュリティ用途に特化した「Gemini 3.8 Flash Cyber」は、標準の3.8 Flashとは別枠で、Googleの信頼できる防御者向けプログラム「Fairwind Program」参加者に限定して提供される。一般提供されている標準モデルと違い、誰でも使える形にはなっていない。",
-      "本記事の情報は、Google公式ブログ（blog.google）とGemini API公式ドキュメント（ai.google.dev）の内容を検索経由で確認し、Google Cloud公式ドキュメント・Google DeepMindのモデルカード・独立系ベンチマークサイトの記述と突き合わせたものである。これらのドメイン自体は本稿執筆時点のネットワーク環境から直接の到達を確認できなかったため、直接閲覧はできていない。"
+      "本記事のベンチマーク値は、Google公式ブログ（blog.google）の比較表画像とGoogle DeepMindのモデルカード（2026年9月時点の結果）を2026年9月30日に直接読んで確認した。3.7 Flashのモデルカードも、Terminal-Bench 2.1を85.8%としている。Gemini API公式ドキュメント（ai.google.dev）のモデルページには、Terminal-Benchの数値は載っていなかった。",
+      "【訂正 2026-09-30】（誤）Terminal-Bench 2.1「81.6%→90.8%」→（正）「85.8%→89.4%」。Google公式ブログの比較表とDeepMindのモデルカードは、いずれも3.7 Flash 85.8%、3.8 Flash 89.4%と記載している。81.6%・90.8%はGoogleの資料で見つからず、出どころは特定できなかった（見つかったのは、Googleの発表に基づくとしながらリンクを示さないDataCampの記事のみ）。見出し・冒頭の要約も同じ数値に直した。",
+      "【訂正 2026-09-30】（誤）「3.7 Flashからわずか6週間での投入」→（正）Googleのブログは、3.7 Flashは3週間前で、Flashとしては6週間で3世代目のリリースと説明している。",
+      "【訂正 2026-09-30】（誤）「Artificial Analysis…でも同じ数値が確認できる」「これらのドメイン自体は…直接の到達を確認できなかった」→（正）Artificial Analysisは今回確認できておらず記述を削除した。blog.google・deepmind.google・ai.google.devには到達でき、内容を直接確認した。",
+      "【追記 2026-09-30】価格の$0.75/$3.75は導入価格で、Googleのブログ本文の脚注と比較表の注記によれば2027年1月1日から通常価格（入力$1.50・出力$7.50）になる。"
     ],
     "primarySources": [
       {
