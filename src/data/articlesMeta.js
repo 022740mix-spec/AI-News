@@ -3206,7 +3206,7 @@ export const ARTICLES_META = [
     "type": "review",
     "category": "cli",
     "title": "GitHub Copilot CLI レビュー — `/fleet` 並列エージェント、Autopilot、`/model` 切替（Opus 5 / GPT-5.6 / MAI-Code-1-Flash）、AI Credits 従量課金対応",
-    "excerpt": "GitHub（Microsoft 傘下）の Copilot coding agent ターミナル版。`npm install -g @github/copilot`（Node 22+）、`brew install copilot-cli`、`winget install GitHub.Copilot`、`gh copilot` の4経路でインストール、`copilot` で起動。既定モデル **Claude Sonnet 4.5**、`/model` で **Opus 4.7/4.8 / GPT-5.5 / Project Polaris (MAI-Code-1-Flash)** に切替可能。`/fleet` でサブエージェント並列実行、VS Code Autopilot mode で完全自律実行、`copilot mcp` で MCP サーバー管理。Build 2026（6/2-3）で Copilot Starter（無償）/ Pro / Enterprise 3階層への再編成も予告された。",
+    "excerpt": "GitHub（Microsoft 傘下）の Copilot coding agent ターミナル版。`npm install -g @github/copilot`（Node 22+）、`brew install --cask copilot-cli`、`winget install GitHub.Copilot`、インストールスクリプト、`gh copilot` の経路で導入し、`copilot` で起動。以前の既定モデル Claude Sonnet 4.5 は 2026年9月1日に提供終了しており、`/model` で Opus 5 / 5.5、Fable 5 / 5.1、GPT-5.6、GPT-6 系、MAI-Code-1.1-Flash などから選ぶか `auto` で自動選択する。`/fleet` でサブエージェント並列実行、CLI と VS Code の Autopilot、`copilot mcp` で MCP サーバー管理。6/1 から AI Credits による従量課金で、個人向けに Max（$100）も加わった。",
     "date": "2026-06-05",
     "newsDate": "2026-06-02",
     "author": "AI News 編集部",
@@ -3227,7 +3227,7 @@ export const ARTICLES_META = [
     "rating": 4.5,
     "reviewCategory": "cli",
     "reviewCadence": "monthly",
-    "lastReviewed": "2026-08-11"
+    "lastReviewed": "2026-09-30"
   },
   {
     "id": "aider",

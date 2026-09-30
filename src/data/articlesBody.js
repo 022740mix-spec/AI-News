@@ -8903,17 +8903,17 @@ const ARTICLES_BODY = {
       "**GitHub Copilot CLI** は **GitHub**（**Microsoft** 傘下）が提供する Copilot coding agent のターミナル版。`copilot` コマンドで対話セッション、`/fleet` でサブエージェント並列実行、`/model` でモデル切替が可能な、本格的な CLI コーディングエージェント。2026年6月時点の網羅評価。",
       "## インストール / 起動",
       "**インストール（複数経路）**:",
-      "```bash\nnpm install -g @github/copilot                     # npm 経由（Node.js 22+ 必須）\nbrew install copilot-cli                            # macOS Homebrew\nwinget install GitHub.Copilot                       # Windows WinGet\ncurl -fsSL https://gh.io/copilot-install | bash    # Linux / WSL 等の汎用\ngh copilot                                          # GitHub CLI からの初回起動・インストール\n```",
+      "```bash\nnpm install -g @github/copilot                     # npm 経由（Node.js 22+ 必須）\nbrew install --cask copilot-cli                            # Homebrew（macOS / Linux）\nwinget install GitHub.Copilot                       # Windows WinGet\ncurl -fsSL https://gh.io/copilot-install | bash    # Linux / WSL 等の汎用\ngh copilot                                          # GitHub CLI からの初回起動・インストール\n```",
       "**起動コマンド**:",
       "```bash\ncopilot                  # 対話セッション\ncopilot \"<指示>\"         # ワンショット\ngh copilot suggest       # シェルコマンド提案（既存サブコマンド）\ngh copilot explain       # コマンド解説（既存サブコマンド）\n```",
       "## 中核機能",
       "### 既定モデルと `/model` 切替",
-      "**既定モデル: Claude Sonnet 4.5**。`/model` コマンドで切替可能なラインナップ:",
-      "- Claude **[Opus 5](?a=claude-opus-5-review) / Fable 5**（GA 後 24時間以内に Copilot へ展開されるのが通例）",
-      "- **[GPT-5.6](?a=gpt-5-6-review)**（OpenAI、7/9 一般公開）",
-      "- **Project Polaris / MAI-Code-1-Flash**（Microsoft 自社製、Build 2026 で発表、Copilot Pro+/Business/Enterprise に順次展開）",
+      "**既定モデル: 現行の既定モデル名は公式ドキュメントで確認できていない（以前の既定だった Claude Sonnet 4.5 は 2026年9月1日に提供終了）**。`/model` コマンドで切替可能（`auto` を選ぶと Copilot が自動で選ぶ。公式プラン表は Free / Student を Auto 選択のみとするが、CLI の changelog には 1.0.56（2026-05-29）で Auto 以外を選べるようになったとあり、公式資料どうしで食い違っている）。ラインナップの例:",
+      "- Claude **[Opus 5](?a=claude-opus-5-review) / Fable 5**（公式の対応モデル表には Opus 5.5・Fable 5.1 も載っている。GA 後 24時間以内に Copilot へ展開されるのが通例）",
+      "- **[GPT-5.6](?a=gpt-5-6-review)**（OpenAI、7/9 一般公開。公式の対応モデル表には GPT-6 Astra / Sol / Luna と GPT-6.1 Sol も載っている）",
+      "- **Project Polaris / MAI-Code-1-Flash**（2026年9月10日に提供終了、後継は MAI-Code-1.1-Flash。Microsoft 自社製、Build 2026 で発表、Copilot Pro+/Business/Enterprise に順次展開）",
       "- GPT-5.5-Cyber（Trusted Access for Cyber プログラム経由）",
-      "**Copilot CLI v1.0.36 以降**（5/6）では HTTP hook サポート、subcommand picker 改善、複数 Copilot ライセンス時のエラーメッセージ改善も実装。",
+      "**Copilot CLI v1.0.35〜1.0.36**（4/23〜4/24）では HTTP hook サポート、subcommand picker 改善、複数 Copilot ライセンス時のエラーメッセージ改善も実装。",
       "### `/fleet` — サブエージェント並列実行",
       "**`/fleet` コマンド**で背景に複数サブエージェントを起動し、**GitHub.com やスマートフォンから状態を監視・操作・マージ**できる。Claude Code の agent view、Cursor の Agents Window に相当する Microsoft 側の答え。",
       "### Autopilot mode（VS Code、4/8 パブリックプレビュー）",
@@ -8925,7 +8925,7 @@ const ARTICLES_BODY = {
       "### GitHub 全体との統合",
       "**Issues / PR / Actions / Codespaces / Secret Scanning / Code Search**と直結。Issue を割り当てるだけで Coding Agent が自律実装、PR まで作成。",
       "## 料金プラン",
-      "**2026年6月1日から従量課金へ移行した。** 各プランに月次の **AI Credits** 枠（1クレジット = $0.01）が含まれ、超過分はトークン消費に応じて課金される。5/28 報道時点で予告されていた「Starter / Pro / Enterprise の3階層への再編」は行われず、**Free / Pro / Pro+ / Business / Enterprise の構成が維持されたまま課金方式だけが変わった**形になる。既存の Business / Enterprise 顧客には移行措置として、2026年8月まで通常より多いクレジット枠が付与される。",
+      "**2026年6月1日から従量課金へ移行した。** 各プランに月次の **AI Credits** 枠（1クレジット = $0.01）が含まれ、超過分はトークン消費に応じて課金される。5/28 報道時点で予告されていた「Starter / Pro / Enterprise の3階層への再編」は行われず、**Free / Pro / Pro+ / Business / Enterprise の構成が維持されたまま課金方式だけが変わった**形になる。既存の Business / Enterprise 顧客には移行措置として2026年8月まで通常より多いクレジット枠が付与されるとされていたが、その期間は過ぎている。2026年9月30日時点の公式プラン表では、Business が1ユーザー月1,900、Enterprise が月3,900の AI Credits と記載されている。",
       "## 評価",
       "**強み**: GitHub エコシステム（Issues / PR / Actions / Codespaces / Code Search）とのネイティブ統合は他ツール追随不可。**モデル選択の自由度**（Claude / GPT / MAI / Gemini）が増し、ベンダーロックインを避けつつ Copilot を継続利用できる。`/fleet` で並列エージェント運用に対応、Autopilot で完全自律実行も可能。",
       "**注意点**: Anthropic Claude Code（agent view + Dynamic Workflows）や Cursor（Agents Window）と比べると、**マルチセッション UI** の成熟度ではまだ差がある場面も。GitHub 外のプラットフォーム（GitLab / Bitbucket）での利用は限定的。**Project Polaris / MAI-Code-1-Flash** が中核モデル化していくにつれて、フロンティアモデルから Microsoft 自社モデルへの誘導が強まる可能性がある（料金面では有利だが、性能は実利用での検証が必要）。",
@@ -8933,49 +8933,91 @@ const ARTICLES_BODY = {
       "**関連記事**: [GitHub Copilot Autopilot + MCP CLI](?a=github-copilot-autopilot-mcp-cli-vscode-2026)、[Microsoft skill-recorder](?a=microsoft-skill-recorder-oss-windows-2026)、[Project Polaris 報道](?a=microsoft-build-2026-project-polaris-mai-coding-2026)、[CLI 横断比較](?a=cli-tools-comparison-2026-march)。",
       "---",
       "**編集履歴**",
-      "【追記 2026-08-11】月次見直しにより更新。(1) 6/1 の従量課金（AI Credits、1クレジット $0.01）移行を反映し、「Starter / Pro / Enterprise の3階層再編は行われなかった」ことを明記、(2) `/model` の切替対象を現行世代（Opus 5 / Fable 5 / GPT-5.6）に更新、(3) 8月に OSS 公開された [skill-recorder](?a=microsoft-skill-recorder-oss-windows-2026) を追記、(4) 料金表を現行プラン（Free / Pro $10 / Pro+ $39 / Business $19 / Enterprise $39）に更新しました。"
+      "【追記 2026-08-11】月次見直しにより更新。(1) 6/1 の従量課金（AI Credits、1クレジット $0.01）移行を反映し、「Starter / Pro / Enterprise の3階層再編は行われなかった」ことを明記、(2) `/model` の切替対象を現行世代（Opus 5 / Fable 5 / GPT-5.6）に更新、(3) 8月に OSS 公開された [skill-recorder](?a=microsoft-skill-recorder-oss-windows-2026) を追記、(4) 料金表を現行プラン（Free / Pro $10 / Pro+ $39 / Business $19 / Enterprise $39）に更新しました。",
+      "【訂正 2026-09-30】（誤）`brew install copilot-cli`（macOS のみ） →（正）`brew install --cask copilot-cli`（macOS / Linux。公式インストール手順の表記）",
+      "【訂正 2026-09-30】（誤）既定モデルは Claude Sonnet 4.5 →（正）Claude Sonnet 4.5 は 2026年9月1日に提供終了しており、現行の既定モデル名は公式ドキュメントで確認できていない。CLI には `auto`（自動選択）がある。Free / Student のモデル選択は、公式プラン表では Auto のみだが CLI の changelog（1.0.56）には Auto 以外を選べるとあり、資料間で食い違っている",
+      "【訂正 2026-09-30】（誤）Project Polaris / MAI-Code-1-Flash が `/model` の切替対象 →（正）MAI-Code-1-Flash は 2026年9月10日に提供終了し、後継は MAI-Code-1.1-Flash（公式の対応モデル表）",
+      "【訂正 2026-09-30】（誤）HTTP hook 等は v1.0.36 以降（5/6） →（正）公式 changelog では HTTP hook が v1.0.35（2026-04-23）、subcommand picker 改善と複数ライセンス時のエラーメッセージ改善が v1.0.36（2026-04-24）",
+      "【訂正 2026-09-30】（誤）Business / Enterprise に2026年8月まで多めのクレジット枠 →（正）期間は過ぎており、現行の公式プラン表は Business 月1,900・Enterprise 月3,900クレジット。料金表に Student（無償）と Max（$100）の行を追加し、Free・Pro・Pro+ の内容欄を公式プラン表の記載に合わせた。Business の SAML SSO と Enterprise の IP インデムニティ・ファインチューニングは旧版の記載で、現行の公式プラン表では確認できていないため、その旨を表に注記した",
+      "【追記 2026-09-30】月次見直しで、以下の変更を公式ドキュメントと changelog で確認した。個人向けに Copilot Max（月額 $100、月20,000クレジット）が加わり、Copilot Student（無償）も公式プラン表に載っている。Copilot CLI は `/autopilot [目的]` と `--autopilot` を CLI 自体が持ち、クレジット消費の上限を指定して、到達すると一時停止させることもできる（VS Code 拡張の Autopilot に限らない）。`/fleet` は CLI の公式リファレンスに載っている。モデル選択には Auto の routing tier（efficiency / balance / intelligence）があり、`/model auto TIER` で指定できる。2026年9月28日公開の v1.0.89 では claude-opus-5.5 と、利用可能な場合の GPT-6 Sol / GPT-6 Luna がモデルピッカーに加わった。",
+      "【追記 2026-09-30】この記事の本文は、2026年6月〜8月時点の世代（Opus 5 / Fable 5 / GPT-5.6）を前提にしている。公式の対応モデル表には Claude Opus 5.5、Fable 5.1、Sonnet 5 / 5.5、GPT-6 Astra / Sol / Luna、GPT-6.1 Sol、Gemini 3.8 Flash、Kimi K3、Grok 4.7 なども載っており、新世代が出ている。ただし新世代を前提にした評価（★や料金判断）は、採点材料を確認できていないため書き換えていない。なお次の記述は、今回の確認で公式の記載を見つけられておらず、確認できていない。C++ コード理解の統合（5/6 プレビュー）、GPT-5.5-Cyber の提供、Fable・Opus が GA 後24時間以内に展開されるという通例、`gh copilot suggest` / `explain` の現行の扱い、/fleet を GitHub.com やスマートフォンから監視・マージできること、6/1 からの従量課金の開始日。"
     ],
     "primarySources": [
       {
         "title": "GitHub Copilot",
         "site": "GitHub",
         "url": "https://github.com/features/copilot"
+      },
+      {
+        "title": "Plans for GitHub Copilot",
+        "site": "GitHub Docs",
+        "url": "https://docs.github.com/en/copilot/get-started/plans"
+      },
+      {
+        "title": "Supported AI models in GitHub Copilot",
+        "site": "GitHub Docs",
+        "url": "https://docs.github.com/en/copilot/reference/ai-models/supported-models"
+      },
+      {
+        "title": "Installing GitHub Copilot CLI",
+        "site": "GitHub Docs",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli"
+      },
+      {
+        "title": "Copilot CLI command reference",
+        "site": "GitHub Docs",
+        "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference"
+      },
+      {
+        "title": "github/copilot-cli changelog",
+        "site": "GitHub (raw.githubusercontent.com)",
+        "url": "https://raw.githubusercontent.com/github/copilot-cli/main/changelog.md"
       }
     ],
     "tables": [
       {
         "afterParagraph": 24,
+        "caption": "GitHub Copilot 料金プラン（2026年9月30日時点の公式プラン表。AI Credits による従量課金を併用、1クレジット = $0.01）",
         "headers": [
           "プラン",
           "月額",
           "内容"
         ],
-        "caption": "GitHub Copilot 料金プラン（2026年8月11日時点。6/1 より AI Credits による従量課金を併用）",
         "rows": [
           [
             "Copilot Free",
             "$0",
-            "基本補完。クレジット枠は最小"
+            "AI Credits の枠あり。公式プラン表ではモデルは Auto 選択のみ（CLI changelog 1.0.56 には Auto 以外を選べるとあり食い違う）。インライン補完は月2,000回まで"
+          ],
+          [
+            "Copilot Student",
+            "$0",
+            "認証済み学生向け。AI Credits の枠あり。公式プラン表ではモデルは Auto 選択のみ（CLI changelog 1.0.56 には Auto 以外を選べるとあり食い違う）。サードパーティ製エージェントは対象外"
           ],
           [
             "Pro",
             "$10",
-            "個人開発。標準的なモデルとクレジット枠"
+            "月1,500クレジット（基本1,000 + Flex 500）。モデルは一部から選択"
           ],
           [
             "Pro+",
             "$39",
-            "Opus 5 / Fable 5 / GPT-5.6 / MAI-Code-1-Flash 等のフロンティアモデル全部"
+            "月7,000クレジット（基本3,900 + Flex 3,100）。プレミアムモデルを利用可"
+          ],
+          [
+            "Max",
+            "$100",
+            "月20,000クレジット（基本10,000 + Flex 10,000）。個人向けで最大のクレジット枠。プレミアムモデルを優先利用"
           ],
           [
             "Business",
             "$19 per seat",
-            "組織管理、SAML SSO。月次 $19 相当の AI Credits を含む"
+            "1ユーザー月1,900クレジット（$19 相当）。組織管理、SAML SSO（旧版の記載で、現行の公式プラン表では確認できていない）"
           ],
           [
             "Enterprise",
             "$39 per seat",
-            "監査ログ、IP インデムニティ、ファインチューニング。月次 $39 相当の AI Credits を含む"
+            "1ユーザー月3,900クレジット（$39 相当）。監査ログ、IP インデムニティ、ファインチューニング（旧版の記載で、現行の公式プラン表ではプランごとの可否を確認できていない）"
           ]
         ]
       }
