@@ -23207,6 +23207,44 @@ const ARTICLES_BODY = {
         "url": "https://developers.openai.com/api/docs/guides/responses-multi-agent"
       }
     ]
+  },
+  "openai-gpt-5-5-retirement-oct-14-codex-chatgpt-2026": {
+    "body": [
+      "OpenAI は2026年9月14日付の changelog で、GPT-5.5 を2026年10月14日に ChatGPT、ChatGPT Work、Codex から退役させると告知した。対象は個人向け、Business、Enterprise、Edu を含むすべてのプランで、公式ドキュメントは OpenAI API にはこの退役は適用されないと明記している。Codex のモデルページ、料金ページ、Speed のページ、what's new にも同じ趣旨の案内が置かれている。以下は公式ドキュメントの記載をまとめたものである。",
+      "移行先は、プランによって公式が分けて示している。Codex を ChatGPT サインインで使っている場合、Plus、Pro、Business、Enterprise、Edu では GPT-6 Sol（gpt-6-sol）を、Free と Go ではデスクトップアプリで GPT-6 Luna（gpt-6-luna）を、いずれも利用可能な場合に選ぶよう案内されている。いずれも 10月14日より前に選ぶこととされている。なお、公式のモデルページには、この退役の案内とは別に、複雑なコーディングやエージェント作業向けの推奨モデルとして GPT-6.1 Sol が挙げられている。GPT-6.1 Sol は公開時点で Free と Go が対象外のため、Free と Go の移行先として案内されているのは GPT-6 Luna である。退役の移行先として名指しされているのは、GPT-6 Sol（gpt-6-sol）と GPT-6 Luna（gpt-6-luna）である。",
+      "置き換えの対象について、公式は具体的に列挙している。ワークスペースの既定、保存済みのモデル設定、管理構成（managed configuration）、カスタムエージェント、スケジュールタスク、そしてモデルを選択するスクリプトやコマンドで、これらに残っている gpt-5.5 を、利用できるモデルに置き換える。何をどのモデルへ置き換えるかは、利用者のプランとクライアントで変わるため、公式の案内に沿って個別に確認する必要がある。",
+      "管理者向けには、ワークスペースのモデル可用性のページに専用の節がある。それによると、10月14日より前に ChatGPT、ChatGPT Work、Codex のワークスペース既定を見直し、それぞれのサーフェスで利用可能な代替を選ぶ。Work と Codex を ChatGPT サインインで使う場合は、管理者が有効化した対象ユーザーに対して gpt-6-sol を選ぶ、とされている。ここで公式が強調しているのは、既定を変更してもモデルへのアクセスは付与されないという点だ。GPT-6 Sol と GPT-6 Luna は Enterprise ワークスペースでは公開時点でオフが既定であり、管理者が各モデルを有効化してからでないとメンバーは選択できない。",
+      "同じページは、ワークスペースのモデル設定が Codex のデスクトップアプリ、CLI、IDE 拡張、Codex cloud、OpenAI API に自動的には反映されない点も繰り返している。API キーで認証している Codex は、モデルのアクセスが API 組織とプロジェクトに従い、ChatGPT サインインとは別の経路になる。GPT-5.5 については、Codex では ChatGPT サインインの Codex から退役すると原文にあり、API キー認証の Codex への影響は原文に明記がない（GPT-5.4 の退役については API キー認証は対象外と明記されている）。GPT-5.6 系については、モデルページに GPT-5.6 Sol、GPT-5.6 Terra、GPT-5.6 Luna はロールアウト中も引き続き利用できると書かれており、料金ページでも GPT-5.6 Sol・Terra・Luna のクレジット料率が掲載されている。",
+      "管理者向けの細部として、公式ドキュメントは次の点を挙げている。ワークスペースのモデル設定では Chat 用と Work・Codex 用に別々の開始既定を設定でき、これは権限ではなく既定である。Codex cloud は既定モデルの変更に対応していない。Fast モードの可否は、管理対象のローカル Codex クライアントで requirements.toml の features.fast_mode により強制的にオンまたはオフにできる。権限プロファイルはモデルへのアクセスを付与できず、モデルへのアクセスがサンドボックスや承認ポリシーを弱めることもない。",
+      "実務上の確認項目は、公式の記述に沿えば次のとおりである。自分の環境で gpt-5.5 を指定している箇所の洗い出し、プランに応じた移行先の選択、管理者による移行先モデルの有効化状況の確認、そして移行先が各クライアントで利用できるかの確認だ。移行先モデルの性能やコストの特性は、それぞれのモデルページと料金ページに別途書かれており、本稿では比較していない。以前の GPT-5.4 と GPT-5.4 mini も、2026年8月31日に ChatGPT サインインの Codex から退役しており、公式はその際も同じ種類の置き換え対象を挙げている。",
+      "あわせて、同じ Codex のモデルページには、ほかの廃止・非推奨の記載がある。GPT-5.3-Codex-Spark は2026年9月14日に退役し、ChatGPT デスクトップアプリ、Codex CLI、IDE 拡張で使えなくなった。gpt-5.2 と gpt-5.3-codex は、ChatGPT サインインの Codex ですでに非推奨で、codex exec --model などの参照を更新するよう案内されている。さらに、Codex から任意のプロバイダーを使う際の Chat Completions API のサポートは非推奨で、Codex の将来のリリースで削除されると記されている（時期の記載はない）。カスタムプロバイダーを Chat Completions で構成している場合は、Responses API への対応を確認する材料になる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Codex models（GPT-5.5 retirement）",
+        "url": "https://learn.chatgpt.com/docs/models"
+      },
+      {
+        "title": "Workspace model availability（Prepare for the GPT-5.5 retirement）",
+        "url": "https://learn.chatgpt.com/docs/enterprise/workspace-model-availability"
+      },
+      {
+        "title": "ChatGPT & Codex changelog",
+        "url": "https://learn.chatgpt.com/docs/changelog"
+      },
+      {
+        "title": "Codex pricing",
+        "url": "https://learn.chatgpt.com/docs/pricing"
+      },
+      {
+        "title": "What's new",
+        "url": "https://learn.chatgpt.com/docs/whats-new"
+      },
+      {
+        "title": "Speed",
+        "url": "https://learn.chatgpt.com/docs/agent-configuration/speed"
+      }
+    ]
   }
 };
 

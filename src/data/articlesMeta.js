@@ -11046,5 +11046,24 @@ export const ARTICLES_META = [
       "料金",
       "マルチエージェント"
     ]
+  },
+  {
+    "id": "openai-gpt-5-5-retirement-oct-14-codex-chatgpt-2026",
+    "type": "news",
+    "category": "product",
+    "title": "GPT-5.5、2026年10月14日に ChatGPT・ChatGPT Work・Codex から退役：移行先は GPT-6 Sol / Luna、API は対象外",
+    "excerpt": "OpenAI は2026年9月14日、GPT-5.5 を10月14日に ChatGPT、ChatGPT Work、Codex の全プランで退役させると告知した。OpenAI API は対象外。Codex で ChatGPT サインインを使う場合、Plus・Pro・Business・Enterprise・Edu は GPT-6 Sol、Free・Go は GPT-6 Luna が公式の案内する移行先になる。ワークスペース既定、保存済みのモデル設定、管理構成、カスタムエージェント、スケジュールタスク、スクリプトの gpt-5.5 指定を置き換える必要がある。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-14",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "Codex",
+      "ChatGPT",
+      "エンタープライズ",
+      "GPT-5",
+      "モデル"
+    ]
   }
 ];
