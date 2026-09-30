@@ -5,6 +5,8 @@ import { richArticleText, richInlineLine, parseCodeBlock, CopyableCodeBlock } fr
 import { resolveMediaSrc } from "../utils/seo.js";
 import { formatPickDate, formatWeekRoundupPeriodJp } from "../utils/dateUtils.js";
 import { ShareBtn } from "./ArticleList.jsx";
+import { ArticleUpdateBar } from "./Updates.jsx";
+import { useArticleUpdates } from "../utils/updatesData.js";
 
 /** 記事内埋め込み用の縦棒グラフ */
 function VerticalBarChart({ chart }) {
@@ -338,7 +340,7 @@ function ArticleDemo({ demo }) {
 }
 
 /** トップ：WEBデザインギャラリー風「本日の1本」 */
-function ArticleProse({ article }) {
+function ArticleProse({ article, historyIndex = null }) {
   const figures = article.figures ?? [];
   const tables = article.tables ?? [];
   const charts = article.charts ?? [];
@@ -361,8 +363,8 @@ function ArticleProse({ article }) {
           {cb.isCode
             ? <CopyableCodeBlock code={cb.code} lang={cb.lang} />
             : headingMatch
-            ? (() => { const Tag = `h${headingMatch[1].length + 1}`; return <Tag className="prose-section-heading">{richArticleText(headingMatch[2], `p${i}-`)}</Tag>; })()
-            : <p>{richArticleText(p, `p${i}-`)}</p>}
+            ? (() => { const Tag = `h${headingMatch[1].length + 1}`; return <Tag id={i === historyIndex ? "article-history" : undefined} className="prose-section-heading">{richArticleText(headingMatch[2], `p${i}-`)}</Tag>; })()
+            : <p id={i === historyIndex ? "article-history" : undefined}>{richArticleText(p, `p${i}-`)}</p>}
           {figuresAfter(i).map((f, fi) => (
             <figure key={`fig-${i}-${fi}`} className="article-figure">
               <img
@@ -406,8 +408,10 @@ function ArticleDetail({
   onTagClick,
   relatedArticles,
   onOpenRelated,
+  onOpenUpdates,
 }) {
   const [bodyData, setBodyData] = useState(null);
+  const updateEntry = useArticleUpdates(articleMeta.id);
 
   useEffect(() => {
     let cancelled = false;
@@ -432,6 +436,16 @@ function ArticleDetail({
   const cat = CATEGORIES[articleMeta.category];
   const lang = useContext(LangContext);
   const en = lang === "en";
+
+  // 更新履歴・RSS から `?a=<id>#article-history` で開かれたとき、本文が読み込まれてから履歴へ移動する。
+  const bodyReady = Boolean(article);
+  useEffect(() => {
+    if (!bodyReady || window.location.hash !== "#article-history") return;
+    const t = window.setTimeout(() => {
+      document.getElementById("article-history")?.scrollIntoView({ block: "start" });
+    }, 60);
+    return () => window.clearTimeout(t);
+  }, [bodyReady, articleMeta.id]);
 
   if (!article) {
     return (
@@ -502,6 +516,8 @@ function ArticleDetail({
           >
             {article.title}
           </h1>
+
+          <ArticleUpdateBar entry={updateEntry} articleId={article.id} onOpenUpdates={onOpenUpdates} />
 
           {article.coverImage?.src ? (
             <figure className="detail-cover">
@@ -606,7 +622,7 @@ function ArticleDetail({
                 Articles are written in Japanese. To read in English, please use your browser's built-in translation feature (e.g. Chrome: right-click → "Translate to English").
               </p>
             )}
-            <ArticleProse article={article} />
+            <ArticleProse article={article} historyIndex={updateEntry ? updateEntry.historyIndex : null} />
           </section>
 
           {relatedArticles?.length ? (

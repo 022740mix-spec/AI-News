@@ -15,6 +15,7 @@ function HamburgerMenu({ isOpen, onClose, onSection, currentSection, accentId, o
     { id: "guide", label: "ガイド", en: "Guide" },
     { id: "tools", label: "ツール別", en: "Tools" },
     { id: "companies", label: "AI企業", en: "Companies" },
+    { id: "updates", label: "更新履歴", en: "Updates" },
   ];
   const mobileSearchRef = useRef(null);
 

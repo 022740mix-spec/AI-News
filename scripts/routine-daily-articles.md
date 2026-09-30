@@ -259,7 +259,7 @@ push すると、そこで詰まったときに全部が失われる。途中で
   node scripts/review-check.mjs          # エラー0 であること
   node scripts/check-private-info.mjs    # エラー0 であること
   node scripts/check-expired-content.mjs
-  node scripts/generate-feed.mjs && node scripts/generate-sitemap.mjs
+  node scripts/generate-feed.mjs && node scripts/generate-sitemap.mjs && node scripts/generate-updates.mjs
   npm run build
 
 `review-check.mjs` がエラーを出したら、直るまで公開も退避もしない。

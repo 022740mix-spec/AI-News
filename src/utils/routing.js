@@ -18,6 +18,10 @@ export function syncAppUrl({ articleId, siteSection, tagQuery, guideTab, toolTab
       u.searchParams.set("view", "reviews");
       u.searchParams.delete("tag");
       u.searchParams.delete("tab");
+    } else if (siteSection === "updates") {
+      u.searchParams.set("view", "updates");
+      u.searchParams.delete("tag");
+      u.searchParams.delete("tab");
     } else if (siteSection === "tools") {
       u.searchParams.set("view", "tools");
       u.searchParams.delete("tag");
@@ -75,6 +79,8 @@ export function readInitialRouteState() {
       ? "companies"
       : view === "reviews"
         ? "reviews"
+        : view === "updates"
+        ? "updates"
         : view === "tools"
           ? "tools"
           : view === "guide"

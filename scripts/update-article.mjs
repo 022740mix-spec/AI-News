@@ -385,4 +385,4 @@ console.log("");
 console.log("   次を順に実行してください:");
 console.log("     node scripts/check-article-manifest.mjs --update");
 console.log("     node scripts/review-check.mjs");
-console.log("     node scripts/generate-feed.mjs && node scripts/generate-sitemap.mjs");
+console.log("     node scripts/generate-updates.mjs && node scripts/generate-feed.mjs && node scripts/generate-sitemap.mjs");
