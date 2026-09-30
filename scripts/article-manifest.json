@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-09-30",
-  "count": 523,
+  "count": 524,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -154,6 +154,7 @@
     "claude-microsoft-365-connector-all-plans-2026",
     "claude-opus-4-6-review",
     "claude-opus-4-7-review",
+    "claude-opus-5-5-review",
     "claude-opus-5-review",
     "claude-paid-subscriptions-double-2026",
     "claude-platform-ant-apply-devtools-2026",

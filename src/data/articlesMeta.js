@@ -11167,5 +11167,34 @@ export const ARTICLES_META = [
     },
     "rating": 4.2,
     "reviewCategory": "model"
+  },
+  {
+    "id": "claude-opus-5-5-review",
+    "type": "review",
+    "category": "model",
+    "title": "Claude Opus 5.5 レビュー — 入力 $4 / 出力 $20 に下がった現行の Opus、既定 effort は medium に、API には4件の破壊的変更",
+    "excerpt": "Anthropic が2026年9月22日に公開した Opus 級モデル。API の価格は入力 $4 / 出力 $20 per 1M tokens で、Opus 5（$5 / $25）から下がり、キャッシュ読み出しは $0.20 になった。既定の effort は high から medium に変わり、thinking は無効化できない。Claude Code では Opus の既定モデルになった。Anthropic は Fable 5.1 と同水準の性能を Opus 5 より40%低いコストで提供すると説明するが、ベンチマークは当事者の公表値で、独立した検証は確認できていない。Opus 5 からの移行には API の破壊的変更が4件ある。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-22",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "モデル",
+      "Anthropic",
+      "Opus 5.5",
+      "LLM",
+      "エージェント"
+    ],
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": "monthly",
+    "ratings": {
+      "AI品質": 4.5,
+      "使いやすさ": 3.5,
+      "コスパ": 4,
+      "拡張性": 4.5,
+      "企業向け": 4
+    },
+    "rating": 4.1,
+    "reviewCategory": "model"
   }
 ];

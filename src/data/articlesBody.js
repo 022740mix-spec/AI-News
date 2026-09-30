@@ -24687,6 +24687,130 @@ const ARTICLES_BODY = {
         "url": "https://learn.chatgpt.com/docs/agent-approvals-security"
       }
     ]
+  },
+  "claude-opus-5-5-review": {
+    "body": [
+      "Claude Opus 5.5 は、Anthropic が2026年9月22日に公開した Opus 級のモデルである。Anthropic は同社の発表で「Claude 5.5 ファミリーの最初のモデル」と位置付け、ほとんどの作業で Claude Fable 5.1 と同水準の性能を、Opus 5 より40%低いコストで提供すると説明している。いずれも Anthropic 自身の説明であり、本稿の時点で独立した検証は確認できていない。API の価格は入力 $4 / 出力 $20 per 1M tokens で、前世代の Opus 5（$5 / $25）から下がった。公式ドキュメントは、多くのワークロードではまず Opus 5.5 を使い、高い effort で評価しても足りない場合に Fable 5.1 を使うという順序を案内している。一方で、Opus 5 からの移行には API の破壊的変更が4件ある。",
+      "## 料金と位置付け",
+      "料金は入力 $4 / 出力 $20 per 1M tokens。プロンプトキャッシュは 5分書き込みが $5、1時間書き込みが $8、読み出しが $0.20（基本入力単価の 0.05 倍）で、Batch API は半額（$2 / $10）である。1M トークンのコンテキストは、長文向けの割増なしの標準単価で使える。US 域内のみで推論する指定（inference_geo）を使うと、全カテゴリの単価に 1.1 倍が掛かる。以上は公式の料金ページによる。",
+      "Opus 5 との差は、入力 $5 → $4、出力 $25 → $20、キャッシュ読み出し $0.50 → $0.20 である。Anthropic は、エージェントやコーディングの費用の大半をキャッシュ読み出しが占めると述べている。また、既定設定での典型的なワークロードでは Opus 5 より40%安くなるという自社テストの結果を示している。この比較は既定設定どうしのもので、既定 effort が Opus 5 の high から Opus 5.5 の medium に1段下がった分が含まれる。Anthropic の自社テストの結果であり、独立した検証は確認できていない。",
+      "2026年9月30日時点の公式ドキュメントに載っている Claude モデルの位置付けは次のとおり。",
+      "Claude Fable 5.1: $10 / $50 — 高難度の推論と長時間のエージェント作業向け。既定 effort は high",
+      "Claude Opus 5.5: $4 / $20 — 長時間のエージェント型コーディングとナレッジワーク向け。既定 effort は medium",
+      "Claude Sonnet 5.5: $2 / $10 — 速度と知能のバランス型",
+      "Claude Haiku 4.5: $1 / $5 — 最速のモデル。コンテキストは 200K トークン",
+      "Claude Opus 5（前世代）: $5 / $25 — レガシーモデルとして引き続き利用でき、退役は2027年7月24日より前にはならないとされている",
+      "仕様は、コンテキスト 1M トークン、最大出力 128K トークン（Batch API でベータヘッダを付けると 300K）、知識の信頼できるカットオフは2026年6月、思考は常時オンの adaptive thinking である。入力はテキストと画像、出力はテキストとなる。退役は2027年9月22日より前にはならないと公式に示されている。Claude 4.7 以降のモデルは新しいトークナイザを使い、同じ文章でも従来より約30%多くのトークンになるとされている。これは Claude 4.6 以前との比較で、Opus 5 から Opus 5.5 への移行ではトークナイザは変わらない。4.6 以前のモデルと単価を比べるときに、トークン数の差の考慮が要る。",
+      "提供先は Claude API、Amazon Bedrock、Claude Platform on AWS、Google Cloud、Microsoft Foundry の各プラットフォームである。Anthropic は、従来の Opus と同様にゼロデータ保持（ZDR）が使えると述べている。Claude Code では v2.1.280 以降で Opus 5.5 が使え、Opus の既定モデルになった。同じ版で、Pro と Team Standard プランの既定モデルが Sonnet から Opus に変わっている（Claude Code の changelog）。加えて Anthropic は、Pro・Max・Team・シート課金の Enterprise プランで5時間あたりの利用上限を引き上げ、サブスクリプション利用者に保存して好きなときに使えるレート制限リセットを提供すると発表している。上げ幅の具体的な数値は、確認できた範囲の発表ページには書かれていない。",
+      "Fast mode（リサーチプレビュー）も使える。出力速度は最大2.5倍で、入力 $8 / 出力 $40 per 1M tokens の割増価格になる。API のプラットフォームとしては Claude API（Claude Managed Agents を含む）のみで、Amazon Bedrock、Claude Platform on AWS、Google Cloud、Microsoft Foundry では使えない。API での利用はアカウントマネージャー経由か waitlist での申請が必要で、通常の Opus とは別枠のレート制限が掛かる。Batch API や Priority Tier の契約とは併用できず、標準速度に戻すとプロンプトキャッシュが外れる。Claude Code では、Pro・Max・Team・Enterprise のサブスクリプション利用者も使える。この場合はプランの利用上限には含まれず、使用量クレジットから支払う。",
+      "## effort — 既定が medium になった",
+      "Opus 5.5 の既定 effort は medium で、Opus 5 以前の Opus モデルの既定（high）より一段低い。effort は low / medium / high / xhigh / max の5段階すべてに対応する。adaptive thinking は常時オンで切れないため、公式ドキュメントは effort を「思考の深さ、レイテンシ、コストを決める主な制御」と位置付けている。effort を省略したリクエストは Opus 5 では high、Opus 5.5 では medium で動くので、同じコードのまま移行すると動作が変わる。",
+      "公式ドキュメントは、以前のモデルの設定を引き継がず、自分の評価データで effort を振って測ることを勧めている。同じ effort でも Opus 5 より1ターンあたりの思考量が多くなる傾向があり、特に xhigh と max で大きいと書かれている。max_tokens は思考と応答の合計に対する上限なので、高い effort では大きく取る必要がある。会話の途中でメッセージ単位に effort を変える機能（ベータ）もあり、プロンプトキャッシュが保たれる。",
+      "Claude Code のドキュメントによれば、Anthropic のテストでは Opus 5.5 の medium が、コーディングとナレッジワークの評価で Opus 5 の high と同等かそれ以上だった。これは当事者の説明で、範囲もその2種類の評価に限られ、独立した検証は確認できていない。Claude Code では、/effort が per-model になる前にユーザー設定ファイルのトップレベルに保存された effortLevel は、Opus 5.5 のような新モデルには適用されず、選び直すまで既定の medium で始まる。project・local・managed 設定や --settings で渡した effortLevel は、全モデルに適用される。",
+      "## API の破壊的変更と挙動の違い",
+      "公式ドキュメントは、Opus 5 で動いているコードに影響する破壊的変更を4件挙げている。1つ目は、thinking を無効化できないこと。thinking の type に disabled や、budget_tokens を伴う enabled を指定すると 400 エラーになる。thinking フィールドを省略するか adaptive を指定する。2つ目は、強制的なツール使用が使えないこと。tool_choice の any と tool は 400 エラーになり、auto と none のみが使える。スキーマに合う JSON が必要な場合は、strict なツール使用か structured outputs を使う。",
+      "3つ目は、thinking ブロックがモデルと会話に結び付くこと。Opus 5.5 は Opus 5 以前の Opus・Sonnet・Haiku の thinking ブロックを読めるが、Fable と Mythos のものは読めない。2026年8月31日 00:00 UTC 以降に作られたアカウントでは、system プロンプト・tools・過去のメッセージを変更したあとにブロックを再送すると、既定で 400 エラーになる。4つ目は、Claude API と Google Cloud で旧来の computer_20251124 ツールが受け付けられなくなり、computer_toolset_20260801 が必要になること。Amazon Bedrock では従来のツールが引き続き動く。",
+      "これら以外に、エラーにはならない変更がある。ツール呼び出しの合間にモデルが書く短い文章が text ブロックではなく thinking ブロックで返り、既定の display 設定では中身が空になる。この文章を進捗表示としてユーザーに流しているアプリケーションは、ツール呼び出しの間だけ無言になる。公式の移行ガイドは、display の値を設定して読み取る手順を示している。",
+      "移行時の落とし穴が、ほかにもある。応答の先頭に thinking ブロックが来うるため、content[0].text のように位置で読むコードは壊れる。ツール使用のループでは、thinking ブロックを受け取ったとおりに返す必要があり、編集・並べ替え・一部削除をすると 400 エラーになる。また、thinking をオフにして動かしていた処理は、thinking のトークンが本文を返さない場合でも出力トークンとして課金されるため、1リクエストあたりの出力が増えうる。Opus 5.5 のブロックを読めるのは Claude API 上の Fable 5.1 と Mythos 5.1 だけで、ルーターや安全策のフォールバックで別のモデルに移ると、推論は引き継がれない。読めないブロックは取り除かれ、課金されない。さらに、Opus 4.7 以降のモデルでは temperature・top_p・top_k を既定値以外にするとエラーになり、アシスタントのプリフィルもエラーになる（サンプリングパラメータは Opus 4.6 以前から、プリフィルは Opus 4.5 以前から移る場合に新たに影響する）。",
+      "エンタープライズ向けには、Priority Tier が Opus 5.5 では使えない点がある（Opus 4.8 では使える）。Priority Tier の契約がある組織は、容量を別に計画する必要があると移行ガイドに書かれている。",
+      "## ベンチマーク — 何が確かで、何が確かでないか",
+      "以下の数値はすべて Anthropic の発表ページによる Anthropic の公表値で、独立した検証は本稿の時点で確認できていない。",
+      "Terminal-Bench 4.0 は Opus 5.5 が 66.4%（xhigh effort）、Fable 5.1 が 55.8%、Opus 5 が 52.3%。Anthropic は標準誤差を Opus 5.5 で ±2.6 ポイント、他の Claude モデルで ±1.6〜2 ポイントとしている。GDPval-AA v2.1 は Artificial Analysis のベンチマークで、Anthropic が報告した値は Opus 5.5 が 1846 Elo（max effort）、Fable 5.1 が 1735、Opus 5 が 1708 である。Artificial Analysis 自身が Opus 5.5 を測定したかどうかは、確認できた範囲の資料からは分からない。",
+      "Anthropic は同じページで、これらの水準では「ベンチマークの差は実際の差を測る指標として信頼しにくくなっており、Opus 5.5 と Fable 5.1 の差は点数が示すより狭い」と述べている。また、Opus 5.5 は本番の安全策を有効にした状態で評価されており、安全策が働いた場合はサイバーセキュリティのタスクを Opus 4.8、生物学などのタスクを Opus 5 が処理したため、Opus 5.5 のスコアはおそらく低めに出ていると説明している。発表ページには他社モデルとの比較も載っているが、他社の数値は本稿では扱わない。",
+      "発表ページには、GitHub、Spotify、Optiver など早期テスターの談話も掲載されている。これは Anthropic が選んで掲載した声であり、条件や測定方法が公開されていないため、本稿では数値を転載しない。",
+      "## 安全策とフォールバック",
+      "Opus 5.5 は、Opus として初めて Fable 5.1 と同系統の安全策（サイバーセキュリティ・生物学・蒸留）付きで公開された。Anthropic の発表によれば、日常的なバグ修正などは扱えるが、多くのサイバーセキュリティ関連のタスクは Opus 4.8 に振り替えられる。生物学のデュアルユース領域と、フロンティア LLM 開発に関わる一部の能力（特定の ML アクセラレータ向けのカーネル開発など）は Opus 5 に振り替えられる。推論の抽出を狙う要求は、サポート記事と API ドキュメントによれば振り替えられずにそのままブロックされる。なお発表ページの安全策の節は、サイバー・生物学・蒸留のいずれも別のモデルに透過的に振り替えられると書いており、資料の間で食い違っている。本稿は、より具体的なサポート記事と API ドキュメントの記述に従った。",
+      "claude.ai では、振り替えが起きると会話中の表示に通知が出て、モデルピッカーは以後も低い側のモデルのまま残る。この自動切り替えは設定でオフにでき、オフにすると振り替えの代わりに会話が一時停止する。API では stop_reason が refusal になり、stop_details にカテゴリが入る。サーバー側のフォールバック（ベータ）を設定できるが、reasoning_extraction の拒否は再試行されない。",
+      "分類器は、ユーザーが入力した文だけでなく、記憶、コネクタの内容、Web 検索の結果、ファイルなど、モデルが読むものすべてを検査する。自分で入力していない内容が原因で振り替えが起きることもある。API では、フォールバックを設定しない限り、HTTP 200 に stop_reason の refusal が付いて返る。拒否はカテゴリを問わずレート制限に数えられる。",
+      "課金にも違いがある。2026年9月24日から、出力が始まる前の拒否のうち bio・frontier_llm・reasoning_extraction のカテゴリは、通常のリクエストと同じ単価で課金される。それ以外のカテゴリで出力前に拒否されたものは課金されない。サイバー分野の正当な用途向けの Cyber Verification Program について、Anthropic の発表は Opus 5.5 を「近く」対象に加えるとしており、サポート記事は本稿の時点で Opus 5.5 は対象外と書いている。生物学については、審査済みの組織向けに Life Sciences Verification Program が用意されている。",
+      "安全性の評価は Anthropic の説明による当事者の主張で、独立した検証は確認できていない。Anthropic は、自社の自動化された行動監査（約2,000のシナリオ）で、Opus 5.5 が最近の Claude モデルより多くの指標で良い結果だったと述べ、外部評価者として Frontier Design と METR の名を挙げている。同時に、Opus 5.5 は評価されていることに気付いている兆候がしばしばあり、評価が実運用での振る舞いを正確に予測できるかどうかが難しくなっていると書いている。",
+      "## 評価",
+      "AI品質（4.5）: Anthropic の公表値では、Terminal-Bench 4.0 や GDPval-AA v2.1 など自社が挙げた主要なベンチマークで Fable 5.1 と Opus 5 を上回る。一方で、これらは当事者の公表値で、独立した検証は確認できていない。Anthropic 自身が、点数の差は実際の差より広く見えると述べ、Opus 5.5 と Fable 5.1 の差は点数より狭いと書いている。発表ページのチャートの説明文と表では、effort の違いによって同じベンチマークの数字が異なる箇所もある。さらに、安全策の分類器が働く領域（サイバー、生物学、フロンティア LLM 開発の一部）では、別のモデルが処理するため、その領域での実効的な品質は Opus 5.5 の点数とは異なる。",
+      "使いやすさ（3.5）: 公式ドキュメントは、What's new、移行ガイド、プロンプトガイド、エラーメッセージの全文、破壊的変更ごとの before / after まで揃っている。1M コンテキスト、Claude Code の既定 Opus、5つのプラットフォームでの提供も扱いやすい点である。一方、Opus 5 からの移行では、破壊的変更が4件ある。加えて、エラーにならない変更が2件ある。ツール呼び出しの合間の文章が thinking ブロックで返ることと、既定 effort が high から medium に変わることで、検査では気付きにくい。2026年8月31日以降に作られたアカウントでは、会話の履歴を編集して再送すると 400 エラーになり、追記のみの運用が前提になる。新規に導入する場合と、Opus 5 から移行する場合とで、負担の大きさは異なる。",
+      "コスパ（4）: 単価は Opus 5 より20%低く、キャッシュ読み出しは60%低い。Fable 5.1 の4割の単価でもある。Anthropic は自社テストで実効コストの40%低下を示している。減点は、Sonnet 5.5 や Haiku 4.5 にはさらに安い単価があること、thinking を切っていた処理は出力が増えうること、fast mode が2倍の割増であること、bio などの出力前の拒否が課金対象になったことによる。他社モデルとの価格比較は本稿では行っていない。",
+      "拡張性（4.5）: 1M コンテキスト、128K 出力（Batch で 300K）、5段階の effort、ツール使用、Files API、PDF、vision、Batch、プロンプトキャッシュ、コンパクション（ベータ）、メッセージ単位の effort 変更（ベータ）、会話途中でのツール定義の追加（ベータ）が揃っている。一方、tool_choice の any と tool が使えず、ツール呼び出しを強制する設計はできない（strict なツール使用と structured outputs での代替は公式に示されている）。入力はテキストと画像、出力はテキストで、音声や動画の入出力は確認できた資料に記載がない。ファインチューニングについても、読んだ一次ソースには記載がなく、存在しないとまでは言えないが確認できていない。",
+      "企業向け（4）: Claude API と Amazon Bedrock・Claude Platform on AWS・Google Cloud・Microsoft Foundry の各クラウドで公開日から使え、ZDR に対応し、US 域内推論の指定もできる。Claude Code では管理設定で新リリースの許可や保留を制御できる。ただし availableModels に claude-opus-5 を指定していると Opus 5.5 も自動で許可され、保留に使う deniedModels と availableModelsMatch は v2.1.283 以降でしか効かない。減点は、Priority Tier が使えないこと、サイバー分野の Verification Program に Opus 5.5 が含まれていない現状、安全策による振り替えと拒否課金、thinking ブロックの結び付きによる運用上の制約による。公開から日が浅く長期運用の実績がない点は、機能の欠落ではないため減点していない。",
+      "この星評価は、本稿を執筆した担当とは別のモデルによる独立採点との平均である。5軸の点数を、執筆者と独立採点者のそれぞれが付け、軸ごとに平均した（0.25 と 0.75 は低い側に丸めている）。評価の軸と重みは、AI品質30% / 使いやすさ25% / コスパ20% / 拡張性15% / 企業向け10% で、その加重平均が総合の星になる。",
+      "## どう使うべきか",
+      "Opus 5 を使っている場合は、モデル ID を claude-opus-5-5 に変え、thinking の disabled / enabled 指定を外して effort で代替し、tool_choice の any と tool を auto と strict なツール使用に置き換える。Claude API か Google Cloud で computer use を使っているなら toolset への移行も要る。進捗テキストを画面に出しているなら display を設定する。そのうえで、既定が medium に変わったことを前提に、自分の評価データで effort を振って測る。公式ガイドはこの順序で書かれている。",
+      "Opus 4.8 以前から移行する場合は、上記に加えて公式の移行ガイドに世代別のチェックリストがある。Opus 5 との比較は当サイトの [Opus 5 のレビュー](?a=claude-opus-5-review)を参照。Opus 4.7 と Opus 4.6 では fast mode が使えず、Opus 5.5 への移行が fast mode を使い続ける手段として公式に案内されている。",
+      "新規の選定では、公式ドキュメントの案内に従えば、まず Opus 5.5 を評価し、高い effort でも足りない場合に Fable 5.1、コストや速度を優先する場合に Sonnet 5.5 や Haiku 4.5 を検討する順になる。攻撃的セキュリティ（ペネトレーションテストや CTF など）や生物学の業務は、振り替えが頻繁に起きるとされている。Claude Code のドキュメントは、生物学の実質的な作業では最初の検知でセッションが Opus 5 に移り、以後の生物学の検知は拒否になると説明している。一方、セキュアコーディング、ソースコードの脆弱性スキャン、セキュリティ問題のトリアージといった防御側の作業は、引き続き Opus 5 と Opus 5.5 で行えるとサポート記事に書かれている。",
+      "## 注意点",
+      "(1) ベンチマークは当事者の公表値: 数値は Anthropic の発表ページによるもので、独立した検証は確認できていない。Anthropic 自身も、差は点数が示すより狭いと書いている。",
+      "(2) effort とトークン消費: 既定が medium になり、同じ effort でも思考量が Opus 5 より多い傾向がある。コストは単価だけでは見積もれないため、effort ごとに実測する必要がある。",
+      "(3) 破壊的変更: thinking の無効化、強制ツール使用、旧 computer use ツール、thinking ブロックの結び付き。加えて Priority Tier 非対応、応答の先頭の thinking ブロック、サンプリングパラメータとプリフィルの拒否がある。移行前に開発環境で確認する。",
+      "(4) 安全策による振り替えと課金: サイバー、生物学、フロンティア LLM 開発、蒸留の各カテゴリで挙動が異なり、一部は出力前の拒否でも課金される。",
+      "(5) 退役の予定: 現行のラインナップ表に載る Haiku 4.5 は2026年10月15日より前には退役しないとされている。Opus 4.5 は2026年11月24日より前には退役しない。",
+      "(6) 確認できていない点: プラン別の利用上限の数値、claude.ai の各プランで Opus 5.5 がどのモデル選択肢として並ぶかの詳細、Cyber Verification Program の対象化の時期は、確認できた一次情報からは読み取れなかった。",
+      "総評: 単価の引き下げ、1M コンテキスト、5つのプラットフォームでの提供、Claude Code の既定化により、現行の Opus 級として選びやすい位置にある。性能の数値は当事者の公表にとどまり、実効コストは effort の設定に左右される。Opus 5 からの移行は、料金が下がる一方で API の破壊的変更4件への対応が必要になる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Claude Opus 5.5",
+        "site": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-opus-5-5"
+      },
+      {
+        "title": "Pricing",
+        "site": "Claude Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Models overview",
+        "site": "Claude Docs",
+        "url": "https://platform.claude.com/docs/en/models/overview"
+      },
+      {
+        "title": "Claude Opus 5.5",
+        "site": "Claude Docs",
+        "url": "https://platform.claude.com/docs/en/models/opus-5-5/overview"
+      },
+      {
+        "title": "What's new in Claude Opus 5.5",
+        "site": "Claude Docs",
+        "url": "https://platform.claude.com/docs/en/models/opus-5-5/whats-new-opus-5-5"
+      },
+      {
+        "title": "Migrating to Claude Opus 5.5",
+        "site": "Claude Docs",
+        "url": "https://platform.claude.com/docs/en/models/opus-5-5/migration-guide"
+      },
+      {
+        "title": "Effort",
+        "site": "Claude Docs",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/effort"
+      },
+      {
+        "title": "Fast mode",
+        "site": "Claude Docs",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/fast-mode"
+      },
+      {
+        "title": "Model deprecations",
+        "site": "Claude Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+      },
+      {
+        "title": "Release notes",
+        "site": "Claude Docs",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Model configuration",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/model-config"
+      },
+      {
+        "title": "Claude Code changelog",
+        "site": "Claude Code Docs",
+        "url": "https://code.claude.com/docs/en/changelog"
+      },
+      {
+        "title": "Why Claude switched models in your conversation with Opus 5 or Opus 5.5",
+        "site": "Claude Help Center",
+        "url": "https://support.claude.com/en/articles/16049681-why-claude-switched-models-in-your-conversation-with-opus-5-or-opus-5-5"
+      }
+    ]
   }
 };
 
