@@ -15246,7 +15246,7 @@ const ARTICLES_BODY = {
       "**V4 Flash**: 汎用軽量。cache-miss $0.14 / 1M input tokens、cache-hit $0.014 / 1M（cache は自動）",
       "**V4 Pro**: フロンティア級。cache-miss $0.435 / 1M input tokens、cache-hit $0.043 / 1M",
       "**共通仕様**: 1M コンテキストウィンドウ、自動キャッシング、ツール呼び出し・JSON モード対応",
-      "この料金水準は、**GPT-5.6 Sol の $5 / $30**（[GPT-5.6 GA](?a=openai-gpt-5-6-general-availability-july-9-2026)）や **Claude Sonnet 5 の $2 / $10**（導入価格）と比較すると **1/10〜1/20** で、[中国 AI モデルが米国企業トークンの 46%](?a=feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026) を消費するに至った価格攻勢の延長線上にある。",
+      "この料金水準は、**GPT-5.6 Sol の $5 / $30**（[GPT-5.6 GA](?a=openai-gpt-5-6-general-availability-july-9-2026)）や **Claude Sonnet 5 の $2 / $10**（記事公開時は8/31までの導入価格として案内されていたが、その後標準価格として恒久化された。公式発表は2026年8月10日）と比較すると **1/10〜1/20** で、[中国 AI モデルが米国企業トークンの 46%](?a=feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026) を消費するに至った価格攻勢の延長線上にある。",
       "**peak / off-peak 料金の中身**: 北京時間 09:00-12:00 と 14:00-18:00（合計 7時間 / 日）はピーク料金として **通常の 2倍** が適用される。V4 Flash なら $0.14 → $0.28、V4 Pro なら $0.435 → $0.87 / 1M input tokens となる計算。ピーク以外の 17時間（夜間・早朝・昼休憩）は料金据え置き。米国西海岸時間（PT）で言えば、DeepSeek のピークは前日の 18:00-21:00 と 23:00-03:00 に相当し、米国西海岸企業には昼夜逆転で「常に off-peak」という副次効果もある。",
       "**なぜ peak / off-peak 課金か**: 3つの技術的・経済的背景がある。",
       "**(1) データセンター電力コストの時間帯差**: 中国の産業電力は時間帯別料金制度が広く導入されており、ピーク時間帯の電力コストが実際に高い。DeepSeek はこの電力コスト構造を API 料金にパススルーする形になる。",
@@ -15260,7 +15260,8 @@ const ARTICLES_BODY = {
       "**(1) 「V4 発表」と「V4 GA」の区別**: 現時点の告知は「7月中旬公開」であり、具体的な日付は未確定。ベータ経由公開の可能性もある",
       "**(2) ベンチマーク未公表**: V4 の SWE-Bench Pro / Terminal-Bench / GPQA 等の具体スコアは本稿執筆時点で未公表。V3.1 比の性能向上幅も未確定",
       "**(3) 中国データセンター経由のデータ主権リスク**: DeepSeek の API は中国国内でホスティングされている前提で、機微データを送る場合は自社の準拠法規制との整合性を確認する必要がある",
-      "**AI News の推奨**: 個人開発者・スタートアップは **DeepSeek V4 Flash の $0.14 / 1M** で概念実証が可能な圧倒的コスト優位性を評価する価値がある。ただし本番導入は **(1) ベンチマーク公表後**、**(2) データ主権要件との照合後**、**(3) peak / off-peak を意識したジョブスケジューリングの実装後**の3条件を満たしてから。特にバッチ処理系の企業ワークロードでは、off-peak への時間シフトで実質コストを 1/2 に抑えられる設計余地が生まれる。"
+      "**AI News の推奨**: 個人開発者・スタートアップは **DeepSeek V4 Flash の $0.14 / 1M** で概念実証が可能な圧倒的コスト優位性を評価する価値がある。ただし本番導入は **(1) ベンチマーク公表後**、**(2) データ主権要件との照合後**、**(3) peak / off-peak を意識したジョブスケジューリングの実装後**の3条件を満たしてから。特にバッチ処理系の企業ワークロードでは、off-peak への時間シフトで実質コストを 1/2 に抑えられる設計余地が生まれる。",
+      "【訂正 2026-09-30】（誤）Claude Sonnet 5 の $2 / $10（導入価格）→（正）Sonnet 5 の $2 / $10 は、記事公開時（7/14）は8/31までの導入価格として案内されていたが、9/1 の $3/$15 への引き上げは行われず、標準価格として恒久化された（2026年8月10日に公式が発表）。DeepSeek の価格や「1/10〜1/20」の比較は変更していない。"
     ],
     "primarySources": [
       {
@@ -15277,6 +15278,21 @@ const ARTICLES_BODY = {
         "title": "DeepSeek API Pricing (July 2026): V4 Flash $0.14/M · V4 Pro $0.435/M",
         "site": "TLDL",
         "url": "https://www.tldl.io/resources/deepseek-api-pricing"
+      },
+      {
+        "title": "Pricing - Claude API Docs（Claude Sonnet 5 の脚注3）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "title": "Release notes（2026年8月10日: Claude Sonnet 5 の導入価格が標準価格に）",
+        "site": "platform.claude.com",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Introducing Claude Sonnet 5（Edit August 10, 2026）",
+        "site": "anthropic.com",
+        "url": "https://www.anthropic.com/news/claude-sonnet-5"
       }
     ]
   },
