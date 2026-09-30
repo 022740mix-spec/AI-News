@@ -22756,6 +22756,66 @@ const ARTICLES_BODY = {
         "url": "https://learn.chatgpt.com/docs/whats-new/devday-2026"
       }
     ]
+  },
+  "openai-astra-ultrafast-fast-mode-usage-multipliers-2026": {
+    "body": [
+      "OpenAI は Codex のドキュメント「Speed」で、モデルの速度を上げる代わりに利用量を多く消費する仕組みとして、Fast モードと Ultrafast モードを説明している。この記事では公式ドキュメントに書かれた速度と消費の数字を並べ、読者が自分の用途に当てはめて判断するための材料として整理する。結論は置かない。",
+      "Fast モードは、対応モデルの速度を上げる設定である。公式ドキュメントは対応モデルとして GPT-6.1 Sol、GPT-6 Astra、GPT-6 Sol、GPT-6 Luna を挙げ、いずれも提供される場合に限るとしている。速度の増加が具体的な倍率で書かれているのは GPT-5.6 と GPT-5.5 の1.5倍だけで、GPT-6 系の Fast の速度倍率は今回確認した文書に数値がない。ChatGPT デスクトップアプリ、Codex CLI、IDE 拡張で、ChatGPT にサインインしているときに使える。Ultrafast は GPT-6 Astra に対するモードで（モデル一覧の文書には、GPT-6.1 Sol は Standard と Fast が提供され、Ultrafast への対応は「後日」とある）、OpenAI は Codex での標準モードの GPT-6 Astra と比べて最大8倍の速さでトークンを生成すると説明している。",
+      "消費側の数字は次のとおりである。公式は Fast について、含まれるサブスクリプション利用枠を標準の2.5倍、購入したクレジットと Enterprise の従量課金を標準の2倍で消費するとしている。GPT-6 Astra の Ultrafast は、利用枠が標準の8倍、購入クレジットと Enterprise 従量が6倍である。同じモードでも、どの財布から引かれるかで倍率が違う点は、料金ページの表にも同じ数字で載っている。",
+      "ここで公式が繰り返し書いている留保がある。Ultrafast の「最大8倍」はトークン生成速度の比較であり、課金の比率や、タスク全体の完了時間の比較ではない。また、上の課金倍率は速度の増加を表すものではない、とも明記されている。料金ページには、クレジットのレートだけでは含まれる利用枠の減り方は決まらず、現在の上限とリセット時刻は利用状況ダッシュボードで確認するようにとも書かれている。速度の数字は OpenAI 自身の説明であり、独立した検証は確認できていない。",
+      "Ultrafast を使える条件は狭い。公式ドキュメントによれば、Codex と ChatGPT Work で Pro $500 と、対象の Enterprise および Edu プランが対象である。Pro $500 では、先に含まれる利用分を使い、その枠が尽きると利用可能なクレジットを使う。それ以外のセルフサーブのプランは、クレジットを購入していても、開始時点では Ultrafast の対象外とされている。Enterprise では対象ワークスペースがクレジット制または USD の従量制の契約であることが条件で、レート制限に頼る旧来の Enterprise プランは非対応である。Edu はクレジット制の対象プランが該当する。",
+      "管理者側の設定も書かれている。Enterprise では Ultrafast は既定でオフで、ワークスペースの所有者がワークスペース権限を通じて、選んだユーザーまたはワークスペース全体に許可できる。既存のユーザー別の支出上限は、対象となる Ultrafast の利用にも適用される。米国外での推論レジデンシーを必須とするワークスペースは Ultrafast の対象外であり、公式はワークスペースの所在地だけでは適格性は決まらないとも書いている。Enterprise の請求は、ワークスペースの契約に従う。Enterprise 向けの利用上限のページは、利用レートが高いためユーザーの予算の消費が速くなりうるとして、アクセスを有効にする前にユーザー別の支出上限を見直すよう書いている。",
+      "API 経由の場合は別のルールになる。公式は、API キーで Codex を使うときは ChatGPT のクレジット倍率は適用されず、API のトークン価格が使われると書いている。Responses API の Ultrafast のガイドによると、model に gpt-6-astra、service_tier に ultrafast を指定する。GPT-6 Astra の Ultrafast は全 API ユーザーが低いレート制限で使え、GPT-5.6 Sol はプレビューの位置づけである。既定の毎分トークン数の上限は、Tier 1〜3 が50万、Tier 4 が100万、Tier 5 が500万。Ultrafast は米国のデータレジデンシーとグローバル処理のみに対応し、EU などの米国外のリージョン処理には対応しない。ガイドはエージェント用途では WebSocket の利用を強く推奨し、永続接続がないとネットワークのオーバーヘッドで速度の利点が減りうるとしている。",
+      "API の料金表では、GPT-6 Astra の短いコンテキストの出力100万トークンあたりの価格が、Standard で50ドル、Fast で100ドル、Ultrafast で300ドルと記載されている。入力は同じ順に10ドル、20ドル、60ドルである。料金表の注記には、従来の Priority processing が2026年7月30日に Fast mode へ改称されたとある。入力・出力とも Standard に対して Fast が2倍、Ultrafast が6倍で、ChatGPT 側のクレジット倍率（2倍と6倍）と同じ比率である。長いコンテキストの価格やキャッシュ入力の価格も同じ表にある。なお API ガイドの見出しは「Standard モードより最大8倍速い」とあり、Codex 側にあるトークン生成速度に限るという但し書きは、その見出しには付いていない。",
+      "確認する順番を整理すると、次のようになる。まず、自分のプランとワークスペースが対象か（Pro $500、対象の Enterprise・Edu、管理者の許可、推論レジデンシー要件）。次に、使うのが ChatGPT サインインか API キーか。前者は利用枠とクレジットの倍率、後者は API の価格が基準になる。CLI では /fast で Fast モードを切り替え、/statusline でフッターに表示できる。既定として残す場合は config.toml に service_tier = \"fast\" と [features].fast_mode = true を書く。公式の速度の数字はトークン生成速度についてのものであり、タスク全体の完了時間については何も述べていない。なお公式は、GPT-5.5 が2026年10月14日に ChatGPT、ChatGPT Work、Codex から提供終了となり、OpenAI API は影響を受けないと書いている。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "Fast と Ultrafast の速度・消費倍率（OpenAI 公式ドキュメントの記載。標準モードが基準）",
+        "headers": [
+          "モード",
+          "対象モデル",
+          "公式の速度の記述",
+          "含まれる利用枠",
+          "購入クレジット・Enterprise従量"
+        ],
+        "rows": [
+          [
+            "Fast",
+            "GPT-6.1 Sol、GPT-6 Astra、GPT-6 Sol、GPT-6 Luna（提供される場合）。GPT-5.6・GPT-5.5 も言及あり",
+            "GPT-5.6 と GPT-5.5 は1.5倍。他モデルの倍率は確認した文書に記載なし",
+            "標準の2.5倍",
+            "標準の2倍"
+          ],
+          [
+            "Ultrafast",
+            "GPT-6 Astra",
+            "標準の GPT-6 Astra と比べ最大8倍のトークン生成速度（課金や完了時間の比較ではない）",
+            "標準の8倍",
+            "標準の6倍"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Speed（Codex ドキュメント）",
+        "url": "https://learn.chatgpt.com/docs/agent-configuration/speed"
+      },
+      {
+        "title": "Pricing（Codex ドキュメント）",
+        "url": "https://learn.chatgpt.com/docs/pricing"
+      },
+      {
+        "title": "Ultrafast mode（OpenAI API ガイド）",
+        "url": "https://developers.openai.com/api/docs/guides/ultrafast-mode"
+      },
+      {
+        "title": "Pricing（OpenAI API）",
+        "url": "https://developers.openai.com/api/docs/pricing"
+      }
+    ]
   }
 };
 

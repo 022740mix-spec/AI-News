@@ -10915,5 +10915,24 @@ export const ARTICLES_META = [
       "開発ツール",
       "MCP"
     ]
+  },
+  {
+    "id": "openai-astra-ultrafast-fast-mode-usage-multipliers-2026",
+    "type": "feature",
+    "category": "product",
+    "title": "CodexのFastとUltrafast、速度倍率と消費倍率を並べて読む",
+    "excerpt": "OpenAIの公式ドキュメントによると、Codexの Fast モードは含まれる利用枠を標準の2.5倍、購入クレジットと Enterprise 従量を2倍で消費する。GPT-6 Astra の Ultrafast は標準比で最大8倍のトークン生成速度とされ、利用枠は8倍、クレジットは6倍の消費になる。公式は、これらの課金倍率は速度の増加を表すものではないと明記している。速度の数字は OpenAI の説明であり、独立した検証は確認できていない。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Codex",
+      "OpenAI",
+      "料金",
+      "GPT-6",
+      "エンタープライズ",
+      "API"
+    ]
   }
 ];
