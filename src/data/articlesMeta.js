@@ -11254,5 +11254,35 @@ export const ARTICLES_META = [
     },
     "rating": 3.5,
     "reviewCategory": "model"
+  },
+  {
+    "id": "gemini-3-8-flash-review",
+    "type": "review",
+    "category": "model",
+    "title": "Gemini 3.8 Flash レビュー — 9/2 GA の Flash 世代最新モデル、長時間のソフトウェア開発とエージェント向け。Google 公表値では DeepSWE 73.7%、一方で Terminal-Bench 4.0 は 19.1%",
+    "excerpt": "Google が2026年9月2日に GA とした Gemini 3.8 Flash（防御者限定の 3.8 Flash Cyber と同時発表）のレビュー。入力 1M・出力 64K トークン、思考量は low / medium / high。**Google 公表値**では DeepSWE v1.1 が 73.7%、Terminal-Bench 2.1 が 89.4%（3.7 Flash は 85.8%）だが、Terminal-Bench 4.0 は 19.1%、OSWorld-2.0 は 59.0% で、Google 自身の表でも Opus 5・Sol を下回る項目がある。独立検証は確認できていない。Google は長いタスクでトークン消費が増えうると明記している。料金は公式ページの記載を引用し、Gemini CLI の個人向け提供終了（6/18）と Antigravity CLI への移行、無料枠と提供経路もまとめた。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-02",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "モデル",
+      "Google",
+      "Gemini",
+      "Gemini 3.8 Flash",
+      "エージェント",
+      "ベンチマーク"
+    ],
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": "monthly",
+    "ratings": {
+      "AI品質": 4,
+      "使いやすさ": 4,
+      "コスパ": 4.5,
+      "拡張性": 4,
+      "企業向け": 4
+    },
+    "rating": 4.1,
+    "reviewCategory": "model"
   }
 ];

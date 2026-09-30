@@ -25174,6 +25174,175 @@ const ARTICLES_BODY = {
         "url": "https://code.claude.com/docs/en/changelog"
       }
     ]
+  },
+  "gemini-3-8-flash-review": {
+    "body": [
+      "**Gemini 3.8 Flash**（API モデル ID は `gemini-3.8-flash`）は、Google が2026年9月2日に一般提供（GA）とした Flash 系のモデル。ai.google.dev のモデル一覧では「Stable」と表示され、Google は「長時間のソフトウェア開発、自律エージェント、複雑な企業業務向けの最も高性能な Flash モデル」と説明している。本稿は、Google の公式ドキュメント・モデルカード・料金ページで確認できた範囲でまとめたレビューである。ベンチマークはすべて Google 自身の公表値で、独立した第三者による検証は確認できていない。Google は同日の公式ブログ（blog.google、2026年9月2日）で、3.7 Flash の3週間後にあたる「6週間で3つ目の Flash リリース」と位置づけ、防御者限定の派生モデル Gemini 3.8 Flash Cyber も同時に発表している。",
+      "**世代の位置づけ**: モデルカードによると、3.8 Flash は Gemini 3.7 Flash を土台にした後継で、アーキテクチャや学習データの詳細は 3.7 Flash のモデルカードを参照する形になっている。ai.google.dev のモデル一覧では、3.7 Flash と 3.6 Flash が「previous-generation」、3.5 Flash が「legacy」と説明されている（いずれも Stable 表示）。deprecations ページの公開日で見ると、3.6 Flash が7月21日、3.7 Flash が8月13日、3.8 Flash が9月2日で、Flash の世代交代は数週間間隔で続いている。3.5 Flash-Lite は同一覧で「3.5 系で最速・最安」の位置づけのまま掲載されている。deprecations ページには 3.5 Flash を含めシャットダウン日の告知は無い。また、3.7 Flash について Google は「引き続き完全にサポートされる」と記している。",
+      "**仕様**: 入力はテキスト・画像・動画・音声・PDF、出力はテキストのみ。入力上限は 1,048,576 トークン、出力上限は 65,536 トークン。モデルカードは知識のカットオフを2026年3月としつつ、領域によっては 2025年1月までの知識にとどまる場合があると書いている。思考量（thinking level）は low / medium / high で、既定は medium。`minimal` は非対応でエラーになる。このモデル（gemini-3.8-flash）自体は Live API・音声生成・画像生成には対応していないが、3.8 世代には別モデルとして gemini-3.8-live と gemini-3.8-live-extended-thinking（9月15日 GA）、gemini-3.8-flash-tts と gemini-3.8-flash-lite-tts（9月22日 GA）が用意されている。Computer Use は Preview 扱い。関数呼び出し、構造化出力、コード実行、Google 検索・Google マップによるグラウンディング、URL コンテキスト、File Search、コンテキストキャッシュ、Batch / Flex / Priority の各推論オプションは対応と記載されている。",
+      "**ベンチマーク（Google 公表値）**: 次の表は、モデルカードの結果表から一部を抜粋したもの。比較対象のモデルと項目は Google が選んでおり、評価手法の詳細は Google の evals-methodology ページ（PDF）に置かれており、次の段落の注記はその記述による。",
+      "**表の読み方**: Google の結果表全体（Claude Sonnet 5 と GPT-5.6 Terra を含む）で、3.8 Flash が列の最高値になっているのは、Terminal-Bench 2.1（89.4%、Opus 5 は 89.1%、Sol は 88.8%、3.7 Flash は 85.8%）、HLE-Verified（54.9%）、Vals Finance Agent v2（61.4%）、Harvey の法務エージェントベンチマーク（10.0%）、CharXiv Reasoning、LVBench、BioMysteryBench の Human Difficult、LABBench2 など。ただし Terminal-Bench 2.1 と HLE-Verified の差は 0.3〜0.5pp と小さい。一方、Terminal-Bench 4.0 は 3.8 Flash が 19.1%（3.7 Flash は 11.2%、Opus 5 は 51.8%、Sol は 37.3%）、OSWorld-2.0 は 59.0%（Opus 5 は 75.4%、Sol は 62.6%）、GDPVal-AA v2 は Elo 1545（Opus 5 は 1824、Sol は 1710）で、これらでは表に載せた Opus 5 と Sol の値を下回っている。3.7 Flash との比較では、モデルカードの結果表の全項目で 3.8 Flash が上回っている。DeepSWE v1.1 の Opus 5 については、次の段落の注記を参照。",
+      "**比較の条件（Google の方法論 PDF の記述）**: (a) DeepSWE の Opus 5 の値について、PDF には「丸めのため Opus 5 のスコアを 74% と誤って報告していた」という注記があるが、モデルカードの HTML は本稿執筆時点でも 74.0% と表示している。そのため本稿は DeepSWE で 3.8 Flash と Opus 5 のどちらが上かを書かない。(b) Terminal-Bench 2.1 は Gemini だけが自社で計測しており、ハーネスは Terminus 2 に限られる。他社の値は原則として各社の自己申告や公開リーダーボード、Artificial Analysis、Vals.AI などから Google が転記したもので、原典には当たっていない。(c) HLE-Verified では、Sonnet 5 の設問の多くがコンテンツフィルタで遮断されたと PDF に書かれており、表の Sonnet 5 の 31.0% は能力を示す値として読めない。(d) OSWorld-2.0 は8月8日のパッチ適用前に計測された値とされている。(e) PDF の4ページ目の結果表は画像で、本稿では読めていない。",
+      "**トークン消費について**: Google の Gemini 3.8 Flash 解説ページは、このモデルは長く複雑なタスクで「設計上、より多くのトークンを使うことがある」と説明している。難しい多段の目標に対して推論のステップを小さく刻み、ツールを繰り返し呼び、途中で自分の作業を検証するためだという。日常的なタスクでは思考量を下げてトークン消費を抑えることを勧めており、モデルカードの既知の制限にも「特に高い effort では性能のためにより多くのトークンを使う場合がある」とある。単価が同じでも、タスクあたりの費用が 3.7 Flash と同じとは限らない。",
+      "**料金（公式の記載）**: ai.google.dev の料金ページ（Gemini Developer API、Standard）には、入力が「2026年12月31日まで 100万トークンあたり $0.75、2027年1月1日から $1.50」、出力（思考トークンを含む）が「2026年12月31日まで $3.75、2027年1月1日から $7.50」とある。Google の 3.8 Flash 解説ページはこの $0.75 / $3.75 を「introductory（導入価格）」と呼び、DeepMind のモデルカードは同じ表の中で「$0.75（$1.50 regular）」「$3.75（$7.50 regular）」と表記している。同じ導入価格は 3.7 Flash と 3.6 Flash にも適用され、2027年1月1日には3モデルとも $1.50 / $7.50 になると解説ページに書かれている（3.7 Flash に留まっても、この日付の単価は同じ）。legacy とされる 3.5 Flash の現行単価は $1.50 / $9.00 と料金ページに載っている。本稿は改定後の単価を予測せず、公式の記載を引用するにとどめる。Batch と Flex は Standard の半額の単価で、Priority は $1.35 / $6.75（2027年から $2.70 / $13.50）と載っている。単価は変わりうるため、採用前に最新の料金ページを確認したい。",
+      "**レート制限**: rate-limits ページはモデル別の RPM・TPM・RPD を載せておらず、「Google AI Studio で確認する」方式で、「記載の上限は保証されない」とも書かれている。無料枠の具体値もこのページからは分からない。一方、支出額に基づく制限が10分の窓で評価され、Tier 1 が $10、Tier 2 が $50、Tier 3 が $200を超えると 429 が返る。Priority 推論のレート上限は標準の0.3倍が既定とされている。長いタスクでトークンを多く使う設計（前段）と組み合わせると、この制限に当たりやすくなる場合がある。",
+      "**無料枠と提供経路**: 料金ページでは、Standard の Free Tier が入力・出力とも無料（Free of charge）と表示され、Batch と Flex の無料枠は「Not available」。Free Tier のコンテンツは Google の製品改善に使われる（Used to improve our products: Yes）が、有料枠では使われない（No）と記載されている。モデルカードと DeepMind のモデルページは、提供チャネルとして Gemini アプリ、Gemini Enterprise Agent Platform、Google AI Studio、Gemini API、Google AI Mode、Google Antigravity を挙げている。ただし blog.google は、一般利用者向けには「Gemini アプリ、Google 検索の AI Mode、Google スプレッドシートの Gemini で、Google AI Pro と Ultra の購読者が利用できる」と書いており、これらの消費者向け面は有料購読者に限られる。開発者向けの導入価格は、Google AI Studio と Gemini Enterprise Agent Platform の両方で12月31日まで適用と解説ページにある。",
+      "**Gemini CLI から Antigravity CLI へ**: Google Developers Blog の2026年5月19日付の告知によると、2026年6月18日に、Gemini CLI と Gemini Code Assist の IDE 拡張は、Google AI Pro・Ultra の利用者と、Gemini Code Assist for individuals を無料で使う利用者へのリクエスト提供を停止する、と予告されていた。Gemini CLI の公式ドキュメント（geminicli.com）は現在、トップに「無料枠と Google One の利用者向けには、Gemini CLI は2026年6月18日に Antigravity CLI に置き換えられた」という趣旨の案内を掲げている。同じ告知は、Antigravity CLI が Go 製の新しいターミナル環境で、Agent Skills・Hooks・Subagents・Extensions（Antigravity プラグインとして）を引き継ぐが、機能の完全な一致は当初からは無いと説明している。企業向けは、Gemini Code Assist Standard / Enterprise のライセンスで使う場合のアクセスは変わらず、Gemini CLI は有料の Gemini API キーや Gemini Enterprise Agent Platform の API キーでも引き続き使えるとされている。なお、3.8 Flash が Antigravity CLI や Gemini CLI で選べるかどうかは、本稿で確認した公式ページには記載が無く、確認できていない。確認できたのは、Gemini API の Managed Agents の Antigravity エージェントと Antigravity SDK が、既定で 3.8 Flash を使うようになったという記載である。",
+      "**Antigravity エージェントの切り替え**: changelog（9月17日）によると、antigravity-preview-05-2026 は antigravity-preview-09-2026 に置き換えられて非推奨となり、05-2026 は2026年10月5日に停止する。後継の 09-2026 は既定モデルが 3.8 Flash で、リモートのサンドボックス（environment: remote）で output_text や model_output だけを読む場合はエージェント名の更新だけで済む。一方、ローカル環境（local_environment）でツールを動かす場合や function_call のステップを解析している場合は、組み込みツールのパラメータが snake_case から PascalCase に変わり、ファイル編集が全文書き換えから行範囲の置換に変わったため、コードの修正が要る。",
+      "**Gemini 2.5 系の扱い**: changelog（9月18日）は、2.5 系へのアクセスを「過去に使ったことのある利用者」に限ると告知している。2.5 系は非推奨ではなく引き続き提供されるが、新規プロジェクトには 3.5 Flash-Lite か 3.8 Flash が推奨されている。",
+      "**API 移行時の注意**: Google の移行チェックリストは、`gemini-3.8-flash` への切り替えで次を求めている。temperature・top_p・top_k を設定から外す、thinking_budget を文字列の thinking_level に置き換える（minimal は非対応）、candidate_count を外す、複数ターンの会話はサーバー側の previous_interaction_id に統一する、事前入力（prefill）したモデルターンを外す、関数呼び出しまわりの形式を見直す。これらの一部は Gemini 3 世代共通の要件で、既存の 3.x 系から移る場合は影響が小さいかもしれないが、2.5 系などから移る場合は実装の修正が必要になる。",
+      "**安全性（モデルカードの記載）**: 3.7 Flash と比べた自動評価で、テキスト安全性は -0.4pp、画像→テキスト安全性は 0.0pp、トーンは +0.2pp、不当な拒否は +1.1pp（低いほど良い）。多言語の安全性は +5.4pp（低いほど良い）で、モデルカード自身が「非英語での安全性がわずかに後退した」と書いている。Frontier Safety Framework については、3.7 Flash の評価で Tracked / Critical Capability Level に達しておらず、3.8 Flash に意味のある新能力は無いため同様に達しない見込み、と Google は説明している。なお Unjustified-refusals の +1.1pp は「低いほど良い」指標なので、こちらも小さな後退にあたる。これらも Google の自己評価である。",
+      "**Gemini 3.8 Flash Cyber と安全策**: blog.google によると、Gemini 3.8 Flash Cyber は Google が「最も高性能なサイバーセキュリティモデル」とする派生モデルで、新設の Fairwind Program を通じて、信頼された防御者（政府機関、重要インフラの運営者、ソフトウェアのメンテナなど）に優先的に提供される。一般の API では使えない。Google は CyberGym や社内ベンチマーク、CWE-Bench（Collinear 運営）で高い性能を示したと説明しているが、いずれも Google の公表で、本稿では独立した検証を確認しておらず、数値は載せない。3.8 Flash 本体は、CBRN（化学・生物・放射性物質・核）とサイバー攻撃の悪用に対する safeguards を備えて出荷される一方、Cyber 版はより緩い緩和策で、信頼された防御者にのみ提供される、と説明されている。また Google は、3.8 世代でプロンプトインジェクション耐性が Gray Swan の評価で大きく向上したと書いている（これも当事者の説明）。",
+      "**強み**:",
+      "(1) 長時間のソフトウェア開発とエージェント用途で、Google 公表値では DeepSWE v1.1 と Terminal-Bench 2.1 が同表の上位モデルと近い水準。",
+      "(2) 1M トークンの入力、64K の出力、low / medium / high の思考量切り替えで、品質・費用・遅延の調整幅がある。",
+      "(3) Gemini API、Google AI Studio、Gemini Enterprise Agent Platform、Antigravity など提供経路が複数あり、Standard の Free Tier で試せる。",
+      "(4) 関数呼び出し、検索・マップのグラウンディング、コンテキストキャッシュ、Batch / Flex などの周辺機能が同じ API で揃っている。",
+      "**注意点**:",
+      "(1) ベンチマークは Google の公表値のみで、独立検証は確認できていない。Terminal-Bench 4.0（19.1%）、OSWorld-2.0（59.0%）、GDPVal-AA v2（Elo 1545）のように、Google 自身の表でも Opus 5・Sol を下回る項目がある。",
+      "(2) 長いタスクではトークン消費が増えうると Google が明記している。単価だけで費用を見積もらず、実タスクでの消費量を測る必要がある。",
+      "(3) 料金ページには2027年1月1日からの単価（$1.50 / $7.50）が別に載っており、導入価格は 3.7 Flash・3.6 Flash にも同じ期限で適用される。長期の予算を組む場合は、その記載を前提に置く必要がある。",
+      "(4) Computer Use は Preview で、このモデル自体は Live API と画像・音声の出力に非対応（Live・TTS は別モデル）。Vertex AI 系のモデルページでは Tuning も非対応、データの提供リージョンは global と米国・EU のマルチリージョンとされている。多言語の安全性は 3.7 Flash から小さく後退したとモデルカードが述べている。",
+      "(5) Gemini CLI の無料枠・個人向け提供は6月18日に Antigravity CLI に置き換えられた（Google の告知とドキュメントの案内）。企業向けライセンスと有料 API キーでの利用は継続とされている。",
+      "**AI News の見方**: 長時間のコーディングエージェントや業務エージェントを API で動かす用途では、比較対象に入れる価値がある。ただし採用の根拠にできるのは Google の公表値までで、手元のタスクで品質・トークン消費・所要時間を測るのが前提になる。GUI 操作や汎用エージェント（Terminal-Bench 4.0、OSWorld-2.0）を主用途にするなら、Google 自身の表で差がある点を踏まえて他モデルと並べて評価したい。",
+      "**★4.1 の内訳**: ★は AI品質4.0・使いやすさ4.0・コスパ4.5・拡張性4.0・企業向け4.0 の加重平均（AI品質30%、使いやすさ25%、コスパ20%、拡張性15%、企業向け10%）で、執筆した担当とは別のモデルによる独立採点との平均である（平均で 0.25 刻みの中間になる場合は低い側に丸めた）。コスパは、期限付きの導入価格ではなく、2027年1月1日からの通常価格 $1.50 / $7.50 で見ている。拡張性は、Vertex AI のモデルページで Tuning が非対応とされている点を踏まえて4.0とした。多言語の安全性の後退（+5.4pp）は AI品質と企業向けの減点材料にしている。料金や提供条件が変われば見直す前提である。",
+      "**確認できていないこと**: (a) 方法論 PDF の結果表（4ページ目、画像）と、DeepSWE の Opus 5 の訂正後の値、(b) 独立した第三者によるベンチマーク再現、(c) Free Tier の具体的なレート制限（公式ページは AI Studio で確認する方式）、(d) Gemini CLI・Antigravity CLI で 3.8 Flash が選択できるか、(e) 3.8 Flash Cyber の性能数値（Google の公表のみ）。これらは一次資料で確認できなかったため、数値としては本文に載せていない。",
+      "【編集履歴】",
+      "・【公開 2026-09-30】新規レビュー。3.8 Flash Cyber と「6週間で3つ目」は blog.google（2026-09-02）で確認できたため記載。ai.google.dev（models・pricing・changelog・deprecations・latest-model・rate-limits）、DeepMind のモデルカードとモデルページ、Google Developers Blog の告知を一次資料として作成。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "Gemini 3.8 Flash のベンチマーク（Google 公表値の抜粋、モデルカード 2026年9月。Opus 5 の DeepSWE 値は Google の方法論 PDF が誤りと注記しており、順位の比較には使えない）",
+        "headers": [
+          "ベンチマーク",
+          "Gemini 3.8 Flash",
+          "Gemini 3.7 Flash",
+          "Claude Opus 5",
+          "GPT-5.6 Sol"
+        ],
+        "rows": [
+          [
+            "DeepSWE v1.1（長時間のソフトウェア開発）",
+            "73.7%",
+            "65.3%",
+            "74.0%",
+            "72.7%"
+          ],
+          [
+            "Terminal-Bench 2.1（端末でのコーディング）",
+            "89.4%",
+            "85.8%",
+            "89.1%",
+            "88.8%"
+          ],
+          [
+            "Terminal-Bench 4.0（汎用エージェント能力）",
+            "19.1%",
+            "11.2%",
+            "51.8%",
+            "37.3%"
+          ],
+          [
+            "OSWorld-2.0（コンピュータ操作、部分スコア）",
+            "59.0%",
+            "50.6%",
+            "75.4%",
+            "62.6%"
+          ],
+          [
+            "GDPVal-AA v2（知識労働、Elo）",
+            "1545",
+            "1482",
+            "1824",
+            "1710"
+          ],
+          [
+            "HLE-Verified（専門知識の推論）",
+            "54.9%",
+            "53.6%",
+            "54.4%",
+            "54.5%"
+          ],
+          [
+            "Vals Finance Agent v2（金融アナリスト業務）",
+            "61.4%",
+            "59.0%",
+            "58.6%",
+            "53.8%"
+          ],
+          [
+            "Harvey's Legal Agent Benchmark（法務、全問正解率）",
+            "10.0%",
+            "8.8%",
+            "6.7%",
+            "2.5%"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Gemini 3.8 Flash - Model Card",
+        "site": "Google DeepMind",
+        "url": "https://deepmind.google/models/model-cards/gemini-3-8-flash/"
+      },
+      {
+        "title": "Gemini 3.8 Flash",
+        "site": "Google DeepMind",
+        "url": "https://deepmind.google/models/gemini/flash/"
+      },
+      {
+        "title": "Gemini models",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/models"
+      },
+      {
+        "title": "What's new in Gemini 3.8 Flash",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/latest-model"
+      },
+      {
+        "title": "Gemini Developer API pricing",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing"
+      },
+      {
+        "title": "Release notes (changelog)",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/changelog"
+      },
+      {
+        "title": "Deprecations",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/deprecations"
+      },
+      {
+        "title": "Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
+        "site": "Google (blog.google)",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/"
+      },
+      {
+        "title": "Gemini API rate limits",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/rate-limits"
+      },
+      {
+        "title": "Gemini 3.8 Flash (Gemini Enterprise Agent Platform)",
+        "site": "Google Cloud",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/3-8-flash"
+      },
+      {
+        "title": "Gemini CLI documentation",
+        "site": "Gemini CLI",
+        "url": "https://geminicli.com/docs/"
+      },
+      {
+        "title": "An important update: Transitioning Gemini CLI to Antigravity CLI",
+        "site": "Google Developers Blog",
+        "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/"
+      }
+    ]
   }
 };
 
