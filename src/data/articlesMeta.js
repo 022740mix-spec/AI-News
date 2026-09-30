@@ -10971,5 +10971,23 @@ export const ARTICLES_META = [
       "プライバシー",
       "エンタープライズ"
     ]
+  },
+  {
+    "id": "openai-chatgpt-space-pages-collaboration-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ChatGPT Space、Pages とファイルを一か所に集約し、共同編集と @ChatGPT / @dot での生成に対応",
+    "excerpt": "OpenAI は2026年9月29日の DevDay で ChatGPT Space を紹介した。Pages と保存したファイルを一か所に集め、ChatGPT で下書きや改稿を行い、直接編集し、共同編集者に閲覧・コメント・編集の権限で共有できる。ページ内では @ChatGPT や @dot、スラッシュコマンドでテキスト・画像・可視化を生成する。公式は「where available」（利用可能な環境で）と留保しており、共有には権限の確認が必要とされる。",
+    "date": "2026-09-30",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "ChatGPT",
+      "OpenAI",
+      "エージェント",
+      "エンタープライズ",
+      "プライバシー"
+    ]
   }
 ];
