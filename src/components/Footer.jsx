@@ -45,7 +45,7 @@ function StorageLocalNotice() {
   );
 }
 
-function EditorialStatement({ isOpen, onClose }) {
+function EditorialStatement({ isOpen, onClose, onOpenUpdates }) {
   const lang = useContext(LangContext);
 
   useEffect(() => {
@@ -118,11 +118,13 @@ function EditorialStatement({ isOpen, onClose }) {
         <ul>
           {en ? (<>
             <li><strong>Key comparison and pricing articles</strong> — current-generation models, major CLIs and editors, and cross-tool pricing comparisons — are reviewed <strong>at least once a month</strong>. Other comparison articles also display a "last verified" date so you can judge their freshness</li>
+            <li>Corrections, additions and monthly reviews are collected in the <button type="button" className="footer-link" onClick={onOpenUpdates}>update history</button> (<a href="./updates.xml" target="_blank" rel="noopener">Atom feed</a>)</li>
             <li><strong>Factual errors</strong> are corrected with a "Correction" notice at the top of the article (never silently fixed)</li>
             <li><strong>New information</strong> is appended as an "Update" at the end of the article</li>
             <li>News articles are kept individually and not deleted</li>
           </>) : (<>
             <li><strong>主要な比較記事・料金記事</strong>（現行世代のモデル、主要な CLI・エディタ、ツール横断の料金比較）は<strong>毎月1回以上</strong>見直します。その他の比較記事にも「最終確認日」を表示し、鮮度を判断できるようにしています</li>
+            <li>訂正・追記・月次見直しの履歴は<button type="button" className="footer-link" onClick={onOpenUpdates}>更新履歴</button>にまとめています（<a href="./updates.xml" target="_blank" rel="noopener">Atom フィード</a>）</li>
             <li><strong>事実の誤り</strong>を発見した場合は記事上部に「Correction」として訂正を明記します（黙って修正しません）</li>
             <li><strong>情報の追加・更新</strong>は記事末尾に「Update」として追記します</li>
             <li>ニュース記事は原則として個別に保持し、削除は行いません</li>
@@ -172,7 +174,7 @@ function EditorialStatement({ isOpen, onClose }) {
   );
 }
 
-function SiteFooter({ onOpenStatement }) {
+function SiteFooter({ onOpenStatement, onOpenUpdates }) {
   const lang = useContext(LangContext);
   const en = lang === "en";
   const desc = en ? "Latest news & guides on Claude Code, Cursor, Codex & Copilot" : SITE_DESCRIPTION;
@@ -191,6 +193,14 @@ function SiteFooter({ onOpenStatement }) {
         >
           {en ? "Editorial Policy & Statement" : "運営方針・編集ステートメント"}
         </button>
+        {" · "}
+        <button
+          type="button"
+          className="footer-link"
+          onClick={onOpenUpdates}
+        >
+          {en ? "Update history" : "更新履歴"}
+        </button>
       </div>
       <div style={{ fontSize: 11, color: "var(--muted)", marginTop: 4 }}>
         {en ? "AI-produced · No ads · No tracking · Completely free" : "記事は主に AI で制作 · 広告なし · 個人情報収集なし · 完全無料"}
@@ -207,6 +217,7 @@ function SiteSectionNav({ section, onSection }) {
     { id: "guide", label: "ガイド", en: "Guide" },
     { id: "tools", label: "ツール別", en: "Tools" },
     { id: "companies", label: "AI企業", en: "Companies" },
+    { id: "updates", label: "更新履歴", en: "Updates" },
   ];
   return (
     <nav className="section-site-nav" aria-label={lang === "en" ? "Site sections" : "サイト内切替"}>

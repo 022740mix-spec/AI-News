@@ -47,6 +47,7 @@ import { StorageLocalNotice, EditorialStatement, SiteFooter, ScrollTopFab, SiteS
 import HomePage from "./components/HomePage.jsx";
 import { TypeFilterBar, FilterBar, Pagination, HeroToday, ArticleCard } from "./components/ArticleList.jsx";
 const ArticleDetail = lazy(retryChunk(() => import("./components/ArticleDetail.jsx")));
+import { UpdatesPage } from "./components/Updates.jsx";
 import { Sidebar, WeekRoundupNav } from "./components/Sidebars.jsx";
 import { GuideSidebar, ToolSidebar, CompaniesSidebar } from "./components/Sidebars.jsx";
 const GuideTabBar = lazy(retryChunk(() => import("./components/Guide.jsx").then(m => ({ default: m.GuideTabBar }))));
@@ -248,6 +249,11 @@ export default function App() {
     });
   }, [guideTab, toolTab]);
 
+  const openArticleById = useCallback((id) => {
+    const article = ARTICLES_META.find((a) => a.id === id);
+    if (article) handleSelect(article);
+  }, [handleSelect]);
+
   const onTagClick = useCallback((tag) => {
     setQuery(tag);
     setSelected(null);
@@ -354,6 +360,11 @@ export default function App() {
     window.scrollTo(0, 0);
   }, []);
 
+  const openUpdates = useCallback(() => {
+    setSelected(null);
+    switchSection("updates");
+  }, [switchSection]);
+
   const selectGuideTab = useCallback((next) => {
     setGuideTab(next);
     window.scrollTo(0, 0);
@@ -436,7 +447,7 @@ export default function App() {
                       : null
               }
               showSort={siteSection === "articles" || siteSection === "reviews"}
-              hideSearch={siteSection === "home"}
+              hideSearch={siteSection === "home" || siteSection === "updates"}
               onToggleMenu={toggleMenu}
               onToggleLang={toggleLang}
             />
@@ -518,6 +529,7 @@ export default function App() {
             onTagClick={onTagClick}
             relatedArticles={pickRelatedArticles(selected, ARTICLES_META, 3)}
             onOpenRelated={handleSelect}
+            onOpenUpdates={openUpdates}
           />
           </Suspense></ChunkErrorBoundary>
           </>
@@ -640,6 +652,8 @@ export default function App() {
                     onTagClick={onTagClick}
                   />
                 </>
+              ) : siteSection === "updates" ? (
+                <UpdatesPage onOpenArticle={openArticleById} />
               ) : siteSection === "tools" ? (
                 <ChunkErrorBoundary><Suspense fallback={<div className="loading">読み込み中...</div>}>
                   <ToolReferencePanel
@@ -728,8 +742,12 @@ export default function App() {
             ) : null}
           </div>
         )}
-        <SiteFooter onOpenStatement={() => setStatementOpen(true)} />
-        <EditorialStatement isOpen={statementOpen} onClose={() => setStatementOpen(false)} />
+        <SiteFooter onOpenStatement={() => setStatementOpen(true)} onOpenUpdates={openUpdates} />
+        <EditorialStatement
+          isOpen={statementOpen}
+          onClose={() => setStatementOpen(false)}
+          onOpenUpdates={() => { setStatementOpen(false); openUpdates(); }}
+        />
         </main>
       </div>
 
