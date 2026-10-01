@@ -566,9 +566,11 @@ if (inScope("monthly"))
 }
 
 // ── 8. 月次見直しの対象外レビューの放置（月次） ──
-// 月次見直しの対象は12本と決めた。それ自体は方針どおりだが、
-// **対象外が43本あり、最も古いものは半年近く放置されている**という事実は
-// どこにも見えていなかった。頻度は約束しないが、見えないのとは違う。
+// 月次見直しの対象は `reviewCadence: "monthly"` を持つ記事に限る（本数は数えて出す）。
+// それ自体は方針どおりだが、**対象外のレビューが半年近く放置されている**という事実は
+// どこにも見えていなかった（2026年9月の実測では43本）。頻度は約束しないが、見えないのとは違う。
+// **件数をメッセージに固定値で書かない。** 9月30日に対象が12本から14本になったのに、
+// Issue の文面は「12本」のまま出続けた。
 if (inScope("monthly"))
 {
   const mod = await import(pathToFileURL(join(rootDir, "src/data/articlesMeta.js")).href);
@@ -587,11 +589,12 @@ if (inScope("monthly"))
 
   if (others.length) {
     actionable = true;
+    const monthlyCount = meta.filter((a) => a.reviewCadence === "monthly" && a.status !== "retracted").length;
     sections.push({
       level: "warn",
       title: `月次対象外のレビューが長く放置されている（${others.length} 本）`,
       note:
-        "月次見直しの対象は12本で、それ以外に頻度は約束していません（Footer の記載どおり）。\n" +
+        `月次見直しの対象は${monthlyCount}本で、それ以外に頻度は約束していません（Footer の記載どおり）。\n` +
         "**約束していないことと、見えていないことは違います。** 120日以上経ったものを出します。\n\n" +
         "対象を増やすなら `reviewCadence: \"monthly\"` を付け、**Footer の文言も同時に直してください。**\n" +
         "取り下げる判断もありえます。放置し続けるのが最も悪い選択です。",
