@@ -11358,5 +11358,24 @@ export const ARTICLES_META = [
       "ベンチマーク",
       "セキュリティ"
     ]
+  },
+  {
+    "id": "anthropic-cli-1-37-admin-api-spend-limits-rbac-plugins-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Anthropic の公式 CLI「ant」v1.37 / v1.38 — Admin API に支出上限・RBAC・プラグイン管理が入り、Organization API は GA に",
+    "excerpt": "Claude API 用の公式 CLI `ant` が9月30日に v1.37.0 と v1.38.0 を公開。Claude Enterprise の分析・支出上限・RBAC のグループとロール、プラグインとマーケットプレイスが Admin API に加わった。管理者権限は通常のログインとは別プロファイルで取る設計で、公式ドキュメントも分けて使うよう求めている。",
+    "date": "2026-10-01",
+    "newsDate": "2026-09-30",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Claude API",
+      "CLI",
+      "Anthropic",
+      "エンタープライズ",
+      "プラグイン",
+      "認証"
+    ]
   }
 ];

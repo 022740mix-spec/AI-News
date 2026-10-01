@@ -24,6 +24,14 @@
     <summary>Google DeepMind は2026年9月30日付で、新しいフロンティアモデル「Gemini 4 Argon」を発表した。提供はまず「信頼できるサイバー防衛者」向けの Fairwind プログラムに限られ、開発者・企業・一般向けには、有料 API の顧客と Google AI Ultra の加入者から「できるだけ早く」広げるとしている。出力トークン上限は従来の64Kから1Mに拡大され、導入価格は入力100万トークンあたり2ドル、出力10ドルで、導入期間の終了後は4ドルと20ドルになる。Google の比較表では、GPT-6 Astra、Claude Fable 5.1、Claude Opus 5.5 と並べた19項目のうち14項目で最高値（1項目は同値）だが、5項目では他社が上回る。比較の数値には各社の自己申告や自社計測が含まれる。</summary>
   </entry>
   <entry>
+    <title>Anthropic の公式 CLI「ant」v1.37 / v1.38 — Admin API に支出上限・RBAC・プラグイン管理が入り、Organization API は GA に</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-cli-1-37-admin-api-spend-limits-rbac-plugins-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-cli-1-37-admin-api-spend-limits-rbac-plugins-2026</id>
+    <published>2026-10-01T15:00:00Z</published>
+    <updated>2026-10-01T15:00:00Z</updated>
+    <summary>Claude API 用の公式 CLI `ant` が9月30日に v1.37.0 と v1.38.0 を公開。Claude Enterprise の分析・支出上限・RBAC のグループとロール、プラグインとマーケットプレイスが Admin API に加わった。管理者権限は通常のログインとは別プロファイルで取る設計で、公式ドキュメントも分けて使うよう求めている。</summary>
+  </entry>
+  <entry>
     <title>ChatGPT に MCP Events、MCP サーバーの更新を監視して動く仕組み。MCP Events は MCP 2.0 とドラフト仕様の Webhook 配信が前提</title>
     <link rel="alternate" type="text/html" href="?a=openai-mcp-events-chatgpt-webhook-mcp-2-0-2026"/>
     <id>tag:ai-tool-news.jp,2026:openai-mcp-events-chatgpt-webhook-mcp-2-0-2026</id>

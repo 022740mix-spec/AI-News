@@ -25847,6 +25847,40 @@ const ARTICLES_BODY = {
         "url": "https://x.com/GoogleDeepMind"
       }
     ]
+  },
+  "anthropic-cli-1-37-admin-api-spend-limits-rbac-plugins-2026": {
+    "body": [
+      "Anthropic が Claude Platform 向けに公開している公式 CLI「`ant`」（[anthropics/anthropic-cli](https://github.com/anthropics/anthropic-cli)、MIT ライセンス）が、9月30日に **v1.37.0** と **v1.38.0** を相次いで公開した。GitHub のリリースノートによると、v1.37.0 の機能追加は次の5件である。Claude Enterprise の分析・支出上限（spend limits）・RBAC のグループとロールを Admin API に追加、Admin API の分析に**ユーザー単位の利用量・コストレポート**を追加、Admin API に**プラグインとプラグインマーケットプレイス**を追加、プラグインの組織全体へのインストール設定を**削除できる**ようにした、そして **Organization API エンドポイントが GA になった**。",
+      "v1.38.0 は小さな更新で、**支出上限の一覧エンドポイント**の追加と、`ant apply` が GitHub URL で参照したスキルのキャッシュを**コミットの完全な SHA で区別する**ようにした修正が入っている。",
+      "`ant` 自体は新しくない。同じリリースページで確認できる最も古い版は9月1日の v1.29.0 で、`ant apply` は [v1.30.0 で入っている](?a=claude-platform-ant-apply-devtools-2026)。今回の変更は、エージェントや環境をコードで管理する側ではなく、**組織の管理者が使う側**（メンバー・支出・権限・プラグイン）に寄っている。",
+      "公式ドキュメントの Admin API のページによると、Admin API が受け付ける認証情報は3種類ある。`sk-ant-admin` で始まる Admin API キー、`org:admin` スコープの OAuth ベアラートークン、ワークスペースに限定されない個人キーまたはサービスアカウントキーである。`ant` からは `ant beta:organization` 以下のコマンドで呼び出す。なおリリースノートは Organization API の GA を述べているが、ドキュメントの URL とコマンド名には、2026年10月1日の確認時点で `beta` が残っている。",
+      "管理者権限の取り方について、認証のドキュメントは次のように書いている。`ant auth login` は既定ではワークスペースに限定したトークンを要求する。Admin API のリソースを扱うには、専用のプロファイルで `ant auth login --profile admin --scope \"org:admin\"` のように `org:admin` スコープを要求する。このスコープは admin、owner、primary owner のロールの組織メンバーにだけ付与され、発行されたトークンは**組織全体にアクセスでき、プロファイルのワークスペース指定では制限されない**。公式は、日常のコマンドが昇格した権限で動かないよう、管理者用のプロファイルを日常用と分けておくよう求めている。",
+      "Claude Enterprise（claude.ai）の組織については、同ページに別の注記がある。claude.ai で作成したスコープ付き API キーで Admin API を呼び、このページのエンドポイントのうちメンバーと招待だけが当てはまる。Enterprise 専用として、グループとカスタムロールの読み取りと支出上限が加わる、という書き分けである。したがって、v1.37.0 で入った支出上限や RBAC は、Console の組織と Enterprise の組織とで使える範囲が違う可能性がある。リリースノートとドキュメントからは、各エンドポイントがどちらの組織で使えるかまでは確認できていない。",
+      "運用の観点では、スクリプトから `curl` で API を呼ぶ場合に、`ant auth print-credentials --access-token` が保存済みの OAuth アクセストークンを（期限が近ければ更新して）出力する、という記述がある。このとき `ANTHROPIC_API_KEY` や `ANTHROPIC_AUTH_TOKEN` が環境変数に残っていると `ant` のログインより優先され、意図しない組織やワークスペースに向かうことがあるため、公式は CLI のログインで作業するときはそれらを外すよう注意している。`ant auth status` で、どの認証情報とワークスペースが選ばれているかを確認できる。",
+      "この記事の根は、GitHub のリリースノート（v1.37.0、v1.38.0）と Anthropic 公式ドキュメント（CLI クイックスタート、認証、Admin API、`ant apply`）の2系統で、いずれも Anthropic 自身の発表である。実際の挙動を第三者が検証した資料は確認できていない。各エンドポイントの引数や応答の詳細、プラグイン管理で何ができるかの全体像は、この記事では確認していない。"
+    ],
+    "primarySources": [
+      {
+        "title": "anthropics/anthropic-cli Release v1.37.0",
+        "url": "https://github.com/anthropics/anthropic-cli/releases/tag/v1.37.0"
+      },
+      {
+        "title": "anthropics/anthropic-cli Release v1.38.0",
+        "url": "https://github.com/anthropics/anthropic-cli/releases/tag/v1.38.0"
+      },
+      {
+        "title": "CLI authentication options（Claude Platform ドキュメント）",
+        "url": "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/authentication"
+      },
+      {
+        "title": "Admin API（Claude Platform ドキュメント）",
+        "url": "https://platform.claude.com/docs/en/manage-claude/admin-api"
+      },
+      {
+        "title": "CLI scripting and automation（Claude Platform ドキュメント）",
+        "url": "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/scripting"
+      }
+    ]
   }
 };
 
