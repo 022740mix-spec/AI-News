@@ -26135,6 +26135,49 @@ const ARTICLES_BODY = {
         "url": "https://abcnews.com/Business/anthropic-appeals-court-declines-block-pentagon-blacklisting/story?id=136755690"
       }
     ]
+  },
+  "google-openai-anthropic-frontier-ai-standards-2026": {
+    "body": [
+      "2026年9月24日、The Information は、Google・OpenAI・Anthropic が「Standards Authority for Frontier AI（SAFA）」という仮称の業界団体を設立することで合意し、年内または2027年早期に発足し得ると報じた。BankInfoSecurity（Emilia David 氏、同日）がこれを引いて伝えている。同団体は自主規制団体の形をとるため、議会や大統領の承認は要らない、と同記事は書いている。本稿は、この報道を事実の根としたうえで、何が確認でき、何が確認できていないかを分けて整理する。",
+      "根拠の数え方を先に示す。団体の仮称、人事の打診、発足時期は、The Information の報道1本が根である。BankInfoSecurity などの報道はその引用・要約であり、媒体が増えても独立した確認の数は増えない。3社はこの団体について公式発表をしておらず、報道では、各社は取材の時点で回答していないと伝えられている（Stocktwits 9月24日付など）。Anthropic の公式ニュース一覧にも、2026年10月1日時点でこの団体に関する発表は見当たらない。独立した確認として数えられるのは、OpenAI の Chris Lehane 氏が9月15日に記者団へ「3社が数週間にわたり AI の安全性で協力してきた」と述べた点（TechCrunch が報じ、Bloomberg の報道が先行したと書いている。AFP の配信も Bloomberg 経由で同じ発言を伝えている。当事者本人の説明）までで、この発言は団体の名称や人事には触れていない。また、団体を作ろうとしている事実そのものは、OpenAI 自身が9月15日に認めている。なお The Information の原典は有料記事で、本稿が直接確認できたのは見出しと概要までである。SAFA の名称を報じた9月24日付の記事そのものの URL は特定できておらず、内容は BankInfoSecurity などの引用を通じて確認した。",
+      "3社の協議が最初に表に出たのは9月15日である。The Information が「3社が AI 業界の標準化団体の設立に向けて話し合っている」と報じ、同日、Lehane 氏が記者団に協力の事実を認めた（TechCrunch は Bloomberg が先に報じたと書いている）。TechCrunch によれば、Lehane 氏は、Amodei 氏がエッセイで提案した反トラスト法上の限定的な適用除外は3社には不要だとも述べたという。一方、Altman 氏は、こうした協議が競争を抑えると見なされれば反トラスト法に抵触し得ると指摘していたと TechCrunch は伝えている。また TechCrunch は、Altman 氏が社内で、この団体は米政府の支援なしに進める必要があると述べたと The Information が報じたと書いている。",
+      "構想の発端として BankInfoSecurity が挙げるのは、Google DeepMind 共同創業者の Demis Hassabis 氏が7月14日に公開したエッセイである。同氏は、米国の証券業界の自主規制機関 FINRA（Financial Industry Regulatory Authority）のような自主規制組織を作り、最先端モデルを評価する共通の基準とベンチマーク試験を整備する案を示した。資金は「相当な規模が必要で、おそらく大半は業界から出る」と同氏の提案は述べている。TechCrunch・AFP の報道によれば、このエッセイの題は「A Framework for Frontier AI and the Dawning of a New Age」で、リリース前に最大30日の自主的な審査を行う案も含まれていた。",
+      "もう一つの経緯として、The Information の報道を引いた複数の報道（The Next Web、TechRepublic）は、3社が当初は連邦政府の監督を伴う官民の組織を目指したと伝えている。ホワイトハウスの大統領令案が支持を得られず頓挫したため、政府を介さない自主規制団体へ方向を変えたという内容である。この経緯は原典の本文を読めていないため、引用元の記述に依拠している。",
+      "Anthropic CEO の Dario Amodei 氏は、2026年9月12日に自身のサイトでエッセイ「We Must Pace the Frontier」を公開した。エッセイは、ペースを落とすこと（pacing）は訓練や技術進歩の停止ではなく、整合性と安全性の確保に十分な時間を取り、第三者の評価者がそれを確認することだと説明している。3段階の計画のうち、第1段階は第三者評価者に社員レベルの常時アクセスを認めることで、Anthropic が単独でコミットし、他の最先端企業にも同じ義務を課すよう政府に求めている。第2段階は民主主義国のラボ間での共通基準、第3段階は権威主義国を含む国際的な協調である。この内容は、本サイトの[Amodei 氏のエッセイの記事](?a=anthropic-pace-the-frontier-essay-2026)でも扱っている。",
+      "このエッセイへの反応として、Sam Altman 氏は X で「Dario に同意する。フロンティアのペースを落とす必要がある」と述べ、社員同等のアクセスを持つ独立評価者の導入は良い考えで OpenAI も同じことをする、と続けた。「Dario is right」という投稿は Elon Musk 氏のものである。いずれも本人の X 投稿は直接読めておらず、第三者の記録と報道経由で確認した。なお、同じ文脈の本サイトの記事として、[Anthropic と Accenture による「エンベデッド評価」](?a=anthropic-accenture-embedded-evaluation-2026)がある。",
+      "人事については、BankInfoSecurity が次のように書いている。3社は、元ホワイトハウス AI 政策顧問の Sriram Krishnan 氏、バイデン政権の元技術担当高官 Arati Prabhakar 氏、ジョージ・W・ブッシュ政権期の外交官 Condoleezza Rice 氏、ベンチャーキャピタリストの David Friedberg 氏に団体のポストを打診した。科学面の助言者としては、METR の創業者兼 CEO の Beth Barnes 氏と、米 CAISI（AI の標準とイノベーションのためのセンター）に助言する Paul Christiano 氏に打診したと報じている。同記事は、両氏が最近 OpenAI と関わりがあったこと（METR は Hugging Face の事案を調べた独立研究グループであること、OpenAI が最近 Christiano 氏を同社の財団の理事に任命したこと）も併記している。CEO 候補が Krishnan 氏と Prabhakar 氏、会長候補が Rice 氏と Friedberg 氏という区別は、他の報道によるものである。いずれも当事者が否定しうる人事の話であり、本人のコメントは確認できていないため、「報道では」の留保を付けて読む必要がある。",
+      "Krishnan 氏は、第2次トランプ政権のホワイトハウスで AI 政策の上級顧問（Senior Policy Advisor for AI）を務め、2026年6月に退任した（Bloomberg Law の2026年6月6日付の報道による）。退任時の Financial Times のインタビューで、同氏は「AI の FDA はできない」と述べ、モデルを出す前に弁護士団が必要になる中央の機関は「歯車に砂を噛ませる」ものだと語ったと報じられている。この発言は、トランプ政権下で AI 向けの中央規制機関が作られないという見通しを述べたものとして読める。",
+      "団体の中身について、The Information の記述を引いた報道（The Next Web、TechRepublic）は、リリース前のモデル試験の基準、安全・セキュリティ事案の報告方法、外部監査人の認定要件、各社の自主的な安全コミットメントの定義、といった項目を挙げている。資金を3社が主に負担するかどうかは不明だと BankInfoSecurity は書いている。また同記事は、自主規制団体は議会や大統領の承認を要しない一方、法的な権限を持とうとすれば政府機関への登録が必要になり得ると指摘する。FINRA は米証券取引委員会（SEC）に登録しており、規則の変更は SEC が承認している。",
+      "評価は割れている。AFP（9月15日）は、Cohere のブログ投稿（9月13日）を引いて、Cohere の CEO である Aidan Gomez 氏がこの構想を「名前を変えたカルテル」と批判したと伝えている。一方で Lehane 氏は、FRONTIER Act に含まれる、最先端のラボに「独立検証組織」の立ち入りを認めさせる条項を OpenAI が支持していると述べている（TechCrunch）。政府側については、BankInfoSecurity が、ドナルド・トランプ大統領が AI に追加の規制は不要だと公に述べていること、6月の大統領令に基づき、ラボが任意で最先端モデルを政府の AI 安全機関に事前試験へ提出できる仕組みがあることを書いている。",
+      "開発者や導入を検討する管理者にとって、現時点で確認できるのは構想段階の報道までである。団体の発足日、評価基準、認定の仕組み、各社の製品の提供条件や料金への影響は、報道にも3社の公式の資料にも書かれていない。確認の手がかりとしては、3社の公式発表、団体が設立された場合の公式サイトや定款に当たる文書、SEC などへの登録の有無が挙げられる。団体が発足するか、発足後にどの範囲の権限と独立性を持つかは、本稿の時点では決まっていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic, OpenAI, Google Quietly Discussed an AI Safety Standards Body（The Information、2026年9月15日頃。有料記事で、本稿は見出しと概要のみ確認）",
+        "site": "The Information",
+        "url": "https://www.theinformation.com/articles/inside-ai-industrys-behind-scenes-push-police"
+      },
+      {
+        "title": "Google, OpenAI, Anthropic Plan Frontier AI Standards Body（BankInfoSecurity、2026年9月24日。The Information の報道を引用した二次情報）",
+        "site": "BankInfoSecurity",
+        "url": "https://www.bankinfosecurity.com/google-openai-anthropic-plan-frontier-ai-standards-body-a-32926"
+      },
+      {
+        "title": "OpenAI, Anthropic, Google have been in talks on AI safety for weeks（TechCrunch、2026年9月15日。Lehane 氏の発言）",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/15/openai-anthropic-google-have-been-in-talks-on-ai-safety-for-weeks/"
+      },
+      {
+        "title": "We Must Pace the Frontier（Dario Amodei 氏、2026年9月12日。一次資料）",
+        "site": "darioamodei.com",
+        "url": "https://darioamodei.com/post/we-must-pace-the-frontier"
+      },
+      {
+        "title": "Dario Amodei 氏の X 投稿（エッセイの公開告知）",
+        "site": "X",
+        "url": "https://x.com/DarioAmodei/status/2098773920774074715"
+      }
+    ]
   }
 };
 

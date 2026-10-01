@@ -48,6 +48,14 @@
     <summary>ワシントンD.C.巡回区控訴裁判所は2026年9月25日、AnthropicがSupply Chain Security Act（41 U.S.C. §4713）に基づく国防総省の決定の審査を求めた請願（No. 26-1049）を、2対1で棄却した。多数意見はKatsas判事が執筆し、Henderson判事が反対意見を付けた。当サイトが9月16日に報じた北カリフォルニア連邦地裁の判断は、同じ3月3日に行われた別の法令（10 U.S.C. §3252）に基づく指定についてのものである。判決文によれば、多数意見は地裁の§3252の解釈に異論を示さず、§4713の定義が異なる点を理由に結論を分けた。</summary>
   </entry>
   <entry>
+    <title>【分析】Google・OpenAI・Anthropic が業界自主規制団体「SAFA」を協議と The Information が報道 — 政府の監督を介さない第三者評価の枠組み</title>
+    <link rel="alternate" type="text/html" href="?a=google-openai-anthropic-frontier-ai-standards-2026"/>
+    <id>tag:ai-tool-news.jp,2026:google-openai-anthropic-frontier-ai-standards-2026</id>
+    <published>2026-10-02T15:00:00Z</published>
+    <updated>2026-10-02T15:00:00Z</updated>
+    <summary>The Information は2026年9月24日、Google・OpenAI・Anthropic が「Standards Authority for Frontier AI（SAFA）」という仮称の自主規制団体を年内または2027年早期に発足させ得ると報じた。FINRA をモデルにし、構想の発端は Google DeepMind の Demis Hassabis 氏の7月14日のエッセイだという。団体の名称・人事・時期の根は The Information の報道1本で、3社は公式発表をしていない。独立した確認は、OpenAI の Chris Lehane 氏が9月15日に「3社が数週間協力してきた」と述べた点までである。本稿は、確認できた範囲と、Amodei 氏の9月12日のエッセイとの関係、残る論点を整理する。</summary>
+  </entry>
+  <entry>
     <title>Claude Code、5時間の上限に達しても区切りのよいところまで進める——週次枠から小さな固定分を使い、Pro は週1回・Max は毎回</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-wrap-up-allowance-5-hour-limit-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-wrap-up-allowance-5-hour-limit-2026</id>

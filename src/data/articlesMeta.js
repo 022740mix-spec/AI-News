@@ -11480,5 +11480,23 @@ export const ARTICLES_META = [
       "軍事",
       "訴訟"
     ]
+  },
+  {
+    "id": "google-openai-anthropic-frontier-ai-standards-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】Google・OpenAI・Anthropic が業界自主規制団体「SAFA」を協議と The Information が報道 — 政府の監督を介さない第三者評価の枠組み",
+    "excerpt": "The Information は2026年9月24日、Google・OpenAI・Anthropic が「Standards Authority for Frontier AI（SAFA）」という仮称の自主規制団体を年内または2027年早期に発足させ得ると報じた。FINRA をモデルにし、構想の発端は Google DeepMind の Demis Hassabis 氏の7月14日のエッセイだという。団体の名称・人事・時期の根は The Information の報道1本で、3社は公式発表をしていない。独立した確認は、OpenAI の Chris Lehane 氏が9月15日に「3社が数週間協力してきた」と述べた点までである。本稿は、確認できた範囲と、Amodei 氏の9月12日のエッセイとの関係、残る論点を整理する。",
+    "date": "2026-10-02",
+    "newsDate": "2026-09-24",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "AI安全性",
+      "規制",
+      "Anthropic",
+      "OpenAI",
+      "Google"
+    ]
   }
 ];
