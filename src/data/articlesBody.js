@@ -23118,9 +23118,10 @@ const ARTICLES_BODY = {
   },
   "alibaba-qwen4-apsara-unveil-2026": {
     "body": [
-      "Alibabaが9月22日、杭州で開催されたApsara Conference 2026で次世代モデル「Qwen4」を発表したと、複数の海外メディアが報じている。報道が一致して伝える内容は、Qwen4 Max・Qwen4 Flash・Qwen4 Plus・Qwen4 27Bの4系統が名称として公開されたこと、いずれもリリース日・価格・コンテキスト長・公開ベンチマーク数値は示されなかったこと、経営陣が今後のQwen4.5・Qwen5世代で5〜10兆パラメータ規模を目指すロードマップに言及したことである。つまり今回の発表は製品としての公開ではなく、次世代アーキテクチャで学習が進んでいることを示すプレビューだった。",
-      "GitHubのQwenLM公式組織（github.com/QwenLM）を確認したが、Qwen4系統のリポジトリやモデルカードはまだ見当たらず、これは「学習中でリリースされていない」という報道内容と矛盾しない。一方でAlibaba・Qwen自身の公式サイト・公式ブログには、本セッションの実行環境のネットワーク制限により直接到達できておらず、この記事はPandaily・Pasquale Pillitteriなど独立した複数の海外メディアが伝える内容の一致に基づいて書いている。カンファレンス会場での発表という性質上、名称・段数・ロードマップの数値といった基本情報は各メディアの記述で揃っており、内容自体の確度は高いと判断した。",
-      "Alibabaは同カンファレンスで、独自AIチップやエージェント向けクラウド基盤、モバイルエージェント基盤も含めた全体戦略を示したと報じられている。Qwenはすでに複数のオープンウェイトモデルを展開しており（当サイトでもQwen3.8-Omni-FlashやQwen-Image-2.1を報じてきた）、Qwen4が実際にどの程度の性能・価格で登場するかは、リリース時に改めて検証する必要がある。"
+      "Alibabaは2026年9月22日、杭州で開催されたApsara Conference 2026で、次世代モデル「Qwen4」が学習中であることを明らかにした。Alibaba Cloudの公式発表は、続くQwen 4.5とQwen 5のシリーズについても、5〜10兆パラメータ規模に拡大する予定のロードマップを示したと書いている。つまり今回の発表は製品としての公開ではなく、次世代モデルの開発状況とロードマップの説明である。リリース日、価格、コンテキスト長、公開ベンチマークの数値は、公式の発表資料に書かれていない。一部の海外報道はQwen4 Max・Qwen4 Flash・Qwen4 Plus・Qwen4 27Bの4つの名称を伝えているが、Alibaba Cloudの公式発表の2件にはこれらの名称がなく、当サイトでは確認できていない。",
+      "GitHubのQwenLM公式組織（github.com/QwenLM）を確認したが、Qwen4系統のリポジトリやモデルカードはまだ見当たらず、これは「学習中でリリースされていない」という報道内容と矛盾しない。当初の記事はAlibabaの公式発表に到達できないまま、Pandaily・Pasquale Pillitteriなど複数の海外メディアの報道が一致していることを根拠に書いたが、それらの報道は同じ発表を伝える派生であり、独立した根の数は増えない。2026年10月1日にAlibaba Cloudの公式ブログ2件を直接確認し、上の内容に改めた。",
+      "Alibabaは同カンファレンスで、独自AIチップやエージェント向けクラウド基盤、モバイルエージェント基盤も含めた全体戦略を示したと報じられている。Qwenはすでに複数のオープンウェイトモデルを展開しており（当サイトでもQwen3.8-Omni-FlashやQwen-Image-2.1を報じてきた）、Qwen4が実際にどの程度の性能・価格で登場するかは、リリース時に改めて検証する必要がある。",
+      "【訂正 2026-10-01】（誤）「Alibabaが「Qwen4」を発表」「Qwen4 Max・Flash・Plus・27Bの4系統が名称として公開された」→（正）Alibaba Cloudの公式発表（9月22日）は、Qwen 4が学習中であること、およびQwen 4.5・Qwen 5のロードマップ（5〜10兆パラメータ規模）を述べている。4つの名称は公式発表の2件で確認できず、一部の海外報道が伝える内容として扱う。タイトルと冒頭、出典（複数の海外報道という同じ発表の派生から、Alibaba Cloudの公式ブログへ）を改めた。外部からの指摘を受け、公式発表を直接読んで確認した。"
     ],
     "primarySources": [
       {
@@ -23134,6 +23135,16 @@ const ARTICLES_BODY = {
       {
         "title": "QwenLM（公式GitHub組織。Qwen4系統が9月26日時点で未掲載であることの確認用）",
         "url": "https://github.com/QwenLM"
+      },
+      {
+        "title": "Alibaba Unveils Roadmap on Full-Stack AI Strategy from Chips, Cloud Infrastructure, Models to Agents（Alibaba Cloud 公式ブログ）",
+        "site": "Alibaba Cloud",
+        "url": "https://www.alibabacloud.com/blog/alibaba-unveils-roadmap-on-full-stack-ai-strategy-from-chips-cloud-infrastructure-models-to-agents_603589"
+      },
+      {
+        "title": "Alibaba Cloud's 2026 Apsara Conference: Full-Stack AI Roadmap Along with Global Market Expansion Plan（Alibaba Cloud 公式ブログ）",
+        "site": "Alibaba Cloud",
+        "url": "https://www.alibabacloud.com/blog/alibaba-clouds-2026-apsara-conference-full-stack-ai-roadmap-along-with-global-market-expansion-plan_603598"
       }
     ]
   },

@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./?view=updates"/>
   <link rel="self" type="application/atom+xml" href="./updates.xml"/>
   <id>tag:ai-tool-news.jp,2026:updates</id>
-  <updated>2026-09-30T15:00:00Z</updated>
+  <updated>2026-10-01T15:00:00Z</updated>
   <generator>ai-news-generate-updates</generator>
+  <entry>
+    <title>【訂正】Alibabaが次世代「Qwen4」は学習中と発表 — Qwen4.5・Qwen5は5〜10兆パラメータのロードマップ、リリース日・価格・ベンチマークは未定</title>
+    <link rel="alternate" type="text/html" href="?a=alibaba-qwen4-apsara-unveil-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:alibaba-qwen4-apsara-unveil-2026:2026-10-01</id>
+    <updated>2026-10-01T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）「Alibabaが「Qwen4」を発表」「Qwen4 Max・Flash・Plus・27Bの4系統が名… →（正）Alibaba Cloudの公式発表（9月22日）は、Qwen 4が学習中であること、およびQwen…</summary>
+  </entry>
   <entry>
     <title>【訂正】AI 設定ファイル実務ガイド — ルールとスキルをどこに置き、どちらを優先させるか</title>
     <link rel="alternate" type="text/html" href="?a=ai-config-files-comprehensive-guide-2026#article-history"/>
