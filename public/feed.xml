@@ -8,6 +8,14 @@
   <updated>2026-10-02T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Alibaba、スマートフォン向けエージェント基盤「Qwen Intelligence」を発表 — HONOR Magic9シリーズに初搭載予定</title>
+    <link rel="alternate" type="text/html" href="?a=alibaba-qwen-intelligence-honor-magic9-2026"/>
+    <id>tag:ai-tool-news.jp,2026:alibaba-qwen-intelligence-honor-magic9-2026</id>
+    <published>2026-10-02T15:00:00Z</published>
+    <updated>2026-10-02T15:00:00Z</updated>
+    <summary>Alibabaは9月22日、杭州のApsara Conferenceで、スマートフォンメーカー向けのフルスタック型エージェント基盤「Qwen Intelligence」を発表した。第1弾のパートナーはHONORで、9月28日に発売予定とされたMagic9シリーズとHONOR Robot Phoneが最初の搭載機種になる。第1フェーズは「Mobile Planner Agent」「Mobile-Use Agent」「Mobile Creative Agent」の3エージェントで構成される。タスク精度が最大91.8%、100ステップを超える一連の操作を扱えるという数値はAlibabaの発表値で、独立した検証は確認できていない。</summary>
+  </entry>
+  <entry>
     <title>Claude Code、5時間の上限に達しても区切りのよいところまで進める——週次枠から小さな固定分を使い、Pro は週1回・Max は毎回</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-wrap-up-allowance-5-hour-limit-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-wrap-up-allowance-5-hour-limit-2026</id>

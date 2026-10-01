@@ -25921,6 +25921,29 @@ const ARTICLES_BODY = {
         "url": "https://github.com/openai/openai-cli/blob/main/docs/image-generation-saving.md"
       }
     ]
+  },
+  "alibaba-qwen-intelligence-honor-magic9-2026": {
+    "body": [
+      "Alibabaは2026年9月22日、杭州で開催したApsara Conferenceで「Qwen Intelligence」を発表した。Alibaba公式ニュースルームのAlizilaによると、スマートフォンメーカーが自社端末にエージェント型のAI機能を載せられるようにするフルスタック型のソリューションである。モバイル向けに最適化した基盤モデルから、すぐ使えるエージェントまでを一式で提供する。",
+      "第1弾のパートナーはHONORで、Alizilaは、同社の新しいMagic9シリーズ（Alizilaの発表時点では9月28日に発売予定とされていた）とHONOR Robot Phoneが、Qwen Intelligenceを組み込む最初の端末になると書いている。HONOR公式サイトには、2026年9月28日に北京でMagic9シリーズの新製品発表会を開くと案内するページがあり（本記事の掲載日の時点で、その日付はすでに過ぎている）、HONOR Robot Phoneも製品として掲載されている。なおAlizilaの原文は「launch」と書くだけで、発売と発表会を区別していない。実際の搭載状況や発売の状況は、本記事では公式資料で確認していない。",
+      "Alizilaによると、第1フェーズは3種類のエージェントで構成される。中核の「Mobile Planner Agent」は、計画の立案、タスクの分解、ツール呼び出しの調整、状況に応じた調整を担う。原文は例として、出張の手配という依頼を、航空券の予約、ホテルの確保、カレンダーへの登録、行程の計画に分解する流れを挙げている。「Mobile-Use Agent」は、アプリをまたぐ操作を、APIを優先しGUI操作を代替手段とする方式で実行する。Alibabaは、厳格なセキュリティ境界とプライバシー保護を課すと説明している。「Mobile Creative Agent」は、スマートフォン上での画像の生成・編集に向けた軽量モデルである。個人向けの記憶サービス、マルチモーダル対話、パートナーが提供する業種別エージェントは、今後の提供予定として挙げられている。",
+      "構成は3層とされる。最下層はモバイル向けに最適化したQwen系の基盤モデル、中間はモデルの個別デプロイ、ハーネスのカスタマイズ、ツールの統一管理、自動評価に対応するモジュール式のプラットフォーム、最上層は業種別のエージェントである。端末メーカーは一式を採用することも、基盤モデルや個別のエージェントなどモジュール単位で選んで自社システムに組み込むこともできる、とAlizilaは書く。Qwen Intelligenceは公式サイトとAlibaba Cloudのサービスを通じて提供されると記されているが、料金や具体的な提供条件は、参照した公式資料には書かれていない。",
+      "HONORとの協業について、Alizilaは、Qwen IntelligenceとHONORのMagicOSを土台に、スマートフォンを受動的な応答者から、先回りして動くサービス提供者へ変えると説明する。性能については、HONORのAIスマートフォンがタスク精度で最大91.8%に達し、100ステップを超える複雑な一連の操作を扱えると書かれている。この数値はAlibabaが公式ニュースルームで示した自社発表値であり、独立した第三者による検証は確認できていない。",
+      "評価系についてAlibabaは、実際のモバイル環境でエージェントを測る体系的な方法がないとして、Qwen Intelligenceのチームが4本のベンチマークからなる公開の評価系を作ったと説明している。MobilePA-Benchは、1,000件を超える実シナリオのタスクと200種類を超える一般的なモバイルツールを対象に、計画から完了までの遂行力を測るという。残る3本は、クラウドフォン環境での長い一連のアプリ横断タスクや、日常の利用分布に合わせた実機でのタスクを対象にする。ただし、91.8%がこのうちどの評価系の値かは、発表文に明記されていない。読者が自社や自分の用途に当てはめて判断するには、評価の条件が公開されるかどうかが確認点になる。",
+      "端末メーカーや開発者にとっての確認点は、採用単位（一式かモジュールか）、端末とクラウドの役割分担（発表文は、性能・遅延・コストのバランスを取るデバイス・クラウド連携に触れている）、そしてセキュリティ境界の具体的な中身である。これらの詳細は、今回参照した発表文には記載がない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Alibaba Launches Qwen Intelligence to Power Next-Generation Agentic Smartphones（Alizila、Alibaba公式ニュースルーム）",
+        "site": "Alizila",
+        "url": "https://www.alizila.com/alibaba-launches-qwen-intelligence-to-power-next-generation-agentic-smartphones/"
+      },
+      {
+        "title": "荣耀Magic9系列新品发布会（HONOR公式サイト）",
+        "site": "HONOR",
+        "url": "https://www.honor.com/cn/activity/honor-magic9-series-launch/"
+      }
+    ]
   }
 };
 
