@@ -11463,5 +11463,22 @@ export const ARTICLES_META = [
       "NVIDIA",
       "オープンソース"
     ]
+  },
+  {
+    "id": "anthropic-pentagon-dc-circuit-appeal-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "Anthropic対米国防総省、D.C.巡回区控訴裁が41 U.S.C. §4713に基づく決定を2対1で支持 — 8月の地裁判断とは別の法令・別の法廷",
+    "excerpt": "ワシントンD.C.巡回区控訴裁判所は2026年9月25日、AnthropicがSupply Chain Security Act（41 U.S.C. §4713）に基づく国防総省の決定の審査を求めた請願（No. 26-1049）を、2対1で棄却した。多数意見はKatsas判事が執筆し、Henderson判事が反対意見を付けた。当サイトが9月16日に報じた北カリフォルニア連邦地裁の判断は、同じ3月3日に行われた別の法令（10 U.S.C. §3252）に基づく指定についてのものである。判決文によれば、多数意見は地裁の§3252の解釈に異論を示さず、§4713の定義が異なる点を理由に結論を分けた。",
+    "date": "2026-10-02",
+    "newsDate": "2026-09-25",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "規制",
+      "軍事",
+      "訴訟"
+    ]
   }
 ];

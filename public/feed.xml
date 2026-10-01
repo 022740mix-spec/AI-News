@@ -40,6 +40,14 @@
     <summary>NVIDIA が9月28日、AIエージェントを実行境界の内側に留める「Open Agent Safety Platform」を発表した。オープンソースの実行境界 OpenShell と、BlueField-4 上で動く監視機構 Sentry の組み合わせである。OpenShell 自体は3月に公開済みで、今回新しいのは Sentry と、両者を一体のプラットフォームとして示した点にあたる。発表には、2026年7月に NVIDIA 主導で設立され9月に Linux Foundation 傘下へ移った Open Secure AI Alliance も関わる。NVIDIA のニュースルームと開発者ブログで内容を確認した。</summary>
   </entry>
   <entry>
+    <title>Anthropic対米国防総省、D.C.巡回区控訴裁が41 U.S.C. §4713に基づく決定を2対1で支持 — 8月の地裁判断とは別の法令・別の法廷</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-pentagon-dc-circuit-appeal-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-pentagon-dc-circuit-appeal-2026</id>
+    <published>2026-10-02T15:00:00Z</published>
+    <updated>2026-10-02T15:00:00Z</updated>
+    <summary>ワシントンD.C.巡回区控訴裁判所は2026年9月25日、AnthropicがSupply Chain Security Act（41 U.S.C. §4713）に基づく国防総省の決定の審査を求めた請願（No. 26-1049）を、2対1で棄却した。多数意見はKatsas判事が執筆し、Henderson判事が反対意見を付けた。当サイトが9月16日に報じた北カリフォルニア連邦地裁の判断は、同じ3月3日に行われた別の法令（10 U.S.C. §3252）に基づく指定についてのものである。判決文によれば、多数意見は地裁の§3252の解釈に異論を示さず、§4713の定義が異なる点を理由に結論を分けた。</summary>
+  </entry>
+  <entry>
     <title>Claude Code、5時間の上限に達しても区切りのよいところまで進める——週次枠から小さな固定分を使い、Pro は週1回・Max は毎回</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-wrap-up-allowance-5-hour-limit-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-wrap-up-allowance-5-hour-limit-2026</id>
