@@ -304,12 +304,12 @@
     <summary>OpenAI が2026年9月22日、GPT-6 Astra の廉価版にあたる「GPT-6 Sol」「GPT-6 Luna」をChatGPT・Codex・APIで公開した。価格はSolが入力$2/出力$10、Lunaが入力$0.10/出力$0.50で、いずれも旧世代（GPT-5.6系）の半額以下。OpenAIはVentureBeatに対し、この価格はローンチ時の割引ではなく恒久的な設定だと説明している。コンピュータ操作ベンチマークOSWorld 2.0では、Sol（xhigh設定）が60.5%とClaude Opus 5（medium設定、60.3%）にほぼ並び、コストは約8割低いという。性能はいずれも上位モデルGPT-6 Astraには及ばない。</summary>
   </entry>
   <entry>
-    <title>Alibabaが「Qwen4」を発表 — Apsara Conferenceで4系統を公開、価格・ベンチマークは未定</title>
+    <title>Alibabaが次世代「Qwen4」は学習中と発表 — Qwen4.5・Qwen5は5〜10兆パラメータのロードマップ、リリース日・価格・ベンチマークは未定</title>
     <link rel="alternate" type="text/html" href="?a=alibaba-qwen4-apsara-unveil-2026"/>
     <id>tag:ai-tool-news.jp,2026:alibaba-qwen4-apsara-unveil-2026</id>
     <published>2026-09-26T15:00:00Z</published>
     <updated>2026-09-26T15:00:00Z</updated>
-    <summary>Alibabaが9月22日、杭州で開催のApsara Conference 2026で次世代モデル「Qwen4」を発表した。Qwen4 Max・Flash・Plus・27Bの4系統が名称として公開されたが、複数の海外メディアの報道によれば学習中の段階で、リリース日・価格・コンテキスト長・ベンチマーク数値はいずれも未公開という。Qwen4.5・Qwen5世代では5〜10兆パラメータ規模を目指すロードマップにも言及があった。</summary>
+    <summary>Alibabaは2026年9月22日、杭州で開催のApsara Conference 2026で、次世代モデル「Qwen4」が学習中であることを明らかにした。続くQwen4.5・Qwen5のシリーズは5〜10兆パラメータ規模を目指すロードマップだという。Qwen4のリリース日・価格・コンテキスト長・ベンチマークは公式の発表に書かれていない。一部の海外報道はQwen4 Max・Flash・Plus・27Bという名称を伝えるが、公式の発表資料には記載がなく、当サイトでは確認できていない。</summary>
   </entry>
   <entry>
     <title>【分析】OpenAI・Anthropicのトップが国連安保理でAIリスクを説明 — 「人類全体へのリスクになりうる」</title>
