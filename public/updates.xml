@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./?view=updates"/>
   <link rel="self" type="application/atom+xml" href="./updates.xml"/>
   <id>tag:ai-tool-news.jp,2026:updates</id>
-  <updated>2026-10-01T15:00:00Z</updated>
+  <updated>2026-10-02T15:00:00Z</updated>
   <generator>ai-news-generate-updates</generator>
+  <entry>
+    <title>【訂正】【分析】Anthropic vs 米国防総省、連邦地裁が「サプライチェーンリスク」指定を違法と判断 — 国防副長官は9月3日、なお維持の意向</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-pentagon-first-amendment-ruling-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:anthropic-pentagon-first-amendment-ruling-2026:2026-10-02</id>
+    <updated>2026-10-02T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）ワシントンD.C.の連邦地裁でも同様の争いを続けており →（正）ワシントンD.C.の連邦控訴裁（D.C.巡回区）でも別の法令（41 U.S.C. §4713）に基づく指定をめぐる争いを続けており</summary>
+  </entry>
   <entry>
     <title>【訂正】Alibabaが次世代「Qwen4」は学習中と発表 — Qwen4.5・Qwen5は5〜10兆パラメータのロードマップ、リリース日・価格・ベンチマークは未定</title>
     <link rel="alternate" type="text/html" href="?a=alibaba-qwen4-apsara-unveil-2026#article-history"/>
