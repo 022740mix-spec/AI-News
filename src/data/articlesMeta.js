@@ -11429,5 +11429,22 @@ export const ARTICLES_META = [
       "Qwen",
       "中国AI"
     ]
+  },
+  {
+    "id": "magnitude-local-inference-server-coding-agents-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "ハードウェアに合わせてローカルモデルを選ぶ推論サーバ「Magnitude」— Claude Code・Cline 等にAPIキー無しで接続、GitHub トレンド入り",
+    "excerpt": "OSS の推論サーバ「Magnitude」が9月上旬に GitHub トレンド入りした。2026年9月5日時点の README は、手元のマシンをプロファイリングして動かせるモデルを推薦し、ダウンロード・チューニング・起動まで行う設計を説明している。Claude Code・Cline・Codex など8種のコーディングエージェントに接続でき、トークン課金・APIキー・レート制限なし、ダウンロード後は完全オフラインで動くとされる。その後9月中旬に製品はデスクトップアプリ中心に作り直されており、本文末尾で時点を分けて書く。",
+    "date": "2026-10-02",
+    "newsDate": "2026-09-05",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "オープンソース",
+      "ローカルLLM",
+      "エッジAI",
+      "開発ツール"
+    ]
   }
 ];

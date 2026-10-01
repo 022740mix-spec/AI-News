@@ -25978,6 +25978,43 @@ const ARTICLES_BODY = {
         "url": "https://technode.com/2026/09/22/t-head-unveils-zhenwu-v900-ai-chip-in-alibabas-push-to-expand-its-ai-infrastructure-stack/"
       }
     ]
+  },
+  "magnitude-local-inference-server-coding-agents-2026": {
+    "body": [
+      "OSS の推論サーバ「Magnitude」(magnitudedev/magnitude)が、2026年9月上旬に GitHub トレンドに入った。当初の調査時の星数の記録は、いま再確認できなかったため載せない。第三者のトレンド記録サービス trendshift には、9月3日に GitHub Trending で1位に達した記録がある。ライセンスは Apache 2.0。以下の仕様は、9月1日から5日時点の公式 README に基づく。この時点の README は、対応 OS を macOS と Linux とし、Windows は WSL 経由での対応と書いていた。",
+      "特徴は、モデル選定からライフサイクル管理までを引き受ける設計にある。README は、手元のチップ・メモリ・帯域幅をプロファイリングし、動かせるモデルを推薦したうえで、ダウンロード・チューニング・起動まで行うと説明している。モデルごとの推定トークン毎秒(tok/s)も提示される。モデルは使用要求があった時にロードされ、アイドル時またはメモリが逼迫した時に自動的にアンロードされる。",
+      "接続先として明記されているエージェントは、Pi・OpenCode・Hermes・OpenClaw・Codex・Claude Code・Oh My Pi・Cline の8種で、公式ドキュメントにはそれぞれ個別の接続ページがある。9月5日時点の README には、これらに加えて Magnitude 自身のビルトインのハーネスからも使えるとも書かれていた。既存のエージェントツールはそのままに、バックエンドだけをローカルモデルに差し替える使い方が想定されている。",
+      "README が掲げる利点は2点ある。1つは「トークン課金・APIキー・レート制限なし」であること。もう1つは、モデル・プロンプト・ファイルが手元のマシンから外に出ないことである。FAQ は、Magnitude とモデルをダウンロードした後はインターネット接続が不要と述べている。いずれも開発元の説明であり、挙動を第三者が検証した資料は確認できていない。クラウドに送りたくないコードを扱う場合は、ネットワークの利用状況を自分の環境で確かめるのが確実である。",
+      "ローカルLLM運用の一般論としては、[7B〜70Bクラスのモデルに必要なスペックやAPIとの損益分岐点](?a=local-llm-vs-api-reality-2026)を既に AI News で整理している。Magnitude は、動かせるかどうかの判断と、動かすための設定をツール側に委ねる方向の実装である。一方で、ローカルで動かせるモデルの性能はクラウドの最上位モデルとは異なるため、どの規模のタスクをローカルに任せるかは利用者が見極める必要がある。",
+      "9月中旬の変化。上記は9月5日時点の README に基づく。その後、コミット履歴では9月11日に「デスクトップを推論中心に作り直し、CLI をヘッドレスにする」という趣旨の変更が入り、9月16日から17日にかけて README とドキュメントがデスクトップアプリ向けに刷新された。現行の公式ドキュメントでは、`magnitude` CLI はデスクトップアプリに同梱され、Windows はネイティブ(x64、CUDA / Vulkan)に対応している(インストール手順のページによる)。9月5日時点の「WSL 経由」や「ビルトインのハーネス」という記述は、現行の README には見当たらない。9月30日の README は、llama.cpp 比で最大2倍の速度を掲げ、その自社ベンチマーク図を載せている。これは開発元の計測であり、独立した検証は確認できていない。利用を検討する場合は、公式ドキュメントで現行の構成と対応環境を確認してほしい。"
+    ],
+    "primarySources": [
+      {
+        "title": "magnitudedev/magnitude (GitHub)",
+        "site": "GitHub",
+        "url": "https://github.com/magnitudedev/magnitude"
+      },
+      {
+        "title": "Magnitude ドキュメント FAQ",
+        "site": "docs.magnitude.dev",
+        "url": "https://docs.magnitude.dev/faq.md"
+      },
+      {
+        "title": "Magnitude ドキュメント 目次",
+        "site": "docs.magnitude.dev",
+        "url": "https://docs.magnitude.dev/llms.txt"
+      },
+      {
+        "title": "Trendshift: magnitudedev/magnitude",
+        "site": "Trendshift",
+        "url": "https://trendshift.io/repositories/79752"
+      },
+      {
+        "title": "Magnitude ドキュメント Windows インストール",
+        "site": "docs.magnitude.dev",
+        "url": "https://docs.magnitude.dev/installation/windows.md"
+      }
+    ]
   }
 };
 

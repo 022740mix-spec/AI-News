@@ -24,6 +24,14 @@
     <summary>Alibaba傘下のチップ設計会社T-Headが、Apsara Conference 2026（2026年9月22日）でAIの学習・推論向けプロセッサ「Zhenwu V900」を発表した。Alibaba Cloudの公式ブログによれば、216GBのGPUメモリと1,200GB/sのチップ間帯域を備え、最大50万枚のスーパーノードクラスタに対応し、量産・商用リリースは2027年第1四半期の予定である。前世代M890比3倍の性能と「中国最強」はAlibabaの説明で、独立した検証は確認できていない。</summary>
   </entry>
   <entry>
+    <title>ハードウェアに合わせてローカルモデルを選ぶ推論サーバ「Magnitude」— Claude Code・Cline 等にAPIキー無しで接続、GitHub トレンド入り</title>
+    <link rel="alternate" type="text/html" href="?a=magnitude-local-inference-server-coding-agents-2026"/>
+    <id>tag:ai-tool-news.jp,2026:magnitude-local-inference-server-coding-agents-2026</id>
+    <published>2026-10-02T15:00:00Z</published>
+    <updated>2026-10-02T15:00:00Z</updated>
+    <summary>OSS の推論サーバ「Magnitude」が9月上旬に GitHub トレンド入りした。2026年9月5日時点の README は、手元のマシンをプロファイリングして動かせるモデルを推薦し、ダウンロード・チューニング・起動まで行う設計を説明している。Claude Code・Cline・Codex など8種のコーディングエージェントに接続でき、トークン課金・APIキー・レート制限なし、ダウンロード後は完全オフラインで動くとされる。その後9月中旬に製品はデスクトップアプリ中心に作り直されており、本文末尾で時点を分けて書く。</summary>
+  </entry>
+  <entry>
     <title>Claude Code、5時間の上限に達しても区切りのよいところまで進める——週次枠から小さな固定分を使い、Pro は週1回・Max は毎回</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-wrap-up-allowance-5-hour-limit-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-wrap-up-allowance-5-hour-limit-2026</id>
