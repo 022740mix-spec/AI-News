@@ -56,6 +56,14 @@
     <summary>Microsoft AI は2026年10月1日、同社初のストリーミング型音声認識モデル MAI-Transcribe-2-Streaming と、音声合成モデル MAI-Voice-2.1 / MAI-Voice-2.1-Flash を発表した。Transcribe-2-Streaming は60言語（日本語を含む）に対応し、年末までの導入価格は音声1時間あたり0.54ドル。Voice-2.1 は23言語に広がったが、公式ドキュメントのプリビルト音声に日本語は含まれていない。第三者の Artificial Analysis のストリーミング部門では誤り率が最も低く掲載されている一方、遅延や「競合比2倍速」などの数値の多くは Microsoft 自身の説明である。Azure のドキュメント上はいずれも SLA の無い公開プレビューで、配信リージョンも限られる。</summary>
   </entry>
   <entry>
+    <title>IBM の開発エージェント「IBM Bob」にセルフホスト版 — 自社の OpenShift 上で動かし、エアギャップ環境にも対応</title>
+    <link rel="alternate" type="text/html" href="?a=ibm-bob-self-hosted-ga-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ibm-bob-self-hosted-ga-2026</id>
+    <published>2026-10-02T15:00:00Z</published>
+    <updated>2026-10-02T15:00:00Z</updated>
+    <summary>IBM は2026年9月30日、AI開発パートナー「IBM Bob」のセルフホスト版の一般提供を発表した。バックエンドを顧客が管理する Red Hat OpenShift のクラスタ上で動かし、モデルも自社 GPU 上のオープンウェイトモデルか、クラウドの対応モデルかを選べる。自社内でモデルを動かす構成なら、コードや開発の文脈を顧客環境の外に出さずに済むと IBM は説明している。一方、公式ドキュメントによれば、同時に使えるコア推論モデルは1つだけで、SaaS 版にある分析機能 Bobalytics は使えず、版の更新は再インストールが推奨されている。IBM の発表と公式ドキュメントで内容を確認した。</summary>
+  </entry>
+  <entry>
     <title>Claude Code、5時間の上限に達しても区切りのよいところまで進める——週次枠から小さな固定分を使い、Pro は週1回・Max は毎回</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-wrap-up-allowance-5-hour-limit-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-wrap-up-allowance-5-hour-limit-2026</id>

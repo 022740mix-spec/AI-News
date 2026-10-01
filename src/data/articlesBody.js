@@ -26314,6 +26314,131 @@ const ARTICLES_BODY = {
         "url": "https://microsoft.ai/news/today-were-announcing-3-new-world-class-mai-models-available-in-foundry/"
       }
     ]
+  },
+  "ibm-bob-self-hosted-ga-2026": {
+    "body": [
+      "IBM は2026年9月30日、AI開発パートナー「IBM Bob」のセルフホスト版の一般提供（GA）を発表した（IBM の製品発表ページ。IBM ニュースルームのプレスリリースは10月1日付である）。IBM Bob は、計画・実装・テスト・モダナイゼーションまでソフトウェア開発の工程全体を支援するエージェント型の開発ツールで、2026年4月28日に SaaS として世界で一般提供が始まっている。今回の発表は、その実行基盤を顧客自身が管理する環境に置けるようにするものである。",
+      "IBM が挙げる狙いは、機密性の高いコードや基幹システムを AI の開発支援の対象に入れることにある。発表は、セキュリティやデータ主権、運用上の要件によって、ソースコード・アプリケーションの文脈・ビルド成果物を承認された環境の外に出せない組織があり、その結果として重要なアプリケーションが AI を使った開発の流れから外れてしまう、と説明している。想定する業種として、金融、政府、医療、重要インフラを挙げている。",
+      "公式ドキュメントによると、セルフホスト版は Red Hat OpenShift Container Platform（OCP）上に構築する。顧客はバックエンドの基盤・サービス・連携を自分の環境で管理し、開発者は SaaS 版と同じ IDE 拡張と CLI の BobShell をそのまま使う。導入は Bob の Kubernetes Operator と Helm チャートで行い、専用クラスタは必須ではなく、ほかのワークロードと同じクラスタに同居できる。",
+      "発表が GA 時点で使えるとしているのは、IDE での利用、BobShell、並列ツール呼び出し、エージェントハーネス、スキルとモードといった中核機能である。Java モダナイゼーション、IBM i、IBM Z 向けの有償の追加パッケージ（Premium Package）も、ライセンスと導入要件を満たせばセルフホスト版に追加できる。",
+      "モデルの置き場所は3通りから選ぶ。自社の基盤にモデルを入れるセルフホスト、ネットワークを外部から切り離したエアギャップ、外部のモデルサービスに承認済みの経路でつなぐハイブリッドである。IBM は、自社内でモデルを動かす構成なら、コード・開発の文脈・ビルド成果物を顧客が管理する環境の中に留められるとしている。逆に言えば、外部のモデルサービスにつなぐ構成では、推論がその外部サービスで行われる。どこで推論が行われ、コードがどう処理されるかは、選んだモデルと構成で決まる、と発表自体が書いている。",
+      "GA 時点では、モデルは顧客が自分で用意する。IBM がモデルを提供するのではなく、対応表に載ったモデルを顧客が調達して Bob に接続する形である。既に持っているモデルのライセンスを持ち込む BYOL（Bring Your Own License）にも対応する。対応モデルは次のとおり。",
+      "発表と公式ドキュメントで、自社運用モデルの記載が1点食い違う。発表は NVIDIA Nemotron と Poolside Laguna の2つを挙げているが、ドキュメントの「Required and supported models」のページはそれに Mistral 3.5 を加えた3つを載せている。導入を検討する場合は、IBM に最新の対応表を確認したい。",
+      "対応表に載っている外部モデルは、Claude Sonnet 5、Claude Opus 4.8、GPT-5.6 Sol、Gemini 3.7 Flash である。当サイトで扱った後継世代の [Claude Sonnet 5.5](?a=claude-sonnet-5-5-review)、[Claude Opus 5.5](?a=claude-opus-5-5-review)、[GPT-6](?a=gpt-6-review)、[Gemini 3.8 Flash](?a=gemini-3-8-flash-review) は、2026年10月1日に確認した対応表には載っていない。今後の対応予定は公式の資料には書かれていない。",
+      "SaaS 版との違いで、導入担当者が先に知っておくべき点がいくつかある。1つ目はモデルの切り替えである。4月の SaaS 版の発表は、作業ごとに適したモデルへ自動で振り分ける「マルチモデル・オーケストレーション」を中核の機能として打ち出していた。一方、セルフホスト版のドキュメントは、コア推論モデルは一度に1つだけを設定でき、複数を同時に動かすことはできないと明記している。IBM は今後の版でマルチモデルのルーティングを導入する計画だとしているが、時期は示していない。発表には、将来の計画は予告なく変更・撤回されうるという IBM の但し書きが付いている。",
+      "2つ目は運用の責任分担である。ドキュメントの比較表では、SaaS 版は基盤・更新・拡張・可用性を IBM が担うのに対し、セルフホスト版はこれらを顧客が担う。セキュリティイベントのログと監視も Bob ではなく OpenShift の基盤側の機能で、その設定・運用・保管は顧客の責任とされている。",
+      "3つ目は現行版の既知の制限である。公式ドキュメントの「Known limitations」は、管理画面に操作ログ（Activity Logs）が無いこと、版を上げる際のインプレース更新に対応しておらず新規インストールが推奨されること（ホットフィックスは同じインスタンスへの再インストールで適用）、SaaS 版の分析機能 Bobalytics が使えないことを挙げている。エアギャップ環境では、Bobalytics へのリンクが到達できないページを指すとも書かれている。",
+      "安全面では、入出力を検査するガードレール用のモデルを置くことが強く推奨されている。エアギャップ環境では openai/gpt-oss-20b を使い、クラウドのモデルを使う場合は AWS Bedrock・Google Vertex AI・Azure OpenAI 側のガードレール機能で代えられる。Bob 自身はモデルの配信基盤を用意しないため、vLLM や Red Hat OpenShift AI などで、OpenShift のクラスタから到達できる OpenAI 互換の API を別途用意する必要がある。",
+      "必要な資源も公表されている。システム要件のページでは、追加パッケージなしの最小構成（Bob Core）の本番向けの目安として、余裕込みで約36.5 vCPU・約53.4 GiB のメモリ・約50 GiB のストレージを示し、x86_64（amd64）の OCP 4.20〜4.22 に対応するとしている。IBM Z 向けの解析機能を加える構成は、ベンチマークがまだ進行中で、値は暫定とされている。これらは IBM の示す目安であり、独立した検証は確認できていない。",
+      "料金について、公開の料金ページは Pro（1インスタンスあたり20ドルから、月額または年額）、Pro+、Ultra の価格を載せているが、セルフホスト版を含む Enterprise の導入形態は「Contact sales」（営業に問い合わせ）となっており、価格は公表されていない。",
+      "なお、4月の SaaS 版の発表で IBM は、社員8万人以上が Bob を使い、調査に回答した利用者が平均45%の生産性向上を報告したとしている。これは IBM 自身の社内調査に基づく当事者の説明で、独立した検証は確認できていない。セルフホスト版での効果を示す数字は、今回の発表には含まれていない。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 5,
+        "caption": "IBM Bob セルフホスト版の対応モデル（2026年9月30日の発表と公式ドキュメント）",
+        "headers": [
+          "区分",
+          "モデルの置き場所",
+          "対応モデル"
+        ],
+        "rows": [
+          [
+            "自社運用（エアギャップ可）",
+            "顧客が自社の基盤に導入・管理",
+            "NVIDIA Nemotron（ドキュメントでは Nemotron 3）、Poolside Laguna（同 Laguna S2.1）。ドキュメントのみ Mistral 3.5 も掲載"
+          ],
+          [
+            "ハイブリッド／プライベート SaaS",
+            "外部のモデルサービスに承認済みの経路で接続（AWS Bedrock、Google Vertex AI、Azure OpenAI 等）",
+            "Claude Sonnet 5、Claude Opus 4.8、Gemini 3.7 Flash、GPT-5.6 Sol"
+          ],
+          [
+            "ガードレール（推奨）",
+            "エアギャップでは自社運用",
+            "openai/gpt-oss-20b（クラウド利用時は各社のガードレール機能で代替可）"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 10,
+        "caption": "SaaS 版とセルフホスト版の違い（公式ドキュメントより）",
+        "headers": [
+          "項目",
+          "SaaS 版",
+          "セルフホスト版"
+        ],
+        "rows": [
+          [
+            "基盤",
+            "IBM が運用・管理",
+            "顧客の OpenShift クラスタで顧客が管理"
+          ],
+          [
+            "更新・拡張・可用性",
+            "IBM が担う",
+            "顧客が担う（インプレース更新は現行版で非対応）"
+          ],
+          [
+            "データの所在",
+            "IBM が管理する地域",
+            "顧客の環境の中で管理"
+          ],
+          [
+            "モデル",
+            "作業ごとに複数モデルへ振り分け（4月の発表）",
+            "コア推論モデルは同時に1つ。ルーティングは今後の計画"
+          ],
+          [
+            "Bobalytics",
+            "利用可",
+            "利用不可"
+          ],
+          [
+            "開発者の道具",
+            "IDE 拡張と BobShell",
+            "同じ IDE 拡張と BobShell"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "IBM Bob expands to self-hosted environments for sensitive and mission-critical enterprise software",
+        "site": "IBM",
+        "url": "https://www.ibm.com/new/announcements/ibm-bob-expands-to-self-hosted-environments-for-sensitive-and-mission-critical-enterprise-software"
+      },
+      {
+        "title": "IBM Bob Docs: Self-hosted Overview",
+        "site": "IBM Bob",
+        "url": "https://bob.ibm.com/docs/ide/enterprise/on-premises/overview"
+      },
+      {
+        "title": "IBM Bob Docs: Required and supported models",
+        "site": "IBM Bob",
+        "url": "https://bob.ibm.com/docs/ide/enterprise/on-premises/model-gateway/supported-models"
+      },
+      {
+        "title": "IBM Bob Docs: System requirements",
+        "site": "IBM Bob",
+        "url": "https://bob.ibm.com/docs/ide/enterprise/on-premises/system-requirements"
+      },
+      {
+        "title": "IBM Bob Docs: Known limitations",
+        "site": "IBM Bob",
+        "url": "https://bob.ibm.com/docs/ide/enterprise/on-premises/known-limitations"
+      },
+      {
+        "title": "IBM Bob Enterprise Pricing",
+        "site": "IBM",
+        "url": "https://www.ibm.com/products/ai-coding-agent/pricing"
+      },
+      {
+        "title": "Introducing IBM Bob: AI Development Partner that Takes Enterprises from AI-Assisted Coding to Production-Ready Software",
+        "site": "IBM Newsroom",
+        "url": "https://newsroom.ibm.com/2026-04-28-introducing-ibm-bob-ai-development-partner-that-takes-enterprises-from-ai-assisted-coding-to-production-ready-software"
+      }
+    ]
   }
 };
 
