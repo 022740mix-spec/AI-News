@@ -11480,5 +11480,77 @@ export const ARTICLES_META = [
       "軍事",
       "訴訟"
     ]
+  },
+  {
+    "id": "mai-voice-2-1-transcribe-2-streaming-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Microsoft、初のストリーミング文字起こし MAI-Transcribe-2-Streaming と音声合成 MAI-Voice-2.1 / 2.1-Flash を発表 — 音声エージェント向けの部品を一式で、Azure では公開プレビュー",
+    "excerpt": "Microsoft AI は2026年10月1日、同社初のストリーミング型音声認識モデル MAI-Transcribe-2-Streaming と、音声合成モデル MAI-Voice-2.1 / MAI-Voice-2.1-Flash を発表した。Transcribe-2-Streaming は60言語（日本語を含む）に対応し、年末までの導入価格は音声1時間あたり0.54ドル。Voice-2.1 は23言語に広がったが、公式ドキュメントのプリビルト音声に日本語は含まれていない。第三者の Artificial Analysis のストリーミング部門では誤り率が最も低く掲載されている一方、遅延や「競合比2倍速」などの数値の多くは Microsoft 自身の説明である。Azure のドキュメント上はいずれも SLA の無い公開プレビューで、配信リージョンも限られる。",
+    "date": "2026-10-02",
+    "newsDate": "2026-10-01",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Microsoft",
+      "MAI",
+      "音声認識",
+      "音声合成",
+      "Azure"
+    ]
+  },
+  {
+    "id": "ibm-bob-self-hosted-ga-2026",
+    "type": "news",
+    "category": "product",
+    "title": "IBM の開発エージェント「IBM Bob」にセルフホスト版 — 自社の OpenShift 上で動かし、エアギャップ環境にも対応",
+    "excerpt": "IBM は2026年9月30日、AI開発パートナー「IBM Bob」のセルフホスト版の一般提供を発表した。バックエンドを顧客が管理する Red Hat OpenShift のクラスタ上で動かし、モデルも自社 GPU 上のオープンウェイトモデルか、クラウドの対応モデルかを選べる。自社内でモデルを動かす構成なら、コードや開発の文脈を顧客環境の外に出さずに済むと IBM は説明している。一方、公式ドキュメントによれば、同時に使えるコア推論モデルは1つだけで、SaaS 版にある分析機能 Bobalytics は使えず、版の更新は再インストールが推奨されている。IBM の発表と公式ドキュメントで内容を確認した。",
+    "date": "2026-10-02",
+    "newsDate": "2026-09-30",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "エージェント",
+      "エンタープライズ",
+      "開発ツール",
+      "セキュリティ",
+      "セルフホスト"
+    ]
+  },
+  {
+    "id": "servicenow-flow-ai-service-desk-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ServiceNow が「Flow」を発表、Slack・Teams の会話で社内の依頼を処理する単体のサービスデスク。北米・EMEA の一般提供は2026年第4四半期の予定",
+    "excerpt": "ServiceNow は2026年10月1日、会話型の AI サービスデスク「Flow by ServiceNow」を発表した。Slack や Microsoft Teams のチャットの中で従業員の依頼に答え、正しく解決できた対応はワンクリックで自動化に登録できるという。既存の ServiceNow 契約がなくても購入できる単体の製品で、AI を含む料金プランの既存顧客も使える。現在は限定提供の段階で、北米と EMEA の一般提供は2026年第4四半期の予定とされ、日本での提供や新規顧客の料金は公式の資料には書かれていない。",
+    "date": "2026-10-02",
+    "newsDate": "2026-10-01",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "ServiceNow",
+      "エンタープライズ",
+      "エージェント",
+      "Slack",
+      "Microsoft Teams"
+    ]
+  },
+  {
+    "id": "optical-memory-volantis-funding-2026",
+    "type": "news",
+    "category": "product",
+    "title": "光で演算チップとメモリをつなぐ Volantis が8,800万ドルのシリーズA — 推論システム「A-1」は2027年に顧客へ、性能はいずれも同社の設計目標",
+    "excerpt": "米サンフランシスコの半導体スタートアップ Volantis が、Lachy Groom と Abstract Ventures の共同主導で8,800万ドル（円換算で約138億円）のシリーズAを発表した。光インターコネクトで演算チップと多数のメモリチップをつなぎ、メモリ容量と帯域幅を同時に増やす「光メモリ」の構成を掲げる。最初のシステム A-1 は、20兆パラメータ超のモデルをユーザーあたり毎秒最大1万トークンで動かすことを目指して設計中で、2027年に最初の推論エンジンを顧客へ届ける予定としている。性能の数字はいずれも当事者の設計目標で、独立した検証は確認できていない。同社自身の資料の間でも、数字の言い回しが一致していない点がある。",
+    "date": "2026-10-02",
+    "newsDate": "2026-10-01",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "資金調達",
+      "半導体",
+      "メモリ",
+      "推論",
+      "AI インフラ"
+    ]
   }
 ];

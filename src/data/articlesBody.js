@@ -26136,6 +26136,449 @@ const ARTICLES_BODY = {
         "url": "https://abcnews.com/Business/anthropic-appeals-court-declines-block-pentagon-blacklisting/story?id=136755690"
       }
     ]
+  },
+  "mai-voice-2-1-transcribe-2-streaming-2026": {
+    "body": [
+      "Microsoft の AI 部門 Microsoft AI（MAI）は2026年10月1日、公式ブログで3つの音声モデルを発表した。同社として初めてのストリーミング型音声認識モデル MAI-Transcribe-2-Streaming と、音声合成（テキスト読み上げ）の MAI-Voice-2.1、その高速版の MAI-Voice-2.1-Flash である。ブログは3つを「会話型の音声エージェントを作るための部品」として並べており、聞き取りと発話の両端を自社モデルでそろえた形になる。",
+      "MAI の音声モデルは、4月の MAI-Transcribe-1 / MAI-Voice-1（[4月の発表](?a=microsoft-mai-transcribe-voice-image-foundry-2026)）、6月の Build で出た MAI-Transcribe-1.5 / MAI-Voice-2 / MAI-Voice-2-Flash（[Build 2026 のまとめ](?a=microsoft-build-2026-mai-7models-solara-majorana-2026)）、9月3日の一括処理向け MAI-Transcribe-2 と、ほぼ月単位で更新されてきた。9月の MAI-Transcribe-2 は録音済みファイルの文字起こし向けで、公式ブログによれば価格は音声1時間あたり0.10ドルである。今回の Streaming 版は、話している最中の音声を受け取りながら文字にする用途を受け持つ。",
+      "MAI-Transcribe-2-Streaming は、話し終わりを待たずに暫定の認識結果（パーシャル）を返し、文脈が増えるにつれて修正し、確定した文字列を順に返す。公式ブログは、音声を受け取ってから最初のパーシャルが出るまで「100ミリ秒強」とし、音声エージェントが発話の途中から推論やツール呼び出しを始められると説明する。リアルタイムの口述筆記や字幕では「最も近い競合より2倍速く文字が出る」とも書くが、これは Microsoft の社内評価であり、比較相手の名前と測定条件はブログに書かれていない。",
+      "対応言語は60で、言語の自動検出と、会話の途中で言語が切り替わる場合の継続的な検出に対応する。Microsoft Learn の言語表には日本語（ja）が含まれている。価格は公式ブログに「年末まで導入価格として音声1時間あたり0.54ドル」とあり、年明け以降の価格は公式の資料には書かれていない。",
+      "精度については、第三者の評価サイト Artificial Analysis の音声認識（ストリーミング）部門が数値を公開している。2026年10月1日時点の同サイトのデータでは、MAI-Transcribe-2-Streaming の単語誤り率の指標（AA-WER Streaming）は2.51%で、掲載モデルの中で最も低い。話し終わりから確定結果までの時間は約0.13秒、同サイトが載せる価格は1,000分あたり9ドル（1時間0.54ドルに相当）である。遅延も短い部類に入る（さらに短いモデルもある）一方、価格は表の上位に並ぶ他社モデルより高い。Microsoft のブログが引用する数値（2.50%、9月28日時点）とは日付の違いによる小さな差がある。",
+      "MAI-Voice-2.1 は、対応を23言語・26ロケールに広げた音声合成モデルである。6月の MAI-Voice-2 は15言語だった。公式ブログは、1つの声のまま英語・中国語・ドイツ語と話す言語を切り替えても、話者が同じに聞こえ、各言語のネイティブのアクセントで話せる点を前面に出している。価格は100万文字あたり22ドルで、4月の MAI-Voice-1 と同じ水準である。",
+      "注意したいのは日本語の扱いである。Microsoft Learn の MAI-Voice のページに載っているプリビルト音声の表には、チェコ語、ドイツ語、英語、スペイン語、フランス語、ヒンディー語、韓国語、中国語（簡体字）、タイ語、ベトナム語などが並ぶ一方、日本語（ja-JP）の音声は無い。聞き取り側の Transcribe-2-Streaming は日本語に対応するが、読み上げ側の Voice-2.1 は、公式ドキュメントの範囲では日本語の既製音声を提供していない。日本語の音声エージェントを両端 MAI で組む前提の場合、ここが最初の確認点になる。",
+      "MAI-Voice-2.1-Flash は、同じ言語と話者の切り替えに対応したまま、量が多く遅延に敏感な用途に寄せた版である。公式ブログは「45秒の音声を、エンドツーエンドで150ミリ秒の遅延で生成できる」「同等のモデルより推論が55%速く、約60%安い」とし、価格を100万文字あたり15ドルとしている。比較対象の「同等のモデル」が何かはブログに書かれていない。Microsoft Learn の説明では、Flash は音声エージェントやコールセンターの自動応答向け、無印の 2.1 は長尺のナレーションやオーディオブック向けと役割が分かれている。",
+      "音声の自然さについて、ブログは4,000人の聴取者によるチューリングテストで、50.3%が MAI-Voice の音声を人間の録音と同等以上に人間らしいと評価したとする。結果は 2.1 と 2.1-Flash を合わせたもので、試験の設計や聴取者の条件は公表されていない。これらの遅延・速度・自然さの数値は当事者の説明であり、独立した検証は確認できていない。",
+      "両モデルとも、数秒の参照音声から声を複製する機能（ボイスクローン）を全対応言語で持つ。Microsoft Learn によると、この機能は申請制（gated）で、Azure の Custom Neural Voice の限定アクセス審査を通る必要があり、本人の音声による同意を登録してから使う。参照音声は5〜60秒が推奨されている。ブログは「誤用を防ぐ同意のガードレール」を組み込んだとしている。",
+      "提供経路は、3モデルとも Microsoft Foundry、MAI Playground、Vercel、Azure Voice Live で、Voice-2.1 / 2.1-Flash は OpenRouter からも使える。LiveKit は「近日対応」とされている。MAI Playground には、3モデルを組み合わせた音声対話のデモ「Chatter」が置かれた。",
+      "導入を検討する側が確認すべき点は、公式ブログより Microsoft Learn の方に多く書かれている。まず、Azure のドキュメントでは Transcribe-2-Streaming も Voice-2.1 / 2.1-Flash も公開プレビューで、SLA が無く、本番用途は推奨されていない。発表ブログにはこの区分が書かれていない。次に、Transcribe-2-Streaming の配信リージョンは限られており、Sweden Central と Central US が利用可能、East US 2 は近日対応で、残る1つは Realtime API のページでは South India、Speech SDK のページでは Southeast Asia と、ページによって記載が異なる。どのリージョンからも呼び出せて、これらのリージョンに転送される仕組みだが、日本のリージョンは配信元に含まれていない。音声データの処理場所に要件がある組織は、この点を契約前に確かめる必要がある。Voice-2.1 / 2.1-Flash は Japan East を含む14リージョンから配信される。",
+      "実装面では、Transcribe-2-Streaming は OpenAI の Realtime API に近い WebSocket のプロトコルと、Azure Speech SDK の2通りで使える。Realtime API 側では1セッションの上限が1時間で、サーバー側の発話区間検出は無く、確定のタイミングはクライアントが commit で指示する。Speech SDK 側の結果には、検出した言語、信頼度、単語単位のタイムスタンプが含まれない。会議の議事録のように話者や単語の時刻が要る用途では、一括処理の MAI-Transcribe-2 と使い分けることになる。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 0,
+        "caption": "今回発表された3モデル（公式ブログと Microsoft Learn の記載）",
+        "headers": [
+          "モデル",
+          "種類",
+          "言語",
+          "価格（公式ブログ）",
+          "Azure での区分"
+        ],
+        "rows": [
+          [
+            "MAI-Transcribe-2-Streaming",
+            "ストリーミング音声認識",
+            "60言語（日本語を含む）",
+            "音声1時間 0.54ドル（年末までの導入価格）",
+            "公開プレビュー"
+          ],
+          [
+            "MAI-Voice-2.1",
+            "音声合成（高品質・長尺向け）",
+            "23言語・26ロケール（日本語の既製音声は無い）",
+            "100万文字 22ドル",
+            "公開プレビュー"
+          ],
+          [
+            "MAI-Voice-2.1-Flash",
+            "音声合成（低遅延・大量処理向け）",
+            "同上",
+            "100万文字 15ドル",
+            "公開プレビュー"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 4,
+        "caption": "Artificial Analysis 音声認識（ストリーミング）部門の上位と主な他社モデル（2026年10月1日時点の同サイトのデータ）",
+        "headers": [
+          "モデル",
+          "AA-WER Streaming（低いほど良い）",
+          "話し終わりから確定まで",
+          "価格（1,000分あたり）"
+        ],
+        "rows": [
+          [
+            "MAI-Transcribe-2-Streaming",
+            "2.51%",
+            "約0.13秒",
+            "9ドル"
+          ],
+          [
+            "Grok Voice Transcribe 2.0 (Streaming)",
+            "2.73%",
+            "約0.49秒",
+            "3.33ドル"
+          ],
+          [
+            "Muse Voice Transcribe",
+            "3.06%",
+            "約0.16秒",
+            "3ドル"
+          ],
+          [
+            "ElevenLabs Scribe v2 Realtime",
+            "3.59%",
+            "約0.14秒",
+            "6.5ドル"
+          ],
+          [
+            "GPT Live Transcribe",
+            "3.92%",
+            "約0.81秒",
+            "17ドル"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 11,
+        "caption": "MAI-Transcribe-2-Streaming の配信リージョン（Microsoft Learn、2026年10月1日更新のページ）",
+        "headers": [
+          "リージョン",
+          "Realtime API のページ",
+          "Speech SDK のページ"
+        ],
+        "rows": [
+          [
+            "Sweden Central",
+            "利用可能",
+            "利用可能"
+          ],
+          [
+            "Central US",
+            "利用可能",
+            "利用可能"
+          ],
+          [
+            "East US 2",
+            "近日対応",
+            "近日対応"
+          ],
+          [
+            "South India",
+            "利用可能",
+            "記載なし"
+          ],
+          [
+            "Southeast Asia",
+            "記載なし",
+            "利用可能"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Our first streaming transcription model debuts at no. 1 on Artificial Analysis",
+        "site": "Microsoft AI",
+        "url": "https://microsoft.ai/news/our-first-streaming-transcription-model/"
+      },
+      {
+        "title": "MAI-Transcribe-2-Streaming overview",
+        "site": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/mai-transcribe-2-streaming"
+      },
+      {
+        "title": "Use MAI-Transcribe-2-Streaming with the Realtime API",
+        "site": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/mai-transcribe-2-streaming-realtime"
+      },
+      {
+        "title": "Use MAI-Transcribe-2-Streaming with Azure Speech SDK",
+        "site": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/mai-transcribe-2-streaming-speech-sdk"
+      },
+      {
+        "title": "MAI-Voice in Azure Speech",
+        "site": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/mai-voices"
+      },
+      {
+        "title": "Speech to Text Providers Leaderboard (Streaming)",
+        "site": "Artificial Analysis",
+        "url": "https://artificialanalysis.ai/speech-to-text/streaming"
+      },
+      {
+        "title": "MAI-Transcribe-2 is the fastest, most accurate and cheapest speech recognition model in the world",
+        "site": "Microsoft AI",
+        "url": "https://microsoft.ai/news/mai-transcribe-2-is-the-fastest-most-accurate-and-cheapest-speech-recognition-model-in-the-world/"
+      },
+      {
+        "title": "MAI-Voice-2",
+        "site": "Microsoft AI",
+        "url": "https://microsoft.ai/news/mai-voice-2/"
+      },
+      {
+        "title": "Today we're announcing 3 new world class MAI models, available in Foundry",
+        "site": "Microsoft AI",
+        "url": "https://microsoft.ai/news/today-were-announcing-3-new-world-class-mai-models-available-in-foundry/"
+      }
+    ]
+  },
+  "ibm-bob-self-hosted-ga-2026": {
+    "body": [
+      "IBM は2026年9月30日、AI開発パートナー「IBM Bob」のセルフホスト版の一般提供（GA）を発表した（IBM の製品発表ページ。IBM ニュースルームのプレスリリースは10月1日付である）。IBM Bob は、計画・実装・テスト・モダナイゼーションまでソフトウェア開発の工程全体を支援するエージェント型の開発ツールで、2026年4月28日に SaaS として世界で一般提供が始まっている。今回の発表は、その実行基盤を顧客自身が管理する環境に置けるようにするものである。",
+      "IBM が挙げる狙いは、機密性の高いコードや基幹システムを AI の開発支援の対象に入れることにある。発表は、セキュリティやデータ主権、運用上の要件によって、ソースコード・アプリケーションの文脈・ビルド成果物を承認された環境の外に出せない組織があり、その結果として重要なアプリケーションが AI を使った開発の流れから外れてしまう、と説明している。想定する業種として、金融、政府、医療、重要インフラを挙げている。",
+      "公式ドキュメントによると、セルフホスト版は Red Hat OpenShift Container Platform（OCP）上に構築する。顧客はバックエンドの基盤・サービス・連携を自分の環境で管理し、開発者は SaaS 版と同じ IDE 拡張と CLI の BobShell をそのまま使う。導入は Bob の Kubernetes Operator と Helm チャートで行い、専用クラスタは必須ではなく、ほかのワークロードと同じクラスタに同居できる。",
+      "発表が GA 時点で使えるとしているのは、IDE での利用、BobShell、並列ツール呼び出し、エージェントハーネス、スキルとモードといった中核機能である。Java モダナイゼーション、IBM i、IBM Z 向けの有償の追加パッケージ（Premium Package）も、ライセンスと導入要件を満たせばセルフホスト版に追加できる。",
+      "モデルの置き場所は3通りから選ぶ。自社の基盤にモデルを入れるセルフホスト、ネットワークを外部から切り離したエアギャップ、外部のモデルサービスに承認済みの経路でつなぐハイブリッドである。IBM は、自社内でモデルを動かす構成なら、コード・開発の文脈・ビルド成果物を顧客が管理する環境の中に留められるとしている。逆に言えば、外部のモデルサービスにつなぐ構成では、推論がその外部サービスで行われる。どこで推論が行われ、コードがどう処理されるかは、選んだモデルと構成で決まる、と発表自体が書いている。",
+      "GA 時点では、モデルは顧客が自分で用意する。IBM がモデルを提供するのではなく、対応表に載ったモデルを顧客が調達して Bob に接続する形である。既に持っているモデルのライセンスを持ち込む BYOL（Bring Your Own License）にも対応する。対応モデルは次のとおり。",
+      "発表と公式ドキュメントで、自社運用モデルの記載が1点食い違う。発表は NVIDIA Nemotron と Poolside Laguna の2つを挙げているが、ドキュメントの「Required and supported models」のページはそれに Mistral 3.5 を加えた3つを載せている。導入を検討する場合は、IBM に最新の対応表を確認したい。",
+      "対応表に載っている外部モデルは、Claude Sonnet 5、Claude Opus 4.8、GPT-5.6 Sol、Gemini 3.7 Flash である。当サイトで扱った後継世代の [Claude Sonnet 5.5](?a=claude-sonnet-5-5-review)、[Claude Opus 5.5](?a=claude-opus-5-5-review)、[GPT-6](?a=gpt-6-review)、[Gemini 3.8 Flash](?a=gemini-3-8-flash-review) は、2026年10月1日に確認した対応表には載っていない。今後の対応予定は公式の資料には書かれていない。",
+      "SaaS 版との違いで、導入担当者が先に知っておくべき点がいくつかある。1つ目はモデルの切り替えである。4月の SaaS 版の発表は、作業ごとに適したモデルへ自動で振り分ける「マルチモデル・オーケストレーション」を中核の機能として打ち出していた。一方、セルフホスト版のドキュメントは、コア推論モデルは一度に1つだけを設定でき、複数を同時に動かすことはできないと明記している。IBM は今後の版でマルチモデルのルーティングを導入する計画だとしているが、時期は示していない。発表には、将来の計画は予告なく変更・撤回されうるという IBM の但し書きが付いている。",
+      "2つ目は運用の責任分担である。ドキュメントの比較表では、SaaS 版は基盤・更新・拡張・可用性を IBM が担うのに対し、セルフホスト版はこれらを顧客が担う。セキュリティイベントのログと監視も Bob ではなく OpenShift の基盤側の機能で、その設定・運用・保管は顧客の責任とされている。",
+      "3つ目は現行版の既知の制限である。公式ドキュメントの「Known limitations」は、管理画面に操作ログ（Activity Logs）が無いこと、版を上げる際のインプレース更新に対応しておらず新規インストールが推奨されること（ホットフィックスは同じインスタンスへの再インストールで適用）、SaaS 版の分析機能 Bobalytics が使えないことを挙げている。エアギャップ環境では、Bobalytics へのリンクが到達できないページを指すとも書かれている。",
+      "安全面では、入出力を検査するガードレール用のモデルを置くことが強く推奨されている。エアギャップ環境では openai/gpt-oss-20b を使い、クラウドのモデルを使う場合は AWS Bedrock・Google Vertex AI・Azure OpenAI 側のガードレール機能で代えられる。Bob 自身はモデルの配信基盤を用意しないため、vLLM や Red Hat OpenShift AI などで、OpenShift のクラスタから到達できる OpenAI 互換の API を別途用意する必要がある。",
+      "必要な資源も公表されている。システム要件のページでは、追加パッケージなしの最小構成（Bob Core）の本番向けの目安として、余裕込みで約36.5 vCPU・約53.4 GiB のメモリ・約50 GiB のストレージを示し、x86_64（amd64）の OCP 4.20〜4.22 に対応するとしている。IBM Z 向けの解析機能を加える構成は、ベンチマークがまだ進行中で、値は暫定とされている。これらは IBM の示す目安であり、独立した検証は確認できていない。",
+      "料金について、公開の料金ページは Pro（1インスタンスあたり20ドルから、月額または年額）、Pro+、Ultra の価格を載せているが、セルフホスト版を含む Enterprise の導入形態は「Contact sales」（営業に問い合わせ）となっており、価格は公表されていない。",
+      "なお、4月の SaaS 版の発表で IBM は、社員8万人以上が Bob を使い、調査に回答した利用者が平均45%の生産性向上を報告したとしている。これは IBM 自身の社内調査に基づく当事者の説明で、独立した検証は確認できていない。セルフホスト版での効果を示す数字は、今回の発表には含まれていない。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 5,
+        "caption": "IBM Bob セルフホスト版の対応モデル（2026年9月30日の発表と公式ドキュメント）",
+        "headers": [
+          "区分",
+          "モデルの置き場所",
+          "対応モデル"
+        ],
+        "rows": [
+          [
+            "自社運用（エアギャップ可）",
+            "顧客が自社の基盤に導入・管理",
+            "NVIDIA Nemotron（ドキュメントでは Nemotron 3）、Poolside Laguna（同 Laguna S2.1）。ドキュメントのみ Mistral 3.5 も掲載"
+          ],
+          [
+            "ハイブリッド／プライベート SaaS",
+            "外部のモデルサービスに承認済みの経路で接続（AWS Bedrock、Google Vertex AI、Azure OpenAI 等）",
+            "Claude Sonnet 5、Claude Opus 4.8、Gemini 3.7 Flash、GPT-5.6 Sol"
+          ],
+          [
+            "ガードレール（推奨）",
+            "エアギャップでは自社運用",
+            "openai/gpt-oss-20b（クラウド利用時は各社のガードレール機能で代替可）"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 10,
+        "caption": "SaaS 版とセルフホスト版の違い（公式ドキュメントより）",
+        "headers": [
+          "項目",
+          "SaaS 版",
+          "セルフホスト版"
+        ],
+        "rows": [
+          [
+            "基盤",
+            "IBM が運用・管理",
+            "顧客の OpenShift クラスタで顧客が管理"
+          ],
+          [
+            "更新・拡張・可用性",
+            "IBM が担う",
+            "顧客が担う（インプレース更新は現行版で非対応）"
+          ],
+          [
+            "データの所在",
+            "IBM が管理する地域",
+            "顧客の環境の中で管理"
+          ],
+          [
+            "モデル",
+            "作業ごとに複数モデルへ振り分け（4月の発表）",
+            "コア推論モデルは同時に1つ。ルーティングは今後の計画"
+          ],
+          [
+            "Bobalytics",
+            "利用可",
+            "利用不可"
+          ],
+          [
+            "開発者の道具",
+            "IDE 拡張と BobShell",
+            "同じ IDE 拡張と BobShell"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "IBM Bob expands to self-hosted environments for sensitive and mission-critical enterprise software",
+        "site": "IBM",
+        "url": "https://www.ibm.com/new/announcements/ibm-bob-expands-to-self-hosted-environments-for-sensitive-and-mission-critical-enterprise-software"
+      },
+      {
+        "title": "IBM Bob Docs: Self-hosted Overview",
+        "site": "IBM Bob",
+        "url": "https://bob.ibm.com/docs/ide/enterprise/on-premises/overview"
+      },
+      {
+        "title": "IBM Bob Docs: Required and supported models",
+        "site": "IBM Bob",
+        "url": "https://bob.ibm.com/docs/ide/enterprise/on-premises/model-gateway/supported-models"
+      },
+      {
+        "title": "IBM Bob Docs: System requirements",
+        "site": "IBM Bob",
+        "url": "https://bob.ibm.com/docs/ide/enterprise/on-premises/system-requirements"
+      },
+      {
+        "title": "IBM Bob Docs: Known limitations",
+        "site": "IBM Bob",
+        "url": "https://bob.ibm.com/docs/ide/enterprise/on-premises/known-limitations"
+      },
+      {
+        "title": "IBM Bob Enterprise Pricing",
+        "site": "IBM",
+        "url": "https://www.ibm.com/products/ai-coding-agent/pricing"
+      },
+      {
+        "title": "Introducing IBM Bob: AI Development Partner that Takes Enterprises from AI-Assisted Coding to Production-Ready Software",
+        "site": "IBM Newsroom",
+        "url": "https://newsroom.ibm.com/2026-04-28-introducing-ibm-bob-ai-development-partner-that-takes-enterprises-from-ai-assisted-coding-to-production-ready-software"
+      }
+    ]
+  },
+  "servicenow-flow-ai-service-desk-2026": {
+    "body": [
+      "ServiceNow は2026年10月1日（米国時間）、会話型の AI サービスデスク「Flow by ServiceNow」を発表した。プレスリリースは Flow を「ServiceNow 社内のスタートアップ」と位置づけ、ITSM（IT サービス管理）を AI 時代向けに導入し直すチームのための、AI ネイティブな会話型サービスデスクだと説明している。対象は小さなチームから大企業までとされる。",
+      "仕組みの中心は、チャットの会話そのものを窓口にすることである。リリースによると、従業員は Slack や Microsoft Teams など、普段使っているチャットの中で依頼や質問を出し、Flow が答えを返す。ポータルやチケットシステムへ画面を切り替える必要がない、というのが ServiceNow の説明である。Flow は依頼に答えるだけでなく、対応を完了させるか、必要に応じて自動でエスカレーションするとしている。",
+      "もう1つの特徴として挙げられているのが、繰り返しの依頼の自動化である。リリースは、パスワードのリセット、アクセス申請、規程に関する質問、インフラのプロビジョニングを例に挙げ、利用者が依頼を正しく解決したら、その手順をワンクリックで自動化に登録でき、次に同じ依頼が来たときは Flow が自動で処理すると書いている。ナレッジベースの記事は不要だとも述べている。",
+      "導入の手軽さについて、ServiceNow は「即座に導入でき、1日で稼働する」「導入プロジェクトもインフラも不要」「従業員のトレーニングも不要」と説明している。これらは当事者の説明であり、導入にかかる期間や自動化の精度について、独立した検証は確認できていない。リリースには IDC のアナリストのコメントと4つの組織の利用者の声が載っているが、いずれも ServiceNow が自社の発表に掲載したものである。そのうち米海軍の FNMOC（艦隊数値気象海洋センター）のコメントは「Flow could help」と、効果を見込みとして述べている。",
+      "購入の経路は2つある。新規の顧客は、既存の ServiceNow との契約やプラットフォームを前提とせずに Flow を直接購入して有効化できる。既存の顧客については、リリースは「AI-native SKU」の顧客が追加の調達費用なしに、消費量ベースの利用で Flow をすぐに導入できると書き、別の段落では、AI 機能を含む ServiceNow の料金プランの既存顧客にも提供すると書いている。本格的な ITSM を運用している組織が、特定の部門、リモートのチーム、買収した事業部門だけに Flow を使う形も想定されている。",
+      "既存の仕組みとの関係について、リリースは Flow が既存のナレッジ、資産、チケット管理、AI の利用と統合でき、必要なときに監査とガバナンスのため ServiceNow AI Platform と結び付いていると説明している。ただし、どのナレッジ源やチケットシステムと接続できるのか、監査ログに何が残るのか、どの言語モデルを使うのか、データをどこで処理するのかといった具体的な仕様は、公式の資料には書かれていない。",
+      "提供時期は次のとおりである。リリースによると、現在は限定提供（controlled availability）の段階で、関心のある人は letsflow.ai で登録すると、更新情報と無料トライアルの早期アクセスを受けられる。最初の数週間は北米の顧客を優先し、北米と EMEA の一般提供は2026年第4四半期の予定とされる。日本を含むアジア太平洋での提供時期、日本語への対応、新規顧客向けの料金は、公式の資料には書かれていない。リリースは、これらが将来の見通しに関する記述であり、実際の結果と異なりうるとも明記している。",
+      "名前の似た既存機能にも注意したい。ServiceNow のプラットフォームには以前から「Flow Designer」という、承認・タスク・通知・レコード操作などの処理をノーコードで自動化する機能がある。今回の Flow はリリースで「新しい単体の製品」とされており、Flow Designer との関係はリリースには書かれていない。情報を探すときに混同しないようにしたい。",
+      "Slack や Teams の会話の中で業務を処理する仕組みは、他社も出している。OpenAI の Enterprise 向け機能については[ChatGPT Enterprise の Slack・Teams 連携と管理者の設定項目](?a=chatgpt-enterprise-team-tasks-slack-teams-shared-connections-2026)で整理した。導入を検討する担当者は、一般提供の時点で、対応する地域と言語、新規顧客の料金、接続できるシステム、権限と監査の仕組みが公式に示されるかを確認するとよい。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 6,
+        "caption": "Flow by ServiceNow の提供条件（2026年10月1日のプレスリリースより）",
+        "headers": [
+          "項目",
+          "リリースの記載"
+        ],
+        "rows": [
+          [
+            "製品の位置づけ",
+            "会話型の AI ネイティブなサービスデスク。新しい単体の製品"
+          ],
+          [
+            "使う場所",
+            "Slack や Microsoft Teams などのチャット"
+          ],
+          [
+            "新規の顧客",
+            "既存の ServiceNow 契約なしで直接購入・有効化できる"
+          ],
+          [
+            "既存の顧客",
+            "AI-native SKU の顧客は追加の調達費用なし、消費量ベースの利用。AI 機能を含む料金プランの顧客にも提供"
+          ],
+          [
+            "現在の段階",
+            "限定提供。letsflow.ai で登録すると無料トライアルの早期アクセス"
+          ],
+          [
+            "一般提供",
+            "北米と EMEA で2026年第4四半期の予定（最初の数週間は北米を優先）"
+          ],
+          [
+            "日本・新規顧客の料金",
+            "公式の資料には書かれていない"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Flow by ServiceNow: a new AI-native service desk that deploys instantly",
+        "site": "ServiceNow Newsroom",
+        "url": "https://newsroom.servicenow.com/press-releases/details/2026/Introducing-Flow-by-ServiceNow-a-new-AI-service-desk-that-deploys-instantly/default.aspx"
+      },
+      {
+        "title": "Flow Designer",
+        "site": "ServiceNow Docs",
+        "url": "https://www.servicenow.com/docs/r/xanadu/application-development/flow-designer.html"
+      }
+    ]
+  },
+  "optical-memory-volantis-funding-2026": {
+    "body": [
+      "米サンフランシスコの半導体スタートアップ Volantis は2026年10月1日、PR Newswire を通じて8,800万ドルのシリーズAを発表した。円換算では約138億円（為替により変動）にあたる。同社の公式サイトにも、CEO で共同創業者の Tapa Ghosh 氏の名前で同じ調達を伝える投稿があり、こちらの日付は9月29日になっている。",
+      "発表によると、ラウンドは投資家の Lachy Groom 氏と Abstract Ventures が共同で主導し、John Doerr 氏、VXI Capital、Triatomic、Susa Ventures が参加した。エンジェル投資家として Dwarkesh Patel 氏、Naveen Rao 氏、Sholto Douglas 氏も加わったとしている。公式サイトの投稿は、これまでの累計調達額を9,700万ドルとし、出資者として Sam Altman 氏、Jeff Dean 氏、Dylan Patel 氏、John Doerr 氏らの名前を挙げている。調達額・投資家の構成は、いずれも当事者の発表による。英語圏の報道も同じリリースを引いたもので、調達額と主導投資家を独立して確認した報道や届出は見つかっていない。累計の出資者に挙がる人物は、このシリーズAの参加者とは別に書かれている。",
+      "同社が取り組むのは、AI 推論でいう「メモリの壁」である。大きなモデルを速く動かすには、モデルを載せておく大きなメモリ容量と、演算器へデータを送り続ける広い帯域幅の両方が要る。発表は、チップ内の SRAM は帯域幅が広い一方で容量が小さく、HBM を使う GPU などは容量が大きいものの帯域幅が速度を制約し、新しい3次元 DRAM でも同じトレードオフの上にある、と説明している。",
+      "その解決策として同社が掲げるのが、演算チップとメモリをつなぐことに特化した光インターコネクトである。同社が「光ファブリック」と呼ぶ構成で多数のメモリチップを1つのプールとしてつなぎ、メモリを足すほど帯域幅も積み上がるようにする。これにより、より安価なチップ外のメモリを使いながら、容量と帯域幅を同時に増やせるとしている。",
+      "技術面では、外付けのレーザーではなく独自の micro-VCSEL（面発光レーザー）を使い、既存のガリウムヒ素系 VCSEL のサプライチェーンを活用することで、インジウムリン系の供給制約を避けるとしている。発表は、リンク全体の消費電力を1ビットあたり1ピコジュール未満と説明している。公式サイトの投稿は、従来の光ファイバーも使わない構成にしたと書いている。発表は、データセンター内の光通信はこれまで主にチップ間の接続に使われてきたが、チップとメモリの接続ではより短い距離で100倍以上のデータを運ぶ必要があり、エネルギーとコストの要件が異なる、と位置づけている。追加の技術は A-1 の商用化に合わせて公開するとしている。",
+      "最初の製品となる推論システム A-1 は、20兆パラメータを超えるモデルをユーザー1人あたり毎秒最大1万トークンで動かし、トークンあたりの推論コストも下げることを目指して「設計中」とされている。メモリ容量と帯域幅は、ともに約2桁（100倍近く）引き上げる計画だという。これらはいずれも設計目標であり、実機の測定値や第三者による評価は、公式の資料には書かれていない。",
+      "数字の言い回しは、同社自身の資料の間でも一致していない。下の表は、確認できた3つの公式資料での記述を並べたものである。どの数字が A-1 の最終的な仕様になるのかは、公式の資料からは判断できない。",
+      "創業チームについて発表は、NVIDIA、AMD、Broadcom、Ayar Labs の出身者で構成され、初の CoWoS 製品、初の量産された波長可変 VCSEL、初期のシリコンフォトニクスによる CPO（Co-Packaged Optics）システムなどに携わってきたと説明している。Ghosh 氏は発表の中で「AI エージェントが担う仕事が増えるほど、その仕事を終える速さが企業の動く速さを左右するようになる」と述べ、最大級のモデルを動かすことと速く動かすことのトレードオフをなくすために会社を始めたとしている。",
+      "同社は、推論が速くなる効果の例として、コーディングエージェントの作業が30分から2分に縮まれば、開発者は試行やリリースをより多く回せると説明している（公式サイトの投稿では「30分ではなく30秒」という例になっている）。調達資金は A-1 と光メモリ技術の開発・商用化、エンジニアチームの拡大、顧客への導入準備に充て、2027年に最初の統合推論エンジンを顧客に届ける予定としている。",
+      "読者が確認しておきたい点は次のとおりである。第一に、性能・消費電力・容量の数字はすべて当事者の説明であり、独立した検証は確認できていない。第二に、出荷は2027年の予定で、提供形態（システム販売か、クラウド経由の提供か）、価格、対応するモデルやソフトウェアスタックは、公式の資料には書かれていない。第三に、どのメモリ（DRAM の種類など）をプールに使うのかも、公式の資料からは読み取れない。導入を検討する場合は、これらが公表されてから判断材料にするのが現実的である。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 6,
+        "caption": "Volantis の公式資料ごとの記述（いずれも当事者の説明・設計目標）",
+        "headers": [
+          "項目",
+          "PR Newswire の発表（2026-10-01）",
+          "公式サイトの投稿（2026-09-29）",
+          "公式サイトのトップページ"
+        ],
+        "rows": [
+          [
+            "対応するモデルの規模",
+            "20兆パラメータ超",
+            "10兆パラメータ超",
+            "10兆パラメータ超"
+          ],
+          [
+            "速度",
+            "ユーザーあたり毎秒最大1万トークン",
+            "ユーザーあたり毎秒最大1万トークン",
+            "ユーザーあたり毎秒1万トークン"
+          ],
+          [
+            "容量・帯域幅の引き上げ幅",
+            "ともに約2桁（nearly two orders of magnitude）",
+            "ともに1桁超（over an order of magnitude）",
+            "帯域幅30倍超、メモリプール50倍超"
+          ],
+          [
+            "コーディングエージェントの例",
+            "30分 → 2分",
+            "30分 → 30秒",
+            "記載なし"
+          ],
+          [
+            "累計調達額",
+            "記載なし",
+            "9,700万ドル",
+            "記載なし"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Volantis Raises $88M Series A to Demolish the AI Memory Wall With Photonics",
+        "site": "PR Newswire（Volantis の発表）",
+        "url": "https://www.prnewswire.com/news-releases/volantis-raises-88m-series-a-to-demolish-the-ai-memory-wall-with-photonics-302895940.html"
+      },
+      {
+        "title": "Our $88M Series A: Demolishing the Memory Wall With Photonics",
+        "site": "Volantis 公式サイト",
+        "url": "https://volantissemi.ai/news-insights/our-88m-series-a-demolishing-the-memory-wall-with-photonics-post"
+      },
+      {
+        "title": "Volantis | Photonic AI Infrastructure for 10T+ Model Inference",
+        "site": "Volantis 公式サイト",
+        "url": "https://volantissemi.ai/"
+      }
+    ]
   }
 };
 
