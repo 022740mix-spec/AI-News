@@ -32,6 +32,14 @@
     <summary>OSS の推論サーバ「Magnitude」が9月上旬に GitHub トレンド入りした。2026年9月5日時点の README は、手元のマシンをプロファイリングして動かせるモデルを推薦し、ダウンロード・チューニング・起動まで行う設計を説明している。Claude Code・Cline・Codex など8種のコーディングエージェントに接続でき、トークン課金・APIキー・レート制限なし、ダウンロード後は完全オフラインで動くとされる。その後9月中旬に製品はデスクトップアプリ中心に作り直されており、本文末尾で時点を分けて書く。</summary>
   </entry>
   <entry>
+    <title>NVIDIA が「Open Agent Safety Platform」を発表 — ソフトの境界「OpenShell」と、DPU上で監視する「Sentry」の二層構成</title>
+    <link rel="alternate" type="text/html" href="?a=nvidia-open-agent-safety-platform-2026"/>
+    <id>tag:ai-tool-news.jp,2026:nvidia-open-agent-safety-platform-2026</id>
+    <published>2026-10-02T15:00:00Z</published>
+    <updated>2026-10-02T15:00:00Z</updated>
+    <summary>NVIDIA が9月28日、AIエージェントを実行境界の内側に留める「Open Agent Safety Platform」を発表した。オープンソースの実行境界 OpenShell と、BlueField-4 上で動く監視機構 Sentry の組み合わせである。OpenShell 自体は3月に公開済みで、今回新しいのは Sentry と、両者を一体のプラットフォームとして示した点にあたる。発表には、2026年7月に NVIDIA 主導で設立され9月に Linux Foundation 傘下へ移った Open Secure AI Alliance も関わる。NVIDIA のニュースルームと開発者ブログで内容を確認した。</summary>
+  </entry>
+  <entry>
     <title>Claude Code、5時間の上限に達しても区切りのよいところまで進める——週次枠から小さな固定分を使い、Pro は週1回・Max は毎回</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-wrap-up-allowance-5-hour-limit-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-wrap-up-allowance-5-hour-limit-2026</id>

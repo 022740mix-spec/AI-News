@@ -26015,6 +26015,58 @@ const ARTICLES_BODY = {
         "url": "https://docs.magnitude.dev/installation/windows.md"
       }
     ]
+  },
+  "nvidia-open-agent-safety-platform-2026": {
+    "body": [
+      "NVIDIA は2026年9月28日、AIエージェントが許可された範囲の外に出ることを防ぐ「Open Agent Safety Platform」を公式に発表した（NVIDIA ニュースルーム）。TechCrunch なども同日に報じている。構成は2つある。1つは実行時の境界を作るオープンソースソフトウェア「OpenShell」、もう1つは NVIDIA BlueField-4 の DPU（データ処理ユニット）上で動き、エージェントの挙動を外側から独立して監視する「Sentry」である。NVIDIA は、Sentry が境界を越えようとするエージェントをミリ秒単位で隔離・停止するとしている。これは NVIDIA 自身の説明で、独立した検証は確認できていない。",
+      "OpenShell は今回が初出ではない。NVIDIA は2026年3月のプレスリリース（GTC）で NemoClaw とともに公開しており、今回新しいのは Sentry と、両者を一体のプラットフォームとして示した点である。9月28日には OpenShell 0.1.2 も出ている。NVIDIA の発表では、OpenShell は「Now broadly available」（広く提供中）とされ、ソフトウェアは GitHub と開発者向けページから入手できる。一方 Sentry は「リファレンスシステム設計」と位置づけられており、提供時期と価格は公式の資料に書かれていない。NVIDIA の開発者ブログによれば、OpenShell は BlueField-4 が無くても動き、BlueField-4 を備えた構成で Sentry が加わるため、二層は別々に導入できる。",
+      "OpenShell の GitHub リポジトリの README は、ファイル・システムコール・ネットワーク接続のすべてでカーネルがポリシーを強制し、ポリシー変更が何を許すかを形式検証で確かめる、と説明している。ライセンスは Apache License 2.0 である。一方、リポジトリの README には Sentry や BlueField への言及は無かった。Sentry のハードウェア側の仕様は、NVIDIA の発表と開発者ブログに書かれた範囲でしか確認できていない。",
+      "NVIDIA の説明（公式発表）によれば、OpenShell は NVIDIA の Vera CPU 上での実行を想定しつつ、Arm や Intel など他社の計算基盤にも拡張できる。発表は Open Secure AI Alliance にも触れている。この団体は2026年7月に NVIDIA 主導で設立され、9月に Linux Foundation 傘下に移ったもので、9月28日に新設されたものではない。NVIDIA は同団体を「120超の組織とともに発足させ、Linux Foundation が運営する」と説明している。連携先として、NVIDIA は Anthropic、Cisco、CrowdStrike、Palo Alto Networks、Microsoft、Salesforce、SAP などを挙げた。Anthropic については、Claude Managed Agents が OpenShell と BlueField の統合を通じてサンドボックスへのアクセスを制御できるとしている。Yahoo Finance の見出しは、この発表がジェンスン・フアン氏による Anthropic・OpenAI の警告への「odd（奇妙だ）」という発言の後だったと伝えている。この発言は、ニューヨーク・タイムズの Ezra Klein 氏との対談でのものである。",
+      "当サイトはこれまでに、エージェントの隔離をめぐる公開として、Anthropic の Sandbox Runtime（OSレイヤー）と Microsoft の agent-governance-toolkit（アプリケーション層）を取り上げた。それらがソフトウェア側の制御であるのに対し、今回の Sentry は「エージェントが動くソフトウェアの外側」に監視を置く点が構成として異なる。どの層の制御がどの種類の逸脱に効くかは、独立した評価がまだ出ておらず、本稿では優劣を判断しない。",
+      "本稿の確認範囲について。NVIDIA のニュースルーム、開発者ブログ、製品ページ、Linux Foundation のブログ、OpenShell のリポジトリ（README とライセンス）を直接確認した。数値（ミリ秒、製品ページにある「Vera 上でサンドボックス性能が従来の CPU 基盤より最大80%速い」という記述）は、いずれも NVIDIA 自身の主張である。TechCrunch と Yahoo Finance も読んだ。"
+    ],
+    "primarySources": [
+      {
+        "title": "NVIDIA Newsroom: NVIDIA Launches Open Agent Safety Platform",
+        "site": "NVIDIA",
+        "url": "https://nvidianews.nvidia.com/news/open-agent-safety-platform"
+      },
+      {
+        "title": "NVIDIA Open Agent Safety Platform: A Reference for Continuous In-Silicon Agent Monitoring",
+        "site": "NVIDIA Technical Blog",
+        "url": "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/"
+      },
+      {
+        "title": "NVIDIA Agent Safety（製品ページ）",
+        "site": "NVIDIA",
+        "url": "https://www.nvidia.com/en-us/solutions/ai/agent-safety/"
+      },
+      {
+        "title": "NVIDIA/OpenShell（README・LICENSE）",
+        "site": "GitHub",
+        "url": "https://github.com/NVIDIA/OpenShell"
+      },
+      {
+        "title": "Open Secure AI Alliance Joins the Linux Foundation",
+        "site": "Linux Foundation",
+        "url": "https://www.linuxfoundation.org/blog/open-secure-ai-alliance-joins-the-linux-foundation-to-build-a-shared-open-defense-stack-for-the-ai-era"
+      },
+      {
+        "title": "TechCrunch: Nvidia launches new platform for reining in rogue AI agents",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/28/nvidia-launches-new-platform-for-reining-in-rogue-ai-agents/"
+      },
+      {
+        "title": "Yahoo Finance: Nvidia launches AI safety platform after Jensen Huang calls Anthropic, OpenAI warnings 'odd'",
+        "site": "Yahoo Finance",
+        "url": "https://finance.yahoo.com/technology/article/nvidia-launches-ai-safety-platform-after-jensen-huang-calls-anthropic-openai-warnings-odd-103135599.html"
+      },
+      {
+        "title": "NVIDIA Open Secure AI Alliance",
+        "site": "NVIDIA Blog",
+        "url": "https://blogs.nvidia.com/blog/open-secure-ai-alliance/"
+      }
+    ]
   }
 };
 

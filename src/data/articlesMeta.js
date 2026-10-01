@@ -11446,5 +11446,22 @@ export const ARTICLES_META = [
       "エッジAI",
       "開発ツール"
     ]
+  },
+  {
+    "id": "nvidia-open-agent-safety-platform-2026",
+    "type": "news",
+    "category": "product",
+    "title": "NVIDIA が「Open Agent Safety Platform」を発表 — ソフトの境界「OpenShell」と、DPU上で監視する「Sentry」の二層構成",
+    "excerpt": "NVIDIA が9月28日、AIエージェントを実行境界の内側に留める「Open Agent Safety Platform」を発表した。オープンソースの実行境界 OpenShell と、BlueField-4 上で動く監視機構 Sentry の組み合わせである。OpenShell 自体は3月に公開済みで、今回新しいのは Sentry と、両者を一体のプラットフォームとして示した点にあたる。発表には、2026年7月に NVIDIA 主導で設立され9月に Linux Foundation 傘下へ移った Open Secure AI Alliance も関わる。NVIDIA のニュースルームと開発者ブログで内容を確認した。",
+    "date": "2026-10-02",
+    "newsDate": "2026-09-28",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "エージェント",
+      "セキュリティ",
+      "NVIDIA",
+      "オープンソース"
+    ]
   }
 ];
