@@ -25921,6 +25921,220 @@ const ARTICLES_BODY = {
         "url": "https://github.com/openai/openai-cli/blob/main/docs/image-generation-saving.md"
       }
     ]
+  },
+  "alibaba-qwen-intelligence-honor-magic9-2026": {
+    "body": [
+      "Alibabaは2026年9月22日、杭州で開催したApsara Conferenceで「Qwen Intelligence」を発表した。Alibaba公式ニュースルームのAlizilaによると、スマートフォンメーカーが自社端末にエージェント型のAI機能を載せられるようにするフルスタック型のソリューションである。モバイル向けに最適化した基盤モデルから、すぐ使えるエージェントまでを一式で提供する。",
+      "第1弾のパートナーはHONORで、Alizilaは、同社の新しいMagic9シリーズ（Alizilaの発表時点では9月28日に発売予定とされていた）とHONOR Robot Phoneが、Qwen Intelligenceを組み込む最初の端末になると書いている。HONOR公式サイトには、2026年9月28日に北京でMagic9シリーズの新製品発表会を開くと案内するページがあり（本記事の掲載日の時点で、その日付はすでに過ぎている）、HONOR Robot Phoneも製品として掲載されている。なおAlizilaの原文は「launch」と書くだけで、発売と発表会を区別していない。実際の搭載状況や発売の状況は、本記事では公式資料で確認していない。",
+      "Alizilaによると、第1フェーズは3種類のエージェントで構成される。中核の「Mobile Planner Agent」は、計画の立案、タスクの分解、ツール呼び出しの調整、状況に応じた調整を担う。原文は例として、出張の手配という依頼を、航空券の予約、ホテルの確保、カレンダーへの登録、行程の計画に分解する流れを挙げている。「Mobile-Use Agent」は、アプリをまたぐ操作を、APIを優先しGUI操作を代替手段とする方式で実行する。Alibabaは、厳格なセキュリティ境界とプライバシー保護を課すと説明している。「Mobile Creative Agent」は、スマートフォン上での画像の生成・編集に向けた軽量モデルである。個人向けの記憶サービス、マルチモーダル対話、パートナーが提供する業種別エージェントは、今後の提供予定として挙げられている。",
+      "構成は3層とされる。最下層はモバイル向けに最適化したQwen系の基盤モデル、中間はモデルの個別デプロイ、ハーネスのカスタマイズ、ツールの統一管理、自動評価に対応するモジュール式のプラットフォーム、最上層は業種別のエージェントである。端末メーカーは一式を採用することも、基盤モデルや個別のエージェントなどモジュール単位で選んで自社システムに組み込むこともできる、とAlizilaは書く。Qwen Intelligenceは公式サイトとAlibaba Cloudのサービスを通じて提供されると記されているが、料金や具体的な提供条件は、参照した公式資料には書かれていない。",
+      "HONORとの協業について、Alizilaは、Qwen IntelligenceとHONORのMagicOSを土台に、スマートフォンを受動的な応答者から、先回りして動くサービス提供者へ変えると説明する。性能については、HONORのAIスマートフォンがタスク精度で最大91.8%に達し、100ステップを超える複雑な一連の操作を扱えると書かれている。この数値はAlibabaが公式ニュースルームで示した自社発表値であり、独立した第三者による検証は確認できていない。",
+      "評価系についてAlibabaは、実際のモバイル環境でエージェントを測る体系的な方法がないとして、Qwen Intelligenceのチームが4本のベンチマークからなる公開の評価系を作ったと説明している。MobilePA-Benchは、1,000件を超える実シナリオのタスクと200種類を超える一般的なモバイルツールを対象に、計画から完了までの遂行力を測るという。残る3本は、クラウドフォン環境での長い一連のアプリ横断タスクや、日常の利用分布に合わせた実機でのタスクを対象にする。ただし、91.8%がこのうちどの評価系の値かは、発表文に明記されていない。読者が自社や自分の用途に当てはめて判断するには、評価の条件が公開されるかどうかが確認点になる。",
+      "端末メーカーや開発者にとっての確認点は、採用単位（一式かモジュールか）、端末とクラウドの役割分担（発表文は、性能・遅延・コストのバランスを取るデバイス・クラウド連携に触れている）、そしてセキュリティ境界の具体的な中身である。これらの詳細は、今回参照した発表文には記載がない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Alibaba Launches Qwen Intelligence to Power Next-Generation Agentic Smartphones（Alizila、Alibaba公式ニュースルーム）",
+        "site": "Alizila",
+        "url": "https://www.alizila.com/alibaba-launches-qwen-intelligence-to-power-next-generation-agentic-smartphones/"
+      },
+      {
+        "title": "荣耀Magic9系列新品发布会（HONOR公式サイト）",
+        "site": "HONOR",
+        "url": "https://www.honor.com/cn/activity/honor-magic9-series-launch/"
+      }
+    ]
+  },
+  "alibaba-zhenwu-v900-ai-chip-2026": {
+    "body": [
+      "Alibaba傘下のチップ設計会社T-Head（平頭哥）が、2026年9月22日にApsara Conference 2026で、AIの学習・推論向けプロセッサ「Zhenwu V900」を発表した。Alibaba Cloudの公式ブログに掲載された発表まとめによる。同社の別の公式ブログ（基調講演の報告）は、会議が杭州で9月22日に開幕したと書いている。",
+      "公式ブログによると、Zhenwu V900は216GBのGPUメモリと1,200GB/sのチップ間帯域幅を備え、FP8・FP4を含む複数のデータ精度にネイティブ対応する。高精度のモデル学習と超低精度の推論の両方を扱えるとされる。量産・商用リリースは2027年第1四半期の予定である。性能については、5月に発表された前世代「Zhenwu M890」の3倍とAlibabaは説明している。ただし絶対的な性能値（FLOPS等）は、公式の発表には書かれていない。",
+      "V900は、ICN Switch、Panmai SmartNIC、Zhenyue SSDコントローラチップと組み合わせた「スーパーノード」サーバに搭載される。公式ブログは、このサーバが最大50万枚のカードからなるスーパーノードクラスタに対応すると説明している。同ブログによれば、T-HeadのZhenwuシリーズは既に自動車・金融・大規模言語モデル・エンボディドAI・エネルギー・製造などの650社超の顧客に提供されているという（Alibabaの説明）。CPUについては、2027年にYitian 720と730を投入するロードマップも示された。730はT-Head独自のマイクロアーキテクチャを採用した最初のCPUで、Yitian 710比でSPECint2017/GHzが最大40%向上するとされる。",
+      "同じ発表でAlibabaは、Qwen 4.5・Qwen 5シリーズが5〜10兆パラメータ規模を目指すロードマップも示した（詳しくは「[Alibabaが次世代「Qwen4」は学習中と発表](?a=alibaba-qwen4-apsara-unveil-2026)」を参照）。V900は「フロンティアモデルの学習と推論」向けと位置づけられ、V900ベースのクラスタが最大50万枚に対応するとも説明されている。一方、公式ブログはV900がそれらのモデルのために設計されたとまでは書いていない。両者の結び付けは、AP通信の報道を引いたTom's Hardwareの記事にある。",
+      "Alibabaグループ CEOのEddie Wu（呉泳銘）氏は基調講演で、V900を「現時点で中国最強のAIチップ」と述べた。3倍という性能倍率とあわせて、いずれも当事者であるAlibabaの説明である。独立した性能検証は確認できていない。",
+      "このうち、V900の仕様と時期は、Alibaba Cloud公式ブログの発表まとめ（9月22日）とCEO基調講演を伝える公式ページ（9月23日）で確認した。Tom's Hardware（9月23日付）とTechNode（9月22日付）も同じ発表を報じているが、前者はAP通信の報道を引いており、後者はT-Headの発表を直接引用している。いずれも元は同じ発表であり、独立した検証が加わったものではない。",
+      "公式発表は米国の対中輸出規制に触れていない。Tom's Hardwareは、この発表を米中の首脳会談・AI協議の文脈で報じている（同記事は、輸出規制は協議の議題になかったとも書く）。公式ブログはV900に加えて、Zhenwu（GPU）、Yitian（CPU）、Panmai（SmartNIC）、ICN（インターコネクト）、Zhenyue（SSDコントローラ）と、コンピューティング・ストレージ・ネットワークにわたる自社設計のチップ群を挙げている。",
+      "開発者・管理者が確認すべき点は次のとおり。量産・商用リリースは2027年第1四半期の予定で、現時点では発表済みの計画である。価格、提供形態、FLOPSなどの絶対性能値は、公式の発表には書かれていない。M890については、Eddie Wu氏が基調講演で、M890ベースのスーパーノードが今四半期から商用規模で稼働し、2兆パラメータ超のモデルの推論に対応すると述べている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Alibaba Unveils Roadmap on Full-Stack AI Strategy（Alibaba Cloud公式ブログ、2026-09-22）",
+        "site": "Alibaba Cloud",
+        "url": "https://www.alibabacloud.com/blog/alibaba-unveils-roadmap-on-full-stack-ai-strategy-from-chips-cloud-infrastructure-models-to-agents_603589"
+      },
+      {
+        "title": "AliViews: Eddie Wu Shares Alibaba's Strategic Full-Stack AI Roadmap at the 2026 Apsara Conference（CEO基調講演全文、2026-09-23）",
+        "site": "Alibaba Cloud",
+        "url": "https://www.alibabacloud.com/blog/aliviews-eddie-wu-shares-alibabas-strategic-full-stack-ai-roadmap-at-the-2026-apsara-conference_603595"
+      },
+      {
+        "title": "Alibaba unveils Zhenwu V900 AI accelerator（Tom's Hardware、2026-09-23、AP通信の報道を引用）",
+        "site": "Tom's Hardware",
+        "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/alibaba-unveils-zhenwu-v900-ai-accelerator-claims-its-the-most-powerful-ai-chip-in-china-accelerator-supports-500-000-chip-supercluster-with-a-10t-parameter-qwen-model-on-the-roadmap"
+      },
+      {
+        "title": "T-Head unveils Zhenwu V900 AI chip（TechNode、2026-09-22）",
+        "site": "TechNode",
+        "url": "https://technode.com/2026/09/22/t-head-unveils-zhenwu-v900-ai-chip-in-alibabas-push-to-expand-its-ai-infrastructure-stack/"
+      }
+    ]
+  },
+  "magnitude-local-inference-server-coding-agents-2026": {
+    "body": [
+      "OSS の推論サーバ「Magnitude」(magnitudedev/magnitude)が、2026年9月上旬に GitHub トレンドに入った。当初の調査時の星数の記録は、いま再確認できなかったため載せない。第三者のトレンド記録サービス trendshift には、9月3日に GitHub Trending で1位に達した記録がある。ライセンスは Apache 2.0。以下の仕様は、9月1日から5日時点の公式 README に基づく。この時点の README は、対応 OS を macOS と Linux とし、Windows は WSL 経由での対応と書いていた。",
+      "特徴は、モデル選定からライフサイクル管理までを引き受ける設計にある。README は、手元のチップ・メモリ・帯域幅をプロファイリングし、動かせるモデルを推薦したうえで、ダウンロード・チューニング・起動まで行うと説明している。モデルごとの推定トークン毎秒(tok/s)も提示される。モデルは使用要求があった時にロードされ、アイドル時またはメモリが逼迫した時に自動的にアンロードされる。",
+      "接続先として明記されているエージェントは、Pi・OpenCode・Hermes・OpenClaw・Codex・Claude Code・Oh My Pi・Cline の8種で、公式ドキュメントにはそれぞれ個別の接続ページがある。9月5日時点の README には、これらに加えて Magnitude 自身のビルトインのハーネスからも使えるとも書かれていた。既存のエージェントツールはそのままに、バックエンドだけをローカルモデルに差し替える使い方が想定されている。",
+      "README が掲げる利点は2点ある。1つは「トークン課金・APIキー・レート制限なし」であること。もう1つは、モデル・プロンプト・ファイルが手元のマシンから外に出ないことである。FAQ は、Magnitude とモデルをダウンロードした後はインターネット接続が不要と述べている。いずれも開発元の説明であり、挙動を第三者が検証した資料は確認できていない。クラウドに送りたくないコードを扱う場合は、ネットワークの利用状況を自分の環境で確かめるのが確実である。",
+      "ローカルLLM運用の一般論としては、[7B〜70Bクラスのモデルに必要なスペックやAPIとの損益分岐点](?a=local-llm-vs-api-reality-2026)を既に AI News で整理している。Magnitude は、動かせるかどうかの判断と、動かすための設定をツール側に委ねる方向の実装である。一方で、ローカルで動かせるモデルの性能はクラウドの最上位モデルとは異なるため、どの規模のタスクをローカルに任せるかは利用者が見極める必要がある。",
+      "9月中旬の変化。上記は9月5日時点の README に基づく。その後、コミット履歴では9月11日に「デスクトップを推論中心に作り直し、CLI をヘッドレスにする」という趣旨の変更が入り、9月16日から17日にかけて README とドキュメントがデスクトップアプリ向けに刷新された。現行の公式ドキュメントでは、`magnitude` CLI はデスクトップアプリに同梱され、Windows はネイティブ(x64、CUDA / Vulkan)に対応している(インストール手順のページによる)。9月5日時点の「WSL 経由」や「ビルトインのハーネス」という記述は、現行の README には見当たらない。9月30日の README は、llama.cpp 比で最大2倍の速度を掲げ、その自社ベンチマーク図を載せている。これは開発元の計測であり、独立した検証は確認できていない。利用を検討する場合は、公式ドキュメントで現行の構成と対応環境を確認してほしい。"
+    ],
+    "primarySources": [
+      {
+        "title": "magnitudedev/magnitude (GitHub)",
+        "site": "GitHub",
+        "url": "https://github.com/magnitudedev/magnitude"
+      },
+      {
+        "title": "Magnitude ドキュメント FAQ",
+        "site": "docs.magnitude.dev",
+        "url": "https://docs.magnitude.dev/faq.md"
+      },
+      {
+        "title": "Magnitude ドキュメント 目次",
+        "site": "docs.magnitude.dev",
+        "url": "https://docs.magnitude.dev/llms.txt"
+      },
+      {
+        "title": "Trendshift: magnitudedev/magnitude",
+        "site": "Trendshift",
+        "url": "https://trendshift.io/repositories/79752"
+      },
+      {
+        "title": "Magnitude ドキュメント Windows インストール",
+        "site": "docs.magnitude.dev",
+        "url": "https://docs.magnitude.dev/installation/windows.md"
+      }
+    ]
+  },
+  "nvidia-open-agent-safety-platform-2026": {
+    "body": [
+      "NVIDIA は2026年9月28日、AIエージェントが許可された範囲の外に出ることを防ぐ「Open Agent Safety Platform」を公式に発表した（NVIDIA ニュースルーム）。TechCrunch なども同日に報じている。構成は2つある。1つは実行時の境界を作るオープンソースソフトウェア「OpenShell」、もう1つは NVIDIA BlueField-4 の DPU（データ処理ユニット）上で動き、エージェントの挙動を外側から独立して監視する「Sentry」である。NVIDIA は、Sentry が境界を越えようとするエージェントをミリ秒単位で隔離・停止するとしている。これは NVIDIA 自身の説明で、独立した検証は確認できていない。",
+      "OpenShell は今回が初出ではない。NVIDIA は2026年3月のプレスリリース（GTC）で NemoClaw とともに公開しており、今回新しいのは Sentry と、両者を一体のプラットフォームとして示した点である。9月28日には OpenShell 0.1.2 も出ている。NVIDIA の発表では、OpenShell は「Now broadly available」（広く提供中）とされ、ソフトウェアは GitHub と開発者向けページから入手できる。一方 Sentry は「リファレンスシステム設計」と位置づけられており、提供時期と価格は公式の資料に書かれていない。NVIDIA の開発者ブログによれば、OpenShell は BlueField-4 が無くても動き、BlueField-4 を備えた構成で Sentry が加わるため、二層は別々に導入できる。",
+      "OpenShell の GitHub リポジトリの README は、ファイル・システムコール・ネットワーク接続のすべてでカーネルがポリシーを強制し、ポリシー変更が何を許すかを形式検証で確かめる、と説明している。ライセンスは Apache License 2.0 である。一方、リポジトリの README には Sentry や BlueField への言及は無かった。Sentry のハードウェア側の仕様は、NVIDIA の発表と開発者ブログに書かれた範囲でしか確認できていない。",
+      "NVIDIA の説明（公式発表）によれば、OpenShell は NVIDIA の Vera CPU 上での実行を想定しつつ、Arm や Intel など他社の計算基盤にも拡張できる。発表は Open Secure AI Alliance にも触れている。この団体は2026年7月に NVIDIA 主導で設立され、9月に Linux Foundation 傘下に移ったもので、9月28日に新設されたものではない。NVIDIA は同団体を「120超の組織とともに発足させ、Linux Foundation が運営する」と説明している。連携先として、NVIDIA は Anthropic、Cisco、CrowdStrike、Palo Alto Networks、Microsoft、Salesforce、SAP などを挙げた。Anthropic については、Claude Managed Agents が OpenShell と BlueField の統合を通じてサンドボックスへのアクセスを制御できるとしている。Yahoo Finance の見出しは、この発表がジェンスン・フアン氏による Anthropic・OpenAI の警告への「odd（奇妙だ）」という発言の後だったと伝えている。この発言は、ニューヨーク・タイムズの Ezra Klein 氏との対談でのものである。",
+      "当サイトはこれまでに、エージェントの隔離をめぐる公開として、Anthropic の Sandbox Runtime（OSレイヤー）と Microsoft の agent-governance-toolkit（アプリケーション層）を取り上げた。それらがソフトウェア側の制御であるのに対し、今回の Sentry は「エージェントが動くソフトウェアの外側」に監視を置く点が構成として異なる。どの層の制御がどの種類の逸脱に効くかは、独立した評価がまだ出ておらず、本稿では優劣を判断しない。",
+      "本稿の確認範囲について。NVIDIA のニュースルーム、開発者ブログ、製品ページ、Linux Foundation のブログ、OpenShell のリポジトリ（README とライセンス）を直接確認した。数値（ミリ秒、製品ページにある「Vera 上でサンドボックス性能が従来の CPU 基盤より最大80%速い」という記述）は、いずれも NVIDIA 自身の主張である。TechCrunch と Yahoo Finance も読んだ。"
+    ],
+    "primarySources": [
+      {
+        "title": "NVIDIA Newsroom: NVIDIA Launches Open Agent Safety Platform",
+        "site": "NVIDIA",
+        "url": "https://nvidianews.nvidia.com/news/open-agent-safety-platform"
+      },
+      {
+        "title": "NVIDIA Open Agent Safety Platform: A Reference for Continuous In-Silicon Agent Monitoring",
+        "site": "NVIDIA Technical Blog",
+        "url": "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/"
+      },
+      {
+        "title": "NVIDIA Agent Safety（製品ページ）",
+        "site": "NVIDIA",
+        "url": "https://www.nvidia.com/en-us/solutions/ai/agent-safety/"
+      },
+      {
+        "title": "NVIDIA/OpenShell（README・LICENSE）",
+        "site": "GitHub",
+        "url": "https://github.com/NVIDIA/OpenShell"
+      },
+      {
+        "title": "Open Secure AI Alliance Joins the Linux Foundation",
+        "site": "Linux Foundation",
+        "url": "https://www.linuxfoundation.org/blog/open-secure-ai-alliance-joins-the-linux-foundation-to-build-a-shared-open-defense-stack-for-the-ai-era"
+      },
+      {
+        "title": "TechCrunch: Nvidia launches new platform for reining in rogue AI agents",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/09/28/nvidia-launches-new-platform-for-reining-in-rogue-ai-agents/"
+      },
+      {
+        "title": "Yahoo Finance: Nvidia launches AI safety platform after Jensen Huang calls Anthropic, OpenAI warnings 'odd'",
+        "site": "Yahoo Finance",
+        "url": "https://finance.yahoo.com/technology/article/nvidia-launches-ai-safety-platform-after-jensen-huang-calls-anthropic-openai-warnings-odd-103135599.html"
+      },
+      {
+        "title": "NVIDIA Open Secure AI Alliance",
+        "site": "NVIDIA Blog",
+        "url": "https://blogs.nvidia.com/blog/open-secure-ai-alliance/"
+      }
+    ]
+  },
+  "anthropic-pentagon-dc-circuit-appeal-2026": {
+    "body": [
+      "ワシントンD.C.巡回区控訴裁判所は2026年9月25日、Anthropic PBCが国防総省（判決文での名称はDepartment of War）とHegseth長官を相手取って起こした請願（No. 26-1049、No. 26-1162と併合）について、「petitionsを棄却する（we deny the petitions for review）」と判断した。審理したのはHenderson、Katsas、Raoの3判事で、Katsas判事が多数意見を書き、Rao判事が加わった。Henderson判事は反対意見を書いた。2対1の判断である。以下は、裁判所の公式サイトに掲載された判決文を根拠にしている。",
+      "この記事は、当サイトが9月16日に報じた記事（北カリフォルニア連邦地裁のRita Lin判事が、国防総省によるAnthropicの「サプライチェーンリスク」指定を違法と判断した件）の続報だが、別の出来事である。裁判所も、根拠法も、審理の対象も異なる。判決文と地裁の意見書によれば、2026年3月3日にHegseth長官が行った措置は2つの法令にまたがる。1つは10 U.S.C. §3252に基づく「サプライチェーンリスク」指定で、北カリフォルニア地裁が審理した。もう1つは41 U.S.C. §4713（2018年のSupply Chain Security Act）に基づく「covered procurement action」の決定で、同法の審査規定（41 U.S.C. §1327）により、請願はD.C.巡回区控訴裁判所に出すことになっている。Anthropicは通知を受けた3月4日の5日後、3月9日にD.C.巡回区控訴裁判所へ請願を出した。",
+      "経過を日付で並べると次のとおりである。判決文によれば、D.C.巡回区控訴裁判所は4月8日に執行停止を認めない一方で審理を迅速化した。5月19日に口頭弁論が開かれた。6月3日に長官が再考の求めを退け、Anthropicは6月17日にその決定についても請願を出し、裁判所は6月24日に2件を併合した。そして9月25日に本案の判断が出た。つまりこれは新しい訴訟ではなく、3月から続く同じ訴訟（4月8日に当サイトが報じた執行停止の却下と同じ事件）の本案判断にあたる。一方、北カリフォルニア地裁は3月26日に暫定的な差止めを出したあと、8月27日に§3252の指定を取り消し（vacated）、修正第一条と第五条に違反すると宣言した（地裁の意見書と最終救済命令）。",
+      "多数意見は、地裁の判断そのものを覆してはいない。判決文は、§3252の「supply chain risk」の定義が「adversary（敵対者）が妨害し、悪意をもって機能を持ち込み、あるいは破壊する」危険を指している点を挙げ、悪意（bad motive）が要件だとした北カリフォルニア地裁の結論に「異論はない（We have no quarrel）」と書いた。そのうえで、§4713の定義は「any person（あらゆる者）が妨害し、悪意をもって機能を持ち込み、データを抽出し、あるいはその他の方法で設計などを操作する危険」とされており、§3252より広いとして、悪意を要件としない読み方を採った。判決文は、国防総省が「Anthropicが、国防総省が契約上認められ、かつ必要と考える国家安全保障上の機能をClaudeが果たせないよう、設計を操作するかもしれないと懸念したことには合理性があった」と結論づけている。",
+      "反対意見のHenderson判事は、条文の文脈から§4713の定義も狭く読むべきだとし、多数意見の読み方では、政府が好まない用途制限を契約者が正直かつ率直に（honest and upfront）執行することまでサプライチェーンリスクに当たることになる、と指摘した。2つの法廷が、似た文言を持つ2つの条文について、それぞれの定義を読んで結論を分けた形である。両判断は現時点で並存している。第9巡回区控訴裁判所には政府側が暫定差止めに対して出した控訴（No. 26-2011）があるが、地裁の意見書によれば、当事者の求めにより、D.C.巡回区控訴裁判所の判断を待って停止されていた。この停止がその後どうなったかは、確認できていない。",
+      "背景として、判決文と地裁の意見書の事実認定は次のとおりである。Anthropicは2025年7月、国防総省のChief Digital and Artificial Intelligence Officeから、2年間で最大2億ドルの合意を受けた。2025年秋、国防総省とAnthropicは、直接の契約関係の構築とClaudeの利用拡大（地裁の意見書は、GenAI.milプラットフォームへの展開と記している）について交渉を始め、国防総省は「all lawful uses（あらゆる適法な用途）」で展開することへの契約上の許可を求めた。Anthropicは従来の利用制限を大幅に緩めることに同意したが、「lethal autonomous warfare（致死的な自律型戦闘）」と「mass surveillance of Americans（米国人の大量監視）」への利用禁止は維持するよう求めた。交渉は数か月続いたのち行き詰まり、2026年2月24日に長官がAmodei氏と会って2月27日までに条項を受け入れるよう求め、2月26日にAnthropicが公に拒否した。2月27日に長官がAnthropicを国防総省のサプライチェーンから排除する意向を示し、3月3日に決定が出た。3月6日には国防総省のChief Information Officerが、Anthropic製品を「可能な限り速やかに、遅くとも180日以内に」国防総省のシステムから撤去し、契約者が国防総省向けの業務でAnthropic製品を使うことを禁じる覚書を出した。",
+      "Anthropicの反応は、報道機関に出した広報の声明として伝えられている。ABC Newsの独自記事とAP通信の配信は、同じ声明を引用している。声明は、この判断に同意しないという趣旨で（AP通信は「respectfully disagrees」と引用している）、ABC Newsによれば「Another federal court has already held the government's parallel designation unlawful（別の連邦裁判所が、政府の並行する指定を既に違法と判断している）」「We remain confident in our position and are considering all options, including further review（我々は自らの立場に確信を持っており、さらなる審査を含むあらゆる選択肢を検討している）」と続ける。これは当事者自身の説明であり、独立した検証は確認できていない。また、同社のニュース欄（anthropic.com/news）には、2026年10月1日時点で本件の投稿を確認できなかった。声明が言及する「further review」の具体的な手続は示されていない。一般論としては、同じ3判事による再審理、D.C.巡回区控訴裁判所の全員による審理（en banc）、連邦最高裁への上告の申立てといった手続がありうるが、これらはAnthropicの発言ではない。",
+      "開発者や管理者が確認すべき点として、判決文が扱ったのは、§4713に基づく決定とその再考の拒否であり、この判断は、Claudeを国防総省のシステムや国防総省向けの業務で使う契約者の立場に関わる。自社の契約や再委託がこの決定の対象になるかどうかは、決定の範囲と契約の内容による。この記事は個別の契約者への当てはめを扱っておらず、判断することはできない。所属先に調達や法務の担当がいる場合は、その指示が優先される。",
+      "根拠について。D.C.巡回区控訴裁判所の判断（判決日、判事、多数意見と反対意見、事件番号、§4713と§3252の解釈、各日付）は、判決文という一次資料1本に拠る。北カリフォルニア地裁の判断は、意見書と最終救済命令の一次資料2本に拠る。いずれも当事者が提出した記録に基づく裁判所の事実認定であり、Anthropicの声明の部分だけが当事者の説明にとどまる。判決の報道は多数あるが、AP通信の配信を転載したものは根として数えていない。"
+    ],
+    "tables": [
+      {
+        "caption": "同じ3月3日の措置を、2つの法令・2つの法廷が審理した（判決文・地裁の意見書による）",
+        "afterParagraph": 2,
+        "headers": [
+          "",
+          "10 U.S.C. §3252の指定",
+          "41 U.S.C. §4713の決定"
+        ],
+        "rows": [
+          [
+            "審理した法廷",
+            "北カリフォルニア連邦地裁（Lin判事）",
+            "D.C.巡回区控訴裁判所（請願。No. 26-1049、26-1162と併合）"
+          ],
+          [
+            "結果",
+            "2026年8月27日に取り消し（vacated）。修正第一条・第五条違反を宣言",
+            "2026年9月25日に請願を棄却（2対1）"
+          ],
+          [
+            "定義の主語",
+            "adversary（敵対者）",
+            "any person（あらゆる者）"
+          ],
+          [
+            "現状",
+            "多数意見は地裁の判断を覆していない。政府の暫定差止めへの控訴（第9巡回区、No. 26-2011）は、地裁の意見書によれば停止中",
+            "Anthropicは声明で「さらなる審査を含むあらゆる選択肢を検討」としている"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic PBC v. United States Department of War, No. 26-1049（D.C.巡回区控訴裁判所の判決文、2026年9月25日）",
+        "site": "D.C.巡回区控訴裁判所",
+        "url": "https://media.cadc.uscourts.gov/opinions/docs/2026/09/26-1049-2194984.pdf"
+      },
+      {
+        "title": "Anthropic, PBC v. U.S. Department of War（北カリフォルニア連邦地裁の意見書、Dkt. 250、2026年8月27日）",
+        "site": "CourtListener（裁判所記録）",
+        "url": "https://storage.courtlistener.com/recap/gov.uscourts.cand.465515/gov.uscourts.cand.465515.250.0.pdf"
+      },
+      {
+        "title": "Anthropic, PBC v. U.S. Department of War（北カリフォルニア連邦地裁の最終救済命令、Dkt. 251）",
+        "site": "CourtListener（裁判所記録）",
+        "url": "https://storage.courtlistener.com/recap/gov.uscourts.cand.465515/gov.uscourts.cand.465515.251.0.pdf"
+      },
+      {
+        "title": "Federal appeals court declines to block Pentagon's blacklisting of Anthropic（ABC News、独自記事。Anthropicの声明の引用元）",
+        "site": "ABC News",
+        "url": "https://abcnews.com/Business/anthropic-appeals-court-declines-block-pentagon-blacklisting/story?id=136755690"
+      }
+    ]
   }
 };
 

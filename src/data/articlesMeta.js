@@ -11395,5 +11395,90 @@ export const ARTICLES_META = [
       "認証",
       "画像生成"
     ]
+  },
+  {
+    "id": "alibaba-qwen-intelligence-honor-magic9-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Alibaba、スマートフォン向けエージェント基盤「Qwen Intelligence」を発表 — HONOR Magic9シリーズに初搭載予定",
+    "excerpt": "Alibabaは9月22日、杭州のApsara Conferenceで、スマートフォンメーカー向けのフルスタック型エージェント基盤「Qwen Intelligence」を発表した。第1弾のパートナーはHONORで、9月28日に発売予定とされたMagic9シリーズとHONOR Robot Phoneが最初の搭載機種になる。第1フェーズは「Mobile Planner Agent」「Mobile-Use Agent」「Mobile Creative Agent」の3エージェントで構成される。タスク精度が最大91.8%、100ステップを超える一連の操作を扱えるという数値はAlibabaの発表値で、独立した検証は確認できていない。",
+    "date": "2026-10-02",
+    "newsDate": "2026-09-22",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Alibaba",
+      "Qwen",
+      "エージェント",
+      "エッジAI"
+    ]
+  },
+  {
+    "id": "alibaba-zhenwu-v900-ai-chip-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Alibabaのチップ部門T-Headが「Zhenwu V900」を発表 — 216GBメモリ、前世代比3倍はAlibabaの説明、量産は2027年第1四半期予定",
+    "excerpt": "Alibaba傘下のチップ設計会社T-Headが、Apsara Conference 2026（2026年9月22日）でAIの学習・推論向けプロセッサ「Zhenwu V900」を発表した。Alibaba Cloudの公式ブログによれば、216GBのGPUメモリと1,200GB/sのチップ間帯域を備え、最大50万枚のスーパーノードクラスタに対応し、量産・商用リリースは2027年第1四半期の予定である。前世代M890比3倍の性能と「中国最強」はAlibabaの説明で、独立した検証は確認できていない。",
+    "date": "2026-10-02",
+    "newsDate": "2026-09-22",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Alibaba",
+      "半導体",
+      "Qwen",
+      "中国AI"
+    ]
+  },
+  {
+    "id": "magnitude-local-inference-server-coding-agents-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "ハードウェアに合わせてローカルモデルを選ぶ推論サーバ「Magnitude」— Claude Code・Cline 等にAPIキー無しで接続、GitHub トレンド入り",
+    "excerpt": "OSS の推論サーバ「Magnitude」が9月上旬に GitHub トレンド入りした。2026年9月5日時点の README は、手元のマシンをプロファイリングして動かせるモデルを推薦し、ダウンロード・チューニング・起動まで行う設計を説明している。Claude Code・Cline・Codex など8種のコーディングエージェントに接続でき、トークン課金・APIキー・レート制限なし、ダウンロード後は完全オフラインで動くとされる。その後9月中旬に製品はデスクトップアプリ中心に作り直されており、本文末尾で時点を分けて書く。",
+    "date": "2026-10-02",
+    "newsDate": "2026-09-05",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "オープンソース",
+      "ローカルLLM",
+      "エッジAI",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "nvidia-open-agent-safety-platform-2026",
+    "type": "news",
+    "category": "product",
+    "title": "NVIDIA が「Open Agent Safety Platform」を発表 — ソフトの境界「OpenShell」と、DPU上で監視する「Sentry」の二層構成",
+    "excerpt": "NVIDIA が9月28日、AIエージェントを実行境界の内側に留める「Open Agent Safety Platform」を発表した。オープンソースの実行境界 OpenShell と、BlueField-4 上で動く監視機構 Sentry の組み合わせである。OpenShell 自体は3月に公開済みで、今回新しいのは Sentry と、両者を一体のプラットフォームとして示した点にあたる。発表には、2026年7月に NVIDIA 主導で設立され9月に Linux Foundation 傘下へ移った Open Secure AI Alliance も関わる。NVIDIA のニュースルームと開発者ブログで内容を確認した。",
+    "date": "2026-10-02",
+    "newsDate": "2026-09-28",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "エージェント",
+      "セキュリティ",
+      "NVIDIA",
+      "オープンソース"
+    ]
+  },
+  {
+    "id": "anthropic-pentagon-dc-circuit-appeal-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "Anthropic対米国防総省、D.C.巡回区控訴裁が41 U.S.C. §4713に基づく決定を2対1で支持 — 8月の地裁判断とは別の法令・別の法廷",
+    "excerpt": "ワシントンD.C.巡回区控訴裁判所は2026年9月25日、AnthropicがSupply Chain Security Act（41 U.S.C. §4713）に基づく国防総省の決定の審査を求めた請願（No. 26-1049）を、2対1で棄却した。多数意見はKatsas判事が執筆し、Henderson判事が反対意見を付けた。当サイトが9月16日に報じた北カリフォルニア連邦地裁の判断は、同じ3月3日に行われた別の法令（10 U.S.C. §3252）に基づく指定についてのものである。判決文によれば、多数意見は地裁の§3252の解釈に異論を示さず、§4713の定義が異なる点を理由に結論を分けた。",
+    "date": "2026-10-02",
+    "newsDate": "2026-09-25",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "規制",
+      "軍事",
+      "訴訟"
+    ]
   }
 ];
