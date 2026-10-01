@@ -26499,11 +26499,6 @@ const ARTICLES_BODY = {
         "url": "https://newsroom.servicenow.com/press-releases/details/2026/Introducing-Flow-by-ServiceNow-a-new-AI-service-desk-that-deploys-instantly/default.aspx"
       },
       {
-        "title": "Introducing Flow by ServiceNow: a new AI service desk that deploys instantly（Business Wire 配信版）",
-        "site": "Business Wire",
-        "url": "https://www.businesswire.com/news/home/20261001356145/en/"
-      },
-      {
         "title": "Flow Designer",
         "site": "ServiceNow Docs",
         "url": "https://www.servicenow.com/docs/r/xanadu/application-development/flow-designer.html"
