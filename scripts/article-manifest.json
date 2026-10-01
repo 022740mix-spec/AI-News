@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-10-01",
-  "count": 540,
+  "count": 541,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -482,6 +482,7 @@
     "sakana-fugu-review",
     "samsung-health-ai-training-consent-delete-data-2026",
     "satya-nadella-dwarkesh-podcast-2026",
+    "servicenow-flow-ai-service-desk-2026",
     "shopify-ai-toolkit-oss-mcp-agent-2026",
     "singularity-mythos-2026-spring",
     "sony-warner-chappell-sue-anthropic-copyright-2026",

@@ -26439,6 +26439,76 @@ const ARTICLES_BODY = {
         "url": "https://newsroom.ibm.com/2026-04-28-introducing-ibm-bob-ai-development-partner-that-takes-enterprises-from-ai-assisted-coding-to-production-ready-software"
       }
     ]
+  },
+  "servicenow-flow-ai-service-desk-2026": {
+    "body": [
+      "ServiceNow は2026年10月1日（米国時間）、会話型の AI サービスデスク「Flow by ServiceNow」を発表した。プレスリリースは Flow を「ServiceNow 社内のスタートアップ」と位置づけ、ITSM（IT サービス管理）を AI 時代向けに導入し直すチームのための、AI ネイティブな会話型サービスデスクだと説明している。対象は小さなチームから大企業までとされる。",
+      "仕組みの中心は、チャットの会話そのものを窓口にすることである。リリースによると、従業員は Slack や Microsoft Teams など、普段使っているチャットの中で依頼や質問を出し、Flow が答えを返す。ポータルやチケットシステムへ画面を切り替える必要がない、というのが ServiceNow の説明である。Flow は依頼に答えるだけでなく、対応を完了させるか、必要に応じて自動でエスカレーションするとしている。",
+      "もう1つの特徴として挙げられているのが、繰り返しの依頼の自動化である。リリースは、パスワードのリセット、アクセス申請、規程に関する質問、インフラのプロビジョニングを例に挙げ、利用者が依頼を正しく解決したら、その手順をワンクリックで自動化に登録でき、次に同じ依頼が来たときは Flow が自動で処理すると書いている。ナレッジベースの記事は不要だとも述べている。",
+      "導入の手軽さについて、ServiceNow は「即座に導入でき、1日で稼働する」「導入プロジェクトもインフラも不要」「従業員のトレーニングも不要」と説明している。これらは当事者の説明であり、導入にかかる期間や自動化の精度について、独立した検証は確認できていない。リリースには IDC のアナリストのコメントと4つの組織の利用者の声が載っているが、いずれも ServiceNow が自社の発表に掲載したものである。そのうち米海軍の FNMOC（艦隊数値気象海洋センター）のコメントは「Flow could help」と、効果を見込みとして述べている。",
+      "購入の経路は2つある。新規の顧客は、既存の ServiceNow との契約やプラットフォームを前提とせずに Flow を直接購入して有効化できる。既存の顧客については、リリースは「AI-native SKU」の顧客が追加の調達費用なしに、消費量ベースの利用で Flow をすぐに導入できると書き、別の段落では、AI 機能を含む ServiceNow の料金プランの既存顧客にも提供すると書いている。本格的な ITSM を運用している組織が、特定の部門、リモートのチーム、買収した事業部門だけに Flow を使う形も想定されている。",
+      "既存の仕組みとの関係について、リリースは Flow が既存のナレッジ、資産、チケット管理、AI の利用と統合でき、必要なときに監査とガバナンスのため ServiceNow AI Platform と結び付いていると説明している。ただし、どのナレッジ源やチケットシステムと接続できるのか、監査ログに何が残るのか、どの言語モデルを使うのか、データをどこで処理するのかといった具体的な仕様は、公式の資料には書かれていない。",
+      "提供時期は次のとおりである。リリースによると、現在は限定提供（controlled availability）の段階で、関心のある人は letsflow.ai で登録すると、更新情報と無料トライアルの早期アクセスを受けられる。最初の数週間は北米の顧客を優先し、北米と EMEA の一般提供は2026年第4四半期の予定とされる。日本を含むアジア太平洋での提供時期、日本語への対応、新規顧客向けの料金は、公式の資料には書かれていない。リリースは、これらが将来の見通しに関する記述であり、実際の結果と異なりうるとも明記している。",
+      "名前の似た既存機能にも注意したい。ServiceNow のプラットフォームには以前から「Flow Designer」という、承認・タスク・通知・レコード操作などの処理をノーコードで自動化する機能がある。今回の Flow はリリースで「新しい単体の製品」とされており、Flow Designer との関係はリリースには書かれていない。情報を探すときに混同しないようにしたい。",
+      "Slack や Teams の会話の中で業務を処理する仕組みは、他社も出している。OpenAI の Enterprise 向け機能については[ChatGPT Enterprise の Slack・Teams 連携と管理者の設定項目](?a=chatgpt-enterprise-team-tasks-slack-teams-shared-connections-2026)で整理した。導入を検討する担当者は、一般提供の時点で、対応する地域と言語、新規顧客の料金、接続できるシステム、権限と監査の仕組みが公式に示されるかを確認するとよい。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 6,
+        "caption": "Flow by ServiceNow の提供条件（2026年10月1日のプレスリリースより）",
+        "headers": [
+          "項目",
+          "リリースの記載"
+        ],
+        "rows": [
+          [
+            "製品の位置づけ",
+            "会話型の AI ネイティブなサービスデスク。新しい単体の製品"
+          ],
+          [
+            "使う場所",
+            "Slack や Microsoft Teams などのチャット"
+          ],
+          [
+            "新規の顧客",
+            "既存の ServiceNow 契約なしで直接購入・有効化できる"
+          ],
+          [
+            "既存の顧客",
+            "AI-native SKU の顧客は追加の調達費用なし、消費量ベースの利用。AI 機能を含む料金プランの顧客にも提供"
+          ],
+          [
+            "現在の段階",
+            "限定提供。letsflow.ai で登録すると無料トライアルの早期アクセス"
+          ],
+          [
+            "一般提供",
+            "北米と EMEA で2026年第4四半期の予定（最初の数週間は北米を優先）"
+          ],
+          [
+            "日本・新規顧客の料金",
+            "公式の資料には書かれていない"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Flow by ServiceNow: a new AI-native service desk that deploys instantly",
+        "site": "ServiceNow Newsroom",
+        "url": "https://newsroom.servicenow.com/press-releases/details/2026/Introducing-Flow-by-ServiceNow-a-new-AI-service-desk-that-deploys-instantly/default.aspx"
+      },
+      {
+        "title": "Introducing Flow by ServiceNow: a new AI service desk that deploys instantly（Business Wire 配信版）",
+        "site": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20261001356145/en/"
+      },
+      {
+        "title": "Flow Designer",
+        "site": "ServiceNow Docs",
+        "url": "https://www.servicenow.com/docs/r/xanadu/application-development/flow-designer.html"
+      }
+    ]
   }
 };
 

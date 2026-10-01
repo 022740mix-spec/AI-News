@@ -11516,5 +11516,23 @@ export const ARTICLES_META = [
       "セキュリティ",
       "セルフホスト"
     ]
+  },
+  {
+    "id": "servicenow-flow-ai-service-desk-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ServiceNow が「Flow」を発表、Slack・Teams の会話で社内の依頼を処理する単体のサービスデスク。北米・EMEA の一般提供は2026年第4四半期の予定",
+    "excerpt": "ServiceNow は2026年10月1日、会話型の AI サービスデスク「Flow by ServiceNow」を発表した。Slack や Microsoft Teams のチャットの中で従業員の依頼に答え、正しく解決できた対応はワンクリックで自動化に登録できるという。既存の ServiceNow 契約がなくても購入できる単体の製品で、AI を含む料金プランの既存顧客も使える。現在は限定提供の段階で、北米と EMEA の一般提供は2026年第4四半期の予定とされ、日本での提供や新規顧客の料金は公式の資料には書かれていない。",
+    "date": "2026-10-02",
+    "newsDate": "2026-10-01",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "ServiceNow",
+      "エンタープライズ",
+      "エージェント",
+      "Slack",
+      "Microsoft Teams"
+    ]
   }
 ];
