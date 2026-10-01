@@ -11377,5 +11377,23 @@ export const ARTICLES_META = [
       "プラグイン",
       "認証"
     ]
+  },
+  {
+    "id": "openai-cli-1-31-readable-output-subgroups-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "OpenAI の公式 CLI「openai」v1.31.0 — API を resource 単位のコマンドで叩く Go 製ツール、出力は既定で読みやすい文章、画像は Downloads に保存",
+    "excerpt": "OpenAI が公式 org で公開している Go 製の API 用 CLI「openai-cli」が10月1日に v1.31.0 を公開した。コマンドを階層で辿れるサブグループが入った。README からは、既定の出力形式、画像の保存先、管理者キーの分離、信頼できない入力への対策といった設計が読み取れる。",
+    "date": "2026-10-01",
+    "newsDate": "2026-10-01",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "CLI",
+      "API",
+      "認証",
+      "画像生成"
+    ]
   }
 ];

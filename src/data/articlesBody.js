@@ -25892,6 +25892,35 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/scripting"
       }
     ]
+  },
+  "openai-cli-1-31-readable-output-subgroups-2026": {
+    "body": [
+      "OpenAI の GitHub 公式 org にある `openai/openai-cli` は、OpenAI の REST API を端末から呼ぶための公式 CLI である。README の冒頭は「The official CLI for the OpenAI REST API」で、Go で書かれ、著作権表記は OpenAI（2026年）になっている。CHANGELOG によれば 10月1日に v1.31.0 が公開され、機能追加は「browsable command subgroups（辿れるコマンドのサブグループ）」の1件である。直前の v1.30.7 までは 9月30日付で、API リファレンスの更新やデバッグログの出力制限などの小さな変更が並ぶ。",
+      "CHANGELOG に残っているのは v1.7.1（2026年8月5日）から v1.31.0 までの59版である。この記事では、いつ最初に公開されたかは確認できていない。以下は README と CHANGELOG の記載に基づく整理で、実際に動かして検証したものではない。",
+      "インストール方法は README に2通り書かれている。Homebrew では `brew install openai/tools/openai`、Go では `go install 'github.com/openai/openai-cli/cmd/openai@latest'` で、Go はバージョン 1.26 以上が必要とされる。コマンドの形は `openai <resource> [subresource...] <command> [flags...]` で、README の例は `openai responses create --input \"Say this is a test\" --model ...` である。標準の API には API キー（`OPENAI_API_KEY`）、管理系のエンドポイントには別の管理者キー（`OPENAI_ADMIN_KEY`）が要る。`openai admin organization usage completions` のように、使用量の取得は admin 配下に置かれている。v1.31.0 のサブグループは、`openai admin --help` や `openai admin organization --help` のようにグループごとに一覧を辿れるようにするもので、README によれば従来のコロン形式（`openai admin:organization:usage completions`）も引き続き使える。",
+      "出力の既定は、README の記述では「読みやすいテキスト」である。成功した JSON レスポンスは、パイプに流した場合も含めて既定で読みやすい文章として表示される。スクリプトで解析する場合は `--format json` や `--format jsonl` を指定する。`--transform` には GJSON 構文で値を抜き出す機能があり、エラー側にも `--format-error` と `--transform-error` が別に用意されている。エラーは既定で要約が stderr に出力され、README は、要約には拒否された値やリクエスト URL を含めないと書いている。",
+      "画像生成は、このツールの特徴的な部分である。`openai images generate --prompt \"A tiny orange robot\"` は画像を `~/Downloads/gpt-images/` に保存し、保存したパスを表示する。モデルを指定せず保存する場合の既定は `gpt-image-2.5-sunburst` で、docs の記述では「プリセットであり、アクセスや利用枠を保証するものではない」。生成には API クレジットを使い、選んだモデルへのアクセスが必要とされる。`--format json` などデータ形式を明示した場合は、画像を保存せず API のデータをそのまま返す。URL 形式のレスポンスはダウンロードされない。",
+      "認証情報とデータの扱いについて、README には具体的な記述がある。デバッグ（`--debug`）のログには HTTP のリクエストとレスポンスの本文が含まれうるため、機密が入りうる場合は共有しないよう書かれている。`--header` で渡した値はヘルプでは隠され、デバッグログでは伏せ字になる。認証情報を含むヘッダは、コマンド引数ではなく環境変数 `OPENAI_CUSTOM_HEADERS` で渡すよう勧めている（引数に書くとシェルの履歴に残るため）。相互 TLS（mTLS）は beta で、クライアント証明書と秘密鍵を別々の PEM ファイルで渡す。秘密鍵の中身を引数や環境変数に直接入れないよう明記されている。",
+      "ファイルを引数に渡す `@myfile.ext` 構文にも注意書きがある。`@` で始まる値はローカルファイルを読む指示として扱われるため、信頼できない出力をパイプで渡す場合は `OPENAI_UNTRUSTED_STDIN=1` を設定する。このモードでは、標準入力から来た値の `@` 参照はファイルを読まず、そのままの文字列になる。ファイルのアップロードは明示的なコマンドラインフラグでのみ行われる。",
+      "リポジトリの運営方針も README に書かれている。バグ報告と機能要望は GitHub Issues で受け付けるが、Pull Request はリポジトリのコラボレーターに限られ、外部からの PR は受け付けない。脆弱性の報告は SECURITY.md の手順に従う。",
+      "同じ週には、Anthropic の公式 CLI「ant」の v1.37 / v1.38 も公開されている。どちらも、各社の API を端末から使うための公式ツールである。この記事では両者の機能の優劣を比べていない。それぞれの README と CHANGELOG を一次資料として読む場合、公開された版や更新日が違うので、使う前に自分が使う版の記載を確認する必要がある。",
+      "導入にあたっては、`go install ...@latest` が常に最新版を取得する点に注意したい。バージョンを固定したい場合は `@v1.31.0` のようにタグを指定する。Homebrew の tap（`openai/tools`）も含め、実行前に公式リポジトリの README と一致していることを確かめてから入れること。管理者キーは通常の API キーと権限が違うため、共有のシェルや CI に置く前に、必要な範囲だけに絞ることを勧める。",
+      "根拠の数え方: この記事の主張はすべて、公式リポジトリ `openai/openai-cli` の README・docs・CHANGELOG（当事者自身の記録）に基づく。一次資料1本で、独立した第三者による検証や動作確認は確認できていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "openai/openai-cli（README）",
+        "url": "https://github.com/openai/openai-cli"
+      },
+      {
+        "title": "openai/openai-cli CHANGELOG",
+        "url": "https://github.com/openai/openai-cli/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "openai/openai-cli docs: image generation and saving",
+        "url": "https://github.com/openai/openai-cli/blob/main/docs/image-generation-saving.md"
+      }
+    ]
   }
 };
 
