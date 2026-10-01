@@ -48,6 +48,14 @@
     <summary>ワシントンD.C.巡回区控訴裁判所は2026年9月25日、AnthropicがSupply Chain Security Act（41 U.S.C. §4713）に基づく国防総省の決定の審査を求めた請願（No. 26-1049）を、2対1で棄却した。多数意見はKatsas判事が執筆し、Henderson判事が反対意見を付けた。当サイトが9月16日に報じた北カリフォルニア連邦地裁の判断は、同じ3月3日に行われた別の法令（10 U.S.C. §3252）に基づく指定についてのものである。判決文によれば、多数意見は地裁の§3252の解釈に異論を示さず、§4713の定義が異なる点を理由に結論を分けた。</summary>
   </entry>
   <entry>
+    <title>Microsoft、初のストリーミング文字起こし MAI-Transcribe-2-Streaming と音声合成 MAI-Voice-2.1 / 2.1-Flash を発表 — 音声エージェント向けの部品を一式で、Azure では公開プレビュー</title>
+    <link rel="alternate" type="text/html" href="?a=mai-voice-2-1-transcribe-2-streaming-2026"/>
+    <id>tag:ai-tool-news.jp,2026:mai-voice-2-1-transcribe-2-streaming-2026</id>
+    <published>2026-10-02T15:00:00Z</published>
+    <updated>2026-10-02T15:00:00Z</updated>
+    <summary>Microsoft AI は2026年10月1日、同社初のストリーミング型音声認識モデル MAI-Transcribe-2-Streaming と、音声合成モデル MAI-Voice-2.1 / MAI-Voice-2.1-Flash を発表した。Transcribe-2-Streaming は60言語（日本語を含む）に対応し、年末までの導入価格は音声1時間あたり0.54ドル。Voice-2.1 は23言語に広がったが、公式ドキュメントのプリビルト音声に日本語は含まれていない。第三者の Artificial Analysis のストリーミング部門では誤り率が最も低く掲載されている一方、遅延や「競合比2倍速」などの数値の多くは Microsoft 自身の説明である。Azure のドキュメント上はいずれも SLA の無い公開プレビューで、配信リージョンも限られる。</summary>
+  </entry>
+  <entry>
     <title>Claude Code、5時間の上限に達しても区切りのよいところまで進める——週次枠から小さな固定分を使い、Pro は週1回・Max は毎回</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-wrap-up-allowance-5-hour-limit-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-wrap-up-allowance-5-hour-limit-2026</id>

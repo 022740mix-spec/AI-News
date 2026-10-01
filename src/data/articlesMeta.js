@@ -11480,5 +11480,23 @@ export const ARTICLES_META = [
       "軍事",
       "訴訟"
     ]
+  },
+  {
+    "id": "mai-voice-2-1-transcribe-2-streaming-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Microsoft、初のストリーミング文字起こし MAI-Transcribe-2-Streaming と音声合成 MAI-Voice-2.1 / 2.1-Flash を発表 — 音声エージェント向けの部品を一式で、Azure では公開プレビュー",
+    "excerpt": "Microsoft AI は2026年10月1日、同社初のストリーミング型音声認識モデル MAI-Transcribe-2-Streaming と、音声合成モデル MAI-Voice-2.1 / MAI-Voice-2.1-Flash を発表した。Transcribe-2-Streaming は60言語（日本語を含む）に対応し、年末までの導入価格は音声1時間あたり0.54ドル。Voice-2.1 は23言語に広がったが、公式ドキュメントのプリビルト音声に日本語は含まれていない。第三者の Artificial Analysis のストリーミング部門では誤り率が最も低く掲載されている一方、遅延や「競合比2倍速」などの数値の多くは Microsoft 自身の説明である。Azure のドキュメント上はいずれも SLA の無い公開プレビューで、配信リージョンも限られる。",
+    "date": "2026-10-02",
+    "newsDate": "2026-10-01",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Microsoft",
+      "MAI",
+      "音声認識",
+      "音声合成",
+      "Azure"
+    ]
   }
 ];

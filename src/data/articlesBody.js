@@ -26136,6 +26136,184 @@ const ARTICLES_BODY = {
         "url": "https://abcnews.com/Business/anthropic-appeals-court-declines-block-pentagon-blacklisting/story?id=136755690"
       }
     ]
+  },
+  "mai-voice-2-1-transcribe-2-streaming-2026": {
+    "body": [
+      "Microsoft の AI 部門 Microsoft AI（MAI）は2026年10月1日、公式ブログで3つの音声モデルを発表した。同社として初めてのストリーミング型音声認識モデル MAI-Transcribe-2-Streaming と、音声合成（テキスト読み上げ）の MAI-Voice-2.1、その高速版の MAI-Voice-2.1-Flash である。ブログは3つを「会話型の音声エージェントを作るための部品」として並べており、聞き取りと発話の両端を自社モデルでそろえた形になる。",
+      "MAI の音声モデルは、4月の MAI-Transcribe-1 / MAI-Voice-1（[4月の発表](?a=microsoft-mai-transcribe-voice-image-foundry-2026)）、6月の Build で出た MAI-Transcribe-1.5 / MAI-Voice-2 / MAI-Voice-2-Flash（[Build 2026 のまとめ](?a=microsoft-build-2026-mai-7models-solara-majorana-2026)）、9月3日の一括処理向け MAI-Transcribe-2 と、ほぼ月単位で更新されてきた。9月の MAI-Transcribe-2 は録音済みファイルの文字起こし向けで、公式ブログによれば価格は音声1時間あたり0.10ドルである。今回の Streaming 版は、話している最中の音声を受け取りながら文字にする用途を受け持つ。",
+      "MAI-Transcribe-2-Streaming は、話し終わりを待たずに暫定の認識結果（パーシャル）を返し、文脈が増えるにつれて修正し、確定した文字列を順に返す。公式ブログは、音声を受け取ってから最初のパーシャルが出るまで「100ミリ秒強」とし、音声エージェントが発話の途中から推論やツール呼び出しを始められると説明する。リアルタイムの口述筆記や字幕では「最も近い競合より2倍速く文字が出る」とも書くが、これは Microsoft の社内評価であり、比較相手の名前と測定条件はブログに書かれていない。",
+      "対応言語は60で、言語の自動検出と、会話の途中で言語が切り替わる場合の継続的な検出に対応する。Microsoft Learn の言語表には日本語（ja）が含まれている。価格は公式ブログに「年末まで導入価格として音声1時間あたり0.54ドル」とあり、年明け以降の価格は公式の資料には書かれていない。",
+      "精度については、第三者の評価サイト Artificial Analysis の音声認識（ストリーミング）部門が数値を公開している。2026年10月1日時点の同サイトのデータでは、MAI-Transcribe-2-Streaming の単語誤り率の指標（AA-WER Streaming）は2.51%で、掲載モデルの中で最も低い。話し終わりから確定結果までの時間は約0.13秒、同サイトが載せる価格は1,000分あたり9ドル（1時間0.54ドルに相当）である。遅延も短い部類に入る（さらに短いモデルもある）一方、価格は表の上位に並ぶ他社モデルより高い。Microsoft のブログが引用する数値（2.50%、9月28日時点）とは日付の違いによる小さな差がある。",
+      "MAI-Voice-2.1 は、対応を23言語・26ロケールに広げた音声合成モデルである。6月の MAI-Voice-2 は15言語だった。公式ブログは、1つの声のまま英語・中国語・ドイツ語と話す言語を切り替えても、話者が同じに聞こえ、各言語のネイティブのアクセントで話せる点を前面に出している。価格は100万文字あたり22ドルで、4月の MAI-Voice-1 と同じ水準である。",
+      "注意したいのは日本語の扱いである。Microsoft Learn の MAI-Voice のページに載っているプリビルト音声の表には、チェコ語、ドイツ語、英語、スペイン語、フランス語、ヒンディー語、韓国語、中国語（簡体字）、タイ語、ベトナム語などが並ぶ一方、日本語（ja-JP）の音声は無い。聞き取り側の Transcribe-2-Streaming は日本語に対応するが、読み上げ側の Voice-2.1 は、公式ドキュメントの範囲では日本語の既製音声を提供していない。日本語の音声エージェントを両端 MAI で組む前提の場合、ここが最初の確認点になる。",
+      "MAI-Voice-2.1-Flash は、同じ言語と話者の切り替えに対応したまま、量が多く遅延に敏感な用途に寄せた版である。公式ブログは「45秒の音声を、エンドツーエンドで150ミリ秒の遅延で生成できる」「同等のモデルより推論が55%速く、約60%安い」とし、価格を100万文字あたり15ドルとしている。比較対象の「同等のモデル」が何かはブログに書かれていない。Microsoft Learn の説明では、Flash は音声エージェントやコールセンターの自動応答向け、無印の 2.1 は長尺のナレーションやオーディオブック向けと役割が分かれている。",
+      "音声の自然さについて、ブログは4,000人の聴取者によるチューリングテストで、50.3%が MAI-Voice の音声を人間の録音と同等以上に人間らしいと評価したとする。結果は 2.1 と 2.1-Flash を合わせたもので、試験の設計や聴取者の条件は公表されていない。これらの遅延・速度・自然さの数値は当事者の説明であり、独立した検証は確認できていない。",
+      "両モデルとも、数秒の参照音声から声を複製する機能（ボイスクローン）を全対応言語で持つ。Microsoft Learn によると、この機能は申請制（gated）で、Azure の Custom Neural Voice の限定アクセス審査を通る必要があり、本人の音声による同意を登録してから使う。参照音声は5〜60秒が推奨されている。ブログは「誤用を防ぐ同意のガードレール」を組み込んだとしている。",
+      "提供経路は、3モデルとも Microsoft Foundry、MAI Playground、Vercel、Azure Voice Live で、Voice-2.1 / 2.1-Flash は OpenRouter からも使える。LiveKit は「近日対応」とされている。MAI Playground には、3モデルを組み合わせた音声対話のデモ「Chatter」が置かれた。",
+      "導入を検討する側が確認すべき点は、公式ブログより Microsoft Learn の方に多く書かれている。まず、Azure のドキュメントでは Transcribe-2-Streaming も Voice-2.1 / 2.1-Flash も公開プレビューで、SLA が無く、本番用途は推奨されていない。発表ブログにはこの区分が書かれていない。次に、Transcribe-2-Streaming の配信リージョンは限られており、Sweden Central と Central US が利用可能、East US 2 は近日対応で、残る1つは Realtime API のページでは South India、Speech SDK のページでは Southeast Asia と、ページによって記載が異なる。どのリージョンからも呼び出せて、これらのリージョンに転送される仕組みだが、日本のリージョンは配信元に含まれていない。音声データの処理場所に要件がある組織は、この点を契約前に確かめる必要がある。Voice-2.1 / 2.1-Flash は Japan East を含む14リージョンから配信される。",
+      "実装面では、Transcribe-2-Streaming は OpenAI の Realtime API に近い WebSocket のプロトコルと、Azure Speech SDK の2通りで使える。Realtime API 側では1セッションの上限が1時間で、サーバー側の発話区間検出は無く、確定のタイミングはクライアントが commit で指示する。Speech SDK 側の結果には、検出した言語、信頼度、単語単位のタイムスタンプが含まれない。会議の議事録のように話者や単語の時刻が要る用途では、一括処理の MAI-Transcribe-2 と使い分けることになる。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 0,
+        "caption": "今回発表された3モデル（公式ブログと Microsoft Learn の記載）",
+        "headers": [
+          "モデル",
+          "種類",
+          "言語",
+          "価格（公式ブログ）",
+          "Azure での区分"
+        ],
+        "rows": [
+          [
+            "MAI-Transcribe-2-Streaming",
+            "ストリーミング音声認識",
+            "60言語（日本語を含む）",
+            "音声1時間 0.54ドル（年末までの導入価格）",
+            "公開プレビュー"
+          ],
+          [
+            "MAI-Voice-2.1",
+            "音声合成（高品質・長尺向け）",
+            "23言語・26ロケール（日本語の既製音声は無い）",
+            "100万文字 22ドル",
+            "公開プレビュー"
+          ],
+          [
+            "MAI-Voice-2.1-Flash",
+            "音声合成（低遅延・大量処理向け）",
+            "同上",
+            "100万文字 15ドル",
+            "公開プレビュー"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 4,
+        "caption": "Artificial Analysis 音声認識（ストリーミング）部門の上位と主な他社モデル（2026年10月1日時点の同サイトのデータ）",
+        "headers": [
+          "モデル",
+          "AA-WER Streaming（低いほど良い）",
+          "話し終わりから確定まで",
+          "価格（1,000分あたり）"
+        ],
+        "rows": [
+          [
+            "MAI-Transcribe-2-Streaming",
+            "2.51%",
+            "約0.13秒",
+            "9ドル"
+          ],
+          [
+            "Grok Voice Transcribe 2.0 (Streaming)",
+            "2.73%",
+            "約0.49秒",
+            "3.33ドル"
+          ],
+          [
+            "Muse Voice Transcribe",
+            "3.06%",
+            "約0.16秒",
+            "3ドル"
+          ],
+          [
+            "ElevenLabs Scribe v2 Realtime",
+            "3.59%",
+            "約0.14秒",
+            "6.5ドル"
+          ],
+          [
+            "GPT Live Transcribe",
+            "3.92%",
+            "約0.81秒",
+            "17ドル"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 11,
+        "caption": "MAI-Transcribe-2-Streaming の配信リージョン（Microsoft Learn、2026年10月1日更新のページ）",
+        "headers": [
+          "リージョン",
+          "Realtime API のページ",
+          "Speech SDK のページ"
+        ],
+        "rows": [
+          [
+            "Sweden Central",
+            "利用可能",
+            "利用可能"
+          ],
+          [
+            "Central US",
+            "利用可能",
+            "利用可能"
+          ],
+          [
+            "East US 2",
+            "近日対応",
+            "近日対応"
+          ],
+          [
+            "South India",
+            "利用可能",
+            "記載なし"
+          ],
+          [
+            "Southeast Asia",
+            "記載なし",
+            "利用可能"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Our first streaming transcription model debuts at no. 1 on Artificial Analysis",
+        "site": "Microsoft AI",
+        "url": "https://microsoft.ai/news/our-first-streaming-transcription-model/"
+      },
+      {
+        "title": "MAI-Transcribe-2-Streaming overview",
+        "site": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/mai-transcribe-2-streaming"
+      },
+      {
+        "title": "Use MAI-Transcribe-2-Streaming with the Realtime API",
+        "site": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/mai-transcribe-2-streaming-realtime"
+      },
+      {
+        "title": "Use MAI-Transcribe-2-Streaming with Azure Speech SDK",
+        "site": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/mai-transcribe-2-streaming-speech-sdk"
+      },
+      {
+        "title": "MAI-Voice in Azure Speech",
+        "site": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/mai-voices"
+      },
+      {
+        "title": "Speech to Text Providers Leaderboard (Streaming)",
+        "site": "Artificial Analysis",
+        "url": "https://artificialanalysis.ai/speech-to-text/streaming"
+      },
+      {
+        "title": "MAI-Transcribe-2 is the fastest, most accurate and cheapest speech recognition model in the world",
+        "site": "Microsoft AI",
+        "url": "https://microsoft.ai/news/mai-transcribe-2-is-the-fastest-most-accurate-and-cheapest-speech-recognition-model-in-the-world/"
+      },
+      {
+        "title": "MAI-Voice-2",
+        "site": "Microsoft AI",
+        "url": "https://microsoft.ai/news/mai-voice-2/"
+      },
+      {
+        "title": "Today we're announcing 3 new world class MAI models, available in Foundry",
+        "site": "Microsoft AI",
+        "url": "https://microsoft.ai/news/today-were-announcing-3-new-world-class-mai-models-available-in-foundry/"
+      }
+    ]
   }
 };
 
