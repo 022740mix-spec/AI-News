@@ -16,6 +16,14 @@
     <summary>Alibabaは9月22日、杭州のApsara Conferenceで、スマートフォンメーカー向けのフルスタック型エージェント基盤「Qwen Intelligence」を発表した。第1弾のパートナーはHONORで、9月28日に発売予定とされたMagic9シリーズとHONOR Robot Phoneが最初の搭載機種になる。第1フェーズは「Mobile Planner Agent」「Mobile-Use Agent」「Mobile Creative Agent」の3エージェントで構成される。タスク精度が最大91.8%、100ステップを超える一連の操作を扱えるという数値はAlibabaの発表値で、独立した検証は確認できていない。</summary>
   </entry>
   <entry>
+    <title>Alibabaのチップ部門T-Headが「Zhenwu V900」を発表 — 216GBメモリ、前世代比3倍はAlibabaの説明、量産は2027年第1四半期予定</title>
+    <link rel="alternate" type="text/html" href="?a=alibaba-zhenwu-v900-ai-chip-2026"/>
+    <id>tag:ai-tool-news.jp,2026:alibaba-zhenwu-v900-ai-chip-2026</id>
+    <published>2026-10-02T15:00:00Z</published>
+    <updated>2026-10-02T15:00:00Z</updated>
+    <summary>Alibaba傘下のチップ設計会社T-Headが、Apsara Conference 2026（2026年9月22日）でAIの学習・推論向けプロセッサ「Zhenwu V900」を発表した。Alibaba Cloudの公式ブログによれば、216GBのGPUメモリと1,200GB/sのチップ間帯域を備え、最大50万枚のスーパーノードクラスタに対応し、量産・商用リリースは2027年第1四半期の予定である。前世代M890比3倍の性能と「中国最強」はAlibabaの説明で、独立した検証は確認できていない。</summary>
+  </entry>
+  <entry>
     <title>Claude Code、5時間の上限に達しても区切りのよいところまで進める——週次枠から小さな固定分を使い、Pro は週1回・Max は毎回</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-wrap-up-allowance-5-hour-limit-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-wrap-up-allowance-5-hour-limit-2026</id>

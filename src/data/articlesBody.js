@@ -25944,6 +25944,40 @@ const ARTICLES_BODY = {
         "url": "https://www.honor.com/cn/activity/honor-magic9-series-launch/"
       }
     ]
+  },
+  "alibaba-zhenwu-v900-ai-chip-2026": {
+    "body": [
+      "Alibaba傘下のチップ設計会社T-Head（平頭哥）が、2026年9月22日にApsara Conference 2026で、AIの学習・推論向けプロセッサ「Zhenwu V900」を発表した。Alibaba Cloudの公式ブログに掲載された発表まとめによる。同社の別の公式ブログ（基調講演の報告）は、会議が杭州で9月22日に開幕したと書いている。",
+      "公式ブログによると、Zhenwu V900は216GBのGPUメモリと1,200GB/sのチップ間帯域幅を備え、FP8・FP4を含む複数のデータ精度にネイティブ対応する。高精度のモデル学習と超低精度の推論の両方を扱えるとされる。量産・商用リリースは2027年第1四半期の予定である。性能については、5月に発表された前世代「Zhenwu M890」の3倍とAlibabaは説明している。ただし絶対的な性能値（FLOPS等）は、公式の発表には書かれていない。",
+      "V900は、ICN Switch、Panmai SmartNIC、Zhenyue SSDコントローラチップと組み合わせた「スーパーノード」サーバに搭載される。公式ブログは、このサーバが最大50万枚のカードからなるスーパーノードクラスタに対応すると説明している。同ブログによれば、T-HeadのZhenwuシリーズは既に自動車・金融・大規模言語モデル・エンボディドAI・エネルギー・製造などの650社超の顧客に提供されているという（Alibabaの説明）。CPUについては、2027年にYitian 720と730を投入するロードマップも示された。730はT-Head独自のマイクロアーキテクチャを採用した最初のCPUで、Yitian 710比でSPECint2017/GHzが最大40%向上するとされる。",
+      "同じ発表でAlibabaは、Qwen 4.5・Qwen 5シリーズが5〜10兆パラメータ規模を目指すロードマップも示した（詳しくは「[Alibabaが次世代「Qwen4」は学習中と発表](?a=alibaba-qwen4-apsara-unveil-2026)」を参照）。V900は「フロンティアモデルの学習と推論」向けと位置づけられ、V900ベースのクラスタが最大50万枚に対応するとも説明されている。一方、公式ブログはV900がそれらのモデルのために設計されたとまでは書いていない。両者の結び付けは、AP通信の報道を引いたTom's Hardwareの記事にある。",
+      "Alibabaグループ CEOのEddie Wu（呉泳銘）氏は基調講演で、V900を「現時点で中国最強のAIチップ」と述べた。3倍という性能倍率とあわせて、いずれも当事者であるAlibabaの説明である。独立した性能検証は確認できていない。",
+      "このうち、V900の仕様と時期は、Alibaba Cloud公式ブログの発表まとめ（9月22日）とCEO基調講演を伝える公式ページ（9月23日）で確認した。Tom's Hardware（9月23日付）とTechNode（9月22日付）も同じ発表を報じているが、前者はAP通信の報道を引いており、後者はT-Headの発表を直接引用している。いずれも元は同じ発表であり、独立した検証が加わったものではない。",
+      "公式発表は米国の対中輸出規制に触れていない。Tom's Hardwareは、この発表を米中の首脳会談・AI協議の文脈で報じている（同記事は、輸出規制は協議の議題になかったとも書く）。公式ブログはV900に加えて、Zhenwu（GPU）、Yitian（CPU）、Panmai（SmartNIC）、ICN（インターコネクト）、Zhenyue（SSDコントローラ）と、コンピューティング・ストレージ・ネットワークにわたる自社設計のチップ群を挙げている。",
+      "開発者・管理者が確認すべき点は次のとおり。量産・商用リリースは2027年第1四半期の予定で、現時点では発表済みの計画である。価格、提供形態、FLOPSなどの絶対性能値は、公式の発表には書かれていない。M890については、Eddie Wu氏が基調講演で、M890ベースのスーパーノードが今四半期から商用規模で稼働し、2兆パラメータ超のモデルの推論に対応すると述べている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Alibaba Unveils Roadmap on Full-Stack AI Strategy（Alibaba Cloud公式ブログ、2026-09-22）",
+        "site": "Alibaba Cloud",
+        "url": "https://www.alibabacloud.com/blog/alibaba-unveils-roadmap-on-full-stack-ai-strategy-from-chips-cloud-infrastructure-models-to-agents_603589"
+      },
+      {
+        "title": "AliViews: Eddie Wu Shares Alibaba's Strategic Full-Stack AI Roadmap at the 2026 Apsara Conference（CEO基調講演全文、2026-09-23）",
+        "site": "Alibaba Cloud",
+        "url": "https://www.alibabacloud.com/blog/aliviews-eddie-wu-shares-alibabas-strategic-full-stack-ai-roadmap-at-the-2026-apsara-conference_603595"
+      },
+      {
+        "title": "Alibaba unveils Zhenwu V900 AI accelerator（Tom's Hardware、2026-09-23、AP通信の報道を引用）",
+        "site": "Tom's Hardware",
+        "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/alibaba-unveils-zhenwu-v900-ai-accelerator-claims-its-the-most-powerful-ai-chip-in-china-accelerator-supports-500-000-chip-supercluster-with-a-10t-parameter-qwen-model-on-the-roadmap"
+      },
+      {
+        "title": "T-Head unveils Zhenwu V900 AI chip（TechNode、2026-09-22）",
+        "site": "TechNode",
+        "url": "https://technode.com/2026/09/22/t-head-unveils-zhenwu-v900-ai-chip-in-alibabas-push-to-expand-its-ai-infrastructure-stack/"
+      }
+    ]
   }
 };
 

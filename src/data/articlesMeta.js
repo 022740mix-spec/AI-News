@@ -11412,5 +11412,22 @@ export const ARTICLES_META = [
       "エージェント",
       "エッジAI"
     ]
+  },
+  {
+    "id": "alibaba-zhenwu-v900-ai-chip-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Alibabaのチップ部門T-Headが「Zhenwu V900」を発表 — 216GBメモリ、前世代比3倍はAlibabaの説明、量産は2027年第1四半期予定",
+    "excerpt": "Alibaba傘下のチップ設計会社T-Headが、Apsara Conference 2026（2026年9月22日）でAIの学習・推論向けプロセッサ「Zhenwu V900」を発表した。Alibaba Cloudの公式ブログによれば、216GBのGPUメモリと1,200GB/sのチップ間帯域を備え、最大50万枚のスーパーノードクラスタに対応し、量産・商用リリースは2027年第1四半期の予定である。前世代M890比3倍の性能と「中国最強」はAlibabaの説明で、独立した検証は確認できていない。",
+    "date": "2026-10-02",
+    "newsDate": "2026-09-22",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Alibaba",
+      "半導体",
+      "Qwen",
+      "中国AI"
+    ]
   }
 ];
