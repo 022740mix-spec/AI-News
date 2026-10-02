@@ -51,8 +51,19 @@
  *   "updatePrimarySources": [                  // 任意。url で1件を特定し title / site を差し替える
  *     { "url": "https://…", "title": "…" }
  *   ],
- *   "setMeta": { "lastReviewed": "2026-09-20" } // 任意。meta の項目を差し替える
+ *   "setMeta": { "lastReviewed": "2026-09-20" }, // 任意。meta の項目を差し替える
+ *   "retract": {                               // 任意。**取り下げ専用**。他の本文操作とは併用できない
+ *     "excerpt": "取り下げ告知の要約（一覧に出る）",
+ *     "notice": ["取り下げ告知の段落", "..."]    // 元の本文は削除され、これに置き換わる
+ *   }
  * }
+ *
+ * **retract は CLAUDE.md の「取り下げ手順」を1回の操作にしたもの。**
+ * 主要な事実が虚偽と判明した記事に限る。status を retracted にし、title の先頭に
+ * 【取り下げ】を付け、heroScope を none にし、pinned を外し、本文を告知文に置き換え、
+ * 表・図・グラフ・埋め込み・動画・デモを外す。告知文の末尾に【取り下げ YYYY-MM-DD】で
+ * 始まる段落（編集履歴）が必要（generate-updates.mjs がこの見出しから更新履歴を作る）。
+ * 取り下げた記事の id は再利用しない。
  *
  * **段落の中に改行を入れないこと。** 本文は `<p>{richArticleText(p)}</p>` で描画され、
  * `richArticleText` は改行を扱わず、CSS にも `white-space: pre-wrap` が無い。
@@ -291,7 +302,36 @@ if (removedSources.length) {
   newBody.primarySources = list;
 }
 
+// ── 取り下げ（専用。他の本文操作とは併用しない） ──
+//
+// **主要な事実が虚偽と分かった記事は、直すのではなく取り下げる**（CLAUDE.md「訂正・取り下げポリシー」）。
+// 取り下げは本文を全面的に告知文へ置き換えるため、他の置換・追記・表の操作とは混ぜない。
+// 手順（status・title・heroScope・pinned・本文・表や図の除去）を1回で行い、**手順の抜けを防ぐ**。
+const retract = patch.retract;
+if (retract !== undefined) {
+  const others = ["replacements", "insertAfter", "replaceTables", "addTables", "appendToBody", "addPrimarySources", "removePrimarySources", "updatePrimarySources", "setMeta"];
+  for (const k of others) if (patch[k] !== undefined) fail(`retract は ${k} と併用できません。`);
+  if (meta.status === "retracted") fail("既に取り下げ済みの記事です。");
+  if (typeof retract.excerpt !== "string" || !retract.excerpt) fail("retract.excerpt（要約）が必要です。");
+  if (!Array.isArray(retract.notice) || !retract.notice.length || retract.notice.some((p) => typeof p !== "string" || !p)) {
+    fail("retract.notice は空でない文字列の配列である必要があります。");
+  }
+  if (retract.notice.some((p) => p.includes("\n") && !p.trimStart().startsWith("```"))) fail("告知の段落に改行を入れないでください。");
+  if (!retract.notice.some((p) => /^【取り下げ \d{4}-\d{2}-\d{2}】/.test(p))) {
+    fail("retract.notice に「【取り下げ YYYY-MM-DD】」で始まる段落（編集履歴）が必要です。");
+  }
+  newBody.body = [...retract.notice];
+  for (const key of ["tables", "figures", "charts", "embeds", "videos", "demos"]) delete newBody[key];
+}
+
 const newMeta = { ...meta };
+if (retract !== undefined) {
+  newMeta.status = "retracted";
+  newMeta.heroScope = "none";
+  delete newMeta.pinned;
+  if (!String(newMeta.title).startsWith("【取り下げ】")) newMeta.title = `【取り下げ】${newMeta.title}`;
+  newMeta.excerpt = retract.excerpt;
+}
 for (const [k, v] of Object.entries(patch.setMeta ?? {})) {
   if (!META_KEYS.includes(k)) fail(`meta に無いキーです: ${k}`);
   newMeta[k] = v;
@@ -309,6 +349,7 @@ if (dryRun) {
   for (const src of updatedSources) console.log(`   出典の書き換え: ${src.url} → ${src.title ?? '(title そのまま)'}`);
   for (const src of removedSources) console.log(`   出典の削除: ${src.url}`);
   for (const [k, v] of Object.entries(patch.setMeta ?? {})) console.log(`   meta: ${k} = ${v}`);
+  if (retract !== undefined) console.log(`   取り下げ: status=retracted、title に【取り下げ】、本文を告知 ${retract.notice.length} 段落に置き換え`);
   process.exit(0);
 }
 
