@@ -4435,11 +4435,6 @@ const ARTICLES_BODY = {
     ],
     "primarySources": [
       {
-        "title": "Executive Order Targets State AI Regulation Through Federal Preemption",
-        "site": "McGuireWoods Consulting",
-        "url": "https://mwcllc.com/2026/01/20/executive-order-targets-state-ai-regulation-through-federal-preemption/"
-      },
-      {
         "title": "Examining the Landscape and Limitations of the Federal Push to Override State AI Regulation",
         "site": "Ropes & Gray LLP",
         "url": "https://www.ropesgray.com/en/insights/alerts/2026/03/examining-the-landscape-and-limitations-of-the-federal-push-to-override-state-ai-regulation"
@@ -4453,6 +4448,11 @@ const ARTICLES_BODY = {
         "title": "What Does Trump's AI Executive Order Mean for Colorado's AI Act?",
         "site": "Clark Hill PLC",
         "url": "https://www.clarkhill.com/news-events/news/what-does-trumps-ai-executive-order-mean-for-colorados-ai-act/"
+      },
+      {
+        "title": "Executive Order Targets State AI Regulation Through Federal Preemption",
+        "site": "McGuireWoods Consulting",
+        "url": "https://mwcllc.com/blog/executive-order-targets-state-ai-regulation-through-federal-preemption"
       }
     ]
   },
@@ -10640,7 +10640,7 @@ const ARTICLES_BODY = {
       {
         "title": "Introducing GPT-5.5",
         "site": "OpenAI",
-        "url": "https://openai.com/index/gpt-5-5/"
+        "url": "https://openai.com/index/introducing-gpt-5-5/"
       }
     ]
   },
@@ -13568,17 +13568,17 @@ const ARTICLES_BODY = {
     ],
     "primarySources": [
       {
-        "title": "Introducing GPT-5.5",
-        "site": "OpenAI",
-        "url": "https://openai.com/index/gpt-5-5/"
-      },
-      {
         "title": "Anthropic and Amazon expand collaboration for up to 5 gigawatts of new compute",
         "url": "https://www.anthropic.com/news/anthropic-amazon-compute"
       },
       {
         "title": "Amazon invests additional $5 billion in Anthropic",
         "url": "https://www.aboutamazon.com/news/company-news/amazon-invests-additional-5-billion-anthropic-ai"
+      },
+      {
+        "title": "Introducing GPT-5.5",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/introducing-gpt-5-5/"
       }
     ]
   },
@@ -13613,13 +13613,13 @@ const ARTICLES_BODY = {
     ],
     "primarySources": [
       {
-        "title": "GPT-5.5 Instant Now Default in ChatGPT",
-        "site": "OpenAI",
-        "url": "https://openai.com/index/gpt-5-5-instant-default/"
-      },
-      {
         "title": "Higher usage limits for Claude and a compute deal with SpaceX",
         "url": "https://www.anthropic.com/news/higher-limits-spacex"
+      },
+      {
+        "title": "GPT-5.5 Instant: smarter, clearer, and more personalized",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/gpt-5-5-instant/"
       }
     ]
   },
@@ -21041,7 +21041,8 @@ const ARTICLES_BODY = {
       "## 時期的に重なる別の事実",
       "この意見書自体は法廷での一論点に過ぎないが、時期的に重なる別の事実がある。OpenAI は2026年7月、[米国政府に自社株式の5%(評価額$852Bに基づき約$42.6B相当)を提供する枠組みを提示している](?a=openai-us-government-5-percent-stake-42b-offer-2026)。これは本件の意見書提出とは別の時期・別の交渉として進んでいる話であり、**両者の間に因果関係を示す報道は本稿の調査範囲では確認できていない**。ただし、AI企業の規制当局であり将来の株主にもなりうるという政府の立場が、同じ時期に並行して存在している事実として記録しておく。",
       "## 確認状況",
-      "本稿の調査環境では、意見書原本を保管する `justice.gov` および裁判記録データベース `courtlistener.com` へ直接アクセスできなかった。ただし gHacks、Deadline、The Legal Wire、InsiderFinance など独立した複数の報道機関が、提出日(9月1日)、意見書のページ数(約20ページ)、「extraordinarily transformative」という文言、New York Times の反応の要旨について一致して報じており、この一致をもって内容を確認できたと判断した。意見書原本の正確な文言は、直接到達できた段階で再確認する。"
+      "本稿の調査環境では、意見書原本を保管する `justice.gov` および裁判記録データベース `courtlistener.com` へ直接アクセスできなかった。ただし gHacks、Deadline、The Legal Wire、InsiderFinance など独立した複数の報道機関が、提出日(9月1日)、意見書のページ数(約20ページ)、「extraordinarily transformative」という文言、New York Times の反応の要旨について一致して報じており、この一致をもって内容を確認できたと判断した。意見書原本の正確な文言は、直接到達できた段階で再確認する。",
+      "【追記 2026-10-03】本文の段落9は、意見書の原本に直接到達できなかったことを前提に、複数の報道の一致から内容を確認したと書いていた。その後、CourtListener に登録された意見書の原本（文書番号 1682）に到達し、提出日が9月1日であること、全20ページであること、「extraordinarily transformative」の文言があることを原本で確認した。報道の記述と原本は一致していた。出典欄に原本のページを加えた。"
     ],
     "primarySources": [
       {
@@ -21057,8 +21058,9 @@ const ARTICLES_BODY = {
         "url": "https://thelegalwire.ai/u-s-doj-backs-fair-use-arguments-for-ai-training-in-the-new-york-times-copyright-case/"
       },
       {
-        "title": "In re: OpenAI Inc. Copyright Infringement Litigation, No. 25-md-03143（裁判記録。本稿の調査環境からは直接到達できず）",
-        "url": "https://www.courtlistener.com/docket/?q=25-md-03143"
+        "title": "Statement of Interest of the United States（Dkt. 1682、In re: OpenAI, Inc. Copyright Infringement Litigation, No. 25-md-03143, S.D.N.Y.、2026年9月1日提出）",
+        "site": "CourtListener（RECAP）",
+        "url": "https://www.courtlistener.com/docket/69879510/1682/in-re-openai-inc-copyright-infringement-litigation/"
       }
     ]
   },
@@ -21219,14 +21221,14 @@ const ARTICLES_BODY = {
         "url": "https://openai.com/index/daybreak-for-frontline-defenders/"
       },
       {
-        "title": "OpenAI commits $1B in AI credits to frontline cyber defenders",
-        "site": "The Register",
-        "url": "https://www.theregister.com/security/2026/09/04/openai_commits_1b_in_ai_credits_to_frontline_cyber_defenders/"
-      },
-      {
         "title": "OpenAI Pledges $1 Billion to Bring Frontier AI to Critical Infrastructure Defenders",
         "site": "SecurityWeek",
         "url": "https://www.securityweek.com/openai-pledges-1-billion-to-bring-frontier-ai-to-critical-infrastructure-defenders/"
+      },
+      {
+        "title": "OpenAI commits $1B in AI credits to frontline cyber defenders",
+        "site": "The Register",
+        "url": "https://www.theregister.com/security/2026/09/04/openai-commits-1b-in-ai-credits-to-frontline-cyber-defenders/5294382"
       }
     ]
   },
