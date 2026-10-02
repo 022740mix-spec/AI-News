@@ -11570,5 +11570,22 @@ export const ARTICLES_META = [
       "プラグイン",
       "開発ツール"
     ]
+  },
+  {
+    "id": "codex-cli-0-160-release-notes-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.160.0 の変更点、プロジェクト外でのセッション開始と Guardian レビューの拡張",
+    "excerpt": "OpenAI は Codex CLI 0.160.0 を公開した。エージェントのコマンドセンターで古いタスクを「Show more」で辿れるようになり、ポリシーが許せばプロジェクト外でもワークスペース既定でセッションを始められる。opt-in の Guardian レビューは、過去のユーザー指示の取得とエージェント引き継ぎの文脈を扱えるようになった。",
+    "date": "2026-10-02",
+    "newsDate": "2026-10-01",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "開発ツール"
+    ]
   }
 ];

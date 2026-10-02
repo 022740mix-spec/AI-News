@@ -88,6 +88,14 @@
     <summary>Claude Code の v2.1.287 は、プラグインがより深い挙動を変更できる「Claude Mods」と、最初の同梱 mod「You should know」を追加した。v2.1.286 では権限プロンプトの件数表示や、リモート関連の修正が入っている。公式 CHANGELOG の記載を、自分の版に機能があるかを判断できるよう整理する。</summary>
   </entry>
   <entry>
+    <title>Codex CLI 0.160.0 の変更点、プロジェクト外でのセッション開始と Guardian レビューの拡張</title>
+    <link rel="alternate" type="text/html" href="?a=codex-cli-0-160-release-notes-2026"/>
+    <id>tag:ai-tool-news.jp,2026:codex-cli-0-160-release-notes-2026</id>
+    <published>2026-10-02T15:00:00Z</published>
+    <updated>2026-10-02T15:00:00Z</updated>
+    <summary>OpenAI は Codex CLI 0.160.0 を公開した。エージェントのコマンドセンターで古いタスクを「Show more」で辿れるようになり、ポリシーが許せばプロジェクト外でもワークスペース既定でセッションを始められる。opt-in の Guardian レビューは、過去のユーザー指示の取得とエージェント引き継ぎの文脈を扱えるようになった。</summary>
+  </entry>
+  <entry>
     <title>Claude Code、5時間の上限に達しても区切りのよいところまで進める——週次枠から小さな固定分を使い、Pro は週1回・Max は毎回</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-wrap-up-allowance-5-hour-limit-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-wrap-up-allowance-5-hour-limit-2026</id>
