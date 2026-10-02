@@ -11552,5 +11552,40 @@ export const ARTICLES_META = [
       "推論",
       "AI インフラ"
     ]
+  },
+  {
+    "id": "claude-code-2-1-287-mods-you-should-know-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.287 で「Mods」が入る、プラグインが挙動の深部を変えられる。同梱の「You should know」は見落としを指摘する副エージェント",
+    "excerpt": "Claude Code の v2.1.287 は、プラグインがより深い挙動を変更できる「Claude Mods」と、最初の同梱 mod「You should know」を追加した。v2.1.286 では権限プロンプトの件数表示や、リモート関連の修正が入っている。公式 CHANGELOG の記載を、自分の版に機能があるかを判断できるよう整理する。",
+    "date": "2026-10-02",
+    "newsDate": "2026-10-01",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "プラグイン",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "codex-cli-0-160-release-notes-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.160.0 の変更点、プロジェクト外でのセッション開始と Guardian レビューの拡張",
+    "excerpt": "OpenAI は Codex CLI 0.160.0 を公開した。エージェントのコマンドセンターで古いタスクを「Show more」で辿れるようになり、ポリシーが許せばプロジェクト外でもワークスペース既定でセッションを始められる。opt-in の Guardian レビューは、過去のユーザー指示の取得とエージェント引き継ぎの文脈を扱えるようになった。",
+    "date": "2026-10-02",
+    "newsDate": "2026-10-01",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "開発ツール"
+    ]
   }
 ];
