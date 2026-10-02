@@ -1,0 +1,24 @@
+{
+  "_schema": "公開後に material な訂正・取り下げが出た記事の登録簿（Issue #155）。gate の発火回数とは別に、『通過して公開された後で誤りが分かった件』を数える。expectedGate は、どの関門なら本来止められたか。判定できなければ unknown のままにし、自動でどこかへ帰属させない。attributionConfidence は confirmed / candidate / unknown。disposition は訂正（correction）か取り下げ（retraction）で、事故の検出と最終の編集判断は別。登録は『material（中心命題・主要な事実に影響する）なもの』に限る。誤字・表記ゆれの訂正は登録しない。見たうえで material ではないと判断した記事は notMaterial に id を入れる（未分類の件数から外れる）。",
+  "notMaterial": [],
+  "incidents": [
+    {
+      "article": "alibaba-qwen4-apsara-unveil-2026",
+      "correctedOn": "2026-10-01",
+      "disposition": "correction",
+      "failureShape": "derivative_sources_counted_without_independent_root_confirmation",
+      "expectedGate": ["source_root"],
+      "attributionConfidence": "candidate",
+      "note": "同じ発表を伝える複数の派生報道を、独立した根が増えたように扱っていた。Alibaba Cloud 公式で確認できたのは『Qwen 4 は学習中』『Qwen 4.5 / 5 はロードマップ』までで、Max / Flash / Plus / 27B の名称は確認できなかった。取り下げず訂正にした（PR #156）。"
+    },
+    {
+      "article": "anthropic-pentagon-first-amendment-ruling-2026",
+      "correctedOn": "2026-10-02",
+      "disposition": "correction",
+      "failureShape": "court_type_misstated",
+      "expectedGate": ["unknown"],
+      "attributionConfidence": "unknown",
+      "note": "D.C. の控訴裁（D.C.巡回区）を『連邦地裁』と書いていた。後から別の記事の一次資料（判決文）を読んで判明した。どの関門なら止められたかは判定できない（PR #159）。"
+    }
+  ]
+}
