@@ -457,12 +457,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://022740mix-spec.github.io/AI-News/?a=runway-gen5-video-generation-2026</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://022740mix-spec.github.io/AI-News/?a=ai-image-api-guide-developers-2026</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -1148,12 +1142,6 @@
   </url>
   <url>
     <loc>https://022740mix-spec.github.io/AI-News/?a=midjourney-v8-review</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://022740mix-spec.github.io/AI-News/?a=runway-gen5-review</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
