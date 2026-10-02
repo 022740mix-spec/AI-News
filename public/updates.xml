@@ -16,6 +16,14 @@
     <summary>（誤）入力 $15 / 出力 $75。後継の Opus 4.7/4.8 では同じ性能帯で $5/$25 へ大幅値下げ →（正）入力 $5 / 出力 $25（同日に 追記 もあり）</summary>
   </entry>
   <entry>
+    <title>【訂正】Flux 2 レビュー — Black Forest Labs 発、フォトリアルと速度のバランス型</title>
+    <link rel="alternate" type="text/html" href="?a=flux-2-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:flux-2-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）Flux 2 は Pro / Dev / Schnell の3ティアで提供され、オープンウェイト版は… →（正）Schnell は FLUX.1 世代の区分で、FLUX.2 の公式ドキュメントのラインナップは…（同日に 追記 もあり）</summary>
+  </entry>
+  <entry>
     <title>【訂正】Gemini 3.1 Pro レビュー — Google の Pro 世代、1Mコンテキストと Google Cloud 統合</title>
     <link rel="alternate" type="text/html" href="?a=gemini-3-1-pro-review#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:gemini-3-1-pro-review:2026-10-03</id>
@@ -56,12 +64,28 @@
     <summary>（誤）2026年3月の招待制ローンチ →（正）2025年3月の招待制ローンチ（同日に 追記・追記・追記 もあり）</summary>
   </entry>
   <entry>
+    <title>【訂正】Midjourney V8 レビュー — 画像生成の王者、V8.1 で既定モデルに</title>
+    <link rel="alternate" type="text/html" href="?a=midjourney-v8-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:midjourney-v8-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）V8 世代では Web UI と API が正式公開され、API 利用は別途従量課金である →（正）V8 は2026年3月17日に alpha.midjourney.com でアルファ版として公開され、V8.1…（同日に 追記 もあり）</summary>
+  </entry>
+  <entry>
     <title>【訂正】Qwen 3 レビュー — Alibaba 発、ハイブリッド思考とオープンウェイトの大型ファミリー</title>
     <link rel="alternate" type="text/html" href="?a=qwen-3-review#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:qwen-3-review:2026-10-03</id>
     <updated>2026-10-03T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
     <summary>（誤）コード生成ではフラッグシップの 235B-A22B が Opus 4.6 や GPT-5.4… →（正）フラッグシップの 235B-A22B はコーディング・数学・汎用能力のベンチマークで…（同日に 追記 もあり）</summary>
+  </entry>
+  <entry>
+    <title>【訂正】Google Veo レビュー — 4K 長尺動画生成、Vertex AI とエンタープライズ統合</title>
+    <link rel="alternate" type="text/html" href="?a=veo-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:veo-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）Runway Gen-5 →（正）Runway（同日に 追記 もあり）</summary>
   </entry>
   <entry>
     <title>【追記】Alibaba が Qwen 3.8-Max を公開 — 2.4T/95B活性化、Max 級で初のオープンウェイト化、IFBench で Sol・Fable 5 を上回る</title>
@@ -136,6 +160,30 @@
     <summary>料金の記述を現行に合わせた。旧記述は「基本機能は無料で、各エージェントの利用に課金のハードルがない」だった（同日に 追記 もあり）</summary>
   </entry>
   <entry>
+    <title>【追記】GPT Image 1.5 レビュー — ChatGPT 統合で最も手軽、テキスト描画精度が秀逸</title>
+    <link rel="alternate" type="text/html" href="?a=gpt-image-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:gpt-image-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>本レビューの GPT Image 1.5 は現行世代ではなくなった</summary>
+  </entry>
+  <entry>
+    <title>【追記】Kling AI レビュー — 快手発の動画生成、無料枠の太さとリップシンクが魅力</title>
+    <link rel="alternate" type="text/html" href="?a=kling-ai-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:kling-ai-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>モデルの世代が進んでいる</summary>
+  </entry>
+  <entry>
+    <title>【追記】Nano Banana 2 レビュー — Google 発、Flash 級の速度で Pro 品質の画像生成</title>
+    <link rel="alternate" type="text/html" href="?a=nano-banana-2-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:nano-banana-2-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>API の提供状況が変わった</summary>
+  </entry>
+  <entry>
     <title>【追記】NotebookLM レビュー — Google発、アップロード資料に基づくAIリサーチ＆ポッドキャスト生成</title>
     <link rel="alternate" type="text/html" href="?a=notebooklm-review#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:notebooklm-review:2026-10-03</id>
@@ -150,6 +198,38 @@
     <updated>2026-10-03T15:00:00Z</updated>
     <category term="addendum" label="追記"/>
     <summary>Perplexity は検索の外へ広がっている（同日に 追記・追記 もあり）</summary>
+  </entry>
+  <entry>
+    <title>【追記】Pika レビュー — 手軽さ重視の動画生成、SNS コンテンツ制作に最適</title>
+    <link rel="alternate" type="text/html" href="?a=pika-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:pika-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>料金と提供形態が変わっている（同日に 追記 もあり）</summary>
+  </entry>
+  <entry>
+    <title>【追記】Stable Audio レビュー — Stability AI のオープン音楽生成、ローカル実行も可能</title>
+    <link rel="alternate" type="text/html" href="?a=stable-audio-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:stable-audio-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>Stability AI は2026年5月20日に新世代の Stable Audio 3.0 を公開した</summary>
+  </entry>
+  <entry>
+    <title>【追記】Suno V5 レビュー — テキストから楽曲を丸ごと生成、音楽制作の民主化</title>
+    <link rel="alternate" type="text/html" href="?a=suno-v5-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:suno-v5-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>本レビューの V5 は現行世代ではなくなった（同日に 追記 もあり）</summary>
+  </entry>
+  <entry>
+    <title>【追記】Udio レビュー — Suno 対抗の音楽生成、音質と楽曲構成力に定評</title>
+    <link rel="alternate" type="text/html" href="?a=udio-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:udio-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>権利関係と提供条件について、本文の「訴訟・和解・ライセンス交渉が報じられており」「商用利用のルールが整備途上」という記述は、本レビューの公開（2026年3月）…（同日に 追記 もあり）</summary>
   </entry>
   <entry>
     <title>【訂正】【分析】Anthropic vs 米国防総省、連邦地裁が「サプライチェーンリスク」指定を違法と判断 — 国防副長官は9月3日、なお維持の意向</title>
@@ -840,7 +920,7 @@
     <summary>（誤）newsDate を 2026-06-26 と記載 →（正）2026年6月19日</summary>
   </entry>
   <entry>
-    <title>【訂正】Midjourney V8 レビュー — 画像生成の王者、ついにWeb版とAPIを正式公開</title>
+    <title>【訂正】Midjourney V8 レビュー — 画像生成の王者、V8.1 で既定モデルに</title>
     <link rel="alternate" type="text/html" href="?a=midjourney-v8-review#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:midjourney-v8-review:2026-08-11</id>
     <updated>2026-08-11T15:00:00Z</updated>

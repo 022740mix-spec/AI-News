@@ -11190,18 +11190,40 @@ const ARTICLES_BODY = {
   },
   "midjourney-v8-review": {
     "body": [
-      "**Midjourney V8** は画像生成 AI の分野で最も広く知られるサービスのひとつ。V8 世代では Web UI と API が正式公開され、これまで Discord 限定だったアクセスが大幅に拡張された。フォトリアル、イラスト、抽象表現いずれにおいても業界トップクラスの品質を維持しており、プロンプトからの生成結果の一貫性と美しさは他サービスと比較して頭一つ抜けている。",
-      "**Web UI と API**: Web 版は midjourney.com 上で動作し、Discord に不慣れなユーザーでも直感的に利用可能。API はサードパーティアプリやワークフローへの組み込みに対応し、Zapier・Make 等との自動化パイプライン構築も現実的になった。画像エディタ機能（インペインティング、アウトペインティング、バリエーション）もWeb上で完結する。",
-      "**料金体系**: Basic（$10/月・約200枚）、Standard（$30/月・無制限リラックス）、Pro（$60/月・高速枠拡大）、Mega（$120/月・大量生成向け）の4プラン。商用利用は有料プランであれば許可されている。API 利用は別途従量課金で、1枚あたりのコストは生成設定により変動する。",
+      "**Midjourney V8** は画像生成 AI の分野で最も広く知られるサービスのひとつ。V8 は2026年3月17日に alpha.midjourney.com でアルファ版として公開され、6月11日に V8.1 が midjourney.com の既定モデルになった。フォトリアル、イラスト、抽象表現いずれにおいても業界トップクラスの品質を維持しており、プロンプトからの生成結果の一貫性と美しさは他サービスと比較して頭一つ抜けている。",
+      "**Web UI**: Web 版は midjourney.com 上で動作し、Discord に不慣れなユーザーでも直感的に利用可能。なお、Midjourney 公式の更新告知（updates.midjourney.com）には、V8 の公開以降、API の公開を告知した投稿は見当たらない（2026年10月3日に確認）。画像エディタ機能（インペインティング、アウトペインティング、バリエーション）もWeb上で完結する。",
+      "**料金体系**: Basic（$10/月・約200枚）、Standard（$30/月・無制限リラックス）、Pro（$60/月・高速枠拡大）、Mega（$120/月・大量生成向け）の4プラン。商用利用は有料プランであれば許可されている。",
       "**注意点**: 日本語プロンプトへの対応は限定的で、英語で指示した方が精度が高い。また、生成画像の著作権に関する法的整理は各国で進行中であり、クライアントワークでの利用時は商用ライセンス条件を事前に確認する必要がある。リアルタイムの人物生成はコンテンツポリシーにより制限がある。",
       "---",
-      "**【訂正 2026-08-11】** 総合評価を **4.5 → 4** に修正しました。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（4）と乖離していました。各軸の評価そのものは変更しておらず、**公表している算出方法どおりに総合スコアを計算し直した**ものです。"
+      "**【訂正 2026-08-11】** 総合評価を **4.5 → 4** に修正しました。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（4）と乖離していました。各軸の評価そのものは変更しておらず、**公表している算出方法どおりに総合スコアを計算し直した**ものです。",
+      "**【訂正 2026-10-03】**（誤）V8 世代では Web UI と API が正式公開され、API 利用は別途従量課金である →（正）V8 は2026年3月17日に alpha.midjourney.com でアルファ版として公開され、V8.1 が6月11日に既定モデルになった。Midjourney 公式の更新告知には API の公開を告知した投稿が見当たらず、API の提供は確認できない。見出しと概要も合わせて直しました。",
+      "**【追記 2026-10-03】** その後の世代の動き（Midjourney 公式の更新告知による）: 7月24日に V8.2 を公開（美観・画質・パーソナライズの改善）。8月27日には V8.2 ベースの編集モデルのテストを全ユーザーに開始し、指示による編集、最大4枚の画像参照、インペインティング・アウトペインティングに対応した。料金表（docs.midjourney.com）は実行環境から到達できず、本文の料金は今回再確認できていません。"
     ],
     "primarySources": [
       {
         "title": "Midjourney",
         "site": "Midjourney",
         "url": "https://www.midjourney.com/"
+      },
+      {
+        "title": "V8 Alpha",
+        "site": "Midjourney Updates",
+        "url": "https://updates.midjourney.com/v8-alpha/"
+      },
+      {
+        "title": "V8.1 is now the default model on Midjourney!",
+        "site": "Midjourney Updates",
+        "url": "https://updates.midjourney.com/v8-1-is-now-the-default-model/"
+      },
+      {
+        "title": "Version 8.2",
+        "site": "Midjourney Updates",
+        "url": "https://updates.midjourney.com/version-8-2/"
+      },
+      {
+        "title": "Edit Model for V8",
+        "site": "Midjourney Updates",
+        "url": "https://updates.midjourney.com/edit-model-for-v8/"
       }
     ]
   },
@@ -11227,13 +11249,25 @@ const ARTICLES_BODY = {
       "**Suno V5** はテキストプロンプトから歌詞・メロディ・アレンジ・ボーカルまで含むフル楽曲を一括生成するサービス。音楽制作の経験がなくても「90年代の日本のシティポップ風」のような自然言語指示で楽曲を作れる。V5 世代では音質が大幅に向上し、プロの楽曲と聴き比べても違和感が少ないレベルに達している。",
       "**使いやすさ**: Web UI は極めてシンプルで、テキスト入力→生成ボタンの2ステップで楽曲が完成する。歌詞のカスタム入力、ジャンル・ムードの指定、インストゥルメンタルモードにも対応。生成時間は1曲あたり30秒〜1分程度で、リアルタイムに近い体験が得られる。日本語の歌詞にも対応しており、日本語ボーカルの品質も実用レベルに達している。",
       "**料金**: 無料枠（1日5回・非商用）、Pro（$10/月・500クレジット・商用可）、Premier（$30/月・2000クレジット）。商用利用は Pro 以上で許可されるが、生成楽曲の著作権の帰属については議論が続いている。BGM やプロトタイプ用途では十分なコスパ。",
-      "**注意点**: API は現時点で一般公開されておらず、外部アプリとの統合は限定的。楽曲の細かな編集（特定パートの差し替え、ミキシング調整）はできず、生成結果をそのまま使う前提の設計。プロの音楽制作ツール（DAW）との連携もまだ発展途上。著作権・ライセンスの法的整理は各国で進行中。"
+      "**注意点**: API は現時点で一般公開されておらず、外部アプリとの統合は限定的。楽曲の細かな編集（特定パートの差し替え、ミキシング調整）はできず、生成結果をそのまま使う前提の設計。プロの音楽制作ツール（DAW）との連携もまだ発展途上。著作権・ライセンスの法的整理は各国で進行中。",
+      "**【追記 2026-10-03】** 本レビューの V5 は現行世代ではなくなった。Suno は2026年9月9日に v6 世代（v6・v6-wild・v6-mini）を公開し、公式ブログで「v6 の展開に合わせて旧モデルを退役させ、v6 世代へ完全に移行する」と説明している。v6 と v6-wild は Pro / Premier 向け、無料プランで使えるのは v6-mini である。v6 では自然言語による曲の部分編集、マッシュアップ、歌詞の一部だけの変更などが加わり、本文の「楽曲の細かな編集はできず」という記述は v6 には当てはまらない。詳しくは[Suno v6 の記事](?a=suno-v6-licensed-warner-bmg-believe-2026)を参照。",
+      "**【追記 2026-10-03】** 料金と提供条件も変わっている。2026年10月3日時点の公式料金ページでは、無料は1日50クレジット・ダウンロード不可・商用権なし、Pro は月2,500クレジット・月20曲までダウンロード・商用利用可、Premier は月10,000クレジット・月60曲までダウンロード・Suno Studio 付き（年払いの月額換算は Pro $8・Premier $24）。ダウンロード上限の導入の経緯は[ダウンロード上限の記事](?a=suno-download-limits-2026)を参照。★は公開時の条件に基づく評価で、今回は改訂していない。"
     ],
     "primarySources": [
       {
         "title": "Suno",
         "site": "Suno",
         "url": "https://suno.com/"
+      },
+      {
+        "title": "Introducing v6",
+        "site": "Suno",
+        "url": "https://suno.com/blog/introducing-v6"
+      },
+      {
+        "title": "Pricing",
+        "site": "Suno",
+        "url": "https://suno.com/pricing"
       }
     ]
   },
@@ -11242,13 +11276,19 @@ const ARTICLES_BODY = {
       "**Kling AI** は中国のショート動画プラットフォーム **快手（Kwai/Kuaishou）** が開発する動画生成サービス。テキストや画像から最長2分・1080p の動画を生成でき、無料枠の充実度が他サービスと比較して突出している。日本を含むグローバル向けに klingai.com でアクセス可能。",
       "**リップシンクと顔表現**: Kling の大きな特徴はリップシンク（口の動きと音声の同期）の精度の高さ。音声ファイルをアップロードすると、生成キャラクターが自然に話しているような動画を作成できる。表情のバリエーションも豊かで、広告やSNSコンテンツ制作での実用性が高い。",
       "**料金と無料枠**: 無料ユーザーでも毎日一定数の生成が可能で、試用のハードルが非常に低い。有料プランは月額数ドルからで、大量生成向けのクレジットパックも用意されている。Runway や Pika と比較すると、同程度の品質を大幅に低いコストで得られるケースが多い。",
-      "**注意点**: 中国企業のサービスであるため、データの保存先やプライバシーポリシーについて企業利用では事前確認が必須。コンテンツポリシーは中国の規制に準拠しており、生成可能なコンテンツの範囲が他サービスと異なる場合がある。API の一般公開は限定的で、ワークフロー統合には課題が残る。"
+      "**注意点**: 中国企業のサービスであるため、データの保存先やプライバシーポリシーについて企業利用では事前確認が必須。コンテンツポリシーは中国の規制に準拠しており、生成可能なコンテンツの範囲が他サービスと異なる場合がある。API の一般公開は限定的で、ワークフロー統合には課題が残る。",
+      "**【追記 2026-10-03】** モデルの世代が進んでいる。Kling の公式ブログ（2026年9月30日）によると、一般提供中の Kling 3.0 系は1回の生成で3〜15秒、720p / 1080p / 4K に対応し、ネイティブ音声とマルチショットを備える。次世代の Kling 4.0 は1回で最長30秒、最大10枚のキーフレーム、1080p / 4K での10bit HDR、2チャンネル音声に対応するとされ、10月に正式公開予定、軽量版の Kling 4.0 Flash は9月28日から一部ユーザーに先行提供されている（いずれも提供元の説明）。サービスの URL は現在 kling.ai で、開発者向けの API ドキュメント（KlingAI Open Platform）も公開されている。本文の「最長2分・1080p」「API の一般公開は限定的」は公開時点の記述であり、料金・API の提供条件は今回再確認できていない。"
     ],
     "primarySources": [
       {
         "title": "Kling AI",
         "site": "Kling",
         "url": "https://klingai.com/"
+      },
+      {
+        "title": "Kling 4.0 vs 3.0: What's Different in the New Model?",
+        "site": "Kling AI",
+        "url": "https://kling.ai/blog/kling-4-vs-3"
       }
     ]
   },
@@ -11259,13 +11299,24 @@ const ARTICLES_BODY = {
       "**コストと無料枠**: Gemini アプリ経由では無料ユーザーでも利用可能。API は `gemini-3.1-flash-image-preview` のモデル ID で提供され、Flash ベースのため料金は低い。Flow ユーザーはクレジット 0 で利用できるとされており、Google エコシステム内での利用コストの低さは際立っている。",
       "**注意点**: Flow の既定画像モデルであるため「動画 AI の新モデル」と誤解されやすいが、あくまで画像生成・編集モデル。テキスト→動画は Veo 系が別ライン。また、プレビュー段階の API もあるため、本番利用前に GA ステータスと SLA を確認する必要がある。生成物には SynthID と C2PA Content Credentials が付与される。",
       "---",
-      "**【訂正 2026-08-11】** 総合評価を **4 → 4.5** に修正しました。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（4.35）と乖離していました。各軸の評価そのものは変更しておらず、**公表している算出方法どおりに総合スコアを計算し直した**ものです。"
+      "**【訂正 2026-08-11】** 総合評価を **4 → 4.5** に修正しました。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（4.35）と乖離していました。各軸の評価そのものは変更しておらず、**公表している算出方法どおりに総合スコアを計算し直した**ものです。",
+      "**【追記 2026-10-03】** API の提供状況が変わった。Gemini API の公式 changelog によると、Nano Banana 2 は2026年5月28日に一般提供（GA）となり、モデル ID は `gemini-3.1-flash-image` になった。本文に書いたプレビュー版の `gemini-3.1-flash-image-preview` は6月25日に提供を終了すると公式 changelog に記載されている。同じ日に Nano Banana Pro（`gemini-3-pro-image`）も GA となり、6月30日には低遅延・低コスト版の Nano Banana 2 Lite（`gemini-3.1-flash-lite-image`）が GA になった。本文の「プレビュー段階の API もあるため GA ステータスを確認する必要がある」という注意は、現在は当てはまらない。"
     ],
     "primarySources": [
       {
         "title": "Nano Banana 2: Combining Pro capabilities with lightning-fast speed",
         "site": "Google The Keyword",
         "url": "https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/"
+      },
+      {
+        "title": "Gemini API release notes",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/changelog"
+      },
+      {
+        "title": "Gemini models",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/models"
       }
     ]
   },
@@ -11274,28 +11325,61 @@ const ARTICLES_BODY = {
       "**GPT Image 1.5** は OpenAI の画像生成モデルで、ChatGPT との統合が最大の強み。テキストプロンプトを入力するだけで即座に画像を生成でき、会話の文脈を踏まえた修正・バリエーション生成も自然にできる。画像生成の専門知識がなくても使える手軽さは、全モデル中トップクラス。",
       "**テキスト描画の精度**: GPT Image の最大の差別化ポイントは画像内テキストの正確さ。ポスター、看板、ロゴに含まれる文字をプロンプト通りに描画する精度が高く、マーケティング素材や SNS 投稿の作成に強い。複雑な構図やオブジェクトの空間配置への追従度も評価されている。",
       "**料金と利用方法**: ChatGPT Plus（$20/月）以上で利用可能。API 経由での呼び出しにも対応しており、アプリへの組み込みも可能。ただし、Midjourney や Flux と比較すると 1 枚あたりの API コストはやや高め。大量生成にはコスト面での検討が必要。",
-      "**注意点**: アート性やスタイルの細かな制御では Midjourney に及ばない場面がある。また、フォトリアル系では Flux 2 のほうが品質が安定しているケースも。ChatGPT に統合されているため手軽だが、プロの制作ワークフロー（レイヤー操作、細部の修正）には別ツールとの併用が前提になる。"
+      "**注意点**: アート性やスタイルの細かな制御では Midjourney に及ばない場面がある。また、フォトリアル系では Flux 2 のほうが品質が安定しているケースも。ChatGPT に統合されているため手軽だが、プロの制作ワークフロー（レイヤー操作、細部の修正）には別ツールとの併用が前提になる。",
+      "**【追記 2026-10-03】** 本レビューの GPT Image 1.5 は現行世代ではなくなった。OpenAI の開発者向けドキュメントでは、現在の画像生成モデルは `gpt-image-2.5-sunburst`（編集の精度を重視する用途向け、最も高性能）と `gpt-image-2.5-flare`（日常的な高速生成向け）の2つで、いずれも既定スナップショットは2026-09-08 版である。料金はトークン課金で、画像入力 $8・画像出力 $30（いずれも100万トークンあたり、Batch では出力 $15）。OpenAI は2026年6月2日に旧モデルの廃止を通知しており、`gpt-image-1.5`・`gpt-image-1-mini`・`chatgpt-image-latest` は2026年12月1日に API から削除され、移行先は上記の2.5系とされている。API で 1.5 を使っている場合は移行が必要になる。ChatGPT 側の提供条件は今回再確認できていない。"
     ],
     "primarySources": [
       {
         "title": "OpenAI — Images / API documentation",
         "site": "OpenAI",
         "url": "https://platform.openai.com/docs/guides/images"
+      },
+      {
+        "title": "GPT-Image-2.5 Sunburst",
+        "site": "OpenAI Developers",
+        "url": "https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst"
+      },
+      {
+        "title": "GPT-Image-2.5 Flare",
+        "site": "OpenAI Developers",
+        "url": "https://developers.openai.com/api/docs/models/gpt-image-2.5-flare"
+      },
+      {
+        "title": "Deprecations",
+        "site": "OpenAI Developers",
+        "url": "https://developers.openai.com/api/docs/deprecations"
       }
     ]
   },
   "flux-2-review": {
     "body": [
-      "**Flux 2** は Black Forest Labs（BFL）が開発する画像生成モデル。Stable Diffusion の元開発者が設立した企業で、フォトリアル系の画像生成においてレイテンシと品質のバランスが高く評価されている。Pro / Dev / Schnell の3ティアで提供され、用途と予算に応じた選択が可能。",
+      "**Flux 2** は Black Forest Labs（BFL）が開発する画像生成モデル。Stable Diffusion の元開発者が設立した企業で、フォトリアル系の画像生成においてレイテンシと品質のバランスが高く評価されている。公式ドキュメントでは [klein]（高速・大量生成向け）、[pro]（本番の大量生成向け）、[flex]（細かな制御向け）、[max]（最高品質）の各モデルが並び、用途と予算に応じた選択が可能。",
       "**フォトリアルの品質**: 人物、風景、プロダクトフォトなどのフォトリアル系で安定した品質を発揮する。特に肌の質感、照明の自然さ、被写界深度の表現が優れており、ストックフォト的な用途に向く。LoRA（Low-Rank Adaptation）によるファインチューニングにも対応しており、特定のスタイルやブランドに合わせたカスタマイズが可能。",
-      "**利用方法とコスト**: BFL の API から直接利用するほか、Replicate や fal.ai などのサードパーティプラットフォーム経由でも利用可能。Schnell（高速版）は比較的低コストで大量生成に向き、Pro は最高品質だが生成時間とコストが増える。オープンウェイト版（Dev/Schnell）はローカル実行も可能。",
-      "**注意点**: Midjourney や GPT Image と比較すると、ユーザー向けの統合 UI が弱く、API 利用が前提となる場面が多い。アート性やクリエイティブな表現では Midjourney に劣る。また、BFL はスタートアップであり、大手と比較してサポート体制や長期的な安定性には不確実性がある。"
+      "**利用方法とコスト**: BFL の API から直接利用するほか、Replicate や fal.ai などのサードパーティプラットフォーム経由でも利用可能。[klein] は軽量で大量生成に向き、[max] は最高品質だが生成時間とコストが増える。オープンウェイト版（[klein]、[dev]）はローカル実行も可能。",
+      "**注意点**: Midjourney や GPT Image と比較すると、ユーザー向けの統合 UI が弱く、API 利用が前提となる場面が多い。アート性やクリエイティブな表現では Midjourney に劣る。また、BFL はスタートアップであり、大手と比較してサポート体制や長期的な安定性には不確実性がある。",
+      "**【訂正 2026-10-03】**（誤）Flux 2 は Pro / Dev / Schnell の3ティアで提供され、オープンウェイト版は Dev / Schnell →（正）Schnell は FLUX.1 世代の区分で、FLUX.2 の公式ドキュメントのラインナップは [klein] / [pro] / [flex] / [max]（[pro] と [flex] は2025年11月25日、[max] は12月16日に公開）。オープンウェイトとして提供されているのは [klein] と [dev]。",
+      "**【追記 2026-10-03】** Black Forest Labs は2026年7月23日、画像・動画・音声を1つのモデルで扱う次世代の FLUX 3 を発表した（当初は Early Access）。公式のリリースノートでは、FLUX 3 Video は8月4日にプレビュー提供を開始し、FLUX 3 Image の API は10月1日に公開された。FLUX 3 Image の料金は1枚あたり $0.041（768px 正方形）〜 $0.607（4K）。FLUX.2 は引き続き API で提供されている。"
     ],
     "primarySources": [
       {
         "title": "Black Forest Labs",
         "site": "BFL",
         "url": "https://bfl.ai/"
+      },
+      {
+        "title": "Release Notes",
+        "site": "Black Forest Labs Docs",
+        "url": "https://docs.bfl.ml/release-notes"
+      },
+      {
+        "title": "FLUX 3 - Real World Models",
+        "site": "Black Forest Labs",
+        "url": "https://bfl.ai/blog/flux-3"
+      },
+      {
+        "title": "Pricing",
+        "site": "Black Forest Labs",
+        "url": "https://bfl.ai/pricing"
       }
     ]
   },
@@ -11303,14 +11387,31 @@ const ARTICLES_BODY = {
     "body": [
       "**Veo** は Google DeepMind が開発する動画生成モデルで、テキスト・画像・動画からの動画生成に対応する。4K 解像度での出力が可能で、長尺のクリップ生成にも対応。物理シミュレーションの精度が世代ごとに改善されており、水流や布の動き、光の反射といった自然現象の表現力が向上している。",
       "**Google エコシステムとの統合**: Vertex AI を通じたエンタープライズ利用が可能で、SynthID による電子透かし、C2PA Content Credentials、安全フィルタが標準搭載されている。Google Cloud の監査ログやアクセス制御と組み合わせることで、企業のコンプライアンス要件を満たしやすい。Flow プラットフォーム上でも利用可能。",
-      "**Runway との比較**: Runway Gen-5 がプロの映像制作者向けに Motion Brush や Act-One といった細かな制御機能を揃えているのに対し、Veo は Google Cloud インフラとの統合やエンタープライズ向け機能で差別化している。映像のクリエイティブ制御では Runway が一歩先だが、大規模な API バッチ処理やセキュリティ要件ではVeo が有利。",
-      "**注意点**: 一般向けの UI は Flow 経由に限られ、Runway や Kling のような独立したWeb アプリは提供されていない。クリエイター個人が気軽に試す場合のハードルは高め。また、バージョン番号やモデル ID が複数あるため、API 利用時は公式ドキュメントで正確な仕様を確認する必要がある。"
+      "**Runway との比較**: Runway がプロの映像制作者向けに Motion Brush や Act-One といった細かな制御機能を揃えているのに対し、Veo は Google Cloud インフラとの統合やエンタープライズ向け機能で差別化している。映像のクリエイティブ制御では Runway が一歩先だが、大規模な API バッチ処理やセキュリティ要件ではVeo が有利。",
+      "**注意点**: 一般向けの UI は Flow 経由に限られ、Runway や Kling のような独立したWeb アプリは提供されていない。クリエイター個人が気軽に試す場合のハードルは高め。また、バージョン番号やモデル ID が複数あるため、API 利用時は公式ドキュメントで正確な仕様を確認する必要がある。",
+      "**【訂正 2026-10-03】**（誤）Runway Gen-5 →（正）Runway。2026年10月3日時点で、Runway の公式サイト（研究ページ・changelog・料金ページ・API のモデル一覧）に Gen-5 は見当たらず、自社の最新動画モデルとして挙げられているのは Gen-4.5 である。Runway 側の世代名を特定しない書き方に改めました。",
+      "**【追記 2026-10-03】** Gemini API の動画生成の構成が変わった。公式 changelog によると、Veo 2.0 / Veo 3.0 系のモデル ID は2026年6月30日に提供を終了する（公式 changelog の記載）とされ、Veo 3.1 のプレビュー ID（`veo-3.1-generate-preview` など）への移行が案内された。また、会話で動画を生成・編集する新モデル Gemini Omni Flash が6月30日にプレビュー、8月27日に `gemini-omni-1.1-flash` として一般提供（GA）になった。Gemini API の動画生成ガイドは現在、Gemini Omni Flash を既定のモデルとして勧め、シーンの延長や最終フレームの指定など特定の機能が必要な場合に Veo 3.1 を使うよう案内している。"
     ],
     "primarySources": [
       {
         "title": "Veo — Google DeepMind",
         "site": "Google DeepMind",
         "url": "https://deepmind.google/models/veo/"
+      },
+      {
+        "title": "Gemini API release notes",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/changelog"
+      },
+      {
+        "title": "Video generation in the Gemini API",
+        "site": "Google AI for Developers",
+        "url": "https://ai.google.dev/gemini-api/docs/video"
+      },
+      {
+        "title": "Changelog",
+        "site": "Runway",
+        "url": "https://runway.com/changelog"
       }
     ]
   },
@@ -11319,13 +11420,25 @@ const ARTICLES_BODY = {
       "**Pika** はテキストや画像から短い動画クリップを生成するサービスで、手軽さと楽しさを重視した設計が特徴。Web UI がシンプルで直感的なため、動画制作の経験がなくても数クリックで動画を作れる。Runway が映像制作のプロ向けに特化しているのに対し、Pika は SNS コンテンツやカジュアルな制作に焦点を当てている。",
       "**エフェクト機能**: Pika の独自性はユニークなエフェクト機能にある。画像を食べる・溶かす・爆発させるといった物理的な変形エフェクトや、スタイル変換を適用して既存の画像・動画を変化させることができる。TikTok や Instagram のリール用コンテンツ制作で人気がある。",
       "**料金**: 無料枠で基本的な動画生成が試せる。Standard（$8/月）で商用利用が可能になり、Pro（$28/月）で高速生成と拡張機能を利用できる。Runway と比較すると大幅に安く、カジュアルな利用には十分なコスパ。",
-      "**注意点**: 長尺動画の生成や高解像度の映像品質では Runway や Veo に及ばない。映像制作のプロが本番素材として使うには品質面で物足りない場合がある。API は限定的で、大規模なワークフロー統合には向かない。あくまで「手軽に動画を作る」ツールとしての位置づけ。"
+      "**注意点**: 長尺動画の生成や高解像度の映像品質では Runway や Veo に及ばない。映像制作のプロが本番素材として使うには品質面で物足りない場合がある。API は限定的で、大規模なワークフロー統合には向かない。あくまで「手軽に動画を作る」ツールとしての位置づけ。",
+      "**【追記 2026-10-03】** 料金と提供形態が変わっている。2026年10月3日時点の公式料金ページでは、プランは Free（月間クレジットなし・パック購入のみ、商用ライセンスなし）、Starter（月900クレジット、月払い $10・年払い月額換算 $8、商用ライセンスなし）、Creator（月3,150クレジット、月払い $35・年払い月額換算 $28、商用ライセンスあり）、Fancy（月8,550クレジット〜、月払い $95〜）の4段階である。本文の「Standard（$8/月）で商用利用が可能」は現行のプラン構成と合わず、現在は Creator 以上で商用ライセンスが付く。",
+      "**【追記 2026-10-03】** Pika は自社モデル（Pika 2.5、Pikaframes）に加え、Seedance 2.5・MiniMax H3・Wan 3.0・Google の Omni Flash・GPT Image 2.5・Nano Banana など他社のモデルもサイト上で使える形になっている。開発者向けには、複数社の生成モデルを1つの API で呼べる「Pika API Club」（月額会費制）を公開しており、本文の「API は限定的」は現状と合わない。★は公開時の条件に基づく評価で、今回は改訂していない。"
     ],
     "primarySources": [
       {
         "title": "Pika",
         "site": "Pika",
         "url": "https://pika.art/"
+      },
+      {
+        "title": "Pricing",
+        "site": "Pika",
+        "url": "https://pika.art/pricing"
+      },
+      {
+        "title": "Pika API",
+        "site": "Pika",
+        "url": "https://pika.art/api"
       }
     ]
   },
@@ -11334,13 +11447,35 @@ const ARTICLES_BODY = {
       "**Udio** は Suno と並ぶ音楽生成 AI サービスで、元 Google DeepMind の研究者が設立。テキストプロンプトからフル楽曲を生成する基本コンセプトは Suno と同じだが、音質のクリアさと楽曲構成の自然さで差別化を図っている。特にインストゥルメンタルの生成品質が高く、映画音楽やゲーム BGM 的なジャンルで評価されている。",
       "**Suno との違い**: Suno が「誰でも楽曲を作れる手軽さ」を前面に出しているのに対し、Udio はより音楽的に洗練された出力を目指す傾向がある。楽曲内の展開（イントロ→バース→サビ→ブリッジ）の構成力や、複数楽器のミックスバランスで Udio のほうが自然に聞こえるケースが多い。一方、UI のシンプルさや日本語ボーカルの品質では Suno に軍配が上がる。",
       "**著作権とライセンス**: 2025年末にかけて大手レーベルとの訴訟・和解・ライセンス交渉が報じられており、2026年時点では商用利用のルールが整備途上にある。利用規約と楽曲の帰属は最新のヘルプページで確認する必要がある。企業の広告BGM等で使う場合はライセンス条件の精査が特に重要。",
-      "**注意点**: API は一般公開されておらず、外部ツールとの統合は限定的。生成楽曲のパート別編集やDAW連携もまだ未対応。Suno と同様、生成結果をそのまま使う前提の設計で、細かなミキシング調整はできない。"
+      "**注意点**: API は一般公開されておらず、外部ツールとの統合は限定的。生成楽曲のパート別編集やDAW連携もまだ未対応。Suno と同様、生成結果をそのまま使う前提の設計で、細かなミキシング調整はできない。",
+      "**【追記 2026-10-03】** 権利関係と提供条件について、本文の「訴訟・和解・ライセンス交渉が報じられており」「商用利用のルールが整備途上」という記述は、本レビューの公開（2026年3月）より前に当事者が公式に発表していた事実を欠いていた。Universal Music Group（UMG）と Udio は2025年10月29日に著作権訴訟の和解と、録音・出版のライセンス契約を発表し、認可・ライセンス済みの楽曲で学習した新サービスを2026年に開始するとした。UMG の発表によれば、移行期間中の現行サービスは「ウォールド・ガーデン」（生成物をサービス内にとどめる形）で運営され、フィンガープリントやフィルタリングなどの措置が加えられる。Udio の CEO は同日の公式ブログで、同日からプラットフォームからのダウンロードを停止すると告知している。Warner Music Group（WMG）とも2025年11月19日にライセンス契約と訴訟の解決を発表したと Udio が告知している（WMG 側の発表は引用していない）。Udio はレーベルが Udio を買収したわけではないと説明している。",
+      "**【追記 2026-10-03】** したがって、本文の「企業の広告BGM等で使う場合はライセンス条件の精査が特に重要」は、そもそも生成した楽曲をファイルとして書き出せない状態を前提に読み直す必要がある。新サービスがすでに開始されたか、ダウンロードが再開されたかは、2026年10月3日時点で公式の一次資料から確認できていない。料金ページは実行環境から内容を取得できず、プラン・料金は今回再確認できていない（ヘルプセンターでは Standard が月2,400クレジット、Pro が月6,000クレジットまで、無料は1日10・月100クレジットまでと説明されている）。"
     ],
     "primarySources": [
       {
         "title": "Udio",
         "site": "Udio",
         "url": "https://www.udio.com/"
+      },
+      {
+        "title": "Universal Music Group and Udio announce Udio's first strategic agreements for new licensed AI music creation platform",
+        "site": "Universal Music Group",
+        "url": "https://www.universalmusic.com/universal-music-group-and-udio-announce-udios-first-strategic-agreements-for-new-licensed-ai-music-creation-platform/"
+      },
+      {
+        "title": "A New Era of Music - Udio with Universal Music Group",
+        "site": "Udio",
+        "url": "https://www.udio.com/blog/a-new-era"
+      },
+      {
+        "title": "Udio with Warner Music Group",
+        "site": "Udio",
+        "url": "https://www.udio.com/blog/udio-warner"
+      },
+      {
+        "title": "Credits and credit limits",
+        "site": "Udio Help Center",
+        "url": "https://help.udio.com/en/articles/10739134-credits-and-credit-limits"
       }
     ]
   },
@@ -11349,13 +11484,24 @@ const ARTICLES_BODY = {
       "**Stable Audio** は Stability AI が開発する音楽・効果音生成モデル。オープンウェイトで公開されており、自社サーバーでのローカル実行が可能な点が Suno・Udio との最大の違い。テキストプロンプトから BGM、効果音、アンビエント音楽を生成でき、ゲーム開発やポッドキャストの音素材制作に向く。",
       "**オープンウェイトの利点**: モデルをダウンロードしてローカルで動かせるため、データをクラウドに送る必要がない。音声データのプライバシーが重要な案件や、インターネット接続のない環境での利用に適している。ComfyUI などのワークフローツールとの統合も可能で、カスタムパイプラインに組み込みやすい。",
       "**料金**: Web アプリ経由の無料枠に加え、有料プランで生成回数と品質を拡張可能。ローカル実行の場合は GPU リソースのコストのみ。クラウドサービスへの依存を避けたいユーザーにとってはコスト構造が予測しやすい。",
-      "**注意点**: ボーカル付きの楽曲生成では Suno・Udio に大きく劣る。フル楽曲生成よりも、BGM・効果音・アンビエントといった素材生成に適している。また、Stability AI の経営状況には不確実性があるため、長期的なサポートの継続性は注視が必要。モデルの更新頻度も Suno・Udio と比較すると遅い。"
+      "**注意点**: ボーカル付きの楽曲生成では Suno・Udio に大きく劣る。フル楽曲生成よりも、BGM・効果音・アンビエントといった素材生成に適している。また、Stability AI の経営状況には不確実性があるため、長期的なサポートの継続性は注視が必要。モデルの更新頻度も Suno・Udio と比較すると遅い。",
+      "**【追記 2026-10-03】** Stability AI は2026年5月20日に新世代の Stable Audio 3.0 を公開した。公式の発表によると、モデルは Small SFX（端末上での効果音生成）、Small（端末上での楽曲生成、最長2分）、Medium（最長6分20秒）、Large（音楽プラットフォーム向け）の4種で、すべて完全にライセンスされたデータで学習されている。Small SFX・Small・Medium はオープンウェイトとして Hugging Face で公開され、Large は API と企業向けのセルフホストで提供される。Stability AI Community License のもとでは生成物を所有し配布・商用利用でき、年間売上100万ドル超の組織は Enterprise ライセンス（法的補償つき）の対象になる（いずれも提供元の説明）。8月18日には DAW プラグインと、StableAudio.com のより高度な生成機能も公開された。本文はオープンウェイトの旧世代（Stable Audio Open）を前提に書かれており、楽曲の長さや更新頻度に関する記述は 3.0 では当てはまらない部分がある。"
     ],
     "primarySources": [
       {
         "title": "Stable Audio",
         "site": "Stability AI",
         "url": "https://stability.ai/"
+      },
+      {
+        "title": "Meet Stable Audio 3.0",
+        "site": "Stability AI",
+        "url": "https://stability.ai/news-updates/meet-stable-audio-3-the-model-family-built-for-artistic-experimentation-with-open-weight-models"
+      },
+      {
+        "title": "Sharing a new way to work with Stable Audio",
+        "site": "Stability AI",
+        "url": "https://stability.ai/news-updates/sharing-a-new-way-to-work-with-stable-audio"
       }
     ]
   },
