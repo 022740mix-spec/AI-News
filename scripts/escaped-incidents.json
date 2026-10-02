@@ -7,7 +7,9 @@
       "correctedOn": "2026-10-01",
       "disposition": "correction",
       "failureShape": "derivative_sources_counted_without_independent_root_confirmation",
-      "expectedGate": ["source_root"],
+      "expectedGate": [
+        "source_root"
+      ],
       "attributionConfidence": "candidate",
       "note": "同じ発表を伝える複数の派生報道を、独立した根が増えたように扱っていた。Alibaba Cloud 公式で確認できたのは『Qwen 4 は学習中』『Qwen 4.5 / 5 はロードマップ』までで、Max / Flash / Plus / 27B の名称は確認できなかった。取り下げず訂正にした（PR #156）。"
     },
@@ -16,9 +18,100 @@
       "correctedOn": "2026-10-02",
       "disposition": "correction",
       "failureShape": "court_type_misstated",
-      "expectedGate": ["unknown"],
+      "expectedGate": [
+        "unknown"
+      ],
       "attributionConfidence": "unknown",
       "note": "D.C. の控訴裁（D.C.巡回区）を『連邦地裁』と書いていた。後から別の記事の一次資料（判決文）を読んで判明した。どの関門なら止められたかは判定できない（PR #159）。"
+    },
+    {
+      "article": "runway-gen5-video-generation-2026",
+      "correctedOn": "2026-10-03",
+      "disposition": "retraction",
+      "failureShape": "model_name_unconfirmed_single_homepage_source",
+      "expectedGate": [
+        "source_root"
+      ],
+      "attributionConfidence": "candidate",
+      "note": "Runway「Gen-5」は公式の変更履歴・料金・API・SDK・独立報道のいずれにも存在せず、出典はトップページ1枚だけだった。月次見直しの棚卸し中に、独立した調査役が発見して取り下げた。同じ前提のレビュー・他の記事4本も訂正（PR #170 予定）"
+    },
+    {
+      "article": "runway-gen5-review",
+      "correctedOn": "2026-10-03",
+      "disposition": "retraction",
+      "failureShape": "model_name_unconfirmed_single_homepage_source",
+      "expectedGate": [
+        "source_root"
+      ],
+      "attributionConfidence": "candidate",
+      "note": "上と同じ事実を前提にしたレビュー。料金表・最長の長さも公式と一致しなかった。2本の間でも数値が食い違っていた"
+    },
+    {
+      "article": "void",
+      "correctedOn": "2026-10-03",
+      "disposition": "correction",
+      "failureShape": "project_status_stale_or_unverified",
+      "expectedGate": [
+        "unknown"
+      ],
+      "attributionConfidence": "unknown",
+      "note": "「開発が進められている」と書いたが、開発元の README は非推奨（deprecated）、新規のコントリビューション受付終了としている（main の最後のコミットは2026-06-02）。公開時点（2026-03-28）の状態は確認していない"
+    },
+    {
+      "article": "gemini-3-1-pro-review",
+      "correctedOn": "2026-10-03",
+      "disposition": "correction",
+      "failureShape": "spec_and_price_misstated",
+      "expectedGate": [
+        "source_root",
+        "review"
+      ],
+      "attributionConfidence": "candidate",
+      "note": "タイトルと本文の「2M コンテキスト」は誤り（約105万トークン）。価格も $1.25/$5 ではなく $2/$12。公式のモデルページで1回確認すれば防げた種類の誤り"
+    },
+    {
+      "article": "claude-opus-4-6-review",
+      "correctedOn": "2026-10-03",
+      "disposition": "correction",
+      "failureShape": "price_misstated",
+      "expectedGate": [
+        "source_root"
+      ],
+      "attributionConfidence": "candidate",
+      "note": "価格 $15/$75 は誤り（$5/$25）。公式の発表に「$5/$25 のまま」とある"
+    },
+    {
+      "article": "gpt-5-4-review",
+      "correctedOn": "2026-10-03",
+      "disposition": "correction",
+      "failureShape": "spec_and_price_misstated",
+      "expectedGate": [
+        "source_root"
+      ],
+      "attributionConfidence": "candidate",
+      "note": "コンテキスト128K（正: 1,050,000）、$2.50/$10（正: $2.50/$15）、GPT-5.4 mini の価格が誤り"
+    },
+    {
+      "article": "kimi-k2-5-review",
+      "correctedOn": "2026-10-03",
+      "disposition": "correction",
+      "failureShape": "license_misstated",
+      "expectedGate": [
+        "source_root"
+      ],
+      "attributionConfidence": "candidate",
+      "note": "ライセンスを Apache 2.0 と書いたが、Moonshot の Modified MIT"
+    },
+    {
+      "article": "manus-review",
+      "correctedOn": "2026-10-03",
+      "disposition": "correction",
+      "failureShape": "launch_year_misstated",
+      "expectedGate": [
+        "unknown"
+      ],
+      "attributionConfidence": "unknown",
+      "note": "招待制ローンチを2025年3月ではなく2026年3月と書いていた（公式ブログの『ローンチから8か月』で年が確定）"
     }
   ]
 }

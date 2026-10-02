@@ -405,7 +405,7 @@ export const ARTICLES_META = [
     "type": "feature",
     "category": "regulation",
     "title": "【分析】Academy が Oscar の AI ルールを明確化 — AI 出演・AI 脚本は対象外、「人間の同意」と「人間の著作」を必須要件に",
-    "excerpt": "Academy of Motion Picture Arts and Sciences が5月1日（多くの一般メディアは5月2日に報道）、**AI 生成の演技および AI 主導で書かれた脚本は Academy Awards（オスカー）の主要部門で対象外**とする規則変更を公表した。演技部門では「**法的クレジットに記載され、本人の同意の下で人間が演じた**」ものに限ると明記。脚本部門は「**人間が著作したもの**」が要件となる。Academy は同時に **AI の使用に関する追加情報の提出を求める権限**も保持し、ケースバイケースで例外を判断する。Sora 2 や Runway Gen5 級の生成動画が業界に浸透するなか、**「賞レースの土俵」は人間の創作活動に絞り直す**という業界自治の方向性が鮮明になった。",
+    "excerpt": "Academy of Motion Picture Arts and Sciences が5月1日（多くの一般メディアは5月2日に報道）、**AI 生成の演技および AI 主導で書かれた脚本は Academy Awards（オスカー）の主要部門で対象外**とする規則変更を公表した。演技部門では「**法的クレジットに記載され、本人の同意の下で人間が演じた**」ものに限ると明記。脚本部門は「**人間が著作したもの**」が要件となる。Academy は同時に **AI の使用に関する追加情報の提出を求める権限**も保持し、ケースバイケースで例外を判断する。Sora 2 や Runway（Gen-4.5） 級の生成動画が業界に浸透するなか、**「賞レースの土俵」は人間の創作活動に絞り直す**という業界自治の方向性が鮮明になった。",
     "date": "2026-05-11",
     "newsDate": "2026-05-02",
     "author": "AI News 編集部",
@@ -1678,8 +1678,8 @@ export const ARTICLES_META = [
     "id": "runway-gen5-video-generation-2026",
     "type": "news",
     "category": "media",
-    "title": "Runway Gen-5 発表 — 最大2分の高品質動画生成、物理シミュレーションとカメラ制御が大幅進化",
-    "excerpt": "Runway が Gen-5 を発表。最大120秒の動画生成に対応し、物理法則に従った物体の動き、精密なカメラワーク制御、音声同期リップシンクを実現。API 経由でのバッチ生成にも対応し、映像制作ワークフローへの組み込みが現実的に。",
+    "title": "【取り下げ】Runway Gen-5 発表 — 最大2分の高品質動画生成、物理シミュレーションとカメラ制御が大幅進化",
+    "excerpt": "本記事は、Runway が「Gen-5」を発表したとする中心的な事実を確認できなかったため、2026-10-03 に取り下げました。",
     "date": "2026-03-27",
     "newsDate": "2026-03-27",
     "author": "AI News 編集部",
@@ -1693,7 +1693,9 @@ export const ARTICLES_META = [
     "coverImage": {
       "src": "articles/cover-media-video.svg",
       "alt": "動画制作"
-    }
+    },
+    "status": "retracted",
+    "heroScope": "none"
   },
   {
     "id": "ai-image-api-guide-developers-2026",
@@ -2676,7 +2678,7 @@ export const ARTICLES_META = [
     "type": "review",
     "category": "media",
     "title": "Aqua Voice — Mac/Windows 向けAIディクテーション（フローティングUI）",
-    "excerpt": "録音→転写→アクティブなアプリへペーストまでを一体で扱う製品向けディクテーション。公式 FAQ では全アカウント 1,000 語の無料枠、Avalon モデルは Pro で選択可能、iPhone アプリは未対応とされる。",
+    "excerpt": "録音→転写→アクティブなアプリへペーストまでを一体で扱う製品向けディクテーション。無料プランは 1,000 語まで（Avalon モデルを含む）。2026年4月に iPhone 向けの音声キーボードも公開された。",
     "date": "2026-03-28",
     "newsDate": "2026-03-07",
     "author": "AI News 編集部",
@@ -3143,7 +3145,7 @@ export const ARTICLES_META = [
     },
     "rating": 4.5,
     "reviewCategory": "media",
-    "lastReviewed": "2026-06-05"
+    "lastReviewed": "2026-10-03"
   },
   {
     "id": "claude-code",
@@ -3487,7 +3489,7 @@ export const ARTICLES_META = [
     },
     "rating": 3,
     "reviewCategory": "editor",
-    "lastReviewed": "2026-03-28"
+    "lastReviewed": "2026-10-03"
   },
   {
     "id": "pearai",
@@ -4070,7 +4072,7 @@ export const ARTICLES_META = [
     "type": "review",
     "category": "model",
     "title": "Claude Opus 4.6 レビュー — Anthropic 前世代フラッグシップ、1Mコンテキストの深い推論",
-    "excerpt": "Anthropic の2026年Q1フラッグシップモデル（後継 Opus 4.7/4.8 リリース済み）。1Mトークンのコンテキストウィンドウ、SWE-Bench トップクラスのコーディング性能、拡張思考による高度な推論が特徴。$15/$75 per 1M tokens。",
+    "excerpt": "Anthropic の2026年Q1フラッグシップモデル（後継 Opus 4.7/4.8 リリース済み）。1Mトークンのコンテキストウィンドウ、SWE-Bench トップクラスのコーディング性能、拡張思考による高度な推論が特徴。$5/$25 per 1M tokens。",
     "date": "2026-03-29",
     "newsDate": "2026-03-15",
     "author": "AI News 編集部",
@@ -4096,7 +4098,7 @@ export const ARTICLES_META = [
     "type": "review",
     "category": "model",
     "title": "GPT-5.4 レビュー — OpenAI 2026年Q1の主力モデル、推論・コーディング・エージェント統合",
-    "excerpt": "OpenAI が2026年前半に投入した主力モデル（後継 GPT-5.5 が4/23 リリース済み）。128Kコンテキスト、推論とコーディングを統合したアーキテクチャ。Codex との連携でエージェント的な運用も可能。$2.50/$10 per 1M tokens。",
+    "excerpt": "OpenAI が2026年前半に投入した主力モデル（後継 GPT-5.5 が4/23 リリース済み）。約1M（1,050,000）トークンのコンテキスト、推論とコーディングを統合したアーキテクチャ。Codex との連携でエージェント的な運用も可能。$2.50/$15 per 1M tokens。",
     "date": "2026-03-29",
     "newsDate": "2026-03-10",
     "author": "AI News 編集部",
@@ -4121,8 +4123,8 @@ export const ARTICLES_META = [
     "id": "gemini-3-1-pro-review",
     "type": "review",
     "category": "model",
-    "title": "Gemini 3.1 Pro レビュー — Google 最上位、2Mコンテキストは業界最大",
-    "excerpt": "Google DeepMind のフラッグシップ。2Mトークンのコンテキストウィンドウは全モデル中最大。長大なコードベースの一括読み込みと Google Cloud との統合が強み。$1.25/$5 per 1M tokens。",
+    "title": "Gemini 3.1 Pro レビュー — Google の Pro 世代、1Mコンテキストと Google Cloud 統合",
+    "excerpt": "Google DeepMind の Pro 世代モデル（Gemini API ではプレビュー提供）。入力約1Mトークンのコンテキストで長大なコードベースを一括で読み込め、Google Cloud との統合が強み。$2/$12 per 1M tokens（200K トークン以下）。",
     "date": "2026-03-29",
     "newsDate": "2026-03-12",
     "author": "AI News 編集部",
@@ -4319,8 +4321,8 @@ export const ARTICLES_META = [
     "id": "midjourney-v8-review",
     "type": "review",
     "category": "media",
-    "title": "Midjourney V8 レビュー — 画像生成の王者、ついにWeb版とAPIを正式公開",
-    "excerpt": "画像生成AIの代名詞。V8でWeb UIとAPIを正式公開し、Discord外でもアクセス可能に。フォトリアルから抽象表現まで業界最高峰の品質。$10/月〜。",
+    "title": "Midjourney V8 レビュー — 画像生成の王者、V8.1 で既定モデルに",
+    "excerpt": "画像生成AIの代名詞。V8 は2026年3月にアルファ公開、6月に V8.1 が既定モデルに。フォトリアルから抽象表現まで業界最高峰の品質。$10/月〜。",
     "date": "2026-03-29",
     "newsDate": "2026-03-20",
     "author": "AI News 編集部",
@@ -4345,8 +4347,8 @@ export const ARTICLES_META = [
     "id": "runway-gen5-review",
     "type": "review",
     "category": "media",
-    "title": "Runway Gen-5 レビュー — 動画生成のフロントランナー、映像制作者の新標準",
-    "excerpt": "動画生成AIの先駆者。Gen-5で物理シミュレーション精度が大幅向上。最長40秒の高品質動画を生成。ハリウッドのプロダクションでも採用実績。$12/月〜。",
+    "title": "【取り下げ】Runway Gen-5 レビュー — 動画生成のフロントランナー、映像制作者の新標準",
+    "excerpt": "本記事は、Runway が「Gen-5」を発表したとする中心的な事実を確認できなかったため、2026-10-03 に取り下げました。",
     "date": "2026-03-29",
     "newsDate": "2026-03-22",
     "author": "AI News 編集部",
@@ -4365,7 +4367,9 @@ export const ARTICLES_META = [
     },
     "rating": 3.5,
     "reviewCategory": "video",
-    "lastReviewed": "2026-03-29"
+    "lastReviewed": "2026-03-29",
+    "status": "retracted",
+    "heroScope": "none"
   },
   {
     "id": "suno-v5-review",
@@ -4623,14 +4627,14 @@ export const ARTICLES_META = [
     },
     "rating": 3.5,
     "reviewCategory": "agent",
-    "lastReviewed": "2026-03-29"
+    "lastReviewed": "2026-10-03"
   },
   {
     "id": "devin-review",
     "type": "review",
     "category": "product",
     "title": "Devin レビュー — Cognition 発、ソフトウェアエンジニアリング特化のAIエージェント",
-    "excerpt": "「AIソフトウェアエンジニア」を標榜する自律型コーディングエージェント。独自のクラウド開発環境でコード生成・テスト・デバッグ・PR作成まで一貫対応。$500/月〜。",
+    "excerpt": "「AIソフトウェアエンジニア」を標榜する自律型コーディングエージェント。独自のクラウド開発環境でコード生成・テスト・デバッグ・PR作成まで一貫対応。2026年10月時点で Free / Pro $20 / Max $200 / Teams $80〜。",
     "date": "2026-03-29",
     "newsDate": "2026-03-05",
     "author": "AI News 編集部",
@@ -4649,14 +4653,14 @@ export const ARTICLES_META = [
     },
     "rating": 3.5,
     "reviewCategory": "agent",
-    "lastReviewed": "2026-03-29"
+    "lastReviewed": "2026-10-03"
   },
   {
     "id": "genspark-review",
     "type": "review",
     "category": "product",
     "title": "GenSpark レビュー — 目的別エージェントの集合体、スライド・議事録・検索を一箇所に",
-    "excerpt": "検索だけでなく、スライド生成・AI議事録・旅行計画など目的ごとに専用エージェントが分かれたユニークな構造。Sparkpages による情報構造化と合わせ、汎用AI検索とは一線を画す。無料。",
+    "excerpt": "検索だけでなく、スライド生成・AI議事録など目的ごとに専用エージェントが分かれた構造で出発し、現在は Super Agent を中心とする AI ワークスペースに広がっている。クレジット制で、無料プランあり（上限付き）、Plus $24.99/月〜。",
     "date": "2026-03-29",
     "newsDate": "2026-03-01",
     "author": "AI News 編集部",
@@ -4676,7 +4680,7 @@ export const ARTICLES_META = [
     },
     "rating": 4,
     "reviewCategory": "search",
-    "lastReviewed": "2026-03-29"
+    "lastReviewed": "2026-10-03"
   },
   {
     "id": "perplexity-review",
@@ -4702,7 +4706,7 @@ export const ARTICLES_META = [
     },
     "rating": 4.5,
     "reviewCategory": "search",
-    "lastReviewed": "2026-03-29"
+    "lastReviewed": "2026-10-03"
   },
   {
     "id": "notebooklm-review",
@@ -4729,7 +4733,7 @@ export const ARTICLES_META = [
     },
     "rating": 4,
     "reviewCategory": "search",
-    "lastReviewed": "2026-03-29"
+    "lastReviewed": "2026-10-03"
   },
   {
     "id": "deepseek-r1-review",
