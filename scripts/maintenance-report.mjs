@@ -624,6 +624,26 @@ if (inScope("weekly"))
   }
 }
 
+// ── 8c. 公開後の事故と誤停止の負担（週次・参考） ──
+// 8b は「止めた回数」だけを見る。止めなかったものが後で誤りと分かった件（escaped incident）と、
+// 止める必要が薄かった件（誤停止）は別に数える（Issue #155）。数字しか出さず、解釈は書く人が行う。
+// 入力が壊れているときだけ終了コードが 1 になるので、そのときは actionable にしない代わりに本文へ出す。
+if (inScope("weekly"))
+{
+  const r = run("check-escaped-incidents.mjs");
+  if (r.out.trim()) {
+    sections.push({
+      passive: true,
+      level: "info",
+      title: "公開後の事故（escaped incident）と誤停止の負担（参考）",
+      note:
+        "発火回数だけでは、関門が事故を防いだかは分かりません。**事故の登録が無いことは、事故が無いことではありません**（未分類の件数を見てください）。\n" +
+        "登録簿は `scripts/escaped-incidents.json`、サンプルは `scripts/gate-samples.json`。",
+      body: r.out.trim(),
+    });
+  }
+}
+
 // ── 9. 点検そのものが動いているか（日次） ──
 // 「異常があるときだけ Issue」の設計は、通知が無視されるのを防ぐために
 // 正しいが、**異常が無い状態と点検が止まった状態を区別できない。**
