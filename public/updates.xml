@@ -8,6 +8,62 @@
   <updated>2026-10-03T15:00:00Z</updated>
   <generator>ai-news-generate-updates</generator>
   <entry>
+    <title>【訂正】Claude Opus 4.6 レビュー — Anthropic 前世代フラッグシップ、1Mコンテキストの深い推論</title>
+    <link rel="alternate" type="text/html" href="?a=claude-opus-4-6-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:claude-opus-4-6-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）入力 $15 / 出力 $75。後継の Opus 4.7/4.8 では同じ性能帯で $5/$25 へ大幅値下げ →（正）入力 $5 / 出力 $25（同日に 追記 もあり）</summary>
+  </entry>
+  <entry>
+    <title>【訂正】Gemini 3.1 Pro レビュー — Google の Pro 世代、1Mコンテキストと Google Cloud 統合</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-3-1-pro-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:gemini-3-1-pro-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）2M トークンという業界最大のコンテキストウィンドウ →（正）入力 1,048,576 トークン（約1M）のコンテキストウィンドウ（同日に 訂正・追記 もあり）</summary>
+  </entry>
+  <entry>
+    <title>【訂正】GPT-5.4 レビュー — OpenAI 2026年Q1の主力モデル、推論・コーディング・エージェント統合</title>
+    <link rel="alternate" type="text/html" href="?a=gpt-5-4-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:gpt-5-4-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）128K トークンのコンテキストウィンドウ →（正）1,050,000 トークン（約1M）のコンテキストウィンドウ（同日に 訂正・追記 もあり）</summary>
+  </entry>
+  <entry>
+    <title>【訂正】GPT-5.5 レビュー — OpenAI 最新フラッグシップ、エージェント・コーディングで「半額の SOTA」、Plus/Pro/API/Copilot 全展開</title>
+    <link rel="alternate" type="text/html" href="?a=gpt-5-5-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:gpt-5-5-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）API（chat-latest 等として4/24〜） →（正）API（gpt-5.5 と gpt-5.5-pro として4/24〜）（同日に 追記 もあり）</summary>
+  </entry>
+  <entry>
+    <title>【訂正】Kimi K2.5 レビュー — Moonshot AI 発、1兆パラメータ MoE でオープンウェイト</title>
+    <link rel="alternate" type="text/html" href="?a=kimi-k2-5-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:kimi-k2-5-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）Apache 2.0 ライセンスのオープンウェイト →（正）Moonshot AI 独自の Modified MIT ライセンスのオープンウェイト（同日に 追記 もあり）</summary>
+  </entry>
+  <entry>
+    <title>【訂正】Manus レビュー — 汎用AIエージェント、Webブラウジングからコードまで自律実行</title>
+    <link rel="alternate" type="text/html" href="?a=manus-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:manus-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）2026年3月の招待制ローンチ →（正）2025年3月の招待制ローンチ（同日に 追記・追記・追記 もあり）</summary>
+  </entry>
+  <entry>
+    <title>【訂正】Qwen 3 レビュー — Alibaba 発、ハイブリッド思考とオープンウェイトの大型ファミリー</title>
+    <link rel="alternate" type="text/html" href="?a=qwen-3-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:qwen-3-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）コード生成ではフラッグシップの 235B-A22B が Opus 4.6 や GPT-5.4… →（正）フラッグシップの 235B-A22B はコーディング・数学・汎用能力のベンチマークで…（同日に 追記 もあり）</summary>
+  </entry>
+  <entry>
     <title>【追記】Alibaba が Qwen 3.8-Max を公開 — 2.4T/95B活性化、Max 級で初のオープンウェイト化、IFBench で Sol・Fable 5 を上回る</title>
     <link rel="alternate" type="text/html" href="?a=alibaba-qwen-3-8-max-open-weight-2-4t-2026#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:alibaba-qwen-3-8-max-open-weight-2-4t-2026:2026-10-03</id>
@@ -16,12 +72,84 @@
     <summary>公開後に、次の点が公式資料で確認できた（Hugging Face の Qwen3.8-2.4T-A95B のモデルカードと、Alibaba のプレスリリースによる）</summary>
   </entry>
   <entry>
+    <title>【追記】Claude Design レビュー — Anthropic のビジュアル制作ツール、Opus 4.7/4.8 基盤で UI から動画素材までを会話で生成</title>
+    <link rel="alternate" type="text/html" href="?a=claude-design#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:claude-design:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>提供形態が変わった（同日に 追記 もあり）</summary>
+  </entry>
+  <entry>
+    <title>【追記】Claude Opus 4.7 レビュー — Anthropic 最上位 GA、SWE-bench Verified 87.6% と task budgets で長時間エージェントが安定</title>
+    <link rel="alternate" type="text/html" href="?a=claude-opus-4-7-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:claude-opus-4-7-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>提供状況の更新</summary>
+  </entry>
+  <entry>
+    <title>【追記】DeepSeek R1 レビュー — 中国発オープンウェイト推論モデル、Opus に迫る性能を破格コストで</title>
+    <link rel="alternate" type="text/html" href="?a=deepseek-r1-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:deepseek-r1-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>本文の API 料金（キャッシュヒット時 $0.14 / 出力 $2.19）は、R1 を公式 API で提供していた当時のものである</summary>
+  </entry>
+  <entry>
+    <title>【追記】DeepSeek V4 レビュー — 1.6T MoE と 1M コンテキストのオープンウェイト、Pro と Flash の2モデル構成</title>
+    <link rel="alternate" type="text/html" href="?a=deepseek-v4-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:deepseek-v4-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>プレビュー以降の経過を、DeepSeek API の公式変更履歴と料金ページから補う</summary>
+  </entry>
+  <entry>
+    <title>【追記】Devin レビュー — Cognition 発、ソフトウェアエンジニアリング特化のAIエージェント</title>
+    <link rel="alternate" type="text/html" href="?a=devin-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:devin-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>料金の記述を現行に合わせた。旧記述は「チームプラン $500/月〜、個人開発者には高価格」だった（同日に 追記 もあり）</summary>
+  </entry>
+  <entry>
     <title>【追記】【分析】米司法省がOpenAI著作権訴訟に「AI学習はフェアユース」と意見書 — 政府が私人間訴訟に立場表明した初めての例</title>
     <link rel="alternate" type="text/html" href="?a=doj-statement-of-interest-openai-nyt-fair-use-2026#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:doj-statement-of-interest-openai-nyt-fair-use-2026:2026-10-03</id>
     <updated>2026-10-03T15:00:00Z</updated>
     <category term="addendum" label="追記"/>
     <summary>本文の段落9は、意見書の原本に直接到達できなかったことを前提に、複数の報道の一致から内容を確認したと書いていた</summary>
+  </entry>
+  <entry>
+    <title>【追記】ERNIE 4.5 レビュー — Baidu の基盤モデル、中国最大の検索エンジンが支える実用力</title>
+    <link rel="alternate" type="text/html" href="?a=ernie-4-5-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:ernie-4-5-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>ERNIE はその後2世代進んでいる</summary>
+  </entry>
+  <entry>
+    <title>【追記】GenSpark レビュー — 目的別エージェントの集合体、スライド・議事録・検索を一箇所に</title>
+    <link rel="alternate" type="text/html" href="?a=genspark-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:genspark-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>料金の記述を現行に合わせた。旧記述は「基本機能は無料で、各エージェントの利用に課金のハードルがない」だった（同日に 追記 もあり）</summary>
+  </entry>
+  <entry>
+    <title>【追記】NotebookLM レビュー — Google発、アップロード資料に基づくAIリサーチ＆ポッドキャスト生成</title>
+    <link rel="alternate" type="text/html" href="?a=notebooklm-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:notebooklm-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>NotebookLM は2026年7月16日に「Gemini Notebook」へ改称された（同日に 追記 もあり）</summary>
+  </entry>
+  <entry>
+    <title>【追記】Perplexity AI レビュー — リファレンス重視のAI検索、全回答にソース引用を徹底</title>
+    <link rel="alternate" type="text/html" href="?a=perplexity-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:perplexity-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>Perplexity は検索の外へ広がっている（同日に 追記・追記 もあり）</summary>
   </entry>
   <entry>
     <title>【訂正】【分析】Anthropic vs 米国防総省、連邦地裁が「サプライチェーンリスク」指定を違法と判断 — 国防副長官は9月3日、なお維持の意向</title>

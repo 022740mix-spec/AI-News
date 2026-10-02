@@ -3143,7 +3143,7 @@ export const ARTICLES_META = [
     },
     "rating": 4.5,
     "reviewCategory": "media",
-    "lastReviewed": "2026-06-05"
+    "lastReviewed": "2026-10-03"
   },
   {
     "id": "claude-code",
@@ -4070,7 +4070,7 @@ export const ARTICLES_META = [
     "type": "review",
     "category": "model",
     "title": "Claude Opus 4.6 レビュー — Anthropic 前世代フラッグシップ、1Mコンテキストの深い推論",
-    "excerpt": "Anthropic の2026年Q1フラッグシップモデル（後継 Opus 4.7/4.8 リリース済み）。1Mトークンのコンテキストウィンドウ、SWE-Bench トップクラスのコーディング性能、拡張思考による高度な推論が特徴。$15/$75 per 1M tokens。",
+    "excerpt": "Anthropic の2026年Q1フラッグシップモデル（後継 Opus 4.7/4.8 リリース済み）。1Mトークンのコンテキストウィンドウ、SWE-Bench トップクラスのコーディング性能、拡張思考による高度な推論が特徴。$5/$25 per 1M tokens。",
     "date": "2026-03-29",
     "newsDate": "2026-03-15",
     "author": "AI News 編集部",
@@ -4096,7 +4096,7 @@ export const ARTICLES_META = [
     "type": "review",
     "category": "model",
     "title": "GPT-5.4 レビュー — OpenAI 2026年Q1の主力モデル、推論・コーディング・エージェント統合",
-    "excerpt": "OpenAI が2026年前半に投入した主力モデル（後継 GPT-5.5 が4/23 リリース済み）。128Kコンテキスト、推論とコーディングを統合したアーキテクチャ。Codex との連携でエージェント的な運用も可能。$2.50/$10 per 1M tokens。",
+    "excerpt": "OpenAI が2026年前半に投入した主力モデル（後継 GPT-5.5 が4/23 リリース済み）。約1M（1,050,000）トークンのコンテキスト、推論とコーディングを統合したアーキテクチャ。Codex との連携でエージェント的な運用も可能。$2.50/$15 per 1M tokens。",
     "date": "2026-03-29",
     "newsDate": "2026-03-10",
     "author": "AI News 編集部",
@@ -4121,8 +4121,8 @@ export const ARTICLES_META = [
     "id": "gemini-3-1-pro-review",
     "type": "review",
     "category": "model",
-    "title": "Gemini 3.1 Pro レビュー — Google 最上位、2Mコンテキストは業界最大",
-    "excerpt": "Google DeepMind のフラッグシップ。2Mトークンのコンテキストウィンドウは全モデル中最大。長大なコードベースの一括読み込みと Google Cloud との統合が強み。$1.25/$5 per 1M tokens。",
+    "title": "Gemini 3.1 Pro レビュー — Google の Pro 世代、1Mコンテキストと Google Cloud 統合",
+    "excerpt": "Google DeepMind の Pro 世代モデル（Gemini API ではプレビュー提供）。入力約1Mトークンのコンテキストで長大なコードベースを一括で読み込め、Google Cloud との統合が強み。$2/$12 per 1M tokens（200K トークン以下）。",
     "date": "2026-03-29",
     "newsDate": "2026-03-12",
     "author": "AI News 編集部",
@@ -4623,14 +4623,14 @@ export const ARTICLES_META = [
     },
     "rating": 3.5,
     "reviewCategory": "agent",
-    "lastReviewed": "2026-03-29"
+    "lastReviewed": "2026-10-03"
   },
   {
     "id": "devin-review",
     "type": "review",
     "category": "product",
     "title": "Devin レビュー — Cognition 発、ソフトウェアエンジニアリング特化のAIエージェント",
-    "excerpt": "「AIソフトウェアエンジニア」を標榜する自律型コーディングエージェント。独自のクラウド開発環境でコード生成・テスト・デバッグ・PR作成まで一貫対応。$500/月〜。",
+    "excerpt": "「AIソフトウェアエンジニア」を標榜する自律型コーディングエージェント。独自のクラウド開発環境でコード生成・テスト・デバッグ・PR作成まで一貫対応。2026年10月時点で Free / Pro $20 / Max $200 / Teams $80〜。",
     "date": "2026-03-29",
     "newsDate": "2026-03-05",
     "author": "AI News 編集部",
@@ -4649,14 +4649,14 @@ export const ARTICLES_META = [
     },
     "rating": 3.5,
     "reviewCategory": "agent",
-    "lastReviewed": "2026-03-29"
+    "lastReviewed": "2026-10-03"
   },
   {
     "id": "genspark-review",
     "type": "review",
     "category": "product",
     "title": "GenSpark レビュー — 目的別エージェントの集合体、スライド・議事録・検索を一箇所に",
-    "excerpt": "検索だけでなく、スライド生成・AI議事録・旅行計画など目的ごとに専用エージェントが分かれたユニークな構造。Sparkpages による情報構造化と合わせ、汎用AI検索とは一線を画す。無料。",
+    "excerpt": "検索だけでなく、スライド生成・AI議事録など目的ごとに専用エージェントが分かれた構造で出発し、現在は Super Agent を中心とする AI ワークスペースに広がっている。クレジット制で、無料プランあり（上限付き）、Plus $24.99/月〜。",
     "date": "2026-03-29",
     "newsDate": "2026-03-01",
     "author": "AI News 編集部",
@@ -4676,7 +4676,7 @@ export const ARTICLES_META = [
     },
     "rating": 4,
     "reviewCategory": "search",
-    "lastReviewed": "2026-03-29"
+    "lastReviewed": "2026-10-03"
   },
   {
     "id": "perplexity-review",
@@ -4702,7 +4702,7 @@ export const ARTICLES_META = [
     },
     "rating": 4.5,
     "reviewCategory": "search",
-    "lastReviewed": "2026-03-29"
+    "lastReviewed": "2026-10-03"
   },
   {
     "id": "notebooklm-review",
@@ -4729,7 +4729,7 @@ export const ARTICLES_META = [
     },
     "rating": 4,
     "reviewCategory": "search",
-    "lastReviewed": "2026-03-29"
+    "lastReviewed": "2026-10-03"
   },
   {
     "id": "deepseek-r1-review",
