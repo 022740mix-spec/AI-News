@@ -8,6 +8,14 @@
   <updated>2026-10-03T15:00:00Z</updated>
   <generator>ai-news-generate-updates</generator>
   <entry>
+    <title>【追記】Alibaba が Qwen 3.8-Max を公開 — 2.4T/95B活性化、Max 級で初のオープンウェイト化、IFBench で Sol・Fable 5 を上回る</title>
+    <link rel="alternate" type="text/html" href="?a=alibaba-qwen-3-8-max-open-weight-2-4t-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:alibaba-qwen-3-8-max-open-weight-2-4t-2026:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>公開後に、次の点が公式資料で確認できた（Hugging Face の Qwen3.8-2.4T-A95B のモデルカードと、Alibaba のプレスリリースによる）</summary>
+  </entry>
+  <entry>
     <title>【追記】【分析】米司法省がOpenAI著作権訴訟に「AI学習はフェアユース」と意見書 — 政府が私人間訴訟に立場表明した初めての例</title>
     <link rel="alternate" type="text/html" href="?a=doj-statement-of-interest-openai-nyt-fair-use-2026#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:doj-statement-of-interest-openai-nyt-fair-use-2026:2026-10-03</id>
