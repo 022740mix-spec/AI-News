@@ -115,8 +115,14 @@ function scanText(rawText, where) {
   let text = rawText;
   for (const re of selfRefs) text = text.replace(re, "«site»");
 
+  // パスの規則だけは、http(s) の URL を除いた文字列で照合する。Business Wire の
+  // https://www.businesswire.com/news/home/<数字>/ のように、外部サイトの URL に
+  // /home/<語>/ が含まれる正当な出典があり、環境固有のパスと区別できないため（2026年10月2日に誤検出）。
+  // URL 以外（本文に書かれたローカルパス）は従来どおり検出する。他の規則は URL を除かない。
+  const textNoUrl = text.replace(/https?:\/\/[^\s"'<>)\]]+/g, "«url»");
   for (const { name, re } of HARD) {
-    for (const m of text.match(new RegExp(re.source, re.flags)) || []) {
+    const target = name.startsWith("環境固有のパス") ? textNoUrl : text;
+    for (const m of target.match(new RegExp(re.source, re.flags)) || []) {
       err(where, `${name}: ${m}`);
     }
   }
