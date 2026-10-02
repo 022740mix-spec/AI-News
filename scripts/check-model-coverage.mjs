@@ -22,6 +22,7 @@
  */
 import { pathToFileURL, fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { existsSync, readFileSync } from "node:fs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, "..");
@@ -37,6 +38,20 @@ const { ARTICLES_META } = await load("src/data/articlesMeta.js");
 const norm = (s) => s.toLowerCase().replace(/[\s\-_.]/g, "");
 
 const known = new Map(MODEL_COMPARISON.map((m) => [norm(m.name), m.name]));
+
+// 載せないと判断したモデル名（理由付き）。同じ候補が毎日並ぶと背景になるため、
+// 決着したものはここに置く（Issue #79）。`scripts/allowed-uncovered-models.txt`
+const allowed = new Set();
+{
+  const f = join(rootDir, "scripts/allowed-uncovered-models.txt");
+  if (existsSync(f)) {
+    for (const line of readFileSync(f, "utf8").split("\n")) {
+      const t = line.trim();
+      if (!t || t.startsWith("#")) continue;
+      allowed.add(norm(t.split("#")[0]));
+    }
+  }
+}
 
 const ymd = (a) => a.date || a.newsDate || "";
 const since = new Date(Date.now() - days * 86400000).toISOString().slice(0, 10);
@@ -68,18 +83,19 @@ for (const a of recent) {
   }
 }
 
+const suppressed = [...found.values()].filter((e) => !known.has(norm(e.name)) && allowed.has(norm(e.name)));
 const missing = [...found.values()]
-  .filter((e) => !known.has(norm(e.name)))
+  .filter((e) => !known.has(norm(e.name)) && !allowed.has(norm(e.name)))
   .sort((a, b) => b.latest.localeCompare(a.latest) || b.hits - a.hits);
 
-const result = { days, tableSize: known.size, extracted: found.size, missing };
+const result = { days, tableSize: known.size, extracted: found.size, missing, allowedCount: suppressed.length };
 
 if (asJson) {
   console.log(JSON.stringify(result, null, 2));
   process.exit(0);
 }
 
-console.log(`ベンチマーク比較表 ${known.size} 件 / 直近${days}日の記事から抽出 ${found.size} 種`);
+console.log(`ベンチマーク比較表 ${known.size} 件 / 直近${days}日の記事から抽出 ${found.size} 種（許可リストで除外 ${suppressed.length} 種）`);
 console.log("");
 
 if (!missing.length) {
