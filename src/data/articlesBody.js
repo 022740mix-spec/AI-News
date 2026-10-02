@@ -26579,6 +26579,30 @@ const ARTICLES_BODY = {
         "url": "https://volantissemi.ai/"
       }
     ]
+  },
+  "claude-code-2-1-287-mods-you-should-know-2026": {
+    "body": [
+      "Anthropic の Claude Code リポジトリの CHANGELOG によると、v2.1.287 は「Claude Mods」を追加した。記載は「プラグインがより深い挙動を変更できるようになった」の1行で、何を変更できるのかの詳細は、今回確認した CHANGELOG には書かれていない。この記事は CHANGELOG の記載をもとに、自分の版にその機能があるかを判断できるよう整理する。GitHub のリリース一覧では v2.1.287 が10月1日付、v2.1.286 が9月30日付で並んでいる。",
+      "最初の同梱 mod が「You should know」である。CHANGELOG は「副エージェントが見張り役となり、あなたや Claude が見落としているかもしれない点を指摘する」と説明している。有効化するコマンドは /plugin enable cc-plugin-you-should-know@builtin で、対象は「テレメトリが有効な first-party セッション」とされている。つまりテレメトリを切っている環境や、サードパーティのプロバイダー経由では、この記載の範囲に入らない。実際の指摘の質や消費トークンについては、今回確認した文書に記載がなく、確認できていない。",
+      "v2.1.287 のその他の追加は次のとおりである。agents ビューに n:<text> フィルタが入り、セッション名とタスクに一致させられる。OpenTelemetry の user_prompt イベントに prompt_text が加わった。これは prompt のコピーで、ドット区切りのキーを入れ子にするバックエンド向けである。CHANGELOG は、prompt を落とす・マスクする場所では prompt_text も同じ扱いにするよう注記している。",
+      "MCP まわりでは、2025-11-25 プロトコルの MCP サーバーからの URL プロンプト（サインインなど）に対応した。この更新後にサーバーに接続できなくなった場合は、その MCP 設定項目に bareElicitationCapability: true を追加するよう CHANGELOG が書いている。また、MCP サーバーの alwaysLoad: false の意味が変わり、そのサーバーの全ツールをツール検索の背後に遅延させるようになった。",
+      "既定値の変更もある。Opus 4.7 以降と Fable は、Bedrock、Vertex、Foundry、Claude apps gateway で、[1m] の接尾辞なしに既定で 1M コンテキストウィンドウを使う（CLAUDE_CODE_DISABLE_1M_CONTEXT=1 で 200K を維持できる）。Bash の許可ルールや許可フックは、Claude Code のファイルツールが拒否するファイルへのシェル書き込み（Anthropic のプロファイルストア、ホストの資格情報ファイル）に対して、実行ではなく確認を出すようになった。待機中の権限プロンプトは古い順に表示され、新しいプロンプトが読んでいるものを覆わなくなった。ただしカウントダウン付きのものは従来どおり上に開く。",
+      "安全面の修正として、ルートやホームディレクトリへの危険な rm が、同じコマンドで ~ やワイルドカードへの出力リダイレクトも伴うと、常に確認するという保護が外れていた問題が直った。組織のツール別権限の上限が、__proto__ という名前の MCP ツールで黙って落ちていた問題も修正されている。モデルまわりでは、/model で Fable を選ぶと現行版の ID が保存されていた問題が直り、保存される既定が Opus や Sonnet と同様に最新の Fable に追従するようになった。",
+      "v2.1.286 は前日の版で、権限リクエストが複数たまったときに「2 of 5」のような件数が出るようになった。Anthropic の API が、既定やエイリアスが解決するモデルを拒否した場合に、同じ階層の前のモデルで1回だけ再試行する動作も入っている。サードパーティのプロバイダー上の、またはテレメトリを切った対話セッションは、権限モードが未設定なら auto モードで始まるようになった（permissions.defaultMode が設定されていればそちらが優先）。これは既定の変更なので、その構成で使っている場合は確認したい。",
+      "v2.1.286 には、リモート関連の修正も多い。組織のポリシーで Remote Control が無効になったあともセッションがつながり続けていた問題は、通知つきで切断されるようになった。DISABLE_TELEMETRY や DO_NOT_TRACK でテレメトリを切ると有料プランで Remote Control が使えなくなる問題も修正された。ログやトランスクリプトでの秘密情報のマスクも複数直っており、MCP のエラーメッセージで Bearer や Basic が前置された資格情報の値が見えていた問題、パーセントエンコードされた Bearer トークンが一部しかマスクされなかった問題が含まれる。",
+      "プラグイン管理にも手が入った。/plugin のマーケットプレイス削除が、一緒にアンインストールしたプラグインを列挙するようになり、installed_plugins.json が読めないときは中身を横に保管してから作り直す。同じ版で、claude plugin eval は git 2.31 以降を要するようになった。Mods がプラグインの仕組みの上に載っていることと、同じ2つの版でプラグインの修正が集中していることは、CHANGELOG の事実の並びである。両者の因果関係は CHANGELOG に書かれていない。",
+      "なお、この記事の内容はすべて公式 CHANGELOG の記載に基づく。実際の挙動は検証しておらず、Mods の詳細仕様（何を変更できるか、どう書くか）を説明する公式ドキュメントは、今回の調査では確認できていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG（anthropics/claude-code）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "Claude Code リリース一覧（anthropics/claude-code）",
+        "url": "https://github.com/anthropics/claude-code/releases"
+      }
+    ]
   }
 };
 

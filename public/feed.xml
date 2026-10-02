@@ -80,6 +80,14 @@
     <summary>米サンフランシスコの半導体スタートアップ Volantis が、Lachy Groom と Abstract Ventures の共同主導で8,800万ドル（円換算で約138億円）のシリーズAを発表した。光インターコネクトで演算チップと多数のメモリチップをつなぎ、メモリ容量と帯域幅を同時に増やす「光メモリ」の構成を掲げる。最初のシステム A-1 は、20兆パラメータ超のモデルをユーザーあたり毎秒最大1万トークンで動かすことを目指して設計中で、2027年に最初の推論エンジンを顧客へ届ける予定としている。性能の数字はいずれも当事者の設計目標で、独立した検証は確認できていない。同社自身の資料の間でも、数字の言い回しが一致していない点がある。</summary>
   </entry>
   <entry>
+    <title>Claude Code 2.1.287 で「Mods」が入る、プラグインが挙動の深部を変えられる。同梱の「You should know」は見落としを指摘する副エージェント</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-2-1-287-mods-you-should-know-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-2-1-287-mods-you-should-know-2026</id>
+    <published>2026-10-02T15:00:00Z</published>
+    <updated>2026-10-02T15:00:00Z</updated>
+    <summary>Claude Code の v2.1.287 は、プラグインがより深い挙動を変更できる「Claude Mods」と、最初の同梱 mod「You should know」を追加した。v2.1.286 では権限プロンプトの件数表示や、リモート関連の修正が入っている。公式 CHANGELOG の記載を、自分の版に機能があるかを判断できるよう整理する。</summary>
+  </entry>
+  <entry>
     <title>Claude Code、5時間の上限に達しても区切りのよいところまで進める——週次枠から小さな固定分を使い、Pro は週1回・Max は毎回</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-wrap-up-allowance-5-hour-limit-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-wrap-up-allowance-5-hour-limit-2026</id>

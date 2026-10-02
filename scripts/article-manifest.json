@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-10-01",
-  "count": 542,
+  "generatedAt": "2026-10-02",
+  "count": 543,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -138,6 +138,7 @@
     "clash-worktree-merge-conflict-2026",
     "claude-1m-context-ga-2026",
     "claude-code",
+    "claude-code-2-1-287-mods-you-should-know-2026",
     "claude-code-agents-md-support-2026",
     "claude-code-auto-memory-disable-2026",
     "claude-code-auto-mode",
