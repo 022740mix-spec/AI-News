@@ -405,7 +405,7 @@ export const ARTICLES_META = [
     "type": "feature",
     "category": "regulation",
     "title": "【分析】Academy が Oscar の AI ルールを明確化 — AI 出演・AI 脚本は対象外、「人間の同意」と「人間の著作」を必須要件に",
-    "excerpt": "Academy of Motion Picture Arts and Sciences が5月1日（多くの一般メディアは5月2日に報道）、**AI 生成の演技および AI 主導で書かれた脚本は Academy Awards（オスカー）の主要部門で対象外**とする規則変更を公表した。演技部門では「**法的クレジットに記載され、本人の同意の下で人間が演じた**」ものに限ると明記。脚本部門は「**人間が著作したもの**」が要件となる。Academy は同時に **AI の使用に関する追加情報の提出を求める権限**も保持し、ケースバイケースで例外を判断する。Sora 2 や Runway Gen5 級の生成動画が業界に浸透するなか、**「賞レースの土俵」は人間の創作活動に絞り直す**という業界自治の方向性が鮮明になった。",
+    "excerpt": "Academy of Motion Picture Arts and Sciences が5月1日（多くの一般メディアは5月2日に報道）、**AI 生成の演技および AI 主導で書かれた脚本は Academy Awards（オスカー）の主要部門で対象外**とする規則変更を公表した。演技部門では「**法的クレジットに記載され、本人の同意の下で人間が演じた**」ものに限ると明記。脚本部門は「**人間が著作したもの**」が要件となる。Academy は同時に **AI の使用に関する追加情報の提出を求める権限**も保持し、ケースバイケースで例外を判断する。Sora 2 や Runway（Gen-4.5） 級の生成動画が業界に浸透するなか、**「賞レースの土俵」は人間の創作活動に絞り直す**という業界自治の方向性が鮮明になった。",
     "date": "2026-05-11",
     "newsDate": "2026-05-02",
     "author": "AI News 編集部",
@@ -1678,8 +1678,8 @@ export const ARTICLES_META = [
     "id": "runway-gen5-video-generation-2026",
     "type": "news",
     "category": "media",
-    "title": "Runway Gen-5 発表 — 最大2分の高品質動画生成、物理シミュレーションとカメラ制御が大幅進化",
-    "excerpt": "Runway が Gen-5 を発表。最大120秒の動画生成に対応し、物理法則に従った物体の動き、精密なカメラワーク制御、音声同期リップシンクを実現。API 経由でのバッチ生成にも対応し、映像制作ワークフローへの組み込みが現実的に。",
+    "title": "【取り下げ】Runway Gen-5 発表 — 最大2分の高品質動画生成、物理シミュレーションとカメラ制御が大幅進化",
+    "excerpt": "本記事は、Runway が「Gen-5」を発表したとする中心的な事実を確認できなかったため、2026-10-03 に取り下げました。",
     "date": "2026-03-27",
     "newsDate": "2026-03-27",
     "author": "AI News 編集部",
@@ -1693,7 +1693,9 @@ export const ARTICLES_META = [
     "coverImage": {
       "src": "articles/cover-media-video.svg",
       "alt": "動画制作"
-    }
+    },
+    "status": "retracted",
+    "heroScope": "none"
   },
   {
     "id": "ai-image-api-guide-developers-2026",
@@ -2676,7 +2678,7 @@ export const ARTICLES_META = [
     "type": "review",
     "category": "media",
     "title": "Aqua Voice — Mac/Windows 向けAIディクテーション（フローティングUI）",
-    "excerpt": "録音→転写→アクティブなアプリへペーストまでを一体で扱う製品向けディクテーション。公式 FAQ では全アカウント 1,000 語の無料枠、Avalon モデルは Pro で選択可能、iPhone アプリは未対応とされる。",
+    "excerpt": "録音→転写→アクティブなアプリへペーストまでを一体で扱う製品向けディクテーション。無料プランは 1,000 語まで（Avalon モデルを含む）。2026年4月に iPhone 向けの音声キーボードも公開された。",
     "date": "2026-03-28",
     "newsDate": "2026-03-07",
     "author": "AI News 編集部",
@@ -3487,7 +3489,7 @@ export const ARTICLES_META = [
     },
     "rating": 3,
     "reviewCategory": "editor",
-    "lastReviewed": "2026-03-28"
+    "lastReviewed": "2026-10-03"
   },
   {
     "id": "pearai",
@@ -4345,8 +4347,8 @@ export const ARTICLES_META = [
     "id": "runway-gen5-review",
     "type": "review",
     "category": "media",
-    "title": "Runway Gen-5 レビュー — 動画生成のフロントランナー、映像制作者の新標準",
-    "excerpt": "動画生成AIの先駆者。Gen-5で物理シミュレーション精度が大幅向上。最長40秒の高品質動画を生成。ハリウッドのプロダクションでも採用実績。$12/月〜。",
+    "title": "【取り下げ】Runway Gen-5 レビュー — 動画生成のフロントランナー、映像制作者の新標準",
+    "excerpt": "本記事は、Runway が「Gen-5」を発表したとする中心的な事実を確認できなかったため、2026-10-03 に取り下げました。",
     "date": "2026-03-29",
     "newsDate": "2026-03-22",
     "author": "AI News 編集部",
@@ -4365,7 +4367,9 @@ export const ARTICLES_META = [
     },
     "rating": 3.5,
     "reviewCategory": "video",
-    "lastReviewed": "2026-03-29"
+    "lastReviewed": "2026-03-29",
+    "status": "retracted",
+    "heroScope": "none"
   },
   {
     "id": "suno-v5-review",

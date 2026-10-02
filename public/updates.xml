@@ -8,12 +8,60 @@
   <updated>2026-10-03T15:00:00Z</updated>
   <generator>ai-news-generate-updates</generator>
   <entry>
+    <title>【取り下げ】【取り下げ】Runway Gen-5 レビュー — 動画生成のフロントランナー、映像制作者の新標準</title>
+    <link rel="alternate" type="text/html" href="?a=runway-gen5-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:runway-gen5-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="retraction" label="取り下げ"/>
+    <summary>本記事を取り下げました。理由: 中心的な事実（Runway Gen-5 の発表・提供）を、Runway の公式資料と独立した報道のいずれでも確認できなかったため</summary>
+  </entry>
+  <entry>
+    <title>【取り下げ】【取り下げ】Runway Gen-5 発表 — 最大2分の高品質動画生成、物理シミュレーションとカメラ制御が大幅進化</title>
+    <link rel="alternate" type="text/html" href="?a=runway-gen5-video-generation-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:runway-gen5-video-generation-2026:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="retraction" label="取り下げ"/>
+    <summary>本記事を取り下げました。理由: 中心的な事実（Runway Gen-5 の発表・提供）を、Runway の公式資料と独立した報道のいずれでも確認できなかったため</summary>
+  </entry>
+  <entry>
+    <title>【訂正】【分析】Academy が Oscar の AI ルールを明確化 — AI 出演・AI 脚本は対象外、「人間の同意」と「人間の著作」を必須要件に</title>
+    <link rel="alternate" type="text/html" href="?a=academy-oscars-ai-acting-screenplay-ineligible-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:academy-oscars-ai-acting-screenplay-ineligible-2026:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）Sora 2、Runway Gen5、Pika 等の生成動画 →（正）Sora 2、Runway（Gen-4.5）、Pika 等の生成動画 「Runway Gen-5」は、Runway…</summary>
+  </entry>
+  <entry>
+    <title>【訂正】Amazon Q Developer レビュー — AWS統合のAI開発支援ツール</title>
+    <link rel="alternate" type="text/html" href="?a=amazon-q#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:amazon-q:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）CLI（aws q コマンド） →（正）CLI（q コマンド）（同日に 追記 もあり）</summary>
+  </entry>
+  <entry>
+    <title>【訂正】ByteDance が Seedance 2.5 の開発者 API を公開 — 30秒ワンショット生成・ネイティブ音声付き、参照入力を最大50件</title>
+    <link rel="alternate" type="text/html" href="?a=bytedance-seedance-2-5-developer-api-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:bytedance-seedance-2-5-developer-api-2026:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）Runway: Gen シリーズでクリエイター市場に定着 →（正）Runway: Gen シリーズ（現行の主力は Gen-4.5）でクリエイター市場に定着 「Runway Gen-5」は、Runway…</summary>
+  </entry>
+  <entry>
     <title>【訂正】Claude Opus 4.6 レビュー — Anthropic 前世代フラッグシップ、1Mコンテキストの深い推論</title>
     <link rel="alternate" type="text/html" href="?a=claude-opus-4-6-review#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:claude-opus-4-6-review:2026-10-03</id>
     <updated>2026-10-03T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
     <summary>（誤）入力 $15 / 出力 $75。後継の Opus 4.7/4.8 では同じ性能帯で $5/$25 へ大幅値下げ →（正）入力 $5 / 出力 $25（同日に 追記 もあり）</summary>
+  </entry>
+  <entry>
+    <title>【訂正】【特集】中国系 AI モデルの5月集中更新 — Qwen 3.7 Max が Opus 4.6 を一部凌駕、Kimi K2.6 が OSS で GPT-5.4 を抜く、Ernie 5.1・GLM・Seedance 2.0 も同期投下</title>
+    <link rel="alternate" type="text/html" href="?a=feature-china-ai-models-may-2026-qwen-kimi-ernie#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:feature-china-ai-models-may-2026-qwen-kimi-ernie:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）Sora 2、Runway Gen5、Veo に対する中国側の対抗軸 →（正）Sora 2、Runway Gen-4.5、Veo に対する中国側の対抗軸 「Runway Gen-5」は、Runway…</summary>
   </entry>
   <entry>
     <title>【訂正】Flux 2 レビュー — Black Forest Labs 発、フォトリアルと速度のバランス型</title>
@@ -72,6 +120,22 @@
     <summary>（誤）V8 世代では Web UI と API が正式公開され、API 利用は別途従量課金である →（正）V8 は2026年3月17日に alpha.midjourney.com でアルファ版として公開され、V8.1…（同日に 追記 もあり）</summary>
   </entry>
   <entry>
+    <title>【訂正】OpenAI、動画生成アプリ Sora を終了 — 1日100万ドルの運用コスト、計算資源をロボティクスへ転換</title>
+    <link rel="alternate" type="text/html" href="?a=openai-sora-shutdown-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:openai-sora-shutdown-2026:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）AI 動画生成市場では Runway Gen-5 や Google Veo が競争を続ける →（正）AI 動画生成市場では Runway（Gen-4.5）や Google Veo が競争を続ける 「Runway…</summary>
+  </entry>
+  <entry>
+    <title>【訂正】PearAI — コミュニティドリブンのOSSエディタ</title>
+    <link rel="alternate" type="text/html" href="?a=pearai#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:pearai:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）Cursor の Composer や Background Agent… →（正）公式の変更履歴によれば、2025年2月12日の v1.8.0 で Roo Code / Cline…（同日に 追記 もあり）</summary>
+  </entry>
+  <entry>
     <title>【訂正】Qwen 3 レビュー — Alibaba 発、ハイブリッド思考とオープンウェイトの大型ファミリー</title>
     <link rel="alternate" type="text/html" href="?a=qwen-3-review#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:qwen-3-review:2026-10-03</id>
@@ -88,12 +152,44 @@
     <summary>（誤）Runway Gen-5 →（正）Runway（同日に 追記 もあり）</summary>
   </entry>
   <entry>
+    <title>【訂正】Void — プライバシー重視のOSSエディタ</title>
+    <link rel="alternate" type="text/html" href="?a=void#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:void:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）GitHub 上で開発が進められており →（正）開発元の GitHub リポジトリの README は冒頭で「Void is now deprecated」と書き、コントリビューションの受け付けを終了したとしている</summary>
+  </entry>
+  <entry>
+    <title>【訂正】VS Code + Copilot — 定番エディタのAI進化</title>
+    <link rel="alternate" type="text/html" href="?a=vscode#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:vscode:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）2026 年にはエージェントモード（Agent Mode）が導入された →（正）エージェントモードは 2025 年 3 月リリースの VS Code 1.99 で安定版（Stable）…（同日に 追記 もあり）</summary>
+  </entry>
+  <entry>
+    <title>【追記】Aider レビュー — マルチモデル対応のOSS CLIツール</title>
+    <link rel="alternate" type="text/html" href="?a=aider#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:aider:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>2026年10月3日時点の公開状況を確認しました。PyPI の aider-chat の最新版は 0.86.2（2026年2月12日公開）で、それ以降の正式リリースはありません</summary>
+  </entry>
+  <entry>
     <title>【追記】Alibaba が Qwen 3.8-Max を公開 — 2.4T/95B活性化、Max 級で初のオープンウェイト化、IFBench で Sol・Fable 5 を上回る</title>
     <link rel="alternate" type="text/html" href="?a=alibaba-qwen-3-8-max-open-weight-2-4t-2026#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:alibaba-qwen-3-8-max-open-weight-2-4t-2026:2026-10-03</id>
     <updated>2026-10-03T15:00:00Z</updated>
     <category term="addendum" label="追記"/>
     <summary>公開後に、次の点が公式資料で確認できた（Hugging Face の Qwen3.8-2.4T-A95B のモデルカードと、Alibaba のプレスリリースによる）</summary>
+  </entry>
+  <entry>
+    <title>【追記】Aqua Voice — Mac/Windows 向けAIディクテーション（フローティングUI）</title>
+    <link rel="alternate" type="text/html" href="?a=aqua-voice-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:aqua-voice-review:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>本文の「モバイル iOS 版は FAQ 上『未対応』」は執筆時点の記述です</summary>
   </entry>
   <entry>
     <title>【追記】Claude Design レビュー — Anthropic のビジュアル制作ツール、Opus 4.7/4.8 基盤で UI から動画素材までを会話で生成</title>
@@ -110,6 +206,22 @@
     <updated>2026-10-03T15:00:00Z</updated>
     <category term="addendum" label="追記"/>
     <summary>提供状況の更新</summary>
+  </entry>
+  <entry>
+    <title>【追記】Cline レビュー — 承認フロー付きのOSS AIエージェント</title>
+    <link rel="alternate" type="text/html" href="?a=cline#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:cline:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>2026年10月3日時点の公式サイトでは、Cline は VS Code 拡張に加えて CLI（スクリプト・cron・CI から実行）、デスクトップアプリ（エディタ不要。macOS /…</summary>
+  </entry>
+  <entry>
+    <title>【追記】CodeBuff レビュー — ターミナル特化の新興CLIエージェント</title>
+    <link rel="alternate" type="text/html" href="?a=codebuff#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:codebuff:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>2026年10月3日時点の公式料金ページでは、本文の「月額 $20 のサブスクリプション」は掲載されておらず、サブスクリプションは $100 / $200 / $500（月額。利用量はそれぞれ 1×…</summary>
   </entry>
   <entry>
     <title>【追記】DeepSeek R1 レビュー — 中国発オープンウェイト推論モデル、Opus に迫る性能を破格コストで</title>
@@ -224,12 +336,36 @@
     <summary>本レビューの V5 は現行世代ではなくなった（同日に 追記 もあり）</summary>
   </entry>
   <entry>
+    <title>【追記】Trae — ByteDance発のAIエディタ、Builder Modeが話題</title>
+    <link rel="alternate" type="text/html" href="?a=trae#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:trae:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>2026年10月3日時点の公式情報と照合しました</summary>
+  </entry>
+  <entry>
     <title>【追記】Udio レビュー — Suno 対抗の音楽生成、音質と楽曲構成力に定評</title>
     <link rel="alternate" type="text/html" href="?a=udio-review#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:udio-review:2026-10-03</id>
     <updated>2026-10-03T15:00:00Z</updated>
     <category term="addendum" label="追記"/>
     <summary>権利関係と提供条件について、本文の「訴訟・和解・ライセンス交渉が報じられており」「商用利用のルールが整備途上」という記述は、本レビューの公開（2026年3月）…（同日に 追記 もあり）</summary>
+  </entry>
+  <entry>
+    <title>【追記】Warp AI レビュー — AI内蔵のRust製モダンターミナル</title>
+    <link rel="alternate" type="text/html" href="?a=warp-ai#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:warp-ai:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>2026年10月3日時点の公式情報と照合しました</summary>
+  </entry>
+  <entry>
+    <title>【追記】Zed AI — Rust製の超高速AIエディタ</title>
+    <link rel="alternate" type="text/html" href="?a=zed-ai#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:zed-ai:2026-10-03</id>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>2026年10月3日時点の公式料金ページでは、Personal（無料。採用された編集予測 2,000 回、自前の API キーや外部エージェントは無制限）/ Pro（月 $10。編集予測無制限、$5…</summary>
   </entry>
   <entry>
     <title>【訂正】【分析】Anthropic vs 米国防総省、連邦地裁が「サプライチェーンリスク」指定を違法と判断 — 国防副長官は9月3日、なお維持の意向</title>
@@ -984,14 +1120,6 @@
     <summary>(1) Codex について「ChatGPT Pro（$200/月）以上のプランに含まれる形で提供され、単体の低価格プランはない」という記述を訂正しました（同日に 月次見直し もあり）</summary>
   </entry>
   <entry>
-    <title>【訂正】Runway Gen-5 レビュー — 動画生成のフロントランナー、映像制作者の新標準</title>
-    <link rel="alternate" type="text/html" href="?a=runway-gen5-review#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:runway-gen5-review:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>★4→3.5 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（3.65）…</summary>
-  </entry>
-  <entry>
     <title>【訂正】Void — プライバシー重視のOSSエディタ</title>
     <link rel="alternate" type="text/html" href="?a=void#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:void:2026-08-11</id>
@@ -1078,85 +1206,5 @@
     <updated>2026-07-08T15:00:00Z</updated>
     <category term="addendum" label="追記"/>
     <summary>期間延長発表: 7月6日、Anthropic は当初7月7日で終了予定だったサブスク包括アクセスを 7月12日まで延長（延長・「一時的」宣言）</summary>
-  </entry>
-  <entry>
-    <title>【追記】Claude Sonnet 4.6 レビュー — Anthropic 前世代 Sonnet（後継 Sonnet 5 リリース済）、1Mコンテキスト・バランス型</title>
-    <link rel="alternate" type="text/html" href="?a=claude-sonnet-4-6-review#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:claude-sonnet-4-6-review:2026-07-07</id>
-    <updated>2026-07-07T15:00:00Z</updated>
-    <category term="addendum" label="追記"/>
-    <summary>★4.0→3.5：後継 Claude Sonnet 5（6/30 GA）リリースに伴い、本記事を「前世代 Sonnet レビュー」として位置付けを明確化</summary>
-  </entry>
-  <entry>
-    <title>【取り下げ】【取り下げ】OpenAI が史上最大 $1,220億の資金調達を完了</title>
-    <link rel="alternate" type="text/html" href="?a=openai-122b-funding-round-852b-valuation-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:openai-122b-funding-round-852b-valuation-2026:2026-06-05</id>
-    <updated>2026-06-05T15:00:00Z</updated>
-    <category term="retraction" label="取り下げ"/>
-    <summary>本記事は、同じ OpenAI $122B 資金調達を扱う先行記事と内容が重複していたため、編集ポリシーに基づき取り下げました（同日に 取り下げ もあり）</summary>
-  </entry>
-  <entry>
-    <title>【追記】Claude Opus 4.6 レビュー — Anthropic 前世代フラッグシップ、1Mコンテキストの深い推論</title>
-    <link rel="alternate" type="text/html" href="?a=claude-opus-4-6-review#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:claude-opus-4-6-review:2026-06-05</id>
-    <updated>2026-06-05T15:00:00Z</updated>
-    <category term="addendum" label="追記"/>
-    <summary>後継 Opus 4.7（4/16）/ Opus 4.8（5/28）リリースに伴い、本記事を「前世代フラッグシップのレビュー」として位置付けを明確化</summary>
-  </entry>
-  <entry>
-    <title>【追記】GPT-5.4 レビュー — OpenAI 2026年Q1の主力モデル、推論・コーディング・エージェント統合</title>
-    <link rel="alternate" type="text/html" href="?a=gpt-5-4-review#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:gpt-5-4-review:2026-06-05</id>
-    <updated>2026-06-05T15:00:00Z</updated>
-    <category term="addendum" label="追記"/>
-    <summary>GPT-5.5 リリース（4/23）に伴い、「最新フラッグシップ」表記を「2026年Q1の主力モデル」に訂正</summary>
-  </entry>
-  <entry>
-    <title>【追記】【特集／4月7日閣議決定】日本の個人情報保護法が改正へ — AI学習なら要配慮個人情報も「同意不要」、千人超の不正取得に課徴金、欧州とは逆方向の選択</title>
-    <link rel="alternate" type="text/html" href="?a=japan-personal-info-protection-law-ai-amendment-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:japan-personal-info-protection-law-ai-amendment-2026:2026-04-06</id>
-    <updated>2026-04-06T15:00:00Z</updated>
-    <category term="addendum" label="追記"/>
-    <summary>政府が4月7日に改正案を閣議決定する見通しが共同通信・日本経済新聞等で報じられたため、本記事を更新した</summary>
-  </entry>
-  <entry>
-    <title>【追記】Claude Code v2.1.90 リリース — /powerup で10機能を体感学習、NO_FLICKER でちらつき解消、Auto Mode の指示遵守も改善</title>
-    <link rel="alternate" type="text/html" href="?a=claude-code-v2-1-90-powerup-no-flicker-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:claude-code-v2-1-90-powerup-no-flicker-2026:2026-04-03</id>
-    <updated>2026-04-03T15:00:00Z</updated>
-    <category term="addendum" label="追記"/>
-    <summary>v2.1.91 リリース内容を追記。MCP 結果サイズ500KB対応、Skills シェル実行無効化設定、--resume 履歴消失バグ修正など</summary>
-  </entry>
-  <entry>
-    <title>【追記】Claude Code v2.1.90 リリース — /powerup で10機能を体感学習、NO_FLICKER でちらつき解消、Auto Mode の指示遵守も改善</title>
-    <link rel="alternate" type="text/html" href="?a=claude-code-v2-1-90-powerup-no-flicker-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:claude-code-v2-1-90-powerup-no-flicker-2026:2026-04-02</id>
-    <updated>2026-04-02T15:00:00Z</updated>
-    <category term="addendum" label="追記"/>
-    <summary>v2.1.91（リリースから約23時間後）：v2.1.90 リリースからわずか23時間後の2026年4月3日、v2.1.91 がリリースされた</summary>
-  </entry>
-  <entry>
-    <title>【追記】【緊急】axios がサプライチェーン攻撃を受け RAT 入り偽バージョンが npm に公開 — 週間1億DLの HTTP クライアントが標的に</title>
-    <link rel="alternate" type="text/html" href="?a=axios-npm-supply-chain-attack-rat-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:axios-npm-supply-chain-attack-rat-2026:2026-04-01</id>
-    <updated>2026-04-01T15:00:00Z</updated>
-    <category term="addendum" label="追記"/>
-    <summary>間接依存（transitive dependency）の危険性と追加防御策 GMO Flatt Security の分析記事で重要な警告が示された</summary>
-  </entry>
-  <entry>
-    <title>【訂正】【速報】Claude Code の全ソースコード（51万行）が npm のソースマップ経由で流出 — 未公開機能・アーキテクチャが丸見えに</title>
-    <link rel="alternate" type="text/html" href="?a=claude-code-source-leak-npm-sourcemap-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:claude-code-source-leak-npm-sourcemap-2026:2026-03-31</id>
-    <updated>2026-03-31T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>Chaofan Shou（@Fried_rice）の記述を「第一発見者」から「拡散の起点となった投稿」に変更（同日に 訂正・訂正・訂正・訂正・追記 もあり）</summary>
-  </entry>
-  <entry>
-    <title>【追記】Claude Code のトークンが異常速度で消失 — Anthropic が prompt cache バグを「最優先で調査中」と認める</title>
-    <link rel="alternate" type="text/html" href="?a=claude-code-token-drain-prompt-cache-bug-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:claude-code-token-drain-prompt-cache-bug-2026:2026-03-31</id>
-    <updated>2026-03-31T15:00:00Z</updated>
-    <category term="addendum" label="追記"/>
-    <summary>Claude Code がセッション早期終了を提案する新挙動、OpenAI Codex への移行トレンド、codex-plugin-cc のリリース、同週のソースコード流出との皮肉な同時性について追記</summary>
   </entry>
 </feed>
