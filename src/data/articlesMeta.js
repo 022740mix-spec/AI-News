@@ -11610,5 +11610,23 @@ export const ARTICLES_META = [
       "プラグイン",
       "開発ツール"
     ]
+  },
+  {
+    "id": "github-copilot-cli-1-0-88-to-1-0-91-release-notes-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "GitHub Copilot CLI 1.0.88〜1.0.91 の変更点、GPT-6.1 Sol と Claude Opus 5.5 に対応、サンドボックス用の CA 管理コマンドが入る",
+    "excerpt": "GitHub Copilot CLI は 9月22日から10月1日にかけて 1.0.88〜1.0.91 を公開した。モデル選択に GPT-6 Sol / Luna / 6.1 Sol と claude-opus-5.5 が加わり、.claude/rules を指示ファイルとして読む。サンドボックスのプロキシ CA を扱う copilot sandbox ca コマンドも入った。",
+    "date": "2026-10-03",
+    "newsDate": "2026-10-01",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "GitHub Copilot",
+      "CLI",
+      "GitHub",
+      "MCP",
+      "開発ツール"
+    ]
   }
 ];
