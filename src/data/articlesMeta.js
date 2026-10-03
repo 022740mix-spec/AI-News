@@ -11591,5 +11591,24 @@ export const ARTICLES_META = [
       "OpenAI",
       "開発ツール"
     ]
+  },
+  {
+    "id": "claude-code-2-1-288-resume-fixes-code-review-max-findings-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.288、--resume まわりの修正が5件、/code-review に --max-findings、Ctrl+C で消した入力を ↑ で戻せる",
+    "excerpt": "Claude Code v2.1.288 の公式 CHANGELOG には、会話の再開（--resume）と自動圧縮に関する修正が並ぶ。追加は /code-review の --max-findings、Ctrl+C で消したプロンプトの復元、MCP の追加 OAuth スコープ要求への再認証プロンプトなど。自分の版に何が入っているかを判断できるよう整理する。",
+    "date": "2026-10-03",
+    "newsDate": "2026-10-02",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "MCP",
+      "プラグイン",
+      "開発ツール"
+    ]
   }
 ];

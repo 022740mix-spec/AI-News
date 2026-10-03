@@ -8,6 +8,14 @@
   <updated>2026-10-03T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Claude Code 2.1.288、--resume まわりの修正が5件、/code-review に --max-findings、Ctrl+C で消した入力を ↑ で戻せる</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-2-1-288-resume-fixes-code-review-max-findings-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-2-1-288-resume-fixes-code-review-max-findings-2026</id>
+    <published>2026-10-03T15:00:00Z</published>
+    <updated>2026-10-03T15:00:00Z</updated>
+    <summary>Claude Code v2.1.288 の公式 CHANGELOG には、会話の再開（--resume）と自動圧縮に関する修正が並ぶ。追加は /code-review の --max-findings、Ctrl+C で消したプロンプトの復元、MCP の追加 OAuth スコープ要求への再認証プロンプトなど。自分の版に何が入っているかを判断できるよう整理する。</summary>
+  </entry>
+  <entry>
     <title>Alibaba、スマートフォン向けエージェント基盤「Qwen Intelligence」を発表 — HONOR Magic9シリーズに初搭載予定</title>
     <link rel="alternate" type="text/html" href="?a=alibaba-qwen-intelligence-honor-magic9-2026"/>
     <id>tag:ai-tool-news.jp,2026:alibaba-qwen-intelligence-honor-magic9-2026</id>
