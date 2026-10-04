@@ -11610,5 +11610,24 @@ export const ARTICLES_META = [
       "プラグイン",
       "開発ツール"
     ]
+  },
+  {
+    "id": "claude-code-2-1-289-bash-deny-rules-symlink-read-mods-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.289、Bash の deny / ask ルールが環境変数の接頭辞や変数代入の後ろで抜ける問題など、権限まわりの修正が4件。大半は Mods とプラグインの安定化",
+    "excerpt": "Claude Code v2.1.289（10月3日）の公式 changelog は27項目。権限の修正として、サンドボックスの自動許可時に TZ=\"$HOME\" rm -rf build のような接頭辞付きコマンドで Bash の deny / ask ルールが効かなかった問題、IDE で選択したファイルのシンボリックリンク経由で Read の deny ルールが効かなかった問題などが入った。残りは前日までに入った Mods とプラグインの修正が中心。自分の版に入っているかを判断できるよう整理する。",
+    "date": "2026-10-04",
+    "newsDate": "2026-10-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "セキュリティ",
+      "プラグイン",
+      "開発ツール"
+    ]
   }
 ];
