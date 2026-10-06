@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-10-03T15:00:00Z</updated>
+  <updated>2026-10-06T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Claude Code 2.1.289〜2.1.291、Bash の deny/ask ルールがすり抜ける経路の修正が続き、2.1.288・2.1.290 の退行は翌版で直った</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-2-1-289-290-291-deny-rules-regressions-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-2-1-289-290-291-deny-rules-regressions-2026</id>
+    <published>2026-10-06T15:00:00Z</published>
+    <updated>2026-10-06T15:00:00Z</updated>
+    <summary>2.1.288 以降の3版（2.1.289 / 2.1.290 / 2.1.291）の公式 CHANGELOG を読む。権限ルール（Bash の deny/ask、Read の deny）が効かない経路の修正が複数あり、2.1.288 のセッション末尾の欠落と 2.1.290 のクラウドセッションの権限応答の欠落は 2.1.291 で直った。自分の版に何が入っているかを判断する材料として整理する。</summary>
+  </entry>
   <entry>
     <title>Claude Code 2.1.288、--resume まわりの修正が5件、/code-review に --max-findings、Ctrl+C で消した入力を ↑ で戻せる</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-2-1-288-resume-fixes-code-review-max-findings-2026"/>

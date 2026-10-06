@@ -11610,5 +11610,24 @@ export const ARTICLES_META = [
       "プラグイン",
       "開発ツール"
     ]
+  },
+  {
+    "id": "claude-code-2-1-289-290-291-deny-rules-regressions-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.289〜2.1.291、Bash の deny/ask ルールがすり抜ける経路の修正が続き、2.1.288・2.1.290 の退行は翌版で直った",
+    "excerpt": "2.1.288 以降の3版（2.1.289 / 2.1.290 / 2.1.291）の公式 CHANGELOG を読む。権限ルール（Bash の deny/ask、Read の deny）が効かない経路の修正が複数あり、2.1.288 のセッション末尾の欠落と 2.1.290 のクラウドセッションの権限応答の欠落は 2.1.291 で直った。自分の版に何が入っているかを判断する材料として整理する。",
+    "date": "2026-10-06",
+    "newsDate": "2026-10-06",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "セキュリティ",
+      "プラグイン",
+      "開発ツール"
+    ]
   }
 ];
