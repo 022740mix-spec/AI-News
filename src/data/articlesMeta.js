@@ -11629,5 +11629,22 @@ export const ARTICLES_META = [
       "プラグイン",
       "開発ツール"
     ]
+  },
+  {
+    "id": "gemini-cli-0-63-release-notes-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Gemini CLI 0.63.0 の変更点、ツール出力のサイズ上限と非対話モードでの計画実行、認証ループの修正",
+    "excerpt": "Google の Gemini CLI 0.63.0 が公開された。長時間のエージェントループでツール出力のサイズに上限を設けてメモリを整理し、非対話モードでも計画（plan）を自律実行できる。認証が無限に繰り返される不具合の修正や、接続回復中の再試行表示も入った。直前の 0.62.0 は Gemini 3.8 Flash に対応していた。",
+    "date": "2026-10-06",
+    "newsDate": "2026-10-06",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Gemini CLI",
+      "CLI",
+      "Google",
+      "開発ツール"
+    ]
   }
 ];

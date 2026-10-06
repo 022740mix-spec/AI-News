@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-10-06",
-  "count": 546,
+  "count": 547,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -268,6 +268,7 @@
     "gemini-4-argon-fairwind-trusted-testers-2026",
     "gemini-api-billing-tier-spend-cap-2026",
     "gemini-cli",
+    "gemini-cli-0-63-release-notes-2026",
     "gemini-cli-v035",
     "gemini-drop-march-2026",
     "gemma-4-apache2-edge-moe-dense-2026",
