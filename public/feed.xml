@@ -8,6 +8,14 @@
   <updated>2026-10-07T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Claude Code 2.1.292、stdio MCP の既定プロトコル版が 2026-07-28 に、Agent ツールに effort 引数、UNC パスの読み取り承認の抜けも修正</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-2-1-292-mcp-protocol-default-effort-agent-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-2-1-292-mcp-protocol-default-effort-agent-2026</id>
+    <published>2026-10-07T15:00:00Z</published>
+    <updated>2026-10-07T15:00:00Z</updated>
+    <summary>2.1.291 の約14時間後に出た 2.1.292 の公式 CHANGELOG を読む。ローカル（stdio）MCP サーバーの接続が既定で新しいプロトコル版を交渉するようになり、サブエージェントごとに effort を指定でき、ネットワーク（UNC）パスの読み取りが承認を迂回する問題が直った。自分の版に何が入っているかを判断する材料として整理する。</summary>
+  </entry>
+  <entry>
     <title>Claude Code 2.1.289〜2.1.291、Bash の deny/ask ルールがすり抜ける経路の修正が続き、2.1.288・2.1.290 の退行は翌版で直った</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-2-1-289-290-291-deny-rules-regressions-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-2-1-289-290-291-deny-rules-regressions-2026</id>

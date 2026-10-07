@@ -11646,5 +11646,25 @@ export const ARTICLES_META = [
       "Google",
       "開発ツール"
     ]
+  },
+  {
+    "id": "claude-code-2-1-292-mcp-protocol-default-effort-agent-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.292、stdio MCP の既定プロトコル版が 2026-07-28 に、Agent ツールに effort 引数、UNC パスの読み取り承認の抜けも修正",
+    "excerpt": "2.1.291 の約14時間後に出た 2.1.292 の公式 CHANGELOG を読む。ローカル（stdio）MCP サーバーの接続が既定で新しいプロトコル版を交渉するようになり、サブエージェントごとに effort を指定でき、ネットワーク（UNC）パスの読み取りが承認を迂回する問題が直った。自分の版に何が入っているかを判断する材料として整理する。",
+    "date": "2026-10-07",
+    "newsDate": "2026-10-06",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "MCP",
+      "セキュリティ",
+      "プラグイン",
+      "開発ツール"
+    ]
   }
 ];
