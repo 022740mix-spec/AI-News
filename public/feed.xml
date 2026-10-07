@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-10-07T15:00:00Z</updated>
+  <updated>2026-10-08T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>Claude Code 2.1.292、stdio MCP の既定プロトコル版が 2026-07-28 に、Agent ツールに effort 引数、UNC パスの読み取り承認の抜けも修正</title>
@@ -14,6 +14,14 @@
     <published>2026-10-07T15:00:00Z</published>
     <updated>2026-10-07T15:00:00Z</updated>
     <summary>2.1.291 の約14時間後に出た 2.1.292 の公式 CHANGELOG を読む。ローカル（stdio）MCP サーバーの接続が既定で新しいプロトコル版を交渉するようになり、サブエージェントごとに effort を指定でき、ネットワーク（UNC）パスの読み取りが承認を迂回する問題が直った。自分の版に何が入っているかを判断する材料として整理する。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic が Claude Haiku 5.5 を公開 — 入力 $0.10 / 出力 $0.50 から、1M コンテキストと adaptive thinking。ただし 100K 超の長文は単価が5倍、Haiku 4.5 からは破壊的変更が6件</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-haiku-5-5-release-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-haiku-5-5-release-2026</id>
+    <published>2026-10-07T15:00:00Z</published>
+    <updated>2026-10-07T15:00:00Z</updated>
+    <summary>Anthropic の API リリースノートによると、10月7日に Claude Haiku 5.5（claude-haiku-5-5）が公開された。単価は 100,000 トークンまでのプロンプトで入力 $0.10 / 出力 $0.50（100万トークンあたり）、超えると $0.50 / $2.50。Haiku 4.5（$1 / $5）から見ると安いが、同じ文章のトークン数は約30%増える。手動の extended thinking、temperature 等、assistant prefill は 400 エラーになる。</summary>
   </entry>
   <entry>
     <title>Claude Code 2.1.289〜2.1.291、Bash の deny/ask ルールがすり抜ける経路の修正が続き、2.1.288・2.1.290 の退行は翌版で直った</title>

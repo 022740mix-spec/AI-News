@@ -11666,5 +11666,24 @@ export const ARTICLES_META = [
       "プラグイン",
       "開発ツール"
     ]
+  },
+  {
+    "id": "anthropic-claude-haiku-5-5-release-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Anthropic が Claude Haiku 5.5 を公開 — 入力 $0.10 / 出力 $0.50 から、1M コンテキストと adaptive thinking。ただし 100K 超の長文は単価が5倍、Haiku 4.5 からは破壊的変更が6件",
+    "excerpt": "Anthropic の API リリースノートによると、10月7日に Claude Haiku 5.5（claude-haiku-5-5）が公開された。単価は 100,000 トークンまでのプロンプトで入力 $0.10 / 出力 $0.50（100万トークンあたり）、超えると $0.50 / $2.50。Haiku 4.5（$1 / $5）から見ると安いが、同じ文章のトークン数は約30%増える。手動の extended thinking、temperature 等、assistant prefill は 400 エラーになる。",
+    "date": "2026-10-07",
+    "newsDate": "2026-10-07",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Haiku 5",
+      "モデル",
+      "料金",
+      "API"
+    ]
   }
 ];

@@ -27198,6 +27198,105 @@ const ARTICLES_BODY = {
         "url": "https://registry.npmjs.org/@anthropic-ai/claude-code"
       }
     ]
+  },
+  "anthropic-claude-haiku-5-5-release-2026": {
+    "body": [
+      "Anthropic は10月7日、Claude Haiku 5.5（API ID は `claude-haiku-5-5`）を公開した。API ドキュメントのリリースノートは「高頻度・低遅延の作業向けに調整した、同社で最も高性能なモデル」と説明し、1M トークンのコンテキストウィンドウ、最大 128K トークンの出力、effort パラメータを伴う adaptive thinking を備えるとしている。提供先は Claude API、Amazon Bedrock、Claude Platform on AWS、Google Cloud、Microsoft Foundry。モデル概要ページは用途として分類・抽出・ルーティングを挙げ、ドキュメントの別ページはサブエージェント用途にも触れている。",
+      "価格は、他の現行モデルと違ってプロンプトの長さで二段になる。公式の料金表では、100,000 トークンまでのプロンプトは入力 $0.10 / 出力 $0.50（100万トークンあたり）、100,000 トークンを超えると入力 $0.50 / 出力 $2.50 になる。Fable 5.1・Opus 5.5・Sonnet 5.5 は 1M 全体を同一単価で扱うが、料金ページは Haiku 5.5 だけをこの例外として明記している。概要ページの「From $0.10 / From $0.50」という表記は、この下限を指す。",
+      "料金表の他の項目は次のとおり。5分キャッシュ書き込みは $0.125（長文側 $0.625）、1時間キャッシュ書き込みは $0.20（同 $1）、キャッシュ読み取りは $0.01（同 $0.05）。Batch API は50%引きで、100,000 トークンまでが入力 $0.05 / 出力 $0.25、超えると $0.25 / $1.25。比較対象の Haiku 4.5 は $1 / $5（Batch は $0.50 / $2.50）のまま掲載されている。",
+      "単価の比較には注意が要る。ドキュメントによれば Haiku 5.5 は Claude 4.7 以降と同じ新しいトークナイザを使い、同じ文章が Haiku 4.5 より約30%多いトークンになる（増え方は内容による）。このため、請求額の比較は単価の比ではなく、同じ入力を新旧それぞれで数えたトークン数で行う必要がある。移行ガイドも、`max_tokens` やコスト見積もりを Haiku 5.5 で数え直すよう求めている。",
+      "Haiku 4.5 のコードからの移行では、ドキュメントが「Breaking（破壊的）」に分類する変更が複数ある。手動の extended thinking（`thinking: {type: enabled, budget_tokens}`）は 400 エラーになり、adaptive thinking へ置き換える。`temperature`・`top_p`・`top_k` は省略が前提で、`temperature` は 1、`top_p` は 0.99 以外を指定すると 400 になる（`top_k` は値を問わずエラー）。assistant メッセージの prefill（最後の assistant ターンを続きとして書かせる手法）も、thinking を切っていても 400 になる。",
+      "残りの破壊的変更は次の3件。Claude API と Google Cloud の computer use は、従来の `computer_20250124` ではなく `computer_toolset_20260801` を使う必要がある（旧ツールの宣言は 400）。thinking ブロックを送り返す場合、その前の `system`・`tools`・過去の `messages` を変更すると 400 になるため、会話は追記のみで保つ。さらに、`stop_reason: \"refusal\"` を扱う必要がある。Haiku 5.5 には安全分類器が付き、リクエストを拒否することがあり、サーバー側のフォールバックは用意されていない。",
+      "挙動の変更もある。adaptive thinking が既定で有効なため、リクエストで thinking に触れていなくても、レスポンスの先頭が `thinking` ブロックになりうる。最初の content ブロックを答えとして読むコードは、`type` で選ぶ必要がある。thinking のテキストは既定で空になり（署名だけが返る）、要約を受け取るには `thinking.display` を `summarized` にする。thinking のトークンは `max_tokens` に含まれるため、小さな上限だと thinking ブロックの後、本文の前で止まる。また、Haiku 5.5 の thinking ブロックは、生成したアカウント（またはリンクされたアカウント）でしか有効でない。",
+      "移行ガイドには、Priority Tier が Haiku 5.5 では対象外であることも書かれている。Haiku 4.5 で Priority Tier の契約がある組織は、容量を別に計画する必要がある。一方、Claude Managed Agents を使う場合は、モデル名の更新以外の変更は不要とされている。コンテキストと出力の上限は、Haiku 4.5 の 200K / 64K から 1M / 128K に広がった。モデル概要ページによれば、知識カットオフは Haiku 5.5 が2026年6月、リタイアは2027年10月7日より前にはならない（Anthropic 運営の基盤に対する約束）。",
+      "同じ日のリリースノートには、他にも2件が載っている。Sonnet 5.5 のキャッシュ読み取りが 100万トークンあたり $0.10 になった（料金ページの表は、Sonnet 5.5 のキャッシュ読み取りを基本入力の0.05倍としている）。また Managed Agents では、`limited` ネットワーク設定のときに `web_fetch` と `web_search` が `allowed_hosts` を尊重するようになり、`allowed_domains` に `allowed_hosts` の外のエントリがあるセッション作成は 400 になる。Claude Code 2.1.293 の変更履歴にも、Haiku 5.5 が利用可能で Anthropic API の既定の Haiku になったとの記載がある。",
+      "確認できていないこと。今回読んだ公式ドキュメント（モデル概要、What's new、移行ガイド、料金、リリースノート）の範囲では、Haiku 5.5 の性能値（ベンチマーク）は見当たらなかった。そのため本記事は性能の優劣や Haiku 4.5・Sonnet 5.5 との品質差には踏み込まない。ここまでの内容はすべて Anthropic 自身のドキュメントに基づく（一次資料のみ）。独立した第三者による検証は確認できていない。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 4,
+        "caption": "Haiku 5.5 と Haiku 4.5 の公式仕様（platform.claude.com の公式ドキュメント、2026年10月7日時点）",
+        "headers": [
+          "項目",
+          "Haiku 5.5",
+          "Haiku 4.5"
+        ],
+        "rows": [
+          [
+            "API ID",
+            "`claude-haiku-5-5`",
+            "`claude-haiku-4-5`"
+          ],
+          [
+            "入力 / 出力（100万トークンあたり）",
+            "$0.10 / $0.50（プロンプト 100K まで）、$0.50 / $2.50（100K 超）",
+            "$1 / $5"
+          ],
+          [
+            "Batch API（入力 / 出力）",
+            "$0.05 / $0.25（100K まで）、$0.25 / $1.25（100K 超）",
+            "$0.50 / $2.50"
+          ],
+          [
+            "コンテキスト / 最大出力",
+            "1M / 128K",
+            "200K / 64K"
+          ],
+          [
+            "thinking",
+            "adaptive（既定で有効）。手動の `budget_tokens` は 400",
+            "手動の extended thinking"
+          ],
+          [
+            "`temperature` / `top_p` / `top_k`",
+            "省略が前提。他の値は 400",
+            "指定可"
+          ],
+          [
+            "assistant prefill",
+            "400（thinking 無効でも）",
+            "thinking 無効なら可"
+          ],
+          [
+            "同じ文章のトークン数",
+            "約30%増（新トークナイザ）",
+            "基準"
+          ],
+          [
+            "Priority Tier",
+            "対象外",
+            "対象"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Developer Platform release notes",
+        "site": "Anthropic（platform.claude.com・直接到達・確認済み）",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Models overview",
+        "site": "Anthropic（platform.claude.com・直接到達・確認済み）",
+        "url": "https://platform.claude.com/docs/en/about-claude/models/overview"
+      },
+      {
+        "title": "What's new in Claude Haiku 5.5",
+        "site": "Anthropic（platform.claude.com・直接到達・確認済み）",
+        "url": "https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5"
+      },
+      {
+        "title": "Claude Haiku 5.5 migration guide",
+        "site": "Anthropic（platform.claude.com・直接到達・確認済み）",
+        "url": "https://platform.claude.com/docs/en/models/haiku-5-5/migration-guide"
+      },
+      {
+        "title": "Pricing",
+        "site": "Anthropic（platform.claude.com・直接到達・確認済み）",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      }
+    ]
   }
 };
 
