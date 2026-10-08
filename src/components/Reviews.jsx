@@ -68,7 +68,7 @@ function BenchmarkChart({ data, title, maxScore = 100, scoreKey = "bench" }) {
 }
 
 function ModelComparisonSection() {
-  const [benchTab, setBenchTab] = useState("swe");
+  const [benchTab, setBenchTab] = useState("terminalBench");
   const sorted = [...MODEL_COMPARISON].sort((a, b) => b.rating - a.rating);
   const activeBench = BENCHMARK_CONFIGS.find((c) => c.key === benchTab) || BENCHMARK_CONFIGS[0];
   return (
