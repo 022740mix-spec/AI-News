@@ -3276,4 +3276,10 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://022740mix-spec.github.io/AI-News/?a=claude-code-2-1-293-294-hook-instructions-compaction-reverts-2026</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

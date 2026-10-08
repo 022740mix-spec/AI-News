@@ -11685,5 +11685,24 @@ export const ARTICLES_META = [
       "料金",
       "API"
     ]
+  },
+  {
+    "id": "claude-code-2-1-293-294-hook-instructions-compaction-reverts-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.293〜2.1.294、指示文で書いたフックの判定修正、圧縮後の「終わった作業をやり直す」不具合、取り消された変更が2件",
+    "excerpt": "2.1.292 の翌日と翌々日に出た 2.1.293 と 2.1.294 の公式 CHANGELOG を読む。「〜をブロックする」と自然文で書いた prompt / agent フックが通してしまう問題が直り、コンテキスト圧縮の後に終わった作業をやり直す不具合も修正された。一方で 2.1.281 と 2.1.290 の変更が 1 件ずつ元に戻された。自分の版に何が入っているかを判断する材料として整理する。",
+    "date": "2026-10-08",
+    "newsDate": "2026-10-08",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "セキュリティ",
+      "プラグイン",
+      "開発ツール"
+    ]
   }
 ];
