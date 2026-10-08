@@ -269,15 +269,15 @@ export const MODEL_COMPARISON = [
 ];
 
 export const BENCHMARK_CONFIGS = [
-  // === コーディング（2026年主流） ===
-  { key: "swe", label: "SWE-Verified", title: "SWE-Bench Verified（コーディング能力・旧来ベンチ）", desc: "実際の GitHub Issue のバグ修正ができるか。Anthropic 系が伝統的に主流" },
-  { key: "swePro", label: "SWE-Pro", title: "SWE-Bench Pro（コーディング能力・contamination-resistant 版）", desc: "汚染耐性を強化した新版。OpenAI・xAI・中国 OSS 各社が主戦場としている" },
-  // === エージェント能力（2026年 GPT-5.6 以降の新戦場） ===
+  // === 現行の主要ベンチ（先頭が既定の表示。新しいモデルほど値が揃っている順に並べる） ===
   { key: "terminalBench", label: "Terminal-Bench", title: "Terminal-Bench 2.1（CLI エージェント能力）", desc: "コマンドラインでの計画・反復・ツール協調ができるか。GPT-5.6 Sol Ultra 91.9% SOTA" },
+  { key: "swePro", label: "SWE-Pro", title: "SWE-Bench Pro（コーディング能力・contamination-resistant 版）", desc: "汚染耐性を強化した新版。OpenAI・xAI・中国 OSS 各社が主戦場としている" },
   { key: "osworld", label: "OSWorld", title: "OSWorld-Verified（Computer Use 能力）", desc: "デスクトップ環境でマウス・キーボード操作を含むタスクをこなせるか。Anthropic 主戦場" },
   { key: "browseComp", label: "BrowseComp", title: "BrowseComp（Web ブラウジング能力）", desc: "検索・情報照合を含むオンライン調査タスクをこなせるか" },
   // === 学術・推論 ===
   { key: "gpqa", label: "GPQA Diamond", title: "GPQA Diamond（PhD レベル科学問題）", desc: "PhD 専門家が 65% しか解けない科学問題。Sonnet 5 は 96.2% で最高" },
   { key: "hle", label: "HLE", title: "Humanity's Last Exam（学術上限ベンチ）", desc: "専門家が各分野で最難と選んだ問題を集約。Fable 5 が 53% で首位" },
   { key: "aime", label: "AIME", title: "AIME 2024/2025（数学的推論）", desc: "数学オリンピック予選レベル。Grok 4 系が 100% を達成" },
+  // === 旧来ベンチ（参考。新しいモデルの多くは公式に値を出していない。既定の表示にしない） ===
+  { key: "swe", label: "SWE-Verified（旧来）", title: "SWE-Bench Verified（旧来ベンチ・参考）", desc: "実際の GitHub Issue のバグ修正ができるか。2026年の新しいモデルは公式に値を出さなくなったものが多い" },
 ];
