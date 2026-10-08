@@ -11704,5 +11704,23 @@ export const ARTICLES_META = [
       "プラグイン",
       "開発ツール"
     ]
+  },
+  {
+    "id": "codex-cli-0-161-0-162-release-notes-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.161.0〜0.162.0 の変更点、GPT-6.1 Sol が既定に、Git worktree 管理とタスクのピン留め",
+    "excerpt": "OpenAI は Codex CLI 0.161.0（10月7日）と 0.162.0（10月8日）を公開した。0.161 では同梱と Amazon Bedrock のカタログで GPT-6.1 Sol が既定のモデルになり、/mcp login が入った。0.162 では管理された Git worktree の作成と一覧、コマンドセンターのタスクのピン留め、/copy が加わった。",
+    "date": "2026-10-09",
+    "newsDate": "2026-10-08",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "GPT-6",
+      "開発ツール"
+    ]
   }
 ];

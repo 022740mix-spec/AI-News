@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-10-08T15:00:00Z</updated>
+  <updated>2026-10-09T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Codex CLI 0.161.0〜0.162.0 の変更点、GPT-6.1 Sol が既定に、Git worktree 管理とタスクのピン留め</title>
+    <link rel="alternate" type="text/html" href="?a=codex-cli-0-161-0-162-release-notes-2026"/>
+    <id>tag:ai-tool-news.jp,2026:codex-cli-0-161-0-162-release-notes-2026</id>
+    <published>2026-10-09T15:00:00Z</published>
+    <updated>2026-10-09T15:00:00Z</updated>
+    <summary>OpenAI は Codex CLI 0.161.0（10月7日）と 0.162.0（10月8日）を公開した。0.161 では同梱と Amazon Bedrock のカタログで GPT-6.1 Sol が既定のモデルになり、/mcp login が入った。0.162 では管理された Git worktree の作成と一覧、コマンドセンターのタスクのピン留め、/copy が加わった。</summary>
+  </entry>
   <entry>
     <title>Claude Code 2.1.293〜2.1.294、指示文で書いたフックの判定修正、圧縮後の「終わった作業をやり直す」不具合、取り消された変更が2件</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-2-1-293-294-hook-instructions-compaction-reverts-2026"/>
