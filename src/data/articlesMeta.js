@@ -11722,5 +11722,22 @@ export const ARTICLES_META = [
       "GPT-6",
       "開発ツール"
     ]
+  },
+  {
+    "id": "claude-code-2-1-295-hook-onfailure-block-osc-7501-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.295、フックの onFailure: \"block\" で起動失敗やタイムアウトを通さない、端末向けの状態通知 OSC 7501 も",
+    "excerpt": "Claude Code 2.1.295 は、コマンドフックと HTTP フックに onFailure: \"block\" を追加した。フックが起動できない、タイムアウトする、想定外の終了をした場合に、操作を通さず止められる。端末向けの Program Status Protocol（OSC 7501）、ゲートウェイのタイムアウト設定、再試行の待ち時間の上限も入った。",
+    "date": "2026-10-09",
+    "newsDate": "2026-10-08",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Claude Code",
+      "フック",
+      "CLI",
+      "開発ツール"
+    ]
   }
 ];

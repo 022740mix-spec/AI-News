@@ -27345,6 +27345,22 @@ const ARTICLES_BODY = {
         "url": "https://github.com/openai/codex/releases"
       }
     ]
+  },
+  "claude-code-2-1-295-hook-onfailure-block-osc-7501-2026": {
+    "body": [
+      "anthropics/claude-code のリリースページによると、Claude Code 2.1.295 は2026年10月8日に公開された。直前の 2.1.293〜2.1.294 は別記事で扱っている。この記事は公式のリリースノートをもとに、自分の版にその機能があるかを判断できるよう整理する。内容はリリースノートの記載に基づき、実際の挙動は検証していない。",
+      "最も運用に関わるのは、フックの `onFailure: \"block\"` である。コマンドフックと HTTP フックがこの指定を受け付け、フックが起動できない、タイムアウトする、または想定外の終了をした場合に、その操作を通さずに止める。指定しない場合の挙動や、従来の挙動が具体的に何だったかは、今回確認したリリースノートには書かれていない。フックを安全装置として使っている場合に、フック自体が動かなかったときの扱いを選べるようになった、という変更である。",
+      "端末まわりでは、Program Status Protocol（OSC 7501）に対応した。対応する端末は、Claude Code が作業中か、ユーザーの入力待ちか、完了したかを表示できる。対応端末の一覧は、今回確認したリリースノートには書かれていない。",
+      "ゲートウェイ関連では、クラウドの上流（Bedrock、Vertex、Foundry）向けに `timeouts.upstream_ttfb_ms` が加わった。上流ごとの `models` リストも任意で指定でき、推論が成功した応答には `request-id` ヘッダーが付く。再試行では、無人の再試行モードが 429 と 529 を待つ時間の上限を、環境変数 `CLAUDE_CODE_RETRY_WATCHDOG_MAX_WAIT_MS` で決められる。",
+      "修正は4点ある。`[1m]` のモデルが、ゲートウェイやクラウドプロバイダーに context-1m のベータを拒否されたときに失敗しなくなった。`claude -p` のテキスト出力が、先行する応答を落とさなくなった。リモート MCP の再接続は最大30秒まで間隔を空ける。モデルが `command_description` を渡しても Bash の呼び出しが動く。",
+      "なお同じ週には、Bash の deny/ask ルールがすり抜ける経路の修正や、UNC パスの読み取り承認の抜けの修正など、権限まわりの更新が続いている。それぞれの版の内容は、前の記事を参照してほしい。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code リリース一覧（anthropics/claude-code）",
+        "url": "https://github.com/anthropics/claude-code/releases"
+      }
+    ]
   }
 };
 

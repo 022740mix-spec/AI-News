@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-10-08",
-  "count": 551,
+  "count": 552,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -144,6 +144,7 @@
     "claude-code-2-1-289-290-291-deny-rules-regressions-2026",
     "claude-code-2-1-292-mcp-protocol-default-effort-agent-2026",
     "claude-code-2-1-293-294-hook-instructions-compaction-reverts-2026",
+    "claude-code-2-1-295-hook-onfailure-block-osc-7501-2026",
     "claude-code-agents-md-support-2026",
     "claude-code-auto-memory-disable-2026",
     "claude-code-auto-mode",
