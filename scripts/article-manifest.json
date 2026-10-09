@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-10-08",
-  "count": 552,
+  "generatedAt": "2026-10-09",
+  "count": 553,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -281,6 +281,7 @@
     "git-ai-workflow-2026",
     "github-copilot-autopilot-mcp-cli-vscode-2026",
     "github-copilot-cli",
+    "github-copilot-cli-1-0-89-to-1-0-94-sandbox-managed-policy-2026",
     "github-copilot-hydrafusion-multi-model-2026",
     "github-copilot-training-data-policy-change-2026",
     "github-outage-august-17-2026-7h36m",

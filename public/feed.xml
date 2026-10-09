@@ -24,6 +24,14 @@
     <summary>Claude Code 2.1.295 は、コマンドフックと HTTP フックに onFailure: &quot;block&quot; を追加した。フックが起動できない、タイムアウトする、想定外の終了をした場合に、操作を通さず止められる。端末向けの Program Status Protocol（OSC 7501）、ゲートウェイのタイムアウト設定、再試行の待ち時間の上限も入った。</summary>
   </entry>
   <entry>
+    <title>GitHub Copilot CLI 1.0.89〜1.0.94、コマンドのサンドボックスが全ユーザーに、組織向けのポリシー制御と GPT-6.1 Sol・Claude 5.5 系の対応も</title>
+    <link rel="alternate" type="text/html" href="?a=github-copilot-cli-1-0-89-to-1-0-94-sandbox-managed-policy-2026"/>
+    <id>tag:ai-tool-news.jp,2026:github-copilot-cli-1-0-89-to-1-0-94-sandbox-managed-policy-2026</id>
+    <published>2026-10-09T15:00:00Z</published>
+    <updated>2026-10-09T15:00:00Z</updated>
+    <summary>GitHub Copilot CLI は9月28日の 1.0.89 から10月8日の 1.0.94 までに6版が出た。1.0.93 でコマンドのサンドボックスが全ユーザーで使えるようになり、管理者向けにはネットワーク宛先の境界を決める permissions.limitTo や、Assisted Permissions の無効化も入った。GPT-6.1 Sol、GPT-6 Sol/Luna、Claude Opus 5.5、Claude Haiku 5.5 がモデル選択に加わった。</summary>
+  </entry>
+  <entry>
     <title>Claude Code 2.1.293〜2.1.294、指示文で書いたフックの判定修正、圧縮後の「終わった作業をやり直す」不具合、取り消された変更が2件</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-2-1-293-294-hook-instructions-compaction-reverts-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-2-1-293-294-hook-instructions-compaction-reverts-2026</id>

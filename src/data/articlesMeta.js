@@ -11739,5 +11739,23 @@ export const ARTICLES_META = [
       "CLI",
       "開発ツール"
     ]
+  },
+  {
+    "id": "github-copilot-cli-1-0-89-to-1-0-94-sandbox-managed-policy-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "GitHub Copilot CLI 1.0.89〜1.0.94、コマンドのサンドボックスが全ユーザーに、組織向けのポリシー制御と GPT-6.1 Sol・Claude 5.5 系の対応も",
+    "excerpt": "GitHub Copilot CLI は9月28日の 1.0.89 から10月8日の 1.0.94 までに6版が出た。1.0.93 でコマンドのサンドボックスが全ユーザーで使えるようになり、管理者向けにはネットワーク宛先の境界を決める permissions.limitTo や、Assisted Permissions の無効化も入った。GPT-6.1 Sol、GPT-6 Sol/Luna、Claude Opus 5.5、Claude Haiku 5.5 がモデル選択に加わった。",
+    "date": "2026-10-09",
+    "newsDate": "2026-10-08",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "GitHub Copilot",
+      "CLI",
+      "サンドボックス",
+      "MCP",
+      "開発ツール"
+    ]
   }
 ];

@@ -27361,6 +27361,27 @@ const ARTICLES_BODY = {
         "url": "https://github.com/anthropics/claude-code/releases"
       }
     ]
+  },
+  "github-copilot-cli-1-0-89-to-1-0-94-sandbox-managed-policy-2026": {
+    "body": [
+      "github/copilot-cli の変更履歴（changelog）によると、GitHub Copilot CLI は 2026年9月28日の 1.0.89 から10月8日の 1.0.94 までに、1.0.89・1.0.90・1.0.91・1.0.92・1.0.93・1.0.94 の6版が出た。この記事は変更履歴の記載をもとに、自分の版にその機能があるかを判断できるよう整理する。内容は記載に基づくもので、実際の挙動は検証していない。",
+      "最も運用に関わるのは、1.0.93 の「Command sandboxing is available to all users via /sandbox and --sandbox」である。コマンドのサンドボックスが /sandbox と --sandbox から全ユーザーに使えるようになった。サンドボックス周りは続く版でも手が入っている。1.0.91 は proxy CA の信頼を扱う `copilot sandbox ca` コマンド（確認・作成・信頼・更新・削除）を加えた。1.0.92 は、サンドボックス内のシェルが環境の GITHUB_TOKEN を、明示的に設定しない限り渡さないようにし、Git を使うスクリプトにはマスクした資格情報で認証させる。プロキシが宛先をブロックしたときは、ネットワークの許可を求める確認が毎回出る。",
+      "組織の管理者向けの項目もある。1.0.93 は、ネットワーク要求のドメインの境界を強制する enterprise の `permissions.limitTo` を加えた。1.0.94 では、管理ポリシーで Assisted Permissions を無効にし、セッションを手動承認のままにできる。管理設定のせいで起動時の権限バイパスのフラグが効かないときは、警告が出る。管理設定がより新しい CLI の版を求める場合は、プロンプトを止めずに更新の案内を出す。Assisted Permissions については、見えているシェルコードを権限の判定側に渡すことで、不要な手動承認を減らす修正も 1.0.94 に入った。",
+      "モデルの選択肢も増えた。1.0.89 で claude-opus-5.5 と、GPT-6 Sol・GPT-6 Luna（利用可能な場合）がモデルピッカーに加わり、1.0.90 で GPT-6.1 Sol、1.0.94 で Claude Haiku 5.5 が加わった。1.0.93 ではおすすめの並びが GPT-6.1 Sol、GPT-6 Astra/Luna、Claude 5.5 系を優先する形に変わった。1.0.92 は、退役したモデルをモデルピッカーと CLI で選べるモデルから外している。各モデルの料金や提供条件はこの変更履歴には書かれていないため、ここでは扱わない。",
+      "設定と他ツールとの連携では、1.0.89 が .claude/rules にある Claude Code のルールファイルをカスタム指示として読むようになった。1.0.92 は `copilot config` のサブコマンドで設定の一覧・読み取り・設定・削除ができる。1.0.93 はユーザー設定を ~/.copilot/settings.json からだけ読み、~/.copilot/config.json にあるユーザー設定のキーは無視する。旧ファイルに設定を書いている場合は、移行が必要になりうる点に注意したい。",
+      "MCP 関連の更新も続いた。1.0.90 は `--mcp-github-auth` を加え、GitHub アカウントの認証を承認した MCP サーバーの origin に限れるようにした。1.0.93 は MCP サーバーの設定変更をセッションを再起動せずにターンの間で反映し、1.0.94 は MCP の有効化・無効化をサーバー探索の前でも、サーバーを起動せずにできる。1.0.92 は Entra で保護された MCP サーバーの、アクセストークンのみの資格情報の自動更新に対応した。",
+      "このほか 1.0.92 には、実行環境をローカルとクラウドで切り替える Ctrl+E の環境ピッカー、エージェントが大きなファイルを一度に書いたあとセッションが数分遅くなる問題の修正、コンテキスト上限を超えた圧縮で最新のプロンプトを残す修正などがある。ここに挙げたのは変更履歴の一部で、全項目は公式の changelog を参照してほしい。なお同じ変更履歴のうち、10月9日付の 1.0.95 系は pre-release として公開されており、この記事の対象に含めていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitHub Copilot CLI リリース一覧（github/copilot-cli）",
+        "url": "https://github.com/github/copilot-cli/releases"
+      },
+      {
+        "title": "GitHub Copilot CLI changelog（github/copilot-cli）",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
   }
 };
 
