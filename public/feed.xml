@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-10-09T15:00:00Z</updated>
+  <updated>2026-10-10T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>Codex CLI 0.161.0〜0.162.0 の変更点、GPT-6.1 Sol が既定に、Git worktree 管理とタスクのピン留め</title>
@@ -30,6 +30,14 @@
     <published>2026-10-09T15:00:00Z</published>
     <updated>2026-10-09T15:00:00Z</updated>
     <summary>GitHub Copilot CLI は9月28日の 1.0.89 から10月8日の 1.0.94 までに6版が出た。1.0.93 でコマンドのサンドボックスが全ユーザーで使えるようになり、管理者向けにはネットワーク宛先の境界を決める permissions.limitTo や、Assisted Permissions の無効化も入った。GPT-6.1 Sol、GPT-6 Sol/Luna、Claude Opus 5.5、Claude Haiku 5.5 がモデル選択に加わった。</summary>
+  </entry>
+  <entry>
+    <title>Claude Code 2.1.296、サブエージェントごとの autoCompactWindow と Read の allow_large、managed 設定のフックが拒否してもターンを終えない修正</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-2-1-296-subagent-autocompact-read-allow-large-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-2-1-296-subagent-autocompact-read-allow-large-2026</id>
+    <published>2026-10-09T15:00:00Z</published>
+    <updated>2026-10-09T15:00:00Z</updated>
+    <summary>Claude Code 2.1.296 は、サブエージェントが親より早く自動圧縮できる autoCompactWindow、ワークフローのエージェントを1つのモデルに揃える環境変数、大きなテキストファイルを1回で読む Read の allow_large を追加した。Bash の BASH_ARGV0 経由の自動承認や、非 UTF-8 ファイルの Edit 破損も修正された。</summary>
   </entry>
   <entry>
     <title>Claude Code 2.1.293〜2.1.294、指示文で書いたフックの判定修正、圧縮後の「終わった作業をやり直す」不具合、取り消された変更が2件</title>

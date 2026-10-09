@@ -11757,5 +11757,23 @@ export const ARTICLES_META = [
       "MCP",
       "開発ツール"
     ]
+  },
+  {
+    "id": "claude-code-2-1-296-subagent-autocompact-read-allow-large-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.296、サブエージェントごとの autoCompactWindow と Read の allow_large、managed 設定のフックが拒否してもターンを終えない修正",
+    "excerpt": "Claude Code 2.1.296 は、サブエージェントが親より早く自動圧縮できる autoCompactWindow、ワークフローのエージェントを1つのモデルに揃える環境変数、大きなテキストファイルを1回で読む Read の allow_large を追加した。Bash の BASH_ARGV0 経由の自動承認や、非 UTF-8 ファイルの Edit 破損も修正された。",
+    "date": "2026-10-09",
+    "newsDate": "2026-10-09",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Claude Code",
+      "サブエージェント",
+      "フック",
+      "CLI",
+      "開発ツール"
+    ]
   }
 ];

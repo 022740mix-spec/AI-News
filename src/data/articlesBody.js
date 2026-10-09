@@ -27382,6 +27382,24 @@ const ARTICLES_BODY = {
         "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
       }
     ]
+  },
+  "claude-code-2-1-296-subagent-autocompact-read-allow-large-2026": {
+    "body": [
+      "anthropics/claude-code のリリースページによると、Claude Code 2.1.296 は2026年10月9日に公開された（ページに年の表示は無く、フッターの表記から2026年と判断した）。直前の 2.1.295 は別記事で扱っている。この記事は公式のリリースノートをもとに、自分の版にその機能があるかを判断できるよう整理する。内容はリリースノートの記載に基づき、実際の挙動は検証していない。",
+      "追加された機能で、日々の使い方に関わるものは3つある。1つ目は、サブエージェントの frontmatter と `--agents` の定義に置ける `autoCompactWindow` で、サブエージェントが親の会話より早く自動圧縮できる。2つ目は環境変数 `CLAUDE_CODE_WORKFLOW_SUBAGENT_MODEL` で、ワークフローのエージェントをすべて1つのモデルで動かし、ほかのサブエージェントは各自のモデルのままにできる。3つ目は Read ツールの `allow_large` で、全文が必要でコンテキストに余裕があるときに、通常のサイズ上限を超えるテキストファイルを1回の呼び出しで読める。",
+      "運用面では、`CLAUDE_CODE_OVERLOADED_RETRY_MAX_DELAY_MS` が加わり、過負荷（529）の再試行で待ち時間の上限を長くできる。MCP のツール説明とサーバー指示を最初に送る既定の上限は、2,048 文字から 4,096 文字に変わった。`/plugin` には、同名の別プラグインが有効なためフックが除外されているプラグインへの注記が出る。",
+      "権限とフックの修正が目立つ。managed 設定の `PreToolUse` フックが `\"continue\": false` で拒否した場合と、managed の `prompt` フックが止めた場合に、呼び出しは拒否されるがターンは終わらなくなった。Bash の権限確認では、`BASH_ARGV0` を代入してから使うコマンドが自動承認されていた経路が修正され、承認を求めるようになった。Windows では、Git Bash の `rm -rf /c/Users/<name>` がバイパス権限モードで確認を求めなかった問題が直った。なお 2.1.295 で入った Claude apps gateway の保存済みサインインが `forceLoginMethod` が `gateway` で `forceLoginGatewayUrl` が無い環境で無視される問題は、この版で修正されたと書かれている。",
+      "ファイル編集では、Edit と NotebookEdit が UTF-8 でないファイル（Windows-1252、Shift-JIS、GBK）の非 ASCII 文字をすべて置き換えてしまう問題が直り、そのような編集は拒否されるようになった。日本語環境で Shift-JIS のファイルを扱う場合は、拒否される側の挙動に変わる点を知っておくとよい。そのほか、共有トランスクリプトとデバッグログの秘密情報のマスキングが、値の無いキーに続く値などに広がった。",
+      "Windows では、1 KB を超える PowerShell コマンドが常に承認を求めていた問題が直り、allow ルールと読み取り専用の判定が 32 KB まで効く。stdio の MCP サーバーは終了時に強制終了されず、標準入力を閉じてから、300ms 後も動いていればプロセスツリーを終了する。",
+      "費用の表示も変わった。`/cost`、ステータスライン、`--max-budget-usd`、SDK の費用の数値で、Sonnet 5.5 のキャッシュ読み取りを100万トークンあたり $0.10（従来は $0.20）として計算する。これは Claude Code 側の計算の更新として書かれたもので、今回は API の公式料金表そのものは確認していない。料金の判断には公式の料金表を見てほしい。",
+      "VS Code 拡張では、Claude in Chrome が `@browser` で接続したセッションを含め、すべてのセッションでブラウザ操作の前に確認を求めるようになった。許可したサイトはセッション中は再確認されない。Claude Tag（Slack）と Code Review、クラウドセッションにも修正と改善が入っているが、ここでは詳細を省く。完全な一覧は公式のリリースページにある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code v2.1.296 リリースノート（anthropics/claude-code）",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.296"
+      }
+    ]
   }
 };
 
