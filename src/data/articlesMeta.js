@@ -11775,5 +11775,22 @@ export const ARTICLES_META = [
       "CLI",
       "開発ツール"
     ]
+  },
+  {
+    "id": "anthropic-managed-agents-dynamic-workflows-beta-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude Managed Agents に動的ワークフロー（ベータ）— エージェントが「多数のエージェントを走らせるプログラム」を自分で書き、サーバーが裏で実行する",
+    "excerpt": "Anthropic は 10月9日、Claude Managed Agents に動的ワークフローを追加した。エージェントが書いたプログラムがフェーズごとに多数のエージェントを動かし、結果を束ねる。実行は「ワークフロー実行」としてサーバー側で進み、同時に動くスレッドは64、1回で起動できるエージェントは累計1,000、実行の寿命は既定24時間。専用の料金は無く、トークンは通常どおり課金される。",
+    "date": "2026-10-11",
+    "newsDate": "2026-10-09",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "エージェント",
+      "マルチエージェント",
+      "API"
+    ]
   }
 ];

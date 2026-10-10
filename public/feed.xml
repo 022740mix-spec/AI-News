@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-10-10T15:00:00Z</updated>
+  <updated>2026-10-11T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Claude Managed Agents に動的ワークフロー（ベータ）— エージェントが「多数のエージェントを走らせるプログラム」を自分で書き、サーバーが裏で実行する</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-managed-agents-dynamic-workflows-beta-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-managed-agents-dynamic-workflows-beta-2026</id>
+    <published>2026-10-11T15:00:00Z</published>
+    <updated>2026-10-11T15:00:00Z</updated>
+    <summary>Anthropic は 10月9日、Claude Managed Agents に動的ワークフローを追加した。エージェントが書いたプログラムがフェーズごとに多数のエージェントを動かし、結果を束ねる。実行は「ワークフロー実行」としてサーバー側で進み、同時に動くスレッドは64、1回で起動できるエージェントは累計1,000、実行の寿命は既定24時間。専用の料金は無く、トークンは通常どおり課金される。</summary>
+  </entry>
   <entry>
     <title>Codex CLI 0.161.0〜0.162.0 の変更点、GPT-6.1 Sol が既定に、Git worktree 管理とタスクのピン留め</title>
     <link rel="alternate" type="text/html" href="?a=codex-cli-0-161-0-162-release-notes-2026"/>
