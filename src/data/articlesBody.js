@@ -27523,6 +27523,107 @@ const ARTICLES_BODY = {
         ]
       }
     ]
+  },
+  "anthropic-max-team-api-credits-2026": {
+    "body": [
+      "Anthropic の API ドキュメントのリリースノートは、10月7日の項目として「Claude Max と Team プランに、月次の API クレジットが含まれるようになった」と記している。クレジットを受け取る手順は、専用ページ「API credits for Max and Team plans」に書かれている。リリースノート自体には金額も条件もなく、中身はこの専用ページ（platform.claude.com）にある。以下は、2026年10月12日に読んだそのページの内容である。",
+      "対象プランは Max 5x、Max 20x、Team（非営利・研究者向けの割引 Team を含む）。Free、Pro、Enterprise は対象外と明記されている。月額は Max 5x が $100、Max 20x が $200、Team は Standard 席が1席あたり $20、Premium 席が1席あたり $100。Team では全席ぶんが1つの月次残高にまとめられ、上限は $500。席数は毎月の請求期間の開始時点で数える。ページの例では、Standard 3席と Premium 2席のチームは月 $260 になる。",
+      "使い道は Claude API、Claude Managed Agents、Claude Agent SDK、プレイグラウンドで、Claude Code と、Claude アプリでの追加利用（extra usage）は含まれない。Amazon Bedrock、Google Cloud、Microsoft Foundry、Claude Platform on AWS でも使えず、Claude Console の Claude API だけが対象である。このクレジットは Claude や Claude Code の利用上限も変えない、とページは書いている。",
+      "受け取りには、Claude Console の組織を自分のプランに紐づける。claude.ai の設定（Max は Settings > Billing、Team は Organization settings > Billing）の「API credits」欄で組織を選び、プログラム規約に同意する。必要な権限は、Max ではサブスクライバー本人、Team では Primary Owner か Owner、Console 側では Owner・Admin・Billing のいずれか。新規の契約者は、対象プランになってから7日後に受け取れる。Claude Platform に支払い方法を登録する必要はない。",
+      "ページが強調している注意点は紐づけの固定である。1つのプランが紐づけられる Console 組織は1つ、1つの組織が受け取れるプランも1つで、利用者自身は後から変更できず、変更にはサポートへの連絡が要る。クレジットは Console の Settings > Billing にある「Promotional credits」欄に、金額と期限つきで表示される。",
+      "クレジットは請求サイクルごと（年払いは毎月）に届き、使い切らなかった分はそのサイクルの終わりに失効して繰り越されない。使う順は、付与クレジットが先で、購入済みのクレジットは後。自動リロードは購入済みの残高だけを基準に動く。紐づけた組織内のすべての API キーとワークスペースが同じ残高から引かれるため、案件ごとに上限を設けたい場合は、ワークスペースを分けて支出上限を設定するよう案内されている。",
+      "残高が尽きたときの挙動も書かれている。購入済みクレジットがあればそちらで続き、何も無ければ次の月次クレジットが届くまで API リクエストは止まる。使った分が Claude のプランに請求されることはない。この付与クレジットしか持たない組織で Claude Code のセッションを動かすと、Claude Code は「Credit balance too low」を表示する、とも書かれている。クレジットで Claude Code は動かせない。",
+      "レート制限との関係では、対象プランに紐づいた組織は少なくとも Start ティア、月次クレジットが $200 を超える場合は少なくとも Build ティアに引き上げられる。ただし、クレジットを受け取ること自体は他のティア条件を変えず、このクレジットは上位ティアへの昇格の実績にも数えられない。月次の支出上限（毎月1日にリセット）と、クレジットの更新（請求サイクル）は別の暦で動く点も明記されている。",
+      "プラン変更時の扱いは次のとおり。解約、対象外プランへのダウングレード、返金の場合、新しいクレジットは止まるが、すでに受け取った分は期限まで使える。Max 5x から Max 20x への変更では、日割りのクレジットがすぐに付き、その後は毎サイクル $200 になる。Max から Team への変更では Max の紐づけが終わり、Team の Owner が Team プラン開始の7日後から受け取れる。Team の席の追加は次の月から反映され、席を外しても更新日までは席が残るため、減額は更新後になる。",
+      "同じ日のリリースノートには、Sonnet 5.5 のプロンプトキャッシュ読み取りの値下げ（100万トークンあたり $0.20 から $0.10）も載っている。付与クレジットで Sonnet 5.5 を使うとき、同じ入力の繰り返しが多い用途では、この値下げでクレジットの持ちが変わる。",
+      "確認できていないこと。「Max 5x」「Max 20x」と、サブスクリプションの月額そのものの料金は、このページではなく別のページの話で、本記事では扱わない。プログラム規約（anthropic.com 側の credit-terms）は読んでいないため、規約上の条件は確認できていない。また、日本の請求通貨や税の扱い、プランをアプリ内課金で買った場合の細かい挙動は、ページの記載以上のことは分からない。本記事の内容はすべて Anthropic 自身のドキュメントに基づく（一次資料のみ）。独立した第三者による検証は確認できていない。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 1,
+        "caption": "月次 API クレジットの額（Anthropic 公式ドキュメントの値）",
+        "headers": [
+          "プラン",
+          "月次クレジット",
+          "備考"
+        ],
+        "rows": [
+          [
+            "Max 5x",
+            "$100",
+            "—"
+          ],
+          [
+            "Max 20x",
+            "$200",
+            "—"
+          ],
+          [
+            "Team（Standard 席）",
+            "席ごとに $20",
+            "全席ぶんを合算、上限 $500"
+          ],
+          [
+            "Team（Premium 席）",
+            "席ごとに $100",
+            "全席ぶんを合算、上限 $500"
+          ],
+          [
+            "Free / Pro / Enterprise",
+            "対象外",
+            "—"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 2,
+        "caption": "クレジットで使えるもの・使えないもの（同ドキュメント）",
+        "headers": [
+          "プロダクト",
+          "対象"
+        ],
+        "rows": [
+          [
+            "Claude API",
+            "対象"
+          ],
+          [
+            "Claude Managed Agents",
+            "対象"
+          ],
+          [
+            "Claude Agent SDK",
+            "対象"
+          ],
+          [
+            "プレイグラウンド",
+            "対象"
+          ],
+          [
+            "Claude Code",
+            "対象外"
+          ],
+          [
+            "Claude アプリの追加利用（extra usage）",
+            "対象外"
+          ],
+          [
+            "Amazon Bedrock / Google Cloud / Microsoft Foundry / Claude Platform on AWS",
+            "対象外"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "API credits for Max and Team plans（Anthropic 公式ドキュメント）",
+        "url": "https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers"
+      },
+      {
+        "title": "Claude Developer Platform release notes（2026年10月7日の項目）",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      }
+    ]
   }
 };
 

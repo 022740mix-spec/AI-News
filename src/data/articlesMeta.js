@@ -11814,5 +11814,23 @@ export const ARTICLES_META = [
       "start": "2026-10-05",
       "end": "2026-10-11"
     }
+  },
+  {
+    "id": "anthropic-max-team-api-credits-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude の Max・Team プランに月次の API クレジット — Max 5x は $100、Max 20x は $200、Team は席ごとに合算で上限 $500。Claude Code は対象外",
+    "excerpt": "Anthropic の API リリースノートによると、10月7日から Claude Max と Team プランに Claude API 用の月次クレジットが付く。公式ドキュメントの額は Max 5x が $100、Max 20x が $200、Team は Standard 席 $20・Premium 席 $100 の合算（上限 $500）。Claude Code と、Claude アプリの追加利用には使えず、繰り越しもない。",
+    "date": "2026-10-12",
+    "newsDate": "2026-10-07",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "料金",
+      "API",
+      "Managed Agents"
+    ]
   }
 ];
