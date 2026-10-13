@@ -11832,5 +11832,21 @@ export const ARTICLES_META = [
       "API",
       "Managed Agents"
     ]
+  },
+  {
+    "id": "anthropic-models-api-capabilities-fields-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude の Models API に能力フィールドが3つ入る — thinking を切れるか、ウェブ検索とコード実行が使えるか、どのモデル系列かを ID の文字列判定なしで取得",
+    "excerpt": "Anthropic の API リリースノートによると、10月1日・5日・6日に Models API へ line、capabilities.thinking.types.disabled、capabilities.server_tools が順に追加された。モデルを増やすたびに ID を解析して分岐していたコードの置き換え先になる。公式リファレンスの記載に基づいて整理する。",
+    "date": "2026-10-13",
+    "newsDate": "2026-10-06",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "API"
+    ]
   }
 ];

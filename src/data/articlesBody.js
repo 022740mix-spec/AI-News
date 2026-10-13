@@ -27624,6 +27624,55 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/release-notes/overview"
       }
     ]
+  },
+  "anthropic-models-api-capabilities-fields-2026": {
+    "body": [
+      "Anthropic の API ドキュメントのリリースノートには、10月1日、5日、6日の3日分の項目が、いずれも Models API（GET /v1/models と GET /v1/models/{model_id}）へのフィールド追加として並んでいる。10月1日が line、10月5日が capabilities.thinking.types.disabled、10月6日が capabilities.server_tools である。以下は、2026年10月13日に読んだ platform.claude.com のリリースノートと List Models のリファレンスに基づく。",
+      "line は、そのモデルが属する系列を返す。リファレンスの値は haiku、sonnet、opus、fable、mythos の5つで、「今後増える可能性がある」と書かれている。Claude Opus 4.5 と Opus 4.6 はどちらも opus を返す、というのが公式の例である。系列を持たないモデルは null になり、リファレンスは「ID から系列を推測しないこと」と明記している。モデル ID の文字列から世代や系列を切り出す処理は、この項目で置き換えられる対象になる。",
+      "capabilities.thinking.types.disabled は、thinking: {type: \"disabled\"} を受け付けるかを示す。リファレンスの定義では、この値は「このモデルに disabled を送ると 400 が返る場合にちょうど false になる」もので、thinking に対応していないモデルでは true になる。同じ thinking.types には adaptive（モデルが考えるかどうかと量を決める）と enabled（budget_tokens を呼び出し側が指定する拡張思考）があり、3つの受け付け可否を横並びで読める。",
+      "capabilities.server_tools は、ウェブ検索ツールとコード実行ツールをそのモデルが受け付けるかを示す。supported は、2つのうち少なくとも1つに対応していれば true で、個別の可否は web_search と code_execution に入る。それぞれ「少なくとも1つの版に対応している」という意味で、すべての版に対応するとは限らない。また、対応していても組織の管理者がウェブ検索を無効にしている場合などには、リクエストが拒否されうるとリファレンスは注意している。つまりこの値はモデル側の対応を示すもので、組織の設定は反映しない。",
+      "混同しやすい点がリリースノートにも書かれている。トップレベルの capabilities.code_execution は、コード実行ツールの中で動くコードが、同じリクエストの他のツールを呼べるか（プログラムによるツール呼び出し、ウェブ検索・ウェブ取得の動的フィルタリング）を表す。コード実行ツールそのものに対応するかは、capabilities.server_tools.code_execution を読む。名前が似た2つの項目が別の意味を持つ。",
+      "Models API のレスポンスには、これらのほかに batch、citations、context_management、effort（low・medium・high・xhigh・max の各水準）、image_input、pdf_input、structured_outputs などの能力が、既知の能力はすべてキーが存在する形で入る。加えて lifecycle（active・deprecated・retired）、deprecated_at、retires_at、max_input_tokens、max_tokens もある。一覧は lifecycle で絞り込め、既定では active と deprecated が返り、retired は明示的に指定したときだけ現れる。",
+      "確認できていないこと。リファレンスのレスポンス例は説明用で、値が実際のモデルと一致しているとは限らない（たとえば例では Opus 5.5 の line が haiku になっている）。このため、各モデルが実際にどの値を返すかは、本記事では確認していない。また、これらのフィールドを使った移行の手順や、既存コードへの影響の大小は公式の記述を超えるため扱わない。本記事の内容はすべて Anthropic 自身のドキュメントに基づく（一次資料のみ）。独立した第三者による検証は確認できていない。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 4,
+        "caption": "Models API に追加されたフィールド（Anthropic 公式リリースノートとリファレンス）",
+        "headers": [
+          "追加日",
+          "フィールド",
+          "返す内容"
+        ],
+        "rows": [
+          [
+            "10月1日",
+            "line",
+            "モデル系列（haiku / sonnet / opus / fable / mythos）。属さなければ null"
+          ],
+          [
+            "10月5日",
+            "capabilities.thinking.types.disabled",
+            "thinking の type が disabled を受け付けるか。false は送ると 400 になる場合"
+          ],
+          [
+            "10月6日",
+            "capabilities.server_tools",
+            "ウェブ検索・コード実行ツールに対応するか（supported / web_search / code_execution）"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Developer Platform release notes（2026年10月1日・5日・6日の項目）",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "List Models（Anthropic API リファレンス）",
+        "url": "https://platform.claude.com/docs/en/api/models/list"
+      }
+    ]
   }
 };
 

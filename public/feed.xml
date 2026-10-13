@@ -8,6 +8,14 @@
   <updated>2026-10-13T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Claude の Models API に能力フィールドが3つ入る — thinking を切れるか、ウェブ検索とコード実行が使えるか、どのモデル系列かを ID の文字列判定なしで取得</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-models-api-capabilities-fields-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-models-api-capabilities-fields-2026</id>
+    <published>2026-10-13T15:00:00Z</published>
+    <updated>2026-10-13T15:00:00Z</updated>
+    <summary>Anthropic の API リリースノートによると、10月1日・5日・6日に Models API へ line、capabilities.thinking.types.disabled、capabilities.server_tools が順に追加された。モデルを増やすたびに ID を解析して分岐していたコードの置き換え先になる。公式リファレンスの記載に基づいて整理する。</summary>
+  </entry>
+  <entry>
     <title>週次の計器 — 10月5日〜11日は10本、前週の41本から急減。8本が CLI で、発掘と分析は0本、「AI安全性」の記事も0本だった</title>
     <link rel="alternate" type="text/html" href="?a=weekly-metrics-2026-week-oct05"/>
     <id>tag:ai-tool-news.jp,2026:weekly-metrics-2026-week-oct05</id>
