@@ -11848,5 +11848,26 @@ export const ARTICLES_META = [
       "Claude",
       "API"
     ]
+  },
+  {
+    "id": "anthropic-sdk-browser-computer-toolsets-beta-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic の Python / TypeScript SDK にブラウザ・デスクトップ操作の toolset がベータで入る — ループと確認は SDK、ブラウザ本体と URL ポリシーは利用者が用意する",
+    "excerpt": "Anthropic は 10月7日、Python と TypeScript の SDK に browser use tool と computer use tool 用のクラスをベータで追加した。利用者はクラスを継承してツールごとに1メソッドを書き、SDK がツールのループ、URL とファイルのポリシー、承認コールバックを実行する。SDK にはブラウザも既製のドライバも URL ポリシーも含まれず、URL ポリシーを渡さなければ URL は一切検査されない。",
+    "date": "2026-10-14",
+    "newsDate": "2026-10-07",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "SDK",
+      "API",
+      "Computer Use",
+      "ブラウザ自動化",
+      "セキュリティ",
+      "エージェント"
+    ]
   }
 ];

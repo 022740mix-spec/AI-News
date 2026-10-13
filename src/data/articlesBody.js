@@ -27673,6 +27673,113 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/api/models/list"
       }
     ]
+  },
+  "anthropic-sdk-browser-computer-toolsets-beta-2026": {
+    "body": [
+      "Anthropic の API ドキュメントのリリースノートによると、2026年10月7日、Python と TypeScript の SDK に、browser use tool と computer use tool 用のクラスがベータで加わった。利用者はクラスを継承し、ツールごとに1つのメソッドを、自分のブラウザやデスクトップの自動化に対して書く。SDK がツールのループ、利用者が設定した URL とファイルのポリシー、承認のコールバックを実行する。この記事は、platform.claude.com のリリースノートと、そこからリンクされた公式ガイド「Browser and computer use with the SDK toolsets」を直接読んで書いている。",
+      "役割の分担は公式ガイドに明記されている。SDK は、設定された検査（navigate の URL ポリシーや承認コールバックなど）を通った呼び出しを利用者の「ドライバ」に渡し、ドライバが返したものから tool_result を組み立てる。ドライバはブラウザやデスクトップを実際に動かす部分で、利用者が用意する。ガイドの「Limitations」には、SDK にはブラウザも、デスクトップも、既製のドライバも、URL ポリシーも含まれず、利用者が用意すると書かれている。",
+      "ドライバの用意には3つの道がある。1つ目はプロバイダのドライバを使う道で、ガイドは Browser Use、Browserbase、Daytona、E2B が自社のドライバを公開していると書いている（ブラウザ用は Browser Use と Browserbase、デスクトップ用は Daytona、両方は E2B）。この場合、ツールランナー（client.beta.messages.tool_runner）に、ドライバのインスタンスを tools の要素としてそのまま渡す。ガイド内のコード例のプロバイダは架空のもので、実在のプロバイダに置き換えて使う前提になっている。2つ目は自作で、ブラウザ用は BetaAbstractBrowserToolset20260801、デスクトップ用は BetaAbstractComputerToolset20260801 を継承し、対応するメンバーだけをオーバーライドする。実装しないメンバーは無効として API に送られる。3つ目として、claude-quickstarts リポジトリに、Chrome DevTools Protocol 経由で Chromium を動かすブラウザ用のサンプルと、VNC のデスクトップ用サンプルがあると書かれている。",
+      "ガイドは、本番に近い環境でドライバを動かす前に、次の6つを行うよう求めている。SDK が代行するのは1、4、5で、2、3、6はドライバと配備の側の仕事だと明記されている。",
+      "URL ポリシーについて、ガイドは強い警告を置いている。ポリシーを渡さなければ SDK は URL を一切検査せず、API も Claude が開く URL を絞らない。ポリシーを渡しても、SDK が呼ぶのは navigate のときだけで、back、forward、reload や、Claude がクリックしたリンク、リダイレクトは対象にならない。それらは loopback（localhost）、クラウドのメタデータアドレス 169.254.169.254 のようなリンクローカル、プライベートネットワークに到達しうる。SDK は URL のスキームも検査しないので、javascript:、view-source:、data:、file: をドライバ側で拒否する必要がある。file: は Claude にブラウザのホストのファイルを読ませ、javascript: は javascript_exec を切っていても現在のページでスクリプトを走らせる。ガイドの例示ポリシーは「本番用ではない」と注記されており、http と https、および about:blank だけを許可する。url_policy に None（TypeScript では null）を渡すと、SDK はすべての navigate を拒否する。設定値の読み込み失敗で検査なしになるのを防ぐための挙動だと説明されている。",
+      "承認とファイルについての既定は次のとおり。javascript_exec と file_upload は既定で無効で、どちらかを有効にして confirm コールバックを渡さないと、コンストラクタが設定エラーを出す。confirm はその呼び出しが実行される直前に毎回呼ばれ、True で実行、False で拒否になる。人に尋ねる場合は、メンバー名、ページの URL、呼び出しの入力を見せ、URL と入力は印字可能な ASCII の外を全部エスケープするよう書かれている。どちらもページ由来のテキストを含みうるためである。アップロードは file_policy を渡さなければ、パスまたはドキュメント ID を指定するものがすべて拒否される。有効にするには、タスクのファイルだけが入った1つのアップロード用ディレクトリを持つポリシーを渡す。",
+      "リモートやホスト型のブラウザには追加の注意がある。ガイドによると、SDK はブラウザがリモートかどうかを判別できない。付属のローカルファイルポリシーは、SDK を動かすプロセスのファイルシステム上のパスを検査するもので、リモートのブラウザが自分のファイルシステムを読み書きすることは守らない。そのためリモートブラウザでは、ドライバがブラウザの動く場所でアップロードのパスを検査する自前のポリシーを持たない限り、file_upload を切るよう書かれている。ホスト型ブラウザではプロバイダが egress とホストの隔離を管理するので、利用者側の egress ポリシーは効かず、ドライバのリクエストフックが唯一の検査になる。また、ブラウザのプロファイルは、Claude に渡したくないデータや操作を持つアカウントにログインしていてはならない。javascript_exec はページ自身の権限（Cookie、ストレージ、ログイン済みセッション）で動く。",
+      "デスクトップ側の違いも書かれている。computer のクラスには URL ポリシーもファイルポリシーも状態報告も無い。type、key、hold_key のいずれかを実装すると、confirm を渡すか configs でそれらを無効にしない限り、コンストラクタが設定エラーを出す。confirm が受け取るのはツール名と入力で、画面ではない。そのため、ある座標へのクリックが何を押すのかは、承認の時点では判別できないと Limitations に書かれている。承認は最後の状態報告に基づくので、報告のあとにページが変わっても SDK は呼び出し前に再確認しない。1つの toolset の呼び出しは1つずつ順に実行され、これは無効にできない。",
+      "このほか、ツールランナーに stream と run_tools_eagerly を渡すと、応答がストリーミング中のうちにブラウザやデスクトップの呼び出しを始められる。ガイドによれば、検査は先に走り、confirm もストリーミング中に呼ばれうる。始まった呼び出しは取り消せず、応答が max_tokens で切れても動作は実行されるが、Claude はその結果を読めない。SDK はローカルパスをエラー文に出る場合も隠さないので、ドライバで例外を捕まえ、ToolError に自前の文面を載せるよう勧められている。また、Amazon Bedrock 経由のブラウザ toolset のリクエストには、Anthropic のプロンプトインジェクション分類器が現時点では動かないという注記もある。",
+      "確認できていない点を分けておく。この記事の根拠は Anthropic 自身の公式ドキュメントと、同社のリリースノートだけであり、実装の動作を第三者が再現した記録は確認していない。ガイドが示すコードは筆者が実行しておらず、SDK のバージョン番号やパッケージ側のリリースノートは今回読んでいない。ベータ機能のため、クラス名の日付（20260801）を含めて仕様が変わる可能性がある。パートナー各社のドライバの中身は、各社のドキュメントにあたっていない。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "公式ガイドの「Run the toolset safely」6つの手順と、誰が担うか",
+        "headers": [
+          "手順",
+          "内容",
+          "担当"
+        ],
+        "rows": [
+          [
+            "1. URL ポリシー",
+            "タスクに不要な navigate の URL をすべて拒否する関数を渡す",
+            "SDK が呼ぶ（中身は利用者が書く）"
+          ],
+          [
+            "2. リクエストの傍受",
+            "リンク、フォーム、リダイレクト、ページ自身のリクエストを同じ規則で検査する",
+            "ドライバ"
+          ],
+          [
+            "3. コンテナの egress 規則",
+            "リンクローカルとプライベートのアドレスを遮断し、必要なホストだけに出口を絞る",
+            "配備"
+          ],
+          [
+            "4. アップロードとダウンロードの制限",
+            "file_upload は既定で無効。有効にするなら専用ディレクトリ1つ",
+            "SDK が適用"
+          ],
+          [
+            "5. 影響の大きいメンバーの承認",
+            "javascript_exec と file_upload は confirm コールバックが必須",
+            "SDK が適用"
+          ],
+          [
+            "6. ブラウザホストの隔離",
+            "セッションごとに専用のコンテナか VM。ログイン済みでないプロファイルを使う",
+            "配備"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 7,
+        "caption": "browser のクラスと computer のクラスの違い（公式ガイドより）",
+        "headers": [
+          "項目",
+          "browser",
+          "computer"
+        ],
+        "rows": [
+          [
+            "継承元のクラス",
+            "BetaAbstractBrowserToolset20260801",
+            "BetaAbstractComputerToolset20260801"
+          ],
+          [
+            "コンストラクタの主な引数",
+            "configs / confirm / url_policy / file_policy / tool_configs",
+            "configs / confirm / tool_configs"
+          ],
+          [
+            "URL ポリシー・ファイルポリシー・状態報告",
+            "あり",
+            "なし"
+          ],
+          [
+            "confirm が必須になる条件",
+            "javascript_exec または file_upload を有効にしたとき",
+            "type / key / hold_key を実装したとき（無効にする場合を除く）"
+          ],
+          [
+            "confirm が受け取るもの",
+            "メンバー名、ページの URL、入力",
+            "ツール名と入力（画面は渡らない）"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Platform リリースノート（2026年10月7日の項）",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Browser and computer use with the SDK toolsets（公式ガイド）",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-sdk"
+      },
+      {
+        "title": "Browser use tool（公式ドキュメント）",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-tool"
+      }
+    ]
   }
 };
 

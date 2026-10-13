@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-10-13T15:00:00Z</updated>
+  <updated>2026-10-14T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Anthropic の Python / TypeScript SDK にブラウザ・デスクトップ操作の toolset がベータで入る — ループと確認は SDK、ブラウザ本体と URL ポリシーは利用者が用意する</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-sdk-browser-computer-toolsets-beta-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-sdk-browser-computer-toolsets-beta-2026</id>
+    <published>2026-10-14T15:00:00Z</published>
+    <updated>2026-10-14T15:00:00Z</updated>
+    <summary>Anthropic は 10月7日、Python と TypeScript の SDK に browser use tool と computer use tool 用のクラスをベータで追加した。利用者はクラスを継承してツールごとに1メソッドを書き、SDK がツールのループ、URL とファイルのポリシー、承認コールバックを実行する。SDK にはブラウザも既製のドライバも URL ポリシーも含まれず、URL ポリシーを渡さなければ URL は一切検査されない。</summary>
+  </entry>
   <entry>
     <title>Claude の Models API に能力フィールドが3つ入る — thinking を切れるか、ウェブ検索とコード実行が使えるか、どのモデル系列かを ID の文字列判定なしで取得</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-models-api-capabilities-fields-2026"/>
