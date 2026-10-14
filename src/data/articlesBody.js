@@ -27780,6 +27780,27 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-tool"
       }
     ]
+  },
+  "claude-code-2-1-299-idle-compaction-file-mentions-mcp-allow-rule-2026": {
+    "body": [
+      "anthropics/claude-code のリリースページによると、Claude Code 2.1.299 は2026年10月14日に公開された（ページに年の表示は無く、フッターの表記から2026年と判断した）。直前の記事で扱った 2.1.296 の次の版にあたる。リポジトリの CHANGELOG.md では 2.1.299 の次の項目が 2.1.296 で、2.1.297 と 2.1.298 の項目は見当たらない。2.1.298 のリリースページは 404 だった。この記事は公式のリリースノートをもとに、自分の版にその機能があるかを判断できるよう整理する。内容はリリースノートの記載に基づき、実際の挙動は検証していない。",
+      "日々の使い方に関わるのは idle compaction である。端末版で、200K トークンを超える会話を約54分放置すると、1時間のプロンプトキャッシュが切れる前に圧縮される。次のメッセージで会話全体をキャッシュなしで処理し直さずに済む、という説明がリリースノートにある。最小トークン数は環境変数 `CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS` で変えられ、settings.json の `\"idleCompaction\": false` で無効にできる。どちらも v2.1.290 以降が必要と書かれている。圧縮は会話の内容を要約に置き換えるため、放置後に詳細な文脈が必要な作業では、無効にするかどうかを自分で判断することになる。",
+      "`CLAUDE_CODE_DISABLE_FILE_MENTIONS` も加わった。設定すると、`@` でファイルを指定したときに、Claude にはファイルの内容ではなくパスが渡され、Claude が自分のファイルツールで読む。エージェント表示では、`/effort` と `/fast` が新しいセッションの初期値を設定し、引数なしの `/model`、`/effort`、`/fast` は選択画面を開く。",
+      "MCP まわりでは、Cloud と Remote Control のコネクタが、既定で MCP プロトコル版 2026-07-28 を交渉する。以前の挙動にしたい場合は `MCP_PROTOCOL_NEGOTIATION=legacy` を設定する。また、allow ルールは指定したサーバーだけに一致するようになり、名前に `__` を含むサーバーには `mcp__<server>__*` と書く必要がある。同じ版で、名前に二重アンダースコアを含むサーバーに対する `mcp__<server>` の deny / ask ルールが効かなかった問題も修正された。名前の規則が変わるため、既存の権限設定にそのようなサーバーがある場合は見直す価値がある。",
+      "スキルとフックでは、名前に非表示文字、向きを変える文字、`<` や `>` を含むスキルやコマンドは、名前を直すまで提示されなくなった。`UserPromptSubmit` フックは、スキルやカスタムコマンドが展開される前に実行される。管理者向けには、`claude self-hosted-runner orchestrator` に `--shutdown-drain-sec` が入り、SIGTERM を受けた後、実行中の処理に指定秒数まで猶予を与える。",
+      "Mods（2.1.287 で導入）に関する追加も多い。managed 設定で入れた Mod は、`$.prompt.media` で添付された画像や文書のバイト列を、`$.session.identity()` でサインイン状態を読める。`Text` に `size`・`weight`・`mono`・`tabular` が加わり、`bold` は `weight` に置き換えられる予定で非推奨になった。`claude plugin eval` には `--disallow-tools` が加わった。",
+      "修正は131件と書かれており、ここでは安全性に関わるものに絞る。サンドボックス内のシェルコマンドが `--plugin-dir` のフォルダに書き込めてしまう問題（その中のコードはサンドボックス外で再読み込み・実行される）、チームメイトのエージェントのタスク説明に認証情報の一部が残る問題、サードパーティのゲートウェイ用の API キーが Anthropic 宛ての各種リクエストに付く問題が直った。`/usage`、上限接近の警告、ステータスラインが100%を超えて表示されることがある問題も直っている（anthropics/claude-code#92238）。2.1.296 で入った退行として、クラウドとヘッドレスのセッションで、再開時に新しいメッセージが届くと承認済みのツール呼び出しが2回走りうる問題と、Cowork と claude.ai のクラウドセッションで編集と再試行が失敗する問題も直ったと書かれている。完全な一覧は公式のリリースページにある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code v2.1.299 リリースノート（anthropics/claude-code）",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.299"
+      },
+      {
+        "title": "CHANGELOG.md（anthropics/claude-code）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      }
+    ]
   }
 };
 

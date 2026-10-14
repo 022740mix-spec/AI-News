@@ -11869,5 +11869,23 @@ export const ARTICLES_META = [
       "セキュリティ",
       "エージェント"
     ]
+  },
+  {
+    "id": "claude-code-2-1-299-idle-compaction-file-mentions-mcp-allow-rule-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.299、放置した長い会話をキャッシュ切れの前に圧縮する idle compaction、@ メンションをパスだけにする環境変数、MCP の許可ルールの一致範囲の変更",
+    "excerpt": "Claude Code 2.1.299 は、200K トークン超の会話を約54分放置するとプロンプトキャッシュ（1時間）が切れる前に圧縮する idle compaction を端末版に追加した。@ メンションの中身を渡さない CLAUDE_CODE_DISABLE_FILE_MENTIONS、MCP の allow ルールが指定したサーバーだけに一致する変更も入った。",
+    "date": "2026-10-14",
+    "newsDate": "2026-10-14",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Claude Code",
+      "MCP",
+      "フック",
+      "CLI",
+      "開発ツール"
+    ]
   }
 ];
