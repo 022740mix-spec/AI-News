@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-10-14T15:00:00Z</updated>
+  <updated>2026-10-15T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>Anthropic の Python / TypeScript SDK にブラウザ・デスクトップ操作の toolset がベータで入る — ループと確認は SDK、ブラウザ本体と URL ポリシーは利用者が用意する</title>
@@ -22,6 +22,14 @@
     <published>2026-10-14T15:00:00Z</published>
     <updated>2026-10-14T15:00:00Z</updated>
     <summary>Claude Code 2.1.299 は、200K トークン超の会話を約54分放置するとプロンプトキャッシュ（1時間）が切れる前に圧縮する idle compaction を端末版に追加した。@ メンションの中身を渡さない CLAUDE_CODE_DISABLE_FILE_MENTIONS、MCP の allow ルールが指定したサーバーだけに一致する変更も入った。</summary>
+  </entry>
+  <entry>
+    <title>Claude API に OpenTelemetry 出力（ベータ）— Messages API と Managed Agents の実行を自社の監視基盤で追える、既定ではプロンプトを含めない</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-api-opentelemetry-export-beta-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-api-opentelemetry-export-beta-2026</id>
+    <published>2026-10-14T15:00:00Z</published>
+    <updated>2026-10-14T15:00:00Z</updated>
+    <summary>Anthropic は10月14日、Claude API の OpenTelemetry 出力をベータで公開した。Claude Console で送信先を登録すると、API 側が Messages API のリクエストと Managed Agents のセッションのスパンを OTLP/HTTP で送る。内容モードの既定は「メタデータのみ」で、プロンプトと応答を含める「全内容」は選んだときだけ。送信は少なくとも1回・ベストエフォートで、API 利用量の完全な記録ではないと公式が明記している。</summary>
   </entry>
   <entry>
     <title>Claude の Models API に能力フィールドが3つ入る — thinking を切れるか、ウェブ検索とコード実行が使えるか、どのモデル系列かを ID の文字列判定なしで取得</title>

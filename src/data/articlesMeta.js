@@ -11887,5 +11887,24 @@ export const ARTICLES_META = [
       "CLI",
       "開発ツール"
     ]
+  },
+  {
+    "id": "anthropic-claude-api-opentelemetry-export-beta-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude API に OpenTelemetry 出力（ベータ）— Messages API と Managed Agents の実行を自社の監視基盤で追える、既定ではプロンプトを含めない",
+    "excerpt": "Anthropic は10月14日、Claude API の OpenTelemetry 出力をベータで公開した。Claude Console で送信先を登録すると、API 側が Messages API のリクエストと Managed Agents のセッションのスパンを OTLP/HTTP で送る。内容モードの既定は「メタデータのみ」で、プロンプトと応答を含める「全内容」は選んだときだけ。送信は少なくとも1回・ベストエフォートで、API 利用量の完全な記録ではないと公式が明記している。",
+    "date": "2026-10-14",
+    "newsDate": "2026-10-14",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "OpenTelemetry",
+      "Claude API",
+      "Managed Agents",
+      "API",
+      "エンタープライズ"
+    ]
   }
 ];

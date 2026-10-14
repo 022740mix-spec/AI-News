@@ -27801,6 +27801,87 @@ const ARTICLES_BODY = {
         "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
       }
     ]
+  },
+  "anthropic-claude-api-opentelemetry-export-beta-2026": {
+    "body": [
+      "Claude Platform のリリースノートによると、Anthropic は2026年10月14日、OpenTelemetry 出力をベータで公開した。Messages API のリクエストと Claude Managed Agents のセッションを、利用者がすでに使っている監視基盤（オブザーバビリティ基盤）でトレースできる。この記事は公式ドキュメントの記載をもとに整理したもので、実際の挙動は検証していない。",
+      "仕組みは2通りある。1つは SDK 側のトレースで、Python・TypeScript・C#・Go・Java・PHP・Ruby の SDK がスパンを出す。必要な権限は無い。もう1つは API 側のトレースで、Claude Console に「送信先（destination）」を登録すると、API が自分でスパンを作って送る。こちらは Claude Console の Admin ロールが必要で、アプリのコードを変えずに使える。両方を有効にすると、1つのリクエストの SDK スパンと API スパンを1本のトレースにまとめて見られる。",
+      "何が見えるかは、経路で違う。公式の比較表では、Messages API と Sessions API のリクエスト、トークン使用量は SDK・API のどちらでも取れる。一方、リクエスト内の各モデル実行、Managed Agents のターン、API が実行するサーバーツールは API 側のトレースだけで、tool runner が実行するクライアントツールやセルフホストのサンドボックス内のツールは SDK 側のトレースだけで取れる。",
+      "送信先の登録には、HTTPS・ポート443の OTLP/HTTP エンドポイント（protobuf 形式、ホスト名指定）とその認証情報が要る。自前の OpenTelemetry Collector は既定でポート4318を待ち受けるため、443で受けるか手前にロードバランサやリバースプロキシを置く必要がある。対象のワークスペースは「すべて」「選択」「選択を除く」から選べる。Admin API と CLI（ant）からも登録でき、curl の例では anthropic-beta ヘッダに telemetry-destinations-2026-08-11 が使われている。公式が連携先として挙げているのは Arize AI、Braintrust、Databricks、Datadog、Grafana Cloud、Honeycomb、Langfuse、LangSmith、New Relic、PostHog、Sentry、Splunk で、OTLP を受けるサービスなら使える。",
+      "内容モードは、データの扱いを決める設定である。既定の「メタデータのみ」では、識別子・時間・状態・トークン数のほか、利用者が付けたエージェントやツールの名前・説明、MCP サーバー名が入る。「全内容」を選ぶと、モデルへのプロンプトと応答も入る。プロンプトと応答は gen_ai.input.messages と gen_ai.output.messages などの属性に入り、公式のスパン一覧では Content のバッジが付く。公式は、全内容は監視基盤側のアクセス権と保持期間のもとで保管されるため、組織の要件に合うか確認するよう注記している。",
+      "データ保持に関する条件も公式に書かれている。HIPAA・FERPA・K-12 のデータ取り扱い制限が Anthropic との間にある組織では、送信先の設定が全内容でもメタデータしか出ない（SDK のスパンは影響を受けない）。ゼロデータリテンション（ZDR）の下でも全内容は使え、Messages API のリクエストでは、API は配信するまで内容をメモリ上にだけ保持する。ただし Managed Agents は ZDR の対象外で、OpenTelemetry を使ってもデータ保持は変わらない。配信後のデータは、利用者が選んだサービスが自らの保持・アクセス制御のもとで保持し、Anthropic の外にある。",
+      "全内容のスパン1つあたりの内容量は、既定で0.75MBまでである。公式は、英語テキストの200kトークンの文脈に収まり、多くの監視基盤やプロキシの1MBというリクエスト上限を下回る大きさだと説明している。超えると切り詰められ、anthropic.content.truncated が true になる。1Mトークンの文脈を丸ごと残すには約4MBが要る。",
+      "配信の性質は、集計に使うときの注意点になる。配信は「少なくとも1回」なので同じスパンが複数回届きうる。一方で「ベストエフォート」なので、配信前に失われたスパンは再送されない。公式は、エクスポートされたスパンは API 利用量の完全な記録を保証しない、と明記している。また呼び出し側が traceparent ヘッダのサンプリングフラグを切れば、そのリクエストのスパンは出ない。API キーごとの利用量、たとえば漏洩したキーの検知には、スパンのない利用も数える Usage API を使うよう案内されている。トークンを二重に数えないための合算の規則（SDK と API のどちらか一方のスパンを使う、など）も公式に書かれている。",
+      "運用面の制約もある。送信先は組織あたり10件（無効なものを含む）までで、リクエストヘッダは1送信先あたり20個まで。エンドポイントはTLSハンドシェイクと応答ヘッダをそれぞれ5秒以内、配信全体は10秒以内に完了する必要がある。リダイレクト（3xx）を返す、非公開のIPに解決される、24時間すべての配信が失敗する、のいずれかで API は送信先を無効にする。対応するプラットフォームは Claude API と Claude Platform on AWS（どちらもベータ）で、AWS 側は traceparent ヘッダにまだ対応しておらず、スパンは常に独立したトレースになる。",
+      "確認できていないこと。この記事は公式ドキュメントとリリースノートの記載に基づく。スパンの属性の全体（スパン一覧のページ）、各連携先での表示、実際の遅延やオーバーヘッドは確認していない。独立した検証や第三者の評価も確認していない。導入する場合は、内容モードをメタデータのみから始め、全内容へ広げる前に監視基盤側の保持期間とアクセス権を見直すのが、公式の注記に沿った進め方になる。なお Claude Code・Agent SDK・Cowork の監視は別の文書（Claude Code monitoring など）が扱っており、今回の対象外である。"
+    ],
+    "tables": [
+      {
+        "caption": "SDK 側と API 側のトレースで取れるもの（公式の比較表をもとに整理）",
+        "afterParagraph": 2,
+        "headers": [
+          "項目",
+          "SDK トレース",
+          "API トレース"
+        ],
+        "rows": [
+          [
+            "Messages API・Sessions API のリクエスト、トークン使用量",
+            "取れる",
+            "取れる"
+          ],
+          [
+            "リクエスト内の各モデル実行",
+            "取れない",
+            "取れる"
+          ],
+          [
+            "Managed Agents のターン",
+            "取れない",
+            "取れる"
+          ],
+          [
+            "API が実行するサーバーツール",
+            "取れない",
+            "取れる"
+          ],
+          [
+            "tool runner が実行するクライアントツール",
+            "取れる",
+            "取れない"
+          ],
+          [
+            "セルフホストのサンドボックス内のツール",
+            "取れる",
+            "取れない"
+          ],
+          [
+            "ファイルのアップロードなど他の API リクエスト",
+            "取れる",
+            "取れない"
+          ],
+          [
+            "設定方法・必要な権限",
+            "コード・権限なし",
+            "Console・Admin ロール"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Platform リリースノート（2026年10月14日の項）",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "OpenTelemetry for the Claude API（Claude Platform ドキュメント）",
+        "url": "https://platform.claude.com/docs/en/manage-claude/opentelemetry"
+      },
+      {
+        "title": "Use OpenTelemetry with the Claude API（送信先の登録・配信・制限）",
+        "url": "https://platform.claude.com/docs/en/manage-claude/opentelemetry/api"
+      }
+    ]
   }
 };
 
