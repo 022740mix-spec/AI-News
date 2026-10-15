@@ -27903,6 +27903,25 @@ const ARTICLES_BODY = {
         "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
       }
     ]
+  },
+  "gemini-cli-0-64-atomic-writes-state-recovery-release-notes-2026": {
+    "body": [
+      "google-gemini/gemini-cli の docs/changelogs/latest.md は、最新の安定版を v0.64.0（2026年10月13日公開）としている。npm レジストリでは `latest` タグが 0.64.0 を指し、公開時刻は同日 UTC 20:48 だった。直前に扱った 0.63.0 の次の安定版にあたる。以下は公式の変更履歴の記載に基づく整理で、実際の挙動は検証していない。",
+      "今回の中心は、途中で止まっても壊れにくくすることである。ファイルツールの操作が直列化され、書き込みは原子的に行われる。CLI の状態は原子的に保存され、破損を検知するとバックアップから自動で復旧する。変更履歴の項目名で見る限り、長時間のエージェント実行や複数の操作が重なる場面で、ファイルや状態が中途半端な内容になる事態を避ける狙いと読める（狙いの説明は変更履歴に無く、項目名からの読み取りである）。",
+      "長い会話に関わる変更もある。会話記録を扱う ChatRecordingService が、追記型の差分で保存するようになり、履歴の窓の大きさにも上限が設けられた。変更履歴は、メモリとディスクの効率を上げるためと説明している。具体的な数値は変更履歴に書かれていない。",
+      "入力まわりでは、`@file:line` 形式の参照が解決される。コードブロック内の `@` で CPU が張り付く問題と引用符が消える問題、ゴーストテキストの折り返しで固まる問題も直った。Ctrl+C の緊急中断が、実行中の処理のキャンセル処理に確実に届くようになり、選択リストを Enter とスペースで確定する動作も安定した。Windows では、ConPTY が IME のカーソル位置を転送するようになり、拡張機能の更新中にディレクトリ削除がロックで失敗したときの再試行も入った。",
+      "ヘッドレスでは、解決済みのフォルダ信頼の状態が伝わるようになった。ACP（Agent Client Protocol）まわりでは、PromptResponse の利用量を橋渡しして usage_update 通知を出す変更と、セッションを正確な ID で解決する変更が入っている。a2a-server の設定を V1 から V2 へ移行する処理も加わった。全項目は公式の変更履歴にある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Gemini CLI 変更履歴（latest, v0.64.0）",
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/latest.md"
+      },
+      {
+        "title": "@google/gemini-cli（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@google/gemini-cli"
+      }
+    ]
   }
 };
 

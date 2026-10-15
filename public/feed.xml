@@ -16,6 +16,14 @@
     <summary>Claude Code 2.1.300 が2026年10月14日に npm に公開された。PreToolUse / PermissionRequest フックが書き換えた入力が Claude 自身の入力と同じ基準で検証される。ローカルのセッション記録には各 API リクエストのシステムプロンプト・ツール・パラメータが残る。変更点は CHANGELOG.md に基づき整理する。</summary>
   </entry>
   <entry>
+    <title>Gemini CLI 0.64.0 の変更点、ファイル書き込みの原子化と状態ファイルの破損からの自動復旧、@file:line 参照</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-cli-0-64-atomic-writes-state-recovery-release-notes-2026"/>
+    <id>tag:ai-tool-news.jp,2026:gemini-cli-0-64-atomic-writes-state-recovery-release-notes-2026</id>
+    <published>2026-10-15T15:00:00Z</published>
+    <updated>2026-10-15T15:00:00Z</updated>
+    <summary>Google の Gemini CLI 0.64.0 が2026年10月13日に公開された。ファイルツールの操作を直列化して書き込みを原子的にし、CLI の状態を壊れたときにバックアップから復旧する。会話記録の保存は追記型の差分になり、@file:line の参照も解決される。公式の変更履歴に基づいて整理する。</summary>
+  </entry>
+  <entry>
     <title>Anthropic の Python / TypeScript SDK にブラウザ・デスクトップ操作の toolset がベータで入る — ループと確認は SDK、ブラウザ本体と URL ポリシーは利用者が用意する</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-sdk-browser-computer-toolsets-beta-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-sdk-browser-computer-toolsets-beta-2026</id>

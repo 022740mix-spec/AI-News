@@ -11924,5 +11924,22 @@ export const ARTICLES_META = [
       "フック",
       "セキュリティ"
     ]
+  },
+  {
+    "id": "gemini-cli-0-64-atomic-writes-state-recovery-release-notes-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Gemini CLI 0.64.0 の変更点、ファイル書き込みの原子化と状態ファイルの破損からの自動復旧、@file:line 参照",
+    "excerpt": "Google の Gemini CLI 0.64.0 が2026年10月13日に公開された。ファイルツールの操作を直列化して書き込みを原子的にし、CLI の状態を壊れたときにバックアップから復旧する。会話記録の保存は追記型の差分になり、@file:line の参照も解決される。公式の変更履歴に基づいて整理する。",
+    "date": "2026-10-15",
+    "newsDate": "2026-10-13",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Gemini CLI",
+      "CLI",
+      "Google",
+      "開発ツール"
+    ]
   }
 ];
