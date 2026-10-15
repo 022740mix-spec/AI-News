@@ -11906,5 +11906,23 @@ export const ARTICLES_META = [
       "API",
       "エンタープライズ"
     ]
+  },
+  {
+    "id": "claude-code-2-1-300-hook-updatedinput-validation-transcript-requests-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.300、フックの updatedInput を検証して不正な入力は拒否、ローカルの記録に API リクエストの全文が残る、終了時に背景コマンドを強制停止",
+    "excerpt": "Claude Code 2.1.300 が2026年10月14日に npm に公開された。PreToolUse / PermissionRequest フックが書き換えた入力が Claude 自身の入力と同じ基準で検証される。ローカルのセッション記録には各 API リクエストのシステムプロンプト・ツール・パラメータが残る。変更点は CHANGELOG.md に基づき整理する。",
+    "date": "2026-10-15",
+    "newsDate": "2026-10-14",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "フック",
+      "セキュリティ"
+    ]
   }
 ];

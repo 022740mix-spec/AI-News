@@ -27882,6 +27882,27 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/manage-claude/opentelemetry/api"
       }
     ]
+  },
+  "claude-code-2-1-300-hook-updatedinput-validation-transcript-requests-2026": {
+    "body": [
+      "anthropics/claude-code の CHANGELOG.md の先頭には 2.1.300 の項目があり、npm レジストリの記録では @anthropic-ai/claude-code の 2.1.300 は2026年10月14日（UTC 14:27）に公開されている。直前に扱った 2.1.299 の次の版にあたる。ここでは、自分の版にその挙動があるかを判断できるよう、権限・記録・終了処理に関わる変更を中心に整理する。内容は CHANGELOG の記載に基づき、実際の挙動は検証していない。",
+      "権限まわりで目立つのはフックの変更である。PreToolUse と PermissionRequest フックが返す `updatedInput` は、Claude 自身が作る入力と同じ基準で検証されるようになった。未知のキーは捨てられ、ツールが受け付けない入力になった場合は、その呼び出しが拒否される。フックで入力を書き換えている構成では、書き換え後の形がツールの仕様に合っているかを確かめる必要がある。同じ版では、エージェントフックが `model` を無視していた問題も直り、`haiku` のようなエイリアスが解決される。指定したモデルが使えないときは、許可を出すのではなく呼び出し元のモデルに切り替わる、と書かれている。",
+      "ローカルのセッション記録も変わった。各 API リクエストのシステムプロンプト・ツール・パラメータが記録に残り、共有した記録からリクエストを正確に再現できるとされている。デバッグには役立つ一方、記録を他者に渡す場合は、そこにシステムプロンプトやツール定義が含まれることを前提に扱うことになる。また、api.anthropic.com への大きなリクエストは、テレメトリを無効にしていても gzip 圧縮で送られる。無効にするには `CLAUDE_CODE_GZIP_REQUEST_BODIES=0` を設定する。",
+      "終了時の挙動では、終了を指示してから1.5秒たっても動いている背景コマンドが強制終了される。全画面モードでは、これまで背景コマンドが残りうるとされていた。`claude daemon stop --any` は、止まらないバックグラウンドサービスがある場合に「stopped」と表示するだけで済ませず、待機して強制終了し、それでも残っていれば終了コード1で知らせる。`claude remote-control` から `--sandbox` と `--no-sandbox` が削除された。どちらも効果が無かったとされ、渡すとエラーで終了する。サンドボックスは settings の `sandbox.enabled` で設定する。",
+      "ホスト管理の環境向けには、`CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST` のセッションが、settings に書かれた `SSL_CERT_FILE` のような CA バンドル・ツールプロキシ・git の TLS や設定に関する変数を無視するようになった。Claude Desktop の下では、プロジェクト設定のものだけが対象である。`claude gateway` は、Claude Desktop が gateway から使えない `desktop:` ポリシーのキーがあると、警告で続行せず、キー名を示して起動を止める。",
+      "Mods（2.1.287 で導入）には、プロンプトボックスに描画されるが入力にも送信にも入らない `virtualText`、エージェントの会話記録を主画面に出す `$.ui.view({ agentId })`、右から左へ書く文字向けの `dir`、`prompt.change` フック、ワークフローのエージェントの `prompt` と `model` を `agent.spawn` フックで書き換える機能が加わった。OpenTelemetry では、`api_request` イベントにキャッシュ書き込みを寿命別に分ける `cache_creation_5m_tokens` と `cache_creation_1h_tokens` が入り、トレースのスパンに `gen_ai.provider.name` や `gen_ai.conversation.id` などの GenAI セマンティック規約の属性が付く。",
+      "ほかに、MCP ツールの入力スキーマが API に拒否されて毎ターン 400 エラーになる問題が直り、該当ツールだけがパラメータなしで送られる。`--worktree` の起動位置が誤る問題や、reftable を使うリポジトリでの不具合も複数直った。VS Code 拡張には、エディタで選択したテキストをメッセージに加えない `claudeCode.attachSelection` 設定が入った。Claude Tag には Slack Connect チャンネルへの対応（既定は無効）と、コネクタ操作の承認を求める Allow once / Deny カードが入っている。全項目は公式の CHANGELOG にある。"
+    ],
+    "primarySources": [
+      {
+        "title": "CHANGELOG.md（anthropics/claude-code）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@anthropic-ai/claude-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
+      }
+    ]
   }
 };
 

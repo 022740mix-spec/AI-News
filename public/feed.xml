@@ -8,6 +8,14 @@
   <updated>2026-10-15T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Claude Code 2.1.300、フックの updatedInput を検証して不正な入力は拒否、ローカルの記録に API リクエストの全文が残る、終了時に背景コマンドを強制停止</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-2-1-300-hook-updatedinput-validation-transcript-requests-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-2-1-300-hook-updatedinput-validation-transcript-requests-2026</id>
+    <published>2026-10-15T15:00:00Z</published>
+    <updated>2026-10-15T15:00:00Z</updated>
+    <summary>Claude Code 2.1.300 が2026年10月14日に npm に公開された。PreToolUse / PermissionRequest フックが書き換えた入力が Claude 自身の入力と同じ基準で検証される。ローカルのセッション記録には各 API リクエストのシステムプロンプト・ツール・パラメータが残る。変更点は CHANGELOG.md に基づき整理する。</summary>
+  </entry>
+  <entry>
     <title>Anthropic の Python / TypeScript SDK にブラウザ・デスクトップ操作の toolset がベータで入る — ループと確認は SDK、ブラウザ本体と URL ポリシーは利用者が用意する</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-sdk-browser-computer-toolsets-beta-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-sdk-browser-computer-toolsets-beta-2026</id>
