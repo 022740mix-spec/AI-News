@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://022740mix-spec.github.io/AI-News/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -3356,6 +3356,12 @@
   </url>
   <url>
     <loc>https://022740mix-spec.github.io/AI-News/?a=gemini-cli-0-64-atomic-writes-state-recovery-release-notes-2026</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://022740mix-spec.github.io/AI-News/?a=claude-code-2-1-301-retry-watchdog-fable-alias-fallback-classifier-otel-2026</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

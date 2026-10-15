@@ -11941,5 +11941,24 @@ export const ARTICLES_META = [
       "Google",
       "開発ツール"
     ]
+  },
+  {
+    "id": "claude-code-2-1-301-retry-watchdog-fable-alias-fallback-classifier-otel-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.301、無人リトライの待ち時間に上限、fable エイリアスが前世代へ自動で戻る、自動モードの判定が OpenTelemetry に出る",
+    "excerpt": "Claude Code 2.1.301 が2026年10月15日に npm に公開された。使用量上限が遠い先まで続くときに無人リトライを打ち切る環境変数、最新の Fable が組織で使えないときの再試行、自動モードの分類器の判定を OpenTelemetry の tool_decision に載せる項目が入った。変更点は CHANGELOG.md に基づき整理する。",
+    "date": "2026-10-15",
+    "newsDate": "2026-10-15",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "Fable 5",
+      "OpenTelemetry",
+      "権限"
+    ]
   }
 ];

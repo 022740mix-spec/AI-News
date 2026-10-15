@@ -27922,6 +27922,27 @@ const ARTICLES_BODY = {
         "url": "https://www.npmjs.com/package/@google/gemini-cli"
       }
     ]
+  },
+  "claude-code-2-1-301-retry-watchdog-fable-alias-fallback-classifier-otel-2026": {
+    "body": [
+      "anthropics/claude-code の CHANGELOG.md の先頭には 2.1.301 の項目があり、npm レジストリの記録では @anthropic-ai/claude-code の 2.1.301 は2026年10月15日（UTC 14:34）に公開されている。直前に扱った 2.1.300 の次の版にあたる。ここでは、自分の版にその挙動があるかを判断できるよう、運用・権限・観測に関わる変更を中心に整理する。内容は CHANGELOG の記載に基づき、実際の挙動は検証していない。",
+      "無人で動かす構成に関わるのは、新しい環境変数 `CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS` である。`CLAUDE_CODE_RETRY_WATCHDOG` を使った無人のリトライモードは、使用量の上限に当たると回復まで待つが、この値を設定すると、上限が解除されるまでの時間が長すぎるリクエストは待たずに終了する。CHANGELOG には「どのくらい先なら打ち切るか」の既定値は書かれていないため、設定する値は利用者が決めることになる。",
+      "モデル指定では、`fable`（および `best`）のエイリアスが、最新の Fable モデルをその組織が使えないときに Anthropic API でエラーになる問題が直った。Claude Code は一度だけ、ひとつ前の Fable モデルで再試行する。また、コンテキストウィンドウの小さいモデルに切り替えるとき、会話が長すぎて収まらない場合は、切り替え前のモデルが先に要約するようになった。同じ版では、小さいウィンドウのモデルへ切り替えた際に、確認なしに使用量クレジットを使って前のモデルによる要約が行われる場合があった点も修正されている。LLM ゲートウェイが要求と別のモデル名を返す環境で、選んでいないモデルで何度も圧縮される問題も直った。",
+      "権限と観測の面では、OpenTelemetry の `tool_decision` イベントに `classifier_verdict` と `permission_mode` が加わり、自動モードの分類器による判定と、権限ルールによる判定を区別できる。`OTEL_LOG_TOOL_DETAILS=1` を設定している場合は、分類器がブロックしたときに一致した組み込みルールの名前を示す `classifier_category` も出る。CHANGELOG は、これにより自動モードの分類器による判定と権限ルールによる判定を見分けられるようになる、と説明している。同梱の `claude-api` スキルには、`ant` CLI でトレースの送信先を設定する手順を含む OpenTelemetry の案内も追加された。",
+      "ツールの失敗の見え方も変わった。Grep と Glob は、検索プログラムが結果を返す前に予期せず失敗したとき、これまでは「一致なし」と報告していたが、検索に失敗したというエラーを返すようになった。Read ツールは .xlsm・.parquet・.epub・.heic などのバイナリファイルをテキストとして読んでいた問題が直った。ワークフローのエージェントについては、タスクの文面にユーザーの権限が無いというハーネスの注記を読んだあと、手順を飛ばしたのに実行が成功と報告されることがある問題が修正された。",
+      "Mods には、複数行のテキスト入力を端末に出す `rows`（Enter で送信、Shift+Enter かバックスラッシュ付き Enter で改行）が入り、`$.ui` の木表示は VS Code とデスクトップ・モバイルアプリで Markdown と最大48行まで持てるようになった（端末は従来どおり12行の平文）。フックの `.catch` は、フック自身が例外を投げるかタイムアウトしたときだけ動くように変わった。`WorktreeCreate` フックが作ったワークツリーが、未プッシュのコミットを含みうるのに、終了時に確認なしで削除される問題も修正された。",
+      "ほかに、vim モードに `%`（対応する括弧へ移動）が加わり、Escape のあとも INSERT のままになる場合があった問題や、AskUserQuestion の自由入力で Esc が入力を捨てる問題が直った。ログインの更新がディスク満杯で失敗したときの誤解を招く「/login を実行してください」というエラーは、ディスクが原因であることを示すように変わった。VS Code 拡張には LaTeX の数式表示が入っている。全項目は公式の CHANGELOG にある。"
+    ],
+    "primarySources": [
+      {
+        "title": "CHANGELOG.md（anthropics/claude-code）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@anthropic-ai/claude-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
+      }
+    ]
   }
 };
 
