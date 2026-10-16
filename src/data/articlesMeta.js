@@ -11978,5 +11978,23 @@ export const ARTICLES_META = [
       "MCP",
       "開発ツール"
     ]
+  },
+  {
+    "id": "claude-code-2-1-302-auto-mode-model-subagent-defaults-hooks-cap-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.302、自動モードの判定モデルを環境変数で選べる、fork サブエージェントが既定でオン、フックは同時に12件まで",
+    "excerpt": "Claude Code 2.1.302 の変更点。CLAUDE_CODE_AUTO_MODE_MODEL の追加、サブエージェントの既定動作の変更、プロンプト／エージェントフックの同時実行上限、スタンドアロン版 Claude Design の終了日の告知など。",
+    "date": "2026-10-16",
+    "newsDate": "2026-10-15",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "自動モード",
+      "サブエージェント",
+      "フック",
+      "リリースノート"
+    ]
   }
 ];

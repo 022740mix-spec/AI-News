@@ -27964,6 +27964,25 @@ const ARTICLES_BODY = {
         "url": "https://www.npmjs.com/package/@github/copilot"
       }
     ]
+  },
+  "claude-code-2-1-302-auto-mode-model-subagent-defaults-hooks-cap-2026": {
+    "body": [
+      "Claude Code 2.1.302 の変更履歴が公式リポジトリの CHANGELOG に載った。このサイトは直前の 2.1.301 までを記事にしている。本記事は 2.1.302 の中から、設定や運用に影響しうる項目を選んで整理する。出典は公式 CHANGELOG の1本のみで、各項目の挙動をこちらで実機確認したものではない。",
+      "追加の1つ目は、環境変数 CLAUDE_CODE_AUTO_MODE_MODEL である。クライアント側の自動モード分類器が使うモデルを選べる。CHANGELOG には、サーバー側の自動モードのモデルは変えない、と明記されている。2つ目は /config の「Idle compaction」行で、放置した会話を自動で圧縮する idle compaction を切ったり戻したりできる。圧縮後に出る通知にも、止め方が書かれるようになった。",
+      "既定動作の変更が3つある。第一に、claude -p と Agent SDK で権限モードを指定していないセッションは、サードパーティのプロバイダー上、テレメトリーが無効、または新規インストールのときに default モードで始まる。--permission-mode auto を指定した場合は auto のままである。第二に、fork サブエージェント（subagent_type が fork のもの）が、claude -p、Agent SDK、デスクトップアプリ、VS Code でも既定でオンになった。ターミナルでは以前からオンだった。環境変数 CLAUDE_CODE_FORK_SUBAGENT=0 で切れる。claude mcp serve は fork を提供しない。第三に、デスクトップアプリと VS Code は、メイン会話のサブエージェントを常にバックグラウンドで動かす。サブエージェント自身が呼ぶ Agent は、これらの環境と claude -p、Agent SDK では既定でフォアグラウンドになる。",
+      "フックについては、プロンプトフックとエージェントフックは同一イベントにつき同時に12件までしか走らず、残りは順番待ちになる。多数のフックを同じイベントに登録している構成では、実行の順序と所要時間が変わりうる。",
+      "自動モードの周辺では、サーバー側分類器で会話が安全確認には長すぎる場合に、すべてのツール呼び出しを拒否する代わりに会話を圧縮するようになった。OpenTelemetry の tool_decision イベントでは、自動モードの分類器による多くのブロックで classifier_category が欠けていた問題が直った。また、tool_decision に新しい属性が増えたとき、OTEL_LOGRECORD_ATTRIBUTE_COUNT_LIMIT が低いと tool_use_id・tool_source・tool_parameters が押し出される問題も直った。",
+      "修正の中には、データを失いうるものが含まれる。claude plugin などのサブコマンドが、設定の書き込みが終わる前に終了し、変更が失われたり .tmp ファイルが残ったりすることがあった。Read ツールは、画像として扱うファイルやその名前のパイプ、デバイスを、大きさに関係なく丸ごとメモリに読んでいた。128 MB を超える画像は拒否されるようになった。stdio MCP まわりでは、プロトコル版 2026-07-28 を使うサーバーが resultType・ttlMs・cacheScope を省くと、ツールが空に見えたり呼び出しがすべて失敗したりする問題が直った。ほかに、会話の圧縮中に中断すると出る「Prompt is too long」、Vertex や Bedrock へ途中で切り替えた後の diagnostics の入力エラー、ツールを途中で追加した後のプロンプトキャッシュ不一致、git 2.56 以降でのワークツリー作成の拒否、reftable 形式の git での marketplace 再クローンなども修正された。",
+      "クラウドセッションとルーティンの項目もある。ルーティンのページに、直近の実行が始まらなかった理由（組織の同時クラウドセッション数の上限など）を示す帯が出る。ルーティンの実行が、クラウドセッションの予期しない停止後も「完了」と表示される問題、実行前にアーカイブされると「キャンセル」と表示される問題は、失敗として扱われるように直った。途中で失敗した定期実行が1時間以上あとに最初からやり直され、同じレポートを二重に投稿しうる問題も直った。",
+      "利用者に直接関わる告知が1つある。/design-sync と /design-login に、スタンドアロン版の Claude Design（claude.ai/design）が 2026年12月14日に終了するという案内が入った。終了後の移行先は、この CHANGELOG の記述からは分からない。",
+      "このほかに、Windows で exFAT や FAT32 のドライブ上のプロジェクトにおいてファイル書き込みがすべて拒否される問題、PowerShell ツールがプラグインの bin/ フォルダのコマンドを見つけられない問題、多数のプラグイン有効時の起動時間の改善などが載っている。Claude Tag（Slack）、VS Code、Remote Control 向けの修正も多数ある。全項目は出典の CHANGELOG を参照してほしい。"
+    ],
+    "primarySources": [
+      {
+        "title": "anthropics/claude-code CHANGELOG.md（2.1.302）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      }
+    ]
   }
 };
 
