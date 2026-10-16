@@ -11960,5 +11960,23 @@ export const ARTICLES_META = [
       "OpenTelemetry",
       "権限"
     ]
+  },
+  {
+    "id": "github-copilot-cli-1-0-95-to-1-0-98-agent-hooks-gemini-4-argon-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "GitHub Copilot CLI 1.0.95〜1.0.98、カスタムエージェント専用のフック、Gemini 4 Argon の対応、権限判断の記録が timeline に",
+    "excerpt": "GitHub Copilot CLI は10月9日の 1.0.95 から10月14日の 1.0.98 までに4版が出た。1.0.97 でカスタムエージェントごとに宣言するフックが入り、無人の Autopilot は preToolUse フックの「ask」を拒否として扱うようになった。1.0.98 は Gemini 4 Argon に対応し、/ask の回答を展開・コピーできる。",
+    "date": "2026-10-16",
+    "newsDate": "2026-10-14",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "GitHub Copilot",
+      "CLI",
+      "フック",
+      "MCP",
+      "開発ツール"
+    ]
   }
 ];

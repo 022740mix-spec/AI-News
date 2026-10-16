@@ -27943,6 +27943,27 @@ const ARTICLES_BODY = {
         "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
       }
     ]
+  },
+  "github-copilot-cli-1-0-95-to-1-0-98-agent-hooks-gemini-4-argon-2026": {
+    "body": [
+      "github/copilot-cli の変更履歴（changelog）によると、GitHub Copilot CLI は 2026年10月9日の 1.0.95 から10月14日の 1.0.98 までに、1.0.95・1.0.96・1.0.97・1.0.98 の4版が出た。直前の 1.0.89〜1.0.94 は別の記事で扱っている。この記事は changelog の記載をもとに、自分の版にその機能があるかを判断できるよう整理する。内容は記載に基づくもので、実際の挙動は検証していない。",
+      "フックまわりでは、1.0.97 の「Add agent-scoped declarative hooks for custom agents」が目立つ。カスタムエージェントごとに、宣言的なフックを定義できるようになった。同じ版には、無人で動く Autopilot が preToolUse フックの「ask」の判断を、誰も見ていない権限ダイアログで止まる代わりに拒否として扱う変更がある。1.0.98 では、子プロセスの終了シグナルが失われても、コマンドフックが確実に完了するよう直された。また 1.0.97 は、--resume で再開したセッションがプラグインのフックを誤ったプラグイン一覧から組み立て直す問題を直している。リポジトリ内の marketplace プラグインのフックが再開後も動き続け、設定で無効にしたプラグインのフックは戻らない。",
+      "権限の扱いも更新された。1.0.96 では、timeline に、あなた自身・Assisted Permissions・ポリシー・無人時のフォールバックのどれが各権限判断を下したかが表示される。/add-dir で追加したディレクトリは、そのセッションの間サンドボックスのアクセス対象になる。サンドボックスの対話設定では、環境変数に含まれる秘密の候補が提案され、保存前にマスクするホストを足せる。1.0.95 では、`copilot config` がサンドボックスの資格情報の injectHosts キーに対応し、Bash・Zsh・Fish でキーの補完が効く。1.0.97 は、/config で組織が設定した管理対象の権限ルールを読み取り専用にした。",
+      "モデルでは、1.0.98 が「Add support for Gemini 4 Argon」と記している。Gemini 4 Argon は Google が9月30日に、まず信頼できるサイバー防衛者向けの Fairwind プログラムで提供すると発表したモデルで、一般提供は未定とされていた（本サイトの記事「Google が Gemini 4 Argon を発表」を参照）。Copilot CLI の changelog には、このモデルを誰が使えるか、料金がどうなるかは書かれていないため、ここでは扱わない。1.0.96 では /model と /config の model でモデル ID の大文字小文字を区別せず、正式な ID で保存する。",
+      "認証と設定の項目もある。1.0.95 は macOS で利用できる場合に、ネイティブの Microsoft Entra ブローカー認証を使い、使えなければブラウザにフォールバックする。1.0.97 では、config.json の1項目が不正でも、閉じたプロンプト・信頼したフォルダ・サインインといった保存済みの設定を毎回リセットせずに保つ。/usage は、トークン課金のセッションで請求された AI Credits を表示する。再開したあとの表示にも出る。1.0.97 は --output-format json の出力で、有効な変数参照を保ったまま秘密情報を伏せる。",
+      "MCP とセッションの再開に関する修正も続いた。1.0.97 は、GitHub MCP のツールやツールセットを明示的に選んだときに正しいエンドポイントを使い、書き込み系ツールが使えるまま残るようにした。キャッシュした MCP ツール呼び出しは、並行したツール一覧の更新でカタログが変わると定義を確かめ直す。中断したセッションを再開したときは、中断されたツール呼び出しが報告され、取り消された書き込みは再実行されない。長いセッションでは、JavaScript のヒープ不足で落ちる前に履歴を圧縮して生き残れる場合がある。1.0.98 では /ask の回答を Ctrl+E で展開し、Ctrl+Y で全文をコピーでき、/ask または /btw で直近の回答を開き直せる。",
+      "なお、npm の公開記録には 10月15日以降に 1.0.99 の pre-release（1.0.99-0 など）が並んでいるが、changelog には正式な 1.0.99 の項目がまだ無く、この記事の対象に含めていない。ここに挙げたのは changelog の一部で、全項目は公式の changelog を参照してほしい。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitHub Copilot CLI changelog（github/copilot-cli）",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      },
+      {
+        "title": "@github/copilot（npm）の公開記録",
+        "url": "https://www.npmjs.com/package/@github/copilot"
+      }
+    ]
   }
 };
 
