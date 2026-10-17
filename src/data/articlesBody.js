@@ -27983,6 +27983,69 @@ const ARTICLES_BODY = {
         "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
       }
     ]
+  },
+  "anthropic-fast-mode-opus-5-5-no-waitlist-2026": {
+    "body": [
+      "Claude Platform のリリースノートによると、Anthropic は2026年10月15日、Claude Opus 5.5 の fast mode をリサーチプレビューから出した。これまでは利用に申請（ウェイトリスト）が必要で、リクエストにベータヘッダ `fast-mode-2026-02-01` を付ける必要があった。Opus 5.5 ではどちらも要らない。ヘッダを付け続けているリクエストも引き続き動く。この記事は公式ドキュメントの記載をもとに整理したもので、速度や挙動は検証していない。",
+      "fast mode は、同じモデルを速い推論構成で動かす機能である。公式は「同じ重み、同じ挙動で、知能や能力は変わらない」と説明している。速くなるのは出力トークンの毎秒数（OTPS）で、最初のトークンが出るまでの時間（TTFT）ではない。「最大2.5倍」という数字は Anthropic の記述で、独立した計測は確認できていない。使い方は、リクエストに `speed: \"fast\"` を指定するだけである。レスポンスの `usage.speed` に、実際に使われた速度が `\"fast\"` か `\"standard\"` で返る。",
+      "価格は、標準の単価に倍率をかけた形で、200k 入力トークンを超える長い文脈にも同じ倍率がかかる。Opus 5.5 は入力 $8 / 出力 $40（100万トークンあたり）で、標準の $4 / $20 の2倍にあたる。Opus 5 と Opus 4.8 は入力 $10 / 出力 $50 である。プロンプトキャッシュとデータレジデンシーの倍率は、fast mode の価格の上にさらに重なる。なお、Opus 5.5 の fast mode の単価はリサーチプレビュー中に公開されていた値から変わっていない（本サイトの9月22日の記事を参照）。",
+      "レート制限は、通常の Opus とは別枠の専用枠である。Opus 5.5 には Start・Build・Scale の各利用ティアで既定の fast mode 枠が付くため、枠の申請は要らない。Evaluation ティアの組織は、Start・Build・Scale のいずれかに上がれば使える。上限を超えると 429 が返り、`retry-after` ヘッダで待ち時間が示される。SDK は既定で2回まで自動再試行する。標準速度に切り替えて続けたい場合は、最初のリクエストで `max_retries` を 0 にして 429 を捕まえ、`speed` を外して出し直す例が公式に載っている。この切り替えではプロンプトキャッシュが効かなくなる。速度が違うリクエストはキャッシュされた接頭辞を共有しないためである。",
+      "提供範囲には制限がある。Opus 5.5 は Claude API（Claude Managed Agents を含む）と、Azure 上でホストされる Claude in Microsoft Foundry で使える。同じ Foundry でも Anthropic がホストするデプロイでは使えない。公式の考慮事項には、Batch API では使えないこと、Priority Tier の契約とは併用できないこと、Claude Platform on AWS では現時点で使えないことも書かれている。Opus 5 と Opus 4.8 の fast mode は、これまでどおりリサーチプレビューで、アカウント担当への連絡かウェイトリストへの登録と、ベータヘッダが必要である。以前の別のモデルで fast mode を使っていた場合は、対応モデルへの移行が案内されている。",
+      "確認できていないこと。この記事は公式ドキュメントとリリースノートの記載だけに基づく。「最大2.5倍」の実測、レート制限の具体的な数値（Console の画面で確認する形式で、ドキュメントには載っていない）、Claude Code など他の製品での fast mode の扱いは確認していない。同じ出来事を報じた独立した情報源も確認できていない。"
+    ],
+    "tables": [
+      {
+        "caption": "fast mode の対応モデルと条件（公式ドキュメントをもとに整理、2026年10月17日時点）",
+        "afterParagraph": 4,
+        "headers": [
+          "項目",
+          "Opus 5.5",
+          "Opus 5 / Opus 4.8"
+        ],
+        "rows": [
+          [
+            "状態",
+            "リサーチプレビューを終了",
+            "リサーチプレビュー"
+          ],
+          [
+            "利用の申請",
+            "不要",
+            "アカウント担当への連絡またはウェイトリスト"
+          ],
+          [
+            "ベータヘッダ `fast-mode-2026-02-01`",
+            "不要（付けても動く）",
+            "必要"
+          ],
+          [
+            "fast mode の単価（入力 / 出力、100万トークンあたり）",
+            "$8 / $40",
+            "$10 / $50"
+          ],
+          [
+            "既定のレート制限枠",
+            "Start・Build・Scale の各ティアにあり",
+            "記載なし"
+          ],
+          [
+            "Azure 上の Microsoft Foundry",
+            "対応",
+            "記載なし"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Platform リリースノート（2026年10月15日の項）",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Fast mode（Claude Platform ドキュメント）",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/fast-mode"
+      }
+    ]
   }
 };
 

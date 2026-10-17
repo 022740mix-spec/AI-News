@@ -11996,5 +11996,23 @@ export const ARTICLES_META = [
       "フック",
       "リリースノート"
     ]
+  },
+  {
+    "id": "anthropic-fast-mode-opus-5-5-no-waitlist-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Claude Opus 5.5 の fast mode がリサーチプレビューを外れる — ベータヘッダも申請も不要に、価格は入力 $8 / 出力 $40 のまま",
+    "excerpt": "Anthropic は2026年10月15日、Claude Opus 5.5 の fast mode をリサーチプレビューから出し、アクセス申請と `fast-mode-2026-02-01` ベータヘッダを不要にした。Start・Build・Scale の各ティアに既定のレート制限が付き、Azure 上の Microsoft Foundry でも使える。一方、Opus 5 と Opus 4.8 は引き続きプレビューで、バッチ API・Priority Tier・Claude Platform on AWS では使えない。",
+    "date": "2026-10-17",
+    "newsDate": "2026-10-15",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Opus 5",
+      "料金",
+      "API"
+    ]
   }
 ];
