@@ -12014,5 +12014,22 @@ export const ARTICLES_META = [
       "料金",
       "API"
     ]
+  },
+  {
+    "id": "codex-cli-0-163-config-panel-steer-leader-key-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.163.0 の変更点、検索できる /config、応答中の割り込み指示（steer）、パッチ版 zsh の同梱終了",
+    "excerpt": "OpenAI は Codex CLI 0.163.0 を10月15日（UTC）に公開した。設定を検索して即時に変えられる /config、応答の途中で追加指示を差し込める steer、/keymap のリーダーキー、読み取り専用ツールの並列実行が入り、パッチ済み zsh の同梱は終わった。",
+    "date": "2026-10-17",
+    "newsDate": "2026-10-15",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "開発ツール"
+    ]
   }
 ];
