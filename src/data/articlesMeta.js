@@ -12049,5 +12049,27 @@ export const ARTICLES_META = [
       "料金",
       "API"
     ]
+  },
+  {
+    "id": "weekly-metrics-2026-week-oct12",
+    "type": "feature",
+    "category": "special",
+    "title": "週次の計器 — 10月12日〜18日は13本、前週の10本から微増。10本が Anthropic 関連で、発掘と分析は2週続けて0本だった",
+    "excerpt": "2026年10月12日〜18日の週次データ。公開は13本（前週10本）で、すべて news。題材で数えると10本が Anthropic 関連で、3軸のうち発掘と分析は前週に続いて0本。「AI安全性」のタグが付いた記事は2週続けて0件で、ガイドに説明が見当たらない概念の一覧は変わらなかった。",
+    "date": "2026-10-19",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "週刊まとめ",
+      "Anthropic",
+      "CLI",
+      "AI安全性",
+      "中国AI"
+    ],
+    "heroScope": "week",
+    "weekRoundupPeriod": {
+      "start": "2026-10-12",
+      "end": "2026-10-18"
+    }
   }
 ];

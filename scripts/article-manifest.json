@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-10-18",
-  "count": 569,
+  "generatedAt": "2026-10-19",
+  "count": 570,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -551,6 +551,7 @@
     "warp-ai",
     "weekly-metrics-2026-week-aug31",
     "weekly-metrics-2026-week-oct05",
+    "weekly-metrics-2026-week-oct12",
     "weekly-metrics-2026-week-sep14",
     "weekly-metrics-2026-week-sep21",
     "white-house-voluntary-frontier-ai-standards-openai-anthropic-google-2026",
