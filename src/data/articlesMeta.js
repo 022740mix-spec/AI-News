@@ -12088,5 +12088,22 @@ export const ARTICLES_META = [
       "Mods",
       "リリースノート"
     ]
+  },
+  {
+    "id": "claude-code-2-1-305-nested-user-namespaces-tool-search-retry-allowedmcpservers-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.305、サンドボックスで入れ子のユーザー名前空間を許可する設定、ツール検索を拒否するゲートウェイへの再試行、allowedMcpServers の挙動変更",
+    "excerpt": "Claude Code 2.1.305 の変更点。sandbox.allowNestedUserNamespaces は Chromium や rootless podman を動かせる代わりにサンドボックスのファイル保護を回避しうる。2.1.304 で起きたゲートウェイ越しの全リクエスト失敗の修正や、managed-mcp.json の stdio サーバーの扱い変更も入った。",
+    "date": "2026-10-20",
+    "newsDate": "2026-10-20",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "サンドボックス",
+      "MCP",
+      "リリースノート"
+    ]
   }
 ];

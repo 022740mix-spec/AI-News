@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-10-20T15:00:00Z</updated>
+  <updated>2026-10-21T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>Claude Code 2.1.303〜2.1.304、/auto-mode-setup、再開時の使用量警告、--worktree が未マージのコミットを消しうる問題の修正</title>
@@ -14,6 +14,14 @@
     <published>2026-10-20T15:00:00Z</published>
     <updated>2026-10-20T15:00:00Z</updated>
     <summary>Claude Code 2.1.304 の変更点。自動モードを環境に合わせる /auto-mode-setup、Pro・Max で放置した会話を再開する前の警告、mod の tool.check に decider: &quot;person&quot;、rm -r の安全確認の抜けなど。2.1.303 は項目なし。</summary>
+  </entry>
+  <entry>
+    <title>Claude Code 2.1.305、サンドボックスで入れ子のユーザー名前空間を許可する設定、ツール検索を拒否するゲートウェイへの再試行、allowedMcpServers の挙動変更</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-2-1-305-nested-user-namespaces-tool-search-retry-allowedmcpservers-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-2-1-305-nested-user-namespaces-tool-search-retry-allowedmcpservers-2026</id>
+    <published>2026-10-20T15:00:00Z</published>
+    <updated>2026-10-20T15:00:00Z</updated>
+    <summary>Claude Code 2.1.305 の変更点。sandbox.allowNestedUserNamespaces は Chromium や rootless podman を動かせる代わりにサンドボックスのファイル保護を回避しうる。2.1.304 で起きたゲートウェイ越しの全リクエスト失敗の修正や、managed-mcp.json の stdio サーバーの扱い変更も入った。</summary>
   </entry>
   <entry>
     <title>週次の計器 — 10月12日〜18日は13本、前週の10本から微増。10本が Anthropic 関連で、発掘と分析は2週続けて0本だった</title>

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://022740mix-spec.github.io/AI-News/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -3404,6 +3404,12 @@
   </url>
   <url>
     <loc>https://022740mix-spec.github.io/AI-News/?a=claude-code-2-1-303-304-auto-mode-setup-resume-warning-worktree-2026</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://022740mix-spec.github.io/AI-News/?a=claude-code-2-1-305-nested-user-namespaces-tool-search-retry-allowedmcpservers-2026</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

@@ -28249,6 +28249,24 @@ const ARTICLES_BODY = {
         "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
       }
     ]
+  },
+  "claude-code-2-1-305-nested-user-namespaces-tool-search-retry-allowedmcpservers-2026": {
+    "body": [
+      "Claude Code 2.1.305 の変更履歴が、公式リポジトリの CHANGELOG の先頭に載っている（2026年10月20日に確認）。このサイトは直前の 2.1.304 までを記事にしている。本記事は設定や運用に影響しうる項目を選んで整理する。出典は公式 CHANGELOG の1本のみで、各項目の挙動をこちらで実機確認したものではない。リリース日は CHANGELOG に書かれていないため、確認日を見出しの日付としている。",
+      "追加の1つ目は sandbox.allowNestedUserNamespaces である。Linux でサンドボックス内のコマンドがユーザー名前空間を作れるようになり、Chromium や rootless podman が動かせる。CHANGELOG は同じ項目で、これによりサンドボックスのファイル保護を回避しうる、とも書いている。つまり実行できるものが増える代わりに、サンドボックスの保証が弱まる設定である。既定値や有効にした場合の具体的な回避経路は CHANGELOG に書かれていないため、ここでは確認できていない。",
+      "2つ目は環境変数 CLAUDE_CODE_RETRY_WATCHDOG_USAGE_LIMIT_RECHECK_MS である。無人のリトライモード（CLAUDE_CODE_RETRY_WATCHDOG）が、使用上限のリセット前に解除された上限に気づけるようになる。2.1.301 で入った、無人リトライの待ち時間に上限を設ける変更と同じ系統の調整にあたる。",
+      "最も影響が大きそうな修正は、2.1.304 の退行である。Vertex、Bedrock などのプロバイダーで、エンドポイントやゲートウェイがツール検索を拒否すると、すべてのリクエストが失敗していた。ToolSearch を許可していないゲートウェイや、--tools から ToolSearch を外した構成でも同じだった。2.1.305 ではツール検索なしで再試行する。該当する構成で 2.1.304 を使っている場合は、版の確認が要る。",
+      "設定の扱いが変わった項目が3つある。1つ目は allowedMcpServers で、env にだけ ${VAR} を使う managed-mcp.json の stdio サーバーを、フィルタしなくなった。許可リストに入っていなかったサーバーは、アップグレード後に読み込まれる。読み込ませたくない場合は deniedMcpServers を使う、と CHANGELOG は述べている。2つ目は、Claude Desktop がパスでマウントするプラグインが、組織の管理設定で allowManagedPermissionRulesOnly が設定されているとき、allowed-tools を保持しなくなったこと。3つ目は /artifacts の削除確認で、1 または Enter で残す、2 で削除、Esc で取り消しになり、y と n では答えられなくなった。",
+      "worktree と設定まわりの修正もある。bare リポジトリで新しい worktree が、既定ブランチではなくローカルの HEAD から始まることがあった問題と、変更のないサブエージェントの worktree が片付かないことがあった問題が直った。/effort と /autocompact の設定は、モデル名が modelOverrides の値と大文字小文字または [1m] の有無だけ違うと反映されなかった。ディスクが満杯のときの Bash は、生の ENOSPC のファイルパスではなく、ディスクが満杯で何も実行されなかったことを伝える。",
+      "クラウドセッションとワークフローでは、SDK の setMcpServers やクラウドセッションが渡した MCP サーバーが、同名の自分の設定のサーバーに途中で置き換えられる問題が直った。圧縮で最も古いメッセージを要約から外さざるをえなかったときに、クラウドセッションとチームメイトがそれを Claude に伝えるようになった。承認する人がいない予約実行の Cowork クラウドセッションで、WebFetch の URL 承認が必要なサブエージェントごとに5分待つ問題の、残っていたケースも直った。Workflow の再開は、完了済みの pipeline() と parallel() のエージェントを再実行せず、実行記録から返す。",
+      "改善としては、/usage の警告が出どころを示す1行の修正案になり、f キーで適用できる。同じ修正案が VS Code と /doctor にも出る。MCP の同意ダイアログは、プロンプト宛ての Enter が Accept と取られにくくなった。ほかに Self-hosted runner、Remote Control、スクリーンリーダー、VS Code、Claude Tag、Code Review に関する修正が多数ある。Code Review では、再レビューが、以前のブロッキング指摘が未解決のまま LGTM で始まらなくなった。全項目は出典の CHANGELOG を参照してほしい。"
+    ],
+    "primarySources": [
+      {
+        "title": "anthropics/claude-code CHANGELOG.md（2.1.305）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      }
+    ]
   }
 };
 
