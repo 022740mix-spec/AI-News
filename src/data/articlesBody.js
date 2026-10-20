@@ -28231,6 +28231,24 @@ const ARTICLES_BODY = {
         "url": "https://github.com/022740mix-spec/AI-News"
       }
     ]
+  },
+  "claude-code-2-1-303-304-auto-mode-setup-resume-warning-worktree-2026": {
+    "body": [
+      "Claude Code 2.1.303 と 2.1.304 の変更履歴が公式リポジトリの CHANGELOG に載った。このサイトは直前の 2.1.302 までを記事にしている。2.1.303 の記載は「Bug fixes and reliability improvements」の1行だけで、個別の項目は無い。2.1.304 は項目が多く、本記事は設定や運用に影響しうるものを選んで整理する。出典は公式 CHANGELOG の1本のみで、各項目の挙動をこちらで実機確認したものではない。",
+      "追加の1つ目は /auto-mode-setup である。プロジェクトと直近のセッションを読み、自動モードに利用者の環境を教える案内付きの設定で、Bedrock、Vertex、Foundry、Claude apps gateway、テレメトリーを無効にしたセッションでも使えるようになった。2つ目は /claude-api managed-agents-secure で、Managed Agents のエージェント設定を Anthropic が公開しているセキュリティガイドと突き合わせる。CHANGELOG には、設定を変更しない、と書かれている。",
+      "3つ目は使用量に関する警告である。Pro と Max のプランで、放置した会話を再開すると 5 時間の使用上限のうち目立つ割合を消費する場合に、警告が出る。そのまま再開するか、新しい会話を始めるかを選べる。新しい会話では、前の会話を参照すれば Claude が探せる、と説明されている。",
+      "mod（プラグインが挙動の深部を変える仕組み）まわりでは、tool.check の応答に decider: \"person\" を指定できるようになった。この場合は権限ダイアログまたはホストのコールバックだけが承認でき、誰にも尋ねられない環境では mod の理由を付けて拒否される。tool.check のイベントには、ツール呼び出しが読み取り専用のときに立つ e.isReadOnly も加わった。先に動くプラグインが mod のフックを飛ばしたときは、イベント名とプラグイン名を示す行が記録に出る。settings.read フックは設定の各層を受け取り、統合後の設定を書き換えられるようになった。CHANGELOG は、管理された mod が組織の設定を上限にでき、保持期間の掃除が使う cleanupPeriodDays も対象になる、と述べている。",
+      "データや安全確認に関わる修正がいくつかある。claude --worktree は、HEAD が切り離されているか別のブランチにあるとき、終了時にワークツリーとそのブランチを確認なしで削除し、コミットを失いうる状態だった。rm -r で、マウントしたドライブや最上位のフォルダ（/Volumes、/media、WSL の /mnt/c）を消す場合に、rm -rf /Applications では出る安全確認が出なかった問題も直った。CLAUDE_CODE_TRANSCRIPT_LOCAL_GC は、ディスクが満杯のときに保存済みの記録からメッセージを落とすことがあった。Linux のサンドボックスは、sandbox.filesystem.denyRead の glob に [user-id] のような角括弧が含まれると起動しなかった。",
+      "環境変数 CLAUDE_CODE_AUTO_COMPACT_WINDOW=200k は、実際には 100K の窓として扱われていた。k と M の接尾辞を --autocompact と同じように受け付け、範囲外や無視される値には警告が出る。LLM ゲートウェイ越しでは、context_management の余分な入力を拒否されたときにそのフィールドを外して再送する。カスタムの ANTHROPIC_BASE_URL の背後では、ツール検索が既定でオンになり、ゲートウェイが 400 または 422 を返したらツール検索なしで再試行する。",
+      "既定動作の変更もある。圧縮のあとにスキル一覧を Claude に再送するようになり、/reload-skills は新規または変更のあったスキルだけを送る。1つの出どころ（リポジトリ、自分のフォルダ、プラグイン）のスキルが登録できるフックは、セッションあたり最大 1,024 件、マッチャーの文字数は合計 16,384 文字までになった。プラグインのフックだけを許可するポリシーの下では、フックを締め出されたスキルはメイン会話で使っても allowed-tools を得られない。",
+      "Code Review では、組織の所有者が Quick、Standard（既定）、Deep のレビュー水準を組織全体と個々のリポジトリに設定できる。GitHub 組織の全リポジトリ（のちに追加されたものを含む）を一括で対象にする設定も入った。Code Review を有効にした直後の 1〜2 分以内に開かれたプルリクエストが黙ってスキップされる問題は、再試行して審査するように直った。ほかに /effort の表示、Remote Control、Claude Tag、VS Code、Windows に関する修正が多数ある。全項目は出典の CHANGELOG を参照してほしい。"
+    ],
+    "primarySources": [
+      {
+        "title": "anthropics/claude-code CHANGELOG.md（2.1.303、2.1.304）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      }
+    ]
   }
 };
 

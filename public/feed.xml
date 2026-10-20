@@ -8,6 +8,14 @@
   <updated>2026-10-20T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Claude Code 2.1.303〜2.1.304、/auto-mode-setup、再開時の使用量警告、--worktree が未マージのコミットを消しうる問題の修正</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-2-1-303-304-auto-mode-setup-resume-warning-worktree-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-2-1-303-304-auto-mode-setup-resume-warning-worktree-2026</id>
+    <published>2026-10-20T15:00:00Z</published>
+    <updated>2026-10-20T15:00:00Z</updated>
+    <summary>Claude Code 2.1.304 の変更点。自動モードを環境に合わせる /auto-mode-setup、Pro・Max で放置した会話を再開する前の警告、mod の tool.check に decider: &quot;person&quot;、rm -r の安全確認の抜けなど。2.1.303 は項目なし。</summary>
+  </entry>
+  <entry>
     <title>週次の計器 — 10月12日〜18日は13本、前週の10本から微増。10本が Anthropic 関連で、発掘と分析は2週続けて0本だった</title>
     <link rel="alternate" type="text/html" href="?a=weekly-metrics-2026-week-oct12"/>
     <id>tag:ai-tool-news.jp,2026:weekly-metrics-2026-week-oct12</id>

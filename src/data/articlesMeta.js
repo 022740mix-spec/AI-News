@@ -12071,5 +12071,22 @@ export const ARTICLES_META = [
       "start": "2026-10-12",
       "end": "2026-10-18"
     }
+  },
+  {
+    "id": "claude-code-2-1-303-304-auto-mode-setup-resume-warning-worktree-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.303〜2.1.304、/auto-mode-setup、再開時の使用量警告、--worktree が未マージのコミットを消しうる問題の修正",
+    "excerpt": "Claude Code 2.1.304 の変更点。自動モードを環境に合わせる /auto-mode-setup、Pro・Max で放置した会話を再開する前の警告、mod の tool.check に decider: \"person\"、rm -r の安全確認の抜けなど。2.1.303 は項目なし。",
+    "date": "2026-10-20",
+    "newsDate": "2026-10-19",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "自動モード",
+      "Mods",
+      "リリースノート"
+    ]
   }
 ];
