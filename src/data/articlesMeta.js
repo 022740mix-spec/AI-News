@@ -12121,5 +12121,22 @@ export const ARTICLES_META = [
       "セキュリティ",
       "脆弱性"
     ]
+  },
+  {
+    "id": "gemini-cli-0-65-untrusted-folder-settings-resume-fixes-release-notes-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Gemini CLI 0.65.0 の変更点、信頼していないフォルダでは設定を読み取り専用に、再開まわりの修正と OTLP ヘッダー",
+    "excerpt": "Google の Gemini CLI 0.65.0 が2026年10月20日に公開された。信頼していないフォルダではワークスペース設定を読み取り専用に強制し、セッション再開時の履歴消失と二重応答を直す。OAuth の無限リトライの修正、テレメトリへの任意の OTLP ヘッダー追加も入った。GitHub のリリースページに基づいて整理する。",
+    "date": "2026-10-21",
+    "newsDate": "2026-10-20",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Gemini CLI",
+      "CLI",
+      "Google",
+      "開発ツール"
+    ]
   }
 ];
