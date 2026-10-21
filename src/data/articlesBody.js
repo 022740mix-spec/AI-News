@@ -22038,7 +22038,8 @@ const ARTICLES_BODY = {
       "この数値は、Epoch AI が開発した「自動化レベル（Automation Level、AL）」という0から5までの尺度に基づく。AL3は「協働（collaborates）」＝人間の細かい指示のもとでAIがまとまった作業を担う段階、AL4は「主導（leads）」＝高水準の指示だけを与えられたAIが人間の監督下でタスクをほぼ最初から最後まで完了させる段階、AL5は人間の関与が一切ない完全自律を指す。Anthropic は、R&D業務の90%超がAL3（協働）以上の水準にある一方、**AL5（完全自律）に達した業務は現時点で存在しない**としている。",
       "計測の方法として、Anthropic は Slack のやり取りや社内文書などの業務記録をもとにタスク一覧をボトムアップで作成したという。2026年7月の各週について、モデルR&Dに関わる各部門から無作為抽出した2割の社員の1週間の作業内容を Claude の調査用エージェントが精査し、粒度の細かいタスクをおよそ**1万5,000件**リストアップしたと説明している。あわせて、2026年8月時点で研究・エンジニアリング業務に従事するエージェントの数はおよそ**3万体**だったことも明らかにした。",
       "この種の内部指標は、AI企業が自らの手で開発速度を計測し公開するという点で珍しい試みである。Anthropic はここ数週間、フロンティア開発の速度を巡る自社CEOの提言や、評価者への常駐アクセス提供の一方的な表明など、開発ペースと安全性の両立に関する発信を続けており、今回の数値もその文脈に位置づけられる。**AIがAI自身の後継モデルの開発を加速させている**という具体的な定量データを伴う点が、これまでの定性的な議論と異なる。",
-      "**確認状況について。** 本記事の執筆にあたり Anthropic 公式サイトへの直接アクセスを試みたが、実行環境のネットワークポリシーにより到達できなかった。Bloomberg・ABC News・Business Standard 等、到達できた範囲の複数の報道機関の記事内容が一致することを確認したうえで整理した。"
+      "**確認状況について。** 本記事の執筆にあたり Anthropic 公式サイトへの直接アクセスを試みたが、実行環境のネットワークポリシーにより到達できなかった。Bloomberg・ABC News・Business Standard 等、到達できた範囲の複数の報道機関の記事内容が一致することを確認したうえで整理した。",
+      "【追記 2026-10-21】出典の差し替え。ABC News の配信記事（URL）が現在 404 のため、同じ AP 配信記事を掲載した KATU のページに置き換えた。本文の数値・主張は変更していない。一次資料は Bloomberg の記事のまま。"
     ],
     "primarySources": [
       {
@@ -22046,12 +22047,13 @@ const ARTICLES_BODY = {
         "url": "https://www.bloomberg.com/news/articles/2026-09-17/anthropic-says-claude-drives-26-of-its-research-and-development"
       },
       {
-        "title": "Anthropic says its model Claude is helping to build the next version of itself（ABC News）",
-        "url": "https://abcnews.com/US/wireStory/anthropic-model-claude-helping-build-version-136547096"
-      },
-      {
         "title": "AI is now building AI: Anthropic says Claude leads 26% of its R&D work（Business Standard）",
         "url": "https://www.business-standard.com/technology/artificial-intelligence/ai-is-now-building-ai-anthropic-says-claude-leads-26-of-its-r-d-work-126091800275_1.html"
+      },
+      {
+        "title": "Anthropic says its model Claude is helping to build the next version of itself（AP 配信、KATU 掲載）",
+        "site": "KATU（AP 配信の転載）",
+        "url": "https://katu.com/news/nation-world/anthropic-says-its-model-claude-is-helping-to-build-the-next-version-of-itself"
       }
     ]
   },
@@ -26141,7 +26143,8 @@ const ARTICLES_BODY = {
       "同じアカウントの続きの投稿は、ロールアウトの途中であるとして、使える頻度をプラン別に書いている。Pro プランは週に1回、Max と Team Premium プランは5時間のセッション上限に達するたびに使える。この仕上げのあとも作業を続けたい場合は、追加利用（extra usage）で続けられるとも書かれている。Team Standard や Enterprise など、ここに挙がっていないプランについては、投稿は触れていない。",
       "公式の投稿に書かれていないことも多い。割り当ての大きさは「小さな固定」とあるだけで、数字は示されていない。Pro が週1回使い切ったあと、同じ週に再び上限に達した場合の挙動も書かれていない。対象のバージョンや、ターミナル、IDE、デスクトップのどれで使えるかも、投稿には書かれていない。X の自動要約や一部の報道には「2.1.277 以降」とあるが、code.claude.com の changelog を確認したところ、2.1.277（9月18日）にこの機能の記載はなく、2.1.285（9月29日）までの各版にも見当たらない。サーバー側の展開なのか、版の条件があるのかは、当サイトでは確認できていない。",
       "同じ changelog には、上限に達したあとリセットまで待って自動で続ける設定（Continue automatically at usage limit）の記載がある。今回の仕組みは、待機して再開するものではなく、上限に達した時点で週次枠から小さな割り当てを取り、区切りまで進めるものだと公式の投稿は説明している。両者の関係や、同時に設定しているときにどちらが先に働くかは、公式の資料からは分からない。",
-      "この記事の根拠の数え方を書いておく。主張の根は、@ClaudeDevs の投稿2件（頻度の説明を含む）という当事者の発表1本で、当サイトは投稿の本文を X のページ上で読んだ。PC Watch、techno-edge など国内外の報道は、この投稿を引いた派生であり、根は増えない。製品の仕様に関する主張なので、当事者の発表1本で足りるが、割り当ての量や実際の挙動については、当サイトは試しておらず、独立した検証も確認できていない。Pro を使っている人は、週に1回という条件と、その後も続けるには追加利用が要ることを、自分のプランの利用状況（/usage）とあわせて確認するとよい。"
+      "この記事の根拠の数え方を書いておく。主張の根は、@ClaudeDevs の投稿2件（頻度の説明を含む）という当事者の発表1本で、当サイトは投稿の本文を X のページ上で読んだ。PC Watch、techno-edge など国内外の報道は、この投稿を引いた派生であり、根は増えない。製品の仕様に関する主張なので、当事者の発表1本で足りるが、割り当ての量や実際の挙動については、当サイトは試しておらず、独立した検証も確認できていない。Pro を使っている人は、週に1回という条件と、その後も続けるには追加利用が要ることを、自分のプランの利用状況（/usage）とあわせて確認するとよい。",
+      "【追記 2026-10-21】出典の削除。掲載していた PC Watch 報道（Yahoo!ニュース配信）の URL が現在 404 で、正しい URL を確認できなかったため外した。主張の根拠は、本文に挙げた ClaudeDevs の投稿と Claude Code の公式 changelog のまま。"
     ],
     "primarySources": [
       {
@@ -26153,11 +26156,6 @@ const ARTICLES_BODY = {
         "title": "Claude Code changelog（公式ドキュメント）",
         "site": "Claude Code Docs",
         "url": "https://code.claude.com/docs/en/changelog"
-      },
-      {
-        "title": "Claude Code、「残業」が可能に。週次制限から差し引き（PC Watch）— 報道",
-        "site": "Yahoo!ニュース（PC Watch 配信）",
-        "url": "https://news.yahoo.co.jp/articles/7f6e16d3400f606a9ac3ce559a49a6f6f944a715"
       }
     ]
   },
