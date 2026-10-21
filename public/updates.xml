@@ -24,6 +24,14 @@
     <summary>出典の削除。掲載していた PC Watch 報道（Yahoo!ニュース配信）の URL が現在 404 で、正しい URL を確認できなかったため外した</summary>
   </entry>
   <entry>
+    <title>【追記】PHP が10/21（水）14:00 UTC に重大な脆弱性2件の修正版を公開予告 — CVSS v4.0 9.2、公開前に棚卸しと更新の準備を</title>
+    <link rel="alternate" type="text/html" href="?a=php-critical-security-release-2026-10-21#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:php-critical-security-release-2026-10-21:2026-10-21</id>
+    <updated>2026-10-21T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>セキュリティ企業 GMO Flatt Security が技術ブログで、今回の脆弱性を「php2shell」と呼び、CVE-2026-109618 と CVE-2026-109619…</summary>
+  </entry>
+  <entry>
     <title>【取り下げ】【取り下げ】Runway Gen-5 レビュー — 動画生成のフロントランナー、映像制作者の新標準</title>
     <link rel="alternate" type="text/html" href="?a=runway-gen5-review#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:runway-gen5-review:2026-10-03</id>
@@ -1198,13 +1206,5 @@
     <updated>2026-08-11T15:00:00Z</updated>
     <category term="monthly" label="月次見直し"/>
     <summary>月次見直しにより更新</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Moonshot AI が Kimi K3 を公開 — 世界最大 2.8T パラメータのオープンウェイトモデル、7/27 に重み公開、agent 系ベンチで 6/16 首位・BrowseComp 91.2</title>
-    <link rel="alternate" type="text/html" href="?a=moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:moonshot-kimi-k3-2-8t-open-weights-modified-mit-2026:2026-07-31</id>
-    <updated>2026-07-31T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>（誤）本記事は公開当初、Kimi K3 のライセンスを「Modified MIT」と記載していました →（正）2026年7月27日に実際に公開された重みのライセンスは、MIT でも Apache 2.0…</summary>
   </entry>
 </feed>
