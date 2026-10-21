@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-10-20",
-  "count": 572,
+  "generatedAt": "2026-10-21",
+  "count": 573,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -488,6 +488,7 @@
     "perplexity-bumblebee-supply-chain-scanner-2026",
     "perplexity-review",
     "phone-harness-mobile-agent-2026",
+    "php-critical-security-release-2026-10-21",
     "pika-pikastream-video-chat-skill-2026",
     "pika-review",
     "pinecone-serverless-free-tier-2026",

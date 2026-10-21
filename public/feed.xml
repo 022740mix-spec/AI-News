@@ -8,6 +8,14 @@
   <updated>2026-10-21T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>PHP が10/21（水）14:00 UTC に重大な脆弱性2件の修正版を公開予告 — CVSS v4.0 9.2、公開前に棚卸しと更新の準備を</title>
+    <link rel="alternate" type="text/html" href="?a=php-critical-security-release-2026-10-21"/>
+    <id>tag:ai-tool-news.jp,2026:php-critical-security-release-2026-10-21</id>
+    <published>2026-10-21T15:00:00Z</published>
+    <updated>2026-10-21T15:00:00Z</updated>
+    <summary>PHP セキュリティチームが10月20日、10月21日（水）14:00 UTC（日本時間 23:00）にセキュリティリリースを公開すると予告した。対象は重大な脆弱性2件（いずれも CVSS v4.0 で 9.2）。詳細・影響バージョン・修正版はリリース時に公開される。PHP 公式は、悪用や詳細の公開が確認された場合には早めに出す可能性があるとしている。CVE 番号などは公式告知にはまだ無い。</summary>
+  </entry>
+  <entry>
     <title>Claude Code 2.1.303〜2.1.304、/auto-mode-setup、再開時の使用量警告、--worktree が未マージのコミットを消しうる問題の修正</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-2-1-303-304-auto-mode-setup-resume-warning-worktree-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-2-1-303-304-auto-mode-setup-resume-warning-worktree-2026</id>
