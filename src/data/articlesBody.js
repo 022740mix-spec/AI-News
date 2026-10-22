@@ -28307,6 +28307,29 @@ const ARTICLES_BODY = {
         "url": "https://www.php.net/archive/2026.php"
       }
     ]
+  },
+  "java-cve-2026-91403-compromised-ca-certificates-2026-10-21": {
+    "body": [
+      "Oracle は2026年10月21日、Java SE に関する緊急セキュリティアラート **CVE-2026-91403** を公開した。定例の Critical Patch Update（10月分）とは別に出された、臨時の告知である。",
+      "**何が問題か。** OpenJDK の勧告によると、CVE-2026-91403 は **侵害された中間 CA 証明書8件** に関わる問題である。影響するコンポーネントは javax.net.ssl（Java の TLS 実装）で、CVSS v3.1 の基本値は **9.1** とされている。CVSS の表記（OpenJDK の勧告の risk matrix のベクトル NLNNUHHN）は、攻撃経路がネットワーク、権限の要求なし、ユーザー操作なしであることを示す。",
+      "**影響を受けるバージョン。** Oracle のアラートでは、Java SE の 8u511、8u511-perf、11.0.33、17.0.21、21.0.13、25.0.5、27.0.1 と、GraalVM の一部のバージョンが挙げられている。Oracle は、このアラートで扱うパッチが提供されるのは、Premier Support または Extended Support の期間にあるバージョンだけだとしている。",
+      "**推奨される対応（OpenJDK の勧告）。** 独立した OpenJDK ランタイム（アプリケーションに同梱して配布しているものを含む）は、侵害された証明書を含んでいる可能性が高いので、できるだけ早く更新する。すぐに更新できない場合は、次のいずれかを行う。1つ目は、blocked.certs ファイルで該当する証明書をブロックすること。2つ目は、失効確認を有効にすること（例: -Dcom.sun.net.ssl.checkRevocation=true）。",
+      "**Linux ディストリビューションの Java。** OpenJDK の勧告では、OS の証明書ストアを使う場合は、OS の証明書を更新すれば十分だとしている。対象は Arch Linux、Debian、Fedora、Red Hat Enterprise Linux、Ubuntu などである。FreeBSD と Homebrew のパッケージは、直接更新する必要がある。",
+      "**確認できていないこと。** 証明書を発行した事業者、証明書が侵害された経緯、野外での悪用の有無は、今回確認した公式の資料には書かれていない。OpenJDK の勧告の周辺には事業者の名前を示すリンクがあるが、本文では事業者は特定されておらず、本記事でも特定しない。",
+      "**このサイトへの影響。** AI News は React と Vite で作られた静的サイトで、Java は使っていない。ビルドには Node.js を使う。Java を業務で使っている場合は、使っているランタイムの配布元と版を確認し、上記の対応を行うこと。"
+    ],
+    "primarySources": [
+      {
+        "title": "Security Alert Advisory - CVE-2026-91403（Oracle）",
+        "site": "Oracle（公式のセキュリティアラート）",
+        "url": "https://www.oracle.com/security-alerts/alert-cve-2026-91403.html"
+      },
+      {
+        "title": "OpenJDK Vulnerability Advisory: 2026/10/21",
+        "site": "OpenJDK（公式の勧告）",
+        "url": "https://openjdk.org/groups/vulnerability/advisories/2026-10-21"
+      }
+    ]
   }
 };
 

@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-10-21T15:00:00Z</updated>
+  <updated>2026-10-22T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Oracle Java に緊急セキュリティアラート（CVE-2026-91403）— 侵害された中間 CA 証明書8件、独立の Java ランタイムは早急な更新を</title>
+    <link rel="alternate" type="text/html" href="?a=java-cve-2026-91403-compromised-ca-certificates-2026-10-21"/>
+    <id>tag:ai-tool-news.jp,2026:java-cve-2026-91403-compromised-ca-certificates-2026-10-21</id>
+    <published>2026-10-22T15:00:00Z</published>
+    <updated>2026-10-22T15:00:00Z</updated>
+    <summary>Oracle が10月21日、Java SE の緊急セキュリティアラート CVE-2026-91403 を公開した。OpenJDK の勧告によると、CVSS v3.1 は 9.1、対象は TLS 実装の javax.net.ssl で、侵害された中間 CA 証明書8件に関わる問題である。独立して配布されている OpenJDK ランタイムは、侵害された証明書を含んでいる可能性が高いため、直ちに更新するよう勧告されている。</summary>
+  </entry>
   <entry>
     <title>PHP が10/21（水）14:00 UTC に重大な脆弱性2件の修正版を公開予告 — CVSS v4.0 9.2、公開前に棚卸しと更新の準備を</title>
     <link rel="alternate" type="text/html" href="?a=php-critical-security-release-2026-10-21"/>
