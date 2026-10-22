@@ -12219,5 +12219,21 @@ export const ARTICLES_META = [
       "セキュリティ",
       "インシデント"
     ]
+  },
+  {
+    "id": "litellm-1-107-0-quarantined-pypi-2026-10-21",
+    "type": "news",
+    "category": "product",
+    "title": "Python パッケージ LiteLLM の 1.107.0 が PyPI で隔離（quarantine）— 10/21 公開、内容の確認は未了",
+    "excerpt": "PyPI の LiteLLM のページによると、バージョン 1.107.0 は2026年10月21日に公開され、同日「Release quarantined（リリースを隔離）」と表示されている。隔離の理由は、PyPI のページには書かれていない。本記事では、隔離という事実だけを一次資料で確認し、攻撃の内容は未確認として扱う。",
+    "date": "2026-10-22",
+    "newsDate": "2026-10-21",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Python",
+      "PyPI",
+      "サプライチェーン"
+    ]
   }
 ];

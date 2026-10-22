@@ -28525,6 +28525,22 @@ const ARTICLES_BODY = {
         "url": "https://blog.railway.com/p/security-disclosure-recommendation-rotate-mysql-database-credentials"
       }
     ]
+  },
+  "litellm-1-107-0-quarantined-pypi-2026-10-21": {
+    "body": [
+      "Python のパッケージ LiteLLM について、PyPI の公式ページで、バージョン **1.107.0** が2026年10月21日に公開され、その後「Release quarantined on Oct 21, 2026（リリースを隔離）」と表示されていることを確認した。同じ日に、1.106.2 も公開されている。",
+      "**確認できたこと。** PyPI のページ上で、1.107.0 が履歴に残ったまま隔離の状態にあることを確認した。隔離（quarantine）は、PyPI の運営が、配布中のリリースを一時的に扱いにくくする措置である。隔離の理由は、PyPI のページには書かれていない。",
+      "**確認できていないこと。** 二次情報では、LiteLLM のリリースの仕組みが侵害され、1.107.0 が Docker Hub と PyPI に送られ、認証情報を盗む機能やバックドアが含まれていたという報道がある。ただし、本記事の作成時点では、LiteLLM 側の公式の告知や、悪意のあるコードの分析は確認できていない。このため、それらの内容は事実として書かない。",
+      "**利用者が確認すること。** 1.107.0 を、自分の環境に入れていないかを確認する。入れていた場合は、その環境で使っていた認証情報（API キーなど）を、念のため再発行することを検討する。対応の詳細は、LiteLLM の公式の告知が出るまで、判断を保留する。",
+      "**このサイトへの影響。** AI News は、Python のパッケージを公開の仕組みに使っていない。ビルドの依存関係に LiteLLM が含まれていないことを確認してから、次の作業に進むこと。"
+    ],
+    "primarySources": [
+      {
+        "title": "litellm（PyPI）— リリース履歴（1.107.0 が quarantined と表示）",
+        "site": "PyPI（公式のパッケージレジストリ）",
+        "url": "https://pypi.org/project/litellm/"
+      }
+    ]
   }
 };
 
