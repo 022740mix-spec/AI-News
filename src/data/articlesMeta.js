@@ -12155,5 +12155,21 @@ export const ARTICLES_META = [
       "SDK",
       "破壊的変更"
     ]
+  },
+  {
+    "id": "nextjs-security-update-2026-10-14",
+    "type": "news",
+    "category": "product",
+    "title": "Next.js が10/14 に緊急セキュリティ更新 — 重大な RCE 2件と高リスクの DoS 1件、15.5.28 と 16.4.1 へ更新",
+    "excerpt": "Next.js は10月14日、アウトオブバンドのセキュリティ更新を公開した。修正版は 16.4.1（Active LTS）と 15.5.28（Maintenance LTS）。重大（Critical）な認証なしの RCE が2件、高（High）の DoS が1件で、うち2件は9月の定例リリースで上流の依存関係の都合で延期されていた。",
+    "date": "2026-10-22",
+    "newsDate": "2026-10-14",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Next.js",
+      "セキュリティ",
+      "React"
+    ]
   }
 ];
