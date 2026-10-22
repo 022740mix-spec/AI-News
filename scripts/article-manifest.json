@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-10-22",
-  "count": 576,
+  "count": 577,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -399,6 +399,7 @@
     "nano-banana-2-review",
     "nextjs-security-update-2026-10-14",
     "noam-shazeer-google-to-openai-architecture-research-2026",
+    "nodejs-security-release-2026-10-21",
     "notebooklm-review",
     "notion-as-code-typescript-workspace-git-agents-beta-2026",
     "nsa-cisa-china-ai-distillation-advisory-2026",
