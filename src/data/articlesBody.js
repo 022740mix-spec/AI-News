@@ -28472,6 +28472,35 @@ const ARTICLES_BODY = {
         "url": "https://nodejs.org/dist/index.json"
       }
     ]
+  },
+  "emudhra-intermediate-ca-weak-keys-revoked-2026-10-18": {
+    "body": [
+      "インドの認証局 eMudhra は、自社の公式発表（2026年10月20日に初版、10月22日に更新）で、**グローバル TLS 事業の中間 CA 証明書8件を2026年10月18日に失効（revoke）させた**と説明した。理由は、公開されていた鍵が弱かったためである。",
+      "**報告の経緯。** eMudhra の発表によると、独立したセキュリティ研究者が10月17日に、8件の中間 CA の鍵が弱いことを報告した。研究者は、Apple、Google、Microsoft、Mozilla にも同時に通知したという。",
+      "**原因（eMudhra の説明）。** 鍵のラップとアンラップの工程で、本来の強い鍵の組と並んで、弱い第2の鍵の組が作られたと説明している。ただし、発表は「根本原因はまだ確定していない」とし、調査は継続中だと明記している。",
+      "**影響範囲（eMudhra の説明）。** 影響は、失効した中間 CA から発行された、ECC ルートにつながる TLS 証明書に限られるとしている。不信頼化の影響を受けるのは、米国の1つの顧客の範囲だという。一方で、デジタル署名、eSign、emSigner、CertiNext、emCA、Privatrust、SecurePass などのサービスは影響を受けず、利用者は対応の必要がないと説明している。",
+      "**外部のセキュリティ企業の説明（Cloudflare）。** Cloudflare は10月20日の公式ブログで、eMudhra の8件の中間証明書の秘密鍵が侵害されたと述べた。鍵が弱いと、攻撃者が任意のドメインの証明書を偽造できる恐れがあると説明している。Cloudflare は、自社のサービスで悪用が確認されていないとしている。また、オリジンサーバーを持つ顧客など、一部の顧客は対応が必要だとしている。",
+      "**確認できていないこと。** 本記事の公開時点で、第三者による悪用が実際に起きたかどうかは、一次資料からは確認できない。どのブラウザや OS が、いつ信頼を止めるかは、各社の発表を個別に確認する必要がある。本記事では、各社の対応の詳細は書いていない。",
+      "**関連する対応。** Docker は、公式のセキュリティ発表で、同じ eMudhra の CA の侵害への対応として、サンドボックスのテンプレートの画像を、更新した CA 証明書で作り直したと説明している。既存のサンドボックスは、作り直すか、ca-certificates を更新する必要がある。Java の CVE-2026-91403 の記事も、同じ時期の中間 CA 証明書8件に関わる問題を扱っている。両者が同じ件かどうかは、本記事では断定していない。",
+      "**このサイトへの影響。** AI News は静的サイトで、証明書の信頼の問題の影響は、利用者のブラウザや、サイトに接続する環境に限られる。この件で、サイトの運用に直接の影響はない。"
+    ],
+    "primarySources": [
+      {
+        "title": "eMudhra Statement on Recent Certificate Security Incident（2026-10-20 初版、10-22 更新）",
+        "site": "eMudhra 公式（当事者の発表）",
+        "url": "https://emudhra.com/en/post/certificate-security-incident"
+      },
+      {
+        "title": "8 eMudhra certificates are compromised. Here's what you need to know（2026-10-20）",
+        "site": "Cloudflare 公式ブログ",
+        "url": "https://blog.cloudflare.com/emudhra-certificate-compromise/"
+      },
+      {
+        "title": "Docker security announcements（eMudhra の CA への対応、2026-10-21 更新）",
+        "site": "Docker 公式",
+        "url": "https://docs.docker.com/security/security-announcements/"
+      }
+    ]
   }
 };
 

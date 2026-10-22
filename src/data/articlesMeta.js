@@ -12187,5 +12187,21 @@ export const ARTICLES_META = [
       "セキュリティ",
       "脆弱性"
     ]
+  },
+  {
+    "id": "emudhra-intermediate-ca-weak-keys-revoked-2026-10-18",
+    "type": "news",
+    "category": "product",
+    "title": "eMudhra の中間 CA 証明書8件を失効 — 公開されていた鍵が弱く、Cloudflare は偽造の恐れを指摘",
+    "excerpt": "インドの認証局 eMudhra は、グローバル TLS 事業の中間 CA 証明書8件を10月18日に失効させたと、自社の公式発表で明らかにした。発表によると、独立した研究者が10月17日に、鍵が弱いことを報告した。原因は、鍵を作る工程で弱い鍵の組が作られたことだと説明しているが、根本原因はまだ確認中である。",
+    "date": "2026-10-22",
+    "newsDate": "2026-10-18",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "証明書",
+      "セキュリティ",
+      "認証局"
+    ]
   }
 ];
