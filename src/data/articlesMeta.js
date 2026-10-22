@@ -12137,5 +12137,23 @@ export const ARTICLES_META = [
       "セキュリティ",
       "証明書"
     ]
+  },
+  {
+    "id": "anthropic-api-version-2026-10-21-breaking-changes-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude API に新バージョン 2026-10-21 — temperature・top_p・top_k が削除され送ると 400 に、各言語の SDK はメジャー更新、API キーは Authorization ヘッダで送信",
+    "excerpt": "Anthropic は API バージョン 2026-10-21 を公開した。Messages API では temperature・top_p・top_k を送ると全モデルで 400 エラーになり、assistant メッセージ内の document ブロックと user メッセージ内の citations も 400 になる。SDK と ant CLI は新しいメジャー版（Python 2.0.0、TypeScript 1.0.0 など）で新バージョンを送る。旧版 2023-06-01 に留まる経路は、移行ガイドが案内している。",
+    "date": "2026-10-22",
+    "newsDate": "2026-10-21",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude API",
+      "API",
+      "SDK",
+      "破壊的変更"
+    ]
   }
 ];

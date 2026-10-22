@@ -28330,6 +28330,86 @@ const ARTICLES_BODY = {
         "url": "https://openjdk.org/groups/vulnerability/advisories/2026-10-21"
       }
     ]
+  },
+  "anthropic-api-version-2026-10-21-breaking-changes-2026": {
+    "body": [
+      "Claude Platform のドキュメントによると、Anthropic の API にバージョン 2026-10-21 が加わった。リクエストの anthropic-version ヘッダに指定する日付で、それまでの記載は 2023-06-01 だった。公式のバージョン履歴は、可能な限り最新版を使うよう勧めている。この記事は公式のバージョン履歴と移行ガイドの記載を整理したもので、実際のリクエストでの挙動は検証していない。",
+      "Messages API の変更は3つある。1つ目は sampling パラメータの削除で、temperature・top_p・top_k のどれかを送ると、既定値であっても全モデルで 400 エラーを返す。2つ目は、assistant メッセージに document ブロックを直接置くと 400 になること（Claude が返したウェブ取得ツールの結果の中に入れ子になった document は引き続き受け付ける）。3つ目は、user メッセージの text ブロック（search_result の中も含む）に空でない citations 配列を付けると 400 になることである。assistant メッセージ内の citations と、document や search result の \"citations\": {\"enabled\": true} の設定は引き続き使える。これらは token counting と、2026-10-21 で作る Message Batch の各リクエストにも当てはまる。",
+      "sampling パラメータの削除について、移行ガイドは影響の出方を分けて書いている。パラメータを送らないリクエストは temperature 1.0 を含む既定値で動き、2023-06-01 で同じ省略をしたときと同じになる。Claude 4.7 以降のように既定値しか受け付けないモデルでは、挙動は変わらない。一方、Claude Sonnet 4.6 のように他の値を受け付けるモデルで、出力を安定させるために temperature を下げていたリクエストは、その効果を失う。ガイドは、代わりになる設定は無いと書き、非既定値に頼るリクエストは 2023-06-01 に留めるよう案内している。",
+      "SDK を使っている場合、送るバージョンは SDK のメジャー版で決まる。公式が示す、2026-10-21 を送る最初の版は表のとおりで、Go と Java はモジュールやアーティファクトの扱いも変わる。Go はモジュールのパスが v2 付きになり、import の書き換えが要る。古いパスは何の警告も出さずに v1 の最新版を入れ続ける、とガイドは注記している。TypeScript では、bedrock-sdk・vertex-sdk・foundry-sdk・aws-sdk・google-cloud-sdk の各パッケージも同時に v1 に上げないと、古い @anthropic-ai/sdk が二重に入る。",
+      "SDK と CLI には、API バージョンとは別の変更も入っている。MessageParam は user・assistant・system ごとの型の union になり、SDK が送る JSON は変わらない。API キーは X-Api-Key ではなく Authorization: Bearer で送られるため、X-Api-Key を読む・設定するプロキシやゲートウェイは直す必要がある（API 自体はどちらのヘッダも受け付けるので、SDK を介さず直接呼ぶプログラムは変更不要）。Text Completions は TypeScript・Go・Java・Ruby の SDK と CLI から削除された。TypeScript と Ruby の tool runner からはクライアント側のコンパクションが削除され、サーバー側のコンパクションに置き換わった。ant CLI は 2.0.0 になり、--api-key と --auth-token のフラグが無くなった（コマンドラインの値はシェル履歴やプロセス一覧に見えるため、とされている）。SDK と CLI は新しい版から Apache License 2.0 で提供され、以前の版は MIT のまま残る。",
+      "Amazon Bedrock では、2026-10-21 は Claude 4.7 以降のモデルでのみ使える。Opus 4.6 以前を Bedrock で呼ぶ場合は、今使っている SDK の版に留めるか、自分でバージョンを指定しているなら今送っている値を送り続ける。そのモデル群を 2026-10-21 に移すには、先に 4.7 以降のモデルへ切り替える必要がある。Claude API のほか、Claude Platform on AWS、Microsoft Foundry、Google Cloud でも使える。",
+      "管理系の API にも名前の変更がある。Admin API では、RBAC グループの roles が role_ids に、グループメンバーの group_id が rbac_group_id に、ロールの name が display_name に、レート制限の group_type が group.type に、API キーの workspace_id が scope.workspace_id になった。Claude Enterprise Analytics API では、利用量・コストのレポートの actor.email が actor.email_address に、活動サマリーの summaries が data になった。API キーの workspace_id は、旧版では Default Workspace に紐づくキーと全ワークスペース用のキーのどちらも null だったが、新しい scope.workspace_id は Default Workspace の実際の ID を返す。",
+      "同じ日付は、Claude Code の変更履歴にも出ている。2.1.307 に、Claude API のコードを API バージョン 2026-10-21 へ移す /claude-api api-version コマンドが加わった。この記事では、このコマンドの実際の動作は確認していない。",
+      "確認できていないこと。この記事は公式ドキュメントの記載に基づき、旧版 2023-06-01 の提供終了日や非推奨の扱いは、読んだページには書かれていなかった。移行ガイドは旧版に留める選択肢を挙げており、少なくとも現時点で旧版が使えない、とは書かれていない。公開日は、バージョン履歴に日付が付いていないため、バージョン名の日付を出来事の日として使っている。SDK の各版の実際の挙動や、第三者による検証も確認していない。移行する場合は、ガイドの順序（SDK を上げ、破壊的変更を直し、2026-10-21 に対してテストしてから出す）に沿うことになる。"
+    ],
+    "tables": [
+      {
+        "caption": "2026-10-21 を送る最初の SDK・CLI の版（公式の移行ガイドをもとに整理）",
+        "afterParagraph": 3,
+        "headers": [
+          "対象",
+          "版",
+          "備考"
+        ],
+        "rows": [
+          [
+            "Python（anthropic）",
+            "2.0.0",
+            ""
+          ],
+          [
+            "TypeScript（@anthropic-ai/sdk）",
+            "1.0.0",
+            "bedrock・vertex・foundry・aws・google-cloud の各 SDK も v1 へ"
+          ],
+          [
+            "C#（Anthropic）",
+            "13.0.0",
+            ""
+          ],
+          [
+            "Go",
+            "2.0.0",
+            "モジュールパスが …/anthropic-sdk-go/v2 に。import の書き換えが必要"
+          ],
+          [
+            "Java（com.anthropic:anthropic-java）",
+            "3.0.0",
+            ""
+          ],
+          [
+            "PHP（anthropic-ai/sdk）",
+            "1.0.0",
+            "composer require で指定しないと現在の制約内に留まる"
+          ],
+          [
+            "Ruby（anthropic）",
+            "2.0.0",
+            ""
+          ],
+          [
+            "ant CLI",
+            "2.0.0",
+            "Go の module パスは …/anthropic-cli/v2"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Versions — Claude API ドキュメント",
+        "url": "https://platform.claude.com/docs/en/api/versioning"
+      },
+      {
+        "title": "Migrating to API version 2026-10-21 — Claude API ドキュメント",
+        "url": "https://platform.claude.com/docs/en/api/migration-2026-10-21"
+      },
+      {
+        "title": "Claude Code changelog",
+        "url": "https://code.claude.com/docs/en/changelog"
+      }
+    ]
   }
 };
 

@@ -16,6 +16,14 @@
     <summary>Oracle が10月21日、Java SE の緊急セキュリティアラート CVE-2026-91403 を公開した。OpenJDK の勧告によると、CVSS v3.1 は 9.1、対象は TLS 実装の javax.net.ssl で、侵害された中間 CA 証明書8件に関わる問題である。独立して配布されている OpenJDK ランタイムは、侵害された証明書を含んでいる可能性が高いため、直ちに更新するよう勧告されている。</summary>
   </entry>
   <entry>
+    <title>Claude API に新バージョン 2026-10-21 — temperature・top_p・top_k が削除され送ると 400 に、各言語の SDK はメジャー更新、API キーは Authorization ヘッダで送信</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-api-version-2026-10-21-breaking-changes-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-api-version-2026-10-21-breaking-changes-2026</id>
+    <published>2026-10-22T15:00:00Z</published>
+    <updated>2026-10-22T15:00:00Z</updated>
+    <summary>Anthropic は API バージョン 2026-10-21 を公開した。Messages API では temperature・top_p・top_k を送ると全モデルで 400 エラーになり、assistant メッセージ内の document ブロックと user メッセージ内の citations も 400 になる。SDK と ant CLI は新しいメジャー版（Python 2.0.0、TypeScript 1.0.0 など）で新バージョンを送る。旧版 2023-06-01 に留まる経路は、移行ガイドが案内している。</summary>
+  </entry>
+  <entry>
     <title>PHP が10/21（水）14:00 UTC に重大な脆弱性2件の修正版を公開予告 — CVSS v4.0 9.2、公開前に棚卸しと更新の準備を</title>
     <link rel="alternate" type="text/html" href="?a=php-critical-security-release-2026-10-21"/>
     <id>tag:ai-tool-news.jp,2026:php-critical-security-release-2026-10-21</id>
