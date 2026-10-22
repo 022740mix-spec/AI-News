@@ -28410,6 +28410,34 @@ const ARTICLES_BODY = {
         "url": "https://code.claude.com/docs/en/changelog"
       }
     ]
+  },
+  "nextjs-security-update-2026-10-14": {
+    "body": [
+      "Next.js は2026年10月14日、上流の依存関係の脆弱性に対応するアウトオブバンドのセキュリティ更新を公開した。事前告知は10月8日に出ていた。修正版は **16.4.1（Active LTS）** と **15.5.28（Maintenance LTS）** で、どちらも公式は直ちの更新を勧めている。",
+      "**1件目（重大）: `use cache` 関数の RCE（GHSA-673q-mjm6-r5xr）。** App Router と Cache Components を使うアプリで、`use cache` 関数が複数の typed array を返すと、認証なしでリモートコード実行につながる恐れがある。公式は、この件に既知の回避策はないとし、同様の関数を使っていなくても直ちに更新するよう求めている。関連して、React 側の GHSA-xqc2-xf4c-x3h3 も挙がっている。",
+      "**2件目（重大）: 画像最適化 API の RCE（CVE-2026-96889、GHSA-2464-fhr4-w9xw）。** SVG を扱う画像最適化で、上流のライブラリのメモリ関連の脆弱性が、glibc ベースの Linux 上で RCE につながる恐れがある。公式の回避策は、Next.js が使う sharp を 0.35.5 以上にすることだが、Next.js を修正版へ更新すれば、パッケージマネージャーが修正版の sharp を自動で入れるとしている。",
+      "**3件目（高）: Server Actions を使う App Router の DoS（GHSA-p3m5-59mp-jv5r）。** 特定のリクエストで CPU 使用率が上がり、同じプロセスの後続の処理が止まる。Server Actions を1つでも持つ App Router のアプリが対象で、Pages Router や Server Actions を使わないアプリは影響を受けない。関連して、React 側の GHSA-h3gv-c5rc-p453 も挙がっている。",
+      "**更新の方法（公式の案内）。** 15.x 系は `npm install next@15.5.28`、16.x 系は `npm install next@16.4.1` を実行する。",
+      "**確認できていないこと。** 野外での悪用の有無は、公式の告知からは確認できない。二次情報の Netlify の変更履歴は、プレビューやブランチのデプロイが削除されるまでは、脆弱なままになる可能性があると注意している。これは Netlify の説明であり、公式の告知には書かれていない。",
+      "**このサイトへの影響。** AI News は React と Vite で作られた静的サイトで、Next.js は使っていない。Next.js を使っているプロジェクトは、上記の版に更新すること。"
+    ],
+    "primarySources": [
+      {
+        "title": "Next.js Security Update for Upstream Vulnerabilities（2026-10-14、公式）",
+        "site": "Next.js 公式ブログ",
+        "url": "https://nextjs.org/blog/nextjs-security-update-october-14-2026"
+      },
+      {
+        "title": "Upcoming Next.js Security Update for Upstream Vulnerabilities（2026-10-08、事前告知、公式）",
+        "site": "Next.js 公式ブログ",
+        "url": "https://nextjs.org/blog/upcoming-nextjs-security-update-october-2026"
+      },
+      {
+        "title": "Security Update: Next.js and React vulnerabilities（2026-10-14）",
+        "site": "Netlify 変更履歴（派生・補足）",
+        "url": "https://netlify.com/changelog/2026-10-14-nextjs-react-security-vulnerabilities"
+      }
+    ]
   }
 };
 
