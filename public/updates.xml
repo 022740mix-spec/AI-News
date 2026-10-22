@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./?view=updates"/>
   <link rel="self" type="application/atom+xml" href="./updates.xml"/>
   <id>tag:ai-tool-news.jp,2026:updates</id>
-  <updated>2026-10-21T15:00:00Z</updated>
+  <updated>2026-10-22T15:00:00Z</updated>
   <generator>ai-news-generate-updates</generator>
+  <entry>
+    <title>【追記】Oracle Java に緊急セキュリティアラート（CVE-2026-91403）— 侵害された中間 CA 証明書8件、独立の Java ランタイムは早急な更新を</title>
+    <link rel="alternate" type="text/html" href="?a=java-cve-2026-91403-compromised-ca-certificates-2026-10-21#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:java-cve-2026-91403-compromised-ca-certificates-2026-10-21:2026-10-22</id>
+    <updated>2026-10-22T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>事業者の発表が確認できた</summary>
+  </entry>
   <entry>
     <title>【追記】Anthropic、Claude が自社AI研究開発の26%を「主導」していると報告 — 2月時点は1%未満、半年で急伸</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-leads-26pct-rd-2026#article-history"/>
@@ -1195,14 +1203,6 @@
     <title>【月次見直し】Claude Sonnet 5 レビュー — Anthropic 新ミッドレンジ・フラッグシップ、Opus 4.8 に迫る性能を $2/$10 で、エージェント運用の主力</title>
     <link rel="alternate" type="text/html" href="?a=claude-sonnet-5-review#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:claude-sonnet-5-review:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="monthly" label="月次見直し"/>
-    <summary>月次見直しにより更新</summary>
-  </entry>
-  <entry>
-    <title>【月次見直し】GitHub Copilot CLI レビュー — `/fleet` 並列エージェント、Autopilot、`/model` 切替（Opus 5 / GPT-5.6 / MAI-Code-1-Flash）、AI Credits 従量課金対応</title>
-    <link rel="alternate" type="text/html" href="?a=github-copilot-cli#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:github-copilot-cli:2026-08-11</id>
     <updated>2026-08-11T15:00:00Z</updated>
     <category term="monthly" label="月次見直し"/>
     <summary>月次見直しにより更新</summary>
