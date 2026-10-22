@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-10-21",
-  "count": 573,
+  "generatedAt": "2026-10-22",
+  "count": 574,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -339,6 +339,7 @@
     "i-have-adhd-agent-output-skill-2026",
     "ibm-bob-self-hosted-ga-2026",
     "japan-personal-info-protection-law-ai-amendment-2026",
+    "java-cve-2026-91403-compromised-ca-certificates-2026-10-21",
     "john-jumper-google-deepmind-to-anthropic-nobel-2026",
     "k-dense-scientific-agent-skills-2026",
     "kat-coder-pro-v2-2026",

@@ -12121,5 +12121,21 @@ export const ARTICLES_META = [
       "セキュリティ",
       "脆弱性"
     ]
+  },
+  {
+    "id": "java-cve-2026-91403-compromised-ca-certificates-2026-10-21",
+    "type": "news",
+    "category": "product",
+    "title": "Oracle Java に緊急セキュリティアラート（CVE-2026-91403）— 侵害された中間 CA 証明書8件、独立の Java ランタイムは早急な更新を",
+    "excerpt": "Oracle が10月21日、Java SE の緊急セキュリティアラート CVE-2026-91403 を公開した。OpenJDK の勧告によると、CVSS v3.1 は 9.1、対象は TLS 実装の javax.net.ssl で、**侵害された中間 CA 証明書8件**に関わる問題である。独立して配布されている OpenJDK ランタイムは、侵害された証明書を含んでいる可能性が高いため、直ちに更新するよう勧告されている。",
+    "date": "2026-10-22",
+    "newsDate": "2026-10-21",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Java",
+      "セキュリティ",
+      "証明書"
+    ]
   }
 ];
