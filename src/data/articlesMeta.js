@@ -12187,5 +12187,53 @@ export const ARTICLES_META = [
       "セキュリティ",
       "脆弱性"
     ]
+  },
+  {
+    "id": "emudhra-intermediate-ca-weak-keys-revoked-2026-10-18",
+    "type": "news",
+    "category": "product",
+    "title": "eMudhra の中間 CA 証明書8件を失効 — 公開されていた鍵が弱く、Cloudflare は偽造の恐れを指摘",
+    "excerpt": "インドの認証局 eMudhra は、グローバル TLS 事業の中間 CA 証明書8件を10月18日に失効させたと、自社の公式発表で明らかにした。発表によると、独立した研究者が10月17日に、鍵が弱いことを報告した。原因は、鍵を作る工程で弱い鍵の組が作られたことだと説明しているが、根本原因はまだ確認中である。",
+    "date": "2026-10-22",
+    "newsDate": "2026-10-18",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "証明書",
+      "セキュリティ",
+      "認証局"
+    ]
+  },
+  {
+    "id": "railway-environment-variables-incident-2026-10-21",
+    "type": "news",
+    "category": "product",
+    "title": "Railway が10/21 に、顧客の環境変数への不正アクセスの可能性を公表 — デプロイを一時停止、シークレットの再発行を勧告",
+    "excerpt": "クラウド基盤の Railway は10月21日、顧客の環境変数を保存しているシステムで異常な活動を検知したと公表した。第三者が、暗号化された環境変数にアクセスし、一部は復号された内容を得た可能性があるという。影響を受けた顧客の数は公表されていない。Railway はデプロイを停止し、すべての環境変数の再発行を勧めている。",
+    "date": "2026-10-22",
+    "newsDate": "2026-10-21",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Railway",
+      "セキュリティ",
+      "インシデント"
+    ]
+  },
+  {
+    "id": "litellm-1-107-0-quarantined-pypi-2026-10-21",
+    "type": "news",
+    "category": "product",
+    "title": "Python パッケージ LiteLLM の 1.107.0 が PyPI で隔離（quarantine）— 10/21 公開、内容の確認は未了",
+    "excerpt": "PyPI の LiteLLM のページによると、バージョン 1.107.0 は2026年10月21日に公開され、同日「Release quarantined（リリースを隔離）」と表示されている。隔離の理由は、PyPI のページには書かれていない。本記事では、隔離という事実だけを一次資料で確認し、攻撃の内容は未確認として扱う。",
+    "date": "2026-10-22",
+    "newsDate": "2026-10-21",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Python",
+      "PyPI",
+      "サプライチェーン"
+    ]
   }
 ];

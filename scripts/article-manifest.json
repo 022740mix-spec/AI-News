@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-10-22",
-  "count": 577,
+  "count": 580,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -242,6 +242,7 @@
     "edge0-ondevice-moe-inference-2026",
     "editor-comparison-2026-march",
     "elon-musk-dwarkesh-podcast-2026",
+    "emudhra-intermediate-ca-weak-keys-revoked-2026-10-18",
     "enterprise-backend-dataverse-supabase-azure-2026",
     "enterprise-entra-id-postgres-ai-architecture-2026",
     "env-file-api-key-security-guide-2026",
@@ -353,6 +354,7 @@
     "lex-fridman-491-openclaw-peter-steinberger",
     "lex-fridman-494-jensen-huang-nvidia",
     "lg-k-exaone-2-0-750b-apache-2-open-weight-2026",
+    "litellm-1-107-0-quarantined-pypi-2026-10-21",
     "local-llm-vs-api-reality-2026",
     "m365-copilot-researcher-critique-council-2026",
     "magnitude-local-inference-server-coding-agents-2026",
@@ -507,6 +509,7 @@
     "rag-enterprise-acl-privacy-2026",
     "rag-evaluation-citations-2026",
     "rag-getting-started-step-by-step-2026",
+    "railway-environment-variables-incident-2026-10-21",
     "react-frontend-ms-backend-architecture-2026",
     "realtime-translation-oss-security-cost-2026",
     "rf-detr-aerial-drone-detection-dual-use-2026",
