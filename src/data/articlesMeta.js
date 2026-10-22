@@ -12171,5 +12171,21 @@ export const ARTICLES_META = [
       "セキュリティ",
       "React"
     ]
+  },
+  {
+    "id": "nodejs-security-release-2026-10-21",
+    "type": "news",
+    "category": "product",
+    "title": "Node.js が10/21 にセキュリティリリース — 10件（うち HIGH 4件）、22・24・26 の全ラインが対象",
+    "excerpt": "Node.js の公式発表によると、10月21日（水）ごろに、22.x、24.x、26.x の全ラインのセキュリティリリースが出る。対象は10件で、最も深刻なものは HIGH。Brotli デコーダーの範囲外書き込みによるリモートコード実行（CVE-2026-111497）を含む。公式の告知は、対象の版と修正版の詳細を個別の項目で示している。",
+    "date": "2026-10-22",
+    "newsDate": "2026-10-21",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Node.js",
+      "セキュリティ",
+      "脆弱性"
+    ]
   }
 ];
