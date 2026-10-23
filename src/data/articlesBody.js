@@ -23258,7 +23258,8 @@ const ARTICLES_BODY = {
       "## 安全と、公開されていないもの",
       "実験室は米国ベイエリアにあり、扱うのは生物学的安全性レベルの低い BSL-1・BSL-2 の範囲で、**ヒトに感染する病原体は扱わない**。実験はすべて人間の科学者が行っている。Anthropic は装置制御の [Model Hardware Standard](?a=anthropic-model-hardware-standard-preview-2026) を試してきたが、**分子生物学の実験は手順がその場その場で変わるため、この方法には向かない**として今回は使っていないと明記している。生物学の研究者向けに安全策を調整した [Life Sciences Verification Program](?a=anthropic-life-sciences-verification-program-2026) は9月に始まっている。",
       "一方で、**公開されたのはプレプリントだけ**である。しかもこの論文には、**データやコードの公開に関する記載が一つも無い**。エージェントの制御ソフト（ハーネス）も、探索を再現する手順も、公開の予定すら書かれていない。「探し方が新しい」という主張の中心部分は、**現時点では外から再現できない**。",
-      "**確認状況**: ART の構成、探索の規模と打率、発見の経緯、発現量、相棒タンパク質の3系統、モデル比較の実験、内部信号の解析、限界の記述は、**Anthropic が公開したプレプリント本文に直接あたって確認した**（Yoon ほか、2026年9月23日）。発表ページの記述も直接到達して確認している。アモデイ氏の発言は同氏の X の投稿によるが、x.com には本稿の実行環境から到達できず、投稿は画面の画像で確認した。CRISPR の歴史（1987年・2007年・2012年・2020年・2023年）とプライム編集は、ノーベル財団・FDA・学術誌の各ページに到達できなかったため、それらの検索エンジンの索引で内容を確認した。**この文書を Anthropic は「プレプリント」と呼んでいるが（同じ PDF を「技術報告」とも呼んでいる）、文書自体には査読の状態も公開先も書かれていない。**"
+      "**確認状況**: ART の構成、探索の規模と打率、発見の経緯、発現量、相棒タンパク質の3系統、モデル比較の実験、内部信号の解析、限界の記述は、**Anthropic が公開したプレプリント本文に直接あたって確認した**（Yoon ほか、2026年9月23日）。発表ページの記述も直接到達して確認している。アモデイ氏の発言は同氏の X の投稿によるが、x.com には本稿の実行環境から到達できず、投稿は画面の画像で確認した。CRISPR の歴史（1987年・2007年・2012年・2020年・2023年）とプライム編集は、ノーベル財団・FDA・学術誌の各ページに到達できなかったため、それらの検索エンジンの索引で内容を確認した。**この文書を Anthropic は「プレプリント」と呼んでいるが（同じ PDF を「技術報告」とも呼んでいる）、文書自体には査読の状態も公開先も書かれていない。**",
+      "【追記 2026-10-23】出典の再確認。FDA のページ（2023年12月8日の Casgevy と Lyfgenia の承認）は、直接確認できた。このページは、本文の CRISPR の年表で引いた背景資料であり、2026年の ART の発見を裏付ける資料ではない。その旨を出典の説明に明記した。"
     ],
     "tables": [
       {
@@ -23368,8 +23369,8 @@ const ARTICLES_BODY = {
         "url": "https://www.nobelprize.org/prizes/chemistry/2020/press-release/"
       },
       {
-        "title": "FDA Approves First Gene Therapies to Treat Patients with Sickle Cell Disease",
-        "site": "U.S. FDA（検索索引で確認）",
+        "title": "FDA Approves First Gene Therapies to Treat Patients with Sickle Cell Disease（2023-12-08、CRISPR の年表で引用した背景資料。本記事の ART の発見を裏付けるものではない）",
+        "site": "U.S. FDA（直接確認済み）",
         "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapies-treat-patients-sickle-cell-disease"
       }
     ]
