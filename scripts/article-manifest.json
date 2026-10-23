@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-10-23",
-  "count": 581,
+  "count": 583,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -514,6 +514,8 @@
     "react-frontend-ms-backend-architecture-2026",
     "realtime-translation-oss-security-cost-2026",
     "rf-detr-aerial-drone-detection-dual-use-2026",
+    "ruby-4-0-9-3-4-12-3-3-13-regexp-fixes-2026-10-23",
+    "rubygems-org-advisories-2026-10-07-10-21",
     "runway-gen5-review",
     "runway-gen5-video-generation-2026",
     "sakana-ai-fugu-multi-agent-orchestration-2026",
