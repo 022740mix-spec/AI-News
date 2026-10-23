@@ -12252,5 +12252,37 @@ export const ARTICLES_META = [
       "OpenTelemetry",
       "リリースノート"
     ]
+  },
+  {
+    "id": "ruby-4-0-9-3-4-12-3-3-13-regexp-fixes-2026-10-23",
+    "type": "news",
+    "category": "product",
+    "title": "Ruby 4.0.9・3.4.12・3.3.13 を公開 — GitLab が報告した正規表現コンパイルの脆弱性4件を修正",
+    "excerpt": "Ruby 公式は10月23日、正規表現のコンパイルに関する脆弱性4件を修正した Ruby 4.0.9、3.4.12、3.3.13 を公開した。GitLab が報告したもので、細工されたパターンが、コンパイル中にメモリを壊し、GitLab のサーバーでリモートコード実行につながり得るという。公式は、アップグレードできない場合は、信頼できない入力から正規表現をコンパイルしないよう勧めている。",
+    "date": "2026-10-23",
+    "newsDate": "2026-10-23",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Ruby",
+      "セキュリティ",
+      "正規表現"
+    ]
+  },
+  {
+    "id": "rubygems-org-advisories-2026-10-07-10-21",
+    "type": "news",
+    "category": "product",
+    "title": "RubyGems.org の脆弱性2件（10/7、10/21）— 管理画面の権限チェックの欠落と、削除済みの gem でのキーの権限のすり抜け",
+    "excerpt": "RubyGems.org（Ruby のパッケージ公開基盤）は、GitHub のセキュリティ勧告で、10月7日に、gem 単位の API キーが削除済みの gem を再公開すると権限を逃れる問題（High）を、10月21日に、管理画面の制限付き操作に権限チェックがない問題（High）を公表した。どちらも公式の勧告に基づく。CVE 番号は付いていない。",
+    "date": "2026-10-23",
+    "newsDate": "2026-10-21",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "RubyGems",
+      "セキュリティ",
+      "パッケージ"
+    ]
   }
 ];
