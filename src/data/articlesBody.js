@@ -28588,6 +28588,29 @@ const ARTICLES_BODY = {
         "url": "https://www.ruby-lang.org/en/news/2026/10/23/ruby-4-0-9-released/"
       }
     ]
+  },
+  "rubygems-org-advisories-2026-10-07-10-21": {
+    "body": [
+      "RubyGems.org は、Ruby のパッケージを公開する基盤である。運営側の GitHub のセキュリティ勧告で、2件の脆弱性が公表されている。どちらも重大度は High で、CVE 番号は付いていない。",
+      "**1件目（10月7日）: gem 単位の API キーの権限のすり抜け（GHSA-xx8r-939r-j6hf）。** API キーは特定の gem に限定できる。その gem の所有権を削除したとき、ActiveRecord の破棄のコールバックを経由しなかったため、キーの gem の範囲の記録が、削除された所有権を指したままになった。その結果、認可の処理がそのキーを制限のないものとして扱ってしまう。勧告は、キーに付与されたアクションの権限や、所有者の本来の権限は広がらないとしている。CVSS v4 の基本値は 7.1。",
+      "**2件目（10月21日）: 管理画面の制限付き操作の権限チェックの欠落（GHSA-4p4h-cc5h-844x）。** 管理画面の制限付き操作（27件）で、表示の制限だけがあり、対応する権限チェックがない。rubygems GitHub 組織のメンバーのうち、rubygems-org チームに属さない人が、表示の制限をすり抜けて、操作のエンドポイントに直接リクエストできるという。勧告は、影響として、所有者の追加による gem の乗っ取りと、2要素認証の無効化やメールの変更による、アカウントの乗っ取りを挙げている。CVSS v4 の基本値は 8.6。勧告によると、報告者は本番ではなく、ローカルで再現を確認した。",
+      "**修正版。** 1件目は、所有権の削除の経路で、破棄のコールバックを使うように修正した。勧告には、修正の commit（f9a2a39）が示されているが、修正版のバージョン番号は明記されていない。また、影響を受けたキーに対する、データの修復の作業も別に必要だとしている。2件目は、修正の commit（501ef6a994785a3f5115f7b85061821abcfe1166）が示されているが、バージョン番号は書かれていない。",
+      "**確認できていないこと。** 1件目について、回避策は「影響を受けるキーを完全に保ったまま使える回避策はない」とされている。勧告は、削除された gem の同じ名前で再公開した後は、その gem 単位のキーを失効させるか、ローテーションするよう勧めている。2件目について、回避策は書かれていない。どちらも、野外での悪用の有無は、勧告からは確認できない。",
+      "**確認の方法。** RubyGems.org を使って gem を公開している場合は、その gem 単位の API キーの一覧を確認し、不要なキーを失効させる。管理権限を持つアカウントは、2要素認証の設定とメールアドレスを確認する。勧告の修正版が反映されたかどうかは、RubyGems.org の運営側の告知で確認する。",
+      "**このサイトへの影響。** AI News は、RubyGems を使っていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Gem-scoped API key authorization bypass when republishing fully yanked gems（GHSA-xx8r-939r-j6hf、2026-10-07）",
+        "site": "GitHub（rubygems/rubygems.org の勧告）",
+        "url": "https://github.com/rubygems/rubygems.org/security/advisories/GHSA-xx8r-939r-j6hf"
+      },
+      {
+        "title": "Missing authorisation checks in restricted rubygems.org admin actions（GHSA-4p4h-cc5h-844x、2026-10-21）",
+        "site": "GitHub（rubygems/rubygems.org の勧告）",
+        "url": "https://github.com/rubygems/rubygems.org/security/advisories/GHSA-4p4h-cc5h-844x"
+      }
+    ]
   }
 };
 

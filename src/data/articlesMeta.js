@@ -12268,5 +12268,21 @@ export const ARTICLES_META = [
       "セキュリティ",
       "正規表現"
     ]
+  },
+  {
+    "id": "rubygems-org-advisories-2026-10-07-10-21",
+    "type": "news",
+    "category": "product",
+    "title": "RubyGems.org の脆弱性2件（10/7、10/21）— 管理画面の権限チェックの欠落と、削除済みの gem でのキーの権限のすり抜け",
+    "excerpt": "RubyGems.org（Ruby のパッケージ公開基盤）は、GitHub のセキュリティ勧告で、10月7日に、gem 単位の API キーが削除済みの gem を再公開すると権限を逃れる問題（High）を、10月21日に、管理画面の制限付き操作に権限チェックがない問題（High）を公表した。どちらも公式の勧告に基づく。CVE 番号は付いていない。",
+    "date": "2026-10-23",
+    "newsDate": "2026-10-21",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "RubyGems",
+      "セキュリティ",
+      "パッケージ"
+    ]
   }
 ];
