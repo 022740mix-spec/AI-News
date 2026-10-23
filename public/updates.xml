@@ -5,8 +5,24 @@
   <link rel="alternate" type="text/html" href="./?view=updates"/>
   <link rel="self" type="application/atom+xml" href="./updates.xml"/>
   <id>tag:ai-tool-news.jp,2026:updates</id>
-  <updated>2026-10-22T15:00:00Z</updated>
+  <updated>2026-10-23T15:00:00Z</updated>
   <generator>ai-news-generate-updates</generator>
+  <entry>
+    <title>【追記】【分析】Claude が CRISPR に似た未知の酵素系「ART」を発見 — 医療への影響は未知数。論文が示した本題は「道具を与えるほど見落とした」ほうだった</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-discovers-art-crispr-like-enzyme-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:anthropic-claude-discovers-art-crispr-like-enzyme-2026:2026-10-23</id>
+    <updated>2026-10-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>出典の再確認。FDA のページ（2023年12月8日の Casgevy と Lyfgenia の承認）は、直接確認できた</summary>
+  </entry>
+  <entry>
+    <title>【追記】Claude Code、5時間の上限に達しても区切りのよいところまで進める——週次枠から小さな固定分を使い、Pro は週1回・Max は毎回</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-wrap-up-allowance-5-hour-limit-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:claude-code-wrap-up-allowance-5-hour-limit-2026:2026-10-23</id>
+    <updated>2026-10-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>出典の補足。以前に出典から外した PC Watch の報道（2026年9月28日）を、同じ主張の報道として再び追加した</summary>
+  </entry>
   <entry>
     <title>【追記】Oracle Java に緊急セキュリティアラート（CVE-2026-91403）— 侵害された中間 CA 証明書8件、独立の Java ランタイムは早急な更新を</title>
     <link rel="alternate" type="text/html" href="?a=java-cve-2026-91403-compromised-ca-certificates-2026-10-21#article-history"/>
@@ -1190,21 +1206,5 @@
     <updated>2026-08-11T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
     <summary>本記事は公開当初、開発者を実名および X アカウント名で特定し、年齢（16歳・高校生）をタイトルと本文に記載していました</summary>
-  </entry>
-  <entry>
-    <title>【月次見直し】Claude Fable 5 / Mythos 5 レビュー — Anthropic フロンティア、SWE-bench 95% で史上最強、ただし復活後は週次50%上限＆過剰ブロック懸念</title>
-    <link rel="alternate" type="text/html" href="?a=claude-fable-5-mythos-5-review#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:claude-fable-5-mythos-5-review:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="monthly" label="月次見直し"/>
-    <summary>月次見直しにより更新</summary>
-  </entry>
-  <entry>
-    <title>【月次見直し】Claude Sonnet 5 レビュー — Anthropic 新ミッドレンジ・フラッグシップ、Opus 4.8 に迫る性能を $2/$10 で、エージェント運用の主力</title>
-    <link rel="alternate" type="text/html" href="?a=claude-sonnet-5-review#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:claude-sonnet-5-review:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="monthly" label="月次見直し"/>
-    <summary>月次見直しにより更新</summary>
   </entry>
 </feed>
