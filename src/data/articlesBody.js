@@ -28542,6 +28542,28 @@ const ARTICLES_BODY = {
         "url": "https://pypi.org/project/litellm/"
       }
     ]
+  },
+  "claude-code-2-1-306-to-309-sandbox-startup-files-safety-event-api-version-2026": {
+    "body": [
+      "Claude Code の 2.1.306 から 2.1.309 までの変更履歴が、公式リポジトリの CHANGELOG に載っている（2026年10月23日に確認）。このサイトは直前の 2.1.305 までを記事にしている。npm レジストリの公開時刻は、2.1.306 が10月21日 02:28 UTC、2.1.307 が同日 20:47 UTC、2.1.308 が10月22日 04:19 UTC、2.1.309 が同日 20:34 UTC である。出典は CHANGELOG と npm レジストリの記録で、各項目の挙動をこちらで実機確認したものではない。",
+      "2.1.309 の先頭に並ぶのは、サンドボックスと権限判定の修正である。macOS と Linux で、サンドボックス内のコマンドを実行する前に、シェルの起動ファイルがサンドボックスの外で走っていた問題が直った。macOS では、サンドボックスの denyWrite の glob パターンが、フォルダがシンボリックリンク越しに到達される場合に実際のパスへ適用されない問題も直っている。--mcp-config で渡した MCP 設定ファイルを、サンドボックス内のコマンドや自動承認された編集が書き換えられる問題もある。Linux では、背景で動くコマンドがセッションより長く生きたときにサンドボックスの書き込み拒否が外れる問題が直った。",
+      "Bash の権限判定の修正も多い。リダイレクトが開けずに失敗しうるコマンドが設定した変数を、権限確認が信用していた問題。git の前に cd を挟む複合コマンドで、cd が包まれていたり接頭辞が付いていたりすると確認が出なかった問題。サブシェルを含むコマンドで、Edit(path) の拒否ルールが Bash のリダイレクトを止めなかった問題。worktree 分離のセッションで、ロケール接頭辞付きのコマンドや zsh の算術コマンドを、分離の守りが拒否すべきところで受け入れていた問題。Windows では、PowerShell の権限確認が、現在のディレクトリを指す Set-Location や cd に引数が付くと自動承認する問題が直り、承認を求めるようになった。CHANGELOG はこれらを修正として列挙しており、実際に悪用された事例や深刻度の評価は書いていない。",
+      "挙動が変わる項目もある。sed -i は、ファイル編集の模擬プレビューではなく通常の Bash の確認を経て、書かれたとおりに実行されるようになった。ほかの Bash による編集と同じく、/rewind では元に戻らない。claude ultrareview はワークスペースの信頼を要求する。端末では確認を出し、そうでなければ拒否する。スクリプトからは --trust-workspace を渡すか、CLAUDE_CODE_DISABLE_ULTRAREVIEW_TRUST_CHECK=1 を設定する。Desktop アプリと VS Code の bypass permissions モードでは、危険な rm と rmdir の確認が、書き換えの案を添えた即時拒否になり、無人のセッションが止まらない。設定でサンドボックスから除外したコマンドは、サンドボックスが有効なのに動かせないとき、書き込み許可リストのパスへの書き込み前に確認を出し、サンドボックス外での代替実行は拒否される。",
+      "2.1.307 の追加は2つある。1つ目は /claude-api api-version で、Claude API を使うコードを API バージョン 2026-10-21 へ移すコマンドである。このバージョンは10月21日に出ており、サイトの別記事で破壊的変更を整理している。2つ目は OpenTelemetry のイベント claude_code.safety_event で、権限ルール、自動モード、安全確認、フック、サンドボックスのいずれかが止めた、確認を求めた、差し戻したツール呼び出しごとに出る。何が拒否されたかを自社の監視基盤で追いたい運用に関わる。イベントの属性の一覧は CHANGELOG に書かれていないため、ここでは確認できていない。",
+      "2.1.307 の修正では、CLAUDE_CODE_DISABLE_1M_CONTEXT を設定したとき、opus[1m] のような [1m] 付きエイリアスが model-not-found で失敗する問題、独自の ANTHROPIC_BASE_URL のゲートウェイや Foundry に prompt-caching-scope のベータヘッダが送られていた問題が直った。MCP では、macOS のログインキーチェーンがロック中の claude -p で「認証が必要」と出る問題に理由が表示されるようになり、接続中にコンピュータがスリープすると失敗扱いのままになる問題も直った。接続が途中で切れたときに HTTP の MCP ツール呼び出しが二重に送られる問題には、再送を読み取り専用または冪等なツールに限る対応が入った。解釈できないツール呼び出しは、最大2回再試行してからターンをエラーで終える。",
+      "2.1.306 は2件で、クラウドセッション内の claude -p が、セッションの環境変数なしで起動されると「Not logged in」と出る問題と、MCP ツールが多いセッションで API エラーが「prompt is too long」に置き換わり不要な圧縮が走る問題の修正である。2.1.308 の記載は「Bug fixes and reliability improvements」の1行のみで、具体的な変更は CHANGELOG からは分からない。",
+      "2.1.309 にはほかにも、ネストした CLAUDE.md が大きすぎるときにセッションが繰り返し圧縮される問題（上限を超えた場合は先頭だけを読む）、Amazon Bedrock でベースURLを既定のエンドポイントに設定すると細粒度のツールストリーミングが無効のままだった問題、ゲートウェイ越しで keepalive だけが届く場合の「Waiting for API response」表示のちらつき（Anthropic のバックエンド外では45秒待つ）、Claude が PR や Issue に役割名やプレースホルダを @ 付きで書いて無関係な GitHub ユーザーに通知を送る問題の修正が入っている。Self-hosted runner、VS Code、クラウドセッション、Code Review（@claude review stop で always の購読を終える）に関する項目も多い。全項目は出典の CHANGELOG を参照してほしい。"
+    ],
+    "primarySources": [
+      {
+        "title": "anthropics/claude-code CHANGELOG.md（2.1.306〜2.1.309）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@anthropic-ai/claude-code（npm レジストリ、公開時刻）",
+        "url": "https://registry.npmjs.org/@anthropic-ai/claude-code"
+      }
+    ]
   }
 };
 

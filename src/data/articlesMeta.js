@@ -12235,5 +12235,22 @@ export const ARTICLES_META = [
       "PyPI",
       "サプライチェーン"
     ]
+  },
+  {
+    "id": "claude-code-2-1-306-to-309-sandbox-startup-files-safety-event-api-version-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.306〜2.1.309、サンドボックスがシェルの起動ファイルを外で実行していた問題の修正、claude_code.safety_event、API バージョン 2026-10-21 への移行コマンド",
+    "excerpt": "Claude Code 2.1.306〜2.1.309 の変更点。2.1.309 は macOS と Linux のサンドボックスでシェルの起動ファイルがサンドボックスの外で走っていた問題など、権限・サンドボックス周りの修正が中心。2.1.307 では止めた・確認した・差し戻したツール呼び出しごとの OpenTelemetry イベントと、API バージョン 2026-10-21 への移行コマンドが入った。",
+    "date": "2026-10-23",
+    "newsDate": "2026-10-22",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "サンドボックス",
+      "OpenTelemetry",
+      "リリースノート"
+    ]
   }
 ];

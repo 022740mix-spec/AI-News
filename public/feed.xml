@@ -8,6 +8,14 @@
   <updated>2026-10-23T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Claude Code 2.1.306〜2.1.309、サンドボックスがシェルの起動ファイルを外で実行していた問題の修正、claude_code.safety_event、API バージョン 2026-10-21 への移行コマンド</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-2-1-306-to-309-sandbox-startup-files-safety-event-api-version-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-2-1-306-to-309-sandbox-startup-files-safety-event-api-version-2026</id>
+    <published>2026-10-23T15:00:00Z</published>
+    <updated>2026-10-23T15:00:00Z</updated>
+    <summary>Claude Code 2.1.306〜2.1.309 の変更点。2.1.309 は macOS と Linux のサンドボックスでシェルの起動ファイルがサンドボックスの外で走っていた問題など、権限・サンドボックス周りの修正が中心。2.1.307 では止めた・確認した・差し戻したツール呼び出しごとの OpenTelemetry イベントと、API バージョン 2026-10-21 への移行コマンドが入った。</summary>
+  </entry>
+  <entry>
     <title>Oracle Java に緊急セキュリティアラート（CVE-2026-91403）— 侵害された中間 CA 証明書8件、独立の Java ランタイムは早急な更新を</title>
     <link rel="alternate" type="text/html" href="?a=java-cve-2026-91403-compromised-ca-certificates-2026-10-21"/>
     <id>tag:ai-tool-news.jp,2026:java-cve-2026-91403-compromised-ca-certificates-2026-10-21</id>
