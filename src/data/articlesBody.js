@@ -28611,6 +28611,29 @@ const ARTICLES_BODY = {
         "url": "https://github.com/rubygems/rubygems.org/security/advisories/GHSA-4p4h-cc5h-844x"
       }
     ]
+  },
+  "qwen-code-0-25-0-late-agent-results-2026-10-05": {
+    "body": [
+      "Qwen Code の CLI v0.25.0 が2026年10月5日に公開された。リリースノートの Bug Fixes には、「fix(agents): distinguish accepted Host results from terminal runs」（PR #13241）が含まれる。このPRは10月4日にマージされている。",
+      "**何が変わったか（PR の説明による）。** 遠隔の Agent Host が仕事を届けるとき、調整役（coordinator）が、通信の断や、リースの期限切れ、キャンセルなどで、その実行を終了させる場合がある。その後、元の Host が遅れて結果を送ることがある。修正前は、同じリースと試行の番号に一致する遅れた結果に、「受理済み（alreadyApplied: true）」を返す場合があった。実際には復旧処理で終了させただけで、その結果は受理していなかったケースがあるという。",
+      "**修正後の扱い。** 復旧やキャンセルで終了した試行に遅れて届いた結果は、stale_lease として拒否され、終了の状態は変わらない。同じ結果の再送は、保存された受理の記録（receipt）が一致する場合だけ受理済みとみなされる。最初の受理は alreadyApplied: false、同じ内容の再送は true を返す。",
+      "**設計の出どころ（PR の説明による）。** 終了済みの試行の予算を変更できないようにする案（option A）は、外部の寄稿者 @Nakagawa-master の技術的助言によるものだと、PR の説明に書かれている。同じ説明は、それが「リポジトリのメンテナの判断ではない」とも明記している。また、予算の台帳の扱いを変えることについては、メンテナによる承認がまだ保留されていると書かれている。",
+      "**範囲外とされていること。** PR は、後から届く結果の物理的な消費量の会計を範囲外としている。遅れた結果の実際の消費は、実行の予算とは別の場所で扱う必要があるとしている。",
+      "**確認できていないこと。** 影響を受けた利用者の数、実際の環境での再現、外部サービスを含む「一度だけ実行される」保証は、PR やリリースノートからは確認できない。本記事は、リリースノートと PR の説明の範囲で書いている。",
+      "**このサイトへの影響。** AI News は Qwen Code を使った自動化の仕組みを持っていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Qwen Code v0.25.0 リリースノート（2026-10-05）",
+        "site": "GitHub（QwenLM/qwen-code、公式リリース）",
+        "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.0"
+      },
+      {
+        "title": "fix(agents): distinguish accepted Host results from terminal runs（PR #13241、2026-10-04 マージ）",
+        "site": "GitHub（QwenLM/qwen-code の PR 説明）",
+        "url": "https://github.com/QwenLM/qwen-code/pull/13241"
+      }
+    ]
   }
 };
 

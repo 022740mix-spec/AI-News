@@ -32,6 +32,14 @@
     <summary>RubyGems.org（Ruby のパッケージ公開基盤）は、GitHub のセキュリティ勧告で、10月7日に、gem 単位の API キーが削除済みの gem を再公開すると権限を逃れる問題（High）を、10月21日に、管理画面の制限付き操作に権限チェックがない問題（High）を公表した。どちらも公式の勧告に基づく。CVE 番号は付いていない。</summary>
   </entry>
   <entry>
+    <title>Qwen Code v0.25.0 — 終了済みの Agent 実行に遅れて届いた結果を「受理済み」と扱わない修正</title>
+    <link rel="alternate" type="text/html" href="?a=qwen-code-0-25-0-late-agent-results-2026-10-05"/>
+    <id>tag:ai-tool-news.jp,2026:qwen-code-0-25-0-late-agent-results-2026-10-05</id>
+    <published>2026-10-23T15:00:00Z</published>
+    <updated>2026-10-23T15:00:00Z</updated>
+    <summary>Qwen Code の CLI v0.25.0（10月5日公開）には、遠隔の Agent Host から遅れて届いた結果の扱いを変える修正（PR #13241）が含まれる。修正後は、復旧やキャンセルで終了した実行に遅れて届いた結果は stale_lease として拒否される。PR の説明では、この設計の一案は外部の寄稿者の技術的助言によるもので、リポジトリのメンテナの判断ではないと明記されている。</summary>
+  </entry>
+  <entry>
     <title>Oracle Java に緊急セキュリティアラート（CVE-2026-91403）— 侵害された中間 CA 証明書8件、独立の Java ランタイムは早急な更新を</title>
     <link rel="alternate" type="text/html" href="?a=java-cve-2026-91403-compromised-ca-certificates-2026-10-21"/>
     <id>tag:ai-tool-news.jp,2026:java-cve-2026-91403-compromised-ca-certificates-2026-10-21</id>
