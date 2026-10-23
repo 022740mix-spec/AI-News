@@ -12284,5 +12284,21 @@ export const ARTICLES_META = [
       "セキュリティ",
       "パッケージ"
     ]
+  },
+  {
+    "id": "qwen-code-0-25-0-late-agent-results-2026-10-05",
+    "type": "news",
+    "category": "cli",
+    "title": "Qwen Code v0.25.0 — 終了済みの Agent 実行に遅れて届いた結果を「受理済み」と扱わない修正",
+    "excerpt": "Qwen Code の CLI v0.25.0（10月5日公開）には、遠隔の Agent Host から遅れて届いた結果の扱いを変える修正（PR #13241）が含まれる。修正後は、復旧やキャンセルで終了した実行に遅れて届いた結果は stale_lease として拒否される。PR の説明では、この設計の一案は外部の寄稿者の技術的助言によるもので、リポジトリのメンテナの判断ではないと明記されている。",
+    "date": "2026-10-23",
+    "newsDate": "2026-10-05",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Qwen Code",
+      "AI エージェント",
+      "CLI"
+    ]
   }
 ];
