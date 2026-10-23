@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-10-23T15:00:00Z</updated>
+  <updated>2026-10-24T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>Claude Code 2.1.306〜2.1.309、サンドボックスがシェルの起動ファイルを外で実行していた問題の修正、claude_code.safety_event、API バージョン 2026-10-21 への移行コマンド</title>
@@ -38,6 +38,14 @@
     <published>2026-10-23T15:00:00Z</published>
     <updated>2026-10-23T15:00:00Z</updated>
     <summary>Qwen Code の CLI v0.25.0（10月5日公開）には、遠隔の Agent Host から遅れて届いた結果の扱いを変える修正（PR #13241）が含まれる。修正後は、復旧やキャンセルで終了した実行に遅れて届いた結果は stale_lease として拒否される。PR の説明では、この設計の一案は外部の寄稿者の技術的助言によるもので、リポジトリのメンテナの判断ではないと明記されている。</summary>
+  </entry>
+  <entry>
+    <title>Gemini CLI 0.65.0 の変更点、信頼していないフォルダで設定を読み取り専用に、OTLP ヘッダーの指定、認証の無限リトライの修正</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-cli-0-65-untrusted-folder-readonly-otlp-headers-release-notes-2026"/>
+    <id>tag:ai-tool-news.jp,2026:gemini-cli-0-65-untrusted-folder-readonly-otlp-headers-release-notes-2026</id>
+    <published>2026-10-23T15:00:00Z</published>
+    <updated>2026-10-23T15:00:00Z</updated>
+    <summary>Google の Gemini CLI 0.65.0 が2026年10月20日に公開された。信頼していないフォルダではワークスペース設定が読み取り専用になり、テレメトリに任意の OTLP ヘッダーを付けられる。認証の再試行ループや Ctrl+C 連打によるセッション破損も直った。公式の変更履歴に基づいて整理する。</summary>
   </entry>
   <entry>
     <title>Oracle Java に緊急セキュリティアラート（CVE-2026-91403）— 侵害された中間 CA 証明書8件、独立の Java ランタイムは早急な更新を</title>

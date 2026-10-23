@@ -28641,6 +28641,25 @@ const ARTICLES_BODY = {
         "url": "https://github.com/QwenLM/qwen-code/pull/13241"
       }
     ]
+  },
+  "gemini-cli-0-65-untrusted-folder-readonly-otlp-headers-release-notes-2026": {
+    "body": [
+      "google-gemini/gemini-cli の docs/changelogs/latest.md は、最新の安定版を v0.65.0（2026年10月20日公開）としている。npm レジストリでも `latest` タグが 0.65.0 を指し、公開時刻は同日 UTC 21:26 だった。同じレジストリの `preview` タグは 0.66.0-preview.0 である。直前に扱った 0.64.0 の次の安定版にあたる。以下は公式の変更履歴の記載に基づく整理で、実際の挙動は検証していない。",
+      "安全まわりでは、信頼していないフォルダでワークスペースの設定を読み取り専用にする修正が入った。変更履歴の項目名は「enforce read-only workspace settings in untrusted folders」である。あわせて、信頼していないコマンドのフラグや複合ループを誤って検出する問題が減らされた。OAuth のコールバックでは、iss パラメーターの検証が RFC 9207 のメタデータに揃えられた。具体的にどの設定が対象か、どんな経路を塞ぐ修正かは、変更履歴の項目名からは読み取れない。",
+      "運用面では、テレメトリの設定にカスタムの OTLP ヘッダーを指定できるようになった。変更履歴は、OpenTelemetry のコレクターに対する認証やヘッダーの調整のためと説明している。設定のキー名や書式は変更履歴に載っておらず、ここでは確認していない。",
+      "認証と再開まわりの修正が目立つ。認証の検証と OAuth の再試行が無限に続く問題が直り、Google ログインを選び直したときにキャッシュ済みの資格情報を消すようになった。セッションでは、Ctrl+C を素早く連打した際にセッションが壊れる問題、すばやく終了したときに再開したセッションの履歴が消える問題、再開時にツール応答のターンが重複する問題が修正された。",
+      "動作面の変更もある。無視パターンの絞り込みでサブツリーを枝刈りし、ディレクトリの走査を速くした。`@<ディレクトリ>` の参照では再帰的な読み込みを先走って行わなくなった。空ファイルの扱いでは、空白だけの UTF-16・UTF-32 ファイルを空として扱う。端末では、対話モードで Enter を押すと固まる問題、Ctrl+O で出力を展開すると端末がクリアされスクロールが戻る問題、端末幅を変えたときの再描画が直った。拡張機能は、1つが許可リストの検査に失敗しても残りを読み込む。全項目は公式の変更履歴にある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Gemini CLI 変更履歴（latest, v0.65.0）",
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/latest.md"
+      },
+      {
+        "title": "@google/gemini-cli（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@google/gemini-cli"
+      }
+    ]
   }
 };
 
