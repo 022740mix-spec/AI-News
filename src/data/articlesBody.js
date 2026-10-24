@@ -28290,7 +28290,10 @@ const ARTICLES_BODY = {
       "【追記 2026-10-21】公式の勧告による2件の内容は次のとおり。CVE-2026-109618（メモリ不足時の処理による RCE、GHSA-w8hw-w9fx-j79w）と、CVE-2026-109619（解放されたメモリに関わる内部状態が残ることによる RCE、GHSA-6wmf-4rv5-p3rp）。どちらも、認証なしで攻撃され得るとされる。影響を受けるのは、Web リクエストを処理するすべての PHP（PHP-FPM、Apache の mod_php、php-cgi、FrankenPHP、LiteSpeed など）。公式は、特に mod_php で危険度が高いとしている。",
       "【追記 2026-10-21】すぐに更新できない場合について、公式は設定の変更による一時的な対策を挙げている（メモリ上限の扱い、投稿サイズの上限、アップロード進捗の機能の無効化など）。ただし公式は、これらは攻撃の経路を減らすだけで、安全にはならないと明記している。更新こそが完全な対策である。設定の詳細は、公式の勧告を確認すること。",
       "【追記 2026-10-21】PHP 8.1 以前は、PHP 本体からの更新は提供されていない。Linux のディストリビューションや LTS のベンダーは、事前に修正を受け取っているとされるため、ベンダーの更新を確認する。公式は、ソースからビルドする人向けに、PHP 7.4、8.0、8.1 向けの最小限の修正パッチも提供している。",
-      "【追記 2026-10-21】公開前に出回っていた情報との関係: 公式の勧告で、CVE 番号（CVE-2026-109618、CVE-2026-109619）と CVSS v4.0 9.2 が確認された。また、GMO Flatt Security の技術ブログが挙げた CVE 番号と CVSS の記述も、公式の内容と一致した。一方、10月22日に公開されるとする投稿は、公式の日程（10月21日）と一致しなかった。野外での悪用の有無は、この勧告からは確認できない。"
+      "【追記 2026-10-21】公開前に出回っていた情報との関係: 公式の勧告で、CVE 番号（CVE-2026-109618、CVE-2026-109619）と CVSS v4.0 9.2 が確認された。また、GMO Flatt Security の技術ブログが挙げた CVE 番号と CVSS の記述も、公式の内容と一致した。一方、10月22日に公開されるとする投稿は、公式の日程（10月21日）と一致しなかった。野外での悪用の有無は、この勧告からは確認できない。",
+      "【追記 2026-10-23】PHP 公式は10月23日、別の情報（CVE-2026-115560）についての Informational advisory を公開した。session のアップロード進捗の機能に関わるもので、公式は、次の定期のバグ修正リリースまで、session.upload_progress.enabled=0 にすることを勧めている。10月21日の GHSA-6wmf-4rv5-p3rp の勧告で、この設定をすでに適用していれば、追加の対応は不要とされる。",
+      "【追記 2026-10-23】公式の説明によると、この問題は、設定とアプリケーションのコードの特殊な組み合わせでのみ起きる。session.serialize_handler を php_binary か php_serialize に設定し、session_start() の前に ini_set() で php に切り替えている場合で、かつアップロード進捗が有効な場合に限られる。公式は、この組み合わせは現実的には稀だとしている。告知は、影響を受ける版や修正版を示していない。完全な勧告は、次のリリースで公開するとしている。",
+      "【追記 2026-10-23】Cloudflare は10月21日の公式ブログで、既定の WAF の保護（無料プランと有料プランの両方）を、現地時間の 3:02 UTC から入れたと説明した。また、リリースの前に脆弱性が漏れていたこと、攻撃の試みを観測したことを書いている。ただし、攻撃の件数は示していない。これは同社の説明であり、独立した検証ではない。WAF は補助の層であり、PHP 本体の更新の代わりにはならないと、同社も明記している。"
     ],
     "primarySources": [
       {
@@ -28312,6 +28315,16 @@ const ARTICLES_BODY = {
         "title": "Security advisory: Critical remote code execution vulnerabilities, update now（PHP 8.5.12 / 8.4.27 / 8.3.36 / 8.2.35 リリース、2026-10-21）",
         "site": "php.net（PHP 公式）",
         "url": "https://www.php.net/archive/2026.php"
+      },
+      {
+        "title": "Informational advisory: Session upload progress（php.net、2026-10-23）",
+        "site": "php.net（PHP 公式）",
+        "url": "https://www.php.net/archive/2026.php#2026-10-23-1"
+      },
+      {
+        "title": "Cloudflare deploys protections against php2shell vulnerability（2026-10-21）",
+        "site": "Cloudflare 公式ブログ（当事者の対応の説明）",
+        "url": "https://blog.cloudflare.com/php-vulnerabilities-waf-protection/"
       }
     ]
   },
