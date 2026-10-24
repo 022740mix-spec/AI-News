@@ -28714,6 +28714,25 @@ const ARTICLES_BODY = {
         "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
       }
     ]
+  },
+  "claude-code-2-1-310-monitor-tool-bedrock-vertex-gateway-retry-2026": {
+    "body": [
+      "anthropics/claude-code の CHANGELOG.md は、最新版を 2.1.310 としている。npm レジストリでは `latest` と `next` が 2.1.310 を指し、公開時刻は 2026年10月23日 21:20 UTC だった（`stable` は 2.1.308 のまま）。直前の 2.1.306〜2.1.309 の次にあたる。以下は変更履歴の記載に基づく整理で、実際の挙動は検証していない。",
+      "最初の変更は Monitor ツールとプラグインの monitors の提供範囲である。変更履歴によると、Bedrock・Vertex・Foundry 経由の利用に加え、テレメトリや非必須通信を無効にしたセッションでも使えるようになった。これまで使えなかった条件が何だったかは、変更履歴の記載からは分からない。",
+      "ゲートウェイ経由の利用では、一部のゲートウェイが beta の値や会話の途中のシステムメッセージを拒否してリクエストが失敗する問題が直った。Claude Code はそれらを外して再試行する。社内プロキシや LLM ゲートウェイを挟んでいる環境が対象で、直接 API に接続している環境には関係しない。",
+      "そのほか、保持期間を非常に大きく設定したときにクリーンアップが最近のファイルまで削除する問題、「Prompt is too long」のあとの圧縮が密度の高いテキストを残しすぎる問題、読み取りの確認画面でシンボリックリンクの参照先が表示されない問題が修正された。保持期間の設定でファイルが消える問題は、該当する設定を使っている場合に確認する価値がある。",
+      "クラウドセッションでは、Enterprise のカスタムロール、セットアップスクリプト用のファイルピッカー、保存時とエラー時のメッセージの分かりやすい表示が加わった。全項目は公式の変更履歴にある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG.md（2.1.310）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@anthropic-ai/claude-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
+      }
+    ]
   }
 };
 

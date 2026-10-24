@@ -32,6 +32,14 @@
     <summary>Apache HTTP Server 2.4.69 が10月1日に公開された。修正は20件（中程度5件、低15件）。中程度のうち、mod_dav の共有ロックのバッファの溢れは子プロセスをクラッシュさせ得る。mod_http2 の解放後使用は、2.4.17 から 2.4.68 の版に影響する。サーバーの利用者は、2.4.69 への更新を勧められている。</summary>
   </entry>
   <entry>
+    <title>Claude Code 2.1.310、Monitor ツールが Bedrock・Vertex・Foundry でも使える、ゲートウェイが拒否する beta 値や途中のシステムメッセージを外して再試行</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-2-1-310-monitor-tool-bedrock-vertex-gateway-retry-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-2-1-310-monitor-tool-bedrock-vertex-gateway-retry-2026</id>
+    <published>2026-10-24T15:00:00Z</published>
+    <updated>2026-10-24T15:00:00Z</updated>
+    <summary>Claude Code 2.1.310 の変更点。Monitor ツールとプラグインの monitors が Bedrock・Vertex・Foundry と、テレメトリや非必須通信を無効にしたセッションでも使えるようになった。一部のゲートウェイで起きていたリクエスト失敗は、拒否される値を外して再試行する。公式の変更履歴に基づいて整理する。</summary>
+  </entry>
+  <entry>
     <title>Claude Code 2.1.306〜2.1.309、サンドボックスがシェルの起動ファイルを外で実行していた問題の修正、claude_code.safety_event、API バージョン 2026-10-21 への移行コマンド</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-2-1-306-to-309-sandbox-startup-files-safety-event-api-version-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-2-1-306-to-309-sandbox-startup-files-safety-event-api-version-2026</id>

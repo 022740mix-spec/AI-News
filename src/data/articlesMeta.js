@@ -12349,5 +12349,22 @@ export const ARTICLES_META = [
       "セキュリティ",
       "Web サーバー"
     ]
+  },
+  {
+    "id": "claude-code-2-1-310-monitor-tool-bedrock-vertex-gateway-retry-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.310、Monitor ツールが Bedrock・Vertex・Foundry でも使える、ゲートウェイが拒否する beta 値や途中のシステムメッセージを外して再試行",
+    "excerpt": "Claude Code 2.1.310 の変更点。Monitor ツールとプラグインの monitors が Bedrock・Vertex・Foundry と、テレメトリや非必須通信を無効にしたセッションでも使えるようになった。一部のゲートウェイで起きていたリクエスト失敗は、拒否される値を外して再試行する。公式の変更履歴に基づいて整理する。",
+    "date": "2026-10-24",
+    "newsDate": "2026-10-23",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "リリースノート"
+    ]
   }
 ];
