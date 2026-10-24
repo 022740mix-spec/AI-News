@@ -28685,6 +28685,22 @@ const ARTICLES_BODY = {
         "url": "https://www.ruby-lang.org/en/news/2026/10/23/regexp-fixes-for-gitlab-cves/"
       }
     ]
+  },
+  "apache-httpd-2-4-69-release-2026-10-01": {
+    "body": [
+      "Apache HTTP Server は2026年10月1日、バージョン 2.4.69 を公開した。公式のセキュリティ情報のページには、この版で修正された脆弱性が20件（中程度5件、低15件）と書かれている。",
+      "**中程度の脆弱性の例（公式の記述）。** CVE-2026-42528 は、mod_dav の共有ロックに関わる計算のバグで、WebDAV のロックを作る権限を持つ攻撃者が、サーバーの子プロセスをクラッシュさせ得る。この問題は、2.4.67 以前に影響する。CVE-2026-57941 は、mod_http2 の解放後使用（use-after-free）で、2.4.17 から 2.4.68 の版に影響する。",
+      "**対応。** 公式は、2.4.69 への更新を勧めている。上記の版を使っている場合は、影響を受けるモジュール（mod_dav、mod_http2）を使っているかを確認する。",
+      "**確認できていないこと。** 公式の告知からは、悪用の有無は確認できない。残りの18件の内容は、公式の一覧で確認する。",
+      "**このサイトへの影響。** AI News は Apache HTTP Server を使っていない。GitHub Pages で配信している。"
+    ],
+    "primarySources": [
+      {
+        "title": "Apache HTTP Server 2.4 Vulnerabilities（2.4.69、2026-10-01）",
+        "site": "Apache HTTP Server 公式（httpd.apache.org）",
+        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+      }
+    ]
   }
 };
 

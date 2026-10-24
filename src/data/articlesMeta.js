@@ -12333,5 +12333,21 @@ export const ARTICLES_META = [
       "セキュリティ",
       "正規表現"
     ]
+  },
+  {
+    "id": "apache-httpd-2-4-69-release-2026-10-01",
+    "type": "news",
+    "category": "product",
+    "title": "Apache HTTP Server 2.4.69 を公開 — 20件の脆弱性を修正、中程度の2件を含む（10/1）",
+    "excerpt": "Apache HTTP Server 2.4.69 が10月1日に公開された。修正は20件（中程度5件、低15件）。中程度のうち、mod_dav の共有ロックのバッファの溢れは子プロセスをクラッシュさせ得る。mod_http2 の解放後使用は、2.4.17 から 2.4.68 の版に影響する。サーバーの利用者は、2.4.69 への更新を勧められている。",
+    "date": "2026-10-24",
+    "newsDate": "2026-10-01",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Apache",
+      "セキュリティ",
+      "Web サーバー"
+    ]
   }
 ];
