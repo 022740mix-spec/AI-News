@@ -12366,5 +12366,22 @@ export const ARTICLES_META = [
       "Anthropic",
       "リリースノート"
     ]
+  },
+  {
+    "id": "gemini-cli-0-65-otlp-headers-untrusted-folders-session-fixes-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Gemini CLI 0.65.0 の変更点、OTLP ヘッダーを設定可能に、信頼していないフォルダはワークスペース設定を読み取り専用に、Ctrl+C 連打によるセッション破損の修正",
+    "excerpt": "Google の Gemini CLI 0.65.0 が2026年10月20日に公開された。テレメトリの OTLP ヘッダーを設定でき、信頼していないフォルダではワークスペース設定が読み取り専用に制限される。Ctrl+C の連打でセッションが壊れる問題や、再開時にツール応答が重複する問題も直った。公式の変更履歴に基づいて整理する。",
+    "date": "2026-10-24",
+    "newsDate": "2026-10-20",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Gemini CLI",
+      "CLI",
+      "Google",
+      "開発ツール"
+    ]
   }
 ];

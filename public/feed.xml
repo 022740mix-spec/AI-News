@@ -40,6 +40,14 @@
     <summary>Claude Code 2.1.310 の変更点。Monitor ツールとプラグインの monitors が Bedrock・Vertex・Foundry と、テレメトリや非必須通信を無効にしたセッションでも使えるようになった。一部のゲートウェイで起きていたリクエスト失敗は、拒否される値を外して再試行する。公式の変更履歴に基づいて整理する。</summary>
   </entry>
   <entry>
+    <title>Gemini CLI 0.65.0 の変更点、OTLP ヘッダーを設定可能に、信頼していないフォルダはワークスペース設定を読み取り専用に、Ctrl+C 連打によるセッション破損の修正</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-cli-0-65-otlp-headers-untrusted-folders-session-fixes-2026"/>
+    <id>tag:ai-tool-news.jp,2026:gemini-cli-0-65-otlp-headers-untrusted-folders-session-fixes-2026</id>
+    <published>2026-10-24T15:00:00Z</published>
+    <updated>2026-10-24T15:00:00Z</updated>
+    <summary>Google の Gemini CLI 0.65.0 が2026年10月20日に公開された。テレメトリの OTLP ヘッダーを設定でき、信頼していないフォルダではワークスペース設定が読み取り専用に制限される。Ctrl+C の連打でセッションが壊れる問題や、再開時にツール応答が重複する問題も直った。公式の変更履歴に基づいて整理する。</summary>
+  </entry>
+  <entry>
     <title>Claude Code 2.1.306〜2.1.309、サンドボックスがシェルの起動ファイルを外で実行していた問題の修正、claude_code.safety_event、API バージョン 2026-10-21 への移行コマンド</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-2-1-306-to-309-sandbox-startup-files-safety-event-api-version-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-2-1-306-to-309-sandbox-startup-files-safety-event-api-version-2026</id>

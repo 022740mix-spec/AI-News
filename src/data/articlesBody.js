@@ -28733,6 +28733,25 @@ const ARTICLES_BODY = {
         "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
       }
     ]
+  },
+  "gemini-cli-0-65-otlp-headers-untrusted-folders-session-fixes-2026": {
+    "body": [
+      "google-gemini/gemini-cli の docs/changelogs/latest.md は、最新の安定版を v0.65.0（2026年10月20日公開）としている。npm レジストリでは `latest` タグが 0.65.0 を指し、公開時刻は同日 UTC 21:26 だった。直前に扱った 0.64.0 の次の安定版にあたる。以下は公式の変更履歴の記載に基づく整理で、実際の挙動は検証していない。",
+      "テレメトリでは、OTLP ヘッダーを設定で指定できるようになった。変更履歴は、OpenTelemetry のコレクターへの認証やヘッダーの調整に使えるとしている。",
+      "セキュリティと認証では、信頼していないフォルダでワークスペース設定が読み取り専用に制限される。OAuth のコールバック検証は RFC 9207 に沿う形になり、認証のやり直しが無限に続く問題も直った。",
+      "セッションまわりでは、Ctrl+C を素早く連打したときにセッションが壊れる問題、すぐ終了したときに再開した履歴が失われる問題、再開時にツール応答のターンが重複する問題が修正された。長時間のセッションを中断・再開しながら使う場合に関わる。",
+      "ファイルまわりでは、無視パターンによるフィルタリングがディレクトリごと読み飛ばすようになり、走査が速くなった。`@<ディレクトリ>` の参照は再帰的な読み込みを先送りする。端末表示では、Enter で固まる問題と、Ctrl+O の展開時に画面が不要にクリアされる問題が直った。約27件のプルリクエストが含まれ、全項目は公式の変更履歴にある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Gemini CLI 変更履歴（latest, v0.65.0）",
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/latest.md"
+      },
+      {
+        "title": "@google/gemini-cli（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@google/gemini-cli"
+      }
+    ]
   }
 };
 
