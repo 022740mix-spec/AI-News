@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-10-24",
-  "count": 585,
+  "count": 587,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -123,6 +123,7 @@
     "anthropic-threat-report-kimi-deepseek-routing-2026",
     "anthropic-threat-report-weapons-research-2026",
     "anthropic-workload-identity-federation-ga-service-accounts-2026",
+    "apache-httpd-2-4-69-release-2026-10-01",
     "apple-ai-chief-giannandrea-departure-2026",
     "apple-google-siri-gemini-2026",
     "apple-siri-ai-ios-27-launch-2026",
@@ -306,6 +307,7 @@
     "github-copilot-hydrafusion-multi-model-2026",
     "github-copilot-training-data-policy-change-2026",
     "github-outage-august-17-2026-7h36m",
+    "gitlab-critical-patch-release-2026-10-21",
     "gitreverse-repo-to-prompt-openclaw-2026",
     "gitspawn-ai-coding-agent-git-config-rce-2026",
     "glassworm-invisible-unicode-malware-github-supply-chain-2026",

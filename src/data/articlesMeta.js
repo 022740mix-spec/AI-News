@@ -12317,5 +12317,37 @@ export const ARTICLES_META = [
       "エージェント",
       "Opus 5.5"
     ]
+  },
+  {
+    "id": "gitlab-critical-patch-release-2026-10-21",
+    "type": "news",
+    "category": "product",
+    "title": "GitLab が10/21 に緊急パッチ — 認証なしでコード実行につながる CVSS 10.0 の脆弱性（CVE-2026-110264）を含む12件",
+    "excerpt": "GitLab は10月21日、19.5.1・19.4.3・19.3.6・19.2.9・19.1.9・19.0.10・18.11.13 の緊急パッチを公開した。12件の脆弱性を含み、そのうち CVE-2026-110264 は重大度 Critical（CVSS v3.1 で 10.0）。正規表現のコンパイル時の整数オーバーフローにより、認証のないユーザーが GitLab サーバー上で任意のコードを実行し得る。GitLab.com と GitLab Dedicated は修正済みだという。",
+    "date": "2026-10-24",
+    "newsDate": "2026-10-21",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "GitLab",
+      "セキュリティ",
+      "正規表現"
+    ]
+  },
+  {
+    "id": "apache-httpd-2-4-69-release-2026-10-01",
+    "type": "news",
+    "category": "product",
+    "title": "Apache HTTP Server 2.4.69 を公開 — 20件の脆弱性を修正、中程度の2件を含む（10/1）",
+    "excerpt": "Apache HTTP Server 2.4.69 が10月1日に公開された。修正は20件（中程度5件、低15件）。中程度のうち、mod_dav の共有ロックのバッファの溢れは子プロセスをクラッシュさせ得る。mod_http2 の解放後使用は、2.4.17 から 2.4.68 の版に影響する。サーバーの利用者は、2.4.69 への更新を勧められている。",
+    "date": "2026-10-24",
+    "newsDate": "2026-10-01",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Apache",
+      "セキュリティ",
+      "Web サーバー"
+    ]
   }
 ];

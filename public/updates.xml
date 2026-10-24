@@ -24,6 +24,14 @@
     <summary>出典の補足。以前に出典から外した PC Watch の報道（2026年9月28日）を、同じ主張の報道として再び追加した</summary>
   </entry>
   <entry>
+    <title>【追記】PHP が10/21（水）14:00 UTC に重大な脆弱性2件の修正版を公開予告 — CVSS v4.0 9.2、公開前に棚卸しと更新の準備を</title>
+    <link rel="alternate" type="text/html" href="?a=php-critical-security-release-2026-10-21#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:php-critical-security-release-2026-10-21:2026-10-23</id>
+    <updated>2026-10-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>PHP 公式は10月23日、別の情報（CVE-2026-115560）についての Informational advisory を公開した（同日に 追記・追記 もあり）</summary>
+  </entry>
+  <entry>
     <title>【追記】Oracle Java に緊急セキュリティアラート（CVE-2026-91403）— 侵害された中間 CA 証明書8件、独立の Java ランタイムは早急な更新を</title>
     <link rel="alternate" type="text/html" href="?a=java-cve-2026-91403-compromised-ca-certificates-2026-10-21#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:java-cve-2026-91403-compromised-ca-certificates-2026-10-21:2026-10-22</id>
@@ -1198,13 +1206,5 @@
     <updated>2026-08-11T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
     <summary>★4→3 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（3.1）と乖離していました</summary>
-  </entry>
-  <entry>
-    <title>【訂正】3Dインタラクティブ周期表アプリ「Zperiod」— 3D原子モデル・化学式バランサー・溶解度表をブラウザで無料提供</title>
-    <link rel="alternate" type="text/html" href="?a=zperiod-3d-periodic-table-high-school-student-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:zperiod-3d-periodic-table-high-school-student-2026:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>本記事は公開当初、開発者を実名および X アカウント名で特定し、年齢（16歳・高校生）をタイトルと本文に記載していました</summary>
   </entry>
 </feed>

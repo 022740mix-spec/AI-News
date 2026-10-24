@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-10-24T15:00:00Z</updated>
+  <updated>2026-10-25T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>Anthropic の Claude Duet — 朝のブリーフを届け、送信や支払いの前に承認を求める「向こうから来る」エージェント。米国の Pro・Max 向けウェイトリスト</title>
@@ -14,6 +14,22 @@
     <published>2026-10-24T15:00:00Z</published>
     <updated>2026-10-24T15:00:00Z</updated>
     <summary>Anthropic の製品ページに、Claude Duet が研究プレビューとして載っている。Opus 5.5 を使い、クラウド上の専用コンピュータで動いてメッセージで報告する。送信や支払いなどは事前に承認を求める。対象は米国の Pro・Max でウェイトリスト、Team・Enterprise は対象外。</summary>
+  </entry>
+  <entry>
+    <title>GitLab が10/21 に緊急パッチ — 認証なしでコード実行につながる CVSS 10.0 の脆弱性（CVE-2026-110264）を含む12件</title>
+    <link rel="alternate" type="text/html" href="?a=gitlab-critical-patch-release-2026-10-21"/>
+    <id>tag:ai-tool-news.jp,2026:gitlab-critical-patch-release-2026-10-21</id>
+    <published>2026-10-24T15:00:00Z</published>
+    <updated>2026-10-24T15:00:00Z</updated>
+    <summary>GitLab は10月21日、19.5.1・19.4.3・19.3.6・19.2.9・19.1.9・19.0.10・18.11.13 の緊急パッチを公開した。12件の脆弱性を含み、そのうち CVE-2026-110264 は重大度 Critical（CVSS v3.1 で 10.0）。正規表現のコンパイル時の整数オーバーフローにより、認証のないユーザーが GitLab サーバー上で任意のコードを実行し得る。GitLab.com と GitLab Dedicated は修正済みだという。</summary>
+  </entry>
+  <entry>
+    <title>Apache HTTP Server 2.4.69 を公開 — 20件の脆弱性を修正、中程度の2件を含む（10/1）</title>
+    <link rel="alternate" type="text/html" href="?a=apache-httpd-2-4-69-release-2026-10-01"/>
+    <id>tag:ai-tool-news.jp,2026:apache-httpd-2-4-69-release-2026-10-01</id>
+    <published>2026-10-24T15:00:00Z</published>
+    <updated>2026-10-24T15:00:00Z</updated>
+    <summary>Apache HTTP Server 2.4.69 が10月1日に公開された。修正は20件（中程度5件、低15件）。中程度のうち、mod_dav の共有ロックのバッファの溢れは子プロセスをクラッシュさせ得る。mod_http2 の解放後使用は、2.4.17 から 2.4.68 の版に影響する。サーバーの利用者は、2.4.69 への更新を勧められている。</summary>
   </entry>
   <entry>
     <title>Claude Code 2.1.306〜2.1.309、サンドボックスがシェルの起動ファイルを外で実行していた問題の修正、claude_code.safety_event、API バージョン 2026-10-21 への移行コマンド</title>
