@@ -12300,5 +12300,22 @@ export const ARTICLES_META = [
       "AI エージェント",
       "CLI"
     ]
+  },
+  {
+    "id": "anthropic-claude-duet-research-preview-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic の Claude Duet — 朝のブリーフを届け、送信や支払いの前に承認を求める「向こうから来る」エージェント。米国の Pro・Max 向けウェイトリスト",
+    "excerpt": "Anthropic の製品ページに、Claude Duet が研究プレビューとして載っている。Opus 5.5 を使い、クラウド上の専用コンピュータで動いてメッセージで報告する。送信や支払いなどは事前に承認を求める。対象は米国の Pro・Max でウェイトリスト、Team・Enterprise は対象外。",
+    "date": "2026-10-24",
+    "newsDate": "2026-10-24",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "エージェント",
+      "Opus 5.5"
+    ]
   }
 ];

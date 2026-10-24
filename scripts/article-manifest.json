@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-10-23",
-  "count": 584,
+  "generatedAt": "2026-10-24",
+  "count": 585,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -52,6 +52,7 @@
     "anthropic-claude-cowork-record-a-skill-2026",
     "anthropic-claude-design-labs-figma-challenge-2026",
     "anthropic-claude-discovers-art-crispr-like-enzyme-2026",
+    "anthropic-claude-duet-research-preview-2026",
     "anthropic-claude-ebola-response-drc-2026",
     "anthropic-claude-fable-5-1-mythos-5-1-cache-read-cut-2026",
     "anthropic-claude-fable-5-billing-transition-extended-july-12-2026",
