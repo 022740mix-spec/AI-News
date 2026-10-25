@@ -8,6 +8,14 @@
   <updated>2026-10-25T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Codex CLI 0.164.0 の変更点、プロンプトを10枠に保存するプリセット、/model と /permissions の引数指定、企業向け MCP 認証</title>
+    <link rel="alternate" type="text/html" href="?a=codex-cli-0-164-presets-inline-args-enterprise-mcp-2026"/>
+    <id>tag:ai-tool-news.jp,2026:codex-cli-0-164-presets-inline-args-enterprise-mcp-2026</id>
+    <published>2026-10-25T15:00:00Z</published>
+    <updated>2026-10-25T15:00:00Z</updated>
+    <summary>OpenAI は Codex CLI 0.164.0 を10月23日（UTC）に公開した。プロンプトやスラッシュコマンドを10枠に保存するプリセット、/model・/permissions への引数指定、企業向け MCP 認証が入り、圧縮失敗時に不完全な要約が履歴に残る問題などが直った。</summary>
+  </entry>
+  <entry>
     <title>Anthropic の Claude Duet — 朝のブリーフを届け、送信や支払いの前に承認を求める「向こうから来る」エージェント。米国の Pro・Max 向けウェイトリスト</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-duet-research-preview-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-duet-research-preview-2026</id>

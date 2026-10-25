@@ -12383,5 +12383,22 @@ export const ARTICLES_META = [
       "Google",
       "開発ツール"
     ]
+  },
+  {
+    "id": "codex-cli-0-164-presets-inline-args-enterprise-mcp-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.164.0 の変更点、プロンプトを10枠に保存するプリセット、/model と /permissions の引数指定、企業向け MCP 認証",
+    "excerpt": "OpenAI は Codex CLI 0.164.0 を10月23日（UTC）に公開した。プロンプトやスラッシュコマンドを10枠に保存するプリセット、/model・/permissions への引数指定、企業向け MCP 認証が入り、圧縮失敗時に不完全な要約が履歴に残る問題などが直った。",
+    "date": "2026-10-25",
+    "newsDate": "2026-10-23",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "開発ツール"
+    ]
   }
 ];
