@@ -12400,5 +12400,27 @@ export const ARTICLES_META = [
       "OpenAI",
       "開発ツール"
     ]
+  },
+  {
+    "id": "weekly-metrics-2026-week-oct19",
+    "type": "feature",
+    "category": "special",
+    "title": "週次の計器 — 10月19日〜25日は20本、前週の13本から増。11本が AI 以外のソフトウェアのセキュリティ情報で、発掘と分析は3週続けて0本だった",
+    "excerpt": "2026年10月19日〜25日の週次データ。公開は20本（前週13本）で、すべて news。題材で数えると、11本が PHP・Node.js・GitLab など AI 以外のソフトウェアの脆弱性・事故の記事で、Anthropic 関連は6本、他社の CLI は3本。3軸のうち発掘と分析は3週続けて0本で、ガイドに説明が見当たらない概念の一覧は変わらなかった。",
+    "date": "2026-10-26",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "週刊まとめ",
+      "セキュリティ",
+      "Anthropic",
+      "CLI",
+      "AI安全性"
+    ],
+    "heroScope": "week",
+    "weekRoundupPeriod": {
+      "start": "2026-10-19",
+      "end": "2026-10-25"
+    }
   }
 ];

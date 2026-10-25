@@ -28775,6 +28775,103 @@ const ARTICLES_BODY = {
         "url": "https://github.com/openai/codex/releases"
       }
     ]
+  },
+  "weekly-metrics-2026-week-oct19": {
+    "body": [
+      "この記事はニュースのまとめではなく、サイト自身の公開データから計算した「計器」である。1週間を見渡して初めて出る数字を、解釈を添えて示す。数字は `node scripts/weekly-metrics.mjs` の出力（集計日2026年10月26日）と、サイトの記事データの集計に基づく。外部サイトの情報は使っていない。前週分の計器記事そのものは、集計の対象から除いている。",
+      "## 公開本数 — 20本、前週の13本から増",
+      "10月19日〜25日の公開は**20本**（前週13本）。種別は news 20 のみで、feature（特集・分析）とレビューは0本だった。分野は product 13 / cli 7。出来事から掲載までの中央値は1日である（前週は2日）。日別では10月22日が7本と突出し、23日が4本、24日が5本、20日が2本、21日と25日が各1本だった。19日は0本である。",
+      "出来事の日と掲載日が3日以上ずれた記事は6本あった。最大は[Qwen Code v0.25.0](?a=qwen-code-0-25-0-late-agent-results-2026-10-05)（出来事は10月5日、掲載は23日）と[Apache HTTP Server 2.4.69](?a=apache-httpd-2-4-69-release-2026-10-01)（出来事は10月1日、掲載は24日）で、いずれも18日以上あとに拾っている。本数が前週より増えた一部は、過去の公開をあとから記事にした分である。",
+      "## 題材の内訳 — 11本が AI 以外のソフトウェアのセキュリティ情報",
+      "題材で数えると、20本の内訳は次のとおりである。Anthropic 関連が6本（Claude Code の版が[2.1.303〜2.1.304](?a=claude-code-2-1-303-304-auto-mode-setup-resume-warning-worktree-2026)・[2.1.305](?a=claude-code-2-1-305-nested-user-namespaces-tool-search-retry-allowedmcpservers-2026)・[2.1.306〜2.1.309](?a=claude-code-2-1-306-to-309-sandbox-startup-files-safety-event-api-version-2026)・[2.1.310](?a=claude-code-2-1-310-monitor-tool-bedrock-vertex-gateway-retry-2026)の4本、[Claude API の新バージョン 2026-10-21](?a=anthropic-api-version-2026-10-21-breaking-changes-2026)と[Claude Duet](?a=anthropic-claude-duet-research-preview-2026)が各1本）。他社の CLI が3本（[Gemini CLI 0.65.0](?a=gemini-cli-0-65-otlp-headers-untrusted-folders-session-fixes-2026)、[Codex CLI 0.164.0](?a=codex-cli-0-164-presets-inline-args-enterprise-mcp-2026)、Qwen Code）。残る**11本が、AI を主題にしないソフトウェアの脆弱性や事故の記事**だった。",
+      "その11本は、[PHP](?a=php-critical-security-release-2026-10-21)、[Java](?a=java-cve-2026-91403-compromised-ca-certificates-2026-10-21)、[Next.js](?a=nextjs-security-update-2026-10-14)、[Node.js](?a=nodejs-security-release-2026-10-21)、[eMudhra の中間 CA](?a=emudhra-intermediate-ca-weak-keys-revoked-2026-10-18)、[Railway](?a=railway-environment-variables-incident-2026-10-21)、[LiteLLM](?a=litellm-1-107-0-quarantined-pypi-2026-10-21)、[Ruby](?a=ruby-4-0-9-3-4-12-3-3-13-regexp-fixes-2026-10-23)、[RubyGems](?a=rubygems-org-advisories-2026-10-07-10-21)、[GitLab](?a=gitlab-critical-patch-release-2026-10-21)、Apache である。このうち LiteLLM は AI 関連のパッケージだが、記事の主題は PyPI での隔離である。PHP・Node.js・Java・GitLab の公開が10月21日前後に重なったことも、件数に出ている。",
+      "このサイトの3軸（速報・発掘・分析）は、いずれも AI の話題を前提にしている。この11本はどの軸にも収まりにくく、**軸の外にある記事が週の過半を占めた**ことになる。開発者が使う基盤の更新は、AI ツールを動かす環境に直結するという見方はできる。一方で、読者がこの量を期待しているかは、このデータからは判定できない。解釈を決めるのは、サイトの方針を見直す場である。",
+      "## 3軸のバランス — 発掘と分析は3週続けて0本",
+      "20本はすべて news で、feature の最後の記事は[10月2日](?a=anthropic-pentagon-dc-circuit-appeal-2026)だった（この週の集計日から24日前）。型で見ると、**発掘（新興・OSS・個人開発）と分析（社会的インパクト・規制・倫理）は3週続けて0本**である。Qwen Code は中国発の OSS だが、記事は終了済みの実行に遅れて届く結果の扱いを直す変更の紹介で、新興プロジェクトの発掘とは性質が違うため、発掘には数えていない。",
+      "## 「AI安全性」の記事は0件、「セキュリティ」は10件",
+      "タグの動きを見ると、「セキュリティ」は10件（前週2件、前々週3件）と急に増えた。**ただし増えた分は、上の11本の脆弱性・事故の記事である。** 「AI安全性」は、前週の計器記事自身に付いた1件を除くと0件（その前の週も0件）、「エッジAI」「個人開発」「透明性」「ローカルLLM」「半導体」も0件だった。セキュリティのタグが増えても、AI に固有のリスクや規制を扱う記事が増えたわけではない。",
+      "## ガイドの空白は変わらない",
+      "週次の計器が出す「記事で頻出するのに、ガイドに説明が無い概念」は、今週も同じ顔ぶれだった。直近90日の記事数は、「AI安全性」32件、「中国AI」16件、「エッジAI」11件、「個人開発」10件、「透明性」7件、「半導体」5件、「ローカルLLM」4件である（「Alibaba」7件と「リリースノート」5件は、固有名詞と記事の型のため補強の対象としては数えていない）。「中国AI」が前週の18件から16件に減ったのは、90日の窓から古い記事が外れたためで、新しい記事が減ったわけではない。ガイドの書き込みは Routine には禁じられており、対話セッションでの判断を待っている。",
+      "## ツール別ページとの比",
+      "直近90日の記事数とツール別ページの解説項目数の比は、Claude Code 0.35（33件 / 93項目）、Codex 0.32（15件 / 47項目）、VS Code + Copilot 0.17（6件 / 35項目）、Cursor 0.14（6件 / 44項目）、Gemini CLI 0.07（3件 / 43項目）、Power Apps 0（0件 / 20項目）だった。比が大きいほど、話題の割に解説が薄い。**Cursor の記事は[9月20日](?a=cursor-projects-coordinator-agent-2026)を最後に出ておらず**、Cursor と VS Code + Copilot は今週も0本だった。",
+      "## 確認できなかったこと",
+      "今週の調査では、OpenAI・Google・DeepSeek などの新モデルについて、一次資料に届く情報を見つけられなかった。検索で出てきたのは予測市場や集約サイトの記述で、数値や公開日が互いに食い違っていたため、記事にしていない。**これは「出来事が無かった」という意味ではなく、確かめられる材料が手元に無かったという意味である。** 取りこぼしかどうかは、公式ドキュメントや GitHub のリリースに届いた時点で決まる。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 5,
+        "caption": "この週の公開の内訳（10月19日〜25日）",
+        "headers": [
+          "区分",
+          "本数",
+          "例"
+        ],
+        "rows": [
+          [
+            "Anthropic 関連",
+            "6本",
+            "Claude Code 2.1.303〜2.1.310、Claude API 2026-10-21、Claude Duet"
+          ],
+          [
+            "他社の AI CLI",
+            "3本",
+            "Gemini CLI 0.65.0、Codex CLI 0.164.0、Qwen Code v0.25.0"
+          ],
+          [
+            "AI 以外のソフトウェアのセキュリティ",
+            "11本",
+            "PHP、Node.js、Java、Next.js、GitLab、Railway など"
+          ],
+          [
+            "発掘・分析",
+            "0本",
+            "—"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 13,
+        "caption": "記事で頻出するのにガイドに説明が無い概念（直近90日、週次の計器の出力）",
+        "headers": [
+          "概念",
+          "記事の件数",
+          "この週に付いた記事"
+        ],
+        "rows": [
+          [
+            "AI安全性",
+            "32件",
+            "0件（前週の計器記事を除く）"
+          ],
+          [
+            "中国AI",
+            "16件",
+            "0件（同上）"
+          ],
+          [
+            "エッジAI",
+            "11件",
+            "0件"
+          ],
+          [
+            "個人開発",
+            "10件",
+            "0件"
+          ],
+          [
+            "透明性",
+            "7件",
+            "0件"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "AI News リポジトリ（週次の計器の算出元データ）",
+        "url": "https://github.com/022740mix-spec/AI-News"
+      }
+    ]
   }
 };
 
