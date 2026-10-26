@@ -12440,5 +12440,22 @@ export const ARTICLES_META = [
       "MCP",
       "開発ツール"
     ]
+  },
+  {
+    "id": "claude-code-2-1-311-ultrathink-xhigh-model-catalog-signed-file-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.311、ultrathink が xhigh の effort で動く、Bedrock・Vertex・Foundry は署名付きのモデル設定ファイルを取得、DISABLE_COMPACT は無効化のみ",
+    "excerpt": "Claude Code 2.1.311 の変更点。ultrathink が対応モデルで xhigh の effort の1ターンを走らせるようになり、Bedrock・Mantle・Vertex・Foundry では downloads.claude.ai の署名付きファイルからモデル設定を読み込む（環境変数で無効化できる）。DISABLE_COMPACT は圧縮を切る方向にしか効かなくなった。公式の変更履歴に基づいて整理する。",
+    "date": "2026-10-26",
+    "newsDate": "2026-10-26",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "リリースノート"
+    ]
   }
 ];

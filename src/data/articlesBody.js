@@ -28894,6 +28894,30 @@ const ARTICLES_BODY = {
         "url": "https://www.npmjs.com/package/@github/copilot"
       }
     ]
+  },
+  "claude-code-2-1-311-ultrathink-xhigh-model-catalog-signed-file-2026": {
+    "body": [
+      "anthropics/claude-code の CHANGELOG.md は、最新版を 2.1.311 としている。npm レジストリでは `latest` と `next` が 2.1.311 を指し、公開時刻は 2026年10月26日 19:47 UTC だった（`stable` は 2.1.308 のまま）。直前の 2.1.310 は 10月23日の公開である。以下は変更履歴の記載に基づく整理で、実際の挙動は検証していない。",
+      "挙動が変わる項目から見る。`ultrathink` は、対話型ターミナルで Opus 5.5・Sonnet 5.5・Haiku 5.5・Fable 5.1 に対し、Anthropic の API 経由なら xhigh の effort でそのターンを走らせるようになった。Claude が作業中に入力した場合は、そのターンの残りの effort が上がる。虹色の表示は、キーワードが effort を上げうる場所だけに出る。語を引用符で囲んだ場合やファイルパスの一部の場合には出ない。",
+      "Bedrock・Mantle・Vertex・Foundry で Claude Code を使う場合、モデル設定を downloads.claude.ai の署名付きファイルから読み込む仕様に変わった。無効にするには `CLAUDE_CODE_MODEL_CATALOG=off` を設定する。通信先が増えるため、外向きの通信を許可リストで管理している環境では、この宛先の扱いを確認する価値がある。変更履歴には、署名の検証方法や取得の頻度までは書かれていない。",
+      "`DISABLE_COMPACT` は、設定ファイルと mod の `$.env.set` のどちらでも、圧縮を無効にする方向にだけ効くようになった。設定で圧縮を戻すことはできない。同じ設定に関連して、エージェントのチームメイトが `DISABLE_COMPACT` を設定していても履歴を圧縮してしまう問題と、巻き戻しのメニューが要約の項目を出してしまう問題が直った。",
+      "出力まわりでは、`--output-format json` と `stream-json` が、文字列の中の DEL・C1 制御文字・Unicode の書式文字を `\\uXXXX` のエスケープで書くようになった。変更履歴は、パースした値は変わらないとしている。出力を文字列として直接比較したり、行単位で加工したりしているスクリプトは、差分が出る可能性がある。",
+      "不具合の修正では、標準コンテキストのセッションで、リクエストが 200K トークンを超えたときに「Usage credits required for 1M context」で止まる問題が直り、Claude Code は会話を圧縮して続行するようになった。API が再試行しないよう示したリクエストを再試行して、ターンが数分、無人の再試行モード（`CLAUDE_CODE_RETRY_WATCHDOG`）では無期限に止まりうる問題も直った。サブエージェントについては、接続の完了が遅い MCP サーバーのツールを使えない問題、`SubagentStop` フックが終了時に1回ではなく1分に約2回走る問題、隔離された worktree がバックグラウンドのサブエージェントの作業中に削除される問題が修正された。",
+      "ファイル操作と記憶まわりでは、数千行を変更する Write と Edit が最大5秒止まり「0行変更」と報告する問題、CLAUDE.md に非常に長いリスト項目があると起動後やファイルの読み書きの後に長く固まる問題、自動圧縮の直後に古い MEMORY.md と CLAUDE.md の内容が見える問題が修正された。`claude -p` と SDK のセッションが、取り消したメッセージを残したり順序を入れ替えて保存したりする問題も直った。",
+      "Linux のサンドボックスでは、`--plugin-dir` のフォルダが追加ディレクトリでもあり、`permissions.blockReadsOutsideWorkingDirectories` が有効なとき、サンドボックス内の Bash コマンドが `bwrap: Can't create file` で失敗する問題が直った。",
+      "追加された機能は小さい。`self-hosted-runner` に、ホストが残したプロセスを報告している間はセッションを保持する `--hold-idle-file` と `--max-hold-min` が加わった。VS Code の拡張では、Claude の返信のコードブロックに構文の色が付き、遅い `UserPromptSubmit` フックにスピナー表示が出る。シェルコマンドがタイムアウトに達したときは、ここまでの出力を表示し、コマンドはバックグラウンドで動き続けていると伝える。圧縮の返信に要約が含まれていなければ、会話を置き換える前にもう一度要約を求める。",
+      "そのほか、`/rewind` の確認文、`/mcp` の認証状態の表示、`/ide` のインストール完了の表示、Pro・Max 契約者向けのエラー文言など、表示の誤りが多数直っている。全項目は公式の変更履歴にある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG.md（2.1.311）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@anthropic-ai/claude-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
+      }
+    ]
   }
 };
 

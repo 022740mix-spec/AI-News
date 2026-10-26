@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-10-26",
-  "count": 592,
+  "count": 593,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -164,6 +164,7 @@
     "claude-code-2-1-305-nested-user-namespaces-tool-search-retry-allowedmcpservers-2026",
     "claude-code-2-1-306-to-309-sandbox-startup-files-safety-event-api-version-2026",
     "claude-code-2-1-310-monitor-tool-bedrock-vertex-gateway-retry-2026",
+    "claude-code-2-1-311-ultrathink-xhigh-model-catalog-signed-file-2026",
     "claude-code-agents-md-support-2026",
     "claude-code-auto-memory-disable-2026",
     "claude-code-auto-mode",
