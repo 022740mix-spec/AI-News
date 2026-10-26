@@ -12422,5 +12422,23 @@ export const ARTICLES_META = [
       "start": "2026-10-19",
       "end": "2026-10-25"
     }
+  },
+  {
+    "id": "github-copilot-cli-1-0-100-to-1-0-103-sandbox-local-network-proxy-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "GitHub Copilot CLI 1.0.100〜1.0.103、サンドボックスがローカルネットワークを既定で許可、プロキシ設定の引き継ぎ、--disable-client-telemetry と --trust-folder が追加",
+    "excerpt": "GitHub Copilot CLI は10月19日の 1.0.100 から10月22日の 1.0.103 までに4版が出た（changelog に 1.0.99 の項目は無い）。1.0.100 でサンドボックスは localhost や私設ネットワークへの接続を既定で許し、HTTPS_PROXY などのプロキシ設定も引き継ぐ。クライアントのテレメトリを切る --disable-client-telemetry と、-p の単発実行で使う --trust-folder も入った。",
+    "date": "2026-10-26",
+    "newsDate": "2026-10-22",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "GitHub Copilot",
+      "CLI",
+      "サンドボックス",
+      "MCP",
+      "開発ツール"
+    ]
   }
 ];

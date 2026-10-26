@@ -16,6 +16,14 @@
     <summary>2026年10月19日〜25日の週次データ。公開は20本（前週13本）で、すべて news。題材で数えると、11本が PHP・Node.js・GitLab など AI 以外のソフトウェアの脆弱性・事故の記事で、Anthropic 関連は6本、他社の CLI は3本。3軸のうち発掘と分析は3週続けて0本で、ガイドに説明が見当たらない概念の一覧は変わらなかった。</summary>
   </entry>
   <entry>
+    <title>GitHub Copilot CLI 1.0.100〜1.0.103、サンドボックスがローカルネットワークを既定で許可、プロキシ設定の引き継ぎ、--disable-client-telemetry と --trust-folder が追加</title>
+    <link rel="alternate" type="text/html" href="?a=github-copilot-cli-1-0-100-to-1-0-103-sandbox-local-network-proxy-2026"/>
+    <id>tag:ai-tool-news.jp,2026:github-copilot-cli-1-0-100-to-1-0-103-sandbox-local-network-proxy-2026</id>
+    <published>2026-10-26T15:00:00Z</published>
+    <updated>2026-10-26T15:00:00Z</updated>
+    <summary>GitHub Copilot CLI は10月19日の 1.0.100 から10月22日の 1.0.103 までに4版が出た（changelog に 1.0.99 の項目は無い）。1.0.100 でサンドボックスは localhost や私設ネットワークへの接続を既定で許し、HTTPS_PROXY などのプロキシ設定も引き継ぐ。クライアントのテレメトリを切る --disable-client-telemetry と、-p の単発実行で使う --trust-folder も入った。</summary>
+  </entry>
+  <entry>
     <title>Codex CLI 0.164.0 の変更点、プロンプトを10枠に保存するプリセット、/model と /permissions の引数指定、企業向け MCP 認証</title>
     <link rel="alternate" type="text/html" href="?a=codex-cli-0-164-presets-inline-args-enterprise-mcp-2026"/>
     <id>tag:ai-tool-news.jp,2026:codex-cli-0-164-presets-inline-args-enterprise-mcp-2026</id>

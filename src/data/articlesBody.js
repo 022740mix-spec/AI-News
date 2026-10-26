@@ -28872,6 +28872,28 @@ const ARTICLES_BODY = {
         "url": "https://github.com/022740mix-spec/AI-News"
       }
     ]
+  },
+  "github-copilot-cli-1-0-100-to-1-0-103-sandbox-local-network-proxy-2026": {
+    "body": [
+      "github/copilot-cli の変更履歴（changelog）によると、GitHub Copilot CLI は 2026年10月19日の 1.0.100 から10月22日の 1.0.103 までに、1.0.100・1.0.101・1.0.102・1.0.103 の4版が出た。changelog に 1.0.99 の項目は無く、npm の公開記録でも 1.0.98 の次の正式版は 1.0.100 だった。直前の 1.0.95〜1.0.98 は別の記事で扱っている。この記事は changelog の記載をもとに、自分の版にその機能があるかを判断できるよう整理する。内容は記載に基づくもので、実際の挙動は検証していない。",
+      "最も影響が大きそうなのはサンドボックスの既定値である。1.0.100 の「Sandbox allows local network access by default so commands can reach localhost and private-network services」により、サンドボックス内のコマンドが localhost や私設ネットワークのサービスへ届くようになった。1.0.101 には、ローカルアクセスが有効でホストのフィルタが無いとき、macOS のサンドボックス内のコマンドが localhost の TCP サービスへ直接つなげるという項目がある。いずれも changelog は理由を書いていない。接続先を絞りたい環境では、この既定値が自分の運用と合っているかを確かめる材料になる。",
+      "サンドボックスまわりでは、ほかにも項目が続く。1.0.100 では、サンドボックス用のプロキシが設定されていないとき、ホスト規則の通信が HTTPS_PROXY と HTTP_PROXY を使う。1.0.102 では、ホストのプロキシ設定を引き継ぐ場合に NO_PROXY と ALL_PROXY も尊重する。開発ツール向けのアクセスが有効なとき、パッケージやビルドのキャッシュへ書けるようになり（1.0.100）、dnx コマンドは既存の .NET と NuGet の許可を使い、Windows の npm.cmd のようなシムも npm と同じ許可を受ける（1.0.103）。github.com への sandboxed な git は、credentials.envVars に設定した GITHUB_TOKEN を使える。/sandbox は、全体では有効にせず現在のセッションだけサンドボックスを保てる。1.0.102 では、10秒を超えて走るサンドボックス内コマンドが安定して動き続けるよう直された。",
+      "1.0.100 で新しいフラグが2つ入った。--disable-client-telemetry は、CLI からのクライアントテレメトリのアップロードを止める。--trust-folder は、-p またはパイプ入力で始める単発のプロンプトモードのセッションで、フォルダを一度だけ信頼するために使う。同じ版では、ghapp://air/install?... 形式の GitHub のインストールリンクから、検証済みのスキルとプラグインを `copilot plugin install` で入れられるようになった。組み込みブラウザのプラグインは browser-use に改名され、既存の設定は引き継がれる。.github/instructions に置いたパス指定の指示ファイルは、エージェントが一致するファイルを読むか編集するときに自動で適用される。",
+      "権限の扱いでは、1.0.100 で、Assisted モードにおける組織管理の ask 権限が、安全な操作では余計な確認なしに通るようになった。入れ子の PowerShell や bash -c のうち、単純なデータの環境変数の展開だけを行うものは、手動承認を求めずに権限の判定役へ送られる。1.0.101 には assistedApprovalInstructions 設定が加わり、Assisted Permissions が確認を判断するときの指示を書ける。承認プロンプトは、昇格が必要な理由と、要求ごとの診断コマンドを示す。拡張機能が能力を求める場合は、判定役ではなく明示的な承認を使う。1.0.102 では、サブエージェントがカスタムや MCP ツールの承認を引き継ぎ、重複した許可プロンプトが出ない。",
+      "MCP とセッションの項目もある。1.0.100 は、MCP サーバーがツールの読み込みで固まっても、セッションが数分止まらないようにした。1.0.101 は、動的ワークフローのサブエージェントで、対応するモデルのネイティブな構造化出力を追加した。保存済みトークンがサインインを要する場合、OAuth の処理を持たないヘッドレスと SDK のセッションは MCP 接続を飛ばす。1.0.102 は複数の Git worktree で、同じリポジトリのローカル MCP ツールのスナップショットを使い回す。1.0.103 では、リモート起動のフラグが整理され、従来の --remote と --no-remote が廃止された。",
+      "モデルごとの修正は、Gemini と Google のモデルに集中している。1.0.100 は配列パラメータに enum があるときの Gemini のツール呼び出しの失敗と、ツール結果に読み取れる内容が無いときのチャットの失敗を直した。1.0.101 は GPT から Gemini へ切り替えたとき、前の会話にカスタムツール呼び出しが含まれていても失敗しないようにし、Google モデルへの画像数の上限もレジストリに合わせた。1.0.103 は nullable と enum のフィールドによる 400 エラーを避ける。GPT-5 系では、モデルごとの既定の Responses verbosity が、セッションで明示しない限り正しく適用される。1.0.102 では、プロバイダーの過負荷で応答が途切れたとき、バックオフ付きで再試行し、プロバイダーのメッセージとリクエスト ID を表示する。",
+      "ここに挙げたのは changelog の一部で、HydraFusion や Entra のサインイン、Windows 固有の修正など、触れていない項目も多い。全項目は公式の changelog を参照してほしい。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitHub Copilot CLI changelog（github/copilot-cli）",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      },
+      {
+        "title": "@github/copilot（npm）の公開記録",
+        "url": "https://www.npmjs.com/package/@github/copilot"
+      }
+    ]
   }
 };
 
