@@ -28940,6 +28940,30 @@ const ARTICLES_BODY = {
         "url": "https://github.com/openai/codex/releases"
       }
     ]
+  },
+  "anthropic-claude-models-google-cloud-anthropic-managed-2026": {
+    "body": [
+      "Anthropic の API リリースノートによると、2026年10月22日に「Claude Models on Google Cloud（Anthropic managed）」が提供開始となり、同日、Claude Opus 5.5 の fast mode がこの提供形態でも使えるようになった。この記事は、Anthropic の公式ドキュメントのセットアップと機能対応の記述をもとに整理する。実際の導入や課金の挙動は検証していない。",
+      "Google Cloud 上の Claude には、もともと Google が運用する「Google managed」（Vertex AI 系）がある。今回の Anthropic managed は、ドキュメントの説明では Claude API を Anthropic が運用し、Google Cloud のプロジェクトを通じて到達する形である。Anthropic の新機能やリサーチプレビューを、公開と同じ日に使えることが利点として示されている。",
+      "セットアップは Google Cloud Marketplace で Claude Models on Google Cloud（Anthropic managed）を購読するところから始まる。この手順で、Google Cloud のプロジェクトごとに新しい Anthropic 組織が作られる。既存の Anthropic 組織や Claude Enterprise の組織とは別で、API キー、ワークスペース、Console の設定は引き継がれない。既存の割引がある場合は、手順の前に担当者へ連絡するよう書かれている。",
+      "認証は Google Cloud の資格情報だけである。ドキュメントは、この提供形態では API キーを使わず、Console でもキーを作れないと述べている。Workload Identity Federation やサービスアカウントの権限借用は、他の Google Cloud API と同じように使える。アクセス制御は IAM のロールで行う。",
+      "課金は Google Cloud Marketplace を通る。Anthropic が使用量を計測し、Claude Consumption Unit（1 unit = 0.01 米ドル）で Google Cloud に報告する。請求は Google Cloud の請求書に載り、Anthropic からの別の請求書は出ない。Google Cloud の支出コミットメントがある場合、他の Marketplace 購入と同じように使用量が充当される。",
+      "機能は Claude API とほぼ同じ範囲で使えると書かれている。fast mode（Opus 5.5）、ウェブ検索、ウェブ取得、コード実行、メモリツール、MCP コネクタ、Agent Skills、Files API、プロンプトキャッシュ、構造化出力、Message Batches API、Claude Managed Agents が挙がる。顧客管理の暗号鍵（CMEK）は Google Cloud KMS の鍵で使える。ドキュメントは、これが全機能の一覧ではなく、載っていない機能の可否は示していないとも断っている。",
+      "使えないものも明記されている。API キー、MCP トンネル、自己ホスト環境でのメモリストア、`ant` CLI や各 SDK に入っている事前構築の自己ホスト型サンドボックスワーカー（Environments の Work エンドポイントを直接呼ぶ自前のワーカーが必要）である。Anthropic 向けの SDK クライアントは、この提供形態についてはベータと記載されている。",
+      "データの扱いは、Anthropic がデータ処理者であり、保持方針は Claude API と同じ。Anthropic の信頼性・安全性のシステムなど、一部の支援サービスは Google Cloud の外で処理するとされる。Zero Data Retention は要望に応じて提供され、他の Anthropic 組織で結んだ ZDR は引き継がれない。リージョンについては、ロケーションは `global` のままにし、米国内に限る推論は各リクエストで `inference_geo: \"us\"` を指定する。",
+      "Google managed との違いを事実として並べると次のようになる。Google managed は Google が運用し、Google Cloud の Agent Platform の一部として提供される。Anthropic managed は Anthropic が運用し、Anthropic の組織・Console・レート制限の枠組みを使う。どちらが適するかは、契約、データの扱い、必要な機能で決まる。この記事は優劣を述べない。既存の Google managed からの移行手順もドキュメントにあり、2つの組織は並行して稼働でき、段階的に移せるとされる。",
+      "なお、Claude Code の Vertex 対応や Monitor ツールの変更は、サイトの既存の記事が扱っている。本記事が見たのは Anthropic の公式ドキュメントとリリースノートで、Google Cloud 側の発表文には到達して確認していない。独立した検証や利用者の報告も確認できていないため、記述はすべて Anthropic 自身の説明に基づく。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Models on Google Cloud (Anthropic managed) — Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/anthropic-managed"
+      },
+      {
+        "title": "Claude API リリースノート（2026年10月）",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      }
+    ]
   }
 };
 

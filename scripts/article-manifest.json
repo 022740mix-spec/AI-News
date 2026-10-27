@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-10-27",
-  "count": 594,
+  "count": 595,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -65,6 +65,7 @@
     "anthropic-claude-leads-26pct-rd-2026",
     "anthropic-claude-managed-agents-public-beta-2026",
     "anthropic-claude-models-breached-three-companies-ctf-eval-2026",
+    "anthropic-claude-models-google-cloud-anthropic-managed-2026",
     "anthropic-claude-mythos-preview-glasswing-2026",
     "anthropic-claude-opus-4-7-ga-task-budgets-2026",
     "anthropic-claude-opus-4-8-dynamic-workflows-2026",

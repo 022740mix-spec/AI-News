@@ -12474,5 +12474,22 @@ export const ARTICLES_META = [
       "OpenAI",
       "開発ツール"
     ]
+  },
+  {
+    "id": "anthropic-claude-models-google-cloud-anthropic-managed-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude Models on Google Cloud（Anthropic managed）が提供開始 — Claude API そのものを Google Cloud の IAM と Marketplace 課金で使う、API キーは使えない",
+    "excerpt": "Anthropic は10月22日、Google Cloud のプロジェクト経由で Claude API を使える「Anthropic managed」を公開した。運用は Anthropic、アクセス制御は IAM、請求は Google Cloud Marketplace。既存の Anthropic 組織とは別組織が作られ、API キーは使えない。",
+    "date": "2026-10-27",
+    "newsDate": "2026-10-22",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude API",
+      "Google Cloud",
+      "エンタープライズ"
+    ]
   }
 ];
