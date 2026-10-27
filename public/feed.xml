@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-10-27T15:00:00Z</updated>
+  <updated>2026-10-28T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Codex CLI 0.165.0 の変更点、Google Cloud Vertex AI の組み込みプロバイダー、GPT-6.1 Terra がカタログに、memory v2 が新規プロファイルで既定に</title>
+    <link rel="alternate" type="text/html" href="?a=codex-cli-0-165-vertex-provider-terra-memory-v2-2026"/>
+    <id>tag:ai-tool-news.jp,2026:codex-cli-0-165-vertex-provider-terra-memory-v2-2026</id>
+    <published>2026-10-27T15:00:00Z</published>
+    <updated>2026-10-27T15:00:00Z</updated>
+    <summary>OpenAI は Codex CLI 0.165.0 を10月27日に公開した。model_provider = &quot;gcp&quot; で使える Vertex AI の組み込みプロバイダー、モデルカタログへの GPT-6.1 Terra の追加、会話中の推論の強さの変更、新規プロファイルでの memory v2 の既定化が入った。</summary>
+  </entry>
   <entry>
     <title>週次の計器 — 10月19日〜25日は20本、前週の13本から増。11本が AI 以外のソフトウェアのセキュリティ情報で、発掘と分析は3週続けて0本だった</title>
     <link rel="alternate" type="text/html" href="?a=weekly-metrics-2026-week-oct19"/>

@@ -12457,5 +12457,22 @@ export const ARTICLES_META = [
       "Anthropic",
       "リリースノート"
     ]
+  },
+  {
+    "id": "codex-cli-0-165-vertex-provider-terra-memory-v2-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.165.0 の変更点、Google Cloud Vertex AI の組み込みプロバイダー、GPT-6.1 Terra がカタログに、memory v2 が新規プロファイルで既定に",
+    "excerpt": "OpenAI は Codex CLI 0.165.0 を10月27日に公開した。model_provider = \"gcp\" で使える Vertex AI の組み込みプロバイダー、モデルカタログへの GPT-6.1 Terra の追加、会話中の推論の強さの変更、新規プロファイルでの memory v2 の既定化が入った。",
+    "date": "2026-10-27",
+    "newsDate": "2026-10-27",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "開発ツール"
+    ]
   }
 ];
