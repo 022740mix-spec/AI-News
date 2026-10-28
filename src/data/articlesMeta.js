@@ -12491,5 +12491,22 @@ export const ARTICLES_META = [
       "Google Cloud",
       "エンタープライズ"
     ]
+  },
+  {
+    "id": "claude-code-2-1-312-simple-prompt-custom-model-names-hooks-limit-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.312、Bedrock・Vertex・Foundry で認識できないモデル名は短いシステムプロンプトに、フックの同時実行数に上限、usage 上限の表記は「5-hour limit」に",
+    "excerpt": "Claude Code 2.1.312 の変更点。クラウド経由で独自のデプロイ名や推論プロファイル ARN を使うと短いシステムプロンプトが選ばれ、フラグ付きメッセージ後の自動モデル切替も対象になる。prompt / agent フックは同時24件までになり、claude_code.safety_event の送信は止まった。公式の変更履歴に基づいて整理する。",
+    "date": "2026-10-28",
+    "newsDate": "2026-10-27",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "リリースノート"
+    ]
   }
 ];

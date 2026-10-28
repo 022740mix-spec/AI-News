@@ -28964,6 +28964,30 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/release-notes/overview"
       }
     ]
+  },
+  "claude-code-2-1-312-simple-prompt-custom-model-names-hooks-limit-2026": {
+    "body": [
+      "anthropics/claude-code の CHANGELOG.md は、最新版を 2.1.312 としている。npm レジストリ上の公開時刻は 2026年10月27日 18:36 UTC だった。直前の 2.1.311 は 10月26日の公開である。以下は変更履歴の記載に基づく整理で、実際の挙動は検証していない。",
+      "最も影響範囲が広いのは、Bedrock・Vertex・Foundry・Mantle を使う環境での2件の変更である。1つ目は、Claude Code が認識できないモデル名（独自のデプロイ名や推論プロファイル ARN など）に対して、短い方のシステムプロンプトを使うようになったこと。背後が Sonnet や Haiku であっても同様で、完全版のプロンプトを使い続けたい場合は `CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT=0` を設定する。2つ目は、フラグが付いたメッセージのあとに行われる自動のモデル切替が、認識できないモデル名にも及ぶようになったこと。止めるには `CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK=1` を設定する。変更履歴には、短いプロンプトと完全版で具体的に何が違うのかは書かれていない。",
+      "フックには上限が入った。prompt フックと agent フックは、サブエージェントを含めて1セッションあたり同時に24件まで動く。加えて、そのイベントのタイムアウトより長く待たされているものは12件までとされた。`timeout` に1秒未満の値を書いた場合は1秒として扱う。直近の 2.1.302 でも、フックの同時実行は12件までという制限が話題になっており、フックを多用する設定では、自分の構成が上限に当たらないかを確認する材料になる。",
+      "サブエージェントの `autoCompactWindow` は、`CLAUDE_CODE_AUTO_COMPACT_WINDOW` で設定した窓を下げる方向に効くようになった。これまでは効果がなかったと書かれている。窓を広げる方向には、引き続き効かない。",
+      "管理者向けには、Claude apps gateway に `oidc.user_id_claim` が加わった。ユーザーの識別に `sub` 以外の id_token クレームを使う設定で、変更履歴は Microsoft Entra ID の `oid` を例に挙げている。OpenTelemetry では、公式 Anthropic マーケットプレイスのプラグインが宣言した固定 URL のリモート MCP サーバーについて、`mcp_server.name` が `custom` ではなく実際の名前で出る。一方、`claude_code.safety_event` イベントの送信は止まった。2.1.306〜2.1.309 で加わった同名のイベントを集計している場合は、データが出なくなる。",
+      "表示の変更として、usage 上限のメッセージが 5 時間の窓を「session limit」ではなく「5-hour limit」と呼ぶようになった。VS Code の拡張でも同じ表記になり、リセット時刻は「Resets at 3:10 PM」のような時刻で出る。`/model` と `/effort` のキャッシュ警告、入力欄の effort 表示も整理された。作業中に変更した effort は、モデルが適用するまでは実際の値として表示されず、次のメッセージまで反映されない場合があることを入力欄が示す。",
+      "不具合の修正では、非常に大きい CLAUDE.md・rules ファイル・@ で取り込んだファイルの冒頭だけを読んだ Claude が、そのファイルを上書きしてしまう問題が直った。Write は、全体を読むか、その場で編集するよう Claude に求める。Bash で git リポジトリの深い階層へ `cd` したあと、ディレクトリ単位の skills や `paths:` を持つ skills が見つからなくなる問題も直った。",
+      "そのほか、無効な名前のコマンドが1つあると全コマンドの読み込みが止まり、`claude -p` の出力が空になりうる問題、ターミナルで再開したセッションの最初の返信が次の再開で欠ける問題、PDF の読み取りが古いセッションファイルの掃除と重なって失敗する問題、Vim モードで行数を超える `gj` / `gk` の個数指定が `d`・`c`・`y` で文字を削除・コピーしてしまう問題が修正された。VS Code では、組織の設定を取得できなかった場合に終了コードだけが出る代わりに理由と再試行の案内が出る。",
+      "クラウドセッション向けには、ルーティンの作成・編集画面のモデル選択に effort の項目が加わった。環境設定のセットアップスクリプト欄には、色・行番号・コピーボタン付きの Bash エディタが入った。Claude Tag では、Slack の再試行通知が使用中のモデル名またはレート制限を示すようになり、ネットワークアクセスが None の環境のチャンネルで返信しない問題と、別スレッドにファイルを投稿する問題が直った。Code Review は、GitHub の push イベントが遅れて届いたときに古いコミットを見る問題が直り、プルリクエストの現在のコミットを対象にする。",
+      "全項目は公式の変更履歴にある。この記事は変更履歴の文言に基づく整理であり、各項目の挙動の再現は行っていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG.md（2.1.312）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@anthropic-ai/claude-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
+      }
+    ]
   }
 };
 
