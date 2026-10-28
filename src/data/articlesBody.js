@@ -28988,6 +28988,33 @@ const ARTICLES_BODY = {
         "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
       }
     ]
+  },
+  "cloudflare-security-audit-skill-six-phase-verified-findings-2026": {
+    "body": [
+      "Cloudflare の GitHub 組織に、cloudflare/security-audit-skill というリポジトリがある。README は、コーディングエージェントを「セキュリティ監査役」に変えるスキルだと説明している。ライセンスは MIT。本記事は、README と、リポジトリの skills/security-audit/SKILL.md を読んだ範囲での整理である。公開日はページから確認できず、リリースも切られていない（取得時点で Releases は空、main のコミットは14件）。GitHub の週間トレンドにこの週の上位として並んでいたため取り上げる。星の数は取得時点でそれぞれ約5.2万、今週の増加分は約1.6万と表示されていたが、日々変わる値である。",
+      "README によれば、このスキルは Cloudflare の脆弱性発見ハーネスの出発点にあたる。ハーネスは Cloudflare のブログ記事「Build your own vulnerability harness」で解説されていて、README は「ハーネスは複数段階の、組織全体を対象とする仕組みに育った。このスキルは、そこから派生した単一リポジトリ向けの出発点」と書く。ブログ記事は、本記事の作成環境からは到達できず、読めていない。ハーネス全体の実績や数字には触れない。",
+      "工程は6段階である。(1) 偵察: アーキテクチャ、信頼境界、入力の入り口を architecture.md と coverage-ledger.json にまとめる。(2) 網羅を軸にした探索: 台帳の単位ごとに隔離された探索役を割り当て、網羅の漏れを探す批評役を置く。(3) 候補の検証: 重複を除いた候補ごとに、新しいエージェントが反証を試みる。(4) 構造化出力: 結果を findings.json に書き、report-schema.json で検査する。(5) 記録の独立検証: 最終的な根拠を、別の新しいエージェントが確かめる。(6) 報告: REPORT.md、FINDINGS-DETAIL.md、NEEDS-VALIDATION.md を、検証済みの記録から作る。台帳と findings.json の検査には、依存パッケージの無い Node.js のスクリプト（validate-coverage-ledger.cjs と validate-findings.cjs）が使われる。",
+      "判定は3種類に分かれる。confirmed は、ソースをたどった完全な経路と、範囲を限った観測結果があるもの。needs_validation は、まだ確かめられていない事実が具体的に1つ残っているもので、深刻度は付けない。rejected は、反証された候補である。README の設計原則には「確認するのは、成立した境界の破れだけ」「見つけたエージェントが、それを検証することはない」「深刻度には影響が要る」「多層防御の欠落は脆弱性ではなく、補強の注記にとどめる」が並ぶ。たとえば層Aが攻撃を防いでいるなら、層Bが無いことは脆弱性として扱わない、という書き方である。",
+      "実行の安全に関する条件も、SKILL.md の先頭近くに書かれている。対象の側が制御するビルド、テスト、プロセス、ブラウザ、ファイルの処理は、OS が強制するサンドボックスの中でだけ行う。条件は、外部ネットワークが無いこと（必要なときはループバックのみ）、環境変数を許可リストで空から組み立てること、対象とツールチェーンは読み取り専用で書き込みは割り当てられた scratch ディレクトリだけであること、CPU・メモリ・時間などに上限があること、の4つである。これらを満たせないときは対象のコードを実行せず、その手がかりは needs_validation のまま、足りないサンドボックスの機能を妨げとして報告する。依存パッケージの導入やビルド中の取得も禁じている。本番や共有のサービスへの探査、有料 API の消費も禁止されている。",
+      "使い方は、監査したいコードベースでエージェントを起動し、「security audit this codebase」のように頼む形である。スキルには2つのモードがある。セキュリティの質問や限定したレビューは「ガイダンスモード」で、6段階の全体も出力ディレクトリの作成も自動では行わない。コードベースの監査やペンテストを明示して頼んだとき、または網羅的なレビューやレポートの成果物を求めたときに、「フル監査モード」で6段階をすべて実行する。出力先を指定しなければ、既定は ~/security-audit-skill/<リポジトリ名>/run-<N> で、リポジトリの中に書くのは、利用者がバージョン管理の対象外のディレクトリを明示した場合に限る。複数回の実行は累積し、前回の台帳と結果を使って、足りない部分を狙う。",
+      "導入は、README のとおりなら Skills CLI の npx コマンドである（npx skills add https://github.com/cloudflare/security-audit-skill --skill security-audit。--global でユーザー全体）。ここで注意がある。npx は外部のパッケージをその場で取得して実行する。本サイトの作成環境では、このコマンドを実行していない。スキルは、エージェントが従う指示書であり、エージェントは利用者の権限でファイルを読み、コマンドを走らせうる。導入の前に、リポジトリの SKILL.md と、使われるスクリプトの中身を自分で読むのが順序として正しい。SKILL.md は約22KB あり、サンドボックスの条件や書き込みの範囲を具体的に書いているが、本記事の作成では SKILL.md、README、VALIDATION-AND-REPORTING.md の取得までで、ハンティング用の各ガイド（メモリ安全性、AI/LLM、サプライチェーンなど10本）の全文は読めていない。Skills CLI 自体（skills.sh）の中身も確認していない。",
+      "README が示す効果の数字は1つで、「私たちの試行では、1回の実行で見つかったのは、繰り返し実行で見つかった脆弱性全体の約半分だった」。これは Cloudflare 自身の報告であり、独立した検証は確認できていない。また、README は必要なものとして「ツール利用と並列のサブエージェントに対応するモデルを持つコーディングエージェント」を挙げるだけで、特定のエージェント製品の名前も、実行にかかる時間や費用の目安も書いていない。フル監査は多数のエージェントを走らせる設計なので、費用は利用するエージェントの契約や API の課金に従う。SKILL.md の run-metadata.json には budget の項目があり、未設定なら null になる。",
+      "事実を並べる。このスキルは、最終的に人が読む判定を3種類に分け、証拠の無い疑いを confirmed にしない設計である。一方で、出力は言語モデルの推論に基づき、README は「脆弱性が無いこと」の保証を謳ってはいない。対象コードの実行にはサンドボックスが要り、用意できない環境では、裏づけの取れない手がかりが needs_validation に多く残ることになる。自分のコードに使うかどうかは、これらの条件と、導入前に読める範囲の中身を見て判断することになる。"
+    ],
+    "primarySources": [
+      {
+        "title": "cloudflare/security-audit-skill（README）",
+        "url": "https://github.com/cloudflare/security-audit-skill"
+      },
+      {
+        "title": "security-audit の SKILL.md",
+        "url": "https://github.com/cloudflare/security-audit-skill/blob/main/skills/security-audit/SKILL.md"
+      },
+      {
+        "title": "VALIDATION-AND-REPORTING.md（工程3〜6）",
+        "url": "https://github.com/cloudflare/security-audit-skill/blob/main/skills/security-audit/VALIDATION-AND-REPORTING.md"
+      }
+    ]
   }
 };
 

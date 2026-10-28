@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-10-28",
-  "count": 596,
+  "count": 597,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -201,6 +201,7 @@
     "cli-agent-community-oss-2026",
     "cli-tools-comparison-2026-march",
     "cline",
+    "cloudflare-security-audit-skill-six-phase-verified-findings-2026",
     "codebuff",
     "codex-cli-0-159-release-notes-2026",
     "codex-cli-0-160-release-notes-2026",

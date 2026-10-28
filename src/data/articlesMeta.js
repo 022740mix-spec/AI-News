@@ -12508,5 +12508,23 @@ export const ARTICLES_META = [
       "Anthropic",
       "リリースノート"
     ]
+  },
+  {
+    "id": "cloudflare-security-audit-skill-six-phase-verified-findings-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Cloudflare が脆弱性監査のエージェント用スキル security-audit を MIT で公開 — 6段階の工程、見つけたエージェントとは別のエージェントが検証、サンドボックスが無ければ対象コードを実行しない",
+    "excerpt": "Cloudflare の GitHub 組織が cloudflare/security-audit-skill を公開している。コーディングエージェントを「セキュリティ監査役」にするスキルで、偵察・探索・候補の検証・構造化出力・記録の独立検証・報告の6段階を、隔離したエージェントに割り当てる。判定は confirmed / needs_validation / rejected の3種で、README は「見つけたエージェントが検証することはない」と書く。対象コードの実行は、外部ネットワークの無いサンドボックスがある場合に限る。効果の数字は Cloudflare 自身のもので、独立した検証は確認できていない。",
+    "date": "2026-10-29",
+    "newsDate": "2026-10-28",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Cloudflare",
+      "Agent Skills",
+      "セキュリティ",
+      "エージェント",
+      "オープンソース"
+    ]
   }
 ];

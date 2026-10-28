@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-10-28T15:00:00Z</updated>
+  <updated>2026-10-29T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Cloudflare が脆弱性監査のエージェント用スキル security-audit を MIT で公開 — 6段階の工程、見つけたエージェントとは別のエージェントが検証、サンドボックスが無ければ対象コードを実行しない</title>
+    <link rel="alternate" type="text/html" href="?a=cloudflare-security-audit-skill-six-phase-verified-findings-2026"/>
+    <id>tag:ai-tool-news.jp,2026:cloudflare-security-audit-skill-six-phase-verified-findings-2026</id>
+    <published>2026-10-29T15:00:00Z</published>
+    <updated>2026-10-29T15:00:00Z</updated>
+    <summary>Cloudflare の GitHub 組織が cloudflare/security-audit-skill を公開している。コーディングエージェントを「セキュリティ監査役」にするスキルで、偵察・探索・候補の検証・構造化出力・記録の独立検証・報告の6段階を、隔離したエージェントに割り当てる。判定は confirmed / needs_validation / rejected の3種で、README は「見つけたエージェントが検証することはない」と書く。対象コードの実行は、外部ネットワークの無いサンドボックスがある場合に限る。効果の数字は Cloudflare 自身のもので、独立した検証は確認できていない。</summary>
+  </entry>
   <entry>
     <title>Claude Code 2.1.312、Bedrock・Vertex・Foundry で認識できないモデル名は短いシステムプロンプトに、フックの同時実行数に上限、usage 上限の表記は「5-hour limit」に</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-2-1-312-simple-prompt-custom-model-names-hooks-limit-2026"/>
