@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-10-29T15:00:00Z</updated>
+  <updated>2026-10-30T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Claude API に Usage and Cost Analytics API（ベータ）— モデル・ワークスペース・キー・利用者ごとの使用量と費用を取得、従来の Usage and Cost API は legacy に。Messages API の最大リクエストは 32 MB から 128 MB へ</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-usage-cost-analytics-api-beta-request-limit-128mb-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-usage-cost-analytics-api-beta-request-limit-128mb-2026</id>
+    <published>2026-10-30T15:00:00Z</published>
+    <updated>2026-10-30T15:00:00Z</updated>
+    <summary>Anthropic の Claude API リリースノートに2件の更新が載った。10月29日には、使用量と費用を組織単位で取得する Usage and Cost Analytics API がベータで始まり、従来の Usage and Cost API と Claude Enterprise Analytics API の使用量・費用レポートは legacy になった（引き続き利用できる）。前日の10月28日には、第一者の Claude API で Messages API と Token Counting API の最大リクエストサイズが 32 MB から 128 MB に上がっている。公式ドキュメントに基づいて整理する。</summary>
+  </entry>
   <entry>
     <title>Cloudflare が脆弱性監査のエージェント用スキル security-audit を MIT で公開 — 6段階の工程、見つけたエージェントとは別のエージェントが検証、サンドボックスが無ければ対象コードを実行しない</title>
     <link rel="alternate" type="text/html" href="?a=cloudflare-security-audit-skill-six-phase-verified-findings-2026"/>

@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-10-28",
-  "count": 597,
+  "generatedAt": "2026-10-29",
+  "count": 598,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -123,6 +123,7 @@
     "anthropic-threat-report-agentic-misuse-2026",
     "anthropic-threat-report-kimi-deepseek-routing-2026",
     "anthropic-threat-report-weapons-research-2026",
+    "anthropic-usage-cost-analytics-api-beta-request-limit-128mb-2026",
     "anthropic-workload-identity-federation-ga-service-accounts-2026",
     "apache-httpd-2-4-69-release-2026-10-01",
     "apple-ai-chief-giannandrea-departure-2026",

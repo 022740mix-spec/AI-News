@@ -12526,5 +12526,22 @@ export const ARTICLES_META = [
       "エージェント",
       "オープンソース"
     ]
+  },
+  {
+    "id": "anthropic-usage-cost-analytics-api-beta-request-limit-128mb-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude API に Usage and Cost Analytics API（ベータ）— モデル・ワークスペース・キー・利用者ごとの使用量と費用を取得、従来の Usage and Cost API は legacy に。Messages API の最大リクエストは 32 MB から 128 MB へ",
+    "excerpt": "Anthropic の Claude API リリースノートに2件の更新が載った。10月29日には、使用量と費用を組織単位で取得する Usage and Cost Analytics API がベータで始まり、従来の Usage and Cost API と Claude Enterprise Analytics API の使用量・費用レポートは legacy になった（引き続き利用できる）。前日の10月28日には、第一者の Claude API で Messages API と Token Counting API の最大リクエストサイズが 32 MB から 128 MB に上がっている。公式ドキュメントに基づいて整理する。",
+    "date": "2026-10-30",
+    "newsDate": "2026-10-29",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude API",
+      "API",
+      "エンタープライズ"
+    ]
   }
 ];

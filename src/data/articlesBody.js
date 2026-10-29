@@ -29015,6 +29015,26 @@ const ARTICLES_BODY = {
         "url": "https://github.com/cloudflare/security-audit-skill/blob/main/skills/security-audit/VALIDATION-AND-REPORTING.md"
       }
     ]
+  },
+  "anthropic-usage-cost-analytics-api-beta-request-limit-128mb-2026": {
+    "body": [
+      "Anthropic の Claude Platform リリースノート（platform.claude.com）には、2026年10月28日と29日付で2件の更新がある。ひとつは使用量と費用の取得 API の入れ替え、もうひとつはリクエストサイズ上限の引き上げである。以下は公式ドキュメントの記載に基づく整理で、実際の挙動は検証していない。",
+      "10月29日付の更新では、Usage and Cost Analytics API がベータで始まった。エンドポイントは2つあり、`GET /v1/organizations/analytics/usage` がトークン数とリクエスト数を、`GET /v1/organizations/analytics/cost` が米ドルの費用を返す。対象は Claude Console と Claude Enterprise の組織で、リクエストには `anthropic-beta: analytics-usage-cost-2026-08-24` と `anthropic-version` のヘッダーが必要になる。公式は、SDK と `ant` CLI は両方のヘッダーを自動で付け、続きのページも取得するため、`limit` はページの大きさだけを決めると説明している。",
+      "認証について、ドキュメントは Claude Console の組織では Admin API キー、または `org:admin` スコープの OAuth トークンなどの Admin API の資格情報を使うとしている。個人アカウントでは Admin API は使えない。Admin API キーで呼ぶ場合は、集計を担うサービス専用のキーを作り、シークレットマネージャーに置いて定期的に更新すること、可能なら Workload Identity Federation で短命のトークンを使うことが勧められている。AWS 上の Claude Platform と Google Cloud 上の Claude Models（Anthropic managed）でも両エンドポイントが使える。それぞれ、AWS では `ListAccountUsage` / `ListAccountCost`、Google Cloud では `usageAnalytics.list` / `costAnalytics.list` の権限で認可される。",
+      "集計の切り方は、`group_by[]` で指定する。モデル、ワークスペース、API キー、サービスティア、リクエストの背後にあるユーザーまたはサービスアカウント（`actor`）などで分けられ、1回の問い合わせで指定できる次元は最大5つである。`time_bucket_width` に `1m`・`1h`・`1d` を指定すると UTC の時間帯ごとに分割され、指定しなければ範囲全体の合計が1行で返る。絞り込みは `models[]` のように次元ごとの配列で行い、同じ絞り込みの複数値は OR、異なる絞り込みどうしは AND で結ばれる。費用のエンドポイントには、`cost_type` と `token_type` という追加の次元があり、これらは5つの上限にも `limit` にも数えられない。",
+      "同じ10月29日付で、従来の Usage and Cost API と、Claude Enterprise Analytics API の `usage_report`・`cost_report`・`user_usage_report`・`user_cost_report` エンドポイントが legacy になった。リリースノートは、いずれも引き続きサポートされると書いている。既存の連携を移す手順は、Analytics API のドキュメントに「Usage and Cost API から」と「Claude Enterprise の使用量・費用レポートから」の2つの節として用意されている。legacy になっただけで廃止日は示されていないため、いつまで使えるかは公式の記載からは分からない。",
+      "10月28日付の更新は、第一者の Claude API での Messages API と Token Counting API の最大リクエストサイズが、32 MB から 128 MB に上がったというものである。リリースノートは、この引き上げが第一者の Claude API に限られると明記している。Amazon Bedrock や Google Cloud など他の経路の上限については、この記載からは分からない。ほかの上限（コンテキスト長など）に変更があるかは、この記載からは分からない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Platform リリースノート",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Usage and Cost Analytics API（公式ドキュメント）",
+        "url": "https://platform.claude.com/docs/en/manage-claude/usage-cost-analytics-api"
+      }
+    ]
   }
 };
 
