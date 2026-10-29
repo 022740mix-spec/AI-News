@@ -16,6 +16,14 @@
     <summary>Anthropic の Claude API リリースノートに2件の更新が載った。10月29日には、使用量と費用を組織単位で取得する Usage and Cost Analytics API がベータで始まり、従来の Usage and Cost API と Claude Enterprise Analytics API の使用量・費用レポートは legacy になった（引き続き利用できる）。前日の10月28日には、第一者の Claude API で Messages API と Token Counting API の最大リクエストサイズが 32 MB から 128 MB に上がっている。公式ドキュメントに基づいて整理する。</summary>
   </entry>
   <entry>
+    <title>Gemini CLI 0.66.0 の変更点、端末の同期出力とちらつき対策、MCP の OAuth でプライベートネットワークを任意で許可、ハング防止の SSH プロンプト抑止</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-cli-0-66-terminal-sync-output-mcp-oauth-private-network-2026"/>
+    <id>tag:ai-tool-news.jp,2026:gemini-cli-0-66-terminal-sync-output-mcp-oauth-private-network-2026</id>
+    <published>2026-10-30T15:00:00Z</published>
+    <updated>2026-10-30T15:00:00Z</updated>
+    <summary>Google の Gemini CLI 0.66.0 が2026年10月27日に公開された。端末の同期出力とスピナーの分離でちらつきを減らし、MCP の OAuth フローではプライベートネットワークのエンドポイントを任意で許可できる。対話的な SSH や認証のプロンプトを抑止してハングを防ぐ変更も入った。公式の変更履歴に基づいて整理する。</summary>
+  </entry>
+  <entry>
     <title>Cloudflare が脆弱性監査のエージェント用スキル security-audit を MIT で公開 — 6段階の工程、見つけたエージェントとは別のエージェントが検証、サンドボックスが無ければ対象コードを実行しない</title>
     <link rel="alternate" type="text/html" href="?a=cloudflare-security-audit-skill-six-phase-verified-findings-2026"/>
     <id>tag:ai-tool-news.jp,2026:cloudflare-security-audit-skill-six-phase-verified-findings-2026</id>

@@ -29035,6 +29035,25 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/manage-claude/usage-cost-analytics-api"
       }
     ]
+  },
+  "gemini-cli-0-66-terminal-sync-output-mcp-oauth-private-network-2026": {
+    "body": [
+      "google-gemini/gemini-cli の docs/changelogs/latest.md は、最新の安定版を v0.66.0（2026年10月27日公開）としている。npm レジストリでも `latest` タグが 0.66.0 を指し、公開時刻は同日 UTC 20:30 だった。直前に扱った 0.65.0 の次の安定版にあたる。以下は公式の変更履歴の記載に基づく整理で、実際の挙動は検証していない。",
+      "端末表示では、同期出力（synchronized output）への対応とスピナー描画の分離が入った。スクロールできるツール出力の枠でのちらつきと罫線のはみ出しが減り、表示を更新してもスクロールバックが保たれる。",
+      "実行まわりでは、コアのスケジューラーがツール呼び出しのグループを直接発行するようになり、UI 側の先読みが無くなった。ブートストラップのラッパーに届いた終了シグナルは、子プロセスへ転送される。",
+      "Git とシェルの環境では、ユーザーレベルの `~/.gitconfig` の設定が保たれ、対話的な SSH と認証情報のプロンプトは抑止されてハングを防ぐ。Windows での diff 引数の引用符の扱いも改善された。",
+      "セキュリティと設定では、MCP の OAuth フローでプライベートネットワークのエンドポイントを使えるオプトインの設定が加わった。認証エラーの検出での誤検知が減り、設定内のプレースホルダーは `.env` の読み込み後に解決される。カスタムキーバインドでは `keys` 配列を指定できる。変更履歴にはほかに Gemini 4 への対応を知らせるバナーなども載っており、全項目と各プルリクエストは公式の変更履歴にある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Gemini CLI 変更履歴（latest, v0.66.0）",
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/latest.md"
+      },
+      {
+        "title": "@google/gemini-cli（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@google/gemini-cli"
+      }
+    ]
   }
 };
 

@@ -12543,5 +12543,23 @@ export const ARTICLES_META = [
       "API",
       "エンタープライズ"
     ]
+  },
+  {
+    "id": "gemini-cli-0-66-terminal-sync-output-mcp-oauth-private-network-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Gemini CLI 0.66.0 の変更点、端末の同期出力とちらつき対策、MCP の OAuth でプライベートネットワークを任意で許可、ハング防止の SSH プロンプト抑止",
+    "excerpt": "Google の Gemini CLI 0.66.0 が2026年10月27日に公開された。端末の同期出力とスピナーの分離でちらつきを減らし、MCP の OAuth フローではプライベートネットワークのエンドポイントを任意で許可できる。対話的な SSH や認証のプロンプトを抑止してハングを防ぐ変更も入った。公式の変更履歴に基づいて整理する。",
+    "date": "2026-10-30",
+    "newsDate": "2026-10-27",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Gemini CLI",
+      "CLI",
+      "Google",
+      "MCP",
+      "開発ツール"
+    ]
   }
 ];
