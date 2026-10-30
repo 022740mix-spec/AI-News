@@ -12595,5 +12595,20 @@ export const ARTICLES_META = [
       "Anthropic",
       "開発ツール"
     ]
+  },
+  {
+    "id": "anthropic-s1-nasdaq-ant-filing-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Anthropic が S-1 を SEC に提出したと発表 — Nasdaq に Class A 普通株を「ANT」で上場する計画、株数と価格は未定",
+    "excerpt": "Anthropic は10月26日、新規株式公開（IPO）に向けた登録届出書（Form S-1）を米国証券取引委員会（SEC）に提出したと発表した。上場先は Nasdaq Global Select Market、銘柄コードは「ANT」。募集株数と価格帯は未定で、発表文に評価額や上場時期は書かれていない。当サイトが過去に報じた評価額や時期は報道ベースで、今回の発表で確認された事実とは区別して読む必要がある。",
+    "date": "2026-10-30",
+    "newsDate": "2026-10-26",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "IPO"
+    ]
   }
 ];

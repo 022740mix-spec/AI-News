@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-10-30T15:00:00Z</updated>
+  <updated>2026-10-31T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
     <title>Claude API に Usage and Cost Analytics API（ベータ）— モデル・ワークスペース・キー・利用者ごとの使用量と費用を取得、従来の Usage and Cost API は legacy に。Messages API の最大リクエストは 32 MB から 128 MB へ</title>
@@ -38,6 +38,14 @@
     <published>2026-10-30T15:00:00Z</published>
     <updated>2026-10-30T15:00:00Z</updated>
     <summary>Anthropic は Claude Code 2.1.314 を10月30日（UTC）に公開した。permissions.blockWritesOutsideWorkingDirectories、effort の自動引き下げと再試行、Foundry のモデル フォールバック、claude -p の起動エラー、Monitor ツールで始めたコマンドへの Bash フックの適用が入った。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic が S-1 を SEC に提出したと発表 — Nasdaq に Class A 普通株を「ANT」で上場する計画、株数と価格は未定</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-s1-nasdaq-ant-filing-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-s1-nasdaq-ant-filing-2026</id>
+    <published>2026-10-30T15:00:00Z</published>
+    <updated>2026-10-30T15:00:00Z</updated>
+    <summary>Anthropic は10月26日、新規株式公開（IPO）に向けた登録届出書（Form S-1）を米国証券取引委員会（SEC）に提出したと発表した。上場先は Nasdaq Global Select Market、銘柄コードは「ANT」。募集株数と価格帯は未定で、発表文に評価額や上場時期は書かれていない。当サイトが過去に報じた評価額や時期は報道ベースで、今回の発表で確認された事実とは区別して読む必要がある。</summary>
   </entry>
   <entry>
     <title>Cloudflare が脆弱性監査のエージェント用スキル security-audit を MIT で公開 — 6段階の工程、見つけたエージェントとは別のエージェントが検証、サンドボックスが無ければ対象コードを実行しない</title>
