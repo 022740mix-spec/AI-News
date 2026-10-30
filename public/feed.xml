@@ -24,6 +24,14 @@
     <summary>Google の Gemini CLI 0.66.0 が2026年10月27日に公開された。端末の同期出力とスピナーの分離でちらつきを減らし、MCP の OAuth フローではプライベートネットワークのエンドポイントを任意で許可できる。対話的な SSH や認証のプロンプトを抑止してハングを防ぐ変更も入った。公式の変更履歴に基づいて整理する。</summary>
   </entry>
   <entry>
+    <title>Codex CLI 0.166.0 の変更点、キーボードで選べるトランスクリプト、codex queue --resume、codex doctor --network-only、GPT-6.1 Terra が Vertex AI と Bedrock のカタログにも</title>
+    <link rel="alternate" type="text/html" href="?a=codex-cli-0-166-transcript-selection-queue-resume-doctor-network-2026"/>
+    <id>tag:ai-tool-news.jp,2026:codex-cli-0-166-transcript-selection-queue-resume-doctor-network-2026</id>
+    <published>2026-10-30T15:00:00Z</published>
+    <updated>2026-10-30T15:00:00Z</updated>
+    <summary>OpenAI は Codex CLI 0.166.0 を10月29日に公開した。トランスクリプトのキーボード選択と検索、停止中スレッドを再開する codex queue --resume、接続診断の codex doctor --network-only、再開・フォーク時の承認設定と推論トークン計上の修正が入った。</summary>
+  </entry>
+  <entry>
     <title>Cloudflare が脆弱性監査のエージェント用スキル security-audit を MIT で公開 — 6段階の工程、見つけたエージェントとは別のエージェントが検証、サンドボックスが無ければ対象コードを実行しない</title>
     <link rel="alternate" type="text/html" href="?a=cloudflare-security-audit-skill-six-phase-verified-findings-2026"/>
     <id>tag:ai-tool-news.jp,2026:cloudflare-security-audit-skill-six-phase-verified-findings-2026</id>

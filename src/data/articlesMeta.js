@@ -12561,5 +12561,22 @@ export const ARTICLES_META = [
       "MCP",
       "開発ツール"
     ]
+  },
+  {
+    "id": "codex-cli-0-166-transcript-selection-queue-resume-doctor-network-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.166.0 の変更点、キーボードで選べるトランスクリプト、codex queue --resume、codex doctor --network-only、GPT-6.1 Terra が Vertex AI と Bedrock のカタログにも",
+    "excerpt": "OpenAI は Codex CLI 0.166.0 を10月29日に公開した。トランスクリプトのキーボード選択と検索、停止中スレッドを再開する codex queue --resume、接続診断の codex doctor --network-only、再開・フォーク時の承認設定と推論トークン計上の修正が入った。",
+    "date": "2026-10-30",
+    "newsDate": "2026-10-29",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "開発ツール"
+    ]
   }
 ];
