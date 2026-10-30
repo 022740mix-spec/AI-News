@@ -12627,5 +12627,22 @@ export const ARTICLES_META = [
       "オープンソース",
       "エージェント"
     ]
+  },
+  {
+    "id": "anthropic-usage-policy-2026-update-deceptive-campaigns-hardware-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Anthropic が利用方針を改定 — 偽装キャンペーン禁止を新設、武器・監視の記述を具体化、物理的に動く機器との接続に人の監督を要求、11月12日施行",
+    "excerpt": "Anthropic は10月8日、年次の Usage Policy 改定を公表した。選挙・詐欺・プライバシー等に散らばっていた規定を「欺瞞的なキャンペーンと人為的な活動」の新セクションに集約し、武器の誘導・制御ソフトや監視ツールの構築を明記した。自律的に物理動作をする機器に Claude をつなぐ場合は、監視して止められる担当者と安全な停止状態を求める。AI への虐待行為の禁止も加わった。施行は11月12日。Anthropic は、改定の大半は既存の規則の明確化で、実際の運用は変わらないとしている。",
+    "date": "2026-10-30",
+    "newsDate": "2026-10-08",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "AI安全性",
+      "規制",
+      "利用規約"
+    ]
   }
 ];

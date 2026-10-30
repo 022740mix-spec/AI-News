@@ -56,6 +56,14 @@
     <summary>Anthropic は10月22日、エージェントに専門知識と手順を渡すオープン標準「Agent Skills」を、Linux Foundation 傘下の Agentic AI Foundation（AAIF）に寄贈すると発表した。Agent Skills の名称とロゴ、GitHub 組織、agentskills.io のドメインが移る。保守は Anthropic・Google・OpenAI などの技術者が個人として担う。数字（70以上のプラットフォーム、100万スキル、約2.8億インストール）は Anthropic の発表文のもので、独立した検証は確認できていない。</summary>
   </entry>
   <entry>
+    <title>Anthropic が利用方針を改定 — 偽装キャンペーン禁止を新設、武器・監視の記述を具体化、物理的に動く機器との接続に人の監督を要求、11月12日施行</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-usage-policy-2026-update-deceptive-campaigns-hardware-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-usage-policy-2026-update-deceptive-campaigns-hardware-2026</id>
+    <published>2026-10-30T15:00:00Z</published>
+    <updated>2026-10-30T15:00:00Z</updated>
+    <summary>Anthropic は10月8日、年次の Usage Policy 改定を公表した。選挙・詐欺・プライバシー等に散らばっていた規定を「欺瞞的なキャンペーンと人為的な活動」の新セクションに集約し、武器の誘導・制御ソフトや監視ツールの構築を明記した。自律的に物理動作をする機器に Claude をつなぐ場合は、監視して止められる担当者と安全な停止状態を求める。AI への虐待行為の禁止も加わった。施行は11月12日。Anthropic は、改定の大半は既存の規則の明確化で、実際の運用は変わらないとしている。</summary>
+  </entry>
+  <entry>
     <title>Cloudflare が脆弱性監査のエージェント用スキル security-audit を MIT で公開 — 6段階の工程、見つけたエージェントとは別のエージェントが検証、サンドボックスが無ければ対象コードを実行しない</title>
     <link rel="alternate" type="text/html" href="?a=cloudflare-security-audit-skill-six-phase-verified-findings-2026"/>
     <id>tag:ai-tool-news.jp,2026:cloudflare-security-audit-skill-six-phase-verified-findings-2026</id>
