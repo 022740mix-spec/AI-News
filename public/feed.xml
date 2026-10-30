@@ -32,6 +32,14 @@
     <summary>OpenAI は Codex CLI 0.166.0 を10月29日に公開した。トランスクリプトのキーボード選択と検索、停止中スレッドを再開する codex queue --resume、接続診断の codex doctor --network-only、再開・フォーク時の承認設定と推論トークン計上の修正が入った。</summary>
   </entry>
   <entry>
+    <title>Claude Code 2.1.314、作業ディレクトリ外への書き込みを全モードで止める設定、管理者が上限を設けた effort の自動引き下げ、claude -p の起動エラーは終了コード 1 に</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-2-1-314-block-writes-outside-dirs-pcompact-cap-monitor-hooks-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-2-1-314-block-writes-outside-dirs-pcompact-cap-monitor-hooks-2026</id>
+    <published>2026-10-30T15:00:00Z</published>
+    <updated>2026-10-30T15:00:00Z</updated>
+    <summary>Anthropic は Claude Code 2.1.314 を10月30日（UTC）に公開した。permissions.blockWritesOutsideWorkingDirectories、effort の自動引き下げと再試行、Foundry のモデル フォールバック、claude -p の起動エラー、Monitor ツールで始めたコマンドへの Bash フックの適用が入った。</summary>
+  </entry>
+  <entry>
     <title>Cloudflare が脆弱性監査のエージェント用スキル security-audit を MIT で公開 — 6段階の工程、見つけたエージェントとは別のエージェントが検証、サンドボックスが無ければ対象コードを実行しない</title>
     <link rel="alternate" type="text/html" href="?a=cloudflare-security-audit-skill-six-phase-verified-findings-2026"/>
     <id>tag:ai-tool-news.jp,2026:cloudflare-security-audit-skill-six-phase-verified-findings-2026</id>

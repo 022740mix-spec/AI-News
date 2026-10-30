@@ -12578,5 +12578,22 @@ export const ARTICLES_META = [
       "OpenAI",
       "開発ツール"
     ]
+  },
+  {
+    "id": "claude-code-2-1-314-block-writes-outside-dirs-pcompact-cap-monitor-hooks-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.314、作業ディレクトリ外への書き込みを全モードで止める設定、管理者が上限を設けた effort の自動引き下げ、claude -p の起動エラーは終了コード 1 に",
+    "excerpt": "Anthropic は Claude Code 2.1.314 を10月30日（UTC）に公開した。permissions.blockWritesOutsideWorkingDirectories、effort の自動引き下げと再試行、Foundry のモデル フォールバック、claude -p の起動エラー、Monitor ツールで始めたコマンドへの Bash フックの適用が入った。",
+    "date": "2026-10-30",
+    "newsDate": "2026-10-30",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "開発ツール"
+    ]
   }
 ];

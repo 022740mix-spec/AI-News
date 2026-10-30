@@ -29076,6 +29076,30 @@ const ARTICLES_BODY = {
         "url": "https://github.com/openai/codex/releases"
       }
     ]
+  },
+  "claude-code-2-1-314-block-writes-outside-dirs-pcompact-cap-monitor-hooks-2026": {
+    "body": [
+      "Claude Code の公式 CHANGELOG によると、2.1.314 は npm レジストリ上で2026年10月30日 00:12（UTC）に公開された。前回扱った 2.1.312 の記事の次の版にあたる。今回確認できた CHANGELOG の本文には 2.1.313 の項目が見つからなかったため、この記事は 2.1.314 の記載だけを整理する。実際の挙動は検証していない。CHANGELOG は非常に長く、確認できたのは先頭部分だけである。",
+      "セキュリティと権限では、新しい設定 `permissions.blockWritesOutsideWorkingDirectories` が加わった。Write・Edit・NotebookEdit が作業ディレクトリの外のパスに触れるのを、すべての権限モードで止める。そのほか、Claude apps gateway の上流を特定の ID プロバイダーのグループに属する開発者に限れる（フェイルオーバー中も含む）。Bedrock の上流では、どのガードレールのフィルターが働いたかを、一致した文字列を記録せずにログに残せる。",
+      "管理設定まわりでは、TLS の信頼設定が Desktop セッションにも適用されるようになり、`forceRemoteSettingsRefresh` は保存された写しの有効期限が切れたあとも機能する。",
+      "モデルとコンテキストでは、管理者がモデルの effort に上限を設けていてもセッションが失敗しなくなった。Claude Code が水準を下げて再試行し、使った水準を報告する。長く放置された会話の idle compaction が、VS Code と Desktop の Code タブでも動く。画像が多い Bedrock セッションは、失敗せずに古い画像を落として圧縮する。",
+      "Microsoft Foundry では、既定のモデルにデプロイが無いとき、同じファミリーの古いモデルにフォールバックする。ゲートウェイ越しの `claude-opus-4.8` のようにドットで書いたモデル ID も正しく解釈される。ゲートウェイ固有の理由で拒否された要求（ツール検索ブロックや beta ヘッダーの拒否など）は、その機能を外して再試行される。",
+      "認証と MCP では、クロス署名された更新済みルート証明書での TLS エラーが直った。サインイン無しでも使える MCP サーバーは、保存されたサインインが効かなくなったあと、サインアウトの状態で使われる。`claude mcp logout` は、サインインが実際には消えていないのに成功と報告することがなくなった。",
+      "CLI とフックでは、`claude -p` が起動時のエラーを出力し、黙って終了コード 0 で終わらず終了コード 1 になる。`CI` が設定されているとき、`claude ultrareview` と `claude remote-control` は、確認を求めずに信頼されていないフォルダを拒否する。PreCompact フックの出力は1フックあたり10,000文字に制限される。Bash に一致するフックは、Monitor ツールが始めたコマンドにも適用される。ただし、そのコマンドの承認や書き換えはできない。",
+      "インターフェースとツールでは、ストリーミング中の markdown 表の描画、`/resume` のタイトル表示、サブエージェントのトランスクリプトからの `/btw`、vim モードの移動、権限プロンプトのレイアウトに修正が入った。バックグラウンドの git 更新が、リポジトリの index ロックを保持し続けない。",
+      "他の提供面にも修正がある。VS Code では Ctrl+D の音声入力ショートカット、プランのプレビュー内の検索、MCP の「認証をクリア」の結果が直った。クラウドセッションでは環境とスケジュールタスクの修正があり、セットアップスクリプトが失敗してもセッションが始まる。Remote Control ではセッションの登録とモデルの切り替えが安定した。Claude Tag では Slack のコマンド・スレッド・チャンネル設定の修正が入った。",
+      "なお `blockWritesOutsideWorkingDirectories` の説明は CHANGELOG の1行で、既存のサンドボックスや権限ルールとの優先関係までは今回の確認範囲に無い。導入前に公式ドキュメントで挙動を確かめたい。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG（anthropics/claude-code）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@anthropic-ai/claude-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
+      }
+    ]
   }
 };
 
