@@ -12610,5 +12610,22 @@ export const ARTICLES_META = [
       "Anthropic",
       "IPO"
     ]
+  },
+  {
+    "id": "agent-skills-donated-to-aaif-linux-foundation-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が Agent Skills を Agentic AI Foundation に寄贈 — 名称・ロゴ・GitHub 組織・ドメインを移管、公表数字は100万スキル公開・約2.8億インストール",
+    "excerpt": "Anthropic は10月22日、エージェントに専門知識と手順を渡すオープン標準「Agent Skills」を、Linux Foundation 傘下の Agentic AI Foundation（AAIF）に寄贈すると発表した。Agent Skills の名称とロゴ、GitHub 組織、agentskills.io のドメインが移る。保守は Anthropic・Google・OpenAI などの技術者が個人として担う。数字（70以上のプラットフォーム、100万スキル、約2.8億インストール）は Anthropic の発表文のもので、独立した検証は確認できていない。",
+    "date": "2026-10-30",
+    "newsDate": "2026-10-22",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Agent Skills",
+      "オープンソース",
+      "エージェント"
+    ]
   }
 ];

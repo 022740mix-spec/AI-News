@@ -29117,6 +29117,23 @@ const ARTICLES_BODY = {
         "url": "https://www.anthropic.com/news/s1-sec"
       }
     ]
+  },
+  "agent-skills-donated-to-aaif-linux-foundation-2026": {
+    "body": [
+      "Anthropic は2026年10月22日、ニュースページで、エージェントに専門知識とワークフローを与えるオープン標準 Agent Skills を、Agentic AI Foundation（AAIF）に寄贈すると発表した。本記事は、その発表文（anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation）を2026年10月30日に読んだ範囲での整理である。仕様サイト（agentskills.io）と AAIF のサイトには、本記事の作成環境から到達できず、読めていない。",
+      "発表文によれば、スキルとは SKILL.md というファイルを含むフォルダで、特定の作業や領域をエージェントに教える。必要ならスクリプトや参考資料も同梱できる。Anthropic は Claude Code の開発中にこれを作った。汎用の知識作業には強かったが、実際の業務に要る手続きの知識が足りなかったため、と説明している。2025年10月の公開から数週間で、開発者が数千のスキルを GitHub に公開し、Codex・Cursor・OpenCode 向けの読み込み処理も書いた。その後、独自の GitHub 組織とドメインのもとでオープン標準として公開した、とある。",
+      "発表文が挙げる数字は次のとおり。ChatGPT、Cursor、GitHub Copilot、VS Code を含む70以上のエージェントのプラットフォームが、2025年12月の標準公開以降に Agent Skills を取り込んだ。これまでに100万件のスキルが公開され、インストールはおよそ2.8億回に達した。いずれも Anthropic の発表文による数字で、公開件数やインストール数の集計方法は書かれておらず、独立した検証は確認できていない。",
+      "寄贈の中身は、Agent Skills の名称とロゴ、GitHub 組織、agentskills.io のドメインである。寄贈先の AAIF は Linux Foundation の傘下にあり、発表文によれば Anthropic が Block と OpenAI とともに昨年共同で設立し、Anthropic は Model Context Protocol（MCP）もここに寄贈している。標準を使う、または貢献するために AAIF へ加入する必要はない、とも書かれている。",
+      "保守体制について、発表文は次のように書く。Anthropic、Google、OpenAI などの技術者が個人としてこの標準を保守し、リードメンテナーは David Soria Parra 氏と Mahesh Murag 氏である。最初の提案として、バージョン付きのリリース、正式な提案手続き、スキルを書く人とインストールする人向けのセキュリティ指針を含むロードマップが挙げられている。仕様変更への意見は、プロジェクトの Discord で受け付けるという。",
+      "読者の実務への含意は限られる。発表文は標準の中身（SKILL.md の形式など）が変わるとは書いておらず、現時点で確認できるのは、管理主体が1社から財団に移ることと、ロードマップの方向である。セキュリティ指針が提案に入っている点は、スキルが外部から取り込める実行可能なコードや手順を含みうることと関係するが、具体的な内容は発表文に無い。",
+      "【編集履歴】2026-10-30 新規公開。一次資料は Anthropic の発表文1本のみ。AAIF 側の発表と仕様サイトには到達できていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Donating Agent Skills to the Agentic AI Foundation（Anthropic、2026-10-22）",
+        "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation"
+      }
+    ]
   }
 };
 

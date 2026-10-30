@@ -48,6 +48,14 @@
     <summary>Anthropic は10月26日、新規株式公開（IPO）に向けた登録届出書（Form S-1）を米国証券取引委員会（SEC）に提出したと発表した。上場先は Nasdaq Global Select Market、銘柄コードは「ANT」。募集株数と価格帯は未定で、発表文に評価額や上場時期は書かれていない。当サイトが過去に報じた評価額や時期は報道ベースで、今回の発表で確認された事実とは区別して読む必要がある。</summary>
   </entry>
   <entry>
+    <title>Anthropic が Agent Skills を Agentic AI Foundation に寄贈 — 名称・ロゴ・GitHub 組織・ドメインを移管、公表数字は100万スキル公開・約2.8億インストール</title>
+    <link rel="alternate" type="text/html" href="?a=agent-skills-donated-to-aaif-linux-foundation-2026"/>
+    <id>tag:ai-tool-news.jp,2026:agent-skills-donated-to-aaif-linux-foundation-2026</id>
+    <published>2026-10-30T15:00:00Z</published>
+    <updated>2026-10-30T15:00:00Z</updated>
+    <summary>Anthropic は10月22日、エージェントに専門知識と手順を渡すオープン標準「Agent Skills」を、Linux Foundation 傘下の Agentic AI Foundation（AAIF）に寄贈すると発表した。Agent Skills の名称とロゴ、GitHub 組織、agentskills.io のドメインが移る。保守は Anthropic・Google・OpenAI などの技術者が個人として担う。数字（70以上のプラットフォーム、100万スキル、約2.8億インストール）は Anthropic の発表文のもので、独立した検証は確認できていない。</summary>
+  </entry>
+  <entry>
     <title>Cloudflare が脆弱性監査のエージェント用スキル security-audit を MIT で公開 — 6段階の工程、見つけたエージェントとは別のエージェントが検証、サンドボックスが無ければ対象コードを実行しない</title>
     <link rel="alternate" type="text/html" href="?a=cloudflare-security-audit-skill-six-phase-verified-findings-2026"/>
     <id>tag:ai-tool-news.jp,2026:cloudflare-security-audit-skill-six-phase-verified-findings-2026</id>
