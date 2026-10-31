@@ -12644,5 +12644,22 @@ export const ARTICLES_META = [
       "規制",
       "利用規約"
     ]
+  },
+  {
+    "id": "claude-code-2-1-316-opus-4-8-fast-mode-deprecated-subagent-effort-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.316、Opus 4.8 の fast mode が非推奨に、サブエージェントの effort を環境変数で指定、ultrathink を無効にする環境変数が追加",
+    "excerpt": "Anthropic は Claude Code 2.1.316 を10月31日（UTC）に公開した。CHANGELOG は Opus 4.8 の fast mode を10月30日付で非推奨とし、削除後はエラーを返すと記す。CLAUDE_CODE_SUBAGENT_EFFORT、CLAUDE_CODE_DISABLE_ULTRATHINK、Claude apps gateway の共有予算が加わった。",
+    "date": "2026-10-31",
+    "newsDate": "2026-10-31",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "開発ツール"
+    ]
   }
 ];

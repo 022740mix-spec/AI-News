@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-10-30",
-  "count": 604,
+  "generatedAt": "2026-10-31",
+  "count": 605,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -172,6 +172,7 @@
     "claude-code-2-1-311-ultrathink-xhigh-model-catalog-signed-file-2026",
     "claude-code-2-1-312-simple-prompt-custom-model-names-hooks-limit-2026",
     "claude-code-2-1-314-block-writes-outside-dirs-pcompact-cap-monitor-hooks-2026",
+    "claude-code-2-1-316-opus-4-8-fast-mode-deprecated-subagent-effort-2026",
     "claude-code-agents-md-support-2026",
     "claude-code-auto-memory-disable-2026",
     "claude-code-auto-mode",

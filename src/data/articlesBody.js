@@ -29155,6 +29155,34 @@ const ARTICLES_BODY = {
         "url": "https://www.anthropic.com/news/2026-usage-policy-update"
       }
     ]
+  },
+  "claude-code-2-1-316-opus-4-8-fast-mode-deprecated-subagent-effort-2026": {
+    "body": [
+      "Claude Code の公式 CHANGELOG によると、2.1.316 は npm レジストリ上で2026年10月31日 00:42（UTC）に公開された。前回扱った 2.1.314 の次の版にあたる。npm には 2.1.315 が10月30日 21:05（UTC）に載っているが、確認できた CHANGELOG の先頭は 2.1.316 で、2.1.315 の項目は見つからなかった。この記事は 2.1.316 の記載だけを整理する。実際の挙動は検証していない。",
+      "最初に確認したいのは fast mode の扱いである。CHANGELOG は「Opus 4.8 の fast mode を2026年10月30日付で非推奨とし、2026年11月30日に削除する」と記す。削除後、Opus 4.8 での fast mode の要求はエラーを返し、通常の Opus 4.8 にはフォールバックしない。CHANGELOG は、速さを維持するには Opus 5.5 へ移るよう書いている。同じ日に確認した公式の fast mode ドキュメントには、この非推奨の記述はまだ無く、Opus 5 と Opus 4.8 は research preview、Opus 5.5 は提供中とされていた。また同ドキュメントによると fast mode の1MTokあたりの価格は Opus 5.5 が入力8ドル・出力40ドル、Opus 5 と Opus 4.8 が入力10ドル・出力50ドルである。Opus 4.8 を明示的に指定して fast mode を使っているスクリプトや設定がある場合は、`/fast` の対象モデルを見直す材料になる。",
+      "モデルと effort まわりでは、`CLAUDE_CODE_SUBAGENT_EFFORT` が加わった。ほかに effort を指定する手段が無いとき、サブエージェントが走る effort を、セッションの値の継承ではなくこの変数で決められる。`CLAUDE_CODE_DISABLE_ULTRATHINK` は `ultrathink` キーワードを無効にする。2.1.311 で `ultrathink` が xhigh の effort で動くようになったことに続き、VS Code でも `ultrathink` のターンが xhigh で動き、チャット欄で虹色に表示される。",
+      "Claude apps gateway には、管理者向けの項目が増えた。支出上限の管理 API に `pooled_budget` を指定すると、グループの全員が共有する月次予算を、各人の上限に加えて設けられる。`managed.policy_mode: layered` では、最初に一致したポリシーだけでなく、一致したすべてのポリシーが下位のものに重ねて適用される。Bedrock の上流では `guardrail.input_tagging` が加わり、Amazon Bedrock のガードレールの prompt attacks フィルターが必要とする入力タグでプロンプトを包む。`all_messages_and_system` を選ぶとシステムプロンプトにも付く。また、リクエストが名指しするすべてのモデルを `availableModels`・`deniedModels`・`models` と照合するようになり、禁止されたモデルには、該当する項目名を挙げた 400 が返る。",
+      "セキュリティと権限では、`--restricted` のセッションが、Read の許可ルールが覆っていれば作業ディレクトリの外のファイルをアップロードしてしまう問題が直った。Team と Enterprise のログインでは、Anthropic の API から取得したサーバー管理設定が承認のプロンプトなしで適用される。保存された写しが検証に通らない場合は拒否される。管理された `autoMode.allow` の一覧が `\"$defaults\"` を含まないとき、ホストアプリの `--settings`、`/permissions` での最初のルール追加、`/auto-mode-setup` によって組み込みの例外が戻る問題も修正された。ただし、スケジュールタスクのプロンプトに対する組み込みルールは、`\"$defaults\"` の無い一覧でも消えなくなった。",
+      "証明書とネットワークでは、`CLAUDE_CODE_DISABLE_LOOPED_CROSS_CERT_DROP` が加わった。互いに認証し合って輪になっているシステムのクロス証明書を残す設定で、社内の CA がそれを必要とするサーバー向けである。SSL 証明書のエラーは、中間証明書が抜けているサーバーなど考えられる原因と、それぞれの対処を示すようになった。圧縮された応答が途中で切れたり壊れたりしたとき、ネットワーク要求がハングする問題も直った。",
+      "Bash ツールとフックでは、Claude Code が自分で終了したときに macOS と Linux でシェルのコマンドが動いたまま残る問題、値に改行を含むエイリアスや先頭がダッシュの関数名が壊れる問題、`SHELLOPTS` をエクスポートしているときスクリプトが最初のコマンドで止まる問題が修正された。PowerShell のフックは、コマンドが型キャスト・`param`・`using`・属性で始まる場合でも、終了コード 2 でブロックできる。",
+      "Bedrock と Vertex AI では、`sonnet`・`opus`・`haiku` の別名で最新のモデルがアカウントやリージョンでまだ使えないとき、途中でエラーを出さず古いモデルに切り替わる。そのほか、`/model <id>` が、この版で認識できないモデルのとき、自動圧縮が200Kのコンテキストを前提にすると警告する。Windows では Grep と Glob が、タイムアウトで検索プロセスを止めても終了しないときに戻らなくなる問題が直った。",
+      "VS Code では Claude apps gateway へのサインインがチャットパネルからできる。クラウドセッションでは、MCP サーバーが求めたフォームを埋めるか辞退するカードが加わり、Enterprise のメンバーは自分のクラウド環境のネットワーク用シークレットを追加・削除できる。Claude Tag では Slack のチャンネル設定が「Respond automatically」のスイッチから「How Claude participates」の選択に変わった。Code Review の分析ページには、重大度ごとの指摘数のカードが加わった。",
+      "なお CHANGELOG は非常に長く、確認できたのは 2.1.316 の項目と 2.1.314 の先頭部分である。fast mode の削除日は CHANGELOG の1行が根拠で、公式ドキュメントでの確認には至っていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG（anthropics/claude-code）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "Speed up responses with fast mode（Claude Code ドキュメント）",
+        "url": "https://code.claude.com/docs/en/fast-mode"
+      },
+      {
+        "title": "@anthropic-ai/claude-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
+      }
+    ]
   }
 };
 

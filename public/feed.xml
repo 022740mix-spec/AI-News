@@ -8,6 +8,14 @@
   <updated>2026-10-31T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Claude Code 2.1.316、Opus 4.8 の fast mode が非推奨に、サブエージェントの effort を環境変数で指定、ultrathink を無効にする環境変数が追加</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-2-1-316-opus-4-8-fast-mode-deprecated-subagent-effort-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-2-1-316-opus-4-8-fast-mode-deprecated-subagent-effort-2026</id>
+    <published>2026-10-31T15:00:00Z</published>
+    <updated>2026-10-31T15:00:00Z</updated>
+    <summary>Anthropic は Claude Code 2.1.316 を10月31日（UTC）に公開した。CHANGELOG は Opus 4.8 の fast mode を10月30日付で非推奨とし、削除後はエラーを返すと記す。CLAUDE_CODE_SUBAGENT_EFFORT、CLAUDE_CODE_DISABLE_ULTRATHINK、Claude apps gateway の共有予算が加わった。</summary>
+  </entry>
+  <entry>
     <title>Claude API に Usage and Cost Analytics API（ベータ）— モデル・ワークスペース・キー・利用者ごとの使用量と費用を取得、従来の Usage and Cost API は legacy に。Messages API の最大リクエストは 32 MB から 128 MB へ</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-usage-cost-analytics-api-beta-request-limit-128mb-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-usage-cost-analytics-api-beta-request-limit-128mb-2026</id>
