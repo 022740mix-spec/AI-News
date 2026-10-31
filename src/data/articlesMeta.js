@@ -12661,5 +12661,23 @@ export const ARTICLES_META = [
       "Anthropic",
       "開発ツール"
     ]
+  },
+  {
+    "id": "anthropic-opus-4-8-fast-mode-deprecated-api-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Claude API で Opus 4.8 の fast mode が非推奨に — 11月30日に削除、以後 speed: \"fast\" はエラー。移行先は Opus 5.5",
+    "excerpt": "Anthropic は2026年10月30日、Claude Opus 4.8 の fast mode を非推奨にし、2026年11月30日に削除すると Claude Platform のリリースノートで告知した。削除後は claude-opus-4-8 に speed: \"fast\" を付けたリクエストがエラーになる。公式は Claude Opus 5.5 への移行を案内している。Opus 5 の fast mode は引き続きリサーチプレビューと記載されている。",
+    "date": "2026-10-31",
+    "newsDate": "2026-10-30",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Opus 4.8",
+      "API",
+      "料金"
+    ]
   }
 ];

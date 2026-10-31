@@ -29183,6 +29183,53 @@ const ARTICLES_BODY = {
         "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
       }
     ]
+  },
+  "anthropic-opus-4-8-fast-mode-deprecated-api-2026": {
+    "body": [
+      "Claude Platform のリリースノートによると、Anthropic は2026年10月30日、Claude Opus 4.8 の fast mode を非推奨にした。削除日は2026年11月30日で、削除後に `claude-opus-4-8` へ `speed: \"fast\"` を付けて送ると、リクエストはエラーになる。fast mode を使い続けるには Claude Opus 5.5 へ移るよう案内されている。標準速度の Opus 4.8 そのものの扱いは、今回のリリースノートの項には書かれていない。この記事は公式ドキュメントの記載だけに基づく。",
+      "fast mode は、同じモデルを速い推論構成で動かす機能で、公式は出力トークンの毎秒数が最大2.5倍になると説明している。ドキュメントの現行の記述では、fast mode は Claude Opus 5.5 で利用でき、Opus 5 と Opus 4.8 ではリサーチプレビューとされている。今回の非推奨は、そのうち Opus 4.8 だけが対象である。Opus 5 について削除の告知は、確認した範囲のリリースノートにもドキュメントにも載っていない。",
+      "単価は、ドキュメントの価格表では Opus 5.5 が入力 $8 / 出力 $40、Opus 5 と Opus 4.8 が入力 $10 / 出力 $50（いずれも100万トークンあたり）である。fast mode の単価は標準単価に倍率をかけた形で、プロンプトキャッシュやデータレジデンシーの倍率はその上に重なる。つまり Opus 4.8 から Opus 5.5 へ移ると、fast mode の単価表は下がる。ただし、モデルが変わるので、標準速度の単価・出力の質・プロンプトの挙動が同じとは限らない。これらは本記事では検証していない。",
+      "移行する側が確認することは、公式の記述から次のように整理できる。1つ目はモデル ID の差し替えである。コードやエージェント設定に `claude-opus-4-8` と `speed: \"fast\"` の組み合わせが残っていると、11月30日以降にエラーで落ちる。2つ目は、Managed Agents では `speed` をエージェントのモデル指定（`{\"id\": ..., \"speed\": \"fast\"}`）に書く形なので、リクエスト側だけでなくエージェント定義も探す必要がある。3つ目は、速度が違うリクエストはプロンプトキャッシュの接頭辞を共有しないことである。モデルを変えると別途キャッシュが温まり直す。",
+      "確認できていないこと。Opus 5.5 への移行ガイドの該当部分は、今回アクセスした範囲では fast mode に関する記述を取り出せなかった。非推奨の理由、Opus 5 の fast mode の今後、速度や品質の実測は公式に書かれておらず、独立した情報源も確認していない。Claude Code 側の関連する変更は、本サイトの Claude Code 2.1.316 の記事で扱っている。"
+    ],
+    "tables": [
+      {
+        "caption": "fast mode の対応状況と単価（公式ドキュメントをもとに整理、2026年10月31日時点）",
+        "afterParagraph": 3,
+        "headers": [
+          "モデル",
+          "fast mode の状態",
+          "fast mode の単価（入力 / 出力、100万トークンあたり）"
+        ],
+        "rows": [
+          [
+            "Claude Opus 5.5",
+            "利用可",
+            "$8 / $40"
+          ],
+          [
+            "Claude Opus 5",
+            "リサーチプレビュー",
+            "$10 / $50"
+          ],
+          [
+            "Claude Opus 4.8",
+            "非推奨、2026年11月30日に削除",
+            "$10 / $50"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Platform リリースノート（2026年10月30日の項）",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Fast mode（Claude Platform ドキュメント）",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/fast-mode"
+      }
+    ]
   }
 };
 
