@@ -29230,6 +29230,24 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/build-with-claude/fast-mode"
       }
     ]
+  },
+  "github-copilot-cli-1-0-104-1-0-105-fusion-auto-autopilot-wait-2026": {
+    "body": [
+      "github/copilot-cli の変更履歴（changelog）によると、GitHub Copilot CLI は 2026年10月27日に 1.0.104 と 1.0.105 の2版が出た。直前の 1.0.100〜1.0.103 は別の記事で扱っている。npm の公開記録では 1.0.104 が10月27日、1.0.105 が10月28日（UTC）で、changelog の日付とは1日ずれる。この記事は changelog の記載をもとに整理したもので、実際の挙動は検証していない。",
+      "1.0.104 には4つの項目がある。管理モデルの fusion は、セッションを Auto で開始し、fusionTier の設定を適用する。対話と SDK の Autopilot セッションは、付随する背景タスクを待ち続け、COPILOT_TASK_WAIT_TIMEOUT_SECONDS で止まらなくなった。ただし `-p --autopilot` は引き続きこの値を尊重する。保存した Auto の設定が使えなくなったときは、毎ターン失敗せず Auto の既定の設定に戻る。Assisted Permissions は、実験モードを有効にしなくても使える。",
+      "1.0.105 の項目は1つで、/model で Copilot Fusion の High または Max を選ぶ操作が、長いコンテキストのセッションからでも動くようになった。changelog は Fusion の仕様や料金には触れていないので、どのプランで使えるかは公式のドキュメントで確認する必要がある。",
+      "自分の版に何があるかを判断する材料としては、Autopilot の待機の挙動が変わる点が分かりやすい。1.0.103 以前では、背景タスクの待機が環境変数のタイムアウトで打ち切られうるという前提で運用していた場合、対話と SDK では打ち切られなくなる。一方、-p のヘッドレス実行では従来どおりタイムアウトが効く。ここに挙げたのは changelog の全項目である。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitHub Copilot CLI changelog（github/copilot-cli）",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      },
+      {
+        "title": "@github/copilot（npm）の公開記録",
+        "url": "https://www.npmjs.com/package/@github/copilot"
+      }
+    ]
   }
 };
 

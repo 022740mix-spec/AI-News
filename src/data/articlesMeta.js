@@ -12679,5 +12679,22 @@ export const ARTICLES_META = [
       "API",
       "料金"
     ]
+  },
+  {
+    "id": "github-copilot-cli-1-0-104-1-0-105-fusion-auto-autopilot-wait-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "GitHub Copilot CLI 1.0.104〜1.0.105、Fusion は Auto で開始して fusionTier を適用、Autopilot は背景タスクを待ち続け、Assisted Permissions は実験モード不要に",
+    "excerpt": "GitHub Copilot CLI は10月27日に 1.0.104 と 1.0.105 が出た。管理モデル fusion は Auto で始まり fusionTier の設定が効く。対話と SDK の Autopilot は付随する背景タスクを待ち続け、Assisted Permissions は実験モードなしで使える。",
+    "date": "2026-11-01",
+    "newsDate": "2026-10-27",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "GitHub Copilot",
+      "CLI",
+      "開発ツール",
+      "エージェント"
+    ]
   }
 ];
