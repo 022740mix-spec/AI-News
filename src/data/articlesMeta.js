@@ -12696,5 +12696,22 @@ export const ARTICLES_META = [
       "開発ツール",
       "エージェント"
     ]
+  },
+  {
+    "id": "anthropic-gsa-partnership-40-percent-government-discount-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が米 GSA との提携を拡大 — 政府向けに Claude Enterprise・Claude for Government・API を40%割引、州・地方政府にも適用、最低利用額の縛りなし",
+    "excerpt": "Anthropic は10月27日、米国の一般調達局（GSA）との提携拡大を発表した。政府機関は Claude Enterprise、Claude for Government、Claude API を40%引きで購入でき、割引は全製品面で初めて適用される。州・地方・部族・準州の政府にも広がり、最低利用額の縛りはない。導入件数や効果の数字は、すべて Anthropic 自身の発表である。",
+    "date": "2026-11-02",
+    "newsDate": "2026-10-27",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "政府",
+      "料金"
+    ]
   }
 ];

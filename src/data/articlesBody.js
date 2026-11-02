@@ -29248,6 +29248,24 @@ const ARTICLES_BODY = {
         "url": "https://www.npmjs.com/package/@github/copilot"
       }
     ]
+  },
+  "anthropic-gsa-partnership-40-percent-government-discount-2026": {
+    "body": [
+      "Anthropic は2026年10月27日、同社のニュースページで、米国の一般調達局（GSA）との提携を新しい合意で拡大すると発表した。本記事は、その発表文（anthropic.com/news/expanding-partnership-gsa）を2026年11月2日に読んだ範囲での整理である。GSA 側の発表や契約文書には到達しておらず、読めていない。",
+      "発表文が述べている条件は次のとおり。政府側のパートナーは、Claude Enterprise、Claude for Government、Claude API を40%の割引で購入できる。割引が全製品面に適用されるのは初めてで、直接購入には今回から、クラウド事業者経由の購入には「今後数か月」で適用される。州・地方・部族・準州（SLTT）の政府にも広がる。Anthropic は、この割引で政府が約10億ドルを節約できると見積もっている。最低利用額の縛りはなく、機関は使った分だけを支払う、とも書かれている。購入は GSA の Multiple Award Schedule から、OneGov の割引価格で今すぐ行える。",
+      "認可の状況として、発表文は次を挙げている。Claude for Government は9月30日に一般提供となり、商用版とほぼ同等の機能を FedRAMP High の認可水準で提供する。Amazon Bedrock 上の Claude は FedRAMP High を取得し、一部のモデルは AWS GovCloud で国防総省の IL4・IL5 の業務にも認可されている。Google Cloud の Vertex AI 上の Claude も FedRAMP High を取得している。Claude Enterprise は FedRAMP 20x の枠組みで FedRAMP Moderate の認可手続き中で、完了時期は書かれていない。",
+      "導入の規模について、発表文は次の数字を出している。Claude を使う米国の連邦・州・地方の政府組織は約500、Claude for Government の週間アクティブユーザーは2月から約8倍、連邦の文民機関での利用は1年で約20倍。また、機関の導入を支援する専用プログラムを「今後数週間」で始めるとしている。",
+      "事例も複数載っている。ユタ州は10の州機関の開発者34人に Claude Code を配り、4週間の試行で80%が30分以内に作業環境を整え、71%が20時間以上の節約を報告した。ある州の CIO は、ランサムウェア攻撃への対応が8分で済んだ（通常は2〜3日）と述べた。連邦のセキュリティチームは Claude Mythos で脆弱性を見つけて約2日で修正し、前月の人手のペネトレーションテストでは見逃されていたという。別の州の開発者は約900の API メソッドの移行を、1か月の見積もりに対して2日で終えた。州の IT 部門のディレクターは、12の旧リポジトリの文書化、467のデータベーステーブルの対応付け、27のリスクの指摘を行ったとされる。州・地方向けのサイバー防衛プログラムには、米国の州の半数超と一部の大規模自治体、重要インフラ事業者が参加した。",
+      "ここで、各数字の出どころを分けておく。割引率、条件、認可の状況は、当事者である Anthropic が自社の契約と製品について述べた事実である。一方、導入件数、利用の伸び、事例の成果は、すべて Anthropic が自社の発表文の中で示したもので、第三者による検証は確認できていない。事例の人物は、発表文では名前を伏せた役職でしか示されておらず、所属機関も（ユタ州の試行を除いて）特定できない。",
+      "発表文に書かれていないことも多い。割引後の具体的な単価、GSA の契約番号や有効期間、割引が適用される製品の一覧表、クラウド事業者経由の割引が始まる具体的な日付は、いずれも触れられていない。「約10億ドル」は Anthropic の見積もりであり、算出の前提は示されていない。",
+      "【編集履歴】2026-11-02 新規公開。一次資料は Anthropic の発表文1本のみ。GSA 側の資料には到達できていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Expanding our partnership with GSA to bring Claude to all levels of government（Anthropic、2026-10-27）",
+        "url": "https://www.anthropic.com/news/expanding-partnership-gsa"
+      }
+    ]
   }
 };
 

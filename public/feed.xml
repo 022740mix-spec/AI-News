@@ -8,6 +8,14 @@
   <updated>2026-11-02T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Anthropic が米 GSA との提携を拡大 — 政府向けに Claude Enterprise・Claude for Government・API を40%割引、州・地方政府にも適用、最低利用額の縛りなし</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-gsa-partnership-40-percent-government-discount-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-gsa-partnership-40-percent-government-discount-2026</id>
+    <published>2026-11-02T15:00:00Z</published>
+    <updated>2026-11-02T15:00:00Z</updated>
+    <summary>Anthropic は10月27日、米国の一般調達局（GSA）との提携拡大を発表した。政府機関は Claude Enterprise、Claude for Government、Claude API を40%引きで購入でき、割引は全製品面で初めて適用される。州・地方・部族・準州の政府にも広がり、最低利用額の縛りはない。導入件数や効果の数字は、すべて Anthropic 自身の発表である。</summary>
+  </entry>
+  <entry>
     <title>GitHub Copilot CLI 1.0.104〜1.0.105、Fusion は Auto で開始して fusionTier を適用、Autopilot は背景タスクを待ち続け、Assisted Permissions は実験モード不要に</title>
     <link rel="alternate" type="text/html" href="?a=github-copilot-cli-1-0-104-1-0-105-fusion-auto-autopilot-wait-2026"/>
     <id>tag:ai-tool-news.jp,2026:github-copilot-cli-1-0-104-1-0-105-fusion-auto-autopilot-wait-2026</id>
