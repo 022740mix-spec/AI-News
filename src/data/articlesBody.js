@@ -29266,6 +29266,105 @@ const ARTICLES_BODY = {
         "url": "https://www.anthropic.com/news/expanding-partnership-gsa"
       }
     ]
+  },
+  "weekly-metrics-2026-week-oct26": {
+    "body": [
+      "この記事はニュースのまとめではなく、サイト自身の公開データから計算した「計器」である。1週間を見渡して初めて出る数字を、解釈を添えて示す。数字は `node scripts/weekly-metrics.mjs` の出力（集計日2026年11月3日）と、サイトの記事データの集計に基づく。外部サイトの情報は使っていない。計器記事そのものは、集計の対象から除いている。",
+      "## 公開本数 — 16本、前週の20本から減",
+      "10月26日〜11月1日の公開は**16本**（前週20本）で、すべて news だった。分野は cli 9 / product 4 / special 2 / model 1。出来事から掲載までの中央値は1日である。日別では10月30日が7本と突出し、26日・27日・31日が各2本、28日・29日・11月1日が各1本だった。",
+      "出来事の日と掲載日が3日以上ずれた記事は7本あった。最大は[Anthropic の利用方針の改定](?a=anthropic-usage-policy-2026-update-deceptive-campaigns-hardware-2026)（出来事は10月8日、掲載は30日）で、[Agent Skills の寄贈](?a=agent-skills-donated-to-aaif-linux-foundation-2026)（出来事は10月22日、掲載は30日）がそれに続く。10月30日の7本のうち、出来事が同じ日付のものは1本だけである。この日の集中は、数日前の出来事をまとめて記事にした分を含む。",
+      "## 題材の内訳 — 16本のうち10本が Anthropic 関連",
+      "題材で数えると、16本の内訳は次のとおりである。Anthropic 関連が**10本**（Claude Code の版が[2.1.311](?a=claude-code-2-1-311-ultrathink-xhigh-model-catalog-signed-file-2026)・[2.1.312](?a=claude-code-2-1-312-simple-prompt-custom-model-names-hooks-limit-2026)・[2.1.314](?a=claude-code-2-1-314-block-writes-outside-dirs-pcompact-cap-monitor-hooks-2026)・[2.1.316](?a=claude-code-2-1-316-opus-4-8-fast-mode-deprecated-subagent-effort-2026)の4本、Claude API 関連が[Opus 4.8 の fast mode 非推奨](?a=anthropic-opus-4-8-fast-mode-deprecated-api-2026)・[Usage and Cost Analytics API](?a=anthropic-usage-cost-analytics-api-beta-request-limit-128mb-2026)・[Google Cloud での提供](?a=anthropic-claude-models-google-cloud-anthropic-managed-2026)の3本、企業の動きが[S-1 の提出](?a=anthropic-s1-nasdaq-ant-filing-2026)・Agent Skills の寄贈・利用方針の改定の3本）。他社の CLI が5本（[Codex CLI 0.165.0](?a=codex-cli-0-165-vertex-provider-terra-memory-v2-2026)・[0.166.0](?a=codex-cli-0-166-transcript-selection-queue-resume-doctor-network-2026)、[Gemini CLI 0.66.0](?a=gemini-cli-0-66-terminal-sync-output-mcp-oauth-private-network-2026)、[Copilot CLI 1.0.100〜1.0.103](?a=github-copilot-cli-1-0-100-to-1-0-103-sandbox-local-network-proxy-2026) と [1.0.104〜1.0.105](?a=github-copilot-cli-1-0-104-1-0-105-fusion-auto-autopilot-wait-2026)）。残る1本が[Cloudflare の security-audit スキル](?a=cloudflare-security-audit-skill-six-phase-verified-findings-2026)である。",
+      "Anthropic 関連の「Anthropic」タグは10件で、前週の3件から増えた（前週の題材での数え方は6本）。前週は11本を占めた AI 以外のソフトウェアのセキュリティ情報が、この週は0本になった。週の構成が、セキュリティ情報の週から Anthropic 関連の週へ入れ替わったことになる。この記事の数字だけでは、これが Anthropic 側の公開の多さを反映したものか、サイトが拾う対象の偏りを反映したものかは分からない。ただし10本のうち4本は、出来事から3日以上あとに掲載されている。",
+      "## 3軸のバランス — 発掘と分析は4週続けて0本",
+      "16本はすべて news で、feature の最後の記事は[10月2日](?a=anthropic-pentagon-dc-circuit-appeal-2026)だった（集計日から32日前）。型で見ると、**発掘（新興・OSS・個人開発）と分析（社会的インパクト・規制・倫理）は4週続けて0本**である。S-1 の提出や利用方針の改定には社会的な論点があるが、記事はいずれも発表内容の紹介で、分析としては数えていない。",
+      "## ガイドの空白は変わらない",
+      "週次の計器が出す「記事で頻出するのに、ガイドに説明が無い概念」は、今週も同じ顔ぶれだった。直近90日の記事数は、「AI安全性」30件、「中国AI」14件、「エッジAI」11件、「個人開発」10件、「透明性」7件、「半導体」5件である（「Alibaba」7件と「リリースノート」7件は、固有名詞と記事の型のため補強の対象としては数えていない）。この週にこれらのタグが付いた記事は、「AI安全性」が[利用方針の改定](?a=anthropic-usage-policy-2026-update-deceptive-campaigns-hardware-2026)の1件だけで、他は0件だった。ガイドの書き込みは Routine には禁じられており、対話セッションでの判断を待っている。",
+      "## ツール別ページとの比",
+      "直近90日の記事数とツール別ページの解説項目数の比は、Claude Code 0.40（37件 / 93項目）、Codex 0.36（17件 / 47項目）、VS Code + Copilot 0.23（8件 / 35項目）、Cursor 0.14（6件 / 44項目）、Gemini CLI 0.09（4件 / 43項目）、Power Apps 0（0件 / 20項目）だった。比が大きいほど、話題の割に解説が薄い。**Cursor の記事は[9月20日](?a=cursor-projects-coordinator-agent-2026)を最後に出ておらず**、この週も0本だった。Claude Code と Codex の比は前週より上がっている。版ごとの記事が積み上がる一方、解説の項目数は変わっていないためである。",
+      "## 確認できなかったこと",
+      "今週の調査で、Claude Code・Codex・Gemini CLI の新しい版は、公式の変更履歴と npm の公開記録を見た範囲では、既報より新しいものが正式版としては見つからなかった（Codex 0.167.0 と Gemini CLI 0.67.0 はアルファ・プレビュー・ナイトリー段階）。Anthropic のニュースページにも、既報に無い大きな発表は見当たらなかった。OpenAI・Google の新モデルについては、一次資料に届く情報を確認できていない。**これは「出来事が無かった」という意味ではなく、確かめられる材料が手元に無かったという意味である。**"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 5,
+        "caption": "この週の公開の内訳（10月26日〜11月1日）",
+        "headers": [
+          "区分",
+          "本数",
+          "例"
+        ],
+        "rows": [
+          [
+            "Anthropic 関連",
+            "10本",
+            "Claude Code 2.1.311〜2.1.316、Claude API の fast mode 非推奨、S-1 の提出"
+          ],
+          [
+            "他社の AI CLI",
+            "5本",
+            "Codex CLI 0.165.0・0.166.0、Gemini CLI 0.66.0、Copilot CLI 1.0.100〜1.0.105"
+          ],
+          [
+            "その他",
+            "1本",
+            "Cloudflare security-audit スキル"
+          ],
+          [
+            "AI 以外のソフトウェアのセキュリティ",
+            "0本",
+            "（前週は11本）"
+          ],
+          [
+            "発掘・分析",
+            "0本",
+            "—"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 9,
+        "caption": "記事で頻出するのにガイドに説明が無い概念（直近90日、週次の計器の出力）",
+        "headers": [
+          "概念",
+          "記事の件数",
+          "この週に付いた記事"
+        ],
+        "rows": [
+          [
+            "AI安全性",
+            "30件",
+            "1件"
+          ],
+          [
+            "中国AI",
+            "14件",
+            "0件"
+          ],
+          [
+            "エッジAI",
+            "11件",
+            "0件"
+          ],
+          [
+            "個人開発",
+            "10件",
+            "0件"
+          ],
+          [
+            "透明性",
+            "7件",
+            "0件"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "AI News リポジトリ（週次の計器の算出元データ）",
+        "url": "https://github.com/022740mix-spec/AI-News"
+      }
+    ]
   }
 };
 

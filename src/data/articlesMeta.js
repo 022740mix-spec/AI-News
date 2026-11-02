@@ -12713,5 +12713,27 @@ export const ARTICLES_META = [
       "政府",
       "料金"
     ]
+  },
+  {
+    "id": "weekly-metrics-2026-week-oct26",
+    "type": "feature",
+    "category": "special",
+    "title": "週次の計器 — 10月26日〜11月1日は16本、前週の20本から減。10本が Anthropic 関連で、AI 以外のセキュリティ情報は0本に入れ替わり、発掘と分析は4週続けて0本だった",
+    "excerpt": "2026年10月26日〜11月1日の週次データ。公開は16本（前週20本）で、すべて news。題材で数えると10本が Anthropic 関連、他社の CLI が5本、Cloudflare が1本で、前週11本あった AI 以外のソフトウェアのセキュリティ情報は0本だった。3軸のうち発掘と分析は4週続けて0本で、ガイドに説明が見当たらない概念の一覧は変わらなかった。",
+    "date": "2026-11-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "週刊まとめ",
+      "Anthropic",
+      "CLI",
+      "AI安全性",
+      "開発ツール"
+    ],
+    "heroScope": "week",
+    "weekRoundupPeriod": {
+      "start": "2026-10-26",
+      "end": "2026-11-01"
+    }
   }
 ];
