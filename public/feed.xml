@@ -16,6 +16,14 @@
     <summary>2026年10月26日〜11月1日の週次データ。公開は16本（前週20本）で、すべて news。題材で数えると10本が Anthropic 関連、他社の CLI が5本、Cloudflare が1本で、前週11本あった AI 以外のソフトウェアのセキュリティ情報は0本だった。3軸のうち発掘と分析は4週続けて0本で、ガイドに説明が見当たらない概念の一覧は変わらなかった。</summary>
   </entry>
   <entry>
+    <title>Claude Code 2.1.317、アカウントのメールアドレスを送る前に確認、SDK フックの失敗でブロック、gateway の費用レポート API</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-2-1-317-account-email-confirm-hook-onfailure-gateway-cost-report-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-2-1-317-account-email-confirm-hook-onfailure-gateway-cost-report-2026</id>
+    <published>2026-11-03T15:00:00Z</published>
+    <updated>2026-11-03T15:00:00Z</updated>
+    <summary>Anthropic は Claude Code 2.1.317 を11月2日（UTC）に公開した。CHANGELOG は、Web・シェルのツールがアカウントのメールアドレスをネットワークへ送る前の確認、Agent SDK フックの onFailure: &quot;block&quot;、Claude apps gateway の費用レポート API を加えたと記す。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が米 GSA との提携を拡大 — 政府向けに Claude Enterprise・Claude for Government・API を40%割引、州・地方政府にも適用、最低利用額の縛りなし</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-gsa-partnership-40-percent-government-discount-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-gsa-partnership-40-percent-government-discount-2026</id>

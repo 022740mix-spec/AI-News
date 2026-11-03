@@ -29365,6 +29365,28 @@ const ARTICLES_BODY = {
         "url": "https://github.com/022740mix-spec/AI-News"
       }
     ]
+  },
+  "claude-code-2-1-317-account-email-confirm-hook-onfailure-gateway-cost-report-2026": {
+    "body": [
+      "Claude Code の公式 CHANGELOG によると、最新の版は 2.1.317 である。npm レジストリの記録では、2.1.317 は2026年11月2日 23:57（UTC）に公開され、前回扱った 2.1.316（10月31日）の次の版にあたる。この記事は CHANGELOG の記載を整理したもので、実際の挙動は検証していない。CHANGELOG は非常に長く、確認できたのは 2.1.317 の項目のみである。",
+      "まず権限と安全に関わる変更から挙げる。CHANGELOG は、Web またはシェルのツール呼び出しがアカウントのメールアドレスをネットワークへ送信する前に、確認を求める新しい検査を加えたと記す。Agent SDK のフックのコールバックは `onFailure: \"block\"` を受け付け、コールバックが失敗したときに処理を通すのではなく止められる。`/schedule` は、新しいクラウドのスケジュールタスクに依頼していないコネクタが付いたとき警告し、外し方を示す。Remote Control と SDK のホストは、mod のツール呼び出しに「今後は確認しない」を出さなくなった。Cloud セッションの auto mode は、Artifact ツールのアップロード、データベースへの書き込み、outputs フォルダ経由の保存で承認待ちに止まらなくなった。",
+      "Claude apps gateway の管理者向けには、`GET /v1/organizations/analytics/cost` の費用レポートが加わった。過去の支出を期間で指定し、合計・開発者・日・IdP グループ別にまとめられる。`admin:` を設定した gateway は、各開発者の IdP グループを `admin.identity_retention_days` の期間だけ日次で記録し、レポートの集計に使う。上限まわりでは、グループの共有予算を使い切ったあと、gateway のステータス行と `/usage` が個人の上限を100%使用済みと表示していた問題が直った。Bedrock の「Input is too long.」のエラーは gateway 経由でも見えるようになり、セッションは「upstream rejected the request」で失敗せず圧縮に進む。",
+      "テレメトリでは、OTel のメトリクス・イベント・スパンに `anthropic.plan`、`anthropic.seat_type`、`anthropic.provider`、`anthropic.custom_base_url` が含まれるようになった。プロキシ越しの OTel 送信については、`https://` の送信が別の送信と重なっても届く、`http://` の送信をプロキシが 403 で止めても接続試行が大量に出ない、応答が返らないプロキシでは10秒（`OTEL_EXPORTER_OTLP_TIMEOUT` で最大30秒）でタイムアウトする、の3点が修正されている。",
+      "自己ホストのランナーとヘッドレス実行では、環境変数 `CLAUDE_CODE_DISABLE_NESTED_SESSION_ID=1` が加わった。CHANGELOG によれば、セッション内で `claude -p` を呼ぶと、その呼び出しが親のセッション ID を共有せず、自分の ID とトランスクリプトを持つようになった（クラウドまたは自己ホストのランナー内で、親のトランスクリプトに書き込んだり別の会話を再開したりする問題の修正）。この変更を戻して以前の挙動にしたい場合に、この変数を使う。また `claude -p` は、ディスクの空きやクォータの不足でトランスクリプトや `~/.claude.json` の書き込みが失われたとき、エラーを出し、text・json 出力では終了コード 1 で終わる。ただし満杯の NFS エクスポートは検出できない場合があると明記されている。",
+      "そのほかの動作の変更としては、Read ツールが「前回の Read から変更なし」というスタブを返さなくなり、読み直すと全文が返る。Grep と Glob は、検索が時間制限に達したとき、部分的な結果を完全な結果として扱わなくなった。`DISABLE_PROMPT_CACHING_OPUS` と `DISABLE_PROMPT_CACHING_SONNET` は、既定モデルの `[1m]`・他リージョン・日付なしの表記にも効く。stdio の MCP サーバーには、空の `AWS_BEARER_TOKEN_BEDROCK` が渡されなくなり、変数が未設定になるため、マシンの AWS 認証情報を使える。Windows では、ネイティブのパス検索が失敗するボリュームで全ツール呼び出しが拒否される問題と、セッションの一時パスが 260 文字の制限に当たる問題が直った。TLS を検査するプロキシの背後で、ルート証明書の更新後に「unable to get local issuer certificate」で API 要求が失敗する問題も修正された。",
+      "このほか CHANGELOG には、VS Code 拡張（分岐した会話が並列ツール呼び出しを保つ、起動が遅いとき一度やり直す、文字サイズに合わせて表示が拡大される）、クラウドセッション（MCP サーバーが求めるリンクを開くか辞退するカード、既定の環境を管理者が選べる）、Claude Tag（Slack に貼った Artifact のリンクが Open ボタン付きの簡素なカードになる）などの項目がある。`/design-sync` は、デザインシステムが Claude に移っている場合に、アップロードで失敗せず、最初にそう伝えて止まる。",
+      "なお、この版の項目は全体で80件超にのぼり、この記事はそのうち利用者の設定や運用判断に関わるものを選んで載せている。全項目は CHANGELOG で確認できる。公式ドキュメント側の記述との突き合わせは行っていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG（anthropics/claude-code）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@anthropic-ai/claude-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
+      }
+    ]
   }
 };
 

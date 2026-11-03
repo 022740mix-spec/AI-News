@@ -12735,5 +12735,22 @@ export const ARTICLES_META = [
       "start": "2026-10-26",
       "end": "2026-11-01"
     }
+  },
+  {
+    "id": "claude-code-2-1-317-account-email-confirm-hook-onfailure-gateway-cost-report-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.317、アカウントのメールアドレスを送る前に確認、SDK フックの失敗でブロック、gateway の費用レポート API",
+    "excerpt": "Anthropic は Claude Code 2.1.317 を11月2日（UTC）に公開した。CHANGELOG は、Web・シェルのツールがアカウントのメールアドレスをネットワークへ送る前の確認、Agent SDK フックの onFailure: \"block\"、Claude apps gateway の費用レポート API を加えたと記す。",
+    "date": "2026-11-03",
+    "newsDate": "2026-11-02",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "開発ツール"
+    ]
   }
 ];
