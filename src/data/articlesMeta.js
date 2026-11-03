@@ -12752,5 +12752,23 @@ export const ARTICLES_META = [
       "Anthropic",
       "開発ツール"
     ]
+  },
+  {
+    "id": "qwen-code-0-26-6-web-shell-headless-prompt-hooks-mcp-duplicate-tools-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Qwen Code v0.26.6 — Web Shell の使用量パネル、ヘッドレス実行の prompt.submit フック、MCP の同名ツールが他のツールを隠さない修正",
+    "excerpt": "Qwen Code の CLI v0.26.6（11月2日公開）の変更点。Web Shell に成功率・出力速度・初回トークンまでの遅延を見る画面が加わり、-p と stream-json の実行でもフックでプロンプトを検査・書き換えできる。MCP は同名ツールを飛ばして残りを読み込み、シェル権限の判定では 2>&1 を書き込みと見なさなくなった。",
+    "date": "2026-11-03",
+    "newsDate": "2026-11-02",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Qwen Code",
+      "CLI",
+      "MCP",
+      "AI エージェント",
+      "セキュリティ"
+    ]
   }
 ];
