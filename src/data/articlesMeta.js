@@ -12787,5 +12787,22 @@ export const ARTICLES_META = [
       "Anthropic",
       "開発ツール"
     ]
+  },
+  {
+    "id": "gemini-cli-0-67-models-command-list-models-ide-sandbox-bridge-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Gemini CLI 0.67.0 の変更点、models コマンドと --list-models フラグ、IDE 連携をコンテナのサンドボックスへ橋渡し、信頼しないフラグの承認を記憶",
+    "excerpt": "Google の Gemini CLI 0.67.0 が2026年11月4日に公開された。使えるモデルを一覧する models コマンドと --list-models フラグが加わり、IDE コンパニオンをコンテナのサンドボックスへ橋渡しする変更も入った。公式のリリースページに基づいて整理する。",
+    "date": "2026-11-04",
+    "newsDate": "2026-11-04",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Gemini CLI",
+      "CLI",
+      "Google",
+      "開発ツール"
+    ]
   }
 ];
