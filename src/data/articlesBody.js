@@ -29411,6 +29411,30 @@ const ARTICLES_BODY = {
         "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.26.6"
       }
     ]
+  },
+  "claude-code-2-1-318-shared-network-home-config-safety-subagent-shell-background-2026": {
+    "body": [
+      "Claude Code の公式 CHANGELOG によると、最新の版は 2.1.318 である。npm レジストリの記録では、2.1.318 は2026年11月3日 21:55（UTC）に公開され、前回扱った 2.1.317（11月2日）の次の版にあたる。この記事は CHANGELOG の記載を整理したもので、実際の挙動は検証していない。CHANGELOG のこの版は84項目あり、以下はそのうち利用者の設定や運用判断に関わるものを選んでいる。",
+      "最も項目が多いのは、ネットワーク共有のホームディレクトリ（NFS など）で使う場合の保存の信頼性である。CHANGELOG は、`~/.claude.json`・設定ファイル・保存済みログインが保存のたびに消えたり、一時的に空になったり、ほぼ空の古い複製に置き換わったりする頻度を下げたと記す。容量が足りないがファイルの新規作成は受け付けるホームで、保存済みログインが空ファイルに置き換わる問題も直った。`/logout`、`claude auth logout`、`claude mcp remove` は、設定ファイルを更新できなかったのに成功と報告し、信頼・同意・MCP 設定の変更が黙って捨てられることがあった。これも修正の対象に挙がっている。`claude mcp add` と `remove` はロックを待つか終了コード 1 で終わるようになったが、別のジョブの保存で追加済みのサーバーが置き換わる可能性は残る、と CHANGELOG 自身が書いている。",
+      "`~/.claude.json` の扱いも変わった。非対話の起動で、JSON として不正な `~/.claude.json` を既定値で置き換えていた挙動をやめ、起動を失敗させて復元方法を示し、ファイルはそのまま残す。中身が空でバックアップも無いファイルは、破損とは報告せず、ファイルが無いときと同じように起動する。復元コマンドの表示が、空または途中で切れたバックアップを指したり、読み取り専用のファイルで失敗したりする問題も直った。無人実行（`claude -p` や SDK アプリ）は、内容が変わらないときに `~/.claude.json` を毎回書き直さなくなった。",
+      "ログインまわりでは、保存済みの claude.ai ログインの失効日が `claude auth status`（`loginExpiresAt`）と `claude -p` の JSON 結果（`credential_expires_at`）に出るようになった。`claude -p` のテキスト出力には、失効の10日前から stderr に1行の警告が出る。失効したときのサインイン失敗は、その旨を伝え、`claude -p` では `claude auth login` と `claude setup-token` を案内する。別の端末やホストが同じアカウント・組織で同じホームにサインインし直したとき、ジョブが `Not logged in` で終わる問題と、`setup-token` のトークンが `forceLoginOrgUUID` のあるマシンで、許可された組織のものなのに拒否される問題も修正された。",
+      "サブエージェントの動作には変更が3つある。バックグラウンドのサブエージェントは、シェルコマンドを3分後にバックグラウンドへ移すようになった。全プロバイダー共通で、実行中にプロンプトキャッシュが切れないようにするためと CHANGELOG は説明する。Bedrock・Vertex・Foundry、またはテレメトリを切った環境では、サブエージェントの進捗要約が、キャッシュが冷えているとき最大5分、保留中の応答を待つことがある。また、「メッセージがフラグ付けされたときにモデルを切り替える」が「毎回確認」のとき、サブエージェントはモデルを切り替えず停止する。",
+      "権限と接続の面では、`deniedMcpServers` の URL 指定が、上流の URL が一致する Anthropic 提供のサーバーや、クラウドセッションと自己ホストのランナーのコネクタも止めるようになった。CHANGELOG は、コネクタを拒否したい場合は名前で指定するよう書いている。承認済みのシェルコマンドが、自己ホストのランナーやクラウドセッションの再起動後に、指定されたフォルダではなくセッションの開始フォルダで動く問題も修正された。開始フォルダに入れない場合は実行されない。IDE 拡張については、IDE のターミナルで起動したとき拡張機能のインストールや更新を行わなくなり、`/ide` を外側のターミナルから使うか、エディタの拡張機能画面から更新する。",
+      "mod（セッション中に Claude が書く拡張）の関連では、mod の有効化を尋ねられたときの回答が記録されるようになった。mod の `$.model.fork` に `effort` オプションが加わり、セッションの effort が何であっても、短い補助作業を `low` で動かせる。`prompt.submit` で mod が付ける内容は、システムメッセージではなくユーザーのターンの中に留まる。`turn.step` を使う mod のもとで、API エラーで途切れた応答や停止した応答が成功として報告される問題も、`claude -p` と Agent SDK で直っている。",
+      "Claude apps gateway と自己ホストのランナーには管理者向けの変更がある。gateway の `mantle` 上流に `assume_role` が加わり、別の AWS アカウントのロールや、開発者ごとの AWS 費用の帰属に使える。Bedrock で AWS の CountTokens が失敗したときの警告は、501 の後に数えるのは gateway ではなく Claude Code だと説明するようになった。ランナーのオーケストレーターのログは行の形式が変わり、`ok session=…` が全ログレベルで標準出力に出て、`reason=…` が付く。`retryable=true:` や `retryable=false:` を照合するスクリプトは更新が必要だと CHANGELOG は注意している。",
+      "クラウドセッションでは、Anthropic ホストの環境でリポジトリを選ばずに開始できる「No repository」が加わり、組み込みの Chromium が `google-chrome` と `CHROME_PATH` でも見つかるようになった。GitHub Actions のログ取得（`gh run view --log` と `gh api`）は、多くの環境で到達できないリダイレクトではなくログ本体を返す。この版には、このほか `NODE_EXTRA_CA_CERTS` が空・PEM でない・先頭の証明書が壊れているときに全接続が失敗していた問題の修正（読める証明書を使い、stderr に警告）や、macOS で多数の Bash コマンドを動かすとメモリが増えて止まる問題の修正などがある。公式ドキュメント側の記述との突き合わせは行っていない。",
+      "なお、この版の中核機能の世代交代や廃止予告にあたる項目は、確認できた範囲では見当たらなかった。ただし CHANGELOG の全項目を網羅的に読んだわけではなく、本文に挙げなかった項目も多い。全項目は CHANGELOG で確認できる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG（anthropics/claude-code）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@anthropic-ai/claude-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
+      }
+    ]
   }
 };
 

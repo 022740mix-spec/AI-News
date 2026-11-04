@@ -12770,5 +12770,22 @@ export const ARTICLES_META = [
       "AI エージェント",
       "セキュリティ"
     ]
+  },
+  {
+    "id": "claude-code-2-1-318-shared-network-home-config-safety-subagent-shell-background-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.318、ネットワーク共有のホストでの設定・ログイン保存を堅牢化、サブエージェントのシェルは3分でバックグラウンドへ、sign-in の失効日を表示",
+    "excerpt": "Anthropic は Claude Code 2.1.318 を11月3日（UTC）に公開した。CHANGELOG は、共有ネットワークホームでの ~/.claude.json・設定・ログインの保存まわりの修正、背景サブエージェントのシェルコマンドを3分でバックグラウンドへ移す変更、claude.ai ログインの失効日の表示を加えたと記す。",
+    "date": "2026-11-04",
+    "newsDate": "2026-11-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "開発ツール"
+    ]
   }
 ];

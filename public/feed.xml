@@ -8,6 +8,14 @@
   <updated>2026-11-04T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Claude Code 2.1.318、ネットワーク共有のホストでの設定・ログイン保存を堅牢化、サブエージェントのシェルは3分でバックグラウンドへ、sign-in の失効日を表示</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-2-1-318-shared-network-home-config-safety-subagent-shell-background-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-2-1-318-shared-network-home-config-safety-subagent-shell-background-2026</id>
+    <published>2026-11-04T15:00:00Z</published>
+    <updated>2026-11-04T15:00:00Z</updated>
+    <summary>Anthropic は Claude Code 2.1.318 を11月3日（UTC）に公開した。CHANGELOG は、共有ネットワークホームでの ~/.claude.json・設定・ログインの保存まわりの修正、背景サブエージェントのシェルコマンドを3分でバックグラウンドへ移す変更、claude.ai ログインの失効日の表示を加えたと記す。</summary>
+  </entry>
+  <entry>
     <title>週次の計器 — 10月26日〜11月1日は16本、前週の20本から減。10本が Anthropic 関連で、AI 以外のセキュリティ情報は0本に入れ替わり、発掘と分析は4週続けて0本だった</title>
     <link rel="alternate" type="text/html" href="?a=weekly-metrics-2026-week-oct26"/>
     <id>tag:ai-tool-news.jp,2026:weekly-metrics-2026-week-oct26</id>
