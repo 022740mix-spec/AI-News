@@ -12804,5 +12804,22 @@ export const ARTICLES_META = [
       "Google",
       "開発ツール"
     ]
+  },
+  {
+    "id": "qwen-code-0-26-7-model-catalog-refresh-folder-trust-hooks-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Qwen Code v0.26.7 — モデルカタログの更新を設定で止められる、リポジトリ付属のフックは信頼確認が必須に、GitHub のイベントを未信頼のプロンプトとして扱う",
+    "excerpt": "Alibaba の Qwen Code v0.26.7 が2026年11月4日に公開された。モデルカタログのバックグラウンド更新を設定で止められるようになり、リポジトリが持ち込むフックや権限、言語サーバーはフォルダの信頼を得るまで動かない。公式のリリースページに基づいて整理する。",
+    "date": "2026-11-04",
+    "newsDate": "2026-11-04",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Qwen Code",
+      "CLI",
+      "Qwen",
+      "開発ツール"
+    ]
   }
 ];

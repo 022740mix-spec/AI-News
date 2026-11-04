@@ -29454,6 +29454,25 @@ const ARTICLES_BODY = {
         "url": "https://www.npmjs.com/package/@google/gemini-cli"
       }
     ]
+  },
+  "qwen-code-0-26-7-model-catalog-refresh-folder-trust-hooks-2026": {
+    "body": [
+      "QwenLM/qwen-code の GitHub リリースページは、v0.26.7 を 11月4日に公開されたものとして載せている（ページに年の表示は無い）。npm レジストリでは `@qwen-code/qwen-code` の `latest` が 0.26.7 を指し、公開時刻は 2026-11-04 04:12 UTC だった。直前に扱った v0.26.6 の次のリリースにあたる。以下はリリースページの記載に基づく整理で、実際の挙動は検証していない。",
+      "設定まわりでは、運用者向けの `model.catalogRefresh` 設定が加わり、`privacy.usageStatisticsEnabled: false` でバックグラウンドのカタログ更新を止められる（#16066）。管理されたエージェントのセッション作成時に、モデル設定の全体を指定できるようにもなった（#16153）。",
+      "信頼まわりの修正が目立つ。リポジトリが持ち込むフック、権限の付与、言語サーバーは、フォルダの信頼を得てから動く（#16182）。対話セッションでは `.qwen/settings.json` のプロジェクトフックにも明示的な信頼が要る（#16196）。`grep -n` と `--line-number` をフラグとして扱い、grep の読み取りが権限チェックを通るようにする修正（#14383）、リモート接続のエラーから内部の詳細を隠す修正（#16199）も入った。",
+      "Web Shell と連携では、Channel events ページ（#16106）、管理された Web Shell ホストの項目（#15928）、`qwen serve` へのリモート接続を再起動なしで許可する設定（#15887）、チャンネルエディタでの GitHub リポジトリのアクセスやメンションの設定（#16149）が加わった。紐付けた PR の GitHub イベントは、未信頼のプロンプトとしてセッションへ渡される（#16117）。Mods の `prompt.submit` フックは、入力したプロンプトの処理より前に走る（#16180）。",
+      "`experimental.unifiedAgentLoop` を有効にすると、ACP の Goal ターン（#16131）と cron・バックグラウンド通知のターン（#16190）が共有のエージェントループで動く。性能面では、管理されたエージェントの処理がテナント全体の配置ロックを待たない変更が複数ある（#16205、#16217、#16221、#16223、#16225）。ほかにも修正と内部変更が多数あり、全項目は公式のリリースページにある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Qwen Code v0.26.7 リリース（GitHub）",
+        "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.26.7"
+      },
+      {
+        "title": "@qwen-code/qwen-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@qwen-code/qwen-code"
+      }
+    ]
   }
 };
 

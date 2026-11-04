@@ -24,6 +24,14 @@
     <summary>Google の Gemini CLI 0.67.0 が2026年11月4日に公開された。使えるモデルを一覧する models コマンドと --list-models フラグが加わり、IDE コンパニオンをコンテナのサンドボックスへ橋渡しする変更も入った。公式のリリースページに基づいて整理する。</summary>
   </entry>
   <entry>
+    <title>Qwen Code v0.26.7 — モデルカタログの更新を設定で止められる、リポジトリ付属のフックは信頼確認が必須に、GitHub のイベントを未信頼のプロンプトとして扱う</title>
+    <link rel="alternate" type="text/html" href="?a=qwen-code-0-26-7-model-catalog-refresh-folder-trust-hooks-2026"/>
+    <id>tag:ai-tool-news.jp,2026:qwen-code-0-26-7-model-catalog-refresh-folder-trust-hooks-2026</id>
+    <published>2026-11-04T15:00:00Z</published>
+    <updated>2026-11-04T15:00:00Z</updated>
+    <summary>Alibaba の Qwen Code v0.26.7 が2026年11月4日に公開された。モデルカタログのバックグラウンド更新を設定で止められるようになり、リポジトリが持ち込むフックや権限、言語サーバーはフォルダの信頼を得るまで動かない。公式のリリースページに基づいて整理する。</summary>
+  </entry>
+  <entry>
     <title>週次の計器 — 10月26日〜11月1日は16本、前週の20本から減。10本が Anthropic 関連で、AI 以外のセキュリティ情報は0本に入れ替わり、発掘と分析は4週続けて0本だった</title>
     <link rel="alternate" type="text/html" href="?a=weekly-metrics-2026-week-oct26"/>
     <id>tag:ai-tool-news.jp,2026:weekly-metrics-2026-week-oct26</id>

@@ -3660,4 +3660,10 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://022740mix-spec.github.io/AI-News/?a=qwen-code-0-26-7-model-catalog-refresh-folder-trust-hooks-2026</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
