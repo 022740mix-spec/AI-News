@@ -29549,6 +29549,34 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/build-with-claude/text-watermark"
       }
     ]
+  },
+  "anthropic-ip-allowlist-admin-user-sign-out-api-beta-2026-11-05": {
+    "body": [
+      "Anthropic の Claude API リリースノートに、11月5日付で2件の管理機能が載った。1つは、組織への接続を信頼する IP アドレスだけに絞る IP 許可リスト（ベータ）、もう1つは、Claude Enterprise の会員を全ブラウザ・全端末からサインアウトさせる Admin API のエンドポイント（ベータ）である。以下は公式のリリースノートと、IP 許可リストおよびユーザー管理のドキュメントに基づく。独立した第三者による検証は確認できていない。",
+      "IP 許可リストは、リクエストの公開 IP アドレスを組織の許可リストと照合し、載っていなければ拒否する仕組みである。公式は目的を、API キーが漏れた場合に攻撃者が使いにくくすることと説明している。リリースノートでは IPv4・IPv6 のアドレスか CIDR 範囲を、1組織あたり最大1,000件まで登録できる。ドキュメントによれば、1件は単一アドレスか、IPv4 は /8、IPv6 は /32 より広くない CIDR 範囲で、登録するのは通信が組織の外へ出ていく公開アドレスであり、10.0.0.0/8 のようなプライベート範囲ではない。",
+      "対象は組織の種類で違う。Claude Platform の組織では、Claude Console の画面と、Claude API の Messages、Message Batches、Token Counting、Models、Files、Skills、Claude Managed Agents の Agents、Sessions、Environments、Vaults、Memory stores、そして対象組織だけを範囲とするキーでの Admin API と Compliance API が対象になる。許可外のアドレスからの API リクエストは、Messages API で 403 の permission_error と「Your IP address isn't in this organization's allowed range.」で返る。Claude Enterprise の組織は別の許可リストを持ち、ブラウザ・デスクトップ・モバイルの Claude、Claude アカウントでサインインした Claude Code、Claude in Chrome、Office アドオン、Cowork などが対象になる。",
+      "対象外も明記されている。Claude Platform の許可リストは、Claude in Amazon Bedrock、Claude Platform on AWS、Claude Models on Google Cloud、Claude in Microsoft Foundry には適用されない。Managed Agents では、エンドポイントへのリクエストが対象で、エージェントの実行環境内の通信には及ばない。Claude Enterprise では、Claude Design、Claude in Slack、Claude Academy が対象外で、利用者が締め出されたときにチャットで実行中だったタスクは最長24時間続きうる。",
+      "有効化の手順はドキュメントに3段階で書かれている。設定ページ（Claude Console は Identity and access、claude.ai は Organization settings の Organization and access）でトグルを入れ、範囲を追加して保存し、トラフィックを確認する。変更の反映には最長15分かかり、公式は日次・週次のジョブも含めて 403 が出ていないか見るよう求めている。保存時に確認されるのは、設定している本人の現在のアドレスだけで、サーバー、同僚、将来の接続元は確認されない。データセンター、CI、オフィス、VPN、プロキシ、セルフホストのサンドボックスのワーカーを、先にすべて載せるよう勧めている。",
+      "締め出されたときの逃げ道として、公式は「管理者（claude.ai では所有者）に、どの IP からでもこの設定ページへアクセスすることを許可する」チェックボックスを選ぶことを勧めている。一方で公式自身が、その場合は管理者や所有者のセッションを乗っ取った攻撃者が、遠隔から許可リストを書き換えられると注記している。Compliance API を設定していれば、Activity Feed に許可リストの変更が記録される。また公式は、許可リストはキーが使える場所を絞るだけで期間は絞らないので、キーの有効期限を短くするか、Workload Identity Federation に移ることも併せて勧めている。",
+      "もう1件は Admin API である。POST /v1/organizations/users/{user_id}/sign_out は、Claude Enterprise の会員をすべてのブラウザ・端末でサインアウトさせ、その組織の OAuth トークンも失効させる。ベータで、全リクエストに anthropic-beta: admin-user-sign-out-2026-10-08 のヘッダーが要り、無いと 400 になる。必要なキーのスコープは write:members である。ドキュメントは用途として、端末の紛失や盗難、セキュリティインシデント、会員を外すか決める前の調査を挙げている。",
+      "このサインアウトは、会員を組織から外すものではない。会員は席も役割も保ったまま、すぐに再びサインインできる。公式は、締め出し続けるには会員を削除するか、シングルサインオンを必須にしている組織なら ID プロバイダー側でアカウントを無効化するよう書いている。削除しても ID プロバイダー側のアカウントが有効なままだと、自動プロビジョニングで次のサインイン時に再び追加されうるとも書かれている。ID プロバイダーが会員を管理している場合、削除は ID プロバイダーでしかできない。",
+      "ドキュメントには、挙動の細部もある。サインアウトの範囲は、その人の Claude アカウント全体で、他の組織や個人プランのセッションも含むと書かれている。リクエストが 503 を返したら 200 が返るまで再送し、プライマリオーナーに対しては 400 の cannot_sign_out_primary_owner が返る。最初のリクエストのあとにサインインが記録されていたり、Claude Code などのアプリでサインインしていた場合は、5分後にもう一度送るよう案内されている。リリースノートの文言は組織に対する失効を述べ、ドキュメントはアカウント全体と述べているので、範囲の確認は公式のドキュメントのページで行うのがよい。",
+      "2件に共通するのは、どちらも漏れた認証情報の被害を小さくする管理機能という点である。ただし働く場所は違う。IP 許可リストは、使える場所を事前に絞る。サインアウトの API は、事が起きてから、その人の接続を切る。どちらもベータで、公式は設定や挙動が変わりうると書いている。なお、いずれも提供条件はリリースノートとドキュメントの記述にとどまり、どのプランでどの機能が使えるかの一覧は、ここでは確認していない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Platform リリースノート（11月5日付）",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "IP allowlisting（Claude Platform Docs）",
+        "url": "https://platform.claude.com/docs/en/manage-claude/ip-allowlist"
+      },
+      {
+        "title": "User management — Sign a member out everywhere（Claude Platform Docs）",
+        "url": "https://platform.claude.com/docs/en/manage-claude/user-management"
+      }
+    ]
   }
 };
 

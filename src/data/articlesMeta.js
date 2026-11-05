@@ -12838,5 +12838,24 @@ export const ARTICLES_META = [
       "API",
       "エージェント"
     ]
+  },
+  {
+    "id": "anthropic-ip-allowlist-admin-user-sign-out-api-beta-2026-11-05",
+    "type": "news",
+    "category": "product",
+    "title": "Claude Console に IP 許可リスト（ベータ）、Enterprise には管理者が会員を全端末からサインアウトさせる Admin API — 11月5日付",
+    "excerpt": "Anthropic の Claude API リリースノートに、11月5日付で2件が載った。組織単位で接続元 IP を制限する IP 許可リスト（ベータ）と、Claude Enterprise の会員をすべてのブラウザ・端末から締め出す Admin API（ベータ）である。対象のエンドポイント、対象外のクラウド経由の Claude、ロックアウトを避ける設定、サインアウトが「締め出し」ではない点を、公式ドキュメントに基づいて整理する。",
+    "date": "2026-11-05",
+    "newsDate": "2026-11-05",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude API",
+      "セキュリティ",
+      "エンタープライズ",
+      "API",
+      "権限"
+    ]
   }
 ];

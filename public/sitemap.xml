@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://022740mix-spec.github.io/AI-News/</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -3668,6 +3668,12 @@
   </url>
   <url>
     <loc>https://022740mix-spec.github.io/AI-News/?a=anthropic-message-threads-beta-claude-api-2026</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://022740mix-spec.github.io/AI-News/?a=anthropic-ip-allowlist-admin-user-sign-out-api-beta-2026-11-05</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
