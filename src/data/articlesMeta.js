@@ -12821,5 +12821,22 @@ export const ARTICLES_META = [
       "Qwen",
       "開発ツール"
     ]
+  },
+  {
+    "id": "anthropic-message-threads-beta-claude-api-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude API に message threads（ベータ）— 会話をサーバー側に保持し、2回目以降は新しいメッセージだけを送る。有効期限は最後のリクエストから5分、ZDR は対象外",
+    "excerpt": "Anthropic の Claude API リリースノートに、11月2日付で message threads（ベータ）が載った。最初のリクエストで会話全体を送って thread を作り、以降は新しいメッセージと前の応答 ID だけを送る。長い会話やエージェントのループで、リクエストが小さくなり最初のトークンまでの時間が短くなるという。有効期限、非対応の機能、ゼロデータ保持（ZDR）の扱いを、公式ドキュメントに基づいて整理する。",
+    "date": "2026-11-05",
+    "newsDate": "2026-11-02",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude API",
+      "API",
+      "エージェント"
+    ]
   }
 ];

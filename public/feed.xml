@@ -8,6 +8,14 @@
   <updated>2026-11-05T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Claude API に message threads（ベータ）— 会話をサーバー側に保持し、2回目以降は新しいメッセージだけを送る。有効期限は最後のリクエストから5分、ZDR は対象外</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-message-threads-beta-claude-api-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-message-threads-beta-claude-api-2026</id>
+    <published>2026-11-05T15:00:00Z</published>
+    <updated>2026-11-05T15:00:00Z</updated>
+    <summary>Anthropic の Claude API リリースノートに、11月2日付で message threads（ベータ）が載った。最初のリクエストで会話全体を送って thread を作り、以降は新しいメッセージと前の応答 ID だけを送る。長い会話やエージェントのループで、リクエストが小さくなり最初のトークンまでの時間が短くなるという。有効期限、非対応の機能、ゼロデータ保持（ZDR）の扱いを、公式ドキュメントに基づいて整理する。</summary>
+  </entry>
+  <entry>
     <title>Claude Code 2.1.318、ネットワーク共有のホストでの設定・ログイン保存を堅牢化、サブエージェントのシェルは3分でバックグラウンドへ、sign-in の失効日を表示</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-2-1-318-shared-network-home-config-safety-subagent-shell-background-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-2-1-318-shared-network-home-config-safety-subagent-shell-background-2026</id>

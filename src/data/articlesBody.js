@@ -29473,6 +29473,82 @@ const ARTICLES_BODY = {
         "url": "https://www.npmjs.com/package/@qwen-code/qwen-code"
       }
     ]
+  },
+  "anthropic-message-threads-beta-claude-api-2026": {
+    "body": [
+      "Anthropic の Claude API リリースノートに、11月2日付で message threads が載った。長い会話やエージェントのループで、Messages API に送るリクエストを小さくし、最初のトークンまでの時間を短くするベータ機能である。ベータヘッダーは message-threads-2026-08-12。以下は公式ドキュメント（リリースノートと message threads のページ）に基づく。独立した第三者による検証や、公式が示す以外の速度の実測は確認できていない。",
+      "仕組みは3つの操作で説明されている。作成（create）では、これまでどおり会話全体と system、tools を送り、thread に {\"type\": \"create\"} を付ける。API は Claude の応答を含む会話を、応答の id の下に保存する。継続（continue）では、前の応答以降の新しいメッセージだけを送り、thread に {\"type\": \"continue\", \"previous_message_id\": 前の id} を付ける。system と tools は継続のリクエストに含めず、作成時の値が保たれる。再生（replay）は、継続できなくなったときに、手元の会話全体を新しい create として送り直すことを指す。",
+      "従来は毎ターン、会話全体を再送し、API はその全体を検証してトークン化し直していた。公式の説明では、thread を使うと、その作業の大半が新しいターンの分だけになる。効果が大きいのは長いエージェントのループだとされている。なお、公式ドキュメントはリクエストの小ささと最初のトークンまでの時間が「低く安定する」と述べるにとどまり、具体的な短縮幅の数字は示していない。",
+      "thread はベストエフォートである。最後のリクエストから5分で失効し、API は最後の使用から遅くとも1時間以内に削除する。保存された応答を返すたびに5分が延びる。API が thread を継続できないときは 404 を返し、error.details.error_code は thread_not_found になる。原因として挙がっているのは、失効、前のターンが保存されなかった場合（max_tokens で途中で切れたツール呼び出しで終わる応答など）、フォールバックのモデルが書いた応答、前の応答がまだ生成中、別の組織・ワークスペース・ユーザーからのリクエスト、保存済みの会話が受け付けない内容の追加（それまで画像が無い会話への最初の画像など）である。",
+      "そのため公式は、アプリケーション側を会話の正本とし、全メッセージの写しを自前で持ち、再生の経路を最初から作るよう求めている。応答のどれも、そのターンが保存されたかどうかを教えてくれず、次の継続のリクエストで初めて分かる。SDK の thread ヘルパーは、この再生を自動で行い、会話をメモリ上にだけ保持する。ヘルパーのオブジェクトが消えれば会話も消えるので、プロセスより長く会話を残したいなら自前で保存する必要がある。SDK のベータのツールランナーは、既定で thread を使い、作成時に無効にできる。",
+      "リクエストのフィールドは3群に分かれる。system と tools は作成のリクエストだけで送る。継続のリクエストに含めると、null でも 400 になる。model、tool_choice、thinking、mcp_servers（各サーバーの認可トークンを除く）、context_management、output_config、container 内の skills、トップレベルの cache_control、anthropic-beta の値の組は固定で、全リクエストで作成時と同じ値を送る。違うと 400 の thread_fingerprint_mismatch になり、エラーメッセージが食い違うフィールドを示す。max_tokens、stop_sequences、stream、metadata、service_tier などは毎ターン変えてよい。API は MCP サーバーの URL や認可トークン、container の id を保存しないので、これらは使う全リクエストで送る。",
+      "各応答の id から継続できるのは1回だけで、thread は追記専用である。過去のメッセージの編集や分岐は、新しい thread を作成して行う。ストリーミングでは、応答の id は message_start に届くが、継続は message_stop を受け取ってからにする。それ以前の継続は 404 になりうる。ストリームが途中で切れた場合は同じ継続のリクエストを再送し、thread_already_continued か thread_continue_in_flight が返れば、全体を新しい create で再生する。refusal（stop_reason が refusal）の応答のあとは、thread を継続せず、拒否につながったターンを省くか言い換えた新しい create を送る。",
+      "プロンプトキャッシュは自動では効かない。トップレベルの cache_control を全リクエストに同じ値で付けると、API が各リクエストの messages の最後のキャッシュ可能なブロックに適用する。thread 付きのリクエストに置ける cache_control のブレークポイントは最大4つで、トップレベルのものも1つに数える。超えると 400 の thread_unsupported_request になる。送ったブレークポイントは、あとから動かしたり外したりできない。",
+      "Claude Fable 5.1、Mythos 5.1、Opus 5.5、Sonnet 5.5、Haiku 5.5 では、system か tools を変えると、会話に既にある thinking と redacted_thinking のブロックが無効になり、作成のリクエストが 400 になりうる。公式の回避策は、送る会話からそれらのブロックをすべて外すことで、その場合モデルは以前の推論なしで答える。",
+      "非対応の機能も明記されている。Message Batches、トークンカウント、compaction（オンデマンドの compaction を含む。会話を要約に置き換えたいときは、要約を自前で書いて新しい thread の最初のメッセージとして送る）、context editing（clear_thinking_20251015 で keep が all の場合を除く）が使えない。HIPAA 対応を有効にした組織と、Inference hooks を有効にした組織でも使えない。API は thread を一覧・取得・削除するエンドポイントを持たない。",
+      "対応モデルは、公式のページでは Fable 5.1、Mythos 5.1、Fable 5、Mythos 5、Mythos Preview、Opus 5.5、Opus 5、Sonnet 5.5、Sonnet 5、Haiku 5.5、Haiku 4.5、Opus 4.8、4.7、4.6、4.5、Sonnet 4.6、4.5 が並ぶ。提供先は、Claude API、Claude Platform on AWS、Claude Models on Google Cloud（Anthropic managed）、Microsoft Foundry で、いずれもベータである。料金とレート制限は thread によって変わらないとされている。",
+      "データの扱いでは、message threads はゼロデータ保持（ZDR）の対象外で、HIPAA の対象でもない。thread の中身（会話、作成時の system と tools、固定フィールドの指紋）は、サーバー管理の鍵で暗号化されてメモリ上に保持され、永続ストレージには書かれず、最後の使用から1時間以内に削除される。ファイルは参照として保持されるので、thread を使う間は会話が使うファイルを残しておく必要がある。この機能を使っても、他の ZDR 対象機能の扱いは変わらないと公式は述べている。",
+      "このほか、同じ週のリリースノートには、11月3日付で、Claude Mythos 5、Opus 4.7、Sonnet 4.6 が生成するテキストに Anthropic のテキスト透かしが付くという項目がある。Sonnet 4.6 では、temperature、top_p、top_k に既定以外の値を指定したリクエストの出力には付かないことがある、とされている。透かしを前提にする場合は、これら3つのパラメータを送らないよう公式ドキュメントが求めている。",
+      "【整理】公式の記述から確認できる事実と、確認できていない点を分ける。確認できる事実は、ベータヘッダー名、create と continue の形、5分と1時間の期限、固定フィールド、非対応機能、ZDR と HIPAA の対象外、料金が変わらないこと。確認できていないのは、リクエストサイズや最初のトークンまでの時間の具体的な改善幅（公式は数字を示していない）と、ベータからの正式提供の時期である。"
+    ],
+    "tables": [
+      {
+        "caption": "message threads のエラー（公式ドキュメントより）",
+        "afterParagraph": 7,
+        "headers": [
+          "状態",
+          "error_code",
+          "意味",
+          "対処"
+        ],
+        "rows": [
+          [
+            "404",
+            "thread_not_found",
+            "API が thread を継続できない",
+            "全体を新しい create で送り直す"
+          ],
+          [
+            "400",
+            "thread_fingerprint_mismatch",
+            "固定フィールドが保存値と異なる",
+            "同じ値にするか、新しい thread を作る"
+          ],
+          [
+            "400",
+            "thread_already_continued",
+            "各応答の id から継続できるのは1回だけ",
+            "最新の応答 id から継続する。届いていなければ再生する"
+          ],
+          [
+            "400",
+            "thread_continue_in_flight",
+            "同じ応答 id からの別の継続が実行中",
+            "完了を待つか、再生する"
+          ],
+          [
+            "400",
+            "thread_unsupported_request",
+            "thread が対応しない機能・組織設定を使っている",
+            "その機能を外すか、thread なしで全体を送る"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Message threads — Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/message-threads"
+      },
+      {
+        "title": "Claude Platform release notes",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Text watermark — Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/text-watermark"
+      }
+    ]
   }
 };
 
