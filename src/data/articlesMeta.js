@@ -12857,5 +12857,22 @@ export const ARTICLES_META = [
       "API",
       "権限"
     ]
+  },
+  {
+    "id": "codex-cli-0-167-agents-command-center-backend-switch-network-prompts-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.167.0 の変更点、codex agents --no-daemon のエージェント司令画面、セッション選択画面でのバックエンド切替、ネットワーク承認プロンプトの整理",
+    "excerpt": "OpenAI は Codex CLI 0.167.0 を11月6日に公開した。未読の結果を示すエージェント司令画面、下書きを保ったままのバックエンド切替、ローカル画像のプレビュー、システムプロキシの任意設定、同一エンドポイントへの同時リクエストを1件ずつ確認する修正が入った。",
+    "date": "2026-11-06",
+    "newsDate": "2026-11-06",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "開発ツール"
+    ]
   }
 ];
