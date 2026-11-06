@@ -16,6 +16,14 @@
     <summary>OpenAI は Codex CLI 0.167.0 を11月6日に公開した。未読の結果を示すエージェント司令画面、下書きを保ったままのバックエンド切替、ローカル画像のプレビュー、システムプロキシの任意設定、同一エンドポイントへの同時リクエストを1件ずつ確認する修正が入った。</summary>
   </entry>
   <entry>
+    <title>GitHub Copilot CLI 1.0.106、/code で VS Code に引き継ぎ、/settings の統合ダッシュボード、GPT-6.1 Terra が選択可能に</title>
+    <link rel="alternate" type="text/html" href="?a=github-copilot-cli-1-0-106-code-command-settings-dashboard-terra-2026"/>
+    <id>tag:ai-tool-news.jp,2026:github-copilot-cli-1-0-106-code-command-settings-dashboard-terra-2026</id>
+    <published>2026-11-06T15:00:00Z</published>
+    <updated>2026-11-06T15:00:00Z</updated>
+    <summary>GitHub は Copilot CLI 1.0.106 を公開した。セッションを VS Code で開く /code、全体検索付きの /settings、利用可能なアカウントでの GPT-6.1 Terra の選択、Kitty 互換ターミナルでの画像表示、端末エスケープシーケンスによる表示改変の対策が入った。</summary>
+  </entry>
+  <entry>
     <title>Claude API に message threads（ベータ）— 会話をサーバー側に保持し、2回目以降は新しいメッセージだけを送る。有効期限は最後のリクエストから5分、ZDR は対象外</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-message-threads-beta-claude-api-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-message-threads-beta-claude-api-2026</id>

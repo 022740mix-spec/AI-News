@@ -12874,5 +12874,22 @@ export const ARTICLES_META = [
       "OpenAI",
       "開発ツール"
     ]
+  },
+  {
+    "id": "github-copilot-cli-1-0-106-code-command-settings-dashboard-terra-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "GitHub Copilot CLI 1.0.106、/code で VS Code に引き継ぎ、/settings の統合ダッシュボード、GPT-6.1 Terra が選択可能に",
+    "excerpt": "GitHub は Copilot CLI 1.0.106 を公開した。セッションを VS Code で開く /code、全体検索付きの /settings、利用可能なアカウントでの GPT-6.1 Terra の選択、Kitty 互換ターミナルでの画像表示、端末エスケープシーケンスによる表示改変の対策が入った。",
+    "date": "2026-11-06",
+    "newsDate": "2026-11-05",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "GitHub Copilot",
+      "CLI",
+      "GPT-6",
+      "開発ツール"
+    ]
   }
 ];
