@@ -29620,6 +29620,30 @@ const ARTICLES_BODY = {
         "url": "https://github.com/github/copilot-cli/releases"
       }
     ]
+  },
+  "claude-code-2-1-319-auto-mode-gateway-permission-bypass-fixes-mcp-tasks-2026": {
+    "body": [
+      "Claude Code の公式 CHANGELOG によると、最新の版は 2.1.319 である。npm レジストリの記録では、2.1.319 は2026年11月6日 00:58（UTC）に公開され、前回扱った 2.1.318（11月3日）の次の版にあたる。この記事は CHANGELOG の記載を整理したもので、実際の挙動は検証していない。CHANGELOG のこの版は146項目あり、以下はそのうち権限・auto mode・MCP など、利用者の設定や運用判断に関わるものを選んでいる。",
+      "最初に挙げられているのは auto mode の変更である。CHANGELOG は、テレメトリやフィーチャーフラグを切った環境（LLM ゲートウェイ越しを含む）で、サーバー側が確認できない呼び出しは、組み込みの分類器へ戻らず、利用者に尋ねるか拒否すると記す。従来の挙動を保つには `CLAUDE_CODE_AUTO_MODE_SERVER=0` を設定する。Bedrock・Vertex・Foundry は変更されない。ゲートウェイ越しでは、`CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS` を設定していても `CLAUDE_CODE_AUTO_MODE_SERVER=1` でサーバー側の確認を有効にでき、後者を管理設定で指定している場合は `1` も管理設定で指定する必要がある。プロジェクトの設定ファイルやプラグインが、利用者がプロジェクトの外で切ったサーバー側の確認を再び有効にすることもできなくなった。",
+      "auto mode の周辺では、修正も並ぶ。安全確認が使えず操作が拒否された場合に、`claude -p` が auto mode で終了コード 0 を返していた問題は、テキスト・JSON のどちらの出力でも終了コード 1 になった。権限ルールや `autoMode` 設定が非常に大きい場合、理由を示さず拒否していた問題は、理由を説明し、`autoMode` の deny ルールが無ければ端末で尋ねるようになった。`/status` が、サーバー側の確認がセッションに届いていないのに「Auto mode server: Enabled」と表示していた問題も直っている。",
+      "権限チェックに関わる修正が複数ある。CHANGELOG は次の項目を Fixed として記す。細工した環境変数の接頭辞によって、コマンドの一部が権限チェックから隠れる Bash の回避。引用符付きの語で書かれたコマンドを Bash の deny・ask ルールが見逃す場合。accept-edits と auto mode で `sed` コマンドが権限チェックを飛ばしうる場合。worktree の作成時のサンドボックス脱出。`/rewind` がディレクトリのシンボリックリンク経由でファイルを復元・削除しうる場合。いずれも CHANGELOG の一行の記述であり、影響範囲や悪用の条件、識別子は書かれていない。この記事も、それ以上のことは確認していない。",
+      "挙動の変更としては、Monitor の WebSocket 監視が、すべての Bash コマンドに対するルールに従うようになった。deny は拒否し、ask ルールのもとでは Monitor への allow や bypass mode、auto mode があっても確認を飛ばさない。セッションの Bash・PowerShell の ask ルールは、より広い deny ルールがそのコマンドを覆っている場合、尋ねずに拒否される。`which` はフラグが参照・表示用の範囲を外れると確認を求める。`--add-dir` で追加したディレクトリは、そのディレクトリ自身の信頼ダイアログを受け入れてからプラグインのマーケットプレースを登録する。Bash サンドボックスが有効なとき、開始フォルダより下の `.claude/skills` のスキルは、そこで起動するか `/cd` した場合にだけ読み込まれる。",
+      "追加された機能のうち、`permissions.denyInsteadOfPrompting` は、権限の確認待ちになる呼び出しを拒否してターンを続ける設定で、端末のセッション、サブエージェント、チームメイトに適用される。MCP では、サーバーがツール呼び出しをタスクとして実行する場合、Claude Code が即座にバックグラウンドへ移し、終了時に結果を Claude に伝える。待たせたいときは `CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND` を設定する。MCP タスクは、フィーチャーフラグを取得しない環境（Bedrock・Vertex・Foundry、LLM ゲートウェイ、`DISABLE_TELEMETRY`）でも端末で動くようになり、切るには `CLAUDE_CODE_DISABLE_MCP_TASKS=1` を設定する。`CLAUDE_CODE_DISABLE_FEATURE_FLAGS` は、テレメトリを切らずにフィーチャーフラグの取得だけを止め、すべてのフラグを組み込みの既定値にする。",
+      "運用面では、自己ペースの `/loop` は、再スケジュールせずにターンが終わると終了するようになった。以前の挙動は `CLAUDE_CODE_LOOP_KEEPALIVE=1` で保てる。PostToolUse フックは、新しいメッセージでターンが中断されたあとに終わるツール呼び出しでも、最大10秒の猶予をもって実行される。`/context` は、端末で Claude が読む表を短くした。`/model` の選択画面は、古いモデルを「More models」の行にまとめた。`ant auth login` のサインインで Claude Console 組織に課金される場合は、起動時にその組織名の行と、claude.ai のログインが切れたときの警告が出る。",
+      "Claude apps gateway と自己ホストのランナーにも変更がある。ゲートウェイには、プール予算の優先順位を決める `admin.pooled_conflict_rule` と `admin.pooled_priority_order`、サインイン画面に表示する `login_notice`、JSON 形式のログ（`CLAUDE_GATEWAY_LOG_FORMAT=json`）、ゲートウェイ配下の開発者向けに `/usage` へ今日・今週・今月の支出が加わった。自己ホストのランナーでは `--trust-workspace false` がリポジトリの設定ファイルとスキルのフックも止めるようになり、`CLAUDE_RUNNER_CHECKOUT_PATH` は、セッション内のリポジトリごとに別フォルダを使い、同名なら末尾に `-2`、`-3` が付く。セッションの終了時にデバッグログをアップロードする処理は無くなった。",
+      "Claude in Chrome の組み込みツールからは `shortcuts_list` と `shortcuts_execute` が削除された。このほか、`/diff` がリポジトリの最上位に `HEAD` という名前のファイルやフォルダがあると表示できなかった問題、`claude remote-control` が最初の質問に答えが無いとき黙って終了コード 0 で終わる問題、ディスクが満杯のとき `~/.claude.json` や設定が空や途中で切れた状態になる問題などの修正が CHANGELOG にある。",
+      "なお、この版の中核機能の世代交代や廃止予告にあたる項目は、確認できた範囲では見当たらなかった。ただし CHANGELOG の全項目を網羅的に読んだわけではなく、本文に挙げなかった項目も多い。全項目は CHANGELOG で確認できる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG（anthropics/claude-code）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@anthropic-ai/claude-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
+      }
+    ]
   }
 };
 

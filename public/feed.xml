@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-11-06T15:00:00Z</updated>
+  <updated>2026-11-07T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Claude Code 2.1.319、LLM ゲートウェイ越しの auto mode は確認できない呼び出しを聞くか拒否、権限チェックをすり抜ける修正が複数、MCP タスクはバックグラウンドへ</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-2-1-319-auto-mode-gateway-permission-bypass-fixes-mcp-tasks-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-2-1-319-auto-mode-gateway-permission-bypass-fixes-mcp-tasks-2026</id>
+    <published>2026-11-07T15:00:00Z</published>
+    <updated>2026-11-07T15:00:00Z</updated>
+    <summary>Anthropic は Claude Code 2.1.319 を11月6日（UTC）に公開した。CHANGELOG は、テレメトリやフィーチャーフラグを切った環境と LLM ゲートウェイ越しの auto mode の挙動変更、Bash の権限チェックを回避しうる問題の修正、MCP タスクのバックグラウンド実行、permissions.denyInsteadOfPrompting 設定の追加を記す。</summary>
+  </entry>
   <entry>
     <title>Codex CLI 0.167.0 の変更点、codex agents --no-daemon のエージェント司令画面、セッション選択画面でのバックエンド切替、ネットワーク承認プロンプトの整理</title>
     <link rel="alternate" type="text/html" href="?a=codex-cli-0-167-agents-command-center-backend-switch-network-prompts-2026"/>

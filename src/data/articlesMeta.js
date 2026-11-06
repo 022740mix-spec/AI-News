@@ -12891,5 +12891,22 @@ export const ARTICLES_META = [
       "GPT-6",
       "開発ツール"
     ]
+  },
+  {
+    "id": "claude-code-2-1-319-auto-mode-gateway-permission-bypass-fixes-mcp-tasks-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.319、LLM ゲートウェイ越しの auto mode は確認できない呼び出しを聞くか拒否、権限チェックをすり抜ける修正が複数、MCP タスクはバックグラウンドへ",
+    "excerpt": "Anthropic は Claude Code 2.1.319 を11月6日（UTC）に公開した。CHANGELOG は、テレメトリやフィーチャーフラグを切った環境と LLM ゲートウェイ越しの auto mode の挙動変更、Bash の権限チェックを回避しうる問題の修正、MCP タスクのバックグラウンド実行、permissions.denyInsteadOfPrompting 設定の追加を記す。",
+    "date": "2026-11-07",
+    "newsDate": "2026-11-06",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "開発ツール"
+    ]
   }
 ];
