@@ -12925,5 +12925,21 @@ export const ARTICLES_META = [
       "Qwen",
       "開発ツール"
     ]
+  },
+  {
+    "id": "vercel-labs-agent-desktop-computer-use-cli-2026-11",
+    "type": "news",
+    "category": "product",
+    "title": "Vercel Labs のオープンソース「agent-desktop」— スクリーンショットではなく OS のアクセシビリティツリーで、AI エージェントがデスクトップアプリを操作",
+    "excerpt": "Vercel Labs が公開した agent-desktop は、AI エージェントがデスクトップアプリを操作する Apache-2.0 のツール。スクリーンショットではなく、OS のアクセシビリティツリーを JSON で返し、要素ごとの参照を使って操作する。MCP サーバーとしても動く。macOS、Windows、Linux に対応する。ツール自体はモデルを含まず、推論はエージェント側が行う。",
+    "date": "2026-11-07",
+    "newsDate": "2026-10-30",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "エージェント",
+      "コンピュータ操作",
+      "オープンソース"
+    ]
   }
 ];
