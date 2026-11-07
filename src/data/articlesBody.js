@@ -29668,6 +29668,28 @@ const ARTICLES_BODY = {
       }
     ]
   },
+  "reducto-r-1-mini-document-parsing-2026-11-05": {
+    "body": [
+      "文書解析サービスの Reducto は2026年11月5日、軽量版の文書解析モデル **r-1 mini** を発表した。同社のプレスリリースによると、価格は **1,000ページあたり1ドル**。表、読み順、レイアウト、書式を保持した構造化出力をうたっている。",
+      "**性能の主張（同社の評価）。** 同社は、2,000ページの盲検評価（ParseArena）で、試した入門レベルのすべての構成より高い結果だったと書いている。また、比較対象として挙げた LlamaParse Agentic と Extend Performance は、r-1 mini の最大25倍の費用がかかるとしている。ただし、プレスリリースには精度の数値、評価指標の定義、試した構成の一覧は書かれていない。",
+      "**表現の違い。** 本文は「上回った」と書き、図の説明文は「同等か上回る」と書いている。表現が一致していないため、精度の差は、評価の詳細が公開されるまで判断できない。",
+      "**r-1 との関係。** 同社は2026年9月1日のブログで、フラッグシップの r-1 を発表している。そこでは、r-1 のページあたりの料金は1セントで、r-1 mini は今後公開する軽量版として触れられていた。今回の発表は、その軽量版の価格を示したものになる。",
+      "**確認できていないこと。** 独立した第三者による評価、精度の数値、評価に使った文書の種類、制限事項は、公式の発表からは確認できない。r-1 mini の一般提供の状況も、プレスリリースには書かれていない。",
+      "**このサイトへの影響。** AI News は、この種の文書解析の API を使っていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Reducto Breaks the Price Barrier for High-Accuracy Document Parsing With r-1 mini at $1 per 1,000 Pages（2026-11-05、Reducto の発表）",
+        "site": "PR Newswire（Reducto の公式プレスリリース）",
+        "url": "https://www.prnewswire.com/news-releases/reducto-breaks-the-price-barrier-for-high-accuracy-document-parsing-with-r-1-mini-at-1-per-1-000-pages-302930413.html"
+      },
+      {
+        "title": "Introducing r-1 and our new generation of document parsing models（2026-09-01、Reducto 公式ブログ）",
+        "site": "Reducto 公式ブログ",
+        "url": "https://reducto.ai/blog/parse-r-1-model"
+      }
+    ]
+  },
   "vercel-labs-agent-desktop-computer-use-cli-2026-11": {
     "body": [
       "Vercel Labs が公開した **agent-desktop** は、AI エージェントにデスクトップアプリの操作を任せるためのオープンソースの CLI である。GitHub のリポジトリの説明は「Computer use CLI for AI agents」で、ライセンスは Apache-2.0。",

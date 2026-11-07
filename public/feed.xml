@@ -24,6 +24,14 @@
     <summary>Alibaba の Qwen Code が2026年11月5日に v0.26.8、6日に v0.26.9 を公開した。Skills の ZIP を SDK・デーモン・Web Shell から導入でき、最大100件の Skills を1回で有効・無効にできる。公式のリリースページに基づいて整理する。</summary>
   </entry>
   <entry>
+    <title>Reducto が文書解析モデル r-1 mini を発表 — 1,000ページ1ドル、性能の比較は同社の評価のみ</title>
+    <link rel="alternate" type="text/html" href="?a=reducto-r-1-mini-document-parsing-2026-11-05"/>
+    <id>tag:ai-tool-news.jp,2026:reducto-r-1-mini-document-parsing-2026-11-05</id>
+    <published>2026-11-07T15:00:00Z</published>
+    <updated>2026-11-07T15:00:00Z</updated>
+    <summary>文書解析サービスの Reducto は2026年11月5日、軽量版の文書解析モデル r-1 mini を発表した。1,000ページあたり1ドルで、表・読み順・レイアウトを保持した構造化出力をうたう。性能の比較は、同社が行った2,000ページの盲検評価によるもので、第三者による検証は示されていない。</summary>
+  </entry>
+  <entry>
     <title>Vercel Labs のオープンソース「agent-desktop」— スクリーンショットではなく OS のアクセシビリティツリーで、AI エージェントがデスクトップアプリを操作</title>
     <link rel="alternate" type="text/html" href="?a=vercel-labs-agent-desktop-computer-use-cli-2026-11"/>
     <id>tag:ai-tool-news.jp,2026:vercel-labs-agent-desktop-computer-use-cli-2026-11</id>
