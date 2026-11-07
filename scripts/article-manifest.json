@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-11-07",
-  "count": 621,
+  "count": 622,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -592,6 +592,7 @@
     "vector-db-comparison-2026",
     "vectorize-hindsight-agent-memory-2026",
     "veo-review",
+    "vercel-labs-agent-desktop-computer-use-cli-2026-11",
     "vibe-coding-enterprise-backend-maintenance-2026",
     "vibe-coding-getting-started-2026",
     "voicestudio-elevenlabs-local-alternative-2026",

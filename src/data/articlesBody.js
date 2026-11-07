@@ -29689,6 +29689,25 @@ const ARTICLES_BODY = {
         "url": "https://reducto.ai/blog/parse-r-1-model"
       }
     ]
+  },
+  "vercel-labs-agent-desktop-computer-use-cli-2026-11": {
+    "body": [
+      "Vercel Labs が公開した **agent-desktop** は、AI エージェントにデスクトップアプリの操作を任せるためのオープンソースの CLI である。GitHub のリポジトリの説明は「Computer use CLI for AI agents」で、ライセンスは Apache-2.0。",
+      "**仕組み（リポジトリの README による）。** スクリーンショットやピクセルの照合を使わず、アプリのアクセシビリティツリーを読み、JSON として返す。操作可能な要素ごとに参照（ref）が付き、エージェントはその参照を指定してクリックや入力を行う。ツール自体はモデルを含まず、判断の繰り返しはエージェント側が担う。",
+      "**対応する OS と API。** macOS は AX API、Windows は UI Automation、Linux は AT-SPI を使う。",
+      "**MCP。** README には、`agent-desktop mcp` によって、すべてのコマンドを stdio 上の MCP ツールとして提供すると書かれている。",
+      "**インストール。** `npm install -g agent-desktop`。README には、macOS と Linux 向けの `brew install agent-desktop` も書かれている。macOS では、アクセシビリティの権限を与える必要がある。",
+      "**安全上の注意（README の記述）。** README は、スナップショット、クリップボードの内容、スクリーンショット、コマンドの出力、デバッグ用の成果物に、非公開のデスクトップの内容が含まれ得ると書いている。そのため、公開のログやアップロードに含めないよう求めている。秘密を扱う手順は、別々のコマンドに分けるよう勧めている。失敗したコマンドは、`error.disposition.retry` が `safe` の場合だけ再実行するよう書かれている。",
+      "**確認できていないこと。** リポジトリの説明にある「ネイティブアプリ」と「Web ページ」の区別は、README では明記されていない。Web ページの操作は、同じ作者の別のツール（agent-browser）が担うと案内されている。公開の日付と版の番号は、資料によって食い違っている。本記事では、個別の日付を確定させず、リポジトリの記述だけを根拠にしている。",
+      "**このサイトへの影響。** AI News は、この種のデスクトップ操作の仕組みを、本番の運用には使っていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "vercel-labs/agent-desktop（GitHub、README と説明）",
+        "site": "GitHub（Vercel Labs の公式リポジトリ）",
+        "url": "https://github.com/vercel-labs/agent-desktop"
+      }
+    ]
   }
 };
 

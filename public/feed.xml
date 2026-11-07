@@ -32,6 +32,14 @@
     <summary>文書解析サービスの Reducto は2026年11月5日、軽量版の文書解析モデル r-1 mini を発表した。1,000ページあたり1ドルで、表・読み順・レイアウトを保持した構造化出力をうたう。性能の比較は、同社が行った2,000ページの盲検評価によるもので、第三者による検証は示されていない。</summary>
   </entry>
   <entry>
+    <title>Vercel Labs のオープンソース「agent-desktop」— スクリーンショットではなく OS のアクセシビリティツリーで、AI エージェントがデスクトップアプリを操作</title>
+    <link rel="alternate" type="text/html" href="?a=vercel-labs-agent-desktop-computer-use-cli-2026-11"/>
+    <id>tag:ai-tool-news.jp,2026:vercel-labs-agent-desktop-computer-use-cli-2026-11</id>
+    <published>2026-11-07T15:00:00Z</published>
+    <updated>2026-11-07T15:00:00Z</updated>
+    <summary>Vercel Labs が公開した agent-desktop は、AI エージェントがデスクトップアプリを操作する Apache-2.0 のツール。スクリーンショットではなく、OS のアクセシビリティツリーを JSON で返し、要素ごとの参照を使って操作する。MCP サーバーとしても動く。macOS、Windows、Linux に対応する。ツール自体はモデルを含まず、推論はエージェント側が行う。</summary>
+  </entry>
+  <entry>
     <title>Codex CLI 0.167.0 の変更点、codex agents --no-daemon のエージェント司令画面、セッション選択画面でのバックエンド切替、ネットワーク承認プロンプトの整理</title>
     <link rel="alternate" type="text/html" href="?a=codex-cli-0-167-agents-command-center-backend-switch-network-prompts-2026"/>
     <id>tag:ai-tool-news.jp,2026:codex-cli-0-167-agents-command-center-backend-switch-network-prompts-2026</id>
