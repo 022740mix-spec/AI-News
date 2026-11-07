@@ -12908,5 +12908,22 @@ export const ARTICLES_META = [
       "Anthropic",
       "開発ツール"
     ]
+  },
+  {
+    "id": "qwen-code-0-26-8-0-26-9-skills-zip-install-subscription-hook-trust-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Qwen Code v0.26.8〜v0.26.9 — Skills を ZIP で導入・一括で有効化、Qwen サブスクリプションに対応、プロジェクトフックは信頼確認ダイアログ経由に",
+    "excerpt": "Alibaba の Qwen Code が2026年11月5日に v0.26.8、6日に v0.26.9 を公開した。Skills の ZIP を SDK・デーモン・Web Shell から導入でき、最大100件の Skills を1回で有効・無効にできる。公式のリリースページに基づいて整理する。",
+    "date": "2026-11-07",
+    "newsDate": "2026-11-06",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Qwen Code",
+      "CLI",
+      "Qwen",
+      "開発ツール"
+    ]
   }
 ];

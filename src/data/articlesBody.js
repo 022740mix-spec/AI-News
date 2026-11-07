@@ -29644,6 +29644,29 @@ const ARTICLES_BODY = {
         "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
       }
     ]
+  },
+  "qwen-code-0-26-8-0-26-9-skills-zip-install-subscription-hook-trust-2026": {
+    "body": [
+      "QwenLM/qwen-code の GitHub リリースページは、v0.26.8 を 11月5日、v0.26.9 を 11月6日に公開されたものとして載せている。npm レジストリでも `@qwen-code/qwen-code` の 0.26.8 が 2026-11-05 16:34 UTC、0.26.9 が 2026-11-06 16:19 UTC に公開され、`latest` は 0.26.9 を指している。直前に扱った v0.26.7 の次の2リリースにあたる。以下はリリースページの記載に基づく整理で、実際の挙動は検証していない。なお v0.26.8 のページは取得した範囲の途中で内部変更の項が切れており、末尾の一部は読めていない。",
+      "v0.26.8 の機能面では、Qwen のサブスクリプションが CLI・VS Code・Desktop で使えるようになった（#16378）。Mods は、ヘッドレス実行（#16302）と Ink 端末（#16373）の両方で、自分のプロンプトを送れる。Ink 端末ではプロンプト送信時のフックが OpenTUI で動き（#16195）、モデルのラウンド（#16206）とツールのバッチ（#16304）が共有ループで動く。`qwen serve` の Conversations の作業ディレクトリのルートは設定で変えられる（#16105）。",
+      "信頼まわりでは、プロジェクトのフックはフォルダ信頼の承認ダイアログを通す形になった（#14748）。フック承認用の環境変数はワークスペース内にとどまり（#16316）、フォルダ信頼のストアはコンテナのサンドボックスにも渡される（#16390）。ヘッドレスでのプロジェクトフックの信頼は、フォルダ信頼機能が有効な場合に限られる（#16264）。ほかの修正として、Gemini の thought signature がツールの再生で保持される（#16270）、Hugging Face TGI のコンテキスト超過エラーで自動圧縮が走る（#16245）、Qwen2-VL・Qwen2.5-VL・QVQ で画像を受け付ける（#16247）が挙がっている。",
+      "v0.26.9 は Skills の扱いが中心である。`PUT /skills/activation` と `setUserSkillsActivation` で、1〜100件のユーザー Skills を1回のリクエストで有効・無効にでき、保存と反映の状態が返る（#16186）。大きな Skill の ZIP は、デーモンの経路ではアップロードまたはホスト上のパスで導入でき、失敗後は受領記録を照会できる（#16422）。TypeScript SDK は File・Blob・バイト列・ホストのパスから導入でき（#16423）、Web Shell は Skills ページから ZIP をアップロードする（#16424）。インストーラは大きなアーカイブをディスク上で扱い、復旧用のバックアップを保護する（#16421）。",
+      "ほかに v0.26.9 では、Llama 3.2 Vision・Llama 4・LLaVA・Pixtral・Mistral Small 3.1/3.2 で画像入力が有効になり（#16311）、Qwen VL が Ollama 上の名前でも受け付けられる（#16309）。対話 CLI は作業中・ブロック中・完了・エラーの状態を OSC 7501 で端末に伝える（#16407）。デーモンのリプレイ用スナップショットは1セッション8 MiB のリングに制限され、`--event-ring-max-bytes` で変えられる（#16413）。管理されたエージェントでは、構造化された質問を永続的に扱えるようになり（#16433）、自動化が既定で有効になった（#16448）。全項目は公式のリリースページにある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Qwen Code v0.26.8 リリース（GitHub）",
+        "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.26.8"
+      },
+      {
+        "title": "Qwen Code v0.26.9 リリース（GitHub）",
+        "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.26.9"
+      },
+      {
+        "title": "@qwen-code/qwen-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@qwen-code/qwen-code"
+      }
+    ]
   }
 };
 

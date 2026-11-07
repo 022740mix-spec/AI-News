@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-11-06",
-  "count": 619,
+  "generatedAt": "2026-11-07",
+  "count": 620,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -540,6 +540,7 @@
     "qwen-code-0-25-0-late-agent-results-2026-10-05",
     "qwen-code-0-26-6-web-shell-headless-prompt-hooks-mcp-duplicate-tools-2026",
     "qwen-code-0-26-7-model-catalog-refresh-folder-trust-hooks-2026",
+    "qwen-code-0-26-8-0-26-9-skills-zip-install-subscription-hook-trust-2026",
     "rag-chunking-ingestion-2026",
     "rag-enterprise-acl-privacy-2026",
     "rag-evaluation-citations-2026",
