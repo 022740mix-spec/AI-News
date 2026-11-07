@@ -12925,5 +12925,21 @@ export const ARTICLES_META = [
       "Qwen",
       "開発ツール"
     ]
+  },
+  {
+    "id": "reducto-r-1-mini-document-parsing-2026-11-05",
+    "type": "news",
+    "category": "product",
+    "title": "Reducto が文書解析モデル r-1 mini を発表 — 1,000ページ1ドル、性能の比較は同社の評価のみ",
+    "excerpt": "文書解析サービスの Reducto は2026年11月5日、軽量版の文書解析モデル r-1 mini を発表した。1,000ページあたり1ドルで、表・読み順・レイアウトを保持した構造化出力をうたう。性能の比較は、同社が行った2,000ページの盲検評価によるもので、第三者による検証は示されていない。",
+    "date": "2026-11-07",
+    "newsDate": "2026-11-05",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Reducto",
+      "文書解析",
+      "OCR"
+    ]
   }
 ];
