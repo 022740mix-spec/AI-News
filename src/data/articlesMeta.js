@@ -12957,5 +12957,23 @@ export const ARTICLES_META = [
       "コンピュータ操作",
       "オープンソース"
     ]
+  },
+  {
+    "id": "anthropic-claude-text-watermark-older-models-sampling-params-2026-11",
+    "type": "news",
+    "category": "regulation",
+    "title": "Claude のテキスト透かしが Mythos 5・Opus 4.7・Sonnet 4.6 にも — Sonnet 4.6 は temperature などを指定すると付かないことがある",
+    "excerpt": "Anthropic の API リリースノート（11月3日付）が、テキストの透かしの対象に **Claude Mythos 5、Opus 4.7、Sonnet 4.6** を加えたと記した。8月の導入時に「以前のモデルは今後数か月かけて追随」とされていた流れの続きである。**Sonnet 4.6 だけは、temperature・top_p・top_k を既定値以外にすると透かしが付かないことがある。**透かしに頼る開発者は、この3つを送らないよう公式ドキュメントが求めている。",
+    "date": "2026-11-07",
+    "newsDate": "2026-11-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "規制",
+      "透明性",
+      "API"
+    ]
   }
 ];

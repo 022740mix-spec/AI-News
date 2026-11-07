@@ -29708,6 +29708,42 @@ const ARTICLES_BODY = {
         "url": "https://github.com/vercel-labs/agent-desktop"
       }
     ]
+  },
+  "anthropic-claude-text-watermark-older-models-sampling-params-2026-11": {
+    "body": [
+      "**Anthropic** の API リリースノートは、2026年11月3日付で、**Claude Mythos 5、Claude Opus 4.7、Claude Sonnet 4.6 が生成するテキストに Anthropic のテキスト透かしが付く**と記した。対象のプラットフォームは、ヘルプセンターの記事「How Claude marks AI-generated content」に一覧がある。",
+      "この透かしは8月に導入が伝えられたもので、仕組みと経緯は[8月の記事](?a=anthropic-claude-synthid-text-watermark-global-2026)にある。Anthropic の解説は、EU AI Act には2026年8月2日より前に投入されたモデル向けの移行期間があり、そうしたモデルへの透かしの追加を「今後数か月」かけて進めると述べている。今回の更新は、その作業の一部が文書に現れたものと読める。ただし、各モデルがいつ対応したかは、参照した文書からは分からない。",
+      "## ヘルプセンターの一覧に載っているもの",
+      "ヘルプセンターの記事（記事自体は「今週更新」とだけ表示され、日付は出ていない）には、自社の提供面（first-party）の列に Fable 5.1、Fable 5、Mythos 5.1、Mythos 5、Opus 5.5、Opus 5、Opus 4.8、Opus 4.7、Sonnet 5.5、Sonnet 5、Sonnet 4.6、Haiku 5.5 が並ぶ。AWS・Google Cloud・Microsoft Foundry の列にも同じモデルが並ぶが、Mythos 5 と Opus 4.7 には注記の印が付き、Sonnet 4.6 には二重の注記が付く。その注記として「Amazon Bedrock への展開は11月10日までに完了する」と書かれている。",
+      "Opus 4.6、Opus 4.5、Sonnet 4.5、Haiku 4.5 は、取得できた表の文字列からは、どの列にチェックが付いているか読み取れなかった。同じ記事は「以前の Claude モデルへの対応を進めている」とも述べており、対象外のモデルが残っていることは示唆されるが、どれが対象外かは確認できていない。",
+      "## Sonnet 4.6 の注意点",
+      "API ドキュメント「Text watermark」は、**Claude Sonnet 4.6 では、temperature・top_p・top_k のいずれかを既定値以外にしたリクエストで生成されたテキストに、透かしが付かないことがある**と書く。透かしに頼る場合は、この3つをすべてリクエストから外すよう求めており、**フレームワークやクライアントライブラリが自動で設定する分も含む**とされている。",
+      "同じ文書は、透かしがトークンも隠し文字も増やさず、意味・品質・読みやすさを変えず、利用者や組織の情報を含まないと述べている。リクエストやレスポンスの扱いを変える必要もないという。つまり、影響が出るのは「透かしの有無を当てにしている」場合に限られる。",
+      "## 何が検出でき、何ができないか",
+      "Anthropic の解説（8月14日公開、9月1日に検出 API の記述を更新）とヘルプセンターの記事は、次の限界を挙げている。軽い編集では透かしが完全には消えない見込みだが、全面的な書き直しでは消える。重く編集・言い換え・翻訳されたテキストや、他の文章に混ぜられたテキストには付かないことがある。短い文章は信号が弱く、信頼できる判定にならない。事実が一つに決まる箇所や校正だけの文章は、透かしが疎になる。検出で分かるのは「Claude が関与した可能性」であり、人間が書いたことの証明でも、他の AI の検出でもない。",
+      "検出 API は、規制当局、法執行機関、報道機関、ファクトチェック団体、独立の研究者、教育機関、EU の市民社会団体などの適格な組織向けの限定プレビューで、コンプライアンス上の検証が必要な企業も利用できるとされる。アクセスは順次広げる予定だという。ヘルプセンターの記事には、ファイルに付く Content Credentials（C2PA）を調べる無料の Claude Content Checker も載っている。",
+      "## 開発者にとっての確認点",
+      "透かしに頼らない用途では、対応は要らない。透かしの有無を当てにする場合は、使うモデルがヘルプセンターの一覧にあるか、また Sonnet 4.6 を使うならサンプリング系パラメータをライブラリが暗黙に送っていないかを確認する材料になる。",
+      "**根拠の数え方。** この記事の事実は、いずれも Anthropic 自身の文書（API リリースノート、API ドキュメント、ヘルプセンター、公式解説）に基づく。一次資料 4 本、独立観測 0 本である。透かしが実際にどの程度の精度で検出できるかについて、第三者による検証は今回確認できていない。ヘルプセンターの表は、文字列として取得したものを読んでいるため、列の対応が崩れている箇所がある。表の細部は原文で確認してほしい。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Developer Platform release notes (Nov 3, 2026)",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Text watermark - Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/text-watermark"
+      },
+      {
+        "title": "How Claude marks AI-generated content - Claude Help Center",
+        "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content"
+      },
+      {
+        "title": "How Claude's text watermark works - Anthropic",
+        "url": "https://www.anthropic.com/news/claude-text-watermark"
+      }
+    ]
   }
 };
 

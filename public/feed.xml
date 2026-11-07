@@ -40,6 +40,14 @@
     <summary>Vercel Labs が公開した agent-desktop は、AI エージェントがデスクトップアプリを操作する Apache-2.0 のツール。スクリーンショットではなく、OS のアクセシビリティツリーを JSON で返し、要素ごとの参照を使って操作する。MCP サーバーとしても動く。macOS、Windows、Linux に対応する。ツール自体はモデルを含まず、推論はエージェント側が行う。</summary>
   </entry>
   <entry>
+    <title>Claude のテキスト透かしが Mythos 5・Opus 4.7・Sonnet 4.6 にも — Sonnet 4.6 は temperature などを指定すると付かないことがある</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-text-watermark-older-models-sampling-params-2026-11"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-text-watermark-older-models-sampling-params-2026-11</id>
+    <published>2026-11-07T15:00:00Z</published>
+    <updated>2026-11-07T15:00:00Z</updated>
+    <summary>Anthropic の API リリースノート（11月3日付）が、テキストの透かしの対象に Claude Mythos 5、Opus 4.7、Sonnet 4.6 を加えたと記した。8月の導入時に「以前のモデルは今後数か月かけて追随」とされていた流れの続きである。Sonnet 4.6 だけは、temperature・top_p・top_k を既定値以外にすると透かしが付かないことがある。透かしに頼る開発者は、この3つを送らないよう公式ドキュメントが求めている。</summary>
+  </entry>
+  <entry>
     <title>Codex CLI 0.167.0 の変更点、codex agents --no-daemon のエージェント司令画面、セッション選択画面でのバックエンド切替、ネットワーク承認プロンプトの整理</title>
     <link rel="alternate" type="text/html" href="?a=codex-cli-0-167-agents-command-center-backend-switch-network-prompts-2026"/>
     <id>tag:ai-tool-news.jp,2026:codex-cli-0-167-agents-command-center-backend-switch-network-prompts-2026</id>
