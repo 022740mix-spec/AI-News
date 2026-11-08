@@ -8,6 +8,14 @@
   <updated>2026-11-08T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Qwen Code v0.27.0 — 管理エージェントが複数の子の質問を同時に保持、FileChanged フック、GitHub チャンネルのリポジトリ絞り込み、認証情報をエラーに出さない修正</title>
+    <link rel="alternate" type="text/html" href="?a=qwen-code-0-27-0-multi-child-questions-filechanged-hooks-repo-filter-2026"/>
+    <id>tag:ai-tool-news.jp,2026:qwen-code-0-27-0-multi-child-questions-filechanged-hooks-repo-filter-2026</id>
+    <published>2026-11-08T15:00:00Z</published>
+    <updated>2026-11-08T15:00:00Z</updated>
+    <summary>Alibaba の Qwen Code が2026年11月7日に v0.27.0 を公開した。マイナー番号が上がったが、変更履歴は破壊的変更を「なし」としている。公式の変更履歴に基づいて主な項目を整理する。</summary>
+  </entry>
+  <entry>
     <title>Claude Code 2.1.319、LLM ゲートウェイ越しの auto mode は確認できない呼び出しを聞くか拒否、権限チェックをすり抜ける修正が複数、MCP タスクはバックグラウンドへ</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-2-1-319-auto-mode-gateway-permission-bypass-fixes-mcp-tasks-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-2-1-319-auto-mode-gateway-permission-bypass-fixes-mcp-tasks-2026</id>

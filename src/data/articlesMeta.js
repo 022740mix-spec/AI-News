@@ -12975,5 +12975,22 @@ export const ARTICLES_META = [
       "透明性",
       "API"
     ]
+  },
+  {
+    "id": "qwen-code-0-27-0-multi-child-questions-filechanged-hooks-repo-filter-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Qwen Code v0.27.0 — 管理エージェントが複数の子の質問を同時に保持、FileChanged フック、GitHub チャンネルのリポジトリ絞り込み、認証情報をエラーに出さない修正",
+    "excerpt": "Alibaba の Qwen Code が2026年11月7日に v0.27.0 を公開した。マイナー番号が上がったが、変更履歴は破壊的変更を「なし」としている。公式の変更履歴に基づいて主な項目を整理する。",
+    "date": "2026-11-08",
+    "newsDate": "2026-11-07",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Qwen Code",
+      "CLI",
+      "Qwen",
+      "開発ツール"
+    ]
   }
 ];
