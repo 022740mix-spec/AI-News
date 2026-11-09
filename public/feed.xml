@@ -16,6 +16,14 @@
     <summary>React の公式 GitHub の勧告 GHSA-xqc2-xf4c-x3h3 は、React Server Components の遠隔コード実行を重大（Critical）として公表した（10月14日）。影響は react-server-dom-webpack、react-server-dom-parcel、react-server-dom-turbopack の19系の一部の版で、修正版は 19.0.9、19.1.10、19.2.9、19.3.1。勧告は、対象は多数の typed array と攻撃者が制御する値を含む応答という極めて稀な場合に限られるとしている。</summary>
   </entry>
   <entry>
+    <title>週次の計器 — 11月2日〜11月8日は16本、前週と同数。Anthropic 関連は10本から7本に減り、Qwen Code が4本に増えた。発掘は2本に戻り、分析は5週続けて0本だった</title>
+    <link rel="alternate" type="text/html" href="?a=weekly-metrics-2026-week-nov02"/>
+    <id>tag:ai-tool-news.jp,2026:weekly-metrics-2026-week-nov02</id>
+    <published>2026-11-09T15:00:00Z</published>
+    <updated>2026-11-09T15:00:00Z</updated>
+    <summary>2026年11月2日〜11月8日の週次データ。公開は16本（前週16本）で、すべて news。題材で数えると7本が Anthropic 関連、4本が Qwen Code、ほかの CLI が3本、Reducto と Vercel Labs が各1本だった。3軸のうち発掘は4週ぶりに2本が出たが、分析は5週続けて0本。ガイドに説明が見当たらない概念の一覧は変わらなかった。</summary>
+  </entry>
+  <entry>
     <title>Qwen Code v0.27.0 — 管理エージェントが複数の子の質問を同時に保持、FileChanged フック、GitHub チャンネルのリポジトリ絞り込み、認証情報をエラーに出さない修正</title>
     <link rel="alternate" type="text/html" href="?a=qwen-code-0-27-0-multi-child-questions-filechanged-hooks-repo-filter-2026"/>
     <id>tag:ai-tool-news.jp,2026:qwen-code-0-27-0-multi-child-questions-filechanged-hooks-repo-filter-2026</id>

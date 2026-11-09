@@ -29783,6 +29783,106 @@ const ARTICLES_BODY = {
         "url": "https://github.com/react/react/security/advisories/GHSA-xqc2-xf4c-x3h3"
       }
     ]
+  },
+  "weekly-metrics-2026-week-nov02": {
+    "body": [
+      "この記事はニュースのまとめではなく、サイト自身の公開データから計算した「計器」である。1週間を見渡して初めて出る数字を、解釈を添えて示す。数字は `node scripts/weekly-metrics.mjs` の出力（集計日2026年11月9日）と、サイトの記事データの集計に基づく。外部サイトの情報は使っていない。計器記事そのものは、集計の対象から除いている。",
+      "## 公開本数 — 16本、前週と同数",
+      "11月2日〜11月8日の公開は**16本**（前週16本）で、すべて news だった。分野は cli 10 / product 5 / regulation 1。出来事から掲載までの中央値は1日である。日別では11月7日が5本と突出し、4日が3本、3日・5日・6日が各2本、2日・8日が各1本だった。",
+      "出来事の日と掲載日が3日以上ずれた記事は4本あった。最大は[Vercel Labs の agent-desktop](?a=vercel-labs-agent-desktop-computer-use-cli-2026-11)（出来事は10月30日、掲載は11月7日）で、[米 GSA との提携拡大](?a=anthropic-gsa-partnership-40-percent-government-discount-2026)（出来事は10月27日、掲載は11月2日）がそれに続く。11月7日の5本のうち、出来事が同じ日付のものは1本もない。この日の集中は、数日前の出来事をまとめて記事にした分を含む。",
+      "## 題材の内訳 — 16本のうち7本が Anthropic 関連、4本が Qwen Code",
+      "題材で数えると、16本の内訳は次のとおりである。Anthropic 関連が**7本**（Claude Code の版が[2.1.317](?a=claude-code-2-1-317-account-email-confirm-hook-onfailure-gateway-cost-report-2026)・[2.1.318](?a=claude-code-2-1-318-shared-network-home-config-safety-subagent-shell-background-2026)・[2.1.319](?a=claude-code-2-1-319-auto-mode-gateway-permission-bypass-fixes-mcp-tasks-2026)の3本、Claude API・Console 関連が[message threads](?a=anthropic-message-threads-beta-claude-api-2026)・[IP 許可リストと Admin API](?a=anthropic-ip-allowlist-admin-user-sign-out-api-beta-2026-11-05)・[テキスト透かしの対象拡大](?a=anthropic-claude-text-watermark-older-models-sampling-params-2026-11)の3本、政府向けの動きが GSA との提携拡大の1本）。Qwen Code の版が**4本**（[v0.26.6](?a=qwen-code-0-26-6-web-shell-headless-prompt-hooks-mcp-duplicate-tools-2026)・[v0.26.7](?a=qwen-code-0-26-7-model-catalog-refresh-folder-trust-hooks-2026)・[v0.26.8〜v0.26.9](?a=qwen-code-0-26-8-0-26-9-skills-zip-install-subscription-hook-trust-2026)・[v0.27.0](?a=qwen-code-0-27-0-multi-child-questions-filechanged-hooks-repo-filter-2026)）。ほかの CLI が3本（[Codex CLI 0.167.0](?a=codex-cli-0-167-agents-command-center-backend-switch-network-prompts-2026)、[Gemini CLI 0.67.0](?a=gemini-cli-0-67-models-command-list-models-ide-sandbox-bridge-2026)、[Copilot CLI 1.0.106](?a=github-copilot-cli-1-0-106-code-command-settings-dashboard-terra-2026)）、残る2本が[Reducto の r-1 mini](?a=reducto-r-1-mini-document-parsing-2026-11-05)と Vercel Labs の agent-desktop である。",
+      "前週は10本が Anthropic 関連だったので、この週は7本に減っている。一方、Qwen Code の記事は前週の0本から4本に増えた（タグ「Qwen Code」は 4 (0)）。週の中の4本は、いずれも版ごとの変更点の紹介という同じ型である。この数字だけでは、Qwen Code の公開が増えたのか、サイトが拾う頻度が増えたのかは分からない。",
+      "## 3軸のバランス — 発掘は2本、分析は5週続けて0本",
+      "16本はすべて news で、feature の最後の記事は[10月2日](?a=anthropic-pentagon-dc-circuit-appeal-2026)だった（集計日から38日前）。型で見ると、前週まで4週続けて0本だった**発掘（新興・OSS・個人開発）が、この週は2本**になった。Reducto の r-1 mini と Vercel Labs の agent-desktop である。ただしどちらも出来事から掲載までに2日〜8日あり、個人開発のプロジェクトではなく企業の公開物である。**分析（社会的インパクト・規制・倫理）は5週続けて0本**だった。GSA との提携拡大には政府調達という論点があるが、記事は発表内容の紹介で、分析としては数えていない。",
+      "## ガイドの空白は変わらない",
+      "週次の計器が出す「記事で頻出するのに、ガイドに説明が無い概念」は、今週も同じ顔ぶれだった。直近90日の記事数は、「AI安全性」30件、「中国AI」11件、「エッジAI」10件、「個人開発」10件、「透明性」7件、「半導体」4件である（「Alibaba」6件と「リリースノート」7件は、固有名詞と記事の型のため補強の対象としては数えていない）。この週にこれらのタグが付いた記事は、「透明性」が[テキスト透かしの対象拡大](?a=anthropic-claude-text-watermark-older-models-sampling-params-2026-11)の1件だけで、他は0件だった。",
+      "件数が前週より減っているもの（中国AI 14→11、エッジAI 11→10、半導体 5→4）は、概念が減ったのではなく、90日の窓から古い記事が抜けた一方で新しい記事が付かなかったためである。ガイドに説明が無いという状態は変わっていない。Qwen Code の4本には「中国AI」のタグが付いておらず、タグの付け方が「中国AI」の件数に影響している。また今週はじめて出たタグ「コンピュータ操作」は、ガイドの用語集に関連する記述が1箇所あるだけだった。ガイドの書き込みは Routine には禁じられており、対話セッションでの判断を待っている。",
+      "## ツール別ページとの比",
+      "直近90日の記事数とツール別ページの解説項目数の比は、Claude Code 0.43（40件 / 93項目）、Codex 0.38（18件 / 47項目）、VS Code + Copilot 0.23（8件 / 35項目）、Cursor 0.14（6件 / 44項目）、Gemini CLI 0.12（5件 / 43項目）、Power Apps 0（0件 / 20項目）だった。比が大きいほど、話題の割に解説が薄い。**Cursor の記事は[9月20日](?a=cursor-projects-coordinator-agent-2026)を最後に出ておらず**、この週も0本だった。Claude Code と Codex の比は前週より上がっている。版ごとの記事が積み上がる一方、解説の項目数は変わっていないためである。Qwen Code にはツール別ページ自体が無く、この比は計算できない。",
+      "## 確認できなかったこと",
+      "この記事は、サイト自身のデータだけから作っている。この回では、各社の公式サイトや変更履歴を新たに調べていない。したがって、この週にサイトに載らなかった出来事（OpenAI・Google・Meta・xAI などの新モデルや、公式 org の新規リポジトリ）があったかどうかは、この記事からは何も言えない。**これは「出来事が無かった」という意味ではなく、この記事の材料に含めていないという意味である。**"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 5,
+        "caption": "この週の公開の内訳（11月2日〜11月8日）",
+        "headers": [
+          "区分",
+          "本数",
+          "例"
+        ],
+        "rows": [
+          [
+            "Anthropic 関連",
+            "7本",
+            "Claude Code 2.1.317〜2.1.319、message threads、IP 許可リスト、GSA との提携拡大"
+          ],
+          [
+            "Qwen Code",
+            "4本",
+            "v0.26.6、v0.26.7、v0.26.8〜v0.26.9、v0.27.0"
+          ],
+          [
+            "ほかの AI CLI",
+            "3本",
+            "Codex CLI 0.167.0、Gemini CLI 0.67.0、Copilot CLI 1.0.106"
+          ],
+          [
+            "発掘（企業・OSS）",
+            "2本",
+            "Reducto r-1 mini、Vercel Labs agent-desktop"
+          ],
+          [
+            "分析",
+            "0本",
+            "—"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 10,
+        "caption": "記事で頻出するのにガイドに説明が無い概念（直近90日、週次の計器の出力）",
+        "headers": [
+          "概念",
+          "記事の件数",
+          "この週に付いた記事"
+        ],
+        "rows": [
+          [
+            "AI安全性",
+            "30件",
+            "0件"
+          ],
+          [
+            "中国AI",
+            "11件",
+            "0件"
+          ],
+          [
+            "エッジAI",
+            "10件",
+            "0件"
+          ],
+          [
+            "個人開発",
+            "10件",
+            "0件"
+          ],
+          [
+            "透明性",
+            "7件",
+            "1件"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "AI News リポジトリ（週次の計器の算出元データ）",
+        "url": "https://github.com/022740mix-spec/AI-News"
+      }
+    ]
   }
 };
 

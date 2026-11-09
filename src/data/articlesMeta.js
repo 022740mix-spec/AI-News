@@ -13008,5 +13008,28 @@ export const ARTICLES_META = [
       "セキュリティ",
       "React Server Components"
     ]
+  },
+  {
+    "id": "weekly-metrics-2026-week-nov02",
+    "type": "feature",
+    "category": "special",
+    "title": "週次の計器 — 11月2日〜11月8日は16本、前週と同数。Anthropic 関連は10本から7本に減り、Qwen Code が4本に増えた。発掘は2本に戻り、分析は5週続けて0本だった",
+    "excerpt": "2026年11月2日〜11月8日の週次データ。公開は16本（前週16本）で、すべて news。題材で数えると7本が Anthropic 関連、4本が Qwen Code、ほかの CLI が3本、Reducto と Vercel Labs が各1本だった。3軸のうち発掘は4週ぶりに2本が出たが、分析は5週続けて0本。ガイドに説明が見当たらない概念の一覧は変わらなかった。",
+    "date": "2026-11-09",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "週刊まとめ",
+      "Anthropic",
+      "Qwen Code",
+      "CLI",
+      "AI安全性",
+      "開発ツール"
+    ],
+    "heroScope": "week",
+    "weekRoundupPeriod": {
+      "start": "2026-11-02",
+      "end": "2026-11-08"
+    }
   }
 ];
