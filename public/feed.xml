@@ -1989,7 +1989,7 @@
     <id>tag:ai-tool-news.jp,2026:alibaba-qwen-3-8-flash-next-2026</id>
     <published>2026-09-03T15:00:00Z</published>
     <updated>2026-09-03T15:00:00Z</updated>
-    <summary>Alibaba の Qwen チームが2026年8月26日、Qwen3.8-Flash-Next を GitHub 公式リポジトリで公開した。総パラメータ125B・トークンあたり活性化6Bの MoE に加え、N-gram埋め込み51Bを別枠で持つ構成が特徴。Gated DeltaNet（GDN）と Qwen Sparse Attention（QSA）を組み合わせたハイブリッド構造を採用し、次世代アーキテクチャ「Qwen4」の設計を先出しする位置づけとされる。README上のネイティブ文脈長は262,144トークン。Qwen チームは学習コストが Qwen3.7-Plus の約1/9で済んだとしつつコーディング・オフィス用途の性能は上回ると主張しているが、この数値は Qwen 自身の公表値であり独立検証は存在しない。</summary>
+    <summary>Alibaba の Qwen チームが2026年8月26日、Qwen3.8-Flash-Next を GitHub 公式リポジトリで公開した。総パラメータ125B・トークンあたり活性化6Bの MoE に加え、N-gram埋め込み51Bを別枠で持つ構成が特徴。Gated DeltaNet（GDN）と Qwen Sparse Attention（QSA）を組み合わせたハイブリッド構造を採用し、次世代アーキテクチャ「Qwen4」の設計を先出しする位置づけとされる。README上のネイティブ文脈長は262,144トークン。Qwen チームは学習コストが Qwen3.7-Plus の約1/9 で済んだとしつつコーディング・オフィス用途の性能は上回ると主張しているが、この数値は Qwen 自身の公表値であり独立検証は存在しない。</summary>
   </entry>
   <entry>
     <title>完全ローカル動作の ElevenLabs 代替「VoiceStudio」が GitHub トレンド上位に — 16種の音声合成エンジンと MCP 対応を1本のデスクトップアプリに集約</title>
