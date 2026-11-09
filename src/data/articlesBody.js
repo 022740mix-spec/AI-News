@@ -29764,6 +29764,25 @@ const ARTICLES_BODY = {
         "url": "https://www.npmjs.com/package/@qwen-code/qwen-code"
       }
     ]
+  },
+  "react-server-components-rce-ghsa-xqc2-2026-10-14": {
+    "body": [
+      "React の公式リポジトリの勧告 **GHSA-xqc2-xf4c-x3h3** は、React Server Components の認証不要の遠隔コード実行を、**Critical（CVSS v4 の基本値 9.5）** として公表した。公表日は2026年10月14日。CVE 番号は付いていない。",
+      "**影響を受けるパッケージと版。** react-server-dom-webpack、react-server-dom-parcel、react-server-dom-turbopack の3つ。いずれも、19.0.0〜19.0.8、19.1.0〜19.1.9、19.2.0〜19.2.8、19.3.0 が影響範囲とされている。",
+      "**修正版。** 19.0.9、19.1.10、19.2.9、19.3.1。勧告の本文には 19.0.09 と書かれているが、表では 19.0.9 となっており、表記の誤りと見られる。",
+      "**問題の内容（勧告の記述）。** 「React Server Components をサポートするフレームワークを狙った細工されたペイロードで、遠隔コード実行につながり得る」とされる。対象は、応答が多数の typed array と攻撃者の制御する値を含む、極めて稀な場合に限られる。サーバーを持たないアプリや、React Server Components をサポートするフレームワーク、バンドラー、バンドラープラグインを使わないアプリは、影響を受けないとされている。",
+      "**対応。** 勧告は、直ちに更新するよう勧めている。回避策は書かれていない。",
+      "**確認できていないこと。** 野外での悪用の有無は、勧告からは確認できない。発見者は勧告で evolutionstorm とされている。",
+      "**関連する記事。** 10月14日の Next.js のセキュリティ更新の記事（同じ週に、Next.js 側の勧告 GHSA-673q-mjm6-r5xr として公表）でも、この React 側の勧告を関連として挙げている。Next.js を使っている場合は、Next.js 側の更新を確認すること。",
+      "**このサイトへの影響。** AI News は React と Vite で作られた静的サイトで、React Server Components は使っていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Unauthenticated Remote Code Execution in React Server Components（GHSA-xqc2-xf4c-x3h3、2026-10-14）",
+        "site": "GitHub（React の公式勧告）",
+        "url": "https://github.com/react/react/security/advisories/GHSA-xqc2-xf4c-x3h3"
+      }
+    ]
   }
 };
 

@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-11-08T15:00:00Z</updated>
+  <updated>2026-11-10T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>React Server Components に認証不要の遠隔コード実行（GHSA-xqc2-xf4c-x3h3、CVSS v4 9.5）— 19.0.9・19.1.10・19.2.9・19.3.1 へ更新</title>
+    <link rel="alternate" type="text/html" href="?a=react-server-components-rce-ghsa-xqc2-2026-10-14"/>
+    <id>tag:ai-tool-news.jp,2026:react-server-components-rce-ghsa-xqc2-2026-10-14</id>
+    <published>2026-11-09T15:00:00Z</published>
+    <updated>2026-11-09T15:00:00Z</updated>
+    <summary>React の公式 GitHub の勧告 GHSA-xqc2-xf4c-x3h3 は、React Server Components の遠隔コード実行を重大（Critical）として公表した（10月14日）。影響は react-server-dom-webpack、react-server-dom-parcel、react-server-dom-turbopack の19系の一部の版で、修正版は 19.0.9、19.1.10、19.2.9、19.3.1。勧告は、対象は多数の typed array と攻撃者が制御する値を含む応答という極めて稀な場合に限られるとしている。</summary>
+  </entry>
   <entry>
     <title>Qwen Code v0.27.0 — 管理エージェントが複数の子の質問を同時に保持、FileChanged フック、GitHub チャンネルのリポジトリ絞り込み、認証情報をエラーに出さない修正</title>
     <link rel="alternate" type="text/html" href="?a=qwen-code-0-27-0-multi-child-questions-filechanged-hooks-repo-filter-2026"/>
