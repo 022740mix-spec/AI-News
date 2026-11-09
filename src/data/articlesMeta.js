@@ -12992,5 +12992,21 @@ export const ARTICLES_META = [
       "Qwen",
       "開発ツール"
     ]
+  },
+  {
+    "id": "react-server-components-rce-ghsa-xqc2-2026-10-14",
+    "type": "news",
+    "category": "product",
+    "title": "React Server Components に認証不要の遠隔コード実行（GHSA-xqc2-xf4c-x3h3、CVSS v4 9.5）— 19.0.9・19.1.10・19.2.9・19.3.1 へ更新",
+    "excerpt": "React の公式 GitHub の勧告 GHSA-xqc2-xf4c-x3h3 は、React Server Components の遠隔コード実行を重大（Critical）として公表した（10月14日）。影響は react-server-dom-webpack、react-server-dom-parcel、react-server-dom-turbopack の19系の一部の版で、修正版は 19.0.9、19.1.10、19.2.9、19.3.1。勧告は、対象は多数の typed array と攻撃者が制御する値を含む応答という極めて稀な場合に限られるとしている。",
+    "date": "2026-11-09",
+    "newsDate": "2026-10-14",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "React",
+      "セキュリティ",
+      "React Server Components"
+    ]
   }
 ];

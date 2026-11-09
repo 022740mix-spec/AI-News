@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-11-08",
-  "count": 624,
+  "generatedAt": "2026-11-09",
+  "count": 625,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -549,6 +549,7 @@
     "rag-getting-started-step-by-step-2026",
     "railway-environment-variables-incident-2026-10-21",
     "react-frontend-ms-backend-architecture-2026",
+    "react-server-components-rce-ghsa-xqc2-2026-10-14",
     "realtime-translation-oss-security-cost-2026",
     "reducto-r-1-mini-document-parsing-2026-11-05",
     "rf-detr-aerial-drone-detection-dual-use-2026",
