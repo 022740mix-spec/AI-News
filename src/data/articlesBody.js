@@ -29883,6 +29883,117 @@ const ARTICLES_BODY = {
         "url": "https://github.com/022740mix-spec/AI-News"
       }
     ]
+  },
+  "anthropic-claude-fable-5-2-mythos-5-2-launch-api-changes-2026": {
+    "body": [
+      "Claude Platform のリリースノートによると、Anthropic は2026年11月9日に Claude Fable 5.2（モデル ID は claude-fable-5-2）を公開した。公式のモデルページは用途を「長時間に及ぶエージェントのセッション、複数段階の調査、文書・表計算・スライドにまで仕上げる分析」と説明している。同じ能力を、Cyber Verification Program など Anthropic の認証プログラムで確認された組織だけに提供する Claude Mythos 5.2（claude-mythos-5-2）も同時に出た。この記事は Claude Platform のドキュメント（リリースノート、モデルページ、What's new、移行ガイド、プロンプトガイド）と Claude Code の CHANGELOG の記載だけに基づく。",
+      "仕様は Fable 5.1 と共通する部分が多い。文脈は1Mトークン（既定かつ上限）、最大出力は128kトークン、適応型 thinking は常に有効で無効にできない。thinking の深さは effort パラメータで決め、既定は high のまま。知識の更新時点は2026年6月と書かれている。トークナイザーは Claude Opus 4.7 で導入されたものを使う。Claude Fable 5.2 は 5.1 と同じく、assistant メッセージの prefill、temperature・top_p・top_k の指定、tool_choice で any や tool を指定して呼び出しを強制すること、がエラーになる。",
+      "価格は下がった。リリースノートは、Fable 5.2 と Mythos 5.2 が入力 $8・出力 $40（100万トークンあたり）で、Fable 5.1 と Mythos 5.1 の入力 $10・出力 $50 より安いと書いている。移行ガイドによれば、キャッシュ読み出しも $0.25 から $0.20 に下がった。5分キャッシュの書き込みは $10、1時間キャッシュの書き込みは $16 で、Batch API は入力・出力とも50%割引と、モデルページに載っている。比較表では Opus 5.5 が $4 / $20、Sonnet 5.5 が $2 / $10、Haiku 5.5 が $0.10 / $0.50 から、とされている。",
+      "提供先は、Claude API、Claude Platform on AWS、Claude Models on Google Cloud（Anthropic managed）に加え、Amazon Bedrock、Claude Models on Google Cloud（Google managed）、Claude in Microsoft Foundry である。Amazon Bedrock のモデル ID だけが anthropic.claude-fable-5-2 の形で、ほかは claude-fable-5-2 と同じ。Claude API では Fable 5.2 にアクセス承認は要らない。Mythos 5.2 は認証済み組織のみで、申請は該当するプログラムか担当窓口を通す。モデルページの退役の欄は「2027年11月9日より前にはならない」となっている。",
+      "公式の What's new は、Fable 5.1 からの移行でコードが壊れうる変更を4つ挙げている。1つ目は、thinking ブロックの接頭辞チェックが全アカウントに適用されること。thinking ブロックは、それが作られたときの system プロンプト、tools、それ以前のメッセージに対してだけ有効で、どれかを編集したあとに古い thinking ブロックを送り返すと、アカウントの作成時期に関係なく 400 エラー（The block is bound to a different conversation）になる。Fable 5.1 では、2026年8月31日以降に作られたアカウントで既定でエラーになる扱いだった。つまり、古いアカウントで 5.1 では通っていた履歴の編集が、5.2 では落ちうる。",
+      "回避策として、ベータヘッダー thinking-binding-controls-2026-08-01 を付けて thinking.block_binding.prefix_mismatch_behavior を drop_block にすると、該当ブロックを落として続行できる。落としたブロックは応答の input_transformations に列挙される。ただし公式は、これを一時しのぎと位置づけ、ブロックを落とすと出力トークンが増えうると注意している。Claude Code、claude.ai、Claude Managed Agents、Claude Agent SDK が履歴を組み立てている場合は、利用者側で変わることはないとも書かれている。自前で messages を組み立てているコードだけが確認の対象になる。",
+      "2つ目は、Fable 5.2 の thinking ブロックを読めるモデルが限られること。Claude API と Claude Models on Google Cloud（Google managed）では、Fable 5.2 と Mythos 5.2 は互いのブロックと、Opus 5.5・Sonnet 5.5・Haiku 5.5・Fable 5.1・Mythos 5.1・Opus 5 などのブロックを読める。逆に、Fable 5.2 のブロックを読めるのは Fable 5.2 と Mythos 5.2 だけで、Opus 5.5 や Fable 5.1、あるいは Fable 5.2 のフォールバック先として書かれている Opus 4.8・Opus 5 に会話を移すと、それまでの thinking は失われる。読めないブロックは API が落とし、リクエストは成功し、落とされたブロックには課金されない。加えて、ブロックは作ったアカウントか、そこに紐付いたアカウントの中でしか使えない。",
+      "3つ目は、旧 computer use ツール computer_20251124 が、Amazon Bedrock を除くすべてのプラットフォームで 400 エラーになること。Fable 5.2 と Mythos 5.2 は computer_toolset_20260801 を使う。Bedrock では旧ツールが引き続き動くと書かれている。4つ目は、ベータ中の advisor ツールで、Fable 5.2 または Mythos 5.2 を executor にする場合、advisor にも Fable 5.2 か Mythos 5.2 を指定しなければ 400 エラーになること。反対に、どの executor モデルでも Fable 5.2 を advisor にできる。Managed Agents で advisor を設定しているエージェントは、advisor のモデル名も更新が必要になる。",
+      "運用面の条件も、Fable 5.1 と同じ形で残っている。30日間のデータ保持が必要で、ゼロデータ保持（ZDR）の契約下では Anthropic が明示的に認めた場合を除いて使えない。保持が足りない組織やワークスペースからのリクエストは、Claude API で 400 の invalid_request_error になる。Priority Tier には対応していない。レート制限は Fable 5.2 が独立した枠を持ち、Fable 5.1 と Fable 5 が共有する枠とは別になる。Mythos 5.2 は Mythos 5.1・Mythos 5 と1つの枠を共有する。",
+      "fast mode は Fable 5.2 でも使える。リリースノートによると、Claude API の Messages API で、出力トークンの毎秒数が最大2.5倍になる代わりに、入力 $16・出力 $80 の単価になる。リクエストに speed: \"fast\" を付けるだけで、ベータヘッダーは要らない。Managed Agents でエージェントのモデルに speed: \"fast\" を指定している場合は、移行時に外すよう移行ガイドが書いている。Claude Code の CHANGELOG では、2.1.321 が claude-fable-5-2 を追加し、Fable の既定モデルにした。同じ項に $8/$40 と、キャッシュ読み出し $0.20 の単価が記されている。",
+      "公式がどのモデルから使い始めるよう案内しているかも、並べておく。What's new は、ほとんどの用途では最新の Claude Opus から始め、Opus を高い effort にしても要件を満たせない場合に Fable 5.2 へ移るよう書いている。モデルページの比較表では、Fable 5.2 の遅延は「中程度」、Opus 5.5 も「中程度」、Sonnet 5.5 は「速い」、Haiku 5.5 は「最速」で、Fable 5.2 の既定 effort は high、Opus 5.5 は medium になっている。プロンプトガイドは、effort の見極め、途中で止まる動作、承認、サブエージェントの数、Fable 5.1 や Opus 5.5 向けに書いた指示の見直しなどの節に分かれている。",
+      "確認できていないこと。ベンチマークの数値、システムカードの中身、Anthropic 自身の発表記事は、今回の調査では読めていない（www.anthropic.com のニュース記事は、推測したURLでは取得できなかった）。したがって、Fable 5.1 や Opus 5.5 に対する性能差はこの記事では述べない。また、上の内容はすべて Anthropic 自身の公式ドキュメントに由来する。価格・仕様・移行上の注意は一次資料1本で足りる性質の主張だが、性能や使用感についての独立した検証は確認できていない。本サイトの Fable 5.1 のレビュー記事は、5.1 の価格と提供条件で採点されている。5.2 の価格・条件を反映した見直しは、このニュース記事とは別に行う。"
+    ],
+    "tables": [
+      {
+        "caption": "Fable 5.2 と Fable 5.1 の価格（Claude Platform 公式ドキュメントの記載、100万トークンあたり）",
+        "afterParagraph": 3,
+        "headers": [
+          "項目",
+          "Claude Fable 5.2",
+          "Claude Fable 5.1"
+        ],
+        "rows": [
+          [
+            "入力",
+            "$8",
+            "$10"
+          ],
+          [
+            "出力",
+            "$40",
+            "$50"
+          ],
+          [
+            "キャッシュ読み出し",
+            "$0.20",
+            "$0.25"
+          ],
+          [
+            "fast mode（入力 / 出力）",
+            "$16 / $80",
+            "本記事では未確認"
+          ],
+          [
+            "Batch API",
+            "入力・出力とも50%割引",
+            "本記事では未確認"
+          ]
+        ]
+      },
+      {
+        "caption": "Fable 5.1 から 5.2 へ移る際にコードが壊れうる4つの変更（What's new の記載を整理）",
+        "afterParagraph": 8,
+        "headers": [
+          "変更",
+          "起きること",
+          "確認する場所"
+        ],
+        "rows": [
+          [
+            "thinking の接頭辞チェックが全アカウントに適用",
+            "system・tools・過去のメッセージを編集したあとに古い thinking ブロックを送ると 400 エラー",
+            "自前で messages を組み立てているコード（Claude Code・Agent SDK・Managed Agents なら対象外と記載）"
+          ],
+          [
+            "Fable 5.2 の thinking ブロックを読めるのは Fable 5.2 と Mythos 5.2 のみ",
+            "ほかのモデルへ会話を移すと、それまでの thinking は落とされる（リクエストは成功し、課金もされない）",
+            "モデルを途中で切り替える設計"
+          ],
+          [
+            "computer_20251124 が Bedrock 以外で 400 エラー",
+            "computer_toolset_20260801 への差し替えが必要",
+            "computer use を使うエージェント"
+          ],
+          [
+            "advisor ツールの組み合わせの制限",
+            "Fable 5.2 の executor は Fable 5.2 か Mythos 5.2 の advisor しか受け付けない",
+            "advisor を設定している Managed Agents など"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Platform リリースノート（2026年11月9日の項）",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Claude Fable 5.2（モデルページ）",
+        "url": "https://platform.claude.com/docs/en/models/fable-5-2/overview"
+      },
+      {
+        "title": "What's new in Claude Fable 5.2",
+        "url": "https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2"
+      },
+      {
+        "title": "Claude Fable 5.2 移行ガイド",
+        "url": "https://platform.claude.com/docs/en/models/fable-5-2/migration-guide"
+      },
+      {
+        "title": "Prompting Claude Fable 5.2",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2"
+      },
+      {
+        "title": "Claude Code CHANGELOG（2.1.321）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      }
+    ]
   }
 };
 

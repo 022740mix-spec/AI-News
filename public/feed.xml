@@ -8,6 +8,14 @@
   <updated>2026-11-10T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
   <entry>
+    <title>Claude Fable 5.2 が公開 — 入力 $8・出力 $40 で 5.1 より安く、thinking の接頭辞チェックが全アカウントに、旧 computer use ツールは 400 エラー</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-fable-5-2-mythos-5-2-launch-api-changes-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-fable-5-2-mythos-5-2-launch-api-changes-2026</id>
+    <published>2026-11-10T15:00:00Z</published>
+    <updated>2026-11-10T15:00:00Z</updated>
+    <summary>Anthropic は2026年11月9日、Claude Fable 5.2（claude-fable-5-2）を公開した。1Mトークンの文脈、最大出力128k、常時有効の適応型 thinking は 5.1 と同じで、価格は入力 $10・出力 $50 から入力 $8・出力 $40 に下がった。同日付の Claude Platform 公式ドキュメントは、コードが壊れうる変更を4つ挙げている。同じ能力を認証済み組織だけに提供する Mythos 5.2 も出た。性能を示す数値は、今回確認した公式ドキュメントには載っていない。</summary>
+  </entry>
+  <entry>
     <title>React Server Components に認証不要の遠隔コード実行（GHSA-xqc2-xf4c-x3h3、CVSS v4 9.5）— 19.0.9・19.1.10・19.2.9・19.3.1 へ更新</title>
     <link rel="alternate" type="text/html" href="?a=react-server-components-rce-ghsa-xqc2-2026-10-14"/>
     <id>tag:ai-tool-news.jp,2026:react-server-components-rce-ghsa-xqc2-2026-10-14</id>

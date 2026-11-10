@@ -13031,5 +13031,24 @@ export const ARTICLES_META = [
       "start": "2026-11-02",
       "end": "2026-11-08"
     }
+  },
+  {
+    "id": "anthropic-claude-fable-5-2-mythos-5-2-launch-api-changes-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Claude Fable 5.2 が公開 — 入力 $8・出力 $40 で 5.1 より安く、thinking の接頭辞チェックが全アカウントに、旧 computer use ツールは 400 エラー",
+    "excerpt": "Anthropic は2026年11月9日、Claude Fable 5.2（claude-fable-5-2）を公開した。1Mトークンの文脈、最大出力128k、常時有効の適応型 thinking は 5.1 と同じで、価格は入力 $10・出力 $50 から入力 $8・出力 $40 に下がった。同日付の Claude Platform 公式ドキュメントは、コードが壊れうる変更を4つ挙げている。同じ能力を認証済み組織だけに提供する Mythos 5.2 も出た。性能を示す数値は、今回確認した公式ドキュメントには載っていない。",
+    "date": "2026-11-10",
+    "newsDate": "2026-11-09",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Fable 5",
+      "Mythos",
+      "API",
+      "料金"
+    ]
   }
 ];
