@@ -16,6 +16,14 @@
     <summary>Anthropic は2026年11月9日、Claude Fable 5.2（claude-fable-5-2）を公開した。1Mトークンの文脈、最大出力128k、常時有効の適応型 thinking は 5.1 と同じで、価格は入力 $10・出力 $50 から入力 $8・出力 $40 に下がった。同日付の Claude Platform 公式ドキュメントは、コードが壊れうる変更を4つ挙げている。同じ能力を認証済み組織だけに提供する Mythos 5.2 も出た。性能を示す数値は、今回確認した公式ドキュメントには載っていない。</summary>
   </entry>
   <entry>
+    <title>Claude Code 2.1.321・2.1.322、Fable 5.2 が Fable の既定に、MCP の OAuth がリダイレクト先へ秘密情報を送る不具合とサンドボックス・権限チェックの修正</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-2-1-321-2-1-322-fable-5-2-default-mcp-oauth-redirect-sandbox-fixes-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-2-1-321-2-1-322-fable-5-2-default-mcp-oauth-redirect-sandbox-fixes-2026</id>
+    <published>2026-11-10T15:00:00Z</published>
+    <updated>2026-11-10T15:00:00Z</updated>
+    <summary>Claude Code の CHANGELOG によると、2.1.321 は claude-fable-5-2 を追加して Fable の既定モデルにし、保存済みの Fable 5.1 の選択を fable に移した。同じ版には、MCP の OAuth が別ホストへリダイレクトされたときに更新トークンなどを送ってしまう不具合、読み取り専用のコマンドが確認なしにサンドボックスの外で動いた不具合、cp・mv が拒否ルールを素通りした不具合の修正が含まれる。2.1.322 は Vertex の fast mode の追加。</summary>
+  </entry>
+  <entry>
     <title>React Server Components に認証不要の遠隔コード実行（GHSA-xqc2-xf4c-x3h3、CVSS v4 9.5）— 19.0.9・19.1.10・19.2.9・19.3.1 へ更新</title>
     <link rel="alternate" type="text/html" href="?a=react-server-components-rce-ghsa-xqc2-2026-10-14"/>
     <id>tag:ai-tool-news.jp,2026:react-server-components-rce-ghsa-xqc2-2026-10-14</id>

@@ -29994,6 +29994,65 @@ const ARTICLES_BODY = {
         "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
       }
     ]
+  },
+  "claude-code-2-1-321-2-1-322-fable-5-2-default-mcp-oauth-redirect-sandbox-fixes-2026": {
+    "body": [
+      "Claude Code の公式 CHANGELOG（anthropics/claude-code リポジトリ）には、2026年11月10日時点で 2.1.321 と 2.1.322 が載っている。直前に本サイトで扱った版は 2.1.319 で、CHANGELOG に 2.1.320 の項は見当たらない。2.1.321 は Fable 5.2 の対応と、権限・サンドボックス・MCP 認証まわりの修正が中心である。Fable 5.2 そのものの仕様と価格は、本サイトの別記事で扱っている。この記事は CHANGELOG の記載だけに基づき、各修正の再現や影響範囲は検証していない。",
+      "モデル面では、2.1.321 が Claude Fable 5.2（claude-fable-5-2）を追加し、Fable の既定モデルにした。CHANGELOG は文脈 1M、入力・出力が100万トークンあたり $8 / $40、キャッシュ読み出しが $0.20 と書いている。あわせて、保存されている Fable 5.1 のモデル選択は fable に移る。Pro と Max のプランでは即時、Team と Enterprise のプランでは組織が許可した時点で移り、Fable 5.1 に戻すには /model claude-fable-5-1 を使うと記されている。/model の一覧では「More models」の行が全モデルの下に番号なしで置かれ、古いモデルはその下に入る。2.1.322 は、Vertex の global・us・eu リージョンで fast mode を使えるようにし、Vertex が拒否した場合は標準速度に戻す。",
+      "セキュリティに関わる修正として、CHANGELOG は次の項目を挙げている。MCP の OAuth で、サーバーが別のホストへリダイレクトしたときに、更新トークンなどの秘密情報がそのホストへ送られる不具合の修正。読み取り専用の Bash コマンドが、権限の確認なしにサンドボックスの外で動いた場合があった不具合の修正。Bash の権限チェックが、ファイルの書き込みを誤ったフォルダの基準で判定し、確認を出さなかった場合の修正。cp や mv でディレクトリへ書き込むとき、そのファイルに拒否ルールや保護ファイルの確認が効いていなかった不具合の修正。あわせて、/bin/cp のようにパスで書いた cp・mv も、cp・mv と同じパスの検査を受けるようになった。",
+      "これらの修正が実際にどの構成で、どの程度悪用できたかは、CHANGELOG の1行の記述からは分からない。CVE 番号や GitHub のセキュリティ勧告への言及も、確認した範囲の CHANGELOG には無い。使う側にとって確かめやすいのは、自分の版が 2.1.321 以降かどうかである。MCP の OAuth でサーバーに接続している場合と、拒否ルールを cp・mv のようなファイル操作の安全装置として頼っている場合は、特に該当しうると読める。なお、SDK や claude -p 経由で動かしている場合も、AskUserQuestion が未公開の入力フィールド afkTimeoutMs を含む権限の答えを拒否するようになった、という変更が同じ版に入っている。",
+      "設定・運用まわりの変更もある。claude remote-control に --settings <file> が加わり、そこから始まる全セッションに設定ファイルを適用する。ファイルが変わっても、claude remote-control を再起動するまで新しいセッションは始まらない。Remote Control のセッションは始めたフォルダを保ち、接続したクライアントが別のフォルダへ移せなくなった。管理設定の extraKnownMarketplaces は、宣言された名前を別のソースから追加できなくなり、別の出どころの同名エントリは隠される。宣言されたマーケットプレイスが載せるプラグインは、そこから入れ直される。",
+      "Claude Code が書く mods は、auto モードと bypass モードでは確認なしに有効になり、dontAsk モードでは読み込まれない。管理設定の allowUnsandboxedCommands: false や allowManagedDomainsOnly があっても、この動きは変わらない、と CHANGELOG は書いている。mods 自身のツール呼び出し（$.tool.call、$.mcp.call）は、利用者が ask ルールを置いていても、dontAsk や -p の実行でも、権限の確認を出さなくなった。拒否ルールと組織のポリシーは引き続き適用される。管理者が mods を使う環境では、この2点は設定の見直しの対象になりうる。",
+      "確認できていないこと。個々の修正が、どの版から存在した不具合かは CHANGELOG に書かれていない。したがって、過去の版の利用者がどの程度の期間、影響を受けうる状態だったかは、この記事では述べない。また、Anthropic による個別のセキュリティ告知は、今回確認した範囲では見つかっていない。ほかにも、2.1.321 には非常に多くの修正（Windows・macOS の起動、Remote Control、Claude apps gateway、スクリーンリーダーなど）が並んでいるが、ここでは権限と認証に絡むものを中心に取り上げた。全項目は CHANGELOG を参照してほしい。"
+    ],
+    "tables": [
+      {
+        "caption": "Claude Code 2.1.321・2.1.322 の主な変更（公式 CHANGELOG の記載を整理）",
+        "afterParagraph": 2,
+        "headers": [
+          "区分",
+          "変更内容",
+          "版"
+        ],
+        "rows": [
+          [
+            "モデル",
+            "claude-fable-5-2 を追加し、Fable の既定にする。保存済みの Fable 5.1 の選択は fable へ移る（戻すには /model claude-fable-5-1）",
+            "2.1.321"
+          ],
+          [
+            "MCP 認証",
+            "OAuth のリクエストが、リダイレクト先の別ホストへ更新トークンなどを送る不具合を修正",
+            "2.1.321"
+          ],
+          [
+            "サンドボックス",
+            "読み取り専用の Bash コマンドが、確認なしにサンドボックスの外で動いた場合を修正",
+            "2.1.321"
+          ],
+          [
+            "権限チェック",
+            "ファイル書き込みの判定フォルダの誤り、cp・mv でディレクトリへ書く場合に拒否ルールが効かない不具合を修正。/bin/cp などパス指定の cp・mv も同じ検査に",
+            "2.1.321"
+          ],
+          [
+            "Vertex",
+            "global・us・eu で fast mode を追加。拒否されたら標準速度に戻す",
+            "2.1.322"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG（2.1.321・2.1.322）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "Claude Platform リリースノート（2026年11月9日の項、Fable 5.2）",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      }
+    ]
   }
 };
 

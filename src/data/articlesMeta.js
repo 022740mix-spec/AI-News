@@ -13050,5 +13050,24 @@ export const ARTICLES_META = [
       "API",
       "料金"
     ]
+  },
+  {
+    "id": "claude-code-2-1-321-2-1-322-fable-5-2-default-mcp-oauth-redirect-sandbox-fixes-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.321・2.1.322、Fable 5.2 が Fable の既定に、MCP の OAuth がリダイレクト先へ秘密情報を送る不具合とサンドボックス・権限チェックの修正",
+    "excerpt": "Claude Code の CHANGELOG によると、2.1.321 は claude-fable-5-2 を追加して Fable の既定モデルにし、保存済みの Fable 5.1 の選択を fable に移した。同じ版には、MCP の OAuth が別ホストへリダイレクトされたときに更新トークンなどを送ってしまう不具合、読み取り専用のコマンドが確認なしにサンドボックスの外で動いた不具合、cp・mv が拒否ルールを素通りした不具合の修正が含まれる。2.1.322 は Vertex の fast mode の追加。",
+    "date": "2026-11-10",
+    "newsDate": "2026-11-09",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "Fable 5",
+      "セキュリティ",
+      "MCP",
+      "サンドボックス"
+    ]
   }
 ];
