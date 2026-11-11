@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-11-10T15:00:00Z</updated>
+  <updated>2026-11-12T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Node.js が11/11 にセキュリティリリース — 18件（うち HIGH 7件）、22・24・26 の全ラインが対象</title>
+    <link rel="alternate" type="text/html" href="?a=nodejs-security-release-2026-11-11"/>
+    <id>tag:ai-tool-news.jp,2026:nodejs-security-release-2026-11-11</id>
+    <published>2026-11-11T15:00:00Z</published>
+    <updated>2026-11-11T15:00:00Z</updated>
+    <summary>Node.js の公式告知によると、11月11日（水）付けで 22.x・24.x・26.x の全ラインのセキュリティリリースが出た。対象は18件で、最も深刻なものは HIGH。HTTP/2 と TLS の処理に集中しており、サーバーがリモートから落とされる、または他の接続のメモリが漏れる類の問題が含まれる。</summary>
+  </entry>
   <entry>
     <title>Claude Fable 5.2 が公開 — 入力 $8・出力 $40 で 5.1 より安く、thinking の接頭辞チェックが全アカウントに、旧 computer use ツールは 400 エラー</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-fable-5-2-mythos-5-2-launch-api-changes-2026"/>
