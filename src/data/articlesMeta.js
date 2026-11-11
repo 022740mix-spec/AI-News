@@ -13069,5 +13069,21 @@ export const ARTICLES_META = [
       "MCP",
       "サンドボックス"
     ]
+  },
+  {
+    "id": "nodejs-security-release-2026-11-11",
+    "type": "news",
+    "category": "product",
+    "title": "Node.js が11/11 にセキュリティリリース — 18件（うち HIGH 7件）、22・24・26 の全ラインが対象",
+    "excerpt": "Node.js の公式告知によると、11月11日（水）付けで 22.x・24.x・26.x の全ラインのセキュリティリリースが出た。対象は18件で、最も深刻なものは HIGH。HTTP/2 と TLS の処理に集中しており、サーバーがリモートから落とされる、または他の接続のメモリが漏れる類の問題が含まれる。",
+    "date": "2026-11-11",
+    "newsDate": "2026-11-11",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Node.js",
+      "セキュリティ",
+      "脆弱性"
+    ]
   }
 ];
