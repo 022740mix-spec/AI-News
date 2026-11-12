@@ -13099,5 +13099,23 @@ export const ARTICLES_META = [
       "Anthropic",
       "資金調達"
     ]
+  },
+  {
+    "id": "anthropic-self-hosted-claude-managed-agents-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude Managed Agents にセルフホスト版 — サービス本体とセッション履歴を自社のインフラに置き、モデル呼び出し先は Claude API・Bedrock・Google Cloud・Foundry・自前のゲートウェイから選ぶ",
+    "excerpt": "Anthropic の Claude Platform リリースノートに、11月12日付で self-hosted Claude Managed Agents が載った。これまで利用者側に置けたのはサンドボックスだけだったが、API・エージェントループ・保存先を含むサービス本体も自社のインフラで動かせる。利用にはアカウントチームへの申請が要る。ホスト版との違い、外に出るデータ、利用者側が負う責任を公式ドキュメントに基づいて整理する。",
+    "date": "2026-11-13",
+    "newsDate": "2026-11-12",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "エージェント",
+      "API",
+      "セルフホスト",
+      "エンタープライズ"
+    ]
   }
 ];

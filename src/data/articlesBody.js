@@ -30192,6 +30192,118 @@ const ARTICLES_BODY = {
         "url": "https://www.anthropic.com/news/roadshow-launch"
       }
     ]
+  },
+  "anthropic-self-hosted-claude-managed-agents-2026": {
+    "body": [
+      "Anthropic の Claude Platform リリースノートに、11月12日付で self-hosted Claude Managed Agents（セルフホスト版）が載った。Managed Agents のサービス全体を利用者のインフラで動かし、エージェント、セッション、セッション履歴をそこに保存する。利用するには Anthropic のアカウントチームに申請する必要があり、誰でもダウンロードできる形では公開されていない。以下は公式ドキュメント（リリースノートとセルフホスト版の各ページ）に基づく整理で、実際に動かして確かめたものではない。料金についての記載は、確認したページの範囲には見当たらなかった。",
+      "Managed Agents には、利用者側に置ける部分が2つある。1つはサンドボックスで、エージェントのツールがコマンドを実行しファイルを扱う、コンテナや VM などの隔離された作業場所を指す。もう1つはサービス本体で、API、エージェントループ、そしてエージェント・セッション・セッション履歴の保存先を指す。従来の self-hosted sandboxes は前者だけを利用者側に移すものだった。今回のセルフホスト版は後者も移す。モデルは Anthropic か、利用者が選んだ提供元で動く。",
+      "公式が挙げる選択の理由は2つある。エージェントやセッション履歴を自分で保存しなければならない場合と、モデル呼び出しを Amazon Bedrock、Claude Models on Google Cloud（Google managed）、Microsoft Foundry、または自前のモデルゲートウェイへ送らなければならない場合である。ツールを自社のインフラで動かせれば足りるなら、Anthropic がサービスを運用する self-hosted sandboxes を使うよう案内している。",
+      "構成要素は次のとおり。サーバー（cma-server）が API を提供し、エージェントループを回し、データを保存する。サーバー自身はエージェントのシェルやファイルのツールを実行しない。それを行うのはワーカーで、サーバーに仕事を取りに行き（ポーリング）、サンドボックスの中でツールを動かす。データベースは PostgreSQL 16 以降。データベースを設定しない場合、サーバーはデータをメモリに持ち、再起動で消える。ほかに、利用者の ID プロバイダーでサインインして使うサーバー上のコンソールと、環境と環境キーを作る管理用 CLI（cma-server-admin）がある。クイックスタートは Docker Compose を使うが、公式はこれを開発用と明記しており、本番にはリリースに含まれる2つの Helm チャート（Kubernetes）を勧めている。",
+      "モデル呼び出しの送り先は、サーバーの設定 inference.provider で決まる。既定は anthropic（Claude API）で、ほかに bedrock、vertex、foundry、gateway を指定できる。anthropic 以外では、サーバーは Claude API のキーを必要としない。エージェントの定義ではモデルを claude-opus-5-5 のような Claude API の ID で指定し、サーバーが提供元ごとの ID に変換するので、そのモデルを提供している提供元であれば定義を書き換えずに済むと説明されている。",
+      "API はホスト版と同じで、SDK と ant CLI がそのまま使えるとされる。ただし例外があり、公式は移行前に差分のページを確認するよう求めている。ホスト版からは何もコピーされない。セッション履歴も含めてである。エージェント、スキル、vault の資格情報、メモリストアは、サーバー上で作り直す必要がある。",
+      "セルフホスト版では使えない機能がある。クラウド環境（指定すると 400）、Messages API や Models API などその他の Claude API（サーバーは提供せず 404）、Files API とファイルのセッションリソース、mcp_oauth の vault 資格情報、docx・pdf・pptx・xlsx の組み込みスキル、スケジュール実行、dreams、Webhook である。代替として、ファイルはワーカーの作業ディレクトリに置く、組み込みスキルは公開されているソースをカスタムスキルとして上げ直す、スケジュール実行は cron などの自前のスケジューラからセッションを始める、といった方法が示されている。dreams には代替が無いと書かれている。",
+      "挙動が違う機能もある。マルチエージェントでは、エージェントが委任できるのは一覧に載せたサブエージェントだけで、動的ワークフロー、advisor、エージェントが自分で定義するサブエージェントは使えない。MCP サーバーは、設定の許可リスト（mcp.allowed_hostnames）に載せたホストにだけ接続する。照合は完全一致で、ワイルドカードやサブドメインは効かず、既定では空である。web_search と web_fetch は、サーバーの設定で有効にするまで使えない。セッションを担当する環境をポーリングしているワーカーがいないと、最初のツール呼び出しはエラーを出さずに待ち続ける。",
+      "逆に、セルフホスト版にだけある機能が4つ挙がっている。推論の提供元の選択、OpenID Connect の ID プロバイダーによるシングルサインオン（トークン内のグループから役割を割り当てる）、vault の資格情報を自社のシークレットマネージャーに保存する設定、そしてエージェントの MCP 呼び出しに短命の署名付きトークンを添える agent identity である。",
+      "外に出るデータについて、公式は接続先を列挙している。推論の提供元、データベース、許可した MCP サーバーと Git ホスト、設定した場合の OpenTelemetry コレクター・ID プロバイダー・シークレットマネージャーなどで、サーバーが Anthropic に接続するのは推論の提供元が Claude API のときだけだという。Anthropic はサーバーとそのログへの遠隔アクセスを持たない、とも書かれている。モデル呼び出しには、それまでの会話（プロンプト、ツールの入力、ツールの結果）が含まれる。",
+      "Claude API を使う場合は、各モデル呼び出しにセッション・エージェント・環境の ID を載せたヘッダーが最大3つ付く。公式によれば、ID は名前も内容も含まないが、サーバーが ID を作った時刻を符号化している。Anthropic はこれで使用量をセッション・エージェント・環境に帰属させられ、ヘッダーを止める設定は無い。さらに、Claude API、Microsoft Foundry、Claude API と同じ形式を受けるゲートウェイへの呼び出しには、リクエスト本文の metadata.user_id に cma-server という固定のラベルが入りうる。全サーバーで同じ値なので個々の導入先は識別しないが、Anthropic はセルフホスト版の利用を数えるのに使える、と説明されている。Bedrock と Google Cloud（Google managed）への呼び出しには付かない。",
+      "データ保持の整理も変わる。ホスト版の Managed Agents は、Anthropic がセッションの記録を削除されるまで保存するため、ゼロデータ保持（ZDR）の対象外とされている。セルフホスト版では、記録を保存するのは利用者自身になる。モデルとのやり取りは、モデルを提供する相手との契約に従う。Claude API を使う場合、組織が ZDR の取り決めを結んでいれば、他の Messages API の呼び出しと同じようにこれらのモデル呼び出しにも及ぶ、と公式は述べている。セッションと履歴は、利用者が削除するまでデータベースに残り、古さを理由にサーバーが消すことはない。",
+      "責任の分担は利用者側に寄る。公式は警告として、エージェントの bash ツールはワーカーのプロセスと同じ権限とネットワークアクセスを持つ本物のシェルであり、ワーカー自身はそのシェルを隔離しないと書いている。隔離は、ワーカーを何の中で動かすかで決まる。付属の Docker Compose と Helm チャートは、セッションごとにワーカーを専用のコンテナやポッドで起動する。自分でワーカーを起動するなら、守るべきものを何も置いていない使い捨てのコンテナか VM で動かすよう求めている。サーバーの保護、メモリストアのホスト、異常な使用の検知も、ホスト版では Anthropic の担当だったものが利用者の責任になる。テナントや、信頼の水準が違う処理を分けるには、それぞれに別の導入が要るとされる。リリースの導入も利用者が自分で行う。",
+      "【整理】公式ドキュメントから確認できる事実は、提供形態（アカウントチームへの申請制）、3つの選択肢の分担、推論の提供元の種類、使えない機能と挙動の違い、Claude API 利用時に送られるヘッダーとラベル、利用者側の責任範囲である。確認できていないのは、料金と契約条件、申請が通る条件、リリースの配布頻度で、いずれも確認したページに記載が見当たらなかった。根拠は Anthropic 自身のドキュメントのみで、第三者による導入例や検証は確認できていない。"
+    ],
+    "tables": [
+      {
+        "caption": "Managed Agents の3つの選択肢 — 誰が何をホストするか（公式ドキュメントより）",
+        "afterParagraph": 1,
+        "headers": [
+          "選択肢",
+          "サンドボックス",
+          "サービス本体",
+          "モデル"
+        ],
+        "rows": [
+          [
+            "クラウドのサンドボックス（既定）",
+            "Anthropic",
+            "Anthropic",
+            "Anthropic"
+          ],
+          [
+            "self-hosted sandboxes",
+            "利用者",
+            "Anthropic",
+            "Anthropic"
+          ],
+          [
+            "self-hosted Managed Agents",
+            "利用者",
+            "利用者",
+            "Anthropic、または利用者が選ぶ提供元"
+          ]
+        ]
+      },
+      {
+        "caption": "inference.provider の値と、モデル呼び出しの送り先（公式ドキュメントより）",
+        "afterParagraph": 4,
+        "headers": [
+          "値",
+          "送り先",
+          "サーバーの認証"
+        ],
+        "rows": [
+          [
+            "anthropic（既定）",
+            "Claude API",
+            "ANTHROPIC_API_KEY"
+          ],
+          [
+            "bedrock",
+            "Amazon Bedrock",
+            "AWS の資格情報"
+          ],
+          [
+            "vertex",
+            "Claude Models on Google Cloud（Google managed）",
+            "Google Application Default Credentials"
+          ],
+          [
+            "foundry",
+            "Microsoft Foundry",
+            "Foundry の API キー、または Microsoft Entra ID"
+          ],
+          [
+            "gateway",
+            "利用者が運用するモデルゲートウェイ",
+            "そのゲートウェイが受け付けるキーまたはトークン"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Platform release notes（November 12, 2026）",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Self-hosted Claude Managed Agents — Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted"
+      },
+      {
+        "title": "Differences from the hosted service — Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted/differences"
+      },
+      {
+        "title": "Inference provider — Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted/inference-provider"
+      },
+      {
+        "title": "Data and access in self-hosted Claude Managed Agents — Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted-data-and-access"
+      },
+      {
+        "title": "Get started with self-hosted Claude Managed Agents — Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted/quickstart"
+      }
+    ]
   }
 };
 
