@@ -24,6 +24,14 @@
     <summary>Anthropic は10月18日、自社株の一部を新設の完全子会社「Anthropic Public Benefit Fund」に拠出すると発表した。株主の承認を条件に5%を拠出し、企業価値が基準値から50%増えるごとに、取締役会の裁量で2%を追加できる。形態は LLC で、保有株をロビー活動や政治献金に使わないとしている。基準値、統治の仕組み、使い道の詳細は「今後数か月で公表する」とされ、発表文には書かれていない。</summary>
   </entry>
   <entry>
+    <title>【分析】Anthropic が METR の6人に「従業員並みのアクセス」— 公表は拒否できないが、伏せる範囲を決めるのは Anthropic。評価者のアクセスを3段階に分ける設計を読む</title>
+    <link rel="alternate" type="text/html" href="?a=feature-anthropic-metr-employee-like-access-three-tiers-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-anthropic-metr-employee-like-access-three-tiers-2026</id>
+    <published>2026-11-12T15:00:00Z</published>
+    <updated>2026-11-12T15:00:00Z</updated>
+    <summary>Anthropic は10月15日、非営利の評価機関 METR の6人に、社内のリスク評価チームとほぼ同等のアクセスを与え始めたと発表した。METR は分析を公表でき、Anthropic は公表そのものを拒否できない。一方、あらかじめ決めた区分に当たる情報は伏せるよう求められ、何がその区分に当たるかは Anthropic が最終的に決める。発表文は評価者のアクセスを3段階に分けている。期間は書かれておらず、資金については9月の別の発表文に「評価者自身の資金で試行する方向で対話中」とあるだけである。</summary>
+  </entry>
+  <entry>
     <title>Claude Fable 5.2 が公開 — 入力 $8・出力 $40 で 5.1 より安く、thinking の接頭辞チェックが全アカウントに、旧 computer use ツールは 400 エラー</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-fable-5-2-mythos-5-2-launch-api-changes-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-fable-5-2-mythos-5-2-launch-api-changes-2026</id>
