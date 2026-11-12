@@ -30304,6 +30304,31 @@ const ARTICLES_BODY = {
         "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted/quickstart"
       }
     ]
+  },
+  "gemini-cli-0-68-extension-validate-rate-limit-countdown-subagentstop-2026": {
+    "body": [
+      "google-gemini/gemini-cli リポジトリの変更履歴（docs/changelogs/latest.md）は、最新の安定版を v0.68.0、公開日を2026年11月10日としている。npm レジストリでは `@google/gemini-cli` の `latest` タグが 0.68.0 を指し、公開時刻は 2026-11-10 21:22 UTC だった。直前に扱った 0.67.0 の次の安定版にあたる。以下は公式の変更履歴とリリースページの記載に基づく整理で、実際の挙動は検証していない。",
+      "機能の追加として公式がハイライトの先頭に挙げているのは、拡張機能の検証コマンドである（#29980）。拡張機能の設定を確かめるコマンドと評価用のテストが加わった。あわせて、同じ拡張機能の導入が同時に走ったときに、拡張機能ごとのロックで順番に処理するようになった（#30039）。拡張機能のリリースをダウンロードする途中でストリームが失敗した場合の処理も入っている（#30100）。",
+      "レート制限まわりでは、HTTP 429 を受けたあとの待ち時間（クールダウン）とカウントダウンが、CLI の読み込み表示に出るようになった（#30012）。これまで待っている理由が画面から分かりにくかった場面で、あと何秒かが見える。",
+      "モデルの選択に関する修正が複数ある。利用者が選んだモデルが、一時的なフォールバック、キャンセル、巻き戻し（rewind）のあとも保たれる（#30059）。動的なモデル解決で、明示的に指定した gemini-2.5-flash が保たれる（#30057）。動的モデル設定が有効でプレビューへのアクセスが無効のときに、/model の一覧に Auto が出る（#29998）。名前にドットを含む Gemini 3 系のモデルを、マルチモーダルな関数応答に対応するものとして認識する修正（#29982）もある。",
+      "フックでは、SubagentStop イベントの対応付けと、複数の設定にまたがるフック定義の統合に対応した（#30111）。ACP では、session/load に応答する前に履歴の再生を待つようになった（#30112）。",
+      "サンドボックスと各 OS 向けの修正も並ぶ。rootless の Podman でサンドボックスを使うときに --userns=keep-id を渡す（#30118）。Windows では、パスがルート配下かどうかの判定（isWithinRoot）を大文字小文字を区別しない形にし（#29999）、IDE のプロセスを探す処理に PowerShell の CIM を使う代替経路を加えた（#30006）。GlobTool はシンボリックリンクのパスを正規化して解決する（#30042）。変更の追跡に使う shadow リポジトリは、.git/info/exclude と core.excludesFile を尊重するようになった（#30034）。",
+      "ほかに、LLM へのプロンプトのテンプレートで `$` を含むパターンが壊れる問題の修正（#30035）、中断された Whisper モデルのダウンロードを導入済みと扱ってしまう問題の修正（#30058）、ストリームの終端で保留中の SSE イベントを流しきる修正（#30050）、リポジトリ URL 末尾の .git だけを取り除くようにする修正（#30013）、端末の幅を変えたあとの履歴の再描画を抑える修正（#29904）、サロゲートペアを途中で切らない表示の修正（#29993）などがある。README には、Gemini CLI の対象範囲と制約、周辺ツールとの関係を明確にする変更が入った（#29995）。変更履歴の「What's Changed」には33件が並ぶ。全項目は公式のリリースページにある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Gemini CLI v0.68.0 リリース（GitHub）",
+        "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.68.0"
+      },
+      {
+        "title": "Latest stable release: v0.68.0（docs/changelogs/latest.md）",
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/latest.md"
+      },
+      {
+        "title": "@google/gemini-cli（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@google/gemini-cli"
+      }
+    ]
   }
 };
 

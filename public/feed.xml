@@ -16,6 +16,14 @@
     <summary>Anthropic の Claude Platform リリースノートに、11月12日付で self-hosted Claude Managed Agents が載った。これまで利用者側に置けたのはサンドボックスだけだったが、API・エージェントループ・保存先を含むサービス本体も自社のインフラで動かせる。利用にはアカウントチームへの申請が要る。ホスト版との違い、外に出るデータ、利用者側が負う責任を公式ドキュメントに基づいて整理する。</summary>
   </entry>
   <entry>
+    <title>Gemini CLI 0.68.0 の変更点、拡張機能の検証コマンド、429 の待ち時間をカウントダウン表示、SubagentStop フック、選んだモデルがフォールバック後も保たれる修正</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-cli-0-68-extension-validate-rate-limit-countdown-subagentstop-2026"/>
+    <id>tag:ai-tool-news.jp,2026:gemini-cli-0-68-extension-validate-rate-limit-countdown-subagentstop-2026</id>
+    <published>2026-11-13T15:00:00Z</published>
+    <updated>2026-11-13T15:00:00Z</updated>
+    <summary>Google の Gemini CLI 0.68.0 が2026年11月10日に公開された。拡張機能の設定を検証するコマンドが加わり、レート制限（HTTP 429）の待ち時間が読み込み表示にカウントダウンで出るようになった。一時的なフォールバックやキャンセルのあとも選んだモデルが保たれる修正、SubagentStop イベントへの対応も入っている。公式の変更履歴に基づいて整理する。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が IPO のロードショーを開始 — 募集は Class A 普通株 8億2,500万株、想定価格は1株 70〜78 ドル</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-ipo-roadshow-launch-price-range-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-ipo-roadshow-launch-price-range-2026</id>

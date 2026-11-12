@@ -13117,5 +13117,22 @@ export const ARTICLES_META = [
       "セルフホスト",
       "エンタープライズ"
     ]
+  },
+  {
+    "id": "gemini-cli-0-68-extension-validate-rate-limit-countdown-subagentstop-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Gemini CLI 0.68.0 の変更点、拡張機能の検証コマンド、429 の待ち時間をカウントダウン表示、SubagentStop フック、選んだモデルがフォールバック後も保たれる修正",
+    "excerpt": "Google の Gemini CLI 0.68.0 が2026年11月10日に公開された。拡張機能の設定を検証するコマンドが加わり、レート制限（HTTP 429）の待ち時間が読み込み表示にカウントダウンで出るようになった。一時的なフォールバックやキャンセルのあとも選んだモデルが保たれる修正、SubagentStop イベントへの対応も入っている。公式の変更履歴に基づいて整理する。",
+    "date": "2026-11-13",
+    "newsDate": "2026-11-10",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Gemini CLI",
+      "CLI",
+      "Google",
+      "開発ツール"
+    ]
   }
 ];
