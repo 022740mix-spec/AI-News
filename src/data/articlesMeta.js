@@ -13084,5 +13084,20 @@ export const ARTICLES_META = [
       "Anthropic",
       "IPO"
     ]
+  },
+  {
+    "id": "anthropic-public-benefit-fund-5-percent-shares-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Anthropic が株式の5%を「Anthropic Public Benefit Fund」に拠出すると発表 — 企業価値が基準から50%増えるごとに2%を追加できる仕組み、株主の承認が条件",
+    "excerpt": "Anthropic は10月18日、自社株の一部を新設の完全子会社「Anthropic Public Benefit Fund」に拠出すると発表した。株主の承認を条件に5%を拠出し、企業価値が基準値から50%増えるごとに、取締役会の裁量で2%を追加できる。形態は LLC で、保有株をロビー活動や政治献金に使わないとしている。基準値、統治の仕組み、使い道の詳細は「今後数か月で公表する」とされ、発表文には書かれていない。",
+    "date": "2026-11-12",
+    "newsDate": "2026-10-18",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "資金調達"
+    ]
   }
 ];
