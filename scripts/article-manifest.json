@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-11-12",
-  "count": 630,
+  "count": 631,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -286,6 +286,7 @@
     "feature-ai-coding-market-realignment-spacex-cursor-2026",
     "feature-ai-ipo-season-cerebras-spacex-anthropic-openai-2026",
     "feature-ai-layoffs-2026-170k-gallup-counter-data-2026",
+    "feature-anthropic-metr-employee-like-access-three-tiers-2026",
     "feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026",
     "feature-china-ai-models-may-2026-qwen-kimi-ernie",
     "feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026",

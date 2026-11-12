@@ -13099,5 +13099,21 @@ export const ARTICLES_META = [
       "Anthropic",
       "資金調達"
     ]
+  },
+  {
+    "id": "feature-anthropic-metr-employee-like-access-three-tiers-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】Anthropic が METR の6人に「従業員並みのアクセス」— 公表は拒否できないが、伏せる範囲を決めるのは Anthropic。評価者のアクセスを3段階に分ける設計を読む",
+    "excerpt": "Anthropic は10月15日、非営利の評価機関 METR の6人に、社内のリスク評価チームとほぼ同等のアクセスを与え始めたと発表した。METR は分析を公表でき、Anthropic は公表そのものを拒否できない。一方、あらかじめ決めた区分に当たる情報は伏せるよう求められ、何がその区分に当たるかは Anthropic が最終的に決める。発表文は評価者のアクセスを3段階に分けている。期間は書かれておらず、資金については9月の別の発表文に「評価者自身の資金で試行する方向で対話中」とあるだけである。",
+    "date": "2026-11-12",
+    "newsDate": "2026-10-15",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Anthropic",
+      "AI安全性",
+      "透明性"
+    ]
   }
 ];
