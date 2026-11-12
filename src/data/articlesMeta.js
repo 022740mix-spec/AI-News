@@ -13069,5 +13069,20 @@ export const ARTICLES_META = [
       "MCP",
       "サンドボックス"
     ]
+  },
+  {
+    "id": "anthropic-ipo-roadshow-launch-price-range-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Anthropic が IPO のロードショーを開始 — 募集は Class A 普通株 8億2,500万株、想定価格は1株 70〜78 ドル",
+    "excerpt": "Anthropic は11月10日、新規株式公開（IPO）に向けたロードショーを始めたと発表した。募集は Class A 普通株 8億2,500万株で、うち約8億135万株を同社が、約2,365万株を既存株主が売り出す。想定価格帯は1株 70〜78 ドル。10月26日の S-1 提出の発表では未定だった株数と価格帯が示された。届出書はまだ効力を生じておらず、評価額や上場日は発表文に書かれていない。",
+    "date": "2026-11-12",
+    "newsDate": "2026-11-10",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "IPO"
+    ]
   }
 ];
