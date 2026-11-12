@@ -13134,5 +13134,23 @@ export const ARTICLES_META = [
       "Google",
       "開発ツール"
     ]
+  },
+  {
+    "id": "github-copilot-cli-1-0-107-to-1-0-109-sandbox-cidr-index-fable-5-2-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "GitHub Copilot CLI 1.0.107〜1.0.109、サンドボックスのホスト規則が CIDR に対応、/index と共有の索引検索が既定で有効に、Fable 5.2 が選択可能に、MCP の拒否規則は --allow-all-tools でも効く",
+    "excerpt": "GitHub Copilot CLI の 1.0.107（11月6日）、1.0.108（11月9日）、1.0.109（11月10日）の変更点を、公式の changelog に基づいて整理する。サンドボックスのホスト許可・拒否規則が IPv4/IPv6 の CIDR に対応し、対象のリポジトリでは共有の索引検索が既定で有効になった。権限まわりでは、MCP の拒否規則や読み取り専用スクリプトの扱いに修正が入っている。",
+    "date": "2026-11-13",
+    "newsDate": "2026-11-10",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "GitHub Copilot",
+      "CLI",
+      "サンドボックス",
+      "MCP",
+      "開発ツール"
+    ]
   }
 ];
