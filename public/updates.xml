@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./?view=updates"/>
   <link rel="self" type="application/atom+xml" href="./updates.xml"/>
   <id>tag:ai-tool-news.jp,2026:updates</id>
-  <updated>2026-10-23T15:00:00Z</updated>
+  <updated>2026-11-12T15:00:00Z</updated>
   <generator>ai-news-generate-updates</generator>
+  <entry>
+    <title>【追記】Anthropic が S-1 を SEC に提出したと発表 — Nasdaq に Class A 普通株を「ANT」で上場する計画、株数と価格は未定</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-s1-nasdaq-ant-filing-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:anthropic-s1-nasdaq-ant-filing-2026:2026-11-12</id>
+    <updated>2026-11-12T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>Anthropic は11月10日、IPO のロードショーを開始したと発表し、本記事の時点で未定だった募集株数（Class A 普通株 825,000,000 株）と想定価格帯（1株…</summary>
+  </entry>
   <entry>
     <title>【追記】【分析】Claude が CRISPR に似た未知の酵素系「ART」を発見 — 医療への影響は未知数。論文が示した本題は「道具を与えるほど見落とした」ほうだった</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-discovers-art-crispr-like-enzyme-2026#article-history"/>
@@ -1198,13 +1206,5 @@
     <updated>2026-08-11T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
     <summary>★4→3.5 「2026年3月に Anysphere（Cursor の親会社）による買収が完了し、現在は同社傘下で運営されている」という記述、および「Anysphere 傘下に入ったことで長期的には Cursor…（同日に 訂正・訂正・追記 もあり）</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Zed AI — Rust製の超高速AIエディタ</title>
-    <link rel="alternate" type="text/html" href="?a=zed-ai#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:zed-ai:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>★4→3 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（3.1）と乖離していました</summary>
   </entry>
 </feed>

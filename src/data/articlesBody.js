@@ -29109,12 +29109,17 @@ const ARTICLES_BODY = {
       "発表文に書かれていないことも多い。評価額、調達額、上場の時期、募集株式に占める既存株主の売出しの有無は、いずれも触れられていない。S-1 の本文に事業の数字（売上、損失、顧客構成など）が含まれている可能性があるが、本記事では確認していないため扱わない。",
       "当サイトは過去に、この件に関して複数の記事を出している。2026年3月には「早ければ10月の IPO を検討」との報道、6月には機密提出（confidential filing）に関する記事、9月14日には「11月にも Nasdaq 上場、評価額2兆ドル規模」との報道に基づく分析記事である。報道ベースの評価額や時期は、今回の発表文には現れていない。今回確認できたのは、S-1 を提出したこと、上場先と銘柄コード、株数と価格が未定であること、の3点である。",
       "なお、今回の発表がこれまでの機密提出と同じ届出書の続きなのか、公開された提出なのかは、発表文の記載だけでは判断できない。この点は S-1 の公開版を SEC の EDGAR で確認できた時点で追記する。",
-      "【編集履歴】2026-10-30 新規公開。一次資料は Anthropic の発表文1本のみで、SEC の提出書類には到達できていない。"
+      "【編集履歴】2026-10-30 新規公開。一次資料は Anthropic の発表文1本のみで、SEC の提出書類には到達できていない。",
+      "【追記 2026-11-12】Anthropic は11月10日、IPO のロードショーを開始したと発表し、本記事の時点で未定だった募集株数（Class A 普通株 825,000,000 株）と想定価格帯（1株 70.00〜78.00 ドル）を示した。内訳と、発表文に書かれていない点は[続報の記事](?a=anthropic-ipo-roadshow-launch-price-range-2026)にまとめた。SEC の提出書類には、引き続き到達できていない。"
     ],
     "primarySources": [
       {
         "title": "Anthropic files S-1 with the SEC for proposed initial public offering（Anthropic、2026-10-26）",
         "url": "https://www.anthropic.com/news/s1-sec"
+      },
+      {
+        "title": "Anthropic launches roadshow for proposed initial public offering（Anthropic、2026-11-10）",
+        "url": "https://www.anthropic.com/news/roadshow-launch"
       }
     ]
   },
