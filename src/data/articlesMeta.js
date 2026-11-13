@@ -13189,5 +13189,22 @@ export const ARTICLES_META = [
       "エージェント",
       "プラグイン"
     ]
+  },
+  {
+    "id": "codex-cli-0-168-model-providers-tui-workspace-audio-attachments-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.168.0 の変更点、モデルプロバイダーを画面から選んで既定に、会話を横に並べる TUI の分割表示、音声の録音を添付、Vertex AI ではツール更新の差分送信が既定に",
+    "excerpt": "OpenAI の Codex CLI の 0.168.0 が11月13日に公開された。Sessions の画面からモデルプロバイダーを一覧して新しいチャットの既定を選べるようになり、features.tui_workspace を有効にすると、メインの会話の横に別の会話を並べられる。音声に対応したモデルには録音を添付できる。履歴と再開の一覧は、サインイン中の ChatGPT アカウントで絞られるようになった。11月11日の 0.167.2 は、Google Cloud Vertex AI でツールの更新を差分で送る動作を既定にした。",
+    "date": "2026-11-13",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "開発ツール"
+    ]
   }
 ];
