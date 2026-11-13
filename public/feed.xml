@@ -32,6 +32,14 @@
     <summary>GitHub Copilot CLI の 1.0.107（11月6日）、1.0.108（11月9日）、1.0.109（11月10日）の変更点を、公式の changelog に基づいて整理する。サンドボックスのホスト許可・拒否規則が IPv4/IPv6 の CIDR に対応し、対象のリポジトリでは共有の索引検索が既定で有効になった。権限まわりでは、MCP の拒否規則や読み取り専用スクリプトの扱いに修正が入っている。</summary>
   </entry>
   <entry>
+    <title>Claude Code 2.1.323、ツールを JavaScript から呼ぶ実験機能 Code Mode、plugin.json の対応バージョン指定、権限チェックとサンドボックスの修正が多数</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-2-1-323-code-mode-plugin-engines-permission-sandbox-fixes-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-2-1-323-code-mode-plugin-engines-permission-sandbox-fixes-2026</id>
+    <published>2026-11-13T15:00:00Z</published>
+    <updated>2026-11-13T15:00:00Z</updated>
+    <summary>Claude Code の CHANGELOG に 2.1.323（11月12日付）が載った。Claude が JavaScript を書いて自分のツールを呼ぶ Code Mode が、利用者が有効にする実験機能として加わり、plugin.json には対応する Claude Code の版の範囲を書けるようになった。auto モードが使えないときに、より緩いモードで始まることがあった不具合、Read の拒否ルールがあるパスへ Write・Edit が書けた不具合など、権限とサンドボックスの修正が並ぶ。未知のモデル ID に仮定するコンテキスト長は 200K から 1M に変わった。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が IPO のロードショーを開始 — 募集は Class A 普通株 8億2,500万株、想定価格は1株 70〜78 ドル</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-ipo-roadshow-launch-price-range-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-ipo-roadshow-launch-price-range-2026</id>

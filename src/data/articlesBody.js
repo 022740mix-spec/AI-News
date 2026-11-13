@@ -30358,6 +30358,75 @@ const ARTICLES_BODY = {
         "url": "https://github.com/microsoft/tgrep"
       }
     ]
+  },
+  "claude-code-2-1-323-code-mode-plugin-engines-permission-sandbox-fixes-2026": {
+    "body": [
+      "Claude Code の公式 CHANGELOG（anthropics/claude-code リポジトリ）に 2.1.323 が加わった。公式ドキュメントの changelog ページは日付を2026年11月12日としており、npm のレジストリでも同じ日に公開されている。本サイトが直前に扱った版は 2.1.321・2.1.322 である。2.1.323 の項は非常に長く、「Fixed」で始まる行だけで150件を超える。この記事は CHANGELOG の記載だけに基づき、個々の修正の再現や影響範囲は検証していない。",
+      "新機能の先頭に置かれているのは Code Mode である。CHANGELOG は「Claude が JavaScript を書いて自分のツールを呼ぶ、利用者が有効にする実験機能」と説明し、有効にする方法と、組織単位で無効にする方法は公式ドキュメントのページにあると書いている。ただし、CHANGELOG が示すそのページ（code.claude.com/docs/en/code-mode）は、2026年11月13日に確認した時点で 404 を返した。公式ドキュメントの索引（llms.txt）にも、このページは載っていなかった。したがって、有効化の手順、JavaScript がどこで動くのか、権限の確認がどう働くのかは、この記事では述べられない。なお、OpenAI の Codex CLI のリリースノートにも同じ「Code Mode」という名前の機能が出てくるが、両者が同じ仕組みかどうかは確認していない。",
+      "プラグインまわりでは、plugin.json に engines[\"claude-code\"] を書けるようになった。プラグインが対応する Claude Code の版の範囲を宣言するもので、範囲の外にある版では、そのプラグインは導入も更新も読み込みもされない。導入と更新は、範囲に合う最も新しい版を選ぶ。claude plugin validate は、プラグインの TypeScript の hooks モジュールを型検査するようになった。指摘は警告として出て、--strict を付けると失敗になる。一方で、プラグインの agent 設定は非推奨になり（動作は続くが、起動時などに警告が出る）、subagentStatusLine の設定は削除された。マーケットプレイスとプラグインの導入は、git のサブモジュールがリポジトリの記録するコミットと合っていない場合に失敗するようになった。",
+      "権限とサンドボックスに関わる修正は数が多い。CHANGELOG の記載から主なものを挙げる。--permission-mode auto や設定の defaultMode: auto を指定したのに auto モードが使えない場合、より多くを許しうるモードで始まることがあった。修正後は、先に確認を求める Manual モードで始まる。Read の拒否ルールが掛かったパスへ、Write・Edit のツールが書けた場合があった。Bash の権限チェックが rm を誤ったフォルダの基準で判定し、危険な削除の確認を出さなかった場合があった。sudo や env などを挟んで実行したコマンドを、Bash の拒否ルール・確認ルールが取りこぼす場合があった。セッションの途中で Bash のサンドボックスが切れることがあった。claude -p と Agent SDK で、サンドボックスを有効にする設定が検証に失敗したとき、Bash がサンドボックス無しで動いていた。修正後は起動時に止まり、無効な設定の名前を示す。",
+      "不具合の修正とは別に、既定の動作を変えた項目もある。Claude Code 自身が使う ripgrep と、内部の git コマンドの大半は、サインイン用のトークンや API キーの大半を持たない状態で動くようになった。CHANGELOG は、そうした git コマンドの下で動く credential helper やフックが、それらを見つけられなくなると書いている。MCP サーバーのサインインを完了させるツールは、bypass モードや auto モードでも利用者に確認を求める。「今後は確認しない」で保存される許可ルールは、秘密情報を含むように見える場合と、git が追跡している settings.local.json に保存されることになる場合には、そのセッション限りになる。macOS・Linux・WSL の Bash サンドボックスは、書き込み可能なフォルダの中のシンボリックリンクを経由した、別の場所への書き込みを認めなくなった。VS Code 拡張には、信頼していないフォルダで最初のセッションを始める前の確認が加わった。",
+      "移行で気を付ける変更が3つある。第一に、Claude Code が認識できないモデル ID に仮定するコンテキスト長が、200K から 1M になった。早めに圧縮したい場合は /autocompact を、200K のままにしたい場合は CLAUDE_CODE_DISABLE_1M_CONTEXT=1 を使う、と CHANGELOG は書いている。あわせて、ウィンドウの小さい他社のモデルで動かしているセッションは、いっぱいになると /clear するまで毎ターン失敗しうるので、先にこの環境変数を設定するよう注意している。第二に、MCP の v1 クライアントが削除された。MCP_SDK_GENERATION=v1 を指定した場合は、v2 のクライアントが互換モードで動く。第三に、組織の設定とポリシーの取得は、ALL_PROXY だけで指定したプロキシを使わなくなった。必要なら HTTPS_PROXY を設定する。",
+      "確認できていないこと。Code Mode の中身は、上に書いたとおり公式ドキュメントのページに到達できず、CHANGELOG の1行以上のことは分からない。権限とサンドボックスの各修正が、どの版から存在した不具合で、どの構成で実際に問題になりえたかも、CHANGELOG には書かれていない。CVE 番号やセキュリティ勧告への言及は、確認した範囲には無かった。使う側が確かめやすいのは、自分の版が 2.1.323 以降かどうかである（claude --version）。拒否ルールやサンドボックスを安全装置として頼っている場合、claude -p や Agent SDK で無人実行している場合は、該当しうる項目が多い。ここで挙げたのは一部で、Remote Control、Claude Code on the web、Claude Tag、Windows 固有の修正などは取り上げていない。全項目は CHANGELOG を参照してほしい。"
+    ],
+    "tables": [
+      {
+        "caption": "Claude Code 2.1.323 の主な変更（公式 CHANGELOG の記載を整理）",
+        "afterParagraph": 3,
+        "headers": [
+          "区分",
+          "変更内容"
+        ],
+        "rows": [
+          [
+            "新機能",
+            "Code Mode（実験機能、利用者が有効にする）。Claude が JavaScript を書いてツールを呼ぶ。詳細を載せるはずの公式ページは11月13日時点で 404"
+          ],
+          [
+            "プラグイン",
+            "plugin.json の engines[\"claude-code\"] で対応版の範囲を宣言。範囲外の版では導入・更新・読み込みをしない"
+          ],
+          [
+            "権限モード",
+            "auto モードが使えないとき、より緩いモードで始まることがあった不具合を修正。Manual モードで始まる"
+          ],
+          [
+            "権限チェック",
+            "Read の拒否ルールがあるパスへ Write・Edit が書けた場合、rm を誤ったフォルダで判定した場合、sudo・env などを挟んだコマンドの取りこぼしを修正"
+          ],
+          [
+            "サンドボックス",
+            "セッション中にサンドボックスが切れる場合を修正。claude -p と Agent SDK は、サンドボックスを有効にする設定が無効なら起動時に止まる"
+          ],
+          [
+            "資格情報",
+            "内蔵の ripgrep と内部の git コマンドの大半は、サインイン用トークンや API キーの大半を持たずに動く"
+          ],
+          [
+            "コンテキスト長",
+            "認識できないモデル ID に仮定する長さを 200K から 1M に変更（CLAUDE_CODE_DISABLE_1M_CONTEXT=1 で 200K のまま）"
+          ],
+          [
+            "MCP",
+            "v1 クライアントを削除。MCP_SDK_GENERATION=v1 は v2 クライアントの互換モードになる"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG（2.1.323）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "Claude Code changelog（公式ドキュメント、2.1.323 の日付）",
+        "url": "https://code.claude.com/docs/en/changelog"
+      },
+      {
+        "title": "npm レジストリ @anthropic-ai/claude-code（公開日時）",
+        "url": "https://registry.npmjs.org/@anthropic-ai/claude-code"
+      }
+    ]
   }
 };
 

@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
-  "generatedAt": "2026-11-12",
-  "count": 633,
+  "generatedAt": "2026-11-13",
+  "count": 634,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -186,6 +186,7 @@
     "claude-code-2-1-318-shared-network-home-config-safety-subagent-shell-background-2026",
     "claude-code-2-1-319-auto-mode-gateway-permission-bypass-fixes-mcp-tasks-2026",
     "claude-code-2-1-321-2-1-322-fable-5-2-default-mcp-oauth-redirect-sandbox-fixes-2026",
+    "claude-code-2-1-323-code-mode-plugin-engines-permission-sandbox-fixes-2026",
     "claude-code-agents-md-support-2026",
     "claude-code-auto-memory-disable-2026",
     "claude-code-auto-mode",

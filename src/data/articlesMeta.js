@@ -13152,5 +13152,24 @@ export const ARTICLES_META = [
       "MCP",
       "開発ツール"
     ]
+  },
+  {
+    "id": "claude-code-2-1-323-code-mode-plugin-engines-permission-sandbox-fixes-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.323、ツールを JavaScript から呼ぶ実験機能 Code Mode、plugin.json の対応バージョン指定、権限チェックとサンドボックスの修正が多数",
+    "excerpt": "Claude Code の CHANGELOG に 2.1.323（11月12日付）が載った。Claude が JavaScript を書いて自分のツールを呼ぶ Code Mode が、利用者が有効にする実験機能として加わり、plugin.json には対応する Claude Code の版の範囲を書けるようになった。auto モードが使えないときに、より緩いモードで始まることがあった不具合、Read の拒否ルールがあるパスへ Write・Edit が書けた不具合など、権限とサンドボックスの修正が並ぶ。未知のモデル ID に仮定するコンテキスト長は 200K から 1M に変わった。",
+    "date": "2026-11-13",
+    "newsDate": "2026-11-12",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "セキュリティ",
+      "サンドボックス",
+      "プラグイン",
+      "MCP"
+    ]
   }
 ];
