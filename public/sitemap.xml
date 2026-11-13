@@ -3804,4 +3804,10 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://022740mix-spec.github.io/AI-News/?a=github-copilot-cli-1-0-110-1-0-111-managed-regex-rules-password-dialog-workflow-recursion-2026</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

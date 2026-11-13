@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-11-13",
-  "count": 637,
+  "count": 638,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -341,6 +341,7 @@
     "github-copilot-cli-1-0-104-1-0-105-fusion-auto-autopilot-wait-2026",
     "github-copilot-cli-1-0-106-code-command-settings-dashboard-terra-2026",
     "github-copilot-cli-1-0-107-to-1-0-109-sandbox-cidr-index-fable-5-2-2026",
+    "github-copilot-cli-1-0-110-1-0-111-managed-regex-rules-password-dialog-workflow-recursion-2026",
     "github-copilot-cli-1-0-89-to-1-0-94-sandbox-managed-policy-2026",
     "github-copilot-cli-1-0-95-to-1-0-98-agent-hooks-gemini-4-argon-2026",
     "github-copilot-hydrafusion-multi-model-2026",

@@ -16,6 +16,14 @@
     <summary>Claude Code の CHANGELOG に 2.1.325（11月13日付）が載った。サンドボックス内で動く Bash コマンドは、これまで確認なしで実行されていたが、既定では通常の権限確認を通るようになったと CHANGELOG は書いている。ただし公式ドキュメントの設定リファレンスは、同じ設定の既定値をまだ true（確認なし）としており、記載が食い違っている。zstd 圧縮の応答のデコードにあったセキュリティ上の問題の修正、cd のあとに相対パスの拒否ルールが効かなくなる不具合の修正なども入った。</summary>
   </entry>
   <entry>
+    <title>GitHub Copilot CLI 1.0.110〜1.0.111、組織管理の権限ルールが正規表現に対応、git・ssh・sudo のパスワード入力を伏せ字のダイアログで受ける実験機能、ワークフローが自分自身を際限なく起動する問題を修正</title>
+    <link rel="alternate" type="text/html" href="?a=github-copilot-cli-1-0-110-1-0-111-managed-regex-rules-password-dialog-workflow-recursion-2026"/>
+    <id>tag:ai-tool-news.jp,2026:github-copilot-cli-1-0-110-1-0-111-managed-regex-rules-password-dialog-workflow-recursion-2026</id>
+    <published>2026-11-14T15:00:00Z</published>
+    <updated>2026-11-14T15:00:00Z</updated>
+    <summary>GitHub Copilot CLI の 1.0.110（11月12日）と 1.0.111（11月13日）の変更点を、公式の changelog に基づいて整理する。組織が管理する Shell・Bash・PowerShell の権限ルールに正規表現が使えるようになり、エージェントが実行したコマンドのパスワード入力に伏せ字のダイアログで答える実験機能が加わった。従来のリモート操作の仕組みは削除され、クラウドのセッションとリモート接続には AHP 環境が必須になった。</summary>
+  </entry>
+  <entry>
     <title>Claude Managed Agents にセルフホスト版 — サービス本体とセッション履歴を自社のインフラに置き、モデル呼び出し先は Claude API・Bedrock・Google Cloud・Foundry・自前のゲートウェイから選ぶ</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-self-hosted-claude-managed-agents-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-self-hosted-claude-managed-agents-2026</id>

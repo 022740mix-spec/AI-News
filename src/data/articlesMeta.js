@@ -13225,5 +13225,23 @@ export const ARTICLES_META = [
       "プラグイン",
       "VS Code"
     ]
+  },
+  {
+    "id": "github-copilot-cli-1-0-110-1-0-111-managed-regex-rules-password-dialog-workflow-recursion-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "GitHub Copilot CLI 1.0.110〜1.0.111、組織管理の権限ルールが正規表現に対応、git・ssh・sudo のパスワード入力を伏せ字のダイアログで受ける実験機能、ワークフローが自分自身を際限なく起動する問題を修正",
+    "excerpt": "GitHub Copilot CLI の 1.0.110（11月12日）と 1.0.111（11月13日）の変更点を、公式の changelog に基づいて整理する。組織が管理する Shell・Bash・PowerShell の権限ルールに正規表現が使えるようになり、エージェントが実行したコマンドのパスワード入力に伏せ字のダイアログで答える実験機能が加わった。従来のリモート操作の仕組みは削除され、クラウドのセッションとリモート接続には AHP 環境が必須になった。",
+    "date": "2026-11-14",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "GitHub Copilot",
+      "CLI",
+      "サンドボックス",
+      "MCP",
+      "開発ツール"
+    ]
   }
 ];
