@@ -13171,5 +13171,23 @@ export const ARTICLES_META = [
       "プラグイン",
       "MCP"
     ]
+  },
+  {
+    "id": "googlechrome-modern-web-guidance-1-0-agent-skills-web-platform-2026",
+    "type": "news",
+    "category": "product",
+    "title": "GoogleChrome の「Modern Web Guidance」が 1.0.0 に — コーディングエージェントに新しい Web 標準の書き方を渡すスキル、Chrome・Edge・Firefox・MDN のチームが共同で管理",
+    "excerpt": "GitHub の GoogleChrome 組織が公開している Modern Web Guidance の npm パッケージが、11月10日に 1.0.0 になった。コーディングエージェントが古い書き方に寄りがちな点を補うスキルで、README によると250件の Web 機能を扱い、検索はネットワークを使わずローカルで行う。README は Chrome・Edge・Firefox・MDN のチームが共同で管理すると書いている。導入の有無で合格率を比べた数字（11月8日分で +28〜+36 ポイント）はプロジェクト自身の評価で、独立した検証は確認できていない。既定で匿名の利用情報を Google に送る。",
+    "date": "2026-11-13",
+    "newsDate": "2026-11-10",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Google",
+      "Agent Skills",
+      "オープンソース",
+      "エージェント",
+      "プラグイン"
+    ]
   }
 ];

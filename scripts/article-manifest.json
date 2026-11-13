@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-11-13",
-  "count": 634,
+  "count": 635,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -367,6 +367,7 @@
     "google-nano-banana-2-gemini-flash-image-2026",
     "google-turboquant-2026",
     "google-vids-veo31-free-video-generation-2026",
+    "googlechrome-modern-web-guidance-1-0-agent-skills-web-platform-2026",
     "gpt-5-4-release",
     "gpt-5-4-review",
     "gpt-5-5-review",

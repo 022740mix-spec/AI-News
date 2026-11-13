@@ -30427,6 +30427,68 @@ const ARTICLES_BODY = {
         "url": "https://registry.npmjs.org/@anthropic-ai/claude-code"
       }
     ]
+  },
+  "googlechrome-modern-web-guidance-1-0-agent-skills-web-platform-2026": {
+    "body": [
+      "GitHub の GoogleChrome 組織が、コーディングエージェント向けのスキル「Modern Web Guidance」を公開している。npm のレジストリによると、パッケージ modern-web-guidance は2026年4月30日に最初の版（0.0.55）が出て、11月10日に 1.0.0 になった。11月13日の時点で、ソース側のリポジトリ（GoogleChrome/modern-web-guidance-src）は GitHub Trending の日次一覧に入っている。この記事は、2つのリポジトリの README と GOVERNANCE.md、npm のレジストリの記載に基づく。公式の解説ページ（developer.chrome.com）には、この実行環境から到達できなかった。スキルを実際に導入して動かす検証もしていない。",
+      "README は、このスキルが要る理由を次のように説明している。言語モデルの学習データには古いコードが大量に含まれるため、コーディングエージェントは古い書き方を既定にしがちで、いまはブラウザの標準機能で済む処理に、大きな JavaScript を生成してしまう。モデルが API の存在を知っていても、実際の使い方の例が足りない場合がある。Modern Web Guidance は、専門家が書いた短いガイドを、必要なときにエージェントのコンテキストへ入れることで、これを補うという。扱う範囲として README は、CSS とレイアウト140件、HTML と DOM 36件、JavaScript と API 74件の、合計250件の Web 機能を挙げている。View Transitions、コンテナクエリ、Popover API、Anchor Positioning、ブラウザ内蔵の翻訳・要約 API、WebMCP などが含まれる。",
+      "仕組みは3段階である。まず、Web に関係する作業でエージェントがスキルを有効にする。次に、エージェントが modern-web-guidance search を実行し、問い合わせに合うガイドを探す。README によると、この検索は、オフラインで動く埋め込みモデルと BM25 を使い、ネットワーク呼び出しも API キーも使わない。最後に、エージェントが modern-web-guidance retrieve でガイドを取り出し、コードの型、注意点、フォールバックを読む。Origin Trial の段階にある API と、1つのエンジンだけが実装して間もない機能のガイドは、検索では見つかるが、取り出しは止められる。プロジェクトの設定ファイル（.mwgrc）で許可した場合にだけ取り出せる。エージェントが不安定な API を、開発者の同意なしに採用しないようにするため、と README は説明している。",
+      "誰が管理しているかについて、README は「Google Chrome、Microsoft Edge、Mozilla Firefox、MDN の各チームが、Web 開発のコミュニティとともに管理する」と書いている。GOVERNANCE.md は、貢献者・Peer・分野ごとの技術リード・Owner の4つの役割を定めている。目を引くのは、新しいガイドを一から書けるのは原則として Peer（正式に受け入れられた専門家）に限る、という規定である。理由として GOVERNANCE.md は、ガイドが AI のコーディング支援にそのまま取り込まれるためだと述べている。なお、Microsoft や Mozilla の側の発表は、この記事では確認していない。共同管理という記述の根拠は、GoogleChrome 組織のリポジトリの文書である。",
+      "README には、スキルの有無で合格率を比べた表が載っている。土台となる2つのアプリに対して、API の名前を出さない依頼（「画像の読み込みを速くして」など）を与え、Playwright の採点器で要件を満たしたかを判定する方式だという。11月8日分の結果は下の表のとおりで、3つのエージェントとも、スキルなしで5割台、スキルありで8〜9割台となっている。ただし、これはプロジェクト自身が設計した課題と採点器による数字で、独立した検証は確認できていない。採点器の調整に使う模範解答も、Claude・Codex・Antigravity が作ったものだと README は書いている。エージェントどうしの優劣を示す表として読むのは適切でない。日付によって数字も動いている（Codex CLI は11月6日分で 53%→86%、8日分で 54%→82%）。",
+      "導入方法として README が最初に挙げるのは npx modern-web-guidance@latest install である。ほかに、Claude Code・Codex・GitHub Copilot CLI のプラグインマーケットプレイス、GitHub CLI の gh skill install、Google Antigravity、Grok Build、Kimi Code の各コマンドが並ぶ。配布用のリポジトリには、各ツール向けのプラグイン定義が置かれている。1つのスキルを、複数のエージェントにそれぞれの導入経路で届ける作りである。",
+      "導入の前に知っておくとよい点が3つある。第一に、利用情報の送信が既定で有効である。README によると、Google は導入の回数、呼び出したエージェントの名前、取り出したガイドの ID、エージェントが作った検索クエリ（例として「dark mode scrollbar color-scheme」）を匿名で集める。利用者が入力したプロンプトそのものは集めないという。止めるには環境変数 DISABLE_TELEMETRY=1 を設定する。README は「CLI はオフラインで、完全にローカルで動く」とも書いているが、これは検索の処理についての説明で、利用情報の送信は別に行われる、と読める。第二に、@latest を付けた npx は、実行のたびに最新版を取りに行く。README は内容を古くしないためと説明しているが、取得される中身が版ごとに変わるということでもある。npm のレジストリの記載では、1.0.0 は依存パッケージを持たず、インストール時に走るスクリプトも定義していない。この点は版が変われば変わりうるので、導入するときに自分で確かめるのがよい。第三に、所属先にパッケージやスキルの導入の規則がある場合は、そちらが優先される。",
+      "このスキルが扱っているのは、モデルの知識が学習の時点で止まるという、エージェント全般に共通する問題である。Web の標準は、どのブラウザが何を実装したかという事実が数か月単位で変わる。それをモデルの再学習ではなく、ブラウザを作る側が管理する文書を必要なときに差し込むことで埋める、というのがこのプロジェクトの考え方だと読める。効果がどの程度あるかは、上に書いたとおり、いまのところプロジェクト自身の数字しかない。"
+    ],
+    "tables": [
+      {
+        "caption": "README に載っている評価結果（2026年11月8日分）。プロジェクト自身の課題と採点器による数字で、独立した検証は確認できていない",
+        "afterParagraph": 4,
+        "headers": [
+          "エージェント（モデル）",
+          "課題数 / 判定項目数",
+          "スキルなし",
+          "スキルあり",
+          "差"
+        ],
+        "rows": [
+          [
+            "Antigravity CLI（gemini-4-argon）",
+            "214 / 1673",
+            "58%",
+            "94%",
+            "+36 ポイント"
+          ],
+          [
+            "Codex CLI（gpt-6.1-sol）",
+            "215 / 1795",
+            "54%",
+            "82%",
+            "+28 ポイント"
+          ],
+          [
+            "Claude Code（opus-5-5）",
+            "215 / 1801",
+            "57%",
+            "88%",
+            "+31 ポイント"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "GoogleChrome/modern-web-guidance-src（ソース側リポジトリ、README・GOVERNANCE.md）",
+        "url": "https://github.com/GoogleChrome/modern-web-guidance-src"
+      },
+      {
+        "title": "GoogleChrome/modern-web-guidance（配布用リポジトリ）",
+        "url": "https://github.com/GoogleChrome/modern-web-guidance"
+      },
+      {
+        "title": "npm レジストリ modern-web-guidance（版と公開日時）",
+        "url": "https://registry.npmjs.org/modern-web-guidance"
+      }
+    ]
   }
 };
 

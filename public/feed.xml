@@ -40,6 +40,14 @@
     <summary>Claude Code の CHANGELOG に 2.1.323（11月12日付）が載った。Claude が JavaScript を書いて自分のツールを呼ぶ Code Mode が、利用者が有効にする実験機能として加わり、plugin.json には対応する Claude Code の版の範囲を書けるようになった。auto モードが使えないときに、より緩いモードで始まることがあった不具合、Read の拒否ルールがあるパスへ Write・Edit が書けた不具合など、権限とサンドボックスの修正が並ぶ。未知のモデル ID に仮定するコンテキスト長は 200K から 1M に変わった。</summary>
   </entry>
   <entry>
+    <title>GoogleChrome の「Modern Web Guidance」が 1.0.0 に — コーディングエージェントに新しい Web 標準の書き方を渡すスキル、Chrome・Edge・Firefox・MDN のチームが共同で管理</title>
+    <link rel="alternate" type="text/html" href="?a=googlechrome-modern-web-guidance-1-0-agent-skills-web-platform-2026"/>
+    <id>tag:ai-tool-news.jp,2026:googlechrome-modern-web-guidance-1-0-agent-skills-web-platform-2026</id>
+    <published>2026-11-13T15:00:00Z</published>
+    <updated>2026-11-13T15:00:00Z</updated>
+    <summary>GitHub の GoogleChrome 組織が公開している Modern Web Guidance の npm パッケージが、11月10日に 1.0.0 になった。コーディングエージェントが古い書き方に寄りがちな点を補うスキルで、README によると250件の Web 機能を扱い、検索はネットワークを使わずローカルで行う。README は Chrome・Edge・Firefox・MDN のチームが共同で管理すると書いている。導入の有無で合格率を比べた数字（11月8日分で +28〜+36 ポイント）はプロジェクト自身の評価で、独立した検証は確認できていない。既定で匿名の利用情報を Google に送る。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が IPO のロードショーを開始 — 募集は Class A 普通株 8億2,500万株、想定価格は1株 70〜78 ドル</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-ipo-roadshow-launch-price-range-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-ipo-roadshow-launch-price-range-2026</id>
