@@ -24,6 +24,14 @@
     <summary>GitHub Copilot CLI の 1.0.110（11月12日）と 1.0.111（11月13日）の変更点を、公式の changelog に基づいて整理する。組織が管理する Shell・Bash・PowerShell の権限ルールに正規表現が使えるようになり、エージェントが実行したコマンドのパスワード入力に伏せ字のダイアログで答える実験機能が加わった。従来のリモート操作の仕組みは削除され、クラウドのセッションとリモート接続には AHP 環境が必須になった。</summary>
   </entry>
   <entry>
+    <title>【分析】Anthropic の蒸留対策は API の利用者に何を求めたか — 推論の要約、会話履歴の編集制限、拒否されたリクエストへの課金を、同社の10月の説明から整理する</title>
+    <link rel="alternate" type="text/html" href="?a=feature-anthropic-distillation-defenses-preserved-thinking-tradeoffs-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-anthropic-distillation-defenses-preserved-thinking-tradeoffs-2026</id>
+    <published>2026-11-14T15:00:00Z</published>
+    <updated>2026-11-14T15:00:00Z</updated>
+    <summary>Anthropic は10月12日、Claude の推論を抜き取って別のモデルを訓練する「蒸留攻撃」への対策を説明する記事を公開した。対策の導入後、抜き取られた推論の量は10分の1から100分の1以下になったと同社は述べている。この数字は同社自身の測定で、独立した検証は確認できていない。一方で同社は、正規の利用者に負担が生じたことも認めている。API の利用者がこの数か月に個別に受け取ってきた変更が、どうつながっているのかを整理する。</summary>
+  </entry>
+  <entry>
     <title>Claude Managed Agents にセルフホスト版 — サービス本体とセッション履歴を自社のインフラに置き、モデル呼び出し先は Claude API・Bedrock・Google Cloud・Foundry・自前のゲートウェイから選ぶ</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-self-hosted-claude-managed-agents-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-self-hosted-claude-managed-agents-2026</id>

@@ -13243,5 +13243,23 @@ export const ARTICLES_META = [
       "MCP",
       "開発ツール"
     ]
+  },
+  {
+    "id": "feature-anthropic-distillation-defenses-preserved-thinking-tradeoffs-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】Anthropic の蒸留対策は API の利用者に何を求めたか — 推論の要約、会話履歴の編集制限、拒否されたリクエストへの課金を、同社の10月の説明から整理する",
+    "excerpt": "Anthropic は10月12日、Claude の推論を抜き取って別のモデルを訓練する「蒸留攻撃」への対策を説明する記事を公開した。対策の導入後、抜き取られた推論の量は10分の1から100分の1以下になったと同社は述べている。この数字は同社自身の測定で、独立した検証は確認できていない。一方で同社は、正規の利用者に負担が生じたことも認めている。API の利用者がこの数か月に個別に受け取ってきた変更が、どうつながっているのかを整理する。",
+    "date": "2026-11-14",
+    "newsDate": "2026-10-12",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Anthropic",
+      "蒸留",
+      "Claude API",
+      "AI安全性",
+      "中国AI"
+    ]
   }
 ];
