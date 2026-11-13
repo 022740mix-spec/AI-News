@@ -26,3 +26,8 @@ routine/review-2026-09-05-1510  openai-gpt-6-astra-critical-cyber-2026（9/5）�
 routine/review-2026-09-07-0627  anthropic-pentagon-first-amendment-ruling-2026（9/16）が一次情報ベースで公開済み。下書きは【未確認情報】のままだった
 routine/review-2026-09-08-0710  google-assistant-shutdown-gemini-migration-2026（9/16）で公開済み
 claude/pensive-fermat-vuktrp  PR #75。4本中3本（GPT-6 Astra・Muse Spark 1.3・ザポリージャの自律ドローン）は main で公開済み。残る Humanizer は PR #83 の同題材と統合し humanizer-ai-writing-skill-style-vs-watermark-2026（9/23）として公開。下書きの「35パターン・4.18万スター」は v3.0.0（9/6）で25パターンに変わり古くなっていた
+
+# ── 2026-11-12 の棚卸しで決着させたもの
+# いずれも保留している間に、同じ題材が別の id で main に公開されていた。
+routine/review-2026-09-29-1500-nvidia  nvidia-open-agent-safety-platform-2026（10/2）で公開済み。下書き（nvidia-open-agent-safety-platform-sentry-2026）は発表文に到達できないまま書かれていた
+routine/review-2026-09-30-gpt-6-1-sol  openai-gpt-6-1-sol-codex-work-api-2026（9/30）で公開済み。下書き（openai-gpt-6-1-sol-devday-2026）は速報の保留版で、DevDay の個別機能も 9/30 の各記事で公開済み
