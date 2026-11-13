@@ -13206,5 +13206,24 @@ export const ARTICLES_META = [
       "OpenAI",
       "開発ツール"
     ]
+  },
+  {
+    "id": "claude-code-2-1-325-sandbox-auto-allow-default-zstd-security-fix-permission-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.325、サンドボックス内の Bash も通常の権限確認を通るのが既定に、zstd 圧縮の応答のデコードにセキュリティ修正、権限ルールのすり抜けを複数修正",
+    "excerpt": "Claude Code の CHANGELOG に 2.1.325（11月13日付）が載った。サンドボックス内で動く Bash コマンドは、これまで確認なしで実行されていたが、既定では通常の権限確認を通るようになったと CHANGELOG は書いている。ただし公式ドキュメントの設定リファレンスは、同じ設定の既定値をまだ true（確認なし）としており、記載が食い違っている。zstd 圧縮の応答のデコードにあったセキュリティ上の問題の修正、cd のあとに相対パスの拒否ルールが効かなくなる不具合の修正なども入った。",
+    "date": "2026-11-14",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "セキュリティ",
+      "サンドボックス",
+      "プラグイン",
+      "VS Code"
+    ]
   }
 ];
