@@ -13313,5 +13313,24 @@ export const ARTICLES_META = [
       "Qwen",
       "開発ツール"
     ]
+  },
+  {
+    "id": "gemini-decisions-api-calibrated-probabilities-no-output-tokens-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Gemini API に Decisions API — 文章を生成せず、はい・いいえ、選択、採点を確率で返す。出力トークンは 0、1回のリクエストで最大1,000問",
+    "excerpt": "Google の公式 SDK（google-genai / @google/genai）が11月11日付の v3.2.0 で Decisions API に対応した。専用モデル gemini-decision-1 が、入力に対する型付きの質問（noul・choice・score）に、文章ではなく較正された確率と確信度で答える。生成が無いので出力トークンは常に 0 で、1回のリクエストに1〜1,000問を載せられる。v1beta のみで、コンテキストキャッシュ・Batch API・Flex／Priority は使えない。入力トークンの単価は、今回読めた資料には書かれていない。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-11",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "API",
+      "SDK",
+      "エージェント",
+      "モデルルーティング"
+    ]
   }
 ];

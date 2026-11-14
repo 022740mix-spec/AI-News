@@ -30992,6 +30992,111 @@ const ARTICLES_BODY = {
         "url": "https://registry.npmjs.org/@qwen-code/qwen-code"
       }
     ]
+  },
+  "gemini-decisions-api-calibrated-probabilities-no-output-tokens-2026": {
+    "body": [
+      "Google の Gemini API に、文章を生成しない種類の API が加わった。公式 SDK の変更履歴によると、Python 版（google-genai）と JavaScript 版（@google/genai）は11月11日付の v3.2.0 で「Decisions API」（client.decisions.create）に対応した。公式リポジトリ google-gemini/cookbook の入門ノートブックによると、専用のモデル gemini-decision-1 が、渡された入力について型の決まった質問に答え、答えは文章ではなく確率で返る。この記事は SDK の変更履歴と Cookbook のノートブックから読み取れる範囲をまとめる。Google の発表記事と API の公式ドキュメント（ai.google.dev）には、この回の実行環境からは到達できていない。",
+      "リクエストは3つの要素でできている。モデル ID、入力（input）、質問の一覧（questions）である。入力はテキストのほか、画像・音声・動画・PDF を渡せる。質問は、呼び出す側が決めたキーと、質問の定義（型、指示文、必要に応じて基準）の組である。Cookbook によると、入力は全部の質問に対して1回だけ処理され、質問どうしは互いに見えない。質問を足したり外したりしても、ほかの質問の答えは変わらない。モデルは質問のキーを見ないので、質問の全文を指示文（instructions）に書く必要がある。",
+      "質問の型は3つある。noul は、はい・いいえの判定で、「はい」である確率を0.01〜0.99の数値で返す。choice は、決まった選択肢から1つを選ぶ型で、選ばれた選択肢に加えて、全部の選択肢の確率（合計1.0）を返す。score は、順序のある基準に沿った採点で、基準は数値ではなく文章の説明を低い順に並べて渡す。返る点数は、各段階の確率で重みづけした期待値なので、2.08 のように整数の間の値になりうる。どの型にも確信度（confidence）が付く。",
+      "Cookbook は、通常の生成 API で構造化出力を使う場合との使い分けを表にしている。確率と確信度でしきい値を決めたり並べ替えたりしたい、同じ入力に対して独立した検査を一度にたくさん行いたい、遅延を小さくして出力トークンの費用を無くしたい、という場合は Decisions API。生成された文章や要約、独自の JSON スキーマに沿った値の抽出、引数つきのツール呼び出し、複数段階の推論が要る場合は Interactions API、という分け方である。用途の例として、リクエストをモデル・キュー・エージェント・ツールに振り分ける、入出力を多数のポリシー規則に照らす、エージェントにどのツールが要るかや、会話を圧縮するか・人に上げるか・止めるかを決める、大量のデータを基準に沿って絞り込む・順位づけする、が挙がっている。",
+      "費用の面では、生成が無いため出力トークンが常に 0 になる、と Cookbook は書いている（total_output_tokens = 0）。入力トークンには課金がある前提の書き方だが、gemini-decision-1 の入力単価は、今回読めた資料には書かれていない。また、コンテキストキャッシュ、Batch API、Flex／Priority の各ティアは使えず、同じ入力を複数のリクエストで繰り返すと、そのたびに全量が数えられる。同じ入力について多くのことを確かめたいなら、リクエストを分けずに、1回のリクエストに質問を並べるほうが入力の重複が無い。",
+      "上限と制約も具体的に書かれている。1回のリクエストの質問は1〜1,000問で、入力と全部の質問を合わせたコンテキストウィンドウは262,144トークンである。choice の選択肢と score の段階はどちらも2〜255で、score は多くの場合2〜10段階を勧めている。使えるのは Gemini Developer API の v1beta だけである。google-genai の 3.x は既定の API バージョンが v1 なので、クライアントを作るときに api_version に v1beta を明示する必要がある。メディアは base64 のデータ（1リクエスト100MBまで、PDF は50MBまで）、Files API の URI、公開または署名つきの HTTPS の URL（1つ15MBまで）で渡せ、Cloud Storage の gs:// と YouTube の URL は使えない。入力の安全フィルタに掛かった場合は、答えの代わりに HTTP 400 が返る。",
+      "数値の読み方について、Cookbook は注意を3つ書いている。1つめに、noul の値は0.01〜0.99に収められるので、「0.99より大きい」「0.01より小さい」という条件は決して成立しない。2つめに、choice はどの選択肢にも当てはまらない入力でも、確率を選択肢に配り切る。「その他」のような受け皿の選択肢に頼るより、確信度にしきい値を置くか、「この入力は対象の範囲か」を noul で別に聞くよう勧めている。3つめに、選択肢のキーは評価の前にアルファベット順に並べ替えられ、確率が完全に同じなら先頭のキーが選ばれる。",
+      "もう1つ、エージェントの判断に使う場合に関わる注意がある。Cookbook は「入力を信頼できないものとして扱う」よう書いている。入力の中の文章が、自分自身の分類を誘導しうるためである。基準を明示し、敵対的な例で試し、支払いのような影響の大きい操作には、人か別の検査を残すよう勧めている。数値・日付・期間の比較はコード側で行い、その結果を入力に渡すこと、否定形の質問を避けて「1 − noul」をコードで計算することも、同じ節に挙がっている。",
+      "この記事の根は Google 自身の資料（SDK の変更履歴と Cookbook のノートブック）で、一次資料である。仕様と上限は一次資料で足りる性質の主張だが、返される確率が実際にどの程度較正されているか（たとえば 0.8 と答えた判定のうち8割が正しいか）を第三者が確かめた結果は、当サイトでは確認できていない。「較正された確率」は Google の説明である。採用を検討する場合は、自分のデータで、しきい値ごとの正答率を測ってから使うことになる。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "Decisions API の3つの質問の型（Google の公式 Cookbook から）",
+        "headers": [
+          "型",
+          "用途",
+          "基準（criteria）",
+          "返る値"
+        ],
+        "rows": [
+          [
+            "noul",
+            "はい・いいえの判定、確率のしきい値",
+            "任意（「はい」「いいえ」それぞれの説明）",
+            "noul（「はい」の確率、0.01〜0.99）、confidence"
+          ],
+          [
+            "choice",
+            "決まった選択肢への分類・振り分け・順位づけ",
+            "必須（選択肢 ID と説明、2〜255個）",
+            "choice（選ばれた選択肢）、probabilities、confidence"
+          ],
+          [
+            "score",
+            "順序のある基準に沿った採点・絞り込み・順位づけ",
+            "必須（段階の説明を低い順に、2〜255段階）",
+            "score（確率で重みづけした期待値）、legend、probabilities、confidence"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 5,
+        "caption": "Decisions API の上限と制約（Google の公式 Cookbook から）",
+        "headers": [
+          "項目",
+          "値"
+        ],
+        "rows": [
+          [
+            "モデル",
+            "gemini-decision-1"
+          ],
+          [
+            "API バージョン",
+            "Gemini Developer API の v1beta のみ"
+          ],
+          [
+            "SDK",
+            "google-genai 3.2 以降"
+          ],
+          [
+            "1リクエストの質問数",
+            "1〜1,000"
+          ],
+          [
+            "コンテキストウィンドウ",
+            "262,144トークン（入力と全質問の合計）"
+          ],
+          [
+            "出力トークン",
+            "常に 0"
+          ],
+          [
+            "メディアの大きさ",
+            "base64 は1リクエスト100MBまで（PDF は50MBまで）、外部 URL は1つ15MBまで"
+          ],
+          [
+            "使えないもの",
+            "コンテキストキャッシュ、Batch API、Flex／Priority ティア、gs:// の URI、YouTube の URL"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "google-gemini/cookbook — Get_started_decisions.ipynb（Decisions API の入門ノートブック）",
+        "url": "https://github.com/google-gemini/cookbook/blob/main/quickstarts/Get_started_decisions.ipynb"
+      },
+      {
+        "title": "google-gemini/cookbook README（Decisions API の案内）",
+        "url": "https://github.com/google-gemini/cookbook/blob/main/README.md"
+      },
+      {
+        "title": "googleapis/python-genai CHANGELOG（v3.2.0）",
+        "url": "https://github.com/googleapis/python-genai/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "googleapis/js-genai CHANGELOG（v3.2.0）",
+        "url": "https://github.com/googleapis/js-genai/blob/main/CHANGELOG.md"
+      }
+    ]
   }
 };
 
