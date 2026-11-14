@@ -13332,5 +13332,24 @@ export const ARTICLES_META = [
       "エージェント",
       "モデルルーティング"
     ]
+  },
+  {
+    "id": "gemini-4-hydrogen-carbon-gemini-api-cookbook-migration-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Gemini 4 Hydrogen と Carbon が Gemini API に — Hydrogen は無料枠でも使え、入力 $1.50・出力 $7.50。temperature は無視され、明示的なキャッシュは使えない",
+    "excerpt": "Google の公式 SDK に gemini-4-carbon（11月10日）と gemini-4-hydrogen（11月12日）が加わり、公式 Cookbook の既定モデルが Gemini 4 Hydrogen に切り替わった。Cookbook によると、Hydrogen は無料枠と有料枠の両方で使え、価格は入力100万トークンあたり1.50ドル、出力7.50ドル。思考レベルの既定は high で、xhigh は Hydrogen だけが持つ。Gemini 4 では temperature などのサンプリング設定が無視され、明示的なキャッシュが使えず、thinking_level の minimal は 400 エラーになる。Google の発表記事と ai.google.dev には今回到達できておらず、ベンチマークと Carbon・Argon の価格は確認できていない。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-12",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "モデル",
+      "API",
+      "料金",
+      "SDK"
+    ]
   }
 ];

@@ -16,6 +16,14 @@
     <summary>Google の公式 SDK（google-genai / @google/genai）が11月11日付の v3.2.0 で Decisions API に対応した。専用モデル gemini-decision-1 が、入力に対する型付きの質問（noul・choice・score）に、文章ではなく較正された確率と確信度で答える。生成が無いので出力トークンは常に 0 で、1回のリクエストに1〜1,000問を載せられる。v1beta のみで、コンテキストキャッシュ・Batch API・Flex／Priority は使えない。入力トークンの単価は、今回読めた資料には書かれていない。</summary>
   </entry>
   <entry>
+    <title>Gemini 4 Hydrogen と Carbon が Gemini API に — Hydrogen は無料枠でも使え、入力 $1.50・出力 $7.50。temperature は無視され、明示的なキャッシュは使えない</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-4-hydrogen-carbon-gemini-api-cookbook-migration-2026"/>
+    <id>tag:ai-tool-news.jp,2026:gemini-4-hydrogen-carbon-gemini-api-cookbook-migration-2026</id>
+    <published>2026-11-15T15:00:00Z</published>
+    <updated>2026-11-15T15:00:00Z</updated>
+    <summary>Google の公式 SDK に gemini-4-carbon（11月10日）と gemini-4-hydrogen（11月12日）が加わり、公式 Cookbook の既定モデルが Gemini 4 Hydrogen に切り替わった。Cookbook によると、Hydrogen は無料枠と有料枠の両方で使え、価格は入力100万トークンあたり1.50ドル、出力7.50ドル。思考レベルの既定は high で、xhigh は Hydrogen だけが持つ。Gemini 4 では temperature などのサンプリング設定が無視され、明示的なキャッシュが使えず、thinking_level の minimal は 400 エラーになる。Google の発表記事と ai.google.dev には今回到達できておらず、ベンチマークと Carbon・Argon の価格は確認できていない。</summary>
+  </entry>
+  <entry>
     <title>Claude Code 2.1.325、サンドボックス内の Bash も通常の権限確認を通るのが既定に、zstd 圧縮の応答のデコードにセキュリティ修正、権限ルールのすり抜けを複数修正</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-2-1-325-sandbox-auto-allow-default-zstd-security-fix-permission-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-2-1-325-sandbox-auto-allow-default-zstd-security-fix-permission-2026</id>

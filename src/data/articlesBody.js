@@ -31097,6 +31097,134 @@ const ARTICLES_BODY = {
         "url": "https://github.com/googleapis/js-genai/blob/main/CHANGELOG.md"
       }
     ]
+  },
+  "gemini-4-hydrogen-carbon-gemini-api-cookbook-migration-2026": {
+    "body": [
+      "Google の Gemini API に、Gemini 4 系列の2つのモデルが加わった。公式 SDK の変更履歴によると、Python 版（google-genai）と JavaScript 版（@google/genai）は、11月10日付の v3.1.0 でモデルの一覧に gemini-4-carbon を、11月12日付の v3.3.0 で gemini-4-hydrogen を追加している。あわせて Google の公式リポジトリ google-gemini/cookbook は、入門ノートブックの既定モデルを gemini-4-hydrogen に切り替えた。この記事は、SDK の変更履歴と Cookbook という、Google 自身が管理する2種類の資料から読み取れる範囲をまとめる。",
+      "先に、確認できていないことを書いておく。Google の発表記事（blog.google）と API の公式ドキュメント（ai.google.dev）には、この回の実行環境からは到達できなかった。したがって、発表そのものの日付、ベンチマークの数値、Carbon と Argon の価格、アプリや検索での提供範囲は、この記事では扱わない。上の日付は SDK の版が出た日であり、Google がモデルを発表した日と同じとは限らない。",
+      "Cookbook は3つのモデルを次のように書き分けている。Carbon は Google の最も強い推論モデルで、長く続くエージェント作業、科学的な推論、サイバーセキュリティの防御に向ける。Argon は速く、トークン効率のよいフロンティア級の推論を担う。Hydrogen は速くて費用を抑えた「普段使い」のモデルで、日常のコーディング、ツールを使うエージェント、マルチモーダルの作業に向ける。Cookbook には Flash-Lite にあたる Gemini 4 のモデルは載っておらず、 gemini-3.5-flash-lite が現役の選択肢として残っている。",
+      "課金区分と思考レベルはモデルごとに違う。Hydrogen は無料枠と有料枠の両方で使え、Cookbook が示す価格は入力100万トークンあたり1.50ドル、出力100万トークンあたり7.50ドルである。Carbon と Argon は有料枠のみで、価格は Cookbook に書かれていない。思考レベル（thinking_level）の既定は、Carbon と Argon が medium、Hydrogen が high で、xhigh を指定できるのは Hydrogen だけである。上位のモデルのほうが既定の思考レベルが低い、という並びになっている。",
+      "Argon について補足する。本サイトは[9月30日の発表を扱った記事](?a=gemini-4-argon-fairwind-trusted-testers-2026)で、提供がまず限られた利用者に絞られ、一般向けの時期は示されていないと書いた。現在の Cookbook は、gemini-4-argon を有料枠で選べるモデルとして表に載せている。いつから有料枠で使えるようになったのかは、今回読めた資料には書かれていない。SDK のモデル一覧に gemini-4-argon が入ったのは10月14日付の版（Python 版 v2.31.0、JavaScript 版 v2.30.0）で、Carbon と Hydrogen より4週間ほど早い。これは SDK の日付であり、提供開始の日付ではない。",
+      "3つのモデルに共通する仕様として、Cookbook は100万トークン（1,048,576）のコンテキストウィンドウを挙げる。この枠は入力・思考・出力で共有され、出力は入力ぶんを引いた残りまで伸ばせる。ただし1回のリクエストで返る量には上限がある。Interactions API とストリーミングの generateContent は65,536トークン、ストリーミングでない generateContent は32,768トークンで止まる。それを超えて出力させるには「long decode」を使う。Interactions API では background=True を指定し、サーバー側が複数回に分けて生成を続ける。background を指定せずに max_output_tokens を65,536より大きくすると、INVALID_ARGUMENT のエラーになる。generateContent を使う場合は、SDK が続きのリクエストを自動で送り直し、1つの応答にまとめて返す仕組みがあると Cookbook は書いている。",
+      "既存のコードを移すときに影響が出る点を、Cookbook の移行チェックリストから拾う。1つめは思考の指定である。Gemini 3.5 Flash-Lite や 3.6 Flash などで使えた thinking_level の minimal は、Gemini 4 では 400 エラーになる。Gemini 2.5 の数値指定（thinking_budget）も、Interactions API では 400 エラーになる。2つめは既定値で、Gemini 3.8 Flash などの既定が medium だったのに対し、Hydrogen の既定は high である。遅延や費用に敏感な処理をそのまま移すと、思考の量が増える。Cookbook は medium か low を明示するよう書いている。",
+      "3つめは max_output_tokens の意味が変わることである。Gemini 4 では、この値が思考と出力の合計の上限になる。4096 や 8192 のような以前の設定を残すと、思考の途中で枠を使い切り、応答が incomplete の状態で終わることがある。Cookbook は32,768以上にし、費用は max_output_tokens を下げるのではなく thinking_level で調整するよう勧めている。4つめはサンプリング設定で、temperature・top_p・top_k は Gemini 4 では無視される。エラーにはならないので、設定が効かなくなったことに気づきにくい。",
+      "5つめはキャッシュである。Gemini 3.8 までで使えた明示的なキャッシュ（client.caches.create や cached_content）は、Gemini 4 の3つのモデルでは使えない。代わりに暗黙のキャッシュが自動で働き、4,096トークン以上の共通の接頭辞に対して、キャッシュされた入力が95%引きになると Cookbook は書いている。このほか、画像のピクセル単位のセグメンテーションは Gemini 4 では使えず、Cookbook はその用途に gemini-3.8-flash を残している。思考レベルが high や xhigh のとき、または long decode を使うときは、クライアントのタイムアウトを15分以上にするか background を使うよう、チェックリストは書いている。",
+      "移行先の対応も表になっている。Pro 系（gemini-3.1-pro-preview、gemini-2.5-pro など）からは Carbon か Argon へ、Flash 系（gemini-3.8-flash、3.7、3.6、3.5 など）と gemini-2.5-flash からは Hydrogen へ、Flash-Lite 系は gemini-3.5-flash-lite に留まるか、思考を low にした Hydrogen へ、という案内である。3つの Gemini 4 モデルの間はリクエストの形を変えずに切り替えられ、1つの会話の途中で混ぜることもできると書かれている。たとえば設計を Carbon に任せ、細かい実装やツール呼び出しを Hydrogen に回す、という使い方である。Interactions API のマネージドエージェント（antigravity-preview-09-2026）も、モデルを指定しなければ Hydrogen で動く。",
+      "SDK を上げる場合は、もう1つ手前の変更も通ることになる。gemini-4-carbon と gemini-4-hydrogen がモデルの一覧に入ったのは v3.1.0 と v3.3.0 だが、その直前の v3.0.0（11月6日付）は破壊的変更を含む版である。Gemini Developer API の既定の API バージョンが v1beta から v1 に変わり、gemini-flash-latest などの別名と一部の preview モデルは v1 では使えない、と変更履歴は書いている。環境変数 GOOGLE_GENAI_API_VERSION に beta を設定すると以前の既定に戻せる。Python 版では、既定の HTTP クライアントが httpx から httpx2 に変わり、httpx は既定では入らなくなった。モデルを切り替えるためだけに SDK を上げても、これらの変更は一緒に入ってくる。",
+      "この記事の根は Google 自身の資料（SDK の変更履歴と Cookbook）で、一次資料である。価格・仕様・移行上の注意は一次資料で足りる性質の主張だが、Cookbook は入門用のノートブックであり、料金表や API リファレンスそのものではない。価格や上限を採用や見積もりの判断に使う場合は、ai.google.dev の料金ページとモデルのページで確かめてほしい。性能についての主張は、Google のものも第三者のものも、今回は確認できていない。本サイトの Gemini 3.8 Flash のレビュー記事は、3.8 Flash の価格と提供条件で採点したもので、Hydrogen を反映した見直しはこのニュース記事とは別に行う。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "Google の公式 Cookbook（入門ノートブック）が示すモデルの比較。価格の欄は Cookbook に記載があるものだけ",
+        "headers": [
+          "モデル ID",
+          "課金区分",
+          "思考レベルの既定",
+          "指定できる思考レベル",
+          "Cookbook に記載の価格（100万トークン）"
+        ],
+        "rows": [
+          [
+            "gemini-4-carbon",
+            "有料",
+            "medium",
+            "low / medium / high",
+            "記載なし"
+          ],
+          [
+            "gemini-4-argon",
+            "有料",
+            "medium",
+            "low / medium / high",
+            "記載なし"
+          ],
+          [
+            "gemini-4-hydrogen",
+            "無料・有料",
+            "high",
+            "low / medium / high / xhigh",
+            "入力 $1.50 / 出力 $7.50"
+          ],
+          [
+            "gemini-3.5-flash-lite",
+            "無料・有料",
+            "minimal",
+            "minimal / low / medium / high",
+            "記載なし"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 8,
+        "caption": "Gemini 3.x・2.5 から Gemini 4 へ移すときに変わる点（Cookbook の移行チェックリストから）",
+        "headers": [
+          "項目",
+          "これまで",
+          "Gemini 4"
+        ],
+        "rows": [
+          [
+            "thinking_level の minimal",
+            "3.5 Flash-Lite・3.6 Flash などで指定できる",
+            "400 エラー。low に置き換える"
+          ],
+          [
+            "thinking_budget（数値指定）",
+            "Gemini 2.5 の generateContent で使う",
+            "Interactions API では 400 エラー"
+          ],
+          [
+            "思考レベルの既定",
+            "3.8 Flash・3.6 Flash・3.5 Flash は medium",
+            "Hydrogen は high、Carbon と Argon は medium"
+          ],
+          [
+            "max_output_tokens",
+            "入力と出力の枠が別",
+            "思考と出力の合計の上限。32,768以上を推奨"
+          ],
+          [
+            "temperature・top_p・top_k",
+            "指定が反映される",
+            "無視される"
+          ],
+          [
+            "明示的なキャッシュ",
+            "client.caches.create・cached_content が使える",
+            "使えない。4,096トークン以上の共通接頭辞に暗黙のキャッシュ（95%引き）"
+          ],
+          [
+            "65,536トークンを超える出力",
+            "—",
+            "background=True の long decode を使う"
+          ],
+          [
+            "画像のピクセル単位のセグメンテーション",
+            "gemini-3.8-flash で使える",
+            "使えない"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "google-gemini/cookbook README（Gemini 4 Hydrogen, Carbon & Argon の案内）",
+        "url": "https://github.com/google-gemini/cookbook/blob/main/README.md"
+      },
+      {
+        "title": "google-gemini/cookbook — Get_started.ipynb（モデルの比較、long decode、移行チェックリスト）",
+        "url": "https://github.com/google-gemini/cookbook/blob/main/quickstarts/Get_started.ipynb"
+      },
+      {
+        "title": "googleapis/python-genai CHANGELOG（v3.1.0・v3.3.0）",
+        "url": "https://github.com/googleapis/python-genai/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "googleapis/js-genai CHANGELOG（v3.1.0・v3.3.0）",
+        "url": "https://github.com/googleapis/js-genai/blob/main/CHANGELOG.md"
+      }
+    ]
   }
 };
 
