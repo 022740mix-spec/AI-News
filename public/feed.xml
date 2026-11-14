@@ -48,6 +48,14 @@
     <summary>Microsoft の GitHub に、Tandem というリポジトリが10月29日に公開された。GitHub Copilot の CLI と SDK の上で動く作業場で、要件、画面の案、モックのデータで動く試作、設計の合意を人とエージェントが見ながら決め、利用者が「Plan and implement」を選んだときだけ計画とコード変更が始まる。現状はソースからビルドするプレビューで、動作が確かめられているのは Windows だけである。11月2日には、人とエージェントが同じ図を編集するホワイトボードのスキルが加わった。</summary>
   </entry>
   <entry>
+    <title>Qwen Code v0.27.1〜v0.27.3 — auto-edit でも permissions.ask の規則は確認を求める、承認待ちを端末のベルと通知で知らせる、/pr でセッションと PR を結び付け</title>
+    <link rel="alternate" type="text/html" href="?a=qwen-code-0-27-1-to-0-27-3-permissions-ask-auto-edit-approval-notify-2026"/>
+    <id>tag:ai-tool-news.jp,2026:qwen-code-0-27-1-to-0-27-3-permissions-ask-auto-edit-approval-notify-2026</id>
+    <published>2026-11-14T15:00:00Z</published>
+    <updated>2026-11-14T15:00:00Z</updated>
+    <summary>Alibaba 系の QwenLM が開発する Qwen Code で、v0.27.1（11月9日）、v0.27.2（11月10日）、v0.27.3（11月13日）が続けて出た。v0.27.3 は、auto-edit モードでも permissions.ask の規則に当たるツール呼び出しに確認を求めるよう直し、上書きリダイレクト「&gt;|」による書き込みを権限の判定に見えるようにした。v0.27.2 は承認待ちをライブパネルに出し、端末にフォーカスが無いときはベルや通知で知らせる。v0.27.2 には SDK と Web Shell の依存更新という破壊的変更が1件ある。</summary>
+  </entry>
+  <entry>
     <title>Claude Managed Agents にセルフホスト版 — サービス本体とセッション履歴を自社のインフラに置き、モデル呼び出し先は Claude API・Bedrock・Google Cloud・Foundry・自前のゲートウェイから選ぶ</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-self-hosted-claude-managed-agents-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-self-hosted-claude-managed-agents-2026</id>

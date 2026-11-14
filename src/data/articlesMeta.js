@@ -13296,5 +13296,22 @@ export const ARTICLES_META = [
       "オープンソース",
       "開発ツール"
     ]
+  },
+  {
+    "id": "qwen-code-0-27-1-to-0-27-3-permissions-ask-auto-edit-approval-notify-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Qwen Code v0.27.1〜v0.27.3 — auto-edit でも permissions.ask の規則は確認を求める、承認待ちを端末のベルと通知で知らせる、/pr でセッションと PR を結び付け",
+    "excerpt": "Alibaba 系の QwenLM が開発する Qwen Code で、v0.27.1（11月9日）、v0.27.2（11月10日）、v0.27.3（11月13日）が続けて出た。v0.27.3 は、auto-edit モードでも permissions.ask の規則に当たるツール呼び出しに確認を求めるよう直し、上書きリダイレクト「>|」による書き込みを権限の判定に見えるようにした。v0.27.2 は承認待ちをライブパネルに出し、端末にフォーカスが無いときはベルや通知で知らせる。v0.27.2 には SDK と Web Shell の依存更新という破壊的変更が1件ある。",
+    "date": "2026-11-14",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Qwen Code",
+      "CLI",
+      "Qwen",
+      "開発ツール"
+    ]
   }
 ];
