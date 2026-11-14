@@ -32,6 +32,14 @@
     <summary>Anthropic は10月12日、Claude の推論を抜き取って別のモデルを訓練する「蒸留攻撃」への対策を説明する記事を公開した。対策の導入後、抜き取られた推論の量は10分の1から100分の1以下になったと同社は述べている。この数字は同社自身の測定で、独立した検証は確認できていない。一方で同社は、正規の利用者に負担が生じたことも認めている。API の利用者がこの数か月に個別に受け取ってきた変更が、どうつながっているのかを整理する。</summary>
   </entry>
   <entry>
+    <title>Codex CLI 0.169.0 の変更点、codex exec は信頼していないディレクトリでプロジェクト設定と MCP を無効のままに、横の会話はタブで複数、独自のモデルプロバイダーを端末から追加</title>
+    <link rel="alternate" type="text/html" href="?a=codex-cli-0-169-side-chat-tabs-exec-trust-custom-providers-2026"/>
+    <id>tag:ai-tool-news.jp,2026:codex-cli-0-169-side-chat-tabs-exec-trust-custom-providers-2026</id>
+    <published>2026-11-14T15:00:00Z</published>
+    <updated>2026-11-14T15:00:00Z</updated>
+    <summary>OpenAI の Codex CLI の 0.169.0 が11月13日に公開された。0.168.0 の約5時間後である。codex exec は、信頼していないディレクトリでは --sandbox workspace-write を付けてもプロジェクトの設定と MCP サーバーを無効のままにし、信頼を保存するには --trust を明示する。任意で有効にする端末のワークスペースは、横の会話を複数のタブで持てるようになった。独自のモデルプロバイダーは端末から追加・編集できる。</summary>
+  </entry>
+  <entry>
     <title>Claude Managed Agents にセルフホスト版 — サービス本体とセッション履歴を自社のインフラに置き、モデル呼び出し先は Claude API・Bedrock・Google Cloud・Foundry・自前のゲートウェイから選ぶ</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-self-hosted-claude-managed-agents-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-self-hosted-claude-managed-agents-2026</id>

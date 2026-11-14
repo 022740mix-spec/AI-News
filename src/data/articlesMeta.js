@@ -13261,5 +13261,22 @@ export const ARTICLES_META = [
       "AI安全性",
       "中国AI"
     ]
+  },
+  {
+    "id": "codex-cli-0-169-side-chat-tabs-exec-trust-custom-providers-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.169.0 の変更点、codex exec は信頼していないディレクトリでプロジェクト設定と MCP を無効のままに、横の会話はタブで複数、独自のモデルプロバイダーを端末から追加",
+    "excerpt": "OpenAI の Codex CLI の 0.169.0 が11月13日に公開された。0.168.0 の約5時間後である。codex exec は、信頼していないディレクトリでは --sandbox workspace-write を付けてもプロジェクトの設定と MCP サーバーを無効のままにし、信頼を保存するには --trust を明示する。任意で有効にする端末のワークスペースは、横の会話を複数のタブで持てるようになった。独自のモデルプロバイダーは端末から追加・編集できる。",
+    "date": "2026-11-14",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "開発ツール"
+    ]
   }
 ];
