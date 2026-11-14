@@ -13278,5 +13278,23 @@ export const ARTICLES_META = [
       "OpenAI",
       "開発ツール"
     ]
+  },
+  {
+    "id": "microsoft-tandem-design-first-copilot-workspace-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Microsoft が「Tandem」を MIT で公開 — コーディングエージェントに実装させる前に、要件・画面案・試作を人と見ながら決める作業場。実装は明示的に承認したときだけ始まる",
+    "excerpt": "Microsoft の GitHub に、Tandem というリポジトリが10月29日に公開された。GitHub Copilot の CLI と SDK の上で動く作業場で、要件、画面の案、モックのデータで動く試作、設計の合意を人とエージェントが見ながら決め、利用者が「Plan and implement」を選んだときだけ計画とコード変更が始まる。現状はソースからビルドするプレビューで、動作が確かめられているのは Windows だけである。11月2日には、人とエージェントが同じ図を編集するホワイトボードのスキルが加わった。",
+    "date": "2026-11-14",
+    "newsDate": "2026-10-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Microsoft",
+      "GitHub Copilot",
+      "エージェント",
+      "オープンソース",
+      "開発ツール"
+    ]
   }
 ];

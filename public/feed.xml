@@ -40,6 +40,14 @@
     <summary>OpenAI の Codex CLI の 0.169.0 が11月13日に公開された。0.168.0 の約5時間後である。codex exec は、信頼していないディレクトリでは --sandbox workspace-write を付けてもプロジェクトの設定と MCP サーバーを無効のままにし、信頼を保存するには --trust を明示する。任意で有効にする端末のワークスペースは、横の会話を複数のタブで持てるようになった。独自のモデルプロバイダーは端末から追加・編集できる。</summary>
   </entry>
   <entry>
+    <title>Microsoft が「Tandem」を MIT で公開 — コーディングエージェントに実装させる前に、要件・画面案・試作を人と見ながら決める作業場。実装は明示的に承認したときだけ始まる</title>
+    <link rel="alternate" type="text/html" href="?a=microsoft-tandem-design-first-copilot-workspace-2026"/>
+    <id>tag:ai-tool-news.jp,2026:microsoft-tandem-design-first-copilot-workspace-2026</id>
+    <published>2026-11-14T15:00:00Z</published>
+    <updated>2026-11-14T15:00:00Z</updated>
+    <summary>Microsoft の GitHub に、Tandem というリポジトリが10月29日に公開された。GitHub Copilot の CLI と SDK の上で動く作業場で、要件、画面の案、モックのデータで動く試作、設計の合意を人とエージェントが見ながら決め、利用者が「Plan and implement」を選んだときだけ計画とコード変更が始まる。現状はソースからビルドするプレビューで、動作が確かめられているのは Windows だけである。11月2日には、人とエージェントが同じ図を編集するホワイトボードのスキルが加わった。</summary>
+  </entry>
+  <entry>
     <title>Claude Managed Agents にセルフホスト版 — サービス本体とセッション履歴を自社のインフラに置き、モデル呼び出し先は Claude API・Bedrock・Google Cloud・Foundry・自前のゲートウェイから選ぶ</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-self-hosted-claude-managed-agents-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-self-hosted-claude-managed-agents-2026</id>

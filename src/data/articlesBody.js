@@ -30813,6 +30813,86 @@ const ARTICLES_BODY = {
         "url": "https://registry.npmjs.org/@openai/codex"
       }
     ]
+  },
+  "microsoft-tandem-design-first-copilot-workspace-2026": {
+    "body": [
+      "Microsoft の GitHub の組織に、Tandem というリポジトリが公開されている。最初のコミットは10月29日付の「Initial commit: Tandem 0.0.16」で、README の News 欄も同じ日に 0.0.16 を公開したと書いている。ライセンスは MIT である。11月14日に確認した時点でスターは8、コミットは13で、GitHub の Releases には何も登録されていない。Microsoft のブログや発表文で紹介された形跡は、今回の調査では見つけていない。この記事は README と同梱の文書に基づく。Tandem を実際に動かす検証はしていない。",
+      "README は Tandem を「アイデアと既存のコードを、自分が理解し、意図したとおりのソフトウェアにするための共同作業の場」と説明している。対象は、コーディングエージェントと作業したいが、製品についての判断をプロンプトの中に埋もれさせたくない開発者、デザイナー、プロジェクトの責任者だという。AI の処理には GitHub Copilot の CLI と SDK を使う。package.json の依存にも @github/copilot と @github/copilot-sdk が入っている。利用には、必要なモデルを使える Copilot のアカウントが要る。",
+      "何を解こうとしているかは、同梱の文書「The Tandem story」が例で説明している。エージェントにアカウント削除の機能を頼むと、ボタンとコードとテストがすぐにできる。そこで「誤って消したアカウントはどう戻すのか」と尋ねると、エージェントが作ったのは完全な削除で、依頼した側は復旧できる期間があるものと思っていた、という場面である。文書はこのずれを intent gap（意図のずれ）と呼ぶ。完全削除を前提に書かれたテストは、利用者がそれを望んだことの証明にはならない。ログが示すのはエージェントが何をしたかであって、期待した動作を選んだかどうかではない、と文書は書いている。",
+      "Tandem はプロジェクトのフォルダを開くと、どこから始めるかを尋ねる。Preparation（準備）を選ぶと、要件、画面の案、試作を通してアイデアを固め、そのあと Development（開発）へ進む。Development を直接選ぶと、既存のファイルを調べたり、大まかなアイデアを設計と会話の中で詰めたりする。既存のアプリケーションがある場合は、コードを変えずに現在の動作を調べさせ、「今こう動いている」と「こうしたい」を分けて扱う使い方が文書に書かれている。選択はフォルダごとに保存される。",
+      "この道具の中心にあるのは、実装の開始を承認から切り離さないことである。README によると、利用者が「Plan and implement」を選ぶことが、選んだ作業コピーでの計画とコード変更を明示的に許可する。画面を開くことや、試作が出来上がることは、許可にあたらない。Development では「canonical Design」と呼ぶ設計の合意が、現在の取り決めとして作業の横に残る。実装は Implementer という役割が行い、Reviewer という役割が、設計に合っているかと不要な複雑さが無いかを確かめて、所見と限界を報告し、判断を利用者に返す。文書は、コードが設計と食い違ったときに設計のほうを黙って書き換えるのは答えではなく、コードを直すか、意図した動作を変えるかは利用者が決める、としている。レビューが新しい実装の周回を許可することもない。",
+      "11月2日には、Brainstorm whiteboard というスキルが加わった。Excalidraw を使ったホワイトボードで、人とエージェントの両方が図を描き、編集し、注釈を付け、版を確定（seal）できる。エージェントは確定された変更を読み取る。README は、このスキルを特定のエージェントに依存しない任意の部品と説明しており、Tandem の本体を入れなくても使える。Claude Code と Codex 向けのプラグインの形式も同梱されている。ただしスキルの README 自身が、Claude Code と Codex での導入と動作は確認が済んでいない（unqualified）と明記している。README に載っているデモの動画についても、実際の UI と API の操作を自動で再生したもので、モデルが動いているセッションや人の操作の録画ではない、と断り書きがある。",
+      "導入の条件は限られている。README は現状を「source preview」と呼び、手順は公開済みのリリースを入れるものではなく、手元でソースをビルドするものだと書いている。必要なのは Windows と PowerShell、Node 24.15 以上の 24 系か Node 26 以上、Git、Copilot のアカウントである。ほかの OS は確認が済んでいない。最初に試すときは、テスト用のプロジェクトか worktree を使うよう勧めている。手元でビルドする以上、npm による依存パッケージの取得が起きる。試す場合は、リポジトリの中身と依存の一覧を先に読み、普段の作業環境と分けた場所で行うのが確実である。",
+      "データの扱いについて、README は踏み込んで書いている。プロンプト、選ばれたプロジェクトの内容、ツールの結果は、設定された AI のサービスで処理される。オフラインで動くアプリケーションではない。Tandem 自身は分析用の送信先を設定しない。一方、土台の Copilot のランタイムは任意の OpenTelemetry のトレースに対応しうるため、README は関係する3つの環境変数を外す手順を示している。そのうえで、この手順は Copilot のランタイムによる収集のすべてを止めることが確かめられたものではなく、テレメトリが無いと言えるようになるには、依存先の収集と停止の範囲の確認がまだ要る、と自分で書いている。",
+      "コーディングエージェントに先に計画を立てさせる機能は、主要な CLI やエディタが plan mode などの名前で備えている。Tandem が README で前に出しているのは、計画の文章ではなく、画面の案や試作のように見て確かめられるものを合意の対象にすることと、合意した設計を実装のあとも照合の基準として残すことである。これは README の説明から読み取れる違いであり、ほかの道具と比べてどちらが良いかを確かめた資料は、公開されている範囲には無い。",
+      "確認できていないこと。根拠は Microsoft 自身のリポジトリの記載だけで、第三者が使った報告や評価は確認していない。効果を示す数値も公開されていない。版は 0.0.16 で、README は条件や限界を多く挙げている。これが Microsoft の製品として続くのか、研究や試作としての公開なのかは、リポジトリからは分からない。開発元の部署も書かれていない。Copilot のどのプランで使えるか、どのモデルが要るかの具体的な一覧は、README には無い。"
+    ],
+    "tables": [
+      {
+        "caption": "Tandem の概要（README と同梱文書の記載を整理。2026年11月14日に確認）",
+        "afterParagraph": 6,
+        "headers": [
+          "項目",
+          "内容"
+        ],
+        "rows": [
+          [
+            "公開",
+            "最初のコミットは2026年10月29日（Tandem 0.0.16）。GitHub の Releases は未登録"
+          ],
+          [
+            "ライセンス",
+            "MIT（同梱の第三者部品はそれぞれのライセンス）"
+          ],
+          [
+            "土台",
+            "GitHub Copilot の CLI と SDK。Copilot のアカウントが必要"
+          ],
+          [
+            "始め方",
+            "Preparation（要件・画面の案・試作）か、Development（既存コードの調査、設計と会話）を選ぶ"
+          ],
+          [
+            "実装の開始",
+            "利用者が Plan and implement を選んだときだけ。画面を開く、試作が完成する、では始まらない"
+          ],
+          [
+            "役割",
+            "Implementer が実装と検証、Reviewer が設計との一致と不要な複雑さを確認し、判断を利用者に返す"
+          ],
+          [
+            "動作環境",
+            "ソースからビルドするプレビュー。Windows と PowerShell、Node 24.15 以上の 24 系または 26 以上。ほかの OS は未確認"
+          ],
+          [
+            "追加のスキル",
+            "Brainstorm whiteboard（11月2日）。Excalidraw の図を人とエージェントが編集。Claude Code・Codex での導入は未確認と明記"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "microsoft/Tandem（GitHub リポジトリ、README）",
+        "url": "https://github.com/microsoft/Tandem"
+      },
+      {
+        "title": "The Tandem story: make intent visible（同梱文書）",
+        "url": "https://github.com/microsoft/Tandem/blob/main/docs/the-tandem-story.md"
+      },
+      {
+        "title": "Quick start（同梱文書）",
+        "url": "https://github.com/microsoft/Tandem/blob/main/docs/quick-start.md"
+      },
+      {
+        "title": "Brainstorm whiteboard（スキルの README）",
+        "url": "https://github.com/microsoft/Tandem/blob/main/skills/brainstorm-whiteboard/README.md"
+      },
+      {
+        "title": "microsoft/Tandem のコミット履歴",
+        "url": "https://github.com/microsoft/Tandem/commits/main"
+      }
+    ]
   }
 };
 
