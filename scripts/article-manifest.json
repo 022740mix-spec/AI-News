@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-11-14",
-  "count": 644,
+  "count": 645,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -425,6 +425,7 @@
     "mico-kubectl-ai",
     "microsoft-365-e7-copilot-pricing-2026",
     "microsoft-agent-365-ga-observe-govern-secure-2026",
+    "microsoft-benchpress-benchmark-score-matrix-completion-2026",
     "microsoft-build-2026-mai-7models-solara-majorana-2026",
     "microsoft-build-2026-project-polaris-mai-coding-2026",
     "microsoft-build-2026-windows-agent-framework-2026",

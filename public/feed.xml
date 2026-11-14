@@ -24,6 +24,14 @@
     <summary>Google の公式 SDK に gemini-4-carbon（11月10日）と gemini-4-hydrogen（11月12日）が加わり、公式 Cookbook の既定モデルが Gemini 4 Hydrogen に切り替わった。Cookbook によると、Hydrogen は無料枠と有料枠の両方で使え、価格は入力100万トークンあたり1.50ドル、出力7.50ドル。思考レベルの既定は high で、xhigh は Hydrogen だけが持つ。Gemini 4 では temperature などのサンプリング設定が無視され、明示的なキャッシュが使えず、thinking_level の minimal は 400 エラーになる。Google の発表記事と ai.google.dev には今回到達できておらず、ベンチマークと Carbon・Argon の価格は確認できていない。</summary>
   </entry>
   <entry>
+    <title>Microsoft Research の「BenchPress」— 測っていないベンチマークの点数を、公開済みの点数表から推定する。84モデル×133項目の表は埋まっているのが23.3%</title>
+    <link rel="alternate" type="text/html" href="?a=microsoft-benchpress-benchmark-score-matrix-completion-2026"/>
+    <id>tag:ai-tool-news.jp,2026:microsoft-benchpress-benchmark-score-matrix-completion-2026</id>
+    <published>2026-11-15T15:00:00Z</published>
+    <updated>2026-11-15T15:00:00Z</updated>
+    <summary>Microsoft Research の研究者が、モデルとベンチマークの点数表の空欄を推定するツール BenchPress を MIT ライセンスで公開している（論文とコードは2026年6月23日付）。公開されている点数を集めた84モデル×133ベンチマークの表は、埋まっているのが23.3%。著者らは、この表がほぼ2つの因子で説明でき、隠した点数を中央値で4.6ポイントの誤差で当てられたと報告する。5つのベンチマークを測れば残りを誤差3.93ポイントで推定できた、とも書く。数値は著者らの報告で、独立した検証は確認できていない。</summary>
+  </entry>
+  <entry>
     <title>Claude Code 2.1.325、サンドボックス内の Bash も通常の権限確認を通るのが既定に、zstd 圧縮の応答のデコードにセキュリティ修正、権限ルールのすり抜けを複数修正</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-2-1-325-sandbox-auto-allow-default-zstd-security-fix-permission-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-2-1-325-sandbox-auto-allow-default-zstd-security-fix-permission-2026</id>

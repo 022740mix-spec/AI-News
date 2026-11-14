@@ -13351,5 +13351,23 @@ export const ARTICLES_META = [
       "料金",
       "SDK"
     ]
+  },
+  {
+    "id": "microsoft-benchpress-benchmark-score-matrix-completion-2026",
+    "type": "news",
+    "category": "data",
+    "title": "Microsoft Research の「BenchPress」— 測っていないベンチマークの点数を、公開済みの点数表から推定する。84モデル×133項目の表は埋まっているのが23.3%",
+    "excerpt": "Microsoft Research の研究者が、モデルとベンチマークの点数表の空欄を推定するツール BenchPress を MIT ライセンスで公開している（論文とコードは2026年6月23日付）。公開されている点数を集めた84モデル×133ベンチマークの表は、埋まっているのが23.3%。著者らは、この表がほぼ2つの因子で説明でき、隠した点数を中央値で4.6ポイントの誤差で当てられたと報告する。5つのベンチマークを測れば残りを誤差3.93ポイントで推定できた、とも書く。数値は著者らの報告で、独立した検証は確認できていない。",
+    "date": "2026-11-15",
+    "newsDate": "2026-06-23",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Microsoft",
+      "ベンチマーク",
+      "評価",
+      "オープンソース",
+      "研究"
+    ]
   }
 ];
