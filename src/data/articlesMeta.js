@@ -13455,5 +13455,34 @@ export const ARTICLES_META = [
       "AI安全性",
       "透明性"
     ]
+  },
+  {
+    "id": "claude-fable-5-2-mythos-5-2-review",
+    "type": "review",
+    "category": "model",
+    "title": "Claude Fable 5.2 / Mythos 5.2 レビュー — 基本料金が $8 / $40 に値下げ、性能は当事者公表値で 5.1 と Opus 5.5 を上回る、接頭辞チェックは全アカウントに拡大",
+    "excerpt": "Anthropic が2026年11月9日に公開した Fable 5.2（一般提供）と Mythos 5.2（認証済み組織のみ）のレビュー。基本料金は**入力 $8 / 出力 $40** に下がり（5.1 は $10 / $50）、キャッシュ読み取りも $0.25 から $0.20 になった。性能はシステムカードの公表値では Fable 5.1 と Opus 5.5 をほぼ全域で上回るが、独立した検証は確認できていない。プランの利用条件は Help Center 上で 5.1 と同じ扱い（Max などは週次上限の最大50%、Pro と標準シートは利用クレジット）で、公開直後には期間限定の追加提供がある。API の破壊的変更は4つあり、thinking の接頭辞チェックが全アカウントに広がった。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-09",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "モデル",
+      "Anthropic",
+      "Fable 5",
+      "Mythos",
+      "LLM"
+    ],
+    "lastReviewed": "2026-11-15",
+    "reviewCadence": "monthly",
+    "ratings": {
+      "AI品質": 5,
+      "コスパ": 3,
+      "企業向け": 3,
+      "使いやすさ": 3,
+      "拡張性": 4
+    },
+    "rating": 3.75,
+    "reviewCategory": "model"
   }
 ];
