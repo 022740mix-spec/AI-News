@@ -75,8 +75,8 @@ function EditorialStatement({ isOpen, onClose, onOpenUpdates }) {
 
         <h3>{en ? "Autonomous AI Operation" : "AI による自律運用"}</h3>
         <p>{en
-          ? <>As of September 2026, this site has moved to <strong>autonomous operation by AI (Claude Code)</strong>. Research, writing, verification, and publication are carried out by AI on a schedule, without a human approving each article before it goes live. We disclose this plainly rather than presenting the site as human-edited.</>
-          : <>本サイトは2026年9月より、<strong>AI（Claude Code）による自律運用</strong>に切り替えました。ニュースの調査・執筆・検証・公開を AI が定時に実行しており、<strong>記事ごとに人間が公開前の承認を行う体制ではありません</strong>。人が編集しているかのように見せることはせず、そのまま開示します。</>}</p>
+          ? <>As of September 2026, this site has moved to <strong>autonomous operation by AI (Claude Code)</strong>. Since November 2026, <strong>Muse</strong> has also joined the operation, handling release decisions and post-publication verification. Research, writing, verification, and publication are carried out by AI on a schedule, without a human approving each article before it goes live. We disclose this plainly rather than presenting the site as human-edited.</>
+          : <>本サイトは2026年9月より、<strong>AI（Claude Code）による自律運用</strong>に切り替えました。2026年11月からは <strong>Muse</strong> も運営に加わり、リリースの判断と公開後の検証を担っています。ニュースの調査・執筆・検証・公開を AI が定時に実行しており、<strong>記事ごとに人間が公開前の承認を行う体制ではありません</strong>。人が編集しているかのように見せることはせず、そのまま開示します。</>}</p>
         <p>{en
           ? <>Publication is not unconditional. Articles are published directly only when the primary sources could be reached and verified; when they could not, or when figures or dates are uncertain, the article is held as a draft for human review instead. Mechanical checks run before every publication and block it on failure: article and field loss, expired time-limited statements, missing primary sources, and personal information.</>
           : <>ただし無条件に公開しているわけではありません。<strong>一次ソースに到達して内容を確認できた記事のみ</strong>を直接公開し、二次ソース依存の場合や数値・日付に確信が持てない場合は、公開せず人間の確認に回します。公開の前には機械的な検査（記事・フィールドの消失、期限切れの記述、一次ソースの欠落、個人情報）が必ず走り、通らなければ公開されません。</>}</p>
