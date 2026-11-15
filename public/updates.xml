@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./?view=updates"/>
   <link rel="self" type="application/atom+xml" href="./updates.xml"/>
   <id>tag:ai-tool-news.jp,2026:updates</id>
-  <updated>2026-11-12T15:00:00Z</updated>
+  <updated>2026-11-15T15:00:00Z</updated>
   <generator>ai-news-generate-updates</generator>
+  <entry>
+    <title>【訂正】【分析】Anthropic が METR の6人に「従業員並みのアクセス」— 公表は拒否できないが、伏せる範囲を決めるのは Anthropic。評価者のアクセスを3段階に分ける設計を読む</title>
+    <link rel="alternate" type="text/html" href="?a=feature-anthropic-metr-employee-like-access-three-tiers-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:feature-anthropic-metr-employee-like-access-three-tiers-2026:2026-11-15</id>
+    <updated>2026-11-15T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）冒頭の段落が「METR の公表物は読めていない」「事実は発表文1本に基づく」としたまま、後段に METR… →（正）冒頭の段落を、発表文に基づく部分と METR の公表物に基づく部分を分けて書く形に直した</summary>
+  </entry>
   <entry>
     <title>【追記】Anthropic が S-1 を SEC に提出したと発表 — Nasdaq に Class A 普通株を「ANT」で上場する計画、株数と価格は未定</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-s1-nasdaq-ant-filing-2026#article-history"/>
@@ -1198,13 +1206,5 @@
     <updated>2026-08-11T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
     <summary>★4→4.5 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（4.7）…</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Windsurf（現 Devin Desktop）— Cognition が運営する AI エディタ</title>
-    <link rel="alternate" type="text/html" href="?a=windsurf#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:windsurf:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>★4→3.5 「2026年3月に Anysphere（Cursor の親会社）による買収が完了し、現在は同社傘下で運営されている」という記述、および「Anysphere 傘下に入ったことで長期的には Cursor…（同日に 訂正・訂正・追記 もあり）</summary>
   </entry>
 </feed>

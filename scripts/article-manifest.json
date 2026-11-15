@@ -294,6 +294,7 @@
     "feature-ai-layoffs-2026-170k-gallup-counter-data-2026",
     "feature-anthropic-building-strong-safety-evaluations-2026",
     "feature-anthropic-distillation-defenses-preserved-thinking-tradeoffs-2026",
+    "feature-anthropic-metr-employee-like-access-three-tiers-2026",
     "feature-chatgpt-work-vs-claude-cowork-simultaneous-launch-2026",
     "feature-china-ai-models-may-2026-qwen-kimi-ernie",
     "feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026",
@@ -332,6 +333,7 @@
     "gemini-cli-0-63-release-notes-2026",
     "gemini-cli-0-64-atomic-writes-state-recovery-release-notes-2026",
     "gemini-cli-0-65-otlp-headers-untrusted-folders-session-fixes-2026",
+    "gemini-cli-0-65-untrusted-folder-readonly-otlp-headers-release-notes-2026",
     "gemini-cli-0-66-terminal-sync-output-mcp-oauth-private-network-2026",
     "gemini-cli-0-67-models-command-list-models-ide-sandbox-bridge-2026",
     "gemini-cli-0-68-extension-validate-rate-limit-countdown-subagentstop-2026",
@@ -455,6 +457,7 @@
     "nextjs-security-update-2026-10-14",
     "noam-shazeer-google-to-openai-architecture-research-2026",
     "nodejs-security-release-2026-10-21",
+    "nodejs-security-release-2026-11-11",
     "notebooklm-review",
     "notion-as-code-typescript-workspace-git-agents-beta-2026",
     "nsa-cisa-china-ai-distillation-advisory-2026",
@@ -649,9 +652,6 @@
     "zed-ai",
     "zhipu-zai-glm-5-2-open-source-coding-1m-context-2026",
     "zhipu-zai-glm-5-3-post-training-cyber-2026",
-    "zperiod-3d-periodic-table-high-school-student-2026",
-    "nodejs-security-release-2026-11-11",
-    "gemini-cli-0-65-untrusted-folder-readonly-otlp-headers-release-notes-2026",
-    "feature-anthropic-metr-employee-like-access-three-tiers-2026"
+    "zperiod-3d-periodic-table-high-school-student-2026"
   ]
 }
