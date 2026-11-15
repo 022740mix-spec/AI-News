@@ -13648,5 +13648,27 @@ export const ARTICLES_META = [
       "開発ツール",
       "セキュリティ"
     ]
+  },
+  {
+    "id": "weekly-metrics-2026-week-nov09",
+    "type": "feature",
+    "category": "special",
+    "title": "週次の計器 — 11月9日〜11月15日は31本、前週の16本からほぼ倍。4割が最終日の1日に集中し、分析は6週ぶりに4本、レビューは3本。発掘は3本とも大企業の公開物だった",
+    "excerpt": "2026年11月9日〜11月15日の週次データ。公開は31本（前週16本）で、news 22 / feature 6 / review 3。13本が11月15日の1日に載った。題材では Anthropic 関連が12本、Google が5本、OpenAI が4本、Microsoft・GitHub が4本。5週続けて0本だった分析は4本出たが、うち3本は Anthropic の発表を題材にしている。ガイドに説明が見当たらない概念の一覧は変わらず、新しく出たタグには既存のタグと重なるものがあった。",
+    "date": "2026-11-16",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "週刊まとめ",
+      "Anthropic",
+      "Google",
+      "CLI",
+      "開発ツール"
+    ],
+    "heroScope": "week",
+    "weekRoundupPeriod": {
+      "start": "2026-11-09",
+      "end": "2026-11-15"
+    }
   }
 ];

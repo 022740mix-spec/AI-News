@@ -32674,6 +32674,149 @@ const ARTICLES_BODY = {
         "url": "https://www.npmjs.com/package/@qwen-code/qwen-code"
       }
     ]
+  },
+  "weekly-metrics-2026-week-nov09": {
+    "body": [
+      "この記事はニュースのまとめではなく、サイト自身の公開データから計算した「計器」である。1週間を見渡して初めて出る数字を、解釈を添えて示す。数字は `node scripts/weekly-metrics.mjs` の出力（集計日2026年11月16日）と、サイトの記事データの集計に基づく。外部サイトの情報は使っていない。計器記事そのものは、集計の対象から除いている。",
+      "## 公開本数 — 31本、前週のほぼ倍。13本が最終日に載った",
+      "11月9日〜11月15日の公開は**31本**（前週16本）だった。種別は news 22 / feature 6 / review 3、分野は cli 10 / product 9 / model 5 / special 4 / regulation 2 / data 1。出来事から掲載までの中央値は2日である。",
+      "増えた分は、週の後半に偏っている。日別では9日が1本、10日が2本、11日が1本、12日が2本、13日が6本、14日が6本、**15日が13本**だった。31本のうち25本が最後の3日間に、4割が最終日の1日に載っている。15日の13本には、レビュー3本、分析2本、運営に関する記事2本が含まれる。[運営に Muse が加わったことを知らせる記事](?a=muse-operations-handover-2026)は、滞留していた PR の公開判断を担当すると書いており、15日の集中は、書き上がっていた記事がまとめて公開された分を含むと読める。本数が倍になったことを、この週に出来事が倍あったと読むことはできない。",
+      "出来事の日と掲載日のずれにも、それが出ている。3日以上ずれた記事は15本あり、うち7本は2週間以上ずれていた。最大は [Microsoft Research の BenchPress](?a=microsoft-benchpress-benchmark-score-matrix-completion-2026)（出来事は6月23日）で、[GPT-6.1 のレビュー](?a=gpt-6-1-sol-terra-review)（9月29日）、[蒸留対策の分析](?a=feature-anthropic-distillation-defenses-preserved-thinking-tradeoffs-2026)（10月12日）、[METR へのアクセス付与の分析](?a=feature-anthropic-metr-employee-like-access-three-tiers-2026)（10月15日）が続く。レビューや分析は出来事の直後に書くものではないので、ずれが大きいこと自体は欠陥ではない。ただし「新着」の並びの上位に、数か月前の出来事が混ざる週だった。サイトは掲載日で並べ、出来事の日がずれている場合は併記している。",
+      "## 題材の内訳 — Anthropic 関連が12本、Google が5本",
+      "題材で数えると、Anthropic 関連が**12本**で最も多い。Claude Code の版が3本（[2.1.321・2.1.322](?a=claude-code-2-1-321-2-1-322-fable-5-2-default-mcp-oauth-redirect-sandbox-fixes-2026)、[2.1.323](?a=claude-code-2-1-323-code-mode-plugin-engines-permission-sandbox-fixes-2026)、[2.1.325](?a=claude-code-2-1-325-sandbox-auto-allow-default-zstd-security-fix-permission-2026)）、製品と API が3本（[Fable 5.2 の公開](?a=anthropic-claude-fable-5-2-mythos-5-2-launch-api-changes-2026)、[Managed Agents のセルフホスト版](?a=anthropic-self-hosted-claude-managed-agents-2026)、[Claude Meetings](?a=anthropic-claude-meetings-beta-google-meet-2026)）、株式に関する発表が2本（[ロードショーの開始](?a=anthropic-ipo-roadshow-launch-price-range-2026)、[Public Benefit Fund](?a=anthropic-public-benefit-fund-5-percent-shares-2026)）、分析が3本、[Fable 5.2 のレビュー](?a=claude-fable-5-2-mythos-5-2-review)が1本である。前週は7本だった。割合で見ると前週の44%から39%に下がっているが、本数は増えている。",
+      "Google 関連は前週の1本から**5本**に増えた。[Gemini 4 Hydrogen と Carbon の API 提供](?a=gemini-4-hydrogen-carbon-gemini-api-cookbook-migration-2026)、[Decisions API](?a=gemini-decisions-api-calibrated-probabilities-no-output-tokens-2026)、[Gemini 4 のレビュー](?a=gemini-4-review)、[Gemini CLI 0.68.0](?a=gemini-cli-0-68-extension-validate-rate-limit-countdown-subagentstop-2026)、[GoogleChrome の Modern Web Guidance](?a=googlechrome-modern-web-guidance-1-0-agent-skills-web-platform-2026)である。OpenAI 関連は4本（Codex CLI の[0.168.0](?a=codex-cli-0-168-model-providers-tui-workspace-audio-attachments-2026)と[0.169.0](?a=codex-cli-0-169-side-chat-tabs-exec-trust-custom-providers-2026)、[Codex の再試行の不具合](?a=codex-responses-error-event-retried-six-times-2026)、GPT-6.1 のレビュー）、Microsoft・GitHub 関連も4本（Copilot CLI の版が2本、[Tandem](?a=microsoft-tandem-design-first-copilot-workspace-2026)、BenchPress）だった。",
+      "前週に4本あった Qwen Code は[1本](?a=qwen-code-0-27-1-to-0-27-3-permissions-ask-auto-edit-approval-notify-2026)になった。ただしこの1本は3つの版をまとめて扱っており、版の数では減っていない。前週の計器は「公開が増えたのか、拾う頻度が増えたのかは分からない」と書いた。今週の数字が示すのは、記事の本数は版のまとめ方で動くということで、本数の増減からツールの活発さは読めない。",
+      "前々週に0本になっていた、AI 以外のセキュリティ情報は2本出た（[React Server Components の脆弱性](?a=react-server-components-rce-ghsa-xqc2-2026-10-14)、[Node.js のセキュリティリリース](?a=nodejs-security-release-2026-11-11)）。前者は出来事から26日後の掲載である。",
+      "## 3軸のバランス — 分析は6週ぶりに出た。ただし4本中3本が同じ会社の発表を題材にしている",
+      "5週続けて0本だった**分析が、この週は4本**出た。蒸留対策、METR へのアクセス付与、[安全性評価の作り方](?a=feature-anthropic-building-strong-safety-evaluations-2026)、そして [DeepSeek のアプリ機能の API 開放](?a=deepseek-app-suite-api-meaning-cost-data-2026)である。0が続いていた枠が埋まったことは、数字のうえでは回復である。一方で、4本のうち3本は Anthropic 自身の発表を読み解く記事で、題材の出どころが1社に寄っている。規制当局の動きや、雇用・教育といった社会の側から書いた分析は、この週も0本だった。「分析が出た」ことと「分析の視野が広がった」ことは、分けて見る必要がある。",
+      "**発掘は3本**（Modern Web Guidance、Tandem、BenchPress）で、前週の2本から増えた。3本とも公開元は Google と Microsoft の公式 org や研究部門である。新興企業と個人開発のプロジェクトは0本だった。前週の2本（Reducto、Vercel Labs）も企業の公開物だったので、個人開発が0本の状態は2週続いている。3軸の表が「発掘」に括っているのは新興・OSS・個人開発だが、実際に入っているのは大企業の OSS だけである。",
+      "レビューは3本が同じ日に出た。Fable 5.2、GPT-6.1、Gemini 4 と、3社の現行世代が揃っている。レビューが出ること自体が数週間無かったので、月次で見直す対象の付け替えが要るかどうかは、対話セッションで判断する事項として残る。残る2本の feature は、運営体制の告知と [Muse の入門記事](?a=muse-personal-agent-introduction-2026)で、3軸のどれにも数えていない。",
+      "## ガイドの空白は変わらず、件数だけが増えた",
+      "「記事で頻出するのに、ガイドに説明が無い概念」は、今週も同じ顔ぶれだった。直近90日の記事数は、「AI安全性」33件、「中国AI」12件、「エッジAI」10件、「個人開発」10件、「透明性」9件、「半導体」4件である（「リリースノート」「Alibaba」「資金調達」「開発体験」は、記事の型・固有名詞・出来事の種類にあたるため、補強の対象としては数えていない）。",
+      "前週と違うのは、件数が増えたことである。この週の分析3本に「AI安全性」が、2本に「透明性」が、1本に「中国AI」が付いた。前週は、古い記事が90日の窓から抜けて件数が減っていた。今週は記事の側が増えたのに、ガイドの側は0のままなので、差は開いている。安全性評価の記事は「拒否率では測れない領域」を扱い、METR の記事は外部評価者のアクセスの段階を扱っている。どちらも、読者が用語集を引いても「AI安全性」の項目は無い。ガイドの書き込みは Routine には禁じられており、対話セッションでの判断を待っている。この一文は3週続けて同じである。",
+      "## 新しく出たタグに、既存のタグと重なるものがある",
+      "この週にはじめて出たタグは9つあった（React Server Components、お知らせ、運営、AIエージェント、Gemini 4、活用、安全性、不具合、データ）。このうち「AIエージェント」は、既に170本以上の記事に付いている「エージェント」と、「安全性」は「AI安全性」と意味が重なる。サイトのタグ運用は、派生する表記を最も使われている1つに寄せると定めている。重なったタグは、絞り込みでも、この計器の集計でも別の語として数えられる。たとえば「安全性」が付いた記事は、上の「AI安全性」33件には入っていない。数は小さいが、空白を測る数字の側がずれ始める入口である。「Gemini 4」も、モデル名のタグは世代でまとめるという規則に照らして、既存の「Gemini」と分けるかどうかの判断が要る。",
+      "## ツール別ページとの比",
+      "直近90日の記事数とツール別ページの解説項目数の比は、Claude Code 0.46（43件 / 93項目）、Codex 0.45（21件 / 47項目）、VS Code + Copilot 0.34（12件 / 35項目）、Gemini CLI 0.16（7件 / 43項目）、Cursor 0.14（6件 / 44項目）、Power Apps 0（0件 / 20項目）だった。比が大きいほど、話題の割に解説が薄い。前週から最も動いたのは VS Code + Copilot（0.23→0.34）と Codex（0.38→0.45）で、Codex は Claude Code とほぼ並んだ。解説の項目数は、どのツールも前週から変わっていない。**Cursor の記事は[9月20日](?a=cursor-projects-coordinator-agent-2026)を最後に出ておらず**、8週間が過ぎた。Cursor のエディタと CLI は月次で見直す対象に入っているので、記事が無い期間の変更は、見直しの側で拾うことになる。",
+      "## 確認できなかったこと",
+      "この記事は、サイト自身のデータだけから作っている。したがって、この週にサイトに載らなかった出来事があったかどうかは、この記事からは何も言えない。Cursor、xAI、Meta のモデル、Moonshot AI や Alibaba のモデルについての記事は、この週は0本だった。**これは「出来事が無かった」という意味ではなく、サイトに載っていないという意味である。**題材を「Anthropic 関連」「Google 関連」と振り分けたのは記事のタグと内容を読んだ手作業で、機械的な集計ではない。15日の集中の理由も、運営の告知記事の記載からの読みであり、公開の記録を1本ずつ確かめたものではない。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 9,
+        "caption": "この週の公開の内訳（11月9日〜11月15日、31本）",
+        "headers": [
+          "区分",
+          "本数",
+          "前週",
+          "例"
+        ],
+        "rows": [
+          [
+            "Anthropic 関連",
+            "12本",
+            "7本",
+            "Claude Code 2.1.321〜2.1.325、Fable 5.2、Managed Agents のセルフホスト版、分析3本"
+          ],
+          [
+            "Google 関連",
+            "5本",
+            "1本",
+            "Gemini 4 の API 提供、Decisions API、Gemini CLI 0.68.0、Modern Web Guidance"
+          ],
+          [
+            "OpenAI 関連",
+            "4本",
+            "1本",
+            "Codex CLI 0.168.0・0.169.0、再試行の不具合、GPT-6.1 のレビュー"
+          ],
+          [
+            "Microsoft・GitHub 関連",
+            "4本",
+            "1本",
+            "Copilot CLI 1.0.107〜1.0.111、Tandem、BenchPress"
+          ],
+          [
+            "AI 以外のセキュリティ情報",
+            "2本",
+            "0本",
+            "React Server Components、Node.js"
+          ],
+          [
+            "運営・Muse",
+            "2本",
+            "0本",
+            "運営体制の告知、Muse 入門"
+          ],
+          [
+            "Qwen Code",
+            "1本",
+            "4本",
+            "v0.27.1〜v0.27.3（3つの版を1本で）"
+          ],
+          [
+            "DeepSeek",
+            "1本",
+            "0本",
+            "アプリ機能の API 開放（分析）"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 15,
+        "caption": "記事で頻出するのにガイドに説明が無い概念（直近90日、週次の計器の出力）",
+        "headers": [
+          "概念",
+          "記事の件数",
+          "前週",
+          "この週に付いた記事"
+        ],
+        "rows": [
+          [
+            "AI安全性",
+            "33件",
+            "30件",
+            "3件"
+          ],
+          [
+            "中国AI",
+            "12件",
+            "11件",
+            "1件"
+          ],
+          [
+            "エッジAI",
+            "10件",
+            "10件",
+            "0件"
+          ],
+          [
+            "個人開発",
+            "10件",
+            "10件",
+            "0件"
+          ],
+          [
+            "透明性",
+            "9件",
+            "7件",
+            "2件"
+          ],
+          [
+            "半導体",
+            "4件",
+            "4件",
+            "0件"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "AI News リポジトリ（週次の計器の算出元データ）",
+        "url": "https://github.com/022740mix-spec/AI-News"
+      }
+    ]
   }
 };
 
