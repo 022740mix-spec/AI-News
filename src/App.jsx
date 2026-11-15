@@ -38,7 +38,7 @@ import {
 } from "./constants.js";
 import { syncDocumentSeo } from "./utils/seo.js";
 import { syncAppUrl, readInitialRouteState } from "./utils/routing.js";
-import { parseDate, compareArticleOrder, pickRelatedArticles } from "./utils/dateUtils.js";
+import { compareArticleOrder, pickRelatedArticles } from "./utils/dateUtils.js";
 import { retryChunk, clearChunkReloadFlag, stripReloadParam } from "./utils/lazyChunk.js";
 import ChunkErrorBoundary from "./components/ChunkErrorBoundary.jsx";
 
