@@ -32,6 +32,14 @@
     <summary>Microsoft Research の研究者が、モデルとベンチマークの点数表の空欄を推定するツール BenchPress を MIT ライセンスで公開している（論文とコードは2026年6月23日付）。公開されている点数を集めた84モデル×133ベンチマークの表は、埋まっているのが23.3%。著者らは、この表がほぼ2つの因子で説明でき、隠した点数を中央値で4.6ポイントの誤差で当てられたと報告する。5つのベンチマークを測れば残りを誤差3.93ポイントで推定できた、とも書く。数値は著者らの報告で、独立した検証は確認できていない。</summary>
   </entry>
   <entry>
+    <title>Claude Meetings がベータ公開 — Claude がビデオ会議に「参加者」として入り、会議中に文書やホワイトボードを作る。対応は Google Meet、Team・Enterprise から順次</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-meetings-beta-google-meet-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-meetings-beta-google-meet-2026</id>
+    <published>2026-11-15T15:00:00Z</published>
+    <updated>2026-11-15T15:00:00Z</updated>
+    <summary>Anthropic は11月12日、Claude をビデオ会議に参加者として加える Claude Meetings のベータ提供を始めた。会議中の質問に文字で答え、文書やホワイトボードを作り、ノートとアクションアイテムを残す。保存するのは文字起こし・要約・画面の説明で、音声は保存しないとされる。組織外の人が招待された会議には既定で入らない。対象プラン、対象外の組織、課金の扱いを公式記事に基づいて整理する。</summary>
+  </entry>
+  <entry>
     <title>Claude Code 2.1.325、サンドボックス内の Bash も通常の権限確認を通るのが既定に、zstd 圧縮の応答のデコードにセキュリティ修正、権限ルールのすり抜けを複数修正</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-2-1-325-sandbox-auto-allow-default-zstd-security-fix-permission-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-2-1-325-sandbox-auto-allow-default-zstd-security-fix-permission-2026</id>

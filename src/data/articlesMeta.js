@@ -13369,5 +13369,24 @@ export const ARTICLES_META = [
       "オープンソース",
       "研究"
     ]
+  },
+  {
+    "id": "anthropic-claude-meetings-beta-google-meet-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude Meetings がベータ公開 — Claude がビデオ会議に「参加者」として入り、会議中に文書やホワイトボードを作る。対応は Google Meet、Team・Enterprise から順次",
+    "excerpt": "Anthropic は11月12日、Claude をビデオ会議に参加者として加える Claude Meetings のベータ提供を始めた。会議中の質問に文字で答え、文書やホワイトボードを作り、ノートとアクションアイテムを残す。保存するのは文字起こし・要約・画面の説明で、音声は保存しないとされる。組織外の人が招待された会議には既定で入らない。対象プラン、対象外の組織、課金の扱いを公式記事に基づいて整理する。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-12",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "会議",
+      "Google Meet",
+      "エンタープライズ",
+      "プライバシー"
+    ]
   }
 ];
