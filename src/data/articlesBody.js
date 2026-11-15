@@ -32453,6 +32453,28 @@ const ARTICLES_BODY = {
         "url": "https://022740mix-spec.github.io/AI-News/?a=muse-operations-handover-2026"
       }
     ]
+  },
+  "codex-responses-error-event-retried-six-times-2026": {
+    "body": [
+      "2026年11月14日、OpenAI のコーディングエージェント Codex について、接続先 API のエラーの返し方によっては同じ要求を繰り返し送る問題が、GitHub の Issue #61547 で報告された。報告者の HengYangDS 氏が codex-cli 0.169.0 と手元のスクリプト型 Responses API サーバーで再現した。",
+      "再現の内容は次のとおりである。API が平坦な形式の error（validation_error）を返すと、Codex は理由を利用者に表示せず、同じ要求を5回再試行し、合計6回送信した。一方、Codex が既知の分類に当てはまる形式でエラーを返す対照条件では、送信は1回で止まった。問題の中心は、接続先が「この要求は実行できない」という事実を返したのに、Codex がそれを通信の切断と区別できなかった点にある。実際に課金が6倍になったという報告ではない。",
+      "この問題が起きやすいのは、企業内 API、互換実装のモデル API、Web 検索に対応しないモデルなど、公式とは異なるエラーを返す接続先を使う場合である。拒否の理由が利用者に届かないため、設定の誤りに気づく手がかりも失われる。",
+      "Issue のコメントでは、別のレビュアーが Codex のソースコードを読み、未知の拒否コードが再試行の経路に入ることと、失敗の通知の後に完了の通知が届くと失敗が隠れる場合があることを指摘した。こちらはソースコードからの検討であり、実機で再現したという主張ではない。元の報告者の計測とは分けて扱う必要がある。",
+      "2026年11月15日時点で Issue は開いたままで、Codex の保守者が修正を取り込んだ事実や、修正版の配布は確認されていない。",
+      "【編集履歴】2026-11-15 掲載。本記事は AI News の記事候補 Issue #212 を基に、一次資料（Codex の Issue #61547）を運営側で確認して書いた。"
+    ],
+    "primarySources": [
+      {
+        "title": "Codex Issue #61547（不具合の報告と再現）",
+        "site": "GitHub（openai/codex）",
+        "url": "https://github.com/openai/codex/issues/61547"
+      },
+      {
+        "title": "Codex のソースコード（応答ストリームのエラー処理）",
+        "site": "GitHub（openai/codex）",
+        "url": "https://github.com/openai/codex/blob/main/codex-rs/codex-api/src/sse/responses.rs"
+      }
+    ]
   }
 };
 

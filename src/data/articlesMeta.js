@@ -13578,5 +13578,22 @@ export const ARTICLES_META = [
       "活用",
       "安全性"
     ]
+  },
+  {
+    "id": "codex-responses-error-event-retried-six-times-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex、API が「実行できない」と返しても同じ要求を6回送る不具合が報告される",
+    "excerpt": "OpenAI の Codex で、接続先の API が要求を実行できないと明示するエラーを返しても、形式によっては Codex が理由を利用者に伝えず、同じ要求を5回再試行する問題が報告された。再現は利用者の手元環境で行われ、2026年11月15日時点で修正は確認されていない。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-14",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Codex",
+      "OpenAI",
+      "不具合",
+      "API"
+    ]
   }
 ];
