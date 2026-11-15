@@ -31776,6 +31776,256 @@ const ARTICLES_BODY = {
         "url": "https://code.claude.com/docs/en/changelog"
       }
     ]
+  },
+  "gpt-6-1-sol-terra-review": {
+    "body": [
+      "GPT-6.1 Sol と GPT-6.1 Terra は、OpenAI の GPT-6 世代の中位に位置する2モデルである。GPT-6.1 Sol（API のモデル ID は `gpt-6.1-sol`）は2026年9月29日に GPT-6 Sol のアップグレードとして公開され、GPT-6.1 Terra（`gpt-6.1-terra`）は10月26日に GPT-5.6 Terra の後継として公開された。本稿は、GPT-6 世代の4モデルをまとめた[GPT-6 レビュー](?a=gpt-6-review)のうち、この2モデルだけを取り出した詳細版である。Sol の公開時の状況は[当サイトの記事](?a=openai-gpt-6-1-sol-codex-work-api-2026)でも扱った。",
+      "本稿の根拠は、OpenAI の公式ドキュメント（developers.openai.com と learn.chatgpt.com）と、openai.com の発表記事2本である。今回は openai.com 本体にも到達できたため、発表記事にある評価の記述も一次資料として扱えた。ただし、性能に関する数値はすべて OpenAI 自身の公表値であり、独立した第三者による検証は確認できていない。料金と仕様は、2026年11月15日に確認した各ページの記載に基づく。",
+      "",
+      "OpenAI の API ガイド（Using GPT-6）は、最も難しい作業には GPT-6 Astra、低いコストで複雑な作業には GPT-6.1 Sol、視覚的推論と文章には GPT-6.1 Terra、絞り込まれた大量の作業には GPT-6 Luna、という使い分けを示している。ChatGPT・Codex 側のモデル一覧も、GPT-6.1 Sol を「Astra より低いコストで Astra に近い性能」、GPT-6.1 Terra を「文章、視覚理解、コンピュータ操作のための高速で効率的な選択肢」と説明している。",
+      "GPT-6.1 Sol: 発表記事は「エージェント的なコーディング、コンピュータ操作、専門業務で GPT-6 Astra の知能にほぼ並び、標準の入力・出力トークン価格は Astra の5分の1」と位置づけている。複雑なコーディング、コンピュータ操作、専門業務向けで、Codex CLI 0.159.1 では同梱カタログの既定モデルになった。公開時の提供先は、Plus・Pro・Business・Enterprise・Edu の ChatGPT Work と Codex、および API で、Chat では使えない。",
+      "GPT-6.1 Terra: 発表記事は「詳細な視覚的推論と精密なコンピュータ操作、より明快で自然な文章を組み合わせた、高速で効率的なモデル」と位置づけている。用途の例として、提案書の下書き、技術図面の解釈、フォームの入力、動画の編集、請求書の読み取りと会計ソフトウェアへの入力が挙がっている。公開日は、OpenAI の研究インデックスの掲載日（2026年10月26日）に基づく。発表記事が挙げた提供先は Plus・Pro・Enterprise・Edu の ChatGPT Work と Codex、および API で、現在の料金ページでは Business を含む5プランとされている。OpenAI 以外のクライアントでは、GitHub Copilot CLI 1.0.106（2026年11月6日公開）で、利用できるアカウントで Terra が選択可能になったことが[当サイトの記事](?a=github-copilot-cli-1-0-106-code-command-settings-dashboard-terra-2026)で確認できる。",
+      "",
+      "両モデルとも、入力はテキストと画像、出力はテキストで、音声と動画は非対応である。コンテキストウィンドウは 1,050,000 トークン、最大入力は 922,000 トークン、最大出力は 128,000 トークンである。対応エンドポイントは Responses、Chat Completions、Batch で、ファインチューニングと predicted outputs は非対応である。ツール呼び出しには Responses API を使う必要がある。提供は OpenAI の API のほか Amazon Bedrock でも行われ、Google Cloud はプライベートプレビューとされている。",
+      "",
+      "違いは主に5点ある。(1) 価格は Terra が Sol の半額である。(2) reasoning effort は、Sol が low / medium（既定）/ high / xhigh / max の5段階で none と minimal は非対応、Terra は none を含む6段階である。(3) 知識のカットオフは Sol が2026年4月30日、Terra が2026年6月1日と、Terra の方が新しい。(4) Ultrafast は Sol にだけあり、Terra には無い。(5) Codex と ChatGPT Work での既定のコンテキストウィンドウ 500,000 トークンは、Sol のモデルページとモデル一覧に記載がある（Terra のページに同等の記載は無い）。このほか、ChatGPT・Codex 側のモデル一覧の対応表では、Terra に Codex IDE 拡張の項目が無い（Sol にはある）。レート制限は両モデルとも同じ枠（Build で 5,000 RPM・1,000,000 TPM、Grow で 15,000 RPM・40,000,000 TPM）で、Terra のモデルページには Batch のキューの上限も併記されている。",
+      "",
+      "次の表は、API ドキュメントの価格表（Standard）である。入力が 272K トークンを超えるリクエストは、リクエスト全体が入力・キャッシュ側の単価2倍、出力1.5倍で課金されるため、表ではその単価も併記した。",
+      "キャッシュ入力は、両モデルとも非キャッシュ入力の5%である。キャッシュ書き込みは、Sol が30分保持で $2.50、12時間保持で $5.00、Terra が30分保持で $1.25、12時間保持で $2.50（いずれも30分保持の単価は非キャッシュ入力の1.25倍）。Batch と Flex は Standard の50%、Fast は Standard の2倍である。Ultrafast は Sol のみで Standard の6倍（入力 $12 / 出力 $60）になる。発表時点では Ultrafast は「近日」とされていたが、2026年11月15日に確認した価格表には GPT-6.1 Sol の行がある。リージョン処理（データレジデンシー）を使うと10%の上乗せがある。",
+      "",
+      "ChatGPT Work と Codex は利用枠を共有している。サブスクリプション側は、モデルごとにクレジットの消費レートが定められている（次表、100万トークンあたり）。Codex のクレジット課金には、API のようなキャッシュ書き込みの別料金は無い。同ページは、API のトークン価格をサブスクリプションの利用枠の見積もりに使わないよう注記している。",
+      "同じ料金ページによれば、Plus と Standard Business の5時間あたりのローカルメッセージ数の目安は、GPT-6.1 Sol が 15〜160、GPT-6.1 Terra が 35〜285 である。これは OpenAI の推定による目安で固定の上限ではなく、週次の上限が別にかかることもある。サブスクリプションの利用枠から使う場合、GPT-6.1 Sol には長コンテキストの上乗せ課金が無いとされている。Fast は含まれる利用枠を Standard の2.5倍、購入クレジットと Enterprise の従量課金を2倍で消費し、GPT-6.1 Sol の Ultrafast は利用枠を8倍、クレジット等を6倍で消費する。",
+      "",
+      "発表記事は次の評価を挙げている。DeepSWE v1.1（実在のコードベースでの複雑なソフトウェア工学の評価）では Astra と同等で、コストは約5分の1、GPT-6 Sol の最高値を6.4ポイント上回った。GDP.pdf（表・図・細部を含む複雑な PDF での専門的な質問）では、フォールバックありの Opus 5.5 を上回り Astra に近づいた。AutomationBench（多段階の業務ワークフロー）では、medium の設定で Opus 5.5 を2.2ポイント上回った。OSWorld 2.0 のオフラインセットでは、最大の設定で GPT-6 Sol を7ポイント上回り、Astra まで2.1ポイント差だった。Terminal-Bench Science 0.1 では GPT-6 Sol の2倍を超え、タスクあたりの平均コストは $5.47（Opus 5.5 は $23.21、Astra は $23.80）とされた。事実性では、low の設定で事実の誤りを含む応答の割合が GPT-6 Sol の 11.4% から 7.7% に下がったとされる。**いずれも OpenAI が自社の環境で測った値で、独立した第三者による再現は確認できていない。**",
+      "",
+      "発表記事は次の評価を挙げている。Agents' Last Exam（専門業務の評価）では、medium の設定で GPT-5.6 Terra を15ポイント上回り（コストは約3分の1）、トークン単価が10分の1で Astra と同等圏とされた。最大の設定では Opus 5.5 の3倍を超えるトークン効率で、タスクあたりのコストは約9分の1になり、タスクの完了は Astra と GPT-6.1 Sol の3倍を超えて速いとされる。MMMU-Pro（視覚的推論）では全ての設定で GPT-5.6 Terra を上回り、Astra と GPT-6.1 Sol にほぼ並んだ。OSWorld 2.1 では、medium の設定で GPT-5.6 Terra の最高値を上回った。Terminal-Bench 4.0 では、最大の設定でタスクの 50.3% を解き、GPT-5.6 Terra の公表値 21.5% の2倍を超えた。Terminal-Bench-Science 0.1 では、最大の設定で GPT-6.1 Sol を上回り、Opus 5.5 まで5ポイント差だった。事実性では、誤りを誘うプロンプトでの社内ベンチマークで、low の設定の誤り率が GPT-5.6 Terra の 53.6% から 16.7% に下がったとされる。**いずれも OpenAI の公表値で、独立した第三者による再現は確認できていない。** なお発表記事は、最も複雑なコーディングでは GPT-6.1 Sol と GPT-6 Astra が適すると明記している。",
+      "",
+      "当サイトのモデル比較表が採用している指標（SWE-bench Verified、SWE-bench Pro、Terminal-Bench 2.1、OSWorld-Verified、BrowseComp、GPQA Diamond など）について、両モデルの値は公式に公表されていない。モデル比較表でも両モデルの行はこれらの列が空欄であり、本稿も、発表記事にある別の評価の値をこれらの指標に読み替えることはしない。Terra の Terminal-Bench は 4.0 で、比較表の 2.1 とは版が違う点にも注意が要る。",
+      "",
+      "Responses API では、web search、file search、image generation、code interpreter、hosted shell、apply patch、skills、computer use、MCP、tool search が両モデルで使える（両モデルのモデルページ）。API ガイドの What's new は「Multi-agent と永続化された推論」を GPT-6.1 Sol の項目として挙げており、Responses Multi-agent（ベータ）でサブエージェントに作業を委任でき、`reasoning.context` を `all_turns` にすると以前のターンの推論を再利用できる。Async tool calling、Mid-turn steering、会話の途中で reasoning effort を変更する機能は、GPT-6 世代共通の新機能としてガイドに載っている。",
+      "",
+      "GPT-6.1 Sol は、Enterprise と Edu では管理者が有効化するまで既定で無効である。GPT-6.1 Terra は、Enterprise ではワークスペースの可用性と管理者制御に依存するとされ、UAE の推論レジデンシーには対応しない。両モデルとも Chat では使えない。データレジデンシーでは、Fast モードは両モデルとも EU に対応し、GPT-6.1 Sol の Ultrafast は米国と EU のデータレジデンシーとグローバル処理に対応する。Terra を Codex CLI で使うには 0.159.0 以降が必要である。",
+      "",
+      "公式ガイドは次を挙げている。`gpt-6-sol` から `gpt-6.1-sol` へ移る場合、現在の reasoning effort が `none` なら `low` を使う。Chat Completions で関数を呼んでいるリクエストは Responses API へ移す。GPT-5.6 Terra から GPT-6.1 Terra へ移る場合は、同じ reasoning effort で、代表的な画像とワークフローを使って両モデルを比較するよう案内されている。また、reasoning effort が `none` 以外のときは `temperature`、`top_p`、`top_logprobs` を外す（Chat Completions では `logprobs` も外す）。",
+      "",
+      "GPT-6.1 Terra は、Preparedness Framework のサイバーセキュリティの区分で Critical の閾値に達し、GPT-6 Astra のために開発された保護策を維持していると発表記事は述べている。GPT-6.1 Sol については、発表記事がアラインメント評価での GPT-6 Sol からの改善と、システムカードの追補の存在を挙げている。一方、Astra に組み込まれている非同期の安全監視（Misalignment monitoring）と同じ仕組みが Sol と Terra にもあるとは、到達できたドキュメントには書かれていない。",
+      "",
+      "(1) **価格**: Sol は GPT-5.6 Sol の半額、Terra はその半額で、入力単価は Astra の10分の1である。キャッシュ入力は入力の5%に抑えられている。",
+      "(2) **用途で分かれた2モデルが同じ土台を共有する**: コーディングと専門業務の Sol、視覚・コンピュータ操作・文章の Terra で、コンテキストやエンドポイントなどの仕様はほぼ共通であり、タスクごとに切り替えやすい。",
+      "(3) **サブスクリプションで利用枠が伸びる**: クレジットレートは Sol が入力50で GPT-6 Sol と同じ水準のままキャッシュ入力が半分になり、Terra は全項目が Sol の半分である。メッセージ数の目安でも Terra は Sol の約2倍である。",
+      "(4) **長いコンテキストと出力**: 両モデルとも 1,050,000 トークンのコンテキストと 128,000 トークンの最大出力が記載されている。ただし 272K を超えると単価が上がる。",
+      "(5) **Sol の Ultrafast**: Standard の6倍の単価と引き換えに、Codex では Standard の最大8倍のトークン生成がうたわれている（速度の数値はトークン生成速度であり、タスクの完了時間ではない）。",
+      "",
+      "(1) **性能の独立検証が確認できていない**: 本稿が扱える性能の情報は OpenAI の公表値のみで、比較表の標準指標は未公表である。採用の前に自分のタスクでの比較が必要で、OpenAI 自身も GPT-6.1 Sol と Astra を同じタスクで比較するよう案内している。",
+      "(2) **Chat では使えない**: 両モデルとも、使う場所は ChatGPT Work と Codex と API に限られる。",
+      "(3) **ツール呼び出しは Responses 前提**: Chat Completions の関数呼び出しはそのままでは使えず、移行作業が要る。",
+      "(4) **Sol は none 非対応**: `gpt-6-sol` で reasoning effort の `none` を使っていた設定は、`low` への読み替えが要る。",
+      "(5) **272K を超える入力の単価**: 長いコンテキストを使い切るほど、リクエスト全体に割増がかかる。",
+      "(6) **提供の断片化**: プラン、クライアントの版（Terra は Codex CLI 0.159.0 以降）、ワークスペース設定で、使えるかどうかが変わる。",
+      "",
+      "(a) モデル比較表の標準指標の値と、性能の独立検証。第三者機関による測定が報じられてはいるが、本稿の作成時点では原典を確認していない。(b) 実際の使用感。本稿はドキュメントと発表記事の記載を整理したもので、AI News 編集部による実測は含まない。(c) Terra の発表記事自体に掲載日の表示が確認できなかったため、公開日は OpenAI の研究インデックスの掲載日に基づく。(d) Astra の非同期安全監視と同じ仕組みが Sol と Terra にあるかどうか。",
+      "",
+      "★は、AI品質30% / 使いやすさ25% / コスパ20% / 拡張性15% / 企業向け10% の5軸の加重平均で、モデルの性能に加えて料金・提供条件・利用制限を含む採用判断向けの評価である。ベンチマークのみの総合値（モデル比較表）とは別の尺度である。★は、執筆した担当の5軸採点と、記事本文を見ずに事実資料だけで採点した独立の採点役の点数の平均とし、平均が 0.25 または 0.75 になった軸は低い側に丸めた。結果は AI品質 4.0、使いやすさ 3.5、コスパ 4.5、拡張性 4.0、企業向け 3.0 で、加重平均は 3.875（rating は小数1桁に丸めて 3.9）である。二つの採点が分かれたのは AI品質、使いやすさ、企業向けで、独立採点は、標準指標が未公表で第三者検証が確認できないこと、両モデルとも Chat で使えないこと、Terra の提供がワークスペース設定に依存することを重く見た。AI品質は暫定値で、独立した測定が公表されれば見直す。",
+      "",
+      "OpenAI 自身のガイドの整理では、最も難しい作業は Astra、コストを下げたい複雑な作業は GPT-6.1 Sol、視覚的推論と文章は GPT-6.1 Terra が担当である。編集部として補足すると、API では、まず Terra で回して詰まったタスクだけ Sol に上げる段階構成が、単価差（2倍）と仕様の共通性から組みやすい。逆に、最初から Sol を既定にする場合は、272K を超える入力の割増と、キャッシュを効かせる前提のプロンプト設計を先に決めておく必要がある。Codex では既定が Sol だが、文章・視覚・フォーム入力が中心の作業では、Terra に切り替えると同じ利用枠でこなせるタスク数が増える。",
+      "",
+      "・GPT-6.1 Sol / GPT-6.1 Terra のレビューを新規作成。GPT-6 世代レビューの詳細版として、公式ドキュメント（developers.openai.com、learn.chatgpt.com）と openai.com の発表記事2本の記載を整理した。性能の数値は OpenAI の公表値のみで、モデル比較表の標準指標は両モデルとも公表されていないため、本稿でもその指標の値は掲載していない。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 7,
+        "caption": "GPT-6.1 Sol / GPT-6.1 Terra の仕様（出典: OpenAI API ドキュメントのモデルページ、2026-11-15 確認）",
+        "headers": [
+          "項目",
+          "GPT-6.1 Sol",
+          "GPT-6.1 Terra"
+        ],
+        "rows": [
+          [
+            "モデル ID",
+            "gpt-6.1-sol",
+            "gpt-6.1-terra"
+          ],
+          [
+            "位置づけ",
+            "複雑なコーディング・コンピュータ操作・専門業務",
+            "視覚的推論・コンピュータ操作・文章作成"
+          ],
+          [
+            "コンテキストウィンドウ",
+            "1,050,000 トークン",
+            "1,050,000 トークン"
+          ],
+          [
+            "最大入力",
+            "922,000 トークン",
+            "922,000 トークン"
+          ],
+          [
+            "最大出力",
+            "128,000 トークン",
+            "128,000 トークン"
+          ],
+          [
+            "知識のカットオフ",
+            "2026年4月30日",
+            "2026年6月1日"
+          ],
+          [
+            "reasoning effort",
+            "low / medium（既定）/ high / xhigh / max",
+            "none / low / medium（既定）/ high / xhigh / max"
+          ],
+          [
+            "Ultrafast",
+            "対応（Standard の6倍）",
+            "非対応"
+          ],
+          [
+            "ファインチューニング",
+            "非対応",
+            "非対応"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 11,
+        "caption": "GPT-6.1 Sol / GPT-6.1 Terra の API 価格（Standard、$ / 100万トークン。出典: OpenAI API ドキュメントの価格表、2026-11-15 確認）",
+        "headers": [
+          "モデル",
+          "入力",
+          "キャッシュ入力",
+          "出力",
+          "272K超の入力",
+          "272K超の出力"
+        ],
+        "rows": [
+          [
+            "GPT-6.1 Sol",
+            "$2.00",
+            "$0.10",
+            "$10.00",
+            "$4.00",
+            "$15.00"
+          ],
+          [
+            "GPT-6.1 Terra",
+            "$1.00",
+            "$0.05",
+            "$5.00",
+            "$2.00",
+            "$7.50"
+          ],
+          [
+            "GPT-6 Astra（参考）",
+            "$10.00",
+            "$1.00",
+            "$50.00",
+            "$20.00",
+            "$75.00"
+          ],
+          [
+            "GPT-6 Sol（参考）",
+            "$2.00",
+            "$0.20",
+            "$10.00",
+            "$4.00",
+            "$15.00"
+          ],
+          [
+            "GPT-5.6 Terra（参考）",
+            "$2.00",
+            "$0.20",
+            "$12.00",
+            "$4.00",
+            "$18.00"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 14,
+        "caption": "ChatGPT・Codex のクレジットレート（Standard、クレジット / 100万トークン。出典: learn.chatgpt.com の料金ページ、2026-11-15 確認）",
+        "headers": [
+          "モデル",
+          "入力",
+          "キャッシュ入力",
+          "出力"
+        ],
+        "rows": [
+          [
+            "GPT-6.1 Sol",
+            "50",
+            "2.5",
+            "250"
+          ],
+          [
+            "GPT-6.1 Terra",
+            "25",
+            "1.25",
+            "125"
+          ],
+          [
+            "GPT-6 Astra（参考）",
+            "250",
+            "25",
+            "1,250"
+          ],
+          [
+            "GPT-5.6 Terra（参考）",
+            "50",
+            "5",
+            "300"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "site": "OpenAI",
+        "title": "Introducing GPT-6.1 Sol",
+        "url": "https://openai.com/index/introducing-gpt-6-1-sol/"
+      },
+      {
+        "site": "OpenAI",
+        "title": "Introducing GPT-6.1 Terra",
+        "url": "https://openai.com/index/introducing-gpt-6-1-terra/"
+      },
+      {
+        "site": "OpenAI API ドキュメント",
+        "title": "GPT-6.1 Sol model page",
+        "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+      },
+      {
+        "site": "OpenAI API ドキュメント",
+        "title": "GPT-6.1 Terra model page",
+        "url": "https://developers.openai.com/api/docs/models/gpt-6.1-terra"
+      },
+      {
+        "site": "OpenAI API ドキュメント",
+        "title": "Pricing",
+        "url": "https://developers.openai.com/api/docs/pricing"
+      },
+      {
+        "site": "OpenAI API ドキュメント",
+        "title": "Using GPT-6",
+        "url": "https://developers.openai.com/api/docs/guides/latest-model"
+      },
+      {
+        "site": "ChatGPT・Codex ドキュメント",
+        "title": "Models",
+        "url": "https://learn.chatgpt.com/docs/models"
+      },
+      {
+        "site": "ChatGPT・Codex ドキュメント",
+        "title": "Pricing",
+        "url": "https://learn.chatgpt.com/docs/pricing"
+      },
+      {
+        "site": "OpenAI",
+        "title": "Research index（GPT-6.1 Terra の掲載日 2026年10月26日の確認）",
+        "url": "https://openai.com/research/index/"
+      }
+    ]
   }
 };
 
