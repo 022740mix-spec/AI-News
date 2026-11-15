@@ -13071,6 +13071,343 @@ export const ARTICLES_META = [
     ]
   },
   {
+    "id": "anthropic-ipo-roadshow-launch-price-range-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Anthropic が IPO のロードショーを開始 — 募集は Class A 普通株 8億2,500万株、想定価格は1株 70〜78 ドル",
+    "excerpt": "Anthropic は11月10日、新規株式公開（IPO）に向けたロードショーを始めたと発表した。募集は Class A 普通株 8億2,500万株で、うち約8億135万株を同社が、約2,365万株を既存株主が売り出す。想定価格帯は1株 70〜78 ドル。10月26日の S-1 提出の発表では未定だった株数と価格帯が示された。届出書はまだ効力を生じておらず、評価額や上場日は発表文に書かれていない。",
+    "date": "2026-11-12",
+    "newsDate": "2026-11-10",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "IPO"
+    ]
+  },
+  {
+    "id": "anthropic-public-benefit-fund-5-percent-shares-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Anthropic が株式の5%を「Anthropic Public Benefit Fund」に拠出すると発表 — 企業価値が基準から50%増えるごとに2%を追加できる仕組み、株主の承認が条件",
+    "excerpt": "Anthropic は10月18日、自社株の一部を新設の完全子会社「Anthropic Public Benefit Fund」に拠出すると発表した。株主の承認を条件に5%を拠出し、企業価値が基準値から50%増えるごとに、取締役会の裁量で2%を追加できる。形態は LLC で、保有株をロビー活動や政治献金に使わないとしている。基準値、統治の仕組み、使い道の詳細は「今後数か月で公表する」とされ、発表文には書かれていない。",
+    "date": "2026-11-12",
+    "newsDate": "2026-10-18",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "資金調達"
+    ]
+  },
+  {
+    "id": "anthropic-self-hosted-claude-managed-agents-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude Managed Agents にセルフホスト版 — サービス本体とセッション履歴を自社のインフラに置き、モデル呼び出し先は Claude API・Bedrock・Google Cloud・Foundry・自前のゲートウェイから選ぶ",
+    "excerpt": "Anthropic の Claude Platform リリースノートに、11月12日付で self-hosted Claude Managed Agents が載った。これまで利用者側に置けたのはサンドボックスだけだったが、API・エージェントループ・保存先を含むサービス本体も自社のインフラで動かせる。利用にはアカウントチームへの申請が要る。ホスト版との違い、外に出るデータ、利用者側が負う責任を公式ドキュメントに基づいて整理する。",
+    "date": "2026-11-13",
+    "newsDate": "2026-11-12",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "エージェント",
+      "API",
+      "セルフホスト",
+      "エンタープライズ"
+    ]
+  },
+  {
+    "id": "gemini-cli-0-68-extension-validate-rate-limit-countdown-subagentstop-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Gemini CLI 0.68.0 の変更点、拡張機能の検証コマンド、429 の待ち時間をカウントダウン表示、SubagentStop フック、選んだモデルがフォールバック後も保たれる修正",
+    "excerpt": "Google の Gemini CLI 0.68.0 が2026年11月10日に公開された。拡張機能の設定を検証するコマンドが加わり、レート制限（HTTP 429）の待ち時間が読み込み表示にカウントダウンで出るようになった。一時的なフォールバックやキャンセルのあとも選んだモデルが保たれる修正、SubagentStop イベントへの対応も入っている。公式の変更履歴に基づいて整理する。",
+    "date": "2026-11-13",
+    "newsDate": "2026-11-10",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Gemini CLI",
+      "CLI",
+      "Google",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "github-copilot-cli-1-0-107-to-1-0-109-sandbox-cidr-index-fable-5-2-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "GitHub Copilot CLI 1.0.107〜1.0.109、サンドボックスのホスト規則が CIDR に対応、/index と共有の索引検索が既定で有効に、Fable 5.2 が選択可能に、MCP の拒否規則は --allow-all-tools でも効く",
+    "excerpt": "GitHub Copilot CLI の 1.0.107（11月6日）、1.0.108（11月9日）、1.0.109（11月10日）の変更点を、公式の changelog に基づいて整理する。サンドボックスのホスト許可・拒否規則が IPv4/IPv6 の CIDR に対応し、対象のリポジトリでは共有の索引検索が既定で有効になった。権限まわりでは、MCP の拒否規則や読み取り専用スクリプトの扱いに修正が入っている。",
+    "date": "2026-11-13",
+    "newsDate": "2026-11-10",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "GitHub Copilot",
+      "CLI",
+      "サンドボックス",
+      "MCP",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "claude-code-2-1-323-code-mode-plugin-engines-permission-sandbox-fixes-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.323、ツールを JavaScript から呼ぶ実験機能 Code Mode、plugin.json の対応バージョン指定、権限チェックとサンドボックスの修正が多数",
+    "excerpt": "Claude Code の CHANGELOG に 2.1.323（11月12日付）が載った。Claude が JavaScript を書いて自分のツールを呼ぶ Code Mode が、利用者が有効にする実験機能として加わり、plugin.json には対応する Claude Code の版の範囲を書けるようになった。auto モードが使えないときに、より緩いモードで始まることがあった不具合、Read の拒否ルールがあるパスへ Write・Edit が書けた不具合など、権限とサンドボックスの修正が並ぶ。未知のモデル ID に仮定するコンテキスト長は 200K から 1M に変わった。",
+    "date": "2026-11-13",
+    "newsDate": "2026-11-12",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "セキュリティ",
+      "サンドボックス",
+      "プラグイン",
+      "MCP"
+    ]
+  },
+  {
+    "id": "googlechrome-modern-web-guidance-1-0-agent-skills-web-platform-2026",
+    "type": "news",
+    "category": "product",
+    "title": "GoogleChrome の「Modern Web Guidance」が 1.0.0 に — コーディングエージェントに新しい Web 標準の書き方を渡すスキル、Chrome・Edge・Firefox・MDN のチームが共同で管理",
+    "excerpt": "GitHub の GoogleChrome 組織が公開している Modern Web Guidance の npm パッケージが、11月10日に 1.0.0 になった。コーディングエージェントが古い書き方に寄りがちな点を補うスキルで、README によると250件の Web 機能を扱い、検索はネットワークを使わずローカルで行う。README は Chrome・Edge・Firefox・MDN のチームが共同で管理すると書いている。導入の有無で合格率を比べた数字（11月8日分で +28〜+36 ポイント）はプロジェクト自身の評価で、独立した検証は確認できていない。既定で匿名の利用情報を Google に送る。",
+    "date": "2026-11-13",
+    "newsDate": "2026-11-10",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Google",
+      "Agent Skills",
+      "オープンソース",
+      "エージェント",
+      "プラグイン"
+    ]
+  },
+  {
+    "id": "codex-cli-0-168-model-providers-tui-workspace-audio-attachments-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.168.0 の変更点、モデルプロバイダーを画面から選んで既定に、会話を横に並べる TUI の分割表示、音声の録音を添付、Vertex AI ではツール更新の差分送信が既定に",
+    "excerpt": "OpenAI の Codex CLI の 0.168.0 が11月13日に公開された。Sessions の画面からモデルプロバイダーを一覧して新しいチャットの既定を選べるようになり、features.tui_workspace を有効にすると、メインの会話の横に別の会話を並べられる。音声に対応したモデルには録音を添付できる。履歴と再開の一覧は、サインイン中の ChatGPT アカウントで絞られるようになった。11月11日の 0.167.2 は、Google Cloud Vertex AI でツールの更新を差分で送る動作を既定にした。",
+    "date": "2026-11-13",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "claude-code-2-1-325-sandbox-auto-allow-default-zstd-security-fix-permission-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.325、サンドボックス内の Bash も通常の権限確認を通るのが既定に、zstd 圧縮の応答のデコードにセキュリティ修正、権限ルールのすり抜けを複数修正",
+    "excerpt": "Claude Code の CHANGELOG に 2.1.325（11月13日付）が載った。サンドボックス内で動く Bash コマンドは、これまで確認なしで実行されていたが、既定では通常の権限確認を通るようになったと CHANGELOG は書いている。ただし公式ドキュメントの設定リファレンスは、同じ設定の既定値をまだ true（確認なし）としており、記載が食い違っている。zstd 圧縮の応答のデコードにあったセキュリティ上の問題の修正、cd のあとに相対パスの拒否ルールが効かなくなる不具合の修正なども入った。",
+    "date": "2026-11-14",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "セキュリティ",
+      "サンドボックス",
+      "プラグイン",
+      "VS Code"
+    ]
+  },
+  {
+    "id": "github-copilot-cli-1-0-110-1-0-111-managed-regex-rules-password-dialog-workflow-recursion-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "GitHub Copilot CLI 1.0.110〜1.0.111、組織管理の権限ルールが正規表現に対応、git・ssh・sudo のパスワード入力を伏せ字のダイアログで受ける実験機能、ワークフローが自分自身を際限なく起動する問題を修正",
+    "excerpt": "GitHub Copilot CLI の 1.0.110（11月12日）と 1.0.111（11月13日）の変更点を、公式の changelog に基づいて整理する。組織が管理する Shell・Bash・PowerShell の権限ルールに正規表現が使えるようになり、エージェントが実行したコマンドのパスワード入力に伏せ字のダイアログで答える実験機能が加わった。従来のリモート操作の仕組みは削除され、クラウドのセッションとリモート接続には AHP 環境が必須になった。",
+    "date": "2026-11-14",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "GitHub Copilot",
+      "CLI",
+      "サンドボックス",
+      "MCP",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "feature-anthropic-distillation-defenses-preserved-thinking-tradeoffs-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】Anthropic の蒸留対策は API の利用者に何を求めたか — 推論の要約、会話履歴の編集制限、拒否されたリクエストへの課金を、同社の10月の説明から整理する",
+    "excerpt": "Anthropic は10月12日、Claude の推論を抜き取って別のモデルを訓練する「蒸留攻撃」への対策を説明する記事を公開した。対策の導入後、抜き取られた推論の量は10分の1から100分の1以下になったと同社は述べている。この数字は同社自身の測定で、独立した検証は確認できていない。一方で同社は、正規の利用者に負担が生じたことも認めている。API の利用者がこの数か月に個別に受け取ってきた変更が、どうつながっているのかを整理する。",
+    "date": "2026-11-14",
+    "newsDate": "2026-10-12",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Anthropic",
+      "蒸留",
+      "Claude API",
+      "AI安全性",
+      "中国AI"
+    ]
+  },
+  {
+    "id": "codex-cli-0-169-side-chat-tabs-exec-trust-custom-providers-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.169.0 の変更点、codex exec は信頼していないディレクトリでプロジェクト設定と MCP を無効のままに、横の会話はタブで複数、独自のモデルプロバイダーを端末から追加",
+    "excerpt": "OpenAI の Codex CLI の 0.169.0 が11月13日に公開された。0.168.0 の約5時間後である。codex exec は、信頼していないディレクトリでは --sandbox workspace-write を付けてもプロジェクトの設定と MCP サーバーを無効のままにし、信頼を保存するには --trust を明示する。任意で有効にする端末のワークスペースは、横の会話を複数のタブで持てるようになった。独自のモデルプロバイダーは端末から追加・編集できる。",
+    "date": "2026-11-14",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "microsoft-tandem-design-first-copilot-workspace-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Microsoft が「Tandem」を MIT で公開 — コーディングエージェントに実装させる前に、要件・画面案・試作を人と見ながら決める作業場。実装は明示的に承認したときだけ始まる",
+    "excerpt": "Microsoft の GitHub に、Tandem というリポジトリが10月29日に公開された。GitHub Copilot の CLI と SDK の上で動く作業場で、要件、画面の案、モックのデータで動く試作、設計の合意を人とエージェントが見ながら決め、利用者が「Plan and implement」を選んだときだけ計画とコード変更が始まる。現状はソースからビルドするプレビューで、動作が確かめられているのは Windows だけである。11月2日には、人とエージェントが同じ図を編集するホワイトボードのスキルが加わった。",
+    "date": "2026-11-14",
+    "newsDate": "2026-10-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Microsoft",
+      "GitHub Copilot",
+      "エージェント",
+      "オープンソース",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "qwen-code-0-27-1-to-0-27-3-permissions-ask-auto-edit-approval-notify-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Qwen Code v0.27.1〜v0.27.3 — auto-edit でも permissions.ask の規則は確認を求める、承認待ちを端末のベルと通知で知らせる、/pr でセッションと PR を結び付け",
+    "excerpt": "Alibaba 系の QwenLM が開発する Qwen Code で、v0.27.1（11月9日）、v0.27.2（11月10日）、v0.27.3（11月13日）が続けて出た。v0.27.3 は、auto-edit モードでも permissions.ask の規則に当たるツール呼び出しに確認を求めるよう直し、上書きリダイレクト「>|」による書き込みを権限の判定に見えるようにした。v0.27.2 は承認待ちをライブパネルに出し、端末にフォーカスが無いときはベルや通知で知らせる。v0.27.2 には SDK と Web Shell の依存更新という破壊的変更が1件ある。",
+    "date": "2026-11-14",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Qwen Code",
+      "CLI",
+      "Qwen",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "gemini-decisions-api-calibrated-probabilities-no-output-tokens-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Gemini API に Decisions API — 文章を生成せず、はい・いいえ、選択、採点を確率で返す。出力トークンは 0、1回のリクエストで最大1,000問",
+    "excerpt": "Google の公式 SDK（google-genai / @google/genai）が11月11日付の v3.2.0 で Decisions API に対応した。専用モデル gemini-decision-1 が、入力に対する型付きの質問（noul・choice・score）に、文章ではなく較正された確率と確信度で答える。生成が無いので出力トークンは常に 0 で、1回のリクエストに1〜1,000問を載せられる。v1beta のみで、コンテキストキャッシュ・Batch API・Flex／Priority は使えない。入力トークンの単価は、今回読めた資料には書かれていない。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-11",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "API",
+      "SDK",
+      "エージェント",
+      "モデルルーティング"
+    ]
+  },
+  {
+    "id": "gemini-4-hydrogen-carbon-gemini-api-cookbook-migration-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Gemini 4 Hydrogen と Carbon が Gemini API に — Hydrogen は無料枠でも使え、入力 $1.50・出力 $7.50。temperature は無視され、明示的なキャッシュは使えない",
+    "excerpt": "Google の公式 SDK に gemini-4-carbon（11月10日）と gemini-4-hydrogen（11月12日）が加わり、公式 Cookbook の既定モデルが Gemini 4 Hydrogen に切り替わった。Cookbook によると、Hydrogen は無料枠と有料枠の両方で使え、価格は入力100万トークンあたり1.50ドル、出力7.50ドル。思考レベルの既定は high で、xhigh は Hydrogen だけが持つ。Gemini 4 では temperature などのサンプリング設定が無視され、明示的なキャッシュが使えず、thinking_level の minimal は 400 エラーになる。Google の発表記事と ai.google.dev には今回到達できておらず、ベンチマークと Carbon・Argon の価格は確認できていない。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-12",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "モデル",
+      "API",
+      "料金",
+      "SDK"
+    ]
+  },
+  {
+    "id": "microsoft-benchpress-benchmark-score-matrix-completion-2026",
+    "type": "news",
+    "category": "data",
+    "title": "Microsoft Research の「BenchPress」— 測っていないベンチマークの点数を、公開済みの点数表から推定する。84モデル×133項目の表は埋まっているのが23.3%",
+    "excerpt": "Microsoft Research の研究者が、モデルとベンチマークの点数表の空欄を推定するツール BenchPress を MIT ライセンスで公開している（論文とコードは2026年6月23日付）。公開されている点数を集めた84モデル×133ベンチマークの表は、埋まっているのが23.3%。著者らは、この表がほぼ2つの因子で説明でき、隠した点数を中央値で4.6ポイントの誤差で当てられたと報告する。5つのベンチマークを測れば残りを誤差3.93ポイントで推定できた、とも書く。数値は著者らの報告で、独立した検証は確認できていない。",
+    "date": "2026-11-15",
+    "newsDate": "2026-06-23",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Microsoft",
+      "ベンチマーク",
+      "評価",
+      "オープンソース",
+      "研究"
+    ]
+  },
+  {
+    "id": "anthropic-claude-meetings-beta-google-meet-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude Meetings がベータ公開 — Claude がビデオ会議に「参加者」として入り、会議中に文書やホワイトボードを作る。対応は Google Meet、Team・Enterprise から順次",
+    "excerpt": "Anthropic は11月12日、Claude をビデオ会議に参加者として加える Claude Meetings のベータ提供を始めた。会議中の質問に文字で答え、文書やホワイトボードを作り、ノートとアクションアイテムを残す。保存するのは文字起こし・要約・画面の説明で、音声は保存しないとされる。組織外の人が招待された会議には既定で入らない。対象プラン、対象外の組織、課金の扱いを公式記事に基づいて整理する。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-12",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "会議",
+      "Google Meet",
+      "エンタープライズ",
+      "プライバシー"
+    ]
+  },
+  {
+    "id": "feature-anthropic-building-strong-safety-evaluations-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】「前のモデルより安全」は何を測った結果か — Anthropic が安全性評価の作り方を公開。拒否率では測れない領域、API と claude.ai で最大34ポイントの差、数ポイントの差は誤差でありうる",
+    "excerpt": "Anthropic は11月13日、安全性評価（safety eval）の設計・実行・報告についての推奨事項を公開した。単発の質問による評価は94〜98%で飽和していること、同じモデルでも API と claude.ai で適切応答率が最大34ポイント違ったこと、98%と94%の差が統計的に有意でなかった例など、自社のシステムカードの数字を使って説明している。数字はすべて同社の報告である。安全性の数値を読む側が何を確かめればよいかを整理する。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "Anthropic",
+      "AI安全性",
+      "評価",
+      "ベンチマーク",
+      "透明性"
+    ]
+  },
+  {
     "id": "nodejs-security-release-2026-11-11",
     "type": "news",
     "category": "product",
