@@ -13595,5 +13595,23 @@ export const ARTICLES_META = [
       "不具合",
       "API"
     ]
+  },
+  {
+    "id": "deepseek-app-suite-api-meaning-cost-data-2026",
+    "type": "feature",
+    "category": "product",
+    "title": "DeepSeek がアプリの機能一式を API で開放した。何が変わり、費用はいくらで、データはどこへ行くのか",
+    "excerpt": "2026年11月13日、DeepSeek は自社アプリの Web 検索、ファイル入力、URL 読み取り、安全性チェック、音声を API で開放した。ツールの実行は DeepSeek のサーバー側が担う。開発者は検索や OCR の仕組みを自前で組まずに済む一方、料金はトークンとは別建てになり、入力データは中国のサーバーで処理される。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "DeepSeek",
+      "API",
+      "オープンソース",
+      "料金",
+      "データ"
+    ]
   }
 ];
