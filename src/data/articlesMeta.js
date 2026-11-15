@@ -13630,5 +13630,23 @@ export const ARTICLES_META = [
       "プライバシー",
       "金融"
     ]
+  },
+  {
+    "id": "qwen-code-0-27-4-auto-explicit-authorization-managed-terminal-hook-records-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Qwen Code v0.27.4 — AUTO モードは危険な操作に利用者の明示的な許可を求める、分類器のタイムアウトはセッションのモデルが1回見直す、フックの実行をターンごとに記録",
+    "excerpt": "QwenLM の Qwen Code で v0.27.4 が11月15日に出た。AUTO モードの権限判定は、破壊的・一括の操作について「依頼に関係があるか」ではなく「利用者が明示的に許可したか」を見るようになった。高速分類器がタイムアウトした場合は、セッションのモデルが1回だけ見直す。フックの実行記録、/memory の復活、Feishu・WeCom への送信専用 Webhook、依存パッケージの脆弱性対応も入った。破壊的変更は無いとされる。",
+    "date": "2026-11-16",
+    "newsDate": "2026-11-15",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Qwen Code",
+      "CLI",
+      "Qwen",
+      "開発ツール",
+      "セキュリティ"
+    ]
   }
 ];

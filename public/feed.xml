@@ -16,6 +16,14 @@
     <summary>Anthropic は11月5日、銀行・クレジットカード・ローン・投資の口座を Claude につなぎ、残高や支出について尋ねられる Personal Finance のベータ提供を始めた。接続は Plaid 経由の読み取り専用で、送金や運用はできない。Claude が読むのは口座名・種別・下4桁、残高と与信枠、最長24か月の取引である。専用ページでの会話はモデルの学習に使わないとされる。成果物や共有リンクに数字が残る条件、対象外のプランを公式記事とヘルプセンターに基づいて整理する。</summary>
   </entry>
   <entry>
+    <title>Qwen Code v0.27.4 — AUTO モードは危険な操作に利用者の明示的な許可を求める、分類器のタイムアウトはセッションのモデルが1回見直す、フックの実行をターンごとに記録</title>
+    <link rel="alternate" type="text/html" href="?a=qwen-code-0-27-4-auto-explicit-authorization-managed-terminal-hook-records-2026"/>
+    <id>tag:ai-tool-news.jp,2026:qwen-code-0-27-4-auto-explicit-authorization-managed-terminal-hook-records-2026</id>
+    <published>2026-11-16T15:00:00Z</published>
+    <updated>2026-11-16T15:00:00Z</updated>
+    <summary>QwenLM の Qwen Code で v0.27.4 が11月15日に出た。AUTO モードの権限判定は、破壊的・一括の操作について「依頼に関係があるか」ではなく「利用者が明示的に許可したか」を見るようになった。高速分類器がタイムアウトした場合は、セッションのモデルが1回だけ見直す。フックの実行記録、/memory の復活、Feishu・WeCom への送信専用 Webhook、依存パッケージの脆弱性対応も入った。破壊的変更は無いとされる。</summary>
+  </entry>
+  <entry>
     <title>Gemini API に Decisions API — 文章を生成せず、はい・いいえ、選択、採点を確率で返す。出力トークンは 0、1回のリクエストで最大1,000問</title>
     <link rel="alternate" type="text/html" href="?a=gemini-decisions-api-calibrated-probabilities-no-output-tokens-2026"/>
     <id>tag:ai-tool-news.jp,2026:gemini-decisions-api-calibrated-probabilities-no-output-tokens-2026</id>
