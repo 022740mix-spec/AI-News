@@ -13455,5 +13455,34 @@ export const ARTICLES_META = [
       "AI安全性",
       "透明性"
     ]
+  },
+  {
+    "id": "gpt-6-1-sol-terra-review",
+    "type": "review",
+    "category": "model",
+    "title": "GPT-6.1 Sol / GPT-6.1 Terra レビュー — Sol は Astra の5分の1の単価で Codex の既定、Terra はその半額で視覚推論とコンピュータ操作向け、性能は OpenAI の公表値のみ",
+    "excerpt": "OpenAI の GPT-6.1 Sol（2026年9月29日公開）と GPT-6.1 Terra（10月26日公開）のレビュー。API 価格は Sol が入力 $2 / 出力 $10、Terra がその半額の入力 $1 / 出力 $5 で、両モデルともコンテキストは 1,050,000 トークン。Sol は Codex の既定モデルになり、Terra は GitHub Copilot CLI でも選べるようになった。一方、両モデルとも Chat では使えず、ツール呼び出しは Responses API が前提になる。性能の数値は OpenAI の公表値のみで、当サイトのモデル比較表が採用する標準指標は両モデルとも公表されていない。",
+    "date": "2026-11-15",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "モデル",
+      "OpenAI",
+      "GPT-6",
+      "Sol",
+      "Terra"
+    ],
+    "lastReviewed": "2026-11-15",
+    "reviewCadence": "monthly",
+    "ratings": {
+      "AI品質": 4,
+      "コスパ": 4.5,
+      "企業向け": 3,
+      "使いやすさ": 3.5,
+      "拡張性": 4
+    },
+    "rating": 3.9,
+    "reviewCategory": "model"
   }
 ];
