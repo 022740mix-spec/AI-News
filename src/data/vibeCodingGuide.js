@@ -714,7 +714,7 @@ export const VIBE_CLAUDE_CODE = {
     {
       word: "Codex CLI セットアップ手順",
       section: "Codex CLI 連携",
-      mean: "4ステップで導入できる。(1) Codex CLI をグローバルインストール、(2) ChatGPT アカウントでログイン（ブラウザが開く）、(3) Claude Code でマーケットプレイス追加、(4) プラグインインストール。Team プラン以上なら GPT-5.4 が利用可能。モデルは `~/.codex/config.toml` の `model` キーで変更できる。",
+      mean: "4ステップで導入できる。(1) Codex CLI をグローバルインストール、(2) ChatGPT アカウントでログイン（ブラウザが開く）、(3) Claude Code でマーケットプレイス追加、(4) プラグインインストール。Team プラン以上なら現行の GPT 系モデルが利用可能。モデルは `~/.codex/config.toml` の `model` キーで変更できる。",
       code: "# ① Codex CLI インストール\nnpm install -g @openai/codex\n\n# ② ChatGPT サブスクリプションでログイン\ncodex login\n\n# ③ マーケットプレイス追加\nclaude plugin marketplace add openai/codex-plugin-cc\n\n# ④ プラグインインストール\nclaude plugin install codex@openai-codex",
       codeLang: "bash",
     },
@@ -735,7 +735,7 @@ export const VIBE_CLAUDE_CODE = {
     {
       word: "Codex 連携の料金",
       section: "Codex CLI 連携",
-      mean: "ChatGPT サブスクリプション認証（`codex login`）なら追加の従量課金なし。プランの使用枠内で処理される。API キー認証（`OPENAI_API_KEY`）は完全従量制。Claude Code 側と合わせた最安の組み合わせは Anthropic Pro + ChatGPT Plus の月額約40ドル。GPT-5.4 を使うなら Anthropic Pro + ChatGPT Team の月額約45〜50ドルが目安。",
+      mean: "ChatGPT サブスクリプション認証（`codex login`）なら追加の従量課金なし。プランの使用枠内で処理される。API キー認証（`OPENAI_API_KEY`）は完全従量制。Claude Code 側と合わせた最安の組み合わせは Anthropic Pro + ChatGPT Plus の月額約40ドル。現行の GPT 系モデルを使うなら Anthropic Pro + ChatGPT Team の月額約45〜50ドルが目安。",
     },
     // ── 料金 ──
     {
@@ -751,7 +751,7 @@ export const VIBE_CLAUDE_CODE = {
     {
       word: "料金: API 従量課金",
       section: "料金",
-      mean: "API キーを使って従量課金で利用する方法。サブスク上限を気にせず使えるが、モデルごとの単価（Opus: $15/$75、Sonnet: $3/$15 per 1M tokens）がかかる。大規模プロジェクトや CI/CD での自動実行に向く。",
+      mean: "API キーを使って従量課金で利用する方法。サブスク上限を気にせず使えるが、モデルごとの単価がかかる（単価はモデル世代ごとに変わる。現行世代の値は料金比較のレビュー記事を参照）。大規模プロジェクトや CI/CD での自動実行に向く。",
     },
     // ── 節約テクニック ──
     {
@@ -2360,7 +2360,7 @@ export const TOOL_REFERENCES = [
         { word: "インライン編集: `Cmd+K`（Mac）/ `Ctrl+K`（Win）", section: "エディタ補完", mean: "エディタ上でコードを選択して Cmd+K → AI に修正指示を出す。「この関数をリファクタして」のような短い修正に向く。" },
         { word: "Cursor + Claude Code の併用方法", section: "Claude Code 併用", mean: "Cursor の統合ターミナル（Ctrl+` で開く）で `claude` と入力して起動する。Cursor の Composer と Claude Code CLI は別々の AI セッションとして動作するため、それぞれに違う指示を出せる。例: Composer に「全体の設計を考えて」→ Claude Code に「このファイルのテストを書いて」。", code: "claude", codeLang: "bash" },
         { word: "設定: `.cursor/rules`", section: "設定", mean: "プロジェクトごとの AI ルールファイル。使用言語、命名規則、禁止パターンなどを書いておくと Cursor の AI の出力が安定する。CLAUDE.md と同じ役割だが、Cursor 専用の設定。", code: "言語: TypeScript\nフレームワーク: React 19\nスタイル: CSS Modules\n\n禁止:\n- any 型の使用\n- console.log の残置", codeLang: "text" },
-        { word: "設定: モデル選択", section: "設定", mean: "Settings → Models で AI モデルを選択できる。Claude Opus/Sonnet、GPT-5.4、Gemini など複数モデルを切り替えて使える。Composer と Tab 補完で別のモデルを使うこともできる。" },
+        { word: "設定: モデル選択", section: "設定", mean: "Settings → Models で AI モデルを選択できる。Claude Opus/Sonnet、GPT 系、Gemini など複数モデルを切り替えて使える。Composer と Tab 補完で別のモデルを使うこともできる。" },
         { word: "料金: Hobby（無料）", section: "料金", mean: "月 2,000 回の補完と 50 回のプレミアムリクエスト。個人で試すには十分。" },
         { word: "料金: Pro（$20/月）", section: "料金", mean: "無制限の補完、500 回のプレミアムリクエスト。日常的に使う人向け。" },
         { word: "料金: Business（$40/席/月）", section: "料金", mean: "チーム管理、SSO、管理者ダッシュボード付き。企業利用はこのプラン。" },
@@ -2415,7 +2415,7 @@ export const TOOL_REFERENCES = [
         { word: "設定: `codex.json`", section: "設定", mean: "Codex の動作設定ファイル。サンドボックスに入れるツール、環境変数、セットアップコマンドなどを指定する。プロジェクトルートに置く。" },
         { word: "設定: `codex.md`", section: "設定", mean: "AGENTS.md の別名。どちらのファイル名でも Codex は読み込む。チームで名前を統一しておくと混乱が少ない。" },
         // ── スラッシュコマンド（CLI） ──
-        { word: "操作: `/model`", section: "スラッシュコマンド", mean: "使用するモデルを切り替える。GPT-5.4 系の各バリアント（Standard, Thinking, Pro）やコーディング特化モデルを選べる。Claude Code の `/model` と同じ役割。" },
+        { word: "操作: `/model`", section: "スラッシュコマンド", mean: "使用するモデルを切り替える。現行の GPT 系モデルの各バリアントやコーディング特化モデルを選べる。Claude Code の `/model` と同じ役割。" },
         { word: "操作: `/compact`", section: "スラッシュコマンド", mean: "長い会話を要約して圧縮する。Claude Code の `/compact` と同じ。確認ダイアログが出るので Y で実行。コンテキストが足りなくなったときに使う。" },
         { word: "操作: `/diff`", section: "スラッシュコマンド", mean: "Git の差分を CLI 内で確認する。ステージ済み・未ステージ・未追跡ファイルをまとめて表示。コミット前の確認に使う。Claude Code の `/diff` と同じ。" },
         { word: "操作: `/review`", section: "スラッシュコマンド", mean: "ワーキングツリーの変更を AI がレビューし、問題点やテスト不足を指摘する。PR を出す前のセルフレビューに便利。" },
@@ -2471,10 +2471,10 @@ export const TOOL_REFERENCES = [
         // ── 基本操作 ──
         { word: "起動: `gemini`", section: "基本操作", mean: "対話セッションを開始する。初回は Google アカウントでのログインが求められる。プロジェクトのフォルダに移動してから実行する。", code: "cd C:\\Users\\あなた\\Projects\\my-app\ngemini", codeLang: "bash" },
         { word: "インストール", section: "基本操作", mean: "npm でグローバルインストールする。Node.js 18 以上が必要。パッケージ名は公式リポジトリで確認。", code: "npm install -g @anthropic-ai/claude-code  # Claude Code\nnpm install -g gemini-cli                  # Gemini CLI\n# パッケージ名は変更の可能性あり。公式を確認:\n# https://github.com/google-gemini/gemini-cli", codeLang: "bash" },
-        { word: "==200 万トークンコンテキスト==", section: "基本操作", mean: "Gemini 2.5 Pro の 200 万トークンのコンテキストウィンドウを活かし、大規模コードベースを一括で読み込める。数百ファイル規模のリポジトリでも全体を把握した上で回答できるのが他の CLI ツールとの最大の違い。" },
+        { word: "==大規模コンテキスト==", section: "基本操作", mean: "Gemini 系モデルは大規模なコンテキストウィンドウを持ち、大規模コードベースを一括で読み込める。数百ファイル規模のリポジトリでも全体を把握した上で回答できるのが他の CLI ツールとの最大の違い。具体的な上限はモデル世代ごとに変わるため、現行の値はレビュー（gemini-cli）を参照。" },
         // ── モデル選択 ──
-        { word: "モデル: Gemini 2.5 Pro", section: "モデル選択", mean: "高精度モデル。200 万トークンのコンテキストを活かした大規模コードベースの解析や複雑な推論に向く。2026年3月25日より有料サブスクリプション限定。" },
-        { word: "モデル: Gemini 2.5 Flash", section: "モデル選択", mean: "高速モデル。無料枠で利用可能。軽い質問やシンプルなタスクに向く。コンテキストは Pro より小さいが、日常的な利用には十分。" },
+        { word: "モデル: Pro 系（高精度）", section: "モデル選択", mean: "高精度モデル。大規模なコンテキストを活かした大規模コードベースの解析や複雑な推論に向く。現行のモデル名・コンテキスト上限・提供条件はレビュー（gemini-cli）を参照。" },
+        { word: "モデル: Flash 系（高速）", section: "モデル選択", mean: "高速モデル。軽い質問やシンプルなタスクに向く。コンテキストは Pro 系より小さいが、日常的な利用には十分。現行のモデル名と提供条件はレビュー（gemini-cli）を参照。" },
         // ── 機能 ──
         { word: "Plan Mode", section: "機能", mean: "コード変更前にエージェントが計画を提示し、ユーザーの承認を得てから実行する慎重なワークフロー。v0.35.0 で追加された。Claude Code の Plan Mode と同様の機能。" },
         { word: "サブエージェント", section: "機能", mean: "タスクを分割して複数のサブエージェントに並列実行させる機能。v0.35.0 で大幅に強化された。ローカル実行、ツール分離、動的ツールフィルタリングに対応。" },
