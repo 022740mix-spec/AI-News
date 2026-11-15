@@ -13388,5 +13388,23 @@ export const ARTICLES_META = [
       "エンタープライズ",
       "プライバシー"
     ]
+  },
+  {
+    "id": "feature-anthropic-building-strong-safety-evaluations-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】「前のモデルより安全」は何を測った結果か — Anthropic が安全性評価の作り方を公開。拒否率では測れない領域、API と claude.ai で最大34ポイントの差、数ポイントの差は誤差でありうる",
+    "excerpt": "Anthropic は11月13日、安全性評価（safety eval）の設計・実行・報告についての推奨事項を公開した。単発の質問による評価は94〜98%で飽和していること、同じモデルでも API と claude.ai で適切応答率が最大34ポイント違ったこと、98%と94%の差が統計的に有意でなかった例など、自社のシステムカードの数字を使って説明している。数字はすべて同社の報告である。安全性の数値を読む側が何を確かめればよいかを整理する。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "Anthropic",
+      "AI安全性",
+      "評価",
+      "ベンチマーク",
+      "透明性"
+    ]
   }
 ];
