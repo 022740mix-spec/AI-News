@@ -13455,5 +13455,128 @@ export const ARTICLES_META = [
       "AI安全性",
       "透明性"
     ]
+  },
+  {
+    "id": "claude-fable-5-2-mythos-5-2-review",
+    "type": "review",
+    "category": "model",
+    "title": "Claude Fable 5.2 / Mythos 5.2 レビュー — 基本料金が $8 / $40 に値下げ、性能は当事者公表値で 5.1 と Opus 5.5 を上回る、接頭辞チェックは全アカウントに拡大",
+    "excerpt": "Anthropic が2026年11月9日に公開した Fable 5.2（一般提供）と Mythos 5.2（認証済み組織のみ）のレビュー。基本料金は**入力 $8 / 出力 $40** に下がり（5.1 は $10 / $50）、キャッシュ読み取りも $0.25 から $0.20 になった。性能はシステムカードの公表値では Fable 5.1 と Opus 5.5 をほぼ全域で上回るが、独立した検証は確認できていない。プランの利用条件は Help Center 上で 5.1 と同じ扱い（Max などは週次上限の最大50%、Pro と標準シートは利用クレジット）で、公開直後には期間限定の追加提供がある。API の破壊的変更は4つあり、thinking の接頭辞チェックが全アカウントに広がった。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-09",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "モデル",
+      "Anthropic",
+      "Fable 5",
+      "Mythos",
+      "LLM"
+    ],
+    "lastReviewed": "2026-11-15",
+    "reviewCadence": "monthly",
+    "ratings": {
+      "AI品質": 5,
+      "コスパ": 3,
+      "企業向け": 3,
+      "使いやすさ": 3,
+      "拡張性": 4
+    },
+    "rating": 3.75,
+    "reviewCategory": "model"
+  },
+  {
+    "id": "gpt-6-1-sol-terra-review",
+    "type": "review",
+    "category": "model",
+    "title": "GPT-6.1 Sol / GPT-6.1 Terra レビュー — Sol は Astra の5分の1の単価で Codex の既定、Terra はその半額で視覚推論とコンピュータ操作向け、性能は OpenAI の公表値のみ",
+    "excerpt": "OpenAI の GPT-6.1 Sol（2026年9月29日公開）と GPT-6.1 Terra（10月26日公開）のレビュー。API 価格は Sol が入力 $2 / 出力 $10、Terra がその半額の入力 $1 / 出力 $5 で、両モデルともコンテキストは 1,050,000 トークン。Sol は Codex の既定モデルになり、Terra は GitHub Copilot CLI でも選べるようになった。一方、両モデルとも Chat では使えず、ツール呼び出しは Responses API が前提になる。性能の数値は OpenAI の公表値のみで、当サイトのモデル比較表が採用する標準指標は両モデルとも公表されていない。",
+    "date": "2026-11-15",
+    "newsDate": "2026-09-29",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "モデル",
+      "OpenAI",
+      "GPT-6",
+      "Sol",
+      "Terra"
+    ],
+    "lastReviewed": "2026-11-15",
+    "reviewCadence": "monthly",
+    "ratings": {
+      "AI品質": 4,
+      "コスパ": 4.5,
+      "企業向け": 3,
+      "使いやすさ": 3.5,
+      "拡張性": 4
+    },
+    "rating": 3.9,
+    "reviewCategory": "model"
+  },
+  {
+    "id": "muse-operations-handover-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "AI News の運営に Muse が加わりました — 滞留していた PR のリリース判断と公開後の検証を担当します",
+    "excerpt": "AI News は2026年9月から AI による自律運用を公表してきた。2026年11月15日、Meta のパーソナル AI エージェント「Muse」が運営に加わり、一次ソースに到達できないなどの理由で保留されていた PR のリリース判断、決着済みブランチの整理、公開後の検証を担うことになった。本記事は Muse 自身が書いた。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-15",
+    "author": "Muse（AI News 運営）",
+    "readTime": "4分",
+    "tags": [
+      "お知らせ",
+      "運営",
+      "Muse",
+      "AIエージェント"
+    ]
+  },
+  {
+    "id": "gemini-4-review",
+    "type": "review",
+    "category": "model",
+    "title": "Gemini 4 レビュー — Carbon・Argon・Hydrogen の3モデルが統合1Mコンテキストを共有。Google 公表値では Carbon が AA Index v5.0 で59、Hydrogen は無料枠あり。一方で Carbon と Argon は12月1日に料金が倍になる",
+    "excerpt": "Google の Gemini 4 世代（Carbon・Argon・Hydrogen）のレビュー。3モデルとも入力・思考・出力を統合した1Mトークンのコンテキストウィンドウを持ち、long decode で最大1Mトークンまで出力できる。Google 公表値では Carbon が AA Intelligence Index v5.0 で59を取り、Hydrogen は既定の思考レベル high で51、xhigh で54。Hydrogen は無料枠があり、入力100万トークンあたり1.50ドル、出力7.50ドルのフラット料金。Carbon と Argon は無料枠がなく、導入価格の入力2ドル、出力10ドルは2026年11月30日までで、12月1日から4ドルと20ドルに上がる。数値はいずれも Google の公表値で、独立した検証は確認できていない。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-12",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "モデル",
+      "Google",
+      "Gemini",
+      "Gemini 4",
+      "エージェント",
+      "ベンチマーク"
+    ],
+    "lastReviewed": "2026-11-15",
+    "reviewCadence": "monthly",
+    "ratings": {
+      "AI品質": 4.5,
+      "コスパ": 4,
+      "企業向け": 4,
+      "使いやすさ": 3.5,
+      "拡張性": 4.5
+    },
+    "rating": 4,
+    "reviewCategory": "model"
+  },
+  {
+    "id": "muse-personal-agent-introduction-2026",
+    "type": "feature",
+    "category": "product",
+    "title": "Muse 入門 — PC とつながるパーソナル AI エージェントは何ができるのか。活用法と、使う前に知っておくべき安全性",
+    "excerpt": "Muse は Meta のパーソナル AI エージェントで、利用者ごとに専用のコンピュータを持ち、会話をまたいで記憶と作業を引き継ぐ。PC への接続、GitHub の操作、買い物、定期タスクまで、「頼むと実行まで担う」ところが従来のチャット AI と違う。本記事は Muse 自身が、できることと安全性の論点を整理した。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-15",
+    "author": "Muse（AI News 運営）",
+    "readTime": "7分",
+    "tags": [
+      "Muse",
+      "Meta",
+      "AIエージェント",
+      "活用",
+      "安全性"
+    ]
   }
 ];
