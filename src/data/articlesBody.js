@@ -32062,6 +32062,356 @@ const ARTICLES_BODY = {
         "url": "https://github.com/022740mix-spec/AI-News/pull/214"
       }
     ]
+  },
+  "gemini-4-review": {
+    "body": [
+      "**Gemini 4** は Google が2026年9月30日の Argon を皮切りに順次公開したモデル世代で、現在は **Carbon**（最上位の推論）、**Argon**（トークン効率のよいフロンティア推論）、**Hydrogen**（高速で安い普段使い）の3モデルがそろっている。本レビューはこの3モデルを1つの世代として評価する。結論を先に言うと、Google の公表値では性能は現在の最上位級で、特に Hydrogen は無料枠とフラットな料金で導入の敷居が低い。一方で、性能の数値はすべて Google の公表値で独立した検証は確認できておらず、Carbon と Argon は12月1日に料金が倍になる。既存の Gemini からの移行にも、パラメータの扱いが変わるなどの破壊的変更がある。",
+      "提供は段階的だった。Argon は2026年9月30日に発表されたが、当初は Fairwind プログラムを通じた「信頼できるサイバー防衛者」だけが対象で、一般提供の時期は示されていなかった。その後、Gemini API の公式リリースノートによれば、Argon は10月13日に一般提供（GA）となった。Carbon は10月28日に発表され、当初は Fairwind の防衛者向けの先行提供で、11月10日に開発者・企業・一般向けに GA となった。Hydrogen は11月12日に GA となり、世代が出そろった。なお Argon については、発表時点の「限定提供」という位置づけは現在は当てはまらない。有料枠では誰でも使える一方、無料枠はない（料金の節を参照）。モデルカードによれば、Carbon は Argon を基に作られ、Hydrogen は Carbon から適応（adapted）されたモデルである。",
+      "3モデルに共通する仕様は、入力・思考・出力を統合した 1,048,576 トークンのコンテキストウィンドウ、同期リクエストで最大 65,536 トークンの出力、background 実行（long decode）で最大 1,048,576 トークンまでの出力である。入力はテキスト・画像・動画・音声・PDF、出力はテキスト。思考レベルは Carbon と Argon が low / medium / high（既定は medium）、Hydrogen は xhigh を加えた4段階（既定は high）で、世代で唯一 xhigh を指定できるのが Hydrogen である。コンテキストキャッシュは暗黙（Implicit）のみで、明示的なキャッシュ作成には対応しない。コード実行、コンピュータ利用、ファイル検索、関数呼び出し、Google 検索と Google マップによる grounding、構造化出力、URL コンテキストには3モデルとも対応する。Live API、画像生成、音声生成には対応しない。Carbon と Hydrogen のモデルカードでは、知識カットオフは2026年3月とされている。",
+      "**公表されている性能（当事者の値）**: Carbon と Argon の比較は、Google DeepMind が2026年11月10日に公開した Carbon のモデルカードの評価表（2026年10月時点の結果）が最もまとまっている。Carbon は Artificial Analysis Intelligence Index v5.0 で59を取り、表の中で GPT-6 Astra（57）、Claude Opus 5.5（58）、Claude Fable 5.1（49）、Argon（50）を上回る。サイバーセキュリティでは SEC-bench Pro 88.2%、ExploitGym 54.8%、CWE-bench 71.0% と、発表がうたう通りこの分野の数値が高い。ただし表のサイバーセキュリティ項目は、Fairwind プログラム経由でアクセスした場合の結果だとモデルカードが注記している。",
+      "Carbon が全項目で首位というわけではない。FrontierSWE 2 では GPT-6 Astra（65.5%）と Claude Opus 5.5（62.3%）が Carbon（61.2%）を上回り、OSWorld-2.1 のオフライン部分では Opus 5.5（87.2%）が Carbon（81.5%）を上回る。Argon は単体でも、発表時点で DeepSWE v1.1 の 77.9% を記録している（Google の発表）。Carbon の GA 発表では、CursorBench 4.0、Perplexity の WANDR、Zapier の AutomationBench で1位を取り、次の最良の外部モデルよりタスクあたりコストが2分の1以下だったとしているが、これも Google の説明である。",
+      "**Hydrogen の公表性能**: Hydrogen は AA Intelligence Index で既定の high のまま51、xhigh で54を記録し、Argon の50を上回ると Google は発表している。モデルカード（2026年11月12日公開）の表では、SWE-sweep で 13.5% と Claude Sonnet 5.5 の 3.1%、GPT-6.1 Terra の 5.8% を大きく上回り、HLE-Diamond は 58.8% で表の首位である。一方、Terminal-Bench 4.1（チート調整済み）では Sonnet 5.5 の 63.9% が Hydrogen の 57.0% を上回り、OSWorld-2.1 と Terminal-Bench-Science 0.1 でも Hydrogen は首位ではない。注意したいのは指標の版で、Carbon のモデルカードの表は Terminal-Bench 4.0、Hydrogen の表は 4.1 と版が違い、両カードは公表時期も異なるため、カードをまたいだ単純な比較はできない。",
+      "**安全性と整合性の公表値**: Google はこの世代で、性能と同じくらい「ごまかさないこと」の改善を前面に出している。Carbon は Gray Swan の間接プロンプトインジェクション（IPI）ベンチマークで攻撃成功率 0.0% を記録し（Argon は 0.7%）、Terminal-Bench 4.0 でのチート成功率も 0.0% に下げたと発表している。GA 発表では、エージェントの誠実さ（agent honesty）を測る社内ベンチマークで Carbon が 92% に合格し（Argon は 70%）、Hydrogen の発表では、根拠のない主張（fabricated claims）が Gemini 3.8 Flash の5分の1以下になったとしている。もっとも、これらもすべて Google の公表値である。Hydrogen については、モデルカードが、Gemini 3.8 Flash と比べて不当な拒否（unjustified refusals）が 5.57 ポイント増えたという悪化も開示しており、Hydrogen の Safety & Security Report は本レビュー時点で「近日公開」とされ、まだ出ていない。",
+      "**料金**: Hydrogen は無料枠があり、有料枠は入力100万トークンあたり $1.50、出力 $7.50 で、1M コンテキストの全域で単価が変わらないフラット料金である。Carbon と Argon は無料枠がなく、導入価格の入力 $2.00、出力 $10.00 が適用されるのは2026年11月30日までで、12月1日から入力 $4.00、出力 $20.00 に上がることが料金ページに明記されている。Batch と Flex は標準の半額、Priority は割増料金になる。暗黙キャッシュが効いた入力は、Hydrogen で $0.075、Carbon と Argon で $0.10（12月1日から $0.20）と、通常入力の95%引きに相当する価格である。",
+      "料金で見落としやすいのは課金の範囲である。料金ページの注記によれば、思考トークンを含め、モデルが処理するすべてのトークンが課金対象で、grounding を使う場合は内部ツールのシステム指示や関数宣言も数えられる。思考レベルを上げるほど出力側のトークンが増えるため、単価が安くても請求は読みにくい。比較対象として、Gemini 3.8 Flash の現行価格は入力 $0.75、出力 $3.75 だが、2027年1月1日から $1.50 と $7.50 に上がることが料金ページに出ており、Hydrogen の単価はその改定後の 3.8 Flash と一致する。つまり Hydrogen は現行の Flash の2倍の単価だが、来年には Flash の標準価格になる水準である。無料枠については、料金ページの記載では入力した内容が製品改善に使われる（有料枠では使われない）。業務データを入れる場合は有料枠が前提になる。",
+      "**提供形態**: 3モデルとも Gemini API と Google AI Studio から使え、企業向けには Gemini for business でも提供される。Hydrogen は Gemini アプリと Google 検索でも全ユーザーに提供され、Gemini Managed Agents の Antigravity agent の既定モデルにもなった。Carbon は Gemini アプリと検索の AI Mode では Google AI Ultra の加入者が対象である。Google Antigravity では、Carbon を深い推論の役割に割り当てる /swarm（プレビュー）が発表され、計画を Carbon、実行を Hydrogen に分けるような複数モデルの組み合わせが公式の使い方として示されている。科学者向けには、Antigravity で Argon と Carbon を6か月無料で使えるプログラム（10,000人枠）の募集も続いている。",
+      "**API の変更と移行時の注意**: Gemini 3 系から移る場合、公式の移行チェックリストが挙げる変更は小さくない。temperature、top_p、top_k は、範囲内の値ならサーバーが無視し、範囲外の値は 400 エラーになる。thinking_level の minimal は 400 エラーで拒否される。明示的なコンテキストキャッシュ（cachedContents）は使えなくなり、4,096 トークン以上の共通接頭辞に対する暗黙キャッシュに置き換わる。max_output_tokens は思考と出力の合計の上限として扱われるため、小さな値を固定していると答えが途中で切れる。既定の思考レベルも、3.8 Flash の medium から Hydrogen では high に変わっている。モデル間の違いでは、Carbon と Argon の非ストリーミング REST は1回あたり 32,768 トークンが上限で、Hydrogen は 65,536 トークンまで出せる。",
+      "**強み**:",
+      "(1) **公表性能の高さ**: Carbon は AA Intelligence Index v5.0 の公表表で首位の59、Hydrogen は AA Index 51〜54 と、同世代・同価格帯での公表値がそろって高い。Argon も DeepSWE v1.1 で 77.9% を記録している。",
+      "(2) **長い文脈と長い出力**: 入力・思考・出力を統合した1Mトークンの窓と、long decode による最大1Mトークンの出力で、長いエージェント作業や長大な成果物の生成を1つのモデルで扱える。",
+      "(3) **Hydrogen の導入のしやすさ**: 無料枠があり、有料でもコンテキスト長で単価が変わらないフラット料金のため、試算と試用がしやすい。Managed Agents の既定モデルにも採用された。",
+      "(4) **ツールと提供面の広さ**: コード実行、コンピュータ利用、ファイル検索、検索とマップの grounding を備え、API、AI Studio、Antigravity、Gemini for business、Gemini アプリ、検索、Sheets と提供面が広い。",
+      "(5) **整合性の開示**: チート率、プロンプトインジェクション耐性、捏造の削減といった指標を当事者が数値で開示し、Hydrogen の不当な拒否の増加のような悪化もモデルカードに書かれている。",
+      "**注意点**:",
+      "(1) **独立検証がない**: 本レビューの性能値はすべて Google の発表・モデルカード・公式ドキュメントの公表値で、第三者による再現や検証は確認できていない。AA Intelligence Index のような外部指標も、値の出所は Google の公表資料である。",
+      "(2) **Carbon と Argon は12月1日に倍額になる**: 導入価格が終わるのは GA から約3週間後で、予算組みの前提にしにくい。値上げ後の入力 $4.00、出力 $20.00 を実質の標準価格として評価すべきである。",
+      "(3) **移行の破壊的変更**: サンプリングパラメータの無視、minimal の廃止、明示キャッシュの廃止、max_output_tokens の意味の変更があり、モデル名を差し替えるだけの移行はできない。",
+      "(4) **思考トークン課金で請求が読みにくい**: 処理した全トークンが課金対象で、思考レベルとタスクの長さで支出が大きく変わる。特に Carbon と Argon は長い作業では検証ループの分も積み上がる。",
+      "(5) **Hydrogen の安全性レポートが未公開**: モデルカードは出ているが、Safety & Security Report は近日公開とされ、本レビュー時点では確認できない。不当な拒否が 3.8 Flash より増えた点も含め、業務投入前の確認が要る。",
+      "(6) **音声と画像の生成、Live API は別モデル**: 3モデルとも出力はテキストのみで、リアルタイム音声や画像・音声の生成が必要な用途では、Gemini 3 系などの別モデルと組み合わせる必要がある。",
+      "**★の付け方**: 本レビューの★は5軸（AI品質30% / 使いやすさ25% / コスパ20% / 拡張性15% / 企業向け10%）で採点し、加重平均を 0.25 刻みに丸めた。AI品質は 4.5。Carbon の AA Intelligence Index 59 と Hydrogen の公表値の高さが根拠だが、全項目で首位ではなく、独立検証もないため満点にはしていない。使いやすさは 3.5。Hydrogen の無料枠と提供面の広さの一方で、移行時の破壊的変更と既定の思考レベルの変更が大きい。コスパは 4。Hydrogen のフラット料金と無料枠は良いが、現行 3.8 Flash の2倍の単価であり、Carbon と Argon は12月1日に倍額になる。拡張性は 4.5。ツール群と Google の製品群への組み込みは広いが、Live API とメディア生成の非対応を引いた。企業向けは 4。Gemini for business や Fairwind、安全性レポートの開示がある一方、Hydrogen の安全性レポートが未公開で、価格改定が近い。加重平均は 4.10 で、総合は ★4.0 とした。なお Argon は、2026年9月30日の発表時点では Fairwind の信頼できるサイバー防衛者に限られていたが、10月13日に有料枠で GA されているため、本レビューでは「一般利用できない」前提では採点していない。無料枠がない点は、使いやすさとコスパに反映した。",
+      "**AI News の見立て**: Gemini 4 は、世代としての設計（統合1Mコンテキスト、思考レベルの段階化、計画役と実行役の分担）は一貫しており、公表値どおりなら現在の最有力候補の一角である。ただし評価が固まるのは、独立した検証が出て、12月1日の価格改定を過ぎてからになる。用途別には、日常のコーディングとエージェント実行は Hydrogen、トークン効率を保ちながら重い作業をするなら Argon、最も難しい推論とサイバー防御は Carbon が公式の想定である。当サイトでは月次で見直し、独立検証と Hydrogen の安全性レポートの公開を確認していく。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "Google DeepMind が Carbon のモデルカード（2026年11月10日公開、2026年10月時点の結果）で公表した比較表からの抜粋。単位は %（AA Intelligence Index v5.0 はスコア）。サイバーセキュリティの3項目は Fairwind プログラム経由でアクセスした場合の結果。当事者の公表値で、独立検証は確認できていない",
+        "headers": [
+          "ベンチマーク",
+          "Gemini 4 Carbon",
+          "Gemini 4 Argon",
+          "GPT-6 Astra",
+          "Claude Opus 5.5",
+          "Claude Fable 5.1"
+        ],
+        "rows": [
+          [
+            "AA Intelligence Index v5.0",
+            "59",
+            "50",
+            "57",
+            "58",
+            "49"
+          ],
+          [
+            "Vals Index v2.2",
+            "70.4",
+            "69.2",
+            "65.0",
+            "70.2",
+            "—"
+          ],
+          [
+            "FrontierSWE 2",
+            "61.2",
+            "55.0",
+            "65.5",
+            "62.3",
+            "56.3"
+          ],
+          [
+            "Terminal-Bench 4.0（AA）",
+            "65.2",
+            "57.1",
+            "59.1",
+            "59.6",
+            "52.0"
+          ],
+          [
+            "Agents' Last Exam v1.1",
+            "77.4",
+            "69.0",
+            "73.1",
+            "71.6",
+            "—"
+          ],
+          [
+            "OSWorld-2.1（オフライン部分）",
+            "81.5",
+            "74.7",
+            "80.9",
+            "87.2",
+            "76.8"
+          ],
+          [
+            "AutomationBench",
+            "53.9",
+            "51.3",
+            "41.4",
+            "42.5",
+            "31.4"
+          ],
+          [
+            "GraphWalks（256k〜1M）",
+            "96.2",
+            "84.2",
+            "71.8",
+            "66.8",
+            "65.0"
+          ],
+          [
+            "RiemannBench",
+            "80.0",
+            "76.0",
+            "72.0",
+            "69.6",
+            "65.6"
+          ],
+          [
+            "Terminal-Bench-Science 0.1（AA）",
+            "64.8",
+            "52.9",
+            "63.3",
+            "59.0",
+            "43.3"
+          ],
+          [
+            "SEC-bench Pro",
+            "88.2",
+            "83.4",
+            "85.4",
+            "—",
+            "—"
+          ],
+          [
+            "ExploitGym",
+            "54.8",
+            "42.0",
+            "42.4",
+            "34.5",
+            "—"
+          ],
+          [
+            "CWE-bench",
+            "71.0",
+            "68.0",
+            "68.0",
+            "67.0",
+            "58.0"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 5,
+        "caption": "Google DeepMind が Hydrogen のモデルカード（2026年11月12日公開）で公表した評価表。単位は %（Vending-Bench 2 は口座残高ドル）。Terminal-Bench は 4.1（チート調整済み）で、Carbon の表の 4.0 とは版が違う。当事者の公表値で、独立検証は確認できていない",
+        "headers": [
+          "ベンチマーク",
+          "Gemini 4 Hydrogen",
+          "Claude Sonnet 5.5",
+          "GPT-6.1 Terra"
+        ],
+        "rows": [
+          [
+            "SWE-sweep",
+            "13.5",
+            "3.1",
+            "5.8"
+          ],
+          [
+            "Terminal-Bench 4.1（チート調整済み）",
+            "57.0",
+            "63.9",
+            "—"
+          ],
+          [
+            "Agents' Last Exam v1.1",
+            "71.6",
+            "60.4",
+            "69.8"
+          ],
+          [
+            "AutomationBench-AA",
+            "76.1",
+            "71.8",
+            "60.2"
+          ],
+          [
+            "Vending-Bench 2（残高 $）",
+            "$14,549",
+            "$11,165",
+            "$9,107"
+          ],
+          [
+            "OSWorld-2.1（オフライン部分）",
+            "77.6",
+            "83.9",
+            "74.2"
+          ],
+          [
+            "MKA",
+            "53.4",
+            "52.0",
+            "43.8"
+          ],
+          [
+            "Chartography",
+            "66.6",
+            "61.6",
+            "63.2"
+          ],
+          [
+            "Terminal-Bench-Science 0.1",
+            "51.4",
+            "59.9",
+            "58.3"
+          ],
+          [
+            "HLE-Diamond",
+            "58.8",
+            "53.3",
+            "47.3"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 7,
+        "caption": "Gemini API 公式料金ページの記載（100万トークンあたり、USD）。出力は思考トークンを含む。Carbon と Argon は料金が同一で、導入価格は2026年11月30日まで、12月1日からは下段の価格になる",
+        "headers": [
+          "モデルと方式",
+          "無料枠",
+          "入力",
+          "出力",
+          "キャッシュ入力"
+        ],
+        "rows": [
+          [
+            "Hydrogen（Standard）",
+            "あり",
+            "$1.50",
+            "$7.50",
+            "$0.075"
+          ],
+          [
+            "Hydrogen（Batch / Flex）",
+            "なし",
+            "$0.75",
+            "$3.75",
+            "$0.0375"
+          ],
+          [
+            "Hydrogen（Priority）",
+            "あり",
+            "$2.70",
+            "$13.50",
+            "$0.135"
+          ],
+          [
+            "Carbon / Argon（Standard、11月30日まで）",
+            "なし",
+            "$2.00",
+            "$10.00",
+            "$0.10"
+          ],
+          [
+            "Carbon / Argon（Standard、12月1日から）",
+            "なし",
+            "$4.00",
+            "$20.00",
+            "$0.20"
+          ],
+          [
+            "Carbon / Argon（Batch / Flex、11月30日まで）",
+            "なし",
+            "$1.00",
+            "$5.00",
+            "$0.05"
+          ],
+          [
+            "Carbon / Argon（Batch / Flex、12月1日から）",
+            "なし",
+            "$2.00",
+            "$10.00",
+            "$0.10"
+          ],
+          [
+            "Carbon / Argon（Priority、11月30日まで）",
+            "なし",
+            "$3.60",
+            "$18.00",
+            "$0.18"
+          ],
+          [
+            "Carbon / Argon（Priority、12月1日から）",
+            "なし",
+            "$7.20",
+            "$36.00",
+            "$0.36"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "site": "Google",
+        "title": "Introducing Gemini 4 Hydrogen for Agentic Workflows（Google）",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+      },
+      {
+        "site": "Google",
+        "title": "Introducing Gemini 4 Carbon（Google）",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+      },
+      {
+        "site": "Google",
+        "title": "Gemini 4 Carbon is now available（Google）",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/"
+      },
+      {
+        "site": "Google",
+        "title": "Introducing Gemini 4 Argon（Google）",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
+      },
+      {
+        "site": "Google DeepMind",
+        "title": "Gemini 4 Carbon Model Card（Google DeepMind）",
+        "url": "https://deepmind.google/models/model-cards/gemini-4-carbon/"
+      },
+      {
+        "site": "Google DeepMind",
+        "title": "Gemini 4 Hydrogen Model Card（Google DeepMind）",
+        "url": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/"
+      },
+      {
+        "site": "Google AI for Developers",
+        "title": "Gemini API モデル一覧（Google AI for Developers）",
+        "url": "https://ai.google.dev/gemini-api/docs/models"
+      },
+      {
+        "site": "Google AI for Developers",
+        "title": "What's new in Gemini 4 Hydrogen（Google AI for Developers）",
+        "url": "https://ai.google.dev/gemini-api/docs/whats-new-gemini-4-hydrogen"
+      },
+      {
+        "site": "Google AI for Developers",
+        "title": "Gemini API 料金（Google AI for Developers）",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing"
+      },
+      {
+        "site": "Google AI for Developers",
+        "title": "Gemini API リリースノート（Google AI for Developers）",
+        "url": "https://ai.google.dev/gemini-api/docs/changelog"
+      }
+    ]
   }
 };
 

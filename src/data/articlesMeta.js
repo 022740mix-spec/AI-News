@@ -13530,5 +13530,35 @@ export const ARTICLES_META = [
       "Muse",
       "AIエージェント"
     ]
+  },
+  {
+    "id": "gemini-4-review",
+    "type": "review",
+    "category": "model",
+    "title": "Gemini 4 レビュー — Carbon・Argon・Hydrogen の3モデルが統合1Mコンテキストを共有。Google 公表値では Carbon が AA Index v5.0 で59、Hydrogen は無料枠あり。一方で Carbon と Argon は12月1日に料金が倍になる",
+    "excerpt": "Google の Gemini 4 世代（Carbon・Argon・Hydrogen）のレビュー。3モデルとも入力・思考・出力を統合した1Mトークンのコンテキストウィンドウを持ち、long decode で最大1Mトークンまで出力できる。Google 公表値では Carbon が AA Intelligence Index v5.0 で59を取り、Hydrogen は既定の思考レベル high で51、xhigh で54。Hydrogen は無料枠があり、入力100万トークンあたり1.50ドル、出力7.50ドルのフラット料金。Carbon と Argon は無料枠がなく、導入価格の入力2ドル、出力10ドルは2026年11月30日までで、12月1日から4ドルと20ドルに上がる。数値はいずれも Google の公表値で、独立した検証は確認できていない。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-12",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "モデル",
+      "Google",
+      "Gemini",
+      "Gemini 4",
+      "エージェント",
+      "ベンチマーク"
+    ],
+    "lastReviewed": "2026-11-15",
+    "reviewCadence": "monthly",
+    "ratings": {
+      "AI品質": 4.5,
+      "コスパ": 4,
+      "企業向け": 4,
+      "使いやすさ": 3.5,
+      "拡張性": 4.5
+    },
+    "rating": 4,
+    "reviewCategory": "model"
   }
 ];
