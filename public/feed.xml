@@ -160,6 +160,14 @@
     <summary>Anthropic は10月18日、自社株の一部を新設の完全子会社「Anthropic Public Benefit Fund」に拠出すると発表した。株主の承認を条件に5%を拠出し、企業価値が基準値から50%増えるごとに、取締役会の裁量で2%を追加できる。形態は LLC で、保有株をロビー活動や政治献金に使わないとしている。基準値、統治の仕組み、使い道の詳細は「今後数か月で公表する」とされ、発表文には書かれていない。</summary>
   </entry>
   <entry>
+    <title>Node.js が11/11 にセキュリティリリース — 18件（うち HIGH 7件）、22・24・26 の全ラインが対象</title>
+    <link rel="alternate" type="text/html" href="?a=nodejs-security-release-2026-11-11"/>
+    <id>tag:ai-tool-news.jp,2026:nodejs-security-release-2026-11-11</id>
+    <published>2026-11-11T15:00:00Z</published>
+    <updated>2026-11-11T15:00:00Z</updated>
+    <summary>Node.js の公式告知によると、11月11日（水）付けで 22.x・24.x・26.x の全ラインのセキュリティリリースが出た。対象は18件で、最も深刻なものは HIGH。HTTP/2 と TLS の処理に集中しており、サーバーがリモートから落とされる、または他の接続のメモリが漏れる類の問題が含まれる。</summary>
+  </entry>
+  <entry>
     <title>Claude Fable 5.2 が公開 — 入力 $8・出力 $40 で 5.1 より安く、thinking の接頭辞チェックが全アカウントに、旧 computer use ツールは 400 エラー</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-fable-5-2-mythos-5-2-launch-api-changes-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-fable-5-2-mythos-5-2-launch-api-changes-2026</id>
@@ -542,6 +550,14 @@
     <published>2026-10-23T15:00:00Z</published>
     <updated>2026-10-23T15:00:00Z</updated>
     <summary>Qwen Code の CLI v0.25.0（10月5日公開）には、遠隔の Agent Host から遅れて届いた結果の扱いを変える修正（PR #13241）が含まれる。修正後は、復旧やキャンセルで終了した実行に遅れて届いた結果は stale_lease として拒否される。PR の説明では、この設計の一案は外部の寄稿者の技術的助言によるもので、リポジトリのメンテナの判断ではないと明記されている。</summary>
+  </entry>
+  <entry>
+    <title>Gemini CLI 0.65.0 の変更点、信頼していないフォルダで設定を読み取り専用に、OTLP ヘッダーの指定、認証の無限リトライの修正</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-cli-0-65-untrusted-folder-readonly-otlp-headers-release-notes-2026"/>
+    <id>tag:ai-tool-news.jp,2026:gemini-cli-0-65-untrusted-folder-readonly-otlp-headers-release-notes-2026</id>
+    <published>2026-10-23T15:00:00Z</published>
+    <updated>2026-10-23T15:00:00Z</updated>
+    <summary>Google の Gemini CLI 0.65.0 が2026年10月20日に公開された。信頼していないフォルダではワークスペース設定が読み取り専用になり、テレメトリに任意の OTLP ヘッダーを付けられる。認証の再試行ループや Ctrl+C 連打によるセッション破損も直った。公式の変更履歴に基づいて整理する。</summary>
   </entry>
   <entry>
     <title>Oracle Java に緊急セキュリティアラート（CVE-2026-91403）— 侵害された中間 CA 証明書8件、独立の Java ランタイムは早急な更新を</title>
