@@ -32453,6 +32453,35 @@ const ARTICLES_BODY = {
         "url": "https://022740mix-spec.github.io/AI-News/?a=muse-operations-handover-2026"
       }
     ]
+  },
+  "yomiyasu-agent-skill-japanese-2026": {
+    "body": [
+      "yomiyasu（よみやす）は、AI が生成した日本語を読みやすい文章に整えるオープンソースの Agent Skill である。2026年9月30日に GitHub で公開され、ライセンスは MIT。2026年11月15日時点でスターは3,273、最新版は11月12日公開の v3.1.0 である。作者は ALGO ARTIS 所属の大賀愛一郎氏で、個人の研究・創作物として公開されており、所属企業の公式プロダクトではないと明記されている。",
+      "## 何を直すのか",
+      "対象は技術記事、設計書・仕様書、PR 説明文、社内レポートなどの実務文書である。AI が書いた日本語に残りやすい形として、README は3つを挙げる。主述関係の曖昧さ（誰が何をするのかが省略され、概念や道具が「壊れる」「倒す」「効く」といった比喩的な動詞と結びつく形）、形式の偏重と情報密度の低下（太字や箇条書きが増える一方で中身が抽象的になる形）、間を作るだけの読点や決まった形（箇条書き先頭の太字ラベルとコロン、否定と肯定を2文に分けた対比など）である。",
+      "## 直し方の決まり",
+      "スキル定義（SKILL.md）には7つの変換原則がある。主述・修飾・条件の対応づけ、文の働きと文体の保持、擬人化の整理、比喩を平易な言葉へ直すこと、前置きと否定対比の役割の確認、情報を勝手に足さないこと、文長・読点・装飾の調整である。v2.0.0 以降は「意味を変えないこと」と「原文にない情報を足さないこと」が最優先の決まりになり、意味を確定できない箇所は推測で埋めず、確認事項として本文の後に添える形になった。単語の禁止リスト方式ではなく、文の構造側から直す点が特徴とされる。",
+      "## 検査ツールと導入方法",
+      "リポジトリには、推敲の前後を比べて意味が変わる恐れのある箇所を出す検査ツール（yomiyasu_lint.py、yomiyasu_diff.py）が同梱される。導入は `npx skills add nanaism/yomiyasu` のほか、GitHub CLI（`gh skill install nanaism/yomiyasu yomiyasu`）や Claude Code のプラグイン形式が案内されている。本体を読み込めない環境向けに、縮小版の yomiyasu-mini と yomiyasu-pocket も公開されている。対象は日本語のみで、事実誤認や情報の欠落そのものを正す機能はない、と解説記事でも整理されている。",
+      "【編集履歴】2026-11-15 掲載。"
+    ],
+    "primarySources": [
+      {
+        "title": "yomiyasu GitHub リポジトリ（README）",
+        "site": "GitHub",
+        "url": "https://github.com/nanaism/yomiyasu"
+      },
+      {
+        "title": "yomiyasu Releases",
+        "site": "GitHub",
+        "url": "https://github.com/nanaism/yomiyasu/releases"
+      },
+      {
+        "title": "AI-Slopな日本語を構造レベルで読みやすくするSkill『yomiyasu（よみやす）』を作りました",
+        "site": "Zenn（ALGO ARTIS）",
+        "url": "https://zenn.dev/algoartis/articles/0b1c731881b25c"
+      }
+    ]
   }
 };
 

@@ -13578,5 +13578,23 @@ export const ARTICLES_META = [
       "活用",
       "安全性"
     ]
+  },
+  {
+    "id": "yomiyasu-agent-skill-japanese-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "yomiyasu（よみやす）— AI が書いた日本語を読みやすく直す OSS の Agent Skill、GitHub スターは3,200超",
+    "excerpt": "AI が生成した日本語の不自然な比喩、曖昧な主述関係、不要な装飾を直す Agent Skill「yomiyasu」が OSS として公開されている。Claude Code、Codex、Cursor 等に読み込ませて使う。意味を変えないことを最優先の決まりとし、推敲前後を比べる検査ツールが同梱される。最新版は v3.1.0（2026年11月12日）。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-12",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "yomiyasu",
+      "Agent Skill",
+      "OSS",
+      "日本語",
+      "推敲"
+    ]
   }
 ];
