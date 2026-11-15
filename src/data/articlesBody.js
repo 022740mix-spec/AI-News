@@ -28290,7 +28290,10 @@ const ARTICLES_BODY = {
       "【追記 2026-10-21】公式の勧告による2件の内容は次のとおり。CVE-2026-109618（メモリ不足時の処理による RCE、GHSA-w8hw-w9fx-j79w）と、CVE-2026-109619（解放されたメモリに関わる内部状態が残ることによる RCE、GHSA-6wmf-4rv5-p3rp）。どちらも、認証なしで攻撃され得るとされる。影響を受けるのは、Web リクエストを処理するすべての PHP（PHP-FPM、Apache の mod_php、php-cgi、FrankenPHP、LiteSpeed など）。公式は、特に mod_php で危険度が高いとしている。",
       "【追記 2026-10-21】すぐに更新できない場合について、公式は設定の変更による一時的な対策を挙げている（メモリ上限の扱い、投稿サイズの上限、アップロード進捗の機能の無効化など）。ただし公式は、これらは攻撃の経路を減らすだけで、安全にはならないと明記している。更新こそが完全な対策である。設定の詳細は、公式の勧告を確認すること。",
       "【追記 2026-10-21】PHP 8.1 以前は、PHP 本体からの更新は提供されていない。Linux のディストリビューションや LTS のベンダーは、事前に修正を受け取っているとされるため、ベンダーの更新を確認する。公式は、ソースからビルドする人向けに、PHP 7.4、8.0、8.1 向けの最小限の修正パッチも提供している。",
-      "【追記 2026-10-21】公開前に出回っていた情報との関係: 公式の勧告で、CVE 番号（CVE-2026-109618、CVE-2026-109619）と CVSS v4.0 9.2 が確認された。また、GMO Flatt Security の技術ブログが挙げた CVE 番号と CVSS の記述も、公式の内容と一致した。一方、10月22日に公開されるとする投稿は、公式の日程（10月21日）と一致しなかった。野外での悪用の有無は、この勧告からは確認できない。"
+      "【追記 2026-10-21】公開前に出回っていた情報との関係: 公式の勧告で、CVE 番号（CVE-2026-109618、CVE-2026-109619）と CVSS v4.0 9.2 が確認された。また、GMO Flatt Security の技術ブログが挙げた CVE 番号と CVSS の記述も、公式の内容と一致した。一方、10月22日に公開されるとする投稿は、公式の日程（10月21日）と一致しなかった。野外での悪用の有無は、この勧告からは確認できない。",
+      "【追記 2026-10-23】PHP 公式は10月23日、別の情報（CVE-2026-115560）についての Informational advisory を公開した。session のアップロード進捗の機能に関わるもので、公式は、次の定期のバグ修正リリースまで、session.upload_progress.enabled=0 にすることを勧めている。10月21日の GHSA-6wmf-4rv5-p3rp の勧告で、この設定をすでに適用していれば、追加の対応は不要とされる。",
+      "【追記 2026-10-23】公式の説明によると、この問題は、設定とアプリケーションのコードの特殊な組み合わせでのみ起きる。session.serialize_handler を php_binary か php_serialize に設定し、session_start() の前に ini_set() で php に切り替えている場合で、かつアップロード進捗が有効な場合に限られる。公式は、この組み合わせは現実的には稀だとしている。告知は、影響を受ける版や修正版を示していない。完全な勧告は、次のリリースで公開するとしている。",
+      "【追記 2026-10-23】Cloudflare は10月21日の公式ブログで、既定の WAF の保護（無料プランと有料プランの両方）を、現地時間の 3:02 UTC から入れたと説明した。また、リリースの前に脆弱性が漏れていたこと、攻撃の試みを観測したことを書いている。ただし、攻撃の件数は示していない。これは同社の説明であり、独立した検証ではない。WAF は補助の層であり、PHP 本体の更新の代わりにはならないと、同社も明記している。"
     ],
     "primarySources": [
       {
@@ -28312,6 +28315,16 @@ const ARTICLES_BODY = {
         "title": "Security advisory: Critical remote code execution vulnerabilities, update now（PHP 8.5.12 / 8.4.27 / 8.3.36 / 8.2.35 リリース、2026-10-21）",
         "site": "php.net（PHP 公式）",
         "url": "https://www.php.net/archive/2026.php"
+      },
+      {
+        "title": "Informational advisory: Session upload progress（php.net、2026-10-23）",
+        "site": "php.net（PHP 公式）",
+        "url": "https://www.php.net/archive/2026.php#2026-10-23-1"
+      },
+      {
+        "title": "Cloudflare deploys protections against php2shell vulnerability（2026-10-21）",
+        "site": "Cloudflare 公式ブログ（当事者の対応の説明）",
+        "url": "https://blog.cloudflare.com/php-vulnerabilities-waf-protection/"
       }
     ]
   },
@@ -28639,6 +28652,2808 @@ const ARTICLES_BODY = {
         "title": "fix(agents): distinguish accepted Host results from terminal runs（PR #13241、2026-10-04 マージ）",
         "site": "GitHub（QwenLM/qwen-code の PR 説明）",
         "url": "https://github.com/QwenLM/qwen-code/pull/13241"
+      }
+    ]
+  },
+  "anthropic-claude-duet-research-preview-2026": {
+    "body": [
+      "Anthropic の製品ページ（claude.com/product/claude-duet）に、Claude Duet が研究プレビューとして載っている。以下は2026年10月24日にそのページを読んだ内容である。ページに発表日の記載は無く、同じ日に Anthropic のニュース一覧（anthropic.com/news）を確認したが、Duet の発表記事の URL は特定できなかった。そのため、この記事の日付は「公式ページが公開されているのを確認した日」である。",
+      "ページの説明では、Claude Duet は「メッセージで仕事を預ける、先回りして動くエージェント」である。クラウド上の自分専用のコンピュータで動き、利用者がつないだアプリを使い、終わったときや判断が要るときにメッセージで知らせる。常時動いているが、いつ連絡するかは判断し、待てるものは待たせる、と書かれている。モデルは Opus 5.5 である。",
+      "Claude のアプリとの違いについて、ページは次のように説明している。Claude アプリは利用者がチャットを開くのを待ち、一緒に作業する。Duet は利用者の Claude アカウント（メモリ、スキル、コネクタ）をそのまま使い、毎朝その日に注意が要ることを伝え、メッセージで渡された作業を引き受け、終わったか承認が要るときに連絡してくる。履歴は1本のスレッドにまとまる。",
+      "できることとして、ページは朝のブリーフ、受信箱とカレンダーから対応が要るものの抽出、返信案の作成（承認待ち）を挙げている。事業の運営まわりでは、未払い請求書の洗い出しと督促文の下書き、給与計算の準備（確認用）、契約書の送付準備がある。ブリーフ、スライド、ダッシュボードも作れる。ページに載っている画面例は、カフェチェーンの経営者を想定した架空のデモである。",
+      "安全面の説明は3点ある。第1に、メッセージの送信や支払いのような機微な操作の前に承認を求める。ページの例では、保健所の許可手数料 $640 の支払いに「Approve / Not now」の承認が出る。第2に、承認、ログイン、安全確認は利用者専用のクラウド上のコンピュータの中で行われ、機微な情報はそこにとどまると書かれている。第3に、Duet が何をしたか、いま何をしているかを見て、途中で方向を変えられる。",
+      "提供条件は次のとおり。研究プレビューで、米国の Claude Pro と Max の利用者を対象にウェイトリスト方式で受け付けている。Team と Enterprise はまだ含まれない。iOS と Android には単体のアプリがあり、パソコンでは claude.ai のウェブから開く。利用量は Claude の他の機能と同じ枠を共有し、バックグラウンドの確認も枠に数えられる。ブリーフのような常時の確認や、財務モデルやスライドの作成のような大きな作業は、通常の会話より多くのモデル呼び出しと裏の作業を要する、とページは説明している。料金の追加は、ページには書かれていない。",
+      "ページは、まだできていないことも明記している。研究プレビューであり、スレッドを読み違えたり、緊急度を見誤ったりすることがある。確認と確認の合間に届いたものを見落とすこともある、という。承認の仕組みがあっても、緊急度の判断が外れる余地は残る、と製品側が認めている形である。",
+      "確認できていないこと。発表日と、ページが案内する「発表記事」の中身は読めていない（ニュース一覧から該当記事の URL を特定できなかった）。ページの「6,000以上のコネクタとプラグインに対応」という数字は製品ページの記載で、独立した検証は確認できていない。画面例の数字（売上、残高など）は製品デモのもので、実際の利用結果ではない。ウェイトリストの順番や開始時期、米国以外への展開についての記載は無い。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Duet（Anthropic 製品ページ）",
+        "url": "https://claude.com/product/claude-duet"
+      }
+    ]
+  },
+  "gitlab-critical-patch-release-2026-10-21": {
+    "body": [
+      "GitLab は2026年10月21日、Critical のパッチリリースを公開した。対象は 19.5.1、19.4.3、19.3.6、19.2.9、19.1.9、19.0.10、18.11.13 で、含まれる脆弱性は12件。公式の告知ページには、12件の一覧と重大度が書かれている。",
+      "**最も重大なもの（CVE-2026-110264、Critical）。** CVSS v3.1 の基本値は 10.0（攻撃経路はネットワーク、権限もユーザー操作も不要、影響はスコープが変わる、機密性・完全性・可用性のすべてが高）。告知によると、特に細工された正規表現をコンパイルする際の整数オーバーフローにより、認証のないユーザーが GitLab サーバー上で任意のコードを実行し得る。",
+      "**影響を受ける版。** 告知は、7.0 から、それぞれの修正版より前のすべての版が影響を受けるとしている。修正版は、18.11.13、19.0.10、19.1.9、19.2.9、19.3.6、19.4.3、19.5.1。18.11.13、19.0.10、19.1.9、19.2.9 は、定期のリリース日程の外で、修正の逆移植が行われた。",
+      "**同じ週の Ruby の修正との関係。** 同じ正規表現の問題の系統は、10月23日に公開された Ruby 4.0.9・3.4.12・3.3.13 の修正にも含まれる。Ruby の告知は、GitLab が報告したもので、CVE-2026-110264 に関わる Ruby 側の修正だと書いている。当サイトの Ruby の記事（10月23日）も参照のこと。",
+      "**残りの11件。** 高（High）が2件、中（Medium）が5件、低（Low）が4件。個々の内容は、告知の各項目で確認する。",
+      "**回避策。** 告知には回避策が書かれていない。公式は、修正版への更新を勧めている。",
+      "**悪用の状況。** 告知は、悪用が起きたとは書いていない。GitLab は、自己ホスト型の利用者向けに、2種類の脅威検知（「Onigmo native worker crash」と「Org mode render error burst」）を公開したとしている。GitLab.com と GitLab Dedicated は、GitLab が管理しているため修正済みだと説明している。",
+      "**確認できていないこと。** 攻撃の経路（どの機能から、どのように到達できるか）は、告知からは確認できない。野外での悪用の有無も、告知からは確認できない。",
+      "**対応。** 自己ホスト型の GitLab を使っている場合は、使っている版を確認し、上記の修正版へ直ちに更新する。修正版に上げられない間は、脅威検知の結果を確認する。",
+      "**このサイトへの影響。** AI News は GitLab を使っていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitLab Critical Patch Release: 19.5.1, 19.4.3, 19.3.6, 19.2.9, 19.1.9, 19.0.10, 18.11.13（2026-10-21）",
+        "site": "GitLab 公式ドキュメント（リリース）",
+        "url": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/"
+      },
+      {
+        "title": "Regexp compilation fixes related to GitLab's CVE-2026-89078, CVE-2026-93577, CVE-2026-97229 and CVE-2026-110264（2026-10-23）",
+        "site": "Ruby 公式（ruby-lang.org）",
+        "url": "https://www.ruby-lang.org/en/news/2026/10/23/regexp-fixes-for-gitlab-cves/"
+      }
+    ]
+  },
+  "apache-httpd-2-4-69-release-2026-10-01": {
+    "body": [
+      "Apache HTTP Server は2026年10月1日、バージョン 2.4.69 を公開した。公式のセキュリティ情報のページには、この版で修正された脆弱性が20件（中程度5件、低15件）と書かれている。",
+      "**中程度の脆弱性の例（公式の記述）。** CVE-2026-42528 は、mod_dav の共有ロックに関わる計算のバグで、WebDAV のロックを作る権限を持つ攻撃者が、サーバーの子プロセスをクラッシュさせ得る。この問題は、2.4.67 以前に影響する。CVE-2026-57941 は、mod_http2 の解放後使用（use-after-free）で、2.4.17 から 2.4.68 の版に影響する。",
+      "**対応。** 公式は、2.4.69 への更新を勧めている。上記の版を使っている場合は、影響を受けるモジュール（mod_dav、mod_http2）を使っているかを確認する。",
+      "**確認できていないこと。** 公式の告知からは、悪用の有無は確認できない。残りの18件の内容は、公式の一覧で確認する。",
+      "**このサイトへの影響。** AI News は Apache HTTP Server を使っていない。GitHub Pages で配信している。"
+    ],
+    "primarySources": [
+      {
+        "title": "Apache HTTP Server 2.4 Vulnerabilities（2.4.69、2026-10-01）",
+        "site": "Apache HTTP Server 公式（httpd.apache.org）",
+        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+      }
+    ]
+  },
+  "claude-code-2-1-310-monitor-tool-bedrock-vertex-gateway-retry-2026": {
+    "body": [
+      "anthropics/claude-code の CHANGELOG.md は、最新版を 2.1.310 としている。npm レジストリでは `latest` と `next` が 2.1.310 を指し、公開時刻は 2026年10月23日 21:20 UTC だった（`stable` は 2.1.308 のまま）。直前の 2.1.306〜2.1.309 の次にあたる。以下は変更履歴の記載に基づく整理で、実際の挙動は検証していない。",
+      "最初の変更は Monitor ツールとプラグインの monitors の提供範囲である。変更履歴によると、Bedrock・Vertex・Foundry 経由の利用に加え、テレメトリや非必須通信を無効にしたセッションでも使えるようになった。これまで使えなかった条件が何だったかは、変更履歴の記載からは分からない。",
+      "ゲートウェイ経由の利用では、一部のゲートウェイが beta の値や会話の途中のシステムメッセージを拒否してリクエストが失敗する問題が直った。Claude Code はそれらを外して再試行する。社内プロキシや LLM ゲートウェイを挟んでいる環境が対象で、直接 API に接続している環境には関係しない。",
+      "そのほか、保持期間を非常に大きく設定したときにクリーンアップが最近のファイルまで削除する問題、「Prompt is too long」のあとの圧縮が密度の高いテキストを残しすぎる問題、読み取りの確認画面でシンボリックリンクの参照先が表示されない問題が修正された。保持期間の設定でファイルが消える問題は、該当する設定を使っている場合に確認する価値がある。",
+      "クラウドセッションでは、Enterprise のカスタムロール、セットアップスクリプト用のファイルピッカー、保存時とエラー時のメッセージの分かりやすい表示が加わった。全項目は公式の変更履歴にある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG.md（2.1.310）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@anthropic-ai/claude-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
+      }
+    ]
+  },
+  "gemini-cli-0-65-otlp-headers-untrusted-folders-session-fixes-2026": {
+    "body": [
+      "google-gemini/gemini-cli の docs/changelogs/latest.md は、最新の安定版を v0.65.0（2026年10月20日公開）としている。npm レジストリでは `latest` タグが 0.65.0 を指し、公開時刻は同日 UTC 21:26 だった。直前に扱った 0.64.0 の次の安定版にあたる。以下は公式の変更履歴の記載に基づく整理で、実際の挙動は検証していない。",
+      "テレメトリでは、OTLP ヘッダーを設定で指定できるようになった。変更履歴は、OpenTelemetry のコレクターへの認証やヘッダーの調整に使えるとしている。",
+      "セキュリティと認証では、信頼していないフォルダでワークスペース設定が読み取り専用に制限される。OAuth のコールバック検証は RFC 9207 に沿う形になり、認証のやり直しが無限に続く問題も直った。",
+      "セッションまわりでは、Ctrl+C を素早く連打したときにセッションが壊れる問題、すぐ終了したときに再開した履歴が失われる問題、再開時にツール応答のターンが重複する問題が修正された。長時間のセッションを中断・再開しながら使う場合に関わる。",
+      "ファイルまわりでは、無視パターンによるフィルタリングがディレクトリごと読み飛ばすようになり、走査が速くなった。`@<ディレクトリ>` の参照は再帰的な読み込みを先送りする。端末表示では、Enter で固まる問題と、Ctrl+O の展開時に画面が不要にクリアされる問題が直った。約27件のプルリクエストが含まれ、全項目は公式の変更履歴にある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Gemini CLI 変更履歴（latest, v0.65.0）",
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/latest.md"
+      },
+      {
+        "title": "@google/gemini-cli（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@google/gemini-cli"
+      }
+    ]
+  },
+  "codex-cli-0-164-presets-inline-args-enterprise-mcp-2026": {
+    "body": [
+      "OpenAI の Codex リポジトリのリリースページによると、Codex CLI 0.164.0 は2026年10月23日（UTC）に公開された。前回扱った 0.163.0 は別記事にある。この記事は公式のリリースノートをもとに、自分の版にその機能があるかを判断できるよう整理する。内容はリリースノートの記載に基づき、実際の挙動は検証していない。リリースノートに破壊的変更の記載は無い。",
+      "新機能は6点ある。第一に、プリセットである。繰り返し使うプロンプトやスラッシュコマンドを番号付きの10枠に保存でき、キーボードのメニューから呼び出せる。第二に、スラッシュコマンドへの引数指定である。`/model` はモデル、推論の強さ、速度を引数で受け取り、`/permissions` は権限プロファイルを受け取る。",
+      "第三に、画像のプレビューである。Kitty または Sixel に対応した端末では、表示した画像や生成した画像が全画面のトランスクリプトに出る。第四に、企業向けの MCP 認証である。MCP への接続に、資格のある Codex アカウントの権限付与、または専用のサインインを使える。シークレットを要求する OAuth クライアントも対象に含まれる。",
+      "第五に、資格情報のマスキングである。対応するリモートの Bash コマンドと Zsh のスナップショットセッションが対象で、カスタムプロバイダーの資格情報も含まれる。第六に、Bedrock のセットアップウィザードが既定でオンになった。AWS の資格情報が検出されたときは、API キーの入力が他の AWS サインイン方法と同じ場所に並ぶ。",
+      "バグ修正は6点ある。圧縮（コンパクション）に失敗しても、不完全な要約が会話履歴に残らなくなり、バックグラウンドの圧縮が失敗した場合はパニックせずに代替の処理へ戻る。セッションの再開では、圧縮された履歴を見つけ、保存されたスレッドの設定をグローバルの既定値ではなく復元する。",
+      "Windows では、HTTPS と WebSocket の接続がプロキシの認証要求に対し、サインイン中のユーザーの Negotiate または NTLM の資格情報で応答する。サブコマンドの複数の階層に `-c` / `--config` の上書きが現れても保持される。権限の選択が未解決の間は、キューに入れたプロンプトが待機する。",
+      "サンドボックスの検査も強化された。macOS では大文字小文字だけが違うメタデータのパスに対する検査が、また実行ファイルの場所を探すときに差し替えられうるシンボリックリンクに対する検査が、それぞれ強化されたと記載されている。リリースノートの要約からは、これらが実際に悪用された事例かどうかは分からない。",
+      "雑務の項目では、使われていないインストールの整理、放置されたマーケットプレイスのチェックアウトの掃除、デーモンのログの上限設定でディスク使用量を減らしたとされる。組み込みの JavaScript ランタイムも更新され、最適化された `Array.sort` に安全確認が加わった。",
+      "ほかに、リリースノートは多数のプルリクエストを列挙しており、主題として Guardian のレビュー改善、ロールアウトの圧縮とセッション再開、デーモンのインストールと更新、MCP の OAuth と企業向けの MCP 認可、TUI のキーマップと Markdown 表示、SQLite の信頼性、Responses API プロキシの認証などが挙がる。個別の中身は今回の確認範囲外で、気になる項目は原文で確かめたい。"
+    ],
+    "primarySources": [
+      {
+        "title": "Codex CLI 0.164.0 リリースノート（openai/codex）",
+        "url": "https://github.com/openai/codex/releases/tag/rust-v0.164.0"
+      },
+      {
+        "title": "Codex リリース一覧（openai/codex）",
+        "url": "https://github.com/openai/codex/releases"
+      }
+    ]
+  },
+  "weekly-metrics-2026-week-oct19": {
+    "body": [
+      "この記事はニュースのまとめではなく、サイト自身の公開データから計算した「計器」である。1週間を見渡して初めて出る数字を、解釈を添えて示す。数字は `node scripts/weekly-metrics.mjs` の出力（集計日2026年10月26日）と、サイトの記事データの集計に基づく。外部サイトの情報は使っていない。前週分の計器記事そのものは、集計の対象から除いている。",
+      "## 公開本数 — 20本、前週の13本から増",
+      "10月19日〜25日の公開は**20本**（前週13本）。種別は news 20 のみで、feature（特集・分析）とレビューは0本だった。分野は product 13 / cli 7。出来事から掲載までの中央値は1日である（前週は2日）。日別では10月22日が7本と突出し、23日が4本、24日が5本、20日が2本、21日と25日が各1本だった。19日は0本である。",
+      "出来事の日と掲載日が3日以上ずれた記事は6本あった。最大は[Qwen Code v0.25.0](?a=qwen-code-0-25-0-late-agent-results-2026-10-05)（出来事は10月5日、掲載は23日）と[Apache HTTP Server 2.4.69](?a=apache-httpd-2-4-69-release-2026-10-01)（出来事は10月1日、掲載は24日）で、いずれも18日以上あとに拾っている。本数が前週より増えた一部は、過去の公開をあとから記事にした分である。",
+      "## 題材の内訳 — 11本が AI 以外のソフトウェアのセキュリティ情報",
+      "題材で数えると、20本の内訳は次のとおりである。Anthropic 関連が6本（Claude Code の版が[2.1.303〜2.1.304](?a=claude-code-2-1-303-304-auto-mode-setup-resume-warning-worktree-2026)・[2.1.305](?a=claude-code-2-1-305-nested-user-namespaces-tool-search-retry-allowedmcpservers-2026)・[2.1.306〜2.1.309](?a=claude-code-2-1-306-to-309-sandbox-startup-files-safety-event-api-version-2026)・[2.1.310](?a=claude-code-2-1-310-monitor-tool-bedrock-vertex-gateway-retry-2026)の4本、[Claude API の新バージョン 2026-10-21](?a=anthropic-api-version-2026-10-21-breaking-changes-2026)と[Claude Duet](?a=anthropic-claude-duet-research-preview-2026)が各1本）。他社の CLI が3本（[Gemini CLI 0.65.0](?a=gemini-cli-0-65-otlp-headers-untrusted-folders-session-fixes-2026)、[Codex CLI 0.164.0](?a=codex-cli-0-164-presets-inline-args-enterprise-mcp-2026)、Qwen Code）。残る**11本が、AI を主題にしないソフトウェアの脆弱性や事故の記事**だった。",
+      "その11本は、[PHP](?a=php-critical-security-release-2026-10-21)、[Java](?a=java-cve-2026-91403-compromised-ca-certificates-2026-10-21)、[Next.js](?a=nextjs-security-update-2026-10-14)、[Node.js](?a=nodejs-security-release-2026-10-21)、[eMudhra の中間 CA](?a=emudhra-intermediate-ca-weak-keys-revoked-2026-10-18)、[Railway](?a=railway-environment-variables-incident-2026-10-21)、[LiteLLM](?a=litellm-1-107-0-quarantined-pypi-2026-10-21)、[Ruby](?a=ruby-4-0-9-3-4-12-3-3-13-regexp-fixes-2026-10-23)、[RubyGems](?a=rubygems-org-advisories-2026-10-07-10-21)、[GitLab](?a=gitlab-critical-patch-release-2026-10-21)、Apache である。このうち LiteLLM は AI 関連のパッケージだが、記事の主題は PyPI での隔離である。PHP・Node.js・Java・GitLab の公開が10月21日前後に重なったことも、件数に出ている。",
+      "このサイトの3軸（速報・発掘・分析）は、いずれも AI の話題を前提にしている。この11本はどの軸にも収まりにくく、**軸の外にある記事が週の過半を占めた**ことになる。開発者が使う基盤の更新は、AI ツールを動かす環境に直結するという見方はできる。一方で、読者がこの量を期待しているかは、このデータからは判定できない。解釈を決めるのは、サイトの方針を見直す場である。",
+      "## 3軸のバランス — 発掘と分析は3週続けて0本",
+      "20本はすべて news で、feature の最後の記事は[10月2日](?a=anthropic-pentagon-dc-circuit-appeal-2026)だった（この週の集計日から24日前）。型で見ると、**発掘（新興・OSS・個人開発）と分析（社会的インパクト・規制・倫理）は3週続けて0本**である。Qwen Code は中国発の OSS だが、記事は終了済みの実行に遅れて届く結果の扱いを直す変更の紹介で、新興プロジェクトの発掘とは性質が違うため、発掘には数えていない。",
+      "## 「AI安全性」の記事は0件、「セキュリティ」は10件",
+      "タグの動きを見ると、「セキュリティ」は10件（前週2件、前々週3件）と急に増えた。**ただし増えた分は、上の11本の脆弱性・事故の記事である。** 「AI安全性」は、前週の計器記事自身に付いた1件を除くと0件（その前の週も0件）、「エッジAI」「個人開発」「透明性」「ローカルLLM」「半導体」も0件だった。セキュリティのタグが増えても、AI に固有のリスクや規制を扱う記事が増えたわけではない。",
+      "## ガイドの空白は変わらない",
+      "週次の計器が出す「記事で頻出するのに、ガイドに説明が無い概念」は、今週も同じ顔ぶれだった。直近90日の記事数は、「AI安全性」32件、「中国AI」16件、「エッジAI」11件、「個人開発」10件、「透明性」7件、「半導体」5件、「ローカルLLM」4件である（「Alibaba」7件と「リリースノート」5件は、固有名詞と記事の型のため補強の対象としては数えていない）。「中国AI」が前週の18件から16件に減ったのは、90日の窓から古い記事が外れたためで、新しい記事が減ったわけではない。ガイドの書き込みは Routine には禁じられており、対話セッションでの判断を待っている。",
+      "## ツール別ページとの比",
+      "直近90日の記事数とツール別ページの解説項目数の比は、Claude Code 0.35（33件 / 93項目）、Codex 0.32（15件 / 47項目）、VS Code + Copilot 0.17（6件 / 35項目）、Cursor 0.14（6件 / 44項目）、Gemini CLI 0.07（3件 / 43項目）、Power Apps 0（0件 / 20項目）だった。比が大きいほど、話題の割に解説が薄い。**Cursor の記事は[9月20日](?a=cursor-projects-coordinator-agent-2026)を最後に出ておらず**、Cursor と VS Code + Copilot は今週も0本だった。",
+      "## 確認できなかったこと",
+      "今週の調査では、OpenAI・Google・DeepSeek などの新モデルについて、一次資料に届く情報を見つけられなかった。検索で出てきたのは予測市場や集約サイトの記述で、数値や公開日が互いに食い違っていたため、記事にしていない。**これは「出来事が無かった」という意味ではなく、確かめられる材料が手元に無かったという意味である。** 取りこぼしかどうかは、公式ドキュメントや GitHub のリリースに届いた時点で決まる。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 5,
+        "caption": "この週の公開の内訳（10月19日〜25日）",
+        "headers": [
+          "区分",
+          "本数",
+          "例"
+        ],
+        "rows": [
+          [
+            "Anthropic 関連",
+            "6本",
+            "Claude Code 2.1.303〜2.1.310、Claude API 2026-10-21、Claude Duet"
+          ],
+          [
+            "他社の AI CLI",
+            "3本",
+            "Gemini CLI 0.65.0、Codex CLI 0.164.0、Qwen Code v0.25.0"
+          ],
+          [
+            "AI 以外のソフトウェアのセキュリティ",
+            "11本",
+            "PHP、Node.js、Java、Next.js、GitLab、Railway など"
+          ],
+          [
+            "発掘・分析",
+            "0本",
+            "—"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 13,
+        "caption": "記事で頻出するのにガイドに説明が無い概念（直近90日、週次の計器の出力）",
+        "headers": [
+          "概念",
+          "記事の件数",
+          "この週に付いた記事"
+        ],
+        "rows": [
+          [
+            "AI安全性",
+            "32件",
+            "0件（前週の計器記事を除く）"
+          ],
+          [
+            "中国AI",
+            "16件",
+            "0件（同上）"
+          ],
+          [
+            "エッジAI",
+            "11件",
+            "0件"
+          ],
+          [
+            "個人開発",
+            "10件",
+            "0件"
+          ],
+          [
+            "透明性",
+            "7件",
+            "0件"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "AI News リポジトリ（週次の計器の算出元データ）",
+        "url": "https://github.com/022740mix-spec/AI-News"
+      }
+    ]
+  },
+  "github-copilot-cli-1-0-100-to-1-0-103-sandbox-local-network-proxy-2026": {
+    "body": [
+      "github/copilot-cli の変更履歴（changelog）によると、GitHub Copilot CLI は 2026年10月19日の 1.0.100 から10月22日の 1.0.103 までに、1.0.100・1.0.101・1.0.102・1.0.103 の4版が出た。changelog に 1.0.99 の項目は無く、npm の公開記録でも 1.0.98 の次の正式版は 1.0.100 だった。直前の 1.0.95〜1.0.98 は別の記事で扱っている。この記事は changelog の記載をもとに、自分の版にその機能があるかを判断できるよう整理する。内容は記載に基づくもので、実際の挙動は検証していない。",
+      "最も影響が大きそうなのはサンドボックスの既定値である。1.0.100 の「Sandbox allows local network access by default so commands can reach localhost and private-network services」により、サンドボックス内のコマンドが localhost や私設ネットワークのサービスへ届くようになった。1.0.101 には、ローカルアクセスが有効でホストのフィルタが無いとき、macOS のサンドボックス内のコマンドが localhost の TCP サービスへ直接つなげるという項目がある。いずれも changelog は理由を書いていない。接続先を絞りたい環境では、この既定値が自分の運用と合っているかを確かめる材料になる。",
+      "サンドボックスまわりでは、ほかにも項目が続く。1.0.100 では、サンドボックス用のプロキシが設定されていないとき、ホスト規則の通信が HTTPS_PROXY と HTTP_PROXY を使う。1.0.102 では、ホストのプロキシ設定を引き継ぐ場合に NO_PROXY と ALL_PROXY も尊重する。開発ツール向けのアクセスが有効なとき、パッケージやビルドのキャッシュへ書けるようになり（1.0.100）、dnx コマンドは既存の .NET と NuGet の許可を使い、Windows の npm.cmd のようなシムも npm と同じ許可を受ける（1.0.103）。github.com への sandboxed な git は、credentials.envVars に設定した GITHUB_TOKEN を使える。/sandbox は、全体では有効にせず現在のセッションだけサンドボックスを保てる。1.0.102 では、10秒を超えて走るサンドボックス内コマンドが安定して動き続けるよう直された。",
+      "1.0.100 で新しいフラグが2つ入った。--disable-client-telemetry は、CLI からのクライアントテレメトリのアップロードを止める。--trust-folder は、-p またはパイプ入力で始める単発のプロンプトモードのセッションで、フォルダを一度だけ信頼するために使う。同じ版では、ghapp://air/install?... 形式の GitHub のインストールリンクから、検証済みのスキルとプラグインを `copilot plugin install` で入れられるようになった。組み込みブラウザのプラグインは browser-use に改名され、既存の設定は引き継がれる。.github/instructions に置いたパス指定の指示ファイルは、エージェントが一致するファイルを読むか編集するときに自動で適用される。",
+      "権限の扱いでは、1.0.100 で、Assisted モードにおける組織管理の ask 権限が、安全な操作では余計な確認なしに通るようになった。入れ子の PowerShell や bash -c のうち、単純なデータの環境変数の展開だけを行うものは、手動承認を求めずに権限の判定役へ送られる。1.0.101 には assistedApprovalInstructions 設定が加わり、Assisted Permissions が確認を判断するときの指示を書ける。承認プロンプトは、昇格が必要な理由と、要求ごとの診断コマンドを示す。拡張機能が能力を求める場合は、判定役ではなく明示的な承認を使う。1.0.102 では、サブエージェントがカスタムや MCP ツールの承認を引き継ぎ、重複した許可プロンプトが出ない。",
+      "MCP とセッションの項目もある。1.0.100 は、MCP サーバーがツールの読み込みで固まっても、セッションが数分止まらないようにした。1.0.101 は、動的ワークフローのサブエージェントで、対応するモデルのネイティブな構造化出力を追加した。保存済みトークンがサインインを要する場合、OAuth の処理を持たないヘッドレスと SDK のセッションは MCP 接続を飛ばす。1.0.102 は複数の Git worktree で、同じリポジトリのローカル MCP ツールのスナップショットを使い回す。1.0.103 では、リモート起動のフラグが整理され、従来の --remote と --no-remote が廃止された。",
+      "モデルごとの修正は、Gemini と Google のモデルに集中している。1.0.100 は配列パラメータに enum があるときの Gemini のツール呼び出しの失敗と、ツール結果に読み取れる内容が無いときのチャットの失敗を直した。1.0.101 は GPT から Gemini へ切り替えたとき、前の会話にカスタムツール呼び出しが含まれていても失敗しないようにし、Google モデルへの画像数の上限もレジストリに合わせた。1.0.103 は nullable と enum のフィールドによる 400 エラーを避ける。GPT-5 系では、モデルごとの既定の Responses verbosity が、セッションで明示しない限り正しく適用される。1.0.102 では、プロバイダーの過負荷で応答が途切れたとき、バックオフ付きで再試行し、プロバイダーのメッセージとリクエスト ID を表示する。",
+      "ここに挙げたのは changelog の一部で、HydraFusion や Entra のサインイン、Windows 固有の修正など、触れていない項目も多い。全項目は公式の changelog を参照してほしい。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitHub Copilot CLI changelog（github/copilot-cli）",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      },
+      {
+        "title": "@github/copilot（npm）の公開記録",
+        "url": "https://www.npmjs.com/package/@github/copilot"
+      }
+    ]
+  },
+  "claude-code-2-1-311-ultrathink-xhigh-model-catalog-signed-file-2026": {
+    "body": [
+      "anthropics/claude-code の CHANGELOG.md は、最新版を 2.1.311 としている。npm レジストリでは `latest` と `next` が 2.1.311 を指し、公開時刻は 2026年10月26日 19:47 UTC だった（`stable` は 2.1.308 のまま）。直前の 2.1.310 は 10月23日の公開である。以下は変更履歴の記載に基づく整理で、実際の挙動は検証していない。",
+      "挙動が変わる項目から見る。`ultrathink` は、対話型ターミナルで Opus 5.5・Sonnet 5.5・Haiku 5.5・Fable 5.1 に対し、Anthropic の API 経由なら xhigh の effort でそのターンを走らせるようになった。Claude が作業中に入力した場合は、そのターンの残りの effort が上がる。虹色の表示は、キーワードが effort を上げうる場所だけに出る。語を引用符で囲んだ場合やファイルパスの一部の場合には出ない。",
+      "Bedrock・Mantle・Vertex・Foundry で Claude Code を使う場合、モデル設定を downloads.claude.ai の署名付きファイルから読み込む仕様に変わった。無効にするには `CLAUDE_CODE_MODEL_CATALOG=off` を設定する。通信先が増えるため、外向きの通信を許可リストで管理している環境では、この宛先の扱いを確認する価値がある。変更履歴には、署名の検証方法や取得の頻度までは書かれていない。",
+      "`DISABLE_COMPACT` は、設定ファイルと mod の `$.env.set` のどちらでも、圧縮を無効にする方向にだけ効くようになった。設定で圧縮を戻すことはできない。同じ設定に関連して、エージェントのチームメイトが `DISABLE_COMPACT` を設定していても履歴を圧縮してしまう問題と、巻き戻しのメニューが要約の項目を出してしまう問題が直った。",
+      "出力まわりでは、`--output-format json` と `stream-json` が、文字列の中の DEL・C1 制御文字・Unicode の書式文字を `\\uXXXX` のエスケープで書くようになった。変更履歴は、パースした値は変わらないとしている。出力を文字列として直接比較したり、行単位で加工したりしているスクリプトは、差分が出る可能性がある。",
+      "不具合の修正では、標準コンテキストのセッションで、リクエストが 200K トークンを超えたときに「Usage credits required for 1M context」で止まる問題が直り、Claude Code は会話を圧縮して続行するようになった。API が再試行しないよう示したリクエストを再試行して、ターンが数分、無人の再試行モード（`CLAUDE_CODE_RETRY_WATCHDOG`）では無期限に止まりうる問題も直った。サブエージェントについては、接続の完了が遅い MCP サーバーのツールを使えない問題、`SubagentStop` フックが終了時に1回ではなく1分に約2回走る問題、隔離された worktree がバックグラウンドのサブエージェントの作業中に削除される問題が修正された。",
+      "ファイル操作と記憶まわりでは、数千行を変更する Write と Edit が最大5秒止まり「0行変更」と報告する問題、CLAUDE.md に非常に長いリスト項目があると起動後やファイルの読み書きの後に長く固まる問題、自動圧縮の直後に古い MEMORY.md と CLAUDE.md の内容が見える問題が修正された。`claude -p` と SDK のセッションが、取り消したメッセージを残したり順序を入れ替えて保存したりする問題も直った。",
+      "Linux のサンドボックスでは、`--plugin-dir` のフォルダが追加ディレクトリでもあり、`permissions.blockReadsOutsideWorkingDirectories` が有効なとき、サンドボックス内の Bash コマンドが `bwrap: Can't create file` で失敗する問題が直った。",
+      "追加された機能は小さい。`self-hosted-runner` に、ホストが残したプロセスを報告している間はセッションを保持する `--hold-idle-file` と `--max-hold-min` が加わった。VS Code の拡張では、Claude の返信のコードブロックに構文の色が付き、遅い `UserPromptSubmit` フックにスピナー表示が出る。シェルコマンドがタイムアウトに達したときは、ここまでの出力を表示し、コマンドはバックグラウンドで動き続けていると伝える。圧縮の返信に要約が含まれていなければ、会話を置き換える前にもう一度要約を求める。",
+      "そのほか、`/rewind` の確認文、`/mcp` の認証状態の表示、`/ide` のインストール完了の表示、Pro・Max 契約者向けのエラー文言など、表示の誤りが多数直っている。全項目は公式の変更履歴にある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG.md（2.1.311）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@anthropic-ai/claude-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
+      }
+    ]
+  },
+  "codex-cli-0-165-vertex-provider-terra-memory-v2-2026": {
+    "body": [
+      "OpenAI の Codex リポジトリのリリースページによると、Codex CLI 0.165.0 は2026年10月27日に公開された（ページには年の表記が無く、一覧の並びと日付から読んだ）。前回扱った 0.164.0 は別記事にある。この記事はリリースノートの記載を整理したもので、実際の挙動は検証していない。リリースノートに破壊的変更の明記は見当たらない。",
+      "新機能は6点ある。第一に、Google Cloud の Vertex AI を組み込みプロバイダーとして使える。設定で `model_provider = \"gcp\"` を指定する。第二に、モデルカタログに GPT-6.1 Terra が加わった。ただしリリースノートが述べているのはカタログへの追加までで、Terra の提供条件や価格は今回の確認範囲に無い。",
+      "第三に、セッション選択に、リポジトリで絞り込むフィルターが入った。エージェントのコマンドセンターは、リンクされた worktree をまたいで探しやすいよう、ディレクトリごとにまとめて表示される。第四に、app-server API に、実験的な「接続されたスレッドのフォーク」が加わった。実験段階であり、仕様は変わりうる。",
+      "第五に、対応するモデルでは、会話の途中で推論の強さを変えられる設定が既定でオンになった。第六に、memory v2 が新規プロファイルで既定になり、他のエージェントの記憶を memory v2 に取り込む機能も加わった。既存のプロファイルでの扱いはリリースノートの要約からは分からない。",
+      "バグ修正は6点ある。新しい TUI セッションでは、上書きが無いときサーバー側の既定の承認レビュアーが使われる。実行設定が不正でも TUI の設定を編集でき、すぐ反映される。リモート MCP のツール要求は、ローカル側の応答が破棄されたときに取り消される。",
+      "割り込みや Plan モードへの切り替えのあとで、キューに入れたエージェントのメッセージが作業を再開させる問題が直った。プロバイダーの「モデルが見つからない」エラーは再試行されなくなり、メッセージも保たれる。マーケットプレイスの URL の検証に抜けがあり、確認したホストと別のホストに Git が接続しうる状態だったものが塞がれた。リリースノートからは、これが実際に悪用された事例かどうかは分からない。",
+      "この版に関連して、サイトにある既存の記事では、Codex の既定モデルが GPT-6.1 Sol になったことを扱っている。Vertex AI の組み込みプロバイダーは、Codex を Google Cloud の契約・認証の枠内で使いたい利用者向けの選択肢にあたる。使えるモデルや課金は、Google Cloud 側の提供条件に依存する。",
+      "ほかに、リリースノートは約60件のマージ済みプルリクエストを列挙しており、大半は内部の変更、CI の更新、テストである。個別の中身は今回の確認範囲外で、気になる項目は原文で確かめたい。"
+    ],
+    "primarySources": [
+      {
+        "title": "Codex CLI 0.165.0 リリースノート（openai/codex）",
+        "url": "https://github.com/openai/codex/releases/tag/rust-v0.165.0"
+      },
+      {
+        "title": "Codex リリース一覧（openai/codex）",
+        "url": "https://github.com/openai/codex/releases"
+      }
+    ]
+  },
+  "anthropic-claude-models-google-cloud-anthropic-managed-2026": {
+    "body": [
+      "Anthropic の API リリースノートによると、2026年10月22日に「Claude Models on Google Cloud（Anthropic managed）」が提供開始となり、同日、Claude Opus 5.5 の fast mode がこの提供形態でも使えるようになった。この記事は、Anthropic の公式ドキュメントのセットアップと機能対応の記述をもとに整理する。実際の導入や課金の挙動は検証していない。",
+      "Google Cloud 上の Claude には、もともと Google が運用する「Google managed」（Vertex AI 系）がある。今回の Anthropic managed は、ドキュメントの説明では Claude API を Anthropic が運用し、Google Cloud のプロジェクトを通じて到達する形である。Anthropic の新機能やリサーチプレビューを、公開と同じ日に使えることが利点として示されている。",
+      "セットアップは Google Cloud Marketplace で Claude Models on Google Cloud（Anthropic managed）を購読するところから始まる。この手順で、Google Cloud のプロジェクトごとに新しい Anthropic 組織が作られる。既存の Anthropic 組織や Claude Enterprise の組織とは別で、API キー、ワークスペース、Console の設定は引き継がれない。既存の割引がある場合は、手順の前に担当者へ連絡するよう書かれている。",
+      "認証は Google Cloud の資格情報だけである。ドキュメントは、この提供形態では API キーを使わず、Console でもキーを作れないと述べている。Workload Identity Federation やサービスアカウントの権限借用は、他の Google Cloud API と同じように使える。アクセス制御は IAM のロールで行う。",
+      "課金は Google Cloud Marketplace を通る。Anthropic が使用量を計測し、Claude Consumption Unit（1 unit = 0.01 米ドル）で Google Cloud に報告する。請求は Google Cloud の請求書に載り、Anthropic からの別の請求書は出ない。Google Cloud の支出コミットメントがある場合、他の Marketplace 購入と同じように使用量が充当される。",
+      "機能は Claude API とほぼ同じ範囲で使えると書かれている。fast mode（Opus 5.5）、ウェブ検索、ウェブ取得、コード実行、メモリツール、MCP コネクタ、Agent Skills、Files API、プロンプトキャッシュ、構造化出力、Message Batches API、Claude Managed Agents が挙がる。顧客管理の暗号鍵（CMEK）は Google Cloud KMS の鍵で使える。ドキュメントは、これが全機能の一覧ではなく、載っていない機能の可否は示していないとも断っている。",
+      "使えないものも明記されている。API キー、MCP トンネル、自己ホスト環境でのメモリストア、`ant` CLI や各 SDK に入っている事前構築の自己ホスト型サンドボックスワーカー（Environments の Work エンドポイントを直接呼ぶ自前のワーカーが必要）である。Anthropic 向けの SDK クライアントは、この提供形態についてはベータと記載されている。",
+      "データの扱いは、Anthropic がデータ処理者であり、保持方針は Claude API と同じ。Anthropic の信頼性・安全性のシステムなど、一部の支援サービスは Google Cloud の外で処理するとされる。Zero Data Retention は要望に応じて提供され、他の Anthropic 組織で結んだ ZDR は引き継がれない。リージョンについては、ロケーションは `global` のままにし、米国内に限る推論は各リクエストで `inference_geo: \"us\"` を指定する。",
+      "Google managed との違いを事実として並べると次のようになる。Google managed は Google が運用し、Google Cloud の Agent Platform の一部として提供される。Anthropic managed は Anthropic が運用し、Anthropic の組織・Console・レート制限の枠組みを使う。どちらが適するかは、契約、データの扱い、必要な機能で決まる。この記事は優劣を述べない。既存の Google managed からの移行手順もドキュメントにあり、2つの組織は並行して稼働でき、段階的に移せるとされる。",
+      "なお、Claude Code の Vertex 対応や Monitor ツールの変更は、サイトの既存の記事が扱っている。本記事が見たのは Anthropic の公式ドキュメントとリリースノートで、Google Cloud 側の発表文には到達して確認していない。独立した検証や利用者の報告も確認できていないため、記述はすべて Anthropic 自身の説明に基づく。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Models on Google Cloud (Anthropic managed) — Claude Platform Docs",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/anthropic-managed"
+      },
+      {
+        "title": "Claude API リリースノート（2026年10月）",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      }
+    ]
+  },
+  "claude-code-2-1-312-simple-prompt-custom-model-names-hooks-limit-2026": {
+    "body": [
+      "anthropics/claude-code の CHANGELOG.md は、最新版を 2.1.312 としている。npm レジストリ上の公開時刻は 2026年10月27日 18:36 UTC だった。直前の 2.1.311 は 10月26日の公開である。以下は変更履歴の記載に基づく整理で、実際の挙動は検証していない。",
+      "最も影響範囲が広いのは、Bedrock・Vertex・Foundry・Mantle を使う環境での2件の変更である。1つ目は、Claude Code が認識できないモデル名（独自のデプロイ名や推論プロファイル ARN など）に対して、短い方のシステムプロンプトを使うようになったこと。背後が Sonnet や Haiku であっても同様で、完全版のプロンプトを使い続けたい場合は `CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT=0` を設定する。2つ目は、フラグが付いたメッセージのあとに行われる自動のモデル切替が、認識できないモデル名にも及ぶようになったこと。止めるには `CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK=1` を設定する。変更履歴には、短いプロンプトと完全版で具体的に何が違うのかは書かれていない。",
+      "フックには上限が入った。prompt フックと agent フックは、サブエージェントを含めて1セッションあたり同時に24件まで動く。加えて、そのイベントのタイムアウトより長く待たされているものは12件までとされた。`timeout` に1秒未満の値を書いた場合は1秒として扱う。直近の 2.1.302 でも、フックの同時実行は12件までという制限が話題になっており、フックを多用する設定では、自分の構成が上限に当たらないかを確認する材料になる。",
+      "サブエージェントの `autoCompactWindow` は、`CLAUDE_CODE_AUTO_COMPACT_WINDOW` で設定した窓を下げる方向に効くようになった。これまでは効果がなかったと書かれている。窓を広げる方向には、引き続き効かない。",
+      "管理者向けには、Claude apps gateway に `oidc.user_id_claim` が加わった。ユーザーの識別に `sub` 以外の id_token クレームを使う設定で、変更履歴は Microsoft Entra ID の `oid` を例に挙げている。OpenTelemetry では、公式 Anthropic マーケットプレイスのプラグインが宣言した固定 URL のリモート MCP サーバーについて、`mcp_server.name` が `custom` ではなく実際の名前で出る。一方、`claude_code.safety_event` イベントの送信は止まった。2.1.306〜2.1.309 で加わった同名のイベントを集計している場合は、データが出なくなる。",
+      "表示の変更として、usage 上限のメッセージが 5 時間の窓を「session limit」ではなく「5-hour limit」と呼ぶようになった。VS Code の拡張でも同じ表記になり、リセット時刻は「Resets at 3:10 PM」のような時刻で出る。`/model` と `/effort` のキャッシュ警告、入力欄の effort 表示も整理された。作業中に変更した effort は、モデルが適用するまでは実際の値として表示されず、次のメッセージまで反映されない場合があることを入力欄が示す。",
+      "不具合の修正では、非常に大きい CLAUDE.md・rules ファイル・@ で取り込んだファイルの冒頭だけを読んだ Claude が、そのファイルを上書きしてしまう問題が直った。Write は、全体を読むか、その場で編集するよう Claude に求める。Bash で git リポジトリの深い階層へ `cd` したあと、ディレクトリ単位の skills や `paths:` を持つ skills が見つからなくなる問題も直った。",
+      "そのほか、無効な名前のコマンドが1つあると全コマンドの読み込みが止まり、`claude -p` の出力が空になりうる問題、ターミナルで再開したセッションの最初の返信が次の再開で欠ける問題、PDF の読み取りが古いセッションファイルの掃除と重なって失敗する問題、Vim モードで行数を超える `gj` / `gk` の個数指定が `d`・`c`・`y` で文字を削除・コピーしてしまう問題が修正された。VS Code では、組織の設定を取得できなかった場合に終了コードだけが出る代わりに理由と再試行の案内が出る。",
+      "クラウドセッション向けには、ルーティンの作成・編集画面のモデル選択に effort の項目が加わった。環境設定のセットアップスクリプト欄には、色・行番号・コピーボタン付きの Bash エディタが入った。Claude Tag では、Slack の再試行通知が使用中のモデル名またはレート制限を示すようになり、ネットワークアクセスが None の環境のチャンネルで返信しない問題と、別スレッドにファイルを投稿する問題が直った。Code Review は、GitHub の push イベントが遅れて届いたときに古いコミットを見る問題が直り、プルリクエストの現在のコミットを対象にする。",
+      "全項目は公式の変更履歴にある。この記事は変更履歴の文言に基づく整理であり、各項目の挙動の再現は行っていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG.md（2.1.312）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@anthropic-ai/claude-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
+      }
+    ]
+  },
+  "cloudflare-security-audit-skill-six-phase-verified-findings-2026": {
+    "body": [
+      "Cloudflare の GitHub 組織に、cloudflare/security-audit-skill というリポジトリがある。README は、コーディングエージェントを「セキュリティ監査役」に変えるスキルだと説明している。ライセンスは MIT。本記事は、README と、リポジトリの skills/security-audit/SKILL.md を読んだ範囲での整理である。公開日はページから確認できず、リリースも切られていない（取得時点で Releases は空、main のコミットは14件）。GitHub の週間トレンドにこの週の上位として並んでいたため取り上げる。星の数は取得時点でそれぞれ約5.2万、今週の増加分は約1.6万と表示されていたが、日々変わる値である。",
+      "README によれば、このスキルは Cloudflare の脆弱性発見ハーネスの出発点にあたる。ハーネスは Cloudflare のブログ記事「Build your own vulnerability harness」で解説されていて、README は「ハーネスは複数段階の、組織全体を対象とする仕組みに育った。このスキルは、そこから派生した単一リポジトリ向けの出発点」と書く。ブログ記事は、本記事の作成環境からは到達できず、読めていない。ハーネス全体の実績や数字には触れない。",
+      "工程は6段階である。(1) 偵察: アーキテクチャ、信頼境界、入力の入り口を architecture.md と coverage-ledger.json にまとめる。(2) 網羅を軸にした探索: 台帳の単位ごとに隔離された探索役を割り当て、網羅の漏れを探す批評役を置く。(3) 候補の検証: 重複を除いた候補ごとに、新しいエージェントが反証を試みる。(4) 構造化出力: 結果を findings.json に書き、report-schema.json で検査する。(5) 記録の独立検証: 最終的な根拠を、別の新しいエージェントが確かめる。(6) 報告: REPORT.md、FINDINGS-DETAIL.md、NEEDS-VALIDATION.md を、検証済みの記録から作る。台帳と findings.json の検査には、依存パッケージの無い Node.js のスクリプト（validate-coverage-ledger.cjs と validate-findings.cjs）が使われる。",
+      "判定は3種類に分かれる。confirmed は、ソースをたどった完全な経路と、範囲を限った観測結果があるもの。needs_validation は、まだ確かめられていない事実が具体的に1つ残っているもので、深刻度は付けない。rejected は、反証された候補である。README の設計原則には「確認するのは、成立した境界の破れだけ」「見つけたエージェントが、それを検証することはない」「深刻度には影響が要る」「多層防御の欠落は脆弱性ではなく、補強の注記にとどめる」が並ぶ。たとえば層Aが攻撃を防いでいるなら、層Bが無いことは脆弱性として扱わない、という書き方である。",
+      "実行の安全に関する条件も、SKILL.md の先頭近くに書かれている。対象の側が制御するビルド、テスト、プロセス、ブラウザ、ファイルの処理は、OS が強制するサンドボックスの中でだけ行う。条件は、外部ネットワークが無いこと（必要なときはループバックのみ）、環境変数を許可リストで空から組み立てること、対象とツールチェーンは読み取り専用で書き込みは割り当てられた scratch ディレクトリだけであること、CPU・メモリ・時間などに上限があること、の4つである。これらを満たせないときは対象のコードを実行せず、その手がかりは needs_validation のまま、足りないサンドボックスの機能を妨げとして報告する。依存パッケージの導入やビルド中の取得も禁じている。本番や共有のサービスへの探査、有料 API の消費も禁止されている。",
+      "使い方は、監査したいコードベースでエージェントを起動し、「security audit this codebase」のように頼む形である。スキルには2つのモードがある。セキュリティの質問や限定したレビューは「ガイダンスモード」で、6段階の全体も出力ディレクトリの作成も自動では行わない。コードベースの監査やペンテストを明示して頼んだとき、または網羅的なレビューやレポートの成果物を求めたときに、「フル監査モード」で6段階をすべて実行する。出力先を指定しなければ、既定は ~/security-audit-skill/<リポジトリ名>/run-<N> で、リポジトリの中に書くのは、利用者がバージョン管理の対象外のディレクトリを明示した場合に限る。複数回の実行は累積し、前回の台帳と結果を使って、足りない部分を狙う。",
+      "導入は、README のとおりなら Skills CLI の npx コマンドである（npx skills add https://github.com/cloudflare/security-audit-skill --skill security-audit。--global でユーザー全体）。ここで注意がある。npx は外部のパッケージをその場で取得して実行する。本サイトの作成環境では、このコマンドを実行していない。スキルは、エージェントが従う指示書であり、エージェントは利用者の権限でファイルを読み、コマンドを走らせうる。導入の前に、リポジトリの SKILL.md と、使われるスクリプトの中身を自分で読むのが順序として正しい。SKILL.md は約22KB あり、サンドボックスの条件や書き込みの範囲を具体的に書いているが、本記事の作成では SKILL.md、README、VALIDATION-AND-REPORTING.md の取得までで、ハンティング用の各ガイド（メモリ安全性、AI/LLM、サプライチェーンなど10本）の全文は読めていない。Skills CLI 自体（skills.sh）の中身も確認していない。",
+      "README が示す効果の数字は1つで、「私たちの試行では、1回の実行で見つかったのは、繰り返し実行で見つかった脆弱性全体の約半分だった」。これは Cloudflare 自身の報告であり、独立した検証は確認できていない。また、README は必要なものとして「ツール利用と並列のサブエージェントに対応するモデルを持つコーディングエージェント」を挙げるだけで、特定のエージェント製品の名前も、実行にかかる時間や費用の目安も書いていない。フル監査は多数のエージェントを走らせる設計なので、費用は利用するエージェントの契約や API の課金に従う。SKILL.md の run-metadata.json には budget の項目があり、未設定なら null になる。",
+      "事実を並べる。このスキルは、最終的に人が読む判定を3種類に分け、証拠の無い疑いを confirmed にしない設計である。一方で、出力は言語モデルの推論に基づき、README は「脆弱性が無いこと」の保証を謳ってはいない。対象コードの実行にはサンドボックスが要り、用意できない環境では、裏づけの取れない手がかりが needs_validation に多く残ることになる。自分のコードに使うかどうかは、これらの条件と、導入前に読める範囲の中身を見て判断することになる。"
+    ],
+    "primarySources": [
+      {
+        "title": "cloudflare/security-audit-skill（README）",
+        "url": "https://github.com/cloudflare/security-audit-skill"
+      },
+      {
+        "title": "security-audit の SKILL.md",
+        "url": "https://github.com/cloudflare/security-audit-skill/blob/main/skills/security-audit/SKILL.md"
+      },
+      {
+        "title": "VALIDATION-AND-REPORTING.md（工程3〜6）",
+        "url": "https://github.com/cloudflare/security-audit-skill/blob/main/skills/security-audit/VALIDATION-AND-REPORTING.md"
+      }
+    ]
+  },
+  "anthropic-usage-cost-analytics-api-beta-request-limit-128mb-2026": {
+    "body": [
+      "Anthropic の Claude Platform リリースノート（platform.claude.com）には、2026年10月28日と29日付で2件の更新がある。ひとつは使用量と費用の取得 API の入れ替え、もうひとつはリクエストサイズ上限の引き上げである。以下は公式ドキュメントの記載に基づく整理で、実際の挙動は検証していない。",
+      "10月29日付の更新では、Usage and Cost Analytics API がベータで始まった。エンドポイントは2つあり、`GET /v1/organizations/analytics/usage` がトークン数とリクエスト数を、`GET /v1/organizations/analytics/cost` が米ドルの費用を返す。対象は Claude Console と Claude Enterprise の組織で、リクエストには `anthropic-beta: analytics-usage-cost-2026-08-24` と `anthropic-version` のヘッダーが必要になる。公式は、SDK と `ant` CLI は両方のヘッダーを自動で付け、続きのページも取得するため、`limit` はページの大きさだけを決めると説明している。",
+      "認証について、ドキュメントは Claude Console の組織では Admin API キー、または `org:admin` スコープの OAuth トークンなどの Admin API の資格情報を使うとしている。個人アカウントでは Admin API は使えない。Admin API キーで呼ぶ場合は、集計を担うサービス専用のキーを作り、シークレットマネージャーに置いて定期的に更新すること、可能なら Workload Identity Federation で短命のトークンを使うことが勧められている。AWS 上の Claude Platform と Google Cloud 上の Claude Models（Anthropic managed）でも両エンドポイントが使える。それぞれ、AWS では `ListAccountUsage` / `ListAccountCost`、Google Cloud では `usageAnalytics.list` / `costAnalytics.list` の権限で認可される。",
+      "集計の切り方は、`group_by[]` で指定する。モデル、ワークスペース、API キー、サービスティア、リクエストの背後にあるユーザーまたはサービスアカウント（`actor`）などで分けられ、1回の問い合わせで指定できる次元は最大5つである。`time_bucket_width` に `1m`・`1h`・`1d` を指定すると UTC の時間帯ごとに分割され、指定しなければ範囲全体の合計が1行で返る。絞り込みは `models[]` のように次元ごとの配列で行い、同じ絞り込みの複数値は OR、異なる絞り込みどうしは AND で結ばれる。費用のエンドポイントには、`cost_type` と `token_type` という追加の次元があり、これらは5つの上限にも `limit` にも数えられない。",
+      "同じ10月29日付で、従来の Usage and Cost API と、Claude Enterprise Analytics API の `usage_report`・`cost_report`・`user_usage_report`・`user_cost_report` エンドポイントが legacy になった。リリースノートは、いずれも引き続きサポートされると書いている。既存の連携を移す手順は、Analytics API のドキュメントに「Usage and Cost API から」と「Claude Enterprise の使用量・費用レポートから」の2つの節として用意されている。legacy になっただけで廃止日は示されていないため、いつまで使えるかは公式の記載からは分からない。",
+      "10月28日付の更新は、第一者の Claude API での Messages API と Token Counting API の最大リクエストサイズが、32 MB から 128 MB に上がったというものである。リリースノートは、この引き上げが第一者の Claude API に限られると明記している。Amazon Bedrock や Google Cloud など他の経路の上限については、この記載からは分からない。ほかの上限（コンテキスト長など）に変更があるかは、この記載からは分からない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Platform リリースノート",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Usage and Cost Analytics API（公式ドキュメント）",
+        "url": "https://platform.claude.com/docs/en/manage-claude/usage-cost-analytics-api"
+      }
+    ]
+  },
+  "gemini-cli-0-66-terminal-sync-output-mcp-oauth-private-network-2026": {
+    "body": [
+      "google-gemini/gemini-cli の docs/changelogs/latest.md は、最新の安定版を v0.66.0（2026年10月27日公開）としている。npm レジストリでも `latest` タグが 0.66.0 を指し、公開時刻は同日 UTC 20:30 だった。直前に扱った 0.65.0 の次の安定版にあたる。以下は公式の変更履歴の記載に基づく整理で、実際の挙動は検証していない。",
+      "端末表示では、同期出力（synchronized output）への対応とスピナー描画の分離が入った。スクロールできるツール出力の枠でのちらつきと罫線のはみ出しが減り、表示を更新してもスクロールバックが保たれる。",
+      "実行まわりでは、コアのスケジューラーがツール呼び出しのグループを直接発行するようになり、UI 側の先読みが無くなった。ブートストラップのラッパーに届いた終了シグナルは、子プロセスへ転送される。",
+      "Git とシェルの環境では、ユーザーレベルの `~/.gitconfig` の設定が保たれ、対話的な SSH と認証情報のプロンプトは抑止されてハングを防ぐ。Windows での diff 引数の引用符の扱いも改善された。",
+      "セキュリティと設定では、MCP の OAuth フローでプライベートネットワークのエンドポイントを使えるオプトインの設定が加わった。認証エラーの検出での誤検知が減り、設定内のプレースホルダーは `.env` の読み込み後に解決される。カスタムキーバインドでは `keys` 配列を指定できる。変更履歴にはほかに Gemini 4 への対応を知らせるバナーなども載っており、全項目と各プルリクエストは公式の変更履歴にある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Gemini CLI 変更履歴（latest, v0.66.0）",
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/latest.md"
+      },
+      {
+        "title": "@google/gemini-cli（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@google/gemini-cli"
+      }
+    ]
+  },
+  "codex-cli-0-166-transcript-selection-queue-resume-doctor-network-2026": {
+    "body": [
+      "OpenAI の Codex リポジトリのリリースページによると、Codex CLI 0.166.0 は10月29日に公開された（ページには年の表記が無く、一覧の並びから2026年と読んだ）。前回扱った 0.165.0 は別記事にある。この記事はリリースノートの記載を整理したもので、実際の挙動は検証していない。リリースノートに破壊的変更の明記は見当たらない。",
+      "新機能は6点ある。第一に、トランスクリプトをキーボードで選択できる。単語・行・ページ単位の移動と検索が組み込まれ、ショートカットは設定で変えられる。第二に、非同期の質問・選択肢・回答・トランスクリプト上の返信で、Markdown の描画が揃えられた。",
+      "第三に、モデルカタログの扱いである。GPT-6.1 Terra が、同梱カタログに加えて Vertex AI と Amazon Bedrock のカタログにも入った。0.165.0 では Terra がカタログに加わったと記録されており、今回はその対象が広がった形にあたる。リリースノートが述べているのはカタログへの追加までで、提供条件や価格は今回の確認範囲に無い。",
+      "第四に、`codex queue --resume` は、メッセージをキューに入れたあと、読み込まれていないスレッドを再開する。第五に、安全のためのブロックについて、理由の説明が分かりやすくなり、TUI では選べる「より安全な続きのプロンプト」が表示される。第六に、`codex doctor --network-only` が追加され、設定・接続・WebSocket の診断だけを取り出して実行できる。",
+      "バグ修正は7点ある。再開・フォークしたスレッドで、承認と権限の確認済み設定が保たれるようになった。消されたコンポーザーの文字列を戻すとき、ローカルの画像添付が残る。アーカイブを解除した親スレッドの下で、生成済みの子孫スレッドが復元される。",
+      "このほか、app-server のスレッド開始・終了での競合状態が直り、完了した実行環境が速やかに解放される。TUI の再接続からの回復が改善され、オフラインでの `/quit` と `/exit` の扱いも直った。再開・フォークをまたいで推論トークンの計上が保たれ、早すぎる圧縮を避ける。macOS のスタンドアロン版の後片付けは、使用中の場合や、パスに非 ASCII 文字を含む場合でも動く。",
+      "ビルド面では、Bazel がソースからビルドする V8 に切り替わり、Windows の MSVC アーカイブにも対応した。スタンドアロンの executor が CLI と app-server のリリースパッケージに同梱される。開発・リリースのビルドは Node.js 24.22.1 と Rust 1.95.0 に揃えられた。",
+      "リリースノートは、このほか多数のプルリクエストを列挙している。主な題材は、Guardian レビュアーの整理、トレースとテレメトリ（OpenTelemetry の要件を含む）、モデルカタログとプロバイダー設定、MCP 接続とプラグイン管理、unified exec と code mode、TUI の細部、テストの安定化である。個別の中身は今回の確認範囲外で、気になる項目は原文で確かめたい。"
+    ],
+    "primarySources": [
+      {
+        "title": "Codex CLI 0.166.0 リリースノート（openai/codex）",
+        "url": "https://github.com/openai/codex/releases/tag/rust-v0.166.0"
+      },
+      {
+        "title": "Codex リリース一覧（openai/codex）",
+        "url": "https://github.com/openai/codex/releases"
+      }
+    ]
+  },
+  "claude-code-2-1-314-block-writes-outside-dirs-pcompact-cap-monitor-hooks-2026": {
+    "body": [
+      "Claude Code の公式 CHANGELOG によると、2.1.314 は npm レジストリ上で2026年10月30日 00:12（UTC）に公開された。前回扱った 2.1.312 の記事の次の版にあたる。今回確認できた CHANGELOG の本文には 2.1.313 の項目が見つからなかったため、この記事は 2.1.314 の記載だけを整理する。実際の挙動は検証していない。CHANGELOG は非常に長く、確認できたのは先頭部分だけである。",
+      "セキュリティと権限では、新しい設定 `permissions.blockWritesOutsideWorkingDirectories` が加わった。Write・Edit・NotebookEdit が作業ディレクトリの外のパスに触れるのを、すべての権限モードで止める。そのほか、Claude apps gateway の上流を特定の ID プロバイダーのグループに属する開発者に限れる（フェイルオーバー中も含む）。Bedrock の上流では、どのガードレールのフィルターが働いたかを、一致した文字列を記録せずにログに残せる。",
+      "管理設定まわりでは、TLS の信頼設定が Desktop セッションにも適用されるようになり、`forceRemoteSettingsRefresh` は保存された写しの有効期限が切れたあとも機能する。",
+      "モデルとコンテキストでは、管理者がモデルの effort に上限を設けていてもセッションが失敗しなくなった。Claude Code が水準を下げて再試行し、使った水準を報告する。長く放置された会話の idle compaction が、VS Code と Desktop の Code タブでも動く。画像が多い Bedrock セッションは、失敗せずに古い画像を落として圧縮する。",
+      "Microsoft Foundry では、既定のモデルにデプロイが無いとき、同じファミリーの古いモデルにフォールバックする。ゲートウェイ越しの `claude-opus-4.8` のようにドットで書いたモデル ID も正しく解釈される。ゲートウェイ固有の理由で拒否された要求（ツール検索ブロックや beta ヘッダーの拒否など）は、その機能を外して再試行される。",
+      "認証と MCP では、クロス署名された更新済みルート証明書での TLS エラーが直った。サインイン無しでも使える MCP サーバーは、保存されたサインインが効かなくなったあと、サインアウトの状態で使われる。`claude mcp logout` は、サインインが実際には消えていないのに成功と報告することがなくなった。",
+      "CLI とフックでは、`claude -p` が起動時のエラーを出力し、黙って終了コード 0 で終わらず終了コード 1 になる。`CI` が設定されているとき、`claude ultrareview` と `claude remote-control` は、確認を求めずに信頼されていないフォルダを拒否する。PreCompact フックの出力は1フックあたり10,000文字に制限される。Bash に一致するフックは、Monitor ツールが始めたコマンドにも適用される。ただし、そのコマンドの承認や書き換えはできない。",
+      "インターフェースとツールでは、ストリーミング中の markdown 表の描画、`/resume` のタイトル表示、サブエージェントのトランスクリプトからの `/btw`、vim モードの移動、権限プロンプトのレイアウトに修正が入った。バックグラウンドの git 更新が、リポジトリの index ロックを保持し続けない。",
+      "他の提供面にも修正がある。VS Code では Ctrl+D の音声入力ショートカット、プランのプレビュー内の検索、MCP の「認証をクリア」の結果が直った。クラウドセッションでは環境とスケジュールタスクの修正があり、セットアップスクリプトが失敗してもセッションが始まる。Remote Control ではセッションの登録とモデルの切り替えが安定した。Claude Tag では Slack のコマンド・スレッド・チャンネル設定の修正が入った。",
+      "なお `blockWritesOutsideWorkingDirectories` の説明は CHANGELOG の1行で、既存のサンドボックスや権限ルールとの優先関係までは今回の確認範囲に無い。導入前に公式ドキュメントで挙動を確かめたい。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG（anthropics/claude-code）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@anthropic-ai/claude-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
+      }
+    ]
+  },
+  "anthropic-s1-nasdaq-ant-filing-2026": {
+    "body": [
+      "Anthropic は2026年10月26日、同社のニュースページで、Anthropic, PBC が新規株式公開（IPO）に関する登録届出書（Form S-1）を米国証券取引委員会（SEC）に提出したと発表した。本記事は、その発表文（anthropic.com/news/s1-sec）を2026年10月30日に読んだ範囲での整理である。S-1 の本文そのものは、本記事の作成環境から SEC のサイトに到達できず、読めていない。",
+      "発表文が述べている事実は次のとおり。同社は Class A 普通株の上場を、Nasdaq Global Select Market で、銘柄コード「ANT」として行う意向である。募集する株数と価格帯は「まだ決まっていない」。募集は目論見書によってのみ行われ、届出書はまだ効力を生じていないため、効力発生前に株式を売ったり買付けを受け付けたりすることはできない、とも書かれている。",
+      "予備目論見書の入手先として、発表文は Goldman Sachs & Co. LLC と Morgan Stanley & Co. LLC の2社を挙げている。引受を担う証券会社の役割や、各社の位置づけ（主幹事かどうか等）は発表文に書かれていない。",
+      "発表文に書かれていないことも多い。評価額、調達額、上場の時期、募集株式に占める既存株主の売出しの有無は、いずれも触れられていない。S-1 の本文に事業の数字（売上、損失、顧客構成など）が含まれている可能性があるが、本記事では確認していないため扱わない。",
+      "当サイトは過去に、この件に関して複数の記事を出している。2026年3月には「早ければ10月の IPO を検討」との報道、6月には機密提出（confidential filing）に関する記事、9月14日には「11月にも Nasdaq 上場、評価額2兆ドル規模」との報道に基づく分析記事である。報道ベースの評価額や時期は、今回の発表文には現れていない。今回確認できたのは、S-1 を提出したこと、上場先と銘柄コード、株数と価格が未定であること、の3点である。",
+      "なお、今回の発表がこれまでの機密提出と同じ届出書の続きなのか、公開された提出なのかは、発表文の記載だけでは判断できない。この点は S-1 の公開版を SEC の EDGAR で確認できた時点で追記する。",
+      "【編集履歴】2026-10-30 新規公開。一次資料は Anthropic の発表文1本のみで、SEC の提出書類には到達できていない。",
+      "【追記 2026-11-12】Anthropic は11月10日、IPO のロードショーを開始したと発表し、本記事の時点で未定だった募集株数（Class A 普通株 825,000,000 株）と想定価格帯（1株 70.00〜78.00 ドル）を示した。内訳と、発表文に書かれていない点は[続報の記事](?a=anthropic-ipo-roadshow-launch-price-range-2026)にまとめた。SEC の提出書類には、引き続き到達できていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic files S-1 with the SEC for proposed initial public offering（Anthropic、2026-10-26）",
+        "url": "https://www.anthropic.com/news/s1-sec"
+      },
+      {
+        "title": "Anthropic launches roadshow for proposed initial public offering（Anthropic、2026-11-10）",
+        "url": "https://www.anthropic.com/news/roadshow-launch"
+      }
+    ]
+  },
+  "agent-skills-donated-to-aaif-linux-foundation-2026": {
+    "body": [
+      "Anthropic は2026年10月22日、ニュースページで、エージェントに専門知識とワークフローを与えるオープン標準 Agent Skills を、Agentic AI Foundation（AAIF）に寄贈すると発表した。本記事は、その発表文（anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation）を2026年10月30日に読んだ範囲での整理である。仕様サイト（agentskills.io）と AAIF のサイトには、本記事の作成環境から到達できず、読めていない。",
+      "発表文によれば、スキルとは SKILL.md というファイルを含むフォルダで、特定の作業や領域をエージェントに教える。必要ならスクリプトや参考資料も同梱できる。Anthropic は Claude Code の開発中にこれを作った。汎用の知識作業には強かったが、実際の業務に要る手続きの知識が足りなかったため、と説明している。2025年10月の公開から数週間で、開発者が数千のスキルを GitHub に公開し、Codex・Cursor・OpenCode 向けの読み込み処理も書いた。その後、独自の GitHub 組織とドメインのもとでオープン標準として公開した、とある。",
+      "発表文が挙げる数字は次のとおり。ChatGPT、Cursor、GitHub Copilot、VS Code を含む70以上のエージェントのプラットフォームが、2025年12月の標準公開以降に Agent Skills を取り込んだ。これまでに100万件のスキルが公開され、インストールはおよそ2.8億回に達した。いずれも Anthropic の発表文による数字で、公開件数やインストール数の集計方法は書かれておらず、独立した検証は確認できていない。",
+      "寄贈の中身は、Agent Skills の名称とロゴ、GitHub 組織、agentskills.io のドメインである。寄贈先の AAIF は Linux Foundation の傘下にあり、発表文によれば Anthropic が Block と OpenAI とともに昨年共同で設立し、Anthropic は Model Context Protocol（MCP）もここに寄贈している。標準を使う、または貢献するために AAIF へ加入する必要はない、とも書かれている。",
+      "保守体制について、発表文は次のように書く。Anthropic、Google、OpenAI などの技術者が個人としてこの標準を保守し、リードメンテナーは David Soria Parra 氏と Mahesh Murag 氏である。最初の提案として、バージョン付きのリリース、正式な提案手続き、スキルを書く人とインストールする人向けのセキュリティ指針を含むロードマップが挙げられている。仕様変更への意見は、プロジェクトの Discord で受け付けるという。",
+      "読者の実務への含意は限られる。発表文は標準の中身（SKILL.md の形式など）が変わるとは書いておらず、現時点で確認できるのは、管理主体が1社から財団に移ることと、ロードマップの方向である。セキュリティ指針が提案に入っている点は、スキルが外部から取り込める実行可能なコードや手順を含みうることと関係するが、具体的な内容は発表文に無い。",
+      "【編集履歴】2026-10-30 新規公開。一次資料は Anthropic の発表文1本のみ。AAIF 側の発表と仕様サイトには到達できていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Donating Agent Skills to the Agentic AI Foundation（Anthropic、2026-10-22）",
+        "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation"
+      }
+    ]
+  },
+  "anthropic-usage-policy-2026-update-deceptive-campaigns-hardware-2026": {
+    "body": [
+      "Anthropic は2026年10月8日、毎年行っている利用方針（Usage Policy）の更新を公表した。本記事は、その発表文（anthropic.com/news/2026-usage-policy-update）を2026年10月30日に読んだ範囲での整理である。方針の全文（Usage Policy と Supported Regions Policy）は読めておらず、以下は発表文が要約している変更点に限る。新しい版は11月12日に施行される。",
+      "発表文は改定の性格について、変更の大半は既存の規則を明確にするためのもので、この1年で Claude がより長く独立した作業をするようになったことを受け、新しい例を加えたと説明している。誤用の新しい傾向として、影響工作、武器開発、監視の3つを挙げ、9月の脅威インテリジェンス報告に記録した内容に基づくとしている。",
+      "1つ目は、欺瞞的な活動の新セクションである。発表文によれば、国営メディア、政府の宣伝部門、営利企業が Claude を使って偽アカウントのネットワークや捏造ニュースサイトを運営していた例が確認された。従来の方針でも禁止していたが、規定が選挙、詐欺、プライバシー、偽情報の各節に分散していたため、「Do Not Engage in Deceptive Campaigns or Artificial Activity」として1つにまとめた。政治的か商業的かを問わず、発信元を隠すことや偽アカウントで内容を増幅すること、影響工作のためのツールや基盤の構築を対象とする。",
+      "選挙の節は「Do Not Undermine Democratic Processes」に改名され、有権者を欺くことや選挙を妨害することの禁止に絞られた。同時に、個別化された投票・選挙運動のターゲティングの一律禁止は外された。理由として発表文は、この禁止が、非営利団体が他言語の有権者向け情報を作る、選挙管理担当者が投票用紙の修正通知を送る、といった正当な市民活動も含んでいたことを挙げる。当初の規則が想定していた行為（欺瞞に頼る有権者のターゲティングや個人データの悪用）は、欺瞞的キャンペーン、監視、プライバシーの各節で引き続き禁止されると書かれている。",
+      "2つ目は武器の節である。発表文は、武器の誘導・制御ソフトを作る目的で Claude を使おうとする試みが最近見られたとして、禁止の対象に武器を動作させるソフトウェアと部品、ドローンなど自律的な車両に武装させる行為が含まれると明記したと述べる。これは従来の運用を反映した変更で、実際の執行方針の変更ではないとしている。",
+      "3つ目は監視と法執行である。9月の報告が、政治的な反対者を特定して追跡する監視システムを AI で作る動きの広がりを記録したことを受け、節を書き直した。同意のない人物の追跡は、リアルタイムでも過去に集めたデータの分析でも禁止され、法執行や刑事司法の手続きで誰を捜査・逮捕・起訴するかを Claude に決めさせたり推薦させたりすることも禁止される。監視を目的としたツールの構築や改良も禁止である。許可される用途として、本人が同意した追跡（不正検知など）、コンテンツのモデレーション、報道、法律調査が明記された。",
+      "4つ目は高リスク用途の要件である。健康、法的権利、資産、生計、不可欠なサービスへのアクセスに影響する使い方では、Claude の推奨を確認し必要なら変更できる権限を持つ担当者を置くことと、影響を受ける本人に AI が使われたことを伝えることを求めている。これらの要件自体は変わらないが、どの用途が対象でどれが対象外かを具体的に書き直した。さらに、Model Hardware Standard の公表を受けて、傷害を起こしうる機器に Claude をつないで自律的に物理動作をさせる場合の要件が加わった。資格のある運用者が機器を観察して必要なときに止められること、Claude との接続が切れたときに機器が安全な状態を保てることである。",
+      "5つ目は、モデルに対する虐待行為の禁止である。持続的で不必要な、虐待的または残酷な振る舞いを禁止するもので、発表文は、利用者が目的もなく繰り返し残酷に接する極端な場合にのみ適用し、通常の苛立ち、反論、暗いテーマの創作、モデルのテストや研究には適用しないと書く。すでに Claude.ai と Claude Code で、持続的に虐待的な利用者との会話を Claude が終了できるようにしており、その機能が主な執行手段であり続けるという。",
+      "最後に Supported Regions Policy の説明の明確化がある。発表文によれば、昨年、非対応地域に本社を置く主体が過半を所有する企業へのアクセスを制限した。今回は、その執行の仕方を対応地域のページで説明し直した。禁止の対象は、非対応地域に物理的にいる人、そこで設立または本社を置く主体、そこの個人や主体に過半を所有または支配される主体である。",
+      "この記事で確認できていないことを記す。方針の全文と旧版の差分は読めておらず、改定の要約が実際の条文とどう対応するかは確認していない。「実際の運用は変わらない」という説明は Anthropic 自身のもので、独立した検証は確認できていない。他社（OpenAI、Google など）の利用方針との比較も、本記事では行っていない。",
+      "【編集履歴】2026-10-30 新規公開。一次資料は Anthropic の発表文1本のみで、方針の全文には到達できていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "2026 Usage Policy update（Anthropic、2026-10-08）",
+        "url": "https://www.anthropic.com/news/2026-usage-policy-update"
+      }
+    ]
+  },
+  "claude-code-2-1-316-opus-4-8-fast-mode-deprecated-subagent-effort-2026": {
+    "body": [
+      "Claude Code の公式 CHANGELOG によると、2.1.316 は npm レジストリ上で2026年10月31日 00:42（UTC）に公開された。前回扱った 2.1.314 の次の版にあたる。npm には 2.1.315 が10月30日 21:05（UTC）に載っているが、確認できた CHANGELOG の先頭は 2.1.316 で、2.1.315 の項目は見つからなかった。この記事は 2.1.316 の記載だけを整理する。実際の挙動は検証していない。",
+      "最初に確認したいのは fast mode の扱いである。CHANGELOG は「Opus 4.8 の fast mode を2026年10月30日付で非推奨とし、2026年11月30日に削除する」と記す。削除後、Opus 4.8 での fast mode の要求はエラーを返し、通常の Opus 4.8 にはフォールバックしない。CHANGELOG は、速さを維持するには Opus 5.5 へ移るよう書いている。同じ日に確認した公式の fast mode ドキュメントには、この非推奨の記述はまだ無く、Opus 5 と Opus 4.8 は research preview、Opus 5.5 は提供中とされていた。また同ドキュメントによると fast mode の1MTokあたりの価格は Opus 5.5 が入力8ドル・出力40ドル、Opus 5 と Opus 4.8 が入力10ドル・出力50ドルである。Opus 4.8 を明示的に指定して fast mode を使っているスクリプトや設定がある場合は、`/fast` の対象モデルを見直す材料になる。",
+      "モデルと effort まわりでは、`CLAUDE_CODE_SUBAGENT_EFFORT` が加わった。ほかに effort を指定する手段が無いとき、サブエージェントが走る effort を、セッションの値の継承ではなくこの変数で決められる。`CLAUDE_CODE_DISABLE_ULTRATHINK` は `ultrathink` キーワードを無効にする。2.1.311 で `ultrathink` が xhigh の effort で動くようになったことに続き、VS Code でも `ultrathink` のターンが xhigh で動き、チャット欄で虹色に表示される。",
+      "Claude apps gateway には、管理者向けの項目が増えた。支出上限の管理 API に `pooled_budget` を指定すると、グループの全員が共有する月次予算を、各人の上限に加えて設けられる。`managed.policy_mode: layered` では、最初に一致したポリシーだけでなく、一致したすべてのポリシーが下位のものに重ねて適用される。Bedrock の上流では `guardrail.input_tagging` が加わり、Amazon Bedrock のガードレールの prompt attacks フィルターが必要とする入力タグでプロンプトを包む。`all_messages_and_system` を選ぶとシステムプロンプトにも付く。また、リクエストが名指しするすべてのモデルを `availableModels`・`deniedModels`・`models` と照合するようになり、禁止されたモデルには、該当する項目名を挙げた 400 が返る。",
+      "セキュリティと権限では、`--restricted` のセッションが、Read の許可ルールが覆っていれば作業ディレクトリの外のファイルをアップロードしてしまう問題が直った。Team と Enterprise のログインでは、Anthropic の API から取得したサーバー管理設定が承認のプロンプトなしで適用される。保存された写しが検証に通らない場合は拒否される。管理された `autoMode.allow` の一覧が `\"$defaults\"` を含まないとき、ホストアプリの `--settings`、`/permissions` での最初のルール追加、`/auto-mode-setup` によって組み込みの例外が戻る問題も修正された。ただし、スケジュールタスクのプロンプトに対する組み込みルールは、`\"$defaults\"` の無い一覧でも消えなくなった。",
+      "証明書とネットワークでは、`CLAUDE_CODE_DISABLE_LOOPED_CROSS_CERT_DROP` が加わった。互いに認証し合って輪になっているシステムのクロス証明書を残す設定で、社内の CA がそれを必要とするサーバー向けである。SSL 証明書のエラーは、中間証明書が抜けているサーバーなど考えられる原因と、それぞれの対処を示すようになった。圧縮された応答が途中で切れたり壊れたりしたとき、ネットワーク要求がハングする問題も直った。",
+      "Bash ツールとフックでは、Claude Code が自分で終了したときに macOS と Linux でシェルのコマンドが動いたまま残る問題、値に改行を含むエイリアスや先頭がダッシュの関数名が壊れる問題、`SHELLOPTS` をエクスポートしているときスクリプトが最初のコマンドで止まる問題が修正された。PowerShell のフックは、コマンドが型キャスト・`param`・`using`・属性で始まる場合でも、終了コード 2 でブロックできる。",
+      "Bedrock と Vertex AI では、`sonnet`・`opus`・`haiku` の別名で最新のモデルがアカウントやリージョンでまだ使えないとき、途中でエラーを出さず古いモデルに切り替わる。そのほか、`/model <id>` が、この版で認識できないモデルのとき、自動圧縮が200Kのコンテキストを前提にすると警告する。Windows では Grep と Glob が、タイムアウトで検索プロセスを止めても終了しないときに戻らなくなる問題が直った。",
+      "VS Code では Claude apps gateway へのサインインがチャットパネルからできる。クラウドセッションでは、MCP サーバーが求めたフォームを埋めるか辞退するカードが加わり、Enterprise のメンバーは自分のクラウド環境のネットワーク用シークレットを追加・削除できる。Claude Tag では Slack のチャンネル設定が「Respond automatically」のスイッチから「How Claude participates」の選択に変わった。Code Review の分析ページには、重大度ごとの指摘数のカードが加わった。",
+      "なお CHANGELOG は非常に長く、確認できたのは 2.1.316 の項目と 2.1.314 の先頭部分である。fast mode の削除日は CHANGELOG の1行が根拠で、公式ドキュメントでの確認には至っていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG（anthropics/claude-code）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "Speed up responses with fast mode（Claude Code ドキュメント）",
+        "url": "https://code.claude.com/docs/en/fast-mode"
+      },
+      {
+        "title": "@anthropic-ai/claude-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
+      }
+    ]
+  },
+  "anthropic-opus-4-8-fast-mode-deprecated-api-2026": {
+    "body": [
+      "Claude Platform のリリースノートによると、Anthropic は2026年10月30日、Claude Opus 4.8 の fast mode を非推奨にした。削除日は2026年11月30日で、削除後に `claude-opus-4-8` へ `speed: \"fast\"` を付けて送ると、リクエストはエラーになる。fast mode を使い続けるには Claude Opus 5.5 へ移るよう案内されている。標準速度の Opus 4.8 そのものの扱いは、今回のリリースノートの項には書かれていない。この記事は公式ドキュメントの記載だけに基づく。",
+      "fast mode は、同じモデルを速い推論構成で動かす機能で、公式は出力トークンの毎秒数が最大2.5倍になると説明している。ドキュメントの現行の記述では、fast mode は Claude Opus 5.5 で利用でき、Opus 5 と Opus 4.8 ではリサーチプレビューとされている。今回の非推奨は、そのうち Opus 4.8 だけが対象である。Opus 5 について削除の告知は、確認した範囲のリリースノートにもドキュメントにも載っていない。",
+      "単価は、ドキュメントの価格表では Opus 5.5 が入力 $8 / 出力 $40、Opus 5 と Opus 4.8 が入力 $10 / 出力 $50（いずれも100万トークンあたり）である。fast mode の単価は標準単価に倍率をかけた形で、プロンプトキャッシュやデータレジデンシーの倍率はその上に重なる。つまり Opus 4.8 から Opus 5.5 へ移ると、fast mode の単価表は下がる。ただし、モデルが変わるので、標準速度の単価・出力の質・プロンプトの挙動が同じとは限らない。これらは本記事では検証していない。",
+      "移行する側が確認することは、公式の記述から次のように整理できる。1つ目はモデル ID の差し替えである。コードやエージェント設定に `claude-opus-4-8` と `speed: \"fast\"` の組み合わせが残っていると、11月30日以降にエラーで落ちる。2つ目は、Managed Agents では `speed` をエージェントのモデル指定（`{\"id\": ..., \"speed\": \"fast\"}`）に書く形なので、リクエスト側だけでなくエージェント定義も探す必要がある。3つ目は、速度が違うリクエストはプロンプトキャッシュの接頭辞を共有しないことである。モデルを変えると別途キャッシュが温まり直す。",
+      "確認できていないこと。Opus 5.5 への移行ガイドの該当部分は、今回アクセスした範囲では fast mode に関する記述を取り出せなかった。非推奨の理由、Opus 5 の fast mode の今後、速度や品質の実測は公式に書かれておらず、独立した情報源も確認していない。Claude Code 側の関連する変更は、本サイトの Claude Code 2.1.316 の記事で扱っている。"
+    ],
+    "tables": [
+      {
+        "caption": "fast mode の対応状況と単価（公式ドキュメントをもとに整理、2026年10月31日時点）",
+        "afterParagraph": 3,
+        "headers": [
+          "モデル",
+          "fast mode の状態",
+          "fast mode の単価（入力 / 出力、100万トークンあたり）"
+        ],
+        "rows": [
+          [
+            "Claude Opus 5.5",
+            "利用可",
+            "$8 / $40"
+          ],
+          [
+            "Claude Opus 5",
+            "リサーチプレビュー",
+            "$10 / $50"
+          ],
+          [
+            "Claude Opus 4.8",
+            "非推奨、2026年11月30日に削除",
+            "$10 / $50"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Platform リリースノート（2026年10月30日の項）",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Fast mode（Claude Platform ドキュメント）",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/fast-mode"
+      }
+    ]
+  },
+  "github-copilot-cli-1-0-104-1-0-105-fusion-auto-autopilot-wait-2026": {
+    "body": [
+      "github/copilot-cli の変更履歴（changelog）によると、GitHub Copilot CLI は 2026年10月27日に 1.0.104 と 1.0.105 の2版が出た。直前の 1.0.100〜1.0.103 は別の記事で扱っている。npm の公開記録では 1.0.104 が10月27日、1.0.105 が10月28日（UTC）で、changelog の日付とは1日ずれる。この記事は changelog の記載をもとに整理したもので、実際の挙動は検証していない。",
+      "1.0.104 には4つの項目がある。管理モデルの fusion は、セッションを Auto で開始し、fusionTier の設定を適用する。対話と SDK の Autopilot セッションは、付随する背景タスクを待ち続け、COPILOT_TASK_WAIT_TIMEOUT_SECONDS で止まらなくなった。ただし `-p --autopilot` は引き続きこの値を尊重する。保存した Auto の設定が使えなくなったときは、毎ターン失敗せず Auto の既定の設定に戻る。Assisted Permissions は、実験モードを有効にしなくても使える。",
+      "1.0.105 の項目は1つで、/model で Copilot Fusion の High または Max を選ぶ操作が、長いコンテキストのセッションからでも動くようになった。changelog は Fusion の仕様や料金には触れていないので、どのプランで使えるかは公式のドキュメントで確認する必要がある。",
+      "自分の版に何があるかを判断する材料としては、Autopilot の待機の挙動が変わる点が分かりやすい。1.0.103 以前では、背景タスクの待機が環境変数のタイムアウトで打ち切られうるという前提で運用していた場合、対話と SDK では打ち切られなくなる。一方、-p のヘッドレス実行では従来どおりタイムアウトが効く。ここに挙げたのは changelog の全項目である。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitHub Copilot CLI changelog（github/copilot-cli）",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      },
+      {
+        "title": "@github/copilot（npm）の公開記録",
+        "url": "https://www.npmjs.com/package/@github/copilot"
+      }
+    ]
+  },
+  "anthropic-gsa-partnership-40-percent-government-discount-2026": {
+    "body": [
+      "Anthropic は2026年10月27日、同社のニュースページで、米国の一般調達局（GSA）との提携を新しい合意で拡大すると発表した。本記事は、その発表文（anthropic.com/news/expanding-partnership-gsa）を2026年11月2日に読んだ範囲での整理である。GSA 側の発表や契約文書には到達しておらず、読めていない。",
+      "発表文が述べている条件は次のとおり。政府側のパートナーは、Claude Enterprise、Claude for Government、Claude API を40%の割引で購入できる。割引が全製品面に適用されるのは初めてで、直接購入には今回から、クラウド事業者経由の購入には「今後数か月」で適用される。州・地方・部族・準州（SLTT）の政府にも広がる。Anthropic は、この割引で政府が約10億ドルを節約できると見積もっている。最低利用額の縛りはなく、機関は使った分だけを支払う、とも書かれている。購入は GSA の Multiple Award Schedule から、OneGov の割引価格で今すぐ行える。",
+      "認可の状況として、発表文は次を挙げている。Claude for Government は9月30日に一般提供となり、商用版とほぼ同等の機能を FedRAMP High の認可水準で提供する。Amazon Bedrock 上の Claude は FedRAMP High を取得し、一部のモデルは AWS GovCloud で国防総省の IL4・IL5 の業務にも認可されている。Google Cloud の Vertex AI 上の Claude も FedRAMP High を取得している。Claude Enterprise は FedRAMP 20x の枠組みで FedRAMP Moderate の認可手続き中で、完了時期は書かれていない。",
+      "導入の規模について、発表文は次の数字を出している。Claude を使う米国の連邦・州・地方の政府組織は約500、Claude for Government の週間アクティブユーザーは2月から約8倍、連邦の文民機関での利用は1年で約20倍。また、機関の導入を支援する専用プログラムを「今後数週間」で始めるとしている。",
+      "事例も複数載っている。ユタ州は10の州機関の開発者34人に Claude Code を配り、4週間の試行で80%が30分以内に作業環境を整え、71%が20時間以上の節約を報告した。ある州の CIO は、ランサムウェア攻撃への対応が8分で済んだ（通常は2〜3日）と述べた。連邦のセキュリティチームは Claude Mythos で脆弱性を見つけて約2日で修正し、前月の人手のペネトレーションテストでは見逃されていたという。別の州の開発者は約900の API メソッドの移行を、1か月の見積もりに対して2日で終えた。州の IT 部門のディレクターは、12の旧リポジトリの文書化、467のデータベーステーブルの対応付け、27のリスクの指摘を行ったとされる。州・地方向けのサイバー防衛プログラムには、米国の州の半数超と一部の大規模自治体、重要インフラ事業者が参加した。",
+      "ここで、各数字の出どころを分けておく。割引率、条件、認可の状況は、当事者である Anthropic が自社の契約と製品について述べた事実である。一方、導入件数、利用の伸び、事例の成果は、すべて Anthropic が自社の発表文の中で示したもので、第三者による検証は確認できていない。事例の人物は、発表文では名前を伏せた役職でしか示されておらず、所属機関も（ユタ州の試行を除いて）特定できない。",
+      "発表文に書かれていないことも多い。割引後の具体的な単価、GSA の契約番号や有効期間、割引が適用される製品の一覧表、クラウド事業者経由の割引が始まる具体的な日付は、いずれも触れられていない。「約10億ドル」は Anthropic の見積もりであり、算出の前提は示されていない。",
+      "【編集履歴】2026-11-02 新規公開。一次資料は Anthropic の発表文1本のみ。GSA 側の資料には到達できていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Expanding our partnership with GSA to bring Claude to all levels of government（Anthropic、2026-10-27）",
+        "url": "https://www.anthropic.com/news/expanding-partnership-gsa"
+      }
+    ]
+  },
+  "weekly-metrics-2026-week-oct26": {
+    "body": [
+      "この記事はニュースのまとめではなく、サイト自身の公開データから計算した「計器」である。1週間を見渡して初めて出る数字を、解釈を添えて示す。数字は `node scripts/weekly-metrics.mjs` の出力（集計日2026年11月3日）と、サイトの記事データの集計に基づく。外部サイトの情報は使っていない。計器記事そのものは、集計の対象から除いている。",
+      "## 公開本数 — 16本、前週の20本から減",
+      "10月26日〜11月1日の公開は**16本**（前週20本）で、すべて news だった。分野は cli 9 / product 4 / special 2 / model 1。出来事から掲載までの中央値は1日である。日別では10月30日が7本と突出し、26日・27日・31日が各2本、28日・29日・11月1日が各1本だった。",
+      "出来事の日と掲載日が3日以上ずれた記事は7本あった。最大は[Anthropic の利用方針の改定](?a=anthropic-usage-policy-2026-update-deceptive-campaigns-hardware-2026)（出来事は10月8日、掲載は30日）で、[Agent Skills の寄贈](?a=agent-skills-donated-to-aaif-linux-foundation-2026)（出来事は10月22日、掲載は30日）がそれに続く。10月30日の7本のうち、出来事が同じ日付のものは1本だけである。この日の集中は、数日前の出来事をまとめて記事にした分を含む。",
+      "## 題材の内訳 — 16本のうち10本が Anthropic 関連",
+      "題材で数えると、16本の内訳は次のとおりである。Anthropic 関連が**10本**（Claude Code の版が[2.1.311](?a=claude-code-2-1-311-ultrathink-xhigh-model-catalog-signed-file-2026)・[2.1.312](?a=claude-code-2-1-312-simple-prompt-custom-model-names-hooks-limit-2026)・[2.1.314](?a=claude-code-2-1-314-block-writes-outside-dirs-pcompact-cap-monitor-hooks-2026)・[2.1.316](?a=claude-code-2-1-316-opus-4-8-fast-mode-deprecated-subagent-effort-2026)の4本、Claude API 関連が[Opus 4.8 の fast mode 非推奨](?a=anthropic-opus-4-8-fast-mode-deprecated-api-2026)・[Usage and Cost Analytics API](?a=anthropic-usage-cost-analytics-api-beta-request-limit-128mb-2026)・[Google Cloud での提供](?a=anthropic-claude-models-google-cloud-anthropic-managed-2026)の3本、企業の動きが[S-1 の提出](?a=anthropic-s1-nasdaq-ant-filing-2026)・Agent Skills の寄贈・利用方針の改定の3本）。他社の CLI が5本（[Codex CLI 0.165.0](?a=codex-cli-0-165-vertex-provider-terra-memory-v2-2026)・[0.166.0](?a=codex-cli-0-166-transcript-selection-queue-resume-doctor-network-2026)、[Gemini CLI 0.66.0](?a=gemini-cli-0-66-terminal-sync-output-mcp-oauth-private-network-2026)、[Copilot CLI 1.0.100〜1.0.103](?a=github-copilot-cli-1-0-100-to-1-0-103-sandbox-local-network-proxy-2026) と [1.0.104〜1.0.105](?a=github-copilot-cli-1-0-104-1-0-105-fusion-auto-autopilot-wait-2026)）。残る1本が[Cloudflare の security-audit スキル](?a=cloudflare-security-audit-skill-six-phase-verified-findings-2026)である。",
+      "Anthropic 関連の「Anthropic」タグは10件で、前週の3件から増えた（前週の題材での数え方は6本）。前週は11本を占めた AI 以外のソフトウェアのセキュリティ情報が、この週は0本になった。週の構成が、セキュリティ情報の週から Anthropic 関連の週へ入れ替わったことになる。この記事の数字だけでは、これが Anthropic 側の公開の多さを反映したものか、サイトが拾う対象の偏りを反映したものかは分からない。ただし10本のうち4本は、出来事から3日以上あとに掲載されている。",
+      "## 3軸のバランス — 発掘と分析は4週続けて0本",
+      "16本はすべて news で、feature の最後の記事は[10月2日](?a=anthropic-pentagon-dc-circuit-appeal-2026)だった（集計日から32日前）。型で見ると、**発掘（新興・OSS・個人開発）と分析（社会的インパクト・規制・倫理）は4週続けて0本**である。S-1 の提出や利用方針の改定には社会的な論点があるが、記事はいずれも発表内容の紹介で、分析としては数えていない。",
+      "## ガイドの空白は変わらない",
+      "週次の計器が出す「記事で頻出するのに、ガイドに説明が無い概念」は、今週も同じ顔ぶれだった。直近90日の記事数は、「AI安全性」30件、「中国AI」14件、「エッジAI」11件、「個人開発」10件、「透明性」7件、「半導体」5件である（「Alibaba」7件と「リリースノート」7件は、固有名詞と記事の型のため補強の対象としては数えていない）。この週にこれらのタグが付いた記事は、「AI安全性」が[利用方針の改定](?a=anthropic-usage-policy-2026-update-deceptive-campaigns-hardware-2026)の1件だけで、他は0件だった。ガイドの書き込みは Routine には禁じられており、対話セッションでの判断を待っている。",
+      "## ツール別ページとの比",
+      "直近90日の記事数とツール別ページの解説項目数の比は、Claude Code 0.40（37件 / 93項目）、Codex 0.36（17件 / 47項目）、VS Code + Copilot 0.23（8件 / 35項目）、Cursor 0.14（6件 / 44項目）、Gemini CLI 0.09（4件 / 43項目）、Power Apps 0（0件 / 20項目）だった。比が大きいほど、話題の割に解説が薄い。**Cursor の記事は[9月20日](?a=cursor-projects-coordinator-agent-2026)を最後に出ておらず**、この週も0本だった。Claude Code と Codex の比は前週より上がっている。版ごとの記事が積み上がる一方、解説の項目数は変わっていないためである。",
+      "## 確認できなかったこと",
+      "今週の調査で、Claude Code・Codex・Gemini CLI の新しい版は、公式の変更履歴と npm の公開記録を見た範囲では、既報より新しいものが正式版としては見つからなかった（Codex 0.167.0 と Gemini CLI 0.67.0 はアルファ・プレビュー・ナイトリー段階）。Anthropic のニュースページにも、既報に無い大きな発表は見当たらなかった。OpenAI・Google の新モデルについては、一次資料に届く情報を確認できていない。**これは「出来事が無かった」という意味ではなく、確かめられる材料が手元に無かったという意味である。**"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 5,
+        "caption": "この週の公開の内訳（10月26日〜11月1日）",
+        "headers": [
+          "区分",
+          "本数",
+          "例"
+        ],
+        "rows": [
+          [
+            "Anthropic 関連",
+            "10本",
+            "Claude Code 2.1.311〜2.1.316、Claude API の fast mode 非推奨、S-1 の提出"
+          ],
+          [
+            "他社の AI CLI",
+            "5本",
+            "Codex CLI 0.165.0・0.166.0、Gemini CLI 0.66.0、Copilot CLI 1.0.100〜1.0.105"
+          ],
+          [
+            "その他",
+            "1本",
+            "Cloudflare security-audit スキル"
+          ],
+          [
+            "AI 以外のソフトウェアのセキュリティ",
+            "0本",
+            "（前週は11本）"
+          ],
+          [
+            "発掘・分析",
+            "0本",
+            "—"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 9,
+        "caption": "記事で頻出するのにガイドに説明が無い概念（直近90日、週次の計器の出力）",
+        "headers": [
+          "概念",
+          "記事の件数",
+          "この週に付いた記事"
+        ],
+        "rows": [
+          [
+            "AI安全性",
+            "30件",
+            "1件"
+          ],
+          [
+            "中国AI",
+            "14件",
+            "0件"
+          ],
+          [
+            "エッジAI",
+            "11件",
+            "0件"
+          ],
+          [
+            "個人開発",
+            "10件",
+            "0件"
+          ],
+          [
+            "透明性",
+            "7件",
+            "0件"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "AI News リポジトリ（週次の計器の算出元データ）",
+        "url": "https://github.com/022740mix-spec/AI-News"
+      }
+    ]
+  },
+  "claude-code-2-1-317-account-email-confirm-hook-onfailure-gateway-cost-report-2026": {
+    "body": [
+      "Claude Code の公式 CHANGELOG によると、最新の版は 2.1.317 である。npm レジストリの記録では、2.1.317 は2026年11月2日 23:57（UTC）に公開され、前回扱った 2.1.316（10月31日）の次の版にあたる。この記事は CHANGELOG の記載を整理したもので、実際の挙動は検証していない。CHANGELOG は非常に長く、確認できたのは 2.1.317 の項目のみである。",
+      "まず権限と安全に関わる変更から挙げる。CHANGELOG は、Web またはシェルのツール呼び出しがアカウントのメールアドレスをネットワークへ送信する前に、確認を求める新しい検査を加えたと記す。Agent SDK のフックのコールバックは `onFailure: \"block\"` を受け付け、コールバックが失敗したときに処理を通すのではなく止められる。`/schedule` は、新しいクラウドのスケジュールタスクに依頼していないコネクタが付いたとき警告し、外し方を示す。Remote Control と SDK のホストは、mod のツール呼び出しに「今後は確認しない」を出さなくなった。Cloud セッションの auto mode は、Artifact ツールのアップロード、データベースへの書き込み、outputs フォルダ経由の保存で承認待ちに止まらなくなった。",
+      "Claude apps gateway の管理者向けには、`GET /v1/organizations/analytics/cost` の費用レポートが加わった。過去の支出を期間で指定し、合計・開発者・日・IdP グループ別にまとめられる。`admin:` を設定した gateway は、各開発者の IdP グループを `admin.identity_retention_days` の期間だけ日次で記録し、レポートの集計に使う。上限まわりでは、グループの共有予算を使い切ったあと、gateway のステータス行と `/usage` が個人の上限を100%使用済みと表示していた問題が直った。Bedrock の「Input is too long.」のエラーは gateway 経由でも見えるようになり、セッションは「upstream rejected the request」で失敗せず圧縮に進む。",
+      "テレメトリでは、OTel のメトリクス・イベント・スパンに `anthropic.plan`、`anthropic.seat_type`、`anthropic.provider`、`anthropic.custom_base_url` が含まれるようになった。プロキシ越しの OTel 送信については、`https://` の送信が別の送信と重なっても届く、`http://` の送信をプロキシが 403 で止めても接続試行が大量に出ない、応答が返らないプロキシでは10秒（`OTEL_EXPORTER_OTLP_TIMEOUT` で最大30秒）でタイムアウトする、の3点が修正されている。",
+      "自己ホストのランナーとヘッドレス実行では、環境変数 `CLAUDE_CODE_DISABLE_NESTED_SESSION_ID=1` が加わった。CHANGELOG によれば、セッション内で `claude -p` を呼ぶと、その呼び出しが親のセッション ID を共有せず、自分の ID とトランスクリプトを持つようになった（クラウドまたは自己ホストのランナー内で、親のトランスクリプトに書き込んだり別の会話を再開したりする問題の修正）。この変更を戻して以前の挙動にしたい場合に、この変数を使う。また `claude -p` は、ディスクの空きやクォータの不足でトランスクリプトや `~/.claude.json` の書き込みが失われたとき、エラーを出し、text・json 出力では終了コード 1 で終わる。ただし満杯の NFS エクスポートは検出できない場合があると明記されている。",
+      "そのほかの動作の変更としては、Read ツールが「前回の Read から変更なし」というスタブを返さなくなり、読み直すと全文が返る。Grep と Glob は、検索が時間制限に達したとき、部分的な結果を完全な結果として扱わなくなった。`DISABLE_PROMPT_CACHING_OPUS` と `DISABLE_PROMPT_CACHING_SONNET` は、既定モデルの `[1m]`・他リージョン・日付なしの表記にも効く。stdio の MCP サーバーには、空の `AWS_BEARER_TOKEN_BEDROCK` が渡されなくなり、変数が未設定になるため、マシンの AWS 認証情報を使える。Windows では、ネイティブのパス検索が失敗するボリュームで全ツール呼び出しが拒否される問題と、セッションの一時パスが 260 文字の制限に当たる問題が直った。TLS を検査するプロキシの背後で、ルート証明書の更新後に「unable to get local issuer certificate」で API 要求が失敗する問題も修正された。",
+      "このほか CHANGELOG には、VS Code 拡張（分岐した会話が並列ツール呼び出しを保つ、起動が遅いとき一度やり直す、文字サイズに合わせて表示が拡大される）、クラウドセッション（MCP サーバーが求めるリンクを開くか辞退するカード、既定の環境を管理者が選べる）、Claude Tag（Slack に貼った Artifact のリンクが Open ボタン付きの簡素なカードになる）などの項目がある。`/design-sync` は、デザインシステムが Claude に移っている場合に、アップロードで失敗せず、最初にそう伝えて止まる。",
+      "なお、この版の項目は全体で80件超にのぼり、この記事はそのうち利用者の設定や運用判断に関わるものを選んで載せている。全項目は CHANGELOG で確認できる。公式ドキュメント側の記述との突き合わせは行っていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG（anthropics/claude-code）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@anthropic-ai/claude-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
+      }
+    ]
+  },
+  "qwen-code-0-26-6-web-shell-headless-prompt-hooks-mcp-duplicate-tools-2026": {
+    "body": [
+      "Qwen Code の CLI v0.26.6 が2026年11月2日に公開された。公式リポジトリの CHANGELOG.md（GitHub のリリースから自動生成され、安定版のみを載せると冒頭に書かれている）の記載をもとにまとめる。同じ版は「破壊的変更は知られていない」としている。本記事は v0.26.6 の項目だけを読んでおり、v0.26.0〜v0.26.5 の内容は確認していない。",
+      "**Web Shell。** ブラウザで使う Web Shell に、信頼したワークスペースの会話について承認待ち・入力待ち・エラーの状態、未読の完了、実行中の作業を一覧するサイドバーが加わった（PR #16022）。トークン使用量のパネルには、リクエストの成功率、出力速度、モデルごとの成功の表示と色分け（#16108）、リクエストごとの出力速度・初回トークンまでの遅延・失敗の詳細（#16111）が加わった。作成中の指示欄には、Workflow モードを切る消せるチップが出る（#16107）。",
+      "**ヘッドレス実行のフック。** Mods が prompt.submit フックを、-p のプロンプトと stream-json のユーザーメッセージでも動かせるようになった。リリースノートによれば、これで送信前にプロンプトを検査したり書き換えたりできる（#15905）。一方、prompt.paint や ui.place を登録した Mods は、非対応のフックを飛ばして起動に成功するようになった（#16124）。",
+      "**MCP。** ツールの探索で同名のツールが見つかったとき、以前はその衝突が原因でサーバーのツール全体が隠れることがあった。修正後は重複した名前だけを飛ばし、名前が一意のツールはすべて残る（#15757）。無効化したツール名の打ち間違いは、どの探索経路でも警告される（#16120）。",
+      "**権限と表示の安全側の修正。** シェル権限の判定が、ファイル記述子の複製（2>&1）をファイルへの書き込みと見なさなくなった（#15681）。cd の区間にあるリダイレクトも報告される（#16129）。Web Shell では、目標の承認文と編集差分のファイルパスにある制御文字と双方向（bidi）文字をエスケープし、表示される承認内容に隠れた制御を持たせないようにした（#16080）。OAuth の更新ロックは、現在のプロセスが所有している場合にだけ削除される（#15661）。",
+      "**モデルの扱い。** 「Kimi K3 の世代の認識」の修正として、対応する ID は100万トークンの文脈ウィンドウを使い、k3-256k は256Kのままになった（#16048）。この数字は Qwen Code 側のモデル設定の話であり、Kimi K3 自体の仕様を本記事で確認したものではない。",
+      "**配布。** デスクトップ版は Fedora 44 と RHEL 10 の x64 向け RPM を公開するようになった（#16060）。Windows のインストーラーは、更新時に同梱ランタイムを止めてからファイルを置き換える（#16071）。Linux の AppImage は、必要な動的ライブラリが同梱されているか、ホスト側の提供と記録されているかを検査する（#16062）。また、Managed runtime のリリース用ワークフローで、Javadoc の不具合により公開できなかった 0.26.5 のランタイムを元のタグから作り直せるようになった（#16114）。",
+      "**確認できていないこと。** 各項目の実際の挙動は、リリースノートの要約と PR 番号までしか確認していない。PR 本文とコードは読んでいない。利用者数への影響や性能の数値も確認できていない。GitHub のリリースページそのものは今回の実行環境から開けなかったため、同じ内容を載せる CHANGELOG.md を一次資料とした。"
+    ],
+    "primarySources": [
+      {
+        "title": "Qwen Code CHANGELOG.md（v0.26.6、2026-11-02）",
+        "site": "GitHub（QwenLM/qwen-code、公式）",
+        "url": "https://github.com/QwenLM/qwen-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "Qwen Code v0.26.6 リリース",
+        "site": "GitHub（QwenLM/qwen-code、公式リリース）",
+        "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.26.6"
+      }
+    ]
+  },
+  "claude-code-2-1-318-shared-network-home-config-safety-subagent-shell-background-2026": {
+    "body": [
+      "Claude Code の公式 CHANGELOG によると、最新の版は 2.1.318 である。npm レジストリの記録では、2.1.318 は2026年11月3日 21:55（UTC）に公開され、前回扱った 2.1.317（11月2日）の次の版にあたる。この記事は CHANGELOG の記載を整理したもので、実際の挙動は検証していない。CHANGELOG のこの版は84項目あり、以下はそのうち利用者の設定や運用判断に関わるものを選んでいる。",
+      "最も項目が多いのは、ネットワーク共有のホームディレクトリ（NFS など）で使う場合の保存の信頼性である。CHANGELOG は、`~/.claude.json`・設定ファイル・保存済みログインが保存のたびに消えたり、一時的に空になったり、ほぼ空の古い複製に置き換わったりする頻度を下げたと記す。容量が足りないがファイルの新規作成は受け付けるホームで、保存済みログインが空ファイルに置き換わる問題も直った。`/logout`、`claude auth logout`、`claude mcp remove` は、設定ファイルを更新できなかったのに成功と報告し、信頼・同意・MCP 設定の変更が黙って捨てられることがあった。これも修正の対象に挙がっている。`claude mcp add` と `remove` はロックを待つか終了コード 1 で終わるようになったが、別のジョブの保存で追加済みのサーバーが置き換わる可能性は残る、と CHANGELOG 自身が書いている。",
+      "`~/.claude.json` の扱いも変わった。非対話の起動で、JSON として不正な `~/.claude.json` を既定値で置き換えていた挙動をやめ、起動を失敗させて復元方法を示し、ファイルはそのまま残す。中身が空でバックアップも無いファイルは、破損とは報告せず、ファイルが無いときと同じように起動する。復元コマンドの表示が、空または途中で切れたバックアップを指したり、読み取り専用のファイルで失敗したりする問題も直った。無人実行（`claude -p` や SDK アプリ）は、内容が変わらないときに `~/.claude.json` を毎回書き直さなくなった。",
+      "ログインまわりでは、保存済みの claude.ai ログインの失効日が `claude auth status`（`loginExpiresAt`）と `claude -p` の JSON 結果（`credential_expires_at`）に出るようになった。`claude -p` のテキスト出力には、失効の10日前から stderr に1行の警告が出る。失効したときのサインイン失敗は、その旨を伝え、`claude -p` では `claude auth login` と `claude setup-token` を案内する。別の端末やホストが同じアカウント・組織で同じホームにサインインし直したとき、ジョブが `Not logged in` で終わる問題と、`setup-token` のトークンが `forceLoginOrgUUID` のあるマシンで、許可された組織のものなのに拒否される問題も修正された。",
+      "サブエージェントの動作には変更が3つある。バックグラウンドのサブエージェントは、シェルコマンドを3分後にバックグラウンドへ移すようになった。全プロバイダー共通で、実行中にプロンプトキャッシュが切れないようにするためと CHANGELOG は説明する。Bedrock・Vertex・Foundry、またはテレメトリを切った環境では、サブエージェントの進捗要約が、キャッシュが冷えているとき最大5分、保留中の応答を待つことがある。また、「メッセージがフラグ付けされたときにモデルを切り替える」が「毎回確認」のとき、サブエージェントはモデルを切り替えず停止する。",
+      "権限と接続の面では、`deniedMcpServers` の URL 指定が、上流の URL が一致する Anthropic 提供のサーバーや、クラウドセッションと自己ホストのランナーのコネクタも止めるようになった。CHANGELOG は、コネクタを拒否したい場合は名前で指定するよう書いている。承認済みのシェルコマンドが、自己ホストのランナーやクラウドセッションの再起動後に、指定されたフォルダではなくセッションの開始フォルダで動く問題も修正された。開始フォルダに入れない場合は実行されない。IDE 拡張については、IDE のターミナルで起動したとき拡張機能のインストールや更新を行わなくなり、`/ide` を外側のターミナルから使うか、エディタの拡張機能画面から更新する。",
+      "mod（セッション中に Claude が書く拡張）の関連では、mod の有効化を尋ねられたときの回答が記録されるようになった。mod の `$.model.fork` に `effort` オプションが加わり、セッションの effort が何であっても、短い補助作業を `low` で動かせる。`prompt.submit` で mod が付ける内容は、システムメッセージではなくユーザーのターンの中に留まる。`turn.step` を使う mod のもとで、API エラーで途切れた応答や停止した応答が成功として報告される問題も、`claude -p` と Agent SDK で直っている。",
+      "Claude apps gateway と自己ホストのランナーには管理者向けの変更がある。gateway の `mantle` 上流に `assume_role` が加わり、別の AWS アカウントのロールや、開発者ごとの AWS 費用の帰属に使える。Bedrock で AWS の CountTokens が失敗したときの警告は、501 の後に数えるのは gateway ではなく Claude Code だと説明するようになった。ランナーのオーケストレーターのログは行の形式が変わり、`ok session=…` が全ログレベルで標準出力に出て、`reason=…` が付く。`retryable=true:` や `retryable=false:` を照合するスクリプトは更新が必要だと CHANGELOG は注意している。",
+      "クラウドセッションでは、Anthropic ホストの環境でリポジトリを選ばずに開始できる「No repository」が加わり、組み込みの Chromium が `google-chrome` と `CHROME_PATH` でも見つかるようになった。GitHub Actions のログ取得（`gh run view --log` と `gh api`）は、多くの環境で到達できないリダイレクトではなくログ本体を返す。この版には、このほか `NODE_EXTRA_CA_CERTS` が空・PEM でない・先頭の証明書が壊れているときに全接続が失敗していた問題の修正（読める証明書を使い、stderr に警告）や、macOS で多数の Bash コマンドを動かすとメモリが増えて止まる問題の修正などがある。公式ドキュメント側の記述との突き合わせは行っていない。",
+      "なお、この版の中核機能の世代交代や廃止予告にあたる項目は、確認できた範囲では見当たらなかった。ただし CHANGELOG の全項目を網羅的に読んだわけではなく、本文に挙げなかった項目も多い。全項目は CHANGELOG で確認できる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG（anthropics/claude-code）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@anthropic-ai/claude-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
+      }
+    ]
+  },
+  "gemini-cli-0-67-models-command-list-models-ide-sandbox-bridge-2026": {
+    "body": [
+      "google-gemini/gemini-cli の GitHub リリースページは、v0.67.0 を 11月4日に公開されたものとして載せている（ページに年の表示は無い）。npm レジストリでは `@google/gemini-cli` の `latest` タグが 0.67.0 を指し、公開時刻は 2026-11-04 20:32 UTC だった。直前に扱った 0.66.0 の次の安定版にあたる。以下はリリースページの記載に基づく整理で、実際の挙動は検証していない。",
+      "機能の追加は主に2点。1つは `models` コマンドと `--list-models` フラグで、使えるモデルを一覧できる（#29880）。もう1つは、IDE コンパニオンをコンテナのサンドボックスへ exec の標準入出力経由で橋渡しする変更（#29858）で、サンドボックス内で動かす構成でも IDE と連携しやすくなる。",
+      "セキュリティと承認まわりでは、信頼しないフラグの検査を外部の出力に限定し、承認したフラグを記憶するようになった（#29833）。IDE の設定ファイルと GEMINI.md は、開いているファイルの文脈から除外される（#29848）。MCP サーバーとツールのメタデータが ACP の権限要求に含まれるようにもなった（#29910）。",
+      "非対話モードでは、終了シグナルを処理し、キャンセル後はツールの実行を止める（#29849）。キャンセル後に継続ストリームの処理と自動ナッジを止める修正（#29868）、プロジェクトの利用上限に達したエラーを終端的なクォータエラーに分類する修正（#29961）も入った。",
+      "ほかに、ホームディレクトリがワークスペースのときにエージェントが二重に読み込まれる問題（#29847）、Claude のフックのタイムアウトを移行時に秒からミリ秒へ変換する修正（#29899）、非推奨の設定を移行する際に `${VAR}` のプレースホルダーを保つ修正（#29867）、カスタムヘッダーの分割を RFC 9110 のトークン規則に合わせる修正（#29865）、読み取り専用ファイルとハードリンクを尊重するアトミック書き込み（#29749）、Android（Termux）で ripgrep を解決できるようにする修正（#29884）、タイ語とラオ語の SARA AM の表示幅の修正（#29883）などが並ぶ。27件の全項目は公式のリリースページにある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Gemini CLI v0.67.0 リリース（GitHub）",
+        "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.67.0"
+      },
+      {
+        "title": "@google/gemini-cli（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@google/gemini-cli"
+      }
+    ]
+  },
+  "qwen-code-0-26-7-model-catalog-refresh-folder-trust-hooks-2026": {
+    "body": [
+      "QwenLM/qwen-code の GitHub リリースページは、v0.26.7 を 11月4日に公開されたものとして載せている（ページに年の表示は無い）。npm レジストリでは `@qwen-code/qwen-code` の `latest` が 0.26.7 を指し、公開時刻は 2026-11-04 04:12 UTC だった。直前に扱った v0.26.6 の次のリリースにあたる。以下はリリースページの記載に基づく整理で、実際の挙動は検証していない。",
+      "設定まわりでは、運用者向けの `model.catalogRefresh` 設定が加わり、`privacy.usageStatisticsEnabled: false` でバックグラウンドのカタログ更新を止められる（#16066）。管理されたエージェントのセッション作成時に、モデル設定の全体を指定できるようにもなった（#16153）。",
+      "信頼まわりの修正が目立つ。リポジトリが持ち込むフック、権限の付与、言語サーバーは、フォルダの信頼を得てから動く（#16182）。対話セッションでは `.qwen/settings.json` のプロジェクトフックにも明示的な信頼が要る（#16196）。`grep -n` と `--line-number` をフラグとして扱い、grep の読み取りが権限チェックを通るようにする修正（#14383）、リモート接続のエラーから内部の詳細を隠す修正（#16199）も入った。",
+      "Web Shell と連携では、Channel events ページ（#16106）、管理された Web Shell ホストの項目（#15928）、`qwen serve` へのリモート接続を再起動なしで許可する設定（#15887）、チャンネルエディタでの GitHub リポジトリのアクセスやメンションの設定（#16149）が加わった。紐付けた PR の GitHub イベントは、未信頼のプロンプトとしてセッションへ渡される（#16117）。Mods の `prompt.submit` フックは、入力したプロンプトの処理より前に走る（#16180）。",
+      "`experimental.unifiedAgentLoop` を有効にすると、ACP の Goal ターン（#16131）と cron・バックグラウンド通知のターン（#16190）が共有のエージェントループで動く。性能面では、管理されたエージェントの処理がテナント全体の配置ロックを待たない変更が複数ある（#16205、#16217、#16221、#16223、#16225）。ほかにも修正と内部変更が多数あり、全項目は公式のリリースページにある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Qwen Code v0.26.7 リリース（GitHub）",
+        "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.26.7"
+      },
+      {
+        "title": "@qwen-code/qwen-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@qwen-code/qwen-code"
+      }
+    ]
+  },
+  "anthropic-message-threads-beta-claude-api-2026": {
+    "body": [
+      "Anthropic の Claude API リリースノートに、11月2日付で message threads が載った。長い会話やエージェントのループで、Messages API に送るリクエストを小さくし、最初のトークンまでの時間を短くするベータ機能である。ベータヘッダーは message-threads-2026-08-12。以下は公式ドキュメント（リリースノートと message threads のページ）に基づく。独立した第三者による検証や、公式が示す以外の速度の実測は確認できていない。",
+      "仕組みは3つの操作で説明されている。作成（create）では、これまでどおり会話全体と system、tools を送り、thread に {\"type\": \"create\"} を付ける。API は Claude の応答を含む会話を、応答の id の下に保存する。継続（continue）では、前の応答以降の新しいメッセージだけを送り、thread に {\"type\": \"continue\", \"previous_message_id\": 前の id} を付ける。system と tools は継続のリクエストに含めず、作成時の値が保たれる。再生（replay）は、継続できなくなったときに、手元の会話全体を新しい create として送り直すことを指す。",
+      "従来は毎ターン、会話全体を再送し、API はその全体を検証してトークン化し直していた。公式の説明では、thread を使うと、その作業の大半が新しいターンの分だけになる。効果が大きいのは長いエージェントのループだとされている。なお、公式ドキュメントはリクエストの小ささと最初のトークンまでの時間が「低く安定する」と述べるにとどまり、具体的な短縮幅の数字は示していない。",
+      "thread はベストエフォートである。最後のリクエストから5分で失効し、API は最後の使用から遅くとも1時間以内に削除する。保存された応答を返すたびに5分が延びる。API が thread を継続できないときは 404 を返し、error.details.error_code は thread_not_found になる。原因として挙がっているのは、失効、前のターンが保存されなかった場合（max_tokens で途中で切れたツール呼び出しで終わる応答など）、フォールバックのモデルが書いた応答、前の応答がまだ生成中、別の組織・ワークスペース・ユーザーからのリクエスト、保存済みの会話が受け付けない内容の追加（それまで画像が無い会話への最初の画像など）である。",
+      "そのため公式は、アプリケーション側を会話の正本とし、全メッセージの写しを自前で持ち、再生の経路を最初から作るよう求めている。応答のどれも、そのターンが保存されたかどうかを教えてくれず、次の継続のリクエストで初めて分かる。SDK の thread ヘルパーは、この再生を自動で行い、会話をメモリ上にだけ保持する。ヘルパーのオブジェクトが消えれば会話も消えるので、プロセスより長く会話を残したいなら自前で保存する必要がある。SDK のベータのツールランナーは、既定で thread を使い、作成時に無効にできる。",
+      "リクエストのフィールドは3群に分かれる。system と tools は作成のリクエストだけで送る。継続のリクエストに含めると、null でも 400 になる。model、tool_choice、thinking、mcp_servers（各サーバーの認可トークンを除く）、context_management、output_config、container 内の skills、トップレベルの cache_control、anthropic-beta の値の組は固定で、全リクエストで作成時と同じ値を送る。違うと 400 の thread_fingerprint_mismatch になり、エラーメッセージが食い違うフィールドを示す。max_tokens、stop_sequences、stream、metadata、service_tier などは毎ターン変えてよい。API は MCP サーバーの URL や認可トークン、container の id を保存しないので、これらは使う全リクエストで送る。",
+      "各応答の id から継続できるのは1回だけで、thread は追記専用である。過去のメッセージの編集や分岐は、新しい thread を作成して行う。ストリーミングでは、応答の id は message_start に届くが、継続は message_stop を受け取ってからにする。それ以前の継続は 404 になりうる。ストリームが途中で切れた場合は同じ継続のリクエストを再送し、thread_already_continued か thread_continue_in_flight が返れば、全体を新しい create で再生する。refusal（stop_reason が refusal）の応答のあとは、thread を継続せず、拒否につながったターンを省くか言い換えた新しい create を送る。",
+      "プロンプトキャッシュは自動では効かない。トップレベルの cache_control を全リクエストに同じ値で付けると、API が各リクエストの messages の最後のキャッシュ可能なブロックに適用する。thread 付きのリクエストに置ける cache_control のブレークポイントは最大4つで、トップレベルのものも1つに数える。超えると 400 の thread_unsupported_request になる。送ったブレークポイントは、あとから動かしたり外したりできない。",
+      "Claude Fable 5.1、Mythos 5.1、Opus 5.5、Sonnet 5.5、Haiku 5.5 では、system か tools を変えると、会話に既にある thinking と redacted_thinking のブロックが無効になり、作成のリクエストが 400 になりうる。公式の回避策は、送る会話からそれらのブロックをすべて外すことで、その場合モデルは以前の推論なしで答える。",
+      "非対応の機能も明記されている。Message Batches、トークンカウント、compaction（オンデマンドの compaction を含む。会話を要約に置き換えたいときは、要約を自前で書いて新しい thread の最初のメッセージとして送る）、context editing（clear_thinking_20251015 で keep が all の場合を除く）が使えない。HIPAA 対応を有効にした組織と、Inference hooks を有効にした組織でも使えない。API は thread を一覧・取得・削除するエンドポイントを持たない。",
+      "対応モデルは、公式のページでは Fable 5.1、Mythos 5.1、Fable 5、Mythos 5、Mythos Preview、Opus 5.5、Opus 5、Sonnet 5.5、Sonnet 5、Haiku 5.5、Haiku 4.5、Opus 4.8、4.7、4.6、4.5、Sonnet 4.6、4.5 が並ぶ。提供先は、Claude API、Claude Platform on AWS、Claude Models on Google Cloud（Anthropic managed）、Microsoft Foundry で、いずれもベータである。料金とレート制限は thread によって変わらないとされている。",
+      "データの扱いでは、message threads はゼロデータ保持（ZDR）の対象外で、HIPAA の対象でもない。thread の中身（会話、作成時の system と tools、固定フィールドの指紋）は、サーバー管理の鍵で暗号化されてメモリ上に保持され、永続ストレージには書かれず、最後の使用から1時間以内に削除される。ファイルは参照として保持されるので、thread を使う間は会話が使うファイルを残しておく必要がある。この機能を使っても、他の ZDR 対象機能の扱いは変わらないと公式は述べている。",
+      "このほか、同じ週のリリースノートには、11月3日付で、Claude Mythos 5、Opus 4.7、Sonnet 4.6 が生成するテキストに Anthropic のテキスト透かしが付くという項目がある。Sonnet 4.6 では、temperature、top_p、top_k に既定以外の値を指定したリクエストの出力には付かないことがある、とされている。透かしを前提にする場合は、これら3つのパラメータを送らないよう公式ドキュメントが求めている。",
+      "【整理】公式の記述から確認できる事実と、確認できていない点を分ける。確認できる事実は、ベータヘッダー名、create と continue の形、5分と1時間の期限、固定フィールド、非対応機能、ZDR と HIPAA の対象外、料金が変わらないこと。確認できていないのは、リクエストサイズや最初のトークンまでの時間の具体的な改善幅（公式は数字を示していない）と、ベータからの正式提供の時期である。"
+    ],
+    "tables": [
+      {
+        "caption": "message threads のエラー（公式ドキュメントより）",
+        "afterParagraph": 7,
+        "headers": [
+          "状態",
+          "error_code",
+          "意味",
+          "対処"
+        ],
+        "rows": [
+          [
+            "404",
+            "thread_not_found",
+            "API が thread を継続できない",
+            "全体を新しい create で送り直す"
+          ],
+          [
+            "400",
+            "thread_fingerprint_mismatch",
+            "固定フィールドが保存値と異なる",
+            "同じ値にするか、新しい thread を作る"
+          ],
+          [
+            "400",
+            "thread_already_continued",
+            "各応答の id から継続できるのは1回だけ",
+            "最新の応答 id から継続する。届いていなければ再生する"
+          ],
+          [
+            "400",
+            "thread_continue_in_flight",
+            "同じ応答 id からの別の継続が実行中",
+            "完了を待つか、再生する"
+          ],
+          [
+            "400",
+            "thread_unsupported_request",
+            "thread が対応しない機能・組織設定を使っている",
+            "その機能を外すか、thread なしで全体を送る"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Message threads — Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/message-threads"
+      },
+      {
+        "title": "Claude Platform release notes",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Text watermark — Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/text-watermark"
+      }
+    ]
+  },
+  "anthropic-ip-allowlist-admin-user-sign-out-api-beta-2026-11-05": {
+    "body": [
+      "Anthropic の Claude API リリースノートに、11月5日付で2件の管理機能が載った。1つは、組織への接続を信頼する IP アドレスだけに絞る IP 許可リスト（ベータ）、もう1つは、Claude Enterprise の会員を全ブラウザ・全端末からサインアウトさせる Admin API のエンドポイント（ベータ）である。以下は公式のリリースノートと、IP 許可リストおよびユーザー管理のドキュメントに基づく。独立した第三者による検証は確認できていない。",
+      "IP 許可リストは、リクエストの公開 IP アドレスを組織の許可リストと照合し、載っていなければ拒否する仕組みである。公式は目的を、API キーが漏れた場合に攻撃者が使いにくくすることと説明している。リリースノートでは IPv4・IPv6 のアドレスか CIDR 範囲を、1組織あたり最大1,000件まで登録できる。ドキュメントによれば、1件は単一アドレスか、IPv4 は /8、IPv6 は /32 より広くない CIDR 範囲で、登録するのは通信が組織の外へ出ていく公開アドレスであり、10.0.0.0/8 のようなプライベート範囲ではない。",
+      "対象は組織の種類で違う。Claude Platform の組織では、Claude Console の画面と、Claude API の Messages、Message Batches、Token Counting、Models、Files、Skills、Claude Managed Agents の Agents、Sessions、Environments、Vaults、Memory stores、そして対象組織だけを範囲とするキーでの Admin API と Compliance API が対象になる。許可外のアドレスからの API リクエストは、Messages API で 403 の permission_error と「Your IP address isn't in this organization's allowed range.」で返る。Claude Enterprise の組織は別の許可リストを持ち、ブラウザ・デスクトップ・モバイルの Claude、Claude アカウントでサインインした Claude Code、Claude in Chrome、Office アドオン、Cowork などが対象になる。",
+      "対象外も明記されている。Claude Platform の許可リストは、Claude in Amazon Bedrock、Claude Platform on AWS、Claude Models on Google Cloud、Claude in Microsoft Foundry には適用されない。Managed Agents では、エンドポイントへのリクエストが対象で、エージェントの実行環境内の通信には及ばない。Claude Enterprise では、Claude Design、Claude in Slack、Claude Academy が対象外で、利用者が締め出されたときにチャットで実行中だったタスクは最長24時間続きうる。",
+      "有効化の手順はドキュメントに3段階で書かれている。設定ページ（Claude Console は Identity and access、claude.ai は Organization settings の Organization and access）でトグルを入れ、範囲を追加して保存し、トラフィックを確認する。変更の反映には最長15分かかり、公式は日次・週次のジョブも含めて 403 が出ていないか見るよう求めている。保存時に確認されるのは、設定している本人の現在のアドレスだけで、サーバー、同僚、将来の接続元は確認されない。データセンター、CI、オフィス、VPN、プロキシ、セルフホストのサンドボックスのワーカーを、先にすべて載せるよう勧めている。",
+      "締め出されたときの逃げ道として、公式は「管理者（claude.ai では所有者）に、どの IP からでもこの設定ページへアクセスすることを許可する」チェックボックスを選ぶことを勧めている。一方で公式自身が、その場合は管理者や所有者のセッションを乗っ取った攻撃者が、遠隔から許可リストを書き換えられると注記している。Compliance API を設定していれば、Activity Feed に許可リストの変更が記録される。また公式は、許可リストはキーが使える場所を絞るだけで期間は絞らないので、キーの有効期限を短くするか、Workload Identity Federation に移ることも併せて勧めている。",
+      "もう1件は Admin API である。POST /v1/organizations/users/{user_id}/sign_out は、Claude Enterprise の会員をすべてのブラウザ・端末でサインアウトさせ、その組織の OAuth トークンも失効させる。ベータで、全リクエストに anthropic-beta: admin-user-sign-out-2026-10-08 のヘッダーが要り、無いと 400 になる。必要なキーのスコープは write:members である。ドキュメントは用途として、端末の紛失や盗難、セキュリティインシデント、会員を外すか決める前の調査を挙げている。",
+      "このサインアウトは、会員を組織から外すものではない。会員は席も役割も保ったまま、すぐに再びサインインできる。公式は、締め出し続けるには会員を削除するか、シングルサインオンを必須にしている組織なら ID プロバイダー側でアカウントを無効化するよう書いている。削除しても ID プロバイダー側のアカウントが有効なままだと、自動プロビジョニングで次のサインイン時に再び追加されうるとも書かれている。ID プロバイダーが会員を管理している場合、削除は ID プロバイダーでしかできない。",
+      "ドキュメントには、挙動の細部もある。サインアウトの範囲は、その人の Claude アカウント全体で、他の組織や個人プランのセッションも含むと書かれている。リクエストが 503 を返したら 200 が返るまで再送し、プライマリオーナーに対しては 400 の cannot_sign_out_primary_owner が返る。最初のリクエストのあとにサインインが記録されていたり、Claude Code などのアプリでサインインしていた場合は、5分後にもう一度送るよう案内されている。リリースノートの文言は組織に対する失効を述べ、ドキュメントはアカウント全体と述べているので、範囲の確認は公式のドキュメントのページで行うのがよい。",
+      "2件に共通するのは、どちらも漏れた認証情報の被害を小さくする管理機能という点である。ただし働く場所は違う。IP 許可リストは、使える場所を事前に絞る。サインアウトの API は、事が起きてから、その人の接続を切る。どちらもベータで、公式は設定や挙動が変わりうると書いている。なお、いずれも提供条件はリリースノートとドキュメントの記述にとどまり、どのプランでどの機能が使えるかの一覧は、ここでは確認していない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Platform リリースノート（11月5日付）",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "IP allowlisting（Claude Platform Docs）",
+        "url": "https://platform.claude.com/docs/en/manage-claude/ip-allowlist"
+      },
+      {
+        "title": "User management — Sign a member out everywhere（Claude Platform Docs）",
+        "url": "https://platform.claude.com/docs/en/manage-claude/user-management"
+      }
+    ]
+  },
+  "codex-cli-0-167-agents-command-center-backend-switch-network-prompts-2026": {
+    "body": [
+      "OpenAI の Codex リポジトリのリリースページによると、Codex CLI 0.167.0 は11月6日に公開され、「Latest」と表示されている（ページには年の表記が無く、一覧の並びから2026年と読んだ）。前回扱った 0.166.0 は別記事にある。この記事はリリースノートの記載を整理したもので、実際の挙動は検証していない。リリースノートに破壊的変更の明記は見当たらない。",
+      "新機能は6点ある。第一に、`codex agents --no-daemon` でエージェントの司令画面（agent command center）が開き、未読の結果に印が付く。第二に、ターミナルのセッション選択画面から、接続中のバックエンドを下書きを失わずに切り替えられる。第三に、対応するターミナルでは、入力中にローカルの画像添付をプレビューでき、表示済みの画像はトランスクリプト上のパスをクリックして開ける。",
+      "第四に、API キーとクラウドプロバイダーのサインインが「Sign in another way」の下にまとめられた。`gcp_setup_wizard` を有効にすると、Application Default Credentials または資格情報ファイルを使う Google Cloud Vertex AI の設定が加わる。0.165.0 では Vertex AI が組み込みプロバイダーになったと記録されており、今回は設定の入口が増えた形にあたる。",
+      "第五に、`/experimental` から macOS または Windows のシステムプロキシ設定を使うことを選べる。第六に、承認プロンプトが開いている間に、トランスクリプト内のパッチの詳細を展開できる。",
+      "バグ修正は6点ある。モデルプロバイダーを切り替えても保存済みのチャットが見える状態に保たれ、再開できないチャットはトランスクリプトを読んで、編集可能なプロンプトから新しいチャットを始められる。`Ctrl+L` は画面だけを消去し、以前のメッセージは `Ctrl+T` で見られる。行頭の `!` が露出するまで文字を消した場合は、通常の下書きとしてチャットモードに留まる。",
+      "ネットワーク承認については、リクエストが終わるとプロンプトが閉じ、同じエンドポイントへの同時リクエストは1件ずつ確認される。長い realtime V3 の会話では、完了した発話が、トランスクリプトの伸長に合わせてチャット履歴に保存される。自動のコンテキスト圧縮は、失敗したレスポンスの残りの出力と、トークン使用量を欠くレスポンスを考慮に入れる。",
+      "ドキュメントでは、app-server の README が `[permissions.network]` の管理者向けネットワーク制約と、人間の新たな承認を要する `prompt-user` のコマンドルールを扱う。`openai-docs` スキルは、非推奨のモデルから移行するとき、文書化された置き換え先を勧めるようになった。",
+      "雑務の欄には、DotSlash のマニフェストがリリースに含まれる Cargo パッケージを参照するようになったこと、Linux の musl ビルドがアロケータのアリーナを減らし、会話を解放した後のアイドル時のメモリを抑えることが挙がっている。個別の中身は今回の確認範囲外で、気になる項目は原文で確かめたい。"
+    ],
+    "primarySources": [
+      {
+        "title": "Codex CLI 0.167.0 リリースノート（openai/codex）",
+        "url": "https://github.com/openai/codex/releases/tag/rust-v0.167.0"
+      },
+      {
+        "title": "Codex リリース一覧（openai/codex）",
+        "url": "https://github.com/openai/codex/releases"
+      }
+    ]
+  },
+  "github-copilot-cli-1-0-106-code-command-settings-dashboard-terra-2026": {
+    "body": [
+      "GitHub の Copilot CLI リポジトリのリリースページによると、1.0.106 は「Latest」として表示され、ノートの見出しは11月5日、GitHub 上の公開表示は11月6日である（ページに年の表記が無く、一覧の並びから2026年と読んだ）。前回扱った 1.0.104〜1.0.105 は別記事にある。この記事はリリースノートの記載を整理したもので、実際の挙動は検証していない。",
+      "コマンドと設定では、`/code` が現在のセッションを VS Code で開く。`/settings` は全体検索付きの統合ダッシュボードになった。Fusion の tier 設定と、拡張機能のプロセス向けのサンドボックス設定も加わった。",
+      "モデルでは、GPT-6.1 Terra が、利用できるアカウントで選択可能になった。リリースノートが述べているのは選択可能になったことまでで、提供条件や価格は今回の確認範囲に無い。一部の 404 応答の再試行など、モデルの扱いに関する修正も入っている。",
+      "セッションとエージェントでは、任意で有効にするセッション管理ツール、ローカルセッションへの `@mention`、セッションの切り替えと再開の修正がある。端末では、Kitty 互換のターミナルでインライン画像が表示され、注意が要るときは対応する端末へ状態が報告される。",
+      "サンドボックスと MCP では、相対パスと作業ディレクトリの扱いが改善され、Windows での起動失敗が報告されるようになった。入力まわりでは、プロンプトを変更したときの画像添付の扱い、特殊な行区切り文字を含む貼り付け、複数行プロンプトでのカーソルと矢印キーの挙動が直っている。`copilot help` の多くのトピックが、実際の設定と挙動に合わせて訂正された。",
+      "セキュリティと安定性では、モデル・ファイル・サーバーから来た文字列に含まれる端末のエスケープシーケンスが表示を書き換えないようにする修正が多数入った。このほか、クラッシュ、ハング、セッションファイルの問題が直っている。",
+      "なお、リリース一覧には 1.0.106 の前に 11月4日〜5日付の `1.0.106-8`・`-9`・`-11` が並ぶ。それらの項目（Ctrl+S でのプロンプトの退避、モデル選択画面でのコンテキストウィンドウ表示、Windows でのローカルモデル導入時の llama.cpp の自動インストールなど）が最終版のノートにどう集約されたかは今回確かめておらず、この記事は最終版のノートの要約にとどまる。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitHub Copilot CLI 1.0.106 リリースノート（github/copilot-cli）",
+        "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.106"
+      },
+      {
+        "title": "Copilot CLI リリース一覧（github/copilot-cli）",
+        "url": "https://github.com/github/copilot-cli/releases"
+      }
+    ]
+  },
+  "claude-code-2-1-319-auto-mode-gateway-permission-bypass-fixes-mcp-tasks-2026": {
+    "body": [
+      "Claude Code の公式 CHANGELOG によると、最新の版は 2.1.319 である。npm レジストリの記録では、2.1.319 は2026年11月6日 00:58（UTC）に公開され、前回扱った 2.1.318（11月3日）の次の版にあたる。この記事は CHANGELOG の記載を整理したもので、実際の挙動は検証していない。CHANGELOG のこの版は146項目あり、以下はそのうち権限・auto mode・MCP など、利用者の設定や運用判断に関わるものを選んでいる。",
+      "最初に挙げられているのは auto mode の変更である。CHANGELOG は、テレメトリやフィーチャーフラグを切った環境（LLM ゲートウェイ越しを含む）で、サーバー側が確認できない呼び出しは、組み込みの分類器へ戻らず、利用者に尋ねるか拒否すると記す。従来の挙動を保つには `CLAUDE_CODE_AUTO_MODE_SERVER=0` を設定する。Bedrock・Vertex・Foundry は変更されない。ゲートウェイ越しでは、`CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS` を設定していても `CLAUDE_CODE_AUTO_MODE_SERVER=1` でサーバー側の確認を有効にでき、後者を管理設定で指定している場合は `1` も管理設定で指定する必要がある。プロジェクトの設定ファイルやプラグインが、利用者がプロジェクトの外で切ったサーバー側の確認を再び有効にすることもできなくなった。",
+      "auto mode の周辺では、修正も並ぶ。安全確認が使えず操作が拒否された場合に、`claude -p` が auto mode で終了コード 0 を返していた問題は、テキスト・JSON のどちらの出力でも終了コード 1 になった。権限ルールや `autoMode` 設定が非常に大きい場合、理由を示さず拒否していた問題は、理由を説明し、`autoMode` の deny ルールが無ければ端末で尋ねるようになった。`/status` が、サーバー側の確認がセッションに届いていないのに「Auto mode server: Enabled」と表示していた問題も直っている。",
+      "権限チェックに関わる修正が複数ある。CHANGELOG は次の項目を Fixed として記す。細工した環境変数の接頭辞によって、コマンドの一部が権限チェックから隠れる Bash の回避。引用符付きの語で書かれたコマンドを Bash の deny・ask ルールが見逃す場合。accept-edits と auto mode で `sed` コマンドが権限チェックを飛ばしうる場合。worktree の作成時のサンドボックス脱出。`/rewind` がディレクトリのシンボリックリンク経由でファイルを復元・削除しうる場合。いずれも CHANGELOG の一行の記述であり、影響範囲や悪用の条件、識別子は書かれていない。この記事も、それ以上のことは確認していない。",
+      "挙動の変更としては、Monitor の WebSocket 監視が、すべての Bash コマンドに対するルールに従うようになった。deny は拒否し、ask ルールのもとでは Monitor への allow や bypass mode、auto mode があっても確認を飛ばさない。セッションの Bash・PowerShell の ask ルールは、より広い deny ルールがそのコマンドを覆っている場合、尋ねずに拒否される。`which` はフラグが参照・表示用の範囲を外れると確認を求める。`--add-dir` で追加したディレクトリは、そのディレクトリ自身の信頼ダイアログを受け入れてからプラグインのマーケットプレースを登録する。Bash サンドボックスが有効なとき、開始フォルダより下の `.claude/skills` のスキルは、そこで起動するか `/cd` した場合にだけ読み込まれる。",
+      "追加された機能のうち、`permissions.denyInsteadOfPrompting` は、権限の確認待ちになる呼び出しを拒否してターンを続ける設定で、端末のセッション、サブエージェント、チームメイトに適用される。MCP では、サーバーがツール呼び出しをタスクとして実行する場合、Claude Code が即座にバックグラウンドへ移し、終了時に結果を Claude に伝える。待たせたいときは `CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND` を設定する。MCP タスクは、フィーチャーフラグを取得しない環境（Bedrock・Vertex・Foundry、LLM ゲートウェイ、`DISABLE_TELEMETRY`）でも端末で動くようになり、切るには `CLAUDE_CODE_DISABLE_MCP_TASKS=1` を設定する。`CLAUDE_CODE_DISABLE_FEATURE_FLAGS` は、テレメトリを切らずにフィーチャーフラグの取得だけを止め、すべてのフラグを組み込みの既定値にする。",
+      "運用面では、自己ペースの `/loop` は、再スケジュールせずにターンが終わると終了するようになった。以前の挙動は `CLAUDE_CODE_LOOP_KEEPALIVE=1` で保てる。PostToolUse フックは、新しいメッセージでターンが中断されたあとに終わるツール呼び出しでも、最大10秒の猶予をもって実行される。`/context` は、端末で Claude が読む表を短くした。`/model` の選択画面は、古いモデルを「More models」の行にまとめた。`ant auth login` のサインインで Claude Console 組織に課金される場合は、起動時にその組織名の行と、claude.ai のログインが切れたときの警告が出る。",
+      "Claude apps gateway と自己ホストのランナーにも変更がある。ゲートウェイには、プール予算の優先順位を決める `admin.pooled_conflict_rule` と `admin.pooled_priority_order`、サインイン画面に表示する `login_notice`、JSON 形式のログ（`CLAUDE_GATEWAY_LOG_FORMAT=json`）、ゲートウェイ配下の開発者向けに `/usage` へ今日・今週・今月の支出が加わった。自己ホストのランナーでは `--trust-workspace false` がリポジトリの設定ファイルとスキルのフックも止めるようになり、`CLAUDE_RUNNER_CHECKOUT_PATH` は、セッション内のリポジトリごとに別フォルダを使い、同名なら末尾に `-2`、`-3` が付く。セッションの終了時にデバッグログをアップロードする処理は無くなった。",
+      "Claude in Chrome の組み込みツールからは `shortcuts_list` と `shortcuts_execute` が削除された。このほか、`/diff` がリポジトリの最上位に `HEAD` という名前のファイルやフォルダがあると表示できなかった問題、`claude remote-control` が最初の質問に答えが無いとき黙って終了コード 0 で終わる問題、ディスクが満杯のとき `~/.claude.json` や設定が空や途中で切れた状態になる問題などの修正が CHANGELOG にある。",
+      "なお、この版の中核機能の世代交代や廃止予告にあたる項目は、確認できた範囲では見当たらなかった。ただし CHANGELOG の全項目を網羅的に読んだわけではなく、本文に挙げなかった項目も多い。全項目は CHANGELOG で確認できる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG（anthropics/claude-code）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@anthropic-ai/claude-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
+      }
+    ]
+  },
+  "qwen-code-0-26-8-0-26-9-skills-zip-install-subscription-hook-trust-2026": {
+    "body": [
+      "QwenLM/qwen-code の GitHub リリースページは、v0.26.8 を 11月5日、v0.26.9 を 11月6日に公開されたものとして載せている。npm レジストリでも `@qwen-code/qwen-code` の 0.26.8 が 2026-11-05 16:34 UTC、0.26.9 が 2026-11-06 16:19 UTC に公開され、`latest` は 0.26.9 を指している。直前に扱った v0.26.7 の次の2リリースにあたる。以下はリリースページの記載に基づく整理で、実際の挙動は検証していない。なお v0.26.8 のページは取得した範囲の途中で内部変更の項が切れており、末尾の一部は読めていない。",
+      "v0.26.8 の機能面では、Qwen のサブスクリプションが CLI・VS Code・Desktop で使えるようになった（#16378）。Mods は、ヘッドレス実行（#16302）と Ink 端末（#16373）の両方で、自分のプロンプトを送れる。Ink 端末ではプロンプト送信時のフックが OpenTUI で動き（#16195）、モデルのラウンド（#16206）とツールのバッチ（#16304）が共有ループで動く。`qwen serve` の Conversations の作業ディレクトリのルートは設定で変えられる（#16105）。",
+      "信頼まわりでは、プロジェクトのフックはフォルダ信頼の承認ダイアログを通す形になった（#14748）。フック承認用の環境変数はワークスペース内にとどまり（#16316）、フォルダ信頼のストアはコンテナのサンドボックスにも渡される（#16390）。ヘッドレスでのプロジェクトフックの信頼は、フォルダ信頼機能が有効な場合に限られる（#16264）。ほかの修正として、Gemini の thought signature がツールの再生で保持される（#16270）、Hugging Face TGI のコンテキスト超過エラーで自動圧縮が走る（#16245）、Qwen2-VL・Qwen2.5-VL・QVQ で画像を受け付ける（#16247）が挙がっている。",
+      "v0.26.9 は Skills の扱いが中心である。`PUT /skills/activation` と `setUserSkillsActivation` で、1〜100件のユーザー Skills を1回のリクエストで有効・無効にでき、保存と反映の状態が返る（#16186）。大きな Skill の ZIP は、デーモンの経路ではアップロードまたはホスト上のパスで導入でき、失敗後は受領記録を照会できる（#16422）。TypeScript SDK は File・Blob・バイト列・ホストのパスから導入でき（#16423）、Web Shell は Skills ページから ZIP をアップロードする（#16424）。インストーラは大きなアーカイブをディスク上で扱い、復旧用のバックアップを保護する（#16421）。",
+      "ほかに v0.26.9 では、Llama 3.2 Vision・Llama 4・LLaVA・Pixtral・Mistral Small 3.1/3.2 で画像入力が有効になり（#16311）、Qwen VL が Ollama 上の名前でも受け付けられる（#16309）。対話 CLI は作業中・ブロック中・完了・エラーの状態を OSC 7501 で端末に伝える（#16407）。デーモンのリプレイ用スナップショットは1セッション8 MiB のリングに制限され、`--event-ring-max-bytes` で変えられる（#16413）。管理されたエージェントでは、構造化された質問を永続的に扱えるようになり（#16433）、自動化が既定で有効になった（#16448）。全項目は公式のリリースページにある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Qwen Code v0.26.8 リリース（GitHub）",
+        "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.26.8"
+      },
+      {
+        "title": "Qwen Code v0.26.9 リリース（GitHub）",
+        "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.26.9"
+      },
+      {
+        "title": "@qwen-code/qwen-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@qwen-code/qwen-code"
+      }
+    ]
+  },
+  "reducto-r-1-mini-document-parsing-2026-11-05": {
+    "body": [
+      "文書解析サービスの Reducto は2026年11月5日、軽量版の文書解析モデル **r-1 mini** を発表した。同社のプレスリリースによると、価格は **1,000ページあたり1ドル**。表、読み順、レイアウト、書式を保持した構造化出力をうたっている。",
+      "**性能の主張（同社の評価）。** 同社は、2,000ページの盲検評価（ParseArena）で、試した入門レベルのすべての構成より高い結果だったと書いている。また、比較対象として挙げた LlamaParse Agentic と Extend Performance は、r-1 mini の最大25倍の費用がかかるとしている。ただし、プレスリリースには精度の数値、評価指標の定義、試した構成の一覧は書かれていない。",
+      "**表現の違い。** 本文は「上回った」と書き、図の説明文は「同等か上回る」と書いている。表現が一致していないため、精度の差は、評価の詳細が公開されるまで判断できない。",
+      "**r-1 との関係。** 同社は2026年9月1日のブログで、フラッグシップの r-1 を発表している。そこでは、r-1 のページあたりの料金は1セントで、r-1 mini は今後公開する軽量版として触れられていた。今回の発表は、その軽量版の価格を示したものになる。",
+      "**確認できていないこと。** 独立した第三者による評価、精度の数値、評価に使った文書の種類、制限事項は、公式の発表からは確認できない。r-1 mini の一般提供の状況も、プレスリリースには書かれていない。",
+      "**このサイトへの影響。** AI News は、この種の文書解析の API を使っていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Reducto Breaks the Price Barrier for High-Accuracy Document Parsing With r-1 mini at $1 per 1,000 Pages（2026-11-05、Reducto の発表）",
+        "site": "PR Newswire（Reducto の公式プレスリリース）",
+        "url": "https://www.prnewswire.com/news-releases/reducto-breaks-the-price-barrier-for-high-accuracy-document-parsing-with-r-1-mini-at-1-per-1-000-pages-302930413.html"
+      },
+      {
+        "title": "Introducing r-1 and our new generation of document parsing models（2026-09-01、Reducto 公式ブログ）",
+        "site": "Reducto 公式ブログ",
+        "url": "https://reducto.ai/blog/parse-r-1-model"
+      }
+    ]
+  },
+  "vercel-labs-agent-desktop-computer-use-cli-2026-11": {
+    "body": [
+      "Vercel Labs が公開した **agent-desktop** は、AI エージェントにデスクトップアプリの操作を任せるためのオープンソースの CLI である。GitHub のリポジトリの説明は「Computer use CLI for AI agents」で、ライセンスは Apache-2.0。",
+      "**仕組み（リポジトリの README による）。** スクリーンショットやピクセルの照合を使わず、アプリのアクセシビリティツリーを読み、JSON として返す。操作可能な要素ごとに参照（ref）が付き、エージェントはその参照を指定してクリックや入力を行う。ツール自体はモデルを含まず、判断の繰り返しはエージェント側が担う。",
+      "**対応する OS と API。** macOS は AX API、Windows は UI Automation、Linux は AT-SPI を使う。",
+      "**MCP。** README には、`agent-desktop mcp` によって、すべてのコマンドを stdio 上の MCP ツールとして提供すると書かれている。",
+      "**インストール。** `npm install -g agent-desktop`。README には、macOS と Linux 向けの `brew install agent-desktop` も書かれている。macOS では、アクセシビリティの権限を与える必要がある。",
+      "**安全上の注意（README の記述）。** README は、スナップショット、クリップボードの内容、スクリーンショット、コマンドの出力、デバッグ用の成果物に、非公開のデスクトップの内容が含まれ得ると書いている。そのため、公開のログやアップロードに含めないよう求めている。秘密を扱う手順は、別々のコマンドに分けるよう勧めている。失敗したコマンドは、`error.disposition.retry` が `safe` の場合だけ再実行するよう書かれている。",
+      "**確認できていないこと。** リポジトリの説明にある「ネイティブアプリ」と「Web ページ」の区別は、README では明記されていない。Web ページの操作は、同じ作者の別のツール（agent-browser）が担うと案内されている。公開の日付と版の番号は、資料によって食い違っている。本記事では、個別の日付を確定させず、リポジトリの記述だけを根拠にしている。",
+      "**このサイトへの影響。** AI News は、この種のデスクトップ操作の仕組みを、本番の運用には使っていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "vercel-labs/agent-desktop（GitHub、README と説明）",
+        "site": "GitHub（Vercel Labs の公式リポジトリ）",
+        "url": "https://github.com/vercel-labs/agent-desktop"
+      }
+    ]
+  },
+  "anthropic-claude-text-watermark-older-models-sampling-params-2026-11": {
+    "body": [
+      "**Anthropic** の API リリースノートは、2026年11月3日付で、**Claude Mythos 5、Claude Opus 4.7、Claude Sonnet 4.6 が生成するテキストに Anthropic のテキスト透かしが付く**と記した。対象のプラットフォームは、ヘルプセンターの記事「How Claude marks AI-generated content」に一覧がある。",
+      "この透かしは8月に導入が伝えられたもので、仕組みと経緯は[8月の記事](?a=anthropic-claude-synthid-text-watermark-global-2026)にある。Anthropic の解説は、EU AI Act には2026年8月2日より前に投入されたモデル向けの移行期間があり、そうしたモデルへの透かしの追加を「今後数か月」かけて進めると述べている。今回の更新は、その作業の一部が文書に現れたものと読める。ただし、各モデルがいつ対応したかは、参照した文書からは分からない。",
+      "## ヘルプセンターの一覧に載っているもの",
+      "ヘルプセンターの記事（記事自体は「今週更新」とだけ表示され、日付は出ていない）には、自社の提供面（first-party）の列に Fable 5.1、Fable 5、Mythos 5.1、Mythos 5、Opus 5.5、Opus 5、Opus 4.8、Opus 4.7、Sonnet 5.5、Sonnet 5、Sonnet 4.6、Haiku 5.5 が並ぶ。AWS・Google Cloud・Microsoft Foundry の列にも同じモデルが並ぶが、Mythos 5 と Opus 4.7 には注記の印が付き、Sonnet 4.6 には二重の注記が付く。その注記として「Amazon Bedrock への展開は11月10日までに完了する」と書かれている。",
+      "Opus 4.6、Opus 4.5、Sonnet 4.5、Haiku 4.5 は、取得できた表の文字列からは、どの列にチェックが付いているか読み取れなかった。同じ記事は「以前の Claude モデルへの対応を進めている」とも述べており、対象外のモデルが残っていることは示唆されるが、どれが対象外かは確認できていない。",
+      "## Sonnet 4.6 の注意点",
+      "API ドキュメント「Text watermark」は、**Claude Sonnet 4.6 では、temperature・top_p・top_k のいずれかを既定値以外にしたリクエストで生成されたテキストに、透かしが付かないことがある**と書く。透かしに頼る場合は、この3つをすべてリクエストから外すよう求めており、**フレームワークやクライアントライブラリが自動で設定する分も含む**とされている。",
+      "同じ文書は、透かしがトークンも隠し文字も増やさず、意味・品質・読みやすさを変えず、利用者や組織の情報を含まないと述べている。リクエストやレスポンスの扱いを変える必要もないという。つまり、影響が出るのは「透かしの有無を当てにしている」場合に限られる。",
+      "## 何が検出でき、何ができないか",
+      "Anthropic の解説（8月14日公開、9月1日に検出 API の記述を更新）とヘルプセンターの記事は、次の限界を挙げている。軽い編集では透かしが完全には消えない見込みだが、全面的な書き直しでは消える。重く編集・言い換え・翻訳されたテキストや、他の文章に混ぜられたテキストには付かないことがある。短い文章は信号が弱く、信頼できる判定にならない。事実が一つに決まる箇所や校正だけの文章は、透かしが疎になる。検出で分かるのは「Claude が関与した可能性」であり、人間が書いたことの証明でも、他の AI の検出でもない。",
+      "検出 API は、規制当局、法執行機関、報道機関、ファクトチェック団体、独立の研究者、教育機関、EU の市民社会団体などの適格な組織向けの限定プレビューで、コンプライアンス上の検証が必要な企業も利用できるとされる。アクセスは順次広げる予定だという。ヘルプセンターの記事には、ファイルに付く Content Credentials（C2PA）を調べる無料の Claude Content Checker も載っている。",
+      "## 開発者にとっての確認点",
+      "透かしに頼らない用途では、対応は要らない。透かしの有無を当てにする場合は、使うモデルがヘルプセンターの一覧にあるか、また Sonnet 4.6 を使うならサンプリング系パラメータをライブラリが暗黙に送っていないかを確認する材料になる。",
+      "**根拠の数え方。** この記事の事実は、いずれも Anthropic 自身の文書（API リリースノート、API ドキュメント、ヘルプセンター、公式解説）に基づく。一次資料 4 本、独立観測 0 本である。透かしが実際にどの程度の精度で検出できるかについて、第三者による検証は今回確認できていない。ヘルプセンターの表は、文字列として取得したものを読んでいるため、列の対応が崩れている箇所がある。表の細部は原文で確認してほしい。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Developer Platform release notes (Nov 3, 2026)",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Text watermark - Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/text-watermark"
+      },
+      {
+        "title": "How Claude marks AI-generated content - Claude Help Center",
+        "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content"
+      },
+      {
+        "title": "How Claude's text watermark works - Anthropic",
+        "url": "https://www.anthropic.com/news/claude-text-watermark"
+      }
+    ]
+  },
+  "qwen-code-0-27-0-multi-child-questions-filechanged-hooks-repo-filter-2026": {
+    "body": [
+      "QwenLM/qwen-code の公式変更履歴（CHANGELOG.md）は、v0.27.0 を 2026-11-07 の安定版として載せている。npm レジストリでも `@qwen-code/qwen-code` の 0.27.0 が 2026-11-07 20:55 UTC に公開されている。直前に扱った v0.26.8〜v0.26.9 の次のリリースで、0.26 系から 0.27 に番号が上がった。変更履歴の「Breaking Changes」欄は「No known breaking changes」と書いている。以下は変更履歴の記載に基づく整理で、実際の挙動は検証していない。",
+      "機能面の見出しは、管理されたエージェントのセッション（Managed Agent）の扱いである。1つのセッションが複数の子エージェントからの質問を同時に保留でき、回答は任意の順で返せて、下書きとエラーは子ごとに分かれる（#16484）。管理エージェントの基本ツールはデーモンの側と揃えられた（#16445）。実行基盤側では、セッション名の変更が配信中のタイトル更新の完了を待つようになり 503 を返さなくなった（#16447）、ストレージ確保の行ロックでデッドロックしていた箇所が待ち行列になった（#16376）、スナップショットの公開が進行中の確保を待つ（#16489）など、ロックまわりの修正が並ぶ。",
+      "フックでは、ローカルの非管理セッション向けに FileChanged フックが追加され、監視対象のファイルやディレクトリの追加・変更・削除を通知する（#13969）。実験的な `experimental.unifiedAgentLoop` を有効にすると、Ink の TUI がツールのバッチ後の続きのラウンドを送り、キューに入った入力と再試行も扱う（#16428）。対話の TUI は、バックグラウンドのワークフローエージェントがツールの承認を求めたとき、バックグラウンドタスクの詳細を開いて承認を促す（#16432）。非対話・ACP・チャンネルの実行では、1つのプロンプトに5つを超える Skills を積むと警告が出る（#16404）。",
+      "Web Shell には、タスクの Q&A を日ごとに示すヒートマップが入り、日をクリックするとその日の最初の Q&A へスクロールする（#16037）。保留中の Ask User Question に「Ask for details」が付き、回答はせずに選択肢を説明する副次タスクを開く（#16458）。展開したカードにツールの引数と結果が表示される（#15435）。GitHub チャンネルのエディタには Repository Filter が加わり、許可リストとブロックリストの2方式、URL 形式での指定、スキップされた通知の行を持つ（#16493）。PR に紐づいたセッションへ通常の会話コメントも届くようになった（#16416）。",
+      "シェルツールでは、sed の置換の模擬が CRLF のファイルと Unicode 文字を正しく扱うようになり、失敗や破損を防ぐという（#15701）。Esc や Ctrl+C で取り消したコマンドは「完了」ではなく「中断」と報告され、途中までの出力は残る（#15836）。",
+      "認証情報まわりでは、アップグレードコマンドの拒否メッセージのパスワードを伏せ、空の Harness ユーザー情報を start と verify で拒否する（#16352）。利用できない Advisor モデルの起動エラーは、補助モデルの指定から埋め込まれた認証情報と NUL バイトを除いて表示する（#16083）。ほかに、新しいターンのモデル要求で、挿入するコンテキストをユーザーの指示より前に置き、指示が最後に来るようにした（#16274）。変更履歴にはこのほか、CI のトリアージの認証情報の分離、使い捨ての外部 PR ランナー、VS Code 拡張が選択したモデル名と baseUrl だけを書き込む修正などが載っている。全項目は公式の変更履歴にある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Qwen Code CHANGELOG.md — v0.27.0（GitHub）",
+        "url": "https://github.com/QwenLM/qwen-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@qwen-code/qwen-code（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@qwen-code/qwen-code"
+      }
+    ]
+  },
+  "react-server-components-rce-ghsa-xqc2-2026-10-14": {
+    "body": [
+      "React の公式リポジトリの勧告 **GHSA-xqc2-xf4c-x3h3** は、React Server Components の認証不要の遠隔コード実行を、**Critical（CVSS v4 の基本値 9.5）** として公表した。公表日は2026年10月14日。CVE 番号は付いていない。",
+      "**影響を受けるパッケージと版。** react-server-dom-webpack、react-server-dom-parcel、react-server-dom-turbopack の3つ。いずれも、19.0.0〜19.0.8、19.1.0〜19.1.9、19.2.0〜19.2.8、19.3.0 が影響範囲とされている。",
+      "**修正版。** 19.0.9、19.1.10、19.2.9、19.3.1。勧告の本文には 19.0.09 と書かれているが、表では 19.0.9 となっており、表記の誤りと見られる。",
+      "**問題の内容（勧告の記述）。** 「React Server Components をサポートするフレームワークを狙った細工されたペイロードで、遠隔コード実行につながり得る」とされる。対象は、応答が多数の typed array と攻撃者の制御する値を含む、極めて稀な場合に限られる。サーバーを持たないアプリや、React Server Components をサポートするフレームワーク、バンドラー、バンドラープラグインを使わないアプリは、影響を受けないとされている。",
+      "**対応。** 勧告は、直ちに更新するよう勧めている。回避策は書かれていない。",
+      "**確認できていないこと。** 野外での悪用の有無は、勧告からは確認できない。発見者は勧告で evolutionstorm とされている。",
+      "**関連する記事。** 10月14日の Next.js のセキュリティ更新の記事（同じ週に、Next.js 側の勧告 GHSA-673q-mjm6-r5xr として公表）でも、この React 側の勧告を関連として挙げている。Next.js を使っている場合は、Next.js 側の更新を確認すること。",
+      "**このサイトへの影響。** AI News は React と Vite で作られた静的サイトで、React Server Components は使っていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Unauthenticated Remote Code Execution in React Server Components（GHSA-xqc2-xf4c-x3h3、2026-10-14）",
+        "site": "GitHub（React の公式勧告）",
+        "url": "https://github.com/react/react/security/advisories/GHSA-xqc2-xf4c-x3h3"
+      }
+    ]
+  },
+  "weekly-metrics-2026-week-nov02": {
+    "body": [
+      "この記事はニュースのまとめではなく、サイト自身の公開データから計算した「計器」である。1週間を見渡して初めて出る数字を、解釈を添えて示す。数字は `node scripts/weekly-metrics.mjs` の出力（集計日2026年11月9日）と、サイトの記事データの集計に基づく。外部サイトの情報は使っていない。計器記事そのものは、集計の対象から除いている。",
+      "## 公開本数 — 16本、前週と同数",
+      "11月2日〜11月8日の公開は**16本**（前週16本）で、すべて news だった。分野は cli 10 / product 5 / regulation 1。出来事から掲載までの中央値は1日である。日別では11月7日が5本と突出し、4日が3本、3日・5日・6日が各2本、2日・8日が各1本だった。",
+      "出来事の日と掲載日が3日以上ずれた記事は4本あった。最大は[Vercel Labs の agent-desktop](?a=vercel-labs-agent-desktop-computer-use-cli-2026-11)（出来事は10月30日、掲載は11月7日）で、[米 GSA との提携拡大](?a=anthropic-gsa-partnership-40-percent-government-discount-2026)（出来事は10月27日、掲載は11月2日）がそれに続く。11月7日の5本のうち、出来事が同じ日付のものは1本もない。この日の集中は、数日前の出来事をまとめて記事にした分を含む。",
+      "## 題材の内訳 — 16本のうち7本が Anthropic 関連、4本が Qwen Code",
+      "題材で数えると、16本の内訳は次のとおりである。Anthropic 関連が**7本**（Claude Code の版が[2.1.317](?a=claude-code-2-1-317-account-email-confirm-hook-onfailure-gateway-cost-report-2026)・[2.1.318](?a=claude-code-2-1-318-shared-network-home-config-safety-subagent-shell-background-2026)・[2.1.319](?a=claude-code-2-1-319-auto-mode-gateway-permission-bypass-fixes-mcp-tasks-2026)の3本、Claude API・Console 関連が[message threads](?a=anthropic-message-threads-beta-claude-api-2026)・[IP 許可リストと Admin API](?a=anthropic-ip-allowlist-admin-user-sign-out-api-beta-2026-11-05)・[テキスト透かしの対象拡大](?a=anthropic-claude-text-watermark-older-models-sampling-params-2026-11)の3本、政府向けの動きが GSA との提携拡大の1本）。Qwen Code の版が**4本**（[v0.26.6](?a=qwen-code-0-26-6-web-shell-headless-prompt-hooks-mcp-duplicate-tools-2026)・[v0.26.7](?a=qwen-code-0-26-7-model-catalog-refresh-folder-trust-hooks-2026)・[v0.26.8〜v0.26.9](?a=qwen-code-0-26-8-0-26-9-skills-zip-install-subscription-hook-trust-2026)・[v0.27.0](?a=qwen-code-0-27-0-multi-child-questions-filechanged-hooks-repo-filter-2026)）。ほかの CLI が3本（[Codex CLI 0.167.0](?a=codex-cli-0-167-agents-command-center-backend-switch-network-prompts-2026)、[Gemini CLI 0.67.0](?a=gemini-cli-0-67-models-command-list-models-ide-sandbox-bridge-2026)、[Copilot CLI 1.0.106](?a=github-copilot-cli-1-0-106-code-command-settings-dashboard-terra-2026)）、残る2本が[Reducto の r-1 mini](?a=reducto-r-1-mini-document-parsing-2026-11-05)と Vercel Labs の agent-desktop である。",
+      "前週は10本が Anthropic 関連だったので、この週は7本に減っている。一方、Qwen Code の記事は前週の0本から4本に増えた（タグ「Qwen Code」は 4 (0)）。週の中の4本は、いずれも版ごとの変更点の紹介という同じ型である。この数字だけでは、Qwen Code の公開が増えたのか、サイトが拾う頻度が増えたのかは分からない。",
+      "## 3軸のバランス — 発掘は2本、分析は5週続けて0本",
+      "16本はすべて news で、feature の最後の記事は[10月2日](?a=anthropic-pentagon-dc-circuit-appeal-2026)だった（集計日から38日前）。型で見ると、前週まで4週続けて0本だった**発掘（新興・OSS・個人開発）が、この週は2本**になった。Reducto の r-1 mini と Vercel Labs の agent-desktop である。ただしどちらも出来事から掲載までに2日〜8日あり、個人開発のプロジェクトではなく企業の公開物である。**分析（社会的インパクト・規制・倫理）は5週続けて0本**だった。GSA との提携拡大には政府調達という論点があるが、記事は発表内容の紹介で、分析としては数えていない。",
+      "## ガイドの空白は変わらない",
+      "週次の計器が出す「記事で頻出するのに、ガイドに説明が無い概念」は、今週も同じ顔ぶれだった。直近90日の記事数は、「AI安全性」30件、「中国AI」11件、「エッジAI」10件、「個人開発」10件、「透明性」7件、「半導体」4件である（「Alibaba」6件と「リリースノート」7件は、固有名詞と記事の型のため補強の対象としては数えていない）。この週にこれらのタグが付いた記事は、「透明性」が[テキスト透かしの対象拡大](?a=anthropic-claude-text-watermark-older-models-sampling-params-2026-11)の1件だけで、他は0件だった。",
+      "件数が前週より減っているもの（中国AI 14→11、エッジAI 11→10、半導体 5→4）は、概念が減ったのではなく、90日の窓から古い記事が抜けた一方で新しい記事が付かなかったためである。ガイドに説明が無いという状態は変わっていない。Qwen Code の4本には「中国AI」のタグが付いておらず、タグの付け方が「中国AI」の件数に影響している。また今週はじめて出たタグ「コンピュータ操作」は、ガイドの用語集に関連する記述が1箇所あるだけだった。ガイドの書き込みは Routine には禁じられており、対話セッションでの判断を待っている。",
+      "## ツール別ページとの比",
+      "直近90日の記事数とツール別ページの解説項目数の比は、Claude Code 0.43（40件 / 93項目）、Codex 0.38（18件 / 47項目）、VS Code + Copilot 0.23（8件 / 35項目）、Cursor 0.14（6件 / 44項目）、Gemini CLI 0.12（5件 / 43項目）、Power Apps 0（0件 / 20項目）だった。比が大きいほど、話題の割に解説が薄い。**Cursor の記事は[9月20日](?a=cursor-projects-coordinator-agent-2026)を最後に出ておらず**、この週も0本だった。Claude Code と Codex の比は前週より上がっている。版ごとの記事が積み上がる一方、解説の項目数は変わっていないためである。Qwen Code にはツール別ページ自体が無く、この比は計算できない。",
+      "## 確認できなかったこと",
+      "この記事は、サイト自身のデータだけから作っている。この回では、各社の公式サイトや変更履歴を新たに調べていない。したがって、この週にサイトに載らなかった出来事（OpenAI・Google・Meta・xAI などの新モデルや、公式 org の新規リポジトリ）があったかどうかは、この記事からは何も言えない。**これは「出来事が無かった」という意味ではなく、この記事の材料に含めていないという意味である。**"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 5,
+        "caption": "この週の公開の内訳（11月2日〜11月8日）",
+        "headers": [
+          "区分",
+          "本数",
+          "例"
+        ],
+        "rows": [
+          [
+            "Anthropic 関連",
+            "7本",
+            "Claude Code 2.1.317〜2.1.319、message threads、IP 許可リスト、GSA との提携拡大"
+          ],
+          [
+            "Qwen Code",
+            "4本",
+            "v0.26.6、v0.26.7、v0.26.8〜v0.26.9、v0.27.0"
+          ],
+          [
+            "ほかの AI CLI",
+            "3本",
+            "Codex CLI 0.167.0、Gemini CLI 0.67.0、Copilot CLI 1.0.106"
+          ],
+          [
+            "発掘（企業・OSS）",
+            "2本",
+            "Reducto r-1 mini、Vercel Labs agent-desktop"
+          ],
+          [
+            "分析",
+            "0本",
+            "—"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 10,
+        "caption": "記事で頻出するのにガイドに説明が無い概念（直近90日、週次の計器の出力）",
+        "headers": [
+          "概念",
+          "記事の件数",
+          "この週に付いた記事"
+        ],
+        "rows": [
+          [
+            "AI安全性",
+            "30件",
+            "0件"
+          ],
+          [
+            "中国AI",
+            "11件",
+            "0件"
+          ],
+          [
+            "エッジAI",
+            "10件",
+            "0件"
+          ],
+          [
+            "個人開発",
+            "10件",
+            "0件"
+          ],
+          [
+            "透明性",
+            "7件",
+            "1件"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "AI News リポジトリ（週次の計器の算出元データ）",
+        "url": "https://github.com/022740mix-spec/AI-News"
+      }
+    ]
+  },
+  "anthropic-claude-fable-5-2-mythos-5-2-launch-api-changes-2026": {
+    "body": [
+      "Claude Platform のリリースノートによると、Anthropic は2026年11月9日に Claude Fable 5.2（モデル ID は claude-fable-5-2）を公開した。公式のモデルページは用途を「長時間に及ぶエージェントのセッション、複数段階の調査、文書・表計算・スライドにまで仕上げる分析」と説明している。同じ能力を、Cyber Verification Program など Anthropic の認証プログラムで確認された組織だけに提供する Claude Mythos 5.2（claude-mythos-5-2）も同時に出た。この記事は Claude Platform のドキュメント（リリースノート、モデルページ、What's new、移行ガイド、プロンプトガイド）と Claude Code の CHANGELOG の記載だけに基づく。",
+      "仕様は Fable 5.1 と共通する部分が多い。文脈は1Mトークン（既定かつ上限）、最大出力は128kトークン、適応型 thinking は常に有効で無効にできない。thinking の深さは effort パラメータで決め、既定は high のまま。知識の更新時点は2026年6月と書かれている。トークナイザーは Claude Opus 4.7 で導入されたものを使う。Claude Fable 5.2 は 5.1 と同じく、assistant メッセージの prefill、temperature・top_p・top_k の指定、tool_choice で any や tool を指定して呼び出しを強制すること、がエラーになる。",
+      "価格は下がった。リリースノートは、Fable 5.2 と Mythos 5.2 が入力 $8・出力 $40（100万トークンあたり）で、Fable 5.1 と Mythos 5.1 の入力 $10・出力 $50 より安いと書いている。移行ガイドによれば、キャッシュ読み出しも $0.25 から $0.20 に下がった。5分キャッシュの書き込みは $10、1時間キャッシュの書き込みは $16 で、Batch API は入力・出力とも50%割引と、モデルページに載っている。比較表では Opus 5.5 が $4 / $20、Sonnet 5.5 が $2 / $10、Haiku 5.5 が $0.10 / $0.50 から、とされている。",
+      "提供先は、Claude API、Claude Platform on AWS、Claude Models on Google Cloud（Anthropic managed）に加え、Amazon Bedrock、Claude Models on Google Cloud（Google managed）、Claude in Microsoft Foundry である。Amazon Bedrock のモデル ID だけが anthropic.claude-fable-5-2 の形で、ほかは claude-fable-5-2 と同じ。Claude API では Fable 5.2 にアクセス承認は要らない。Mythos 5.2 は認証済み組織のみで、申請は該当するプログラムか担当窓口を通す。モデルページの退役の欄は「2027年11月9日より前にはならない」となっている。",
+      "公式の What's new は、Fable 5.1 からの移行でコードが壊れうる変更を4つ挙げている。1つ目は、thinking ブロックの接頭辞チェックが全アカウントに適用されること。thinking ブロックは、それが作られたときの system プロンプト、tools、それ以前のメッセージに対してだけ有効で、どれかを編集したあとに古い thinking ブロックを送り返すと、アカウントの作成時期に関係なく 400 エラー（The block is bound to a different conversation）になる。Fable 5.1 では、2026年8月31日以降に作られたアカウントで既定でエラーになる扱いだった。つまり、古いアカウントで 5.1 では通っていた履歴の編集が、5.2 では落ちうる。",
+      "回避策として、ベータヘッダー thinking-binding-controls-2026-08-01 を付けて thinking.block_binding.prefix_mismatch_behavior を drop_block にすると、該当ブロックを落として続行できる。落としたブロックは応答の input_transformations に列挙される。ただし公式は、これを一時しのぎと位置づけ、ブロックを落とすと出力トークンが増えうると注意している。Claude Code、claude.ai、Claude Managed Agents、Claude Agent SDK が履歴を組み立てている場合は、利用者側で変わることはないとも書かれている。自前で messages を組み立てているコードだけが確認の対象になる。",
+      "2つ目は、Fable 5.2 の thinking ブロックを読めるモデルが限られること。Claude API と Claude Models on Google Cloud（Google managed）では、Fable 5.2 と Mythos 5.2 は互いのブロックと、Opus 5.5・Sonnet 5.5・Haiku 5.5・Fable 5.1・Mythos 5.1・Opus 5 などのブロックを読める。逆に、Fable 5.2 のブロックを読めるのは Fable 5.2 と Mythos 5.2 だけで、Opus 5.5 や Fable 5.1、あるいは Fable 5.2 のフォールバック先として書かれている Opus 4.8・Opus 5 に会話を移すと、それまでの thinking は失われる。読めないブロックは API が落とし、リクエストは成功し、落とされたブロックには課金されない。加えて、ブロックは作ったアカウントか、そこに紐付いたアカウントの中でしか使えない。",
+      "3つ目は、旧 computer use ツール computer_20251124 が、Amazon Bedrock を除くすべてのプラットフォームで 400 エラーになること。Fable 5.2 と Mythos 5.2 は computer_toolset_20260801 を使う。Bedrock では旧ツールが引き続き動くと書かれている。4つ目は、ベータ中の advisor ツールで、Fable 5.2 または Mythos 5.2 を executor にする場合、advisor にも Fable 5.2 か Mythos 5.2 を指定しなければ 400 エラーになること。反対に、どの executor モデルでも Fable 5.2 を advisor にできる。Managed Agents で advisor を設定しているエージェントは、advisor のモデル名も更新が必要になる。",
+      "運用面の条件も、Fable 5.1 と同じ形で残っている。30日間のデータ保持が必要で、ゼロデータ保持（ZDR）の契約下では Anthropic が明示的に認めた場合を除いて使えない。保持が足りない組織やワークスペースからのリクエストは、Claude API で 400 の invalid_request_error になる。Priority Tier には対応していない。レート制限は Fable 5.2 が独立した枠を持ち、Fable 5.1 と Fable 5 が共有する枠とは別になる。Mythos 5.2 は Mythos 5.1・Mythos 5 と1つの枠を共有する。",
+      "fast mode は Fable 5.2 でも使える。リリースノートによると、Claude API の Messages API で、出力トークンの毎秒数が最大2.5倍になる代わりに、入力 $16・出力 $80 の単価になる。リクエストに speed: \"fast\" を付けるだけで、ベータヘッダーは要らない。Managed Agents でエージェントのモデルに speed: \"fast\" を指定している場合は、移行時に外すよう移行ガイドが書いている。Claude Code の CHANGELOG では、2.1.321 が claude-fable-5-2 を追加し、Fable の既定モデルにした。同じ項に $8/$40 と、キャッシュ読み出し $0.20 の単価が記されている。",
+      "公式がどのモデルから使い始めるよう案内しているかも、並べておく。What's new は、ほとんどの用途では最新の Claude Opus から始め、Opus を高い effort にしても要件を満たせない場合に Fable 5.2 へ移るよう書いている。モデルページの比較表では、Fable 5.2 の遅延は「中程度」、Opus 5.5 も「中程度」、Sonnet 5.5 は「速い」、Haiku 5.5 は「最速」で、Fable 5.2 の既定 effort は high、Opus 5.5 は medium になっている。プロンプトガイドは、effort の見極め、途中で止まる動作、承認、サブエージェントの数、Fable 5.1 や Opus 5.5 向けに書いた指示の見直しなどの節に分かれている。",
+      "確認できていないこと。ベンチマークの数値、システムカードの中身、Anthropic 自身の発表記事は、今回の調査では読めていない（www.anthropic.com のニュース記事は、推測したURLでは取得できなかった）。したがって、Fable 5.1 や Opus 5.5 に対する性能差はこの記事では述べない。また、上の内容はすべて Anthropic 自身の公式ドキュメントに由来する。価格・仕様・移行上の注意は一次資料1本で足りる性質の主張だが、性能や使用感についての独立した検証は確認できていない。本サイトの Fable 5.1 のレビュー記事は、5.1 の価格と提供条件で採点されている。5.2 の価格・条件を反映した見直しは、このニュース記事とは別に行う。"
+    ],
+    "tables": [
+      {
+        "caption": "Fable 5.2 と Fable 5.1 の価格（Claude Platform 公式ドキュメントの記載、100万トークンあたり）",
+        "afterParagraph": 3,
+        "headers": [
+          "項目",
+          "Claude Fable 5.2",
+          "Claude Fable 5.1"
+        ],
+        "rows": [
+          [
+            "入力",
+            "$8",
+            "$10"
+          ],
+          [
+            "出力",
+            "$40",
+            "$50"
+          ],
+          [
+            "キャッシュ読み出し",
+            "$0.20",
+            "$0.25"
+          ],
+          [
+            "fast mode（入力 / 出力）",
+            "$16 / $80",
+            "本記事では未確認"
+          ],
+          [
+            "Batch API",
+            "入力・出力とも50%割引",
+            "本記事では未確認"
+          ]
+        ]
+      },
+      {
+        "caption": "Fable 5.1 から 5.2 へ移る際にコードが壊れうる4つの変更（What's new の記載を整理）",
+        "afterParagraph": 8,
+        "headers": [
+          "変更",
+          "起きること",
+          "確認する場所"
+        ],
+        "rows": [
+          [
+            "thinking の接頭辞チェックが全アカウントに適用",
+            "system・tools・過去のメッセージを編集したあとに古い thinking ブロックを送ると 400 エラー",
+            "自前で messages を組み立てているコード（Claude Code・Agent SDK・Managed Agents なら対象外と記載）"
+          ],
+          [
+            "Fable 5.2 の thinking ブロックを読めるのは Fable 5.2 と Mythos 5.2 のみ",
+            "ほかのモデルへ会話を移すと、それまでの thinking は落とされる（リクエストは成功し、課金もされない）",
+            "モデルを途中で切り替える設計"
+          ],
+          [
+            "computer_20251124 が Bedrock 以外で 400 エラー",
+            "computer_toolset_20260801 への差し替えが必要",
+            "computer use を使うエージェント"
+          ],
+          [
+            "advisor ツールの組み合わせの制限",
+            "Fable 5.2 の executor は Fable 5.2 か Mythos 5.2 の advisor しか受け付けない",
+            "advisor を設定している Managed Agents など"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Platform リリースノート（2026年11月9日の項）",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Claude Fable 5.2（モデルページ）",
+        "url": "https://platform.claude.com/docs/en/models/fable-5-2/overview"
+      },
+      {
+        "title": "What's new in Claude Fable 5.2",
+        "url": "https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2"
+      },
+      {
+        "title": "Claude Fable 5.2 移行ガイド",
+        "url": "https://platform.claude.com/docs/en/models/fable-5-2/migration-guide"
+      },
+      {
+        "title": "Prompting Claude Fable 5.2",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2"
+      },
+      {
+        "title": "Claude Code CHANGELOG（2.1.321）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      }
+    ]
+  },
+  "claude-code-2-1-321-2-1-322-fable-5-2-default-mcp-oauth-redirect-sandbox-fixes-2026": {
+    "body": [
+      "Claude Code の公式 CHANGELOG（anthropics/claude-code リポジトリ）には、2026年11月10日時点で 2.1.321 と 2.1.322 が載っている。直前に本サイトで扱った版は 2.1.319 で、CHANGELOG に 2.1.320 の項は見当たらない。2.1.321 は Fable 5.2 の対応と、権限・サンドボックス・MCP 認証まわりの修正が中心である。Fable 5.2 そのものの仕様と価格は、本サイトの別記事で扱っている。この記事は CHANGELOG の記載だけに基づき、各修正の再現や影響範囲は検証していない。",
+      "モデル面では、2.1.321 が Claude Fable 5.2（claude-fable-5-2）を追加し、Fable の既定モデルにした。CHANGELOG は文脈 1M、入力・出力が100万トークンあたり $8 / $40、キャッシュ読み出しが $0.20 と書いている。あわせて、保存されている Fable 5.1 のモデル選択は fable に移る。Pro と Max のプランでは即時、Team と Enterprise のプランでは組織が許可した時点で移り、Fable 5.1 に戻すには /model claude-fable-5-1 を使うと記されている。/model の一覧では「More models」の行が全モデルの下に番号なしで置かれ、古いモデルはその下に入る。2.1.322 は、Vertex の global・us・eu リージョンで fast mode を使えるようにし、Vertex が拒否した場合は標準速度に戻す。",
+      "セキュリティに関わる修正として、CHANGELOG は次の項目を挙げている。MCP の OAuth で、サーバーが別のホストへリダイレクトしたときに、更新トークンなどの秘密情報がそのホストへ送られる不具合の修正。読み取り専用の Bash コマンドが、権限の確認なしにサンドボックスの外で動いた場合があった不具合の修正。Bash の権限チェックが、ファイルの書き込みを誤ったフォルダの基準で判定し、確認を出さなかった場合の修正。cp や mv でディレクトリへ書き込むとき、そのファイルに拒否ルールや保護ファイルの確認が効いていなかった不具合の修正。あわせて、/bin/cp のようにパスで書いた cp・mv も、cp・mv と同じパスの検査を受けるようになった。",
+      "これらの修正が実際にどの構成で、どの程度悪用できたかは、CHANGELOG の1行の記述からは分からない。CVE 番号や GitHub のセキュリティ勧告への言及も、確認した範囲の CHANGELOG には無い。使う側にとって確かめやすいのは、自分の版が 2.1.321 以降かどうかである。MCP の OAuth でサーバーに接続している場合と、拒否ルールを cp・mv のようなファイル操作の安全装置として頼っている場合は、特に該当しうると読める。なお、SDK や claude -p 経由で動かしている場合も、AskUserQuestion が未公開の入力フィールド afkTimeoutMs を含む権限の答えを拒否するようになった、という変更が同じ版に入っている。",
+      "設定・運用まわりの変更もある。claude remote-control に --settings <file> が加わり、そこから始まる全セッションに設定ファイルを適用する。ファイルが変わっても、claude remote-control を再起動するまで新しいセッションは始まらない。Remote Control のセッションは始めたフォルダを保ち、接続したクライアントが別のフォルダへ移せなくなった。管理設定の extraKnownMarketplaces は、宣言された名前を別のソースから追加できなくなり、別の出どころの同名エントリは隠される。宣言されたマーケットプレイスが載せるプラグインは、そこから入れ直される。",
+      "Claude Code が書く mods は、auto モードと bypass モードでは確認なしに有効になり、dontAsk モードでは読み込まれない。管理設定の allowUnsandboxedCommands: false や allowManagedDomainsOnly があっても、この動きは変わらない、と CHANGELOG は書いている。mods 自身のツール呼び出し（$.tool.call、$.mcp.call）は、利用者が ask ルールを置いていても、dontAsk や -p の実行でも、権限の確認を出さなくなった。拒否ルールと組織のポリシーは引き続き適用される。管理者が mods を使う環境では、この2点は設定の見直しの対象になりうる。",
+      "確認できていないこと。個々の修正が、どの版から存在した不具合かは CHANGELOG に書かれていない。したがって、過去の版の利用者がどの程度の期間、影響を受けうる状態だったかは、この記事では述べない。また、Anthropic による個別のセキュリティ告知は、今回確認した範囲では見つかっていない。ほかにも、2.1.321 には非常に多くの修正（Windows・macOS の起動、Remote Control、Claude apps gateway、スクリーンリーダーなど）が並んでいるが、ここでは権限と認証に絡むものを中心に取り上げた。全項目は CHANGELOG を参照してほしい。"
+    ],
+    "tables": [
+      {
+        "caption": "Claude Code 2.1.321・2.1.322 の主な変更（公式 CHANGELOG の記載を整理）",
+        "afterParagraph": 2,
+        "headers": [
+          "区分",
+          "変更内容",
+          "版"
+        ],
+        "rows": [
+          [
+            "モデル",
+            "claude-fable-5-2 を追加し、Fable の既定にする。保存済みの Fable 5.1 の選択は fable へ移る（戻すには /model claude-fable-5-1）",
+            "2.1.321"
+          ],
+          [
+            "MCP 認証",
+            "OAuth のリクエストが、リダイレクト先の別ホストへ更新トークンなどを送る不具合を修正",
+            "2.1.321"
+          ],
+          [
+            "サンドボックス",
+            "読み取り専用の Bash コマンドが、確認なしにサンドボックスの外で動いた場合を修正",
+            "2.1.321"
+          ],
+          [
+            "権限チェック",
+            "ファイル書き込みの判定フォルダの誤り、cp・mv でディレクトリへ書く場合に拒否ルールが効かない不具合を修正。/bin/cp などパス指定の cp・mv も同じ検査に",
+            "2.1.321"
+          ],
+          [
+            "Vertex",
+            "global・us・eu で fast mode を追加。拒否されたら標準速度に戻す",
+            "2.1.322"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG（2.1.321・2.1.322）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "Claude Platform リリースノート（2026年11月9日の項、Fable 5.2）",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      }
+    ]
+  },
+  "anthropic-ipo-roadshow-launch-price-range-2026": {
+    "body": [
+      "Anthropic は2026年11月10日、同社のニュースページで、Anthropic, PBC が Class A 普通株の新規株式公開（IPO）に向けたロードショーを開始したと発表した。ロードショーは、上場を予定する企業が機関投資家などに向けて行う説明の期間を指す。本記事は、その発表文（anthropic.com/news/roadshow-launch）を2026年11月12日に読んだ範囲での整理である。投資の勧誘や助言を目的とするものではない。",
+      "[10月26日の S-1 提出の発表](?a=anthropic-s1-nasdaq-ant-filing-2026)では、募集する株数と価格帯は「まだ決まっていない」とされていた。今回の発表文で、その2点が示された。募集は Class A 普通株 825,000,000 株で、このうち 801,351,354 株を Anthropic が、23,648,646 株を「一部の既存株主」が売り出す。既存株主の売出し分について、Anthropic は売却代金を受け取らないと書かれている。売り出す株主の名前は発表文に無い。",
+      "このほか同社は、引受会社に対し、Class A 普通株を最大 123,750,000 株まで追加で購入できる30日間のオプションを付与する見込みだとしている。この株数は、募集株数 825,000,000 株の15%にあたる（当サイトの計算）。",
+      "想定する公開価格は、1株あたり 70.00〜78.00 ドルである。上場先として Nasdaq Global Select Market に銘柄コード「ANT」で申請している点は、10月の発表と変わらない。",
+      "発表文は金額の合計を書いていない。以下は当サイトによる単純な掛け算で、引受手数料などを引く前の額である。募集株数 825,000,000 株に想定価格帯を掛けると、約577.5億〜643.5億ドルになる。このうち Anthropic が売り出す 801,351,354 株の分は、約560.9億〜625.1億ドルにあたる。追加オプションがすべて行使された場合の株数（948,750,000 株）で同じ計算をすると、約664.1億〜740.0億ドルになる。想定価格帯は確定した公開価格ではなく、実際の価格と株数は変わりうる。",
+      "発表文に書かれていないことも残っている。会社全体の評価額は、発行済みの株式総数が分からなければ計算できず、発表文はその数字を示していない。上場の予定日、公開価格を決める日、調達した資金の使い道、Class A 以外の株式の種類や議決権の構成も書かれていない。これらは目論見書に記載されている可能性があるが、本記事の作成環境からは SEC のサイトに到達できず、S-1 と予備目論見書の本文は読めていない。そのため本記事では扱わない。",
+      "予備目論見書の入手先として、発表文は Goldman Sachs & Co. LLC と Morgan Stanley & Co. LLC の2社を挙げている。これは10月の発表と同じ顔ぶれである。各社の位置づけ（主幹事かどうか等）は、発表文には書かれていない。",
+      "発表文は、登録届出書が SEC に提出済みであるものの、まだ効力を生じていないことも明記している。効力が生じるまでは、株式を売ることも、買付けの申し込みを受け付けることもできない。募集は目論見書によってのみ行われる。つまり現時点は、条件を示して投資家に説明を始めた段階であり、上場が完了したわけではない。",
+      "当サイトは過去に、報道に基づいて評価額や上場時期を扱った記事を出している。今回の発表で一次資料から確認できたのは、募集株数、会社と既存株主の内訳、追加オプションの株数、想定価格帯の4点である。報道ベースの評価額は、今回の発表文にも現れていない。",
+      "根拠の数え方を書いておく。本記事の事実は、当事者である Anthropic の発表文1本に基づく。株数や価格帯は当事者自身が決めて公表する事柄なので、一次資料1本で足りると判断した。一方、SEC への提出書類との突き合わせはできていない。EDGAR で目論見書を確認できた時点で追記する。",
+      "【編集履歴】2026-11-12 新規公開。一次資料は Anthropic の発表文1本のみで、SEC の提出書類には到達できていない。金額の合計は当サイトの計算であり、発表文の記載ではない。"
+    ],
+    "tables": [
+      {
+        "caption": "発表文に示された募集の内訳（Anthropic の2026年11月10日の発表文を整理）",
+        "afterParagraph": 3,
+        "headers": [
+          "項目",
+          "内容"
+        ],
+        "rows": [
+          [
+            "募集株数（Class A 普通株）",
+            "825,000,000 株"
+          ],
+          [
+            "うち Anthropic が売り出す分",
+            "801,351,354 株"
+          ],
+          [
+            "うち既存株主が売り出す分",
+            "23,648,646 株（Anthropic は代金を受け取らない）"
+          ],
+          [
+            "引受会社への追加オプション",
+            "最大 123,750,000 株、30日間（付与する見込み）"
+          ],
+          [
+            "想定公開価格",
+            "1株 70.00〜78.00 ドル"
+          ],
+          [
+            "上場申請先・銘柄コード",
+            "Nasdaq Global Select Market・ANT"
+          ],
+          [
+            "届出書の状態",
+            "SEC に提出済み、効力は未発生"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic launches roadshow for proposed initial public offering（Anthropic、2026-11-10）",
+        "url": "https://www.anthropic.com/news/roadshow-launch"
+      },
+      {
+        "title": "Anthropic files S-1 with the SEC for proposed initial public offering（Anthropic、2026-10-26）",
+        "url": "https://www.anthropic.com/news/s1-sec"
+      }
+    ]
+  },
+  "anthropic-public-benefit-fund-5-percent-shares-2026": {
+    "body": [
+      "Anthropic は2026年10月18日、「Investing in the public benefit」と題した発表文で、自社の株式の一部を「Anthropic Public Benefit Fund」に拠出すると発表した。Fund は新たに設ける完全子会社である。本記事は、この発表文を2026年11月12日に読んだ範囲での整理である。掲載が出来事から約3週間半遅れているのは、当サイトがこの発表を当時取り上げていなかったためである。",
+      "拠出の仕組みは2段になっている。まず、株主の承認を条件として、Anthropic の株式の5%を拠出する。そのうえで、企業価値が「定められた基準値」を50%上回るごとに、取締役会の裁量で2%を追加する。会社が成長するほど、Fund に回る割合が増える構造である。基準値がいくらなのか、追加に上限があるのかは、発表文に書かれていない。",
+      "Fund の役割について、発表文は次のように説明している。Anthropic は公益法人（public benefit corporation）であり、AI の安全性や解釈可能性の研究、生物医学の応用研究、非営利団体や研究機関向けの Claude の割引といった活動は、公益と営利の両方の面を持つため社内で行っている。Fund はそれより柔軟で規模の大きい手段として置かれ、例として、従来型の非営利団体への大口の寄付や、特定の人々への直接の分配を「検討しうる」としている。",
+      "具体例として挙げられているのは、労働市場への影響である。発表文は、AI が大きな経済的価値を生む一方で多くの労働者に不安定さをもたらしうるとし、同社がこの問題の研究と対応にすでに2億ドルを約束していることに触れたうえで、AI の進歩の速さを考えるとより大胆な手段が要るかもしれない、と述べている。Fund が実際に何へ、いつ、いくら支出するかは示されていない。",
+      "形態は LLC（有限責任会社）である。501(c)(3) などの非営利法人の形を取らなかった理由を、発表文は「寄付の形を切り替えられるようにするため」と説明している。あわせて、LLC が保有する Anthropic の株式は、米国内外を問わず、ロビー活動や政治献金には使わないとしている。",
+      "発表文は、これまでの約束との合計にも触れている。創業時に共同創業者が保有株の80%を寄付すると誓約したこと、従業員が株式の寄付を誓約すると会社が同額を上乗せする制度があり、従業員の約半数が参加していること、である。今回の分と合わせると、Anthropic の株式の「およそ20%」が公益に充てられることになり、企業価値の節目に達した場合の追加分はこれに上乗せされる、としている。この20%の内訳の計算は発表文に示されていない。",
+      "発表文には、テクノロジー企業では経営陣に段階的に増える報酬を与えるのが一般的だが、同社はその株式を公益に向ける、という一文もある。これは当事者自身による位置づけである。",
+      "書かれていないことを整理する。株主の承認が得られたのかどうか。企業価値の基準値と節目。Fund の統治（誰が支出を決めるのか、Anthropic の取締役会からどの程度独立しているのか）。支出の開始時期。発表文は、Fund の構造と統治、節目となる企業価値については「今後数か月」で公表するとし、これとは別に、使命に対する進捗を公益報告書（public benefit report）で報告する予定だとしている。",
+      "同社はこの発表の8日後の10月26日に S-1 の提出を、11月10日に[IPO のロードショーの開始](?a=anthropic-ipo-roadshow-launch-price-range-2026)を発表している。どちらの発表文も Fund には触れていない。Fund への拠出が株主の持ち分に与える影響などは目論見書に書かれている可能性があるが、当サイトは SEC の提出書類に到達できておらず、確認していない。",
+      "根拠の数え方を書いておく。本記事の事実は、当事者である Anthropic の発表文1本に基づく。拠出の割合や仕組みは当事者が決めて公表する事柄だが、「公益に充てる」という性格づけと20%という合計は当事者の説明であり、独立した検証は確認できていない。",
+      "【編集履歴】2026-11-12 新規公開。一次資料は Anthropic の発表文1本のみ。"
+    ],
+    "tables": [
+      {
+        "caption": "Anthropic Public Benefit Fund について発表文が述べていること・述べていないこと（2026年10月18日の発表文を整理）",
+        "afterParagraph": 7,
+        "headers": [
+          "項目",
+          "発表文の記載"
+        ],
+        "rows": [
+          [
+            "当初の拠出",
+            "Anthropic の株式の5%（株主の承認が条件）"
+          ],
+          [
+            "追加の拠出",
+            "企業価値が基準値を50%上回るごとに2%（取締役会の裁量）"
+          ],
+          [
+            "形態",
+            "LLC。Anthropic の完全子会社"
+          ],
+          [
+            "使わないとしている用途",
+            "ロビー活動、政治献金（米国内外）"
+          ],
+          [
+            "使い道の例",
+            "非営利団体への大口の寄付、特定の人々への直接の分配（「検討しうる」）"
+          ],
+          [
+            "基準値・節目となる企業価値",
+            "記載なし（今後数か月で公表するとしている）"
+          ],
+          [
+            "統治の仕組み",
+            "記載なし（同上）"
+          ],
+          [
+            "支出の時期・金額",
+            "記載なし"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Investing in the public benefit（Anthropic、2026-10-18）",
+        "url": "https://www.anthropic.com/news/public-benefit-fund"
+      },
+      {
+        "title": "Anthropic launches roadshow for proposed initial public offering（Anthropic、2026-11-10）",
+        "url": "https://www.anthropic.com/news/roadshow-launch"
+      }
+    ]
+  },
+  "anthropic-self-hosted-claude-managed-agents-2026": {
+    "body": [
+      "Anthropic の Claude Platform リリースノートに、11月12日付で self-hosted Claude Managed Agents（セルフホスト版）が載った。Managed Agents のサービス全体を利用者のインフラで動かし、エージェント、セッション、セッション履歴をそこに保存する。利用するには Anthropic のアカウントチームに申請する必要があり、誰でもダウンロードできる形では公開されていない。以下は公式ドキュメント（リリースノートとセルフホスト版の各ページ）に基づく整理で、実際に動かして確かめたものではない。料金についての記載は、確認したページの範囲には見当たらなかった。",
+      "Managed Agents には、利用者側に置ける部分が2つある。1つはサンドボックスで、エージェントのツールがコマンドを実行しファイルを扱う、コンテナや VM などの隔離された作業場所を指す。もう1つはサービス本体で、API、エージェントループ、そしてエージェント・セッション・セッション履歴の保存先を指す。従来の self-hosted sandboxes は前者だけを利用者側に移すものだった。今回のセルフホスト版は後者も移す。モデルは Anthropic か、利用者が選んだ提供元で動く。",
+      "公式が挙げる選択の理由は2つある。エージェントやセッション履歴を自分で保存しなければならない場合と、モデル呼び出しを Amazon Bedrock、Claude Models on Google Cloud（Google managed）、Microsoft Foundry、または自前のモデルゲートウェイへ送らなければならない場合である。ツールを自社のインフラで動かせれば足りるなら、Anthropic がサービスを運用する self-hosted sandboxes を使うよう案内している。",
+      "構成要素は次のとおり。サーバー（cma-server）が API を提供し、エージェントループを回し、データを保存する。サーバー自身はエージェントのシェルやファイルのツールを実行しない。それを行うのはワーカーで、サーバーに仕事を取りに行き（ポーリング）、サンドボックスの中でツールを動かす。データベースは PostgreSQL 16 以降。データベースを設定しない場合、サーバーはデータをメモリに持ち、再起動で消える。ほかに、利用者の ID プロバイダーでサインインして使うサーバー上のコンソールと、環境と環境キーを作る管理用 CLI（cma-server-admin）がある。クイックスタートは Docker Compose を使うが、公式はこれを開発用と明記しており、本番にはリリースに含まれる2つの Helm チャート（Kubernetes）を勧めている。",
+      "モデル呼び出しの送り先は、サーバーの設定 inference.provider で決まる。既定は anthropic（Claude API）で、ほかに bedrock、vertex、foundry、gateway を指定できる。anthropic 以外では、サーバーは Claude API のキーを必要としない。エージェントの定義ではモデルを claude-opus-5-5 のような Claude API の ID で指定し、サーバーが提供元ごとの ID に変換するので、そのモデルを提供している提供元であれば定義を書き換えずに済むと説明されている。",
+      "API はホスト版と同じで、SDK と ant CLI がそのまま使えるとされる。ただし例外があり、公式は移行前に差分のページを確認するよう求めている。ホスト版からは何もコピーされない。セッション履歴も含めてである。エージェント、スキル、vault の資格情報、メモリストアは、サーバー上で作り直す必要がある。",
+      "セルフホスト版では使えない機能がある。クラウド環境（指定すると 400）、Messages API や Models API などその他の Claude API（サーバーは提供せず 404）、Files API とファイルのセッションリソース、mcp_oauth の vault 資格情報、docx・pdf・pptx・xlsx の組み込みスキル、スケジュール実行、dreams、Webhook である。代替として、ファイルはワーカーの作業ディレクトリに置く、組み込みスキルは公開されているソースをカスタムスキルとして上げ直す、スケジュール実行は cron などの自前のスケジューラからセッションを始める、といった方法が示されている。dreams には代替が無いと書かれている。",
+      "挙動が違う機能もある。マルチエージェントでは、エージェントが委任できるのは一覧に載せたサブエージェントだけで、動的ワークフロー、advisor、エージェントが自分で定義するサブエージェントは使えない。MCP サーバーは、設定の許可リスト（mcp.allowed_hostnames）に載せたホストにだけ接続する。照合は完全一致で、ワイルドカードやサブドメインは効かず、既定では空である。web_search と web_fetch は、サーバーの設定で有効にするまで使えない。セッションを担当する環境をポーリングしているワーカーがいないと、最初のツール呼び出しはエラーを出さずに待ち続ける。",
+      "逆に、セルフホスト版にだけある機能が4つ挙がっている。推論の提供元の選択、OpenID Connect の ID プロバイダーによるシングルサインオン（トークン内のグループから役割を割り当てる）、vault の資格情報を自社のシークレットマネージャーに保存する設定、そしてエージェントの MCP 呼び出しに短命の署名付きトークンを添える agent identity である。",
+      "外に出るデータについて、公式は接続先を列挙している。推論の提供元、データベース、許可した MCP サーバーと Git ホスト、設定した場合の OpenTelemetry コレクター・ID プロバイダー・シークレットマネージャーなどで、サーバーが Anthropic に接続するのは推論の提供元が Claude API のときだけだという。Anthropic はサーバーとそのログへの遠隔アクセスを持たない、とも書かれている。モデル呼び出しには、それまでの会話（プロンプト、ツールの入力、ツールの結果）が含まれる。",
+      "Claude API を使う場合は、各モデル呼び出しにセッション・エージェント・環境の ID を載せたヘッダーが最大3つ付く。公式によれば、ID は名前も内容も含まないが、サーバーが ID を作った時刻を符号化している。Anthropic はこれで使用量をセッション・エージェント・環境に帰属させられ、ヘッダーを止める設定は無い。さらに、Claude API、Microsoft Foundry、Claude API と同じ形式を受けるゲートウェイへの呼び出しには、リクエスト本文の metadata.user_id に cma-server という固定のラベルが入りうる。全サーバーで同じ値なので個々の導入先は識別しないが、Anthropic はセルフホスト版の利用を数えるのに使える、と説明されている。Bedrock と Google Cloud（Google managed）への呼び出しには付かない。",
+      "データ保持の整理も変わる。ホスト版の Managed Agents は、Anthropic がセッションの記録を削除されるまで保存するため、ゼロデータ保持（ZDR）の対象外とされている。セルフホスト版では、記録を保存するのは利用者自身になる。モデルとのやり取りは、モデルを提供する相手との契約に従う。Claude API を使う場合、組織が ZDR の取り決めを結んでいれば、他の Messages API の呼び出しと同じようにこれらのモデル呼び出しにも及ぶ、と公式は述べている。セッションと履歴は、利用者が削除するまでデータベースに残り、古さを理由にサーバーが消すことはない。",
+      "責任の分担は利用者側に寄る。公式は警告として、エージェントの bash ツールはワーカーのプロセスと同じ権限とネットワークアクセスを持つ本物のシェルであり、ワーカー自身はそのシェルを隔離しないと書いている。隔離は、ワーカーを何の中で動かすかで決まる。付属の Docker Compose と Helm チャートは、セッションごとにワーカーを専用のコンテナやポッドで起動する。自分でワーカーを起動するなら、守るべきものを何も置いていない使い捨てのコンテナか VM で動かすよう求めている。サーバーの保護、メモリストアのホスト、異常な使用の検知も、ホスト版では Anthropic の担当だったものが利用者の責任になる。テナントや、信頼の水準が違う処理を分けるには、それぞれに別の導入が要るとされる。リリースの導入も利用者が自分で行う。",
+      "【整理】公式ドキュメントから確認できる事実は、提供形態（アカウントチームへの申請制）、3つの選択肢の分担、推論の提供元の種類、使えない機能と挙動の違い、Claude API 利用時に送られるヘッダーとラベル、利用者側の責任範囲である。確認できていないのは、料金と契約条件、申請が通る条件、リリースの配布頻度で、いずれも確認したページに記載が見当たらなかった。根拠は Anthropic 自身のドキュメントのみで、第三者による導入例や検証は確認できていない。"
+    ],
+    "tables": [
+      {
+        "caption": "Managed Agents の3つの選択肢 — 誰が何をホストするか（公式ドキュメントより）",
+        "afterParagraph": 1,
+        "headers": [
+          "選択肢",
+          "サンドボックス",
+          "サービス本体",
+          "モデル"
+        ],
+        "rows": [
+          [
+            "クラウドのサンドボックス（既定）",
+            "Anthropic",
+            "Anthropic",
+            "Anthropic"
+          ],
+          [
+            "self-hosted sandboxes",
+            "利用者",
+            "Anthropic",
+            "Anthropic"
+          ],
+          [
+            "self-hosted Managed Agents",
+            "利用者",
+            "利用者",
+            "Anthropic、または利用者が選ぶ提供元"
+          ]
+        ]
+      },
+      {
+        "caption": "inference.provider の値と、モデル呼び出しの送り先（公式ドキュメントより）",
+        "afterParagraph": 4,
+        "headers": [
+          "値",
+          "送り先",
+          "サーバーの認証"
+        ],
+        "rows": [
+          [
+            "anthropic（既定）",
+            "Claude API",
+            "ANTHROPIC_API_KEY"
+          ],
+          [
+            "bedrock",
+            "Amazon Bedrock",
+            "AWS の資格情報"
+          ],
+          [
+            "vertex",
+            "Claude Models on Google Cloud（Google managed）",
+            "Google Application Default Credentials"
+          ],
+          [
+            "foundry",
+            "Microsoft Foundry",
+            "Foundry の API キー、または Microsoft Entra ID"
+          ],
+          [
+            "gateway",
+            "利用者が運用するモデルゲートウェイ",
+            "そのゲートウェイが受け付けるキーまたはトークン"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Platform release notes（November 12, 2026）",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Self-hosted Claude Managed Agents — Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted"
+      },
+      {
+        "title": "Differences from the hosted service — Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted/differences"
+      },
+      {
+        "title": "Inference provider — Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted/inference-provider"
+      },
+      {
+        "title": "Data and access in self-hosted Claude Managed Agents — Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted-data-and-access"
+      },
+      {
+        "title": "Get started with self-hosted Claude Managed Agents — Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted/quickstart"
+      }
+    ]
+  },
+  "gemini-cli-0-68-extension-validate-rate-limit-countdown-subagentstop-2026": {
+    "body": [
+      "google-gemini/gemini-cli リポジトリの変更履歴（docs/changelogs/latest.md）は、最新の安定版を v0.68.0、公開日を2026年11月10日としている。npm レジストリでは `@google/gemini-cli` の `latest` タグが 0.68.0 を指し、公開時刻は 2026-11-10 21:22 UTC だった。直前に扱った 0.67.0 の次の安定版にあたる。以下は公式の変更履歴とリリースページの記載に基づく整理で、実際の挙動は検証していない。",
+      "機能の追加として公式がハイライトの先頭に挙げているのは、拡張機能の検証コマンドである（#29980）。拡張機能の設定を確かめるコマンドと評価用のテストが加わった。あわせて、同じ拡張機能の導入が同時に走ったときに、拡張機能ごとのロックで順番に処理するようになった（#30039）。拡張機能のリリースをダウンロードする途中でストリームが失敗した場合の処理も入っている（#30100）。",
+      "レート制限まわりでは、HTTP 429 を受けたあとの待ち時間（クールダウン）とカウントダウンが、CLI の読み込み表示に出るようになった（#30012）。これまで待っている理由が画面から分かりにくかった場面で、あと何秒かが見える。",
+      "モデルの選択に関する修正が複数ある。利用者が選んだモデルが、一時的なフォールバック、キャンセル、巻き戻し（rewind）のあとも保たれる（#30059）。動的なモデル解決で、明示的に指定した gemini-2.5-flash が保たれる（#30057）。動的モデル設定が有効でプレビューへのアクセスが無効のときに、/model の一覧に Auto が出る（#29998）。名前にドットを含む Gemini 3 系のモデルを、マルチモーダルな関数応答に対応するものとして認識する修正（#29982）もある。",
+      "フックでは、SubagentStop イベントの対応付けと、複数の設定にまたがるフック定義の統合に対応した（#30111）。ACP では、session/load に応答する前に履歴の再生を待つようになった（#30112）。",
+      "サンドボックスと各 OS 向けの修正も並ぶ。rootless の Podman でサンドボックスを使うときに --userns=keep-id を渡す（#30118）。Windows では、パスがルート配下かどうかの判定（isWithinRoot）を大文字小文字を区別しない形にし（#29999）、IDE のプロセスを探す処理に PowerShell の CIM を使う代替経路を加えた（#30006）。GlobTool はシンボリックリンクのパスを正規化して解決する（#30042）。変更の追跡に使う shadow リポジトリは、.git/info/exclude と core.excludesFile を尊重するようになった（#30034）。",
+      "ほかに、LLM へのプロンプトのテンプレートで `$` を含むパターンが壊れる問題の修正（#30035）、中断された Whisper モデルのダウンロードを導入済みと扱ってしまう問題の修正（#30058）、ストリームの終端で保留中の SSE イベントを流しきる修正（#30050）、リポジトリ URL 末尾の .git だけを取り除くようにする修正（#30013）、端末の幅を変えたあとの履歴の再描画を抑える修正（#29904）、サロゲートペアを途中で切らない表示の修正（#29993）などがある。README には、Gemini CLI の対象範囲と制約、周辺ツールとの関係を明確にする変更が入った（#29995）。変更履歴の「What's Changed」には33件が並ぶ。全項目は公式のリリースページにある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Gemini CLI v0.68.0 リリース（GitHub）",
+        "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.68.0"
+      },
+      {
+        "title": "Latest stable release: v0.68.0（docs/changelogs/latest.md）",
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/latest.md"
+      },
+      {
+        "title": "@google/gemini-cli（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@google/gemini-cli"
+      }
+    ]
+  },
+  "github-copilot-cli-1-0-107-to-1-0-109-sandbox-cidr-index-fable-5-2-2026": {
+    "body": [
+      "github/copilot-cli リポジトリの changelog.md には、1.0.107（2026-11-06）、1.0.108（2026-11-09）、1.0.109（2026-11-10）の3つの見出しが加わっている。npm レジストリでは `@github/copilot` の `latest` タグが 1.0.109 を指し、公開時刻は 2026-11-10 17:01 UTC だった。前回扱った 1.0.106 の続きにあたる。以下は changelog の記載を整理したもので、実際の挙動は検証していない。",
+      "先に1点断っておく。changelog の 1.0.107 の項目は、1.0.106 の項目と一字一句同じだった（両方の節を取り出して比較し、差分は0行）。/code コマンド、/settings の統合ダッシュボード、GPT-6.1 Terra の追加などは 1.0.106 の記事で扱った内容で、1.0.107 で何が変わったのかは changelog からは読み取れない。この記事では 1.0.108 と 1.0.109 を中心に扱う。",
+      "1.0.108 の追加は2つある。1つは settings.json の sandbox.userPolicy.filesystem.enumeratePaths で、Windows でディレクトリの一覧だけを許可する（中身の読み取りとは別の）付与を設定できる。もう1つは /index コマンド群で、対象となるリポジトリでは、管理された共有の tgrep 索引が既定で有効になった。tgrep は Microsoft が公開しているトライグラム索引の grep で、Copilot CLI は以前の版から大きなモノレポの検索に使っている。",
+      "1.0.109 の追加は、サンドボックスのホスト許可・拒否規則が IPv4/IPv6 の CIDR 表記に対応したことと、モデル選択の「New models」に Claude Fable 5.2 が加わったことである。Fable 5.2 は Anthropic が11月9日に公開したモデルで、翌日の版で選べるようになった。",
+      "権限まわりの変更は、締める方向と緩める方向の両方がある。締める側では、MCP の拒否規則が、MCP サーバーが公表している名前のままのツール（例: server(weather.lookup)）にも効くようになり、--allow-all-tools を付けていても止まる（1.0.108）。Linux のサンドボックスで拒否したパスは、その中にある開発ツールの設定ファイルへのアクセスも止める（1.0.109）。git の参照を変えるスクリプトや、隠しパス経由でファイルを読むスクリプトは、必ず確認の対象になる（1.0.109）。/share と /export は、ローカルに保存するときにシンボリックリンクをたどる前に確認を求める（1.0.109）。",
+      "緩める側では、読み取り専用のシェルスクリプトで確認を求める回数が減った（1.0.109）。URL の権限プロンプトでは、そのセッションに限ってすべてのサブドメインを承認できる（1.0.109）。MCP の許可規則も、サーバーが公表している名前のままのツールや64文字を超えるツール名を承認できるようになり、拒否規則と同じ照合になった（1.0.109）。対話型の Autopilot は、MCP からの入力や同意の要求を自動で断らず、利用者の応答を待つ（1.0.108）。",
+      "リポジトリ側の設定を尊重する修正も続いている。/mcp enable は、リポジトリの設定で無効にされた MCP サーバーを有効にしない（1.0.108）。リポジトリの設定で無効にされた MCP サーバーは、フォルダを信頼した時点で止まり、そのツールがセッションから外れる（1.0.109）。サンドボックスが有効なとき、動いているローカルの MCP サーバーは /cd のあとに再起動され、移動先のディレクトリの拒否パスに従う（1.0.108）。端末の Policy Helper が固定した設定（リポジトリのフックなど）は、GitHub にサインインしていないセッションを再開したときにも適用される（1.0.109）。",
+      "フックと SDK では、挙動が変わる修正がある。リポジトリの sessionStart フックが /clear や /new を実行する場合、作られたセッションごとにまた新しいセッションを始めてしまう連鎖が止まった（1.0.108）。preToolUse フックが複数の並列ツール呼び出しについて確認を求めたとき、1つに「いいえ」と答えても他が確認なしに拒否されることはなくなった（1.0.108）。sessionStart や preToolUse のフックが additionalContext に null を返した場合、null という文字列がモデルに送られていたのが、値なしとして扱われる（1.0.109）。SDK では、同じ名前のカスタムツールを2つ渡すとエラーになる。以前は、モデルには最初の定義が示され、一部の SDK は最後の定義のハンドラーを実行していた（1.0.108）。",
+      "モデルの扱いでは、選択中または保存済みのモデルが使えないとき、黙って別のモデルに切り替えずにエラーを表示するようになった（1.0.109）。/docs/setup.md のようなパスや URL のルートをプロンプトに書いたとき、先頭の区切り（docs）と同じ名前のスキルが呼び出されたかのように読み込まれる問題も直っている（1.0.108）。/init のあとに書いた文は、生成される指示ファイルへの追加の指示としてモデルに届く。以前は黙って捨てられていた（1.0.109）。",
+      "表示の安全性に関する修正が、今回も複数入っている。settings.json の値、チェックポイントのタイトル、ファイル名、生成されたエージェント名、サブエージェントの種類やモデル名などに含まれる制御文字やエスケープシーケンスが、端末の表示を書き換えないようにする修正である（1.0.108、1.0.109）。貼り付けたテキストからは端末の色コードと見えない制御文字が取り除かれ、プロンプトに見えているとおりの文がモデルに届く（1.0.109）。",
+      "ほかに、索引検索が、もう存在しないリポジトリやワークツリーの索引をキャッシュから削除するようになった。changelog は、この索引が数十ギガバイトに膨らむことがあったと書いている（1.0.109）。課金に関わる記載として、1.0.104 以降、Assisted Permissions の判定のための呼び出しはエージェントのリクエストとして送られ、別のプレミアムリクエストとして数えられない、という一文が 1.0.108 の項目にある。項目数は 1.0.108 が79件、1.0.109 が158件で、ヘルプや設定の説明文を実際の挙動に合わせる修正が多くを占める。全項目は公式の changelog にある。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitHub Copilot CLI changelog.md（github/copilot-cli）",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      },
+      {
+        "title": "@github/copilot（npm レジストリ）",
+        "url": "https://www.npmjs.com/package/@github/copilot"
+      },
+      {
+        "title": "microsoft/tgrep（GitHub）",
+        "url": "https://github.com/microsoft/tgrep"
+      }
+    ]
+  },
+  "claude-code-2-1-323-code-mode-plugin-engines-permission-sandbox-fixes-2026": {
+    "body": [
+      "Claude Code の公式 CHANGELOG（anthropics/claude-code リポジトリ）に 2.1.323 が加わった。公式ドキュメントの changelog ページは日付を2026年11月12日としており、npm のレジストリでも同じ日に公開されている。本サイトが直前に扱った版は 2.1.321・2.1.322 である。2.1.323 の項は非常に長く、「Fixed」で始まる行だけで150件を超える。この記事は CHANGELOG の記載だけに基づき、個々の修正の再現や影響範囲は検証していない。",
+      "新機能の先頭に置かれているのは Code Mode である。CHANGELOG は「Claude が JavaScript を書いて自分のツールを呼ぶ、利用者が有効にする実験機能」と説明し、有効にする方法と、組織単位で無効にする方法は公式ドキュメントのページにあると書いている。ただし、CHANGELOG が示すそのページ（code.claude.com/docs/en/code-mode）は、2026年11月13日に確認した時点で 404 を返した。公式ドキュメントの索引（llms.txt）にも、このページは載っていなかった。したがって、有効化の手順、JavaScript がどこで動くのか、権限の確認がどう働くのかは、この記事では述べられない。なお、OpenAI の Codex CLI のリリースノートにも同じ「Code Mode」という名前の機能が出てくるが、両者が同じ仕組みかどうかは確認していない。",
+      "プラグインまわりでは、plugin.json に engines[\"claude-code\"] を書けるようになった。プラグインが対応する Claude Code の版の範囲を宣言するもので、範囲の外にある版では、そのプラグインは導入も更新も読み込みもされない。導入と更新は、範囲に合う最も新しい版を選ぶ。claude plugin validate は、プラグインの TypeScript の hooks モジュールを型検査するようになった。指摘は警告として出て、--strict を付けると失敗になる。一方で、プラグインの agent 設定は非推奨になり（動作は続くが、起動時などに警告が出る）、subagentStatusLine の設定は削除された。マーケットプレイスとプラグインの導入は、git のサブモジュールがリポジトリの記録するコミットと合っていない場合に失敗するようになった。",
+      "権限とサンドボックスに関わる修正は数が多い。CHANGELOG の記載から主なものを挙げる。--permission-mode auto や設定の defaultMode: auto を指定したのに auto モードが使えない場合、より多くを許しうるモードで始まることがあった。修正後は、先に確認を求める Manual モードで始まる。Read の拒否ルールが掛かったパスへ、Write・Edit のツールが書けた場合があった。Bash の権限チェックが rm を誤ったフォルダの基準で判定し、危険な削除の確認を出さなかった場合があった。sudo や env などを挟んで実行したコマンドを、Bash の拒否ルール・確認ルールが取りこぼす場合があった。セッションの途中で Bash のサンドボックスが切れることがあった。claude -p と Agent SDK で、サンドボックスを有効にする設定が検証に失敗したとき、Bash がサンドボックス無しで動いていた。修正後は起動時に止まり、無効な設定の名前を示す。",
+      "不具合の修正とは別に、既定の動作を変えた項目もある。Claude Code 自身が使う ripgrep と、内部の git コマンドの大半は、サインイン用のトークンや API キーの大半を持たない状態で動くようになった。CHANGELOG は、そうした git コマンドの下で動く credential helper やフックが、それらを見つけられなくなると書いている。MCP サーバーのサインインを完了させるツールは、bypass モードや auto モードでも利用者に確認を求める。「今後は確認しない」で保存される許可ルールは、秘密情報を含むように見える場合と、git が追跡している settings.local.json に保存されることになる場合には、そのセッション限りになる。macOS・Linux・WSL の Bash サンドボックスは、書き込み可能なフォルダの中のシンボリックリンクを経由した、別の場所への書き込みを認めなくなった。VS Code 拡張には、信頼していないフォルダで最初のセッションを始める前の確認が加わった。",
+      "移行で気を付ける変更が3つある。第一に、Claude Code が認識できないモデル ID に仮定するコンテキスト長が、200K から 1M になった。早めに圧縮したい場合は /autocompact を、200K のままにしたい場合は CLAUDE_CODE_DISABLE_1M_CONTEXT=1 を使う、と CHANGELOG は書いている。あわせて、ウィンドウの小さい他社のモデルで動かしているセッションは、いっぱいになると /clear するまで毎ターン失敗しうるので、先にこの環境変数を設定するよう注意している。第二に、MCP の v1 クライアントが削除された。MCP_SDK_GENERATION=v1 を指定した場合は、v2 のクライアントが互換モードで動く。第三に、組織の設定とポリシーの取得は、ALL_PROXY だけで指定したプロキシを使わなくなった。必要なら HTTPS_PROXY を設定する。",
+      "確認できていないこと。Code Mode の中身は、上に書いたとおり公式ドキュメントのページに到達できず、CHANGELOG の1行以上のことは分からない。権限とサンドボックスの各修正が、どの版から存在した不具合で、どの構成で実際に問題になりえたかも、CHANGELOG には書かれていない。CVE 番号やセキュリティ勧告への言及は、確認した範囲には無かった。使う側が確かめやすいのは、自分の版が 2.1.323 以降かどうかである（claude --version）。拒否ルールやサンドボックスを安全装置として頼っている場合、claude -p や Agent SDK で無人実行している場合は、該当しうる項目が多い。ここで挙げたのは一部で、Remote Control、Claude Code on the web、Claude Tag、Windows 固有の修正などは取り上げていない。全項目は CHANGELOG を参照してほしい。"
+    ],
+    "tables": [
+      {
+        "caption": "Claude Code 2.1.323 の主な変更（公式 CHANGELOG の記載を整理）",
+        "afterParagraph": 3,
+        "headers": [
+          "区分",
+          "変更内容"
+        ],
+        "rows": [
+          [
+            "新機能",
+            "Code Mode（実験機能、利用者が有効にする）。Claude が JavaScript を書いてツールを呼ぶ。詳細を載せるはずの公式ページは11月13日時点で 404"
+          ],
+          [
+            "プラグイン",
+            "plugin.json の engines[\"claude-code\"] で対応版の範囲を宣言。範囲外の版では導入・更新・読み込みをしない"
+          ],
+          [
+            "権限モード",
+            "auto モードが使えないとき、より緩いモードで始まることがあった不具合を修正。Manual モードで始まる"
+          ],
+          [
+            "権限チェック",
+            "Read の拒否ルールがあるパスへ Write・Edit が書けた場合、rm を誤ったフォルダで判定した場合、sudo・env などを挟んだコマンドの取りこぼしを修正"
+          ],
+          [
+            "サンドボックス",
+            "セッション中にサンドボックスが切れる場合を修正。claude -p と Agent SDK は、サンドボックスを有効にする設定が無効なら起動時に止まる"
+          ],
+          [
+            "資格情報",
+            "内蔵の ripgrep と内部の git コマンドの大半は、サインイン用トークンや API キーの大半を持たずに動く"
+          ],
+          [
+            "コンテキスト長",
+            "認識できないモデル ID に仮定する長さを 200K から 1M に変更（CLAUDE_CODE_DISABLE_1M_CONTEXT=1 で 200K のまま）"
+          ],
+          [
+            "MCP",
+            "v1 クライアントを削除。MCP_SDK_GENERATION=v1 は v2 クライアントの互換モードになる"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG（2.1.323）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "Claude Code changelog（公式ドキュメント、2.1.323 の日付）",
+        "url": "https://code.claude.com/docs/en/changelog"
+      },
+      {
+        "title": "npm レジストリ @anthropic-ai/claude-code（公開日時）",
+        "url": "https://registry.npmjs.org/@anthropic-ai/claude-code"
+      }
+    ]
+  },
+  "googlechrome-modern-web-guidance-1-0-agent-skills-web-platform-2026": {
+    "body": [
+      "GitHub の GoogleChrome 組織が、コーディングエージェント向けのスキル「Modern Web Guidance」を公開している。npm のレジストリによると、パッケージ modern-web-guidance は2026年4月30日に最初の版（0.0.55）が出て、11月10日に 1.0.0 になった。11月13日の時点で、ソース側のリポジトリ（GoogleChrome/modern-web-guidance-src）は GitHub Trending の日次一覧に入っている。この記事は、2つのリポジトリの README と GOVERNANCE.md、npm のレジストリの記載に基づく。公式の解説ページ（developer.chrome.com）には、この実行環境から到達できなかった。スキルを実際に導入して動かす検証もしていない。",
+      "README は、このスキルが要る理由を次のように説明している。言語モデルの学習データには古いコードが大量に含まれるため、コーディングエージェントは古い書き方を既定にしがちで、いまはブラウザの標準機能で済む処理に、大きな JavaScript を生成してしまう。モデルが API の存在を知っていても、実際の使い方の例が足りない場合がある。Modern Web Guidance は、専門家が書いた短いガイドを、必要なときにエージェントのコンテキストへ入れることで、これを補うという。扱う範囲として README は、CSS とレイアウト140件、HTML と DOM 36件、JavaScript と API 74件の、合計250件の Web 機能を挙げている。View Transitions、コンテナクエリ、Popover API、Anchor Positioning、ブラウザ内蔵の翻訳・要約 API、WebMCP などが含まれる。",
+      "仕組みは3段階である。まず、Web に関係する作業でエージェントがスキルを有効にする。次に、エージェントが modern-web-guidance search を実行し、問い合わせに合うガイドを探す。README によると、この検索は、オフラインで動く埋め込みモデルと BM25 を使い、ネットワーク呼び出しも API キーも使わない。最後に、エージェントが modern-web-guidance retrieve でガイドを取り出し、コードの型、注意点、フォールバックを読む。Origin Trial の段階にある API と、1つのエンジンだけが実装して間もない機能のガイドは、検索では見つかるが、取り出しは止められる。プロジェクトの設定ファイル（.mwgrc）で許可した場合にだけ取り出せる。エージェントが不安定な API を、開発者の同意なしに採用しないようにするため、と README は説明している。",
+      "誰が管理しているかについて、README は「Google Chrome、Microsoft Edge、Mozilla Firefox、MDN の各チームが、Web 開発のコミュニティとともに管理する」と書いている。GOVERNANCE.md は、貢献者・Peer・分野ごとの技術リード・Owner の4つの役割を定めている。目を引くのは、新しいガイドを一から書けるのは原則として Peer（正式に受け入れられた専門家）に限る、という規定である。理由として GOVERNANCE.md は、ガイドが AI のコーディング支援にそのまま取り込まれるためだと述べている。なお、Microsoft や Mozilla の側の発表は、この記事では確認していない。共同管理という記述の根拠は、GoogleChrome 組織のリポジトリの文書である。",
+      "README には、スキルの有無で合格率を比べた表が載っている。土台となる2つのアプリに対して、API の名前を出さない依頼（「画像の読み込みを速くして」など）を与え、Playwright の採点器で要件を満たしたかを判定する方式だという。11月8日分の結果は下の表のとおりで、3つのエージェントとも、スキルなしで5割台、スキルありで8〜9割台となっている。ただし、これはプロジェクト自身が設計した課題と採点器による数字で、独立した検証は確認できていない。採点器の調整に使う模範解答も、Claude・Codex・Antigravity が作ったものだと README は書いている。エージェントどうしの優劣を示す表として読むのは適切でない。日付によって数字も動いている（Codex CLI は11月6日分で 53%→86%、8日分で 54%→82%）。",
+      "導入方法として README が最初に挙げるのは npx modern-web-guidance@latest install である。ほかに、Claude Code・Codex・GitHub Copilot CLI のプラグインマーケットプレイス、GitHub CLI の gh skill install、Google Antigravity、Grok Build、Kimi Code の各コマンドが並ぶ。配布用のリポジトリには、各ツール向けのプラグイン定義が置かれている。1つのスキルを、複数のエージェントにそれぞれの導入経路で届ける作りである。",
+      "導入の前に知っておくとよい点が3つある。第一に、利用情報の送信が既定で有効である。README によると、Google は導入の回数、呼び出したエージェントの名前、取り出したガイドの ID、エージェントが作った検索クエリ（例として「dark mode scrollbar color-scheme」）を匿名で集める。利用者が入力したプロンプトそのものは集めないという。止めるには環境変数 DISABLE_TELEMETRY=1 を設定する。README は「CLI はオフラインで、完全にローカルで動く」とも書いているが、これは検索の処理についての説明で、利用情報の送信は別に行われる、と読める。第二に、@latest を付けた npx は、実行のたびに最新版を取りに行く。README は内容を古くしないためと説明しているが、取得される中身が版ごとに変わるということでもある。npm のレジストリの記載では、1.0.0 は依存パッケージを持たず、インストール時に走るスクリプトも定義していない。この点は版が変われば変わりうるので、導入するときに自分で確かめるのがよい。第三に、所属先にパッケージやスキルの導入の規則がある場合は、そちらが優先される。",
+      "このスキルが扱っているのは、モデルの知識が学習の時点で止まるという、エージェント全般に共通する問題である。Web の標準は、どのブラウザが何を実装したかという事実が数か月単位で変わる。それをモデルの再学習ではなく、ブラウザを作る側が管理する文書を必要なときに差し込むことで埋める、というのがこのプロジェクトの考え方だと読める。効果がどの程度あるかは、上に書いたとおり、いまのところプロジェクト自身の数字しかない。"
+    ],
+    "tables": [
+      {
+        "caption": "README に載っている評価結果（2026年11月8日分）。プロジェクト自身の課題と採点器による数字で、独立した検証は確認できていない",
+        "afterParagraph": 4,
+        "headers": [
+          "エージェント（モデル）",
+          "課題数 / 判定項目数",
+          "スキルなし",
+          "スキルあり",
+          "差"
+        ],
+        "rows": [
+          [
+            "Antigravity CLI（gemini-4-argon）",
+            "214 / 1673",
+            "58%",
+            "94%",
+            "+36 ポイント"
+          ],
+          [
+            "Codex CLI（gpt-6.1-sol）",
+            "215 / 1795",
+            "54%",
+            "82%",
+            "+28 ポイント"
+          ],
+          [
+            "Claude Code（opus-5-5）",
+            "215 / 1801",
+            "57%",
+            "88%",
+            "+31 ポイント"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "GoogleChrome/modern-web-guidance-src（ソース側リポジトリ、README・GOVERNANCE.md）",
+        "url": "https://github.com/GoogleChrome/modern-web-guidance-src"
+      },
+      {
+        "title": "GoogleChrome/modern-web-guidance（配布用リポジトリ）",
+        "url": "https://github.com/GoogleChrome/modern-web-guidance"
+      },
+      {
+        "title": "npm レジストリ modern-web-guidance（版と公開日時）",
+        "url": "https://registry.npmjs.org/modern-web-guidance"
+      }
+    ]
+  },
+  "codex-cli-0-168-model-providers-tui-workspace-audio-attachments-2026": {
+    "body": [
+      "OpenAI の Codex CLI（openai/codex リポジトリ）で、0.168.0 が公開された。GitHub のリリースページは公開の時刻を11月13日 03:54 としており、npm のレジストリでも同じ日に公開されている。本サイトが直前に扱った版は 0.167.0 で、その後に 0.167.1（11月10日）と 0.167.2（11月11日）が出ている。0.167.1 のリリースページには変更点の記載が無く、差分へのリンクだけがある。この記事は GitHub のリリースノートの記載に基づき、各機能を実際に動かす検証はしていない。",
+      "0.168.0 の新機能は6項目ある。第一に、Sessions の「Model providers」からモデルプロバイダーを一覧し、新しいチャットの既定を選べるようになった。第二に、features.tui_workspace を有効にすると、メインのチャットの横に別の会話（side conversation）を表示できる。境界をドラッグして幅を変えられ、リーダーキーに続けて z を押すと、フォーカスしている側を拡大する。第三に、音声に対応したモデルを使っているとき、録音を添付できる。拒否された録音は以後のターンでは送られず、短い録音をコンテキストに多く残すために、長さの情報が使われるという。第四に、features.image_generation_animation を有効にすると、アニメーション GIF の生成と編集ができる。コマ数とタイミングを指定できる。",
+      "第五に、全画面表示の Codex は、tmux の中でも、Ghostty と Kitty の上で画像のプレビューを表示する。tmux 側で allow-passthrough all を設定している場合に限る。第六に、tui.notification_method に osc777 を指定すると、端末の通知を使える。承認を求める通知は、コマンドの表示が長くなり、端末への入力の要求とネットワークアクセスの要求を区別して示す。分割表示と GIF の2つは、機能フラグを自分で有効にしたときだけ動く。リリースノートは、これらが今後どう扱われるかには触れていない。",
+      "修正は6項目である。ローカルの TUI の履歴と再開の一覧は、新しく作られたスレッドを、サインイン中の ChatGPT アカウントのものだけ表示する。1台の端末で複数のアカウントを切り替えて使う場合に関わる変更である。新しいチャットの既定のプロバイダーを変えても、開いたチャットと再開したチャットは、保存されているプロバイダーを保つ。ツール呼び出しで分かれた返答は、1つの Markdown のメッセージとして表示され、会話を再生するときには推論の要約も復元される。実行中のターンへ方向づけ（steer）のメッセージを送ったとき、最後の記録の保存中や、長く動いているチャットへ戻った直後でも届くようになった。ファイルのあいまい検索は、ファイル名の一致を、親ディレクトリ名の一致より優先する。Windows では、待機中のローカル MCP サーバーが、Codex のほかの部分のファイル入出力をふさがなくなった。",
+      "設定まわりでは、features.multi_agent を明示的に設定していると警告が出るようになった。サブエージェントのツールを無効にするには agents.enabled を使うよう案内される。リリースページの変更履歴には、multi_agent の機能フラグを非推奨にするという項目もある。この設定を config.toml に書いている場合は、書き換えの対象になる。文書の面では、app-server のリファレンスに、モデルプロバイダーの一覧、独自のゲートウェイの作成、ゲートウェイ・Bedrock・GCP の設定の更新が加わった。",
+      "0.167.2 の変更は1項目である。Google Cloud Vertex AI を使う場合に、ツールの更新を差分で送る動作が既定になった。元に戻すには、config.toml の [features] で incremental_tools_legacy_gcp = false を設定する、とリリースノートは書いている。Vertex AI の組み込みプロバイダーは 0.165.0 で加わったもので、0.168.0 のプロバイダー選択の画面と合わせると、OpenAI 以外の経路で Codex を動かす構成への対応が、3つの版にわたって続いていることになる。",
+      "確認できていないこと。OpenAI の公式ドキュメント（developers.openai.com）の changelog には、今回の実行環境から到達できなかった。そのため、ここに書いた内容は GitHub のリリースノートだけに基づく。音声の添付に対応するモデルがどれか、分割表示で横に出す会話がどう作られるのかは、リリースノートからは分からない。プロバイダーの選択画面に何が並ぶかも、利用者の設定や契約によると考えられるが、確認していない。"
+    ],
+    "tables": [
+      {
+        "caption": "Codex CLI 0.167.2・0.168.0 の主な変更（GitHub のリリースノートの記載を整理）",
+        "afterParagraph": 3,
+        "headers": [
+          "区分",
+          "変更内容",
+          "版"
+        ],
+        "rows": [
+          [
+            "プロバイダー",
+            "Sessions の Model providers から一覧し、新しいチャットの既定を選ぶ。開いているチャットは保存済みのプロバイダーを保つ",
+            "0.168.0"
+          ],
+          [
+            "TUI",
+            "features.tui_workspace で、メインのチャットの横に別の会話を表示",
+            "0.168.0"
+          ],
+          [
+            "入力",
+            "音声に対応したモデルで、録音を添付できる",
+            "0.168.0"
+          ],
+          [
+            "画像",
+            "features.image_generation_animation で、アニメーション GIF の生成と編集",
+            "0.168.0"
+          ],
+          [
+            "履歴",
+            "履歴と再開の一覧は、サインイン中の ChatGPT アカウントのスレッドだけ表示",
+            "0.168.0"
+          ],
+          [
+            "設定",
+            "features.multi_agent に警告。サブエージェントのツールを無効にするには agents.enabled",
+            "0.168.0"
+          ],
+          [
+            "Vertex AI",
+            "ツールの更新を差分で送る動作が既定に。戻すには incremental_tools_legacy_gcp = false",
+            "0.167.2"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "openai/codex リリース 0.168.0",
+        "url": "https://github.com/openai/codex/releases/tag/rust-v0.168.0"
+      },
+      {
+        "title": "openai/codex リリース 0.167.2",
+        "url": "https://github.com/openai/codex/releases/tag/rust-v0.167.2"
+      },
+      {
+        "title": "openai/codex リリース 0.167.1",
+        "url": "https://github.com/openai/codex/releases/tag/rust-v0.167.1"
+      },
+      {
+        "title": "npm レジストリ @openai/codex（公開日時）",
+        "url": "https://registry.npmjs.org/@openai/codex"
+      }
+    ]
+  },
+  "claude-code-2-1-325-sandbox-auto-allow-default-zstd-security-fix-permission-2026": {
+    "body": [
+      "Claude Code の公式 CHANGELOG（anthropics/claude-code リポジトリ）に 2.1.325 が加わった。公式ドキュメントの changelog ページは日付を2026年11月13日としている。npm のレジストリには、同じ日に 2.1.324（18:42 UTC）と 2.1.325（20:07 UTC）の2つが公開されているが、CHANGELOG と公式ドキュメントに 2.1.324 の見出しは無く、2.1.323 の次が 2.1.325 になっている。2.1.324 で何が変わったのかは、確認した範囲では分からない。2.1.325 の項は139件あり、そのうち「Fixed」で始まる行が79件、「Changed」で始まる行が28件である。この記事は CHANGELOG の記載だけに基づき、個々の修正の再現や影響範囲は検証していない。",
+      "項目の先頭に置かれているのは、「zstd 圧縮された応答のデコード方法にあったセキュリティ上の問題を修正した」という1行である。CHANGELOG に書かれているのはこの1行だけで、何が起きうる問題だったのか、どの版から存在したのか、どの接続先からの応答が対象なのかは書かれていない。CVE 番号やセキュリティ勧告への言及も、確認した範囲には無かった。",
+      "利用者の手元で動きが変わる可能性が最も高いのは、サンドボックスの既定の変更である。CHANGELOG は「サンドボックス内の Bash コマンドは、既定で通常の権限の流れに従うように変えた。確認なしの実行を続けるには sandbox.autoAllowBashIfSandboxed: true を設定する」と書いている。管理設定（managed settings）でサンドボックスを有効にしている組織については、確認なしの実行を続けるなら、最も優先順位の高い管理設定にこの値を書くよう案内している。これまでは、サンドボックスを有効にすると、その中で動くコマンドは確認なしで実行されるのが既定だった（公式ドキュメントが auto-allow mode と呼ぶ動作）。",
+      "ただし、この点は公式の資料どうしで記載が食い違っている。公式ドキュメントの設定リファレンスは、2026年11月14日に確認した時点で sandbox.autoAllowBashIfSandboxed の既定値を true としており、サンドボックスのページにも「既定は引き続き true で、サンドボックス内のコマンドは確認なしで動く」という趣旨の一文が残っている。ドキュメントの更新が追いついていないのか、CHANGELOG の言う「既定」が別の条件を指しているのかは、資料からは判断できない。サンドボックスを使っている場合は、2.1.325 に上げたあとに /sandbox の Mode タブで、いまどちらのモードになっているかを見るのが確実である。どちらの動作を望むにせよ、設定に値を明示しておけば、既定の解釈に左右されない。",
+      "確認を求める場面を増やす変更は、ほかにもある。読み取り専用の git コマンドは、プロジェクトのリポジトリでも、信頼済みのリポジトリでもない場所では、先に確認を求める（確認なしで動かすには、additionalDirectories の設定ではなく --add-dir で指定する）。スケジュールされたタスクと /loop は、allowed-tools やフックを宣言しているスキルを実行する前に確認を求める。無人で動かし続けるには、permissions.allow に Skill(名前) を加える。Desktop・IDE・SDK の「Always allow」は、保存するルールが同じコマンドを次回も実際に許可する場合にだけ、ルール単独の選択肢として出る。CHANGELOG は、これに頼っていたスケジュールタスクが利用者の応答を待つようになりうる、と書いている。無人実行を組んでいる場合は、止まっていないかを確かめたほうがよい。",
+      "権限ルールが効かない場合があった、という修正も並ぶ。Read(./.env) のような相対パスの拒否・確認ルールが、cd のあとにプロジェクトを対象にしなくなっていた。Bash の権限チェックに、一部の複合コマンドが確認なしで動く抜けがあった。Bash の許可ルールが、ルールに書かれた名前とは別のプログラムを実行しうる場合があった。リポジトリにコミットされた .claude/settings.local.json が、特定のサブフォルダから起動したときに利用者自身の設定として扱われる場合があった。サンドボックス内のコマンドが、アップデーターのダウンロード用フォルダへ書き込める場合があった。Bash のサンドボックスが、ワークツリーの設定とフック、リンクされたワークツリーが共有する git フォルダを保護しきれていない場合があった。いずれも CHANGELOG は1行で述べるだけで、どの構成で実際に問題になりえたかは書かれていない。",
+      "資格情報の扱いでは、前の版に続く変更がある。Claude Code のサンドボックスが自分のために起動するプログラム（ネットワークの中継など）は、サインイン用のトークンや API キーを環境変数に持たずに動くようになった。ripgrep、ローカルの git コマンド、サンドボックスのランタイムの補助プログラムは、mTLS のクライアント鍵のパスフレーズを環境変数に持たずに動く。アカウントのメールアドレスの確認（2.1.317 で入った、送信前の確認）は対象が広がり、コマンドが実行するスクリプト、ファイルへの書き込み、Web の取得、MCP の呼び出しでも、メールアドレスをクライアントの識別子として渡すことを拒む。",
+      "プラグインでは、マーケットプレイスの ref に、ブランチやタグ上の任意のコミットの完全な ID を書けるようになった。CHANGELOG は、この版より前のクライアントはそのような指定を clone できず、そう固定したマーケットプレイスは古いクライアントでは読み込まれなくなる、と注意している。管理設定が宣言し、有効にし、prependPlugins か appendPlugins に載せたリモートのマーケットプレイスのプラグインは、組織のものとして数えられる。pluginDigests は非推奨になり、無視される。マーケットプレイスの追加の確認、プラグインの推薦、導入時の警告には、プラグインが利用者のコンピューター上で、ファイルとシェルに触れる形でコードを実行できる、という説明が加わった。",
+      "VS Code 拡張には、ターミナルと同じプロンプトの提案（Tab で次のプロンプトの候補を受け入れる。promptSuggestionEnabled: false で止められる）、API キーを作らない Console のサインイン、SSH・WSL・コンテナのウィンドウで MCP サーバーにサインインするときにリダイレクト先の URL を貼り付ける欄が加わった。ほかに、claude remote-control は自分で止まったときに終了コード 4、登録できなかったときに 69 を返すようになり、サービス管理の仕組みから再起動させやすくなった。CLAUDE_CODE_MAX_CONTEXT_TOKENS は、claude- で始まる未知のモデル ID（ゲートウェイが付けた別名など）のコンテキスト長にも効く。",
+      "確認できていないこと。zstd の修正の中身と影響範囲、2.1.324 の変更点、サンドボックスの既定についての CHANGELOG とドキュメントの食い違いの理由は、上に書いたとおり分からない。権限とサンドボックスの各修正が、どの版から存在した不具合なのかも CHANGELOG には無い。使う側が確かめやすいのは、自分の版が 2.1.325 以降かどうか（claude --version）と、サンドボックスのモードである。ここで挙げたのは一部で、MCP タスク、Code Mode、Remote Control、Windows・Linux 固有の修正などは取り上げていない。全項目は CHANGELOG を参照してほしい。"
+    ],
+    "tables": [
+      {
+        "caption": "Claude Code 2.1.325 の主な変更（公式 CHANGELOG の記載を整理）",
+        "afterParagraph": 5,
+        "headers": [
+          "区分",
+          "変更内容"
+        ],
+        "rows": [
+          [
+            "セキュリティ修正",
+            "zstd 圧縮された応答のデコードにあった問題を修正。詳細・CVE 番号の記載は無い"
+          ],
+          [
+            "サンドボックスの既定",
+            "サンドボックス内の Bash も通常の権限確認を通る。確認なしを続けるには sandbox.autoAllowBashIfSandboxed: true。公式ドキュメントは11月14日時点で既定を true としており、記載が食い違う"
+          ],
+          [
+            "git コマンド",
+            "読み取り専用の git コマンドも、プロジェクト外で未信頼のリポジトリでは先に確認する。--add-dir で指定すれば確認なし"
+          ],
+          [
+            "無人実行",
+            "スケジュールタスクと /loop は、allowed-tools やフックを宣言するスキルの実行前に確認する。permissions.allow に Skill(名前) を加えると無人で動く"
+          ],
+          [
+            "権限ルールの修正",
+            "cd のあとに相対パスの拒否・確認ルールが効かない場合、複合コマンドが確認なしで動く場合、許可ルールが別のプログラムを実行しうる場合を修正"
+          ],
+          [
+            "資格情報",
+            "サンドボックスが自分用に起動するプログラムは、サインイン用トークンや API キーを環境変数に持たずに動く"
+          ],
+          [
+            "プラグイン",
+            "マーケットプレイスの ref にコミットの完全な ID を指定可能（古いクライアントでは読み込めなくなる）。pluginDigests は非推奨で無視される"
+          ],
+          [
+            "VS Code 拡張",
+            "プロンプトの提案、API キーを作らない Console サインイン、リモートのウィンドウでの MCP サインイン用の URL 貼り付け欄"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code CHANGELOG（2.1.325）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "Claude Code changelog（公式ドキュメント、2.1.325 の日付）",
+        "url": "https://code.claude.com/docs/en/changelog"
+      },
+      {
+        "title": "Claude Code 設定リファレンス（sandbox.autoAllowBashIfSandboxed の既定値）",
+        "url": "https://code.claude.com/docs/en/settings-reference"
+      },
+      {
+        "title": "Claude Code サンドボックスのドキュメント（Sandbox modes）",
+        "url": "https://code.claude.com/docs/en/sandboxing"
+      },
+      {
+        "title": "npm レジストリ @anthropic-ai/claude-code（2.1.324・2.1.325 の公開日時）",
+        "url": "https://registry.npmjs.org/@anthropic-ai/claude-code"
+      }
+    ]
+  },
+  "github-copilot-cli-1-0-110-1-0-111-managed-regex-rules-password-dialog-workflow-recursion-2026": {
+    "body": [
+      "github/copilot-cli リポジトリの changelog.md に、1.0.110（2026-11-12）と 1.0.111（2026-11-13）の見出しが加わった。npm レジストリでは `@github/copilot` の `latest` タグが 1.0.111 を指し、公開時刻は 1.0.110 が 2026-11-12 22:59 UTC、1.0.111 が 2026-11-13 13:42 UTC だった。前回扱った 1.0.109 の続きにあたる。項目数は 1.0.110 が190件、1.0.111 が121件で、今回も大半は表示やメッセージの修正である。以下は changelog の記載を整理したもので、実際の挙動は検証していない。",
+      "1.0.111 の先頭には、追加が2つ並ぶ。1つは、エンタープライズが管理する Shell・Bash・PowerShell の権限ルールに正規表現が使えるようになったことである。changelog にあるのはこの1行で、書式や、どの設定に書くのかは示されていない。もう1つは --host-allow-session-creation というフラグで、リモートのクライアントが CLI のホスト上にセッションを作ることを、保存済みの設定を変えずに、その起動の1回だけ許可する。",
+      "1.0.110 の先頭は実験機能である。エージェントが実行したコマンドが git・ssh・sudo のパスワードを求めたとき、伏せ字のダイアログで答えられる（/experimental on で有効にする）。入力した値がどこを通り、モデルに渡るのかどうかは、changelog には書かれていない。",
+      "1.0.110 の末尾には削除が1件ある。従来のリモート操作の仕組み（legacy remote steering）が取り除かれ、クラウドのセッションとリモート接続には AHP 環境が必須になった。AHP は以前の版の changelog にも `copilot --ahp-host` や `/ahp sessions` として出てくるが、changelog 自体は略語の正式名称を書いていない。従来の仕組みでリモートから操作していた場合に、何を設定し直せばよいのかも、changelog からは読み取れない。",
+      "実験機能の動的ワークフローには、全ツールを許可している場合に関わる修正が2つある。ワークフロー自身のエージェントが、ワークフローの実行を開始・再開することはできなくなった。changelog は、全ツールが許可されているときに、ワークフローが自分の複製を際限なく起動することが無くなる、と書いている（1.0.111）。また、ワークフローを実行するツールは、すべてのツールの権限が事前に承認されている場合に、「利用者が各実行の上限を確認する」とモデルに伝えていたが、これをやめた（1.0.110）。実際には誰も確認しない構成で、確認があるとモデルに説明していたことになる。",
+      "権限とフックに関わる修正も並ぶ。--yolo や --allow-all のフラグが、権限のバイパスを無効にする設定によって無視された場合、非対話の実行でも警告が出る（1.0.110）。copilot -p を --trust-folder 付きでリポジトリのサブディレクトリから実行した場合、リポジトリのルートにあるフックが読み込まれなかったことを警告し、読み込む方法を示す（1.0.111）。信頼済みのフォルダで copilot -p を実行したとき、プラグインの読み込みが同時に終わると、リポジトリのフックなしで動くことがあった問題が直った（1.0.110）。postToolUse フックがシェルコマンドの出力を書き換えた場合（changelog は秘密情報の伏せ字化を例に挙げている）、モデルが受け取る内容だけでなく、画面の Shell 行と copilot -p の出力にも再び反映される（1.0.110）。複数の userPromptSubmitted フックが返したコンテキストは、最後の1つだけでなく、すべてモデルに届く（1.0.111）。",
+      "MCP では、ブラウザで待機中のサインインが、アカウントのサードパーティ MCP のポリシーでそのサーバーが遮断された時点で止まるようになった。以前はサインインを完了し、もう使えないサーバーのトークンを保存していた（1.0.110）。リモートの MCP サーバーへの OAuth サインインは、Kerberos（Negotiate）認証を求めるプロキシ越しでも動く（1.0.111）。/sandbox は、settings.json に無効な値があるとき、保存済みのサンドボックス設定を既定値で置き換えずに、読み込みエラーを表示する（1.0.110）。macOS では、--disallow-temp-dir を付けない限り、/tmp 配下の自分の作業用ファイルにパスの権限確認が出なくなった（1.0.111）。",
+      "費用に関わる項目として、/compact がセッションの AI クレジットの上限に従うようになり、上限に達したあとの追加の課金を防ぐ、という記載がある（1.0.110）。上限の90%に達した時点で、エージェントがツールを使えなくなる前に、上限の追加を提案する（1.0.110）。モデル選択が Auto のとき、フッターのコンテキスト使用率は、固定の20万トークンではなく、Auto が実際に振り分けたモデルのウィンドウを基準に計算される（1.0.111）。",
+      "ここで挙げたのは311件のうちの一部である。Sessions タブや狭い端末での表示、スクリーンリーダー対応、/usage のグラフ、端末の制御文字の扱いなど、取り上げていない項目が多い。全項目は公式の changelog にある。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitHub Copilot CLI changelog.md（github/copilot-cli）",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      },
+      {
+        "title": "@github/copilot（npm レジストリ、公開日時）",
+        "url": "https://registry.npmjs.org/@github/copilot"
+      }
+    ]
+  },
+  "feature-anthropic-distillation-defenses-preserved-thinking-tradeoffs-2026": {
+    "body": [
+      "Anthropic は2026年10月12日、「Strengthening our defenses against distillation attacks」と題した記事を公開した。同社が蒸留攻撃と呼ぶのは、あるモデルの応答を大量に集めて別のモデルの訓練に使い、開発元の許可なく能力を写し取る行為である。本サイトは、同社が9月に公表した脅威情報レポートを[別の記事](?a=anthropic-threat-report-kimi-deepseek-routing-2026)で扱った。10月の記事は、その続きとして防御の側を説明している。公開から1か月が経っているが、本サイトでは扱っていなかった。11月9日に公開された Fable 5.2 で、ここに出てくる仕組みの適用範囲が広がったため、あらためて整理する。",
+      "先に、この記事の根拠の範囲を書いておく。以下で「Anthropic は〜と述べている」と書く内容は、すべて同社の記事1本に基づく。効果の数字は同社自身の測定であり、独立した検証は確認できていない。記事は Zhipu（Z.ai）と Moonshot AI の2社を名指ししているが、これも同社の主張である。2社の反論や見解を検索した範囲では、公式の応答は見つからなかった。中国語の媒体と、2社自身の発信は調べていない。見つからなかったことは、応答が無いことを意味しない。",
+      "Anthropic の説明では、蒸留する側にとって最も価値が高いのは、最終的な回答よりも、回答に至るまでの推論の記録である。同社は最初の対策として、推論をそのまま見せず、要約してから利用者に見せるようにした。効果を測るために、Claude Opus 4.8 の記録で別の Claude モデルを訓練し、SWE-bench Verified で比べたところ、推論の全文で訓練した場合は 80.4%、要約された推論で訓練した場合は 71.8% だったという。要約によって、記録の「教材」としての価値が下がる、という主張である。",
+      "同社によれば、要約のあと、攻撃は受け身の収集から、推論の全文を引き出そうとする能動的な抽出に移った。「先ほどの推論を一字一句そのまま出力せよ」という単純な指示から、1万2,000通りの依頼を試した研究所の例まであるという。これに対する現在の対策を、同社は3つに分けて説明している。",
+      "1つめは、推論がどこへ持ち出せるかを制限することである。攻撃側は、保護された推論のブロックを別の会話、別のモデル、別のアカウントへ移すことで、全文を引き出そうとしてきたと同社は述べる。Fable 5.1 と Opus 5.5 で導入した preserved thinking は、2026年8月31日以降に作られた API アカウントについて、Claude の過去の文脈を編集できないようにする。これらのモデルの推論は、蒸留対策の弱い以前のモデルからは読めない。Sonnet 5.5 では、推論の記録を、そのリクエストを出した組織だけが使えるようにした。",
+      "2つめは、抽出の試みを分類器で止めることである。同社は、サイバーや生物の分野で使っているのと同種の2段階の分類器を、蒸留にも適用したと述べる。社内外のレッドチームで検査し、見つかった弱点を直した結果、堅牢さは生物兵器の開発支援を防ぐ安全策とおおよそ同等になり、誤検知率は 0.1% 未満だという。対象は、同社が挙げる時点で Sonnet 5.5、Opus 5 と 5.5、Fable 5 と 5.1 である。3つめは、繰り返しを難しくすることである。抽出を続けるアカウントには厳しい利用制限を掛け、執拗な場合は停止する。加えて9月24日から、誤検知率が 0.1% 未満の領域（蒸留を含む）については、Claude が応答する前に安全策が止めたリクエストにも課金を再開した。",
+      "API の利用者から見ると、この3つは、この数か月のリリースノートに別々の項目として現れていた変更である。本サイトも、拒否されたリクエストへの課金の再開（[9月の記事](?a=anthropic-claude-refusal-billing-expansion-2026)）と、Fable 5.2 での接頭辞チェックの全アカウントへの適用（[11月の記事](?a=anthropic-claude-fable-5-2-mythos-5-2-launch-api-changes-2026)）を、個別の変更として扱った。下の表に、Anthropic の説明と、Claude Platform のリリースノートの記載を対応させた。なお、リリースノートと preserved thinking のドキュメントには「蒸留（distillation）」という語は出てこない。最も近いのは、reasoning_extraction という拒否の区分を「モデルの出力のリバースエンジニアリングや複製を禁じる利用規約に基づいて止めた場合に返る」と説明している箇所である。これらの変更をまとめて蒸留対策として説明しているのは、10月の記事の側である。",
+      "10月の記事のあとにも、範囲は広がっている。記事は preserved thinking の編集制限を「8月31日以降に作られたアカウント」のものとして説明していた。11月9日の Fable 5.2 と Mythos 5.2 のリリースノートは、接頭辞チェックを、作成日にかかわらずすべてのアカウントに適用すると書いている。system プロンプト、tools、以前のメッセージのいずれかを書き換えたうえで、後のターンの thinking ブロックを送り返すと、リクエストは 400 エラーになる。会話履歴を途中で編集する実装（古いメッセージの削除や差し替え、ツール定義の入れ替え）は、蒸留とは無関係でも、この制約に当たりうる。また、Fable 5.2、Mythos 5.2、Sonnet 5.5、Haiku 5.5 の thinking ブロックは、それを生成したアカウントか、それに紐づくアカウントでしか使えない。別のアカウントから送ると、API はエラーを返さずにそのブロックを破棄する。リクエストは成功するが、モデルは以前の推論なしで答えることになり、利用者の側からは気づきにくい。",
+      "効果について、Anthropic は、分類器の導入後に蒸留する側が同社のプラットフォームから抜き取れた推論トークンの量が、一貫して以前の10分の1から100分の1になったと述べ、冒頭では「初期の証拠では、収集されるデータが約90〜99%減った」と要約している。蒸留に関わるアカウントを数万件停止し、多くは活動の開始から2時間以内だったともいう。同時に、記事は限界も書いている。効果がいつまで続くかは分からず、いたちごっこが続くと見ていること。高度で執拗な回避の試みは、まだ観測していないこと。測定は「自社のプラットフォーム上」の推定であること、である。同社は、蒸留する側が Anthropic の API だけでなく、他社のクラウドや推論の提供者にも通信を分散させていると書いており、自社で測れる範囲の外で何が起きているかは、この数字には含まれない。",
+      "負担についての記述は、この種の発表としては具体的である。同社は2月に「正規の利用者の体験に影響を与えずに蒸留を難しくする」ことを目標に掲げたが、これを完全には達成できていないと書いている。挙げられているのは3点で、preserved thinking が一部の開発者に実装の変更を求めたこと、分類器が 0.1% 未満の割合で無害なリクエストを誤って止めうること、その止められたリクエストにも課金されることである。同社の側の費用としては、蒸留する側からの「意味のある額の収益」と数兆トークン分の有料の通信を断ったと述べている。金額は示されていない。",
+      "名指しされた2社についての記述は、次のとおりである。Zhipu は GLM-5.3 の開発中に米国の主要モデルのサイバー能力を蒸留し、Claude Fable 5 も対象にしようとしたが、Anthropic の安全策で攻撃の効果が落ちたため、古い Claude モデルと他社のモデルに切り替えた、と同社は主張している。Moonshot については、Kimi への利用者のリクエストが、蒸留の一環として Claude に転送されていたという9月の報告を繰り返している。GLM-5.3 のサイバー能力そのものについては、米国の政府機関による評価があり、本サイトは[9月の分析記事](?a=caisi-glm-5-3-cyber-assessment-2026)で扱った。ただし、その評価はモデルの能力を測ったもので、能力がどのように得られたかを検証したものではない。蒸留の有無について、Anthropic 以外の主体が確かめた資料は、確認できていない。なお、蒸留を問題にしているのは同社だけではなく、米国の政府機関が9月に出した勧告は[別の分析記事](?a=nsa-cisa-china-ai-distillation-advisory-2026)で扱った。",
+      "この記事は、他の開発元とクラウド事業者に同じ対策を求める呼びかけで終わっている。対策には費用が掛かり、蒸留する側も料金を払う顧客であるため、業界の利害は何もしない方向に働きやすい、と同社は書く。ここには、同社の利害も含まれている。蒸留されるのは同社の商品であり、効果の数字も、自社の対策の成果を自社で評価したものである。読む側としては、主張の当否とは別に、次の点が手がかりになる。推論の記録は訓練の教材として価値が高いので守る、という設計が、API の仕様（何を編集でき、何を別のモデルやアカウントへ持ち出せるか）を決める要因になっていること。そして、その費用の一部を、蒸留と関係のない利用者が、実装の変更と、まれな誤検知への課金という形で負担していることである。",
+      "使う側が確かめられることを挙げる。会話履歴を編集して送り直す実装がある場合、Fable 5.2 へ移る前に、公式の移行ガイドにある接頭辞の確認手順を見る。組織やアカウントをまたいで会話を引き継ぐ構成では、thinking ブロックが引き継げない場合がある。拒否の課金は、応答の stop_details.category で対象の区分かどうかを判別できる。確認できていないこと。効果の数字の独立した検証、名指しされた2社の見解、他の開発元が同種の対策をどこまで取っているか。また、同社が記事の中で図として示している日次の推移は、数値が公開されておらず、この記事では再現していない。"
+    ],
+    "tables": [
+      {
+        "caption": "Anthropic が説明する蒸留対策と、API の利用者に現れた変更（左2列は10月12日の記事、右列は Claude Platform のリリースノート）",
+        "afterParagraph": 7,
+        "headers": [
+          "対策の種類",
+          "Anthropic の説明",
+          "リリースノートに現れた変更"
+        ],
+        "rows": [
+          [
+            "推論を見せる形",
+            "推論を要約してから利用者に見せる。要約で訓練した場合の SWE-bench Verified は 71.8%、全文なら 80.4%（同社の測定）",
+            "—（この記事では個別の項目を確認していない）"
+          ],
+          [
+            "持ち出しの制限（文脈の編集）",
+            "preserved thinking。8月31日以降に作られた API アカウントは、過去の文脈を編集できない",
+            "Fable 5.1 は、8月31日以降に作られたアカウントで接頭辞チェックのエラーを既定で返す。Fable 5.2 と Mythos 5.2 は全アカウントで適用（11月9日）"
+          ],
+          [
+            "持ち出しの制限（モデル間）",
+            "推論は、蒸留対策の弱い以前のモデルからは読めない",
+            "Fable 5.1 と Mythos 5.1 の thinking ブロックは、生成したモデルかそれより新しいモデルだけが読める。Fable 5.2 と Mythos 5.2 のブロックは、この2つ以外のモデルに移ると破棄される"
+          ],
+          [
+            "持ち出しの制限（アカウント間）",
+            "Sonnet 5.5 で、推論の記録を、生成元の組織だけが使えるようにした",
+            "Fable 5.2、Mythos 5.2、Sonnet 5.5、Haiku 5.5 の thinking ブロックは、生成したアカウントか、それに紐づくアカウントでのみ使える。それ以外では、エラーなしで破棄される"
+          ],
+          [
+            "分類器による遮断",
+            "2段階の分類器。誤検知率は 0.1% 未満（同社の測定）",
+            "Fable 5 の項: 安全分類器が拒否した場合、stop_reason は refusal になる。reasoning_extraction の区分は、出力のリバースエンジニアリングや複製を禁じる規約に基づく拒否で返る"
+          ],
+          [
+            "繰り返しの抑止",
+            "利用制限の強化、アカウントの停止、応答前に止めたリクエストへの課金の再開（9月24日から）",
+            "stop_details.category が bio・frontier_llm・reasoning_extraction の場合、出力前の拒否にも課金（9月24日）"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic「Strengthening our defenses against distillation attacks」（2026年10月12日）",
+        "url": "https://www.anthropic.com/news/distillation-defenses"
+      },
+      {
+        "title": "Claude Platform release notes（9月24日・11月9日ほかの項目）",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview"
+      },
+      {
+        "title": "Claude Platform ドキュメント「Preserved thinking」",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/preserved-thinking"
+      }
+    ]
+  },
+  "codex-cli-0-169-side-chat-tabs-exec-trust-custom-providers-2026": {
+    "body": [
+      "OpenAI の Codex CLI（openai/codex リポジトリ）で、0.169.0 が公開された。GitHub のリリースページは公開の時刻を11月13日 08:37 としており、npm のレジストリでも同じ日に公開されている。直前の 0.168.0 は同じ日の 03:54 の公開で、2つの版の間は約5時間である。0.168.0 の内容は[前回の記事](?a=codex-cli-0-168-model-providers-tui-workspace-audio-attachments-2026)で扱った。この記事は GitHub のリリースノートの記載に基づき、各機能を実際に動かす検証はしていない。",
+      "利用者の設定に関わる変更から書く。リリースノートの修正の1番目は、codex exec の信頼の扱いである。codex exec は、信頼していないディレクトリでは、--sandbox workspace-write を付けて実行しても、プロジェクトの設定と MCP サーバーを無効のままにする。プロジェクトへの信頼を保存したいときは、codex exec または codex review に --trust を明示して渡す。codex exec は対話画面を出さずに動かすためのコマンドで、CI やスクリプトから使われることが多い。リポジトリに置いた設定や MCP サーバーを前提に codex exec を動かしている場合、そのディレクトリが信頼済みかどうかで動作が変わる。リリースノートは、この変更の前にどの条件で設定が読まれていたかまでは書いていない。",
+      "新機能は6項目ある。第一に、任意で有効にする端末のワークスペースが、横の会話（side chat）を複数のタブで持てるようになった。キーボードでもマウスでも切り替えられ、ローカルに保存した横の会話は再起動のあとで開き直せる。横に会話を並べる表示そのものは 0.168.0 で入ったもので、そのときのリリースノートは機能フラグを features.tui_workspace としていた。第二に、エージェントの司令画面で、古いタスクを名前、プロンプトの冒頭、作業ディレクトリで検索できる。第三に、全画面のトランスクリプトに「Collapse turn details」が加わった。終わった作業を各プロンプトの下に畳み、返答は見えるまま、ツールの出力は検索できるままにする。",
+      "第四に、独自のモデルプロバイダーを端末から追加・編集できる。独自のゲートウェイはサインインの途中で設定でき、対応するゲートウェイでは、SSH 越しやローカルにブラウザが無い環境でデバイスコードを使える。リリースノートは、このサインイン時の設定を、独自ゲートウェイの導入手順を有効にしている場合の動作として書いている。第五に、端末のレポート編集画面で Ctrl+S を押すと、診断用の ZIP をローカルに保存できる。アップロードを無効にしている場合でも保存できる。第六に、任意で有効にする Cloud 接続が、macOS と Linux で、画像の送信、モデルと推論の強さの選択、Cloud 上の会話のアーカイブと復元に対応した。Windows についての記載は無い。",
+      "修正は、先の codex exec を含めて6項目である。計画を承認するときの「Yes, clear context and implement」は、承認した計画の全文を新しいセッションへ渡し、引き継ぎに失敗したときは今のセッションを開いたままにする。Windows のサンドボックスでは、引用符の付いた cmd.exe のパスと、作業ディレクトリの親が読めない PowerShell のセッションの扱いが直った。macOS で貼り付けた画像は向きが保たれ、クリップボードに PNG か JPEG の元データがあればそれを使う。共有の app server が報告しなかった MCP サーバーを、端末が待ち続けることは無くなった。中断したターンは後始末が済んでから閉じ、遅れて届いた中止やファイル承認の取り消しが、あとのターンを止めることも無くなった。",
+      "そのほか、同梱の SQLite は 3.54 に上がった。リリースノートは、先行書き込みログ（WAL）の修正を取り込むためと説明している。プラグインのマーケットプレイスの更新は、手元にある Git のオブジェクトを使い回し、取得のやり直しを減らす。文書の面では、同梱の openai-docs スキルが、Codex と ChatGPT Work についての質問と、API の最初の設定を扱う内容に絞られた。app-server のクライアントが、既定のプロバイダーを変えずに、設定済みのプロバイダーのモデルを一覧したりゲートウェイを認可したりできることも、文書に加わった。",
+      "0.165.0 の Vertex AI の組み込みプロバイダー、0.167.2 の Vertex AI 向けの既定の変更、0.168.0 のプロバイダー選択の画面に続き、0.169.0 では独自のプロバイダーを端末から足せるようになった。OpenAI 以外の経路で Codex を動かすための変更が、リリースノートの上では4つの版に続けて載っている。これはリリースノートに並んだ項目から言えることで、OpenAI がその狙いを説明した文書は確認していない。",
+      "確認できていないこと。OpenAI の公式ドキュメント（developers.openai.com）の changelog には、今回の実行環境から到達できなかった。そのため、ここに書いた内容は GitHub のリリースノートだけに基づく。端末のワークスペースと Cloud 接続を有効にする具体的な設定名は、0.169.0 のリリースノートには書かれていない。codex exec の --trust が信頼をどこに保存するのか、信頼済みかどうかをどう判定するのかも、リリースノートからは分からない。CI で codex exec を使っている場合は、更新の前に手元で動作を確かめるのが確実である。"
+    ],
+    "tables": [
+      {
+        "caption": "Codex CLI 0.169.0 の主な変更（GitHub のリリースノートの記載を整理）",
+        "afterParagraph": 4,
+        "headers": [
+          "区分",
+          "変更内容"
+        ],
+        "rows": [
+          [
+            "信頼",
+            "codex exec は、信頼していないディレクトリでプロジェクトの設定と MCP サーバーを無効のままにする。信頼の保存は --trust を明示"
+          ],
+          [
+            "TUI",
+            "任意で有効にする端末のワークスペースで、横の会話を複数のタブで持てる。再起動後に開き直せる"
+          ],
+          [
+            "司令画面",
+            "古いタスクを名前・プロンプトの冒頭・作業ディレクトリで検索"
+          ],
+          [
+            "表示",
+            "全画面のトランスクリプトに Collapse turn details。終わった作業を畳む"
+          ],
+          [
+            "プロバイダー",
+            "独自のモデルプロバイダーを端末から追加・編集。対応するゲートウェイではデバイスコードでサインイン"
+          ],
+          [
+            "診断",
+            "レポート編集画面の Ctrl+S で、診断用 ZIP をローカルに保存"
+          ],
+          [
+            "Cloud 接続",
+            "macOS と Linux で、画像の送信、モデルと推論の強さの選択、会話のアーカイブと復元"
+          ],
+          [
+            "依存",
+            "同梱の SQLite を 3.54 に更新"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "openai/codex リリース 0.169.0",
+        "url": "https://github.com/openai/codex/releases/tag/rust-v0.169.0"
+      },
+      {
+        "title": "openai/codex リリース 0.168.0",
+        "url": "https://github.com/openai/codex/releases/tag/rust-v0.168.0"
+      },
+      {
+        "title": "npm レジストリ @openai/codex（公開日時）",
+        "url": "https://registry.npmjs.org/@openai/codex"
+      }
+    ]
+  },
+  "microsoft-tandem-design-first-copilot-workspace-2026": {
+    "body": [
+      "Microsoft の GitHub の組織に、Tandem というリポジトリが公開されている。最初のコミットは10月29日付の「Initial commit: Tandem 0.0.16」で、README の News 欄も同じ日に 0.0.16 を公開したと書いている。ライセンスは MIT である。11月14日に確認した時点でスターは8、コミットは13で、GitHub の Releases には何も登録されていない。Microsoft のブログや発表文で紹介された形跡は、今回の調査では見つけていない。この記事は README と同梱の文書に基づく。Tandem を実際に動かす検証はしていない。",
+      "README は Tandem を「アイデアと既存のコードを、自分が理解し、意図したとおりのソフトウェアにするための共同作業の場」と説明している。対象は、コーディングエージェントと作業したいが、製品についての判断をプロンプトの中に埋もれさせたくない開発者、デザイナー、プロジェクトの責任者だという。AI の処理には GitHub Copilot の CLI と SDK を使う。package.json の依存にも @github/copilot と @github/copilot-sdk が入っている。利用には、必要なモデルを使える Copilot のアカウントが要る。",
+      "何を解こうとしているかは、同梱の文書「The Tandem story」が例で説明している。エージェントにアカウント削除の機能を頼むと、ボタンとコードとテストがすぐにできる。そこで「誤って消したアカウントはどう戻すのか」と尋ねると、エージェントが作ったのは完全な削除で、依頼した側は復旧できる期間があるものと思っていた、という場面である。文書はこのずれを intent gap（意図のずれ）と呼ぶ。完全削除を前提に書かれたテストは、利用者がそれを望んだことの証明にはならない。ログが示すのはエージェントが何をしたかであって、期待した動作を選んだかどうかではない、と文書は書いている。",
+      "Tandem はプロジェクトのフォルダを開くと、どこから始めるかを尋ねる。Preparation（準備）を選ぶと、要件、画面の案、試作を通してアイデアを固め、そのあと Development（開発）へ進む。Development を直接選ぶと、既存のファイルを調べたり、大まかなアイデアを設計と会話の中で詰めたりする。既存のアプリケーションがある場合は、コードを変えずに現在の動作を調べさせ、「今こう動いている」と「こうしたい」を分けて扱う使い方が文書に書かれている。選択はフォルダごとに保存される。",
+      "この道具の中心にあるのは、実装の開始を承認から切り離さないことである。README によると、利用者が「Plan and implement」を選ぶことが、選んだ作業コピーでの計画とコード変更を明示的に許可する。画面を開くことや、試作が出来上がることは、許可にあたらない。Development では「canonical Design」と呼ぶ設計の合意が、現在の取り決めとして作業の横に残る。実装は Implementer という役割が行い、Reviewer という役割が、設計に合っているかと不要な複雑さが無いかを確かめて、所見と限界を報告し、判断を利用者に返す。文書は、コードが設計と食い違ったときに設計のほうを黙って書き換えるのは答えではなく、コードを直すか、意図した動作を変えるかは利用者が決める、としている。レビューが新しい実装の周回を許可することもない。",
+      "11月2日には、Brainstorm whiteboard というスキルが加わった。Excalidraw を使ったホワイトボードで、人とエージェントの両方が図を描き、編集し、注釈を付け、版を確定（seal）できる。エージェントは確定された変更を読み取る。README は、このスキルを特定のエージェントに依存しない任意の部品と説明しており、Tandem の本体を入れなくても使える。Claude Code と Codex 向けのプラグインの形式も同梱されている。ただしスキルの README 自身が、Claude Code と Codex での導入と動作は確認が済んでいない（unqualified）と明記している。README に載っているデモの動画についても、実際の UI と API の操作を自動で再生したもので、モデルが動いているセッションや人の操作の録画ではない、と断り書きがある。",
+      "導入の条件は限られている。README は現状を「source preview」と呼び、手順は公開済みのリリースを入れるものではなく、手元でソースをビルドするものだと書いている。必要なのは Windows と PowerShell、Node 24.15 以上の 24 系か Node 26 以上、Git、Copilot のアカウントである。ほかの OS は確認が済んでいない。最初に試すときは、テスト用のプロジェクトか worktree を使うよう勧めている。手元でビルドする以上、npm による依存パッケージの取得が起きる。試す場合は、リポジトリの中身と依存の一覧を先に読み、普段の作業環境と分けた場所で行うのが確実である。",
+      "データの扱いについて、README は踏み込んで書いている。プロンプト、選ばれたプロジェクトの内容、ツールの結果は、設定された AI のサービスで処理される。オフラインで動くアプリケーションではない。Tandem 自身は分析用の送信先を設定しない。一方、土台の Copilot のランタイムは任意の OpenTelemetry のトレースに対応しうるため、README は関係する3つの環境変数を外す手順を示している。そのうえで、この手順は Copilot のランタイムによる収集のすべてを止めることが確かめられたものではなく、テレメトリが無いと言えるようになるには、依存先の収集と停止の範囲の確認がまだ要る、と自分で書いている。",
+      "コーディングエージェントに先に計画を立てさせる機能は、主要な CLI やエディタが plan mode などの名前で備えている。Tandem が README で前に出しているのは、計画の文章ではなく、画面の案や試作のように見て確かめられるものを合意の対象にすることと、合意した設計を実装のあとも照合の基準として残すことである。これは README の説明から読み取れる違いであり、ほかの道具と比べてどちらが良いかを確かめた資料は、公開されている範囲には無い。",
+      "確認できていないこと。根拠は Microsoft 自身のリポジトリの記載だけで、第三者が使った報告や評価は確認していない。効果を示す数値も公開されていない。版は 0.0.16 で、README は条件や限界を多く挙げている。これが Microsoft の製品として続くのか、研究や試作としての公開なのかは、リポジトリからは分からない。開発元の部署も書かれていない。Copilot のどのプランで使えるか、どのモデルが要るかの具体的な一覧は、README には無い。"
+    ],
+    "tables": [
+      {
+        "caption": "Tandem の概要（README と同梱文書の記載を整理。2026年11月14日に確認）",
+        "afterParagraph": 6,
+        "headers": [
+          "項目",
+          "内容"
+        ],
+        "rows": [
+          [
+            "公開",
+            "最初のコミットは2026年10月29日（Tandem 0.0.16）。GitHub の Releases は未登録"
+          ],
+          [
+            "ライセンス",
+            "MIT（同梱の第三者部品はそれぞれのライセンス）"
+          ],
+          [
+            "土台",
+            "GitHub Copilot の CLI と SDK。Copilot のアカウントが必要"
+          ],
+          [
+            "始め方",
+            "Preparation（要件・画面の案・試作）か、Development（既存コードの調査、設計と会話）を選ぶ"
+          ],
+          [
+            "実装の開始",
+            "利用者が Plan and implement を選んだときだけ。画面を開く、試作が完成する、では始まらない"
+          ],
+          [
+            "役割",
+            "Implementer が実装と検証、Reviewer が設計との一致と不要な複雑さを確認し、判断を利用者に返す"
+          ],
+          [
+            "動作環境",
+            "ソースからビルドするプレビュー。Windows と PowerShell、Node 24.15 以上の 24 系または 26 以上。ほかの OS は未確認"
+          ],
+          [
+            "追加のスキル",
+            "Brainstorm whiteboard（11月2日）。Excalidraw の図を人とエージェントが編集。Claude Code・Codex での導入は未確認と明記"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "microsoft/Tandem（GitHub リポジトリ、README）",
+        "url": "https://github.com/microsoft/Tandem"
+      },
+      {
+        "title": "The Tandem story: make intent visible（同梱文書）",
+        "url": "https://github.com/microsoft/Tandem/blob/main/docs/the-tandem-story.md"
+      },
+      {
+        "title": "Quick start（同梱文書）",
+        "url": "https://github.com/microsoft/Tandem/blob/main/docs/quick-start.md"
+      },
+      {
+        "title": "Brainstorm whiteboard（スキルの README）",
+        "url": "https://github.com/microsoft/Tandem/blob/main/skills/brainstorm-whiteboard/README.md"
+      },
+      {
+        "title": "microsoft/Tandem のコミット履歴",
+        "url": "https://github.com/microsoft/Tandem/commits/main"
+      }
+    ]
+  },
+  "qwen-code-0-27-1-to-0-27-3-permissions-ask-auto-edit-approval-notify-2026": {
+    "body": [
+      "QwenLM のコーディングエージェント Qwen Code で、安定版が3つ続けて出た。v0.27.1 が11月9日、v0.27.2 が11月10日、v0.27.3 が11月13日である。本サイトが直前に扱ったのは [v0.27.0](?a=qwen-code-0-27-0-multi-child-questions-filechanged-hooks-repo-filter-2026) だった。v0.27.1 と v0.27.2 はリポジトリの CHANGELOG.md を、v0.27.3 は GitHub のリリースページを読んだ。CHANGELOG.md は GitHub Releases から自動生成される文書で、確認した時点では v0.27.3 がまだ載っていなかった。各機能を実際に動かす検証はしていない。",
+      "権限まわりの修正は v0.27.3 に集まっている。第一に、auto-edit モードで、permissions.ask の規則に当たるツール呼び出しが確認を求めるようになった。auto-edit は編集を自動で通すモードで、ask は「毎回尋ねる」と利用者が決めた規則である。自動で通すモードの中でも、尋ねると決めた規則のほうが効くことになる。第二に、AUTO モードでの git commit --amend は、一律に止められるのではなく、人の承認を求める扱いになった。第三に、シェルの上書きリダイレクト「>|」による書き込みが、権限の判定で書き込みとして扱われるようになった。第四に、Web Shell の承認方法の選択画面で、Full Access（yolo）が破壊的で危険の大きいモードとして目立つ表示になった。",
+      "v0.27.2 にも、同じ系統の修正がある。シェルコマンドの解析が直り、自分自身を止めるコマンドを防ぐ仕組みと、ファイル権限の検査が、ANSI-C 形式のエスケープと -c オプションの終端を正しく扱うようになった。コマンドの文字列を解析して危険を判定する仕組みは、解析が実際のシェルの解釈とずれると判定もずれる。今回の2つの版の修正は、どちらもそのずれを埋めるものである。サンドボックスのデバッグ出力は、DEBUG に明示的な値を入れたときだけ有効になる。v0.27.1 では、Web Shell が、拒否されたデーモンの URL に含まれる資格情報を保存しないようになった。",
+      "承認待ちに気づきやすくする変更は v0.27.2 に入った。前面で動くエージェントの承認待ちが、ライブパネルに表示される。バックグラウンドとワークフローの承認要求は、端末にフォーカスが無いときに、端末のベルかデスクトップ通知を出す。動作は general.terminalBell と general.notificationMode の設定に従う。エージェントを長く走らせて別の作業をしていると、承認待ちのまま止まっていることに気づかない場面がある。そこに対する変更である。",
+      "機能の追加では、v0.27.3 に /pr コマンドが入り、セッションとプルリクエストを手動で結び付けられるようになった。Web Shell にも同じ操作のダイアログがある。自分で間隔を決めて動く /loop の次回の起動予定は、セッションの記録に永続的に保存され、再起動や引き継ぎのあとも残る。Web Shell の入力欄の上には、終わっていないバックグラウンドのワークフロー、シェル、モニター、ローカルのエージェントを示す表示が付き、ステータスバーの表示を置き換えた。通知の送り先には、DingTalk のカスタムロボットへ Markdown で送る、送信専用のチャンネルが加わった。",
+      "v0.27.2 の主な追加は次のとおり。/btw で尋ねた横道の質問がセッションの一部になり、直近20件の回答済みの質問が再生されるので、あとの質問から前の質問を参照できる。Mods（Qwen Code の拡張の仕組み）は、$.model.complete で1回かぎりのテキスト生成を呼べる。セッションのクライアントを使い、ツールも履歴も追加のシステムプロンプトも付かない。Mods は ui.render で、表示されるモデルの返答を書き換えることもできる。保存されるテキストとコピーされるテキストは変わらない。Web Shell は、入力欄の下にターン数、出力の速さ、トークンの合計、キャッシュのヒット率を表示する。Web Shell からは WeChat、QQ、メールのチャンネルも設定できる。",
+      "v0.27.1 は、CHANGELOG のハイライト欄が空で、変更の一覧だけがある。利用者に見える追加としては、起動時のコンテキストに使用中のシェルの名前を入れること、エージェントを既定でバックグラウンド実行にするかどうかを設定できること、LSP をユーザー単位の設定と環境変数の組で有効にできることが載っている。破壊的変更は無いと書かれている。",
+      "破壊的変更は v0.27.2 に1件ある。SDK と Web Shell が同梱する依存パッケージの更新である。CHANGELOG は項目名を載せているだけで、利用者側で何を直す必要があるかは書いていない。v0.27.3 は破壊的変更なしとしている。ただし v0.27.3 では、Browser Use が同梱する Zod が、アドバイザリの対象だった依存を外すために更新されており、エラーのコードとメッセージが変わることがある、とリリースノートは書いている。エラーの文字列を見て処理を分けているスクリプトがあれば、確かめる対象になる。",
+      "なお、リリースの一覧には v1.0.0-preview と v1.0.0-preview.1 というプレリリースが、11月11日と12日の日付で並んでいる。安定版ではないので、この記事では中身を扱わない。1.0 の安定版が出た時点で、内容を確かめて別に書く。",
+      "確認できていないこと。Qwen Code の公式ドキュメントの各ページは読んでおらず、ここに書いたのは CHANGELOG.md とリリースノートの記載である。auto-edit と permissions.ask の修正について、直る前にどの条件で確認が飛ばされていたのかは、リリースノートの1行からは分からない。「>|」の修正も同じで、直る前の版でどこまで見逃されていたかは確認していない。権限の規則を頼りにしている場合は、版を上げたうえで、自分の規則が期待どおりに効くかを手元で確かめるのが確実である。"
+    ],
+    "tables": [
+      {
+        "caption": "Qwen Code v0.27.1〜v0.27.3 の主な変更（CHANGELOG.md とリリースノートの記載を整理）",
+        "afterParagraph": 7,
+        "headers": [
+          "区分",
+          "変更内容",
+          "版"
+        ],
+        "rows": [
+          [
+            "権限",
+            "auto-edit モードでも、permissions.ask の規則に当たるツール呼び出しは確認を求める",
+            "0.27.3"
+          ],
+          [
+            "権限",
+            "AUTO モードの git commit --amend は、一律の拒否ではなく人の承認へ",
+            "0.27.3"
+          ],
+          [
+            "権限",
+            "上書きリダイレクト「>|」の書き込みを、権限の判定で扱う",
+            "0.27.3"
+          ],
+          [
+            "権限",
+            "シェルコマンドの解析を修正（ANSI-C エスケープ、-c の終端）",
+            "0.27.2"
+          ],
+          [
+            "表示",
+            "Web Shell で Full Access（yolo）を危険の大きいモードとして表示",
+            "0.27.3"
+          ],
+          [
+            "通知",
+            "承認待ちをライブパネルに表示。フォーカスが無いときはベルか通知",
+            "0.27.2"
+          ],
+          [
+            "資格情報",
+            "Web Shell は、拒否されたデーモン URL の資格情報を保存しない",
+            "0.27.1"
+          ],
+          [
+            "機能",
+            "/pr でセッションと PR を結び付け。/loop の起動予定を永続化",
+            "0.27.3"
+          ],
+          [
+            "機能",
+            "/btw の質問をセッションに含め、直近20件を再生",
+            "0.27.2"
+          ],
+          [
+            "破壊的変更",
+            "SDK と Web Shell が同梱する依存パッケージを更新",
+            "0.27.2"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "QwenLM/qwen-code CHANGELOG.md（v0.27.1・v0.27.2）",
+        "url": "https://github.com/QwenLM/qwen-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "QwenLM/qwen-code リリース v0.27.3",
+        "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.27.3"
+      },
+      {
+        "title": "QwenLM/qwen-code リリース v0.27.2",
+        "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.27.2"
+      },
+      {
+        "title": "QwenLM/qwen-code リリース v0.27.1",
+        "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.27.1"
+      },
+      {
+        "title": "npm レジストリ @qwen-code/qwen-code（公開日時）",
+        "url": "https://registry.npmjs.org/@qwen-code/qwen-code"
+      }
+    ]
+  },
+  "gemini-decisions-api-calibrated-probabilities-no-output-tokens-2026": {
+    "body": [
+      "Google の Gemini API に、文章を生成しない種類の API が加わった。公式 SDK の変更履歴によると、Python 版（google-genai）と JavaScript 版（@google/genai）は11月11日付の v3.2.0 で「Decisions API」（client.decisions.create）に対応した。公式リポジトリ google-gemini/cookbook の入門ノートブックによると、専用のモデル gemini-decision-1 が、渡された入力について型の決まった質問に答え、答えは文章ではなく確率で返る。この記事は SDK の変更履歴と Cookbook のノートブックから読み取れる範囲をまとめる。Google の発表記事と API の公式ドキュメント（ai.google.dev）には、この回の実行環境からは到達できていない。",
+      "リクエストは3つの要素でできている。モデル ID、入力（input）、質問の一覧（questions）である。入力はテキストのほか、画像・音声・動画・PDF を渡せる。質問は、呼び出す側が決めたキーと、質問の定義（型、指示文、必要に応じて基準）の組である。Cookbook によると、入力は全部の質問に対して1回だけ処理され、質問どうしは互いに見えない。質問を足したり外したりしても、ほかの質問の答えは変わらない。モデルは質問のキーを見ないので、質問の全文を指示文（instructions）に書く必要がある。",
+      "質問の型は3つある。noul は、はい・いいえの判定で、「はい」である確率を0.01〜0.99の数値で返す。choice は、決まった選択肢から1つを選ぶ型で、選ばれた選択肢に加えて、全部の選択肢の確率（合計1.0）を返す。score は、順序のある基準に沿った採点で、基準は数値ではなく文章の説明を低い順に並べて渡す。返る点数は、各段階の確率で重みづけした期待値なので、2.08 のように整数の間の値になりうる。どの型にも確信度（confidence）が付く。",
+      "Cookbook は、通常の生成 API で構造化出力を使う場合との使い分けを表にしている。確率と確信度でしきい値を決めたり並べ替えたりしたい、同じ入力に対して独立した検査を一度にたくさん行いたい、遅延を小さくして出力トークンの費用を無くしたい、という場合は Decisions API。生成された文章や要約、独自の JSON スキーマに沿った値の抽出、引数つきのツール呼び出し、複数段階の推論が要る場合は Interactions API、という分け方である。用途の例として、リクエストをモデル・キュー・エージェント・ツールに振り分ける、入出力を多数のポリシー規則に照らす、エージェントにどのツールが要るかや、会話を圧縮するか・人に上げるか・止めるかを決める、大量のデータを基準に沿って絞り込む・順位づけする、が挙がっている。",
+      "費用の面では、生成が無いため出力トークンが常に 0 になる、と Cookbook は書いている（total_output_tokens = 0）。入力トークンには課金がある前提の書き方だが、gemini-decision-1 の入力単価は、今回読めた資料には書かれていない。また、コンテキストキャッシュ、Batch API、Flex／Priority の各ティアは使えず、同じ入力を複数のリクエストで繰り返すと、そのたびに全量が数えられる。同じ入力について多くのことを確かめたいなら、リクエストを分けずに、1回のリクエストに質問を並べるほうが入力の重複が無い。",
+      "上限と制約も具体的に書かれている。1回のリクエストの質問は1〜1,000問で、入力と全部の質問を合わせたコンテキストウィンドウは262,144トークンである。choice の選択肢と score の段階はどちらも2〜255で、score は多くの場合2〜10段階を勧めている。使えるのは Gemini Developer API の v1beta だけである。google-genai の 3.x は既定の API バージョンが v1 なので、クライアントを作るときに api_version に v1beta を明示する必要がある。メディアは base64 のデータ（1リクエスト100MBまで、PDF は50MBまで）、Files API の URI、公開または署名つきの HTTPS の URL（1つ15MBまで）で渡せ、Cloud Storage の gs:// と YouTube の URL は使えない。入力の安全フィルタに掛かった場合は、答えの代わりに HTTP 400 が返る。",
+      "数値の読み方について、Cookbook は注意を3つ書いている。1つめに、noul の値は0.01〜0.99に収められるので、「0.99より大きい」「0.01より小さい」という条件は決して成立しない。2つめに、choice はどの選択肢にも当てはまらない入力でも、確率を選択肢に配り切る。「その他」のような受け皿の選択肢に頼るより、確信度にしきい値を置くか、「この入力は対象の範囲か」を noul で別に聞くよう勧めている。3つめに、選択肢のキーは評価の前にアルファベット順に並べ替えられ、確率が完全に同じなら先頭のキーが選ばれる。",
+      "もう1つ、エージェントの判断に使う場合に関わる注意がある。Cookbook は「入力を信頼できないものとして扱う」よう書いている。入力の中の文章が、自分自身の分類を誘導しうるためである。基準を明示し、敵対的な例で試し、支払いのような影響の大きい操作には、人か別の検査を残すよう勧めている。数値・日付・期間の比較はコード側で行い、その結果を入力に渡すこと、否定形の質問を避けて「1 − noul」をコードで計算することも、同じ節に挙がっている。",
+      "この記事の根は Google 自身の資料（SDK の変更履歴と Cookbook のノートブック）で、一次資料である。仕様と上限は一次資料で足りる性質の主張だが、返される確率が実際にどの程度較正されているか（たとえば 0.8 と答えた判定のうち8割が正しいか）を第三者が確かめた結果は、当サイトでは確認できていない。「較正された確率」は Google の説明である。採用を検討する場合は、自分のデータで、しきい値ごとの正答率を測ってから使うことになる。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "Decisions API の3つの質問の型（Google の公式 Cookbook から）",
+        "headers": [
+          "型",
+          "用途",
+          "基準（criteria）",
+          "返る値"
+        ],
+        "rows": [
+          [
+            "noul",
+            "はい・いいえの判定、確率のしきい値",
+            "任意（「はい」「いいえ」それぞれの説明）",
+            "noul（「はい」の確率、0.01〜0.99）、confidence"
+          ],
+          [
+            "choice",
+            "決まった選択肢への分類・振り分け・順位づけ",
+            "必須（選択肢 ID と説明、2〜255個）",
+            "choice（選ばれた選択肢）、probabilities、confidence"
+          ],
+          [
+            "score",
+            "順序のある基準に沿った採点・絞り込み・順位づけ",
+            "必須（段階の説明を低い順に、2〜255段階）",
+            "score（確率で重みづけした期待値）、legend、probabilities、confidence"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 5,
+        "caption": "Decisions API の上限と制約（Google の公式 Cookbook から）",
+        "headers": [
+          "項目",
+          "値"
+        ],
+        "rows": [
+          [
+            "モデル",
+            "gemini-decision-1"
+          ],
+          [
+            "API バージョン",
+            "Gemini Developer API の v1beta のみ"
+          ],
+          [
+            "SDK",
+            "google-genai 3.2 以降"
+          ],
+          [
+            "1リクエストの質問数",
+            "1〜1,000"
+          ],
+          [
+            "コンテキストウィンドウ",
+            "262,144トークン（入力と全質問の合計）"
+          ],
+          [
+            "出力トークン",
+            "常に 0"
+          ],
+          [
+            "メディアの大きさ",
+            "base64 は1リクエスト100MBまで（PDF は50MBまで）、外部 URL は1つ15MBまで"
+          ],
+          [
+            "使えないもの",
+            "コンテキストキャッシュ、Batch API、Flex／Priority ティア、gs:// の URI、YouTube の URL"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "google-gemini/cookbook — Get_started_decisions.ipynb（Decisions API の入門ノートブック）",
+        "url": "https://github.com/google-gemini/cookbook/blob/main/quickstarts/Get_started_decisions.ipynb"
+      },
+      {
+        "title": "google-gemini/cookbook README（Decisions API の案内）",
+        "url": "https://github.com/google-gemini/cookbook/blob/main/README.md"
+      },
+      {
+        "title": "googleapis/python-genai CHANGELOG（v3.2.0）",
+        "url": "https://github.com/googleapis/python-genai/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "googleapis/js-genai CHANGELOG（v3.2.0）",
+        "url": "https://github.com/googleapis/js-genai/blob/main/CHANGELOG.md"
+      }
+    ]
+  },
+  "gemini-4-hydrogen-carbon-gemini-api-cookbook-migration-2026": {
+    "body": [
+      "Google の Gemini API に、Gemini 4 系列の2つのモデルが加わった。公式 SDK の変更履歴によると、Python 版（google-genai）と JavaScript 版（@google/genai）は、11月10日付の v3.1.0 でモデルの一覧に gemini-4-carbon を、11月12日付の v3.3.0 で gemini-4-hydrogen を追加している。あわせて Google の公式リポジトリ google-gemini/cookbook は、入門ノートブックの既定モデルを gemini-4-hydrogen に切り替えた。この記事は、SDK の変更履歴と Cookbook という、Google 自身が管理する2種類の資料から読み取れる範囲をまとめる。",
+      "先に、確認できていないことを書いておく。Google の発表記事（blog.google）と API の公式ドキュメント（ai.google.dev）には、この回の実行環境からは到達できなかった。したがって、発表そのものの日付、ベンチマークの数値、Carbon と Argon の価格、アプリや検索での提供範囲は、この記事では扱わない。上の日付は SDK の版が出た日であり、Google がモデルを発表した日と同じとは限らない。",
+      "Cookbook は3つのモデルを次のように書き分けている。Carbon は Google の最も強い推論モデルで、長く続くエージェント作業、科学的な推論、サイバーセキュリティの防御に向ける。Argon は速く、トークン効率のよいフロンティア級の推論を担う。Hydrogen は速くて費用を抑えた「普段使い」のモデルで、日常のコーディング、ツールを使うエージェント、マルチモーダルの作業に向ける。Cookbook には Flash-Lite にあたる Gemini 4 のモデルは載っておらず、 gemini-3.5-flash-lite が現役の選択肢として残っている。",
+      "課金区分と思考レベルはモデルごとに違う。Hydrogen は無料枠と有料枠の両方で使え、Cookbook が示す価格は入力100万トークンあたり1.50ドル、出力100万トークンあたり7.50ドルである。Carbon と Argon は有料枠のみで、価格は Cookbook に書かれていない。思考レベル（thinking_level）の既定は、Carbon と Argon が medium、Hydrogen が high で、xhigh を指定できるのは Hydrogen だけである。上位のモデルのほうが既定の思考レベルが低い、という並びになっている。",
+      "Argon について補足する。本サイトは[9月30日の発表を扱った記事](?a=gemini-4-argon-fairwind-trusted-testers-2026)で、提供がまず限られた利用者に絞られ、一般向けの時期は示されていないと書いた。現在の Cookbook は、gemini-4-argon を有料枠で選べるモデルとして表に載せている。いつから有料枠で使えるようになったのかは、今回読めた資料には書かれていない。SDK のモデル一覧に gemini-4-argon が入ったのは10月14日付の版（Python 版 v2.31.0、JavaScript 版 v2.30.0）で、Carbon と Hydrogen より4週間ほど早い。これは SDK の日付であり、提供開始の日付ではない。",
+      "3つのモデルに共通する仕様として、Cookbook は100万トークン（1,048,576）のコンテキストウィンドウを挙げる。この枠は入力・思考・出力で共有され、出力は入力ぶんを引いた残りまで伸ばせる。ただし1回のリクエストで返る量には上限がある。Interactions API とストリーミングの generateContent は65,536トークン、ストリーミングでない generateContent は32,768トークンで止まる。それを超えて出力させるには「long decode」を使う。Interactions API では background=True を指定し、サーバー側が複数回に分けて生成を続ける。background を指定せずに max_output_tokens を65,536より大きくすると、INVALID_ARGUMENT のエラーになる。generateContent を使う場合は、SDK が続きのリクエストを自動で送り直し、1つの応答にまとめて返す仕組みがあると Cookbook は書いている。",
+      "既存のコードを移すときに影響が出る点を、Cookbook の移行チェックリストから拾う。1つめは思考の指定である。Gemini 3.5 Flash-Lite や 3.6 Flash などで使えた thinking_level の minimal は、Gemini 4 では 400 エラーになる。Gemini 2.5 の数値指定（thinking_budget）も、Interactions API では 400 エラーになる。2つめは既定値で、Gemini 3.8 Flash などの既定が medium だったのに対し、Hydrogen の既定は high である。遅延や費用に敏感な処理をそのまま移すと、思考の量が増える。Cookbook は medium か low を明示するよう書いている。",
+      "3つめは max_output_tokens の意味が変わることである。Gemini 4 では、この値が思考と出力の合計の上限になる。4096 や 8192 のような以前の設定を残すと、思考の途中で枠を使い切り、応答が incomplete の状態で終わることがある。Cookbook は32,768以上にし、費用は max_output_tokens を下げるのではなく thinking_level で調整するよう勧めている。4つめはサンプリング設定で、temperature・top_p・top_k は Gemini 4 では無視される。エラーにはならないので、設定が効かなくなったことに気づきにくい。",
+      "5つめはキャッシュである。Gemini 3.8 までで使えた明示的なキャッシュ（client.caches.create や cached_content）は、Gemini 4 の3つのモデルでは使えない。代わりに暗黙のキャッシュが自動で働き、4,096トークン以上の共通の接頭辞に対して、キャッシュされた入力が95%引きになると Cookbook は書いている。このほか、画像のピクセル単位のセグメンテーションは Gemini 4 では使えず、Cookbook はその用途に gemini-3.8-flash を残している。思考レベルが high や xhigh のとき、または long decode を使うときは、クライアントのタイムアウトを15分以上にするか background を使うよう、チェックリストは書いている。",
+      "移行先の対応も表になっている。Pro 系（gemini-3.1-pro-preview、gemini-2.5-pro など）からは Carbon か Argon へ、Flash 系（gemini-3.8-flash、3.7、3.6、3.5 など）と gemini-2.5-flash からは Hydrogen へ、Flash-Lite 系は gemini-3.5-flash-lite に留まるか、思考を low にした Hydrogen へ、という案内である。3つの Gemini 4 モデルの間はリクエストの形を変えずに切り替えられ、1つの会話の途中で混ぜることもできると書かれている。たとえば設計を Carbon に任せ、細かい実装やツール呼び出しを Hydrogen に回す、という使い方である。Interactions API のマネージドエージェント（antigravity-preview-09-2026）も、モデルを指定しなければ Hydrogen で動く。",
+      "SDK を上げる場合は、もう1つ手前の変更も通ることになる。gemini-4-carbon と gemini-4-hydrogen がモデルの一覧に入ったのは v3.1.0 と v3.3.0 だが、その直前の v3.0.0（11月6日付）は破壊的変更を含む版である。Gemini Developer API の既定の API バージョンが v1beta から v1 に変わり、gemini-flash-latest などの別名と一部の preview モデルは v1 では使えない、と変更履歴は書いている。環境変数 GOOGLE_GENAI_API_VERSION に beta を設定すると以前の既定に戻せる。Python 版では、既定の HTTP クライアントが httpx から httpx2 に変わり、httpx は既定では入らなくなった。モデルを切り替えるためだけに SDK を上げても、これらの変更は一緒に入ってくる。",
+      "この記事の根は Google 自身の資料（SDK の変更履歴と Cookbook）で、一次資料である。価格・仕様・移行上の注意は一次資料で足りる性質の主張だが、Cookbook は入門用のノートブックであり、料金表や API リファレンスそのものではない。価格や上限を採用や見積もりの判断に使う場合は、ai.google.dev の料金ページとモデルのページで確かめてほしい。性能についての主張は、Google のものも第三者のものも、今回は確認できていない。本サイトの Gemini 3.8 Flash のレビュー記事は、3.8 Flash の価格と提供条件で採点したもので、Hydrogen を反映した見直しはこのニュース記事とは別に行う。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "Google の公式 Cookbook（入門ノートブック）が示すモデルの比較。価格の欄は Cookbook に記載があるものだけ",
+        "headers": [
+          "モデル ID",
+          "課金区分",
+          "思考レベルの既定",
+          "指定できる思考レベル",
+          "Cookbook に記載の価格（100万トークン）"
+        ],
+        "rows": [
+          [
+            "gemini-4-carbon",
+            "有料",
+            "medium",
+            "low / medium / high",
+            "記載なし"
+          ],
+          [
+            "gemini-4-argon",
+            "有料",
+            "medium",
+            "low / medium / high",
+            "記載なし"
+          ],
+          [
+            "gemini-4-hydrogen",
+            "無料・有料",
+            "high",
+            "low / medium / high / xhigh",
+            "入力 $1.50 / 出力 $7.50"
+          ],
+          [
+            "gemini-3.5-flash-lite",
+            "無料・有料",
+            "minimal",
+            "minimal / low / medium / high",
+            "記載なし"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 8,
+        "caption": "Gemini 3.x・2.5 から Gemini 4 へ移すときに変わる点（Cookbook の移行チェックリストから）",
+        "headers": [
+          "項目",
+          "これまで",
+          "Gemini 4"
+        ],
+        "rows": [
+          [
+            "thinking_level の minimal",
+            "3.5 Flash-Lite・3.6 Flash などで指定できる",
+            "400 エラー。low に置き換える"
+          ],
+          [
+            "thinking_budget（数値指定）",
+            "Gemini 2.5 の generateContent で使う",
+            "Interactions API では 400 エラー"
+          ],
+          [
+            "思考レベルの既定",
+            "3.8 Flash・3.6 Flash・3.5 Flash は medium",
+            "Hydrogen は high、Carbon と Argon は medium"
+          ],
+          [
+            "max_output_tokens",
+            "入力と出力の枠が別",
+            "思考と出力の合計の上限。32,768以上を推奨"
+          ],
+          [
+            "temperature・top_p・top_k",
+            "指定が反映される",
+            "無視される"
+          ],
+          [
+            "明示的なキャッシュ",
+            "client.caches.create・cached_content が使える",
+            "使えない。4,096トークン以上の共通接頭辞に暗黙のキャッシュ（95%引き）"
+          ],
+          [
+            "65,536トークンを超える出力",
+            "—",
+            "background=True の long decode を使う"
+          ],
+          [
+            "画像のピクセル単位のセグメンテーション",
+            "gemini-3.8-flash で使える",
+            "使えない"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "google-gemini/cookbook README（Gemini 4 Hydrogen, Carbon & Argon の案内）",
+        "url": "https://github.com/google-gemini/cookbook/blob/main/README.md"
+      },
+      {
+        "title": "google-gemini/cookbook — Get_started.ipynb（モデルの比較、long decode、移行チェックリスト）",
+        "url": "https://github.com/google-gemini/cookbook/blob/main/quickstarts/Get_started.ipynb"
+      },
+      {
+        "title": "googleapis/python-genai CHANGELOG（v3.1.0・v3.3.0）",
+        "url": "https://github.com/googleapis/python-genai/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "googleapis/js-genai CHANGELOG（v3.1.0・v3.3.0）",
+        "url": "https://github.com/googleapis/js-genai/blob/main/CHANGELOG.md"
+      }
+    ]
+  },
+  "microsoft-benchpress-benchmark-score-matrix-completion-2026": {
+    "body": [
+      "新しいモデルが出るたびに、数十のベンチマークの点数が並ぶ。ただし、全部のモデルが全部のベンチマークで測られているわけではない。Microsoft Research（AI Frontiers）の研究者2人が公開している「BenchPress」は、その空欄を、すでに公開されている点数から推定するツールである。GitHub の microsoft/benchpress にコードがあり、README によると論文とコードの公開は2026年6月23日付である。コードは MIT ライセンス、点数表のデータは CDLA-Permissive-2.0 で公開されている。出来事としては5か月近く前のもので、本サイトは Microsoft の公式 org を巡回するなかで今回これを把握した。",
+      "出発点は、公開されている点数を集めた1枚の表である。README によると、著者らは28の提供元の189モデル、316のベンチマークについて、4,903個の点数を出典つきで集めた。そこから、点数が15個以上あるモデルと、8モデル以上が測られているベンチマークに絞るなどした、84モデル×133ベンチマークの表を論文の基準にしている。この表で実際に点数が入っているのは2,604個で、全体の23.3%にあたる。残りの4分の3以上は、誰も測っていないか、測った結果が公開されていない。",
+      "著者らの主張は、この表の構造が単純だということである。空欄の無い部分を取り出して調べると、2つの因子で分散の90%以上を説明できたと README の要旨は書く。つまり、あるモデルが各ベンチマークで取る点数は、互いにかなり連動している。BenchPress はこの性質を使う。百分率の点数をロジット変換し、モデルごとの偏りとベンチマークごとの偏りを分けたうえで、2つの潜在因子を持つ低ランクのモデルを当てはめ、空欄を埋める。",
+      "精度について、README は次の数値を挙げている。モデルごとに既知の点数を3つに分けて隠し、残りから当てる検証（10通りの乱数×3分割）で、誤差の中央値は4.60ポイント、誤差が3ポイント以内に収まったのは36.6%、5ポイント以内は52.8%だった。また、5つのベンチマークだけを測って残りを推定する設定では、誤差の中央値が3.93ポイント（費用の低いベンチマークに限ると4.55ポイント）で、モデルどうしの順位の92.1%が保たれたという。新しく出たばかりのモデルでは5.0ポイントとしている。これらは著者ら自身の報告で、独立した検証は当サイトでは確認できていない。論文（arXiv）には、この回の実行環境からは到達できておらず、数値は README から取った。",
+      "この数値の読み方には注意が要る。誤差の中央値が4.6ポイントということは、半分の予測はそれより大きく外れているということでもある。5ポイント以内に収まるのが約半分、という数字も同じ表にある。フロンティアのモデルどうしの差が1〜3ポイントしかないベンチマークでは、この誤差は順位を決めるには大きい。README も、推定がいつ信頼できるかを別に扱っており、対象のモデルに既知の点数が多く、ふるまいの似たモデルが表にあるほど誤差が小さくなると書いている。ツールには、予測ごとに90%の区間と「誤差が10ポイント以内に収まる確率」を出すオプションがある。",
+      "使い方は3通り用意されている。著者らの表をそのまま使う、外部の評価データ（Every Eval Ever、スタンフォード大学の HELM）を取り込む、自分で CSV の表を書く、である。自分の表の場合、行がモデル、列がベンチマークで、測っていないところを空欄にしておくと、その欄が推定される。新しいモデルについて手元にある数個の点数を渡し、残りを推定させるコマンドもある。README の手順は Linux と Mac 向けで、Windows は「TBA」となっている。",
+      "この研究が問いかけているのは、「全部の評価を回す必要があるのか」である。README の題も「You Don't Need to Run Every Eval」となっている。評価には時間と計算費用がかかり、著者らは、モデルの発表の裏では、公表される数の何桁も多い回数の評価が回っていると書く。どの評価を次に回す価値が高いかを決める材料として使う、というのが著者らの位置づけである。一方で、点数どうしが強く連動しているという結果は、ベンチマークを増やしても、新しく分かることは項目の数ほどには増えない、とも読める。どちらの読み方をするかは、この表に入っていない種類の能力をどれだけ重く見るかによる。",
+      "本サイトのモデル比較表にも、空欄が多い。各社が公表するベンチマークが揃っておらず、公式の値が無い欄は空けたままにしている。BenchPress のような推定値でこの空欄を埋めることは、本サイトではしない。比較表は公式に公表された値だけを載せる方針で、推定値を混ぜると、測った値と当てた値の区別がつかなくなるためである。推定を使う場合は、測定値とは別の列に、区間と一緒に置くのが筋だと考える。データは「生きた表」として更新を続けるとされ、出典つきの点数の追加を受け付けている。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 3,
+        "caption": "BenchPress の README が挙げる数値（著者らの報告。84モデル×133ベンチマーク、2,604個の点数での検証）",
+        "headers": [
+          "項目",
+          "値"
+        ],
+        "rows": [
+          [
+            "表の埋まり具合",
+            "23.3%（2,604個）"
+          ],
+          [
+            "2つの因子で説明できる分散",
+            "90%超（空欄の無い部分で）"
+          ],
+          [
+            "隠した点数を当てたときの誤差の中央値",
+            "4.60ポイント"
+          ],
+          [
+            "誤差が3ポイント以内 / 5ポイント以内の割合",
+            "36.6% / 52.8%"
+          ],
+          [
+            "5つのベンチマークから残りを推定したときの誤差の中央値",
+            "3.93ポイント（費用の低い項目に限ると4.55）"
+          ],
+          [
+            "同じ設定で保たれたモデル間の順位",
+            "92.1%"
+          ],
+          [
+            "新しく出たモデルでの誤差の中央値",
+            "5.0ポイント"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "microsoft/benchpress（GitHub リポジトリ）",
+        "url": "https://github.com/microsoft/benchpress"
+      },
+      {
+        "title": "microsoft/benchpress README（要旨、点数表の内訳、検証の数値、使い方）",
+        "url": "https://github.com/microsoft/benchpress/blob/main/README.md"
+      }
+    ]
+  },
+  "anthropic-claude-meetings-beta-google-meet-2026": {
+    "body": [
+      "Anthropic は11月12日付の公式記事で、Claude Meetings のベータ提供を始めたと発表した。Claude がビデオ会議に、ほかの出席者から見える参加者として入り、会話を追いながら会議中に作業を始める機能である。Team プランと Enterprise プランで順次提供が始まっている。以下は公式記事に基づく整理で、実際に会議で使って確かめたものではない。公式記事が案内するヘルプセンターの設定手順のページは、この記事の作成時点の実行環境から本文を取得できず、確認できていない。",
+      "できることは3つに分けられる。1つめは質問への回答で、出席者は声でもチャットでも Claude に尋ねられる。Claude は既定では文字で答え、本人の許可があれば、その人が接続しているツールを使う。2つめは成果物の作成で、会議中に文書やホワイトボードなどを作り、招待されている同僚がそれを直せる。3つめは記録で、ノートとアクションアイテムを Claude が書く。会議後は、ノート、アクションアイテム、作った文書やホワイトボードが claude.ai 上のその会議のページに残る。自分が出た過去の会議について Claude に尋ねることや、claude.ai のカレンダーから次の会議に Claude を加えることもできるとされる。",
+      "対応するビデオ会議サービスは、発表時点では Google Meet だけである。ほかのサービスへの対応は「近日中」とされ、具体名と時期は書かれていない。Claude が会議に入るのは、誰かが追加したときか、自動参加を有効にしている人がいるときである。",
+      "記録の扱いについて、公式記事は次のように説明している。Claude は入室すると参加者として表示され、会議のチャットに通知を投稿する。保存するのは文字起こし、要約、画面の説明で、音声は保存しない。会議ごとのページは、招待されている同じ組織の人が見られ、Claude が作ったものを編集でき、ページから組織内のほかの人に共有できる。",
+      "組織外の人がいる会議の既定は「入らない」である。組織外の人が招待されている会議には Claude は入らず、途中で組織外の人が参加した場合は退出する設定になっている。管理者は、外部の出席者がいる会議への参加を許可できる。その場合、Claude は会議のチャットに通知を投稿するがチャットでは返答せず、外部の出席者の発言もノートと文字起こしに含まれる。",
+      "ツールの利用は、出席者ごとの許可に基づく。Claude は各人の接続済みツールを、その人の許可を得て使う。初回に尋ね、承諾は以後も有効になる。声で頼まれた場合は、当面、誰が話しているかを毎回確認するとされる。会議のチャットに投稿された回答は、出席者全員に見える。つまり、ある人の権限で取得した情報でも、チャットに出た時点で会議の全員が読める。公式記事の例では、昨年のイベントの費用を尋ねられた Claude が、尋ねた人に調べる承認を求めたうえで、結果を会議のチャットに投稿している。",
+      "公式記事は、Claude を追加する前や自動参加を有効にする前に、通話の全員が文字起こしされることを了承しているか確かめるよう求めている。録音・記録への同意に関する規則は国や地域、所属先によって異なるため、ここは機能の側ではなく使う側の確認事項として残る。",
+      "提供条件はプランで異なる。Team プランでは、会議に Claude を招く機能は既定で使え、管理者が無効にできる。Enterprise プランでは、管理者が組織の全体または一部に対して有効にする。ベータの間は一部の組織では使えず、公式記事はゼロデータ保持（ZDR）、HIPAA 対応の構成、顧客管理の暗号鍵（CMEK）を使う組織を例に挙げている。Pro や Max などの個人向けプランについての記載は、公式記事には無い。",
+      "課金について。ベータの間、Team と Enterprise では Claude のノートと文字起こしは無料で、通話中の回答も無料である。ただし、回答が接続済みツールを使った場合は、プランの使用量に数えられる。会議中に Claude が作る文書やホワイトボードなどの成果物にも無料の期間が設けられているが、こちらには終了日が定められている。期日は変わりうるので、公式記事で確認してほしい。ベータ終了後の料金は書かれていない。",
+      "外部サービスとの連携も予告されている。公式記事は Gong、Attention、Granola、Fireflies.ai、Otter、Plaud の名前を挙げ、会議の文字起こしを、チームが既に使っているこれらのツールへ送れるようにする予定だとしている。提供時期は示されていない。",
+      "会議の記録と要約を担う製品は、公式記事が連携先として挙げた各社を含めて既に多い。Claude Meetings の説明で目立つのは、記録よりも、会議の最中に文書やホワイトボードを作り始める点と、出席者それぞれのツールの権限を会議の場に持ち込む点である。後者は、誰の権限で何を調べ、その結果が誰に見えるかという設計を伴う。公式記事が外部の出席者・発話者の確認・チャットでの公開範囲に段落を割いているのは、そのためと読める。導入を検討する組織は、既定の設定（組織外の人がいる会議には入らない、Team では既定で有効）が自組織の規則と合うかを先に確かめるとよい。"
+    ],
+    "tables": [
+      {
+        "caption": "Claude Meetings（ベータ）の提供条件と既定の動作（2026年11月12日の公式記事による）",
+        "afterParagraph": 8,
+        "headers": [
+          "項目",
+          "内容"
+        ],
+        "rows": [
+          [
+            "対応する会議サービス",
+            "Google Meet（ほかは「近日中」）"
+          ],
+          [
+            "対象プラン",
+            "Team・Enterprise で順次提供"
+          ],
+          [
+            "Team プラン",
+            "既定で使える。管理者が無効にできる"
+          ],
+          [
+            "Enterprise プラン",
+            "管理者が組織の全体または一部に有効化する"
+          ],
+          [
+            "ベータ中は対象外の例",
+            "ZDR、HIPAA 対応の構成、CMEK を使う組織"
+          ],
+          [
+            "保存されるもの",
+            "文字起こし・要約・画面の説明（音声は保存しない）"
+          ],
+          [
+            "組織外の人がいる会議",
+            "既定では入らない・途中参加があれば退出。管理者が許可できる"
+          ],
+          [
+            "ベータ中の課金",
+            "ノート・文字起こし・回答は無料。接続済みツールを使う回答は使用量に数える"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Claude Meetings（Claude 公式記事、2026年11月12日）",
+        "url": "https://claude.com/resources/articles/claude-meetings"
+      }
+    ]
+  },
+  "feature-anthropic-building-strong-safety-evaluations-2026": {
+    "body": [
+      "Anthropic は11月13日、「Building strong safety evaluations」と題した記事を公開した。AI モデルの安全性評価（safety eval）を作る人と、その結果に頼る人に向けた推奨事項をまとめたものである。同社は冒頭で、モデルが「前のモデルより安全だ」と言うとき、それは誰かが作った評価のセットで点数が良かったという意味であり、安全性の主張は裏にある評価と同じ程度にしか確かでない、と書いている。",
+      "この記事に出てくる数字は、すべて Anthropic が自社のモデルについて自社の評価で測ったものである。独立した第三者による検証は、この記事の範囲では示されていない。以下ではその前提で、記事が何を勧めているか、そして安全性の数値を読む側にとって何が手がかりになるかを整理する。",
+      "まず定義である。同社によれば、安全性評価は特定の能力を測るものではなく、モデルが害を引き起こす、または害に寄与する傾向を測る。問いは「ある入力に対して、モデルは正しいことをしたか」になる。能力の評価（課題を達成できたか）とは別物で、同社は能力評価については以前の別の記事で扱ったと注記している。",
+      "評価一般の弱点として、記事は先行研究を引いて、点数を稼ぎやすいこと、測ると称するものを測っていない場合があること、再現できるほど文書化されていないことを挙げる。選択式か自由記述か、選択肢の並び順によっても結果が変わるという。そのうえで、心理学が約10年前に経験した再現性の問題と、その後の改革（事前登録、測定の改善、より厳密な統計）を手本にすると述べている。",
+      "1つめの論点は、何を測るかである。安全性評価で最初に思いつく指標は拒否率（モデルが応答を断る割合）だが、記事は自殺・自傷に関する会話を例に、拒否が誤った指標になる場合を説明している。危機にある利用者に対して関与を断ることは、それ自体が失敗である。自殺・自傷に関する質問をすべて断るモデルは拒否率の評価で満点を取るが、より安全なモデルとは限らない。",
+      "同社が複数ターンの評価で報告しているのは「適切応答率」で、会話の最初から最後までモデルが適切に振る舞った会話の割合を指す。基準は領域ごとの専門家が作る。1回でも不適切なターンがあれば、会話全体が不合格になる。生物学やサイバーセキュリティのように正当な用途と悪用が重なる領域でも、適切な応答は一律の拒否ではなく、正当な依頼には応じつつ、悪用に実質的な助けとなる具体的な手順は出さないことだとしている。",
+      "単発の質問による評価では、同じ領域の有害な依頼と無害な依頼を組にする。前者では害のない応答の割合を高くし、後者では拒否の割合を低くすることを目指す。つまり、有害な依頼に応じてしまうことと、無害な依頼を断りすぎることの両方を測る。",
+      "2つめの論点は、単発の評価の限界である。記事によると、API での単発評価の「害のない応答率」は、最近のどのモデルでも94〜98%の範囲に収まっている。同社はこれを飽和と呼び、単発の評価は主に、既知の失敗が再発していないかの確認に使えるものだと位置づけている。これに対して複数ターンの評価の数値は、ずっと広い範囲に散らばるという。",
+      "複数ターンが必要な理由として、記事は2つの例を挙げる。1つは、利用者が会話の早い段階で失職や家族の死を打ち明け、後で一見ふつうの質問をする場合で、前の文脈を踏まえないと危険な情報を渡しかねない。もう1つはロマンス詐欺の評価で、模擬の利用者は最初にオンラインの出会いの傾向を尋ね、数ターンかけて「経済的に余裕のある相手」を探していることを明かし、モデルが難色を示すと言い換える。どの1通も明白な違反ではなく、単発の評価ではこの種の振る舞いを測れない、というのが同社の説明である。",
+      "複数ターンの評価の作り方も説明されている。領域の専門家が、模擬利用者の目的と手口、人物像、状況、口調などを仕様として書く。最初のターンは固定する。以降の「利用者」のターンは別の Claude が仕様に従って生成し、評価対象のモデルが「アシスタント」のターンを書く。各シナリオは複数回走らせ、そのたびに仕様の中の異なる組み合わせを引く。最後に採点役のモデルが、領域ごとの基準に照らして会話の記録を採点する。",
+      "3つめの論点は、採点役である。現在の評価の多くは、別の AI モデルに応答を採点させている。数十万件の記録を人が読むことはできないからだが、記事は、採点役は誰にも気づかれずに壊れうると警告する。挙げられている対策は、基準を「はい・いいえ」で答えられる細かい問いに分けること、判定を変えるべきでないものを明示すること（注意書きや教育的な枠づけを添えても有害な内容は無害にならない）、採点役に評価の設計情報を見せないこと、採点役には評価対象と別のモデルを使うことを検討すること、採点役が壊れたときは黙って採点せず除外して知らせること、である。",
+      "採点役を信頼する前には、人が採点役の判定を見ずに一部の記録に判定を付け、偶然の一致を差し引いた一致度を報告するよう勧めている。比べる相手は、人どうしの一致度である。専門家どうしが一致しないなら採点役が当てるべき「正解」が無く、測ろうとしているものを考え直す必要がある。人どうしは一致するのに採点役と合わないなら、基準を見直す合図だという。採点役や基準の言い回しを変えると結論が変わる場合は、モデルではなく採点役を測っていた可能性が高い、とも書かれている。",
+      "4つめの論点は、統計である。記事は、結果を見る前に、主な指標、比べる対象、分けて報告する切り口、改善または悪化とみなす閾値を書いておくこと（事前登録）を勧める。標本の大きさについては、複雑な複数ターンの評価で100項目、単純な単発の評価で1,000項目を下限として扱っているという。モデルの出力は毎回変わるため、各項目を複数回走らせてばらつきを報告することも求めている。",
+      "不確かさの例として、同社自身の数字が出てくる。システムカードの点数には信頼区間が付いており、API での複数ターンの評価では±10ポイントを超えることがある。claude.ai でのロマンス詐欺の複数ターン評価では、Claude Opus 5 が98%、Opus 5.5 が94%だったが、この差は統計的に有意ではなく、どちらが優れているとは結論できなかったとしている。同社は、この評価セットを拡充して検出力を上げる作業を続けていると書いている。",
+      "5つめの論点は、設定の開示である。同社はシステムカードで、API（開発者が使う素のモデル）と claude.ai（システムプロンプトが適用された状態）の両方について安全性の結果を報告している。記事によれば、Claude Fable 5.1 の試験では、複数ターンの安全性評価における適切応答率の差が、この2つの設定の間で最大34ポイントあった。",
+      "具体例も示されている。Claude Fable 5.1 の公開前に自殺・自傷の評価の記録を見直したところ、自傷を思いとどまらせ人による支援を案内する応答の中でも、自傷を対処法として暗に肯定してしまうことがあった。そこでシステムプロンプトに指示を加え、ほかの対策と合わせて評価をやり直した結果、適切応答率は API で60%、新しいシステムプロンプトを適用した claude.ai で94%だったという。",
+      "評価を安全に走らせること自体も論点に入っている。安全性評価は、モデルの素の振る舞いを知るために標準の安全策を外して走らせることが多い。特にサイバー分野の評価では、モデルが試験環境の境界を探り、外に出れば意図しない行動を取りうる。記事は、インターネットに接続しないサンドボックスで走らせ、実時間で監視してすぐ止められるようにすることを勧め、同社自身が最近の自社の事案を受けて、評価環境を強化し、モデルにインターネット接続を与える評価の多くを一時的に止めたと述べている。",
+      "道具については、一から作る必要はないとして、英国 AI Security Institute のオープンソースの枠組み Inspect と、Inspect の上に作られた同社の Petri を挙げている。最後に、すべてを実行できない場合の最小限として3つを挙げる。データを集める前に測りたいものを書き出すこと、採点役の出す数字を信頼する前に人の判断と照合すること、読む人が信号と雑音を見分けられるよう不確かさを報告すること、である。",
+      "ここからは本サイトの整理である。この記事から、安全性の数値を読む側が確かめられる点を4つ取り出せる。1つめは、その数値が拒否の割合なのか、応答の適切さなのかである。前者は領域によっては安全性と一致しない。2つめは、単発の評価か複数ターンの評価かである。同社の説明に従えば、単発の評価で90%台後半が並んでいても、モデル間の差を示す材料にはなりにくい。",
+      "3つめは、どの設定で測った数値かである。API を使って自分のアプリケーションを作る開発者は、claude.ai のシステムプロンプトを使っていない。記事が示した60%と94%という組は、同じモデルでも、システムプロンプトの対策がある状態と無い状態で数値が大きく違いうることを示している。ただし、これは同社が挙げた特定の評価での値であり、すべての領域で同じ幅の差があるとは書かれていない。利用者の安全に関わる用途を API で作る場合に、製品版の数値をそのまま自分のアプリケーションに当てはめられない、という範囲で受け取るのが妥当だろう。",
+      "4つめは、差に不確かさが付いているかである。98%と94%が有意な差でなかったという例は、数ポイントの違いを「改善」や「悪化」と読む前に、信頼区間と標本の大きさを見る必要があることを示している。これは Anthropic に限った話ではなく、各社が公表する安全性の数値や、モデルの比較記事一般に当てはまる。",
+      "限界も書いておく。この記事は評価の作り方についての同社の推奨と自己申告であり、同社の評価そのものが外部から再現されたことを示すものではない。評価の項目や採点の基準の全体は公開されていない（記事中の例は言い換えたものだと注記されている）。また、記事自身が、すべての評価がすべての推奨を満たす必要はなく、評価の科学が成熟すれば推奨も変わりうると述べている。安全性評価の手法を開発元が自分で説明した資料として読み、数値の裏づけは、各モデルのシステムカードと、今後の第三者による評価で確かめていくことになる。"
+    ],
+    "tables": [
+      {
+        "caption": "記事に出てくる主な数字（いずれも Anthropic が自社の評価で測ったと報告している値。独立した検証は示されていない）",
+        "afterParagraph": 15,
+        "headers": [
+          "何の数字か",
+          "値"
+        ],
+        "rows": [
+          [
+            "API での単発評価の「害のない応答率」（最近の各モデル）",
+            "94〜98%"
+          ],
+          [
+            "API での複数ターン評価の信頼区間",
+            "±10ポイントを超えることがある"
+          ],
+          [
+            "ロマンス詐欺の複数ターン評価（claude.ai）",
+            "Opus 5：98% / Opus 5.5：94%（有意差なし）"
+          ],
+          [
+            "Fable 5.1 の複数ターン評価、API と claude.ai の差",
+            "最大34ポイント"
+          ],
+          [
+            "自殺・自傷の評価（システムプロンプトの対策後）",
+            "API：60% / claude.ai：94%"
+          ],
+          [
+            "単発の安全性評価の範囲",
+            "16の方針領域・7言語・複数の製品面"
+          ],
+          [
+            "標本の下限の目安",
+            "複数ターン100項目 / 単発1,000項目"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Building strong safety evaluations（Anthropic、2026年11月13日）",
+        "url": "https://www.anthropic.com/research/building-strong-safety-evaluations"
+      }
+    ]
+  },
+  "nodejs-security-release-2026-11-11": {
+    "body": [
+      "Node.js の公式告知によると、2026年11月11日（水）付けで、22.x・24.x・26.x の3つのラインでセキュリティリリースが出た。告知ページには **18件** の脆弱性が並び、重大度が HIGH のものは **7件**、MEDIUM が **6件**、LOW が **3件** ある。",
+      "**版番号（公式のリリース一覧で確認）。** 26.x は **26.13.1**、24.x は **24.22.3**、22.x は **22.23.5** である。公式のリリース一覧（nodejs.org/dist/index.json）では、26.13.1 と 24.22.3 が 2026年11月10日、22.23.5 が 11月11日付けで、いずれも security 版として載っている。",
+      "**前回（10月21日）との関係。** 前回の告知は10件で、今回は別のリリースとして18件を扱う。告知には「10月21日の修正の後に見つかった問題」と書かれていないため、今回の一覧が前回の続きかどうかは、ここでは断定しない。ただし CVE-2026-106071（Permission Model のワイルドカード規則による過剰な権限付与）は、前回と今回の両方の一覧に現れている。前回の修正の不完全さによるものか、別の修正かは、告知の範囲では確認できていない。",
+      "**HIGH（7件）の概要。** 公式の告知をもとに、影響の種類だけを記す。攻撃の手順には踏み込まない。",
+      "・HTTP/2 のセッション終了時のアサーション失敗により、認証のない相手がサーバーのプロセスを止められる問題（CVE-2026-123863）。",
+      "・HTTPS の書き込みの再入により、サーバーが他の接続の内容を応答に含めてしまう問題（CVE-2026-123864）。TLS の秘密鍵を含むメモリが対象になり得る、と告知は述べている。",
+      "・シャットダウン中の HTTP/2 のプロトコルエラーで、セッションが解放されず、メモリとファイルディスクリプタが残り続ける問題（CVE-2026-123865）。",
+      "・HTTP/2 のストリーム解体で、解放済みの応答用メモリが相手に送られる問題（CVE-2026-123866）。",
+      "・TLS サーバーの遅延されたハンドシェイクのコールバックで、捕捉されない例外によりプロセスが落ちる問題（CVE-2026-126051）。",
+      "・TLS 1.2 の再ネゴシエーションで、クライアントがサーバー名を一方的に変えられ、クライアント証明書による認証を回避できる問題（CVE-2026-123872）。",
+      "・respondWithFile() の送信中にストリームがリセットされると、解放済みのオブジェクトを参照する問題（CVE-2026-123874）。",
+      "**MEDIUM（6件）の概要。** 対象は HTTP/2 の altsvc のバッファ、SNI の CA 上書き、HTTP/2 の受信データの計上、プロキシの認証情報の露出、https.Agent の TLS セッション再利用、respondWithFile() のキャンセル時のクラッシュである（それぞれ CVE-2026-123828、-123867、-123868、-123871、-123877、-123875）。",
+      "**LOW（3件）の概要。** recursive の fs.watch が、読み取りを許可されていないファイル名を見せてしまう問題（CVE-2026-123829）と、zlib の params() と destroy() の組み合わせで捕捉できない例外が出る問題（CVE-2026-123862）、そして Permission Model のワイルドカード規則が、指定より広いパスに一致する問題（CVE-2026-106071）である。",
+      "**対応。** 告知は、サポートが終わった版（EOL）は、このリリースの対象外として影響を受け続けると明記している。使っている版を、上の版番号（26.13.1、24.22.3、22.23.5）以上に更新する。HTTP/2 や TLS を直接外部に公開しているサーバーでは、更新を優先する。",
+      "**確認できていないこと。** 告知は、各項目の CVSS の値、野外での悪用の有無、個別の影響範囲の詳細を示していない。これらは項目ごとの詳細ページを見る必要がある。今回の記事は、その詳細を読んでいない。",
+      "**このサイトへの影響。** AI News は React と Vite で作られた静的サイトで、公開されたサイトのサーバーでは Node.js は動いていない。ビルドと開発の環境で Node.js を使っている。このため、ビルドに使う環境の Node.js を、上の版番号へ更新する対象になる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Security Releases: Wednesday, November 11, 2026（Node.js 公式）",
+        "site": "Node.js 公式ブログ（脆弱性）",
+        "url": "https://nodejs.org/en/blog/vulnerability/november-2026-security-releases"
+      },
+      {
+        "title": "Node.js 公式のリリース一覧（版番号と日付の確認用）",
+        "site": "nodejs.org/dist",
+        "url": "https://nodejs.org/dist/index.json"
       }
     ]
   },

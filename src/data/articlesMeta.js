@@ -8517,7 +8517,7 @@ export const ARTICLES_META = [
     "type": "news",
     "category": "model",
     "title": "Alibaba が Qwen3.8-Flash-Next を公開 — Qwen4 の設計を先出しする「GDN+QSA」ハイブリッド構造、学習コストは Qwen3.7-Plus の1/9",
-    "excerpt": "**Alibaba** の Qwen チームが2026年8月26日、**Qwen3.8-Flash-Next** を GitHub 公式リポジトリで公開した。**総パラメータ125B・トークンあたり活性化6B**の MoE に加え、**N-gram埋め込み51Bを別枠で持つ**構成が特徴。**Gated DeltaNet（GDN）と Qwen Sparse Attention（QSA）を組み合わせたハイブリッド構造**を採用し、次世代アーキテクチャ「Qwen4」の設計を先出しする位置づけとされる。README上のネイティブ文脈長は**262,144トークン**。Qwen チームは**学習コストが Qwen3.7-Plus の約1/9**で済んだとしつつコーディング・オフィス用途の性能は上回ると主張しているが、この数値は Qwen 自身の公表値であり独立検証は存在しない。",
+    "excerpt": "**Alibaba** の Qwen チームが2026年8月26日、Qwen3.8-Flash-Next を GitHub 公式リポジトリで公開した。**総パラメータ125B・トークンあたり活性化6B**の MoE に加え、N-gram埋め込み51Bを別枠で持つ構成が特徴。Gated DeltaNet（GDN）と Qwen Sparse Attention（QSA）を組み合わせたハイブリッド構造を採用し、次世代アーキテクチャ「Qwen4」の設計を先出しする位置づけとされる。README上のネイティブ文脈長は**262,144トークン**。Qwen チームは学習コストが Qwen3.7-Plus の約1/9 で済んだとしつつコーディング・オフィス用途の性能は上回ると主張しているが、この数値は Qwen 自身の公表値であり独立検証は存在しない。",
     "date": "2026-09-03",
     "newsDate": "2026-08-26",
     "author": "AI News 編集部",
@@ -9586,7 +9586,7 @@ export const ARTICLES_META = [
     "type": "news",
     "category": "product",
     "title": "xAI が「Grok Bot Galaxy」を予告 — 9月15〜17日、AIエージェントだけで会社を立ち上げる過程を72時間ライブ配信",
-    "excerpt": "xAI が、社員3名が**事業名も製品も業種も何も決めていない白紙の状態**から、AIエージェント「**Grok Bot**」だけを使って会社を立ち上げる過程を**72時間ぶっ通しでライブ配信**するイベント「**Grok Bot Galaxy**」を予告した。会期は**9月15〜17日**、サンフランシスコの会場と全世界向け配信を並行する。狙いは、エージェント基盤が**1社の運営を丸ごと任せられるか**を公開の場で試すことだという。",
+    "excerpt": "xAI が、社員3名が事業名も製品も業種も何も決めていない白紙の状態から、AIエージェント「**Grok Bot**」だけを使って会社を立ち上げる過程を72時間ぶっ通しでライブ配信するイベント「Grok Bot Galaxy」を予告した。会期は**9月15〜17日**、サンフランシスコの会場と全世界向け配信を並行する。狙いは、エージェント基盤が1社の運営を丸ごと任せられるかを公開の場で試すことだという。",
     "date": "2026-09-13",
     "newsDate": "2026-09-10",
     "author": "AI News 編集部",
@@ -12299,6 +12299,1128 @@ export const ARTICLES_META = [
       "Qwen Code",
       "AI エージェント",
       "CLI"
+    ]
+  },
+  {
+    "id": "anthropic-claude-duet-research-preview-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic の Claude Duet — 朝のブリーフを届け、送信や支払いの前に承認を求める「向こうから来る」エージェント。米国の Pro・Max 向けウェイトリスト",
+    "excerpt": "Anthropic の製品ページに、Claude Duet が研究プレビューとして載っている。Opus 5.5 を使い、クラウド上の専用コンピュータで動いてメッセージで報告する。送信や支払いなどは事前に承認を求める。対象は米国の Pro・Max でウェイトリスト、Team・Enterprise は対象外。",
+    "date": "2026-10-24",
+    "newsDate": "2026-10-24",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "エージェント",
+      "Opus 5.5"
+    ]
+  },
+  {
+    "id": "gitlab-critical-patch-release-2026-10-21",
+    "type": "news",
+    "category": "product",
+    "title": "GitLab が10/21 に緊急パッチ — 認証なしでコード実行につながる CVSS 10.0 の脆弱性（CVE-2026-110264）を含む12件",
+    "excerpt": "GitLab は10月21日、19.5.1・19.4.3・19.3.6・19.2.9・19.1.9・19.0.10・18.11.13 の緊急パッチを公開した。12件の脆弱性を含み、そのうち CVE-2026-110264 は重大度 Critical（CVSS v3.1 で 10.0）。正規表現のコンパイル時の整数オーバーフローにより、認証のないユーザーが GitLab サーバー上で任意のコードを実行し得る。GitLab.com と GitLab Dedicated は修正済みだという。",
+    "date": "2026-10-24",
+    "newsDate": "2026-10-21",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "GitLab",
+      "セキュリティ",
+      "正規表現"
+    ]
+  },
+  {
+    "id": "apache-httpd-2-4-69-release-2026-10-01",
+    "type": "news",
+    "category": "product",
+    "title": "Apache HTTP Server 2.4.69 を公開 — 20件の脆弱性を修正、中程度の2件を含む（10/1）",
+    "excerpt": "Apache HTTP Server 2.4.69 が10月1日に公開された。修正は20件（中程度5件、低15件）。中程度のうち、mod_dav の共有ロックのバッファの溢れは子プロセスをクラッシュさせ得る。mod_http2 の解放後使用は、2.4.17 から 2.4.68 の版に影響する。サーバーの利用者は、2.4.69 への更新を勧められている。",
+    "date": "2026-10-24",
+    "newsDate": "2026-10-01",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Apache",
+      "セキュリティ",
+      "Web サーバー"
+    ]
+  },
+  {
+    "id": "claude-code-2-1-310-monitor-tool-bedrock-vertex-gateway-retry-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.310、Monitor ツールが Bedrock・Vertex・Foundry でも使える、ゲートウェイが拒否する beta 値や途中のシステムメッセージを外して再試行",
+    "excerpt": "Claude Code 2.1.310 の変更点。Monitor ツールとプラグインの monitors が Bedrock・Vertex・Foundry と、テレメトリや非必須通信を無効にしたセッションでも使えるようになった。一部のゲートウェイで起きていたリクエスト失敗は、拒否される値を外して再試行する。公式の変更履歴に基づいて整理する。",
+    "date": "2026-10-24",
+    "newsDate": "2026-10-23",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "リリースノート"
+    ]
+  },
+  {
+    "id": "gemini-cli-0-65-otlp-headers-untrusted-folders-session-fixes-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Gemini CLI 0.65.0 の変更点、OTLP ヘッダーを設定可能に、信頼していないフォルダはワークスペース設定を読み取り専用に、Ctrl+C 連打によるセッション破損の修正",
+    "excerpt": "Google の Gemini CLI 0.65.0 が2026年10月20日に公開された。テレメトリの OTLP ヘッダーを設定でき、信頼していないフォルダではワークスペース設定が読み取り専用に制限される。Ctrl+C の連打でセッションが壊れる問題や、再開時にツール応答が重複する問題も直った。公式の変更履歴に基づいて整理する。",
+    "date": "2026-10-24",
+    "newsDate": "2026-10-20",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Gemini CLI",
+      "CLI",
+      "Google",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "codex-cli-0-164-presets-inline-args-enterprise-mcp-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.164.0 の変更点、プロンプトを10枠に保存するプリセット、/model と /permissions の引数指定、企業向け MCP 認証",
+    "excerpt": "OpenAI は Codex CLI 0.164.0 を10月23日（UTC）に公開した。プロンプトやスラッシュコマンドを10枠に保存するプリセット、/model・/permissions への引数指定、企業向け MCP 認証が入り、圧縮失敗時に不完全な要約が履歴に残る問題などが直った。",
+    "date": "2026-10-25",
+    "newsDate": "2026-10-23",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "weekly-metrics-2026-week-oct19",
+    "type": "feature",
+    "category": "special",
+    "title": "週次の計器 — 10月19日〜25日は20本、前週の13本から増。11本が AI 以外のソフトウェアのセキュリティ情報で、発掘と分析は3週続けて0本だった",
+    "excerpt": "2026年10月19日〜25日の週次データ。公開は20本（前週13本）で、すべて news。題材で数えると、11本が PHP・Node.js・GitLab など AI 以外のソフトウェアの脆弱性・事故の記事で、Anthropic 関連は6本、他社の CLI は3本。3軸のうち発掘と分析は3週続けて0本で、ガイドに説明が見当たらない概念の一覧は変わらなかった。",
+    "date": "2026-10-26",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "週刊まとめ",
+      "セキュリティ",
+      "Anthropic",
+      "CLI",
+      "AI安全性"
+    ],
+    "heroScope": "week",
+    "weekRoundupPeriod": {
+      "start": "2026-10-19",
+      "end": "2026-10-25"
+    }
+  },
+  {
+    "id": "github-copilot-cli-1-0-100-to-1-0-103-sandbox-local-network-proxy-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "GitHub Copilot CLI 1.0.100〜1.0.103、サンドボックスがローカルネットワークを既定で許可、プロキシ設定の引き継ぎ、--disable-client-telemetry と --trust-folder が追加",
+    "excerpt": "GitHub Copilot CLI は10月19日の 1.0.100 から10月22日の 1.0.103 までに4版が出た（changelog に 1.0.99 の項目は無い）。1.0.100 でサンドボックスは localhost や私設ネットワークへの接続を既定で許し、HTTPS_PROXY などのプロキシ設定も引き継ぐ。クライアントのテレメトリを切る --disable-client-telemetry と、-p の単発実行で使う --trust-folder も入った。",
+    "date": "2026-10-26",
+    "newsDate": "2026-10-22",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "GitHub Copilot",
+      "CLI",
+      "サンドボックス",
+      "MCP",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "claude-code-2-1-311-ultrathink-xhigh-model-catalog-signed-file-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.311、ultrathink が xhigh の effort で動く、Bedrock・Vertex・Foundry は署名付きのモデル設定ファイルを取得、DISABLE_COMPACT は無効化のみ",
+    "excerpt": "Claude Code 2.1.311 の変更点。ultrathink が対応モデルで xhigh の effort の1ターンを走らせるようになり、Bedrock・Mantle・Vertex・Foundry では downloads.claude.ai の署名付きファイルからモデル設定を読み込む（環境変数で無効化できる）。DISABLE_COMPACT は圧縮を切る方向にしか効かなくなった。公式の変更履歴に基づいて整理する。",
+    "date": "2026-10-26",
+    "newsDate": "2026-10-26",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "リリースノート"
+    ]
+  },
+  {
+    "id": "codex-cli-0-165-vertex-provider-terra-memory-v2-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.165.0 の変更点、Google Cloud Vertex AI の組み込みプロバイダー、GPT-6.1 Terra がカタログに、memory v2 が新規プロファイルで既定に",
+    "excerpt": "OpenAI は Codex CLI 0.165.0 を10月27日に公開した。model_provider = \"gcp\" で使える Vertex AI の組み込みプロバイダー、モデルカタログへの GPT-6.1 Terra の追加、会話中の推論の強さの変更、新規プロファイルでの memory v2 の既定化が入った。",
+    "date": "2026-10-27",
+    "newsDate": "2026-10-27",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "anthropic-claude-models-google-cloud-anthropic-managed-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude Models on Google Cloud（Anthropic managed）が提供開始 — Claude API そのものを Google Cloud の IAM と Marketplace 課金で使う、API キーは使えない",
+    "excerpt": "Anthropic は10月22日、Google Cloud のプロジェクト経由で Claude API を使える「Anthropic managed」を公開した。運用は Anthropic、アクセス制御は IAM、請求は Google Cloud Marketplace。既存の Anthropic 組織とは別組織が作られ、API キーは使えない。",
+    "date": "2026-10-27",
+    "newsDate": "2026-10-22",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude API",
+      "Google Cloud",
+      "エンタープライズ"
+    ]
+  },
+  {
+    "id": "claude-code-2-1-312-simple-prompt-custom-model-names-hooks-limit-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.312、Bedrock・Vertex・Foundry で認識できないモデル名は短いシステムプロンプトに、フックの同時実行数に上限、usage 上限の表記は「5-hour limit」に",
+    "excerpt": "Claude Code 2.1.312 の変更点。クラウド経由で独自のデプロイ名や推論プロファイル ARN を使うと短いシステムプロンプトが選ばれ、フラグ付きメッセージ後の自動モデル切替も対象になる。prompt / agent フックは同時24件までになり、claude_code.safety_event の送信は止まった。公式の変更履歴に基づいて整理する。",
+    "date": "2026-10-28",
+    "newsDate": "2026-10-27",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "リリースノート"
+    ]
+  },
+  {
+    "id": "cloudflare-security-audit-skill-six-phase-verified-findings-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Cloudflare が脆弱性監査のエージェント用スキル security-audit を MIT で公開 — 6段階の工程、見つけたエージェントとは別のエージェントが検証、サンドボックスが無ければ対象コードを実行しない",
+    "excerpt": "Cloudflare の GitHub 組織が cloudflare/security-audit-skill を公開している。コーディングエージェントを「セキュリティ監査役」にするスキルで、偵察・探索・候補の検証・構造化出力・記録の独立検証・報告の6段階を、隔離したエージェントに割り当てる。判定は confirmed / needs_validation / rejected の3種で、README は「見つけたエージェントが検証することはない」と書く。対象コードの実行は、外部ネットワークの無いサンドボックスがある場合に限る。効果の数字は Cloudflare 自身のもので、独立した検証は確認できていない。",
+    "date": "2026-10-29",
+    "newsDate": "2026-10-28",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Cloudflare",
+      "Agent Skills",
+      "セキュリティ",
+      "エージェント",
+      "オープンソース"
+    ]
+  },
+  {
+    "id": "anthropic-usage-cost-analytics-api-beta-request-limit-128mb-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude API に Usage and Cost Analytics API（ベータ）— モデル・ワークスペース・キー・利用者ごとの使用量と費用を取得、従来の Usage and Cost API は legacy に。Messages API の最大リクエストは 32 MB から 128 MB へ",
+    "excerpt": "Anthropic の Claude API リリースノートに2件の更新が載った。10月29日には、使用量と費用を組織単位で取得する Usage and Cost Analytics API がベータで始まり、従来の Usage and Cost API と Claude Enterprise Analytics API の使用量・費用レポートは legacy になった（引き続き利用できる）。前日の10月28日には、第一者の Claude API で Messages API と Token Counting API の最大リクエストサイズが 32 MB から 128 MB に上がっている。公式ドキュメントに基づいて整理する。",
+    "date": "2026-10-30",
+    "newsDate": "2026-10-29",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude API",
+      "API",
+      "エンタープライズ"
+    ]
+  },
+  {
+    "id": "gemini-cli-0-66-terminal-sync-output-mcp-oauth-private-network-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Gemini CLI 0.66.0 の変更点、端末の同期出力とちらつき対策、MCP の OAuth でプライベートネットワークを任意で許可、ハング防止の SSH プロンプト抑止",
+    "excerpt": "Google の Gemini CLI 0.66.0 が2026年10月27日に公開された。端末の同期出力とスピナーの分離でちらつきを減らし、MCP の OAuth フローではプライベートネットワークのエンドポイントを任意で許可できる。対話的な SSH や認証のプロンプトを抑止してハングを防ぐ変更も入った。公式の変更履歴に基づいて整理する。",
+    "date": "2026-10-30",
+    "newsDate": "2026-10-27",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Gemini CLI",
+      "CLI",
+      "Google",
+      "MCP",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "codex-cli-0-166-transcript-selection-queue-resume-doctor-network-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.166.0 の変更点、キーボードで選べるトランスクリプト、codex queue --resume、codex doctor --network-only、GPT-6.1 Terra が Vertex AI と Bedrock のカタログにも",
+    "excerpt": "OpenAI は Codex CLI 0.166.0 を10月29日に公開した。トランスクリプトのキーボード選択と検索、停止中スレッドを再開する codex queue --resume、接続診断の codex doctor --network-only、再開・フォーク時の承認設定と推論トークン計上の修正が入った。",
+    "date": "2026-10-30",
+    "newsDate": "2026-10-29",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "claude-code-2-1-314-block-writes-outside-dirs-pcompact-cap-monitor-hooks-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.314、作業ディレクトリ外への書き込みを全モードで止める設定、管理者が上限を設けた effort の自動引き下げ、claude -p の起動エラーは終了コード 1 に",
+    "excerpt": "Anthropic は Claude Code 2.1.314 を10月30日（UTC）に公開した。permissions.blockWritesOutsideWorkingDirectories、effort の自動引き下げと再試行、Foundry のモデル フォールバック、claude -p の起動エラー、Monitor ツールで始めたコマンドへの Bash フックの適用が入った。",
+    "date": "2026-10-30",
+    "newsDate": "2026-10-30",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "anthropic-s1-nasdaq-ant-filing-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Anthropic が S-1 を SEC に提出したと発表 — Nasdaq に Class A 普通株を「ANT」で上場する計画、株数と価格は未定",
+    "excerpt": "Anthropic は10月26日、新規株式公開（IPO）に向けた登録届出書（Form S-1）を米国証券取引委員会（SEC）に提出したと発表した。上場先は Nasdaq Global Select Market、銘柄コードは「ANT」。募集株数と価格帯は未定で、発表文に評価額や上場時期は書かれていない。当サイトが過去に報じた評価額や時期は報道ベースで、今回の発表で確認された事実とは区別して読む必要がある。",
+    "date": "2026-10-30",
+    "newsDate": "2026-10-26",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "IPO"
+    ]
+  },
+  {
+    "id": "agent-skills-donated-to-aaif-linux-foundation-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が Agent Skills を Agentic AI Foundation に寄贈 — 名称・ロゴ・GitHub 組織・ドメインを移管、公表数字は100万スキル公開・約2.8億インストール",
+    "excerpt": "Anthropic は10月22日、エージェントに専門知識と手順を渡すオープン標準「Agent Skills」を、Linux Foundation 傘下の Agentic AI Foundation（AAIF）に寄贈すると発表した。Agent Skills の名称とロゴ、GitHub 組織、agentskills.io のドメインが移る。保守は Anthropic・Google・OpenAI などの技術者が個人として担う。数字（70以上のプラットフォーム、100万スキル、約2.8億インストール）は Anthropic の発表文のもので、独立した検証は確認できていない。",
+    "date": "2026-10-30",
+    "newsDate": "2026-10-22",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Agent Skills",
+      "オープンソース",
+      "エージェント"
+    ]
+  },
+  {
+    "id": "anthropic-usage-policy-2026-update-deceptive-campaigns-hardware-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Anthropic が利用方針を改定 — 偽装キャンペーン禁止を新設、武器・監視の記述を具体化、物理的に動く機器との接続に人の監督を要求、11月12日施行",
+    "excerpt": "Anthropic は10月8日、年次の Usage Policy 改定を公表した。選挙・詐欺・プライバシー等に散らばっていた規定を「欺瞞的なキャンペーンと人為的な活動」の新セクションに集約し、武器の誘導・制御ソフトや監視ツールの構築を明記した。自律的に物理動作をする機器に Claude をつなぐ場合は、監視して止められる担当者と安全な停止状態を求める。AI への虐待行為の禁止も加わった。施行は11月12日。Anthropic は、改定の大半は既存の規則の明確化で、実際の運用は変わらないとしている。",
+    "date": "2026-10-30",
+    "newsDate": "2026-10-08",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "AI安全性",
+      "規制",
+      "利用規約"
+    ]
+  },
+  {
+    "id": "claude-code-2-1-316-opus-4-8-fast-mode-deprecated-subagent-effort-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.316、Opus 4.8 の fast mode が非推奨に、サブエージェントの effort を環境変数で指定、ultrathink を無効にする環境変数が追加",
+    "excerpt": "Anthropic は Claude Code 2.1.316 を10月31日（UTC）に公開した。CHANGELOG は Opus 4.8 の fast mode を10月30日付で非推奨とし、削除後はエラーを返すと記す。CLAUDE_CODE_SUBAGENT_EFFORT、CLAUDE_CODE_DISABLE_ULTRATHINK、Claude apps gateway の共有予算が加わった。",
+    "date": "2026-10-31",
+    "newsDate": "2026-10-31",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "anthropic-opus-4-8-fast-mode-deprecated-api-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Claude API で Opus 4.8 の fast mode が非推奨に — 11月30日に削除、以後 speed: \"fast\" はエラー。移行先は Opus 5.5",
+    "excerpt": "Anthropic は2026年10月30日、Claude Opus 4.8 の fast mode を非推奨にし、2026年11月30日に削除すると Claude Platform のリリースノートで告知した。削除後は claude-opus-4-8 に speed: \"fast\" を付けたリクエストがエラーになる。公式は Claude Opus 5.5 への移行を案内している。Opus 5 の fast mode は引き続きリサーチプレビューと記載されている。",
+    "date": "2026-10-31",
+    "newsDate": "2026-10-30",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Opus 4.8",
+      "API",
+      "料金"
+    ]
+  },
+  {
+    "id": "github-copilot-cli-1-0-104-1-0-105-fusion-auto-autopilot-wait-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "GitHub Copilot CLI 1.0.104〜1.0.105、Fusion は Auto で開始して fusionTier を適用、Autopilot は背景タスクを待ち続け、Assisted Permissions は実験モード不要に",
+    "excerpt": "GitHub Copilot CLI は10月27日に 1.0.104 と 1.0.105 が出た。管理モデル fusion は Auto で始まり fusionTier の設定が効く。対話と SDK の Autopilot は付随する背景タスクを待ち続け、Assisted Permissions は実験モードなしで使える。",
+    "date": "2026-11-01",
+    "newsDate": "2026-10-27",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "GitHub Copilot",
+      "CLI",
+      "開発ツール",
+      "エージェント"
+    ]
+  },
+  {
+    "id": "anthropic-gsa-partnership-40-percent-government-discount-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が米 GSA との提携を拡大 — 政府向けに Claude Enterprise・Claude for Government・API を40%割引、州・地方政府にも適用、最低利用額の縛りなし",
+    "excerpt": "Anthropic は10月27日、米国の一般調達局（GSA）との提携拡大を発表した。政府機関は Claude Enterprise、Claude for Government、Claude API を40%引きで購入でき、割引は全製品面で初めて適用される。州・地方・部族・準州の政府にも広がり、最低利用額の縛りはない。導入件数や効果の数字は、すべて Anthropic 自身の発表である。",
+    "date": "2026-11-02",
+    "newsDate": "2026-10-27",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "政府",
+      "料金"
+    ]
+  },
+  {
+    "id": "weekly-metrics-2026-week-oct26",
+    "type": "feature",
+    "category": "special",
+    "title": "週次の計器 — 10月26日〜11月1日は16本、前週の20本から減。10本が Anthropic 関連で、AI 以外のセキュリティ情報は0本に入れ替わり、発掘と分析は4週続けて0本だった",
+    "excerpt": "2026年10月26日〜11月1日の週次データ。公開は16本（前週20本）で、すべて news。題材で数えると10本が Anthropic 関連、他社の CLI が5本、Cloudflare が1本で、前週11本あった AI 以外のソフトウェアのセキュリティ情報は0本だった。3軸のうち発掘と分析は4週続けて0本で、ガイドに説明が見当たらない概念の一覧は変わらなかった。",
+    "date": "2026-11-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "週刊まとめ",
+      "Anthropic",
+      "CLI",
+      "AI安全性",
+      "開発ツール"
+    ],
+    "heroScope": "week",
+    "weekRoundupPeriod": {
+      "start": "2026-10-26",
+      "end": "2026-11-01"
+    }
+  },
+  {
+    "id": "claude-code-2-1-317-account-email-confirm-hook-onfailure-gateway-cost-report-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.317、アカウントのメールアドレスを送る前に確認、SDK フックの失敗でブロック、gateway の費用レポート API",
+    "excerpt": "Anthropic は Claude Code 2.1.317 を11月2日（UTC）に公開した。CHANGELOG は、Web・シェルのツールがアカウントのメールアドレスをネットワークへ送る前の確認、Agent SDK フックの onFailure: \"block\"、Claude apps gateway の費用レポート API を加えたと記す。",
+    "date": "2026-11-03",
+    "newsDate": "2026-11-02",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "qwen-code-0-26-6-web-shell-headless-prompt-hooks-mcp-duplicate-tools-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Qwen Code v0.26.6 — Web Shell の使用量パネル、ヘッドレス実行の prompt.submit フック、MCP の同名ツールが他のツールを隠さない修正",
+    "excerpt": "Qwen Code の CLI v0.26.6（11月2日公開）の変更点。Web Shell に成功率・出力速度・初回トークンまでの遅延を見る画面が加わり、-p と stream-json の実行でもフックでプロンプトを検査・書き換えできる。MCP は同名ツールを飛ばして残りを読み込み、シェル権限の判定では 2>&1 を書き込みと見なさなくなった。",
+    "date": "2026-11-03",
+    "newsDate": "2026-11-02",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Qwen Code",
+      "CLI",
+      "MCP",
+      "AI エージェント",
+      "セキュリティ"
+    ]
+  },
+  {
+    "id": "claude-code-2-1-318-shared-network-home-config-safety-subagent-shell-background-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.318、ネットワーク共有のホストでの設定・ログイン保存を堅牢化、サブエージェントのシェルは3分でバックグラウンドへ、sign-in の失効日を表示",
+    "excerpt": "Anthropic は Claude Code 2.1.318 を11月3日（UTC）に公開した。CHANGELOG は、共有ネットワークホームでの ~/.claude.json・設定・ログインの保存まわりの修正、背景サブエージェントのシェルコマンドを3分でバックグラウンドへ移す変更、claude.ai ログインの失効日の表示を加えたと記す。",
+    "date": "2026-11-04",
+    "newsDate": "2026-11-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "gemini-cli-0-67-models-command-list-models-ide-sandbox-bridge-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Gemini CLI 0.67.0 の変更点、models コマンドと --list-models フラグ、IDE 連携をコンテナのサンドボックスへ橋渡し、信頼しないフラグの承認を記憶",
+    "excerpt": "Google の Gemini CLI 0.67.0 が2026年11月4日に公開された。使えるモデルを一覧する models コマンドと --list-models フラグが加わり、IDE コンパニオンをコンテナのサンドボックスへ橋渡しする変更も入った。公式のリリースページに基づいて整理する。",
+    "date": "2026-11-04",
+    "newsDate": "2026-11-04",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Gemini CLI",
+      "CLI",
+      "Google",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "qwen-code-0-26-7-model-catalog-refresh-folder-trust-hooks-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Qwen Code v0.26.7 — モデルカタログの更新を設定で止められる、リポジトリ付属のフックは信頼確認が必須に、GitHub のイベントを未信頼のプロンプトとして扱う",
+    "excerpt": "Alibaba の Qwen Code v0.26.7 が2026年11月4日に公開された。モデルカタログのバックグラウンド更新を設定で止められるようになり、リポジトリが持ち込むフックや権限、言語サーバーはフォルダの信頼を得るまで動かない。公式のリリースページに基づいて整理する。",
+    "date": "2026-11-04",
+    "newsDate": "2026-11-04",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Qwen Code",
+      "CLI",
+      "Qwen",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "anthropic-message-threads-beta-claude-api-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude API に message threads（ベータ）— 会話をサーバー側に保持し、2回目以降は新しいメッセージだけを送る。有効期限は最後のリクエストから5分、ZDR は対象外",
+    "excerpt": "Anthropic の Claude API リリースノートに、11月2日付で message threads（ベータ）が載った。最初のリクエストで会話全体を送って thread を作り、以降は新しいメッセージと前の応答 ID だけを送る。長い会話やエージェントのループで、リクエストが小さくなり最初のトークンまでの時間が短くなるという。有効期限、非対応の機能、ゼロデータ保持（ZDR）の扱いを、公式ドキュメントに基づいて整理する。",
+    "date": "2026-11-05",
+    "newsDate": "2026-11-02",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude API",
+      "API",
+      "エージェント"
+    ]
+  },
+  {
+    "id": "anthropic-ip-allowlist-admin-user-sign-out-api-beta-2026-11-05",
+    "type": "news",
+    "category": "product",
+    "title": "Claude Console に IP 許可リスト（ベータ）、Enterprise には管理者が会員を全端末からサインアウトさせる Admin API — 11月5日付",
+    "excerpt": "Anthropic の Claude API リリースノートに、11月5日付で2件が載った。組織単位で接続元 IP を制限する IP 許可リスト（ベータ）と、Claude Enterprise の会員をすべてのブラウザ・端末から締め出す Admin API（ベータ）である。対象のエンドポイント、対象外のクラウド経由の Claude、ロックアウトを避ける設定、サインアウトが「締め出し」ではない点を、公式ドキュメントに基づいて整理する。",
+    "date": "2026-11-05",
+    "newsDate": "2026-11-05",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude API",
+      "セキュリティ",
+      "エンタープライズ",
+      "API",
+      "権限"
+    ]
+  },
+  {
+    "id": "codex-cli-0-167-agents-command-center-backend-switch-network-prompts-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.167.0 の変更点、codex agents --no-daemon のエージェント司令画面、セッション選択画面でのバックエンド切替、ネットワーク承認プロンプトの整理",
+    "excerpt": "OpenAI は Codex CLI 0.167.0 を11月6日に公開した。未読の結果を示すエージェント司令画面、下書きを保ったままのバックエンド切替、ローカル画像のプレビュー、システムプロキシの任意設定、同一エンドポイントへの同時リクエストを1件ずつ確認する修正が入った。",
+    "date": "2026-11-06",
+    "newsDate": "2026-11-06",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "github-copilot-cli-1-0-106-code-command-settings-dashboard-terra-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "GitHub Copilot CLI 1.0.106、/code で VS Code に引き継ぎ、/settings の統合ダッシュボード、GPT-6.1 Terra が選択可能に",
+    "excerpt": "GitHub は Copilot CLI 1.0.106 を公開した。セッションを VS Code で開く /code、全体検索付きの /settings、利用可能なアカウントでの GPT-6.1 Terra の選択、Kitty 互換ターミナルでの画像表示、端末エスケープシーケンスによる表示改変の対策が入った。",
+    "date": "2026-11-06",
+    "newsDate": "2026-11-05",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "GitHub Copilot",
+      "CLI",
+      "GPT-6",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "claude-code-2-1-319-auto-mode-gateway-permission-bypass-fixes-mcp-tasks-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.319、LLM ゲートウェイ越しの auto mode は確認できない呼び出しを聞くか拒否、権限チェックをすり抜ける修正が複数、MCP タスクはバックグラウンドへ",
+    "excerpt": "Anthropic は Claude Code 2.1.319 を11月6日（UTC）に公開した。CHANGELOG は、テレメトリやフィーチャーフラグを切った環境と LLM ゲートウェイ越しの auto mode の挙動変更、Bash の権限チェックを回避しうる問題の修正、MCP タスクのバックグラウンド実行、permissions.denyInsteadOfPrompting 設定の追加を記す。",
+    "date": "2026-11-07",
+    "newsDate": "2026-11-06",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "CLI",
+      "Anthropic",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "qwen-code-0-26-8-0-26-9-skills-zip-install-subscription-hook-trust-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Qwen Code v0.26.8〜v0.26.9 — Skills を ZIP で導入・一括で有効化、Qwen サブスクリプションに対応、プロジェクトフックは信頼確認ダイアログ経由に",
+    "excerpt": "Alibaba の Qwen Code が2026年11月5日に v0.26.8、6日に v0.26.9 を公開した。Skills の ZIP を SDK・デーモン・Web Shell から導入でき、最大100件の Skills を1回で有効・無効にできる。公式のリリースページに基づいて整理する。",
+    "date": "2026-11-07",
+    "newsDate": "2026-11-06",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Qwen Code",
+      "CLI",
+      "Qwen",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "reducto-r-1-mini-document-parsing-2026-11-05",
+    "type": "news",
+    "category": "product",
+    "title": "Reducto が文書解析モデル r-1 mini を発表 — 1,000ページ1ドル、性能の比較は同社の評価のみ",
+    "excerpt": "文書解析サービスの Reducto は2026年11月5日、軽量版の文書解析モデル r-1 mini を発表した。1,000ページあたり1ドルで、表・読み順・レイアウトを保持した構造化出力をうたう。性能の比較は、同社が行った2,000ページの盲検評価によるもので、第三者による検証は示されていない。",
+    "date": "2026-11-07",
+    "newsDate": "2026-11-05",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Reducto",
+      "文書解析",
+      "OCR"
+    ]
+  },
+  {
+    "id": "vercel-labs-agent-desktop-computer-use-cli-2026-11",
+    "type": "news",
+    "category": "product",
+    "title": "Vercel Labs のオープンソース「agent-desktop」— スクリーンショットではなく OS のアクセシビリティツリーで、AI エージェントがデスクトップアプリを操作",
+    "excerpt": "Vercel Labs が公開した agent-desktop は、AI エージェントがデスクトップアプリを操作する Apache-2.0 のツール。スクリーンショットではなく、OS のアクセシビリティツリーを JSON で返し、要素ごとの参照を使って操作する。MCP サーバーとしても動く。macOS、Windows、Linux に対応する。ツール自体はモデルを含まず、推論はエージェント側が行う。",
+    "date": "2026-11-07",
+    "newsDate": "2026-10-30",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "エージェント",
+      "コンピュータ操作",
+      "オープンソース"
+    ]
+  },
+  {
+    "id": "anthropic-claude-text-watermark-older-models-sampling-params-2026-11",
+    "type": "news",
+    "category": "regulation",
+    "title": "Claude のテキスト透かしが Mythos 5・Opus 4.7・Sonnet 4.6 にも — Sonnet 4.6 は temperature などを指定すると付かないことがある",
+    "excerpt": "Anthropic の API リリースノート（11月3日付）が、テキストの透かしの対象に **Claude Mythos 5、Opus 4.7、Sonnet 4.6** を加えたと記した。8月の導入時に「以前のモデルは今後数か月かけて追随」とされていた流れの続きである。**Sonnet 4.6 だけは、temperature・top_p・top_k を既定値以外にすると透かしが付かないことがある。**透かしに頼る開発者は、この3つを送らないよう公式ドキュメントが求めている。",
+    "date": "2026-11-07",
+    "newsDate": "2026-11-03",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "規制",
+      "透明性",
+      "API"
+    ]
+  },
+  {
+    "id": "qwen-code-0-27-0-multi-child-questions-filechanged-hooks-repo-filter-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Qwen Code v0.27.0 — 管理エージェントが複数の子の質問を同時に保持、FileChanged フック、GitHub チャンネルのリポジトリ絞り込み、認証情報をエラーに出さない修正",
+    "excerpt": "Alibaba の Qwen Code が2026年11月7日に v0.27.0 を公開した。マイナー番号が上がったが、変更履歴は破壊的変更を「なし」としている。公式の変更履歴に基づいて主な項目を整理する。",
+    "date": "2026-11-08",
+    "newsDate": "2026-11-07",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Qwen Code",
+      "CLI",
+      "Qwen",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "react-server-components-rce-ghsa-xqc2-2026-10-14",
+    "type": "news",
+    "category": "product",
+    "title": "React Server Components に認証不要の遠隔コード実行（GHSA-xqc2-xf4c-x3h3、CVSS v4 9.5）— 19.0.9・19.1.10・19.2.9・19.3.1 へ更新",
+    "excerpt": "React の公式 GitHub の勧告 GHSA-xqc2-xf4c-x3h3 は、React Server Components の遠隔コード実行を重大（Critical）として公表した（10月14日）。影響は react-server-dom-webpack、react-server-dom-parcel、react-server-dom-turbopack の19系の一部の版で、修正版は 19.0.9、19.1.10、19.2.9、19.3.1。勧告は、対象は多数の typed array と攻撃者が制御する値を含む応答という極めて稀な場合に限られるとしている。",
+    "date": "2026-11-09",
+    "newsDate": "2026-10-14",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "React",
+      "セキュリティ",
+      "React Server Components"
+    ]
+  },
+  {
+    "id": "weekly-metrics-2026-week-nov02",
+    "type": "feature",
+    "category": "special",
+    "title": "週次の計器 — 11月2日〜11月8日は16本、前週と同数。Anthropic 関連は10本から7本に減り、Qwen Code が4本に増えた。発掘は2本に戻り、分析は5週続けて0本だった",
+    "excerpt": "2026年11月2日〜11月8日の週次データ。公開は16本（前週16本）で、すべて news。題材で数えると7本が Anthropic 関連、4本が Qwen Code、ほかの CLI が3本、Reducto と Vercel Labs が各1本だった。3軸のうち発掘は4週ぶりに2本が出たが、分析は5週続けて0本。ガイドに説明が見当たらない概念の一覧は変わらなかった。",
+    "date": "2026-11-09",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "週刊まとめ",
+      "Anthropic",
+      "Qwen Code",
+      "CLI",
+      "AI安全性",
+      "開発ツール"
+    ],
+    "heroScope": "week",
+    "weekRoundupPeriod": {
+      "start": "2026-11-02",
+      "end": "2026-11-08"
+    }
+  },
+  {
+    "id": "anthropic-claude-fable-5-2-mythos-5-2-launch-api-changes-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Claude Fable 5.2 が公開 — 入力 $8・出力 $40 で 5.1 より安く、thinking の接頭辞チェックが全アカウントに、旧 computer use ツールは 400 エラー",
+    "excerpt": "Anthropic は2026年11月9日、Claude Fable 5.2（claude-fable-5-2）を公開した。1Mトークンの文脈、最大出力128k、常時有効の適応型 thinking は 5.1 と同じで、価格は入力 $10・出力 $50 から入力 $8・出力 $40 に下がった。同日付の Claude Platform 公式ドキュメントは、コードが壊れうる変更を4つ挙げている。同じ能力を認証済み組織だけに提供する Mythos 5.2 も出た。性能を示す数値は、今回確認した公式ドキュメントには載っていない。",
+    "date": "2026-11-10",
+    "newsDate": "2026-11-09",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Fable 5",
+      "Mythos",
+      "API",
+      "料金"
+    ]
+  },
+  {
+    "id": "claude-code-2-1-321-2-1-322-fable-5-2-default-mcp-oauth-redirect-sandbox-fixes-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.321・2.1.322、Fable 5.2 が Fable の既定に、MCP の OAuth がリダイレクト先へ秘密情報を送る不具合とサンドボックス・権限チェックの修正",
+    "excerpt": "Claude Code の CHANGELOG によると、2.1.321 は claude-fable-5-2 を追加して Fable の既定モデルにし、保存済みの Fable 5.1 の選択を fable に移した。同じ版には、MCP の OAuth が別ホストへリダイレクトされたときに更新トークンなどを送ってしまう不具合、読み取り専用のコマンドが確認なしにサンドボックスの外で動いた不具合、cp・mv が拒否ルールを素通りした不具合の修正が含まれる。2.1.322 は Vertex の fast mode の追加。",
+    "date": "2026-11-10",
+    "newsDate": "2026-11-09",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "Fable 5",
+      "セキュリティ",
+      "MCP",
+      "サンドボックス"
+    ]
+  },
+  {
+    "id": "anthropic-ipo-roadshow-launch-price-range-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Anthropic が IPO のロードショーを開始 — 募集は Class A 普通株 8億2,500万株、想定価格は1株 70〜78 ドル",
+    "excerpt": "Anthropic は11月10日、新規株式公開（IPO）に向けたロードショーを始めたと発表した。募集は Class A 普通株 8億2,500万株で、うち約8億135万株を同社が、約2,365万株を既存株主が売り出す。想定価格帯は1株 70〜78 ドル。10月26日の S-1 提出の発表では未定だった株数と価格帯が示された。届出書はまだ効力を生じておらず、評価額や上場日は発表文に書かれていない。",
+    "date": "2026-11-12",
+    "newsDate": "2026-11-10",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "IPO"
+    ]
+  },
+  {
+    "id": "anthropic-public-benefit-fund-5-percent-shares-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Anthropic が株式の5%を「Anthropic Public Benefit Fund」に拠出すると発表 — 企業価値が基準から50%増えるごとに2%を追加できる仕組み、株主の承認が条件",
+    "excerpt": "Anthropic は10月18日、自社株の一部を新設の完全子会社「Anthropic Public Benefit Fund」に拠出すると発表した。株主の承認を条件に5%を拠出し、企業価値が基準値から50%増えるごとに、取締役会の裁量で2%を追加できる。形態は LLC で、保有株をロビー活動や政治献金に使わないとしている。基準値、統治の仕組み、使い道の詳細は「今後数か月で公表する」とされ、発表文には書かれていない。",
+    "date": "2026-11-12",
+    "newsDate": "2026-10-18",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "資金調達"
+    ]
+  },
+  {
+    "id": "anthropic-self-hosted-claude-managed-agents-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude Managed Agents にセルフホスト版 — サービス本体とセッション履歴を自社のインフラに置き、モデル呼び出し先は Claude API・Bedrock・Google Cloud・Foundry・自前のゲートウェイから選ぶ",
+    "excerpt": "Anthropic の Claude Platform リリースノートに、11月12日付で self-hosted Claude Managed Agents が載った。これまで利用者側に置けたのはサンドボックスだけだったが、API・エージェントループ・保存先を含むサービス本体も自社のインフラで動かせる。利用にはアカウントチームへの申請が要る。ホスト版との違い、外に出るデータ、利用者側が負う責任を公式ドキュメントに基づいて整理する。",
+    "date": "2026-11-13",
+    "newsDate": "2026-11-12",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "エージェント",
+      "API",
+      "セルフホスト",
+      "エンタープライズ"
+    ]
+  },
+  {
+    "id": "gemini-cli-0-68-extension-validate-rate-limit-countdown-subagentstop-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Gemini CLI 0.68.0 の変更点、拡張機能の検証コマンド、429 の待ち時間をカウントダウン表示、SubagentStop フック、選んだモデルがフォールバック後も保たれる修正",
+    "excerpt": "Google の Gemini CLI 0.68.0 が2026年11月10日に公開された。拡張機能の設定を検証するコマンドが加わり、レート制限（HTTP 429）の待ち時間が読み込み表示にカウントダウンで出るようになった。一時的なフォールバックやキャンセルのあとも選んだモデルが保たれる修正、SubagentStop イベントへの対応も入っている。公式の変更履歴に基づいて整理する。",
+    "date": "2026-11-13",
+    "newsDate": "2026-11-10",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Gemini CLI",
+      "CLI",
+      "Google",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "github-copilot-cli-1-0-107-to-1-0-109-sandbox-cidr-index-fable-5-2-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "GitHub Copilot CLI 1.0.107〜1.0.109、サンドボックスのホスト規則が CIDR に対応、/index と共有の索引検索が既定で有効に、Fable 5.2 が選択可能に、MCP の拒否規則は --allow-all-tools でも効く",
+    "excerpt": "GitHub Copilot CLI の 1.0.107（11月6日）、1.0.108（11月9日）、1.0.109（11月10日）の変更点を、公式の changelog に基づいて整理する。サンドボックスのホスト許可・拒否規則が IPv4/IPv6 の CIDR に対応し、対象のリポジトリでは共有の索引検索が既定で有効になった。権限まわりでは、MCP の拒否規則や読み取り専用スクリプトの扱いに修正が入っている。",
+    "date": "2026-11-13",
+    "newsDate": "2026-11-10",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "GitHub Copilot",
+      "CLI",
+      "サンドボックス",
+      "MCP",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "claude-code-2-1-323-code-mode-plugin-engines-permission-sandbox-fixes-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.323、ツールを JavaScript から呼ぶ実験機能 Code Mode、plugin.json の対応バージョン指定、権限チェックとサンドボックスの修正が多数",
+    "excerpt": "Claude Code の CHANGELOG に 2.1.323（11月12日付）が載った。Claude が JavaScript を書いて自分のツールを呼ぶ Code Mode が、利用者が有効にする実験機能として加わり、plugin.json には対応する Claude Code の版の範囲を書けるようになった。auto モードが使えないときに、より緩いモードで始まることがあった不具合、Read の拒否ルールがあるパスへ Write・Edit が書けた不具合など、権限とサンドボックスの修正が並ぶ。未知のモデル ID に仮定するコンテキスト長は 200K から 1M に変わった。",
+    "date": "2026-11-13",
+    "newsDate": "2026-11-12",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "セキュリティ",
+      "サンドボックス",
+      "プラグイン",
+      "MCP"
+    ]
+  },
+  {
+    "id": "googlechrome-modern-web-guidance-1-0-agent-skills-web-platform-2026",
+    "type": "news",
+    "category": "product",
+    "title": "GoogleChrome の「Modern Web Guidance」が 1.0.0 に — コーディングエージェントに新しい Web 標準の書き方を渡すスキル、Chrome・Edge・Firefox・MDN のチームが共同で管理",
+    "excerpt": "GitHub の GoogleChrome 組織が公開している Modern Web Guidance の npm パッケージが、11月10日に 1.0.0 になった。コーディングエージェントが古い書き方に寄りがちな点を補うスキルで、README によると250件の Web 機能を扱い、検索はネットワークを使わずローカルで行う。README は Chrome・Edge・Firefox・MDN のチームが共同で管理すると書いている。導入の有無で合格率を比べた数字（11月8日分で +28〜+36 ポイント）はプロジェクト自身の評価で、独立した検証は確認できていない。既定で匿名の利用情報を Google に送る。",
+    "date": "2026-11-13",
+    "newsDate": "2026-11-10",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Google",
+      "Agent Skills",
+      "オープンソース",
+      "エージェント",
+      "プラグイン"
+    ]
+  },
+  {
+    "id": "codex-cli-0-168-model-providers-tui-workspace-audio-attachments-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.168.0 の変更点、モデルプロバイダーを画面から選んで既定に、会話を横に並べる TUI の分割表示、音声の録音を添付、Vertex AI ではツール更新の差分送信が既定に",
+    "excerpt": "OpenAI の Codex CLI の 0.168.0 が11月13日に公開された。Sessions の画面からモデルプロバイダーを一覧して新しいチャットの既定を選べるようになり、features.tui_workspace を有効にすると、メインの会話の横に別の会話を並べられる。音声に対応したモデルには録音を添付できる。履歴と再開の一覧は、サインイン中の ChatGPT アカウントで絞られるようになった。11月11日の 0.167.2 は、Google Cloud Vertex AI でツールの更新を差分で送る動作を既定にした。",
+    "date": "2026-11-13",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "claude-code-2-1-325-sandbox-auto-allow-default-zstd-security-fix-permission-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.325、サンドボックス内の Bash も通常の権限確認を通るのが既定に、zstd 圧縮の応答のデコードにセキュリティ修正、権限ルールのすり抜けを複数修正",
+    "excerpt": "Claude Code の CHANGELOG に 2.1.325（11月13日付）が載った。サンドボックス内で動く Bash コマンドは、これまで確認なしで実行されていたが、既定では通常の権限確認を通るようになったと CHANGELOG は書いている。ただし公式ドキュメントの設定リファレンスは、同じ設定の既定値をまだ true（確認なし）としており、記載が食い違っている。zstd 圧縮の応答のデコードにあったセキュリティ上の問題の修正、cd のあとに相対パスの拒否ルールが効かなくなる不具合の修正なども入った。",
+    "date": "2026-11-14",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "セキュリティ",
+      "サンドボックス",
+      "プラグイン",
+      "VS Code"
+    ]
+  },
+  {
+    "id": "github-copilot-cli-1-0-110-1-0-111-managed-regex-rules-password-dialog-workflow-recursion-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "GitHub Copilot CLI 1.0.110〜1.0.111、組織管理の権限ルールが正規表現に対応、git・ssh・sudo のパスワード入力を伏せ字のダイアログで受ける実験機能、ワークフローが自分自身を際限なく起動する問題を修正",
+    "excerpt": "GitHub Copilot CLI の 1.0.110（11月12日）と 1.0.111（11月13日）の変更点を、公式の changelog に基づいて整理する。組織が管理する Shell・Bash・PowerShell の権限ルールに正規表現が使えるようになり、エージェントが実行したコマンドのパスワード入力に伏せ字のダイアログで答える実験機能が加わった。従来のリモート操作の仕組みは削除され、クラウドのセッションとリモート接続には AHP 環境が必須になった。",
+    "date": "2026-11-14",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "GitHub Copilot",
+      "CLI",
+      "サンドボックス",
+      "MCP",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "feature-anthropic-distillation-defenses-preserved-thinking-tradeoffs-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "【分析】Anthropic の蒸留対策は API の利用者に何を求めたか — 推論の要約、会話履歴の編集制限、拒否されたリクエストへの課金を、同社の10月の説明から整理する",
+    "excerpt": "Anthropic は10月12日、Claude の推論を抜き取って別のモデルを訓練する「蒸留攻撃」への対策を説明する記事を公開した。対策の導入後、抜き取られた推論の量は10分の1から100分の1以下になったと同社は述べている。この数字は同社自身の測定で、独立した検証は確認できていない。一方で同社は、正規の利用者に負担が生じたことも認めている。API の利用者がこの数か月に個別に受け取ってきた変更が、どうつながっているのかを整理する。",
+    "date": "2026-11-14",
+    "newsDate": "2026-10-12",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Anthropic",
+      "蒸留",
+      "Claude API",
+      "AI安全性",
+      "中国AI"
+    ]
+  },
+  {
+    "id": "codex-cli-0-169-side-chat-tabs-exec-trust-custom-providers-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.169.0 の変更点、codex exec は信頼していないディレクトリでプロジェクト設定と MCP を無効のままに、横の会話はタブで複数、独自のモデルプロバイダーを端末から追加",
+    "excerpt": "OpenAI の Codex CLI の 0.169.0 が11月13日に公開された。0.168.0 の約5時間後である。codex exec は、信頼していないディレクトリでは --sandbox workspace-write を付けてもプロジェクトの設定と MCP サーバーを無効のままにし、信頼を保存するには --trust を明示する。任意で有効にする端末のワークスペースは、横の会話を複数のタブで持てるようになった。独自のモデルプロバイダーは端末から追加・編集できる。",
+    "date": "2026-11-14",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "microsoft-tandem-design-first-copilot-workspace-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Microsoft が「Tandem」を MIT で公開 — コーディングエージェントに実装させる前に、要件・画面案・試作を人と見ながら決める作業場。実装は明示的に承認したときだけ始まる",
+    "excerpt": "Microsoft の GitHub に、Tandem というリポジトリが10月29日に公開された。GitHub Copilot の CLI と SDK の上で動く作業場で、要件、画面の案、モックのデータで動く試作、設計の合意を人とエージェントが見ながら決め、利用者が「Plan and implement」を選んだときだけ計画とコード変更が始まる。現状はソースからビルドするプレビューで、動作が確かめられているのは Windows だけである。11月2日には、人とエージェントが同じ図を編集するホワイトボードのスキルが加わった。",
+    "date": "2026-11-14",
+    "newsDate": "2026-10-29",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Microsoft",
+      "GitHub Copilot",
+      "エージェント",
+      "オープンソース",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "qwen-code-0-27-1-to-0-27-3-permissions-ask-auto-edit-approval-notify-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Qwen Code v0.27.1〜v0.27.3 — auto-edit でも permissions.ask の規則は確認を求める、承認待ちを端末のベルと通知で知らせる、/pr でセッションと PR を結び付け",
+    "excerpt": "Alibaba 系の QwenLM が開発する Qwen Code で、v0.27.1（11月9日）、v0.27.2（11月10日）、v0.27.3（11月13日）が続けて出た。v0.27.3 は、auto-edit モードでも permissions.ask の規則に当たるツール呼び出しに確認を求めるよう直し、上書きリダイレクト「>|」による書き込みを権限の判定に見えるようにした。v0.27.2 は承認待ちをライブパネルに出し、端末にフォーカスが無いときはベルや通知で知らせる。v0.27.2 には SDK と Web Shell の依存更新という破壊的変更が1件ある。",
+    "date": "2026-11-14",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Qwen Code",
+      "CLI",
+      "Qwen",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "gemini-decisions-api-calibrated-probabilities-no-output-tokens-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Gemini API に Decisions API — 文章を生成せず、はい・いいえ、選択、採点を確率で返す。出力トークンは 0、1回のリクエストで最大1,000問",
+    "excerpt": "Google の公式 SDK（google-genai / @google/genai）が11月11日付の v3.2.0 で Decisions API に対応した。専用モデル gemini-decision-1 が、入力に対する型付きの質問（noul・choice・score）に、文章ではなく較正された確率と確信度で答える。生成が無いので出力トークンは常に 0 で、1回のリクエストに1〜1,000問を載せられる。v1beta のみで、コンテキストキャッシュ・Batch API・Flex／Priority は使えない。入力トークンの単価は、今回読めた資料には書かれていない。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-11",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "API",
+      "SDK",
+      "エージェント",
+      "モデルルーティング"
+    ]
+  },
+  {
+    "id": "gemini-4-hydrogen-carbon-gemini-api-cookbook-migration-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Gemini 4 Hydrogen と Carbon が Gemini API に — Hydrogen は無料枠でも使え、入力 $1.50・出力 $7.50。temperature は無視され、明示的なキャッシュは使えない",
+    "excerpt": "Google の公式 SDK に gemini-4-carbon（11月10日）と gemini-4-hydrogen（11月12日）が加わり、公式 Cookbook の既定モデルが Gemini 4 Hydrogen に切り替わった。Cookbook によると、Hydrogen は無料枠と有料枠の両方で使え、価格は入力100万トークンあたり1.50ドル、出力7.50ドル。思考レベルの既定は high で、xhigh は Hydrogen だけが持つ。Gemini 4 では temperature などのサンプリング設定が無視され、明示的なキャッシュが使えず、thinking_level の minimal は 400 エラーになる。Google の発表記事と ai.google.dev には今回到達できておらず、ベンチマークと Carbon・Argon の価格は確認できていない。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-12",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "モデル",
+      "API",
+      "料金",
+      "SDK"
+    ]
+  },
+  {
+    "id": "microsoft-benchpress-benchmark-score-matrix-completion-2026",
+    "type": "news",
+    "category": "data",
+    "title": "Microsoft Research の「BenchPress」— 測っていないベンチマークの点数を、公開済みの点数表から推定する。84モデル×133項目の表は埋まっているのが23.3%",
+    "excerpt": "Microsoft Research の研究者が、モデルとベンチマークの点数表の空欄を推定するツール BenchPress を MIT ライセンスで公開している（論文とコードは2026年6月23日付）。公開されている点数を集めた84モデル×133ベンチマークの表は、埋まっているのが23.3%。著者らは、この表がほぼ2つの因子で説明でき、隠した点数を中央値で4.6ポイントの誤差で当てられたと報告する。5つのベンチマークを測れば残りを誤差3.93ポイントで推定できた、とも書く。数値は著者らの報告で、独立した検証は確認できていない。",
+    "date": "2026-11-15",
+    "newsDate": "2026-06-23",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Microsoft",
+      "ベンチマーク",
+      "評価",
+      "オープンソース",
+      "研究"
+    ]
+  },
+  {
+    "id": "anthropic-claude-meetings-beta-google-meet-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude Meetings がベータ公開 — Claude がビデオ会議に「参加者」として入り、会議中に文書やホワイトボードを作る。対応は Google Meet、Team・Enterprise から順次",
+    "excerpt": "Anthropic は11月12日、Claude をビデオ会議に参加者として加える Claude Meetings のベータ提供を始めた。会議中の質問に文字で答え、文書やホワイトボードを作り、ノートとアクションアイテムを残す。保存するのは文字起こし・要約・画面の説明で、音声は保存しないとされる。組織外の人が招待された会議には既定で入らない。対象プラン、対象外の組織、課金の扱いを公式記事に基づいて整理する。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-12",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "会議",
+      "Google Meet",
+      "エンタープライズ",
+      "プライバシー"
+    ]
+  },
+  {
+    "id": "feature-anthropic-building-strong-safety-evaluations-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】「前のモデルより安全」は何を測った結果か — Anthropic が安全性評価の作り方を公開。拒否率では測れない領域、API と claude.ai で最大34ポイントの差、数ポイントの差は誤差でありうる",
+    "excerpt": "Anthropic は11月13日、安全性評価（safety eval）の設計・実行・報告についての推奨事項を公開した。単発の質問による評価は94〜98%で飽和していること、同じモデルでも API と claude.ai で適切応答率が最大34ポイント違ったこと、98%と94%の差が統計的に有意でなかった例など、自社のシステムカードの数字を使って説明している。数字はすべて同社の報告である。安全性の数値を読む側が何を確かめればよいかを整理する。",
+    "date": "2026-11-15",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "Anthropic",
+      "AI安全性",
+      "評価",
+      "ベンチマーク",
+      "透明性"
+    ]
+  },
+  {
+    "id": "nodejs-security-release-2026-11-11",
+    "type": "news",
+    "category": "product",
+    "title": "Node.js が11/11 にセキュリティリリース — 18件（うち HIGH 7件）、22・24・26 の全ラインが対象",
+    "excerpt": "Node.js の公式告知によると、11月11日（水）付けで 22.x・24.x・26.x の全ラインのセキュリティリリースが出た。対象は18件で、最も深刻なものは HIGH。HTTP/2 と TLS の処理に集中しており、サーバーがリモートから落とされる、または他の接続のメモリが漏れる類の問題が含まれる。",
+    "date": "2026-11-11",
+    "newsDate": "2026-11-11",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Node.js",
+      "セキュリティ",
+      "脆弱性"
     ]
   },
   {
