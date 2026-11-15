@@ -48,6 +48,14 @@
     <summary>Anthropic は11月13日、安全性評価（safety eval）の設計・実行・報告についての推奨事項を公開した。単発の質問による評価は94〜98%で飽和していること、同じモデルでも API と claude.ai で適切応答率が最大34ポイント違ったこと、98%と94%の差が統計的に有意でなかった例など、自社のシステムカードの数字を使って説明している。数字はすべて同社の報告である。安全性の数値を読む側が何を確かめればよいかを整理する。</summary>
   </entry>
   <entry>
+    <title>【分析】Anthropic が METR の6人に「従業員並みのアクセス」— 公表は拒否できないが、伏せる範囲を決めるのは Anthropic。評価者のアクセスを3段階に分ける設計を読む</title>
+    <link rel="alternate" type="text/html" href="?a=feature-anthropic-metr-employee-like-access-three-tiers-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-anthropic-metr-employee-like-access-three-tiers-2026</id>
+    <published>2026-11-15T15:00:00Z</published>
+    <updated>2026-11-15T15:00:00Z</updated>
+    <summary>Anthropic は10月15日、非営利の評価機関 METR の6人に、社内のリスク評価チームとほぼ同等のアクセスを与え始めたと発表した。METR は分析を公表でき、Anthropic は公表そのものを拒否できない。一方、あらかじめ決めた区分に当たる情報は伏せるよう求められ、何がその区分に当たるかは Anthropic が最終的に決める。発表文は評価者のアクセスを3段階に分けている。期間は書かれておらず、資金については9月の別の発表文に「評価者自身の資金で試行する方向で対話中」とあるだけである。</summary>
+  </entry>
+  <entry>
     <title>Claude Code 2.1.325、サンドボックス内の Bash も通常の権限確認を通るのが既定に、zstd 圧縮の応答のデコードにセキュリティ修正、権限ルールのすり抜けを複数修正</title>
     <link rel="alternate" type="text/html" href="?a=claude-code-2-1-325-sandbox-auto-allow-default-zstd-security-fix-permission-2026"/>
     <id>tag:ai-tool-news.jp,2026:claude-code-2-1-325-sandbox-auto-allow-default-zstd-security-fix-permission-2026</id>
