@@ -13613,5 +13613,22 @@ export const ARTICLES_META = [
       "料金",
       "データ"
     ]
+  },
+  {
+    "id": "anthropic-claude-personal-finance-beta-plaid-read-only-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude に Personal Finance（ベータ）— 銀行・カードの口座を Plaid 経由で読み取り専用でつなぎ、自分のお金について尋ねる。米国の Pro・Max・Ultra から順次",
+    "excerpt": "Anthropic は11月5日、銀行・クレジットカード・ローン・投資の口座を Claude につなぎ、残高や支出について尋ねられる Personal Finance のベータ提供を始めた。接続は Plaid 経由の読み取り専用で、送金や運用はできない。Claude が読むのは口座名・種別・下4桁、残高と与信枠、最長24か月の取引である。専用ページでの会話はモデルの学習に使わないとされる。成果物や共有リンクに数字が残る条件、対象外のプランを公式記事とヘルプセンターに基づいて整理する。",
+    "date": "2026-11-16",
+    "newsDate": "2026-11-05",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "プライバシー",
+      "金融"
+    ]
   }
 ];

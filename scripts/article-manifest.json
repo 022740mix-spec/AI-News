@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-11-15",
-  "count": 655,
+  "count": 658,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -75,6 +75,7 @@
     "anthropic-claude-opus-5-5-release-2026",
     "anthropic-claude-opus-5-frontier-half-price-2026",
     "anthropic-claude-performance-decline-effort-backlash-2026",
+    "anthropic-claude-personal-finance-beta-plaid-read-only-2026",
     "anthropic-claude-platform-aws-ga-agent-view-2026",
     "anthropic-claude-plugins-directory-2026",
     "anthropic-claude-reflect-time-and-focus-2026",
@@ -237,6 +238,7 @@
     "codex-cli-0-168-model-providers-tui-workspace-audio-attachments-2026",
     "codex-cli-0-169-side-chat-tabs-exec-trust-custom-providers-2026",
     "codex-plugins-marketplace-2026",
+    "codex-responses-error-event-retried-six-times-2026",
     "codex-reusable-cloud-environments-publish-2026",
     "codex-security-cloud-research-preview-github-scan-2026",
     "cognition-devin-rsa-260-factorization-2026",
@@ -259,6 +261,7 @@
     "cve-2026-47729-squidbleed-claude-mythos-project-glasswing-2026",
     "cyber-safeguards-three-labs-same-week-2026",
     "dario-amodei-dwarkesh-podcast-2026-feb",
+    "deepseek-app-suite-api-meaning-cost-data-2026",
     "deepseek-harness-dsh-oss-2026",
     "deepseek-r1-review",
     "deepseek-v4-1-flash-vision-pro-retirement-2026",
