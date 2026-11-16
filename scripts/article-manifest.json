@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-11-16",
-  "count": 666,
+  "count": 667,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -447,6 +447,7 @@
     "microsoft-copilot-cowork-launch-2026",
     "microsoft-humanist-superintelligence-code-2026",
     "microsoft-intelligent-terminal-acp-preview-2026",
+    "microsoft-lazarus-dormant-neurons-backdoor-agents-2026",
     "microsoft-mai-transcribe-voice-image-foundry-2026",
     "microsoft-nvx-microvm-sandbox-2026",
     "microsoft-project-perception-ai-security-model-router-2026",
