@@ -16,6 +16,14 @@
     <summary>Anthropic は11月16日、Claude で見つけた脆弱性を他者のソフトウェアの開発元に報告するときの方針（協調的な脆弱性開示）を改めると発表した。公開までの期限を、従来の90日から、深刻度が高・重大のものは30日、それ以外は45日に縮める。適用は2027年1月1日以降に報告するものからで、進行中の報告は元の期限のまま。応答が無い場合に外部の調整機関へ持ち込むまでの日数と、修正版が出てから技術的な詳細を公開するまでの日数も短くする。</summary>
   </entry>
   <entry>
+    <title>Microsoft Research と UC Berkeley の「TokenEconomizer」— 同じリポジトリでの過去のセッションから学び、コーディングエージェントの費用を下げるプラグイン。著者らの測定で18.4〜30.9%減、対応バージョンは現行より古い</title>
+    <link rel="alternate" type="text/html" href="?a=microsoft-tokeneconomizer-coding-agent-cost-plugin-2026"/>
+    <id>tag:ai-tool-news.jp,2026:microsoft-tokeneconomizer-coding-agent-cost-plugin-2026</id>
+    <published>2026-11-17T15:00:00Z</published>
+    <updated>2026-11-17T15:00:00Z</updated>
+    <summary>Microsoft Research は11月16日、コーディングエージェントの費用を下げるオープンソースのプラグイン「TokenEconomizer」を紹介した。UC Berkeley、Microsoft Research、Microsoft Security の共同研究で、エージェント本体もモデルも変えず、同じリポジトリで終わったセッションの記録から学ぶ。使われないツールを読み込まない、同じ失敗を繰り返すターンに別の方法を促す、リポジトリ固有の事実を覚える、の3つの仕組みを持つ。SWE-Bench の277タスクで平均費用が18.4〜30.9%下がったというのは著者らの測定である。</summary>
+  </entry>
+  <entry>
     <title>Claude に Personal Finance（ベータ）— 銀行・カードの口座を Plaid 経由で読み取り専用でつなぎ、自分のお金について尋ねる。米国の Pro・Max・Ultra から順次</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-personal-finance-beta-plaid-read-only-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-personal-finance-beta-plaid-read-only-2026</id>

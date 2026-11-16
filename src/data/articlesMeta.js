@@ -13758,5 +13758,24 @@ export const ARTICLES_META = [
       "脆弱性",
       "透明性"
     ]
+  },
+  {
+    "id": "microsoft-tokeneconomizer-coding-agent-cost-plugin-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Microsoft Research と UC Berkeley の「TokenEconomizer」— 同じリポジトリでの過去のセッションから学び、コーディングエージェントの費用を下げるプラグイン。著者らの測定で18.4〜30.9%減、対応バージョンは現行より古い",
+    "excerpt": "Microsoft Research は11月16日、コーディングエージェントの費用を下げるオープンソースのプラグイン「TokenEconomizer」を紹介した。UC Berkeley、Microsoft Research、Microsoft Security の共同研究で、エージェント本体もモデルも変えず、同じリポジトリで終わったセッションの記録から学ぶ。使われないツールを読み込まない、同じ失敗を繰り返すターンに別の方法を促す、リポジトリ固有の事実を覚える、の3つの仕組みを持つ。SWE-Bench の277タスクで平均費用が18.4〜30.9%下がったというのは著者らの測定である。",
+    "date": "2026-11-17",
+    "newsDate": "2026-11-16",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Microsoft",
+      "オープンソース",
+      "エージェント",
+      "プラグイン",
+      "料金",
+      "Claude Code"
+    ]
   }
 ];
