@@ -32,6 +32,22 @@
     <summary>2026年11月9日〜11月15日の週次データ。公開は31本（前週16本）で、news 22 / feature 6 / review 3。13本が11月15日の1日に載った。題材では Anthropic 関連が12本、Google が5本、OpenAI が4本、Microsoft・GitHub が4本。5週続けて0本だった分析は4本出たが、うち3本は Anthropic の発表を題材にしている。ガイドに説明が見当たらない概念の一覧は変わらず、新しく出たタグには既存のタグと重なるものがあった。</summary>
   </entry>
   <entry>
+    <title>Claude Enterprise にセキュリティセンター（ベータ）と推論フックの正式版 — 設定を推奨構成と照合し、プロンプトとツール呼び出しを実行前に自社の基準で判定する</title>
+    <link rel="alternate" type="text/html" href="?a=claude-enterprise-security-center-inference-hooks-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-enterprise-security-center-inference-hooks-2026</id>
+    <published>2026-11-16T15:00:00Z</published>
+    <updated>2026-11-16T15:00:00Z</updated>
+    <summary>Anthropic は11月5日、Claude Enterprise 向けのセキュリティと管理の機能をまとめて発表した。組織設定に新設されたセキュリティセンターは、チャット・Cowork・Claude Code の設定を同社の推奨構成と照合し、監査担当向けのレポートも出せる。プロンプトとツール呼び出しを自社の情報漏洩対策に送って実行前に判定する推論フックは正式版になった。親組織向けの管理コンソール、Admin API による全セッションのサインアウト、自社で管理する IP 許可リスト、Cowork の仮想マシン内で動く EDR 連携も加わる。大半はベータで、対象は Enterprise である。</summary>
+  </entry>
+  <entry>
+    <title>GitHub Copilot CLI 1.0.112 — /subagents のモデル切り替えと /copy の書式保持、AI クレジットのセッション上限まわりを修正</title>
+    <link rel="alternate" type="text/html" href="?a=github-copilot-cli-1-0-112-subagents-copy-chronicle-credits-2026"/>
+    <id>tag:ai-tool-news.jp,2026:github-copilot-cli-1-0-112-subagents-copy-chronicle-credits-2026</id>
+    <published>2026-11-16T15:00:00Z</published>
+    <updated>2026-11-16T15:00:00Z</updated>
+    <summary>GitHub Copilot CLI 1.0.112 が11月13日に公開された。/subagents のモデル選択が同じエージェントで開き直せるようになり、/copy は Word や Outlook、Teams に貼っても書式を保つ。/chronicle のコスト提案は Copilot App のセッションも対象になった。セッションの AI クレジット上限では、サブエージェントも上限に従い、再開したセッションでは使用済みのクレジットが上限に数えられる。そのほか端末の表示や貼り付けに関する修正が多数入った。npm の最新版は11月16日時点で 1.0.112 のままである。</summary>
+  </entry>
+  <entry>
     <title>Gemini API に Decisions API — 文章を生成せず、はい・いいえ、選択、採点を確率で返す。出力トークンは 0、1回のリクエストで最大1,000問</title>
     <link rel="alternate" type="text/html" href="?a=gemini-decisions-api-calibrated-probabilities-no-output-tokens-2026"/>
     <id>tag:ai-tool-news.jp,2026:gemini-decisions-api-calibrated-probabilities-no-output-tokens-2026</id>

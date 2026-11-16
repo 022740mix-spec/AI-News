@@ -13528,7 +13528,7 @@ export const ARTICLES_META = [
       "お知らせ",
       "運営",
       "Muse",
-      "AIエージェント"
+      "エージェント"
     ]
   },
   {
@@ -13574,9 +13574,9 @@ export const ARTICLES_META = [
     "tags": [
       "Muse",
       "Meta",
-      "AIエージェント",
+      "エージェント",
       "活用",
-      "安全性"
+      "セキュリティ"
     ]
   },
   {
@@ -13670,5 +13670,39 @@ export const ARTICLES_META = [
       "start": "2026-11-09",
       "end": "2026-11-15"
     }
+  },
+  {
+    "id": "claude-enterprise-security-center-inference-hooks-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude Enterprise にセキュリティセンター（ベータ）と推論フックの正式版 — 設定を推奨構成と照合し、プロンプトとツール呼び出しを実行前に自社の基準で判定する",
+    "excerpt": "Anthropic は11月5日、Claude Enterprise 向けのセキュリティと管理の機能をまとめて発表した。組織設定に新設されたセキュリティセンターは、チャット・Cowork・Claude Code の設定を同社の推奨構成と照合し、監査担当向けのレポートも出せる。プロンプトとツール呼び出しを自社の情報漏洩対策に送って実行前に判定する推論フックは正式版になった。親組織向けの管理コンソール、Admin API による全セッションのサインアウト、自社で管理する IP 許可リスト、Cowork の仮想マシン内で動く EDR 連携も加わる。大半はベータで、対象は Enterprise である。",
+    "date": "2026-11-16",
+    "newsDate": "2026-11-05",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "エンタープライズ",
+      "セキュリティ"
+    ]
+  },
+  {
+    "id": "github-copilot-cli-1-0-112-subagents-copy-chronicle-credits-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "GitHub Copilot CLI 1.0.112 — /subagents のモデル切り替えと /copy の書式保持、AI クレジットのセッション上限まわりを修正",
+    "excerpt": "GitHub Copilot CLI 1.0.112 が11月13日に公開された。/subagents のモデル選択が同じエージェントで開き直せるようになり、/copy は Word や Outlook、Teams に貼っても書式を保つ。/chronicle のコスト提案は Copilot App のセッションも対象になった。セッションの AI クレジット上限では、サブエージェントも上限に従い、再開したセッションでは使用済みのクレジットが上限に数えられる。そのほか端末の表示や貼り付けに関する修正が多数入った。npm の最新版は11月16日時点で 1.0.112 のままである。",
+    "date": "2026-11-16",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "GitHub Copilot",
+      "CLI",
+      "開発ツール",
+      "サブエージェント"
+    ]
   }
 ];
