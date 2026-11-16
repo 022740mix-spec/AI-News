@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-11-16T15:00:00Z</updated>
+  <updated>2026-11-17T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Anthropic が脆弱性の開示期限を90日から30日・45日に短縮 — Claude が見つけた脆弱性が対象、2027年1月1日以降の報告から。「AI は同じバグを別々に見つける」ことを理由に挙げる</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-cvd-policy-timelines-30-45-days-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-cvd-policy-timelines-30-45-days-2026</id>
+    <published>2026-11-17T15:00:00Z</published>
+    <updated>2026-11-17T15:00:00Z</updated>
+    <summary>Anthropic は11月16日、Claude で見つけた脆弱性を他者のソフトウェアの開発元に報告するときの方針（協調的な脆弱性開示）を改めると発表した。公開までの期限を、従来の90日から、深刻度が高・重大のものは30日、それ以外は45日に縮める。適用は2027年1月1日以降に報告するものからで、進行中の報告は元の期限のまま。応答が無い場合に外部の調整機関へ持ち込むまでの日数と、修正版が出てから技術的な詳細を公開するまでの日数も短くする。</summary>
+  </entry>
   <entry>
     <title>Claude に Personal Finance（ベータ）— 銀行・カードの口座を Plaid 経由で読み取り専用でつなぎ、自分のお金について尋ねる。米国の Pro・Max・Ultra から順次</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-personal-finance-beta-plaid-read-only-2026"/>

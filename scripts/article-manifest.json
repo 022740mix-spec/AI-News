@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-11-16",
-  "count": 664,
+  "count": 665,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -94,6 +94,7 @@
     "anthropic-commerce-agents-blueprint-2026",
     "anthropic-components-of-agent-memory-dreaming-2026",
     "anthropic-coreweave-68b-multiyear-cloud-deal-2026",
+    "anthropic-cvd-policy-timelines-30-45-days-2026",
     "anthropic-enterprise-frontier-safeguards-2026",
     "anthropic-fast-mode-opus-5-5-no-waitlist-2026",
     "anthropic-fourth-cyber-incident-metr-audit-2026",
