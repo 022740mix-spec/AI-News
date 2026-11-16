@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./?view=updates"/>
   <link rel="self" type="application/atom+xml" href="./updates.xml"/>
   <id>tag:ai-tool-news.jp,2026:updates</id>
-  <updated>2026-11-15T15:00:00Z</updated>
+  <updated>2026-11-17T15:00:00Z</updated>
   <generator>ai-news-generate-updates</generator>
+  <entry>
+    <title>【追記】Claude のテキスト透かしが Mythos 5・Opus 4.7・Sonnet 4.6 にも — Sonnet 4.6 は temperature などを指定すると付かないことがある</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-text-watermark-older-models-sampling-params-2026-11#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:anthropic-claude-text-watermark-older-models-sampling-params-2026-11:2026-11-17</id>
+    <updated>2026-11-17T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>API リリースノートの2026年11月16日付の項目は、Claude Opus 4.6、Claude Opus 4.5、Claude Sonnet 4.5、Claude Haiku 4.5…</summary>
+  </entry>
   <entry>
     <title>【訂正】【分析】Anthropic が METR の6人に「従業員並みのアクセス」— 公表は拒否できないが、伏せる範囲を決めるのは Anthropic。評価者のアクセスを3段階に分ける設計を読む</title>
     <link rel="alternate" type="text/html" href="?a=feature-anthropic-metr-employee-like-access-three-tiers-2026#article-history"/>
@@ -1198,13 +1206,5 @@
     <updated>2026-08-11T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
     <summary>★4→3 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（2.9）と乖離していました</summary>
-  </entry>
-  <entry>
-    <title>【訂正】VS Code + Copilot — 定番エディタのAI進化</title>
-    <link rel="alternate" type="text/html" href="?a=vscode#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:vscode:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>★4→4.5 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（4.7）…</summary>
   </entry>
 </feed>
