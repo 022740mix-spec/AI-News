@@ -13722,5 +13722,23 @@ export const ARTICLES_META = [
       "研究",
       "AI安全性"
     ]
+  },
+  {
+    "id": "anthropic-components-of-agent-memory-dreaming-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic がエージェントの記憶の設計を解説 — 作業の合間にログを見直して記憶を整理する「dreaming」、新しいモデルには「失敗だけ記録せよ」のような細かい規則が逆効果だった",
+    "excerpt": "Anthropic は11月6日、エージェントがセッションをまたいで持つ記憶の設計と、その評価をまとめた技術記事を公開した。セッションの合間に過去のログを見直して記憶を直す「dreaming」の効果、モデルの世代によって記憶の使い方がどう変わったか、記憶をまとめた wiki が効いた場面と効かなかった場面を、自社の評価の数字で示している。数字はすべて同社の報告である。",
+    "date": "2026-11-16",
+    "newsDate": "2026-11-06",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "Anthropic",
+      "エージェント",
+      "メモリ",
+      "Claude",
+      "評価"
+    ]
   }
 ];

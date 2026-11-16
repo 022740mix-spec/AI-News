@@ -56,6 +56,14 @@
     <summary>Anthropic は10月27日、専門家が AI エージェントと作業するとき、正解が1つでない判断を誰が下しているかを調べた実験を公開した。因果推論の経験がある分析者50人に Claude Code で統計分析をさせ、エージェントがどちらの選択肢を推すかをコイン投げで決めたところ、4つの分析上の判断で分析者の選択は86%がエージェントの推す側と一致した。数字はすべて同社の報告で、エージェントの選好は意図的に強めてある。何が示され、何が示されていないかを整理する。</summary>
   </entry>
   <entry>
+    <title>Anthropic がエージェントの記憶の設計を解説 — 作業の合間にログを見直して記憶を整理する「dreaming」、新しいモデルには「失敗だけ記録せよ」のような細かい規則が逆効果だった</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-components-of-agent-memory-dreaming-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-components-of-agent-memory-dreaming-2026</id>
+    <published>2026-11-16T15:00:00Z</published>
+    <updated>2026-11-16T15:00:00Z</updated>
+    <summary>Anthropic は11月6日、エージェントがセッションをまたいで持つ記憶の設計と、その評価をまとめた技術記事を公開した。セッションの合間に過去のログを見直して記憶を直す「dreaming」の効果、モデルの世代によって記憶の使い方がどう変わったか、記憶をまとめた wiki が効いた場面と効かなかった場面を、自社の評価の数字で示している。数字はすべて同社の報告である。</summary>
+  </entry>
+  <entry>
     <title>Gemini API に Decisions API — 文章を生成せず、はい・いいえ、選択、採点を確率で返す。出力トークンは 0、1回のリクエストで最大1,000問</title>
     <link rel="alternate" type="text/html" href="?a=gemini-decisions-api-calibrated-probabilities-no-output-tokens-2026"/>
     <id>tag:ai-tool-news.jp,2026:gemini-decisions-api-calibrated-probabilities-no-output-tokens-2026</id>
