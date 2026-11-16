@@ -32,6 +32,14 @@
     <summary>Microsoft Research は11月10日、言語モデルの重みを直接書き換えてバックドアを仕込む手法「Lazarus」を公表した。ほとんど発火しないニューロンを10個未満書き換えるだけで、日付の変化のような引き金が現れたときに、エージェントに攻撃者のコマンドを出力させられるという。再学習は要らず、通常の評価は通る。同社は、異常な重みの編集は調べれば見つけられるが、安全だと証明できる検査は無く、確実な検出には改変前の重みとの比較が要るとして、モデルの出どころと重みの完全性を課題に挙げた。</summary>
   </entry>
   <entry>
+    <title>【分析】科学者は AI を「重要だと思う仕事」には使っていない — Anthropic が研究利用20.7万セッションを分類。データ分析と執筆に集中し、着想とデータ収集は少ない。「15倍」の試算は費用の仮定で決まっている</title>
+    <link rel="alternate" type="text/html" href="?a=feature-anthropic-how-researchers-use-claude-207k-sessions-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-anthropic-how-researchers-use-claude-207k-sessions-2026</id>
+    <published>2026-11-17T15:00:00Z</published>
+    <updated>2026-11-17T15:00:00Z</updated>
+    <summary>Anthropic の経済チームは11月5日、Claude と Claude Code の研究利用 207,049 セッションを分類した報告を公開した。利用はデータ分析と執筆に集まり、研究者が成果にとって最も重要だと答えた着想・仮説づくりとデータ収集では少なかった。計算機科学や統計のような分野で多く、医学や実験系で少ない。報告は研究の加速について3つのシナリオを示し、最大で約15倍という数字を挙げるが、これは予測ではなく、AI の費用を研究者の約16分の1と置いた仮定から出る上限である。測り方と前提を整理する。</summary>
+  </entry>
+  <entry>
     <title>Claude に Personal Finance（ベータ）— 銀行・カードの口座を Plaid 経由で読み取り専用でつなぎ、自分のお金について尋ねる。米国の Pro・Max・Ultra から順次</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-personal-finance-beta-plaid-read-only-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-personal-finance-beta-plaid-read-only-2026</id>
