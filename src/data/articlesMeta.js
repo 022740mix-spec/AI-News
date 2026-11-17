@@ -13852,5 +13852,23 @@ export const ARTICLES_META = [
       "研究",
       "形式検証"
     ]
+  },
+  {
+    "id": "qwen-code-0-28-0-shared-agent-loop-default-web-shell-worktree-qwen4-max-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Qwen Code v0.28.0 — 共有エージェントループが非対話実行・TUI・サブエージェントで既定に、Web Shell の新規セッションは隔離されたワークツリーで始まる、qwen4-max に対応",
+    "excerpt": "QwenLM の Qwen Code で v0.28.0 が11月17日に出た。v0.27.4 で実験的な設定だった共有エージェントループが、非対話実行（-p と stream-json）、Ink の TUI、サブエージェントで既定になり、ターン上限やフックの発火の仕方が変わる。Web Shell の新規セッションは既定で detached HEAD のワークツリーを使う。qwen4-max への対応も入った。リリースノートは破壊的変更を「既知のものは無い」とするが、個別の PR には挙動の変更が書かれている。",
+    "date": "2026-11-18",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Qwen Code",
+      "CLI",
+      "Qwen",
+      "開発ツール",
+      "エージェント"
+    ]
   }
 ];

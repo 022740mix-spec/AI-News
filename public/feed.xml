@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-11-17T15:00:00Z</updated>
+  <updated>2026-11-18T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Qwen Code v0.28.0 — 共有エージェントループが非対話実行・TUI・サブエージェントで既定に、Web Shell の新規セッションは隔離されたワークツリーで始まる、qwen4-max に対応</title>
+    <link rel="alternate" type="text/html" href="?a=qwen-code-0-28-0-shared-agent-loop-default-web-shell-worktree-qwen4-max-2026"/>
+    <id>tag:ai-tool-news.jp,2026:qwen-code-0-28-0-shared-agent-loop-default-web-shell-worktree-qwen4-max-2026</id>
+    <published>2026-11-18T15:00:00Z</published>
+    <updated>2026-11-18T15:00:00Z</updated>
+    <summary>QwenLM の Qwen Code で v0.28.0 が11月17日に出た。v0.27.4 で実験的な設定だった共有エージェントループが、非対話実行（-p と stream-json）、Ink の TUI、サブエージェントで既定になり、ターン上限やフックの発火の仕方が変わる。Web Shell の新規セッションは既定で detached HEAD のワークツリーを使う。qwen4-max への対応も入った。リリースノートは破壊的変更を「既知のものは無い」とするが、個別の PR には挙動の変更が書かれている。</summary>
+  </entry>
   <entry>
     <title>Anthropic が脆弱性の開示期限を90日から30日・45日に短縮 — Claude が見つけた脆弱性が対象、2027年1月1日以降の報告から。「AI は同じバグを別々に見つける」ことを理由に挙げる</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-cvd-policy-timelines-30-45-days-2026"/>
