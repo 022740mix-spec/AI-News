@@ -13814,5 +13814,24 @@ export const ARTICLES_META = [
       "Claude Code",
       "評価"
     ]
+  },
+  {
+    "id": "claude-code-2-1-326-auto-mode-default-bypass-asks-credentials-sandbox-home-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.326、bypass permissions モードでも一部の操作は確認か拒否に、サインイン用ファイルへの書き込みを拒否、サンドボックスは一部のホームフォルダに書けなくなる",
+    "excerpt": "Claude Code の CHANGELOG に 2.1.326（11月16日付）が載った。項目は367件あり、動作を変える「Changed」が57件ある。bypass permissions モードでも一部のツール呼び出しは確認を求めるか拒否される。Claude のファイル操作ツールは .credentials.json などサインイン用ファイルへの書き込みを拒む。サンドボックス内のコマンドは、一部のホームフォルダに既定では書けなくなった。フックの \"decision\": \"block\" が効く場面も増えており、常にこの値を出力するフックは呼び出しを止め始める可能性がある、と CHANGELOG は注意している。",
+    "date": "2026-11-17",
+    "newsDate": "2026-11-16",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "セキュリティ",
+      "サンドボックス",
+      "フック",
+      "権限"
+    ]
   }
 ];
