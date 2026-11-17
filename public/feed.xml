@@ -48,6 +48,14 @@
     <summary>Claude Code の CHANGELOG に 2.1.326（11月16日付）が載った。項目は367件あり、動作を変える「Changed」が57件ある。bypass permissions モードでも一部のツール呼び出しは確認を求めるか拒否される。Claude のファイル操作ツールは .credentials.json などサインイン用ファイルへの書き込みを拒む。サンドボックス内のコマンドは、一部のホームフォルダに既定では書けなくなった。フックの &quot;decision&quot;: &quot;block&quot; が効く場面も増えており、常にこの値を出力するフックは呼び出しを止め始める可能性がある、と CHANGELOG は注意している。</summary>
   </entry>
   <entry>
+    <title>Anthropic が「FlashProve」を Apache 2.0 で公開 — 応答が特定のモデルの出力であることを、重みを明かさずに暗号で証明する試作。400B の MoE モデルで毎秒約110トークン、費用は通常の推論の約70〜95倍</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-flashprove-provable-inference-zksnark-llama-4-maverick-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-flashprove-provable-inference-zksnark-llama-4-maverick-2026</id>
+    <published>2026-11-17T15:00:00Z</published>
+    <updated>2026-11-17T15:00:00Z</updated>
+    <summary>Anthropic の Frontier Red Team は2026年11月2日、応答がどのモデルから出たかを暗号学的に証明する「provable inference」の試作 FlashProve を公開した。提供者はモデルの重みへのコミットメントを公開し、応答ごとに証明を付ける。受け取った側は重みを持たずに、CPU で数秒で検証できる。Llama 4 Maverick（4ビット量子化）での測定では、H100 1枚で毎秒約110トークン、証明は1リクエストあたり約19MB。一方で証明できる文脈は1,024トークンまでで、対象は整数演算・貪欲デコードのモデルに限られる。数値はいずれも同社の測定で、独立した検証は確認できていない。</summary>
+  </entry>
+  <entry>
     <title>Claude に Personal Finance（ベータ）— 銀行・カードの口座を Plaid 経由で読み取り専用でつなぎ、自分のお金について尋ねる。米国の Pro・Max・Ultra から順次</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-personal-finance-beta-plaid-read-only-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-personal-finance-beta-plaid-read-only-2026</id>

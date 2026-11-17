@@ -13833,5 +13833,24 @@ export const ARTICLES_META = [
       "フック",
       "権限"
     ]
+  },
+  {
+    "id": "anthropic-flashprove-provable-inference-zksnark-llama-4-maverick-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "Anthropic が「FlashProve」を Apache 2.0 で公開 — 応答が特定のモデルの出力であることを、重みを明かさずに暗号で証明する試作。400B の MoE モデルで毎秒約110トークン、費用は通常の推論の約70〜95倍",
+    "excerpt": "Anthropic の Frontier Red Team は2026年11月2日、応答がどのモデルから出たかを暗号学的に証明する「provable inference」の試作 FlashProve を公開した。提供者はモデルの重みへのコミットメントを公開し、応答ごとに証明を付ける。受け取った側は重みを持たずに、CPU で数秒で検証できる。Llama 4 Maverick（4ビット量子化）での測定では、H100 1枚で毎秒約110トークン、証明は1リクエストあたり約19MB。一方で証明できる文脈は1,024トークンまでで、対象は整数演算・貪欲デコードのモデルに限られる。数値はいずれも同社の測定で、独立した検証は確認できていない。",
+    "date": "2026-11-17",
+    "newsDate": "2026-11-02",
+    "author": "AI News 編集部",
+    "readTime": "8分",
+    "tags": [
+      "Anthropic",
+      "オープンソース",
+      "セキュリティ",
+      "透明性",
+      "研究",
+      "形式検証"
+    ]
   }
 ];
