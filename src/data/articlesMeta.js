@@ -13870,5 +13870,24 @@ export const ARTICLES_META = [
       "開発ツール",
       "エージェント"
     ]
+  },
+  {
+    "id": "microsoft-pdd-kit-proof-driven-development-verus-chopin-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Microsoft Research の「PDD Kit」— エージェントが書いたコードを、人が決めた仕様に対して証明で確かめる。人が読むのはコードではなく意図と、証明が届かない「信頼した部分」",
+    "excerpt": "Microsoft Research が11月5日、Proof-Driven Development（証明駆動開発）の道具「PDD Kit」を紹介した。開発者の2文の要求から質問を返して意図を固め、Rust の検証器 Verus の仕様に変換し、エージェントの実装がすべての入力で仕様を満たすことを証明する。証明できない部分は「信頼した部分」として人が1つずつ承認し、テストで確かめる。約5,000行の Rust 製 Web アプリのログイン処理で試した結果が示されている。研究試作で、対象は Rust のみ。",
+    "date": "2026-11-18",
+    "newsDate": "2026-11-05",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Microsoft",
+      "形式検証",
+      "エージェント",
+      "Rust",
+      "開発ツール",
+      "研究"
+    ]
   }
 ];
