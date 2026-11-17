@@ -13889,5 +13889,23 @@ export const ARTICLES_META = [
       "開発ツール",
       "研究"
     ]
+  },
+  {
+    "id": "anthropic-claude-electronics-design-diode-three-prototypes-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Anthropic、Claude Fable 5.2 に電子機器3台を設計させた結果を公開 — 基板の配置・配線から筐体・ファームウェアまで、試作は回路の手直しなしで動作。認証や量産の検証はしていない",
+    "excerpt": "Anthropic が11月9日、Claude Fable 5.2 に電子機器を設計させた結果を公開した。基板メーカー Diode Computers と組み、スピーカーフォン、音声アシスタントのハブ、携帯型の電子ペットの3台について、仕様、回路図、基板の配置と配線、筐体、ファームウェア、部品表までを Claude が作った。組み立てと動作確認は Diode の技術者が行い、試作は回路の修正なしで動いたという。数値は Diode の社内ベンチマークが中心で、両社には商業上の関係がある。",
+    "date": "2026-11-18",
+    "newsDate": "2026-11-09",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Fable 5",
+      "ハードウェア",
+      "ベンチマーク",
+      "研究"
+    ]
   }
 ];

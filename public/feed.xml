@@ -24,6 +24,14 @@
     <summary>Microsoft Research が11月5日、Proof-Driven Development（証明駆動開発）の道具「PDD Kit」を紹介した。開発者の2文の要求から質問を返して意図を固め、Rust の検証器 Verus の仕様に変換し、エージェントの実装がすべての入力で仕様を満たすことを証明する。証明できない部分は「信頼した部分」として人が1つずつ承認し、テストで確かめる。約5,000行の Rust 製 Web アプリのログイン処理で試した結果が示されている。研究試作で、対象は Rust のみ。</summary>
   </entry>
   <entry>
+    <title>Anthropic、Claude Fable 5.2 に電子機器3台を設計させた結果を公開 — 基板の配置・配線から筐体・ファームウェアまで、試作は回路の手直しなしで動作。認証や量産の検証はしていない</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-electronics-design-diode-three-prototypes-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-electronics-design-diode-three-prototypes-2026</id>
+    <published>2026-11-18T15:00:00Z</published>
+    <updated>2026-11-18T15:00:00Z</updated>
+    <summary>Anthropic が11月9日、Claude Fable 5.2 に電子機器を設計させた結果を公開した。基板メーカー Diode Computers と組み、スピーカーフォン、音声アシスタントのハブ、携帯型の電子ペットの3台について、仕様、回路図、基板の配置と配線、筐体、ファームウェア、部品表までを Claude が作った。組み立てと動作確認は Diode の技術者が行い、試作は回路の修正なしで動いたという。数値は Diode の社内ベンチマークが中心で、両社には商業上の関係がある。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が脆弱性の開示期限を90日から30日・45日に短縮 — Claude が見つけた脆弱性が対象、2027年1月1日以降の報告から。「AI は同じバグを別々に見つける」ことを理由に挙げる</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-cvd-policy-timelines-30-45-days-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-cvd-policy-timelines-30-45-days-2026</id>
