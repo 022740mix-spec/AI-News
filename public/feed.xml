@@ -48,6 +48,14 @@
     <summary>OpenAI の Codex CLI の 0.170.0 が11月18日に公開された。0.169.0 から約5日ぶりの版である。権限を更新したときや子スレッドを作ったときに、既にあるサンドボックスの制限が失われる不具合が直った。別々の環境にある同じ名前の MCP サーバーを区別して扱う実験機能が入り、既定では無効である。ほかに、端末画面での音声通話の接続方式、MCP の OAuth 資格情報の競合、Windows でのファイル置換の修正がある。</summary>
   </entry>
   <entry>
+    <title>【分析】「誰に投票すべきか」を尋ねる会話は1万件に1件 — Anthropic が米中間選挙前に公表した利用実態と、外部の5団体に見つけてもらった Claude の弱点を読む</title>
+    <link rel="alternate" type="text/html" href="?a=feature-anthropic-2026-us-midterms-election-safeguards-outside-reviews-2026"/>
+    <id>tag:ai-tool-news.jp,2026:feature-anthropic-2026-us-midterms-election-safeguards-outside-reviews-2026</id>
+    <published>2026-11-18T15:00:00Z</published>
+    <updated>2026-11-18T15:00:00Z</updated>
+    <summary>Anthropic は10月14日、米中間選挙に向けた対策をまとめた文書を公開した。米国の Claude.ai の会話約25万件の分類では、政治・政策に触れる会話が約5.75%、選挙や投票そのものは約0.51%、誰に・何に投票すべきかを尋ねるものは約0.01%だった。文書は外部の5団体による点検の結果も載せており、頼まれていない但し書きや反論を足すこと、右寄りの主張をより弱めて書く傾向があったこと、無害に見える小さな依頼に分割された工作は見逃しうることを挙げている。数字の測り方と、この文書だけでは分からないことを整理する。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が脆弱性の開示期限を90日から30日・45日に短縮 — Claude が見つけた脆弱性が対象、2027年1月1日以降の報告から。「AI は同じバグを別々に見つける」ことを理由に挙げる</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-cvd-policy-timelines-30-45-days-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-cvd-policy-timelines-30-45-days-2026</id>
