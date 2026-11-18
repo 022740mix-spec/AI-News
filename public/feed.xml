@@ -32,6 +32,14 @@
     <summary>Anthropic が11月9日、Claude Fable 5.2 に電子機器を設計させた結果を公開した。基板メーカー Diode Computers と組み、スピーカーフォン、音声アシスタントのハブ、携帯型の電子ペットの3台について、仕様、回路図、基板の配置と配線、筐体、ファームウェア、部品表までを Claude が作った。組み立てと動作確認は Diode の技術者が行い、試作は回路の修正なしで動いたという。数値は Diode の社内ベンチマークが中心で、両社には商業上の関係がある。</summary>
   </entry>
   <entry>
+    <title>Claude Code 2.1.327、MCP サーバーの JSON を標準入力から渡せる、.mcp.json や git-ignored のファイルが消える不具合を修正、auto mode の課金フォールバックは今後の版で廃止と予告</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-2-1-327-mcp-add-json-stdin-exitworktree-ask-auto-mode-fallback-removal-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-2-1-327-mcp-add-json-stdin-exitworktree-ask-auto-mode-fallback-removal-2026</id>
+    <published>2026-11-18T15:00:00Z</published>
+    <updated>2026-11-18T15:00:00Z</updated>
+    <summary>Claude Code の公式 changelog に 2.1.327（11月17日付）が載った。項目は173件で、うち修正が100件ある。claude mcp add-json は JSON を標準入力から読めるようになり、トークンをコマンドラインに残さずに済む。Remote Control のサーバー停止で .env などの git-ignored のファイルが消える、claude mcp add が .mcp.json のほかのキーを消す、/export が確認なしに上書きする、といったファイルを失う種類の不具合が直った。auto mode が課金される分類器リクエストに切り替わる仕組みは、今後の版で廃止すると予告されている。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が脆弱性の開示期限を90日から30日・45日に短縮 — Claude が見つけた脆弱性が対象、2027年1月1日以降の報告から。「AI は同じバグを別々に見つける」ことを理由に挙げる</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-cvd-policy-timelines-30-45-days-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-cvd-policy-timelines-30-45-days-2026</id>

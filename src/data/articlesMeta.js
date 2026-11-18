@@ -13907,5 +13907,24 @@ export const ARTICLES_META = [
       "ベンチマーク",
       "研究"
     ]
+  },
+  {
+    "id": "claude-code-2-1-327-mcp-add-json-stdin-exitworktree-ask-auto-mode-fallback-removal-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.327、MCP サーバーの JSON を標準入力から渡せる、.mcp.json や git-ignored のファイルが消える不具合を修正、auto mode の課金フォールバックは今後の版で廃止と予告",
+    "excerpt": "Claude Code の公式 changelog に 2.1.327（11月17日付）が載った。項目は173件で、うち修正が100件ある。claude mcp add-json は JSON を標準入力から読めるようになり、トークンをコマンドラインに残さずに済む。Remote Control のサーバー停止で .env などの git-ignored のファイルが消える、claude mcp add が .mcp.json のほかのキーを消す、/export が確認なしに上書きする、といったファイルを失う種類の不具合が直った。auto mode が課金される分類器リクエストに切り替わる仕組みは、今後の版で廃止すると予告されている。",
+    "date": "2026-11-18",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "セキュリティ",
+      "権限",
+      "MCP",
+      "サンドボックス"
+    ]
   }
 ];
