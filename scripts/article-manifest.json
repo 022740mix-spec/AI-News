@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-11-18",
-  "count": 674,
+  "count": 675,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -244,6 +244,7 @@
     "codex-cli-0-167-agents-command-center-backend-switch-network-prompts-2026",
     "codex-cli-0-168-model-providers-tui-workspace-audio-attachments-2026",
     "codex-cli-0-169-side-chat-tabs-exec-trust-custom-providers-2026",
+    "codex-cli-0-170-sandbox-restrictions-preserved-same-named-mcp-environments-2026",
     "codex-plugins-marketplace-2026",
     "codex-responses-error-event-retried-six-times-2026",
     "codex-reusable-cloud-environments-publish-2026",

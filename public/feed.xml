@@ -40,6 +40,14 @@
     <summary>Claude Code の公式 changelog に 2.1.327（11月17日付）が載った。項目は173件で、うち修正が100件ある。claude mcp add-json は JSON を標準入力から読めるようになり、トークンをコマンドラインに残さずに済む。Remote Control のサーバー停止で .env などの git-ignored のファイルが消える、claude mcp add が .mcp.json のほかのキーを消す、/export が確認なしに上書きする、といったファイルを失う種類の不具合が直った。auto mode が課金される分類器リクエストに切り替わる仕組みは、今後の版で廃止すると予告されている。</summary>
   </entry>
   <entry>
+    <title>Codex CLI 0.170.0 の変更点、権限の更新や子スレッドでサンドボックスの制限が失われる不具合を修正、同じ名前の MCP サーバーを環境ごとに分けて扱う実験機能</title>
+    <link rel="alternate" type="text/html" href="?a=codex-cli-0-170-sandbox-restrictions-preserved-same-named-mcp-environments-2026"/>
+    <id>tag:ai-tool-news.jp,2026:codex-cli-0-170-sandbox-restrictions-preserved-same-named-mcp-environments-2026</id>
+    <published>2026-11-18T15:00:00Z</published>
+    <updated>2026-11-18T15:00:00Z</updated>
+    <summary>OpenAI の Codex CLI の 0.170.0 が11月18日に公開された。0.169.0 から約5日ぶりの版である。権限を更新したときや子スレッドを作ったときに、既にあるサンドボックスの制限が失われる不具合が直った。別々の環境にある同じ名前の MCP サーバーを区別して扱う実験機能が入り、既定では無効である。ほかに、端末画面での音声通話の接続方式、MCP の OAuth 資格情報の競合、Windows でのファイル置換の修正がある。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が脆弱性の開示期限を90日から30日・45日に短縮 — Claude が見つけた脆弱性が対象、2027年1月1日以降の報告から。「AI は同じバグを別々に見つける」ことを理由に挙げる</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-cvd-policy-timelines-30-45-days-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-cvd-policy-timelines-30-45-days-2026</id>

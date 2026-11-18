@@ -13926,5 +13926,23 @@ export const ARTICLES_META = [
       "MCP",
       "サンドボックス"
     ]
+  },
+  {
+    "id": "codex-cli-0-170-sandbox-restrictions-preserved-same-named-mcp-environments-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.170.0 の変更点、権限の更新や子スレッドでサンドボックスの制限が失われる不具合を修正、同じ名前の MCP サーバーを環境ごとに分けて扱う実験機能",
+    "excerpt": "OpenAI の Codex CLI の 0.170.0 が11月18日に公開された。0.169.0 から約5日ぶりの版である。権限を更新したときや子スレッドを作ったときに、既にあるサンドボックスの制限が失われる不具合が直った。別々の環境にある同じ名前の MCP サーバーを区別して扱う実験機能が入り、既定では無効である。ほかに、端末画面での音声通話の接続方式、MCP の OAuth 資格情報の競合、Windows でのファイル置換の修正がある。",
+    "date": "2026-11-18",
+    "newsDate": "2026-11-18",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "サンドボックス",
+      "MCP"
+    ]
   }
 ];
