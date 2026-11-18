@@ -13854,6 +13854,133 @@ export const ARTICLES_META = [
     ]
   },
   {
+    "id": "qwen-code-0-28-0-shared-agent-loop-default-web-shell-worktree-qwen4-max-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Qwen Code v0.28.0 — 共有エージェントループが非対話実行・TUI・サブエージェントで既定に、Web Shell の新規セッションは隔離されたワークツリーで始まる、qwen4-max に対応",
+    "excerpt": "QwenLM の Qwen Code で v0.28.0 が11月17日に出た。v0.27.4 で実験的な設定だった共有エージェントループが、非対話実行（-p と stream-json）、Ink の TUI、サブエージェントで既定になり、ターン上限やフックの発火の仕方が変わる。Web Shell の新規セッションは既定で detached HEAD のワークツリーを使う。qwen4-max への対応も入った。リリースノートは破壊的変更を「既知のものは無い」とするが、個別の PR には挙動の変更が書かれている。",
+    "date": "2026-11-18",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Qwen Code",
+      "CLI",
+      "Qwen",
+      "開発ツール",
+      "エージェント"
+    ]
+  },
+  {
+    "id": "microsoft-pdd-kit-proof-driven-development-verus-chopin-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Microsoft Research の「PDD Kit」— エージェントが書いたコードを、人が決めた仕様に対して証明で確かめる。人が読むのはコードではなく意図と、証明が届かない「信頼した部分」",
+    "excerpt": "Microsoft Research が11月5日、Proof-Driven Development（証明駆動開発）の道具「PDD Kit」を紹介した。開発者の2文の要求から質問を返して意図を固め、Rust の検証器 Verus の仕様に変換し、エージェントの実装がすべての入力で仕様を満たすことを証明する。証明できない部分は「信頼した部分」として人が1つずつ承認し、テストで確かめる。約5,000行の Rust 製 Web アプリのログイン処理で試した結果が示されている。研究試作で、対象は Rust のみ。",
+    "date": "2026-11-18",
+    "newsDate": "2026-11-05",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Microsoft",
+      "形式検証",
+      "エージェント",
+      "Rust",
+      "開発ツール",
+      "研究"
+    ]
+  },
+  {
+    "id": "anthropic-claude-electronics-design-diode-three-prototypes-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Anthropic、Claude Fable 5.2 に電子機器3台を設計させた結果を公開 — 基板の配置・配線から筐体・ファームウェアまで、試作は回路の手直しなしで動作。認証や量産の検証はしていない",
+    "excerpt": "Anthropic が11月9日、Claude Fable 5.2 に電子機器を設計させた結果を公開した。基板メーカー Diode Computers と組み、スピーカーフォン、音声アシスタントのハブ、携帯型の電子ペットの3台について、仕様、回路図、基板の配置と配線、筐体、ファームウェア、部品表までを Claude が作った。組み立てと動作確認は Diode の技術者が行い、試作は回路の修正なしで動いたという。数値は Diode の社内ベンチマークが中心で、両社には商業上の関係がある。",
+    "date": "2026-11-18",
+    "newsDate": "2026-11-09",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Fable 5",
+      "ハードウェア",
+      "ベンチマーク",
+      "研究"
+    ]
+  },
+  {
+    "id": "claude-code-2-1-327-mcp-add-json-stdin-exitworktree-ask-auto-mode-fallback-removal-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.327、MCP サーバーの JSON を標準入力から渡せる、.mcp.json や git-ignored のファイルが消える不具合を修正、auto mode の課金フォールバックは今後の版で廃止と予告",
+    "excerpt": "Claude Code の公式 changelog に 2.1.327（11月17日付）が載った。項目は173件で、うち修正が100件ある。claude mcp add-json は JSON を標準入力から読めるようになり、トークンをコマンドラインに残さずに済む。Remote Control のサーバー停止で .env などの git-ignored のファイルが消える、claude mcp add が .mcp.json のほかのキーを消す、/export が確認なしに上書きする、といったファイルを失う種類の不具合が直った。auto mode が課金される分類器リクエストに切り替わる仕組みは、今後の版で廃止すると予告されている。",
+    "date": "2026-11-18",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "セキュリティ",
+      "権限",
+      "MCP",
+      "サンドボックス"
+    ]
+  },
+  {
+    "id": "codex-cli-0-170-sandbox-restrictions-preserved-same-named-mcp-environments-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.170.0 の変更点、権限の更新や子スレッドでサンドボックスの制限が失われる不具合を修正、同じ名前の MCP サーバーを環境ごとに分けて扱う実験機能",
+    "excerpt": "OpenAI の Codex CLI の 0.170.0 が11月18日に公開された。0.169.0 から約5日ぶりの版である。権限を更新したときや子スレッドを作ったときに、既にあるサンドボックスの制限が失われる不具合が直った。別々の環境にある同じ名前の MCP サーバーを区別して扱う実験機能が入り、既定では無効である。ほかに、端末画面での音声通話の接続方式、MCP の OAuth 資格情報の競合、Windows でのファイル置換の修正がある。",
+    "date": "2026-11-18",
+    "newsDate": "2026-11-18",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Codex",
+      "CLI",
+      "OpenAI",
+      "サンドボックス",
+      "MCP"
+    ]
+  },
+  {
+    "id": "feature-anthropic-2026-us-midterms-election-safeguards-outside-reviews-2026",
+    "type": "feature",
+    "category": "special",
+    "title": "【分析】「誰に投票すべきか」を尋ねる会話は1万件に1件 — Anthropic が米中間選挙前に公表した利用実態と、外部の5団体に見つけてもらった Claude の弱点を読む",
+    "excerpt": "Anthropic は10月14日、米中間選挙に向けた対策をまとめた文書を公開した。米国の Claude.ai の会話約25万件の分類では、政治・政策に触れる会話が約5.75%、選挙や投票そのものは約0.51%、誰に・何に投票すべきかを尋ねるものは約0.01%だった。文書は外部の5団体による点検の結果も載せており、頼まれていない但し書きや反論を足すこと、右寄りの主張をより弱めて書く傾向があったこと、無害に見える小さな依頼に分割された工作は見逃しうることを挙げている。数字の測り方と、この文書だけでは分からないことを整理する。",
+    "date": "2026-11-18",
+    "newsDate": "2026-10-14",
+    "author": "AI News 編集部",
+    "readTime": "9分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "AI安全性",
+      "評価"
+    ]
+  },
+  {
+    "id": "anthropic-claude-black-hole-physics-hawking-page-modular-bootstrap-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Anthropic、Claude がブラックホールの理論物理で未解決だった問題を2つ解いたと公表 — 20年あまり手つかずだった計算を完了、もう1つは上限の厳密な値を証明。論文は査読前",
+    "excerpt": "Anthropic が11月17日、Claude が理論物理の未解決問題を2つ解いたとする文章を公開した。1つは、2003年に物理学者が道筋を示したまま完了していなかった計算で、ブラックホールの形成に対応する相転移が「急な切り替わり」であることを示した。もう1つは、3次元重力で最も軽いブラックホールの質量の上限について、数値計算が示唆していた値を厳密な式として証明した。22件の候補を別々のエージェントに割り当て、約6週間動かした結果だという。成果は当事者の説明で、論文は査読前の原稿である。",
+    "date": "2026-11-19",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Anthropic",
+      "Fable 5",
+      "研究",
+      "エージェント",
+      "マルチエージェント"
+    ]
+  },
+  {
     "id": "alibaba-qwen4-max-launch-1m-context-pricing-work360-2026",
     "type": "news",
     "category": "model",

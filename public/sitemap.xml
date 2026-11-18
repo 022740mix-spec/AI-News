@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://022740mix-spec.github.io/AI-News/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -3999,6 +3999,48 @@
   <url>
     <loc>https://022740mix-spec.github.io/AI-News/?a=anthropic-flashprove-provable-inference-zksnark-llama-4-maverick-2026</loc>
     <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://022740mix-spec.github.io/AI-News/?a=qwen-code-0-28-0-shared-agent-loop-default-web-shell-worktree-qwen4-max-2026</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://022740mix-spec.github.io/AI-News/?a=microsoft-pdd-kit-proof-driven-development-verus-chopin-2026</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://022740mix-spec.github.io/AI-News/?a=anthropic-claude-electronics-design-diode-three-prototypes-2026</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://022740mix-spec.github.io/AI-News/?a=claude-code-2-1-327-mcp-add-json-stdin-exitworktree-ask-auto-mode-fallback-removal-2026</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://022740mix-spec.github.io/AI-News/?a=codex-cli-0-170-sandbox-restrictions-preserved-same-named-mcp-environments-2026</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://022740mix-spec.github.io/AI-News/?a=feature-anthropic-2026-us-midterms-election-safeguards-outside-reviews-2026</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://022740mix-spec.github.io/AI-News/?a=anthropic-claude-black-hole-physics-hawking-page-modular-bootstrap-2026</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
