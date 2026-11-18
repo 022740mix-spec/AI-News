@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-11-18T15:00:00Z</updated>
+  <updated>2026-11-19T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Anthropic、Claude がブラックホールの理論物理で未解決だった問題を2つ解いたと公表 — 20年あまり手つかずだった計算を完了、もう1つは上限の厳密な値を証明。論文は査読前</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-black-hole-physics-hawking-page-modular-bootstrap-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-black-hole-physics-hawking-page-modular-bootstrap-2026</id>
+    <published>2026-11-19T15:00:00Z</published>
+    <updated>2026-11-19T15:00:00Z</updated>
+    <summary>Anthropic が11月17日、Claude が理論物理の未解決問題を2つ解いたとする文章を公開した。1つは、2003年に物理学者が道筋を示したまま完了していなかった計算で、ブラックホールの形成に対応する相転移が「急な切り替わり」であることを示した。もう1つは、3次元重力で最も軽いブラックホールの質量の上限について、数値計算が示唆していた値を厳密な式として証明した。22件の候補を別々のエージェントに割り当て、約6週間動かした結果だという。成果は当事者の説明で、論文は査読前の原稿である。</summary>
+  </entry>
   <entry>
     <title>Qwen Code v0.28.0 — 共有エージェントループが非対話実行・TUI・サブエージェントで既定に、Web Shell の新規セッションは隔離されたワークツリーで始まる、qwen4-max に対応</title>
     <link rel="alternate" type="text/html" href="?a=qwen-code-0-28-0-shared-agent-loop-default-web-shell-worktree-qwen4-max-2026"/>
