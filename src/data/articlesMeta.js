@@ -13981,6 +13981,25 @@ export const ARTICLES_META = [
     ]
   },
   {
+    "id": "claude-platform-linked-billing-beta-billing-policy-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude Platform に Linked billing（ベータ）— アプリの利用者が自分の Claude 組織で API 料金を払う。誰が払うかはリクエストごとに billing_policy で指定、請求できなければ拒否される",
+    "excerpt": "Anthropic が11月17日、Claude Platform に Linked billing をベータで追加した。Claude API を組み込んだアプリの開発者が、利用料を顧客の Claude 組織に直接請求できる仕組みである。顧客が OAuth で一度つなぐと、開発者はリクエストごとに「顧客が払う」か「自分が払う」かを選ぶ。顧客に請求できない場合、API は開発者に黙って付け替えず、リクエストを拒否する。対象は Anthropic に API 料金を直接払っている組織に限られ、リクエストは開発者側の組織で実行されるため、顧客側のデータ保持の取り決めは適用されない。",
+    "date": "2026-11-19",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Anthropic",
+      "Claude API",
+      "API",
+      "料金",
+      "認証",
+      "エンタープライズ"
+    ]
+  },
+  {
     "id": "alibaba-qwen4-max-launch-1m-context-pricing-work360-2026",
     "type": "news",
     "category": "model",
