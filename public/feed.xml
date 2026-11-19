@@ -24,6 +24,14 @@
     <summary>Anthropic が11月17日、Claude Platform に Linked billing をベータで追加した。Claude API を組み込んだアプリの開発者が、利用料を顧客の Claude 組織に直接請求できる仕組みである。顧客が OAuth で一度つなぐと、開発者はリクエストごとに「顧客が払う」か「自分が払う」かを選ぶ。顧客に請求できない場合、API は開発者に黙って付け替えず、リクエストを拒否する。対象は Anthropic に API 料金を直接払っている組織に限られ、リクエストは開発者側の組織で実行されるため、顧客側のデータ保持の取り決めは適用されない。</summary>
   </entry>
   <entry>
+    <title>Anthropic が IPO の公開価格を1株 83 ドルに決定 — 想定価格帯の上限 78 ドルを上回り、募集は9億8,000万株に増加。取引開始は11月19日の予定</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-ipo-priced-83-dollars-980m-shares-nasdaq-ant-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-ipo-priced-83-dollars-980m-shares-nasdaq-ant-2026</id>
+    <published>2026-11-19T15:00:00Z</published>
+    <updated>2026-11-19T15:00:00Z</updated>
+    <summary>Anthropic は11月18日、新規株式公開（IPO）の公開価格を1株 83.00 ドルに決めたと発表した。募集は Class A 普通株 9億8,000万株で、ロードショー開始時の8億2,500万株から増えた。増えた1億5,500万株はすべて同社が売り出す分である。SEC は同日に登録届出書の効力発生を宣言した。Nasdaq での取引開始は11月19日、払込みの完了は11月20日の予定と書かれている。評価額と資金の使い道は発表文に無い。</summary>
+  </entry>
+  <entry>
     <title>Qwen Code v0.28.0 — 共有エージェントループが非対話実行・TUI・サブエージェントで既定に、Web Shell の新規セッションは隔離されたワークツリーで始まる、qwen4-max に対応</title>
     <link rel="alternate" type="text/html" href="?a=qwen-code-0-28-0-shared-agent-loop-default-web-shell-worktree-qwen4-max-2026"/>
     <id>tag:ai-tool-news.jp,2026:qwen-code-0-28-0-shared-agent-loop-default-web-shell-worktree-qwen4-max-2026</id>

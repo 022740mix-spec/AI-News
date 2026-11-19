@@ -14000,6 +14000,21 @@ export const ARTICLES_META = [
     ]
   },
   {
+    "id": "anthropic-ipo-priced-83-dollars-980m-shares-nasdaq-ant-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Anthropic が IPO の公開価格を1株 83 ドルに決定 — 想定価格帯の上限 78 ドルを上回り、募集は9億8,000万株に増加。取引開始は11月19日の予定",
+    "excerpt": "Anthropic は11月18日、新規株式公開（IPO）の公開価格を1株 83.00 ドルに決めたと発表した。募集は Class A 普通株 9億8,000万株で、ロードショー開始時の8億2,500万株から増えた。増えた1億5,500万株はすべて同社が売り出す分である。SEC は同日に登録届出書の効力発生を宣言した。Nasdaq での取引開始は11月19日、払込みの完了は11月20日の予定と書かれている。評価額と資金の使い道は発表文に無い。",
+    "date": "2026-11-19",
+    "newsDate": "2026-11-18",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "IPO"
+    ]
+  },
+  {
     "id": "alibaba-qwen4-max-launch-1m-context-pricing-work360-2026",
     "type": "news",
     "category": "model",
