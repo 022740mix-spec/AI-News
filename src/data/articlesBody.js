@@ -34410,6 +34410,77 @@ const ARTICLES_BODY = {
         "url": "https://pypi.org/project/skillevaluator/"
       }
     ]
+  },
+  "gemini-cli-0-69-readme-enterprise-only-not-tuned-gemini-4-gemini-api-cli-2026": {
+    "body": [
+      "npm のレジストリで、@google/gemini-cli の latest タグが 0.69.0 を指すようになった。公開時刻は2026年11月19日 01:51 UTC である。GitHub のリリースページにも v0.69.0 が載っている。一方、リポジトリの docs/changelogs/latest.md は、本記事を書いた時点ではまだ v0.68.0（11月10日）を最新の安定版としている。以下は、GitHub のリリースページの変更一覧と、同じ内容を先に載せていたプレビュー版（v0.69.0-preview.0、11月10日）の変更履歴に基づく整理で、実際の挙動は検証していない。前の版は[Gemini CLI 0.68.0 の記事](?a=gemini-cli-0-68-extension-validate-rate-limit-countdown-subagentstop-2026)で扱った。",
+      "0.69.0 の変更一覧は33件で、版の更新や変更履歴の追加といった作業用の3件を除くと30件ある。大半は修正である。機能の追加は3つで、日ごとのトークン使用量を表示する /stats heatmap サブコマンド（#30135）、カスタムテーマを独立した theme.json で設定する方法（#30119）、/model コマンドで引数を直接渡せるようにし、モデル名を検証する変更（#30137）である。",
+      "通信が詰まったときの動作に関する修正がまとまっている。API のヘッダーを待つ60秒のタイムアウトは、すべての認証方式で、設定の model.requestTimeoutMs か環境変数 GEMINI_API_HEADERS_TIMEOUT_MS で上書きできるようになった（#30183）。ネットワークの障害時に、何も表示しないまま数分間読み込み中のままになる問題（#30182）と、クォータ超過のあとの再試行が数時間に及ぶ問題（#30187）が直った。後者では、再試行のたびに ACP（エディタなどからエージェントを操作するためのプロトコル）のクライアントへ通知するようになった。",
+      "無人実行とサンドボックスに関わる修正もある。非対話（ヘッドレス）の実行を中断したとき、子プロセスを終了させ、取り消されたツールを記録し、シグナルによる終了コードを保つようになった（#30204）。macOS の Seatbelt サンドボックスに入る前に、フォルダの信頼の判定を済ませるようになった（#30164）。シェルモードの中から対話型の gemini を再帰的に起動してしまうことを防ぐ修正（#30185）、Windows の PowerShell でコマンド置換を誤って検出する問題とポリシーの扱いの修正（#30110）も入っている。ほかに、複数ファイルの読み込みで、明示的に求められたバイナリだけを本文に埋め込むようにする修正（#30211）、セッションの再開時にモデルのターンが 400 エラーで終わる問題の修正（#30186）などがある。",
+      "ここまでは通常の版の更新である。ただし、いまの Gemini CLI を使うかどうかを考えるうえでは、変更一覧よりも README の冒頭のほうが重要な情報を含んでいる。0.68.0 の変更一覧には「README で Gemini CLI の対象範囲、制約、周辺ツールとの関係を明確にする」という変更（#29995）があり、当サイトの 0.68.0 の記事はこれを1文で触れただけだった。11月19日に読んだ README の冒頭には、「インストールの前に読んでください — Gemini CLI の状況とツールの案内」という見出しの告知があり、4点が書かれている。",
+      "1点め、Gemini CLI は Gemini Code Assist Standard / Enterprise のライセンスと、Google Cloud の Code Assist for GitHub のために設計されている。2点め、無料枠と Google AI のプランは対象外で、個人の無料利用と Google AI Pro / Ultra は2026年6月18日に Antigravity CLI に移った。3点め、Gemini 4 シリーズ（例として Gemini 4 Argon を挙げている）と、この世代以降のモデルには最適化していない。4点め、Gemini のモデルのベンチマークに Gemini CLI を使わないでほしい。理由として、ハーネス（モデルを動かす側の仕組み）が Gemini 4 以降に調整されておらず、代表的でない点数が出ると書かれている。告知の下の本文も、Gemini CLI を「Google Cloud 上の企業向け Gemini Code Assist のワークフローのために保守されているオープンソースのターミナルエージェント」と説明している。",
+      "2点めの個人向けの移行は、当サイトでも [Gemini CLI のレビュー](?a=gemini-cli)の注記で扱ってきた。今回 README で新しく確認できたのは、3点めと4点めである。週に1回ほどの間隔で安定版が出続けていることと、Google の現行世代である Gemini 4 に向けた調整はしないと開発元が書いていることは、両立している。版の更新が続いていることだけを見て、Gemini 4 を使うための CLI だと受け取ると、開発元の説明とずれる。Gemini CLI で Gemini 4 のモデルを動かして他社のモデルやツールと比べた結果を見かけた場合も、開発元がこの使い方を勧めていないことは判断材料になる。",
+      "告知には「どの Google の CLI が必要か」という表が付いている。3本が並ぶ。Antigravity CLI（コマンド名 agy）は、対話型のマルチエージェントのコーディング用ターミナルで、Gemini 4 Argon 以降を使う場合、無料または Google AI Pro / Ultra のアカウント、Google Cloud の場合に使うとされる。Gemini CLI（gemini）は、Gemini Code Assist Standard / Enterprise か Code Assist for GitHub を持つ組織向けで、従来の有料 API キーと Vertex のキーも括弧書きで挙げられている。そして3本めが Gemini API CLI（gemini-api）である。",
+      "Gemini API CLI は、当サイトでまだ取り上げていなかった。google-gemini/gemini-api-cli の README は、これを「コーディング用のハーネスではない」状態を持たない CLI と位置づけ、Codex、Claude Code、Antigravity、OpenClaw、Hermes など、シェルを使えるエージェントに Gemini API を使わせるためのものと説明している。エージェントが計画を立て、必要になったときにこのコマンドを呼んで、画像・音声・音楽・動画の生成、PDF や動画などのファイルの分析、文字起こし、バックグラウンドで動くマネージドエージェント（例は Deep Research）の起動を行う。コマンドと引数、リクエストのスキーマはバイナリ自身から --help、--usage、--schema で取り出せる。--dry-run は、ネットワークに接続せず、資格情報を伏せた形で送信予定の HTTP リクエストを表示する。Go で書かれた単一のバイナリで、ライセンスは Apache 2.0 である。リポジトリの説明欄には「実験的」と書かれている。",
+      "つまり Google は、自社のコーディングエージェント（Antigravity CLI）とは別に、他社のエージェントから自社のモデルを呼ぶための入口を用意している。README の例に Claude Code と Codex が名前で出てくる。エージェントを選ぶことと、そのエージェントが作業の途中で呼ぶモデルを選ぶことは、1対1に結び付かなくなっている。エディタとエージェントが1対1の関係でなくなったのと同じ形が、CLI とモデルの間にも出ている。",
+      "導入の前に確かめたい点がある。README は macOS と Linux 向けの導入方法として、インストール用スクリプトを curl で取得してそのまま bash に渡すコマンドを載せている。取得元は google-gemini の公式リポジトリである。当サイトがスクリプト（230行）を読んだ範囲では、GitHub のリリースから最新版のアーカイブを取得して /usr/local/bin などに置く内容で、環境変数 GEMINI_VERSION で版を固定できる。取得したアーカイブのチェックサムや署名を検証する処理は、読んだ範囲では見当たらなかった。取得したスクリプトを確認せずにそのまま実行する形は、取得元が公式であっても、内容を事前に確かめられない。スクリプトを一度ファイルに保存して読んでから実行する、リリースページから版を指定してバイナリを取得する、go install を使う、といった方法を、所属先の方針に合わせて選んでほしい。また、このコマンドはエージェントが自分の判断で呼ぶ前提で作られている。生成のたびに API の利用が発生するため、エージェントに渡す API キーの権限と上限は、渡す前に決めておく必要がある。",
+      "確認できていないこと。README の告知が入った正確な日付は確認していない（告知に対応する変更 #29995 が 0.68.0 の変更一覧に含まれることまでを確認した）。Gemini API CLI のリリースページには v0.4.6 が「11月10日」付で載っているが、最初の公開日は確認できていない。GitHub のスター数は、11月19日に見た時点で約500だった。Antigravity CLI の側のドキュメントと、移行を告知した Google のブログ記事は、本記事では読み直していない。0.69.0 の変更は一覧の1行ずつの記載に基づいており、個々の修正の条件や影響範囲は分からない。",
+      "【編集履歴】2026-11-19 新規公開。Gemini CLI と Gemini API CLI のリポジトリの README、変更履歴、GitHub のリリースページ、npm レジストリの記載に基づく。動作は検証していない。"
+    ],
+    "tables": [
+      {
+        "caption": "Gemini CLI の README が示す Google の CLI 3本の使い分け（2026年11月19日に読んだ README の表を整理）",
+        "afterParagraph": 8,
+        "headers": [
+          "ツール（コマンド名）",
+          "README が挙げる用途",
+          "位置づけ"
+        ],
+        "rows": [
+          [
+            "Antigravity CLI（agy）",
+            "Gemini 4 Argon 以降を使う場合、無料または Google AI Pro / Ultra のアカウント、Google Cloud",
+            "対話型のマルチエージェントのコーディング用ターミナル"
+          ],
+          [
+            "Gemini API CLI（gemini-api）",
+            "エージェント（agy、Claude Code、Codex）、スクリプト、CI から Gemini のモデル、メディア生成、ファイル分析、マネージドエージェントを直接呼ぶ",
+            "状態を持たない API 用の CLI。コーディング用のハーネスではない"
+          ],
+          [
+            "Gemini CLI（gemini）",
+            "Gemini Code Assist Standard / Enterprise か Code Assist for GitHub を持つ組織（従来の有料 API キー・Vertex のキーも記載）",
+            "企業向け Code Assist のワークフローのために保守。Gemini 4 以降には最適化していない"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "google-gemini/gemini-cli README（冒頭の告知「Read before installing」）",
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/README.md"
+      },
+      {
+        "title": "Gemini CLI v0.69.0（GitHub Releases）",
+        "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.69.0"
+      },
+      {
+        "title": "Gemini CLI 変更履歴（preview、v0.69.0-preview.0）",
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/preview.md"
+      },
+      {
+        "title": "@google/gemini-cli（npm レジストリ、公開日時と配布タグ）",
+        "url": "https://registry.npmjs.org/@google/gemini-cli"
+      },
+      {
+        "title": "google-gemini/gemini-api-cli README",
+        "url": "https://github.com/google-gemini/gemini-api-cli/blob/main/README.md"
+      },
+      {
+        "title": "gemini-api-cli scripts/install.sh（インストール用スクリプト）",
+        "url": "https://github.com/google-gemini/gemini-api-cli/blob/main/scripts/install.sh"
+      }
+    ]
   }
 };
 

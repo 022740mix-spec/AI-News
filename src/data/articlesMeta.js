@@ -14050,5 +14050,23 @@ export const ARTICLES_META = [
       "セキュリティ",
       "オープンソース"
     ]
+  },
+  {
+    "id": "gemini-cli-0-69-readme-enterprise-only-not-tuned-gemini-4-gemini-api-cli-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Gemini CLI 0.69.0 と、README の冒頭に入った告知 — 「企業向け Code Assist 専用」「Gemini 4 以降には調整していない」「モデルのベンチマークに使わないで」。Google の CLI は3本に分かれた",
+    "excerpt": "Gemini CLI 0.69.0 が11月19日に npm の latest になった。/stats heatmap、API のタイムアウトの上書き、非対話実行を中断したときの子プロセスの終了などが入っている。あわせて、リポジトリの README の冒頭には「インストールの前に読んでほしい」という告知があり、Gemini CLI は企業向けの Gemini Code Assist のためのもので、Gemini 4 以降には調整していないと書かれている。同じ告知は、ほかのエージェントから Gemini API を呼ぶための別の CLI「Gemini API CLI」も案内している。",
+    "date": "2026-11-19",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Gemini CLI",
+      "Google",
+      "CLI",
+      "開発ツール",
+      "Gemini"
+    ]
   }
 ];

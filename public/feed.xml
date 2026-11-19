@@ -48,6 +48,14 @@
     <summary>NVIDIA が Apache 2.0 で公開している SkillEvaluator の変更履歴に、11月17日付で 1.0.0 と 1.0.1 が載った。エージェント用スキル（Agent Skills）を、API キー無しで走る静的検査、内容の重複検出、スキルを入れた場合と入れない場合の実行比較、の3段で調べるツールである。1.0 では、Claude Code・Codex・Copilot CLI など6つのエージェントがそのスキルを読み込めるかを調べる harness-check が加わった。サポート区分は Experimental とされている。</summary>
   </entry>
   <entry>
+    <title>Gemini CLI 0.69.0 と、README の冒頭に入った告知 — 「企業向け Code Assist 専用」「Gemini 4 以降には調整していない」「モデルのベンチマークに使わないで」。Google の CLI は3本に分かれた</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-cli-0-69-readme-enterprise-only-not-tuned-gemini-4-gemini-api-cli-2026"/>
+    <id>tag:ai-tool-news.jp,2026:gemini-cli-0-69-readme-enterprise-only-not-tuned-gemini-4-gemini-api-cli-2026</id>
+    <published>2026-11-19T15:00:00Z</published>
+    <updated>2026-11-19T15:00:00Z</updated>
+    <summary>Gemini CLI 0.69.0 が11月19日に npm の latest になった。/stats heatmap、API のタイムアウトの上書き、非対話実行を中断したときの子プロセスの終了などが入っている。あわせて、リポジトリの README の冒頭には「インストールの前に読んでほしい」という告知があり、Gemini CLI は企業向けの Gemini Code Assist のためのもので、Gemini 4 以降には調整していないと書かれている。同じ告知は、ほかのエージェントから Gemini API を呼ぶための別の CLI「Gemini API CLI」も案内している。</summary>
+  </entry>
+  <entry>
     <title>Qwen Code v0.28.0 — 共有エージェントループが非対話実行・TUI・サブエージェントで既定に、Web Shell の新規セッションは隔離されたワークツリーで始まる、qwen4-max に対応</title>
     <link rel="alternate" type="text/html" href="?a=qwen-code-0-28-0-shared-agent-loop-default-web-shell-worktree-qwen4-max-2026"/>
     <id>tag:ai-tool-news.jp,2026:qwen-code-0-28-0-shared-agent-loop-default-web-shell-worktree-qwen4-max-2026</id>
