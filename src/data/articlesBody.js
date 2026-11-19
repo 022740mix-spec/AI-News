@@ -34260,6 +34260,94 @@ const ARTICLES_BODY = {
         "url": "https://www.anthropic.com/news/s1-sec"
       }
     ]
+  },
+  "claude-code-2-1-328-auto-mode-third-party-4-6-hooks-code-review-scope-2026": {
+    "body": [
+      "Claude Code の公式ドキュメントの changelog に 2.1.328 が加わった。changelog の日付は2026年11月19日で、npm のレジストリでの公開は11月18日 23:09 UTC（日本時間では19日の朝）である。前の 2.1.327 の約27時間後にあたる。項目は144件で、「Fixed」が91件、「Changed」が20件、「Improved」が19件、「Added」が14件ある（接頭辞の付いた行を含めた当サイトの集計）。この記事は changelog の記載だけに基づいており、個々の変更の再現や影響範囲は検証していない。changelog の各行は1文で、対象の条件が具体的に書かれていない項目もある。以下でもその書き方のまま紹介する。",
+      "最初の項目は auto mode（分類器が操作ごとに安全かを判定して確認を省くモード）の対象の拡大である。Amazon Bedrock、Google Cloud の Agent Platform、Microsoft Foundry、Claude apps gateway を経由して使う Claude Opus 4.6 と Sonnet 4.6 に auto mode が加わった。changelog は、権限モードを指定していない対話セッションはこのモードで始まる、と書いている。「Changed」の側にも対になる行があり、これらのモデルをサードパーティのプロバイダーで使う場合、plan mode と Bash の確認画面が、新しいモデルと同じように auto mode を使い、選択肢として示すようになった。どちらも設定の disableAutoMode で止められる。",
+      "つまり、これらの経路で Opus 4.6 か Sonnet 4.6 を使い、権限モードを明示していなかった環境では、版を上げると対話セッションの始まり方が変わる。1件ずつ確認する動作を前提にしている場合は、権限モードを明示するか、disableAutoMode を設定するかを検討する材料になる。関連する修正として、ベータ機能を拒否するゲートウェイの背後で CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS を設定していると、Claude Desktop 以外で auto mode が毎ターン失敗していた不具合が直った。前の版で予告された「課金される分類器リクエストへのフォールバックの廃止」については、今回の changelog に続報は無い。",
+      "フック（ツールの実行前後などに決まった処理を差し込む仕組み）は、発火する条件が3か所で変わった。1つめに、管理設定の PostToolUse フックは、実行される前に拒否された呼び出しでは発火しなくなった。changelog は、そこではログの記録も、書き換えも、ブロックも、停止も起きないと書いている。PostToolBatch はその大半を受け取るが、拒否されたという印は付かない。2つめに、Code Mode（ツールを JavaScript のスクリプトから呼ぶ実験機能）は、スクリプトの出力に対して UserPromptSubmit フックを実行しなくなった。管理設定のフックも含む。出力を伏せたい場合は、PostToolUse フックの updatedToolOutput を使うよう案内されている。3つめに、PermissionRequest フックがシェルコマンドを、サンドボックスの除外対象のコマンドに書き換えた場合、そのコマンドはサンドボックスの外で実行されるようになった。",
+      "PostToolUse フックで拒否された呼び出しも含めて監査ログを取っていた組織や、UserPromptSubmit フックで出力中の秘密情報を伏せていた組織は、同じ記録や処理が続いているかを確かめる必要がある。追加の側では、mcp_tool 型のフックに \"onFailure\": \"block\" を指定できるようになった。コマンド型と HTTP 型のフックと同じく、フックの呼び出しが失敗したときに、その操作をブロックする。",
+      "/code-review は報告する範囲が狭くなった。多くのモデルでは、バグと CLAUDE.md の違反だけを報告する。再利用・単純化・効率の観点の整理は /simplify を実行するよう案内されている。あわせて、多くのモデルで各指摘に Important・Pre-existing・Nit の区分が付き、要約の末尾に修正案が付く。指摘が無い場合の表示は「Code review found no issues.」になった。「多くのモデル」がどのモデルを指すかは書かれていない。",
+      "サンドボックスが起動できない場合の扱いも変わった。sandbox.failIfUnavailable を設定していない場合、次にサンドボックス内で実行するはずだった Bash コマンドは拒否され、このセッションではサンドボックスが無効であることが伝えられる。変更前の動作は changelog に書かれていない。Linux では、ブランチ名が正しい UTF-8 でない場合に、Bash のサンドボックスがコマンドのたびに .git/HEAD の名前を変えていた不具合が直った。",
+      "修正には、保存した設定が消える種類のものがある。予約タスクのファイルを読めなかった場合に、予約タスクを1件保存するとプロジェクトのほかの保存済みタスクが消えていた。条件は、サードパーティのプロバイダーを使っているか、テレメトリーまたは機能フラグを切っている場合と書かれている。プロジェクトの予約タスクのファイルに書き間違いのあるタスクがあると、次にそのファイルが保存されたときに削除されていた不具合も直った。ほかに、zsh で = から始まる語（changelog の例は echo ==== と [ a == b ]）のところで Bash コマンドが「not found」で止まっていた不具合、自動のコンパクションが /compact と違ってシステムプロンプトを作り直さず、セッションの以前のものを使い回していた不具合が直っている。",
+      "セルフホストのランナー（自社のマシンでセッションを動かす構成）に関する行は26件ある。修正のうち影響が大きいと読めるのは2つである。プロキシや Web フィルターがポーリングに HTTP 200 と {} のような本文を返すと、動いているセッションがすべて止められていた。今回の版ではそのポーリングをやり直す。また、一時的なディスクのエラーのあとで、保持しているクローンのオブジェクトや参照、そこにしか無いコミットが削除されていた。今回の版では、その起動が失敗する形に変わった。変更としては、設定が Claude の GitHub ツールを名前で制限している環境で、組み込みの gh api が既定で無効になった（--use-anthropic-gh true で有効にできる）。deniedMcpServers の「claude.ai <名前>」という形式の項目は、クラウドのセッションとセルフホストのランナーのセッションでも、そのコネクタに適用されるようになった。",
+      "Code Mode に触れた行は22件あり、大半は修正である。権限の確認・プランの承認・質問が10分開いたままだとスクリプトが止まる、{ のブロックで始まる正しいスクリプトを拒否する、読み取り専用のサブエージェントに呼べない write() と edit() を提示する、先に失敗したスクリプトが設定しなかったトップレベルの変数を黙って undefined として扱う、といった不具合が直った。改善としては、auto mode と bypass permissions モードで、ほとんどのスクリプトのあとに入っていた0.75秒の待ちが無くなった。",
+      "確認できていないこと。auto mode が既定になる「権限モードを指定していない対話セッション」の正確な条件、/code-review の変更が及ぶモデル、サンドボックスが起動できなかった場合の変更前の動作は、changelog には書かれておらず、分からない。npm の配布タグは、この記事を書いた時点で latest が 2.1.328、stable が 2.1.311 を指しており、stable を使っている環境にはこの版の変更はまだ届いていない。自分の版は claude --version で確かめられる。ここで挙げたのは一部で、Remote Control、VS Code 拡張、画面表示とキー入力の修正などの大半は取り上げていない。全項目は changelog を参照してほしい。前の版の変更は[Claude Code 2.1.327 の記事](?a=claude-code-2-1-327-mcp-add-json-stdin-exitworktree-ask-auto-mode-fallback-removal-2026)にまとめている。",
+      "【編集履歴】2026-11-19 新規公開。公式 changelog の記載のみに基づく。項目数は当サイトの集計である。"
+    ],
+    "tables": [
+      {
+        "caption": "Claude Code 2.1.328 の主な変更（公式 changelog の記載を整理）",
+        "afterParagraph": 9,
+        "headers": [
+          "区分",
+          "変更内容",
+          "影響を受けやすい使い方"
+        ],
+        "rows": [
+          [
+            "auto mode の対象",
+            "Bedrock・Google Cloud の Agent Platform・Microsoft Foundry・Claude apps gateway の Opus 4.6 / Sonnet 4.6 に追加。権限モード未指定の対話セッションは auto mode で始まる。disableAutoMode で無効",
+            "サードパーティ経由で 4.6 世代を使い、権限モードを明示していない環境"
+          ],
+          [
+            "PostToolUse フック（管理設定）",
+            "実行前に拒否された呼び出しでは発火しない。PostToolBatch は大半を受け取るが、拒否の印は付かない",
+            "拒否された呼び出しも含めて監査ログを取っている組織"
+          ],
+          [
+            "Code Mode とフック",
+            "スクリプトの出力に UserPromptSubmit フックを実行しない。伏せる処理は PostToolUse の updatedToolOutput で行う",
+            "UserPromptSubmit フックで出力を検査・加工している構成"
+          ],
+          [
+            "PermissionRequest フック",
+            "サンドボックスの除外対象のコマンドに書き換えた場合、サンドボックスの外で実行",
+            "フックでコマンドを書き換えている構成"
+          ],
+          [
+            "mcp_tool フック",
+            "\"onFailure\": \"block\" を指定でき、フックの呼び出しが失敗したら操作をブロック",
+            "MCP ツールを検査に使うフック"
+          ],
+          [
+            "/code-review",
+            "多くのモデルでバグと CLAUDE.md 違反だけを報告。整理の観点は /simplify。指摘に Important・Pre-existing・Nit の区分",
+            "レビュー結果を定型で処理している運用"
+          ],
+          [
+            "サンドボックスが起動できない場合",
+            "sandbox.failIfUnavailable 未設定なら、次のサンドボックス内 Bash コマンドを拒否し、セッションで無効であると伝える",
+            "サンドボックスを前提にした無人実行"
+          ],
+          [
+            "予約タスク",
+            "ファイルを読めないときに保存するとほかのタスクが消える不具合、書き間違いのあるタスクが削除される不具合を修正",
+            "サードパーティのプロバイダーやテレメトリー無効で予約タスクを使う環境"
+          ],
+          [
+            "セルフホストのランナー",
+            "HTTP 200 と {} の応答で全セッションが止まる不具合、ディスクのエラー後にクローンのオブジェクトが削除される不具合を修正",
+            "プロキシや Web フィルターの背後でランナーを動かす構成"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code changelog（公式ドキュメント、2.1.328）",
+        "url": "https://code.claude.com/docs/en/changelog"
+      },
+      {
+        "title": "Claude Code CHANGELOG（anthropics/claude-code）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "npm レジストリ @anthropic-ai/claude-code（2.1.328 の公開日時と配布タグ）",
+        "url": "https://registry.npmjs.org/@anthropic-ai/claude-code"
+      }
+    ]
   }
 };
 

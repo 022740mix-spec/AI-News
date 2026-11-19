@@ -32,6 +32,14 @@
     <summary>Anthropic は11月18日、新規株式公開（IPO）の公開価格を1株 83.00 ドルに決めたと発表した。募集は Class A 普通株 9億8,000万株で、ロードショー開始時の8億2,500万株から増えた。増えた1億5,500万株はすべて同社が売り出す分である。SEC は同日に登録届出書の効力発生を宣言した。Nasdaq での取引開始は11月19日、払込みの完了は11月20日の予定と書かれている。評価額と資金の使い道は発表文に無い。</summary>
   </entry>
   <entry>
+    <title>Claude Code 2.1.328、Bedrock・Google Cloud・Foundry の Opus 4.6 / Sonnet 4.6 でも auto mode が既定に、/code-review はバグと CLAUDE.md 違反だけを報告、フックの発火条件が3か所で変更</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code-2-1-328-auto-mode-third-party-4-6-hooks-code-review-scope-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claude-code-2-1-328-auto-mode-third-party-4-6-hooks-code-review-scope-2026</id>
+    <published>2026-11-19T15:00:00Z</published>
+    <updated>2026-11-19T15:00:00Z</updated>
+    <summary>Claude Code の公式 changelog に 2.1.328（11月19日付）が載った。項目は144件で、うち修正が91件ある。Amazon Bedrock などのサードパーティ経由で使う Opus 4.6 と Sonnet 4.6 に auto mode が加わり、権限モードを指定しない対話セッションはこのモードで始まる。/code-review は多くのモデルでバグと CLAUDE.md 違反だけを報告するようになった。管理設定の PostToolUse フックは、実行前に拒否された呼び出しでは発火しなくなった。予約タスクのファイルが消える不具合も直っている。</summary>
+  </entry>
+  <entry>
     <title>Qwen Code v0.28.0 — 共有エージェントループが非対話実行・TUI・サブエージェントで既定に、Web Shell の新規セッションは隔離されたワークツリーで始まる、qwen4-max に対応</title>
     <link rel="alternate" type="text/html" href="?a=qwen-code-0-28-0-shared-agent-loop-default-web-shell-worktree-qwen4-max-2026"/>
     <id>tag:ai-tool-news.jp,2026:qwen-code-0-28-0-shared-agent-loop-default-web-shell-worktree-qwen4-max-2026</id>

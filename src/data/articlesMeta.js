@@ -14013,5 +14013,24 @@ export const ARTICLES_META = [
       "Anthropic",
       "IPO"
     ]
+  },
+  {
+    "id": "claude-code-2-1-328-auto-mode-third-party-4-6-hooks-code-review-scope-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.328、Bedrock・Google Cloud・Foundry の Opus 4.6 / Sonnet 4.6 でも auto mode が既定に、/code-review はバグと CLAUDE.md 違反だけを報告、フックの発火条件が3か所で変更",
+    "excerpt": "Claude Code の公式 changelog に 2.1.328（11月19日付）が載った。項目は144件で、うち修正が91件ある。Amazon Bedrock などのサードパーティ経由で使う Opus 4.6 と Sonnet 4.6 に auto mode が加わり、権限モードを指定しない対話セッションはこのモードで始まる。/code-review は多くのモデルでバグと CLAUDE.md 違反だけを報告するようになった。管理設定の PostToolUse フックは、実行前に拒否された呼び出しでは発火しなくなった。予約タスクのファイルが消える不具合も直っている。",
+    "date": "2026-11-19",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "権限",
+      "フック",
+      "サンドボックス",
+      "セルフホスト"
+    ]
   }
 ];
