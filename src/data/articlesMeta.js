@@ -14032,5 +14032,23 @@ export const ARTICLES_META = [
       "サンドボックス",
       "セルフホスト"
     ]
+  },
+  {
+    "id": "nvidia-skillevaluator-1-0-harness-check-agent-skills-three-tiers-2026",
+    "type": "news",
+    "category": "product",
+    "title": "NVIDIA の「SkillEvaluator」が 1.0 に — エージェント用スキルを静的検査・重複検出・スキルあり／なしの実行比較の3段で調べる。自分のエージェントがそのスキルを読み込むかも確かめられる",
+    "excerpt": "NVIDIA が Apache 2.0 で公開している SkillEvaluator の変更履歴に、11月17日付で 1.0.0 と 1.0.1 が載った。エージェント用スキル（Agent Skills）を、API キー無しで走る静的検査、内容の重複検出、スキルを入れた場合と入れない場合の実行比較、の3段で調べるツールである。1.0 では、Claude Code・Codex・Copilot CLI など6つのエージェントがそのスキルを読み込めるかを調べる harness-check が加わった。サポート区分は Experimental とされている。",
+    "date": "2026-11-19",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "NVIDIA",
+      "Agent Skills",
+      "エージェント",
+      "セキュリティ",
+      "オープンソース"
+    ]
   }
 ];

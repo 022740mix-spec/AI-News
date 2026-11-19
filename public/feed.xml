@@ -40,6 +40,14 @@
     <summary>Claude Code の公式 changelog に 2.1.328（11月19日付）が載った。項目は144件で、うち修正が91件ある。Amazon Bedrock などのサードパーティ経由で使う Opus 4.6 と Sonnet 4.6 に auto mode が加わり、権限モードを指定しない対話セッションはこのモードで始まる。/code-review は多くのモデルでバグと CLAUDE.md 違反だけを報告するようになった。管理設定の PostToolUse フックは、実行前に拒否された呼び出しでは発火しなくなった。予約タスクのファイルが消える不具合も直っている。</summary>
   </entry>
   <entry>
+    <title>NVIDIA の「SkillEvaluator」が 1.0 に — エージェント用スキルを静的検査・重複検出・スキルあり／なしの実行比較の3段で調べる。自分のエージェントがそのスキルを読み込むかも確かめられる</title>
+    <link rel="alternate" type="text/html" href="?a=nvidia-skillevaluator-1-0-harness-check-agent-skills-three-tiers-2026"/>
+    <id>tag:ai-tool-news.jp,2026:nvidia-skillevaluator-1-0-harness-check-agent-skills-three-tiers-2026</id>
+    <published>2026-11-19T15:00:00Z</published>
+    <updated>2026-11-19T15:00:00Z</updated>
+    <summary>NVIDIA が Apache 2.0 で公開している SkillEvaluator の変更履歴に、11月17日付で 1.0.0 と 1.0.1 が載った。エージェント用スキル（Agent Skills）を、API キー無しで走る静的検査、内容の重複検出、スキルを入れた場合と入れない場合の実行比較、の3段で調べるツールである。1.0 では、Claude Code・Codex・Copilot CLI など6つのエージェントがそのスキルを読み込めるかを調べる harness-check が加わった。サポート区分は Experimental とされている。</summary>
+  </entry>
+  <entry>
     <title>Qwen Code v0.28.0 — 共有エージェントループが非対話実行・TUI・サブエージェントで既定に、Web Shell の新規セッションは隔離されたワークツリーで始まる、qwen4-max に対応</title>
     <link rel="alternate" type="text/html" href="?a=qwen-code-0-28-0-shared-agent-loop-default-web-shell-worktree-qwen4-max-2026"/>
     <id>tag:ai-tool-news.jp,2026:qwen-code-0-28-0-shared-agent-loop-default-web-shell-worktree-qwen4-max-2026</id>
