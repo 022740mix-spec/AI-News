@@ -14068,5 +14068,25 @@ export const ARTICLES_META = [
       "開発ツール",
       "Gemini"
     ]
+  },
+  {
+    "id": "gemini-4-neon-launch-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Google が Gemini 4 Neon を発表 — 4つ目の Gemini 4 は Carbon 派生で「深さと効率の両立」。AA Index 61 で全体3位、コーディングエージェント指標は首位。入力 $3・出力 $15",
+    "excerpt": "Google が11月18日、Gemini 4 系列の4つ目のモデル Neon を発表した。Carbon から派生し、深さと効率の両立を担う。価格は入力100万トークンあたり3ドル、出力15ドルで、既定の思考レベルでのタスクあたり費用は Carbon より32%低い。Artificial Analysis Intelligence Index は61で全体3位、AA Coding Agent Index は58.6で首位。防御者限定のサイバー版も Fairwind プログラムで順次提供される。",
+    "date": "2026-11-19",
+    "newsDate": "2026-11-18",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "Gemini 4",
+      "モデル",
+      "ベンチマーク",
+      "エージェント",
+      "料金"
+    ]
   }
 ];

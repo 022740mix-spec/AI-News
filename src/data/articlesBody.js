@@ -34481,6 +34481,118 @@ const ARTICLES_BODY = {
         "url": "https://github.com/google-gemini/gemini-api-cli/blob/main/scripts/install.sh"
       }
     ]
+  },
+  "gemini-4-neon-launch-2026": {
+    "body": [
+      "Google は11月18日、Gemini 4 系列の4つ目のモデル「Gemini 4 Neon」を発表した。系列の書き分けは、最も難しい長時間のプロジェクトを担う Carbon、速い日常の実行を担う Hydrogen に対し、Neon は深さと効率の両立を担う位置づけである。Google が用途として挙げるのは、複雑なコーディング、分析的な推論、本番運用に耐えるエンタープライズのワークフロー、高頻度の利用である。公式モデルカードでは、Neon は Carbon から派生（adapted）したモデルとされている。",
+      "仕様は Gemini 4 の他のモデルとそろっている。コンテキストは入力・思考・出力で共有する100万トークンの統合ウィンドウで、出力は同期では既定で最大64Kトークン、background の long decode を使うと最大100万トークンまで伸ばせる。思考レベルは low、medium、high、xhigh の4段階である。知識カットオフは2026年3月。仕様のうち出力上限と知識カットオフはモデルカードの記載である。",
+      "価格は100万トークンあたり入力3ドル、出力15ドル。キャッシュされた入力は0.15ドルで、通常の入力の95%引きになる。単価は Hydrogen（入力1.50ドル、出力7.50ドル）の2倍で、Google は既定の思考レベル high でのタスクあたり費用が Carbon より32%低いと書いている。高頻度に回す用途を想定した価格設定である。系列の他のモデルの仕様と移行時の注意は、[Hydrogen と Carbon が Gemini API に入ったときの記事](?a=gemini-4-hydrogen-carbon-gemini-api-cookbook-migration-2026) にまとめている。",
+      "Google の発表は、第三者が運営する指標を前面に出している。Artificial Analysis の Intelligence Index では、思考レベル xhigh で61を取り、全体3位に入った。コーディングエージェントの指標（AA Coding Agent Index）では58.6で全体1位としている。Terminal-Bench 4.1 は65.2%、FrontierCode 2.0 は既定の high で46.2%である。",
+      "知識労働とエージェントの指標でも上位に並ぶ。VALS Index では70.9%で2位につけ、内訳の Legal Research Bench と Tax Agent Bench では1位だったと Google は書く。実セッションで比べる Agent Arena Index では、4,200件を超える実利用セッションに基づきスコア1336で世界2位、指示への追随のしやすさ（steerability）でも2位だった。Agents' Last Exam v1.1 は75.8%、Zapier の AutomationBench では56.3%で1位、Andon の Vending-Bench 2 でも1位（最終残高16,843ドル）である。",
+      "このほかの公表値は、Chartography 73.5%、Terminal-Bench Science 70.5%、RiemannBench 84.0%、HLE-Diamond 71.3%である。いずれも Google の発表に載った値で、本サイトが独自に測ったものではない。",
+      "サイバー防御向けの派生モデル「Gemini 4 Neon for cyber」も予告された。今後数日のうちに、Fairwind プログラムを通じて信頼できる防衛者へ順次提供される。Google が挙げる値は、AutoBaxBench の hard 区分で76%、WebExploitBench v1.2 で51.26%、SEC-bench Pro で90.5%、CWE-bench v2 で70.7%である。防御者限定のサイバー版を別建てにする進め方は、[Gemini 4 Argon](?a=gemini-4-argon-fairwind-trusted-testers-2026) や Gemini 3.8 Flash Cyber と同じ型である。",
+      "安全性の数値も発表に含まれている。エージェントの安全性スイートでの逸脱行動率は0.09%、エージェントの誠実さの評価では99.2%が合格し、Gray Swan の IPI ベンチマークでは、リアルタイムの安全策を併用した最高の思考レベルで攻撃成功率が0.0%だったとする。一方、モデルカードは Neon の Safety & Security Report の全文は今後数日の公開予定と書いており、この記事の時点ではまだ出ていない。",
+      "提供は11月18日から始まっている。Google AI Studio では Gemini API の有料枠で使え、Gemini for business では API とモデルのプルダウンから選べる。Google Antigravity は有料の AI Pro と Ultra の契約者が対象で、Gemini アプリでは Pro と Ultra の契約者が使える。",
+      "なお、Notebookcheck や 9to5Google は、Gemini アプリの AI Pro では Neon が Argon に置き換わり、Gemini 3.1 Pro が退役したと報じている。Google の発表とモデルカードにこの記述はなく、Google が確認した情報ではない。本サイトの [Gemini 4 レビュー](?a=gemini-4-review) は Carbon、Argon、Hydrogen の3モデル時点の評価で、Neon を含んでいない。ラインナップの変更が Google から正式に出たら、レビュー側の見直しとあわせて追う。",
+      "この記事の根は、Google の発表記事と公式モデルカードという一次資料である。価格と仕様は一次資料で足りる性質の主張だが、ベンチマークの数値は Google の発表に載った値で、Artificial Analysis や VALS など第三者が運営する指標も Google の発表経由で引用している。本サイトによる独立した再計測はしていない。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "Gemini 4 Neon の仕様と価格（Google の発表記事とモデルカード）",
+        "headers": [
+          "項目",
+          "内容"
+        ],
+        "rows": [
+          [
+            "価格（100万トークン）",
+            "入力 $3 / 出力 $15 / キャッシュされた入力 $0.15（95%引き）"
+          ],
+          [
+            "コンテキスト",
+            "100万トークン（入力・思考・出力で共有する統合ウィンドウ）"
+          ],
+          [
+            "出力上限",
+            "同期は既定で最大64Kトークン、background の long decode で最大100万トークン（モデルカード）"
+          ],
+          [
+            "思考レベル",
+            "low / medium / high / xhigh の4段階"
+          ],
+          [
+            "知識カットオフ",
+            "2026年3月（モデルカード）"
+          ],
+          [
+            "位置づけ",
+            "Gemini 4 Carbon から派生。深さと効率の両立"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 5,
+        "caption": "Google の発表が挙げる主なベンチマーク（第三者が運営する指標を含む。値は発表記事の記載）",
+        "headers": [
+          "指標",
+          "結果",
+          "備考"
+        ],
+        "rows": [
+          [
+            "Artificial Analysis Intelligence Index",
+            "61",
+            "思考レベル xhigh。全体3位"
+          ],
+          [
+            "AA Coding Agent Index",
+            "58.6",
+            "全体1位"
+          ],
+          [
+            "Terminal-Bench 4.1",
+            "65.2%",
+            ""
+          ],
+          [
+            "FrontierCode 2.0",
+            "46.2%",
+            "既定の high"
+          ],
+          [
+            "VALS Index",
+            "70.9%",
+            "2位。Legal Research Bench と Tax Agent Bench では1位"
+          ],
+          [
+            "Agent Arena Index",
+            "1336",
+            "世界2位。4,200件を超える実セッションに基づく"
+          ],
+          [
+            "Agents' Last Exam v1.1",
+            "75.8%",
+            ""
+          ],
+          [
+            "HLE-Diamond",
+            "71.3%",
+            ""
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Gemini 4 Neon（Google 公式ブログ）",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
+      },
+      {
+        "title": "Gemini 4 Neon Model Card（Google DeepMind）",
+        "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Neon-Model-Card.pdf"
+      }
+    ]
   }
 };
 
