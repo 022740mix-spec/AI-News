@@ -14015,6 +14015,81 @@ export const ARTICLES_META = [
     ]
   },
   {
+    "id": "claude-code-2-1-328-auto-mode-third-party-4-6-hooks-code-review-scope-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.328、Bedrock・Google Cloud・Foundry の Opus 4.6 / Sonnet 4.6 でも auto mode が既定に、/code-review はバグと CLAUDE.md 違反だけを報告、フックの発火条件が3か所で変更",
+    "excerpt": "Claude Code の公式 changelog に 2.1.328（11月19日付）が載った。項目は144件で、うち修正が91件ある。Amazon Bedrock などのサードパーティ経由で使う Opus 4.6 と Sonnet 4.6 に auto mode が加わり、権限モードを指定しない対話セッションはこのモードで始まる。/code-review は多くのモデルでバグと CLAUDE.md 違反だけを報告するようになった。管理設定の PostToolUse フックは、実行前に拒否された呼び出しでは発火しなくなった。予約タスクのファイルが消える不具合も直っている。",
+    "date": "2026-11-19",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "権限",
+      "フック",
+      "サンドボックス",
+      "セルフホスト"
+    ]
+  },
+  {
+    "id": "nvidia-skillevaluator-1-0-harness-check-agent-skills-three-tiers-2026",
+    "type": "news",
+    "category": "product",
+    "title": "NVIDIA の「SkillEvaluator」が 1.0 に — エージェント用スキルを静的検査・重複検出・スキルあり／なしの実行比較の3段で調べる。自分のエージェントがそのスキルを読み込むかも確かめられる",
+    "excerpt": "NVIDIA が Apache 2.0 で公開している SkillEvaluator の変更履歴に、11月17日付で 1.0.0 と 1.0.1 が載った。エージェント用スキル（Agent Skills）を、API キー無しで走る静的検査、内容の重複検出、スキルを入れた場合と入れない場合の実行比較、の3段で調べるツールである。1.0 では、Claude Code・Codex・Copilot CLI など6つのエージェントがそのスキルを読み込めるかを調べる harness-check が加わった。サポート区分は Experimental とされている。",
+    "date": "2026-11-19",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "NVIDIA",
+      "Agent Skills",
+      "エージェント",
+      "セキュリティ",
+      "オープンソース"
+    ]
+  },
+  {
+    "id": "gemini-cli-0-69-readme-enterprise-only-not-tuned-gemini-4-gemini-api-cli-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Gemini CLI 0.69.0 と、README の冒頭に入った告知 — 「企業向け Code Assist 専用」「Gemini 4 以降には調整していない」「モデルのベンチマークに使わないで」。Google の CLI は3本に分かれた",
+    "excerpt": "Gemini CLI 0.69.0 が11月19日に npm の latest になった。/stats heatmap、API のタイムアウトの上書き、非対話実行を中断したときの子プロセスの終了などが入っている。あわせて、リポジトリの README の冒頭には「インストールの前に読んでほしい」という告知があり、Gemini CLI は企業向けの Gemini Code Assist のためのもので、Gemini 4 以降には調整していないと書かれている。同じ告知は、ほかのエージェントから Gemini API を呼ぶための別の CLI「Gemini API CLI」も案内している。",
+    "date": "2026-11-19",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Gemini CLI",
+      "Google",
+      "CLI",
+      "開発ツール",
+      "Gemini"
+    ]
+  },
+  {
+    "id": "gemini-4-neon-launch-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Google が Gemini 4 Neon を発表 — 4つ目の Gemini 4 は Carbon 派生で「深さと効率の両立」。AA Index 61 で全体3位、コーディングエージェント指標は首位。入力 $3・出力 $15",
+    "excerpt": "Google が11月18日、Gemini 4 系列の4つ目のモデル Neon を発表した。Carbon から派生し、深さと効率の両立を担う。価格は入力100万トークンあたり3ドル、出力15ドルで、既定の思考レベルでのタスクあたり費用は Carbon より32%低い。Artificial Analysis Intelligence Index は61で全体3位、AA Coding Agent Index は58.6で首位。防御者限定のサイバー版も Fairwind プログラムで順次提供される。",
+    "date": "2026-11-19",
+    "newsDate": "2026-11-18",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "Gemini 4",
+      "モデル",
+      "ベンチマーク",
+      "エージェント",
+      "料金"
+    ]
+  },
+  {
     "id": "alibaba-qwen4-max-launch-1m-context-pricing-work360-2026",
     "type": "news",
     "category": "model",

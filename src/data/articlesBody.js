@@ -34261,6 +34261,339 @@ const ARTICLES_BODY = {
       }
     ]
   },
+  "claude-code-2-1-328-auto-mode-third-party-4-6-hooks-code-review-scope-2026": {
+    "body": [
+      "Claude Code の公式ドキュメントの changelog に 2.1.328 が加わった。changelog の日付は2026年11月19日で、npm のレジストリでの公開は11月18日 23:09 UTC（日本時間では19日の朝）である。前の 2.1.327 の約27時間後にあたる。項目は144件で、「Fixed」が91件、「Changed」が20件、「Improved」が19件、「Added」が14件ある（接頭辞の付いた行を含めた当サイトの集計）。この記事は changelog の記載だけに基づいており、個々の変更の再現や影響範囲は検証していない。changelog の各行は1文で、対象の条件が具体的に書かれていない項目もある。以下でもその書き方のまま紹介する。",
+      "最初の項目は auto mode（分類器が操作ごとに安全かを判定して確認を省くモード）の対象の拡大である。Amazon Bedrock、Google Cloud の Agent Platform、Microsoft Foundry、Claude apps gateway を経由して使う Claude Opus 4.6 と Sonnet 4.6 に auto mode が加わった。changelog は、権限モードを指定していない対話セッションはこのモードで始まる、と書いている。「Changed」の側にも対になる行があり、これらのモデルをサードパーティのプロバイダーで使う場合、plan mode と Bash の確認画面が、新しいモデルと同じように auto mode を使い、選択肢として示すようになった。どちらも設定の disableAutoMode で止められる。",
+      "つまり、これらの経路で Opus 4.6 か Sonnet 4.6 を使い、権限モードを明示していなかった環境では、版を上げると対話セッションの始まり方が変わる。1件ずつ確認する動作を前提にしている場合は、権限モードを明示するか、disableAutoMode を設定するかを検討する材料になる。関連する修正として、ベータ機能を拒否するゲートウェイの背後で CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS を設定していると、Claude Desktop 以外で auto mode が毎ターン失敗していた不具合が直った。前の版で予告された「課金される分類器リクエストへのフォールバックの廃止」については、今回の changelog に続報は無い。",
+      "フック（ツールの実行前後などに決まった処理を差し込む仕組み）は、発火する条件が3か所で変わった。1つめに、管理設定の PostToolUse フックは、実行される前に拒否された呼び出しでは発火しなくなった。changelog は、そこではログの記録も、書き換えも、ブロックも、停止も起きないと書いている。PostToolBatch はその大半を受け取るが、拒否されたという印は付かない。2つめに、Code Mode（ツールを JavaScript のスクリプトから呼ぶ実験機能）は、スクリプトの出力に対して UserPromptSubmit フックを実行しなくなった。管理設定のフックも含む。出力を伏せたい場合は、PostToolUse フックの updatedToolOutput を使うよう案内されている。3つめに、PermissionRequest フックがシェルコマンドを、サンドボックスの除外対象のコマンドに書き換えた場合、そのコマンドはサンドボックスの外で実行されるようになった。",
+      "PostToolUse フックで拒否された呼び出しも含めて監査ログを取っていた組織や、UserPromptSubmit フックで出力中の秘密情報を伏せていた組織は、同じ記録や処理が続いているかを確かめる必要がある。追加の側では、mcp_tool 型のフックに \"onFailure\": \"block\" を指定できるようになった。コマンド型と HTTP 型のフックと同じく、フックの呼び出しが失敗したときに、その操作をブロックする。",
+      "/code-review は報告する範囲が狭くなった。多くのモデルでは、バグと CLAUDE.md の違反だけを報告する。再利用・単純化・効率の観点の整理は /simplify を実行するよう案内されている。あわせて、多くのモデルで各指摘に Important・Pre-existing・Nit の区分が付き、要約の末尾に修正案が付く。指摘が無い場合の表示は「Code review found no issues.」になった。「多くのモデル」がどのモデルを指すかは書かれていない。",
+      "サンドボックスが起動できない場合の扱いも変わった。sandbox.failIfUnavailable を設定していない場合、次にサンドボックス内で実行するはずだった Bash コマンドは拒否され、このセッションではサンドボックスが無効であることが伝えられる。変更前の動作は changelog に書かれていない。Linux では、ブランチ名が正しい UTF-8 でない場合に、Bash のサンドボックスがコマンドのたびに .git/HEAD の名前を変えていた不具合が直った。",
+      "修正には、保存した設定が消える種類のものがある。予約タスクのファイルを読めなかった場合に、予約タスクを1件保存するとプロジェクトのほかの保存済みタスクが消えていた。条件は、サードパーティのプロバイダーを使っているか、テレメトリーまたは機能フラグを切っている場合と書かれている。プロジェクトの予約タスクのファイルに書き間違いのあるタスクがあると、次にそのファイルが保存されたときに削除されていた不具合も直った。ほかに、zsh で = から始まる語（changelog の例は echo ==== と [ a == b ]）のところで Bash コマンドが「not found」で止まっていた不具合、自動のコンパクションが /compact と違ってシステムプロンプトを作り直さず、セッションの以前のものを使い回していた不具合が直っている。",
+      "セルフホストのランナー（自社のマシンでセッションを動かす構成）に関する行は26件ある。修正のうち影響が大きいと読めるのは2つである。プロキシや Web フィルターがポーリングに HTTP 200 と {} のような本文を返すと、動いているセッションがすべて止められていた。今回の版ではそのポーリングをやり直す。また、一時的なディスクのエラーのあとで、保持しているクローンのオブジェクトや参照、そこにしか無いコミットが削除されていた。今回の版では、その起動が失敗する形に変わった。変更としては、設定が Claude の GitHub ツールを名前で制限している環境で、組み込みの gh api が既定で無効になった（--use-anthropic-gh true で有効にできる）。deniedMcpServers の「claude.ai <名前>」という形式の項目は、クラウドのセッションとセルフホストのランナーのセッションでも、そのコネクタに適用されるようになった。",
+      "Code Mode に触れた行は22件あり、大半は修正である。権限の確認・プランの承認・質問が10分開いたままだとスクリプトが止まる、{ のブロックで始まる正しいスクリプトを拒否する、読み取り専用のサブエージェントに呼べない write() と edit() を提示する、先に失敗したスクリプトが設定しなかったトップレベルの変数を黙って undefined として扱う、といった不具合が直った。改善としては、auto mode と bypass permissions モードで、ほとんどのスクリプトのあとに入っていた0.75秒の待ちが無くなった。",
+      "確認できていないこと。auto mode が既定になる「権限モードを指定していない対話セッション」の正確な条件、/code-review の変更が及ぶモデル、サンドボックスが起動できなかった場合の変更前の動作は、changelog には書かれておらず、分からない。npm の配布タグは、この記事を書いた時点で latest が 2.1.328、stable が 2.1.311 を指しており、stable を使っている環境にはこの版の変更はまだ届いていない。自分の版は claude --version で確かめられる。ここで挙げたのは一部で、Remote Control、VS Code 拡張、画面表示とキー入力の修正などの大半は取り上げていない。全項目は changelog を参照してほしい。前の版の変更は[Claude Code 2.1.327 の記事](?a=claude-code-2-1-327-mcp-add-json-stdin-exitworktree-ask-auto-mode-fallback-removal-2026)にまとめている。",
+      "【編集履歴】2026-11-19 新規公開。公式 changelog の記載のみに基づく。項目数は当サイトの集計である。"
+    ],
+    "tables": [
+      {
+        "caption": "Claude Code 2.1.328 の主な変更（公式 changelog の記載を整理）",
+        "afterParagraph": 9,
+        "headers": [
+          "区分",
+          "変更内容",
+          "影響を受けやすい使い方"
+        ],
+        "rows": [
+          [
+            "auto mode の対象",
+            "Bedrock・Google Cloud の Agent Platform・Microsoft Foundry・Claude apps gateway の Opus 4.6 / Sonnet 4.6 に追加。権限モード未指定の対話セッションは auto mode で始まる。disableAutoMode で無効",
+            "サードパーティ経由で 4.6 世代を使い、権限モードを明示していない環境"
+          ],
+          [
+            "PostToolUse フック（管理設定）",
+            "実行前に拒否された呼び出しでは発火しない。PostToolBatch は大半を受け取るが、拒否の印は付かない",
+            "拒否された呼び出しも含めて監査ログを取っている組織"
+          ],
+          [
+            "Code Mode とフック",
+            "スクリプトの出力に UserPromptSubmit フックを実行しない。伏せる処理は PostToolUse の updatedToolOutput で行う",
+            "UserPromptSubmit フックで出力を検査・加工している構成"
+          ],
+          [
+            "PermissionRequest フック",
+            "サンドボックスの除外対象のコマンドに書き換えた場合、サンドボックスの外で実行",
+            "フックでコマンドを書き換えている構成"
+          ],
+          [
+            "mcp_tool フック",
+            "\"onFailure\": \"block\" を指定でき、フックの呼び出しが失敗したら操作をブロック",
+            "MCP ツールを検査に使うフック"
+          ],
+          [
+            "/code-review",
+            "多くのモデルでバグと CLAUDE.md 違反だけを報告。整理の観点は /simplify。指摘に Important・Pre-existing・Nit の区分",
+            "レビュー結果を定型で処理している運用"
+          ],
+          [
+            "サンドボックスが起動できない場合",
+            "sandbox.failIfUnavailable 未設定なら、次のサンドボックス内 Bash コマンドを拒否し、セッションで無効であると伝える",
+            "サンドボックスを前提にした無人実行"
+          ],
+          [
+            "予約タスク",
+            "ファイルを読めないときに保存するとほかのタスクが消える不具合、書き間違いのあるタスクが削除される不具合を修正",
+            "サードパーティのプロバイダーやテレメトリー無効で予約タスクを使う環境"
+          ],
+          [
+            "セルフホストのランナー",
+            "HTTP 200 と {} の応答で全セッションが止まる不具合、ディスクのエラー後にクローンのオブジェクトが削除される不具合を修正",
+            "プロキシや Web フィルターの背後でランナーを動かす構成"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code changelog（公式ドキュメント、2.1.328）",
+        "url": "https://code.claude.com/docs/en/changelog"
+      },
+      {
+        "title": "Claude Code CHANGELOG（anthropics/claude-code）",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "npm レジストリ @anthropic-ai/claude-code（2.1.328 の公開日時と配布タグ）",
+        "url": "https://registry.npmjs.org/@anthropic-ai/claude-code"
+      }
+    ]
+  },
+  "nvidia-skillevaluator-1-0-harness-check-agent-skills-three-tiers-2026": {
+    "body": [
+      "NVIDIA の GitHub リポジトリ NVIDIA/SkillEvaluator の変更履歴（CHANGELOG.md）に、2026年11月17日付で 1.0.0 と 1.0.1 が載った。Python のパッケージ配布サイト PyPI では、1.0.1 が11月18日 00:20 UTC に登録されている。PyPI の版の一覧に 1.0.0 は無く、0.9.0（11月13日）の次が 1.0.1 である。本記事は、リポジトリの README と変更履歴、PyPI の登録情報を2026年11月19日に読んだ範囲での整理で、ツールを実際に動かしての確認はしていない。",
+      "SkillEvaluator が調べる対象は、エージェント用のスキルとプラグインである。スキルは、エージェントに手順や知識を渡すための、指示文と補助ファイルをまとめたフォルダで、Agent Skills の仕様に沿って書かれる。README は、このツールを「スキルの品質・安全性・重複・互換性と、実際の効果を評価する」ものと説明し、NVIDIA が検証済みスキルを公開する仕組み（NVIDIA Verified Skills pipeline）の一部だとしている。ライセンスは Apache License 2.0 である。",
+      "検査は3つの段（Tier）に分かれ、それぞれ単独で実行できる。Tier 1 は静的検査で、品質、スキーマ、版、個人情報、ライセンス、Unicode、スクリプトの lint などを見る。安全性とコードの検査には、同じ NVIDIA の [SkillSpector](?a=feature-nvidia-skillspector-agent-skill-security-2026) と、Gitleaks、Bandit、任意で Semgrep を使う。README は、500を超える静的ルールと検出パターンに基づくと書いている。Tier 2 は重複検出で、スキルの中、または複数のスキルの間で、指示が繰り返されたり重なったりしていないかを見る。Tier 3 は実行による評価で、エージェントにスキルを入れた場合と入れない場合で課題を実行させ、結果を比べる。",
+      "必要な準備は段ごとに違う。README によると、skillevaluator quality-check は API キーも、スキャナーも、GPU も、Docker も要らず、100点満点の点数と評価、その根拠になった指摘を出す。合格の基準は既定で70点である。README はこれを「静的な品質だけ」と位置づけ、安全性とエージェントへの効果は追加の検査が要ると書いている。Tier 2 は埋め込みとチャットのモデルを、Tier 3 はモデルの利用先、対応するエージェント、動いているサンドボックス（既定は Docker）を必要とする。Tier 3 のサンドボックス内の実行には、オープンソースの評価フレームワーク Harbor を使う。README は、モデルと管理型サンドボックスの利用には料金がかかりうると注意している。",
+      "1.0.0 で加わった機能のうち、README が前面に出しているのは harness-check である。スキルを書いても、エージェントの側がそれを読み込まなければ使われない。このコマンドは、Claude Code、Codex、Copilot CLI、Hermes、OpenClaw、OpenCode の6つについて、スキルの置き場所が探索の対象か、フロントマター（ファイル冒頭の設定欄）や説明文の長さが制限に収まるか、といった点を、版ごとに用意した静的なプロファイルと照合する。API キーもエージェントの実行も要らない。README の出力例（例示と明記されている）には、「説明文が上限の 1,024 を4つ超えているため Copilot CLI では読み込まれない」「.agents/skills は Claude Code の探索対象でない」といった行が並ぶ。変更履歴によると、既定の方針ではこの検査の指摘は助言の扱いで、単独で実行した harness-check は終了コード 0 で終わる。",
+      "変更履歴は 1.0.0 のほかの追加として、JUnit XML 形式のレポート（-r junit）、API キー・Docker・ネットワークを使わない pre-commit フック3種、実験的な NeMo Gym バックエンド、ホスティング無しでプルリクエストに採点結果をコメントする再利用可能なワークフローを挙げている。0.9.0 からの差分は、200件を超えるプルリクエストだと書かれている。",
+      "互換性に関わる変更もある。検証されていないフックのペイロードは、Critical の安全性ゲートの失敗になり、重大度の上書きでも --llm-verify でも解除できなくなった。著者表示の要件は既定で助言の扱いになり、厳格にしたい場合は --profile registry を使う。基本のインストールに Bandit と uv が含まれるようになり、管理対象のスキャナーは初回の利用時にダウンロードされる。既存の CI ワークフローは固定された版の指定を保ち、更新は明示的に行う必要がある。",
+      "使う前に知っておきたい点を、README の記載から挙げる。第一に、サポート区分は Experimental で、コミュニティによるベストエフォートの対応であり、SLA も NVIDIA のエンタープライズサポートの対象でもないと書かれている。第二に、README は「このプロジェクトは追加のサードパーティのオープンソースソフトウェアをダウンロードしてインストールする」と明記しており、入れるものは SkillEvaluator 本体だけではない。第三に、README はエージェントに組み込む方法として npx skills add NVIDIA/SkillEvaluator というコマンドを載せている。これはリポジトリからスキルを取得してエージェントの環境に入れる操作で、取得元は NVIDIA の公式リポジトリだが、当サイトはこのコマンドが実際に何を取得し、どこに書き込むかを確認していない。スキルの中身を読んでから入れる、固定した版を指定する、といった手順を自分の環境の方針に合わせて取ってほしい。pip でのインストールも同じで、導入の前に配布元と版を確かめる必要がある。",
+      "当サイトは9月に、[Agent Skill の形式が複数のツールで共通の器になりつつある](?a=feature-agent-skills-open-standard-2026)ことを取り上げた。スキルが増えると、「このスキルは安全か」に加えて、「入れると結果が良くなるのか」「ほかのスキルと重なっていないか」「自分の使うエージェントで読み込まれるのか」を確かめる手段が必要になる。SkillEvaluator は、その問いを1つのコマンド体系にまとめたものと読める。同じ形式のスキルでも、エージェントごとに探索する場所や説明文の上限が違うことを、harness-check の出力例は具体的に示している。",
+      "確認できていないこと。README が案内する NVIDIA の公式ドキュメント（docs.nvidia.com）、NVIDIA Developer のブログ、論文（arXiv:2608.20614）には、本記事の作成環境から到達できず、読めていない。そのため、検査項目の詳細、Tier 3 の評価方法の妥当性、論文に書かれた評価結果は扱っていない。「500を超えるルール」「6つのエージェントへの対応」は NVIDIA 自身の記載であり、独立した検証は確認できていない。GitHub Trending の日次の一覧では、11月19日に当サイトが見た時点でスター数は約3,900だった。",
+      "【編集履歴】2026-11-19 新規公開。リポジトリの README・変更履歴と PyPI の登録情報に基づく。公式ドキュメント、ブログ、論文には到達できていない。ツールの動作は検証していない。"
+    ],
+    "tables": [
+      {
+        "caption": "SkillEvaluator の3つの段と harness-check（リポジトリの README の記載を整理）",
+        "afterParagraph": 4,
+        "headers": [
+          "段",
+          "答える問い",
+          "追加で必要なもの"
+        ],
+        "rows": [
+          [
+            "Tier 1: 静的検査",
+            "スキルは安全で、形式が正しく、エージェントと互換か",
+            "外部スキャナー（SkillSpector、Gitleaks、Bandit、任意で Semgrep）。モデルを使う検査は任意"
+          ],
+          [
+            "Tier 1: harness-check",
+            "エージェントはこのスキルを読み込むか",
+            "API キーもエージェントの実行も不要"
+          ],
+          [
+            "Tier 2: 重複検出",
+            "指示が繰り返されたり重なったりしていないか",
+            "埋め込みとチャットのモデル。スキル間の比較にはカタログの指定"
+          ],
+          [
+            "Tier 3: 実行による評価",
+            "スキルはエージェントの役に立っているか",
+            "モデルの利用先、対応するエージェント、サンドボックス（既定は Docker）"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "NVIDIA/SkillEvaluator（GitHub リポジトリ、README）",
+        "url": "https://github.com/NVIDIA/SkillEvaluator"
+      },
+      {
+        "title": "SkillEvaluator CHANGELOG.md（1.0.0 / 1.0.1、2026-11-17）",
+        "url": "https://github.com/NVIDIA/SkillEvaluator/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "skillevaluator（PyPI、版と登録日時）",
+        "url": "https://pypi.org/project/skillevaluator/"
+      }
+    ]
+  },
+  "gemini-cli-0-69-readme-enterprise-only-not-tuned-gemini-4-gemini-api-cli-2026": {
+    "body": [
+      "npm のレジストリで、@google/gemini-cli の latest タグが 0.69.0 を指すようになった。公開時刻は2026年11月19日 01:51 UTC である。GitHub のリリースページにも v0.69.0 が載っている。一方、リポジトリの docs/changelogs/latest.md は、本記事を書いた時点ではまだ v0.68.0（11月10日）を最新の安定版としている。以下は、GitHub のリリースページの変更一覧と、同じ内容を先に載せていたプレビュー版（v0.69.0-preview.0、11月10日）の変更履歴に基づく整理で、実際の挙動は検証していない。前の版は[Gemini CLI 0.68.0 の記事](?a=gemini-cli-0-68-extension-validate-rate-limit-countdown-subagentstop-2026)で扱った。",
+      "0.69.0 の変更一覧は33件で、版の更新や変更履歴の追加といった作業用の3件を除くと30件ある。大半は修正である。機能の追加は3つで、日ごとのトークン使用量を表示する /stats heatmap サブコマンド（#30135）、カスタムテーマを独立した theme.json で設定する方法（#30119）、/model コマンドで引数を直接渡せるようにし、モデル名を検証する変更（#30137）である。",
+      "通信が詰まったときの動作に関する修正がまとまっている。API のヘッダーを待つ60秒のタイムアウトは、すべての認証方式で、設定の model.requestTimeoutMs か環境変数 GEMINI_API_HEADERS_TIMEOUT_MS で上書きできるようになった（#30183）。ネットワークの障害時に、何も表示しないまま数分間読み込み中のままになる問題（#30182）と、クォータ超過のあとの再試行が数時間に及ぶ問題（#30187）が直った。後者では、再試行のたびに ACP（エディタなどからエージェントを操作するためのプロトコル）のクライアントへ通知するようになった。",
+      "無人実行とサンドボックスに関わる修正もある。非対話（ヘッドレス）の実行を中断したとき、子プロセスを終了させ、取り消されたツールを記録し、シグナルによる終了コードを保つようになった（#30204）。macOS の Seatbelt サンドボックスに入る前に、フォルダの信頼の判定を済ませるようになった（#30164）。シェルモードの中から対話型の gemini を再帰的に起動してしまうことを防ぐ修正（#30185）、Windows の PowerShell でコマンド置換を誤って検出する問題とポリシーの扱いの修正（#30110）も入っている。ほかに、複数ファイルの読み込みで、明示的に求められたバイナリだけを本文に埋め込むようにする修正（#30211）、セッションの再開時にモデルのターンが 400 エラーで終わる問題の修正（#30186）などがある。",
+      "ここまでは通常の版の更新である。ただし、いまの Gemini CLI を使うかどうかを考えるうえでは、変更一覧よりも README の冒頭のほうが重要な情報を含んでいる。0.68.0 の変更一覧には「README で Gemini CLI の対象範囲、制約、周辺ツールとの関係を明確にする」という変更（#29995）があり、当サイトの 0.68.0 の記事はこれを1文で触れただけだった。11月19日に読んだ README の冒頭には、「インストールの前に読んでください — Gemini CLI の状況とツールの案内」という見出しの告知があり、4点が書かれている。",
+      "1点め、Gemini CLI は Gemini Code Assist Standard / Enterprise のライセンスと、Google Cloud の Code Assist for GitHub のために設計されている。2点め、無料枠と Google AI のプランは対象外で、個人の無料利用と Google AI Pro / Ultra は2026年6月18日に Antigravity CLI に移った。3点め、Gemini 4 シリーズ（例として Gemini 4 Argon を挙げている）と、この世代以降のモデルには最適化していない。4点め、Gemini のモデルのベンチマークに Gemini CLI を使わないでほしい。理由として、ハーネス（モデルを動かす側の仕組み）が Gemini 4 以降に調整されておらず、代表的でない点数が出ると書かれている。告知の下の本文も、Gemini CLI を「Google Cloud 上の企業向け Gemini Code Assist のワークフローのために保守されているオープンソースのターミナルエージェント」と説明している。",
+      "2点めの個人向けの移行は、当サイトでも [Gemini CLI のレビュー](?a=gemini-cli)の注記で扱ってきた。今回 README で新しく確認できたのは、3点めと4点めである。週に1回ほどの間隔で安定版が出続けていることと、Google の現行世代である Gemini 4 に向けた調整はしないと開発元が書いていることは、両立している。版の更新が続いていることだけを見て、Gemini 4 を使うための CLI だと受け取ると、開発元の説明とずれる。Gemini CLI で Gemini 4 のモデルを動かして他社のモデルやツールと比べた結果を見かけた場合も、開発元がこの使い方を勧めていないことは判断材料になる。",
+      "告知には「どの Google の CLI が必要か」という表が付いている。3本が並ぶ。Antigravity CLI（コマンド名 agy）は、対話型のマルチエージェントのコーディング用ターミナルで、Gemini 4 Argon 以降を使う場合、無料または Google AI Pro / Ultra のアカウント、Google Cloud の場合に使うとされる。Gemini CLI（gemini）は、Gemini Code Assist Standard / Enterprise か Code Assist for GitHub を持つ組織向けで、従来の有料 API キーと Vertex のキーも括弧書きで挙げられている。そして3本めが Gemini API CLI（gemini-api）である。",
+      "Gemini API CLI は、当サイトでまだ取り上げていなかった。google-gemini/gemini-api-cli の README は、これを「コーディング用のハーネスではない」状態を持たない CLI と位置づけ、Codex、Claude Code、Antigravity、OpenClaw、Hermes など、シェルを使えるエージェントに Gemini API を使わせるためのものと説明している。エージェントが計画を立て、必要になったときにこのコマンドを呼んで、画像・音声・音楽・動画の生成、PDF や動画などのファイルの分析、文字起こし、バックグラウンドで動くマネージドエージェント（例は Deep Research）の起動を行う。コマンドと引数、リクエストのスキーマはバイナリ自身から --help、--usage、--schema で取り出せる。--dry-run は、ネットワークに接続せず、資格情報を伏せた形で送信予定の HTTP リクエストを表示する。Go で書かれた単一のバイナリで、ライセンスは Apache 2.0 である。リポジトリの説明欄には「実験的」と書かれている。",
+      "つまり Google は、自社のコーディングエージェント（Antigravity CLI）とは別に、他社のエージェントから自社のモデルを呼ぶための入口を用意している。README の例に Claude Code と Codex が名前で出てくる。エージェントを選ぶことと、そのエージェントが作業の途中で呼ぶモデルを選ぶことは、1対1に結び付かなくなっている。エディタとエージェントが1対1の関係でなくなったのと同じ形が、CLI とモデルの間にも出ている。",
+      "導入の前に確かめたい点がある。README は macOS と Linux 向けの導入方法として、インストール用スクリプトを curl で取得してそのまま bash に渡すコマンドを載せている。取得元は google-gemini の公式リポジトリである。当サイトがスクリプト（230行）を読んだ範囲では、GitHub のリリースから最新版のアーカイブを取得して /usr/local/bin などに置く内容で、環境変数 GEMINI_VERSION で版を固定できる。取得したアーカイブのチェックサムや署名を検証する処理は、読んだ範囲では見当たらなかった。取得したスクリプトを確認せずにそのまま実行する形は、取得元が公式であっても、内容を事前に確かめられない。スクリプトを一度ファイルに保存して読んでから実行する、リリースページから版を指定してバイナリを取得する、go install を使う、といった方法を、所属先の方針に合わせて選んでほしい。また、このコマンドはエージェントが自分の判断で呼ぶ前提で作られている。生成のたびに API の利用が発生するため、エージェントに渡す API キーの権限と上限は、渡す前に決めておく必要がある。",
+      "確認できていないこと。README の告知が入った正確な日付は確認していない（告知に対応する変更 #29995 が 0.68.0 の変更一覧に含まれることまでを確認した）。Gemini API CLI のリリースページには v0.4.6 が「11月10日」付で載っているが、最初の公開日は確認できていない。GitHub のスター数は、11月19日に見た時点で約500だった。Antigravity CLI の側のドキュメントと、移行を告知した Google のブログ記事は、本記事では読み直していない。0.69.0 の変更は一覧の1行ずつの記載に基づいており、個々の修正の条件や影響範囲は分からない。",
+      "【編集履歴】2026-11-19 新規公開。Gemini CLI と Gemini API CLI のリポジトリの README、変更履歴、GitHub のリリースページ、npm レジストリの記載に基づく。動作は検証していない。"
+    ],
+    "tables": [
+      {
+        "caption": "Gemini CLI の README が示す Google の CLI 3本の使い分け（2026年11月19日に読んだ README の表を整理）",
+        "afterParagraph": 8,
+        "headers": [
+          "ツール（コマンド名）",
+          "README が挙げる用途",
+          "位置づけ"
+        ],
+        "rows": [
+          [
+            "Antigravity CLI（agy）",
+            "Gemini 4 Argon 以降を使う場合、無料または Google AI Pro / Ultra のアカウント、Google Cloud",
+            "対話型のマルチエージェントのコーディング用ターミナル"
+          ],
+          [
+            "Gemini API CLI（gemini-api）",
+            "エージェント（agy、Claude Code、Codex）、スクリプト、CI から Gemini のモデル、メディア生成、ファイル分析、マネージドエージェントを直接呼ぶ",
+            "状態を持たない API 用の CLI。コーディング用のハーネスではない"
+          ],
+          [
+            "Gemini CLI（gemini）",
+            "Gemini Code Assist Standard / Enterprise か Code Assist for GitHub を持つ組織（従来の有料 API キー・Vertex のキーも記載）",
+            "企業向け Code Assist のワークフローのために保守。Gemini 4 以降には最適化していない"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "google-gemini/gemini-cli README（冒頭の告知「Read before installing」）",
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/README.md"
+      },
+      {
+        "title": "Gemini CLI v0.69.0（GitHub Releases）",
+        "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.69.0"
+      },
+      {
+        "title": "Gemini CLI 変更履歴（preview、v0.69.0-preview.0）",
+        "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/preview.md"
+      },
+      {
+        "title": "@google/gemini-cli（npm レジストリ、公開日時と配布タグ）",
+        "url": "https://registry.npmjs.org/@google/gemini-cli"
+      },
+      {
+        "title": "google-gemini/gemini-api-cli README",
+        "url": "https://github.com/google-gemini/gemini-api-cli/blob/main/README.md"
+      },
+      {
+        "title": "gemini-api-cli scripts/install.sh（インストール用スクリプト）",
+        "url": "https://github.com/google-gemini/gemini-api-cli/blob/main/scripts/install.sh"
+      }
+    ]
+  },
+  "gemini-4-neon-launch-2026": {
+    "body": [
+      "Google は11月18日、Gemini 4 系列の4つ目のモデル「Gemini 4 Neon」を発表した。系列の書き分けは、最も難しい長時間のプロジェクトを担う Carbon、速い日常の実行を担う Hydrogen に対し、Neon は深さと効率の両立を担う位置づけである。Google が用途として挙げるのは、複雑なコーディング、分析的な推論、本番運用に耐えるエンタープライズのワークフロー、高頻度の利用である。公式モデルカードでは、Neon は Carbon から派生（adapted）したモデルとされている。",
+      "仕様は Gemini 4 の他のモデルとそろっている。コンテキストは入力・思考・出力で共有する100万トークンの統合ウィンドウで、出力は同期では既定で最大64Kトークン、background の long decode を使うと最大100万トークンまで伸ばせる。思考レベルは low、medium、high、xhigh の4段階である。知識カットオフは2026年3月。仕様のうち出力上限と知識カットオフはモデルカードの記載である。",
+      "価格は100万トークンあたり入力3ドル、出力15ドル。キャッシュされた入力は0.15ドルで、通常の入力の95%引きになる。単価は Hydrogen（入力1.50ドル、出力7.50ドル）の2倍で、Google は既定の思考レベル high でのタスクあたり費用が Carbon より32%低いと書いている。高頻度に回す用途を想定した価格設定である。系列の他のモデルの仕様と移行時の注意は、[Hydrogen と Carbon が Gemini API に入ったときの記事](?a=gemini-4-hydrogen-carbon-gemini-api-cookbook-migration-2026) にまとめている。",
+      "Google の発表は、第三者が運営する指標を前面に出している。Artificial Analysis の Intelligence Index では、思考レベル xhigh で61を取り、全体3位に入った。コーディングエージェントの指標（AA Coding Agent Index）では58.6で全体1位としている。Terminal-Bench 4.1 は65.2%、FrontierCode 2.0 は既定の high で46.2%である。",
+      "知識労働とエージェントの指標でも上位に並ぶ。VALS Index では70.9%で2位につけ、内訳の Legal Research Bench と Tax Agent Bench では1位だったと Google は書く。実セッションで比べる Agent Arena Index では、4,200件を超える実利用セッションに基づきスコア1336で世界2位、指示への追随のしやすさ（steerability）でも2位だった。Agents' Last Exam v1.1 は75.8%、Zapier の AutomationBench では56.3%で1位、Andon の Vending-Bench 2 でも1位（最終残高16,843ドル）である。",
+      "このほかの公表値は、Chartography 73.5%、Terminal-Bench Science 70.5%、RiemannBench 84.0%、HLE-Diamond 71.3%である。いずれも Google の発表に載った値で、本サイトが独自に測ったものではない。",
+      "サイバー防御向けの派生モデル「Gemini 4 Neon for cyber」も予告された。今後数日のうちに、Fairwind プログラムを通じて信頼できる防衛者へ順次提供される。Google が挙げる値は、AutoBaxBench の hard 区分で76%、WebExploitBench v1.2 で51.26%、SEC-bench Pro で90.5%、CWE-bench v2 で70.7%である。防御者限定のサイバー版を別建てにする進め方は、[Gemini 4 Argon](?a=gemini-4-argon-fairwind-trusted-testers-2026) や Gemini 3.8 Flash Cyber と同じ型である。",
+      "安全性の数値も発表に含まれている。エージェントの安全性スイートでの逸脱行動率は0.09%、エージェントの誠実さの評価では99.2%が合格し、Gray Swan の IPI ベンチマークでは、リアルタイムの安全策を併用した最高の思考レベルで攻撃成功率が0.0%だったとする。一方、モデルカードは Neon の Safety & Security Report の全文は今後数日の公開予定と書いており、この記事の時点ではまだ出ていない。",
+      "提供は11月18日から始まっている。Google AI Studio では Gemini API の有料枠で使え、Gemini for business では API とモデルのプルダウンから選べる。Google Antigravity は有料の AI Pro と Ultra の契約者が対象で、Gemini アプリでは Pro と Ultra の契約者が使える。",
+      "なお、Notebookcheck や 9to5Google は、Gemini アプリの AI Pro では Neon が Argon に置き換わり、Gemini 3.1 Pro が退役したと報じている。Google の発表とモデルカードにこの記述はなく、Google が確認した情報ではない。本サイトの [Gemini 4 レビュー](?a=gemini-4-review) は Carbon、Argon、Hydrogen の3モデル時点の評価で、Neon を含んでいない。ラインナップの変更が Google から正式に出たら、レビュー側の見直しとあわせて追う。",
+      "この記事の根は、Google の発表記事と公式モデルカードという一次資料である。価格と仕様は一次資料で足りる性質の主張だが、ベンチマークの数値は Google の発表に載った値で、Artificial Analysis や VALS など第三者が運営する指標も Google の発表経由で引用している。本サイトによる独立した再計測はしていない。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "Gemini 4 Neon の仕様と価格（Google の発表記事とモデルカード）",
+        "headers": [
+          "項目",
+          "内容"
+        ],
+        "rows": [
+          [
+            "価格（100万トークン）",
+            "入力 $3 / 出力 $15 / キャッシュされた入力 $0.15（95%引き）"
+          ],
+          [
+            "コンテキスト",
+            "100万トークン（入力・思考・出力で共有する統合ウィンドウ）"
+          ],
+          [
+            "出力上限",
+            "同期は既定で最大64Kトークン、background の long decode で最大100万トークン（モデルカード）"
+          ],
+          [
+            "思考レベル",
+            "low / medium / high / xhigh の4段階"
+          ],
+          [
+            "知識カットオフ",
+            "2026年3月（モデルカード）"
+          ],
+          [
+            "位置づけ",
+            "Gemini 4 Carbon から派生。深さと効率の両立"
+          ]
+        ]
+      },
+      {
+        "afterParagraph": 5,
+        "caption": "Google の発表が挙げる主なベンチマーク（第三者が運営する指標を含む。値は発表記事の記載）",
+        "headers": [
+          "指標",
+          "結果",
+          "備考"
+        ],
+        "rows": [
+          [
+            "Artificial Analysis Intelligence Index",
+            "61",
+            "思考レベル xhigh。全体3位"
+          ],
+          [
+            "AA Coding Agent Index",
+            "58.6",
+            "全体1位"
+          ],
+          [
+            "Terminal-Bench 4.1",
+            "65.2%",
+            ""
+          ],
+          [
+            "FrontierCode 2.0",
+            "46.2%",
+            "既定の high"
+          ],
+          [
+            "VALS Index",
+            "70.9%",
+            "2位。Legal Research Bench と Tax Agent Bench では1位"
+          ],
+          [
+            "Agent Arena Index",
+            "1336",
+            "世界2位。4,200件を超える実セッションに基づく"
+          ],
+          [
+            "Agents' Last Exam v1.1",
+            "75.8%",
+            ""
+          ],
+          [
+            "HLE-Diamond",
+            "71.3%",
+            ""
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Gemini 4 Neon（Google 公式ブログ）",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
+      },
+      {
+        "title": "Gemini 4 Neon Model Card（Google DeepMind）",
+        "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Neon-Model-Card.pdf"
+      }
+    ]
+  },
   "alibaba-qwen4-max-launch-1m-context-pricing-work360-2026": {
     "body": [
       "Alibaba の Qwen チームは2026年11月16日、Qwen4-Max を公開した。9月の Apsara Conference で「学習中」とされていた次世代系列 Qwen4 の、最初の最上位モデルにあたる（[9月の発表についての記事](?a=alibaba-qwen4-apsara-unveil-2026)）。先に断っておくと、当サイトはこの記事を書いた11月17日の時点で、実行環境のネットワークの制約により Alibaba Cloud の公式ブログ、Model Studio のドキュメント、Qwen の公式 X 投稿のいずれにも直接到達できていない。以下は、公式の発表を引用している複数の報道と、検索エンジンの索引に出る公式投稿の文面に基づく。報道の元はいずれも Alibaba 自身の発表であり、独立した証拠が複数あるわけではない。",
