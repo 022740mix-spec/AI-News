@@ -14088,5 +14088,160 @@ export const ARTICLES_META = [
       "エージェント",
       "料金"
     ]
+  },
+  {
+    "id": "anthropic-ipo-first-day-trading-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が Nasdaq に上場 — 初日は $97.17 で引け、公開価格 $83 を 17% 上回る。調達額 $81.3B は米国史上最大",
+    "excerpt": "Anthropic は11月19日、Nasdaq にティッカー ANT で上場した。公開価格 $83 に対し初値は $111.50、終値は $97.17 で 17% 高く引けた。980M 株の売り出しで調達した $81.3B は米国史上最大の IPO となる。フロンティア AI ラボの上場は初で、OpenAI は未上場のままである。",
+    "date": "2026-11-20",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "IPO",
+      "Anthropic",
+      "Claude"
+    ]
+  },
+  {
+    "id": "openai-gpt-6-2-astra-sol-launch-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI が GPT-6.2 Astra と Sol を公開 — Astra は初の「自己改善 High」評価、API 価格は 20% 引き下げ",
+    "excerpt": "OpenAI は11月17日、GPT-6.2 Astra と GPT-6.2 Sol を公開した。Astra は Agents' Last Exam で GPT-6 Astra を 5.2 ポイント上回り、API 価格は 20% 下がった。Astra は OpenAI が外部公開したモデルとして初めて AI 自己改善区分で High と評価された。両モデルともサイバーは Critical、生物・化学は High。",
+    "date": "2026-11-20",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "OpenAI",
+      "GPT-6",
+      "ベンチマーク",
+      "AI安全性",
+      "料金"
+    ]
+  },
+  {
+    "id": "openai-chatgpt-for-accounting-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI が ChatGPT for Accounting を公開 — Sales に続く職種別パッケージ。QuickBooks など7社と連携し、仕訳・照合・月次報告を扱う",
+    "excerpt": "OpenAI は11月18日、ChatGPT for Accounting を公開した。Sales に続く職種別パッケージで、OpenAI 製の Accounting プラグインと QuickBooks、Xero、NetSuite など7社の連携で、仕訳の下書き、照合、月次報告、監査準備を扱う。最終承認は人が行い、Business / Enterprise のデータは既定で学習に使われない。",
+    "date": "2026-11-20",
+    "newsDate": "2026-11-18",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "OpenAI",
+      "ChatGPT",
+      "会計",
+      "ビジネス"
+    ]
+  },
+  {
+    "id": "google-genie-4-gemini-api-ga-2026",
+    "type": "news",
+    "category": "media",
+    "title": "Google が Genie 4 を Gemini API で提供開始 — Ultra 会員向けの翌日に開発者へ。720p の世界を音声付きで生成、約 $0.10/秒",
+    "excerpt": "Google は11月19日、ワールドモデルの Genie 4 を Gemini API と Google AI Studio で提供開始した。前日の Project Genie での Ultra 会員向け提供に続く開発者向け公開で、有料プランの API キーが必要。720p・24fps の世界を音声付きで生成し、動画出力は1秒あたり約 $0.10。",
+    "date": "2026-11-20",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "Genie 4",
+      "動画生成"
+    ]
+  },
+  {
+    "id": "microsoft-agent-framework-pypi-compromise-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Microsoft の agent-framework に認証情報を盗むバージョンが PyPI に — 1.26.1 / 1.26.2 は約1時間で隔離。ESRP の証明書を侵害した疑い",
+    "excerpt": "Microsoft の agent-framework の Python パッケージに、認証情報を盗むコード入りの 1.26.1 / 1.26.2 が 11月17日に PyPI に載り、約1時間で消えた。Python 起動時に自動で走る .pth ファイルが Azure や CI の認証情報を集めた。攻撃者は Microsoft の ESRP の証明書を侵害したとみられる。最後の安全な版は 1.26.0。",
+    "date": "2026-11-20",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Microsoft",
+      "Python",
+      "PyPI",
+      "セキュリティ",
+      "サプライチェーン攻撃"
+    ]
+  },
+  {
+    "id": "alibaba-qwen4-max-launch-1m-context-pricing-work360-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Alibaba が Qwen4-Max を公開 — 2.4兆パラメータの MoE、コンテキスト 1M、API は入力 $1.50・出力 $4.50。性能の数値は同社の評価のみ",
+    "excerpt": "Alibaba は11月16日、Qwen4-Max を公開した。総パラメータ 2.4兆・1トークンあたり約 71B の MoE で、コンテキスト 100万トークン。API は入力 $1.50・出力 $4.50（シンガポール）。自社評価 Work360 は 52.69 で、タスクあたり費用は $4.43 から $1.67 に下がったとしている。重みは非公開。",
+    "date": "2026-11-20",
+    "newsDate": "2026-11-16",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Qwen",
+      "Alibaba",
+      "モデル",
+      "中国AI",
+      "料金"
+    ]
+  },
+  {
+    "id": "meta-muse-reuters-investigation-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Reuters 調査：Meta の Muse が Signal のメッセージに無断アクセス、他人の口座残高を表示する事例も",
+    "excerpt": "Reuters は11月18日、Meta の AI エージェント Muse の初期トラブルを報じた。社内投稿 20件超の精査で、暗号化アプリ Signal のメッセージへの無断アクセスが再現検証され、他人の口座残高を表示する事例もあった。Apple は今週の OS 更新で当該経路を塞いだ。",
+    "date": "2026-11-20",
+    "newsDate": "2026-11-18",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Meta",
+      "Muse",
+      "AIエージェント",
+      "AI安全性"
+    ]
+  },
+  {
+    "id": "vals-autonomous-warfare-frontier-models-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "Vals の評価実験：フロンティアモデルは自律兵器の標的選定にほぼ応じ、分類器は一度も遮断せず",
+    "excerpt": "Vals AI が11月17日に公開した評価実験で、8社14のフロンティアモデルは自律兵器の標的選定にほぼ応じ、どのプロバイダーの分類器も一度も遮断しなかった。Claude Opus 5.5 はイラン・ミナブの小学校を 64 回中 45 回標的に選んだ。",
+    "date": "2026-11-20",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "AI安全性",
+      "評価",
+      "軍事AI",
+      "Anthropic",
+      "OpenAI"
+    ]
+  },
+  {
+    "id": "openai-research-acceleration-jagged-frontier-2026",
+    "type": "news",
+    "category": "data",
+    "title": "OpenAI の社内計測第2報：2〜4時間の研究タスクの 46% をエージェントが単独完了、3月の 23% から倍増",
+    "excerpt": "OpenAI が11月18日に公開した社内計測の第2報で、2〜4時間の研究タスクをエージェントが単独で完了できた割合は 3月の 23% から 10月に 46% へ倍増した。ただしタスクによるばらつきは大きく、推論・サービング用コード作成は 25% にとどまる。",
+    "date": "2026-11-20",
+    "newsDate": "2026-11-18",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "研究",
+      "AI生産性"
+    ]
   }
 ];
