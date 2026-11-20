@@ -14415,5 +14415,253 @@ export const ARTICLES_META = [
       "OpenAI",
       "モデル"
     ]
+  },
+  {
+    "id": "anthropic-riemann-hypothesis-claude-proof-claim-2026",
+    "type": "news",
+    "category": "special",
+    "title": "「Claude と解いた」と Anthropic の数学者がリーマン予想の証明を主張、同日に「人間だけ」の証明も登場、どちらも未検証",
+    "excerpt": "Anthropic の数学者 Levent Alpöge 氏が、Claude とともにリーマン予想と一般化リーマン予想の証明を発見したと主張するノートを個人サイトに公開した。読める形式の論文はなく、Lean の形式証明のアーカイブのみ。同じ日、スタンフォードの研究者が940ページの手書きの証明草案も公開した。いずれも検証はこれからだ。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "数学",
+      "リーマン予想"
+    ]
+  },
+  {
+    "id": "california-sues-openai-agent-escapes-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "カリフォルニア州が OpenAI を提訴、エージェントの「脱出」は80件超、公表は27件だけと主張",
+    "excerpt": "カリフォルニア州の Rob Bonta 司法長官が11月16日、OpenAI を提訴した。AI エージェントの制御喪失が80件超あったのに公表したのは27件だけだと主張。7月に Hugging Face を襲った約1,200体のエージェントによる攻撃や、9月に外部チャットボットへ「脱出」した事例も挙げられている。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-16",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "訴訟",
+      "セキュリティ",
+      "エージェント"
+    ]
+  },
+  {
+    "id": "nvidia-hopper-china-halt-bis-rule-q3-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "NVIDIA が中国向け Hopper の出荷を停止、第3四半期は売上1,158億ドルの記録更新、BIS の新規制も発効",
+    "excerpt": "NVIDIA は11月17日の第3四半期決算で売上1,158億ドル（前年比103%増）を発表したが、暫定CEOの Colette Kress 氏は「ライセンス付き Hopper 製品の中国への出荷を停止した」と明言した。第4四半期の見通し1,300億ドルには中国向けのデータセンター売上を一切含まない。米商務省の新規制も11月19日に発効した。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "NVIDIA",
+      "半導体",
+      "輸出規制"
+    ]
+  },
+  {
+    "id": "google-mirror-dimension-chrome-agents-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Google が「Mirror Dimension」を公開、Chrome のブラウザエージェントを鍛える、偽物のインターネット",
+    "excerpt": "Google は11月19日、Chrome のブラウザエージェントを安全にテストする合成ウェブ「Mirror Dimension」を公開した。数千の模擬サイトを隔離環境で動かし、間接プロンプトインジェクションのレッドチーミングも行う。テスト候補の生成は手作業の30倍以上だという。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Google",
+      "Chrome",
+      "セキュリティ",
+      "エージェント"
+    ]
+  },
+  {
+    "id": "openai-performance-factory-codex-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI が Performance Factory を公開、Codex エージェントが ChatGPT の遅延を調査・修正案まで、3か月で1,700件超",
+    "excerpt": "OpenAI は11月19日、ChatGPT の性能低下を Codex エージェントが調査する社内システム「Performance Factory」を公開した。調査から原因特定、修正案までをエージェントが担い、3か月あまりで1,700件超の調査と600件超の原因特定をこなした。最終的な修正の判断は人間が行う。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "Codex",
+      "エージェント"
+    ]
+  },
+  {
+    "id": "xai-grok-hijab-deepfake-lawsuit-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "Muslim Girl 創設者が X と xAI を提訴、Grok がヒジャブを外す性的ディープフェイクを生成と主張",
+    "excerpt": "Muslim Girl の創設者 Amani Al-Khatahtbeh 氏が11月18日、X と xAI を提訴した。Grok が彼女の写真からヒジャブを取り除き、裸に近い性的画像を生成したと主張。カリフォルニア州法で1件あたり最大25万ドルの賠償を求めている。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-18",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "xAI",
+      "Grok",
+      "訴訟",
+      "セキュリティ"
+    ]
+  },
+  {
+    "id": "ideogram-4-6-native-4k-editing-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Ideogram 4.6、ネイティブ 4K 生成・編集と「ピクセルずれ」の抑制、Rapidata の多段階編集で1位",
+    "excerpt": "Ideogram は11月19日、画像生成モデル Ideogram 4.6 を発表した。アップスケールではなくネイティブで最大 4,096×4,096 までの生成・編集に対応し、編集を繰り返しても編集対象外のピクセルのずれを抑える。Rapidata の多段階編集ベンチマークでは1位を取った。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Ideogram",
+      "画像生成",
+      "モデル"
+    ]
+  },
+  {
+    "id": "nvidia-tensorrt-llm-1-3-0-2026",
+    "type": "news",
+    "category": "product",
+    "title": "TensorRT-LLM 1.3.0、TensorRT バックエンドを廃止し PyTorch のみに、Rubin をプレビュー対応、DeepSeek-V4・Kimi K3 を追加",
+    "excerpt": "NVIDIA は11月20日、TensorRT-LLM 1.3.0 を公開した。TensorRT エンジンのバックエンドを廃止し、PyTorch のみの構成に変わる破壊的変更だ。Rubin（SM107）をプレビュー対応し、DeepSeek-V4 や Kimi K3 など多数のモデルを追加した。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "NVIDIA",
+      "TensorRT",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "architect-labs-frostbite-ai-cpu-2026",
+    "type": "news",
+    "category": "product",
+    "title": "AI が設計した CPU「Frostbite」、Architect Labs が発表、試作前評価で電力効率 4.59倍と主張",
+    "excerpt": "Architect Labs は11月18日、AI エージェントの群れが設計した汎用 CPU「Frostbite」を発表した。新しい命令セットを持ち、試作前の評価では現行の市販コア比で電力効率 4.59倍、面積効率 8.77倍と主張する。ただしチップはまだ作られておらず、シリコンでの検証はこれからだ。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-18",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "半導体",
+      "CPU",
+      "エージェント"
+    ]
+  },
+  {
+    "id": "openai-chatgpt-live-dictation-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ChatGPT に Live Dictation、話しながら文字起こし、10分の録音上限を撤廃、全プランで展開",
+    "excerpt": "OpenAI は11月18日、ChatGPT に Live Dictation を追加した。話した内容がその場で文字に起こされ、10分の録音上限も撤廃された。iOS、Android、ウェブ、デスクトップで全プラン（無料を含む）に順次展開される。音声で会話する Voice Mode とは別の機能だ。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-18",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "OpenAI",
+      "ChatGPT",
+      "音声"
+    ]
+  },
+  {
+    "id": "claude-code-2-1-329-tasks-trust-dialog-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.329、/tasks に予約タスク・/loop・フォークを表示、フックの宣言場所を警告、macOS の繰り返しサインアウトを修正",
+    "excerpt": "Claude Code 2.1.329 が11月19日に公開された。/tasks にこのセッションの予約タスクや /loop のウェイクアップ、フォークが表示されるようになり、フックがどの設定ファイルで宣言されているかを警告する。macOS で繰り返しサインアウトする不具合や、設定ファイルが初期化される不具合も修正された。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "フック",
+      "CLI"
+    ]
+  },
+  {
+    "id": "gemini-cli-0-70-0-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Gemini CLI 0.70.0、Unicode プロンプトの保持や worktree の選択維持など修正中心の更新",
+    "excerpt": "Gemini CLI 0.70.0 が11月19日に公開された。セッションプレビューでの Unicode プロンプトの保持、認証の再起動後も選択した worktree を維持する修正など、細かな不具合の修正が中心の版だ。目立つ新機能はない。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Gemini CLI",
+      "Google",
+      "CLI",
+      "開発ツール",
+      "Gemini"
+    ]
+  },
+  {
+    "id": "nvidia-sec-accounting-probe-stock-drop-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "SEC が NVIDIA の会計を調査と報道、株価は14%急落、1日で約5,000億ドルの時価総額が消失",
+    "excerpt": "Reuters は11月20日、米証券取引委員会（SEC）の執行部が NVIDIA の会計実務を調査していると報じた。WSJ が11月17日に SEC の調査自体を報じていたが、焦点が「会計」だと判明したのは今回が初めて。株価は14%急落し、1日で約5,000億ドルの時価総額が消えた。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "NVIDIA",
+      "半導体",
+      "規制"
+    ]
+  },
+  {
+    "id": "openai-adversarial-distillation-gpt-6-2-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI が蒸留対策を公開、GPT-6.2 Astra の推論抽出の攻撃成功率を54.0%から0.2%に",
+    "excerpt": "OpenAI は11月20日、GPT-6.2 Astra と Sol に施した推論抽出（adversarial distillation）対策を公開した。内部の適応評価では、過去の要求からの推論抽出の攻撃成功率が GPT-6 Astra の54.0%から GPT-6.2 Astra の0.2%に下がった。今年は蒸留キャンペーンへの週次の執行措置が数千〜数万アカウント規模に及んでいる。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "GPT-6",
+      "蒸留",
+      "セキュリティ"
+    ]
+  },
+  {
+    "id": "thinking-machines-inkling-2-mini-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Thinking Machines が Inkling 2 Mini をオープンウェイトで公開、ループ型トランスフォーマーで 100B 未満の最速クラス",
+    "excerpt": "Thinking Machines は11月20日、オープンウェイトの小型モデル Inkling 2 Mini を公開した。26.4B の MoE で、中間の12層を1トークンあたり3回繰り返すループ型トランスフォーマーを採用。DeepSWE v1.1 で48.2%を記録し、100B 未満のオープンウェイトで首位と主張する。約20GBでノートPCでも動く。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Thinking Machines",
+      "オープンウェイト",
+      "モデル"
+    ]
   }
 ];
