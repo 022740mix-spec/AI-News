@@ -14243,5 +14243,177 @@ export const ARTICLES_META = [
       "研究",
       "AI生産性"
     ]
+  },
+  {
+    "id": "microsoft-mai-7-models-ignite-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Microsoft が Ignite で MAI 7モデルを発表 — Code 2 は GPT-6.1 Sol の 98% の性能を約40%の価格で、と自社主張",
+    "excerpt": "Microsoft は11月17日、Ignite 2026 で自社モデル 7件を発表した。日常コーディング向けの MAI Code 2 は、4ベンチマーク平均で GPT-6.1 Sol の 98% の性能を約40%の価格で達成すると主張。性能・価格の数値は Microsoft 自身の計測・主張によるもので、独立した検証は確認できていない。",
+    "date": "2026-11-20",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Microsoft",
+      "モデル",
+      "モデルリリース",
+      "GitHub Copilot"
+    ]
+  },
+  {
+    "id": "google-gemini-tasks-free-six-countries-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Gemini の Tasks が米・日など6か国で無料に — Gemini 4 Hydrogen で電話発信や決済まで、米国先行の高度な機能も",
+    "excerpt": "Google は11月17日、Gemini のエージェント機能 Tasks を米国・日本・韓国・カナダ・オーストラリア・インドの6か国で無料提供すると発表した。Gemini 4 Hydrogen を使い、ホーム画面のトグルを Chat から Task に切り替えて使う。米国では事業者への電話発信や Google Pay による決済などの高度な機能も始まる。",
+    "date": "2026-11-20",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "Gemini 4"
+    ]
+  },
+  {
+    "id": "openai-chatgpt-for-sales-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI が ChatGPT for Sales を発表 — Sales プラグインと30超のパートナープラグインで営業業務を支援",
+    "excerpt": "OpenAI は11月17日、営業向けの ChatGPT for Sales を発表した。自社の Sales プラグインに加え、Salesforce や HubSpot など30超のパートナープラグインを ChatGPT に統合し、顧客調査、商談準備、提案書作成、フォローアップを1か所で進められるようにする。料金の発表はない。",
+    "date": "2026-11-20",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "ChatGPT"
+    ]
+  },
+  {
+    "id": "google-gemini-mac-computer-use-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Gemini の Mac アプリに computer use — 隔離ウィンドウでデスクトップ操作を代行、米国・英語で提供開始",
+    "excerpt": "Google は11月19日、Mac 版 Gemini アプリに computer use を追加した。ローカルファイルやデスクトップアプリ、ウェブを横断する複数手順の作業を、隔離されたバックグラウンドウィンドウで実行する。自分の画面とカーソルは自由なままで、重要な操作の前には承認を求める。米国・英語のみの提供。",
+    "date": "2026-11-20",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "Mac"
+    ]
+  },
+  {
+    "id": "gao-chatbot-guardrails-circumvention-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "米 GAO：4大チャットボット全てでガードレールを迂回、実行可能な攻撃計画を12時間以内に生成",
+    "excerpt": "米政府説明責任局（GAO）は、Claude、Grok、ChatGPT、Gemini の4プラットフォームに対する2026年春の覆面テストで、ガードレールが迂回され、実行可能な攻撃計画が12時間以内に生成されたと報告した。2つは即席爆発物の情報を、2つは電力網への攻撃情報を出した。どのプラットフォームがどの計画を出したかは非開示で、GAO は正式な勧告を出していない。",
+    "date": "2026-11-20",
+    "newsDate": "2026-11-18",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "AI安全性",
+      "規制",
+      "米国政府"
+    ]
+  },
+  {
+    "id": "uk-ipt-apple-encryption-order-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "英裁判所、Apple への暗号化回避命令の存在確認を政府に命じる — 「国家安全保障を損なわない」",
+    "excerpt": "英国の Investigatory Powers Tribunal は11月19日、政府に対し、Apple への技術能力通知（TCN）の存在を認めるよう命じた。政府の「存在を認めれば国家安全保障を損なう」との主張を退けた。2025年1月の第1次通知は米国の介入で撤回され、2026年7月の第2次通知は英ユーザーのみに限定されている。実体審理は2027年の見込み。",
+    "date": "2026-11-20",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Apple",
+      "規制"
+    ]
+  },
+  {
+    "id": "github-agentic-workflows-ga-2026",
+    "type": "news",
+    "category": "product",
+    "title": "GitHub Agentic Workflows が GA — 自然言語の Markdown から Actions YAML を生成、Copilot などで自動化",
+    "excerpt": "GitHub は10月28日、GitHub Next のオープンソースプロジェクト「GitHub Agentic Workflows」を一般提供開始した。自然言語の Markdown で書いた自動化を標準の Actions YAML にコンパイルし、GitHub Actions 内でコーディングエージェントを動かす。課題トリアージ、CI 失敗の分析、ドキュメント更新、テスト作成などが対象で、既定では読み取り専用・サンドボックスで動く。",
+    "date": "2026-11-20",
+    "newsDate": "2026-10-28",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "GitHub",
+      "GitHub Copilot"
+    ]
+  },
+  {
+    "id": "openai-codex-cli-0-171-0-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.171.0 — GPT-6.2 Sol／Astra をカタログ追加、TUI ワークスペースを既定で有効化",
+    "excerpt": "OpenAI は11月20日、Codex CLI 0.171.0 を公開した。GPT-6.2 Sol と Astra をモデルカタログに追加し、Sol を既定の選択にした。TUI ワークスペースが既定で有効になり、検索可能なドキュメントプレビューや画像プレビュー、サブエージェントの会話記録をメインの会話と並べて見られる。codex exec --remote による既存アプリサーバー経由の非対話セッションも追加された。",
+    "date": "2026-11-20",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "OpenAI",
+      "Codex"
+    ]
+  },
+  {
+    "id": "google-gemini-api-tool-retrieval-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Gemini API に Tool Retrieval がプレビュー — ツールのスキーマを必要時にだけ読み込み、入力トークンを削減",
+    "excerpt": "Google は11月19日、Gemini API の Interactions API で Tool Retrieval をプレビュー公開した。tool_search ツールの追加と defer_loading: true の指定で、ツールのパラメータスキーマを必要なときだけ読み込む。追加料金はなく、Gemini 3.6 以降と全 Gemini 4 モデルで利用できる。",
+    "date": "2026-11-20",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "AIエージェント"
+    ]
+  },
+  {
+    "id": "google-stitch-loop-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Google Labs が Stitch Loop を発表 — コードとライブ指標につなぎ改善 PR を作り続ける常駐プロダクトエージェント",
+    "excerpt": "Google は11月18日、Google Labs の実験として Stitch Loop を発表した。GitHub のコードベースとライブ指標につなぎ、セキュリティ・レイテンシ・アクセシビリティの改善を24時間体制で続ける常駐型のプロダクトエージェント。改善案は GitHub のプルリクエストとして提案され、マージは人間が承認する。ウェイティングリストが全世界で公開され、Google AI Ultra 加入者が優先される。",
+    "date": "2026-11-20",
+    "newsDate": "2026-11-18",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "AIエージェント"
+    ]
+  },
+  {
+    "id": "openai-gpt-live-1-1-api-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI が GPT-Live-1.1 を API で提供 — 多言語音声の発音・書き起こしを改善、待機中は $0.02/分",
+    "excerpt": "OpenAI は11月19日、音声モデル GPT-Live-1.1 を API で提供開始した。GPT-Live-1 と比べて多言語での発音とアクセントの一貫性、書き起こしの精度を改善した。WebRTC セッションの Standby では無音時に推論を一時停止し、待機中は1分あたり $0.02 になる。",
+    "date": "2026-11-20",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "OpenAI",
+      "モデル"
+    ]
   }
 ];

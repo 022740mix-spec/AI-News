@@ -35144,6 +35144,329 @@ const ARTICLES_BODY = {
         "url": "https://openai.com/index/research-acceleration-jagged-frontier/"
       }
     ]
+  },
+  "microsoft-mai-7-models-ignite-2026": {
+    "body": [
+      "Microsoft は2026年11月17日、年次イベント Ignite 2026 で、自社の AI モデルファミリー「MAI」の新モデル 7件を発表した。いずれも「価格性能比」を売りにするもので、日常のコーディング、セキュリティ、画像生成、音声、意思決定といった用途を一通りそろえる。あわせて企業向けの重みライセンス「MAI Licensed Weights」と、第2世代アクセラレータ Maia 200 の本番稼働も明らかにした。",
+      "中心は日常の企業コーディング向けの MAI Code 2 だ。DeepSWE 1.1、Terminal-Bench 2.1、SWE-Atlas、FrontierCode v1.1 の4ベンチマーク平均で、GPT-6.1 Sol の 98% の性能を約40%の価格で、Claude Opus 5.5 の 96% の性能を約5%の価格で達成するとしている。軽量版の MAI Code 2 Flash は、GPT-6 Luna と同等の性能を65%、Claude Haiku 5.5 と同等を20%の価格で実現すると主張する。Code 2 は GitHub Copilot で、Flash は Copilot と Microsoft Foundry の限定プレビューで提供される。ただし Microsoft は、Code 2 は基礎科学研究や超長期のエージェント作業にはまだ調整されていないとも明言している。",
+      "ほかのモデルも価格性能比を前面に出す。セキュリティ特化の MAI Cyber 2 Flash は CyberGym-E2E で 92.3% を記録し、GPT-6 Astra の 91.5% を上回ったとしている。タスクあたりのコストは GPT-6 Astra の2%未満で、出力トークン価格は前世代より86%安い。MAI Image 2.7 は Artificial Analysis の画像編集で1位を主張し、GPT Image 2.6 Sunburst（max）の約5分の1の価格とする。初の音声モデル MAI Realtime 1 は GPT-Realtime 2.1 を上回るとし、音声1分あたり $0.01 から提供する。Dragon Copilot Transcribe（MAI Transcribe 2 基盤）は月1,000万件の患者対応で使われ、多言語の誤り率を半減させたという。意思決定・ルーティング用の Decision 1.1 は GPT-6.1 Sol 比で50倍高速・79倍安価とし、4,000社以上が利用しているとする。",
+      "注意すべきは、価格・性能の比較数値の多くが Microsoft 自身の計測・主張によるものだという点だ。ベンチマークの条件や価格比較の前提は同社の発表ページには詳しく示されておらず、独立した第三者による検証は確認できていない。CyberGym-E2E では、訓練データと重なる 92 タスクを除いた 813 タスクで評価したことも同社のページに記されている。価格性能比の主張がどこまで実態に即しているかは、今後の第三者評価を待つ必要がある。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "MAI 7モデルの概要（Microsoft の発表に基づく。性能・価格の数値はすべて同社の主張）",
+        "headers": [
+          "モデル",
+          "特徴・提供形態"
+        ],
+        "rows": [
+          [
+            "MAI Code 2",
+            "日常コーディング。4ベンチ平均で GPT-6.1 Sol の 98% を約40%の価格でと主張。GitHub Copilot で提供"
+          ],
+          [
+            "MAI Code 2 Flash",
+            "高頻度・軽量作業。GPT-6 Luna と同等を65%、Haiku 5.5 と同等を20%の価格でと主張。Copilot と Foundry 限定プレビュー"
+          ],
+          [
+            "MAI Cyber 2 Flash",
+            "セキュリティ特化。CyberGym-E2E で 92.3%（GPT-6 Astra は 91.5%）と主張。タスク単価は2%未満。12月中旬から MDASH を含む Microsoft セキュリティ製品へ順次導入（対象顧客は自動置換）"
+          ],
+          [
+            "MAI Image 2.7",
+            "画像生成・編集。Artificial Analysis 画像編集で1位と主張。Foundry で提供。Flash 版は1,000枚あたり約 $10"
+          ],
+          [
+            "MAI Realtime 1",
+            "初の speech-to-speech。GPT-Realtime 2.1 を上回ると主張。音声1分あたり $0.01 から"
+          ],
+          [
+            "Dragon Copilot Transcribe",
+            "MAI Transcribe 2 基盤。月1,000万件の患者対応。多言語の誤り率を半減と主張"
+          ],
+          [
+            "Decision 1.1",
+            "エージェントの意思決定・ルーティング。GPT-6.1 Sol 比で50倍高速・79倍安価と主張。4,000社以上が利用"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Seven new world-class models at scalable price-performance（Microsoft AI）",
+        "url": "https://microsoft.ai/news/microsoft-ignite-2026/"
+      },
+      {
+        "title": "Ignite 2026: Building the frontier ecosystem（Microsoft 公式ブログ）",
+        "url": "https://blogs.microsoft.com/blog/2026/11/17/ignite-2026-building-the-frontier-ecosystem/"
+      },
+      {
+        "title": "MAI Code 2 and MAI Code 2 Flash in GitHub Copilot（GitHub Changelog）",
+        "url": "https://github.blog/changelog/2026-11-17-mai-code-2-and-mai-code-2-flash-in-github-copilot/"
+      },
+      {
+        "title": "From model choice to your durable advantage（Azure AI Foundry 公式ブログ）",
+        "url": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/from-model-choice-to-your-durable-advantage-build-ai-that-keeps-improving/4573609"
+      }
+    ]
+  },
+  "google-gemini-tasks-free-six-countries-2026": {
+    "body": [
+      "Google は2026年11月17日、Gemini のエージェント機能「Tasks」を、米国・日本・韓国・カナダ・オーストラリア・インドの6か国で無料提供すると発表した。これまで有料サブスクリプション向けのベータだった機能が、数億人規模のユーザーに開かれる。使うモデルは Gemini 4 Hydrogen で、Gemini アプリのホーム画面にあるトグルを Chat から Task に切り替えると利用できる。",
+      "Tasks は調べものや下書きではなく実際の手続きを Gemini に任せるためのモードだ。Google の発表では、車の点検予約のために販売店へ電話をかけ、空きを確認してカレンダーに登録する、公共料金の請求書を分析して原因を突き止める、といった使い方が紹介されている。米国では先行して高度な機能も始まる。事業者への電話発信、Agent Payments Protocol（AP2）による Google Pay での決済（支出上限を事前に設定できる）、RCS でのテキスト指示、gemini@google.com へのメール転送だ。決済では American Express が近日対応予定で、Mastercard と Visa に対応する。60以上のアプリと連携する。領収書や配送情報は Google Wallet に集約され、Wallet は同日から iOS にも拡大する。今後は Universal Commerce Protocol（UCP）の統合も予定されている。",
+      "安全性の仕組みも示された。タスクの実行には Google Cloud の Agent Compute Engine によるハードウェア分離された仮想マシンを使い、プロンプトインジェクションを検出するフィルターや Safe Browsing によるリンク制限を組み合わせる。購入などの重要な手順の前には確認を求め、途中で指示を追加したり停止したりもできる。設定からタスク設定の変更、アプリの接続解除、履歴の削除ができる。",
+      "Google 自身も、タスクが失敗したり途中で止まったりすることがあると注意している。個人アシスタントがウェブを操作する使い方はまだ発展途上で、途中で画面をユーザーに返す場面もあるという。無料化の対象はこの6か国で、発表ではそれ以外の国への言及はない。日本も対象国に含まれており、Gemini アプリのトグルを切り替えるだけで試せる。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 1,
+        "caption": "Gemini Tasks の無料提供の概要（Google の発表に基づく）",
+        "headers": [
+          "項目",
+          "内容"
+        ],
+        "rows": [
+          [
+            "対象国",
+            "米国・日本・韓国・カナダ・オーストラリア・インドの6か国"
+          ],
+          [
+            "モデル",
+            "Gemini 4 Hydrogen"
+          ],
+          [
+            "使い方",
+            "Gemini アプリのホーム画面のトグルを Chat から Task に切り替え"
+          ],
+          [
+            "米国先行の機能",
+            "事業者への電話発信、Google Pay による決済（AP2、上限設定可）、RCS での指示、メール転送"
+          ],
+          [
+            "連携",
+            "60以上のアプリ"
+          ],
+          [
+            "安全対策",
+            "ハードウェア分離の仮想マシン、プロンプトインジェクション対策、重要手順前の確認"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "How to use Tasks in Gemini for personal assistance（Google 公式ブログ）",
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
+      }
+    ]
+  },
+  "openai-chatgpt-for-sales-2026": {
+    "body": [
+      "OpenAI は2026年11月17日、営業チーム向けの ChatGPT for Sales を発表した。新しい Sales プラグインと、30を超える新規・強化されたパートナープラグインを ChatGPT に統合するもので、顧客の理解、雑務の削減、商談の成約を狙う。Sales プラグインは無料を含む全 ChatGPT プランで利用できる。",
+      "Sales プラグインは営業の日常業務に合わせた既製のワークフローを持つ。追うべき顧客の選定、商談の準備、フォローアップの下書きなどだ。パートナープラグインは CRM の Salesforce、HubSpot、Close CRM、monday CRM、見込み客調査の Apollo、Clay、Common Room、通話記録の Gong、Otter.ai、Granola、見積・契約の DocuSign、PandaDoc、Ironclad、ServiceNow CPQ など、営業の道具を6つの作業区分に分けてつなぐ。常駐エージェントの dot に定例タスクを委任することもでき、毎朝の商談チェックや会議資料の準備を任せられる。",
+      "使い方の例として OpenAI は CRM と ZoomInfo や Clay の調査から優先度の高い顧客リストを作る、商談前に顧客履歴と通話内容を集めたブリーフィングを作る、通話後にフォローアップ文面と CRM への更新案を作る、Rox を使って商談の停滞を毎朝確認する、といった流れを示している。Business と Enterprise では管理者が管理コンソールからプラグインを有効化する。パートナープラグインや機能の利用可否はプラン・地域・ワークスペース設定によって異なる。",
+      "料金の発表はない。パートナー側の有料サブスクリプションが別途必要な場合もある。翌18日には会計向けの[ChatGPT for Accounting](?a=openai-chatgpt-for-accounting-2026)も発表されており、職種別の用途に向けた展開が続いている。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 1,
+        "caption": "ChatGPT for Sales の作業区分と主なパートナープラグイン（OpenAI の発表に基づく）",
+        "headers": [
+          "作業区分",
+          "主なプラグイン"
+        ],
+        "rows": [
+          [
+            "コンテンツと営業支援",
+            "Confluence、Guru、Seismic、Gamma、Figma、Canva"
+          ],
+          [
+            "顧客と商談",
+            "Salesforce、HubSpot、Close CRM、monday CRM"
+          ],
+          [
+            "見込み客の発掘",
+            "Apollo、Clay、Common Room、Outreach、Salesloft、ZoomInfo"
+          ],
+          [
+            "会話の活用",
+            "Gong、Otter.ai、Granola"
+          ],
+          [
+            "業績とリスク",
+            "Backstory、Hex"
+          ],
+          [
+            "見積と契約",
+            "DocuSign、Ironclad、PandaDoc、ServiceNow CPQ"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing ChatGPT for Sales（OpenAI 公式ブログ）",
+        "url": "https://openai.com/index/introducing-chatgpt-for-sales/"
+      },
+      {
+        "title": "Getting started with ChatGPT for Sales（OpenAI ヘルプセンター）",
+        "url": "https://help.openai.com/en/articles/20001707-getting-started-with-chatgpt-for-sales"
+      },
+      {
+        "title": "ChatGPT for Sales（OpenAI ビジネス向けページ）",
+        "url": "https://openai.com/business/solutions/sales/"
+      }
+    ]
+  },
+  "google-gemini-mac-computer-use-2026": {
+    "body": [
+      "Google は2026年11月19日、Mac 版 Gemini アプリに computer use を追加した。ローカルファイル、デスクトップアプリ、ウェブを横断する複数手順の作業を、Gemini が代わりに実行する。写真の一括色調補正、PDF からの住所抜き出しによる配送見積もりの入力、ライブダッシュボードからのスライド作成、出品リストの下書きといった、数十回のクリックが必要な定型作業が対象だ。",
+      "実行は隔離されたバックグラウンドウィンドウの中で行われ、チャット内にライブプレビューが表示される。自分の画面とカーソルは自由なままで、作業中も入力や通話を続けられる。Gemini がアクセスできるアプリはユーザーが選び、実行の様子をライブで確認し、いつでも一時停止できる。重要な操作の前には承認を求める設計になっている。",
+      "提供は米国・英語のみで、Mac 版 Gemini アプリから利用できる。アプリは gemini.google/mac から入手する。デスクトップ操作の自動化は各社が競う領域になっており、Google にとっては Tasks の無料化と並ぶ、Gemini を「作業を任せる相手」にする動きの一環だ。"
+    ],
+    "primarySources": [
+      {
+        "title": "Automate Mac tasks with Gemini computer use（Google 公式ブログ）",
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac/"
+      }
+    ]
+  },
+  "gao-chatbot-guardrails-circumvention-2026": {
+    "body": [
+      "米政府説明責任局（GAO）は2026年11月18日に公表した報告書で、主要な生成 AI プラットフォーム 4つに対する覆面テストの結果を明らかにした。2026年春のテストで、Claude、Grok、ChatGPT、Gemini のいずれもガードレールが迂回され、実行可能な攻撃計画が12時間以内に生成されたという。報告書は10月付で、上院合同経済委員会の筆頭委員である Maggie Hassan 上院議員の要請によるものだ。",
+      "テストでは2つの攻撃シナリオを用意した。多数の死傷者を出す即席爆発物（IED）の製造・起爆と、電力網への攻撃による経済的損害だ。2つのプラットフォームが IED に関する情報を、ほかの2つがドローンや銃器による電力網攻撃の情報を出した。各プラットフォームは標的、場所、時期、攻撃方法といった具体的な情報を提供したという。GAO は、提供された情報が攻撃の計画と実行に足りるかを、調査、監視、専門家への聞き取りで検証した。どのプラットフォームがどのシナリオを出したかは、報告書では匿名化されており対応は非開示だ。",
+      "各プラットフォームは当初、要請の拒否、情報の削除、アカウントの停止といったガードレールで防いだが、GAO は一般的な迂回手法でそれを突破したとしている。GAO はこの報告書で正式な勧告を出していない。各社の担当者は、プラットフォームの安全性を今後も改善していくとおおむね述べたという。報告書は、生成 AI が悪用された場合に、技術に詳しくない者でも攻撃の計画を立てやすくなるリスクを指摘している。",
+      "この結果は、ガードレールが「ある」ことと「破られない」ことが別問題だという点を示している。GAO のテストは2026年4月時点の最新バージョンを対象としており、現在のバージョンで同じ結果になるかはこの報告書だけでは分からない。GAO 自身も、この結果は特定の時点での評価であり、統計的に有意なサンプルに基づくものではないと断っている。モデルの安全性を測るうえで、政府機関による独立した実測という意味で重みのある材料だ。"
+    ],
+    "primarySources": [
+      {
+        "title": "GAO-27-108814: Artificial Intelligence: Covert Testing Used Common Platforms to Create Viable Attack Plans（米 GAO）",
+        "url": "https://files.gao.gov/reports/GAO-27-108814/index.html"
+      }
+    ]
+  },
+  "uk-ipt-apple-encryption-order-2026": {
+    "body": [
+      "英国の Investigatory Powers Tribunal（調査権限裁判所）は2026年11月19日、政府に対し、Apple への技術能力通知（TCN）の存在を認めるよう命じた。政府は安全保障上の理由から存在について「肯定も否定もしない」としてきたが、裁判所はすでに公開されている情報の量からみて、存在を認めても国家安全保障への損害はほとんどないと判断した。",
+      "問題の通知は Apple に対し、顧客データへアクセスできるよう暗号化を回避する能力の維持を求めるものだ。政府は「プライバシーは重要だが、公共の安全を犠牲にしてはならない」とし、この通知は警察や情報機関の捜査への協力を維持させるだけのものだと説明している。2025年1月の第1次通知は米英市民の暗号化クラウドバックアップへのアクセスを求めるもので、米国のトランプ政権との数か月にわたる交渉の末に撤回された。2026年7月には、英ユーザーのみに限定した第2次通知が出されている。",
+      "Apple は政府への異議申し立てを続けているが、法的制約のため、異議の理由を公開で詳しく述べられていない。今回の判断は通知の存在を公に認められるかどうかだけを扱ったもので、通知の中身が適法かどうかを決める実体審理は2027年になる見込みだ。裁判所は通知の詳細をどこまで開示できるかは後の審理で扱うとした。市民団体 Liberty の Akiko Hart 氏は、今回の判断を「透明性の勝利」と評した。"
+    ],
+    "primarySources": [
+      {
+        "title": "UK tribunal confirms government order demanding access to Apple data（Reuters）",
+        "url": "https://www.reuters.com/business/retail-consumer/uk-tribunal-confirms-government-order-demanding-access-apple-data-2026-11-19/"
+      }
+    ]
+  },
+  "github-agentic-workflows-ga-2026": {
+    "body": [
+      "GitHub は2026年10月28日、GitHub Next のオープンソースプロジェクト「GitHub Agentic Workflows」を一般提供（GA）開始した。自然言語の Markdown ファイルで自動化を定義すると、標準の GitHub Actions YAML にコンパイルされ、GitHub Actions の中でコーディングエージェントが動く。対象は課題のトリアージ、CI 失敗の分析、ドキュメント更新、テスト作成といった推論を要する作業だ。既存のランナーグループやポリシー制約をそのまま使える。",
+      "エージェントのエンジンには GitHub Copilot を使えるほか、自分のコーディングエージェントを持ち込むこともできる。安全対策として、エージェントは既定で読み取り専用権限で動き、Agent Workflow Firewall の内側のサンドボックスで実行され、出力は safe outputs の検証を通る。変更案を適用する前には脅威検出ジョブが走る。GA での追加点として、セルフホストの Actions Runner Controller（ARC）と Docker-in-Docker への対応、支出予測コマンド gh aw forecast の正式化、モデルルーティング、Cloud Hypervisor や NVX マイクロ VM によるエージェントの隔離などが挙げられている。",
+      "GitHub の発表では、Accenture の事例として、あるリーダーが週あたり推定29時間を節約し、チームの速度が平均で2倍以上になり、AI がチームのコミットの91%を書くようになったと紹介されている。本番のエラーは1日あたり約11,000件から1,000件未満に減ったという。ただしこれらは発表の中の事例紹介であり、独立した検証は確認できていない。",
+      "GitHub Agentic Workflows は github.com の Free、Team、Enterprise で利用できる。既定の GitHub Copilot CLI エンジンを使うには Copilot ライセンスが必要だ。クイックスタートガイドに従えば、CLI 拡張を入れて数分で最初のワークフローを動かせる。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitHub Agentic Workflows generally available（GitHub Changelog）",
+        "url": "https://github.blog/changelog/2026-10-28-github-agentic-workflows-generally-available/"
+      }
+    ]
+  },
+  "openai-codex-cli-0-171-0-2026": {
+    "body": [
+      "OpenAI は2026年11月20日、Codex CLI 0.171.0 を公開した。GPT-6.2 Sol と Astra をモデルカタログに追加し、Sol を既定の選択にした。GPT-6.2 は11月17日に発表された OpenAI の最新モデル群で、Codex CLI の既定モデルが GPT-6.1 Sol から 6.2 Sol へ移ったことになる。",
+      "今回の目玉は TUI ワークスペースの既定有効化だ。検索可能なドキュメントプレビュー、画像プレビュー、サブエージェントの会話記録を、メインの会話と並べて表示できる。プロンプト作成画面では、Vim モード以外で undo／redo のショートカットを設定できるようになり、添付ファイルや大きな貼り付けの復元にも対応した。",
+      "リモート実行の機能も増えた。codex exec --remote <ADDR> で、既存のアプリサーバー経由で非対話セッションを開始・再開できる。TUI から /rc と /remote でローカルのリモート制御を管理し、デバイスのペアリングコードを表示できる。MCP のステータスラインも /statusline で選択・作成できるようになった（tui_extensions_statusline の有効化が必要）。",
+      "そのほか、セッション切り替え時の下書きやフォローアップの保持、作業ディレクトリ変更時の権限プロファイルの維持、承認の取り消しに関する不具合の修正などが含まれる。ビルドは Rust 1.99.1 に更新された。"
+    ],
+    "primarySources": [
+      {
+        "title": "Release rust-v0.171.0（openai/codex、GitHub）",
+        "url": "https://github.com/openai/codex/releases/tag/rust-v0.171.0"
+      }
+    ]
+  },
+  "google-gemini-api-tool-retrieval-2026": {
+    "body": [
+      "Google は2026年11月19日、Gemini API の Interactions API で Tool Retrieval をプレビュー公開した。エージェントが数十から数百のツールにつながる場合、すべてのパラメータスキーマを毎回送ると入力トークンが膨らみ、遅延が増え、ツール選択の精度も下がる。Tool Retrieval はツール群を待機状態に置き、必要なスキーマだけをそのタスクで読み込む仕組みだ。",
+      "使い方はリクエストに tool_search ツールを追加し、後回しにしたいツールに defer_loading: true を付ける。モデルには後回しのツールの名前と説明は見えるため、何が使えるかは分かる。パラメータスキーマは文脈から外れ、モデルが必要なツールを名前で要求すると、API がスキーマを読み込んで関数呼び出しに進む。検索・読み込み・関数呼び出しの3段階は interaction.steps に記録され、デバッグ時にどのツールを検討したかを確認できる。",
+      "追加料金はない。入出力トークンは呼び出すモデルの通常料金で課金される。tool_search の有効化で固定の少量の入力トークンが増え、読み込んだスキーマは会話の残りで入力として課金される。読み込まないスキーマが多いほど節約になる、というのが Google の説明だ。サーバー側で検索を行うためインデックスの構築やホスティングは不要で、リモートの MCP サーバーにも対応する。クライアント側で検索を行う方式もあり、自分のツール登録や権限フィルターを使える。",
+      "対応モデルは Gemini 3.6 以降で、全 Gemini 4 モデルを含む。プレフィックスキャッシュとの相性も良く、後回しのスキーマはプロンプトの先頭に入らないため、キャッシュされる接頭辞がターンごとに変わらない。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 1,
+        "caption": "Gemini API Tool Retrieval の概要（Google の発表に基づく）",
+        "headers": [
+          "項目",
+          "内容"
+        ],
+        "rows": [
+          [
+            "有効化",
+            "tool_search ツールの追加と defer_loading: true の指定"
+          ],
+          [
+            "読み込みの単位",
+            "必要なツールのパラメータスキーマだけを必要時に読み込む"
+          ],
+          [
+            "記録",
+            "検索・読み込み・関数呼び出しを interaction.steps に記録"
+          ],
+          [
+            "料金",
+            "追加料金なし。標準の入出力トークン課金"
+          ],
+          [
+            "対応モデル",
+            "Gemini 3.6 以降、全 Gemini 4 モデル"
+          ],
+          [
+            "MCP",
+            "リモート MCP サーバーにも対応。クライアント側検索の方式もある"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Gemini API tool retrieval for efficient agent scaling（Google 公式ブログ）",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/"
+      }
+    ]
+  },
+  "google-stitch-loop-2026": {
+    "body": [
+      "Google は2026年11月18日、Google Labs の新しい実験として Stitch Loop を発表した。コードを書いて出荷するまでを担うコーディングエージェントに対し、Stitch Loop は出荷したあとの改善を担う常駐型のプロダクトエージェントだ。GitHub のコードベースとライブ指標につなぎ、修正すべき点を見つけて、目標を達成するまで24時間体制で働き続ける。",
+      "使い方は GitHub と製品の文脈（ログ、ユーザー行動、フィードバックなど）を 180 以上の連携、独自の MCP サーバー、ローカル CLI のアップロードでつなぐ。セキュリティ、レイテンシ、アクセシビリティの3つのループが既定で用意され、独自のループも追加できる。各ループは「提案→解決策→構築→振り返り」の4段階で回る。提案には根拠が付き、解決策にはトレードオフと範囲が示される。構築では、分離されたクラウドサンドボックスでコードを書き、GitHub のプルリクエストを開く。スクリーンショットや動画が付く場合もある。目標を達成したあとも指標を監視し、悪化すれば再び動く。マージは必ず人間が承認する。",
+      "セキュリティのループは Gemini 4 Carbon のサイバーセキュリティ機能と、Google DeepMind の自律エージェント CodeMender を組み合わせる。コードベースを走査して脆弱性を見つけ、証拠を付けて指摘し、修正案のプルリクエストを開く。Stitch Loop は Google Antigravity などのコーディングエージェントのサービス層としても使え、Stitch CLI と MCP 経由で製品の文脈を引き渡せる。Slack では @stitch で毎日の要約を受け取り、ループを作成できる。",
+      "ウェイティングリストは同日から全世界で公開され、Google AI Ultra 加入者が優先される。参加は stitch.google.com/loop/waitlist から申し込む。Stitch はアイデアを数分で動くインターフェースにするツールとして、すでに数百万人のデザイナー、開発者、創業者が使っているという。Stitch Loop はその先の、製品を出し続けたあとの改善までを担う位置づけだ。"
+    ],
+    "primarySources": [
+      {
+        "title": "Stitch Loop: Continuous product optimization for teams（Google 公式ブログ）",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-loop/"
+      }
+    ]
+  },
+  "openai-gpt-live-1-1-api-2026": {
+    "body": [
+      "OpenAI は2026年11月19日、音声モデル GPT-Live-1.1 を API で提供開始した。API の変更履歴に掲載された。話しながら聞くこともできる全二重の音声モデルで、GPT-Live-1 と比べて多言語での発音とアクセントの一貫性、書き起こしの精度を改善したとしている。Live セッションの設定で gpt-live-1.1 を指定して使う。",
+      "新機能として、WebRTC セッション向けの Standby がある。無音のときに推論を一時停止し、話し始めると再開する。待機中の料金は1分あたり $0.02 で、通常の $0.05 より安い。音声セッションは時間で課金され、バックエンドのモデルやツールの利用は別途課金される。GPT-Live-1.1 と GPT-Live-1 は同時セッション数の上限が別々に設定されている。",
+      "GPT-Live-1.1 は Live API（v1/live/sessions）で使う。モデルページのエンドポイント一覧には Realtime API や Chat Completions、Responses API も並んでいる。関数呼び出しとストリーミングに対応し、ファインチューニングには非対応だ。音声エージェントの待機コストを下げる変更で、長時間の音声セッションを組む開発者にとっては実利のある更新になる。"
+    ],
+    "primarySources": [
+      {
+        "title": "GPT-Live-1.1 Model（OpenAI API ドキュメント）",
+        "url": "https://developers.openai.com/api/docs/models/gpt-live-1.1"
+      },
+      {
+        "title": "Changelog（OpenAI API）",
+        "url": "https://developers.openai.com/api/docs/changelog"
+      }
+    ]
   }
 };
 
