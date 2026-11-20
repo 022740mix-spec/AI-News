@@ -13,3 +13,8 @@ ifstap@proton.me
 
 # 同上。攻撃者が公開に使ったアカウントのアドレス。タイムラインの説明に必要。
 nrwise@proton.me
+
+# Gemini Tasks のメール転送先（google-gemini-tasks-free-six-countries-2026）
+# Google 公式ブログが案内する機能の転送先アドレス。Tasks の使い方の説明に必要。
+# Google の公開サービス用アドレスであり、個人の連絡先ではない。
+gemini@google.com
