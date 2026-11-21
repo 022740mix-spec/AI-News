@@ -35946,6 +35946,23 @@ const ARTICLES_BODY = {
         "url": "https://openai.com/index/introducing-gpt-6-cyber/"
       }
     ]
+  },
+  "openai-healthcare-computer-use-2026": {
+    "body": [
+      "OpenAI は 2026年11月16日、ChatGPT for Healthcare と ChatGPT for Clinicians に computer-use エージェントを導入したと発表した。画面を読み、クリックや入力、アプリ間の移動で複数ステップの業務を実行する。API、ChatGPT for Healthcare、ChatGPT for Clinicians で本日から利用できる。医療機関向けには BAA が必須で、ChatGPT for Healthcare のデータは学習に使われない。",
+      "安全性と有用性の評価では、GPT-6 Astra が EHR の受信箱業務 325件のうち 99% を臨床的に安全と評価された。医師による有用性評価では 646件のうち 93% が「very helpful」または「extremely helpful」とされた。スタンフォードの独立ベンチマーク HealthAdminBench では GPT-6 Astra が 94.3%、GPT-6 Luna が 91.8% を獲得し、Luna は 1タスク約 8.5セントと 98% 安かった。",
+      "導入事例として、CVS Health は数か月にわたった書類送付の滞留を週末に解消し、1日数万件のコンサルトを処理している。Cigna Healthcare、Abridge、Ambience も導入を進めている。あわせて 20超の新規ヘルスケアプラグイン（Aiva、Amion、Availity Extend、Elation Health、UpToDate Expert AI など）が追加され、臨床検索の改善も行われた。ChatGPT for Clinicians は米国の対象の医師に無料で提供される。"
+    ],
+    "primarySources": [
+      {
+        "title": "More ways to move care forward with ChatGPT for Healthcare（OpenAI）",
+        "url": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare/"
+      },
+      {
+        "title": "Advancing computer-use agents for healthcare teams（OpenAI）",
+        "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/"
+      }
+    ]
   }
 };
 

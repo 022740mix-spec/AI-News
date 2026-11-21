@@ -14883,5 +14883,21 @@ export const ARTICLES_META = [
       "GPT-6",
       "セキュリティ"
     ]
+  },
+  {
+    "id": "openai-healthcare-computer-use-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI、ChatGPT for Healthcare に computer-use エージェントを導入",
+    "excerpt": "OpenAI が **ChatGPT for Healthcare** などに computer-use エージェントを導入。EHR 業務 325件の 99% が臨床的に安全と評価され、HealthAdminBench では GPT-6 Astra が 94.3% を獲得した。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-16",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "ChatGPT",
+      "ヘルスケア"
+    ]
   }
 ];
