@@ -35932,6 +35932,20 @@ const ARTICLES_BODY = {
         "url": "https://www.engadget.com/2322647/google-latest-home-page-redesign-makes-gemini-even-more-prominent/"
       }
     ]
+  },
+  "openai-gpt-6-cyber-2026": {
+    "body": [
+      "OpenAI は 2026年11月5日、サイバー特化モデル GPT-6 Cyber を発表した。GPT-6 Astra のサイバー特化版で、OpenAI の Preparedness Framework のサイバー分野で Critical に分類された。GPT-5.6 Cyber の High からの上昇だ。ExploitGym では 48.5% を獲得し、GPT-5.6 Cyber の 32.1% から約16ポイント、相対で 51% の改善になった。Web ペネトレーションテストでの脆弱性の recall は 40.3% で、GPT-6 Astra の 32.0% を上回った。",
+      "境界を守る能力も大きく改善した。ExploitGym Honeypot では、範囲外のサービスへの攻撃を避けた割合が、展開用プロンプトなしで 99.93%、プロンプトありで 100% だった。GPT-5.6 Cyber は 94.49% だった。新しいベンチマーク RemoteExploitBench では、Daybreak Blue の GPT-6 Astra が全タスクを拒否したのに対し、GPT-6 Cyber は 95% を完了した。唯一の失敗は、遠隔で動作しなかったエクスプロイトだった。",
+      "実績として、Linux カーネルでは 1,724件の脆弱性を再現し、948件の権限昇格エクスプロイトを作成した。同じハーネスでの GPT-5.6 Sol の 166件の 5倍以上だ。Firefox では Mozilla が high severity と分類した 81件の新規の脆弱性を発見し、既知の 30件が想定より深刻だと判明した。304件の critical な所見を管理者に開示し、Mozilla は修正の取り込みを始めている。",
+      "提供は API と Codex 経由で、承認された Daybreak Red の顧客の小グループから始まり、まもなくすべての Daybreak Red の顧客へ拡大する。あわせて、悪用を検知する監視や Private Safety Processing、Daybreak Red の API アクセスでの IP 許可リストなどの対策も強化された。10億ドル規模の Daybreak for Frontline Defenders 助成プログラムで、資源の限られた防御側へのアクセスを補助する。"
+    ],
+    "primarySources": [
+      {
+        "title": "GPT‑6 Cyber: Advancing the frontier of aligned cybersecurity agents（OpenAI）",
+        "url": "https://openai.com/index/introducing-gpt-6-cyber/"
+      }
+    ]
   }
 };
 

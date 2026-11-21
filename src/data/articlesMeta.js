@@ -14867,5 +14867,21 @@ export const ARTICLES_META = [
       "Gemini",
       "AI Mode"
     ]
+  },
+  {
+    "id": "openai-gpt-6-cyber-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI、サイバー特化モデル GPT-6 Cyber を発表",
+    "excerpt": "OpenAI がサイバー特化モデル **GPT-6 Cyber** を発表。ExploitGym 48.5%、Preparedness Framework のサイバー分野で Critical に分類され、Linux カーネルで 948件の権限昇格エクスプロイトを作成した。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-05",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "GPT-6",
+      "セキュリティ"
+    ]
   }
 ];
