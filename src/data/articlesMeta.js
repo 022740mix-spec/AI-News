@@ -14629,7 +14629,8 @@ export const ARTICLES_META = [
       "NVIDIA",
       "半導体",
       "規制"
-    ]
+    ],
+    "lastReviewed": "2026-11-21"
   },
   {
     "id": "openai-adversarial-distillation-gpt-6-2-2026",
@@ -14663,5 +14664,142 @@ export const ARTICLES_META = [
       "オープンウェイト",
       "モデル"
     ]
+  },
+  {
+    "id": "microsoft-ignite-2026-copilot-os-for-work-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Microsoft Ignite 2026、Copilot を「仕事の OS」に位置づけ — Chat・Cowork・Code・Autopilot を統合、Work IQ と Agent 365 も",
+    "excerpt": "Microsoft が Ignite 2026 で Copilot を「仕事の新しい OS」と位置づけた。Chat・Cowork・Code・Autopilot を1つの体験に統合し、Work IQ、Agent 365、Perception の一般提供、AI 透明性イニシアチブも発表した。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Microsoft",
+      "Microsoft Copilot",
+      "エージェント"
+    ]
+  },
+  {
+    "id": "us-house-report-prc-open-weight-models-2026",
+    "type": "feature",
+    "category": "regulation",
+    "title": "米下院の合同報告書、中国製オープンウェイトモデルの排除を提言 — Cursor の Anysphere は段階的廃止を検討、Airbnb・DoorDash の利用実態も",
+    "excerpt": "米下院の2委員会が中国製オープンウェイトモデルに関する合同調査報告書を公表した。Airbnb、Anysphere、DoorDash の利用実態を調べ、連邦システムと重要インフラの高リスク機能からの排除など12の提言をまとめた。Anysphere は地政学的リスクを理由に段階的廃止の検討を委員会に伝えた。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "7分",
+    "tags": [
+      "規制",
+      "オープンウェイト",
+      "中国",
+      "Cursor",
+      "セキュリティ"
+    ]
+  },
+  {
+    "id": "openai-amd-chip-design-ppa-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI、AMD の GPU 設計で最大14%の PPA 改善 — 自社チップ Jalapeño はベクトルユニット約13%の面積削減、RISC-V 評価では GPT-6.2 Astra が首位",
+    "excerpt": "OpenAI が自社モデルを使ったチップ設計の成果を公表した。AMD のフラッグシップ GPU で最大14%の PPA 改善を達成し、自社チップ Jalapeño ではベクトルユニット約13%、行列ユニット約10%の面積削減をシリコンで確認した。RISC-V 評価では GPT-6.2 Astra が首位だった。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-18",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "GPT-6",
+      "半導体",
+      "AMD"
+    ]
+  },
+  {
+    "id": "perplexity-orchestrator-api-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Perplexity、Orchestrator API を公開 — 1つのキーで Anthropic・OpenAI・Google・xAI・オープンウェイトを呼び分け、自動ルーティングも",
+    "excerpt": "Perplexity が Orchestrator API を公開した。1つの API キーと課金残高で Anthropic・OpenAI・Google・xAI・オープンウェイトの各社モデルを呼べる。自動ルーティングとプロバイダー間のフェイルオーバーに対応し、料金は各モデルの公定単価のままだ。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Perplexity",
+      "API",
+      "エージェント"
+    ],
+    "lastReviewed": "2026-11-21"
+  },
+  {
+    "id": "github-copilot-evals-public-preview-2026",
+    "type": "news",
+    "category": "product",
+    "title": "GitHub Copilot Evals がパブリックプレビューに — スキル・カスタムエージェント・MCP ツールを繰り返し評価、エンジンはローカルの Vally",
+    "excerpt": "GitHub が Copilot Evals をパブリックプレビューで公開した。スキル・カスタムエージェント・MCP ツールの性能を繰り返しテストできる評価機能で、エンジンはローカルの評価ツール Vally。VS Code、Copilot CLI、Copilot アプリから導入できる。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "GitHub",
+      "GitHub Copilot",
+      "評価"
+    ],
+    "lastReviewed": "2026-11-21"
+  },
+  {
+    "id": "claude-code-2-1-330-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.330、企業管理コンソールの組織サインインと内蔵チャート mod「easel」を追加、/loop の上限は30日に",
+    "excerpt": "Claude Code 2.1.330 が11月20日に公開された。企業管理コンソールで管理される組織へのサインインと、内蔵チャート mod「easel」を追加した。定期タスクと /loop の上限は7日から30日に延び、VS Code 拡張に /fork と /workflows が加わった。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "CLI"
+    ],
+    "lastReviewed": "2026-11-21"
+  },
+  {
+    "id": "openai-chatgpt-wallet-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI、ChatGPT Wallet を発表 — dots エージェントが代理購入、実カード番号は渡さず毎回生体認証で承認、米 Pro ユーザーから",
+    "excerpt": "OpenAI が ChatGPT Wallet を発表した。dots エージェントがユーザーの実際のカード番号に触れることなく代理購入でき、購入のたびに生体認証による承認が必須になる。開始時は米国の ChatGPT Pro 加入者が対象で、Amex・Chase・Mastercard・Visa と提携した。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-13",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "ChatGPT",
+      "決済",
+      "エージェント"
+    ],
+    "lastReviewed": "2026-11-21"
+  },
+  {
+    "id": "google-gemini-history-retention-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Google、Gemini の履歴と学習利用の設定を分離 — 履歴オフでも会話は約2か月保持に、従来の72時間から延長",
+    "excerpt": "Google が Gemini アプリの履歴と学習利用の設定を分離した。履歴を残したまま学習利用だけをオフにできるようになる一方、履歴をオフにした場合の会話の保持期間は従来の72時間から約2か月に延びる。",
+    "date": "2026-11-21",
+    "newsDate": "2026-11-16",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "プライバシー"
+    ],
+    "lastReviewed": "2026-11-21"
   }
 ];
