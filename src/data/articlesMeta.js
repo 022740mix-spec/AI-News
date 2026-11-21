@@ -14962,5 +14962,21 @@ export const ARTICLES_META = [
       "DeepSeek",
       "セキュリティ"
     ]
+  },
+  {
+    "id": "claroc-ghostshares-2-grok-build-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Claroc、Grok Build 製アプリ 35,578件が認証なしで公開されていたと報告",
+    "excerpt": "Claroc が **Grok Build** 製アプリ 35,578件がログインなしで誰でも開ける状態だったと報告。SpaceXSI 自身の社内資料や病院の職員名簿、ICU の患者資料も含まれていた。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-10",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "xAI",
+      "Grok",
+      "セキュリティ"
+    ]
   }
 ];

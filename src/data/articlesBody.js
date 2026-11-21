@@ -36041,6 +36041,19 @@ const ARTICLES_BODY = {
         "url": "https://primeintellect.one/security/advisories/deepseek-v4-1-flash-model-substitution"
       }
     ]
+  },
+  "claroc-ghostshares-2-grok-build-2026": {
+    "body": [
+      "セキュリティ企業の Claroc は 2026年11月10日、Grok の Build モードで作られたアプリ 35,578件が、ログインなしで誰でも開ける状態だったと報告した。43,551件の grok.me アドレスを調べたところ、稼働中の 37,571件のうち 94.7% が認証なしで開けた。公開時に「リンクを知る全員」があらかじめ選ばれていたためだ。",
+      "開かれていたアプリの中には、SpaceXSI と X の社員が作った 24件もあった。新入社員のオンボーディング計画、594件の戦略顧客とパイプラインを示す営業テリトリーマップ、米国の連邦機関向けとされる広告提案などだ。ほかに 30の組織の社内データも確認され、26組織は従業員 1,000人超、6組織は Fortune 500 だった。病院の職員名簿（3,500人超）、ICU の患者の説明資料、平文のパスワードを含む業者用タイムシートなどもあった。",
+      "Claroc が自作した 2件のアプリの検証では、データベース付きの連絡先リストはログインなしで誰でも行を追加でき、チーム用の顧客リストは「Continue with Google」で社外の Google アカウントでも閲覧・編集・削除ができた。SpaceXSI は報告後に自社の 24件を取り下げたが、ほかの利用者のアプリには同じ対応をしていないという。同社は、公開の既定を「Only you」に変えることなどを求めている。先月には Meta の Muse でも同じ型の露出が報告されていた。"
+    ],
+    "primarySources": [
+      {
+        "title": "GhostShares 2: Grok Apps Exposed xAI's Business Secrets and People's Private Data（Claroc）",
+        "url": "https://blog.claroc.io/ghostshares-grok-build-apps/"
+      }
+    ]
   }
 };
 
