@@ -14817,5 +14817,22 @@ export const ARTICLES_META = [
       "TPU",
       "宇宙"
     ]
+  },
+  {
+    "id": "openai-medchembench-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI が MedChemBench を公開 — GPT-6.2 Astra が創薬化学の推論で 84.5%",
+    "excerpt": "OpenAI が創薬化学の推論を測るベンチマーク **MedChemBench** を公開。99問で分子構造と実験証拠の結びつけを評価し、最高推論設定で **GPT-6.2 Astra** が 84.5% を獲得した。ただし新薬発見の証明にはならないと OpenAI 自身が注意を促している。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "GPT-6",
+      "ベンチマーク",
+      "創薬"
+    ]
   }
 ];

@@ -35884,6 +35884,19 @@ const ARTICLES_BODY = {
         "url": "https://www.blueorigin.com/news/google-selects-new-glenn-for-project-suncatcher"
       }
     ]
+  },
+  "openai-medchembench-2026": {
+    "body": [
+      "OpenAI は 2026年11月20日、創薬化学の推論を測る新しいベンチマーク MedChemBench を公開した。公開された研究論文や特許から作った 99 問で、分子の構造と実験の証拠を結びつけ、結果を説明し、化合物を比較し、性質を予測する能力を評価する。最高の推論設定（xhigh）では GPT-6.2 Astra が 84.5% のクレジットを獲得し、GPT-6 Astra の 83.3%、GPT-6.1 Sol の 82.0% を上回った。GPT-5.6 Sol は 58.2% だった。",
+      "MedChemBench は 117 本の論文と特許から作られ、761 の異なる分子構造を含む。評価する能力は 4 つに分かれる。分子構造の再構成、証拠に基づく科学的な説明、化合物の順位付けと選択、数値的な性質の予測だ。構造の再構成では Astra が xhigh で 95.4% のクレジットを獲得した一方、化合物の選択と数値予測では半分程度にとどまり、OpenAI はこの 2 つに改善の余地が大きいとしている。GPT-6 Astra は xhigh で 83.3%、最大の推論設定では 83.8% で、GPT-6.1 Terra は 75.1% だった。",
+      "OpenAI は結果の読み方にも注意を促している。ベンチマークは過去の研究の証拠から推論する能力を測るもので、モデルが新薬を発見できることや、実験室での判断を改善できることを示すものではない。出典となった文献にモデルが事前に触れていた可能性は排除できず、各回答はツールやフィードバック、新しい実験なしの 1 回だけの試行だった。評価したのは OpenAI 自社の GPT モデル 11 種だけで、独立した検証は確認できていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Can AI help scientists identify promising drug candidates?（OpenAI 公式ブログ）",
+        "url": "https://openai.com/index/introducing-medchembench/"
+      }
+    ]
   }
 };
 

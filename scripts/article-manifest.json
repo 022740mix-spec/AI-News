@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-11-21",
-  "count": 727,
+  "count": 728,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -576,6 +576,7 @@
     "openai-ipo-delay-2027-safety-2026",
     "openai-jalapeno-first-results-inferencex-2026",
     "openai-mcp-events-chatgpt-webhook-mcp-2-0-2026",
+    "openai-medchembench-2026",
     "openai-misalignment-disclosure-framework-2026",
     "openai-model-autonomous-hugging-face-breach-2026",
     "openai-obi-ad-tracking-cookie-2026",
