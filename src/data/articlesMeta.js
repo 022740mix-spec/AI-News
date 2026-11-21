@@ -14801,5 +14801,21 @@ export const ARTICLES_META = [
       "プライバシー"
     ],
     "lastReviewed": "2026-11-21"
+  },
+  {
+    "id": "google-suncatcher-blue-origin-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Google の Project Suncatcher、Blue Origin の New Glenn で 2029 年に TPU 衛星を打ち上げへ",
+    "excerpt": "Google が Blue Origin と Project Suncatcher の初の大型打ち上げで合意し、**New Glenn** が 2029年第1四半期に TPU を搭載した衛星を太陽同期軌道へ運ぶ。各衛星はデータセンターのラック1台分にほぼ相当する計算能力を持つという。宇宙の太陽光で AI インフラを拡大する長期計画が、実証から専用打ち上げによる展開へ進む。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "TPU",
+      "宇宙"
+    ]
   }
 ];
