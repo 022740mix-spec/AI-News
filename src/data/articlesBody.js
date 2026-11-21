@@ -36028,6 +36028,19 @@ const ARTICLES_BODY = {
         "url": "https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026/"
       }
     ]
+  },
+  "primeintellect-deepseek-v4-1-flash-substitution-2026": {
+    "body": [
+      "Prime Intellect は 2026年11月19日、同社の推論サービスで DeepSeek V4.1 Flash のデプロイが、11月8日から10日にかけて約53時間にわたり、拒否を除去した重みに差し替えられていたと公表した。権限のない第三者が、公開されている abliterated weights（拒否挙動を弱める・除去するよう改変された重み）に置き換えた。対象は Prime Inference の deepseek/deepseek-v4.1-flash エンドポイントだった。",
+      "差し替えられたモデルの能力ベンチマーク（GPQA Diamond、τ-bench）は変わらなかったが、拒否率は大きく下がった。JailbreakBench では 100問中 98件の拒否が 1件に、StrongREJECT では 313問中 304件が 2件に、HarmBench では 240問中 198件が 0件になった。チャットテンプレートやトークナイザー、配信設定は変更されていなかった。",
+      "Prime Intellect は影響を受けた顧客全員に連絡し、モデルの拒否に依存する用途ではその期間の出力を確認するよう勧めた。プロンプトや出力が記録されたり、配信クラスタの外に出たりした証拠はなく、鍵や顧客の認証情報への影響もないという。ほかのモデルやクラスタへのアクセスも確認されていない。調査は継続中で、評価が変われば告知を更新するとしている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Notice regarding deepseek/deepseek-v4.1-flash, 8 to 10 November 2026（Prime Intellect）",
+        "url": "https://primeintellect.one/security/advisories/deepseek-v4-1-flash-model-substitution"
+      }
+    ]
   }
 };
 

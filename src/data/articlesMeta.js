@@ -14947,5 +14947,20 @@ export const ARTICLES_META = [
       "GitHub Copilot",
       "コードレビュー"
     ]
+  },
+  {
+    "id": "primeintellect-deepseek-v4-1-flash-substitution-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Prime Intellect、DeepSeek V4.1 Flash が拒否を除去した重みに差し替えられたと公表",
+    "excerpt": "Prime Intellect が **DeepSeek V4.1 Flash** のデプロイが約53時間にわたり拒否を除去した重みに差し替えられていたと公表。能力ベンチマークは変わらなかったが、JailbreakBench の拒否は 98件から 1件に落ちた。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "DeepSeek",
+      "セキュリティ"
+    ]
   }
 ];
