@@ -35681,7 +35681,8 @@ const ARTICLES_BODY = {
       "市場は激しく反応した。NVIDIA の株価は11月20日に約14%下落した。1日で約5,000億ドルの時価総額が消え、時価総額は約3.03兆ドルまで縮んだ。7営業日連続の下落で、週次では7週連続の下落となり、2008年以来の最長の週次連敗だ。",
       "調査の対象はまだ分かっていない。Reuters によれば、調査がいつ始まったのか、どの会計実務が対象なのかは確認できていない。調査があること自体は不正の証拠ではなく、執行措置に至らずに終わることも多い。ただ、決算が好調だった直後の報道だけに、投資家の不安は大きい。10月6日の最高値239.24ドルからは約48%下落し、6週間で約2.7兆ドルの時価総額が消えたことになる。",
       "注目されている論点も報じられている。2025年の売上のうち約1,040億ドルがシンガポール法人を通じて計上されていたこと（**Financial Times** の報道）、地域別の売上報告を「請求先」基準から「顧客の本社所在地」基準に変えたこと、売掛金の回収期間が64日に延びていることなどだ。ただし、これらが SEC の調査対象かどうかは確認されていない。",
-      "NVIDIA をめぐる規制の網は広がっている。カリフォルニア州の **Rob Bonta** 司法長官は11月19日、高度なチップが中国に流れたかどうかや、投資家への開示に問題がなかったかを調べる調査召喚状を出した。司法省は129億ドルの **Hugging Face** 買収を審査中で、辞任した **Jensen Huang** 氏は12月1日に議会で証言する予定だ。[NVIDIA の第3四半期決算と中国向け Hopper 出荷停止の記事](?a=nvidia-hopper-china-halt-bis-rule-q3-2026)でも報じたとおり、決算自体は売上1,158億ドルの記録更新だったが、株価はそれを顧みない下げが続いている。"
+      "NVIDIA をめぐる規制の網は広がっている。カリフォルニア州の **Rob Bonta** 司法長官は11月19日、高度なチップが中国に流れたかどうかや、投資家への開示に問題がなかったかを調べる調査召喚状を出した。司法省は129億ドルの **Hugging Face** 買収を審査中で、辞任した **Jensen Huang** 氏は12月1日に議会で証言する予定だ。[NVIDIA の第3四半期決算と中国向け Hopper 出荷停止の記事](?a=nvidia-hopper-china-halt-bis-rule-q3-2026)でも報じたとおり、決算自体は売上1,158億ドルの記録更新だったが、株価はそれを顧みない下げが続いている。",
+      "NVIDIA の株価は11月20日の取引を125.53ドルで終え、前日比14.01%の下落となった。Alphabet が NVIDIA を抜いて米国企業で第3位となり、NVIDIA は第4位に転落した。取引時間中の LSEG のデータでは、Alphabet の時価総額は約3.44兆ドルで、NVIDIA の約3.4兆ドルを上回っていた。"
     ],
     "primarySources": [
       {
@@ -35695,6 +35696,11 @@ const ARTICLES_BODY = {
       {
         "title": "SEC probe of Nvidia turns to its accounting, as shares fall 14% and close a seventh straight losing week（Dealroom）",
         "url": "https://dealroom.co/news/174723-sec-probe-of-nvidia-turns-to-its-accounting-as-shares-fall-14-and-close-/"
+      },
+      {
+        "title": "From No. 1 to No. 4: Nvidia falls behind Apple, Microsoft and Alphabet as shares tumble",
+        "site": "Moneycontrol",
+        "url": "https://www.moneycontrol.com/news/business/from-no-1-to-no-4-nvidia-falls-behind-apple-microsoft-and-alphabet-as-shares-tumble-14085980.html/amp"
       }
     ]
   },
@@ -35729,6 +35735,136 @@ const ARTICLES_BODY = {
       {
         "title": "thinkingmachines/Inkling-2-Mini（Hugging Face、モデルカード）",
         "url": "https://huggingface.co/thinkingmachines/Inkling-2-Mini"
+      }
+    ]
+  },
+  "microsoft-ignite-2026-copilot-os-for-work-2026": {
+    "body": [
+      "Microsoft は11月17日、サンフランシスコで開いた年次イベント Ignite 2026 の基調講演で、**Copilot** を「仕事の新しい OS」（英語では new OS for work）と位置づけた。Chat、Cowork、Code、Autopilot という4つの形態を1つの体験に統合し、Word・Excel・PowerPoint をはじめとする Office の機能を Copilot の中に組み込む。基調講演を行った Satya Nadella CEO は、人の意欲と組織の知性への統制、信頼を軸に据えた「フロンティア・エコシステム」の構築を掲げた。",
+      "## Copilot の4つの形態と Work IQ",
+      "Home は、素早い回答から複雑なマルチステップのタスクの割り当てまでを始める場所になる。Code は「無限の SaaS ファクトリー」の力を個人に届け、カスタムの SaaS アプリやダッシュボードを自分で作れるようにする。Autopilot は、チームが協業する場所で24時間365日、仕事を前に進め続ける自律エージェントだ。これらを支えるのが **Work IQ** で、組織の人、その関係、文書、メール、会議、チャット、プロジェクトを理解する「組織にとって最も重要なデータベース」だと Microsoft は説明する。",
+      "Copilot は営業・法務・財務・サービスといった職種別にも拡張され、Dynamics 365 のプラグインと Salesforce との提携も発表された。さらに、人とエージェントが共有の文脈で同じ目標に向かうマルチプレイヤー型の作業空間 **Copilot Workspaces** も紹介された。これまで「1人の人間とそのエージェントのループ」が中心だったところから、複数の人とエージェントが協業する形へ広げるものだ。",
+      "## Microsoft IQ と Agent 365",
+      "**Microsoft IQ** は、Copilot の下で育ててきた組織の知性を、独立したプラットフォームとして外部化するものだ。Fabric、Foundry、Microsoft 365 のデータに加え、今回発表された数百の新規コネクタで外部システムの文脈も取り込み、組織の知性を資産として蓄積・統制できるようにする。",
+      "**Agent 365** はエージェント向けの管理基盤で、既存のガバナンス、ID、セキュリティ、管理の仕組みを企業のエージェントに拡張する。Microsoft によると、Agent 365 上で稼働するエージェントは5,000万を超える。AI への支出と成果を結びつける **Agent 365 Business Analytics** も発表された。支出の内訳と成果へのつながりを見える化し、投資対効果を最適化する狙いだ。",
+      "## セキュリティと透明性、モデルとハードウェア",
+      "セキュリティ面では、レッド・ブルー・グリーンのエージェントチームがプレイブックに沿って攻撃の模擬・検知・修正を行う **Perception** が一般提供になった。あわせて **Microsoft AI Transparency Initiative** も発表され、NIST の Agent Standards Initiative との協力を拡大し、40の組織とともに AI の透明性・セキュリティ・ガバナンスの業界標準の策定に取り組む。Nadella 氏は、モデルの内部で何が起きているかが見えない「入れ子になったブラックボックス」は受け入れられないとし、独立した検証の必要性を訴えた。",
+      "モデル面では MAI の新モデル群も発表されたが、そちらは[別記事](?a=microsoft-mai-7-models-ignite-2026)で扱っている。ハードウェアでは、Cobalt 200 VM の一般提供と、Maia 300 が従来の GPU ベースのシステムと比べてワットあたりトークン数を40%増やすと発表した。意思決定モデル Microsoft-Decision-1.1 の一般提供も発表された。"
+    ],
+    "primarySources": [
+      {
+        "title": "Ignite 2026: Building the frontier ecosystem（Microsoft 公式ブログ）",
+        "url": "https://blogs.microsoft.com/blog/2026/11/17/ignite-2026-building-the-frontier-ecosystem/"
+      }
+    ]
+  },
+  "us-house-report-prc-open-weight-models-2026": {
+    "body": [
+      "米下院の国土安全保障委員会（Andrew R. Garbarino 委員長）と中国特別委員会（John Moolenaar 委員長）は11月20日、中国製オープンウェイト AI モデルに関する合同調査報告書を公表した。2026年4月に開始した調査は、Airbnb、Anysphere（Cursor の開発元）、DoorDash の3社を事例に、米企業が中国製モデルをどう使っているかを調べたものだ。報告書は5つの知見と12の政策提言をまとめ、連邦システムと重要インフラの高リスク機能から中国製モデルを排除するよう求めている。提言自体に法的拘束力はなく、実施には今後の立法や行政措置が必要になる。",
+      "## 3社の利用実態",
+      "Airbnb は Alibaba の Qwen をカスタマイズしたモデルを米国内のインフラ上で動かし、1日あたり約8万件のゲスト・ホスト対応と約25万件のサポート案件・通話の要約に使っている。Anysphere は Cursor の主力モデル Composer 2 を Moonshot AI の基盤モデルで構築しており、この事実は独立した開発者が基盤モデルを特定するまで公表されていなかった。Anysphere は委員会に対し、地政学的リスクを理由に中国製オープンウェイトモデルの段階的廃止を検討する計画だと伝えた。DoorDash は中国製モデルファミリー25系統を承認・展開し、システムに組み込まれた1モデルを置き換えるには最大で約6か月かかると試算した。",
+      "## 5つの知見",
+      "報告書の知見は次の5つだ。第1に、中国製モデルはすでに米経済の広範囲で使われているが、その多くは追跡が難しい。米発トラフィックの過半を占めるモデル流通サイトがあり、中国製モデルは主要なオープンモデルリポジトリのダウンロードの41%を占めた（直近1年）。第2に、価格、カスタマイズ性、最先端に近い性能が採用を後押しし、米国には価格と性能で対抗できるオープンウェイトの代替がない。第3に、中国の主要開発企業6社が米国の最先端モデルに対する産業規模の蒸留を行い、米国のデータラベリング企業が中国研究所への訓練データ販売で年約5億ドルを得ている。第4に、低価格・国家支援・オープンウェイト配布で世界的な依存を拡大しつつ、条件が変わり始めている。第5に、モデルの能力向上に伴いリスクが増しており、通常の評価では検出できない振る舞いの違いがある。Zhipu の最新モデルは NIST の評価で最もサイバー能力が高いオープンウェイトとされ、その安全対策は約4,400ドル相当の計算で解除できたとされる。",
+      "## 12の提言と既存の措置",
+      "提言には、米国のオープンウェイト・イニシアチブの立ち上げ、モデルの出所を示す標準と AI 部品表（AI bill of materials）の確立、DeepSeek への連邦制限の他社への拡大、連邦システム・連邦契約業務・重要インフラの高リスク機能からの排除、連邦サイバーセキュリティ助成金での購入禁止、蒸留の取り締まり、同盟国との連携などが並ぶ。背景として、DHS は2026年7月に DeepSeek を連邦民間機関の調達から排除する命令を出し、10月に公表している。2026年9月には NSA・CISA・FBI が、中国企業による大規模な蒸留キャンペーンへの共同注意喚起を出している。",
+      "報告書は、制限と代替の構築は一体だとも述べている。信頼できる代替がないまま中国製モデルからの排除を進めれば、企業のコストが上がり、市場が少数のクローズドな独占的プロバイダーに集中すると認めている。中国製モデルの米企業での利用拡大については、本サイトでも[米企業のトークン利用における中国モデルの比率を扱った特集](?a=feature-chinese-ai-models-30-46-percent-us-enterprise-token-usage-2026)がある。Composer 2 の Kimi 基盤については[既報](?a=cursor-composer-2-kimi-2026)も参照してほしい。"
+    ],
+    "primarySources": [
+      {
+        "title": "Chairmen Garbarino, Moolenaar Release Joint Investigative Report（米下院国土安全保障委員会）",
+        "url": "https://homeland.house.gov/2026/11/20/chairmen-garbarino-moolenaar-release-joint-investigative-report-urging-removal-of-prc-open-weight-models-from-federal-systems-high-risk-critical-infrastructure/"
+      },
+      {
+        "title": "Joint Investigative Report on PRC Open-Weight AI Models（報告書 PDF）",
+        "url": "https://homeland.house.gov/wp-content/uploads/2026/11/2026.11.20-Joint-Report-PRC-AI-Models.pdf"
+      }
+    ]
+  },
+  "openai-amd-chip-design-ppa-2026": {
+    "body": [
+      "OpenAI は11月18日、自社モデルを使ったチップ設計の取り組みを公表した。AMD のフラッグシップ GPU の IP で、最適化済みのベースラインと比べて最大14%の PPA（電力・性能・面積）改善を達成した。モデルが SystemVerilog RTL を書き換え、Synopsys のツールで書き換え前後が同じ動作を保つことを検証した。OpenAI は「約1年分の進展を5か月未満で達成した」と表現している。AMD は変更の一部を製造に送った設計に既に組み込み、残りを生産用の設計ファイルに追加した。数値はいずれも OpenAI 自身の報告で、独立した検証は確認できていない。",
+      "AMD の次世代フラッグシップ CPU でも、主要ブロックで1桁%台の PPA 改善を AMD が検証した。自社推論チップ Jalapeño では、ベクトルユニットで標準セル面積を約13%、行列ユニットで約10%削減し、シリコンでの動作確認も済ませた。Jalapeño の設計には2025年初めから GPT-o3 mini を使っていた。",
+      "## RISC-V 評価では GPT-6.2 Astra が首位",
+      "世代ごとの能力を測るため、OpenAI はオープンソースの32ビット RISC-V コア PicoRV32 と Ibex で評価した。1回あたり約112,000トークンの予算で、**GPT-6.2 Astra が両コアで最高の平均スコア**を記録し、GPT-6.1 Sol も GPT-5.6 Sol を両コアで上回った。仕様書からコアを一から設計する課題では、既存設計の改善よりも全モデルが高いスコアを出した。評価は9,881回のスコア付き実行で行われた。OpenAI は Synopsys と共同で、EDA ツールを使うモデル GPT-Synopsys の訓練も進めている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Advancing chip design with OpenAI models（OpenAI）",
+        "url": "https://openai.com/index/advancing-chip-design-with-our-models/"
+      }
+    ]
+  },
+  "perplexity-orchestrator-api-2026": {
+    "body": [
+      "Perplexity は11月17日、**Orchestrator API** を公開した。1つの Perplexity API キーと1つの課金残高で、Anthropic、OpenAI、Google、xAI、オープンウェイトの各社モデルを呼べるゲートウェイだ。OpenAI Chat Completions、OpenAI Responses、Anthropic Messages の3形式に対応し、ベース URL と API キー、モデル ID を変えるだけで既存の統合を移行できる。公式ドキュメントは11月19日に更新された。",
+      "ルーティングが特徴だ。`perplexity/auto` を指定すると、モデル選択用のモデルがリクエストごとに最適なモデルを選ぶ。同一モデルを別のデプロイメントでフェイルオーバーさせることもできる。どのモデルが応答したかは、レスポンスの model フィールドと `x-perplexity-autoroute-*` ヘッダーで確認できる。",
+      "料金は各モデルの公定トークン単価のままで、リクエストごとの追加料金はない。利用ティア制で、Google・xAI・オープンウェイトは全ティアで利用でき、OpenAI と大半の Anthropic モデルは累計50ドルの購入から始まる Tier 1、Opus 5/5.5 と Fable 5/5.1/5.2 は累計250ドルからの Tier 2 が必要になる。ティアを超えるモデルへのリクエストは HTTP 402 を返す。ゼロデータ保持（ZDR）の組織は Fable 系と GPT-6.2 Astra を呼べない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Perplexity Orchestrator API（Perplexity 公式ドキュメント）",
+        "url": "https://docs.perplexity.ai/docs/orchestrator/quickstart"
+      },
+      {
+        "title": "Orchestrator Models & Pricing（Perplexity 公式ドキュメント）",
+        "url": "https://docs.perplexity.ai/docs/orchestrator/models"
+      }
+    ]
+  },
+  "github-copilot-evals-public-preview-2026": {
+    "body": [
+      "GitHub は11月17日、**GitHub Copilot Evals** をパブリックプレビューで公開した。スキル、カスタムエージェント、MCP ツールの性能を繰り返しテストできる評価機能だ。自然言語か `/eval` コマンドで評価（eval）を作り、実行ごとに承認が必要になる。結果を見て、どのチェックが通ってどれが落ちたかを確認し、設定のどこを変えるべきかを判断できる。",
+      "評価のエンジンは、拡張可能なローカル評価ツール **Vally** だ。スキルやエージェント、MCP を変更したあとに同じ eval を再実行すれば、挙動の変化や回帰を検出できる。実行前後の比較もできる。導入先は VS Code 拡張機能、Copilot CLI プラグイン、GitHub Copilot アプリ（github/evals マーケットプレイス）の3つ。対象プランは Copilot Individual、Business、Enterprise。料金や評価回数の上限、ベンチマーク結果の発表はない。",
+      "評価（eval）とは、AI の振る舞いに対する繰り返し可能なテストだ。エージェントに現実的なタスクを与え、良い結果がどういうものかを記述し、結果だけでなくそこに至る過程も確認する。AI の出力は実行ごとに変わりうるため、1回の良い回答だけではカスタマイズがうまく機能しているかは分からない、と GitHub は説明している。"
+    ],
+    "primarySources": [
+      {
+        "title": "GitHub Copilot Evals is now in public preview（GitHub Changelog）",
+        "url": "https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview/"
+      }
+    ]
+  },
+  "claude-code-2-1-330-2026": {
+    "body": [
+      "Anthropic は11月20日、**Claude Code 2.1.330** を公開した。Anthropic の Enterprise Admin Console で管理される組織へのサインインに対応し、`claude auth login` のあとに組織の設定とクラウドプロバイダーやゲートウェイが適用される。内蔵 mod「easel」も追加され、頼まれたときや MCP メトリクス結果の下にチャートを描く。Pro・Max と、利用可能な地域の Team・Enterprise で、macOS と Linux が対象で、`/config` から自動描画をオフにできる。なお、[前版 2.1.329](?a=claude-code-2-1-329-tasks-trust-dialog-2026)では /tasks の表示拡張などが行われていた。",
+      "定期タスクと `/loop` の実行上限が7日から30日に延びた（このリリースより前に作られたタスクは7日のまま）。セルフホストランナーでは `--start-dir` で作業開始フォルダを指定できるようになった。VS Code 拡張では、直前の返信のあとで会話をフォークする `/fork` と、稼働中のワークフローを表示する `/workflows` が追加された。",
+      "修正も多い。長い会話の圧縮直後に数分間フリーズする問題、WebFetch が一部のページでフリーズする問題、worktree の終了時に別のセッションが作業中の worktree を削除してしまう問題、複数のプロセスが同時に設定を保存すると変更が失われる問題などが直った。2.1.329 で削除された、出力トークン上限超過時の自動リトライは復活した。ルートやホーム、作業フォルダを狙う `rm` コマンドに対する承認の範囲も広がった。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code v2.1.330（GitHub リリース）",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.330"
+      }
+    ]
+  },
+  "openai-chatgpt-wallet-2026": {
+    "body": [
+      "OpenAI は11月13日、**ChatGPT Wallet** を発表した。エージェントがユーザーの実際のカード番号に触れることなく支払いを行える、初めてのウォレットだとしている。購入のたびにセキュリティチェックによる承認が必須で、カードの特典や対象となる紛争時の補償は維持される。American Express、Chase、Mastercard、Visa との提携で構築した。開始時は米国の ChatGPT Pro 加入者（18歳以上、米発行の対象カード保有者）が、常駐エージェント dots 経由で利用できる。[dots については既報](?a=openai-chatgpt-dots-always-on-agents-2026)がある。",
+      "## 購入の流れ",
+      "カードを1回登録し、購入前に商品・合計・使うカードを確認して、Face ID や指紋で承認する。承認後に支払いネットワークが使い捨ての支払いトークン（代替のカード番号・セキュリティコード・有効期限）を発行し、実際のカード情報はエージェントにも事業者にも渡らない。OpenAI は将来的に、支出上限や購入カテゴリ、期間といった条件を設定して購入を事前承認できるようにする方針も示した。",
+      "事業者向けには Commerce Partner Playbook を公開し、エージェントによる購入を既存のサイトや決済の仕組みで受け入れられるよう支援する。不正防止パートナーとして Forter、Riskified、Sardine、Signifyd、決済サービス事業者として Adyen、Checkout.com、Stripe と連携する。ChatGPT の週間利用者は12億人に達している。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing ChatGPT Wallet（OpenAI）",
+        "url": "https://openai.com/index/introducing-chatgpt-wallet/"
+      }
+    ]
+  },
+  "google-gemini-history-retention-2026": {
+    "body": [
+      "Google は11月16日、Gemini アプリの履歴と学習利用の設定を分離すると発表した。従来は「Keep Activity」1つの設定が履歴の保存期間と学習への利用の両方を制御していたが、今後は履歴の保存期間を制御する「History」と、会話内容を生成 AI モデルの学習に使うかどうかを制御する設定が別になる。履歴を残したまま学習利用だけをオフにできる。数週間かけて全世界で段階展開する。",
+      "一方で、履歴をオフにした場合の保持期間は従来の72時間から「約2か月」に延びる。Google は安全・セキュリティのためとし、保持した会話は応答やフィードバックの処理、Google とユーザー、公共の保護に使うと説明している。Google は報道への回答で、この保持データは安全・セキュリティ目的に限られ、生成 AI モデルの学習や製品改善には使わないと説明している。",
+      "履歴の保存期間は引き続き自分で変更でき、履歴の確認や手動での削除もいつでも行える、と Google は説明している。従来の72時間という保持期間は、Gemini Apps Privacy Hub の11月12日時点のアーカイブに記載されていたものだ。"
+    ],
+    "primarySources": [
+      {
+        "title": "Gemini app updates: New chat history and training controls（Google 公式ブログ）",
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/updated-controls/"
+      },
+      {
+        "title": "Google to keep Gemini chats for 2 months, up from 72 hours, even with history off（TechCrunch）",
+        "url": "https://techcrunch.com/2026/11/17/google-to-keep-gemini-chats-for-two-months-up-from-72-hours-even-with-history-off/"
       }
     ]
   }
