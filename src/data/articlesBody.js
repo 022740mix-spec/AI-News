@@ -35976,6 +35976,19 @@ const ARTICLES_BODY = {
         "url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers/"
       }
     ]
+  },
+  "anthropic-claude-for-manufacturing-2026": {
+    "body": [
+      "Anthropic は 2026年11月12日、製造業向けのプラグイン Claude for Manufacturing を発表した。17のスキルを持ち、見積もり、品質、不具合の診断、調達、設計、生産報告などの業務を、製造業者の自社の記録から進める。コネクタは Autodesk Fusion、Infor、Microsoft 365、Oracle NetSuite の 4件で、対象は Team と Enterprise プランだ。",
+      "スキルの例として、見積もり担当者は顧客の依頼を読み、類似案件のコストと比較して見積書の下書きを作れる。品質技術者は不具合の記録と過去の報告から原因を順位付けし、是正処置報告書の下書きを作れる。技術者はセンサーの出力や修理記録、写真、マニュアルから故障の原因を順位付けできる。技能は人のレビューで終わる設計で、担当者が確認してから顧客やサプライヤーに届く。",
+      "Infor は独自のプラグインも出しており、Claude for Manufacturing のコネクタが記録の参照だけなのに対し、Infor 側のプラグインでは承認後に発注や生産リスケなどの変更もできる。Claude for Manufacturing は設備を操作しない。設備の操作は、Anthropic がリサーチプレビューで開発中の Model Hardware Standard で扱う。価格は発表されていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude for Manufacturing: AI plugin for plant teams（Anthropic）",
+        "url": "https://claude.com/resources/articles/claude-for-manufacturing"
+      }
+    ]
   }
 };
 

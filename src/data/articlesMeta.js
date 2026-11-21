@@ -14915,5 +14915,21 @@ export const ARTICLES_META = [
       "ChatGPT",
       "研究"
     ]
+  },
+  {
+    "id": "anthropic-claude-for-manufacturing-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic、製造業向けプラグイン Claude for Manufacturing を発表",
+    "excerpt": "Anthropic が製造業向けプラグイン **Claude for Manufacturing** を発表。17のスキルで見積もりや品質、不具合診断などを自社の記録から進め、人のレビューで終わる設計にした。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-12",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "プラグイン"
+    ]
   }
 ];
