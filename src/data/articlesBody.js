@@ -35881,8 +35881,8 @@ const ARTICLES_BODY = {
   "google-suncatcher-blue-origin-2026": {
     "body": [
       "Google は 2026年11月19日、Blue Origin と Project Suncatcher の初の大型打ち上げで合意したと発表した。Blue Origin の大型ロケット New Glenn が、2029年第1四半期に Google の衛星を太陽同期軌道へ運ぶ。各衛星はデータセンターのラック1台分にほぼ相当する計算能力を持つという。Suncatcher は、軌道上の豊富な太陽光を使って AI インフラを宇宙で拡大する長期のムーンショット計画だ。",
-      "衛星には Google の AI チップ TPU が搭載され、機械学習の計算を低軌道で直接処理する。Blue Origin と Google は打ち上げサービス契約を結んだ。Blue Origin の Jordan Charles 氏（New Glenn 担当シニアバイスプレジデント）は、New Glenn の大型打ち上げ能力と広いペイロード容量が、宇宙での新しい能力に柔軟性を与えると述べた。Google の Travis Beals 氏（Project Suncatcher 担当シニアディレクター）は、今回の専用打ち上げを長期ロードマップの重要な節目と位置づけた。",
-      "宇宙での AI 計算が注目される背景には、地上のデータセンターが電力や土地、冷却水に与える負荷がある。軌道上では太陽光をほぼ連続して受けられる一方、空気のない宇宙での放熱や宇宙放射線への耐性が課題として挙げられている。両社の発表に契約額や搭載する衛星の数の記載はなく、計画は研究段階のままだ。2029年の打ち上げは、実証段階から専用の大型打ち上げによる展開へ進む節目になる。"
+      "衛星には Google の AI チップ TPU が搭載され、機械学習の計算を軌道上で直接処理する。Blue Origin と Google は打ち上げサービス契約を結んだ。Blue Origin の Jordan Charles 氏（New Glenn 担当シニアバイスプレジデント）は、New Glenn の大型打ち上げ能力と広いペイロード容量が、宇宙での新しい能力に柔軟性を与えると述べた。Google の Travis Beals 氏（Project Suncatcher 担当シニアディレクター）は、今回の専用打ち上げを長期ロードマップの重要な節目と位置づけた。",
+      "宇宙での AI 計算が注目される背景には、地上のデータセンターが電力や土地、冷却水に与える負荷がある。軌道上では太陽光をほぼ連続して受けられる一方、空気のない宇宙での放熱や宇宙放射線への耐性が課題になる。両社の発表に契約額や搭載する衛星の数の記載はなく、計画は研究段階のままだ。2029年の打ち上げは、実証段階から専用の大型打ち上げによる展開へ進む節目になる。"
     ],
     "primarySources": [
       {
@@ -35940,6 +35940,14 @@ const ARTICLES_BODY = {
       {
         "title": "Google's latest home page redesign makes Gemini even more prominent（Engadget）",
         "url": "https://www.engadget.com/2322647/google-latest-home-page-redesign-makes-gemini-even-more-prominent/"
+      },
+      {
+        "title": "Google drops the search button from its homepage to make room for Gemini AI tools（Crypto Briefing）",
+        "url": "https://cryptobriefing.com/google-removes-search-button-gemini-ai/"
+      },
+      {
+        "title": "Google Homepage Adds AI Mode Chat History Sidebar（TalkAndroid）",
+        "url": "https://www.talkandroid.com/536008-google-homepage-ai-mode-sidebar/"
       }
     ]
   },
