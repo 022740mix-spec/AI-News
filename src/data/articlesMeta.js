@@ -14931,5 +14931,21 @@ export const ARTICLES_META = [
       "Claude",
       "プラグイン"
     ]
+  },
+  {
+    "id": "github-copilot-november-2026-updates-2026",
+    "type": "news",
+    "category": "product",
+    "title": "GitHub Copilot、Adaptive コードレビューと 8件の MCP コネクタを追加",
+    "excerpt": "GitHub Copilot のコードレビューに **Adaptive**（Lite／Balanced／Max を自動選択）を追加。Box など 8件の MCP コネクタも加わり、Claude Opus 4.8 など 3モデルを廃止した。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-18",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "GitHub",
+      "GitHub Copilot",
+      "コードレビュー"
+    ]
   }
 ];

@@ -35989,6 +35989,27 @@ const ARTICLES_BODY = {
         "url": "https://claude.com/resources/articles/claude-for-manufacturing"
       }
     ]
+  },
+  "github-copilot-november-2026-updates-2026": {
+    "body": [
+      "GitHub は 2026年11月17日から18日にかけて、GitHub Copilot のコードレビューとコネクタの更新を相次いで発表した。コードレビューには PR の複雑さとリスクを見て Lite、Balanced、Max を自動で選ぶ Adaptive がパブリックプレビューで加わり、あわせて公開リポジトリ向けのクロスリポジトリ・コンテキストとシークレット検出もパブリックプレビューになった。Azure Repos 向けのコードレビューは GA になった。",
+      "Adaptive は、文書の更新のような軽い変更には Lite を、認証ロジックの変更のようなリスクの高い変更には Max を選ぶ。各レビューには選ばれたレベルが表示される。Balanced が引き続き既定で、管理者が設定した上限を超える選択はしない。クロスリポジトリ・コンテキストでは、公開リポジトリの関連コードやドキュメントをレビュー時に読める。シークレット検出は 500超の既知の型に加え、LLM による検出で形式のない認証情報も指摘する。対象は Copilot Pro、Pro+、Max、Business、Enterprise だ。",
+      "11月18日には、GitHub が検証した MCP サーバー（コネクタ）として Box、Buildkite、Calendly、ClickUp、Mixpanel、Supabase、Webflow、Wix の 8件がパブリックプレビューで加わった。既存の 25超のサービスに加わるもので、全 Copilot プランが対象だ。あわせて 11月16日には、Claude Opus 4.8、Claude Opus 5、GPT-5.6 Terra の 3モデルが廃止され、代替として Claude Opus 5.5、GPT-6.1 Sol または GPT-6 Luna が案内された。廃止は 10月15日に予告されていた。"
+    ],
+    "primarySources": [
+      {
+        "title": "Copilot code review: Adaptive effort, secret detection, and more（GitHub Changelog）",
+        "url": "https://github.blog/changelog/2026-11-17-copilot-code-review-adaptive-effort-secret-detection-and-more/"
+      },
+      {
+        "title": "Connect Supabase, Box, Calendly, and more to Copilot（GitHub Changelog）",
+        "url": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot/"
+      },
+      {
+        "title": "GitHub Copilot models deprecated on November 16, 2026（GitHub Changelog）",
+        "url": "https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026/"
+      }
+    ]
   }
 };
 
