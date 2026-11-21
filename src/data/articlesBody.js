@@ -24398,7 +24398,8 @@ const ARTICLES_BODY = {
       "共有時の権限は、共有画面に出る選択肢に従う。View は閲覧、Comment は閲覧とフィードバック、Edit は内容の変更で、受け手の種類によって選べる役割が変わり、Team への招待には閲覧と編集だけでコメントが無い場合があると書かれている。他人のアクセスを変えるには共有管理の権限が要る。アクセスは継承され、space に共有されるとそのページに、ページを共有すると子ページにも及ぶ。直接の招待を外しても、親のページや space から継承しているアクセスは残るため、その場合は親側の共有設定を見直す必要がある。共有前には、誰がアクセスできるか、非公開のソースの情報を含まないかの確認を促している。",
       "情報の扱いについて、公式は次の点を挙げる。リンクしたファイルは元の権限を保つ一方、ページにコピーまたは要約した内容は、そのページにアクセスできる人に見える。ページを共有しても非公開のチャットや保存メモリは共有されないが、ページに書いた非公開の情報は共同作業者に見える。ページを読める人が、リンク先のソースを開く権限を持つとは限らない。共同作業者が別々のエージェントやツール、指示を使っている可能性があるため、誰がどこを変えるかを決め、結果を確認するよう書かれている。定期作業については、「Keep Updated」はローンチ時には利用できず、ページ内に頻度を書いただけではタスクが登録されたことにならないので、保存されたスケジュールと実行結果を別途確認する。",
       "管理者向けの記述は次のとおり。ChatGPT Enterprise では、Library のファイルとフォルダの共有をワークスペースとロールの単位で管理できる。共有を無効にすると新規の共有と権限変更が止まるが、既存の共有アクセスは残り、ユーザーは非公開コンテンツの作成と閲覧を続けられる。管理者ロールだけでは機微なコンプライアンス用アクセスは与えられず、保存済みファイルのエクスポートや削除には Compliance API の権限が要る。ページの共有先は人または利用可能なワークスペースのチームで、閲覧または編集を選ぶ。プラグインは導入しただけではアプリが承認されず、アプリの可用性・ロール・許可アクションは別に設定する。",
-      "ガバナンスとデータ保護について、管理ページは、ChatGPT Enterprise のデータについて OpenAI は既定では学習しないと述べており（この記述は Enterprise に限られる）、保存済みの Library ファイルはワークスペースの保持ポリシーに従う、と書いている。同じページは、共有とアプリの操作を制限し、対応する範囲で重要な操作に承認を求めること、ページ・ファイル・ツールの結果にプロンプトインジェクションが含まれ得ること、読み取りだけの問い合わせでも外部サービスにデータが漏れうること、セーフガードはこのリスクを減らすが無くすものではないことも述べている。アプリ接続を切ると以後のアクセスは止まるが、保存済みの内容は自動では削除されない。ページや space の削除は、入れ子のページごとゴミ箱に移る。メンバーをワークスペースから外すとアクセスは直ちに失効するが、保持された Enterprise のチャットとファイルは保持ポリシーに従う。以上はいずれも OpenAI 自身のドキュメントの記述（学習しないという点やセーフガードの効果は当事者の説明）で、独立した検証は確認できていない。"
+      "ガバナンスとデータ保護について、管理ページは、ChatGPT Enterprise のデータについて OpenAI は既定では学習しないと述べており（この記述は Enterprise に限られる）、保存済みの Library ファイルはワークスペースの保持ポリシーに従う、と書いている。同じページは、共有とアプリの操作を制限し、対応する範囲で重要な操作に承認を求めること、ページ・ファイル・ツールの結果にプロンプトインジェクションが含まれ得ること、読み取りだけの問い合わせでも外部サービスにデータが漏れうること、セーフガードはこのリスクを減らすが無くすものではないことも述べている。アプリ接続を切ると以後のアクセスは止まるが、保存済みの内容は自動では削除されない。ページや space の削除は、入れ子のページごとゴミ箱に移る。メンバーをワークスペースから外すとアクセスは直ちに失効するが、保持された Enterprise のチャットとファイルは保持ポリシーに従う。以上はいずれも OpenAI 自身のドキュメントの記述（学習しないという点やセーフガードの効果は当事者の説明）で、独立した検証は確認できていない。",
+      "【追記 2026-11-22】2026年11月20日、OpenAI は ChatGPT Space の提供対象を Plus ユーザーに広げ、18歳以上の Plus ユーザーに世界で順次展開し始めた。Space はサイドバーで Library に代わり、ページやスライド、画像、アップロードしたファイルの置き場になる。ページのモバイル編集もできるようになった。スライドは展開中で、表計算の Sheets は今後提供される。Plus では Dots（常駐エージェント）はまだ使えず、11月19日から一部の Plus ユーザーで Dots のテストが始まっている。無料プランでは共有ページを開けず、公開リンクも利用できない。"
     ],
     "tables": [
       {
@@ -24460,6 +24461,10 @@ const ARTICLES_BODY = {
       {
         "title": "September 28–October 2, 2026",
         "url": "https://learn.chatgpt.com/docs/whats-new/september-28-october-2-2026"
+      },
+      {
+        "title": "ChatGPT brings Space to Plus users, adding mobile editing（Crypto Briefing）",
+        "url": "https://cryptobriefing.com/chatgpt-space-plus-users-mobile-editing/"
       }
     ]
   },
@@ -34599,7 +34604,8 @@ const ARTICLES_BODY = {
       "Anthropic は2026年11月19日、Nasdaq Global Select Market に上場し、クラス A 普通株の取引が始まった。ティッカーは ANT。同社は前日11月18日に公開価格を $83.00 に決めており、980,000,000 株の売り出しのうち 956,351,354 株を同社が、23,648,646 株を既存株主が売り出した。公開価格は事前に示していた $70〜$78 の範囲を上回った。募集の完了は11月20日を予定しており、引受人には30日間の追加購入権（最大147,000,000 株）が与えられている。",
       "初日の取引は、共同創業者のダリオ・アモデイ氏とダニエラ・アモデイ氏が Nasdaq の開場ベルを鳴らして始まったが、初値が付いたのは米東部時間11時50分だった。初値は $111.50 で公開価格を約34%上回り、その時点の時価総額は約 $2 兆と報じられた。日中は $115.10 まで上がったあと値を下げ、安値は $92.72、終値は $97.17 で公開価格を 17% 上回って引けた。終値での時価総額は、完全希薄化後で約 $1.77 兆と報じられている。出来高は 8.46 億株を超え、Nasdaq でその日最も取引された銘柄だった。",
       "調達額は約 $81.3B で、複数の報道が SpaceX の上場を上回る米国史上最大の IPO だと伝えている。引受人の追加購入権がすべて行使されれば、調達額は最大で約 $93.5B になる。フロンティア AI ラボの上場はこれが初めてで、OpenAI は未上場のままである。",
-      "上場の背景には、Anthropic の巨額の計算資源への投資計画がある。同社は届出書で、9,000億ドルを超える計算資源の調達確約を抱えているとされており、決算面では2026年第3四半期に約 $23.29B の GAAP 純損失を計上している。ただし、そのうち約 $21.9B は転換社債などの公正価値変動による非現金の費用だと、届出書に基づく報道は伝えている。初日の株価が示したのは、上場時の評価への期待と、AI 投資の先行きへの懐疑が同居している市場の姿である。同日の米主要株価指数も下げており、Anthropic の初日高騰が市場全体を引っ張る展開にはならなかった。"
+      "上場の背景には、Anthropic の巨額の計算資源への投資計画がある。同社は届出書で、9,000億ドルを超える計算資源の調達確約を抱えているとされており、決算面では2026年第3四半期に約 $23.29B の GAAP 純損失を計上している。ただし、そのうち約 $21.9B は転換社債などの公正価値変動による非現金の費用だと、届出書に基づく報道は伝えている。初日の株価が示したのは、上場時の評価への期待と、AI 投資の先行きへの懐疑が同居している市場の姿である。同日の米主要株価指数も下げており、Anthropic の初日高騰が市場全体を引っ張る展開にはならなかった。",
+      "【追記 2026-11-22】上場2日目の2026年11月20日、ANT は前日終値 97.17ドルから 8.5% 下げて 88.91ドルで引けた。日中は 83.05ドルまで下げ、公開価格 83.00ドルに 5セントまで迫ったあと持ち直した。始値は 89.86ドル、高値は 92.56ドル、出来高は約4億株だった。終値でも公開価格を 7.1% 上回っている。同日の米ハイテク株は広く売られ、Nasdaq は 2026年の上昇分を消した。"
     ],
     "tables": [
       {
@@ -34649,6 +34655,10 @@ const ARTICLES_BODY = {
       {
         "title": "Anthropic ANT Closes at $97.17, Up 17% on Its First Day of Trading（Invezz）",
         "url": "https://invezz.com/news/2026/11/19/anthropic-stock-first-day-close-2026-11-19/"
+      },
+      {
+        "title": "ANT Stock $88.91: Friday Low Came 5 Cents Above IPO Price（FinanceFeeds）",
+        "url": "https://financefeeds.com/anthropic-ant-stock-88-91-saturday-week-ahead-after-friday-low-tested-83-ipo-price-bull-97-bear-80/"
       }
     ]
   },
@@ -35682,7 +35692,7 @@ const ARTICLES_BODY = {
       "調査の対象はまだ分かっていない。Reuters によれば、調査がいつ始まったのか、どの会計実務が対象なのかは確認できていない。調査があること自体は不正の証拠ではなく、執行措置に至らずに終わることも多い。ただ、決算が好調だった直後の報道だけに、投資家の不安は大きい。10月6日の最高値239.24ドルからは約48%下落し、6週間で約2.7兆ドルの時価総額が消えたことになる。",
       "注目されている論点も報じられている。2025年の売上のうち約1,040億ドルがシンガポール法人を通じて計上されていたこと（**Financial Times** の報道）、地域別の売上報告を「請求先」基準から「顧客の本社所在地」基準に変えたこと、売掛金の回収期間が64日に延びていることなどだ。ただし、これらが SEC の調査対象かどうかは確認されていない。",
       "NVIDIA をめぐる規制の網は広がっている。カリフォルニア州の **Rob Bonta** 司法長官は11月19日、高度なチップが中国に流れたかどうかや、投資家への開示に問題がなかったかを調べる調査召喚状を出した。司法省は129億ドルの **Hugging Face** 買収を審査中で、辞任した **Jensen Huang** 氏は12月1日に議会で証言する予定だ。[NVIDIA の第3四半期決算と中国向け Hopper 出荷停止の記事](?a=nvidia-hopper-china-halt-bis-rule-q3-2026)でも報じたとおり、決算自体は売上1,158億ドルの記録更新だったが、株価はそれを顧みない下げが続いている。",
-      "NVIDIA の株価は11月20日の取引を125.53ドルで終え、前日比14.01%の下落となった。Alphabet が NVIDIA を抜いて米国企業で第3位となり、NVIDIA は第4位に転落した。取引時間中の LSEG のデータでは、Alphabet の時価総額は約3.44兆ドルで、NVIDIA の約3.4兆ドルを上回っていた。"
+      "【追記 2026-11-21】NVIDIA の株価は11月20日の取引を125.53ドルで終え、前日比14.01%の下落となった。Alphabet が NVIDIA を抜いて米国企業で第3位となり、NVIDIA は第4位に転落した。取引時間中の LSEG のデータでは、Alphabet の時価総額は約3.44兆ドルで、NVIDIA の約3.4兆ドルを上回っていた。"
     ],
     "primarySources": [
       {
@@ -35865,6 +35875,196 @@ const ARTICLES_BODY = {
       {
         "title": "Google to keep Gemini chats for 2 months, up from 72 hours, even with history off（TechCrunch）",
         "url": "https://techcrunch.com/2026/11/17/google-to-keep-gemini-chats-for-two-months-up-from-72-hours-even-with-history-off/"
+      }
+    ]
+  },
+  "google-suncatcher-blue-origin-2026": {
+    "body": [
+      "Google は 2026年11月19日、Blue Origin と Project Suncatcher の初の大型打ち上げで合意したと発表した。Blue Origin の大型ロケット New Glenn が、2029年第1四半期に Google の衛星を太陽同期軌道へ運ぶ。各衛星はデータセンターのラック1台分にほぼ相当する計算能力を持つという。Suncatcher は、軌道上の豊富な太陽光を使って AI インフラを宇宙で拡大する長期のムーンショット計画だ。",
+      "衛星には Google の AI チップ TPU が搭載され、機械学習の計算を軌道上で直接処理する。Blue Origin と Google は打ち上げサービス契約を結んだ。Blue Origin の Jordan Charles 氏（New Glenn 担当シニアバイスプレジデント）は、New Glenn の大型打ち上げ能力と広いペイロード容量が、宇宙での新しい能力に柔軟性を与えると述べた。Google の Travis Beals 氏（Project Suncatcher 担当シニアディレクター）は、今回の専用打ち上げを長期ロードマップの重要な節目と位置づけた。",
+      "宇宙での AI 計算が注目される背景には、地上のデータセンターが電力や土地、冷却水に与える負荷がある。軌道上では太陽光をほぼ連続して受けられる一方、空気のない宇宙での放熱や宇宙放射線への耐性が課題になる。両社の発表に契約額や搭載する衛星の数の記載はなく、計画は研究段階のままだ。2029年の打ち上げは、実証段階から専用の大型打ち上げによる展開へ進む節目になる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Google partners with Blue Origin on Project Suncatcher heavy-lift launch（Google 公式ブログ）",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/blue-origin-project-suncatcher-partnership/"
+      },
+      {
+        "title": "Google Selects Blue Origin's New Glenn for Project Suncatcher（Blue Origin 公式発表）",
+        "url": "https://www.blueorigin.com/news/google-selects-new-glenn-for-project-suncatcher"
+      }
+    ]
+  },
+  "openai-medchembench-2026": {
+    "body": [
+      "OpenAI は 2026年11月20日、創薬化学の推論を測る新しいベンチマーク MedChemBench を公開した。公開された研究論文や特許から作った 99 問で、分子の構造と実験の証拠を結びつけ、結果を説明し、化合物を比較し、性質を予測する能力を評価する。最高の推論設定（xhigh）では GPT-6.2 Astra が 84.5% のクレジットを獲得し、GPT-6 Astra の 83.3%、GPT-6.1 Sol の 82.0% を上回った。GPT-5.6 Sol は 58.2% だった。",
+      "MedChemBench は 117 本の論文と特許から作られ、761 の異なる分子構造を含む。評価する能力は 4 つに分かれる。分子構造の再構成、証拠に基づく科学的な説明、化合物の順位付けと選択、数値的な性質の予測だ。構造の再構成では Astra が xhigh で 95.4% のクレジットを獲得した一方、化合物の選択と数値予測では半分程度にとどまり、OpenAI はこの 2 つに改善の余地が大きいとしている。GPT-6 Astra は xhigh で 83.3%、最大の推論設定では 83.8% で、GPT-6.1 Terra は 75.1% だった。",
+      "OpenAI は結果の読み方にも注意を促している。ベンチマークは過去の研究の証拠から推論する能力を測るもので、モデルが新薬を発見できることや、実験室での判断を改善できることを示すものではない。出典となった文献にモデルが事前に触れていた可能性は排除できず、各回答はツールやフィードバック、新しい実験なしの 1 回だけの試行だった。評価したのは OpenAI 自社の GPT モデル 11 種だけで、独立した検証は確認できていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Can AI help scientists identify promising drug candidates?（OpenAI 公式ブログ）",
+        "url": "https://openai.com/index/introducing-medchembench/"
+      }
+    ]
+  },
+  "navier-stokes-unforced-ai-proof-2026": {
+    "body": [
+      "ニューヨーク大学の Tristan Buckmaster 氏と Anthropic の Levent Alpöge 氏は 2026年11月20日、外力のない 3 次元非圧縮性 Navier-Stokes 方程式の解が有限時間で発散する（blow-up）とする証明を公開した。79 ページの論文と、約 2,270 ファイル・約 60 万行の Lean 4 による形式証明を GitHub に置いた。論文には、Anthropic のモデル（Claude）をこの研究全体で使い、ほかのモデルは使わなかったと書かれているという。査読は受けておらず、検証はこれからだ。",
+      "証明の筋道は、カリフォルニア大学ロサンゼルス校の Terence Tao 氏がブログで「技術的には人間が読めるもので、全体の戦略はおおむね明確だ」と評した。近似的な自己相似解を数値的に作り、厳密な摂動理論でそれを厳密な解に持ち込むという、この結果に至る予想された道筋の 1 つだという。ただし Tao 氏は「正式で専門的な証明にするには、さらに作業が必要だ」とも書いている。同じ日には、Alpöge 氏らが Matei Coiculescu 氏とともに、無外力の 3 次元 Euler 方程式の有限時間 blow-up の証明も公開しており、Tao 氏はこちらを 3 つの結果のなかで最も「消化が進んでいる」とした。",
+      "検証にはまだ欠けた部分がある。証明の要となる数値的な証明書（certificate）はリポジトリに含まれておらず、論文にはハッシュだけが示され「近く公開する」と書かれている。証明書が論文の条件を満たすかの検証計算（128 ビットの区間演算）も、形式証明の一部ではなく、リポジトリにもない。公開当日にパッチを当てた Lean パッケージは、組み立て直されていないまま公開された。Buckmaster 氏は Mastodon で、9 月の経緯を受けて待つ余裕がなかったため「磨かれていない、LLM の助けを大きく借りた草稿」になったと説明した。",
+      "背景には、2026年9月の OpenAI による Navier-Stokes の主張をめぐる優先権の争いがある。9 月の主張は外力を伴うものだったのに対し、今回の主張は外力なしのもので、多くの数学者が本来の問題とみなすものだ。同じ 11 月 20 日には Alpöge 氏による[一般化リーマン予想の主張](?a=anthropic-riemann-hypothesis-claude-proof-claim-2026)も出ている。Navier-Stokes 方程式はクレイ数学研究所のミレニアム懸賞問題の 1 つで、賞金は 100 万ドルだ。いずれの主張も検証前の段階であり、「解けた」と断定できる段階ではない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Unforced Euler singularity, unforced Navier-Stokes singularity, and the Generalized Riemann Hypothesis（Terence Tao 氏のブログ）",
+        "url": "https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/"
+      },
+      {
+        "title": "tristanbuckmaster/navier-stokes（GitHub リポジトリ）",
+        "url": "https://github.com/tristanbuckmaster/navier-stokes/"
+      }
+    ]
+  },
+  "google-search-homepage-gemini-2026": {
+    "body": [
+      "Google は 2026年11月19日、デスクトップ版の Google 検索ホームページの改修を世界で展開し始めた。検索担当 VP の Robby Stein 氏が X で確認したもので、検索ボックスの下にあった「Google 検索」ボタンがなくなり、代わりに Gemini のショートカットが並ぶ。左端には最近の AI 検索を呼び戻せる折りたたみ式のサイドバーが加わる。Google の公式ブログによる発表ではなく、Stein 氏の投稿を 9to5Google や Engadget などが引用して報じている。",
+      "検索ボックスの下には、画像を作る、ファイルについて尋ねる、Gemini とブレインストーミングする、の 3 つのショートカットが並ぶ。画像生成には Nano Banana が使われるという。「I'm Feeling Lucky」は残り、Enter キーを押せば従来どおり検索結果が表示される。サイドバーには最近の AI Mode での検索スレッドが並び、スレッドの検索や「New chat」、Gemini Notebook への接続もできる。Stein 氏によれば、検索に来る人は「一度きりでは終わらない」質問を抱えており、テストではこのサイドバーが探索の継続に大きく役立ったという。",
+      "展開は段階的で、9to5Google は発表時点で自社の端末にはまだ新しい表示が現れていないと伝えている。対象はデスクトップ版で、モバイル版への同様の変更は発表されていない。検索のホームページは長年ロゴと検索ボックスだけの画面だったが、AI Overviews や AI Mode に続いて、会話の履歴を残して再開できる作業場へと姿を変えつつある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Google Search homepage gets AI-heavy redesign with Gemini（9to5Google）",
+        "url": "https://9to5google.com/2026/11/19/google-search-homepage-gemini-sidebar-update/"
+      },
+      {
+        "title": "Google's latest home page redesign makes Gemini even more prominent（Engadget）",
+        "url": "https://www.engadget.com/2322647/google-latest-home-page-redesign-makes-gemini-even-more-prominent/"
+      },
+      {
+        "title": "Google drops the search button from its homepage to make room for Gemini AI tools（Crypto Briefing）",
+        "url": "https://cryptobriefing.com/google-removes-search-button-gemini-ai/"
+      },
+      {
+        "title": "Google Homepage Adds AI Mode Chat History Sidebar（TalkAndroid）",
+        "url": "https://www.talkandroid.com/536008-google-homepage-ai-mode-sidebar/"
+      }
+    ]
+  },
+  "openai-gpt-6-cyber-2026": {
+    "body": [
+      "OpenAI は 2026年11月5日、サイバー特化モデル GPT-6 Cyber を発表した。GPT-6 Astra のサイバー特化版で、OpenAI の Preparedness Framework のサイバー分野で Critical に分類された。GPT-5.6 Cyber の High からの上昇だ。ExploitGym では 48.5% を獲得し、GPT-5.6 Cyber の 32.1% から約16ポイント、相対で 51% の改善になった。Web ペネトレーションテストでの脆弱性の recall は 40.3% で、GPT-6 Astra の 32.0% を上回った。",
+      "境界を守る能力も大きく改善した。ExploitGym Honeypot では、範囲外のサービスへの攻撃を避けた割合が、展開用プロンプトなしで 99.93%、プロンプトありで 100% だった。GPT-5.6 Cyber は 94.49% だった。新しいベンチマーク RemoteExploitBench では、Daybreak Blue の GPT-6 Astra が全タスクを拒否したのに対し、GPT-6 Cyber は 95% を完了した。唯一の失敗は、遠隔で動作しなかったエクスプロイトだった。",
+      "実績として、Linux カーネルでは 1,724件の脆弱性を再現し、948件の権限昇格エクスプロイトを作成した。同じハーネスでの GPT-5.6 Sol の 166件の 5倍以上だ。Firefox では Mozilla が high severity と分類した 81件の新規の脆弱性を発見し、既知の 30件が想定より深刻だと判明した。304件の critical な所見を管理者に開示し、Mozilla は修正の取り込みを始めている。",
+      "提供は API と Codex 経由で、承認された Daybreak Red の顧客の小グループから始まり、まもなくすべての Daybreak Red の顧客へ拡大する。あわせて、悪用を検知する監視や Private Safety Processing、Daybreak Red の API アクセスでの IP 許可リストなどの対策も強化された。10億ドル規模の Daybreak for Frontline Defenders 助成プログラムで、資源の限られた防御側へのアクセスを補助する。"
+    ],
+    "primarySources": [
+      {
+        "title": "GPT‑6 Cyber: Advancing the frontier of aligned cybersecurity agents（OpenAI）",
+        "url": "https://openai.com/index/introducing-gpt-6-cyber/"
+      }
+    ]
+  },
+  "openai-healthcare-computer-use-2026": {
+    "body": [
+      "OpenAI は 2026年11月16日、ChatGPT for Healthcare と ChatGPT for Clinicians に computer-use エージェントを導入したと発表した。画面を読み、クリックや入力、アプリ間の移動で複数ステップの業務を実行する。API、ChatGPT for Healthcare、ChatGPT for Clinicians で本日から利用できる。医療機関向けには BAA が必須で、ChatGPT for Healthcare のデータは学習に使われない。",
+      "安全性と有用性の評価では、GPT-6 Astra が EHR の受信箱業務 325件のうち 99% を臨床的に安全と評価された。医師による有用性評価では 646件のうち 93% が「very helpful」または「extremely helpful」とされた。スタンフォードの独立ベンチマーク HealthAdminBench では GPT-6 Astra が 94.3%、GPT-6 Luna が 91.8% を獲得し、Luna は 1タスク約 8.5セントと 98% 安かった。",
+      "導入事例として、CVS Health は数か月にわたった書類送付の滞留を週末に解消し、1日数万件のコンサルトを処理している。Cigna Healthcare、Abridge、Ambience も導入を進めている。あわせて 20超の新規ヘルスケアプラグイン（Aiva、Amion、Availity Extend、Elation Health、UpToDate Expert AI など）が追加され、臨床検索の改善も行われた。ChatGPT for Clinicians は米国の対象の医師に無料で提供される。"
+    ],
+    "primarySources": [
+      {
+        "title": "More ways to move care forward with ChatGPT for Healthcare（OpenAI）",
+        "url": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare/"
+      },
+      {
+        "title": "Advancing computer-use agents for healthcare teams（OpenAI）",
+        "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/"
+      }
+    ]
+  },
+  "openai-chatgpt-academic-researchers-2026": {
+    "body": [
+      "OpenAI は 2026年11月16日、ChatGPT for Academic Researchers を拡大し、世界最大 20万人の研究者に ChatGPT を無料で提供すると発表した。7月のパイロットからの拡大で、次回の申請は 11月23日（月）に始まる。先着順で 5万件の新規助成を付与する。各助成は受領者と最大 2名の共同研究者までが対象で、計最大 15万人分になる。",
+      "パイロットでは 7月以降、33か国の 2万人の研究者が参加した。OpenAI の経済研究チームによる調査では、1,800人超の研究者が参加し、AI がなければ同じ質の研究にはほぼ 2倍の時間がかかったと見積もったという。パイロットでは ChatGPT Pro を提供していたが、利用実態から大半が Plus の利用上限に収まることが分かり、新規助成は Plus の提供になる。抽選制から先着順に変わった。",
+      "あわせて、数学における AI の成果の検証などを支援する Simons Foundation の新しい取り組みに 500万ドルを拠出した。生物学向けの GPT-Rosalind の学術プラン（米国の大学の対象ラボに最大 30席を最大 12か月無料）や、大学向けの ChatGPT Edu も案内されている。プログラムを通じて共有されたデータは、既定では学習に使われない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Broadening access to AI for scientists（OpenAI）",
+        "url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers/"
+      }
+    ]
+  },
+  "anthropic-claude-for-manufacturing-2026": {
+    "body": [
+      "Anthropic は 2026年11月12日、製造業向けのプラグイン Claude for Manufacturing を発表した。17のスキルを持ち、見積もり、品質、不具合の診断、調達、設計、生産報告などの業務を、製造業者の自社の記録から進める。コネクタは Autodesk Fusion、Infor、Microsoft 365、Oracle NetSuite の 4件で、対象は Team と Enterprise プランだ。",
+      "スキルの例として、見積もり担当者は顧客の依頼を読み、類似案件のコストと比較して見積書の下書きを作れる。品質技術者は不具合の記録と過去の報告から原因を順位付けし、是正処置報告書の下書きを作れる。技術者はセンサーの出力や修理記録、写真、マニュアルから故障の原因を順位付けできる。技能は人のレビューで終わる設計で、担当者が確認してから顧客やサプライヤーに届く。",
+      "Infor は独自のプラグインも出しており、Claude for Manufacturing のコネクタが記録の参照だけなのに対し、Infor 側のプラグインでは承認後に発注や生産リスケなどの変更もできる。Claude for Manufacturing は設備を操作しない。設備の操作は、Anthropic がリサーチプレビューで開発中の Model Hardware Standard で扱う。価格は発表されていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude for Manufacturing: AI plugin for plant teams（Anthropic）",
+        "url": "https://claude.com/resources/articles/claude-for-manufacturing"
+      }
+    ]
+  },
+  "github-copilot-november-2026-updates-2026": {
+    "body": [
+      "GitHub は 2026年11月17日から18日にかけて、GitHub Copilot のコードレビューとコネクタの更新を相次いで発表した。コードレビューには PR の複雑さとリスクを見て Lite、Balanced、Max を自動で選ぶ Adaptive がパブリックプレビューで加わり、あわせて公開リポジトリ向けのクロスリポジトリ・コンテキストとシークレット検出もパブリックプレビューになった。Azure Repos 向けのコードレビューは GA になった。",
+      "Adaptive は、文書の更新のような軽い変更には Lite を、認証ロジックの変更のようなリスクの高い変更には Max を選ぶ。各レビューには選ばれたレベルが表示される。Balanced が引き続き既定で、管理者が設定した上限を超える選択はしない。クロスリポジトリ・コンテキストでは、公開リポジトリの関連コードやドキュメントをレビュー時に読める。シークレット検出は 500超の既知の型に加え、LLM による検出で形式のない認証情報も指摘する。対象は Copilot Pro、Pro+、Max、Business、Enterprise だ。",
+      "11月18日には、GitHub が検証した MCP サーバー（コネクタ）として Box、Buildkite、Calendly、ClickUp、Mixpanel、Supabase、Webflow、Wix の 8件がパブリックプレビューで加わった。既存の 25超のサービスに加わるもので、全 Copilot プランが対象だ。あわせて 11月16日には、Claude Opus 4.8、Claude Opus 5、GPT-5.6 Terra の 3モデルが廃止され、代替として Claude Opus 5.5、GPT-6.1 Sol または GPT-6 Luna が案内された。廃止は 10月15日に予告されていた。"
+    ],
+    "primarySources": [
+      {
+        "title": "Copilot code review: Adaptive effort, secret detection, and more（GitHub Changelog）",
+        "url": "https://github.blog/changelog/2026-11-17-copilot-code-review-adaptive-effort-secret-detection-and-more/"
+      },
+      {
+        "title": "Connect Supabase, Box, Calendly, and more to Copilot（GitHub Changelog）",
+        "url": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot/"
+      },
+      {
+        "title": "GitHub Copilot models deprecated on November 16, 2026（GitHub Changelog）",
+        "url": "https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026/"
+      }
+    ]
+  },
+  "primeintellect-deepseek-v4-1-flash-substitution-2026": {
+    "body": [
+      "Prime Intellect は 2026年11月19日、同社の推論サービスで DeepSeek V4.1 Flash のデプロイが、11月8日から10日にかけて約53時間にわたり、拒否を除去した重みに差し替えられていたと公表した。権限のない第三者が、公開されている abliterated weights（拒否挙動を弱める・除去するよう改変された重み）に置き換えた。対象は Prime Inference の deepseek/deepseek-v4.1-flash エンドポイントだった。",
+      "差し替えられたモデルの能力ベンチマーク（GPQA Diamond、τ-bench）は変わらなかったが、拒否率は大きく下がった。JailbreakBench では 100問中 98件の拒否が 1件に、StrongREJECT では 313問中 304件が 2件に、HarmBench では 240問中 198件が 0件になった。チャットテンプレートやトークナイザー、配信設定は変更されていなかった。",
+      "Prime Intellect は影響を受けた顧客全員に連絡し、モデルの拒否に依存する用途ではその期間の出力を確認するよう勧めた。プロンプトや出力が記録されたり、配信クラスタの外に出たりした証拠はなく、鍵や顧客の認証情報への影響もないという。ほかのモデルやクラスタへのアクセスも確認されていない。調査は継続中で、評価が変われば告知を更新するとしている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Notice regarding deepseek/deepseek-v4.1-flash, 8 to 10 November 2026（Prime Intellect）",
+        "url": "https://primeintellect.one/security/advisories/deepseek-v4-1-flash-model-substitution"
+      }
+    ]
+  },
+  "claroc-ghostshares-2-grok-build-2026": {
+    "body": [
+      "セキュリティ企業の Claroc は 2026年11月10日、Grok の Build モードで作られたアプリ 35,578件が、ログインなしで誰でも開ける状態だったと報告した。43,551件の grok.me アドレスを調べたところ、稼働中の 37,571件のうち 94.7% が認証なしで開けた。公開時に「リンクを知る全員」があらかじめ選ばれていたためだ。",
+      "開かれていたアプリの中には、SpaceXSI と X の社員が作った 24件もあった。新入社員のオンボーディング計画、594件の戦略顧客とパイプラインを示す営業テリトリーマップ、米国の連邦機関向けとされる広告提案などだ。ほかに 30の組織の社内データも確認され、26組織は従業員 1,000人超、6組織は Fortune 500 だった。病院の職員名簿（3,500人超）、ICU の患者の説明資料、平文のパスワードを含む業者用タイムシートなどもあった。",
+      "Claroc が自作した 2件のアプリの検証では、データベース付きの連絡先リストはログインなしで誰でも行を追加でき、チーム用の顧客リストは「Continue with Google」で社外の Google アカウントでも閲覧・編集・削除ができた。SpaceXSI は報告後に自社の 24件を取り下げたが、ほかの利用者のアプリには同じ対応をしていないという。同社は、公開の既定を「Only you」に変えることなどを求めている。先月には Meta の Muse でも同じ型の露出が報告されていた。"
+    ],
+    "primarySources": [
+      {
+        "title": "GhostShares 2: Grok Apps Exposed xAI's Business Secrets and People's Private Data（Claroc）",
+        "url": "https://blog.claroc.io/ghostshares-grok-build-apps/"
+      }
+    ]
+  },
+  "google-duplex-gemini-tasks-calling-2026": {
+    "body": [
+      "Google は 2026年11月20日、電話代行システム Google Duplex を Gemini アプリの Tasks に統合したと発表した。Gemini 4 Hydrogen と Neon が通話の理解・計画・対話を担い、飲食店の予約や美容院の予約といった実世界の用事で、企業への電話発信を自動でこなす。Tasks 自体は 11月17日にロールアウトが始まっていた。",
+      "Duplex は約10年前に始まり、コロナ禍では営業情報の自動確認に使われ、2025年から2026年にかけては Google 検索や Ask Maps での見積もり確認などにも広がった。今回の統合では、Gemini がマルチモーダルな理解と計画、対話生成を一つの仕組みにまとめ、カレンダーの都合を踏まえた車の整備予約のような複数条件の依頼にも対応するという。",
+      "通話の冒頭では、Google の自動システムであることを明示する。事業者は Google ビジネスプロフィールで自動通話をオプトアウトできるほか、通話中に「Please stop calling my business」と伝えることもできる。あわせて、公共料金の請求書の分析や Agent Payments Protocol による安全な決済処理、メールや RCS での調整にも対応するという。"
+    ],
+    "primarySources": [
+      {
+        "title": "How Google Duplex evolved to also call businesses for you in Gemini（Google Research）",
+        "url": "https://research.google/blog/how-google-duplex-evolved-to-also-call-businesses-for-you-in-gemini/"
       }
     ]
   }

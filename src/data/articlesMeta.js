@@ -14801,5 +14801,198 @@ export const ARTICLES_META = [
       "プライバシー"
     ],
     "lastReviewed": "2026-11-21"
+  },
+  {
+    "id": "google-suncatcher-blue-origin-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Google の Project Suncatcher、Blue Origin の New Glenn で 2029 年に TPU 衛星を打ち上げへ",
+    "excerpt": "Google が Blue Origin と Project Suncatcher の初の大型打ち上げで合意し、**New Glenn** が 2029年第1四半期に TPU を搭載した衛星を太陽同期軌道へ運ぶ。各衛星はデータセンターのラック1台分にほぼ相当する計算能力を持つという。宇宙の太陽光で AI インフラを拡大する長期計画が、実証から専用打ち上げによる展開へ進む。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "TPU",
+      "宇宙"
+    ]
+  },
+  {
+    "id": "openai-medchembench-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI が MedChemBench を公開 — GPT-6.2 Astra が創薬化学の推論で 84.5%",
+    "excerpt": "OpenAI が創薬化学の推論を測るベンチマーク **MedChemBench** を公開。99問で分子構造と実験証拠の結びつけを評価し、最高推論設定で **GPT-6.2 Astra** が 84.5% を獲得した。ただし新薬発見の証明にはならないと OpenAI 自身が注意を促している。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "GPT-6",
+      "ベンチマーク",
+      "創薬"
+    ]
+  },
+  {
+    "id": "navier-stokes-unforced-ai-proof-2026",
+    "type": "news",
+    "category": "special",
+    "title": "AI 支援の無外力 Navier-Stokes 証明主張 — 79 ページ論文と約 60 万行の Lean 形式証明を公開",
+    "excerpt": "Buckmaster 氏と Alpöge 氏が、外力のない 3次元 Navier-Stokes 方程式の有限時間 blow-up の証明を主張。79ページの論文と約60万行の Lean 形式証明を公開したが、要となる数値証明書はまだ未公開で、Tao 氏は「正式な証明にするにはさらに作業が必要」と評した。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "数学",
+      "Navier-Stokes"
+    ]
+  },
+  {
+    "id": "google-search-homepage-gemini-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Google 検索のホームページが Gemini 中心に — 「Google 検索」ボタンが消え、AI Mode の履歴サイドバーが登場",
+    "excerpt": "Google 検索のデスクトップ版ホームページが改修され、「Google 検索」ボタンが消えて **Gemini** のショートカットが並び、最近の AI 検索を呼び戻すサイドバーが加わった。検索担当 VP の Stein 氏が X で確認したもので、展開は世界で段階的に進む。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "AI Mode"
+    ]
+  },
+  {
+    "id": "openai-gpt-6-cyber-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI、サイバー特化モデル GPT-6 Cyber を発表",
+    "excerpt": "OpenAI がサイバー特化モデル **GPT-6 Cyber** を発表。ExploitGym 48.5%、Preparedness Framework のサイバー分野で Critical に分類され、Linux カーネルで 948件の権限昇格エクスプロイトを作成した。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-05",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "OpenAI",
+      "GPT-6",
+      "セキュリティ"
+    ]
+  },
+  {
+    "id": "openai-healthcare-computer-use-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI、ChatGPT for Healthcare に computer-use エージェントを導入",
+    "excerpt": "OpenAI が **ChatGPT for Healthcare** などに computer-use エージェントを導入。EHR 業務 325件の 99% が臨床的に安全と評価され、HealthAdminBench では GPT-6 Astra が 94.3% を獲得した。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-16",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "ChatGPT",
+      "ヘルスケア"
+    ]
+  },
+  {
+    "id": "openai-chatgpt-academic-researchers-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI、ChatGPT for Academic Researchers を拡大 — 最大 20万人の研究者に無料提供",
+    "excerpt": "OpenAI が **ChatGPT for Academic Researchers** を拡大し、世界最大 20万人の研究者に ChatGPT を無料提供。次回申請は 11月23日開始で、先着順で 5万件の新規助成を付与する。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-16",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "ChatGPT",
+      "研究"
+    ]
+  },
+  {
+    "id": "anthropic-claude-for-manufacturing-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic、製造業向けプラグイン Claude for Manufacturing を発表",
+    "excerpt": "Anthropic が製造業向けプラグイン **Claude for Manufacturing** を発表。17のスキルで見積もりや品質、不具合診断などを自社の記録から進め、人のレビューで終わる設計にした。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-12",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "プラグイン"
+    ]
+  },
+  {
+    "id": "github-copilot-november-2026-updates-2026",
+    "type": "news",
+    "category": "product",
+    "title": "GitHub Copilot、Adaptive コードレビューと 8件の MCP コネクタを追加",
+    "excerpt": "GitHub Copilot のコードレビューに **Adaptive**（Lite／Balanced／Max を自動選択）を追加。Box など 8件の MCP コネクタも加わり、Claude Opus 4.8 など 3モデルを廃止した。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-18",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "GitHub",
+      "GitHub Copilot",
+      "コードレビュー"
+    ]
+  },
+  {
+    "id": "primeintellect-deepseek-v4-1-flash-substitution-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Prime Intellect、DeepSeek V4.1 Flash が拒否を除去した重みに差し替えられたと公表",
+    "excerpt": "Prime Intellect が **DeepSeek V4.1 Flash** のデプロイが約53時間にわたり拒否を除去した重みに差し替えられていたと公表。能力ベンチマークは変わらなかったが、JailbreakBench の拒否は 98件から 1件に落ちた。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "DeepSeek",
+      "セキュリティ"
+    ]
+  },
+  {
+    "id": "claroc-ghostshares-2-grok-build-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Claroc、Grok Build 製アプリ 35,578件が認証なしで公開されていたと報告",
+    "excerpt": "Claroc が **Grok Build** 製アプリ 35,578件がログインなしで誰でも開ける状態だったと報告。SpaceXSI 自身の社内資料や病院の職員名簿、ICU の患者資料も含まれていた。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-10",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "xAI",
+      "Grok",
+      "セキュリティ"
+    ]
+  },
+  {
+    "id": "google-duplex-gemini-tasks-calling-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Google、Duplex を Gemini の Tasks に統合 — Gemini 4 が企業への電話を代行",
+    "excerpt": "Google が電話代行システム **Duplex** を Gemini アプリの Tasks に統合。Gemini 4 Hydrogen と Neon が通話の理解・計画・対話を担い、企業への電話発信を自動でこなす。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "AIエージェント"
+    ]
   }
 ];
