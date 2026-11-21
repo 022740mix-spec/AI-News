@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-11-21",
-  "count": 737,
+  "count": 738,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -404,6 +404,7 @@
     "google-deepmind-amplio-agent-harness-2026",
     "google-deepmind-proeval-cost-cutting-2026",
     "google-deepmind-science-skills-2026",
+    "google-duplex-gemini-tasks-calling-2026",
     "google-gemini-3-1-flash-image-3-pro-image-release-2026",
     "google-gemini-3-5-pro-ga-delay-deep-think-2026",
     "google-gemini-3-8-flash-2026",

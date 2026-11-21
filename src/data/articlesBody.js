@@ -36054,6 +36054,19 @@ const ARTICLES_BODY = {
         "url": "https://blog.claroc.io/ghostshares-grok-build-apps/"
       }
     ]
+  },
+  "google-duplex-gemini-tasks-calling-2026": {
+    "body": [
+      "Google は 2026年11月20日、電話代行システム Google Duplex を Gemini アプリの Tasks に統合したと発表した。Gemini 4 Hydrogen と Neon が通話の理解・計画・対話を担い、飲食店の予約や美容院の予約といった実世界の用事で、企業への電話発信を自動でこなす。Tasks 自体は 11月17日にロールアウトが始まっていた。",
+      "Duplex は約10年前に始まり、コロナ禍では営業情報の自動確認に使われ、2025年から2026年にかけては Google 検索や Ask Maps での見積もり確認などにも広がった。今回の統合では、Gemini がマルチモーダルな理解と計画、対話生成を一つの仕組みにまとめ、カレンダーの都合を踏まえた車の整備予約のような複数条件の依頼にも対応するという。",
+      "通話の冒頭では、Google の自動システムであることを明示する。事業者は Google ビジネスプロフィールで自動通話をオプトアウトできるほか、通話中に「Please stop calling my business」と伝えることもできる。あわせて、公共料金の請求書の分析や Agent Payments Protocol による安全な決済処理、メールや RCS での調整にも対応するという。"
+    ],
+    "primarySources": [
+      {
+        "title": "How Google Duplex evolved to also call businesses for you in Gemini（Google Research）",
+        "url": "https://research.google/blog/how-google-duplex-evolved-to-also-call-businesses-for-you-in-gemini/"
+      }
+    ]
   }
 };
 

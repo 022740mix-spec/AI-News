@@ -14978,5 +14978,21 @@ export const ARTICLES_META = [
       "Grok",
       "セキュリティ"
     ]
+  },
+  {
+    "id": "google-duplex-gemini-tasks-calling-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Google、Duplex を Gemini の Tasks に統合 — Gemini 4 が企業への電話を代行",
+    "excerpt": "Google が電話代行システム **Duplex** を Gemini アプリの Tasks に統合。Gemini 4 Hydrogen と Neon が通話の理解・計画・対話を担い、企業への電話発信を自動でこなす。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "AIエージェント"
+    ]
   }
 ];
