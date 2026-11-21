@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-11-21",
-  "count": 729,
+  "count": 730,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -416,6 +416,7 @@
     "google-io-2026-gemini-3-5-flash-antigravity-spark-2026",
     "google-mirror-dimension-chrome-agents-2026",
     "google-nano-banana-2-gemini-flash-image-2026",
+    "google-search-homepage-gemini-2026",
     "google-stitch-loop-2026",
     "google-suncatcher-blue-origin-2026",
     "google-turboquant-2026",

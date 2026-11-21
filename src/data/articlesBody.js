@@ -35915,6 +35915,23 @@ const ARTICLES_BODY = {
         "url": "https://github.com/tristanbuckmaster/navier-stokes/"
       }
     ]
+  },
+  "google-search-homepage-gemini-2026": {
+    "body": [
+      "Google は 2026年11月19日、デスクトップ版の Google 検索ホームページの改修を世界で展開し始めた。検索担当 VP の Robby Stein 氏が X で確認したもので、検索ボックスの下にあった「Google 検索」ボタンがなくなり、代わりに Gemini のショートカットが並ぶ。左端には最近の AI 検索を呼び戻せる折りたたみ式のサイドバーが加わる。Google の公式ブログによる発表ではなく、Stein 氏の投稿を 9to5Google や Engadget などが引用して報じている。",
+      "検索ボックスの下には、画像を作る、ファイルについて尋ねる、Gemini とブレインストーミングする、の 3 つのショートカットが並ぶ。画像生成には Nano Banana が使われるという。「I'm Feeling Lucky」は残り、Enter キーを押せば従来どおり検索結果が表示される。サイドバーには最近の AI Mode での検索スレッドが並び、スレッドの検索や「New chat」、Gemini Notebook への接続もできる。Stein 氏によれば、検索に来る人は「一度きりでは終わらない」質問を抱えており、テストではこのサイドバーが探索の継続に大きく役立ったという。",
+      "展開は段階的で、9to5Google は発表時点で自社の端末にはまだ新しい表示が現れていないと伝えている。対象はデスクトップ版で、モバイル版への同様の変更は発表されていない。検索のホームページは長年ロゴと検索ボックスだけの画面だったが、AI Overviews や AI Mode に続いて、会話の履歴を残して再開できる作業場へと姿を変えつつある。"
+    ],
+    "primarySources": [
+      {
+        "title": "Google Search homepage gets AI-heavy redesign with Gemini（9to5Google）",
+        "url": "https://9to5google.com/2026/11/19/google-search-homepage-gemini-sidebar-update/"
+      },
+      {
+        "title": "Google's latest home page redesign makes Gemini even more prominent（Engadget）",
+        "url": "https://www.engadget.com/2322647/google-latest-home-page-redesign-makes-gemini-even-more-prominent/"
+      }
+    ]
   }
 };
 

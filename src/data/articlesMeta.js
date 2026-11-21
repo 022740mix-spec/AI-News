@@ -14851,5 +14851,21 @@ export const ARTICLES_META = [
       "数学",
       "Navier-Stokes"
     ]
+  },
+  {
+    "id": "google-search-homepage-gemini-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Google 検索のホームページが Gemini 中心に — 「Google 検索」ボタンが消え、AI Mode の履歴サイドバーが登場",
+    "excerpt": "Google 検索のデスクトップ版ホームページが改修され、「Google 検索」ボタンが消えて **Gemini** のショートカットが並び、最近の AI 検索を呼び戻すサイドバーが加わった。検索担当 VP の Stein 氏が X で確認したもので、展開は世界で段階的に進む。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "AI Mode"
+    ]
   }
 ];
