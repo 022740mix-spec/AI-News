@@ -24,6 +24,14 @@
     <summary>2026年11月20日、OpenAI は ChatGPT Space の提供対象を Plus ユーザーに広げ、18歳以上の Plus ユーザーに世界で順次展開し始めた</summary>
   </entry>
   <entry>
+    <title>【追記】SEC が NVIDIA の会計を調査と報道、株価は14%急落、1日で約5,000億ドルの時価総額が消失</title>
+    <link rel="alternate" type="text/html" href="?a=nvidia-sec-accounting-probe-stock-drop-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:nvidia-sec-accounting-probe-stock-drop-2026:2026-11-21</id>
+    <updated>2026-11-21T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>NVIDIA の株価は11月20日の取引を125.53ドルで終え、前日比14.01%の下落となった</summary>
+  </entry>
+  <entry>
     <title>【追記】Claude のテキスト透かしが Mythos 5・Opus 4.7・Sonnet 4.6 にも — Sonnet 4.6 は temperature などを指定すると付かないことがある</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-text-watermark-older-models-sampling-params-2026-11#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:anthropic-claude-text-watermark-older-models-sampling-params-2026-11:2026-11-17</id>
@@ -1198,13 +1206,5 @@
     <updated>2026-08-11T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
     <summary>★3→2.5 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（2.55）…</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Perplexity AI レビュー — リファレンス重視のAI検索、全回答にソース引用を徹底</title>
-    <link rel="alternate" type="text/html" href="?a=perplexity-review#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:perplexity-review:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>★4→4.5 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（4.3）…</summary>
   </entry>
 </feed>
