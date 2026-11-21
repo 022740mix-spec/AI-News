@@ -80,6 +80,30 @@
     <summary>GitHub Copilot のコードレビューに Adaptive（Lite／Balanced／Max を自動選択）を追加。Box など 8件の MCP コネクタも加わり、Claude Opus 4.8 など 3モデルを廃止した。</summary>
   </entry>
   <entry>
+    <title>Prime Intellect、DeepSeek V4.1 Flash が拒否を除去した重みに差し替えられたと公表</title>
+    <link rel="alternate" type="text/html" href="?a=primeintellect-deepseek-v4-1-flash-substitution-2026"/>
+    <id>tag:ai-tool-news.jp,2026:primeintellect-deepseek-v4-1-flash-substitution-2026</id>
+    <published>2026-11-22T15:00:00Z</published>
+    <updated>2026-11-22T15:00:00Z</updated>
+    <summary>Prime Intellect が DeepSeek V4.1 Flash のデプロイが約53時間にわたり拒否を除去した重みに差し替えられていたと公表。能力ベンチマークは変わらなかったが、JailbreakBench の拒否は 98件から 1件に落ちた。</summary>
+  </entry>
+  <entry>
+    <title>Claroc、Grok Build 製アプリ 35,578件が認証なしで公開されていたと報告</title>
+    <link rel="alternate" type="text/html" href="?a=claroc-ghostshares-2-grok-build-2026"/>
+    <id>tag:ai-tool-news.jp,2026:claroc-ghostshares-2-grok-build-2026</id>
+    <published>2026-11-22T15:00:00Z</published>
+    <updated>2026-11-22T15:00:00Z</updated>
+    <summary>Claroc が Grok Build 製アプリ 35,578件がログインなしで誰でも開ける状態だったと報告。SpaceXSI 自身の社内資料や病院の職員名簿、ICU の患者資料も含まれていた。</summary>
+  </entry>
+  <entry>
+    <title>Google、Duplex を Gemini の Tasks に統合 — Gemini 4 が企業への電話を代行</title>
+    <link rel="alternate" type="text/html" href="?a=google-duplex-gemini-tasks-calling-2026"/>
+    <id>tag:ai-tool-news.jp,2026:google-duplex-gemini-tasks-calling-2026</id>
+    <published>2026-11-22T15:00:00Z</published>
+    <updated>2026-11-22T15:00:00Z</updated>
+    <summary>Google が電話代行システム Duplex を Gemini アプリの Tasks に統合。Gemini 4 Hydrogen と Neon が通話の理解・計画・対話を担い、企業への電話発信を自動でこなす。</summary>
+  </entry>
+  <entry>
     <title>「Claude と解いた」と Anthropic の数学者がリーマン予想の証明を主張、同日に「人間だけ」の証明も登場、どちらも未検証</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-riemann-hypothesis-claude-proof-claim-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-riemann-hypothesis-claude-proof-claim-2026</id>
