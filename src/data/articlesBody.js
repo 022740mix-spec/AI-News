@@ -35897,6 +35897,24 @@ const ARTICLES_BODY = {
         "url": "https://openai.com/index/introducing-medchembench/"
       }
     ]
+  },
+  "navier-stokes-unforced-ai-proof-2026": {
+    "body": [
+      "ニューヨーク大学の Tristan Buckmaster 氏と Anthropic の Levent Alpöge 氏は 2026年11月20日、外力のない 3 次元非圧縮性 Navier-Stokes 方程式の解が有限時間で発散する（blow-up）とする証明を公開した。79 ページの論文と、約 2,270 ファイル・約 60 万行の Lean 4 による形式証明を GitHub に置いた。論文には、Anthropic のモデル（Claude）をこの研究全体で使い、ほかのモデルは使わなかったと書かれているという。査読は受けておらず、検証はこれからだ。",
+      "証明の筋道は、カリフォルニア大学ロサンゼルス校の Terence Tao 氏がブログで「技術的には人間が読めるもので、全体の戦略はおおむね明確だ」と評した。近似的な自己相似解を数値的に作り、厳密な摂動理論でそれを厳密な解に持ち込むという、この結果に至る予想された道筋の 1 つだという。ただし Tao 氏は「正式で専門的な証明にするには、さらに作業が必要だ」とも書いている。同じ日には、Alpöge 氏らが Matei Coiculescu 氏とともに、無外力の 3 次元 Euler 方程式の有限時間 blow-up の証明も公開しており、Tao 氏はこちらを 3 つの結果のなかで最も「消化が進んでいる」とした。",
+      "検証にはまだ欠けた部分がある。証明の要となる数値的な証明書（certificate）はリポジトリに含まれておらず、論文にはハッシュだけが示され「近く公開する」と書かれている。証明書が論文の条件を満たすかの検証計算（128 ビットの区間演算）も、形式証明の一部ではなく、リポジトリにもない。公開当日にパッチを当てた Lean パッケージは、組み立て直されていないまま公開された。Buckmaster 氏は Mastodon で、9 月の経緯を受けて待つ余裕がなかったため「磨かれていない、LLM の助けを大きく借りた草稿」になったと説明した。",
+      "背景には、2026年9月の OpenAI による Navier-Stokes の主張をめぐる優先権の争いがある。9 月の主張は外力を伴うものだったのに対し、今回の主張は外力なしのもので、多くの数学者が本来の問題とみなすものだ。同じ 11 月 20 日には Alpöge 氏による[一般化リーマン予想の主張](?a=anthropic-riemann-hypothesis-claude-proof-claim-2026)も出ている。Navier-Stokes 方程式はクレイ数学研究所のミレニアム懸賞問題の 1 つで、賞金は 100 万ドルだ。いずれの主張も検証前の段階であり、「解けた」と断定できる段階ではない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Unforced Euler singularity, unforced Navier-Stokes singularity, and the Generalized Riemann Hypothesis（Terence Tao 氏のブログ）",
+        "url": "https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/"
+      },
+      {
+        "title": "tristanbuckmaster/navier-stokes（GitHub リポジトリ）",
+        "url": "https://github.com/tristanbuckmaster/navier-stokes/"
+      }
+    ]
   }
 };
 

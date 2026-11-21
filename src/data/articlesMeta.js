@@ -14834,5 +14834,22 @@ export const ARTICLES_META = [
       "ベンチマーク",
       "創薬"
     ]
+  },
+  {
+    "id": "navier-stokes-unforced-ai-proof-2026",
+    "type": "news",
+    "category": "special",
+    "title": "AI 支援の無外力 Navier-Stokes 証明主張 — 79 ページ論文と約 60 万行の Lean 形式証明を公開",
+    "excerpt": "Buckmaster 氏と Alpöge 氏が、外力のない 3次元 Navier-Stokes 方程式の有限時間 blow-up の証明を主張。79ページの論文と約60万行の Lean 形式証明を公開したが、要となる数値証明書はまだ未公開で、Tao 氏は「正式な証明にするにはさらに作業が必要」と評した。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "数学",
+      "Navier-Stokes"
+    ]
   }
 ];
