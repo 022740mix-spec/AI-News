@@ -5,8 +5,24 @@
   <link rel="alternate" type="text/html" href="./?view=updates"/>
   <link rel="self" type="application/atom+xml" href="./updates.xml"/>
   <id>tag:ai-tool-news.jp,2026:updates</id>
-  <updated>2026-11-17T15:00:00Z</updated>
+  <updated>2026-11-22T15:00:00Z</updated>
   <generator>ai-news-generate-updates</generator>
+  <entry>
+    <title>【追記】Anthropic が Nasdaq に上場 — 初日は $97.17 で引け、公開価格 $83 を 17% 上回る。調達額 $81.3B は米国史上最大</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-ipo-first-day-trading-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:anthropic-ipo-first-day-trading-2026:2026-11-22</id>
+    <updated>2026-11-22T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>上場2日目の2026年11月20日、ANT は前日終値 97.17ドルから 8.5% 下げて 88.91ドルで引けた</summary>
+  </entry>
+  <entry>
+    <title>【追記】ChatGPT Space、Pages とファイルを一か所に集約し、共同編集と @ChatGPT / @dot での生成に対応</title>
+    <link rel="alternate" type="text/html" href="?a=openai-chatgpt-space-pages-collaboration-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:openai-chatgpt-space-pages-collaboration-2026:2026-11-22</id>
+    <updated>2026-11-22T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>2026年11月20日、OpenAI は ChatGPT Space の提供対象を Plus ユーザーに広げ、18歳以上の Plus ユーザーに世界で順次展開し始めた</summary>
+  </entry>
   <entry>
     <title>【追記】Claude のテキスト透かしが Mythos 5・Opus 4.7・Sonnet 4.6 にも — Sonnet 4.6 は temperature などを指定すると付かないことがある</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-text-watermark-older-models-sampling-params-2026-11#article-history"/>
@@ -1190,21 +1206,5 @@
     <updated>2026-08-11T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
     <summary>★4→4.5 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（4.3）…</summary>
-  </entry>
-  <entry>
-    <title>【訂正】AI 開発ツール料金プラン横断比較 — CLI・エディタ・モデル API</title>
-    <link rel="alternate" type="text/html" href="?a=pricing-comparison-all-tools-2026-march#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:pricing-comparison-all-tools-2026-march:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>(1) Codex について「ChatGPT Pro（$200/月）以上のプランに含まれる形で提供され、単体の低価格プランはない」という記述を訂正しました（同日に 月次見直し もあり）</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Void — プライバシー重視のOSSエディタ</title>
-    <link rel="alternate" type="text/html" href="?a=void#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:void:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>★4→3 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（2.9）と乖離していました</summary>
   </entry>
 </feed>
