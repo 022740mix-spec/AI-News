@@ -35963,6 +35963,19 @@ const ARTICLES_BODY = {
         "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/"
       }
     ]
+  },
+  "openai-chatgpt-academic-researchers-2026": {
+    "body": [
+      "OpenAI は 2026年11月16日、ChatGPT for Academic Researchers を拡大し、世界最大 20万人の研究者に ChatGPT を無料で提供すると発表した。7月のパイロットからの拡大で、次回の申請は 11月23日（月）に始まる。先着順で 5万件の新規助成を付与する。各助成は受領者と最大 2名の共同研究者までが対象で、計最大 15万人分になる。",
+      "パイロットでは 7月以降、33か国の 2万人の研究者が参加した。OpenAI の経済研究チームによる調査では、1,800人超の研究者が参加し、AI がなければ同じ質の研究にはほぼ 2倍の時間がかかったと見積もったという。パイロットでは ChatGPT Pro を提供していたが、利用実態から大半が Plus の利用上限に収まることが分かり、新規助成は Plus の提供になる。抽選制から先着順に変わった。",
+      "あわせて、数学における AI の成果の検証などを支援する Simons Foundation の新しい取り組みに 500万ドルを拠出した。生物学向けの GPT-Rosalind の学術プラン（米国の大学の対象ラボに最大 30席を最大 12か月無料）や、大学向けの ChatGPT Edu も案内されている。プログラムを通じて共有されたデータは、既定では学習に使われない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Broadening access to AI for scientists（OpenAI）",
+        "url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers/"
+      }
+    ]
   }
 };
 

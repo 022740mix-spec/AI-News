@@ -14899,5 +14899,21 @@ export const ARTICLES_META = [
       "ChatGPT",
       "ヘルスケア"
     ]
+  },
+  {
+    "id": "openai-chatgpt-academic-researchers-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI、ChatGPT for Academic Researchers を拡大 — 最大 20万人の研究者に無料提供",
+    "excerpt": "OpenAI が **ChatGPT for Academic Researchers** を拡大し、世界最大 20万人の研究者に ChatGPT を無料提供。次回申請は 11月23日開始で、先着順で 5万件の新規助成を付与する。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-16",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "ChatGPT",
+      "研究"
+    ]
   }
 ];
