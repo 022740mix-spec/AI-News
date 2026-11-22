@@ -14994,5 +14994,184 @@ export const ARTICLES_META = [
       "Gemini",
       "AIエージェント"
     ]
+  },
+  {
+    "id": "microsoft-copilot-gpt-6-2-sol-astra-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Microsoft Copilot に GPT-6.2 Sol と Astra を追加 — Sol は全画面に、Astra は Cowork・Studio から展開",
+    "excerpt": "Microsoft が 11月20日、OpenAI の **GPT-6.2 Sol** と **GPT-6.2 Astra** を Microsoft Copilot に追加したと発表した。Sol は Copilot Chat、Copilot Cowork、Copilot Studio と Word・Excel・PowerPoint に世界展開し、Astra は Cowork と Studio を中心に、Chat と Office アプリでは Frontier プログラムの利用者に提供する。**Work IQ** が両モデルを仕事のデータに接地させる。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Microsoft",
+      "Microsoft Copilot",
+      "OpenAI",
+      "GPT-6"
+    ]
+  },
+  {
+    "id": "kyutai-aura-streaming-avatar-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Kyutai、音声駆動のストリーミングアバター AURA を公開 — 576p を単一 GPU でリアルタイム生成、重みも開放",
+    "excerpt": "パリの非営利 AI 研究所 **Kyutai** が 11月19日、音声から話す顔の動画をリアルタイムで流すモデル **AURA** を発表した。音声をチャンク単位で因果的に生成し、数秒分の先読みを要しない。**AURA 1.3B** は 576p を単一 GPU で毎秒 20.7 フレームで流し、**AURA 5B** は 720p に対応する。重みと 3万本の合成動画データセットも公開された。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Kyutai",
+      "動画生成",
+      "オープンソース"
+    ]
+  },
+  {
+    "id": "openai-chatgpt-voice-retirement-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ChatGPT の Advanced・Standard 音声は 12月11日で廃止へ — GPT-Live に一本化、動画・画面共有は当面 Advanced のまま",
+    "excerpt": "OpenAI は ChatGPT の **Advanced voice** と **Standard voice** を 2026年12月11日に廃止するとヘルプセンターで発表した。7月に登場した全二重の **GPT-Live** に一本化する。過去の音声会話は履歴に残り、テキストや音声で続けられる。ライブ動画と画面共有は、当面 Advanced voice のまま動く。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-10",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "ChatGPT",
+      "音声"
+    ]
+  },
+  {
+    "id": "databricks-genie-zeroops-public-beta-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Databricks、パイプライン障害を直すエージェント Genie ZeroOps をパブリックベータに — 8万件の現場課題から学んだ共有受信箱とワンクリック PR",
+    "excerpt": "Databricks は 11月19日、データパイプラインの問題を検出・調査・修正する自律エージェント **Genie ZeroOps** をパブリックベータにしたと発表した。6月の発表から数百社のプライベートプレビューを経て、共有受信箱や通知、カスタム指示、ワンクリックでのプルリクエスト作成を加えた。修正の適用には必ず人の承認が要る。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Databricks",
+      "AIエージェント",
+      "エンタープライズ"
+    ]
+  },
+  {
+    "id": "anthropic-claude-computer-use-team-enterprise-beta-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude の computer use、Team・Enterprise にベータ提供 — 既定オフ、管理者がアプリと端末を制御",
+    "excerpt": "Anthropic は 11月20日、Claude が画面を見てデスクトップアプリを操作する **computer use** を Team と Enterprise プランにベータ提供すると発表した。個人向けの Pro・Max・Ultra に続く法人展開で、組織への展開は段階的に進む。既定はオフで、Owner または Primary Owner だけが有効化できる。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "Computer Use",
+      "エンタープライズ"
+    ]
+  },
+  {
+    "id": "nvidia-microsoft-vera-rubin-azure-ignite-2026",
+    "type": "news",
+    "category": "product",
+    "title": "NVIDIA の Vera Rubin NVL72、Azure で稼働 — Nemotron 3.5 が Foundry に、Windows 365 への Direct Stream は 2027年初頭にプレビュー",
+    "excerpt": "NVIDIA と Microsoft は 11月19日、**Vera Rubin NVL72** システムが Azure のデータセンターで稼働していると発表した。Azure 仮想マシンへのアクセスを広げ、**Nemotron 3.5** のオープンモデル群を Microsoft Foundry で提供する。価格や VM のシリーズ名、提供リージョンは発表されていない。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "NVIDIA",
+      "Microsoft",
+      "Azure",
+      "オープンソース"
+    ]
+  },
+  {
+    "id": "baseten-bison-1-groundhog-1-decision-models-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Baseten、意思決定モデル bison-1 と groundhog-1 を公開 — Gemma 4 ベースで 128k コンテキスト、bison-1 は AA 意思決定指数で 1位",
+    "excerpt": "Baseten は 11月20日、Google の **Gemma 4** を基にした意思決定モデル **bison-1** と **groundhog-1** を公開した。bison-1 は Artificial Analysis の Decision Index v2.1 で 19モデル中 1位の 76点。両モデルとも 128k トークンのコンテキストと画像入力に対応し、重みは Hugging Face で公開された。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Baseten",
+      "オープンソース",
+      "API"
+    ]
+  },
+  {
+    "id": "aws-cairn-monai-label-zero-day-2026",
+    "type": "news",
+    "category": "special",
+    "title": "自律 AI エージェントがゼロデイを自力で発見・悪用 — Amazon が Cairn による大学サーバー侵害を報告、MONAI Label に CVE-2026-133968",
+    "excerpt": "Amazon Threat Intelligence は 11月20日、自律ペネトレーションテスト枠組み **Cairn** を使った攻撃者が、医療画像アノテーション用サーバー **MONAI Label** の未公開の脆弱性をエージェント自身に発見させ、大学サーバーの root 権限を奪ったと発表した。API の調査から任意ファイル書き込みまで約 11分。脆弱性は **CVE-2026-133968**（CVSS 9.8）として登録され、11月22日に修正版 **0.8.6** が公開された。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "セキュリティ",
+      "エージェント",
+      "ゼロデイ",
+      "CVE",
+      "AWS"
+    ]
+  },
+  {
+    "id": "microsoft-aion-instruct-edge-ga-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Microsoft、Aion Instruct を Edge の組み込みモデルとして一般提供 — 2.3B・MIT ライセンス、Prompt API はオリジントライアルへ",
+    "excerpt": "Microsoft は 11月19日、23億パラメーターの小言語モデル **Aion Instruct** を Microsoft Edge の組み込みモデルとして一般提供すると発表した。**Phi-4-mini** に代わり、Edge に組み込まれる。重みは MIT ライセンスで Hugging Face に公開され、コンテキストは 32,768トークン。Web サイトから呼び出せる **Prompt API** のオリジントライアルと、実験的な **Decisions API** の開発者プレビューも始まった。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Microsoft",
+      "オープンソース",
+      "ブラウザ"
+    ]
+  },
+  {
+    "id": "tencent-hy4-open-weights-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Tencent、旗艦モデル Hy4 の重みを公開 — 770B MoE・100万トークン、ライセンスは独自の Tencent Hy License",
+    "excerpt": "Tencent は 11月20日、旗艦モデル **Hy4** の重みを Hugging Face などに公開した。7,700億パラメーターの MoE（1トークンあたり 490億が動作）で、約100万トークンのコンテキストを持つ。テキスト・画像・動画を扱う。ライセンスは独自の **Tencent Hy License** で、8月のプレビュー版の Apache 2.0 から変わった。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Tencent",
+      "オープンソース"
+    ]
+  },
+  {
+    "id": "apple-depth-pro-2-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Apple、単眼深度推定モデル Depth Pro 2 を公開 — 画像・動画・ライブ対応、コードと重みも開放",
+    "excerpt": "Apple は 11月19日、1台のカメラからメートル単位の深度を推定するモデル **Depth Pro 2** を発表した。写真・動画・ライブ映像を 1つのネットワークで処理し、入力の解像度のまま深度マップを作る。コードと重みを公開している。",
+    "date": "2026-11-22",
+    "newsDate": "2026-11-19",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Apple",
+      "オープンソース"
+    ]
   }
 ];
