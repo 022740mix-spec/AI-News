@@ -15173,5 +15173,87 @@ export const ARTICLES_META = [
       "Apple",
       "オープンソース"
     ]
+  },
+  {
+    "id": "dragos-canary-prompt-theft-openrouter-2026",
+    "type": "news",
+    "category": "special",
+    "title": "推論プロバイダー3社で顧客プロンプトが盗まれていた — Dragos のカナリア調査で発覚、OpenRouter は 3社を排除・125 エンドポイントの ZDR を停止",
+    "excerpt": "産業サイバーセキュリティ企業の Dragos は、約200万件のプロンプトに固有の秘密を仕込むカナリア調査で、推論プロバイダー3社の侵害と、マーケットプレイスの転売業者によるプロンプトの閲覧・保持、プライバシー設定が守られていない事例を見つけたと 11月19日に公表した。OpenRouter は 11月22日、3社を排除し、125 エンドポイントの Zero Data Retention 適格を停止した。Together AI は AI コーディングエージェントが認証情報を公開リポジトリにコミットしたことが原因だと 11月21日に開示した。",
+    "date": "2026-11-23",
+    "newsDate": "2026-11-22",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "セキュリティ",
+      "OpenRouter",
+      "Together AI",
+      "プライバシー",
+      "Dragos"
+    ]
+  },
+  {
+    "id": "signal-ai-agents-screenshot-block-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Signal、OS 内蔵の AI エージェントを「存亡の脅威」と呼びモバイルのスクリーンショットを制限 — iOS 27 で撮影を遮断、Android は検出時に画面保護",
+    "excerpt": "Signal は 11月20日、モバイル OS に組み込まれた AI エージェントから利用者のデータを守るため、スクリーンショットの制限を導入すると発表した。iOS 27 ではアプリ内のスクリーンショットを遮断し、Android では AI アシスタントが画面を読もうとするのを検出したら画面保護を自動でオンにする。Signal はこの対策だけでは不十分だと認め、Apple・Google・Microsoft にアプリが AI によるデータアクセスからオプトアウトできる文書化された手段を求めた。",
+    "date": "2026-11-23",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Signal",
+      "プライバシー",
+      "セキュリティ"
+    ]
+  },
+  {
+    "id": "google-gemini-gif-generation-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Gemini アプリで GIF 生成が可能に — Omni 1.2 Flash で約3秒のループ、8か国で展開、無料で使えるかは Google の説明が食い違う",
+    "excerpt": "Google は 11月20日、Gemini アプリで GIF を生成できるようになったと発表した。テキスト、画像、動画から約3秒のループ GIF を作れ、コピー＆ペーストや .gif 形式でのダウンロードができる。基盤は 11月5日に登場した動画生成モデル Gemini Omni 1.2 Flash で、新しいモデルではなく既存モデルの出力形式の追加である。対象国は日本を含む 8か国だが、無料で使えるかどうかは Google の公式説明のあいだで食い違っている。",
+    "date": "2026-11-23",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "動画生成"
+    ]
+  },
+  {
+    "id": "cognition-devin-bots-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Cognition、Devin を束ねる「Devin Bots」を発表 — 目標を与えると複数の Devin を並行で動かし、判断だけ人間に上げる",
+    "excerpt": "Cognition は 11月17日、Devin の上に立つ常駐エージェント「Devin Bots」を発表した。Bot は 1つの目標を受け取り、作業を分解して複数の Devin セッションを並行で動かし、プルリクエストが用意できるまで進める。Slack や iMessage、電話からも話しかけられ、人の判断が要るものだけ「Needs You」として上げる。Bot は Max・Teams・Enterprise に含まれ、早期アクセスの数十社から提供が始まっている。",
+    "date": "2026-11-23",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Cognition",
+      "Devin",
+      "AIエージェント"
+    ]
+  },
+  {
+    "id": "openai-perplexity-intelligence-2026",
+    "type": "news",
+    "category": "special",
+    "title": "OpenAI チーフサイエンティストが事前学習の perplexity を初公開 — 0.68〜0.70 の窓での変革的能力を予想し、業界共通の開発上限を提案",
+    "excerpt": "OpenAI のチーフサイエンティスト Jakub Pachocki 氏は 11月22日、社内で GPT-3.5 以降追跡してきた事前学習の perplexity を初めて公開するエッセイ「Perplexity and Intelligence」を発表しました。GPT-3.5 は約 0.99、GPT-4 は約 0.91、0.8 を下回るとサイバーセキュリティと数学で変革的能力が現れ、約 0.76 のモデルは数学の未解決問題で画期的な成果を出し始めたといいます。0.68〜0.70 の窓でさらなる変革的能力を予想し、監視能力が具体的な到達点に達するまで開発者が超えない共通の上限を業界に提案しています。",
+    "date": "2026-11-23",
+    "newsDate": "2026-11-22",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "ガバナンス",
+      "研究"
+    ]
   }
 ];
