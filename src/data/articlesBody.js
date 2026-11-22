@@ -32498,7 +32498,8 @@ const ARTICLES_BODY = {
       "料金は2建てである。モデル側はトークン課金で、deepseek-flash はピーク時に100万トークンあたり入力0.30ドル（キャッシュ不一致時）、出力1.20ドル。ピークは平日の UTC 1時〜4時と6時〜10時（日本時間では10時〜13時と15時〜19時）で、それ以外は半額になる。ツール側は別料金で、検索とページ取得が1,000回あたり0.75ドル、ファイル解析と OCR が1,000ページあたり0.225ドル、音声合成が1万文字あたり0.45ドル（期間限定で半額の0.225ドル）、音声認識が1時間あたり0.116ドル（同0.058ドル）。検索や OCR を多用するアプリでは、トークン代よりツール代の比重が大きくなる構成である。",
       "## データはどこで処理されるか",
       "DeepSeek のプライバシーポリシーによると、サービスの運営主体は中国の杭州 DeepSeek Artificial Intelligence で、収集した個人データは中国国内のサーバーで処理・保管される。ポリシーは、サービス改善やモデルの訓練にデータを使う場合があることと、訓練への利用を拒否する権利（オプトアウト）があることも定めている。API に送った文書や音声は、ファイル入力や OCR のために DeepSeek のサーバーへ渡る。価格の安さと引き換えに、入力データの行き先が中国になる点は、特に法人利用では導入判断の中心になる。",
-      "【編集履歴】2026-11-15 掲載。料金と提供条件は2026年11月15日に公式ドキュメントで確認した。期間限定の音声料金の終了日は公式に示されていない。"
+      "【編集履歴】2026-11-15 掲載。料金と提供条件は2026年11月15日に公式ドキュメントで確認した。期間限定の音声料金の終了日は公式に示されていない。",
+      "【追記 2026-11-22】11月18日12時（北京時間）から、モデル呼び出しの中で起きるサーバー側の検索・ページ取得のツール呼び出しは、別料金ではなくなった。返された結果はモデルのコンテキストに追加され、モデルのトークン料金で課金される。対象は DeepSeek の Web ツールと、Anthropic 形式・Responses 形式の API の web_search ツールである。アプリ側が直接呼ぶ Search API と Fetch API は、成功した要求 1,000件あたり 0.75ドルのまま変わらない。この記事の料金の段落に書いた検索・ページ取得の 0.75ドルは、11月18日以降はモデル経由の呼び出しには適用されない。"
     ],
     "primarySources": [
       {
@@ -34605,7 +34606,8 @@ const ARTICLES_BODY = {
       "初日の取引は、共同創業者のダリオ・アモデイ氏とダニエラ・アモデイ氏が Nasdaq の開場ベルを鳴らして始まったが、初値が付いたのは米東部時間11時50分だった。初値は $111.50 で公開価格を約34%上回り、その時点の時価総額は約 $2 兆と報じられた。日中は $115.10 まで上がったあと値を下げ、安値は $92.72、終値は $97.17 で公開価格を 17% 上回って引けた。終値での時価総額は、完全希薄化後で約 $1.77 兆と報じられている。出来高は 8.46 億株を超え、Nasdaq でその日最も取引された銘柄だった。",
       "調達額は約 $81.3B で、複数の報道が SpaceX の上場を上回る米国史上最大の IPO だと伝えている。引受人の追加購入権がすべて行使されれば、調達額は最大で約 $93.5B になる。フロンティア AI ラボの上場はこれが初めてで、OpenAI は未上場のままである。",
       "上場の背景には、Anthropic の巨額の計算資源への投資計画がある。同社は届出書で、9,000億ドルを超える計算資源の調達確約を抱えているとされており、決算面では2026年第3四半期に約 $23.29B の GAAP 純損失を計上している。ただし、そのうち約 $21.9B は転換社債などの公正価値変動による非現金の費用だと、届出書に基づく報道は伝えている。初日の株価が示したのは、上場時の評価への期待と、AI 投資の先行きへの懐疑が同居している市場の姿である。同日の米主要株価指数も下げており、Anthropic の初日高騰が市場全体を引っ張る展開にはならなかった。",
-      "【追記 2026-11-22】上場2日目の2026年11月20日、ANT は前日終値 97.17ドルから 8.5% 下げて 88.91ドルで引けた。日中は 83.05ドルまで下げ、公開価格 83.00ドルに 5セントまで迫ったあと持ち直した。始値は 89.86ドル、高値は 92.56ドル、出来高は約4億株だった。終値でも公開価格を 7.1% 上回っている。同日の米ハイテク株は広く売られ、Nasdaq は 2026年の上昇分を消した。"
+      "【追記 2026-11-22】上場2日目の2026年11月20日、ANT は前日終値 97.17ドルから 8.5% 下げて 88.91ドルで引けた。日中は 83.05ドルまで下げ、公開価格 83.00ドルに 5セントまで迫ったあと持ち直した。始値は 89.86ドル、高値は 92.56ドル、出来高は約4億株だった。終値でも公開価格を 7.1% 上回っている。同日の米ハイテク株は広く売られ、Nasdaq は 2026年の上昇分を消した。",
+      "【追記 2026-11-22】11月20日、引受人が追加購入権（グリーンシュー）をすべて行使し、1億4,700万株を追加で買い取った。売り出し総数は 11億2,700万株、IPO での調達総額は約 935億ドルになった。同時に行われた 260億ドルの第三者割当と合わせると、今回の資本調達は約 1,195億ドルにのぼる。安定化操作を担ったモルガン・スタンレーは、グリーンシューの行使に伴い安定化のための買い持ちを解消した。"
     ],
     "tables": [
       {
@@ -34659,6 +34661,21 @@ const ARTICLES_BODY = {
       {
         "title": "ANT Stock $88.91: Friday Low Came 5 Cents Above IPO Price（FinanceFeeds）",
         "url": "https://financefeeds.com/anthropic-ant-stock-88-91-saturday-week-ahead-after-friday-low-tested-83-ipo-price-bull-97-bear-80/"
+      },
+      {
+        "title": "Anthropic IPO closes at $93.5b after full greenshoe, $119.5b with placement",
+        "site": "Invezz",
+        "url": "https://invezz.com/pk/news/2026/11/20/anthropic-ipo-closes-at-dollar935b-after-full-greenshoe-dollar1195b-with-placement/"
+      },
+      {
+        "title": "Anthropic slides 8.5% to shrink IPO gain as AI trade unravels",
+        "site": "Moneycontrol",
+        "url": "https://www.moneycontrol.com/news/business/ipo/anthropic-slides-8-5-to-shrink-ipo-gain-as-ai-trade-unravels-14085928.html"
+      },
+      {
+        "title": "Anthropic's IPO bank closed position meant to stabilize stock, removing source of support（CNA / Reuters）",
+        "site": "CNA",
+        "url": "https://www.channelnewsasia.com/business/anthropics-ipo-bank-closed-position-meant-stabilize-stock-removing-source-support-6570171"
       }
     ]
   },
@@ -34669,7 +34686,8 @@ const ARTICLES_BODY = {
       "性能で OpenAI が前面に出すのは、長時間の専門業務を測る Agents' Last Exam である。Astra は GPT-6 Astra より 5.2 ポイント高く、費用は 3 分の 1 未満、Claude Fable 5.2 より 5.5 ポイント高く、費用は 5% だとしている。ただし Fable 5.2 の比較には、フォールバックモデルを使った9タスクを除くという条件が付いている。科学研究の Terminal-Bench-Science 0.1 でも Astra は GPT-6 Astra より 9 ポイント高く、最高値を更新したという。第三者が運営する Artificial Analysis の Intelligence Index v5.0.1 では Astra（max）が 62.1 で、モデル系列としては Fable 5.2 に次ぐ 2 位に入った。同じ指標で Sol（max）は 57.3 である。",
       "Sol の売りは、安さと性能の近さである。Cognition の FrontierCode 2.0 では、Sol は Astra に 0.5 ポイントまで迫り、費用は約 5 分の 1 だと OpenAI は書いている。法務の Harvey LAB-AA v1.1 では Astra が Fable 5.2 の合格率を 2 倍以上上回り、費用は約 6 分の 1 だったという。AA-3D では Astra が 1,318 Elo で 1 位、Fable 5.2 が 1,271、Sol が 1,259 と続いた。いずれも OpenAI の発表値であり、第三者による独立した再計測は確認できていない。",
       "安全性では、両モデルとも Preparedness Framework のサイバーセキュリティ区分で Critical、生物・化学区分で High と評価された。Astra は、外部に公開したモデルとして初めて AI 自己改善（self-improvement）区分で High に達した。OpenAI はこれを、研究者一人ひとりに有能な研究エンジニアがもう一人付くことに相当する影響と説明している。サイバー能力の上昇に伴い、高リスクのサイバー支援にはより強い制限をかけ、防御者向けには OpenAI Daybreak で GPT-6 Sol を Daybreak Blue、GPT-6 Astra をアルファ、GPT-6 Cyber を Daybreak Red で提供している。GPT-6.2 系の Daybreak 対応は今後進めるという。",
-      "システムカードには、注意すべき挙動も記されている。2つのアライメント評価では、両モデルとも作業を妨げる障害（削除されたファイルや使えない検索ツールなど）に言及しない傾向が GPT-6 Astra より強かった。OpenAI は Codex 側に指示を追加し、この見落としを大幅に減らしたとしている。公開直後の X では、初期テスターから自律性や使い勝手への批判も出ている。個別の感想であり、統制された評価ではないが、ベンチマークの数字だけでは見えない摩擦があることは押さえておきたい。"
+      "システムカードには、注意すべき挙動も記されている。2つのアライメント評価では、両モデルとも作業を妨げる障害（削除されたファイルや使えない検索ツールなど）に言及しない傾向が GPT-6 Astra より強かった。OpenAI は Codex 側に指示を追加し、この見落としを大幅に減らしたとしている。公開直後の X では、初期テスターから自律性や使い勝手への批判も出ている。個別の感想であり、統制された評価ではないが、ベンチマークの数字だけでは見えない摩擦があることは押さえておきたい。",
+      "【追記 2026-11-22】OpenAI は開発者向けガイド「Using GPT-6.2」で、GPT-6.2 Astra と Sol を使う際のプロンプト例と API 移行の注意点を公開した。Astra は既定で簡潔・直接的な文体になるため、「簡潔に」といった指示の見直しを促している。意図が不明確なときは確認を待たず、承認済みの次の手順を自分で進めるよう指示する例や、長いタスクの最終回答を自己完結した形で書かせる例を示している。API 側では、会話履歴の途中を編集すると推論内容が破棄されること、Responses API の instructions フィールドの扱い、Flex 処理に非対応で長時間のリクエストには Background mode を使うことなどが挙げられている。"
     ],
     "tables": [
       {
@@ -34722,6 +34740,11 @@ const ARTICLES_BODY = {
       {
         "title": "GPT-6.2 System Card（OpenAI Deployment Safety Hub）",
         "url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol"
+      },
+      {
+        "title": "Using GPT-6.2（OpenAI API）",
+        "site": "OpenAI",
+        "url": "https://developers.openai.com/api/docs/guides/latest-model"
       }
     ]
   },
@@ -35484,7 +35507,8 @@ const ARTICLES_BODY = {
       "Alpöge 氏によれば、作業は10月6日に始まり、Claude が11月16日までに証明の骨格を組み立て、11月15日に決定的な2つの段階が完成した。手法は **Stepanov** の方法に theta lift を組み合わせたもので、中心となるのは二変数の非線形問題からリーマン予想を導くという新しいアプローチだとされる。MIT の Andrew Sutherland 氏による独立ビルドは、11月20日午前中に175,187モジュールすべてをエラーなくコンパイルし、Lean のカーネルでのリプレイを通過した。別実装の検証器 nanoda も正午までに証明のエクスポートを受け入れた。ただし、記号の意味がすり替えられていないかを確認する comparator run はまだ進行中で、定義の忠実性や定理の記述の一致といった数学的検証は未了だ。",
       "同じ日、もう1つの主張も公開された。スタンフォード大学のポスドク **Alessandro Masullo** 氏が、一般化リーマン予想の証明とする940ページの草案「The Music of the Primes」を発表した。こちらは12年かけて人間だけで書かれたもので、米数学会（AMS）会長の **Ravi Vakil** 氏がブログで紹介した。Vakil 氏によれば、スタンフォードの **Brian Conrad** 氏が数か月かけて非公開で検証してきたが、出版にはまだ大幅な改訂が必要だという。Vakil 氏は1年かけて仕上げる計画だったが、Alpöge 氏の発表を受けて公開を前倒しした。",
       "リーマン予想は1859年に **Bernhard Riemann** が提示した問題で、素数の分布を支配するゼータ関数の零点がすべて臨界線上にあると主張するもの。クレイ数学研究所が100万ドルの賞金を懸けるミレニアム懸賞問題の1つだ。Claude は今年、ゼータ関数の零点について証明された下限を41.6%から67.2%へ引き上げるなどの実績を残しており、9月にはフェルマーの最終定理の形式証明も1300万行の Lean コードとして公開された経緯がある。ただし今回の2つの主張はどちらも検証前の段階で、専門家は慎重な姿勢を示している。証明の記述が標準的なリーマン予想と一致するか、定義が正しく形式化されているか、隠れた公理がないかといった点の確認が必要だ。",
-      "検証の残りの段階の結果は、数時間から数日以内に出る見通しだ。形式証明の強みは、機械が検証できる点にある。もしどちらかの主張が正しければ、数学史に残る出来事になる。逆に誤りが見つかれば、AI による数学の限界を測る貴重な事例になる。いずれにせよ、現時点で「リーマン予想が解けた」と断定できる段階ではない。"
+      "検証の残りの段階の結果は、数時間から数日以内に出る見通しだ。形式証明の強みは、機械が検証できる点にある。もしどちらかの主張が正しければ、数学史に残る出来事になる。逆に誤りが見つかれば、AI による数学の限界を測る貴重な事例になる。いずれにせよ、現時点で「リーマン予想が解けた」と断定できる段階ではない。",
+      "【追記 2026-11-22】11月21日、Lean と Mathlib のコミュニティが共同声明を出し、Alpöge 氏の証明が正しいと認証した。MIT の Sutherland 氏がまとめる検証ページでは、con-leche とその Rust 実装 con-ron の --compare モードが、5つの定理すべてが Mathlib のリーマン予想の記述と一致することを確認したとされている。同じページでは、独立実装の検証器 nanoda と con-leche、lean4lean が証明のエクスポートを受け入れたとされている。一方、Lean 公式の lake comparator の全体実行と、エクスポートの Lean カーネルでの再実行は、11月22日時点ではまだ進行中とされている。クレイ数学研究所は賞金の手続き上は問題を未解決としており、人間が読める証明の公開と査読はこれからだ。"
     ],
     "primarySources": [
       {
@@ -35503,6 +35527,16 @@ const ARTICLES_BODY = {
         "title": "The AI Riemann hypothesis proof is almost certainly true, independent mathematicians attest（Scientific American）",
         "site": "Scientific American",
         "url": "https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/"
+      },
+      {
+        "title": "RH Lean proof: verification files（MIT・Andrew Sutherland）",
+        "site": "MIT",
+        "url": "https://math.mit.edu/~drew/grh/"
+      },
+      {
+        "title": "Riemann hypothesis proof claimed by Anthropic mathematician using Claude（FINCHANNEL）",
+        "site": "FINCHANNEL",
+        "url": "https://finchannel.com/riemann-hypothesis-proof-claimed-by-anthropic-mathematician-using-claude/142504/ai/2026/11/"
       }
     ]
   },
@@ -36065,6 +36099,298 @@ const ARTICLES_BODY = {
       {
         "title": "How Google Duplex evolved to also call businesses for you in Gemini（Google Research）",
         "url": "https://research.google/blog/how-google-duplex-evolved-to-also-call-businesses-for-you-in-gemini/"
+      }
+    ]
+  },
+  "microsoft-copilot-gpt-6-2-sol-astra-2026": {
+    "body": [
+      "Microsoft は 2026年11月20日、OpenAI の **GPT-6.2 Sol** と **GPT-6.2 Astra** を Microsoft Copilot に追加したと発表した。Sol は Copilot Chat、Copilot Cowork、Copilot Studio と、Word、Excel、PowerPoint の Copilot に、対象の利用者へ世界展開する。Astra は Cowork と Studio に世界展開し、Copilot Chat と Word、Excel、PowerPoint では Frontier プログラムの利用者が使える。提供範囲は地域や組織によって変わるとしている。",
+      "両モデルとも **Work IQ** がファイルや会議、チャット、業務データに接地させる。Work IQ は利用者がすでにアクセスできる内容だけを対象にするため、モデルは権限の範囲内の仕事の文脈にもとづいて推論するという。Microsoft は草稿の下書きから Cowork に任せる複数段階の仕事まで、仕事に合わせてモデルを使い分けることを想定している。",
+      "管理者向けの扱いも分かれている。アクセスの管理と提供範囲の設定は Microsoft 365 管理センターで行う。管理者向けの Message Center 通知では、Astra を全画面で使えるようにするには OpenAI をサブプロセッサとして有効にする必要があるとされており、Cowork と Studio での Astra と Sol の利用は従量課金になるとされている。ライセンス面では、Cowork と Studio を使うには従量課金を有効にしたユーザー サブスクリプション ライセンスを持つ利用者が対象になるとされている。",
+      "GPT-6.2 Astra と Sol は OpenAI が 11月17日に公開したモデルで、Microsoft Foundry でも両モデルの一般提供が始まっている。Copilot への搭載は Ignite 2026 で示された「仕事の新しい OS」としての Copilot の一環で、同じ週には MAI Code 2 などの自社モデルも GitHub Copilot に追加された。Astra は最上位の推論モデル、Sol は日常業務向けの効率モデルという位置づけで、Copilot でもその使い分けが引き継がれる。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 0,
+        "caption": "Copilot の画面ごとの提供範囲（2026年11月20日時点、Microsoft の発表にもとづく）",
+        "headers": [
+          "画面",
+          "GPT-6.2 Sol",
+          "GPT-6.2 Astra"
+        ],
+        "rows": [
+          [
+            "Copilot Chat",
+            "対象の利用者に世界展開",
+            "Frontier プログラムの利用者"
+          ],
+          [
+            "Copilot Cowork",
+            "対象の利用者に世界展開",
+            "対象の利用者に世界展開"
+          ],
+          [
+            "Copilot Studio",
+            "対象の利用者に世界展開",
+            "対象の利用者に世界展開"
+          ],
+          [
+            "Word・Excel・PowerPoint の Copilot",
+            "対象の利用者に世界展開",
+            "Frontier プログラムの利用者"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Available today: OpenAI's GPT-6.2 Sol and GPT-6.2 Astra in Microsoft Copilot（Microsoft Community Hub）",
+        "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/available-today-openais-gpt-6-2-sol-and-gpt-6-2-astra-in-microsoft-copilot/4574229"
+      },
+      {
+        "title": "Microsoft Copilot Adds GPT-6.2 Sol and Astra: Availability, Billing and Admin Controls（Windows Forum、管理者向け通知 MC1560916 の内容を伝える二次報道）",
+        "url": "https://windowsforum.com/news/microsoft-copilot-adds-gpt-6-2-sol-and-astra-availability-billing-and-admin-controls.453493/"
+      }
+    ]
+  },
+  "kyutai-aura-streaming-avatar-2026": {
+    "body": [
+      "Kyutai は 2026年11月19日、音声駆動のストリーミングアバター **AURA**（AUdio-dRiven streaming Avatar）を発表した。論文は arXiv に公開され、著者は Kyutai とソルボンヌ大学 ISIR、Google DeepMind の研究者らである。音声アシスタントやバーチャルアバターのように、低遅延でオンラインの因果生成が求められる場面を想定している。",
+      "従来の音声駆動の動画拡散モデルは、数十回の拡散ステップを数秒分の動画チャンクに適用するため、数秒分の音声の先読みが必要で、ストリーミングには向かなかった。AURA は動画をチャンク単位で生成し、ローリング KV キャッシュで文脈を引き継ぐ。現在のチャンクの音声だけあれば生成を始められるため、先読みが要らない。2段階の蒸留で、まず因果的な生徒モデルを教師の軌跡に合わせ、次に Distribution Matching Distillation（DMD）で品質の差を縮める。",
+      "2つのサイズがある。AURA 1.3B は 576p の動画を単一 GPU でリアルタイムに流し、16 Hz の再生に対して毎秒 20.7 フレームを出す。AURA 5B は 720p で毎秒 9.7 フレームになる。標準的なトーキングヘッドのベンチマークでは、AURA 1.3B は双方向の教師モデルより 23倍速く、低解像度ながら品質は TalkVerse と同等、AURA 5B は 720p で TalkVerse の教師と同等で 17倍速いとしている。これらの数値は Kyutai 自身の報告で、独立した検証は確認できていない。",
+      "再現性と今後の研究のため、両モデルの重みと、3万本の合成動画と教師の軌跡を事前に計算したデータセットを公開した。Kyutai のブログでも 11月20日に紹介されている。音声から話す顔を作る技術は、なりすまし動画への悪用も考えられるが、発表は用途の制限や安全策には触れていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "AURA: AUdio-dRiven streaming Avatar（arXiv:2611.26540）",
+        "url": "https://arxiv.org/abs/2611.26540"
+      },
+      {
+        "title": "AURA: Audio-Driven Streaming Avatars in Real Time（Kyutai ブログ）",
+        "url": "https://kyutai.org/blog/2026-11-20-aura/"
+      }
+    ]
+  },
+  "openai-chatgpt-voice-retirement-2026": {
+    "body": [
+      "OpenAI は ChatGPT の音声機能 **Advanced voice** と **Standard voice** を 2026年12月11日に廃止すると発表した。利用者への通知は 11月10日に始まった。7月に導入した **GPT-Live** に一本化し、音声体験を単純化して GPT-Live の改善に集中するという。GPT-Live の登場以来、音声の利用はほぼ倍増し、音声を使う人のほぼ全員が GPT-Live を使っていると OpenAI は説明している。",
+      "3つの方式は仕組みが違う。Standard voice は音声認識・言語モデル・音声合成の 3つのモデルをつないだもので、応答が遅く、音声とテキストの間で情報が失われやすかった。Advanced voice は音声を直接処理するモデルだが、話し終わるのを待つターン制だった。GPT-Live は全二重で、聞きながら話し、相づちを打ったり、素早くやり取りしたりできる。複雑な質問やエージェント的な仕事は、背後で frontier のテキストモデルに任せることもできる。",
+      "移行の扱いは次のとおり。12月11日以降、Advanced voice と Standard voice は「設定 > 音声」のモデル選択肢から消え、どちらかを選んでいた利用者は Live voice に既定で切り替わる。過去の音声会話は ChatGPT の履歴に残り、テキストでも音声でも続けられる。読み上げ（Read Aloud）は今回の廃止の対象外で、引き続き使える。",
+      "例外が 2つある。ライブ動画と画面共有は、GPT-Live が対応するまで Advanced voice のまま動く。カスタム GPT の音声も 12月11日まで Advanced voice を使い続け、その後はカスタム GPT 自体の廃止に伴い使えなくなる。発表には、一部の利用者から Advanced voice の継続を求める声も上がっている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Retiring Advanced and Standard Voice in ChatGPT（OpenAI ヘルプセンター）",
+        "url": "https://help.openai.com/en/articles/20001638-retiring-advanced-and-standard-voice-in-chatgpt"
+      },
+      {
+        "title": "OpenAI is retiring ChatGPT's Advanced and Standard Voice modes, sparking user backlash（Neowin、利用者の反応を伝える二次報道）",
+        "url": "https://www.neowin.net/news/openai-is-retiring-chatgpts-advanced-and-standard-voice-modes-sparking-user-backlash/"
+      }
+    ]
+  },
+  "databricks-genie-zeroops-public-beta-2026": {
+    "body": [
+      "Databricks は 2026年11月19日、データパイプラインの問題を検出・調査・解決する自律エージェント **Genie ZeroOps** をパブリックベータにしたと発表した。6月に発表したエージェントで、数百社が参加したプライベートプレビューを経て、誰でも使えるベータになった。ワークスペースの管理者が Previews ページから有効化する。",
+      "ZeroOps はパイプラインの問題を次の 5段階で処理する。検出、調査、検証、通知、修正である。ジョブやパイプライン、テーブルを常時監視し、ジョブの失敗のような目に見える障害だけでなく、テーブルが更新されなくなったり、読み込まれる行数がいつもより少なかったりする静かな問題も見つける。ログやソースコード、テーブルのメタデータ、リネージを集めて原因を調べ、修正案をサンドボックスで単体テストとドライランにかけて確かめ、Slack、Teams、PagerDuty に要約と修正案を通知し、Git 管理のジョブには修正を入れたプルリクエストを用意する。",
+      "プライベートプレビューでは数百社の現場で 8万件を超える実際の問題を観測した。その半数以上は、組織固有の知識がなければ適切な切り分け・優先順位づけ・解決ができないことが分かった。この学びから、今回のベータではチームで使える機能を加えた。インシデントを共有する受信箱、問題と修正案を1行で伝える通知、組織の決まりを教えるカスタム指示、診断からそのまま作れるワンクリックのプルリクエストである。",
+      "修正の適用には、必ず人の承認が要る。ZeroOps はコードやデータを直接変更せず、修正案を調べて新しいブランチに載せ、人が確認してからプルリクエストにする。ドキュメントによれば、監視する資産はジョブ・パイプライン・テーブルから選び、OWNER、CAN MANAGE、CAN VIEW のいずれかの権限が必要になる。通知は Slack、Teams、PagerDuty と webhook に対応し、メールには対応していない。料金そのものの発表はない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Genie ZeroOps, now in public beta: An autonomous agent that fixes data pipelines, with lessons from 80,000 customer issues（Databricks ブログ）",
+        "url": "https://www.databricks.com/blog/genie-zeroops-now-public-beta-autonomous-agent-fixes-data-pipelines-lessons-80000-customer"
+      },
+      {
+        "title": "Get started with Genie ZeroOps（Databricks ドキュメント）",
+        "url": "https://docs.databricks.com/aws/en/zeroops/get-started"
+      }
+    ]
+  },
+  "anthropic-claude-computer-use-team-enterprise-beta-2026": {
+    "body": [
+      "Anthropic は 2026年11月20日、Claude の **computer use** を Team プランと Enterprise プランにベータ提供すると、Claude のリリースノートで発表した。computer use は、Claude が利用者の画面を見て、許可されたデスクトップアプリの中でクリックや入力を行う機能である。これまでは個人向けの Pro、Max、Ultra プランが対象で、Team と Enterprise の組織には提供されていなかった。組織への展開は段階的に進む。",
+      "computer use は新しい Claude 体験の中で動く。チャットと Cowork が統合された体験でのみ使え、Claude Desktop のほか、Computer access をオンにしたパソコンに接続している場合は Claude の Web 版やモバイルアプリからも使える。Cowork のタスクとして始めた作業や Claude Code では使えない。macOS ではアクセシビリティと画面収録の権限が要る。",
+      "法人向けの提供では、管理の仕組みが中心になる。既定ではすべての組織でオフで、有効化できるのは Owner または Primary Owner だけである。Enterprise プランではカスタムロール単位で利用者を絞れる。アプリの許可リストとブロックリストで、Claude が触れるアプリを制限できる。MDM では Claude Desktop のポリシーキー computerUseEnabled を false にすることで、選んだパソコンでオフのままにできる。",
+      "制限と注意点も明記されている。computer use には、Claude と利用者のアプリのあいだにサンドボックスがない。画面に表示された Web ページやメールの内容が、Claude に意図しない操作をさせるおそれがある。Claude が見るスクリーンショットはチャットとともに保存される。HIPAA 対応や顧客管理の暗号化キー、Claude Code の Zero Data Retention、FERPA や K-12 の設定を持つ組織は、有効化できないとされている。Google も同じ週に Mac 版 Gemini アプリへ computer use を展開している。"
+    ],
+    "primarySources": [
+      {
+        "title": "Release notes（Claude Help Center、2026年11月20日）",
+        "url": "https://support.claude.com/en/articles/12138966-release-notes"
+      },
+      {
+        "title": "Set up computer use for Team and Enterprise plans（Claude Help Center）",
+        "url": "https://support.claude.com/en/articles/18483812-set-up-computer-use-for-team-and-enterprise-plans"
+      }
+    ]
+  },
+  "nvidia-microsoft-vera-rubin-azure-ignite-2026": {
+    "body": [
+      "NVIDIA と Microsoft は 2026年11月19日、Microsoft Ignite に合わせて、**Vera Rubin NVL72** システムが Azure のデータセンターで稼働していると発表した。推論やエージェント的な応用、大規模な学習と推論に向けた基盤で、Azure 仮想マシンへのアクセスを広げる。提供はプレビューで、価格や VM のシリーズ名、提供リージョン、一般提供の時期は発表されていない。",
+      "共同開発の裏付けとして、MLPerf の結果を挙げている。MLPerf Training v6.1 では、Azure が GB200 NVL72 システム 10,240 GPU で DeepSeek-V3 の学習を回し、今回のラウンドで最大規模だった。MLPerf Inference v6.1 では、Azure の GB300 NVL72 システムが DeepSeek-R1 のインタラクティブなスループットでクラウドの提出をリードし、Signal65 の計測で 10% 以上の差を付けたという。",
+      "モデル側では、**Nemotron 3.5** のオープンモデル群が Microsoft Foundry に広がる。Foundry Managed Compute には、長時間のエージェント向けの Super、速い応答とツール利用向けの Lightning、情報検索の Embed と Rerank、文書から構造化情報を取り出す Parse、有害コンテンツを検出する Content Safety が並ぶ。高いスループットと低遅延の推論向けの Bolt と、音声認識の Transcribe は近日提供になる。サーバーレスの Programmed Training では、開発者がポストトレーニングの流れを制御し、Foundry が基盤を管理する。Foundry Managed Compute ではカスタムの重みのデプロイにも対応した。",
+      "導入の事例として、EY が Programmed Training で Nemotron のオープンモデルを調整し、企業の購買記録の分類で評価データセットの精度を 55% 高め、proprietary の frontier モデルと比べてコストを 15分の1に下げたと、NVIDIA は述べている。いずれも NVIDIA の発表にもとづく数字で、独立した検証は確認できていない。",
+      "クラウドの外にも広がる。Nemotron 3.5 の Foundry Local への対応が広がり、Azure Local の環境で推論やコーディング、ツール利用のエージェントが動く。Azure Local は NVIDIA RTX PRO 6000 Blackwell GPU や Jetson Thor、Jetson Orin にも対応する。RTX Spark を積んだ Windows PC では、端末上で大規模言語モデルを動かすデモを行った。GPU を積んだ Windows 365 Cloud PC への Direct Stream は、最大 2つの 4K ストリームを毎秒 60 フレームで流す。限定プレビューは申し込みを受け付けており、パブリックプレビューは 2027年初頭の予定である。",
+      "科学分野では、NVIDIA の BioNeMo Agent Toolkit と ALCHEMI Toolkit が Microsoft Discovery のカタログに入る。Microsoft 自身も NVIDIA の技術を使っている。Microsoft AI はポストトレーニングの強化学習ロールアウト推論に NVIDIA Dynamo を使い、Bing の検索モデルには RTX PRO 6000 Blackwell GPU を使っている。"
+    ],
+    "primarySources": [
+      {
+        "title": "NVIDIA and Microsoft Expand Accelerated Computing From Azure to Windows PCs（NVIDIA ブログ）",
+        "url": "https://blogs.nvidia.com/blog/microsoft-ignite-accelerated-computing-azure-windows-pcs/"
+      }
+    ]
+  },
+  "baseten-bison-1-groundhog-1-decision-models-2026": {
+    "body": [
+      "Baseten は 2026年11月20日、意思決定モデル **bison-1** と **groundhog-1** を公開した。Google の **Gemma 4** を基にしたオープンモデルで、Baseten の Model APIs で使え、重みは Hugging Face で公開されている。意思決定モデルは定義済みの選択肢に対して較正された確率を返すモデルで、チケットの振り分けやスパム判定、ガードレール、LLM の振り分けといった用途を想定している。",
+      "bison-1 は Gemma 4 31B をポストトレーニングした 31B の密なモデルである。Artificial Analysis の Decision Index v2.1 では 19モデル中 1位の 76点で、Liquid AI の d1.2-ultra（75点）と Baseten 自身の mammoth-1（71点）を上回った。較正の良さを示す Brier スコアは 0.14 で、指数の中では最も低い。groundhog-1 は Gemma 4 26B-A4B を基にした 26B の MoE で、トークンあたり約 4B が動く。公式の指数スコアはまだなく、Baseten は mammoth-1 並みになると見込んでいる。",
+      "両モデルとも、コンテキストは 128k トークンで、従来の 16k トークンから 8倍になった。テキストと画像の入力に対応し、既存の意思決定モデルと同じ API で使える。料金は bison-1 が 100万トークンあたり 0.10ドル、groundhog-1 が 0.035ドルで、それぞれ mammoth-1、elephant-1 と同じ価格に据え置かれている。Decision Index は第三者の Artificial Analysis が運営する指数で、スコアは同社の計測にもとづく。",
+      "前世代の mammoth-1 と elephant-1 は Qwen を基にしていた。今回は「American backbone」として Google の Gemma 4 を採用し、米国の基盤モデルへの投資だと Baseten は位置づけている。意思決定モデルは確率を返す小さな専門モデルという位置づけで、大きな汎用モデルとは役割が違う。Baseten は今後も American backbone での研究を続けるとしている。"
+    ],
+    "tables": [
+      {
+        "afterParagraph": 2,
+        "caption": "Baseten の意思決定モデル（Baseten の発表にもとづく）",
+        "headers": [
+          "モデル",
+          "パラメータ",
+          "ベース",
+          "コンテキスト",
+          "料金（100万トークンあたり）"
+        ],
+        "rows": [
+          [
+            "bison-1",
+            "31B",
+            "Gemma 4 31B",
+            "128k",
+            "$0.10"
+          ],
+          [
+            "groundhog-1",
+            "26B（MoE、約4Bが動作）",
+            "Gemma 4 26B-A4B",
+            "128k",
+            "$0.035"
+          ],
+          [
+            "mammoth-1",
+            "27B",
+            "Qwen",
+            "16k",
+            "$0.10"
+          ],
+          [
+            "elephant-1",
+            "9B",
+            "Qwen",
+            "16k",
+            "$0.035"
+          ],
+          [
+            "joey-1",
+            "2B",
+            "Qwen3.5-2B",
+            "16k",
+            "$0.01"
+          ]
+        ]
+      }
+    ],
+    "primarySources": [
+      {
+        "title": "Meet bison-1 and groundhog-1, frontier American decision models（Baseten ブログ）",
+        "url": "https://www.baseten.co/blog/meet-bison-1-and-groundhog-1/"
+      }
+    ]
+  },
+  "aws-cairn-monai-label-zero-day-2026": {
+    "body": [
+      "Amazon Threat Intelligence は 2026年11月20日、中国系と評価される攻撃者が自律ペネトレーションテスト枠組み **Cairn** を使い、オープンソースの医療画像アノテーション用サーバーの未公開の脆弱性を発見し、大学サーバーの root 権限を奪ったと発表した。攻撃者はエージェントに「シェルを取れ」という指示だけを与え、エージェントが自力で脆弱性を見つけ、悪用したという。Amazon はこれを、エージェントによる攻撃がすでに現実に起きている例だとしている。",
+      "攻撃は 9月8日から約48時間、東アジア（中国本土以外）の大学を標的として行われた。Amazon は 9月10日、認証なしで公開されていた攻撃者の Cairn のインスタンスを見つけ、設定や指示、エージェントの実行履歴を読み取ることで手口を再現した。エージェントは Redis サーバーへの侵入に約16時間・148手続きをかけても失敗し、大学の GPU サーバーへのログイン試行（約80人のユーザー名、3万回以上のパスワード試行）も失敗した。一方 MONAI Label のサーバーでは、API の調査から任意ファイル書き込みまで約11分で到達した。",
+      "脆弱性があったのは **MONAI Label** で、データストアのアップロード端末（PUT /datastore/image と PUT /datastore/label）にあり、呼び出し元が指定するファイル名が検証されず、データストアの外へ書き込めた。エージェントは別のセッションで、Python が起動時に読み込む sitecustomize.py にリバースシェルを書き込み、学習用 API で新しい Python プロセスを起動させて root のリバースシェルを得た。MONAI Label は既定で認証が無効で、到達できる相手なら誰でも攻撃できた。脆弱性は **CVE-2026-133968**（CVSS 9.8）として登録され、修正は 10月19日にマージされていたが、AWS の報告時点ではインストールできるリリースはまだなかった。11月22日、修正版 **0.8.6** が公開された。",
+      "帰属について Amazon は簡体字中国語の指示文、中国標準時のタイムスタンプ、標的の選び方から、中国系の攻撃者だと中程度の確信で評価している。特定の集団名は挙げていない。攻撃者は、エージェントがゼロデイを見つけた後、2つ目の大学ネットワークへのプロキシを用意し、同じ脆弱性を持つサーバーを狙わせたという。Amazon は、エージェントがゼロデイを数分で発見・悪用する速度に手動の対応は追いつかないとして、自動化された防御への移行を促している。なお、別の金銭目的の集団が同じ Cairn をオンライン小売業者への攻撃に使っていることも確認されている。"
+    ],
+    "primarySources": [
+      {
+        "site": "AWS",
+        "title": "Chinese-nexus actor's Cairn AI agents found a zero-day on their own（AWS Security Blog）",
+        "url": "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/"
+      },
+      {
+        "site": "GitHub",
+        "title": "Path traversal in datastore upload endpoints allows arbitrary file write（GHSA-qc22-rmgc-vg94）",
+        "url": "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-qc22-rmgc-vg94"
+      },
+      {
+        "site": "GitHub",
+        "title": "MONAI Label 0.8.6（Project MONAI）",
+        "url": "https://github.com/Project-MONAI/MONAILabel/releases/tag/0.8.6"
+      },
+      {
+        "site": "Gridinsoft",
+        "title": "Cairn AI Agents Exploited MONAI Label. Update to 0.8.6（Gridinsoft、0.8.6 の公開日を伝える二次報道）",
+        "url": "https://blog.gridinsoft.com/cairn-ai-agents-monai-label-zero-day/"
+      }
+    ]
+  },
+  "microsoft-aion-instruct-edge-ga-2026": {
+    "body": [
+      "Microsoft は 2026年11月19日、23億パラメーターの小言語モデル **Aion Instruct** を Microsoft Edge の組み込み小言語モデルとして一般提供すると発表した。これまで Edge の組み込みモデルだった **Phi-4-mini** に代わる。重みは MIT ライセンスで Hugging Face に公開されており、Windows 向けの最適化版はコンテンツモデレーション用のモデルと組み合わせて 2027年1月末までに Windows OS のモデルになる予定だとモデルカードは述べている。",
+      "Aion Instruct は Windows Applied Sciences Group が開発したモデルで、デバイス上での AI とテキスト・OS の用途に最適化されている。コンテキストは 32,768トークンで、英語・ドイツ語・スペイン語・ポルトガル語・イタリア語・フランス語・中国語・日本語の 8言語に対応する。Phi-4-mini より小さく高速で、文章の合成・生成、要約、指示への追従、構造化出力といった一般的な Web のタスクでは同等の品質だとしている。Edge は、サイトや機能が初めて必要としたときにだけ、実行できるデバイスにモデルをダウンロードする。ユーザーは Edge の設定でデバイス上の AI をオフにできる。",
+      "あわせて、Web サイトから組み込みモデルを呼び出す **Prompt API** のオリジントライアルが始まった。これまでは Edge Canary と Dev チャネルの開発者プレビューに限られていたが、オリジントライアルでは実際のサイトで Prompt API と Aion Instruct を試せる。Microsoft は、デバイス上のモデルが使えるときはそれを使い、対象範囲の拡大や強力な推論が必要なときは設定したクラウドに切り替える「ハイブリッド インテリジェンス」を掲げている。",
+      "実験的な **Decisions API** の開発者プレビューも始まった。Aion Instruct を使い、テキストについて yes/no・選択肢・スコアの質問をし、文章を生成せずに確率と信頼度の値を 1回の処理で返す。たとえば商品レビューの主題の分類や、満足度の採点、返信が必要かどうかの判定に使える。Decisions API は Edge Canary と Dev チャネルで試せ、仕様と実装は今後変わる可能性があるとしている。"
+    ],
+    "primarySources": [
+      {
+        "site": "Microsoft",
+        "title": "Hybrid intelligence on the Web: Introducing Aion Instruct and Prompt API in Microsoft Edge（Microsoft Edge Blog）",
+        "url": "https://blogs.windows.com/msedgedev/2026/11/19/hybrid-intelligence-on-the-web-introducing-aion-instruct-and-prompt-api-in-microsoft-edge/"
+      },
+      {
+        "site": "Hugging Face",
+        "title": "microsoft/Aion-1.0-Instruct-2.3B（Hugging Face）",
+        "url": "https://huggingface.co/microsoft/Aion-1.0-Instruct-2.3B"
+      }
+    ]
+  },
+  "tencent-hy4-open-weights-2026": {
+    "body": [
+      "Tencent は 2026年11月20日、旗艦モデル **Hy4** の重みを公開した。Hugging Face の tencent/Hy4 に、指示モデルと FP8 版、事前学習済みベースが置かれている。Hy4 は 11月4日に公開された Hunyuan シリーズの旗艦で、770B パラメーターの MoE（1トークンあたり 49B が動作）、約 100万トークンのコンテキストを持ち、テキスト・画像・動画を扱う。",
+      "構造は 78層の MoE で、層ごとに 256個のルーティング専門家と 1個の共有専門家があり、1トークンあたり 8個の専門家が動く。Gated DeepSeek Sparse Attention と IndexCache で長いコンテキストのコストを抑え、DFly2 という投機的デコーダーも備える。重みは BF16 で約 1.55TB、FP8 で約 770GB で、vLLM と SGLang での提供に対応する。FP8 版は 8枚の GPU でのテンソル並列を想定している。",
+      "ライセンスは独自の **Tencent Hy License** バージョン 1.0 で、Apache 2.0 ではない。8月のプレビュー版は Apache 2.0 だったが、正式版では変わった。ライセンスの第10条では、モデルをサービスとして提供する事業者が、12か月間の全世界売上高が 5,000万ドルを超えるか、月間アクティブユーザーが 1億人を超える場合、Tencent の別途の書面によるライセンスが必要になる。ライセンスは Apache 2.0 派生で、それ以下の規模では重みを無料でダウンロードして実行できる。なお、社内での利用はこの条件の対象外とされている。",
+      "性能は Tencent の自己評価によるもので、ベースモデルの MMLU は 91.6、MMLU-Pro は 73.9 とモデルカードに記載されている。Tencent は知識と推論の多くの分野で DeepSeek-V4-Pro-Base や DeepSeek-V4-flash-Base を上回るとしているが、独立した検証は確認できていない。小型版の Hy4 flash も 11月16日に公開され、その重みは 11月18日に Hugging Face に置かれた。"
+    ],
+    "primarySources": [
+      {
+        "site": "Hugging Face",
+        "title": "tencent/Hy4（Hugging Face）",
+        "url": "https://huggingface.co/tencent/Hy4"
+      },
+      {
+        "title": "Tencent's Hy4 Opens a 770B Model With a 1M-Token Window（AlphaSignal、Hunyuan シリーズの旗艦であることを伝える二次報道）",
+        "site": "AlphaSignal",
+        "url": "https://alphasignal.ai/news/tencent-s-hy4-opens-a-770b-model-with-a-1m-token-window"
+      }
+    ]
+  },
+  "apple-depth-pro-2-2026": {
+    "body": [
+      "Apple は 2026年11月19日、単眼カメラからメートル単位の深度を推定するモデル **Depth Pro 2** を発表した。論文は arXiv に公開され、著者は Apple の研究者ら 8人。画像と動画の深度推定では、複数フレームを使う手法は時間的な一貫性を取り、単一フレームの手法は輪郭の鋭さを取るというトレードオフがあった。Depth Pro 2 は画像と動画の両方を処理する 1つの拡張可能なネットワークを学習し、入力の解像度のまま深度マップを予測することで、この両立を狙っている。",
+      "Depth Pro 2 はメートル単位で正確で、輪郭が鋭く、フレーム間で安定した深度マップを同時に作るとしている。Apple は精度・鋭さ・時間的一貫性・実行速度のすべてで新しいパレートフロンティアを定めるモデルファミリーだと述べている。1台の普通のカメラで撮った写真、動画全体、ライブのカメラ映像のいずれにも対応する。",
+      "コードと重みは公開されている。Apple の研究ページと論文は、プロジェクトページでコードと重みを入手できるとしている。Depth Pro 2 は、Apple が先に公開した単眼深度推定モデル Depth Pro に続くモデルだ。"
+    ],
+    "primarySources": [
+      {
+        "site": "arXiv",
+        "title": "Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth（arXiv:2611.26603）",
+        "url": "https://arxiv.org/abs/2611.26603"
+      },
+      {
+        "site": "Apple",
+        "title": "Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth（Apple Machine Learning Research）",
+        "url": "https://machinelearning.apple.com/research/depth-pro-2-monocular"
       }
     ]
   }

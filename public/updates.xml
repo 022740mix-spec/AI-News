@@ -13,7 +13,23 @@
     <id>tag:ai-tool-news.jp,2026:update:anthropic-ipo-first-day-trading-2026:2026-11-22</id>
     <updated>2026-11-22T15:00:00Z</updated>
     <category term="addendum" label="追記"/>
-    <summary>上場2日目の2026年11月20日、ANT は前日終値 97.17ドルから 8.5% 下げて 88.91ドルで引けた</summary>
+    <summary>上場2日目の2026年11月20日、ANT は前日終値 97.17ドルから 8.5% 下げて 88.91ドルで引けた（同日に 追記 もあり）</summary>
+  </entry>
+  <entry>
+    <title>【追記】「Claude と解いた」と Anthropic の数学者がリーマン予想の証明を主張、同日に「人間だけ」の証明も登場、どちらも未検証</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-riemann-hypothesis-claude-proof-claim-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:anthropic-riemann-hypothesis-claude-proof-claim-2026:2026-11-22</id>
+    <updated>2026-11-22T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>11月21日、Lean と Mathlib のコミュニティが共同声明を出し、Alpöge 氏の証明が正しいと認証した</summary>
+  </entry>
+  <entry>
+    <title>【追記】DeepSeek がアプリの機能一式を API で開放した。何が変わり、費用はいくらで、データはどこへ行くのか</title>
+    <link rel="alternate" type="text/html" href="?a=deepseek-app-suite-api-meaning-cost-data-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:deepseek-app-suite-api-meaning-cost-data-2026:2026-11-22</id>
+    <updated>2026-11-22T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>11月18日12時（北京時間）から、モデル呼び出しの中で起きるサーバー側の検索・ページ取得のツール呼び出しは、別料金ではなくなった</summary>
   </entry>
   <entry>
     <title>【追記】ChatGPT Space、Pages とファイルを一か所に集約し、共同編集と @ChatGPT / @dot での生成に対応</title>
@@ -22,6 +38,14 @@
     <updated>2026-11-22T15:00:00Z</updated>
     <category term="addendum" label="追記"/>
     <summary>2026年11月20日、OpenAI は ChatGPT Space の提供対象を Plus ユーザーに広げ、18歳以上の Plus ユーザーに世界で順次展開し始めた</summary>
+  </entry>
+  <entry>
+    <title>【追記】OpenAI が GPT-6.2 Astra と Sol を公開 — Astra は初の「自己改善 High」評価、API 価格は 20% 引き下げ</title>
+    <link rel="alternate" type="text/html" href="?a=openai-gpt-6-2-astra-sol-launch-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:openai-gpt-6-2-astra-sol-launch-2026:2026-11-22</id>
+    <updated>2026-11-22T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>OpenAI は開発者向けガイド「Using GPT-6.2」で、GPT-6.2 Astra と Sol を使う際のプロンプト例と API 移行の注意点を公開した</summary>
   </entry>
   <entry>
     <title>【追記】SEC が NVIDIA の会計を調査と報道、株価は14%急落、1日で約5,000億ドルの時価総額が消失</title>
@@ -1182,29 +1206,5 @@
     <updated>2026-08-11T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
     <summary>★4→4.5 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（4.35）…</summary>
-  </entry>
-  <entry>
-    <title>【訂正】OpenAI Codex レビュー — クラウド版 + Codex CLI、GPT-5.6 Sol / Terra / Luna 対応、Free / Go プランでも利用可に</title>
-    <link rel="alternate" type="text/html" href="?a=openai-codex-agent#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:openai-codex-agent:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>料金表および評価から「ChatGPT Pro $200/月が事実上の前提」という趣旨の記述を訂正しました（同日に 月次見直し もあり）</summary>
-  </entry>
-  <entry>
-    <title>【訂正】【週刊まとめ】AI開発ツール — 2026年3月16日〜22日</title>
-    <link rel="alternate" type="text/html" href="?a=overview-2026-week-mar16#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:overview-2026-week-mar16:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>3月20日の項「Anysphere（Cursor 親会社）が Windsurf の買収完了を発表」を削除しました</summary>
-  </entry>
-  <entry>
-    <title>【訂正】PearAI — コミュニティドリブンのOSSエディタ</title>
-    <link rel="alternate" type="text/html" href="?a=pearai#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:pearai:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>★3→2.5 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（2.55）…</summary>
   </entry>
 </feed>
