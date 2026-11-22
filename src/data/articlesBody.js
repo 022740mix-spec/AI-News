@@ -36393,6 +36393,109 @@ const ARTICLES_BODY = {
         "url": "https://machinelearning.apple.com/research/depth-pro-2-monocular"
       }
     ]
+  },
+  "dragos-canary-prompt-theft-openrouter-2026": {
+    "body": [
+      "産業サイバーセキュリティ企業の Dragos は 2026年11月19日、AI 推論サービスのデータの扱いを調べるカナリア調査の結果を公表した。2026年7月から11月にかけて、固有の URL と認証情報を含む約200万件のプロンプトを広く使われている AI サービスに送り、仕込んだ秘密がどこで使われるかを追跡した。調査で分かったのは 3点で、少なくとも 3社の推論プロバイダーでデータが漏れていたこと、推論マーケットプレイスの転売業者が通常のログ機能で顧客のプロンプトを見て保持できていたこと、プロンプトを保存しない設定が守られていない事例があったことである。Dragos は、侵害された 3社の名前と、データを不適切に扱ったとされる中国の AI 研究所の名前を公表していない。",
+      "最も深刻なのは 3社の侵害である。攻撃者は 3社すべてでデータを盗んでおり、Dragos が知らせるまで 3社とも侵害に気づいていなかった。最も大きな侵害では、10月下旬の短い期間に 1件のリクエストに 1つずつ送った数百件の AWS キーがすべて盗まれ、数万件の AWS API 呼び出しに使われた。攻撃者はまずキーが有効かを確かめ、次に S3 バケットの一覧や Secrets Manager、Parameter Store を調べ、AWS Bedrock でホスト型モデルを有効化したり、自分用の IAM ユーザーを追加したりした。11月1日には LLM 駆動のペネトレーションテスト枠組み ARTEX を使い始めたが、Dragos によれば既に持っているキーが有効かを確認するだけだった。同じ攻撃者が 2社を同時に侵害した形跡もあり、盗んだ秘密が 1台のレンタルサーバーからほぼ同時に使われた。",
+      "転売業者の手口は、脆弱性を突くものではなかった。人気モデルを最安値で出品し、標準のログ記録をオンにして待つだけである。ある事例では、1人の販売業者経由で送った 2件のプロンプトの秘密 URL が、約1日半後に自宅回線からデスクトップブラウザーで開かれ、ログインページでユーザー名が推測された。別の事例では、フランスの自宅回線の Mac からプロンプト中のパスワードで root の SSH ログインが手動で試された。プロンプトを別の販売業者経由で送った場合は触られなかったため、漏洩は販売業者に紐づいている。さらに、あるルーターが自社のトラフィックの一部をこっそりマーケットプレイスへ転送していたことも分かった。",
+      "プライバシー設定が守られていない事例もあった。ある中国の AI 研究所のシステムは、2026年7月から10月にそのモデルのプロンプトへ送った秘密 URL の半数超を取得し、データ収集なしや Zero Data Retention を指定したリクエストの約3分の2も含んでいた。米国のホスティングプロバイダーが同研究所のモデルを転売していたため、米国のプロバイダーを選んだ利用者のプロンプトも同研究所へ流れていた。最も異例なのは、プロンプトを送ってから 24日後に、秘密のリンクが中国の社内チャット（Feishu）に貼られ、2分以内に北京と上海の 3台のデスクトップと 3台の携帯電話から開かれたことである。Dragos が同研究所に開示したのはリンクの先頭 8文字だけで、貼った人物は保存されたプロンプト全文を読んでいたことになる。",
+      "事業者側の対応も 11月21日から 22日にかけて出そろった。Together AI は 11月21日、AI コーディングエージェントが公開 GitHub リポジトリ xorl の開発中に、テスト用に集めたプロンプトサンプルを保管した非公開 Hugging Face リポジトリへの認証情報をコミットしたと開示した。サンプルは MiniMax M3、GLM-5.2、Kimi K2.6 へのリクエストから集めたもので、主に 2026年6月24日、7月4日、7月8日、7月14日のものである。自動スキャンが検出してコミットは取り消されたが、その間に第三者が認証情報を入手してサンプルをダウンロードし、中の認証情報を探して検証した。検証された 5件が Dragos のカナリアだった。Together AI は新規アカウントの既定を Zero Data Retention に変え、外部のフォレンジック調査会社と法執行機関と協力しているとしている。",
+      "Phala は 11月10日の予備報告で、攻撃者が推論用の仮想マシンを乗っ取って処理中のリクエストデータを見られたと報告し、2026年10月21日 00:00 UTC から 11月8日 05:35 UTC のあいだに OpenRouter 経由で Phala に届いた DeepSeek V4 Flash 0731 へのリクエストは漏洩したものとして、中の秘密をすべてローテーションするよう求めた。Novita は、2026年5月28日から 11月11日のあいだ、MiniMax モデルへのリクエストの一部が Novita の基盤ではなく MiniMax の公式 API へ転送されていたと 11月22日に通知した。OpenRouter は 11月22日、調査にもとづいて 3社を排除し、研究者に指摘されたものと予防的なものを含め 125 エンドポイントの Zero Data Retention 適格を停止し、影響の可能性がある顧客全員に通知したと発表した。OpenRouter 自体の侵害はないとしている。ただし OpenRouter は排除した 3社の名前を公表しておらず、公表された Novita・Phala・Together AI の 3社と同一かどうかは確認できていない。プロンプトに生の認証情報を入れたことがある利用者は、経路にかかわらずローテーションしておくのが安全である。"
+    ],
+    "primarySources": [
+      {
+        "title": "AI Supply Chain Security: What Canary Tokens Found（Dragos ブログ）",
+        "url": "https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens"
+      },
+      {
+        "title": "Data Processing Incidents on Inference Providers（OpenRouter ブログ）",
+        "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/"
+      },
+      {
+        "title": "Security event: Prompt leakage for requests in June and July of 2026（Together AI ブログ）",
+        "url": "https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026"
+      },
+      {
+        "title": "OpenRouter Drops 3 Providers After Researchers Catch Months of Prompt Theft at AI Hosting Firms（The Hacker News、二次報道）",
+        "url": "https://thehackernews.com/2026/11/openrouter-drops-3-providers-after.html"
+      }
+    ]
+  },
+  "signal-ai-agents-screenshot-block-2026": {
+    "body": [
+      "Signal は 2026年11月20日、社長の Meredith Whittaker によるブログ記事で、モバイルのオペレーティングシステムに組み込まれた AI エージェントから利用者のデータを守るため、スクリーンショットの制限を導入すると発表した。iOS 27 ではアプリ内のスクリーンショットを遮断し、「Block Siri AI」という設定を追加する。Android では、AI アシスタントが Signal の画面を読もうとするのを検出した場合に「Screen security」を自動でオンにする。Windows では昨年、Microsoft の Recall が Signal のメッセージのスクリーンショットを撮って保存するのを既定で防ぐため、同じ方法を既に採っている。",
+      "背景にあるのは、OS レベルの AI エージェントが画面の情報を読む仕組みである。Android の Gemini Intelligence や、Siri AI の Onscreen Awareness のような機能は、利用者の質問に答えたり作業を代行したりするために、画面にある情報をスキャンして取り込む。Signal は、エンドツーエンド暗号化が通信のあいだのメッセージを守っても、画面に表示された時点で読める状態になるため、暗号化だけでは守れないと説明する。Whittaker は、こうした OS のエージェント統合が「プライバシーに対してますます敵対的な環境」へ変えており、「Signal にとって存亡の脅威」だと述べた。利用者は設定で制限をオフにできるが、Signal はその場合、自分のメッセージだけでなく連絡先のメッセージも AI エージェントに晒され、プライバシー保証が崩れると警告している。",
+      "Signal は、この対策だけでは不十分だと自ら認めている。スクリーンショットを遮断しても、端末に既に保存されたコンテンツをファイルシステム経由で読むような迂回は防げない。macOS では、スクリーンショットを確実に遮断する手段がないとして実装を見送り、Siri の設定で Signal を除外するよう案内している。ブログはサードパーティのエージェントにも言及し、Meta の Muse が設定時に求められる広い権限、とりわけアクセシビリティ設定を使って Signal のメッセージに到達できたと Reuters が報じた例を挙げ、「障害のある人が使いやすくするための設定が、AI エージェントの合鍵になっている」と指摘した。",
+      "Signal は Apple、Google、Microsoft に 2つの対策を求めた。1つは、アプリが画面読み取り、ファイルシステムへのアクセス、通知、API などを含む AI によるデータアクセスと処理から、簡単に、文書化された方法でオプトアウトできる手段である。もう 1つは、AI エージェントが実際にどう動くかに関する正確な文書と技術仕様である。Signal は数か月かけて Android と iOS で法医学的な調査をしてきたが、文書が乏しく、AI システムがアプリのデータにアクセスしたときに何が起きるのか分かりにくいとしている。Google と Apple は対話に応じているとしつつ、「Signal は炭鉱のカナリア」であり、これは Signal だけの問題ではなく、エコシステム全体の問題だと結んだ。"
+    ],
+    "primarySources": [
+      {
+        "title": "Signal is Serious About Protecting Your Privacy（Signal ブログ、Meredith Whittaker）",
+        "url": "https://signal.org/blog/protecting-your-privacy/"
+      },
+      {
+        "title": "Signal restricts mobile screenshots as it confronts ‘existential threat’ of AI surveillance（TechCrunch、二次報道）",
+        "url": "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/"
+      }
+    ]
+  },
+  "google-gemini-gif-generation-2026": {
+    "body": [
+      "Google は 2026年11月20日、Gemini アプリで GIF を生成できるようになったと公式 X アカウントで発表した。テキストのプロンプトや、画像、動画から約3秒のループ GIF を作れ、文書やチャット、SNS にコピー＆ペーストしたり、.gif 形式でダウンロードしたりできる。基盤になるのは 11月5日に登場した動画生成モデル Gemini Omni 1.2 Flash で、新しいモデルの発表ではなく、既存モデルの出力形式の追加である。",
+      "作り方は 2通りある。通常のチャットで頼むか、画像・動画ツールで GIF 形式を選ぶ。参考として最大 5枚の画像と 1本の動画を付けられ、生成には数分かかることがある。対象は 18歳以上で、展開は段階的に進む。対象国はオーストラリア、カナダ、フランス、ドイツ、日本、韓国、英国、米国の 8か国で、日本も含まれている。動画そのものの生成は 3秒から 10秒までで、AI Ultra の加入者は最大 15秒まで作れるが、GIF は約3秒のループに限られる。",
+      "無料で使えるかどうかは、Google の公式説明のあいだで食い違っている。ヘルプページ「Generate videos with Gemini Apps」は、個人アカウントでこの動画機能を使うには Google AI プランが必要だと書いている。一方、公式 X アカウントの投稿と公式 YouTube チャンネルの説明は、対象国では無料で使えるとしている。どちらが正しいかは、2026年11月22日時点で確認できていない。利用する前に、自分のアカウントで GIF 形式が選べるかを確かめるのが確実である。",
+      "ChatGPT が約2週間前に GIF 生成を出しており、Google は追随する形になる。動画生成モデルをめぐる競争は、モデルの性能だけでなく、GIF のような手軽な出力形式をアプリに載せる速度の競争にもなっている。開発者向けに GIF 専用の API エンドポイントが文書化されたわけではなく、アプリ内の機能としての提供である。"
+    ],
+    "primarySources": [
+      {
+        "title": "Generate videos with Gemini Apps（Gemini Apps ヘルプ）",
+        "url": "https://support.google.com/gemini/answer/16126339?hl=en&co=GENIE.Platform%3DDesktop"
+      },
+      {
+        "title": "Gemini can now be your go-to source for making GIFs（Android Authority、二次報道）",
+        "url": "https://mobile.androidauthority.com/gemini-gif-generation-rollout-3737901/"
+      }
+    ]
+  },
+  "cognition-devin-bots-2026": {
+    "body": [
+      "Cognition は 2026年11月17日、AI ソフトウェアエンジニア Devin の上に立つ常駐エージェント「Devin Bots」を発表した。Bot は 1つの目標を受け取ると、作業を分解して複数の Devin セッションを並行で動かし、それぞれのセッションをプルリクエストが用意できるまで進める。Bot 自身は 1つのチャットと独自の記憶・権限・接続を持ち、Web アプリや Slack、テキストメッセージ、電話、グループチャットから話しかけられる。Cognition はこれを 2026年最大の発表だと位置づけている。",
+      "これまでのコーディングエージェントは、与えられたタスクをこなしても、調整の責任は人間に残っていた。Devin Bots はその調整ごと引き受ける。たとえば「機能を Android に移植する」がタスクなら、Bot に与えるのは「Android を iOS と同等に保つ」という責任である。Bot は調査し、作業を委任し、結果を評価して次に進むものを決める。人の判断が要るものだけ「Needs You」として集めて上げる。スケジュールやトリガーで自動起動もでき、Slack の顧客からの問い合わせの監視、夜間の CI チェック、Linear のブロッカー監視などが例として挙げられている。Software Factory、Android Engineer、Chief of Staff、Latency Optimizer、Product Engineer、QA Engineer の 6種のテンプレートが用意されている。",
+      "社内の事例として、Cognition は Android アプリの構築を挙げている。2026年9月28日に作られた Android Bot が 44日で Android アプリを作り、マージしたプルリクエストは 1,134件、書いた Kotlin は約34.5万行、スクリーンショットテストは 2,841件、処理したチケットは 1,217件で、人が送ったメッセージは 183件だったとしている。いずれも Cognition 自身の主張で、独立した検証は確認できていない。早期アクセスの利用企業には Decagon、Fireworks AI、Reducto が含まれ、Bot の利用は 2週間で 10倍に増えたと Cognition は述べている。",
+      "Bot は Max（月額200ドル）・Teams（月額80ドル）・Enterprise に含まれ、Free・Pro には含まれない。Bot 単体の料金発表はなく、利用上限の数値も公表されていない。ドキュメントによれば、Bot の作業は他のセッションと同じく既存プランの利用量に数えられる。Anthropic の Duet や OpenAI の Dots といった汎用マネージャー型エージェントが先に登場する中で、Cognition はコーディング専用であることを強みとして打ち出している。Cognition は 2026年9月に 20億ドルの Series E で評価額 480億ドルに達したと報じられている。"
+    ],
+    "primarySources": [
+      {
+        "title": "2026 - Devin Docs（Devin リリースノート、Introducing Devin Bots）",
+        "url": "https://docs.devin.ai/release-notes/2026"
+      },
+      {
+        "title": "Cognition Launches Devin Bots to Oversee Teams of Devin Agents（AI Weekly、Fortune の報道を伝える二次報道）",
+        "url": "https://aiweekly.co/alerts/cognition-launches-devin-bots-to-oversee-teams-of-devin-agents"
+      },
+      {
+        "title": "Devin 料金ページ（Devin 公式）",
+        "url": "https://devin.ai/pricing"
+      }
+    ]
+  },
+  "openai-perplexity-intelligence-2026": {
+    "body": [
+      "OpenAI のチーフサイエンティストである Jakub Pachocki 氏は 2026年11月22日、エッセイ「Perplexity and Intelligence」を公開しました。社内で GPT-3.5 以降のモデルについて追跡してきた事前学習の perplexity（対数 perplexity。交差エントロピー損失と等価）を初めて公表し、この指標をフロンティア開発者間の共通の物差しとして、開発ペースを揃えるための業界共通の上限を設けるよう提案しています。",
+      "perplexity は、モデルが未見のテキストの次のトークンをどれだけよく予測できるかを示す指標で、値が低いほど予測が正確です。Pachocki 氏は、モデル開発を「大規模なコンピューターを用意し、非構造化データでモデルを事前学習（圧縮）し、プロンプトやファインチューニング、強化学習で潜在能力を引き出す」という流れで捉え、その基盤となる事前学習の進捗を測る指標として perplexity を挙げています。",
+      "公開された数値は次の通りです。GPT-3.5 は約 0.99 で、流暢な会話が可能になり、初代 ChatGPT の基盤となりました。GPT-4 は約 0.91 で、chain-of-thought 推論を生産的に使えるようになり、後の推論モデルの開発につながりました。0.8 を下回ると、サイバーセキュリティと数学の分野で変革的な能力が現れ始めました。さらに、約 0.76 のモデルに切り替えたところ、1年以上にわたって出題してきた数学の未解決問題について画期的な成果を出し始めたといいます。",
+      "Pachocki 氏は、深層学習研究でも同様の雪崩が「2027年にも」起こりうると述べています。ただし、これは「as soon as 2027 we could conceivably see（2027年にも起こりうると考えられる）」という可能性の提示であり、予測の断定ではありません。次の窓として挙げるのは 0.68〜0.70 の対数 perplexity で、この範囲に入るとさらに変革的な能力が現れると予想する一方で、それが何かは分からないとしています。同時に、現在主流のアライメント監査の手法がさらに劣化し、モデルが評価されていることを意識する度合いが高まることも予想しています。",
+      "提案の核心は、perplexity などの測定値に基づく「共通の上限（common limits）」です。AI の振る舞いを理解・監視する能力が具体的なマイルストーン（たとえば chain-of-thought モニターの後継の開発）に到達するまで、開発者がその上限を超えないことに合意する、というものです。あわせて、モデルが初めて使われる時点までに評価とレッドチームによる安全性の検証を行うための共通の規範や、透明性の基準も求めています。",
+      "Pachocki 氏は perplexity を共通指標とする際の課題も 4つ挙げています。開発者ごとに評価用データセットや訓練データの混合が異なるため、ラボ間での比較が難しいこと、perplexity 自体は関心のあるタスクに直接対応しないこと、chain-of-thought 推論のように perplexity を下げずに能力を大きく高める事前学習以外の進歩を捉えられないこと、そして下限（データの本質的なエントロピー）が未知であることです。",
+      "社内の測定値を公開することについては、競合に自社の立ち位置をより明確に示すことになるとして慎重に検討したうえで、業界全体で安全対策を共有することの緊急性を優先したと説明しています。なお、この提案は業界への呼びかけであり、具体的な上限値や実施主体、強制力を示したものではありません。"
+    ],
+    "primarySources": [
+      {
+        "title": "Perplexity and Intelligence（OpenAI ブログ）",
+        "url": "https://openai.com/index/perplexity-and-intelligence/"
+      }
+    ]
   }
 };
 
