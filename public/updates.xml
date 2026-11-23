@@ -88,6 +88,22 @@
     <summary>（誤）Pro $20 / Pro+ $60 / Ultra $200、Teams Standard $40… →（正）Plus $8 / Premium $30 / Super $100 / Ultra $200…</summary>
   </entry>
   <entry>
+    <title>【追記】Anthropic が「Enterprise Frontier Safeguards」を発表 — 監視用データを顧客自身のクラウドに保存、ただし閲覧権はAnthropic側に残る</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-enterprise-frontier-safeguards-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:anthropic-enterprise-frontier-safeguards-2026:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>Anthropic は11月23日、Enterprise Frontier Safeguards（EFS）をパブリックベータとして提供開始したと発表した</summary>
+  </entry>
+  <entry>
+    <title>【追記】「Claude と解いた」と Anthropic の数学者がリーマン予想の証明を主張、同日に「人間だけ」の証明も登場、どちらも未検証</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-riemann-hypothesis-claude-proof-claim-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:anthropic-riemann-hypothesis-claude-proof-claim-2026:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>MIT の Sutherland 氏による検証ページが更新された</summary>
+  </entry>
+  <entry>
     <title>【追記】Claude Opus 4.6 レビュー — Anthropic 前世代フラッグシップ、1Mコンテキストの深い推論</title>
     <link rel="alternate" type="text/html" href="?a=claude-opus-4-6-review#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:claude-opus-4-6-review:2026-11-23</id>
@@ -174,6 +190,22 @@
     <updated>2026-11-23T15:00:00Z</updated>
     <category term="addendum" label="追記"/>
     <summary>世代の前進。Moonshot AI の後継モデル Kimi K3 が公開され、当サイトの現行の Kimi レビューは Kimi K3 レビュー である</summary>
+  </entry>
+  <entry>
+    <title>【追記】SEC が NVIDIA の会計を調査と報道、株価は14%急落、1日で約5,000億ドルの時価総額が消失</title>
+    <link rel="alternate" type="text/html" href="?a=nvidia-sec-accounting-probe-stock-drop-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:nvidia-sec-accounting-probe-stock-drop-2026:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>NVIDIA の取締役会は11月23日、Jensen Huang 氏を CEO に全会一致で復職させた</summary>
+  </entry>
+  <entry>
+    <title>【追記】OpenAI が GPT-6.2 Astra と Sol を公開 — Astra は初の「自己改善 High」評価、API 価格は 20% 引き下げ</title>
+    <link rel="alternate" type="text/html" href="?a=openai-gpt-6-2-astra-sol-launch-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:openai-gpt-6-2-astra-sol-launch-2026:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>OpenAI は11月23日、会話に特化して調整した GPT-6.2 Sol を ChatGPT の Chat タブに展開したと、OpenAI のリリースノートを引用する報道が伝えた</summary>
   </entry>
   <entry>
     <title>【追記】Qwen 3 レビュー — Alibaba 発、ハイブリッド思考とオープンウェイトの大型ファミリー</title>
@@ -1174,37 +1206,5 @@
     <updated>2026-09-02T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
     <summary>一次ソースとして挙げていた X の投稿 URL（x.com/claudeai/status/2040123456789012345）が実在しないものであったため削除した</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Claude Sonnet 5 レビュー — Anthropic 新ミッドレンジ・フラッグシップ、Opus 4.8 に迫る性能を $2/$10 で、エージェント運用の主力</title>
-    <link rel="alternate" type="text/html" href="?a=claude-sonnet-5-review#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:claude-sonnet-5-review:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>導入価格 $2/$10 は8月31日で終了した。本文の料金とコスパの記述を現行の $3/$15 に更新した</summary>
-  </entry>
-  <entry>
-    <title>【訂正】GitHub Copilot、JetBrainsで正式GA — Coding Agentの起動速度も50%改善</title>
-    <link rel="alternate" type="text/html" href="?a=copilot-jetbrains-ga#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:copilot-jetbrains-ga:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>一次ソースのうち github.blog が到達できなくなっていた（HTTP 404）ため削除した</summary>
-  </entry>
-  <entry>
-    <title>【訂正】E3 の Entra ID 認証 + PostgreSQL で企業 AI アプリを構築する — Dataverse より安い実用構成</title>
-    <link rel="alternate" type="text/html" href="?a=enterprise-entra-id-postgres-ai-architecture-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:enterprise-entra-id-postgres-ai-architecture-2026:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>一次ソースのうち learn.microsoft.com が到達できなくなっていた（HTTP 404）ため削除した</summary>
-  </entry>
-  <entry>
-    <title>【訂正】【分析】検証がボトルネックになった — 96%が AI のコードを信用せず、実際に毎回確かめるのは48%</title>
-    <link rel="alternate" type="text/html" href="?a=feature-ai-code-verification-gap-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:feature-ai-code-verification-gap-2026:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>一次ソースの URL が到達できなくなっていたため、移転先に差し替えた（The Register の記事 URL が短縮形から展開形に変更されていた）</summary>
   </entry>
 </feed>

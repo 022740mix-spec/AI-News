@@ -16073,5 +16073,153 @@ export const ARTICLES_META = [
       "start": "2026-11-16",
       "end": "2026-11-22"
     }
+  },
+  {
+    "id": "anthropic-claude-ship-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic が Claude Ship を発表 — PR のレビュー・修正・承認をエージェントが担当、Team / Enterprise 向けベータ",
+    "excerpt": "Anthropic が Claude Ship をベータで公開した。プルリクエストのレビュー、修正、承認判断を Claude が担い、コードを書く速さに後工程を追いつかせる。Claude Team と Enterprise 向けで、GitHub のリポジトリが対象。",
+    "date": "2026-11-24",
+    "newsDate": "2026-11-23",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "GitHub",
+      "コードレビュー"
+    ]
+  },
+  {
+    "id": "virginia-oregon-sue-spacex-grok-deepfakes-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "バージニア州とオレゴン州が SpaceX を提訴 — Grok が同意のない性的画像を生成したと主張",
+    "excerpt": "バージニア州とオレゴン州の司法長官が SpaceX と子会社の X、xAI を提訴した。Grok が実在の人物の写真から同意のない性的画像を作れたとし、州の消費者保護法に違反すると主張している。提訴は主張の段階で、裁判所の判断はまだ出ていない。",
+    "date": "2026-11-24",
+    "newsDate": "2026-11-23",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "xAI",
+      "Grok",
+      "訴訟",
+      "セキュリティ"
+    ]
+  },
+  {
+    "id": "zai-glm-5-4-loop-transformer-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Z.ai が GLM-5.4 を公開 — 28層を2回通す Loop Transformer、750B規模でビジョンを追加",
+    "excerpt": "Z.ai が旗艦モデル GLM-5.4 を公開した。GLM-5 の約750Bパラメータのうち28層を2回通す Loop Transformer で、パラメータを増やさず推論の深さを増やす。ビジョンを追加し、コンテキストは100万トークン。Z.ai 自身はベンチマークスコアを公開していないが、独立系の KingBench 4 では 55.3%（19モデル中7位）と報じられている。",
+    "date": "2026-11-24",
+    "newsDate": "2026-11-23",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Z.ai",
+      "GLM",
+      "コーディング"
+    ]
+  },
+  {
+    "id": "google-deepmind-gemini-quantum-algorithms-lean-2026",
+    "type": "news",
+    "category": "special",
+    "title": "DeepMind、Gemini 4 のエージェントチームで量子アルゴリズムを改善 — Lean で形式検証、最大290倍の効率化",
+    "excerpt": "Google DeepMind と Google Quantum AI が、Gemini 4 のエージェントチームによる量子アルゴリズムの改善を発表した。Lean による形式検証で正しさとコストを証明し、核融合の計算で11.8倍、arcsin の計算で290倍の効率化を報告した。論文はプレプリント。",
+    "date": "2026-11-24",
+    "newsDate": "2026-11-23",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "DeepMind",
+      "Gemini",
+      "量子コンピュータ",
+      "研究"
+    ]
+  },
+  {
+    "id": "google-gemini-api-file-slicing-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Gemini API にファイルの部分読み取り機能 — PDF の指定ページや表の指定範囲だけを読み、トークン課金を抑制",
+    "excerpt": "Google が Gemini API にファイルスライシング機能を追加した。PDF、Office ファイル、音声、動画を渡す際、必要なページや範囲だけをサーバー側で切り出してモデルに読ませる。読んだ部分のトークンだけが課金される。",
+    "date": "2026-11-24",
+    "newsDate": "2026-11-23",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "API"
+    ]
+  },
+  {
+    "id": "amazon-decart-ai-optimization-acquisition-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Amazon が Decart の AI 最適化技術を買収へ — 報道額は約75億ドル、Trainium の性能向上が狙い",
+    "excerpt": "Amazon が11月23日、AI スタートアップ Decart の独自技術「Decart Optimization Stack（DOS）」を買収する契約を結んだと発表した。創業者3名を含む研究・エンジニアチームが Amazon に加わる。買収額は Amazon 非公表だが、Bloomberg 報道では約75億ドルとされる。狙いは推論とカスタムシリコン Trainium の性能向上で、Anthropic は9月に買収を検討した末に見送っていた。",
+    "date": "2026-11-24",
+    "newsDate": "2026-11-23",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Amazon",
+      "M&A",
+      "買収",
+      "半導体",
+      "Trainium",
+      "推論"
+    ]
+  },
+  {
+    "id": "meta-uma-nitro-release-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Meta、原子シミュレーション高速化の「UMA Nitro」を公開 — H200 1基で1,000原子の分子動力学を約6 ns/日",
+    "excerpt": "Meta の FAIR は11月20日、汎用原子モデル UMA（Universal Model for Atoms）の高速推論モード「UMA Nitro」を公開したと発表した。カリフォルニア州メンローパークで開かれた「Open Source AI for Science Summit」での発表。FAIR の変更履歴によれば、NVIDIA H200 1基で1,000原子の分子動力学シミュレーションが約6 ns/日、150原子では生の推論スループット換算で約33 ns/日に相当し、最大15,000原子までの系に対応する。",
+    "date": "2026-11-24",
+    "newsDate": "2026-11-20",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Meta",
+      "創薬",
+      "科学研究",
+      "高速化",
+      "AI for Science"
+    ]
+  },
+  {
+    "id": "walmart-agent-gateway-meta-muse-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Walmart の Agent Gateway が Meta Muse 対応で稼働開始 — 会話内で買い物から決済まで、Black Friday 直前",
+    "excerpt": "Walmart は11月23日、10月21日に発表した「Agent Gateway」を Meta の AI エージェント Muse 対応で稼働開始した。Muse は Walmart の AI アシスタント Sparky 経由で商品を探し、Black Friday のセール品を含め会話の中で買い物から決済までを完結できる。Walmart は Muse 対応を「始まりにすぎない」とし、他のエージェントやアプリ向けの体験も準備中だとしている。",
+    "date": "2026-11-24",
+    "newsDate": "2026-11-23",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Walmart",
+      "Meta",
+      "Muse",
+      "エージェント型コマース",
+      "ショッピング",
+      "決済"
+    ]
   }
 ];

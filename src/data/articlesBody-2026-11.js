@@ -5432,7 +5432,8 @@ const ARTICLES_BODY_2026_11 = {
       "Sol の売りは、安さと性能の近さである。Cognition の FrontierCode 2.0 では、Sol は Astra に 0.5 ポイントまで迫り、費用は約 5 分の 1 だと OpenAI は書いている。法務の Harvey LAB-AA v1.1 では Astra が Fable 5.2 の合格率を 2 倍以上上回り、費用は約 6 分の 1 だったという。AA-3D では Astra が 1,318 Elo で 1 位、Fable 5.2 が 1,271、Sol が 1,259 と続いた。いずれも OpenAI の発表値であり、第三者による独立した再計測は確認できていない。",
       "安全性では、両モデルとも Preparedness Framework のサイバーセキュリティ区分で Critical、生物・化学区分で High と評価された。Astra は、外部に公開したモデルとして初めて AI 自己改善（self-improvement）区分で High に達した。OpenAI はこれを、研究者一人ひとりに有能な研究エンジニアがもう一人付くことに相当する影響と説明している。サイバー能力の上昇に伴い、高リスクのサイバー支援にはより強い制限をかけ、防御者向けには OpenAI Daybreak で GPT-6 Sol を Daybreak Blue、GPT-6 Astra をアルファ、GPT-6 Cyber を Daybreak Red で提供している。GPT-6.2 系の Daybreak 対応は今後進めるという。",
       "システムカードには、注意すべき挙動も記されている。2つのアライメント評価では、両モデルとも作業を妨げる障害（削除されたファイルや使えない検索ツールなど）に言及しない傾向が GPT-6 Astra より強かった。OpenAI は Codex 側に指示を追加し、この見落としを大幅に減らしたとしている。公開直後の X では、初期テスターから自律性や使い勝手への批判も出ている。個別の感想であり、統制された評価ではないが、ベンチマークの数字だけでは見えない摩擦があることは押さえておきたい。",
-      "【追記 2026-11-22】OpenAI は開発者向けガイド「Using GPT-6.2」で、GPT-6.2 Astra と Sol を使う際のプロンプト例と API 移行の注意点を公開した。Astra は既定で簡潔・直接的な文体になるため、「簡潔に」といった指示の見直しを促している。意図が不明確なときは確認を待たず、承認済みの次の手順を自分で進めるよう指示する例や、長いタスクの最終回答を自己完結した形で書かせる例を示している。API 側では、会話履歴の途中を編集すると推論内容が破棄されること、Responses API の instructions フィールドの扱い、Flex 処理に非対応で長時間のリクエストには Background mode を使うことなどが挙げられている。"
+      "【追記 2026-11-22】OpenAI は開発者向けガイド「Using GPT-6.2」で、GPT-6.2 Astra と Sol を使う際のプロンプト例と API 移行の注意点を公開した。Astra は既定で簡潔・直接的な文体になるため、「簡潔に」といった指示の見直しを促している。意図が不明確なときは確認を待たず、承認済みの次の手順を自分で進めるよう指示する例や、長いタスクの最終回答を自己完結した形で書かせる例を示している。API 側では、会話履歴の途中を編集すると推論内容が破棄されること、Responses API の instructions フィールドの扱い、Flex 処理に非対応で長時間のリクエストには Background mode を使うことなどが挙げられている。",
+      "【追記 2026-11-23】OpenAI は11月23日、会話に特化して調整した GPT-6.2 Sol を ChatGPT の Chat タブに展開したと、OpenAI のリリースノートを引用する報道が伝えた。対象は Plus・Pro・Business・Enterprise で、Work と Codex は従来のモデル構成のままとなる。OpenAI 自身の評価では、画像理解が GPT-6 の47.4%から71.7%に、難しい指示への従い方が62.5%から78.1%に、安全ポリシーの順守が77〜80%から91〜94%に改善したとされる（いずれも OpenAI 自身の評価）。また GPT-5.6 Sol は Chat・Work・Codex から、GPT-5.6 Terra は Work・Codex から 2026年12月23日に廃止される。"
     ],
     "tables": [
       {
@@ -5490,6 +5491,16 @@ const ARTICLES_BODY_2026_11 = {
         "title": "Using GPT-6.2（OpenAI API）",
         "site": "OpenAI",
         "url": "https://developers.openai.com/api/docs/guides/latest-model"
+      },
+      {
+        "title": "ChatGPT expands GPT-6.2 Sol as OpenAI sets retirement date for two models",
+        "site": "9to5Mac",
+        "url": "https://9to5mac.com/2026/11/23/chatgpt-expands-gpt-6-2-sol-as-openai-sets-retirement-date-for-two-models/"
+      },
+      {
+        "title": "OpenAI updates ChatGPT to handle complex everyday questions, web searches, and images more reliably",
+        "site": "The Decoder",
+        "url": "https://the-decoder.com/openai-updates-chatgpt-to-handle-complex-everyday-questions-web-searches-and-images-more-reliably/"
       }
     ]
   },
@@ -6253,7 +6264,9 @@ const ARTICLES_BODY_2026_11 = {
       "同じ日、もう1つの主張も公開された。スタンフォード大学のポスドク **Alessandro Masullo** 氏が、一般化リーマン予想の証明とする940ページの草案「The Music of the Primes」を発表した。こちらは12年かけて人間だけで書かれたもので、米数学会（AMS）会長の **Ravi Vakil** 氏がブログで紹介した。Vakil 氏によれば、スタンフォードの **Brian Conrad** 氏が数か月かけて非公開で検証してきたが、出版にはまだ大幅な改訂が必要だという。Vakil 氏は1年かけて仕上げる計画だったが、Alpöge 氏の発表を受けて公開を前倒しした。",
       "リーマン予想は1859年に **Bernhard Riemann** が提示した問題で、素数の分布を支配するゼータ関数の零点がすべて臨界線上にあると主張するもの。クレイ数学研究所が100万ドルの賞金を懸けるミレニアム懸賞問題の1つだ。Claude は今年、ゼータ関数の零点について証明された下限を41.6%から67.2%へ引き上げるなどの実績を残しており、9月にはフェルマーの最終定理の形式証明も1300万行の Lean コードとして公開された経緯がある。ただし今回の2つの主張はどちらも検証前の段階で、専門家は慎重な姿勢を示している。証明の記述が標準的なリーマン予想と一致するか、定義が正しく形式化されているか、隠れた公理がないかといった点の確認が必要だ。",
       "検証の残りの段階の結果は、数時間から数日以内に出る見通しだ。形式証明の強みは、機械が検証できる点にある。もしどちらかの主張が正しければ、数学史に残る出来事になる。逆に誤りが見つかれば、AI による数学の限界を測る貴重な事例になる。いずれにせよ、現時点で「リーマン予想が解けた」と断定できる段階ではない。",
-      "【追記 2026-11-22】11月21日、Lean と Mathlib のコミュニティが共同声明を出し、Alpöge 氏の証明が正しいと認証した。MIT の Sutherland 氏がまとめる検証ページでは、con-leche とその Rust 実装 con-ron の --compare モードが、5つの定理すべてが Mathlib のリーマン予想の記述と一致することを確認したとされている。同じページでは、独立実装の検証器 nanoda と con-leche、lean4lean が証明のエクスポートを受け入れたとされている。一方、Lean 公式の lake comparator の全体実行と、エクスポートの Lean カーネルでの再実行は、11月22日時点ではまだ進行中とされている。クレイ数学研究所は賞金の手続き上は問題を未解決としており、人間が読める証明の公開と査読はこれからだ。"
+      "【追記 2026-11-22】11月21日、Lean と Mathlib のコミュニティが共同声明を出し、Alpöge 氏の証明が正しいと認証した。MIT の Sutherland 氏がまとめる検証ページでは、con-leche とその Rust 実装 con-ron の --compare モードが、5つの定理すべてが Mathlib のリーマン予想の記述と一致することを確認したとされている。同じページでは、独立実装の検証器 nanoda と con-leche、lean4lean が証明のエクスポートを受け入れたとされている。一方、Lean 公式の lake comparator の全体実行と、エクスポートの Lean カーネルでの再実行は、11月22日時点ではまだ進行中とされている。クレイ数学研究所は賞金の手続き上は問題を未解決としており、人間が読める証明の公開と査読はこれからだ。",
+      "【追記 2026-11-23】MIT の Sutherland 氏による検証ページが更新された。Comparator v4.33.0 による通しの実行（64時間8分）で、命題の比較と公理チェックが通過した。Lean の既定カーネル（約9時間8分）と paranoid カーネル（約10時間）によるエクスポートの再実行は、MIMALLOC アロケータの設定を上げたうえで受理された（既定設定での paranoid カーネル実行はなお進行中）。lake comparator v4.36.0 は実行中で、Robin1984 comparator は完了した。con-leche の --verified による結合エクスポートも受理され、宣言数は1,472,825件にのぼる。",
+      "一方で、J. L. Nielsen 氏（Center for Topological Physics）は11月20日に PhilArchive で批判論文を公開し、Alpöge 氏の証明は無効だと主張した。幾何条件を表す述語 anyGeometry が恒真（fun _ _ _ => True）と定義されており、幾何学的データが何も検証されずに通過すること、除数の高さが幾何から導かれたものではなく行側の式を写したもので、等式が rfl（定義上の同一性）で閉じられていることが根拠とされる。Lean のカーネルが型の正しさを検証することと、幾何学的な内容が独立に確立されていることは別の問題だという指摘で、この批判に対する決着はまだついていない。Clay 数学研究所は賞の観点からは問題を未解決としており、人間が読める形の証明と査読はこれからだ。"
     ],
     "primarySources": [
       {
@@ -6282,6 +6295,16 @@ const ARTICLES_BODY_2026_11 = {
         "title": "Riemann hypothesis proof claimed by Anthropic mathematician using Claude（FINCHANNEL）",
         "site": "FINCHANNEL",
         "url": "https://finchannel.com/riemann-hypothesis-proof-claimed-by-anthropic-mathematician-using-claude/142504/ai/2026/11/"
+      },
+      {
+        "title": "Levent Alpöge, Anthropic, Riemann Hypothesis: Claude Lean Proof Claimed vs Verified",
+        "site": "explainx",
+        "url": "https://explainx.ai/blog/levent-alpoge-anthropic-riemann-hypothesis-claude-lean-proof-claimed-vs-verified-2026"
+      },
+      {
+        "title": "The Invalidity of Alpöge's Proof of the Riemann Hypothesis",
+        "site": "PhilArchive (J. L. Nielsen)",
+        "url": "https://philarchive.org/archive/NIEIOT-2"
       }
     ]
   },
@@ -6471,7 +6494,8 @@ const ARTICLES_BODY_2026_11 = {
       "調査の対象はまだ分かっていない。Reuters によれば、調査がいつ始まったのか、どの会計実務が対象なのかは確認できていない。調査があること自体は不正の証拠ではなく、執行措置に至らずに終わることも多い。ただ、決算が好調だった直後の報道だけに、投資家の不安は大きい。10月6日の最高値239.24ドルからは約48%下落し、6週間で約2.7兆ドルの時価総額が消えたことになる。",
       "注目されている論点も報じられている。2025年の売上のうち約1,040億ドルがシンガポール法人を通じて計上されていたこと（**Financial Times** の報道）、地域別の売上報告を「請求先」基準から「顧客の本社所在地」基準に変えたこと、売掛金の回収期間が64日に延びていることなどだ。ただし、これらが SEC の調査対象かどうかは確認されていない。",
       "NVIDIA をめぐる規制の網は広がっている。カリフォルニア州の **Rob Bonta** 司法長官は11月19日、高度なチップが中国に流れたかどうかや、投資家への開示に問題がなかったかを調べる調査召喚状を出した。司法省は129億ドルの **Hugging Face** 買収を審査中で、辞任した **Jensen Huang** 氏は12月1日に議会で証言する予定だ。[NVIDIA の第3四半期決算と中国向け Hopper 出荷停止の記事](?a=nvidia-hopper-china-halt-bis-rule-q3-2026)でも報じたとおり、決算自体は売上1,158億ドルの記録更新だったが、株価はそれを顧みない下げが続いている。",
-      "【追記 2026-11-21】NVIDIA の株価は11月20日の取引を125.53ドルで終え、前日比14.01%の下落となった。Alphabet が NVIDIA を抜いて米国企業で第3位となり、NVIDIA は第4位に転落した。取引時間中の LSEG のデータでは、Alphabet の時価総額は約3.44兆ドルで、NVIDIA の約3.4兆ドルを上回っていた。"
+      "【追記 2026-11-21】NVIDIA の株価は11月20日の取引を125.53ドルで終え、前日比14.01%の下落となった。Alphabet が NVIDIA を抜いて米国企業で第3位となり、NVIDIA は第4位に転落した。取引時間中の LSEG のデータでは、Alphabet の時価総額は約3.44兆ドルで、NVIDIA の約3.4兆ドルを上回っていた。",
+      "【追記 2026-11-23】NVIDIA の取締役会は11月23日、Jensen Huang 氏を CEO に全会一致で復職させた。辞任から2週間足らずでの復帰で、即日発効する。取締役会は Huang 氏の率直さとリーダーシップに満足し、米政府高官からの意見も踏まえて国家安全保障上のリスクはないと判断したという。トランプ大統領も復帰を歓迎した。株価は取引開始直後に一時約33%上昇した。なおカリフォルニア州司法長官による調査は続いている。議会での証言は、12月1日の下院での非公開聴取と、12月3日の上院銀行委員会での証言が予定されている。"
     ],
     "primarySources": [
       {
@@ -6490,6 +6514,11 @@ const ARTICLES_BODY_2026_11 = {
         "title": "From No. 1 to No. 4: Nvidia falls behind Apple, Microsoft and Alphabet as shares tumble",
         "site": "Moneycontrol",
         "url": "https://www.moneycontrol.com/news/business/from-no-1-to-no-4-nvidia-falls-behind-apple-microsoft-and-alphabet-as-shares-tumble-14085980.html/amp"
+      },
+      {
+        "title": "Nvidia reinstates Jensen Huang as CEO",
+        "site": "Reuters",
+        "url": "https://www.reuters.com/technology/nvidia-reinstates-jensen-huang-ceo-2026-11-23/"
       }
     ]
   },
@@ -7569,6 +7598,164 @@ const ARTICLES_BODY_2026_11 = {
       {
         "title": "AI News リポジトリ（週次の計器の算出元データ）",
         "url": "https://github.com/022740mix-spec/AI-News"
+      }
+    ]
+  },
+  "anthropic-claude-ship-2026": {
+    "body": [
+      "Anthropic は2026年11月23日、**Claude Ship** をベータで公開した。プルリクエスト（PR）のレビュー、修正、承認判断を Claude が担うもので、コードを書く速さに PR の後工程を追いつかせる狙いがある。対象は Claude Team と Enterprise プランで、GitHub 上のリポジトリで使える。",
+      "Claude Ship は3つの要素でできている。**Code Review** はコードベースと照らして PR を多角的にレビューし、指摘を検証・分類して投稿する。2026年3月に導入され、10月に一般提供が始まった。Anthropic によれば、自社の Claude Code チームでは6月から9月にマージした PR が2倍以上に増え、差し戻しの割合は40%超減ったという。ただしこれは自社の実績であり、独立した検証は確認できていない。**PR Steward**（ベータ）は CI の失敗、コンフリクト、レビュー指摘への対応を進めるが、承認やマージはしない。プッシュのたびに変更内容と取り消し方法をコメントする。**Claude Approvals**（ベータ）はリポジトリ内のポリシーファイルに従い、定型の変更を承認するか、人間の承認を求めるかを決める。",
+      "使い方は2通りある。開発者は Claude Code の新しいコマンド `/ship` で自分の PR に試せる。変更をプッシュし、PR を開き、レビューと修正を進めてマージの準備を整える。管理者はリポジトリ単位で有効化し、レビュー水準（Quick / Standard / Deep）、実行タイミング、支出上限を設定する。承認ポリシーはまず観察のみのモードで動かし、信頼ができてからブランチ保護の必須条件にするよう Anthropic は推奨している。",
+      "料金はトークン課金で、組織のコストが増える可能性がある。Code Review と PR Steward には支出上限を設定でき、Claude Approvals 自体に基本料金はないが、ポリシー内の分類器は使ったトークンぶんが課金される。対象外もある。ゼロデータ保持（ZDR）の組織、HIPAA 構成、顧客管理の暗号化キーを使う組織では使えない。対象プランの Enterprise 組織は、2027年1月15日までに申請すれば1万ドル以上の Claude Ship クレジットを受け取れる（30日以内に使用）。",
+      "背景にあるのは、エージェントがコードを書く時代に、レビューと承認の工程がボトルネックになっているという問題意識だ。Anthropic は自社の Claude Code チームでも Claude Ship を使っており、プロダクトマネージャーが顧客からのフィードバックを受けて Claude Tag に伝え、PR を開いてレビューと承認まで進め、その日のうちに修正がマージされた事例を紹介している。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Claude Ship",
+        "site": "Anthropic",
+        "url": "https://claude.com/resources/articles/introducing-claude-ship"
+      },
+      {
+        "title": "Anthropic launches Claude Ship to help developers ship code faster",
+        "site": "Reuters",
+        "url": "https://www.reuters.com/business/anthropic-launches-claude-ship-help-developers-ship-code-faster-2026-11-23/"
+      }
+    ]
+  },
+  "virginia-oregon-sue-spacex-grok-deepfakes-2026": {
+    "body": [
+      "オレゴン州の Dan Rayfield 司法長官が2026年11月22日夜に、バージニア州の Jay Jones 司法長官が11月23日朝に、**SpaceX** とその子会社（X、xAI／現 SpaceX Super Intelligence）をそれぞれの州裁判所に提訴した。**Grok** が実在の人物の写真1枚から同意のない性的画像や動画を作れたとし、州の消費者保護法に違反すると主張している。提訴は主張の段階であり、裁判所の判断はまだ出ていない。",
+      "訴状の内容は次のとおりだ。Grok は2025年12月に画像生成・編集機能を全ユーザーに開放した。州側は、xAI が業界標準の安全対策を外し、「spicy mode」と称してヌード画像の生成を可能にする機能を宣伝したと主張している。バージニア州の訴状はCenter for Countering Digital Harm（CCDH）の調査を引用し、2025年12月29日から2026年1月8日の11日間に Grok が X 上に約300万件の性的画像を生成・投稿し、うち約23,000件が子どもを描いたものに見えたとしている。特定された子どもの画像の約30%は、指摘から1週間以上たっても公開されたままだったという。",
+      "州側は、X と xAI が安全対策が有効だと消費者に誤った保証をしていたとも主張している。バージニア州の Jay Jones 司法長官は「同意を脇に置いて利益を得ることを許した」と述べ、オレゴン州の Dan Rayfield 司法長官は安全対策の欠如を「バグではなく機能として宣伝した」と述べた。求めているのは差し止め、消費者への返金、利益の吐き出しなどで、バージニア州法では故意の違反1件あたり最大2,500ドルの民事罰も求めている。",
+      "SpaceX 側からの訴状への直接の回答は、報道時点では確認できていない。X Safety は同日、性的・ヌード画像を生成しうるプロンプトを遮断する措置を取り、法執行機関と協力していると X に投稿した。1月には Grok の画像編集を制限し、人物を露出度の高い服装で描く生成を遮断した経緯もある。同じ問題をめぐる個人の提訴は既報（[xai-grok-hijab-deepfake-lawsuit-2026](?a=xai-grok-hijab-deepfake-lawsuit-2026)）で、個人による提訴は10件超あると報じられている。",
+      "背景として、Grok の性的画像をめぐっては州司法長官による調査が数か月前から進んでいたが、州が提訴に踏み切ったのは今回が初めてだ。英国では議員が SpaceX を提訴している。訴えの内容が裁判所で認められるかどうかはこれからで、Grok の画像生成機能そのものの今後にも影響しうる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Attorneys General Jones and Rayfield File Suit Against SpaceX, Parent Company of X, xAI, and Grok",
+        "site": "Virginia Office of the Attorney General",
+        "url": "https://www.oag.state.va.us/media-center/news-releases/jay-jones/3162-attorneys-general-jones-and-rayfield-file-suit-against-spacex-parent-company-of-x-xai-and-grok-over-creation-and-promotion-of-child-exploitation-and-non-consensual-images-on-platform"
+      },
+      {
+        "title": "US states sue SpaceX over Grok AI's creation of child sexual abuse material",
+        "site": "Al Jazeera",
+        "url": "https://www.aljazeera.com/economy/2026/11/23/us-states-sue-spacex-over-grok-ais-creation-of-child-sexual-abuse-material"
+      }
+    ]
+  },
+  "zai-glm-5-4-loop-transformer-2026": {
+    "body": [
+      "Z.ai（旧 Zhipu AI）は2026年11月23日、旗艦モデル **GLM-5.4** を公開した。GLM-5 の約750Bパラメータのベースモデルのうち28層を、1トークンあたり2回通す **Loop Transformer** が特徴で、パラメータを増やさずに推論の深さを増やす設計だ。Z.ai によれば、2T〜3Tパラメータ級のモデルに匹敵する知能だという。ただしこれは自社の主張で、独立した検証は確認できていない。",
+      "変更点は3つある。フルサイズの GLM-5 系では初めてビジョン（画像・スクリーンショット入力）を追加し、コンテキストは100万トークンを維持した。Z.ai 自身の200件の実コーディングタスクでは、GLM-5.3 に対して勝率51.1%、敗北23.1%だった。Z.ai 自身はベンチマークスコアを公開していないが、独立系の KingBench 4 では 55.3%（19モデル中7位）と報じられている。数値はすべて Z.ai の発表値である。",
+      "仕組みは次のとおりだ。ループ化にあたり、ゲート付きの段階的更新で活性化の暴走を防ぎ、KV キャッシュはグローバル共有と局所スライディングウィンドウのハイブリッドで追加コストを1ウィンドウぶんに抑え、スパースアテンションのインデックスは1回目のループで作ったものを再利用する。30Bモデルでの等パラメータ比較では、計算量を約10%増やすだけで明確な改善が見られ、出力トークンは10〜14%減ったという（Z.ai の報告）。",
+      "利用と制約は次のとおりだ。GLM Coding Plan の加入者向けに ZCode と Z.ai Chat で提供が始まり、週あたりの利用枠は GLM-5.3 の1.5倍になった。API は安全評価の完了後、重みは安全強化の完了後に公開予定で、いずれも時期は未定だ。料金はプラン制（Lite 月18ドル、Pro 月80ドル、Max 月168ドル）で、API の従量料金は未発表。Z.ai 自身も認める弱点として、長く考え続ける「マラソン思考」のループに入りやすい点がある。",
+      "Z.ai は GLM-5.4 を「Generalized Coding」の出発点と位置づけている。コード生成の延長で動画、ゲーム、3Dモデリング、機械設計まで扱う構想で、デモとして自作のミュージックビデオ、6軸ロボットアームの CAD、ゲーム、3Dバードウォッチングなどを示した。次はさらに大きなモデルを予定しているという。"
+    ],
+    "primarySources": [
+      {
+        "title": "Toward Generalized Coding with Our First Loop Transformer",
+        "site": "Z.ai",
+        "url": "https://z.ai/blog/glm-5.4"
+      },
+      {
+        "title": "Zhipu's New GLM-5.4 AI Model Adds Image Input",
+        "site": "WinBuzzer",
+        "url": "https://winbuzzer.com/2026/11/23/zhipus-glm-5-4-adds-image-input-for-coding-xcxwbn/"
+      }
+    ]
+  },
+  "google-deepmind-gemini-quantum-algorithms-lean-2026": {
+    "body": [
+      "Google DeepMind と Google Quantum AI は2026年11月23日、**Gemini 4** のエージェントチームが量子アルゴリズムを改善し、**Lean** による形式検証で正しさとコストを証明したと発表した。論文は arXiv に公開し、Lean ライブラリ、問題の仕様、検証済みの解法を GitHub で公開した。",
+      "成果は次のとおりだ。慣性閉じ込め核融合の計算ではコストを11.8倍削減し、必要なメモリを5,650量子ビットから4,338量子ビットに減らした。光化学反応のシミュレーションは8倍、医薬品の代謝酵素チトクローム P450 は2.5倍（481量子ビットから333量子ビット）になった。Grover の探索アルゴリズムは2.57倍、arcsin の計算は290倍の高速化だ。いずれも将来の誤り訂正量子コンピュータでの実行を想定したリソース見積もりで、実際の量子ハードウェアで動かした結果ではない。",
+      "手法は次のとおりだ。問題ごとに独立したエージェントチームを立て、Lean のカーネルからのエラーを受けて候補を改善し、通ったものを共有ノートに載せる。4時間ごとにチーム間で仮想会議を開き、考えを交換した。Lean の量子ホア論理ライブラリを新たに作り、プログラムの正しさとコストを機械が検証できる形にした。大規模な実行には Gemini 4 Carbon を使った。",
+      "注意点もある。論文はプレプリントで査読は受けていない。比較の基準（ベースライン）は著者らが公開論文から自ら構築・調整したもので、290倍などの数値は著者らの見積もりに基づく。DeepMind は、この手法は量子計算のほかの領域や科学発見全般にも応用できるとしている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Finding faster quantum algorithms with agents and formal verification",
+        "site": "Google DeepMind",
+        "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/"
+      },
+      {
+        "title": "Discovering formally verified quantum programs with AI",
+        "site": "arXiv",
+        "url": "https://arxiv.org/html/2611.09822v3"
+      }
+    ]
+  },
+  "google-gemini-api-file-slicing-2026": {
+    "body": [
+      "Google は2026年11月23日、**Gemini API** にファイルスライシング機能を追加した。PDF、Office ファイル、音声、動画を API に渡す際、必要なページや範囲だけをサーバー側で切り出してモデルに読ませる。読んだ部分のトークンだけが課金される。",
+      "指定できるのは次のとおりだ。文書・スライドはページ範囲（start_page / end_page）、解像度（低・中・高）、内容の層（テキストか画像か）。表計算はシートとセル範囲、数式・値・図の層。動画・音声は時間区間とフレームレート・解像度。Office（docx、xlsx、pptx など）と OpenDocument 形式のネイティブアップロードにも対応した。",
+      "使い方は次のとおりだ。Files API に一度アップロードしたファイルの URI を複数のターンやツール呼び出しで使い回せる。エージェントは関数レスポンスの中で、次に読む範囲を自分で指定できる。まずテキスト抽出で全体を安くざっと読み、図表のあるページだけ高解像度で読む、といった使い方が想定されている。",
+      "効果として、Google はパートナーの検証結果を挙げている。Vercel の検証では文書ページのテキスト抽出が PDF 全体を描画するより14倍少ないトークンで済み、LiteLLM の検証では PDF で67%、ワークブックで33%のプロンプトトークン削減になったという。いずれもパートナーの検証結果で、独立した再計測は確認できていない。対象はすべての Gemini 4 モデルで、Google AI Studio と Gemini プラットフォーム（Vertex AI）で今日から使える。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing file slicing controls in the Gemini API",
+        "site": "Google",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/"
+      }
+    ]
+  },
+  "amazon-decart-ai-optimization-acquisition-2026": {
+    "body": [
+      "Amazon は11月23日、AI スタートアップ Decart の独自技術「Decart Optimization Stack（DOS）」を買収する契約を結んだと発表した。創業者3名（CEO の Dean Leitersdorf、Moshe Shalev、Orian Leitersdorf）を含む AI 研究者・エンジニアのチームが Amazon に加わる。買収額は Amazon は公表していないが、Bloomberg の報道では約75億ドルとされる。",
+      "狙いは推論とカスタムシリコンの最適化である。DOS は AI システムを高速化し、NVIDIA・Amazon・Google など複数のメーカーのチップ間で AI ワークロードを切り替えやすくするソフトウェアエンジンで、Amazon は2025年から Decart と協業して Trainium での性能向上に取り組んできた。Amazon の Peter DeSantis 上級副社長は「AI の飛躍はチップ1枚からより多くを引き出すことから始まる」と述べ、効率的なコンピュートが学習・強化学習・推論の改善と顧客コストの低減につながるとした。",
+      "Decart は2023年創業のスタートアップで、5月には Radical Ventures 主導のラウンドで3億ドルを調達し、NVIDIA が新規投資家として参加していた。PitchBook によれば直近の評価額は40億ドル弱で、報道額はそれを大きく上回る。Anthropic も9月に Decart の買収を検討したが、デューデリジェンスの末に見送ったと Bloomberg が報じている。",
+      "買収の完了は規制当局の承認を含む慣習的な条件次第とされる。背景には大手テックによる AI 人材・技術の獲得競争があり、Meta は昨年 Scale AI の49%株式を143億ドルで取得し、AMD は9月に World Labs を82億ドルで買収することに合意している。Amazon の発表は「買収する契約を結んだ」段階のもので、完了時期は示されていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Amazon to purchase Decart's AI optimization technology",
+        "site": "Amazon",
+        "url": "https://www.aboutamazon.com/news/company-news/amazon-decart-ai-optimization"
+      },
+      {
+        "title": "Amazon to buy Decart's AI chip optimization tech in latest AI talent grab",
+        "site": "Reuters",
+        "url": "https://www.reuters.com/business/retail-consumer/amazon-buy-decarts-ai-chip-optimization-tech-latest-ai-talent-grab-2026-11-23/"
+      }
+    ]
+  },
+  "meta-uma-nitro-release-2026": {
+    "body": [
+      "Meta の基礎 AI 研究部門 FAIR は11月20日、汎用原子モデル UMA（Universal Model for Atoms）の高速推論モード「UMA Nitro」を公開したと発表した。カリフォルニア州メンローパークで開かれた「Open Source AI for Science Summit」での発表で、Meta Newsroom のまとめ記事で公表された。",
+      "UMA Nitro は UMA の既定の推論モードとなり、従来の turbo モードは廃止された。FAIR の変更履歴によれば、NVIDIA H200 1基で1,000原子の分子動力学シミュレーションが約6 ns/日、150原子では生の推論スループット換算で約33 ns/日に相当し、最大15,000原子までの系に対応する。対象は uma-s-1p2p1 とそのファインチューン（d4rev、r2scan）で、Ampere / Hopper / Blackwell 世代の GPU で動作する。FlashUMA の成果を取り込んだ実装で、速度と引き換えに精度を一部落とす設計だとされる。",
+      "応用面では、カーネギーメロン大学と UC リバーサイドとの研究で、UMA モデルが追加の学習データなしに医薬品分子の複数の結晶形を特定したとされる。分子を可視化して結合の生成・切断や化学反応を探索できる「UMA Playground」も公開された。",
+      "同サミットでは、Lean で26冊のオープンアクセス教科書を形式化し、45,000件超のコンピュータ検証済み定義・結果を収めたライブラリ「ATLAS」や、脳研究の「Digital Brain Project」の拡大も発表された。UMA Nitro の数値は Meta 自身の公表値で、独立した検証はまだない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Advancing Science Together: Highlights From the Open Source AI for Science Summit",
+        "site": "Meta Newsroom",
+        "url": "https://about.fb.com/news/2026/11/advancing-science-together-highlights-from-the-open-source-ai-for-science-summit/"
+      },
+      {
+        "title": "UMA Release Changelog",
+        "site": "FAIR Chemistry",
+        "url": "https://facebookresearch.github.io/fairchem/uma-changelog/"
+      }
+    ]
+  },
+  "walmart-agent-gateway-meta-muse-2026": {
+    "body": [
+      "Walmart は11月23日、10月21日に発表した「Agent Gateway」を Meta の AI エージェント Muse 対応で稼働開始した。The Verge が報じた。Muse は Walmart の AI アシスタント Sparky 経由で商品を探し、Black Friday のセール品を含め会話の中で買い物から決済までを完結できる。Walmart は Muse 対応を「始まりにすぎない」とし、他のエージェントやアプリ向けの Walmart ショッピング体験も準備中だとしている。",
+      "仕組みは、顧客の Walmart アカウント内にエージェント専用の「Agent Profile」を作るものだ。初めてカートに商品を入れる際に Agent Profile を設定し、自分が許容できる支出上限を決める。決済は Walmart アカウントに保存されたカードで行われ、価格は Walmart.com と同じで返品ポリシーも適用される。エージェントは顧客の購入履歴を共有されず、カード情報を受け取ることもないとされる。",
+      "公開当日の日程は一度混乱した。The Verge の記事には、公開後に Walmart から「11月24日に延期する」との連絡があったとする更新と、その後「延期はなく11月23日にロールアウトする」との再連絡があったとする更新が同日付で並んでいる。最終的には11月23日の稼働開始とされている。",
+      "背景には、AI エージェントの買い物への対応をめぐる小売り各社の対照的な姿勢がある。The Verge によれば Amazon や eBay は AI エージェントによるプラットフォーム閲覧をブロックしているのに対し、Walmart は ChatGPT や Gemini との連携も含め、ゲートウェイ経由の受け入れを選んでいる。ただし Gateway 全体は招待制の早期ベータで、利用できる範囲には制限があるとされる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Meta Muse can do your Black Friday shopping at Walmart",
+        "site": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1039874/walmart-agent-gateway-meta-muse-black-friday"
+      },
+      {
+        "title": "Making It Possible for Agents to Shop on Behalf of Customers",
+        "site": "Walmart",
+        "url": "https://corporate.walmart.com/news/2026/10/Making-It-Possible-for-Agents-to-Shop-on-Behalf-of-Customers"
       }
     ]
   }
