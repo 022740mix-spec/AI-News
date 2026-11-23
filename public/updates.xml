@@ -5,8 +5,40 @@
   <link rel="alternate" type="text/html" href="./?view=updates"/>
   <link rel="self" type="application/atom+xml" href="./updates.xml"/>
   <id>tag:ai-tool-news.jp,2026:updates</id>
-  <updated>2026-11-22T15:00:00Z</updated>
+  <updated>2026-11-23T15:00:00Z</updated>
   <generator>ai-news-generate-updates</generator>
+  <entry>
+    <title>【訂正】Google、攻撃者がパッチをエクスプロイトへ自動変換する初の事例を確認 — 脆弱性の発見から実行まで人手を介さず</title>
+    <link rel="alternate" type="text/html" href="?a=google-gtig-exploit-agent-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:google-gtig-exploit-agent-2026:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）ARTEX、CAIRN、CyberStrikeAI、PentAGI が実際の侵入の一部で使われている →（正）ARTEX、CAIRN、PentAGI が実際の侵入の一部で使われている</summary>
+  </entry>
+  <entry>
+    <title>【訂正】悪意あるウェブページ 1枚で Meta の Muse を乗っ取り — NebuSec が Sentinel 迂回と VM の root 奪取を実証</title>
+    <link rel="alternate" type="text/html" href="?a=meta-muse-nebusec-sentinel-bypass-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:meta-muse-nebusec-sentinel-bypass-2026:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>Cloud Security Alliance の研究ノートの日付「11月21日」を削除した</summary>
+  </entry>
+  <entry>
+    <title>【訂正】Grok Bot が夜間に社内データへ無断アクセスを試みた — NewCore が 5日間で 31件を確認、先回りチェックインは「仕様通り」</title>
+    <link rel="alternate" type="text/html" href="?a=newcore-grok-bot-proactive-checkins-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:newcore-grok-bot-proactive-checkins-2026:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）SpaceXSI の担当者は Ars Technica の取材に回答しなかった →（正）NewCore が xAI のメディアチームに公式見解を求めたが、得られなかった</summary>
+  </entry>
+  <entry>
+    <title>【訂正】OpenAI、外部評価者を社内に常駐させる「組み込み評価」第1段階を開始 — Apollo ら 4団体が訓練中のモデルを検証</title>
+    <link rel="alternate" type="text/html" href="?a=openai-embedded-assessments-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:openai-embedded-assessments-2026:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）OpenAI のこれまでで最大のフロンティア強化学習の実行 →（正）OpenAI の大規模なフロンティア強化学習の実行</summary>
+  </entry>
   <entry>
     <title>【追記】Anthropic が Nasdaq に上場 — 初日は $97.17 で引け、公開価格 $83 を 17% 上回る。調達額 $81.3B は米国史上最大</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-ipo-first-day-trading-2026#article-history"/>
@@ -1174,37 +1206,5 @@
     <updated>2026-08-11T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
     <summary>★3.5→4 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（3.85）…</summary>
-  </entry>
-  <entry>
-    <title>【訂正】John Jumper（2024年ノーベル化学賞）が Google DeepMind → Anthropic 移籍 — Shazeer に続く Google AI 人材流出の第2波</title>
-    <link rel="alternate" type="text/html" href="?a=john-jumper-google-deepmind-to-anthropic-nobel-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:john-jumper-google-deepmind-to-anthropic-nobel-2026:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>（誤）newsDate を 2026-06-26 と記載 →（正）2026年6月19日</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Midjourney V8 レビュー — 画像生成の王者、V8.1 で既定モデルに</title>
-    <link rel="alternate" type="text/html" href="?a=midjourney-v8-review#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:midjourney-v8-review:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>★4.5→4 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（4）と乖離していました</summary>
-  </entry>
-  <entry>
-    <title>【訂正】【月刊まとめ】2026年3月の AI 開発ツール動向 — エージェント競争激化・M&amp;A加速・規制の転換点</title>
-    <link rel="alternate" type="text/html" href="?a=monthly-roundup-2026-march#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:monthly-roundup-2026-march:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>「Anysphere（Cursor 親会社）が Windsurf を買収」とする記述および関連リンクを削除しました</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Nano Banana 2 レビュー — Google 発、Flash 級の速度で Pro 品質の画像生成</title>
-    <link rel="alternate" type="text/html" href="?a=nano-banana-2-review#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:nano-banana-2-review:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>★4→4.5 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（4.35）…</summary>
   </entry>
 </feed>

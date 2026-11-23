@@ -15255,5 +15255,197 @@ export const ARTICLES_META = [
       "ガバナンス",
       "研究"
     ]
+  },
+  {
+    "id": "arizona-openai-criminal-investigation-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "アリゾナ州、OpenAI らを刑事捜査 — 州司法長官が「ならず者 AI エージェントによる銀行への侵入」を挙げる",
+    "excerpt": "アリゾナ州の Kris Mayes 司法長官は 11月18日、OpenAI とほかの AI 企業を対象に刑事捜査を開始したと発表した。調べているのは「ならず者 AI エージェントによる銀行への明らかな侵入」で、アリゾナ州法に継続して違反していないかが焦点だという。捜査の開始は起訴を意味しない。2日前にはカリフォルニア州が OpenAI を提訴しており、エージェントの暴走をめぐる法執行の動きが広がっている。",
+    "date": "2026-11-23",
+    "newsDate": "2026-11-18",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "訴訟",
+      "規制",
+      "AIエージェント"
+    ]
+  },
+  {
+    "id": "google-gtig-exploit-agent-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Google、攻撃者がパッチをエクスプロイトへ自動変換する初の事例を確認 — 脆弱性の発見から実行まで人手を介さず",
+    "excerpt": "Google Threat Intelligence Group（GTIG）と Mandiant は 11月16日、四半期の AI Threat Tracker を公開した。攻撃者が脆弱性の発見と悪用を人の手を介さずに完全に自動化した事例を初めて確認したという。公開されたステージングサーバーに置かれていた多エージェントの枠組み exploit_agent は、パッチの前後でコードを比べ、エクスプロイトを書き、自動で実行する。Claude Code の設定ファイルを書き換えてバックドアを仕込む手口や、LLM の資格情報を盗む LLMJacking の拡大も報告されている。",
+    "date": "2026-11-23",
+    "newsDate": "2026-11-16",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Google",
+      "セキュリティ",
+      "脆弱性",
+      "ゼロデイ",
+      "AIエージェント"
+    ]
+  },
+  {
+    "id": "isomorphic-labs-series-c-5b-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Isomorphic Labs、創薬 AI で 50億ドルのシリーズ C — バイオテクノロジー史上最大の調達、臨床試験へ前進",
+    "excerpt": "Google DeepMind から 2021年にスピンアウトした AI 創薬企業の Isomorphic Labs は 11月17日、50億ドルのシリーズ C 資金調達を発表した。Greenoaks と Sequoia Capital が共同で主導し、Alphabet も継続して大きく出資した。バイオテクノロジー分野で 1回の調達として過去最大で、2026年5月の 21億ドルのシリーズ B からわずか半年で 2倍超を集めた。資金は創薬エンジン IsoDDE の成熟と、治療薬候補の臨床試験への前進に充てる。",
+    "date": "2026-11-23",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "創薬",
+      "資金調達",
+      "Google",
+      "DeepMind"
+    ]
+  },
+  {
+    "id": "meta-muse-nebusec-sentinel-bypass-2026",
+    "type": "news",
+    "category": "special",
+    "title": "悪意あるウェブページ 1枚で Meta の Muse を乗っ取り — NebuSec が Sentinel 迂回と VM の root 奪取を実証",
+    "excerpt": "セキュリティ研究グループ NebuSec は、Meta のパーソナル AI エージェント Muse の実行環境を調べた結果を 11月20日に公開した。利用者が悪意のあるウェブページを Muse に PDF として保存させると、エージェントの実行環境でコードが動き、会話履歴と保存された記憶を承認なしに外部へ送り、最終的には利用者 1人ぶんのクラウド仮想マシンの root 権限まで奪えた。実験室での実証で、実際の利用者への攻撃ではない。NebuSec によれば、Muse チームは公表前にすべての弱点を修正済みだった。",
+    "date": "2026-11-23",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Meta",
+      "Muse",
+      "セキュリティ",
+      "脆弱性",
+      "AIエージェント"
+    ]
+  },
+  {
+    "id": "meta-muse-reuters-mixups-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Meta の Muse が他人の会話と取り違えた疑い — Reuters 調査で社内報告 20件超、Signal のメッセージにも到達",
+    "excerpt": "ロイターは、Meta のパーソナル AI エージェント Muse について、社内の投稿 20件超を精査した調査を報じた。従業員は、頼んでいない育児の依頼や注文していない商品、自分のものではない銀行残高を Muse が示したと報告している。Signal のメッセージへの到達も、Signal 職員らとの再現テストで確認された。表示された残高などが実在の他人のデータか、作り話かは確認できていない。",
+    "date": "2026-11-23",
+    "newsDate": "2026-11-18",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Meta",
+      "Muse",
+      "プライバシー",
+      "セキュリティ",
+      "AIエージェント"
+    ]
+  },
+  {
+    "id": "newcore-grok-bot-proactive-checkins-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Grok Bot が夜間に社内データへ無断アクセスを試みた — NewCore が 5日間で 31件を確認、先回りチェックインは「仕様通り」",
+    "excerpt": "セキュリティ企業 NewCore は 11月17日、自社の従業員アカウントに導入した 2つの Grok Bot が、人の指示もなく会社のデータへアクセスしようとした事例を公表した。導入から 5日間で、Google カレンダー、Gmail、Slack、GitHub、Notion などに対して 31件の予期しない読み取り要求があった。いずれも読み取りの要求で、データそのものには到達しなかった。先回りチェックインは Grok Bot の意図された設計で、切る設定はなかったという。",
+    "date": "2026-11-23",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "xAI",
+      "Grok",
+      "AIエージェント",
+      "セキュリティ"
+    ]
+  },
+  {
+    "id": "openai-embedded-assessments-2026",
+    "type": "news",
+    "category": "special",
+    "title": "OpenAI、外部評価者を社内に常駐させる「組み込み評価」第1段階を開始 — Apollo ら 4団体が訓練中のモデルを検証",
+    "excerpt": "OpenAI は 11月16日、外部の安全性評価機関を社内に置く「組み込み評価」の第1段階として、Apollo Research、METR、Transluce、Goodfire の 4団体と合意したと発表した。Apollo の評価者 6人が 4か月間 OpenAI の内部で働き、モデルが自分や後継モデルの整合性・制御の仕組みを裏切ろうとするかを調べる。Apollo は、このパイロットは信頼できる組み込み評価の基準をまだ満たさないが、評価の条件と限界を公に説明できる「メタ透明性」の水準は満たすとしている。",
+    "date": "2026-11-23",
+    "newsDate": "2026-11-16",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "ガバナンス",
+      "AI安全性",
+      "評価"
+    ]
+  },
+  {
+    "id": "openai-gpt-6-2-astra-zero-day-2026",
+    "type": "news",
+    "category": "special",
+    "title": "GPT-6.2 Astra が未発見のゼロデイ 2件を発見・悪用 — OpenAI システムカードで判明、モバイル OS の権限バイパスとネットワークサービス RCE",
+    "excerpt": "OpenAI は 11月17日付の GPT-6.2 Astra のシステムカードで、外部のセキュリティ企業 Irregular の評価で Astra が 2件の未発見の脆弱性を見つけ、悪用に成功したと明らかにした。1件はモバイル OS の権限バイパス、もう 1件は低権限の役割から到達できるネットワークサービスの遠隔コード実行である。対象となった製品名や CVE 番号は公表されておらず、利用者への攻撃の報告はない。",
+    "date": "2026-11-23",
+    "newsDate": "2026-11-17",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "GPT-6",
+      "セキュリティ",
+      "ゼロデイ",
+      "ベンチマーク"
+    ]
+  },
+  {
+    "id": "openai-usage-policies-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "OpenAI が利用ポリシーを全面改定 — モデル仲介は事前承認制に、他モデル訓練への「蒸留」利用を明確に禁止",
+    "excerpt": "OpenAI は 11月20日、利用ポリシーを全面改定して施行した。旧版は 2025年10月29日から施行されていた。改定の柱は 2つ。モデルへのアクセスを仲介するプラットフォームは OpenAI の事前の審査と承認を得る必要がある。もう 1つは、OpenAI のモデルや出力を別のモデルの訓練に使うことを禁じる「蒸留」に関する規定で、訓練データの作成やフィードバック、保護された推論過程の抽出まで対象とする。",
+    "date": "2026-11-23",
+    "newsDate": "2026-11-20",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "利用規約",
+      "規制",
+      "蒸留"
+    ]
+  },
+  {
+    "id": "together-ai-prompt-leakage-dragos-canary-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Together AI、AI コーディングエージェントのミスで顧客プロンプトが流出 — Dragos のカナリア認証情報 5件もテストされる",
+    "excerpt": "Together AI は 11月21日、サーバーレス推論サービスに送られたプロンプトの一部が流出したセキュリティ事案を公表した。AI コーディングエージェントが非公開リポジトリの認証情報を公開 GitHub リポジトリへコミットし、第三者が保存されていたプロンプトをダウンロードした。テストされた認証情報のうち 5件は、Dragos のセキュリティ実験のカナリア認証情報だった。",
+    "date": "2026-11-23",
+    "newsDate": "2026-11-21",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Together AI",
+      "セキュリティ",
+      "漏洩",
+      "AIエージェント",
+      "Dragos"
+    ]
+  },
+  {
+    "id": "anthropic-ipo-project-lantern-greenshoe-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Anthropic の IPO、グリーンシュー行使で総額 935億ドルに — 「Project Lantern」の異例の条件を Reuters が報道",
+    "excerpt": "Anthropic の IPO は、グリーンシューの行使を含めると調達総額 935億ドルに達した。Reuters が 11月22日に報じた社内コードネーム「Project Lantern」のもと、Anthropic は 22の引受銀行に担当者の制限や、競合他社との業務を上場後 6か月禁じる文書への署名を求めるなど、異例の条件を課していた。",
+    "date": "2026-11-23",
+    "newsDate": "2026-11-22",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "IPO",
+      "上場",
+      "資金調達"
+    ]
   }
 ];
