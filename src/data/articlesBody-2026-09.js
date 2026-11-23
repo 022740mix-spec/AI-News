@@ -1563,7 +1563,9 @@ const ARTICLES_BODY_2026_09 = {
       "提供範囲は Claude Code・Claude Enterprise・Claude Platform・Amazon Bedrock・Google Agent Platform・Microsoft Foundry と幅広く、この秋から段階的に展開される。EFS の準備が整うまでの間、対象顧客には Fable 5 / Fable 5.1 でのゼロデータ保持が提供されるという。",
       "報じられている仕様で見落とせないのは、EFS下でも**Anthropic は保存されたデータへの閲覧権自体は保持する**とされている点である。理由として不正利用検知が挙げられており、保存場所を顧客管理のクラウドに移したことと、Anthropic がそのデータを見られるかどうかは別の話になる。この構図をどう評価するかは意見が分かれるところで、「保存場所の主権を顧客に返した前進」と見ることもできれば、「ゼロデータ保持という呼称ほどにはAnthropicからデータが切り離されていない」と見ることもできる。本記事はどちらの評価が妥当かを判断せず、両方の見方が成立しうる事実関係を提示するにとどめる。",
       "この発表の背景には、企業顧客からのデータ保持ポリシーに対する反発があったと報じられている。エージェントが長時間・広範囲にわたってツールを実行する形態が広がるほど、「何のために」「どこに」利用データを残すかという論点は、料金や性能とは別軸の採用判断材料になりつつある。",
-      "本記事の情報は、CNBC・MarkTechPost・Unite.AI・AI Weekly 等の複数の技術メディア報道を検索経由で突き合わせて確認したものである。Anthropic 公式発表（anthropic.com/news/enterprise-frontier-safeguards）自体は本稿執筆時点のネットワーク環境から直接到達できておらず、直接閲覧はできていない。"
+      "本記事の情報は、CNBC・MarkTechPost・Unite.AI・AI Weekly 等の複数の技術メディア報道を検索経由で突き合わせて確認したものである。Anthropic 公式発表（anthropic.com/news/enterprise-frontier-safeguards）自体は本稿執筆時点のネットワーク環境から直接到達できておらず、直接閲覧はできていない。",
+      "【追記 2026-11-23】Anthropic は11月23日、Enterprise Frontier Safeguards（EFS）をパブリックベータとして提供開始したと発表した。9月の発表以来、100社超の顧客（Fortune 100 の約4分の1を含む）とともに開発を進めてきた。仕組みは9月の発表時と同じで、監視に使う利用データは顧客自身が管理するクラウドストレージ（Amazon S3、Google Cloud Storage）に保存され、暗号鍵は顧客が管理する。アクセスできるのは自動化された安全性監視のみで、オペレーターによる人間レビューはなく、データが学習に使われることもないという。対象プラットフォームは Claude Platform、AWS 上の Claude Platform、Amazon Bedrock、Google Cloud 上の Claude で、Microsoft Foundry への対応も近く予定されている。なお、EFS を使わない場合、Fable 5.2 / Mythos 5.2 では原則30日間のデータ保持が求められる。",
+      "9月の記事で触れた「Anthropic は保存データへの閲覧権自体は保持する」という点について、今回の公式発表は、アクセスできるのは自動化された安全性監視のみで、人間によるレビューはないとしている。保存場所の主権が顧客にあることと、Anthropic が自動監視のためにデータにアクセスできることは、引き続き別の話として理解する必要がある。"
     ],
     "primarySources": [
       {
@@ -1573,6 +1575,11 @@ const ARTICLES_BODY_2026_09 = {
       {
         "title": "Anthropic Announces Enterprise Frontier Safeguards, Customer-Held Data",
         "url": "https://www.unite.ai/anthropic-announces-enterprise-frontier-safeguards-customer-held-data/"
+      },
+      {
+        "title": "Zero data retention with Enterprise Frontier Safeguards",
+        "site": "Anthropic",
+        "url": "https://claude.com/resources/articles/zero-data-retention-with-enterprise-frontier-safeguards"
       }
     ]
   },

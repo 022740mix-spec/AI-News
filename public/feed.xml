@@ -5,8 +5,72 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-11-23T15:00:00Z</updated>
+  <updated>2026-11-24T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Anthropic が Claude Ship を発表 — PR のレビュー・修正・承認をエージェントが担当、Team / Enterprise 向けベータ</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-ship-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-ship-2026</id>
+    <published>2026-11-24T15:00:00Z</published>
+    <updated>2026-11-24T15:00:00Z</updated>
+    <summary>Anthropic が Claude Ship をベータで公開した。プルリクエストのレビュー、修正、承認判断を Claude が担い、コードを書く速さに後工程を追いつかせる。Claude Team と Enterprise 向けで、GitHub のリポジトリが対象。</summary>
+  </entry>
+  <entry>
+    <title>バージニア州とオレゴン州が SpaceX を提訴 — Grok が同意のない性的画像を生成したと主張</title>
+    <link rel="alternate" type="text/html" href="?a=virginia-oregon-sue-spacex-grok-deepfakes-2026"/>
+    <id>tag:ai-tool-news.jp,2026:virginia-oregon-sue-spacex-grok-deepfakes-2026</id>
+    <published>2026-11-24T15:00:00Z</published>
+    <updated>2026-11-24T15:00:00Z</updated>
+    <summary>バージニア州とオレゴン州の司法長官が SpaceX と子会社の X、xAI を提訴した。Grok が実在の人物の写真から同意のない性的画像を作れたとし、州の消費者保護法に違反すると主張している。提訴は主張の段階で、裁判所の判断はまだ出ていない。</summary>
+  </entry>
+  <entry>
+    <title>Z.ai が GLM-5.4 を公開 — 28層を2回通す Loop Transformer、750B規模でビジョンを追加</title>
+    <link rel="alternate" type="text/html" href="?a=zai-glm-5-4-loop-transformer-2026"/>
+    <id>tag:ai-tool-news.jp,2026:zai-glm-5-4-loop-transformer-2026</id>
+    <published>2026-11-24T15:00:00Z</published>
+    <updated>2026-11-24T15:00:00Z</updated>
+    <summary>Z.ai が旗艦モデル GLM-5.4 を公開した。GLM-5 の約750Bパラメータのうち28層を2回通す Loop Transformer で、パラメータを増やさず推論の深さを増やす。ビジョンを追加し、コンテキストは100万トークン。Z.ai 自身はベンチマークスコアを公開していないが、独立系の KingBench 4 では 55.3%（19モデル中7位）と報じられている。</summary>
+  </entry>
+  <entry>
+    <title>DeepMind、Gemini 4 のエージェントチームで量子アルゴリズムを改善 — Lean で形式検証、最大290倍の効率化</title>
+    <link rel="alternate" type="text/html" href="?a=google-deepmind-gemini-quantum-algorithms-lean-2026"/>
+    <id>tag:ai-tool-news.jp,2026:google-deepmind-gemini-quantum-algorithms-lean-2026</id>
+    <published>2026-11-24T15:00:00Z</published>
+    <updated>2026-11-24T15:00:00Z</updated>
+    <summary>Google DeepMind と Google Quantum AI が、Gemini 4 のエージェントチームによる量子アルゴリズムの改善を発表した。Lean による形式検証で正しさとコストを証明し、核融合の計算で11.8倍、arcsin の計算で290倍の効率化を報告した。論文はプレプリント。</summary>
+  </entry>
+  <entry>
+    <title>Gemini API にファイルの部分読み取り機能 — PDF の指定ページや表の指定範囲だけを読み、トークン課金を抑制</title>
+    <link rel="alternate" type="text/html" href="?a=google-gemini-api-file-slicing-2026"/>
+    <id>tag:ai-tool-news.jp,2026:google-gemini-api-file-slicing-2026</id>
+    <published>2026-11-24T15:00:00Z</published>
+    <updated>2026-11-24T15:00:00Z</updated>
+    <summary>Google が Gemini API にファイルスライシング機能を追加した。PDF、Office ファイル、音声、動画を渡す際、必要なページや範囲だけをサーバー側で切り出してモデルに読ませる。読んだ部分のトークンだけが課金される。</summary>
+  </entry>
+  <entry>
+    <title>Amazon が Decart の AI 最適化技術を買収へ — 報道額は約75億ドル、Trainium の性能向上が狙い</title>
+    <link rel="alternate" type="text/html" href="?a=amazon-decart-ai-optimization-acquisition-2026"/>
+    <id>tag:ai-tool-news.jp,2026:amazon-decart-ai-optimization-acquisition-2026</id>
+    <published>2026-11-24T15:00:00Z</published>
+    <updated>2026-11-24T15:00:00Z</updated>
+    <summary>Amazon が11月23日、AI スタートアップ Decart の独自技術「Decart Optimization Stack（DOS）」を買収する契約を結んだと発表した。創業者3名を含む研究・エンジニアチームが Amazon に加わる。買収額は Amazon 非公表だが、Bloomberg 報道では約75億ドルとされる。狙いは推論とカスタムシリコン Trainium の性能向上で、Anthropic は9月に買収を検討した末に見送っていた。</summary>
+  </entry>
+  <entry>
+    <title>Meta、原子シミュレーション高速化の「UMA Nitro」を公開 — H200 1基で1,000原子の分子動力学を約6 ns/日</title>
+    <link rel="alternate" type="text/html" href="?a=meta-uma-nitro-release-2026"/>
+    <id>tag:ai-tool-news.jp,2026:meta-uma-nitro-release-2026</id>
+    <published>2026-11-24T15:00:00Z</published>
+    <updated>2026-11-24T15:00:00Z</updated>
+    <summary>Meta の FAIR は11月20日、汎用原子モデル UMA（Universal Model for Atoms）の高速推論モード「UMA Nitro」を公開したと発表した。カリフォルニア州メンローパークで開かれた「Open Source AI for Science Summit」での発表。FAIR の変更履歴によれば、NVIDIA H200 1基で1,000原子の分子動力学シミュレーションが約6 ns/日、150原子では生の推論スループット換算で約33 ns/日に相当し、最大15,000原子までの系に対応する。</summary>
+  </entry>
+  <entry>
+    <title>Walmart の Agent Gateway が Meta Muse 対応で稼働開始 — 会話内で買い物から決済まで、Black Friday 直前</title>
+    <link rel="alternate" type="text/html" href="?a=walmart-agent-gateway-meta-muse-2026"/>
+    <id>tag:ai-tool-news.jp,2026:walmart-agent-gateway-meta-muse-2026</id>
+    <published>2026-11-24T15:00:00Z</published>
+    <updated>2026-11-24T15:00:00Z</updated>
+    <summary>Walmart は11月23日、10月21日に発表した「Agent Gateway」を Meta の AI エージェント Muse 対応で稼働開始した。Muse は Walmart の AI アシスタント Sparky 経由で商品を探し、Black Friday のセール品を含め会話の中で買い物から決済までを完結できる。Walmart は Muse 対応を「始まりにすぎない」とし、他のエージェントやアプリ向けの体験も準備中だとしている。</summary>
+  </entry>
   <entry>
     <title>推論プロバイダー3社で顧客プロンプトが盗まれていた — Dragos のカナリア調査で発覚、OpenRouter は 3社を排除・125 エンドポイントの ZDR を停止</title>
     <link rel="alternate" type="text/html" href="?a=dragos-canary-prompt-theft-openrouter-2026"/>

@@ -11,9 +11,9 @@ import BODY_2026_05 from "./articlesBody-2026-05.js?v=230d9409408e";
 import BODY_2026_06 from "./articlesBody-2026-06.js?v=1cc0a2a61a48";
 import BODY_2026_07 from "./articlesBody-2026-07.js?v=6c1cf8dcf42e";
 import BODY_2026_08 from "./articlesBody-2026-08.js?v=c78b7bda5b0c";
-import BODY_2026_09 from "./articlesBody-2026-09.js?v=2e5454237b20";
+import BODY_2026_09 from "./articlesBody-2026-09.js?v=35f2cad3c740";
 import BODY_2026_10 from "./articlesBody-2026-10.js?v=0eb540090e5a";
-import BODY_2026_11 from "./articlesBody-2026-11.js?v=6f7e87118f74";
+import BODY_2026_11 from "./articlesBody-2026-11.js?v=0db1781e69ba";
 
 const ARTICLES_BODY = {
   ...BODY_2026_03,
