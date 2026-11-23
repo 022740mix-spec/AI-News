@@ -2205,7 +2205,7 @@ export const ARTICLES_META = [
       "alt": "ターミナル画面"
     },
     "heroScope": "none",
-    "lastReviewed": "2026-09-30",
+    "lastReviewed": "2026-11-23",
     "reviewCadence": "monthly"
   },
   {
@@ -2230,7 +2230,7 @@ export const ARTICLES_META = [
       "alt": "コードエディタ"
     },
     "heroScope": "none",
-    "lastReviewed": "2026-09-30",
+    "lastReviewed": "2026-11-23",
     "reviewCadence": "monthly"
   },
   {
@@ -2258,7 +2258,7 @@ export const ARTICLES_META = [
       "alt": "データ分析"
     },
     "heroScope": "none",
-    "lastReviewed": "2026-09-30",
+    "lastReviewed": "2026-11-23",
     "reviewCadence": "monthly"
   },
   {
@@ -3126,7 +3126,7 @@ export const ARTICLES_META = [
       "オープンソース",
       "Gemini"
     ],
-    "lastReviewed": "2026-09-30",
+    "lastReviewed": "2026-11-23",
     "reviewCadence": "monthly",
     "ratings": {
       "AI品質": 4,
@@ -3158,7 +3158,7 @@ export const ARTICLES_META = [
       "src": "logos/codex.svg",
       "alt": "Codex"
     },
-    "lastReviewed": "2026-09-30",
+    "lastReviewed": "2026-11-23",
     "reviewCadence": "monthly",
     "ratings": {
       "AI品質": 5,
@@ -3233,7 +3233,7 @@ export const ARTICLES_META = [
       "エージェント",
       "おすすめ"
     ],
-    "lastReviewed": "2026-09-30",
+    "lastReviewed": "2026-11-23",
     "reviewCadence": "monthly",
     "ratings": {
       "AI品質": 5,
@@ -3261,7 +3261,7 @@ export const ARTICLES_META = [
       "Anysphere",
       "おすすめ"
     ],
-    "lastReviewed": "2026-09-30",
+    "lastReviewed": "2026-11-23",
     "reviewCadence": "monthly",
     "ratings": {
       "AI品質": 4,
@@ -3289,7 +3289,7 @@ export const ARTICLES_META = [
       "GitHub Copilot",
       "エンタープライズ"
     ],
-    "lastReviewed": "2026-09-30",
+    "lastReviewed": "2026-11-23",
     "reviewCadence": "monthly",
     "ratings": {
       "AI品質": 5,
@@ -3445,7 +3445,7 @@ export const ARTICLES_META = [
       "Anysphere",
       "おすすめ"
     ],
-    "lastReviewed": "2026-09-30",
+    "lastReviewed": "2026-11-23",
     "reviewCadence": "monthly",
     "ratings": {
       "AI品質": 5,
@@ -3472,7 +3472,7 @@ export const ARTICLES_META = [
       "無料",
       "買収"
     ],
-    "lastReviewed": "2026-03-28",
+    "lastReviewed": "2026-11-23",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 4,
@@ -4073,7 +4073,7 @@ export const ARTICLES_META = [
       "LLM",
       "おすすめ"
     ],
-    "lastReviewed": "2026-05-12",
+    "lastReviewed": "2026-11-23",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 4,
@@ -4101,7 +4101,7 @@ export const ARTICLES_META = [
       "LLM",
       "おすすめ"
     ],
-    "lastReviewed": "2026-05-12",
+    "lastReviewed": "2026-11-23",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 5,
@@ -4129,7 +4129,7 @@ export const ARTICLES_META = [
       "オープンソース",
       "MoE"
     ],
-    "lastReviewed": "2026-05-12",
+    "lastReviewed": "2026-11-23",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 4,
@@ -4155,7 +4155,7 @@ export const ARTICLES_META = [
       "Anthropic",
       "LLM"
     ],
-    "lastReviewed": "2026-06-05",
+    "lastReviewed": "2026-11-23",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 4,
@@ -4181,7 +4181,7 @@ export const ARTICLES_META = [
       "OpenAI",
       "LLM"
     ],
-    "lastReviewed": "2026-06-05",
+    "lastReviewed": "2026-11-23",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 4,
@@ -4207,7 +4207,7 @@ export const ARTICLES_META = [
       "Google",
       "LLM"
     ],
-    "lastReviewed": "2026-03-29",
+    "lastReviewed": "2026-11-23",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 4,
@@ -4234,7 +4234,7 @@ export const ARTICLES_META = [
       "オープンソース",
       "MoE"
     ],
-    "lastReviewed": "2026-03-29",
+    "lastReviewed": "2026-11-23",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 3,
@@ -4260,7 +4260,7 @@ export const ARTICLES_META = [
       "Anthropic",
       "LLM"
     ],
-    "lastReviewed": "2026-07-07",
+    "lastReviewed": "2026-11-23",
     "ratings": {
       "AI品質": 3,
       "使いやすさ": 4,
@@ -4829,7 +4829,7 @@ export const ARTICLES_META = [
       "推論",
       "MoE"
     ],
-    "lastReviewed": "2026-03-29",
+    "lastReviewed": "2026-11-23",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 3,
@@ -4856,7 +4856,7 @@ export const ARTICLES_META = [
       "オープンソース",
       "Alibaba"
     ],
-    "lastReviewed": "2026-03-29",
+    "lastReviewed": "2026-11-23",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 3,
@@ -8262,7 +8262,7 @@ export const ARTICLES_META = [
       "LLM",
       "エージェント"
     ],
-    "lastReviewed": "2026-08-11",
+    "lastReviewed": "2026-11-23",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 4,
@@ -11521,7 +11521,7 @@ export const ARTICLES_META = [
       "Sol",
       "Luna"
     ],
-    "lastReviewed": "2026-09-30",
+    "lastReviewed": "2026-11-23",
     "reviewCadence": "monthly",
     "ratings": {
       "AI品質": 4.5,
@@ -11551,7 +11551,7 @@ export const ARTICLES_META = [
       "LLM",
       "エージェント"
     ],
-    "lastReviewed": "2026-09-30",
+    "lastReviewed": "2026-11-23",
     "reviewCadence": "monthly",
     "ratings": {
       "AI品質": 4.5,
@@ -11581,7 +11581,7 @@ export const ARTICLES_META = [
       "LLM",
       "エージェント"
     ],
-    "lastReviewed": "2026-09-30",
+    "lastReviewed": "2026-11-23",
     "reviewCadence": "monthly",
     "ratings": {
       "AI品質": 4,
@@ -11611,8 +11611,8 @@ export const ARTICLES_META = [
       "Mythos",
       "LLM"
     ],
-    "lastReviewed": "2026-09-30",
-    "reviewCadence": "monthly",
+    "lastReviewed": "2026-11-23",
+    "reviewCadence": null,
     "ratings": {
       "AI品質": 4.5,
       "使いやすさ": 3,
@@ -11642,8 +11642,8 @@ export const ARTICLES_META = [
       "エージェント",
       "ベンチマーク"
     ],
-    "lastReviewed": "2026-09-30",
-    "reviewCadence": "monthly",
+    "lastReviewed": "2026-11-23",
+    "reviewCadence": null,
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 4,
@@ -14041,7 +14041,7 @@ export const ARTICLES_META = [
       "エージェント",
       "ベンチマーク"
     ],
-    "lastReviewed": "2026-11-15",
+    "lastReviewed": "2026-11-23",
     "reviewCadence": "monthly",
     "ratings": {
       "AI品質": 4.5,

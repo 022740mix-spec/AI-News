@@ -741,7 +741,8 @@ const ARTICLES_BODY_2026_06 = {
       "【追記 2026-09-30】Antigravity 2.0 は Antigravity のデスクトップアプリで、Antigravity CLI と同じ agent harness を共有する。Google は Gemini CLI の個人向け提供を Antigravity CLI に移行するとした（当事者の発表）。",
       "【訂正 2026-09-30】（誤）Plan Mode（v0.35.0+）→（正）Plan Mode は v0.29.0（2026-02-17）で導入、v0.34.0（2026-03-17）から既定で有効（公式リリースノートによる）。調査用サブエージェントなどの拡張は v0.33.0（2026-03-11）の項目。",
       "【追記 2026-09-30】月次見直しにより、次世代の Flash が出ていることを確認した。ai.google.dev のモデル一覧では Gemini 3.8 Flash（gemini-3.8-flash、2026年9月）が Stable、3.7 Flash と 3.6 Flash が前世代、3.5 Flash は legacy と表示されている。Pro 系は Gemini 3.1 Pro が Preview のままで、Gemini 3.5 Pro は ai.google.dev のモデル一覧・料金表・changelog のいずれにも掲載が見つからなかった（Vertex AI 側の記述は本稿では確認できていない）。GitHub main のソースは Flash の基準を 3.5 Flash、実験フラグ経由の最新を 3.8 Flash としており、Gemini CLI の既定モデルは本稿では確定できない。本レビューのモデル・ベンチマーク・料金の記述は3.5 Flash 世代を前提としたままで、5軸採点も変更していない。安定版は npm 上で v0.62.0（2026年9月29日公開）だが、公式ドキュメントの Stable 表示は v0.61.0 で、公開時点が異なる。",
-      "【追記 2026-09-30】Gemini CLI の中身に関する確認結果。サンドボックスは Docker / Podman のほか、macOS Seatbelt、Windows Native Sandbox、gVisor（runsc）、LXC（実験的）が公式ドキュメントに記載されている。Node.js 20 以上、npm の stable / preview / nightly、Apache 2.0 は現行のドキュメント・README と一致した。"
+      "【追記 2026-09-30】Gemini CLI の中身に関する確認結果。サンドボックスは Docker / Podman のほか、macOS Seatbelt、Windows Native Sandbox、gVisor（runsc）、LXC（実験的）が公式ドキュメントに記載されている。Node.js 20 以上、npm の stable / preview / nightly、Apache 2.0 は現行のドキュメント・README と一致した。",
+      "【追記 2026-11-23】月次見直し。(1) Gemini CLI の安定版は npm で v0.70.0（2026年11月21日時点）まで進んだ。v0.69.0（11月19日）の README には、Gemini CLI は企業向けの Gemini Code Assist 向けであり「Gemini 4 以降には調整していない」「モデルのベンチマークに使わないでほしい」という趣旨の告知が加わっている（当サイトの既報）。個人向けの後継が Antigravity CLI であるという位置づけは変わっていない。(2) Gemini 3.5 Pro は、2026年11月23日に確認した Google の API 料金表・モデル一覧に掲載が見当たらず、一般提供の開始は確認できていない。Google のフロンティア世代は Gemini 4（Carbon / Argon / Hydrogen / Neon）へ移っている。(3) 本レビューのモデル・料金の記述と5軸採点は 3.5 Flash 世代を前提としたままで、変更していない。"
     ],
     "primarySources": [
       {
@@ -790,7 +791,7 @@ const ARTICLES_BODY_2026_06 = {
     "body": [
       "**OpenAI Codex** は **クラウド版（ChatGPT 経由）と CLI 版（Codex CLI）** の2形態で提供される OpenAI のコーディングエージェント。2026年6月時点で **4M+ アクティブユーザー、基盤モデルは GPT-5.5**（4/23 リリース）。本レビューの初版は2026年6月時点の網羅評価で、以降の月次見直しで更新している。2026年9月30日時点で、Codex CLI の既定モデル（同梱カタログ）かつ公式の推奨は GPT-6.1 Sol である。",
       "2026年9月30日時点の提供面は次のとおりである。ChatGPT デスクトップアプリ内の Codex（Codex アプリは7月9日に ChatGPT デスクトップアプリへ統合され、Chat・Work と並ぶ表示として残った。macOS と Windows で提供され、Linux は8月にプレビューが始まった）、Codex CLI、IDE 拡張、Codex Cloud（ChatGPT の Web またはデスクトップアプリから開始し、Web・モバイル・デスクトップで続けられる）、ChatGPT のモバイルアプリからの Remote 接続。非コーディング業務向けの ChatGPT Work は Codex と同じ使用枠・クレジットを共有する。以上は公式ドキュメント（learn.chatgpt.com）による。",
-      "中核機能の確認: Codex という製品名と、CLI・IDE 拡張・クラウドという提供面に、提供終了になったものは確認できなかった。入れ替わったのはモデルである。既定・推奨モデルは GPT-5.5 から GPT-5.6、さらに GPT-6 世代へ移った（GPT-6 Sol と Luna は9月22日、GPT-6.1 Sol は9月29日に Codex へ）。GPT-5.4 は8月31日、GPT-5.3-Codex-Spark は9月14日に ChatGPT サインインの Codex から退役済みで、GPT-5.5 は10月14日に ChatGPT・Work・Codex から退役する予定である（API は対象外）。",
+      "中核機能の確認: Codex という製品名と、CLI・IDE 拡張・クラウドという提供面に、提供終了になったものは確認できなかった。入れ替わったのはモデルである。既定・推奨モデルは GPT-5.5 から GPT-5.6、さらに GPT-6 世代へ移った（GPT-6 Sol と Luna は9月22日、GPT-6.1 Sol は9月29日に Codex へ）。GPT-5.4 は8月31日、GPT-5.3-Codex-Spark は9月14日に ChatGPT サインインの Codex から退役済みで、GPT-5.5 は10月14日に ChatGPT・Work・Codex から退役した（API は対象外）。",
       "## インストール / 起動（Codex CLI）",
       "**インストール（複数経路）**:",
       "```bash\n# macOS / Linux（推奨）\ncurl -fsSL https://chatgpt.com/codex/install.sh | sh\n\n# Windows PowerShell\npowershell -ExecutionPolicy ByPass -c \"irm https://chatgpt.com/codex/install.ps1 | iex\"\n\n# npm 経由（npm パッケージの engines は Node.js 16 以上）\nnpm install -g @openai/codex\n\n# Homebrew\nbrew install --cask codex\n```",
@@ -814,7 +815,7 @@ const ARTICLES_BODY_2026_06 = {
       "MCP プロトコルでの外部接続、GitHub PR・Issue 連携、Structured Outputs、リアルタイム音声入力にも対応。",
       "## 料金プラン",
       "## 評価",
-      "**強み**: クラウド並列実行モデルは Claude Code / Cursor の「ローカル並列」アプローチと差別化。**Pull Request ベースの非同期ワークフロー**に強く、チーム開発での「並列投入 → レビュー → マージ」が自然。**4M+ アクティブユーザー**で実績は十分。6月版では GPT-5.5 の「半額で SOTA」というコスパを強みに挙げていた。GPT-5.5 は Codex（ChatGPT サインイン）で2026年10月14日に退役する予定で、現在の推奨は GPT-6.1 Sol（API 価格 $2/$10）など GPT-6 世代である。コスパの再評価は行っていない。",
+      "**強み**: クラウド並列実行モデルは Claude Code / Cursor の「ローカル並列」アプローチと差別化。**Pull Request ベースの非同期ワークフロー**に強く、チーム開発での「並列投入 → レビュー → マージ」が自然。**4M+ アクティブユーザー**で実績は十分。6月版では GPT-5.5 の「半額で SOTA」というコスパを強みに挙げていた。GPT-5.5 は Codex（ChatGPT サインイン）で2026年10月14日に退役済みで、現在の推奨は GPT-6.1 Sol（API 価格 $2/$10）など GPT-6 世代である。コスパの再評価は行っていない。",
       "**注意点**: クラウド実行のため、機微データを扱う場合は**Business / Enterprise プラン + データ越境設定**が必要。Codex CLI（ローカル版）の機能成熟度は Claude Code に比べてまだ追いついていない部分がある。**4月2日に課金がメッセージ単位から API トークン相当のクレジット制に変わった**ため、定額プランの月額だけでは実効コストを見積もれない。ヘビーな並列投入は月 $100〜200 相当に達しうる。",
       "**参入障壁は大きく下がった**: 6月版では「ChatGPT Pro $200/月のハードルが個人開発者には高い」と評価したが、**現在 Codex は ChatGPT Free / Go $8 / Plus $20 / Pro / Business のいずれでも利用できる**。ただし Free / Go で使えるのはデスクトップアプリ（GPT-6 Luna、ロールアウトに依存）で、Web・CLI・IDE 拡張・iOS は Plus 以上の項目に載っている（公式料金ページ）。Pro は $100 / $200 / $500 の3段階になっている。",
       "**Claude Code との使い分け**: Codex はクラウド × PR ベースの非同期、Claude Code はローカル × IDE/CLI 中心の対話的編集 + agent view でローカル並列。両者を[併用するマルチエージェント構成](?a=claude-code-codex-multi-agent-2026)が実用化されている。",
@@ -831,7 +832,8 @@ const ARTICLES_BODY_2026_06 = {
       "【訂正 2026-09-30】（誤）Luna と Terra の値下げは7/31 →（正）7/30。OpenAI の API changelog と Codex の What's new がいずれも7月30日としている。",
       "【追記 2026-09-30】月次見直しにより更新。使用枠と料金の現況（公式料金ページ）: Plus と Standard Business のローカルメッセージ目安は5時間あたり GPT-6.1 Sol が15〜160、GPT-6 Sol が15〜150、GPT-6 Luna が350〜3,000、GPT-6 Astra が5〜45で、固定の上限ではない。Fast モードは含まれる使用枠を2.5倍、購入クレジットを2倍消費する。GPT-6 Astra の Ultrafast は Pro $500 と対象の Enterprise / Edu で使え、含まれる使用枠を8倍、購入クレジットを6倍消費する。クレジット単価（100万トークンあたり）は GPT-6.1 Sol が入力50・出力250、GPT-6 Luna が入力2.5・出力12.5、GPT-6 Astra が入力250・出力1,250である。",
       "【追記 2026-09-30】機能と CLI の動き（公式 changelog と What's new）: 環境を公開して再利用できる Codex Cloud の環境（各タスクは隔離された作業領域で開始）、研究プレビューの Codex Security Cloud、Astra Ultrafast が9月29日前後に案内された。CLI は 0.147.0（8月上旬）で Agent Plugins と `--approve-for-me`、8月11日に Claude Code・Cursor からの `/import`、0.156.0（9月22日）で音声会話と `/usage`、0.159.1（9月29日）で GPT-6.1 Sol の既定化が入った。npm の最新は 0.159.2 である。",
-      "【追記 2026-09-30】今回確認できなかった点: 4M+ アクティブユーザー（6月時点として記載）、Workspace Agents が Codex で動くこと、4月2日の課金方式変更の日付、Pro の並列枠の倍率、Enterprise の SOC 2、Codex Security の3月リリースは、当サイトの記載のままである。openai.com と help.openai.com には調査環境から到達できなかった（platform.openai.com は developers.openai.com に転送され読める）。本稿の★は変更していない。"
+      "【追記 2026-09-30】今回確認できなかった点: 4M+ アクティブユーザー（6月時点として記載）、Workspace Agents が Codex で動くこと、4月2日の課金方式変更の日付、Pro の並列枠の倍率、Enterprise の SOC 2、Codex Security の3月リリースは、当サイトの記載のままである。openai.com と help.openai.com には調査環境から到達できなかった（platform.openai.com は developers.openai.com に転送され読める）。本稿の★は変更していない。",
+      "【追記 2026-11-23】月次見直し。(1) Codex CLI は 0.171.0（2026年11月20日）で GPT-6.2 Sol と GPT-6.2 Astra がカタログに加わった。既定・推奨は GPT-6.1 Sol のままである（公式料金ページ）。クレジット単価（100万トークンあたり）は GPT-6.2 Astra が入力200・キャッシュ10・出力1,000、GPT-6.2 Sol が入力50・キャッシュ2.5・出力250で、Plus の5時間あたりのメッセージ目安は GPT-6.2 Astra が6〜50、GPT-6.2 Sol が17〜180。API 価格は GPT-6.2 Astra が $8 / $40、GPT-6.2 Sol が $2 / $10。(2) 編集履歴にある「npm の最新は 0.159.2」（2026年9月30日時点）は、その後 0.171.0 まで進んでいる。(3) GPT-5.5 の退役は2026年10月14日に実施済みのため、本文の該当箇所を過去形に改めた。"
     ],
     "tables": [
       {
@@ -977,10 +979,10 @@ const ARTICLES_BODY_2026_06 = {
       "- **Web**: [claude.ai/code](https://claude.ai/code) にアクセスするだけ。ローカル環境なしで長時間タスクを起動",
       "- **iOS アプリ**: App Store「Claude by Anthropic」（公式ドキュメント上、Claude のモバイルアプリは iOS と Android に対応）",
       "## CLI 主要コマンド・フラグ",
-      "上の表は 2026-09-30 に公式の CLI リファレンスに基づいて差し替えた。差し替え前の表には、公式の CLI リファレンスに載っていない claude --headless の行があった。UI なしの実行は claude -p（表の3行目）を使う。差し替え前の表は claude \"<指示>\" を「一発指示モード」としていたが、実際は一発実行ではなく、最初の指示を渡して対話セッションを開始するもので、一発実行は -p である。/model については、Anthropic API ではエイリアス opus / sonnet / fable / haiku がそれぞれ Opus 5.5 / Sonnet 5.5 / Fable 5.1 / Haiku 4.5 を指し、旧モデルはモデル ID（例: claude-opus-5）で指定する。Amazon Bedrock や Microsoft Foundry ではエイリアスの解決先が異なる（例: Bedrock の sonnet は Sonnet 4.5）。",
+      "上の表は 2026-09-30 に公式の CLI リファレンスに基づいて差し替えた。差し替え前の表には、公式の CLI リファレンスに載っていない claude --headless の行があった。UI なしの実行は claude -p（表の3行目）を使う。差し替え前の表は claude \"<指示>\" を「一発指示モード」としていたが、実際は一発実行ではなく、最初の指示を渡して対話セッションを開始するもので、一発実行は -p である。/model については、Anthropic API ではエイリアス opus / sonnet / fable / haiku がそれぞれ Opus 5.5 / Sonnet 5.5 / Fable 5.2 / Haiku 4.5 を指し（fable は v2.1.321 / 322 以降 5.2。Haiku 5.5 は2026年10月7日に公開され、モデル ID で指定する）、旧モデルはモデル ID（例: claude-opus-5）で指定する。Amazon Bedrock や Microsoft Foundry ではエイリアスの解決先が異なる（例: Bedrock の sonnet は Sonnet 4.5）。",
       "## 中核機能の全体像",
       "### モデル",
-      "2026年9月30日時点の公式ドキュメントでは、既定モデル（default）は Pro・Max・Team・Enterprise・Anthropic API のいずれでも Claude Opus 5.5（9/22 投入、Claude Code v2.1.280 以降、1M コンテキスト、API 料金 $4/$20）である。v2.1.280 より前は、Pro と Team Standard の既定が Sonnet、Max・Team Premium・Enterprise・API の既定が [Claude Opus 5](?a=claude-opus-5-review)（7/24 投入、$5/$25）だった。タスクごとに思考量を選べる effort は、対応モデルでは low / medium / high / xhigh / max の5段階で、Opus 5.5 と Sonnet 5.5 の既定は medium である。モデルを切り替えずにコストと能力を調整できる点は変わらない。Opus 5 は API 側ではレガシーモデル扱いだが、明示すれば選べる。Fable は現行が Fable 5.1（$10/$50。[Claude Fable 5](?a=claude-fable-5-mythos-5-review) と同額）で、どのプランでも既定ではなく /model fable などで明示的に選ぶ。Sonnet は Sonnet 5.5（9/28 投入、v2.1.284 以降）と Sonnet 5 がいずれも $2/$10 で、[Claude Sonnet 5](?a=claude-sonnet-5-review) の $3/$15 への値上げは実施されず $2/$10 が標準価格になった。Haiku 4.5 への切替も可能。",
+      "2026年9月30日時点の公式ドキュメントでは、既定モデル（default）は Pro・Max・Team・Enterprise・Anthropic API のいずれでも Claude Opus 5.5（9/22 投入、Claude Code v2.1.280 以降、1M コンテキスト、API 料金 $4/$20）である。v2.1.280 より前は、Pro と Team Standard の既定が Sonnet、Max・Team Premium・Enterprise・API の既定が [Claude Opus 5](?a=claude-opus-5-review)（7/24 投入、$5/$25）だった。タスクごとに思考量を選べる effort は、対応モデルでは low / medium / high / xhigh / max の5段階で、Opus 5.5 と Sonnet 5.5 の既定は medium である。モデルを切り替えずにコストと能力を調整できる点は変わらない。Opus 5 は API 側ではレガシーモデル扱いだが、明示すれば選べる。Fable は現行が Fable 5.2（2026年11月10日投入、$8/$40）で、Fable 5.1（$10/$50）も引き続き利用できる。どのプランでも既定ではなく /model fable などで明示的に選ぶ。Sonnet は Sonnet 5.5（9/28 投入、v2.1.284 以降）と Sonnet 5 がいずれも $2/$10 で、[Claude Sonnet 5](?a=claude-sonnet-5-review) の $3/$15 への値上げは実施されず $2/$10 が標準価格になった。Haiku は Haiku 5.5（2026年10月7日投入、プロンプト10万トークン以下で $0.10 / $0.50、超過分は $0.50 / $2.50）と Haiku 4.5 への切替も可能。",
       "### agent view（5/12 研究プレビュー）",
       "`claude agents` で全画面のセッション一覧テーブルとディスパッチ入力を表示。各セッションの状態（**入力待ち（Needs input）・作業中（Working）・完了（Completed）**）を一覧化し、Enter/→ でアタッチ。コードレビュー中に別タスクを並行で進める運用が可能に。",
       "### Dynamic Workflows（5/28 研究プレビュー）",
@@ -1038,12 +1040,13 @@ const ARTICLES_BODY_2026_06 = {
       "【追記 2026-09-30】その後の変更: 既定モデルは 9/22 の v2.1.280 で Opus 5.5 に変わった。これにより Pro・Max・Team・Enterprise・API のいずれも既定は Opus 5.5 になった（それ以前は Pro と Team Standard が Sonnet、Max などが Opus 5 だった。Max の既定が Opus 5 だったのは v2.1.219 以降で、執筆時点では正しい記述だった）。Opus 5.5（9/22、$4/$20）、Fable 5.1（9/1、$10/$50）、Sonnet 5.5（9/28、$2/$10）が現行世代で、本記事の★評価と「評価」節は Opus 5 世代までを前提としており、Opus 5.5 世代での再採点は行っていない。",
       "【追記 2026-09-30】その後の変更: Dynamic Workflows は現在、全有料プランで利用できる（Pro は /config で有効化）。本文の Max / Team / Enterprise（管理者有効化必要）という提供範囲は、その後拡大した。起動キーワードは v2.1.160 で workflow から ultracode に変わった。Fast Mode は現在 Pro を含む全有料プランが利用クレジットで使える。Team・Enterprise は席料金が公開されている。あわせて、デスクトップアプリの Ubuntu・Debian ベータ、モバイルアプリの Android 対応、Slack 連携の Claude Tag への移行を追記した。",
       "【追記 2026-09-30】claude.ai のサブスクリプションでログインした対話セッションでは、利用上限に達すると上限のリセット後に作業を自動で再開する（v2.1.234 以降、既定で有効、/config で無効化できる）。Dynamic Workflows も上限到達時は一時停止してリセット後に再開する（v2.1.271 以降）。",
-      "【訂正 2026-09-30】caption を持たない2つの表を差し替えた。（誤）コマンド表の claude --headless、claude \"<指示>\" を「一発指示モード」としていた記述、/model の旧選択肢 →（正）公式の CLI リファレンスに基づく現行のコマンド表。（誤）料金表の Pro の Fast Mode「—」、Max 行の「2.5倍速」、Team・Enterprise の「カスタム」、Enterprise の「SOC 2 準拠」、API の Opus 5 $5/$25 と Sonnet 5 $3/$15 →（正）Pro を含む全プランが利用クレジットで Fast Mode を利用でき（サブスクの枠外）、2.5倍速は全プラン共通の性能で、Team と Enterprise の料金は公開されており、SOC 2 は Anthropic 全体の認証で、API の現行単価は Opus 5.5 $4/$20、Sonnet 5 $2/$10。"
+      "【訂正 2026-09-30】caption を持たない2つの表を差し替えた。（誤）コマンド表の claude --headless、claude \"<指示>\" を「一発指示モード」としていた記述、/model の旧選択肢 →（正）公式の CLI リファレンスに基づく現行のコマンド表。（誤）料金表の Pro の Fast Mode「—」、Max 行の「2.5倍速」、Team・Enterprise の「カスタム」、Enterprise の「SOC 2 準拠」、API の Opus 5 $5/$25 と Sonnet 5 $3/$15 →（正）Pro を含む全プランが利用クレジットで Fast Mode を利用でき（サブスクの枠外）、2.5倍速は全プラン共通の性能で、Team と Enterprise の料金は公開されており、SOC 2 は Anthropic 全体の認証で、API の現行単価は Opus 5.5 $4/$20、Sonnet 5 $2/$10。",
+      "【追記 2026-11-23】月次見直し。2026年9月30日以降の変更。(1) Claude Code の最新版は v2.1.330（2026年11月21日時点）。(2) 新モデルとして Haiku 5.5（2026年10月7日）と Fable 5.2 / Mythos 5.2（11月10日、$8 / $40）が加わり、`fable` エイリアスの既定は v2.1.321 / 322 以降 5.2 になった。既定モデルは Opus 5.5 のまま変わらない。(3) Sonnet 5.5 のキャッシュ読み取りは2026年10月18日に $0.20 から $0.10 に半額化された。(4) Opus 5.5 の Fast mode は一般提供となり、Opus 4.8 の Fast mode は非推奨（2026年11月30日に削除予定）になった。本記事の★評価は Opus 5 世代までを前提としており、今回も再採点は行っていない。"
     ],
     "tables": [
       {
         "afterParagraph": 14,
-        "caption": "Claude Code の主なコマンドとフラグ（2026年9月30日時点。公式の CLI リファレンスとコマンド一覧に基づく）",
+        "caption": "Claude Code の主なコマンドとフラグ（2026年11月23日時点。公式の CLI リファレンスとコマンド一覧に基づく）",
         "headers": [
           "コマンド / フラグ",
           "機能"
@@ -1091,7 +1094,7 @@ const ARTICLES_BODY_2026_06 = {
           ],
           [
             "`/model`",
-            "モデルを切り替える。Anthropic API では、エイリアス opus / sonnet / fable / haiku が指すのは Opus 5.5 / Sonnet 5.5 / Fable 5.1 / Haiku 4.5。旧モデルはモデル ID（例: claude-opus-5）で指定する"
+            "モデルを切り替える。Anthropic API では、エイリアス opus / sonnet / fable が指すのは Opus 5.5 / Sonnet 5.5 / Fable 5.2。haiku は Haiku 4.5 を指し、Haiku 5.5（2026年10月7日投入）はモデル ID で指定する。旧モデルはモデル ID（例: claude-opus-5）で指定する"
           ],
           [
             "`/effort`",
@@ -1099,7 +1102,7 @@ const ARTICLES_BODY_2026_06 = {
           ],
           [
             "`/fast`",
-            "Fast Mode を切り替える（Opus 5.5 / Opus 5 / Opus 4.8）"
+            "Fast Mode を切り替える（Fable 5.2 / Opus 5.5 で一般提供。Opus 5 はリサーチプレビュー、Opus 4.8 は非推奨で2026年11月30日に削除予定）"
           ]
         ]
       },
@@ -1256,16 +1259,16 @@ const ARTICLES_BODY_2026_06 = {
       "**Anysphere 管理のクラウド VM 上で動く非同期エージェント**。GitHub Issue や Slack メッセージを起点に作業を進め、**PR ドラフトを返す**まで自律実行。ローカル環境を閉じても継続。",
       "### モデル: Composer 2.5 / Sonic / 主要フロンティア",
       "- **Composer 2.5**: Cursor 独自モデル（Kimi K2.5 ベース + 独自 RL）。なお、CursorBench で Opus 4.6 を上回るという比較は、Cursor 公式ブログ（Composer 2.5）の本文では確認できていない",
-      "- **Sonic**: 低レイテンシ編集に特化した内製モデル",
-      "- **[Claude Opus 5](?a=claude-opus-5-review)、Fable 5、[GPT-5.6](?a=gpt-5-6-review)、Gemini 3.x** など主要フロンティアモデルも切替可能",
+      "- **Sonic**: 低レイテンシ編集に特化した内製モデル（現行の公式モデル一覧には載っていない。2026年11月23日確認）",
+      "- **Claude Fable 5.1 / Opus 5.5 / Sonnet 5.5、GPT-6.2 系、Gemini 3.1 Pro / 3.8 Flash** など主要フロンティアモデルも切替可能（現行の公式モデル一覧。Premium 以上で API 定価のプリペイドクレジットから利用）",
       "### MCP / Rules / Skills",
       "Claude Code と同様、MCP プロトコルで外部接続、`.cursor/rules` 配下のルールファイルでプロジェクト規約共有、Skills でテンプレート再利用。",
       "### Microsoft Teams / Slack / GitHub / PagerDuty 統合",
       "3月の **Cursor Automations** で Slack / GitHub PR / PagerDuty トリガー、5/11 で **Microsoft Teams 統合**（`@Cursor` メンション）。CLI から起動したジョブも統合管理可能。",
       "## 料金プラン",
-      "**Bugbot 課金**: 2026年5月から seat-based → usage-based に移行、1 PR レビュー平均 **$1.00-$1.50**、effort level（high で時間と料金が増える代わりにバグ発見率向上）も調整可能。",
+      "**Bugbot 課金**: 2026年5月に seat-based から usage-based へ移行した経緯があるが、現行の公式ドキュメントでは Bugbot は Premium 以上のプランに含まれる機能と位置づけられている（2026年11月23日確認）。",
       "## 評価",
-      "**強み**: IDE 統合と CLI が同じ Composer / Background Agent を共有するため、**作業環境を選ばずに同じワークフロー**を回せる。独自モデル（Composer 2.5 / Sonic）により低レイテンシ・低コストでフロンティア性能を実現。Microsoft Teams / Slack 統合でチャットアプリ起点のエージェント運用にも対応。",
+      "**強み**: IDE 統合と CLI が同じ Composer / Background Agent を共有するため、**作業環境を選ばずに同じワークフロー**を回せる。独自モデル（Composer 2.5）により低レイテンシ・低コストでフロンティア性能を実現。Microsoft Teams / Slack 統合でチャットアプリ起点のエージェント運用にも対応。",
       "**注意点**: Claude Code が Anthropic 純正の CLI として Anthropic Console / Bedrock / Vertex / Foundry を経由できるのに対し、Cursor CLI は Anysphere 経由でモデルを利用する形態（クレジット消費型）。**規制業界での運用は Cursor の Privacy Mode + Self-hosted Cloud Agents の組み合わせが必要**。",
       "**資本関係の変化を織り込む必要がある**: 2026年6月16日に発表された **SpaceX による Anysphere の $60B（全株式交換）買収は、2026年8月14日に効力が発生して完了した**（[→ 詳細](?a=spacex-closes-cursor-anysphere-acquisition-2026)）。Anysphere は SpaceX の完全子会社となった。SpaceXAI 部門への配置は、SpaceX の8-K・Cursor 公式ブログでは確認できていない（[→ 速報](?a=spacex-cursor-60b-acquisition-anysphere-2026)）。Cursor 公式ドキュメント（Models & Pricing）では、現行の Cursor Models の利用枠に Grok 4.7 / 4.6 / 4.5 が Composer 2.5 と並んで含まれている。Cursor は公式ブログ（2026年7月8日）で、SpaceXAI と共同で訓練した Grok 4.5 の訓練に、数兆トークンの Cursor データ（利用者とコードベース・ツールのやりとり、開発者とエージェントのやりとりを含む）が含まれたと説明している（[詳細](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)）。この訓練は4月の提携の下で、買収完了（8月14日）より前に行われた。当事者の説明で、独立した検証は確認できておらず、Cursor のどの利用者のデータが対象か（Privacy Mode の利用者が除外されるか等）は確認できていない。開発データの取り扱い方針が変わりうるため、企業導入では Privacy Mode の設定とデータ利用条項を継続的に確認することを勧める（[→ 市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。",
       "**関連記事**: [Cursor 3 / Agents Window](?a=cursor-3-agent-first-workspace-2026)、[Composer 2 / Kimi K2.5](?a=cursor-composer-2-kimi-2026)、[Microsoft Teams 統合](?a=cursor-microsoft-teams-integration-2026)、[Cursor iOS アプリ](?a=cursor-ios-app-launch-cloud-agents-remote-2026)、[CLI 横断比較](?a=cli-tools-comparison-2026-march)。",
@@ -1278,11 +1281,13 @@ const ARTICLES_BODY_2026_06 = {
       "【訂正 2026-09-30】（誤）「Background Agent」という名称 →（正）現行の公式ドキュメントでは Cloud Agents と表記されている。`.cursorrules` の記述は、現行ドキュメントが説明している `.cursor/rules` 配下のルールファイルに改めた（`.cursorrules` への言及は現行ドキュメントには見当たらない）。",
       "【訂正 2026-09-30】料金表の「Business / Enterprise」を、公式ドキュメントの区分（Teams と Enterprise の2つの法人向けプラン）に合わせて「Enterprise」に改め、Teams の SSO 表記を公式の SAML/OIDC SSO に合わせた。インド向けの Start プラン（₹649/月・税込）を追記した。（誤）Pro+「Pro の5倍 Agent 上限」→（正）Cursor 公式料金ページ（Pro+ / Ultra の切替表示）では Pro+ は「3x Pro limits on Agent」、Ultra は「20x Pro limits on Agent」。Enterprise 行の「SOC 2」は料金ページ下部の会社全体の認証表示でありプランの機能ではないため外し、Enterprise 列に記載のある「優先サポートとアカウント管理」に差し替えた。",
       "【追記 2026-09-30】Cursor 公式ドキュメントでの現行の確認結果。(1) SpaceX による買収は、Cursor 公式ブログ（2026年8月14日「Cursor is now a part of SpaceX」）が「SpaceX に正式に買収された。4月に発表した SpaceXAI との提携から始まった手続きの完了」と述べている。本文中の取引額・株式交換の形態・完全子会社化・SpaceXAI 部門への配置は、当サイトの別記事に依っており、この公式ブログには書かれていない。(2) Models & Pricing の Cursor Models 利用枠は Grok 4.7 / 4.6 / 4.5 と Composer 2.5、第三者モデルは別枠（API 価格で課金）で、Sonic の記載は見当たらない。第三者モデルの名称は Claude Fable 5.1 / Opus 5.5 / Sonnet 5.5、GPT-5.6（Luna / Sol / Terra）、Gemini 3.1 Pro / 3.8 Flash などが並んでおり、本文の切替可能モデルの記述（Opus 5、Fable 5、GPT-5.6、Gemini 3.x）は世代の細かい版が古い前提のまま残している。(3) Auto は Cursor Router（2026年7月22日）で動く。CLI は 2026年8月11日のリリースで実行中ターンへの割り込み誘導が、8月26日のリリースで `agent persist` による永続セッションが加わった（自己ホスト型ワーカーは 2026年3月以前から CLI にあり、8月のリリースはその拡張）。(4) Bugbot は 2026年6月10日の公式 changelog で、Composer 2.5 が動力になり、平均レビュー時間が約90秒、1回あたりの費用が約22%減と説明されている。これは Cursor 自身の説明であり、独立した検証は確認できていない。本文の「1 PR 平均 $1.00-$1.50」は、この変更以前の値かどうかを含め、公式ページでは確認できていない。",
-      "【訂正 2026-09-30】上記の追記（1）の「取引額・株式交換の形態・完全子会社化は当サイトの別記事に依り、公式ブログには書かれていない」のうち、取引額（$60B）・株式対価・完全子会社としての存続・8月14日の効力発生は、SpaceX の8-K（6月16日・8月14日）に記載がある。SpaceXAI 部門への配置は8-K にも Cursor ブログにも記載がない。「Grok V9-Medium が Cursor のデータで訓練された点は Cursor の公式発表では確認できていない」→（正）Cursor は7月8日の公式ブログで Grok 4.5 の訓練に Cursor データが含まれたと説明している。"
+      "【訂正 2026-09-30】上記の追記（1）の「取引額・株式交換の形態・完全子会社化は当サイトの別記事に依り、公式ブログには書かれていない」のうち、取引額（$60B）・株式対価・完全子会社としての存続・8月14日の効力発生は、SpaceX の8-K（6月16日・8月14日）に記載がある。SpaceXAI 部門への配置は8-K にも Cursor ブログにも記載がない。「Grok V9-Medium が Cursor のデータで訓練された点は Cursor の公式発表では確認できていない」→（正）Cursor は7月8日の公式ブログで Grok 4.5 の訓練に Cursor データが含まれたと説明している。",
+      "【訂正 2026-11-23】料金表を現行の「The X Subscription」に更新した。（誤）Pro $20 / Pro+ $60 / Ultra $200、Teams Standard $40 / Premium $120 per seat →（正）Free $0 / Plus $8 / Premium $30 / Super $100 / Ultra $200、Teams は席あたり $30 / $100 / $200。旧プランは既存契約者向けに継続している（Cursor 公式料金ページと Models & Pricing、2026年11月23日確認）。あわせて Bugbot の位置づけと切替可能モデルの世代、Sonic が現行のモデル一覧に無いことを反映した。★は変更していない。"
     ],
     "tables": [
       {
         "afterParagraph": 20,
+        "caption": "Cursor 料金プラン（2026年11月23日時点。「The X Subscription」）",
         "headers": [
           "プラン",
           "月額",
@@ -1295,34 +1300,34 @@ const ARTICLES_BODY_2026_06 = {
             "制限付き利用"
           ],
           [
-            "Pro",
-            "$20",
-            "標準 Agent 利用枠"
+            "Plus",
+            "$8（年払い $80/年）",
+            "Cursor Models の週次プール"
           ],
           [
-            "Pro+",
-            "$60",
-            "Pro の3倍の Agent 上限"
+            "Premium",
+            "$30（年払い $300/年）",
+            "Plus の約5倍のプール。第三者モデルは API 定価のプリペイドクレジット。Bugbot を含む"
+          ],
+          [
+            "Super",
+            "$100（年払い $1,000/年）",
+            "Premium の約3.3倍のプール"
           ],
           [
             "Ultra",
-            "$200",
-            "Pro の20倍の Agent 上限"
+            "$200（年払い $2,000/年）",
+            "Premium の約6.7倍のプール"
           ],
           [
             "Start（インド限定）",
             "₹649/月（税込）",
-            "Cursor Models（Grok・Composer）と Cloud Agents を含む。第三者モデルの利用枠は含まれない"
+            "Cursor Models（Grok・Composer）と Cloud Agents を含む。第三者モデルは含まれない"
           ],
           [
-            "Teams Standard",
-            "$40/seat/月",
+            "Teams",
+            "$30 / $100 / $200 per seat",
             "組織管理、SAML/OIDC SSO、チーム全体の Privacy Mode"
-          ],
-          [
-            "Teams Premium",
-            "$120/seat/月",
-            "Standard の5倍 Agent 上限"
           ],
           [
             "Enterprise",
@@ -1422,7 +1427,8 @@ const ARTICLES_BODY_2026_06 = {
       "【訂正 2026-09-30】（誤）HTTP hook 等は v1.0.36 以降（5/6） →（正）公式 changelog では HTTP hook が v1.0.35（2026-04-23）、subcommand picker 改善と複数ライセンス時のエラーメッセージ改善が v1.0.36（2026-04-24）",
       "【訂正 2026-09-30】（誤）Business / Enterprise に2026年8月まで多めのクレジット枠 →（正）期間は過ぎており、現行の公式プラン表は Business 月1,900・Enterprise 月3,900クレジット。料金表に Student（無償）と Max（$100）の行を追加し、Free・Pro・Pro+ の内容欄を公式プラン表の記載に合わせた。Business の SAML SSO と Enterprise の IP インデムニティ・ファインチューニングは旧版の記載で、現行の公式プラン表では確認できていないため、その旨を表に注記した",
       "【追記 2026-09-30】月次見直しで、以下の変更を公式ドキュメントと changelog で確認した。個人向けに Copilot Max（月額 $100、月20,000クレジット）が加わり、Copilot Student（無償）も公式プラン表に載っている。Copilot CLI は `/autopilot [目的]` と `--autopilot` を CLI 自体が持ち、クレジット消費の上限を指定して、到達すると一時停止させることもできる（VS Code 拡張の Autopilot に限らない）。`/fleet` は CLI の公式リファレンスに載っている。モデル選択には Auto の routing tier（efficiency / balance / intelligence）があり、`/model auto TIER` で指定できる。2026年9月28日公開の v1.0.89 では claude-opus-5.5 と、利用可能な場合の GPT-6 Sol / GPT-6 Luna がモデルピッカーに加わった。",
-      "【追記 2026-09-30】この記事の本文は、2026年6月〜8月時点の世代（Opus 5 / Fable 5 / GPT-5.6）を前提にしている。公式の対応モデル表には Claude Opus 5.5、Fable 5.1、Sonnet 5 / 5.5、GPT-6 Astra / Sol / Luna、GPT-6.1 Sol、Gemini 3.8 Flash、Kimi K3、Grok 4.7 なども載っており、新世代が出ている。ただし新世代を前提にした評価（★や料金判断）は、採点材料を確認できていないため書き換えていない。なお次の記述は、今回の確認で公式の記載を見つけられておらず、確認できていない。C++ コード理解の統合（5/6 プレビュー）、GPT-5.5-Cyber の提供、Fable・Opus が GA 後24時間以内に展開されるという通例、`gh copilot suggest` / `explain` の現行の扱い、/fleet を GitHub.com やスマートフォンから監視・マージできること、6/1 からの従量課金の開始日。"
+      "【追記 2026-09-30】この記事の本文は、2026年6月〜8月時点の世代（Opus 5 / Fable 5 / GPT-5.6）を前提にしている。公式の対応モデル表には Claude Opus 5.5、Fable 5.1、Sonnet 5 / 5.5、GPT-6 Astra / Sol / Luna、GPT-6.1 Sol、Gemini 3.8 Flash、Kimi K3、Grok 4.7 なども載っており、新世代が出ている。ただし新世代を前提にした評価（★や料金判断）は、採点材料を確認できていないため書き換えていない。なお次の記述は、今回の確認で公式の記載を見つけられておらず、確認できていない。C++ コード理解の統合（5/6 プレビュー）、GPT-5.5-Cyber の提供、Fable・Opus が GA 後24時間以内に展開されるという通例、`gh copilot suggest` / `explain` の現行の扱い、/fleet を GitHub.com やスマートフォンから監視・マージできること、6/1 からの従量課金の開始日。",
+      "【追記 2026-11-23】月次見直し。(1) Copilot CLI は v1.0.112（2026年11月16日時点）まで進み、モデルピッカーにはその後 GPT-6.1 Sol、Gemini 4 Argon、Claude Fable 5.2 などが加わっている（公式の対応モデル表と当サイトの既報）。(2) 料金プランは公式プラン表で再確認し、Pro $10（月1,500クレジット = 基本1,000 + Flex 500）、Pro+ $39（月7,000）、Max $100（月20,000 = 基本10,000 + Flex 10,000）、Business $19（月1,900 / 人）、Enterprise $39（月3,900 / 人）と、本文の表と一致した。あわせて法人向けに、従量課金のみで使う「Copilot access」という提供形態が加わっている（GitHub Enterprise Cloud 付きは席料 $0、単体は $10）。(3) 本レビューの評価は本文の世代を前提としたままで、★は変更していない。"
     ],
     "tables": [
       {
@@ -1523,7 +1529,7 @@ const ARTICLES_BODY_2026_06 = {
       "- **Composer**: 自然言語の指示から関連ファイルを自動特定し、複数ファイル横断の変更を生成",
       "- **Composer 2 / 2.5**: Cursor 独自モデル（Kimi K2.5 ベース + 独自 RL）。なお、CursorBench で Opus 4.6 を上回るという比較は、Cursor 公式ブログ（Composer 2.5）の本文では確認できていない",
       "- **Tab v2**: 高速インライン補完",
-      "- **Sonic**: 低レイテンシ編集に特化した内製モデル",
+      "- **Sonic**: 低レイテンシ編集に特化した内製モデル（現行の公式モデル一覧には載っていない。2026年11月23日確認）",
       "### Cmd+K インライン編集",
       "選択範囲を指示で書き換え。小さな修正に最適。",
       "### MCP / Skills / Rules",
@@ -1531,11 +1537,11 @@ const ARTICLES_BODY_2026_06 = {
       "- **Skills**: 再利用可能なプロンプトテンプレート",
       "- **Rules**: `.cursor/rules` 配下のルールファイルでプロジェクト固有の規約を渡す（Claude Code の CLAUDE.md に相当）",
       "### Bugbot（5月以降は従量課金）",
-      "PR レビュー専用エージェント。**2026年5月から seat-based から usage-based 課金に移行**、1 PR レビュー当たり平均 $1.00-$1.50。effort level（high で時間と料金が増える代わりにバグ発見率向上）も調整可能に。",
+      "PR レビュー専用エージェント。2026年5月に seat-based から usage-based 課金へ移行した経緯があるが、現行の公式ドキュメントでは Bugbot は Premium 以上のプランに含まれる機能と位置づけられている（2026年11月23日確認）。6月10日の公式 changelog では Composer 2.5 が動力になり、平均レビュー時間は約90秒、費用は約22%減と説明されている（Cursor 自身の説明）。",
       "### Self-hosted Cloud Agents（3月、エンタープライズ向け）",
       "コードと実行環境を自社ネットワーク内に保持したままクラウドエージェントを利用。規制業界向け。",
       "## 料金プラン",
-      "Pro / Pro+ / Ultra には Cursor Models（Grok 4.7 / 4.6 / 4.5、Composer 2.5）と Other Models（第三者モデル。API 価格で課金）の2つの利用枠が含まれ、枠を超えた分はオンデマンドで課金される。インド向けの Start は Cursor Models の枠のみで、Other Models の枠とオンデマンドは含まれない。Teams では第三者モデルに Cursor Token Rate（100万トークンあたり $0.25）が加わる（Cursor 公式ドキュメント）。",
+      "現行のプラン（The X Subscription）では、有料プラン全てに Cursor Models（Grok 4.7 / 4.6 / 4.5、Composer 2.5）の週次プールが含まれ、第三者モデルは Premium 以上で API 定価のプリペイドクレジットから使う。旧プラン（Pro $20 / Pro+ $60 / Ultra $200、Teams Standard $40 / Premium $120）は既存契約者向けに継続している。インド向けの Start は Cursor Models の枠のみで、第三者モデルの利用は含まれない。Teams では第三者モデルに Cursor Token Rate（100万トークンあたり $0.25）が加わる（Cursor 公式ドキュメント、2026年11月23日確認）。",
       "## 5月以降の動向",
       "- **5/11 Microsoft Teams 統合 GA**（`@Cursor` メンション）",
       "- **5月 Bugbot 課金モデルが usage-based に移行**",
@@ -1543,8 +1549,8 @@ const ARTICLES_BODY_2026_06 = {
       "- **6/30 [iOS アプリを公開](?a=cursor-ios-app-launch-cloud-agents-remote-2026)** — Always-on クラウドエージェントに加え、PC 上で動いているエージェントをスマホからリモート操作できる。音声入力にも対応",
       "- **Cursor 3.x** 系列で Agents Window が正式機能化",
       "## 評価",
-      "**強み**: IDE と AI エージェントが一体化したエクスペリエンス。VS Code 互換で拡張機能がそのまま動く。Agents Window でマルチセッション運用が UI レベルで自然に。Composer 2.5 + Sonic の独自モデルでコストパフォーマンス・低レイテンシを両立。iOS アプリの追加で、**席を離れてもエージェントの進行を確認・介入できる**ようになった。",
-      "**注意点**: Claude Code が CLI 中心で多サーフェス展開なのに対し、Cursor は IDE 中心。**ターミナル単体での運用には向かない**。Bugbot の usage-based 移行で PR 数の多いプロジェクトは月額予算が読みにくくなった。Pro+ / Ultra プランの追加で価格帯が広がり、適切なプラン選択が難しくなった面もある。",
+      "**強み**: IDE と AI エージェントが一体化したエクスペリエンス。VS Code 互換で拡張機能がそのまま動く。Agents Window でマルチセッション運用が UI レベルで自然に。Composer 2.5 などの独自モデルでコストパフォーマンス・低レイテンシを両立。iOS アプリの追加で、**席を離れてもエージェントの進行を確認・介入できる**ようになった。",
+      "**注意点**: Claude Code が CLI 中心で多サーフェス展開なのに対し、Cursor は IDE 中心。**ターミナル単体での運用には向かない**。Bugbot の usage-based 移行で PR 数の多いプロジェクトは月額予算が読みにくくなった。料金体系が「The X Subscription」に再編されプランの名前と中身が変わったため、既存契約者は旧プランの継続条件を確認する必要がある。",
       "**資本関係が選定要因になった**: 買収は2026年8月14日にクローズ済みで、Cursor は既に SpaceX の完全子会社である（[→ 詳細](?a=spacex-closes-cursor-anysphere-acquisition-2026)）。Cursor 公式ドキュメント（Models & Pricing）では、現行の Cursor Models の利用枠に Grok 4.7 / 4.6 / 4.5 が Composer 2.5 と並んで含まれている。Cursor は公式ブログ（2026年7月8日）で、SpaceXAI と共同で訓練した Grok 4.5 の訓練に、数兆トークンの Cursor データ（利用者とコードベース・ツールのやりとり、開発者とエージェントのやりとりを含む）が含まれたと説明している（[詳細](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026)）。この訓練は4月の提携の下で、買収完了（8月14日）より前に行われた。当事者の説明で、独立した検証は確認できておらず、Cursor のどの利用者のデータが対象か（Privacy Mode の利用者が除外されるか等）は確認できていない。機能・価格の比較に加え、**開発データの流れと親会社の事業判断**を評価に含める段階に入った（[→ 市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。企業導入では Privacy Mode の設定とデータ利用条項を継続的に確認してほしい。",
       "**関連記事**: [Cursor Composer 2](?a=cursor-composer-2-kimi-2026)、[Cursor 3 / Agents Window](?a=cursor-3-agent-first-workspace-2026)、[Microsoft Teams 統合](?a=cursor-microsoft-teams-integration-2026)、[SpaceX による $60B 買収](?a=spacex-cursor-60b-acquisition-anysphere-2026)、[AI エディタ横断比較](?a=editor-comparison-2026-march)。",
       "---",
@@ -1556,11 +1562,13 @@ const ARTICLES_BODY_2026_06 = {
       "【訂正 2026-09-30】（誤）「Background Agent」という名称 →（正）現行の公式ドキュメントでは Cloud Agents。（誤）「すべて従量モデルで、各プロンプトが request-equivalent credits を消費」→（正）現行の公式ドキュメントでは、Cursor Models と Other Models の2つの利用枠を API 価格ベースで消費する方式で、request 単位の課金は旧プラン（レガシー）の扱いになっている。`.cursorrules` の記述は、現行ドキュメントが説明している `.cursor/rules` 配下のルールファイルに改めた（`.cursorrules` への言及は現行ドキュメントには見当たらない）。",
       "【訂正 2026-09-30】料金表の「Business / Enterprise」を、公式ドキュメントの区分（Teams と Enterprise の2つの法人向けプラン）に合わせて「Enterprise」に改め、（誤）Ultra「優先サポート」→（正）公式料金ページの Ultra は「Priority access to new features」（新機能への優先アクセス）。Hobby の内容を公式料金ページの記載に、Teams の SSO 表記を SAML/OIDC SSO に合わせた。インド向けの Start プラン（₹649/月・税込）を追記した。（誤）Pro+「Pro の5倍 Agent 上限」→（正）Cursor 公式料金ページ（Pro+ / Ultra の切替表示）では Pro+ は「3x Pro limits on Agent」、Ultra は「20x Pro limits on Agent」。Enterprise 行の「SOC 2」は料金ページ下部の会社全体の認証表示でありプランの機能ではないため外し、Enterprise 列に記載のある「優先サポートとアカウント管理」に差し替えた。",
       "【追記 2026-09-30】Cursor 公式ドキュメントでの現行の確認結果。(1) SpaceX による買収は、Cursor 公式ブログ（2026年8月14日「Cursor is now a part of SpaceX」）が「SpaceX に正式に買収された。4月に発表した SpaceXAI との提携から始まった手続きの完了」と述べている。本文中の取引額・株式交換の形態・完全子会社化・SpaceXAI 部門への配置は、当サイトの別記事に依っており、この公式ブログには書かれていない。(2) Models & Pricing の Cursor Models 利用枠は Grok 4.7 / 4.6 / 4.5 と Composer 2.5 で、Sonic の記載は見当たらない。Grok 4.7 は 2026年9月21日、Grok 4.6 は 8月12日に公開されている。第三者モデルは Claude Fable 5.1 / Opus 5.5 / Sonnet 5.5、GPT-5.6（Luna / Sol / Terra）、Gemini 3.1 Pro / 3.8 Flash などが並ぶ。(3) Auto は Cursor Router（2026年7月22日）で動き、Cost / Balance / Intelligence の3モードがある。(4) 6月29日の iOS アプリは公式 changelog では public beta と記載されており、7月29日に iPad 版も加わった。8月17日に Origin（コードホスティング、early beta）、9月2日に自己ホスト型マシン（self-hosted machines）、9月10日に Projects（複数エージェントを束ねる機能、beta）、9月23日に Rollouts と Security Review（Teams / Enterprise 向け）が公開された。(5) Bugbot は 2026年6月10日の公式 changelog で、Composer 2.5 が動力になり、平均レビュー時間が約90秒、1回あたりの費用が約22%減と説明されている。これは Cursor 自身の説明であり、独立した検証は確認できていない。本文の「1 PR 平均 $1.00-$1.50」は、この変更以前の値かどうかを含め、公式ページでは確認できていない。",
-      "【訂正 2026-09-30】上記の追記（1）の「取引額・株式交換の形態・完全子会社化は当サイトの別記事に依り、公式ブログには書かれていない」のうち、取引額（$60B）・株式対価・完全子会社としての存続・8月14日の効力発生は、SpaceX の8-K（6月16日・8月14日）に記載がある。SpaceXAI 部門への配置は8-K にも Cursor ブログにも記載がない。「Grok V9-Medium が Cursor のデータで訓練された点は Cursor の公式発表では確認できていない」→（正）Cursor は7月8日の公式ブログで Grok 4.5 の訓練に Cursor データが含まれたと説明している。"
+      "【訂正 2026-09-30】上記の追記（1）の「取引額・株式交換の形態・完全子会社化は当サイトの別記事に依り、公式ブログには書かれていない」のうち、取引額（$60B）・株式対価・完全子会社としての存続・8月14日の効力発生は、SpaceX の8-K（6月16日・8月14日）に記載がある。SpaceXAI 部門への配置は8-K にも Cursor ブログにも記載がない。「Grok V9-Medium が Cursor のデータで訓練された点は Cursor の公式発表では確認できていない」→（正）Cursor は7月8日の公式ブログで Grok 4.5 の訓練に Cursor データが含まれたと説明している。",
+      "【訂正 2026-11-23】料金表と料金の記述を現行の「The X Subscription」に更新した。（誤）Pro $20 / Pro+ $60 / Ultra $200、Teams Standard $40 / Premium $120 per seat →（正）Free $0 / Plus $8 / Premium $30 / Super $100 / Ultra $200（年払いは $80 / $300 / $1,000 / $2,000）、Teams は席あたり $30 / $100 / $200。旧プランは既存契約者向けに継続している（Cursor 公式料金ページと Models & Pricing、2026年11月23日確認）。あわせて Bugbot の位置づけ（Premium 以上に含まれる機能）と、Sonic が現行のモデル一覧に無いことを反映した。★は変更していない。"
     ],
     "tables": [
       {
         "afterParagraph": 27,
+        "caption": "Cursor 料金プラン（2026年11月23日時点。公式料金ページと Models & Pricing。「The X Subscription」のプラン構成）",
         "headers": [
           "プラン",
           "月額",
@@ -1568,24 +1576,29 @@ const ARTICLES_BODY_2026_06 = {
         ],
         "rows": [
           [
-            "Hobby",
-            "無料",
+            "Hobby（Free）",
+            "$0",
             "限定的な Agent リクエスト、Composer の利用（公式料金ページの記載）"
           ],
           [
-            "Pro",
-            "$20",
-            "Agent の拡張上限、Grok の利用枠、フロンティアモデル、Cloud Agents、無制限の Tab 補完"
+            "Plus",
+            "$8（年払い $80/年）",
+            "Cursor Models の週次プール（利用量は週ごとにリセット）"
           ],
           [
-            "Pro+",
-            "$60",
-            "Pro の3倍の Agent 上限"
+            "Premium",
+            "$30（年払い $300/年）",
+            "Plus の約5倍の Cursor Models プール。第三者モデルは API 定価のプリペイドクレジットで利用でき、Bugbot が含まれる"
+          ],
+          [
+            "Super",
+            "$100（年払い $1,000/年）",
+            "Premium の約3.3倍の Cursor Models プール"
           ],
           [
             "Ultra",
-            "$200",
-            "Pro の20倍の Agent 上限、新機能への優先アクセス"
+            "$200（年払い $2,000/年）",
+            "Premium の約6.7倍の Cursor Models プール、新機能への優先アクセス"
           ],
           [
             "Start（インド限定）",
@@ -1593,14 +1606,9 @@ const ARTICLES_BODY_2026_06 = {
             "Cursor Models（Grok・Composer）と Cloud Agents を含む。第三者モデルの利用枠は含まれない"
           ],
           [
-            "Teams Standard",
-            "$40/seat/月",
-            "組織管理、SAML/OIDC SSO、チーム全体の Privacy Mode"
-          ],
-          [
-            "Teams Premium",
-            "$120/seat/月",
-            "Standard の5倍の利用量"
+            "Teams",
+            "$30 / $100 / $200 per seat",
+            "組織管理、SAML/OIDC SSO、チーム全体の Privacy Mode。第三者モデルには Cursor Token Rate（100万トークンあたり $0.25）が加わる"
           ],
           [
             "Enterprise",

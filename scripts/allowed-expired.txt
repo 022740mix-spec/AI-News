@@ -77,3 +77,8 @@ claude-sonnet-5-5-review
 # 「8月31日〜9月4日の週の What's new に載っている」という週の範囲の記述で、期限ではない
 # （検査の「〜9月4日」が期限に見える誤検知）
 gpt-6-review
+
+# Anthropic の研究者調査（AI for scientific discovery）の対象期間
+# 「2026年8月2日から9月30日まで」の記述。調査データの期間を示す歴史的事実で、
+# 現在の提供条件ではないため対象外とする（2026-11-23 の見直しで登録）
+feature-anthropic-how-researchers-use-claude-207k-sessions-2026
