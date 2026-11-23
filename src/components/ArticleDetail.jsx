@@ -1,5 +1,6 @@
 import { Fragment, useState, useEffect, useContext, useRef } from "react";
 import { CATEGORIES, renderStars, getArticleNewsYmd } from "../data/articleHelpers.js";
+import { loadArticleBody } from "../data/loadArticleBody.js";
 import { LangContext } from "../context/LangContext.js";
 import { richArticleText, richInlineLine, parseCodeBlock, CopyableCodeBlock } from "../utils/richText.jsx";
 import { resolveMediaSrc } from "../utils/seo.js";
@@ -420,8 +421,9 @@ function ArticleDetail({
       setBodyData(null);
       return;
     }
-    import("../data/articlesBody.js").then((mod) => {
-      if (!cancelled) setBodyData(mod.default[articleMeta.id] || {});
+    // 本文は掲載月のチャンクだけを遅延読み込みする（loadArticleBody.js）
+    loadArticleBody(articleMeta.id).then((entry) => {
+      if (!cancelled) setBodyData(entry || {});
     });
     return () => { cancelled = true; };
   }, [articleMeta.id, articleMeta.body]);

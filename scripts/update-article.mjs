@@ -77,7 +77,7 @@
  * **find は、その記事の body 内でちょうど1回だけ出現しなければならない。**
  * 0回なら誤り、2回以上なら意図しない箇所を壊しうるため、どちらも中断する。
  */
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, unlinkSync } from "node:fs";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { ARTICLES_META } from "../src/data/articlesMeta.js";
@@ -354,10 +354,16 @@ if (dryRun) {
 }
 
 // ── 書く前に元のバイト列を控える ──
+// writeArticles は meta・集約モジュールに加えて月別チャンク
+// （articlesBody-YYYY-MM.js）も書き換えるため、対象ファイル一式を控える。
+// チャンクだけ戻し漏れると「集約は旧・実体は新」の不整合が残る。
 const metaPath = join(DATA_DIR, "articlesMeta.js");
 const bodyPath = join(DATA_DIR, "articlesBody.js");
-const beforeMetaBytes = readFileSync(metaPath);
-const beforeBodyBytes = readFileSync(bodyPath);
+const dataFileNames = () =>
+  readdirSync(DATA_DIR).filter(
+    (n) => n === "articlesMeta.js" || n === "articlesBody.js" || /^articlesBody-\d{4}-\d{2}\.js$/.test(n)
+  );
+const beforeBytes = new Map(dataFileNames().map((n) => [n, readFileSync(join(DATA_DIR, n))]));
 
 const metaArr = ARTICLES_META.map((a) => (a.id === patch.id ? newMeta : a));
 const bodyMap = { ...ARTICLES_BODY, [patch.id]: newBody };
@@ -365,8 +371,11 @@ writeArticles(metaArr, bodyMap);
 
 // ── 読み直して検査する。合わなければ戻す ──
 const restore = (msg) => {
-  writeFileSync(metaPath, beforeMetaBytes);
-  writeFileSync(bodyPath, beforeBodyBytes);
+  for (const [name, bytes] of beforeBytes) writeFileSync(join(DATA_DIR, name), bytes);
+  // 書き込みで新規に生えた月チャンクは消す
+  for (const name of dataFileNames()) {
+    if (!beforeBytes.has(name)) unlinkSync(join(DATA_DIR, name));
+  }
   console.error(`❌ ${msg}`);
   console.error("   元のバイト列に戻しました。ファイルは変更されていません。");
   process.exit(1);

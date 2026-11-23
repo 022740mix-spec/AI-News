@@ -760,6 +760,14 @@ Claude Code Routines（自律実行）でこのリポジトリを操作する場
 モデルが 1.8MB を読んで書き戻すのとでは安全性がまったく違う。**
 `scripts/serialize-articles.mjs` が前者を提供し、後者を不要にしている。
 
+**本文は掲載月ごとに分割されている（2026年11月23日〜）。** 本文の実体は
+`src/data/articlesBody-YYYY-MM.js`（掲載日 `date`、無ければ `newsDate` の月）で、
+`articlesBody.js` は全月チャンクを結合する Node 用の集約モジュールとして
+自動生成される。ブラウザ側は `src/data/loadArticleBody.js` がその記事の月の
+チャンクだけを動的に読む。集約モジュールの import に付く `?v=` の内容ハッシュは、
+`update-article.mjs` が書き込み後にキャッシュ回避付きで読み直して検証するために
+必要である。**書き込みは従来どおりスクリプト経由のみ。月別ファイルを直接編集しない。**
+
 **既存記事の訂正・追記は `node scripts/update-article.mjs <patch.json>` を通す。**
 `--dry-run` で検査してから書く。パッチは記事1件ぶんで、`replacements`（文字列の置換）、
 `insertAfter`、`replaceTables`（`matchCaption` か `matchIndex` のどちらか一方で表を特定）、

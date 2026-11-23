@@ -954,8 +954,6 @@ export const ARTICLES_META = [
     "id": "openai-122b-funding-round-852b-valuation-2026",
     "type": "news",
     "category": "product",
-    "status": "retracted",
-    "heroScope": "none",
     "title": "【取り下げ】OpenAI が史上最大 $1,220億の資金調達を完了",
     "excerpt": "本記事は同じ事象を扱う先行記事と内容が重複していたため、2026-06-05 に取り下げました。最新版は canonical 記事「OpenAI が史上最大の$122B（約18兆円）を調達、評価額$852B」をご参照ください。",
     "date": "2026-04-06",
@@ -969,7 +967,9 @@ export const ARTICLES_META = [
     "coverImage": {
       "src": "logos/openai.svg",
       "alt": "取り下げ済み記事"
-    }
+    },
+    "heroScope": "none",
+    "status": "retracted"
   },
   {
     "id": "github-copilot-training-data-policy-change-2026",
@@ -1694,8 +1694,8 @@ export const ARTICLES_META = [
       "src": "articles/cover-media-video.svg",
       "alt": "動画制作"
     },
-    "status": "retracted",
-    "heroScope": "none"
+    "heroScope": "none",
+    "status": "retracted"
   },
   {
     "id": "ai-image-api-guide-developers-2026",
@@ -2136,8 +2136,8 @@ export const ARTICLES_META = [
       "alt": "ターミナル画面"
     },
     "heroScope": "none",
-    "reviewCadence": "monthly",
-    "lastReviewed": "2026-09-30"
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": "monthly"
   },
   {
     "id": "editor-comparison-2026-march",
@@ -2161,8 +2161,8 @@ export const ARTICLES_META = [
       "alt": "コードエディタ"
     },
     "heroScope": "none",
-    "reviewCadence": "monthly",
-    "lastReviewed": "2026-09-30"
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": "monthly"
   },
   {
     "id": "pricing-comparison-all-tools-2026-march",
@@ -2189,8 +2189,8 @@ export const ARTICLES_META = [
       "alt": "データ分析"
     },
     "heroScope": "none",
-    "reviewCadence": "monthly",
-    "lastReviewed": "2026-09-30"
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": "monthly"
   },
   {
     "id": "usecase-recommendation-matrix-2026",
@@ -2690,6 +2690,7 @@ export const ARTICLES_META = [
       "Windows",
       "開発ツール"
     ],
+    "lastReviewed": "2026-03-28",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 5,
@@ -2698,8 +2699,7 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 3.5,
-    "reviewCategory": "other",
-    "lastReviewed": "2026-03-28"
+    "reviewCategory": "other"
   },
   {
     "id": "ai-voice-input-tools-landscape-2026",
@@ -3057,6 +3057,8 @@ export const ARTICLES_META = [
       "オープンソース",
       "Gemini"
     ],
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": "monthly",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 4,
@@ -3065,9 +3067,7 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4,
-    "reviewCategory": "cli",
-    "reviewCadence": "monthly",
-    "lastReviewed": "2026-09-30"
+    "reviewCategory": "cli"
   },
   {
     "id": "openai-codex-agent",
@@ -3089,6 +3089,8 @@ export const ARTICLES_META = [
       "src": "logos/codex.svg",
       "alt": "Codex"
     },
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": "monthly",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 4,
@@ -3097,15 +3099,12 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 4,
-    "reviewCategory": "cli",
-    "reviewCadence": "monthly",
-    "lastReviewed": "2026-09-30"
+    "reviewCategory": "cli"
   },
   {
     "id": "cursor-windsurf-merge",
     "type": "news",
     "category": "product",
-    "status": "retracted",
     "title": "【取り下げ】Cursor、Windsurf（Codeium）を買収完了 — AIエディタ市場の統合が加速",
     "excerpt": "本記事は主要な事実が誤りであったため、2026年8月11日に取り下げました。Windsurf を買収したのは Anysphere（Cursor）ではなく Cognition です。",
     "date": "2026-03-28",
@@ -3117,7 +3116,8 @@ export const ARTICLES_META = [
       "買収",
       "分析"
     ],
-    "heroScope": "none"
+    "heroScope": "none",
+    "status": "retracted"
   },
   {
     "id": "claude-design",
@@ -3136,6 +3136,7 @@ export const ARTICLES_META = [
       "Claude",
       "おすすめ"
     ],
+    "lastReviewed": "2026-10-03",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 4,
@@ -3144,8 +3145,7 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 4.5,
-    "reviewCategory": "media",
-    "lastReviewed": "2026-10-03"
+    "reviewCategory": "media"
   },
   {
     "id": "claude-code",
@@ -3163,6 +3163,8 @@ export const ARTICLES_META = [
       "エージェント",
       "おすすめ"
     ],
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": "monthly",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 4,
@@ -3171,9 +3173,7 @@ export const ARTICLES_META = [
       "企業向け": 5
     },
     "rating": 4.5,
-    "reviewCategory": "cli",
-    "reviewCadence": "monthly",
-    "lastReviewed": "2026-09-30"
+    "reviewCategory": "cli"
   },
   {
     "id": "cursor-cli",
@@ -3191,6 +3191,8 @@ export const ARTICLES_META = [
       "Anysphere",
       "おすすめ"
     ],
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": "monthly",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 5,
@@ -3199,9 +3201,7 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 4.5,
-    "reviewCategory": "cli",
-    "reviewCadence": "monthly",
-    "lastReviewed": "2026-09-30"
+    "reviewCategory": "cli"
   },
   {
     "id": "github-copilot-cli",
@@ -3219,6 +3219,8 @@ export const ARTICLES_META = [
       "GitHub Copilot",
       "エンタープライズ"
     ],
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": "monthly",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 4,
@@ -3227,9 +3229,7 @@ export const ARTICLES_META = [
       "企業向け": 5
     },
     "rating": 4.5,
-    "reviewCategory": "cli",
-    "reviewCadence": "monthly",
-    "lastReviewed": "2026-09-30"
+    "reviewCategory": "cli"
   },
   {
     "id": "aider",
@@ -3246,6 +3246,7 @@ export const ARTICLES_META = [
       "オープンソース",
       "無料"
     ],
+    "lastReviewed": "2026-03-28",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 3,
@@ -3254,8 +3255,7 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 3.5,
-    "reviewCategory": "cli",
-    "lastReviewed": "2026-03-28"
+    "reviewCategory": "cli"
   },
   {
     "id": "codebuff",
@@ -3271,6 +3271,7 @@ export const ARTICLES_META = [
       "CLI",
       "新興"
     ],
+    "lastReviewed": "2026-03-28",
     "ratings": {
       "AI品質": 3,
       "使いやすさ": 4,
@@ -3279,8 +3280,7 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 3,
-    "reviewCategory": "cli",
-    "lastReviewed": "2026-03-28"
+    "reviewCategory": "cli"
   },
   {
     "id": "amazon-q",
@@ -3297,6 +3297,7 @@ export const ARTICLES_META = [
       "AWS",
       "クラウド"
     ],
+    "lastReviewed": "2026-03-28",
     "ratings": {
       "AI品質": 3,
       "使いやすさ": 3,
@@ -3305,8 +3306,7 @@ export const ARTICLES_META = [
       "企業向け": 5
     },
     "rating": 3.5,
-    "reviewCategory": "cli",
-    "lastReviewed": "2026-03-28"
+    "reviewCategory": "cli"
   },
   {
     "id": "cline",
@@ -3323,6 +3323,7 @@ export const ARTICLES_META = [
       "オープンソース",
       "プライバシー"
     ],
+    "lastReviewed": "2026-03-28",
     "ratings": {
       "AI品質": 3,
       "使いやすさ": 3,
@@ -3331,8 +3332,7 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 3.5,
-    "reviewCategory": "cli",
-    "lastReviewed": "2026-03-28"
+    "reviewCategory": "cli"
   },
   {
     "id": "warp-ai",
@@ -3348,6 +3348,7 @@ export const ARTICLES_META = [
       "CLI",
       "ターミナル"
     ],
+    "lastReviewed": "2026-03-28",
     "ratings": {
       "AI品質": 2,
       "使いやすさ": 4,
@@ -3356,8 +3357,7 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3,
-    "reviewCategory": "other",
-    "lastReviewed": "2026-03-28"
+    "reviewCategory": "other"
   },
   {
     "id": "cursor-editor",
@@ -3375,6 +3375,8 @@ export const ARTICLES_META = [
       "Anysphere",
       "おすすめ"
     ],
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": "monthly",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 5,
@@ -3383,9 +3385,7 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 4.5,
-    "reviewCategory": "editor",
-    "reviewCadence": "monthly",
-    "lastReviewed": "2026-09-30"
+    "reviewCategory": "editor"
   },
   {
     "id": "windsurf",
@@ -3402,6 +3402,7 @@ export const ARTICLES_META = [
       "無料",
       "買収"
     ],
+    "lastReviewed": "2026-03-28",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 4,
@@ -3410,8 +3411,7 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3.5,
-    "reviewCategory": "editor",
-    "lastReviewed": "2026-03-28"
+    "reviewCategory": "editor"
   },
   {
     "id": "zed-ai",
@@ -3428,6 +3428,7 @@ export const ARTICLES_META = [
       "高速",
       "Rust"
     ],
+    "lastReviewed": "2026-03-28",
     "ratings": {
       "AI品質": 3,
       "使いやすさ": 4,
@@ -3436,8 +3437,7 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 3,
-    "reviewCategory": "editor",
-    "lastReviewed": "2026-03-28"
+    "reviewCategory": "editor"
   },
   {
     "id": "vscode",
@@ -3454,6 +3454,7 @@ export const ARTICLES_META = [
       "定番",
       "無料"
     ],
+    "lastReviewed": "2026-03-28",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 5,
@@ -3462,8 +3463,7 @@ export const ARTICLES_META = [
       "企業向け": 5
     },
     "rating": 4.5,
-    "reviewCategory": "editor",
-    "lastReviewed": "2026-03-28"
+    "reviewCategory": "editor"
   },
   {
     "id": "void",
@@ -3480,6 +3480,7 @@ export const ARTICLES_META = [
       "オープンソース",
       "プライバシー"
     ],
+    "lastReviewed": "2026-10-03",
     "ratings": {
       "AI品質": 2,
       "使いやすさ": 3,
@@ -3488,8 +3489,7 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 3,
-    "reviewCategory": "editor",
-    "lastReviewed": "2026-10-03"
+    "reviewCategory": "editor"
   },
   {
     "id": "pearai",
@@ -3505,6 +3505,7 @@ export const ARTICLES_META = [
       "エディタ",
       "オープンソース"
     ],
+    "lastReviewed": "2026-03-28",
     "ratings": {
       "AI品質": 2,
       "使いやすさ": 3,
@@ -3513,8 +3514,7 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 2.5,
-    "reviewCategory": "editor",
-    "lastReviewed": "2026-03-28"
+    "reviewCategory": "editor"
   },
   {
     "id": "trae",
@@ -3531,6 +3531,7 @@ export const ARTICLES_META = [
       "無料",
       "中国AI"
     ],
+    "lastReviewed": "2026-03-28",
     "ratings": {
       "AI品質": 3,
       "使いやすさ": 4,
@@ -3539,8 +3540,7 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3,
-    "reviewCategory": "editor",
-    "lastReviewed": "2026-03-28"
+    "reviewCategory": "editor"
   },
   {
     "id": "frontier-triad-power-map-2026",
@@ -4002,6 +4002,7 @@ export const ARTICLES_META = [
       "LLM",
       "おすすめ"
     ],
+    "lastReviewed": "2026-05-12",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 4,
@@ -4010,8 +4011,7 @@ export const ARTICLES_META = [
       "企業向け": 5
     },
     "rating": 4.5,
-    "reviewCategory": "model",
-    "lastReviewed": "2026-05-12"
+    "reviewCategory": "model"
   },
   {
     "id": "gpt-5-5-review",
@@ -4029,6 +4029,7 @@ export const ARTICLES_META = [
       "LLM",
       "おすすめ"
     ],
+    "lastReviewed": "2026-05-12",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 5,
@@ -4037,8 +4038,7 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 4.5,
-    "reviewCategory": "model",
-    "lastReviewed": "2026-05-12"
+    "reviewCategory": "model"
   },
   {
     "id": "deepseek-v4-review",
@@ -4056,6 +4056,7 @@ export const ARTICLES_META = [
       "オープンソース",
       "MoE"
     ],
+    "lastReviewed": "2026-05-12",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 4,
@@ -4064,8 +4065,7 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4,
-    "reviewCategory": "model",
-    "lastReviewed": "2026-05-12"
+    "reviewCategory": "model"
   },
   {
     "id": "claude-opus-4-6-review",
@@ -4082,6 +4082,7 @@ export const ARTICLES_META = [
       "Anthropic",
       "LLM"
     ],
+    "lastReviewed": "2026-06-05",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 4,
@@ -4090,8 +4091,7 @@ export const ARTICLES_META = [
       "企業向け": 5
     },
     "rating": 4,
-    "reviewCategory": "model",
-    "lastReviewed": "2026-06-05"
+    "reviewCategory": "model"
   },
   {
     "id": "gpt-5-4-review",
@@ -4108,6 +4108,7 @@ export const ARTICLES_META = [
       "OpenAI",
       "LLM"
     ],
+    "lastReviewed": "2026-06-05",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 4,
@@ -4116,8 +4117,7 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 4,
-    "reviewCategory": "model",
-    "lastReviewed": "2026-06-05"
+    "reviewCategory": "model"
   },
   {
     "id": "gemini-3-1-pro-review",
@@ -4134,6 +4134,7 @@ export const ARTICLES_META = [
       "Google",
       "LLM"
     ],
+    "lastReviewed": "2026-03-29",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 4,
@@ -4142,8 +4143,7 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 4,
-    "reviewCategory": "model",
-    "lastReviewed": "2026-03-29"
+    "reviewCategory": "model"
   },
   {
     "id": "kimi-k2-5-review",
@@ -4161,6 +4161,7 @@ export const ARTICLES_META = [
       "オープンソース",
       "MoE"
     ],
+    "lastReviewed": "2026-03-29",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 3,
@@ -4169,8 +4170,7 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 4,
-    "reviewCategory": "model",
-    "lastReviewed": "2026-03-29"
+    "reviewCategory": "model"
   },
   {
     "id": "claude-sonnet-4-6-review",
@@ -4187,6 +4187,7 @@ export const ARTICLES_META = [
       "Anthropic",
       "LLM"
     ],
+    "lastReviewed": "2026-07-07",
     "ratings": {
       "AI品質": 3,
       "使いやすさ": 4,
@@ -4195,8 +4196,7 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 3.5,
-    "reviewCategory": "model",
-    "lastReviewed": "2026-07-07"
+    "reviewCategory": "model"
   },
   {
     "id": "claude-sonnet-5-review",
@@ -4216,6 +4216,8 @@ export const ARTICLES_META = [
       "エージェント",
       "おすすめ"
     ],
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": null,
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 5,
@@ -4224,9 +4226,7 @@ export const ARTICLES_META = [
       "企業向け": 5
     },
     "rating": 5,
-    "reviewCategory": "model",
-    "reviewCadence": null,
-    "lastReviewed": "2026-09-30"
+    "reviewCategory": "model"
   },
   {
     "id": "claude-fable-5-mythos-5-review",
@@ -4245,6 +4245,8 @@ export const ARTICLES_META = [
       "Mythos",
       "LLM"
     ],
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": null,
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 3,
@@ -4253,9 +4255,7 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 3.5,
-    "reviewCategory": "model",
-    "reviewCadence": null,
-    "lastReviewed": "2026-09-30"
+    "reviewCategory": "model"
   },
   {
     "id": "gpt-5-6-review",
@@ -4277,6 +4277,8 @@ export const ARTICLES_META = [
       "TerminalBench",
       "おすすめ"
     ],
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": null,
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 5,
@@ -4285,9 +4287,7 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 5,
-    "reviewCategory": "model",
-    "reviewCadence": null,
-    "lastReviewed": "2026-09-30"
+    "reviewCategory": "model"
   },
   {
     "id": "sakana-fugu-review",
@@ -4306,6 +4306,7 @@ export const ARTICLES_META = [
       "日本",
       "LLM"
     ],
+    "lastReviewed": "2026-07-07",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 4,
@@ -4314,8 +4315,7 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 4,
-    "reviewCategory": "model",
-    "lastReviewed": "2026-07-07"
+    "reviewCategory": "model"
   },
   {
     "id": "midjourney-v8-review",
@@ -4332,6 +4332,7 @@ export const ARTICLES_META = [
       "おすすめ",
       "API"
     ],
+    "lastReviewed": "2026-03-29",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 4,
@@ -4340,8 +4341,7 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4,
-    "reviewCategory": "image",
-    "lastReviewed": "2026-03-29"
+    "reviewCategory": "image"
   },
   {
     "id": "runway-gen5-review",
@@ -4358,6 +4358,8 @@ export const ARTICLES_META = [
       "プロ向け",
       "VFX"
     ],
+    "heroScope": "none",
+    "lastReviewed": "2026-03-29",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 4,
@@ -4366,10 +4368,8 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 3.5,
-    "reviewCategory": "video",
-    "lastReviewed": "2026-03-29",
     "status": "retracted",
-    "heroScope": "none"
+    "reviewCategory": "video"
   },
   {
     "id": "suno-v5-review",
@@ -4385,6 +4385,7 @@ export const ARTICLES_META = [
       "音楽生成",
       "クリエイティブ"
     ],
+    "lastReviewed": "2026-03-29",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 5,
@@ -4393,8 +4394,7 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 4,
-    "reviewCategory": "music",
-    "lastReviewed": "2026-03-29"
+    "reviewCategory": "music"
   },
   {
     "id": "kling-ai-review",
@@ -4411,6 +4411,7 @@ export const ARTICLES_META = [
       "中国AI",
       "無料"
     ],
+    "lastReviewed": "2026-03-29",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 4,
@@ -4419,8 +4420,7 @@ export const ARTICLES_META = [
       "企業向け": 1
     },
     "rating": 3.5,
-    "reviewCategory": "video",
-    "lastReviewed": "2026-03-29"
+    "reviewCategory": "video"
   },
   {
     "id": "nano-banana-2-review",
@@ -4437,6 +4437,7 @@ export const ARTICLES_META = [
       "Google",
       "Gemini"
     ],
+    "lastReviewed": "2026-03-29",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 5,
@@ -4445,8 +4446,7 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4.5,
-    "reviewCategory": "image",
-    "lastReviewed": "2026-03-29"
+    "reviewCategory": "image"
   },
   {
     "id": "gpt-image-review",
@@ -4463,6 +4463,7 @@ export const ARTICLES_META = [
       "OpenAI",
       "ChatGPT"
     ],
+    "lastReviewed": "2026-03-29",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 5,
@@ -4471,8 +4472,7 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4,
-    "reviewCategory": "image",
-    "lastReviewed": "2026-03-29"
+    "reviewCategory": "image"
   },
   {
     "id": "flux-2-review",
@@ -4489,6 +4489,7 @@ export const ARTICLES_META = [
       "フォトリアル",
       "オープンソース"
     ],
+    "lastReviewed": "2026-03-29",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 3,
@@ -4497,8 +4498,7 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3.5,
-    "reviewCategory": "image",
-    "lastReviewed": "2026-03-29"
+    "reviewCategory": "image"
   },
   {
     "id": "veo-review",
@@ -4515,6 +4515,7 @@ export const ARTICLES_META = [
       "Google",
       "エンタープライズ"
     ],
+    "lastReviewed": "2026-03-29",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 3,
@@ -4523,8 +4524,7 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 3.5,
-    "reviewCategory": "video",
-    "lastReviewed": "2026-03-29"
+    "reviewCategory": "video"
   },
   {
     "id": "pika-review",
@@ -4541,6 +4541,7 @@ export const ARTICLES_META = [
       "SNS",
       "カジュアル"
     ],
+    "lastReviewed": "2026-03-29",
     "ratings": {
       "AI品質": 3,
       "使いやすさ": 5,
@@ -4549,8 +4550,7 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3.5,
-    "reviewCategory": "video",
-    "lastReviewed": "2026-03-29"
+    "reviewCategory": "video"
   },
   {
     "id": "udio-review",
@@ -4566,6 +4566,7 @@ export const ARTICLES_META = [
       "音楽生成",
       "クリエイティブ"
     ],
+    "lastReviewed": "2026-03-29",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 4,
@@ -4574,8 +4575,7 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3.5,
-    "reviewCategory": "music",
-    "lastReviewed": "2026-03-29"
+    "reviewCategory": "music"
   },
   {
     "id": "stable-audio-review",
@@ -4592,6 +4592,7 @@ export const ARTICLES_META = [
       "オープンソース",
       "効果音"
     ],
+    "lastReviewed": "2026-03-29",
     "ratings": {
       "AI品質": 3,
       "使いやすさ": 3,
@@ -4600,8 +4601,7 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3,
-    "reviewCategory": "music",
-    "lastReviewed": "2026-03-29"
+    "reviewCategory": "music"
   },
   {
     "id": "manus-review",
@@ -4618,6 +4618,7 @@ export const ARTICLES_META = [
       "汎用AI",
       "中国AI"
     ],
+    "lastReviewed": "2026-10-03",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 4,
@@ -4626,8 +4627,7 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 3.5,
-    "reviewCategory": "agent",
-    "lastReviewed": "2026-10-03"
+    "reviewCategory": "agent"
   },
   {
     "id": "devin-review",
@@ -4644,6 +4644,7 @@ export const ARTICLES_META = [
       "コーディング",
       "エンタープライズ"
     ],
+    "lastReviewed": "2026-10-03",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 3,
@@ -4652,8 +4653,7 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 3.5,
-    "reviewCategory": "agent",
-    "lastReviewed": "2026-10-03"
+    "reviewCategory": "agent"
   },
   {
     "id": "genspark-review",
@@ -4671,6 +4671,7 @@ export const ARTICLES_META = [
       "スライド",
       "無料"
     ],
+    "lastReviewed": "2026-10-03",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 4,
@@ -4679,8 +4680,7 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 4,
-    "reviewCategory": "search",
-    "lastReviewed": "2026-10-03"
+    "reviewCategory": "search"
   },
   {
     "id": "perplexity-review",
@@ -4697,6 +4697,7 @@ export const ARTICLES_META = [
       "おすすめ",
       "API"
     ],
+    "lastReviewed": "2026-10-03",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 5,
@@ -4705,8 +4706,7 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4.5,
-    "reviewCategory": "search",
-    "lastReviewed": "2026-10-03"
+    "reviewCategory": "search"
   },
   {
     "id": "notebooklm-review",
@@ -4724,6 +4724,7 @@ export const ARTICLES_META = [
       "Google",
       "無料"
     ],
+    "lastReviewed": "2026-10-03",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 5,
@@ -4732,8 +4733,7 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4,
-    "reviewCategory": "search",
-    "lastReviewed": "2026-10-03"
+    "reviewCategory": "search"
   },
   {
     "id": "deepseek-r1-review",
@@ -4752,6 +4752,7 @@ export const ARTICLES_META = [
       "推論",
       "MoE"
     ],
+    "lastReviewed": "2026-03-29",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 3,
@@ -4760,8 +4761,7 @@ export const ARTICLES_META = [
       "企業向け": 2
     },
     "rating": 4,
-    "reviewCategory": "model",
-    "lastReviewed": "2026-03-29"
+    "reviewCategory": "model"
   },
   {
     "id": "qwen-3-review",
@@ -4779,6 +4779,7 @@ export const ARTICLES_META = [
       "オープンソース",
       "Alibaba"
     ],
+    "lastReviewed": "2026-03-29",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 3,
@@ -4787,8 +4788,7 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4,
-    "reviewCategory": "model",
-    "lastReviewed": "2026-03-29"
+    "reviewCategory": "model"
   },
   {
     "id": "ernie-4-5-review",
@@ -4806,6 +4806,7 @@ export const ARTICLES_META = [
       "Baidu",
       "マルチモーダル"
     ],
+    "lastReviewed": "2026-03-29",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 3,
@@ -4814,8 +4815,7 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 3.5,
-    "reviewCategory": "model",
-    "lastReviewed": "2026-03-29"
+    "reviewCategory": "model"
   },
   {
     "id": "meta-acquires-manus-2025",
@@ -8039,6 +8039,8 @@ export const ARTICLES_META = [
       "エージェント",
       "おすすめ"
     ],
+    "lastReviewed": "2026-09-30",
+    "reviewCadence": null,
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 5,
@@ -8047,9 +8049,7 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 4.5,
-    "reviewCategory": "model",
-    "reviewCadence": null,
-    "lastReviewed": "2026-09-30"
+    "reviewCategory": "model"
   },
   {
     "id": "xai-grok-4-5-review",
@@ -8068,6 +8068,7 @@ export const ARTICLES_META = [
       "LLM",
       "エージェント"
     ],
+    "lastReviewed": "2026-08-11",
     "ratings": {
       "AI品質": 4,
       "使いやすさ": 4,
@@ -8076,8 +8077,7 @@ export const ARTICLES_META = [
       "企業向け": 3
     },
     "rating": 4,
-    "reviewCategory": "model",
-    "lastReviewed": "2026-08-11"
+    "reviewCategory": "model"
   },
   {
     "id": "moonshot-kimi-k3-review",
@@ -8097,6 +8097,7 @@ export const ARTICLES_META = [
       "中国AI",
       "LLM"
     ],
+    "lastReviewed": "2026-08-11",
     "ratings": {
       "AI品質": 5,
       "使いやすさ": 3,
@@ -8105,8 +8106,7 @@ export const ARTICLES_META = [
       "企業向け": 4
     },
     "rating": 4.5,
-    "reviewCategory": "model",
-    "lastReviewed": "2026-08-11"
+    "reviewCategory": "model"
   },
   {
     "id": "cursor-origin-code-hosting-rollout-2026",

@@ -1,71 +1,29 @@
 /**
  * aiToolsData.js の ARTICLES 配列を
- *   - src/data/articlesMeta.js  (メタデータのみ)
- *   - src/data/articlesBody.js  (本文データのみ)
+ *   - src/data/articlesMeta.js        (メタデータのみ)
+ *   - src/data/articlesBody-YYYY-MM.js (掲載月ごとの本文)
+ *   - src/data/articlesBody.js         (Node 用の集約モジュール)
  * に分割するワンショットスクリプト。
+ *
+ * 書き込みは serialize-articles.mjs の writeArticles に委譲する。
+ * add-article.mjs / update-article.mjs と同じ経路を通すことで、
+ * どちらから書いても同じ結果になることを保証する。
  *
  * Usage: node scripts/split-articles.mjs
  */
 import { ARTICLES } from "../src/data/aiToolsData.js";
-import { writeFileSync } from "node:fs";
-import { resolve, dirname } from "node:path";
-import { fileURLToPath } from "node:url";
+import { splitArticle, writeArticles } from "./serialize-articles.mjs";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const dataDir = resolve(__dirname, "../src/data");
-
-const META_KEYS = [
-  "id", "type", "category", "title", "excerpt", "date", "newsDate",
-  "author", "readTime", "tags", "coverImage", "heroScope", "pinned",
-  "weekRoundupPeriod", "lastReviewed", "reviewCadence", "ratings", "rating",
-  "status", "reviewCategory",
-];
-const BODY_KEYS = ["body", "tables", "figures", "charts", "embeds", "videos", "demos", "primarySources"];
-
-// ── メタデータ配列 ──
-const metaArr = ARTICLES.map((a) => {
-  const meta = {};
-  for (const k of META_KEYS) {
-    if (a[k] !== undefined) meta[k] = a[k];
-  }
-  return meta;
-});
-
-// ── 本文マップ (id → { body, tables, ... }) ──
+const metaArr = [];
 const bodyMap = {};
 for (const a of ARTICLES) {
-  const entry = {};
-  let hasBody = false;
-  for (const k of BODY_KEYS) {
-    if (a[k] !== undefined) {
-      entry[k] = a[k];
-      hasBody = true;
-    }
-  }
-  if (hasBody) bodyMap[a.id] = entry;
+  const { meta, body } = splitArticle(a);
+  metaArr.push(meta);
+  if (Object.keys(body).length) bodyMap[meta.id] = body;
 }
 
-// ── ファイル出力 ──
-const metaContent = `/**
- * 記事メタデータ（軽量）
- * ── 自動生成: node scripts/split-articles.mjs ──
- * body, tables, figures, charts, primarySources は含まない
- */
-export const ARTICLES_META = ${JSON.stringify(metaArr, null, 2)};
-`;
+const result = writeArticles(metaArr, bodyMap);
 
-const bodyContent = `/**
- * 記事本文データ（重量）
- * ── 自動生成: node scripts/split-articles.mjs ──
- * id → { body, tables, figures, charts, primarySources }
- */
-const ARTICLES_BODY = ${JSON.stringify(bodyMap, null, 2)};
-export default ARTICLES_BODY;
-`;
-
-writeFileSync(resolve(dataDir, "articlesMeta.js"), metaContent, "utf-8");
-writeFileSync(resolve(dataDir, "articlesBody.js"), bodyContent, "utf-8");
-
-console.log(`✓ articlesMeta.js  — ${metaArr.length} 件`);
-console.log(`✓ articlesBody.js  — ${Object.keys(bodyMap).length} 件`);
-console.log("  出力先:", dataDir);
+console.log(`✓ articlesMeta.js  — ${result.meta} 件`);
+console.log(`✓ articlesBody-*.js — ${result.body} 件 / ${result.months.length} か月 (${result.months.join(", ")})`);
+console.log("✓ articlesBody.js  — 集約モジュールを再生成");
