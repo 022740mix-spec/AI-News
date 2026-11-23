@@ -338,10 +338,12 @@ export default function App() {
       if (a.pinned !== b.pinned) return a.pinned ? -1 : 1;
       return a.id.localeCompare(b.id, "ja");
     });
-    // 今日の記事がなければカテゴリの最新記事をフォールバック
-    const featured = sortedToday[0]
-      ?? [...list].sort((a, b) => compareArticleOrder(a, b, "date-desc"))[0]
-      ?? null;
+    // 今日の記事が無い集合では「本日のニュース」を出さない。
+    // 以前は集合の最新記事へフォールバックしていたため、更新の止まった
+    // フィルタ表示（例: 特集・コラム × モデル・API）で数か月前の記事が
+    // 「本日のニュース」として表示される事故があった（2026年11月23日に指摘）。
+    // featured が null のときは HeroToday を描画せず、一覧だけを表示する。
+    const featured = sortedToday[0] ?? null;
     const restRaw = featured
       ? list.filter((a) => a.id !== featured.id)
       : list;
