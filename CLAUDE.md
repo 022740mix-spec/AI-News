@@ -768,6 +768,11 @@ Claude Code Routines（自律実行）でこのリポジトリを操作する場
 `update-article.mjs` が書き込み後にキャッシュ回避付きで読み直して検証するために
 必要である。**書き込みは従来どおりスクリプト経由のみ。月別ファイルを直接編集しない。**
 
+**記事には `edition`（`"morning"` / `"afternoon"`）を付ける。** トップページが
+朝刊（7時の回）・夕刊（15時の回）ごとにその回の記事を一覧表示するために使う。
+朝の回は `"morning"`、午後の回は `"afternoon"` を記事 JSON に入れること。
+既存記事分は git 履歴の初出コミット時刻から一括で付けた（2026年11月23日）。
+
 **既存記事の訂正・追記は `node scripts/update-article.mjs <patch.json>` を通す。**
 `--dry-run` で検査してから書く。パッチは記事1件ぶんで、`replacements`（文字列の置換）、
 `insertAfter`、`replaceTables`（`matchCaption` か `matchIndex` のどちらか一方で表を特定）、

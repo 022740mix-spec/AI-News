@@ -25,9 +25,54 @@ function HomePage({ articles, onSelect, onSection }) {
     return scope !== "none";
   });
 
-  const recentNews = sorted
-    .filter((a) => a.type !== "review" && a.id !== hero?.id && (a.heroScope ?? "day") !== "week")
-    .slice(0, 4);
+  // 朝刊（7時の回）・夕刊（15時の回）ごとに、その回で公開した記事を全件並べる。
+  // 従来は最新4件しか出ず、1日に十数件公開しても大半がトップで見えなかった。
+  // 版の判定はメタの edition（朝の回=morning / 午後の回=afternoon）。
+  // edition が無い記事は掲載日だけのグループに落とす。
+  // ヒーロー（最新1件）は直上に大きく出るため、各版の一覧からは除く。
+  const CATEGORY_WEIGHT = { model: 30, cli: 20, product: 15, media: 10, regulation: 10, editor: 5, data: 5, special: 0 };
+  const importance = (a) =>
+    (a.pinned ? 1000 : 0) +
+    (a.type === "feature" ? 40 : 0) +
+    (CATEGORY_WEIGHT[a.category] ?? 0) +
+    (a.coverImage?.src ? 10 : 0);
+  const editionRank = (e) => (e === "afternoon" ? 0 : e === "morning" ? 1 : 2);
+  const editionGroups = (() => {
+    const pool = sorted.filter(
+      (a) => a.type !== "review" && a.id !== hero?.id && (a.heroScope ?? "day") !== "week"
+    );
+    const byKey = new Map();
+    for (const a of pool) {
+      const ymd = getArticlePublishYmd(a);
+      const key = `${ymd}|${a.edition ?? ""}`;
+      if (!byKey.has(key)) byKey.set(key, { ymd, edition: a.edition ?? null, items: [] });
+      byKey.get(key).items.push(a);
+    }
+    const groups = [...byKey.values()];
+    for (const g of groups) {
+      g.items.sort((x, y) => importance(y) - importance(x));
+    }
+    groups.sort((g1, g2) => {
+      if (g1.ymd !== g2.ymd) return g2.ymd.localeCompare(g1.ymd, "en");
+      return editionRank(g1.edition) - editionRank(g2.edition);
+    });
+    return groups.slice(0, 2);
+  })();
+
+  const WEEKDAYS_JA = ["日", "月", "火", "水", "木", "金", "土"];
+  const formatEditionDate = (ymd) => {
+    const d = parseDate(ymd);
+    if (lang === "en") {
+      return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+    }
+    return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日（${WEEKDAYS_JA[d.getDay()]}）`;
+  };
+  const editionLabel = (edition) =>
+    edition === "morning"
+      ? (lang === "en" ? "Morning Edition" : "朝刊")
+      : edition === "afternoon"
+        ? (lang === "en" ? "Evening Edition" : "夕刊")
+        : (lang === "en" ? "Articles" : "その日の記事");
 
   return (
     <div className="home-page">
@@ -53,37 +98,71 @@ function HomePage({ articles, onSelect, onSection }) {
       ) : null}
 
       <div className="home-page__body">
-        {recentNews.length > 0 ? (
+        {editionGroups.length > 0 ? (
           <section className="home-section">
             <div className="home-section__header">
-              <h2 className="home-section__title">{lang === "en" ? "Recent News" : "最近のニュース"}</h2>
+              <h2 className="home-section__title">{lang === "en" ? "Latest Editions" : "最新の朝刊・夕刊"}</h2>
               <button className="home-section__more" onClick={() => onSection("articles")}>
                 {lang === "en" ? "View all →" : "すべて見る →"}
               </button>
             </div>
-            <div className="home-cards">
-              {recentNews.map((a) => (
-                <article key={a.id} className={`home-card${a.coverImage?.src ? " home-card--has-thumb" : ""}`} role="button" tabIndex={0} onClick={() => onSelect(a)} onKeyDown={handleKeyActivate(() => onSelect(a))}>
-                  {a.coverImage?.src ? (
-                    <div className="home-card__thumb">
-                      <img src={resolveMediaSrc(a.coverImage.src)} alt={a.coverImage.alt} loading="lazy" />
-                    </div>
+            {editionGroups.map((g) => {
+              const lead = g.items.slice(0, 3);
+              const restItems = g.items.slice(3);
+              return (
+                <div className="home-edition" key={`${g.ymd}|${g.edition ?? ""}`}>
+                  <div className="home-edition__header">
+                    <h3 className="home-edition__title">
+                      {formatEditionDate(g.ymd)} {editionLabel(g.edition)}
+                    </h3>
+                    <span className="home-edition__count">
+                      {lang === "en" ? `${g.items.length} articles` : `${g.items.length}件`}
+                    </span>
+                  </div>
+                  <div className="home-cards home-cards--lead">
+                    {lead.map((a, i) => (
+                      <article key={a.id} className={`home-card home-card--lead${a.coverImage?.src ? " home-card--has-thumb" : ""}`} role="button" tabIndex={0} onClick={() => onSelect(a)} onKeyDown={handleKeyActivate(() => onSelect(a))}>
+                        {i === 0 ? (
+                          <span className="home-card__badge">{lang === "en" ? "Top Story" : "一面トップ"}</span>
+                        ) : null}
+                        {a.coverImage?.src ? (
+                          <div className="home-card__thumb">
+                            <img src={resolveMediaSrc(a.coverImage.src)} alt={a.coverImage.alt} loading="lazy" />
+                          </div>
+                        ) : null}
+                        <span className="home-card__category">{CATEGORIES[a.category]?.label}</span>
+                        <h3 className="home-card__title">{a.title}</h3>
+                        <span className="home-card__date">
+                          {getArticlePublishYmd(a)}
+                          {getArticleNewsYmd(a) && getArticleNewsYmd(a) !== getArticlePublishYmd(a) ? (
+                            <span className="home-card__newsdate">
+                              {lang === "en"
+                                ? ` (event ${getArticleNewsYmd(a)})`
+                                : `（出来事 ${getArticleNewsYmd(a)}）`}
+                            </span>
+                          ) : null}
+                        </span>
+                      </article>
+                    ))}
+                  </div>
+                  {restItems.length > 0 ? (
+                    <ul className="home-edition__rows">
+                      {restItems.map((a) => (
+                        <li key={a.id} className="home-row" role="button" tabIndex={0} onClick={() => onSelect(a)} onKeyDown={handleKeyActivate(() => onSelect(a))}>
+                          <span className="home-row__category">{CATEGORIES[a.category]?.label}</span>
+                          <span className="home-row__title">{a.title}</span>
+                          {getArticleNewsYmd(a) && getArticleNewsYmd(a) !== getArticlePublishYmd(a) ? (
+                            <span className="home-row__date">
+                              {lang === "en" ? `event ${getArticleNewsYmd(a)}` : `出来事 ${getArticleNewsYmd(a)}`}
+                            </span>
+                          ) : null}
+                        </li>
+                      ))}
+                    </ul>
                   ) : null}
-                  <span className="home-card__category">{CATEGORIES[a.category]?.label}</span>
-                  <h3 className="home-card__title">{a.title}</h3>
-                  <span className="home-card__date">
-                    {getArticlePublishYmd(a)}
-                    {getArticleNewsYmd(a) && getArticleNewsYmd(a) !== getArticlePublishYmd(a) ? (
-                      <span className="home-card__newsdate">
-                        {lang === "en"
-                          ? ` (event ${getArticleNewsYmd(a)})`
-                          : `（出来事 ${getArticleNewsYmd(a)}）`}
-                      </span>
-                    ) : null}
-                  </span>
-                </article>
-              ))}
-            </div>
+                </div>
+              );
+            })}
           </section>
         ) : null}
 
