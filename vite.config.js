@@ -11,8 +11,9 @@ export default defineConfig({
       output: {
         manualChunks: {
           "data-articles-meta": ["./src/data/articlesMeta.js"],
-          "data-articles-body": ["./src/data/articlesBody.js"],
-          "data-articles-compat": ["./src/data/aiToolsData.js"],
+          // 本文は掲載月ごとの articlesBody-YYYY-MM.js を loadArticleBody.js が
+          // 動的に読み込む。manualChunks に入れると1チャンクに束ね直されて
+          // 分割が無効になるため、ここには列挙しない。
           "data-guide": ["./src/data/vibeCodingGuide.js"],
         },
       },
