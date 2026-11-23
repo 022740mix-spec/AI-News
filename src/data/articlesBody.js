@@ -13,7 +13,7 @@ import BODY_2026_07 from "./articlesBody-2026-07.js?v=6c1cf8dcf42e";
 import BODY_2026_08 from "./articlesBody-2026-08.js?v=c78b7bda5b0c";
 import BODY_2026_09 from "./articlesBody-2026-09.js?v=2e5454237b20";
 import BODY_2026_10 from "./articlesBody-2026-10.js?v=0eb540090e5a";
-import BODY_2026_11 from "./articlesBody-2026-11.js?v=3f60dfe6b04f";
+import BODY_2026_11 from "./articlesBody-2026-11.js?v=6f7e87118f74";
 
 const ARTICLES_BODY = {
   ...BODY_2026_03,

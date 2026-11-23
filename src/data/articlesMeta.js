@@ -16050,5 +16050,28 @@ export const ARTICLES_META = [
       "上場",
       "資金調達"
     ]
+  },
+  {
+    "id": "weekly-metrics-2026-week-nov16",
+    "type": "feature",
+    "category": "special",
+    "title": "週次の計器 — 11月16日〜11月22日は91本、前週の31本から約3倍。運営が Muse の朝刊・夕刊体制に切り替わった最初の週で、後半3日に7割が集中。OpenAI 関連は4本から20本に跳ねた",
+    "excerpt": "2026年11月16日〜11月22日の週次データ。公開は91本（前週31本）で、news 87 / feature 4、レビューは0本。11月19日に記事生産が Muse の朝刊・夕刊体制へ切り替わり、20日以降が20本台になった。本数の増加は出来事の増加と同義ではない。題材では Anthropic 関連が23本、OpenAI が20本、セキュリティが18本。ガイドに説明が無い概念では「AI安全性」が41件に増えた。",
+    "date": "2026-11-23",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "週刊まとめ",
+      "Anthropic",
+      "OpenAI",
+      "セキュリティ",
+      "CLI"
+    ],
+    "heroScope": "week",
+    "weekRoundupPeriod": {
+      "start": "2026-11-16",
+      "end": "2026-11-22"
+    }
   }
 ];

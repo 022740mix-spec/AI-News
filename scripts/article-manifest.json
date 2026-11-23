@@ -1,7 +1,7 @@
 {
   "note": "記事IDの一覧。check-article-manifest.mjs が照合する。記事追加後に --update で更新する。",
   "generatedAt": "2026-11-23",
-  "count": 765,
+  "count": 766,
   "ids": [
     "academy-oscars-ai-acting-screenplay-ineligible-2026",
     "agent-self-authorization-approval-gate-2026",
@@ -742,6 +742,7 @@
     "weekly-metrics-2026-week-aug31",
     "weekly-metrics-2026-week-nov02",
     "weekly-metrics-2026-week-nov09",
+    "weekly-metrics-2026-week-nov16",
     "weekly-metrics-2026-week-oct05",
     "weekly-metrics-2026-week-oct12",
     "weekly-metrics-2026-week-oct19",
