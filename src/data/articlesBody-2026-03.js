@@ -937,11 +937,12 @@ const ARTICLES_BODY_2026_03 = {
   },
   "cli-tools-comparison-2026-march": {
     "body": [
-      "ターミナルから AI にコードを書かせる CLI ツールは、**Claude Code**（Anthropic）、**Codex**（OpenAI）、**Gemini CLI**（Google。個人向けは2026年6月18日に Antigravity CLI へ移行、後述）、**Aider**（OSS）、**GitHub Copilot CLI**、**Cursor CLI**（Anysphere）の6つが主要な候補になる。それぞれ設計思想が異なるため、単純な優劣ではなく用途との相性で選ぶ。**本記事は月次で見直しており、最終更新は2026年9月30日**。",
-      "**Claude Code** はローカルのファイルシステムに直接アクセスし、Bash 実行・MCP サーバ連携・Skills によるカスタマイズが可能。==本番リポジトリでは --dangerously-skip-permissions を避ける==。**Dynamic Workflows**（1回の実行あたり合計1,000エージェントまで、同時実行は既定で16（環境変数で最大256）、同一セッション内で再開可能）と **agent view** によるマルチセッション管理が現行世代の中核で、[デスクトップアプリ](?a=anthropic-claude-code-desktop-redesign-routines-2026)・Web・IDE 拡張にも展開している。標準モデルは Claude Opus 5.5（API 価格は入力 $4 / 出力 $20 per MTok。前世代の [Claude Opus 5](?a=claude-opus-5-review) は $5/$25）で、effort は low から max の5段階、Fable 5.1 / Fable 5 / Sonnet 5.5 / Haiku 4.5 などに切替可能。",
+      "ターミナルから AI にコードを書かせる CLI ツールは、**Claude Code**（Anthropic）、**Codex**（OpenAI）、**Gemini CLI**（Google。個人向けは2026年6月18日に Antigravity CLI へ移行、後述）、**Aider**（OSS）、**GitHub Copilot CLI**、**Cursor CLI**（Anysphere）の6つが主要な候補になる。それぞれ設計思想が異なるため、単純な優劣ではなく用途との相性で選ぶ。**本記事は月次で見直しており、最終更新は2026年11月23日**。",
+      "**Claude Code** はローカルのファイルシステムに直接アクセスし、Bash 実行・MCP サーバ連携・Skills によるカスタマイズが可能。==本番リポジトリでは --dangerously-skip-permissions を避ける==。**Dynamic Workflows**（1回の実行あたり合計1,000エージェントまで、同時実行は既定で16（環境変数で最大256）、同一セッション内で再開可能）と **agent view** によるマルチセッション管理が現行世代の中核で、[デスクトップアプリ](?a=anthropic-claude-code-desktop-redesign-routines-2026)・Web・IDE 拡張にも展開している。標準モデルは Claude Opus 5.5（API 価格は入力 $4 / 出力 $20 per MTok。前世代の [Claude Opus 5](?a=claude-opus-5-review) は $5/$25）で、effort は low から max の5段階、Fable 5.2 / Fable 5.1 / Sonnet 5.5 / Haiku 5.5 / Haiku 4.5 などに切替可能。",
       "**Codex** はクラウドサンドボックス上で動作し、複数タスクの並列実行に強い。PR 単位のワークフローに向く。**2026年に提供範囲が大きく広がり、ChatGPT Free / Go $8 / Plus $20 / Pro（月額 $100 / $200 / $500 の3段階）/ Business のいずれでも利用できる**（3月版で「ChatGPT Pro $200 以上が前提」としていたのは現在では誤り）。4月2日に課金がメッセージ単位から API トークン相当のクレジット制へ移行した。CLI・IDE 拡張・Web・iOS で動作し（OpenAI の料金ページの記載では、これらは Plus 以上。Free / Go は ChatGPT デスクトップアプリで GPT-6 Luna を使う形）、[プラグインマーケットプレイス](?a=codex-plugins-marketplace-2026)で Slack・Figma・Notion 等と連携する。モデルは [GPT-5.6](?a=openai-gpt-5-6-general-availability-july-9-2026) 系（Sol / Terra / Luna）。",
       "【追記 2026-09-30】Codex のモデル世代について: 上の段落の「GPT-5.6 系」は、この記事の前の版が前提にした世代である。OpenAI の Codex 公式ドキュメントでは現在、GPT-6.1 Sol（Plus 以上）と GPT-6 Luna が推奨され、最上位に GPT-6 Astra がある。GPT-5.6 系は展開期間中は選択でき、GPT-5.5 は2026年10月14日に ChatGPT と Codex から提供終了と案内されている。GPT-6 世代の料金・提供条件までは、本記事では改めていない。",
-      "**Gemini CLI** は大規模コンテキストが特徴で、コードベースの一括読み込みに向く。2026年6月18日に、個人向け（Google AI Pro / Ultra でのログイン、および Gemini Code Assist for individuals の無料利用）での Gemini CLI の提供は終了し、Google の Antigravity CLI に置き換えられた（Google 公式ブログ、2026年5月19日付）。Gemini CLI は、Gemini Code Assist Standard / Enterprise ライセンスと、有料の Gemini および Gemini Enterprise Agent Platform の API キー（クォータ表には Vertex AI の名称が残る）では引き続き利用できると案内されている。OSS（Apache 2.0）である点は変わらず、npm の最新版は 0.62.0（2026年9月29日公開）。ソース上の Flash モデルは、基準が Gemini 3.5 Flash、最新の定義が Gemini 3.8 Flash になっている。Gemini CLI 公式のクォータ表には個人アカウントの1日1,000リクエストなどが残っているが、同ページの冒頭には置き換え済みの告知が出ている。",
+      "【追記 2026-11-23】Codex はその後、CLI 0.171.0（2026年11月20日）で GPT-6.2 Sol / GPT-6.2 Astra がカタログに加わった（既定・推奨は GPT-6.1 Sol のまま）。GPT-5.5 は2026年10月14日に ChatGPT・Codex から提供終了した。Cursor CLI の前提となる Cursor の料金体系は「The X Subscription」（Plus $8 / Premium $30 / Super $100 / Ultra $200）に再編され、旧プランは既存契約者向けに継続している。Claude Code の既定モデルは Opus 5.5 のまま、最新版は v2.1.330（2026年11月21日時点）。Copilot CLI は v1.0.112（11月16日時点）まで進んだ。",
+      "**Gemini CLI** は大規模コンテキストが特徴で、コードベースの一括読み込みに向く。2026年6月18日に、個人向け（Google AI Pro / Ultra でのログイン、および Gemini Code Assist for individuals の無料利用）での Gemini CLI の提供は終了し、Google の Antigravity CLI に置き換えられた（Google 公式ブログ、2026年5月19日付）。Gemini CLI は、Gemini Code Assist Standard / Enterprise ライセンスと、有料の Gemini および Gemini Enterprise Agent Platform の API キー（クォータ表には Vertex AI の名称が残る）では引き続き利用できると案内されている。OSS（Apache 2.0）である点は変わらず、npm の最新版は 0.70.0（2026年11月21日時点）で、v0.69.0 の README には企業向け Code Assist 専用で「Gemini 4 以降には調整していない」という告知が加わった。ソース上の Flash モデルは、基準が Gemini 3.5 Flash、最新の定義が Gemini 3.8 Flash になっている。Gemini CLI 公式のクォータ表には個人アカウントの1日1,000リクエストなどが残っているが、同ページの冒頭には置き換え済みの告知が出ている。",
       "Antigravity CLI（コマンド名 agy、Go 製）は、デスクトップアプリの Antigravity 2.0 と同じエージェント基盤と設定を共有し、Agent Skills・Hooks・Subagents・Extensions（プラグインとして）を引き継ぐが、Google 自身が機能は完全には同等でないと説明している。Antigravity の料金ページでは、個人向けの無料プラン（$0）でも Gemini 3.8 Flash・3.7 Flash・3.6 Flash・3.1 Pro などを基本の週次レート制限つきで利用でき、Google AI Pro / Ultra ではより大きな枠が付く。Gemini CLI の設定は agy plugin import gemini などで取り込める（Google の移行ガイド）。以上は Google の説明に基づく記述で、独立した検証は確認できていない。",
       "**Aider** は完全 OSS（Apache 2.0）で、Claude・GPT・Gemini・ローカルモデルを切り替えられる柔軟さが強み。Git との統合が深く、変更を自動コミットする設計。architect / editor のモデル分業、watch モード、prompt caching に対応する。**PyPI 累計680万インストール**、約49,000 GitHub スター（2026年9月時点、GitHub の値を集約する外部サービスでの確認値）と、VC 資金や有償プランを持たないまま端末系エージェントの上位に留まり続けている。**ツール自体は無料で、コストは接続先 LLM の API 料金のみ**。バージョンは 0.x 系のままで（PyPI の最新は2026年2月12日公開の 0.86.2）、マイナーリリース間で CLI フラグや `.aider.conf.yml` の破壊的変更が入る点は運用上の注意点になる。",
       "**Copilot CLI** は GitHub エコシステムとの統合が最大の特徴で、Issues / PR / Actions / Codespaces / Code Search と直結する。`/fleet` による並列エージェント、Autopilot による自律実行に対応し、`/model` で Claude・GPT・Gemini・Microsoft 内製の MAI-Code-1.1-Flash（旧 MAI-Code-1-Flash は2026年9月10日に置き換え）を切り替えられる。Enterprise プランは SSO・監査ログ・IP 補償を備え、組織導入のハードルが低い。**6月1日から従量課金（AI Credits）へ移行**した。",
@@ -954,12 +955,13 @@ const ARTICLES_BODY_2026_03 = {
       "【訂正 2026-09-30】Gemini CLI について、（誤）「無料枠は Flash モデルの1日1,000リクエストに限定され、Pro モデルは3月25日以降 Google AI Pro（$20/月）または AI Ultra（$100/月）の加入が必要」→（正）個人向けの Gemini CLI は2026年6月18日に提供を終了し Antigravity CLI に置き換えられた。Gemini CLI は Code Assist Standard / Enterprise ライセンスと有料 API キーで継続。無料枠が Flash に限定されるのは Gemini API キー（無料）利用の場合（1日250リクエスト）で、Google アカウントでの無料枠は Gemini モデル群から自動選択される旨がクォータ表にある。AI Pro / Ultra の月額は公式ページの静的な記載で確認できなかったため、本文から外した。",
       "【訂正 2026-09-30】Claude Code について、（誤）「1セッション内で最大1,000の並列サブエージェント」→（正）公式ドキュメントでは、1回の実行あたり合計1,000エージェントまで、同時実行は既定で16（環境変数で1〜256）。また（誤）標準モデルは Claude Opus 5（$5/$25）→（正）Pro / Max / Team / Enterprise / Anthropic API の既定は Claude Opus 5.5（$4/$20）。",
       "【訂正 2026-09-30】Copilot CLI について、（誤）MAI-Code-1-Flash →（正）GitHub Docs の廃止履歴では MAI-Code-1-Flash は2026年9月10日に MAI-Code-1.1-Flash へ置き換えられている。Cursor CLI について、（誤）Background Agent →（正）Cloud Agents（Cursor 公式ドキュメントに旧称 Background Agents の記載あり）。Aider について、（誤）44,000 スター →（正）約49,000（GitHub の公開データを集約する外部サービスでの確認。GitHub API へは到達できなかった）。Codex について、（誤）Free / Go を含む全プランで CLI・IDE 拡張・Web・iOS が使えるかのような書き方 →（正）OpenAI の料金ページでは、これらは Plus 以上の記載で、Free / Go は ChatGPT デスクトップアプリでの GPT-6 Luna。Pro は月額 $100 / $200 / $500 の3段階。",
-      "【追記 2026-09-30】月次見直し。(1) Gemini CLI の個人向け提供終了と Antigravity CLI の説明、(2) Codex の現行モデル世代（GPT-6.1 Sol / GPT-6 Luna / GPT-6 Astra）と GPT-5.5 の提供終了予定、(3) 比較表の標準モデル・料金の更新を反映しました。Codex の4月2日の課金方式変更、Aider のマイナー間の破壊的変更の有無、Copilot Enterprise の IP 補償・SSO の記載は、今回の確認では裏付けを取れていません。Gemini CLI・Antigravity CLI・Codex・Copilot のモデル世代は変化が速いため、上記は2026年9月30日時点の記述です。"
+      "【追記 2026-09-30】月次見直し。(1) Gemini CLI の個人向け提供終了と Antigravity CLI の説明、(2) Codex の現行モデル世代（GPT-6.1 Sol / GPT-6 Luna / GPT-6 Astra）と GPT-5.5 の提供終了予定、(3) 比較表の標準モデル・料金の更新を反映しました。Codex の4月2日の課金方式変更、Aider のマイナー間の破壊的変更の有無、Copilot Enterprise の IP 補償・SSO の記載は、今回の確認では裏付けを取れていません。Gemini CLI・Antigravity CLI・Codex・Copilot のモデル世代は変化が速いため、上記は2026年9月30日時点の記述です。",
+      "【追記 2026-11-23】月次見直し。(1) Codex の GPT-6.2 カタログ追加（CLI 0.171.0）と GPT-5.5 の提供終了（10/14）、(2) Claude Code の切替可能モデルに Fable 5.2 と Haiku 5.5 を追加、(3) Gemini CLI の版（0.70.0）と v0.69.0 の README の告知、(4) Cursor の料金体系の「The X Subscription」への再編を反映した。"
     ],
     "tables": [
       {
-        "afterParagraph": 8,
-        "caption": "CLI ツール横断比較（2026年9月30日時点・公式発表および公開情報に基づく）",
+        "afterParagraph": 9,
+        "caption": "CLI ツール横断比較（2026年11月23日時点・公式発表および公開情報に基づく）",
         "headers": [
           "ツール",
           "提供元",
@@ -981,7 +983,7 @@ const ARTICLES_BODY_2026_03 = {
             "Codex",
             "OpenAI",
             "クラウド（+ CLI ローカル）",
-            "GPT-5.6 系（現行の推奨は GPT-6.1 Sol / GPT-6 Luna）",
+            "GPT-6.1 Sol（推奨。カタログに GPT-6.2 Sol / Astra を追加）",
             "$0〜（Free / Go $8 / Plus $20 / Pro $100〜）",
             "並列実行・PR 連携・プラグイン"
           ],
@@ -1014,7 +1016,7 @@ const ARTICLES_BODY_2026_03 = {
             "Anysphere",
             "ローカル + クラウド VM",
             "Auto / Composer 2.5 / Grok 4.7 等（Cursor Models 枠）",
-            "Cursor 契約に含まれる",
+            "Cursor 契約に含まれる（The X Subscription: Plus $8〜）",
             "IDE と同一ワークフロー・チャット連携"
           ]
         ]
@@ -1100,9 +1102,9 @@ const ARTICLES_BODY_2026_03 = {
   },
   "editor-comparison-2026-march": {
     "body": [
-      "AI 支援付きコードエディタの選択肢は、2026年前半の再編を経て **Cursor・Devin Desktop（旧 Windsurf）・VS Code + GitHub Copilot・Zed** の4つに整理された。いずれも AI 統合の深さ・エージェント機能・料金体系の3点で差が出る。**本記事は月次で見直しており、最終更新は2026年9月30日**。3月版からは資本関係・製品名・料金のすべてが変わっているため、以前の版を読んだ方も改めて確認してほしい。",
-      "**Cursor** は **Anysphere** 社が開発する VS Code フォーク。[Cursor 3.x](?a=cursor-3-agent-first-workspace-2026) の **Agents Window** でローカル・worktree・クラウド VM・リモート SSH のエージェントを一画面で並列管理でき、Composer によるマルチファイル編集、Cloud Agents（旧 Background Agent）、Tab 補完がその下に並ぶ。独自モデル **Composer 2.5 / Sonic**（[Kimi K2.5 ベース + 独自 RL](?a=cursor-composer-2-kimi-2026)）に加え、SpaceXAI の Grok 4.7 / 4.6 / 4.5 が Composer 2.5 と同じ「Cursor Models」利用枠に含まれ、Anthropic・OpenAI・Google などのフロンティアモデルは別枠（API 価格ベース）で選択できる。Cursor の現行のモデル一覧では Sonic を確認できていない。PR レビュー専用の **Bugbot** は5月に従量課金へ移行し、1 PR あたり平均 $1.00〜1.50 になった。プランは Pro $20 / Pro+ $60 / Ultra $200 / Teams Standard $40 per seat / Teams Premium $120 per seat。**2026年8月14日に SpaceX による Cursor の買収が完了した**（Cursor 公式ブログ「Cursor is now a part of SpaceX」で確認。6月16日の発表と $60B（全株式）は当サイトの既報による記述で、公式ブログには記載がない。[→ 完了の記事](?a=spacex-closes-cursor-anysphere-acquisition-2026)、[→ 速報](?a=spacex-cursor-60b-acquisition-anysphere-2026)、[→ 市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。",
-      "**Devin Desktop（旧 Windsurf）** は、旧 Codeium の VS Code フォークを **Cognition**（自律エージェント Devin の開発元）が2025年7月に買収したもので、**2026年6月2日に Devin Desktop へブランド統合された**。中核エージェントは **Devin Local** で、Rust で書き直された Cascade の後継にあたる。**Cascade は、2026年6月2日の発表で「7月1日まで」（公式 FAQ では「7月中」）は使えると予告されていたが、実際には残り、2026年9月8日リリースの v3.9.19 で Devin Desktop から削除された**。Devin Local が唯一のエージェントになり、現行の評価対象は Devin Local になる。Cascade 比でトークン効率が最大30%改善し、サブエージェントをネイティブに扱える。既存ユーザーは自動移行されたが、Cascade の既存の会話は、Devin Desktop の「Continue in Devin Local」で新エージェントへ移行する形になった（予告上の期限は7月1日だった）。料金は[3月19日の改定](?a=windsurf-pricing-overhaul)でクレジット制から日次・週次クォータ制に移行し、Free / Pro $20 / Teams（チーム基本料 $80/月 + フルユーザー1席あたり $40/月、最大200ユーザー）/ Max $200 / Enterprise の構成（Devin の現行料金ページ）。Pro は $20/月で、Cursor Pro（$20）と同額である（Devin の3月の発表では、既存の Pro・Teams 加入者は従来価格が据え置かれる）。単体エディタというより、Devin 本体と組み合わせた一貫ワークフローの入口として位置付けるのが実態に近い。",
+      "AI 支援付きコードエディタの選択肢は、2026年前半の再編を経て **Cursor・Devin Desktop（旧 Windsurf）・VS Code + GitHub Copilot・Zed** の4つに整理された。いずれも AI 統合の深さ・エージェント機能・料金体系の3点で差が出る。**本記事は月次で見直しており、最終更新は2026年11月23日**。3月版からは資本関係・製品名・料金のすべてが変わっているため、以前の版を読んだ方も改めて確認してほしい。",
+      "**Cursor** は **Anysphere** 社が開発する VS Code フォーク。[Cursor 3.x](?a=cursor-3-agent-first-workspace-2026) の **Agents Window** でローカル・worktree・クラウド VM・リモート SSH のエージェントを一画面で並列管理でき、Composer によるマルチファイル編集、Cloud Agents（旧 Background Agent）、Tab 補完がその下に並ぶ。独自モデル **Composer 2.5 / Sonic**（[Kimi K2.5 ベース + 独自 RL](?a=cursor-composer-2-kimi-2026)）に加え、SpaceXAI の Grok 4.7 / 4.6 / 4.5 が Composer 2.5 と同じ「Cursor Models」利用枠に含まれ、Anthropic・OpenAI・Google などのフロンティアモデルは別枠（API 価格ベース）で選択できる。Cursor の現行のモデル一覧では Sonic を確認できていない。PR レビュー専用の **Bugbot** は、現行の公式ドキュメントでは Premium 以上のプランに含まれる機能と位置づけられている。プランは「The X Subscription」に再編され、Plus $8 / Premium $30 / Super $100 / Ultra $200、Teams は席あたり $30 / $100 / $200（旧 Pro $20 / Pro+ $60 等は既存契約者向けに継続）。**2026年8月14日に SpaceX による Cursor の買収が完了した**（Cursor 公式ブログ「Cursor is now a part of SpaceX」で確認。6月16日の発表と $60B（全株式）は当サイトの既報による記述で、公式ブログには記載がない。[→ 完了の記事](?a=spacex-closes-cursor-anysphere-acquisition-2026)、[→ 速報](?a=spacex-cursor-60b-acquisition-anysphere-2026)、[→ 市場再編の分析](?a=feature-ai-coding-market-realignment-spacex-cursor-2026)）。",
+      "**Devin Desktop（旧 Windsurf）** は、旧 Codeium の VS Code フォークを **Cognition**（自律エージェント Devin の開発元）が2025年7月に買収したもので、**2026年6月2日に Devin Desktop へブランド統合された**。中核エージェントは **Devin Local** で、Rust で書き直された Cascade の後継にあたる。**Cascade は、2026年6月2日の発表で「7月1日まで」（公式 FAQ では「7月中」）は使えると予告されていたが、実際には残り、2026年9月8日リリースの v3.9.19 で Devin Desktop から削除された**。Devin Local が唯一のエージェントになり、現行の評価対象は Devin Local になる。Cascade 比でトークン効率が最大30%改善し、サブエージェントをネイティブに扱える。既存ユーザーは自動移行されたが、Cascade の既存の会話は、Devin Desktop の「Continue in Devin Local」で新エージェントへ移行する形になった（予告上の期限は7月1日だった）。料金は[3月19日の改定](?a=windsurf-pricing-overhaul)でクレジット制から日次・週次クォータ制に移行し、Free / Pro $20 / Teams（$80/月、最大100ユーザー）/ Max $200 / Enterprise の構成（Devin の現行料金ページ。2026年11月23日の確認では席あたり $40 の記載はない）。Pro は $20/月で、Cursor Pro（$20）と同額である（Devin の3月の発表では、既存の Pro・Teams 加入者は従来価格が据え置かれる）。単体エディタというより、Devin 本体と組み合わせた一貫ワークフローの入口として位置付けるのが実態に近い。",
       "**VS Code + GitHub Copilot** は Microsoft / GitHub のエコシステム。エディタ本体は無料で、Copilot が AI 層を担う。Agent Mode がターミナル操作・ファイル編集を含むマルチステップタスクを自律実行し、Copilot cloud agent（本記事の旧版では Coding Agent と表記）は GitHub Issue を割り当てるだけで PR を自動作成する。モデルは Claude / GPT / Gemini に加え Microsoft 内製の **MAI-Code-1.1-Flash**（旧 MAI-Code-1-Flash は2026年9月10日に置き換え）を `/model` で切替可能（[→ Copilot CLI レビュー](?a=github-copilot-cli)）。**2026年6月1日から従量課金（AI Credits、1クレジット = $0.01）へ移行**し、各プランに月次クレジット枠が付く形になった。Free / Student / Pro $10 / Pro+ $39 / Max $100 / Business $19 per seat / Enterprise $39 per seat。拡張機能エコシステムの規模と企業統制機能は依然として突出している。",
       "**Zed** は **Zed Industries** の Rust 製ネイティブエディタで、VS Code 系ではない唯一の選択肢。GPU レンダリングによる描画速度と、Agent Panel から外部エージェントを接続できる設計が特徴。Personal $0（採用された編集予測 2,000回まで、自前 API キー・外部エージェントは無制限）/ Pro $10（$5 分のトークン込み、超過は API 定価 +10% の従量）/ Business $30 per seat。**AI 機能を自前の API キーだけで賄えるため、サブスクリプションを増やさずに AI エディタ体験を得たい場合の最有力**になる。一方、Composer 相当のマルチファイル自律編集の成熟度では先行3製品に及ばない。",
       "選び方の目安: エージェントの並列運用を最優先なら **Cursor**、既存の VS Code 環境と GitHub の統制を活かすなら **VS Code + Copilot**、Devin との一貫ワークフローを組むなら **Devin Desktop**、速度とコスト最小化なら **Zed**。企業で SSO・監査・IP 補償が必要なら Copilot Business / Enterprise が最も導入しやすい（[→ 企業導入チェックリスト](?a=ai-enterprise-legal-checklist-2026)）。各ツールの[料金詳細はこちら](?a=pricing-comparison-all-tools-2026-march)、CLI 側の比較は[CLI ツール横断比較](?a=cli-tools-comparison-2026-march)を参照。",
@@ -1117,12 +1119,13 @@ const ARTICLES_BODY_2026_03 = {
       "【訂正 2026-09-30】Cursor について、（誤）SpaceX による買収は「Q3 2026 クローズ予定」→（正）2026年8月14日に完了した（Cursor 公式ブログ）。（誤）Background Agent →（正）Cloud Agents（Cursor 公式ドキュメントに旧称 Background Agents の記載あり）。",
       "【訂正 2026-09-30】Devin Desktop の料金について、（誤）「Teams $40 per seat」→（正）チーム基本料 $80/月 + フルユーザー1席あたり $40/月（最大200ユーザー、Devin の料金ページ）。（誤）「Pro が $15 から $20 になったことで Cursor に対する価格優位は消滅した」→（正）Pro は $20/月で Cursor Pro と同額。$15 からの値上げは Devin の公式ページで確認できず、既存の Pro・Teams 加入者は従来価格が据え置かれるとされている。",
       "【訂正 2026-09-30】GitHub Copilot について、（誤）MAI-Code-1-Flash →（正）GitHub Docs の廃止履歴では2026年9月10日に MAI-Code-1.1-Flash へ置き換えられている。（誤）Coding Agent →（正）現行の GitHub Docs の表記は Copilot cloud agent。個人向けプランに Max（$100/月）と Student（無料）があることを加えた。Zed について、（誤）「編集予測 月2,000回まで」→（正）Zed の料金ページの記載は「2,000 accepted edit predictions」で、期間の記載は確認できなかった。",
-      "【追記 2026-09-30】月次見直し。(1) SpaceX による Cursor 買収の完了と Grok モデルの組み込み、(2) Devin Desktop での Cascade 削除と現行料金、(3) Copilot の個人向け Max プラン、(4) Zed の現行プラン、(5) 比較対象外の動き（Antigravity、VS Code の Agents window、Zed の Delta）を反映しました。Cursor の Sonic、Bugbot の1 PR あたり平均費用、Composer 2.5 が Kimi K2.5 ベースである点、SpaceX による買収の発表日（6/16）と金額（$60B、全株式）は、Cursor の公式ブログに記載がなく裏付けを取れていません。2026年9月30日時点の記述です。"
+      "【追記 2026-09-30】月次見直し。(1) SpaceX による Cursor 買収の完了と Grok モデルの組み込み、(2) Devin Desktop での Cascade 削除と現行料金、(3) Copilot の個人向け Max プラン、(4) Zed の現行プラン、(5) 比較対象外の動き（Antigravity、VS Code の Agents window、Zed の Delta）を反映しました。Cursor の Sonic、Bugbot の1 PR あたり平均費用、Composer 2.5 が Kimi K2.5 ベースである点、SpaceX による買収の発表日（6/16）と金額（$60B、全株式）は、Cursor の公式ブログに記載がなく裏付けを取れていません。2026年9月30日時点の記述です。",
+      "【訂正 2026-11-23】(1) Cursor の料金体系が「The X Subscription」に再編されたため、本文と比較表を更新した。（誤）Pro $20 / Pro+ $60 / Ultra $200、Teams Standard $40 / Premium $120 per seat →（正）Plus $8 / Premium $30 / Super $100 / Ultra $200、Teams は席あたり $30 / $100 / $200。旧プランは既存契約者向けに継続。Bugbot は現行の公式ドキュメントで Premium 以上に含まれる機能とされている。(2) Devin Desktop の Teams は、現行の公式料金ページでは $80/月（最大100ユーザー）で、席あたり $40 の記載は確認できなかったため改めた。"
     ],
     "tables": [
       {
         "afterParagraph": 4,
-        "caption": "AI エディタ横断比較（2026年9月30日時点・公式発表および公開情報に基づく）",
+        "caption": "AI エディタ横断比較（2026年11月23日時点・公式発表および公開情報に基づく）",
         "headers": [
           "エディタ",
           "提供元",
@@ -1137,8 +1140,8 @@ const ARTICLES_BODY_2026_03 = {
             "Cursor",
             "Anysphere（2026年8月14日に SpaceX が買収完了）",
             "VS Code フォーク",
-            "Pro $20",
-            "Pro+ $60 / Ultra $200 / Teams $40〜$120 per seat",
+            "Plus $8",
+            "Premium $30 / Super $100 / Ultra $200 / Teams $30〜$200 per seat",
             "Agents Window（並列）・Cloud Agents（旧 Background Agent）・Bugbot",
             "エージェント並列運用・独自モデル Composer 2.5 と Grok 4.7 等の Cursor Models 枠"
           ],
@@ -1147,7 +1150,7 @@ const ARTICLES_BODY_2026_03 = {
             "Cognition",
             "VS Code フォーク",
             "Pro $20",
-            "Teams $80/月 + $40 per full seat / Max $200 / Enterprise",
+            "Teams $80/月（最大100ユーザー）/ Max $200 / Enterprise",
             "Devin Local（Cascade の後継。7/1 は予告された移行期限で、Cascade の削除は 9/8）",
             "段階的タスク分解・Devin 本体との連携"
           ],
@@ -1257,25 +1260,26 @@ const ARTICLES_BODY_2026_03 = {
   },
   "pricing-comparison-all-tools-2026-march": {
     "body": [
-      "AI 開発ツールの料金体系は2026年を通じて改定が続いている。3月の[Windsurf の $15→$20 値上げとクォータ制移行](?a=windsurf-pricing-overhaul)、[Gemini CLI の Pro 有料化](?a=gemini-cli-v035)に始まり、**4月2日に Codex がメッセージ単位課金からクレジット制へ、6月1日に GitHub Copilot が従量課金（AI Credits）へ移行**した。定額サブスクリプションから、**「定額＋含まれるクレジット枠＋超過分は従量」というハイブリッド型への移行**が業界全体の方向になっている。ここでは主要ツールの料金を公式発表ベースで横並びにした。**本記事は月次で見直しており、最終更新は2026年9月30日**。",
+      "AI 開発ツールの料金体系は2026年を通じて改定が続いている。3月の[Windsurf の $15→$20 値上げとクォータ制移行](?a=windsurf-pricing-overhaul)、[Gemini CLI の Pro 有料化](?a=gemini-cli-v035)に始まり、**4月2日に Codex がメッセージ単位課金からクレジット制へ、6月1日に GitHub Copilot が従量課金（AI Credits）へ移行**した。定額サブスクリプションから、**「定額＋含まれるクレジット枠＋超過分は従量」というハイブリッド型への移行**が業界全体の方向になっている。ここでは主要ツールの料金を公式発表ベースで横並びにした。**本記事は月次で見直しており、最終更新は2026年11月23日**。",
       "**CLI ツール**の料金は3パターンに分かれる。Claude Code は Pro $20/月・Max $100〜200/月・API 従量課金の3本立て。**Codex は提供範囲が大きく広がり、ChatGPT Free / Go $8 / Plus $20 / Pro / Business のいずれでも利用できる**（3月版で「ChatGPT Pro $200 以上が前提」としていたのは現在では誤り）。Gemini CLI は、2026年6月18日に個人向け（無料の Gemini Code Assist for individuals、Google AI Pro、Google AI Ultra）への提供を終了している。Google の公式ブログ（5/19 付）は、個人向けの後継を Antigravity CLI としている。Gemini CLI は Gemini Code Assist Standard / Enterprise ライセンスと有料の API キーでは引き続き使える。Antigravity CLI は無料（$0/月、週次の利用制限つき）から始められ、Google AI Pro（$19.99/月）と AI Ultra（$99.99/月から）は5時間ごとに更新される枠が大きくなる。Aider はツール自体が OSS 無料で、接続する LLM の API 費用のみがコストとなる。",
-      "**エディタ**では Cursor と Devin Desktop（旧 Windsurf）が同額の $20/月（Pro）で並ぶ。VS Code 本体は無料で、Copilot Pro $10/月が最安の有料 AI エディタ体験。**Zed は Personal $0（月2,000回の編集予測、自前 API キー持込可）/ Pro $10 / Business $30 per seat** で、サブスクリプションを増やさずに済ませたい場合の選択肢になる。上位帯では Cursor が Pro+ $60 / Ultra $200、Devin Desktop が Max $200 を用意しており、**エージェントを常時走らせる使い方では月 $200 前後がひとつの相場**になりつつある。",
-      "**Enterprise 向け**では GitHub Copilot Enterprise（$39 per seat）が IP インデムニティ（知的財産補償）・監査ログ・SAML SSO を備え、組織導入のハードルが最も低い。Claude Code は SOC 2 準拠に加え Workload Identity Federation でクラウド資格情報の連携に対応する。Cursor は Teams Standard $40 / Teams Premium $120 per seat。企業導入の法的チェックポイントは[こちらの記事](?a=ai-enterprise-legal-checklist-2026)で詳しく整理している。",
+      "**エディタ**では Devin Desktop（旧 Windsurf）の Pro が $20/月。Cursor は料金体系が「The X Subscription」に再編され、Plus $8 / Premium $30 / Super $100 / Ultra $200 になった（旧 Pro $20 / Pro+ $60 は既存契約者向けに継続）。VS Code 本体は無料で、Copilot Pro $10/月が最安の有料 AI エディタ体験。**Zed は Personal $0（編集予測2,000回まで、自前 API キー持込可）/ Pro $10 / Business $30 per seat** で、サブスクリプションを増やさずに済ませたい場合の選択肢になる。上位帯では Cursor の Ultra と Devin Desktop の Max がいずれも $200 で、**エージェントを常時走らせる使い方では月 $200 前後がひとつの相場**になりつつある。",
+      "**Enterprise 向け**では GitHub Copilot Enterprise（$39 per seat）が IP インデムニティ（知的財産補償）・監査ログ・SAML SSO を備え、組織導入のハードルが最も低い。Claude Code は SOC 2 準拠に加え Workload Identity Federation でクラウド資格情報の連携に対応する。Cursor の Teams は席あたり $30 / $100 / $200（Premium / Super / Ultra 相当）。企業導入の法的チェックポイントは[こちらの記事](?a=ai-enterprise-legal-checklist-2026)で詳しく整理している。",
       "**モデル API の単価**も比較の前提として押さえておきたい。現行フラッグシップは [Claude Opus 5](?a=claude-opus-5-review) が $5/$25、Claude Fable 5 が $10/$50、[Claude Sonnet 5](?a=claude-sonnet-5-review) が $2/$10（導入価格として告知されていた $2/$10 が8月31日以降も標準価格となり、予定されていた $3/$15 への引き上げは行われなかった）。OpenAI は [GPT-5.6 の値下げ](?a=openai-gpt-5-6-luna-terra-price-cut-2026)で Luna が $0.20/$1.20、Terra が $2/$12 になった。[Grok 4.5](?a=xai-grok-4-5-public-launch-opus-class-july-9-2026) は $2/$6。オープンウェイト系では [Kimi K3](?a=moonshot-kimi-k3-open-weights-license-2026) が $3/$15。**サブスクリプションと API 従量のどちらが安いかは月間トークン量で逆転する**ため、月 $200 のプランを検討する段階に来たら、実測トークン量で従量課金と比較する価値がある。",
       "【2026年9月30日時点の注記】本節の API 単価は8月11日版の世代を前提としている。その後、Anthropic の公式料金表には Claude Opus 5.5（$4/$20）、Claude Sonnet 5.5（$2/$10）、Claude Fable 5.1（$10/$50）が加わり、OpenAI の API 料金表には GPT-6 世代（Astra $10/$50、6.1 Sol $2/$10、Luna $0.10/$0.50）が載っている。xAI は Grok 4.7（$2/$6）を公開しており、Grok 4.5 のモデルページも同じ $2/$6 を示している。本文の単価は前提世代のまま残している。旧世代の単価は世代に紐づいており、名前だけ差し替えると根拠を失うためである。CLI 表の API 従量課金の列は、Claude Code と Codex の両方で、前提世代と現行世代の単価を同じ形式で併記した。Kimi K3 の $3/$15 は Moonshot の公式料金表で確認できた。",
-      "コスト最適化の考え方: 個人でコストを抑えるなら **Aider（API 費用のみ）+ VS Code + Zed Personal** が最安構成。月 $20 で1ツールに絞るなら、CLI 重視で Claude Code Pro、エディタ重視で Cursor Pro。企業導入で統制を優先するなら Copilot Business / Enterprise が現実的な選択肢となる。**従量課金への移行が進んだため、定額プランの月額だけでは実効コストを見積もれない点に注意してほしい。** 導入前に、想定ワークロードで1か月の実測を取ることを推奨する。",
+      "コスト最適化の考え方: 個人でコストを抑えるなら **Aider（API 費用のみ）+ VS Code + Zed Personal** が最安構成。月 $20 で1ツールに絞るなら、CLI 重視で Claude Code Pro、エディタ重視で Cursor Plus / Premium。企業導入で統制を優先するなら Copilot Business / Enterprise が現実的な選択肢となる。**従量課金への移行が進んだため、定額プランの月額だけでは実効コストを見積もれない点に注意してほしい。** 導入前に、想定ワークロードで1か月の実測を取ることを推奨する。",
       "---",
       "**編集履歴**",
       "【訂正 2026-08-11】(1) Codex について「ChatGPT Pro（$200/月）以上のプランに含まれる形で提供され、単体の低価格プランはない」という記述を訂正しました。現在は Free / Go / Plus / Pro / Business のいずれでも利用できます。(2) Zed AI の料金を「AI 機能 $15/月」から現行の Personal $0 / Pro $10 / Business $30 per seat に訂正しました。(3) 「Windsurf」の運営元と製品名を Cognition の Devin Desktop に訂正しました（旧版は Anysphere 傘下と記載していましたが、これは事実ではありません）。",
       "【追記 2026-08-11】月次見直しにより全面更新。(1) Codex のクレジット制移行（4/2）と GitHub Copilot の従量課金移行（6/1）、(2) Cursor の Pro+ / Ultra / Teams Premium を含む現行プラン全体、(3) 現行モデルの API 単価（Opus 5 / Fable 5 / Sonnet 5 / GPT-5.6 / Grok 4.5 / Kimi K3）、(4) 定額から「定額＋クレジット枠＋従量」への業界的な移行という論点を追加しました。",
       "【訂正 2026-09-02】Claude Sonnet 5 の単価を現行の **$3/$15** に更新した。**8月31日で導入価格 $2/$10 が終了している。** 本記事は月次見直し対象であり、料金は読者が採用と支出の判断に直接使うため、期限を過ぎた値を残してはならない。",
       "【訂正 2026-09-30】(1) Claude Sonnet 5 の単価について、9/2 の訂正で「現行の $3/$15」としたのは誤りだった。（誤）$3/$15、8月31日で導入価格 $2/$10 が終了 →（正）$2/$10。Anthropic の公式料金表の脚注は、導入価格として告知していた $2/$10 が標準価格になり、9/1 に予定されていた $3/$15 への引き上げは行われないと記している。(2) Gemini CLI について、（誤）Flash モデルは1日1,000リクエストまで無料、Pro モデルは Google AI Pro / Ultra の加入が必要 →（正）6/18 に個人向け（無料・Google AI Pro・Google AI Ultra）への提供が終了し、個人向けの後継は Antigravity CLI。出典は Google Developers Blog（5/19）と Gemini CLI 公式サイトのプラン表示。個人でも有料の API キーなら Gemini CLI を使い続けられる。(3) Claude Code の備考について、（誤）Max は Fast Mode 含む →（正）Fast Mode は Pro / Max / Team / Enterprise でも利用クレジットのみで、サブスクの上限には含まれない。(4) Codex の上位プランに Pro $500 を加えた。公式の料金ページは Pro を $100 / $200 / $500 としている。Business は月払い $25、年払い $20。あわせて CLI 表の API 従量課金の列を、Claude Code と Codex で同じ形式（前提世代の単価と、2026-09-30 時点の現行世代の単価の併記）に揃えた。Codex の列は（旧）GPT-5.6 単価 →（新）前提世代 GPT-5.6 と現行世代 GPT-6.1 Sol $2/$10・Astra $10/$50 の併記。Claude Code の Fast Mode 単価は Opus 5 $10/$50、Opus 5.5 $8/$40 の両方を記載した。(5) Devin Desktop の Teams について、（誤）$40 per seat →（正）チーム基本料 $80/月 + フル開発者席 $40/月（最大200人）。",
-      "【追記 2026-09-30】月次見直し。(1) GitHub Copilot に個人向けの Copilot Max（$100/月、基本 10,000 クレジット）が加わったため、表に追記した。Copilot Pro $10 / Pro+ $39 / Business $19 / Enterprise $39 と 1クレジット = $0.01 は公式ドキュメントで再確認した。(2) Cursor（Pro $20 / Pro+ $60 / Ultra $200 / Teams $40・$120）、Devin Desktop（Free / Pro $20 / Max $200）、Zed（Personal $0 / Pro $10 / Business $30）、Aider（Apache 2.0）の料金は変更がないことを確認した。(3) API 単価の節に、本記事が前提とする世代より新しいモデルが出ている旨の注記を加えた。(4) 公式の資料で確認できなかった項目は直していない。Codex のクレジット制移行日（4/2）、Cursor CLI が Cursor Free に含まれるかどうか、Copilot の IP 補償がどのプランまで及ぶか、Zed Personal の編集予測 2,000回が月単位かどうかは、いずれも今回の確認範囲では一次資料に到達できていない。"
+      "【追記 2026-09-30】月次見直し。(1) GitHub Copilot に個人向けの Copilot Max（$100/月、基本 10,000 クレジット）が加わったため、表に追記した。Copilot Pro $10 / Pro+ $39 / Business $19 / Enterprise $39 と 1クレジット = $0.01 は公式ドキュメントで再確認した。(2) Cursor（Pro $20 / Pro+ $60 / Ultra $200 / Teams $40・$120）、Devin Desktop（Free / Pro $20 / Max $200）、Zed（Personal $0 / Pro $10 / Business $30）、Aider（Apache 2.0）の料金は変更がないことを確認した。(3) API 単価の節に、本記事が前提とする世代より新しいモデルが出ている旨の注記を加えた。(4) 公式の資料で確認できなかった項目は直していない。Codex のクレジット制移行日（4/2）、Cursor CLI が Cursor Free に含まれるかどうか、Copilot の IP 補償がどのプランまで及ぶか、Zed Personal の編集予測 2,000回が月単位かどうかは、いずれも今回の確認範囲では一次資料に到達できていない。",
+      "【訂正 2026-11-23】(1) Cursor の料金体系が「The X Subscription」に再編されたため、本文と両表を現行に更新した。（誤）Pro $20 / Pro+ $60 / Ultra $200、Teams Standard $40 / Premium $120 per seat →（正）Plus $8 / Premium $30 / Super $100 / Ultra $200、Teams は席あたり $30 / $100 / $200。旧プランは既存契約者向けに継続している。(2) Devin の Teams について、現行の公式料金ページに席あたり $40 の記載はなく、Teams は $80/月（最大100ユーザー）とされているため改めた。あわせて Max $200 に Devin Bots へのアクセスが含まれる旨を加えた。(3) Copilot Max のクレジット枠は基本10,000 + Flex 10,000 の計20,000であることを表に明記した。(4) モデル API 単価の現行世代として、Claude Fable 5.2（$8/$40）、GPT-6.2 Astra（$8/$40）、GPT-6.2 Sol（$2/$10）、Claude Haiku 5.5（$0.10/$0.50、プロンプト10万トークン以下）を CLI 表に反映した。本文の API 単価の節は前提世代の記述として残している。Zed は公式料金ページで、編集予測が無制限であることとホスト利用が API 定価 +10% である構造を確認した（価格数値自体はページのテキストに含まれていなかった）。"
     ],
     "tables": [
       {
         "afterParagraph": 1,
-        "caption": "CLI ツール料金比較（2026年9月30日見直し・公式発表および公開情報に基づく）",
+        "caption": "CLI ツール料金比較（2026年11月23日見直し・公式発表および公開情報に基づく）",
         "headers": [
           "ツール",
           "無料枠",
@@ -1290,15 +1294,15 @@ const ARTICLES_BODY_2026_03 = {
             "なし",
             "Pro $20/月",
             "Max $100 / $200/月",
-            "前提世代（8/11 版）: Opus 5 $5/$25 per 1M / 現行世代（2026-09-30 時点）: Opus 5.5 $4/$20、Fable 5.1 $10/$50 per 1M",
-            "Fast Mode はサブスクの上限に含まれず、利用クレジットでの課金（Opus 5 は $10/$50、Opus 5.5 は $8/$40 per 1M）"
+            "前提世代（8/11 版）: Opus 5 $5/$25 per 1M / 現行世代（2026-11-23 時点）: Opus 5.5 $4/$20、Fable 5.2 $8/$40 per 1M",
+            "Fast Mode はサブスクの上限に含まれず、利用クレジットでの課金（Opus 5.5 は $8/$40、Fable 5.2 は $16/$80 per 1M）。Sonnet 5.5 のキャッシュ読み取りは10/18 に $0.10 へ半額化"
           ],
           [
             "Codex",
             "ChatGPT Free に含まれる（制限あり）",
             "Go $8 / Plus $20/月",
             "Pro $100 / $200 / $500、Business $25/月（年払いは $20）",
-            "前提世代（8/11 版）: GPT-5.6 Sol $4/$20、Terra $2/$12 per 1M / 現行世代（2026-09-30 時点）: GPT-6.1 Sol $2/$10、Astra $10/$50 per 1M",
+            "前提世代（8/11 版）: GPT-5.6 Sol $4/$20、Terra $2/$12 per 1M / 現行世代（2026-11-23 時点）: GPT-6.2 Astra $8/$40、GPT-6.2 Sol $2/$10 per 1M",
             "4/2 よりクレジット制（API 単価連動）"
           ],
           [
@@ -1315,7 +1319,7 @@ const ARTICLES_BODY_2026_03 = {
             "Pro $10 / Pro+ $39 / Max $100/月",
             "Business $19 / Enterprise $39 per seat",
             "AI Credits（1クレジット = $0.01）",
-            "6/1 より従量課金へ移行"
+            "6/1 より従量課金へ移行。クレジット枠は Pro 計1,500 / Pro+ 7,000 / Max 計20,000（基本 + Flex）"
           ],
           [
             "Aider",
@@ -1328,16 +1332,16 @@ const ARTICLES_BODY_2026_03 = {
           [
             "Cursor CLI",
             "Cursor Free に含まれる",
-            "Cursor Pro $20/月に含まれる",
-            "Pro+ $60 / Ultra $200/月",
+            "Cursor Plus $8/月に含まれる",
+            "Premium $30 / Super $100 / Ultra $200/月",
             "—",
-            "IDE とサブスク枠を共有"
+            "IDE とサブスク枠を共有。料金体系は「The X Subscription」に再編（旧プランは既存契約者向けに継続）"
           ]
         ]
       },
       {
         "afterParagraph": 2,
-        "caption": "エディタ料金比較（2026年9月30日見直し・公式発表および公開情報に基づく）",
+        "caption": "エディタ料金比較（2026年11月23日見直し・公式発表および公開情報に基づく）",
         "headers": [
           "エディタ",
           "無料枠",
@@ -1350,18 +1354,18 @@ const ARTICLES_BODY_2026_03 = {
           [
             "Cursor",
             "Free（機能制限）",
-            "Pro $20/月",
-            "Pro+ $60 / Ultra $200/月",
-            "Teams Standard $40 / Premium $120 per seat",
-            "Bugbot は従量課金（1 PR 平均 $1.00〜1.50）"
+            "Plus $8/月",
+            "Premium $30 / Super $100 / Ultra $200/月",
+            "Teams $30 / $100 / $200 per seat",
+            "「The X Subscription」に再編。Cursor Models は週次プール制、第三者モデルは Premium 以上で API 定価のプリペイドクレジット。Bugbot は Premium 以上に含まれる。旧プラン（Pro $20 等）は既存契約者向けに継続"
           ],
           [
             "Devin Desktop（旧 Windsurf）",
             "Free（日次・週次クォータ）",
             "Pro $20/月",
             "Max $200/月",
-            "Teams $80/月（チーム基本料）+ フル開発者席 $40/月（最大200人）/ Enterprise 要問合せ",
-            "3/19 に $15→$20、クレジット制からクォータ制へ"
+            "Teams $80/月（最大100ユーザー）/ Enterprise 要問合せ",
+            "3/19 に $15→$20、クレジット制からクォータ制へ。Max には Devin Bots へのアクセスが含まれる"
           ],
           [
             "VS Code + Copilot",
@@ -1369,7 +1373,7 @@ const ARTICLES_BODY_2026_03 = {
             "Pro $10/月",
             "Pro+ $39 / Max $100/月",
             "Business $19 / Enterprise $39 per seat",
-            "IP 補償は Enterprise。6/1 より AI Credits 併用"
+            "IP 補償は Enterprise。6/1 より AI Credits 併用（Max は計20,000クレジット）"
           ],
           [
             "Zed",
@@ -1377,7 +1381,7 @@ const ARTICLES_BODY_2026_03 = {
             "Pro $10/月",
             "—",
             "Business $30 per seat",
-            "自前 API キー持込で無料プランのまま利用可"
+            "自前 API キー持込で無料プランのまま利用可。Pro のホスト利用は API 定価 +10%（公式料金ページで構造を確認）"
           ]
         ]
       }
@@ -3460,7 +3464,8 @@ const ARTICLES_BODY_2026_03 = {
       "【訂正 2026-08-11】同日の更新時点で「中核機能は Cascade」と記載していましたが、**Cascade は2026年7月1日に提供終了**しており、現行の中核エージェントは後継の **Devin Local**（Rust による書き直し、Cascade 比でトークン効率が最大30%改善）です。当該段落を訂正しました。ブランド統合と運営元は確認したものの、**機能レベルの世代交代を確認していなかった**ことによる誤りです。",
       "【訂正 2026-08-11】総合評価を **4 → 3.5** に修正しました。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（3.65）と乖離していました。各軸の評価そのものは変更しておらず、**公表している算出方法どおりに総合スコアを計算し直した**ものです。",
       "【訂正 2026-09-30】（誤）「Cascade は2026年7月1日に提供終了」「CI パイプラインやスクリプトから Cascade を明示的に呼び出していた場合は、7月1日までに振り替えが必要だった」→（正）7月1日は、2026年6月2日の Devin 公式ブログが予告した Cascade の移行期限（公式 FAQ は「7月中」で食い違う）だった。実際には Cascade は7月末のリリースにも残り、Devin Desktop から削除されたのは v3.9.19（2026年9月8日）で、以降 Devin Local が唯一のエージェントになった。2026-08-11 の訂正文も同じ日付を提供終了日として書いていたため、あわせて改める。",
-      "【訂正 2026-09-30】記事のタイトルと概要文について、（誤）「Windsurf — Cursor傘下で継続提供、Cascadeフローが光るAIエディタ」「Anysphere社に買収されたが、単体提供は継続中」→（正）Windsurf の運営元は Cognition で、2026年6月2日に Devin Desktop へブランド統合された（Cognition の公式発表。買収は2025年7月14日に Cognition が発表）。Anysphere（Cursor）による買収は事実ではなく、この誤りの元になった記事 cursor-windsurf-merge は2026-08-11 に取り下げ済みである。本文は2026-08-11 に訂正済みだったが、タイトルと概要文が未訂正のまま残っていたため改めた。あわせて Teams の料金を（誤）$40 per seat →（正）チーム基本料 $80/月 + フルユーザー1席あたり $40/月、「改定前の Pro は $15 だったため価格優位は消滅」→（正）現行 Pro は $20 で Cursor Pro と同額（$15 は公式ページで確認できず）に訂正した。"
+      "【訂正 2026-09-30】記事のタイトルと概要文について、（誤）「Windsurf — Cursor傘下で継続提供、Cascadeフローが光るAIエディタ」「Anysphere社に買収されたが、単体提供は継続中」→（正）Windsurf の運営元は Cognition で、2026年6月2日に Devin Desktop へブランド統合された（Cognition の公式発表。買収は2025年7月14日に Cognition が発表）。Anysphere（Cursor）による買収は事実ではなく、この誤りの元になった記事 cursor-windsurf-merge は2026-08-11 に取り下げ済みである。本文は2026-08-11 に訂正済みだったが、タイトルと概要文が未訂正のまま残っていたため改めた。あわせて Teams の料金を（誤）$40 per seat →（正）チーム基本料 $80/月 + フルユーザー1席あたり $40/月、「改定前の Pro は $15 だったため価格優位は消滅」→（正）現行 Pro は $20 で Cursor Pro と同額（$15 は公式ページで確認できず）に訂正した。",
+      "【追記 2026-11-23】製品の現況。本レビュー対象の Windsurf は、2026年6月2日に Devin Desktop へブランド統合された。中核エージェントは Cascade から後継の Devin Local に替わり、Cascade は2026年9月8日（v3.9.19）に削除された。現行の料金は Free / Pro $20 / Max $200 / Teams $80（月額、最大100ユーザー）である。現行世代の比較は [AI エディタ横断比較](?a=editor-comparison-2026-march) と [料金プラン横断比較](?a=pricing-comparison-all-tools-2026-march) を参照。本レビューの★と記述は Windsurf 時代の記録として残す。"
     ],
     "primarySources": [
       {
@@ -4641,7 +4646,8 @@ const ARTICLES_BODY_2026_03 = {
       "【編集履歴】",
       "・【追記 2026-06-05】後継 Opus 4.7（4/16）/ Opus 4.8（5/28）リリースに伴い、本記事を「前世代フラッグシップのレビュー」として位置付けを明確化。タイトル・excerpt・本文を更新し、新規採用では後継モデルを推奨する旨を追記。",
       "・【訂正 2026-10-03】（誤）入力 $15 / 出力 $75。後継の Opus 4.7/4.8 では同じ性能帯で $5/$25 へ大幅値下げ →（正）入力 $5 / 出力 $25。Anthropic の Opus 4.6 発表は「Pricing remains the same at $5/$25 per million tokens」としており、Claude API の料金ページでも Opus 4.6 は $5 / $25 である。$15 / $75 は Opus 4.1 以前の料金。要約の価格も同じく改めた。",
-      "・【追記 2026-10-03】提供状況の更新。Claude API では Opus 4.6（`claude-opus-4-6`）は2026年10月3日時点でも Active で、廃止予定日は「2027年2月5日より前にはしない」とされている。Fast mode は Opus 4.6 では使えない（指定しても通常速度・通常料金で処理されると料金ページに明記）。GitHub Copilot は Opus 4.6 の提供を2026年9月1日に終了した（GitHub Docs のモデル退役履歴）。Anthropic の現行の Opus は Opus 5.5（入力 $4 / 出力 $20）で、[Claude Opus 5.5 レビュー](?a=claude-opus-5-5-review)で扱っている。"
+      "・【追記 2026-10-03】提供状況の更新。Claude API では Opus 4.6（`claude-opus-4-6`）は2026年10月3日時点でも Active で、廃止予定日は「2027年2月5日より前にはしない」とされている。Fast mode は Opus 4.6 では使えない（指定しても通常速度・通常料金で処理されると料金ページに明記）。GitHub Copilot は Opus 4.6 の提供を2026年9月1日に終了した（GitHub Docs のモデル退役履歴）。Anthropic の現行の Opus は Opus 5.5（入力 $4 / 出力 $20）で、[Claude Opus 5.5 レビュー](?a=claude-opus-5-5-review)で扱っている。",
+      "【追記 2026-11-23】世代の前進。本レビュー対象の Opus 4.6 の後、Anthropic は Opus 4.7、Opus 5（2026年7月24日）、Opus 5.5（9月22日、$4 / $20）を公開し、現行の Opus 級は Opus 5.5 である。現行世代の評価は [Claude Opus 5.5 レビュー](?a=claude-opus-5-5-review) を参照。本レビューの★と記述は Opus 4.6 世代の記録として残す。"
     ],
     "primarySources": [
       {
@@ -4686,7 +4692,8 @@ const ARTICLES_BODY_2026_03 = {
       "・【追記 2026-06-05】GPT-5.5 リリース（4/23）に伴い、「最新フラッグシップ」表記を「2026年Q1の主力モデル」に訂正。後継モデルへの言及を追加。",
       "・【訂正 2026-10-03】（誤）128K トークンのコンテキストウィンドウ →（正）1,050,000 トークン（約1M）のコンテキストウィンドウ。OpenAI API の changelog（3月5日）は GPT-5.4 の公開時に「A 1M token context window」を挙げ、モデルページの表記は 1,050,000 トークンである。注意点の段落の「128K で、Opus の 1M や Gemini の 2M と比べると短い」も同じ理由で改めた（Gemini 3.1 Pro の入力上限も 2M ではなく 1,048,576 トークン）。",
       "・【訂正 2026-10-03】（誤）入力 $2.50 / 出力 $10、Opus 4.6（$15/$75）の約 1/6〜1/7、GPT-5.4 mini（$0.40/$1.60）→（正）入力 $2.50 / 出力 $15（272K トークン超の入力はセッション全体で入力2倍・出力1.5倍）、Opus 4.6（$5/$25）の半分〜6割、GPT-5.4 mini は $0.75/$4.50。いずれも OpenAI API のモデルページと Anthropic の料金ページの記載による。要約の価格とコンテキストも同じく改めた。",
-      "・【追記 2026-10-03】提供状況の更新。GPT-5.4 と GPT-5.4 mini は、2026年8月31日に ChatGPT サインインの Codex から退役した。OpenAI API と、API キーで認証した Codex は対象外で、API のモデルページには2026年10月3日時点でも掲載されている。Codex の公式ドキュメントは、ChatGPT サインインでの移行先として gpt-5.4 には `gpt-6-sol`、gpt-5.4-mini には `gpt-6-luna` を案内している。なお同系統の `gpt-5.4-nano` は API で非推奨となり、2027年4月1日に提供を終了する（推奨の移行先は `gpt-6-luna`）。後継の GPT-5.5 も2026年10月14日に ChatGPT・Codex から退役する。現行世代は [GPT-6 Astra / GPT-6.1 Sol / Sol / Luna レビュー](?a=gpt-6-review)を参照。"
+      "・【追記 2026-10-03】提供状況の更新。GPT-5.4 と GPT-5.4 mini は、2026年8月31日に ChatGPT サインインの Codex から退役した。OpenAI API と、API キーで認証した Codex は対象外で、API のモデルページには2026年10月3日時点でも掲載されている。Codex の公式ドキュメントは、ChatGPT サインインでの移行先として gpt-5.4 には `gpt-6-sol`、gpt-5.4-mini には `gpt-6-luna` を案内している。なお同系統の `gpt-5.4-nano` は API で非推奨となり、2027年4月1日に提供を終了する（推奨の移行先は `gpt-6-luna`）。後継の GPT-5.5 も2026年10月14日に ChatGPT・Codex から退役する。現行世代は [GPT-6 Astra / GPT-6.1 Sol / Sol / Luna レビュー](?a=gpt-6-review)を参照。",
+      "【追記 2026-11-23】世代の前進と提供終了。本レビュー対象の GPT-5.4 は、2026年8月31日に ChatGPT サインインの Codex から廃止された（API と、API キーで使う Codex は対象外）。その後 GPT-5.5、GPT-5.6 を経て現行は GPT-6 世代（2026年11月20日に GPT-6.2 Astra / Sol を追加）である。現行世代の評価は [GPT-6 レビュー](?a=gpt-6-review) を参照。本レビューの★と記述は GPT-5.4 世代の記録として残す。"
     ],
     "primarySources": [
       {
@@ -4735,7 +4742,8 @@ const ARTICLES_BODY_2026_03 = {
       "【編集履歴】",
       "・【訂正 2026-10-03】（誤）2M トークンという業界最大のコンテキストウィンドウ →（正）入力 1,048,576 トークン（約1M）のコンテキストウィンドウ。Gemini API のモデルページの Input token limit は 1,048,576 で、2M ではない。タイトルと要約の「2Mコンテキストは業界最大」も同じ理由で改めた。",
       "・【訂正 2026-10-03】（誤）入力 $1.25 / 出力 $5、Opus の約 1/12〜1/15 →（正）入力 $2 / 出力 $12（プロンプト 200K トークン以下。200K 超は $4 / $18）。Opus 4.6 は $5 / $25 で、比は入力で4割、出力で半分弱。Gemini 3.1 Pro の無料枠は料金表で「Not available」。あわせて、現行の公式料金表に掲載の無い「Flash モデル（$0.075/$0.30）」を、掲載のある Gemini 3.5 Flash-Lite の料金に置き換えた。",
-      "・【追記 2026-10-03】Gemini 3.1 Pro は、2026年10月3日時点の Gemini API でもモデル ID `gemini-3.1-pro-preview` のプレビュー提供のままで、廃止予定日（shutdown date）は「No shutdown date announced」とされている。同日時点の Gemini API のモデル一覧に Gemini 3.5 Pro は載っていない。Flash 系は Gemini 3.8 Flash（9月2日公開）まで世代が進んでおり、[Gemini 3.8 Flash レビュー](?a=gemini-3-8-flash-review)で扱っている。Pro 世代の遅延の経緯は [Gemini 3.5 Pro の GA 延期](?a=google-gemini-3-5-pro-ga-delay-deep-think-2026)を参照。なお GitHub Copilot は、Gemini 3.1 Pro の提供を 2026年9月1日に終了している（GitHub Docs のモデル退役履歴）。"
+      "・【追記 2026-10-03】Gemini 3.1 Pro は、2026年10月3日時点の Gemini API でもモデル ID `gemini-3.1-pro-preview` のプレビュー提供のままで、廃止予定日（shutdown date）は「No shutdown date announced」とされている。同日時点の Gemini API のモデル一覧に Gemini 3.5 Pro は載っていない。Flash 系は Gemini 3.8 Flash（9月2日公開）まで世代が進んでおり、[Gemini 3.8 Flash レビュー](?a=gemini-3-8-flash-review)で扱っている。Pro 世代の遅延の経緯は [Gemini 3.5 Pro の GA 延期](?a=google-gemini-3-5-pro-ga-delay-deep-think-2026)を参照。なお GitHub Copilot は、Gemini 3.1 Pro の提供を 2026年9月1日に終了している（GitHub Docs のモデル退役履歴）。",
+      "【追記 2026-11-23】世代の前進。Google のフラッグシップ世代は Gemini 4（Carbon / Argon / Hydrogen、2026年11月19日に Neon を追加）へ移った。世代全体の評価は [Gemini 4 レビュー](?a=gemini-4-review) を参照。Gemini 3.1 Pro 自体は第三者のモデルカタログ等に引き続き掲載されている。本レビューの★と記述は Gemini 3.1 Pro 世代の記録として残す。"
     ],
     "primarySources": [
       {
@@ -4773,7 +4781,8 @@ const ARTICLES_BODY_2026_03 = {
       "**注意点**: 中国企業が開発したモデルであるため、データの取り扱いやコンプライアンスの面で企業利用には事前確認が必要。ドキュメントや SDK の日本語・英語対応も大手に比べると限定的。ローカルホスティングの場合は GPU リソースの確保も検討が必要。",
       "【編集履歴】",
       "・【訂正 2026-10-03】（誤）Apache 2.0 ライセンスのオープンウェイト →（正）Moonshot AI 独自の Modified MIT ライセンスのオープンウェイト。Hugging Face の公式モデルカード（moonshotai/Kimi-K2.5）のライセンス表記は「modified-mit」。あわせて「自社インフラでの運用もライセンス上問題ない」を、条件の確認を促す書き方に改めた。",
-      "・【追記 2026-10-03】Moonshot AI の API では、`kimi-k2.5` は2026年8月31日に提供を終了した（公式ドキュメントのモデル一覧に「officially discontinued on August 31, 2026」とあり、移行先として `kimi-k3` を案内している）。2026年10月3日時点の公式料金表に載っているのは Kimi K3、Kimi K2.7 Code、Kimi K2.6 で、K2.5 は無い。重み自体は Hugging Face の公式リポジトリで引き続き公開されている。後継の Kimi K3 は [Kimi K3 レビュー](?a=moonshot-kimi-k3-review)で扱っている。"
+      "・【追記 2026-10-03】Moonshot AI の API では、`kimi-k2.5` は2026年8月31日に提供を終了した（公式ドキュメントのモデル一覧に「officially discontinued on August 31, 2026」とあり、移行先として `kimi-k3` を案内している）。2026年10月3日時点の公式料金表に載っているのは Kimi K3、Kimi K2.7 Code、Kimi K2.6 で、K2.5 は無い。重み自体は Hugging Face の公式リポジトリで引き続き公開されている。後継の Kimi K3 は [Kimi K3 レビュー](?a=moonshot-kimi-k3-review)で扱っている。",
+      "【追記 2026-11-23】世代の前進。Moonshot AI の後継モデル Kimi K3 が公開され、当サイトの現行の Kimi レビューは [Kimi K3 レビュー](?a=moonshot-kimi-k3-review) である。本レビューの★と記述は Kimi K2.5 世代の記録として残す。"
     ],
     "primarySources": [
       {
@@ -4808,7 +4817,8 @@ const ARTICLES_BODY_2026_03 = {
       "**エンタープライズでの使い分け**: バッチ API（50% 割引）と組み合わせれば、大量処理では依然として競争力がある。ただし新規プロジェクトでは Sonnet 5 の**エージェント能力**（Anthropic 曰く「これまでで最もエージェント的な Sonnet」）が優位で、複雑なマルチステップワークフロー・ブラウザ自動化・Claude Code 統合の面で差が拡大している。",
       "【編集履歴】",
       "・【追記 2026-07-07】後継 Claude Sonnet 5（6/30 GA）リリースに伴い、本記事を「前世代 Sonnet レビュー」として位置付けを明確化。タイトル・excerpt・本文を更新し、Sonnet 5 との比較（SWE-bench Pro、価格）を追加。新規採用では Sonnet 5 を推奨する旨を明記。rating 4.0→3.5、lastReviewed 更新。",
-      "【訂正 2026-09-30】（誤）Sonnet 5 の通常料金は $3/$15 で Sonnet 4.6 と同額（〜8/31 は導入価格 $2/$10 だった）→（正）Sonnet 5 は $2/$10 で、公式料金表では Sonnet 4.6 が $3/$15。公開時に案内された 9/1 の $3/$15 への引き上げは行われず、$2/$10 が標準価格として恒久化された（2026年8月10日に公式が発表）。excerpt と料金の段落を修正した。"
+      "【訂正 2026-09-30】（誤）Sonnet 5 の通常料金は $3/$15 で Sonnet 4.6 と同額（〜8/31 は導入価格 $2/$10 だった）→（正）Sonnet 5 は $2/$10 で、公式料金表では Sonnet 4.6 が $3/$15。公開時に案内された 9/1 の $3/$15 への引き上げは行われず、$2/$10 が標準価格として恒久化された（2026年8月10日に公式が発表）。excerpt と料金の段落を修正した。",
+      "【追記 2026-11-23】世代の前進。本レビュー対象の Sonnet 4.6 の後、Anthropic は Sonnet 5、Sonnet 5.5（2026年9月28日、$2 / $10、キャッシュ読み取りは10月18日に $0.10 へ半額化）を公開し、現行の Sonnet 級は Sonnet 5.5 である。現行世代の評価は [Claude Sonnet 5.5 レビュー](?a=claude-sonnet-5-5-review) を参照。本レビューの★と記述は Sonnet 4.6 世代の記録として残す。"
     ],
     "primarySources": [
       {
@@ -5254,7 +5264,8 @@ const ARTICLES_BODY_2026_03 = {
       "**コストの破壊力**: API 料金はキャッシュヒット時 $0.14 / 出力 $2.19（1M トークンあたり）と、Opus の数十分の一。この価格で Opus に近い推論性能を出せるため、大量の推論タスクや個人開発者の実験用途ではコスパが圧倒的。ローカル実行もオープンウェイトで可能なため、プライバシー重視の環境でも導入できる。蒸留版（1.5B〜70B）も公開されており、軽量な用途にも対応。",
       "**推論の特徴**: Chain-of-Thought（思考連鎖）を明示的に出力する設計で、推論過程を確認できる。数学オリンピックレベルの問題やコーディングの複雑なロジック構築に強い。一方、日常会話やクリエイティブライティングでは GPT や Claude のほうが自然な出力を返す傾向がある。推論に特化したモデルであることを理解した上での使い分けが重要。",
       "**注意点**: 中国企業のモデルであるため、データの取り扱い・検閲ポリシーについて企業利用では事前確認が必要。API サービスは中国リージョン中心で、グローバルでのレイテンシや可用性は大手に劣る場合がある。ただしオープンウェイトなので、Together AI や Fireworks 等のサードパーティホスティングや自社サーバーでの運用も可能。DeepSeek V3（汎用モデル）も別途あり、用途で選び分ける。",
-      "【追記 2026-10-03】本文の API 料金（キャッシュヒット時 $0.14 / 出力 $2.19）は、R1 を公式 API で提供していた当時のものである。DeepSeek の API 変更履歴によると、R1 を呼び出していたモデル名 `deepseek-reasoner` は 2025年5月28日に R1-0528 へ、2025年8月21日には DeepSeek-V3.1 の思考モードへ切り替わり、以後は V3.2 を経て、2026年4月24日からは `deepseek-v4-flash` の思考モードを指していた。同日の告知で `deepseek-chat` と `deepseek-reasoner` の2つのモデル名は2026年7月24日に廃止予定とされた。2026年10月3日時点の公式料金表に載っているのは `deepseek-flash`（DeepSeek-V4.1-Flash）と `deepseek-v4-pro` の2つで、R1 は公式 API の選択肢に無い。一方、重みは GitHub の公式リポジトリから MIT ライセンスで引き続き公開されており、蒸留版（1.5B / 7B / 8B / 14B / 32B / 70B）も含め、自社サーバーやサードパーティのホスティングで使う道は残っている。DeepSeek の現行世代は [DeepSeek V4 レビュー](?a=deepseek-v4-review)を参照。"
+      "【追記 2026-10-03】本文の API 料金（キャッシュヒット時 $0.14 / 出力 $2.19）は、R1 を公式 API で提供していた当時のものである。DeepSeek の API 変更履歴によると、R1 を呼び出していたモデル名 `deepseek-reasoner` は 2025年5月28日に R1-0528 へ、2025年8月21日には DeepSeek-V3.1 の思考モードへ切り替わり、以後は V3.2 を経て、2026年4月24日からは `deepseek-v4-flash` の思考モードを指していた。同日の告知で `deepseek-chat` と `deepseek-reasoner` の2つのモデル名は2026年7月24日に廃止予定とされた。2026年10月3日時点の公式料金表に載っているのは `deepseek-flash`（DeepSeek-V4.1-Flash）と `deepseek-v4-pro` の2つで、R1 は公式 API の選択肢に無い。一方、重みは GitHub の公式リポジトリから MIT ライセンスで引き続き公開されており、蒸留版（1.5B / 7B / 8B / 14B / 32B / 70B）も含め、自社サーバーやサードパーティのホスティングで使う道は残っている。DeepSeek の現行世代は [DeepSeek V4 レビュー](?a=deepseek-v4-review)を参照。",
+      "【追記 2026-11-23】世代の前進。DeepSeek の現行世代は V4 系となり、当サイトの現行の DeepSeek レビューは [DeepSeek V4 レビュー](?a=deepseek-v4-review) である。本レビューの★と記述は R1 世代の記録として残す。"
     ],
     "primarySources": [
       {
@@ -5289,7 +5300,8 @@ const ARTICLES_BODY_2026_03 = {
       "**注意点**: グローバルでの API レイテンシは中国リージョン比で劣る場合がある。ドキュメントは英語版が充実してきているが、日本語対応は限定的。235B MoE のローカル実行には 80GB 以上の VRAM が必要で、個人利用には 8B〜32B が現実的。中国企業モデルとしてのデータ取り扱いポリシーは企業導入時に事前確認が必要。",
       "【編集履歴】",
       "・【訂正 2026-10-03】（誤）コード生成ではフラッグシップの 235B-A22B が Opus 4.6 や GPT-5.4 に迫るスコアを出しており →（正）フラッグシップの 235B-A22B はコーディング・数学・汎用能力のベンチマークで DeepSeek-R1、o1、o3-mini、Grok-3、Gemini-2.5-Pro と競える結果を出しており（Alibaba 自身の評価）。Qwen3 は2025年4月の公開で、公式ブログが比較対象に挙げているのは当時のモデルである。Opus 4.6・GPT-5.4（いずれも2026年）との比較は公式資料に無い。あわせて、出典一覧で「Qwen3 Technical Report / arXiv (推定)」としていた項目は実際には公式ブログの記事だったため、表題を改めた。",
-      "・【追記 2026-10-03】Qwen はその後も世代を重ねており、Alibaba Cloud Model Studio の推奨モデル一覧（2026年9月28日更新）のテキスト生成の筆頭は `qwen3.8-max` である。Hugging Face の Qwen 公式 org では 2026年8月に Qwen3.8-2.4T-A95B が公開されているが、ライセンス表記は Qwen3 の Apache 2.0 ではなく独自の「qwen3.8-max」になっている。詳しくは [Qwen 3.8-Max の記事](?a=alibaba-qwen-3-8-max-open-weight-2-4t-2026)を、次世代の計画は [Qwen4 の発表](?a=alibaba-qwen4-apsara-unveil-2026)を参照。本稿の Qwen3 の重みは、Hugging Face で Apache 2.0 のまま公開されている。"
+      "・【追記 2026-10-03】Qwen はその後も世代を重ねており、Alibaba Cloud Model Studio の推奨モデル一覧（2026年9月28日更新）のテキスト生成の筆頭は `qwen3.8-max` である。Hugging Face の Qwen 公式 org では 2026年8月に Qwen3.8-2.4T-A95B が公開されているが、ライセンス表記は Qwen3 の Apache 2.0 ではなく独自の「qwen3.8-max」になっている。詳しくは [Qwen 3.8-Max の記事](?a=alibaba-qwen-3-8-max-open-weight-2-4t-2026)を、次世代の計画は [Qwen4 の発表](?a=alibaba-qwen4-apsara-unveil-2026)を参照。本稿の Qwen3 の重みは、Hugging Face で Apache 2.0 のまま公開されている。",
+      "【追記 2026-11-23】世代の前進。Alibaba の Qwen はその後 3.8 世代を経て、2026年11月20日に Qwen4-Max が発表された（当サイト既報）。本レビューの★と記述は Qwen 3 世代の記録として残す。"
     ],
     "primarySources": [
       {

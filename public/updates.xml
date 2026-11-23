@@ -16,6 +16,38 @@
     <summary>（誤）既存記事ではグリーンシュー行使前の 813億ドルまでを報じていた →（正）削除し、Reuters 報道が IPO プロセスの裏側を明らかにした旨の文に書き換えた</summary>
   </entry>
   <entry>
+    <title>【訂正】Claude Sonnet 5.5 レビュー — $2/$10 の現行 Sonnet、範囲の明確な作業を速く安く。ただし API の破壊的変更に注意</title>
+    <link rel="alternate" type="text/html" href="?a=claude-sonnet-5-5-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:claude-sonnet-5-5-review:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）キャッシュ読み取り $0.20 →（正）$0.10</summary>
+  </entry>
+  <entry>
+    <title>【訂正】Cursor CLI レビュー — IDE 不要で Composer / Background Agent を使える独立 CLI（Composer 2.5 / Sonic 対応、Microsoft Teams 統合版）</title>
+    <link rel="alternate" type="text/html" href="?a=cursor-cli#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:cursor-cli:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）Pro $20 / Pro+ $60 / Ultra $200、Teams Standard $40… →（正）Free $0 / Plus $8 / Premium $30 / Super $100 /…</summary>
+  </entry>
+  <entry>
+    <title>【訂正】Cursor レビュー — Cursor 3.x の Agents Window + Composer 2.5 + Microsoft Teams 統合 + Bugbot usage-based 対応版</title>
+    <link rel="alternate" type="text/html" href="?a=cursor-editor#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:cursor-editor:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）Pro $20 / Pro+ $60 / Ultra $200、Teams Standard $40… →（正）Free $0 / Plus $8 / Premium $30 / Super $100 /…</summary>
+  </entry>
+  <entry>
+    <title>【訂正】AI エディタ横断比較 — Cursor・Devin Desktop（旧 Windsurf）・VS Code+Copilot・Zed</title>
+    <link rel="alternate" type="text/html" href="?a=editor-comparison-2026-march#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:editor-comparison-2026-march:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）Pro $20 / Pro+ $60 / Ultra $200、Teams Standard $40… →（正）Plus $8 / Premium $30 / Super $100 / Ultra $200…</summary>
+  </entry>
+  <entry>
     <title>【訂正】Google、攻撃者がパッチをエクスプロイトへ自動変換する初の事例を確認 — 脆弱性の発見から実行まで人手を介さず</title>
     <link rel="alternate" type="text/html" href="?a=google-gtig-exploit-agent-2026#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:google-gtig-exploit-agent-2026:2026-11-23</id>
@@ -46,6 +78,190 @@
     <updated>2026-11-23T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
     <summary>（誤）OpenAI のこれまでで最大のフロンティア強化学習の実行 →（正）OpenAI の大規模なフロンティア強化学習の実行</summary>
+  </entry>
+  <entry>
+    <title>【訂正】AI 開発ツール料金プラン横断比較 — CLI・エディタ・モデル API</title>
+    <link rel="alternate" type="text/html" href="?a=pricing-comparison-all-tools-2026-march#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:pricing-comparison-all-tools-2026-march:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="correction" label="訂正"/>
+    <summary>（誤）Pro $20 / Pro+ $60 / Ultra $200、Teams Standard $40… →（正）Plus $8 / Premium $30 / Super $100 / Ultra $200…</summary>
+  </entry>
+  <entry>
+    <title>【追記】Claude Opus 4.6 レビュー — Anthropic 前世代フラッグシップ、1Mコンテキストの深い推論</title>
+    <link rel="alternate" type="text/html" href="?a=claude-opus-4-6-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:claude-opus-4-6-review:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>世代の前進</summary>
+  </entry>
+  <entry>
+    <title>【追記】Claude Opus 4.7 レビュー — Anthropic 最上位 GA、SWE-bench Verified 87.6% と task budgets で長時間エージェントが安定</title>
+    <link rel="alternate" type="text/html" href="?a=claude-opus-4-7-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:claude-opus-4-7-review:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>世代の前進</summary>
+  </entry>
+  <entry>
+    <title>【追記】Claude Sonnet 4.6 レビュー — Anthropic 前世代 Sonnet（後継 Sonnet 5 リリース済）、1Mコンテキスト・バランス型</title>
+    <link rel="alternate" type="text/html" href="?a=claude-sonnet-4-6-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:claude-sonnet-4-6-review:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>世代の前進</summary>
+  </entry>
+  <entry>
+    <title>【追記】CLI コーディングツール横断比較 — Claude Code・Codex・Gemini CLI・Aider・Copilot CLI・Cursor CLI</title>
+    <link rel="alternate" type="text/html" href="?a=cli-tools-comparison-2026-march#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:cli-tools-comparison-2026-march:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>Codex はその後、CLI 0.171.0（2026年11月20日）で GPT-6.2 Sol / GPT-6.2 Astra がカタログに加わった（既定・推奨は GPT-6.1 Sol のまま）（同日に 月次見直し もあり）</summary>
+  </entry>
+  <entry>
+    <title>【追記】DeepSeek R1 レビュー — 中国発オープンウェイト推論モデル、Opus に迫る性能を破格コストで</title>
+    <link rel="alternate" type="text/html" href="?a=deepseek-r1-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:deepseek-r1-review:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>世代の前進。DeepSeek の現行世代は V4 系となり、当サイトの現行の DeepSeek レビューは DeepSeek V4 レビュー である</summary>
+  </entry>
+  <entry>
+    <title>【追記】DeepSeek V4 レビュー — 1.6T MoE と 1M コンテキストのオープンウェイト、Pro と Flash の2モデル構成</title>
+    <link rel="alternate" type="text/html" href="?a=deepseek-v4-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:deepseek-v4-review:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>本レビューの公開後、DeepSeek V4 は2026年7月24日に一般提供となり、動的料金が導入された（当サイト既報）</summary>
+  </entry>
+  <entry>
+    <title>【追記】Gemini 3.1 Pro レビュー — Google の Pro 世代、1Mコンテキストと Google Cloud 統合</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-3-1-pro-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:gemini-3-1-pro-review:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>世代の前進。Google のフラッグシップ世代は Gemini 4（Carbon / Argon / Hydrogen、2026年11月19日に Neon を追加）へ移った</summary>
+  </entry>
+  <entry>
+    <title>【追記】Gemini 4 レビュー — Carbon・Argon・Hydrogen の3モデルが統合1Mコンテキストを共有。Google 公表値では Carbon が AA Index v5.0 で59、Hydrogen は無料枠あり。一方で Carbon と Argon は12月1日に料金が倍になる</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-4-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:gemini-4-review:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>2026年11月19日に Gemini 4 の4つ目のモデル Neon が発表された（Carbon 派生、入力 $3 / 出力 $15、キャッシュ読み取り $0.15、無料枠なし…</summary>
+  </entry>
+  <entry>
+    <title>【追記】GPT-5.4 レビュー — OpenAI 2026年Q1の主力モデル、推論・コーディング・エージェント統合</title>
+    <link rel="alternate" type="text/html" href="?a=gpt-5-4-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:gpt-5-4-review:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>世代の前進と提供終了。本レビュー対象の GPT-5.4 は、2026年8月31日に ChatGPT サインインの Codex から廃止された（API と、API キーで使う Codex は対象外）</summary>
+  </entry>
+  <entry>
+    <title>【追記】GPT-5.5 レビュー — OpenAI 最新フラッグシップ、エージェント・コーディングで「半額の SOTA」、Plus/Pro/API/Copilot 全展開</title>
+    <link rel="alternate" type="text/html" href="?a=gpt-5-5-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:gpt-5-5-review:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>世代の前進と提供終了。本レビュー対象の GPT-5.5 は、2026年10月14日に ChatGPT・ChatGPT Work・Codex から全プランで廃止された（OpenAI API は対象外）</summary>
+  </entry>
+  <entry>
+    <title>【追記】Kimi K2.5 レビュー — Moonshot AI 発、1兆パラメータ MoE でオープンウェイト</title>
+    <link rel="alternate" type="text/html" href="?a=kimi-k2-5-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:kimi-k2-5-review:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>世代の前進。Moonshot AI の後継モデル Kimi K3 が公開され、当サイトの現行の Kimi レビューは Kimi K3 レビュー である</summary>
+  </entry>
+  <entry>
+    <title>【追記】Qwen 3 レビュー — Alibaba 発、ハイブリッド思考とオープンウェイトの大型ファミリー</title>
+    <link rel="alternate" type="text/html" href="?a=qwen-3-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:qwen-3-review:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>世代の前進。Alibaba の Qwen はその後 3.8 世代を経て、2026年11月20日に Qwen4-Max が発表された（当サイト既報）</summary>
+  </entry>
+  <entry>
+    <title>【追記】Windsurf（現 Devin Desktop）— Cognition が運営する AI エディタ</title>
+    <link rel="alternate" type="text/html" href="?a=windsurf#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:windsurf:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>製品の現況。本レビュー対象の Windsurf は、2026年6月2日に Devin Desktop へブランド統合された</summary>
+  </entry>
+  <entry>
+    <title>【追記】Grok 4.5 レビュー — 「Opus クラス」は言い過ぎ。ただしトークン効率4.2倍が実効コストを塗り替える</title>
+    <link rel="alternate" type="text/html" href="?a=xai-grok-4-5-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:xai-grok-4-5-review:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>世代の前進</summary>
+  </entry>
+  <entry>
+    <title>【月次見直し】Claude Code レビュー — Anthropic の CLI エージェント、Opus 5 + effort トグル + Dynamic Workflows + agent view 対応版</title>
+    <link rel="alternate" type="text/html" href="?a=claude-code#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:claude-code:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="monthly" label="月次見直し"/>
+    <summary>月次見直し。2026年9月30日以降の変更。(1) Claude Code の最新版は v2.1.330（2026年11月21日時点）</summary>
+  </entry>
+  <entry>
+    <title>【月次見直し】Claude Fable 5.1 / Mythos 5.1 レビュー — 基本料金は据え置きでキャッシュ読み取りのみ値下げ、Fable 5 の包括措置は対象外、Mythos 5.1 は招待制</title>
+    <link rel="alternate" type="text/html" href="?a=claude-fable-5-1-mythos-5-1-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:claude-fable-5-1-mythos-5-1-review:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="monthly" label="月次見直し"/>
+    <summary>後継モデルの公開と月次見直し対象の付け替え。2026年11月10日に Claude Fable 5.2 / Mythos 5.2 が公開された（$8 / $40、キャッシュ読み取り $0.20）</summary>
+  </entry>
+  <entry>
+    <title>【月次見直し】Claude Opus 5.5 レビュー — 入力 $4 / 出力 $20 に下がった現行の Opus、既定 effort は medium に、API には4件の破壊的変更</title>
+    <link rel="alternate" type="text/html" href="?a=claude-opus-5-5-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:claude-opus-5-5-review:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="monthly" label="月次見直し"/>
+    <summary>月次見直し。本文のラインナップ（2026年9月30日時点の公式ドキュメントに基づく記述）は当時の記録として残し、その後の変化を記す</summary>
+  </entry>
+  <entry>
+    <title>【月次見直し】Gemini 3.8 Flash レビュー — 9/2 GA の Flash 世代最新モデル、長時間のソフトウェア開発とエージェント向け。Google 公表値では DeepSWE 73.7%、一方で Terminal-Bench 4.0 は 19.1%</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-3-8-flash-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:gemini-3-8-flash-review:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="monthly" label="月次見直し"/>
+    <summary>世代の前進と月次見直し対象の付け替え</summary>
+  </entry>
+  <entry>
+    <title>【月次見直し】Gemini CLI レビュー — Google の OSS CLI、Gemini 3.5 Flash 対応。Pro 世代は GA 遅延が続く</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-cli#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:gemini-cli:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="monthly" label="月次見直し"/>
+    <summary>月次見直し。(1) Gemini CLI の安定版は npm で v0.70.0（2026年11月21日時点）まで進んだ</summary>
+  </entry>
+  <entry>
+    <title>【月次見直し】GitHub Copilot CLI レビュー — `/fleet` 並列エージェント、Autopilot、`/model` 切替（Opus 5 / GPT-5.6 / MAI-Code-1-Flash）、AI Credits 従量課金対応</title>
+    <link rel="alternate" type="text/html" href="?a=github-copilot-cli#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:github-copilot-cli:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="monthly" label="月次見直し"/>
+    <summary>月次見直し</summary>
+  </entry>
+  <entry>
+    <title>【月次見直し】GPT-6 Astra / GPT-6.1 Sol / Sol / Luna レビュー — API は $10/$50 から $0.10/$0.50 まで、Astra は安全監視でタスクが止まりうる、性能値は OpenAI 自身の説明のみ</title>
+    <link rel="alternate" type="text/html" href="?a=gpt-6-review#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:gpt-6-review:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="monthly" label="月次見直し"/>
+    <summary>月次見直し。(1) 2026年11月20日に GPT-6.2 Astra と GPT-6.2 Sol が公開された</summary>
+  </entry>
+  <entry>
+    <title>【月次見直し】OpenAI Codex レビュー — クラウド版 + Codex CLI、GPT-5.6 Sol / Terra / Luna 対応、Free / Go プランでも利用可に</title>
+    <link rel="alternate" type="text/html" href="?a=openai-codex-agent#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:openai-codex-agent:2026-11-23</id>
+    <updated>2026-11-23T15:00:00Z</updated>
+    <category term="monthly" label="月次見直し"/>
+    <summary>月次見直し。(1) Codex CLI は 0.171.0（2026年11月20日）で GPT-6.2 Sol と GPT-6.2 Astra がカタログに加わった</summary>
   </entry>
   <entry>
     <title>【追記】Anthropic が Nasdaq に上場 — 初日は $97.17 で引け、公開価格 $83 を 17% 上回る。調達額 $81.3B は米国史上最大</title>
@@ -990,221 +1206,5 @@
     <updated>2026-09-02T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
     <summary>一次ソースの URL が到達できなくなっていたため、移転先に差し替えた（The Register の記事 URL が短縮形から展開形に変更されていた）</summary>
-  </entry>
-  <entry>
-    <title>【訂正】【特集】中国系 AI モデルの5月集中更新 — Qwen 3.7 Max が Opus 4.6 を一部凌駕、Kimi K2.6 が OSS で GPT-5.4 を抜く、Ernie 5.1・GLM・Seedance 2.0 も同期投下</title>
-    <link rel="alternate" type="text/html" href="?a=feature-china-ai-models-may-2026-qwen-kimi-ernie#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:feature-china-ai-models-may-2026-qwen-kimi-ernie:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>一次ソースのうち aiscopehub.com が到達できなくなっていた（HTTP 404）ため削除した</summary>
-  </entry>
-  <entry>
-    <title>【訂正】GitHub が7時間36分の大規模障害 — Actions・API・Copilot 認証まで波及、36件の更新すべてで原因は未開示</title>
-    <link rel="alternate" type="text/html" href="?a=github-outage-august-17-2026-7h36m#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:github-outage-august-17-2026-7h36m:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>一次ソースの URL が到達できなくなっていたため、移転先に差し替えた（The Register の記事 URL が短縮形から展開形に変更されていた）</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Google Vids に Veo 3.1 統合 — AI動画生成が Workspace ユーザーに開放、カスタムアバターも追加</title>
-    <link rel="alternate" type="text/html" href="?a=google-vids-veo31-free-video-generation-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:google-vids-veo31-free-video-generation-2026:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>一次ソースのうち x.com が到達できなくなっていた（HTTP 404）ため削除した</summary>
-  </entry>
-  <entry>
-    <title>【訂正】GPT-5.6 Sol / Terra / Luna レビュー — 一般公開版（7/9 GA）、TerminalBench 2.1 で 91.91% SOTA、Cerebras で 750 tokens/秒、ChatGPT Work の駆動モデルに</title>
-    <link rel="alternate" type="text/html" href="?a=gpt-5-6-review#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:gpt-5-6-review:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>Sonnet 5 との比較を現行価格に更新した。導入価格 $2/$10 は8月31日で終了しており、「9月以降は〜」という将来形の記述が期日を過ぎて不正確になっていた</summary>
-  </entry>
-  <entry>
-    <title>【訂正】OpenAI が GPT-Red を発表 — 自動 red-teaming モデル、人間 red-teamer 13% に対し 84% の攻撃成功率、GPT-5.6 の prompt injection 耐性を強化</title>
-    <link rel="alternate" type="text/html" href="?a=openai-gpt-red-self-improvement-red-teaming-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:openai-gpt-red-self-improvement-red-teaming-2026:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>一次ソースのうち www.marktechpost.com、www.technologyreview.com が到達できなくなっていた（HTTP 404）ため削除した</summary>
-  </entry>
-  <entry>
-    <title>【訂正】【週刊まとめ】AI開発ツール — 2026年4月20日〜26日</title>
-    <link rel="alternate" type="text/html" href="?a=overview-2026-week-apr20#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:overview-2026-week-apr20:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>一次ソースとして挙げていた www.anthropic.com は 実在しない URL だった</summary>
-  </entry>
-  <entry>
-    <title>【訂正】【週刊まとめ】AI開発ツール — 2026年5月4日〜10日</title>
-    <link rel="alternate" type="text/html" href="?a=overview-2026-week-may04#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:overview-2026-week-may04:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>一次ソースとして挙げていた www.anthropic.com は 実在しない URL だった</summary>
-  </entry>
-  <entry>
-    <title>【訂正】【週刊まとめ】AI開発ツール — 2026年5月11日〜17日</title>
-    <link rel="alternate" type="text/html" href="?a=overview-2026-week-may11#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:overview-2026-week-may11:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>一次ソースとして挙げていた www.anthropic.com は 実在しない URL だった</summary>
-  </entry>
-  <entry>
-    <title>【訂正】【週刊まとめ】AI開発ツール — 2026年5月18日〜24日</title>
-    <link rel="alternate" type="text/html" href="?a=overview-2026-week-may18#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:overview-2026-week-may18:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>一次ソースのうち qwenlm.github.io が到達できなくなっていた（HTTP 404）ため削除した</summary>
-  </entry>
-  <entry>
-    <title>【訂正】AI 開発ツール料金プラン横断比較 — CLI・エディタ・モデル API</title>
-    <link rel="alternate" type="text/html" href="?a=pricing-comparison-all-tools-2026-march#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:pricing-comparison-all-tools-2026-march:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>Claude Sonnet 5 の単価を現行の $3/$15 に更新した</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Grok V9-Medium — 6/16 の消費者公開は確認できず（TechTimes は6/29に公開予定の窓が発売のないまま過ぎたと報道）、V9 基盤とされるモデルは 7/8 に Grok 4.5 として公開（Cursor の訓練データは Cursor が説明）</title>
-    <link rel="alternate" type="text/html" href="?a=xai-grok-v9-medium-consumer-release-cursor-data-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:xai-grok-v9-medium-consumer-release-cursor-data-2026:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>一次ソースのうち chatforest.com が到達できなくなっていた（HTTP 404）ため削除した</summary>
-  </entry>
-  <entry>
-    <title>【追記】Anthropic が Claude Fable 5.1 / Mythos 5.1 を公開 — 破壊的変更が3つ、値下げはキャッシュ読み取りのみ</title>
-    <link rel="alternate" type="text/html" href="?a=anthropic-claude-fable-5-1-mythos-5-1-cache-read-cut-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:anthropic-claude-fable-5-1-mythos-5-1-cache-read-cut-2026:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="addendum" label="追記"/>
-    <summary>本記事は当初、公式ドキュメントに到達できなかったため二次報道に基づいて執筆し、その旨を本文に明記していた</summary>
-  </entry>
-  <entry>
-    <title>【追記】Anthropic が Claude Sonnet 5 を公開 — SWE-bench Pro 63.2% で Opus 4.8 に迫る、8月末まで $2/$10 の攻めた導入価格でエージェント本格投入</title>
-    <link rel="alternate" type="text/html" href="?a=anthropic-claude-sonnet-5-agentic-cheap-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:anthropic-claude-sonnet-5-agentic-cheap-2026:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="addendum" label="追記"/>
-    <summary>（この追記は書いた時点で既に誤っていたため 2026-09-30 に訂正済み。下の【訂正 2026-09-30】参照）導入価格 $2/$10 が8月31日で終了し 9月1日から $3/$15…</summary>
-  </entry>
-  <entry>
-    <title>【追記】8月に消えるもの — Claude Opus 4.7 の Fast mode 廃止、Workbench と prompt tools API が 8/17 終了、ChatGPT の o3 は 8/26 提供終了</title>
-    <link rel="alternate" type="text/html" href="?a=august-2026-ai-deprecations-migration-guide-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:august-2026-ai-deprecations-migration-guide-2026:2026-08-27</id>
-    <updated>2026-08-27T15:00:00Z</updated>
-    <category term="addendum" label="追記"/>
-    <summary>8月26日の o3 提供終了は予定どおり実施された。ただし補足が要る（同日に 追記 もあり）</summary>
-  </entry>
-  <entry>
-    <title>【取り下げ】【取り下げ】Cursor、Windsurf（Codeium）を買収完了 — AIエディタ市場の統合が加速</title>
-    <link rel="alternate" type="text/html" href="?a=cursor-windsurf-merge#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:cursor-windsurf-merge:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="retraction" label="取り下げ"/>
-    <summary>主要な事実（買収主体）が誤りであり、かつ唯一の一次ソースの存在を確認できなかったため、記事を取り下げ</summary>
-  </entry>
-  <entry>
-    <title>【訂正】AI 設定ファイル実務ガイド — ルールとスキルをどこに置き、どちらを優先させるか</title>
-    <link rel="alternate" type="text/html" href="?a=ai-config-files-comprehensive-guide-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:ai-config-files-comprehensive-guide-2026:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>（誤）.claude/CLAUDE.md が個人設定 →（正）./CLAUDE.md と ./.claude/CLAUDE.md はどちらもプロジェクト設定です（同日に 訂正・訂正・追記 もあり）</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Aider レビュー — マルチモデル対応のOSS CLIツール</title>
-    <link rel="alternate" type="text/html" href="?a=aider#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:aider:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>★4→3.5 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（3.65）…</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Amazon Q Developer レビュー — AWS統合のAI開発支援ツール</title>
-    <link rel="alternate" type="text/html" href="?a=amazon-q#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:amazon-q:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>★4→3.5 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（3.4）…</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Aqua Voice — Mac/Windows 向けAIディクテーション（フローティングUI）</title>
-    <link rel="alternate" type="text/html" href="?a=aqua-voice-review#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:aqua-voice-review:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>★4→3.5 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（3.45）…</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Claude Code レビュー — Anthropic の CLI エージェント、Opus 5 + effort トグル + Dynamic Workflows + agent view 対応版</title>
-    <link rel="alternate" type="text/html" href="?a=claude-code#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:claude-code:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>★5→4.5 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（4.55）…（同日に 月次見直し もあり）</summary>
-  </entry>
-  <entry>
-    <title>【訂正】CLI コーディングツール横断比較 — Claude Code・Codex・Gemini CLI・Aider・Copilot CLI・Cursor CLI</title>
-    <link rel="alternate" type="text/html" href="?a=cli-tools-comparison-2026-march#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:cli-tools-comparison-2026-march:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>Codex について「ChatGPT Pro（$200/月）以上のプランに含まれる形で提供され、単体の低価格プランはない」とする趣旨の記述を訂正しました（同日に 月次見直し もあり）</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Cline レビュー — 承認フロー付きのOSS AIエージェント</title>
-    <link rel="alternate" type="text/html" href="?a=cline#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:cline:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>★4→3.5 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（3.35）…</summary>
-  </entry>
-  <entry>
-    <title>【訂正】CodeBuff レビュー — ターミナル特化の新興CLIエージェント</title>
-    <link rel="alternate" type="text/html" href="?a=codebuff#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:codebuff:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>★4→3 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（2.9）と乖離していました</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Cursor CLI レビュー — IDE 不要で Composer / Background Agent を使える独立 CLI（Composer 2.5 / Sonic 対応、Microsoft Teams 統合版）</title>
-    <link rel="alternate" type="text/html" href="?a=cursor-cli#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:cursor-cli:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>★5→4.5 に修正。当サイトは「5つの軸（AI品質・使いやすさ・コスパ・拡張性・企業向け）を加重平均して総合スコアを算出する」と公表していますが、本記事の公表値はその計算結果（4.25）…（同日に 月次見直し もあり）</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Cursor レビュー — Cursor 3.x の Agents Window + Composer 2.5 + Microsoft Teams 統合 + Bugbot usage-based 対応版</title>
-    <link rel="alternate" type="text/html" href="?a=cursor-editor#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:cursor-editor:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>★5→4.5 「Windsurf 買収（3月）後の Cascade 統合は継続中」および関連リンクを削除しました（同日に 訂正・月次見直し もあり）</summary>
-  </entry>
-  <entry>
-    <title>【訂正】AI エディタ横断比較 — Cursor・Devin Desktop（旧 Windsurf）・VS Code+Copilot・Zed</title>
-    <link rel="alternate" type="text/html" href="?a=editor-comparison-2026-march#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:editor-comparison-2026-march:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>「Windsurf は2026年3月に Anysphere（Cursor 親会社）に買収された」「Cursor と Windsurf は同一親会社になった」という記述を削除しました（同日に 訂正・月次見直し もあり）</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Gemini CLI レビュー — Google の OSS CLI、Gemini 3.5 Flash 対応。Pro 世代は GA 遅延が続く</title>
-    <link rel="alternate" type="text/html" href="?a=gemini-cli#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:gemini-cli:2026-08-11</id>
-    <updated>2026-08-11T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>「Gemini 3.5 Pro: 翌月リリース予定（テスト中）」という記述を訂正しました（同日に 月次見直し もあり）</summary>
   </entry>
 </feed>
