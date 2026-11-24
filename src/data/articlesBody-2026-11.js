@@ -6495,7 +6495,8 @@ const ARTICLES_BODY_2026_11 = {
       "注目されている論点も報じられている。2025年の売上のうち約1,040億ドルがシンガポール法人を通じて計上されていたこと（**Financial Times** の報道）、地域別の売上報告を「請求先」基準から「顧客の本社所在地」基準に変えたこと、売掛金の回収期間が64日に延びていることなどだ。ただし、これらが SEC の調査対象かどうかは確認されていない。",
       "NVIDIA をめぐる規制の網は広がっている。カリフォルニア州の **Rob Bonta** 司法長官は11月19日、高度なチップが中国に流れたかどうかや、投資家への開示に問題がなかったかを調べる調査召喚状を出した。司法省は129億ドルの **Hugging Face** 買収を審査中で、辞任した **Jensen Huang** 氏は12月1日に議会で証言する予定だ。[NVIDIA の第3四半期決算と中国向け Hopper 出荷停止の記事](?a=nvidia-hopper-china-halt-bis-rule-q3-2026)でも報じたとおり、決算自体は売上1,158億ドルの記録更新だったが、株価はそれを顧みない下げが続いている。",
       "【追記 2026-11-21】NVIDIA の株価は11月20日の取引を125.53ドルで終え、前日比14.01%の下落となった。Alphabet が NVIDIA を抜いて米国企業で第3位となり、NVIDIA は第4位に転落した。取引時間中の LSEG のデータでは、Alphabet の時価総額は約3.44兆ドルで、NVIDIA の約3.4兆ドルを上回っていた。",
-      "【追記 2026-11-23】NVIDIA の取締役会は11月23日、Jensen Huang 氏を CEO に全会一致で復職させた。辞任から2週間足らずでの復帰で、即日発効する。取締役会は Huang 氏の率直さとリーダーシップに満足し、米政府高官からの意見も踏まえて国家安全保障上のリスクはないと判断したという。トランプ大統領も復帰を歓迎した。株価は取引開始直後に一時約33%上昇した。なおカリフォルニア州司法長官による調査は続いている。議会での証言は、12月1日の下院での非公開聴取と、12月3日の上院銀行委員会での証言が予定されている。"
+      "【追記 2026-11-23】NVIDIA の取締役会は11月23日、Jensen Huang 氏を CEO に全会一致で復職させた。辞任から2週間足らずでの復帰で、即日発効する。取締役会は Huang 氏の率直さとリーダーシップに満足し、米政府高官からの意見も踏まえて国家安全保障上のリスクはないと判断したという。トランプ大統領も復帰を歓迎した。株価は取引開始直後に一時約33%上昇した。なおカリフォルニア州司法長官による調査は続いている。議会での証言は、12月1日の下院での非公開聴取と、12月3日の上院銀行委員会での証言が予定されている。",
+      "【追記 2026-11-24】米商務省の産業安全保障局（BIS）は11月23日、シンガポールを拠点とする Megaspeed International など東南アジアの7社をエンティティリストに追加した。米国の先端技術、特に NVIDIA の AI チップを輸出するには米政府の許可が必要になる。追加されたのは Megaspeed International のほか、親会社の Swiftdata、MSFusion、Speedmatrix、Megaspeed（Thailand）、Alibaba 傘下の Apex Enterprise Solutions など。BIS は、先端コンピューティング製品が不正な用途に転用される重大なリスクがあるためとしている。Megaspeed は NVIDIA のチップを中国へ不正に転用した疑いで米司法省の調査を受けており、NVIDIA は2025年6月に同社を「販売禁止」リストに入れていた。Alibaba は Apex を通じた半導体の不正転用を否定している。今回の措置は、Jensen Huang 氏の CEO 復職と同じ日の発表となった。"
     ],
     "primarySources": [
       {
@@ -6519,6 +6520,16 @@ const ARTICLES_BODY_2026_11 = {
         "title": "Nvidia reinstates Jensen Huang as CEO",
         "site": "Reuters",
         "url": "https://www.reuters.com/technology/nvidia-reinstates-jensen-huang-ceo-2026-11-23/"
+      },
+      {
+        "title": "US adds Megaspeed to trade blacklist as Nvidia's Huang returns as CEO",
+        "site": "Al Jazeera",
+        "url": "https://www.aljazeera.com/economy/2026/11/24/us-adds-megaspeed-firm-at-centre-of-nvidia-scandal-to-export-control-list?traffic_source=rss"
+      },
+      {
+        "title": "Megaspeed on US blacklist: What it means for operations",
+        "site": "The Straits Times",
+        "url": "https://www.straitstimes.com/business/economy/megaspeed-on-us-blacklist-what-this-means-for-the-operations-of-the-spore-based-firm"
       }
     ]
   },
@@ -7756,6 +7767,187 @@ const ARTICLES_BODY_2026_11 = {
         "title": "Making It Possible for Agents to Shop on Behalf of Customers",
         "site": "Walmart",
         "url": "https://corporate.walmart.com/news/2026/10/Making-It-Possible-for-Agents-to-Shop-on-Behalf-of-Customers"
+      }
+    ]
+  },
+  "anthropic-claude-vp-vnp-proof-2026": {
+    "body": [
+      "Anthropic は2026年11月23日、内部の研究用 Claude モデルが発見したとする VP ≠ VNP の証明を主張する論文と Lean 4 による形式化を、GitHub の formal-math リポジトリに公開した。論文は「VP ≠ VNP over every field」で、著者は Claude（Anthropic）とされている。VP と VNP は、1979年に Leslie Valiant が導入した代数的複雑性クラスで、P 対 NP 問題の代数的対応物にあたる。論文の主張は、すべての体において、m×m のパーマネント（標数が2の場合を除く）とハミルトンサイクル多項式を計算する算術回路は、m が十分に大きいとき m^(c (log m)^(1/3)) 個を超えるゲートを必要とする、というものだ。これが正しければ VP は VNP の真部分集合となり、VNP は VP の閉包に含まれないことになる。",
+      "検証の現状には注意が必要だ。Lean 形式化は 324 ファイル、約7万3,000行にのぼり、Lean が各証明ステップを検査する。リポジトリの CI では、Challenge.lean との命題の比較や、nanoda という独立に書かれた第二のカーネルでの再検査も行われる。ただしリポジトリ自身が、「人の数学者は誰も証明を検証していない」こと、そして「Lean が検査するのは証明の各ステップであって、形式化された命題が論文の主張と一致しているかは機械では検証できない」ことを明記している。論文と Lean の対応関係は論文の Appendix Q に一覧があり、その一致の判断は AI の読み手によるものにとどまる。リポジトリは研究用のアーティファクトで、Anthropic はメンテナンスせず、コントリビューションも受け付けない。",
+      "同じ formal-math リポジトリでは、11月20日にリーマン予想の証明主張も公開され、Lean FRO と Mathlib Initiative が11月21日に認証した。今回の VP ≠ VNP は、著者が Claude 単独で、人の数学者による検証がまだない点が異なる。Anthropic は、この結果が P 対 NP を解決するものではないことも明記している。AI による数学の未解決問題への挑戦が続いているが、証明の正しさは人による査読と理解がこれからという段階だ。"
+    ],
+    "primarySources": [
+      {
+        "site": "GitHub",
+        "title": "VP ≠ VNP over every field",
+        "url": "https://github.com/anthropics/formal-math/tree/main/vp-vnp"
+      },
+      {
+        "site": "Interesting Engineering",
+        "title": "Claude claims to prove VP ≠ VNP in Valiant's 47-year-old conjecture",
+        "url": "https://interestingengineering.com/ai-robotics/claude-proves-vp-not-vnp-valiant-conjecture"
+      },
+      {
+        "site": "AI Weekly",
+        "title": "Anthropic posts Claude-authored VP ≠ VNP proof, unverified",
+        "url": "https://aiweekly.co/alerts/anthropic-posts-claude-authored-vp-vnp-proof-unverified"
+      }
+    ]
+  },
+  "openai-cisco-shirudo-2026": {
+    "body": [
+      "Cisco と OpenAI は2026年11月23日、オープンソースプロジェクト Shirudo を発表した。eBPF を使い、稼働中の Linux システムを再起動なしに守るための一時的な保護（シールド）を展開するもので、恒久的なパッチができて展開されるまでの時間を稼ぐ狙いがある。Shirudo は日本語で「盾」の意味で、GitHub の shirudo-dev/shirudo で公開された。プレリリース段階で、ライセンスは BSD 2-Clause、eBPF プログラムは BSD と GPL のデュアルライセンスだ。",
+      "仕組みは、AI エージェントが脆弱性を見つけ、シールドを生成し、攻撃を止められるか、正常なサービスを妨げないかをテストする、というものだ。シールドは暗号署名され、TPM（Trusted Platform Module）に記録されるため、どの保護がいつ読み込まれたかをあとから検証できる。実証では、OpenAI の Codex が生成したシールドが、稼働中の Elasticsearch に対する Java4Shell の悪用試行を遮断した。PHP の脆弱性についても、検出と遮断ができたという。土台になっているのは、Cisco 傘下の Isovalent が2022年にオープンソース化した eBPF のランタイムセキュリティツール Tetragon で、AI エージェントが駆動できるよう作り直したものだ。",
+      "ただし、すぐに本番で使える段階ではない。Shirudo のリポジトリによれば、本番利用には Shirudo 対応のカーネルパッチと TPM 2.0 が必要で、初期セットアップ自体は起動時から行う。「再起動なし」というのは、プラットフォームのセットアップ後にシールドを読み込む場面の話だ。Cisco と OpenAI は脆弱性を再現するテストの提供や、自分が使うカーネルビルドでのシールドの実行、正常なトラフィックを壊す事例の報告を呼びかけている。12月15日には深掘りのウェビナーも予定されている。"
+    ],
+    "primarySources": [
+      {
+        "site": "Cisco",
+        "title": "Cisco and OpenAI Launch Shirudo, A New Project to Safeguard Agentic AI",
+        "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-and-openai-launch-shirudo-a-new-project-to-safeguard-agentic-ai.html"
+      },
+      {
+        "site": "GitHub",
+        "title": "Shirudo on GitHub",
+        "url": "https://github.com/shirudo-dev/shirudo"
+      }
+    ]
+  },
+  "anthropic-working-with-ai-2026": {
+    "body": [
+      "Anthropic は2026年11月23日、企業顧客58社への66件のインタビューに基づく調査「Working with AI」を公開した。著者は Nathan Wilmers、Maxim Massenkoff、Peter McCrory の3氏。AI の導入実態、ボトルネック、雇用への影響、組織の再編を調べたもので、対象は米国の Anthropic 顧客で、AI ネイティブのスタートアップから100年企業、製造業、法律事務所、ヘッジファンドなど幅広い。対象は多様性で選ばれており、無作為抽出ではなく、体系的に代表性のある標本でもないと明記されている。",
+      "雇用への影響では、AI による国内の解雇はごくわずかだった。一方で、採用を増やした企業もあるが、多くの企業が AI のために採用を減らしたと報告した。請負業者、特に海外の請負業者の利用削減も多く、国際的なビジネスサービス業の雇用への早期の警告になりうるとしている。価値の源泉はコスト削減よりも生産量の増加で、既存の仕事の加速と、新しい製品・サービスの導入がほぼ半々だった。詳細に検討した約300件の用途では、価値が高いものほど業務プロセスや役割の変更を伴っていた。",
+      "具体例では、コーディングエージェントが非技術職にもソフトウェア開発の能力を広げている。詳細に分類できた AI 製のソフトウェア100件のうち、80%は手作業の自動化、20%は既存ソフトの置き換えだった。トップダウンの自動化は専門家の抵抗や監視への不安を招きやすく、ボトムアップの普及は活用のばらつきがボトルネックになる。最も価値が高い使い方は、役割を広げてワークフロー全体の責任を持たせたり、AI ができないボトルネック業務へ人を移したりする再編を伴うものだった。法律事務所の例では、AI が初稿を書くようになったあと、ジュニア弁護士がシニアと一緒に AI の初稿を添削する仕組みにして、判断力を育てる工夫をしていた。",
+      "これは Anthropic の顧客への定性調査で、経済全体への推計ではない。Anthropic は10月に自社の雇用変化についての報告も出しているが、今回の調査は顧客企業が対象で、別物だ。"
+    ],
+    "primarySources": [
+      {
+        "site": "Anthropic",
+        "title": "Working with AI",
+        "url": "https://www.anthropic.com/research/working-with-ai"
+      }
+    ]
+  },
+  "google-ai-mode-personal-intelligence-wallet-2026": {
+    "body": [
+      "Google は2026年11月23日、検索の AI モードの Personal Intelligence に Google Wallet、Google Drive、Gemini アプリを接続できるようにすると発表した。Wallet の接続は同日から展開を開始し、Drive と Gemini アプリは今後数週間で続く。既存の Gmail、カレンダー、フォトに加わるもので、支出、文書、チャットの文脈を検索回答に反映させる。",
+      "Wallet を接続すると、支出の全体像の把握、日常の支出削減、クレジットカードの特典（キャッシュバックの区分、旅行特典、ポイント）の最適化に使える。AI モードはアカウントの情報を読むだけで、資金を移動・管理・運用することはできないと Google は明記している。Drive では文書・表・PDF の内容を踏まえた回答ができ、確定申告の準備のような用途が例に挙がっている。Gemini アプリとの接続では、Gemini での会話の文脈を AI モードが引き継ぎ、逆もできる。",
+      "接続はすべてオプトインで、検索のパーソナライズ設定からオン・オフを切り替えられる。近日中に、回答の下に表示される「Personalization」アイコンから、AI モードが使った文脈を確認できるようになる。あわせて、AI Overview と AI モードで直近の検索文脈に合わせた回答が表示されるようになる。なお、Gemini のチャット履歴と学習利用の分離は、既報のとおり11月16日から展開されている。"
+    ],
+    "primarySources": [
+      {
+        "site": "Google",
+        "title": "Tailored Google Search with Personal Intelligence apps",
+        "url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/"
+      }
+    ]
+  },
+  "aws-strands-decider-v2-2026": {
+    "body": [
+      "AWS は2026年11月23日、オープンウェイトの意思決定モデル Strands Decider v2 を公開した。Gemma 4 をベースにした5モデル（E2B、E4B、12B、26B-A4B、31B）で、Apache 2.0 ライセンス。重みは Hugging Face、コードと学習レシピ、評価は GitHub で公開されている。Decider は文章を生成せず、与えられた選択肢から1つを選び、各選択肢の確率を1回のフォワードパスで返す「システム1」モデルで、エージェントの判断（ツールの選択、振り分け、ガードレール、人へのエスカレーション判断など）に使う。",
+      "性能では、6つの公開テキストベンチマークの平均で、31B が82.1と、v1 の 26B-A4B の70.0を上回った。E4B も62.7から74.4に上がった。画像タスクでは90.1、動画タスクでは70.2を記録し、判断の対象はテキストだけではない。較正も改善し、期待較正誤差（ECE）は31B で0.027（v1 は0.062）となった。学習データは約1,748万件で、v1 の約13万6,000件から大幅に増えた。アーキテクチャの変更点は、v1 のポインターヘッドに代わる選択肢トークンの直接スコアリングと、共有文脈の双方向アテンションで、長いエージェントの実行履歴にも対応する。",
+      "AWS 自社の事例では、社内最大級のチケットシステムで、ラベル付けに使っていた Claude Sonnet 4.6 を Decider（v1）に置き換え、コストを98%削減し、1回あたりの呼び出しを78%速くしたという。ただしこれは AWS 自身の報告で、独立した検証は確認できていない。あわせて Strands Box に Claude Code、Codex、Kiro CLI のネイティブ対応が追加され、コーディングエージェントをサンドボックスで動かせるようになった。認証情報はサンドボックスの外に置かれ、エージェントには見えない仕組みだ。"
+    ],
+    "primarySources": [
+      {
+        "site": "Strands Agents",
+        "title": "Introducing Strands Decider v2: open, calibrated system one models",
+        "url": "https://strandsagents.com/blog/introducing-strands-decider-v2/"
+      },
+      {
+        "site": "The Letter Two",
+        "title": "AWS Releases Strands Decider v2 and Updates Strands Box",
+        "url": "https://thelettertwo.com/2026/11/23/aws-strands-decider-v2-strands-box"
+      }
+    ]
+  },
+  "openai-adversarial-distillation-2026": {
+    "body": [
+      "OpenAI は2026年11月20日、敵対的蒸留（adversarial distillation）への対策を説明する記事「Combatting adversarial distillation」を公開した。フロンティアモデルの出力を無断で使い、 safeguards を引き継がないまま同等の能力を持つモデルを訓練・展開する行為を指す。特にモデルの内部の推論過程（protected reasoning、chain-of-thought）の抽出を防ぐことに重点を置いている。推論の痕跡には最終回答に現れない情報が含まれ、訓練データとして価値が高いためだ。",
+      "対策は2層ある。リクエスト単位では、敵対的学習、入出力の分類器、API レベルの保護を組み合わせる。GPT-6.2 Astra と GPT-6.2 Sol では、推論をそれを生んだ会話履歴に結びつけ、以前のメッセージを書き換えるとそれ以降の推論は破棄される。古いモデルが GPT-6.2 の推論を読むことも防ぐ。分類器はツール呼び出しの引数に漏れた推論も検出する。キャンペーン単位では、連携した抽出の試みをアカウント群として調査し、違反が確認できればネットワークごと執行する。週あたり数千から数万のアカウントを対象に執行しており、2026年夏にペースが加速したという。",
+      "効果の測定では、社内の適応型ブラックボックスのレッドチーミング（攻撃者モデル6種を集計）で、以前のリクエストで生成した推論の抽出成功率が、GPT-6 Astra（元の safeguards）の54.0%から GPT-6.2 Astra（更新後）の0.2%に、現在のリクエストからの抽出は22.9%から0.9%に下がった。いずれも OpenAI 自身の内部評価で、独立した検証は確認できていない。内部のサイバー能力の移転実験では、正確な推論の痕跡で訓練した生徒モデルは、要約で訓練したものよりサイバー能力が高くなる傾向があったという。",
+      "国家安全保障の文脈もある。OpenAI は、2月に DeepSeek が米国のフロンティアモデルを蒸留しようとしていると議会に説明し、9月には Moonshot AI（Kimi の開発元）に関連する人物らによるキャンペーンを妨害したとしている。あわせて、蒸留対策の法整備（Chip Security Act、AI OVERWATCH Act、MATCH Act）への支持も表明した。これらの帰属の主張は OpenAI 自身のもので、独立した確認は取れていない。"
+    ],
+    "primarySources": [
+      {
+        "site": "OpenAI",
+        "title": "Combatting adversarial distillation",
+        "url": "https://openai.com/index/combatting-adversarial-distillation/"
+      }
+    ]
+  },
+  "openai-openworks-2026": {
+    "body": [
+      "OpenAI は2026年11月23日、米国の独立系中小企業に無料で AI 支援を提供するプログラム OpenWorks を開始した。地域の AI 専門家（OpenWorks Partner）が事業者と並んで働き、新規顧客の獲得、広告キャンペーン、現場で使い続けられるツールの構築などを手伝う。パイロットはニューヨーク、シカゴ、ロサンゼルス、ファーゴなど全米20のコミュニティで展開されている。",
+      "パートナーには月最大8,000ドルの謝礼が支払われ、ツールやワークショップの支援も受けられる。見返りとして、毎月の対面での無料支援（報道によれば4日間）と、月1回のコミュニティワークショップが求められる。OpenAI は年収96,000ドルの常勤職ではないと明言している。参加する事業者は無料で、3か月分の ChatGPT Business が付く。対象は独立系の中小企業（飲食店、小売、サービス業、製造業など）で、ソフトウェア・SaaS 企業、ベンチャーキャピタル出資企業、プライベートエクイティ傘下の企業は対象外だ。",
+      "具体例として、ノースダコタ州ファーゴの雑貨店では、在庫管理のダッシュボードを ChatGPT で構築し、店主は外注なら約5万ドルかかると見積もっている。サウスカロライナ州のマイクログリーン農家では、営業メールの返信率が20%から75%に上がり、4か月で10件の新規顧客を得たという。いずれも事業者自身の見積もりで、独立した検証は確認できていない。"
+    ],
+    "primarySources": [
+      {
+        "site": "OpenAI",
+        "title": "OpenWorks",
+        "url": "https://openai.com/openworks"
+      }
+    ]
+  },
+  "deepseek-funding-round-2026": {
+    "body": [
+      "DeepSeek は2回目の外部資金調達を完了した。約1,000億元（約150億ドル）を調達し、登記変更は11月17日に完了した。新規投資家を代表するパートナーシップが同社の約17.3%の株式を取得した。Tencent と CATL 関連のファンドが出資者に名を連ねている。Caixin Global が11月20日に報じ、Bloomberg なども伝えている。DeepSeek 自身は公表していない。",
+      "評価額の見方は報道で分かれる。Bloomberg の試算では調達後の評価額は約860億ドルで、創業者・梁文鋒氏の資産は550億ドルに達したという。一方、登記データを基にした別の試算では約920億ドルとするものもある。6月の前回ラウンドは約500億元の調達で、評価額は約500億ドルだった。約5か月で評価額が大幅に上がったことになる。上海の STAR Market への上場準備との報道もある。",
+      "金額や評価額は報道ベースの推計で、DeepSeek 自身は調達の規模や条件を公表していない。出資者の顔ぶれや上場計画についても、正式発表はない。米国の輸出規制で先端ハードウェアへのアクセスが制限される中、中国の AI 開発企業が国内資本を集めている構図だ。"
+    ],
+    "primarySources": [
+      {
+        "site": "Caixin Global",
+        "title": "DeepSeek Closes 100 Billion Yuan Funding Round",
+        "url": "https://www.caixinglobal.com/2026-11-20/deepseek-closes-100-billion-yuan-funding-round-102506825.html"
+      },
+      {
+        "site": "Moneycontrol",
+        "title": "DeepSeek founder is worth $55 billion after latest fundraising",
+        "url": "https://www.moneycontrol.com/news/business/deepseek-founder-is-worth-55-billion-after-latest-fundraising-14087586.html"
+      }
+    ]
+  },
+  "prime-intellect-deepseek-v4-1-flash-substitution-2026": {
+    "body": [
+      "Prime Intellect は2026年11月19日、セキュリティ勧告 PI-SA-2026-001 を公開した。11月8日 01:24 UTC から11月10日 06:35 UTC の約53時間、同社の DeepSeek V4.1 Flash エンドポイントの背後で、拒否機能を除去した公開の「abliterated」版モデルにすり替えられていた。影響を受けた期間のリクエストは、このすり替えられたモデルが回答した。",
+      "能力のベンチマーク（GPQA Diamond、τ-bench）には影響がなかったが、拒否率は大きく下がった。JailbreakBench では100件中98件の拒否が1件に、StrongREJECT では313件中304件が2件に、HarmBench では240件中198件が0件になった。チャットテンプレート、トークナイザー、サーブ設定は変更されていなかった。影響を受けた顧客には連絡済みで、モデルの拒否に依存していた利用には、その期間の出力を確認するよう呼びかけている。",
+      "Prime Intellect によれば、プロンプトや出力が記録されたり、サーブ用クラスターの外に出たりした証拠はなく、鍵や顧客の認証情報への影響もないという。エンドポイントはゼロデータ保持（ZDR）で、リクエストはログに残らない設計だ。侵入経路や影響を受けたリクエスト数は未開示で、調査は継続中だ。ホスト型のオープンモデルでは、重みのすり替えが能力ベンチマークに現れず、拒否機能だけが失われるリスクがあることが示された。"
+    ],
+    "primarySources": [
+      {
+        "site": "Prime Intellect",
+        "title": "Notice regarding deepseek/deepseek-v4.1-flash, 8 to 10 November 2026",
+        "url": "https://primeintellect.one/security/advisories/deepseek-v4-1-flash-model-substitution"
+      }
+    ]
+  },
+  "google-antigravity-gemini-4-carbon-2026": {
+    "body": [
+      "Google は2026年11月23日、開発エージェント Antigravity で Gemini 4 Carbon を有料の AI Pro プランでも使えるようにした。従来は最上位の AI Ultra（月額99.99ドル）限定だったものが、AI Pro（月額19.99ドル）でも利用可能になった。あわせて Gemini 4 Hydrogen を全ユーザーに開放するとしている。発表は Antigravity の開発責任者 Varun Mohan 氏の X 投稿で、9to5Google が報じた。",
+      "あわせて Antigravity の全ユーザーの Gemini クォータがリセットされた。キャッシュ改善でクォータあたりの実行量が22%増えたことを受けた措置だ。Orchestrator の設定画面も新設され、Orchestrator と Executor のモデルと effort レベルを明示的に選べるようになった。v2.34.0 では、Claude Code、Codex、Cursor など他のコーディングエージェントの MCP サーバーやスキル、サブエージェント、指示ファイルを取り込めるようになった。",
+      "一方で、Gemini 4 Argon と Gemini 3.8 Flash は11月30日に Antigravity から終了する予定だ。"
+    ],
+    "primarySources": [
+      {
+        "site": "9to5Google",
+        "title": "Gemini 4 Carbon is now available in Google Antigravity for AI Pro",
+        "url": "https://9to5google.com/2026/11/23/antigravity-gemini-4-carbon/"
+      }
+    ]
+  },
+  "meta-wang-superintelligence-warning-2026": {
+    "body": [
+      "Meta の最高 AI 責任者 Alexandr Wang 氏は2026年11月22日、X への投稿で「超知能は到来しつつある」と述べ、人類の今後1年の行動が大きな帰結を持つと警告した。きっかけは、Anthropic の社員が Claude を使ってリーマン予想を解いたと発表したことだ。Wang 氏は、この成果が「知的な力の面で人類のいかなる偉業をも凌駕する」と述べた。Al Jazeera が報じた。",
+      "Wang 氏は、出現しつつある AI モデルが自己改善では「明らかに超人的」になり、生物学や兵器、経済の研究を「大幅に加速させる」と述べた。制御不能な再帰的自己改善や、あらゆる分野で人間より1,000倍賢く有能な AI を人類が制御できる可能性は低いとしている。業界内の「超知能は避けられない」とする「怠惰な考え方」を批判し、社会を AI に「委譲」してよいわけではないと主張した。",
+      "Wang 氏は Scale AI の共同創業者で、2025年に Meta の初の最高 AI 責任者に就任した。Meta はこれまで、Anthropic の Dario Amodei 氏や OpenAI の Sam Altman 氏が求めた協調的な減速には同調せず、楽観的な立場を取ってきた。今回の投稿は、リーマン予想の証明主張をめぐる議論が、業界の安全論争に広がっていることを示している。"
+    ],
+    "primarySources": [
+      {
+        "site": "Al Jazeera",
+        "title": "Artificial superintelligence 'arriving', warns top Meta executive",
+        "url": "https://www.aljazeera.com/amp/economy/2026/11/23/ai-superintelligence-arriving-warns-top-meta-executive"
       }
     ]
   }
