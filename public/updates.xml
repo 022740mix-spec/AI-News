@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./?view=updates"/>
   <link rel="self" type="application/atom+xml" href="./updates.xml"/>
   <id>tag:ai-tool-news.jp,2026:updates</id>
-  <updated>2026-11-24T15:00:00Z</updated>
+  <updated>2026-11-25T15:00:00Z</updated>
   <generator>ai-news-generate-updates</generator>
+  <entry>
+    <title>【追記】Anthropic の IPO、グリーンシュー行使で総額 935億ドルに — 「Project Lantern」の異例の条件を Reuters が報道</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-ipo-project-lantern-greenshoe-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:anthropic-ipo-project-lantern-greenshoe-2026:2026-11-25</id>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>11月24日、Anthropic株はプレマーケットでIPO価格の83ドルを割り込み、一時75.61ドルまで下落した</summary>
+  </entry>
   <entry>
     <title>【追記】SEC が NVIDIA の会計を調査と報道、株価は14%急落、1日で約5,000億ドルの時価総額が消失</title>
     <link rel="alternate" type="text/html" href="?a=nvidia-sec-accounting-probe-stock-drop-2026#article-history"/>
@@ -1198,13 +1206,5 @@
     <updated>2026-09-02T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
     <summary>一次ソースのうち www.techaiapp.com が到達できなくなっていた（HTTP 404）ため削除した</summary>
-  </entry>
-  <entry>
-    <title>【訂正】ChatGPT ショッピング刷新 — Instant Checkout を廃止し商品発見（Product Discovery）へ軸足</title>
-    <link rel="alternate" type="text/html" href="?a=chatgpt-shopping-revamp-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:chatgpt-shopping-revamp-2026:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>一次ソースのうち www.cnbc.com が到達できなくなっていた（HTTP 404）ため削除した</summary>
   </entry>
 </feed>
