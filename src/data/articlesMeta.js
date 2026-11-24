@@ -16221,5 +16221,193 @@ export const ARTICLES_META = [
       "ショッピング",
       "決済"
     ]
+  },
+  {
+    "id": "anthropic-claude-vp-vnp-proof-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Claude が VP ≠ VNP の証明を主張 — 70ページの論文と Lean 形式化を公開、人の数学者は未検証",
+    "excerpt": "Anthropic は、内部の研究用 Claude モデルが発見したとする VP ≠ VNP の証明を主張する論文と Lean 4 形式化を GitHub に公開した。人の数学者による検証はまだなく、証明が正しいかは未確定だ。",
+    "date": "2026-11-24",
+    "newsDate": "2026-11-23",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "数学",
+      "研究"
+    ]
+  },
+  {
+    "id": "openai-cisco-shirudo-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI と Cisco が Shirudo を公開 — eBPF で稼働中の Linux を再起動なしに守るオープンソース",
+    "excerpt": "Cisco と OpenAI は、稼働中の Linux システムを再起動なしに守るオープンソースプロジェクト Shirudo を発表した。AI エージェントが脆弱性を見つけ、シールドを生成して攻撃を遮断する。",
+    "date": "2026-11-24",
+    "newsDate": "2026-11-23",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "Cisco",
+      "セキュリティ",
+      "オープンソース"
+    ]
+  },
+  {
+    "id": "anthropic-working-with-ai-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Anthropic、58社の顧客調査「Working with AI」を公開 — 解雇は少なく採用抑制、価値は組織の再編に",
+    "excerpt": "Anthropic は企業顧客58社への66件のインタビューに基づく調査「Working with AI」を公開した。AI による国内の解雇はごくわずかだったが、採用を減らした企業が多く、価値が高い使い方は組織の再編を伴っていた。",
+    "date": "2026-11-24",
+    "newsDate": "2026-11-23",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "研究"
+    ]
+  },
+  {
+    "id": "google-ai-mode-personal-intelligence-wallet-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Google、検索の AI モードに Wallet・Drive・Gemini アプリの接続を開始 — 個人情報で回答を最適化",
+    "excerpt": "Google は検索の AI モードの Personal Intelligence に Google Wallet、Google Drive、Gemini アプリを接続できるようにした。Wallet の接続は11月23日から展開を開始し、Drive と Gemini アプリは今後数週間で続く。",
+    "date": "2026-11-24",
+    "newsDate": "2026-11-23",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "AI検索"
+    ]
+  },
+  {
+    "id": "aws-strands-decider-v2-2026",
+    "type": "news",
+    "category": "model",
+    "title": "AWS、Strands Decider v2 を公開 — Gemma 4 ベースの意思決定モデル5種、Apache 2.0 でオープンウェイト",
+    "excerpt": "AWS はオープンウェイトの意思決定モデル Strands Decider v2 を公開した。Gemma 4 ベースの5モデルで、文章を生成せず選択肢の確率を返す。社内のチケットシステムではコストを98%削減したという。",
+    "date": "2026-11-24",
+    "newsDate": "2026-11-23",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "AWS",
+      "Gemma",
+      "オープンソース"
+    ]
+  },
+  {
+    "id": "openai-adversarial-distillation-2026",
+    "type": "news",
+    "category": "special",
+    "title": "OpenAI、敵対的蒸留への対策を公開 — GPT-6.2 で推論の抽出成功率を 54.0% から 0.2% に",
+    "excerpt": "OpenAI は敵対的蒸留への対策を説明する記事を公開した。GPT-6.2 Astra と Sol で推論の抽出を防ぐ仕組みを強化し、社内のレッドチーミングでは抽出成功率が 54.0% から 0.2% に下がったという。",
+    "date": "2026-11-24",
+    "newsDate": "2026-11-20",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "GPT-6",
+      "セキュリティ",
+      "研究"
+    ]
+  },
+  {
+    "id": "openai-openworks-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI、OpenWorks を開始 — 地域の AI 専門家に月最大 8,000ドル、中小企業を無料で支援",
+    "excerpt": "OpenAI は米国の独立系中小企業に無料で AI 支援を提供するプログラム OpenWorks を開始した。地域の AI 専門家に月最大 8,000ドルの謝礼を支払い、20のコミュニティでパイロットを展開する。",
+    "date": "2026-11-24",
+    "newsDate": "2026-11-23",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "ChatGPT"
+    ]
+  },
+  {
+    "id": "deepseek-funding-round-2026",
+    "type": "news",
+    "category": "special",
+    "title": "DeepSeek、約1,000億元の資金調達を完了 — 評価額は約860億ドルとの試算も",
+    "excerpt": "DeepSeek は約1,000億元（約150億ドル）の2回目の外部資金調達を完了した。登記変更は11月17日に完了し、Tencent と CATL 関連のファンドが出資した。DeepSeek 自身は公表していない。",
+    "date": "2026-11-24",
+    "newsDate": "2026-11-20",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "DeepSeek",
+      "資金調達"
+    ]
+  },
+  {
+    "id": "prime-intellect-deepseek-v4-1-flash-substitution-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Prime Intellect、DeepSeek V4.1 Flash のすり替えを開示 — 拒否機能を除去したモデルが約53時間稼働",
+    "excerpt": "Prime Intellect は、DeepSeek V4.1 Flash のエンドポイントが約53時間にわたり、拒否機能を除去したモデルにすり替えられていたと開示した。能力ベンチマークは変わらなかったが、拒否率はほぼゼロに落ちた。",
+    "date": "2026-11-24",
+    "newsDate": "2026-11-19",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "DeepSeek",
+      "セキュリティ",
+      "漏洩"
+    ]
+  },
+  {
+    "id": "google-antigravity-gemini-4-carbon-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Google、Antigravity で Gemini 4 Carbon を AI Pro に開放 — Hydrogen は全ユーザーに",
+    "excerpt": "Google は Antigravity で Gemini 4 Carbon を有料の AI Pro プランでも使えるようにした。従来は最上位の AI Ultra 限定だった。Hydrogen は全ユーザーに開放される。",
+    "date": "2026-11-24",
+    "newsDate": "2026-11-23",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "Antigravity"
+    ]
+  },
+  {
+    "id": "meta-wang-superintelligence-warning-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Meta の Wang 氏、「超知能は到来しつつある」と警告 — リーマン予想の証明主張を受けて",
+    "excerpt": "Meta の最高 AI 責任者 Alexandr Wang 氏は、Claude によるリーマン予想の証明主張を受けて「超知能は到来しつつある」と投稿し、社会を AI に「委譲」してはならないと警告した。",
+    "date": "2026-11-24",
+    "newsDate": "2026-11-22",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Meta",
+      "Muse",
+      "数学"
+    ]
   }
 ];
