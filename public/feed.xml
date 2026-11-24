@@ -5,8 +5,96 @@
   <link rel="alternate" type="text/html" href="./"/>
   <link rel="self" type="application/atom+xml" href="./feed.xml"/>
   <id>tag:ai-tool-news.jp,2026:feed</id>
-  <updated>2026-11-24T15:00:00Z</updated>
+  <updated>2026-11-25T15:00:00Z</updated>
   <generator>ai-news-generate-feed</generator>
+  <entry>
+    <title>Anthropic、MCPサーバーがスキルを配信できる「Skills over MCP」を公開ベータに — TasksとElicitationはGAへ</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-skills-over-mcp-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-skills-over-mcp-2026</id>
+    <published>2026-11-25T15:00:00Z</published>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <summary>AnthropicがClaudeとClaude Codeで、MCPサーバーがツールと一緒にスキルを配信できる「Skills over MCP」の公開ベータを開始した。長時間ジョブを実行するTasksと、実行中にユーザーへ確認を求めるElicitationは一般提供（GA）となった。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI、GPT-6にタンパク質設計の能力 — 実験室で5標的への結合を確認</title>
+    <link rel="alternate" type="text/html" href="?a=openai-gpt-6-protein-design-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-gpt-6-protein-design-2026</id>
+    <published>2026-11-25T15:00:00Z</published>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <summary>OpenAIは、GPT-6系モデルが推論と汎用コードだけで新規タンパク質の立体構造と配列を設計できると発表した。研究パートナーとの実験では、GPT-6.2の設計に基づくミニバインダー322件のうち35件が5つの標的への結合を示した。</summary>
+  </entry>
+  <entry>
+    <title>Meta、パーソナルAIエージェントMuseを英国で開始 — InstagramのDMにも対応</title>
+    <link rel="alternate" type="text/html" href="?a=meta-muse-uk-instagram-2026"/>
+    <id>tag:ai-tool-news.jp,2026:meta-muse-uk-instagram-2026</id>
+    <published>2026-11-25T15:00:00Z</published>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <summary>MetaはパーソナルAIエージェント「Muse」を英国で開始した。18歳以上がiOS、Android、muse.ai、WhatsAppで利用できる。同日、InstagramのDMでもMuseと会話できるようになった。</summary>
+  </entry>
+  <entry>
+    <title>Google DeepMind、基礎能力の「信頼性の下限」を測る新ベンチマーク「Humanity&apos;s First Exam」を公開</title>
+    <link rel="alternate" type="text/html" href="?a=google-humanitys-first-exam-2026"/>
+    <id>tag:ai-tool-news.jp,2026:google-humanitys-first-exam-2026</id>
+    <published>2026-11-25T15:00:00Z</published>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <summary>Google DeepMindは、フロンティアモデルが「小学校レベルの問題を確実に解けるか」を測る新ベンチマーク「Humanity&apos;s First Exam（HFE）」を公開した。トップモデルも平均で約14%のファミリーを取りこぼし、失敗の73%は視覚の知覚に集中した。</summary>
+  </entry>
+  <entry>
+    <title>NVIDIA、辞任から11日でJensen Huang氏をCEOに復帰 — 翌日に社員へ謝罪</title>
+    <link rel="alternate" type="text/html" href="?a=nvidia-huang-reinstated-apology-2026"/>
+    <id>tag:ai-tool-news.jp,2026:nvidia-huang-reinstated-apology-2026</id>
+    <published>2026-11-25T15:00:00Z</published>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <summary>NVIDIAの取締役会は、辞任から11日後のJensen Huang氏を社長兼CEOに即時復帰させた。株価は約30%上昇した。翌日の全社集会でHuang氏は社員に謝罪し、行動規範に違反したことを認めた。</summary>
+  </entry>
+  <entry>
+    <title>Axios報道：OpenAIとAnthropicの社員、未公開の最強モデルは「安全に公開できない」と懸念</title>
+    <link rel="alternate" type="text/html" href="?a=axios-openai-anthropic-safety-concerns-2026"/>
+    <id>tag:ai-tool-news.jp,2026:axios-openai-anthropic-safety-concerns-2026</id>
+    <published>2026-11-25T15:00:00Z</published>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <summary>Axiosは、OpenAIとAnthropicの20人以上の社内関係者が、未公開の最強モデルは現行の制御手法では安全に公開できないと考えていると報じた。両社は新たな安全要件や公開の見送りもありうると反論している。</summary>
+  </entry>
+  <entry>
+    <title>元xAI創業者らが新会社Epochalを設立 — 過去のウェブを再現する「Time Portal」で予測AIを訓練</title>
+    <link rel="alternate" type="text/html" href="?a=epochal-time-portal-launch-2026"/>
+    <id>tag:ai-tool-news.jp,2026:epochal-time-portal-launch-2026</id>
+    <published>2026-11-25T15:00:00Z</published>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <summary>xAIの創業メンバーらが、予測AIの開発を目指す新会社Epochalを設立した。第一弾プロダクト「Time Portal」は、30年分・1兆ページ超のウェブアーカイブから指定した過去の日付時点のウェブをエージェントに閲覧させる環境だ。</summary>
+  </entry>
+  <entry>
+    <title>PrismML、三値重みの27Bモデル「Ternary Bonsai 2.5」を公開 — 5.9GBでSWE-bench Verified 75.6</title>
+    <link rel="alternate" type="text/html" href="?a=prismml-ternary-bonsai-2-5-27b-2026"/>
+    <id>tag:ai-tool-news.jp,2026:prismml-ternary-bonsai-2-5-27b-2026</id>
+    <published>2026-11-25T15:00:00Z</published>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <summary>PrismMLは、Qwen3.8 27Bを三値重みに圧縮した「Ternary Bonsai 2.5 27B」を公開した。5.9GBながらSWE-bench Verifiedで75.6を記録し、前版の60.8から大幅に改善した。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI、医療向けモデル設定をAPIで提供 — GPT-6.2 Astra／Solなど4構成</title>
+    <link rel="alternate" type="text/html" href="?a=openai-healthcare-model-configs-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-healthcare-model-configs-2026</id>
+    <published>2026-11-25T15:00:00Z</published>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <summary>OpenAIは11月24日、Responses API向けに医療特化のモデル設定を公開した。GPT-6.2 Astra／SolとGPT-6／GPT-6.1 Solの4構成で、臨床の質問に合わせたハーネスと医療文献に特化したウェブ検索を備える。</summary>
+  </entry>
+  <entry>
+    <title>Ant Group、医療AIモデル「LingSante」2種をオープンウェイトで公開 — 560Bの推論モデルと124Bのマルチモーダルモデル</title>
+    <link rel="alternate" type="text/html" href="?a=ant-group-lingsante-medical-models-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ant-group-lingsante-medical-models-2026</id>
+    <published>2026-11-25T15:00:00Z</published>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <summary>Ant GroupのAI健康アプリAfuは、医療・健康AIモデルファミリー「LingSante」を発表し、2つの中核モデルをオープンウェイトで公開した。560Bパラメータの推論モデルと124Bパラメータのマルチモーダルモデルで、1日約2,000万件の健康相談を処理するアプリで使われている。</summary>
+  </entry>
+  <entry>
+    <title>スタンフォード大、ChatGPTを2週間やめると孤独感が低下 — 625人のランダム化試験</title>
+    <link rel="alternate" type="text/html" href="?a=stanford-chatgpt-abstinence-loneliness-2026"/>
+    <id>tag:ai-tool-news.jp,2026:stanford-chatgpt-abstinence-loneliness-2026</id>
+    <published>2026-11-25T15:00:00Z</published>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <summary>スタンフォード大学などの研究チームは、ChatGPTの利用を2週間休止した群では、1日だけ休止した群と比べて孤独感が低下し、対面での交流が増えたとするランダム化比較試験（625人）の結果をプレプリントで公開した。</summary>
+  </entry>
   <entry>
     <title>Anthropic が Claude Ship を発表 — PR のレビュー・修正・承認をエージェントが担当、Team / Enterprise 向けベータ</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-ship-2026"/>

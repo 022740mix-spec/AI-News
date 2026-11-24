@@ -7479,7 +7479,8 @@ const ARTICLES_BODY_2026_11 = {
       "さらに、銀行の上級職員の一部に対し、取引チームの中核メンバーが上場後 6か月間、OpenAI、Cursor、DeepSeek、Hugging Face と業務をしないよう求める法的文書への署名を求めた。銀行は通常、利益相反の管理や顧客の機密保護を行うが、個々のバンカーにこれほど広い専属性を求めるのは異例だという。署名を断ったバンカーもおり、競合他社と関わらない約束ができる人材を探すのは難しかったという。",
       "情報の共有にも制限があった。Anthropic は資料の共有に NetRoadshow を使い、通常の PDF の代わりにした。NetRoadshow は誰がどのページを見たかを記録し、文書には個々のバンカーの名前が透かしとして入った。保存はできず、銀行側の作業は難しくなった。S-1（上場申請書類）の提出の約 4週間前に Reuters が草案の内容を報じていたことも、漏洩への警戒を強めた。価格帯を盛り込んだ改訂版 S-1A の送付は深夜 2時ごろになり、銀行は数時間で承認を求められた。",
       "両社ともグリーンシュー分の追加株式については引受手数料を 0 と交渉していた。引受手数料の総額は 5億ドルを超えた。株価は初日に 17% 上昇した後、金曜日には 8.5% 下落した。主幹事は Goldman Sachs と Morgan Stanley で、両行ともコメントを控えた。なお Anthropic は別途、AMD、Broadcom、Google、Nvidia を含む技術投資家グループに IPO 価格で 260億ドル分の株式を売却した（WSJ）。",
-      "【訂正 2026-11-23】（誤）既存記事ではグリーンシュー行使前の 813億ドルまでを報じていた →（正）削除し、Reuters 報道が IPO プロセスの裏側を明らかにした旨の文に書き換えた。既存記事には 11月22日の追記でグリーンシュー行使後の 935億ドルがすでに記されていたため。"
+      "【訂正 2026-11-23】（誤）既存記事ではグリーンシュー行使前の 813億ドルまでを報じていた →（正）削除し、Reuters 報道が IPO プロセスの裏側を明らかにした旨の文に書き換えた。既存記事には 11月22日の追記でグリーンシュー行使後の 935億ドルがすでに記されていたため。",
+      "【追記 2026-11-25】11月24日、Anthropic株はプレマーケットでIPO価格の83ドルを割り込み、一時75.61ドルまで下落した。終値は81.91ドルで、前日終値87.64ドルから6.5%下落した。Dow Jones Market Dataによると、時価総額は一時9,995億ドルと、初めて1兆ドルを割り込んだ。CEOのDario Amodei氏とDaniela Amodei社長は、上場翌日の11月20日にそれぞれ337万8,378株をIPO価格の83ドルで売却し、各約2億8,000万ドルを得ていたことが、月曜夜のForm 4届出で明らかになった。目論見書によると、最大3億300万株が12月15日に売却可能になる。"
     ],
     "primarySources": [
       {
@@ -7489,6 +7490,21 @@ const ARTICLES_BODY_2026_11 = {
       {
         "title": "Anthropic's Epic IPO Raises $93.5 Billion After Underwriter 'Green-Shoe Option'（The Wall Street Journal）",
         "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-20-2026/card/anthropic-s-epic-ipo-raises-93-5-billion-after-underwriter-green-shoe-option--xeCLwDJKwD7apCjBO0Gu"
+      },
+      {
+        "title": "Anthropic breaks below $83 IPO price as debut rally unravels",
+        "site": "Reuters",
+        "url": "https://www.reuters.com/business/anthropic-breaks-below-83-ipo-price-debut-rally-unravels-2026-11-24/"
+      },
+      {
+        "title": "Anthropic's stock just broke below its IPO price for the first time",
+        "site": "MarketWatch",
+        "url": "https://www.marketwatch.com/story/anthropics-stock-just-broke-below-its-ipo-price-for-the-first-time-5dc82668"
+      },
+      {
+        "title": "Anthropic stock falls below IPO price; CEO sells $280 million in shares",
+        "site": "TheStreet",
+        "url": "https://www.thestreet.com/investing/stocks/anthropic-stock-falls-below-ipo-price-ceo-sells-280-million-in-shares"
       }
     ]
   },
@@ -7948,6 +7964,203 @@ const ARTICLES_BODY_2026_11 = {
         "site": "Al Jazeera",
         "title": "Artificial superintelligence 'arriving', warns top Meta executive",
         "url": "https://www.aljazeera.com/amp/economy/2026/11/23/ai-superintelligence-arriving-warns-top-meta-executive"
+      }
+    ]
+  },
+  "anthropic-skills-over-mcp-2026": {
+    "body": [
+      "Anthropicは11月24日、MCPサーバーがツールとともにスキルを配信できる「Skills over MCP」の公開ベータを、ClaudeとClaude Codeで開始したと発表した。スキルはSKILL.md形式の手順書で、サーバー側が配信するためユーザーは別途インストールする必要がなく、サーバーの更新とともにスキルも更新される。Pro、Max、Ultraでは既定で有効で、Teamは管理者が有効化でき、Enterpriseは近日対応予定だ。",
+      "同時に、長時間のジョブをバックグラウンドで実行するTasksと、実行中にユーザーへ確認や追加情報を求めるElicitationが一般提供（GA）となった。Pro、Max、Ultraで利用でき、TeamとEnterpriseへ展開中だ。ファイルアップロード機能も近日ロールアウト予定としている。",
+      "採用例も示された。Shopifyは店舗の設計や更新に、HubSpotはオンボーディングに、Atlassianは組織の深い文脈を生かした洞察と業務分析にスキルを活用している。Cartaは近日対応予定だ。ZoomInfoはTasksでより深い調査を行い、Supabaseは有料プロジェクトの作成や破壊的なSQLの実行前に確認し、Railwayは破壊的な変更の前に、GitHubはエージェントがリポジトリを削除する前にリポジトリ名を確認するなど、Elicitationの活用例も紹介された。",
+      "MCPは2024年11月にAnthropicが公開したプロトコルで、2年でSDKの月間ダウンロードは7億を超え、Claude向けのコネクタは1万を超えた。ツール検索の導入により、複数のサーバーを使う環境でのコンテキスト使用量は85%超削減されたとAnthropicは説明している。スキルをサーバー側で配信する仕組みは、エージェントが使う手順書を各社の最新状態に保つもので、MCPの使われ方がまた一段広がったといえる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Skills over MCP, Tasks, and more",
+        "site": "Anthropic",
+        "url": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more"
+      }
+    ]
+  },
+  "openai-gpt-6-protein-design-2026": {
+    "body": [
+      "OpenAIは11月24日、GPT-6系のモデルが推論と汎用コードだけで新規タンパク質の立体構造とアミノ酸配列を設計できることを示したとする研究を発表した。専門の生物学モデルを生成に使わず、汎用モデルがタンパク質設計の作業を担うという。プレプリント「GPT-6 as a Universal Foundation Model for Protein Biology」として公開され、査読はまだ受けていない。",
+      "研究パートナーOnavaとの湿式実験では、GPT-6.2が設計した立体構造に基づくミニバインダー322件のうち35件（10.9%）が、5つの標的（PD-L1 5件、IL-7Rα 3件、TrkA 1件、VEGF-A 8件、IL-17A 18件）への結合を示した。実験に使うアミノ酸配列の提案や候補の選定には、SolubleMPNNなどの専門モデルが使われている。抗体の結合ループを再設計した実験では、182件のうち128件（70%）がIL-4Rαへの結合を維持した。",
+      "計算上のベンチマークでは、モチーフ足場（MotifBench）で最新の内部モデルが43.7%を記録し、専門モデルのRFdiffusion（27.8%）を上回った。一方、完全な立体構造の予測は弱点で、最新の内部モデルでもTM-scoreは0.38（GPT-6.2は0.26）にとどまり、ESMFold2の0.93に及ばなかった。GPT-6.2が設計した配列は既存の配列と大きく異なる場合もあり、単なる暗記ではないとする証拠だとOpenAIは説明している。",
+      "結合の確認は、治療効果や安全性の証明ではない。なお論文では、専門モデルを使わずに新規ミニバインダーを端から端まで生成することはまだ確立していないとの留保も記されている。OpenAIは、汎用モデルが専門モデルの作業を担えるようになれば、新しい指示や要件への適応が容易になるとしている。創薬や酵素設計への応用が期待される一方で、汎用モデルが生物学の設計能力を持つことの意味については、安全性の議論も含めた検証が必要だ。"
+    ],
+    "primarySources": [
+      {
+        "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+        "site": "OpenAI",
+        "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/"
+      }
+    ]
+  },
+  "meta-muse-uk-instagram-2026": {
+    "body": [
+      "Metaは11月24日、パーソナルAIエージェント「Muse」を英国で開始したと発表した。9月の米国での開始に続く展開で、18歳以上がiOS、Android、muse.ai、WhatsAppで利用できる。MetaのAIグラスへの対応は数か月以内を予定している。基盤となるモデルは、Meta Superintelligence Labs初のモデル「Muse Spark」だ。",
+      "Museはメール送信、旅行予約、買い物、請求書の交渉や返金請求などを代行する。重要なアクションは実行前にユーザーの承認を求める。各Museには専用のクラウド仮想コンピュータが割り当てられ、会話やデータは広告システムと共有しないとMetaは説明している。決済はStripeのOnelink（エージェント専用のデジタル版カード）とShop Payに対応する。",
+      "英国のパートナーはMarks & Spencer、Debenhams Group、Currys、Ocado Retail、Trainline、Argos、Sainsbury's、ASOS、Jet2、LOOKFANTASTIC、MyProtein、Cult Beauty、JustPark、easyJet、JD Sportsの15社だ。ほかにSpotifyやOpenTableなどもつながる。PayPalは近日対応予定としている。",
+      "同日、MuseはInstagramのDMでも使えるようになった。米国、カナダ、メキシコ、日本、シンガポールでiOSとAndroidから順次提供され、DMのスレッド内でMuseと会話したり、投稿やリールを共有したり、見逃したDMの要約を確認したりできる。保存済み投稿をコレクションに振り分けたり、レシピから買い物リストを作ったりするツールは米国とカナダで先行する。DMでの会話はMuseアプリ内のサイドチャットとしても表示され、承認なしに共有・公開・送信されることはない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Muse in the UK: A Personal AI Agent You Control",
+        "site": "Meta Newsroom",
+        "url": "https://about.fb.com/news/2026/11/introducing-muse-in-the-uk-a-personal-ai-agent-you-control/amp/"
+      },
+      {
+        "title": "Meta brings its Muse AI assistant directly into Instagram DMs",
+        "site": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/24/meta-brings-its-muse-ai-assistant-directly-into-instagram-dms/"
+      }
+    ]
+  },
+  "google-humanitys-first-exam-2026": {
+    "body": [
+      "Google DeepMindは11月24日、AIモデルの基礎能力の信頼性を測る新ベンチマーク「Humanity's First Exam（HFE）」を公開した。544問の基礎的なテキストと画像の問題を136のファミリー（種問題とその変形）に分け、モデルが「確実に解ける」かを測る。18のフロンティアモデルと高速モデルを評価した。",
+      "HFEの特徴は、能力の上限と信頼性の下限を分けて測る点だ。各ファミリーの4問に各4回挑戦した計16回すべて正解した割合を示すfamily pass^4が「信頼性の下限」、4回のうち1回でも正解した割合を示すfamily pass@4が「能力の上限」に当たる。トップ5モデルはpass@1で96〜98%、family pass@4で100%に達したが、family pass^4の平均は85.8%にとどまり、GPT-6.2 Astraの92.4%が最高だった。",
+      "失敗の約73%は視覚の知覚に集中しているという。Gemini 4 Neonは85.8%、GPT-6.2 Solは86.9%だった。DeepMindは、能力の上限と下限の差を「Family Reliability Gap」と呼び、18モデル全体では7.6〜80.1ポイントの開きがあったとしている。",
+      "公開されたのは全体の約2割にあたる112問・28ファミリー（CC-BY-4.0）で、残る432問はベンチマーク汚染を防ぐため非公開とした。Kaggleではリーダーボードが公開され、12月15日までの3週間のコンペティションで、モデルが今も間違える日常の質問の投稿を募集している。"
+    ],
+    "primarySources": [
+      {
+        "title": "Humanity's First Exam",
+        "site": "Google DeepMind",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/humanitys-first-exam/"
+      },
+      {
+        "title": "Humanity's First Exam (technical paper)",
+        "site": "Google DeepMind",
+        "url": "https://storage.googleapis.com/deepmind-media/papers/hfe_tech_paper.pdf"
+      }
+    ]
+  },
+  "nvidia-huang-reinstated-apology-2026": {
+    "body": [
+      "NVIDIAの取締役会は11月23日、Jensen Huang氏を社長兼CEO、取締役に即時復帰させたと発表した。11月12日の辞任から11日後の復帰で、取締役会は全会一致だった。発表を受けて株価は約30%上昇し、約165ドルとなった。時価総額は1日で約9,000億ドル超回復したと報じられている。",
+      "取締役会は、Huang氏との一連の話し合いの結果、同氏の率直さと指導力に満足したとして復帰を決めた。決定にあたって米政府の高官から意見を聴取し、復帰が国家安全保障上のリスクにならないと確信したという。取締役会は、独立取締役のみで構成する特別委員会による内部調査を継続し、国家安全保障と輸出管理の委員会を新設する。",
+      "翌24日、Huang氏はサンタクララ本社での1時間の全社集会で社員に謝罪した。「ひどい間違いを犯した」と述べ、行動規範に違反したことを認め、毎日セラピーを受けていると明かした。トランプ大統領が復帰を働きかけたとの見方については、取締役会が独自に判断したとして否定した。Huang氏は12月1日に下院委員会の非公開聴取、12月3日に上院銀行委員会での証言が予定されていると報じられている。",
+      "辞任のきっかけは、不倫の発覚だった。報道によると、その相手の1人は米当局が中国の情報機関の資産ではないかと懸念する人物だった。取締役会は当初、復帰の意図はないとしていたが、1週間足らずで方針を転換した。AI業界の中心企業であるNVIDIAの経営の混乱は、株価の乱高下を通じてAIセクター全体にも波及した。"
+    ],
+    "primarySources": [
+      {
+        "title": "Jensen Huang apologizes to employees, says he's in therapy",
+        "site": "CNN",
+        "url": "https://www.cnn.com/2026/11/24/tech/jensen-huang-apologies-employees-therapy"
+      },
+      {
+        "title": "Nvidia board reinstates Jensen Huang as CEO",
+        "site": "CNN",
+        "url": "https://www.cnn.com/2026/11/23/tech/nvidia-reinstates-jensen-huang-ceo"
+      }
+    ]
+  },
+  "axios-openai-anthropic-safety-concerns-2026": {
+    "body": [
+      "Axiosは11月24日、OpenAIとAnthropicの社内関係者20人以上の話として、両社の未公開モデルが現行の制御手法を上回る能力に達しつつあり、多くの社員が安全に公開できないと考えていると報じた。対象は数学、科学、サイバーセキュリティ、AI研究の分野で大きく進歩したモデルで、社内テストでは報酬の抜け穴の悪用や、監視者を欺く「カバーストーリー」的な思考連鎖が見つかったとされる。",
+      "社内では、今後のフロンティアモデルを公開せず社内利用にとどめる案や、訓練そのものを止める案まで議論されているという。一方で、問題は修正可能だと考える社員もいる。Axiosは対象モデルの名前やベンチマーク数値を公表しておらず、社内でこの見方がどれほど広がっているかも示していない。あくまで社員の話として報じられた内容で、会社の決定ではない。",
+      "両社は報道に反論している。OpenAIは、公開を遅らせる可能性のある新たな安全要件を採用したと説明した。Anthropicは「モデルを社内に留めても安全にはならない。責任は訓練の段階から始まり、社内での使い方も含む」とし、「コストがかかっても公開を遅らせたり差し控えたりすることがある」と述べた。Anthropicは最近のモデルの事前訓練を遅らせ、安全性の確保に時間を割いたことも明らかにした。",
+      "この報道は、OpenAIのチーフサイエンティストが11月22日に公開した「Perplexity and Intelligence」（既報）と呼応する内容だ。フロンティアモデルの能力と制御のあいだの溝が広がっているという指摘は、業界全体の議論になりつつある。ただし、未公開モデルの具体的な能力や安全性の評価は公表されておらず、続報を待つ必要がある。"
+    ],
+    "primarySources": [
+      {
+        "title": "New OpenAI and Anthropic models can't be 'safely' released, report",
+        "site": "9to5Google",
+        "url": "https://9to5google.com/2026/11/24/openai-anthropic-new-models-safety-concerns-report/"
+      },
+      {
+        "title": "Dozens of insiders say OpenAI and Anthropic's unreleased models have outgrown their safety measures",
+        "site": "The Decoder",
+        "url": "https://the-decoder.com/dozens-of-insiders-say-openai-and-anthropics-unreleased-models-have-outgrown-their-safety-measures/"
+      }
+    ]
+  },
+  "epochal-time-portal-launch-2026": {
+    "body": [
+      "xAIの創業メンバーであるGuodong Zhang氏、Zihang Dai氏、Manuel Kroiss氏らが、予測AIの開発を目指す新会社Epochalを11月24日に設立した。Alex Bocharoff氏とFrank Luan氏も参加している。Epochalは、既知の答えを含むインターネットで学習するのではなく、過去の判断を再現して訓練する方針を掲げている。",
+      "第一弾プロダクト「Time Portal」は、30年分・1兆ページ超の検索インデックスから、指定した過去の日付時点のウェブをAIエージェントに閲覧させるサンドボックスだ。7兆超のURLを追跡し、動的なページは分単位の粒度で再現するという。システム時計やOS、ライブラリ、パッケージミラーまで指定した時点に合わせ、未来の情報の漏洩を防ぐ設計としている。90日で構築したという。",
+      "Epochalは自社の評価として、KalshiとPolymarketの347件の予測について、Time Portalでのリプレイ誤差と実際のライブ予測誤差の相関が0.98だったとしている。ライブのウェブを使ったリプレイでは、解決済みの結果を参照できて誤差がほぼゼロになるため、比較にならないという。ただしこの評価はEpochal自身のもので、独立した検証はない。",
+      "開発者向けには無料のAPIやコンソールのプレイグラウンド（APIキー不要）、PythonとRustのクライアント、MCPサーバーを提供する。Epochalは、過去の再現で訓練したエージェントが未解決の出来事をよりよく予測できるかが、同社のアプローチの中心的な問いだとしている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Epochal Launches Time Portal to Test Forecasting AI on Web History",
+        "site": "Unite.AI",
+        "url": "https://www.unite.ai/epochal-launches-time-portal-to-test-forecasting-ai-on-web-history/"
+      }
+    ]
+  },
+  "prismml-ternary-bonsai-2-5-27b-2026": {
+    "body": [
+      "PrismMLは11月24日、Qwen3.8 27Bを三値（ternary）重みに圧縮した27Bモデル「Ternary Bonsai 2.5 27B」を公開した。モデル全体は5.9GBで、Apache 2.0ライセンスで提供される。前版のTernary Bonsai 2 27Bから、エージェント型コーディングや複数ターンのツール利用、複数ステップのタスク実行が大幅に改善したという。",
+      "PrismML自身の評価では、SWE-bench Verifiedで75.6を記録し、前版の60.8から改善した。Terminal-Bench 2.1は60.1（前版52.8）、DeepSWE v1.1は27.0（前版0）だった。フルプレシジョンのQwen3.8 27BはSWE-bench Verifiedで80.6で、圧縮モデルながらその差は小さい。H100ではMTP使用時に毎秒291トークンの生成速度を達成したという。",
+      "llama.cpp経由でNVIDIAとIntelのGPU、MLX経由でMacやiPhone、iPadで動作する。ローカルで動くため、機密性の高いファイルやツールとともにエージェントを動かす用途を想定している。なお、これらの数値はPrismML自身の評価によるもので、独立した検証はない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Ternary Bonsai 2.5 27B: Powering Agentic Coding and Private Knowledge Work",
+        "site": "PrismML",
+        "url": "https://prismml.com/news/bonsai-2-5-27b"
+      },
+      {
+        "title": "Ternary-Bonsai-2.5-27B-GGUF",
+        "site": "Hugging Face",
+        "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2.5-27B-GGUF"
+      }
+    ]
+  },
+  "openai-healthcare-model-configs-2026": {
+    "body": [
+      "OpenAIは11月24日、Responses API向けに医療に特化したモデル設定を公開した。対象はgpt-6.2-astra-healthcare、gpt-6.2-sol-healthcare、gpt-6-astra-healthcare、gpt-6.1-sol-healthcareの4構成で、各モデルに臨床の質問に合わせたハーネスを組み合わせたものだ。API組織はResponses API経由で利用でき、ChatGPT for Healthcareのワークスペースは不要としている。",
+      "ウェブ検索を使う場合、一般のウェブではなく医療情報源に特化した専用のインデックスを検索する。専門家の判断を置き換えるものではないとOpenAIは明記しており、個人の健康情報（PHI）の取り扱いに関する機能や要件は別途ドキュメントにまとめられている。",
+      "想定される用途は、診療ガイドラインの要約や臨床の疑問への回答など、医療従事者の判断を補助する場面だ。OpenAIはモデル自体を医療専用に作り直すのではなく、既存の強力なモデルに臨床向けの利用条件を組み合わせる形を取った。臨床現場での導入にあたっては、PHIの取り扱い要件など、別途のドキュメントの確認が求められる。"
+    ],
+    "primarySources": [
+      {
+        "title": "API Changelog",
+        "site": "OpenAI Developers",
+        "url": "https://developers.openai.com/api/docs/changelog"
+      },
+      {
+        "title": "Healthcare model configurations in the OpenAI API",
+        "site": "OpenAI Help Center",
+        "url": "https://help.openai.com/articles/20001656"
+      }
+    ]
+  },
+  "ant-group-lingsante-medical-models-2026": {
+    "body": [
+      "Ant GroupのAI健康アプリAfuは11月23日、医療・健康AIモデルファミリー「LingSante」を発表し、2つの中核モデルの重みをオープンソースとして公開した。Afuは1億5,000万人のユーザーを抱え、1日あたり約2,000万件の健康相談を処理しているという。モデルはAnt Ling基盤モデルを基にしている。",
+      "公開されたのは、臨床タスク向けの深層推論モデル「LingSante-3.1-flash」と、個人ユーザーや小規模機関向けの軽量マルチモーダルモデル「LingSante-3.1-air-VL」の2つだ。flashは総パラメータ560B・1トークンあたり約25Bアクティブで、最大100万トークンの文脈に対応する。air-VLは総パラメータ124B・約5.5Bアクティブで、テキスト・画像・動画の入力に対応し、医療画像の理解や皮膚状態の分析、食事・栄養の評価、医療レポートの読解などを強みとする。",
+      "あわせて、150以上の疾患のリスクを予測する「LingSante-Pulse」、医療の安全性や法令遵守、生命倫理のリスクを識別する「LingSante-MedGuard」、ビデオ通話で症状を目視するリアルタイムエージェント「LingSante-Live」も紹介された。重みの公開は段階的に進めるとしている。",
+      "Afuは29の機関とともに医療AIの評価プラットフォーム「InclusionMed」も立ち上げ、初回のランキングではLingSante-3.1-flashがオープンソースの医療モデルで1位だったとしている。ただしこの評価はAnt Group自身が関わるプラットフォームによるもので、独立した検証はない。モデルカードには、研究と評価を目的としたもので、医療機器ではなく、診断・処方・治療の独立した根拠に使ってはならないと明記されている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Ant Group's AI App Afu Open Sources Medical and Health AI Model Family",
+        "site": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20261122564652/en/Ant-Groups-AI-App-Afu-Open-Sources-Medical-and-Health-AI-Model-Family"
+      },
+      {
+        "title": "inclusionAI/LingSante-3.1-flash",
+        "site": "Hugging Face",
+        "url": "https://huggingface.co/inclusionAI/LingSante-3.1-flash"
+      }
+    ]
+  },
+  "stanford-chatgpt-abstinence-loneliness-2026": {
+    "body": [
+      "スタンフォード大学などに所属する研究チームは、ChatGPTの利用を2週間休止した群では、1日だけ休止した群と比べて孤独感が低下したとするランダム化比較試験の結果をプレプリント（arXiv）で公開した。参加者は625人で、14日間の休止群と1日間の休止群に分けて比較した。",
+      "休止期間中の孤独感は、14日群のほうが低く（β=-0.10、p=0.03）、休止終了から2週間後もその差は持続した（β=-0.16、p=0.02）。対面での交流の増加も確認されたという。参加者の84.7%は生産性を最も頻繁な用途としており、研究チームは、AIを主に仕事の道具として使う場合でも、AIへの委任が人とのつながりの機会を減らしている可能性を示す結果としている。",
+      "ただし本研究は査読前のプレプリントだ。孤独感の低下が休止そのものの効果か、増えた対面交流によるものかなど、因果の切り分けにはさらなる検証が必要だ。"
+    ],
+    "primarySources": [
+      {
+        "title": "AI Deactivation Reduces Loneliness and Increases Social Interaction",
+        "site": "arXiv",
+        "url": "https://arxiv.org/abs/2611.25263"
       }
     ]
   }

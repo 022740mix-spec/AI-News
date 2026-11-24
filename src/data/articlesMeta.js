@@ -16409,5 +16409,187 @@ export const ARTICLES_META = [
       "Muse",
       "数学"
     ]
+  },
+  {
+    "id": "anthropic-skills-over-mcp-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic、MCPサーバーがスキルを配信できる「Skills over MCP」を公開ベータに — TasksとElicitationはGAへ",
+    "excerpt": "AnthropicがClaudeとClaude Codeで、MCPサーバーがツールと一緒にスキルを配信できる「Skills over MCP」の公開ベータを開始した。長時間ジョブを実行するTasksと、実行中にユーザーへ確認を求めるElicitationは一般提供（GA）となった。",
+    "date": "2026-11-25",
+    "newsDate": "2026-11-24",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "MCP",
+      "Claude Code"
+    ]
+  },
+  {
+    "id": "openai-gpt-6-protein-design-2026",
+    "type": "news",
+    "category": "special",
+    "title": "OpenAI、GPT-6にタンパク質設計の能力 — 実験室で5標的への結合を確認",
+    "excerpt": "OpenAIは、GPT-6系モデルが推論と汎用コードだけで新規タンパク質の立体構造と配列を設計できると発表した。研究パートナーとの実験では、GPT-6.2の設計に基づくミニバインダー322件のうち35件が5つの標的への結合を示した。",
+    "date": "2026-11-25",
+    "newsDate": "2026-11-24",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "GPT-6",
+      "研究"
+    ]
+  },
+  {
+    "id": "meta-muse-uk-instagram-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Meta、パーソナルAIエージェントMuseを英国で開始 — InstagramのDMにも対応",
+    "excerpt": "MetaはパーソナルAIエージェント「Muse」を英国で開始した。18歳以上がiOS、Android、muse.ai、WhatsAppで利用できる。同日、InstagramのDMでもMuseと会話できるようになった。",
+    "date": "2026-11-25",
+    "newsDate": "2026-11-24",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Meta",
+      "Muse",
+      "AIエージェント"
+    ]
+  },
+  {
+    "id": "google-humanitys-first-exam-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Google DeepMind、基礎能力の「信頼性の下限」を測る新ベンチマーク「Humanity's First Exam」を公開",
+    "excerpt": "Google DeepMindは、フロンティアモデルが「小学校レベルの問題を確実に解けるか」を測る新ベンチマーク「Humanity's First Exam（HFE）」を公開した。トップモデルも平均で約14%のファミリーを取りこぼし、失敗の73%は視覚の知覚に集中した。",
+    "date": "2026-11-25",
+    "newsDate": "2026-11-24",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Google",
+      "ベンチマーク",
+      "評価"
+    ]
+  },
+  {
+    "id": "nvidia-huang-reinstated-apology-2026",
+    "type": "news",
+    "category": "special",
+    "title": "NVIDIA、辞任から11日でJensen Huang氏をCEOに復帰 — 翌日に社員へ謝罪",
+    "excerpt": "NVIDIAの取締役会は、辞任から11日後のJensen Huang氏を社長兼CEOに即時復帰させた。株価は約30%上昇した。翌日の全社集会でHuang氏は社員に謝罪し、行動規範に違反したことを認めた。",
+    "date": "2026-11-25",
+    "newsDate": "2026-11-24",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "NVIDIA",
+      "半導体"
+    ]
+  },
+  {
+    "id": "axios-openai-anthropic-safety-concerns-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Axios報道：OpenAIとAnthropicの社員、未公開の最強モデルは「安全に公開できない」と懸念",
+    "excerpt": "Axiosは、OpenAIとAnthropicの20人以上の社内関係者が、未公開の最強モデルは現行の制御手法では安全に公開できないと考えていると報じた。両社は新たな安全要件や公開の見送りもありうると反論している。",
+    "date": "2026-11-25",
+    "newsDate": "2026-11-24",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "OpenAI",
+      "Anthropic",
+      "AI安全性"
+    ]
+  },
+  {
+    "id": "epochal-time-portal-launch-2026",
+    "type": "news",
+    "category": "product",
+    "title": "元xAI創業者らが新会社Epochalを設立 — 過去のウェブを再現する「Time Portal」で予測AIを訓練",
+    "excerpt": "xAIの創業メンバーらが、予測AIの開発を目指す新会社Epochalを設立した。第一弾プロダクト「Time Portal」は、30年分・1兆ページ超のウェブアーカイブから指定した過去の日付時点のウェブをエージェントに閲覧させる環境だ。",
+    "date": "2026-11-25",
+    "newsDate": "2026-11-24",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "xAI",
+      "AIエージェント"
+    ]
+  },
+  {
+    "id": "prismml-ternary-bonsai-2-5-27b-2026",
+    "type": "news",
+    "category": "model",
+    "title": "PrismML、三値重みの27Bモデル「Ternary Bonsai 2.5」を公開 — 5.9GBでSWE-bench Verified 75.6",
+    "excerpt": "PrismMLは、Qwen3.8 27Bを三値重みに圧縮した「Ternary Bonsai 2.5 27B」を公開した。5.9GBながらSWE-bench Verifiedで75.6を記録し、前版の60.8から大幅に改善した。",
+    "date": "2026-11-25",
+    "newsDate": "2026-11-24",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "オープンソース",
+      "ベンチマーク"
+    ]
+  },
+  {
+    "id": "openai-healthcare-model-configs-2026",
+    "type": "news",
+    "category": "model",
+    "title": "OpenAI、医療向けモデル設定をAPIで提供 — GPT-6.2 Astra／Solなど4構成",
+    "excerpt": "OpenAIは11月24日、Responses API向けに医療特化のモデル設定を公開した。GPT-6.2 Astra／SolとGPT-6／GPT-6.1 Solの4構成で、臨床の質問に合わせたハーネスと医療文献に特化したウェブ検索を備える。",
+    "date": "2026-11-25",
+    "newsDate": "2026-11-24",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "OpenAI",
+      "GPT-6",
+      "ヘルスケア"
+    ]
+  },
+  {
+    "id": "ant-group-lingsante-medical-models-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Ant Group、医療AIモデル「LingSante」2種をオープンウェイトで公開 — 560Bの推論モデルと124Bのマルチモーダルモデル",
+    "excerpt": "Ant GroupのAI健康アプリAfuは、医療・健康AIモデルファミリー「LingSante」を発表し、2つの中核モデルをオープンウェイトで公開した。560Bパラメータの推論モデルと124Bパラメータのマルチモーダルモデルで、1日約2,000万件の健康相談を処理するアプリで使われている。",
+    "date": "2026-11-25",
+    "newsDate": "2026-11-23",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "オープンソース",
+      "ヘルスケア"
+    ]
+  },
+  {
+    "id": "stanford-chatgpt-abstinence-loneliness-2026",
+    "type": "news",
+    "category": "special",
+    "title": "スタンフォード大、ChatGPTを2週間やめると孤独感が低下 — 625人のランダム化試験",
+    "excerpt": "スタンフォード大学などの研究チームは、ChatGPTの利用を2週間休止した群では、1日だけ休止した群と比べて孤独感が低下し、対面での交流が増えたとするランダム化比較試験（625人）の結果をプレプリントで公開した。",
+    "date": "2026-11-25",
+    "newsDate": "2026-11-18",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "ChatGPT",
+      "研究"
+    ]
   }
 ];
