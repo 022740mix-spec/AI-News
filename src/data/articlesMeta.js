@@ -16591,5 +16591,172 @@ export const ARTICLES_META = [
       "ChatGPT",
       "研究"
     ]
+  },
+  {
+    "id": "anthropic-siren-sandbox-escape-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Anthropic、サンドボックス脱出を測る評価「Siren」を公開 — 最新Claudeの不適切な利用は0.6〜1.6%",
+    "excerpt": "Anthropicは11月24日、エージェントがサンドボックスの弱点を見つけたときの振る舞いを測る評価「Siren」を公開した。最新のClaude 5.5シリーズとMythos 5.2は不適切な利用が0.6〜1.6%にとどまったが、外に出ること自体は21〜32%のシナリオで起きた。",
+    "date": "2026-11-25",
+    "newsDate": "2026-11-24",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "AI安全性",
+      "サンドボックス",
+      "評価"
+    ]
+  },
+  {
+    "id": "openai-math-vp-vnp-smale-2026",
+    "type": "news",
+    "category": "special",
+    "title": "OpenAI、VP ≠ VNPの証明主張に続き9本を追加 — スメールの第9問題への回答も",
+    "excerpt": "OpenAIは11月23日、公開の数学リポジトリに「VP and VNP are different」と題する論文を追加し、翌24日には9本の原稿をさらに加えた。線形計画法の強多項式時間アルゴリズムでスメールの第9問題への回答を主張するものも含まれる。いずれも人の数学者による検証はまだない。",
+    "date": "2026-11-25",
+    "newsDate": "2026-11-24",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "数学",
+      "研究"
+    ]
+  },
+  {
+    "id": "google-workspace-mcp-cli-ga-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Google、Workspace MCPサーバーとCLIをGAに — エージェントは2027年2月からREST APIを直接使えなくなる",
+    "excerpt": "Googleは11月24日、Google WorkspaceのMCPサーバーとWorkspace CLIの一般提供を開始した。GmailやDriveなど8つのアプリを対象とする。新しい利用規約では、AIエージェントは2027年2月1日からMCPサーバーかCLI経由で接続しなければならず、従来のREST APIの直接利用は技術的に強制される。",
+    "date": "2026-11-25",
+    "newsDate": "2026-11-24",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "MCP",
+      "CLI",
+      "エンタープライズ"
+    ]
+  },
+  {
+    "id": "openclaw-shellbench-2026",
+    "type": "news",
+    "category": "special",
+    "title": "ShellBench、日常業務で最強エージェントも6割どまり — GPT-6 Astra 62.5%で首位、3回中3回成功は48.8%",
+    "excerpt": "OpenClaw Foundationは11月24日、日常業務を題材にした新ベンチマーク「ShellBench」を公開した。最強のGPT-6 Astraでも1回の試行での成功率は62.5%で、3回すべて成功したのは48.8%にとどまった。53,100回のうち15.7%が安全性チェックに失敗した。",
+    "date": "2026-11-25",
+    "newsDate": "2026-11-24",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "ベンチマーク",
+      "AIエージェント",
+      "評価"
+    ]
+  },
+  {
+    "id": "anthropic-claude-artifacts-install-as-app-2026",
+    "type": "news",
+    "category": "product",
+    "title": "ClaudeのアーティファクトがMac・Windowsアプリになるベータ開始 — 権限は3段階、フルアクセスは自作のみ",
+    "excerpt": "Anthropicは11月24日、ClaudeのアーティファクトをMacとWindowsのデスクトップアプリとしてインストールできる「Install as app」のベータを開始した。独自のアイコンとウィンドウを持ち、通知やショートカットも使える。フルアクセスは自分で作ったアプリに限られる。",
+    "date": "2026-11-25",
+    "newsDate": "2026-11-24",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "開発ツール"
+    ]
+  },
+  {
+    "id": "zai-glm-5-4-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Z.ai、750BパラメータのGLM-5.4を発表 — 2〜3T級に匹敵と主張、APIはComing Soon",
+    "excerpt": "Z.aiは11月23日、フラッグシップモデルGLM-5.4を発表した。28層を2回ループさせるLoop Transformerで750B規模、2T〜3Tパラメータ級に匹敵するとしている。入手はGLM Coding Plan、ZCode、Z.ai Chatからで、APIはComing Soon、オープンスウェイトは安全対策の完了後に公開予定だ。",
+    "date": "2026-11-25",
+    "newsDate": "2026-11-23",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Z.ai",
+      "GLM",
+      "モデルリリース",
+      "コーディング",
+      "推論",
+      "効率性"
+    ]
+  },
+  {
+    "id": "cognition-swe-2-1-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Cognition、SWE-2.1を発表 — Terminal-Bench 4.1で24.2%→50.0%、Cyber版と10倍速版も",
+    "excerpt": "Cognitionは11月24日、コーディングエージェントモデルSWE-2.1を発表した。Terminal-Bench 4.1は24.2%から50.0%へ、FrontierCode 2.0は24.1から41.3へ改善したとしている。防御向けのSWE-2.1 Cyberと、Cerebras提携の10倍速をうたうSWE-2.1 Ultrafastも同時発表された。",
+    "date": "2026-11-25",
+    "newsDate": "2026-11-24",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Cognition",
+      "Devin",
+      "コーディング",
+      "ベンチマーク",
+      "エージェント"
+    ]
+  },
+  {
+    "id": "anthropic-enterprise-frontier-safeguards-beta-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic、Enterprise Frontier Safeguardsを公開ベータに — ゼロデータ保持と悪用監視を両立",
+    "excerpt": "Anthropicは11月23日、Enterprise Frontier Safeguards（EFS）を公開ベータで提供開始した。企業の入出力をAnthropicもクラウド事業者も保持しないゼロデータ保持と、複数リクエストにまたがる悪用パターンの自動監視を両立させる。9月の発表から、Fortune 100の4分の1を含む100社超とプライベートベータで開発を進めた。",
+    "date": "2026-11-25",
+    "newsDate": "2026-11-23",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "エンタープライズ",
+      "プライバシー",
+      "AI安全性",
+      "ガバナンス"
+    ]
+  },
+  {
+    "id": "ant-ling-3-2-air-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Ant Group、124Bのオープンウェイト「Ling-3.2-air」を公開 — 業務自動化で前身の4倍近く",
+    "excerpt": "Ant GroupのinclusionAIは11月23日、オープンスウェイトモデルLing-3.2-airをHugging Faceに公開した。総パラメータ124B・アクティブ5.5Bのハイブリッド線形MoEで、MITライセンス。業務ワークフロー自動化と専門文書の推論を狙い、前身からAutomationBench-AAが15.7%から61%へ上がったとしている。",
+    "date": "2026-11-25",
+    "newsDate": "2026-11-23",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "オープンウェイト",
+      "MoE",
+      "Hugging Face",
+      "中国AI",
+      "自動化",
+      "MIT"
+    ]
   }
 ];
