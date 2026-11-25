@@ -96,6 +96,78 @@
     <summary>スタンフォード大学などの研究チームは、ChatGPTの利用を2週間休止した群では、1日だけ休止した群と比べて孤独感が低下し、対面での交流が増えたとするランダム化比較試験（625人）の結果をプレプリントで公開した。</summary>
   </entry>
   <entry>
+    <title>Anthropic、サンドボックス脱出を測る評価「Siren」を公開 — 最新Claudeの不適切な利用は0.6〜1.6%</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-siren-sandbox-escape-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-siren-sandbox-escape-2026</id>
+    <published>2026-11-25T15:00:00Z</published>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <summary>Anthropicは11月24日、エージェントがサンドボックスの弱点を見つけたときの振る舞いを測る評価「Siren」を公開した。最新のClaude 5.5シリーズとMythos 5.2は不適切な利用が0.6〜1.6%にとどまったが、外に出ること自体は21〜32%のシナリオで起きた。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI、VP ≠ VNPの証明主張に続き9本を追加 — スメールの第9問題への回答も</title>
+    <link rel="alternate" type="text/html" href="?a=openai-math-vp-vnp-smale-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-math-vp-vnp-smale-2026</id>
+    <published>2026-11-25T15:00:00Z</published>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <summary>OpenAIは11月23日、公開の数学リポジトリに「VP and VNP are different」と題する論文を追加し、翌24日には9本の原稿をさらに加えた。線形計画法の強多項式時間アルゴリズムでスメールの第9問題への回答を主張するものも含まれる。いずれも人の数学者による検証はまだない。</summary>
+  </entry>
+  <entry>
+    <title>Google、Workspace MCPサーバーとCLIをGAに — エージェントは2027年2月からREST APIを直接使えなくなる</title>
+    <link rel="alternate" type="text/html" href="?a=google-workspace-mcp-cli-ga-2026"/>
+    <id>tag:ai-tool-news.jp,2026:google-workspace-mcp-cli-ga-2026</id>
+    <published>2026-11-25T15:00:00Z</published>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <summary>Googleは11月24日、Google WorkspaceのMCPサーバーとWorkspace CLIの一般提供を開始した。GmailやDriveなど8つのアプリを対象とする。新しい利用規約では、AIエージェントは2027年2月1日からMCPサーバーかCLI経由で接続しなければならず、従来のREST APIの直接利用は技術的に強制される。</summary>
+  </entry>
+  <entry>
+    <title>ShellBench、日常業務で最強エージェントも6割どまり — GPT-6 Astra 62.5%で首位、3回中3回成功は48.8%</title>
+    <link rel="alternate" type="text/html" href="?a=openclaw-shellbench-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openclaw-shellbench-2026</id>
+    <published>2026-11-25T15:00:00Z</published>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <summary>OpenClaw Foundationは11月24日、日常業務を題材にした新ベンチマーク「ShellBench」を公開した。最強のGPT-6 Astraでも1回の試行での成功率は62.5%で、3回すべて成功したのは48.8%にとどまった。53,100回のうち15.7%が安全性チェックに失敗した。</summary>
+  </entry>
+  <entry>
+    <title>ClaudeのアーティファクトがMac・Windowsアプリになるベータ開始 — 権限は3段階、フルアクセスは自作のみ</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-artifacts-install-as-app-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-claude-artifacts-install-as-app-2026</id>
+    <published>2026-11-25T15:00:00Z</published>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <summary>Anthropicは11月24日、ClaudeのアーティファクトをMacとWindowsのデスクトップアプリとしてインストールできる「Install as app」のベータを開始した。独自のアイコンとウィンドウを持ち、通知やショートカットも使える。フルアクセスは自分で作ったアプリに限られる。</summary>
+  </entry>
+  <entry>
+    <title>Z.ai、750BパラメータのGLM-5.4を発表 — 2〜3T級に匹敵と主張、APIはComing Soon</title>
+    <link rel="alternate" type="text/html" href="?a=zai-glm-5-4-2026"/>
+    <id>tag:ai-tool-news.jp,2026:zai-glm-5-4-2026</id>
+    <published>2026-11-25T15:00:00Z</published>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <summary>Z.aiは11月23日、フラッグシップモデルGLM-5.4を発表した。28層を2回ループさせるLoop Transformerで750B規模、2T〜3Tパラメータ級に匹敵するとしている。入手はGLM Coding Plan、ZCode、Z.ai Chatからで、APIはComing Soon、オープンスウェイトは安全対策の完了後に公開予定だ。</summary>
+  </entry>
+  <entry>
+    <title>Cognition、SWE-2.1を発表 — Terminal-Bench 4.1で24.2%→50.0%、Cyber版と10倍速版も</title>
+    <link rel="alternate" type="text/html" href="?a=cognition-swe-2-1-2026"/>
+    <id>tag:ai-tool-news.jp,2026:cognition-swe-2-1-2026</id>
+    <published>2026-11-25T15:00:00Z</published>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <summary>Cognitionは11月24日、コーディングエージェントモデルSWE-2.1を発表した。Terminal-Bench 4.1は24.2%から50.0%へ、FrontierCode 2.0は24.1から41.3へ改善したとしている。防御向けのSWE-2.1 Cyberと、Cerebras提携の10倍速をうたうSWE-2.1 Ultrafastも同時発表された。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic、Enterprise Frontier Safeguardsを公開ベータに — ゼロデータ保持と悪用監視を両立</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-enterprise-frontier-safeguards-beta-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-enterprise-frontier-safeguards-beta-2026</id>
+    <published>2026-11-25T15:00:00Z</published>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <summary>Anthropicは11月23日、Enterprise Frontier Safeguards（EFS）を公開ベータで提供開始した。企業の入出力をAnthropicもクラウド事業者も保持しないゼロデータ保持と、複数リクエストにまたがる悪用パターンの自動監視を両立させる。9月の発表から、Fortune 100の4分の1を含む100社超とプライベートベータで開発を進めた。</summary>
+  </entry>
+  <entry>
+    <title>Ant Group、124Bのオープンウェイト「Ling-3.2-air」を公開 — 業務自動化で前身の4倍近く</title>
+    <link rel="alternate" type="text/html" href="?a=ant-ling-3-2-air-2026"/>
+    <id>tag:ai-tool-news.jp,2026:ant-ling-3-2-air-2026</id>
+    <published>2026-11-25T15:00:00Z</published>
+    <updated>2026-11-25T15:00:00Z</updated>
+    <summary>Ant GroupのinclusionAIは11月23日、オープンスウェイトモデルLing-3.2-airをHugging Faceに公開した。総パラメータ124B・アクティブ5.5Bのハイブリッド線形MoEで、MITライセンス。業務ワークフロー自動化と専門文書の推論を狙い、前身からAutomationBench-AAが15.7%から61%へ上がったとしている。</summary>
+  </entry>
+  <entry>
     <title>Anthropic が Claude Ship を発表 — PR のレビュー・修正・承認をエージェントが担当、Team / Enterprise 向けベータ</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-claude-ship-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-claude-ship-2026</id>

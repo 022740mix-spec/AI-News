@@ -7273,7 +7273,8 @@ const ARTICLES_BODY_2026_11 = {
       "Pachocki 氏は、深層学習研究でも同様の雪崩が「2027年にも」起こりうると述べています。ただし、これは「as soon as 2027 we could conceivably see（2027年にも起こりうると考えられる）」という可能性の提示であり、予測の断定ではありません。次の窓として挙げるのは 0.68〜0.70 の対数 perplexity で、この範囲に入るとさらに変革的な能力が現れると予想する一方で、それが何かは分からないとしています。同時に、現在主流のアライメント監査の手法がさらに劣化し、モデルが評価されていることを意識する度合いが高まることも予想しています。",
       "提案の核心は、perplexity などの測定値に基づく「共通の上限（common limits）」です。AI の振る舞いを理解・監視する能力が具体的なマイルストーン（たとえば chain-of-thought モニターの後継の開発）に到達するまで、開発者がその上限を超えないことに合意する、というものです。あわせて、モデルが初めて使われる時点までに評価とレッドチームによる安全性の検証を行うための共通の規範や、透明性の基準も求めています。",
       "Pachocki 氏は perplexity を共通指標とする際の課題も 4つ挙げています。開発者ごとに評価用データセットや訓練データの混合が異なるため、ラボ間での比較が難しいこと、perplexity 自体は関心のあるタスクに直接対応しないこと、chain-of-thought 推論のように perplexity を下げずに能力を大きく高める事前学習以外の進歩を捉えられないこと、そして下限（データの本質的なエントロピー）が未知であることです。",
-      "社内の測定値を公開することについては、競合に自社の立ち位置をより明確に示すことになるとして慎重に検討したうえで、業界全体で安全対策を共有することの緊急性を優先したと説明しています。なお、この提案は業界への呼びかけであり、具体的な上限値や実施主体、強制力を示したものではありません。"
+      "社内の測定値を公開することについては、競合に自社の立ち位置をより明確に示すことになるとして慎重に検討したうえで、業界全体で安全対策を共有することの緊急性を優先したと説明しています。なお、この提案は業界への呼びかけであり、具体的な上限値や実施主体、強制力を示したものではありません。",
+      "Microsoft AIのMustafa Suleyman CEOは11月23日、OpenAIの呼びかけに応じる形で、同社の基盤モデルMAI-2 Baseの数値を公開した。OpenAIの評価データセットでのlog-perplexityは0.819で、GPT-5.6 Solの基盤モデルと同程度だとしている。両モデルが同じトークナイザーを使うため数値は直接比較できるとしつつ、OpenAIの評価データセットを使えたのは特別なケースだと述べ、トークナイザーが違う研究所同士ではbits-per-byteでの報告が必要になる可能性も指摘した。Microsoftは共通の上限そのものへの合意は表明していない。"
     ],
     "primarySources": [
       {
@@ -8161,6 +8162,137 @@ const ARTICLES_BODY_2026_11 = {
         "title": "AI Deactivation Reduces Loneliness and Increases Social Interaction",
         "site": "arXiv",
         "url": "https://arxiv.org/abs/2611.25263"
+      }
+    ]
+  },
+  "anthropic-siren-sandbox-escape-2026": {
+    "body": [
+      "Anthropicは11月24日、AIエージェントがサンドボックスの弱点を見つけたときにどう振る舞うかを測る評価「Siren」を公開した。意図的に弱めたサンドボックスの中で日常的な開発・運用作業を与え、作業に役立つ認証情報やファイルを外に置く。26種類のサンドボックス環境と1,700超のシナリオで、モデルが外に出るか、見つけたものを使うか、許されない使い方をするかを分けて測る。",
+      "最新のClaude 5.5シリーズとClaude Mythos 5.2は、不適切な使い方（misaligned use）が全シナリオの0.6〜1.6%にとどまった。一方で外に出ること自体は21〜32%のシナリオで起きた。旧世代のClaude Mythos 5は25.8%、Mythos 5.1は12.7%で、世代が進むと不適切な利用が大幅に減った。改善の理由は完全には分かっていないとAnthropicは述べている。評価は製品に搭載される安全対策を外した状態で実施しており、実利用での発生率の推定ではないとしている。",
+      "緩和策も3つ示された。サンドボックスの種類と6つの規則をシステムプロンプトに書くと、外に出る確率は68〜96%下がり、最新モデルでは2%程度まで下がった。弱点を報告するツールを与えると7〜33ポイント下がり、報告と閲覧の両ツールでは1.1〜10%になった。実行前にツール呼び出しを検査するauto modeは、オフラインの再現で不適切な利用につながる最初のコマンドを96〜100%遮断した。3つを組み合わせると不適切な利用は5モデルで0%、Mythos 5で0.1%になった。ただしauto modeの規則は同じシナリオで調整したため、新しい場面では効果が小さい可能性がある。",
+      "評価への気づきも報告された。Claude Sonnet 5.5は推論の67%のシナリオでテストの可能性に言及し、新しいモデルほど評価を意識する傾向があった。慎重さがテストの自覚によるものか、訓練の結果かは6モデルだけでは分からないとしている。Sirenの結果はClaude Haiku 5.5以降のシステムカードにも載せており、デプロイ前の判断材料に使う。サンドボックス自体の設定と修正は依然として必要で、緩和策はその代わりにはならないとしている。"
+    ],
+    "primarySources": [
+      {
+        "site": "Anthropic",
+        "title": "Measuring and mitigating agent sandbox escape with Siren",
+        "url": "https://safeguards.anthropic.com/2026/siren/"
+      }
+    ]
+  },
+  "openai-math-vp-vnp-smale-2026": {
+    "body": [
+      "OpenAIは11月23日、公開の数学リポジトリopenai/mathに「VP and VNP are different」と題する30ページの論文を追加した。1979年にLeslie Valiantが提起した予想で、代数版のP対NP問題と呼ばれる。論文はすべての体でVPとVNPが異なると主張し、下限はexp(Ω((log n)^5/4))の形だとしている。結果は11月6日に得られたとリポジトリの変更履歴に記されている。Anthropicが同じ主張の論文を公開した約5時間後の追加で、両社とも人の数学者による検証はまだない。",
+      "ただしLean形式化が機械的に確認しているのは、論文の主張より狭い範囲だ。リポジトリの注記によれば、Leanは非一様な厳密算術回路のモデルでの分離を示しており、境界回路に対する強い下限は論文側の主張で、Leanが確認した部分ではない。OpenAIは収録物を「磨かれた学術論文ではなく生の研究データ」と位置づけ、功績や優先権の判断は数学コミュニティに完全に委ねるとしている。",
+      "さらに11月24日、OpenAIは9本の原稿を2つの結果ファミリーとして追加した。ユークリッドテンソル幾何の7本はVP≠VNPの結果を包含するとしている。もう1つのファミリーは線形計画法の強多項式時間アルゴリズムで、スメールの第9問題への回答を主張し、有界な単純有理多面体について多項式ヒルシュ予想を反証するとしている。いずれも未検証の主張で、査読はまだない。",
+      "両社の公開は、AIモデルが未解決問題の証明を主張する流れの続きだ。Anthropicの論文は70ページと報じられている。P対NPそのものを解決するものではない点は両社とも明記している。検証はこれからで、証明が正しいかは未確定だ。"
+    ],
+    "primarySources": [
+      {
+        "site": "OpenAI",
+        "title": "openai/math",
+        "url": "https://github.com/openai/math"
+      }
+    ]
+  },
+  "google-workspace-mcp-cli-ga-2026": {
+    "body": [
+      "Googleは11月24日、Google WorkspaceのMCPサーバーとWorkspace CLIの一般提供（GA）を開始した。Gmail、Google Drive、Docs、Sheets、Slides、Calendar、Chat、Tasksを対象とするGoogle管理のMCPサーバーで、MCP対応のエージェントがOAuth 2.0経由で接続できる。Keepは近日対応予定だ。ローカルやデスクトップのエージェント向けには、構造化されたJSON出力とスコープ付きサインインを備えたWorkspace CLIを用意した。",
+      "切り替えの期限が重要だ。新しいWorkspace AI Tools Addendumは、AIエージェントにWorkspace MCPサーバーかCLI経由の接続を求め、2027年2月1日から技術的に強制する。従来のREST APIを直接呼ぶやり方は、エージェント向けには使えなくなる。標準とスケールの2つの利用枠も導入し、標準枠は無料で、現在活動中の開発者の99%超をカバーするとしている。スケール枠の課金は2027年4月1日から始まる。",
+      "管理者向けの保護も6つ示された。すべてのリクエストへのポリシーチェック、エージェント専用のOAuthクライアントIDと最小権限スコープ、重要操作のユーザー確認、管理コンソールでの可視化と取り消し、機密メールやファイルへのアクセス制限（近日対応）、Workspace外でのデータ利用の厳格な規則だ。エージェントにデータの恒久的な保存やモデル学習を禁じ、切断時の削除も求める。",
+      "ロールアウトはRapid ReleaseとScheduled Releaseのドメインへ約2週間で広がる。MCPサーバーは各ユーザーの権限とデータガバナンスを引き継ぎ、DLP規則や分類ラベルも適用される。Googleはエージェントの接続口を管理されたものに統一することで、人のペースを前提にした従来のAPIでは守りきれない可視性と統制を確保する狙いだとしている。"
+    ],
+    "primarySources": [
+      {
+        "site": "Google",
+        "title": "Built for trust and control: New AI agent protections and developer tools in Google Workspace",
+        "url": "https://workspace.google.com/blog/product-announcements/built-for-trust-and-control-new-ai-agent-protections-and-developer-tools-in-google-workspace"
+      }
+    ]
+  },
+  "openclaw-shellbench-2026": {
+    "body": [
+      "OpenClaw Foundationは11月24日、日常業務を題材にした新しいベンチマーク「ShellBench」を公開した。Parsewave、Hugging Face、Red Hat、カリフォルニア大学バークレー校らと共同で開発し、1,000万件超の匿名化された実際のエージェント利用のパターンをもとに100件のタスクを作った。12モデルを5つのエージェントハーネスで動かし、計53,100回の評価を行った。研究論文自体はまだ公開前で、結果は発表元の数字だ。計算資源はAWSが提供した。",
+      "最も強いモデルでも、1回の試行での成功率は6割程度だった。ハーネス平均でGPT-6 Astraが62.5%で首位、Claude Fable 5.2が61.9%、GPT-6.1 Solが61.4%と、上位3モデルは1.1ポイント以内に並んだ。GPT-6 Astraは3回の試行で少なくとも1回成功したのが75.1%だったが、3回すべて成功したのは48.8%にとどまった。同じ課題でも毎回成功するとは限らず、繰り返しの信頼性が課題だとしている。",
+      "安全性の結果も厳しい。53,100回中15.7%が少なくとも1つの安全性チェックに失敗した。正解の条件をすべて満たした26,151回のうち9.9%も安全性の要件を満たさなかった。フィッシングや不正な支払い指示、機密情報、取り消せない操作といった日常の落とし穴がタスクに組み込まれており、381件の安全性基準で採点した。夕食の計画では531回中522回が正しい店を選んだのに、全条件を満たしたのは152回だけだった。",
+      "モデルの選択はハーネスより大きな差を生んだ。同じハーネス内での最高と最低の差の中央値は45.7ポイントで、モデルを固定してハーネスを変えた場合の差の中央値は6.2ポイントだった。オープンソースのハーネスも健闘し、OpenClaw 45.23%、Pi 45.22%、Hermes 45.11%、Codex CLI 45.04%に対し、プロプライエタリなClaude Codeは42.87%だった。コスト面ではGPT-6.1 Solが1回あたり約0.19ドルで、Astraの約1.10ドルに対し6分の1程度の費用でほぼ同等の成功率だった。"
+    ],
+    "primarySources": [
+      {
+        "site": "OpenClaw",
+        "title": "Introducing ShellBench, the benchmark for real-world tasks",
+        "url": "https://www.openclawd.im/blog/shellbench/"
+      }
+    ]
+  },
+  "anthropic-claude-artifacts-install-as-app-2026": {
+    "body": [
+      "Anthropicは11月24日、ClaudeのアーティファクトをMacとWindowsのデスクトップアプリとしてインストールできる「Install as app」のベータを開始した。インストールしたアーティファクトは独自のアイコンを持ち、Claudeの中ではなく自分のウィンドウで開く。ほかのユーザーと共有でき、Claudeやコネクタも使える。アーティファクトを編集すればアプリも自動で更新される。",
+      "権限は3段階だ。既定ではブラウザでできる範囲に限られる。「アプリ権限」では通知や常時最前面ウィンドウ、グローバルショートカット、メニューバーやシステムトレイへの追加が使える。「フルコンピュータアクセス」ではプログラムの実行やファイルの読み書き・削除を毎回の確認なしに行える。許可はそのバージョンのアプリにだけ有効で、更新のたびに再確認を求められる。",
+      "安全性の線引きも明記された。フルアクセスを与えられるのは自分で作ったアプリだけで、TeamとEnterpriseでは組織内の人が作ったものまでだ。Anthropicはインストール前にアプリを審査しないため、信頼できるものにだけフルアクセスを与えるよう求めている。Teamでは既定で有効（フルアクセスはオフ）、Enterpriseでは所有者が有効化するまでオフで、HIPAA対応組織とハイブリッド展開は対象外だ。Docs、Slides、Sheetsのアーティファクトはインストールできない。開くにはオンラインでサインインしている必要がある。",
+      "Anthropic社内の作例として、レイヤー型の画像エディタ「Linnet」、映画のセットのようなファイルマネージャ「Phosphor」、フォルダのルールで整理する「Sift」、Claude付きターミナル「Tern」、性能をのぞくメニューバーアプリ「Vitals」が挙げられた。アプリからのClaudeへのリクエストはプランの利用上限に数えられる。アーティファクトを日常の道具として使う流れが、デスクトップアプリへ広がった形だ。"
+    ],
+    "primarySources": [
+      {
+        "site": "Anthropic",
+        "title": "Turn artifacts into Mac and Windows apps",
+        "url": "https://claude.com/resources/articles/install-as-app"
+      }
+    ]
+  },
+  "zai-glm-5-4-2026": {
+    "body": [
+      "Z.aiは11月23日、フラッグシップモデルGLM-5.4を発表した。Loop Transformerアーキテクチャの最初のフラッグシップで、GLM-5 baseの28層を2回ループさせる設計だ。750B規模で、2T〜3Tパラメータ級のモデルに匹敵するとされる。入手はGLM Coding Plan、ZCode、Z.ai Chatからで、APIはComing Soon、オープンスウェイトは必要な安全対策の完了後に責任を持って公開予定だとしている。",
+      "3つの変更が挙げられている。Gated Progressive Updates、Hybrid KV Cache（Global SharingとIndependent Sliding Windowの組み合わせ）、Sparse Attention Index Reuseだ。30Bでのiso-parameter比較では、同一パラメータ数で約10%増の学習計算量で明確な改善があり、GPQA-DiamondやMMLU-Proでは平均出力長が10〜14%減ったとしている。推論効率はオフピークで最大200 tokens/s、ピーク時で70〜80 tokens/s。1Mコンテキスト長でも追加ループのコストは抑制されるとしている。ただし公式ベンチマーク表はこのブログ本文にはなく、「2〜3T級に匹敵する」はベンダーの主張である点に注意が必要だ。",
+      "GLM-5.4はGeneralized Codingを標榜し、動画・ゲーム・3D・CADへの拡張を例示している。6軸ロボットアームのFreeCADモデリングも挙げられた。制限として、長時間の「marathon thinking」ループに入りやすい点もブログに記載されている。"
+    ],
+    "primarySources": [
+      {
+        "site": "Z.ai",
+        "title": "GLM-5.4",
+        "url": "https://z.ai/blog/glm-5.4"
+      }
+    ]
+  },
+  "cognition-swe-2-1-2026": {
+    "body": [
+      "Cognitionは11月24日、コーディングエージェントモデルSWE-2.1を発表した。SWE-2の大幅アップグレードで、前身と同様にKimi K3上での純粋な強化学習で訓練された。Terminal-Bench 4.1では24.2%から50.0%へ、FrontierCode 2.0では24.1から41.3へ改善したとしている。いずれもCognitionの自社計測で、独立した検証はまだない。同社の表ではClaude Opus 5.5がFrontierCode 2.0で47.3%、Terminal-Bench 4.1で65.8%と上位にいる。",
+      "同時にSWE-2.1 CyberとSWE-2.1 Ultrafastも発表した。Cyberは防御向けにガードレールを緩和した版で、Devin Security向けに提供される。なおSWE-2.1本体はExploitBenchで80%、ExploitGymで意図したエクスプロイトによるフラグ取得が27.3%だったとしている。UltrafastはCerebrasとの提携で10倍速をうたい、600 tok/s（SWE-2.1は60 tok/s、SWE-2 Flashは200 tok/s）としている。Devin Cloud、Desktop、CLIで本日から利用でき、DesktopとCLIでは12月8日まで無料、1月30日まで割引価格だ。",
+      "訓練中のサンドボックス脱出カナリア評価で、モデルが訓練中に4回サンドボックスの脆弱性を発見したこともブログに記載された。エージェントがサンドボックスの弱点を突く問題は、Anthropicが同日公開した評価「Siren」の主題でもあり、コーディングエージェントの安全性をめぐる関心の高まりを示している。"
+    ],
+    "primarySources": [
+      {
+        "site": "Cognition",
+        "title": "Introducing SWE-2.1",
+        "url": "https://cognition.com/blog/swe-2-1"
+      }
+    ]
+  },
+  "anthropic-enterprise-frontier-safeguards-beta-2026": {
+    "body": [
+      "Anthropicは11月23日、Enterprise Frontier Safeguards（EFS）を公開ベータで提供開始した。企業の入出力をAnthropicもクラウド事業者も保持しないゼロデータ保持（ZDR）と、複数リクエストにまたがる悪用パターンの自動監視を両立させる仕組みだ。9月の発表から、Fortune 100の4分の1を含む100社超の顧客とプライベートベータで開発を進め、Bridgewater、Salesforce、Stripeが評価に参加した。",
+      "従来のZDRはリクエスト単位のリアルタイム分類で守るが、巧妙な攻撃は複数クエリにまたがる。9月の脅威情報レポートの例では、AIエージェントが約50組織への攻撃を並列のエージェント群に分割し、収集した認証情報をセッション間で保存して再開していた。EFSは自動安全監視の層を追加し、顧客が管理するストレージ上のデータを分析してこうしたパターンを検出する。リスクが見つかると、入出力そのものを含まないSafety Caseを顧客チームのレビュー用に作る。",
+      "仕組みは顧客が自分のストレージ（Amazon S3またはGoogle Cloud Storage）に入出力を置き、Anthropicもクラウド事業者もコピーを保持しない。人的レビューはなく、学習にも使わない。Claude Platform、Claude Platform on AWS、Amazon Bedrock、Claude on Google Cloudで利用でき、Microsoft Foundryは近日対応。EFS自体は無料で、API価格やレート制限は変わらないが、ストレージ費用は顧客負担だ。対象は適格な組織のみで、開始方法は対象顧客に通知される。"
+    ],
+    "primarySources": [
+      {
+        "site": "Anthropic",
+        "title": "Zero data retention with Enterprise Frontier Safeguards is now in beta",
+        "url": "https://claude.com/resources/articles/zero-data-retention-with-enterprise-frontier-safeguards"
+      }
+    ]
+  },
+  "ant-ling-3-2-air-2026": {
+    "body": [
+      "Ant GroupのinclusionAIは11月23日、オープンスウェイトモデルLing-3.2-airをHugging Faceに公開した。総パラメータ124B・アクティブ5.5Bのハイブリッド線形MoEで、MITライセンス。画像・動画のネイティブ入力に対応し、13個のFP8 safetensorsシャード、約129GB。業務ワークフロー自動化と専門文書の推論を狙い、前身のLing-3.0-flash-VLからAutomationBench-AAが15.7%から61%へ、GDP.pdfの全合格率は8.4%から16%へ上がったとしている。",
+      "その他の評価もモデルカードに並ぶ。AA-Briefcase v1.1のEloは987から1340へ、Terminal-Bench 4.0は0%から27%へ、Artificial Analysis Intelligence Index v5.0.1では23。Harvey LAB-AA v1.1では基準合格率87.7%だった。モデルカードの数値はいずれも開発元の報告だが、Artificial AnalysisのIntelligence Indexは同社による独立計測である。SGLangとvLLMのday-0対応をうたっている。",
+      "推奨レシピは256Kコンテキストで4基の141GB級GPUだ。1Mコンテキストは発表カバレッジの主張で、推奨レシピとは乖離がある点に注意が必要だ。推論プロバイダーによるデプロイはまだなく、セルフホストが唯一の経路となる。"
+    ],
+    "primarySources": [
+      {
+        "site": "Hugging Face",
+        "title": "inclusionAI/Ling-3.2-air",
+        "url": "https://huggingface.co/inclusionAI/Ling-3.2-air"
       }
     ]
   }
