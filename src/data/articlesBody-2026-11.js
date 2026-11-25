@@ -5245,7 +5245,9 @@ const ARTICLES_BODY_2026_11 = {
       "安全性の数値も発表に含まれている。エージェントの安全性スイートでの逸脱行動率は0.09%、エージェントの誠実さの評価では99.2%が合格し、Gray Swan の IPI ベンチマークでは、リアルタイムの安全策を併用した最高の思考レベルで攻撃成功率が0.0%だったとする。一方、モデルカードは Neon の Safety & Security Report の全文は今後数日の公開予定と書いており、この記事の時点ではまだ出ていない。",
       "提供は11月18日から始まっている。Google AI Studio では Gemini API の有料枠で使え、Gemini for business では API とモデルのプルダウンから選べる。Google Antigravity は有料の AI Pro と Ultra の契約者が対象で、Gemini アプリでは Pro と Ultra の契約者が使える。",
       "なお、Notebookcheck や 9to5Google は、Gemini アプリの AI Pro では Neon が Argon に置き換わり、Gemini 3.1 Pro が退役したと報じている。Google の発表とモデルカードにこの記述はなく、Google が確認した情報ではない。本サイトの [Gemini 4 レビュー](?a=gemini-4-review) は Carbon、Argon、Hydrogen の3モデル時点の評価で、Neon を含んでいない。ラインナップの変更が Google から正式に出たら、レビュー側の見直しとあわせて追う。",
-      "この記事の根は、Google の発表記事と公式モデルカードという一次資料である。価格と仕様は一次資料で足りる性質の主張だが、ベンチマークの数値は Google の発表に載った値で、Artificial Analysis や VALS など第三者が運営する指標も Google の発表経由で引用している。本サイトによる独立した再計測はしていない。"
+      "この記事の根は、Google の発表記事と公式モデルカードという一次資料である。価格と仕様は一次資料で足りる性質の主張だが、ベンチマークの数値は Google の発表に載った値で、Artificial Analysis や VALS など第三者が運営する指標も Google の発表経由で引用している。本サイトによる独立した再計測はしていない。",
+      "【追記 2026-11-26】11月24日、Googleの最高経営責任者であるSundar Pichai氏は、NeonがGoogleの有料APIにおける初日利用量の記録を更新したとXで述べた。絶対数は公表されていない。Dealroomが報じたところでは、Google Antigravityの1日あたりのトークン使用量は、約6週間前にGemini 4 Argonが登場して以来82%増えている。",
+      "PerplexityでもNeonの利用が大きく伸びている。最高経営責任者のAravind Srinivas氏によれば、PerplexityはNeonのトークンを累計1,200億超処理し、3日間で1日の利用量が2倍になった。月曜日は360億トークンで、火曜日はその時点で残り3時間以上あった段階で445.2億トークンに達していたとする。いずれもXの投稿を通じた報告で、Xの投稿自体は本サイトの環境からは直接確認できていない。"
     ],
     "tables": [
       {
@@ -5342,6 +5344,10 @@ const ARTICLES_BODY_2026_11 = {
       {
         "title": "Gemini 4 Neon Model Card（Google DeepMind）",
         "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Neon-Model-Card.pdf"
+      },
+      {
+        "title": "Gemini 4 Neon sets a day-1 usage record on Google's paid APIs",
+        "url": "https://dealroom.co/news/175662-gemini-4-neon-sets-a-day-1-usage-record-on-google-s-paid-apis-as-perplex/"
       }
     ]
   },
@@ -8293,6 +8299,204 @@ const ARTICLES_BODY_2026_11 = {
         "site": "Hugging Face",
         "title": "inclusionAI/Ling-3.2-air",
         "url": "https://huggingface.co/inclusionAI/Ling-3.2-air"
+      }
+    ]
+  },
+  "spacex-fcc-starmind-orbital-datacenters-2026": {
+    "body": [
+      "米連邦通信委員会（**FCC**）は11月25日、**SpaceX**の軌道上データセンター構想「**Starmind**」を承認した。最大100万基の軌道上計算モジュールを展開する計画で、米国で初めて軌道データセンターの衛星コンステレーションが認可された。モジュールは太陽光発電で動き、衛星間はレーザーで通信し、制御と追跡のための無線を予備とする。",
+      "承認には達成期限が付いている。2033年11月までに初号機を打ち上げ、2035年11月までに10万基（全体の10%）、2038年11月までに50%、2040年までに全基を展開する。SpaceXの最高財務責任者であるBret Johnsen氏は、初号機の打ち上げを2027年に予定していると述べている。対象となる軌道高度は500〜1,002キロメートルで、申請時の500〜2,000キロメートルから絞られた。",
+      "SpaceXはこの計画の申請を2026年1月30日に提出していた。FCCは他の事業者による軌道データセンターの提案も審査していると述べている。",
+      "承認には反対もあった。**Amazon**、**Viasat**、米国天文学会が、デブリの増加、軌道の混雑、電波干渉、環境への影響を懸念して異議を述べた。FCCは高度600キロメートルを超える衛星について、デブリ処理の免除（使用後の衛星を墓場軌道へ移す運用）を認めなかった。",
+      "この記事の根はFCCの発表とReuters、TechCrunchの報道である。FCCの発表ページは本文の取得ができなかったため、認可の要点は報道各社の記事で裏を取っている。"
+    ],
+    "primarySources": [
+      {
+        "title": "FCC Authorizes 1 Million Satellites for Data Centers in Space",
+        "url": "https://www.fcc.gov/document/fcc-authorizes-1-million-satellites-data-centers-space-0"
+      },
+      {
+        "title": "US authorizes SpaceX to deploy 1 million satellites for data centers in space",
+        "url": "https://www.reuters.com/business/media-telecom/us-authorizes-spacex-deploy-1-million-satellites-data-centers-space-2026-11-25/"
+      },
+      {
+        "title": "FCC approves SpaceX plan to put AI data centers in space",
+        "url": "https://techcrunch.com/2026/11/25/fcc-approves-spacex-plan-to-put-ai-data-centers-in-space/"
+      }
+    ]
+  },
+  "perplexity-time-machine-2026": {
+    "body": [
+      "**Perplexity**は11月25日、Search APIとContext APIに「**Time Machine**」を追加した。指定した日付時点のウェブの姿で検索と閲覧ができる機能で、エージェントが予測のテストで未来の情報をのぞき見る問題を防ぐ。",
+      "仕組みは、クローラーがページを収集するたびにコピーを保存し、取得時刻とともに残すことにある。URLごとに版の履歴がたまり、Time Machineはライブのウェブではなく、その履歴から答える。リクエストに`snapshot_as_of`を加えると、その時刻が切り替え点になり、最大で365日前までさかのぼれる。",
+      "2つのAPIで切り替え点が同じように働く。Search APIでは、結果のタイトル、日付、抜粋が切り替え時点のコピーから返る。Context APIでは、ページ全文がその時点のコピーから返り、ライブのサイトには一切取りに行かない。Perplexityが挙げる用途は、予測テスト、失敗したエージェント実行の再現とデバッグ、過去の利用規約ページの確認で、答えを「その後起きたこと」と照らして採点できる。過去のウェブを再現する別の取り組みとして、Epochalの「Time Portal」も11月24日に発表された（[こちらの記事](?a=epochal-time-portal-launch-2026)）。",
+      "料金は通常のAPI呼び出しと同じで、過去の参照に追加料金はない。Search APIは1,000リクエストあたり5ドル、Context APIは取得するURL 1,000件あたり1ドルで、既存のAPIキーでそのまま使える。既定のレート制限があり、上限の引き上げはAPIチームへの連絡が必要になる。Perplexity自身のテストでは、新しい内容が漏れたページは0.25%だったとする。",
+      "制約もある。切り替え点はタイムゾーン付きのRFC 3339形式で指定し、未来の日時は指定できない。ドキュメントによれば、Search APIではwebとfastの検索種別でのみ使え、日付フィルターとは併用できない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Freeze the web with Perplexity Time Machine",
+        "url": "https://www.perplexity.ai/hub/blog/freeze-the-web-with-perplexity-time-machine"
+      },
+      {
+        "title": "Perplexity Search API overview",
+        "url": "https://docs.perplexity.ai/docs/search/overview"
+      }
+    ]
+  },
+  "anthropic-claude-connected-apps-file-transfer-2026": {
+    "body": [
+      "**Anthropic**は11月24日、**Claude**から連携アプリへファイルを送信・保存できる機能をベータで始めた。ウェブ、デスクトップ、モバイルのチャットとClaude Codeで使え、有料プランのPro、Max、Ultraから段階的に提供される。TeamとEnterpriseでは、組織の管理者が有効にした場合に使える。",
+      "対象になるのは、コネクタディレクトリに掲載され、開発者がファイル対応を追加したアプリに限る。カスタムコネクタと、自分で追加したMCPサーバー経由のアプリは対象外である。各アプリへの最初のファイル送信は、自動送信（Auto）や「常に許可」を選んでいても確認が求められる。",
+      "送信と保存の上限は、1ファイルあたり最大500MB、一度に最大10ファイルで、保存したファイルは5分以内にダウンロードする。送れるのはファイルで、フォルダーは送れない。写真は小さなコピーとして送られる場合がある。Claude Codeでは、保存先は`~/.claude/projects`配下の`connector-downloads`で、既定では30日後に削除される。プランモードでは何も保存されない。",
+      "ファイルはAnthropicのサーバーを経由する。一時的な暗号化コピーが残り、安全のためのスキャン用コピーは通常2週間以内に削除される。チャットを削除しても、アプリ側に送られたファイルは消えない。TeamとEnterpriseでは、送信と保存は既定で無効で、管理者が組織全体で別々に切り替える。推論フックを許可している組織では利用できない。",
+      "同じ11月24日のリリースノートでは、7月にベータで始まった月次ふりかえり（monthly recap）が正式提供になった（[こちらの記事](?a=anthropic-claude-reflect-time-and-focus-2026)）。設定のReflectから見られ、Free、Pro、Max、Ultraが対象で、ウェブ、デスクトップ、iOS、Androidで使える。Claude CodeのセッションやCoworkのクラウドタスクも対象になり、保存されたふりかえりは削除できる。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude release notes (November 24, 2026)",
+        "url": "https://support.claude.com/en/articles/12138966-release-notes"
+      },
+      {
+        "title": "Sending and saving files with connected apps (Claude Help Center)",
+        "url": "https://support.claude.com/en/articles/18534325"
+      }
+    ]
+  },
+  "microsoft-mai-rocket-rl-infrastructure-2026": {
+    "body": [
+      "**Microsoft**は11月23日、社内の強化学習基盤「**Rocket**」を公開した。約3兆パラメーターの**MAI Base 2**のポストトレーニングに使われた枠組みで、学習の進め方と基盤の設計を説明している。[Igniteで発表されたMAIの7モデル](?a=microsoft-mai-7-models-ignite-2026)とは別の、学習基盤の話題である。",
+      "RocketはGRPOを使い、コントローラー、問題ワーカー、ロールアウトワーカー、学習器（learner）が非同期で回る構成である。サンプラーはMAIが保守するSGLangのフォークで動き、Rayのアクターで分散し、KubernetesとSlurmの両方に対応する。第三者のモデルからの蒸留は使っていないとMicrosoftは書いている。",
+      "効率の数字も示された。重みの転送は15秒で、学習器だけの復旧は約5分で済み、学習器の復旧でGPU時間の7%超を節約した。実行時の弾力性（elasticity）で学習計算量を9.88%増やした。",
+      "精度の扱いも説明されている。サンプラーと学習器のあいだではビット単位の一致（bitwise parity）を保ち、MoEの重みとKVキャッシュにはMXFP8を使い、計算時にはBF16へ戻す。全体注意のKVをMXFP8にすることで、全体コンテキストのトークンを約67%多く扱える。局所注意はBF16のままで、局所と全体の比率は5対1である。",
+      "性能の主張もある。公開・非公開の数十の評価を集約した推論ベンチマークで、MAIのモデルは最近Claude Opus 4.8を上回り、数週間でGPT-5.6 Solを上回る見込みだとMicrosoftは書いている。これはベンダーの主張で、独立した検証は確認できていない。RocketはMAI Code 2とは別の取り組みである。"
+    ],
+    "primarySources": [
+      {
+        "title": "RL infrastructure at Microsoft AI",
+        "url": "https://microsoft.ai/news/rl-infrastructure-at-microsoft-ai"
+      }
+    ]
+  },
+  "xpeng-iron-humanoid-ai-day-2026": {
+    "body": [
+      "**XPENG**（小鵬汽車）は11月25日、広州で開いた第8回AI Dayで、汎用ヒューマノイド「**IRON**」を初めて公開した。あわせて、車とロボットで共通の「**Turing Physical AI Architecture**（VLA 3.0）」を発表し、AIの認知、リアルタイムの判断、物理的な実行をつなぐ枠組みとして説明した。",
+      "IRONは身長約170センチメートル、体重62キログラムで、自由度は76、触覚センサーは1,500点超を備え、主要な体の部位の80%超を触覚で覆う。3基の自社製Turing AIチップで最大2,250 TOPSの計算能力を持ち、全固体電池を搭載する。エネルギー密度は300Wh/kgを超えるとされる。",
+      "展開の予定も具体的に示された。2027年1月に量産を始め、同年第1四半期にXPENGの直営店で販売アシスタントとしての訓練を始め、第2四半期に正式な一般向け提供をめざす。2026年11月27日の広州モーターショーでは、IRONが新車発表会の司会を務める予定だとも述べられた。",
+      "XPENGは、ロボットの能力パッケージをパートナーがダウンロードし、機能をカスタマイズして特定の業務向けの技能を開発・検証できる、オープンなロボティクス・エコシステムも進めるとしている。初の量産向けロボタクシー「YOYO-01」も2027年の投入を予定している。",
+      "IRONは[XPENGのロボティクス事業が8月に9億ドル超を調達した際](?a=xpeng-robotics-900m-embodied-ai-record-2026)にも、2026年末の量産入りが見込まれるとされていた。今回の発表はその計画を具体的な日程に落とし込んだものになる。"
+    ],
+    "primarySources": [
+      {
+        "title": "XPENG Unveils Turing Physical AI Architecture and IRON Robot",
+        "url": "https://www.xpeng.com/news/01a212b0d830a1e838d68a02a2110174"
+      },
+      {
+        "title": "Xpeng ramps up physical AI push with Q2 2027 Iron robot launch and global smart driving subscriptions",
+        "url": "https://cnevpost.com/2026/11/25/xpeng-ramps-up-physical-ai-push-2026-ai-day/"
+      },
+      {
+        "title": "XPENG Positions IRON Humanoid as an Autonomous Work Partner",
+        "url": "https://www.unite.ai/xpeng-positions-iron-humanoid-as-an-autonomous-work-partner/"
+      }
+    ]
+  },
+  "google-deepmind-agents-run-gemini-experiments-2026": {
+    "body": [
+      "Google **DeepMind**の研究担当副社長で、**Gemini**の開発を率いる**Koray Kavukcuoglu**氏は、同社のポッドキャストで、AIエージェントが次期Geminiの実験を回すために計算資源の一部を使っていると語った。The Decoderが11月25日に報じた。",
+      "体制の転換も語られた。AlphaFoldや核融合といった分野ごとのチームを別々に置くのではなく、単一の汎用アルゴリズムへ移る戦略で、各世代のGeminiは手作りの一品ものとして作られ、並行するチームが後継を手がける。",
+      "ただし、完全な再帰的自己改善にはまだ遠いと同氏は述べている。AIエージェントが自分の改善を繰り返し、自分自身を際限なく高める段階には至っていない。",
+      "安全性の考え方も示された。DeepMindは学習時にエージェントの内部の思考連鎖（chain-of-thought）に報酬を与えない。意図が自然言語のまま見える形に残り、行動の前に確認できるようにするためだという。",
+      "限界への言及もある。AIは流体の流れや衝突といった物理過程を視覚的に正確に描けても、正確に理解しているわけではない。知能の核心をとらえるベンチマークは存在せず、AGIは、日常で役立つ製品が人々の信頼を得て、判断を任せられるようになってから始まる、という見方を示した。"
+    ],
+    "primarySources": [
+      {
+        "title": "AI agents now control part of DeepMind's compute for Gemini experiments, but recursive self-improvement remains distant",
+        "url": "https://the-decoder.com/ai-agents-now-control-part-of-deepminds-compute-for-gemini-experiments-but-recursive-self-improvement-remains-distant/"
+      }
+    ]
+  },
+  "cloudflare-search-for-agents-2026": {
+    "body": [
+      "**Cloudflare**は11月25日、ウェブサイトをAIエージェントから検索できるようにする「**Search for Agents**」をベータで公開した。すべてのプランが対象で、無料プランも含まれる（制限付き）。",
+      "使い方はダッシュボードのゾーンページにあるQuick Actionsから有効にするか、APIで有効にする。CloudflareがそのゾーンのAI Searchインスタンスを自動で作り、コンテンツをクロールしてインデックスし、サイト自身のドメインに検索エンドポイントを出す。エンドポイントは`/.well-known/search`に置かれる。",
+      "エージェントへの見せ方も用意されている。サイトの全ページに、エンドポイントの場所、方法、説明へのリンクを示すメタタグが付き、エージェントが検索口を自分で見つけて使える。検索はキーワードでも自然言語の質問でもでき、返すのはAIが生成した答えではなく、関連度付きのMarkdownの抜粋である。",
+      "受け付ける方法はGETとHTTP QUERYの2つで、QUERYは2026年6月にRFC 10008として公開されたIETFの提案標準である。料金はAI Searchの料金に従い、取り込み、インデックスの保存、クエリの提供が対象で、Workersの無料プランと有料プランの含み分と制限の範囲で使える。",
+      "Cloudflareは発表に先立ち、自社の開発者ドキュメントでこの機能を有効にしていた。OpenCodeのセッションがホームページからエンドポイントを見つけ、`/.well-known/search`に質問を送り、Cloudflare Artifactsの上限について正しい答えを得た例を挙げている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing Search for Agents",
+        "url": "https://blog.cloudflare.com/search-for-agents/"
+      },
+      {
+        "title": "Search for Agents (Cloudflare Developer Docs)",
+        "url": "https://developers.cloudflare.com/ai-search/how-to/search-for-agents/"
+      }
+    ]
+  },
+  "github-issue-statuses-repository-boards-2026": {
+    "body": [
+      "**GitHub**は11月23日、イシューのステータスとリポジトリボードをパブリックプレビューで公開した。イシューに7段階のステータスを付け、ボードで進捗を追えるようにする。",
+      "ステータスはBacklog、Todo、In progress、In review、Done、Not planned、Duplicateの7つである。イシューの作成時に付けるか、イシューのヘッダーから設定でき、リポジトリのイシューページ、イシューダッシュボード、ボードにアイコンで表示される。`status:`による絞り込みも使える。",
+      "自動化も連動する。ドラフトのプルリクエストをリンクするとIn progress、レビュー準備ができたドラフトのプルリクエストをリンクするとIn review、オープンなプルリクエストのリンクもIn reviewになる。ユーザーの割り当てはTodo、エージェントの割り当てはIn progressにする。プロジェクトのステータスとは双方向に同期する。",
+      "ボード側の機能も広がった。保存したビューにボードのレイアウトが付き、ステータスでグループ化し、ドラッグでステータスを変更できる。列、スイムレーン、フィールド、並び替えを設定でき、種類を問わずあらゆるイシューのフィールドを追加できるようになった。",
+      "GraphQL、REST、MCPサーバーにも対応し、ステータスの変更をCopilotの自動化のトリガーに使える。パブリックプレビューで、フィードバックはコミュニティのディスカッションで受け付けている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Issue statuses and repository boards are in public preview",
+        "url": "https://github.blog/changelog/2026-11-23-issue-statuses-and-repository-boards-are-in-public-preview/"
+      }
+    ]
+  },
+  "claude-code-2-1-331-332-mcp-skills-2026": {
+    "body": [
+      "**Anthropic**は**Claude Code**の2.1.331（11月23日）と2.1.332（11月25日）を公開した。2.1.332ではMCPサーバーが提供するスキルを扱うベータ機能が入り、2.1.331ではCode Modeがクラウド各社のターミナルでも使えるようになった。",
+      "2.1.332の中心はMCPサーバー由来のスキルである。サーバーが提供するスキルは、コマンドメニューに`server:skill`の形で表示される。スキルやコマンドの読み込み時に実行されるインラインのシェルコマンドを拒否できるPreSkillShellCommandフックも加わった。2.1.331以前では、このフックを書いた設定ファイルを開くと起動時にダイアログが出る。MCPサーバーがスキルを配信する仕組み自体の公開ベータは11月24日に発表されており、[こちらの記事](?a=anthropic-skills-over-mcp-2026)にまとめている。",
+      "2.1.332にはこのほか、保留中のメッセージを常に配信する「Always deliver」、別のモデルで動いているセッションを示すフッター表示、OpenTelemetryの`assistant_response`イベント、VS CodeとデスクトップのCodeタブでの保存警告が入った。macOSのコンピュータユースは新しい安全規則に更新され、`computer-use`はMacでの予約済みスキル名になった。`sonnet`の別名はGCP Agent PlatformとMicrosoft FoundryでSonnet 5.5を指し、Foundryの既定モデルもSonnet 5.5になった。",
+      "2.1.331では、Code ModeがBedrock、GCP Agent Platform、Microsoft Foundry、AWS上のClaude Platformといったクラウド提供のターミナルで使えるようになった。`claude doctor`にAPI接続の確認項目が増え、管理対象の`extraKnownMarketplaces`は2026年11月30日以降に自動更新される（`\"autoUpdate\": false`で無効化できる）。",
+      "注意点もある。Anthropicのドキュメントに基づく解説では、自動モードではMCPスキルは分類器の判断でプロンプトなしに読み込まれる。サーバー側はスキルファイルをいつでも変更でき、Anthropicがスキャンするのは一部のコネクタ由来のスキルに限られる。MCPスキルを使うには、FableモデルかOpus 4.8、Sonnet 5、Haiku 5.5以降が必要だとされ、フロントマターの指定や`!`コマンド、`@`ファイルの添付には対応しない。",
+      "このほか、2.1.332ではフリーズやハングの修正（20秒後に失敗する名前付きパイプの読み取り、MCPの標準出力のあふれなど）と、`claude auth login`の修正が入った。2.1.331では無言の応答の再試行、`gen_ai`のトレース属性、プラグインマニフェストの`optionalDependencies`が加わった。前回の2.1.330については[こちらの記事](?a=claude-code-2-1-330-2026)にまとめている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Claude Code changelog",
+        "url": "https://code.claude.com/docs/en/changelog"
+      }
+    ]
+  },
+  "openai-codex-cli-0-172-0-2026": {
+    "body": [
+      "**OpenAI**は11月24日、**Codex CLI** 0.172.0を公開した。スレッドリンクのターミナル表示、Tabキーによるスラッシュコマンドの引数補完、エージェントコマンドセンターでのタスクグループ間の移動などが入った。",
+      "使い勝手の変更が中心である。スレッドリンクを開くと、保存した会話やネストしたエージェントがターミナルで開ける。Tabキーを押すとスラッシュコマンドの引数を補完し、`/mcp lo`が`/mcp login`になる。エージェントコマンドセンターではShift+上/下キーでタスクグループ間を移動できる。背の高い選択肢ではPageUp/PageDownが使え、クラウドからの返信はその場で更新される。",
+      "MCPと権限まわりも変わった。キャッシュしたツール一覧を持つ任意のstdio MCPサーバーは、既定では最初のツール呼び出し時に起動するようになった。`config.toml`ではツールごとの承認レビューアーを指定できる。アプリサーバーのクライアントはセットアップ時とサインイン時にAmazon Bedrock Runtimeを選べる。",
+      "`codex exec resume`はサンドボックスの権限、作業ディレクトリ、ワークスペースのルートを、明示的に上書きしない限り復元するようになった。再開した実行の権限が開始時より広がってしまう問題を直す修正で、バグ修正として分類されている。リモートセッションではOSをまたいでパスが保たれ、プロバイダーのエラーは到着次第報告され、どの利用上限に達したかも示す。親のターンを中断しても、キューに入った子の返信は残る。",
+      "同梱の`openai-docs`スキルはGPT-6.2 AstraとSolへの移行をカバーする。Code Modeはすべてのホスト接続でgRPCを使うようになり、`code_mode_host_grpc`は非推奨になった。前回の0.171.0については[こちらの記事](?a=openai-codex-cli-0-171-0-2026)にまとめている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Codex changelog",
+        "url": "https://developers.openai.com/codex/changelog/#github-release-456141969"
+      },
+      {
+        "title": "Comparing rust-v0.171.0...rust-v0.172.0 · openai/codex",
+        "url": "https://github.com/openai/codex/compare/rust-v0.171.0...rust-v0.172.0"
+      }
+    ]
+  },
+  "anthropic-xai-compute-rental-3-1b-2026": {
+    "body": [
+      "**Anthropic**がxAI（現・SpaceXAI）の計算資源を月額約31億ドルで借りる契約を結び、xAI最大の顧客になったと、**New York Times**が報じた。**Google**も月額約8億ドルで借りている。いずれの契約も90日前の通知で解約できる。",
+      "xAIは2026年5月から競合他社に計算資源を貸し出しており、6月の株式公開（IPO）で収益への圧力が高まった。SpaceXのAI部門の収入はSpaceX全体の売上高の半分超に達していると報じられている。関係者によれば、Anthropicの注文に応えるため2026年10月までに新しいデータセンターを完成させる必要があり、Musk氏はClaudeの開発元がさらに借り増しを望んでいると述べている。",
+      "背景には、xAIの自社モデルの競争力への見方がある。2026年8月にはMusk氏が社内のグループチャットで「GPUあたりの収益」を求め、チャット名を「Sell compute because we can't compete」（競争できないから計算資源を売れ）に変えたと報じられている。",
+      "xAIは自社のAIプロジェクトを縮小・再編している。2026年11月には部門責任者のMike Nicolls氏が、Grok Imagineの画像・動画生成を担う60人のチームを解散すると職員に伝えた。2026年9月にはAIアバターを終了した。AnthropicがColossus 1の計算資源を全量借り上げた5月の発表は[こちらの記事](?a=anthropic-spacex-colossus-1-compute-deal-2026)にまとめている。",
+      "この記事の根はNYTの報道を伝えるThe Decoderの記事である。NYTの記事自体は有料壁の内側にあり、本サイトの環境からは直接確認できていない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Anthropic's appetite for compute is pushing xAI toward a rent-over-build strategy",
+        "url": "https://the-decoder.com/anthropics-appetite-for-compute-is-pushing-xai-toward-a-rent-over-build-strategy/"
       }
     ]
   }
