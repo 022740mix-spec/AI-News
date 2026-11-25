@@ -16758,5 +16758,197 @@ export const ARTICLES_META = [
       "自動化",
       "MIT"
     ]
+  },
+  {
+    "id": "spacex-fcc-starmind-orbital-datacenters-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "FCC、SpaceXの軌道上データセンター「Starmind」を承認 — 最大100万基、初の軌道データセンター認可",
+    "excerpt": "FCCが11月25日、SpaceXの軌道上データセンター構想「Starmind」を承認した。最大100万基の衛星型計算モジュールを打ち上げる計画で、米国で初めての軌道データセンターの認可となる。初号機は2027年の打ち上げを予定する。",
+    "date": "2026-11-26",
+    "newsDate": "2026-11-25",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "SpaceX",
+      "AI インフラ",
+      "宇宙",
+      "データセンター",
+      "規制"
+    ]
+  },
+  {
+    "id": "perplexity-time-machine-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Perplexity、APIに「Time Machine」を追加 — エージェントが365日前までのウェブをそのままの姿で検索・閲覧",
+    "excerpt": "Perplexityが11月25日、Search APIとContext APIに「Time Machine」を追加した。指定した日付時点のウェブの姿で検索・閲覧でき、エージェントの予測テストで未来の情報をのぞき見る問題を防ぐ。",
+    "date": "2026-11-26",
+    "newsDate": "2026-11-25",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Perplexity",
+      "エージェント",
+      "API"
+    ]
+  },
+  {
+    "id": "anthropic-claude-connected-apps-file-transfer-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude、連携アプリへのファイル送信・保存をベータで開始 — 月次ふりかえりは正式提供に",
+    "excerpt": "Anthropicが11月24日、Claudeから連携アプリへファイルを送信・保存できる機能をベータで始めた。対応アプリはコネクタディレクトリに掲載されたものに限る。同日、月次ふりかえりも正式提供になった。",
+    "date": "2026-11-26",
+    "newsDate": "2026-11-24",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Claude",
+      "Anthropic",
+      "エージェント"
+    ]
+  },
+  {
+    "id": "microsoft-mai-rocket-rl-infrastructure-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Microsoft、強化学習基盤「Rocket」を公開 — MAI Base 2 を学習させた社内フレームワーク",
+    "excerpt": "Microsoftが11月23日、社内の強化学習基盤「Rocket」を公開した。MAI Base 2 のポストトレーニングに使われた枠組みで、重みの転送15秒、学習の弾力性で計算量を約9.9%増やすといった設計を説明している。",
+    "date": "2026-11-26",
+    "newsDate": "2026-11-23",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Microsoft",
+      "MAI",
+      "モデル"
+    ]
+  },
+  {
+    "id": "xpeng-iron-humanoid-ai-day-2026",
+    "type": "news",
+    "category": "product",
+    "title": "XPENG、ヒューマノイド「IRON」を初公開 — 76自由度、量産は2027年1月から",
+    "excerpt": "XPENGが11月25日、広州のAI Dayでヒューマノイド「IRON」を初公開した。76自由度、触覚センサー1,500点超を備え、2027年1月に量産を始める。車とロボットで共通の「Turing Physical AI Architecture（VLA 3.0）」も発表した。",
+    "date": "2026-11-26",
+    "newsDate": "2026-11-25",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "中国AI",
+      "ロボティクス",
+      "エッジAI"
+    ]
+  },
+  {
+    "id": "google-deepmind-agents-run-gemini-experiments-2026",
+    "type": "news",
+    "category": "special",
+    "title": "DeepMind、AIエージェントが次期Geminiの実験に計算資源の一部を使う体制に — 完全な再帰的自己改善はまだ遠い",
+    "excerpt": "Google DeepMindの研究担当副社長Koray Kavukcuoglu氏が、AIエージェントが次期Geminiの実験に計算資源の一部を使っていると同社のポッドキャストで語った。完全な再帰的自己改善にはまだ遠いとしつつ、単一の汎用アルゴリズムへの転換を説明した。",
+    "date": "2026-11-26",
+    "newsDate": "2026-11-25",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "DeepMind",
+      "Gemini",
+      "エージェント",
+      "研究"
+    ]
+  },
+  {
+    "id": "cloudflare-search-for-agents-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Cloudflare、サイトをAIエージェント向けに検索可能にする「Search for Agents」をベータ公開 — 無料プランも対象",
+    "excerpt": "Cloudflareが11月25日、ウェブサイトをAIエージェントから検索できるようにする「Search for Agents」をベータで公開した。ダッシュボードのトグル一つで検索インデックスとエンドポイントができ、無料プランも対象になる。",
+    "date": "2026-11-26",
+    "newsDate": "2026-11-25",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Cloudflare",
+      "エージェント",
+      "API"
+    ]
+  },
+  {
+    "id": "github-issue-statuses-repository-boards-2026",
+    "type": "news",
+    "category": "product",
+    "title": "GitHub、イシューのステータスとリポジトリボードをパブリックプレビューで公開",
+    "excerpt": "GitHubが11月23日、イシューのステータスとリポジトリボードをパブリックプレビューで公開した。7段階のステータスをイシューに付け、ボードでドラッグして変更できる。Copilotの自動化のトリガーにも使える。",
+    "date": "2026-11-26",
+    "newsDate": "2026-11-23",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "GitHub",
+      "エージェント"
+    ]
+  },
+  {
+    "id": "claude-code-2-1-331-332-mcp-skills-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Claude Code 2.1.331 / 2.1.332 — MCPサーバー由来のスキル表示に対応、Code Mode がクラウド各社のターミナルにも",
+    "excerpt": "AnthropicがClaude Code 2.1.331と2.1.332を公開した。MCPサーバーが提供するスキルを「server:skill」として表示するベータ機能が入り、Code Mode が Bedrock や Foundry などのクラウド提供ターミナルでも使えるようになった。",
+    "date": "2026-11-26",
+    "newsDate": "2026-11-25",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "Claude Code",
+      "Anthropic",
+      "CLI",
+      "MCP"
+    ]
+  },
+  {
+    "id": "openai-codex-cli-0-172-0-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Codex CLI 0.172.0 — スレッドリンクのターミナル表示、Tab によるスラッシュコマンド補完など",
+    "excerpt": "OpenAIが11月24日、Codex CLI 0.172.0 を公開した。スレッドリンクをターミナルで開けるようになり、Tab キーでスラッシュコマンドの引数を補完できる。codex exec resume の権限復元なども入った。",
+    "date": "2026-11-26",
+    "newsDate": "2026-11-24",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "Codex",
+      "CLI"
+    ]
+  },
+  {
+    "id": "anthropic-xai-compute-rental-3-1b-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic、xAIの計算資源を月額約31億ドルで借り上げ — xAI最大の顧客に、「貸す側」へ転換",
+    "excerpt": "AnthropicがxAIの計算資源を月額約31億ドルで借りる契約を結び、xAI最大の顧客になったとNYTが報じた。Googleも月額約8億ドルで借りている。xAIは自社モデルの開発を縮小し、計算資源の貸し出しへ軸足を移している。",
+    "date": "2026-11-26",
+    "newsDate": "2026-11-23",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Anthropic",
+      "SpaceX",
+      "AI インフラ",
+      "Claude"
+    ]
   }
 ];

@@ -5,8 +5,16 @@
   <link rel="alternate" type="text/html" href="./?view=updates"/>
   <link rel="self" type="application/atom+xml" href="./updates.xml"/>
   <id>tag:ai-tool-news.jp,2026:updates</id>
-  <updated>2026-11-25T15:00:00Z</updated>
+  <updated>2026-11-26T15:00:00Z</updated>
   <generator>ai-news-generate-updates</generator>
+  <entry>
+    <title>【追記】Google が Gemini 4 Neon を発表 — 4つ目の Gemini 4 は Carbon 派生で「深さと効率の両立」。AA Index 61 で全体3位、コーディングエージェント指標は首位。入力 $3・出力 $15</title>
+    <link rel="alternate" type="text/html" href="?a=gemini-4-neon-launch-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:gemini-4-neon-launch-2026:2026-11-26</id>
+    <updated>2026-11-26T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>11月24日、Googleの最高経営責任者であるSundar Pichai氏は、NeonがGoogleの有料APIにおける初日利用量の記録を更新したとXで述べた</summary>
+  </entry>
   <entry>
     <title>【追記】Anthropic の IPO、グリーンシュー行使で総額 935億ドルに — 「Project Lantern」の異例の条件を Reuters が報道</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-ipo-project-lantern-greenshoe-2026#article-history"/>
@@ -1198,13 +1206,5 @@
     <updated>2026-09-02T15:00:00Z</updated>
     <category term="correction" label="訂正"/>
     <summary>一次ソースの URL が到達できなくなっていたため、移転先に差し替えた（The Register の記事 URL が短縮形から展開形に変更されていた）</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Blume が登場 — OpenAI 所属開発者による OSS「AI 用ドキュメント」フレームワーク、llms.txt 自動生成と MCP サーバー同梱で Claude / Cursor が直読</title>
-    <link rel="alternate" type="text/html" href="?a=blume-hayden-bleasel-ai-ready-docs-framework-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:blume-hayden-bleasel-ai-ready-docs-framework-2026:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>一次ソースのうち www.techaiapp.com が到達できなくなっていた（HTTP 404）ため削除した</summary>
   </entry>
 </feed>
