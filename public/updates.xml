@@ -8,12 +8,36 @@
   <updated>2026-11-26T15:00:00Z</updated>
   <generator>ai-news-generate-updates</generator>
   <entry>
+    <title>【追記】「Claude と解いた」と Anthropic の数学者がリーマン予想の証明を主張、同日に「人間だけ」の証明も登場、どちらも未検証</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-riemann-hypothesis-claude-proof-claim-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:anthropic-riemann-hypothesis-claude-proof-claim-2026:2026-11-26</id>
+    <updated>2026-11-26T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>11月25日、Anthropic の Luke Sernau 氏が、Alpöge 氏の証明をもとにした短い版の Lean 証明「grh-lean」を GitHub に公開した</summary>
+  </entry>
+  <entry>
     <title>【追記】Google が Gemini 4 Neon を発表 — 4つ目の Gemini 4 は Carbon 派生で「深さと効率の両立」。AA Index 61 で全体3位、コーディングエージェント指標は首位。入力 $3・出力 $15</title>
     <link rel="alternate" type="text/html" href="?a=gemini-4-neon-launch-2026#article-history"/>
     <id>tag:ai-tool-news.jp,2026:update:gemini-4-neon-launch-2026:2026-11-26</id>
     <updated>2026-11-26T15:00:00Z</updated>
     <category term="addendum" label="追記"/>
     <summary>11月24日、Googleの最高経営責任者であるSundar Pichai氏は、NeonがGoogleの有料APIにおける初日利用量の記録を更新したとXで述べた</summary>
+  </entry>
+  <entry>
+    <title>【追記】OpenAI、VP ≠ VNPの証明主張に続き9本を追加 — スメールの第9問題への回答も</title>
+    <link rel="alternate" type="text/html" href="?a=openai-math-vp-vnp-smale-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:openai-math-vp-vnp-smale-2026:2026-11-26</id>
+    <updated>2026-11-26T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>11月24日に追加された9本のうち、ユークリッドテンソル幾何の7本には、行列積の指数がちょうど 9/4 であることを示す論文が含まれていた</summary>
+  </entry>
+  <entry>
+    <title>【追記】OpenAI チーフサイエンティストが事前学習の perplexity を初公開 — 0.68〜0.70 の窓での変革的能力を予想し、業界共通の開発上限を提案</title>
+    <link rel="alternate" type="text/html" href="?a=openai-perplexity-intelligence-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:openai-perplexity-intelligence-2026:2026-11-26</id>
+    <updated>2026-11-26T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>11月24日、評価団体の METR が、OpenAI の公開した perplexity の数値を分析した記事を発表した</summary>
   </entry>
   <entry>
     <title>【追記】Anthropic の IPO、グリーンシュー行使で総額 935億ドルに — 「Project Lantern」の異例の条件を Reuters が報道</title>
@@ -1182,29 +1206,5 @@
     <updated>2026-09-20T15:00:00Z</updated>
     <category term="monthly" label="月次見直し"/>
     <summary>本レビューが、次世代の GPT-6 Astra（2026年9月3日公開）に触れていなかったため、冒頭に注記を2段落追加しました</summary>
-  </entry>
-  <entry>
-    <title>【訂正】画像生成AIの地形図（2026年初頭）— GPT Image・MJ・Flux・Imagen から Nano Banana 2 まで</title>
-    <link rel="alternate" type="text/html" href="?a=ai-image-generators-landscape-early-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:ai-image-generators-landscape-early-2026:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>一次ソースのうち cloud.google.com が到達できなくなっていた（HTTP 404）ため削除した</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Anthropic が $900B 評価額で $30-50B 調達交渉 — OpenAI（$852B）を抜き「世界最高評価額の AI 企業」へ、Ramp 指数では業務利用シェアでも逆転</title>
-    <link rel="alternate" type="text/html" href="?a=anthropic-900b-valuation-funding-overtakes-openai-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:anthropic-900b-valuation-funding-overtakes-openai-2026:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>一次ソースのうち ramp.com が到達できなくなっていた（HTTP 404）ため削除した</summary>
-  </entry>
-  <entry>
-    <title>【訂正】Anthropic が Claude の出力に不可視の透かしを導入 — EU AI Act 対応を全世界に適用、SynthID-Text の応用</title>
-    <link rel="alternate" type="text/html" href="?a=anthropic-claude-synthid-text-watermark-global-2026#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:anthropic-claude-synthid-text-watermark-global-2026:2026-09-02</id>
-    <updated>2026-09-02T15:00:00Z</updated>
-    <category term="correction" label="訂正"/>
-    <summary>一次ソースの URL が到達できなくなっていたため、移転先に差し替えた（The Register の記事 URL が短縮形から展開形に変更されていた）</summary>
   </entry>
 </feed>
