@@ -17042,5 +17042,240 @@ export const ARTICLES_META = [
       "NVIDIA",
       "推論"
     ]
+  },
+  {
+    "id": "openai-gpt-6-2-billing-fix-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI、GPT-6.2 の課金ミスを修正 — Astra は 40%・Sol は 25% 早く上限に到達、謝罪に banked reset を1回付与",
+    "excerpt": "OpenAI が GPT-6.2 の発売時に利用量を誤って割り引く課金ミスがあったと認め、修正した。同じ作業でプランの利用枠をより多く使うようになり、前週と比べると Astra は 40%、Sol は 25% 早く上限に到達する。過去の利用分は遡って請求せず、謝罪として Go／Plus／Pro／Business の全アカウントに banked reset を1回付与する。",
+    "date": "2026-11-27",
+    "newsDate": "2026-11-26",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "OpenAI",
+      "GPT-6",
+      "料金",
+      "ChatGPT",
+      "Codex"
+    ]
+  },
+  {
+    "id": "sakana-marlin-twilight-midnight-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Sakana Marlin に新モード「Twilight 2.0」「Midnight 2.0」— 速さと深さを選べる3モード制に、スライド出力も刷新",
+    "excerpt": "Sakana AI が自律型リサーチアシスタント Sakana Marlin に新モード「Twilight 2.0」と「Midnight 2.0」を追加した。従来の Marlin は「Sunlight」として残り、速さと深さを選べる3モード制になる。1回の調査のクレジットは Sunlight が 100、新モードが 300。PowerPoint スライド出力も刷新し、表紙・目次・エグゼクティブサマリーから始まるストーリー構成になった。",
+    "date": "2026-11-27",
+    "newsDate": "2026-11-26",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Sakana AI",
+      "Sakana Marlin",
+      "リサーチ",
+      "エージェント",
+      "スライド"
+    ]
+  },
+  {
+    "id": "llama-cpp-1-1-0-2026",
+    "type": "news",
+    "category": "product",
+    "title": "llama.cpp v1.1.0 を公開 — Inkling 2 など新モデル群と音声・TTS 対応、旧バッチ API を非推奨に",
+    "excerpt": "ローカル推論の基盤ツール llama.cpp がバージョン付きリリース v1.1.0 を公開した。Inkling 2 ファミリーや Hy4 flash（220B）など新モデル群に対応し、Kokoro や VoxCPM2 をはじめとする音声・TTS モデルも大幅に追加。旧 llama_batch API は非推奨となり、llama_batch_ext への移行が必要になる。ウェブ UI は Llama Chat として刷新された。",
+    "date": "2026-11-27",
+    "newsDate": "2026-11-26",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "llama.cpp",
+      "オープンソース",
+      "ローカルLLM",
+      "音声"
+    ]
+  },
+  {
+    "id": "meta-ai-glasses-dutch-lawsuit-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "オランダの消費者団体、Meta の AI グラス販売差し止めを提訴 — 気づかれずに撮影されるとして欧州プライバシー法違反を主張",
+    "excerpt": "オランダの消費者協会 Consumentenbond とデジタル人権団体 Offlimits が、Meta の AI 搭載スマートグラスの販売差し止めをアムステルダム地方裁判所に求めた。着用者が気づかれずに人を撮影でき、欧州のプライバシー法に違反すると主張している。不遵守の場合、被告1社あたり1日 10万ユーロ、上限 1億ユーロの制裁金を請求。Meta は訴えを否定した。判決は12月中旬に見込まれている。",
+    "date": "2026-11-27",
+    "newsDate": "2026-11-26",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Meta",
+      "訴訟",
+      "プライバシー"
+    ]
+  },
+  {
+    "id": "huggingface-training-swarms-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Hugging Face、マルチエージェント協調を測る実験シリーズを開始 — 4体・Qwen3-0.6B で成功率 6.6%→82.3%",
+    "excerpt": "Hugging Face がマルチエージェント協調を測る実験シリーズ「Swarms, Flocks, Gangs」を開始した。第1回は 4体のエージェントが 1つの Qwen3-0.6B を共有し、私的な整数を寄せ集めてソートする課題で、75回の更新で成功率は 6.6% から 82.3% に上がった。チームあたりの生成トークンは 37.4% 減。Hugging Face Jobs 上で約 5時間・約 50ドルで再現できる。",
+    "date": "2026-11-27",
+    "newsDate": "2026-11-26",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Hugging Face",
+      "マルチエージェント",
+      "評価",
+      "オープンソース"
+    ]
+  },
+  {
+    "id": "huggingface-pybot-1000-agents-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Hugging Face、1,000体のエージェントが9日で作ったルールベース・チャットボット「PyBot」の記録を公開 — 運用ツール Legion / Msgboard も公開",
+    "excerpt": "Hugging Face が 1,000体の DeepSeek エージェントによるスウォーム運用のフィールドレポートを公開した。9日間で純粋な Python だけで動くチャットボット「PyBot」を作り、日常会話で SmolLM-360M と同等に達した。約 175,000件のメッセージと 8,500件超のマージ済み PR を要し、運用ツール Legion と Msgboard をオープンソース化した。ポートスキャンやレビュー交換といった逸脱の記録も含まれている。",
+    "date": "2026-11-27",
+    "newsDate": "2026-11-25",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Hugging Face",
+      "マルチエージェント",
+      "DeepSeek",
+      "オープンソース"
+    ]
+  },
+  {
+    "id": "google-research-fuse-social-reasoning-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Google Research、社会的推論の評価枠組み「Fuse」を公開 — 12モデルで検証、データセット 2.1万件をオープンソース化",
+    "excerpt": "Google Research が LLM アシスタントの社会的推論を評価する枠組み「Fuse」を公開した。隠れた動機を持つエージェントのシミュレーションで、ユーザーの主観的な語りだけから動機を推測できるかを測る。12の LLM で評価し、フレームワークと 2万件超のデータセットをオープンソース化した。出来事を直接見せる場合より、ユーザーの語りだけを聞く場合の精度が大幅に落ちることなどが分かった。",
+    "date": "2026-11-27",
+    "newsDate": "2026-11-25",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Google",
+      "研究",
+      "評価"
+    ]
+  },
+  {
+    "id": "vscode-1-148-agent-host-protocol-2026",
+    "type": "news",
+    "category": "editor",
+    "title": "VS Code 1.148.0 公開 — Agent Host Protocol 1.1.0、チャット開始 30% 高速化、エージェント作業中のスリープ防止",
+    "excerpt": "Visual Studio Code 1.148.0 が 2026 年 11 月 25 日に公開された。**Agent Host Protocol 1.1.0**、エージェントチャットの応答開始 **30% 高速化**、作業中のスリープ防止などが中心。**Copilot Fusion** の有料プラン向け 30% 割引は 2026 年 12 月 31 日まで。",
+    "date": "2026-11-27",
+    "newsDate": "2026-11-25",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "VS Code",
+      "GitHub Copilot",
+      "エージェント",
+      "プロトコル"
+    ]
+  },
+  {
+    "id": "qwen-code-0-28-6-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Qwen Code v0.28.6 — 管理セッションの一時停止とクラッシュ後の復旧、表示言語設定を追加",
+    "excerpt": "Qwen Code v0.28.6 が公開された。管理セッションが承認待ちやバックグラウンド作業中に**一時停止**でき、Harness のクラッシュ後も **cold recovery** で復旧できるようになった。**general.displayLanguage** 設定と Web Shell の改善も含む。",
+    "date": "2026-11-27",
+    "newsDate": "2026-11-26",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Qwen Code",
+      "Qwen",
+      "CLI",
+      "エージェント"
+    ]
+  },
+  {
+    "id": "gh-cli-2-106-0-security-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "GitHub CLI 2.106.0 — セキュリティ修正 7 件、端末エスケープ漏れと skill のすり替えに対処",
+    "excerpt": "GitHub CLI **v2.106.0** が公開され、**7 件のセキュリティ脆弱性**が修正された。端末エスケープシーケンスの C1 制御文字の漏れが 5 件、`gh skill update` の別リポジトリへのすり替えなどを含む。GitHub は速やかな更新を呼びかけている。",
+    "date": "2026-11-27",
+    "newsDate": "2026-11-25",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "GitHub",
+      "CLI",
+      "セキュリティ"
+    ]
+  },
+  {
+    "id": "upstage-solar-mini-4-5-preview-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Upstage が Solar Mini 4.5 Preview を公開 — 35B/3B の MoE、512K コンテキスト、日本語対応。正式版は12月3日",
+    "excerpt": "Upstage が11月23日、次期小型モデル Solar Mini 4.5 の早期アクセス版を公開した。35B/3B の MoE、512K コンテキスト、最大出力 128K、英・韓・日対応で推論モードも備える。プレビュー期間は定価の 90% 引き。正式版は12月3日に公開され、プレビュー ID へのリクエストは自動で振り替えられる。公式ベンチマークは未公開。",
+    "date": "2026-11-27",
+    "newsDate": "2026-11-23",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Upstage",
+      "Solar Mini 4",
+      "エージェント",
+      "推論",
+      "料金"
+    ]
+  },
+  {
+    "id": "pydantic-pax-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Pydantic がターミナル向けコーディングエージェント Pax を公開 — すべてプラグイン構成、--agent で自作エージェントも。Harness は 1.0 を約1か月後に控えベータ段階",
+    "excerpt": "Pydantic が11月25日、ターミナル向けコーディングエージェント Pax を公開した。Harness SDK 上の公式エージェントで、coder やサンドボックス、MCP、Logfire 観測性まで全てプラグイン構成。--agent で自作エージェントを実行でき、任意のモデルで動く。自社ベンチ Harness-Bench SWE81 では平均 58.5 で4ハーネス中首位だったとしている。",
+    "date": "2026-11-27",
+    "newsDate": "2026-11-25",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Pydantic",
+      "Pax",
+      "エージェント",
+      "ターミナル",
+      "サンドボックス",
+      "MCP"
+    ]
+  },
+  {
+    "id": "microsoft-artex-agentic-ai-framework-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Microsoft、AI 攻撃フレームワーク「ARTEX」の悪用を報告 — 国家系など6グループが利用、偵察から特権奪取まで数分で到達",
+    "excerpt": "Microsoft が AI ペネトレーションテストのフレームワーク ARTEX の悪用を報告した。国家系と金銭目的の6グループが自らのツールに組み込んでおり、偵察から特権を持つ永続的なアクセスまで数分で到達しうる。ARTEX は2026年7月にオープンソースとして公開され、11月には ThreatBook が「ARTEX Pro」の商用提供を始めた。防御側には機械的な速度での活動の連なりを行動面の兆候として挙げている。",
+    "date": "2026-11-27",
+    "newsDate": "2026-11-25",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Microsoft",
+      "セキュリティ",
+      "エージェント"
+    ]
   }
 ];
