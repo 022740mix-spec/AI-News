@@ -6272,7 +6272,8 @@ const ARTICLES_BODY_2026_11 = {
       "検証の残りの段階の結果は、数時間から数日以内に出る見通しだ。形式証明の強みは、機械が検証できる点にある。もしどちらかの主張が正しければ、数学史に残る出来事になる。逆に誤りが見つかれば、AI による数学の限界を測る貴重な事例になる。いずれにせよ、現時点で「リーマン予想が解けた」と断定できる段階ではない。",
       "【追記 2026-11-22】11月21日、Lean と Mathlib のコミュニティが共同声明を出し、Alpöge 氏の証明が正しいと認証した。MIT の Sutherland 氏がまとめる検証ページでは、con-leche とその Rust 実装 con-ron の --compare モードが、5つの定理すべてが Mathlib のリーマン予想の記述と一致することを確認したとされている。同じページでは、独立実装の検証器 nanoda と con-leche、lean4lean が証明のエクスポートを受け入れたとされている。一方、Lean 公式の lake comparator の全体実行と、エクスポートの Lean カーネルでの再実行は、11月22日時点ではまだ進行中とされている。クレイ数学研究所は賞金の手続き上は問題を未解決としており、人間が読める証明の公開と査読はこれからだ。",
       "【追記 2026-11-23】MIT の Sutherland 氏による検証ページが更新された。Comparator v4.33.0 による通しの実行（64時間8分）で、命題の比較と公理チェックが通過した。Lean の既定カーネル（約9時間8分）と paranoid カーネル（約10時間）によるエクスポートの再実行は、MIMALLOC アロケータの設定を上げたうえで受理された（既定設定での paranoid カーネル実行はなお進行中）。lake comparator v4.36.0 は実行中で、Robin1984 comparator は完了した。con-leche の --verified による結合エクスポートも受理され、宣言数は1,472,825件にのぼる。",
-      "一方で、J. L. Nielsen 氏（Center for Topological Physics）は11月20日に PhilArchive で批判論文を公開し、Alpöge 氏の証明は無効だと主張した。幾何条件を表す述語 anyGeometry が恒真（fun _ _ _ => True）と定義されており、幾何学的データが何も検証されずに通過すること、除数の高さが幾何から導かれたものではなく行側の式を写したもので、等式が rfl（定義上の同一性）で閉じられていることが根拠とされる。Lean のカーネルが型の正しさを検証することと、幾何学的な内容が独立に確立されていることは別の問題だという指摘で、この批判に対する決着はまだついていない。Clay 数学研究所は賞の観点からは問題を未解決としており、人間が読める形の証明と査読はこれからだ。"
+      "一方で、J. L. Nielsen 氏（Center for Topological Physics）は11月20日に PhilArchive で批判論文を公開し、Alpöge 氏の証明は無効だと主張した。幾何条件を表す述語 anyGeometry が恒真（fun _ _ _ => True）と定義されており、幾何学的データが何も検証されずに通過すること、除数の高さが幾何から導かれたものではなく行側の式を写したもので、等式が rfl（定義上の同一性）で閉じられていることが根拠とされる。Lean のカーネルが型の正しさを検証することと、幾何学的な内容が独立に確立されていることは別の問題だという指摘で、この批判に対する決着はまだついていない。Clay 数学研究所は賞の観点からは問題を未解決としており、人間が読める形の証明と査読はこれからだ。",
+      "【追記 2026-11-26】11月25日、Anthropic の Luke Sernau 氏が、Alpöge 氏の証明をもとにした短い版の Lean 証明「grh-lean」を GitHub に公開した。Anthropic の同僚と Claude との共同作業によるもので、読みやすい版が約30万行、同じ5つの定理を証明するコンパクト版が約7万6,000行で、元の約1,700万行から大幅に短くなった。Lean v4.35.0 と Mathlib を使い、公理は propext、Classical.choice、Quot.sound のみである。リポジトリは Sernau 氏個人のアカウントにあり、Anthropic からの公式発表は確認できていない。README によれば機械による検証のみを通っており、数学者が読み通したわけではなく、論文も付いていない。"
     ],
     "primarySources": [
       {
@@ -6311,6 +6312,14 @@ const ARTICLES_BODY_2026_11 = {
         "title": "The Invalidity of Alpöge's Proof of the Riemann Hypothesis",
         "site": "PhilArchive (J. L. Nielsen)",
         "url": "https://philarchive.org/archive/NIEIOT-2"
+      },
+      {
+        "title": "A short Lean 4 proof of the Generalized Riemann Hypothesis（GitHub、lsernau/grh-lean）",
+        "url": "https://github.com/lsernau/grh-lean"
+      },
+      {
+        "title": "Alpöge's proof of the Riemann hypothesis（Wikipedia）",
+        "url": "https://en.wikipedia.org/wiki/Alp%C3%B6ge%27s_proof_of_the_Riemann_hypothesis"
       }
     ]
   },
@@ -7280,12 +7289,21 @@ const ARTICLES_BODY_2026_11 = {
       "提案の核心は、perplexity などの測定値に基づく「共通の上限（common limits）」です。AI の振る舞いを理解・監視する能力が具体的なマイルストーン（たとえば chain-of-thought モニターの後継の開発）に到達するまで、開発者がその上限を超えないことに合意する、というものです。あわせて、モデルが初めて使われる時点までに評価とレッドチームによる安全性の検証を行うための共通の規範や、透明性の基準も求めています。",
       "Pachocki 氏は perplexity を共通指標とする際の課題も 4つ挙げています。開発者ごとに評価用データセットや訓練データの混合が異なるため、ラボ間での比較が難しいこと、perplexity 自体は関心のあるタスクに直接対応しないこと、chain-of-thought 推論のように perplexity を下げずに能力を大きく高める事前学習以外の進歩を捉えられないこと、そして下限（データの本質的なエントロピー）が未知であることです。",
       "社内の測定値を公開することについては、競合に自社の立ち位置をより明確に示すことになるとして慎重に検討したうえで、業界全体で安全対策を共有することの緊急性を優先したと説明しています。なお、この提案は業界への呼びかけであり、具体的な上限値や実施主体、強制力を示したものではありません。",
-      "Microsoft AIのMustafa Suleyman CEOは11月23日、OpenAIの呼びかけに応じる形で、同社の基盤モデルMAI-2 Baseの数値を公開した。OpenAIの評価データセットでのlog-perplexityは0.819で、GPT-5.6 Solの基盤モデルと同程度だとしている。両モデルが同じトークナイザーを使うため数値は直接比較できるとしつつ、OpenAIの評価データセットを使えたのは特別なケースだと述べ、トークナイザーが違う研究所同士ではbits-per-byteでの報告が必要になる可能性も指摘した。Microsoftは共通の上限そのものへの合意は表明していない。"
+      "Microsoft AIのMustafa Suleyman CEOは11月23日、OpenAIの呼びかけに応じる形で、同社の基盤モデルMAI-2 Baseの数値を公開した。OpenAIの評価データセットでのlog-perplexityは0.819で、GPT-5.6 Solの基盤モデルと同程度だとしている。両モデルが同じトークナイザーを使うため数値は直接比較できるとしつつ、OpenAIの評価データセットを使えたのは特別なケースだと述べ、トークナイザーが違う研究所同士ではbits-per-byteでの報告が必要になる可能性も指摘した。Microsoftは共通の上限そのものへの合意は表明していない。",
+      "【追記 2026-11-26】11月24日、評価団体の METR が、OpenAI の公開した perplexity の数値を分析した記事を発表した。GPT-3.5 以降の13モデルについて、2022年から2026年初めまでは対数 perplexity が年あたり約0.022ずつ下がっていたのに対し、2026年2月以降は年あたり約0.156と、約7.1倍の速さで下がっているとした。このペースが続けば、GPT-3.5 から GPT-4.1 までの低下幅（約3年かかった）を約6か月半でたどる計算になる。METR は、公開された数値が過学習で実態より大きく見えている可能性、ベンチマークこそが能力の物差しだという見方、perplexity がベンチマークより深い能力を映すという見方の3つを挙げ、組織としての結論は出していないとした。あわせて、OpenAI の論文の図に示された数値では、未公開の内部モデルが対数 perplexity 約0.732、GPT-6.2 Astra が約0.761、GPT-6 Astra が約0.783 とされている。"
     ],
     "primarySources": [
       {
         "title": "Perplexity and Intelligence（OpenAI ブログ）",
         "url": "https://openai.com/index/perplexity-and-intelligence/"
+      },
+      {
+        "title": "Interpreting a recent acceleration in pretraining loss（METR ブログ）",
+        "url": "https://metr.org/blog/2026-11-24-interpreting-a-recent-acceleration-in-pretraining-loss/"
+      },
+      {
+        "title": "OpenAI Perplexity Metric: GPT Log-Loss Curve (Nov 2026)（explainx.ai、二次報道）",
+        "url": "https://explainx.ai/blog/openai-pachocki-perplexity-intelligence-pacing-safety-november-2026"
       }
     ]
   },
@@ -8191,13 +8209,18 @@ const ARTICLES_BODY_2026_11 = {
       "OpenAIは11月23日、公開の数学リポジトリopenai/mathに「VP and VNP are different」と題する30ページの論文を追加した。1979年にLeslie Valiantが提起した予想で、代数版のP対NP問題と呼ばれる。論文はすべての体でVPとVNPが異なると主張し、下限はexp(Ω((log n)^5/4))の形だとしている。結果は11月6日に得られたとリポジトリの変更履歴に記されている。Anthropicが同じ主張の論文を公開した約5時間後の追加で、両社とも人の数学者による検証はまだない。",
       "ただしLean形式化が機械的に確認しているのは、論文の主張より狭い範囲だ。リポジトリの注記によれば、Leanは非一様な厳密算術回路のモデルでの分離を示しており、境界回路に対する強い下限は論文側の主張で、Leanが確認した部分ではない。OpenAIは収録物を「磨かれた学術論文ではなく生の研究データ」と位置づけ、功績や優先権の判断は数学コミュニティに完全に委ねるとしている。",
       "さらに11月24日、OpenAIは9本の原稿を2つの結果ファミリーとして追加した。ユークリッドテンソル幾何の7本はVP≠VNPの結果を包含するとしている。もう1つのファミリーは線形計画法の強多項式時間アルゴリズムで、スメールの第9問題への回答を主張し、有界な単純有理多面体について多項式ヒルシュ予想を反証するとしている。いずれも未検証の主張で、査読はまだない。",
-      "両社の公開は、AIモデルが未解決問題の証明を主張する流れの続きだ。Anthropicの論文は70ページと報じられている。P対NPそのものを解決するものではない点は両社とも明記している。検証はこれからで、証明が正しいかは未確定だ。"
+      "両社の公開は、AIモデルが未解決問題の証明を主張する流れの続きだ。Anthropicの論文は70ページと報じられている。P対NPそのものを解決するものではない点は両社とも明記している。検証はこれからで、証明が正しいかは未確定だ。",
+      "【追記 2026-11-26】11月24日に追加された9本のうち、ユークリッドテンソル幾何の7本には、行列積の指数がちょうど 9/4 であることを示す論文が含まれていた。n×n 行列の積には、形式的な算術回路で少なくとも n の 9/4 乗の半分の乗算・除算ゲートが必要だとし、上限はすでに知られていたため、指数は 9/4 で確定すると主張している。いずれも未検証の主張で、査読誌への掲載は確認できない。"
     ],
     "primarySources": [
       {
         "site": "OpenAI",
         "title": "openai/math",
         "url": "https://github.com/openai/math"
+      },
+      {
+        "title": "The matrix multiplication exponent is nine fourths（openai/math、CONTENTS.md）",
+        "url": "https://github.com/openai/math/blob/main/CONTENTS.md"
       }
     ]
   },
@@ -8497,6 +8520,104 @@ const ARTICLES_BODY_2026_11 = {
       {
         "title": "Anthropic's appetite for compute is pushing xAI toward a rent-over-build strategy",
         "url": "https://the-decoder.com/anthropics-appetite-for-compute-is-pushing-xai-toward-a-rent-over-build-strategy/"
+      }
+    ]
+  },
+  "google-deepmind-antigravity-mass-spec-skills-2026": {
+    "body": [
+      "Google **DeepMind** は11月25日、**Google Antigravity** 向けの「**Mass Spec Skills**」を公開した。**Gemini** の化学推論と、確立された質量分析ツールを組み合わせた領域特化のスキル群で、タンデム質量スペクトル（MS/MS）から分子構造を提案し、化学的な証拠を整理して示す。Antigravity アプリで Mass Spec プラグインをインストールすると使える。",
+      "背景にあるのは、質量分析の未注釈の信号の多さである。血液や土壌、植物組織の1滴の抽出物には数万の分子シグナルが含まれ、質量分析計は荷電分子の質量と、断片化したフラグメントを測る。しかし測定値そのものは分子構造を直接示さない。参照スペクトルとの照合では、測定スペクトルの平均で約5%、ヒト試料でも約10%しか注釈が付かず、残りは質量分析の「暗黒物質」と呼ばれてきた。多くの分子は公開データベースに載っているのにスペクトルが記録されておらず、構造を断片イオンから直接推論する必要がある。",
+      "エージェントは4段階で進む。スペクトルを整え、MoNA などの参照ライブラリを調べ、SIRIUS で分子式を推定し、PubChem から候補構造を取り出して、シミュレーションした断片と照らし合わせて順位付けする。利用者は平易な言葉で課題と装置の許容誤差を述べるだけで、エージェントがスキルを選び、つなげる。各段階は単独でも実行できる。作例では、未注釈の MS/MS スペクトルから分子式 C20H21ClN6O を特定し、PubChem の845種の異性体を評価して正しい分子を絞り込んだ。19本の前処理済みピークのうち14本、断片強度の合計の97.7%を説明する証拠をまとめた。",
+      "評価では、Enamine REAL コレクションの MoNA にある100種の化合物を使い、軽量モデルの **Gemini 3.8 Flash** とフロンティアモデルの **Gemini 4 Argon**、**Gemini 4 Carbon** の3モデルを比べた。各3回の試行で、インターネットもスキルもない状態では3モデルとも正解率は4%未満だった。インターネットだけを与えると、フロンティアモデルでもスペクトルの4分の1から3分の1を見逃し、軽量モデルは4分の3超を見逃した。Mass Spec Skills を加えると、3モデルとも約97%の試行で正確な分子を特定し、検証できた。生成トークンも減り、Flash で約4分の1、Argon で約半分、Carbon で約2割減った。いずれの数値も DeepMind 自身の評価で、独立した検証は確認できていない。",
+      "限界もある。鏡像異性体や一部の近い異性体など、LC-MS/MS スペクトルだけでは答えられない問いもある。区別には保持時間やイオン移動度、NMR などの別の測定が必要になる。データベースに存在しない真に新しい分子は、構造の取得も確認もできない。ただし分子式の予測やピークの割り当て、詳細な注釈表といった、化学者が検討を始めるための材料は得られる。DeepMind は、1つひとつのスペクトルから代謝物全体の研究へと自動化を広げれば、ヒトの健康や環境科学、天然物創薬の分野で、未知の小分子をより多く特定できるとしている。"
+    ],
+    "primarySources": [
+      {
+        "title": "Identifying Molecules with Mass Spec Skills for Antigravity（Google DeepMind ブログ）",
+        "url": "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/"
+      }
+    ]
+  },
+  "openai-private-inference-2026": {
+    "body": [
+      "**OpenAI** は11月25日、「**Private Inference**」の試験を少数の顧客と始めた。Sam Altman CEO が X で発表したと、The Decoder が報じた。企業のプロンプトとモデルの応答を、処理のあいだも OpenAI 自身が見ることのできない形で守る仕組みで、機密コンピューティング（confidential computing）と検証可能な厳格な管理を組み合わせる。Private Inference は、9月29日の DevDay で発表した企業向けのプライバシー施策「Private Intelligence」の一部である。",
+      "OpenAI の Private Intelligence のページによれば、Private Inference は現在アルファ版で、API プレビューとして提供される。プロンプトと応答を、モデルが処理するあいだ保護するよう設計されている。同じ施策には、対象の API ワークフローでプロンプトと応答を処理後に保持しない Zero Data Retention（ZDR）と、顧客データを保持せずに不正利用を点検する Private Safety Processing（PSP）がある。ZDR と PSP は9月22日ごろから段階的に提供が始まっていた。",
+      "当面の対象は企業の顧客で、関心のある企業は OpenAI のフォームから登録する。OpenAI は、対応するモデルや料金、一般提供の時期をまだ公表していない。Private Inference を担当する Shekar 氏は X で、この試験を「すべての人に向けたプライベートな知能への第一歩」と述べ、提供を広げるための機密コンピューティングの計算資源を確保しているとした。",
+      "文脈として、**Anthropic** も11月23日に、企業の入出力を Anthropic もクラウド事業者も保持しない Enterprise Frontier Safeguards（EFS）の公開ベータを始めている（[こちらの記事](?a=anthropic-enterprise-frontier-safeguards-beta-2026)）。両社とも、機密性の高い業務への導入を広げるために、データへのアクセスを技術的に遮断する方向に進んでいる。ただし Private Inference の検証可能性の具体的な仕組みや、どのモデルが対象になるかは、OpenAI の公開資料からはまだ分からない。"
+    ],
+    "primarySources": [
+      {
+        "title": "Private Intelligence | Frontier intelligence. Private by design.（OpenAI 公式ページ）",
+        "url": "https://openai.com/business/private-intelligence/"
+      },
+      {
+        "title": "OpenAI wants companies to trust it with sensitive work by promising not to look at their data（The Decoder、二次報道）",
+        "url": "https://the-decoder.com/openai-wants-companies-to-trust-it-with-sensitive-work-by-promising-not-to-look-at-their-data/"
+      },
+      {
+        "title": "Offering Zero Data Retention for frontier models（OpenAI ブログ）",
+        "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models/"
+      },
+      {
+        "title": "OpenAI Launches Private Intelligence, a Set of Data Protections for Businesses Using Its Top Models（advanceintelligence.ai、二次報道）",
+        "url": "https://www.advanceintelligence.ai/story/2026-10-30-09"
+      },
+      {
+        "title": "OpenAI Tests Private Inference With API Customers（wisevoter、二次報道）",
+        "url": "https://wisevoter.com/world/2026/11/25/openai-tests-private-inference-api-customers"
+      }
+    ]
+  },
+  "openai-chat-work-merge-2026": {
+    "body": [
+      "**OpenAI** は11月24日、**ChatGPT** の Work タブをメインの Chat に統合する展開を始めた。製品責任者の Thibault Sottiaux 氏が X で認めたと、Crypto Briefing が報じた。まず対象になるのは Pro の一部の利用者で、OpenAI は2027年1月までに分かりやすい利用体験にしたいとしている。",
+      "12月からの変更は、OpenAI のヘルプセンターに書かれている。12月から Plus・Pro・Business の利用枠は ChatGPT と **Codex** で共有され、トークン単位で数えられる。使うモデルや課題によって消費量は変わり、高性能なモデルや複雑な課題ほど多く使う。Instant chat（高速応答モード）は利用枠から引かれない。残りの利用量とリセット時刻は「設定」→「利用状況」で確認でき、枠を使い切ったときはリセットを待つか、プランを上げるか、クレジットを買う。OpenAI は、ほとんどの利用者はこれまでより頻繁にリセットを待つ必要はないと見込んでいる。",
+      "背景にあるのは、Work のエージェント機能をメインの Chat に取り込む流れである。ChatGPT Work は2026年7月に登場し、複雑な多段階の課題を担うエージェントとして、GPT-5.6 などのモデルで動いてきた。利用枠をめぐっては、OpenAI が Pro の利用枠の引き下げをいったん計画して利用者の反発を受けて撤回し、10月29〜30日には Pro と Business Premium の利用枠を2倍にしていた。ヘルプセンターは、一部の利用者には12月より前に変更が見える場合があるとも書いている。",
+      "注意点もある。12月の開始日やプランごとの利用枠の大きさは、OpenAI はまだ公表していない。Chat と Codex を両方よく使う利用者は、1つの枠をやりくりすることになる。長い Codex の作業が、後で Work のような課題に使える分を減らすこともある。GPT-6.2 Sol の Chat タブへの展開や GPT-5.6 の12月23日の廃止については[こちらの記事](?a=openai-gpt-6-2-astra-sol-launch-2026)を参照。"
+    ],
+    "primarySources": [
+      {
+        "title": "Understanding ChatGPT and Codex usage limits（OpenAI Help Center）",
+        "url": "https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits"
+      },
+      {
+        "title": "OpenAI merges ChatGPT Chat and Work tabs, adds shared usage limits（Crypto Briefing、二次報道）",
+        "url": "https://cryptobriefing.com/openai-merges-chatgpt-chat-work-usage-limits/"
+      }
+    ]
+  },
+  "google-cogentic-six-math-papers-2026": {
+    "body": [
+      "Google Research は11月25日、数学発見のためのマルチエージェント「Cogentic」が生成した論文6本を、GitHub リポジトリ google-research/google-research の cogentic_research_papers/ に追加した。計274ページ。各論文には、最初のプロンプト以外に人間の関与なしに Cogentic が証明と形式化を完全に得たとの注記がある。Cogentic は **Gemini 4** を基盤モデルとするエージェント枠組みで、2026年9月の arXiv 論文で発表された。",
+      "6本の主張は次の通り。無条件の整数因数分解アルゴリズム（時間 L_N[1/3, 105]）と、決定論的・準指数時間の因数分解（L_N[3/4, o(1)]）。固定標数の離散対数では、準多項式をわずかに下回る時間での解法。2人ゲームのナッシュ均衡では、MaximinKiteNE という多項式時間アルゴリズムで 1/5 近似を達成し、従来の 1/3+δ の壁を破った。log-rank 予想では、Lovett の O(√r log r) を上回る O(r^(1/2−5×10⁻⁶)) の bound を示した。辺再構成予想では、Harary が1964年に提起した予想を、辺数が頂点数の1000倍以上のグラフについて解決した。なお因数分解アルゴリズムは無条件のもので、未証明の数論的仮説を使っていない。",
+      "留保もある。6本は GitHub に PDF として公開されたもので、査読誌への掲載は確認できない。各論文には、Mathlib のみを用いた Lean 4 による形式化が完了し、後日の companion submission で公開すると記されているが、現時点でリポジトリに Lean ファイルはなく、形式化の内容は未公開である。証明が正しいかどうかの検証はこれからで、数学コミュニティによる確認を待つ段階だ。",
+      "文脈として、Cogentic は2026年9月の arXiv 論文で初めて発表された枠組みで、10月30日から11月23日にかけても同ディレクトリに4本の論文が追加されていた。**OpenAI** の数学論文（[こちらの記事](?a=openai-math-vp-vnp-smale-2026)）や **Anthropic** の VP≠VNP 証明と並び、AI による数学研究の発表が続いている。"
+    ],
+    "primarySources": [
+      {
+        "site": "GitHub",
+        "title": "Cogentic Research Papers（google-research/google-research）",
+        "url": "https://github.com/google-research/google-research/tree/master/cogentic_research_papers"
+      },
+      {
+        "site": "arXiv",
+        "title": "Cogentic（arXiv preprint arXiv:2609.40324）",
+        "url": "https://arxiv.org/abs/2609.40324"
+      }
+    ]
+  },
+  "sakana-namazu-small-2026": {
+    "body": [
+      "**Sakana AI** は11月25日、300億パラメータの大規模言語モデル「Sakana Namazu Small」を発表した。**NVIDIA** のオープンモデル Nemotron 3 Nano のベースモデル（事前学習モデル）に対し、継続事前学習から事後学習までを自社で行った。思考モデル（推論モデル）として開発されており、日常的な対話や Web 検索を用いた調査、長い文書の読解といった日常的な業務を得意とするとしている。",
+      "性能は自社評価で、25種類のベンチマークの平均スコアで、同規模の Nemotron 3 Nano だけでなく、約4倍の規模を持つ Nemotron 3 Super（120B）も上回った。Web 検索を用いた調査では BrowseComp が 73.5 で、Super の 36.1 を大きく上回った。長文理解では LLM-jp LongBench が 86.0 で、Super の 60.0 を上回った。評価は推論モード、コンテキスト長 262,144 トークンで行われた。",
+      "一方で、Web 検索などの外部情報に頼らず、モデルの内部知識のみで答えるタスクでは性能が大きく伸びていない。SimpleQA Verified は 6.8 で、Super の 18.1 を下回った。知識に関する能力の改善は今後の課題としている。",
+      "オンプレミスでの提供を予定しており、詳細は2026年12月前半に知らせるとしている。発表ページでは、API やダウンロード、価格、ライセンスには触れられていない。本モデルは、経済産業省と NEDO の GENIAC プロジェクトの支援を受けた研究開発の成果を活用している。"
+    ],
+    "primarySources": [
+      {
+        "site": "Sakana AI",
+        "title": "Sakana Namazu Small",
+        "url": "https://sakana.ai/namazu-small/"
       }
     ]
   }

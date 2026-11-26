@@ -16950,5 +16950,97 @@ export const ARTICLES_META = [
       "AI インフラ",
       "Claude"
     ]
+  },
+  {
+    "id": "google-deepmind-antigravity-mass-spec-skills-2026",
+    "type": "news",
+    "category": "product",
+    "title": "DeepMind、Antigravity に「Mass Spec Skills」を追加 — 質量スペクトルから分子構造を推定、3モデルとも約97%で特定",
+    "excerpt": "Google DeepMind が Antigravity 向けの「Mass Spec Skills」を公開した。Gemini の化学推論と確立された質量分析ツールを組み合わせ、タンデム質量スペクトルから分子構造を提案する。100種の化合物での評価では、Gemini 3.8 Flash、Gemini 4 Argon、Gemini 4 Carbon の3モデルとも約97%の試行で正しい分子を特定した。",
+    "date": "2026-11-26",
+    "newsDate": "2026-11-25",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "DeepMind",
+      "Gemini",
+      "Antigravity",
+      "研究"
+    ]
+  },
+  {
+    "id": "openai-private-inference-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI、Private Inference の試験を開始 — 機密コンピューティングで業務データを OpenAI 自身からも遮断",
+    "excerpt": "OpenAI が「Private Inference」の試験を少数の顧客と始めた。機密コンピューティングと検証可能な管理で、プロンプトと応答を処理中も保護する。9月29日の DevDay で発表した Private Intelligence の一部で、Zero Data Retention と並ぶ柱になる。",
+    "date": "2026-11-26",
+    "newsDate": "2026-11-25",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "ChatGPT",
+      "API",
+      "プライバシー",
+      "エンタープライズ"
+    ]
+  },
+  {
+    "id": "openai-chat-work-merge-2026",
+    "type": "news",
+    "category": "product",
+    "title": "OpenAI、ChatGPT の Chat と Work を統合へ — 12月から ChatGPT と Codex で利用枠を共有、Pro の一部で展開開始",
+    "excerpt": "OpenAI が ChatGPT の Work タブをメインの Chat に統合し始めた。12月からは Plus・Pro・Business で ChatGPT と Codex の利用枠を1つにまとめ、トークン単位で数える。展開は11月24日に Pro の一部の利用者から始まった。",
+    "date": "2026-11-26",
+    "newsDate": "2026-11-24",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "OpenAI",
+      "ChatGPT",
+      "ChatGPT Work",
+      "Codex",
+      "料金"
+    ]
+  },
+  {
+    "id": "google-cogentic-six-math-papers-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Google の Cogentic、1日で数学論文6本を公開 — Gemini 4 ベースのマルチエージェントが因数分解などに挑む、Lean 形式化は後日",
+    "excerpt": "Google Research が、数学発見のためのマルチエージェント「Cogentic」が生成した論文6本を GitHub に追加した。無条件の因数分解アルゴリズムや log-rank 予想の平方根バリア突破などを含む。いずれも査読前のプレプリントで、Lean 形式化は後日公開とされている。",
+    "date": "2026-11-26",
+    "newsDate": "2026-11-25",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "数学",
+      "研究"
+    ]
+  },
+  {
+    "id": "sakana-namazu-small-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Sakana AI、「Namazu Small」を発表 — 30B 推論モデルが 120B の Nemotron 3 Super を 25ベンチ平均で上回る、自社評価",
+    "excerpt": "Sakana AI が 300億パラメータの推論モデル「Namazu Small」を発表した。NVIDIA Nemotron 3 Nano のベースモデルに対し、継続事前学習と事後学習を自社で行い、25ベンチマークの平均で 120B の Nemotron 3 Super を上回ったとしている。オンプレミス提供の詳細は12月前半に発表予定。",
+    "date": "2026-11-26",
+    "newsDate": "2026-11-25",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "Sakana AI",
+      "NVIDIA",
+      "推論"
+    ]
   }
 ];

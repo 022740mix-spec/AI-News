@@ -96,6 +96,46 @@
     <summary>AnthropicがxAIの計算資源を月額約31億ドルで借りる契約を結び、xAI最大の顧客になったとNYTが報じた。Googleも月額約8億ドルで借りている。xAIは自社モデルの開発を縮小し、計算資源の貸し出しへ軸足を移している。</summary>
   </entry>
   <entry>
+    <title>DeepMind、Antigravity に「Mass Spec Skills」を追加 — 質量スペクトルから分子構造を推定、3モデルとも約97%で特定</title>
+    <link rel="alternate" type="text/html" href="?a=google-deepmind-antigravity-mass-spec-skills-2026"/>
+    <id>tag:ai-tool-news.jp,2026:google-deepmind-antigravity-mass-spec-skills-2026</id>
+    <published>2026-11-26T15:00:00Z</published>
+    <updated>2026-11-26T15:00:00Z</updated>
+    <summary>Google DeepMind が Antigravity 向けの「Mass Spec Skills」を公開した。Gemini の化学推論と確立された質量分析ツールを組み合わせ、タンデム質量スペクトルから分子構造を提案する。100種の化合物での評価では、Gemini 3.8 Flash、Gemini 4 Argon、Gemini 4 Carbon の3モデルとも約97%の試行で正しい分子を特定した。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI、Private Inference の試験を開始 — 機密コンピューティングで業務データを OpenAI 自身からも遮断</title>
+    <link rel="alternate" type="text/html" href="?a=openai-private-inference-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-private-inference-2026</id>
+    <published>2026-11-26T15:00:00Z</published>
+    <updated>2026-11-26T15:00:00Z</updated>
+    <summary>OpenAI が「Private Inference」の試験を少数の顧客と始めた。機密コンピューティングと検証可能な管理で、プロンプトと応答を処理中も保護する。9月29日の DevDay で発表した Private Intelligence の一部で、Zero Data Retention と並ぶ柱になる。</summary>
+  </entry>
+  <entry>
+    <title>OpenAI、ChatGPT の Chat と Work を統合へ — 12月から ChatGPT と Codex で利用枠を共有、Pro の一部で展開開始</title>
+    <link rel="alternate" type="text/html" href="?a=openai-chat-work-merge-2026"/>
+    <id>tag:ai-tool-news.jp,2026:openai-chat-work-merge-2026</id>
+    <published>2026-11-26T15:00:00Z</published>
+    <updated>2026-11-26T15:00:00Z</updated>
+    <summary>OpenAI が ChatGPT の Work タブをメインの Chat に統合し始めた。12月からは Plus・Pro・Business で ChatGPT と Codex の利用枠を1つにまとめ、トークン単位で数える。展開は11月24日に Pro の一部の利用者から始まった。</summary>
+  </entry>
+  <entry>
+    <title>Google の Cogentic、1日で数学論文6本を公開 — Gemini 4 ベースのマルチエージェントが因数分解などに挑む、Lean 形式化は後日</title>
+    <link rel="alternate" type="text/html" href="?a=google-cogentic-six-math-papers-2026"/>
+    <id>tag:ai-tool-news.jp,2026:google-cogentic-six-math-papers-2026</id>
+    <published>2026-11-26T15:00:00Z</published>
+    <updated>2026-11-26T15:00:00Z</updated>
+    <summary>Google Research が、数学発見のためのマルチエージェント「Cogentic」が生成した論文6本を GitHub に追加した。無条件の因数分解アルゴリズムや log-rank 予想の平方根バリア突破などを含む。いずれも査読前のプレプリントで、Lean 形式化は後日公開とされている。</summary>
+  </entry>
+  <entry>
+    <title>Sakana AI、「Namazu Small」を発表 — 30B 推論モデルが 120B の Nemotron 3 Super を 25ベンチ平均で上回る、自社評価</title>
+    <link rel="alternate" type="text/html" href="?a=sakana-namazu-small-2026"/>
+    <id>tag:ai-tool-news.jp,2026:sakana-namazu-small-2026</id>
+    <published>2026-11-26T15:00:00Z</published>
+    <updated>2026-11-26T15:00:00Z</updated>
+    <summary>Sakana AI が 300億パラメータの推論モデル「Namazu Small」を発表した。NVIDIA Nemotron 3 Nano のベースモデルに対し、継続事前学習と事後学習を自社で行い、25ベンチマークの平均で 120B の Nemotron 3 Super を上回ったとしている。オンプレミス提供の詳細は12月前半に発表予定。</summary>
+  </entry>
+  <entry>
     <title>Anthropic、MCPサーバーがスキルを配信できる「Skills over MCP」を公開ベータに — TasksとElicitationはGAへ</title>
     <link rel="alternate" type="text/html" href="?a=anthropic-skills-over-mcp-2026"/>
     <id>tag:ai-tool-news.jp,2026:anthropic-skills-over-mcp-2026</id>
