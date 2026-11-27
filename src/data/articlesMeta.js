@@ -17277,5 +17277,124 @@ export const ARTICLES_META = [
       "セキュリティ",
       "エージェント"
     ]
+  },
+  {
+    "id": "deepl-aure-v2-2026",
+    "type": "news",
+    "category": "model",
+    "title": "DeepL、音声翻訳モデル「Aure v2」を公開 — 遅延を50%削減、音声から音声へ直接翻訳",
+    "excerpt": "DeepL が音声翻訳モデル Aure v2 を公開した。遅延の中央値を先代の半分にし、音声から音声へ直接翻訳する。6言語対応で、英日では Google より誤りが 32% 少ない（自社計測）。災害時の無償提供プログラムも始めた。",
+    "date": "2026-11-27",
+    "newsDate": "2026-11-26",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "DeepL",
+      "音声",
+      "翻訳"
+    ]
+  },
+  {
+    "id": "anthropic-messages-api-rust-migration-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Anthropic、Messages API を Python から Rust へ移行 — CPU 約70%減、初回トークンまで約20%高速に",
+    "excerpt": "Anthropic が Messages API の Python から Rust への移行を解説した。CPU は約 70% 減、初回トークンまで約 20% 高速に。難しかったのは生成ではなく検証で、本番トラフィック自体を基準にエージェントの 3 つのループで差分を潰した。",
+    "date": "2026-11-27",
+    "newsDate": "2026-11-25",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "Claude",
+      "API",
+      "Rust"
+    ]
+  },
+  {
+    "id": "zhihu-deepseek-content-partnership-2026",
+    "type": "news",
+    "category": "product",
+    "title": "知乎、DeepSeek とコンテンツ提携 — 10億件超の Q&A を検索開放、出資も間接取得",
+    "excerpt": "知乎が DeepSeek とコンテンツ提携を結び、10 億件超の Q&A や記事の検索機能を提供する。引用時は出典と著者を明示する。11月23日には知乎がファンド経由で DeepSeek に間接出資したことも明らかになっている。",
+    "date": "2026-11-27",
+    "newsDate": "2026-11-27",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "DeepSeek",
+      "Zhihu",
+      "中国"
+    ]
+  },
+  {
+    "id": "moonshot-kimi-for-science-program-2026",
+    "type": "news",
+    "category": "product",
+    "title": "月之暗面、「Kimi for Science」科研支援プログラムを開始 — 最大15万元分の API 额度を提供",
+    "excerpt": "月之暗面が科研支援プログラム「Kimi for Science」の申請受付を始めた。自然科学・工学などの研究者を対象に、最大 15 万元分（約 70 億トークン相当）の Kimi API 额度と技術支援を提供する。",
+    "date": "2026-11-27",
+    "newsDate": "2026-11-26",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "2分",
+    "tags": [
+      "Moonshot AI",
+      "Kimi",
+      "研究"
+    ]
+  },
+  {
+    "id": "kimi-code-2-8-0-2026",
+    "type": "news",
+    "category": "cli",
+    "title": "Kimi Code 2.8.0 を公開 — プロンプト予測を改善、読み取り専用 Bash を自動承認",
+    "excerpt": "Kimi Code 2.8.0 を公開した。プロンプト予測の改善、読み取り専用 Bash の自動承認、実験的 fork パラメータの削除など。翌日には 2.8.1 の不具合修正も出ている。",
+    "date": "2026-11-27",
+    "newsDate": "2026-11-25",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "2分",
+    "tags": [
+      "Kimi Code",
+      "Moonshot AI",
+      "CLI"
+    ]
+  },
+  {
+    "id": "perplexity-pro-computer-weekly-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Perplexity Pro、エージェント「Computer」の週間利用枠を追加 — Light 設定で毎週利用可能に",
+    "excerpt": "Perplexity Pro にエージェント Computer の週間利用枠が付いた。これまで Pro には Computer の利用枠はなかった。週は最初のタスクから始まり 7 日後にリセットされ、未使用分は繰り越されない。枠だけでは Light 設定で動く。",
+    "date": "2026-11-27",
+    "newsDate": "2026-11-25",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "2分",
+    "tags": [
+      "Perplexity",
+      "エージェント",
+      "料金"
+    ]
+  },
+  {
+    "id": "github-copilot-code-review-billing-2026",
+    "type": "news",
+    "category": "product",
+    "title": "GitHub、Copilot code review の課金を12月30日から組織既定に — 未設定の組織は対応が必要",
+    "excerpt": "GitHub が Copilot code review の課金方法を定めていない組織について、12月30日から組織への課金を既定にすると発表した。対象は Copilot Business と Copilot Enterprise。変えたくない場合は 12月30日までに Member を選ぶ必要がある。",
+    "date": "2026-11-27",
+    "newsDate": "2026-11-25",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "2分",
+    "tags": [
+      "GitHub Copilot",
+      "料金"
+    ]
   }
 ];

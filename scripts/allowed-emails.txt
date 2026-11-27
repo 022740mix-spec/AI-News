@@ -18,3 +18,8 @@ nrwise@proton.me
 # Google 公式ブログが案内する機能の転送先アドレス。Tasks の使い方の説明に必要。
 # Google の公開サービス用アドレスであり、個人の連絡先ではない。
 gemini@google.com
+
+# Kimi for Science 科研支援プログラムの公式問い合わせ先（moonshot-kimi-for-science-program-2026）
+# 月之暗面のプログラム公式ページに掲載されている公開の連絡先。応募の問い合わせ方法の説明に必要。
+# 企業の公開窓口アドレスであり、個人の連絡先ではない。
+ai4science@moonshot.ai
