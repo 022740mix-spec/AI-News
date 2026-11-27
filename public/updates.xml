@@ -5,8 +5,24 @@
   <link rel="alternate" type="text/html" href="./?view=updates"/>
   <link rel="self" type="application/atom+xml" href="./updates.xml"/>
   <id>tag:ai-tool-news.jp,2026:updates</id>
-  <updated>2026-11-27T15:00:00Z</updated>
+  <updated>2026-11-28T15:00:00Z</updated>
   <generator>ai-news-generate-updates</generator>
+  <entry>
+    <title>【追記】Anthropic の Claude Duet — 朝のブリーフを届け、送信や支払いの前に承認を求める「向こうから来る」エージェント。米国の Pro・Max 向けウェイトリスト</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-claude-duet-research-preview-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:anthropic-claude-duet-research-preview-2026:2026-11-28</id>
+    <updated>2026-11-28T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>Anthropic は11月25日（米国太平洋時間）、Claude Duet の研究プレビューを米国以外へ初めて広げ、インド、インドネシア、ブラジル、日本で利用できるようにした</summary>
+  </entry>
+  <entry>
+    <title>【追記】llama.cpp v1.1.0 を公開 — Inkling 2 など新モデル群と音声・TTS 対応、旧バッチ API を非推奨に</title>
+    <link rel="alternate" type="text/html" href="?a=llama-cpp-1-1-0-2026#article-history"/>
+    <id>tag:ai-tool-news.jp,2026:update:llama-cpp-1-1-0-2026:2026-11-28</id>
+    <updated>2026-11-28T15:00:00Z</updated>
+    <category term="addendum" label="追記"/>
+    <summary>llama.cpp の開発チーム ggml-org は11月26日、AMD ハードウェア向けの公開ベンチマークダッシュボードを Hugging Face 上に開設した</summary>
+  </entry>
   <entry>
     <title>【追記】Google が Gemini 4 Neon を発表 — 4つ目の Gemini 4 は Carbon 派生で「深さと効率の両立」。AA Index 61 で全体3位、コーディングエージェント指標は首位。入力 $3・出力 $15</title>
     <link rel="alternate" type="text/html" href="?a=gemini-4-neon-launch-2026#article-history"/>
@@ -1190,21 +1206,5 @@
     <updated>2026-09-20T15:00:00Z</updated>
     <category term="addendum" label="追記"/>
     <summary>SpaceX による Anysphere 買収の完了を反映しました</summary>
-  </entry>
-  <entry>
-    <title>【追記】Cursor レビュー — Cursor 3.x の Agents Window + Composer 2.5 + Microsoft Teams 統合 + Bugbot usage-based 対応版</title>
-    <link rel="alternate" type="text/html" href="?a=cursor-editor#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:cursor-editor:2026-09-20</id>
-    <updated>2026-09-20T15:00:00Z</updated>
-    <category term="addendum" label="追記"/>
-    <summary>SpaceX による Anysphere 買収の完了を反映しました</summary>
-  </entry>
-  <entry>
-    <title>【追記】Gemini CLI レビュー — Google の OSS CLI、Gemini 3.5 Flash 対応。Pro 世代は GA 遅延が続く</title>
-    <link rel="alternate" type="text/html" href="?a=gemini-cli#article-history"/>
-    <id>tag:ai-tool-news.jp,2026:update:gemini-cli:2026-09-20</id>
-    <updated>2026-09-20T15:00:00Z</updated>
-    <category term="addendum" label="追記"/>
-    <summary>本レビューが、Flash 系の2世代ぶんの更新（3.8 Flash まで）に触れていなかったため、該当箇所に注記を追加しました</summary>
   </entry>
 </feed>

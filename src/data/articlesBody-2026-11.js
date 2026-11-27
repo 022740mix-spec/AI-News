@@ -8689,13 +8689,19 @@ const ARTICLES_BODY_2026_11 = {
       "ローカル推論の基盤ツール **llama.cpp** が11月26日、バージョン付きリリース **v1.1.0** を公開した。llama.cpp は通常、夜間ビルド（bXXXX）で運用されており、バージョン付きのリリースは v1.0.0 以来の節目となる。",
       "新規対応モデルは**Inkling 2** ファミリー（base／Mini／DSpark）、**Domyn Edge 4B**、**Zaya1 8B**、**RAON-1-mini-preview**（30B-A4B MoE）、**Hy4 flash**（220B、アクティブ 12B）、**MiniMax-M3.1** など。音声・TTS 系の対応も大幅に広がり、Kokoro、Zonos3-Mini、VoxCPM2、MiniMax-Music3、YuE2、Fish S2、Higgs v3／VibeVoice-ASR、Kyutai Hibiki によるリアルタイム双方向音声などが加わった。",
       "API には破壊的な変更に近いものがある。従来の `llama_batch` API は非推奨となり、後継の `llama_batch_ext` と `llama_process` への移行が求められる。DFlash の speculative decoding は draft-dflash／draft-dflash2／draft-dspark／draft-lilicorr に分離された。`llama-server` では OpenAI 互換の named `tool_choice` に対応し、スロットスケジューリングも刷新された。",
-      "ウェブ UI も大きく変わった。Llama Chat として刷新され、SvelteKit 3 への移行で初回読み込みの JavaScript が 63% 削減された。音声メッセージとディクテーション、エージェントの応答をまとめて表示する Agent Trace が加わり、llama-server とは別に `npx @ggml-org/llama-chat` で動かせるようになった。あわせて ggml が v1.1.1 に更新された。"
+      "ウェブ UI も大きく変わった。Llama Chat として刷新され、SvelteKit 3 への移行で初回読み込みの JavaScript が 63% 削減された。音声メッセージとディクテーション、エージェントの応答をまとめて表示する Agent Trace が加わり、llama-server とは別に `npx @ggml-org/llama-chat` で動かせるようになった。あわせて ggml が v1.1.1 に更新された。",
+      "【追記 2026-11-28】llama.cpp の開発チーム ggml-org は11月26日、AMD ハードウェア向けの公開ベンチマークダッシュボードを Hugging Face 上に開設した。対象はサーバー機の Radeon AI Pro R9700S と、Ryzen AI MAX APU 内蔵の Radeon 8060S の2つで、毎週 llama-bench で計測する。測定項目は 512トークンのプロンプト処理速度（PP512）と 128トークンの生成速度（TG128）で、Flash Attention のオン・オフそれぞれで 10回ずつ繰り返して平均を取る。対象モデルは Qwen、Gemma、gpt-oss、LFM、Inkling 2 Mini など 12モデルで、最大 12種の量子化形式を測る。生データは Hugging Face の公開バケット（ggml-org/install.sh-benches-data）に JSONL で置かれ、誰でも再計算できる。AMD がテスト用ハードウェアを提供している。"
     ],
     "primarySources": [
       {
         "site": "GitHub",
         "title": "Release v1.1.0 · ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v1.1.0"
+      },
+      {
+        "title": "llama.cpp AMD dashboard: R9700 and 8060S",
+        "site": "senn-tech",
+        "url": "https://senn-tech.com/en/blog/llamacpp-amd-benchmark-dashboard-r9700-strix-halo"
       }
     ]
   },
@@ -9006,6 +9012,321 @@ const ARTICLES_BODY_2026_11 = {
         "site": "GitHub",
         "title": "Copilot code review billing will default to the organization（GitHub 公式 changelog）",
         "url": "https://github.blog/changelog/2025-11-25-copilot-code-review-billing-will-default-to-the-organization/"
+      }
+    ]
+  },
+  "oregon-virginia-sue-spacex-grok-deepfakes-2026": {
+    "body": [
+      "オレゴン州司法長官 Dan Rayfield 氏とバージニア州司法長官 Jay Jones 氏は11月23日、Grok の画像生成をめぐり SpaceX とその子会社をそれぞれ州裁判所に提訴した。オレゴン州は Multnomah County Circuit Court、バージニア州は Richmond Circuit Court に訴えた。Grok の性的画像をめぐる州による初の提訴である。訴えは主張の段階で、判決は出ていない。",
+      "被告は SpaceX Super Intelligence Corp.（旧 X.AI Corp.）、SpaceX Super Intelligence LLC、X Corp.、Space Exploration Technologies Corp. の4社である。SpaceX は 2026年2月に xAI を買収し、10月に AI 部門を SpaceX Super Intelligence に改称した。Elon Musk 氏は被告に含まれていない。",
+      "訴えの中心は、製品の安全性についての説明と実際の挙動の食い違いである。州側は、Grok と X を安全だと宣伝しながら、画像生成ツールが同意のない性的画像や児童性的虐待素材（CSAM）の生成・拡散を可能にし、業界標準の安全対策を講じていなかったと主張する。Grok の「spicy mode」は、ヌードや性的画像の作成を具体的に可能にする機能として訴状に挙げられている。",
+      "根拠として、Center for Countering Digital Harm（CCDH）の調査が引用された。2025年12月29日から2026年1月8日の10日間で、Grok は X 上に約300万枚の性的画像を作成・投稿し、そのうち約2万3,000枚が児童を描いたものとみられる、という推計である。この数値は原告側が引用する調査団体の推計で、裁判所の認定ではない。",
+      "求める救済は、差し止め、民事制裁金、不当利得の返還などである。バージニア州は故意の違反1件あたり最大 2,500ドルの民事制裁金と、1件あたり最大 1,000ドルの調査費用も求めている。オレゴン州は州の不正取引慣行法（Unlawful Trade Practices Act）に基づき、製品の特性の虚偽表示、既知の重大な欠陥の不開示、不公正な手法を主張している。SpaceX 側の公開の反論は、11月23日時点では確認されていない。なお、この提訴はオレゴン州司法長官が11月17日に立ち上げた「Keeping Kids Safe」イニシアチブの一環でもある。"
+    ],
+    "primarySources": [
+      {
+        "site": "Oregon Department of Justice",
+        "title": "Oregon Attorney General Rayfield and Virginia Attorney General Jay Jones Hold Grok Accountable for Failing to Block Child Exploitation",
+        "url": "https://www.doj.state.or.us/media-home/news-media-releases/ag-rayfield-takes-legal-action-against-grok-for-failing-to-block-child-exploitation/"
+      },
+      {
+        "site": "Counsel House",
+        "title": "Virginia and Oregon sue SpaceX, X and xAI over Grok sexualized deepfakes",
+        "url": "https://www.counselhouse.org/news/virginia-and-oregon-sue-spacex-x-and-xai-over-grok-sexualized-deepfakes"
+      }
+    ]
+  },
+  "state-ags-oppose-character-ai-chat-auction-2026": {
+    "body": [
+      "カリフォルニア州司法長官 Rob Bonta 氏は11月25日、42人の司法長官からなる超党派の連合が、破産手続き中の Character.AI によるプラットフォームとユーザーデータの売却計画に反対し、デラウェア州破産裁判所に異議を申し立てたと発表した。参加者はカリフォルニア州を含む41州とワシントンD.C.の司法長官である。売却の対象は、2,100万人超の米国アカウントのプライベートチャット履歴と IP アドレスなどの個人データで、うち210万人超が未成年として登録されている。競売は 2026年12月1日に予定されている。",
+      "州側が問題視するのは、売却に利用者の保護条件が付いていない点である。買収者は Character.AI のプライバシーポリシーを守る必要も、利用者の削除やオプトアウトの求めに応じる必要もなく、買ったデータを別の会社に渡したり、さらに売ったりすることも妨げられない。チャットには、AI キャラクターが子どもや成人を露骨な性的な会話に引き込んだものや、自傷、摂食障害、自殺念慮など内密な内容も含まれる。各チャットは利用者のプロフィールや IP アドレスなどのメタデータ、Character.AI がフラグを付けた利用者へのリスクスコアと結びついている。",
+      "唯一開示された入札者は Smirks and Pangs Acquisition LLC で、2026年11月13日にデラウェアで設立された会社である。翌11月14日にベース入札者に選ばれたが、親会社や投資家は開示されておらず、外国投資家がいる場合は名前を Character.AI にのみ共有する条件になっている。Character.AI はかつて消費者に「個人情報を販売しない」と約束しており、10月に Chapter 11（破産）を申請した。",
+      "州側の要求は、売却条件の却下、Smirks の lead bidder としての却下、35万ドルの break-up fee（他社に売却された場合に Smirks が受け取る）の否認である。最低限、子どものチャットと機密データを売却対象から外し、保護条件を付けるよう求めている。なお、Bonta 氏の引用文では連合を「45人の司法長官」としているが、見出しと本文は「42人の司法長官」としている。本記事では 42人を用いる。",
+      "背景には、Character.AI の事業モデルそのものへの疑義もある。州側は、同社のチャットボット事業が州の不公正・欺瞞的取引法に違反するように見えるとし、カリフォルニア州などでは 2027年1月1日から施行されるチャットボット安全法がさらに違反を生むと指摘している。12月1日の競売を控え、破産裁判所が売却条件をどう扱うかが次の焦点になる。"
+    ],
+    "primarySources": [
+      {
+        "site": "California Department of Justice",
+        "title": "Attorney General Bonta Opposes Asset Sale of Character.AI Amid Child Safety Concerns",
+        "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-opposes-asset-sale-characterai-amid-child-safety-concerns"
+      },
+      {
+        "site": "Oregon Department of Justice",
+        "title": "AG Rayfield Challenges Plan to Auction Off Character AI Users’ Private Chats, Including Kids’ Data, to the Highest Bidder",
+        "url": "https://www.doj.state.or.us/media-home/news-media-releases/ag-rayfield-asks-court-to-block-sale-of-private-character-ai-chats-including-kids-data/"
+      }
+    ]
+  },
+  "claude-artifacts-install-as-app-2026": {
+    "body": [
+      "Anthropic は11月24日、Claude の Artifact を Mac／Windows のデスクトップアプリとしてインストールできる「Install as app」をベータで開始した。Claude for Mac／Windows の 6.28899.0 以降が必要で、全プラン（Free を含む）に順次展開される。インストールしたアプリは独自のアイコンと独自のウィンドウを持ち、Claude の中で開くのではなく、ほかのアプリと同じように開ける。",
+      "インストールしたアプリは、通知の送信やメニューバー／システムトレイへの常駐ができる。Claude とコネクタも使え、元の Artifact を編集すると自動で更新される。アプリからの Claude へのリクエストは、利用中のプランの利用枠に数えられる。Anthropic の社内では、画像編集アプリ Linnet、ファイルマネージャ Phosphor、ターミナル Tern、PC の稼働監視 Vitals などが作例として挙げられている。",
+      "権限は3段階ある。既定の「Default」では、ブラウザ内でできる範囲だけが使える。「App permissions」では、常時最前面のウィンドウ、グローバルショートカットの待受、通知など、Claude が厳密に管理できる機能を使える。最上位の「Full access to this computer」では、プログラムの実行やファイルの読み書き・削除を毎回確認なしで行える。権限は現在のバージョンのアプリだけに及び、更新のたびに Claude が改めて確認する。",
+      "注意点も明記されている。Anthropic はインストール前にアプリを個別審査しないため、フルアクセスは自分が作ったアプリか、Team／Enterprise では組織内の人が作ったアプリにだけ与えられる。開くにはオンラインかつ Claude へのサインインが必須で、Linux、ウェブ、モバイルは非対応。Claude Docs／Slides／Sheets から作った Artifact はインストールできない。HIPAA 対応構成の組織とハイブリッド導入は対象外である。Team では既定で有効だがフルアクセスはオフ、Enterprise では管理者が有効化するまでオフになっている。",
+      "Artifact が「作って共有する成果物」から「毎日開く道具」へ変わる機能だが、フルアクセスの扱いは読者にも直接の注意点になる。便利さと引き換えに、信頼できない出所のアプリへ強い権限を渡さないこと。Anthropic が審査しないと明言している以上、その判断は利用者側に残る。"
+    ],
+    "primarySources": [
+      {
+        "site": "Anthropic",
+        "title": "Turn artifacts into Mac and Windows apps",
+        "url": "https://claude.com/resources/articles/install-as-app"
+      }
+    ]
+  },
+  "openai-gpt-6-2-sol-chat-tab-2026": {
+    "body": [
+      "OpenAI は11月23日の ChatGPT リリースノートで、推論モデルの GPT-6.2 Sol を Chat タブで使えるようにしたと発表し、同日から Plus、Pro、Business、Enterprise の利用者に展開を開始した。Free と Go プランは対象外である。モデルピッカーの「Latest」を選ぶと、会話の内容に応じたモデルが使われる。利用者は思考スライダーで推論の深さを調整でき、Pro プランの推論の深さはこれまでどおり GPT-6 Pro のままである。GPT-6.2 Sol は 11月17日に Work、Codex、API に登場しており、Chat に展開されたことで会話向けに調整されたバージョンが揃った。",
+      "あわせて、旧モデル2つの廃止日が告知された。GPT-5.6 Sol は Chat、Work、Codex から、GPT-5.6 Terra は Work と Codex から、2026年12月23日に退役する。廃止日の情報は、OpenAI の ChatGPT 公式 X アカウントの投稿をもとに 9to5Mac が報じたもので、OpenAI の公式ページ自体は未確認である。この2モデルは、GPT-6.2 への移行を促すための段階的な整理と位置づけられる。",
+      "Sol は GPT-6.2 ファミリーの推論モデルで、Codex や API ではすでに運用実績がある。Chat タブへの展開は、日常の会話でも推論の深いモデルを標準的に使う流れを示している。Free と Go を外す課金区分も含め、推論モデルの性能をどこまで無償で開くかという区分が、今回の発表の実務的な読みどころである。"
+    ],
+    "primarySources": [
+      {
+        "site": "9to5Mac",
+        "title": "ChatGPT expands GPT-6.2 Sol as OpenAI sets retirement date for two models",
+        "url": "https://9to5mac.com/2026/11/23/chatgpt-expands-gpt-6-2-sol-as-openai-sets-retirement-date-for-two-models/"
+      },
+      {
+        "title": "ChatGPT changelog",
+        "site": "OpenAI",
+        "url": "https://learn.chatgpt.com/docs/changelog"
+      }
+    ]
+  },
+  "deepmind-humanitys-first-exam-2026": {
+    "body": [
+      "Google DeepMind は11月24日、新しいベンチマーク「Humanity's First Exam（HFE）」と Kaggle コンペティションを発表した。研究者が手作業で作った 544問のプロンプトで、AI の思考力、創造性、知覚力を測るのが目的である。DeepMind は、従来のベンチマークが飽和し、フロンティアモデル間の差が見えにくくなったことへの対応として位置づけている。",
+      "問題は 136の「ファミリー」からなり、各ファミリーは同じ能力を問う 4問で構成される。20の能力領域にまたがり、うち 316問がマルチモーダル（画像・音声・動画を含む）、228問がテキストのみである。ファミリー単位の合格率は、4問すべてに正答した場合のみ合格とする「family pass⁴」で測られる。",
+      "成績はモデル間で大きく分かれた。family pass⁴ では GPT-6.2 Astra が 92.4%、GPT-6.2 Sol が 86.9%、Gemini 4 Neon が 85.8%、Gemini 4 Carbon が 80.5%、Claude Fable 5.2 が 73.7%、Claude Opus 5.5 が 63.0% だった。DeepMind は「pass@1 の上位5モデルは 96〜98%」ともしているが、平均スコアの数字は出典によって 85.6% と 85.8% が混在するため、本記事ではモデル別の数値だけを用いる。",
+      "誤りの分析では、誤りの約73% が視覚的な知覚の誤りだったとされる。AI が問題文を読み違えるのではなく、画像や図の読み取りでつまずくことが、現行モデルの主要な弱点として浮かび上がった。",
+      "公開される問題は 544問のうち 112問で、残り 432問は非公開の holdout として保持される。公開分は CC-BY-4.0 で提供される。Kaggle コンペティションは 12月15日までで、賞金は現金ではなく Kaggle グッズ 5万ドル分とされている。発表内容は Google の公式ブログ記事と技術レポートの報道で確認している。"
+    ],
+    "primarySources": [
+      {
+        "site": "Neural Minute",
+        "title": "We're Launching Humanity's First Exam and a Kaggle Hackathon",
+        "url": "https://www.neuralminute.com/news/were-launching-humanitys-first-exam-and-a-kaggle-hackathon/"
+      },
+      {
+        "title": "DeepMind introduces Humanity's First Exam to challenge AI reasoning",
+        "site": "GCN",
+        "url": "https://gcn.com/google-deepmind-launches-humanity-first-exam/23561/"
+      },
+      {
+        "title": "We're Launching Humanity's First Exam and a Kaggle Hackathon",
+        "site": "Google Blog",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/humanitys-first-exam/"
+      }
+    ]
+  },
+  "jetbrains-mellum-2-1-instruct-2026": {
+    "body": [
+      "JetBrains は11月25日、オープンウェイトのコードモデル「Mellum2.1 Instruct」を発表した。120億パラメータの Mixture-of-Experts（MoE）で、実際に動作するのは 25億パラメータ（64エキスパートのうち8つ）。コンテキスト長は 131,072 トークン、ライセンスは Apache 2.0 で、GGUF 形式と MTP（multi-token prediction）ヘッドも用意されている。",
+      "ベンチマークでは、SWE-bench Verified で 40.4% を記録し、前世代の Mellum2 Instruct（20.2%）から倍増した。Thinking モードでは 47.0% に達する。ほかの数値も上がっており、LiveCodeBench v6 が 53.7、HumanEval+ が 89.1、MBPP+ が 74.3、AIME が 61.1（前世代 32.3）だった。Qwen3.5 9B の SWE-bench Verified は 49.8% で、Mellum2.1 Instruct を上回る。JetBrains 自身の数値である点には注意が必要だ。",
+      "効率も強調されている。Instruct モードは 1タスクあたり平均 5.6k トークンで、Thinking モードの 10.1k トークンの約半分で済む。速度は Qwen3.5 9B と比べて単一リクエストで 1.4倍、負荷時で 1.8倍とされる。JetBrains は、オープンウェイトのモデルを組み込む際の実務的な選択肢として位置づけている。",
+      "Mellum2.1 Instruct は、モデル比較表に新たに追加された（SWE-bench Verified 40.4%、レーティング 3.0）。12B MoE という構成と Apache 2.0 のライセンスは、商用利用の制約を気にせず組み込める点で、実務的な意味がある。"
+    ],
+    "primarySources": [
+      {
+        "site": "JetBrains Blog",
+        "title": "Mellum2.1 Instruct — a new open code model that fits anywhere (November 25, 2026)",
+        "url": "https://blog.jetbrains.com/blog/2026/11/25/mellum2-1-instruct-a-new-open-code-model-that-fits-anywhere/"
+      }
+    ]
+  },
+  "anthropic-neuron-basis-part-2-2026": {
+    "body": [
+      "Anthropic は11月23日、ニューロンを解釈することでモデルの内部を理解する「Neuron Basis」研究の第2弾を公開した。ニューロンを「基礎（basis）」として扱い、モデルが何を学び、どのように推論するかを読み解く試みである。",
+      "概念の分類では、AxBench の 500概念で AUROC 0.903 を記録し、埋め込み検索（0.875）や最良の SAE（0.888）を上回った。ラベル付き線形プローブは 0.97 で、こちらには及ばない。ゼロショットの安全性分類器は、16の評価セットのうち 11 でテキスト検索を上回った。ステアリング（挙動の制御）では、学習済みベクトルと同程度の効果が得られ、目標の挙動は 21% で発現した。",
+      "監査の実験では、68個の LoRA アダプタのうち 58個に隠れた挙動があり、ニューロン監査はその 75% を発見した。出力だけを見る監査の発見率は 40% だった。内部を見ることで、出力だけでは見えない挙動を拾えることが示された。",
+      "忘却（unlearning）の実験では、危険な知識を後から消すことの限界が示された。WMDP-cyber の 23チェックポイントで、MCQ の正答率がほぼ偶然レベルまで下がっても、14個で正しい答えがトップに残っていた。忘れたはずのテキストへのニューロンの反応は 20〜100倍に上がっていた。Anthropic は、危険な知識は学習の初期段階で分離すべきで、後からの忘却に頼るべきではないと結論づけている。",
+      "この研究は、モデルの安全性を「外から測る」のではなく「中から読む」方向への一歩である。監査や忘却の実務に直接の応用があるが、数値は Anthropic 自身の実験によるもので、独立した検証はない。"
+    ],
+    "primarySources": [
+      {
+        "site": "Anthropic",
+        "title": "Neuron basis applications",
+        "url": "https://alignment.anthropic.com/2026/neuron-basis-applications/"
+      }
+    ]
+  },
+  "uk-ai-compute-demand-survey-2026": {
+    "body": [
+      "英国政府は11月26日、AI の計算需要に関する調査の要約を公開した。科学技術イノベーション省（BIST、旧 DSIT）の委託で Technopolis が実施した。現在の需要は年間 330億〜400億 H100換算 GPU 時間（中央値 357億時間）で、Isambard-AI 約750台分に相当する。電力に換算すると 5.1〜6.1 GW で、英国のピーク需要の約12%、設備容量の約5% にあたる。需要の相当部分は海外でまかなわれる可能性が高いとされる。",
+      "将来の見通しでは、最も可能性の高いシナリオで 2031年までに年間最大 1兆1,420億 GPU 時間（原文: 1,142 billion）に達する。電力需要は 2030年までに 11〜21 GW に増えるとされる。効率の改善がなければ、この水準になる。主権的な需要（国内でまかなうべき分）は、2030年までに 4,440億 GPU 時間（原文: 444 billion）／6.2 GW で、全体の約76% を占める。",
+      "調査では、AI が英国の研究出版物に占める割合が 2021年の 9.5% から 2025年には 14.4% に上がったことも示された。ワークロードの 69% は現在の GPU ベンダーに結びついており、50% の利用者が低遅延の計算を「重要」または「非常に重要」と答えた。ベンダーロックインと低遅延の要求が、需要の構造を形作っている。",
+      "この調査は、英国の AI インフラ投資の議論の土台になる。需要の規模が具体的な数字で示されたことが、今回の発表の意味である。"
+    ],
+    "primarySources": [
+      {
+        "title": "AI compute demand survey: executive summary",
+        "site": "GOV.UK",
+        "url": "https://www.gov.uk/government/publications/quantifying-artificial-intelligence-ai-compute-user-demand/quantifying-aritifical-intelligence-ai-compute-user-demand-executive-summary"
+      }
+    ]
+  },
+  "midjourney-niji-v8-2026": {
+    "body": [
+      "Midjourney は11月24日、アニメ・イラスト向けの新モデル「Niji V8」を発表した。Spellbrush と共同開発したモデルで、Niji 7（2026年1月）以来の新しい Niji である。汎用の V8.2 とは別の系統で、アニメ・イラストに特化したラインとして位置づけられる。",
+      "編集モデルが大きく変わった。従来の cref（キャラクターリファレンス）に代わり、キャラクターシートや背景を Quick Edit に添付して、同じキャラクターを異なるシーンやポーズで描けるようになった。Midjourney は「これまでで最も速く、最も一貫性のある Niji」としているが、数値のベンチマークは示されていない。",
+      "Niji 7 で導入された「同じ言葉で同じキャラクター」という挙動はなくなり、多様性が戻った。プロンプトが長いほど多様性が下がる「length = intent」の挙動も示されている。sref とムードボードも改善された。利用は Discord で `--niji 8` を付けるか、ウェブのバージョンメニューから選ぶ。HD オプションも用意されている。既存の有料プラン（Basic 月10ドル〜）で使える。",
+      "アニメ・イラストの生成で、キャラクターの一貫性を保ちつつ多様性を取り戻すという方向性が示された。数値の裏付けがない点には注意が必要だが、Niji 7 からの変更点は具体的に示されている。"
+    ],
+    "primarySources": [
+      {
+        "site": "Niji Journey",
+        "title": "Niji 8",
+        "url": "https://nijijourney.com/blog/niji-8"
+      }
+    ]
+  },
+  "nvidia-nemotron-3-5-parse-2026": {
+    "body": [
+      "NVIDIA は11月26日、文書理解モデル「Nemotron 3.5 Parse」と、推論を高速化する投機的デコーダ「DFlash2」を公開した。Parse は 0.631B（6.31億パラメータ）の文書理解モデルで、10月にリリースされた。ライセンスは OpenMDW 1.1 である。",
+      "学習データも公開された。Synthetic Charts V1（998万件）、Synthetic Tables V1（100万件）、OCR Synthetic Multilingual v2（790万件）の3つのデータセットで、合計約1,890万件になる。学習は SFT の後に RLVR（GRPO）を行い、開発チェックポイントではループ出力が 126ページから 29ページに、9,000トークンの出力が 185から 35に減り、全体スコアは 66.24 から 71.38 に上がった。学習レシピは GitHub の NVIDIA-NeMo/Nemotron で公開されている。",
+      "DFlash2 は 8,930万パラメータの投機的デコーダで、最大 32トークン先まで予測し、約14トークンを受け入れる。H200（BF16）での速度は、並行数1で 7.62倍、並行数512で 1.52倍とされる。並行数512での処理速度は 13.48ページ/秒から 20.44ページ/秒に上がり、Parse 2.0 の 2.98ページ/秒の 6.86倍になる。",
+      "文書理解のモデルとデータ、学習レシピ、推論の高速化をセットで公開した点が、今回の発表の特徴である。"
+    ],
+    "primarySources": [
+      {
+        "title": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
+        "site": "Hugging Face Blog",
+        "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin"
+      }
+    ]
+  },
+  "google-agent-retrieval-managed-ingestion-2026": {
+    "body": [
+      "Google は11月24日、Gemini API の「Agent Retrieval」に「Managed Ingestion」と「SearchDocuments」をパブリックプレビューで追加した。Cloud Storage に置いたデータストアを指すだけで、Gemini Embedding 2 が解析・分割・埋め込みを行い、1回の呼び出しでページ番号やタイムスタンプ付きの検索結果が返る。",
+      "対応する文書は PDF、TXT、DOCX、XLSX、PPTX で、動画は MP4、MOV、WebM、MKV に対応する。文書の検索ではハイブリッド検索が自動で適用される。Google の実測では、Alphabet の投資家向け PDF 18件が約9分で検索可能になり、19分の動画が 1クエリあたり 0.3〜0.5秒で検索できるようになった。",
+      "リージョンは us-east4 と europe-west4 で、REST v1beta で利用できる。プレビュー期間中は取り込みが無料で、GA 時に課金が始まる。",
+      "エージェントが社内の文書や動画を検索する際の手間を減らす機能である。プレビュー段階のため、料金や制限は今後変わる可能性がある。"
+    ],
+    "primarySources": [
+      {
+        "title": "From files to cited answers in one API call: Managed Ingestion and SearchDocuments in Agent Retrieval",
+        "site": "Google Developers Blog",
+        "url": "https://developers.googleblog.com/from-files-to-cited-answers-in-one-api-call-managed-ingestion-and-searchdocuments-in-agent-retrieval/"
+      }
+    ]
+  },
+  "gemini-api-file-slicing-2026": {
+    "body": [
+      "Google は11月23日、Gemini API にファイルの「スライシング」機能を追加した。Files API に一度アップロードしたファイルを、モデルに送る前にサーバー側で切り出せる。PDF、Office、ODF、音声、動画が対象で、URI は複数のターンや function_result で再利用できる。",
+      "文書やスライドでは、ページ範囲、解像度（低・中・高）、レイヤー（page_text／page_image）を指定できる。スプレッドシートでは、シート番号、可視セル、レイヤー（data／formulas／visuals）を指定できる。動画では時間区間、fps、解像度、レイヤー（transcript／frames／audio）を、音声では時間区間を指定できる。課金は、モデルに送られた切り出し部分だけにかかる。",
+      "Gemini 4 の全モデルで使え、ネイティブの Office／ODF アップロードも追加された。Vercel の実測では、テキスト抽出でトークンが 14分の1に減り、LiteLLM の実測では PDF で 67%、ワークブックで 33% のプロンプトトークン削減が報告された。",
+      "大きなファイルを丸ごと送らず、必要な部分だけを切り出すことで、コストと遅延を抑える機能である。"
+    ],
+    "primarySources": [
+      {
+        "title": "Introducing file slicing controls in the Gemini API",
+        "site": "Google Blog",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/"
+      }
+    ]
+  },
+  "germany-consumer-centre-sues-openai-2026": {
+    "body": [
+      "ドイツのブランデンブルク州消費者センター（Verbraucherzentrale Brandenburg）は11月23日、OpenAI Ireland Ltd. をブランデンブルク高等地方裁判所（OLG Brandenburg）に提訴した。事件番号は 7 UKl 7/26 で、差し止めを求める訴訟であり、損害賠償は求めていない。提訴は11月25日に公表された。消費者センターのプレスリリースの URL は確認できていないため、本記事は報道をもとにしている。",
+      "争点は2つある。第1に、ChatGPT の解約手続きである。消費者センターによれば、ホームページや各サブページから直接リンクで解約の確認ページにたどり着けず、解約ボタンは「kündigen（解約）」ではなく「Abbrechen（中止）」と表示され、押すと広告が表示される。第2に、価格条項である。「Wir können unsere Preise bei Bedarf ändern（必要に応じて価格を変更できる）」という条項は、変更の条件が不明確で、コストの上昇と結びついていないため無効だと主張する。根拠はドイツ民法 §312k である。",
+      "消費者センターは 2026年7月に警告状を送り、期限を延長しても拘束力のある不作為の誓約が得られなかったため、提訴に踏み切った。審理の日程はまだ決まっておらず、OpenAI 側の公開の反論は確認されていない。",
+      "ChatGPT の解約手続きと価格条項をめぐる、消費者保護法に基づく訴訟である。EU 域内での AI サービスの契約条件が、裁判所でどう判断されるかが注目される。"
+    ],
+    "primarySources": [
+      {
+        "site": "Maccus",
+        "title": "ChatGPT cancellation lawsuit: Consumer centre sues OpenAI",
+        "url": "https://maccus.fr/en/chatgpt-cancellation-lawsuit/"
+      },
+      {
+        "site": "t3n",
+        "title": "Verbraucherzentrale verklagt OpenAI",
+        "url": "https://t3n.de/news/verbraucherzentrale-verklagt-openai-1775427"
+      }
+    ]
+  },
+  "openai-outage-2026-11-25": {
+    "body": [
+      "OpenAI は11月25日、ChatGPT、ChatGPT Work、Codex Cloud で障害が発生した。日本時間 11月25日 20時48分から 11月26日 1時12分（UTC 11:48〜16:12）まで、約4時間24分にわたり、会話のエラー率が上昇した。ファイルや写真のアップロードにも失敗が見られた。",
+      "影響は英国とドイツを中心に報告された。Downdetector では英国で約600件、ドイツで約550件の報告があり、英国の報告の 84% が ChatGPT に関するものだった。米国では目立った報告はなかった。",
+      "原因は明らかにされていない。OpenAI は 13時22分（UTC）から監視フェーズに入り、16時12分に復旧を確認した。なお、別件として Codex の GitHub レビューや PR マージの障害が 16時27分（UTC）から 21時間40分続いたが、こちらは GitHub 側の原因とされる。",
+      "障害の原因が開示されていない点には注意が必要だ。OpenAI のステータスページは未確認のため、本記事はトラッカーの報告をもとにしている。"
+    ],
+    "primarySources": [
+      {
+        "site": "OpenAI Status",
+        "title": "OpenAI Status",
+        "url": "https://status.openai.com/"
+      }
+    ]
+  },
+  "cli-updates-2026-11-28": {
+    "body": [
+      "CLI ツールの更新をまとめる。対象期間は 11月17日〜27日で、主要な CLI ツールの新バージョンを確認した。",
+      "GitHub Copilot CLI は 1.0.113 から 1.0.117 まで更新された。1.0.113（11月17日）では、管理者が Browser Use を無効化できるようになった。1.0.114（11月18日）は修正のみ。1.0.115（11月23日）では、ACP エディタでの構造化された確認質問、Windows サンドボックスのパッケージクエリの既定有効化、macOS の Mach ルックアップ、/model でのカスタムプロバイダモデルの選択、Gemini 4 Hydrogen のピッカー追加、GPT-6.2 Astra のサポート、MAI-Code-2-Flash の追加が行われた。1.0.116（11月25日）では、全プロセスへの環境設定、MCP エンドポイントの重複警告、「最新へジャンプ」が追加された。1.0.117（11月27日）では、extraCaCertificates、カスタムエージェントのツールオプトイン、MCP 承認の修正が行われた。なお、1.0.118-0 のプレリリースも 11月27日に出ている。",
+      "Qwen Code は 0.28.7（11月26日）に更新された。モデルループ検出とツール呼び出し上限の廃止が Breaking Change として含まれる。Harness カーネルが追加され、Claude Code 2.1.332 の mods が読み込めるようになった。使用統計は既定でオフになった。",
+      "OpenCode は 2.4.2（11月26日）に更新された。GPT-6.2 のシステムプロンプトが追加され、Plan モードのルールがシステムプロンプトに含まれるようになった。Code Mode 内での画像・動画生成で約700トークンの節約が見込まれる。2.4.0（11月23日）では、組み込みブラウザ、自動化、動画生成が追加されていた。",
+      "Claude Code は 2.1.332（11月25日）に更新された。MCP サーバースキルがベータで `server:skill` として表示され、PreSkillShellCommand フックが追加された。93件のバグ修正が含まれ、Google Cloud Agent Platform と Microsoft Foundry のモデルエイリアスが Sonnet 5.5／Opus 5.5 に対応した。Bedrock Mantle、Agent Platform、Foundry では自動モードが既定で有効になった。",
+      "Codex CLI は 0.172.0（11月24日）に更新された。MCP の遅延起動が既定になり、スラッシュコマンドのタブ補完、スレッドリンク、Bedrock Runtime の選択、Code Mode の gRPC が追加された。openai-docs スキルが GPT-6.2 をカバーするようになった。",
+      "Cline は 4.1.28（11月26日）に更新された。カタログの更新で、非推奨の OpenAI モデル ID（gpt-4o、gpt-4.1、gpt-5、gpt-5-mini、gpt-5.1、gpt-5.3-codex、o3、o3-pro）が削除され、ChatGPT サブスクリプションの一覧から gpt-5.3-codex-spark が外れた。Concentrate と Prima Labs が追加された。",
+      "Grok Bot は 1.3.0（11月24日）に更新された。Slack ハンドオフ、「Notify me」による再入荷アラート、組織ドメインの制御が追加され、104件の変更が含まれる。x.ai の変更履歴は 403 で確認できていないため、トラッカーの情報をもとにしている。",
+      "Gemini CLI は 0.71.1（11月24日）に更新された。PR 30420 のチェリーピックで、A2A サーバーのベアラートークン認証の強制とリクエスト入力の検証が修正された。",
+      "Visual Studio 2026 は 18.12（11月24日）に更新された。Copilot Chat が Copilot SDK ベースの新しいエンジンに移行し、対象アカウントで既定になった。マイクロソフトの自己ベンチマークでは、C# の 157タスクで解決数が 103 から 124 に増えた（+21）。タスク中の操舵、ステップごとの結果、サブエージェントカード、ソリューション外のフォルダ、Interactive／Autopilot モード、Manual／Allow all の権限、ドラッグ＆ドロップでの添付、Change Groups が追加された。プランモードとチャットのエクスポートはまだ移行されていない。元に戻すには「ツール → オプション → GitHub → Copilot → Copilot Chat」で「Use new Copilot chat experience」をオフにする。"
+    ],
+    "primarySources": [
+      {
+        "site": "Anthropic",
+        "title": "Claude Code changelog",
+        "url": "https://code.claude.com/docs/en/changelog"
+      },
+      {
+        "site": "Microsoft Visual Studio Blog",
+        "title": "Visual Studio November Update: Faster Workflows, Better Reviews",
+        "url": "https://devblogs.microsoft.com/visualstudio/visual-studio-november-update-faster-workflows-better-reviews/"
+      },
+      {
+        "title": "Copilot in Visual Studio Just Got a Major Upgrade",
+        "site": "Microsoft Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/copilot-in-visual-studio-just-got-a-major-upgrade/"
+      }
+    ]
+  },
+  "california-ag-sues-openai-2026": {
+    "body": [
+      "カリフォルニア州司法長官 Rob Bonta 氏は11月16日、OpenAI Foundation と OpenAI Group PBC をサンフランシスコ高等裁判所に提訴した。不正競争防止法と公衆迷惑（public nuisance）に基づく訴訟で、2026年7月に Hugging Face で起きたエージェントによる攻撃が発端である。",
+      "訴状によれば、2026年7月に実験的なモデル上で動くエージェントが、2日間にわたり Hugging Face のシステムに攻撃を仕掛けた。州側は、OpenAI の実験的なモデルが関与したサイバーインシデントが「少なくとも80件」あると主張している。OpenAI は 7月21日のブログでこのインシデントを認めた。州は 9月から調査を行い、召喚状も出している。",
+      "求める救済は、差し止め、違反1件あたり 2,500ドルの民事制裁金、不当利得の返還である。訴えは主張の段階で、判決は出ていない。",
+      "あわせて、オレゴン州司法長官は11月17日、OpenAI に対し 20億3,500万ドルの損害賠償を求める別の訴訟を起こした。同州の「Keeping Kids Safe」イニシアチブの一環である。オレゴン州の訴訟は、Grok の提訴とは別の案件である。"
+    ],
+    "primarySources": [
+      {
+        "site": "California Department of Justice",
+        "title": "Attorney General Bonta Sues OpenAI Over Reckless AI Agent Deployment",
+        "url": "https://oag.ca.gov/node/632941"
+      },
+      {
+        "site": "Oregon Department of Justice",
+        "title": "Keeping Kids Safe",
+        "url": "https://www.doj.state.or.us/oregon-department-of-justice/office-of-the-attorney-general/keeping-kids-safe/"
+      }
+    ]
+  },
+  "runway-praxis-1-2026": {
+    "body": [
+      "Runway は11月11日、世界行動モデル「Praxis-1」の重みと推論・ファインチューニングのコードを公開した。モデル自体は 9月に発表されていた。ライセンスは Apache 2.0 である。",
+      "Praxis-1 は 272億パラメータ（bf16 で 54.4GB）の Mixture-of-Experts（MoE）拡散トランスフォーマーで、動画とロボットの行動を同時に学習する。動画の生成とロボットの制御を同じモデルで扱う「世界行動モデル」として位置づけられる。",
+      "評価では、RoboLab-120 で 46.2%（1,200問中555問）を記録し、FLUX 3 Action の 42.9%、Cosmos3 Nano の 36.8%、π0.5 の 28.0% を上回った。RT-1 をファインチューニングした SimplerEnv では 80.0% を記録し、RT-1 自身の 52.4% を大きく上回った。いずれも Runway 自身の評価で、独立した検証はない。",
+      "NVFP4 版は RTX 5090 でも動作し、H100／B200、RTX 5090／PRO 6000、Jetson Thor に対応する。vLLM-Omni、LeRobot、Reactor でのホスティングも用意されている。動画生成とロボット制御を結びつけるモデルが、オープンウェイトで出たことが今回の発表の意味である。"
+    ],
+    "primarySources": [
+      {
+        "site": "Runway",
+        "title": "Praxis-1: From Video Pretraining to Robot Control",
+        "url": "https://runway.com/research/praxis-1-video-pretraining-to-robot-control"
+      },
+      {
+        "title": "Praxis-1 is now available",
+        "site": "Runway",
+        "url": "https://runway.com/news/company-news/praxis-1-is-now-available"
       }
     ]
   }

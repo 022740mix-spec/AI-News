@@ -275,6 +275,7 @@ export const MODEL_COMPARISON = [
   // === Cursor 独自 ===
   { name: "Composer 2.5", rating: 4.0, summary: "Cursor 独自モデル。Kimi K2.5 ベース＋独自 RL。CursorBench で Opus 4.6 を上回るスコア。Cursor CLI / IDE / Background Agent の中核。Sonic（低レイテンシ）と組合せ", swe: null, swePro: null, terminalBench: null, osworld: null, browseComp: null, gpqa: null, aime: null, hle: null },
   { name: "Inkling 2 Mini", rating: 4, summary: "Thinking Machines のオープンウェイト・モデル（2026年11月20日公開）。26.4B MoE（アクティブ3.4B）、中間12層を3回繰り返すループ型トランスフォーマー、NVFP4 ネイティブ、約20GB、Apache 2.0、1Mコンテキスト、マルチモーダル。SWE-bench Verified 79.2%、Terminal-Bench 2.1 71.6%。DeepSWE v1.1 48.2%（100B未満のオープンウェイトで首位）、Vals Index v2.2 46.5%、AA Intelligence Index v5.0 20.1、SWE-bench Pro v2 Hard 77.9%、BrowseComp（compaction あり）79.0%。知識系は弱く、HLE-Diamond 15.2%。ローカル動作可。いずれも自社発表値で、独立した検証は確認できていない", swe: 79.2, swePro: null, terminalBench: 71.6, osworld: null, browseComp: null, gpqa: null, aime: null, hle: null },
+  { name: "Mellum2.1 Instruct", rating: 3, summary: "JetBrains のオープンウェイト・コードモデル（2026年11月25日発表）。12B MoE（アクティブ 2.5B、64エキスパートのうち8つ）、131,072 コンテキスト、Apache 2.0、GGUF 形式と MTP ヘッドあり。JetBrains の自社発表値: SWE-bench Verified 40.4%（前世代 Mellum2 Instruct の 20.2% から倍増）、Thinking モード 47.0%、LiveCodeBench v6 53.7、HumanEval+ 89.1、MBPP+ 74.3、AIME 61.1（前世代 32.3）。Qwen3.5 9B の SWE-bench Verified は 49.8% で Mellum2.1 Instruct を上回る。Instruct モードは 1タスクあたり平均 5.6k トークンで、Thinking モードの 10.1k の約半分。いずれも自社発表値で、独立した検証は確認できていない", swe: 40.4, swePro: null, terminalBench: null, osworld: null, browseComp: null, gpqa: null, aime: null, hle: null },
 ];
 
 export const BENCHMARK_CONFIGS = [
