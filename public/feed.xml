@@ -112,6 +112,62 @@
     <summary>Microsoft が AI ペネトレーションテストのフレームワーク ARTEX の悪用を報告した。国家系と金銭目的の6グループが自らのツールに組み込んでおり、偵察から特権を持つ永続的なアクセスまで数分で到達しうる。ARTEX は2026年7月にオープンソースとして公開され、11月には ThreatBook が「ARTEX Pro」の商用提供を始めた。防御側には機械的な速度での活動の連なりを行動面の兆候として挙げている。</summary>
   </entry>
   <entry>
+    <title>DeepL、音声翻訳モデル「Aure v2」を公開 — 遅延を50%削減、音声から音声へ直接翻訳</title>
+    <link rel="alternate" type="text/html" href="?a=deepl-aure-v2-2026"/>
+    <id>tag:ai-tool-news.jp,2026:deepl-aure-v2-2026</id>
+    <published>2026-11-27T15:00:00Z</published>
+    <updated>2026-11-27T15:00:00Z</updated>
+    <summary>DeepL が音声翻訳モデル Aure v2 を公開した。遅延の中央値を先代の半分にし、音声から音声へ直接翻訳する。6言語対応で、英日では Google より誤りが 32% 少ない（自社計測）。災害時の無償提供プログラムも始めた。</summary>
+  </entry>
+  <entry>
+    <title>Anthropic、Messages API を Python から Rust へ移行 — CPU 約70%減、初回トークンまで約20%高速に</title>
+    <link rel="alternate" type="text/html" href="?a=anthropic-messages-api-rust-migration-2026"/>
+    <id>tag:ai-tool-news.jp,2026:anthropic-messages-api-rust-migration-2026</id>
+    <published>2026-11-27T15:00:00Z</published>
+    <updated>2026-11-27T15:00:00Z</updated>
+    <summary>Anthropic が Messages API の Python から Rust への移行を解説した。CPU は約 70% 減、初回トークンまで約 20% 高速に。難しかったのは生成ではなく検証で、本番トラフィック自体を基準にエージェントの 3 つのループで差分を潰した。</summary>
+  </entry>
+  <entry>
+    <title>知乎、DeepSeek とコンテンツ提携 — 10億件超の Q&amp;A を検索開放、出資も間接取得</title>
+    <link rel="alternate" type="text/html" href="?a=zhihu-deepseek-content-partnership-2026"/>
+    <id>tag:ai-tool-news.jp,2026:zhihu-deepseek-content-partnership-2026</id>
+    <published>2026-11-27T15:00:00Z</published>
+    <updated>2026-11-27T15:00:00Z</updated>
+    <summary>知乎が DeepSeek とコンテンツ提携を結び、10 億件超の Q&amp;A や記事の検索機能を提供する。引用時は出典と著者を明示する。11月23日には知乎がファンド経由で DeepSeek に間接出資したことも明らかになっている。</summary>
+  </entry>
+  <entry>
+    <title>月之暗面、「Kimi for Science」科研支援プログラムを開始 — 最大15万元分の API 额度を提供</title>
+    <link rel="alternate" type="text/html" href="?a=moonshot-kimi-for-science-program-2026"/>
+    <id>tag:ai-tool-news.jp,2026:moonshot-kimi-for-science-program-2026</id>
+    <published>2026-11-27T15:00:00Z</published>
+    <updated>2026-11-27T15:00:00Z</updated>
+    <summary>月之暗面が科研支援プログラム「Kimi for Science」の申請受付を始めた。自然科学・工学などの研究者を対象に、最大 15 万元分（約 70 億トークン相当）の Kimi API 额度と技術支援を提供する。</summary>
+  </entry>
+  <entry>
+    <title>Kimi Code 2.8.0 を公開 — プロンプト予測を改善、読み取り専用 Bash を自動承認</title>
+    <link rel="alternate" type="text/html" href="?a=kimi-code-2-8-0-2026"/>
+    <id>tag:ai-tool-news.jp,2026:kimi-code-2-8-0-2026</id>
+    <published>2026-11-27T15:00:00Z</published>
+    <updated>2026-11-27T15:00:00Z</updated>
+    <summary>Kimi Code 2.8.0 を公開した。プロンプト予測の改善、読み取り専用 Bash の自動承認、実験的 fork パラメータの削除など。翌日には 2.8.1 の不具合修正も出ている。</summary>
+  </entry>
+  <entry>
+    <title>Perplexity Pro、エージェント「Computer」の週間利用枠を追加 — Light 設定で毎週利用可能に</title>
+    <link rel="alternate" type="text/html" href="?a=perplexity-pro-computer-weekly-2026"/>
+    <id>tag:ai-tool-news.jp,2026:perplexity-pro-computer-weekly-2026</id>
+    <published>2026-11-27T15:00:00Z</published>
+    <updated>2026-11-27T15:00:00Z</updated>
+    <summary>Perplexity Pro にエージェント Computer の週間利用枠が付いた。これまで Pro には Computer の利用枠はなかった。週は最初のタスクから始まり 7 日後にリセットされ、未使用分は繰り越されない。枠だけでは Light 設定で動く。</summary>
+  </entry>
+  <entry>
+    <title>GitHub、Copilot code review の課金を12月30日から組織既定に — 未設定の組織は対応が必要</title>
+    <link rel="alternate" type="text/html" href="?a=github-copilot-code-review-billing-2026"/>
+    <id>tag:ai-tool-news.jp,2026:github-copilot-code-review-billing-2026</id>
+    <published>2026-11-27T15:00:00Z</published>
+    <updated>2026-11-27T15:00:00Z</updated>
+    <summary>GitHub が Copilot code review の課金方法を定めていない組織について、12月30日から組織への課金を既定にすると発表した。対象は Copilot Business と Copilot Enterprise。変えたくない場合は 12月30日までに Member を選ぶ必要がある。</summary>
+  </entry>
+  <entry>
     <title>FCC、SpaceXの軌道上データセンター「Starmind」を承認 — 最大100万基、初の軌道データセンター認可</title>
     <link rel="alternate" type="text/html" href="?a=spacex-fcc-starmind-orbital-datacenters-2026"/>
     <id>tag:ai-tool-news.jp,2026:spacex-fcc-starmind-orbital-datacenters-2026</id>
