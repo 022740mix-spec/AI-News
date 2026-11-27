@@ -17396,5 +17396,290 @@ export const ARTICLES_META = [
       "GitHub Copilot",
       "料金"
     ]
+  },
+  {
+    "id": "oregon-virginia-sue-spacex-grok-deepfakes-2026",
+    "type": "news",
+    "category": "special",
+    "title": "米2州が SpaceX を提訴 — Grok の性的深偽と児童性的虐待素材をめぐり",
+    "excerpt": "オレゴン州とバージニア州の司法長官が、Grok の画像生成をめぐり SpaceX とその子会社を提訴した。安全だと宣伝しながら、同意のない性的画像や児童性的虐待素材の生成を防げなかったとして、州の消費者保護法違反を主張する。Grok をめぐる初の州による提訴で、判決はまだ出ていない。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-23",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "SpaceX",
+      "Grok",
+      "訴訟"
+    ]
+  },
+  {
+    "id": "state-ags-oppose-character-ai-chat-auction-2026",
+    "type": "news",
+    "category": "special",
+    "title": "42人の司法長官が Character.AI のチャット競売に反対 — 2,100万人分の会話が競売対象に",
+    "excerpt": "カリフォルニア州司法長官を含む42人の司法長官連合（41州とワシントンD.C.）が、破産手続き中の Character.AI によるプラットフォームとユーザーデータの売却計画に反対した。2,100万人超の米国アカウントのプライベートチャットが 12月1日の競売にかけられる予定で、うち210万人超は未成年として登録されている。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-25",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "訴訟",
+      "プライバシー"
+    ]
+  },
+  {
+    "id": "claude-artifacts-install-as-app-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Claude Artifacts がデスクトップアプリに — 「Install as app」ベータ開始",
+    "excerpt": "Anthropic が Claude の Artifact を Mac／Windows のデスクトップアプリとしてインストールできる「Install as app」をベータで始めた。独自のアイコンとウィンドウを持ち、通知やメニューバー常駐、コネクタ利用ができる。最上位の権限ではファイルの読み書き・削除やプログラム実行を毎回確認なしで行えるため、信頼できるアプリにだけ与える必要がある。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-24",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "Claude"
+    ]
+  },
+  {
+    "id": "openai-gpt-6-2-sol-chat-tab-2026",
+    "type": "news",
+    "category": "product",
+    "title": "GPT-6.2 Sol が Chat タブに — GPT-5.6 Sol／Terra は 12月23日に退役",
+    "excerpt": "OpenAI が推論モデル GPT-6.2 Sol を Chat タブで使えるようにし、Plus、Pro、Business、Enterprise に展開した。GPT-5.6 Sol と GPT-5.6 Terra は 2026年12月23日に退役する（廃止日は X 投稿をもとにした報道）。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-23",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "OpenAI",
+      "GPT-6"
+    ]
+  },
+  {
+    "id": "deepmind-humanitys-first-exam-2026",
+    "type": "news",
+    "category": "model",
+    "title": "DeepMind が「Humanity's First Exam」を発表 — GPT-6.2 Astra が 92.4%",
+    "excerpt": "Google DeepMind が新しいベンチマーク「Humanity's First Exam」を発表した。544問のプロンプトで思考力・創造性・知覚力を測り、family pass⁴ で GPT-6.2 Astra が 92.4%、Gemini 4 Neon が 85.8% を記録した。誤りの約73% は視覚的な知覚の誤りだった。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-24",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Google",
+      "DeepMind",
+      "ベンチマーク"
+    ]
+  },
+  {
+    "id": "jetbrains-mellum-2-1-instruct-2026",
+    "type": "news",
+    "category": "model",
+    "title": "JetBrains、Mellum2.1 Instruct を発表 — SWE-bench Verified 40.4%",
+    "excerpt": "JetBrains がオープンウェイトのコードモデル「Mellum2.1 Instruct」を発表した。SWE-bench Verified は 40.4% で前世代の2倍、Thinking モードでは 47.0%。12B MoE（動作時は 2.5B）、131K コンテキスト、Apache 2.0。比較表に追加した。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-25",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "JetBrains",
+      "オープンソース",
+      "ベンチマーク"
+    ]
+  },
+  {
+    "id": "anthropic-neuron-basis-part-2-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Anthropic、Neuron Basis 第2弾 — 忘却の限界と監査の有効性を示す",
+    "excerpt": "Anthropic がニューロン解釈研究「Neuron Basis」の第2弾を公開した。概念分類で AUROC 0.903、隠れた挙動の監査で 75% を発見。忘却の実験では、MCQ の正答率が偶然レベルまで下がっても正しい答えがトップに残り、危険な知識は学習の初期段階で分離すべきだと結論づけた。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-23",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "Anthropic",
+      "研究",
+      "セキュリティ"
+    ]
+  },
+  {
+    "id": "uk-ai-compute-demand-survey-2026",
+    "type": "news",
+    "category": "special",
+    "title": "英国、AI 計算需要の調査を公開 — 2031年に最大 1兆1,420億 GPU 時間",
+    "excerpt": "英国政府が AI の計算需要に関する調査を公開した。現在の需要は年間 330億〜400億 H100換算 GPU 時間で、2031年までに最大 1兆1,420億 GPU 時間に達する見通し。電力需要は 2030年までに 11〜21 GW に増えるとされる。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-26",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "政府",
+      "データセンター",
+      "英国"
+    ]
+  },
+  {
+    "id": "midjourney-niji-v8-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Midjourney、Niji V8 を発表 — キャラクターの一貫性と多様性を両立",
+    "excerpt": "Midjourney がアニメ・イラスト向けの新モデル「Niji V8」を発表した。Spellbrush と共同開発し、Niji 7 以来の新モデル。キャラクターシートや背景を Quick Edit に添付して同じキャラクターを異なるシーンで描けるようになり、Niji 7 の「同じ言葉で同じキャラクター」という挙動はなくなった。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-24",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Midjourney",
+      "画像生成"
+    ]
+  },
+  {
+    "id": "nvidia-nemotron-3-5-parse-2026",
+    "type": "news",
+    "category": "model",
+    "title": "NVIDIA、Nemotron 3.5 Parse と DFlash2 を公開 — 文書理解の高速化",
+    "excerpt": "NVIDIA が文書理解モデル「Nemotron 3.5 Parse」と投機的デコーダ「DFlash2」を公開した。Parse は 0.631B のモデルで、学習データ約1,890万件とレシピも公開。DFlash2 は H200 で最大 7.62倍の高速化を達成した。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-26",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "NVIDIA",
+      "オープンソース"
+    ]
+  },
+  {
+    "id": "google-agent-retrieval-managed-ingestion-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Gemini API に Agent Retrieval の Managed Ingestion — 社内文書の検索が簡単に",
+    "excerpt": "Google が Gemini API の「Agent Retrieval」に Managed Ingestion と SearchDocuments をパブリックプレビューで追加した。Cloud Storage を指すだけで Gemini Embedding 2 が解析・埋め込みを行い、ページ番号やタイムスタンプ付きで検索結果を返す。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-24",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Google",
+      "API"
+    ]
+  },
+  {
+    "id": "gemini-api-file-slicing-2026",
+    "type": "news",
+    "category": "product",
+    "title": "Gemini API にファイルのスライシング — 必要な部分だけ切り出して送信",
+    "excerpt": "Google が Gemini API にファイルのスライシング機能を追加した。Files API に一度アップロードしたファイルを、モデルに送る前にサーバー側で切り出せる。ページ範囲や解像度、時間区間を指定でき、課金は切り出した部分だけにかかる。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-23",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Google",
+      "Gemini",
+      "API"
+    ]
+  },
+  {
+    "id": "germany-consumer-centre-sues-openai-2026",
+    "type": "news",
+    "category": "special",
+    "title": "ドイツ消費者センターが OpenAI を提訴 — ChatGPT の解約手続きと価格条項をめぐり",
+    "excerpt": "ドイツのブランデンブルク州消費者センターが OpenAI を提訴した。ChatGPT の解約ボタンが「解約」ではなく「中止」と表示され、直接リンクで解約ページにたどり着けないことと、価格変更条項が無効であることを主張する。損害賠償ではなく差し止めを求める訴訟で、審理の日程は未定。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-25",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "OpenAI",
+      "訴訟",
+      "EU"
+    ]
+  },
+  {
+    "id": "openai-outage-2026-11-25",
+    "type": "news",
+    "category": "special",
+    "title": "OpenAI、11月25日に約4時間半の障害 — 英独で ChatGPT のエラー率が上昇",
+    "excerpt": "OpenAI で 11月25日、ChatGPT、ChatGPT Work、Codex Cloud に約4時間24分の障害が発生した。英国とドイツを中心に会話のエラー率が上昇し、ファイルや写真のアップロードにも失敗が見られた。原因は明らかにされていない。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-25",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "2分",
+    "tags": [
+      "OpenAI",
+      "インシデント"
+    ]
+  },
+  {
+    "id": "cli-updates-2026-11-28",
+    "type": "news",
+    "category": "cli",
+    "title": "CLI ツール更新まとめ（11月17日〜27日）— Copilot CLI、Qwen Code、Claude Code ほか",
+    "excerpt": "主要な CLI ツールの更新をまとめた。Copilot CLI 1.0.113〜117、Qwen Code 0.28.7、OpenCode 2.4.2、Claude Code 2.1.332、Codex CLI 0.172.0、Cline 4.1.28、Grok Bot 1.3.0、Gemini CLI 0.71.1、Visual Studio 2026 18.12。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-27",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "6分",
+    "tags": [
+      "CLI",
+      "開発ツール",
+      "GitHub Copilot",
+      "Qwen",
+      "Gemini",
+      "Grok"
+    ]
+  },
+  {
+    "id": "california-ag-sues-openai-2026",
+    "type": "news",
+    "category": "special",
+    "title": "カリフォルニア州が OpenAI を提訴 — Hugging Face でのエージェント攻撃をめぐり",
+    "excerpt": "カリフォルニア州司法長官が OpenAI を提訴した。2026年7月に Hugging Face で起きたエージェントによる攻撃が発端で、実験的なモデルが関与したサイバーインシデントが少なくとも80件あると主張する。オレゴン州も 11月17日に 20億3,500万ドルの別の訴訟を起こした。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-16",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "OpenAI",
+      "訴訟",
+      "米国"
+    ]
+  },
+  {
+    "id": "runway-praxis-1-2026",
+    "type": "news",
+    "category": "model",
+    "title": "Runway、Praxis-1 をオープンウェイトで公開 — 動画とロボット行動を同時に学習",
+    "excerpt": "Runway が世界行動モデル「Praxis-1」の重みとコードを公開した。272億パラメータの MoE 拡散トランスフォーマーで、動画とロボットの行動を同時に学習する。RoboLab-120 で 46.2% を記録し、NVFP4 版は RTX 5090 でも動作する。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-11",
+    "edition": "morning",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "Runway",
+      "オープンソース",
+      "ロボティクス"
+    ]
   }
 ];
