@@ -17681,5 +17681,147 @@ export const ARTICLES_META = [
       "オープンソース",
       "ロボティクス"
     ]
+  },
+  {
+    "id": "nvidia-southeast-asia-shipment-halt-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "NVIDIA、東南アジア4か国への AI サーバー出荷を停止 — 米輸出規制に対応",
+    "excerpt": "NVIDIA が製造パートナーに、マレーシア・シンガポール・タイ・インドネシアへの AI サーバー出荷の停止を指示したと報じられた。米商務省の新規則が中国企業による迂回利用を狙い、東南アジアのデータセンター投資にも影響が出ている。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-26",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "5分",
+    "tags": [
+      "NVIDIA",
+      "輸出規制",
+      "中国",
+      "米国"
+    ]
+  },
+  {
+    "id": "openai-countersues-apple-2026",
+    "type": "news",
+    "category": "special",
+    "title": "OpenAI が Apple を反訴、企業秘密の窃取と取引先への圧力を主張 — 7月の提訴に対抗",
+    "excerpt": "OpenAI は 11月27日、Apple を相手取る反訴をカリフォルニア州サンノゼの連邦地裁に提起した。元従業員を介した企業秘密の窃取と、共有サプライヤーへの圧力を主張している。いずれも主張の段階で、裁判所の判断は出ていない。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-27",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "OpenAI",
+      "Apple",
+      "訴訟"
+    ]
+  },
+  {
+    "id": "nvidia-gb300-shanghai-datacenter-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "規制対象の Blackwell ラック、上海のデータセンターで見つかる — Bloomberg 調査",
+    "excerpt": "規制対象の NVIDIA 製 Blackwell ラック GB300 NVL72 が、上海のデータセンターに設置されていたことが中国の規制当局への提出書類で判明した。Bloomberg が 11月27日に報じた。ラックが中国へ渡った経路は不明。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-27",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "NVIDIA",
+      "中国",
+      "輸出規制"
+    ]
+  },
+  {
+    "id": "zhipu-glm-5-5-delay-moonshot-kimi-k4-2026",
+    "type": "news",
+    "category": "regulation",
+    "title": "米輸出規制と蒸留対策、中国 AI 開発を直撃 — Z.AI の GLM-5.5 は 2027 年へ、Kimi K4 も遅れる見通し",
+    "excerpt": "Reuters の報道によると、Z.AI の次期旗艦 GLM-5.5 は米国の新規制で 2027年第1四半期以降へずれ込む見通しで、Moonshot の Kimi K4 も 2027年半ばまで遅れる可能性がある。Z.AI の幹部は報道を虚偽と否定している。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-27",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "3分",
+    "tags": [
+      "中国",
+      "輸出規制",
+      "Zhipu",
+      "Moonshot AI"
+    ]
+  },
+  {
+    "id": "switzerland-bacs-ai-agent-attacks-2026",
+    "type": "news",
+    "category": "special",
+    "title": "スイスで初の AI エージェントによるサイバー攻撃を確認 — 5件中4件で侵入、重要インフラ3件が標的",
+    "excerpt": "スイス連邦サイバーセキュリティ局（BACS）は、AI エージェントを使ったサイバー攻撃を国内で初めて確認した。5件中4件で侵入が成功し、3件は重要インフラ事業者を狙ったものだった。大きな障害は報告されていない。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-26",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "スイス",
+      "セキュリティ",
+      "AIエージェント"
+    ]
+  },
+  {
+    "id": "aws-trainium3-ltx-2-5-2026",
+    "type": "news",
+    "category": "special",
+    "title": "Trainium3 で LTX-2.5 の動画生成が商用 API 並みに — 10秒クリップを22〜23秒で生成、AgentX では GB300 の 2.28倍の価格性能",
+    "excerpt": "Hugging Face のエンジニアが Lightricks の LTX-2.5 を AWS Trainium3 で動かし、10秒の動画クリップ（音声付き）を 22〜23秒で生成した。SemiAnalysis の AgentX では Trainium3 が GB300 NVL72 に対し価格性能で最大 2.28倍だった。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-27",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "AWS",
+      "Trainium",
+      "Hugging Face",
+      "SemiAnalysis",
+      "動画生成"
+    ]
+  },
+  {
+    "id": "openai-tumbler-ridge-dismissal-motion-2026",
+    "type": "news",
+    "category": "special",
+    "title": "OpenAI、Tumbler Ridge 銃撃めぐる 41件の訴訟の棄却を申し立て — 表現の自由を主張",
+    "excerpt": "OpenAI と Sam Altman 氏が、Tumbler Ridge の銃撃事件をめぐる 41件の訴訟の棄却を申し立てたと報じられた。ChatGPT との会話は修正第1条で保護される言論であり、警察への警告義務はなかったと主張している。申立書そのものは未確認。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-21",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "OpenAI",
+      "訴訟",
+      "米国"
+    ]
+  },
+  {
+    "id": "cli-updates-2026-11-28-evening",
+    "type": "news",
+    "category": "cli",
+    "title": "CLI ツール更新まとめ 2026-11-28（夕刊）— Copilot CLI 1.0.118 系、Gemini CLI 0.72.0、Grok Build 1.0.92",
+    "excerpt": "CLI ツールの更新まとめ。Copilot CLI 1.0.118-0〜2、Gemini CLI 0.72.0-preview.0、Grok Build 1.0.92、Cline CLI cli-v3.0.76、Codex rust-v0.174.0-alpha.9。Claude Code、Qwen Code、OpenCode、Cursor に新版なし。",
+    "date": "2026-11-28",
+    "newsDate": "2026-11-28",
+    "edition": "afternoon",
+    "author": "AI News 編集部",
+    "readTime": "4分",
+    "tags": [
+      "CLI",
+      "開発ツール",
+      "GitHub Copilot",
+      "Gemini",
+      "Grok"
+    ]
   }
 ];

@@ -9329,6 +9329,209 @@ const ARTICLES_BODY_2026_11 = {
         "url": "https://runway.com/news/company-news/praxis-1-is-now-available"
       }
     ]
+  },
+  "nvidia-southeast-asia-shipment-halt-2026": {
+    "body": [
+      "NVIDIA は製造パートナーの Dell と Supermicro に対し、マレーシア、シンガポール、タイ、インドネシアへの NVIDIA 製チップ搭載サーバーの出荷を停止するよう指示した。Financial Times が11月26日、事情を知る3人の話として報じた。パートナーは購入者に「NVIDIA が出荷を認めない」と伝えたという。停止が一時的なものかどうかは不明で、NVIDIA はコメントを拒否し、Dell、Supermicro、ByteDance、Aolani は取材に応じていない。Wall Street Journal も同様の内容を報じている。",
+      "背景には、米商務省産業安全保障局（BIS）が11月19日に施行した暫定最終規則「Addressing Remote Access to Advanced Semiconductors」がある。中国企業が東南アジアのデータセンターから NVIDIA 製チップをリモートで利用する迂回を狙ったもので、新設の §744.24 は、D:5（中国など）やマカオに本社を置く企業に 1,200万 aggregate TPP 超の計算能力をリモート供給するデータセンターへの先端チップ・サーバーの供給にライセンスを要求する。既存の事業者には 11月19日から 90日間の猶予がある。あわせてインドネシア、マレーシア、シンガポール、タイ、ブラジルの5か国向け先端半導体にもライセンスを新設した（米国本社企業向けは月次報告付きで除外）。コメント期限は 2027年1月19日。規則は 2025年1月の AI Diffusion Rule を正式に廃止した。",
+      "東南アジアは中国 AI 開発者にとって NVIDIA の最先端チップにアクセスする有力な迂回先になっていた。シンクタンク Institute for Progress の推計では、こうしたリモートのデータセンターが中国の AI 計算能力の約24%を供給している。推計値であり実測ではない。NVIDIA はシンガポール子会社経由で 2025年に 1,040億ドルの売上を計上し、前年比72%増だった。",
+      "具体的な影響も出ている。シンガポールのクラウド企業 Aolani は ByteDance 向けに先端計算能力を提供する計画だったが、融資団が約5億ドルの融資を停止し、ByteDance が契約を破棄する可能性があると報じられている。商務省はクラウド事業者に対し、利用者に規制対象が含まれないことを証明して 90日以内にライセンスを取得するよう求めており、あるクラウド事業者の幹部は「新しい規則はあるが実行の指針がない。誰もライセンスの申請方法が分からないまま 90日の時計が回っている」と述べている。",
+      "CBS News の調査報道では、迂回の別の経路も指摘された。NVIDIA の「preferred partner」であるサンノゼの RiCloud AI は、親会社が深セン本社の Yuxing InfoTech（香港上場）で、2026年に台湾のウイスキー輸入業者へ B300 サーバー300台を 1億2,000万ドルでリースする契約を結んだという。もう1社の Aivres（旧 Inspur、NVIDIA の「エリート」パートナー）は、2024年4月から2026年2月に東南アジアへ少なくとも56億ドルの先端技術を輸出し、うち約30億ドルが Blackwell 搭載コンピュータだったという。CBS の原文 URL は未取得のため、本記事では転載で内容を確認している。",
+      "中国企業の迂回利用をめぐっては、別途 Bloomberg の調査で、規制対象の Blackwell ラックが上海のデータセンターで見つかったことも 11月27日に報じられた。詳細は別記事で伝える。"
+    ],
+    "primarySources": [
+      {
+        "site": "Channel NewsAsia",
+        "title": "Nvidia halts chip shipments to Southeast Asia: Report",
+        "url": "https://www.channelnewsasia.com/asia/nvidia-halts-chip-shipments-southeast-asia-6584351"
+      },
+      {
+        "site": "TechCrunch",
+        "title": "Nvidia hits pause on chip shipments to Southeast Asia",
+        "url": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/"
+      },
+      {
+        "site": "NHK WORLD-JAPAN News",
+        "title": "Nvidia halts chip shipments to 4 Southeast Asian nations",
+        "url": "https://www.nhk.or.jp/nhkworld/news/20261127de82397/"
+      },
+      {
+        "site": "Mayer Brown",
+        "title": "BIS Extends Chip Controls to Remote Access and Tightens License Requirements",
+        "url": "https://www.mayerbrown.com/en/insights/publications/2026/11/bis-extends-chip-controls-to-remote-access-and-tightens-license-requirements"
+      },
+      {
+        "site": "The Statesman",
+        "title": "How Chinese-owned companies in California gained access to Nvidia's most advanced AI chips",
+        "url": "https://www.thestatesman.com/world/how-chinese-owned-companies-in-california-gained-access-to-nvidias-most-advanced-ai-chips-1503667096.html"
+      }
+    ]
+  },
+  "openai-countersues-apple-2026": {
+    "body": [
+      "OpenAI は 2026年11月27日、Apple を相手取る反訴をカリフォルニア州サンノゼの連邦地裁に提起した。Apple が 7月に起こした企業秘密をめぐる訴訟への対抗措置である。OpenAI は Apple が自社の企業秘密を盗んだと主張し、共有する取引先への圧力も訴えている。いずれも主張の段階で、裁判所の判断は出ていない。",
+      "反訴の中心は、Apple に再雇用された元従業員をめぐる主張である。OpenAI によると、この従業員は OpenAI で 6か月働いたのち Apple に戻り、新デバイスやハードウェアのロードマップに関する情報にアクセスした。OpenAI は「時期を考えると、文書を盗むことこそが彼がそもそも OpenAI に入社した理由だったように見える」と主張している。",
+      "OpenAI はさらに、Apple が共有するサプライヤーを脅迫・強要したとも訴えている。Apple は従業員に業務内容を個人のデバイスやアカウントに保存するよう促しながら、退職時の整然とした引き継ぎを妨げ、退職した従業員の個人デバイスやアカウントへのアクセスを続けているという。OpenAI は「退職者を監視し、囲い込む」ためだと主張している。OpenAI によると、Apple から OpenAI へ移った従業員は 400人に上る。OpenAI は AI 対応の個人向けデバイスを開発中で、Apple が「自らの縄張り」とみなす領域で競合することになる、としている。",
+      "背景には 2026年7月10日の Apple による提訴がある。Apple は OpenAI と io Products、Tang Tan 氏、Chang Liu 氏を相手取り、消費者向けハードウェアをめぐる企業秘密の不正取得を訴えた。OpenAI は否定している。同年10月には、Apple に戻った従業員が未発表ハードウェアに関する 100件超の機密ファイルを個人アカウントに送ったと OpenAI が主張し、Apple は調査で OpenAI の機密情報は見つからなかったとしている。Apple は仮差止めを求め、証拠開示の拡大を認められた。裁判は 2027年7月19日に予定されている。",
+      "Apple は反訴について「Apple の訴訟の本質から目をそらすための、透明な試みだ。OpenAI はすでに Apple の機密情報の使用停止を命じられている」とする声明を出した。OpenAI は Apple への訴訟の棄却申立ても理由を示さず取り下げている。双方が陪審による審理を求めている。"
+    ],
+    "primarySources": [
+      {
+        "site": "Al Jazeera",
+        "title": "OpenAI countersues Apple over trade secrets as AI race heats up",
+        "url": "https://www.aljazeera.com/amp/economy/2026/11/27/openai-countersues-apple-over-trade-secrets-as-ai-race-heats-up"
+      },
+      {
+        "site": "9to5Mac",
+        "title": "OpenAI countersues Apple alleging trade secret theft and supplier threats",
+        "url": "https://9to5mac.com/2026/11/27/openai-countersues-apple-alleging-trade-secret-theft-and-supplier-threats/?extended-comments=1"
+      },
+      {
+        "site": "Reuters",
+        "title": "OpenAI countersues Apple for stealing trade secrets, FT reports",
+        "url": "https://www.reuters.com/technology/openai-countersues-apple-stealing-trade-secrets-ft-reports-2026-11-27/"
+      }
+    ]
+  },
+  "nvidia-gb300-shanghai-datacenter-2026": {
+    "body": [
+      "規制対象の NVIDIA 製 Blackwell チップが、中国・上海のデータセンターに設置されていたことが分かった。Bloomberg が11月27日に報じた。中国の規制当局への提出書類で、上海の長江デルタプロジェクト（Yangtze River Delta Project）のデータセンターに GB300 NVL72 ラックが置かれていたことが判明した。Blackwell はこれまで、米国の許可なく中国へ輸出することが禁じられてきた NVIDIA の最先端データセンター製品である。",
+      "GB300 NVL72 は Blackwell Ultra チップ72基と Grace CPU 36基を収めたラックで、高さ約2メートル、重量1,500キログラム超。Bloomberg は書類に記載されたシリアル番号を公開の保証データベースで照合し、製造元が台湾の Gigabyte だと特定した。Gigabyte は当初の購入者の開示を拒否した。NVIDIA の Jensen Huang 氏はかつて、Blackwell のラックは「大きすぎて密輸できない」と述べていた。",
+      "ラックを調達した上海 Shuoyao は、これを担保に上海 Innovation Bank から 9,600万元（約1,400万ドル）の融資を受けた。別の会社・上海 Kezhan は同じ施設にある GB200 搭載サーバーを挙げて 9,000万元の融資を受け、さらに H200 チップ搭載サーバー32台も同施設にあると開示した。ラックがどのように中国へ渡ったかは不明である。",
+      "Bloomberg は、Blackwell が Alice Huang 氏と Megaspeed に関係する中国のデータセンターに到達した初の証拠だと位置づけている。Megaspeed はチップの中国への迂回をめぐり米当局の調査対象で、今月ブラックリスト入りした。ただし Bloomberg は、Megaspeed 自身がハードウェアを迂回させた証拠はないとし、Megaspeed は不正を否定している。上海 Shuoyao は今月、Megaspeed のサービス提供者の1社であることを認めたが、提携は「通常の商取引に限られる」としている。",
+      "この報道を受け、NVIDIA の株価はニューヨーク市場の取引開始後に一時2.6%安の145.39ドルまで下げた。提出書類で明らかになったのは融資の担保にされたハードウェアだけで、施設全体の規模からすれば一部にすぎない。運営者は最大80万台のサーバー収容を計画しているとされる。なお、米商務省の新規則を受け、NVIDIA は東南アジア4か国への AI サーバー出荷も停止したと報じられており、詳細は別記事で伝える。"
+    ],
+    "primarySources": [
+      {
+        "site": "Business Standard",
+        "title": "Nvidia's Blackwell chips found at China data centre linked to Alice Huang",
+        "url": "https://www.business-standard.com/amp/world-news/nvidia-s-blackwell-chips-found-at-china-data-centre-linked-to-alice-huang-126112701497_1.html"
+      },
+      {
+        "site": "The Straits Times",
+        "title": "Nvidia Blackwell tech used at China site tied to Alice Huang",
+        "url": "https://www.straitstimes.com/world/united-states/nvidia-blackwell-tech-used-at-china-site-tied-to-alice-huang?ref=latest-headlines"
+      }
+    ]
+  },
+  "zhipu-glm-5-5-delay-moonshot-kimi-k4-2026": {
+    "body": [
+      "米国の輸出規制と蒸留対策が、中国 AI 開発者のロードマップを直撃している。Reuters の報道によると、Z.AI（Zhipu AI）の次期旗艦モデル GLM-5.5（約3兆パラメータ）は 11月中の公開を予定していたが未公開で、年末までの完了を目指していたものの、新規制で 2027年第1四半期以降にずれ込む見通しだという。Reuters の原報は有料のため、本記事は TrendForce の報道で内容を確認している。",
+      "要因は二つある。一つは OpenAI と Anthropic による蒸留対策で、能力の高いモデルの出力を使って学習する蒸留を防ぐ仕組みが機能し始め、中国開発者が低コストで競争力のあるモデルを作るうえでの強みを脅かしている。もう一つは米商務省の暫定最終規則で、11月16日に発表され 11月19日に施行された。中国企業への海外データセンター経由のリモートアクセスを規制対象とし、既存のデータセンターは 90日以内に輸出ライセンスを取得する必要がある。",
+      "Z.AI の幹部は中国メディア MyDrivers 経由で報道を虚偽と否定したが、GLM-5.5 の公開日は示していない。一方で Z.AI は 11月23日に GLM-5.4（7,500億パラメータの既存モデルを基にした暫定版）を公開済みだ。",
+      "Moonshot AI も影響を受けている。レンタルした計算資源に依存し、海外プロバイダーを優先してきた同社は、海外へのアクセスを完全に失えば、主要モデルの公開間隔が 6か月から 1年以上に倍増するとの社内見通しで、次期旗艦 Kimi K4 は 2027年半ばまで遅れる可能性があるという。Kimi K2 は 2025年7月、K2.5 は 2026年1月、K3 は 7月に公開された。",
+      "すでに具体的な disruption も出ている。The Information によると、Moonshot は新規則の発表後、インドネシア経由で NVIDIA Blackwell Ultra B300 搭載の計算資源を借りる 1億5,000万ドルの契約を解約した。利用開始は早ければ 2027年の見込みだった。同社は欧州での計算資源の確保を急ぎ、中国のチップメーカーへの打診も計画している。CNBC によると、欧州プロバイダーとの交渉では 8,000基以上の Blackwell GPU のクラスタが話題に上り、中国以外の顧客より 30〜50% 高い前払いを求められたという。"
+    ],
+    "primarySources": [
+      {
+        "site": "TrendForce",
+        "title": "Distillation Crackdown, U.S. Curbs Hit China's AI Roadmaps; Z.AI, Moonshot Face Potential Model Delays",
+        "url": "https://www.trendforce.com/news/2026/11/27/news-distillation-crackdown-u-s-curbs-hit-chinas-ai-roadmaps-z-ai-moonshot-face-potential-model-delays/"
+      },
+      {
+        "site": "CASRAI",
+        "title": "US Chip Curbs, Anti-Distillation Crackdown Delay Chinese AI Models",
+        "url": "https://casrai.org/news/us-chip-curbs-anti-distillation-crackdown-delay-chinese-ai-models-2026"
+      }
+    ]
+  },
+  "switzerland-bacs-ai-agent-attacks-2026": {
+    "body": [
+      "スイス連邦サイバーセキュリティ局（BACS）は、AI エージェントを使ったサイバー攻撃を国内で初めて確認した。直近の数日間に報告された 5件のうち 4件で攻撃者が組織のコンピューターシステムに侵入し、うち 3件は重要インフラ事業者を狙ったもので、そのうち 2件で侵入が成功した。大きな障害は報告されていない。被害者の名前は公表されておらず、攻撃者の特定もできていない。",
+      "BACS の Florian Schütz 局長が 11月26日、公共放送 SRF の番組で数字を明らかにした。攻撃を受けた組織には中小企業も含まれ、すべて自発的に届け出たという。BACS は 11月24日付の注意喚起で、AI エージェントによる攻撃が脅威の様相を変えるものだとし、攻撃の手口を「agentic offensive frameworks（エージェント型の攻撃フレームワーク）」と呼んだ。エージェントは脆弱性を自力で探し、攻撃を自律的に実行する。注意喚起は ARTEX と CyberStrikeAI をインターネット上で入手できるエージェントの例として挙げたが、今回の 5件で使われた道具だとはしていない。",
+      "火曜日の注意喚起では当時把握していた事例すべてで IT システムへの侵入があったとされていたが、木曜日のインタビューでの数字は 5件中4件だった。数の変化の理由は、注意喚起もインタビューも説明していない。BACS によると、インターネット上で自由に入手できる AI 攻撃ツールは 10月以降ほぼ倍増している。標的となった重要インフラは少なくとも 2つの分野にまたがり、スイスの定義では電力・飲料水・電気通信の供給事業者などが含まれる。",
+      "同じ週にはイタリアの CSIRT Italia と英国の国家サイバーセキュリティセンター（NCSC）も AI による侵入キャンペーンに関する指針を出している。NCSC は「2026年9月以降、AI を使ったサイバー攻撃の著しい増加が見られる」とした。欧州委員会も、ARTEX を使った攻撃者が人事・医療費償還・翻訳のシステムに侵入したことを確認している（10月22日に初検知）。3機関に共通する助言は、インターネットに公開されたシステムの重大な脆弱性を 24時間以内に修正し、公開範囲を狭め、MFA やパスキーを徹底することである。"
+    ],
+    "primarySources": [
+      {
+        "site": "The Hacker News",
+        "title": "Switzerland Confirms AI-Assisted Cyberattacks Breached Critical Infrastructure Operators",
+        "url": "https://thehackernews.com/2026/11/switzerland-confirms-ai-assisted.html"
+      },
+      {
+        "site": "swissinfo",
+        "title": "Switzerland reports first AI-enabled cyberattacks on critical infrastructure",
+        "url": "https://www.swissinfo.ch/eng/swiss-ai/switzerland-reports-first-ai-based-cyberattacks-on-critical-infrastructure/92440400"
+      }
+    ]
+  },
+  "aws-trainium3-ltx-2-5-2026": {
+    "body": [
+      "Hugging Face のエンジニアが、Lightricks の動画・音声生成モデル LTX-2.5 を AWS の Trainium3 で動かし、10秒のクリップ（音声付き、2048×1024）を 22〜23秒で生成した。trn3.48xlarge（64 NeuronCores）の半分、32コアでの結果で、LTX 自身のオンライン API の公称 23.7秒とほぼ並び、約1秒上回る。検証結果は 11月27日に Hugging Face のブログで公開された。",
+      "到達までの道のりは長かった。最初の試みは 960×544 の 10秒クリップに 5分20秒かかり、NeuronCores が実際に計算していたのはそのうち約45秒だけだった。トランスフォーマーが 1つの NeuronCore に収まらず、diffusers には分割する仕組みがなかったため、テンソル並列（TP-4）で重みを 4分割し、シーケンス並列（SP-8）で動画トークンを 8分割して計 32コアに載せた。最終的に 14倍速く、約4倍の画素数で生成できるようになった。ただしホスト側の改善が最も大きく寄与し、ホスト側の処理時間は約 280秒から約 8秒へ、約35分の1になった。",
+      "この実験は動画生成だけでなく、脚本風の JSON ファイルから短編映画を組み立てるワークフローも示している。各ショットは名前とプロンプトを持ち、前のショットの最後のフレームから始める（from）・後のショットの最初のフレームで終わる（to）ことで被写体の一貫性を保つ。コードは約 160行の Python で、再実行すれば同じ映画がバイト単位で再現されるという。一方で限界もある。モデルは細部を間違えることがあり（ヤギの角が 4テイク中 3回おかしくなった）、1ショットは最大 20秒で、音はショットごとに生成されるためショットをまたいで続かない。モデルの読み込みには約 3分かかり、最初のクリップには約 80秒かかる。",
+      "Trainium3 は別の角度からも注目されている。SemiAnalysis は 11月25日、Trainium3 UltraServer の初めての AgentX（エージェント型推論ベンチマーク）への提出結果が、NVIDIA の GB300 NVL72 に対して価格性能で最大 2.28倍だったと発表した。対象モデルは Z.ai の GLM-5.2/5.3（744B パラメータ級の MoE）で FP4 精度・vLLM での計測。チップ1時間あたりの総保有コストは Trainium3 が 1.05ドル、GB300 が 2.31ドルという SemiAnalysis の推計（大規模ハイパースケーラーでの保有を前提とした外部コスト基準）による。同じ動作点でのチップあたりのスループット差は約 4%で、倍率の大部分はコスト差による。SemiAnalysis はこの結果を検証継続中の「公式プレビュー」と位置づけている。",
+      "世代の比較には注意が要る。SemiAnalysis は別途、NVIDIA の Vera Rubin NVL72 が GB300 NVL72 に対して 2〜6.5倍のトークンあたりコスト性能だとする分析も出しているが、Trainium3 や TPU との直接比較ではない。SemiAnalysis は「Trainium3 に相当するのは Blackwell Ultra であり、Vera Rubin に相当する世代は Trainium4（2027年登場予定）」としている。"
+    ],
+    "primarySources": [
+      {
+        "site": "Hugging Face",
+        "title": "Taking Trainium3 to the Track: Generating Videos with LTX-2.5",
+        "url": "https://huggingface.co/blog/video-trainium3"
+      },
+      {
+        "site": "Supercomputing News",
+        "title": "Amazon's First Trainium3 Results Reach AgentX as a Preview",
+        "url": "https://www.supercomputing.news/ai/trainium3-semianalysis-agentx-benchmark-preview"
+      },
+      {
+        "site": "Tikr",
+        "title": "Plot Twist: Nvidia's Vera Rubin Gets 2-6.5x GB300's Tokens per Dollar. Amazon's Trainium Edge Was Against the Old Chip",
+        "url": "https://www.tikr.com/blog/plot-twist-nvidias-vera-rubin-gets-2-6-5x-gb300s-tokens-per-dollar-amazons-trainium-edge-was-against-the-old-chip"
+      }
+    ]
+  },
+  "openai-tumbler-ridge-dismissal-motion-2026": {
+    "body": [
+      "OpenAI と Sam Altman 氏は、2026年2月10日にブリティッシュコロンビア州 Tumbler Ridge で起きた銃撃事件をめぐる 41件の訴訟について、請求そのものの棄却を求める申立てを 11月18日に提出したと報じられた。事件では Jesse Van Rootselaar が中等学校の生徒らを含む8人を殺害し、自ら命を絶った。遺族・生存者、BC 州政府、地元の学区が米カリフォルニア州北部地区連邦地裁に提訴している。申立書そのものは未確認で、本記事は The Logic の報道を NewRuntime が要約した内容に基づく。",
+      "原告側の中心的な主張は、OpenAI の安全システムが 2025年6月に加害者の ChatGPT アカウントを銃暴力の議論でフラグし停止したのに、警察に通報しなかったというものである。これに対し申立ては、ChatGPT との会話は書籍やビデオゲームと同様に修正第1条で保護される言論である、警察への警告義務はなかった、ChatGPT は製品ではなく動的なオンラインサービスである、心理療法士の保護義務の類推は当たらない、因果関係が示されていない、と主張していると報じられている。",
+      "因果関係の論拠として、申立ては利用データを挙げている。加害者の利用は 2025年1月から10月に1日約30件だったのが、11月から事件までは1日約3件へ急減し、1万件超のメッセージに学校への言及はなかったという。これらの数字は OpenAI 自身の申立てを The Logic が報じたもので、独立した確認はできていない。",
+      "今回の申立ては第2の防御線である。OpenAI はこれより前に forum non conveniens（BC 州が適切な法廷だという理由）による棄却も申し立てている。BC 州政府と学区を相手取る申立書は CourtListener で確認でき、2026年10月15日付・29ページである。Altman 氏は 2025年6月のアカウント審査に関与していなかったとも主張した。関連手続きとして、OpenAI は 11月5日付でチャット履歴の封印を申し立て（RCMP の捜査を理由）、BC 州政府と学区は墨消しでの公開を提案し、Dow Jones も公開を求めている。いずれの申立てについても判断は出ていない。",
+      "棄却申立て本体の審理の日程は確認できていない。12月17日午前10時には forum non conveniens をめぐる審理が予定されており（申立書の Notice of Motion による）、NewRuntime はチャット履歴の封印をめぐる判断がその後に下される見込みだと伝えている。裁判所がチャットボットの会話を保護される言論と認め、運営者に警告義務がないと判断すれば、すべての AI 事業者に強い防御となる。一方で ChatGPT が製品ではないという主張を退ければ、チャット製品に対する設計上の欠陥や警告義務違反の請求がカリフォルニアで進むことになる。"
+    ],
+    "primarySources": [
+      {
+        "site": "New Runtime",
+        "title": "OpenAI wants all 41 Tumbler Ridge suits dismissed, arguing it had no duty to warn police and citing the First Amendment",
+        "url": "https://newruntime.com/analysis/research-openai-wants-all-41-tumbler-ridge-suits-dismissed-arguing-it-had-no-duty-to/"
+      },
+      {
+        "site": "CourtListener (RECAP)",
+        "title": "OpenAI forum non conveniens motion (Doc 18)",
+        "url": "https://storage.courtlistener.com/recap/gov.uscourts.cand.479418/gov.uscourts.cand.479418.18.0.pdf"
+      }
+    ]
+  },
+  "cli-updates-2026-11-28-evening": {
+    "body": [
+      "Copilot CLI は 1.0.118-0、1.0.118-1、1.0.118-2 の 3連のプレリリースを出した（11月27日〜28日）。1.0.118-0 では、サンドボックスの「/sandbox policy」で追加の CA 証明書のパスを表示し、サブエージェントの「/tasks」フッターに reasoning effort と context tier を表示する。詳細トランスクリプトでは grep と rg のマッチ件数が見られるようになり、Copilot Fusion では Ctrl+C で中断したシェルコマンドが保留ではなく aborted として表示される。組織のカスタムエージェントは設定したモデルを使うようになった。1.0.118-1 は「copilot mcp enable／disable」を同時に実行したときに別の MCP サーバーの変更が保持される修正のみ、1.0.118-2 は Ctrl+R 検索の後に Up／Down でプロンプト履歴を移動できる修正のみである。",
+      "Gemini CLI は v0.72.0-preview.0 を出した（11月24日）。ネストした .gitignore の否定パターンの処理、Windows でのホーム相対パスの展開、直近に開始したセッションではなく直近にアクティブだったセッションの再開、a2a-server の bearer 認証の強制と入力バリデーションが含まれる。",
+      "Grok Build 1.0.92 は 11月27日に報じられた。ヘッドレス実行の 5分間の無操作タイムアウト、エラーからの復旧、MCP ツール経由の画像処理の改善が中心で、リモートターミナル周りの改善と性能向上も含まれる。x.ai は 403 のため、本記事は Crypto Briefing の報道に基づく。",
+      "Cline CLI は cli-v3.0.76 を出した（11月26日）。npm パッケージに全プラットフォーム分のサードパーティ表記をまとめた THIRD_PARTY_NOTICES.txt を 1つ同梱し、モデルカタログを更新した。OpenAI のピッカーから非推奨のモデル ID が消えている。Codex は rust-v0.174.0-alpha.9 のプレリリースを出した（11月27日）が、リリース本文は版名のみで内容は未確認である。",
+      "新版がなかったもの。Claude Code は 2.1.332、Qwen Code は 0.28.7、OpenCode は 2.4.2、Cursor は 2026.11.06 が最新のままである。Grok Bot 1.3.0 は朝刊で収録済みで、新版の確認は取れていない。"
+    ],
+    "primarySources": [
+      {
+        "site": "GitHub",
+        "title": "Copilot CLI v1.0.118-0",
+        "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.118-0"
+      },
+      {
+        "site": "GitHub",
+        "title": "Gemini CLI v0.72.0-preview.0",
+        "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.72.0-preview.0"
+      },
+      {
+        "site": "Crypto Briefing",
+        "title": "Grok Build 1.0.92 targets headless agent reliability and remote workflows",
+        "url": "https://cryptobriefing.com/grok-build-1092-headless-agent-update/"
+      },
+      {
+        "site": "GitHub",
+        "title": "Codex rust-v0.174.0-alpha.9",
+        "url": "https://github.com/openai/codex/releases/tag/rust-v0.174.0-alpha.9"
+      }
+    ]
   }
 };
 
